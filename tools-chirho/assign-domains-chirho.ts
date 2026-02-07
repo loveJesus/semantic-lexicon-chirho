@@ -186,11 +186,18 @@ function assignDomainsChirho(): void {
   const supersenseCentroidsChirho: Map<number, FeatureVecChirho> = new Map();
 
   // Check if there are existing assignments from community detection
-  const existingAssignChirho: any = dbChirho
-    .query("SELECT COUNT(*) as cnt_chirho FROM domain_assignment_chirho")
+  // that reference CURRENT sense IDs (not stale ones from a previous pass)
+  const validAssignChirho: any = dbChirho
+    .query(
+      `SELECT COUNT(*) as cnt_chirho FROM domain_assignment_chirho da
+       WHERE EXISTS (SELECT 1 FROM sense_chirho s WHERE s.sense_id_chirho = da.sense_id_chirho)`
+    )
     .get();
 
-  if (existingAssignChirho.cnt_chirho > 0 && fineDomainsChirho.length > 0) {
+  if (validAssignChirho.cnt_chirho > 0 && fineDomainsChirho.length > 0) {
+    console.log(
+      `[assign-domains-chirho] Using ${validAssignChirho.cnt_chirho} existing valid assignments to seed centroids`
+    );
     // Use fine domain → parent supersense mapping from community detection
     for (const ssChirho of supersensesChirho) {
       const centroidChirho: FeatureVecChirho = new Map();
@@ -228,6 +235,9 @@ function assignDomainsChirho(): void {
       supersenseCentroidsChirho.set(ssChirho.domain_id_chirho, centroidChirho);
     }
   } else {
+    console.log(
+      `[assign-domains-chirho] No valid existing assignments — bootstrapping centroids from sense partitions`
+    );
     // No existing assignments — bootstrap centroids by partitioning senses by lemma POS
     // Assign each supersense a seed set of senses partitioned by index
     const senseArrayChirho = Array.from(sensePrototypesChirho.entries());
