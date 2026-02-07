@@ -185,3 +185,13 @@ How granular tis should be is up to you
 
 You can modify  the following section
 ### Agent Self Modifications (For the agent to keep things present in its context)
+
+#### Current Task: LLM Merge Pass (Tier 2)
+- **What**: Running Opus subagents in pairs to merge over-split sense clusters into real lexicographic senses
+- **Progress**: 31 of 200 lemmas complete (15 tier-1 + 16 tier-2). 169 tier-2 remaining.
+- **Quality rule**: OPUS ONLY — Sonnet collapsed H8130 to 2 senses, Opus found 6. Quality matters for building a real lexicon.
+- **Process**: Get next 2 from remaining list → launch parallel Opus agents → wait → log observations → next pair
+- **Remaining list**: `output-chirho/merge-batches-chirho/remaining-chirho.json` minus done files in `output-chirho/merge-responses-chirho/`
+- **Observations**: Log linguistic notes to `output-chirho/merge-responses-chirho/observations-chirho.jsonl` for every completed lemma
+- **Refinement**: After each batch, scan for over-lumped senses (literal vs metaphorical, etc.) and run refinement agents
+- **Commit periodically**: Every ~20 lemmas, git commit + push results
