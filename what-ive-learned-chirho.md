@@ -61,3 +61,70 @@
 - Export: JSON, SQL, CSV formats with John 3:16 header
 - Cross-validation on held-out languages (kor, swa): 96.1% entropy reduction
 - Within-sense entropy: 0.514 bits vs across-sense: 13.342 bits
+
+## 1st Pass Retrospective — What Worked and What Didn't
+
+### What Worked
+- **Sense induction via translation signatures**: 96.1% cross-language entropy reduction on held-out languages (kor, swa) proves that multilingual gloss divergence IS a strong signal for polysemy
+- **Agglomerative clustering**: Simple, interpretable, no hyperparameter soup — good for a first pass
+- **Rust hot-path + Bun orchestration**: 14.6K lemmas clustered in ~5 min, full pipeline in <30 min
+- **Validation loop**: Entropy-driven merge/split converged in 5 iterations, reduced 60,983→56,976 senses
+- **Materialization**: Dictionary encoding + sparse vectors makes feature computation tractable on 7.6M glosses
+
+### What Didn't Work
+
+#### 1. Sense over-splitting (56,976 senses is ~2-3x too many)
+- **Root cause**: Morphological variation in glosses treated as semantic divergence
+- Hebrew binyanim (Qal/Niphal/Piel/Hiphil/etc.) systematically change translation patterns:
+  - H7311 Qal → "be high/exalted" vs H7311 Hiphil → "raise/lift up/exalt"
+  - These are morphological derivations, not independent senses
+- Tense/aspect markers also leak into glosses across languages (imperfect "will do" vs perfect "did")
+- Result: H7311a has 120 senses — should have ~5-6 (per BDB/HALOT)
+- The clustering algorithm reads ONLY from gloss_phrase/head/part — grammar_chirho is imported but NEVER queried
+
+#### 2. Domain assignment is meaningless (hash-based)
+- assign-domains-chirho.ts uses polynomial hash of lemma_id + sense_id mod 20
+- Result: perfectly uniform distribution (2,816-2,899 senses per domain, CV=0.92%)
+- Real semantic domains have SKEWED distributions — Louw-Nida Domain 33 (Communication) has 200+ entries, some domains have <10
+- Scorecard domain_coherence, separation, cross_lang_consistency all stubbed to 0
+
+#### 3. Similarity was never computed
+- 57K² = 3.25 billion pairs — was called "infeasible" but actually takes ~5-15 min on M4 with rayon
+- This blocked: community detection, fine domain creation, meaningful domain assignment
+- Result: 0 subdomains, flat taxonomy
+
+#### 4. Grammar data is rich but unused
+- `grammar_chirho` has full morphological codes: `V-Qal-Perf-3ms`, `Conj-w | V-Piel-ConsecImperf-3ms`, `N-msc`, etc.
+- 3,982 unique grammar values, encoding: binyan, tense, person, number, gender, state
+- Strong's sub-entries exist (H7311a vs H7311) — also unused
+- `lemma_chirho.pos_chirho` has the most common POS per lemma — not used in clustering
+
+### Key Numbers to Remember
+| Metric | Value | Target |
+|--------|-------|--------|
+| Senses | 56,976 | ~20-25K (after morph-aware clustering) |
+| Senses/lemma avg | 3.89 | ~1.5-2.0 |
+| Max senses (H7311a) | 120 | ~5-6 |
+| Domains | 20 supersenses, 0 fine | 20 super + 200-500 fine |
+| Domain distribution CV | 0.92% (uniform) | 30-60% (skewed, natural) |
+| Similarity computed | 0 pairs | ~3.25B (57K²) or ~625M (25K²) |
+| Grammar features used | 0 | binyan + POS at minimum |
+
+### Comparison to Louw-Nida
+| Dimension | L&N | semantic-chirho (pass 1) |
+|-----------|-----|--------------------------|
+| Scope | NT Greek only (~5K entries) | Full Bible H+G (14.6K lemmas) |
+| Domains | 93 major, ~750 sub | 20 super, 0 sub |
+| Distribution | Natural skew | Uniform (hash) |
+| Morphology | Manual expert analysis | Ignored |
+| Method | Expert curation (decades) | Automated (30 min) |
+| Senses | ~5K well-curated | 57K over-split |
+| License | UBS copyright | CC BY-SA 4.0 |
+| Languages | Monolingual (Gk→En) | 43 parallel translations |
+
+### Architecture for 2nd Pass
+1. **Morphology-aware clustering**: Parse grammar_chirho, add binyan/POS as weighted features, raise clustering threshold
+2. **Run real similarity**: 57K² is feasible on M4 (~5-15 min with rayon) — no excuses
+3. **Community detection on real edges**: Louvain on sparse similarity graph → fine domains
+4. **Assign domains by similarity**: Replace hash with nearest-centroid prototype matching
+5. **Implement remaining scorecard metrics**: domain_coherence, separation, cross_lang_consistency

@@ -2,12 +2,15 @@
 // that whoever believes in him should not perish but have eternal life.
 
 use anyhow::Result as ResultChirho;
-use core_chirho::open_db_chirho;
+use core_chirho::{open_db_chirho, parse_morphology_chirho};
 use serde::Serialize;
 use std::collections::HashMap;
 use std::io::{self, Write};
 use std::sync::Mutex;
 use std::time::Instant;
+
+/// Offset for morphological features in the sparse feature vector.
+const MORPH_OFFSET_CHIRHO: u64 = 900_000_000;
 
 #[derive(Serialize)]
 struct SenseClusterChirho {
@@ -217,6 +220,29 @@ fn main() -> ResultChirho<()> {
         for word_id_chirho in &word_ids_chirho {
             let mut fv_chirho = FeatureVecChirho::new();
 
+            // Morphology features (weight 4.0) — strongest grouping signal
+            let mut grammar_stmt_chirho = conn_chirho.prepare_cached(
+                "SELECT grammar_chirho FROM word_chirho WHERE id_chirho = ?1",
+            )?;
+            let grammar_opt_chirho: Option<String> = grammar_stmt_chirho
+                .query_row(rusqlite::params![word_id_chirho], |row_chirho| {
+                    row_chirho.get(0)
+                })
+                .ok();
+
+            if let Some(grammar_chirho) = grammar_opt_chirho {
+                let morph_chirho = parse_morphology_chirho(&grammar_chirho);
+                // Key: MORPH_OFFSET + (binyan * 100) + pos
+                let morph_key_chirho = MORPH_OFFSET_CHIRHO
+                    + (morph_chirho.binyan_chirho as u64 * 100)
+                    + morph_chirho.pos_chirho as u64;
+                *fv_chirho.entry(morph_key_chirho).or_insert(0.0) += 4.0;
+
+                // Also add construct state as a separate feature
+                let state_key_chirho = MORPH_OFFSET_CHIRHO + 10_000 + morph_chirho.state_chirho as u64;
+                *fv_chirho.entry(state_key_chirho).or_insert(0.0) += 2.0;
+            }
+
             // Phrase features (weight 3.0)
             let mut phrase_stmt_chirho = conn_chirho.prepare_cached(
                 "SELECT language_code_chirho, phrase_id_chirho FROM gloss_phrase_chirho WHERE occurrence_id_chirho = ?1",
@@ -271,8 +297,8 @@ fn main() -> ResultChirho<()> {
             feature_vecs_chirho.push(fv_chirho);
         }
 
-        // Cap at 200 occurrences for clustering performance (sample if larger)
-        let max_cluster_chirho = 200;
+        // Cap at 500 occurrences for clustering performance (sample if larger)
+        let max_cluster_chirho = 500;
         let (clustered_word_ids_chirho, clustered_vecs_chirho) = if word_ids_chirho.len()
             > max_cluster_chirho
         {
@@ -291,9 +317,9 @@ fn main() -> ResultChirho<()> {
             (word_ids_chirho.clone(), feature_vecs_chirho.clone())
         };
 
-        // Cluster
+        // Cluster (threshold 0.45 — raised from 0.3 to prevent morphological over-splitting)
         let assignments_chirho =
-            cluster_agglomerative_chirho(&clustered_vecs_chirho, 0.3);
+            cluster_agglomerative_chirho(&clustered_vecs_chirho, 0.45);
 
         // Group into senses
         let mut sense_map_chirho: HashMap<usize, Vec<String>> = HashMap::new();

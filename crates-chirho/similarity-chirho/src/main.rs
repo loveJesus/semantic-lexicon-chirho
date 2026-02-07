@@ -23,15 +23,42 @@ struct EdgeChirho {
 }
 
 fn cosine_similarity_chirho(a_chirho: &FeatureVecChirho, b_chirho: &FeatureVecChirho) -> f64 {
+    // Early exit: if either vector is empty, similarity is 0
+    if a_chirho.is_empty() || b_chirho.is_empty() {
+        return 0.0;
+    }
+
     let mut dot_chirho = 0.0f64;
     let mut norm_a_chirho = 0.0f64;
     let mut norm_b_chirho = 0.0f64;
 
-    for (&key_chirho, &val_chirho) in a_chirho {
-        norm_a_chirho += val_chirho * val_chirho;
-        if let Some(&bval_chirho) = b_chirho.get(&key_chirho) {
-            dot_chirho += val_chirho * bval_chirho;
+    // Iterate over the smaller vector for dot product efficiency
+    let (small_chirho, large_chirho) = if a_chirho.len() <= b_chirho.len() {
+        (a_chirho, b_chirho)
+    } else {
+        (b_chirho, a_chirho)
+    };
+
+    let half_chirho = small_chirho.len() / 2;
+    let mut checked_chirho = 0usize;
+
+    for (&key_chirho, &val_chirho) in small_chirho {
+        if let Some(&other_val_chirho) = large_chirho.get(&key_chirho) {
+            dot_chirho += val_chirho * other_val_chirho;
         }
+        checked_chirho += 1;
+        // Early exit: if no overlap found after checking 50% of dimensions, skip
+        if checked_chirho == half_chirho && dot_chirho == 0.0 && half_chirho > 4 {
+            return 0.0;
+        }
+    }
+
+    if dot_chirho == 0.0 {
+        return 0.0;
+    }
+
+    for (_, &val_chirho) in a_chirho {
+        norm_a_chirho += val_chirho * val_chirho;
     }
     for (_, &val_chirho) in b_chirho {
         norm_b_chirho += val_chirho * val_chirho;
