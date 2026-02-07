@@ -1,0 +1,556 @@
+{
+  "headerChirho": "For God so loved the world that he gave his only begotten Son, that whoever believes in him should not perish but have eternal life.",
+  "projectNameChirho": "semantic-chirho",
+  "goalChirho": "Build a data-driven token → sense → domain pipeline that assigns every Hebrew/Aramaic/Greek word occurrence in Scripture to semantic senses and hierarchical domains, using multilingual translation signatures from 38+ parallel glossed translations.",
+  "northStarChirho": "Make every semantic/domain decision traceable to evidence (occurrences + alignments + context), and make every proposal testable with fast, repeatable queries.",
+  "databaseChirho": {
+    "typeChirho": "sqlite",
+    "pathChirho": "data-chirho/semantic-chirho.db",
+    "gitignoreChirho": true,
+    "noteChirho": "Base facts imported once from platform-chirho Postgres. All computation happens on local SQLite."
+  },
+  "envFileChirho": {
+    "pathChirho": ".env-chirho",
+    "gitignoreChirho": true,
+    "keysChirho": {
+      "PLATFORM_DB_URL_CHIRHO": "postgresql://postgres:asdfasdf@localhost:5435/postgres",
+      "SQLITE_PATH_CHIRHO": "./data-chirho/semantic-chirho.db",
+      "ANTHROPIC_API_KEY_CHIRHO": "sk-ant-...",
+      "LAMBDA_API_KEY_CHIRHO": "...",
+      "LAMBDA_INSTANCE_TYPE_CHIRHO": "gpu_1x_h200",
+      "FPGA_TARGET_CHIRHO": "kv260"
+    }
+  },
+  "techStackChirho": {
+    "orchestrationChirho": "Bun/TypeScript",
+    "hotPathChirho": "Rust (crates-chirho/ workspace)",
+    "webUiChirho": "SvelteKit 2 / Svelte 5 (apps-chirho/disambiguate-web-chirho/)",
+    "desktopUiChirho": "Slint + Rust (apps-chirho/disambiguate-desktop-chirho/, optional)",
+    "fpgaChirho": "Verilog/VHDL + Rust host (crates-chirho/fpga-kernels-chirho/, optional)",
+    "llmChirho": "Claude API via @anthropic-ai/sdk"
+  },
+  "hardwareChirho": {
+    "localChirho": "Apple M4 — GPU (Metal/MPS) + NPU (ANE) + unified memory",
+    "cloudGpuChirho": "Lambda.ai H200 (141GB HBM3e) — on-demand",
+    "localFpgaChirho": "AMD KV260 Kria — Zynq UltraScale+",
+    "cloudFpgaChirho": "AWS F2 instances — Xilinx FPGA"
+  },
+  "siblingProjectChirho": {
+    "nameChirho": "platform-chirho",
+    "pathChirho": "../platform-chirho/",
+    "sveltekitPathChirho": "../platform-chirho/sveltekit2-platform-chirho/",
+    "toolsPathChirho": "../platform-chirho/tools-chirho/",
+    "translationsPathChirho": "../platform-chirho/translations-chirho/",
+    "postgresPortChirho": 5435,
+    "dataChirho": {
+      "wordsChirho": 800000,
+      "lemmasChirho": 13000,
+      "languagesChirho": 38,
+      "translationSetsChirho": 1249
+    }
+  },
+  "loopsChirho": [
+    {
+      "loopIdChirho": "loop_1_chirho",
+      "nameChirho": "Project Setup + Schema + Import",
+      "phaseChirho": "1a",
+      "descriptionChirho": "Initialize project structure, create SQLite schema, import base facts from platform-chirho Postgres into local SQLite.",
+      "tasksChirho": [
+        {
+          "taskIdChirho": "1.1",
+          "titleChirho": "Initialize Bun project and .gitignore",
+          "descriptionChirho": "Create package.json with Bun, add .gitignore that excludes data-chirho/*.db, .env-chirho, node_modules, crates-chirho/target/. Add bun:sqlite and postgres as dependencies. Add @anthropic-ai/sdk for LLM calls. Add dotenv for .env-chirho loading.",
+          "outputChirho": "package.json, .gitignore",
+          "languageChirho": "Bun/TS"
+        },
+        {
+          "taskIdChirho": "1.2",
+          "titleChirho": "Create .env-chirho template",
+          "descriptionChirho": "Create .env-chirho with PLATFORM_DB_URL_CHIRHO, SQLITE_PATH_CHIRHO, ANTHROPIC_API_KEY_CHIRHO, LAMBDA_API_KEY_CHIRHO, FPGA_TARGET_CHIRHO. Add John 3:16 header comment. Ensure it is in .gitignore.",
+          "outputChirho": ".env-chirho",
+          "languageChirho": "env"
+        },
+        {
+          "taskIdChirho": "1.3",
+          "titleChirho": "Initialize Rust workspace",
+          "descriptionChirho": "Create crates-chirho/Cargo.toml as workspace root with members: core-chirho, materialize-chirho, cluster-chirho, entropy-chirho, similarity-chirho. Create crates-chirho/core-chirho/ crate with shared types: SQLite connection helper (reads SQLITE_PATH_CHIRHO from env), dictionary encoding (HashMap<String, u32>), common structs (WordChirho, LemmaChirho, GlossImportChirho). Add rusqlite, serde, serde_json, unicode-normalization, rayon as dependencies.",
+          "outputChirho": "crates-chirho/Cargo.toml, crates-chirho/core-chirho/",
+          "languageChirho": "Rust"
+        },
+        {
+          "taskIdChirho": "1.4",
+          "titleChirho": "Create SQLite schema migration",
+          "descriptionChirho": "Create migrations-chirho/0001-semantic-tables-chirho.sql with ALL tables: word_chirho, lemma_chirho, gloss_import_chirho (imported base facts), dictionary_chirho, gloss_phrase_chirho, gloss_part_chirho, gloss_head_chirho, gloss_alt_chirho, sense_chirho, sense_assignment_chirho, domain_chirho, domain_assignment_chirho, domain_ancestor_chirho, proposal_chirho, proposal_snapshot_chirho. Use INTEGER PRIMARY KEY AUTOINCREMENT for serial IDs. Use TEXT DEFAULT (datetime('now')) for timestamps. Add all indexes. Add John 3:16 SQL comment header.",
+          "outputChirho": "migrations-chirho/0001-semantic-tables-chirho.sql",
+          "languageChirho": "SQL"
+        },
+        {
+          "taskIdChirho": "1.5",
+          "titleChirho": "Create migrate tool",
+          "descriptionChirho": "Create tools-chirho/migrate-chirho.ts — reads SQLITE_PATH_CHIRHO from .env-chirho, creates data-chirho/ directory if needed, opens SQLite with WAL mode (PRAGMA journal_mode=WAL; PRAGMA synchronous=NORMAL;), applies all .sql files from migrations-chirho/ in order. Add as 'migrate-chirho' script in package.json.",
+          "outputChirho": "tools-chirho/migrate-chirho.ts",
+          "languageChirho": "Bun/TS"
+        },
+        {
+          "taskIdChirho": "1.6",
+          "titleChirho": "Create import-base-facts tool",
+          "descriptionChirho": "Create tools-chirho/import-base-facts-chirho.ts — connects to platform-chirho Postgres via PLATFORM_DB_URL_CHIRHO from .env-chirho. Queries word, lemma, language, phrase, phrase_word, gloss tables. Inserts snapshots into local SQLite: word_chirho (id, verse_id, lemma_id, surface, grammar, book, chapter, verse, position), lemma_chirho (id, gloss, pos), gloss_import_chirho (word_id, language_code, gloss_text, state). Use batch inserts (1000 rows per transaction). Log progress: total words imported, total glosses imported, languages found. Add as 'import-chirho' script in package.json.",
+          "outputChirho": "tools-chirho/import-base-facts-chirho.ts",
+          "languageChirho": "Bun/TS"
+        },
+        {
+          "taskIdChirho": "1.7",
+          "titleChirho": "Run migration and import",
+          "descriptionChirho": "Run 'bun run migrate-chirho' to create SQLite tables. Ensure platform-chirho Docker is running (docker compose up db-chirho in ../platform-chirho/sveltekit2-platform-chirho/). Run 'bun run import-chirho' to import base facts. Verify: SELECT COUNT(*) FROM word_chirho (expect ~800K), SELECT COUNT(*) FROM gloss_import_chirho (expect millions), SELECT DISTINCT language_code_chirho FROM gloss_import_chirho (expect 38+).",
+          "outputChirho": "data-chirho/semantic-chirho.db populated",
+          "languageChirho": "shell"
+        }
+      ],
+      "acceptanceCriteriaChirho": [
+        "package.json exists with correct dependencies",
+        "Rust workspace compiles (cargo check in crates-chirho/)",
+        "SQLite database created at data-chirho/semantic-chirho.db",
+        "All 15 tables created in SQLite",
+        "word_chirho has ~800K rows",
+        "gloss_import_chirho has data for 38+ languages",
+        "lemma_chirho has ~13K rows"
+      ]
+    },
+    {
+      "loopIdChirho": "loop_2_chirho",
+      "nameChirho": "Feature Materialization",
+      "phaseChirho": "1b",
+      "descriptionChirho": "Materialize GlossPhrase, GlossPart, GlossHead, GlossAlt tables from imported gloss data. This is the heaviest data processing step (~30M rows). Use Rust for performance.",
+      "dependsOnChirho": ["loop_1_chirho"],
+      "tasksChirho": [
+        {
+          "taskIdChirho": "2.1",
+          "titleChirho": "Build core-chirho Rust crate",
+          "descriptionChirho": "Implement crates-chirho/core-chirho/src/lib.rs with: (1) SQLite connection helper that reads SQLITE_PATH_CHIRHO env var, opens with WAL mode. (2) DictionaryEncoderChirho struct — maintains HashMap<String, u32> for encoding strings to integers, with encode_chirho(text) -> u32 method that inserts to dictionary_chirho table and caches in memory. (3) NormalizerChirho module — normalize_gloss_chirho(text) function that: applies NFKC Unicode normalization, maps all dash variants (en-dash U+2013, em-dash U+2014, minus U+2212) to ASCII hyphen U+002D, trims whitespace. (4) GlossSplitterChirho module — split_parts_chirho(text) splits on '-' returning Vec<String>, split_alts_chirho(text) splits on '|' returning Vec<String>, extract_head_chirho(parts) returns last part. All structs/functions follow Chirho naming. Add John 3:16 header comment.",
+          "outputChirho": "crates-chirho/core-chirho/src/lib.rs",
+          "languageChirho": "Rust"
+        },
+        {
+          "taskIdChirho": "2.2",
+          "titleChirho": "Build materialize-chirho Rust binary",
+          "descriptionChirho": "Create crates-chirho/materialize-chirho/src/main.rs — a binary that: (1) Opens SQLite from env. (2) Creates a DictionaryEncoderChirho. (3) Reads all rows from gloss_import_chirho in batches of 10000. (4) For each row: normalize the gloss text, dictionary-encode the full phrase → INSERT into gloss_phrase_chirho, split on '-' → INSERT each part into gloss_part_chirho with position, pick last part as head → INSERT into gloss_head_chirho, if '|' present split alts → INSERT into gloss_alt_chirho. (5) Use SQLite transactions (BEGIN/COMMIT every 10000 rows) for write throughput. (6) Print progress every 100K rows: '[materialize-chirho] 100000/30000000 rows processed'. (7) At end: flush all dictionary entries to dictionary_chirho table, print summary stats (total rows per table, unique dictionary entries, time elapsed). Target: process 30M rows in <5 minutes on M4.",
+          "outputChirho": "crates-chirho/materialize-chirho/src/main.rs",
+          "languageChirho": "Rust"
+        },
+        {
+          "taskIdChirho": "2.3",
+          "titleChirho": "Create Bun orchestrator for materialization",
+          "descriptionChirho": "Create tools-chirho/materialize-gloss-features-chirho.ts — Bun script that: (1) Loads .env-chirho, (2) Runs 'cargo build --release -p materialize-chirho' in crates-chirho/, (3) Spawns the Rust binary via Bun.spawn(), streams stdout/stderr to console, (4) After completion: queries SQLite for row counts in each feature table, prints summary. Add as 'materialize-chirho' script in package.json.",
+          "outputChirho": "tools-chirho/materialize-gloss-features-chirho.ts",
+          "languageChirho": "Bun/TS"
+        },
+        {
+          "taskIdChirho": "2.4",
+          "titleChirho": "Run materialization",
+          "descriptionChirho": "Run 'bun run materialize-chirho'. Verify results: SELECT COUNT(*) FROM gloss_phrase_chirho (expect ~30M), SELECT COUNT(*) FROM dictionary_chirho (expect 50K-200K), SELECT COUNT(*) FROM gloss_part_chirho, SELECT COUNT(*) FROM gloss_head_chirho. Spot-check: pick a known word (e.g. word_id '0100100101' for bereshit) and verify its phrase/part/head entries across multiple languages look correct.",
+          "outputChirho": "Populated feature tables in SQLite",
+          "languageChirho": "shell"
+        },
+        {
+          "taskIdChirho": "2.5",
+          "titleChirho": "Create gloss style validation tool",
+          "descriptionChirho": "Create tools-chirho/validate-glosses-chirho.ts — Bun script that scans gloss_import_chirho and flags: (1) Mixed dash types that weren't normalized (should be zero after materialization), (2) Glosses containing grammar markers (common patterns: articles, tense prefixes — language-specific heuristics), (3) Empty or whitespace-only glosses, (4) Extremely long glosses (>50 chars, likely sentences not glosses), (5) Inconsistent casing within same lemma across same language. Output report to output-chirho/reports-chirho/gloss-validation-chirho.json with counts and example rows per issue type.",
+          "outputChirho": "tools-chirho/validate-glosses-chirho.ts, output-chirho/reports-chirho/gloss-validation-chirho.json",
+          "languageChirho": "Bun/TS"
+        }
+      ],
+      "acceptanceCriteriaChirho": [
+        "Rust workspace compiles and materialize-chirho binary runs",
+        "gloss_phrase_chirho has ~30M rows",
+        "dictionary_chirho has 50K-200K unique encoded tokens",
+        "gloss_part_chirho, gloss_head_chirho populated",
+        "Materialization completes in <10 minutes on M4",
+        "Gloss validation report generated"
+      ]
+    },
+    {
+      "loopIdChirho": "loop_3_chirho",
+      "nameChirho": "Scorecard Queries",
+      "phaseChirho": "1c",
+      "descriptionChirho": "Implement the proposal scorecard — the set of evaluation queries that measure the quality of any sense/domain proposal. These are the metrics we optimize against in all subsequent phases.",
+      "dependsOnChirho": ["loop_2_chirho"],
+      "tasksChirho": [
+        {
+          "taskIdChirho": "3.1",
+          "titleChirho": "Create scorecard tool",
+          "descriptionChirho": "Create tools-chirho/scorecard-chirho.ts — Bun script that computes and prints all scorecard metrics. Implement these SQLite query functions: (1) coverageChirho(): SELECT COUNT(DISTINCT occurrence_id_chirho) FROM sense_assignment_chirho / total word count → percentage. (2) entropyPerSenseChirho(senseIdChirho, languageCodeChirho): For a given sense cluster and language, compute Shannon entropy of the phrase distribution: H = -Σ p(phrase) * log2(p(phrase)). Query: group gloss_phrase_chirho by phrase_id_chirho for all occurrences in that sense, compute frequency distribution, then entropy. (3) avgSenseCoherenceChirho(): Average entropy across all senses and all languages — lower is better. (4) coherencePerDomainChirho(domainIdChirho): Average intra-domain sense similarity. (5) separationChirho(): Inter-domain distinctness — average distance between domain centroid feature vectors. (6) violationCountChirho(proposalIdChirho): Count hierarchy violations (sense in child domain but not ancestor), POS violations. (7) crossLangConsistencyChirho(): For each sense, can its domain predict translation choices? Measured as avg conditional entropy H(phrase|domain,lang) vs H(phrase|lang). Output: JSON scorecard to stdout and optionally to output-chirho/scorecards-chirho/. Add as 'scorecard-chirho' script in package.json.",
+          "outputChirho": "tools-chirho/scorecard-chirho.ts",
+          "languageChirho": "Bun/TS"
+        },
+        {
+          "taskIdChirho": "3.2",
+          "titleChirho": "Test scorecard on sample data",
+          "descriptionChirho": "Run scorecard on current state (before sense induction — coverage should be 0%). Manually insert a few test sense assignments for a well-known polysemous lemma (e.g., Hebrew 'dabar' דבר — word/thing/matter) to verify entropy computation works. Benchmark: all scorecard queries should complete in <5 seconds on M4 for any single lemma, <60 seconds for full corpus.",
+          "outputChirho": "Verified scorecard with test data",
+          "languageChirho": "shell"
+        }
+      ],
+      "acceptanceCriteriaChirho": [
+        "All 7 scorecard metrics implemented and returning results",
+        "Entropy computation verified against manual calculation",
+        "Full-corpus scorecard runs in <60 seconds on M4",
+        "Per-lemma scorecard runs in <5 seconds",
+        "Output format is clean JSON"
+      ]
+    },
+    {
+      "loopIdChirho": "loop_4_chirho",
+      "nameChirho": "Sense Induction",
+      "phaseChirho": "2",
+      "descriptionChirho": "For each lemma, cluster its occurrences into senses using translation signatures. This is the core algorithm. Use Rust for the hot-path computation (feature vectors, cosine similarity, HDBSCAN). Use Bun/TS + Claude API for sense labeling.",
+      "dependsOnChirho": ["loop_3_chirho"],
+      "tasksChirho": [
+        {
+          "taskIdChirho": "4.1",
+          "titleChirho": "Build cluster-chirho Rust crate",
+          "descriptionChirho": "Create crates-chirho/cluster-chirho/src/main.rs — binary that: (1) Opens SQLite. (2) For each lemma_id in lemma_chirho: (a) Collect all occurrence IDs from word_chirho WHERE lemma_id_chirho = current lemma. (b) For each occurrence, build a sparse weighted feature vector from gloss_phrase_chirho (weight 3.0), gloss_head_chirho (weight 2.0), gloss_part_chirho (weight 1.0). Features are (language_code, encoded_id) pairs encoded as a single u64 key. (c) If lemma has ≤1 occurrence: assign single sense, write to stdout as JSON. (d) If ≤5 occurrences: assign single sense (defer to human review). (e) Otherwise: compute pairwise cosine similarity matrix between all occurrence vectors. Run HDBSCAN with min_cluster_size=2, min_samples=1. Noise points get their own singleton sense. (3) Output JSON lines to stdout: one object per lemma with { lemmaIdChirho, sensesChirho: [{ senseIndexChirho, occurrenceIdsChirho: [...], methodChirho: 'hdbscan' }] }. (4) Use rayon for parallel iteration across lemmas. Target: cluster all 13K lemmas in <10 minutes on M4. Add linfa, linfa-clustering, ndarray to Cargo.toml dependencies.",
+          "outputChirho": "crates-chirho/cluster-chirho/src/main.rs",
+          "languageChirho": "Rust"
+        },
+        {
+          "taskIdChirho": "4.2",
+          "titleChirho": "Create Bun orchestrator for clustering",
+          "descriptionChirho": "Create tools-chirho/cluster-senses-chirho.ts — Bun script that: (1) Builds Rust binary (cargo build --release -p cluster-chirho). (2) Spawns it, captures JSON-lines stdout. (3) For each lemma result: INSERT into sense_chirho (one row per cluster), INSERT into sense_assignment_chirho (one row per occurrence). (4) Print summary: total lemmas processed, total senses created, average senses per lemma, distribution (1-sense, 2-sense, 3+sense counts). Add as 'cluster-chirho' script in package.json.",
+          "outputChirho": "tools-chirho/cluster-senses-chirho.ts",
+          "languageChirho": "Bun/TS"
+        },
+        {
+          "taskIdChirho": "4.3",
+          "titleChirho": "Build entropy-chirho Rust crate for validation",
+          "descriptionChirho": "Create crates-chirho/entropy-chirho/src/main.rs — binary that: (1) Opens SQLite. (2) For each sense in sense_chirho: for each language in distinct languages: compute phrase distribution P(phrase_id | sense, lang) from gloss_phrase_chirho JOIN sense_assignment_chirho, compute Shannon entropy H. (3) Output JSON lines: { senseIdChirho, lemmaIdChirho, entropyByLangChirho: { spa: 0.45, fra: 0.32, ... }, avgEntropyChirho, occurrenceCountChirho }. (4) Flag senses where avgEntropyChirho > threshold (e.g., 1.5 bits) in ≥3 languages as 'split_candidate_chirho'. (5) Flag pairs of senses from the same lemma with very similar distributions (cosine similarity > 0.95) as 'merge_candidate_chirho'. Use rayon for parallelism.",
+          "outputChirho": "crates-chirho/entropy-chirho/src/main.rs",
+          "languageChirho": "Rust"
+        },
+        {
+          "taskIdChirho": "4.4",
+          "titleChirho": "Create sense validation orchestrator",
+          "descriptionChirho": "Create tools-chirho/validate-senses-chirho.ts — Bun script that: (1) Runs entropy-chirho binary. (2) Collects split/merge candidates. (3) For split candidates: re-run clustering with stricter parameters (higher min_cluster_size). (4) For merge candidates: merge sense rows in SQLite, update sense_assignment_chirho. (5) Iterate until no more split/merge candidates (or max 5 iterations). (6) Print final stats: total senses, split/merge actions taken per iteration, final avg entropy. Add as 'validate-senses-chirho' script in package.json.",
+          "outputChirho": "tools-chirho/validate-senses-chirho.ts",
+          "languageChirho": "Bun/TS"
+        },
+        {
+          "taskIdChirho": "4.5",
+          "titleChirho": "Run clustering + validation",
+          "descriptionChirho": "Run 'bun run cluster-chirho' then 'bun run validate-senses-chirho'. Verify: SELECT COUNT(*) FROM sense_chirho (expect 20K-40K), SELECT COUNT(*) FROM sense_assignment_chirho (expect ~800K, one per word), run scorecard to verify coverage > 95%. Spot-check: query a polysemous lemma like 'dabar' and verify its senses look reasonable (different clusters should have different dominant glosses).",
+          "outputChirho": "Populated sense tables in SQLite",
+          "languageChirho": "shell"
+        },
+        {
+          "taskIdChirho": "4.6",
+          "titleChirho": "Create LLM sense labeling tool",
+          "descriptionChirho": "Create tools-chirho/label-senses-chirho.ts — Bun script that: (1) Loads ANTHROPIC_API_KEY_CHIRHO from .env-chirho. (2) For each sense in sense_chirho WHERE label_chirho IS NULL: (a) Gather top-5 representative occurrences (highest confidence). (b) For each occurrence, get glosses in 6 diverse languages: English, Spanish, Mandarin, Hindi, Arabic, Swahili. (c) Get the lemma's base gloss and POS. (d) Prompt Claude (claude-sonnet-4-5-20250929 for cost efficiency): 'Given this Hebrew/Greek lemma [X] with POS [Y], and these occurrences with glosses in 6 languages: [data]. Generate a concise sense label (2-5 words) and one-sentence description for this word sense.' (e) Parse response, UPDATE sense_chirho SET label_chirho = ..., description_chirho = ..., cluster_method_chirho = existing || '+llm_label'. (3) Rate limit: 50 requests/minute. Batch in groups of 20 with Promise.all. (4) Print progress every 100 senses. Add as 'label-senses-chirho' script in package.json.",
+          "outputChirho": "tools-chirho/label-senses-chirho.ts",
+          "languageChirho": "Bun/TS"
+        }
+      ],
+      "acceptanceCriteriaChirho": [
+        "sense_chirho has 20K-40K rows",
+        "sense_assignment_chirho has ~800K rows (one per word)",
+        "Cross-language entropy within clusters is measurably lower than across clusters",
+        "Validation loop converges (no more split/merge candidates)",
+        "Sense labels exist for all clusters",
+        "Scorecard coverage > 95%",
+        "Clustering completes in <15 minutes on M4"
+      ]
+    },
+    {
+      "loopIdChirho": "loop_5_chirho",
+      "nameChirho": "Domain Ontology + Assignment",
+      "phaseChirho": "3",
+      "descriptionChirho": "Build a hierarchical domain ontology and assign each sense to domain(s). Seed from SIL open domains, then use data-driven community detection to propose fine domains.",
+      "dependsOnChirho": ["loop_4_chirho"],
+      "tasksChirho": [
+        {
+          "taskIdChirho": "5.1",
+          "titleChirho": "Create domain seeding tool",
+          "descriptionChirho": "Create tools-chirho/seed-domains-chirho.ts — Bun script that: (1) Inserts supersense domains (level_chirho=0) into domain_chirho. Use this initial set of ~20 supersenses: PERSON, BODY, LOCATION, ARTIFACT, FOOD_DRINK, ANIMAL, PLANT, NATURAL_WORLD, TIME, EVENT, ACTION, SPEECH, COGNITION, EMOTION, MORAL, SOCIAL, AUTHORITY, WORSHIP, SUPERNATURAL, QUANTITY. Each with a description and elicitation question. (2) Optionally: download SIL semantic domains (CC BY-SA 4.0) and insert as level_chirho=1 fine domains under matching supersenses. (3) Compute and insert transitive closure into domain_ancestor_chirho. (4) Print summary: total domains, domains per supersense. Add as 'seed-domains-chirho' script in package.json.",
+          "outputChirho": "tools-chirho/seed-domains-chirho.ts",
+          "languageChirho": "Bun/TS"
+        },
+        {
+          "taskIdChirho": "5.2",
+          "titleChirho": "Build similarity-chirho Rust crate",
+          "descriptionChirho": "Create crates-chirho/similarity-chirho/src/main.rs — binary that: (1) Opens SQLite. (2) For each sense in sense_chirho: build a prototype feature vector by averaging (weighted) the feature vectors of all its member occurrences. (3) Compute pairwise cosine similarity between all sense prototypes. (4) Output as edge list JSON lines: { senseAChirho, senseBChirho, similarityChirho } for all pairs where similarity > 0.1 (sparsify). (5) Use rayon for parallel similarity computation. (6) For large sense counts (>10K): use approximate nearest neighbor (ANN) to avoid O(n^2). Consider offloading to M4 Metal GPU if matrix is large enough to benefit. Target: complete in <20 minutes on M4.",
+          "outputChirho": "crates-chirho/similarity-chirho/src/main.rs",
+          "languageChirho": "Rust"
+        },
+        {
+          "taskIdChirho": "5.3",
+          "titleChirho": "Create community detection tool",
+          "descriptionChirho": "Create tools-chirho/detect-domains-chirho.ts — Bun script that: (1) Builds and runs similarity-chirho Rust binary, captures edge list. (2) Runs Louvain or Leiden community detection on the sense similarity graph. Can use a JS implementation (e.g., graphology + graphology-communities-louvain) or call a Rust implementation. (3) Each community becomes a candidate fine domain (level_chirho=1). (4) For each community: find the nearest supersense by checking which supersense has the most member senses already assigned (or by feature similarity to supersense prototypes). Assign parent_id_chirho accordingly. (5) INSERT new fine domains into domain_chirho. (6) Recompute domain_ancestor_chirho transitive closure. (7) Print summary: number of fine domains, distribution across supersenses. Add as 'detect-domains-chirho' script in package.json.",
+          "outputChirho": "tools-chirho/detect-domains-chirho.ts",
+          "languageChirho": "Bun/TS"
+        },
+        {
+          "taskIdChirho": "5.4",
+          "titleChirho": "Create domain assignment tool",
+          "descriptionChirho": "Create tools-chirho/assign-domains-chirho.ts — Bun script that: (1) For each sense in sense_chirho: compute fit_score_chirho against each candidate domain using: similarity between sense prototype and domain centroid (weight 0.6), POS compatibility (weight 0.2), community membership from detection step (weight 0.2). (2) Assign each sense to its best-fit domain (and optionally second-best if fit_score > 0.5). INSERT into domain_assignment_chirho. (3) Apply constraints: hierarchy closure (if sense is in fine domain, also in supersense parent), POS constraints (event senses shouldn't be in ARTIFACT domain, etc.). (4) Greedy repair for violations: reassign violating senses to next-best domain. (5) Print summary: senses assigned, multi-label count, violation count before/after repair. Add as 'assign-domains-chirho' script in package.json.",
+          "outputChirho": "tools-chirho/assign-domains-chirho.ts",
+          "languageChirho": "Bun/TS"
+        },
+        {
+          "taskIdChirho": "5.5",
+          "titleChirho": "Score and save proposal",
+          "descriptionChirho": "Run 'bun run scorecard-chirho' on the current state. INSERT result into proposal_chirho with name 'v1-auto-chirho'. Snapshot all current sense→domain assignments into proposal_snapshot_chirho. Compare against a random-assignment baseline (create a second proposal with random domain assignments, score it, verify our proposal is measurably better on all metrics).",
+          "outputChirho": "Scored proposal in proposal_chirho",
+          "languageChirho": "shell"
+        },
+        {
+          "taskIdChirho": "5.6",
+          "titleChirho": "Create LLM domain naming tool",
+          "descriptionChirho": "Create tools-chirho/label-domains-chirho.ts — Bun script that: (1) For each domain in domain_chirho WHERE description_chirho IS NULL: (a) Gather the top-10 member senses (by fit_score). (b) For each sense, include its label and representative glosses in 4 languages. (c) Prompt Claude: 'Given these word senses grouped together: [data]. Generate: a concise domain name (2-4 words), a one-sentence description, and an elicitation question (what question would a translator ask to identify words in this domain?).' (d) UPDATE domain_chirho SET name_chirho, description_chirho, elicitation_chirho. (2) Rate limit: 50 req/min. Add as 'label-domains-chirho' script in package.json.",
+          "outputChirho": "tools-chirho/label-domains-chirho.ts",
+          "languageChirho": "Bun/TS"
+        }
+      ],
+      "acceptanceCriteriaChirho": [
+        "domain_chirho has 15-30 supersenses and 200-800 fine domains",
+        "Every sense assigned to at least 1 domain",
+        "Scorecard shows measurable improvement over random baseline on all metrics",
+        "Constraint violations < 5% of assignments",
+        "All domains have names, descriptions, and elicitation questions",
+        "Proposal saved and scored"
+      ]
+    },
+    {
+      "loopIdChirho": "loop_6_chirho",
+      "nameChirho": "Disambiguation Web UI",
+      "phaseChirho": "4a",
+      "descriptionChirho": "Build a SvelteKit 2 web application for human disambiguation and review. Reads/writes the local SQLite database. Provides views for exploring lemmas, senses, domains, and working through a review queue.",
+      "dependsOnChirho": ["loop_5_chirho"],
+      "tasksChirho": [
+        {
+          "taskIdChirho": "6.1",
+          "titleChirho": "Initialize SvelteKit 2 app",
+          "descriptionChirho": "Create apps-chirho/disambiguate-web-chirho/ as a SvelteKit 2 + Svelte 5 project using Bun. Add better-sqlite3 for SQLite access in server routes. Add Tailwind CSS. Configure to read SQLITE_PATH_CHIRHO from .env-chirho. Create a shared server lib at src/lib/server/db-chirho.ts that opens the SQLite database with WAL mode and exports query helpers.",
+          "outputChirho": "apps-chirho/disambiguate-web-chirho/",
+          "languageChirho": "SvelteKit/TS"
+        },
+        {
+          "taskIdChirho": "6.2",
+          "titleChirho": "Build Lemma Explorer view",
+          "descriptionChirho": "Create route: src/routes/lemma-chirho/[lemma_id_chirho]/+page.svelte and +page.server.ts. Shows: lemma surface form, POS, all senses for this lemma (sense_chirho rows), each sense with its label, occurrence count, avg entropy. For each sense: expandable list of occurrences with their glosses in a configurable set of languages (default: eng, spa, zho, hin, arb, swa). Allow actions: drag-and-drop occurrences between senses to reassign, button to split a sense, button to merge two senses. Actions POST to server endpoints that update sense_assignment_chirho in SQLite.",
+          "outputChirho": "Lemma explorer route",
+          "languageChirho": "SvelteKit/TS"
+        },
+        {
+          "taskIdChirho": "6.3",
+          "titleChirho": "Build Domain Browser view",
+          "descriptionChirho": "Create route: src/routes/domain-chirho/[domain_id_chirho]/+page.svelte and +page.server.ts. Shows: domain hierarchy as a tree (supersenses → fine domains), member senses for selected domain with fit scores, sense details with representative glosses. Allow actions: reassign senses to different domains, split/merge domains. Also create src/routes/domain-chirho/+page.svelte as a tree browser showing all domains with sense counts.",
+          "outputChirho": "Domain browser route",
+          "languageChirho": "SvelteKit/TS"
+        },
+        {
+          "taskIdChirho": "6.4",
+          "titleChirho": "Build Review Queue view",
+          "descriptionChirho": "Create route: src/routes/review-chirho/queue-chirho/+page.svelte and +page.server.ts. Shows: prioritized list of lemmas/senses needing review, sorted by uncertainty (high entropy, low confidence, multiple plausible domains). Each item shows: lemma, current sense clusters, entropy values, suggested action (split/merge/reassign). Click to navigate to Lemma Explorer for that lemma. Track reviewed status in a review_log_chirho SQLite table.",
+          "outputChirho": "Review queue route",
+          "languageChirho": "SvelteKit/TS"
+        },
+        {
+          "taskIdChirho": "6.5",
+          "titleChirho": "Build Scorecard Dashboard view",
+          "descriptionChirho": "Create route: src/routes/scorecard-chirho/+page.svelte and +page.server.ts. Shows: all 7 scorecard metrics as cards with current values. If multiple proposals exist, show side-by-side comparison. Include charts: entropy distribution histogram, domain size distribution, coverage progress bar. Refreshes on demand (button to recompute scorecard).",
+          "outputChirho": "Scorecard dashboard route",
+          "languageChirho": "SvelteKit/TS"
+        },
+        {
+          "taskIdChirho": "6.6",
+          "titleChirho": "Build Verse Context view",
+          "descriptionChirho": "Create route: src/routes/verse-chirho/[verse_id_chirho]/+page.svelte and +page.server.ts. Shows: a verse with all words in original language, each word's current sense (color-coded), domain assignment, and glosses in selected languages below. Click on any word to jump to its Lemma Explorer. Provides in-context disambiguation — see how all words in a verse relate semantically.",
+          "outputChirho": "Verse context route",
+          "languageChirho": "SvelteKit/TS"
+        }
+      ],
+      "acceptanceCriteriaChirho": [
+        "SvelteKit app runs locally with 'bun run dev'",
+        "Lemma Explorer shows senses with occurrence lists and glosses",
+        "Domain Browser shows hierarchy tree with sense members",
+        "Review Queue shows prioritized items sorted by uncertainty",
+        "Scorecard Dashboard shows all 7 metrics",
+        "Verse Context shows color-coded sense/domain per word",
+        "Sense reassignment via UI persists to SQLite"
+      ]
+    },
+    {
+      "loopIdChirho": "loop_7_chirho",
+      "nameChirho": "Active Learning + Review",
+      "phaseChirho": "4b",
+      "descriptionChirho": "Implement active learning prioritization and run the first human review cycle. Measure scorecard improvement.",
+      "dependsOnChirho": ["loop_6_chirho"],
+      "tasksChirho": [
+        {
+          "taskIdChirho": "7.1",
+          "titleChirho": "Create active learning prioritization tool",
+          "descriptionChirho": "Create tools-chirho/prioritize-review-chirho.ts — Bun script that: (1) For each lemma: compute uncertainty score = weighted sum of: avg cross-language entropy (0.4), max single-language entropy (0.2), number of senses with avg confidence < 0.7 (0.2), number of domain assignment ties (0.2). (2) Rank lemmas by uncertainty score descending. (3) Write top-500 to a review_queue_chirho table in SQLite with columns: lemma_id_chirho, uncertainty_score_chirho, reason_chirho (which factor(s) drove the score), reviewed_chirho (boolean, default false). (4) Print top-20 to stdout for quick inspection. Add as 'prioritize-chirho' script in package.json.",
+          "outputChirho": "tools-chirho/prioritize-review-chirho.ts",
+          "languageChirho": "Bun/TS"
+        },
+        {
+          "taskIdChirho": "7.2",
+          "titleChirho": "Review top-100 lemmas",
+          "descriptionChirho": "Using the disambiguate-web-chirho UI, work through the top-100 most uncertain lemmas from the review queue. For each: verify sense clusters are correct (split/merge as needed), verify domain assignments, approve or correct labels. Mark as reviewed in review_queue_chirho.",
+          "outputChirho": "100 reviewed lemmas",
+          "languageChirho": "manual"
+        },
+        {
+          "taskIdChirho": "7.3",
+          "titleChirho": "Re-score and measure improvement",
+          "descriptionChirho": "Run 'bun run scorecard-chirho' after review. Save as proposal 'v2-reviewed-chirho'. Compare v1-auto-chirho vs v2-reviewed-chirho: expect measurable improvement in coherence and human agreement metrics. Print delta for each metric.",
+          "outputChirho": "Comparative scorecard",
+          "languageChirho": "shell"
+        }
+      ],
+      "acceptanceCriteriaChirho": [
+        "Review queue populated with uncertainty-ranked lemmas",
+        "Top-100 lemmas reviewed",
+        "Measurable scorecard improvement after review",
+        "Review corrections persisted in SQLite"
+      ]
+    },
+    {
+      "loopIdChirho": "loop_8_chirho",
+      "nameChirho": "Export + Evaluation",
+      "phaseChirho": "5",
+      "descriptionChirho": "Export deliverables in multiple formats. Validate quality against open baselines. Run cross-validation.",
+      "dependsOnChirho": ["loop_5_chirho"],
+      "tasksChirho": [
+        {
+          "taskIdChirho": "8.1",
+          "titleChirho": "Create export tool",
+          "descriptionChirho": "Create tools-chirho/export-domains-chirho.ts — Bun script that exports the full ontology in multiple formats: (1) JSON: { domainsChirho: [...hierarchy...], sensesChirho: [...with occurrences and glosses...], proposalChirho: {...scorecard...} } to output-chirho/exports-chirho/ontology-chirho.json. (2) SQL: pg_dump-compatible INSERT statements for all semantic tables to output-chirho/exports-chirho/ontology-chirho.sql. (3) CSV: separate files for domains, senses, assignments, with headers, to output-chirho/exports-chirho/csv-chirho/. (4) TSV for spreadsheet import. Each export includes John 3:16 header. Add as 'export-chirho' script in package.json.",
+          "outputChirho": "tools-chirho/export-domains-chirho.ts, output-chirho/exports-chirho/",
+          "languageChirho": "Bun/TS"
+        },
+        {
+          "taskIdChirho": "8.2",
+          "titleChirho": "Import baseline comparison data",
+          "descriptionChirho": "Create tools-chirho/import-baselines-chirho.ts — Bun script that: (1) Downloads SIL semantic domains (CC BY-SA 4.0) if available as structured data. (2) Downloads UBS open lexical semantic domain data if available. (3) Imports into comparison tables in SQLite: baseline_domain_chirho, baseline_assignment_chirho. (4) If direct download not available, create manual seed from documentation.",
+          "outputChirho": "tools-chirho/import-baselines-chirho.ts",
+          "languageChirho": "Bun/TS"
+        },
+        {
+          "taskIdChirho": "8.3",
+          "titleChirho": "Create evaluation tool",
+          "descriptionChirho": "Create tools-chirho/evaluate-chirho.ts — Bun script that: (1) Computes Adjusted Rand Index (ARI) between our sense clusters and baseline sense groupings. (2) Computes Normalized Mutual Information (NMI) between our domains and baseline domains. (3) Runs cross-validation: hold out 2 languages (e.g., Korean, Hausa — one East Asian, one African), re-run clustering on remaining 36 languages, test if held-out language glosses are more consistent within our sense clusters than across (measured by conditional entropy reduction). (4) Print full evaluation report. (5) Save to output-chirho/reports-chirho/evaluation-chirho.json. Add as 'evaluate-chirho' script in package.json.",
+          "outputChirho": "tools-chirho/evaluate-chirho.ts, output-chirho/reports-chirho/evaluation-chirho.json",
+          "languageChirho": "Bun/TS"
+        }
+      ],
+      "acceptanceCriteriaChirho": [
+        "JSON, SQL, CSV exports generated successfully",
+        "Agreement with baselines measurably above random",
+        "Held-out language prediction accuracy > 60%",
+        "Full evaluation report generated",
+        "All exports include provenance and licensing info (CC BY-SA 4.0)"
+      ]
+    },
+    {
+      "loopIdChirho": "loop_9_chirho",
+      "nameChirho": "FPGA Experiments",
+      "phaseChirho": "bonus",
+      "descriptionChirho": "Optional learning + acceleration loop. Build custom FPGA kernels for relational operations on the KV260 and/or AWS F2. Focus on columnar scan, sort-merge join, and group-by aggregation — the building blocks for high-speed scorecard evaluation.",
+      "dependsOnChirho": ["loop_3_chirho"],
+      "optionalChirho": true,
+      "tasksChirho": [
+        {
+          "taskIdChirho": "9.1",
+          "titleChirho": "Set up FPGA development environment",
+          "descriptionChirho": "Set up Xilinx/AMD Vivado for KV260 development. Create crates-chirho/fpga-kernels-chirho/ crate with Rust host-side driver (uses rusqlite to read data, sends to FPGA via AXI/DMA). Create hdl-chirho/ directory for Verilog/VHDL source files. Document setup steps in spec-chirho/fpga-setup-chirho.md.",
+          "outputChirho": "crates-chirho/fpga-kernels-chirho/, hdl-chirho/",
+          "languageChirho": "Rust + Verilog"
+        },
+        {
+          "taskIdChirho": "9.2",
+          "titleChirho": "Implement columnar scan + filter kernel",
+          "descriptionChirho": "Create hdl-chirho/scan-filter-chirho.v — Verilog module that: reads a stream of integer-encoded column data, applies a predicate (equality, range), outputs matching rows. Test with dictionary_chirho data on KV260. Benchmark vs SQLite.",
+          "outputChirho": "hdl-chirho/scan-filter-chirho.v",
+          "languageChirho": "Verilog"
+        },
+        {
+          "taskIdChirho": "9.3",
+          "titleChirho": "Implement sort-merge join kernel",
+          "descriptionChirho": "Create hdl-chirho/merge-join-chirho.v — Verilog module that: takes two sorted streams of (key, payload) tuples, outputs joined results. Test with gloss_phrase_chirho JOIN sense_assignment_chirho on occurrence_id. Benchmark vs SQLite.",
+          "outputChirho": "hdl-chirho/merge-join-chirho.v",
+          "languageChirho": "Verilog"
+        },
+        {
+          "taskIdChirho": "9.4",
+          "titleChirho": "Implement group-by aggregation kernel",
+          "descriptionChirho": "Create hdl-chirho/group-agg-chirho.v — Verilog module that: takes a sorted stream of (group_key, value) tuples, outputs (group_key, count, sum). Test with entropy pre-computation: group by (sense_id, language, phrase_id), output counts. Benchmark vs SQLite.",
+          "outputChirho": "hdl-chirho/group-agg-chirho.v",
+          "languageChirho": "Verilog"
+        },
+        {
+          "taskIdChirho": "9.5",
+          "titleChirho": "Chain kernels for full scorecard evaluation",
+          "descriptionChirho": "Create hdl-chirho/scorecard-pipeline-chirho.v — chains scan-filter → merge-join → group-agg into a streaming pipeline. Host driver (Rust) loads data from SQLite into FPGA memory, triggers pipeline, reads results. Compute one full scorecard metric (e.g., entropy per sense per language) entirely on FPGA. Compare latency and throughput vs pure SQLite. Document results in spec-chirho/fpga-benchmark-chirho.md.",
+          "outputChirho": "hdl-chirho/scorecard-pipeline-chirho.v, spec-chirho/fpga-benchmark-chirho.md",
+          "languageChirho": "Verilog + Rust"
+        }
+      ],
+      "acceptanceCriteriaChirho": [
+        "At least one kernel synthesizes and runs on KV260",
+        "Benchmark comparison documented",
+        "Lessons learned documented in spec-chirho/fpga-benchmark-chirho.md"
+      ]
+    },
+    {
+      "loopIdChirho": "loop_10_chirho",
+      "nameChirho": "Slint Desktop App",
+      "phaseChirho": "bonus",
+      "descriptionChirho": "Optional. Build a native Rust + Slint desktop application for power-user disambiguation workflow. Direct SQLite access with zero network latency. Can compile to WASM for web embedding.",
+      "dependsOnChirho": ["loop_5_chirho"],
+      "optionalChirho": true,
+      "tasksChirho": [
+        {
+          "taskIdChirho": "10.1",
+          "titleChirho": "Initialize Slint desktop app",
+          "descriptionChirho": "Create apps-chirho/disambiguate-desktop-chirho/ with Cargo.toml depending on slint, rusqlite, core-chirho. Create main.rs with SQLite connection and basic Slint window. Create ui-chirho/ directory for .slint UI definition files.",
+          "outputChirho": "apps-chirho/disambiguate-desktop-chirho/",
+          "languageChirho": "Rust + Slint"
+        },
+        {
+          "taskIdChirho": "10.2",
+          "titleChirho": "Build Lemma Explorer in Slint",
+          "descriptionChirho": "Create ui-chirho/lemma-explorer-chirho.slint — shows lemma with sense clusters, occurrence list with glosses, allows reassignment. Rust backend queries SQLite directly. Native M4 performance.",
+          "outputChirho": "Lemma explorer UI",
+          "languageChirho": "Rust + Slint"
+        },
+        {
+          "taskIdChirho": "10.3",
+          "titleChirho": "Build Domain Tree in Slint",
+          "descriptionChirho": "Create ui-chirho/domain-tree-chirho.slint — shows domain hierarchy as a collapsible tree, member senses per domain, allows drag-and-drop reassignment.",
+          "outputChirho": "Domain tree UI",
+          "languageChirho": "Rust + Slint"
+        }
+      ],
+      "acceptanceCriteriaChirho": [
+        "Desktop app compiles and runs on M4 macOS",
+        "Can browse lemmas, senses, and domains",
+        "Reassignment persists to SQLite"
+      ]
+    }
+  ],
+  "globalAcceptanceCriteriaChirho": {
+    "featureTableRowsChirho": "~30M in gloss_phrase_chirho",
+    "sensesInducedChirho": "20K-40K total sense clusters",
+    "entropyReductionChirho": ">30% reduction within vs across senses",
+    "domainsCreatedChirho": "15-30 supersenses + 200-800 fine domains",
+    "coverageChirho": ">95% of occurrences with sense+domain",
+    "humanAgreementChirho": ">80% on reviewed samples",
+    "baselineComparisonChirho": "Agreement with UBS/SIL above random",
+    "traceabilityChirho": "100% of assignments have evidence trail"
+  },
+  "licensingChirho": {
+    "codeChirho": "MIT",
+    "ontologyOutputChirho": "CC BY-SA 4.0",
+    "noLouwNidaDependencyChirho": true,
+    "provenanceTrailChirho": true
+  }
+}

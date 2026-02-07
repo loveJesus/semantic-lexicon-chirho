@@ -1,0 +1,45 @@
+# For God so loved the world that he gave his only begotten Son, that whoever believes in him should not perish but have eternal life.
+
+# Secrets
+.env-chirho
+.env
+.env.*
+
+# Local SQLite database
+data-chirho/*.db
+data-chirho/*.db-wal
+data-chirho/*.db-shm
+
+# Dependencies
+node_modules/
+bun.lock
+
+# Rust build artifacts
+crates-chirho/target/
+
+# OS files
+.DS_Store
+
+# IDE
+.vscode/
+.idea/
+
+# Build outputs (keep structure, ignore generated content)
+output-chirho/scorecards-chirho/*.json
+output-chirho/exports-chirho/*.json
+output-chirho/exports-chirho/*.sql
+output-chirho/exports-chirho/*.csv
+output-chirho/exports-chirho/csv-chirho/
+output-chirho/reports-chirho/*.json
+
+# SvelteKit build
+apps-chirho/disambiguate-web-chirho/.svelte-kit/
+apps-chirho/disambiguate-web-chirho/build/
+apps-chirho/disambiguate-web-chirho/node_modules/
+
+# Slint desktop build
+apps-chirho/disambiguate-desktop-chirho/target/
+
+# FPGA synthesis artifacts
+crates-chirho/fpga-kernels-chirho/hdl-chirho/*.bit
+crates-chirho/fpga-kernels-chirho/hdl-chirho/vivado_project/

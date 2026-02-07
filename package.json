@@ -1,0 +1,31 @@
+{
+  "name": "semantic-chirho",
+  "version": "0.1.0",
+  "description": "Semantic domain mapping pipeline for Bible translations — token → sense → domain",
+  "type": "module",
+  "scripts": {
+    "migrate-chirho": "bun run tools-chirho/migrate-chirho.ts",
+    "import-chirho": "bun run tools-chirho/import-base-facts-chirho.ts",
+    "materialize-chirho": "bun run tools-chirho/materialize-gloss-features-chirho.ts",
+    "validate-glosses-chirho": "bun run tools-chirho/validate-glosses-chirho.ts",
+    "scorecard-chirho": "bun run tools-chirho/scorecard-chirho.ts",
+    "cluster-chirho": "bun run tools-chirho/cluster-senses-chirho.ts",
+    "validate-senses-chirho": "bun run tools-chirho/validate-senses-chirho.ts",
+    "label-senses-chirho": "bun run tools-chirho/label-senses-chirho.ts",
+    "seed-domains-chirho": "bun run tools-chirho/seed-domains-chirho.ts",
+    "detect-domains-chirho": "bun run tools-chirho/detect-domains-chirho.ts",
+    "assign-domains-chirho": "bun run tools-chirho/assign-domains-chirho.ts",
+    "label-domains-chirho": "bun run tools-chirho/label-domains-chirho.ts",
+    "prioritize-chirho": "bun run tools-chirho/prioritize-review-chirho.ts",
+    "export-chirho": "bun run tools-chirho/export-domains-chirho.ts",
+    "evaluate-chirho": "bun run tools-chirho/evaluate-chirho.ts"
+  },
+  "dependencies": {
+    "postgres": "^3.4.4",
+    "@anthropic-ai/sdk": "^0.39.0"
+  },
+  "devDependencies": {
+    "@types/bun": "latest",
+    "typescript": "^5.0.0"
+  }
+}
