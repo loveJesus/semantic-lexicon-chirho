@@ -172,3 +172,16 @@ This project uses **SQLite** locally (`.gitignore`d at `data-chirho/semantic-chi
 - `domain_assignment_chirho(sense_id_chirho, domain_id_chirho, fit_score_chirho)` — sense → domain
 - `proposal_chirho(proposal_id_chirho, created_at_chirho, scorecard_chirho)` — versioned proposals
 
+
+- keep a spec-chirho dir, in it make an sqlite db progress-chirho.sqlite with at least the following table: steps_taken_chirho (id_chirho, agent_code_chirho, timestamp_start_chirho, timestamp_end_chirho, action_taken_chirho, result_of_action_chirho, overview_of_result_chirho )
+id_chirho: autoincrement id
+agent_code_chirho: Assign yourself some name, each agent or subagent as well, that can be used to identify the agent that inserted or updated this log
+timestamp_start_chirho, timestamp_end_chirho where you log when you started a task, at task start, and when you are done, when you share the result and your overview
+action_taken_chirho: what action you took, may include command line, and brief reasoning as to why
+result_of_action_chirho: how this action changed the state of the project (files, databases, etc)
+overview_of_result_chirho: Did this go as planned, did you learn anything from this, how does this impact your next decision
+
+How granular tis should be is up to you
+
+You can modify  the following section
+### Agent Self Modifications (For the agent to keep things present in its context)
