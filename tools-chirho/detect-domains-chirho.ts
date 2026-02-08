@@ -234,7 +234,28 @@ function detectDomainsChirho(): void {
      VALUES (?1, ?2, ?3)`
   );
 
+  const insertAssignmentChirho = dbChirho.prepare(
+    `INSERT OR IGNORE INTO domain_assignment_chirho (sense_id_chirho, domain_id_chirho, fit_score_chirho, source_chirho)
+     VALUES (?1, ?2, ?3, 'community')`
+  );
+
+  // Build reverse map: communityId → list of senseIds
+  const commMembersChirho = new Map<number, number[]>();
+  for (const [senseIdChirho, commIdChirho] of communitiesChirho) {
+    let membersChirho = commMembersChirho.get(commIdChirho);
+    if (!membersChirho) {
+      membersChirho = [];
+      commMembersChirho.set(commIdChirho, membersChirho);
+    }
+    membersChirho.push(senseIdChirho);
+  }
+
   dbChirho.run("BEGIN");
+
+  // Clear stale fine domain assignments from previous runs
+  dbChirho.run(
+    `DELETE FROM domain_assignment_chirho WHERE source_chirho = 'community'`
+  );
 
   // Filter out tiny communities (< 3 senses) — merge into "misc" domains
   const significantChirho = Array.from(communityCountsChirho.entries())
@@ -242,6 +263,7 @@ function detectDomainsChirho(): void {
     .sort((aChirho, bChirho) => bChirho[1] - aChirho[1]);
 
   let createdChirho = 0;
+  let assignedChirho = 0;
   for (let iChirho = 0; iChirho < significantChirho.length; iChirho++) {
     const [commIdChirho, sizeChirho] = significantChirho[iChirho];
     const parentChirho =
@@ -266,6 +288,13 @@ function detectDomainsChirho(): void {
       1
     );
 
+    // Persist community membership: assign each sense in this community to the fine domain
+    const membersChirho = commMembersChirho.get(commIdChirho) || [];
+    for (const senseIdChirho of membersChirho) {
+      insertAssignmentChirho.run(senseIdChirho, domainIdChirho, 0.5);
+      assignedChirho++;
+    }
+
     createdChirho++;
   }
 
@@ -280,10 +309,17 @@ function detectDomainsChirho(): void {
     )
     .get();
 
+  const fineAssignCountChirho: any = dbChirho
+    .query(
+      "SELECT COUNT(*) as cnt_chirho FROM domain_assignment_chirho WHERE source_chirho = 'community'"
+    )
+    .get();
+
   console.log("\n[detect-domains-chirho] === RESULTS ===");
   console.log(`  Total communities:    ${communityCountsChirho.size}`);
   console.log(`  Significant (3+):     ${significantChirho.length}`);
   console.log(`  Fine domains created: ${createdChirho}`);
+  console.log(`  Senses assigned:      ${fineAssignCountChirho.cnt_chirho}`);
   console.log(`  Total domains:        ${totalDomainsChirho.cnt_chirho}`);
   console.log(
     `  Supersenses:          ${supersensesChirho.length}`

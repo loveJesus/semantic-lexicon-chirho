@@ -281,18 +281,15 @@ function assignDomainsChirho(): void {
     `[assign-domains-chirho] ${supersenseCentroidsChirho.size} supersense centroids built. Assigning senses...`
   );
 
-  // Nearest-centroid assignment
-  dbChirho.run("DELETE FROM domain_assignment_chirho");
+  // Nearest-centroid assignment — only replace auto/auto_hierarchy, keep community assignments
+  dbChirho.run(
+    "DELETE FROM domain_assignment_chirho WHERE source_chirho IN ('auto', 'auto_hierarchy')"
+  );
   dbChirho.run("BEGIN");
 
   const insertChirho = dbChirho.prepare(
     `INSERT INTO domain_assignment_chirho (sense_id_chirho, domain_id_chirho, fit_score_chirho, source_chirho)
      VALUES (?1, ?2, ?3, 'auto')`
-  );
-
-  const insertParentChirho = dbChirho.prepare(
-    `INSERT OR IGNORE INTO domain_assignment_chirho (sense_id_chirho, domain_id_chirho, fit_score_chirho, source_chirho)
-     VALUES (?1, ?2, ?3, 'auto_hierarchy')`
   );
 
   let assignedChirho = 0;
@@ -337,23 +334,7 @@ function assignDomainsChirho(): void {
       fitScoreChirho
     );
 
-    // If fine domains exist, also find best fine domain within the supersense
-    if (fineDomainsChirho.length > 0) {
-      const childFinesChirho = fineDomainsChirho.filter(
-        (fChirho: any) => fChirho.parent_id_chirho === bestDomainIdChirho
-      );
-
-      if (childFinesChirho.length > 0) {
-        // Assign to the fine domain (already handled by community detection)
-        // Just ensure the parent link exists
-        insertParentChirho.run(
-          senseChirho.sense_id_chirho,
-          bestDomainIdChirho,
-          fitScoreChirho * 0.8
-        );
-      }
-    }
-
+    // Fine domain assignments are handled by detect-domains-chirho (source='community')
     assignedChirho++;
     if (assignedChirho % 5000 === 0) {
       console.log(
