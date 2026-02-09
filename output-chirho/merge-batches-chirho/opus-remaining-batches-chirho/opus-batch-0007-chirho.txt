@@ -1,0 +1,153 @@
+You are a biblical lexicographer. For each lemma below, group the over-split sense clusters into REAL lexicographic senses.
+
+Rules:
+- Different grammatical inflections of the same meaning = SAME sense (merge them)
+- Different verb stems (Qal vs Hifil, active vs passive) = often DIFFERENT senses
+- Literal vs metaphorical uses = DIFFERENT senses
+- Every sense ID must appear in exactly one group
+- Output valid JSON array with labelChirho, descriptionChirho (150+ chars with multilingual evidence), senseIdsChirho
+
+## H7633 (POS: Conj-w | N-fs, "† <strong><span dir="rtl"><span class="lexicon-hebrew" dir="rtl">שִׁבְיָה</span>", 12 occ, 7 senses)
+
+- **S137814** (4x) [Art | N-fs,Prep-b, Art | N-fs] | eng: the–captives, of–the–captives | spa: los–cautivos, a–los–cautivos | hin: बंदियों–को | arb: السَّبْيَ | kor: 그–포로들을, 그–포로들과 | swa: mateka–wale, mateka–hao
+- **S137815** (2x) [N-fs] | eng: captivity | spa: cautivos, cautiverio | hin: बंधुआई–के, बंदी | arb: سَبْيًا, السَّبْيِ | kor: 포로 | swa: utumwa, mateka
+- **S137816** (2x) [N-msc | 3mp] | eng: their–captivity | spa: su–cautividad | hin: उनकी–बन्दी | arb: سَبْيِهِمْ | kor: 그들–의-포로 | swa: ya–utumwa–wao
+- **S137817** (1x) [Conj-w | N-fs] | eng: and–captive | spa: y–los–cautivos | hin: और–बंदी–का | arb: وَالسَّبَايَا | kor: 그리고–포로의 | swa: na–mateka
+- **S137818** (1x) [Prep-b, Art | N-fs] | eng: into–captivity | spa: en–cautividad | hin: में–कैद | arb: فِي–السَّبْيِ | kor: 포로에– | swa: utumwani
+- **S137819** (1x) [N-msc | 3fs] | eng: her–captivity | spa: su–cautiverio | hin: बंदियों–उसकी | arb: سَبْيِهَا | kor: 그녀의–포로의 | swa: ya–uteka–wake
+- **S137820** (1x) [Prep-b, Art | N-fs] | eng: among–the–captives | spa: entre–los–cautivos | hin: बंदियों–में | arb: فِي–السَّبْيِ | kor: 에–포로 | swa: miongoni–mwa–mateka
+
+## H7961 (POS: Conj-w | Adj-mpc, "† <strong><span dir="rtl"><span class="lexicon-hebrew" dir="rtl">שָׁלֵו</span></", 8 occ, 7 senses)
+
+- **S140737** (2x) [Adj-ms] | eng: at–ease, at-ease | spa: tranquila | hin: शान्त, निश्चिंत–की | arb: مُطْمَئِنَّةٍ, مُطْمَئِنٍّ | kor: 평온한, 평안한 | swa: tulivu, lenye–amani
+- **S140734** (1x) [Adj-ms] | eng: at–ease | spa: Tranquilo | hin: शान्ति–में | arb: مُطْمَئِنًّا | kor: 평안하였던 | swa: nilikuwa–na–amani
+- **S140735** (1x) [Conj-w | Adj-fs] | eng: and–at–ease | spa: y–en–paz | hin: और–शांति–में | arb: وَآمِنَةً | kor: 그리고–평안하게 | swa: na–amani
+- **S140736** (1x) [Conj-w | Adj-mpc] | eng: and–always–at–ease | spa: y–tranquilos | hin: और–चैन–से–रहने–वाले | arb: وَ–مُطْمَئِنّو– | kor: 평안한–자들–이 | swa: na–wenye-amani
+- **S140738** (1x) [Conj-w | Adj-ms] | eng: and–secure | spa: y–en–paz. | hin: और–सुखी | arb: وَ–هَادِئٌ | kor: 그리고–평안하니 | swa: na–utulivu
+- **S140740** (1x) [Adj-ms] | eng: quietness | spa: tranquilidad | hin: शांति | arb: سَلَامًا | kor: 평안을 | swa: utulivu
+- **S140741** (1x) [Conj-w | Adj-fs] | eng: and–peaceful | spa: y–pacífica | hin: और–सुरक्षित | arb: وَ–آمِنَةٌ | kor: 그–와–평화로운 | swa: na–amani
+
+## Response Format
+
+Return a JSON object with one key per lemma ID. Each value is an array of sense groups:
+
+```json
+{
+  "H7565": [
+    {"labelChirho": "short label", "descriptionChirho": "one sentence", "senseIdsChirho": [id1, id2, ...]}
+  ],
+  "H7633": [...]
+}
+```
+
+IMPORTANT: Return ONLY the JSON object. Every sense ID from every lemma must appear exactly once. Use the numeric sense IDs (without the S prefix).
+
+## H7980 (POS: Prep-l | V-Qal-Inf, "† I. <strong><strong><span dir="rtl"><span class="lexicon-hebrew" dir="rtl">שָׁל", 8 occ, 7 senses)
+
+- **S141065** (2x) [Prep-l | V-Qal-Inf,V-Hifil-Imperf-3fs] | eng: to–rule, let–rule | spa: se–enseñoree, dominar | hin: काबू–करने | arb: يَتَسَلَّطْ–, أَنْ‒يَتَسَلَّطُوا | kor: 지배하지–말게–하소서–나–를, 다스리도록 | swa: usikubali–kutawala, kutawala
+- **S141066** (1x) [V-Hifil-Imperf-3ms | 3mse] | eng: empowers–him | spa: le–da–poder | hin: अधिकार–देता–है–उसे | arb: يُسَلِّطُهُ | kor: 다스리게–한다–그를 | swa: kumwezesha
+- **S141067** (1x) [V-Qal-Perf-3cp] | eng: ruled | spa: se–enseñoreaban | hin: राज–करते–थे | arb: تَسَلَّطوا | kor: 지배했다 | swa: waliwatawala
+- **S141068** (1x) [V-Qal-Perf-3ms] | eng: rules | spa: domina | hin: शासन–करता–है | arb: تَسَلَّطَ | kor: 다스렸다 | swa: anatawala
+- **S141069** (1x) [Conj-w | V-Hifil-ConjPerf-3ms ] | eng: and–empowered–him | spa: y–le–dio–poder | hin: और–उसे–अधिकार–दिया–है | arb: يُشْغِلُهُ | kor: 그리고–다스리게–하셨다–그를 | swa: na–amemwezesha
+- **S141071** (1x) [V-Qal-Imperf-3mp] | eng: would–rule | spa: dominaron | hin: काबू–किया | arb: تَسَلَّطَ | kor: 다스렸다 | swa: walitawala
+- **S141072** (1x) [Conj-w | V-Qal-ConjImperf-3ms] | eng: and–he–will–rule | spa: y–dominará | hin: और–वह–अधिकारी–होगा | arb: وَيَتَسَلَّطُ | kor: 그리고–다스릴–것이다 | swa: na–atatawala
+
+## H7990 (POS: Adj-ms, "† <strong><span dir="rtl"><span class="lexicon-hebrew" dir="rtl">שַׁלִּיט</span>", 10 occ, 7 senses)
+
+- **S141098** (4x) [Adj-ms] | eng: rules | spa: domina | hin: प्रभुता–करता–है | arb: سَلِيطٌ | kor: 다스리신다 | swa: anatawala
+- **S141099** (1x) [Adj-msd] | eng: captain | spa: el–oficial–de | hin: अधिकारी | arb: سُلْطَانِ | kor: 관리여 | swa: mkuu
+- **S141100** (1x) [Adj-msc] | eng: ruler | spa: gobernante | hin: शासक | arb: سَلِيطًا | kor: 다스리는–자 | swa: mtawala
+- **S141101** (1x) [Adj-mp] | eng: rule | spa: dominan | hin: प्रभुता–करते–हैं | arb: سَلِيطٌ | kor: 다스리심–을 | swa: zinatawala
+- **S141102** (1x) [Adj-ms] | eng: permitted | spa: está–permitido | hin: उचित–होगा | arb: يُسْمَح | kor: 허락된 | swa: halali
+- **S141103** (1x) [Conj-w | Adj-mp] | eng: and–ruling | spa: y–gobernando | hin: और–जिन्होंने–शासन–किया | arb: وَ–مُسَلَّطُونَ | kor: 그리고–다스리는자들 | swa: na–wakatawala
+- **S141104** (1x) [Conj-w | Adj-ms] | eng: and–ruler | spa: y–poderoso | hin: और–शक्तिशाली | arb: وَ–سُلْطَانٍ | kor: 그리고–통치자가 | swa: na–mtawala
+
+## H8027 (POS: V-Piel-Imp-mp, "† I. <strong>[<span dir="rtl"><span class="lexicon-hebrew" dir="rtl">שִׁלֵּשׁ</s", 9 occ, 7 senses)
+
+- **S141464** (3x) [V-Pual-Prtcpl-fsc,V-Pual-Prtcpl-ms] | eng: three-years-old | spa: de–tres–años | hin: तिन–वरश–कि, तिन–वरश–क | arb: ثُلَاثِيَّةً, ثُلَاثِيًّا | kor: 삼–년된 | swa: wa–miaka–mitatu
+- **S141465** (1x) [V-Pual-Prtcpl-fp] | eng: three-storied | spa: de–tres–pisos | hin: तीन–मंजिली | arb: ثَلَاثِيَّةٌ | kor: 셋–층으로–된 | swa: vilikuwa–vya–orofa–tatu
+- **S141466** (1x) [Conj-w | V-Piel-ConsecImperf-3] | eng: and–they-did-a-third-time | spa: e–hicieron–tercera–vez | hin: और–तीन–बार–किया | arb: فَ–ثَلَّثوا | kor: 그리고–세–번–했다 | swa: na–wakafanya–mara–ya–tatu
+- **S141467** (1x) [Conj-w | V-Piel-ConjPerf-2ms] | eng: and–you-shall-divide-into-thirds | spa: y–dividirás–en–tres | hin: और–तीन–भाग–करेगा | arb: وَتُثَلِّثُ | kor: 그리고–셋으로–나누라 | swa: na–utagawanya–tatu
+- **S141468** (1x) [Art | V-Pual-Prtcpl-ms] | eng: the–threefold | spa: el–triple | hin: तिहरी | arb: المُثَلَّثُ | kor: 세–겹–의 | swa: ya–nyuzi–tatu
+- **S141469** (1x) [Conj-w | V-Piel-ConjPerf-2ms] | eng: and–on–the–third–day | spa: Y–al–tercer–día | hin: और-तिस्रे-दिन | arb: وَ–ثَلَاثَةً | kor: 그리고–셋째–날에 | swa: na–siku–ya–tatu
+- **S141470** (1x) [V-Piel-Imp-mp] | eng: do-a-third-time | spa: Haced–tercera–vez | hin: तीन–बार–करो | arb: ثَلِّثوا | kor: 세–번–하라 | swa: fanyeni–mara–ya–tatu
+
+## Response Format
+
+Return a JSON object with one key per lemma ID. Each value is an array of sense groups:
+
+```json
+{
+  "H7971": [
+    {"labelChirho": "short label", "descriptionChirho": "one sentence", "senseIdsChirho": [id1, id2, ...]}
+  ],
+  "H7980": [...]
+}
+```
+
+IMPORTANT: Return ONLY the JSON object. Every sense ID from every lemma must appear exactly once. Use the numeric sense IDs (without the S prefix).
+
+## H8082 (POS: Adj-ms, "† <strong><span dir="rtl"><span class="lexicon-hebrew" dir="rtl">שָׁמֵן</span></", 10 occ, 7 senses)
+
+- **S142039** (4x) [Adj-ms,Adj-fs,Art | Adj-fs] | eng: fat | spa: fértil, ¿fértil | hin: उपजाऊ, वहाँ | arb: سَمِينَةً, سَميناً | kor: 기름진, 살진 | swa: yenye–rutuba, wenye–rutuba
+- **S142040** (1x) [Conj-w | Adj-ms] | eng: shall–graze | spa: y–abundante | hin: और–तैली | arb: وَ–سَمِينًا | kor: 그리고–기름진 | swa: na–unene
+- **S142042** (1x) [Adj-fs] | eng: rich | spa: grasoso | hin: उत्तम | arb: سَمِينٌ | kor: 기름지다 | swa: mwisho–yake
+- **S142043** (1x) [Adj-ms] | eng: robust | spa: robusto | hin: हृष्ट–पुष्ट | arb: سَمينٍ | kor: 살찐 | swa: wanene
+- **S142044** (1x) [Conj-w, Art | Adj-fs] | eng: and–the–fat | spa: y–la–fértil | hin: और–उपजाऊ | arb: وَ–سَمِينَةٍ | kor: 그리고–그–기름진 | swa: na–yenye–rutuba
+- **S142046** (1x) [Adj-ms] | eng: fat | spa: es–grasa | hin: मोटा | arb: دَسِمٌ | kor: 풍부하고 | swa: nono
+- **S142047** (1x) [Art | Adj-fs] | eng: the–fat | spa: la–gorda | hin: मैं–नाश–करूँगा | arb: ٱلسَّمِينَةَ | kor: 그–살진 | swa: mnono
+
+## H8135 (POS: Prep-m | N-fsc | 2ms, "† <strong><span dir="rtl"><span class="lexicon-hebrew" dir="rtl">שִׂנְאָה</span>", 17 occ, 7 senses)
+
+- **S142790** (6x) [N-fs,Art | N-fs] | eng: hatred, was–the–hatred | spa: odio, el–odio | hin: घृणा, घृणा–को | arb: كُرهاً, سِنْئَه | kor: 미움이, 미움을 | swa: chuki
+- **S142791** (5x) [Conj-w | N-fs,N-fs,Conj-w | N-fsc] | eng: hatred, and–hatred | spa: y–odio, odio | hin: बैर–के, घृणा | arb: وَ–بُغْضٌ–, وَ–بُغضًا | kor: 미움–이, 미움–으로 | swa: na–chuki, na–kwa–chuki
+- **S142793** (2x) [Prep-b | N-fs] | eng: with–hatred, in–hatred | spa: con–odio | hin: से–नफरत, में–घृणा | arb: بِبُغْضٍ | kor: 에–미움으로, –미움으로 | swa: kwa–chuki
+- **S142794** (1x) [Conj-w, Prep-m | N-fsc | 3ms] | eng: and–because–of–his–hatred | spa: y–por–aborrecerlos | hin: और–उसकी–नफरत–से | arb: وَلِبُغْضِهِ | kor: 그리고–미워하심으로 | swa: na–kwa–chuki–yake
+- **S142795** (1x) [Prep-b | N-fsc] | eng: in–hatred–of | spa: por–odio–de | hin: –घृणा–में | arb: بِ–بُغْضِ | kor: 미움–으로 | swa: kumweka
+- **S142797** (1x) [N-fsc | 3mp] | eng: their–hate | spa: su–odio | hin: उनकी–घृणा | arb: سِنْئَتَم | kor: 미움–그들의 | swa: chuki–yao
+- **S142798** (1x) [Prep-m | N-fsc | 2ms] | eng: from–your–hatred | spa: por–tus–odios | hin: जो | arb: مِنْ–بُغْضِكَ | kor: 네–미움에서 | swa: kutoka–chuki–yako
+
+## H8150 (POS: V-Qal-Perf-3cp, "† <strong><strong>[<span dir="rtl"><span class="lexicon-hebrew" dir="rtl">שָׁנַן", 9 occ, 7 senses)
+
+- **S142942** (3x) [V-Qal-QalPassPrtcpl-mp] | eng: sharpened, are–sharp | spa: afiladas | hin: तेज़, तीखे | arb: مَسْنونَةٌ, مَسنُونَةٌ | kor: 날카로운, 날카로우며 | swa: mikali, makali
+- **S142943** (1x) [V-Qal-QalPassPrtcpl-ms] | eng: sharp | spa: afilada | hin: तीखा | arb: حادٌّ | kor: 날카로운 | swa: mkali
+- **S142944** (1x) [V-Qal-Perf-1cs] | eng: I–sharpen | spa: afilare | hin: तेज़–करूँ | arb: سَنَنْتُ | kor: 내가–갈으리라 | swa: ninoa
+- **S142945** (1x) [V-Qal-Perf-3cp] | eng: sharpen | spa: han–afilado | hin: तेज़–करते–हैं | arb: شَحَذوا | kor: 갈았도다 | swa: wamenolea
+- **S142946** (1x) [Conj-w | V-Piel-ConjPerf-2ms |] | eng: and–you–shall–teach–them–diligently | spa: y–las–repetirás | hin: और–सिखाएगा–तीव्रता–से | arb: وَتُكَرِّرُهَا | kor: 그리고–부지런히–가르치라 | swa: Wafundishe–kwa–bidii
+- **S142947** (1x) [V-Hitpael-Imperf-1cs] | eng: were–pierced | spa: eran–punzados | hin: मैं–छिदा–गया–था | arb: اِنْطَعَنَتا | kor: 찔렸나이다 | swa: zilichomwa
+- **S142948** (1x) [V-Qal-Perf-3cp] | eng: they–sharpen | spa: Afilaron | hin: उन्होंने–तेज़–की–है | arb: شَحَذُوا | kor: 날카롭게–하였도다 | swa: wameinoa
+
+## H8156 (POS: Prep-k | V-Piel-Inf, "† <strong><strong>[<span dir="rtl"><span class="lexicon-hebrew" dir="rtl">שָׁסַע", 9 occ, 7 senses)
+
+- **S142965** (3x) [Conj-w | V-Qal-Prtcpl-fs,Conj-w | V-Qal-Prtcpl-ms,Conj-w | V] | eng: and–splitting | spa: y–que–parte, y–que-hiende | hin: और–दो भागों में फटा हुआ, और–फाड़ने–वाला | arb: وَ–يَنْشَقُّ, وَ–مُنْشَقَّةِ | kor: 그리고–갈라진, 그리고–갈라지는 | swa: na–zinazopasuka, na–apasukaye
+- **S142966** (1x) [Conj-w | V-Piel-ConsecImperf-3] | eng: and–he–restrained | spa: y–contuvo | hin: और–रोका | arb: وَمَنَعَ | kor: 그리고–찢어놓았다 | swa: na–akazuia
+- **S142967** (1x) [Prep-k | V-Piel-Inf] | eng: like–tearing | spa: como–despedazar | hin: चीरने–की–तरह | arb: كَشَقِّ | kor: 찢듯이 | swa: kama–kurarua
+- **S142968** (1x) [Conj-w | N-ms] | eng: and–split | spa: y–hendidura | hin: और–दो भागों में फटा हुआ | arb: وَ–شَقٌّ | kor: 그리고–갈라짐을 | swa: na–kupasuka
+- **S142969** (1x) [Conj-w | V-Piel-ConjPerf-3ms] | eng: and–he-shall-tear | spa: Y–desgarrará | hin: और–चीरे | arb: وَ–يَشُقُّ | kor: 그리고–그–가–찢으라 | swa: Na–atairarua
+- **S142971** (1x) [Conj-w | V-Piel-ConsecImperf-3] | eng: and–tore–it | spa: y–lo–despedazó | hin: और–चीर–डाला–उसे | arb: وَ–شَقَّهُ | kor: 그리고–찢었다–그것을 | swa: na–akamrarua
+- **S142972** (1x) [Art | V-Qal-QalPassPrtcpl-fs] | eng: the–cloven | spa: la–hendida | hin: फाड़े–हुए | arb: الْمَشْقُوقَةَ | kor: 그–갈라진 | swa: zilizopasuka
+
+## Response Format
+
+Return a JSON object with one key per lemma ID. Each value is an array of sense groups:
+
+```json
+{
+  "H8082": [
+    {"labelChirho": "short label", "descriptionChirho": "one sentence", "senseIdsChirho": [id1, id2, ...]}
+  ],
+  "H8085": [...]
+}
+```
+
+IMPORTANT: Return ONLY the JSON object. Every sense ID from every lemma must appear exactly once. Use the numeric sense IDs (without the S prefix).
+
+## H8342 (POS: N-msc, "† <strong><span dir="rtl"><span class="lexicon-hebrew" dir="rtl">שָׂשׂוֹן</span>", 22 occ, 7 senses)
+
+- **S144228** (11x) [N-ms] | eng: joy, gladness | spa: gozo | hin: आनन्द–की, आनंद | arb: فَرَحٍ, فَرَحٌ | kor: 기쁨의, 즐거움의 | swa: furaha, ya–furaha
+- **S144229** (2x) [Conj-w | N-ms] | eng: and–joy | spa: y–gozo | hin: और–खुशी | arb: وَ–سُرُورٌ | kor: 그리고–즐거움이, 그리고–즐거움과 | swa: na–shangwe
+- **S144230** (2x) [N-msc] | eng: the–joy–of, joy–of | spa: gozo–de, gozo-de | hin: हर्ष | arb: فَرَحُ, فَرَحَ | kor: 기쁨–이로다, 기쁨–을 | swa: furaha
+- **S144231** (2x) [Prep-b | N-ms] | eng: with–joy | spa: con–gozo | hin: आनन्द–से, आनन्द–के–साथ | arb: بِ–فَرَح, بِـ–فَرَحٍ | kor: 기쁨–으로 | swa: kwa–furaha
+- **S144232** (2x) [N-ms] | eng: joy, gladness | spa: regocijo, alegría | hin: खुशी | arb: فَرَحٌ, ابْتِهَاجٌ | kor: 환희와, 기쁨과 | swa: shangwe
+- **S144233** (2x) [Prep-l | N-ms] | eng: for–joy | spa: para–gozo | hin: के–लिए–हर्ष, आनन्द–को | arb: لِلْفَرَحِ, بَهْجَةً | kor: 기쁨이, 기쁨과 | swa: kwa–furaha, furaha
+- **S144235** (1x) [Prep-l | N-ms] | eng: to–joy | spa: en–gozo | hin: में–आनन्द | arb: إِلَى–فَرَحٍ | kor: 기뼐으로 | swa: kuwa–furaha

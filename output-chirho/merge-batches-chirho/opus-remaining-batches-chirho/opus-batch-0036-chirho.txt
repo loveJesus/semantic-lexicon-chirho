@@ -1,0 +1,83 @@
+You are a biblical lexicographer. For each lemma below, group the over-split sense clusters into REAL lexicographic senses.
+
+Rules:
+- Different grammatical inflections of the same meaning = SAME sense (merge them)
+- Different verb stems (Qal vs Hifil, active vs passive) = often DIFFERENT senses
+- Literal vs metaphorical uses = DIFFERENT senses
+- Every sense ID must appear in exactly one group
+- Output valid JSON array with labelChirho, descriptionChirho (150+ chars with multilingual evidence), senseIdsChirho
+
+## G2592 (POS: V-PPA-NMP, "<b> <span class="lexicon-greek">καρποφορ-έω</span></b>, <br /> <b>bear fruit</b>", 8 occ, 3 senses)
+
+- **S70047** (4x) [V-ANA,V-PIA-3P,V-ASA-1P] | eng: bear-fruit, we–might–bear–fruit | spa: dan–fruto, llevemos–fruto | hin: फल–लाते–हैं, फल–देने–को | arb: يُثْمِرونَ, يُثمِرونَ | kor: 열매–맺는다, 열매를–맺게–하려–함이라 | swa: wanazaa–matunda,, wanazaa–matunda
+- **S70046** (2x) [V-PPM-NNS,V-PPA-NMP] | eng: bearing–fruit | spa: dando–fruto | hin: फल-लअते-हुए, फल-देत-हुअ | arb: مُثمِرٌ, مُثمِرينَ | kor: 열매–맺으면서, 열매–맺는 | swa: yenye–kuzaa–matunda, mkizaa–matunda
+- **S70049** (2x) [V-PIA-3S] | eng: bears–fruit, bears-fruit | spa: da–fruto, da-fruto | hin: फल–लअतअ–है, फल–देती–है | arb: يُثمِرُ, تُثْمِرُ | kor: 열매를–맺는다, 열매–맺는다– | swa: inazaa–matunda–, huzaa–matunda
+
+## Response Format
+
+Return a JSON object with one key per lemma ID. Each value is an array of sense groups:
+
+```json
+{
+  "G2475": [
+    {"labelChirho": "short label", "descriptionChirho": "one sentence", "senseIdsChirho": [id1, id2, ...]}
+  ],
+  "G2478": [...]
+}
+```
+
+IMPORTANT: Return ONLY the JSON object. Every sense ID from every lemma must appear exactly once. Use the numeric sense IDs (without the S prefix).
+
+## G2782 (POS: N-NNS, "<b> <span class="lexicon-greek">κήρυγ-μα</span></b>, <span class="lexicon-greek"", 9 occ, 3 senses)
+
+- **S70670** (6x) [N-ANS,N-GNS,N-NNS] | eng: proclamation, preaching | spa: predicación | hin: प्रचार, प्रचार–के | arb: كِرَازَةِ, كِرازَتُنا | kor: 전함이, 전파–의 | swa: mahubiri, yangu
+- **S70672** (2x) [N-NNS,N-DNS] | eng: proclamation | spa: proclamación | hin: प्रचअर | arb: كِرازَةٍ, الكِرازَةُ | kor: 선포가, 선포–에서 | swa: ujumbe, kuhubiri
+- **S70673** (1x) [N-ANS] | spa: mensaje | hin: प्रचार | arb: بِشَارَةَ | kor: 선포를 | swa: habari
+
+## G2821 (POS: N-GFS, "<b> <span class="lexicon-greek">κλῆσις</span></b>, <span class="lexicon-greek">ε", 11 occ, 3 senses)
+
+- **S70818** (8x) [N-NFS,N-GFS,N-AFS] | eng: calling, of–calling | spa: llamamiento, llamada | hin: बुलअवअ, बुलअहत | arb: دَعْوَةِ, دَعْوَةُ | kor: 부르심의, 부르심은 | swa: wito
+- **S70819** (2x) [N-AFS,N-DFS] | eng: calling | spa: llamada | hin: बुलाहट | arb: دَعْوَتَ, الدَّعْوَةِ | kor: 부름, 부르심–을 | swa: ya–wito, wenu
+- **S70820** (1x) [N-DFS] | eng: with–calling | spa: con–llamamiento | hin: बुलहत–से | arb: دَعْوَةً | kor: 부르심 | swa: wito
+
+## G2836 (POS: N-NFS, "<b> <span class="lexicon-greek">κοιλί-α</span></b>, <br /> <i>Ionic dialect</i> ", 23 occ, 3 senses)
+
+- **S70845** (13x) [N-GFS,N-DFS,N-NFS,N-AFS] | eng: womb, belly | spa: vientre | hin: गर्भ, पेत | arb: بَطْنِ, بَطنِ | kor: 배–에, 배 | swa: tumbo, tumbo;
+- **S70846** (9x) [N-DFS,N-AFS,N-NFS] | eng: stomach, belly | spa: vientre | hin: पेट, पेत–मेइन | arb: البَطْنِ, بُطونُهُمْ | kor: 배를, 배 | swa: tumbo, tumbo.
+- **S70850** (1x) [N-NFP] | eng: wombs | spa: vientres | hin: कोख | arb: بُطونُ | kor: 배들이 | swa: tumboni
+
+## G2842 (POS: N-GFS, "<b> <span class="lexicon-greek">κοινων-ία</span></b>, ἡ, <br /> <b>communion, as", 19 occ, 3 senses)
+
+- **S70887** (16x) [N-AFS,N-NFS,N-GFS,N-DFS] | eng: fellowship, a-sharing | spa: comunión, contribución | hin: सहभागिता, संगति | arb: شَرِكَةً, شَرِكَةُ | kor: 교제–를, 교제가 | swa: ushirika, ushirikiano
+- **S70888** (2x) [N-GFS,N-DFS] | eng: of-fellowship, fellowship | spa: de-comunión, comunión | hin: सनगति,, और | arb: ـالشِّركَةِ, الشَّرِكَةِ | kor: 그–, 교제의, | swa: ushirika
+- **S70890** (1x) [N-GFS] | eng: sharing | spa: comunión | hin: सहभागिता–को | arb: مُشَارَكَة | kor: 나눔–을 | swa: kushiriki,
+
+## G2859 (POS: N-DMP, "<b> <span class="lexicon-greek">κόλπος</span></b>, ὁ, <br /> <b>bosom, lap</b>, ", 6 occ, 3 senses)
+
+- **S70923** (4x) [N-AMS,N-DMS] | eng: bosom, lap | spa: seno, regazo | hin: गोद, छाती | arb: حِضْنِ, حِضنِ | kor: 품, 품으로 | swa: kifua, paja
+- **S70924** (1x) [N-DMP] | eng: bosom | spa: senos | hin: गोदों | arb: حِضْنِهِ | kor: 품에서 | swa: vifua
+- **S70925** (1x) [N-AMS] | eng: a–bay | spa: bahía | hin: खाड़ी | arb: خَلِيجًا | kor: 만을 | swa: ghuba
+
+## G2889 (POS: N-GMS, "<b> <span class="lexicon-greek">κόσμος</span></b>, ὁ, <br /> <b>order</b>, <span", 186 occ, 3 senses)
+
+- **S70999** (183x) [N-GMS,N-NMS,N-AMS,N-DMS] | eng: world, of–world | spa: mundo, de–mundo | hin: संसार, सनसर | arb: العالَمِ, عَالَمِ | kor: 세상, 세상의 | swa: ulimwengu, ulimwengu,
+- **S71001** (2x) [N-DMS] | eng: upon–world, to-world | spa: al–mundo, a-mundo | hin: सनसर–को., संसार–पर | arb: لِلعالَمِ, عَلى–عالَمِ | kor: 세상에., 세상에 | swa: ulimwengu, kwa–ulimwengu
+- **S71004** (1x) [N-NMS] | eng: adornment | spa: adorno | hin: शृंगार | arb: زينَةَكُنَّ | kor: 꾸미이 | swa: urembo
+
+## G2895 (POS: N-GMP, "<b> <span class="lexicon-greek">κράββᾰτος</span></b>, ὁ, <br /> also <b><span cl", 11 occ, 3 senses)
+
+- **S71010** (9x) [N-AMS,N-GMS] | eng: mat | spa: catre, camilla | hin: खाट, खटिया | arb: سَرِيرَ, سَريرَكَ | kor: 침상을, 침상–을 | swa: kitanda, kitanda,
+- **S71012** (1x) [N-GMP] | eng: mats | spa: lechos | hin: किसी–पर | arb: فُرُشٍ | kor: 그래서 | swa: mikeka
+- **S71014** (1x) [N-DMP] | eng: mats | spa: camillas | hin: के | arb: السُّرُرِ | kor: 침상들에 | swa: vitanda
+
+## G2904 (POS: N-NNS, "<b> <span class="lexicon-greek">κράτος</span></b> [ᾰ], <br /> <i>Ionic dialect</", 12 occ, 3 senses)
+
+- **S71080** (6x) [N-NNS,N-ANS] | eng: might, power | spa: poder, dominio | hin: सामर्थ्य, सामर्थ्य–के | arb: ـقُوَّةٍ, سُلْطَةَ | kor: 권능–이, 능력이 | swa: nguvu, nguvu,
+- **S71079** (3x) [N-GNS,N-DNS,N-ANS] | eng: might | spa: fuerza, potencia | hin: प्रतप | arb: قُدرَةِ, شِدَّةِ | kor: 권능의, 힘–의 | swa: uweza
+- **S71082** (3x) [N-NNS] | eng: power | spa: dominio | hin: सामर्थ्य, पराक्रम | arb: السُّلطانُ, قدرة | kor: 능력이, 권능과 | swa: uwezo
+
+## G2909 (POS: Adj-ANS-C, "<b> <span class="lexicon-greek">κρείσσων</span></b>, <span class="lexicon-greek"", 15 occ, 3 senses)
+
+- **S71098** (13x) [Adj-NNS-C,Adj-GFS-C,Adj-DFP-C,Adj-AFS-C,Adj-ANS-C] | eng: better, of-better | spa: mejor, de–mejor | hin: उत्तम, अच्छा | arb: أَفْضَل, أَفْضَلَ | kor: 더–나은, 더–낫다 | swa: bora–zaidi, ni–bora
+- **S71099** (1x) [Adj-NMS-C] | eng: better | spa: mejor | hin: श्रेष्ठ | arb: أَفْضَلَ | kor: 뛰어나시니 | swa: bora–zaidi
+- **S71100** (1x) [Adj-GMS-C] | eng: greater | spa: mejor | hin: बड़े | arb: الأَفْضَلِ | kor: 더–큰–이에게 | swa: mkuu–zaidi

@@ -1,0 +1,73 @@
+You are a biblical lexicographer. For each lemma below, group the over-split sense clusters into REAL lexicographic senses.
+
+Rules:
+- Different grammatical inflections of the same meaning = SAME sense (merge them)
+- Different verb stems (Qal vs Hifil, active vs passive) = often DIFFERENT senses
+- Literal vs metaphorical uses = DIFFERENT senses
+- Every sense ID must appear in exactly one group
+- Output valid JSON array with labelChirho, descriptionChirho (150+ chars with multilingual evidence), senseIdsChirho
+
+## H2139 (POS: Conj-w | N-proper-ms, "† <strong><span dir="rtl"><span class="lexicon-hebrew" dir="rtl">זַכּוּר</span><", 10 occ, 2 senses)
+
+- **S94338** (8x) [N-proper-ms] | eng: Zakkur, Zaccur | spa: Zacur | hin: जक्कूर, जक्कूर–का | arb: زَكُّورُ, زَكُّورَ | kor: 삭굴, 삽괴가 | swa: Zakuri, wa–Zakuri
+- **S94339** (2x) [Conj-w | N-proper-ms] | eng: and–Zakkur | spa: y–Zakur, y–Zacur | hin: और–जक्कूर | arb: وَ–زَكُّورُ, (وَ–زَكُّور) | kor: 그리고–삭굴, (그리고–삭굿) | swa: na–Zakuri
+
+## H2209 (POS: N-fsc | 3fs, "† <strong><span dir="rtl"><span class="lexicon-hebrew" dir="rtl">זִקְנָה</span><", 6 occ, 2 senses)
+
+- **S94906** (4x) [N-fs,N-fsc] | eng: old–age, old-age-of | spa: vejez, vejez–de | hin: बुढ़ापे–के, बूढ़ा | arb: شَيْخُوخَةِ, الشَّيْخُوخَةِ | kor: 늙음, 늦음의 | swa: uzee, wa–uzee
+- **S94907** (2x) [N-fsc | 3ms,N-fsc | 3fs] | eng: his–old-age, her–old–age | spa: su–vejez | hin: बुढ़ापे–उस–के, उसकी–बुढ़ापा–के | arb: شَيْخُوخَتِهِ, شَيْخُوخَتِهَا | kor: 그의–늘감의, 그녀의–늙음의 | swa: uzee–wake
+
+## H2213 (POS: N-msc, "† <strong><span dir="rtl"><span class="lexicon-hebrew" dir="rtl">זֵר</span></spa", 10 occ, 2 senses)
+
+- **S94918** (8x) [N-msc,N-ms] | eng: border, a-molding-of | spa: moldura–de, borde-de | hin: किनारा, किनारी | arb: إِكليلاً, إِكليلاً– | kor: 테를, 테를– | swa: ukingo, ukingo–
+- **S94919** (2x) [Prep-l | N-msc | 3ms] | eng: to–its–molding, its–border | spa: su–moldura, su-borde | hin: उसके–किनारे–के, उसकी–किनारी | arb: إِكليلِهِ | kor: 에게–그것의–테, 그것의–테 | swa: ukingo–wake
+
+## Response Format
+
+Return a JSON object with one key per lemma ID. Each value is an array of sense groups:
+
+```json
+{
+  "H1994": [
+    {"labelChirho": "short label", "descriptionChirho": "one sentence", "senseIdsChirho": [id1, id2, ...]}
+  ],
+  "H2000": [...]
+}
+```
+
+IMPORTANT: Return ONLY the JSON object. Every sense ID from every lemma must appear exactly once. Use the numeric sense IDs (without the S prefix).
+
+## H2216 (POS: N-proper-ms, "† <strong><span dir="rtl"><span class="lexicon-hebrew" dir="rtl">זְרֻבָּבֶ֫ל</sp", 21 occ, 2 senses)
+
+- **S94923** (19x) [N-proper-ms,N-proper-fs,Conj-w | N-proper-ms] | eng: Zerubbavel, Zerubbabel | spa: Zorobabel, y–Zorobabel | hin: ज़रुब्बाबेल, ज़रुब्बाबेल–ने | arb: زَرُبَّابِلَ, زَرُبّابِلَ | kor: 스룹바벨, 스룹바벨의 | swa: Zerubabeli, na–Zerubabeli
+- **S94924** (2x) [N-proper-fs] | eng: Zerubavel | spa: Zerubabel | hin: जरुब्बाबेल | arb: زَرُبّابِل | kor: 스룹바벨의, 스룹바벨과 | swa: Zerubabeli
+
+## H2227 (POS: Prep-l, "† <strong><span dir="rtl"><span class="lexicon-hebrew" dir="rtl">זַרְחִי</span><", 6 occ, 2 senses)
+
+- **S95031** (4x) [Art | N-proper-ms] | eng: the–Zerahite, the–Zarchite | spa: los–zerajitas, el–zarhita | hin: ज़र्ही–का, जरही–के | arb: الزَّرْحِيِّ | kor: 세라인의, 그–제라–의 | swa: Wazera
+- **S95030** (2x) [Prep-l, Art | N-proper-ms] | eng: of–the–Zarchi | spa: del–zerahíta | hin: –के–जरही | arb: لِلزَّارِحِيِّ | kor: 에–대한–세라–사람의 | swa: kwa–Wazera
+
+## H2239 (POS: Prep-b, "† <strong><span dir="rtl"><span class="lexicon-hebrew" dir="rtl">זֶ֫רֶת</span></", 7 occ, 2 senses)
+
+- **S95177** (6x) [N-fs,N-fsc,Conj-w | N-fs] | eng: span, and–span | spa: palmo, y–un–palmo | hin: बित्ता, बालिश्त | arb: وَ–شِبْرٌ, شِبْرٌ | kor: 한–물의, 뾰 | swa: shibiri, na–shibiri
+- **S95180** (1x) [Prep-b, Art | N-fs] | eng: with–a–span | spa: con–el–palmo | hin: से–बालिश्त | arb: بِ–الشِّبْرِ | kor: 뼘으로 | swa: kwa–shubiri
+
+## H2268 (POS: Conj-w | N-proper-ms, "† II. <strong><span dir="rtl"><span class="lexicon-hebrew" dir="rtl">חֶ֫בֶר</spa", 11 occ, 2 senses)
+
+- **S95339** (10x) [N-proper-ms,Conj-w | N-proper-ms] | eng: Chever, and–Chever | spa: Jever, y–Jéber | hin: हेबेर, और–हेबेर | arb: حابِرَ, حابِر | kor: 헤벨–의, 헤벨과 | swa: Heberi, na–Heberi
+- **S95342** (1x) [Prep-l | N-proper-ms] | eng: to–Heber | spa: de–Héber | hin: हेबेर–को | arb: لِ–حَيبَرَ | kor: 헤베르–에게 | swa: kwa–Heberi
+
+## H2275b (POS: Prep-b | N-proper-fs, "II. <strong><span dir="rtl"><span class="lexicon-hebrew" dir="rtl">חֶבְרוֹן</spa", 10 occ, 2 senses)
+
+- **S95367** (9x) [N-proper-ms,Conj-w | N-proper-ms] | eng: Chevron, and–Chevron | spa: Hebrón, y–Jebron | hin: हेब्रोन, और–हेब्रोन | arb: وَ–حَبرون, حَبْرُونَ | kor: 헤브론, 그리고–헤브론 | swa: Hebroni, na–Hebroni
+- **S95369** (1x) [Prep-b | N-proper-fs] | eng: in–Hebron | spa: En–Hebron | hin: हेब्रोन–में | arb: فِي–حَبْرُونَ | kor: 에–헤브론 | swa: katika–Hebroni
+
+## H2276 (POS: Art | N-proper-ms, "† <strong><span dir="rtl"><span class="lexicon-hebrew" dir="rtl">חֶבְרוֹנִי</spa", 6 occ, 2 senses)
+
+- **S95370** (4x) [Prep-l, Art | N-proper-ms] | eng: of–the–Chevronites, Of–the–Chevronites | spa: para–el–hebronita, Para–el–hebronita | hin: हेब्रोनी–के–लिए | arb: لِلْحَبْرُونِيِّينَ | kor: 에–대한–헤브론–사람의 | swa: kwa–Wahebroni
+- **S95371** (2x) [Art | N-proper-ms] | eng: the–Hebronite | spa: los–hebronitas, el–hebronita | hin: हेब्रोनी–का | arb: الْحِبْرُونِيّ, الْحَبْرُونِيِّ | kor: 그–헤브론의, 그–헤브론–의 | swa: ya–Wahebroni, Wahebroni
+
+## H2298 (POS: Number-ms, "<strong><strong><span dir="rtl"><span class="lexicon-hebrew" dir="rtl">אחה</span", 14 occ, 2 senses)
+
+- **S95486** (13x) [Number-fs,Number-ms] | eng: one, one– | spa: uno, una | hin: एक, पहले | arb: وَاحِدَةٍ, وَاحِدٍ | kor: 하나, 하나– | swa: moja, wa–kwanza
+- **S95489** (1x) [Prep-k | Number-fs] | eng: together | spa: juntamente | hin: एक–साथ | arb: مَعًا | kor: 함께 | swa: pamoja

@@ -1,0 +1,98 @@
+You are a biblical lexicographer. For each lemma below, group the over-split sense clusters into REAL lexicographic senses.
+
+Rules:
+- Different grammatical inflections of the same meaning = SAME sense (merge them)
+- Different verb stems (Qal vs Hifil, active vs passive) = often DIFFERENT senses
+- Literal vs metaphorical uses = DIFFERENT senses
+- Every sense ID must appear in exactly one group
+- Output valid JSON array with labelChirho, descriptionChirho (150+ chars with multilingual evidence), senseIdsChirho
+
+## H7614 (POS: N-proper-ms, "† <strong><span dir="rtl"><span class="lexicon-hebrew" dir="rtl">שְׁבָא</span></", 23 occ, 3 senses)
+
+- **S137612** (15x) [N-proper-ms,N-proper-fs,Prep-m | N-proper-ms] | eng: Sheva, Sheba | spa: Seba, Saba | hin: शबा–की, शबा | arb: شَبَأَ, شَبا | kor: 스바, 시바–의 | swa: Sheba, kutoka–Sheba
+- **S137614** (7x) [N-proper-ms,N-proper-fs] | eng: Sheba | spa: Sabá, Sheva | hin: शेबा–की, शेबा–के | arb: سَبَأَ, شَبَا | kor: 시바의, 스바 | swa: Sheba, ya–Sheba
+- **S137618** (1x) [N-proper-ms] | eng: Sheva | spa: Seba | hin: शबा | arb: الشَّبَئيّونَ | kor: 스바가 | swa: Wasabayo
+
+## H7641b (POS: N-fpc, "† II. <strong><span dir="rtl"><span class="lexicon-hebrew" dir="rtl">שִׁבֹּ֫לֶת<", 15 occ, 3 senses)
+
+- **S137847** (13x) [Art | N-fp,N-fp,Prep-b, Art | N-fp] | eng: the–heads-of-grain, heads-of-grain | spa: las–espigas, espigas | hin: बालें, बालों–ने | arb: سُنْبُلَاتٍ, الْ–سُّنْبُلَاتِ | kor: 이삭들이, 이삭들을 | swa: masuke, wa–masuke
+- **S137850** (1x) [N-fs] | eng: ear–of–grain | spa: la–espiga | hin: बाली | arb: سُنْبُلَةٍ | kor: 이삭의 | swa: nafaka
+- **S137851** (1x) [N-fpc] | eng: clusters–of | spa: espigas–de | hin: बालियां | arb: سَنَابِلُ | kor: 이삭들이 | swa: mashuke–ya
+
+## H7643 (POS: Conj-w | N-proper-fs, "† <strong><span dir="rtl"><span class="lexicon-hebrew" dir="rtl">שְׂבָם</span></", 6 occ, 3 senses)
+
+- **S137854** (4x) [N-proper-fs] | eng: Sibmah, Sivmah | spa: Sibma, Sivmah | hin: सिबमा–की, सिब्माह | arb: سِبْمَةَ | kor: 시브마의, 시바마를 | swa: wa–Sibma, Sibma
+- **S137855** (1x) [Conj-w | N-proper-fs] | eng: and–Sivmah | spa: y–Sibma | hin: और–सिब्मा | arb: وَ–سِبْمةَ | kor: 그리고–십마를 | swa: na–Sibma
+- **S137856** (1x) [Conj-w | N-proper-fs] | eng: and–Sebam | spa: y–Sebán | hin: और–सेबाम | arb: وَسَبَامَ | kor: 그리고–세배과 | swa: na–Sebamu
+
+## Response Format
+
+Return a JSON object with one key per lemma ID. Each value is an array of sense groups:
+
+```json
+{
+  "H7394": [
+    {"labelChirho": "short label", "descriptionChirho": "one sentence", "senseIdsChirho": [id1, id2, ...]}
+  ],
+  "H7468": [...]
+}
+```
+
+IMPORTANT: Return ONLY the JSON object. Every sense ID from every lemma must appear exactly once. Use the numeric sense IDs (without the S prefix).
+
+## H7645 (POS: Conj-w | N-proper-ms, "† <strong><span dir="rtl"><span class="lexicon-hebrew" dir="rtl">שְׁבַנְיָה</spa", 7 occ, 3 senses)
+
+- **S137861** (5x) [N-proper-ms] | eng: Shebaniah | spa: Sebanías | hin: शबन्याह | arb: شَبَنْيا, شَبَنْيَا | kor: 쉐바니야 | swa: Shebania
+- **S137862** (1x) [Conj-w | N-proper-ms] | eng: and–Shevanyahu | spa: Y–Sebanías | hin: और–शबन्याहू | arb: وَ–شَبَنْيَا | kor: 그–와–스바냐 | swa: na–Shebaniya
+- **S137863** (1x) [Prep-l | N-proper-ms] | eng: to–Shevanyah | spa: de–Sebanías | hin: शबन्याह–का | arb: لِ–شَبَنيا | kor: 에–스바냐에게는 | swa: kwa–Shebanya
+
+## H7647 (POS: Conj-w, "† <strong><span dir="rtl"><span class="lexicon-hebrew" dir="rtl">שָׂבָע</span></", 8 occ, 3 senses)
+
+- **S137938** (6x) [Art | N-ms,N-ms] | eng: the–plenty, plenty | spa: la–abundancia, abundancia | hin: बहुतायत–के, बहुतायत | arb: الْ–شِّبَعِ, شِبَعٌ | kor: 그–풍요가, 그–풍요의 | swa: wingi
+- **S137940** (1x) [Conj-w, Art | N-ms] | eng: and–the–fullness | spa: y–la–saciedad | hin: और–तृप्ति | arb: لِصَاحِبِهِ | kor: 그리고–배부름 | swa: lakini–kushiba–kwa
+- **S137941** (1x) [N-ms] | eng: with–plenty | spa: de–abundancia | hin: तृप्ति–से | arb: شِبَعًا | kor: 풍성함–으로 | swa: zitajaa–tele
+
+## H7718 (POS: Art | N-ms, "† I. <strong><span dir="rtl"><span class="lexicon-hebrew" dir="rtl">שֹׁ֫הַם</spa", 11 occ, 3 senses)
+
+- **S138565** (9x) [N-ms,Art | N-ms] | eng: onyx, the–onyx | spa: ónice, shoham | hin: सुलेमानी, सुलेमानी–के | arb: جَزْعٌ, الْجَزْعِ | kor: 호마노의, 호마노 | swa: shohamu, ya–shohamu
+- **S138568** (1x) [Prep-b | N-ms] | eng: in–onyx | spa: con–ónice | hin: गोमेद–से | arb: بِ–الجزعِ | kor: 귀한– | swa: kwa–shohamu
+- **S138570** (1x) [Conj-w | N-ms] | eng: and–onyx | spa: y-ónice | hin: और–सुलैमानी | arb: وَ–جزعٌ | kor: 그리고–호마노와 | swa: na–shohamu
+
+## H7775 (POS: N-fsc, "† <strong>[<span dir="rtl"><span class="lexicon-hebrew" dir="rtl">שַׁוְעָה</span", 11 occ, 3 senses)
+
+- **S139322** (6x) [Conj-w | N-fsc | 1cs,Prep-l | N-fsc | 1cs,N-fsc | 1cs] | eng: and–my–cry, to–my–cry–for–help | spa: y–mi–clamor, mi–clamor | hin: और–पुकार–मेरी, मेरी–पुकार–के–लिए | arb: وَ–صُراخي, وَصُرَاخِي | kor: 내–부르짖음–을, 내–부르짖음–에서 | swa: na–kilio–changu, na–kilio-changu
+- **S139323** (3x) [N-fsc | 3mp] | eng: their–cry, their-cry | spa: su–clamor, su-clamor | hin: पुकार–उनकी, चिल्लाहट–उनकी | arb: صُرَاخَهُمْ, صُراخِهِم | kor: 에게–그–하나님에게, 그들의–부르짖음을 | swa: kilio–chao, kilio-chao
+- **S139325** (2x) [N-fsc] | eng: the–cry–of, cry-of | spa: el–clamor–de, clamor–de | hin: चीख, चिल्लाहट–की | arb: صُرَاخِ, صَرْخَةُ | kor: 부르짖음이 | swa: ya–kilio–cha, kilio
+
+## H7826 (POS: N-ms, "<strong><span dir="rtl"><span class="lexicon-hebrew" dir="rtl">שַׁ֫חַל</span></s", 7 occ, 3 senses)
+
+- **S139649** (4x) [N-ms] | eng: a–lion, the–lion | spa: león, león–joven | hin: सिंह, शेर | arb: الْأَسَدِ, الأَسَدُ | kor: 사자가, 사자에 | swa: simba, simba–mchanga
+- **S139650** (2x) [Prep-k, Art | N-ms] | eng: like–lion, like-lion | spa: como–león | hin: सिंह–की–तरह, शेर–जैसा | arb: كَالأَسَدِ | kor: 사자–같이, 같으니라–사자에 | swa: kama–simba
+- **S139651** (1x) [N-ms] | eng: a–fierce–lion | spa: león–viejo | hin: गर्जनेवाले–सिंह–की | arb: اللَّيْثِ | kor: 사나운–사자의 | swa: simba
+
+## H7838 (POS: Adj-ms, "† <strong><span dir="rtl"><span class="lexicon-hebrew" dir="rtl">שָׁחֹר</span></", 6 occ, 3 senses)
+
+- **S139724** (3x) [Adj-ms,Adj-fp] | eng: black | spa: negro, negros | hin: नहीं, काली | arb: أَسْوَدُ, شْحُورُوت | kor: 검은, 검으며 | swa: nyeusi
+- **S139723** (2x) [Adj-mp,Art | Adj-mp] | eng: the–black, black | spa: negros, los–negros | hin: काले | arb: سُودٌ, السُّودُ | kor: 그–검은, 검은 | swa: weusi
+- **S139726** (1x) [Adj-fs] | eng: dark | spa: Morena | hin: काली | arb: شْحُورَه | kor: 검은 | swa: mweusi
+
+## Response Format
+
+Return a JSON object with one key per lemma ID. Each value is an array of sense groups:
+
+```json
+{
+  "H7645": [
+    {"labelChirho": "short label", "descriptionChirho": "one sentence", "senseIdsChirho": [id1, id2, ...]}
+  ],
+  "H7646": [...]
+}
+```
+
+IMPORTANT: Return ONLY the JSON object. Every sense ID from every lemma must appear exactly once. Use the numeric sense IDs (without the S prefix).
+
+## H7887 (POS: N-proper-fs, "† <strong><span dir="rtl"><span class="lexicon-hebrew" dir="rtl">שִׁלוֹ</span></", 32 occ, 3 senses)
+
+- **S139996** (27x) [Prep-b | N-proper-fs,N-proper-fs,Prep-l | N-proper-fs] | eng: in–Shiloh, Shiloh | spa: en–Silo, en–Shiló | hin: शीलो–में, शीलो | arb: فِي–شِيلُوهَ, شِيلُوهَ | kor: 실로에, –에–실로 | swa: Shilo, katika–Shilo
+- **S139998** (3x) [Prep-m | N-proper-fs] | eng: from–Shiloh | spa: de–Silo, de–Shiló | hin: से–शीलो, शीलो–से | arb: مِنْ–شِيلُوهَ, مِنْ–شِيلُوه | kor: 실로에서–, 실로에서 | swa: kutoka–Shilo
+- **S139999** (2x) [Prep-k | N-proper-fs] | eng: like–Shiloh, Like–Shiloh | spa: como–Shiló, Como–Shiló | hin: शीलो–जैसा | arb: كَشِيلُو | kor: 에–같이–실로 | swa: kama–Shilo, Kama–Shilo

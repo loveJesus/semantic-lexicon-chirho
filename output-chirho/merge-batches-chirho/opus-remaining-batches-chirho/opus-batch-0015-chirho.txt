@@ -1,0 +1,108 @@
+You are a biblical lexicographer. For each lemma below, group the over-split sense clusters into REAL lexicographic senses.
+
+Rules:
+- Different grammatical inflections of the same meaning = SAME sense (merge them)
+- Different verb stems (Qal vs Hifil, active vs passive) = often DIFFERENT senses
+- Literal vs metaphorical uses = DIFFERENT senses
+- Every sense ID must appear in exactly one group
+- Output valid JSON array with labelChirho, descriptionChirho (150+ chars with multilingual evidence), senseIdsChirho
+
+## H5957 (POS: N-ms, "† <strong><span dir="rtl"><span class="lexicon-hebrew" dir="rtl">עָלַם</span></s", 20 occ, 4 senses)
+
+- **S124472** (9x) [Prep-l | N-mp,Prep-l | N-mpd,N-msd] | eng: forever | spa: para–siempre, siempre | hin: सदा–के–लिए, सदा | arb: إِلَى–الأَبَدِ, لِ–الأَبَدِ | kor: 영원히, 사시는–이–를 | swa: milele
+- **S124473** (8x) [N-ms,N-msd,N-msc] | eng: eternity, eternity-of | spa: eterno, la–eternidad | hin: सनातन, सदा–का | arb: أَبَدِيٌّ, الْأَبَدِ | kor: 영원한, 영원 | swa: milele
+- **S124474** (2x) [N-msd] | eng: old | spa: antiguos | hin: पुराने | arb: القِدَمِ | kor: 영원 | swa: za–kale
+- **S124477** (1x) [N-mpd] | eng: eternities | spa: de–eternidades | hin: सदियों–की | arb: الْآبِدِينَ | kor: 영원들의 | swa: ya–milele
+
+## Response Format
+
+Return a JSON object with one key per lemma ID. Each value is an array of sense groups:
+
+```json
+{
+  "H5732": [
+    {"labelChirho": "short label", "descriptionChirho": "one sentence", "senseIdsChirho": [id1, id2, ...]}
+  ],
+  "H5794": [...]
+}
+```
+
+IMPORTANT: Return ONLY the JSON object. Every sense ID from every lemma must appear exactly once. Use the numeric sense IDs (without the S prefix).
+
+## H5959 (POS: Conj-w | N-fp, "† <strong><span dir="rtl"><span class="lexicon-hebrew" dir="rtl">עַלְמָה</span><", 7 occ, 4 senses)
+
+- **S124479** (3x) [Art | N-fs] | eng: the–young–woman, the–young-woman | spa: la–doncella, la-doncella | hin: कुंवारी, कन̃वारी | arb: الْفَتَاةُ, الْعَذْرَاءُ | kor: 그–처녀가, 처녀가 | swa: msichana, bikira
+- **S124480** (2x) [Conj-w | N-fp,N-fp] | eng: maidens, and–maidens | spa: y–doncellas, doncellas | hin: कुंवारियाँ, और–कुंवारियाँ | arb: وَ–عَلَمُوت, عَلَمُوت | kor: 처녀들–이, 그리고–처녀들–은 | swa: wanawali, na–wanawali
+- **S124482** (1x) [N-fp] | eng: young–women | spa: doncellas | arb: العَذارى | kor: 처녀–들–이 | swa: wasichana
+- **S124483** (1x) [Prep-b | N-fs] | eng: with–a–virgin | spa: con–doncella | hin: कुंवारी–में। | arb: بِ–عَذْراءَ | kor: 처녀와–함께함이다 | swa: na–mwanamwali
+
+## H5972 (POS: N-mpd, "† <strong><span dir="rtl"><span class="lexicon-hebrew" dir="rtl">עַם</span></spa", 15 occ, 4 senses)
+
+- **S124600** (7x) [N-mpd] | eng: the-peoples, peoples | spa: los–pueblos, oh–pueblos | hin: लोगों, लोग | arb: الشُّعُوبِ, أَيُّهَا–الشُّعُوبُ | kor: 백성들, 백성들이 | swa: mataifa
+- **S124602** (4x) [Prep-l | N-ms,Prep-l | N-msc,Conj-w | N-msd,Conj-w | N-ms] | eng: to–people-of, to–people | spa: y–pueblo, y–al–pueblo | hin: को–लोगों, या–लोगों–को | arb: وَ–شَعْب, وَ–الشَّعْب | kor: 에게–백성에게, 에게–백성 | swa: na–watu, kwa–watu
+- **S124601** (3x) [N-msd] | eng: the–people, the–people–of | spa: el–pueblo, el–pueblo–de | hin: लोगों–में–से, लोगों–की | arb: شَعْب–, الشَّعْب– | kor: 그–백성 | swa: watu, ya–watu
+- **S124604** (1x) [N-ms] | eng: people | spa: pueblo | hin: लोग | arb: شَعْبٍ | kor: 백성이 | swa: taifa
+
+## H5974 (POS: Prep, "<strong><strong><span dir="rtl"><span class="lexicon-hebrew" dir="rtl">עִם</span", 22 occ, 4 senses)
+
+- **S124643** (19x) [Prep,Conj-w | Prep,Conj-w | Prep | 3mp] | eng: with–, and–with– | spa: con, y–con | hin: के–साथ, और–साथ | arb: مَعَ–, وَ–مَعَ– | kor: 함께–, 그리고–함께– | swa: pamoja–na–, na–pamoja–na–
+- **S124646** (1x) [Prep | 2ms] | eng: with–you | spa: contigo | hin: तेरे–साथ | arb: مَعَكَ | kor: 함께–당신 | swa: pamoja–nawe
+- **S124647** (1x) [Prep | 1cs] | eng: with–me | spa: conmigo | hin: मेरे–साथ | arb: مَعِي | kor: 나–와–함께 | swa: kwangu
+- **S124648** (1x) [Prep | 3ms] | eng: with–Him | spa: con–él | hin: उसके–साथ | arb: مَعَ–هُ | kor: 그와–함께 | swa: pamoja–naye
+
+## H6003 (POS: N-proper-ms, "† <strong><span dir="rtl"><span class="lexicon-hebrew" dir="rtl">עֲמָלֵקִי</span", 12 occ, 4 senses)
+
+- **S125007** (6x) [Art | N-proper-ms,Conj-w, Art | N-proper-ms] | eng: the–Amalekite, and–the–Amalekite | spa: el–amalecita, y–el–amalecita | hin: अमालेकी, और–अमालेकी | arb: وَ–الْعَمَالِيقُ, وَالعَمالِقَةِ | kor: 아말렉족과, 아말렉의 | swa: Mwaamaleki, wa–Waamaleki
+- **S125008** (3x) [N-proper-ms] | eng: an–Amalekite, Amalekite | spa: amaleqita, amalecita | hin: अमालेकी, अमअलेकि | arb: عَمَالِقِيٍّ, عَمَالِقِيٌّ | kor: 아말렉–사람, 아말렉의 | swa: Mwamaleki
+- **S125010** (2x) [N-proper-ms,Prep-m | N-proper-ms] | eng: from–Amaleqi, Amaleqi | spa: amalekita, De–amalekita | hin: अमलेकियोन–से, अमलेकियोन–के | arb: مِنْ–العَمَالِيقِي, العَمَالِيقِي | kor: 아말렉사람의, 아말렉사람에게서– | swa: kutoka–kwa–Waamaleki, Waamaleki
+- **S125009** (1x) [Conj-w | N-proper-ms] | eng: and–Amalekites | spa: y–amalecitas | hin: और-अमअलेकियोन-ने | arb: وَ–العَمالِقَةُ | kor: 그리고–아말렉사람들이 | swa: na–Waamaleki
+
+## H6045 (POS: Art | N-ms, "† II. <strong><strong>[<span dir="rtl"><span class="lexicon-hebrew" dir="rtl">עָ", 8 occ, 4 senses)
+
+- **S125399** (5x) [N-msc,N-ms,Art | N-ms] | eng: task, the–task | spa: ocupación, la–ocupación | hin: कार्य–से, कार्य–को | arb: الَّذِي–, لَا– | kor: 일–그, 일 | swa: shughuli, kazi
+- **S125401** (1x) [N-msc | 3ms] | eng: his–task | spa: su–ocupación | hin: उसका–काम | arb: شُغْلُهُ | kor: 일–그의 | swa: kazi–yake
+- **S125402** (1x) [Conj-w | N-msc] | eng: and–task | spa: y–ocupación | hin: और–कार्य | arb: وَشُغْلٌ | kor: 그리고–일 | swa: na–shughuli
+- **S125403** (1x) [Prep-b | N-msc] | eng: in–task | spa: en–ocupación | hin: कार्य–में | arb: بَطْنِ | kor: 일–에서 | swa: katika–shughuli
+
+## H6057 (POS: Conj-w | N-msc, "† <strong><span dir="rtl"><span class="lexicon-hebrew" dir="rtl">עָנָף</span></s", 7 occ, 4 senses)
+
+- **S125440** (3x) [N-ms] | eng: branch | spa: rama | hin: डाली, शाखा–में | arb: فَرْعًا, الْغُصْنِ | kor: 가지를, 가지의 | swa: matawi
+- **S125443** (2x) [Conj-w | N-msc,Conj-w | N-ms] | eng: or–branch, and–branch-of | spa: y–rama–de, ni–rama | hin: और–नहीं–डाली, और–डाली | arb: وَلَا–غُصْنًا, وَغُصْنَ | kor: 그리고–가지–의, 그리고–가지 | swa: wala–tawi, na–matawi–ya–
+- **S125441** (1x) [N-msc | 2mp] | eng: your–branches | spa: vuestras–ramas | hin: डालियाँ | arb: أَغْصَانَكُمْ | kor: 너희의–가지들을 | swa: matawi–yenu
+- **S125442** (1x) [Conj-w | N-mpc | 3fs] | eng: and–its–branches | spa: y–ramas-de-ella | hin: और–इसकी–शाखाएँ | arb: وَأَغْصَانُهَا | kor: 그리고–그것의–가지들이 | swa: na–matawi–yake
+
+## Response Format
+
+Return a JSON object with one key per lemma ID. Each value is an array of sense groups:
+
+```json
+{
+  "H5959": [
+    {"labelChirho": "short label", "descriptionChirho": "one sentence", "senseIdsChirho": [id1, id2, ...]}
+  ],
+  "H5972": [...]
+}
+```
+
+IMPORTANT: Return ONLY the JSON object. Every sense ID from every lemma must appear exactly once. Use the numeric sense IDs (without the S prefix).
+
+## H6062 (POS: N-proper-mp, "† I. <strong><span dir="rtl"><span class="lexicon-hebrew" dir="rtl">עֲנָק</span>", 9 occ, 4 senses)
+
+- **S125450** (3x) [Prep-k, Art | N-proper-mp] | eng: like–the–Anakim | spa: como–los–anaquim | hin: –अनाकियों–की–तरह | arb: كَالْعَنَاقِيِّينَ | kor: 아낙–같이 | swa: kama–Anaki
+- **S125451** (2x) [N-proper-ms,N-proper-mp] | eng: Anakim | spa: Anaquim, Anac | hin: अनाकीमों–के, अनाकियों–के | arb: عَنَاقَ, عَناقٍ | kor: 아낙–자손을, 아낙–의 | swa: kumweka, Anaki
+- **S125452** (2x) [N-proper-mp] | eng: Anakim | spa: anaceos | hin: अनाकी | arb: عَناقِيمُ, الْ–عَناقيمَ | kor: 아낙–사람이, 아낙–사람들이 | swa: Waanaki
+- **S125453** (2x) [Art | N-proper-mp,Prep-b, Art | N-proper-mp] | eng: the–Anakim, among–the–Anakim | spa: los–anaceos, entre–los–anaceos | hin: अनाकियों–में, अनाकियों | arb: في–الْ–عَناقيمَ, الْ–عَناقِيمَ | kor: 에–아낙–사람들에, 그–아낙–사람들을 | swa: miongoni–mwa–Waanaki, ha–Waanaki
+
+## H6089a (POS: Art | N-mp, "† I. <strong><span dir="rtl"><span class="lexicon-hebrew" dir="rtl">עֶ֫צֶב</span", 6 occ, 4 senses)
+
+- **S125641** (3x) [N-ms,Art | N-mp] | eng: toil | spa: trabajo, los–afanes | hin: परिश्रम–में, दुःख | arb: حُزْنًا, تَعَبٍ | kor: 수고–의, 수고–에 | swa: wa–taabu, kazi–ngumu
+- **S125640** (1x) [Conj-w | N-mpc | 2ms] | eng: and–your–labors | spa: y–tus–trabajos | hin: और–परिश्रम–तेरा | arb: وَ–أَتْعَابُكَ | kor: 그리고–네–수고–를 | swa: na–kazi–yako
+- **S125643** (1x) [Prep-b | N-ms] | eng: in–pain | spa: con–dolor | hin: दुख–में | arb: بِ–أَلَمٍ | kor: 에–고통 | swa: kwa–maumivu
+- **S125644** (1x) [N-ms] | eng: harsh | spa: dolor | hin: दुःख–का | arb: أذىً | kor: 상처–주는 | swa: kali
+
+## H6116 (POS: N-fs, "† <strong><span dir="rtl"><span class="lexicon-hebrew" dir="rtl">עֲצָרָה</span><", 11 occ, 4 senses)
+
+- **S125860** (5x) [N-fs,N-fsc] | eng: an-assembly, assembly | spa: asamblea, asamblea–de | hin: सभा, सभा। | arb: اِعْتِكافًا, ٱحْتِفَالًا | kor: 성회–를, 성회이 | swa: kusanyiko–takatifu, kusanyiko–la–kufunga
+- **S125863** (4x) [N-fs,N-fsc] | eng: a–solemn–assembly, solemn-assembly | spa: asamblea–solemne | hin: सभा, समापन–सभा | arb: عَصِيرَةٌ, عَصَرَةٌ | kor: 엄숙한–모임이다, 성회–를 | swa: mkutano–mtakatifu, mkutano
+- **S125861** (1x) [Prep-b | N-fpc | 2mp] | eng: your–assemblies | spa: en–sus–asambleas–solemnes | hin: में–सभाओं–तुम्हारी। | arb: مَحافِلَكُمْ | kor: 너희의–성회들에서 | swa: makusanyiko–yenu–matakatifu
+- **S125864** (1x) [Conj-w | N-fs] | eng: and–solemn–gathering | spa: y–reunión–solemne | hin: और–पवित्र–सभा | arb: وَ–الاِعتِكَافَ | kor: 집회를 | swa: na–mkutano

@@ -1,0 +1,88 @@
+You are a biblical lexicographer. For each lemma below, group the over-split sense clusters into REAL lexicographic senses.
+
+Rules:
+- Different grammatical inflections of the same meaning = SAME sense (merge them)
+- Different verb stems (Qal vs Hifil, active vs passive) = often DIFFERENT senses
+- Literal vs metaphorical uses = DIFFERENT senses
+- Every sense ID must appear in exactly one group
+- Output valid JSON array with labelChirho, descriptionChirho (150+ chars with multilingual evidence), senseIdsChirho
+
+## H7677 (POS: N-ms, "† <strong><span dir="rtl"><span class="lexicon-hebrew" dir="rtl">שַׁבָּתוֹן</spa", 11 occ, 2 senses)
+
+- **S138320** (6x) [N-ms] | eng: complete-rest | spa: reposo–solemne | hin: पूर्ण–विश्राम, विश्राम–का | arb: سَبَاتِينَ, سَبَاتٍ | kor: 안식의, 안식 | swa: ya–pumziko–kamili, ya–mapumziko
+- **S138321** (5x) [N-ms] | eng: a-rest, sabbaths | spa: reposo–solemne, descanso | hin: विश्राम | arb: سَبَاتٌ, سُبَاتًا | kor: 안식, 안식이니 | swa: pumziko
+
+## H7704a (POS: N-ms, "† <strong><span dir="rtl"><span class="lexicon-hebrew" dir="rtl">שָׂדַי</span></", 13 occ, 2 senses)
+
+- **S138463** (9x) [N-ms] | eng: field, the–field | spa: el–campo, campo | hin: खेत–के, खेत–की | arb: الْحَقْلِ, الحَقلِ | kor: 밥의, 밤의 | swa: shamba, ya–shamba
+- **S138462** (4x) [N-ms] | eng: the–field | spa: campo | hin: मैदान–के | arb: الْبَرُِّيَّةِ, الحَقْل | kor: 들–의, 들의 | swa: mashamba, shambani
+
+## H7800 (POS: N-proper-ms, "† II. <strong><span dir="rtl"><span class="lexicon-hebrew" dir="rtl">שׁוּשַׁן</s", 21 occ, 2 senses)
+
+- **S139461** (17x) [Prep-b | N-proper-fs,Prep-b | N-proper-ms,Conj-w, Prep-b | N] | eng: in–Susa, in–Shushan | spa: en–Susa, Y–en–Susa | hin: शूशन–में, शूशन में थे | arb: فِي–شُوشَنَ, فِي‒شُوشَنَ | kor: 에–수산에, 에–수산 | swa: katika–Shushani, watu
+- **S139462** (4x) [N-proper-ms] | eng: Shushan, Susa | spa: Susa | hin: शूशन, शूशन–का | arb: شُوشَنُ, شُوشَنَ | kor: 수산은, 수산 | swa: Shushani, wa–Shushani
+
+## Response Format
+
+Return a JSON object with one key per lemma ID. Each value is an array of sense groups:
+
+```json
+{
+  "H7606": [
+    {"labelChirho": "short label", "descriptionChirho": "one sentence", "senseIdsChirho": [id1, id2, ...]}
+  ],
+  "H7611": [...]
+}
+```
+
+IMPORTANT: Return ONLY the JSON object. Every sense ID from every lemma must appear exactly once. Use the numeric sense IDs (without the S prefix).
+
+## H7895 (POS: N-proper-ms, "† <strong><span dir="rtl"><span class="lexicon-hebrew" dir="rtl">שִׁישַׁק</span>", 8 occ, 2 senses)
+
+- **S140077** (7x) [N-proper-ms] | eng: Shishak | spa: Sisac, (Shishaq) | hin: शीशक, का–राजा | arb: شيشَقَ, شيشَقُ | kor: 시샥–의, 시샥–이 | swa: Shishaki
+- **S140079** (1x) [N-proper-ms] | eng: [ketiv] | spa: [Shushaq] | hin: [शीशक] | arb: [شيشق] | kor: [시삭] | swa: Shishaki
+
+## H7902 (POS: N-fsc, "† <strong>[<span dir="rtl"><span class="lexicon-hebrew" dir="rtl">שְׁכָבָה</span", 9 occ, 2 senses)
+
+- **S140267** (7x) [N-fsc] | eng: emission-of–, lying-of– | spa: emisión-de–, acostamiento–de | hin: स्खलन, संभोग– | arb: مَضْجَعَةُ, مَضْجَعَةَ | kor: 누움–의 | swa: mbegu–ya–, kulala–kwa–
+- **S140269** (2x) [N-fsc] | eng: layer-of | spa: capa–de– | hin: परत | arb: طَبَقَةُ | kor: 층이 | swa: tabaka–la
+
+## H7909 (POS: Adj-ms, "† <strong><span dir="rtl"><span class="lexicon-hebrew" dir="rtl">שַׁכּוּל</span>", 6 occ, 2 senses)
+
+- **S140277** (4x) [Adj-ms,Adj-fp] | eng: bereaved | spa: sin–hijos, robada–de–crías | hin: शोकित, बच्चे–छीनी–हुई | arb: مُثكَلٍ, مَسْلوبَةِ–الْأَوْلادِ | kor: 자녀–잃은, 새끼를–잃은 | swa: waliofiwa–na–watoto, aliyeporwa–watoto
+- **S140276** (2x) [Conj-w | Adj-fs] | eng: and–bereaved | spa: y–privada–de–cría, y–ninguna–de–ellas | hin: और–बाँझ | arb: وِ–شَكُلَّه | kor: 그리고–잃은–자 | swa: na–aliyeharibika
+
+## H7956 (POS: Conj-w | N-proper-ms, "† II. <strong><span dir="rtl"><span class="lexicon-hebrew" dir="rtl">שֵׁלָה</spa", 8 occ, 2 senses)
+
+- **S140725** (6x) [N-proper-ms,Prep-l | N-proper-ms] | eng: Shelah, to–Shelah | spa: Shelah, de–Selá | hin: शेला, शेला–को | arb: شِيلَةُ, لِ–شِيلَةَ | kor: 셀라가, 셀라에게 | swa: Shela, kwa–Shela
+- **S140726** (2x) [Conj-w | N-proper-ms] | eng: and–Shelah | spa: y–Shelá, y–Sela | hin: और–शेला | arb: وَ–شيلَة, وَشِيلَةُ | kor: 그리고–셀라와, 그–와–셀라 | swa: na–Shela, akamruka–Shela
+
+## H8042 (POS: Prep-m, "† <strong><span dir="rtl"><span class="lexicon-hebrew" dir="rtl">שְׂמָאלִי</span", 9 occ, 2 senses)
+
+- **S141600** (8x) [Art | Adj-fs,Art | Adj-ms] | eng: the–left | spa: la–izquierda, el–izquierdo | hin: हश्शमालीत, सात | arb: الْيُسْرَى, ٱلْيُسْرَى | kor: 왼쪽의, 그–왼쪽의 | swa: wa–kushoto, cha–kushoto
+- **S141601** (1x) [Prep-m, Art | N-ms] | eng: on–the–left | spa: a–la–izquierda | hin: से–बाएँ | arb: عَنِ–الشِّمَالِ | kor: 에서–그–왼쪽 | swa: upande–wa–kushoto
+
+## H8048 (POS: N-proper-ms, "† II. <strong><span dir="rtl"><span class="lexicon-hebrew" dir="rtl">שַׁמָּה</sp", 7 occ, 2 senses)
+
+- **S141690** (6x) [N-proper-ms] | eng: Shammah | spa: Shammah, Shama | hin: शम्मा, शम्मह–को | arb: شَمَّاة, شَمَّا | kor: 샼마, 샘마의 | swa: Shama, Shamma
+- **S141691** (1x) [N-proper-ms] | eng: Shamah | spa: Sama | hin: शम्मा | arb: شَمَّة | kor: 삼마 | swa: Shama
+
+## Response Format
+
+Return a JSON object with one key per lemma ID. Each value is an array of sense groups:
+
+```json
+{
+  "H7836": [
+    {"labelChirho": "short label", "descriptionChirho": "one sentence", "senseIdsChirho": [id1, id2, ...]}
+  ],
+  "H7837": [...]
+}
+```
+
+IMPORTANT: Return ONLY the JSON object. Every sense ID from every lemma must appear exactly once. Use the numeric sense IDs (without the S prefix).
+
+## H8050 (POS: Conj-w | N-proper-ms, "<strong><span dir="rtl"><span class="lexicon-hebrew" dir="rtl">שְׁמוּאֵל</span><", 140 occ, 2 senses)
+
+- **S141693** (136x) [N-proper-ms,Conj-w | N-proper-ms] | eng: Shemuel, Samuel | spa: Samuel, Shemuel | hin: शमूएल, शमूएल–ने | arb: صَمُوئِيل, صَمُوئِيلُ | kor: 사무엘이, 사무엘 | swa: Samweli, na–Samweli
+- **S141695** (4x) [Prep-l | N-proper-ms,N-proper-ms] | eng: to–Shemuel, Shemuel | spa: a–Samuel, Semuel | hin: शमूएल–से, शमूएल | arb: لِـ–صَمُوئِيل, لِـ–صَمُوئِيلَ | kor: 사무엘에게–, 사무엘 | swa: kwa–Samweli, Shemueli

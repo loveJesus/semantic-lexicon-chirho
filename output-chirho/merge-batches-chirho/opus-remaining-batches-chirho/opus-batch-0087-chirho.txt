@@ -1,0 +1,73 @@
+You are a biblical lexicographer. For each lemma below, group the over-split sense clusters into REAL lexicographic senses.
+
+Rules:
+- Different grammatical inflections of the same meaning = SAME sense (merge them)
+- Different verb stems (Qal vs Hifil, active vs passive) = often DIFFERENT senses
+- Literal vs metaphorical uses = DIFFERENT senses
+- Every sense ID must appear in exactly one group
+- Output valid JSON array with labelChirho, descriptionChirho (150+ chars with multilingual evidence), senseIdsChirho
+
+## G1320 (POS: N-NMP, "<b> <span class="lexicon-greek">δῐδάσκᾰλ-ος</span></b>, ὁ <br /> (but <i>feminin", 59 occ, 2 senses)
+
+- **S65489** (51x) [N-VMS,N-NMS,N-AMS] | eng: Teacher, teacher | spa: Maestro, maestro | hin: गुरु, हे–गुरु | arb: يا–مُعَلِّمُ, يَا–مُعَلِّمُ | kor: 선생님이여, 선생님 | swa: Mwalimu, mwalimu
+- **S65491** (8x) [N-GMP,N-NMP,N-AMP] | eng: teachers | spa: maestros | hin: शिक्षक, शिकशकोन, | arb: مُعَلِّمينَ, مُعَلِّمونَ | kor: 교사들이, 선생들–의 | swa: walimu, walimu?
+
+## Response Format
+
+Return a JSON object with one key per lemma ID. Each value is an array of sense groups:
+
+```json
+{
+  "G1135": [
+    {"labelChirho": "short label", "descriptionChirho": "one sentence", "senseIdsChirho": [id1, id2, ...]}
+  ],
+  "G1140": [...]
+}
+```
+
+IMPORTANT: Return ONLY the JSON object. Every sense ID from every lemma must appear exactly once. Use the numeric sense IDs (without the S prefix).
+
+## G1322 (POS: N-DFP, "<b> <span class="lexicon-greek">δῐδᾰχή</span></b>, ἡ, <br /> <b>teaching,</b> Re", 30 occ, 2 senses)
+
+- **S65516** (29x) [N-DFS,N-GFS,N-NFS,N-AFS] | eng: teaching, of–teaching | spa: enseñanza, doctrina | hin: शिक्षा, शिक्षा–को | arb: تَعْلِيمِ, تَعليمِ | kor: 가르침–을, 가르침 | swa: mafundisho, yake
+- **S65518** (1x) [N-DFP] | eng: by-teachings | spa: por–doctrinas | hin: शिक्षाओं–से | arb: بِتَعَالِيم | kor: 가르침들–에 | swa: mafundisho
+
+## G1350 (POS: N-ANS, "<b> <span class="lexicon-greek">δίκτῠον</span></b>, <span class="lexicon-greek">", 12 occ, 2 senses)
+
+- **S65684** (8x) [N-ANP,N-NNP] | eng: nets | spa: redes | hin: जालों–को, जालों | arb: شِباكَ, شِبَاكَهُمَا | kor: 그물을, 그물들–을 | swa: nyavu, nyavu.
+- **S65685** (4x) [N-ANS,N-NNS] | eng: net | spa: red | hin: जाल–को, जाल | arb: الشَّبَكَةَ, شَبَكَةَ | kor: 그물–을, 그물 | swa: wavu
+
+## G1360 (POS: Conj, "<b> <span class="lexicon-greek">διότι</span></b>, <br /> <i>conjunction</i> for ", 23 occ, 2 senses)
+
+- **S65697** (21x) [Conj] | eng: because, because– | spa: porque | hin: क्योंकि, क्योनकि | arb: لِأَنَّ, لأنَّ | kor: 왜냐하면, 왔냐하면 | swa: kwa–sababu, kwa–sababu–
+- **S65698** (2x) [Conj] | eng: therefore | spa: por–esto, Por-lo-cual | hin: इसलिए | arb: لِذٰلِكَ | kor: 왜냐하면, 그러므로 | swa: kwa–sababu, kwa–hiyo
+
+## G1364 (POS: N-NFP, "<b> <span class="lexicon-greek">δίς</span></b> [ῐ], <br /> <i>adverb</i> <b>twic", 7 occ, 2 senses)
+
+- **S65702** (6x) [Adv] | eng: twice | spa: dos–veces, dos-veces | hin: दो–बार, दोबार | arb: مَرَّتَيْنِ, مَرَّتَينِ | kor: 두–번, 두-번 | swa: mara–mbili, lakini
+- **S65704** (1x) [N-NFP] | eng: two-myriads | spa: dos–miríadas | hin: बीस–करोड़ | arb: رِبْوَاتُ | kor: 이만 | swa: mia–mbili–milioni
+
+## G1375 (POS: N-GMS, "<b> <span class="lexicon-greek">διωγ-μός</span></b>, ὁ, <br /> <b>the chase,</b>", 10 occ, 2 senses)
+
+- **S65724** (5x) [N-GMS,N-NMS,N-AMS] | eng: persecution | spa: persecución | hin: सताव, उपद्रव | arb: اضْطِهَادٌ, اضْطِهادٌ | kor: 박해가, 핸박–이 | swa: mateso
+- **S65725** (5x) [N-GMP,N-DMP,N-AMP] | eng: persecutions | spa: persecuciones | hin: सतावों, सतअवोन, | arb: الاضْطِهاداتِ, اضْطِهاداتٍ | kor: 박해들–을, 핵박들에 | swa: mateso, –
+
+## G1384 (POS: Adj-NMS, "<b> <span class="lexicon-greek">δόκῐμ-ος</span></b>, <span class="lexicon-greek"", 7 occ, 2 senses)
+
+- **S65806** (6x) [Adj-NMS,Adj-NMP,Adj-AMS] | eng: approved | spa: aprobado, aprobados | hin: प्रमाणित, प्रमाणित–को | arb: مُزَكَّى, مُخْتَبَرٌ | kor: 인정받은, 인정받은–자들이 | swa: waliokubaliwa,, uliokubaliwa
+- **S65807** (1x) [Adj-NMS] | eng: approved | spa: probado | hin: खरा | arb: مُختَبَرًا | kor: 인정받은–자가 | swa: akisha–thibitishwa
+
+## G1388 (POS: N-GMS, "<b> <span class="lexicon-greek">δόλος</span></b> <br /> <br /><b>__B</b><span cl", 11 occ, 2 senses)
+
+- **S65813** (9x) [N-NMS,N-DMS,N-AMS,N-GMS] | eng: deceit, of–deceit | spa: engaño, de–engaño | hin: छल, स्त्री | arb: مَكْرٍ, غِشٌّ | kor: 속임수를, 속임 | swa: udanganyifu, hila
+- **S65815** (2x) [N-DMS] | eng: by–deceit, by-cunning | spa: con–engaño | hin: छल–से | arb: بِمَكْرٍ, بِحيلَةٍ | kor: 속임수로, 계략으로 | swa: kwa–hila
+
+## G1417 (POS: Adj-AMP, "<b> <span class="lexicon-greek">δύο</span></b> [ῠ], <br /> also <b><span class="", 137 occ, 2 senses)
+
+- **S65986** (136x) [Adj-AMP,Adj-ANP,Adj-DMP,Adj-NMP,Adj-NNP,Adj-AFP,Adj-GMP,Adj-] | eng: two, of-two | spa: dos, de–dos | hin: दो, दोनों | arb: اثْنَيْنِ, اثْنَانِ | kor: 둘, 두 | swa: wawili, mbili
+- **S65987** (1x) [Adj-DMP] | eng: to-two | spa: a–dos | hin: दो | arb: لِاثْنَيْنِ | kor: 둘에게 | swa: kwa–wawili
+
+## G1435 (POS: N-NNS, "<b> <span class="lexicon-greek">δῶρον</span></b>, <span class="lexicon-greek">τό", 19 occ, 2 senses)
+
+- **S66015** (10x) [N-ANS,N-DNS,N-NNS] | eng: gift, Gift | spa: ofrenda, don | hin: भेंट–को, भेंट | arb: قُرْبَانَكَ, قُرْبَانٌ | kor: 예물, 예물이다 | swa: sadaka, –
+- **S66014** (9x) [N-ANP,N-NNP,N-DNP] | eng: gifts | spa: dones, regalos | hin: दान, भेंटें | arb: هَدايا, قَرَابينَ | kor: 예물들과, 예물들을 | swa: zawadi, vipaji

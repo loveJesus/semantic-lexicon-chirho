@@ -1,0 +1,73 @@
+You are a biblical lexicographer. For each lemma below, group the over-split sense clusters into REAL lexicographic senses.
+
+Rules:
+- Different grammatical inflections of the same meaning = SAME sense (merge them)
+- Different verb stems (Qal vs Hifil, active vs passive) = often DIFFERENT senses
+- Literal vs metaphorical uses = DIFFERENT senses
+- Every sense ID must appear in exactly one group
+- Output valid JSON array with labelChirho, descriptionChirho (150+ chars with multilingual evidence), senseIdsChirho
+
+## H7551 (POS: Conj-w | V-Qal-Prtcpl-ms, "† <strong><strong>[<span dir="rtl"><span class="lexicon-hebrew" dir="rtl">רָקַם<", 9 occ, 2 senses)
+
+- **S137071** (8x) [V-Qal-Prtcpl-ms,Conj-w | V-Qal-Prtcpl-ms] | eng: embroiderer, and–embroiderer | spa: bordador, y–bordador | hin: कढ़ाई–की, कढ़ाई–कार–का | arb: مُطَرِّزٍ, وَ–مُطَرِّزٌ | kor: 수놓은–자의, 수놓는–자의 | swa: ya–mtarizi, na–mtarizi
+- **S137073** (1x) [V-Pual-Perf-1cs] | eng: I–was–woven | spa: fui-entretejido | hin: बुना–गया–मैं | arb: نُسِجْتُ | kor: 엮어졌나이다 | swa: niliposukwa
+
+## H7552 (POS: Conj-w | N-proper-ms, "† <strong><span dir="rtl"><span class="lexicon-hebrew" dir="rtl">רֶ֫קֶם</span></", 6 occ, 2 senses)
+
+- **S137074** (4x) [Conj-w | N-proper-fs,Conj-w | N-proper-ms] | eng: and–Reqem | spa: y–Requem | hin: और–रेकेम | arb: وَ–رِقِم, وَ–رَقَمُ | kor: 그–와–레켄, 그리고–레겜 | swa: na–Rekemu, na–Rakemu
+- **S137075** (2x) [N-proper-ms] | eng: Rekem | spa: Requem | hin: रेकेम | arb: رَقَمَ, راقَمَ | kor: 레겜을, 레검과 | swa: Rekemu
+
+## H7597a (POS: N-proper-ms, "† <strong><span dir="rtl"><span class="lexicon-hebrew" dir="rtl">שְׁאַלְתִּיאֵל<", 6 occ, 2 senses)
+
+- **S137450** (4x) [N-proper-ms] | eng: Shealtiel, She'alti'el | spa: Salatiel, Shealtiel | hin: शल्तीएल–का, शालतीएल | arb: شَأَلْتِيئِيلَ, شَأَلتيئيلَ | kor: 스알디엘, 스알디엘은 | swa: Shealtieli
+- **S137451** (2x) [N-proper-ms] | eng: Shealtiel | spa: Sealtiel | hin: शअल्तीएल–के | arb: شَأَلْتِيئِيلَ, شَأَلْتِيئِيل | kor: 슸알리엘 | swa: Shealitieli
+
+## Response Format
+
+Return a JSON object with one key per lemma ID. Each value is an array of sense groups:
+
+```json
+{
+  "H7416": [
+    {"labelChirho": "short label", "descriptionChirho": "one sentence", "senseIdsChirho": [id1, id2, ...]}
+  ],
+  "H7423a": [...]
+}
+```
+
+IMPORTANT: Return ONLY the JSON object. Every sense ID from every lemma must appear exactly once. Use the numeric sense IDs (without the S prefix).
+
+## H7606 (POS: Conj-w | N-msc, "† <strong><span dir="rtl"><span class="lexicon-hebrew" dir="rtl">שְׁאָר</span></", 12 occ, 2 senses)
+
+- **S137561** (10x) [Conj-w | N-msc,N-msc,Prep-b | N-msc] | eng: and–rest–of, and–the–rest–of | spa: y–resto–de, y–el–resto–de | hin: और–शेष, शेष–से | arb: وَ–سَائِرُ, وَ–سائِر | kor: 그리고–나머지, 에–나머지 | swa: na–waliobaki, wengine–wa
+- **S137562** (2x) [Conj-w | N-msd] | eng: and–the-remainder | spa: y–lo–que–quedaba | hin: और–शेष–को | arb: وَ–الْبَاقِي | kor: 그리고–나머지를 | swa: na–kilichobaki
+
+## H7619 (POS: Conj-w | N-proper-ms, "† <strong><span dir="rtl"><span class="lexicon-hebrew" dir="rtl">שְׁבוּאֵל</span", 6 occ, 2 senses)
+
+- **S137659** (3x) [N-proper-ms] | eng: Shuvael | spa: Shubael, Subael | hin: शबूएल, शबूएल–के | arb: شُوبَائِيلُ, شُوبَائِيلَ | kor: 쉐부엘 | swa: Shubaeli
+- **S137660** (3x) [N-proper-ms,Conj-w | N-proper-ms] | eng: Shevuel, And–Shevuel | spa: Y–Sebuel, Shebuel | hin: शबूएल, और–शबूएल | arb: شَبُوئِيلُ, وَ–شَبُوئِيلُ | kor: 쉐부엘, 그리고–슈브엘 | swa: Shebueli, na–Shebueli
+
+## H7637 (POS: Art | Number-ofs, "<strong><span dir="rtl"><span class="lexicon-hebrew" dir="rtl">שְׁבִיעִי</span><", 98 occ, 2 senses)
+
+- **S137824** (97x) [Art | Number-oms,Art | Number-ofs,Conj-w, Prep-b, Art | Numb] | eng: the–seventh, the-seventh | spa: el–séptimo, séptimo | hin: सातवें, सातवाँ | arb: السَّابِعِ, السّابِعِ | kor: 그–일곱째, 일곱째 | swa: wa–saba, ya–saba
+- **S137828** (1x) [Prep-b, Art | Number-ofs] | eng: at–the-seventh | spa: a–la–séptima | hin: में–सातवीं | arb: في–ال–سّابِعَةِ | kor: 그–일곱째에 | swa: mara–ya–saba
+
+## H7644 (POS: Conj-w | N-proper-ms, "† <strong><span dir="rtl"><span class="lexicon-hebrew" dir="rtl">שֶׁבְנָא</span>", 9 occ, 2 senses)
+
+- **S137858** (7x) [Conj-w | N-proper-ms] | eng: and–Shevnah, and–Shevna | spa: y–Sebna, y–Shevná | hin: और–शेब्नाह, और–शेबना | arb: وَشَبْنَا, وَ–شَبْنَا | kor: 그리고–솁나가, 그리고–셩나와 | swa: na–Shebna
+- **S137860** (2x) [N-proper-ms] | eng: and, Shebna | spa: Sebna | hin: शेबना | arb: شِبْنَا, شَبْنَا | kor: 셸브나인, 셩나를 | swa: Shebna
+
+## H7652a (POS: N-proper-ms, "† II. <strong><span dir="rtl"><span class="lexicon-hebrew" dir="rtl">שֶׁ֫בַע</sp", 9 occ, 2 senses)
+
+- **S138049** (8x) [N-proper-ms] | eng: Sheva | spa: Sheva | hin: शेबा–के, शेबा | arb: شَبَعَ, شَبَعُ | kor: 세바, 세바의 | swa: Sheba
+- **S138050** (1x) [Conj-w | N-proper-ms] | eng: and–Sheva | spa: y–Seba | hin: और–शेबा | arb: وَ–شابَع | kor: 그–와–세바 | swa: na–Sheba
+
+## H7655 (POS: Number-ms, "† <strong><strong>[<span dir="rtl"><span class="lexicon-hebrew" dir="rtl">שְׁבַע", 6 occ, 2 senses)
+
+- **S138059** (4x) [Conj-w | Number-ms,Conj-w | Number-msc] | eng: and–seven, and–his–seven | spa: y–siete, y–sus–siete | hin: और–सात | arb: وَ–سَبْعَةُ, وَ–سَبْعَة | kor: 그리고–일곱 | swa: na–saba, na–washauri
+- **S138060** (2x) [Number-ms] | eng: seven | spa: siete–veces, siete | hin: सात–गुना, सात | arb: سَبْعَةُ, سَبْعَةً | kor: 일곱배로, 일곱 | swa: saba
+
+## H7657 (POS: Number-cp, "<strong><span dir="rtl"><span class="lexicon-hebrew" dir="rtl">שִׁבְעִים</span><", 91 occ, 2 senses)
+
+- **S138063** (90x) [Number-cp,Conj-w | Number-cp,Conj-w, Art | Number-cp] | eng: seventy, and–seventy | spa: setenta, y–setenta | hin: सत्तर, और–सत्तर | arb: سَبْعُونَ, سَبْعِينَ | kor: 칠십, 일흔 | swa: sabini, na–sabini
+- **S138065** (1x) [Prep-b | Number-cp] | eng: with–seventy | spa: Con–setenta | hin: में–सत्तर | arb: بِسَبْعِينَ | kor: 칠십 | swa: Watu–sabini

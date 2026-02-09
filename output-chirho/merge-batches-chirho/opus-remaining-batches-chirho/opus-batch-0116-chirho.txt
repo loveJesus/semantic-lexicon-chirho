@@ -1,0 +1,73 @@
+You are a biblical lexicographer. For each lemma below, group the over-split sense clusters into REAL lexicographic senses.
+
+Rules:
+- Different grammatical inflections of the same meaning = SAME sense (merge them)
+- Different verb stems (Qal vs Hifil, active vs passive) = often DIFFERENT senses
+- Literal vs metaphorical uses = DIFFERENT senses
+- Every sense ID must appear in exactly one group
+- Output valid JSON array with labelChirho, descriptionChirho (150+ chars with multilingual evidence), senseIdsChirho
+
+## H0494 (POS: Conj-w, "† <strong><span dir="rtl"><span class="lexicon-hebrew" dir="rtl">אֶלְנָתָן</span", 7 occ, 2 senses)
+
+- **S82663** (4x) [Conj-w, Prep-l | N-proper-ms,Conj-w | N-proper-ms] | eng: and–for–Elnatan, and–Elnatan | spa: y–a–Elnatan, y–Elnatan | hin: और–एल्नातान–को, और–एलनातान | arb: وَ–إِلَى–أَلْناثان, وَأَلْنَاثَانُ | kor: 그리고–로–엘라단, 그리고–엨나탄이 | swa: na–Elnathani
+- **S82664** (3x) [N-proper-ms] | eng: Elnatan | spa: Elnatán, Elnatan | hin: एलनातान, एल्नातान | arb: إِلْنَاثَانَ, إِلْنَاتَانَ | kor: 엨나탄과, 엘나탄의 | swa: Elnathani, Elnatani
+
+## Response Format
+
+Return a JSON object with one key per lemma ID. Each value is an array of sense groups:
+
+```json
+{
+  "H0317": [
+    {"labelChirho": "short label", "descriptionChirho": "one sentence", "senseIdsChirho": [id1, id2, ...]}
+  ],
+  "H0346": [...]
+}
+```
+
+IMPORTANT: Return ONLY the JSON object. Every sense ID from every lemma must appear exactly once. Use the numeric sense IDs (without the S prefix).
+
+## H0511 (POS: Conj-w | N-proper-ms, "<strong><span dir="rtl"><span class="lexicon-hebrew" dir="rtl">אֶלְקָנָה</span><", 21 occ, 2 senses)
+
+- **S82732** (19x) [N-proper-ms] | eng: Elqanah, Elkanah | spa: Elcaná, Elcana | hin: एलकाना, एल्कानाह–को | arb: أَلْقَانَة, أَلقانَة | kor: 엘가나, 엘가나–의 | swa: Elkana
+- **S82733** (2x) [Conj-w | N-proper-ms] | eng: and–Elkanah | spa: y–Elkanah, y–Elcaná | hin: और–एलकानाह, और–एलकाना | arb: وَ–أَلْقَانَةُ, وَأَلْقَانَةُ | kor: 그리고–엘가나, 그–와–엘가나 | swa: na–Elkana
+
+## H0516 (POS: V-Hifil-Imperf.Jus-2ms, "<strong><strong>[<span dir="rtl"><span class="lexicon-hebrew" dir="rtl">שָׁחַת</", 8 occ, 2 senses)
+
+- **S82739** (4x) [] | eng: do–not– | spa: no– | hin: न, अल– | arb: لا, لا– | kor: 하지–마소서, 아니 | swa: usiharibu
+- **S82740** (4x) [V-Hifil-Imperf.Jus-2ms] | eng: destroy | spa: destruyas | hin: नाश–कर, तश्खेत | arb: تُهلِك, تُهْلِكْ | kor: 멸하지–마소서, 멸하지–말라 | swa: usiharibu
+
+## H0524 (POS: N-fs, "† <strong><span dir="rtl"><span class="lexicon-hebrew" dir="rtl">אֻמָּה</span></", 8 occ, 2 senses)
+
+- **S82889** (7x) [N-fpd] | eng: nations | spa: naciones, las–naciones | hin: जातियों, जातियां | arb: الأُمَمِ, الْأُمَمِ | kor: 민족들, 족속들 | swa: makabila, mataifa
+- **S82891** (1x) [N-fs] | eng: nation | spa: nación | hin: जाति | arb: أُمَّةٍ | kor: 민족이 | swa: kabila
+
+## H0562 (POS: N-ms, "† <strong>[<span dir="rtl"><span class="lexicon-hebrew" dir="rtl">אֵמֶר</span></", 6 occ, 2 senses)
+
+- **S83172** (4x) [N-ms] | eng: speech, the–word | spa: palabra | hin: वचन, ओमेर | arb: كَلِمَةً, كَلاَمٌ | kor: 말씀–을, 말씀–이 | swa: maneno, neno
+- **S83173** (2x) [N-ms] | eng: is–a–word, a–word | spa: palabra | hin: वचन, बात | arb: قَوْلٌ, أَمْرًا | kor: 말을, 말씀–이니이다 | swa: neno, jambo
+
+## H0564 (POS: Conj-w | N-proper-ms, "† <strong><span dir="rtl"><span class="lexicon-hebrew" dir="rtl">אִמֵּר</span></", 10 occ, 2 senses)
+
+- **S83176** (9x) [N-proper-ms,Conj-w | N-proper-ms] | eng: Immer, and–Immer | spa: Imer, e–Imer | hin: इम्मेर–के, और–इम्मेर | arb: إِمَّيرَ, إِمِّيرَ | kor: 임멜, 임메르의 | swa: Imeri, wa–Imeri
+- **S83177** (1x) [Prep-l | N-proper-ms] | eng: for–Immer | spa: para–Imer | hin: इम्मेर–के–लिए | arb: لِإِمَّيرَ | kor: 에게–임메르 | swa: kwa–Imeri
+
+## H0587 (POS: Conj-w | Pro-1cp, "<strong><strong><span dir="rtl"><span class="lexicon-hebrew" dir="rtl">אֲנַ֫חְנו", 121 occ, 2 senses)
+
+- **S83312** (89x) [Pro-1cp] | eng: we, we-are | spa: nosotros, somos–nosotros | hin: हम, अनाख्नू | arb: نَحْنُ, نَحنُ | kor: 우리는, 우리가 | swa: sisi, wenyewe
+- **S83313** (32x) [Conj-w | Pro-1cp,Pro-1cp] | eng: and–we, but–we | spa: y–nosotros, Y–nosotros | hin: और–हम, परन्तु–हम | arb: وَ–نَحْنُ, وَنَحْنُ | kor: 그리고–우리는, 그리고–우리–는 | swa: na–sisi, lakini–sisi
+
+## H0609 (POS: N-proper-ms, "<strong><span dir="rtl"><span class="lexicon-hebrew" dir="rtl">אָסָא</span></spa", 58 occ, 2 senses)
+
+- **S83393** (47x) [N-proper-ms,Conj-w | N-proper-ms] | eng: Asa, and–Asa | spa: Asa, y–Asa | hin: आसा, आसा–ने | arb: آسَا, آسا | kor: 아사가, 아사의 | swa: Asa, na–Asa
+- **S83394** (11x) [Prep-l | N-proper-ms] | eng: of–Asa, to–Asa | spa: de–Asa, para–Asa | hin: के–आसा, आसा–के–लिए | arb: لِآسَا, لِ–آسَا | kor: 에게–아사 | swa: kwa–Asa
+
+## H0635 (POS: Prep-m | N-proper-fs, "<strong><span dir="rtl"><span class="lexicon-hebrew" dir="rtl">אֶסְתֵּר</span></", 55 occ, 2 senses)
+
+- **S83618** (54x) [N-proper-fs,Prep-l | N-proper-fs,Conj-w | N-proper-fs] | eng: Esther, to–Esther | spa: Ester, a–Ester | hin: एस्तेर–ने, एस्तेर | arb: أَسْتِيرُ, أَسْتِيرَ | kor: 에스더가, 에게–에스더 | swa: Esta, kwa–Esta
+- **S83621** (1x) [Prep-m | N-proper-fs] | eng: from–Esther | spa: de–Ester | hin: एस्तेर–से | arb: مِنْ–أَسْتِيرَ | kor: 에게서–에스더 | swa: kutoka–Esta
+
+## H0645 (POS: Conj, "† <strong><strong><span dir="rtl"><span class="lexicon-hebrew" dir="rtl">אֵפוֹ</", 15 occ, 2 senses)
+
+- **S83759** (11x) [Conj] | eng: then | spa: entonces, pues | hin: तब, तो | arb: إِذَنْ, إذن | kor: 그렇다면, 그러면 | swa: basi, sasa
+- **S83760** (4x) [Conj] | eng: then, therefore | spa: pues | hin: अब, तो | arb: إِذًا, إِذَنْ | kor: 있느냐, 그러므로 | swa: basi

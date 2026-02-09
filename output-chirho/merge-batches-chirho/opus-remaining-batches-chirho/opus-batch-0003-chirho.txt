@@ -1,0 +1,138 @@
+You are a biblical lexicographer. For each lemma below, group the over-split sense clusters into REAL lexicographic senses.
+
+Rules:
+- Different grammatical inflections of the same meaning = SAME sense (merge them)
+- Different verb stems (Qal vs Hifil, active vs passive) = often DIFFERENT senses
+- Literal vs metaphorical uses = DIFFERENT senses
+- Every sense ID must appear in exactly one group
+- Output valid JSON array with labelChirho, descriptionChirho (150+ chars with multilingual evidence), senseIdsChirho
+
+## H4869a (POS: N-msc | 1cs, "† I. <strong><span dir="rtl"><span class="lexicon-hebrew" dir="rtl">מִשְׂגָּב</s", 16 occ, 7 senses)
+
+- **S114516** (7x) [N-msc | 1cs,N-ms] | eng: a–fortress, my–fortress | spa: refugio-alto–, mi–refugio-alto | hin: मेरा–गढ़, शरण–हमारी | arb: مَلجَأُ–العالي, مَلْجَأُنا | kor: 나–의–요새–이시도다, 요새–가 | swa: ngome-yangu, ngome-yetu
+- **S114518** (3x) [N-msc | 1cs] | eng: my–stronghold | spa: mi–baluarte, mi–altura | hin: मेरी–ऊँचाई, मेरा–ऊंचा–गढ़ | arb: مَلْجَأِي | kor: 높은–요새여, 나의–높은–피난처시라 | swa: kimbilio–langu
+- **S114519** (2x) [N-ms] | eng: a–refuge | spa: refugio | hin: शरणस्थान | arb: مَلْجَأً | kor: 높은–요새–가 | swa: ngome
+- **S114520** (1x) [N-msc] | eng: of–the–height | spa: baluarte–de | hin: ऊंचाई–की | arb: مَلْجَأِ | kor: 높이의 | swa: ya–juu
+- **S114521** (1x) [N-msc | 3ms] | eng: his–refuge | spa: su–refugio | hin: उसका–शरणस्थान–होगा | arb: مَلْجَأُهُ | kor: 그의–높은–곣이요 | swa: kimbilio–lake
+- **S114522** (1x) [Prep-l | N-ms] | eng: as–a–stronghold | spa: como–refugio-alto | hin: शरण–के–रूप–में | arb: مَلْجَأً | kor: –요새–로 | swa: kuwa–ngome
+- **S114523** (1x) [Prep-l | N-ms] | eng: a–stronghold | spa: por–baluarte | hin: के–लिए–ऊँचा–गढ़ | arb: حِصْنًا | kor: 높은–요새–로 | swa: ngome
+
+## Response Format
+
+Return a JSON object with one key per lemma ID. Each value is an array of sense groups:
+
+```json
+{
+  "H4680": [
+    {"labelChirho": "short label", "descriptionChirho": "one sentence", "senseIdsChirho": [id1, id2, ...]}
+  ],
+  "H4686b": [...]
+}
+```
+
+IMPORTANT: Return ONLY the JSON object. Every sense ID from every lemma must appear exactly once. Use the numeric sense IDs (without the S prefix).
+
+## H5055 (POS: V-Piel-Imperf-2mp, "† <strong><strong><span dir="rtl"><span class="lexicon-hebrew" dir="rtl">נָגַח</", 11 occ, 7 senses)
+
+- **S116020** (4x) [V-Qal-Imperf-3ms] | eng: it-gores, gores | spa: acornea, acornee | hin: मारे–सींग, मारेगा–सींग | arb: نَطَحَ | kor: 받으면 | swa: atampiga–pembe
+- **S116021** (2x) [V-Piel-Imperf-2ms] | eng: you–will–gore, you-will-gore | spa: cornearás, acornearás | hin: मारोगा, मारेगा | arb: تَنْطَحُ, تَنطَحُ | kor: 받으리라 | swa: utawasukuma, utasukuma
+- **S116022** (1x) [V-Piel-Prtcpl-ms] | eng: butting | spa: acorneando | hin: सींग–मारता–था | arb: يَنْطَحُ | kor: 받는 | swa: akipiga
+- **S116023** (1x) [V-Piel-Imperf-1cp] | eng: we–push–down | spa: acornearemos | hin: पछाड़ेंगे–हम | arb: نَنْطَحُ | kor: 받으리이다 | swa: tutawasukuma
+- **S116024** (1x) [V-Hitpael-Imperf-3ms] | eng: shall-engage-in-battle | spa: se–embestirá | hin: सींग–मारेगा | arb: يَتَنَاطَحُ | kor: 받으리라 | swa: atapigana–naye
+- **S116025** (1x) [V-Piel-Imperf-3ms] | eng: he–gores | spa: acorneará | hin: मारेगा | arb: يَنْطَحُ | kor: 받으리라 | swa: atayasukuma
+- **S116027** (1x) [V-Piel-Imperf-2mp] | eng: you-gore | spa: acorneáis | hin: तुम–डकारते–हो | arb: تَنْطَحُونَ | kor: 너희가–받고 | swa: mnapiga
+
+## H5058 (POS: Conj-w | N-fpc, "† <strong>[<span dir="rtl"><span class="lexicon-hebrew" dir="rtl">נְגִינָה</span", 14 occ, 7 senses)
+
+- **S116051** (7x) [Prep-b | N-fp,N-fsc] | eng: with–stringed–instruments, stringed–instruments | spa: en–instrumentos–de–cuerda, con–instrumentos-de-cuerda | hin: तारवाले–बाजों–पर, बि–नेगीनोत | arb: بِ–آلاَتِ–الوَتَرِ, عَلَى–ذَوَاتِ–الأَوْتَارِ | kor: 현악기–들–에–맞추어, 현악기들–에 | swa: kwa–vinanda, vinanda
+- **S116055** (2x) [N-fsc | 3mp] | eng: their–mocking–song, their-song | spa: su–canción–de–burla, su–canción | hin: गीत–उनका, उनका–गीत | arb: أُغْنِيَتَهُمْ, أُغنِيَتُهُم | kor: 그들의–노래가, 그들–노래–가 | swa: wimbo–wao–wa–dhihaka, wimbo–wao
+- **S116052** (1x) [Prep-b | N-fp] | eng: on–my–stringed–instruments | spa: con–mis–instrumentos–de–cuerda | hin: मेरी–तारवाली–वाद्यों–पर | arb: عَلَى–آلَاتِي | kor: 나–의–현악기–로 | swa: kwa–vyombo–vyangu–vya–nyuzi
+- **S116053** (1x) [N-fsc | 1cs] | eng: my–song | spa: canción-de-mí | hin: नेगीनाती | arb: أُنْشُودَتِي | kor: 나–의–노래–를 | swa: wimbo–wangu
+- **S116054** (1x) [Conj-w | N-fp] | eng: and–my–songs | spa: y–mis–cánticos | hin: और–मेरे–गीत | arb: وَأَنَاشِيدِي | kor: 그리고–나의–노래를 | swa: na–nyimbo–zangu
+- **S116056** (1x) [Conj-w | N-fpc] | eng: and–the–songs–of | spa: y–canciones–de | arb: وَ–أغاني– | kor: 그리고–노래–들–이 | swa: na–nyimbo
+- **S116059** (1x) [Prep-m | N-fsc | 3mp] | eng: from–their–music | spa: de–su–música | hin: अपने–संगीत–से | arb: مِنْ–غِنَائِهِمْ | kor: 그들–음악–에서 | swa: kutoka–muziki–wao
+
+## H5086 (POS: V-Qal-Imperf-3fs | 3mse, "† <strong><strong>[<span dir="rtl"><span class="lexicon-hebrew" dir="rtl">נָדַף<", 9 occ, 7 senses)
+
+- **S116488** (3x) [V-Nifal-Prtcpl-ms] | eng: driven | spa: llevada–por–el–viento, aventada | hin: उड़ते–हुए, उड़ती–हुई | arb: مُنْسَاقَةٍ, مُنْدَفِعَةً | kor: 휘날리는, 못리는 | swa: unaopepea, linaoperushwa
+- **S116489** (1x) [V-Qal-Imperf-2ms] | eng: drive–them–away | spa: aventarás | arb: تَقْشَعُهُمْ | kor: 흩어지리이다 | swa: wapeperushwe
+- **S116490** (1x) [V-Nifal-Perf-3ms] | eng: be-driven-away | spa: será–echado | hin: उड़ा–दिया–जाएगा | arb: يَتَبَدَّدُ | kor: 날리며 | swa: vimepeperushwa
+- **S116491** (1x) [V-Qal-Imperf-3ms | 3mse] | eng: will–thrust–him–away | spa: lo–derrotará | hin: हराएगा–उसे | arb: يَدفَعُهُ | kor: 그를–물리침이라 | swa: atamsukuma
+- **S116492** (1x) [Prep-k | V-Nifal-Inf] | eng: as–is–driven–away | spa: Como–es–aventado | arb: كَ–انْقِشاعِ | kor: 흩어지듯 | swa: Kama–kupeperushwa
+- **S116493** (1x) [V-Nifal-Prtcpl-ms] | eng: stubble | spa: aventada | hin: उड़ाया–गया | arb: المَدْفُوعِ | kor: 날려진 | swa: yanayopeperushwa
+- **S116495** (1x) [V-Qal-Imperf-3fs | 3mse] | eng: drives–away | spa: lo–dispersa | hin: उड़ा–ले–जाती–है | arb: تَذُرُّهَا | kor: 날려–버리는 | swa: huyapeperusha
+
+## Response Format
+
+Return a JSON object with one key per lemma ID. Each value is an array of sense groups:
+
+```json
+{
+  "H4941": [
+    {"labelChirho": "short label", "descriptionChirho": "one sentence", "senseIdsChirho": [id1, id2, ...]}
+  ],
+  "H5046": [...]
+}
+```
+
+IMPORTANT: Return ONLY the JSON object. Every sense ID from every lemma must appear exactly once. Use the numeric sense IDs (without the S prefix).
+
+## H5137a (POS: Conj-w | V-Hifil-ConjPerf-3ms, "† I. <strong><strong>[<span dir="rtl"><span class="lexicon-hebrew" dir="rtl">נָז", 23 occ, 7 senses)
+
+- **S116915** (14x) [Conj-w | V-Hifil-ConjPerf-3ms,V-Hifil-Imperf-3ms] | eng: and–shall-sprinkle, and–let-sprinkle | spa: y–rociará, Y–rociará | hin: और–छिड़केगा, और–छिड़के | arb: وَ–يَرُشُّ, وَ–يَنْضَحُ | kor: 그리고–뿌릴–것이다, 그리고-뿌리리라 | swa: na–atanyunyiza, Na–atanyunyiza
+- **S116916** (2x) [Conj-w | V-Hifil-ConsecImperf-] | eng: and–sprinkled | spa: y–roció, Y–roció | hin: और–छिड़का | arb: وَ–رَشَّ | kor: 그리고–뿌렸다 | swa: na–akanyunyiza, Na–akanyunyiza
+- **S116917** (2x) [V-Qal-Imperf-3ms] | eng: is–spattered | spa: salpique | hin: छिड़के | arb: يَرُشُّ | kor: 뿌리면, 뿌리는 | swa: atanyunyiza
+- **S116922** (2x) [Conj-w | V-Qal-ConjImperf.Jus-,Conj-w | V-Qal-ConsecImperf-3] | eng: and–spattered, and–it-spattered | spa: y–salpicó | hin: वय्यज, और–छिटका | arb: وَ–رَشَشَ, فَانْرَشَّ | kor: 그리고–튀었다 | swa: na–ilimwagika, na–ikanyunyika
+- **S116918** (1x) [Conj-w | V-Hifil-Prtcpl-msc] | eng: and–the–sprinkler-of | spa: y–el–que–rocía | hin: और–जो–छिड़कता–है | arb: وَ–النَّاضِحُ | kor: 그리고–그–뿌리는–자–가 | swa: na–anyunyizaye
+- **S116920** (1x) [V-Hifil-Imp-ms] | eng: sprinkle | spa: rocía | hin: छिड़क | arb: رُشَّ | kor: 뿌리라 | swa: nyunyiza
+- **S116921** (1x) [Conj-w | V-Hifil-ConjPerf-2ms] | eng: and–you-shall-sprinkle | spa: y-rociarás | hin: और–छिड़कना | arb: وَ–تَرُشُّهُ | kor: 그리고–뿌려라 | swa: na–utanyunyiza
+
+## H5312 (POS: V-Qal-Perf-3fs, "<strong><strong><span dir="rtl"><span class="lexicon-hebrew" dir="rtl">נְפַק</sp", 12 occ, 7 senses)
+
+- **S118580** (3x) [V-Hifil-Perf-3ms] | eng: brought–out, took–out | spa: sacó | hin: निकाले–थे, निकाला | arb: أَخْرَجَها | kor: 내어왔다 | swa: alitoa
+- **S118581** (2x) [V-Qal-Perf-3fs,V-Qal-Perf-3ms] | eng: went-out | spa: salió, había–salido | hin: निकली, निकला–था | arb: خَرَجَ | kor: 내려졌다, 나갔다 | swa: ilitoka, alitoka
+- **S118582** (2x) [V-Hifil-Perf-3ms,V-Hifil-Perf-3mp] | eng: were-brought-out, brought-out | spa: había–sacado, habían–sacado | hin: निकाले–गए–थे, निकाला–था | arb: أُخْرِجَتْ, أَخْرَجَهَا | kor: 가져온 | swa: walitoa, alitoa
+- **S118584** (2x) [V-Qal-Perf-3fp,V-Qal-Perf-3mp] | eng: [ketiv:came-forth], (qere:came-forth) | spa: [salieron], (salieron) | hin: [निकली], (निकली) | arb: [خَرَجَتْ], (خَرَجَتْ) | kor: [나왔다], (나왔더니) | swa: [zilitoka], (zilitoka)
+- **S118583** (1x) [V-Qal-Imp-mp] | eng: come-out | spa: salid | hin: निकलो | arb: اخْرُجُوا | kor: 나오라 | swa: tokeni
+- **S118585** (1x) [Conj-w | V-Qal-Prtcpl-ms] | eng: and–coming-forth | spa: y–salía | hin: और–निकल–रही–थी | arb: وَ–خَارِجٌ | kor: 그리고–나오는 | swa: na–kutoka
+- **S118586** (1x) [V-Qal-Prtcpl-mp] | eng: came-out | spa: salieron | hin: निकले | arb: خَرَجُوا | kor: 나왔다 | swa: wakatoka
+
+## H5333 (POS: Conj-w | N-msc, "† I. <strong><span dir="rtl"><span class="lexicon-hebrew" dir="rtl">נְצִיב</span", 12 occ, 7 senses)
+
+- **S118803** (4x) [N-mp] | eng: garrisons | spa: guarniciones | hin: सैनिकों–को, रक्षकों | arb: حامِياتٍ, حُرَّاسًا | kor: 수비대들을, 수비대를 | swa: ngome, askari–wa–ulinzi
+- **S118804** (3x) [N-msc,Conj-w | N-msc] | eng: garrison-of, and–garrison–of | spa: guarnición–de, y–guarnición–de | hin: चौकी, और–चौकी | arb: حَامِيَةَ, وَحَامِيَة | kor: 수비대를, 그리고–수비대–의 | swa: ngome, na–kikosi–cha
+- **S118805** (1x) [Conj-w | N-ms] | eng: and–one–governor | spa: y–un–gobernador | hin: और–अधीक्षक | arb: وَوَكِيلٌ | kor: 그리고–감독관이 | swa: na–msimamizi
+- **S118806** (1x) [Art | N-mp] | eng: [the–overseers] | spa: [los–oficiales] | hin: अधिकारियों–के | kor: 그–파송된자들–의 | swa: wasimamizi
+- **S118807** (1x) [N-mpc] | eng: garrisons-of | spa: guarniciones–de | hin: चौकियाँ | arb: حُرَّاسُ | kor: 수비대가 | swa: walinzi
+- **S118808** (1x) [N-mp] | eng: garrisons | spa: gobernadores | hin: सैनिक–चौकियाँ | arb: حُرَاسًا | kor: 수비대들 | swa: magavana
+- **S118809** (1x) [N-msc] | eng: pillar-of | spa: columna–de | hin: खमभ | arb: عَمُودَ | kor: 기둥이 | swa: nguzo
+
+## H5591b (POS: N-fp, "† <strong><span dir="rtl"><span class="lexicon-hebrew" dir="rtl">סְעָרָה</span><", 16 occ, 7 senses)
+
+- **S121085** (6x) [N-fs,Art | N-fs] | eng: storm, [the–storm] | spa: tempestad, tormenta | hin: [आँधी], आंधी–को | arb: عاصِفَةٌ, عاصِفَة | kor: 폭풍의, 폭풍–의 | swa: wa–dhoruba, [dhoruba]
+- **S121086** (2x) [Conj-w | N-fs] | eng: and–a–tempest | spa: y–torbellino | hin: और–आँधी | arb: وَالزَّوْبَعَةُ | kor: 그리고–폭풍이 | swa: na–dhoruba
+- **S121087** (2x) [N-fp] | eng: storms | spa: tormentas | hin: आँधी | arb: عَاصِفَةٍ | kor: 폭풍의 | swa: wa–dhoruba
+- **S121089** (2x) [N-fsc] | eng: storm-of | spa: tormenta–de, tempestad–de | hin: आँधी | arb: عَاصِفَةُ | kor: 폭풍이, 의–폭풍이 | swa: dhoruba–ya
+- **S121090** (2x) [Prep-b, Art | N-fs] | eng: in–the-whirlwind | spa: en–la–tempestad | hin: बवंडर–में | arb: بِ–الْعَاصِفَةِ | kor: 회오리바람–으로 | swa: katika–upepo–mkali
+- **S121092** (1x) [Prep-b | N-fpc] | eng: in–storms–of | spa: en–torbellinos–de | hin: में–आँधियों | arb: فِي–عَوَاصِفِ | kor: 회오리바람–가운데 | swa: katika–dhoruba–za
+- **S121093** (1x) [Conj-w | N-fs] | eng: and–storm | spa: y–tormenta | hin: और–तूफान | arb: وَ–زَوْبَعَةٍ | kor: 그리고–폭풍과 | swa: na–dhoruba
+
+## H5628 (POS: Adj-mp, "† <strong><strong>[<span dir="rtl"><span class="lexicon-hebrew" dir="rtl">סָרַח<", 7 occ, 7 senses)
+
+- **S121365** (1x) [V-Qal-Prtcpl-fs] | eng: spreading | spa: extendida | hin: फैलती–हुई | arb: مُمْتَدَّةٍ | kor: 퍼지는 | swa: unaotambaa
+- **S121366** (1x) [Adj-mpc] | eng: flowing-with– | spa: colgantes–de | hin: लटकते | arb: مُسْدَلَّةٍ | kor: 늘어진–자들이다 | swa: walioenea
+- **S121367** (1x) [Adj-ms] | eng: hanging | spa: colgando | hin: लटका–हुआ | arb: مُتَدَلِّيَةً | kor: 늘어진 | swa: ikining'inia
+- **S121368** (1x) [Conj-w | Adj-mp] | eng: and–sprawling | spa: y–se–extienden | hin: और–फैले–रहते–हैं | arb: وَ–المُتَمَدِّدونَ | kor: 그리고–기지개–켜는–자들아 | swa: na–wamestarehe
+- **S121369** (1x) [V-Nifal-Perf-3fs] | eng: has–become–foul | spa: se–ha–podrido | hin: सड़–गई | arb: فَسَدَتْ | kor: 썩었느냐 | swa: imeharibika
+- **S121370** (1x) [Adj-mp] | eng: the–sprawlers | spa: los–extendidos | hin: फैले–हुओं–का। | arb: المُتَمَدِّدينَ | kor: 기지개–켜는–자들의 | swa: wanaostarehe
+- **S121371** (1x) [V-Qal-Imperf-3fs] | eng: shall-hang | spa: colgará | hin: लटके | arb: تَتَدَلّى | kor: 늘어지리라 | swa: itaning'inia
+
+## H5662 (POS: Conj-w, "† <strong><span dir="rtl"><span class="lexicon-hebrew" dir="rtl">עֹבַדְיָ֫הוּ</s", 20 occ, 7 senses)
+
+- **S121876** (7x) [N-proper-ms,Conj-w | N-proper-ms] | eng: Ovadyahu, and–Ovadyahu | spa: Abdías, y–Abdías | hin: ओबद्याहू, और–ओबद्याहू | arb: عُوبَدْيا, وَ–عُوبَدْيا | kor: 오바댜, 그리고–오바댜 | swa: Obadia, na–Obadia
+- **S121877** (5x) [N-proper-ms] | eng: Ovadyah, Obadiah | spa: Obadías, Ovadyah | hin: ओबद्याह | arb: عوبَديا, عُوبَدْيَا | kor: 오바댜, 오바디야 | swa: Obadia, Obadya
+- **S121878** (4x) [Conj-w | N-proper-ms] | eng: and–Ovadyah | spa: y–Obadías, y–Abdías | hin: और–ओबद्याह | arb: وَعُوبَدْيَا, وَ–عوبَديا | kor: 그리고–오바닐, 그리고–오바띴 | swa: na–Obadia, Na–Obadia
+- **S121880** (1x) [Conj-w, Prep-l | N-proper-ms] | eng: and–to–Obadiah | spa: y–para–Ovadyah | hin: और–को–ओबद्या | arb: وَلِ–عُوبَدْيَا | kor: 그리고–에게–오바닐 | swa: na–kwa–Obadia
+- **S121881** (1x) [N-proper-ms] | eng: Obadiah | spa: Abdías | hin: ओबद्याह–का | arb: عوبَديا | kor: 오바랄의 | swa: ya–Obadia
+- **S121882** (1x) [N-proper-ms] | eng: Ovadyahu | spa: Obadías | hin: ओबद्याह | arb: عَبَدْيَاهُو | kor: 오바댜후 | swa: Obadiya
+- **S121883** (1x) [Conj-w | N-proper-ms] | eng: and–Obadiah | spa: y–Obadyahu | hin: और–ओबद्याहू | arb: وَ–عُبَدْيَا | kor: 그리고–오바디야 | swa: wobadyahwּ

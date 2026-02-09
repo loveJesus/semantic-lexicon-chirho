@@ -1,0 +1,83 @@
+You are a biblical lexicographer. For each lemma below, group the over-split sense clusters into REAL lexicographic senses.
+
+Rules:
+- Different grammatical inflections of the same meaning = SAME sense (merge them)
+- Different verb stems (Qal vs Hifil, active vs passive) = often DIFFERENT senses
+- Literal vs metaphorical uses = DIFFERENT senses
+- Every sense ID must appear in exactly one group
+- Output valid JSON array with labelChirho, descriptionChirho (150+ chars with multilingual evidence), senseIdsChirho
+
+## H2748 (POS: Prep-l, "† <strong>[<span dir="rtl"><span class="lexicon-hebrew" dir="rtl">חַרְטֹם</span>", 11 occ, 3 senses)
+
+- **S99150** (7x) [Art | N-mp,Prep-l, Art | N-mp] | eng: the–magicians, for–the-magicians | spa: los–magos, a–los–magos | hin: जादूगरों–ने, ज्योतिषियों | arb: السَّحَرَةُ, الْ–سَّحَرَةِ | kor: 그–요술사들이, 그–술사들이 | swa: waganga, wachawi
+- **S99151** (3x) [N-mpc] | eng: magicians–of, magicians-of | spa: magos-de, magos–de | hin: जादूगरों–ने, जादूगरों | arb: سَحَرَةُ, سَحَرَةِ | kor: 요술사들이, 마술사들을 | swa: waganga, wachawi–wa
+- **S99154** (1x) [Prep-b, Art | N-mp] | eng: on–the–magicians | spa: en–los–magos | hin: जादूगरों–पर | arb: عَلَى–السَّحَرَةِ | kor: 술사들에게 | swa: kwa–waganga
+
+## H2767 (POS: Conj-w | N-proper-fs, "† <strong><span dir="rtl"><span class="lexicon-hebrew" dir="rtl">חָרְמָה</span><", 9 occ, 3 senses)
+
+- **S99246** (5x) [N-proper-fs,Art | N-proper-fs] | eng: Hormah, Chormah | spa: Horma, Jormah | hin: होर्मा, होर्माह। | arb: حُرْمَةَ, حَرْمةَ | kor: 호르마, 호르마의 | swa: Horma, kuaibisha
+- **S99248** (3x) [Conj-w | N-proper-fs,Conj-w, Prep-b | N-proper-fs] | eng: and–Chormah, and–in–Chormah | spa: y–en–Jorma, y–Hormá | hin: और–होर्मा–में, और–होर्मा | arb: وَ–في–حَرمَة, وَ–حُرْمَةُ | kor: 그리고–호르마, 그–와–에–호르마 | swa: na–Horma, na–huko–Horma
+- **S99249** (1x) [Prep-b | N-proper-fs] | eng: in–Hormah | spa: en–Horma | hin: चोरमह-मेइन | arb: في–حُرمَةَ | kor: 에–호르마 | swa: Horma
+
+## H2771a (POS: N-proper-fs, "† I. <strong><span dir="rtl"><span class="lexicon-hebrew" dir="rtl">חָרָן</span>", 10 occ, 3 senses)
+
+- **S99258** (4x) [Prep-m | N-proper-fs,Prep-b | N-proper-fs] | eng: in–Haran, from–Haran | spa: en–Harán, de–Jarán | hin: चरन–मे, हारान–से | arb: مِنْ–حَارَانَ, فِي–حَارَانَ | kor: 하란에서 | swa: kutoka–Harani, katika–Harani
+- **S99260** (4x) [N-proper-fs] | eng: Haran, of–Eden | spa: Harán, Jarán | hin: हारान, चरन | arb: حَارَانَ, حَارَانُ | kor: 하란과, 하란 | swa: Harani
+- **S99261** (2x) [N-proper-fs | 3fs] | eng: Haran-ward | spa: a–Charan, Jarán | hin: हारान–को, हारान | arb: حارانَ, إِلَى–حَارَانَ | kor: 하란으로 | swa: Harrani, Harani
+
+## Response Format
+
+Return a JSON object with one key per lemma ID. Each value is an array of sense groups:
+
+```json
+{
+  "H2696": [
+    {"labelChirho": "short label", "descriptionChirho": "one sentence", "senseIdsChirho": [id1, id2, ...]}
+  ],
+  "H2708": [...]
+}
+```
+
+IMPORTANT: Return ONLY the JSON object. Every sense ID from every lemma must appear exactly once. Use the numeric sense IDs (without the S prefix).
+
+## H2795 (POS: Conj-w | Adj-mp, "† <strong><span dir="rtl"><span class="lexicon-hebrew" dir="rtl">חֵרֵשׁ</span></", 9 occ, 3 senses)
+
+- **S99453** (4x) [Adj-ms,Prep-k | Adj-ms] | eng: deaf, like–a–deaf–one | spa: sordo, como–sordo | hin: बह्रा, बहरे–को | arb: أَصَمَّ, كَ–أَصَمَّ | kor: 균먹은, 귀먹은–자 | swa: kiziwi, kama–kiziwi
+- **S99452** (3x) [Art | Adj-mp,Adj-mp] | eng: the–deaf, of–the–deaf | spa: sordos, los–sordos | hin: बहरे, बहरों–के | arb: الـ–صُّمِّ, الصُّمُّ | kor: 귀먹은–자들이, 귀먹은–자들의 | swa: ya–viziwi, viziwi
+- **S99455** (2x) [Conj-w | Adj-ms,Conj-w | Adj-mp] | eng: and–deaf | spa: y–sordos, y–sordo | hin: और–बहरों, और–बहरा | arb: وَصُمٌّ, وَأَصَمُّ | kor: 그리고–귀먹은–자들을, 그리고–귀먹은–자가 | swa: na–viziwi, na–kiziwi
+
+## H2876 (POS: Art | N-mp, "<strong><span dir="rtl"><span class="lexicon-hebrew" dir="rtl">טַבָּח</span></sp", 32 occ, 3 senses)
+
+- **S99870** (24x) [N-mp] | eng: the–executioners, executioners | spa: la–guardia, verdugos | hin: तब्बाखीम, देहरक्षकों | arb: الشُّرَطِ, الشُرَطِ | kor: 친위대의, 경호대의 | swa: walinzi
+- **S99872** (6x) [Art | N-mp] | eng: the–guard, the–guards | spa: los–guardias | hin: अंगरक्षकों–के, अंगरक्षकों–का | arb: الْ–جَلَّادِينَ, الشُّرَطِ | kor: 호위대의, 그–호위대의 | swa: walinzi, wa–wachezaji
+- **S99873** (2x) [Art | N-ms,Prep-l, Art | N-ms] | eng: to–the–cook, the–cook | spa: el–cocinero, al–cocinero | hin: से–रसोई, रसोई–ने | arb: لِلـ–طَبَّاخِ, الـ–طَبَّاخُ | kor: 그–요리사에게, 그–요리사가 | swa: mpishi, kwa–mpishi
+
+## H2905 (POS: N-mp, "† <strong><span dir="rtl"><span class="lexicon-hebrew" dir="rtl">טוּר</span></sp", 26 occ, 3 senses)
+
+- **S100195** (12x) [N-mpc,N-mp] | eng: rows-of, rows | spa: hileras–de, filas–de | hin: पंक्तियाँ, पंक्तियों–में | arb: صُفُوفٍ, صُفُوفًا | kor: 줄들로, 줄들 | swa: safu, za–nguzo
+- **S100196** (9x) [Conj-w, Art | N-ms,Conj-w | N-msc] | eng: and–the–row, and–row-of | spa: Y–la–hilera, Y-la-hilera | hin: और–पंक्ति | arb: وَ–الصَّفُّ, وَ–صَفٌّ | kor: 그리고–그–줄, 그리고-줄로 | swa: na–safu, ya–mbao
+- **S100198** (5x) [N-msc,Art | N-ms] | eng: the–row, row | spa: la–hilera, la–fila | hin: पंक्ति, पंक्ति–में | arb: صَفٌّ, الصَّفُّ | kor: 그–줄, 줄이 | swa: safu, kwa–safu
+
+## H2921 (POS: Conj-w | V-Qal-QalPassPrtcpl-ms, "† <strong><strong>[<span dir="rtl"><span class="lexicon-hebrew" dir="rtl">טָלָא<", 8 occ, 3 senses)
+
+- **S100253** (6x) [Conj-w | V-Qal-QalPassPrtcpl-m,Conj-w, Art | V-Qal-QalPassPr] | eng: and–spotted, and–the–spotted | spa: y–manchada, y–manchadas | hin: और–धब्बेदार | arb: وَمُبَرْقَشَةً, وَالْمُبَرْقَشَةَ | kor: 그리고–얼룩이–있는, 그리고–그–얼룩이–있는 | swa: na–wenye–mabaka, na–mwenye–mabaka
+- **S100254** (1x) [Conj-w | V-Pual-Prtcpl-fp] | eng: and–patched | spa: y–remendadas | hin: और–पैबंद–लगे | arb: وَ–مُرَقَّعَةً | kor: 그리고–기운 | swa: na–vilivyozibwa
+- **S100255** (1x) [V-Qal-QalPassPrtcpl-fp] | eng: multi-colored | spa: de–colores | hin: रंग–बिरंगे | arb: مُلَوَّنَةً | kor: 얼룩덱룩한 | swa: pa–rangi
+
+## H2971 (POS: N-proper-ms, "† <strong><span dir="rtl"><span class="lexicon-hebrew" dir="rtl">יָאִיר</span></", 9 occ, 3 senses)
+
+- **S100525** (4x) [N-proper-ms] | eng: Jair | spa: Yaír, Yair | hin: याईर | arb: يائيرُ, يَائِيرُ | kor: 야일이, 야일의 | swa: Yairi, Manase
+- **S100526** (4x) [N-proper-ms] | eng: Yair, Ya'ir | spa: Yair, Jair | hin: याईर, याईर–का | arb: يائير, يَائِيرَ | kor: 야이르, 야일의 | swa: Yairi
+- **S100527** (1x) [Conj-w | N-proper-ms] | eng: and–Jair | spa: Y–Jair | hin: और–याईर | arb: وَيَائِيرُ | kor: 그리고–야이르 | swa: na–Yairi
+
+## H3002 (POS: Adj-fs, "† II. <strong><span dir="rtl"><span class="lexicon-hebrew" dir="rtl">יָבֵשׁ</spa", 9 occ, 3 senses)
+
+- **S100674** (7x) [Adj-ms,Art | Adj-fp,Adj-fp] | eng: dry, the–dry | spa: seco, seca | hin: सूखा, सूखे | arb: يَابِسَةٌ, ٱلْيَابِسَةُ | kor: 마른, 그–마른 | swa: mkavu, makavu
+- **S100676** (1x) [Adj-fs] | eng: is-dried-up | spa: seca | hin: सूखी–है | arb: يَابِسَةٌ | kor: 마른 | swa: imekauka
+- **S100677** (1x) [Conj-w | Adj-mp] | eng: or–dried | spa: y–secas | hin: और–सूखे | arb: وَ–يَابِسًا | kor: 그리고–마른것 | swa: Uibshim
+
+## H3015 (POS: Conj-w | N-ms, "† <strong><span dir="rtl"><span class="lexicon-hebrew" dir="rtl">יָגוֹן</span></", 14 occ, 3 senses)
+
+- **S100710** (9x) [N-ms,Conj-w | N-ms] | eng: sorrow, and–sorrow | spa: dolor, y–dolor | hin: और–दुख, शोक | arb: حُزْنًا, وَ–حُزْنًا | kor: 슬픔과, 슬픔이 | swa: huzuni, na–huzuni
+- **S100712** (3x) [Prep-b | N-ms] | eng: in–sorrow | spa: con–tristeza, en–dolor | hin: शोक–में, में–दुख | arb: بِ–حُزْنٍ, بِالحُزْنِ | kor: 슬픔–으로, 슬픔–에 | swa: kwa–huzuni, kwa
+- **S100713** (2x) [Prep-m | N-msc | 3mp,Prep-m | N-ms] | eng: from–their–sorrow, from–sorrow | spa: de–tristeza, de–su–tristeza | hin: से–उनके–दुःख, शोक–से | arb: مِنْ–غَمِّهِمْ, مِنْ‒حُزْنٍ | kor: 에서–슬픔, 그들의–슬픔에서 | swa: kutoka–huzuni–yao, kutoka–huzuni

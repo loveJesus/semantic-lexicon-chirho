@@ -1,0 +1,73 @@
+You are a biblical lexicographer. For each lemma below, group the over-split sense clusters into REAL lexicographic senses.
+
+Rules:
+- Different grammatical inflections of the same meaning = SAME sense (merge them)
+- Different verb stems (Qal vs Hifil, active vs passive) = often DIFFERENT senses
+- Literal vs metaphorical uses = DIFFERENT senses
+- Every sense ID must appear in exactly one group
+- Output valid JSON array with labelChirho, descriptionChirho (150+ chars with multilingual evidence), senseIdsChirho
+
+## G4124 (POS: N-NFS, "<b> <span class="lexicon-greek">πλεονεξία</span></b>, <br /> <i>Ionic dialect</i", 10 occ, 2 senses)
+
+- **S74959** (5x) [N-NFP,N-NFS,N-AFS,N-DFS,N-GFS] | eng: greed, in–greed | spa: avaricia, en–avaricia | hin: लोभ, लोभ–में | arb: عَلى–الطَّمَعِ, طَمَعٍ | kor: 탐욕을, 탐욕들 | swa: tamaa, ulafi
+- **S74960** (5x) [N-GFS,N-DFS,N-AFS] | eng: greed, of–greed | spa: codicia, de–codicia | hin: लोभ, लोभ–क | arb: طَمَعٍ | kor: 탐욕의–—, 탐욕으로 | swa: tamaa, uchoyo,
+
+## G4134 (POS: Adj-AFP, "<b> <span class="lexicon-greek">πλήρης</span></b>, <span class="lexicon-greek">ε", 16 occ, 2 senses)
+
+- **S75013** (15x) [Adj-AMP,Adj-AFP,Adj-AMS,Adj-NMS,Adj-NFS,Adj-VMS,Adj-NMP] | eng: full | spa: lleno, llenos | hin: भरा–हुआ, भरे–हुए | arb: مَمْلُوءٌ, مَمْلُوءَةً | kor: 가득–찬, 가득한 | swa: amejaa, vimejaa
+- **S75014** (1x) [Adj-AMS] | eng: full | spa: plena | hin: पूर्ण | arb: كامِلاً | kor: 온전한 | swa: kamili
+
+## G4139 (POS: Prep, "<b> <span class="lexicon-greek">πλήσι-ος</span></b>, <span class="lexicon-greek"", 17 occ, 2 senses)
+
+- **S75079** (16x) [Adv] | eng: neighbor | spa: prójimo | hin: पड़ोसी, पड़ोसी–से | arb: قَريبَكَ, قَرِيبَكَ | kor: 이웃을, 이웃–을 | swa: jirani, yako
+- **S75080** (1x) [Prep] | eng: near | spa: cerca | hin: निकट | arb: قَرِيبَةٍ | kor: 가까이 | swa: karibu–na
+
+## G4145 (POS: Adj-DMP, "<b> <span class="lexicon-greek">πλούσιος</span></b>, <br /> <i>Laconian dialect<", 28 occ, 2 senses)
+
+- **S75090** (27x) [Adj-NMS,Adj-AMS,Adj-GMS,Adj-NMP,Adj-DMP,Adj-AMP,Adj-VMP] | eng: rich, rich-man | spa: rico, ricos | hin: धनी, धनवअन | arb: غَنِيًّا, غَنِيٍّ | kor: 부유한, 부자가 | swa: tajiri, matajiri
+- **S75092** (1x) [Adj-NMS] | eng: Rich | spa: Rico | hin: धनवान | arb: غَنيٌّ | kor: 부유한–자다 | swa: Mimi–ni–tajiri
+
+## G4152 (POS: Adj-NMS, "<b> <span class="lexicon-greek">πνευμᾰτ-ικός</span></b>, <span class="lexicon-gr", 26 occ, 2 senses)
+
+- **S75119** (21x) [Adj-ANS,Adj-NMS,Adj-GFS,Adj-NNS,Adj-DFS,Adj-DFP,Adj-ANP,Adj-] | eng: spiritual, to–spiritual | spa: espiritual, espirituales | hin: आत्मिक, अतमिक | arb: روحِيَّةٍ, روحِيٌّ | kor: 영적인, 신령한 | swa: wa–kiroho, za–kiroho
+- **S75121** (5x) [Adj-ANP,Adj-GNP,Adj-DNP] | eng: spiritual-things, spiritual–things | spa: espirituales, espirituales–cosas | hin: आत्मिक, आत्मिक–बातों–में | arb: الرّوحِيَّاتِ, –الرُّوحِيَّاتِ | kor: 영적인–것들을, 영적인–것들–에 | swa: vya–kiroho, za–kiroho
+
+## Response Format
+
+Return a JSON object with one key per lemma ID. Each value is an array of sense groups:
+
+```json
+{
+  "G3933": [
+    {"labelChirho": "short label", "descriptionChirho": "one sentence", "senseIdsChirho": [id1, id2, ...]}
+  ],
+  "G3968": [...]
+}
+```
+
+IMPORTANT: Return ONLY the JSON object. Every sense ID from every lemma must appear exactly once. Use the numeric sense IDs (without the S prefix).
+
+## G4166 (POS: N-AMS, "<b> <span class="lexicon-greek">ποιμήν</span></b>, <span class="lexicon-greek">έ", 18 occ, 2 senses)
+
+- **S75276** (13x) [N-AMS,N-NMS] | eng: shepherd, a–shepherd | spa: pastor, Pastor | hin: चरवाहा, चरवाहे–को | arb: راعٍ, رَاعِيَ | kor: 목자, 목자가 | swa: mchungaji, mchungaji.
+- **S75277** (5x) [N-NMP,N-GMP,N-AMP] | eng: shepherds | spa: pastores | hin: चरवाहे, चरवाहों | arb: رُعَاةُ, رُعَاةِ | kor: 목자들–이, 목자들을 | swa: wachungaji
+
+## G4171 (POS: N-AMP, "<b> <span class="lexicon-greek">πόλεμος</span></b>, <br /> and <i>Epic dialect</", 18 occ, 2 senses)
+
+- **S75300** (12x) [N-AMS,N-DMS,N-NMS] | eng: war | spa: guerra, guerra, | hin: युद्ध, युद्ध। | arb: حَرْبٍ, حَربًا | kor: 전쟁, 전쟁을 | swa: vita, vita,
+- **S75301** (6x) [N-AMP,N-NMP,N-GMP] | eng: wars, of-wars | spa: guerras, de–guerras | hin: युद्धों–की, युद्ध | arb: حُروبًا, حُرُوبٍ | kor: 전쟁들을, 전쟁의 | swa: vita, za–vita
+
+## G4214 (POS: IPro-AFS, "<b> <span class="lexicon-greek">πόσος</span></b>, <br /> <i>Ionic dialect</i> <b", 27 occ, 2 senses)
+
+- **S75449** (16x) [IPro-DNS,IPro-ANS,IPro-NMS,IPro-NNS,IPro-AFS] | eng: how-much, how–much | spa: cuánto, cuánta | hin: कितना, कितने | arb: كَمْ, فَكَمْ | kor: 얼마나–더, 얼마나 | swa: zaidi–kadiri–gani, zaidi-kiasi-gani
+- **S75450** (11x) [IPro-AMP,IPro-AFP,IPro-ANP,IPro-GFP,IPro-NMP,IPro-NFP] | eng: how-many, How-many | spa: cuántas, Cuántos | hin: कितनी, कितनि | arb: كَمْ | kor: 몇, 얼마나–많은 | swa: vikapu, mingapi
+
+## G4221 (POS: N-DNS, "<b> <span class="lexicon-greek">ποτήριον</span></b>, <span class="lexicon-greek"", 32 occ, 2 senses)
+
+- **S75479** (30x) [N-ANS,N-GNS,N-NNS,N-DNS] | eng: cup, a-cup | spa: copa, una–copa | hin: कटोरा, प्याला | arb: كَأْسَ, كَأسَ | kor: 잔을, 잔–을 | swa: kikombe, na
+- **S75480** (2x) [N-GNP] | eng: of–cups, cups | spa: de–copas | hin: ताँबे–के–बर्तनों–का | arb: كُؤُوسٍ | kor: 잔들, 씻는–것을 | swa: wa–vikombe, vikombe
+
+## G4226 (POS: Adv, "<b> <span class="lexicon-greek">ποῦ</span></b>, <br /> <i>Ionic dialect</i> <b><", 46 occ, 2 senses)
+
+- **S75499** (45x) [Adv] | eng: where, Where | spa: dónde, Dónde | hin: कहाँ, कहां | arb: أَيْنَ, أَينَ | kor: 어디에, 어디로 | swa: wapi, Yuko–wapi
+- **S75500** (1x) [Adv] | eng: anywhere | spa: en–algún–lugar | hin: ही | arb: فِي–أَيِّ–مَكَانٍ | kor: 어디에서 | swa: popote

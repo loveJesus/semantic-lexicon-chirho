@@ -1,0 +1,73 @@
+You are a biblical lexicographer. For each lemma below, group the over-split sense clusters into REAL lexicographic senses.
+
+Rules:
+- Different grammatical inflections of the same meaning = SAME sense (merge them)
+- Different verb stems (Qal vs Hifil, active vs passive) = often DIFFERENT senses
+- Literal vs metaphorical uses = DIFFERENT senses
+- Every sense ID must appear in exactly one group
+- Output valid JSON array with labelChirho, descriptionChirho (150+ chars with multilingual evidence), senseIdsChirho
+
+## H2977 (POS: Prep-l | N-proper-ms, "<strong><span dir="rtl"><span class="lexicon-hebrew" dir="rtl">יֹאשִׁיָּ֫הוּ</sp", 53 occ, 2 senses)
+
+- **S100574** (52x) [N-proper-ms] | eng: Yoshiyahu, Josiah | spa: Yoshiyahu, Josías | hin: योशिय्याहू, योशीय्याहू | arb: يُوشِيَّا, يُوشِيَّاهُو | kor: 요시야의, 요시야가 | swa: Yosia, yoshiyaּhwּ
+- **S100575** (1x) [Prep-l | N-proper-ms] | eng: of–Yoshiyahu | spa: de–Yoshiyahu | hin: योशिय्याहू–के | arb: لِ–يُوشِيَّا | kor: 에게–요시야에게 | swa: wa–Yosia
+
+## H2985 (POS: N-proper-ms, "† <strong><span dir="rtl"><span class="lexicon-hebrew" dir="rtl">יָבִין</span></", 8 occ, 2 senses)
+
+- **S100600** (7x) [N-proper-ms] | eng: Yavin | spa: Yavín, Jabín | hin: याबीन, याबीन–को | arb: يابينَ | kor: 야빈, 야빈이 | swa: Yabini
+- **S100601** (1x) [Prep-k | N-proper-ms] | eng: as–to–Yavin | spa: como–Yavin | hin: याबीन–की–तरह | arb: كَيَابِينَ | kor: 야빈–처럼 | swa: kama–Yabini
+
+## H2999 (POS: Art | N-proper-fs, "† <strong><span dir="rtl"><span class="lexicon-hebrew" dir="rtl">יַבֹּק</span></", 7 occ, 2 senses)
+
+- **S100628** (6x) [N-proper-fs,Art | N-proper-fs] | eng: Jabbok, the–Jabbok | spa: Jaboc, el–Jaboc | hin: यब्बोक | arb: يَبُّوقَ, الـ–يَبّوقِ | kor: 얍복, 야복과 | swa: Yaboki
+- **S100630** (1x) [N-proper-fs] | eng: Jabbok | spa: Yaboq | hin: यब्बोक–का | arb: يَبُّوقَ | kor: 얍복의 | swa: cha–Yaboki
+
+## H3004 (POS: Prep-l, "† <strong><span dir="rtl"><span class="lexicon-hebrew" dir="rtl">יַבָּשָׁה</span", 14 occ, 2 senses)
+
+- **S100687** (13x) [Prep-b, Art | N-fs,Art | N-fs,N-fs,Prep-l, Art | N-fs] | eng: on–the–dry-ground, the–dry–land | spa: en–lo–seco, la–tierra–seca | hin: सूखी–भूमि–पर, सूखी–भूमि | arb: عَلَى–الْيَابِسَةِ, الْيَابِسَةِ | kor: 마른–땅에, 그–마른–땅 | swa: nchi–kavu, juu–ya–nchi–kavu
+- **S100693** (1x) [Prep-l | N-fs] | eng: into–dry–land | spa: en–seco | hin: –सूखी–भूमि–में | arb: إلى–يابِسَةٍ | kor: 마른–땅–으로 | swa: kuwa–nchi-kavu
+
+## Response Format
+
+Return a JSON object with one key per lemma ID. Each value is an array of sense groups:
+
+```json
+{
+  "H2648": [
+    {"labelChirho": "short label", "descriptionChirho": "one sentence", "senseIdsChirho": [id1, id2, ...]}
+  ],
+  "H2654a": [...]
+}
+```
+
+IMPORTANT: Return ONLY the JSON object. Every sense ID from every lemma must appear exactly once. Use the numeric sense IDs (without the S prefix).
+
+## H3048 (POS: Prep-l | N-proper-ms, "† <strong><span dir="rtl"><span class="lexicon-hebrew" dir="rtl">יְדַעְיָה</span", 11 occ, 2 senses)
+
+- **S101243** (7x) [N-proper-ms] | eng: Yedayah, you | spa: Jedaías, Yedaías | hin: यदायाह, यदायाह–के | arb: يَدَعْيَا, يَدَعْيا | kor: 예다야, 여다야 | swa: Yedaya, wa–Yedaya
+- **S101244** (4x) [Prep-l | N-proper-ms,Conj-w, Prep-l | N-proper-ms] | eng: to–Yedayah, for–Yedayah | spa: de–Jedaías, y–para–Jedaías | hin: यदायाह–का, यदाया–के–लिए | arb: لِ–يَدَعيا, وَلِيَدَعْيَا | kor: 에–여다야에게는, 에게–여다야 | swa: kwa–Yedaya, na–kwa–Yedaya
+
+## H3058 (POS: Prep-l | N-proper-ms, "<strong><span dir="rtl"><span class="lexicon-hebrew" dir="rtl">יֵהוּא</span></sp", 58 occ, 2 senses)
+
+- **S101290** (57x) [N-proper-ms,Conj-w | N-proper-ms] | eng: Jehu, Yehu | spa: Jehú, Y–Jehú | hin: येहू, वयेहू | arb: يَاهُو, ياهو | kor: 예후가, 예후 | swa: Yehu, na–Yehu
+- **S101292** (1x) [Prep-l | N-proper-ms] | eng: of–Yehu | spa: de–Jehú | hin: लयेहू–की | arb: لِيَاهُو | kor: 예후의 | swa: wa–Yehu
+
+## H3059 (POS: N-proper-ms, "† <strong><span dir="rtl"><span class="lexicon-hebrew" dir="rtl">יְהוֹאָחָז</spa", 20 occ, 2 senses)
+
+- **S101293** (19x) [N-proper-ms,Prep-l | N-proper-ms] | eng: Yehoachaz, Yehoakhaz | spa: Joacaz, a–Joacaz | hin: यहोआखाज़–के, यहोआखाज़ | arb: يَهُوآحَازَ, يَهُوآحَازُ | kor: 여호아하스–의, 여호아하스가 | swa: Yehoahazi
+- **S101294** (1x) [N-proper-ms] | eng: Jehoahaz | spa: Joacáz | hin: यहोआखाज | arb: يَهُوآحَازُ | kor: 여호아하스가 | swa: Yehoahazi
+
+## H3062 (POS: N-proper-ms, "† <strong>[<span dir="rtl"><span class="lexicon-hebrew" dir="rtl">יְהוּדַי</span", 10 occ, 2 senses)
+
+- **S101300** (9x) [N-proper-ms,N-proper-mp] | eng: the–Yehudaye, the–Yehudaei | spa: los–judíos | hin: यहूदियों–के, यहूदियों | arb: اليَهود, الْيَهُودِ | kor: 그–유다인들, 유다사람들의 | swa: wa–Wayahudi, Wayahudi
+- **S101301** (1x) [N-proper-mp] | eng: Yehudaei | spa: judíos | hin: यहूदी | arb: يَهُودٌ | kor: 유다사람들이 | swa: Wayahudi
+
+## H3066 (POS: N-proper-fs, "† I. <strong><span dir="rtl"><span class="lexicon-hebrew" dir="rtl">יְהוּדִית</s", 6 occ, 2 senses)
+
+- **S101334** (3x) [N-proper-fs] | eng: in–the–ears, and–said | spa: en–judaico, en–judío | hin: इब्रानी–में, यहूदी–में | arb: يَهُودِيَّا, بِالْيَهُودِيَّةِ | kor: 유다어로, 유다–말로 | swa: Kiyahudi, yhwּdiyt
+- **S101335** (3x) [N-proper-fs] | eng: Yehudit, Yehudith | spa: judío | hin: यहूदी, इब्रानी | arb: بِاليَهُودِيَّةِ, بِالْيَهُودِيَّةِ | kor: 유다–말로, 유다–말을 | swa: Kiyahudi
+
+## H3077 (POS: Prep-l | N-proper-ms, "† <strong><span dir="rtl"><span class="lexicon-hebrew" dir="rtl">יְהוֹיָדָע</spa", 51 occ, 2 senses)
+
+- **S101360** (49x) [N-proper-ms,Conj-w | N-proper-ms] | eng: Yehoyada, Jehoiada | spa: Joiada, Yehoyada | hin: यहोयादा, यहोयादा–के | arb: يَهُويَادَاعَ, يَهُويَادَاعُ | kor: 여호야다의, 여호야다가 | swa: Yehoyada, na–Yehoyada
+- **S101363** (2x) [Prep-l | N-proper-ms] | eng: for–Yehoyada | spa: a–Joiada | hin: लयहोयादा, यहोयादा–को | arb: يَهُويَادَاعَ | kor: 여호야다를, 에게–여호야다 | swa: kwa–Yehoyada, Yehoyada

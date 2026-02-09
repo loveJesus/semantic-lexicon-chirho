@@ -1,0 +1,73 @@
+You are a biblical lexicographer. For each lemma below, group the over-split sense clusters into REAL lexicographic senses.
+
+Rules:
+- Different grammatical inflections of the same meaning = SAME sense (merge them)
+- Different verb stems (Qal vs Hifil, active vs passive) = often DIFFERENT senses
+- Literal vs metaphorical uses = DIFFERENT senses
+- Every sense ID must appear in exactly one group
+- Output valid JSON array with labelChirho, descriptionChirho (150+ chars with multilingual evidence), senseIdsChirho
+
+## G2474 (POS: N-GMS, " <b><span class="lexicon-greek">Ἰσραήλ</span></b> (FlJ, <span class="lexicon-gre", 68 occ, 2 senses)
+
+- **S69547** (67x) [N-AMS,N-GMS,N-VMS,N-DMS,N-NMS] | eng: Israel, Israēl | spa: Israḗl, de–Israēl | hin: इस्राएल, इस्राएल–के | arb: إِسْرَائِيلَ, إسرائيلَ | kor: 이스라엘의, 이스라엘–의 | swa: Israeli, Israēl
+- **S69549** (1x) [N-GMS] | eng: of–Israel | spa: de–Israḗl | hin: इस्रएल, | arb: إسْرائيلَ | kor: 이스라엘, | swa: la–Israeli
+
+## G2491 (POS: N-NMS, " <b><span class="lexicon-greek">Ἰωάνης</span></b> (Rec. <span class="lexicon-gre", 135 occ, 2 senses)
+
+- **S69660** (130x) [N-NMS,N-AMS,N-GMS,N-DMS] | eng: Iōannēs, Ioannes | spa: Iōánnēs, de–Iōánnēs | hin: यूहन्ना, योहान्नान | arb: يُوحَنَّا, يوحَنّا | kor: 요한이, 요한 | swa: Iōánnēs, Yohana
+- **S69662** (5x) [N-DMS,N-GMS] | eng: to-Iōannēs, to–Iōannēs | spa: a–Iōánnē, que–Iōánnēs | hin: योहान्नान–को, योहान्नान–से | arb: يوحَنّا, مِن–يوحَنّا | kor: 요한에게, 요한네에게 | swa: Iōánnēs, kuliko–Iōánnēs
+
+## Response Format
+
+Return a JSON object with one key per lemma ID. Each value is an array of sense groups:
+
+```json
+{
+  "G2323": [
+    {"labelChirho": "short label", "descriptionChirho": "one sentence", "senseIdsChirho": [id1, id2, ...]}
+  ],
+  "G2344": [...]
+}
+```
+
+IMPORTANT: Return ONLY the JSON object. Every sense ID from every lemma must appear exactly once. Use the numeric sense IDs (without the S prefix).
+
+## G2501 (POS: N-VMS, " <b><span class="lexicon-greek">Ἰωσήφ</span> </b> indecl. <BR /> (FlJ, <span cla", 36 occ, 2 senses)
+
+- **S69674** (35x) [N-AMS,N-DMS,N-NMS,N-VMS,N-GMS] | eng: Iōsēph, of–Iōsēph | spa: Iōsḗph, Iōsēph | hin: यूसुफ, यूसुफ–को | arb: يُوسُفَ, يُوسُفُ | kor: 요셉, 요셉–의 | swa: Iōsḗph, Iōsēph
+- **S69676** (1x) [N-GMS] | eng: Iōsēch | spa: Iōsēch | hin: योसेख | arb: يُوسَيخَ | kor: 요섹–의 | swa: Iōsēch
+
+## G2530 (POS: Adv, "<b> <span class="lexicon-greek">καθότι</span></b>, <br /> <i>Ionic dialect</i> <", 6 occ, 2 senses)
+
+- **S69820** (4x) [Adv] | eng: because | spa: puesto-que, por–cuanto | hin: क्योंकि, जिस–कारण | arb: لِأَنَّ, لِأَنَّهُ | kor: 왜냐하면, 손들–로 | swa: kwa–sababu, kwa–sababu–
+- **S69821** (2x) [Adv] | eng: as | spa: según | hin: किसी–को | arb: كَمَا | kor: 따라 | swa: kama
+
+## G2531 (POS: Adv, "<b> <span class="lexicon-greek">καθώς</span></b>, <br /> <i>adverb</i> ={<span c", 183 occ, 2 senses)
+
+- **S69822** (182x) [Adv,Conj] | eng: just–as, just-as | spa: como, así–como | hin: जैसे, जैसा | arb: كَما, كَمَا | kor: 같이, –처럼 | swa: kama, kama–vile
+- **S69824** (1x) [Adv] | eng: how | spa: cómo | hin: कैसे | arb: كَيفَ | kor: 같이 | swa: jinsi–
+
+## G2532 (POS: Conj, "<b> <span class="lexicon-greek">καί</span></b>, <br /> <i>conjunction</i>, copul", 9083 occ, 2 senses)
+
+- **S69825** (8312x) [Conj] | eng: and–, and | spa: y, Y | hin: और, भी | arb: وَ, وَ– | kor: 그리고, 그리고– | swa: na, na–
+- **S69826** (771x) [Conj] | eng: also, also– | spa: también, aun | hin: भी, भि | arb: أَيْضًا, وَ | kor: 또한, 그리고 | swa: pia, na
+
+## G2542 (POS: N-AFS, " <b><span class="lexicon-greek">Καισαρία</span></b> (Rec. -<span class="lexicon-", 17 occ, 2 senses)
+
+- **S69856** (15x) [N-AFS,N-DFS,N-GFS] | eng: Kaisareia | spa: Kaisáreia, Cesarea | hin: कैसरिया, कैसरियामें | arb: قَيْصَرِيَّةَ | kor: 가이사랴에, 가이사리아–로 | swa: Kaisaria, Kaisaria,
+- **S69857** (2x) [N-GFS] | eng: of–Kaisareia, of-Kaisareia | spa: de–Kaisaréia, de–Kaisareías | hin: कैसरेइअ, कैसरिया | arb: قَيْصَرِيَّةِ, قَيْصَرِيَّةَ | kor: 가이사리아의, 가이사리아 | swa: –za–Kaisaréia, vya–Kaisaria
+
+## G2546 (POS: Conj, "Included with: <b> <span class="lexicon-greek">ἐκεῖ</span></b> <br /> (not in Re", 10 occ, 2 senses)
+
+- **S69865** (9x) [Conj] | eng: and–there, and-there | spa: y–allí, y-allí | hin: और–वहाँ, और–वहां | arb: وَهُنَاكَ, وَ–هُنَاكَ | kor: 그리고–거기서, 거기서 | swa: na–huko, na–huko–
+- **S69867** (1x) [Adv] | eng: also-there | spa: también-allí | hin: वहाँ–भी | arb: وَ–هُناكَ | kor: 거기에도 | swa: na–huko–pia
+
+## G2584 (POS: N-AFS, " <b><span class="lexicon-greek">καφαρναούμ</span></b> (<span class="lexicon-gree", 16 occ, 2 senses)
+
+- **S70029** (14x) [N-AFS,N-VFS,N-DFS] | eng: Kapharnaoum, Kapernaoum | spa: Kapharnaoúm, –Kapharnaoúm | hin: कफरनहूम।, कफरनहूम | arb: كَفْرَنَاحُومَ, كَفْرِ–نَاحُومَ | kor: 가버나움, 가버나움으로 | swa: Kapharnaoúm, Kapharnaoúm
+- **S70030** (2x) [N-AFS] | eng: Kapharnaoum | spa: Capernaúm | hin: कफरनहूम | arb: كَفَرناحومَ | kor: 가버나움–에서, 가버나움–에 | swa: Kaphárnaoum
+
+## G2602 (POS: N-AFS, "<b> <span class="lexicon-greek">καταβολ-ή</span></b>, ἡ, <br /> <b>throwing down", 11 occ, 2 senses)
+
+- **S70160** (10x) [N-GFS] | eng: foundation | spa: fundación, la–fundación | hin: नींव, स्थापना | arb: تَأسيسِ, تَأْسيسِ | kor: 창조, 창세로부터 | swa: mwanzo, kuwekwa–msingi
+- **S70161** (1x) [N-AFS] | eng: conception | spa: fundación | hin: गर्भ–धारण | arb: إِلْقَاء | kor: 창조를 | swa: kupata

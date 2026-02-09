@@ -1,0 +1,73 @@
+You are a biblical lexicographer. For each lemma below, group the over-split sense clusters into REAL lexicographic senses.
+
+Rules:
+- Different grammatical inflections of the same meaning = SAME sense (merge them)
+- Different verb stems (Qal vs Hifil, active vs passive) = often DIFFERENT senses
+- Literal vs metaphorical uses = DIFFERENT senses
+- Every sense ID must appear in exactly one group
+- Output valid JSON array with labelChirho, descriptionChirho (150+ chars with multilingual evidence), senseIdsChirho
+
+## G4672 (POS: N-NMS, " <b><span class="lexicon-greek">Σολομών</span></b>, -<span class="lexicon-greek"", 12 occ, 2 senses)
+
+- **S76562** (7x) [N-GMS] | eng: of–Solomōn, Solomōn | spa: de–Solomṓn, que–Solomṓn | hin: सोलोमōन–से, सोलोमōन–कि | arb: سُلَيْمَانَ, مِن–سُلَيمَانَ | kor: 솔로몬의, 솔로몰의 | swa: ya–Solomoni, ya–Solomṓn
+- **S76563** (5x) [N-AMS,N-NMS] | eng: Solomōn | spa: Solomṓn | hin: सुलैमान–ने, सुलैमान–को | arb: سُلَيْمَانُ, وَ–سُلَيْمَانُ | kor: 솔로몬도, 솔로몬–은 | swa: Solomṓn, Solomoni
+
+## G4686 (POS: N-NFS, "<b> <span class="lexicon-greek">σπεῖρα</span></b>, ἡ, <br /> <b>anything twisted", 7 occ, 2 senses)
+
+- **S76592** (4x) [N-AFS,N-NFS] | eng: cohort | spa: cohorte | hin: पलटन | arb: كَتِيبَةِ, كَتِيبَةُ | kor: 부대–를, 군대를 | swa: kikosi
+- **S76593** (3x) [N-GFS] | eng: cohort, of–a–cohort | spa: cohorte, de–la-cohorte | hin: पल्टनकी, पलटन–की | arb: كَتِيبَةِ, كَتِيبَةٍ | kor: 대대의, 대대–의 | swa: kikosi, wa–kikosi
+
+## G4693 (POS: N-ANP, "<b> <span class="lexicon-greek">σπήλαιον</span></b>, <span class="lexicon-greek"", 6 occ, 2 senses)
+
+- **S76630** (4x) [N-ANS,N-NNS] | eng: a-den, a–cave | spa: cueva | hin: गुफा, गुफ़ा | arb: مَغارَةَ, مَغَارَةَ | kor: 굴이, 굴을 | swa: pango, la–wanyang'anyi
+- **S76631** (2x) [N-DNP,N-ANP] | eng: caves | spa: cuevas | hin: गुफाओं,, गुफ़ाओं, | arb: كُهُوف, الكُهوفِ | kor: 굴들에, 굴들 | swa: mapango,, mapango
+
+## G4710 (POS: N-DFS, "<b> <span class="lexicon-greek">σπουδή</span></b>, ἡ, <br /> (<span class="lexic", 12 occ, 2 senses)
+
+- **S76658** (10x) [N-AFS,N-DFS,N-GFS] | eng: diligence, earnestness | spa: diligencia | hin: लगन, तत्परता | arb: اجتِهادًا, الاجْتِهَادِ | kor: 열심을, 열심에 | swa: bidii, bidii,
+- **S76659** (2x) [N-GFS] | eng: haste | spa: prisa | hin: पास, जल्दी | arb: عَجَلَةٍ, سُرْعَةٍ | kor: 서둘러 | swa: haraka
+
+## G4712 (POS: N-AMP, "<b> <span class="lexicon-greek">στάδιος</span></b> [<span class="lexicon-greek">", 7 occ, 2 senses)
+
+- **S76663** (6x) [N-AMP,N-GMP] | eng: stadia | spa: estadios | hin: स्टेडिया, स्तदियोन | arb: مَسافَةَ, غَلْوَةٍ | kor: 스타디온, 스타디온들 | swa: stadia
+- **S76664** (1x) [N-DNS] | eng: a-stadium | spa: estadio | hin: दौड़–के–मैदान | arb: مَيْدانٍ | kor: 경기장 | swa: uwanja–wa–mbio
+
+## Response Format
+
+Return a JSON object with one key per lemma ID. Each value is an array of sense groups:
+
+```json
+{
+  "G4439": [
+    {"labelChirho": "short label", "descriptionChirho": "one sentence", "senseIdsChirho": [id1, id2, ...]}
+  ],
+  "G4446": [...]
+}
+```
+
+IMPORTANT: Return ONLY the JSON object. Every sense ID from every lemma must appear exactly once. Use the numeric sense IDs (without the S prefix).
+
+## G4735 (POS: N-AMS, "<b> <span class="lexicon-greek">στέφᾰνος</span></b>, ὁ, <br /> (<span class="lex", 18 occ, 2 senses)
+
+- **S76717** (15x) [N-AMS,N-VMS,N-NMS] | eng: crown, a–crown | spa: corona | hin: मुकुट, मुकुत | arb: إِكْلِيلًا, إكليلٌ | kor: 면류관–을, 면류관을 | swa: taji, taji,
+- **S76718** (3x) [N-AMP,N-NMP] | eng: crowns | spa: coronas | hin: मुकुट, मुकुटों–को | arb: أَكاليلُ, أَكاليلَهُمْ | kor: 면류관들–을, 관들이 | swa: taji, taji,
+
+## G4736 (POS: N-NMS, " <b><span class="lexicon-greek">Στέφανος</span></b>, -<span class="lexicon-greek", 7 occ, 2 senses)
+
+- **S76719** (6x) [N-AMS,N-NMS,N-DMS] | eng: Stephanos | spa: Stéphanos, Stéfanos | hin: स्तिफनुस, स्तिफनुस–को | arb: اسْتِفَانُوسَ, اِسْتِفَانُوسَ | kor: 스데반–을, 스데반에게 | swa: Stefano, Stefano,
+- **S76720** (1x) [N-GMS] | eng: of–Stephanos | spa: de–Stéfanos | hin: स्तिफ़नुस–का | arb: اِسْتِفَانُوسَ | kor: 스데반의 | swa: ya–Stefano
+
+## G4749 (POS: N-NFS, "<b> <span class="lexicon-greek">στολ-ή</span></b>, ἡ, <br /> <i>Aeolic dialect</", 9 occ, 2 senses)
+
+- **S76749** (6x) [N-AFP,N-DFP] | eng: robes | spa: túnicas, ropas–largas | hin: वस्त्र, वस्त्रों | arb: حُلَلٍ, ثيابَهُمْ | kor: 옷들–을, 긴–옷으로 | swa: majoho, mavazi–marefu
+- **S76750** (3x) [N-AFS,N-NFS] | eng: robe, a–robe | spa: vestidura, vestido | hin: वस्त्र, चोगा | arb: رِداءٌ, حُلَّةً | kor: 옷을, 옷–이 | swa: joho, vazi
+
+## G4757 (POS: N-GMP, "<b> <span class="lexicon-greek">στρᾰτῐώτ-ης</span></b>, <span class="lexicon-gre", 26 occ, 2 senses)
+
+- **S76780** (22x) [N-AMP,N-NMP,N-DMP,N-GMP] | eng: soldiers, of–soldiers | spa: soldados, los–soldados | hin: सैनिकों–ने, सैनिकों | arb: جُنْدُ, جُنُودٍ | kor: 군인들–이, 군인들을 | swa: askari, askari,
+- **S76781** (4x) [N-DMS,N-AMS,N-NMS] | eng: soldier | spa: soldado | hin: सैनिक, सैनिक। | arb: جُنْدِيٍّ, جُنْدِيٍ | kor: 병사–를, 군인–에게 | swa: askari
+
+## G4824 (POS: N-ANS, "<b> <span class="lexicon-greek">συμβούλ-ιον</span></b>, <span class="lexicon-gre", 8 occ, 2 senses)
+
+- **S76951** (7x) [N-ANS] | eng: counsel, a-council | spa: consejo | hin: सलाह, मशवरा | arb: مَشُورَةً, مَشورَةً | kor: 의논–을, 회의를 | swa: shauri, wakashauriana
+- **S76952** (1x) [N-GNS] | eng: council | spa: consejo | hin: परिषदके | arb: المَجْلِسِ | kor: 자문회와 | swa: baraza

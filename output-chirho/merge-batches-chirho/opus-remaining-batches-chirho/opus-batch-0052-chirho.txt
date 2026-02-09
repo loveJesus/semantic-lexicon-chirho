@@ -1,0 +1,83 @@
+You are a biblical lexicographer. For each lemma below, group the over-split sense clusters into REAL lexicographic senses.
+
+Rules:
+- Different grammatical inflections of the same meaning = SAME sense (merge them)
+- Different verb stems (Qal vs Hifil, active vs passive) = often DIFFERENT senses
+- Literal vs metaphorical uses = DIFFERENT senses
+- Every sense ID must appear in exactly one group
+- Output valid JSON array with labelChirho, descriptionChirho (150+ chars with multilingual evidence), senseIdsChirho
+
+## H0919 (POS: Prep-l | N-msc, "<strong><span dir="rtl"><span class="lexicon-hebrew" dir="rtl">בֶּ֫דֶק</span></s", 10 occ, 3 senses)
+
+- **S85371** (7x) [N-msc,Prep-l | N-msc] | eng: breach-of, for–breach-of | spa: grieta–de, para–grieta–de | hin: टूट, लटूट | arb: شَقَّ, شَقِّ | kor: 파손을, 파손을–위하여 | swa: ufa–wa, ufa
+- **S85372** (2x) [N-msc | 2fs] | eng: your-seams | spa: tus–grietas | hin: दरारों–तेरी–के | arb: شُقُوقِكِ | kor: 틈을–너의 | swa: nyufa–zako
+- **S85374** (1x) [N-ms] | eng: breach | spa: grieta | hin: टूट | arb: شَقٌّ | kor: 파손이 | swa: ufa
+
+## H0948 (POS: N-ms, "† <strong><span dir="rtl"><span class="lexicon-hebrew" dir="rtl">בּוּץ</span></s", 8 occ, 3 senses)
+
+- **S85820** (4x) [N-ms] | eng: fine–linen, fine-linen | spa: lino–fino, lino | hin: सन–के, सन | arb: بُوصٍ, كَتَّانٍ | kor: 세마포와, 세마포 | swa: kitani, ya–kitani-nyeupe
+- **S85822** (3x) [Conj-w, Prep-b, Art | N-ms,Conj-w | N-ms] | eng: and–fine-linen, and–in–the–fine-linen | spa: y–lino–fino, y–lino | hin: और–सन, और–में–सन | arb: وَ–كَتَّانًا, وَ–بِالْكَتَّانِ | kor: 그리고–에서–그–세마포, 그리고–세마포와 | swa: na–kwa–kitani, na–kitani–safi
+- **S85824** (1x) [Art | N-ms] | eng: the–linen | spa: el–lino | hin: कतान | arb: الـ–بوص | kor: 그–베 | swa: kitani
+
+## H1000 (POS: N-fp, "† <strong>[<span dir="rtl"><span class="lexicon-hebrew" dir="rtl">בֵּיצָה</span>", 6 occ, 3 senses)
+
+- **S86431** (4x) [N-fp,N-fpc | 3fs,N-fpc] | eng: eggs, her–eggs | spa: huevos, sus–huevos | hin: अंडे, अपने–अंडे | arb: بَيْضَهَا, بَيْضَ | kor: 알들을–, 알들을 | swa: mayai, mayai–yake
+- **S86433** (1x) [Prep-m | N-fpc | 3mp] | eng: from–their–eggs | spa: de–sus–huevos | hin: उनके–अंडोंसे | arb: مِنْ–بَيْضِهِمْ | kor: 그들의–알에서– | swa: mayai–yao
+- **S86434** (1x) [Art | N-fp] | eng: the–eggs | spa: los–huevos | hin: अंडों | arb: الْبَيْضِ | kor: 알들 | swa: mayai
+
+## H1091 (POS: N-fpc, "† <strong><span dir="rtl"><span class="lexicon-hebrew" dir="rtl">בַּלָּהָה</span", 10 occ, 3 senses)
+
+- **S86804** (5x) [N-fp,N-fpc] | eng: terrors, terrors–of | spa: terrores, los–terrores–de | hin: आतंक, भय | arb: أَهوالٌ, الْأَهْوَالِ | kor: 공포들이, 공포들의 | swa: vitisho, vitisho–vya
+- **S86805** (4x) [N-fp] | eng: terrors | spa: espantos, terrores | hin: भयों, आतंक | arb: أَهْوَالًا, الأَهْوالِ | kor: 공포들로, 공포로 | swa: maangamizi, vitisho
+- **S86807** (1x) [N-fs] | eng: terror | spa: terror | hin: भय | arb: رُعْبٌ | kor: 두려움이여 | swa: hofu
+
+## H1201 (POS: N-proper-ms, "<strong><span dir="rtl"><span class="lexicon-hebrew" dir="rtl">בַּעְשָׁא</span><", 28 occ, 3 senses)
+
+- **S87581** (26x) [N-proper-ms] | eng: Baasha | spa: Baasha, Baasa | hin: बआशा, बाशा–ने | arb: بَعْشَا, بَعْشا | kor: 바사의, 바사가 | swa: Baasha
+- **S87582** (1x) [Prep-l | N-proper-ms] | eng: of–Baasha | spa: de–Baasha | hin: के–बआशा | arb: لِبَعْشَا | kor: 에게–바사의 | swa: kwa–Baasha
+- **S87583** (1x) [N-proper-ms] | eng: Basha | spa: Baasa | hin: बाशा | arb: بَعْشَا | kor: 바아샤 | swa: Baasha
+
+## Response Format
+
+Return a JSON object with one key per lemma ID. Each value is an array of sense groups:
+
+```json
+{
+  "H0865": [
+    {"labelChirho": "short label", "descriptionChirho": "one sentence", "senseIdsChirho": [id1, id2, ...]}
+  ],
+  "H0870": [...]
+}
+```
+
+IMPORTANT: Return ONLY the JSON object. Every sense ID from every lemma must appear exactly once. Use the numeric sense IDs (without the S prefix).
+
+## H1212 (POS: N-proper-ms, "† <strong><span dir="rtl"><span class="lexicon-hebrew" dir="rtl">בְּצַלְאֵל</spa", 9 occ, 3 senses)
+
+- **S87611** (5x) [N-proper-ms] | eng: Betsalel, Bezalel | spa: Betsalel, a–Betsalel | hin: बसलेल, बसलेल–ने | arb: بَصَلئيلَ, بَصَلئيلُ | kor: 브살렠을, 브살렠과 | swa: Betsaleli, Besaleli
+- **S87612** (3x) [N-proper-ms] | eng: Betsalel, Betsal'el | spa: Betsalel, Betzalel | hin: बसलेल, बसलएल | arb: بَصَلْئِيلُ, بَصَلئيل | kor: 브살렠, 브살렐과 | swa: Besaleli
+- **S87613** (1x) [Conj-w | N-proper-ms] | eng: and–Betsalel | spa: Y–Betsalel | hin: और–बसलेल | arb: وَ–بَصَلْئِيلُ | kor: 그리고–브살렐 | swa: na–Betsaleli
+
+## H1259 (POS: Art | N-ms, "† <strong><span dir="rtl"><span class="lexicon-hebrew" dir="rtl">בָּרָד</span></", 29 occ, 3 senses)
+
+- **S88024** (15x) [Art | N-ms,Conj-w | N-ms,Conj-w, Art | N-ms,Prep-l, Art | N-] | eng: the–hail, and–the–hail | spa: el–granizo, y–granizo | hin: और–ओले, ओलों–ने | arb: وَالْبَرَدُ, الْبَرَدُ | kor: 그–우박이, 그–우박의 | swa: na–mvua–ya–mawe, mvua–ya–mawe
+- **S88023** (12x) [N-ms] | eng: hail, of–hail | spa: granizo | hin: ओले, ओलों–की | arb: بَرَدٌ, بَرَدًا | kor: 우박이, 우박의 | swa: mvua–ya–mawe, za–mvua–ya–mawe
+- **S88028** (2x) [Conj-w, Prep-b, Art | N-ms,Prep-b, Art | N-ms] | eng: with–hail, and–with–hail | spa: y–con–granizo, con–el-granizo | hin: और–में–ओले, ओलों–से | arb: وَبِالْبَرَدِ, بِالبَرَدِ | kor: 우박–으로, 그리고–에–우박 | swa: na–kwa–mvua–ya–mawe, kwa–mvua–ya–mawe
+
+## H1283 (POS: Prep-l | N-proper-ms, "† <strong><span dir="rtl"><span class="lexicon-hebrew" dir="rtl">בְּרִיעָה</span", 11 occ, 3 senses)
+
+- **S88149** (7x) [Conj-w | N-proper-ms,N-proper-ms] | eng: and–Beriah, Beriah | spa: Bería, y–Beria | hin: बरीआह, और–बरीआह | arb: وَ–بَرِيعَةُ, بَريعَة | kor: 그리고–브리아, 브리아 | swa: na–Beria, Beria
+- **S88151** (3x) [N-proper-ms,Prep-l | N-proper-ms] | eng: Beriah, to–Beriah | spa: Beriá, de–Beriá | hin: बेरीआ–के, बरीआ–को | arb: بَرِيعَةَ, لِ–بَرِيعَةَ | kor: 브리아의, 브리아–에게 | swa: Beria, kwa–Beria
+- **S88152** (1x) [Conj-w | N-proper-ms] | eng: and–Beriah | spa: y–Beriá | hin: और–बेरीआ | arb: وَبَرِيعَةُ | kor: 그리고–브리아와 | swa: akamruka–Beria
+
+## H1296 (POS: Conj-w | N-proper-ms, "† <strong><span dir="rtl"><span class="lexicon-hebrew" dir="rtl">יְבֶרֶכְיָ֫הוּ<", 11 occ, 3 senses)
+
+- **S88380** (5x) [N-proper-ms] | eng: Berechiah, Berekhyahu | spa: Berequías | hin: बेरेक्याह–के, बेरेक्या–के | arb: بَرَكْيَا, بَرَكِيَّاهُو | kor: 베레검–의, 베레겄의 | swa: Berekia
+- **S88381** (3x) [Conj-w | N-proper-ms] | eng: and–Berekhyah | spa: y–Berequías, y–Berequya | hin: और–बेरेक्याह | arb: وَ–بَرَكِيَّا, وَ–برِكيا | kor: 베레갸와, 그리고–베레걨 | swa: na–Berekia, na–Berekya
+- **S88382** (3x) [N-proper-ms] | eng: Berekhyahu | spa: Berequías, Berequyahu | hin: बेरेक्याहू | arb: بَرَكْيَا, بَرَكِيَّا | kor: 베레기야, 베레갸야가 | swa: Berekia, Berekya
+
+## H1324 (POS: Conj-w | N-fsc, "† II. <strong><span dir="rtl"><span class="lexicon-hebrew" dir="rtl">בַּת</span>", 13 occ, 3 senses)
+
+- **S88703** (7x) [N-ms,N-fp,Art | N-fp] | eng: baths, the–baths | spa: batos, los–batos | hin: बत | arb: بَتًا, بَثًّا | kor: 바트들, 뱃 | swa: bathi, ulishika
+- **S88704** (5x) [Art | N-fs,Art | N-ms,Conj-w | N-fsc,Conj-w, Art | N-ms] | eng: the–bath, and–the-bath | spa: el–bato, y–el–bato | hin: बत, बत–का | arb: الْ–بَتُ, وَ–بَتُ– | kor: 그–뱃, 그리고–뱃의– | swa: bathi, na–bathi–ya
+- **S88707** (1x) [N-ms] | eng: bath | spa: un-bato | hin: बात | arb: بَتَّا | kor: 뱃을 | swa: pishi–moja

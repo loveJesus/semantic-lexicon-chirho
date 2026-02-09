@@ -1,0 +1,73 @@
+You are a biblical lexicographer. For each lemma below, group the over-split sense clusters into REAL lexicographic senses.
+
+Rules:
+- Different grammatical inflections of the same meaning = SAME sense (merge them)
+- Different verb stems (Qal vs Hifil, active vs passive) = often DIFFERENT senses
+- Literal vs metaphorical uses = DIFFERENT senses
+- Every sense ID must appear in exactly one group
+- Output valid JSON array with labelChirho, descriptionChirho (150+ chars with multilingual evidence), senseIdsChirho
+
+## H4700 (POS: Conj-w | N-fd, "† <strong><span dir="rtl"><span class="lexicon-hebrew" dir="rtl">מְצִלְתַּיִם</s", 13 occ, 2 senses)
+
+- **S113776** (12x) [Prep-b, Art | N-cd,Prep-b | N-cd,Conj-w, Prep-b | N-cd,Conj-] | eng: with–cymbals, and–with–cymbals | spa: y–con–címbalos, con–címbalos | hin: झांझों–से, और–झांझों–से | arb: بِ–الصُّنُوجِ, وَ–بِ–صُنُوجٍ | kor: 에–심벌즈들, 그–와–에–꽓바라들 | swa: kwa–matoazi, na–kwa–matoazi
+- **S113780** (1x) [N-cd] | eng: cymbals | spa: címbalos | hin: झाँझों | arb: صُنوجٍ | kor: 제금들과 | swa: matoazi
+
+## H4701 (POS: N-fsc, "† <strong><span dir="rtl"><span class="lexicon-hebrew" dir="rtl">מִצְנֶ֫פֶת</spa", 12 occ, 2 senses)
+
+- **S113781** (11x) [Art | N-fs,N-fs,N-fsc] | eng: the–turban, turban | spa: el-turbante, el–turbante | hin: पगड़ी, पगड़ी–को | arb: العِمامَةِ, الْعِمَامَةَ | kor: 그–관, 그–관을 | swa: kilemba, wa–kilemba
+- **S113783** (1x) [Conj-w, Prep-b | N-fsc] | eng: and–with–turban-of | spa: y–con–turbante-de | hin: और–में–पगड़ी | arb: وَ–بِ–عِمَامَةِ | kor: 그리고–관–에 | swa: na–kwa–kilemba–cha–
+
+## H4756 (POS: N-msc | 1cs, "† <strong>[<span dir="rtl"><span class="lexicon-hebrew" dir="rtl">מָרֵא</span></", 6 occ, 2 senses)
+
+- **S114103** (4x) [N-msc | 1cs] | eng: [ketiv:my-lord], (qere:my-lord) | spa: [mi–señor], (mi–señor) | hin: [मेरे–स्वामी], (मेरे–स्वामी) | arb: [سَيِّدِي], (سَيِّدِي) | kor: [나–의–주여], [나–의–주] | swa: [bwana–wangu], (bwana–wangu)
+- **S114105** (2x) [Conj-w | N-msc,N-msc] | eng: and–Lord-of, Lord-of– | spa: y–Señor–de, el–Señor–de | hin: प्रभु, और–प्रभु | arb: وَ–رَبُّ, رَبِّ– | kor: 주인–, 그리고–주인이신 | swa: na–Bwana–wa, Bwana–wa–
+
+## H4772 (POS: Conj-w | N-fpc | 3ms, "† <strong>[<span dir="rtl"><span class="lexicon-hebrew" dir="rtl">מַרְגְּלוֹת</s", 6 occ, 2 senses)
+
+- **S114184** (5x) [N-fpc | 3ms] | eng: his-feet, [ketiv] | spa: sus–pies, a–sus–pies | hin: पैरों–के, [पैरों–के] | arb: رِجْلَيْهِ, عِنْدَ–رِجْلَيْهِ | kor: 그의–발치를, 그의–발치에 | swa: miguu–yake, miguuni–mwake
+- **S114186** (1x) [Conj-w | N-fpc | 3ms] | eng: and–his-feet | spa: y–pies–sus | hin: और–उसके–पैर | arb: وَ–قَدَمَاهُ | kor: 그리고–그의–발들은 | swa: na–miguu–yake
+
+## Response Format
+
+Return a JSON object with one key per lemma ID. Each value is an array of sense groups:
+
+```json
+{
+  "H4585": [
+    {"labelChirho": "short label", "descriptionChirho": "one sentence", "senseIdsChirho": [id1, id2, ...]}
+  ],
+  "H4599": [...]
+}
+```
+
+IMPORTANT: Return ONLY the JSON object. Every sense ID from every lemma must appear exactly once. Use the numeric sense IDs (without the S prefix).
+
+## H4813 (POS: Conj-w | N-proper-fs, "† <strong><span dir="rtl"><span class="lexicon-hebrew" dir="rtl">מִרְיָם</span><", 15 occ, 2 senses)
+
+- **S114341** (14x) [N-proper-fs,Conj-w | N-proper-fs] | eng: Miriam, and–Miriam | spa: Miriam, Miryam | hin: मरियम, मिर्यम | arb: مِرْيَمُ, مِرْيَمَ | kor: 미리암–이, 미리암 | swa: Miriamu, na–Miriamu
+- **S114343** (1x) [Prep-l | N-proper-fs] | eng: to–Miriam | spa: a–Miriam | hin: मिर्याम–को | arb: لِمِرْيَمَ | kor: 미리암–에게 | swa: kwa–Miriamu
+
+## H4847 (POS: Conj-w | N-proper-ms, "† I. <strong><span dir="rtl"><span class="lexicon-hebrew" dir="rtl">מְרָרִי</spa", 39 occ, 2 senses)
+
+- **S114451** (33x) [N-proper-ms,Prep-l | N-proper-ms] | eng: Merari, to–Merari | spa: Merari, de–Merari | hin: मरारी–के, मरारी | arb: مَرَارِي, مَراري | kor: 므라리, 메라리 | swa: Merari, za–Merari
+- **S114452** (6x) [Conj-w | N-proper-ms] | eng: and–Merari | spa: y–Merari | hin: और–मरारी, और–मेरारी | arb: وَمَرَارِي, وَ–مَراري | kor: 그리고–므라리, 그리고–메라리 | swa: na–Merari, akamruka–Merari
+
+## H4902 (POS: Conj-w | N-proper-ms, "† II. <strong><span dir="rtl"><span class="lexicon-hebrew" dir="rtl">מֶ֫שֶׁךְ</s", 9 occ, 2 senses)
+
+- **S114683** (8x) [N-proper-fs,N-proper-ms,Conj-w | N-proper-ms] | eng: Meshech, and–Meshekh | spa: Mesec, y–Mesec | hin: मेशेक, और–मेशेक | arb: مَاشَكَ, وَ–ماشِك | kor: 메셉의, 그–와–메섹 | swa: na–Mesheki, Mesheki
+- **S114685** (1x) [N-proper-ms] | eng: in–Meshekh | spa: en–Mesec | hin: मेशेक–में | arb: في–ماشِك | kor: 메섹–에서 | swa: Mesheki
+
+## H4916a (POS: Prep-l | N-msc, "† <strong><span dir="rtl"><span class="lexicon-hebrew" dir="rtl">מִשְׁלַח</span>", 7 occ, 2 senses)
+
+- **S114867** (6x) [N-msc] | eng: undertaking-of | spa: obra–de, lo–que–envíes | hin: भेजने, कार्य | arb: مَا–تُرْسِلُ, مَا–تَمُدُّ | kor: 보내는–것, (접)–보낸–것–에 | swa: kazi–ya, utakachoweka
+- **S114868** (1x) [Prep-l | N-msc] | eng: for–sending–of | spa: para-soltar | hin: भेजने–के–लिए | arb: لِإِرسَالِ | kor: 내보냄–으로 | swa: mahali-pa-kulisha
+
+## H4991 (POS: N-fsc, "† <strong>[<span dir="rtl"><span class="lexicon-hebrew" dir="rtl">מַתַּת</span><", 6 occ, 2 senses)
+
+- **S115348** (5x) [N-fsc,Prep-b | N-fsc] | eng: gift-of, in–gift–of | spa: don–de, en–don–de– | hin: दान, भेंट–में– | arb: عَطِيَّةُ, عَمَلِهِ | kor: 선물의, 선물 | swa: zawadi–ya, ni–zawadi–ya
+- **S115350** (1x) [N-fs] | eng: a–gift | spa: un–regalo | hin: उपहार | arb: هَدِيَّةً | kor: 선물을 | swa: zawadi
+
+## H5011 (POS: Prep-b | N-proper-fs, "† <strong><span dir="rtl"><span class="lexicon-hebrew" dir="rtl">נֹב</span></spa", 6 occ, 2 senses)
+
+- **S115452** (5x) [ N-proper-fs | 3fs,N-proper-fs | 3fs,N-proper-fs,Prep-b | N-] | eng: Nob, in–Nob | spa: Nob, en–Nob | hin: नोब-मेइन, नोब–में | arb: نُوب, فِي–نُوبَ | kor: 놉에, 놉을 | swa: Nobu, katika–Nobu
+- **S115454** (1x) [N-proper-fs] | eng: Nov | spa: Nob | hin: नोब–में | arb: نُوبَ | kor: 노브 | swa: Nobu

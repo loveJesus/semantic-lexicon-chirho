@@ -1,0 +1,73 @@
+You are a biblical lexicographer. For each lemma below, group the over-split sense clusters into REAL lexicographic senses.
+
+Rules:
+- Different grammatical inflections of the same meaning = SAME sense (merge them)
+- Different verb stems (Qal vs Hifil, active vs passive) = often DIFFERENT senses
+- Literal vs metaphorical uses = DIFFERENT senses
+- Every sense ID must appear in exactly one group
+- Output valid JSON array with labelChirho, descriptionChirho (150+ chars with multilingual evidence), senseIdsChirho
+
+## H5977 (POS: N-msc | 3ms, "† <strong>[<span dir="rtl"><span class="lexicon-hebrew" dir="rtl">עֹ֫מֶד</span><", 6 occ, 2 senses)
+
+- **S124876** (5x) [N-msc | 3mp] | eng: their–station, their–place | spa: lugar–de–ellos, su–puesto | hin: अपनी–जगह, उनके–स्थान–पर | arb: مَوْقِفِهِمْ, وُقوفِهِمْ | kor: 그들의–자리, 그들의–처소에 | swa: mahali–pao, amdam
+- **S124878** (1x) [N-msc | 3ms] | eng: his–place | spa: su–lugar | hin: उसके–स्थान–पर | arb: مَوْقِفِهِ | kor: 그의–자리 | swa: amdwo
+
+## H5983 (POS: Conj-w | N-proper-ms, "<strong><span dir="rtl"><span class="lexicon-hebrew" dir="rtl">עַמּוֹן</span></s", 106 occ, 2 senses)
+
+- **S124933** (105x) [N-proper-ms] | eng: Ammon | spa: Amón, Ammón | hin: अम्मोन–के, अम्मोन | arb: عَمُّونَ, عَمّونَ | kor: 암몬의, 암몬 | swa: Amoni, wa–Amoni
+- **S124934** (1x) [Conj-w | N-proper-ms] | eng: and–Ammon | spa: y–Ammon | hin: और–अम्मोन | arb: وَعَمَّونُ | kor: 암몸 | swa: na–Amoni
+
+## Response Format
+
+Return a JSON object with one key per lemma ID. Each value is an array of sense groups:
+
+```json
+{
+  "H5766b": [
+    {"labelChirho": "short label", "descriptionChirho": "one sentence", "senseIdsChirho": [id1, id2, ...]}
+  ],
+  "H5775": [...]
+}
+```
+
+IMPORTANT: Return ONLY the JSON object. Every sense ID from every lemma must appear exactly once. Use the numeric sense IDs (without the S prefix).
+
+## H6085 (POS: N-proper-ms, "missing", 15 occ, 2 senses)
+
+- **S125529** (14x) [N-proper-ms,N-proper-fs,Prep-l | N-proper-ms,Conj-w | N-prop] | eng: Ephron, to–Ephron | spa: Ephron, Efrón | hin: एप्रोन, एप्रोन–ने | arb: عِفْرُونَ, عِفْرُونُ | kor: 에브론의, 에브론 | swa: Efroni, na–akanyingira
+- **S125532** (1x) [N-proper-fs] | eng: (Ephrain) | spa: Efrayín | hin: (एप्रैन) | arb: عَفرونَ | kor: 에프라인 | swa: (Efraini)
+
+## H6126 (POS: N-proper-ms, "† <strong><span dir="rtl"><span class="lexicon-hebrew" dir="rtl">עַקּוּב</span><", 8 occ, 2 senses)
+
+- **S125897** (6x) [N-proper-ms] | eng: Aqqub, Akkub | spa: Acub, Acub. | hin: अक्कूब, अक्कूब–के | arb: عَقُّوبَ, عَقّوبُ | kor: 악굽, 아꾸브 | swa: Akubu, wa–Akubu
+- **S125898** (2x) [Conj-w | N-proper-ms] | eng: and–Aqqub | spa: y–Aqub, y–Acub | hin: और–अक्कूब | arb: وَ–عَقّوب, وَعَقُّوب | kor: 악굽과, 그리고–악북 | swa: na–Akubu
+
+## H6147 (POS: N-proper-ms, "† <strong><span dir="rtl"><span class="lexicon-hebrew" dir="rtl">עֵר</span></spa", 10 occ, 2 senses)
+
+- **S125940** (9x) [N-proper-ms] | eng: Er | spa: Er | hin: एर | arb: عِيرُ, عير | kor: 엘, 에르와 | swa: Eri, Era
+- **S125941** (1x) [Prep-l | N-proper-ms] | eng: for–Er | spa: para–Er | hin: एर–के–लिए | arb: لِ–عِيرَ | kor: 에르에게 | swa: kwa–Eri
+
+## H6154a (POS: Art | N-ms, "† I. <strong><span dir="rtl"><span class="lexicon-hebrew" dir="rtl">עֵ֫רֶב</span", 6 occ, 2 senses)
+
+- **S125986** (4x) [Art | N-ms] | eng: the–mixed–multitude, the–mixed–peoples | spa: la–mezcla | hin: मिश्रित–लोगों–को, मिश्रित–लोगों–के | arb: الْمُخْتَلَطِينَ, الْمُخْتَلَطِ | kor: 혼합된–자들을, 섭인–백성의 | swa: mchanganyiko, wote–wa–watu
+- **S125988** (2x) [N-ms] | eng: mixed-multitude, a-mixed-multitude | spa: mezcla | hin: मिश्रित–भीड़–को, भीड़ | arb: خَلِيطٍ, جَمْعٌ | kor: 섮인–무리도, 섞인–무리를 | swa: umati, mchanganyiko
+
+## H6157 (POS: Art | N-ms, "<strong><span dir="rtl"><span class="lexicon-hebrew" dir="rtl">עָרֹב</span></spa", 9 occ, 2 senses)
+
+- **S125994** (7x) [Art | N-ms,N-ms] | eng: the–swarm, swarm | spa: la–mezcla, mezcla | hin: मक्खियाँ, मक्खियों–से | arb: ذُبَابٌ, الذُّبَابِ | kor: 파리가, 그–파리가 | swa: mainzi
+- **S125995** (2x) [N-ms] | eng: swarms–of–flies | spa: moscas, enjambre | hin: मक्खियों–की–भीड़, मक्खियाँ | arb: ذُبَابًا, ذُباب | kor: 파리–떼–을, 파리–가 | swa: mainzi
+
+## H6159 (POS: N-proper-ms, "† <strong><span dir="rtl"><span class="lexicon-hebrew" dir="rtl">עֹרֵב</span></s", 7 occ, 2 senses)
+
+- **S126004** (6x) [N-proper-ms,N-proper-fs] | eng: Oreb | spa: Orev, Oreb | hin: ओरेब–को, ओरेब–के | arb: عُورِيب, عُورِيبَ | kor: 오렛의, 오렛을 | swa: Orebu, wa-Orebu
+- **S126005** (1x) [Prep-k | N-proper-ms] | eng: like–Orev | spa: como–Orev | hin: ओरेब–की–तरह | arb: كَعُورَيبَ | kor: 오렛–처럼 | swa: kama–Orebu
+
+## H6211a (POS: N-ms, "† II. <strong><span dir="rtl"><span class="lexicon-hebrew" dir="rtl">עָשׁ</span>", 7 occ, 2 senses)
+
+- **S126289** (4x) [N-ms] | eng: moth, the–moth | spa: polilla | hin: कीड़ा, पतंगे | arb: عُثٌّ, سُوسٌ | kor: 좀이, 좀 | swa: nondo
+- **S126290** (3x) [Prep-k, Art | N-ms] | eng: like–moth, like–a–moth | spa: como–polilla | hin: के–जैसे–कीड़े, कीड़े–जैसा | arb: كَ–العُثِّ, كَالعُثَّةِ | kor: 좌–같이, 같으니라–좀에 | swa: kama–nondo
+
+## H6222 (POS: N-proper-ms, "† <strong><span dir="rtl"><span class="lexicon-hebrew" dir="rtl">עֲשָׂיָה</span>", 8 occ, 2 senses)
+
+- **S126565** (6x) [N-proper-ms] | eng: Asayah, Asaiah | spa: Asaya, Asayas | hin: असायाह, असायाह–को | arb: عَسَايَا, عَسايا | kor: 아사야 | swa: Asaya, ashayah
+- **S126566** (2x) [Conj-w | N-proper-ms] | eng: and–Asayah | spa: y–Asayas, y–Asaya | hin: वा–असायाह, और–असायाह | arb: وَ–عَسايا, وَعَسَايَا | kor: 그리고–아사야가, 그–와–아사야 | swa: na–Asaya

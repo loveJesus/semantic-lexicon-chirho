@@ -1,0 +1,83 @@
+You are a biblical lexicographer. For each lemma below, group the over-split sense clusters into REAL lexicographic senses.
+
+Rules:
+- Different grammatical inflections of the same meaning = SAME sense (merge them)
+- Different verb stems (Qal vs Hifil, active vs passive) = often DIFFERENT senses
+- Literal vs metaphorical uses = DIFFERENT senses
+- Every sense ID must appear in exactly one group
+- Output valid JSON array with labelChirho, descriptionChirho (150+ chars with multilingual evidence), senseIdsChirho
+
+## G1228 (POS: Adj-DMS, "<b> <span class="lexicon-greek">διάβολ-ος</span></b>, <span class="lexicon-greek", 38 occ, 3 senses)
+
+- **S65230** (31x) [Adj-GMS,Adj-NMS,Adj-DMS,Adj-AMS] | eng: devil, the-Devil | spa: diablo, acusador | hin: शैतान, शैतान–ने | arb: إبليسُ, إِبليسِ | kor: 마귀, 마귀–가 | swa: ibilisi, shetani
+- **S65231** (4x) [Adj-GMS] | eng: devil, of–devil | spa: diablo, de–diablo | hin: शैतान–के, शैतान–ने | arb: إِبْلِيسِ, إِبْلِيسُ | kor: 마귀의, 마귀가 | swa: wa–ibilisi,, shetani
+- **S65233** (3x) [Adj-AFP,Adj-NMP] | eng: slanderers | spa: calumniadoras, calumniadores | hin: निन्दक,, दोशि, | arb: نَمّاماتٍ, ذَوي–بُهْتانٍ | kor: 중상하는–자들, 중상하는, | swa: wasingiziaji
+
+## G1242 (POS: N-NFS, "<b> <span class="lexicon-greek">διαθήκη</span></b>, ἡ, <br /> (<span class="lexi", 33 occ, 3 senses)
+
+- **S65249** (28x) [N-GFS,N-NFS,N-AFS,N-DFS] | eng: covenant, of-covenant | spa: pacto, de–pacto | hin: वाचा, वाचा–के | arb: العَهْدِ, عَهْد | kor: 언약의, 언약–의 | swa: agano, ya–agano
+- **S65250** (3x) [N-NFP,N-GFP] | eng: covenants | spa: pactos | hin: वाचाएं, वअछओन | arb: عُهودِ, عَهدانِ | kor: 언약들의, 언약들과 | swa: maagano
+- **S65251** (2x) [N-NFS] | eng: testament | spa: testamento | hin: वाचा,, वाचा | arb: وَصِيَّةٌ | kor: 유언이면, 유언은 | swa: agano
+
+## G1391 (POS: N-DFS, "<b> <span class="lexicon-greek">δόξᾰ</span></b>, ἡ, <br /> (<span class="lexicon", 167 occ, 3 senses)
+
+- **S65819** (163x) [N-AFS,N-NFS,N-DFS,N-GFS] | eng: glory, of-glory | spa: gloria, de–gloria | hin: महिमा, महिम | arb: مَجْدِ, مَجدٍ | kor: 영광, 영광을 | swa: utukufu, utukufu,
+- **S65821** (3x) [N-AFP] | eng: glories | spa: glorias | hin: महिमाओं–के, महिमाओं–की | arb: أَمجادًا, أمجادِ | kor: 영광들을 | swa: utukufu
+- **S65824** (1x) [N-DFS] | eng: in–glory | spa: en–gloria | hin: महिमा–में | arb: بِمَجدٍ | kor: 영광에 | swa: kwa–utukufu.
+
+## Response Format
+
+Return a JSON object with one key per lemma ID. Each value is an array of sense groups:
+
+```json
+{
+  "G1122": [
+    {"labelChirho": "short label", "descriptionChirho": "one sentence", "senseIdsChirho": [id1, id2, ...]}
+  ],
+  "G1137": [...]
+}
+```
+
+IMPORTANT: Return ONLY the JSON object. Every sense ID from every lemma must appear exactly once. Use the numeric sense IDs (without the S prefix).
+
+## G1430 (POS: N-ANS, "<b> <span class="lexicon-greek">δῶμα</span></b>, <span class="lexicon-greek">ατο", 7 occ, 3 senses)
+
+- **S66003** (4x) [N-GNS,N-ANS] | eng: housetop | spa: terrado, azotea | hin: छत | arb: سَطْحِ, السَّطحِ | kor: 지붕의, 지붕에서 | swa: dari, paa
+- **S66004** (2x) [N-GNP] | eng: housetops | spa: tejados, techos | hin: छतों–पर, छतों | arb: سُطُوحِ, سُطوحِ | kor: 지붕들에서, 지붕 | swa: paa., dari
+- **S66005** (1x) [N-ANS] | eng: roof | spa: techo | hin: छत | arb: سَطحِ | kor: 지붕 | swa: paa
+
+## G1432 (POS: Adv, "Included with: <b> <span class="lexicon-greek">δωρ-εά</span></b>, <br /> <i>Ioni", 9 occ, 3 senses)
+
+- **S66009** (7x) [Adv] | eng: freely | spa: gratuitamente, gratis. | hin: मुफ़्त, मुफ्त–में | arb: مَجّانًا, مَجّاناً | kor: 거저 | swa: bure, bure.
+- **S66010** (1x) [Adv] | eng: without–cause | spa: sin-causa | hin: बिना–कारण | arb: مَجَّانًا | kor: 까닭–없이 | swa: bure
+- **S66011** (1x) [Adv] | eng: for-nothing | spa: en-vano | hin: व्यरथ | arb: باطِلًا | kor: 헛되이 | swa: bure
+
+## G1437 (POS: Conj, "<b> <span class="lexicon-greek">ἐάν</span></b> <br /> (so early Attic Inscrr., a", 339 occ, 3 senses)
+
+- **S66020** (334x) [Conj,Prtcl] | eng: if, if– | spa: si, Si | hin: यदि, अगर | arb: إِنْ, إن | kor: 만일, 만약 | swa: kama, ikiwa
+- **S66022** (3x) [Conj] | eng: if | spa: * | hin: माँगे, प्रवेश–करो | arb: – | kor: –라면 | swa: utakalotaka, utakaloniomba
+- **S66024** (2x) [Conj] | eng: if–indeed– | spa: si–en–verdad | hin: यदि–सचमुच, यदि | arb: إِنْ | kor: 만일–정말 | swa: ikiwa–kweli–
+
+## G1543 (POS: N-DMS, "<b> <span class="lexicon-greek">ἑκᾰτόντ-αρχος</span></b>, ὁ, <br /> ={<span clas", 21 occ, 3 senses)
+
+- **S66582** (17x) [N-NMS,N-DMS,N-AMS] | eng: centurion, to–a–centurion | spa: centurión, a–un-centurión | hin: सूबेदार, सूबेदारने | arb: قائِدُ–المِئَةِ, قَائِدُ–المِئَةِ | kor: 백부장이, 백부장–이 | swa: akida, akida,
+- **S66584** (3x) [N-AMP,N-GMP] | eng: centurions | spa: centuriones | hin: सूबेदारोंमेंसे, सूबेदारों–को | arb: قُوَّادِ–المِئَاتِ, قُوَّادَ–مِائَةٍ | kor: 백부장들–의, 백부장들을 | swa: maakida
+- **S66585** (1x) [N-GMS] | eng: Of-a-centurion | spa: de–centurión | hin: सूबेदार–के | arb: قائِدُ–مِئَةٍ | kor: 백부장–의 | swa: wa–jemadari
+
+## G1577 (POS: N-GFP, "<b> <span class="lexicon-greek">ἐκκλησί-α</span></b>, ἡ, <br /> (<span class="le", 114 occ, 3 senses)
+
+- **S66715** (90x) [N-AFS,N-NFS,N-GFS,N-DFS,N-AFP,N-NFP,N-DFP,N-GFP] | eng: church, assembly | spa: iglesia, asamblea | hin: कलीसिया, कलिसिअ | arb: كَنيسَةِ, الكَنيسَةِ | kor: 교회, 교회–의 | swa: kanisa, makanisa
+- **S66717** (15x) [N-AFP,N-DFP,N-GFP,N-NFP] | eng: assemblies, churches | spa: iglesias | hin: कलीसियाओं–को।, कलिसियओन–को | arb: كَنائِسَ, الكَنائِسِ | kor: 교회들–에게, 교회들에게 | swa: makanisa., makanisa
+- **S66719** (9x) [N-DFS,N-GFS,N-NFS,N-AFS] | eng: assembly, of–assembly | spa: asamblea | hin: सभा, कलीसिया | arb: الكَنيسَةِ, كَنِيسَتِي | kor: 회중의, 집회에서 | swa: kanisa, kusanyiko
+
+## G1611 (POS: N-GFS, "<b> <span class="lexicon-greek">ἔκστᾰσις</span></b>, <span class="lexicon-greek"", 7 occ, 3 senses)
+
+- **S66816** (3x) [N-NFS,N-GFS] | eng: amazement | spa: éxtasis, de–éxtasis | hin: विस्मय, भय | arb: ذُهُولًا, دَهْشَةٌ | kor: 놓람이, 놀람–으로 | swa: mshangao, kushangaa
+- **S66817** (3x) [N-NFS,N-DFS] | eng: trance, a–trance | spa: éxtasis | hin: बेसुधी, बेहोशी | arb: غَيْبَةٍ, غَيْبَةٌ | kor: 황홀경, 황홀–이 | swa: usingizi–mzito,, usingizi–mzito
+- **S66818** (1x) [N-DFS] | eng: with–amazement | spa: con–asombro | hin: सब | arb: دَهْشَةً | kor: 놀라움으로 | swa: kwa–mshangao
+
+## G1622 (POS: Adv, "<b> <span class="lexicon-greek">ἐκτός</span></b> <br /> (<b><span class="lexicon", 8 occ, 3 senses)
+
+- **S66837** (4x) [Adv,Prep] | eng: unless, except | spa: excepto | hin: सिवाय, सिवअये | arb: إلّا–إذا, إِلّا | kor: –외에는, 외–에 | swa: isipokuwa
+- **S66838** (3x) [Prep,Adv] | eng: outside | spa: fuera–de, fuera | hin: बाहर | arb: خارِجَ, خارِجُهُما | kor: 밖에, 바깥도 | swa: nje–ya, lake
+- **S66840** (1x) [Prep] | eng: beyond | spa: fuera-de | hin: अलग | arb: بِسِوَى | kor: 밖에 | swa: nje–ya–

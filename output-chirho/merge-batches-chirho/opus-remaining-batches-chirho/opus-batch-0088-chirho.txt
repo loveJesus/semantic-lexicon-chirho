@@ -1,0 +1,73 @@
+You are a biblical lexicographer. For each lemma below, group the over-split sense clusters into REAL lexicographic senses.
+
+Rules:
+- Different grammatical inflections of the same meaning = SAME sense (merge them)
+- Different verb stems (Qal vs Hifil, active vs passive) = often DIFFERENT senses
+- Literal vs metaphorical uses = DIFFERENT senses
+- Every sense ID must appear in exactly one group
+- Output valid JSON array with labelChirho, descriptionChirho (150+ chars with multilingual evidence), senseIdsChirho
+
+## G1451 (POS: Prep, "<b> <span class="lexicon-greek">ἐγγύς</span></b> [ῠ], <br /> <i>adverb</i>, <i>c", 30 occ, 2 senses)
+
+- **S66118** (29x) [Adv,Prep] | eng: near, Near | spa: cerca | hin: निकट, निकत | arb: قَرِيبًا, قَريبٌ | kor: 가까이, 가깝다 | swa: karibu, karibu–na
+- **S66121** (1x) [Prep] | eng: near | spa: cercana | hin: निकट, | arb: قَريبَةٌ | kor: 가까우니 | swa: karibu–na–
+
+## G1485 (POS: N-ANP, "<b> <span class="lexicon-greek">ἔθος</span></b>, <span class="lexicon-greek">εος", 12 occ, 2 senses)
+
+- **S66275** (7x) [N-ANS,N-NNS,N-DNS] | eng: custom, habit | spa: costumbre | hin: रीति, रीति–के–अनुसार | arb: عَادَةِ, عادَةِ | kor: 습관이–있는, 관습이 | swa: desturi
+- **S66276** (5x) [N-ANP,N-DNP,N-GNP] | eng: customs | spa: costumbres | hin: रीतियों–में, रीतियों–को | arb: ـالْعَادَاتِ, عَادَاتِ | kor: 관습들을, 관습들에–따라 | swa: desturi
+
+## G1490 (POS: Adv, "Related to: <b> <span class="lexicon-greek">εἰ</span></b>, <br /> <i>Attic diale", 8 occ, 2 senses)
+
+- **S66286** (7x) [Prtcl,Adv] | eng: not, not-indeed | spa: no, de–otra–manera | hin: नहीं–तो, नहीं | arb: –, فَ–لَا | kor: 아니면 | swa: sivyo, la–sivyo
+- **S66287** (1x) [Prtcl] | eng: otherwise | spa: no | hin: नहीं–तो | arb: لا | kor: 아니라도 | swa: la–sivyo
+
+## G1494 (POS: Adj-ANS, "<b> <span class="lexicon-greek">εἰδωλό-θῠτος</span></b>, <span class="lexicon-gr", 10 occ, 2 senses)
+
+- **S66330** (9x) [Adj-ANS,Adj-ANP,Adj-NNS,Adj-GNP] | eng: idol–sacrifices, idol–sacrifice | spa: sacrificado–a–ídolos, sacrificado–a–ídolo | hin: मूर्ति–का–भोजन, मूर्तियों–को–बलि–चढ़ाए–भोजन | arb: ذَبائِحِ–الأَوْثانِ, ذَبائِحَ–الأَصْنامِ | kor: 우상제물–을, 우상에게–바친–것들 | swa: vilivyotolewa–kwa–sanamu,, vilivyotolewa–kwa–sanamu
+- **S66335** (1x) [Adj-NNS] | eng: temple-sacrifice | spa: ofrecido–en–sacrificio | hin: मंदिर–का–बलिदान | arb: ذَبيحَةٌ–مُقَدَّسَةٌ | kor: 제물이니라 | swa: kimetolewa–dhabihu–kwa–sanamu
+
+## G1496 (POS: N-NMP, "<b> <span class="lexicon-greek">εἰδωλο-λάτρης</span></b>, <span class="lexicon-g", 7 occ, 2 senses)
+
+- **S66337** (5x) [N-DMP,N-NMP] | eng: idolaters | spa: idólatras, idólatras, | hin: मूर्तिपूजकों, मूर्ति–पूजक | arb: عَبَدَةُ الأَوْثانِ, عَبَدَةَ–أوثانٍ | kor: 우상숭배자들과, 우상숭배자들 | swa: waabudu–sanamu,, waabudu–sanamu––
+- **S66339** (2x) [N-NMS] | eng: idolater | spa: idólatra | hin: मूर्तिपूजक, मुरतिपुजक | arb: عابِدِ–أَوْثانٍ, عابِدُ–أَصنامٍ | kor: 우상숭배자–이니, 우상숭배자 | swa: mwabudu–sanamu
+
+## Response Format
+
+Return a JSON object with one key per lemma ID. Each value is an array of sense groups:
+
+```json
+{
+  "G1321": [
+    {"labelChirho": "short label", "descriptionChirho": "one sentence", "senseIdsChirho": [id1, id2, ...]}
+  ],
+  "G1322": [...]
+}
+```
+
+IMPORTANT: Return ONLY the JSON object. Every sense ID from every lemma must appear exactly once. Use the numeric sense IDs (without the S prefix).
+
+## G1497 (POS: N-DNS, "<b> <span class="lexicon-greek">εἴδωλον</span></b>, <span class="lexicon-greek">", 11 occ, 2 senses)
+
+- **S66340** (7x) [N-ANP,N-GNP] | eng: idols | spa: ídolos | hin: मूर्तियों, मोओरतियोन | arb: الأَصنامِ, الأَوثانِ | kor: 우상들, 우상들의 | swa: sanamu, sanamu?
+- **S66341** (4x) [N-NNS,N-DNS,N-GNS] | eng: idol, an-idol | spa: ídolo | hin: मूर्ति, मूर्ति–को | arb: وَثَنٌ, صَنَمٌ | kor: 우상이, 우상–의 | swa: sanamu, sanamu,
+
+## G1504 (POS: N-AFS, "<b> <span class="lexicon-greek">εἰκών</span></b>, ἡ, <br /> <i>genitive</i> <spa", 23 occ, 2 senses)
+
+- **S66349** (22x) [N-GFS,N-NFS,N-AFS,N-DFS] | eng: image, an-image | spa: imagen | hin: मूर्ति, स्वरूप | arb: صورَةُ, صورَتِهِ | kor: 형상을, 상을 | swa: sanamu, sura
+- **S66351** (1x) [N-GFS] | eng: of–image | spa: de–imagen | hin: मूर्ति–की | arb: صورَةِ | kor: 형상 | swa: wa–sanamu
+
+## G1512 (POS: Conj, "<b> <span class="lexicon-greek">εἴπερ</span></b> <br /> or <b><span class="lexic", 6 occ, 2 senses)
+
+- **S66423** (5x) [Conj] | eng: if–indeed–, since–indeed | spa: si–en–verdad | hin: यदि–सचमुच, यदि–वास्तव–में | arb: إِن–كانَ, إِنْ–كُنَّا | kor: 만일–참으로, 만일 | swa: kwa–kuwa, kama
+- **S66424** (1x) [Conj] | eng: even–if | spa: si–ciertamente | hin: यदि–भी | arb: وَ–إِنْ | kor: 참으로–만약 | swa: hata–kama
+
+## G1515 (POS: N-AFS, "<b> <span class="lexicon-greek">εἰρήν-η</span></b> <br /> (see. below), ἡ, <b>pe", 93 occ, 2 senses)
+
+- **S66427** (86x) [N-NFS,N-AFS,N-DFS,N-GFS] | eng: peace, Peace | spa: paz, Paz | hin: शान्ति, शन्ति | arb: سَلامٌ, سَلامٍ | kor: 평화가, 평화를 | swa: amani, Amani
+- **S66429** (7x) [N-GFS] | eng: of–peace, of-peace | spa: de–paz, paz | hin: शान्ति–का, शान्ति; | arb: سَلامٍ, السَّلَامِ | kor: 평화의, 평화–의 | swa: wa–amani, ya–amani
+
+## G1589 (POS: N-NFS, "<b> <span class="lexicon-greek">ἐκλογ-ή</span></b>, ἡ, <br /> <b>choice, selecti", 7 occ, 2 senses)
+
+- **S66760** (6x) [N-AFS,N-NFS] | eng: election | spa: elección | hin: चुनाव, चुनाव–ने | arb: الاخْتِيَارِ, الْمُخْتَارُونَ | kor: 선택을, 택하심을 | swa: uchaguzi, waliochaguliwa
+- **S66762** (1x) [N-GFS] | eng: of–election | spa: de–elección | hin: चुनाव–का | arb: اخْتِيَارٍ | kor: 택함–의 | swa: cha–kuchaguliwa

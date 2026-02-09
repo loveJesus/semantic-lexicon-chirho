@@ -1,0 +1,83 @@
+You are a biblical lexicographer. For each lemma below, group the over-split sense clusters into REAL lexicographic senses.
+
+Rules:
+- Different grammatical inflections of the same meaning = SAME sense (merge them)
+- Different verb stems (Qal vs Hifil, active vs passive) = often DIFFERENT senses
+- Literal vs metaphorical uses = DIFFERENT senses
+- Every sense ID must appear in exactly one group
+- Output valid JSON array with labelChirho, descriptionChirho (150+ chars with multilingual evidence), senseIdsChirho
+
+## G2040 (POS: N-AMS, "<b> <span class="lexicon-greek">ἐργᾰτ-ης</span></b>, <span class="lexicon-greek"", 16 occ, 3 senses)
+
+- **S68037** (12x) [N-NMP,N-AMP,N-VMP,N-GMP] | eng: workers | spa: obreros | hin: मजदोओरोन–को, मज़दूरों–को | arb: فَعَلَةً, الفَعَلَةَ | kor: 일꿔들–을, 일꾼들을 | swa: wafanyakazi, watenda-kazi
+- **S68038** (3x) [N-NMS] | eng: worker | spa: obrero | hin: मज़दोओर, मज़दूर | arb: فاعِلُ, عامِلَ | kor: 일꾼은, 일꾼이 | swa: mfanyakazi, mtenda-kazi
+- **S68042** (1x) [N-AMS] | eng: workman | spa: obrero | hin: कअरयकरतअ | arb: عامِلاً | kor: 일꾼으로 | swa: mfanyakazi
+
+## G2054 (POS: N-NFS, "<b> <span class="lexicon-greek">ἔρις</span></b>, <br /> <br /><b>__B</b> ={<span", 9 occ, 3 senses)
+
+- **S68108** (7x) [N-NFS,N-GFS,N-AFS,N-AFP] | eng: strife, of–strife | spa: contienda, de–contienda | hin: झगद,, झगड़ा | arb: خِصامٌ, خِصامٍ | kor: 다툼,, 다툼 | swa: ugomvi, ugomvi,
+- **S68110** (1x) [N-DFS] | eng: in-strife | spa: en–contienda | hin: झगड़े–में | arb: بِ–خِصَامٍ | kor: 분쟁과 | swa: ugomvi
+- **S68111** (1x) [N-NFP] | eng: quarrels | spa: contiendas | hin: झगड़े | arb: خِصاماتٍ | kor: 다툼들–이 | swa: mabishano
+
+## Response Format
+
+Return a JSON object with one key per lemma ID. Each value is an array of sense groups:
+
+```json
+{
+  "G1715": [
+    {"labelChirho": "short label", "descriptionChirho": "one sentence", "senseIdsChirho": [id1, id2, ...]}
+  ],
+  "G1746": [...]
+}
+```
+
+IMPORTANT: Return ONLY the JSON object. Every sense ID from every lemma must appear exactly once. Use the numeric sense IDs (without the S prefix).
+
+## G2078 (POS: Adj-DFP, "<b> <span class="lexicon-greek">ἔσχᾰτος</span></b>, <span class="lexicon-greek">", 54 occ, 3 senses)
+
+- **S68244** (50x) [Adj-AMS,Adj-NFS,Adj-NMS,Adj-ANS,Adj-DFS,Adj-DFP,Adj-GNS,Adj-] | eng: last | spa: último, últimos | hin: अन्तिम, अंतिम | arb: أَخِيرِ, الآخِرُ | kor: 마지막, 마지막으로 | swa: wa–mwisho, ya–mwisho
+- **S68246** (2x) [Adj-NNP] | eng: last-things, last-state | spa: últimas–cosas | hin: अन्तिम–दशा | arb: الأخيرَةُ, آخِرُ | kor: 나중이 | swa: ya–mwisho, hali–ya–mwisho
+- **S68247** (2x) [Adj-GNS] | eng: end | spa: lo–último, fin | hin: छोर–के | arb: أَقْصَى, أَقصَى | kor: 땅–의, 끝 | swa: mwisho–wa, mwisho
+
+## G2081 (POS: Adv, "<b> <span class="lexicon-greek">ἔσωθεν</span> </b><br /> (<span class="lexicon-g", 12 occ, 3 senses)
+
+- **S68256** (6x) [Adv] | eng: inside, inwardly | spa: por–dentro, de–adentro | hin: भीतर–से, अन्दर | arb: مِن–داخِلٍ, داخِلُهُما | kor: 안은, 안을 | swa: ndani, lakini
+- **S68257** (4x) [Adv] | eng: from-within, within | spa: de–adentro, de–dentro | hin: भीतर–से, जाति–से | arb: مِنْ–دَاخِلٍ, مِنَ–الدّاخِلِ | kor: 안–에서, 안으로는 | swa: ndani, kutoka–ndani
+- **S68258** (2x) [Adv] | eng: within, inside | spa: por–dentro | hin: अन्दर | arb: مِن–داخِلٍ, مِنْ–داخِلٍ | kor: 안–에 | swa: ndani
+
+## G2094 (POS: N-DNP, "<b> <span class="lexicon-greek">ἔτος</span></b>, <span class="lexicon-greek">εος", 49 occ, 3 senses)
+
+- **S68313** (43x) [N-ANP,N-GNP,N-DNP,N-NNP] | eng: years, of–years | spa: años, de–años | hin: वर्ष, वर्षों | arb: سَنَةً, سَنَةٍ | kor: 해, 년 | swa: miaka, miaka,
+- **S68314** (3x) [N-DNP,N-GNP] | eng: years | spa: años | hin: वर्षों–से, वर्षों–में, | arb: كَثِيرَةٍ, سَنَوَاتٍ | kor: 해–에, 해–동안 | swa: miaka, mingi,
+- **S68315** (3x) [N-ANS,N-DNS] | eng: year | spa: año | hin: वर्ष | arb: سَنَةٍ, العَامَ | kor: 해–에, 해도 | swa: mwaka
+
+## G2117 (POS: Adj-NFS, "<b> <span class="lexicon-greek">εὐθύς</span></b>, <span class="lexicon-greek">εῖ", 8 occ, 3 senses)
+
+- **S68393** (6x) [Adj-AFP,Adj-AFS] | eng: straight, Straight | spa: rectas, rectos | hin: सीधे, सीधी | arb: مُسْتَقِيمَةً, مُسْتَقِيمٍ | kor: 곧게, 바른 | swa: nyoofu, vinyoofu
+- **S68394** (1x) [Adj-NFS] | eng: right | spa: recto | hin: सीधा | arb: مُسْتَقِيمًا | kor: 바른 | swa: sawa
+- **S68395** (1x) [Adj-AFS] | eng: straight | spa: recto | hin: सीधा | arb: المُستَقيمَ | kor: 곧은 | swa: njia–iliyonyooka
+
+## G2129 (POS: N-DFP, "<b> <span class="lexicon-greek">εὐλογ-ία</span></b>, ἡ, <br /> <b>good or fine l", 16 occ, 3 senses)
+
+- **S68427** (13x) [N-GFS,N-AFS,N-NFS,N-DFS] | eng: blessing, of-blessing | spa: bendición, de–bendición | hin: आशीर्वाद, आशीष, | arb: بَرَكَةٍ, بَرَكَةً | kor: 축복을, 축복–의 | swa: baraka, baraka,
+- **S68428** (2x) [N-DFP] | eng: blessings | spa: bendiciones | hin: आशीर्वादों–के | arb: بَرَكاتٍ | kor: 축복들에 | swa: baraka,, baraka
+- **S68429** (1x) [N-GFS] | eng: flattery | spa: bendiciones | hin: आशीर्वाद–से | arb: الْمُبَارَكَاتِ | kor: 칭찬–으로 | swa: baraka
+
+## G2150 (POS: N-GFS, "<b> <span class="lexicon-greek">εὐσέβεια</span></b>, ἡ <br /> (compare <span cla", 15 occ, 3 senses)
+
+- **S68501** (13x) [N-DFS,N-GFS,N-AFS,N-NFS] | eng: godliness, of–godliness | spa: piedad, de–piedad | hin: भक्ति, भक्ति; | arb: التَّقْوى, التَّقوى | kor: 경건, 경건–의 | swa: uchaji–Mungu, utauwa
+- **S68503** (1x) [N-DFS] | eng: godliness | spa: piedad | hin: चलाने | arb: تَقْوَى | kor: 만든–자들–이 | swa: utakatifu
+- **S68504** (1x) [N-DFP] | eng: godlinesses | spa: piedades | hin: भक्ति–में | arb: تَقوى | kor: 경건들, | swa: utauwa
+
+## G2169 (POS: N-NFS, "<b> <span class="lexicon-greek">εὐχᾰριστ-ία</span></b>, ἡ, <br /> <b>thankfulnes", 15 occ, 3 senses)
+
+- **S68550** (12x) [N-AFS,N-NFS,N-AFP,N-DFS,N-GFS] | eng: thanksgiving | spa: acción–de–gracias | hin: धन्यवअद, धन्यवाद | arb: شُكْرٍ, شُكْراً | kor: 감사를, 감사–안에서 | swa: shukrani, shukurani
+- **S68551** (2x) [N-GFP,N-AFP] | eng: thanksgivings | spa: acciones–de–gracias | hin: धन्यवादों–के, धन्यवअद | arb: شُكْرٌ, شُكرٍ | kor: 감사들을,, 감사들로 | swa: shukrani
+- **S68553** (1x) [N-GFS] | eng: thankfulness | spa: gratitud | hin: कृतज्ञताके। | arb: شُكْرٍ | kor: 감사와 | swa: shukrani
+
+## G2176 (POS: Adj-GNP, "<b> <span class="lexicon-greek">εὐώνυμ-ος</span></b>, <span class="lexicon-greek", 9 occ, 3 senses)
+
+- **S68565** (7x) [Adj-GNP] | eng: left, the-left | spa: izquierda, su–izquierda | hin: बाईं–ओर, बअयेएन–ओर | arb: يَسَارِهِ, يَسَارِي | kor: 왼쪽, 왼줁 | swa: kushoto, si
+- **S68566** (1x) [Adj-AMS] | eng: left | spa: izquierdo | hin: बायां | arb: اليُسرى | kor: 왼쪽을 | swa: wa–kushoto
+- **S68567** (1x) [Adj-AFS] | eng: on-left | spa: a–la–izquierda | hin: बाईं–ओर | arb: عَنْ–يَسَارِنَا | kor: 왼쏨에 | swa: upande–wa–kushoto

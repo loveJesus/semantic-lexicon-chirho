@@ -1,0 +1,108 @@
+You are a biblical lexicographer. For each lemma below, group the over-split sense clusters into REAL lexicographic senses.
+
+Rules:
+- Different grammatical inflections of the same meaning = SAME sense (merge them)
+- Different verb stems (Qal vs Hifil, active vs passive) = often DIFFERENT senses
+- Literal vs metaphorical uses = DIFFERENT senses
+- Every sense ID must appear in exactly one group
+- Output valid JSON array with labelChirho, descriptionChirho (150+ chars with multilingual evidence), senseIdsChirho
+
+## H6135 (POS: Adj-fs, "† <strong><span dir="rtl"><span class="lexicon-hebrew" dir="rtl">עָקָר</span></s", 12 occ, 4 senses)
+
+- **S125908** (8x) [Adj-fs,Adj-ms] | eng: barren, barren–male | spa: estéril | hin: बाँझ, बाँझ–स्त्री | arb: عَاقِرَةٌ, عَاقِرٌ | kor: 불임이라, 잉태하지–못했다 | swa: tasa, tasa–mwanaume
+- **S125909** (2x) [Adj-fs,Adj-fsc] | eng: the–barren–woman–of, barren–one | spa: a–la–estéril–de, a–la–estéril | hin: बाँझ–को | arb: الْعَاقِرَ, العاقِرَة | kor: 잉태하지–못하는–여인–을, 불임인–여자를 | swa: tasa
+- **S125910** (1x) [Conj-w | Adj-fs] | eng: and–barren | spa: ni–estéril | hin: और–बाँझ | arb: وَ–عاقِرَةٌ | kor: 그리고–임신–못하는–자가 | swa: na–tasa
+- **S125912** (1x) [Conj-w | Adj-fs] | eng: or–barren–female | spa: ni–estéril | hin: और–बाँझा | arb: وَعَاقِرَةٌ | kor: 그리고–잉태못하는–여자가 | swa: wala–tasa–mwanamke
+
+## H6138 (POS: Conj-w | N-proper-fs, "<strong><span dir="rtl"><span class="lexicon-hebrew" dir="rtl">עֶקְרוֹן</span></", 22 occ, 4 senses)
+
+- **S125917** (13x) [N-proper-fs,Prep-m | N-proper-fs] | eng: Ekron, from–Ekron | spa: Ecrón, Ekron | hin: एक्रोन–के, एक्रोन | arb: عَقْرُونَ, عَقْرونَ | kor: 에그론–의, 에그론의 | swa: Ekroni, kutoka–Ekroni
+- **S125918** (4x) [Conj-w | N-proper-fs] | eng: and–Eqron | spa: y–Ecrón | hin: और–एक्रोन | arb: وَعَقْرُونُ, وَ–عَقْرُونُ | kor: 그리고–에그론이, 그리고–에그론은 | swa: na–Ekroni
+- **S125919** (4x) [N-proper-fs] | eng: Eqron, Ekron | spa: a–Ecrón, Eqrón | hin: एक्रोन | arb: إِلَى–عَقْرُون, عَقْرُونَ | kor: 에그론으로, 에글론을 | swa: Ekroni
+- **S125921** (1x) [Prep-l | N-proper-fs] | eng: for–Ekron | spa: para–Ecrón | hin: एक्रोन–के–लिए | arb: لِـ–عَقْرُون | kor: 에그론에 | swa: kwa–Ekroni
+
+## H6163b (POS: Art | N-proper-mp, "† <strong><span dir="rtl"><span class="lexicon-hebrew" dir="rtl">עַרְבִי</span><", 6 occ, 4 senses)
+
+- **S126037** (2x) [Art | N-proper-ms] | eng: the–Arabian, the–Arab | spa: el–árabe | hin: अरबी–ने, अरबी | arb: الْعَرَبِيِّ, الْعَرَبِيُّ | kor: 그–아락사람, 그–아라비아인 | swa: Mwarabu
+- **S126038** (2x) [Conj-w, Art | N-proper-mp] | eng: and–the–Aravim, and–the–Arabs | spa: y–los–árabes | hin: और–अरबियोंकी | arb: وَ–الْعَرَبُ, وَالعَرَبِ | kor: 그리고–그–아라비아인들의, 그–아라비아인들과 | swa: na–Waarabu
+- **S126039** (1x) [Art | N-proper-mp] | eng: the–Arabians | spa: los–árabes | hin: के–अरबी | arb: العَرَبُ | kor: 그–아랍–사람들이 | swa: Waarabu
+- **S126040** (1x) [Prep-b, Art | N-proper-mp] | eng: with–the–Aravim | spa: con–los–árabes | hin: अरबियोंकेसाथ | arb: مَعَ–الْعَرَبِ | kor: 그–아랍–사람들–과–함께 | swa: pamoja–na–Waarabu
+
+## Response Format
+
+Return a JSON object with one key per lemma ID. Each value is an array of sense groups:
+
+```json
+{
+  "H6062": [
+    {"labelChirho": "short label", "descriptionChirho": "one sentence", "senseIdsChirho": [id1, id2, ...]}
+  ],
+  "H6087a": [...]
+}
+```
+
+IMPORTANT: Return ONLY the JSON object. Every sense ID from every lemma must appear exactly once. Use the numeric sense IDs (without the S prefix).
+
+## H6174 (POS: Adj-ms, "† <strong><span dir="rtl"><span class="lexicon-hebrew" dir="rtl">עָרוֹם</span></", 16 occ, 4 senses)
+
+- **S126077** (7x) [Adj-ms] | eng: naked, the–naked | spa: desnudo, al–desnudo | hin: नंगा, ननग | arb: عُرْيَانًا, عُرْيانًا | kor: 벗은–채로, 벗은채 | swa: uchi, aliye–uchi
+- **S126078** (6x) [Adj-mp,Adj-ms,Adj-fs] | eng: naked | spa: desnudos, Desnudos | hin: नंगे, नंगी | arb: عُرَاةً, عُرْيَانَيْنِ | kor: 벗은–채로, 벗은 | swa: uchi, Uchi
+- **S126079** (2x) [Conj-w | Adj-ms] | eng: and–naked | spa: y–desnudo | hin: और–नग्न, और–नंगा | arb: وَ–عَرَيَانًا, وَعُرْيانًا | kor: 그리고–벌거벗은–채로, 그리고–벌거벗고 | swa: na–uchi, na–bila–nguo
+- **S126080** (1x) [Adj-mp] | eng: naked–ones | spa: los–desnudos | hin: नंगों–के | arb: الْعُرَاةِ | kor: 벗긴–자들의 | swa: walio–uchi
+
+## H6213 (POS: Conj-w | V-Qal-ConjPerf-1cs, "?", 7 occ, 4 senses)
+
+- **S126305** (4x) [V-Qal-Perf-2fs] | eng: you–did, you–made | spa: (hiciste) | hin: बनाए–तूने, की–तूने | arb: (صَنَعْتِ), (تَعْمَلِي) | kor: 네가–행하였다, 네가–만들었다 | swa: ulifanya, ukifanya
+- **S126306** (1x) [V-Qal-Perf-3ms] | eng: made | spa: hizo | hin: (बनाया) | arb: صَنَعَ | kor: (만들었다) | swa: alitengeneza
+- **S126307** (1x) [Conj-w | V-Qal-ConjPerf-1cs] | eng: and–I-will-do | spa: (Y–haré) | hin: और–करूँगा–मैं | arb: (وَأَصْنَعُ) | kor: 그리고–내가–행하겠다 | swa: nitakufanyia
+- **S126308** (1x) [V-Qal-Imperf-2ms] | eng: do | spa: (hagas) | hin: कर | arb: تَفْعَلْ | kor: (행하라) | swa: fanya
+
+## H6214 (POS: N-proper-ms, "<strong><span dir="rtl"><span class="lexicon-hebrew" dir="rtl">עֲשָׂהאֵל</span><", 21 occ, 4 senses)
+
+- **S126535** (9x) [N-proper-ms] | eng: Asahel | spa: Asahel, Asah–el | hin: असाहेल, असाहेल–ने | arb: عَسَائِيلُ, عَسَائِيلَ | kor: 아사헬, 아사헬이 | swa: Asaheli
+- **S126536** (5x) [Conj-w | N-proper-ms] | eng: and–Asahel, and–Asah'el | spa: y–Asahel, y–Asael | hin: और–असाहेल, और–असाहएल | arb: وَعَسَائِيلُ, وَ–عَسَاهِيلُ | kor: 그리고–아사헬과, 그리고–아사헬은 | swa: na–Asaheli, waashahel
+- **S126537** (4x) [Conj-w | N-proper-ms] | eng: and–Asah, Asah– | spa: y–Asah, Asá–El | hin: असाहेल–, और–असाहेल | arb: وَعَسَائِيلَ, عَسَاهِيل– | kor: 아사헬–, 아사헬 | swa: Asaheli, na–Asaheli
+- **S126538** (3x) [N-proper-ms] | eng: El | spa: El, Asá–El | hin: एल, ()असाहेल | arb: عَسَائِيلَ, أَيل | kor: 엘, 형제–의 | swa: Eli, DOM
+
+## H6215 (POS: Conj-w | N-proper-ms, "<strong><span dir="rtl"><span class="lexicon-hebrew" dir="rtl">עֵשָׂו</span></sp", 97 occ, 4 senses)
+
+- **S126543** (71x) [N-proper-ms,Conj-w | N-proper-ms] | eng: Esau, and–Esau | spa: Esav, y–Esav | hin: एसाव, एसाव–ने | arb: عِيسُو, عيسو | kor: 에서가, 에서의 | swa: Esau, na–Esau
+- **S126544** (17x) [N-proper-ms,Prep-l | N-proper-ms] | eng: Esau, to–Esau | spa: Esaú, a–Esaú | hin: एसाव–के, एसाव | arb: عِيسُو, عيسو | kor: 에서우의, 에서–의 | swa: Esau, kwa–Esau
+- **S126546** (7x) [Prep-l | N-proper-ms] | eng: to–Esau, for–Esau | spa: a–Esav, para–Esav | hin: एसाव–के–लिए, एसाव–से | arb: لِ–عِيسُو, لِعِيسُو | kor: 에서에게, 에서–에게 | swa: kwa–Esau, Esau
+- **S126547** (2x) [N-proper-ms] | eng: Esav | spa: Esau | hin: एसाव–की, एसाव | arb: عِيسُو | kor: 에서의, 에서를 | swa: Esau
+
+## H6218 (POS: N-ms, "† <strong><span dir="rtl"><span class="lexicon-hebrew" dir="rtl">עָשׂוֹר</span><", 16 occ, 4 senses)
+
+- **S126553** (12x) [Prep-b, Art | N-ms,Conj-w, Prep-b, Art | N-ms] | eng: on–the–tenth, on–the-tenth | spa: en–el–día–diez, en–el–décimo–día | hin: में–दसवें, दसवीं–तारीख–को | arb: فِي–الْعَاشِرِ, فِي–الْ–عَاشِرِ | kor: 열째–날에, 에–십일에 | swa: siku–ya–kumi, siku–ya–kumi–ya–
+- **S126556** (2x) [N-ms] | eng: ten-strings, of–ten–strings | spa: diez–cuerdas, de–diez-cuerdas | hin: दस–तारों–वाली, दस–तारों–वाला | arb: عَشَرِيٍّ, ذِي–الْعَشْرَةِ | kor: 열–줄의, 열–줄–로 | swa: nyuzi–kumi, chenye-nyuzi-kumi
+- **S126558** (1x) [N-ms] | eng: a–ten–stringed–instrument | spa: instrumento–de–diez–cuerdas | hin: दस–तारी–वीणा | arb: عُشَارِيٍ | kor: 십현금–을 | swa: kinanda–cha–nyuzi–kumi
+- **S126561** (1x) [N-ms] | eng: ten | spa: diez | hin: दस | arb: عَشَرَةً | kor: 열 | swa: kumi
+
+## H6233 (POS: Prep-b, "† <strong><span dir="rtl"><span class="lexicon-hebrew" dir="rtl">עֹ֫שֶׁק</span><", 15 occ, 4 senses)
+
+- **S126640** (7x) [N-ms,Prep-b | N-ms] | eng: oppression, in–oppression | spa: opresión, en–opresión | hin: अत्याचार, शोषण | arb: ظُلْمًا, على–الظُّلمِ | kor: 압제를, 에–압제와 | swa: udhalimu, ukandamizaji
+- **S126641** (3x) [Art | N-ms] | eng: the–oppression | spa: la–opresión, lo–defraudado | hin: अत्याचार, शोषण | arb: –المَظْلُومَ, الظُّلْمِ | kor: 압제–그, 그–억압한–것을 | swa: dhuluma, udhalimu
+- **S126644** (3x) [Prep-m | N-ms,N-msc,Prep-m | N-msc] | eng: oppression-of, from–oppression–of | spa: opresión–de, de–opresión–de | hin: अत्याचार–से, अत्याचार | arb: مِنْ–ظُلْمِ, عَنِ–الظُّلْمِ | kor: 압제에서–, 압제–에서 | swa: udhalimu, kutokana–na–udhalimu
+- **S126643** (2x) [Prep-b, Art | N-ms] | eng: with–oppression, by–oppression | spa: con–opresión | hin: में–अत्याचार | arb: بِالظُّلْمِ | kor: –압제로 | swa: udhalimu, kwa–udhalimu
+
+## Response Format
+
+Return a JSON object with one key per lemma ID. Each value is an array of sense groups:
+
+```json
+{
+  "H6168": [
+    {"labelChirho": "short label", "descriptionChirho": "one sentence", "senseIdsChirho": [id1, id2, ...]}
+  ],
+  "H6174": [...]
+}
+```
+
+IMPORTANT: Return ONLY the JSON object. Every sense ID from every lemma must appear exactly once. Use the numeric sense IDs (without the S prefix).
+
+## H6271 (POS: Conj-w | N-proper-ms, "† <strong><span dir="rtl"><span class="lexicon-hebrew" dir="rtl">עֲתַלְיָ֫ה</spa", 17 occ, 4 senses)
+
+- **S126853** (10x) [N-proper-fs,N-proper-ms] | eng: Atalyahu, Athalyahu | spa: Atalía | hin: अतल्याह–ने, अतल्याहूने | arb: عَثَلْيَا | kor: 아달리야가, 아달룤 | swa: Athalia
+- **S126854** (5x) [Conj-w | N-proper-fs,Conj-w | N-proper-ms] | eng: and–Athalyah, and–Atalyah | spa: y–Atalía, Y–Atalía | hin: और–अतल्याह, और–अतल्याहू | arb: وَعَثَلْيَا, وَعَتَلْيَا | kor: 그리고–아달룤가, 그리고–아달랴가 | swa: na–Athalia, Na–Athalia
+- **S126857** (1x) [N-proper-ms] | eng: Atalyah | spa: Atalyah | hin: अतल्याह–का | arb: عَتَلْيا | kor: 아달랴–의 | swa: Athalia
+- **S126858** (1x) [N-proper-fs] | eng: was-Athaliah | spa: Atalía | hin: अतल्याहू | arb: عَثَلْياهو | kor: 아달랴였다 | swa: Athalia

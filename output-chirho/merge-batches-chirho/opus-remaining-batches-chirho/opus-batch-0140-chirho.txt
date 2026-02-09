@@ -1,0 +1,73 @@
+You are a biblical lexicographer. For each lemma below, group the over-split sense clusters into REAL lexicographic senses.
+
+Rules:
+- Different grammatical inflections of the same meaning = SAME sense (merge them)
+- Different verb stems (Qal vs Hifil, active vs passive) = often DIFFERENT senses
+- Literal vs metaphorical uses = DIFFERENT senses
+- Every sense ID must appear in exactly one group
+- Output valid JSON array with labelChirho, descriptionChirho (150+ chars with multilingual evidence), senseIdsChirho
+
+## H6241 (POS: Conj-w | Adj-msc, "<strong><span dir="rtl"><span class="lexicon-hebrew" dir="rtl">עִשָּׂרוֹן</span>", 33 occ, 2 senses)
+
+- **S126707** (19x) [N-mp] | eng: tenths | spa: décimas | hin: दसवें–भाग, दशमांश | arb: أَعْشَارٍ, عُشْرَيْنِ | kor: 에바의, 십분의–일들–을 | swa: za–kumi, kumi
+- **S126708** (14x) [N-ms,N-msc,Conj-w | N-ms,Conj-w | N-msc,Conj-w | Adj-msc] | eng: tenth, and–tenth | spa: décima, Y–décima | hin: दसवां–भाग, और–दसवां–भाग | arb: عُشْرٍ, وَعُشْرٌ | kor: 십분의–일, 십분의–일씩 | swa: ya–kumi, na–sehemu–ya–kumi
+
+## H6258 (POS: Adv, "<strong><span dir="rtl"><span class="lexicon-hebrew" dir="rtl">עַתָּ֫ה</span></s", 434 occ, 2 senses)
+
+- **S126822** (421x) [Conj-w | Adv, Conj-w | Adv,Adv] | eng: and–now, now | spa: Y–ahora, ahora | hin: और–अब, अब | arb: وَ–الآنَ, الآنَ | kor: 그리고–이제, 이제 | swa: na–sasa, sasa
+- **S126824** (13x) [Prep-m | Adv] | eng: from–now, than–now | spa: desde–ahora, que–ahora | hin: अब–से | arb: مِنَ–الآنَ, مِنَ–الآن | kor: 지금부터, 이제부터 | swa: tangu–sasa, kutoka–sasa
+
+## H6274 (POS: N-proper-ms, "† <strong><span dir="rtl"><span class="lexicon-hebrew" dir="rtl">עָתְנִיאֵל</spa", 7 occ, 2 senses)
+
+- **S126861** (6x) [N-proper-ms] | eng: Otniel, Othni'el | spa: Otniel, Otoniel | hin: ओतनीएल, ओतनीएल–ने | arb: عُثْنيئيلُ, عَثنيئيل | kor: 옷니엘이, 옧니엘 | swa: Othnieli
+- **S126863** (1x) [Prep-l | N-proper-ms] | eng: of–Otniel | spa: para–Otoniel | hin: –के–ओतनीएल | arb: لِعَتْنِيئِيلَ | kor: 에–대한–옷니엘의 | swa: kwa–Othnieli
+
+## H6307 (POS: N-proper-fs | 3fs, "† <strong><span dir="rtl"><span class="lexicon-hebrew" dir="rtl">יִפְדְּיָה</spa", 11 occ, 2 senses)
+
+- **S127062** (10x) [N-proper-fs | 3fs,Prep | N-proper-fs] | eng: Paddan-aram, from–Paddan–Aram | spa: Padán–Aram, de–Paddan–Aram | hin: पद्दन–अराम, पद्दन–अराम–से | arb: إِلَى فَدَّانِ أَرَامَ, مِنْ–فَدّانَ–آرامَ | kor: 밧단–아람으로, 뱝단–아람에서 | swa: Paddan–Aramu, Padani–Arami
+- **S127065** (1x) [Prep-m | N-proper-fs] | eng: from–Paddan | spa: de–Padán | hin: पद्दान–से | arb: مِنْ–فَدَّانَ | kor: 에서–밧단아람 | swa: kutoka–Padani
+
+## Response Format
+
+Return a JSON object with one key per lemma ID. Each value is an array of sense groups:
+
+```json
+{
+  "H6035": [
+    {"labelChirho": "short label", "descriptionChirho": "one sentence", "senseIdsChirho": [id1, id2, ...]}
+  ],
+  "H6040": [...]
+}
+```
+
+IMPORTANT: Return ONLY the JSON object. Every sense ID from every lemma must appear exactly once. Use the numeric sense IDs (without the S prefix).
+
+## H6311 (POS: Adv, "<strong><strong><span dir="rtl"><span class="lexicon-hebrew" dir="rtl">פֶּה</spa", 82 occ, 2 senses)
+
+- **S127198** (47x) [Adv, Adv,Conj-w | Adv] | eng: here, and–here– | spa: aquí, aquí? | hin: यहाँ, यहां | arb: هُنَا, هُنا | kor: 여기에, 여기에서 | swa: hapa, na–hapa
+- **S127199** (35x) [Prep-m | Adv,Conj-w, Prep-m | Adv] | eng: from–here, and–from-here | spa: de–aquí, de–allí | hin: से–इस–ओर, से–उस–ओर | arb: مِنْ–هُنَا, مِنْ–هُنَاكَ | kor: 이쪽–에서, 저쪽–에서 | swa: upande–huu, na–upande–huu
+
+## H6347 (POS: N-ms, "† <strong><span dir="rtl"><span class="lexicon-hebrew" dir="rtl">פֶּחָה</span></", 10 occ, 2 senses)
+
+- **S127390** (6x) [N-msc,N-ms] | eng: governor–of, the–governor–of | spa: gobernador–de, gobernador | hin: राज्यपाल | arb: والِي, واليًا | kor: 총독 | swa: liwali
+- **S127391** (4x) [Conj-w | N-mpd] | eng: and–the-governors, and–governors | spa: y–los–gobernadores, y–los–capitanes | hin: और–राज्यपाल, और–राज्यपालों–ने | arb: وَ–الأُمَرَاءُ, وَ–الأُمَرَاءَ | kor: 그리고–총리들과, 그리고–총리들이 | swa: na–wakuu, na–watawala
+
+## H6355 (POS: N-proper-ms, "† <strong><span dir="rtl"><span class="lexicon-hebrew" dir="rtl">פַּ֫חַת מוֹאָב<", 12 occ, 2 senses)
+
+- **S127403** (6x) [] | eng: Pachat, Pahath | spa: Paḥat–, Pahat– | hin: के, –के | arb: فَحَتِ, والِي | kor: 바하드, 바핫 | swa: Pahathi, Pahath
+- **S127404** (6x) [N-proper-fs,N-proper-ms] | eng: Moav, Moab | spa: Moab, Moav | hin: पहत–मोआब, मोआब–के | arb: مُوآبَ, مُوآب | kor: 모압, 모압의 | swa: Moabu
+
+## H6363a (POS: Conj-w | N-msc, "† <strong><span dir="rtl"><span class="lexicon-hebrew" dir="rtl">פֶּ֫טֶר</span><", 11 occ, 2 senses)
+
+- **S127412** (7x) [N-msc] | eng: opener-of, opener-of– | spa: que–abre–, que–abre | hin: जो–खोलता–है, पहलौठे | arb: فَاتِحَ, فَاتِحِ | kor: 여는, 처음–태어난–것을 | swa: wanaofungua, mfunguzi
+- **S127413** (4x) [N-msc,Conj-w | N-msc] | eng: firstborn-of, and–firstborn-of | spa: primogénito–de, Y–primogénito–de | hin: पहलौठा, जो–पहले–खोलता–है | arb: وَ–فاتِحُ, فَاتِحَةِ | kor: 첫–태생이, 첫–태생 | swa: mzaliwa–wa–kwanza–wa–, na–mzaliwa–wa–kwanza–wa–
+
+## H6435 (POS: Conj-w | Conj, "<strong><span dir="rtl"><span class="lexicon-hebrew" dir="rtl">פֶּן־</span></spa", 133 occ, 2 senses)
+
+- **S127714** (128x) [Conj] | eng: lest, lest– | spa: no–sea–que, no–sea–que– | hin: कहीं–, कहीं | arb: لِئَلَّا–, لِئَلَّا | kor: 혹시, 혹시– | swa: isije–, asije–
+- **S127716** (5x) [Conj-w | Conj] | eng: and–lest–, and–lest | spa: y–no–sea–que, y–para–que–no | hin: और–कहीं, और–मत– | arb: وَلِئَلَّا–, وَ–لِئَلَّا– | kor: 그리고–혹시–, 그리고–혹시 | swa: na–usije–, na–usije
+
+## H6472 (POS: N-msc, "† <strong><span dir="rtl"><span class="lexicon-hebrew" dir="rtl">פַּעֲמֹן</span>", 7 occ, 2 senses)
+
+- **S128129** (4x) [N-msc,N-ms] | eng: bell-of, bell | spa: campanilla, campanilla-de | hin: घण्टी, घंटी | arb: جَرَسٌ | kor: 방울 | swa: kengele
+- **S128131** (3x) [N-mpc,Art | N-mp,Conj-w | N-mpc] | eng: the–bells, bells–of | spa: y-campanillas-de, las–campanillas | hin: घंटियाँ, और–घण्टियाँ | arb: وَ–أَجراسُ, الْأَجْرَاسَ | kor: 방울들을, 그리고–방울들을 | swa: na–kengele, kengele–za

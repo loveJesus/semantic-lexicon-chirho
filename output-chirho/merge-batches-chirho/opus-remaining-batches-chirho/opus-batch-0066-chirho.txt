@@ -1,0 +1,83 @@
+You are a biblical lexicographer. For each lemma below, group the over-split sense clusters into REAL lexicographic senses.
+
+Rules:
+- Different grammatical inflections of the same meaning = SAME sense (merge them)
+- Different verb stems (Qal vs Hifil, active vs passive) = often DIFFERENT senses
+- Literal vs metaphorical uses = DIFFERENT senses
+- Every sense ID must appear in exactly one group
+- Output valid JSON array with labelChirho, descriptionChirho (150+ chars with multilingual evidence), senseIdsChirho
+
+## H4610 (POS: Prep-l | N-msc, "<strong><span dir="rtl"><span class="lexicon-hebrew" dir="rtl">מַעֲלֶה</span></s", 6 occ, 3 senses)
+
+- **S113121** (3x) [N-mp] | eng: Akrabbim | spa: Acrabim, Akrabim | hin: अक्रब्बीम, अक्रब्बीम–की | arb: عَقْرِبيمَ, عَقْرَبيمَ | kor: 전갈의, 아크라빔의 | swa: Akrabimu
+- **S113122** (2x) [Prep-l | N-msc] | eng: to–ascent-of, ascent-of | spa: hacia–subida–de, a–la–subida–de | hin: चढ़ाई–की–ओर, चढ़ाई | arb: صُعودِ, إِلَى–عَقْرَبَةِ | kor: 오르막–에게, 에게–오르막 | swa: kwenye–kupanda–kwa, kupitia–njia–ya–kupanda–ya
+- **S113123** (1x) [Prep-m | N-msc] | eng: from–the-ascent-of | spa: desde–subida–de | hin: चढ़ाई–से | arb: مِنْ–مَصْعَدِ | kor: 에서부터–오르막에서부터 | swa: kutoka–kupanda–kwa
+
+## H4617 (POS: N-ms, "† <strong><span dir="rtl"><span class="lexicon-hebrew" dir="rtl">יַעְנַי</span><", 8 occ, 3 senses)
+
+- **S113166** (4x) [N-ms,N-msc,V-Hifil-Prtcpl-ms] | eng: an–answer, response | spa: respuesta, Respuesta | hin: उत्तर, उत्तर। | arb: جَوابٌ–, جَوابٌ | kor: 대답이, 대답이– | swa: jibu
+- **S113167** (3x) [N-msc,Prep-b | N-msc] | eng: in–an–answer–of, answer–of | spa: respuesta–de, en–respuesta–de | hin: उत्तर, उत्तर–में | arb: جَوَابٌ, جَوابُ | kor: 응답–이, 대답은 | swa: katika–jibu–la, jibu–la
+- **S113168** (1x) [Prep-l, Art | N-msc | 3ms] | eng: for–his–purpose | spa: para–propósito–suyo | hin: उद्देश्य–के–लिए | arb: لِغَرَضِهِ | kor: 목적–대로–그–의 | swa: kwa–kusudi–lake
+
+## H4635 (POS: Conj-w | N-fsc, "† <strong><span dir="rtl"><span class="lexicon-hebrew" dir="rtl">מַעֲרֶ֫כֶת</spa", 9 occ, 3 senses)
+
+- **S113219** (5x) [Art | N-fs] | eng: the–arrangement | spa: la–disposición, la–proposición | hin: –सजावट–की, –के–पंक्ति | arb: التَّرْتِيبِ, ال–صُفوفِ | kor: 그–진열의, 그–진열–의 | swa: za–kupanga, ya–mikate–ya–wonyesho
+- **S113220** (2x) [Conj-w | N-fsc] | eng: and–rows-of, and–arrangement-of | spa: y–la–disposición–de, y–disposición–de | hin: और–व्यवस्था | arb: وَ–تَرْتِيبَ, وَتَرتيبَ | kor: 그리고–진설의, 그리고–줄 | swa: na–mpangilio–wa, na–mpangilio
+- **S113221** (2x) [Art | N-fs] | eng: the–row | spa: por–hilera, la–hilera | hin: पंक्ति–में, पंक्ति | arb: الصَّفِّ | kor: 그–줄 | swa: safu, kwa–safu
+
+## Response Format
+
+Return a JSON object with one key per lemma ID. Each value is an array of sense groups:
+
+```json
+{
+  "H4481": [
+    {"labelChirho": "short label", "descriptionChirho": "one sentence", "senseIdsChirho": [id1, id2, ...]}
+  ],
+  "H4494": [...]
+}
+```
+
+IMPORTANT: Return ONLY the JSON object. Every sense ID from every lemma must appear exactly once. Use the numeric sense IDs (without the S prefix).
+
+## H4689 (POS: Conj-w, "† <strong><span dir="rtl"><span class="lexicon-hebrew" dir="rtl">מָצוֹק</span></", 6 occ, 3 senses)
+
+- **S113729** (4x) [Conj-w, Prep-b | N-ms] | eng: and-in-distress, and–in–the–distress | spa: y–en–la–angustia | hin: और–संकट–में, और–में–संकट | arb: وَفِي–ضِيقٍ, وَ–فِي–الضِّيقِ | kor: 그리고–(전)–고통–에서, 그리고–에–곤경에서 | swa: na–katika–dhiki, na–katika–shida
+- **S113730** (1x) [Conj-w | N-ms] | eng: and–anguish | spa: y–aflicción | arb: وَ–شِدَّةٌ | kor: 그리고–고통–이 | swa: na–shida
+- **S113732** (1x) [N-ms] | eng: in–distress | spa: angustiado | hin: सनकत-मेइन | arb: ضَائِقٍ | kor: 곤궁한 | swa: dhiki
+
+## H4691 (POS: Conj-w, "† <strong><span dir="rtl"><span class="lexicon-hebrew" dir="rtl">מְצוּקָה</span>", 7 occ, 3 senses)
+
+- **S113734** (4x) [Prep-m | N-fpc | 3mp,Conj-w, Prep-m | N-fpc | 3mp] | eng: from–their–troubles, and–from–their–troubles | spa: de–sus–aflicciones, y–de–sus–aflicciones | hin: उनकी–कष्टों–से, और–उनकी–कष्टों–से | arb: مِن–ضيقاتِهِم, وَ–مِن–ضيقاتِهِم | kor: 그들–의–고통들–에서, 그리고–그들–의–고통들–에서 | swa: kutoka–shida–zao, na–kutoka–shida–zao
+- **S113736** (2x) [Conj-w | N-fs] | eng: and–anguish | spa: y–aflicción | hin: और–तंगी, और–कष्ट | arb: وَ–كَرْبٌ, وَ–شِدَّةٍ | kor: 그리고–고통이, 그리고–고통–의 | swa: na–shida, na–msongo
+- **S113735** (1x) [Prep-m | N-fpc | 1cs] | eng: from–my–distresses | spa: de–mis–angustias | hin: से–संकटों–मेरे | arb: مِنْ–ضِيقَاتِي | kor: 곤경들–에서 | swa: kutoka–shida–zangu
+
+## H4719 (POS: Conj-w | N-proper-fs, "† <strong><span dir="rtl"><span class="lexicon-hebrew" dir="rtl">מַקֵּדָה</span>", 9 occ, 3 senses)
+
+- **S113850** (7x) [N-proper-fs,Prep-b | N-proper-fs] | eng: Makkedah, at–Makkedah | spa: Maqueda, en–Maqueda | hin: मक्केदा, मक्केदा–में | arb: مَقيدَةَ, في–مَقيدَةَ | kor: 에–마거다에, 막게다의 | swa: Makeda, katika–Makeda
+- **S113852** (1x) [Conj-w | N-proper-fs] | eng: and–Makkedah | spa: y–Maquedá | hin: और–मक्केदा | arb: وَ–مَقّيدةُ | kor: 그리고–막게다 | swa: na–Makeda
+- **S113853** (1x) [Prep-m | N-proper-fs] | eng: from–Makkedah | spa: de–Maqueda | hin: मक्केदा–से | arb: مِن–مَقيدَةَ | kor: 마거다에서 | swa: kutoka–Makeda
+
+## H4749 (POS: N-fs, "† II. <strong><span dir="rtl"><span class="lexicon-hebrew" dir="rtl">מִקְשָׁה</s", 10 occ, 3 senses)
+
+- **S114071** (6x) [N-fs] | eng: hammered–work, hammered-work | spa: labrado–a–martillo, de–obra–batida | hin: गढ़ी–हुई, गढ़ाई–कारीगरी–से | arb: مَطروقَةً, مَطروقاً | kor: 쳐서–만든–것으로, 두드려–만든–것으로 | swa: ya–kufua, kilichofuwa
+- **S114072** (3x) [N-fs] | eng: hammered-work, hammered-work-of | spa: labrado–a–martillo, labradas | hin: पीटा–हुआ, पीटे–हुए | arb: مَطْرُوقَةٌ, مَسْكُوكَةً | kor: 두드린 | swa: ya–kufuliwa, za–kufuliwa
+- **S114073** (1x) [N-fs] | eng: in–a–cucumber–field | spa: de–obra–torneada | hin: गढ़े–हुए | arb: مَصْقُولَةٍ | kor: 단단한–것이라 | swa: uliochongwa
+
+## H4753 (POS: N-msc | 1cs, "† <strong><span dir="rtl"><span class="lexicon-hebrew" dir="rtl">מֹר</span></spa", 12 occ, 3 senses)
+
+- **S114095** (10x) [N-ms,Art | N-ms,N-msc | 1cs] | eng: myrrh, the–myrrh | spa: mirra, mi–mirra | hin: गंधरस, गन्धरस | arb: مُور, هَ–مُّور | kor: 몰약–과, 몰약 | swa: manemane, wa–manemane
+- **S114097** (1x) [N-msc] | eng: myrrh–of | spa: mirra-de- | hin: गन्धरस– | arb: مُرّاً– | kor: 몰약을 | swa: manemane–
+- **S114099** (1x) [Art | N-ms] | eng: the–myrrh | spa: mirra | hin: गन्धरस–के | arb: الْمُرِّ | kor: 그–몰약의 | swa: na–miezi
+
+## H4759a (POS: Prep-b, "† I. <strong><span dir="rtl"><span class="lexicon-hebrew" dir="rtl">מַרְאָה</spa", 10 occ, 3 senses)
+
+- **S114158** (6x) [Art | N-fs,Prep-b, Art | N-fs] | eng: the–vision, in–the-vision | spa: la–visión, por–la–visión | hin: दर्शन, दर्शन–में | arb: الْمَرْأَى, فِي–رُؤْيَا | kor: 그–환상을, 그–환상 | swa: maono, kwa–maono
+- **S114159** (3x) [Prep-b | N-fpc] | eng: in–visions-of, in–visions–of | spa: en–visiones–de, En–visiones | hin: में–दर्शनों, दर्शनों–में | arb: فِي–رُؤْيَا, فِي–رُؤَى | kor: 환상들–안에서, 에–환상들 | swa: katika–maono, katika–macho–ya–usiku
+- **S114163** (1x) [N-fpc] | eng: visions-of | spa: visiones–de | hin: दर्शन | arb: رُؤًى | kor: 이상들을 | swa: maono–ya
+
+## H4763 (POS: N-fpc | 3ms, "† <strong>[<span dir="rtl"><span class="lexicon-hebrew" dir="rtl">מְרַאֲשׁוֹת</s", 11 occ, 3 senses)
+
+- **S114171** (7x) [N-fpc | 3ms] | eng: at-his-head, [at-his-head] | spa: a–su–cabecera, (Qeré) | hin: [उसके–सिरहाने], (उसके–सिरहाने) | arb: عِندَ–رَأسِهِ, [كتيب] | kor: 그의머리맡에, 그의–머리맡에 | swa: kichwani–pake, kichwani–kwake
+- **S114173** (2x) [N-fpc | 3ms] | eng: at–head–its | spa: en–cabecera–suya | hin: उस्के-सिर-के-पअस | arb: عِنْدَ–رَأْسِهِ | kor: 그의–머리맡에 | swa: kichwani–mwake
+- **S114174** (2x) [N-fpc | 3ms] | eng: headrest–his | spa: cabecera–suya | hin: उस–के–सिरों–के–नीचे | arb: مِرْفَقَةً–لِرَأْسِهِ | kor: 그의–머리맡에 | swa: kichwa–chake, akama–kichwa–chake

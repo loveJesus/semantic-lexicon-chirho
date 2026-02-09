@@ -1,0 +1,76 @@
+You are a biblical lexicographer. For each lemma below, group the over-split sense clusters into REAL lexicographic senses.
+
+Rules:
+- Different grammatical inflections of the same meaning = SAME sense (merge them)
+- Different verb stems (Qal vs Hifil, active vs passive) = often DIFFERENT senses
+- Literal vs metaphorical uses = DIFFERENT senses
+- Every sense ID must appear in exactly one group
+- Output valid JSON array with labelChirho, descriptionChirho (150+ chars with multilingual evidence), senseIdsChirho
+
+## H8655 (POS: Prep-b, "† <strong><span dir="rtl"><span class="lexicon-hebrew" dir="rtl">תְּרָפִים</span", 15 occ, 3 senses)
+
+- **S145878** (8x) [Art | N-mp,Prep-b, Art | N-mp] | eng: the–teraphim | spa: los–terafines, los–terafim | hin: तराफीम, मोओरति | arb: التَّرَافِيمَ, الـ–تَّرَافِيمُ | kor: 드라빔과, 그–드라빔을 | swa: terafimu, sanamu
+- **S145879** (4x) [Conj-w | N-mp] | eng: and–teraphim | spa: y–terafines, y–terafim | hin: और–तराफीम, और–तरापीम | arb: وَ–تَرَافِيمُ, وَ–تَرَافِيمَ | kor: 드라빔을, 드라빔과 | swa: na–terafimu, na–sanamu
+- **S145880** (3x) [Art | N-mp] | eng: the–teraphim | spa: los–ídolos | hin: गृहदेवताओं | arb: الْ–ترافيمَ | kor: 그–드라버를 | swa: sanamu–za–nyumbani
+
+## H8658 (POS: N-msc, "† I. <strong><span dir="rtl"><span class="lexicon-hebrew" dir="rtl">תַּרְשִׁישׁ<", 7 occ, 3 senses)
+
+- **S145891** (5x) [N-ms,N-msc] | eng: beryl | spa: berilo, tarsis | hin: फीरोज़ा, तरशीश | arb: الزَّبَرْجَدِ, زَبَرْجَدٌ–بَحْرِيٌّ | kor: 다싀, 다르시시석과 | swa: krisolitho, la–zabarijadi
+- **S145893** (1x) [Prep-b, Art | N-ms] | eng: beryl | spa: de–Tarshish | hin: पीरोज़े–से | arb: بَ–تَرْشِيشْ | kor: 녹주석–으로 | swa: kwa–zabarajadi
+- **S145895** (1x) [Prep-k | N-ms] | eng: like–beryl | spa: como–topacio | hin: तरशीश–जैसा | arb: كَـ–تَرْشِيشَ | kor: 같으니라–녹주옥에 | swa: kama–shohamu
+
+## H8659 (POS: Prep-m | N-proper-ms, "† II. <strong><span dir="rtl"><span class="lexicon-hebrew" dir="rtl">תַּרְשִׁישׁ", 28 occ, 3 senses)
+
+- **S145896** (24x) [N-proper-ms,N-proper-fs,N-proper-fs | 3fs] | eng: Tarshish, to–Tarshish | spa: Tarsis, a–Tarsis | hin: तर्शीश–के, तर्शीश | arb: تَرْشِيشَ, تَرشيشَ | kor: 다르시시의, 다르시스–로 | swa: Tarshishi, za–Tarshishi
+- **S145898** (3x) [Conj-w | N-proper-ms,Conj-w | N-proper-fs | 3fs] | eng: and–Tarshish, and–Tarshishah | spa: y–Tarsis, y–Tarshish | hin: और–तर्शीश, और-तरशीश | arb: وَ–تَرْشِيشُ, وَ–تَرْشيشاه | kor: 그리고–다시스, 그리고–다니시 | swa: na–Tarshishi
+- **S145899** (1x) [Prep-m | N-proper-ms] | eng: from–Tarshish | spa: de–Tarshish | hin: तरशीश–से | arb: مِنْ–تَرْشِيشَ | kor: 다르시시–에서 | swa: kutoka–Tarshishi
+
+## Response Format
+
+Return a JSON object with one key per lemma ID. Each value is an array of sense groups:
+
+```json
+{
+  "H8476": [
+    {"labelChirho": "short label", "descriptionChirho": "one sentence", "senseIdsChirho": [id1, id2, ...]}
+  ],
+  "H8478": [...]
+}
+```
+
+IMPORTANT: Return ONLY the JSON object. Every sense ID from every lemma must appear exactly once. Use the numeric sense IDs (without the S prefix).
+
+## G0026 (POS: N-AFS, "<b> <span class="lexicon-greek">ἀγάπ-η</span></b>, ἡ, <br /> <b>love,</b> LXX+2n", 116 occ, 2 senses)
+
+- **S61088** (115x) [N-NFS,N-AFS,N-DFS,N-GFS] | eng: love, of–love | spa: amor, de–amor | hin: प्रेम, प्रेम, | arb: مَحَبَّةُ, مَحَبَّةٍ | kor: 사랑을, 사랑 | swa: upendo, upendo,
+- **S61090** (1x) [N-DFP] | eng: love–feasts | spa: fiestas–de–amor | hin: प्रेम–भोजों–में | arb: ولائم–محبة | kor: 사랑의–잔치에서 | swa: karamu–za–upendo
+
+## G0058 (POS: N-AFS, "<b> <span class="lexicon-greek">ἀγορά</span></b> [<span class="lexicon-greek">ᾰγ", 11 occ, 2 senses)
+
+- **S61191** (6x) [N-DFP] | eng: marketplaces | spa: plazas | hin: बाज़ारों, बअज़अरोन–मेइन | arb: الأَسْواقِ, الأَسواقِ | kor: 장터들에서, 장터들에 | swa: masoko, soko,
+- **S61192** (5x) [N-DFS,N-AFS,N-GFS] | eng: marketplace | spa: plaza, mercado | hin: बाज़ार, बाज़ार–में | arb: سوقِ, السّوقِ | kor: 시장, 장터 | swa: soko, wavivu
+
+## G0076 (POS: N-GMS, " <b><span class="lexicon-greek">Ἀδάμ</span></b>, ὁ indecl. (Heb. <span class="le", 9 occ, 2 senses)
+
+- **S61282** (8x) [N-GMS,N-DMS,N-NMS] | eng: Adam, of–Adam | spa: Adám, de–Adám | hin: आदम, अअदम | arb: آدَمُ, آدَمَ | kor: 아담이, 아담은 | swa: Adamu, wa–Adamu
+- **S61283** (1x) [N-GMS] | eng: Adam | spa: Adám | hin: आदम | arb: آدم | kor: 아담 | swa: Adamu
+
+## G0079 (POS: N-NFP, "<b> <span class="lexicon-greek">ἀδελφ-ή</span></b>, ἡ, <br /> <i>feminine</i> of", 26 occ, 2 senses)
+
+- **S61286** (17x) [N-NFS,N-GFS,N-AFS,N-DFS] | eng: sister, a-sister | spa: hermana, una–hermana | hin: बहन, बहन–को | arb: أُخْتُ, أُخْتَهَا | kor: 자매가, 자매 | swa: dada, dada,
+- **S61287** (9x) [N-AFP,N-NFP] | eng: sisters | spa: hermanas, a–hermanas | hin: बहनों–को, बेहेनोन–को | arb: أَخَوَاتٍ, أُخْتَانِ | kor: 자매들이, 자매들–을 | swa: dada, ndugu–wa–kike
+
+## G0080 (POS: N-AMP, "<b> <span class="lexicon-greek">ἀδελφός</span></b> [ᾰ], <br /> (ἀ- <i>copulative", 343 occ, 2 senses)
+
+- **S61289** (337x) [N-AMP,N-NMP,N-GMP,N-DMP,N-VMP,N-AMS,N-DMS,N-NMS,N-GMS,N-VMS] | eng: brothers, brother | spa: hermanos, hermano | hin: भाई, भाइयो | arb: أيُّها–الإخْوَةُ, أيُّها–الإخوَةُ | kor: 형제들아, 형제 | swa: ndugu, ndugu,
+- **S61294** (6x) [N-DMS,N-GMS,N-VMS,N-NMS] | eng: brother, a–brother | spa: hermano, de–hermano | hin: भाई, भाई–के–सामने | arb: أَخيهِ, –الأَخِ | kor: 형제–에게, 형제인 | swa: ndugu, yake
+
+## G0094 (POS: Adj-DMS, "<b> <span class="lexicon-greek">ἄδῐκος</span></b>, <span class="lexicon-greek">ο", 12 occ, 2 senses)
+
+- **S61342** (7x) [Adj-GMP,Adj-NMP,Adj-AMP] | eng: unrighteous | spa: injustos, de–injustos | hin: अधर्मी, अधर्मियों | arb: الظّالِمينَ, لِلأَشْرَارِ | kor: 불의한–자들, 의롭지–않은–자들을 | swa: wadhalimu, wasio–haki
+- **S61341** (5x) [Adj-NMS,Adj-DMS] | eng: unrighteous, unjust | spa: injusto, injustas | hin: अन्यायी, अधर्मी | arb: ظَالِمٌ, ظَالِمًا | kor: 불의한, 불의하지–않으시니 | swa: dhalimu, isiyo–ya–haki
+
+## G0106 (POS: Adj-NNP, "<b> <span class="lexicon-greek">ἄζῡμος</span></b>, <span class="lexicon-greek">ο", 9 occ, 2 senses)
+
+- **S61367** (8x) [Adj-GNP,Adj-NNP,Adj-DNP] | eng: unleavened–bread, unleavened-bread | spa: panes–sin–levadura, ázimos | hin: अखमीरी–रोटी, अखमीरी–रोटी–के | arb: فَطيرِ, الْفَطِيرِ | kor: 무교병의, 무교절이 | swa: mikate–isiyotiwa–chachu, mikate–isiyochachwa
+- **S61370** (1x) [Adj-NMP] | eng: unleavened | spa: sin–levadura | hin: अखमीरी | arb: فَطيرٌ | kor: 누룩–없는–자들 | swa: bila–chachu.

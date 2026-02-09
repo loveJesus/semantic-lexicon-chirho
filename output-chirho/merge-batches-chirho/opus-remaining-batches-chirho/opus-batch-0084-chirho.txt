@@ -1,0 +1,73 @@
+You are a biblical lexicographer. For each lemma below, group the over-split sense clusters into REAL lexicographic senses.
+
+Rules:
+- Different grammatical inflections of the same meaning = SAME sense (merge them)
+- Different verb stems (Qal vs Hifil, active vs passive) = often DIFFERENT senses
+- Literal vs metaphorical uses = DIFFERENT senses
+- Every sense ID must appear in exactly one group
+- Output valid JSON array with labelChirho, descriptionChirho (150+ chars with multilingual evidence), senseIdsChirho
+
+## G0721 (POS: N-NNS, "<b> <span class="lexicon-greek">ἀρνίον</span></b>, <span class="lexicon-greek">τ", 30 occ, 2 senses)
+
+- **S63345** (29x) [N-NNS,N-GNS,N-DNS] | eng: Lamb, a–Lamb | spa: Cordero, Cordero. | hin: मेम्ने, मेम्ना | arb: الحَمَلِ, حَمَلِ | kor: 어린–양의, 어린–양–의 | swa: Mwanakondoo, Mwanakondoo.
+- **S63347** (1x) [N-ANP] | eng: lambs | spa: corderitos | hin: मेमनों–को | arb: حُمْلانِي | kor: 어린–양들–을 | swa: wana–kondoo
+
+## G0730 (POS: N-NNS, "<b> <span class="lexicon-greek">ἄρσην</span></b>, <span class="lexicon-greek">ὁ,", 9 occ, 2 senses)
+
+- **S63368** (6x) [N-ANS,N-NNS,N-AMS] | eng: male | spa: varón | hin: नर, नर–बच्चे। | arb: ذَكَرًا, ذَكَرٍ | kor: 남자의, 남자를 | swa: mwanaume, wa–kiume,
+- **S63369** (3x) [N-NMP,N-DMP] | eng: males | spa: varones | hin: पुरुषों, पुरुष | arb: ذُكورٍ, ذُكورٌ | kor: 남자들 | swa: wanaume, wanaume,
+
+## G0752 (POS: N-NMS, "<b> <span class="lexicon-greek">ἀρχι-συνάγωγος</span></b> [<span class="lexicon-", 9 occ, 2 senses)
+
+- **S63417** (7x) [N-GMS,N-DMS,N-NMS,N-AMS] | eng: synagogue-ruler, ruler-of-synagogue | spa: principal–de–la–sinagoga, jefe-de-sinagoga | hin: आराधनालय, सभागृह–अधिकारी | arb: –رَئيسِ المَجْمَعِ, رَئِيسُ–الْمَجْمَعِ | kor: 회당장이, 회당장의, | swa: mkuu–wa–sinagogi, kiongozi–wa–sinagogi,
+- **S63419** (2x) [N-GMP,N-NMP] | eng: synagogue–rulers, synagogue-rulers | spa: principales–de–la–sinagoga, jefes–de–la–sinagoga | hin: सभागृह–अध्यक्षों, अधीक्षकों | arb: رُؤَساءُ–المَجمَعِ, رُؤساءِ المَجْمَعِ | kor: 회당장들의,, 회당–장들이 | swa: viongozi–wa–sinagogi,, viongozi–wa–sinagogi
+
+## G0783 (POS: N-AMP, "<b> <span class="lexicon-greek">ἀσπ-ασμός</span></b>, ὁ, <br /> <b>greeting, emb", 10 occ, 2 senses)
+
+- **S63546** (6x) [N-NMS,N-AMS,N-GMS] | eng: greeting | spa: saludo | hin: अभिवादन, नमस्कार | arb: السَّلامُ, تَحِيَّتِكِ | kor: 인사라, 인사가 | swa: salamu, Salamu
+- **S63547** (4x) [N-AMP] | eng: greetings | spa: saludos | hin: अभिवादन, नमस्कार | arb: تَحِيّاتٍ, تَحيّاتٍ | kor: 인사를, 인사들을 | swa: salamu, katika
+
+## G0819 (POS: N-DFS, "<b> <span class="lexicon-greek">ἀτῑμ-ία</span></b>, <br /> <i>Ionic dialect</i> ", 7 occ, 2 senses)
+
+- **S63599** (6x) [N-AFS,N-NFS,N-DFS,N-GFS] | eng: dishonor, a-dishonor | spa: deshonra | hin: अपमान, अपमान–में | arb: هَوانٍ, عارٍ | kor: 수치를, 천하게–쓰임을 | swa: aibu, aibu,
+- **S63601** (1x) [N-GFS] | eng: of–dishonor | spa: de–deshonra | hin: निर्लज्ज | arb: الخِزيِ | kor: 부끄러움–의 | swa: za–aibu.
+
+## G0839 (POS: Adv, "<b> <span class="lexicon-greek">αὔριον</span></b>, <br /> <i>adverb</i> <b>to-mo", 14 occ, 2 senses)
+
+- **S63636** (11x) [Adv] | eng: tomorrow, Tomorrow | spa: mañana, Mañana | hin: कल, कल–के–लिए | arb: غَدًا, غَدِ | kor: 내일, 내일–을, | swa: kesho, Kesho
+- **S63637** (3x) [Adv] | eng: next–day, next-day | spa: mañana, día–siguiente | hin: शाम–हो–चुकी–थी, दूसरे–दिन | arb: الغَدِ, غَدٍ | kor: 다음날, 내일 | swa: kesho
+
+## Response Format
+
+Return a JSON object with one key per lemma ID. Each value is an array of sense groups:
+
+```json
+{
+  "G0545": [
+    {"labelChirho": "short label", "descriptionChirho": "one sentence", "senseIdsChirho": [id1, id2, ...]}
+  ],
+  "G0548": [...]
+}
+```
+
+IMPORTANT: Return ONLY the JSON object. Every sense ID from every lemma must appear exactly once. Use the numeric sense IDs (without the S prefix).
+
+## G0859 (POS: N-NFS, "<b> <span class="lexicon-greek">ἄφεσις</span></b>, <span class="lexicon-greek">ε", 17 occ, 2 senses)
+
+- **S63735** (15x) [N-AFS,N-DFS,N-NFS] | eng: forgiveness | spa: perdón | hin: क्षमा, कशम | arb: مَغْفِرَةِ, غُفْرَانَ | kor: 용서를, 용서가 | swa: msamaha, unaotokea
+- **S63736** (2x) [N-AFS,N-DFS] | eng: release | spa: libertad, liberación | hin: स्वतंत्रता, छुटकारा | arb: حُرِّيَّةٍ, بِإطلاقٍ | kor: 자유–에서, 자유–를 | swa: uhuru, huru
+
+## G0921 (POS: N-NMS, " <b><span class="lexicon-greek">Βαρναβᾶς</span></b>, -<span class="lexicon-greek", 28 occ, 2 senses)
+
+- **S64005** (25x) [N-NMS,N-AMS,N-GMS,N-DMS] | eng: Barnabas, of–Barnabas | spa: Barnabâs, Barnabân | hin: बरनबास, बरनबास–को | arb: بَرنابا, بَرْنَابَا | kor: 바나바와, 바나바에게 | swa: Barnaba, Barnaba,
+- **S64006** (3x) [N-GMS,N-DMS,N-NMS] | eng: Barnabas | spa: Barnábas, a-Barnábas | hin: बरनबस,, बरनबस | arb: بَرنابا | kor: 바나바에게,, 바나바도 | swa: Barnaba
+
+## G0932 (POS: N-DFS, "<b> <span class="lexicon-greek">βᾰσιλ-είᾱ</span></b>, <br /> <i>Ionic dialect</i", 163 occ, 2 senses)
+
+- **S64035** (160x) [N-NFS,N-GFS,N-DFS,N-AFS] | eng: kingdom, a-kingdom | spa: reino | hin: राज्य, रअजय | arb: مَلَكوتِ, مَلَكُوتِ | kor: 나라가, 나라 | swa: ufalme, Ufalme
+- **S64036** (3x) [N-AFP] | eng: kingdoms | spa: reinos | hin: राज्यों–को, राज्य, | arb: مَمَالِكِ, مَمَالِك | kor: 나라들을, 나라들–을 | swa: falme
+
+## G0935 (POS: N-AMP, "<b> <span class="lexicon-greek">βᾰσῐλ-εύς</span></b>, ὁ, <br /> <i>genitive</i> ", 115 occ, 2 senses)
+
+- **S64039** (112x) [N-AMS,N-GMS,N-NMS,N-DMS,N-VMS,N-AMP,N-GMP,N-NMP,N-DMP] | eng: king, King | spa: rey, Rey | hin: राजा, राजाओं | arb: مَلِكُ, المَلِكُ | kor: 왕이, 왕 | swa: mfalme, Mfalme
+- **S64043** (3x) [N-GMP] | eng: of-kings, OF-KINGS | spa: de–reyes,, de–reyes | hin: राजाओं–का, राजाओं–के | arb: مُلوكٍ, المُلوكِ | kor: 왕들의, 왕들–의 | swa: za–wafalme,, wa–wafalme;

@@ -1,0 +1,123 @@
+You are a biblical lexicographer. For each lemma below, group the over-split sense clusters into REAL lexicographic senses.
+
+Rules:
+- Different grammatical inflections of the same meaning = SAME sense (merge them)
+- Different verb stems (Qal vs Hifil, active vs passive) = often DIFFERENT senses
+- Literal vs metaphorical uses = DIFFERENT senses
+- Every sense ID must appear in exactly one group
+- Output valid JSON array with labelChirho, descriptionChirho (150+ chars with multilingual evidence), senseIdsChirho
+
+## H8431 (POS: N-fsc | 1cs, "† <strong><span dir="rtl"><span class="lexicon-hebrew" dir="rtl">תּוֹחֶ֫לֶת</spa", 6 occ, 4 senses)
+
+- **S144648** (2x) [N-fsc] | eng: the–hope–of, hope | spa: esperanza–de, Esperanza | hin: आशा | arb: رَجَاءُ, تَوَقُّعٌ | kor: 기대–는 | swa: tumaini–la, tumaini
+- **S144649** (2x) [Conj-w | N-fsc | 1cs,N-fsc | 1cs] | eng: my–hope, and–my–hope | spa: y–mi–esperanza, mi–esperanza | hin: और–मेरी–प्रत्याशा, आशा–मेरी | arb: وَأَمَلِي, انْتِظاري | kor: 내–소망–이, 그리고–내–소망–이 | swa: tumaini-langu, na–tumaini–langu
+- **S144651** (1x) [N-fsc | 3ms] | eng: his-hope | spa: su–esperanza | hin: उसकी–आशा | arb: رَجَاؤُهُ | kor: 그것–의–소망이 | swa: tumaini–lake
+- **S144652** (1x) [Conj-w | N-fsc] | eng: and–the–expectation–of | spa: y–esperanza–de | hin: और–प्रतीक्षा | arb: وَ–تَوَقُّعُ | kor: 그리고–기대–는 | swa: na–matarajio–ya
+
+## H8458 (POS: Prep-b | N-fpc | 3ms, "† <strong>[<span dir="rtl"><span class="lexicon-hebrew" dir="rtl">תַּחְבֻּלָה</s", 7 occ, 4 senses)
+
+- **S144926** (2x) [N-fp] | eng: guidance | spa: dirección, consejos | hin: योजनाओं–के, मार्गदर्शन | arb: تَدَابِيرَ, تَدابيرَ | kor: 지략–이, 지략–을 | swa: uongozi, mwongozo
+- **S144927** (2x) [Conj-w, Prep-b | N-fp,Prep-b | N-fp] | eng: by–guidance, and–with–guidance | spa: y–con–estrategias, con–estrategias | hin: चतुराई–से, और–चतुराई–से | arb: وَ–بِتَدابيرَ, بِ–تَدْبِيراتٍ | kor: 전략들–로, 그리고–전략들–로 | swa: na–kwa–mwongozo, kwa–mashauri
+- **S144928** (2x) [Prep-b | N-fsc | 3ms,Prep-b | N-fpc | 3ms] | eng: by–his–guidance, [by–his–guidance] | spa: [K:por–su–dirección], (Q:por–sus–direcciones) | hin: मार्गदर्शन–उसके–से | arb: [بِ–تَدْبِيرَاتِهِ], (بِ–تَدْبِيرَاتِهِ) | kor: 그–의–인도들–로, 그–의–인도–로 | swa: kwa–mwongozo–wake, [kwa–mwongozo–wake]
+- **S144930** (1x) [N-fpc] | eng: the–counsels–of | spa: consejos–de | hin: योजनाएँ | arb: تَدابيرُ | kor: 계획–들–은 | swa: mipango–ya
+
+## Response Format
+
+Return a JSON object with one key per lemma ID. Each value is an array of sense groups:
+
+```json
+{
+  "H8362": [
+    {"labelChirho": "short label", "descriptionChirho": "one sentence", "senseIdsChirho": [id1, id2, ...]}
+  ],
+  "H8396": [...]
+}
+```
+
+IMPORTANT: Return ONLY the JSON object. Every sense ID from every lemma must appear exactly once. Use the numeric sense IDs (without the S prefix).
+
+## H8481 (POS: Art | Adj-ms | 3fs, "† <strong><span dir="rtl"><span class="lexicon-hebrew" dir="rtl">תַּחְתּוֹן</spa", 13 occ, 4 senses)
+
+- **S145070** (7x) [Art | Adj-fs,Art | Adj-ms | 3fs,Art | Adj-ms] | eng: the–lower, the–lowest | spa: la–inferior, la–baja | hin: निचली, निचला | arb: السُّفْلَى, الْ–سُّفْلَى | kor: 그–아래쪽의, 아래의 | swa: ya–chini, ya–Chini
+- **S145072** (3x) [Adj-ms] | eng: lower | spa: la–de–abajo, inferior | hin: निचले, निचला | arb: الـ–سُّفْلَى, السُّفْلى | kor: 아래쪽의, 아래의 | swa: ya–chini
+- **S145071** (2x) [Prep-m, Art | Adj-fp] | eng: from–the-lower | spa: de–las–inferiores | hin: निचली–से | arb: مِنَ–الْ–سُّفْلَى | kor: 에–그–아래쪽의것들로부터 | swa: kuliko–vya–chini
+- **S145075** (1x) [Art | Adj-fs] | eng: the–lowest | spa: la–inferior | hin: निचली | arb: الـ–سُّفْلَى | kor: 아래의 | swa: dhiraa
+
+## H8487 (POS: Prep-m | N-proper-fs, "† II. <strong><span dir="rtl"><span class="lexicon-hebrew" dir="rtl">תֵּימָן</sp", 11 occ, 4 senses)
+
+- **S145109** (6x) [N-proper-ms,N-proper-fs] | eng: Teman | spa: Teman, Temán | hin: तेमान | arb: تيمان, تَيْمانَ | kor: 데만의, 데만 | swa: Temani
+- **S145110** (2x) [Prep-m | N-proper-fs,Prep-m | N-fs] | eng: from–Teman | spa: de–Temán, desde–Temán | hin: तेमान–से | arb: مِنْ–تِيمَان, مِنْ–تَيْمَانَ | kor: 데만으로부터–, 데만–에서 | swa: kutoka–Temani
+- **S145111** (2x) [Prep-b | N-proper-fs] | eng: on–Teman, in–Teyman | spa: en–Temán | hin: में–तेमान | arb: فِي–تِيمَانَ, عَلى–تيمانَ | kor: 떼만에, 데만에 | swa: katika–Temani, Temani
+- **S145113** (1x) [N-proper-fs] | eng: Teyman | spa: Temán | hin: तेमान–के | arb: تِيمَانَ | kor: 데만의 | swa: Temani
+
+## H8519 (POS: N-fpc, "† <strong>[<span dir="rtl"><span class="lexicon-hebrew" dir="rtl">תְּלֻנָּה</spa", 9 occ, 4 senses)
+
+- **S145200** (4x) [N-fpc | 2mp] | eng: your–murmurings | spa: vuestras–murmuraciones | hin: बुड़बुड़ाहट–तुम्हारी | arb: تَذَمُّرَاتِكُمْ, تَذَمُّرَاتِكُمُ | kor: 너희의–원망을, 너희의–원망은 | swa: malalamiko–yenu
+- **S145201** (3x) [N-fpc] | eng: murmurings-of, complaints-of | spa: quejas–de, murmuraciones–de– | hin: बड़बड़ाहटें, बुड़बुड़ाहट | arb: تَذَمُّرَاتِ | kor: 원망을, 불평들을 | swa: manung'uniko, malalamiko–ya
+- **S145202** (1x) [N-fpc | 3mp] | eng: their–murmurings | spa: sus–murmuraciones | hin: उनकी–बड़बड़ाहटें | arb: تَذَمُّرَاتُهُمْ | kor: 그들–의–불평들–을 | swa: manung'uniko–yao
+- **S145204** (1x) [V-Hifil-Prtcpl-mp] | eng: murmuring | spa: murmuráis | hin: बुड़बुड़ाते–हो | arb: مُتَذَمِّرُونَ | kor: 원망하는 | swa: mnalalamika
+
+## H8535 (POS: Adj-mp, "† <strong><span dir="rtl"><span class="lexicon-hebrew" dir="rtl">תָּם</span></sp", 14 occ, 4 senses)
+
+- **S145226** (10x) [Adj-ms] | eng: blameless, the–blameless | spa: íntegro, al–íntegro | hin: खरा, खरे–को | arb: الكامِلَ, كامِلٌ | kor: 온전하고, 완전한– | swa: mkamilifu
+- **S145228** (2x) [Adj-fsc | 1cs] | eng: my–perfect-one | spa: perfecta–mía, mi–perfecta | hin: मेरी–निर्दोष | arb: تَمَّتِي | kor: 내–완전한–자여, 내–완전한–자 | swa: mkamilifu–wangu
+- **S145229** (1x) [Adj-mp] | eng: complete | spa: perfectos | hin: पूरे | arb: تامَّينِ | kor: 완전한 | swa: kamili
+- **S145230** (1x) [Adj-ms] | eng: quiet | spa: sencillo | hin: सीधा | arb: كَامِلٌ | kor: 순전한 | swa: mtulivu
+
+## H8544 (POS: N-fsc, "† <strong><span dir="rtl"><span class="lexicon-hebrew" dir="rtl">תְּמוּנָה</span", 10 occ, 4 senses)
+
+- **S145264** (7x) [N-fsc,N-fs,Conj-w | N-fsc,Conj-w | N-fs] | eng: form–of, form | spa: figura–de, figura | hin: रूप, और–रूप | arb: صُورَةَ, وَ–صُورَةَ | kor: 형상을, 그리고–형상을 | swa: mfano–wa, umbo–la
+- **S145266** (1x) [N-fs] | eng: a–form | spa: forma | hin: आकृति | arb: صورَةٌ | kor: 형상이 | swa: umbo
+- **S145267** (1x) [N-fsc | 2ms] | eng: with–your–likeness | spa: de–tu–forma | hin: तेरे–स्वरूप–में | arb: بِصُورَتِكَ | kor: 형상–으로 | swa: sura–yako
+- **S145268** (1x) [N-fs] | eng: likeness | spa: imagen | hin: आकृति | arb: صُورَةٍ | kor: 형상을 | swa: mfano
+
+## H8577a (POS: Prep-l | N-cp, "† <strong>[<span dir="rtl"><span class="lexicon-hebrew" dir="rtl">תַּן</span></s", 12 occ, 4 senses)
+
+- **S145450** (7x) [N-cp] | eng: jackals, of–jackals | spa: chacales, de–chacales | hin: गीदड़ों–का, गीदड़ों–की | arb: بَنَاتِ–آوَى, تَنَانِينَ | kor: 재칼들의, 승냥이들의 | swa: ya–mbweha, mbwehwa
+- **S145451** (2x) [Prep-k, Art | N-cp] | eng: like–jackals | spa: como–los–chacales, como–chacales | hin: गीदड़ों–की–तरह | arb: كَ–التَّنَانِينِ | kor: 재칼들–처럼, 승냥이들–처럼 | swa: kama–mbweha
+- **S145452** (2x) [N-cp,Prep-l | N-cp] | eng: jackals, for–jackals | spa: de–chacales, chacales | hin: गीदड़ों–के, गीदड़ों–का | arb: لِ–التَّنانينِ, التَّنانينِ | kor: 잡칼들–의, 자칼들–의 | swa: wa–mbweha, mbweha
+- **S145453** (1x) [Conj-w | N-cp] | eng: and–jackals | spa: y–dragones | hin: और–गीदड़ | arb: وَ–الثَّعَالِبُ | kor: 자칼들이 | swa: na–mbwa–mwitu
+
+## H8612 (POS: Conj-w, "† II. <strong><span dir="rtl"><span class="lexicon-hebrew" dir="rtl">תֹּ֫פֶת</sp", 9 occ, 4 senses)
+
+- **S145705** (5x) [Art | N-proper-fs] | eng: the–Topheth, Topheth | spa: el–Tofet, Tofet | hin: तोपेत, ह–तोफ़ेत–को | arb: تُوفَةَ, الـ–تُّوفَتِ | kor: 도뻗이라고, 도벇을 | swa: Tofethi, pa–Tofethi
+- **S145707** (2x) [Conj-w, Prep-b | N-proper-fs,Prep-b | N-proper-fs] | eng: in–Topheth, and–in–Topheth | spa: y–en–Tofet, por–falta–de | hin: में–तोपेत, और–में–तोपेत | arb: وَ–فِي–تُوفَةَ, فِي–الـ–تُّوفَتِ | kor: 에–도벳, 그리고–에–도뻗에서 | swa: na–Tofethi, Tofethi
+- **S145706** (1x) [Prep-m, Art | N-proper-fs] | eng: from–the–Topheth | spa: de–el–Tofet | hin: से–तोपेत | arb: مِنْ–تُوفَةَ | kor: 에서–그–도뻗에서 | swa: kutoka–Tofethi
+- **S145708** (1x) [Prep-k | N-proper-fs] | eng: like–Topheth | spa: como–Tofet | hin: जैसे–तोपेत | arb: كَتُوفَةَ | kor: 처럼–도뻗처럼 | swa: kama–Tofethi
+
+## Response Format
+
+Return a JSON object with one key per lemma ID. Each value is an array of sense groups:
+
+```json
+{
+  "H8481": [
+    {"labelChirho": "short label", "descriptionChirho": "one sentence", "senseIdsChirho": [id1, id2, ...]}
+  ],
+  "H8487": [...]
+}
+```
+
+IMPORTANT: Return ONLY the JSON object. Every sense ID from every lemma must appear exactly once. Use the numeric sense IDs (without the S prefix).
+
+## H8620 (POS: Prep-m | N-proper-fs, "† <strong><span dir="rtl"><span class="lexicon-hebrew" dir="rtl">תְּקוֹעַ</span>", 7 occ, 4 senses)
+
+- **S145729** (4x) [N-proper-fs,N-proper-ms] | eng: Teqo'a, Tekoa | spa: Tecoa | hin: तकोआ, तकोआ–को | arb: تَقوعَ, تَقُوعَ | kor: 드고아, 르고아의 | swa: Tekoa, wa–Tekoa
+- **S145730** (1x) [Conj-w, Prep-b | N-proper-fs] | eng: and–in–Tekoa | spa: Y–en–Teqoa | hin: और–में–तकोआ | arb: وَ–فِي–تَقُوعَ | kor: 그리고–에–덴고아에서 | swa: na–katika–Tekoa
+- **S145731** (1x) [Prep-m | N-proper-fs] | eng: from–Tekoa | spa: de–Tecoa | hin: से–तकोआ | arb: مِنْ–تَقوعَ | kor: 떼고아에서 | swa: kutoka–Tekoa
+- **S145732** (1x) [N-proper-fs | 3fs] | eng: to–Tekoa | spa: Teqoa | hin: तकोआ | arb: إلى تَقوعَ | kor: 드고아로 | swa: Tekoa
+
+## Response Format
+
+Return a JSON object with one key per lemma ID. Each value is an array of sense groups:
+
+```json
+{
+  "H8620": [
+    {"labelChirho": "short label", "descriptionChirho": "one sentence", "senseIdsChirho": [id1, id2, ...]}
+  ],
+  "...": [...]
+}
+```
+
+IMPORTANT: Return ONLY the JSON object. Every sense ID from every lemma must appear exactly once. Use the numeric sense IDs (without the S prefix).

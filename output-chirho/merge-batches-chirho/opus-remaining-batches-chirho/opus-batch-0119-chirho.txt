@@ -1,0 +1,73 @@
+You are a biblical lexicographer. For each lemma below, group the over-split sense clusters into REAL lexicographic senses.
+
+Rules:
+- Different grammatical inflections of the same meaning = SAME sense (merge them)
+- Different verb stems (Qal vs Hifil, active vs passive) = often DIFFERENT senses
+- Literal vs metaphorical uses = DIFFERENT senses
+- Every sense ID must appear in exactly one group
+- Output valid JSON array with labelChirho, descriptionChirho (150+ chars with multilingual evidence), senseIdsChirho
+
+## H1113 (POS: N-proper-ms, "† <strong><span dir="rtl"><span class="lexicon-hebrew" dir="rtl">בֵּלְשַׁאצַּר</", 7 occ, 2 senses)
+
+- **S86930** (6x) [N-proper-ms] | eng: Belshatztzar | spa: Belsasar | hin: बेलशस्सर, बेलशस्सर–ने | arb: بَلْشَأصَّرُ | kor: 벨사살–이, 벨사살 | swa: Belshaza
+- **S86931** (1x) [Prep-l | N-proper-ms] | eng: of–Belshatztzar | spa: de–Belsasar | hin: के–बेलशस्सर | arb: لِـ–بَلْشَأصَّرَ | kor: 에–벨사살의 | swa: wa–Belshaza
+
+## H1131 (POS: Conj-w | N-proper-ms, "† <strong><span dir="rtl"><span class="lexicon-hebrew" dir="rtl">בִּנּוּי</span>", 7 occ, 2 senses)
+
+- **S87269** (5x) [N-proper-ms] | eng: Binnui, Binnuy | spa: Binui | hin: बिन्नूई, बिन्नूई–के | arb: بِنُّوي, بِنّويُ | kor: 빈누이, 빈누이의 | swa: Binui
+- **S87270** (2x) [Conj-w | N-proper-ms] | eng: and–Binnuy | spa: y–Binui | hin: और–बिन्नूई | arb: وَ–بِنُّويُ | kor: 그리고-빈누와 | swa: na–Binui
+
+## H1146 (POS: Art | N-ms, "† <strong><span dir="rtl"><span class="lexicon-hebrew" dir="rtl">בִּנְיָן</span>", 7 occ, 2 senses)
+
+- **S87318** (6x) [Art | N-ms,Conj-w, Art | N-ms] | eng: the–building, and–the-building | spa: el–edificio, Y–el–edificio | hin: इमारत, भवन–के | arb: الْبِنَاءِ, الْ–بِنَاءِ | kor: 그–건물, 그리고–그–건물이 | swa: jengo, Na–jengo
+- **S87319** (1x) [N-ms] | eng: building | spa: edificio | hin: भवन–में | arb: بِنَاءً | kor: 건물 | swa: ya–jengo
+
+## H1250a (POS: N-ms, "† III. <strong><span dir="rtl"><span class="lexicon-hebrew" dir="rtl">בַּר</span", 13 occ, 2 senses)
+
+- **S87976** (8x) [N-ms] | eng: grain, with–grain | spa: grano | hin: अनाज, अनाज–से | arb: قَمْحًا, قَمْحاً | kor: 곡식을, 곡식으로 | swa: nafaka, wa–ngano
+- **S87977** (5x) [N-ms,Art | N-ms] | eng: grain, wheat | spa: trigo, grano | hin: गेहूँ–का, गेहूँ | arb: حِنْطَةً, الْقَمْحِ | kor: 날곡을, 그–밀에게 | swa: ngano
+
+## H1271 (POS: Prep-l | N-proper-ms, "† <strong><span dir="rtl"><span class="lexicon-hebrew" dir="rtl">בַּרְזִלַּי</sp", 12 occ, 2 senses)
+
+- **S88065** (10x) [N-proper-ms,Conj-w | N-proper-ms,Prep-l | N-proper-ms] | eng: Barzillai, and–Barzillai | spa: Barzilai, Y–Barzilai | hin: बर्जिल्लै, और–बर्जिल्लै | arb: بَرْزِلَّايَ, وَبَرْزِلَّايُ | kor: 바르실라이의, 바르실라이 | swa: Barzilai, na–Barzilai
+- **S88067** (2x) [N-proper-ms] | eng: Barzillay | spa: Barzilai | hin: बर्जिल्लै–के, बर्जिल्लै–की | arb: بَرْزِلَّاي | kor: 바르실래 | swa: za–Barzilai, wa–Barzilai
+
+## Response Format
+
+Return a JSON object with one key per lemma ID. Each value is an array of sense groups:
+
+```json
+{
+  "H0934": [
+    {"labelChirho": "short label", "descriptionChirho": "one sentence", "senseIdsChirho": [id1, id2, ...]}
+  ],
+  "H0970": [...]
+}
+```
+
+IMPORTANT: Return ONLY the JSON object. Every sense ID from every lemma must appear exactly once. Use the numeric sense IDs (without the S prefix).
+
+## H1309 (POS: N-fs, "† <strong><span dir="rtl"><span class="lexicon-hebrew" dir="rtl">בְּשׂרָה</span>", 6 occ, 2 senses)
+
+- **S88423** (5x) [N-fs] | eng: news, good-news | spa: buena–nueva | hin: सुसमाचार, सुसमाचार–का | arb: بِشارَةٍ, بِشارَةٌ | kor: 소식이다, 소식이 | swa: habari–njema, wa–habari–njema
+- **S88425** (1x) [N-fs] | eng: a–reward | spa: recompensa | hin: सुसमाचार | arb: بِشَارَةً | kor: 소식을 | swa: zawadi–ya–habari
+
+## H1315 (POS: N-proper-fs, "† <strong><span dir="rtl"><span class="lexicon-hebrew" dir="rtl">בָּֽשְׂמַת</spa", 7 occ, 2 senses)
+
+- **S88473** (6x) [N-proper-fs] | eng: Basemath | spa: Basmat, Basemat | hin: बासमत–के, बास्मात | arb: باسمَةَ, بَسْمَتَ | kor: 바슸마의, 바슸마을 | swa: Basimati, Sulemani
+- **S88474** (1x) [Conj-w | N-proper-fs] | eng: and–Basemath | spa: y–Basmat | hin: और–बासमत–ने | arb: وَ–باسمَةُ | kor: 그리고–바슸마이 | swa: akajifungua
+
+## H1339 (POS: Prep | N-proper-fs, "† <strong><span dir="rtl"><span class="lexicon-hebrew" dir="rtl">בַּת־שֶׁ֫בַע</s", 11 occ, 2 senses)
+
+- **S88747** (9x) [N-proper-fs,Prep | N-proper-fs] | eng: Bathsheba | spa: Bat–Sheba, a–Bat–Sheba | hin: बत्शेबा, बत्शेबा–ने | arb: بَثْشَبَعُ, بَثْشَبَعَ | kor: 밧세바가, 밧세바 | swa: Bathsheba, mama–wa
+- **S88748** (2x) [N-proper-fs] | eng: Bathsheba | spa: Betsabé | hin: बत–शेबा | arb: بَتْ–شَبَعَ | kor: 밧–세바를, 밧–세바 | swa: Bathsheba
+
+## H1358 (POS: N-msd, "† <strong>[<span dir="rtl"><span class="lexicon-hebrew" dir="rtl">גֹּב</span></s", 10 occ, 2 senses)
+
+- **S88910** (6x) [Prep-l | N-msc,Prep-l | N-msd,Conj-w, Prep-l | N-msc] | eng: into–den-of, to–the-den | spa: al–foso, al–foso–de | hin: में–गुफा, गुफा–के–पास | arb: فِي–جُبِّ, وَ–فِي–جُبِّ | kor: 굴–에, 그리고–굴–에 | swa: ndani–ya–tundu–la, tundu–la
+- **S88911** (4x) [N-msd] | eng: the-den, the–den | spa: el–foso | hin: गुफा–के, गुफा | arb: الْجُبِّ | kor: 굴–의, 굴 | swa: tundu
+
+## H1436a (POS: N-proper-ms, "† <strong><span dir="rtl"><span class="lexicon-hebrew" dir="rtl">גְּדַלְיָה</spa", 6 occ, 2 senses)
+
+- **S89563** (5x) [N-proper-ms] | eng: Gedalyahu, Gedalyah | spa: Gedalyah, Gedalías | hin: गदल्याह, गदल्याह–के | arb: جَدَلْيَا | kor: 게달리야, 그달리야 | swa: Gedaliya, Gedalia
+- **S89564** (1x) [Conj-w | N-proper-ms] | eng: and–Gedalyah | spa: y–Gedalyah | hin: और–गदल्याह | arb: وَ–جَدَلْيَا | kor: 그리고-거달리아 | swa: na–Gedalia

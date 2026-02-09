@@ -1,0 +1,73 @@
+You are a biblical lexicographer. For each lemma below, group the over-split sense clusters into REAL lexicographic senses.
+
+Rules:
+- Different grammatical inflections of the same meaning = SAME sense (merge them)
+- Different verb stems (Qal vs Hifil, active vs passive) = often DIFFERENT senses
+- Literal vs metaphorical uses = DIFFERENT senses
+- Every sense ID must appear in exactly one group
+- Output valid JSON array with labelChirho, descriptionChirho (150+ chars with multilingual evidence), senseIdsChirho
+
+## H2386 (POS: Art | N-ms, "† <strong><span dir="rtl"><span class="lexicon-hebrew" dir="rtl">חֲזִיר</span></", 7 occ, 2 senses)
+
+- **S95997** (6x) [N-ms,Art | N-ms] | eng: the–pig, a–pig | spa: cerdo, el–cerdo | hin: सूअर–का, सूअर | arb: –الْخِنْزِيرِ, خِنْزِيرٍ | kor: 그–돼지의, 그–돼지를 | swa: nguruwe, ya–nguruwe
+- **S95999** (1x) [N-ms] | eng: the–boar | spa: jabalí | hin: सूअर | arb: خِنْزِيرٌ | kor: 멧돼지가 | swa: nguruwe
+
+## H2401 (POS: N-fs, "† <strong><span dir="rtl"><span class="lexicon-hebrew" dir="rtl">חֲטָאָה</span><", 8 occ, 2 senses)
+
+- **S96340** (7x) [N-fs,Prep-l, Art | N-fs] | eng: sin, a–sin | spa: pecado, para–pecado | hin: पाप, पाप–के–लिए | arb: خَطيئَةً, خَطِيئَةً | kor: 죄를, 죄가 | swa: dhambi
+- **S96341** (1x) [Conj-w | N-fs] | eng: and–sin–offering | spa: y–ofrenda–por–pecado | hin: और–पापबलि | arb: وَخَطيئَةً | kor: 그리고–속죄제–를 | swa: na–sadaka-ya-dhambi
+
+## Response Format
+
+Return a JSON object with one key per lemma ID. Each value is an array of sense groups:
+
+```json
+{
+  "H2216": [
+    {"labelChirho": "short label", "descriptionChirho": "one sentence", "senseIdsChirho": [id1, id2, ...]}
+  ],
+  "H2227": [...]
+}
+```
+
+IMPORTANT: Return ONLY the JSON object. Every sense ID from every lemma must appear exactly once. Use the numeric sense IDs (without the S prefix).
+
+## H2418 (POS: V-Hifil-Prtcpl-ms, "† <strong><strong>[<span dir="rtl"><span class="lexicon-hebrew" dir="rtl">חֲיָא<", 6 occ, 2 senses)
+
+- **S96606** (5x) [V-Qal-Imp-ms] | eng: live | spa: vive, vive! | hin: जी, जीवित–रह | arb: عِشْ | kor: 사시옵소서, 사소서 | swa: uishi
+- **S96607** (1x) [V-Hifil-Prtcpl-ms] | eng: striking | spa: dejaba–vivir | hin: मारता–था | arb: يَضْرِبُ | kor: 치시고 | swa: akimpiga
+
+## H2427a (POS: N-ms, "† <strong><span dir="rtl"><span class="lexicon-hebrew" dir="rtl">חִיל</span></sp", 6 occ, 2 senses)
+
+- **S96771** (4x) [N-ms] | eng: pain | spa: dolor | hin: पीड़ा, दर्द | arb: وَجَعٌ, أَلَمٌ | kor: 진통이, 산고가 | swa: uchungu, maumivu
+- **S96772** (2x) [N-ms] | eng: anguish | spa: dolor | hin: पीड़ा, और–पीड़ा | arb: وَجَع, مَخَاضٌ | kor: 산고–가, 고통이 | swa: uchungu, maumivu
+
+## H2438 (POS: N-proper-ms, "† <strong><span dir="rtl"><span class="lexicon-hebrew" dir="rtl">חִירָם</span></", 25 occ, 2 senses)
+
+- **S96905** (22x) [N-proper-ms,Prep-l | N-proper-ms] | eng: Hiram, to–Hiram | spa: Hiram, Jiram | hin: हीराम–ने, हीराम | arb: حِيرَامُ, حِيرَام | kor: 히람이, 히람의 | swa: Hiramu, maneno
+- **S96907** (3x) [N-proper-ms] | eng: [Chiram] | spa: [Jiram], [Hiram] | hin: हूराम–के, [खीराम] | arb: [حِيرَام], [حيرام] | kor: 히람–의, [히람] | swa: wa–Hiramu, []
+
+## H2526 (POS: N-proper-ms, "† I. <strong><span dir="rtl"><span class="lexicon-hebrew" dir="rtl">חָם</span></", 16 occ, 2 senses)
+
+- **S97588** (13x) [N-proper-ms] | eng: Cham, Ham | spa: Jam, Cam | hin: हाम, हाम-के | arb: حام, حَامَ | kor: 함, 함의 | swa: Hamu
+- **S97589** (3x) [Conj-w | N-proper-ms] | eng: and–Ham | spa: y–Jam | hin: और-हाम | arb: وَ–حَامٌ | kor: 그리고–함, 그리고–함–은 | swa: na–Hamu
+
+## H2586 (POS: Conj-w | N-proper-ms, "† <strong><span dir="rtl"><span class="lexicon-hebrew" dir="rtl">חָנוּן</span></", 11 occ, 2 senses)
+
+- **S97999** (10x) [N-proper-ms,Prep-l | N-proper-ms] | eng: Hanun, to–Hanun | spa: Janún, a–Janún | hin: हानून–ने, हानून–से | arb: حَانُونُ, حَانُونَ | kor: 하눈, 하눈이 | swa: Hanuni, kwa–Hanuni
+- **S98001** (1x) [Conj-w | N-proper-ms] | eng: and–Hanun | spa: y–Hanún | hin: और–हानून | arb: وَ–حَانُونُ | kor: 그리고–하눌이 | swa: na–Hanuni
+
+## H2587 (POS: Conj-w | Adj-ms, "† <strong><span dir="rtl"><span class="lexicon-hebrew" dir="rtl">חַנּוּן</span><", 13 occ, 2 senses)
+
+- **S98002** (10x) [Adj-ms] | eng: gracious | spa: clemente, Clemente | hin: कृपालु, अनुग्रही | arb: حَنُونٌ, حَنون | kor: 은혜로우시고, 은혜롭고 | swa: mwenye–neema, mwenye–huruma
+- **S98004** (3x) [Conj-w | Adj-ms] | eng: and–gracious | spa: y–misericordioso, y–clemente | hin: और–अनुग्रही, और–अनुग्रहशील | arb: وَ–حَنونٌ, وَ–حَنون | kor: 은혜로우신, 그리고–은혜로운 | swa: na–neema, na–mwenye–huruma
+
+## H2605 (POS: N-proper-ms, "† <strong><span dir="rtl"><span class="lexicon-hebrew" dir="rtl">חָנָן</span></s", 12 occ, 2 senses)
+
+- **S98107** (9x) [N-proper-ms] | eng: Hanan, Chanan | spa: Hanán, Janán. | hin: हानान, हानान–के | arb: حانانُ, حَانَانَ | kor: 하난, 하난의 | swa: Hanani, wa–Hanani
+- **S98108** (3x) [Conj-w | N-proper-ms] | eng: and–Chanan | spa: y–Janán | hin: और–हानान | arb: وَحَانَان | kor: 그–와–하난, 그리고–하난 | swa: na–Hanani
+
+## H2607 (POS: Prep-l | N-proper-ms, "† <strong><span dir="rtl"><span class="lexicon-hebrew" dir="rtl">חֲנָנִי</span><", 11 occ, 2 senses)
+
+- **S98111** (10x) [N-proper-ms] | eng: Hanani, Chanani | spa: Jananí, Hananí | hin: हनानी, हनानीके | arb: حَنَانِي, حَنانِي | kor: 하나니의, 하나니가 | swa: Hanani
+- **S98112** (1x) [Prep-l | N-proper-ms] | eng: for–Chanani | spa: para–Hanani | hin: हनानी–के–लिए | arb: لِحَنَانِي | kor: 에게–하난니 | swa: kwa–Hanani

@@ -1,0 +1,83 @@
+You are a biblical lexicographer. For each lemma below, group the over-split sense clusters into REAL lexicographic senses.
+
+Rules:
+- Different grammatical inflections of the same meaning = SAME sense (merge them)
+- Different verb stems (Qal vs Hifil, active vs passive) = often DIFFERENT senses
+- Literal vs metaphorical uses = DIFFERENT senses
+- Every sense ID must appear in exactly one group
+- Output valid JSON array with labelChirho, descriptionChirho (150+ chars with multilingual evidence), senseIdsChirho
+
+## G5303 (POS: N-GNS, "<b> <span class="lexicon-greek">ὑστέρ-ημα</span></b>, <span class="lexicon-greek", 9 occ, 3 senses)
+
+- **S78305** (6x) [N-ANS,N-GNS] | eng: lack | spa: carencia, falta | hin: घटी, घाटी | arb: نُقصانِهِمْ, نُقصانِكُمْ | kor: 부족함을, 부족함에 | swa: upungufu, uhaba,
+- **S78306** (2x) [N-ANP] | eng: lacks | spa: carencias | hin: कमियोन, कमि | arb: نَقائِصَ | kor: 부족함들을, 부족한–것을 | swa: upungufu
+- **S78308** (1x) [N-ANP] | eng: needs | spa: carencias | hin: घटियां | arb: نَقصَ | kor: 부족함들을 | swa: mahitaji
+
+## G5311 (POS: N-NNS, "<b> <span class="lexicon-greek">ὕψος</span></b>, <span class="lexicon-greek">εος", 6 occ, 3 senses)
+
+- **S78327** (3x) [N-NNS,N-ANS] | eng: height | spa: altura | hin: ऊँचाई, उउनचऐ | arb: العُلُوُّ, العُلوِّ | kor: 높이와,, 높이가 | swa: urefu, kimo
+- **S78328** (2x) [N-GNS] | eng: height, from-height | spa: lo-alto, altura | hin: ऊंचाई, ऊँचाई | arb: الْأَعَالِي, أَعْلَى | kor: 높은–곳으로부터, 높은–곳 | swa: juu
+- **S78329** (1x) [N-DNS] | eng: exaltation | spa: exaltación | hin: ऊँचाई–में | arb: رِفعَتِهِ | kor: 높임–에서 | swa: kuinuliwa
+
+## G5337 (POS: Adj-ANS, "<b> <span class="lexicon-greek">φαῦλος</span></b>, <span class="lexicon-greek">η", 6 occ, 3 senses)
+
+- **S78464** (3x) [Adj-ANS] | eng: evil, bad | spa: malo | hin: बुरा, बुर. | arb: شَرًّا, سَيِّئًا | kor: 악한–것을, 악을 | swa: baya, mabaya.
+- **S78465** (2x) [Adj-ANP] | eng: worthless-things, evil-things | spa: malas-cosas, malas | hin: बुरे | arb: سَيِّئَاتِ, رَدِيءَ | kor: 악한–일을 | swa: mabaya
+- **S78466** (1x) [Adj-NNS] | eng: worthless | spa: vil | hin: बुरा | arb: رَديءٍ | kor: 악한 | swa: ovu
+
+## Response Format
+
+Return a JSON object with one key per lemma ID. Each value is an array of sense groups:
+
+```json
+{
+  "G5199": [
+    {"labelChirho": "short label", "descriptionChirho": "one sentence", "senseIdsChirho": [id1, id2, ...]}
+  ],
+  "G5204": [...]
+}
+```
+
+IMPORTANT: Return ONLY the JSON object. Every sense ID from every lemma must appear exactly once. Use the numeric sense IDs (without the S prefix).
+
+## G5355 (POS: N-GMS, "<b> <span class="lexicon-greek">φθόνος</span></b>, ὁ, <br /> <b>ill-will</b> or ", 9 occ, 3 senses)
+
+- **S78561** (7x) [N-AMS,N-NMS,N-DMS,N-GMS] | eng: envy, of–envy | spa: envidia, de–envidia | hin: दअह, डाह | arb: حَسَدٍ, حَسَدٌ | kor: 시기, 시기로 | swa: wivu, wivu,
+- **S78563** (1x) [N-NMP] | eng: envyings | spa: envidias | hin: दअह, | arb: الحَسَدُ | kor: 시기, | swa: husuda
+- **S78564** (1x) [N-AMP] | eng: envies | spa: envidias | hin: ईर्ष्या | arb: حَسَدٍ | kor: 시기를 | swa: wivu
+
+## G5401 (POS: N-AMS, "<b> <span class="lexicon-greek">φόβος</span></b>, ὁ, <br /> (<span class="lexico", 47 occ, 3 senses)
+
+- **S78669** (43x) [N-GMS,N-AMS,N-NMS,N-DMS] | eng: fear, a-fear | spa: temor, miedo | hin: भय, डर | arb: خَوْفٌ, خَوفٍ | kor: 두려움, 두려움을 | swa: hofu, hofu,
+- **S78670** (3x) [N-GMS,N-DMS] | eng: with–fear, with-fear | spa: por–temor, de–temor | hin: भय–से | arb: خَوفًا, بِخَوْفِ | kor: 두려움으로, 두려움–의 | swa: kwa–hofu, hofu
+- **S78673** (1x) [N-NMP] | eng: fears | spa: temores | hin: भय | arb: مَخاوِفُ | kor: 두려움들 | swa: hofu.
+
+## G5408 (POS: N-AMS, "<b> <span class="lexicon-greek">φόνος</span></b>, ὁ, <br /> (<span class="lexico", 9 occ, 3 senses)
+
+- **S78693** (5x) [N-AMS,N-GMS] | eng: murder, of–murder | spa: homicidio, muerte | hin: हत्या, हत्या–के | arb: قَتْلٍ, قَتْلًا | kor: 살인으로, 살인을 | swa: mauaji, mauaji,
+- **S78694** (3x) [N-NMP,N-GMP] | eng: murders | spa: homicidios, asesinatos | hin: हत्याओं, हत्य | arb: قَتْلٌ, قتْلِهِمْ | kor: 살인들 | swa: mauaji
+- **S78697** (1x) [N-DMS] | eng: murder | spa: muerte | hin: वध | arb: قَتْل | kor: 살인으로 | swa: kuuawa
+
+## G5413 (POS: N-DNP, "<b> <span class="lexicon-greek">φορτ-ίον</span></b>, <span class="lexicon-greek"", 6 occ, 3 senses)
+
+- **S78707** (3x) [N-ANP,N-DNP] | eng: burdens, with-burdens | spa: cargas, con–cargas | hin: बोझ, बोझों–को | arb: الأَحْمالَ, أَحْمالاً | kor: 짐을, 짐들–을 | swa: mizigo, mizito
+- **S78708** (2x) [N-NNS,N-ANS] | eng: load, burden | spa: carga | hin: बोझ | arb: حِملُ, حِملَهُ | kor: 짐을, 짐은 | swa: mzigo
+- **S78710** (1x) [N-GNS] | eng: cargo | spa: carga | hin: मालके | arb: الحُمُولَةِ | kor: 화물–의 | swa: mizigo
+
+## G5429 (POS: Adj-NMP, "<b> <span class="lexicon-greek">φρόνιμ-ος</span></b>, <span class="lexicon-greek", 14 occ, 3 senses)
+
+- **S78741** (12x) [Adj-NMP,Adj-NFP,Adj-DFP,Adj-DMS,Adj-NMS] | eng: wise | spa: prudentes, prudente | hin: बुद्धिमान, बुद्धिमानों | arb: حُكَمَاءَ, حُكَماءُ | kor: 지혜롭게, 슬기로운 | swa: wenye–busara, wenye–hekima
+- **S78744** (1x) [Adj-DMP] | eng: to-wise-ones | spa: a–prudentes | hin: बुद्धिमानों–से | arb: حُكَماءَ | kor: 지혜로운–자들에게 | swa: kwa–wenye–busara
+- **S78745** (1x) [Adj-NMP-C] | eng: shrewder | spa: más–sagaces | hin: अधिक–चतुर | arb: أَحْكَمُ | kor: 더–슬기롭다 | swa: wenye–busara–zaidi
+
+## G5457 (POS: N-GNP, "<b> <span class="lexicon-greek">φῶς</span></b>, <br /> <i>contraction</i> for <s", 72 occ, 3 senses)
+
+- **S78845** (69x) [N-ANS,N-NNS,N-DNS,N-GNS] | eng: light, of-light | spa: luz, de–luz | hin: ज्योति, जयोति | arb: النّورِ, نُورَ | kor: 빛, 빛이 | swa: nuru, wa–nuru
+- **S78846** (2x) [N-GNP,N-ANP] | eng: lights | spa: luces | hin: रोशनी, ज्योतियों–के | arb: مِصابيحَ, الأنوارِ | kor: 빛들을, 빛들–의, | swa: nuru, mwanga
+- **S78847** (1x) [N-ANS] | eng: light | spa: luz | hin: आग | arb: نَارِ | kor: 불을 | swa: moto
+
+## G5494 (POS: N-NMS, "<b> <span class="lexicon-greek">χειμών</span></b>, <span class="lexicon-greek">ῶ", 6 occ, 3 senses)
+
+- **S78962** (2x) [N-GMS] | eng: in–winter, in-winter | spa: en–invierno | hin: जाड़े–में | arb: في–الشِّتاءِ, شِتَاءً | kor: 겨울에 | swa: wakati–wa–baridi, sabato
+- **S78963** (2x) [N-NMS,N-GMS] | eng: storm, a-storm | spa: tempestad | hin: तोओफ़न, तूफानके | arb: عَاصِفَةٌ | kor: 폭풍이다, 폭풍이 | swa: dhoruba
+- **S78964** (2x) [N-GMS,N-NMS] | eng: winter | spa: invierno | hin: सरदि, जाड़ा | arb: شِتاء, الشِّتاءِ | kor: 겨울이, 겨울 | swa: majira–ya–baridi, baridi

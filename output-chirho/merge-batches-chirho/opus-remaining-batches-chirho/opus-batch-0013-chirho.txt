@@ -1,0 +1,93 @@
+You are a biblical lexicographer. For each lemma below, group the over-split sense clusters into REAL lexicographic senses.
+
+Rules:
+- Different grammatical inflections of the same meaning = SAME sense (merge them)
+- Different verb stems (Qal vs Hifil, active vs passive) = often DIFFERENT senses
+- Literal vs metaphorical uses = DIFFERENT senses
+- Every sense ID must appear in exactly one group
+- Output valid JSON array with labelChirho, descriptionChirho (150+ chars with multilingual evidence), senseIdsChirho
+
+## H5227 (POS: Prep, "† <strong><span dir="rtl"><span class="lexicon-hebrew" dir="rtl">נֹ֫כַח</span></", 23 occ, 4 senses)
+
+- **S117861** (12x) [Prep] | eng: opposite, facing | spa: frente–a, enfrente–de | hin: सामने | arb: مُقَابِلَ, مُقابِلَ | kor: 맞은편에, 앞에 | swa: mbele–ya, mkabala–na
+- **S117862** (9x) [Prep,Prep-l] | eng: before, in-front-of | spa: delante–de, frente–de | hin: सामने | arb: أَمَامَ, جِهَةِ | kor: 앞에–, 앞에 | swa: mbele–ya, wazi
+- **S117865** (1x) [Prep-l] | eng: on–behalf–of | spa: frente–a | hin: –के–सामने | arb: مِنْ–أَجْلِ | kor: 앞–에서 | swa: kwa–ajili–ya
+- **S117866** (1x) [Prep-l] | eng: straight–ahead | spa: hacia–adelante | hin: सीधे–सामने | arb: إِلَى–الْأَمَامِ | kor: 앞–을 | swa: mbele
+
+## H5246 (POS: Prep-m | N-mp, "† <strong><span dir="rtl"><span class="lexicon-hebrew" dir="rtl">נָמֵר</span></s", 6 occ, 4 senses)
+
+- **S117961** (3x) [Conj-w | N-ms,N-ms] | eng: or–leopard, leopard | spa: y–leopardo, y-leopardo | hin: और–चीता, चीता | arb: وَ–النَّمِرُ, نَمِرٌ | kor: 표범이, 그리고–표범이 | swa: na-chui, chui
+- **S117962** (1x) [Prep-k | N-ms] | eng: like–a–leopard | spa: como–leopardo | hin: तेंदुए–के–समान | arb: كَنَمِرٍ | kor: 같으니라–표범에 | swa: kama–chui
+- **S117963** (1x) [Prep-m | N-mp] | eng: than–leopards | spa: que–leopardos | hin: चीतों–से | arb: مِنَ–النّمورِ | kor: 표범–보다 | swa: chui
+- **S117964** (1x) [N-mp] | eng: leopards | spa: los–leopardos | hin: चीतों–के | arb: نِمِيرِيم | kor: 표범들–의 | swa: ya–chui
+
+## Response Format
+
+Return a JSON object with one key per lemma ID. Each value is an array of sense groups:
+
+```json
+{
+  "H5064": [
+    {"labelChirho": "short label", "descriptionChirho": "one sentence", "senseIdsChirho": [id1, id2, ...]}
+  ],
+  "H5065": [...]
+}
+```
+
+IMPORTANT: Return ONLY the JSON object. Every sense ID from every lemma must appear exactly once. Use the numeric sense IDs (without the S prefix).
+
+## H5274a (POS: V-Qal-QalPassPrtcpl-fp, "† <strong><strong><span dir="rtl"><span class="lexicon-hebrew" dir="rtl">נָעַל</", 6 occ, 4 senses)
+
+- **S118157** (2x) [V-Qal-QalPassPrtcpl-ms] | eng: locked | spa: cerrado, cerrada | hin: बंद | arb: نَعُول | kor: 잠긴 | swa: iliyofungwa
+- **S118158** (2x) [Conj-w | V-Qal-ConjPerf-3ms] | eng: and–locked, and–he–bolted | spa: y–echó–cerrojo, y–cerró | hin: और–बंद–किया, और–ताला–लगाया। | arb: وَ–أَقْفَلَ, وَأَغلَقَ | kor: 그리고–잠갔다 | swa: na–akafunga–kwa–ufunguo, na–akafunga
+- **S118159** (1x) [V-Qal-QalPassPrtcpl-fp] | eng: locked | spa: cerradas | hin: ताला–लगे | arb: مُغْلَقَةٌ | kor: 잠겼다 | swa: imefungwa
+- **S118160** (1x) [Conj-w | V-Qal-Imp-ms] | eng: and–bolt | spa: y–cierra | hin: और–बंद–करो | arb: وَأَغلِقوا– | kor: 그리고–잠그라 | swa: na–ufunge
+
+## H5278 (POS: N-ms, "† <strong><span dir="rtl"><span class="lexicon-hebrew" dir="rtl">נֹ֫עַם</span></", 7 occ, 4 senses)
+
+- **S118188** (2x) [N-ms] | eng: pleasantness | spa: agrado | hin: मनोहर–के | arb: لُطْفٍ | kor: 은혜로운 | swa: upole
+- **S118189** (2x) [N-ms] | eng: Pleasantness | spa: Gracia | hin: मनोहरता | arb: نُعْمَى | kor: 은혜라, 은혜 | swa: Uzuri
+- **S118191** (2x) [Prep-b | N-msc,N-msc] | eng: the–favor–of, the–beauty–of– | spa: la–hermosura–de, hermosura-de | hin: में–सुन्दरता–, मिठास | arb: نِعْمَةُ, بَهَاءَ– | kor: 은혜–가, 아름다움–을– | swa: uzuri–wa, uzuri-wa
+- **S118190** (1x) [N-ms] | eng: pleasantness | spa: deleite | hin: आनन्द–की | arb: نَعِيمٍ | kor: 즐거움–의 | swa: furaha
+
+## H5297 (POS: N-proper-fs, "† <strong><span dir="rtl"><span class="lexicon-hebrew" dir="rtl">מֹף</span></spa", 7 occ, 4 senses)
+
+- **S118354** (3x) [N-proper-fs] | eng: of–Noph, Noph | spa: Nof, Menfis | hin: नोफ, नोफ–के | arb: نُوفَ | kor: 농–의, 놋의 | swa: Nofu, wa–Memfisi
+- **S118355** (2x) [Prep-b | N-proper-fs,Conj-w, Prep-b | N-proper-fs] | eng: in–Noph, and–in–Noph | spa: y–en–Nof, en–Nof | hin: में–नोफ, और–में–नोफ | arb: وَفِي–نُوفَ, فِي–نُوفَ | kor: 노프에서, 그리고–노프에 | swa: na–Nofu, Nofu
+- **S118356** (1x) [Conj-w | N-proper-fs] | eng: and–Noph | spa: y–Menfis | hin: और–नोप | arb: وَنُوفُ | kor: 그리고–몸은 | swa: na–Nofu
+- **S118358** (1x) [Prep-m | N-proper-fs] | eng: from–Noph | spa: de–Menfis | hin: से–नोप | arb: مِنْ–نُوفَ | kor: 몸에서– | swa: kutoka–Nofu
+
+## H5321 (POS: Conj-w, "<strong><span dir="rtl"><span class="lexicon-hebrew" dir="rtl">נַפְתָּלִי</span>", 51 occ, 4 senses)
+
+- **S118707** (44x) [N-proper-ms,Conj-w | N-proper-ms] | eng: Naphtali, Naftali | spa: Neftalí, Naftalí | hin: नप्ताली, नप्ताली–के | arb: نَفْتَالِي, نَفْتالي | kor: 납달리의, 납달리–의 | swa: Naftali, na–Naftali
+- **S118709** (3x) [Prep-l | N-proper-ms,Conj-w, Prep-l | N-proper-ms] | eng: for–Naphtali, and–to–Naphtali | spa: y–de–Neftalí, para–Neftalí | hin: –के–नप्ताली, के–लिए–नप्ताली | arb: لِنَفْتَالِي, وَلِنَفْتَالِي | kor: 에게–납달리, 에–대한–납달리 | swa: kwa–Naftali, Na–kwa–Naftali
+- **S118710** (2x) [Conj-w, Prep-b | N-proper-ms,Prep-b | N-proper-ms] | eng: in–Naphtali, and–in–Naphtali | spa: y–en–Naftalí, en–Naftalí | hin: नप्ताली–में, और–नप्ताली–में | arb: وَ–بِ–نَفْتالي, فِي–نَفْتَالِي | kor: 납다리에, 그리고–납달리에 | swa: na–katika–Naftali, huko–Naftali
+- **S118713** (2x) [Conj-w, Prep-m | N-proper-ms,Prep-m | N-proper-ms] | eng: from–Naphtali, and–from–Naphtali | spa: de–Naftalí, Y–de–Neftalí | hin: नप्ताली–से, और–नप्ताली–से | arb: وَمِن–نَفْتَالِي, مِنْ-نَفْتَالِي | kor: 납달리에서, 그–와–에서–납달리 | swa: na–kutoka–Naftali, kutoka–Naftali
+
+## H5371 (POS: N-proper-ms, "† <strong><span dir="rtl"><span class="lexicon-hebrew" dir="rtl">נֵרְגַּל שַׂרְא", 7 occ, 4 senses)
+
+- **S119139** (2x) [N-proper-ms] | eng: Etser | spa: Etser | hin: एसेर | arb: أَصَرَ | kor: 에쉼 | swa: Saretseri
+- **S119140** (2x) [] | eng: prince–of | spa: oficial–de | hin: हाकिम– | arb: رَئِيسُ | kor: 관원– | swa: mkuu–wa
+- **S119141** (2x) [] | eng: Nergal | spa: Nergal | hin: नेर्गल | arb: نِيرْجَلُ | kor: 네르갈 | swa: Nergali
+- **S119142** (1x) [Conj-w | N-proper-ms] | eng: and–Nergal–Saretser | spa: y–Nergal–Sar–Etser | hin: और–नेर्गल–हाकिम–एसेर | arb: وَ–نِيرْجَلُ–رَئِيسُ–أَصَرَ | kor: 그리고–네르갈–사르에쉼가 | swa: na–Nergali–Saretseri
+
+## H5429 (POS: N-fp, "† <strong><span dir="rtl"><span class="lexicon-hebrew" dir="rtl">סְאָה</span></s", 9 occ, 4 senses)
+
+- **S120086** (5x) [Conj-w | N-fd,N-fs,Conj-w | N-fs] | eng: and–two-seahs, a-seah-of– | spa: y–dos–seas–de, sea–de | hin: सेआह–, वसातयिम | arb: وَصاعانِ, صاعُ– | kor: 한–세아의, 그리고–두–세아의 | swa: sea–ya–, sea–moja–ya–
+- **S120088** (2x) [N-fd] | eng: two-seahs | spa: dos–seahs, Dos–seas–de | hin: सातयिम, दो–साह | arb: صاعَيْنِ, صاعانِ | kor: 두–스아의, 두–세아의 | swa: sea–mbili–za, sea–mbili
+- **S120090** (1x) [N-fp] | eng: seahs | spa: seahs | hin: सेअह | arb: صِيعَانٍ | kor: 세아 | swa: vipimo
+- **S120091** (1x) [N-fp] | eng: seahs | spa: medidas–de | hin: सिआह | arb: صيعانٍ | kor: 세아의 | swa: sea–za
+
+## H5457 (POS: V-Qal-Prtcpl-mp, "† <strong><span dir="rtl"><span class="lexicon-hebrew" dir="rtl">סְגִ֑ד</span></", 12 occ, 4 senses)
+
+- **S120296** (5x) [Conj-w | V-Qal-ConjImperf-3ms,Conj-w | V-Qal-ConjImperf-2mp] | eng: and–worship, and–worships | spa: y–se–postre, y–os–postraréis | hin: और–दंडवत–करेगा, और–दंडवत–करोगे | arb: وَ–يَسْجُدُ, وَ–تَسْجُدُونَ | kor: 그리고–경배하라, 그리고–경배하지 | swa: na–kusujudu
+- **S120297** (3x) [V-Qal-Prtcpl-mp] | eng: worshiping | spa: se–postran, se–postraban | hin: दंडवत–करते, दंडवत–करते–थे | arb: يَسْجُدُونَ, سَاجِدِينَ | kor: 경배하지, 경배하였다 | swa: sujudu, wakisujudu
+- **S120300** (3x) [V-Qal-Imperf-3mp,V-Qal-Imperf-2mp,V-Qal-Imperf-1cp] | eng: you-worship, worship | spa: se–postraran, os–postráis | hin: दंडवत–करोगे, दंडवत–करेंगे | arb: يَسْجُدُوا, نَسْجُدُ | kor: 우리는–경배하지, 너희가–경배하지 | swa: sujudu
+- **S120301** (1x) [V-Qal-Perf-3ms] | eng: paid-homage | spa: se–postró | hin: दंडवत–किया | arb: سَجَدَ | kor: 경배하였다 | swa: akasujudu
+
+## H5467 (POS: Prep-b | N-proper-fs, "<strong><span dir="rtl"><span class="lexicon-hebrew" dir="rtl">סְדֹם</span></spa", 39 occ, 4 senses)
+
+- **S120382** (31x) [N-proper-fs | 3fs,N-proper-fs] | eng: Sodom, Sedom | spa: Sodoma, Sedom | hin: सदोम, सेदोम–क | arb: سَدُومَ, سَدُوم | kor: 소돔의, 소돔과 | swa: Sodoma
+- **S120383** (4x) [Prep-k | N-proper-fs] | eng: like–Sodom, like–Sedom | spa: como–Sodoma, como–Sedom | hin: जैसे–सदोम, सदोम–जैसे | arb: كَسَدُومَ, كَ–سَدُومَ | kor: 소돔–같이, 에–같이–소돔 | swa: kama–Sodoma
+- **S120384** (2x) [Prep-b | N-proper-fs] | eng: in–Sodom | spa: en–Sodoma, en–Sedom | hin: सेदोम–मे | arb: فِي–سَدُومَ, فِي–سَدُوم | kor: 소돔에서, 소돔에 | swa: katika–Sodoma
+- **S120385** (2x) [N-proper-fs | 3fs] | eng: to–Sodom, toward–Sodom | spa: a–Sedom | hin: सेदोम–को, सेदोम | arb: سَدُومَ | kor: 소돔으로 | swa: Sodoma

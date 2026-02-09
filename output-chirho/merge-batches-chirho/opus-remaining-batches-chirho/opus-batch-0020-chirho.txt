@@ -1,0 +1,93 @@
+You are a biblical lexicographer. For each lemma below, group the over-split sense clusters into REAL lexicographic senses.
+
+Rules:
+- Different grammatical inflections of the same meaning = SAME sense (merge them)
+- Different verb stems (Qal vs Hifil, active vs passive) = often DIFFERENT senses
+- Literal vs metaphorical uses = DIFFERENT senses
+- Every sense ID must appear in exactly one group
+- Output valid JSON array with labelChirho, descriptionChirho (150+ chars with multilingual evidence), senseIdsChirho
+
+## H7084 (POS: N-proper-fs, "<strong><span dir="rtl"><span class="lexicon-hebrew" dir="rtl">קְעִילָה</span></", 18 occ, 4 senses)
+
+- **S132567** (13x) [N-proper-fs,Prep-m | N-proper-fs] | eng: Keilah, from–Keilah | spa: Queilá, de–Queilá | hin: कीला, कीला–के | arb: قَعِيلَة, مِنْ–قَعِيلَة | kor: 게일라로, 겎일라에서 | swa: Keila, kutoka–Keila
+- **S132568** (3x) [N-proper-ms,N-proper-fs] | eng: Keilah, Qe'ilah | spa: Keila, Queila | hin: कीलाह–के, कईला | arb: قَعِيلَةَ, قَعيلَة | kor: 그일라–의, 그일라 | swa: Keila, wa–Keila
+- **S132570** (1x) [Conj-w | N-proper-fs] | eng: and–Keilah | spa: y–Queilá | hin: और–कईला | arb: وَ–قَعيلةُ | kor: 그리고–그일라 | swa: na–Keila
+- **S132571** (1x) [Prep-b | N-proper-fs] | eng: against–Keilah | spa: contra–Queilá | hin: कीला–में | arb: بِـ–قَعِيلَة | kor: 에–게일라를 | swa: dhidi–ya–Keila
+
+## H7086 (POS: Art | N-fs, "<strong><span dir="rtl"><span class="lexicon-hebrew" dir="rtl">קְעָרָה</span></s", 17 occ, 4 senses)
+
+- **S132573** (13x) [N-fsc,Art | N-fs] | eng: dish-of–, the–dish | spa: fuente–de–, la–fuente | hin: थाली–, थाली | arb: صَحْنُ־, الصَّحْنُ | kor: 접시, 그–접시 | swa: sahani–ya, sahani
+- **S132574** (2x) [N-fpc | 3ms] | eng: its–dishes, its-plates | spa: sus–platos | hin: उसकी–थालियाँ | arb: صُحونَها | kor: 그것의–접시들을, 그–접시들과 | swa: sahani–zake
+- **S132575** (1x) [Art | N-fp] | eng: the–dishes | spa: los–platos | hin: थालियां | arb: الصِّحَافَ | kor: 그–대접들 | swa: sahani
+- **S132577** (1x) [N-fpc] | eng: dishes-of | spa: fuentes–de | hin: थालियाँ | arb: صُحُونٌ | kor: 접시들 | swa: sahani–za
+
+## H7117 (POS: Art | N-fp, "† <strong><span dir="rtl"><span class="lexicon-hebrew" dir="rtl">קְצָת</span></s", 8 occ, 4 senses)
+
+- **S132794** (3x) [Conj-w, Prep-m | N-fsc,Conj-w, Prep-l, Prep-m | N-fsc,Conj-w] | eng: and–at–end-of-them, and–at–end-of | spa: Y–al–final–de, y–al–final–de–ellos | hin: और–से–अंत, और–से–अंत–में | arb: وَ–مِنْ–نِهَايَتِهِمْ, وَ–مِنْ–نِهَايَةِ | kor: 그리고–끝에, 그리고–끝에–그들의 | swa: Na–mwishoni–mwa, na–mwishoni–mwao
+- **S132792** (2x) [Conj-w, Prep-m | N-fsc] | eng: and–some–of, and–some-of | spa: y–parte–de, Y–parte–de | hin: और–कुछ | arb: وَ–بَعْضَ, وَبَعْضُ | kor: 그리고–일부를, 그리고–일부 | swa: na–sehemu–ya, na–baadhi–ya
+- **S132793** (2x) [N-fpc | 3ms] | eng: – | spa: [qere] | hin: सिरों–से, उसके–सिरों | arb: طَرَفَيهِ, [الاِرشاد] | kor: 그것의–끝들 | swa: ncha–zake
+- **S132796** (1x) [Art | N-fp] | eng: the–ends | spa: los–extremos | hin: सिरों–पर | arb: الْأَطْرَافِ | kor: 그–끝들에 | swa: pembe
+
+## Response Format
+
+Return a JSON object with one key per lemma ID. Each value is an array of sense groups:
+
+```json
+{
+  "H6969": [
+    {"labelChirho": "short label", "descriptionChirho": "one sentence", "senseIdsChirho": [id1, id2, ...]}
+  ],
+  "H6976": [...]
+}
+```
+
+IMPORTANT: Return ONLY the JSON object. Every sense ID from every lemma must appear exactly once. Use the numeric sense IDs (without the S prefix).
+
+## H7156 (POS: N-proper-fs, "† <strong><span dir="rtl"><span class="lexicon-hebrew" dir="rtl">קִרְיָתַ֫יִם</s", 8 occ, 4 senses)
+
+- **S133412** (3x) [N-proper-fs] | eng: Qiryatayim | spa: Kiryatayim, Quiryatayim | hin: किर्यातैम | arb: قِرْيَتَايِمَ, قِريَتايِم | kor: 기리아다임이, 기리아다임 | swa: Kiriathaimu
+- **S133413** (2x) [N-proper-fs] | eng: Kiriathaim | spa: Quiriataim | hin: किर्याताइम, किरयतैम | arb: قِرْيَتَايِمَ, قِرْيَاتَايِمَ | kor: 기리아타임을, 기리아다임 | swa: Kiriathaimu, Kiriataimu
+- **S133415** (2x) [Conj-w | N-proper-fs | 3fs] | eng: and–Kiriathaim, [and-Kiriathaim] | spa: [y–Quiriatáyim], (y–Quiriatáyim) | arb: [وَقِرْيَتَيْمَ], (وَقِرْيَتَيْمَ) | kor: 기랴다임을, [케티브] | swa: na–Kiriathaimu, [na–Kiriathaimu]
+- **S133414** (1x) [Conj-w | N-proper-fs] | eng: and–Kiryatayim | spa: y–Quiriataim | hin: और–किर्यातैम | arb: وَ–قِرْيَتايِمَ | kor: 그리고–기랴다임을 | swa: na–Kiriathaimu
+
+## H7179 (POS: N-ms, "† <strong><span dir="rtl"><span class="lexicon-hebrew" dir="rtl">קַשׁ</span></sp", 16 occ, 4 senses)
+
+- **S133538** (7x) [Prep-k | N-ms,Prep-k, Art | N-ms] | eng: like–stubble, like–the–stubble | spa: como–paja, como–rastrojo | hin: भूसे–की–तरह, जैसे–भूसा | arb: كَالتِّبْنِ, كَ–قَشٍّ– | kor: 같이–겨, 짚–처럼– | swa: kama–makapi, kama–makapi–
+- **S133539** (6x) [N-ms] | eng: stubble | spa: rastrojo, paja | hin: भूसे–को, भूसी | arb: قَشًّا, تِبْنًا | kor: 짚, 그루터기를 | swa: mabua, majani–makavu
+- **S133543** (2x) [Prep-l | N-ms,Prep-k | N-ms] | eng: to–chaff, As–chaff | spa: en–paja, Como–paja | hin: भूसे–की–तरह | arb: كَالْقَشِّ | kor: 깃–처럼, 깃–으로 | swa: kama–majani
+- **S133542** (1x) [Prep-l | N-ms] | eng: for–stubble | spa: rastrojo | hin: भूसे–के–लिए | arb: –لقش | kor: 짚이니 | swa: mabua
+
+## H7205 (POS: Prep-k | N-proper-ms, "<strong><span dir="rtl"><span class="lexicon-hebrew" dir="rtl">רְאוּבֵן</span></", 72 occ, 4 senses)
+
+- **S133915** (69x) [N-proper-ms] | eng: Reuben, Reuven | spa: Rubén, Reuven | hin: रूबेन, रऊबेन | arb: رَأُوبِينَ, رَأُوبَينَ | kor: 르우벤의, 르우벤 | swa: Reubeni, Rubeni
+- **S133918** (1x) [Prep-k | N-proper-ms] | eng: as–Reuben | spa: como–Reuven | hin: रऊबेन–जैसे | arb: كَرَأُوبَيْنَ | kor: 같이–르우벤 | swa: kama–Reubeni
+- **S133919** (1x) [Prep-l | N-proper-ms] | eng: for–Reuben | spa: de–Rubén | hin: के–लिए–रूबेन | arb: لِرَأُوبَيْنَ | kor: 에게–르우벤 | swa: kwa–Reubeni
+- **S133920** (1x) [Conj-w | N-proper-ms] | eng: and–Reuven | spa: y–Rubén | hin: और–रूबेन | arb: وَ–رَأوبينُ | kor: 그리고–르우벤 | swa: na–Reubeni
+
+## H7227b (POS: N-msc, "II. <strong><span dir="rtl"><span class="lexicon-hebrew" dir="rtl">רַב</span></s", 28 occ, 4 senses)
+
+- **S134270** (25x) [N-msc] | eng: chief–of–, chief-of– | spa: jefe–de, el–jefe–de | hin: रब–, प्रधान– | arb: رَئِيسُ–, رَبُّ | kor: 장–, 장관–이 | swa: mkuu–wa–, mkuu–wa
+- **S134273** (1x) [N-mpc] | eng: the–chiefs–of | spa: jefes–de | hin: प्रधानों | arb: عُظَمَاءِ | kor: 대장들 | swa: wakuu–wa
+- **S134274** (1x) [Conj-w | N-mpc] | eng: and–the–chiefs–of | spa: y–los–oficiales–de | hin: और–हाकिम | arb: وَ–عُظَمَاءُ | kor: 그리고–대신들 | swa: na–wakuu–wa
+- **S134275** (1x) [N-msc] | eng: steward-of | spa: mayordomo–de | hin: अधिकारियों–को | arb: رَئِيسِ | kor: 관리에게 | swa: wa–nyumba-yake
+
+## H7229 (POS: Adj-msd, "<strong><span dir="rtl"><span class="lexicon-hebrew" dir="rtl">רַב</span></span>", 15 occ, 4 senses)
+
+- **S134277** (6x) [Adj-ms] | eng: great, greater | spa: grande, mayor | hin: बड़ा, महान | arb: عَظِيمٍ, عَظِيمَةً | kor: 큰 | swa: mkuu, mkubwa
+- **S134278** (4x) [Adj-msc,Conj-w | Adj-msc] | eng: chief-of, chief-of– | spa: jefe–de, y–jefe–de | hin: प्रधान, और–प्रधान | arb: رَئِيسَ, وَ–رَئِيسَ– | kor: 우두머리–, 장– | swa: mkuu–wa, na–mkuu–wa
+- **S134279** (4x) [Adj-msd,Adj-fsd] | eng: great, the-great | spa: grande, la–grande | hin: महान | arb: الْعَظِيمِ, الْعَظِيمُ | kor: 큰에게, 큰–것이라 | swa: mkuu, kubwa
+- **S134280** (1x) [Adj-ms] | eng: huge | spa: inmensa | hin: विशाल | arb: كَبِيرٌ | kor: 컨 | swa: kubwa
+
+## H7241 (POS: Prep-k | N-mp, "† <strong><span dir="rtl"><span class="lexicon-hebrew" dir="rtl">רְבִיבִים</span", 6 occ, 4 senses)
+
+- **S134537** (2x) [N-mp] | eng: the–showers, showers | spa: lluvias, las–lluvias | hin: वर्षा, बारिशें | arb: وَابِلَاتٍ, أَمْطَارٌ | kor: 소나기들이, 소나기들을 | swa: mvua–za–masika, manyunyu
+- **S134538** (2x) [Prep-k | N-mp] | eng: like–showers | spa: como–lluvias, como–aguaceros | hin: बूंदों–की–तरह | arb: كَ–الوابِلِ, كَالرَّذَاذِ | kor: 처럼–소나기들, 소나기들–같이 | swa: kama–mvua-nyingi, kama–mvua
+- **S134539** (1x) [Prep-b | N-mp] | eng: with–showers | spa: con–lluvias | hin: बारिशों–से | arb: بِ–الوابِلِ | kor: 소나기–들–로 | swa: kwa–mvua
+- **S134540** (1x) [Conj-w, Prep-k | N-mp] | eng: and–like–droplets | spa: y–como–aguaceros | hin: और–जैसे–बरसात | arb: وَكَـ–الْوَابِلِ | kor: 그리고–같이–빗방울들 | swa: na–kama–manyunyu
+
+## H7262 (POS: N-ms, "II. <strong><span dir="rtl"><span class="lexicon-hebrew" dir="rtl">רַב</span></s", 31 occ, 4 senses)
+
+- **S134621** (8x) [] | eng: Ravshakeh, whom | spa: Rab, de–Rab | hin: रब्ब– | arb: رَبَّ | kor: 럍– | swa: Rabu–, ya–Rabu–
+- **S134622** (8x) [N-ms] | eng: speak, sent–him | spa: saces | hin: शाकेह, शाकेह–ने | arb: شَاقِي | kor: 샤케가, 샤케의 | swa: shake, Rabshake
+- **S134624** (8x) [N-ms] | eng: Rav, Rav-Shaqeh | spa: Rab, Rab–Saces | hin: रब–, रब–शाकेह | arb: رَبُّ–, رَبِّ– | kor: 총–, 총–욕데의 | swa: mkuu–wa–, ya–mkuu–wa–wanyweshaji
+- **S134623** (7x) [N-ms] | eng: Shaqeh | spa: Saces, Saqué | hin: शाकेह | arb: شَاقِيَ | kor: 욕데가, 욖데 | swa: wanyweshaji

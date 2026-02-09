@@ -1,0 +1,83 @@
+You are a biblical lexicographer. For each lemma below, group the over-split sense clusters into REAL lexicographic senses.
+
+Rules:
+- Different grammatical inflections of the same meaning = SAME sense (merge them)
+- Different verb stems (Qal vs Hifil, active vs passive) = often DIFFERENT senses
+- Literal vs metaphorical uses = DIFFERENT senses
+- Every sense ID must appear in exactly one group
+- Output valid JSON array with labelChirho, descriptionChirho (150+ chars with multilingual evidence), senseIdsChirho
+
+## G3466 (POS: N-GNP, "<b> <span class="lexicon-greek">μυστήρι-ον</span></b>, <span class="lexicon-gree", 27 occ, 3 senses)
+
+- **S72602** (22x) [N-NNS,N-ANS,N-DNS,N-GNS] | eng: mystery, of-mystery | spa: misterio, de–misterio | hin: रहस्य, भेद | arb: سِرُّ, سِرِّ | kor: 비밀을, 비밀이 | swa: siri, wa–siri,
+- **S72603** (4x) [N-ANP] | eng: mysteries | spa: misterios | hin: रहस्य, भेदोन–को | arb: أَسرَارَ, أَسرارَ | kor: 비밀들을 | swa: siri, mafumbo
+- **S72605** (1x) [N-GNP] | eng: of–mysteries | spa: de–misterios | hin: भेदों–के | arb: أَسْرارِ | kor: 비밀들–의 | swa: wa–siri
+
+## G3480 (POS: N-GMP, " <b><span class="lexicon-greek">Ναζωραῖος</span></b>, -<span class="lexicon-gree", 13 occ, 3 senses)
+
+- **S72640** (9x) [N-NMS,N-GMS,N-AMS] | eng: Nazōraios | spa: Nazōraîos, nazareno | hin: नासरी, –से | arb: النَّاصِرِيِّ, نَّاصِرِيَّ | kor: 나사렛–사람, 나사렛–의 | swa: Mnazareti
+- **S72642** (3x) [N-AMS,N-NMS] | eng: Nazarene, NAZARENE | spa: Nazōraîon, NAZ̄ŌRAÎOS | hin: नासरी | arb: النَّاصِرِيَّ, النَّاصِرِيُّ | kor: 나사렛–사람 | swa: Mnazarayo, MNAZARAYO
+- **S72643** (1x) [N-GMP] | eng: Nazōraians | spa: nazarenos | hin: नाजरीयोंके | arb: النَّاصِرِيِّينَ | kor: 나사렛 | swa: Wanazareti
+
+## G3485 (POS: N-GMS, "<b> <span class="lexicon-greek">νᾱός</span></b>, ὁ, <br /> <i>Doric dialect</i>,", 45 occ, 3 senses)
+
+- **S72650** (43x) [N-DMS,N-GMS,N-NMS,N-AMS] | eng: temple, to–temple | spa: templo, santuario | hin: मंदिर, मन्दिर | arb: هَيْكَلِ, هَيكَلِ | kor: 성전, 성전을 | swa: hekalu, hekalu,
+- **S72651** (1x) [N-DMP] | eng: temples | spa: templos | hin: मन्दिरों | arb: هَياكِلَ | kor: 성전들에 | swa: mahekalu
+- **S72653** (1x) [N-AMP] | eng: shrines | spa: templos | hin: मन्दिर | arb: هَيَاكِلَ | kor: 성전들을 | swa: mahekalu
+
+## G3521 (POS: N-AFS, "<b> <span class="lexicon-greek">νηστ-εία</span></b>, ἡ, <br /> <b>fast,</b> <spa", 6 occ, 3 senses)
+
+- **S72719** (4x) [N-GFP,N-DFP] | eng: fastings, with–fastings | spa: ayunos, con–ayunos | hin: उपवासों | arb: صِيامٍ, بِأَصْوَامٍ | kor: 금식들에, 금식들과 | swa: kufunga, kwa–kufunga
+- **S72720** (1x) [N-DFS] | eng: fasting | spa: ayuno | hin: उपवअस | arb: الصَّوْمِ | kor: 금식으로 | swa: kufunga
+- **S72721** (1x) [N-AFS] | eng: Fast | spa: Ayuno | hin: उपवास | arb: الصَّوْمُ | kor: 금식일이 | swa: Saumu
+
+## Response Format
+
+Return a JSON object with one key per lemma ID. Each value is an array of sense groups:
+
+```json
+{
+  "G3342": [
+    {"labelChirho": "short label", "descriptionChirho": "one sentence", "senseIdsChirho": [id1, id2, ...]}
+  ],
+  "G3353": [...]
+}
+```
+
+IMPORTANT: Return ONLY the JSON object. Every sense ID from every lemma must appear exactly once. Use the numeric sense IDs (without the S prefix).
+
+## G3525 (POS: V-PPA-NMP, "<b> <span class="lexicon-greek">νήφω</span></b>, <br /> <i>Doric dialect</i> <b>", 6 occ, 3 senses)
+
+- **S72736** (3x) [V-PMA-2S,V-AMA-2P] | eng: be–sober, Be–sober | spa: sé–sobrio, sed–sobrios | hin: सावधान–रहो, सचेत–रहो | arb: اصحوا, اصْحُ | kor: 깨어–있으라, 근신하라 | swa: kuwa–na–kiasi, kesha
+- **S72735** (2x) [V-PSA-1P] | eng: let–us–be–sober | spa: seamos–sobrios | hin: होश–मेइन-रहेइन | arb: نَصْحُوَ, لِنَصْحُوَ | kor: 정신을–차리자 | swa: tuwe–na–kiasi
+- **S72739** (1x) [V-PPA-NMP] | eng: being–sober | spa: siendo–sobrios | hin: सचेत–रहकर | arb: صاحينَ | kor: 근신하여 | swa: mkiwa–na–kiasi
+
+## G3544 (POS: Adj-DMP, "<b> <span class="lexicon-greek">νομ-ικός</span></b>, <span class="lexicon-greek"", 9 occ, 3 senses)
+
+- **S72806** (5x) [Adj-GMP,Adj-DMP,Adj-AMP,Adj-NMP] | eng: lawyers | spa: intérpretes–de–la–ley, maestros-de-ley | hin: व्यवस्थापकों–को, शास्त्रियों | arb: النّاموسِيّونَ, عُلَمَاءِ–النَّامُوسِ | kor: 율법사들아, 율법학자들 | swa: wanasheria
+- **S72808** (3x) [Adj-AMS,Adj-NMS] | eng: lawyer, a–lawyer | spa: un–intérprete–de–la–ley, experto–en–la–ley | hin: व्यवस्थिक, व्यवस्था–विद | arb: –النّاموسيَّ, ناموسِيٌّ | kor: 율법학자–와, 율법학자– | swa: mwanasheria, akimjaribu
+- **S72811** (1x) [Adj-AFP] | eng: legal | spa: legales | hin: व्यवस्थिक, | arb: النّاموسيَّةَ | kor: 률법적인 | swa: ya–kisheria
+
+## G3551 (POS: N-DMS, "<b> <span class="lexicon-greek">νόμος</span></b>, ὁ, <br /> (<span class="lexico", 196 occ, 3 senses)
+
+- **S72818** (193x) [N-AMS,N-GMS,N-NMS,N-DMS] | eng: law, of–law | spa: ley, de–ley | hin: व्यवस्था, व्यवस्थ | arb: النّاموسِ, النَّامُوسِ | kor: 율법, 율법을 | swa: sheria, ya–sheria
+- **S72820** (2x) [N-AMP] | eng: laws | spa: leyes | hin: व्यवस्थाएं | arb: نَوَامِيسِي, نَوَاميسِي | kor: 율법들을 | swa: sheria
+- **S72823** (1x) [N-DMS] | eng: by–law | spa: por–ley | hin: व्यवस्था–से | arb: بِنَامُوسٍ | kor: 율법에–의해 | swa: kwa–sheria
+
+## G3592 (POS: DPro-DFS, "<b> <span class="lexicon-greek">ὅδε</span></b>, <span class="lexicon-greek">ἥδε,", 10 occ, 3 senses)
+
+- **S72981** (8x) [DPro-ANP] | eng: These–things, These-things | spa: Estas–cosas, Estas-cosas | hin: ये–बातें | arb: هذا, هٰكَذَا | kor: 이것들–을, 이–것들을 | swa: Haya, Hivi
+- **S72982** (1x) [DPro-DFS] | eng: to-this-woman | spa: a–esta | hin: इसकी | arb: لِهذِهِ | kor: 이에게 | swa: huyu
+- **S72983** (1x) [DPro-AFS] | eng: this | spa: tal | hin: उस | arb: هذِهِ | kor: 이러한 | swa: mji–fulani
+
+## G3606 (POS: Conj, "<b> <span class="lexicon-greek">ὅθεν</span></b>, <br /> <i>relative</i> <i>adver", 15 occ, 3 senses)
+
+- **S73005** (7x) [Adv,Conj] | eng: from–where, from–there | spa: de–donde, de-donde | hin: जहां–से, जहाँ–से | arb: مِنْ–حَيْثُ, مِن–هُناكَ | kor: 거기서, ~에서 | swa: mahali–ambapo, kutoka–hapo
+- **S73006** (7x) [Conj] | eng: therefore, Therefore | spa: por–lo–cual, por-lo-cual | hin: इसलिये, इसलिए | arb: لِذٰلِكَ | kor: 그러므로, 그래서 | swa: kwa–hiyo, Kwa–hiyo
+- **S73007** (1x) [Conj] | eng: from-which | spa: de-donde | hin: जिस–से | arb: مِن–هُنا | kor: 그러므로 | swa: kwa–hivyo
+
+## G3614 (POS: N-AFS, "<b> <span class="lexicon-greek">οἰκί-α</span></b>, <br /> <i>Ionic dialect</i> <", 95 occ, 3 senses)
+
+- **S73019** (92x) [N-AFS,N-DFS,N-NFS,N-GFS,N-AFP] | eng: house, houses | spa: casa, casas | hin: घर, घर–में | arb: بَيتِ, بَيْتِ | kor: 집, 집에 | swa: nyumba, nyumba,
+- **S73022** (2x) [N-AFS,N-GFS] | eng: household | spa: casa | hin: घराने–को, घर. | arb: بَيْتِ, بَيْتَ | kor: 집이, 집. | swa: nyumba
+- **S73021** (1x) [N-GFP] | eng: of–houses | spa: de–casas | hin: या | arb: بُيُوتٍ | kor: 집들–의 | swa: nyumba

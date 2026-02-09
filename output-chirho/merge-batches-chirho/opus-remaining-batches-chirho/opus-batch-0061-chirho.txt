@@ -1,0 +1,98 @@
+You are a biblical lexicographer. For each lemma below, group the over-split sense clusters into REAL lexicographic senses.
+
+Rules:
+- Different grammatical inflections of the same meaning = SAME sense (merge them)
+- Different verb stems (Qal vs Hifil, active vs passive) = often DIFFERENT senses
+- Literal vs metaphorical uses = DIFFERENT senses
+- Every sense ID must appear in exactly one group
+- Output valid JSON array with labelChirho, descriptionChirho (150+ chars with multilingual evidence), senseIdsChirho
+
+## H3127 (POS: Conj-w | N-fsc | 3ms, "† <strong>[<span dir="rtl"><span class="lexicon-hebrew" dir="rtl">יוֹנֶ֫קֶת</spa", 6 occ, 3 senses)
+
+- **S101557** (3x) [N-fsc | 3ms,N-fpc | 3ms] | eng: shoot-his, his–shoots | spa: su–retoño, sus–retoños | hin: उसकी–शाखाएँ, उसकी–डालियां | arb: فُرُوعَهُ, فُروعُهُ | kor: 그의–어린–싹이, 그의–가지를 | swa: machipukizi–yake
+- **S101558** (2x) [N-fpc | 3fs,N-fpc | 3ms] | eng: shoots–its, its–shoots | spa: sus–renuevos, renuevos-de-ella | hin: कोन्पलों–उसकी–के, इसकी–शाखाएँ | arb: فُرُوعِهِ, فُرُوعَهَا | kor: 그것의–싹들을, 그–어린–가지들의 | swa: machipukizi–yake
+- **S101560** (1x) [Conj-w | N-fsc | 3ms] | eng: and–shoots-its | spa: y–su–retoño | hin: और–उसकी–शाखाएँ | arb: وَ–فُرُوعُهَا | kor: 그리고–그–가지가 | swa: na–machipukizi–yake
+
+## Response Format
+
+Return a JSON object with one key per lemma ID. Each value is an array of sense groups:
+
+```json
+{
+  "H2986": [
+    {"labelChirho": "short label", "descriptionChirho": "one sentence", "senseIdsChirho": [id1, id2, ...]}
+  ],
+  "H3001": [...]
+}
+```
+
+IMPORTANT: Return ONLY the JSON object. Every sense ID from every lemma must appear exactly once. Use the numeric sense IDs (without the S prefix).
+
+## H3129 (POS: N-proper-ms, "<strong><span dir="rtl"><span class="lexicon-hebrew" dir="rtl">יְהוֹנָתָן</span>", 44 occ, 3 senses)
+
+- **S101562** (41x) [N-proper-ms,Conj-w | N-proper-ms] | eng: Yonatan, and–Yonatan | spa: Jonatán, Yonatan | hin: योनातान, योनातान–ने | arb: يُونَاثَان, وَ–يُونَاثَان | kor: 요나단이, 요나단 | swa: Yonathani, na–Yonathani
+- **S101565** (2x) [Art | N-proper-ms,Prep-b | N-proper-ms] | eng: shall–Yonatan, in–Yonatan | spa: en–Jonatán, Jonatán | hin: योनातान–में, क्या–योनातान | arb: هَلْ–يُونَاثَان, بِـ–يُونَاثَان | kor: 요나단이–, 요나단에게 | swa: kwa–Yonathani, Yonathani
+- **S101566** (1x) [Conj-w, Prep-l | N-proper-ms] | eng: and–for–Yonatan | spa: y–para–Jonatán | hin: और–योनातान–को | arb: وَ–لِـ–يُونَاثَان | kor: 그리고–요나단에게 | swa: na–kwa–Yonathani
+
+## H3147 (POS: Prep-l | N-proper-ms, "† <strong><span dir="rtl"><span class="lexicon-hebrew" dir="rtl">יוֹתָם</span></", 24 occ, 3 senses)
+
+- **S101596** (22x) [N-proper-ms,Conj-w | N-proper-ms] | eng: Yotam, Jotham | spa: Jotam, Yotam | hin: योताम, और–योताम | arb: يُوثَامُ, يُوثَامَ | kor: 요탐이, 요탐–의 | swa: Yothamu, na–Yothamu
+- **S101598** (1x) [Prep-l | N-proper-ms] | eng: to–Jotham | spa: a–Yotam | hin: योतामको | arb: لِـ-يُوتَام | kor: 요탐–에게 | swa: Yothamu
+- **S101599** (1x) [Prep-l | N-proper-ms] | eng: of–Yotam | spa: de–Jotam | hin: लयोताम | arb: لِيُوثَامَ | kor: 요탐–의 | swa: wa–Yothamu
+
+## H3171 (POS: N-proper-ms, "† <strong><span dir="rtl"><span class="lexicon-hebrew" dir="rtl">יְחִיאֵל</span>", 15 occ, 3 senses)
+
+- **S101643** (9x) [Conj-w | N-proper-ms] | eng: and–Yechiel, and–Jehiel | spa: y–Yejiel, y–Yeḥiel | hin: और–यहीएल, यहीएल | arb: وَ–يَحِيئِيلُ, وِيحِيئِيلُ | kor: 그–와–여히엘, 여히엘과 | swa: na–Yehieli, wiychiyel
+- **S101644** (5x) [N-proper-ms] | eng: Yechiel | spa: Yeḥiel, Yejiel | hin: यहीएल–का, यहीएल | arb: يَحِيئِيلُ, يَحِيئِيلَ | kor: 여히엘, 여히엘의 | swa: Yehieli
+- **S101646** (1x) [N-proper-ms] | eng: [ketiv] | spa: [Yejuel] | hin: येचिएल | arb: [يَحُوئِيلُ] | kor: 여히엘과 | swa: [Yehueli]
+
+## H3204 (POS: N-proper-ms, "† <strong><span dir="rtl"><span class="lexicon-hebrew" dir="rtl">יְכוֹנְיָה</spa", 7 occ, 3 senses)
+
+- **S101970** (4x) [N-proper-ms] | eng: Yekhanyah, Yekhanyah– | spa: Yejanya, Yekonyah– | hin: यकोन्याह, यकन्याह | arb: يَكَنيا, يَكُونْيَا– | kor: 여고냐의, 여고냐를 | swa: Yekonia
+- **S101969** (2x) [N-proper-ms] | eng: Yekhonyah, Yekhanyahu | spa: Yekonyah, Jeconías | hin: यकन्याहू | arb: يَكُونْيَا, يَكُنْيَا | kor: 여고니야를, 여고냐를 | swa: Yekonia
+- **S101972** (1x) [N-proper-ms] | eng: Yechonyah | spa: Jeconías | arb: يَكُنْيَا | kor: 여코냐 | swa: mfalme
+
+## H3270 (POS: N-proper-fs, "† <strong><span dir="rtl"><span class="lexicon-hebrew" dir="rtl">יַעְזֵר</span><", 13 occ, 3 senses)
+
+- **S102873** (9x) [N-proper-fs] | eng: Jazer, Yazer | spa: Jazer, Yazer | hin: याजेर–के, याअज़ेर | arb: يَعْزَيرَ, يَعْزِيرَ | kor: 야에사르의, 야에시르–를 | swa: Yazeri, cha–Yazeri
+- **S102875** (3x) [N-proper-fs,Prep-b | N-proper-fs] | eng: Yazer, in–Yazer | spa: en–Jazer, Yazer | hin: याजेर, याजेर–में | arb: يَعْزيرَ, يَعزير | kor: 에–야에셀, 야셀이 | swa: Yazeri
+- **S102876** (1x) [Conj-w | N-proper-fs] | eng: and–Jazer | spa: y–Jazer | hin: और–याअज़ेर | arb: وَيَعْزَيرَ | kor: 그리고–야에서르와 | swa: na–Yazeri
+
+## H3312 (POS: N-proper-ms, "<strong><span dir="rtl"><span class="lexicon-hebrew" dir="rtl">יְפֻנֶּה</span></", 16 occ, 3 senses)
+
+- **S103066** (9x) [N-proper-ms] | eng: Jephunneh | spa: Jefone, Jefuné | hin: यफुन्ने–का, यपुन्ने–के | arb: يَفُنَّةَ, يَفُنَّا | kor: 여분네, 여분네의 | swa: wa–Yefune, Yefune
+- **S103067** (4x) [N-proper-ms] | eng: Yephunneh | spa: Jefone | hin: यपुन्ने | arb: يَفُنّةَ | kor: 여분네의 | swa: Yefune
+- **S103068** (3x) [N-proper-ms] | eng: Yefunneh, Yephunneh | spa: Yefune, Yefuné | hin: यफुन्ने, यपुन्नेह | arb: يَفُنَّة | kor: 여분네 | swa: Yefune
+
+## H3315 (POS: N-proper-ms, "† <strong><span dir="rtl"><span class="lexicon-hebrew" dir="rtl">יֶ֫פֶת</span></", 11 occ, 3 senses)
+
+- **S103077** (5x) [N-proper-ms,Prep-l | N-proper-ms] | eng: Japheth, for–Japheth | spa: Yafet, a–Yafet | hin: याफेत-को, याफेत–को | arb: يَافِثَ, يَافَثَ | kor: 야벳의, 에–야벟 | swa: Yafethi
+- **S103078** (4x) [Conj-w | N-proper-ms] | eng: and–Japheth | spa: y–Yafet | hin: और-याफेत, और-याफेत-ने | arb: وَ–يَافِثُ | kor: 그리고–야벟, 그리고–야벳 | swa: na–Yafethi
+- **S103079** (2x) [Conj-w | N-proper-ms,N-proper-ms] | eng: and–Yapheth, Yepheth | spa: y–Yefet, Yefet | hin: याफेत, और–याफेत | arb: يافِث, وَ–يافِث | kor: 야벳, 그–와–야벳 | swa: na–Yafethi, Yafethi
+
+## H3316 (POS: Conj-w | N-proper-fs, "† <strong><span dir="rtl"><span class="lexicon-hebrew" dir="rtl">יִפְתָּח</span>", 30 occ, 3 senses)
+
+- **S103081** (28x) [N-proper-ms,Prep-l | N-proper-ms,Conj-w | N-proper-ms] | eng: Jephthah, to–Jephthah | spa: Yiftáj, a–Yiftáj | hin: यिप्तहने, यिप्तह | arb: يِفتاحُ, يِفتاحَ | kor: 입다가, 입다에게 | swa: Yeftha, na–Yeftha
+- **S103084** (1x) [Conj-w | N-proper-fs] | eng: and–Yiphtach | spa: y–Jiftá | hin: और–यिप्ताह | arb: وَ–يِفْتاحُ | kor: 그리고–입다 | swa: na–Ifta
+- **S103085** (1x) [N-proper-ms] | eng: Yiftach | spa: Yiftaj | hin: यिप्ताह | arb: يَفْتَاح | kor: 입다를 | swa: Yeftha
+
+## H3326a (POS: N-ms, "† <strong>[<span dir="rtl"><span class="lexicon-hebrew" dir="rtl">יָצוּעַ</span>", 8 occ, 3 senses)
+
+- **S103377** (4x) [N-mpc | 1cs,N-msc | 1cs] | eng: my–bed, couch–my | spa: mi–lecho, lecho–mío | hin: मेरे–बिछौने–पर, मेरा–बिस्तर | arb: فِرَاشِي, فِراشي | kor: 나의–침상을, 나의–자리를 | swa: mwili–yako, kulala–kwangu
+- **S103376** (3x) [N-ms,Art | N-ms] | eng: [the–side-chambers], [the–side-chamber] | spa: [la–cámara], [las–cámaras] | hin: कोठरी | arb: غُرَفًا, الـ–غُرْفَةُ | kor: [다락방을], [다락방의] | swa: juu–ya, ghorofa
+- **S103380** (1x) [N-mpc] | eng: couch-of | spa: lecho–de | hin: बिस्तरा | arb: فِراشَ | kor: 침상들–의 | swa: kitanda–cha
+
+## Response Format
+
+Return a JSON object with one key per lemma ID. Each value is an array of sense groups:
+
+```json
+{
+  "H3129": [
+    {"labelChirho": "short label", "descriptionChirho": "one sentence", "senseIdsChirho": [id1, id2, ...]}
+  ],
+  "H3147": [...]
+}
+```
+
+IMPORTANT: Return ONLY the JSON object. Every sense ID from every lemma must appear exactly once. Use the numeric sense IDs (without the S prefix).

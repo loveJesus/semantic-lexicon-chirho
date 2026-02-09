@@ -1,0 +1,73 @@
+You are a biblical lexicographer. For each lemma below, group the over-split sense clusters into REAL lexicographic senses.
+
+Rules:
+- Different grammatical inflections of the same meaning = SAME sense (merge them)
+- Different verb stems (Qal vs Hifil, active vs passive) = often DIFFERENT senses
+- Literal vs metaphorical uses = DIFFERENT senses
+- Every sense ID must appear in exactly one group
+- Output valid JSON array with labelChirho, descriptionChirho (150+ chars with multilingual evidence), senseIdsChirho
+
+## G3705 (POS: N-DNS, "<b> <span class="lexicon-greek">ὅρᾱμ-α</span></b>, <span class="lexicon-greek">α", 12 occ, 2 senses)
+
+- **S73266** (11x) [N-ANS,N-DNS,N-NNS,N-GNS] | eng: vision, a–vision | spa: visión | hin: दर्शन, दरशन | arb: رُؤْيَا, رُؤيا | kor: 환상을, 환상–에서 | swa: maono, ono
+- **S73267** (1x) [N-ANS] | eng: sight | spa: visión | hin: दर्शन–पर | arb: مَنْظَرِ | kor: 환상–을 | swa: ono
+
+## G3709 (POS: N-DFS, "<b> <span class="lexicon-greek">ὀργή</span></b>, ἡ, <br /> <b>natural impulse</b", 36 occ, 2 senses)
+
+- **S73322** (25x) [N-GFS,N-NFS,N-AFS,N-DFS] | eng: wrath, of-wrath | spa: ira, de–ira | hin: क्रोध, क्रोध–के | arb: الغَضَبِ, غَضَبُ | kor: 진노, 진노가 | swa: ghadhabu, ya–ghadhabu
+- **S73323** (11x) [N-NFS,N-AFS,N-GFS,N-DFS] | eng: anger, wrath | spa: ira | hin: क्रोध, क्रोध–में | arb: غَضَبِي, غَضَبٍ | kor: 진노에서, 진노–의 | swa: hasira, hasira,
+
+## G3725 (POS: N-DNP, "<b> <span class="lexicon-greek">ὅριον</span></b>, <span class="lexicon-greek">τό", 12 occ, 2 senses)
+
+- **S73354** (7x) [N-GNP,N-ANP] | eng: region, borders | spa: regiones, límites | hin: सीमाओं, हकलाने–वाला | arb: تُخُومِ, حُدودِهِم | kor: 지경, 지역 | swa: mipaka
+- **S73355** (5x) [N-ANP,N-DNP,N-GNP] | eng: regions | spa: límites, territorios | hin: सीमाओं–में, कशेत्र | arb: تُخُومِ, تُخُومِهَا | kor: 지역으로, 지역들–에 | swa: mipaka
+
+## G3727 (POS: N-DMS, "<b> <span class="lexicon-greek">ὅρκος</span></b>, ὁ, <br /> <b>the object by whi", 10 occ, 2 senses)
+
+- **S73359** (7x) [N-GMS,N-AMS,N-NMS,N-DMS] | eng: oath, an–oath | spa: juramento, con–juramento | hin: शपथ, शपथ–खाई | arb: قَسَمٍ, بِقَسَمٍ | kor: 에–관해, 맹세의 | swa: kiapo, kwa–kiapo
+- **S73360** (3x) [N-AMP] | eng: oaths | spa: juramentos | hin: साथ–में–बैठे–हुओं, शपथोन | arb: الأَقْسَامِ, الأَقْسامِ | kor: 맹세들, 맹세들과 | swa: viapo
+
+## G3741 (POS: Adj-ANP, "<b> <span class="lexicon-greek">ὅσι-ος</span></b>, <span class="lexicon-greek">α", 8 occ, 2 senses)
+
+- **S73444** (7x) [Adj-AFP,Adj-AMS,Adj-NMS,Adj-VMS] | eng: holy, Holy–One | spa: santo, Santo | hin: पवित्र, पवित्र, | arb: قُدّوسَ, قُدّوسٌ | kor: 거룩하신–이여, 또한 | swa: mtakatifu, Mtakatifu
+- **S73446** (1x) [Adj-ANP] | eng: holy–things | spa: santas | hin: पवित्र–वस्तुएं | arb: قُدسِيّاتِ | kor: 거룩한–것들을 | swa: matakatifu
+
+## Response Format
+
+Return a JSON object with one key per lemma ID. Each value is an array of sense groups:
+
+```json
+{
+  "G3543": [
+    {"labelChirho": "short label", "descriptionChirho": "one sentence", "senseIdsChirho": [id1, id2, ...]}
+  ],
+  "G3554": [...]
+}
+```
+
+IMPORTANT: Return ONLY the JSON object. Every sense ID from every lemma must appear exactly once. Use the numeric sense IDs (without the S prefix).
+
+## G3744 (POS: N-AFS, "<b> <span class="lexicon-greek">ὀσμ-ή</span></b>, ἡ, <br /> <i>Attic dialect</i>", 6 occ, 2 senses)
+
+- **S73449** (5x) [N-AFS,N-NFS] | eng: smell, fragrance | spa: olor | hin: सुगंध, सुगनध | arb: رائِحَةُ, رائِحَةَ | kor: 냄새, 향기를 | swa: harufu
+- **S73450** (1x) [N-GFS] | eng: fragrance | spa: fragancia | hin: सुगंध | arb: رَائِحَةِ | kor: 향기로 | swa: harufu
+
+## G3757 (POS: Adv, "<b> <span class="lexicon-greek">οὗ</span></b>, <br /> <i>genitive</i> of <i>rela", 20 occ, 2 senses)
+
+- **S73513** (19x) [Adv] | eng: where | spa: donde | hin: जहाँ, जहां | arb: حَيْثُ, حَيثُ | kor: 거기에서, 그곳에 | swa: ambapo, ambako
+- **S73514** (1x) [Adv] | eng: wherever | spa: a–donde | hin: जहाँ | arb: حَيْثُمَا | kor: –곳으로 | swa: popote
+
+## G3775 (POS: N-NNS, "<b> <span class="lexicon-greek">οὖς</span></b> <br /> (<i>nominative</i> <i>sing", 37 occ, 2 senses)
+
+- **S73578** (24x) [N-ANP,N-DNP,N-NNP] | eng: ears | spa: oídos | hin: कान, कानों | arb: آذَانِ, آذَانٌ | kor: 귀를, 귀로 | swa: masikio, masikioni
+- **S73579** (13x) [N-ANS,N-NNS] | eng: an–ear, ear | spa: oído, oreja | hin: कान,, कान | arb: أُذُنٌ, أُذُنِ | kor: 귀–를, 귀를 | swa: sikio,, sikio
+
+## G3777 (POS: Conj, "<b> <span class="lexicon-greek">οὔτε</span></b>, <br /> <i>adverb</i>, (<span cl", 87 occ, 2 senses)
+
+- **S73581** (83x) [Conj] | eng: nor–, neither | spa: ni, tampoco | hin: न, न–ही | arb: وَلا, وَلَا | kor: 아니, ~도–아니고 | swa: wala, wala–
+- **S73582** (4x) [Conj] | eng: Neither | spa: Ni | hin: न, नहीं | arb: لَا, لا | kor: –도–아니다, 알지-못한다 | swa: Wala, Sijui
+
+## G3781 (POS: N-NMP, "<b> <span class="lexicon-greek">ὀφειλ-έτης</span></b>, <span class="lexicon-gree", 7 occ, 2 senses)
+
+- **S73626** (4x) [N-NMP,N-DMP] | eng: debtors | spa: deudores | hin: कर्जदार, अपराधी | arb: مَدِينُونَ, مُذْنِبُونَ | kor: 우리–에게–빚진–자들, 빚진–자이라 | swa: wadeni, wadaiwa
+- **S73625** (3x) [N-NMS] | eng: debtor, a-debtor | spa: deudor | hin: करज़दर, करज़दअर | arb: مُلزَمٌ, مَدِينٌ | kor: 빚진–자, 빚진–자로 | swa: mdaiwa, mdeni

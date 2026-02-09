@@ -1,0 +1,83 @@
+You are a biblical lexicographer. For each lemma below, group the over-split sense clusters into REAL lexicographic senses.
+
+Rules:
+- Different grammatical inflections of the same meaning = SAME sense (merge them)
+- Different verb stems (Qal vs Hifil, active vs passive) = often DIFFERENT senses
+- Literal vs metaphorical uses = DIFFERENT senses
+- Every sense ID must appear in exactly one group
+- Output valid JSON array with labelChirho, descriptionChirho (150+ chars with multilingual evidence), senseIdsChirho
+
+## H0347 (POS: Prep-k | N-proper-ms, "<strong><span dir="rtl"><span class="lexicon-hebrew" dir="rtl">אִיּוֹב</span></s", 58 occ, 3 senses)
+
+- **S81576** (56x) [N-proper-ms,Conj-w | N-proper-ms,Prep-l | N-proper-ms] | eng: Iyyov, Job | spa: Job, Iyov | hin: अय्यूब, अय्यूब–ने | arb: أَيُّوبُ, أَيُّوبَ | kor: 욥이, 욥의 | swa: Ayubu, wa–Ayubu
+- **S81579** (1x) [Prep-b | N-proper-ms] | eng: against–Job | spa: contra–Iyov | hin: अय्यूब–पर | arb: بِ–أَيّوبَ | kor: 욥–을–향해 | swa: kwa–Ayubu
+- **S81580** (1x) [Prep-k | N-proper-ms] | eng: like–Job | spa: como–Iyov | hin: अय्यूब–की–तरह | arb: كَ–أَيّوبَ | kor: 욥–같으냐 | swa: kama–Ayubu
+
+## H0378 (POS: N-proper-ms, "† <strong><span dir="rtl"><span class="lexicon-hebrew" dir="rtl">אִישׁ־בֹ֫שֶׁת</", 22 occ, 3 senses)
+
+- **S81882** (11x) [N-proper-ms,Conj-w, Prep | N-proper-ms] | eng: Boshet | spa: Boshet | hin: (ईशबोशेत) | arb: إِيشْبُوشَثَ, إِيشْبُوشَثُ | kor: 보셋의, [수치] | swa: Boshethi, Bosheth
+- **S81883** (10x) [] | eng: Ish | spa: Ish | hin: ईश–बोशेत–के, ईश–बोशेत–का | arb: إِيشْبُوشَثَ, إِيشْبُوشَثُ | kor: 이시-, 이시–보셛의 | swa: Ish, wa–Ish
+- **S81884** (1x) [] | eng: and–for–Ish | spa: y–para–Ish | hin: और–के–लिए–ईश–बोशेत | arb: وَلِ–إِيشْبُوشَثَ | kor: 그리고–에게–이시–보셛 | swa: na–kwa–Ish
+
+## H0380 (POS: Prep-b | N-msc, "† <strong><span dir="rtl"><span class="lexicon-hebrew" dir="rtl">אִישׁוֹן</span>", 6 occ, 3 senses)
+
+- **S81886** (3x) [Prep-k | N-msc] | eng: as–the–apple–of, like–pupil-of | spa: como–pupila–de, como–la–niña–de | hin: पुतली–की–तरह, जैसे–पुतली– | arb: كَحَدَقَةِ, كَـ–حَدَقَةِ | kor: 눈동자–처럼, 눈동자–같이 | swa: kama–mboni–ya
+- **S81888** (2x) [Prep-b | N-msc,Prep-b | N-ms] | eng: [in–blackest], (in–blackest) | spa: [en–la–pupila], (en–lo–oscuro–de) | hin: [अंधकार–में], (अंधकार–में) | arb: [فيحين], (في–حَيْنِ) | kor: [어둬움–의–눈동자–에], (어둬움–의–눈동자–에) | swa: katika–giza
+- **S81890** (1x) [Prep-b | N-msc] | eng: in–the–blackness–of | spa: en–oscuridad–de | hin: अंधेरे–में | arb: فِي–سَوَادِ | kor: 눈동자–에 | swa: katika–giza–la
+
+## Response Format
+
+Return a JSON object with one key per lemma ID. Each value is an array of sense groups:
+
+```json
+{
+  "H0224": [
+    {"labelChirho": "short label", "descriptionChirho": "one sentence", "senseIdsChirho": [id1, id2, ...]}
+  ],
+  "H0226": [...]
+}
+```
+
+IMPORTANT: Return ONLY the JSON object. Every sense ID from every lemma must appear exactly once. Use the numeric sense IDs (without the S prefix).
+
+## H0387 (POS: N-proper-ms, "† II. <strong><span dir="rtl"><span class="lexicon-hebrew" dir="rtl">אֵיתָן</spa", 8 occ, 3 senses)
+
+- **S81916** (6x) [N-proper-ms,Conj-w | N-proper-ms] | eng: Eitan, and–Ethan | spa: Etan, y–Etán | hin: एतान, और–एतान | arb: إيثان, وَ–إِيثَانُ | kor: 에단, 그–와–에단 | swa: Ethani, na–Ethani
+- **S81918** (1x) [Prep-l | N-proper-ms] | eng: of–Ethan | spa: de–Eitan | hin: के–लिए–एतान | arb: لِإيثَانَ | kor: 에단–의 | swa: ya–Ethani
+- **S81919** (1x) [Prep-m | N-proper-ms] | eng: than–Ethan | spa: que–Eitán | hin: एतान–से | arb: مِنْ–إِيثَانَ | kor: 에단보다 | swa: kuliko–Ethani
+
+## H0403 (POS: Adv, "† <strong><strong><span dir="rtl"><span class="lexicon-hebrew" dir="rtl">אָכֵן</", 18 occ, 3 senses)
+
+- **S82168** (16x) [Adv] | eng: surely, Surely | spa: Ciertamente, ciertamente | hin: सचमुच, निश्चय–ही | arb: حَقًّا, حَقّاً | kor: 참으로, 확실히 | swa: hakika, kweli
+- **S82170** (1x) [Adv] | eng: but | spa: pero | hin: परन्तु | arb: لٰكِنْ | kor: 참으로 | swa: kwa–kweli
+- **S82171** (1x) [Adv] | eng: nevertheless | spa: Sin-embargo | hin: परन्तु | arb: لٰكِنْ | kor: 그러나–정녕 | swa: Lakini
+
+## H0406 (POS: N-ms, "† <strong><span dir="rtl"><span class="lexicon-hebrew" dir="rtl">אִכָּר</span></", 7 occ, 3 senses)
+
+- **S82177** (4x) [N-mp] | eng: farmers, plowmen | spa: labradores | hin: किसान, किसानो | arb: فَلَّاحُونَ, الْفَلَّاحُونَ | kor: 농부들이, 농부들과 | swa: wakulima
+- **S82178** (2x) [N-ms] | eng: farmer | spa: labrador, al–labrador | hin: किसान–को, किसान | arb: فَلَّاحًا, الفَلّاحَ | kor: 농부와, 농부를 | swa: mkulima
+- **S82179** (1x) [N-mpc | 2mp] | eng: your–farmers | spa: vuestros–labradores | hin: तुम्हारी–दाख–बारियों–को | arb: فَلَّاحُوكُمْ | kor: 너희의–농부들과 | swa: wakulima–wenu
+
+## H0436 (POS: N-ms, "† I. <strong><span dir="rtl"><span class="lexicon-hebrew" dir="rtl">אֵלוֹן</span", 9 occ, 3 senses)
+
+- **S82513** (5x) [N-msc,N-ms] | eng: oak-of, –the-oak-of | spa: encina–de | hin: बलूत, बाँज–के | arb: بَلُّوطَة, بَلّوطَةِ | kor: 상수리나무, 상수리나무– | swa: mwaloni–wa, mwaloni
+- **S82514** (3x) [Prep-b | N-mpc] | eng: in–oaks-of, by–oaks-of | spa: en–encinas–de | hin: बलुत–के–पेध, बलुत–के–पेध–मे | arb: عِنْدَ–بَلُّوطَاتِ, فِي–بَلُوطَاتِ | kor: 상수리나무들에서 | swa: katika–mialoni–ya
+- **S82515** (1x) [N-mpc] | eng: oaks-of | spa: los–robles–de | hin: बलूतों–के | arb: بَلُوطَاتِ | kor: 상수리나무들 | swa: mialoni–ya
+
+## H0452 (POS: N-proper-ms, "<strong><span dir="rtl"><span class="lexicon-hebrew" dir="rtl">אֵלִיָּה</span></", 71 occ, 3 senses)
+
+- **S82553** (67x) [N-proper-ms,Conj-w | N-proper-ms] | eng: Eliyahu, Elijah | spa: Elías, Eliyahu | hin: एलिय्याहू, एलिय्याहू–ने | arb: إيلِيّا, إِيلِيَّا | kor: 엘리야, 엘리야가 | swa: Eliya, na–Eliya
+- **S82554** (3x) [Conj-w | N-proper-ms] | eng: and–Eliyah | spa: y–Eliyah, y–Elías | hin: और–एलिय्याह, और–एलीय्याह | arb: وَ–إِيلِيَّا, وَإِيلِيَّا | kor: 그리고-엘리야와, 그리고-엘리야 | swa: na–Eliya
+- **S82557** (1x) [Prep-m | N-proper-ms] | eng: from–Eliyahu | spa: de–Elías | hin: एलिय्याहूसे– | arb: مِنْ–إِيلِيَا | kor: 로부터–엘리야 | swa: kutoka–kwa–Eliya
+
+## H0454b (POS: Conj-w | N-proper-ms, "† <strong><span dir="rtl"><span class="lexicon-hebrew" dir="rtl">אֶלְיוֹעֵינַי</", 7 occ, 3 senses)
+
+- **S82563** (3x) [N-proper-ms] | eng: Elyo'enai, Elyoeynai | spa: Elyoenay, Eliohenai | hin: एल्योएनै | arb: أَليوعيناي | kor: 엘료에내의, 엘료에내와 | swa: Elioenai, Elyoenai
+- **S82564** (2x) [Conj-w | N-proper-ms] | eng: and–Elyoenai, and–Elyo'enai | spa: y–Elyoenai, Y–Elyoenay | hin: और–एल्योएनै | arb: وَ–أَليوعيناي | kor: 그리고–엘리엘나이, 그–와–엘요에나이 | swa: na–Elioenai, Na–Elioenai
+- **S82565** (2x) [N-proper-ms] | eng: Elyoenay | spa: Elyoenai, Elyoeinai | hin: एल्योएनै | arb: أَلِيُوعِينَايُ | kor: 엘리오에나이와 | swa: Eliehoenai
+
+## H0467 (POS: Conj-w | N-proper-ms, "† <strong><span dir="rtl"><span class="lexicon-hebrew" dir="rtl">אֱלִיפֶ֫לֶט</sp", 9 occ, 3 senses)
+
+- **S82597** (5x) [Conj-w | N-proper-ms] | eng: and–Eliphalet, and–Elifelet | spa: y–Elifelet, y–Elifélet | hin: और–एलीपेलेत | arb: وَ–أَليفالِط, وَ–أَلِيفَلَطُ | kor: 엘리벨렛이니라, 엘리벨렛이니 | swa: na–Elifeleti
+- **S82598** (3x) [N-proper-ms] | eng: Eliphelet | spa: Elifelet | hin: एलीपेलेत | arb: أَلِيفَلِطُ, أَلِيفَلَطُ | kor: 엘리페렛, 엘리벨렛과 | swa: Elifeleti
+- **S82599** (1x) [Conj-w | N-proper-ms] | eng: and–Elpalet | spa: y–Elpelet | hin: और–एल्पेलेत | arb: وَ–أَلْفَلَطُ | kor: 그–와–엘발렛 | swa: na–Elpaleti

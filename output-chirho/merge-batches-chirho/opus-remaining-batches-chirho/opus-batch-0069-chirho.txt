@@ -1,0 +1,83 @@
+You are a biblical lexicographer. For each lemma below, group the over-split sense clusters into REAL lexicographic senses.
+
+Rules:
+- Different grammatical inflections of the same meaning = SAME sense (merge them)
+- Different verb stems (Qal vs Hifil, active vs passive) = often DIFFERENT senses
+- Literal vs metaphorical uses = DIFFERENT senses
+- Every sense ID must appear in exactly one group
+- Output valid JSON array with labelChirho, descriptionChirho (150+ chars with multilingual evidence), senseIdsChirho
+
+## H5617 (POS: N-proper-mp, "† <strong><span dir="rtl"><span class="lexicon-hebrew" dir="rtl">סְפַרְוַ֫יִם</s", 7 occ, 3 senses)
+
+- **S121331** (5x) [N-proper-fs,N-proper-mp] | eng: Sepharvaim, of–Sepharvaim | spa: Sefarvaim, de–Sefarvaim? | hin: सफरवायिम, सपरवायिम–के | arb: سَفَرْوَايِمَ, (سَفَرْوَايِمَ) | kor: 스바르와임의, 스발완임과 | swa: ya–Sefarvaimu, wa–Sefarvaimu
+- **S121334** (1x) [N-proper-mp] | eng: [Sepharim] | spa: [K] | hin: [सफरिम] | arb: [سَفَرْوَايِمَ] | kor: [스발와임] | swa: [k]
+- **S121335** (1x) [Conj-w | N-proper-fs] | eng: and–Sepharvaim | spa: y–de–Sefarvaim | hin: और–सफरवायिम | arb: وَسَفَرْوَايِمَ | kor: 그리고–스발와임에서 | swa: na–Sefarvaimu
+
+## H5663 (POS: N-proper-ms, "† <strong><span dir="rtl"><span class="lexicon-hebrew" dir="rtl">עֶ֫בֶד מֶ֫לֶךְ<", 11 occ, 3 senses)
+
+- **S121884** (5x) [N-proper-ms] | eng: Melekh | spa: el–etíope, de–casa–de | hin: मेलेक, मेलेक–ने | arb: مَلِكِ | kor: 왕의 | swa: Meleki
+- **S121885** (5x) [] | eng: Eved | spa: Eved–Melej | hin: एबेद– | arb: عَبْدُ, عَبْدَ | kor: 종– | swa: Ebed
+- **S121886** (1x) [Prep | N-proper-ms] | eng: to–Eved–Melekh | spa: a–Eved–Melekh | hin: को–एबेद–मेलेक | arb: لِ–عَبْدِ–مَلِكِ | kor: 에게–에뿠–멜렉 | swa: Ebed–Meleki
+
+## Response Format
+
+Return a JSON object with one key per lemma ID. Each value is an array of sense groups:
+
+```json
+{
+  "H5401a": [
+    {"labelChirho": "short label", "descriptionChirho": "one sentence", "senseIdsChirho": [id1, id2, ...]}
+  ],
+  "H5410a": [...]
+}
+```
+
+IMPORTANT: Return ONLY the JSON object. Every sense ID from every lemma must appear exactly once. Use the numeric sense IDs (without the S prefix).
+
+## H5673 (POS: N-fsd, "† <strong>[<span dir="rtl"><span class="lexicon-hebrew" dir="rtl">עֲבִידָה</span", 6 occ, 3 senses)
+
+- **S121920** (3x) [N-fsc,Prep-l | N-fsc] | eng: work–of, the–work–of | spa: obra–de, la–obra–de | hin: सेवा, काम–को | arb: عَمَل–, عَمَلُ | kor: 일, 에–그–일 | swa: kazi, huduma
+- **S121921** (2x) [N-fsd,N-fsc] | eng: administration-of | spa: los–asuntos–de | hin: कार्यों | arb: أَعْمَالِ | kor: 일들의 | swa: kazi–za, kazi–ya
+- **S121923** (1x) [Conj-w | N-fsd] | eng: and–work | spa: y–obra | hin: और–काम | arb: وَ–العَمَل– | kor: 그리고–그–일 | swa: na–kazi
+
+## H5677 (POS: Conj-w | N-proper-ms, "† II. <strong><span dir="rtl"><span class="lexicon-hebrew" dir="rtl">עֵ֫בֶר</spa", 15 occ, 3 senses)
+
+- **S122280** (7x) [N-proper-ms] | eng: Eber | spa: Heber, Éver | hin: एवेर, एबेर–को | arb: عَابِرَ, عَابِرُ | kor: 에벨, 에베는 | swa: Eberi
+- **S122281** (7x) [N-proper-ms,Conj-w | N-proper-ms,Conj-w, Prep-l | N-proper-m] | eng: Ever, and–Ever | spa: Éber, Eber | hin: एबेर, और–एबेर | arb: عابِر, وَ–لِـ–عابِر | kor: 에벨, 그–와–에벨 | swa: Eberi, na–Eberi
+- **S122283** (1x) [Conj-w, Prep-l | N-proper-ms] | eng: and–to–Eber | spa: Y–a–Éver | hin: और-एबेर-को | arb: وَ–لِ–عَابِرَ | kor: 그리고–에벨에게 | swa: Na–kwa–Eberi
+
+## H5692 (POS: N-fs, "† <strong><span dir="rtl"><span class="lexicon-hebrew" dir="rtl">עֻגָה</span></s", 7 occ, 3 senses)
+
+- **S122350** (3x) [N-fp] | eng: cakes, cakes-of | spa: tortas, tortas–de– | hin: रोतियो, रोटियां | arb: أَقْرَاصًا, أَقْرَاصَ | kor: 빵들을, 떡들을 | swa: mikate
+- **S122352** (3x) [N-fs,N-fsc] | eng: cake, cake-of | spa: una–torta, torta–de | hin: रोटी | arb: كَعْكَةُ, كَعْكَةً | kor: 떡이, 떡–의 | swa: mkate–wa, mkate–mdogo
+- **S122351** (1x) [Conj-w | N-fsc] | eng: and–cake-of | spa: Y–torta–de | hin: और–रोटी | arb: وَ–كَعْكَةَ | kor: 그리고–과자를 | swa: na–mkate
+
+## H5714 (POS: Conj-w | N-proper-ms, "† <strong><span dir="rtl"><span class="lexicon-hebrew" dir="rtl">עִדּוֹ</span></", 11 occ, 3 senses)
+
+- **S122520** (9x) [N-proper-ms,Prep-l | N-proper-ms] | eng: Iddo, to–Iddo | spa: Ido, Idó | hin: इद्दो, इद्दो–के | arb: عِدُّو, عِدّو | kor: 잇도, 잇도의 | swa: Ido, (kwa–Ido)
+- **S122521** (1x) [Conj-w | N-proper-ms] | eng: and–Iddo | spa: y–Idó | hin: के–वचनों–में | arb: وَعِدّو | kor: 그리고–잇도–의 | swa: na–Ido
+- **S122522** (1x) [Prep-l | N-proper-ms] | eng: [to–Adya] | spa: [De–Idó] | arb: [لِ–عَدّايا] | kor: [크티브] | swa: [kwa–Ido]
+
+## H5777 (POS: Prep-k, "† <strong><span dir="rtl"><span class="lexicon-hebrew" dir="rtl">עֹפֶרֶת</span><", 9 occ, 3 senses)
+
+- **S123002** (4x) [Conj-w | N-fs] | eng: and–lead | spa: y–plomo, y–plomo, | hin: और–सीसा, और–सीसे–से | arb: وَرَصَاصٍ, وَ–رَصَاصٍ | kor: 그리고–납, 그리고–납으로 | swa: na–risasi
+- **S123003** (4x) [N-fs,Art | N-fs] | eng: the–lead, lead | spa: plomo | hin: सीसे–का, सीसा | arb: رَصَاصٍ, رَصَاصٌ | kor: 납이, 납의 | swa: risasi–hiyo, risasi
+- **S123006** (1x) [Prep-k, Art | N-fs] | eng: like–the–lead | spa: como–plomo | hin: सीसे–की–तरह | arb: كَ–الرَّصَاصِ | kor: 납–같이 | swa: kama–risasi
+
+## H5780 (POS: N-proper-fs, "† <strong><span dir="rtl"><span class="lexicon-hebrew" dir="rtl">עוּץ</span></sp", 8 occ, 3 senses)
+
+- **S123010** (4x) [N-proper-ms,N-proper-fs,Conj-w | N-proper-ms] | eng: Uts, of–Uts | spa: Uz, y–Uts | hin: और–ऊज़, ऊस | arb: عُوصَ, وَ–عوص | kor: 우스, 우스–의 | swa: ya–Usi, na–Usi
+- **S123011** (3x) [N-proper-ms] | eng: Uz | spa: Uts, Utz | hin: ऊज़, ऊज | arb: عُوصُ, عُوصَ | kor: 우스, 우스와 | swa: Usi, Utsi
+- **S123012** (1x) [Art | N-proper-fs] | eng: Utz | spa: Uts | hin: ऊस–के | arb: عُوصَ | kor: 우스의 | swa: Usi
+
+## H5820 (POS: Conj-w | N-proper-ms, "† I. <strong><span dir="rtl"><span class="lexicon-hebrew" dir="rtl">עַזְמָ֫וֶת</", 8 occ, 3 senses)
+
+- **S123389** (6x) [N-proper-ms] | eng: Azmavet, Azmaveth | spa: Azmávet, Azmavet | hin: अज्मावेत, अज़्मावेत–के | arb: عَزْمَاوَت, عَزْمَاوَتُ | kor: 아스마웻, 아스마볳 | swa: Azmavethi, Azmawethi
+- **S123390** (1x) [Conj-w | N-proper-ms] | eng: and–Azmavet | spa: y–Azmavet | hin: और–अज्मावेत–के | arb: وَ–عَزموَتَ | kor: 그리고–아스마벳의 | swa: na–Azmawethi
+- **S123391** (1x) [N-proper-ms] | eng: Azmaveth | spa: Azmavet | hin: अज्मावेत | arb: عَزْمَاوَتُ | kor: 아즈마벳 | swa: Azmavethi
+
+## H5867a (POS: N-proper-fs, "† I. <strong><span dir="rtl"><span class="lexicon-hebrew" dir="rtl">עֵילָם</span", 17 occ, 3 senses)
+
+- **S123588** (14x) [N-proper-fs,Prep-b | N-proper-fs] | eng: Elam, Eylam | spa: Elam, en–Elam | hin: एलाम, में–एलाम | arb: عِيلَامَ, فِي–عِيلَامَ | kor: 엘람의, 엘람을 | swa: Elamu, katika–Elamu
+- **S123590** (2x) [Conj-w | N-proper-fs,Conj-w, Prep-m | N-proper-fs] | eng: and–from–Elam, and–Elam | spa: y-de-Elam, Y–Elam | hin: और–एलाम–से, और–एलाम–ने | arb: وَ–مِنْ–عِيلَامَ, وَعِيلَامُ | kor: 엘람–에서, 그리고–엘람이 | swa: na-kutoka-Elamu, Na–Elamu
+- **S123592** (1x) [N-proper-fs] | eng: [ketiv:forever] | spa: [kethiv] | arb: [عَولَم] | kor: [영원한] | swa: [milele]

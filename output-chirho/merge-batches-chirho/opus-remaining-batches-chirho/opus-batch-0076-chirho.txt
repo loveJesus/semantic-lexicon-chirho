@@ -1,0 +1,83 @@
+You are a biblical lexicographer. For each lemma below, group the over-split sense clusters into REAL lexicographic senses.
+
+Rules:
+- Different grammatical inflections of the same meaning = SAME sense (merge them)
+- Different verb stems (Qal vs Hifil, active vs passive) = often DIFFERENT senses
+- Literal vs metaphorical uses = DIFFERENT senses
+- Every sense ID must appear in exactly one group
+- Output valid JSON array with labelChirho, descriptionChirho (150+ chars with multilingual evidence), senseIdsChirho
+
+## H7336 (POS: Conj-w | V-Qal-Prtcpl-mp, "† <strong><strong>[<span dir="rtl"><span class="lexicon-hebrew" dir="rtl">רָזַן<", 6 occ, 3 senses)
+
+- **S135365** (3x) [Conj-w | V-Qal-Prtcpl-mp] | eng: and–rulers | spa: y–gobernantes, y–príncipes | hin: और–शासक | arb: وَ–الْرُؤَسَاءُ, وَ–الرُّؤَساءُ | kor: 그리고–지도자–들–이, 그리고–방백–들은 | swa: na–watawala
+- **S135367** (2x) [V-Qal-Prtcpl-mp] | eng: rulers, O–rulers | spa: príncipes, a–príncipes | hin: शासकों, शासको | arb: الرُّؤَسَاءَ, أَيُّها–الرُّؤَساءُ | kor: 귀인들을, 군주들아 | swa: watawala
+- **S135366** (1x) [Conj-w, Prep-l | V-Qal-Prtcpl-] | eng: and–for–rulers | spa: ni–para–príncipes | hin: और–हाकिमों–के–लिए | arb: وَ–لِ–الرُّؤَساءِ | kor: 그리고–통치자들에게 | swa: na–kwa–wakuu
+
+## H7354 (POS: Prep-b | N-proper-fs, "II. <strong><span dir="rtl"><span class="lexicon-hebrew" dir="rtl">רָחֵל</span><", 47 occ, 3 senses)
+
+- **S135489** (41x) [N-proper-fs,Prep-l | N-proper-fs,Prep-b | N-proper-fs] | eng: Rachel, to–Rachel | spa: Rajel, a–Rajel | hin: राहेल, राहेल–ने | arb: رَاحِيلُ, رَاحِيلَ | kor: 라헬이, 라헬의 | swa: Raheli, kwa–Raheli
+- **S135490** (5x) [Conj-w | N-proper-fs] | eng: and–Rachel | spa: y–Rajel, Y–Rajel | hin: और–राहेल, और–राहेल–ने | arb: وَرَاحِيلُ, وَ–راحِيلُ | kor: 그리고–라헬은, 그리고–라헬이 | swa: na–Raheli, Raheli
+- **S135494** (1x) [Prep-k | N-proper-fs] | eng: like–Rachel | spa: como–Raquel | hin: राहेल | arb: كَ–رَاحِيلَ | kor: 라헬처럼 | swa: kama–Raheli
+
+## H7387 (POS: Adv, "† <strong><span dir="rtl"><span class="lexicon-hebrew" dir="rtl">רֵיקָם</span></", 16 occ, 3 senses)
+
+- **S135812** (13x) [Adv] | eng: empty, empty-handed | spa: vacío, vacía | hin: खाली, खाली–हाथ | arb: فَارِغًا, فَارِغَةً | kor: 빈손으로, 빈–손으로 | swa: mikono–mitupu, tupu
+- **S135814** (2x) [Adv] | eng: without–cause | spa: sin–causa | hin: व्यर्थ, बिना–कारण | arb: فَارِغِينَ, فَارِغًا | kor: 헛되이, 까닭없이 | swa: bure
+- **S135815** (1x) [Conj-w | Adv] | eng: and–empty | spa: y–vacía | hin: और–खाली | arb: وَ–فَارِغَةً | kor: 그리고–비어서 | swa: na–tupu
+
+## Response Format
+
+Return a JSON object with one key per lemma ID. Each value is an array of sense groups:
+
+```json
+{
+  "H7225": [
+    {"labelChirho": "short label", "descriptionChirho": "one sentence", "senseIdsChirho": [id1, id2, ...]}
+  ],
+  "H7236": [...]
+}
+```
+
+IMPORTANT: Return ONLY the JSON object. Every sense ID from every lemma must appear exactly once. Use the numeric sense IDs (without the S prefix).
+
+## H7394 (POS: N-proper-ms, "† <strong><span dir="rtl"><span class="lexicon-hebrew" dir="rtl">רֵכָב</span></s", 13 occ, 3 senses)
+
+- **S135930** (5x) [N-proper-ms] | eng: Rekhav | spa: Rejav | hin: रेकाब | arb: رِيكَابَ | kor: 레가의 | swa: Rekabu
+- **S135931** (4x) [N-proper-ms,Conj-w | N-proper-ms] | eng: Rekab, and–Rekab | spa: Rekav, y–Rekav | hin: रेकाब, और–रेकाब | arb: رِيكَابُ, وَرِيكَابُ | kor: 레걋이라, 레걋과 | swa: Rekabu, na–Rekabu
+- **S135932** (4x) [N-proper-ms] | eng: Rechab, Rekhav | spa: Recab | hin: रेखाव, रेकाब–के | arb: رِيكَابَ, رِكاب | kor: 레갑–의, 레건–의 | swa: Rekabu
+
+## H7468 (POS: Prep-l | N-fsc | 3fs, "† I. <strong><span dir="rtl"><span class="lexicon-hebrew" dir="rtl">רְעוּת</span", 6 occ, 3 senses)
+
+- **S136593** (3x) [N-fsc | 3fs] | eng: her–neighbor, her-neighbor | spa: su–prójima, su–compañera | hin: साथी–उसकी–का, सखी–अपनी–को | arb: صَاحِبَتِهَا, صَاحِبَتَهَا | kor: 그의–동료의, 그녀의–이웃에게 | swa: jirani–yake, mwenzake
+- **S136592** (2x) [N-fsc | 3fs] | eng: with–her–mate, shall–lack | spa: su–compañera, con–su–compañera | hin: उसकी–साथी–से, उसकी–साथी–को | arb: مَعَ–صَاحِبَتِهَا, صَاحِبَتَهَا | kor: 그–동료와, 그–동료를 | swa: na–mwenzake, mwenzake
+- **S136594** (1x) [Prep-l | N-fsc | 3fs] | eng: to–her-companion | spa: a–su–compañera | hin: दूसरी–को | arb: لِ–قَرِينَتِهَا | kor: 그녀의–동료에게 | swa: kuliko-yeye
+
+## H7476 (POS: Conj-w | N-mpc, "† <strong>[<span dir="rtl"><span class="lexicon-hebrew" dir="rtl">רַעְיוֹן</span", 6 occ, 3 senses)
+
+- **S136611** (3x) [Conj-w | N-mpc | 3ms,Conj-w | N-mpc] | eng: and–his-thoughts, and–thoughts-of | spa: y–sus–pensamientos, y–los–pensamientos–de | hin: और–उसके–विचार, और–विचार | arb: وَ–أَفْكَارُهُ, وَ–أَفْكَارَ | kor: 그리고–생각들을, 그리고–그–의–생각들–이 | swa: na–mawazo–yake, na–mawazo–ya
+- **S136612** (2x) [N-msc | 2ms] | eng: your-thoughts | spa: tus–pensamientos | hin: तेरे–विचार | arb: أَفْكَارُ–كَ, أَفْكَارُكَ | kor: 생각들이–당신의, 당신–의–생각들–을 | swa: mawazo–yako
+- **S136614** (1x) [N-mpc | 1cs] | eng: my-thoughts | spa: pensamientos–de–mí | hin: मेरे–विचार | arb: أَفْكَارِي | kor: 나의–생각들이 | swa: mawazo–yangu
+
+## H7497b (POS: Art | N-proper-mp, "† II. <strong><span dir="rtl"><span class="lexicon-hebrew" dir="rtl">רְפָאִים</s", 19 occ, 3 senses)
+
+- **S136821** (12x) [N-proper-mp,N-proper-ms] | eng: Rephaim | spa: Refaim, refaim | hin: रपाईम–की, रपाईम | arb: رَفَائِيمَ, رَفَائِيُّونَ | kor: 르바임의, 르바임–의 | swa: Refaimu, Warefai
+- **S136823** (6x) [Art | N-proper-mp,N-proper-mp] | eng: the–Rephaim | spa: los–refaítas, los–refaitas | hin: रपाईम, रेफ़ैम | arb: الرَّفَائِيِّينَ, الرَّفائيمَ | kor: 그–르바임의, 르바임을 | swa: Warefaimu, Warefai
+- **S136825** (1x) [Conj-w, Art | N-proper-mp] | eng: and–the–Rephaim | spa: y–el–refaíta | hin: और–रपाईम | arb: وَ–الرَّفائيمَ | kor: 그리고–르바임의 | swa: na–ha–Warefai
+
+## H7535 (POS: Conj-w | Adv, "<strong><span dir="rtl"><span class="lexicon-hebrew" dir="rtl">רַק</span></span>", 109 occ, 3 senses)
+
+- **S137025** (106x) [Adv,Conj-w | Adv] | eng: only, only– | spa: solo, Solo | hin: केवल, केवल– | arb: فَقَطْ, فَقَط | kor: 오직, 다만 | swa: tu, lakini
+- **S137028** (2x) [Adv] | eng: surely | spa: ciertamente, Ciertamente | hin: बस, और–कहेंगे | arb: فَقَطْ | kor: 오직 | swa: hakika
+- **S137030** (1x) [Adv] | eng: except | spa: solo | hin: केवल | arb: إِلَّا | kor: 오직 | swa: ila
+
+## H7550 (POS: Conj-w | N-msc, "† <strong><span dir="rtl"><span class="lexicon-hebrew" dir="rtl">רָקִיק</span></", 8 occ, 3 senses)
+
+- **S137066** (5x) [Conj-w | N-mpc,Conj-w, Prep-l | N-mpc] | eng: and–wafers-of, and–wafers–of | spa: y–hojuelas-de, y–para–hojuelas–de | hin: और–पूरी, और–पपड़ी | arb: وَ–رَقَائِقَ, وَ–لِلرَّقَائِقِ | kor: 그리고–전병들, 그리고–에–얇은–과자들–의 | swa: na–mikate–myembamba, na–maandazi
+- **S137067** (2x) [Conj-w | N-ms] | eng: and–wafer, and–a–wafer | spa: y–hojuela, y-hojuela | hin: और–पपड़ी, और–पतली–रोटी | arb: وَ–رَقَاقَةً, وَ–رَقيقاً | kor: 그리고–얇은–빵을, 그리고–얇은–병을 | swa: na–mkate–mwembamba, na–andazi
+- **S137070** (1x) [Conj-w | N-msc] | eng: and–wafer-of | spa: y–hojaldre–de | hin: और–पपड़ी | arb: وَ–رَقِيقَةَ | kor: 그리고–전병 | swa: Urkik
+
+## H7582 (POS: V-Qal-Perf-3cp, "† I. <strong><strong>[<span dir="rtl"><span class="lexicon-hebrew" dir="rtl">שָׁ", 6 occ, 3 senses)
+
+- **S137269** (2x) [V-Nifal-Imperf-3mp | Pn] | eng: they-roar | spa: braman | hin: गरजती–हैं, गरजता–है | arb: تَضِجُّ | kor: 소란하도다, 소란하나 | swa: yanayovuma, wanavuma
+- **S137270** (2x) [V-Qal-Perf-3cp,V-Nifal-Imperf-3fs] | eng: is-laid-waste, are-laid-waste | spa: sean-devastadas, quede-desolada | hin: उजड़–जाएं, उजड़–जाए | arb: خَرِبَت, تَخرَبُ | kor: 황폐해지면 | swa: zikiwa–tupu, itakuwa–tupu
+- **S137271** (2x) [Prep-l | V-Hifil-Inf] | eng: to–make–desolate, to–make-desolate | spa: para–desolación, para–asolar | hin: उजाड़ने–के–लिए | arb: لِيُخَرِّبَ, لِـ–تَخْرِيبِ | kor: 폐허로–만들도록, 에–황폐시키는–것으로 | swa: kuharibu, kubomoa

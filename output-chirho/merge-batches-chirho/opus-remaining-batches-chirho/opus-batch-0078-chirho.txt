@@ -1,0 +1,83 @@
+You are a biblical lexicographer. For each lemma below, group the over-split sense clusters into REAL lexicographic senses.
+
+Rules:
+- Different grammatical inflections of the same meaning = SAME sense (merge them)
+- Different verb stems (Qal vs Hifil, active vs passive) = often DIFFERENT senses
+- Literal vs metaphorical uses = DIFFERENT senses
+- Every sense ID must appear in exactly one group
+- Output valid JSON array with labelChirho, descriptionChirho (150+ chars with multilingual evidence), senseIdsChirho
+
+## H7892b (POS: Prep-k | N-fsc, "† <strong><span dir="rtl"><span class="lexicon-hebrew" dir="rtl">שִׁירָה</span><", 12 occ, 3 senses)
+
+- **S140072** (10x) [Art | N-fs] | eng: the–song | spa: el–cántico | hin: गीत, गीत–के | arb: الْأُنْشُودَةِ, الْأُنْشُودَةُ | kor: 그–노래, 그–노래가 | swa: wimbo
+- **S140073** (1x) [N-fsc] | eng: song–of | spa: canción-de | hin: गीत | arb: أُغنِيَةَ | kor: 노래를 | swa: wimbo–wa
+- **S140074** (1x) [Prep-k | N-fsc] | eng: like–song–of | spa: como–canto–de | hin: गीत–की–तरह | arb: كَأُغْنِيَةِ | kor: 노래–같으니 | swa: kama–wimbo
+
+## H7898 (POS: Conj-w, "† <strong><span dir="rtl"><span class="lexicon-hebrew" dir="rtl">שַׁ֫יִת</span><", 7 occ, 3 senses)
+
+- **S140153** (5x) [Conj-w | N-ms,Conj-w, Prep-l, Art | N-ms] | eng: and–briers, and–for–the–briers | spa: y-cardos, y-cardo | hin: और–झाड़ी, और–झाड़ियों–को | arb: وَ–لِلأَشوَاكِ, وَ–الْحَسَكَ | kor: 찌레가, 찍레가 | swa: na-mbigili, na–michongoma
+- **S140154** (1x) [N-msc | 3ms] | eng: its–thorns | spa: su-espino | hin: उसकी–झाड़ियों | arb: شَوْكَهُ | kor: 그–찌레와 | swa: mbigili-yake
+- **S140155** (1x) [N-ms] | eng: thorn | spa: y–cardos | hin: झाड़ी | arb: وَعَوْسَجَا | kor: 그리고–찔레를 | swa: na–michongoma
+
+## H7941 (POS: Conj-w | N-ms, "† <strong><span dir="rtl"><span class="lexicon-hebrew" dir="rtl">שֵׁכָר</span></", 23 occ, 3 senses)
+
+- **S140695** (10x) [N-ms] | eng: strong-drink, strong–drink | spa: bebida–fuerte, bebida-fuerte | hin: मदिरा, मदिरा–को | arb: مُسْكِرٍ, مُسْكِرٌ | kor: 독주를, 독한–술–의 | swa: kileo, ya–kileo
+- **S140694** (9x) [Conj-w | N-ms,Conj-w, Prep-b, Art | N-ms,Conj-w, Prep-l, Art] | eng: and–strong-drink, and–strong–drink | spa: y–sidra, y–por–bebida–fuerte | hin: और–मदिरा, और–में–मदिरा | arb: وَ–مُسكِرًا, وَ–مُسْكِرًا | kor: 그리고–독주, 그리고–독주를 | swa: na–kileo, Ushkr
+- **S140697** (4x) [Art | N-ms,N-ms,Conj-w, Prep-b, Art | N-ms,Prep-b, Art | N-m] | eng: with–strong–drink, the–strong–drink | spa: y–por–el–licor, por–el–licor | hin: से–मदिरा, मदिरा–से | arb: وَ–بِـ–الْمُسْكِرِ, بِـ–مُسْكِرٍ | kor: 에–독주로, 독주로 | swa: kileo, na–kwa–kileo
+
+## H8013 (POS: Conj-w | N-proper-ms, "† <strong><span dir="rtl"><span class="lexicon-hebrew" dir="rtl">שְׁלֹמוֹת</span", 7 occ, 3 senses)
+
+- **S141429** (4x) [N-proper-ms] | eng: Shelomot, [Shelomot] | spa: Shelomot, [Shelomot] | hin: शलोमोत, शलोमोत–के | arb: شْلُومُوتُ, شْلُومُوتَ | kor: 쉐로못, 쉐로미드 | swa: Shelomothi
+- **S141430** (2x) [N-proper-fs,Conj-w | N-proper-ms] | eng: and–Shelomit, Shelomit | spa: (y–Selomit), (Shelomit) | hin: (शलोमीत), (और–शलोमीत) | arb: (وَ–شْلُومِيت), (شْلُومِيت) | kor: 쉐로미드, 그리고–솔로밋 | swa: na–Shelomithi, Shelomithi
+- **S141432** (1x) [Conj-w | N-proper-ms] | spa: [y–Selomot] | hin: [और–शलोमोत] | arb: [وَ–شْلُومُوت] | kor: 솔로모 | swa: na–Shelomothi
+
+## Response Format
+
+Return a JSON object with one key per lemma ID. Each value is an array of sense groups:
+
+```json
+{
+  "H7879": [
+    {"labelChirho": "short label", "descriptionChirho": "one sentence", "senseIdsChirho": [id1, id2, ...]}
+  ],
+  "H7887": [...]
+}
+```
+
+IMPORTANT: Return ONLY the JSON object. Every sense ID from every lemma must appear exactly once. Use the numeric sense IDs (without the S prefix).
+
+## H8033 (POS:  Adv, "<strong><strong><span dir="rtl"><span class="lexicon-hebrew" dir="rtl">שָׁם</spa", 835 occ, 3 senses)
+
+- **S141485** (716x) [Adv,Adv | 3fs, Adv,Pro-r | Adv,Conj-w | Adv,Conj-w | Adv | 3] | eng: there, and–there | spa: allí, allá | hin: वहाँ, वहां | arb: هُنَاكَ, هُناكَ | kor: 거기에, 거기에서 | swa: huko, pale
+- **S141486** (116x) [Prep-m | Adv,Conj-w, Prep-m | Adv] | eng: from–there, from-there | spa: de–allí, desde–allí | hin: वहाँ–से, वहां–से | arb: مِنْ–هُنَاكَ, مِنْ–هُناكَ | kor: 거기에서, 거기서 | swa: kutoka–huko, kutoka–hapo
+- **S141490** (3x) [Adv | 3fs,Adv] | eng: there, is–there | spa: allí, [allí] | hin: वहां, है | arb: هُنَاكَ | kor: 거기, [거기에] | swa: huko, hapo
+
+## H8036 (POS: Prep-b | N-msc, "† <strong>[<span dir="rtl"><span class="lexicon-hebrew" dir="rtl">שֻׁם</span></s", 12 occ, 3 senses)
+
+- **S141557** (9x) [N-msc | 3ms,N-msc,Prep-b | N-msc] | eng: name, name–of | spa: nombre, su–nombre | hin: नाम, नाम–में | arb: اسْمُهُ, بِ–اِسْم | kor: 그–의–이름–은, 그–의–이름 | swa: jina–lake, kwa–jina
+- **S141560** (2x) [N-mpc,N-mpc | 3mp] | eng: their–names, names–of | spa: sus–nombres, nombres–de | hin: नाम, उनके–नाम | arb: أَسْماءَهُم, أَسْماء | kor: 이름들, 그들–의–이름들 | swa: majina–yao, majina
+- **S141561** (1x) [Prep-k | N-msc] | eng: according-to–name-of | spa: según–el–nombre–de | hin: के–अनुसार–नाम | arb: كَاسْمِ | kor: 에–따른 | swa: kwa–jina–la
+
+## H8084 (POS: Number-cp, "<strong><span dir="rtl"><span class="lexicon-hebrew" dir="rtl">שְׁמֹנִים</span><", 38 occ, 3 senses)
+
+- **S142061** (36x) [Conj-w | Number-cp,Number-cp] | eng: eighty, and–eighty | spa: ochenta, y–ochenta | hin: और–अस्सी, अस्सी | arb: ثَمَانِينَ, وَ–ثَمَانِينَ | kor: 그리고–팔십, 팔십 | swa: themanini, na–themanini
+- **S142063** (1x) [Prep-b | Number-cp] | eng: for–eighty | spa: por–ochenta | hin: बिश्मोनीम | arb: بِ–ثَمانينَ | kor: 팔십–에 | swa: kwa–shekeli–themanini–ya
+- **S142064** (1x) [Prep-b | Number-cp] | eng: in–eighty | spa: en–ochenta | hin: अस्सी | arb: فِي–ثَمَانِينَ | kor: 팔십 | swa: katika–mwaka
+
+## H8185 (POS: Prep-m | N-fsc | 3ms, "† <strong><span dir="rtl"><span class="lexicon-hebrew" dir="rtl">שַׂעֲרָה</span>", 7 occ, 3 senses)
+
+- **S143144** (3x) [Prep-m | N-fsc,Prep-m | N-fsc | 3ms] | eng: of–his–hair, from–hair-of | spa: de–cabello–de, de–su–cabello | hin: बाल–से, उसके–बाल–में–से | arb: مِنْ–شَعْرَتِهِ, مِنْ–شَعْرَةِ | kor: 머리카락에서, 로부터–머리카락이 | swa: unywele, na–akipatikana
+- **S143145** (2x) [Art | N-fs,N-fsc] | eng: the–hair–of, the–hair | spa: el–cabello, cabellos–de | hin: बाल | arb: شَعْرَةُ, الشَّعْرَةِ | kor: 털이, 털–하나 | swa: nywele–za, nywele
+- **S143146** (2x) [Prep-m | N-fpc] | eng: than–the–hairs–of, than–hairs–of | spa: que–cabellos–de | hin: से–बालों | arb: عَنْ–شَعْرِ, أكْثَرَ–مِنْ–شَعْرِ | kor: 머리카락–들–보다, –머리카락들–보다 | swa: kuliko–nywele-za, kuliko–nywele
+
+## H8201 (POS: Conj-w, "† <strong>[<span dir="rtl"><span class="lexicon-hebrew" dir="rtl">שֶׁ֫פֶט</span>", 16 occ, 3 senses)
+
+- **S143390** (13x) [N-mp] | eng: judgments | spa: juicios | hin: न्याय, दंड | arb: أَحْكَامًا, أَحْكامًا | kor: 심판들을, 심판들이 | swa: hukumu
+- **S143391** (2x) [Conj-w, Prep-b | N-mp,Prep-b | N-mp] | eng: with–judgments, and–with–judgments | spa: y–con–juicios, con–juicios | hin: न्यायों–से, और–न्यायों–से | arb: وَبِأَحْكَامٍ, بِأَحْكَامٍ | kor: 그리고–심판들로, –로 | swa: na–kwa–hukumu, kwa–hukumu
+- **S143393** (1x) [N-mpc | 1cs] | eng: judgments–my | spa: juicios–de–mí | hin: मेरे–न्याय | arb: أَحْكَامِي | kor: 나의–심판들을 | swa: kali
+
+## H8263 (POS: Conj-w | N-ms, "† <strong><span dir="rtl"><span class="lexicon-hebrew" dir="rtl">שֶׁ֫קֶץ</span><", 11 occ, 3 senses)
+
+- **S143781** (8x) [N-ms] | eng: detestable-thing, detestable–thing | spa: abominación, cosa–detestable | hin: घिनौना, घिनौने | arb: مَكْرُوهٌ, رِجْسٍ | kor: 역겨운–것이다, 역겨운–것에 | swa: chukizo, kitu–chenye–chukizo
+- **S143782** (2x) [Conj-w, Art | N-ms,Conj-w | N-ms] | eng: and–the–detestable–thing, and–detestable-thing | spa: y–la–abominación, Y–abominación | hin: और–घृणित–वस्तु, और–घिनौने | arb: وَ–مَكْرُوهًا, وَالرِّجْسِ | kor: 그리고–역겨운–것이, 그리고–그–역겨운–것과 | swa: na–machukizo, Na–chukizo
+- **S143784** (1x) [N-ms] | eng: detestable | spa: detestable | hin: घृणित | arb: رِجْسٍ | kor: 험오스러운 | swa: wa–chukizo

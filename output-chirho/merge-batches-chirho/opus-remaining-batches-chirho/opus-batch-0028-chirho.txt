@@ -1,0 +1,83 @@
+You are a biblical lexicographer. For each lemma below, group the over-split sense clusters into REAL lexicographic senses.
+
+Rules:
+- Different grammatical inflections of the same meaning = SAME sense (merge them)
+- Different verb stems (Qal vs Hifil, active vs passive) = often DIFFERENT senses
+- Literal vs metaphorical uses = DIFFERENT senses
+- Every sense ID must appear in exactly one group
+- Output valid JSON array with labelChirho, descriptionChirho (150+ chars with multilingual evidence), senseIdsChirho
+
+## G0684 (POS: N-NFS, "<b> <span class="lexicon-greek">ἀπώλεια</span></b>, ἡ, <br /> <b>destruction,</b", 18 occ, 3 senses)
+
+- **S63248** (14x) [N-NFS,N-AFS,N-GFS] | eng: destruction | spa: perdición, destrucción | hin: विनाश, विनाश, | arb: هَلاكِ, هَلاكٍ | kor: 멸망, 멸망을. | swa: uharibifu, maangamizi
+- **S63251** (2x) [N-NFS] | eng: waste | spa: pérdida, desperdicio | hin: नाश | arb: الْإِتْلَافُ, إِتْلَافُ | kor: 낭비가, 낭비–가 | swa: upotevu, kupoteza
+- **S63252** (2x) [N-GFS] | eng: of–destruction | spa: de–perdición, de–destrucción | hin: विनाश–के, विनअश; | arb: هَلاكٍ | kor: 멸망의;, 멸망–의, | swa: ya–uharibifu, wa–uharibifu
+
+## G0740 (POS: N-GMP, "<b> <span class="lexicon-greek">ἄρτος</span></b>, ὁ, <br /> <b>cake</b> or <b>lo", 97 occ, 3 senses)
+
+- **S63381** (54x) [N-DMS,N-AMS,N-NMS,N-GMS] | eng: bread, loaf | spa: pan | hin: रोटी, रोति | arb: خُبْزًا, خُبْزُ | kor: 빵을, 떡을 | swa: mkate, mkate,
+- **S63382** (41x) [N-NMP,N-AMP,N-GMP,N-DMP,N-AMS] | eng: loaves, bread-loaves | spa: panes, Panes | hin: रोतियन, रोटियाँ | arb: خُبْزًا, أَرْغِفَةٍ | kor: 빵들–을, 떡을 | swa: mikate, mitano
+- **S63384** (2x) [N-GMP] | eng: with–bread, of-bread | spa: de–panes | hin: रोटियों–से, रोटियों | arb: خُبْزًا, بِخُبْزٍ | kor: 빵이, 빵들–로 | swa: wa–mikate, mikate
+
+## G0749 (POS: N-DMS, "<b> <span class="lexicon-greek">ἀρχῐερ-εύς</span></b>, <span class="lexicon-gree", 123 occ, 3 senses)
+
+- **S63408** (65x) [N-AMP,N-GMP,N-DMP,N-NMP] | eng: chief-priests, chief–priests | spa: sumos-sacerdotes, sumos–sacerdotes | hin: महायाजकों, महायाजक | arb: رُؤَسَاءُ–الْكَهَنَةِ, رُؤَسَاءُ–الكَهَنَةِ | kor: 대제사장들과, 대제사장들이 | swa: makuhani–wakuu, wakuu–wa–makuhani
+- **S63409** (56x) [N-GMS,N-AMS,N-NMS,N-DMS] | eng: high–priest, high-priest | spa: sumo-sacerdote, sumo–sacerdote | hin: महायाजक, महायाजक, | arb: رَئِيسِ–الْكَهَنَةِ, رَئِيسُ–الكَهَنَةِ | kor: 대제사장이, 대제사장–이 | swa: kuhani–mkuu, kuhani–mkuu;
+- **S63410** (2x) [N-NMP,N-AMP] | eng: high–priests, first | spa: sumos–sacerdotes | hin: महायाजक, | arb: رُؤَسَاءُ–الكَهَنَةِ, رُؤَسَاءَ–كَهَنَةٍ | kor: 대제사들이, 대제사들로 | swa: makuhani–wakuu
+
+## G0763 (POS: N-AFS, "<b> <span class="lexicon-greek">ἀσέβ-εια</span></b>, ἡ, <br /> <b>ungodliness, i", 6 occ, 3 senses)
+
+- **S63455** (3x) [N-AFS,N-AFP] | eng: ungodliness | spa: impiedad | hin: अभक्ति, अधरम | arb: –الكُفرَ, فُجورِ | kor: 불경건을, 불경건–과 | swa: wote, uasi
+- **S63457** (2x) [N-GFS] | eng: of–ungodliness | spa: de–impiedad | hin: अभक्ति–के, अधरम; | arb: شر, الفُجورِ | kor: 불경건의, 불경건–의; | swa: ya–uovu, kutokumcha–Mungu
+- **S63456** (1x) [N-GFP] | eng: ungodliness | spa: impiedades. | hin: अभक्तियों–की। | arb: الكفر | kor: 불경건한–것들의 | swa: uovu
+
+## Response Format
+
+Return a JSON object with one key per lemma ID. Each value is an array of sense groups:
+
+```json
+{
+  "G0539": [
+    {"labelChirho": "short label", "descriptionChirho": "one sentence", "senseIdsChirho": [id1, id2, ...]}
+  ],
+  "G0571": [...]
+}
+```
+
+IMPORTANT: Return ONLY the JSON object. Every sense ID from every lemma must appear exactly once. Use the numeric sense IDs (without the S prefix).
+
+## G0765 (POS: Adj-GMP, "<b> <span class="lexicon-greek">ἀσεβ-ής</span></b>, <span class="lexicon-greek">", 10 occ, 3 senses)
+
+- **S63460** (5x) [Adj-GMP,Adj-DMP] | eng: ungodly, to–ungodly | spa: impíos, de–impíos | hin: अभक्तों–के–लिए, अभक्तों–के | arb: الفُجّارِ, لِلْفُجّارِ | kor: 불경건한–자들에게, 불경건한–자들–의 | swa: wa–waovu, wasiomcha–Mungu
+- **S63461** (3x) [Adj-NMP] | eng: ungodly | spa: impíos, impíos. | hin: अभक्तों–ने।, अभक्तों–को | arb: أشرار, الأشرار | kor: 경건치–않은–자들을, 경건치–않은–자들로 | swa: waovu
+- **S63462** (2x) [Adj-AMS,Adj-NMS] | eng: ungodly | spa: impío | hin: अभक्त | arb: الفاجِرُ, الفاجِرَ | kor: 불경건한–자와, 불경건한–자 | swa: mwovu, asiyemcha–Mungu
+
+## G0766 (POS: N-DFP, "<b> <span class="lexicon-greek">ἀσέλγ-εια</span></b>, ἡ, <br /> <b>licentiousnes", 10 occ, 3 senses)
+
+- **S63465** (6x) [N-DFP,N-DFS,N-NFS] | eng: sensuality | spa: lascivia, libertinaje | hin: लम्पटता, सूरोफ़िनीकी | arb: دَعارَةٍ, الدَّعارَةِ | kor: 음란함에, 음란 | swa: ufisadi, ufisadi,
+- **S63468** (2x) [N-DFP] | eng: sensuality, by–sensuality | spa: licencias | hin: लम्पटताओं–में, लम्पटताओं–का | arb: دَعاراتِهِم, دَعاراتٍ | kor: 음란들을,, 음란들로, | swa: ufisadi
+- **S63469** (2x) [N-AFS,N-DFP] | eng: licentiousness | spa: libertinaje, desenfrenos | hin: लुच्चपनों–में, लुचपन | arb: فجور, عَهَارَةٍ | kor: 음란함으로, 방탕들과 | swa: ufisadi,, ufisadi
+
+## G0796 (POS: N-DFS, "<b> <span class="lexicon-greek">ἀστρᾰπ-ή</span></b>, ἡ, <br /> ={<span class="le", 9 occ, 3 senses)
+
+- **S63564** (4x) [N-NFP] | eng: lightnings | spa: relámpagos | hin: बिजलियां, बिजलियाँ, | arb: بُروقٌ, بُرُوقٌ | kor: 번개들과, 번개들–이 | swa: umeme,
+- **S63565** (4x) [N-NFS,N-AFS] | eng: lightning | spa: relámpago | hin: बिजली | arb: بَرْقٍ, بَرقُ | kor: 번개가, 번개처럼 | swa: umeme, unatoka
+- **S63566** (1x) [N-DFS] | eng: brightness | spa: luz | hin: चमक–से | arb: الْبَرْقِ | kor: 번개로 | swa: mwanga–wake
+
+## G0833 (POS: N-AFS, "<b> <span class="lexicon-greek">αὐλή</span></b>, ἡ, <br /> <b>open court</b> bef", 12 occ, 3 senses)
+
+- **S63615** (9x) [N-AFS,N-GFS,N-DFS] | eng: courtyard | spa: patio, casa | hin: आँगन, आंगन | arb: دَارِ, ساحَةَهُ | kor: 뜨락, 뜨락에 | swa: ua
+- **S63616** (2x) [N-AFS,N-GFS] | eng: fold | spa: redil | hin: बाड़े, बाड़ा | arb: حَظيرَة | kor: 우리의, 우리를 | swa: zizi
+- **S63617** (1x) [N-AFS] | eng: court | spa: atrio | hin: आंगन | arb: دارَ | kor: 뜻을 | swa: ua
+
+## G0861 (POS: N-DFS, "<b> <span class="lexicon-greek">ἀφθαρ-σία</span></b>, ἡ, <br /> <b>incorruption,", 8 occ, 3 senses)
+
+- **S63739** (5x) [N-DFS,N-AFS] | eng: incorruption, imperishability | spa: incorrupción | hin: अविनाशिता, अविनाशी–में | arb: عَدَمِ–فَسادٍ, عَدَمَ–فَسادٍ | kor: 썩지–않음을, 썬지–않음 | swa: kutokuharibika
+- **S63740** (2x) [N-AFS] | eng: immortality | spa: incorrupción | hin: अमरता, अमर-भअव, | arb: عَدَمَ–فَناءٍ, عَدَمَ–الفَناءِ | kor: 불멸을,, 불멸 | swa: kutokuharibika
+- **S63742** (1x) [N-AFS] | eng: integrity | spa: integridad | hin: शुदधतअ, | arb: نَقاوَةً | kor: 순수함을 | swa: usafi
+
+## G0862 (POS: Adj-AFS, "<b> <span class="lexicon-greek">ἄφθαρ-τος</span></b>, <span class="lexicon-greek", 8 occ, 3 senses)
+
+- **S63743** (6x) [Adj-GMS,Adj-AFS,Adj-GFS,Adj-DMS,Adj-AMS,Adj-ANS] | eng: imperishable, incorruptible | spa: incorruptible | hin: अविनाशी | arb: غَيرِ–فانٍ, غَيْرَ–فَانِيَ | kor: 썩지–않는, 썬지–않는 | swa: usioharibika, isiyoharibika
+- **S63745** (1x) [Adj-NMP] | eng: imperishable | spa: incorruptibles | hin: अविनाशी | arb: غَيرَ–فاسِدينَ | kor: 썩지–않는 | swa: wasioharibika
+- **S63746** (1x) [Adj-DMS] | eng: immortal | spa: incorruptible | hin: अविनअशि | arb: الَّذي–لا–يَفْنى | kor: 썩지–않는, | swa: asiyeharibika

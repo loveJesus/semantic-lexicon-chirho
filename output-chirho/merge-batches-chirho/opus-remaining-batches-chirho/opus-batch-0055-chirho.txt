@@ -1,0 +1,83 @@
+You are a biblical lexicographer. For each lemma below, group the over-split sense clusters into REAL lexicographic senses.
+
+Rules:
+- Different grammatical inflections of the same meaning = SAME sense (merge them)
+- Different verb stems (Qal vs Hifil, active vs passive) = often DIFFERENT senses
+- Literal vs metaphorical uses = DIFFERENT senses
+- Every sense ID must appear in exactly one group
+- Output valid JSON array with labelChirho, descriptionChirho (150+ chars with multilingual evidence), senseIdsChirho
+
+## H1736 (POS: Art | N-mp, "† <strong>[<span dir="rtl"><span class="lexicon-hebrew" dir="rtl">דּוּדַי</span>", 7 occ, 3 senses)
+
+- **S91411** (5x) [N-mpc,Prep-m | N-mpc,N-mp,Prep-b | N-mpc] | eng: mandrakes-of, with–mandrakes-of | spa: mandrágoras–de, mandrágoras | hin: दूदाइम–से, दूदाइम | arb: مِنْ–لُفَّاحِ, لُفَّاحِ | kor: 합환채를, 에서의–합환채를 | swa: matunda–ya–mapenzi, kwa–matunda–ya–mapenzi
+- **S91412** (1x) [N-mpc] | eng: baskets-of | spa: cestas–de | hin: टोकरियाँ | arb: سَلَّتَيْ– | kor: 의–바구니 | swa: vya–
+- **S91416** (1x) [Art | N-mp] | eng: the–mandrakes | spa: Las–mandrágoras | hin: दूदें | arb: اللُّفَّاحُ | kor: 그–자귀풀들–이 | swa: matunguja
+
+## H1763 (POS: V-Qal-QalPassPrtcpl-fs, "† <strong><strong>[<span dir="rtl"><span class="lexicon-hebrew" dir="rtl">דְּחַל", 6 occ, 3 senses)
+
+- **S91520** (3x) [V-Qal-QalPassPrtcpl-fs,V-Qal-QalPassPrtcpl-ms] | eng: terrifying | spa: terrible, era–terrible | hin: भयानक, भयावह | arb: هَائِلٌ, هَائِلًا | kor: 무서운, 두려웠다 | swa: wa–kutisha, ilikuwa–ya–kutisha
+- **S91521** (2x) [Conj-w | V-Qal-Prtcpl-mp] | eng: and–fearing | spa: y–temiendo | hin: और–डरते–थे, और–डरते | arb: وَ–يَخَافُونَ | kor: 그리고–두려워하였더라, 그리고–두려워하며 | swa: na–wakiogopa
+- **S91522** (1x) [Conj-w | V-Piel-ConjImperf-3ms] | eng: and–it-frightened-me | spa: y–me–atemorizó | hin: और–वह–मुझे–डरा–गया | arb: وَ–أَرْعَبَنِي | kor: 그것이–나–를–두렵게–했다 | swa: na–ikanitia–hofu
+
+## H1803b (POS: N-fsc, "† II. <strong>[<span dir="rtl"><span class="lexicon-hebrew" dir="rtl">דַּלָּה</s", 6 occ, 3 senses)
+
+- **S91684** (4x) [Conj-w, Prep-m | N-fpc,Conj-w, Prep-m | N-fsc] | eng: and–some–of–the–poor-of, and–from–the–poor–of | spa: y–de–los–pobres–de, Y–de–pobres–de | hin: और–से–गरीबों, और–से–गरीब | arb: وَمِنْ–فُقَرَاءِ, وَ–مِنْ–فُقَرَاءِ | kor: 그리고–가난한–자들을–에서, 그리고–에서–가난한–자들 | swa: Na–kutoka–kwa–maskini, na–maskini–wa–
+- **S91685** (1x) [N-fsc] | eng: poorest–of | spa: pobres–de | hin: दल्लत | arb: فُقَرَاءُ | kor: 가난한-자들만 | swa: maskini–wa–
+- **S91688** (1x) [Adj-fp] | eng: weak | spa: pobres | hin: कमजोर | arb: ضَعِيفَاتٌ | kor: 약한 | swa: dhaifu
+
+## Response Format
+
+Return a JSON object with one key per lemma ID. Each value is an array of sense groups:
+
+```json
+{
+  "H1598": [
+    {"labelChirho": "short label", "descriptionChirho": "one sentence", "senseIdsChirho": [id1, id2, ...]}
+  ],
+  "H1602": [...]
+}
+```
+
+IMPORTANT: Return ONLY the JSON object. Every sense ID from every lemma must appear exactly once. Use the numeric sense IDs (without the S prefix).
+
+## H1806 (POS: N-proper-ms, "† <strong><span dir="rtl"><span class="lexicon-hebrew" dir="rtl">דְּלָיָ֫הוּ</sp", 7 occ, 3 senses)
+
+- **S91691** (3x) [N-proper-ms] | eng: Delaiah, Delayah | spa: Delaías | hin: दलायाह–के | arb: دَلايا, دَلاَيَا | kor: 들라야의, 들라야 | swa: Delaya
+- **S91692** (3x) [Conj-w | N-proper-ms] | eng: and–Delayahu, and–Delayah | spa: y–Delayahu, y–Delaya | hin: और–दलायाह | arb: وَدَلَايَا, وَ–دَلايا | kor: 들라야와, 그리고–들라야와 | swa: na–Delaya
+- **S91694** (1x) [Prep-l | N-proper-ms] | eng: for–Delayahu | spa: para–Delayahu | hin: दलायाहू–के–लिए | arb: لِدَلَايَاهُو | kor: 에게–들라야 | swa: kwa–Delaya
+
+## H1841 (POS: Prep-b | N-proper-ms, "<strong><span dir="rtl"><span class="lexicon-hebrew" dir="rtl">דָּנִיֵּאל</span>", 52 occ, 3 senses)
+
+- **S91961** (48x) [N-proper-ms,Prep-l | N-proper-ms,Conj-w | N-proper-ms,Conj-w] | eng: Daniy'el, to–Daniy'el | spa: Daniel, a–Daniel | hin: दानिय्येल, को–दानिय्येल | arb: دَانِياَلُ, دَانِياَلَ | kor: 다니엘이, 다니엘–이 | swa: Danieli, kwa–Danieli
+- **S91964** (2x) [Prep-l | N-proper-ms] | eng: against–Daniy'el | spa: contra–Daniel | hin: दानिय्येल–के–विरुद्ध | arb: عَلَى–دَانِياَلَ | kor: 다니엘–에게–대하여 | swa: dhidi–ya–Danieli
+- **S91966** (2x) [Prep-b | N-proper-ms] | eng: in–Daniy'el, concerning–Daniy'el | spa: respecto–a–Daniel, en–Daniel | hin: में–दानिय्येल, दानिय्येल–के–बारे–में | arb: فِي–دَانِياَلَ, بِشَأْنِ–دَانِياَلَ | kor: 다니엘–에게서, 곧–다니엘–에게서 | swa: kuhusu–Danieli, katika–Danieli
+
+## H1844 (POS: N-fs, "† <strong><span dir="rtl"><span class="lexicon-hebrew" dir="rtl">דֵּעָה</span></", 6 occ, 3 senses)
+
+- **S91969** (4x) [N-fs] | eng: with–knowledge, knowledge–of | spa: conocimiento, de-conocimiento-de | hin: ज्ञान, ज्ञान–से | arb: مَعْرِفَةً, مَعْرِفَةٌ | kor: 지식을, 지식으로 | swa: maarifa
+- **S91971** (1x) [N-fp] | eng: in–knowledge | spa: conocimientos | hin: ज्ञानों–में | arb: المَعارِفِ | kor: 지식들이 | swa: wa–ujuzi
+- **S91972** (1x) [N-fp] | eng: knowledges | spa: conocimientos | hin: ज्ञानों–का | arb: عِلْمٍ | kor: 지식들–의 | swa: maarifa
+
+## H1846 (POS: V-Qal-Imperf-3ms, "† <strong><strong>[<span dir="rtl"><span class="lexicon-hebrew" dir="rtl">דָּעַך", 9 occ, 3 senses)
+
+- **S91974** (5x) [V-Qal-Imperf-3ms] | eng: will–be–put–out, is–put–out | spa: se–apagará, será–apagada | hin: बुझ–जाएगा, बुझेगा | arb: يَنْطَفِئُ | kor: 꺼지리라, 꺼진다 | swa: itazimwa, itazimika
+- **S91976** (3x) [V-Nifal-Perf-3cp,V-Pual-Perf-3cp,V-Qal-Perf-3cp] | eng: they–were–extinguished, they–are–extinguished | spa: se–apagaron, se–apagan | hin: बुझ–जाते–हैं, बुझ–गए | arb: تَنْطَفِئُ, اِنْطَفَأُوا | kor: 사라진다, 껴졌으며 | swa: wamezimwa, walizimwa
+- **S91975** (1x) [V-Qal-Imperf-3ms] | eng: is–extinguished | spa: se–apaga | hin: बुझाया–जाता–है | arb: يَنْطَفِئُ | kor: 꺼지는가 | swa: inazimika
+
+## H1916 (POS: Conj-w, "† <strong><span dir="rtl"><span class="lexicon-hebrew" dir="rtl">הֲדֹם</span></s", 6 occ, 3 senses)
+
+- **S92489** (4x) [N-msc,Prep-l | N-msc] | eng: the–footstool, footstool-of | spa: estrado–de, el–estrado–de | hin: पावदान–, चौकी | arb: مَوْطِئُ, مَوْطِئَ– | kor: 발판–을, 발판–에 | swa: ni–kiti–cha–kuwekea, mahali–pa–kuwekea–miguu
+- **S92491** (1x) [Conj-w, Prep-l | N-msc] | eng: and–for–the–footstool–of | spa: y–para–estrado–de | hin: और–चौकी | arb: وَلِمَوْطِئِ | kor: 그리고–에–대한–발판 | swa: na–kwa–kiti–cha
+- **S92492** (1x) [N-msc] | eng: a–footstool | spa: estrado | hin: चौकी | arb: مَوطِئًا | kor: 발받침–을 | swa: kiti–cha–kuwekea–miguu
+
+## H1965 (POS: Prep-l | N-msc | 3ms, "† <strong>[<span dir="rtl"><span class="lexicon-hebrew" dir="rtl">הֵיכַל</span><", 13 occ, 3 senses)
+
+- **S92890** (8x) [N-msd,Prep-l | N-msd,Prep-b | N-msd] | eng: temple, to–the–temple | spa: el–templo, al–templo | hin: मंदिर–से, मन्दिर | arb: الهَيْكَل, الْهَيْكَلِ | kor: 에–그–성전, 그–성전 | swa: hekalu, kwenye–hekalu
+- **S92893** (4x) [N-msd,Prep-l | N-msc | 3ms,N-msc] | eng: palace-of, to–his-palace | spa: el–palacio–de, el–palacio | hin: महल, महल–से | arb: الْهَيْكَلِ, قَصْرِ | kor: 그–의–궁전–에, 그–궁전 | swa: jumba–la, ya–jumba–la–kifalme
+- **S92897** (1x) [Prep-b | N-msc | 1cs] | eng: in–my-palace | spa: en–mi–palacio | hin: अपने–महल–में | arb: فِي–قَصْرِي | kor: 내–궁전–에서 | swa: katika–jumba–langu
+
+## H1969 (POS: Art | N-msc, "† <strong><span dir="rtl"><span class="lexicon-hebrew" dir="rtl">הִין</span></sp", 22 occ, 3 senses)
+
+- **S92904** (16x) [Art | N-ms,Art | N-msc] | eng: the–hin | spa: el–hin, el-hin | hin: हीन–का, हीन–की | arb: الْ–هِينِ, الْـ–هِينِ | kor: 그–힌, 힌 | swa: ya–hini, hini–hiyo
+- **S92905** (5x) [N-ms] | eng: hin | spa: hin | hin: हीन | arb: هِينٌ, هِينًا | kor: 힌, 힐 | swa: hini
+- **S92906** (1x) [Conj-w | N-msc] | eng: and–hin-of | spa: e–hin–de | hin: और–हीन | arb: وَ–هُونَ | kor: 그리고–힌–의 | swa: na–hini–ya–

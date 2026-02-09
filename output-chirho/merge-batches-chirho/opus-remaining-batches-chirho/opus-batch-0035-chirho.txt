@@ -1,0 +1,83 @@
+You are a biblical lexicographer. For each lemma below, group the over-split sense clusters into REAL lexicographic senses.
+
+Rules:
+- Different grammatical inflections of the same meaning = SAME sense (merge them)
+- Different verb stems (Qal vs Hifil, active vs passive) = often DIFFERENT senses
+- Literal vs metaphorical uses = DIFFERENT senses
+- Every sense ID must appear in exactly one group
+- Output valid JSON array with labelChirho, descriptionChirho (150+ chars with multilingual evidence), senseIdsChirho
+
+## G2449 (POS: N-GFS, "<b> <span class="lexicon-greek">Ἰουδαῖος</span></b>, ὁ, <br /> <b>a Jewish man</", 44 occ, 3 senses)
+
+- **S69501** (36x) [N-GFS,N-NFS,N-DFS,N-AFS] | eng: Ioudaia, of–Ioudaia | spa: Ioudaía, de–Ioudaía | hin: यहूदिया, यहूदिया–के | arb: يَهُودِيَّةِ, الْيَهُودِيَّةِ | kor: 유다–의, 유대에서 | swa: Yudea, Ioudaía
+- **S69502** (5x) [N-GFS,N-AFS,N-DFS] | eng: Judea, Ioudaia | spa: Judea, Ioudaía | hin: यहूदिया,, यहूदिया–में | arb: –اليَهُودِيَّةِ, يَهُودِيَّةَ | kor: 유대, 유대로부터 | swa: Uyahudi, Yudea,
+- **S69503** (3x) [N-NFS,N-GFS,N-DFS] | eng: Judean, Judea | spa: Judea, Ioudaía | hin: यहोओदियअ, यहुदिय, | arb: الْيَهُودِيَّةِ, اليَهودِيَّةِ | kor: 유대에, 유대, | swa: Yudea, Ioudaía
+
+## G2469 (POS: N-AMS, " <b><span class="lexicon-greek">ἰσκαριώθ</span></b>, ὁ indecl. <BR /> (<a class=", 11 occ, 3 senses)
+
+- **S69537** (8x) [N-NMS,N-AMS,N-GMS] | eng: Iskariōtēs | spa: Iskariōtēs, Iskariōtou | hin: इस्करियोती, इस्करियोती; | arb: الْإِسْخَرْيُوطِيُّ, الْإِسْخَرْيُوطِيِّ | kor: 가룿인, 이스가리옷 | swa: Iskariōtēs, Iskariōtēs,
+- **S69538** (2x) [N-NMS,N-AMS] | eng: Iskariōth | spa: Iskariṓth | hin: इस्करियोत | arb: الإِسْخَرْيُوطِيُّ, الإسخَريوطيَّ | kor: 이스카리옷이, 이스가리옳 | swa: Iskariṓth, Iskariōth
+- **S69540** (1x) [N-AMS] | eng: Iskariōth | spa: Iskariōth | hin: इस्करियोती | arb: الإِسْخَريوطِيَّ | kor: 이스가리옷 | swa: Iskarióth,
+
+## G2470 (POS: Adj-AFS, "<b> <span class="lexicon-greek">ἴσος</span></b>, <span class="lexicon-greek">η, ", 8 occ, 3 senses)
+
+- **S69541** (4x) [Adj-ANP,Adj-AMS,Adj-AFS] | eng: same, equal | spa: igual | hin: बराबर, वही | arb: ٱلْمُسَاوِيَةَ, مُسَاوِيًا | kor: 동등하게, 같은 | swa: sawa
+- **S69542** (2x) [Adj-NFP,Adj-NFS] | eng: consistent | spa: iguales, igual | hin: समान | arb: مُتَّفِقَةً | kor: 일치하는 | swa: sawa
+- **S69543** (2x) [Adj-AMP,Adj-NNP] | eng: equal | spa: iguales | hin: बराबर, बरअबर | arb: مُساوينَ, مُتَساويَةٌ | kor: 같은–것–으로, 같다 | swa: sawa, kwetu
+
+## Response Format
+
+Return a JSON object with one key per lemma ID. Each value is an array of sense groups:
+
+```json
+{
+  "G2218": [
+    {"labelChirho": "short label", "descriptionChirho": "one sentence", "senseIdsChirho": [id1, id2, ...]}
+  ],
+  "G2226": [...]
+}
+```
+
+IMPORTANT: Return ONLY the JSON object. Every sense ID from every lemma must appear exactly once. Use the numeric sense IDs (without the S prefix).
+
+## G2475 (POS: N-NMP, " <b><span class="lexicon-greek">Ἰσραηλείτης</span></b><BR /> (Rec. -<span class=", 9 occ, 3 senses)
+
+- **S69550** (4x) [N-VMP] | eng: Israēlitai | spa: Israḗlîtai, israelitas | hin: इस–पर, इस्राएली | arb: إِسْرَائِيلِيُّونَ, إِسْرَائِيلَ | kor: 이스라엘–사람들이여, 이스라엘–사람들–이여 | swa: Waisraeli
+- **S69551** (4x) [N-NMP,N-NMS] | eng: an-Israelite, Israēlites | spa: israelitas, israelita | hin: इस्राएली, इस्राएली, | arb: إِسْرَائِيلِيٌّ, إِسْرَائِيلِيُّونَ | kor: 이스라엘–사람이다, 이스라엘–사람이니 | swa: Waisraeli, Mwisraeli
+- **S69553** (1x) [N-VMP] | eng: Israelites | spa: Israēlîtai | hin: इस्राएलियो | arb: يا–إِسرائيليّينَ | kor: 이스라엘–사람들아 | swa: Waisraeli,
+
+## G2479 (POS: N-DFS, "<b> <span class="lexicon-greek">ἰσχ-ύς</span></b> <br /> [see. entry near the en", 10 occ, 3 senses)
+
+- **S69623** (5x) [N-GFS,N-DFS] | eng: strength, might | spa: fuerza | hin: शक्ति, सामर्थ्य | arb: قُوَّةِ, قُوَّتِكَ | kor: 힘의, 힘으로 | swa: nguvu
+- **S69624** (3x) [N-GFS,N-DFS] | eng: strength, in–strength | spa: potencia, fuerza | hin: बल | arb: قُوَّتِهِ, بِقُوَّةٍ | kor: 힘의, 힘에 | swa: nguvu
+- **S69625** (2x) [N-AFS,N-NFS] | eng: strength | spa: fortaleza | hin: बल, | arb: القُوَّةُ, القُوَّةَ | kor: 힘–이, 힘–을 | swa: uweza,
+
+## G2513 (POS: Adj-NMP, "<b> <span class="lexicon-greek">κᾰθᾰρ-ός</span></b>, <span class="lexicon-greek"", 27 occ, 3 senses)
+
+- **S69728** (16x) [Adj-NNS,Adj-DFS,Adj-NNP,Adj-NMS,Adj-NMP,Adj-DNS,Adj-ANS] | eng: clean, pure | spa: limpio, pura | hin: शुद्ध, शुदध | arb: طَاهِرُونَ, نَقِيًّا | kor: 깨끗한, 깨끗하다 | swa: safi, safi.
+- **S69729** (10x) [Adj-GFS,Adj-NFS,Adj-NNS,Adj-DMS,Adj-NMP,Adj-DMP] | eng: pure | spa: puro, puros | hin: शुद्ध, शुदध | arb: نَقِيٌّ, لأَنْقِيَاءِ | kor: 순수한, 청결한–자들 | swa: moyo, walio–safi
+- **S69730** (1x) [Adj-NNP] | eng: clean | spa: limpio | hin: शुद्ध–है | arb: طَاهِرٌ | kor: 깨끗하다 | swa: ni–safi,
+
+## G2574 (POS: N-GFS, "<b> <span class="lexicon-greek">κάμηλος</span></b> [<span class="lexicon-greek">", 6 occ, 3 senses)
+
+- **S70011** (3x) [N-AFS] | eng: for-a-camel, camel | spa: camello, a–camello | hin: ओओन्त–क, ऊंट–को | arb: جَمَلٌ | kor: 낙타가, 낙타–가 | swa: ngamia, kupitia
+- **S70012** (2x) [N-GFS] | eng: of–camel | spa: de–camello | hin: ऊँट–के | arb: الْإِبِلِ, الإِبِلِ | kor: 낙타–의 | swa: za–ngamia, ya–ngamia,
+- **S70013** (1x) [N-AFS] | eng: camel | spa: camello | hin: ऊंट | arb: الجَمَلَ | kor: 낙타는 | swa: wakimeza
+
+## G2579 (POS: Conj, "<b> <span class="lexicon-greek">κἄν</span></b> <br /> (not <span class="lexicon-", 16 occ, 3 senses)
+
+- **S70018** (12x) [Conj,Adv] | eng: even-if, even–if | spa: y-si, y–si | hin: यदि, और–यदि | arb: وَإِنْ, وَإن | kor: 비록, 설령 | swa: hata–kama, na–kama
+- **S70020** (3x) [Adv] | eng: even | spa: aunque–sea, al–menos | hin: के, कि | arb: وَلَوْ, عَلى–الأَقَلِّ | kor: 심지어, 적어도 | swa: hata–, hata
+- **S70024** (1x) [Conj] | eng: at–least | spa: al–menos | arb: وَلَوْ | kor: 그– | swa: hata
+
+## G2588 (POS: N-DFS, "<b> <span class="lexicon-greek">καρδί-α</span></b>, ἡ, <br /> <i>Ionic dialect</", 158 occ, 3 senses)
+
+- **S70035** (156x) [N-DFS,N-NFS,N-GFS,N-AFS,N-AFP,N-DFP,N-GFP,N-NFP] | eng: heart, hearts | spa: corazón, corazones | hin: हृदय, हृदयों | arb: قَلْبِ, قُلوبِكُم | kor: 마음, 마음들을 | swa: moyo, mioyo
+- **S70038** (1x) [N-AFS] | eng: in–heart | spa: corazón | hin: हृदय–में | arb: قَلبِ | kor: 마음–이 | swa: moyo
+- **S70039** (1x) [N-DFP] | eng: in–hearts | spa: en–corazones | hin: हृदयों–में | arb: القُلُوبِ | kor: 마음들–에서 | swa: mioyo
+
+## G2590 (POS: N-GMS, "<b> <span class="lexicon-greek">καρπός</span></b>, ὁ, <br /> <br /><b>__A</b> <b", 66 occ, 3 senses)
+
+- **S70041** (64x) [N-AMS,N-NMS,N-GMS,N-GMP,N-AMP] | eng: fruit, fruits | spa: fruto, frutos | hin: फल, फल–को | arb: ثَمَرًا, ثِمارًا | kor: 열매를, 열매 | swa: matunda, tunda
+- **S70043** (1x) [N-GMP] | eng: fruits | spa: frutos | hin: फलों | arb: الثِّمارِ | kor: 열매들–의 | swa: akawatuma
+- **S70044** (1x) [N-GMS] | eng: fruit | spa: fruto | hin: फल–से | arb: ثَمَرِ | kor: 열매로 | swa: tunda,

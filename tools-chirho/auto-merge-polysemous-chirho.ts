@@ -10,8 +10,15 @@
  * - Merge clusters above similarity threshold
  * - Save merge decisions as JSON files compatible with apply-merges pipeline
  *
+ * DISABLED: This script produced low-quality merges compared to Opus LLM review.
+ * All sense merging should go through the Opus batch pipeline instead.
+ * Kept for reference only.
+ *
  * Usage: bun run tools-chirho/auto-merge-polysemous-chirho.ts [--dry-run] [--limit N]
  */
+
+console.error("FAILED: auto-merge-polysemous-chirho is disabled. Use Opus batch merge pipeline instead.");
+process.exit(1);
 
 import { Database } from "bun:sqlite";
 import { existsSync, mkdirSync, writeFileSync } from "fs";

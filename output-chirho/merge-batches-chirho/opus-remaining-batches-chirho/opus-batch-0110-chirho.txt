@@ -1,0 +1,73 @@
+You are a biblical lexicographer. For each lemma below, group the over-split sense clusters into REAL lexicographic senses.
+
+Rules:
+- Different grammatical inflections of the same meaning = SAME sense (merge them)
+- Different verb stems (Qal vs Hifil, active vs passive) = often DIFFERENT senses
+- Literal vs metaphorical uses = DIFFERENT senses
+- Every sense ID must appear in exactly one group
+- Output valid JSON array with labelChirho, descriptionChirho (150+ chars with multilingual evidence), senseIdsChirho
+
+## G5207 (POS: N-VMP, "<b> <span class="lexicon-greek">υἱός</span></b>, ὁ <br /> (written ϝ<span class=", 382 occ, 2 senses)
+
+- **S78013** (379x) [N-NMS,N-VMS,N-AMS,N-GMS,N-DMS,N-NMP,N-GMP,N-AMP,N-DMP,N-VMP] | eng: Son, son | spa: Hijo, hijo | hin: पुत्र, पुत्र–को | arb: ابْنُ, ابْنَ | kor: 아들, 아들이 | swa: Mwana, mwana
+- **S78016** (3x) [N-DMP,N-NMP] | eng: with-sons, to-sons | spa: a–hijos, Hijos | hin: पुत्रों–से | arb: بَنِينَ, ابْنا | kor: 아들들–에게, 아들들–과 | swa: wana, Wana
+
+## G5266 (POS: N-GNP, "<b> <span class="lexicon-greek">ὑπόδημ-α</span></b>, <span class="lexicon-greek"", 10 occ, 2 senses)
+
+- **S78177** (7x) [N-ANP,N-GNP] | eng: sandals | spa: sandalias | hin: जूते, जूतों–के | arb: حِذَائِهِ, نِعالاً | kor: 신발을, 신발 | swa: viatu, viatu,
+- **S78178** (3x) [N-ANS,N-GNS] | eng: sandal | spa: sandalia, calzado | hin: जूती, जूते–का। | arb: نَعْلَ, حِذَائِهِ | kor: 신을, 신발–의 | swa: kiatu, viatu
+
+## G5273 (POS: N-GMP, "<b> <span class="lexicon-greek">ὑπο-κρῐτής</span></b>, <span class="lexicon-gree", 18 occ, 2 senses)
+
+- **S78189** (16x) [N-NMP,N-VMP,N-GMP] | eng: hypocrites, Hypocrites | spa: hipócritas, Hipócritas | hin: कपटियो, कपटी | arb: يا–مُرائينَ, يَا–مُرَاؤُونَ | kor: 외식하는–자들아, 외식하는–자들 | swa: kwa–sababu, wanafiki
+- **S78191** (2x) [N-VMS] | eng: hypocrite, Hypocrite | spa: hipócrita | hin: कपटी | arb: يا–مُرائِي, يا–مُرائيُ | kor: 위선자여, 외식하는–자야 | swa: mnafiki, Mnafiki,
+
+## G5281 (POS: N-DFS, "<b> <span class="lexicon-greek">ὑπομονή</span></b>, ἡ, <br /> <b>remaining behin", 32 occ, 2 senses)
+
+- **S78221** (30x) [N-DFS,N-AFS,N-NFS,N-GFS] | eng: endurance, of-endurance | spa: perseverancia, paciencia | hin: धीरज, धैर्य | arb: صَبْرٍ, صَبرُ | kor: 인내, 인내에 | swa: uvumilivu, saburi
+- **S78222** (2x) [N-DFS] | eng: endurance | spa: perseverancia, paciencia | hin: धेएरज;, धेएरज, | arb: –الصَّبرِ, صَبْري | kor: 인내–에, 인내–를 | swa: uvumilivu, ustahimilivu
+
+## G5310 (POS: Adj-GMS-S, "<b> <span class="lexicon-greek">ὕψιστος</span></b>, <span class="lexicon-greek">", 13 occ, 2 senses)
+
+- **S78323** (9x) [Adj-GMS-S,Adj-NMS-S] | eng: of–Most–High, Most-High | spa: Altísimo, del–Altísimo | hin: परमप्रधान–का, सर्वोच्च–के | arb: الْعَلِيِّ, العَلِيِّ | kor: 지극히–높으신–이–의, 지극히–높은–이의 | swa: wa–Aliye–Juu, Aliye–Juu–Sana
+- **S78324** (4x) [Adj-DNP-S] | eng: highest, the-highest | spa: altísimos, las-alturas | hin: सर्वोच्च, सर्वोच्चों | arb: الأَعالي, الْأَعَالِي | kor: 지극히–높은–곳들, 높은–곳들–에 | swa: juu–sana, na
+
+## Response Format
+
+Return a JSON object with one key per lemma ID. Each value is an array of sense groups:
+
+```json
+{
+  "G5038": [
+    {"labelChirho": "short label", "descriptionChirho": "one sentence", "senseIdsChirho": [id1, id2, ...]}
+  ],
+  "G5043": [...]
+}
+```
+
+IMPORTANT: Return ONLY the JSON object. Every sense ID from every lemma must appear exactly once. Use the numeric sense IDs (without the S prefix).
+
+## G5349 (POS: Adj-GFS, "<b> <span class="lexicon-greek">φθαρ-τός</span></b>, <span class="lexicon-greek"", 6 occ, 2 senses)
+
+- **S78545** (5x) [Adj-GMS,Adj-AMS,Adj-ANS,Adj-NNS,Adj-GFS] | eng: perishable, of–corruptible | spa: corruptible, de–corruptible | hin: नाशवान | arb: فانٍ, فاسِدُ | kor: 썩을–것이, 썬는 | swa: unaoharibika, inayoharibika
+- **S78546** (1x) [Adj-DNP] | eng: with–perishable–things | spa: con–cosas–corruptibles | hin: नाशवान–चीज़ों–से | arb: بِفانٍ | kor: 썩어질–것들로 | swa: kwa–vitu–vinavyoharibika
+
+## G5356 (POS: N-GFS, "<b> <span class="lexicon-greek">φθορ-ά</span></b>, <br /> <i>Ionic dialect</i> <", 9 occ, 2 senses)
+
+- **S78566** (5x) [N-GFS,N-DFS,N-NFS,N-AFS] | eng: corruption | spa: corrupción | hin: विनश, नाशवान–में | arb: فَنَاءٍ, فَسادُ | kor: 썼어지는–것의, 썩음이 | swa: uharibifu, kuharibika
+- **S78565** (4x) [N-GFS,N-DFS,N-AFS] | eng: destruction, corruption | spa: destrucción, corrupción | hin: विनाश–से, विनाश–के | arb: الفَسادِ, فَسادِهِم | kor: 썼어짐–의., 썼어짐, | swa: uharibifu, kuangamizwa
+
+## G5357 (POS: N-AFS, "<b> <span class="lexicon-greek">φῐάλη</span></b> [<span class="lexicon-greek">ᾰ]", 12 occ, 2 senses)
+
+- **S78569** (7x) [N-AFS] | eng: bowl | spa: copa | hin: कटोरा | arb: جامَهُ | kor: 대접을 | swa: bakuli
+- **S78570** (5x) [N-AFP] | eng: bowls | spa: copas | hin: कटोरे, कटोरों–को | arb: جاماتٍ, جاماتِ | kor: 대접들을, 대접들–을 | swa: bakuli, vitasa
+
+## G5376 (POS: N-DMS, "<b> <span class="lexicon-greek">φῐλιππ-ος</span></b>, <span class="lexicon-greek", 37 occ, 2 senses)
+
+- **S78605** (32x) [N-NMS,N-AMS,N-GMS,N-DMS,N-VMS] | eng: Philippos | spa: Phílippos, –a-Phílippos | hin: फिलिप्पुस, फिलिप्पुस, | arb: فِيلِبُّسُ, فِيلِبُّسَ | kor: 빌립이, 빌립–을 | swa: Filipo, Phílippos
+- **S78606** (5x) [N-GMS] | eng: of–Philippos, of-Philippos | spa: de–Philíppou, de–Phílippos | hin: फिलिप्पुस, फिलिप्पोस–कि | arb: فِيلِبُّسَ, فِيلِيبُّوسَ | kor: 빌립의, 빌립보의 | swa: ya–Filipo, –ya–Phílippos
+
+## G5384 (POS: Adj-NMS, "<b> <span class="lexicon-greek">φίλος</span></b>, <span class="lexicon-greek">η,", 29 occ, 2 senses)
+
+- **S78615** (17x) [Adj-AMP,Adj-DMP,Adj-GMP,Adj-NMP,N-AFP] | eng: friends | spa: amigos, amigas | hin: मित्र, मित्रों–को | arb: أَصْدِقَاءَ, أَصدِقاءَ | kor: 친구들을, 친구들과 | swa: rafiki, marafiki
+- **S78616** (12x) [Adj-NMS,Adj-AMS,N-VMS] | eng: friend, a-friend | spa: amigo, un–amigo | hin: मित्र, हे–मित्र | arb: صَدِيقُ, صَديقُ | kor: 친구, 친구야 | swa: rafiki, Rafiki

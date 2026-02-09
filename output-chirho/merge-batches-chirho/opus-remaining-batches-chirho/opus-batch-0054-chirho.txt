@@ -1,0 +1,83 @@
+You are a biblical lexicographer. For each lemma below, group the over-split sense clusters into REAL lexicographic senses.
+
+Rules:
+- Different grammatical inflections of the same meaning = SAME sense (merge them)
+- Different verb stems (Qal vs Hifil, active vs passive) = often DIFFERENT senses
+- Literal vs metaphorical uses = DIFFERENT senses
+- Every sense ID must appear in exactly one group
+- Output valid JSON array with labelChirho, descriptionChirho (150+ chars with multilingual evidence), senseIdsChirho
+
+## H1551 (POS: Prep-b, "† II. <strong><span dir="rtl"><span class="lexicon-hebrew" dir="rtl">גָּלִיל</sp", 6 occ, 3 senses)
+
+- **S90298** (3x) [Prep-b, Art | N-proper-fs] | eng: in–the–Galil, in–the–Galilee | spa: en–Galilea, en–el–Galil | hin: गलील–में, –में–गलील | arb: فِي–الْجَلِيلِ, في–الـ–جَليل | kor: 갈릴리에서–, 에–갈릴리–에서 | swa: katika–ha–Galilaya, huko–Galilaya
+- **S90300** (2x) [Art | N-proper-fs | 3fs,Art | N-proper-fs] | eng: the–Galilah, the–Galil | spa: la–Galilea | hin: हग्गालीलाह, गलील–के | arb: ٱلْجَلِيلَ, الـ–جَلِيلِ | kor: 그–갈릴리의, 갈릴리–를 | swa: Galilaya
+- **S90301** (1x) [N-proper-fs] | eng: Galilee–of | spa: Galil-de | hin: गलील | arb: جَلِيلَ | kor: 갈릴리 | swa: Galilaya
+
+## Response Format
+
+Return a JSON object with one key per lemma ID. Each value is an array of sense groups:
+
+```json
+{
+  "H1393": [
+    {"labelChirho": "short label", "descriptionChirho": "one sentence", "senseIdsChirho": [id1, id2, ...]}
+  ],
+  "H1396": [...]
+}
+```
+
+IMPORTANT: Return ONLY the JSON object. Every sense ID from every lemma must appear exactly once. Use the numeric sense IDs (without the S prefix).
+
+## H1598 (POS: V-Qal-Imperf-3ms, "† <strong><strong>[<span dir="rtl"><span class="lexicon-hebrew" dir="rtl">גָּנַן", 8 occ, 3 senses)
+
+- **S90551** (4x) [Conj-w | V-Qal-ConjPerf-1cs] | eng: and–I-will-defend, and–I–shall–defend | spa: Y–defenderé, y–protegeré | hin: और–मैं–बचाऊँगा, वे–बचाऊँगा | arb: وَأُحَامِي, وَ–أُدَافِعُ | kor: 내가–보호하겠다, 그리고–보호하리라 | swa: na–nitaulinda, Na–nitaulinda
+- **S90550** (3x) [V-Qal-Imperf-3ms,V-Hifil-Imperf-3ms] | eng: will–defend, shall–protect | spa: defenderá | hin: वह–ढाल–होगा, रक्षा–करेगा | arb: يَحْمِي, يُدَافِعُ | kor: 보호하시리라, 보호하실–것이다 | swa: atalinda, atawalinda
+- **S90553** (1x) [V-Qal-InfAbs] | eng: protecting | spa: defendiendo | hin: रक्षा–करना | arb: يَحْمِي | kor: 보호하시고 | swa: akilinda
+
+## H1622 (POS: Art | N-proper-ms, "† <strong><span dir="rtl"><span class="lexicon-hebrew" dir="rtl">גִּרְגָּשִׁי</s", 7 occ, 3 senses)
+
+- **S90672** (3x) [Art | N-proper-ms] | eng: the–Girgashite | spa: el–gergeseo, el–guirgaseo | hin: गिर्गाशी, गिरगाशी-को | arb: الْ–جِرْجَاشِيَّ, الْجِرْجَاشِيِّينَ | kor: 기르가스와, 기르가스 | swa: Wagirugashi, Wagirgashi
+- **S90673** (3x) [Conj-w, Art | N-proper-ms] | eng: and–the–Girgashite, and–the–Girgashites | spa: y–el–gergeseo | hin: और–गिर्गाशी, और–गिर्गाशी–का | arb: وَ–ال–جِرْجَاشِيِّ, وَ–الـ–جِرْجَاشِيُّ | kor: 그리고–그–기르가시인의, 그리고–그–기르가스인과 | swa: na–Mgirgashi, na–Wagigashi
+- **S90676** (1x) [Art | N-proper-ms] | eng: the–Girgashi | spa: el–guirgaseo | hin: गिर्गाशी | arb: الـ–جِرْجاشيّ | kor: 그–기르가스인 | swa: –Mgirgashi
+
+## H1647 (POS: N-proper-ms, "† <strong><span dir="rtl"><span class="lexicon-hebrew" dir="rtl">גֵּרְשֹׁם</span", 14 occ, 3 senses)
+
+- **S90802** (12x) [N-proper-ms,Prep-l | N-proper-ms] | eng: Gershom, to–Gershom | spa: Guersom, Gershom | hin: गेर्शोम, –गेर्शोम–का | arb: جَرشوم, جِرْشُومَ | kor: 게르솜–의, 게르솜 | swa: Gershomu, Kwa–Gershomu
+- **S90804** (1x) [N-proper-ms] | eng: Gershom | spa: Guersón | hin: गेरशोम | arb: جَرْشُومَ | kor: 게르섬의 | swa: wa–Gershomu
+- **S90807** (1x) [Prep-l | N-proper-ms] | eng: to–Gershon | spa: para–Gershón | hin: गेर्शोन | arb: لِجَرْشُونَ | kor: 에게–게르소 | swa: Gershoni
+
+## H1649 (POS: Prep-l, "† <strong><span dir="rtl"><span class="lexicon-hebrew" dir="rtl">גֵּרְשֻׁנִּי</s", 13 occ, 3 senses)
+
+- **S90812** (8x) [Art | N-proper-ms,Prep-l, Art | N-proper-ms] | eng: the–Gershonite, to–the–Gershonite | spa: el–gersonita, los–gersonitas | hin: गेरशोनी–के, गेर्शुन्नी–के–लिए | arb: الجِيرْشُونِيّ, لِلْجَرْشُونِيُّونَ | kor: 그–게르손–인, 그–게르손의 | swa: Wagershuni, za–Wagershoni
+- **S90813** (4x) [Art | N-proper-ms] | eng: the–Gershunite, the–Gershonites | spa: el–gersonita | hin: –गेर्शुन्नी–के, –के–गेरशूनी | arb: الْجَرْشُونِيِّ, الْجِرْشُونِيِّ | kor: 그–게르심–사람의, 그–게르스온–사람의 | swa: Mgershoni, ha–Wagershuni
+- **S90816** (1x) [Art | N-proper-ms] | eng: the–Gershuni | spa: los–gersonitas | hin: गेर्शोनी–के | arb: الْجِرْشُونِيِّينَ | kor: 그–게르손의 | swa: Wagershoni
+
+## H1657 (POS: N-proper-fs, "† <strong><span dir="rtl"><span class="lexicon-hebrew" dir="rtl">גֹּ֫שֶׁן</span>", 15 occ, 3 senses)
+
+- **S90842** (12x) [N-proper-fs,N-proper-fs | 3fs] | eng: Goshen, to–Goshen | spa: Goshen, Goshén | hin: गोशेन–के, गोशेन–को | arb: جُوشَنَ, جَاسَانَ | kor: 고센, 고센의 | swa: Gosheni, ya–Gosheni
+- **S90844** (2x) [N-proper-fs,Art | N-proper-fs] | eng: the–Goshen, Goshen | spa: Gosén | hin: गोशेन–के, गोशेन | arb: جُوشِنَ, جوشَنَ | kor: 그–고센의, 고센의 | swa: ha–Gosheni, Gosheni
+- **S90845** (1x) [Conj-w | N-proper-fs] | eng: and–Goshen | spa: y–Gosén | hin: और–गोशेन | arb: وَ–جوشَنُ | kor: 그리고–고센 | swa: na–Gosheni
+
+## H1661 (POS: Prep-m | N-proper-fs, "† II. <strong><span dir="rtl"><span class="lexicon-hebrew" dir="rtl">גַּת</span>", 33 occ, 3 senses)
+
+- **S90849** (27x) [N-proper-fs,N-proper-ms,Prep-b | N-proper-fs,N-proper-fs | 3] | eng: Gath, in–Gath | spa: Gat, en–Gat | hin: गत, गत–में | arb: جَتَّ, فِي–جَتَّ | kor: 에–가드, 가드의 | swa: Gathi, katika–Gathi
+- **S90852** (5x) [Prep-m | N-proper-fs,N-proper-fs] | eng: from–Gat, from–Gath | spa: de–Gat, a–Gat–de | hin: गत–से, गत-से | arb: مِنْ–جَت, مِنْ–جَتَّ | kor: 가드에서, 에–가드 | swa: kutoka–Gathi, Gathi–
+- **S90854** (1x) [Prep-l | N-proper-fs] | eng: for–Gath | spa: para–Gat | hin: गत–के–लिए | arb: لِـ–جَتّ | kor: 가드에 | swa: kwa–Gathi
+
+## H1668 (POS: Adv, "† <strong><strong><span dir="rtl"><span class="lexicon-hebrew" dir="rtl">דָּא</s", 6 occ, 3 senses)
+
+- **S90862** (4x) [Adj-fs,Adv] | eng: this, this– | spa: esta, una | hin: यह, एक | arb: هَذِهِ, هَذِهِ– | kor: 이것이, 이것–이– | swa: moja, huyu
+- **S90863** (1x) [Adj-fs] | eng: that | spa: esta | hin: उस | arb: هَذِهِ | kor: 이것에게서 | swa: huyu
+- **S90864** (1x) [Prep-l | Adj-fs] | eng: against–that | spa: contra–la–otra | hin: से–दूसरे | arb: بِتِلْكَ | kor: 저것–에 | swa: na–jingine
+
+## H1674 (POS: Prep-b | N-fs, "† <strong><span dir="rtl"><span class="lexicon-hebrew" dir="rtl">דְּאָגָה</span>", 6 occ, 3 senses)
+
+- **S90880** (3x) [Conj-w, Prep-b | N-fs,Prep-b | N-fs] | eng: with–anxiety, and–with–anxiety | spa: y–con–ansiedad, con–ansiedad | hin: में–चिंता, और–में–चिंता | arb: وَ–بِـ–القَلَقِ, وَبِقَلَقٍ | kor: 그리고–근심으로, 근심으로 | swa: na–kwa–wasiwasi, na–kwa–hofu
+- **S90881** (2x) [N-fs] | eng: anxiety | spa: ansiedad | hin: चिन्ता, चिंता | arb: هَمٌّ, قَلَقٌ | kor: 근심이, 걱정–은 | swa: wasiwasi
+- **S90882** (1x) [Prep-m | N-fs] | eng: from–anxiety | spa: por–preocupación | hin: चिंता–से | arb: مِنْ–قَلَقٍ | kor: 걱정에서– | swa: kwa–wasiwasi
+
+## H1688a (POS: N-proper-fs | 3fs, "† II. <strong><span dir="rtl"><span class="lexicon-hebrew" dir="rtl">דְּבִיר</sp", 13 occ, 3 senses)
+
+- **S90923** (10x) [N-proper-fs,N-ms] | eng: Devir, Debir | spa: Debir, Devir | hin: दबीर, दवीर–के | arb: دَبيرَ, دَبِيرَ | kor: 드빌의, 드빌 | swa: Debiri
+- **S90924** (2x) [N-proper-fs | 3fs,Prep-l | N-proper-fs | 3fs] | eng: to–Devir | spa: a–Debir | hin: दबीरा–को | arb: لِ–دَبيرَ, دَبيرَ | kor: 에게–드비르에게, 드비르로 | swa: kwa–Debiri, Debiri
+- **S90925** (1x) [N-proper-fs | 3fs] | eng: Devirah | spa: Debir | hin: दबीरा | arb: دَبيرةَ | kor: 드빌로 | swa: Debiri

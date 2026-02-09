@@ -1,0 +1,83 @@
+You are a biblical lexicographer. For each lemma below, group the over-split sense clusters into REAL lexicographic senses.
+
+Rules:
+- Different grammatical inflections of the same meaning = SAME sense (merge them)
+- Different verb stems (Qal vs Hifil, active vs passive) = often DIFFERENT senses
+- Literal vs metaphorical uses = DIFFERENT senses
+- Every sense ID must appear in exactly one group
+- Output valid JSON array with labelChirho, descriptionChirho (150+ chars with multilingual evidence), senseIdsChirho
+
+## G4202 (POS: N-DFS, "<b> <span class="lexicon-greek">πορν-εία</span></b>, <br /> <i>Ionic dialect</i>", 25 occ, 3 senses)
+
+- **S75418** (16x) [N-NFS,N-DFS,N-AFS,N-GFS] | eng: sexual-immorality, sexual–immorality | spa: fornicación, de–fornicación | hin: व्यभिचार, व्यभिचार–से | arb: زِناها, الزِّنا | kor: 음행–의, 음행을 | swa: uasherati, uasherati,
+- **S75417** (6x) [N-DFS,N-GFS,N-AFS] | eng: fornication | spa: fornicación | hin: व्यभिचार, व्यभिचअर | arb: زِنَاهُمْ, زِنًى | kor: 음행, 음행에서 | swa: uasherati, uzinzi
+- **S75421** (3x) [N-NFP,N-AFP] | eng: sexual–immoralities, sexual-immoralities | spa: fornicaciones | hin: व्यभिचारों, वेस्यव्रितियन | arb: فُجُورٌ, زِنًا | kor: 음행들 | swa: uasherati, uasherati,
+
+## G4204 (POS: N-GFS, "<b> <span class="lexicon-greek">πόρν-η</span></b>, ἡ, <br /> <b>harlot, prostitu", 12 occ, 3 senses)
+
+- **S75430** (7x) [N-DFS,N-NFS,N-GFS,N-AFS] | eng: prostitute | spa: ramera, prostituta | hin: वेश्या, वेश्या–को | arb: زَانِيَة, زانِيَةٍ | kor: 음녀를, 창녀에게 | swa: kahaba, kahaba,
+- **S75431** (4x) [N-NFP,N-GFP] | eng: prostitutes, PROSTITUTES | spa: rameras, RAMERAS | hin: वेश्याएं, वेश्याओं–की | arb: الزَّواني, زواني | kor: 창녀들이, 창녀들은 | swa: wanawatangulia, ninyi
+- **S75432** (1x) [N-GFS] | eng: of–prostitute | spa: de–prostituta | hin: वेश्या–के | arb: زانِيَةٍ | kor: 창녀–의 | swa: viungo–vya–kahaba
+
+## G4205 (POS: N-AMP, "<b> <span class="lexicon-greek">πόρνος</span></b>, ὁ, <br /> <b>catamite,</b> Re", 10 occ, 3 senses)
+
+- **S75435** (5x) [N-DMP,N-NMP] | eng: sexually–immoral, sexually-immoral | spa: fornicarios,, fornicarios | hin: व्यभिचारियों, व्यभिचारी | arb: الزُّناةُ, بِـالزُّناةِ | kor: 음행하는–자들과, 음행하는–자들 | swa: wazinzi,, wazinzi
+- **S75437** (3x) [N-NMS] | eng: sexually–immoral, sexually-immoral-person | spa: fornicario | hin: व्यभिचारी, व्यभिचरि | arb: زانٍ, زَانٍِ | kor: 음행하는–자나, 음행하는–자–나 | swa: mwasherati, mzinzi
+- **S75438** (2x) [N-AMP,N-DMP] | eng: for–fornicators, fornicators | spa: fornicarios, a–fornicarios | hin: व्यभिचारियों–का, व्यभिचअरियोन | arb: زُنَاة, الزُّناةِ | kor: 음행하는–자들–을, 음행자들에게, | swa: wazinzi, kwa–wazinzi
+
+## G4215 (POS: N-NMP, "<b> <span class="lexicon-greek">ποτᾰμός</span></b>, ὁ, <br /> <b>river, stream,<", 17 occ, 3 senses)
+
+- **S75454** (11x) [N-DMS,N-AMS,N-GMS,N-NMS] | eng: river, a-river | spa: río, río, | hin: नदी, नदी–में | arb: نَهْرِ, نَهرُ | kor: 강, 강이 | swa: mto, mto,
+- **S75455** (5x) [N-NMP,N-GMP,N-AMP] | eng: rivers | spa: ríos | hin: नदियाँ, नदियों | arb: سُيولُ, الأَنْهَارِ | kor: 강들, 강들이 | swa: mito,, mito
+- **S75457** (1x) [N-GMP] | eng: of-rivers | spa: de–ríos | hin: नदियों–से | arb: أَنْهارٍ | kor: 강들의 | swa: za–mito,
+
+## G4225 (POS: Adv, "<b> <span class="lexicon-greek">που</span></b>, <br /> <i>Ionic dialect</i> <b><", 7 occ, 3 senses)
+
+- **S75495** (3x) [Adv] | eng: where | spa: dónde, a-dónde | hin: कहाँ | arb: أَيْنَ, أَينَ | kor: 어디에, 어디–로 | swa: wapi
+- **S75496** (3x) [Adv] | eng: somewhere | spa: en–algún–lugar, en-alguna-parte | hin: कहीं | arb: فِي–مَكَانٍ, رُبَّمَا | kor: 어디에서, 어딘가에 | swa: mahali–fulani, mahali
+- **S75497** (1x) [Adv] | eng: about | spa: aproximadamente | hin: लगभग | arb: تَقريباً | kor: 어느덧 | swa: hivi
+
+## Response Format
+
+Return a JSON object with one key per lemma ID. Each value is an array of sense groups:
+
+```json
+{
+  "G4043": [
+    {"labelChirho": "short label", "descriptionChirho": "one sentence", "senseIdsChirho": [id1, id2, ...]}
+  ],
+  "G4058": [...]
+}
+```
+
+IMPORTANT: Return ONLY the JSON object. Every sense ID from every lemma must appear exactly once. Use the numeric sense IDs (without the S prefix).
+
+## G4228 (POS: N-GMP, "<b> <span class="lexicon-greek">πούς</span></b>, <span class="lexicon-greek">ὁ, ", 93 occ, 3 senses)
+
+- **S75502** (86x) [N-GMP,N-DMP,N-AMP,N-NMP] | eng: feet | spa: pies | hin: पैरों, पैर | arb: قَدَمَيْهِ, قَدَمَينِ | kor: 발, 발을 | swa: miguu, nyayo
+- **S75503** (6x) [N-AMS,N-NMS] | eng: foot | spa: pie | hin: पैर, पैर–को | arb: رِجْلُكَ, رِجلُ | kor: 발이, 발을 | swa: mguu
+- **S75504** (1x) [N-GMS] | eng: of–foot | spa: de–pie | hin: पैर–की | arb: قَدَمٍ | kor: 걸음 | swa: ya–mguu
+
+## G4263 (POS: N-NNP, "<b> <span class="lexicon-greek">πρόβᾰτον</span></b>, <span class="lexicon-greek"", 39 occ, 3 senses)
+
+- **S75615** (37x) [N-NNP,N-ANP,N-GNP,N-ANS,N-NNS] | eng: sheep, a–sheep | spa: ovejas, oveja | hin: भेड़ें, भेड़ | arb: غَنَم, غَنَمٍ | kor: 양들을, 양 | swa: kondoo, kondoo,
+- **S75617** (1x) [N-GNP] | eng: of–sheep | spa: de‒ovejas | hin: भेड़ों–के | arb: خِرافٍ | kor: 양들–의 | swa: ya-kondoo,
+- **S75618** (1x) [N-GNS] | eng: from–a–sheep | spa: de–oveja? | hin: भेद–से | arb: خَرُوفًا | kor: 양보다 | swa: na-kondoo?
+
+## G4286 (POS: N-GFS, "<b> <span class="lexicon-greek">πρόθεσις</span></b>, <span class="lexicon-greek"", 12 occ, 3 senses)
+
+- **S75645** (8x) [N-AFS,N-NFS,N-GFS,N-DFS] | eng: purpose | spa: propósito | hin: उद्देश्य, योजन | arb: قَصدِ, قَصْدِ–هِ | kor: 목적을, 목적이 | swa: kusudi, nia
+- **S75646** (3x) [N-GFS] | eng: presentation | spa: proposición | hin: भेत–कि, भेंट–की | arb: تَقدِمَةِ, التَّقدِمَةِ | kor: 진설–의, 진설 | swa: wonyesho, kuwekwa–mbele
+- **S75648** (1x) [N-NFS] | eng: presentation | spa: presentación | hin: भेंट | arb: خُبْزُ | kor: 진설이고 | swa: kuwekwa
+
+## G4367 (POS: V-RPM/P-ANP, "<b> <span class="lexicon-greek">προστάσσω</span></b>, <br /> <i>Attic dialect</i", 7 occ, 3 senses)
+
+- **S75924** (5x) [V-AIA-3S] | eng: commanded, he–commanded | spa: ordenó, mandó | hin: आज्ञा–दी, तेरे | arb: أَمَرَ, أَمَرَهُ | kor: 명령했다, 명했다 | swa: aliyoamuru, alivyomwagiza
+- **S75925** (1x) [V-RPM/P-AMP] | eng: appointed | spa: señalados | hin: नियत | arb: مُعَيَّنَةً | kor: 미리–정해진 | swa: zilizopangwa
+- **S75926** (1x) [V-RPM/P-ANP] | eng: having–been–commanded | spa: mandadas | hin: आदेश–दिया–गया–है | arb: ٱلْمَأْمُورِ | kor: 명받은 | swa: yaliyoamriwa
+
+## G4386 (POS: Adj-ANS-C, "<b> <span class="lexicon-greek">πρότερος</span></b> <br /> and <b><span class="l", 11 occ, 3 senses)
+
+- **S75996** (7x) [Adv-C,Adj-ANS-C] | eng: formerly, before | spa: anteriormente, antes | hin: पहले, पेहले | arb: أَوَّلًا, سابِقًا | kor: 이전에, 먼저 | swa: kwanza, zamani
+- **S75998** (3x) [Adj-ANS-C,Adj-AFS-C] | eng: former | spa: anteriores, anterior | hin: पहले | arb: سَابِقَة, السّابِقَةِ | kor: 전의, 이전의 | swa: za–kwanza, za–awali
+- **S75999** (1x) [Adj-ANS-C] | eng: former-time | spa: primero | hin: पेहले; | arb: أَوَّلًا | kor: 처음; | swa: mara–ya–kwanza

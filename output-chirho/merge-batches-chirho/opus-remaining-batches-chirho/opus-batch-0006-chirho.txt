@@ -1,0 +1,138 @@
+You are a biblical lexicographer. For each lemma below, group the over-split sense clusters into REAL lexicographic senses.
+
+Rules:
+- Different grammatical inflections of the same meaning = SAME sense (merge them)
+- Different verb stems (Qal vs Hifil, active vs passive) = often DIFFERENT senses
+- Literal vs metaphorical uses = DIFFERENT senses
+- Every sense ID must appear in exactly one group
+- Output valid JSON array with labelChirho, descriptionChirho (150+ chars with multilingual evidence), senseIdsChirho
+
+## H6805 (POS: V-Qal-Perf-3cp, "† I. <strong><strong>[<span dir="rtl"><span class="lexicon-hebrew" dir="rtl">צָע", 8 occ, 7 senses)
+
+- **S130328** (2x) [Prep-b | V-Qal-Inf | 2ms] | eng: when–You–marched, when–You-marched | spa: cuando–marchaste | hin: चलने–में–तेरे | arb: بِ–سَيْرِكَ | kor: 걸음–당신이–으로, 걸으실–때–에 | swa: ulipopiga–hatua, ulipoenda
+- **S130322** (1x) [V-Qal-Imperf-3mp] | eng: they–can–walk | spa: caminan | hin: चलते | arb: يَخْطُونَ | kor: 그것들이–걸으리라 | swa: enda
+- **S130323** (1x) [V-Qal-Imperf-3ms] | eng: he–walked | spa: andaba | hin: चलता–है | arb: يَخْطُو | kor: 걷는다 | swa: akikaribia
+- **S130324** (1x) [Conj-w | V-Hifil-ConjImperf-3f] | eng: and–it–marches–him | spa: y–lo–hará–caminar | hin: और–उसे–ले–जाएगी | arb: وَ–يُسَاقُ | kor: 그리고–끌려가리라 | swa: na–utampeleka
+- **S130325** (1x) [V-Qal-Perf-3cp] | eng: stepped | spa: marcharon | hin: चले | arb: خَطَا | kor: 걸었다 | swa: walipotembea
+- **S130326** (1x) [V-Qal-Imperf-2ms] | eng: you–march– | spa: marchas–por– | hin: तूने–कदम–रखा– | arb: تَخْطُو | kor: 행진하셨도다 | swa: unapita
+- **S130327** (1x) [V-Qal-Perf-3fs] | eng: marched | spa: caminan | hin: फैलती–हैं | arb: صَعِدْنَ | kor: 걸었다 | swa: kumkita
+
+## H7015 (POS: Prep-l | N-fs, "† II. <strong><span dir="rtl"><span class="lexicon-hebrew" dir="rtl">קִינָה</spa", 18 occ, 7 senses)
+
+- **S132148** (12x) [N-fs] | eng: lamentation, a–dirge | spa: lamentación, lamento | hin: विलाप, शोकगीत | arb: مَرْثَاةً, مَرْثِيَةً | kor: 애가를, 애곡을 | swa: maombolezo, kilio
+- **S132149** (1x) [N-fp] | eng: lamentations | spa: lamentos | hin: विलाप | arb: مَراثٍ | kor: 애곡들 | swa: maombolezo
+- **S132150** (1x) [Prep-l | N-fs] | eng: into–lamentation | spa: en–lamento | hin: में–विलाप | arb: إِلَى–مَرْثَاةٍ | kor: 으로–애가 | swa: kuwa–maombolezo
+- **S132151** (1x) [Prep-b | N-fpc | 3mp] | eng: in–their–laments | spa: en–sus–lamentaciones | hin: उनके–विलापों–में | arb: فِي–مَرَاثِيهِمْ | kor: 에–그들의–애가들 | swa: bּkiynwoteyhem
+- **S132152** (1x) [Art | N-fs] | eng: the–lamentation | spa: la–lamentación | hin: विलापगीत | arb: بِهٰذِهِ–الْمَرْثِيَةِ | kor: 그–애가 | swa: maombolezo
+- **S132153** (1x) [Prep-l | N-fs] | eng: for–lamentation | spa: para–lamento | hin: विलाप–के–लिए | arb: لِـ–مَرْثِيَةٍ | kor: 애가로 | swa: maombolezo
+- **S132154** (1x) [Art | N-fp] | eng: the–Laments | spa: las–lamentaciones | hin: विलापों–की | arb: الْمَرَاثِي | kor: 그–애가들 | swa: hakiּynwot
+
+## Response Format
+
+Return a JSON object with one key per lemma ID. Each value is an array of sense groups:
+
+```json
+{
+  "H6780": [
+    {"labelChirho": "short label", "descriptionChirho": "one sentence", "senseIdsChirho": [id1, id2, ...]}
+  ],
+  "H6805": [...]
+}
+```
+
+IMPORTANT: Return ONLY the JSON object. Every sense ID from every lemma must appear exactly once. Use the numeric sense IDs (without the S prefix).
+
+## H7031 (POS: Adj-fs, "<strong><span dir="rtl"><span class="lexicon-hebrew" dir="rtl">קַל</span></span>", 13 occ, 7 senses)
+
+- **S132221** (5x) [Adj-mp,Adj-ms,Adj-fs,Art | Adj-ms] | eng: swift, we–shall–ride | spa: ligera, veloz | hin: तेज़, तेज | arb: سِرَاعًا, سَرِيعَةٍ | kor: 빠른, 빠른–자여 | swa: mwepesi, wepesi
+- **S132222** (2x) [Adj-ms] | eng: swift | spa: ligero, Ligero– | hin: हल्का, तेज | arb: خَفِيفٌ–, خَفِيفٌ | kor: 빠른, 가벼운– | swa: alikuwa–mwepesi, Mwepesi
+- **S132226** (2x) [Adj-ms] | eng: swiftly | spa: veloz, pronto | hin: तेज़ी–से, जल्दी | arb: سَريعًا, خَفِيفًا | kor: 빨리 | swa: kwa–upesi, haraka
+- **S132223** (1x) [Prep-m | Adj-ms] | eng: from–swift | spa: del–veloz | hin: से–फुर्तीले | arb: مِنَ–السَّريعِ | kor: 빠른–자에게서 | swa: kutoka–kwa–mwenye–mbio
+- **S132225** (1x) [Adj-mp] | eng: Swifter | spa: Más–veloces | hin: तेज़ | arb: أَسْرَعَ | kor: 빠른–자들–이었네 | swa: Wepesi
+- **S132227** (1x) [Prep-l, Art | Adj-mp] | eng: to–the–swift | spa: a–los–veloces | hin: तेज–दौड़नेवालों–को | arb: لَ–قَّلِّيم | kor: 빠른–자들–에게 | swa: kwa–wenye–haraka
+- **S132229** (1x) [Conj-w | Adj-ms] | eng: and–swift | spa: y–el–ligero | hin: और–तेज़ | arb: وَ–الخَفيفُ | kor: 그리고–빠른–자는 | swa: na–mwenye–miguu–nyepesi
+
+## H7075 (POS: Conj-w | N-msc | 3mp, "† <strong><span dir="rtl"><span class="lexicon-hebrew" dir="rtl">קִנְיָן</span><", 10 occ, 7 senses)
+
+- **S132516** (2x) [Conj-w | N-ms] | eng: and–possessions | spa: y–posesión, | hin: और–संपत्ति | arb: وَقُنْيَةً | kor: 그리고–소유물을 | swa: na–mali
+- **S132517** (2x) [Conj-w | N-msc | 3mp,Conj-w, Prep-l | N-msc | 3mp] | eng: and–their–property, and–for–their-possessions | spa: y–posesión-de–ellos, y–para–sus–posesiones | hin: और–संपत्ति–उनकी, और–उनकी–संपत्ति | arb: وَ–مُقْتَنَياتُ–هُمْ, وَ–لِ–أَمْلاكِهِمْ | kor: 그리고–에게–그들의–재산을–위하여, 그리고–그들의–재산과 | swa: na–kwa–mali–yao, mali
+- **S132518** (2x) [N-msc | 3ms] | eng: possessions-his, his–possessions | spa: su–posesión, posesión–de–él | hin: उसकी–संपत्ति–का, अपनी–सम्पत्ति | arb: مُمتَلَكاتِهِ, مُقْتَنَياتِ–هِ | kor: 그의–재산을, 그–의–소유–에 | swa: mali–yake, mali
+- **S132519** (1x) [N-msc] | eng: acquisition-of | spa: adquisición–de | hin: खरीद | arb: شِرَاءَ | kor: 산–것–의 | swa: kununua–kwa–
+- **S132521** (1x) [N-msc | 2ms] | eng: your–possessions | spa: tu–adquisición | hin: सम्पत्ति–अपनी–से | arb: مُقْتَنَيَاتِكَ | kor: 네–소유–로 | swa: mapato–yako
+- **S132523** (1x) [N-msc | 3ms] | eng: his-acquisition | spa: adquisición–suya | hin: अपनी–कमाई–की | arb: اقْتِنائِ–هِ | kor: 그의–소유물의 | swa: alivyopata
+- **S132524** (1x) [N-msc | 2ms] | eng: Your–possessions | spa: de–tus–posesiones | hin: तेरी–संपत्ति–से | arb: بِمَخلوقاتِكَ | kor: 당신–의–소유물–로 | swa: viumbe–vyako
+
+## H7092 (POS: V-Nifal-Imperf-3mp | Pn, "† <strong><strong><span dir="rtl"><span class="lexicon-hebrew" dir="rtl">קָפַץ</", 7 occ, 7 senses)
+
+- **S132584** (1x) [V-Qal-Perf-3fs] | eng: has–shut | spa: cerrará | hin: बंद–करेगी | arb: أَغلَقَت | kor: 닫았도다 | swa: utafunga
+- **S132585** (1x) [V-Qal-Perf-3ms] | eng: has–He–shut–up | spa: cerró | hin: काफत्स | arb: قَبَضَ | kor: 닫으셨나이까 | swa: amefunga
+- **S132586** (1x) [V-Nifal-Imperf-3mp | Pn] | eng: they–are–gathered | spa: son–recogidos; | hin: वे–इकट्ठे–होते–हैं | arb: يُقْبَضُونَ | kor: 거두어지고 | swa: wanakusanywa
+- **S132587** (1x) [V-Qal-Perf-3fs] | eng: shuts | spa: cierra | hin: बंद–करती–है | arb: يُسِدُّ | kor: 닫았다 | swa: umefunga
+- **S132588** (1x) [V-Piel-Prtcpl-ms] | eng: bounding | spa: brincando | hin: छलाँगता–हुआ | arb: مِقَفِّيص | kor: 뛰어넘으면서 | swa: akidunda
+- **S132589** (1x) [V-Qal-Imperf-3mp] | eng: will-shut | spa: cerrarán | hin: राजा | arb: يُغْلِقُ | kor: 다물리라 | swa: watafunga
+- **S132590** (1x) [V-Qal-Imperf-2ms] | eng: you-shall-shut | spa: cerrarás | hin: बंद–करेगा | arb: تَقْبِضُ | kor: 잠그리라–네가 | swa: usifumbe
+
+## H7127 (POS: V-Qal-Perf-1cs, "† <strong><strong><span dir="rtl"><span class="lexicon-hebrew" dir="rtl">קְרֵב</", 9 occ, 7 senses)
+
+- **S133207** (3x) [V-Qal-Perf-3mp,V-Qal-Perf-3ms] | eng: came-near, they-came-near | spa: se–acercaron, se–acercó | hin: निकट–आया, निकट–आए | arb: تَقَدَّمَ, اقْتَرَبُوا | kor: 다가갔다, 나아왔다 | swa: walikaribia, akakaribia
+- **S133208** (1x) [Conj-w, Prep-k | V-Qal-Inf | 3] | eng: and–as-he-came-near | spa: y–al–acercarse | hin: और–जब–वह–नजदीक–आया | arb: وَ–عِنْدَ–اقْتِرَابِهِ | kor: 그리고–가까이–오매 | swa: Na–alipokaribia
+- **S133209** (1x) [Conj-w | V-Hifil-ConjPerf-3mp] | eng: and–they–offered | spa: y–ofrecieron | hin: और–उन्होंने–चढ़ाए–बलिदान | arb: وَ–قَرَّبُوا | kor: 그리고–드렸다 | swa: na–wakatoa
+- **S133210** (1x) [V-Hifil-Prtcpl-mp] | eng: offering | spa: ofreciendo | hin: चढ़ाएं–बलिदान | arb: يُقَدِّمُونَ | kor: 드리는자들 | swa: watoe–sadaka
+- **S133211** (1x) [V-Hifil-Perf-3mp | 3ms] | eng: they-brought-Him-near | spa: fue–llevado | hin: लाया–गया–उसे | arb: قَرَّبُوهُ | kor: 나아가게했다–그를 | swa: walimkaribisha
+- **S133212** (1x) [V-Qal-Perf-1cs] | eng: I-approached | spa: Me–acerqué | hin: निकट–गया | arb: اقْتَرَبْتُ | kor: 다가갔다 | swa: Nilikaribia
+- **S133213** (1x) [Conj-w | V-Piel-ConjImperf-2ms] | eng: and–you–shall–offer | spa: y–ofrecerás | hin: और–चढ़ाओ | arb: وَ–قَرِّبْها | kor: 그리고–드려라 | swa: na–utoe
+
+## H7151 (POS: N-fs, "† <strong><span dir="rtl"><span class="lexicon-hebrew" dir="rtl">קִרְיָה</span><", 29 occ, 7 senses)
+
+- **S133395** (16x) [N-fs,N-fsc] | eng: the–city, city | spa: la–ciudad, ciudad | hin: नगर, नगर–के | arb: مَدِينَةُ, الْقَرْيَةَ | kor: 성읍이여, 도시를 | swa: mji, za–mji
+- **S133397** (4x) [N-fsc] | eng: city–of, the–town-of | spa: ciudad–de, villa–de | hin: नगर, शहर | arb: مَدينَةُ, مَدِينَةُ | kor: 성이라, 성읍이니라 | swa: ni–mji, mji–wa
+- **S133398** (3x) [N-fs] | eng: a–town, town | spa: ciudad | hin: शहर, नगर | arb: قَرْيَةٌ | kor: 성이, 성읍이 | swa: mji
+- **S133399** (2x) [Art | N-fs] | eng: the–city | spa: la–ciudad | hin: नगर–की, नगर | arb: الْمَدِينَةِ, الْمَدِينَةُ | kor: 그–성이 | swa: ukapiga–kelele, mji
+- **S133401** (2x) [Prep-m | N-fs,Prep-m | N-fsc] | eng: from–city–of, from–city | spa: de–ciudad–de, de–ciudad | hin: नगर–से | arb: مِنْ–قَرْيَةِ, مِنَ–الْمَدِينَةِ | kor: 에서–성, 에서–도시–의 | swa: kutoka–mjini, kutoka–Kiriathi–
+- **S133400** (1x) [N-fsc] | eng: city–of | spa: ciudad-de | hin: नगरी | arb: مَدينَة | kor: 성음 | swa: mji–wa
+- **S133402** (1x) [Prep-m | N-fsc] | eng: than–city–of | spa: más–que–ciudad–de | hin: नगर–से– | arb: مِن–مَدينَةِ– | kor: 보다–성읍– | swa: ni–kama–mji
+
+## H7219 (POS: Conj-w | N-ms, "† II. <strong><span dir="rtl"><span class="lexicon-hebrew" dir="rtl">רֹאשׁ</span", 12 occ, 7 senses)
+
+- **S134083** (6x) [N-ms] | eng: poison | spa: veneno, hiel | hin: विष–का, विष | arb: عَلْقَمٍ, عَلْقَماً | kor: 독의, 쓴–것–을 | swa: sumu
+- **S134085** (1x) [N-msc] | eng: the–head–of | spa: Cabeza–de– | hin: सिर | arb: رَأْسَ– | kor: 머리를– | swa: sumu–ya
+- **S134086** (1x) [Prep-l | N-ms] | eng: into–poison | spa: en–veneno | hin: में–ज़हर | arb: إلى–سُمِّ | kor: 으로–독 | swa: kuwa–sumu
+- **S134087** (1x) [Conj-w | N-ms] | eng: and–gall | spa: y–hiel | hin: और–विष | arb: وَالعَلْقَمَ | kor: 그리고–독–을 | swa: na–sumu
+- **S134088** (1x) [Prep-k, Art | N-ms] | eng: like–poisonous-plant | spa: como–hierba–venenosa | hin: जहरीले–पौधे–जैसा | arb: كَالسُّمِّ | kor: 같으니라–독초에 | swa: kama–sumu
+- **S134089** (1x) [N-ms] | eng: my–head | spa: de–veneno | hin: शीर्ष–पर | arb: رَأْسَ | kor: 머리–와 | swa: uchungu
+- **S134090** (1x) [Conj-w | N-msc] | eng: and–poison-of | spa: y–ponzoña–de | hin: और–ज़हर | arb: وَسُمُّ | kor: 그리고–머리(접) | swa: na–sumu
+
+## H7290 (POS: Conj-w | V-Nifal-ConsecImperf-3ms, "† <strong><strong>[<span dir="rtl"><span class="lexicon-hebrew" dir="rtl">רָדַם<", 7 occ, 7 senses)
+
+- **S134864** (1x) [Conj-w | V-Nifal-ConsecImperf-] | eng: and–fell–fast–asleep | spa: y–se–durmio–profundamente | hin: और–गहरी–नींद–में–था | arb: وَ–نَامَ–نَوْمًا–عَمِيقًا | kor: 그리고–깊이–잠들었으니라 | swa: na–akasinzia
+- **S134865** (1x) [V-Nifal-Prtcpl-ms] | eng: he–who–sleeps | spa: el–que–duerme | hin: सोता–है | arb: النَّائِمُ | kor: 잠자는–자–는 | swa: anayelalal
+- **S134866** (1x) [V-Nifal-Prtcpl-ms] | eng: sleeping | spa: dormido | hin: सोया–हुआ | arb: نَائِمٌ | kor: 깊이–잠드는 | swa: unayesinzia
+- **S134867** (1x) [V-Nifal-Perf-1cs] | eng: I-fell-into-deep-sleep | spa: caí–en–sueño–profundo | hin: गहरी–नींद–आई–मुझे | arb: غُشِيَ–عَلَيَّ | kor: 깊이–잠들었으니 | swa: nilizimia
+- **S134868** (1x) [V-Nifal-Prtcpl-ms] | eng: in-deep-sleep | spa: adormecido | hin: गहरी–नींद–में | arb: غَارِقًا–فِي–سُبَاتٍ | kor: 깊이–잠든–자가 | swa: nimelala–usingizi
+- **S134869** (1x) [V-Nifal-Prtcpl-ms] | eng: lay–stunned | spa: quedaron-dormidos | hin: निरद्दाम | arb: سَبَتَ | kor: 잠들었나이다 | swa: walilala–usingizi–mzito
+- **S134870** (1x) [V-Nifal-Prtcpl-ms] | eng: was-fast-asleep | spa: profundamente–dormido | hin: गहरी–नींद–में–था | arb: مُسْتَغْرِقٌ | kor: 깊이–잠들었다 | swa: alikuwa–amelala–fofofo
+
+## Response Format
+
+Return a JSON object with one key per lemma ID. Each value is an array of sense groups:
+
+```json
+{
+  "H7127": [
+    {"labelChirho": "short label", "descriptionChirho": "one sentence", "senseIdsChirho": [id1, id2, ...]}
+  ],
+  "H7151": [...]
+}
+```
+
+IMPORTANT: Return ONLY the JSON object. Every sense ID from every lemma must appear exactly once. Use the numeric sense IDs (without the S prefix).
+
+## H7565 (POS: Prep-l, "† I. <strong><span dir="rtl"><span class="lexicon-hebrew" dir="rtl">רֶ֫שֶׁף</spa", 7 occ, 7 senses)
+
+- **S137205** (1x) [N-ms] | eng: flame | spa: chispa | hin: चिनगारी–के | arb: الشَّرارِ | kor: 불꽃의 | swa: moto
+- **S137206** (1x) [N-mpc] | eng: flames-of | spa: brasas–de | hin: अंगारे–उसके | arb: جَمْرَاتُ | kor: 불꽃들–이라 | swa: miali
+- **S137207** (1x) [N-ms] | eng: plague | spa: la–plaga | hin: ज्वाला | arb: الطَّاعُونُ | kor: 불–이 | swa: mwako
+- **S137208** (1x) [N-mpc] | eng: the–fiery–shafts–of– | spa: relámpagos-de– | hin: रिश्पे– | arb: سِهَامَ– | kor: 불화살들–의 | swa: mishale–ya
+- **S137209** (1x) [N-ms] | eng: plague | spa: fiebre | hin: बुखार–से | arb: الْحُمَّى | kor: 열병(접) | swa: homa
+- **S137210** (1x) [Prep-l, Art | N-mp] | eng: to–lightning–bolts | spa: a–los-rayos | hin: बिजलियों–को | arb: لِلصَوَاعِقِ | kor: 번개들–에게 | swa: kwa–radi
+- **S137211** (1x) [N-mpc | 3fs] | eng: its–flames | spa: sus–brasas | hin: जलन | arb: جَمْرَاتُهَا | kor: 그–불꽃들–이 | swa: miali–yake

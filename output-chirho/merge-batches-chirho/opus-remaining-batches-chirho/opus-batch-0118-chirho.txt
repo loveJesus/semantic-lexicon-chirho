@@ -1,0 +1,73 @@
+You are a biblical lexicographer. For each lemma below, group the over-split sense clusters into REAL lexicographic senses.
+
+Rules:
+- Different grammatical inflections of the same meaning = SAME sense (merge them)
+- Different verb stems (Qal vs Hifil, active vs passive) = often DIFFERENT senses
+- Literal vs metaphorical uses = DIFFERENT senses
+- Every sense ID must appear in exactly one group
+- Output valid JSON array with labelChirho, descriptionChirho (150+ chars with multilingual evidence), senseIdsChirho
+
+## H0827 (POS: N-fsc | 3ms, "† <strong><span dir="rtl"><span class="lexicon-hebrew" dir="rtl">אַשִׁפָּה</span", 6 occ, 2 senses)
+
+- **S84692** (3x) [N-fs,N-fsc | 3ms] | eng: the–quiver, quiver | spa: aljaba, Su–aljaba | hin: तरकश, तरकश–उनका | arb: كِنَانَتُهُمْ, الْكِنَانَةُ | kor: 화살통이, 화살통을 | swa: podo, podo–lake
+- **S84693** (3x) [N-fsc | 3ms,Prep-b | N-fsc | 3ms] | eng: of–His–quiver, in–his–quiver | spa: su–aljaba, en–su–aljaba | hin: अपने–तरकश–में, अपने–तरकश–के | arb: مِنهُم, كِنَانَتِهِ | kor: 그의–화살통에–, 그–화살통–의 | swa: ya–podo–lake, podo–lake
+
+## H0847 (POS: Conj-w, "† <strong><span dir="rtl"><span class="lexicon-hebrew" dir="rtl">אֶשְׁתָּאוֹל</s", 7 occ, 2 senses)
+
+- **S84864** (4x) [Conj-w, Prep-m | N-proper-fs,Conj-w | N-proper-fs] | eng: and–from–Eshtaol, and–Eshtaol | spa: y–de–Estaol, y–Estaol | hin: और–एश्ताओल–से, और–एश्ताओल | arb: وَ–مِن–أَشْتَاؤُلَ, وَ–أَشْتَاؤُلُ | kor: 그리고–에스다올에서, 그리고–에스다올로 | swa: na–kutoka–Eshtaoli, na–Eshtaoli
+- **S84863** (3x) [N-proper-fs] | eng: Eshtaol | spa: Estaol | hin: एश्ताओल | arb: إشتاؤولَ, أَشْتَاوُلَ | kor: 에스다오, 에스타올 | swa: Eshtaoli
+
+## H0861 (POS: Prep-l | N-msd, "† <strong><span dir="rtl"><span class="lexicon-hebrew" dir="rtl">אַתּוּן</span><", 10 occ, 2 senses)
+
+- **S85049** (9x) [N-msc,Prep-l | N-msd,Prep-l | N-msc] | eng: furnace-of, the–furnace | spa: el–horno–de, horno–de | hin: भट्टी, में–भट्टी | arb: أَتُّونِ, فِي–أَتُّونِ | kor: 화덕, 화덕을–그 | swa: tanuru, tanuru–
+- **S85051** (1x) [Conj-w | N-msd] | eng: and–the-furnace | spa: y–el–horno | hin: और–भट्टी | arb: وَ–الأَتُّونُ | kor: 그리고–화덕이–그 | swa: na–tanuru
+
+## H0906 (POS: N-mp, "† I. <strong><span dir="rtl"><span class="lexicon-hebrew" dir="rtl">בַּד</span><", 23 occ, 2 senses)
+
+- **S85315** (12x) [N-mp,Art | N-mp,Art | N-ms] | eng: the–linen, linen | spa: el–lino, lino | hin: सन, सन–का–कपड़ा | arb: الْكَتَّانِ, كَتَّانًا | kor: 그–베의를, 그–세마포를 | swa: kitani
+- **S85314** (11x) [N-ms,N-msc] | eng: linen, of–linen | spa: lino, de–lino | hin: सन, सन–का | arb: كَتَّانٍ, كَتَّانِيًّا | kor: 베, 베로–된 | swa: kitani, ya–kitani
+
+## H0931 (POS: N-msc, "† <strong><span dir="rtl"><span class="lexicon-hebrew" dir="rtl">בֹּ֫הֶן</span><", 16 occ, 2 senses)
+
+- **S85505** (14x) [N-msc] | eng: thumb-of, big-toe-of | spa: pulgar-de, dedo-gordo-de | hin: अंगूठे, दाहिनी | arb: إِبْهَامِ, إِبهامِ | kor: 엄지의, 엄지–발가락에 | swa: kidole–kikubwa–cha, kidole–kikubwa
+- **S85506** (2x) [N-mpc] | eng: –the-thumbs-of, with–the-thumbs-of | spa: pulgares–de, con–pulgares–de | hin: अंगूठों–को | arb: أَباهِمُ, أَباهِمَ | kor: 엄지손가락들이, 엄지손가락들을 | swa: vidole–vikubwa–vya
+
+## Response Format
+
+Return a JSON object with one key per lemma ID. Each value is an array of sense groups:
+
+```json
+{
+  "H0744": [
+    {"labelChirho": "short label", "descriptionChirho": "one sentence", "senseIdsChirho": [id1, id2, ...]}
+  ],
+  "H0759": [...]
+}
+```
+
+IMPORTANT: Return ONLY the JSON object. Every sense ID from every lemma must appear exactly once. Use the numeric sense IDs (without the S prefix).
+
+## H0934 (POS: Art | N-fs, "† <strong><span dir="rtl"><span class="lexicon-hebrew" dir="rtl">בַּהֶ֫רֶת</span", 12 occ, 2 senses)
+
+- **S85509** (11x) [N-fs,Art | N-fs,N-fp,Prep-b, Art | N-fs] | eng: bright-spot, bright-spots | spa: mancha-brillante, manchas-brillantes | hin: चमकीला दाग, सफेद | arb: لُمَعٌ, لُمْعَةٌ | kor: 밝은–반점들, 밝은–반점 | swa: doa–jeupe, madoa–meupe
+- **S85512** (1x) [Conj-w, Prep-l, Art | N-fs] | eng: and–for–the–bright-spot | spa: y–para–la–mancha-brillante | hin: और–के लिए | arb: وَ–لِلُّمْعَةِ | kor: 그리고-흰-반점의 | swa: na–kwa–doa–jeupe
+
+## H1002 (POS: Art | N-fs, "† <strong><span dir="rtl"><span class="lexicon-hebrew" dir="rtl">בִּירָה</span><", 16 occ, 2 senses)
+
+- **S86437** (14x) [Art | N-fs] | eng: the–citadel | spa: la–ciudadela | hin: राजधानी, राजधानी–में | arb: الْقَصْرِ | kor: 그–성에, 그–왕궁의 | swa: ngome
+- **S86438** (2x) [Art | N-fs] | eng: the–palace | spa: la–fortaleza | hin: –के–महल | arb: الْقَصْرُ, الْقَصْرَ | kor: 그–궁전이, 그–궁전을 | swa: jumba
+
+## H1053 (POS: N-proper-fs, "† <strong><span dir="rtl"><span class="lexicon-hebrew" dir="rtl">בֵּית שֶׁ֫מֶשׁ<", 21 occ, 2 senses)
+
+- **S86628** (17x) [N-proper-fs,Conj-w | N-proper-fs] | eng: Beth-Shemesh, Beit-Shemesh | spa: Bet–Shemesh, Bet–Semes | hin: बैत–शेमेश, बैत–शेमेश–के | arb: بَيْتِ–شَمْس, بَيْتِ–شَمْسَ | kor: 벴세메시의, 벳–세메시와 | swa: Beth-shemeshi, Beth-Shemeshi
+- **S86631** (4x) [Prep | N-proper-fs] | eng: in–Beit-Shemesh, at–Beit-Shemesh | spa: en–Bet–Semes | hin: बेत–शेमेश–में, बेतशेमेश–में | arb: فِي–بَيْتِ–شَمْسَ, فِي–بَيْتِ شَمْسَ | kor: 에–벳–세메시, 벬–세메시–에서 | swa: katika–Bethi–Shemeshi, huko–Beth-shemeshi
+
+## H1109a (POS: N-proper-ms, "I. <strong><span dir="rtl"><span class="lexicon-hebrew" dir="rtl">בִּלְעָם</span", 60 occ, 2 senses)
+
+- **S86919** (58x) [N-proper-ms,Prep-l | N-proper-ms,Conj-w | N-proper-ms] | eng: Balaam, to–Balaam | spa: Balaam, a–Balaam | hin: बिलआम, बिलआम–ने | arb: بِلْعَامَ, بِلْعَامُ | kor: 발람–이, 발람 | swa: Balaamu, kwa–Balaamu
+- **S86921** (2x) [N-proper-ms] | eng: Bilam | spa: Balaam | hin: बिलआम–को, बिलआम | arb: بِلْعَامَ, بِلْعامَ | kor: 발람을 | swa: Balaamu
+
+## H1111 (POS: N-proper-ms, "<strong><span dir="rtl"><span class="lexicon-hebrew" dir="rtl">בָּלָק</span></sp", 43 occ, 2 senses)
+
+- **S86925** (42x) [N-proper-ms,Prep-l | N-proper-ms,Conj-w | N-proper-ms] | eng: Balak, to–Balak | spa: Balac, y–Balac | hin: बालाक–ने, बालाक | arb: بَالَاقُ, بَالَاقَ | kor: 발락–이, 발락 | swa: Balaki, na–Balaki
+- **S86926** (1x) [Prep-m | N-proper-ms] | eng: than–Balak | spa: que–Balac | hin: बालाकसे | arb: مِن–بالاقَ | kor: 에서–발락 | swa: kuliko–Balaki

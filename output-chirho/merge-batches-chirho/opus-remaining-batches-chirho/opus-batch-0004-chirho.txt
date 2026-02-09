@@ -1,0 +1,138 @@
+You are a biblical lexicographer. For each lemma below, group the over-split sense clusters into REAL lexicographic senses.
+
+Rules:
+- Different grammatical inflections of the same meaning = SAME sense (merge them)
+- Different verb stems (Qal vs Hifil, active vs passive) = often DIFFERENT senses
+- Literal vs metaphorical uses = DIFFERENT senses
+- Every sense ID must appear in exactly one group
+- Output valid JSON array with labelChirho, descriptionChirho (150+ chars with multilingual evidence), senseIdsChirho
+
+## H5709 (POS: V-Hifil-Perf-3mp, "† <strong><strong>[<span dir="rtl"><span class="lexicon-hebrew" dir="rtl">עֲדָא<", 9 occ, 7 senses)
+
+- **S122464** (2x) [V-Hifil-Perf-3mp] | eng: they-took, their-dominion-was-taken-away | spa: le–quitaron, fue–quitado | hin: हटा–दी–गई, छीन–लिया–गया | arb: أُزِيلَ | kor: 제거되었다, 빼앗겼더라 | swa: uliondolewa
+- **S122465** (2x) [V-Qal-Imperf-3fs] | eng: passes-away | spa: puede–ser–revocada | hin: टलती | arb: تُلْغَى | kor: 폐할, 폐하다 | swa: batilishwe
+- **S122466** (1x) [V-Qal-Perf-3fs] | eng: passed | spa: pasó | hin: लगी | arb: تَمُرَّ | kor: 남지 | swa: pita
+- **S122467** (1x) [V-Hifil-Imperf-3mp] | eng: they-will-take-away | spa: quitarán | hin: हटाएँगे | arb: يُزِيلُونَ | kor: 제거할것이다 | swa: wataondoa
+- **S122468** (1x) [V-Hifil-Prtcpl-ms] | eng: removes | spa: quita | hin: हटाता–है | arb: مُزِيلُ | kor: 폐하시고 | swa: anawaondoa
+- **S122469** (1x) [V-Qal-Imperf-3ms] | eng: will-pass-away | spa: pasará | hin: हटेगा | arb: يَزُولُ | kor: 지나가는 | swa: pita
+- **S122470** (1x) [V-Qal-Perf-3fs] | eng: has-passed | spa: ha–pasado | hin: जाता–रहा | arb: زَالَتْ | kor: 떠났다 | swa: umepita
+
+## Response Format
+
+Return a JSON object with one key per lemma ID. Each value is an array of sense groups:
+
+```json
+{
+  "H5462": [
+    {"labelChirho": "short label", "descriptionChirho": "one sentence", "senseIdsChirho": [id1, id2, ...]}
+  ],
+  "H5591b": [...]
+}
+```
+
+IMPORTANT: Return ONLY the JSON object. Every sense ID from every lemma must appear exactly once. Use the numeric sense IDs (without the S prefix).
+
+## H5753a (POS: Conj-w | V-Piel-ConjPerf-3ms, "† I. <strong><strong>[<span dir="rtl"><span class="lexicon-hebrew" dir="rtl">עָו", 7 occ, 7 senses)
+
+- **S122727** (1x) [V-Hifil-Perf-3cp] | eng: they–perverted | spa: torcieron | hin: टेढ़ा–किया–उन्होंने | arb: أَعْوَجُّوا | kor: 굽혔다 | swa: wamepotoa
+- **S122728** (1x) [V-Nifal-Perf-1cs] | eng: I–am–bent–over | spa: Estoy–encorvado | hin: टेढ़ा–हो–गया–हूँ | arb: انْحَنَيْتُ | kor: 굽었도다 | swa: Nimeinama
+- **S122729** (1x) [V-Hifil-Perf-1cs] | eng: I–have–perverted | spa: torci | hin: टेढ़ा–मैंने | arb: أَعوَجتُ | kor: 굴혔다 | swa: nilipotosha
+- **S122730** (1x) [Conj-w | V-Nifal-Prtcpl-msc] | eng: but–he–who–is–twisted–of | spa: y–perverso–de | hin: और–टेढ़ा | arb: وَ–مُعْوَجُّ– | kor: 그러나–굽은 | swa: lakini–mwenye–upotovu–wa
+- **S122731** (1x) [V-Piel-Perf-3ms] | eng: He–made–crooked | spa: ha–torcido | hin: टेढ़ा–कर–दिया | arb: أَعْوَجَ | kor: 그–가–굽게–했네 | swa: ameyapotosha
+- **S122732** (1x) [V-Nifal-Perf-1cs] | eng: I-am-bent-over | spa: fui–torcido | hin: मुड़–गया–मैं | arb: اِنْحَنَيْتُ | kor: 구부러졌으니 | swa: nimepinduka
+- **S122733** (1x) [Conj-w | V-Piel-ConjPerf-3ms] | eng: it | spa: y–torciendo | hin: और–बिगाड़ता–है | arb: وَيُقَلِّبُ | kor: 그리고–뒤틀시니 | swa: na–ameupindua
+
+## H5984 (POS: Art | N-proper-ms, "† <strong><span dir="rtl"><span class="lexicon-hebrew" dir="rtl">עַמּוֹנִי</span", 18 occ, 7 senses)
+
+- **S124935** (9x) [N-proper-ms,Art | N-proper-ms] | eng: the–Ammonite, Ammonite | spa: el–amonita, amonita | hin: अम्मोनी, अम्मोनी–ने | arb: الْعَمُّونِيُّ, عَمُّونِيٌّ | kor: 그–암몬사람, 그–암몬–사람 | swa: Mwamoni
+- **S124938** (3x) [N-proper-fp] | eng: [Ammonite], Ammonite-women | spa: amonitas, [amonitas] | hin: अम्मोनी | arb: عَمُّونِيَّاتٍ, [عَمُّونِيَّاتٍ] | kor: 암몬–여인들과, [크티브] | swa: [Waamoni], Waamoni
+- **S124936** (2x) [Conj-w, Art | N-proper-mp] | eng: and–the–Ammonites | spa: y–los–amonitas | hin: और–अम्मोनी | arb: وَ–الْعَمُّونِيُّونَ, وَالْعَمُّونِيُّونَ | kor: 그리고–그–암몸인들이, 그–암몬인들과 | swa: na–Waamoni
+- **S124937** (1x) [N-proper-mp] | eng: Ammonites | spa: amonitas | hin: अम्मोनियों–के | arb: الْعَمُّونِيِّينَ | kor: 암몬–사람들의 | swa: Waamoni
+- **S124940** (1x) [Art | N-proper-ms] | eng: the–Ammoni | spa: el–amonita | hin: अम्मोनी–की | arb: العَمُّونِيّ | kor: 그–암몬사람 | swa: Mamoni
+- **S124941** (1x) [Art | N-proper-mp] | eng: the–Ammonim | spa: los–amonitas | hin: अम्मोनियों–ने | arb: الْـ–عَمُّونِيُّونَ | kor: 그–암몰인들이 | swa: Waamoni
+- **S124943** (1x) [Prep-m, Art | N-proper-mp] | eng: from–the–Ammonites | spa: de–los–amonitas | hin: अम्मोनियोंसे | arb: مِنَ–العَمُّونِيِّينَ | kor: 에서–그–암몬–사람들 | swa: kutoka–Waamoni
+
+## Response Format
+
+Return a JSON object with one key per lemma ID. Each value is an array of sense groups:
+
+```json
+{
+  "H5753a": [
+    {"labelChirho": "short label", "descriptionChirho": "one sentence", "senseIdsChirho": [id1, id2, ...]}
+  ],
+  "H5774a": [...]
+}
+```
+
+IMPORTANT: Return ONLY the JSON object. Every sense ID from every lemma must appear exactly once. Use the numeric sense IDs (without the S prefix).
+
+## H5998 (POS: V-Qal-Perf-3ms, "† <strong><strong><span dir="rtl"><span class="lexicon-hebrew" dir="rtl">עָמַל</", 11 occ, 7 senses)
+
+- **S124963** (3x) [Pro-r | V-Qal-Imperf-3ms] | eng: that–he–toils | spa: que–trabaja | hin: जो–वह–परिश्रम–करता–है | arb: وَلِيَفْرَحَ, الَّذِي–يَعْمَلُهُ | kor: 그가–수고하는–것, 그–수고하는–것 | swa: anayoifanya, anayofanya
+- **S124964** (3x) [Pro-r | V-Qal-Perf-1cs] | eng: that–I–toiled | spa: que–trabajé | hin: जो–मैंने–परिश्रम–किया | arb: يَدَايَ, عَمِلْتُهُ | kor: 그–수고했다 | swa: niliyofanya
+- **S124965** (1x) [V-Qal-Perf-3fs] | eng: labors | spa: trabaja | hin: मजदूरी–करता–है | arb: عَمِلَتْ | kor: 수고하느니라 | swa: inafanya–kazi
+- **S124966** (1x) [V-Qal-Perf-3ms] | eng: toiled– | spa: trabajó | hin: परिश्रम–किया– | arb: الَّذِي– | kor: 수고한– | swa: hakufanya–kazi
+- **S124967** (1x) [V-Qal-Perf-3cp] | eng: labor | spa: trabajan | hin: परिश्रम–करते–हैं | arb: يَعمَلونَ | kor: 수고하였도다 | swa: wanajitaabisha
+- **S124968** (1x) [V-Qal-Imperf-3ms] | eng: toils | spa: trabaja | hin: परिश्रम–करे | arb: يَتْعَبُ | kor: 수고한다 | swa: anajitahidi
+- **S124969** (1x) [V-Qal-Perf-2ms] | eng: you–labored | spa: trabajaste | hin: तू–ने–मेहनत–की | arb: تَعْمَلْ | kor: 네가–수고했으니라 | swa: fanya–kazi
+
+## H6002 (POS: Conj-w | N-proper-ms, "<strong><span dir="rtl"><span class="lexicon-hebrew" dir="rtl">עֲמָלֵק</span></s", 39 occ, 7 senses)
+
+- **S124999** (12x) [N-proper-ms] | eng: Amalek | spa: Amalec, Amaleq | hin: अमालेक, अमालेक–ने | arb: عَمَالِيقُ, عَمَالِيقَ | kor: 아말렉이, 아말렉의 | swa: Amaleki, Waamaleki
+- **S125000** (11x) [N-proper-ms] | eng: Amaleq | spa: Amalek | hin: अमलेक, अमलेक–के | arb: عَمَالِيق | kor: 아말렉의, 아말렉을 | swa: Amaleki
+- **S125001** (9x) [Conj-w | N-proper-ms,Conj-w, Prep-m | N-proper-ms] | eng: and–Amalek, and–from–Amalek | spa: y–Amalek, y–de–Amalec | hin: और–अमालेक, और–अमालेक–से | arb: وَ–عَماليقَ, وَ–مِنْ–عَمَالِيقَ | kor: 그리고–에서–아말렉, 그리고–아말렉과 | swa: na–Amaleki, na–kutoka–Amaleki
+- **S125002** (4x) [Prep-b | N-proper-ms] | eng: against–Amalek | spa: contra–Amaleq, contra–Amalec | hin: से–अमालेक, अमअलेक-पर | arb: عَمَالِيقَ, بِ–عَمَالِيقَ | kor: 아말렉–과–함께, 에–아말렉 | swa: na–Amaleki, kwa–Amaleki
+- **S125004** (1x) [Prep-b | N-proper-ms] | eng: in–Amalek | spa: en–Amalek | hin: अमालेक–में | arb: بِ–عَماليقَ | kor: 아말렉–에 | swa: kwa–Amaleki
+- **S125005** (1x) [Art | N-proper-ms] | eng: the–Amalekite | spa: el–Amaleq | hin: अमालेकियों | arb: اَلْعَمَالِقَةِ | kor: 그–아말렉 | swa: Waamaleki
+- **S125006** (1x) [Prep-l | N-proper-ms] | eng: of–Amaleq | spa: de–Amaleq | hin: अमालेक–के | arb: مِن–عَماليق | kor: 에게–아말렉 | swa: wa–Amaleki
+
+## H6006 (POS: Conj-w | V-Qal-Prtcpl-mp, "† <strong><strong>[<span dir="rtl"><span class="lexicon-hebrew" dir="rtl">עָמַס<", 9 occ, 7 senses)
+
+- **S125017** (3x) [Conj-w | V-Qal-ConsecImperf-3m,V-Hifil-Perf-3ms] | eng: loaded, and–loaded | spa: cargó, y–cargó | hin: लादा–था, लादा | arb: وَ–حَمَّلَ, حَمَّلَكُمْ | kor: 짐지웠다, 지웠다 | swa: na–wakachukua, aliwatwika
+- **S125019** (1x) [Conj-w | V-Qal-Prtcpl-mp] | eng: and–loading | spa: y–cargando | hin: और–लादते–हुए | arb: وَيُحَمِّلُونَ | kor: 그리고–싣는–자들이 | swa: na–wakipakia
+- **S125020** (1x) [V-Qal-Imperf-3ms] | eng: He–bears– | spa: nos–carga– | arb: يَحْمِلُ– | kor: 지우시도다 | swa: anatubeba
+- **S125021** (1x) [V-Qal-QalPassPrtcpl-fp] | eng: are–loaded | spa: cargadas | hin: लादी–हुई | arb: مُثْقَلَاتٌ | kor: 실린 | swa: yamebebwa
+- **S125022** (1x) [V-Qal-Prtcpl-mp] | eng: loading | spa: cargaban | hin: लादते–थे | arb: مُحَمِّلُونَ | kor: 짐을–지고–있었다 | swa: wakibeba
+- **S125023** (1x) [Art | V-Qal-QalPassPrtcpl-mp] | eng: those–carried | spa: los–cargados | hin: जो–उठाए–गए | arb: الْمَحْمُولِينَ | kor: 실린 | swa: mliobebwa
+- **S125025** (1x) [V-Qal-Prtcpl-mpc | 3fs] | eng: the–ones–lifting–it | spa: los–que–la–carguen | hin: जो–उठाते–हैं–उसे | arb: حَامِلِيهَا | kor: 들어올리는–자들이–그것을 | swa: watakaoinua
+
+## H6009 (POS: V-Hifil-Perf-3ms, "† <strong><strong>[<span dir="rtl"><span class="lexicon-hebrew" dir="rtl">עָמֹק<", 9 occ, 7 senses)
+
+- **S125028** (2x) [V-Hifil-Perf-3cp] | eng: they-have-gone-deep–, made–deep | spa: se–corrompieron–profundamente–, profundizaron | hin: गहराई–की–, गहराई–की | arb: أَعمَقوا–, أَعمَقوا | kor: 깊이–했는도다–, 깊게–하였느니라 | swa: wamezama–sana–, wameenda–sana
+- **S125029** (2x) [V-Hifil-Imp-mp] | eng: go–deep | spa: esconderse–en–lo–profundo | hin: गहराई–में–जाओ | arb: تَعَمَّقُوا | kor: 깊이 | swa: jiingizeni–ndani
+- **S125030** (1x) [V-Hifil-InfAbs] | eng: make-deep | spa: hazla-profunda | hin: गहराई–में | arb: أَعمِق | kor: 깊이–하라 | swa: Omba-kina
+- **S125031** (1x) [Art | V-Hifil-Prtcpl-mp] | eng: to–those–who–go–deep | spa: de–los–que–profundizan | hin: गहराई–करने–वालों | arb: لِلْمُعَمِّقِينَ | kor: 깊이–숨기는–자들이여 | swa: wanaokwenda–chini
+- **S125032** (1x) [V-Qal-Perf-3cp] | eng: deep–are | spa: profundos | hin: गहरे | arb: عَمُقَتْ | kor: 깊도다 | swa: ni–mazito
+- **S125033** (1x) [V-Hifil-Perf-3ms] | eng: He–has–made–wide | spa: lo–hizo–profundo | hin: गहराई–की | arb: عَمَّقَ | kor: 깊게–하셨다 | swa: Amefanya–kirefu
+- **S125034** (1x) [V-Hifil-Perf-3cp] | eng: Him–against–whom | spa: profundizaron | hin: गहराई–की–है–तुमने | arb: تَعَمَّقُوا | kor: 깊이–행하였다 | swa: mliyekengeuka–sana
+
+## H6118 (POS: N-ms, "† <strong><span dir="rtl"><span class="lexicon-hebrew" dir="rtl">עֵ֫קֶב</span></", 15 occ, 7 senses)
+
+- **S125870** (8x) [Conj] | eng: because | spa: por–cuanto, porque | hin: क्योंकि, कारण | arb: بِسَبَبِ, مِن–أجلِ | kor: 때문에 | swa: kwa–sababu
+- **S125871** (2x) [N-ms] | eng: to–the–end | spa: hasta–el–fin | arb: حَتَّى–النِّهَايَةِ | kor: 끝–까지 | swa: hadi–mwisho
+- **S125872** (1x) [N-msc] | eng: the–reward–of | spa: El–resultado–de | hin: फल | arb: نَتِيجَةُ | kor: 보상은 | swa: thawabu–ya
+- **S125873** (1x) [N-msc] | eng: for-sake-of | spa: por-causa-de | hin: कारण–से | arb: بِسَبَبِ | kor: 때문에 | swa: kwa–sababu–ya
+- **S125874** (1x) [N-ms] | eng: reward | spa: recompensa | hin: फल | arb: ثَوَابٌ | kor: 보상–이 | swa: thawabu
+- **S125875** (1x) [Conj] | eng: consequence–of | spa: consecuencia–de | hin: लज्जा–अपनी | arb: عَقِبِ | kor: 결과 | swa: matokeo-ya
+- **S125876** (1x) [Conj] | eng: the–consequence–of | spa: consecuencia–de | hin: कारण | arb: عقِبِ | kor: 때문–에 | swa: thawabu
+
+## H6141 (POS: Adj-ms, "† I. <strong><span dir="rtl"><span class="lexicon-hebrew" dir="rtl">עִקֵּשׁ</spa", 11 occ, 7 senses)
+
+- **S125926** (3x) [Adj-ms] | eng: the–crooked, crooked | spa: perverso | hin: टेढ़े, टेढ़े–के | arb: الْمُلْتَوِي, الأَعْوَجِ | kor: 비뚱어진–자, 비뚤어진–자–의 | swa: mpotovu, ya–mpotovu
+- **S125925** (2x) [Prep-m | Adj-msc,Prep-m | Adj-ms] | eng: than–one–crooked–of, than–crooked–of | spa: que–un–perverso, que–perverso–de | hin: टेढ़े–से | arb: مِن–مُعْوَجِّ, مِنْ–مُعْوَجِ | kor: 보다–비뚤어진, 굽은–자–보다 | swa: kuliko–mwenye–kupotoka, kuliko–mpotovu
+- **S125927** (2x) [Adj-mp,Adj-ms] | eng: crooked, are–crooked | spa: son–torcidos, perversa | hin: टेढ़ी | arb: مُعْوَجَّةٌ, مُعْوَجٌّ | kor: 굽은, 굴어지고 | swa: zimepotoka, kilichopotoka
+- **S125928** (1x) [Adj-mpc] | eng: are–the–crooked–of | spa: perversos–de | hin: टेढ़े | arb: مُعْوَجّو– | kor: 굽은 | swa: wenye–upotovu–wa
+- **S125930** (1x) [Adj-ms] | eng: perverse | spa: perverso | hin: टेढ़ा | arb: أَعوَج | kor: 굽은 | swa: mpotovu
+- **S125932** (1x) [Conj-w | Adj-ms] | eng: or–crooked | spa: y–perverso | hin: और–कुटिल | arb: وَ–مُعْوَجٌ | kor: 그리고–비뜻어지는–것–이 | swa: au–upotovu
+- **S125933** (1x) [Adj-msc] | eng: crooked–of | spa: Torcido–de | hin: टेढ़ा | arb: مُعْوَجُّ– | kor: 비뚤어진– | swa: mpotovu–wa
+
+## H6149 (POS: V-Qal-Perf-2fs, "† III. <strong><strong>[<span dir="rtl"><span class="lexicon-hebrew" dir="rtl">ע", 7 occ, 7 senses)
+
+- **S125962** (1x) [V-Qal-Imperf-3ms] | eng: may–be–pleasing | spa: Sea–agradable | hin: मीठा–हो | arb: يَكونُ–حُلوًا | kor: 기뻐시리라 | swa: iwe–tamu
+- **S125963** (1x) [V-Qal-Perf-3cp] | eng: are–pleasing | spa: me–agradan | hin: मीठे–हैं | arb: تَطِيبُ | kor: 기쁜–것이 | swa: pendeza
+- **S125964** (1x) [V-Qal-Perf-2fs] | eng: you–were-pleasing | spa: te–fueron–agradables | hin: मिश्रित–हुई–तू | arb: تَلَذَّذْتِ | kor: 네가–기믭하게–한 | swa: ulifurahia
+- **S125965** (1x) [V-Qal-Imperf-3fs] | eng: is–sweet | spa: es–dulce | hin: मीठी–होती–है | arb: تَحْلو | kor: 달콤하다 | swa: ni–tamu
+- **S125966** (1x) [Conj-w | V-Qal-ConjPerf-3fs] | eng: and–will–be–pleasing | spa: Y–será–agradable | hin: और–मधुर-होगी | arb: وَتَكُونُ–عَذْبَةً | kor: 그리고–달콤하리라 | swa: na–itakuwa–tamu
+- **S125967** (1x) [Conj-w | V-Qal-ConjPerf-3fs] | eng: and–sweet | spa: será–dulce | hin: और–मीठी–होगी | arb: وَ–تَعْذُبُ | kor: 그리고–달콤할–것이다 | swa: na–usingizi–wako
+- **S125968** (1x) [V-Qal-Perf-3fs] | eng: was–pleasant | spa: fue–dulce | hin: मीठी–थी | arb: حَلَا | kor: 달콤했다 | swa: ulikuwa–mtamu

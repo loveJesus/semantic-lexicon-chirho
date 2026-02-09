@@ -1,0 +1,73 @@
+You are a biblical lexicographer. For each lemma below, group the over-split sense clusters into REAL lexicographic senses.
+
+Rules:
+- Different grammatical inflections of the same meaning = SAME sense (merge them)
+- Different verb stems (Qal vs Hifil, active vs passive) = often DIFFERENT senses
+- Literal vs metaphorical uses = DIFFERENT senses
+- Every sense ID must appear in exactly one group
+- Output valid JSON array with labelChirho, descriptionChirho (150+ chars with multilingual evidence), senseIdsChirho
+
+## H6523 (POS: N-msd, "<strong><span dir="rtl"><span class="lexicon-hebrew" dir="rtl">פַּרְזֶל</span></", 20 occ, 2 senses)
+
+- **S128522** (18x) [N-ms,N-msd] | eng: iron, the–iron | spa: hierro, el–hierro | hin: लोहे, लोहा | arb: حَدِيدٍ, الـ–حَدِيدَ | kor: 철이, 철의 | swa: chuma
+- **S128523** (2x) [Prep-k | N-msd,Conj-w, Prep-k | N-msd] | eng: as–iron, and–as-iron | spa: y–como–el–hierro, como–el–hierro | hin: जैसा–लोहा, और–जैसा–लोहा | arb: وَ–كَـ–الـ–حَدِيدِ, كَـ–الـ–حَدِيدِ | kor: 그리고–같이–철, 같이–철 | swa: na–kama–chuma, kama–chuma
+
+## H6531 (POS: Prep-b | N-ms, "† <strong><span dir="rtl"><span class="lexicon-hebrew" dir="rtl">פֶּ֫רֶךְ</span>", 6 occ, 2 senses)
+
+- **S128600** (5x) [Prep-b | N-ms] | eng: with–harshness | spa: con–dureza, con–rigor | hin: कठोरता–से | arb: بِ–قَسْوَةٍ, بِ–قَسَاوَةٍ | kor: 가혹하게, 혹독하게 | swa: kwa–ukali, kwa–ukatili
+- **S128601** (1x) [Conj-w, Prep-b | N-ms] | eng: and–with–severity | spa: y–con–dureza. | arb: وَبِقَسْوَةٍ | kor: 그리고–가혹함으로 | swa: na–kwa–ukatili
+
+## H6532 (POS: N-fs, "<strong><span dir="rtl"><span class="lexicon-hebrew" dir="rtl">פָּרֹ֫כֶת</span><", 25 occ, 2 senses)
+
+- **S128602** (24x) [Art | N-fs,Prep-l, Art | N-fs,N-fsc,Prep-l | N-fsc] | eng: the–veil, to–the–veil | spa: el–velo, velo–de | hin: परदा, परदे–के | arb: الْحِجَابِ, الحِجابِ | kor: 그–휘장, 휘장 | swa: pazia, pazia–la–
+- **S128606** (1x) [N-fs] | eng: veil | spa: velo | hin: परदा | arb: حِجاباً | kor: 휘장을 | swa: pazia
+
+## H6539 (POS: Prep-l | N-proper-fs, "<strong><span dir="rtl"><span class="lexicon-hebrew" dir="rtl">פָּרַס</span></sp", 28 occ, 2 senses)
+
+- **S128622** (27x) [N-proper-fs,Conj-w | N-proper-fs] | eng: Paras, Persia | spa: Persia, Paras | hin: फारस–के, फ़ारस–के | arb: فَارِسَ, فَارِسُ | kor: 바사, 바사의 | swa: Uajemi, wa–Uajemi
+- **S128624** (1x) [Prep-l | N-proper-fs] | eng: for–Paras | spa: para–Persia | hin: के–लिए–फ़ारस | arb: لِـ–فَارِسَ | kor: 에–바사에 | swa: katika–Uajemi
+
+## H6540 (POS: N-proper-fs, "† <strong><span dir="rtl"><span class="lexicon-hebrew" dir="rtl">פָּרַס</span></", 6 occ, 2 senses)
+
+- **S128625** (4x) [Conj-w | N-proper-ms] | eng: and–Paras | spa: y–Persia | hin: और–पारस–की, और–पारस | arb: وَ–الْفُرْسِ | kor: 그리고–바사–의, 그리고–바사–에게 | swa: na–Waajemi
+- **S128626** (2x) [N-proper-fs] | eng: Paras | spa: Persia., Paras | hin: फारस–के | arb: فَارِسَ, فارِس | kor: 바사 | swa: wa–Uajemi, Uajemi
+
+## H6549 (POS: N-proper-ms, "† <strong><span dir="rtl"><span class="lexicon-hebrew" dir="rtl">נְכוֹ</span></s", 10 occ, 2 senses)
+
+- **S128665** (5x) [N-proper-ms] | eng: Neko, Nekho | spa: Neco, Necao | hin: नखोह, नेको | arb: نَخُو | kor: 느고 | swa: Neko
+- **S128666** (5x) [] | eng: Pharaoh, to–Pharaoh | spa: Faraón, a–Faraón | hin: फ़रोह–ने, ले–फ़रोह | arb: فِرْعَوْنُ, لِفِرْعَوْنَ | kor: 파라오가, 파라오에게 | swa: Farao, kwa–Farao
+
+## Response Format
+
+Return a JSON object with one key per lemma ID. Each value is an array of sense groups:
+
+```json
+{
+  "H6311": [
+    {"labelChirho": "short label", "descriptionChirho": "one sentence", "senseIdsChirho": [id1, id2, ...]}
+  ],
+  "H6340": [...]
+}
+```
+
+IMPORTANT: Return ONLY the JSON object. Every sense ID from every lemma must appear exactly once. Use the numeric sense IDs (without the S prefix).
+
+## H6635b (POS: N-cp, "<strong><span dir="rtl"><span class="lexicon-hebrew" dir="rtl">צָבָא</span></spa", 286 occ, 2 senses)
+
+- **S129412** (284x) [N-cp,Art | N-cp] | eng: of–hosts, Tsevaot | spa: ejércitos, de–los–ejércitos | hin: सेनाओं–का, सेनाओं–के | arb: الْجُنُودِ, الجُنُودِ | kor: 만군의, 만군–의 | swa: wa–majeshi, majeshi
+- **S129415** (2x) [N-cp] | eng: armies | spa: ejércitos | hin: सेनाओं–के | arb: جُيُوشٍ, الجُيوشِ | kor: 군대들의, 군대–들–의 | swa: wa–majeshi
+
+## H6673 (POS: Prep-l | N-ms, "† <strong><span dir="rtl"><span class="lexicon-hebrew" dir="rtl">צַו</span></spa", 9 occ, 2 senses)
+
+- **S129654** (5x) [N-ms] | eng: precept, command | spa: mandato | hin: आज्ञा | arb: أَمْرٌ, الوَصيَّةِ | kor: 명령, 헛된–것의 | swa: amri
+- **S129655** (4x) [Prep-l | N-ms] | eng: upon–precept | spa: sobre–mandato | hin: पर–आज्ञा | arb: عَلَى–أَمْرٍ | kor: 에–명령 | swa: juu–ya–amri
+
+## H6678 (POS: N-proper-fs, "† <strong><span dir="rtl"><span class="lexicon-hebrew" dir="rtl">צוֹבָא</span></", 12 occ, 2 senses)
+
+- **S129677** (10x) [N-proper-fs,N-proper-ms] | eng: Zobah, Tzovah | spa: Soba, Tsobá | hin: सोबाह–के, सोबाह–का | arb: صُوبَةَ, صوبَةَ | kor: 소바의, 소바 | swa: Soba, wa–Soba
+- **S129678** (2x) [Conj-w, Prep-m | N-proper-fs,Prep-m | N-proper-fs] | eng: from–Zobah, and–from–Zobah | spa: y–de–Tsoba, de–Tsova | hin: सोबाह–से, और–सोबाह–से | arb: وَ–مِنْ–صُوبَةَ, مِنْ–صُوبَةَ | kor: 그리고–에서–소바, –에서–소바 | swa: na–Soba, kutoka–Soba
+
+## H6755 (POS: Conj-w, "† <strong><span dir="rtl"><span class="lexicon-hebrew" dir="rtl">צְלֵם</span></s", 17 occ, 2 senses)
+
+- **S130129** (16x) [N-ms,N-msd,Prep-l | N-msc,Prep-l | N-msd,Conj-w, Prep-l | N-] | eng: the–image, the–image-of | spa: y–a–la–imagen–de, la–imagen | hin: मूर्ति, को–मूर्ति | arb: لِلتِّمْثَالِ, وَ–لِلتِّمْثَالِ | kor: 신상의–그, 신상에게 | swa: sanamu, na–sanamu–ya
+- **S130133** (1x) [Conj-w | N-msc] | eng: and–expression-of | spa: y–la–expresión–de | hin: और–रूप | arb: وَ–صُورَةُ | kor: 그리고–표정이 | swa: na–sura–ya

@@ -1,0 +1,83 @@
+You are a biblical lexicographer. For each lemma below, group the over-split sense clusters into REAL lexicographic senses.
+
+Rules:
+- Different grammatical inflections of the same meaning = SAME sense (merge them)
+- Different verb stems (Qal vs Hifil, active vs passive) = often DIFFERENT senses
+- Literal vs metaphorical uses = DIFFERENT senses
+- Every sense ID must appear in exactly one group
+- Output valid JSON array with labelChirho, descriptionChirho (150+ chars with multilingual evidence), senseIdsChirho
+
+## G0897 (POS: N-DFS, " <b><span class="lexicon-greek">Βαβυλών</span></b>, -<span class="lexicon-greek"", 12 occ, 3 senses)
+
+- **S63881** (7x) [N-GFS,N-NFS,N-VFS] | eng: Babulōn, Babylōn | spa: Babylōn, de–Babylṓn | hin: बाबुल | arb: بابِلُ, بَابِلَ | kor: 바빌론이, 바벨론이 | swa: Babeli, Babeli,
+- **S63882** (4x) [N-GFS] | eng: of–Babulōn | spa: de–Babilonia | hin: बाबुल–की | arb: بَابِلَ | kor: 바벨론–의, 바벨론 | swa: wa–Babulṓn
+- **S63883** (1x) [N-DFS] | eng: Babylon | spa: Babilonia | hin: बाबुल–में | arb: بابِلَ | kor: 바벨론 | swa: Babeli
+
+## G0899 (POS: N-NNS, "<b> <span class="lexicon-greek">βάθος</span></b> [<span class="lexicon-greek">ᾰ]", 8 occ, 3 senses)
+
+- **S63885** (6x) [N-ANS,N-NNS,N-GNS] | eng: depth | spa: profundidad | hin: गहराई, गेह्रऐ | arb: عُمْقٌ, عُمْقَ | kor: 깊이인지,, 깊이를 | swa: kina
+- **S63886** (1x) [N-ANP] | eng: depths | spa: profundidades | hin: गहराइयों | arb: أَعْماقَ | kor: 깊은–것들–을 | swa: vilindi
+- **S63888** (1x) [N-ANS] | eng: deep | spa: profundo | hin: गहराई | arb: عُمقِ | kor: 깊은–곳 | swa: kilindini
+
+## G0922 (POS: N-ANP, "<b> <span class="lexicon-greek">βάρος</span></b> [<span class="lexicon-greek">ᾰ]", 6 occ, 3 senses)
+
+- **S64008** (3x) [N-ANS] | eng: burden | spa: carga, peso | hin: भार।, भार | arb: حِملًا, ثِقْلاً | kor: 짐–을, 무거움–을 | swa: siku, mzigo.
+- **S64009** (2x) [N-DNS,N-ANS] | eng: weight | spa: peso | hin: भार, भअर | arb: ثِقْلٍ, ثِقلَ | kor: 짐이, 무게의 | swa: uzito, mzigo
+- **S64011** (1x) [N-ANP] | eng: burdens | spa: cargas | hin: बोझ | arb: الأثقالَ | kor: 짐을 | swa: mizigo
+
+## G0949 (POS: Adj-AFS, "<b> <span class="lexicon-greek">βέβαιος</span></b>, <span class="lexicon-greek">", 9 occ, 3 senses)
+
+- **S64093** (7x) [Adj-NFS,Adj-NMS,Adj-AFS] | eng: firm, secure | spa: firme | hin: दृढ़, पक्की, | arb: ثَابِتَةً, ثَابِتَةٌ | kor: 견고하게, 확실한 | swa: imara, limekuwa–imara
+- **S64094** (1x) [Adj-AMS-C] | eng: more-firm | spa: más–segura | hin: और–भी–दृढ़ | arb: أثبَتَ | kor: 더–확실한 | swa: imara–zaidi
+- **S64095** (1x) [Adj-AFS] | eng: sure | spa: segura | hin: दृढ़ | arb: ثابِتاً | kor: 확실한 | swa: thabiti
+
+## G0979 (POS: N-AMS, "<b> <span class="lexicon-greek">βίος</span></b>[<span class="lexicon-greek">ῐ], ", 10 occ, 3 senses)
+
+- **S64142** (5x) [N-GMS,N-AMS] | eng: life, living | spa: vida | hin: जीवन, जेएवन | arb: الحَياةِ, مَعيشَتِها | kor: 삶–의, 삶을 | swa: maisha
+- **S64144** (3x) [N-AMS] | eng: livelihood | spa: bienes | hin: धन, धन। | arb: مَعِيشَتَكَ, مَعِيشَةَ | kor: 생활을, 소유–를 | swa: mali
+- **S64143** (2x) [N-AMS] | eng: living, livelihood | spa: vida, sustento | hin: जीविका | arb: مَعيشَتِ, مَعيشَةِ | kor: 생활을, 생활비를 | swa: maisha
+
+## Response Format
+
+Return a JSON object with one key per lemma ID. Each value is an array of sense groups:
+
+```json
+{
+  "G0765": [
+    {"labelChirho": "short label", "descriptionChirho": "one sentence", "senseIdsChirho": [id1, id2, ...]}
+  ],
+  "G0766": [...]
+}
+```
+
+IMPORTANT: Return ONLY the JSON object. Every sense ID from every lemma must appear exactly once. Use the numeric sense IDs (without the S prefix).
+
+## G1016 (POS: N-AMS, "<b> <span class="lexicon-greek">βοῦς</span></b>, <br /> <i>Doric dialect</i> <b>", 8 occ, 3 senses)
+
+- **S64301** (4x) [N-AMS,N-NMS] | eng: ox, an–ox | spa: buey, a–buey | hin: बैल | arb: ثَوْراً, ثَوْرُهُ | kor: 소를, 소가 | swa: ngʼombe, ng'ombe
+- **S64303** (3x) [N-AMP,N-GMP] | eng: oxen | spa: bueyes | hin: बैलों, बैल; | arb: بَقَرَ, بَقَرًا | kor: 소들을, 소들–을 | swa: ng'ombe
+- **S64305** (1x) [N-GMP] | eng: of-oxen | spa: de–bueyes | hin: बैलों–की | arb: ثِيرَانٍ | kor: 소의 | swa: za–ngʼombe
+
+## G1024 (POS: Adv, "<b> <span class="lexicon-greek">βρᾰχύς</span></b>, <span class="lexicon-greek">ε", 7 occ, 3 senses)
+
+- **S64313** (5x) [Adj-ANS,Adv] | eng: a–little, little | spa: poco | hin: थोड़ा, थोड़ी–देर | arb: قَلِيلًا, قَليلًا | kor: 조금, 잠시 | swa: kidogo, kitambo–kidogo
+- **S64315** (1x) [Adj-ANS] | eng: for–a–short–time | spa: por–poco | arb: قَلِيلًا | kor: 바깥–으로 | swa: muda–mfupi
+- **S64316** (1x) [Adj-GMP] | eng: brief | spa: breves-palabras | hin: संक्षिप्त–में | arb: بَاخْتِصَار | kor: 짧게 | swa: maneno–machache
+
+## G1025 (POS: N-ANS, "<b> <span class="lexicon-greek">βρέφος</span></b>, <span class="lexicon-greek">ε", 8 occ, 3 senses)
+
+- **S64317** (4x) [N-NNS,N-ANS] | eng: baby, a–baby | spa: bebé | hin: बालक | arb: الْجَنِينُ, طِفْلَ | kor: 아기–를, 아기–가 | swa: mtoto
+- **S64319** (3x) [N-ANP,N-NNP] | eng: infants | spa: niños, infantes | hin: बच्चों–को, बच्चों | arb: رُضَّعَ, أَطْفَالَ | kor: 아기들을, 아기들–을 | swa: watoto, watoto–wachanga
+- **S64318** (1x) [N-GNS] | eng: infancy | spa: infancia | hin: बचपन | arb: الطُّفولَةِ | kor: 유아기–때부터 | swa: utoto
+
+## G1035 (POS: N-NFS, "<b> <span class="lexicon-greek">βρῶσις</span></b>, <span class="lexicon-greek">ε", 11 occ, 3 senses)
+
+- **S64348** (7x) [N-AFS,N-NFS,N-DFS,N-GFS] | eng: food, eating | spa: comida, alimento | hin: भोजन, भोजन–के | arb: طَعَامَ, طَعَامٌ | kor: 음식을, 음식이다 | swa: chakula, chakula,
+- **S64350** (2x) [N-NFS] | eng: decay | spa: herrumbre | hin: जंग | arb: صَدَأٌ | kor: 녹 | swa: kutu
+- **S64351** (2x) [N-NFS,N-GFS] | eng: eating | spa: comida, comer | hin: खाने, खाना | arb: أَكْلِ, أَكْلٌ | kor: 먹는–것과, 먹기 | swa: kula
+
+## G1061 (POS: V-PPA-NMP, "<b> <span class="lexicon-greek">γαμ-ίσκω</span></b>, <br /> ={<span class="lexic", 8 occ, 3 senses)
+
+- **S64401** (4x) [V-PIM/P-3P] | eng: are-given-in-marriage, are–given–in–marriage | spa: son-dados-en-matrimonio, son–dados–en–matrimonio | hin: विवाह–कराते–हैं, विवाह–दिए–जाते | arb: يُزَوِّجونَ, يُزَوَّجونَ | kor: 시집간다, 시집보내진다 | swa: wanaolewa, hawaoleki
+- **S64402** (3x) [V-PPA-NMS,V-PPA-NMP] | eng: giving–in–marriage | spa: dando–en–matrimonio, dándose–en–matrimonio | hin: विवाह–करनेवाला, विवाह–देते–हुए | arb: المُزَوِّجُ, يُزَوِّجونَ | kor: 결혼시키는–자는, 시집보내고–있었다 | swa: hadi, asiyemwoza,
+- **S64404** (1x) [V-IIM/P-3P] | eng: they-were-being-married | spa: se-daban-en-matrimonio | hin: विवाह–होते–थे | arb: يُزَوِّجونَ | kor: 시집보냈다 | swa: waliozwa

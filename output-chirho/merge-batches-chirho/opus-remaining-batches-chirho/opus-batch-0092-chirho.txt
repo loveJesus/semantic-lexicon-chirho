@@ -1,0 +1,73 @@
+You are a biblical lexicographer. For each lemma below, group the over-split sense clusters into REAL lexicographic senses.
+
+Rules:
+- Different grammatical inflections of the same meaning = SAME sense (merge them)
+- Different verb stems (Qal vs Hifil, active vs passive) = often DIFFERENT senses
+- Literal vs metaphorical uses = DIFFERENT senses
+- Every sense ID must appear in exactly one group
+- Output valid JSON array with labelChirho, descriptionChirho (150+ chars with multilingual evidence), senseIdsChirho
+
+## G2246 (POS: N-GMS, "<b> <span class="lexicon-greek">ἥλιος</span></b>, ὁ, <br /> <i>Epic dialect</i> ", 32 occ, 2 senses)
+
+- **S68923** (25x) [N-AMS,N-GMS,N-NMS,N-DMS] | eng: sun | spa: sol, sol; | hin: सूर्य, सूरज | arb: الشَّمْسُ, الشَّمسُ | kor: 해가, 해–가 | swa: jua, jua,
+- **S68924** (7x) [N-GMS] | eng: sun, of-sun | spa: de–sol, sol | hin: सूर्य–की, सूर्य–के, | arb: الشَّمْسِ, الشَّمسِ | kor: 해–의, 해의 | swa: jua,, ya–jua.
+
+## G2251 (POS: PPro-NF1P, "<b> <span class="lexicon-greek">ἡμέτερος</span></b>, <br /> <i>Doric dialect</i>", 8 occ, 2 senses)
+
+- **S68933** (7x) [PPro-DF1P,PPro-GF1P,PPro-AF1P,PPro-DM1P,PPro-NF1P,PPro-NM1P,] | eng: our | spa: nuestra, nuestras | hin: हमारी, हमारे | arb: –نَا, –نا | kor: 우리–의 | swa: yetu, wetu
+- **S68936** (1x) [PPro-GF1P] | eng: ours | spa: nuestros | hin: हमारे | arb: لَنا | kor: 우리–의 | swa: zetu
+
+## G2264 (POS: N-DMS, " <b><span class="lexicon-greek">Ἡρῴδης</span></b> (Rec. -<span class="lexicon-gr", 43 occ, 2 senses)
+
+- **S68945** (40x) [N-NMS,N-GMS,N-AMS,N-DMS] | eng: Hērōdēs, of–Hērōdēs | spa: Hērṓdēs, de–Hērṓdēs | hin: हेरोदेस, हेरोदेस–ने | arb: هِيرُودُسُ, هيرودُسُ | kor: 헤롯이, 헤롯–은 | swa: Hērṓdēs, Herode
+- **S68947** (3x) [N-DMS,N-AMS] | eng: Hērōdēs | spa: Hērōdēs, Hērṓdēn | hin: हेरोदेस, वैध | arb: هيرودُسَ, –هيرودُسَ | kor: 헤롯에게,, 헤롯에게 | swa: Herode, Herod
+
+## G2281 (POS: N-NFS, "<b> <span class="lexicon-greek">θάλασσα</span></b> [<span class="lexicon-greek">", 91 occ, 2 senses)
+
+- **S68963** (87x) [N-AFS,N-DFS,N-NFS,N-GFS] | eng: sea, Sea | spa: mar, Mar | hin: समुद्र, समुद्र, | arb: البَحْرِ, بَحرِ | kor: 바다, 바다에 | swa: bahari, bahari,
+- **S68964** (4x) [N-GFS] | eng: of–sea, of-sea | spa: del–mar, de–mar | hin: समुद्र–की, समुद्र–का | arb: البَحرِ, –بحر | kor: 바다의, 바다–의, | swa: ya–bahari, la–bahari
+
+## G2307 (POS: N-ANP, "<b> <span class="lexicon-greek">θέλ-ημα</span></b>, <span class="lexicon-greek">", 63 occ, 2 senses)
+
+- **S69056** (61x) [N-NNS,N-ANS,N-DNS,N-GNS] | eng: will, by–will | spa: voluntad, –voluntad | hin: इच्छा, इचछ | arb: مَشيئَةِ, مَشِيئَةَ | kor: 뜻, 뜻을 | swa: mapenzi, ya–
+- **S69057** (2x) [N-ANP] | eng: wishes, wills | spa: voluntades | hin: इच्छाएं, इचछएइन | arb: مَشيئاتِ | kor: 원함들을, 뜻들을 | swa: mapenzi
+
+## G2310 (POS: N-ANP, "<b> <span class="lexicon-greek">θεμέλῐ-ος</span></b>, <span class="lexicon-greek", 16 occ, 2 senses)
+
+- **S69115** (12x) [N-ANS,N-AMS,N-DNS,N-NMS,N-GNS] | eng: foundation, a–foundation | spa: fundamento, cimiento | hin: नींव, नेएनव | arb: أَساساً, أَسَاسًا | kor: 기초를, 기초 | swa: msingi, Msingi
+- **S69116** (4x) [N-ANP,N-AMP,N-NMP] | eng: foundations | spa: fundamentos, cimientos | hin: नींवें, नींव | arb: أَساساتُ, أُسُس | kor: 기초들을, 기초들이 | swa: misingi, msingi
+
+## Response Format
+
+Return a JSON object with one key per lemma ID. Each value is an array of sense groups:
+
+```json
+{
+  "G2101": [
+    {"labelChirho": "short label", "descriptionChirho": "one sentence", "senseIdsChirho": [id1, id2, ...]}
+  ],
+  "G2106": [...]
+}
+```
+
+IMPORTANT: Return ONLY the JSON object. Every sense ID from every lemma must appear exactly once. Use the numeric sense IDs (without the S prefix).
+
+## G2344 (POS: N-GMS, "<b> <span class="lexicon-greek">θησαυρός</span></b>, ὁ, <br /> <b>store, treasur", 17 occ, 2 senses)
+
+- **S69243** (12x) [N-NMS,N-GMS,N-AMS,N-DMS] | eng: treasure, to–a–treasure | spa: tesoro, un-tesoro | hin: भन्दअर–से, धन | arb: كَنزِ, كَنْزٌ | kor: 보물, 보물을 | swa: hazina, na–hazina
+- **S69244** (5x) [N-AMP,N-NMP,N-GMP] | eng: treasures | spa: tesoros | hin: धन, खजानों–को | arb: كُنوزًا, كُنُوزَهُمْ | kor: 보물들–을, 보물들이 | swa: hazina
+
+## G2348 (POS: V-RPA-NMS, "<b> <span class="lexicon-greek">θνῄσκω</span></b> <br /> (with ι Refs; <span cla", 9 occ, 2 senses)
+
+- **S69268** (5x) [V-RIA-3P,V-RNA,V-RIA-3S] | eng: to–have–died, he-had-died | spa: ha–muerto, han–muerto | hin: मर–गया–होना, मर–गया–है | arb: ماتَتْ, ماتَت | kor: 죽었다고, 죽었다. | swa: amekufa, wamekufa
+- **S69267** (4x) [V-RPA-NMS,V-RPA-GMS,V-RPA-AMS] | eng: having–died, one-having-died | spa: muerto, habiendo-muerto | hin: मरा–हुआ, मरेहुए | arb: مَيِّتٍ, مَيِّتٌ | kor: 죽은–자에–대하여, 죽은–자가 | swa: aliyekufa, ameshakufa
+
+## G2362 (POS: N-NMS, "<b> <span class="lexicon-greek">θρόνος</span></b>, ὁ, <br /> <b>seat, chair</b>,", 63 occ, 2 senses)
+
+- **S69294** (55x) [N-NMS,N-GMS,N-DMS,N-AMS] | eng: throne, a–throne | spa: trono, trono, | hin: सिंहासन, सिंहासन, | arb: العَرْشِ, العَرشِ | kor: 보좌, 보좌–의 | swa: kiti–cha–enzi, kiti–cha–enzi,
+- **S69295** (8x) [N-AMP,N-GMP,N-NMP] | eng: thrones | spa: tronos, tronos; | hin: सिंहासनों, सिंहासन | arb: عُروشٌ, عُروشِهِم | kor: 보좌들, 왕좌들 | swa: viti–vya–enzi, viti–vya–enzi;
+
+## G2368 (POS: N-GNS, "<b> <span class="lexicon-greek">θῡμί-ᾱμα</span></b>, <br /> <i>Ionic dialect</i>", 6 occ, 2 senses)
+
+- **S69306** (5x) [N-NNP,N-GNP,N-ANP,N-GNS] | eng: incense | spa: inciensos, incienso | hin: धूप | arb: الْبَخُورِ, بَخُورٌ | kor: 분향–의, 향들이 | swa: ubani, uvumba,
+- **S69308** (1x) [N-GNP] | eng: of–incenses | spa: de–inciensos | hin: धूपों–से, | arb: بخورٍ | kor: 향들–의 | swa: ubani,

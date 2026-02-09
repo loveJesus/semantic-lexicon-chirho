@@ -1,0 +1,73 @@
+You are a biblical lexicographer. For each lemma below, group the over-split sense clusters into REAL lexicographic senses.
+
+Rules:
+- Different grammatical inflections of the same meaning = SAME sense (merge them)
+- Different verb stems (Qal vs Hifil, active vs passive) = often DIFFERENT senses
+- Literal vs metaphorical uses = DIFFERENT senses
+- Every sense ID must appear in exactly one group
+- Output valid JSON array with labelChirho, descriptionChirho (150+ chars with multilingual evidence), senseIdsChirho
+
+## G0514 (POS: Adj-NMP, "<b> <span class="lexicon-greek">ἄξιος</span></b>, <span class="lexicon-greek">ία", 41 occ, 2 senses)
+
+- **S62596** (37x) [Adj-AMS,Adj-NMS,Adj-NFS,Adj-NMP,Adj-AMP,Adj-ANP,Adj-NNS,Adj-] | eng: worthy, fitting | spa: digno, dignos | hin: योग्य, योग्य–है | arb: مُسْتَحِقًّا, مُستَحِقًّا | kor: 합당한, 합당하다 | swa: wanastahili, anastahili
+- **S62597** (4x) [Adj-NMS,Adj-NNS] | eng: Worthy, worthy | spa: Digno | hin: योग्य | arb: مُسْتَحِقٌّ, مُستَحِقٌّ | kor: 합당하시다, 합당하다 | swa: Anastahili, Unastahili,
+
+## Response Format
+
+Return a JSON object with one key per lemma ID. Each value is an array of sense groups:
+
+```json
+{
+  "G0223": [
+    {"labelChirho": "short label", "descriptionChirho": "one sentence", "senseIdsChirho": [id1, id2, ...]}
+  ],
+  "G0225": [...]
+}
+```
+
+IMPORTANT: Return ONLY the JSON object. Every sense ID from every lemma must appear exactly once. Use the numeric sense IDs (without the S prefix).
+
+## G0545 (POS: Adj-NMP, "<b> <span class="lexicon-greek">ἀπειθής</span></b>, <span class="lexicon-greek">", 6 occ, 2 senses)
+
+- **S62689** (5x) [Adj-NMP,Adj-AMP] | eng: disobedient | spa: desobedientes | hin: अवग्य,, आज्ञा–न–माननेवालों–को | arb: عاصينَ, غَيرَ–طائِعينَ | kor: 불순종하는–자들, 순종치–않는–이들을 | swa: wasiotii, wazazi;
+- **S62691** (1x) [Adj-NMS] | eng: disobedient | spa: desobediente | hin: अनाज्ञाकारी | arb: عَاصِيًا | kor: 불순종하지–않았다 | swa: mwasi
+
+## G0548 (POS: V-PPA-NMS, "<b> <span class="lexicon-greek">ἄπειμι</span></b>, <br /> (<span class="lexicon-", 7 occ, 2 senses)
+
+- **S62695** (6x) [V-PPA-NMS,V-PPA-NMP] | eng: being-absent, being–absent | spa: estando–ausente, ausente | hin: अनुपस्थित–होकर, अनुपस्थित, | arb: غائِباً, غائِبٌ | kor: 떠나서, 없으면, | swa: nisipokuwepo, ingawa–siko
+- **S62696** (1x) [V-PIA-1S] | eng: I–am–absent | spa: estoy–ausente | hin: मैन-दोओर-होओन | arb: غائِبٌ | kor: 내가–떨어져–있으나 | swa: niko–mbali
+
+## G0570 (POS: N-GFS, "<b> <span class="lexicon-greek">ἀπιστία</span></b>, <br /> <i>Ionic dialect</i> ", 11 occ, 2 senses)
+
+- **S62769** (6x) [N-DFS,N-NFS] | eng: unbelief | spa: incredulidad | hin: अविश्वास, अविश्वास–से | arb: عَدَمِ–إِيمَانٍ, عَدَمِ–إيمانٍ | kor: 불신, 불신으로 | swa: kutokuamini, kutokuamini,
+- **S62770** (5x) [N-AFS,N-GFS] | eng: unbelief, of–unbelief | spa: incredulidad, de–incredulidad | hin: अविश्वास, उनके | arb: عَدَمِ–الإيمَانِ, عَدَمِ–إِيمَانِهِم | kor: 불신의, 불신을 | swa: kutoamini, wa–kutoamini
+
+## G0589 (POS: V-AIA-3S, "<b> <span class="lexicon-greek">ἀποδημ-έω</span></b>, <br /> <i>Doric dialect</i", 6 occ, 2 senses)
+
+- **S62813** (5x) [V-AIA-3S] | eng: went-abroad, journeyed-away | spa: se-fue-de-viaje, se–fue | hin: परदेश–चला–गया, परदेस–गया | arb: سافَرَ, سَافَرَ | kor: 떠났다, 여행했다 | swa: akasafiri, alisafiri
+- **S62816** (1x) [V-PPA-NMS] | eng: going–on–a–journey | spa: que–viaja | hin: परदेश–जाते–हुए | arb: مُسَافِرٌ | kor: 타국–에–가면서 | swa: asafirishaye
+
+## G0596 (POS: N-NFS, "<b> <span class="lexicon-greek">ἀπο-θήκη</span></b>, ἡ, <br /> <b>any place wher", 6 occ, 2 senses)
+
+- **S62860** (4x) [N-AFS,N-NFS] | eng: barn, storehouse | spa: granero | hin: भण्डार, खत्ते–में | arb: مُسْتَوْدَعٌ, مَخْزَنِهِ | kor: 창고가, 창고–에 | swa: ghala
+- **S62861** (2x) [N-AFP] | eng: barns | spa: graneros | hin: खत्तों–में, खत्तियानों–को | arb: مَخَازِنِي, مَخازِنَ | kor: 창고를, 창고–– | swa: ghala
+
+## G0602 (POS: N-DFS, "<b> <span class="lexicon-greek">ἀπο-κάλυψις</span></b> [<span class="lexicon-gre", 18 occ, 2 senses)
+
+- **S62914** (16x) [N-AFS,N-DFS,N-GFS,N-NFS] | eng: revelation, of–revelation | spa: revelación, de–revelación | hin: प्रकाशन, प्रकटीकरण | arb: إعلانٍ, استِعلانِ | kor: 계시, 나타나심 | swa: ufunuo, Ufunuo
+- **S62915** (2x) [N-AFP,N-GFP] | eng: revelations | spa: revelaciones | hin: प्रकाशनों–के, प्रकाशनों | arb: الإِعْلاناتِ, إِعْلاناتِ | kor: 계시들의, 계시들에 | swa: ufunuo
+
+## G0627 (POS: N-GFS, "<b> <span class="lexicon-greek">ἀπολογ-ία</span></b>, ἡ, <br /> <b>speech in def", 8 occ, 2 senses)
+
+- **S63056** (5x) [N-DFS,N-AFS] | eng: defense | spa: defensa | hin: प्रतिरकश, प्रतिवाद | arb: دِفاعِ, دِفاعٍ | kor: 변호, 변호를 | swa: utetezi, utetezi,
+- **S63055** (3x) [N-GFS,N-NFS] | eng: defense, of–defense | spa: defensa, de–defensa | hin: सफ़ाई, प्रतिवादका | arb: لِلدِّفَاعِ, دِفَاعِي | kor: 변호–의, 변명을 | swa: utetezi
+
+## G0652 (POS: N-GMP, "<b> <span class="lexicon-greek">ἀπόστολ-ος</span></b>, ὁ, <br /> <b>messenger, a", 80 occ, 2 senses)
+
+- **S63169** (58x) [N-GMP,N-AMP,N-NMP,N-DMP,N-VMP] | eng: apostles | spa: apóstoles | hin: प्रेरितों, प्रेरित | arb: الرُّسُلِ, رُسُلِ | kor: 사도들과, 사도들–의 | swa: mitume, mitume,
+- **S63170** (22x) [N-NMS,N-GMS,N-AMS,N-NMP] | eng: apostle, an-apostle | spa: apóstol, enviado | hin: प्रेरित, प्रैरित | arb: رَسولُ, رَسولاً | kor: 사도, 사도의 | swa: mtume, mtume,
+
+## G0694 (POS: N-ANP, "<b> <span class="lexicon-greek">ἀργύριον</span></b> [<span class="lexicon-greek"", 20 occ, 2 senses)
+
+- **S63277** (14x) [N-ANP,N-ANS] | eng: silver–pieces, money | spa: monedas–de–plata, plata | hin: चांदी, चाँदी | arb: فِضَّةً, فِضَّةَ | kor: 은화–를, 은을 | swa: fedha
+- **S63279** (6x) [N-NNS,N-GNS,N-DNS] | eng: silver, of-silver | spa: plata, de–plata | hin: चाँदी, चाँदी–के | arb: فِضَّةٍ, فِضَّتُ | kor: 은이나, 은이 | swa: fedha, ya–fedha

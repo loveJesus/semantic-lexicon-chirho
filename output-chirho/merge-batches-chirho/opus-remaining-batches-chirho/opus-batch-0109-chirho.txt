@@ -1,0 +1,73 @@
+You are a biblical lexicographer. For each lemma below, group the over-split sense clusters into REAL lexicographic senses.
+
+Rules:
+- Different grammatical inflections of the same meaning = SAME sense (merge them)
+- Different verb stems (Qal vs Hifil, active vs passive) = often DIFFERENT senses
+- Literal vs metaphorical uses = DIFFERENT senses
+- Every sense ID must appear in exactly one group
+- Output valid JSON array with labelChirho, descriptionChirho (150+ chars with multilingual evidence), senseIdsChirho
+
+## G5028 (POS: N-AMS, "<b> <span class="lexicon-greek">τάφος</span></b> [<span class="lexicon-greek">ᾰ]", 7 occ, 2 senses)
+
+- **S77414** (5x) [N-GMS,N-AMS,N-NMS] | eng: tomb, grave | spa: sepulcro, tumba | hin: कब्र | arb: قَبرٌ, الْقَبْرِ | kor: 무덤–을, 무덤 | swa: kaburi
+- **S77415** (2x) [N-DMP,N-AMP] | eng: tombs | spa: sepulcros, a–sepulcros | hin: कब्रों–से, कब्रें | arb: قُبورَ, قُبورًا | kor: 무덤들–을 | swa: ya–, yaliyopakwa–chokaa
+
+## G5030 (POS: Adv, "Included with: <b> <span class="lexicon-greek">τᾰχύς</span></b> [<span class="le", 10 occ, 2 senses)
+
+- **S77418** (7x) [Adv] | eng: quickly, hastily | spa: pronto, rápidamente | hin: जलदि, जलदि, | arb: سَريعاً, سَريعًا | kor: 속히, 빨리, | swa: haraka, upesi
+- **S77420** (3x) [Adv] | eng: quickly | spa: rápidamente | hin: जल्दी, जल्दी–से | arb: سَرِيعًا | kor: 빨리 | swa: haraka
+
+## G5034 (POS: N-DNS, "<b> <span class="lexicon-greek">τάχος</span></b> [<span class="lexicon-greek">ᾰ]", 8 occ, 2 senses)
+
+- **S77424** (4x) [N-DNS] | eng: haste | spa: rapidez, pronto | hin: जल्दी, शीघ्रता–से | arb: سُرْعَةٍ, ـسُرْعَةٍ | kor: 빨리, 속히; | swa: haraka, upesi
+- **S77425** (4x) [N-DNS] | eng: quickness, speed | spa: rapidez, prontitud | hin: शीघ्र–में, शीघ्र। | arb: سُرْعَةٍ., سُرْعَةٍ | kor: 속히 | swa: haraka, upesi.
+
+## Response Format
+
+Return a JSON object with one key per lemma ID. Each value is an array of sense groups:
+
+```json
+{
+  "G4735": [
+    {"labelChirho": "short label", "descriptionChirho": "one sentence", "senseIdsChirho": [id1, id2, ...]}
+  ],
+  "G4736": [...]
+}
+```
+
+IMPORTANT: Return ONLY the JSON object. Every sense ID from every lemma must appear exactly once. Use the numeric sense IDs (without the S prefix).
+
+## G5038 (POS: N-NNP, "<b> <span class="lexicon-greek">τεῖχος</span></b>, <span class="lexicon-greek">ε", 9 occ, 2 senses)
+
+- **S77440** (8x) [N-GNS,N-ANS,N-NNS] | eng: wall, a-wall | spa: muro, muro, | hin: दीवार, दीवार–के | arb: سورَها, سُورِ | kor: 성벽을, 성벽의 | swa: ukuta, ukuta,
+- **S77441** (1x) [N-NNP] | eng: walls | spa: muros | hin: दीवारें | arb: أَسْوَار | kor: 성벽들이 | swa: kuta
+
+## G5057 (POS: N-GMP, "<b> <span class="lexicon-greek">τελών-ης</span></b>, <span class="lexicon-greek"", 21 occ, 2 senses)
+
+- **S77524** (15x) [N-NMP,N-GMP] | eng: tax-collectors, tax–collectors | spa: publicanos, recaudadores | hin: चुंगी–लेनेवाले, कर–वसूलनेवाले | arb: عَشّارينَ, عَشّارونَ | kor: 세리들과, 세리들 | swa: watoza–ushuru, wa–watoza–ushuru
+- **S77525** (6x) [N-NMS,N-AMS] | eng: tax-collector, a–tax–collector | spa: publicano, cobrador–de–impuestos | hin: चुंगी–लेने–वाला, चुनगि–लेने–वल | arb: عَشّارُ, عَشّارِ | kor: 세리, 세리이었다 | swa: mtoza–ushuru, mtoza-ushuru;
+
+## G5064 (POS: Adj-NFP, "<b> <span class="lexicon-greek">τέσσᾰρες</span></b>, <span class="lexicon-greek"", 41 occ, 2 senses)
+
+- **S77535** (40x) [Adj-GMP,Adj-GNP,Adj-AFP,Adj-ANP,Adj-DFP,Adj-DNP,Adj-NFP,Adj-] | eng: four, by–four | spa: cuatro, y–cuatro | hin: चार, चारों | arb: أربَعَةِ, أَرْبَعَةُ | kor: 넷, 네 | swa: viumbe–hai–vinne, wanne
+- **S77536** (1x) [Adj-GMP] | eng: four | spa: cuatro | hin: चार | arb: أَرْبَعَةٍ | kor: 넷–의 | swa: wanne.
+
+## G5067 (POS: Adj-ANS, "<b> <span class="lexicon-greek">τέταρτος</span></b>, <span class="lexicon-greek"", 10 occ, 2 senses)
+
+- **S77539** (9x) [Adj-GFS,Adj-NNS,Adj-AFS,Adj-GNS,Adj-NMS,Adj-DFS] | eng: fourth | spa: cuarto, cuarta | hin: चौथे, चौथेने | arb: الرّابِعُ, ٱلرَّابِعِ | kor: 넷째, 넷째는 | swa: wa–nne,, ya–nne
+- **S77541** (1x) [Adj-ANS] | eng: fourth | spa: cuarta–parte | hin: चौथाई | arb: رُبعِ | kor: 사분–의–일 | swa: robo
+
+## G5117 (POS: N-GMS, "<b> <span class="lexicon-greek">τόπος</span></b>, ὁ <br /> (<i>feminine</i> by a", 94 occ, 2 senses)
+
+- **S77836** (84x) [N-AMS,N-NMS,N-GMS,N-DMS] | eng: place, a–place | spa: lugar, –lugar | hin: स्थान, जगह | arb: مَكانٍ, مَكَانِ | kor: 곳에, 장소 | swa: mahali, nafasi
+- **S77837** (10x) [N-GMP,N-AMP,N-DMP] | eng: places | spa: lugares | hin: स्थानों, स्थानोंमें | arb: أَمَاكِنَ, أَماكِنَ | kor: 장소들에, 곳들을 | swa: mahali, sehemu
+
+## G5174 (POS: N-GFS, "<b> <span class="lexicon-greek">Τρω-ϊάς</span></b>, <br /> <i>contraction</i> <b", 6 occ, 2 senses)
+
+- **S77936** (5x) [N-AFS,N-GFS,N-DFS] | eng: Trōas, Troas | spa: Trōás, Trōas | hin: त्रोआस | arb: ترواسَ, تَرْوَاسَ | kor: 드로아에서, 드로아에 | swa: Troa
+- **S77937** (1x) [N-DFS] | eng: Troas | spa: Trṓas | hin: त्रोअस | arb: تَرواس | kor: 드로아–에 | swa: Troa
+
+## G5176 (POS: V-PPA-NMS, "<b> <span class="lexicon-greek">τρώγω</span></b>, <br /> Refs 8th c.BC+: <i>futu", 6 occ, 2 senses)
+
+- **S77938** (5x) [V-PPA-NMS] | eng: eating | spa: que-mastica, come | hin: खाने–वाला | arb: يَأْكُلُ, يَأْكُلُنِي | kor: 먹는–자는, 먹는–자가 | swa: anayekula, anayenikula
+- **S77939** (1x) [V-PPA-NMP] | eng: eating | spa: comiendo | hin: खाते–हुए | arb: يَأكُلونَ | kor: 먹고–있었다 | swa: na

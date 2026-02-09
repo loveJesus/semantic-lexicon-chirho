@@ -1,0 +1,83 @@
+You are a biblical lexicographer. For each lemma below, group the over-split sense clusters into REAL lexicographic senses.
+
+Rules:
+- Different grammatical inflections of the same meaning = SAME sense (merge them)
+- Different verb stems (Qal vs Hifil, active vs passive) = often DIFFERENT senses
+- Literal vs metaphorical uses = DIFFERENT senses
+- Every sense ID must appear in exactly one group
+- Output valid JSON array with labelChirho, descriptionChirho (150+ chars with multilingual evidence), senseIdsChirho
+
+## G1062 (POS: N-AMP, "<b> <span class="lexicon-greek">γάμος</span></b> [<span class="lexicon-greek">ᾰ]", 16 occ, 3 senses)
+
+- **S64406** (9x) [N-AMP,N-NMS,N-GMP] | eng: wedding–feast, wedding-feast | spa: bodas, banquete | hin: विवाह, विवाह–भोज | arb: العُرسِ, العُرسُ | kor: 혼인–잔치, 혼인잔치에 | swa: arusi, –
+- **S64407** (4x) [N-NMS,N-AMS,N-GMS] | eng: wedding, of–wedding | spa: de–boda, boda | hin: विवाह–का, विवाह। | arb: العُرسِ, عُرْسِ | kor: 혼인–의, 혼인–잔치가 | swa: harusi, –
+- **S64409** (3x) [N-NMS,N-GMS] | eng: marriage | spa: boda, matrimonio | hin: विवाह, विवाह–के | arb: عُرْسِ, عُرْسُ | kor: 혼인이, 혼인의 | swa: arusi, ndoa
+
+## G1073 (POS: V-PPA-GNP, "<b> <span class="lexicon-greek">γέμω</span></b>, <br /> used only in <i>present<", 11 occ, 3 senses)
+
+- **S64440** (9x) [V-PPA-NNP,V-PIA-3P,V-PPA-AFP,V-PPA-ANP,V-PPA-ANS,V-PPA-GNP] | eng: being-full, they–are–full | spa: llenas, están–llenos | hin: भरे–हुए, भरे–हैं | arb: مَمْلوءَةٌ, مَملوءَةٌ | kor: 가득–찬, 가득하다 | swa: vimejaa, zilizojaa
+- **S64442** (1x) [V-PIA-3S] | eng: is–full | spa: está–llena | hin: भरा–है | arb: مَملوءٌ | kor: 가득하니라 | swa: kimejaa
+- **S64443** (1x) [V-PIA-3S] | eng: is-full-of | spa: está–lleno | hin: भरा–है | arb: مَمْلوءٌ | kor: 가득–차–있다 | swa: imejaa
+
+## G1081 (POS: N-GNS, "<b> <span class="lexicon-greek">γένν-ημα</span></b>, <span class="lexicon-greek"", 8 occ, 3 senses)
+
+- **S64483** (4x) [N-VNP] | eng: Offspring, offspring | spa: Crías, generación | hin: संतानो, सन्तन | arb: يَا–أَوْلَادَ, يا–أَولادَ | kor: 자손들아, 독사–의–자손들아 | swa: Watoto, wa–nyoka
+- **S64482** (3x) [N-GNS] | eng: fruit | spa: fruto | hin: फल, उपज | arb: ثَمَرِ, نِتَاجِ | kor: 열매의, 열매를 | swa: zao, uzao
+- **S64485** (1x) [N-ANP] | eng: fruits | spa: frutos | hin: फल | arb: ثِمارَ | kor: 열매들을 | swa: matunda
+
+## G1110 (POS: Adj-ANP, "<b> <span class="lexicon-greek">γνωστός</span></b>, <span class="lexicon-greek">", 15 occ, 3 senses)
+
+- **S64801** (12x) [Adj-NNS,Adj-ANP,Adj-NMS] | eng: known | spa: conocido, conocidas | hin: ज्ञात, जाना–पहचाना | arb: مَعْلُومًا, مَعلومٌ | kor: 알려졌다, 아는–사람 | swa: ijulikane, inajulikana
+- **S64804** (2x) [Adj-DMP,Adj-NMP] | eng: acquaintances | spa: conocidos | hin: जान–पहचानों, जानने–वाले | arb: مَعارِفِهِ, الْمَعَارِفِ | kor: 아는–자들이, 아는–자들–에서 | swa: wajuaana, marafiki
+- **S64803** (1x) [Adj-NNS] | eng: a–notable | spa: notable | hin: चिह्न | arb: مَعْلُومَةً | kor: 표적–이 | swa: inajulikana
+
+## Response Format
+
+Return a JSON object with one key per lemma ID. Each value is an array of sense groups:
+
+```json
+{
+  "G0987": [
+    {"labelChirho": "short label", "descriptionChirho": "one sentence", "senseIdsChirho": [id1, id2, ...]}
+  ],
+  "G1014": [...]
+}
+```
+
+IMPORTANT: Return ONLY the JSON object. Every sense ID from every lemma must appear exactly once. Use the numeric sense IDs (without the S prefix).
+
+## G1122 (POS: N-VMP, "<b> <span class="lexicon-greek">γραμμᾰτ-εύς</span></b>, <span class="lexicon-gre", 64 occ, 3 senses)
+
+- **S64835** (59x) [N-AMP,N-GMP,N-NMP,N-VMP,N-DMP] | eng: scribes | spa: escribas | hin: शास्त्री, शास्त्रियों | arb: كَتَبَةِ, كَتَبَةُ | kor: 서기관들이, 서기관들과 | swa: waandishi, na
+- **S64836** (4x) [N-NMS] | eng: scribe | spa: escriba, escriba? | hin: शास्त्री, शास्त्री–ने | arb: كَاتِبٍ, كاتِبُ | kor: 서기관이, 서기관은 | swa: mwandishi, mwandishi?
+- **S64837** (1x) [N-NMS] | eng: clerk | spa: secretario | hin: नगर–लेखक–ने | arb: الْكَاتِبُ | kor: 서기관이 | swa: karani
+
+## G1137 (POS: N-GFS, "<b> <span class="lexicon-greek">γωνία</span></b>, ἡ, <br /> <b>corner, angle,</b", 9 occ, 3 senses)
+
+- **S64921** (5x) [N-GFS] | eng: of–corner, of-corner | spa: de–esquina, de-esquina | hin: कोने–का, कोने | arb: زاوِيَةٍ, الزّاوِيَةِ | kor: 모퉁이의, 모통이–의 | swa: cha–pembe, la–pembeni
+- **S64922** (3x) [N-DFP,N-AFP] | eng: corners | spa: esquinas, ángulos | hin: कोनों, कोनों–पर | arb: زَوايا | kor: 모통이들, 모퉁이에–있는 | swa: pembe
+- **S64923** (1x) [N-DFS] | eng: a–corner | spa: rincón | hin: कोनेमें | arb: زَاوِيَةٍ | kor: 구석에서 | swa: kona
+
+## G1173 (POS: N-ANS, "<b> <span class="lexicon-greek">δεῖπνον</span></b>, <span class="lexicon-greek">", 16 occ, 3 senses)
+
+- **S65016** (9x) [N-ANS,N-GNS,N-DNS] | eng: supper, feast | spa: cena | hin: भोज | arb: عَشاءِ, عَشاءً | kor: 만찬, 잔치를 | swa: karamu, chakula-cha-jioni
+- **S65017** (4x) [N-ANS,N-GNS] | eng: dinner | spa: cena | hin: रात्रि–भोज, रात्रि–भोज–की | arb: عَشَاءً, العَشَاءِ | kor: 만찬을, 저녁을 | swa: karamu, chakula–cha–jioni
+- **S65018** (3x) [N-DNP] | eng: dinners, feasts | spa: cenas | hin: भोजों | arb: الوَلائِمِ, عَشاءاتِ | kor: 잔치들, 연회에서 | swa: karamu, na
+
+## G1188 (POS: Adj-NMS, "<b> <span class="lexicon-greek">δεξιός</span></b>, <span class="lexicon-greek">ά", 54 occ, 3 senses)
+
+- **S65037** (34x) [Adj-GNP,Adj-DNP,Adj-DFS] | eng: right–hand, right | spa: diestra, derecha | hin: दाहिने, दाहिनी–ओर | arb: يَمِينِ, يَمينِ | kor: 오른쪽, 오른편에 | swa: kulia, mkono–wa–kulia
+- **S65039** (19x) [Adj-NMS,Adj-NFS,Adj-AFS,Adj-ANS,Adj-ANP,Adj-GFS,Adj-AMS,Adj-] | eng: right | spa: derecha, derecho | hin: दाहिना, दाहिने | arb: اليُمنى, يَمينِهِ | kor: 오른쪽, 오른손 | swa: kulia, mkono–wa–kuume
+- **S65041** (1x) [Adj-AFP] | eng: right-hands | spa: diestras | hin: दहिने | arb: يَمينَ–الشِّركَةِ | kor: 오른손을 | swa: kulia
+
+## G1208 (POS: Adj-ANS, "<b> <span class="lexicon-greek">δεύτερος</span></b>, <span class="lexicon-greek"", 44 occ, 3 senses)
+
+- **S65106** (32x) [Adj-NFS,Adj-NMS,Adj-DFS,Adj-ANS,Adj-AFS,Adj-NNS,Adj-GNS,Adj-] | eng: second, Second | spa: segundo, segunda | hin: दूसरी, दूसरे | arb: الثّاني, ثَانِيَةِ | kor: 둘째, 둘째가 | swa: wa–pili, ya–pili
+- **S65107** (11x) [Adj-GNS,Adv,Adj-ANS,Adj-GMS] | eng: second-time, second–time | spa: segunda–vez, segunda-vez | hin: दूसरी–बार, दूसरी–बार, | arb: ثَانِيَةٍ, الثَّانِيَةِ | kor: 두–번째, 번째로 | swa: mara–ya–pili, pili
+- **S65111** (1x) [Adj-GFS] | eng: of-second | spa: de–segunda | hin: दूसरी | arb: لِلثَّانِي | kor: 둘째의 | swa: la–pili
+
+## G1211 (POS: Prtcl, "<b> <span class="lexicon-greek">δή</span></b>, <br /> properly a temporal Partic", 6 occ, 3 senses)
+
+- **S65161** (3x) [Prtcl] | eng: indeed–, indeed | spa: ciertamente, *–ciertamente | hin: सचमुच, तो | arb: إِذَن, حَقًّا | kor: 자, 참으로 | swa: tafadhali–, kwa–hakika
+- **S65162** (2x) [Prtcl] | eng: indeed– | spa: pues, * | hin: तो | arb: إِذًا, إِذاً | kor: 정말, 그러므로 | swa: sasa, basi
+- **S65165** (1x) [Prtcl] | eng: surely– | spa: ciertamente | hin: निश्चय– | arb: بِالتَّأْكيدِ | kor: 물론– | swa: hakika–

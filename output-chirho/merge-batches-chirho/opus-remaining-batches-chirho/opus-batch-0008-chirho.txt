@@ -1,0 +1,126 @@
+You are a biblical lexicographer. For each lemma below, group the over-split sense clusters into REAL lexicographic senses.
+
+Rules:
+- Different grammatical inflections of the same meaning = SAME sense (merge them)
+- Different verb stems (Qal vs Hifil, active vs passive) = often DIFFERENT senses
+- Literal vs metaphorical uses = DIFFERENT senses
+- Every sense ID must appear in exactly one group
+- Output valid JSON array with labelChirho, descriptionChirho (150+ chars with multilingual evidence), senseIdsChirho
+
+## H8585a (POS: N-fs, "† I. <strong><span dir="rtl"><span class="lexicon-hebrew" dir="rtl">תְּעָלָה</sp", 9 occ, 7 senses)
+
+- **S145538** (2x) [N-fs,Art | N-fs] | eng: trench, the–trench | spa: zanja, la–zanja | hin: नाली–ה, नाली | arb: قَناةً, ال–قَناةَ | kor: 도랑, 그–도랑을 | swa: mfereji
+- **S145541** (2x) [Prep-b | N-fsc] | eng: by–the–conduit, at–conduit-of | spa: en–el–canal, en–canal–de | hin: में–नाले, नाली–पर | arb: بِقَنَاةِ, بِـ–قَنَاةِ | kor: 에–수로에, 수로에 | swa: kwenye–mfereji
+- **S145536** (1x) [N-fs] | eng: a–channel | spa: canal | hin: नाली | arb: قَنَاةً | kor: 수로를 | swa: mfereji
+- **S145537** (1x) [N-fsc] | eng: conduit–of | spa: canal-de | hin: नाली | arb: قَنَاةِ | kor: 수로의 | swa: wa-mfereji
+- **S145539** (1x) [Art | N-fs] | eng: the–conduit | spa: el–canal | hin: ह–नाला | arb: القَنَاةَ | kor: 수로와 | swa: mfereji
+- **S145542** (1x) [N-fpc | 3fs] | eng: its-channels | spa: sus–canales | hin: नालियों–अपनी | arb: قَنَوَاتِهَا | kor: 도랑들을–그것의 | swa: mifereji–yake
+- **S145543** (1x) [Prep-b, Art | N-fs] | eng: in–the-trench | spa: en–la–zanja | hin: में–नाली–ה | arb: في–ال–قَناةِ | kor: 그–도랑에 | swa: mferejini
+
+## Response Format
+
+Return a JSON object with one key per lemma ID. Each value is an array of sense groups:
+
+```json
+{
+  "H8342": [
+    {"labelChirho": "short label", "descriptionChirho": "one sentence", "senseIdsChirho": [id1, id2, ...]}
+  ],
+  "H8585a": [...]
+}
+```
+
+IMPORTANT: Return ONLY the JSON object. Every sense ID from every lemma must appear exactly once. Use the numeric sense IDs (without the S prefix).
+
+## G4203 (POS: V-PSA-1P, "<b> <span class="lexicon-greek">πορν-εύω</span></b>, <br /> <b>prostitute,</b> m", 8 occ, 4 senses)
+
+- **S75425** (4x) [V-AIA-3P,V-APA-NMP] | eng: committed-sexual-immorality, having-committed-sexual-immorality | spa: fornicaron, que–fornicaron | hin: व्यभिचार–किया, व्यभिचार–करनेवाले | arb: زَنَوْا, زَنَوا | kor: 음행한–자들과, 음행하였으니 | swa: wamezini;, walizini
+- **S75426** (2x) [V-ANA] | eng: to–fornicate | spa: fornicar | hin: व्यभिचार–करने,, व्यभिचार–करना। | arb: يَزْنوا, أَنْ–يَزْنوا | kor: 음행하도록 | swa: kuzini., kuzini,
+- **S75427** (1x) [V-PSA-1P] | eng: let-us-commit-sexual-immorality | spa: forniquemos | hin: व्यभिचार–करें | arb: نَزنِ | kor: 음행하지 | swa: tusifanye–uasherati,
+- **S75429** (1x) [V-PPA-NMS] | eng: committing–sexual–immorality | spa: fornicando | hin: व्यभिचार–करनेवाला | arb: الزّاني | kor: 음행하는–자는 | swa: anayefanya–uasherati,
+
+## Response Format
+
+Return a JSON object with one key per lemma ID. Each value is an array of sense groups:
+
+```json
+{
+  "G4052": [
+    {"labelChirho": "short label", "descriptionChirho": "one sentence", "senseIdsChirho": [id1, id2, ...]}
+  ],
+  "G4053": [...]
+}
+```
+
+IMPORTANT: Return ONLY the JSON object. Every sense ID from every lemma must appear exactly once. Use the numeric sense IDs (without the S prefix).
+
+## H1331 (POS: N-mpc | 1cs, "† <strong><span dir="rtl"><span class="lexicon-hebrew" dir="rtl">בְּתוּלִים</spa", 10 occ, 4 senses)
+
+- **S88733** (5x) [N-mp,N-mpc] | eng: virginity, evidence-of-virginity-of | spa: virginidad, son–la–virginidad–de | hin: कुंवारी | arb: بَكَارَةً, بَكَارَةُ | kor: 처녀성을, 처녀성이 | swa: ubikira
+- **S88737** (3x) [N-mpc | 3fs,Prep-b | N-mpc | 3fs] | eng: in–her-virginity, her–virginity | spa: virginidad–de–ella, su–virginidad | hin: उसकी–कुंवारी, उसकी–कुँवारी | arb: فِي–بَكَارَتِهَا, بَكَارَتِهَا | kor: 에–그녀의–처녀성, 그녀의–처녀의 | swa: ubikira–wake, katika–ubikira–wake
+- **S88735** (1x) [N-mpc | 1cs] | eng: my–virginity | spa: mi–virginidad | hin: मेरी–कुंवारी | arb: بَتوليَّتي | kor: 내–처녀됨을 | swa: ubikira–wangu
+- **S88736** (1x) [N-mpc | 3fp] | eng: their-virginity | spa: virginidad–de–ellas | hin: उनकी–कुँवारी | arb: بَكَارَتِهِمَا | kor: 그들의–처녀의 | swa: ubikira–wao
+
+## H3779 (POS: N-proper-mp, "† <strong><span dir="rtl"><span class="lexicon-hebrew" dir="rtl">כַּשְׂדָּ֑י</sp", 13 occ, 4 senses)
+
+- **S107771** (6x) [N-proper-mp,N-proper-ms] | eng: [ketiv:the-Kasdaei], Kasdaei | spa: caldeos, [caldeos] | hin: [कसदी], (कसदी) | arb: [الْكَلْدَانِيُّونَ], (الْكَلْدَانِيُّونَ) | kor: [갈대아인들], (갈대아인들) | swa: [Wakaldayo], Wakaldayo
+- **S107773** (4x) [N-proper-ms,N-proper,Prep-l | N-proper-ms,Prep-l | N-proper-] | eng: [ketiv:to-the-Kasdim], [ketiv:the-Kasdim] | spa: [los–caldeos], [a–los–caldeos] | hin: को–कसदियों, कसदियों | arb: لِ–الـ–كَلْدَانِيِّينَ, الـ–كَلْدَانِيُّونَ | kor: 그–갈데아사람들이, 그–갈데아사람들에게 | swa: kwa–Wakaldayo, Wakaldayo
+- **S107777** (2x) [N-proper-ms,N-proper-mp] | eng: [ketiv:of-Kasdim], (qere:of-Kasdim) | spa: [caldeo], (caldeo) | hin: [कसदी], (कसदी–का) | arb: [الْكَلْدَانِيُّ], (الْكَلْدَانِيُّ) | kor: [갈대아인들–의], (갈대아인들–의) | swa: [Mkaldayo], (Mkaldayo)
+- **S107776** (1x) [Conj-w | N-proper-ms] | eng: and–Kasdai | spa: y–caldeo | hin: और–कसदी | arb: وَ–كَلْدَانِيٍّ | kor: 그리고–갈데아사람에게도 | swa: na–Mkaldayo
+
+## H3833c (POS: Prep-l | N-ms, "† <strong><span dir="rtl"><span class="lexicon-hebrew" dir="rtl">לָבִיא</span></", 11 occ, 4 senses)
+
+- **S108310** (5x) [N-ms,Prep-l | N-ms] | eng: lioness, the–lioness | spa: leona, para–leona | hin: सिंहनी–के–लिए, सिंहनी–के | arb: لِلَّبُؤَةِ, لَبْوَةٍ | kor: 암사자의, 암사자와 | swa: simba–jike, simba
+- **S108312** (3x) [Conj-w, Prep-k | N-ms,Prep-k | N-ms] | eng: like–lioness, and–like–a–lioness | spa: y–como–leona, como–leona | hin: सिंहनी–की–तरह, और–सिंहनी–की–तरह | arb: وَ–كَ–لَبُؤَةٍ, وَكَلَبُوةٍ | kor: 암사자–처럼, 그리고–암사자–처럼 | swa: na–kama–simba–jike, kama–simba–jike
+- **S108311** (2x) [Prep-k | N-ms] | eng: like–a–lion | spa: como–león | hin: सिंहनी–के–समान, जैसे–सिंहनी | arb: كَلَبوَةٍ, كَـ–اللَّبُؤَةِ | kor: 같이–암사자, 같으니라–암사자에 | swa: kama–simba–jike
+- **S108315** (1x) [Prep-k, Art | N-ms] | eng: as–the–lion | spa: como-león | hin: जैसे–सिंह | arb: كَاللَّبُؤَةِ | kor: 사자–같으니 | swa: kama–simba
+
+## H3861 (POS: Conj, "† II. <strong><strong><span dir="rtl"><span class="lexicon-hebrew" dir="rtl">לָה", 8 occ, 4 senses)
+
+- **S108480** (5x) [Conj] | eng: except, unless | spa: excepto, a–menos–que | hin: सिवाय, सिवा | arb: إِلاَّ, إِلَّا | kor: 다만, 오직 | swa: isipokuwa
+- **S108481** (1x) [Conj] | eng: but | spa: Pero | hin: परन्तु | arb: لٰكِنْ | kor: 그러나 | swa: lakini
+- **S108482** (1x) [Conj] | eng: but | spa: sino | hin: परंतु | arb: لكِنْ | kor: 오히려 | swa: bali
+- **S108483** (1x) [Conj] | eng: therefore | spa: por–tanto | hin: इसलिए | arb: لِذَلِكَ | kor: 그러므로 | swa: Kwa–hiyo
+
+## H3870 (POS: Prep-b | N-proper-fs, "† II. <strong><span dir="rtl"><span class="lexicon-hebrew" dir="rtl">לוּז</span>", 8 occ, 4 senses)
+
+- **S108527** (3x) [N-proper-fs] | eng: Luz | spa: Luz | hin: लूज़, लूज़। | arb: لُوزُ, لوزُ | kor: 루스였다, 루스라고 | swa: Luzu, Luzi
+- **S108528** (3x) [N-proper-fs | 3fs] | eng: Luzah | spa: a–Luz, Luz | hin: लूज़–की, लूज़ा | arb: لوزَ | kor: 루즈로, 루즈의 | swa: Luza
+- **S108529** (1x) [Prep-b | N-proper-fs] | eng: in–Luz | spa: en–Luz | hin: लूज़–में | arb: فِي–لُوزَ | kor: 에–루즈 | swa: Luzi
+- **S108530** (1x) [N-proper-fs | 3fs] | eng: Luz–ward | spa: Luz | hin: लूज | arb: لُوزَ | kor: 루즈로 | swa: Lusa
+
+## Response Format
+
+Return a JSON object with one key per lemma ID. Each value is an array of sense groups:
+
+```json
+{
+  "H3767": [
+    {"labelChirho": "short label", "descriptionChirho": "one sentence", "senseIdsChirho": [id1, id2, ...]}
+  ],
+  "H3779": [...]
+}
+```
+
+IMPORTANT: Return ONLY the JSON object. Every sense ID from every lemma must appear exactly once. Use the numeric sense IDs (without the S prefix).
+
+## H3878 (POS: Conj-w | N-proper-ms, "† I. <strong><span dir="rtl"><span class="lexicon-hebrew" dir="rtl">לֵוִי</span>", 64 occ, 4 senses)
+
+- **S108551** (55x) [N-proper-ms,Art | N-proper-ms] | eng: Levi, the–Levi | spa: Leví, Levi | hin: लेवी–के, लेवी | arb: لَاوِي, لاوي | kor: 레위, 레위의 | swa: Lawi, wa–Lawi
+- **S108552** (6x) [Conj-w | N-proper-ms,Conj-w, Prep-l | N-proper-ms] | eng: and–Levi, and–to–Levi | spa: y–Levi, y–de–Leví | hin: और–लेवी, और–लेवी–के–लिए | arb: وَ–لاوِي, وَلَاوِي | kor: 그리고–레위, 그리고–에게–레위에게 | swa: na–Lawi, akamruka–Levi
+- **S108557** (2x) [Prep-l | N-proper-ms] | eng: to–Levi, for–Levi | spa: a–Leví, Leví | hin: लेवी–को, को–लेवी | arb: لِ–لَاوِي, لِلَاوِي | kor: 레위에게, 레위–에게 | swa: kwa–Lawi
+- **S108555** (1x) [Art | N-proper-ms] | eng: the–Levite | spa: el–leví | hin: लेवियों–के | arb: اللَّاوِيِّينَ | kor: 레위인의 | swa: za–Walawi
+
+## H3888 (POS: V-Qal-Prtcpl-fp, "† <strong><strong><span dir="rtl"><span class="lexicon-hebrew" dir="rtl">לוּשׁ</", 6 occ, 4 senses)
+
+- **S108674** (3x) [Conj-w | V-Qal-ConsecImperf-3f] | eng: and–she–kneaded, and–kneaded | spa: y–amasó, [y–arrancó] | hin: और–गूंधा, और-गुन्दध | arb: وَعَجَنَتهُ, [وَعَجَنَت] | kor: 그리고–반죽하였다, 그리고–떄다 | swa: na–akaukanda, [na–akakanda]
+- **S108676** (1x) [V-Qal-Imp-fs] | eng: knead | spa: amasa | hin: गुनध | arb: اعْجِنِي | kor: 반죽하여 | swa: kanda
+- **S108678** (1x) [V-Qal-Prtcpl-fp] | eng: are–kneading | spa: amasan | hin: गूंधती–हैं | arb: يَعْجِنَّ | kor: 반죽하고–있다 | swa: wanakanda
+- **S108679** (1x) [Prep-m | V-Qal-Inf] | eng: from–kneading | spa: desde–amasar | hin: गूंधने–से | arb: مِن–عَجنِ | kor: 반죽임의 | swa: kutoka–kukanda
+
+## H3897 (POS: V-Piel-Perf-3fs, "† <strong><strong>[<span dir="rtl"><span class="lexicon-hebrew" dir="rtl">לָחַךְ", 6 occ, 4 senses)
+
+- **S108704** (3x) [V-Piel-Imperf-3mp] | eng: will–lick, they-will-lick | spa: lamerán, Lamerán | hin: वे–चाटेंगे, चाटेंगे | arb: يَلْحَسُونَ, يَلْحَسونَ | kor: 핵으리라, 핥으리이다 | swa: watalamba, wataramba
+- **S108705** (1x) [V-Piel-Perf-3fs] | eng: licked-up | spa: lamió | hin: चाटा | arb: لَحَسَتْ | kor: 핥았다 | swa: uliyaramba
+- **S108706** (1x) [V-Piel-Imperf-3mp] | eng: will–lick–up | spa: lamerá | hin: चाटेगी | arb: يَلْحَسُ | kor: 할키–것이다 | swa: wataramba
+- **S108707** (1x) [Prep-k | V-Qal-Inf] | eng: as–licks–up | spa: como–lame | hin: जैसे–चाटता–है | arb: كَ–لَحْسِ | kor: 처럼–할키는–것–의 | swa: kama–kuramba–kwa
