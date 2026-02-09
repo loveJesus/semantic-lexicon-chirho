@@ -44,14 +44,6 @@
 		return glossChirho.length > 40 ? lemmaIdChirho : glossChirho;
 	}
 
-	// Generate our own summary gloss from sense labels
-	let summaryGlossChirho = $derived(
-		allSensesChirho
-			.map((sChirho) => sChirho.label_chirho)
-			.filter(Boolean)
-			.join('; ')
-	);
-
 	// External links
 	function strongsUrlChirho(lemmaIdChirho: string): string {
 		const numChirho = lemmaIdChirho.replace(/[^0-9]/g, '');
@@ -122,6 +114,16 @@
 	let isHebrewChirho = $derived(lChirho.language_chirho === 'heb' || lChirho.language_chirho === 'arc');
 	let headwordTextChirho = $derived(extractHeadwordChirho(lChirho.gloss_clean_chirho, lChirho.lemma_id_chirho));
 
+	// Composed glosses (must be after lChirho)
+	let summaryGlossChirho = $derived(
+		lChirho.gloss_terse_chirho ||
+		allSensesChirho
+			.map((sChirho: Record<string, any>) => sChirho.label_chirho)
+			.filter(Boolean)
+			.join('; ')
+	);
+	let readableGlossChirho = $derived(lChirho.gloss_readable_chirho || '');
+
 	// BDB text (must be after lChirho)
 	let bdbFullChirho = $derived(lChirho.gloss_clean_chirho || lChirho.article_chirho || '');
 	let hasBdbChirho = $derived(bdbFullChirho.length > 0);
@@ -188,11 +190,18 @@
 		color: var(--muted-chirho);
 	}
 	.summary-gloss-chirho {
-		margin: 8px 0 12px 0;
+		margin: 8px 0 4px 0;
 		font-size: 14px;
 		font-style: italic;
 		color: var(--muted-chirho);
 		line-height: 1.5;
+	}
+	.readable-gloss-chirho {
+		margin: 6px 0 12px 0;
+		font-size: 14px;
+		line-height: 1.7;
+		color: var(--fg-chirho);
+		text-align: justify;
 	}
 	.ext-links-chirho {
 		display: flex;
@@ -388,6 +397,10 @@
 			<div class="summary-gloss-chirho">{summaryGlossChirho}</div>
 		{/if}
 
+		{#if readableGlossChirho}
+			<div class="readable-gloss-chirho">{readableGlossChirho}</div>
+		{/if}
+
 		<div class="ext-links-chirho">
 			<a class="ext-link-chirho" href={strongsUrlChirho(lChirho.lemma_id_chirho)} target="_blank" rel="noopener">Strong's / BibleHub</a>
 			<a class="ext-link-chirho" href={blueletterUrlChirho(lChirho.lemma_id_chirho)} target="_blank" rel="noopener">Blue Letter Bible</a>
@@ -403,8 +416,8 @@
 			<div>
 				<span class="sense-num-chirho">{sChirho.ordinal_chirho}.</span>
 				<span class="sense-label-chirho">{sChirho.label_chirho || 'sense ' + sChirho.ordinal_chirho}</span>
-				{#if sChirho.description_chirho}
-					&mdash; <span class="sense-desc-chirho">{sChirho.description_chirho}</span>
+				{#if sChirho.enriched_chirho || sChirho.description_chirho}
+					&mdash; <span class="sense-desc-chirho">{sChirho.enriched_chirho || sChirho.description_chirho}</span>
 				{/if}
 				<span class="occ-chirho">{sChirho.occurrence_count_chirho}&times;</span>
 			</div>
@@ -459,8 +472,8 @@
 			<div>
 				<span class="sense-num-chirho">{sChirho.ordinal_chirho}.</span>
 				<span class="sense-label-chirho">{sChirho.label_chirho || 'sense ' + sChirho.ordinal_chirho}</span>
-				{#if sChirho.description_chirho}
-					&mdash; <span class="sense-desc-chirho">{sChirho.description_chirho}</span>
+				{#if sChirho.enriched_chirho || sChirho.description_chirho}
+					&mdash; <span class="sense-desc-chirho">{sChirho.enriched_chirho || sChirho.description_chirho}</span>
 				{/if}
 				<span class="occ-chirho">{sChirho.occurrence_count_chirho}&times;</span>
 			</div>

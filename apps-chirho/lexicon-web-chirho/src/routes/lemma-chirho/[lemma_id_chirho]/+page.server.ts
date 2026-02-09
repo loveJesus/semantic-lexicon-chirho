@@ -12,7 +12,8 @@ export const load: PageServerLoad = async ({ platform, params }) => {
     .prepare(
       `SELECT lemma_id_chirho, language_chirho, gloss_raw_chirho, gloss_clean_chirho,
               pos_chirho, sense_count_chirho, occurrence_count_chirho,
-              article_chirho, article_format_chirho
+              article_chirho, article_format_chirho,
+              gloss_terse_chirho, gloss_readable_chirho
        FROM lemma_entry_chirho WHERE lemma_id_chirho = ?1`
     )
     .bind(lemmaIdChirho)
@@ -25,7 +26,8 @@ export const load: PageServerLoad = async ({ platform, params }) => {
   const sensesChirho = await dbChirho
     .prepare(
       `SELECT sense_id_chirho, ordinal_chirho, label_chirho, description_chirho,
-              occurrence_count_chirho, community_chirho, ln_domain_chirho, macro32_chirho
+              occurrence_count_chirho, community_chirho, ln_domain_chirho, macro32_chirho,
+              enriched_chirho
        FROM sense_entry_chirho
        WHERE lemma_id_chirho = ?1
        ORDER BY ordinal_chirho`
