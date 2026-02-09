@@ -1,0 +1,127 @@
+You are a biblical lexicographer composing glosses for a digital lexicon.
+For each lemma below, compose a JSON object. Separate objects with "---".
+
+Format for each:
+{
+  "lemma_id": "...",
+  "gloss_terse": "under 120 chars, concise definition covering the word's semantic range",
+  "gloss_readable": "2-5 sentences, 40-120 words. Don't start with 'This word'. Warm study-Bible footnote tone. Engaging, not dry.",
+  "senses": {
+    "1": "enriched 20-60 word description. Reference multilingual evidence when illuminating. Don't repeat the label verbatim.",
+    "2": "..."
+  }
+}
+
+Rules:
+- No markdown fences, just JSON objects separated by ---
+- Reference multilingual evidence naturally when it reveals something
+- gloss_readable should feel like a good study Bible footnote: helpful, clear, occasionally surprising
+- Each sense enrichment: how does the evidence support this sense? Mention 1-2 key passages when helpful.
+
+=== G0223 ===
+Language: Greek, POS: N-AMS, Occurrences: 6, Senses: 1
+
+BDB excerpt: Ἀλέξανδρος, -ου, ὁ, Alexander __1. Son of Simon of Cyrene: Mrk.15:21 __2. A kinsman of the High Priest: Act.4:6. __3. A certain Jew: Act.19:33. __4. A coppersmith: 1Ti.1:20. __5. Perh. = 4 (see Ellic. on I Ti, l.with): 2Ti.4:14. † (From Abbott-Smith. LSJ has no entry)
+Senses:
+  Sense 1: "Alexander (proper noun)" (6x)
+    Desc: The personal name Alexander (Greek Alexandros), used in the NT to refer to several individuals: a relative of the high priest (Acts 4:6), a Jew in Ephesus (Acts 19:33), a false teacher (1 Tim 1:20), a...
+    Domain: DISCOURSE_NAMES > Names of Persons and Places
+    Glosses: eng: Alexandros, of-Alexandros | spa: Aléxandros, a-Aléxandros, de-Aléxandros | fra: Alexandre | deu: Ἀλέξανδρον, Ἀλέξανδρος, Ἀλεξάνδρου
+    Refs: Mark 15:21, Acts 4:6, Acts 19:33, Acts 19:33, 1Tim 1:20
+
+=== G0236 ===
+Language: Greek, POS: V-ANA, Occurrences: 6, Senses: 1
+
+BDB excerpt: ἀλλάσσω, later Attic dialect ἀλλάττω Refs 5th c.BC+: imperfect ἤλλαττονRefs 4th c.BC+: future -άξωRefs 6th c.BC+: aorist ἤλλαξαRefs 5th c.BC+perfect ἤλλᾰχα (ἀπ-) Refs 5th c.BC+, (δι-) Refs:—middle, future ἀλλάξομαιRefs 2nd c.AD+, (ἀντ-) Refs 5th c.BC+: aorist ἠλλαξάμηνRefs 5th c.BC+, etc.: perfect (in middle sense) ἤλλαγμαι (ἐν-) Refs 5th c.BC+:—passive, future ἀλλαχθήσομαι Trag. and Comedy texts, (ἀπ-) Refs 5th c.BC+; ἀλλαγήσομαι in early Prose, (ἀπ-) Refs 5th c.BC+, (ἐξαπ-) Refs 5th c.BC+aorist ἠλλάχθην and ἠλλάγην, former more frequently in Refs 5th c.BC+, latter in Prose: perfect ἤλλαγμαιR
+Senses:
+  Sense 1: "change, exchange, transform" (6x)
+    Desc: Greek verb allasso meaning to change, alter, or exchange one thing for another, used across active and passive voices in the NT. In the active: they 'exchanged' (ellaxan) the glory of God for images (...
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: they-exchanged, they-will-be-changed, to-change | spa: cambiar, cambiaron, cambiará | fra: être-transformé, ἀλλάξει, ἀλλαγησόμεθα | deu: verwandelt-werden, ἀλλάξει
+    Refs: Acts 6:14, Rom 1:23, 1Cor 15:51, 1Cor 15:52, Gal 4:20
+
+=== G0331 ===
+Language: Greek, POS: N-NNS, Occurrences: 6, Senses: 1
+
+BDB excerpt: ἀνάθεμα, poetry ἄνθεμα, ατος, τό, (ἀνατίθημι) properly, like{ἀνάθημα}, anything dedicated, Refs 3rd c.BC+ __2 anything devoted to evil, an accursed thing, LXX; of persons. NT __II curse, Refs 1st c.AD+
+Senses:
+  Sense 1: "a curse, something devoted to destruction, anathema" (6x)
+    Desc: A solemn pronouncement of divine ban, curse, or devotion to destruction; something or someone placed under God's curse or separated from the community. Both clusters represent the same concept in diff...
+    Domain: COMMUNICATION > Communication
+    Glosses: eng: With-a-curse, accursed | spa: ANATEMA, Con-maldición, anatema | fra: anathème, malédiction | deu: Fluch, Ἀναθέματι
+    Refs: Acts 23:14, Rom 9:3, 1Cor 12:3, 1Cor 16:22, Gal 1:8
+
+=== G0378 ===
+Language: Greek, POS: V-PPA-NMS, Occurrences: 6, Senses: 1
+
+BDB excerpt: ἀναπληρ-όω, fill up a void, Refs 5th c.BC+; τὸ κεχηνὸς τῆς ἑρμηνείας, τοῦ ῥυθμοῦ, Refs 2nd c.AD+:—passive, to be filled up, Refs 4th c.BC+ __2 make up, supply, εἴ τι ἐξέλιπον ἀ.Refs 5th c.BC+; τοὺς.. ἀμόρφους ἀνατληροῖ ἡ τοῦ λέγειν πιθανότης compensates them, Refs —middle, δώματ᾽ ἀ. fill their houses, Refs 5th c.BC+ __3 fill up the numbers of a body, τὴν βουλήνRefs 5th c.BC+; ἀ. τὴν συνηγορίαν fill the place of advocate (left vacant by another), NT+1st c.AD+ __4 pay in full, τὰς ὠνάς, of tax-farmers, Refs 2nd c.BC+:—in middle, get paid, receive, ἕως ἀνεπληρώσατο τὴν προῖκαRefs 4th c.BC+ __5 us
+Senses:
+  Sense 1: "fill up, fulfill, complete" (6x)
+    Desc: The verb anaplerow covers the full semantic range of filling up what is lacking or bringing to completion. In Matt 13:14 (passive, 'is fulfilled') it refers to the fulfillment of prophetic Scripture (...
+    Domain: PHYSICAL_ACTION > Perform, Do
+    Glosses: eng: filled-up, filling, he-might-fill-up | spa: colmar, cumpliréis, ocupa | fra: accomplir | deu: ἀναπληροῦται, ἀναπληρώσετε, ἀναπληρώσῃ
+    Refs: Matt 13:14, 1Cor 14:16, 1Cor 16:17, Gal 6:2, Phil 2:30
+
+=== G0414 ===
+Language: Greek, POS: Adj-NNS-C, Occurrences: 6, Senses: 1
+
+BDB excerpt: ἀνεκτός, όν, later ή, όν Refs 3rd c.AD+: Aeolic dialect ὄνεκτος Refs 7th c.BC+:— bearable, sufferable, tolerable, mostly with a negative (like ἀνασχετός), λοίγια ἔργα.. οὐδ᾽ ἔτ᾽ ἀνεκτάRefs 8th c.BC+: so mostly in Attic dialect, οὐκ ἀνεκτόνRefs 5th c.BC+; or with a question, ἦ ταῦτα δῆτ᾽ ἀνεκτ;Refs 5th c.BC+ —οὐκ ἀνεκτόν [ἐστι] followed by infinitive, with or without μὴ οὐ, Refs 5th c.BC+; τὸ μὲν οὐκ ἀ. ἐμοὶ.. γίγνεσθαι Refs __2 without a negative, τὸ μὲν καὶ ἀνεκτὸν ἔχει κακόν that can be endured, Refs 8th c.BC+; παντὶ τρόπῳ ὅστις καὶ ὁπωσοῦν ἀνεκτός in any tolerable manner whatsoever, Refs 5t
+Senses:
+  Sense 1: "?" (6x)
+    Domain: EMOTION_ATTITUDE > Attitudes and Emotions
+    Glosses: eng: more-tolerable | spa: más-tolerable | fra: plus-supportable | deu: ἀνεκτότερον
+    Refs: Matt 10:15, Matt 11:22, Matt 11:24, Mark 6:11, Luke 10:12
+
+=== G0453 ===
+Language: Greek, POS: Adj-VMP, Occurrences: 6, Senses: 1
+
+BDB excerpt: ἀνό-ητος, ον, not thought on, unheard of, ἄφραστ᾽ ἠδ᾽ ἀνόηταRefs __2 not within the province of thought, νοήματα ὄντα ἀνόητα εἶναιRefs 5th c.BC+; not the object of thought, unthinkable, Refs 3rd c.AD+adverb -τως without discursive thought, of vision, βλέψαι ἀ.Refs __II active, not understanding, unintelligent, senseless, silly, Refs 5th c.BC+; ὦ ἀνόητοι oh fools! Refs 5th c.BC+; opposed to προνοητικός, Refs 5th c.BC+: comparative -ότεροςRefs 2nd c.AD+; τὸ ἀ., opposed to τὸ νοῦν ἔχον, Refs 5th c.BC+ __II.b with genitive, not understanding, θεοῦRefs 2nd c.AD+ __II.2 of acts, thoughts, etc., ἀ. γ
+Senses:
+  Sense 1: "foolish" (6x)
+    Desc: foolish (6 occurrences across 3 original clusters)
+    Domain: MENTAL_LIFE > Understand
+    Glosses: eng: foolish, to-foolish | spa: a-insensatos, insensatos | fra: insensé | deu: unverstaendig, ἀνόητοι
+    Refs: Luke 24:25, Rom 1:14, Gal 3:1, Gal 3:3, 1Tim 6:9
+
+=== G0505 ===
+Language: Greek, POS: Adj-AFS, Occurrences: 6, Senses: 1
+
+BDB excerpt: ἀνυπό-κρῐτος, ον, without dissimulation, LXX+NT. adverb -τωςRefs 2nd c.AD+ __II undramatic, Refs 4th c.BC+ __III in punctuation, of a stop in a simple sentence, opposed to ἐνυπόκριτος (which see), Refs
+Senses:
+  Sense 1: "unhypocritical" (6x)
+    Desc: unhypocritical (6 occurrences across 5 original clusters)
+    Domain: MORAL_QUALITY > Moral and Ethical Qualities
+    Glosses: eng: unhypocritical | spa: sin-hipocresía, sincera | fra: sans-hypocrisie, ungeheuchelt | deu: ungeheuchelt
+    Refs: Rom 12:9, 2Cor 6:6, 1Tim 1:5, 2Tim 1:5, Jas 3:17
+
+=== G0516 ===
+Language: Greek, POS: Adv, Occurrences: 6, Senses: 1
+
+BDB excerpt: Included with: ἄξιος, ία, ιον (ος, ον Refs 4th c.AD+ counterbalancing,Refs: hence properly weighing as much, of like value, worth as much as, with genitive, βοὸς ἄ.Refs 8th c.BC+; νῦν δ᾽ οὐδ᾽ ἑνὸς ἄξιοί εἰμεν Ἕκτορος we are not—all together—worth one Hector,Refs 8th c.BC+; so πολλοῦ ἄ. worth much, Refs 5th c.BC+; παντός, τοῦ παντὸς ἄ., Refs 5th c.BC+; παντὸς ἄ., with infinitive, Refs 5th c.BC+; λόγου ἄ., ={ἀξιόλογος}, Refs 5th c.BC+; σπουδῆς, μνήμης ἄ., Refs 6th c.BC+; μείονος, ἐλάττονος ἄ., Refs 5th c.BC+; also εἰς ὀγδοήκοντα μνᾶς ἄ. worth up to a sum of.., Refs 4th c.BC+ __2 with dative pers
+Senses:
+  Sense 1: "?" (6x)
+    Domain: PROPERTIES_RELATIONS > Adequate, Qualified
+    Glosses: eng: worthily | spa: dignamente | fra: digne, dignement | deu: wuerdig
+    Refs: Rom 16:2, Eph 4:1, Phil 1:27, Col 1:10, 1Thess 2:12
+
+=== G0545 ===
+Language: Greek, POS: Adj-NMP, Occurrences: 6, Senses: 1
+
+BDB excerpt: ἀπειθής, ές, disobedient, Refs 5th c.BC+; of ships, τοῖς κυβερνήταις ἀπειθεστέρας τὰς ναῦς παρεῖχον less obedient to them, Refs 5th c.BC+; of horses, Refs; ἀπειθέα τεύχειν work disobedience, Refs 3rd c.BC+. adverb ἀπειθῶς, ἔχειν πρός τιναRefs 5th c.BC+ __b unbelieving, Refs 4th c.AD+ __2 of things, inflexible, rigid, κέντρονRefs 1st c.AD+unyielding, Refs 3rd c.AD+; χῶρος ἀ. impracticable, of Hades, Refs 4th c.BC+ __II active, not persuasive, incredible, μῦθοςRefs 6th c.BC+; uninviting, πρὸς τὴν γεῦσινRefs 1st c.BC+; of places, difficult of access, Refs 2nd c.AD+
+Senses:
+  Sense 1: "disobedient, rebellious" (6x)
+    Desc: An adjective describing persons who refuse to obey or comply with divine or parental authority. All NT uses carry the same semantic weight of willful non-compliance. Multilingual translations are unan...
+    Domain: GUIDANCE_CARE > Guide, Discipline, Follow
+    Glosses: eng: disobedient | spa: desobediente, desobedientes | fra: désobéissant | deu: ungehorsam, ἀπειθεῖς, ἀπειθὴς
+    Refs: Luke 1:17, Acts 26:19, Rom 1:30, 2Tim 3:2, Titus 1:16
+
+=== G0589 ===
+Language: Greek, POS: V-AIA-3S, Occurrences: 6, Senses: 1
+
+BDB excerpt: ἀποδημ-έω, Doric dialect ἀπο-δᾱμέω, perfect ἀπεδήμηκα uncertain in Refs 5th c.BC+:— to be away from home, be abroad or on one's travels, Refs 5th c.BC+; of foreign service, Refs; opposed to ἐπιδημεῖν, Refs 5th c.BC+: metaphorically, to be absent, Refs 5th c.BC+ __2 go abroad, παρά τινα to visit him, Refs 5th c.BC+; ἀ. ἐς Αἴγιναν κατὰ τοὺς Αἰακίδας go abroad to Aegina to fetch the Aeacidae, Refs 5th c.BC+
+Senses:
+  Sense 1: "to go on a journey, to travel abroad" (6x)
+    Desc: To depart on a journey to a distant place, especially to travel abroad or to a far country. In the NT, this verb appears almost exclusively in Jesus' parables about absent landlords or masters (Matt 2...
+    Domain: BEHAVIOR > Behavior and Related States
+    Glosses: eng: going-on-a-journey, he-went-away, he-went-on-a-journey | spa: partió, partió-de-viaje, que-viaja | fra: voyager | deu: ἀπεδήμησεν, ἀποδημῶν
+    Refs: Matt 21:33, Matt 25:14, Matt 25:15, Mark 12:1, Luke 15:13

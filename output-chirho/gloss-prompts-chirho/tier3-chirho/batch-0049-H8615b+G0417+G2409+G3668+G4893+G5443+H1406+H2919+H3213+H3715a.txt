@@ -1,0 +1,129 @@
+You are a biblical lexicographer composing glosses for a digital lexicon.
+For each lemma below, compose a JSON object. Separate objects with "---".
+
+Format for each:
+{
+  "lemma_id": "...",
+  "gloss_terse": "under 120 chars, concise definition covering the word's semantic range",
+  "gloss_readable": "2-5 sentences, 40-120 words. Don't start with 'This word'. Warm study-Bible footnote tone. Engaging, not dry.",
+  "senses": {
+    "1": "enriched 20-60 word description. Reference multilingual evidence when illuminating. Don't repeat the label verbatim.",
+    "2": "..."
+  }
+}
+
+Rules:
+- No markdown fences, just JSON objects separated by ---
+- Reference multilingual evidence naturally when it reveals something
+- gloss_readable should feel like a good study Bible footnote: helpful, clear, occasionally surprising
+- Each sense enrichment: how does the evidence support this sense? Mention 1-2 key passages when helpful.
+
+=== H8615b ===
+Language: Hebrew, POS: Conj-w | N-fsc | 3mp, Occurrences: 32, Senses: 1
+
+BDB excerpt: † II. תִּקְוָה34 n.f. hope;—abs. ת׳ Ho 2:17 +; cstr. תִּקְוַת Jb 8:13 +; sf. תִּקְוָתִי 6:8 +, etc.;— 1. hope, Je 31:17; La 3:29; Jb 5:16; 7:6; 11:18, 20; 14:7, 19; 17:15a; 19:10; ψ 62:6; Pr 19:18; 26:12; 29:20; Ru 1:12; פֶּתַח ת׳ Ho 2:17; אֲסִירֵי הַתּ׳ Zc 9:12 (i.e. with hope of deliverance). 2. = ground of hope Jb 4:6 ψ 71:5 (cf. 62:6). 3. things hoped for, outcome, Ez 19:5; 37:11; Jb 6:8; 8:13; 17:15b (but read טוֹבָתִי 𝔊 Me Bi Siegf Beer Bu Du), 27:8 ψ 9:19 Pr 10:28; 11:7, 23; 23:18; 24:14 (del. Toy as gloss); אַחֲרִית וְת׳ Je 29:11 (i. e. by hendiadys, the hoped-for future).
+Senses:
+  Sense 1: "hope, expectation" (32x)
+    Desc: Confident anticipation or expectation directed toward a future outcome, whether grounded in God, circumstances, or human aspiration; used across all grammatical forms (absolute, construct, with pronom...
+    Domain: EMOTION_ATTITUDE > Attitudes and Emotions
+    Glosses: eng: and-hope-of, are-my-hope, but-the-expectation-of | spa: esperanza, esperanza-de, esperanza. | fra: [תקוה], espérance, et-espérance | deu: Hoffnung, [תקוה], ist-mein-hoffen
+    Refs: Ruth 1:12, Job 4:6, Job 5:16, Job 6:8, Job 7:6
+
+=== G0417 ===
+Language: Greek, POS: N-AMS, Occurrences: 31, Senses: 1
+
+BDB excerpt: ἄνεμος [ᾰ], ὁ, wind, πέτετο πνοιῇ ἀνέμοιοRefs 8th c.BC+; ἀνέμου κατιόντος μεγάλου a gale having come on, Refs 5th c.BC+; ἀνέμου ἐξαίφνης ἀσελγοῦς γενομένου Refs 5th c.BC+; ἄνεμος κατὰ βορέαν ἑστηκώς the wind being set in the north, Refs 5th c.BC+; ἀνέμοις φέρεσθαι παραδιδόναι τι cast a thing to the winds, Refs 5th c.BC+; κατ᾽ ἄνεμον στῆναι stand to leeward, Refs 4th c.BC+ 'unstable as the wind', Refs 5th c.BC+; φέρειν τιν᾽ ἄρας (sic l.) ἄ. a very wind to carry off, Refs 4th c.BC+; ἀνέμους θηρᾶν ἐν δικτύοις try to catch the wind, and ἀνέμῳ διαλέγεσθαι talk to the wind, Refs 2nd c.AD+ __2 cardin
+Senses:
+  Sense 1: "wind" (31x)
+    Desc: A natural movement of air, wind — ranging from a gentle breeze to a violent storm. Both singular and plural inflections (nominative, accusative, genitive, dative in both numbers) represent the same me...
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: a-wind, wind, winds | spa: viento, vientos | fra: vent | deu: Wind
+    Refs: Matt 7:25, Matt 7:27, Matt 8:26, Matt 8:27, Matt 11:7
+
+=== G2409 ===
+Language: Greek, POS: N-AMP, Occurrences: 31, Senses: 1
+
+BDB excerpt: ἱερ-εύς [ῐ], έως, Ionic dialect -ῆος, Refs 2nd c.BC+:—Ionic dialect nominative ἱρεύς Refs 8th c.BC+: Doric dialect ἱᾰρεύς Refs; accusative plural τὸς ἱαρές Refs:— also ἱέρεως (Attic dialect and proparoxytone accusative to Refs 4th c.BC+; genitive ἱέρεω Refs 3rd c.BC+; dative ἵρεῳ Refs 5th c.BC+; accusative ἱέρεω Refs 2nd c.BC+: ἱερής Refs 4th c.BC+ ἱαρής Refs 4th c.BC+: (ἱερός):—priest, sacrificer, diviner, Refs 8th c.BC+; ἐφ᾽ ἱερέως, as a date, Refs 4th c.BC+, etc. (frequently unaspirated, ἐπ᾽ ἰερέως Refs; of the Jewish High Priest, LXX+1st c.BC+; at Rome, = pontifex, Refs; ἱ. ὁ μέγιστος, = p
+Senses:
+  Sense 1: "priest" (31x)
+    Desc: A priest, one who performs sacred rites and offers sacrifices; in the NT used of Jewish priests serving in the Jerusalem temple (Zechariah, those who examined healed lepers), the high priest's associa...
+    Domain: RELIGIOUS_LIFE > Religious Activities
+    Glosses: eng: a-priest, priest, priests | spa: sacerdote, sacerdotes, un-sacerdote | fra: prêtre, sacrificateur | deu: Priester
+    Refs: Matt 8:4, Matt 12:4, Matt 12:5, Mark 1:44, Mark 2:26
+
+=== G3668 ===
+Language: Greek, POS: Adv, Occurrences: 31, Senses: 1
+
+BDB excerpt: Included with: ὅμοιος or (as in Refs 8th c.BC+ ὁμοῖος, α, ον (compare ἐρῆμος, ἑτοῖμος): later Epic dialect also ὁμοίιος (B, which see); Aeolic dialect ὔμοιος Refs 3rd c.BC+ (adverb -ωςRefs 4th c.AD+ ὑμοῖος Refs 4th c.BC+: (ὁμός):—like, resembling, ὡς αἰεὶ τὸν ὁ. ἄγει θεὸς ὡς τὸν ὁ. 'birds of a feather flock together', Refs 8th c.BC+; ὡς ἐπὶ τῶν ὁ. as in similar cases (of persons), Refs 2nd c.AD+, etc.: comparative -ότερος more like, Refs 5th c.BC+: superlative -ότατος most like, Refs 5th c.BC+ __2 the same, ἄμφω γὰρ πέπρωται ὁμοίην γαῖαν ἐρεῦσαι Refs 8th c.BC+; hence (i.e. ἑαυτῷ), always the s
+Senses:
+  Sense 1: "likewise" (31x)
+    Desc: likewise, Likewise (31 occurrences across 5 original clusters)
+    Domain: PROPERTIES_RELATIONS > Comparison
+    Glosses: eng: Likewise, likewise | spa: asimismo, igualmente | fra: de-même | deu: ebenso, gleichweise
+    Refs: Matt 22:26, Matt 26:35, Matt 27:41, Mark 4:16, Mark 15:31
+
+=== G4893 ===
+Language: Greek, POS: N-NFS, Occurrences: 31, Senses: 1
+
+BDB excerpt: συνείδησις, εως, ἡ, knowledge shared with another, τῶν ἀλγημάτων (in a midwife) Refs 2nd c.AD+ __2 communication, information, εὑρήσεις σ. Refs 2nd c.AD+; σ. εἰσήνεγκαν τοῖς κολλήγαις αὐτῶν Refs 3rd c.AD+ __3 knowledge, λῦε ταῦτα πάντα μὴ διαλείψας ἀγαθῇ σ. (variant{ἀγαθῇ τύχῃ}) Refs 5th c.BC+ __4 consciousness, awareness, [τῆς αὑτοῦ συστάσεως] NT+5th c.BC+; inner consciousness, ἐν σ. σου βασιλέα μὴ καταράσῃ LXX+NT __5 consciousness of right or wrong doing, conscience, Periander and Refs 6th c.BC+; ἐὰν ἐγκλήματός τινος ἔχῃ σ. Refs (a) ii 19; βροτοῖς ἅπασιν ἡ σ. θεός NT+4th c.BC+; ἀπρόσκοπος πρ
+Senses:
+  Sense 1: "conscience, moral self-awareness" (31x)
+    Desc: The inner faculty of moral self-evaluation by which a person judges their own actions as right or wrong; used extensively in Pauline and Petrine epistles regarding a clear, good, weak, or defiled cons...
+    Domain: MENTAL_LIFE > Know
+    Glosses: eng: conscience | spa: conciencia | fra: conscience | deu: Gewissen, συνείδησιν, συνειδήσει
+    Refs: John 8:9, Acts 23:1, Acts 24:16, Rom 2:15, Rom 9:1
+
+=== G5443 ===
+Language: Greek, POS: N-AFS, Occurrences: 31, Senses: 1
+
+BDB excerpt: φῡλή, ἡ, (φύω) properly, like{φῦλον}, a race, tribe; but accusative to Refs 4th c.BC+ a union formed in an organized community (whether πόλις or ἔθνος): hence, tribe, i.e. __I a body of men united __I.1 by supposed ties of blood and descent, clan, such as the three Dorian tribes, Rhetra cited in Refs 5th c.BC+; of the four Ionic tribes, Refs 5th c.BC+; of the Laconian, Refs 5th c.BC+; of the old Roman, Refs 1st c.BC+; of the Persian, Refs 5th c.BC+; of the Jewish, LXX (but also of subdivisions of the tribe (σκῆπτρον),LXX+NT __I.2 by local habitation, such as the ten local tribes at Athens form
+Senses:
+  Sense 1: "tribe, clan" (31x)
+    Desc: A division of a people based on descent from a common ancestor, especially the twelve tribes of Israel; used extensively in Revelation for the eschatological gathering (Rev 5:9, 7:4-9, 11:9, 13:7, 14:...
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: of-tribe, tribe | spa: de-tribu, tribu | fra: tribu | deu: Stamm, φυλῆς
+    Refs: Matt 19:28, Matt 24:30, Luke 2:36, Luke 22:30, Acts 13:21
+
+=== H1406 ===
+Language: Hebrew, POS: N-mp, Occurrences: 31, Senses: 1
+
+BDB excerpt: † גָּג n.m. roof, top (NH id.; Di comp. Ethiopic ጋግ, ጋጋ vinculum (ferreum), jugo simil. collare ferreum; √ dub.; Thes proposes גנג; perhaps גנג (= גנגן) cover Bö§ 292 Sta§ 189 a MV)—גָּג Jos 2:6 + 9 times + 1 S 9:26 Kt (Qr גָּ֫גָה), גָּ֫גָה Jos 2:6 1 S 9:26 Qr (Kt גג); cstr. Ju 9:51 + 2 times + Ez 40:13 (del. Co v. infr.); sf. גַּגֶּ֑ךָ Dt 22:8, גַּגּוֹ Ex 30:3 + 2 times + Ez 40:13 (del. Co v. infr.); pl. גַּגּוֹת Is 37:27 + 5 times; sf. גַּגּוֹתֶיהָ Is 15:3, גַּגּוֹתֵיהֶם Je 32:29, גַּגֹּתֵיהֶם Je 19:13;— 1. roof (of house) Dt 22:8 Jos 2:6(×2), 8 Ju 16:27 1 S 9:25, 26 2 S 11:2(×2); 16:22 2 K 
+Senses:
+  Sense 1: "roof / rooftop" (31x)
+    Desc: The flat upper surface of a building, used in ancient Israel for drying goods, sleeping, prayer, public proclamation, and as a place of refuge or concealment; also appears in architectural description...
+    Domain: BUILDINGS > Constructions
+    Glosses: eng: a-roof, for-your-roof, its-top | spa: a-su-techo, de-tejados, el-techo | fra: Gath, Guilgal, le-toit | deu: Dach, Dach-von, [גגות]
+    Refs: Exod 30:3, Exod 37:26, Deut 22:8, Josh 2:6, Josh 2:6
+
+=== H2919 ===
+Language: Hebrew, POS: Conj-w, Occurrences: 31, Senses: 1
+
+BDB excerpt: † טַל n.m. Ju 6:37 night-mist, dew (NH טַל dew; Aramaic ܛܰܠܴܐ, טַלָּא dew; Arabic طَلٌّ light rain, dew; Ethiopic ጠል dew)—ט׳ abs. 1 S 1:21 + 12 times; טָ֑ל Ju 6:13 + 9 times; cstr. טַל Gn 27:28 + 4 times; sf. טַלֶּ֑ךָ Is 26:19, טַלָּם Zc 8:12;—night-mist, taking place of our dew (v. Che Is 18:4 & ψ 110:3; Lane 1862, NeilPal. Explored 129); as coming from the sky and bringing fertility, טַל הַשָּׁמַיִם Gn 27:28 (God gives it, נתן), & v 39 (+ מֵעָ֑ל), cf. Dt 33:28 (heavens distil it, ערף), Hg 1:10 Zc 8:12 (heavens give it, נתן); in Dt 33:13 read perh. מֵעָ֑ל for מִטַּל (v. ‖ Gn 49:25 and Di); cl
+Senses:
+  Sense 1: "dew, night moisture" (31x)
+    Desc: Atmospheric moisture that condenses on surfaces overnight, used literally of weather and figuratively as a symbol of divine blessing, refreshment, or abundance.
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: and-like-dew, and-like-the-dew, dew | spa: el-rocío, el-rocío-de, rocío | fra: [טל], de-rosée,, dew | deu: Tau, [טל], der-Tau
+    Refs: Gen 27:28, Gen 27:39, Exod 16:13, Exod 16:14, Num 11:9
+
+=== H3213 ===
+Language: Hebrew, POS: Conj-w | V-Hifil-ConjImperf.Cohort-1cs, Occurrences: 31, Senses: 1
+
+BDB excerpt: † יָלַל vb.Hiph. howl, make a howling (onomatop.)— Hiph. Pf. וְהֵילִל Je 47:2; וְהֵילִי֫לוּ consec. Am 8:3; Impf. יְיֵלִיל Is 15:2 + 3 times (Ges§ 70, 2, R. 2 Köi 437, 421); אֲיֵלִיל Je 48:31; וְאֵילִי֫לָה Mi 1:8; יְיֵלִי֫לוּ Ho 7:14 (Köi 421); יְהֵילִי֫לוּ Is 52:5; תְּיֵלִי֫לוּ Is 65:14; Imv. הֵילֵל Ez 21:17; Zc 11:2; הֵילִי֫לִי Is 14:31; 49:3 + Je 48:20 Kt; הֵילִי֫לוּ Is 13:6 + 13 times + Je 48:20 Qr, + Ez 30:2 (del. 𝔊 Co);—utter or make a howling, give a howl, in distress, ‖ זעק Ho 7:14; Je 47:2; Is 14:31; Je 25:34; 48:20, 31 (sq. על), Ez 21:17; ‖ צעק Is 65:14 (sq. מִן of occasion, source);
+Senses:
+  Sense 1: "wail, howl loudly" (31x)
+    Desc: To cry out in loud lamentation or grief, expressing intense sorrow or distress through prolonged vocal mourning (Hifil of yalal).
+    Domain: RELIGIOUS_LIFE > Funerals and Burial
+    Glosses: eng: (wail), Wail, wail | spa: Aulla, Aullad, aulla | fra: hurler | deu: heulen, heult
+    Refs: Isa 13:6, Isa 14:31, Isa 15:2, Isa 15:3, Isa 16:7
+
+=== H3715a ===
+Language: Hebrew, POS: Art | N-mp, Occurrences: 31, Senses: 1
+
+BDB excerpt: † כְּפִיר n.m. young lion;—כ׳ Ju 14:5 + 16 times; pl. כְּפִרִים Je 2:15 + 3 times; כְּפִירִים Zc 11:3 + 7 times; sf. כְּפִירַיִךְ Na 2:14; כְּפִירֶיהָ Ez 38:13 (Co reads כנעניה);—lit. כ׳ אֲרָיוֹת Ju 14:5 young lion of lions; Am 3:4 ψ 17:12. It differs from whelp גּוּר Ez 19:2, 3 as old enough to hunt its prey, Je 25:38; Is 11:6; Zc 11:3; ψ 104:21; in sim. of roar of hostile army Is 5:29 (‖ לָבִיא) cf. Je 51:38 (‖ גּוֹרֵי אריות); sim. of י׳’s invincible might Is 31:4 (‖ אַרְיֵה); of Isr. among the nations, Mi 5:7; of Assyrian princes Na 2:12; of prince of Isr. Ez 19:5, 6; other cases are: ‖ לָב
+Senses:
+  Sense 1: "young lion, lion cub" (31x)
+    Desc: A young or adolescent lion (כְּפִיר), used literally of lion cubs and figuratively of fierce or predatory agents; all 31 occurrences denote the same zoological referent with variation only in grammati...
+    Domain: ANIMALS > Animals
+    Glosses: eng: and-like-a-young-lion, and-like-young-lion, and-the-young-lion | spa: Los-leoncillos, cachorro, como-cachorro-de-león | fra: comme-lionceau, comme-ככפיר, de-lionceau | deu: Jungloewe, [והכפיר], [וככפיר]
+    Refs: Judg 14:5, Job 4:10, Job 38:39, Ps 17:12, Ps 34:10

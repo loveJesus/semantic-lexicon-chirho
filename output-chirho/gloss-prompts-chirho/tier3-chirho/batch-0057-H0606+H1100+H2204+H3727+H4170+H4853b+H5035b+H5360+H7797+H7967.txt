@@ -1,0 +1,129 @@
+You are a biblical lexicographer composing glosses for a digital lexicon.
+For each lemma below, compose a JSON object. Separate objects with "---".
+
+Format for each:
+{
+  "lemma_id": "...",
+  "gloss_terse": "under 120 chars, concise definition covering the word's semantic range",
+  "gloss_readable": "2-5 sentences, 40-120 words. Don't start with 'This word'. Warm study-Bible footnote tone. Engaging, not dry.",
+  "senses": {
+    "1": "enriched 20-60 word description. Reference multilingual evidence when illuminating. Don't repeat the label verbatim.",
+    "2": "..."
+  }
+}
+
+Rules:
+- No markdown fences, just JSON objects separated by ---
+- Reference multilingual evidence naturally when it reveals something
+- gloss_readable should feel like a good study Bible footnote: helpful, clear, occasionally surprising
+- Each sense enrichment: how does the evidence support this sense? Mention 1-2 key passages when helpful.
+
+=== H0606 ===
+Language: Hebrew, POS: N-msc, Occurrences: 27, Senses: 1
+
+BDB excerpt: † אֱנָשׁ n.m. man, mankind;—abs. א׳ Dn 2:10 +; emph. אֲנָשָׁא v 38 +, so Qr 4:13, 14 (> Kt אנושׁא K§ 57 f); so Nab. אנוש often Lzb 222 Cooke 219 SAC 22): pl. אֲנָשִׁים 4:14 (Hebraism, M 53* proposes אֲנָשָׁא);— 1. man, human being, Dn 2:10; 3:10; 4:13; 5:5, 7(×2); 6:13(×2); 7:4(×2), 8; Ezr 6:11; so בַּר־אֱנָשׁ Dn 7:13 a son of man, human being (v. especially Dr Dn 102; DBSon of Man). 2. coll. men, people, Ezr 4:11; Dn 4:14 a. 22(×2), 29(×2), 30; 5:21, cf.pl. 4:14; זְרַע א׳ 2:43 i.e. human off-spring; בְּנֵי אֲנָשָׁא sons of men, = men, 2:38; 5:21.
+Senses:
+  Sense 1: "man, mankind (Aramaic)" (27x)
+    Desc: An Aramaic noun (אֱנָשׁ) meaning 'man' or 'mankind', cognate to Hebrew אֱנוֹשׁ. This word appears exclusively in the Aramaic portions of Daniel and Ezra. In the singular absolute form (אֱנָשׁ), it den...
+    Domain: PEOPLE_KINSHIP > People
+    Glosses: eng: Man, [ketiv:man], man | spa: [hombre], hombre, hombres | fra: [אנושא], homme, hommes | deu: Maenner, Mensch, [אנש]
+    Refs: Ezra 4:11, Ezra 6:11, Dan 2:10, Dan 2:38, Dan 2:43
+
+=== H1100 ===
+Language: Hebrew, POS: N-ms, Occurrences: 27, Senses: 1
+
+BDB excerpt: † בְּלִיַּ֫עַל27 n.[m.] worthlessness (cpd. בְּלִי not, without and יַעַל worth, use, profit)—בּ׳ Dt 13:14 + 20 times; בְּלִיָּ֑עַל ψ 101:3 + 5 times;—the quality of being useless, good for nothing. 1. abstr. אִישׁ (ה)בליעל, אַנְשֵׁי הבליעל, worthless, good-for-nothing, base fellows 1 S 25:25; 2 S 16:7; 20:1; 1 K 21:13; Pr 16:27; = בֶּן־ב׳ 1 S 25:17, בְּנֵי ב׳ Dt 13:14; Ju 19:22; 20:13; 1 S 2:12; 10:27; 1 K 21:10, 13; 2 Ch 13:7; בַּת ב׳ 1 S 1:16 (drunken woman); עֵד ב׳ base witness Pr 19:28; דְּבַר ב׳ base, wicked thing ψ 41:9 (yet cf. 3 infr.), 101:3 (add prob. also 1 S 29:10, so 𝔊 We Dr); דָ
+Senses:
+  Sense 1: "worthlessness, wickedness (Belial)" (27x)
+    Desc: Worthlessness, wickedness, used as an abstract noun or epithet characterizing persons as base and wicked (often in the construct 'sons of Belial'), and metaphorically of destructive forces; from בְּלִ...
+    Domain: ECONOMICS_PROPERTY > Value
+    Glosses: eng: Belial, Beliyaal, destruction | spa: Belial, de-Belial, destrucción | fra: Belial, Beliyaal, dans-vaurien | deu: Belial, Beliyaal, destruction
+    Refs: Deut 13:13, Deut 15:9, Judg 19:22, Judg 20:13, 1Sam 1:16
+
+=== H2204 ===
+Language: Hebrew, POS: V-Hifil-Imperf-3ms, Occurrences: 27, Senses: 1
+
+BDB excerpt: † זָקֵן vb. be or become old (cf., according to Thes, Arabic ذَقُونٌa she-camal that lets her lower lip hang down, 3, v. Lane 968; ذِقْنٌ decrepit man)— Qal Pf. 3 ms. זָקֵן Gn 18:12 + 14 times (often hard to disting. from pred. adj. זָקֵן q.v.); 3 fs. זָֽקְנָה Pr 23:22; 2 ms. זָקַנְתָּ 1 S 8:5; זָקַ֫נְתָּה Jos 13:1; 1 s. זָקַנְתִּי Jos 23:2 + 3 times; זָקַ֑נְתִּי Gn 18:13; 27:2; Impf. וַיִּזְקַן 2 Ch 24:15;—be (or become) old Gn 18:12, 13; 19:31; 27:1, 2 (all J), 1 S 2:22; 4:18; 8:1, 5; 12:2; 17:12 2 S 19:33 1 K 1:1, 15 2 K 4:14; also Gn 24:1 (‖ בא בימים), so Jos 13:1(×2); 23:1, 2 (‖ here בָּא
+Senses:
+  Sense 1: "to be old, grow old" (27x)
+    Desc: To be old or to grow old — a stative verb describing the state or process of aging, used of patriarchs, kings, and other persons becoming aged (Gen 18:12-13; 24:1; 27:1-2; Josh 13:1; 23:1-2; Ruth 1:12...
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: I-am-old, I-am-too-old, I-have-grown-old | spa: anciano, envejecido-he, envejecí | fra: [זקן], ancien, avoir-crû-vieux | deu: [זקן], [זקנתי], alt
+    Refs: Gen 18:12, Gen 18:13, Gen 19:31, Gen 24:1, Gen 27:1
+
+=== H3727 ===
+Language: Hebrew, POS: Art | N-fs, Occurrences: 27, Senses: 1
+
+BDB excerpt: † כַּפֹּרֶת n. propitiatory, late techn. word from כּפר cover over sin: the older explan. cover, lid has no justification in usage; 𝔊 ἱλαστήριον; only P: Ex 25:17, 18, 19, 20(×2), 21, 22; 26:34; 30:6; 31:7; 35:12; 37:6, 7, 8, 9(×2); 39:35; 40:20 Lv 16:2(×2), 13, 14(×2), 15(×2) Nu 7:89, and 1 Ch 28:11; it was a slab of gold 2 ½ cubits × 1 ½ c. placed on top of the ark of the testimony. On it, and a part of it, were two golden cherubim facing each other, whose outstretched wings came together above and constituted the throne of Yahweh. When the high priest entered the Holy of Holies on the day o
+Senses:
+  Sense 1: "the mercy seat" (27x)
+    Desc: the mercy seat, mercy seat, a mercy seat of (27 occurrences across 6 original clusters)
+    Domain: RELIGIOUS_LIFE > Religious Activities
+    Glosses: eng: the-mercy-seat | spa: el-propiciatorio | fra: le-miséricorde-siège, le-propitiatoire | deu: der-Gnade-seat, der-Gnadendeckel
+    Refs: Exod 25:17, Exod 25:18, Exod 25:19, Exod 25:20, Exod 25:20
+
+=== H4170 ===
+Language: Hebrew, POS: Conj-w | N-mpc, Occurrences: 27, Senses: 1
+
+BDB excerpt: † מוֹקֵשׁ n.m. Pr 12:13 proposes a bait or lure in a fowler’s net; then fig. snare—abs. מוֹקֵשׁ Ex 10:7 + 15 times; cstr. Pr 18:7; 20:25; pl. מוֹקְשִׁים ψ 64:6 Jb 40:24; מֹקְשִׁים ψ 140:6; cstr. מוֹקְשֵי 18:6 + 3 times; מֹקְשֵׁי 2 S 22:6; f. מֹקְשׁוֹת ψ 141:9; bait or lure, in a net for birds Am 3:5; will not pierce nostril of hippopotamus Jb 40:24; elsewhere fig. of what allures and entraps any one to disaster or ruin; Moses a snare to Egyptians Ex 10:7 (J); מוֹקְשֵׁי עָם Jb 34:30, of men who are the ruin of their people; idols and idol-worship a pernicious lure to Israel Ex 23:33 (JE), Dt 7:
+Senses:
+  Sense 1: "snare, trap" (27x)
+    Desc: A device for catching prey; used literally of a hunter's snare and figuratively of anything that lures into danger, ruin, or sin — a stumbling block or entrapment.
+    Domain: ARTIFACTS > Artifacts
+    Glosses: eng: a-snare, as-a-snare, from-snares-of | spa: Trampa, de-trampas-de, de-trampas-de- | fra: comme-un-piège, comme-un-snare, de-piège | deu: Fallen, Fallstrick, [ממקשי]
+    Refs: Exod 10:7, Exod 23:33, Exod 34:12, Deut 7:16, Josh 23:13
+
+=== H4853b ===
+Language: Hebrew, POS: Art | N-ms, Occurrences: 27, Senses: 1
+
+BDB excerpt: † III. מַשָּׂא n.m. Is 14:28 utterance, oracle (cf. נשׂא 1 b (6); Gf Je 23:33);—מ׳ abs. Is 14:28 +; usually cstr. 13:1 +;—of prophetic utterance: 2 K 9:25 Is 14:28 Ez 12:10 2 Ch 24:27 (c. עַל); מ׳ בָבֶל Is 13:1, מ׳ מוֹאָב 15:1, cf. 17:1; 19:1; 21:1, 11; 22:1; 23:1; 30:6 Na 1:1; מ׳ בערב Is 21:13 is later ins. (Di); מ׳ = revelation, הַמּ׳ אֲשֶׁר חָזָה חֲבַקּוּק הַנָּבִיא Hb 1:1; מ׳ י׳ utterance of י׳ Je 23:33, 34, 36, 38(×3) (cf. 2 K 9:25), vid. also v 33b (read אַתֶּם הַמַּשָּׂא), with word-play,—sq. וְנָטַשְׁתִּי, v 36b; מ׳ דְבַר י׳ Zc 9:1 (+ בארץ), 12:1 (+ עַל־יִשְׂרָאֵל), Mal 1:1 (+ אֶל־יִשׂ
+Senses:
+  Sense 1: "oracle, prophetic burden" (27x)
+    Desc: A prophetic oracle or pronouncement, often introduced as a heading for prophetic speech ('the oracle/burden concerning...'); homonym III of massa, distinct from the common noun meaning 'load/burden' (...
+    Domain: MOVEMENT > Linear Movement
+    Glosses: eng: An-oracle, Oracle, burden | spa: Carga, Carga-de, Oráculo-de | fra: de-porte!, oracle | deu: Last
+    Refs: 2Kgs 9:25, 2Chr 24:27, Isa 13:1, Isa 14:28, Isa 15:1
+
+=== H5035b ===
+Language: Hebrew, POS: Prep-b | N-mp, Occurrences: 27, Senses: 1
+
+BDB excerpt: † II. נֵ֫בֶל, נֶ֫בֶל n.m. ψ 57:9 a musical instrument, either a portable harp, or a lute, guitar (with bulging resonance-body at lower end); (perhaps = i. נֵבֶל, and then shape seems to favour lute; perhaps independent word, e.g. Egyptian loan-word, cf. nfr, lute, WeHpt 222);—abs. נֵ֫בֶל 1 S 10:5 + 3 times, נֶ֫בֶל ψ 71:22 + 3 times; נָ֑בֶל Am 6:5 + 2 times; pl. נְבָלִים 2 S 6:5 + 4 times; sf. נְבָלֶיךָ Am 5:23 Is 14:11;—harp (or lute), played at feasts and religious ceremonies, probably less simple, cheap and common than כִּנּוֹר (q.v.; often named with נ׳):— as mark of luxury, revelry Am 5:23
+Senses:
+  Sense 1: "harp, lyre, psaltery" (27x)
+    Desc: A stringed musical instrument (nēḇel) used in worship, celebration, and court music, variously rendered as harp, lyre, or psaltery across translations.
+    Domain: ARTIFACTS > Artifacts
+    Glosses: eng: O-harp, and-with-harps, and-with-lyres | spa: arpa, arpas, con-arpa | fra: [בנבלים], [ובנבלים], [נבליך] | deu: Harfe, Harfen, O-Harfe
+    Refs: 1Sam 10:5, 2Sam 6:5, 1Kgs 10:12, 1Chr 13:8, 1Chr 15:16
+
+=== H5360 ===
+Language: Hebrew, POS: N-fsc | 3mp, Occurrences: 27, Senses: 1
+
+BDB excerpt: † נְקָמָה n.f. vengeance (on format. cf. LagBN 143);—נ׳ Je 46:10 + 3 times; cstr. נִקְמַת Nu 31:2 + 7 times; sf. נִקְמָתִי Ez 25:14 + 7 times sfs.; pl. נְקָמוֹת Ju 11:36 + 5 times; נְקָמֹת 2 S 22:48;— 1. vengeance of God, abs. Ez 25:14; נקם נ׳ Je 51:36; נִקְמַת דַּם ψ 79:10; אֵל נְקָמוֹת 94:1(×2); עֵת נ׳ Je 51:6; יוֹם נ׳ Je 46:10; נ׳ יהוה 50:15, 28; 51:11; נ׳ הֵיכָלוֹ 50:28; 51:11; c. בְּ of adversary, נתן נ׳ Ez 25:14, 17; עשׂה נ׳ Ez 25:17; c. מִן of adversary נתן נ׳ 2 S 4:8 עשׂה נ׳ Ju 11:36; נִקְמָֽתְךָ מֵהֶם Je 11:20; 20:12; c. לְ for whom נתן נ׳ 2 S 22:48 = ψ 18:48. 2. of Israel and its chi
+Senses:
+  Sense 1: "vengeance, retribution" (27x)
+    Desc: The act of taking revenge or exacting retribution, whether divine judgment against enemies or human retaliation; all inflections (construct, absolute, plural, with pronominal suffixes, and preposition...
+    Domain: JUSTICE_PUNISHMENT > Punish, Reward
+    Glosses: eng: my-vengeance, the-vengeance-of, vengeance | spa: mi-venganza, venganza, venganza-de | fra: vengeance, vengeance-de, vengeance-de- | deu: Rache, Rache-von, [נקמתי]
+    Refs: Num 31:2, Num 31:3, Judg 11:36, 2Sam 4:8, 2Sam 22:48
+
+=== H7797 ===
+Language: Hebrew, POS: Conj-w | V-Qal-ConjPerf-1cs, Occurrences: 27, Senses: 1
+
+BDB excerpt: † שׂוּשׂ, שִׂישׂ vb. exult, rejoice (Nö ZMG xxxvii (1883), 536 der. (‘perhaps’) from interj., as شَأْشَأْ an enticing call, so Gerber20);— Qal Pf. 3 ms. שָׂשׂ Dt 28:63 +, 1 s. שַׂשְׂתִּי ψ 119:14, etc.; Impf. 3 ms. יָשִׂישׂ Dt 28:63 +, 3 mpl. יְשֻׂשׂוּם Is 35:1 (Ges§ 47 n Kö i. 510, but ם erron. Kenn Ol § 244 a, prob. dittogr., so Lo Hi Gr CheHpt. Marti), etc.; Imv. fs. שִׂישִׂי La 4:2, mpl. שִׂישׂוּ Is 65:18; 66:10; Inf. abs. שׂוֹשׂ 61:10; cstr. לָשׂוּשׂ Dt 30:9;—exult, display joy,c. עַל over, Dt 28:63(×2); 30:9(×2); Je 32:41; Is 62:5; Zp 3:17 (+ בְּשִׂמְחָה; ‖ גִּיל), ψ 119:162; c. ב Is 61:
+Senses:
+  Sense 1: "rejoice, exult" (27x)
+    Desc: To experience and express intense joy or gladness, often in a religious or covenantal context; used of both human and divine rejoicing over God's saving acts, blessings, and the relationship between G...
+    Domain: EMOTION_ATTITUDE > Attitudes and Emotions
+    Glosses: eng: I-rejoice, I-will-rejoice, Shall-be-glad | spa: Gozando, Regócijense, Se-alegrarán | fra: et-se-réjouir, il-se-réjouit, se-réjouir | deu: [ישיש], [ישישו], er-freute-sich
+    Refs: Deut 28:63, Deut 28:63, Deut 30:9, Deut 30:9, Job 3:22
+
+=== H7967 ===
+Language: Hebrew, POS: Prep-l | N-proper-ms, Occurrences: 27, Senses: 1
+
+BDB excerpt: † שַׁלּוּם (less often שַׁלֻּם) n.pr.m. Σελ(λ)ουμ, Σαλ(λ)ουμ, Σελλημ, etc.;— 1. king of N. Israel 2 K 15:10, 13, 14, 15. 2. son of Josiah, and king of Judah Je 22:11; 1 Ch 3:15 = יְהוֹאָחָז 1, v. p. 219. 3. husband of Huldah 2 K 22:14 = 2 Ch 34:22, B 𝔊L Σελλημ, A -λουμ. 4. uncle of Jeremiah Je 32:7. 5. in Simeon 1 Ch 4:25. 6. in Jerahmeel 2:40, 41. 7. in Ephr. 2 Ch 28:12. 8. in Napht. 1 Ch 7:13. 9. father of a threshold keeper Je 35:4. 10. wall-builder Ne 3:12. 11. priests 1 Ch 5:38, 39; Ezr 7:2 (ancestor of Ezra, perhaps = מְשֻׁלָּם 7 a). 12. Levits: a. 1 Ch 9:17(×2), perhaps = v 19, 31, and 
+Senses:
+  Sense 1: "Shallum" (27x)
+    Desc: Shallum, and Shallum (27 occurrences across 3 original clusters)
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: Shallum | spa: Salum, Shalum, Shalúm | fra: Shallum, [שלום], [שלם] | deu: Friede, Schallach, Shallum
+    Refs: 2Kgs 15:10, 2Kgs 15:13, 2Kgs 15:14, 2Kgs 15:15, 2Kgs 22:14

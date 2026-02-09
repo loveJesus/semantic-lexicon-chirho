@@ -1,0 +1,128 @@
+You are a biblical lexicographer composing glosses for a digital lexicon.
+For each lemma below, compose a JSON object. Separate objects with "---".
+
+Format for each:
+{
+  "lemma_id": "...",
+  "gloss_terse": "under 120 chars, concise definition covering the word's semantic range",
+  "gloss_readable": "2-5 sentences, 40-120 words. Don't start with 'This word'. Warm study-Bible footnote tone. Engaging, not dry.",
+  "senses": {
+    "1": "enriched 20-60 word description. Reference multilingual evidence when illuminating. Don't repeat the label verbatim.",
+    "2": "..."
+  }
+}
+
+Rules:
+- No markdown fences, just JSON objects separated by ---
+- Reference multilingual evidence naturally when it reveals something
+- gloss_readable should feel like a good study Bible footnote: helpful, clear, occasionally surprising
+- Each sense enrichment: how does the evidence support this sense? Mention 1-2 key passages when helpful.
+
+=== G0080 ===
+Language: Greek, POS: N-AMP, Occurrences: 343, Senses: 1
+
+BDB excerpt: ἀδελφός [ᾰ], (ἀ- copulative, δελφύς, Refs 4th c.BC+; compare ἀγάστωρ) properly, son of the same mother: __I as substantive, ἀδελφός, ὁ, vocative ἄδελφ; Epic dialect, Ionic dialect, and Lyric poetry ἀδελφεός (genitive -ειοῦ in Refs 8th c.BC+:—brother, Refs 8th c.BC+; ἀδελφοί brother and sister, Refs 5th c.BC+; so of the Ptolemies, θεοὶ ἀδελφοίRefs 3rd c.BC+; ἀπ᾽ ἀμφοτέρων ἀδελφεόςLXX+5th c.BC+ __I.2 kinsman,LXX; tribesman, Ex.Refs __I.3 colleague, associate, Refs; member of a college, Refs __I.4 term of address, used by kings, LXX+2nd c.BC+, etc.:—as a term of affection, applicable by wife to h
+Senses:
+  Sense 1: "brother, fellow believer" (343x)
+    Desc: A male sibling by blood or, far more frequently in the NT, a fellow member of the believing community addressed in familial terms; the dominant NT relational term covering both literal kinship (e.g., ...
+    Domain: PEOPLE_KINSHIP > Kinship Terms
+    Glosses: eng: brothers | spa: hermanos | fra: frère | deu: Bruder, Brueder
+    Refs: Matt 1:2, Matt 1:11, Matt 4:18, Matt 4:21, Matt 5:47
+
+=== G1437 ===
+Language: Greek, POS: Conj, Occurrences: 339, Senses: 1
+
+BDB excerpt: ἐάν (so early Attic Inscrr., as Refs 4th c.BC+, also contraction ἤν and ἄν, see at {ἤν},{ἄν} (B) [ᾱ], which by crasis with καί become κἄν:—if haply, if, regularly followed by subjunctive: for its use and for examples, see at {εἰ} Refs 5th c.BC+ __II in Hellenistic and late Greek, ={ἄν} after relative Pronouns and Conjunctions, as ὃς ἐάν whosoever, LXX+5th c.BC+
+Senses:
+  Sense 1: "if, in the event that (conditional particle)" (339x)
+    Desc: A conditional conjunction introducing a protasis (the 'if' clause) of a conditional sentence, typically with the subjunctive mood to express a potential or hypothetical condition; uniformly rendered '...
+    Domain: DISCOURSE_NAMES > Discourse Markers
+    Glosses: eng: If, if, if- | spa: *-si, Si, si | fra: si | deu: wenn
+    Refs: Matt 4:9, Matt 5:13, Matt 5:19, Matt 5:20, Matt 5:23
+
+=== H0176a ===
+Language: Hebrew, POS: Conj, Occurrences: 320, Senses: 1
+
+BDB excerpt: אוֹ320 (أَوْ, ܐܰܘ, አው ), conj. or (whether aut or vel). 1. Gn 24:49; 31:43 Ex 4:11 Ct 2:9 Lv 13:24 Nu 5:30 + often (especially in laws); sometimes implying a preference, nearly = or rather Gn 24:55 יָמִים אוֹ עָשׂוֹר a few days or ten Ju 18:19 1 S 29:3. Prefixed to the first as well as to the second alternative (rare) either (whether) … or Lv 5:1; 13:48, 51; = or, if not Ez 21:15 (si vera l.) Ke Mal 2:17 Jb 16:3; 22:11. 2. introducing a sentence, especially a particular case under a general principle, or = or if Ex 21:31 אוֹ־בֵן יִגַּח וג׳ or if he gore a son, etc. v 36 Lv 4:23, 28 (v. Di) 5:2
+Senses:
+  Sense 1: "?" (320x)
+    Domain: DISCOURSE_NAMES > Discourse Markers
+    Glosses: eng: or, or- | spa: o, o- | fra: ou, ou- | deu: oder, oder-
+    Refs: Gen 24:49, Gen 24:50, Gen 24:55, Gen 31:43, Gen 44:8
+
+=== H4421 ===
+Language: Hebrew, POS: Prep-l, Occurrences: 319, Senses: 1
+
+BDB excerpt: מִלְחָמָה319 n.f. battle, war;—abs. מ׳ Gn 14:2, 8 Ex 1:10 +; cstr. מִלְחֶ֫מֶת 1 S 13:22 (מ׳ מִכְמָשׁ 𝔊 Th We Bu HPS Ew§ 188 c Köii 182 > abs. Thes al.); sf. מִלְחַמְתִּי 2 Ch 35:21; מִלְחַמְתְּךָ 2 S 11:25; מִלְחַמְתֶּ֑ךָ Is 41:12, etc.; pl. מִלְחָמוֹת Is 42:13 + 7 times Ch ψψ; cstr. מִלְחֲמוֹת Ju 3:1 +, etc.;—battle, Gn 14:8 1 S 17:1, 2, 8; 31:3 1 K 20:14, 18, 29, 39 + often; war, Gn 14:2 Ex 1:10 Dt 20:12 Jos 11:23; 14:15 2 S 3:1 (וַתְּהִי הַמִּלְחָמָה אֲרֻכָּה) +; מִלְחֲמוֹת כְּנָ֑עַן Ju 3:1; סֵפֶר מִלְחֲמֹת י׳ Nu 21:14 (JE); acc. cogn. c. נלחם ��1 S 8:20 2 Ch 32:8 and (מִלְחֲמוֹת י׳) 1 S 18
+Senses:
+  Sense 1: "war, battle, armed conflict" (319x)
+    Desc: Armed conflict or military engagement between opposing forces, whether a single battle or an ongoing war.
+    Domain: VIOLENCE_CONFLICT > Hostility, Strife
+    Glosses: eng: war | spa: en-guerra, guerra | fra: guerre | deu: Krieg
+    Refs: Gen 14:2, Exod 1:10, Exod 13:17, Exod 15:3, Exod 17:16
+
+=== H5030 ===
+Language: Hebrew, POS: N-mpc | 2ms, Occurrences: 317, Senses: 1
+
+BDB excerpt: נָבִיא306 n.m. spokesman, speaker, prophet—נ׳ Gn 20:7 + 155 times; sf. נְבִיאֶ֑ךָ Ex 7:1; pl. נְבִיאִים Nu 11:29 + 82 times; נְבִאִים Je 27:18 + 16 times; sf. נְבִיאַי ψ 105:15; נְבִאָיו 1 K 22:22; נְבִיאָו֯ 2 K 17:13, etc.;— 1. genuine prophet of י׳, נביא, anciently called רֹאֶה, 1 S 9:9 (antiquarian note); change prob. occurred in times of Elijah and is first reflected in Ephr. lit. as applied to Abraham Gn 20:7; Moses Dt 34:10, M. and other early proph. Ho 6:5; 12:11(×2), 14(×2) Am 2:11, 12; of proph. in ecstatic state Nu 12:6 (E), 11:24 (JE). So in Judaic lit., of prophet like Moses Dt 18:
+Senses:
+  Sense 1: "Prophet, divine spokesperson" (317x)
+    Desc: A person who speaks on behalf of a deity, delivering divinely inspired messages, warnings, or predictions; the standard term for both individual prophets (Moses, Elijah, Isaiah) and the prophetic clas...
+    Domain: RELIGIOUS_LIFE > Religious Activities
+    Glosses: eng: the-prophet | spa: el-profeta | fra: le-prophète | deu: der-Prophet
+    Refs: Deut 13:3, Deut 18:20, Deut 18:20, Deut 18:22, Deut 18:22
+
+=== H6242 ===
+Language: Hebrew, POS: Prep-b | Number-cp, Occurrences: 315, Senses: 1
+
+BDB excerpt: עֶשְׂרִים315 n.pl.indecl. (a) twenty (ancient pl. of עֶשֶׂר Prä BAS i. 376; NH = BH; Arabic عِشْرُونَ; Assyrian ešrâ; Sab. עשרי HomChrest. 48; Ethiopic ዕሥራ: Aramaic עשרין, ܥܶܣܪܝܺܢ; Nab. עשרין);— I. as cardinal: 1. without other num.: a. usually sq. n.s. (especially שָׁנָה, אִישׁ, אַמָּה, etc.) Gn 31:38 1 S 14:14 Ex 38:18 + 64 times, + עֶשְׂרִים אֶלֶף 20,000 1 Ch 18:4 + 7 times + Ez 45:1 (reading עֶשְׂרִים אָ֑לֶף, v. עֶשֶׂר 2 b). b. sq. n.pl. 2 S 3:20; Ex 36:23, 24, 25 + 4 times. †c. sq. n.s. coll. 1 K 5:3. d. n.pl. precedes Gn 32:15(×2), 16; 2 Ch 3:3 + 6 times e. n. om. Gn 18:31(×2) (הָע׳), 1 
+Senses:
+  Sense 1: "twenty (cardinal number)" (315x)
+    Desc: The cardinal number twenty, used independently or in compound numerals (twenty-one, twenty-five, etc.) for counting, age, measurement, dates, and quantities throughout biblical narrative, law, and gen...
+    Domain: QUANTITY_NUMBER > Number
+    Glosses: eng: twenty | spa: veinte | fra: vingt | deu: zwanzig
+    Refs: Gen 18:31, Gen 31:38, Gen 31:41, Gen 32:14, Gen 32:14
+
+=== H3069 ===
+Language: Hebrew, POS: Conj-w, Occurrences: 306, Senses: 1
+
+BDB excerpt: יהוהc. 6823 i.e. יַהְוֶה n.pr.dei Yahweh, the proper name of the God of Israel—(1. MT יְהוָֹה6518 (Qr אֲדֹנָי), or יֱהוִֹה305 (Qr אֱלֹהִים), in the combinations אדני יהוה & יהוה אדני (vid. אֲדֹנָי), and with prep. בַּיהוָֹה, לַיהוָֹה, מֵיהוָֹה (Qr בַּאדֹנָי, לַאדֹנָי, מֵאדֹנָי), do not give the original form. 𝔊 and other Vrss follow the Qr. On the basis of Ex 20:7; Lv 24:11 יהוה was regarded as a nomen ineffabile (vid. Philo de Vita Mosis iii, 519, 529), called by the Jews הַשֵּׁם and by the Samaritans שׁימא. The pronunciation Jehovah was unknown until 1520, when it was introduced by Galatinus
+Senses:
+  Sense 1: "YHWH (the divine name)" (306x)
+    Desc: The proper name of the God of Israel, the Tetragrammaton (יהוה), occurring over 6,800 times in the Hebrew Bible. All three clusters represent the identical divine name in different syntactic frames: s...
+    Domain: DISCOURSE_NAMES > Names of Persons and Places
+    Glosses: eng: YHWH | spa: Yahvé, Yahweh | fra: l'Éternel | deu: HERR
+    Refs: Gen 15:2, Gen 15:8, Deut 3:24, Deut 9:26, Josh 7:7
+
+=== H3966 ===
+Language: Hebrew, POS: Prep-l | Adv, Occurrences: 301, Senses: 1
+
+BDB excerpt: מְאֹד n.m. muchness, force, abundance, exceedingly (cf. Assyrian mu’du, abundance, HomZMG 1878, 711 (‘treasures ana mu’di, in abundance’) DlHWB 399):— 1. force, might, †Dt 6:5 וּבְכָל־מְאֹדֶ֑ךָ and with all thy might; hence 2 K 23:25. 2. in diff. idioms (298 times) to express the idea of exceedingly, greatly, very (whether of magnitude or degree): a. (so mostly) as adv. acc., qualifying both adj. and obs., Gn 1:31 טוֹב מְאֹד good exceedingly, 4:5 וַיִּחַר לְקַיִן מְאֹד and Cain was wroth exceedingly, 7:18 וַיִּגְבְּרוּ הַמַּיִם וַיִּרְבּוּ מְאֹד, 12:14; 13:2 וְאַבְרָם כָּבֵד מְאֹד בַּמִּקְנֶה,
+Senses:
+  Sense 1: "very, exceedingly, greatly" (301x)
+    Desc: An adverb of degree meaning 'very, exceedingly, greatly,' used to intensify adjectives, verbs, and other adverbs. It is one of the most common intensifiers in Biblical Hebrew, appearing approximately ...
+    Domain: PROPERTIES_RELATIONS > Adequate, Qualified
+    Glosses: eng: greatly, very | spa: en-muy, mucho, muy | fra: grandement, très | deu: groß, sehr
+    Refs: Gen 1:31, Gen 4:5, Gen 7:18, Gen 7:19, Gen 7:19
+
+=== H8010 ===
+Language: Hebrew, POS: Pr, Occurrences: 293, Senses: 1
+
+BDB excerpt: שְׁלֹמֹה293 n.pr.m. Solomon (Σαλωμων, rarely Σαλομων, 𝔊L mostly Σολομων; cf. LagBN 53, 96);—king of Israel, son of David and Bathsheba 2 S 12:24; 1 K 1:11 + [name 2 times S; 162 times K; 109 times Ch; 7 times Ezr Ne]; born in Jerus. 2 S 5:14; 1 Ch 3:5; 14:4; designated by D. as successor, anointed and proclaimed before D.’s death 1 K 1:30, 33, 34, 39 +; king after D.’s death 1 K 2:12, 17; 1 Ch 29:28; 2 Ch 1:1 + [phr. הַמֶּלֶךְ שׁ׳ 1 K 1:34 + 36 times K, 11 times Ch, Je 52:20; Ct 3:9, 11; שׁ׳ הַמּ׳ 1 K 2:17; 12:2; 1 Ch 29:24; 2 Ch 10:2; שׁ׳ מֶלֶךְ יְהוּדָה 1 K 12:23; 2 Ch 11:3, מ׳ יִשׂ׳ 2 K 23:
+Senses:
+  Sense 1: "Solomon (proper name)" (293x)
+    Desc: The proper name Shelomoh (שְׁלֹמֹה), referring to Solomon son of David, king of Israel, renowned for his wisdom, wealth, and building of the First Temple; derived from the root שׁ-ל-מ (shalom, peace).
+    Domain: DISCOURSE_NAMES > Names of Persons and Places
+    Glosses: eng: Solomon | spa: Salomón, Shelomoh | fra: Salomon | deu: Salomo
+    Refs: 2Sam 12:24, 1Kgs 1:10, 1Kgs 1:11, 1Kgs 1:12, 1Kgs 1:13
+
+=== H6635b ===
+Language: Hebrew, POS: N-cp, Occurrences: 286, Senses: 1
+
+BDB excerpt: צָבָא485 n.m. 2 Ch 28:9 (poss. f. Is 40:2; Dn 8:12, but v. Albr ZAW xv (1895), 319; Bev Dn) army, war, warfare;—abs. צ׳ Nu 1:3 + (מִצָּבָה Zc 9:8 v. p. 663 a); cstr. צְבָא Nu 10:15 +; sf. צְבָאִי Jb 14:14; צְבָאֲךָ Ju 8:9; 9:29; צְבָאָיו ψ 103:21; 148:2 (Kt צבאו; so read prob. in both), etc.; pl. צְבָאוֹת Nu 20:9 + 278 times; cstr. צִבְאוֹת Ex 12:41 + 2 times; sf. צִבְאֹתַי 7:4; צִבְאֹתָם 6:26 +, etc.;— 1. army, host: a. organized for war Ju 8:6; 9:29 (J) Is 34:2; Je 51:3; 2 Ch 28:9; צְבָאוֹ his host Nu 2:4, 6 + 10 times 2 (P), לְצִבְאֹתָם 1:3, 52; 2:3, 9 + 11 times 2, 10, 33:1 (P); אַלְפֵי הצ
+Senses:
+  Sense 1: "hosts, armies (of YHWH)" (286x)
+    Desc: The plural noun tseva'ot meaning 'hosts' or 'armies', overwhelmingly used in the divine epithet YHWH Tseva'ot ('LORD of Hosts'). S129412 covers the vast majority of occurrences (284x) with article-pre...
+    Domain: SUPERNATURAL > Supernatural Beings and Powers
+    Glosses: eng: Tsevaot, hosts, of-hosts | spa: Tsebaot, Tsevaot, Tseva’ot | fra: armées, de-armées, des-armées | deu: Heerscharen, der-Heerscharen, von-Heerscharen
+    Refs: 1Sam 17:45, 2Sam 5:10, 2Sam 6:2, 2Sam 6:18, 2Sam 7:8
