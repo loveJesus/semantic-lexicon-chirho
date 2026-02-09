@@ -1,0 +1,144 @@
+# Sense Merge Task for H2461
+
+Lemma: H2461 (POS: Conj-w | N-ms)
+Total occurrences: 45
+Current sense count: 13
+
+This Hebrew/Greek lemma has been over-split into 13 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 97071 (25 occurrences)
+Grammar: N-ms
+  eng: milk
+  spa: leche
+  hin: दूध, दूध–से, दूध–का
+  arb: لَبَنًا, حَلِيبًا, حَليباً
+  kor: 젖과, 젖, 우유를
+  swa: maziwa
+
+### Sense 97072 (4 occurrences)
+Grammar: Conj-w | N-ms,Conj-w | N-msc
+  eng: and–milk, and–milk-of
+  spa: y–leche, y–leche–de
+  hin: और–दूध, और–दुध
+  arb: وِ–حَلَب, وَ–لَبَنًا, وَ–حَلِيبًا
+  kor: 그리고–젖–이, 그리고–젖(접), 그리고–우유와
+  swa: na–maziwa, na–maziwa–ya
+
+### Sense 97073 (3 occurrences)
+Grammar: Prep-b | N-msc
+  eng: in–milk-of, in-milk-of
+  spa: en–leche–de, en–la–leche–de
+  hin: दूध–में, में–दूध
+  arb: فِي–حَلِيبِ, بِ–حَليبِ, بِـ–حَليبِ
+  kor: 젖에, 에서–젖
+  swa: katika–maziwa–ya–, katika–maziwa–ya, katika–maziwa
+
+### Sense 97074 (3 occurrences)
+Grammar: Prep-m | N-ms
+  eng: more–than–milk, from–milk, from–breasts
+  spa: de–leche, más–que–la–leche
+  hin: से–दूध, दूध–से–अधिक
+  arb: مِنَ–الْحَلِيبِ, مِنَ–اللَّبَنِ
+  kor: 젖–보다, 에서–젖, 에서–우유
+  swa: kuliko–maziwa, maziwa
+
+### Sense 97075 (2 occurrences)
+Grammar: N-msc
+  eng: milk–of, milk-of
+  spa: leche–de, la–leche–de
+  hin: दूध
+  arb: حَلِيبِ, حَلِيبَ
+  kor: 젖이, 젖을
+  swa: maziwa–ya, maziwa
+
+### Sense 97076 (1 occurrences)
+Grammar: N-msc | 1cs
+  eng: my–milk
+  spa: mi–leche
+  hin: अपने–दूध
+  arb: حَلَبِي
+  kor: 내–젖–과
+  swa: maziwa–yangu
+
+### Sense 97077 (1 occurrences)
+Grammar: Art | N-ms
+  eng: the–milk
+  spa: la–leche
+  hin: दूध–की
+  arb: الْحَليبِ
+  kor: 그–우유–의
+  swa: maziwa
+
+### Sense 97078 (1 occurrences)
+Grammar: Art | N-ms
+  eng: the–cheese
+  spa: la–leche
+  hin: पनिर-के
+  arb: الجُبْنِ
+  kor: 그–우유의
+  swa: ya–maziwa
+
+### Sense 97079 (1 occurrences)
+Grammar: N-msc | 2fs
+  eng: your-milk
+  spa: tu–leche
+  arb: حَلِيبَكِ
+  kor: 젖을–너의
+  swa: maziwa–yako
+
+### Sense 97080 (1 occurrences)
+Grammar: N-ms
+  eng: suckling
+  spa: de–leche
+  hin: दूध–पीता
+  arb: رَضِيعًا
+  kor: 젖–먹는
+  swa: anayenyonya
+
+### Sense 97081 (1 occurrences)
+Grammar: Prep-b, Art | N-ms
+  eng: in–milk
+  spa: en–leche
+  hin: दूध–में
+  arb: بِ–حَلَب
+  kor: 젖–안에서
+  swa: kwa–maziwa
+
+### Sense 97082 (1 occurrences)
+Grammar: Prep-k, Art | N-ms
+  eng: like-milk
+  spa: como–leche
+  hin: दूध–की–तरह
+  arb: كَالحَليبِ
+  kor: 젖–같이
+  swa: kama–maziwa
+
+### Sense 97083 (1 occurrences)
+Grammar: N-proper-ms
+  eng: (Churam)
+  spa: Juram
+  hin: हूराम
+  arb: (حِيرَامُ)
+  kor: (후람)
+  swa: Huramu
+
+## Task
+
+Group these 13 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

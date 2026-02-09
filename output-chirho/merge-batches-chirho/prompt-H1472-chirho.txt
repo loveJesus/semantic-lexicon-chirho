@@ -1,0 +1,136 @@
+# Sense Merge Task for H1472
+
+Lemma: H1472 (POS: N-fp)
+Total occurrences: 13
+Current sense count: 12
+
+This Hebrew/Greek lemma has been over-split into 12 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 89707 (2 occurrences)
+Grammar: N-fpc | 3fp,N-fpc | 3mp
+  eng: bodies-of-them
+  spa: cuerpos–de–ellos
+  hin: उनके–शरीरों
+  arb: أَجْسامَها
+  kor: 그것들의–몸들을
+  swa: miili–yao
+
+### Sense 89708 (1 occurrences)
+Grammar: Prep-b | N-fsc | 3mp
+  eng: over–their–bodies
+  spa: en–cuerpos–de–ellos
+  hin: उनके–शवों–पर
+  arb: بِجُثَثِهِمْ
+  kor: 에서–그들의–시체들
+  swa: juu–ya–miili–yao
+
+### Sense 89709 (1 occurrences)
+Grammar: Conj-w | N-fsc | 3ms
+  eng: and–his-body
+  spa: Y–cuerpo–su
+  hin: और–उसका–शरीर
+  arb: وَ–جِسْمُهُ
+  kor: 그리고–그의–몸은
+  swa: na–mwili–wake
+
+### Sense 89710 (1 occurrences)
+Grammar: Prep-m | N-fsc
+  eng: from–body-of
+  spa: del–cuerpo–de
+  hin: शव–से
+  arb: مِنْ–جُثَّةِ
+  kor: 에서–시체
+  swa: kutoka–mwili–wa
+
+### Sense 89711 (1 occurrences)
+Grammar: N-fsc | 3ms
+  eng: his–body
+  spa: su–cuerpo
+  hin: उस्कि-लअश
+  arb: جُثَّتَهُ
+  kor: 그의–시체를
+  swa: mwili–wake
+
+### Sense 89712 (1 occurrences)
+Grammar: N-fsc
+  eng: body-of
+  spa: cuerpo–de
+  hin: लअश
+  arb: جُثَّةَ
+  kor: 시체를
+  swa: mwili–wa
+
+### Sense 89713 (1 occurrences)
+Grammar: N-fpc
+  eng: bodies-of
+  spa: cuerpos–de
+  hin: लअशेइन
+  arb: جُثَثَ
+  kor: 시체들을
+  swa: mwili–wa
+
+### Sense 89714 (1 occurrences)
+Grammar: N-fp
+  eng: with–corpses
+  spa: cadáveres
+  hin: लाशों–से
+  arb: جُثَثًا
+  kor: 시체들–로
+  swa: maiti
+
+### Sense 89715 (1 occurrences)
+Grammar: Prep-l, Art | N-fs
+  eng: to–the–bodies
+  spa: a–los–cuerpos
+  hin: शवों–का
+  arb: لِلْجُثَثِ
+  kor: 에게–시체들
+  swa: wa–miili
+
+### Sense 89716 (1 occurrences)
+Grammar: N-fsc | 1cp
+  eng: bodies–our
+  spa: nuestro–cuerpo
+  hin: शरीरों–हमारे
+  arb: أَجْسَادُنَا
+  kor: 우리의–몸들과
+  swa: mwili–wetu
+
+### Sense 89717 (1 occurrences)
+Grammar: Prep-b | N-fsc
+  eng: in–body-of
+  spa: en–el–cuerpo–de
+  hin: शव–में
+  arb: فِي–جُثَّةِ
+  kor: 에–시체
+  swa: katika–mwili–wa
+
+### Sense 89718 (1 occurrences)
+Grammar: N-fpc | 1cp
+  eng: our–bodies
+  spa: cuerpos–de–nosotros
+  hin: हमारे–शरीरों
+  arb: أَجْسَادِنَا
+  kor: 우리의–몸들을
+  swa: miili–yetu
+
+## Task
+
+Group these 12 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

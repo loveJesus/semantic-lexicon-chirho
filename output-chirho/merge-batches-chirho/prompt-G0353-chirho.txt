@@ -1,0 +1,127 @@
+# Sense Merge Task for G0353
+
+Lemma: G0353 (POS: V-APA-NMS)
+Total occurrences: 13
+Current sense count: 11
+
+This Hebrew/Greek lemma has been over-split into 11 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 62202 (2 occurrences)
+Grammar: V-AIP-3S
+  eng: he–was–taken–up
+  spa: fue–llevado–arriba
+  hin: उसके
+  arb: اُصْعِدَ
+  kor: 올려–지신
+  swa: alichukuliwa–juu
+
+### Sense 62203 (2 occurrences)
+Grammar: V-AIP-3S
+  eng: was–taken–up, was-taken-up
+  spa: fue–subido, fue–llevado–arriba
+  hin: उठा–लिया–गया
+  arb: رُفِعَ
+  kor: 올림을-받으셨다, 들림받았다
+  swa: kilichukuliwa, alipandishwa
+
+### Sense 62204 (1 occurrences)
+Grammar: V-AMA-2P
+  eng: take-up
+  spa: tomad
+  hin: उथअओ
+  arb: خُذوا
+  kor: 취하라
+  swa: twaeni
+
+### Sense 62205 (1 occurrences)
+Grammar: V-AIP-3S
+  eng: was–taken–up
+  spa: fue–tomado–arriba
+  hin: उथ–लिय–गय
+  arb: رُفِعَ
+  kor: 맞아들여졌다
+  swa: alipokewa–juu
+
+### Sense 62206 (1 occurrences)
+Grammar: V-PNA
+  eng: to-take-on
+  spa: de–recoger
+  hin: लेने–को
+  arb: أَنْ–نَأْخُذَ
+  kor: 태우기를
+  swa: kumpokea
+
+### Sense 62207 (1 occurrences)
+Grammar: V-AIA-2P
+  eng: you–took–up
+  spa: levantasteis
+  hin: उठाया
+  arb: حَمَلْتُمْ
+  kor: 취했다
+  swa: mlichukua
+
+### Sense 62208 (1 occurrences)
+Grammar: V-APA-NMP
+  eng: having-taken-up
+  spa: habiendo–tomado
+  hin: उथकर
+  arb: حامِلينَ
+  kor: 들어–올리고
+  swa: mkitwaa
+
+### Sense 62209 (1 occurrences)
+Grammar: V-APA-NMS
+  eng: having–taken
+  spa: habiendo–tomado
+  hin: लेकर,
+  arb: إِذْ–أَخَذْتَهُ
+  kor: 데려오고
+  swa: mchukue
+
+### Sense 62210 (1 occurrences)
+Grammar: V-APA-NMP
+  eng: having–taken–up
+  spa: habiendo-tomado
+  hin: लेकर
+  arb: أَخَذُوا
+  kor: 취하여
+  swa: wakimchukua
+
+### Sense 62211 (1 occurrences)
+Grammar: V-APA-NMP
+  eng: having-taken-on
+  spa: recogiéndolo
+  hin: लेकर
+  arb: أَخَذْنَاهُ
+  kor: 태운–후에
+  swa: tukimpokea
+
+### Sense 62212 (1 occurrences)
+Grammar: V-APP-NMS
+  eng: having–been–taken–up
+  spa: habiendo–sido–llevado–arriba
+  hin: ऐसे–ही
+  arb: المُرْتَفِعُ
+  kor: 으로부터
+  swa: aliyechukuliwa–juu
+
+## Task
+
+Group these 11 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

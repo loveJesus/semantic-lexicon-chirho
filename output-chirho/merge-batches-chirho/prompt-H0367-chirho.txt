@@ -1,0 +1,171 @@
+# Sense Merge Task for H0367
+
+Lemma: H0367 (POS: N-fpc | 2ms)
+Total occurrences: 17
+Current sense count: 16
+
+This Hebrew/Greek lemma has been over-split into 16 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 81673 (2 occurrences)
+Grammar: N-fs
+  eng: is–terror, is-terror
+  spa: terror
+  hin: भय
+  arb: رُعْبٌ.
+  kor: 두려움이다
+  swa: ni–wa–kutisha, ni–hofu
+
+### Sense 81674 (1 occurrences)
+Grammar: Conj-w | N-fsc | 2ms
+  eng: and–dread-your
+  spa: y–Tu–terror
+  hin: और–तेरा–भय
+  arb: وَ–رُعْبَكَ
+  kor: 그리고–당신의–공포–가
+  swa: na–hofu–yako
+
+### Sense 81675 (1 occurrences)
+Grammar: N-fsc | 2mp
+  eng: your-terror
+  spa: vuestro–terror
+  hin: तुम्हारा–भय
+  arb: رُعبُكُم
+  kor: 너희의–두려움이
+  swa: hofu–yenu
+
+### Sense 81676 (1 occurrences)
+Grammar: N-fpc | 2ms
+  eng: your–terrors
+  spa: terrores-de-ti
+  hin: तेरा–भय
+  arb: أَهْوَالَكَ
+  kor: 당신–의–두려움들–을
+  swa: hofu–zako
+
+### Sense 81677 (1 occurrences)
+Grammar: N-fsc
+  eng: terror–of
+  spa: el–terror
+  hin: भय
+  arb: رُعْبُ
+  kor: 두려움이니라
+  swa: hofu–ya
+
+### Sense 81678 (1 occurrences)
+Grammar: N-fs
+  eng: dread
+  spa: terror
+  hin: दर
+  arb: رُعْبٌ
+  kor: 두려움이
+  swa: hofu
+
+### Sense 81679 (1 occurrences)
+Grammar: Prep-b | N-fs
+  eng: in–fear
+  spa: en–temor
+  hin: भय–था
+  arb: بِ–رُعْبٍ
+  kor: 에–두려움
+  swa: kwa–hofu
+
+### Sense 81680 (1 occurrences)
+Grammar: N-fsc | 1cs
+  eng: my-terror
+  spa: mi–terror
+  hin: मेरा–भय
+  arb: رُعبي
+  kor: 나의–두려움을
+  swa: hofu–yangu
+
+### Sense 81681 (1 occurrences)
+Grammar: N-fsc | 1cs
+  eng: my–terror
+  spa: mi–terror
+  hin: भय–मेरा
+  arb: رَهبَتِي
+  kor: 나의–두려움이
+  swa: hofu–yangu
+
+### Sense 81682 (1 occurrences)
+Grammar: N-fs | 3fs
+  eng: terror
+  spa: temor
+  hin: भय
+  arb: رُعْبٌ
+  kor: 두려움이
+  swa: hofu
+
+### Sense 81683 (1 occurrences)
+Grammar: N-fs
+  eng: terror
+  spa: el–terror
+  hin: आतंक
+  arb: الرُّعْبُ
+  kor: 공포가
+  swa: hofu
+
+### Sense 81684 (1 occurrences)
+Grammar: Conj-w | N-fsc | 3ms
+  eng: and–His-terror
+  spa: y–su–terror
+  hin: और–उसका–भय
+  arb: وَرُعْبُهُ
+  kor: 그리고–그의–공포–가
+  swa: na–hofu–yake
+
+### Sense 81685 (1 occurrences)
+Grammar: N-fp
+  eng: terrors
+  spa: hay–terrores.
+  hin: आतंक
+  arb: أَهْوَالٌ
+  kor: 공포들이
+  swa: vitisho
+
+### Sense 81686 (1 occurrences)
+Grammar: Conj-w, Prep-b, Art | N-fp
+  eng: and–by–terrors
+  spa: y–con–imágenes–horribles
+  hin: और–में–भयानक–चीजों
+  arb: وَبِالْأَصْنَامِ
+  kor: 그리고–에–두려운–것들
+  swa: na–kwa–vinyago
+
+### Sense 81687 (1 occurrences)
+Grammar: N-fs
+  eng: on–terror
+  spa: terror
+  hin: भय
+  arb: رُعْبًا
+  kor: 두려움을
+  swa: hofu
+
+### Sense 81688 (1 occurrences)
+Grammar: Conj-w | N-fpc
+  eng: and–terrors–of
+  spa: y–terrores-de
+  arb: وَ–أَهوالُ
+  kor: 그리고–두려움–들–이
+  swa: na–vitisho
+
+## Task
+
+Group these 16 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

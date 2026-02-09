@@ -1,0 +1,136 @@
+# Sense Merge Task for H6522
+
+Lemma: H6522 (POS: Conj-w)
+Total occurrences: 23
+Current sense count: 12
+
+This Hebrew/Greek lemma has been over-split into 12 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 128510 (7 occurrences)
+Grammar: Conj-w, Art | N-proper-ms
+  eng: and–the–Perizzite, and–the-Perizzite
+  spa: y–el–perizi, y–el–ferezeo, y–el-perizi
+  hin: और–परिज्जी, और–पेरिज़ज़ी
+  arb: وَ–الْفَرِزِّيِّ, وَ–الفِرِزِّيَّ, وَ–الفِرِزِّيِّينَ
+  kor: 그리고–그–브리스–사람과, 그리고–그–브리스–사람의, 그리고–브리스족과
+  swa: na–Mperizi, na–Waperizi
+
+### Sense 128511 (3 occurrences)
+Grammar: Art | N-proper-ms
+  eng: the–Perizzite
+  spa: el–ferezeo
+  hin: परिज्जी
+  arb: الفِرِزِّيَّ, الفَرِزّيُّ, الفَرِزِّيُّ
+  kor: 그–브리스–사람, 그–브리스족과
+  swa: Waperizi, ha–Mperizi
+
+### Sense 128512 (2 occurrences)
+Grammar: Conj-w, Art | N-proper-ms
+  eng: and–the-Perizzi
+  spa: y–el–perizzi
+  hin: और–परिज्जियों–को, और–परिज्जियों
+  arb: وَ–الْفَرِزِّيِّ, وَ–الْفَرِزِّيَّ
+  kor: 그리고–브리스–사람을, 그리고–그–분리지–사람과
+  swa: na–Waperizi, na–Mperizi
+
+### Sense 128513 (2 occurrences)
+Grammar: Art | N-proper-ms
+  eng: the–Perizzi
+  spa: el–perizzi, el–ferezeo
+  hin: परिज्जी, परिज्जियों–को।
+  arb: الْفَرِزِّيَّ, الفَرِزّيِّ
+  kor: 브리스–사람을, 그–브리스–사람의
+  swa: ha–Waperizi, Mperizi
+
+### Sense 128514 (2 occurrences)
+Grammar: Conj-w, Art | N-proper-ms
+  eng: and–the–Perizzite
+  spa: y–el–ferezeo
+  hin: और–परिज्जी–का, और–परिज्जियों–से
+  arb: وَ–ال–فَرِزِّيِّ, وَالفِرِزّيِّ
+  kor: 그리고–그–브리스인의, 그리고–그–브리스–사람
+  swa: na–Waperizi, na–Mperizi
+
+### Sense 128515 (1 occurrences)
+Grammar: Conj-w, Art | N-proper-ms
+  eng: and–the–Perizzites
+  spa: y–el–ferezeo
+  hin: और–परिज्जी
+  arb: وَ–الـ–فِرِزِّيُّ
+  kor: 그리고–그–브리스사람
+  swa: na–Waperizi
+
+### Sense 128516 (1 occurrences)
+Grammar: Conj-w, Prep-b, Art | N-proper
+  eng: and–among–the–Perizzite
+  spa: y–entre–el–ferezeo
+  hin: और–परिज्जी–में
+  arb: وَ–بِ–الْفِرِزِّيِّ
+  kor: 그리고–브리스–사람들의
+  swa: na–Perizi
+
+### Sense 128517 (1 occurrences)
+Grammar: Conj-w, Art | N-proper-ms
+  eng: and–the–Perizzite
+  spa: y–el–ferezeo
+  hin: और–परिज्जी
+  arb: وَ–الفَرِزّيُّ
+  kor: 그리고–그–브리스–사람이
+  swa: na–ha–Mperizi
+
+### Sense 128518 (1 occurrences)
+Grammar: Art | N-proper-ms
+  eng: the–Perizzite
+  spa: el–ferezeo
+  hin: परिज्जियों
+  arb: الـ–فَرِزِّيِّ
+  kor: 그–브리스–사람과
+  swa: Waperizi
+
+### Sense 128519 (1 occurrences)
+Grammar: Art | N-proper-ms
+  eng: the–Perizzite
+  spa: el–ferezeo
+  hin: पेरिज़ज़ि
+  arb: الْفِرِزِّيِّينَ
+  kor: 브리스와
+  swa: Waperizi
+
+### Sense 128520 (1 occurrences)
+Grammar: Art | N-proper-ms
+  eng: the–Perizzi
+  spa: el–ferezeo
+  hin: परिज्जी–की
+  arb: الفَرِزِّيّ
+  kor: 그–브리스사람
+  swa: Mperizi
+
+### Sense 128521 (1 occurrences)
+Grammar: Conj-w, Art | N-proper-ms
+  eng: and–the–Perizzite
+  spa: y–el–ferezeo
+  hin: और–पेरिज़ज़ि
+  arb: وَ–الْ–فِرِزِّيُّ
+  kor: 그리고–브리스이
+  swa: na–Waperizi
+
+## Task
+
+Group these 12 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

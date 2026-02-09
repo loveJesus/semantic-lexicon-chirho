@@ -1,0 +1,145 @@
+# Sense Merge Task for H2287
+
+Lemma: H2287 (POS: V-Qal-Prtcpl-ms)
+Total occurrences: 16
+Current sense count: 13
+
+This Hebrew/Greek lemma has been over-split into 13 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 95431 (2 occurrences)
+Grammar: V-Qal-Imperf-2mp
+  eng: you-shall-celebrate
+  spa: la–celebraréis, celebraréis
+  hin: चग–मनाओ
+  arb: تَحْتَفِلُونَ
+  kor: 축제할–것이다–너희는
+  swa: mtasherehekea, mtaisherehekea
+
+### Sense 95432 (2 occurrences)
+Grammar: Conj-w | V-Qal-ConjPerf-2mp
+  eng: and–you-shall-celebrate
+  spa: y–celebraréis, Y–celebraréis
+  hin: और–तुम–मनाओगे, और–चग–मनाओ
+  arb: وَتَحْتَفِلُونَ
+  kor: 그리고–축제할–것이다–너희는, 그리고–너희는–절기를–지킬지니
+  swa: na–mtaadhimisha, Na–mtaisherehekea
+
+### Sense 95433 (2 occurrences)
+Grammar: Prep-l | V-Qal-Inf
+  eng: to–celebrate
+  spa: a–celebrar
+  hin: मनाने
+  arb: لِتَحْتَفِلَ
+  kor: 절기를–지키러
+  swa: kusherehekea
+
+### Sense 95434 (1 occurrences)
+Grammar: V-Qal-Prtcpl-ms
+  eng: keeping–festival
+  spa: que–celebra
+  hin: पर्व–मनानेवाली
+  arb: مُحْتَفِلٍ
+  kor: 축제하는
+  swa: washerehekeao
+
+### Sense 95435 (1 occurrences)
+Grammar: V-Qal-Imperf-2ms
+  eng: you-shall-celebrate-a-feast
+  spa: celebrarás–fiesta
+  hin: पर्व–मनाओ
+  arb: تَحتَفِلُ
+  kor: 너는–절기를–지키라
+  swa: utaadhimisha
+
+### Sense 95436 (1 occurrences)
+Grammar: V-Qal-Imperf-2ms
+  eng: you-shall-celebrate
+  spa: celebrarás
+  hin: पर्व–मनाएगा
+  arb: تُعَيِّدُ
+  kor: 절기를–지키라
+  swa: utaadhimisha
+
+### Sense 95437 (1 occurrences)
+Grammar: V-Qal-Imperf-2mp | 3ms
+  eng: you-shall-celebrate-it
+  spa: la–celebraréis
+  hin: मनाओगे–उसे
+  arb: تَحْتَفِلُونَهُ
+  kor: 기념할지니라–너희가–그것을
+  swa: mtaisherehekea
+
+### Sense 95438 (1 occurrences)
+Grammar: Conj-w | V-Qal-ConjPerf-2mp
+  eng: and–you-shall-celebrate
+  spa: y–celebraréis
+  hin: और–मनाओ
+  arb: وَ–تَحْتَفِلُونَ
+  kor: 그리고–기념할지니라–너희가
+  swa: na–mtaisherehekea
+
+### Sense 95439 (1 occurrences)
+Grammar: Conj-w | V-Qal-Prtcpl-mp
+  eng: and–feasting
+  spa: y–festejando
+  hin: और-नचते-हुए
+  arb: وَ–عَيِّدونَ
+  kor: 그리고–축제하고있다
+  swa: na–kusherehekea
+
+### Sense 95440 (1 occurrences)
+Grammar: V-Qal-Imp-fs
+  eng: celebrate
+  spa: ¡Celebra
+  hin: मना
+  arb: اِحْتَفِلِي
+  kor: 지키라
+  swa: adhimisha
+
+### Sense 95441 (1 occurrences)
+Grammar: Conj-w, Prep-l | V-Qal-Inf
+  eng: [obj]
+  spa: y–a–celebrar
+  hin: और–मनाने
+  arb: وَلِيَحْتَفِلُوا
+  kor: 그리고–절기를–지키러
+  swa: na–kusherehekea
+
+### Sense 95442 (1 occurrences)
+Grammar: Conj-w | V-Qal-ConjImperf-3mp
+  eng: and–let–them–feast
+  spa: y–celebrarán-fiesta
+  hin: और–उतसव-मनायें
+  arb: لِيَحتَفِلُوا
+  kor: 그리고–그들이–축제하게
+  swa: na–washerehekee
+
+### Sense 95443 (1 occurrences)
+Grammar: V-Qal-Imperf-3mp
+  eng: they–reeled
+  spa: Temblaban
+  hin: वे–लड़खड़ाते–हैं
+  arb: يَتَرَنَّحونَ
+  kor: 비틀거렸으니
+  swa: walizunguka
+
+## Task
+
+Group these 13 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

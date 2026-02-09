@@ -1,0 +1,118 @@
+# Sense Merge Task for H2324
+
+Lemma: H2324 (POS: V-Hifil-Imperf-2mp)
+Total occurrences: 14
+Current sense count: 10
+
+This Hebrew/Greek lemma has been over-split into 10 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 95631 (3 occurrences)
+Grammar: Prep-l | V-Hifil-Inf
+  eng: to–show
+  spa: mostrar, para–mostrar
+  hin: बताने–के–लिए
+  arb: لِ–يُظْهِرَ, لِ–يُظْهِرُوا
+  kor: 보여주도록
+  swa: kuionyesha, kulionyesha
+
+### Sense 95632 (2 occurrences)
+Grammar: V-Piel-Imperf-1cp,V-Hifil-Imperf-1cp
+  eng: we-will-show
+  spa: mostraremos
+  hin: बताएंगे
+  arb: نُظْهِرُ
+  kor: 우리가–보여주겠습니다
+  swa: tutaionyesha
+
+### Sense 95633 (2 occurrences)
+Grammar: Prep-l | V-Hifil-Inf
+  eng: to–show, to–declare
+  spa: declarar
+  hin: बताने–को
+  arb: أَنْ–يُبَيِّنُوا, أَنْ–أُعْلِنَهَا
+  kor: 알리는–것–을, 보이기–를
+  swa: kuzitangaza, kuionyesha
+
+### Sense 95634 (1 occurrences)
+Grammar: V-Hifil-Imperf-2mp
+  eng: you-show
+  spa: mostráis
+  hin: बताओगे
+  arb: تُظْهِرُوا
+  kor: 너희가–보여주면
+  swa: mtaonyesha
+
+### Sense 95635 (1 occurrences)
+Grammar: V-Piel-Imperf-3ms | 1cse
+  eng: shows–me
+  spa: me–haga–saber
+  hin: मुझे–बताए
+  arb: يُبَيِّنُ–لِي
+  kor: 내게–보이면
+  swa: atanionyesha
+
+### Sense 95636 (1 occurrences)
+Grammar: V-Hifil-Imperf-2mp | 1cse
+  eng: you-will-show-me
+  spa: me–mostraréis
+  hin: बताओगे–मुझे
+  arb: تُظْهِرُونَ–لِي
+  kor: 너희가–보여줄–수–있다는–것을
+  swa: mtanionyesha
+
+### Sense 95637 (1 occurrences)
+Grammar: V-Hifil-Imperf-3ms
+  eng: he-will-show
+  spa: declarará
+  hin: वह–बताएगा
+  arb: يُبَيِّنُ
+  kor: 그가–보이리이다
+  swa: ataonyesha
+
+### Sense 95638 (1 occurrences)
+Grammar: V-Hifil-Imp-mp | 1cs
+  eng: show–me
+  spa: mostradme
+  hin: बताओ–मुझे
+  arb: أَظْهِرُوا–لِي
+  kor: 보여주십시오–나에게
+  swa: nionyesheni
+
+### Sense 95639 (1 occurrences)
+Grammar: V-Piel-Imperf-3ms | 3fse
+  eng: can-show-it
+  spa: lo–pueda–mostrar
+  hin: बताएगा–उसे
+  arb: يُظْهِرُهَا
+  kor: 그것을–보여줄–수–있는
+  swa: anaweza–kulionyesha
+
+### Sense 95640 (1 occurrences)
+Grammar: V-Piel-Imperf-1cs
+  eng: I-will-show
+  spa: mostraré
+  hin: बताऊंगा
+  arb: أُظْهِرُ
+  kor: 내가–보여주겠다
+  swa: nitaionyesha
+
+## Task
+
+Group these 10 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

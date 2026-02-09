@@ -1,0 +1,126 @@
+# Sense Merge Task for H0859c
+
+Lemma: H0859c (POS: Pro-2fs)
+Total occurrences: 59
+Current sense count: 11
+
+This Hebrew/Greek lemma has been over-split into 11 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 85018 (34 occurrences)
+Grammar: Pro-2fs
+  eng: you, are–you, you–are
+  spa: tú, Tú
+  hin: तू, तूने, तू–है
+  arb: أَنْتِ, أَتْ, أنتِ
+  kor: 너는, 니가, 네가
+  swa: wewe, unaomba, umeyabeba
+
+### Sense 85019 (13 occurrences)
+Grammar: Conj-w | Pro-2fs,Conj-w | Pro-2ms
+  eng: and–you, but–you
+  spa: y–tú, Y–tú, Pero–tú
+  hin: और–तू, परन्तु–तू, और–तूने
+  arb: وَ–أَنْتِ, وَأَنْتِ, وَ–أَنتِ
+  kor: 그리고–너는, 그리고–너와, 그러나–너는
+  swa: na–wewe, lakini–wewe, pengine
+
+### Sense 85020 (3 occurrences)
+Grammar: Pro-2fs,Pro-2ms
+  eng: you, you–
+  spa: tú–
+  hin: तू–, तू
+  arb: أَنْتِ, أَنْتَ, أَنتِ–
+  kor: 당신은, 당신이
+  swa: wewe–, wewe, mke–wangu
+
+### Sense 85021 (2 occurrences)
+Grammar: Pro-2fs
+  eng: you–
+  spa: tú–
+  hin: तू–
+  arb: أَنْتِ–
+  kor: 네가–
+  swa: wewe–
+
+### Sense 85022 (1 occurrences)
+Grammar: Conj-w | Pro-2fs
+  eng: and–you
+  spa: y–tú
+  hin: (और–तूने)
+  arb: (وَ–أَنْتِ)
+  kor: (그리고–너는)
+  swa: (na–wewe)
+
+### Sense 85023 (1 occurrences)
+Grammar: Pro-2ms
+  eng: [ketiv]
+  spa: [a–ti]
+  arb: أَنْتَ
+  kor: 너
+  swa: [wewe]
+
+### Sense 85024 (1 occurrences)
+Grammar: Pro-2fs
+  eng: [ketiv]
+  spa: [eres–tú]
+  hin: तू
+  arb: أَنْتِ
+  kor: 너가
+  swa: [ketiv]
+
+### Sense 85025 (1 occurrences)
+Grammar: Pro-2ms
+  eng: you
+  spa: (tú)
+  hin: तूने
+  arb: لَعَنْتَ
+  kor: 너
+  swa: wewe
+
+### Sense 85026 (1 occurrences)
+Grammar: Pro-2ms
+  eng: you–
+  spa: Tú
+  hin: तू
+  arb: أَنْتَ–
+  kor: 너는–
+  swa: Wewe
+
+### Sense 85027 (1 occurrences)
+Grammar: Conj-w | Pro-2ms
+  eng: [ketiv]
+  spa: [y–tú]
+  hin: परन्तु–तू
+  arb: [ketiv]
+  kor: 그런데
+  swa: lakini–wewe
+
+### Sense 85028 (1 occurrences)
+Grammar: Conj-w | Pro-2ms
+  eng: and–you
+  spa: y–tú
+  hin: परन्तु–तू
+  arb: وَ–أَنْتَ
+  kor: 당신은
+  swa: wewe
+
+## Task
+
+Group these 11 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

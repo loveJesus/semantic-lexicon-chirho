@@ -1,0 +1,136 @@
+# Sense Merge Task for G3650
+
+Lemma: G3650 (POS: Adj-GFS)
+Total occurrences: 110
+Current sense count: 12
+
+This Hebrew/Greek lemma has been over-split into 12 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 73123 (86 occurrences)
+Grammar: Adj-DFS,Adj-AFS,Adj-NNS,Adj-AMS,Adj-NMS,Adj-DMS,Adj-NFS,Adj-GFS,Adj-GNS,Adj-ANS,
+  eng: whole, all, the-whole
+  spa: toda, todo, entero
+  hin: सारे, सारी, सारा
+  arb: كُلِّ, كُلَّ, كُلُّ
+  kor: 온, 전부, 모든
+  swa: yote, wote, nchi–yote
+
+### Sense 73124 (9 occurrences)
+Grammar: Adj-NNS,Adj-NMS
+  eng: whole, all, entirely
+  spa: todo
+  hin: सारा, सम्पूर्ण, सब
+  arb: كُلُّهُ, كُلُّ
+  kor: 전체가, 전부, 온전히
+  swa: wote, lote, mwili-wote
+
+### Sense 73125 (4 occurrences)
+Grammar: Adj-AMP,Adj-GFS,Adj-AFS
+  eng: whole
+  spa: entera, toda, enteras
+  hin: सारे, सारी,, समूची
+  arb: كُلِّها, كُلَّها, كامِلَةً
+  kor: 온
+  swa: wote,, zima, wote;
+
+### Sense 73126 (2 occurrences)
+Grammar: Adj-AFS,Adj-NFS
+  eng: whole
+  spa: todo, toda
+  hin: सअर, पूरा।
+  arb: كُلُّ, كُلَّ
+  kor: 전체가, 온–
+  swa: –, yote
+
+### Sense 73127 (2 occurrences)
+Grammar: Adj-NFS
+  eng: whole
+  spa: toda
+  hin: सारा, सम्पूर्ण
+  arb: كُلُّهَا, كُلُّها
+  kor: 전체가, 온
+  swa: wote, lote
+
+### Sense 73128 (1 occurrences)
+Grammar: Adj-AFS
+  eng: whole
+  spa: enteros
+  hin: पूरे
+  arb: كامِلَتَينِ
+  kor: 온전한
+  swa: kamili
+
+### Sense 73129 (1 occurrences)
+Grammar: Adj-AFS
+  eng: All
+  spa: todo
+  hin: सारा
+  arb: كُلَّ
+  kor: 온
+  swa: Siku–yote
+
+### Sense 73130 (1 occurrences)
+Grammar: Adj-GMS
+  eng: whole
+  spa: todo
+  hin: पूरे
+  arb: كُلِّهِ
+  kor: 전체
+  swa: yote
+
+### Sense 73131 (1 occurrences)
+Grammar: Adj-AMS
+  eng: whole
+  spa: –a–todo
+  hin: सम्पूर्ण
+  arb: كُلَّهُ
+  kor: 온전히
+  swa: mzima
+
+### Sense 73132 (1 occurrences)
+Grammar: Adj-AMS
+  eng: whole
+  spa: entero
+  hin: पूरा
+  arb: كَامِلَةً
+  kor: 온
+  swa: mzima
+
+### Sense 73133 (1 occurrences)
+Grammar: Adj-NMS
+  eng: whole
+  spa: del-todo
+  hin: पूरी–तरह
+  arb: كُلّيًّا
+  kor: 온전히
+  swa: kabisa
+
+### Sense 73134 (1 occurrences)
+Grammar: Adj-NMS
+  eng: whole
+  spa: entero
+  hin: समस्त
+  arb: كُلُّهُ
+  kor: 온
+  swa: wote
+
+## Task
+
+Group these 12 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

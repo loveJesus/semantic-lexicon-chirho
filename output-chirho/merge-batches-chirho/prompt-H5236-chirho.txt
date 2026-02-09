@@ -1,0 +1,118 @@
+# Sense Merge Task for H5236
+
+Lemma: H5236 (POS: Art | N-ms)
+Total occurrences: 36
+Current sense count: 10
+
+This Hebrew/Greek lemma has been over-split into 10 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 117918 (7 occurrences)
+Grammar: N-ms,Adj-ms
+  eng: foreigner, foreigners, a-foreigner
+  spa: extranjero
+  hin: विदेशि, परदेशी–के, परदेशी
+  arb: غَرِيبٍ, أَجْنَبِيٍّ, أَجْنَبِيٍ
+  kor: 이방인, 외국의, 이방인의
+  swa: mgeni, wageni
+
+### Sense 117919 (6 occurrences)
+Grammar: N-ms
+  eng: foreign, foreignness
+  spa: extraño, extranjero, ajeno
+  hin: पराए, विदेशी, पराया।
+  arb: غَرِيبَةٍ, غَرِيبٍ, غَرِيبٌ
+  kor: 이방의, 이방인의, 이방–의
+  swa: wa–kigeni, mgeni, ya–kigeni
+
+### Sense 117920 (5 occurrences)
+Grammar: Art | N-ms,N-ms
+  eng: the–foreigner, foreigner, foreigners
+  spa: extranjero, el–extranjero
+  hin: परदेशीके, परदेशी–के, परदेशीका
+  arb: –الْغَرِيبِ
+  kor: 이방인의
+  swa: wageni, wa–wageni, mgeni
+
+### Sense 117921 (4 occurrences)
+Grammar: Art | N-ms
+  eng: the–foreign
+  spa: el–extranjero
+  hin: पराए, पराए–के
+  arb: الْغَرِيبَةِ, الـ–غَرِيبَةِ, الـ–غَريبَةِ
+  kor: 낯선–것의, 그–이방의
+  swa: mkono, miungu–ya–kigeni, kumbe
+
+### Sense 117922 (4 occurrences)
+Grammar: N-ms
+  eng: foreigners, foreigner
+  spa: extranjero
+  hin: पराए–के, परदेशी–के
+  arb: الْغُرَبَاءِ
+  kor: 낯선–자의, 낯선–의
+  swa: kigeni
+
+### Sense 117923 (3 occurrences)
+Grammar: N-ms
+  eng: foreignness
+  spa: extranjero
+  hin: परदेश–के, परदेश–की
+  arb: الغُرَبَاءِ, غَرِيبَةٍ
+  kor: 이방의, 이방–의
+  swa: ugeni, ya–kigeni
+
+### Sense 117924 (2 occurrences)
+Grammar: N-ms
+  eng: foreigners, foreigner
+  spa: extranjero
+  hin: विदेशी, परदेशियों–के
+  arb: غَرِيبٍ, الغُرَبَاءِ
+  kor: 이방인으로부터, 이방의
+  swa: wageni, ugeni
+
+### Sense 117925 (2 occurrences)
+Grammar: N-ms,Art | N-ms
+  eng: the–foreignness, foreignness
+  spa: extranjero, el–extranjero
+  hin: पराये
+  arb: نَاكَارَ, الـ–نَّاكَارِ
+  kor: 이방의, 그–이방의
+  swa: ya–kigeni
+
+### Sense 117926 (2 occurrences)
+Grammar: Art | N-ms
+  eng: the–foreign
+  spa: el–extraño, el–extranjero
+  hin: पराये–के, के–परदेसी
+  arb: الْغُرَبَاءِ, الغَريبِ
+  kor: 그–이방인의, 그–이방의
+  swa: kigeni, haneּkar
+
+### Sense 117927 (1 occurrences)
+Grammar: N-msc
+  eng: foreign
+  spa: lo–extraño–de
+  hin: पराए–
+  arb: غُرَبَاءِ
+  kor: 이방인–
+  swa: kigeni–ya
+
+## Task
+
+Group these 10 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

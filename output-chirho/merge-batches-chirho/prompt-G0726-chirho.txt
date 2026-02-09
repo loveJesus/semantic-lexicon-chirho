@@ -1,0 +1,136 @@
+# Sense Merge Task for G0726
+
+Lemma: G0726 (POS: V-PIA-3S)
+Total occurrences: 14
+Current sense count: 12
+
+This Hebrew/Greek lemma has been over-split into 12 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 63353 (2 occurrences)
+Grammar: V-APP-AMS,V-AIP-3S
+  eng: he-was-caught-up, having-been-caught-up
+  spa: fue–arrebatado, arrebatado
+  hin: वह–उठाया–गया, उठाया–गया
+  arb: مُخْتَطَفاً, اُخْتُطِفَ
+  kor: 들림–받은, 들림–받았다
+  swa: alinyakuliwa, akinyakuliwa
+
+### Sense 63354 (2 occurrences)
+Grammar: V-PIA-3S
+  eng: snatches
+  spa: arrebata
+  hin: छेएन–लेतअ–है, छीनता–है
+  arb: يَخطِف, يَخطَفُ
+  kor: 빼앗는다
+  swa: anawanyakua, ananyakua
+
+### Sense 63355 (1 occurrences)
+Grammar: V-ANA
+  eng: to–plunder
+  spa: saquear
+  hin: लोओतन
+  arb: يَنهَبَ
+  kor: 빼앗으라
+  swa: kunyakua,
+
+### Sense 63356 (1 occurrences)
+Grammar: V-PNA
+  eng: to-seize
+  spa: arrebatar
+  hin: पकड़ना
+  arb: يَخْطَفُوا
+  kor: 데려가려고
+  swa: kumnyakua
+
+### Sense 63357 (1 occurrences)
+Grammar: V-FIP-1P
+  eng: will–be–caught–up
+  spa: seremos–arrebatados
+  hin: उथअ–लिये-जअयेनगे
+  arb: سَنُخْطَفُ
+  kor: 휴거될–것이다
+  swa: tutanyakuliwa
+
+### Sense 63358 (1 occurrences)
+Grammar: V-AIA-3S
+  eng: snatched–away
+  spa: arrebató
+  hin: उठा–ले–गया
+  arb: خَطَفَ
+  kor: 남아챘다
+  swa: alimnyakua
+
+### Sense 63359 (1 occurrences)
+Grammar: V-AIP-3S
+  eng: was-snatched-away
+  spa: fue–arrebatado
+  hin: छीना–गया
+  arb: اختُطِفَ
+  kor: 빼앓겨–갔으니
+  swa: akapokolewa
+
+### Sense 63360 (1 occurrences)
+Grammar: V-PPA-NMP
+  eng: snatching
+  spa: arrebatando
+  hin: छीनते–हुए
+  arb: مختطفين
+  kor: 빼앗으며
+  swa: mkiwaokota
+
+### Sense 63361 (1 occurrences)
+Grammar: V-PIA-3P
+  eng: seize
+  spa: arrebatan
+  hin: छेएन्ते–हैन
+  arb: يَخطَفونَهُ
+  kor: 뾜앗느니라
+  swa: wanaunyakua
+
+### Sense 63362 (1 occurrences)
+Grammar: V-ANA
+  eng: to–seize
+  spa: arrebatar
+  hin: छीनने
+  arb: يَخْتَطِفُوا
+  kor: 빼앗아
+  swa: kumnyakua
+
+### Sense 63363 (1 occurrences)
+Grammar: V-PNA
+  eng: to–snatch
+  spa: arrebatar
+  hin: छीनना
+  arb: أَن–يَخطِف
+  kor: 빼앗기를
+  swa: kunyakua
+
+### Sense 63364 (1 occurrences)
+Grammar: V-FIA-3S
+  eng: will–snatch
+  spa: arrebatará
+  hin: छीनेगा
+  arb: سَيَخطِف
+  kor: 빼앗지
+  swa: atawanyakua
+
+## Task
+
+Group these 12 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

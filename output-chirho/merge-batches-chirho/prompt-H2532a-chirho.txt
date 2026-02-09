@@ -1,0 +1,144 @@
+# Sense Merge Task for H2532a
+
+Lemma: H2532a (POS: N-fs)
+Total occurrences: 16
+Current sense count: 13
+
+This Hebrew/Greek lemma has been over-split into 13 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 97637 (2 occurrences)
+Grammar: N-fs
+  eng: desire
+  spa: deseo
+  hin: बहुमूल्य–की, बहुमूल्य
+  arb: شَهِيَّةٍ, ثَمينَةٍ
+  kor: 탐낼–의, 귀한
+  swa: vya–thamani, thamani
+
+### Sense 97638 (2 occurrences)
+Grammar: N-fs
+  eng: the–pleasant–land, desirable
+  spa: deseable
+  hin: वांछनीय, मनोहर
+  arb: شَهِيَّةً, الشَّهوَة
+  kor: 기쁜
+  swa: yenye–kupendeza, ya–kupendeza
+
+### Sense 97639 (2 occurrences)
+Grammar: N-fs
+  eng: desire
+  spa: deseo
+  hin: चाह, अभिलाषा–के।
+  arb: شَوْقٍ, النَّفَائِسِ
+  kor: 애도, 귀한–것의
+  swa: kuombolezwa, chemdaּh
+
+### Sense 97640 (1 occurrences)
+Grammar: N-fsc
+  eng: desire-of
+  spa: lo–deseable–de
+  hin: कीमती
+  arb: شَهْوَةُ
+  kor: 소원이
+  swa: tamani
+
+### Sense 97641 (1 occurrences)
+Grammar: N-fsc
+  eng: desire–of
+  spa: lo–deseado–de
+  hin: इच्छाएं
+  arb: مَحْبُوبُ
+  kor: 바라는–것
+  swa: hazina
+
+### Sense 97642 (1 occurrences)
+Grammar: N-fsc | 2fs
+  eng: your-delight
+  spa: tu–deleite
+  arb: شَهْوَتِكِ
+  kor: 기쁨의–너의
+  swa: kupendeza–kwako
+
+### Sense 97643 (1 occurrences)
+Grammar: N-fsc
+  eng: desire–of
+  spa: tesoro–de
+  hin: बहुमूल्य
+  arb: نَفَائِسِ
+  kor: 보물의–
+  swa: chemdaּt
+
+### Sense 97644 (1 occurrences)
+Grammar: N-fsc | 1cs
+  eng: My–delight
+  spa: delicia–mi
+  hin: मेरी–खुशी–का
+  arb: بَهْجَتِي
+  kor: 내–기뻔의
+  swa: yangu–tamu
+
+### Sense 97645 (1 occurrences)
+Grammar: N-fs
+  eng: desire
+  spa: delicia
+  hin: मनोहर
+  arb: الْبَهْجَةِ
+  kor: 좋은
+  swa: nzuri
+
+### Sense 97646 (1 occurrences)
+Grammar: N-fsc
+  eng: desire-of
+  spa: deseo–de
+  hin: लालसा
+  arb: شَهْوَةِ
+  kor: 소원을
+  swa: tamaa
+
+### Sense 97647 (1 occurrences)
+Grammar: Art | N-fs
+  eng: desirable
+  spa: preciadas
+  hin: मनभावने
+  arb: الجَمِيلَةِ
+  kor: 기뻐하는
+  swa: za–kupendeza
+
+### Sense 97648 (1 occurrences)
+Grammar: N-fs
+  eng: precious
+  spa: precioso
+  hin: कीमती
+  arb: فَاخِرٍ
+  kor: 귀한
+  swa: thamani
+
+### Sense 97649 (1 occurrences)
+Grammar: N-fsc | 3mp
+  eng: their-desire
+  spa: deseo–suyo
+  hin: उनकी–लालसा–की
+  arb: نَفَائِسِهِمْ
+  kor: 귀한–것들인
+  swa: vya–thamani–vyao
+
+## Task
+
+Group these 13 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

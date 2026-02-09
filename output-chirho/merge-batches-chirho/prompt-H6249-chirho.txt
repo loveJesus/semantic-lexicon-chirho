@@ -1,0 +1,126 @@
+# Sense Merge Task for H6249
+
+Lemma: H6249 (POS: Prep-l | Number-csc)
+Total occurrences: 19
+Current sense count: 11
+
+This Hebrew/Greek lemma has been over-split into 11 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 126733 (4 occurrences)
+Grammar: Number-csc
+  eng: one–ten, eleven–, eleven
+  spa: Once–, undécimo, once
+  hin: ग्यारह–, ग्यारहवाँ–, ग्यारहवाँ
+  arb: الْحَادِيَ–, الْحَادِيَةُ–, الْحَادِيَةَ
+  kor: 열한–, 열
+  swa: kumi, kumi–na–
+
+### Sense 126734 (4 occurrences)
+Grammar: Number-csc
+  eng: one, the–one
+  spa: once, undécimo
+  hin: ग्यारह, ग्यारहवीं
+  arb: إِحْدَى, الْحَادِيَةِ, أَحَدَ
+  kor: 열한, 열하나
+  swa: mwaka–kumi–na–, mwaka, kumi–na–moja
+
+### Sense 126735 (2 occurrences)
+Grammar: Number-csc
+  eng: eleven
+  spa: once
+  hin: ग्यारह–, ग्यारह
+  arb: إِحدى–
+  kor: 열한–, 열한
+  swa: kumi–na–
+
+### Sense 126736 (2 occurrences)
+Grammar: Prep-l | Number-csc
+  eng: for–eleven
+  spa: para–once
+  hin: ग्यारह–के–लिए
+  arb: لِ–إِحدى–, لِإِحدى–
+  kor: 열한에게, 에–열한
+  swa: kwa–kumi–na–
+
+### Sense 126737 (1 occurrences)
+Grammar: Prep-l | Number-csc
+  eng: for–the–eleventh
+  spa: para–once–
+  hin: –के–ग्यारहवें–
+  arb: لِلْحَادِيَ–
+  kor: 에–대한–열한–
+  swa: kwa–kumi
+
+### Sense 126738 (1 occurrences)
+Grammar: Number-csc
+  eng: eleven–
+  spa: once–
+  hin: ग्यारह
+  arb: أَحَدَ–
+  kor: 열하나와
+  swa: kumi–
+
+### Sense 126739 (1 occurrences)
+Grammar: Prep-b | Number-csc
+  eng: in–the–eleventh
+  spa: En–once
+  hin: में–ग्यारहवें–
+  arb: فِي–السَّنَةِ
+  kor: 열한–
+  swa: Katika–mwaka–wa–kumi
+
+### Sense 126740 (1 occurrences)
+Grammar: Number-csc
+  eng: of–the–eleventh
+  spa: once
+  hin: ग्यारहवें
+  arb: إِحْدَى
+  kor: 열–
+  swa: kumi
+
+### Sense 126741 (1 occurrences)
+Grammar: Prep-l | Number-csc
+  eng: of–eleven
+  spa: del–undécimo
+  hin: के–ग्यारहवें–
+  arb: لِلْحَادِي–
+  kor: 에–열한
+  swa: ya–mwezi–wa
+
+### Sense 126742 (1 occurrences)
+Grammar: Prep-b | Number-csc
+  eng: in–eleventh–
+  spa: en–once
+  arb: فِي–الْحَادِيَةِ–
+  kor: 열하나–
+  swa: katika–kumi–na
+
+### Sense 126743 (1 occurrences)
+Grammar: Prep-b | Number-csc
+  eng: in–eleven–
+  spa: en–el–undécimo
+  hin: –ग्यारहवें–
+  arb: في–الْحادي
+  kor: 열하나
+  swa: katika–mwezi–wa–kumi–na–moja
+
+## Task
+
+Group these 11 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

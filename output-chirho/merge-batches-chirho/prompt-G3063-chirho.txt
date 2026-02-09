@@ -1,0 +1,118 @@
+# Sense Merge Task for G3063
+
+Lemma: G3063 (POS: Adj-ANS)
+Total occurrences: 13
+Current sense count: 10
+
+This Hebrew/Greek lemma has been over-split into 10 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 71745 (2 occurrences)
+Grammar: Adj-ANS
+  eng: finally
+  spa: demás
+  hin: अअगे,
+  arb: أَخيرًا
+  kor: 나머지,
+  swa: baadaye
+
+### Sense 71746 (2 occurrences)
+Grammar: Adj-ANS
+  eng: finally, beyond–that
+  spa: además
+  hin: इसके–अलावा
+  arb: أَخيراً
+  kor: 그–외에는
+  swa: zaidi–ya–hao,, basi,
+
+### Sense 71747 (2 occurrences)
+Grammar: Adj-ANS
+  eng: finally
+  spa: Finalmente
+  hin: और, अन्ततः
+  arb: فَأخيراً, أَخيراً
+  kor: 마지막으로, 그러므로
+  swa: Mwishowe,, Hatimaye
+
+### Sense 71748 (1 occurrences)
+Grammar: Adj-ANS
+  eng: remaining
+  spa: restante
+  hin: शेष
+  arb: بَقِيَّةَ
+  kor: 나머지를
+  swa: kilichobaki
+
+### Sense 71749 (1 occurrences)
+Grammar: Adj-ANS
+  eng: finally
+  spa: en-adelante
+  hin: अंततः
+  arb: أَخِيرًا
+  kor: 마침내
+  swa: mwishowe
+
+### Sense 71750 (1 occurrences)
+Grammar: Adj-ANS
+  eng: remaining
+  spa: demás
+  hin: शेष
+  arb: باقي
+  kor: 나머지는
+  swa: basi
+
+### Sense 71751 (1 occurrences)
+Grammar: Adj-ANS
+  eng: henceforth
+  spa: en–lo–demás
+  hin: अब–से
+  arb: مِنَ–الآنَ
+  kor: 이제
+  swa: sasa
+
+### Sense 71752 (1 occurrences)
+Grammar: Adj-ANS
+  eng: henceforth
+  spa: demás
+  hin: बाकी
+  arb: بَاقِي
+  kor: 나머지를
+  swa: iliyobaki
+
+### Sense 71753 (1 occurrences)
+Grammar: Adj-ANS
+  eng: remaining
+  spa: que–queda
+  hin: शेष
+  arb: الْبَقِيَّةَ
+  kor: 나머지–를
+  swa: baki
+
+### Sense 71754 (1 occurrences)
+Grammar: Adj-ANS
+  eng: finally
+  spa: demás
+  hin: और
+  arb: باقياً
+  kor: 나머지는
+  swa: Hatimaye
+
+## Task
+
+Group these 10 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

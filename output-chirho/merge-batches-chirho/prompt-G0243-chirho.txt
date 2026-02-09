@@ -1,0 +1,127 @@
+# Sense Merge Task for G0243
+
+Lemma: G0243 (POS: Adj-NFS)
+Total occurrences: 156
+Current sense count: 11
+
+This Hebrew/Greek lemma has been over-split into 11 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 61847 (103 occurrences)
+Grammar: Adj-GFS,Adj-NMS,Adj-NNS,Adj-AMS,Adj-NFS,Adj-GMS,Adj-DMS,Adj-ANS,Adj-AFS,Adj-AMP,
+  eng: another, others, other
+  spa: otro, otros, otra
+  hin: दूसरा, दूसरे, अन्य
+  arb: آخَرُ, آخَرَ, آخَرونَ
+  kor: 다른, 다른–이들은, 다른–사람이
+  swa: mwingine, wengine, nyingine
+
+### Sense 61849 (19 occurrences)
+Grammar: Adj-AMP,Adj-ANP,Adj-NNP,Adj-NFP,Adj-NMP,Adj-AFP
+  eng: other, others
+  spa: otros, otras, a–otras
+  hin: और, दूसरे, दूसरी
+  arb: أُخْرَى, خَمْسَةً, اثْنَتَيْنِ
+  kor: 다른
+  swa: nyingine, wengine, mengine
+
+### Sense 61850 (9 occurrences)
+Grammar: Adj-DMS
+  eng: to-another
+  spa: a–otro
+  hin: दूसरे–को, दूसरे–से
+  arb: لِآخَرَ, لِ–آخَرَ
+  kor: 다른–이에게, 다른–자에게, 다른–에게
+  swa: kwa–mwingine, mwingine,, mwingine
+
+### Sense 61851 (6 occurrences)
+Grammar: Adj-NFS,Adj-AFS,Adj-NNS,Adj-AMS
+  eng: other
+  spa: otra, otro
+  hin: दूसरी, दोओस्र, दूसरी,
+  arb: الأُخرى, الْأُخْرَى, أُخْرَى
+  kor: 다른, 다른쪽도, 다른–것
+  swa: nyingine, mwingine, mwingine.
+
+### Sense 61852 (5 occurrences)
+Grammar: Adj-DMP
+  eng: to-others, for-others
+  spa: a–otros, para–otros, a-otros
+  hin: दूसरों–को, दूसरों–के–लिए, औरों–को
+  arb: لِآخَرينَ, لِـآخَرينَ
+  kor: 다른–사람들–에게, 다른–자들에게, 다른–이들에게
+  swa: wengine, kwa–wengine
+
+### Sense 61853 (4 occurrences)
+Grammar: Adj-AFS,Adj-NFS,Adj-GFS
+  eng: another
+  spa: otra
+  hin: दोओस्रि–से, दूसरे–के, दूसरी–से
+  arb: أُخْرَى, آخَرَ
+  kor: 다른–이–의, 다른–여자가, 다른–여자–와
+  swa: mwingine, dhamiri–ya–mtu, anazini
+
+### Sense 61854 (4 occurrences)
+Grammar: Adj-AFS
+  eng: Another
+  spa: Otra
+  hin: दोओस्रअ, दूसरी
+  arb: آخَرَ
+  kor: 다른
+  swa: Mfano, mfano
+
+### Sense 61855 (3 occurrences)
+Grammar: Adj-AMP
+  eng: Others
+  spa: A–otros, A-otros
+  hin: दूसरों–को, औरों–को
+  arb: آخَرِينَ, آخَرينَ
+  kor: 다른–이들을, 다른–이들–을, 다른-이들을
+  swa: Wengine, wengine
+
+### Sense 61856 (1 occurrences)
+Grammar: Adj-ANP
+  eng: other–things
+  spa: otras–cosas
+  hin: अन्य–बातें
+  arb: أُخرى
+  kor: 다른-것들
+  swa: mengine
+
+### Sense 61857 (1 occurrences)
+Grammar: Adj-NMS
+  eng: one
+  spa: uno
+  hin: दूसरे–से
+  arb: آخَرُ
+  kor: 우리–의
+  swa: mwingine
+
+### Sense 61858 (1 occurrences)
+Grammar: Adj-AFS
+  eng: other
+  spa: otra
+  hin: दूसरी
+  arb: الأُخْرَى
+  kor: 다른쪽
+  swa: lingine
+
+## Task
+
+Group these 11 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

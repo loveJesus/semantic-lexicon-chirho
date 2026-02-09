@@ -1,0 +1,118 @@
+# Sense Merge Task for H7564
+
+Lemma: H7564 (POS: N-fsc | 3ms)
+Total occurrences: 15
+Current sense count: 10
+
+This Hebrew/Greek lemma has been over-split into 10 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 137195 (4 occurrences)
+Grammar: Art | N-fs,N-fs
+  eng: wickedness, the–wickedness
+  spa: maldad, es–la–maldad
+  hin: दुष्टता, दुष्टता-की
+  arb: الشَّرِّ, الشَّرُّ
+  kor: 악–을, 악–의, 그–악함이
+  swa: uovu
+
+### Sense 137196 (2 occurrences)
+Grammar: Prep-m | N-fsc | 3ms
+  eng: from–wickedness–his, from–his–wickedness
+  spa: de–su–maldad, de–su–impiedad
+  hin: से–दुष्टता–अपनी, आदम
+  arb: مِنْ–شَرِّهِ
+  kor: 자기–악함에서, 그의–악에서
+  swa: kutoka–uovu–wake
+
+### Sense 137197 (2 occurrences)
+Grammar: Conj-w | N-fsc
+  eng: and–wickedness-of
+  spa: y–maldad–de, e–impiedad–de
+  hin: दुष्ट, और–दुष्टता
+  arb: وَشَرُّ
+  kor: 그리고–악함이–, 그리고–악함이
+  swa: na–uovu–wa
+
+### Sense 137198 (1 occurrences)
+Grammar: N-fs
+  eng: wickedness
+  spa: la-maldad
+  hin: दुष्टता
+  arb: الشَّرُّ
+  kor: 악이
+  swa: uovu
+
+### Sense 137199 (1 occurrences)
+Grammar: N-fsc | 3ms
+  eng: his–guilt
+  spa: su–maldad
+  hin: दुष्टता–उसकी
+  arb: إِثْمِهِ
+  kor: 그–악행–의
+  swa: uovu–wake
+
+### Sense 137200 (1 occurrences)
+Grammar: Conj-w | N-fs
+  eng: but–wickedness
+  spa: y–maldad
+  hin: और–दुष्टता
+  arb: وَ–شَرٌّ
+  kor: 그러나–악함–은
+  swa: lakini–uovu
+
+### Sense 137201 (1 occurrences)
+Grammar: Prep-l | N-fs
+  eng: to–wickedness
+  spa: para–maldad
+  hin: को–दुष्टता
+  arb: لِـ–الشَّرِّ
+  kor: 악으로
+  swa: kwa–uovu
+
+### Sense 137202 (1 occurrences)
+Grammar: Prep-b | N-fsc
+  eng: because–of–wickedness–of
+  spa: por–la–maldad–de
+  hin: दुष्टता–से
+  arb: بِشَرِّ
+  kor: 악함으로–인하여
+  swa: kwa–uovu–wa
+
+### Sense 137203 (1 occurrences)
+Grammar: Conj-w, Prep-b | N-fsc
+  eng: and–because–of–wickedness–of
+  spa: sino–por–la–maldad–de
+  hin: और–दुष्टता–से
+  arb: وَبِشَرِّ
+  kor: 그리고–악함으로–인하여
+  swa: na–kwa–uovu–wa
+
+### Sense 137204 (1 occurrences)
+Grammar: Conj-w, Prep-b | N-fsc | 3ms
+  eng: but–by–his–wickedness
+  spa: y–por–maldad–de–él
+  hin: और–दुष्टता–में
+  arb: وَ–بِشَرِّهِ
+  kor: 그러나–그–의–악–으로
+  swa: lakini–kwa–uovu–wake
+
+## Task
+
+Group these 10 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

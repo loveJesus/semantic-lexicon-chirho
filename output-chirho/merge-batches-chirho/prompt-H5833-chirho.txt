@@ -1,0 +1,136 @@
+# Sense Merge Task for H5833
+
+Lemma: H5833 (POS: N-fsc)
+Total occurrences: 26
+Current sense count: 12
+
+This Hebrew/Greek lemma has been over-split into 12 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 123475 (5 occurrences)
+Grammar: Prep-l | N-fs
+  eng: for–help
+  spa: para–ayuda, para-ayuda
+  hin: सहायता–के–लिए, सहायता–को
+  arb: لِلْمَعُونَةِ, لِ–مُسَاعَدَةٍ, لِـ–مُعَاوَنَتِهِ
+  kor: 도움–을–위해, 에–도움을–위하여, 도움–을–위하여
+  swa: kwa–msaada, kwa-msaada
+
+### Sense 123476 (5 occurrences)
+Grammar: Prep-b | N-fsc | 1cs,Prep-l | N-fsc | 1cs
+  eng: to–my–help, for–my–help
+  spa: para–mi–ayuda, en–mi–ayuda, a–mi–ayuda
+  hin: मेरी–सहायता–के–लिए, सहायता–मेरी–के–लिए, लिए–सहायता–मेरे
+  arb: لِ–نُصْرَتي, لِ–مَعونَتي
+  kor: –내–도움–을–위해, 나–의–도움–을–위해, 나–의–도움–으로
+  swa: kunisaidia
+
+### Sense 123477 (4 occurrences)
+Grammar: N-fs,N-fsc,N-fs | 3fs
+  eng: help, a–help
+  spa: ayuda, ayuda–contra, ayuda-de
+  hin: सहायता
+  arb: عَونًا, عَوْنٌ
+  kor: 도움–이, 도움을, 도움–을
+  swa: msaada
+
+### Sense 123478 (2 occurrences)
+Grammar: N-fsc | 1cs
+  eng: my–help
+  spa: mi–ayuda
+  hin: सहायता–मेरी, सहायक–मेरी
+  arb: عَوْنِي, عَوْني
+  kor: 도움–이, 내–도움–이요
+  swa: msaada-wangu
+
+### Sense 123479 (2 occurrences)
+Grammar: N-fsc | 1cs
+  eng: my–help, my-help
+  spa: mi–ayuda
+  hin: सहायता–अपनी, मेरी–सहायता
+  arb: نُصرَتِي, عَوْنٌ–لي
+  kor: 나의–도움을, 나의–도움–이
+  swa: msaada–wangu
+
+### Sense 123480 (2 occurrences)
+Grammar: Prep-l | N-fsc
+  eng: to–the-help-of
+  spa: en–ayuda–de
+  hin: सहायता–को
+  arb: لِ–نَجْدَةِ
+  kor: 도움–에
+  swa: kwa–msaada–wa
+
+### Sense 123481 (1 occurrences)
+Grammar: N-fsc | 1cp
+  eng: our–help
+  spa: nuestra–ayuda
+  hin: हमारी–सहायता
+  arb: عَوْنِنَا
+  kor: 우리–도움–에
+  swa: msaada–wetu
+
+### Sense 123482 (1 occurrences)
+Grammar: Prep-b | N-fsc | 2fs
+  eng: among–your–helpers
+  spa: en–ayuda–tuya
+  hin: तेरी–सहायता–में
+  arb: لِمَعُونَتِكِ
+  kor: 에–너의–도움
+  swa: msaada–wako
+
+### Sense 123483 (1 occurrences)
+Grammar: Prep-l | N-fsc | 1cs
+  eng: to–my–aid
+  spa: para–mi–ayuda
+  hin: ले–सहायता–मेरी–के–लिए
+  arb: لِعَوْنِي
+  kor: 도움–으로
+  swa: kwa–msaada–wangu
+
+### Sense 123484 (1 occurrences)
+Grammar: N-fs | 3fs
+  eng: as–help
+  spa: para–ayuda
+  hin: सहायता–के–लिए
+  arb: عَوْنًا
+  kor: 도우소서
+  swa: utusaidie
+
+### Sense 123485 (1 occurrences)
+Grammar: N-fsc
+  eng: the–help
+  spa: ayuda–de
+  hin: सहायता
+  arb: مَعُونَةِ
+  kor: 도움을
+  swa: msaada
+
+### Sense 123486 (1 occurrences)
+Grammar: N-fs | 3fs
+  eng: had–been–my–help
+  spa: fuera–mi–ayuda
+  hin: सहायता–होती
+  arb: عَوْنًا
+  kor: 도움–이–되셨더라면
+  swa: msaada–wangu
+
+## Task
+
+Group these 12 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

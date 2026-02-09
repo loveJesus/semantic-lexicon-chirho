@@ -1,0 +1,144 @@
+# Sense Merge Task for H4598
+
+Lemma: H4598 (POS: N-msc | 2ms)
+Total occurrences: 28
+Current sense count: 13
+
+This Hebrew/Greek lemma has been over-split into 13 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 112985 (8 occurrences)
+Grammar: Art | N-ms
+  eng: the–robe
+  spa: el–manto, el-manto
+  hin: चोगे–के, चोगे–का, चोगे
+  arb: الْجُبَّةِ, –الجُبَّةَ, الرِّداءِ
+  kor: 그–겉옷의, 그–겉옷을, 겉옷의
+  swa: joho, wa–joho
+
+### Sense 112986 (4 occurrences)
+Grammar: N-msc
+  eng: robe-of, robe–of
+  spa: manto–de, manto-de
+  hin: चोगा, उद्धार–के
+  arb: جُبَّةَ, رِدَاءَ
+  kor: 겉옷을
+  swa: joho
+
+### Sense 112987 (3 occurrences)
+Grammar: Prep-k | N-ms,Prep-k, Art | N-ms
+  eng: like–a–robe, like–a–cloak, as–robe
+  spa: como–manto
+  hin: वस्त्र–की–तरह, चोगेकी–तरह
+  arb: كَ–عَباءَةٍ, كَ–رِداء, كَ–الرِّدَاءِ
+  kor: 겉옷–같이, 가운같이–
+  swa: kama–joho
+
+### Sense 112988 (2 occurrences)
+Grammar: N-msc | 3ms
+  eng: his–robe
+  spa: su–manto, su-manto
+  hin: अपना–चोगा
+  arb: جُبَّتَهُ
+  kor: 그–겉옷을
+  swa: joho–lake
+
+### Sense 112989 (2 occurrences)
+Grammar: N-msc | 2ms
+  eng: your–robe
+  spa: tu–manto
+  hin: तेरे–चोगे–का
+  arb: رِدائِكَ
+  kor: 네–겉옷의
+  swa: joho–lako
+
+### Sense 112990 (2 occurrences)
+Grammar: Conj-w | N-msc | 1cs
+  eng: and–my–robe
+  spa: y–mi–manto
+  hin: और–अपने–चोगे, और–अपना–चोगा
+  arb: وَ–رِدائِي
+  kor: 그리고–나의–겉옷을
+  swa: na–joho–langu
+
+### Sense 112991 (1 occurrences)
+Grammar: N-mpc | 3mp
+  eng: their-robes
+  spa: sus–mantos
+  arb: جُبَبَهُمْ
+  kor: 겉옷들을–그들의
+  swa: mavazi–yao
+
+### Sense 112992 (1 occurrences)
+Grammar: Conj-w | N-ms
+  eng: and–robe
+  spa: Y–túnica
+  hin: और–चोगा
+  arb: وَ–جُبَّةً
+  kor: 그리고–겉옷
+  swa: na–joho
+
+### Sense 112993 (1 occurrences)
+Grammar: Conj-w | N-ms
+  eng: and–robe
+  spa: y-manto
+  hin: और–चोगा
+  arb: وَ–جُبَّةٌ
+  kor: 그리고–겉옷과
+  swa: na–joho
+
+### Sense 112994 (1 occurrences)
+Grammar: N-msc | 3ms
+  eng: his-robe
+  spa: manto–de–él
+  hin: उस्के-चोग–क
+  arb: جُبَّتِهِ
+  kor: 그의–겉옷의
+  swa: wa–joho–lake
+
+### Sense 112995 (1 occurrences)
+Grammar: N-ms
+  eng: robe
+  spa: manto
+  hin: चोग
+  arb: بِرِداءٍ
+  kor: 겉옷을
+  swa: joho
+
+### Sense 112996 (1 occurrences)
+Grammar: N-mp
+  eng: robes
+  spa: mantos
+  hin: चोगे
+  arb: جُبَباً
+  kor: 겉옷을
+  swa: mavazi
+
+### Sense 112997 (1 occurrences)
+Grammar: Prep-b | N-msc
+  eng: in–robe–of
+  spa: con–manto–de
+  hin: चोगे–से
+  arb: بِ–رِدَاءٍ
+  kor: 에–겉옷–의
+  swa: kwa–joho–la
+
+## Task
+
+Group these 13 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

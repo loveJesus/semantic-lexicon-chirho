@@ -1,0 +1,118 @@
+# Sense Merge Task for H3485
+
+Lemma: H3485 (POS: Conj-w)
+Total occurrences: 43
+Current sense count: 10
+
+This Hebrew/Greek lemma has been over-split into 10 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 105023 (29 occurrences)
+Grammar: N-proper-ms
+  eng: Issachar, Yissakhar, Yissaskhar
+  spa: Isacar, Yisacar, Yissakar
+  hin: इस्साकार, यिस्साकार, इस्साकार–के
+  arb: يَسَّاكَرَ, يَسَّاكَر, يِسَّاكَار
+  kor: 잇사갈, 잇사갈의, 잇사갈–의
+  swa: Isakari, Isaskari, yishaּshkar
+
+### Sense 105024 (3 occurrences)
+Grammar: Conj-w | N-proper-ms
+  eng: and–Issachar
+  spa: y–Yissakar, y–Isacar, e–Isacar
+  hin: और–यिस्साकार, और–इस्साकार
+  arb: وَ–يَسّاكارُ, وَيَسَّاكَرُ, وَيَا–يَسَّاكَرُ
+  kor: 그리고–잇사갈이, 그리고–잇사가르와, 그리고–잇사가르
+  swa: na–Isakari, na–Isahaka
+
+### Sense 105025 (3 occurrences)
+Grammar: N-proper-ms
+  eng: Yissakar
+  spa: Isacar
+  hin: यिस्साकार
+  arb: يَسَاكَرَ, يَسَاكَرُ
+  kor: 잇사가르의, 잇사가르가
+  swa: Isakari
+
+### Sense 105026 (2 occurrences)
+Grammar: Prep-b | N-proper-ms
+  eng: in–Yissakhar
+  spa: en–Yissakar, en–Isacar
+  hin: यिस्साकार–में, इस्साकार–में
+  arb: في–يَسّاكَرَ, بِ–يَساكَرَ
+  kor: 잇사갈과, 잇사갈–에서
+  swa: wa–Isakari, katika–Isakari
+
+### Sense 105027 (1 occurrences)
+Grammar: Prep-b | N-proper-ms
+  eng: in–Issachar
+  spa: en–Isajar
+  hin: यिस्साकार–में
+  arb: فِي–يَسَاكَرَ
+  kor: 잇사갈에
+  swa: huko–Isakari
+
+### Sense 105028 (1 occurrences)
+Grammar: Prep-l | N-proper-ms
+  eng: for–Yissakhar
+  spa: para–Isacar
+  hin: –के–इस्साकार
+  arb: لِيْسَاكَارَ
+  kor: 에–대한–잇사갈
+  swa: kwa–Isakari
+
+### Sense 105029 (1 occurrences)
+Grammar: Prep-l | N-proper-ms
+  eng: for–Issachar
+  spa: de–Isacar
+  hin: के–लिए–इस्साकार
+  arb: لِيَسَّاكَرَ
+  kor: 에게–잇사갈
+  swa: kwa–Isakari
+
+### Sense 105030 (1 occurrences)
+Grammar: Conj-w, Prep-b | N-proper-ms
+  eng: and–in–Yissakhar
+  spa: y–en–Isacar
+  hin: और–इस्साकार–से
+  arb: وَ–في–يَسّاكَرَ
+  kor: 그리고–잇사갈과
+  swa: na–katika–Isakari
+
+### Sense 105031 (1 occurrences)
+Grammar: Prep-l | N-proper-ms
+  eng: for–Yissakhar
+  spa: Para–Isacar
+  hin: यिस्साकार–के–लिए
+  arb: لِيَسَّاكَرَ
+  kor: 잇사갈에게
+  swa: kwa–Isakari
+
+### Sense 105032 (1 occurrences)
+Grammar: Conj-w | N-proper-ms
+  eng: and–Yissakhar
+  spa: y–Yissakar
+  hin: और–यिस्साकार
+  arb: وَ–يَساكَرُ
+  kor: 그리고–잇사갈
+  swa: na–Isakari
+
+## Task
+
+Group these 10 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

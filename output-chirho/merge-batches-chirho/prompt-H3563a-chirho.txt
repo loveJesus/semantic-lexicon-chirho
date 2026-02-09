@@ -1,0 +1,154 @@
+# Sense Merge Task for H3563a
+
+Lemma: H3563a (POS: N-fsc | 3fs)
+Total occurrences: 30
+Current sense count: 14
+
+This Hebrew/Greek lemma has been over-split into 14 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 105749 (11 occurrences)
+Grammar: N-fsc
+  eng: cup-of, cup-of–, cup–of
+  spa: copa–de
+  hin: प्याला, कटोरा, प्याले
+  arb: كَأْسَ, كَأْسِ
+  kor: 잔을, 잔이다, 잔
+  swa: kikombe–cha–, kikombe–cha, kikombe
+
+### Sense 105750 (5 occurrences)
+Grammar: Art | N-fs
+  eng: the–cup
+  spa: la–copa
+  hin: प्याला
+  arb: الْكَأْسَ, الْ–كَأْسَ
+  kor: 잔을, 그–잔을
+  swa: kikombe, wa–Pharaoh, mkono
+
+### Sense 105751 (3 occurrences)
+Grammar: N-fs,N-fsc
+  eng: the–cup–of, the–cup, a–cup
+  spa: la–copa–de–, la–copa, copa
+  hin: प्याला, कोस
+  arb: كَأْسٌ, كَأسُ, الْكَأْسُ
+  kor: 잔–이
+  swa: kikombe, kikombe–cha
+
+### Sense 105752 (1 occurrences)
+Grammar: N-fsc | 1cs
+  eng: my–cup
+  spa: mi–copa
+  hin: प्याला–मेरा
+  arb: كَأْسِي
+  kor: 나–의–잔–이
+  swa: kikombe–changu
+
+### Sense 105753 (1 occurrences)
+Grammar: Conj-w | N-fp
+  eng: and–cups
+  spa: y–vasos
+  hin: और–प्याले
+  arb: وَأَقْدَاحًا
+  kor: 그리고–잔들을
+  swa: na–vikombe
+
+### Sense 105754 (1 occurrences)
+Grammar: Conj-w, Prep-m | N-fsc | 3ms
+  eng: and–from–his–cup
+  spa: y–de–su–copa
+  hin: और–उसके–कटोरे–से
+  arb: وَمِن–كَأسِهِ
+  kor: 그리고–에서–잔–그의
+  swa: na–kutoka–kikombe–chake
+
+### Sense 105755 (1 occurrences)
+Grammar: N-fs
+  eng: cup
+  spa: copa
+  hin: प्याले–का
+  arb: كَأْسٍ
+  kor: 잔의
+  swa: wa–kikombe
+
+### Sense 105756 (1 occurrences)
+Grammar: Conj-w | N-fsc | 1cs
+  eng: and–my–cup
+  spa: y–mi–copa
+  hin: और–मेरे–कटोरे
+  arb: وَ–كَأْسِي
+  kor: 그리고–잔–의
+  swa: na–kikombe–changu
+
+### Sense 105757 (1 occurrences)
+Grammar: N-fsc
+  eng: a–cup-of–
+  spa: copa–de
+  hin: प्याला–
+  arb: كَأْسُ–
+  kor: 잔이–
+  swa: Kikombe–cha
+
+### Sense 105758 (1 occurrences)
+Grammar: Conj-w | N-fsc
+  eng: and–cup-of
+  spa: y–copa–de
+  hin: और–प्याला
+  arb: وَ–كَأْسُ
+  kor: 그리고–잔이
+  swa: na–kikombe
+
+### Sense 105759 (1 occurrences)
+Grammar: N-fsc
+  eng: the–cup–of
+  spa: Copa–de
+  hin: कटोरा
+  arb: كَأسَ–
+  kor: 잔–을
+  swa: kikombe–cha
+
+### Sense 105760 (1 occurrences)
+Grammar: N-fsc | 3fs
+  eng: her-cup
+  spa: copa–de–ella
+  hin: उसका–कटोरा
+  arb: كَأْسَهَا
+  kor: 그녀의–잔을
+  swa: kikombe–chake
+
+### Sense 105761 (1 occurrences)
+Grammar: N-fs
+  eng: a-cup
+  spa: copa
+  hin: कटोरा
+  arb: كَأْسٍ
+  kor: 잔
+  swa: kikombe
+
+### Sense 105762 (1 occurrences)
+Grammar: N-fsc | 3mp
+  eng: their–cup
+  spa: su–copa
+  hin: उनके–कटोरे–का
+  arb: كَأْسِهِمْ
+  kor: 잔–의
+  swa: kikombe–chao
+
+## Task
+
+Group these 14 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

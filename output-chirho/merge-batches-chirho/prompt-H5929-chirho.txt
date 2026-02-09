@@ -1,0 +1,145 @@
+# Sense Merge Task for H5929
+
+Lemma: H5929 (POS: Prep-k)
+Total occurrences: 18
+Current sense count: 13
+
+This Hebrew/Greek lemma has been over-split into 13 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 124268 (4 occurrences)
+Grammar: Conj-w | N-mpc
+  eng: and–branches–of
+  spa: y–ramas–de, y–ramas–de–
+  hin: और–डालियां
+  arb: وَ–أَغْصانَ, وَ–أَغْصانَ–
+  kor: 그리고–가지들을
+  swa: na–matawi–ya
+
+### Sense 124269 (2 occurrences)
+Grammar: N-msc | 3ms
+  eng: leaf–its, its-leaf
+  spa: su–hoja, hoja–suya
+  hin: पत्ते–उसके, उसका–पत्ता
+  arb: وَرَقُهُ
+  kor: 그의–잎이
+  swa: majani–yake, jani–lake
+
+### Sense 124270 (2 occurrences)
+Grammar: Conj-w | N-msc | 3ms
+  eng: and–its–leaf, and–its-leaf
+  spa: y–su–hoja
+  hin: और–जिसके–पत्ते, और–उसका–पत्ता
+  arb: وَ–وَرَقُهُ
+  kor: 그리고–그의–잎이, 그리고–그–의–잎사귀–가
+  swa: wake, na–jani–lake
+
+### Sense 124271 (1 occurrences)
+Grammar: Conj-w, Prep-k, Art | N-ms
+  eng: but–like–a–leaf
+  spa: y–como–hoja
+  hin: और–जैसे–पत्ते
+  arb: وَ–كَ–وَرَقَةٍ
+  kor: 그러나–잎–같이
+  swa: lakini–kama–jani
+
+### Sense 124272 (1 occurrences)
+Grammar: N-msc | 3fs
+  eng: its–leaf
+  spa: su–follaje
+  hin: पत्ते
+  arb: أَورَاقُهَا
+  kor: 그–잎이
+  swa: majani–yake
+
+### Sense 124273 (1 occurrences)
+Grammar: N-ms
+  eng: of–a–leaf
+  spa: una–hoja
+  hin: पत्ता
+  arb: وَرَقَةٍ
+  kor: 잎이
+  swa: jani
+
+### Sense 124274 (1 occurrences)
+Grammar: Prep-k, Art | N-ms
+  eng: like–a–leaf
+  spa: como–hoja
+  hin: पत्ते–की–तरह
+  arb: كَ–الْوَرَقِ
+  kor: 나뭇잎처럼
+  swa: kama–jani
+
+### Sense 124275 (1 occurrences)
+Grammar: N-ms
+  eng: leaf
+  spa: una–hoja
+  hin: पत्ते–की
+  arb: وَرَقَةٍ
+  kor: 잎의
+  swa: jani
+
+### Sense 124276 (1 occurrences)
+Grammar: Conj-w, Art | N-ms
+  eng: and–the–leaf
+  spa: y–la–hoja
+  hin: और–पत्ते
+  arb: وَالـ–وَرَقُ
+  kor: 그리고–잎이
+  swa: na–majani
+
+### Sense 124277 (1 occurrences)
+Grammar: N-mpc
+  eng: branches–of
+  spa: ramas–de–
+  hin: डालियां
+  arb: أَغْصانَ–
+  kor: 가지들을
+  swa: matawi–ya
+
+### Sense 124278 (1 occurrences)
+Grammar: N-msc
+  eng: leaf-of
+  spa: hoja–de
+  hin: पत्ते
+  arb: وَرَقَ
+  kor: 잎
+  swa: majani–ya
+
+### Sense 124279 (1 occurrences)
+Grammar: N-msc
+  eng: leaf-of–
+  spa: hoja–de–
+  hin: पत्ता-
+  arb: وَرَقَةُ
+  kor: 잎
+  swa: jani–la
+
+### Sense 124280 (1 occurrences)
+Grammar: Art | N-ms
+  eng: ?–leaf
+  spa: ¿A–hoja
+  hin: क्या–पत्ते–को
+  arb: هَلْ–وَرَقَةً
+  kor: 잊–을–
+  swa: jani
+
+## Task
+
+Group these 13 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

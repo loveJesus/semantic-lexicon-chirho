@@ -1,0 +1,145 @@
+# Sense Merge Task for H3342
+
+Lemma: H3342 (POS: Art | N-mp)
+Total occurrences: 16
+Current sense count: 13
+
+This Hebrew/Greek lemma has been over-split into 13 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 103525 (2 occurrences)
+Grammar: Art | N-ms,N-ms
+  eng: winepress, the–winepress
+  spa: lagar, el–lagar
+  hin: दाखरस–कुंड–की, दाखरस–कुंड
+  arb: الْمَعْصَرَةِ
+  kor: 포도주–틀, 그–포도주–틀
+  swa: ya–shinikizo–la–divai, shinikizo–la–divai
+
+### Sense 103526 (2 occurrences)
+Grammar: Conj-w, Prep-m | N-msc | 2ms
+  eng: and–from–your–winepress, and–from–your-winepress
+  spa: y–de–tu–lagar
+  hin: और–से–कुंड–तेरे
+  arb: وَ–مِنْ–مَعْصَرَتِكَ
+  kor: 그리고–에서–네–포도주틀, 그리고–너의–포도–틀에서
+  swa: na–kutoka–shinikizo–lako–la–divai
+
+### Sense 103527 (2 occurrences)
+Grammar: Art | N-mp
+  eng: the–vats
+  spa: los–lagares
+  hin: हौद, कुंड
+  arb: المَعاصِرُ
+  kor: 그–포도즙–틀들–이
+  swa: mashinikizo–ya–divai
+
+### Sense 103528 (1 occurrences)
+Grammar: Prep-b | N-proper-fs
+  eng: at–winepress-of–
+  spa: en–lagar–de
+  hin: कोल्हू–पर
+  arb: عِنْدَ-مَعْصَرَة
+  kor: 술톻에서
+  swa: kwenye–Shinikizo–la–Divai–la–
+
+### Sense 103529 (1 occurrences)
+Grammar: N-mpc | 2ms
+  eng: your–vats
+  spa: tus–lagares
+  hin: कोल्हू–तेरे
+  arb: مَعَاصِرُكَ
+  kor: 네–포도–통–들–이
+  swa: mashinikizo–yako
+
+### Sense 103530 (1 occurrences)
+Grammar: Prep-b, Art | N-mp
+  eng: in–the–presses
+  spa: en–los–lagares
+  hin: कुण्डों–में
+  arb: فِي–الْمَعَاصِرِ
+  kor: 포도즙–틀에서
+  swa: hatakamuawala–kusagwa
+
+### Sense 103531 (1 occurrences)
+Grammar: Conj-w | N-ms
+  eng: and–winepress
+  spa: y–lagar
+  hin: और–दाखरसकुण्ड
+  arb: وَالمِعصَرَةُ
+  kor: 그리고–포도짠는–통이
+  swa: na–shinikizo–la–divai
+
+### Sense 103532 (1 occurrences)
+Grammar: N-mpc
+  eng: winepresses–of
+  spa: lagares–de
+  hin: कुण्डों
+  arb: مَعَاصِرِ
+  kor: 포도–집들
+  swa: mashinikizo–ya–divai–ya
+
+### Sense 103533 (1 occurrences)
+Grammar: N-mp
+  eng: winepresses
+  spa: los–lagares
+  hin: हौदों–में
+  arb: مَعَاصِرَ
+  kor: 술틀들을
+  swa: mashinikizo–ya–divai
+
+### Sense 103534 (1 occurrences)
+Grammar: Art | N-ms
+  eng: the–winepress
+  spa: lagar?
+  hin: हय्याकेव
+  arb: الْمِعْصَرَةِ
+  kor: 포도주틀
+  swa: shinikizo–la–divai
+
+### Sense 103535 (1 occurrences)
+Grammar: Prep-m | N-mp
+  eng: from–the–vats
+  spa: de–lagares
+  hin: से–कुंडों
+  arb: مِنَ–الْمَعَاصِرِ
+  kor: 포도–틀에서
+  swa: kutoka–shinikizo–la–divai
+
+### Sense 103536 (1 occurrences)
+Grammar: N-ms
+  eng: winepress
+  spa: lagar
+  hin: रसकुंड
+  arb: مَعصَرَةً
+  kor: 포도틀을
+  swa: shinikizo–la–divai
+
+### Sense 103537 (1 occurrences)
+Grammar: Art | N-ms
+  eng: the–wine–vat
+  spa: el–lagar
+  hin: कुंड
+  arb: الْمِعْصَرَةِ
+  kor: 포도틀
+  swa: shinikizo–la–divai
+
+## Task
+
+Group these 13 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

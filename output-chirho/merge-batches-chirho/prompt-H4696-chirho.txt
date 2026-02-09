@@ -1,0 +1,127 @@
+# Sense Merge Task for H4696
+
+Lemma: H4696 (POS: Conj-w | N-msc)
+Total occurrences: 13
+Current sense count: 11
+
+This Hebrew/Greek lemma has been over-split into 11 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 113762 (2 occurrences)
+Grammar: N-msc | 2ms
+  eng: forehead-of-you
+  spa: frente–de–ti
+  hin: तेरा–माथा
+  arb: جَبْهَتَكَ
+  kor: 너의–이마를
+  swa: paji–lako–la–uso
+
+### Sense 113763 (2 occurrences)
+Grammar: Prep-b | N-msc | 3ms
+  eng: on–his–forehead
+  spa: en–frente–su
+  hin: उसके–माथे–पर
+  arb: بِـ–جَبْهَتِهِ
+  kor: 에–그–이마
+  swa: katika–paji–lake
+
+### Sense 113764 (1 occurrences)
+Grammar: N-msc | 3ms
+  eng: his–forehead
+  spa: su-frente
+  hin: उसके–माथे
+  arb: جَبهَتِهِ
+  kor: 그의–이마에
+  swa: paji–lake
+
+### Sense 113765 (1 occurrences)
+Grammar: N-msc | 3mp
+  eng: forehead-of-them
+  spa: frente–de–ellos
+  hin: उनके–माथे
+  arb: جَبْهاتِهِمْ
+  kor: 그들의–이마
+  swa: paji–lao–la–uso
+
+### Sense 113766 (1 occurrences)
+Grammar: N-mpc
+  eng: foreheads-of
+  spa: frentes–de
+  hin: माथे
+  arb: جِباهِ
+  kor: 이마들에
+  swa: mapaji–ya–uso
+
+### Sense 113767 (1 occurrences)
+Grammar: Conj-w | N-msc | 2ms
+  eng: and–your–forehead
+  spa: y–tu–frente
+  hin: और–तेरा–माथा
+  arb: وَ–جَبْهَتُكَ
+  kor: 그리고–네–이마가
+  swa: na–paji–lako
+
+### Sense 113768 (1 occurrences)
+Grammar: Conj-w | N-msc
+  eng: yet–the–forehead
+  spa: Y–frente–de
+  hin: और–माथा
+  arb: وَ–جَبْهَةُ
+  kor: 그리고–이마가
+  swa: na–paji–la–uso–wa
+
+### Sense 113769 (1 occurrences)
+Grammar: Prep-b | N-msc | 3ms
+  eng: into–forehead–his
+  spa: en–frente–suya
+  hin: उस्के-मअथे-मेइन
+  arb: بِـ–جَبْهَتِهِ
+  kor: 그의–이마에
+  swa: usoni–mwake
+
+### Sense 113770 (1 occurrences)
+Grammar: N-ms
+  eng: forehead
+  spa: frente
+  hin: माथा
+  arb: الـ–جَبْهَةِ
+  kor: 이마의
+  swa: wa–paji–la–uso
+
+### Sense 113771 (1 occurrences)
+Grammar: N-msc
+  eng: forehead-of
+  spa: frente-de
+  hin: माथे
+  arb: جَبهَةِ
+  kor: 이마에
+  swa: paji
+
+### Sense 113772 (1 occurrences)
+Grammar: N-msc | 3ms
+  eng: forehead–his
+  spa: frente–suya
+  hin: उस्के-मअथे-कि
+  arb: جَبْهَتِهِ
+  kor: 그의–이마
+  swa: uso–wake
+
+## Task
+
+Group these 11 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

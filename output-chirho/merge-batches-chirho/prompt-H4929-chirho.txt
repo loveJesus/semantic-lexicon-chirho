@@ -1,0 +1,127 @@
+# Sense Merge Task for H4929
+
+Lemma: H4929 (POS: Art | N-ms)
+Total occurrences: 22
+Current sense count: 11
+
+This Hebrew/Greek lemma has been over-split into 11 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 114890 (5 occurrences)
+Grammar: N-ms
+  eng: watch
+  spa: guardia, turno
+  hin: पहरा, दल–के–साथ, दल
+  arb: يَحرُسونَ, حِرَاسَةٍ, حِرَاسَةٌ
+  kor: 경비, 반차에, 반차를
+  swa: zamu
+
+### Sense 114891 (4 occurrences)
+Grammar: Prep-b | N-msc,Prep-b | N-ms
+  eng: in–custody-of, in–custody
+  spa: en–custodia–de, en–custodia
+  hin: पहरे–में
+  arb: فِي–حِرَاسَةِ, فِي–الْ–حِرَاسَةِ
+  kor: 감시–에, 에–감옥
+  swa: nyumbani, mtaka–kuzuia, katika–ulinzi
+
+### Sense 114892 (3 occurrences)
+Grammar: N-ms
+  eng: guard
+  spa: guardia, guardia?
+  hin: पहरा, पहरेदार
+  arb: حَرَسًا, حارِسًا
+  kor: 파수를, 파수꾼을, 감시를
+  swa: walinzi, ulinzi
+
+### Sense 114893 (2 occurrences)
+Grammar: Prep-b, Art | N-ms
+  eng: in–the–custody, in–the-custody
+  spa: en–la–prisión, en–la–custodia
+  hin: में–कारागार, पहरे–में
+  arb: فِي–الْ–حِرَاسَةِ, فِي–الْحَبْسِ
+  kor: 그–감금–에, 감시–안에
+  swa: kizuizini, kifungoni
+
+### Sense 114894 (2 occurrences)
+Grammar: Art | N-ms
+  eng: the–guard
+  spa: la–guardia
+  hin: पहरे–के, पहरा
+  arb: الْحِرَاسَةَ, الْحَرَسِ
+  kor: 보초를, 그–파수의
+  swa: ulinzi
+
+### Sense 114895 (1 occurrences)
+Grammar: N-ms
+  eng: custody
+  spa: custodia
+  hin: पहरा
+  arb: حِرَاسَةٍ
+  kor: 감시
+  swa: kuzuia
+
+### Sense 114896 (1 occurrences)
+Grammar: Conj-w, Prep-b | N-mpc | 3ms
+  eng: and–in–its–watches
+  spa: y–en–servicios–de–él
+  hin: और–उसकी–सेवाओं–के–लिए
+  arb: وَفِي–حِرَاسَتِهِ
+  kor: 그리고–에–직무들에
+  swa: na–katika–utumishi–wake
+
+### Sense 114897 (1 occurrences)
+Grammar: N-msc | 2mp
+  eng: your-custody
+  spa: custodia–vuestra
+  hin: तुम्हारे–पहरे–के
+  arb: حِرَاسَتِكُمْ
+  kor: 너희의–감시의
+  swa: nyumba
+
+### Sense 114898 (1 occurrences)
+Grammar: Prep-l | N-ms
+  eng: as–guard
+  spa: por–guardia.
+  hin: रक्षक
+  arb: حَارِسًا
+  kor: 호위로
+  swa: mlinzi
+
+### Sense 114899 (1 occurrences)
+Grammar: Prep-b | N-msc | 3ms
+  eng: at–his–post
+  spa: en–su–guardia
+  hin: अपने–पहरे–पर
+  arb: فِي–حِراسَتِهِ
+  kor: 그의–파수–에서
+  swa: katika–walinzi–wake
+
+### Sense 114900 (1 occurrences)
+Grammar: N-ms
+  eng: guarding
+  spa: cosa–guardada
+  hin: पहरेदारी
+  arb: حِفْظٍ
+  kor: 보호–로
+  swa: ulinzi
+
+## Task
+
+Group these 11 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

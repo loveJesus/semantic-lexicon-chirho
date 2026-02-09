@@ -1,0 +1,127 @@
+# Sense Merge Task for H6900
+
+Lemma: H6900 (POS: N-fsc | 3ms)
+Total occurrences: 14
+Current sense count: 11
+
+This Hebrew/Greek lemma has been over-split into 11 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 130849 (3 occurrences)
+Grammar: Prep-b | N-fsc | 3ms
+  eng: in–his–tomb, in–his-tomb
+  spa: en–su–sepulcro, en–sepultura–de–él
+  hin: बे–उसकी–क़ब्र–में, विक्वुरातो
+  arb: فِي–مَقْبَرَتِهِ, فِي–قَبْرِهِ, في–قَبْرِهِ
+  kor: 그의-묘실에, 그의–무덤에
+  swa: katika–kaburi–lake
+
+### Sense 130850 (2 occurrences)
+Grammar: N-fsc | 3fs
+  eng: her–grave
+  spa: su–sepultura
+  hin: उसकी–कब्र
+  arb: قَبْرِهَا
+  kor: 그것의–무덤의
+  swa: kaburi–lake
+
+### Sense 130851 (1 occurrences)
+Grammar: N-fsc | 3ms
+  eng: his–burial–place
+  spa: su–sepultura
+  hin: उसकी–कब्र
+  arb: قَبْرَهُ
+  kor: 그의–묘를
+  swa: kaburi–lake
+
+### Sense 130852 (1 occurrences)
+Grammar: N-fs
+  eng: burial
+  spa: sepultura
+  hin: कब्र
+  arb: دَفْنٌ
+  kor: 매장
+  swa: maziko
+
+### Sense 130853 (1 occurrences)
+Grammar: N-fsc
+  eng: tomb-of
+  spa: tumba–de
+  hin: कब्र–के
+  arb: قَبْرِ
+  kor: 무덤의
+  swa: kaburi-la
+
+### Sense 130854 (1 occurrences)
+Grammar: N-fsc | 3fs
+  eng: her–grave
+  spa: sepultura–de–ella
+  hin: उसकी–कब्र
+  arb: قَبْرِ–ها
+  kor: 그녀의–무덤의
+  swa: zipate
+
+### Sense 130855 (1 occurrences)
+Grammar: N-fsc
+  eng: grave–of–
+  spa: sepultura-de–
+  hin: कब्र–
+  arb: قَبْرِ
+  kor: 무덤의
+  swa: zipate
+
+### Sense 130856 (1 occurrences)
+Grammar: Prep-b | N-fsc | 3mp
+  eng: in–burial–their
+  spa: en–su–sepultura
+  hin: कब्र–में–उनकी
+  arb: فِي–قَبْرِهِمْ
+  kor: 그들의–무덤에
+  swa: katika–kaburi–lao
+
+### Sense 130857 (1 occurrences)
+Grammar: Art | N-fs
+  eng: the–burial
+  spa: la–sepultura
+  hin: कब्रिस्तान–की
+  arb: الْمَدْفَنِ
+  kor: 그–무덤의
+  swa: makaburi
+
+### Sense 130858 (1 occurrences)
+Grammar: Prep-b | N-fs
+  eng: in–burial
+  spa: en–sepultura
+  hin: दफन–में
+  arb: فِي–الْقَبْرِ
+  kor: 장사–에서
+  swa: kwa–sababu
+
+### Sense 130859 (1 occurrences)
+Grammar: N-fsc
+  eng: Burial-of
+  spa: Sepultura–de
+  hin: गाड़ने
+  arb: دَفْنَةَ
+  kor: 의–매장이
+  swa: Maziko–ya
+
+## Task
+
+Group these 11 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

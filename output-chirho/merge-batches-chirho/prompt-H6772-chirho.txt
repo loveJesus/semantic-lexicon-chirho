@@ -1,0 +1,126 @@
+# Sense Merge Task for H6772
+
+Lemma: H6772 (POS: Prep-l | N-msc | 3mp)
+Total occurrences: 17
+Current sense count: 11
+
+This Hebrew/Greek lemma has been over-split into 11 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 130196 (6 occurrences)
+Grammar: Prep-b, Art | N-ms
+  eng: with–the–thirst, with–thirst, of–thirst
+  spa: de–sed, con–la–sed
+  hin: प्यास–से, से–प्यास, में–प्यास।
+  arb: بِ–الْعَطَشِ, بِ–العَطَشِ, بِـ–الظَّمَأِ
+  kor: 에–갈증으로, 에–목마름, 에–그–갈증으로
+  swa: kwa–kiu
+
+### Sense 130197 (2 occurrences)
+Grammar: Prep-l | N-msc | 3mp
+  eng: for–their–thirst
+  spa: para–sed–de–ellos
+  hin: उनकी–प्यास–के–लिए
+  arb: لِ–عَطَشِهِمْ
+  kor: 그들의–목마름–을–위하여
+  swa: kwa–kiu–yao
+
+### Sense 130198 (1 occurrences)
+Grammar: N-msc | 3mp
+  eng: their–thirst
+  spa: su–sed
+  hin: अपनी–प्यास
+  arb: ظَمأَها
+  kor: 그들–의–갈증–을
+  swa: kiu–yao
+
+### Sense 130199 (1 occurrences)
+Grammar: Conj-w | N-ms
+  eng: and–thirst
+  spa: y–sed
+  hin: और–प्यासी
+  arb: وَعَطْشَى
+  kor: 그리고–목마른
+  swa: na–yenye–kiu
+
+### Sense 130200 (1 occurrences)
+Grammar: N-ms
+  eng: thirst
+  spa: sed
+  hin: प्यास–से
+  arb: عَطَشًا
+  kor: 갈증으로
+  swa: kiu
+
+### Sense 130201 (1 occurrences)
+Grammar: N-ms
+  eng: a–thirst
+  spa: sed
+  hin: प्यास
+  arb: عَطَشًا
+  kor: 갈증이
+  swa: kiu
+
+### Sense 130202 (1 occurrences)
+Grammar: Prep-b, Art | N-ms
+  eng: in–thirst
+  spa: en–sed
+  hin: में–प्यास
+  arb: فِي–الظَّمَأِ
+  kor: 갈증에–
+  swa: kwa–kiu
+
+### Sense 130203 (1 occurrences)
+Grammar: Conj-w, Prep-b | N-ms
+  eng: and-in-thirst
+  spa: y–en–sed
+  hin: और–प्यास–में
+  arb: وَبِ–عَطَشٍ
+  kor: 그리고–목마름으로
+  swa: na–kwa–kiu
+
+### Sense 130204 (1 occurrences)
+Grammar: Conj-w, Prep-b | N-ms
+  eng: and–by–thirst
+  spa: y–en–sed
+  hin: और–प्यास–से
+  arb: وَ–بِالْعَطَشِ
+  kor: 그리고–에–목마름
+  swa: wּbtsama
+
+### Sense 130205 (1 occurrences)
+Grammar: Prep-b, Art | N-ms
+  eng: by–the–thirst
+  spa: con–la–sed
+  hin: से–प्यास
+  arb: بِ–الْعَطَشِ
+  kor: 목마름–으로
+  swa: kwa–kiu
+
+### Sense 130206 (1 occurrences)
+Grammar: Conj-w, Prep-l | N-msc | 1cs
+  eng: and–for–my–thirst
+  spa: y–para–mi–sed
+  arb: وَ–لِ–عَطَشي
+  kor: 그리고–나–의–목마름–에
+  swa: na–kwa-kiu-yangu
+
+## Task
+
+Group these 11 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

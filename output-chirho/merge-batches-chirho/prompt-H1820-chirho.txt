@@ -1,0 +1,136 @@
+# Sense Merge Task for H1820
+
+Lemma: H1820 (POS: V-Qal-Perf-1cs)
+Total occurrences: 16
+Current sense count: 12
+
+This Hebrew/Greek lemma has been over-split into 12 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 91849 (3 occurrences)
+Grammar: V-Nifal-Prtcpl-ms,V-Nifal-InfAbs,V-Nifal-Perf-3ms
+  eng: is-cut-off, being-cut-off
+  spa: será–destruido, destruido, destruida
+  hin: नाश–होगा, नाश–किया–गया
+  arb: يُقطَعُ, هَلَكَ, قَطعًا
+  kor: 끊기리라
+  swa: kabisa, imekatiliwa–mbali, atakatiliwa–mbali
+
+### Sense 91850 (2 occurrences)
+Grammar: V-Nifal-Perf-3ms
+  eng: it-is-ruined
+  spa: fue–arrasada
+  hin: नष्ट-हुआ
+  arb: صَمَتَتْ
+  kor: 파괴되었도다
+  swa: umeangamizwa
+
+### Sense 91851 (2 occurrences)
+Grammar: V-Nifal-Perf-3cp
+  eng: that–perish
+  spa: perecen
+  hin: नाश–होते–हैं
+  arb: يُهْلَكون
+  kor: 잘리웠도다
+  swa: wanaoangamia
+
+### Sense 91852 (1 occurrences)
+Grammar: V-Nifal-Perf-1cs
+  eng: I-am-ruined
+  spa: estoy-perdido
+  hin: मैं–नाश–हो–गया
+  arb: هَلَكتُ
+  kor: 나는–망했도다
+  swa: nimeangamia
+
+### Sense 91853 (1 occurrences)
+Grammar: V-Nifal-Perf-3ms
+  eng: is–destroyed
+  spa: ha–sido–destruido
+  hin: नाश–हो–गई–है
+  arb: هَلَكَ
+  kor: 망했다
+  swa: wameangamia
+
+### Sense 91854 (1 occurrences)
+Grammar: V-Qal-Imperf-3fp
+  eng: let–them–cease
+  spa: cesen
+  hin: रुकेंगी
+  arb: تَكُفُّ
+  kor: 그치게
+  swa: kuisha
+
+### Sense 91855 (1 occurrences)
+Grammar: V-Nifal-Perf-3cp
+  eng: Are–destroyed
+  spa: Es–destruido
+  hin: नाश–होगई
+  arb: هَلَكَ
+  kor: 멸망당했다
+  swa: Wameangamizwa
+
+### Sense 91856 (1 occurrences)
+Grammar: V-Nifal-Perf-3fs
+  eng: is–silenced
+  spa: ha–sido–destruida
+  hin: नाश–हुई
+  arb: هَلَكَتْ
+  kor: 침묵해졌다
+  swa: imekatiliwa
+
+### Sense 91857 (1 occurrences)
+Grammar: V-Qal-Imperf-3fs
+  eng: ceases
+  spa: cesa
+  hin: रुकती
+  arb: تَسْكُتُ
+  kor: 그것–이–멈추리라
+  swa: kuacha
+
+### Sense 91858 (1 occurrences)
+Grammar: Conj-w | V-Qal-ConjPerf-1cs
+  eng: and–I–will–destroy
+  spa: y–destruiré
+  hin: और–नाश–करूँगा
+  arb: وَأُهلِكُ
+  kor: 그리고–멸하겠다
+  swa: na–nitamwangamiza
+
+### Sense 91859 (1 occurrences)
+Grammar: V-Qal-Perf-1cs
+  eng: I–have–destroyed
+  spa: destruiré
+  hin: मैंने–नष्ट–किया–है
+  arb: شَبَّهْتُ
+  kor: 멸하였다–내가
+  swa: nitamwangamiza
+
+### Sense 91860 (1 occurrences)
+Grammar: V-Nifal-Perf-2ms
+  eng: you-have-been-destroyed
+  spa: fuiste–destruido
+  hin: तू–नाश–हुआ
+  arb: هلكت
+  kor: 망했는가
+  swa: umeangamizwa
+
+## Task
+
+Group these 12 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

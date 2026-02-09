@@ -1,0 +1,118 @@
+# Sense Merge Task for H6806
+
+Lemma: H6806 (POS: N-ms)
+Total occurrences: 14
+Current sense count: 10
+
+This Hebrew/Greek lemma has been over-split into 10 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 130330 (3 occurrences)
+Grammar: N-mpc | 1cs
+  eng: my–steps, steps-my
+  spa: mis–pasos
+  hin: मेरे–कदम, कदमों–मेरे, कदमों–अपने–की
+  arb: خُطواتِي, خُطُوَاتِي
+  kor: 나의–발걸음들의, 나의–발걸음들을, 나의–걸음을
+  swa: hatua–zangu, ya–hatua–zangu
+
+### Sense 130331 (2 occurrences)
+Grammar: N-msc | 1cs
+  eng: my–step
+  spa: mi–paso
+  hin: मेरे–कदम, कदम–मेरा
+  arb: خُطُوَاتِي
+  kor: 발걸음–을, 나의–걸음을
+  swa: hatua–zangu, hatua–yangu
+
+### Sense 130332 (2 occurrences)
+Grammar: N-mpc | 3ms,N-msc | 3ms
+  eng: his–steps, his–step
+  spa: sus–pasos, pasos–sus
+  hin: कदम–को, कदमों–उसके
+  arb: خُطْوَتَهُ, خُطواتِهِ
+  kor: 그의–발걸음들을, 걸음–을–그–의
+  swa: hatua–zake
+
+### Sense 130333 (1 occurrences)
+Grammar: N-mpc | 1cp
+  eng: our–steps
+  spa: nuestros–pasos
+  hin: हमारे–कदमों–को
+  arb: خُطُوَاتِنَا
+  kor: 우리–발걸음들–을
+  swa: hatua–zetu
+
+### Sense 130334 (1 occurrences)
+Grammar: N-ms
+  eng: stride
+  spa: en–paso
+  hin: कदम
+  arb: خَطْوٍ
+  kor: 걸음을
+  swa: za–kutembea
+
+### Sense 130335 (1 occurrences)
+Grammar: N-mpc | 3fs
+  eng: her–steps
+  spa: sus–pasos
+  hin: कदम–उसके
+  arb: خُطُوَاتُهَا
+  kor: 그녀–의–걸음–들–은
+  swa: hatua–zake
+
+### Sense 130336 (1 occurrences)
+Grammar: N-mp
+  eng: steps
+  spa: pasos
+  hin: कदम
+  arb: خُطُوَاتٍ
+  kor: 걸음
+  swa: hatua
+
+### Sense 130337 (1 occurrences)
+Grammar: N-mpc
+  eng: the–steps–of
+  spa: pasos–de
+  hin: उसकी–शक्ति–के–कदम
+  arb: خُطُوَاتُ
+  kor: 발걸음들이
+  swa: hatua–za
+
+### Sense 130338 (1 occurrences)
+Grammar: N-msc | 3ms
+  eng: his–steps
+  spa: paso–su
+  hin: उसके–कदम
+  arb: خُطْوَتِهِ
+  kor: 그의–발걸음을
+  swa: hatua–zake
+
+### Sense 130339 (1 occurrences)
+Grammar: N-msc | 2ms
+  eng: your–step
+  spa: tus–pasos
+  hin: चाल–तेरी
+  arb: خُطْوَتُكَ
+  kor: 네–걸음–이
+  swa: hatua–zako
+
+## Task
+
+Group these 10 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

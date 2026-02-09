@@ -1,0 +1,143 @@
+# Sense Merge Task for H6789
+
+Lemma: H6789 (POS: V-Hifil-Imperf-1cs | 3mp)
+Total occurrences: 15
+Current sense count: 13
+
+This Hebrew/Greek lemma has been over-split into 13 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 130277 (2 occurrences)
+Grammar: V-Hifil-Imperf-3ms | 3mp
+  eng: will–cut–them–off
+  spa: los–destruirá
+  hin: वह–नाश–करेगा–उन्हें
+  arb: يُبِيدُهُمْ
+  kor: 그들–을–끊으시리라
+  swa: atawakatilia–mbali
+
+### Sense 130278 (2 occurrences)
+Grammar: V-Hifil-Imperf-1cs
+  eng: I–will–destroy
+  spa: destruiré
+  hin: मैं–नाश–करूँगा
+  arb: أُبيد
+  kor: 내–가–끊으리라
+  swa: nitawaangamiza, nitamwangamiza
+
+### Sense 130279 (1 occurrences)
+Grammar: V-Nifal-Perf-3cp
+  eng: they-vanish
+  spa: desaparecen
+  hin: सूख–जाते–हैं
+  arb: تَنْقَطِعُ
+  kor: 끊어진다
+  swa: vinakauka
+
+### Sense 130280 (1 occurrences)
+Grammar: V-Nifal-Perf-1cs
+  eng: I–was–silenced
+  spa: fui–destruido
+  hin: मैं–नष्ट–हुआ
+  arb: أُصْمَتُ
+  kor: 끊어졌나니
+  swa: sikukatiliwa–mbali
+
+### Sense 130281 (1 occurrences)
+Grammar: V-Hifil-Imperf-2ms
+  eng: cut-off
+  spa: destruirás
+  hin: नाश–कर
+  arb: تُبِيدُ
+  kor: 끊으소서
+  swa: uwaangamize
+
+### Sense 130282 (1 occurrences)
+Grammar: V-Hifil-Perf-2ms
+  eng: You–put–an–end–to
+  spa: has–destruido
+  hin: तूने–नाश–कर–दिया–है
+  arb: أَهْلَكْتَ
+  kor: 멸하셨나이다
+  swa: unawaangamiza
+
+### Sense 130283 (1 occurrences)
+Grammar: V-Piel-Perf-3cp | 1cs
+  eng: have–destroyed–me
+  spa: me-destruyeron
+  hin: नाश–किया–मुझे
+  arb: أَهْلَكَتْنِي
+  kor: 나–를–끊었나이다
+  swa: vimeniangamiza
+
+### Sense 130284 (1 occurrences)
+Grammar: V-Piel-Perf-3fs | 1cs
+  eng: has–consumed–me
+  spa: Me–consumió
+  arb: أَفْنَتْنِي
+  kor: 소멸하였나이다–나–를
+  swa: imeniangamiza
+
+### Sense 130285 (1 occurrences)
+Grammar: V-Qal-Perf-3cp
+  eng: They–silenced
+  spa: Cortaron
+  hin: समाप्त–कर–दिया
+  arb: أَمَاتُوا
+  kor: 그들–이–끊었네
+  swa: Wameukata
+
+### Sense 130286 (1 occurrences)
+Grammar: V-Hifil-Imperf-1cs | 3mp
+  eng: I–destroyed
+  spa: los–destruiré
+  hin: नाश–करूँगा
+  arb: أُبِيدُهُمْ
+  kor: 멸하나이다
+  swa: nitawaangamiza
+
+### Sense 130287 (1 occurrences)
+Grammar: Conj-w | V-Hifil-ConsecImperf-
+  eng: and–I-destroy–them
+  spa: y–los–destruí
+  hin: और–नाश–करूंगा–उन्हें
+  arb: فَأُصْمِتُهُمْ
+  kor: 그리고–잘라–버렸다–그들을
+  swa: na–nikawaangamiza
+
+### Sense 130288 (1 occurrences)
+Grammar: V-Hifil-Imp-ms | 3mp
+  eng: destroy–them
+  spa: destrúyelos
+  hin: नाश–कर–उन्हें
+  arb: أَبِدهُم
+  kor: 멸하시소서
+  swa: uwaangamize
+
+### Sense 130289 (1 occurrences)
+Grammar: V-Hifil-Prtcpl-mpc | 1cs
+  eng: those–who–would–cut–me–off
+  spa: los–que–me–destruyen
+  arb: مُهْلِكيَّ
+  kor: 멸하려는–자–들–이
+  swa: wanaoniangamiza
+
+## Task
+
+Group these 13 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

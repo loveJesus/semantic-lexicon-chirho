@@ -1,0 +1,153 @@
+# Sense Merge Task for H4341
+
+Lemma: H4341 (POS: Prep-k | N-msc | 1cs)
+Total occurrences: 16
+Current sense count: 14
+
+This Hebrew/Greek lemma has been over-split into 14 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 111340 (2 occurrences)
+Grammar: N-ms
+  eng: pain
+  spa: dolor
+  hin: पीड़ा, दर्द
+  arb: وَجَعٌ, حُزْنًا
+  kor: 고통–이, 고통
+  swa: maumivu
+
+### Sense 111341 (2 occurrences)
+Grammar: N-msc | 1cs
+  eng: my–pain
+  spa: mi–dolor
+  hin: मेरी–पीड़ा, मेरा–दर्द
+  arb: وَجَعِي, أَلَمِي
+  kor: 내–고통–을, 나의–고통
+  swa: maumivu–yangu
+
+### Sense 111342 (1 occurrences)
+Grammar: N-mp
+  eng: pains
+  spa: dolores
+  hin: दुख
+  arb: أَحْزَانٌ
+  kor: 고통들
+  swa: maumivu
+
+### Sense 111343 (1 occurrences)
+Grammar: Prep-l | N-msc | 3fs
+  eng: for–her–pain
+  spa: para–su–dolor
+  hin: उसके–दर्द–के–लिए
+  arb: لِوَجَعِهَا
+  kor: 아픔을–그녀의–위한
+  swa: kwa–maumivu–yake
+
+### Sense 111344 (1 occurrences)
+Grammar: N-mpc | 3ms
+  eng: their-pains
+  spa: sus-dolores
+  hin: दुख–उनका
+  arb: آلَامَهُمْ
+  kor: 그들의–고통을
+  swa: maumivu–yake
+
+### Sense 111345 (1 occurrences)
+Grammar: N-mp
+  eng: are–sorrows
+  spa: dolores
+  hin: दुख
+  arb: آلاَمُ
+  kor: 고통이
+  swa: maumivu
+
+### Sense 111346 (1 occurrences)
+Grammar: N-msc
+  eng: the–pain–of
+  spa: dolor–de
+  arb: ألَمِ
+  kor: 고통–을
+  swa: maumivu
+
+### Sense 111347 (1 occurrences)
+Grammar: Conj-w | N-msc | 1cs
+  eng: and–my–pain
+  spa: y–mi–dolor
+  hin: और–दुख–मेरा
+  arb: وَوَجَعي
+  kor: 그리고–내–슬픔–이
+  swa: na–maumivu-yangu
+
+### Sense 111348 (1 occurrences)
+Grammar: Conj-w | N-mpc | 1cp
+  eng: and–our–pains
+  spa: y–nuestros–dolores
+  hin: और–हमारे–दुखोंको
+  arb: وَ–أَوْجَاعَنَا
+  kor: 그리고–우리의–아픔들을
+  swa: na–maumivu–yetu
+
+### Sense 111349 (1 occurrences)
+Grammar: Prep-k | N-msc | 1cs
+  eng: like–my–pain
+  spa: como–mi–dolor
+  hin: मेरे–दर्द–जैसा
+  arb: كَوَجَعِي
+  kor: 내–고통–같은
+  swa: kama–maumivu–yangu
+
+### Sense 111350 (1 occurrences)
+Grammar: N-mp
+  eng: pains
+  spa: dolores
+  hin: दुखोंका
+  arb: أَوْجَاعٍ
+  kor: 아픔들의
+  swa: maumivu
+
+### Sense 111351 (1 occurrences)
+Grammar: Conj-w | N-msc | 3ms
+  eng: and–his–pain
+  spa: y–su–dolor
+  hin: और–अपना–दुख
+  arb: وَ–وَجَعَهُ
+  kor: 그리고–그–의-아픔
+  swa: na–maumivu–yake
+
+### Sense 111352 (1 occurrences)
+Grammar: Prep-b | N-ms
+  eng: with–pain
+  spa: con–dolor
+  hin: दर्द–से
+  arb: بِ–أَلَمٍ
+  kor: 고통–으로
+  swa: kwa–maumivu
+
+### Sense 111353 (1 occurrences)
+Grammar: N-msc | 2fs
+  eng: your–pain
+  spa: tu–dolor
+  hin: तेरा–दर्द
+  arb: أَلَمُكِ
+  kor: 네–고통을
+  swa: maumivu–yako
+
+## Task
+
+Group these 14 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

@@ -1,0 +1,127 @@
+# Sense Merge Task for H7912
+
+Lemma: H7912 (POS: Conj-w | V-Hifil-ConjPerf-3mp)
+Total occurrences: 18
+Current sense count: 11
+
+This Hebrew/Greek lemma has been over-split into 11 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 140354 (5 occurrences)
+Grammar: V-Hitpael-Perf-3fs
+  eng: was-found, were-found
+  spa: fue–hallada, fue–hallado
+  hin: पाई–गई
+  arb: وُجِدَتْ, يُوجَدْ
+  kor: 발견되었나이다, 발견되었음이라, 발견되었더라
+  swa: yalipatikana, ulipatikana, patikana
+
+### Sense 140355 (2 occurrences)
+Grammar: V-Hitpael-Perf-3ms
+  eng: was-found
+  spa: fue–hallado, fue–hallada
+  hin: मिला, पाई–गई
+  arb: يُوجَدْ
+  kor: 발견되지, 발견되었으니
+  swa: kupatikana, hakupatikana
+
+### Sense 140356 (2 occurrences)
+Grammar: Conj-w | V-Hifil-ConjPerf-3mp
+  eng: and–found
+  spa: y–hallaron
+  hin: और–पाया–गया, और–पाया
+  arb: وَ–وَجَدُوا
+  kor: 그리고–발견하였다, 그리고–발견하니
+  swa: na–wakapata, na–wakamkuta
+
+### Sense 140357 (2 occurrences)
+Grammar: Prep-l | V-Hifil-Inf
+  eng: to–find
+  spa: para–hallar, hallar
+  hin: पाने–को, पाने–के–लिए
+  arb: لِيَجِدُوا, أَنْ–يَجِدُوا
+  kor: 찾으려, 찾기–를
+  swa: kupata
+
+### Sense 140358 (1 occurrences)
+Grammar: V-Hifil-Perf-1cp
+  eng: we-find-it
+  spa: la–hallemos
+  hin: हम–पाएं
+  arb: أَنْ–نَجِدَهَا
+  kor: 찾으리라
+  swa: tupate
+
+### Sense 140359 (1 occurrences)
+Grammar: Conj-w | V-Hitpael-ConjPerf-2m
+  eng: and–found
+  spa: y–fuiste–hallado
+  hin: और–पाया–गया–है
+  arb: وَ–وُجِدْتَ
+  kor: 그리고–발견되었나이다
+  swa: na–umepatikana
+
+### Sense 140360 (1 occurrences)
+Grammar: V-Hifil-Imperf-1cp
+  eng: we-will-find
+  spa: hallaremos
+  hin: हम–पाएंगे
+  arb: نَجِدَ
+  kor: 찾으리라
+  swa: pata
+
+### Sense 140361 (1 occurrences)
+Grammar: V-Hifil-Perf-1cs
+  eng: I-have-found
+  spa: he–hallado
+  hin: पाया–है–मैंने
+  arb: وَجَدْتُ
+  kor: 내가–찾았다
+  swa: nimepata
+
+### Sense 140362 (1 occurrences)
+Grammar: Conj-w | V-Hitpael-ConjPerf-3m
+  eng: and–was–found
+  spa: y–fue–encontrado
+  hin: और–पाया–गया
+  arb: وَ–وُجِدَتْ
+  kor: 그리고–발견되었다
+  swa: na–ilipatikana
+
+### Sense 140363 (1 occurrences)
+Grammar: V-Hifil-Imperf-2ms
+  eng: you–find
+  spa: halles
+  hin: तू–पाए
+  arb: تَجِدُها
+  kor: 발견하다
+  swa: utapata
+
+### Sense 140364 (1 occurrences)
+Grammar: Conj-w | V-Hifil-ConjImperf-2m
+  eng: and–you–will–find
+  spa: y–hallarás
+  hin: और–आप–पाएंगे
+  arb: وَ–تَجِدَ
+  kor: 그리고–발견하라
+  swa: na–utapata
+
+## Task
+
+Group these 11 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

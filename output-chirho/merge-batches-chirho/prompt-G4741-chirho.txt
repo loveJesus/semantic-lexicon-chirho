@@ -1,0 +1,118 @@
+# Sense Merge Task for G4741
+
+Lemma: G4741 (POS: V-RPM/P-AMP)
+Total occurrences: 13
+Current sense count: 10
+
+This Hebrew/Greek lemma has been over-split into 10 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 76730 (2 occurrences)
+Grammar: V-AMA-2S
+  eng: strengthen
+  spa: fortalece
+  hin: स्थिर–कर, मज़बूत–कर
+  arb: ثَبِّتْ
+  kor: 굳히–하라, 굳게하라
+  swa: waimarishe, uyaimarishe
+
+### Sense 76731 (2 occurrences)
+Grammar: V-FIA-3S
+  eng: will–establish
+  spa: os–afirmará, confirmará
+  hin: स्थिर–करेगा, द्रिध–करेग
+  arb: يُثَبِّتُكُم, سَيُثَبِّتُ
+  kor: 굳게–하실–것이다, 굳게–하시고
+  swa: atawaimarisha
+
+### Sense 76732 (2 occurrences)
+Grammar: V-ANA
+  eng: to–establish
+  spa: fortalecer
+  hin: द्रिध–करन
+  arb: أنْ–يُثَبِّتَ
+  kor: 굳게–하기–위해, 굳게–세우시기–위하여
+  swa: kuziimarisha, kuwaimarisha
+
+### Sense 76733 (1 occurrences)
+Grammar: V-RIM/P-3S
+  eng: has-been-fixed
+  spa: está–fijado
+  hin: स्थिर–की–गई–है
+  arb: قَدْ–ثُبِّتَتْ
+  kor: 놓였다
+  swa: limewekwa
+
+### Sense 76734 (1 occurrences)
+Grammar: V-ANA
+  eng: to-establish
+  spa: confirmar
+  hin: दृढ़–करने–में
+  arb: يُثَبِّتَكُمْ،
+  kor: 굳게–하다
+  swa: kuwathibitisha,
+
+### Sense 76735 (1 occurrences)
+Grammar: V-AIA-3S
+  eng: set
+  spa: afirmó
+  hin: स्थिर–किया
+  arb: ثَبَّتَ
+  kor: 굳게–하셨다
+  swa: aliuweka–imara
+
+### Sense 76736 (1 occurrences)
+Grammar: V-RPM/P-AMP
+  eng: having-been-established
+  spa: habiendo–sido–confirmados
+  hin: स्थिर–किए–गए
+  arb: راسِخينَ
+  kor: 굳게–선–자들이라
+  swa: mkiimarishwa
+
+### Sense 76737 (1 occurrences)
+Grammar: V-AMA-2P
+  eng: strengthen
+  spa: afirmad
+  hin: स्थिर-करो
+  arb: ثَبِّتوا
+  kor: 굳게–하라
+  swa: imarisheni
+
+### Sense 76738 (1 occurrences)
+Grammar: V-AOA-3S
+  eng: may–establish
+  spa: confirme
+  hin: द्रिध–करे
+  arb: يُثَبِّتَ
+  kor: 굳게–하시기를
+  swa: awaimarishe
+
+### Sense 76739 (1 occurrences)
+Grammar: V-ANP
+  eng: to–be–strengthened
+  spa: ser–fortalecidos
+  hin: स्थिर–होने
+  arb: تَثبُتوا
+  kor: 굳건하게–되기–를
+  swa: kuimarishwa
+
+## Task
+
+Group these 10 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

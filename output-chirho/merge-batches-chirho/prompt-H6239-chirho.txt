@@ -1,0 +1,163 @@
+# Sense Merge Task for H6239
+
+Lemma: H6239 (POS: Prep-l | N-ms)
+Total occurrences: 37
+Current sense count: 15
+
+This Hebrew/Greek lemma has been over-split into 15 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 126682 (18 occurrences)
+Grammar: N-ms,Art | N-ms
+  eng: riches, wealth, the–riches
+  spa: riquezas, riqueza, las–riquezas
+  hin: धन, धन–से, धन–को
+  arb: غِنًى, غِنىً, وَكُنُوزًا
+  kor: 부, 부를, 부–와
+  swa: utajiri, osher, mtu
+
+### Sense 126683 (3 occurrences)
+Grammar: Conj-w, Art | N-ms,Conj-w | N-ms
+  eng: and–riches, And–the–riches
+  spa: y–riqueza, Y–la–riqueza
+  hin: और–धन
+  arb: وَ–غِنًى, وَالْغِنَى
+  kor: 그리고–부유를, 그리고–부, 그리고–그–부유함과
+  swa: na–utajiri
+
+### Sense 126684 (2 occurrences)
+Grammar: Prep-l | N-ms
+  eng: in–riches
+  spa: en–riqueza
+  hin: धन–में
+  arb: غِنًى, بِالـ–غِنَى
+  kor: 부–에서, –에–부유함에
+  swa: kwa–utajiri
+
+### Sense 126685 (2 occurrences)
+Grammar: N-ms
+  eng: wealth–, riches–
+  spa: riqueza–
+  hin: धन–
+  arb: غِنًى–
+  kor: 부유함–, 부와
+  swa: utajiri–
+
+### Sense 126686 (2 occurrences)
+Grammar: N-msc | 3ms
+  eng: his–riches, his-riches
+  spa: su–riqueza
+  hin: धन–अपने–के, अपने–धन
+  arb: غِنَاهُ
+  kor: 재물–에, 그의–부의
+  swa: wa-utajiri-wake, na–wingi
+
+### Sense 126687 (1 occurrences)
+Grammar: N-msc | 3mp
+  eng: their–riches
+  spa: su–fortuna
+  hin: ऐश्वर्य–अपने–के
+  arb: غِناهُم
+  kor: 그들–의–부–의
+  swa: utajiri–wao
+
+### Sense 126688 (1 occurrences)
+Grammar: Prep-b | N-msc | 3ms
+  eng: in–his–riches
+  spa: en–riqueza–de–él
+  hin: धन–पर
+  arb: عَلى–غِناهُ
+  kor: 그–의–부–를
+  swa: utajiri–wake
+
+### Sense 126689 (1 occurrences)
+Grammar: N-msc
+  eng: riches-of
+  spa: riqueza–de
+  hin: धन
+  arb: غِنَى
+  kor: 부유를
+  swa: utajiri
+
+### Sense 126690 (1 occurrences)
+Grammar: Prep-b | N-msc | 3ms
+  eng: in–his–riches
+  spa: en–riqueza–su
+  hin: में–धन–अपने
+  arb: بِغِنَاهُ
+  kor: 그의–부–안에서
+  swa: kwa–utajiri–wake
+
+### Sense 126691 (1 occurrences)
+Grammar: Art | N-ms
+  eng: the–wealth
+  spa: la–riqueza
+  hin: धन
+  arb: الْ–غِنَى
+  kor: 그–부
+  swa: utajiri
+
+### Sense 126692 (1 occurrences)
+Grammar: N-msc | 3mp
+  eng: is–their–riches
+  spa: riqueza–su
+  hin: धन–है
+  arb: غِناهُم
+  kor: 그–들–의–부–다
+  swa: ni–utajiri–wao
+
+### Sense 126693 (1 occurrences)
+Grammar: Prep-m | N-ms
+  eng: than–riches
+  spa: más–que–riquezas
+  hin: धन–से–अधिक
+  arb: عَلَى–غِنىً
+  kor: 보다–재물
+  swa: kuliko–utajiri
+
+### Sense 126694 (1 occurrences)
+Grammar: Conj-w | N-ms
+  eng: and–riches
+  spa: y–bienes
+  hin: और–सम्पत्ति
+  arb: وَ–غِنى
+  kor: 그리고–부–가
+  swa: na–mali
+
+### Sense 126695 (1 occurrences)
+Grammar: N-msc | 3ms
+  eng: is–his–riches
+  spa: riqueza–su
+  hin: धन–है
+  arb: غِناهُ
+  kor: 그–의–부–다
+  swa: ni–utajiri–wake
+
+### Sense 126696 (1 occurrences)
+Grammar: Prep-b | N-msc | 3ms
+  eng: in–his-riches
+  spa: por–riqueza–suya
+  hin: अपने–धन–में
+  arb: بِـ–غِنَاهُ
+  kor: 에–그의–부유함으로
+  swa: katika–utajiri–wake
+
+## Task
+
+Group these 15 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

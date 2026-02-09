@@ -1,0 +1,118 @@
+# Sense Merge Task for H4959
+
+Lemma: H4959 (POS: V-Piel-Perf-2ms)
+Total occurrences: 11
+Current sense count: 10
+
+This Hebrew/Greek lemma has been over-split into 10 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 115228 (2 occurrences)
+Grammar: V-Piel-Imperf-3mp
+  eng: they–grope, they-grope–
+  spa: andan–a–tientas, Palpan
+  hin: वे–टटोलते–हैं, टटोलते–हैं
+  arb: يَتَلَمَّسونَ
+  kor: 더듬는다–그들이, 그들이–더듬다–
+  swa: wanapapasa
+
+### Sense 115229 (1 occurrences)
+Grammar: Conj-w | V-Qal-ConsecImperf-3m
+  eng: and–felt–him
+  spa: y–lo–palpó
+  hin: और–छूआ–उसे
+  arb: وَ–تَحَسَّسَهُ
+  kor: 그리고–만졌다–그를
+  swa: na–akamgusa
+
+### Sense 115230 (1 occurrences)
+Grammar: Conj-w | V-Piel-ConsecImperf-3
+  eng: and–searched
+  spa: y–palpó
+  hin: और–टटोला
+  arb: وَ–تَحَسَّسَ
+  kor: 그리고–만졌다
+  swa: na–akapapasa
+
+### Sense 115231 (1 occurrences)
+Grammar: Conj-w | V-Hifil-ConjImperf-3m
+  eng: and–let–one–feel
+  spa: y–palparán
+  hin: और–छूआ–जाए
+  arb: وَ–يُلْمَسُ
+  kor: 그리고–느껴지게–하라
+  swa: na–iwe–nzito
+
+### Sense 115232 (1 occurrences)
+Grammar: V-Piel-Prtcpl-ms
+  eng: groping
+  spa: a–tientas
+  hin: टटोलता
+  arb: مُتَلَمِّسًا
+  kor: 더듬는–자가
+  swa: unapapasa
+
+### Sense 115233 (1 occurrences)
+Grammar: V-Piel-Perf-2ms
+  eng: you-searched
+  spa: palpaste
+  hin: टटोला–है–तूने
+  arb: تَحَسَّسْتَ
+  kor: 만졌다–당신이
+  swa: umepapasa
+
+### Sense 115234 (1 occurrences)
+Grammar: Conj-w | V-Hifil-Imp-ms | 1cs
+  eng: [and-let-me-feel]
+  spa: y–hazme–palpar
+  hin: [और–छुला–मुझे]
+  arb: [والمسني]
+  kor: 그리고–느끼게–해주소서–나를
+  swa: [na–niguze]
+
+### Sense 115235 (1 occurrences)
+Grammar: V-Piel-Imperf-3ms
+  eng: gropes
+  spa: palpa
+  hin: टटोलता–है
+  arb: يَتَلَمَّسُ
+  kor: 더듬는다
+  swa: anapapasa
+
+### Sense 115236 (1 occurrences)
+Grammar: V-Qal-Imperf-3ms | 1cs
+  eng: will-feel–me
+  spa: me–palpará
+  hin: छूएगा–मुझे
+  arb: يَتَحَسَّسُني
+  kor: 만질–것이다–나를
+  swa: atanigusa
+
+### Sense 115237 (1 occurrences)
+Grammar: Conj-w | V-Hifil-Imp-ms | 1cs
+  eng: and–let–me–feel
+  spa: hazme–palpar
+  hin: (और–छूने–दे–मुझे)
+  arb: (وَ–أَلْمِسْنِي)
+  kor: 그리고–느끼게–해–줘라–나를
+  swa: (na–niguze)
+
+## Task
+
+Group these 10 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

@@ -1,0 +1,144 @@
+# Sense Merge Task for G4369
+
+Lemma: G4369 (POS: V-AIP-3P)
+Total occurrences: 18
+Current sense count: 13
+
+This Hebrew/Greek lemma has been over-split into 13 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 75928 (3 occurrences)
+Grammar: V-AIA-3S,V-AIM-3S
+  eng: he-added, added
+  spa: añadió
+  hin: फिर–किया, जोड़ा
+  arb: أَضافَ, أَضَافَ
+  kor: 더했다
+  swa: aliongeza, akaongeza
+
+### Sense 75929 (2 occurrences)
+Grammar: V-ANA
+  eng: to–add, to-add
+  spa: añadir
+  hin: बढ़ाना, जोड़ने
+  arb: يُضيفَ, أَنْ–يَزِيدَ
+  kor: 더하기를, 더하기라
+  swa: kuongeza
+
+### Sense 75930 (2 occurrences)
+Grammar: V-FIP-3S
+  eng: will–be–added, will-be-added
+  spa: os–serán–añadidas, os-serán-añadidas
+  hin: मिल–जाएँगी, जोड़ी–जाएंगी
+  arb: سَتُزَادُ, تُزادُ
+  kor: 더해지리라
+  swa: mtaongezewa
+
+### Sense 75931 (2 occurrences)
+Grammar: V-AIP-3P,V-IIM/P-3P
+  eng: were–being–added, were–added
+  spa: fueron–añadidos, eran–añadidos
+  hin: –दिन, विश्वास–करने–वाले
+  arb: كَانُوا–يُضَافُونَ, أُضِيفَ
+  kor: 더해졌으니
+  swa: waliongezwa
+
+### Sense 75932 (1 occurrences)
+Grammar: V-AIP-3S
+  eng: was–added
+  spa: fue–añadida
+  hin: जोड़ी–गई
+  arb: أُضِيفَ
+  kor: 더해졌다
+  swa: wakaongezwa
+
+### Sense 75933 (1 occurrences)
+Grammar: V-AIM-3S
+  eng: proceeded
+  spa: procedió
+  hin: आगे–बढ़ा
+  arb: أَضَافَ
+  kor: 더했다
+  swa: akaongeza
+
+### Sense 75934 (1 occurrences)
+Grammar: V-AIP-3S
+  eng: it-was-added
+  spa: fue-añadida
+  hin: जोदि–गयि,
+  arb: أُضيفَ
+  kor: 더해졌노라,
+  swa: iliongezwa
+
+### Sense 75935 (1 occurrences)
+Grammar: V-AIP-3S
+  eng: was–added
+  spa: fue–añadido
+  hin: जोड़ा–गया
+  arb: انضَمَّ
+  kor: 더해졌다
+  swa: akaongezwa
+
+### Sense 75936 (1 occurrences)
+Grammar: V-IIA-3S
+  eng: was–adding
+  spa: añadía
+  arb: كَانَ–يَضِيفُ
+  kor: 더하셨으니
+  swa: aliwaongeza
+
+### Sense 75937 (1 occurrences)
+Grammar: V-ANP
+  eng: to-be-added
+  spa: ser-añadida
+  hin: जोड़ा–जाए
+  arb: يُضَافَ
+  kor: 더해지지
+  swa: ongezwe
+
+### Sense 75938 (1 occurrences)
+Grammar: V-APA-NMS
+  eng: having-added
+  spa: añadiendo
+  hin: जोड़ते–हुए
+  arb: أَضافَ
+  kor: 더하여
+  swa: akiongeza
+
+### Sense 75939 (1 occurrences)
+Grammar: V-FIP-3S
+  eng: will-be-added
+  spa: os–será–añadido
+  hin: तुम्हें
+  arb: يُزادُ
+  kor: 더해질–것이다
+  swa: mtaongezewa
+
+### Sense 75940 (1 occurrences)
+Grammar: V-AMA-2S
+  eng: Add
+  spa: Auméntanos
+  hin: बढ़ा–दे
+  arb: زِدْ
+  kor: 더해–주소서
+  swa: Tuongezee
+
+## Task
+
+Group these 13 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

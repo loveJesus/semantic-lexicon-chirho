@@ -1,0 +1,163 @@
+# Sense Merge Task for H4009
+
+Lemma: H4009 (POS: Prep-b | N-mpc | 2fs)
+Total occurrences: 15
+Current sense count: 15
+
+This Hebrew/Greek lemma has been over-split into 15 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 109545 (1 occurrences)
+Grammar: N-msc | 3ms
+  eng: his–security
+  spa: su–confianza
+  hin: उसके–भरोसे–से
+  arb: أَمْنُهُ
+  kor: 그의–안전이
+  swa: tumaini–lake
+
+### Sense 109546 (1 occurrences)
+Grammar: N-msc | 3ms
+  eng: his–trust
+  spa: su–confianza
+  hin: भरोसा–अपना
+  arb: مَلْجَأَهُ
+  kor: 그–신뢰–로
+  swa: tumaini-lake
+
+### Sense 109547 (1 occurrences)
+Grammar: N-msc
+  eng: is–strong
+  spa: confianza
+  hin: भरोसा
+  arb: ثِقَةُ–
+  kor: 확신–이다
+  swa: kuna–usalama
+
+### Sense 109548 (1 occurrences)
+Grammar: N-msc | 2ms
+  eng: your–trust
+  spa: tu–confianza
+  hin: भरोसा–तेरा
+  arb: اتِّكالُكَ
+  kor: 의지함이–너–의
+  swa: tumaini–lako
+
+### Sense 109549 (1 occurrences)
+Grammar: Prep-l | N-ms
+  eng: as–confidence
+  spa: para–confianza
+  hin: के–लिए–भरोसा
+  arb: مُتَّكَأً
+  kor: 신뢰로–
+  swa: kuwa–tumaini
+
+### Sense 109550 (1 occurrences)
+Grammar: N-msc | 1cs
+  eng: my–trust
+  spa: mi–seguridad
+  hin: आश्रय–मेरा
+  arb: رَجائِي
+  kor: 나의–신뢰이여
+  swa: tegemeo–langu
+
+### Sense 109551 (1 occurrences)
+Grammar: N-msc | 3mp
+  eng: their–trust
+  spa: su–confianza
+  hin: अपने–भरोसे–से
+  arb: مُتَّكَلِهِمْ
+  kor: 그들의–신뢰
+  swa: tumaini–lao
+
+### Sense 109552 (1 occurrences)
+Grammar: N-ms
+  eng: confidence
+  spa: confianza
+  hin: भरोसा
+  arb: ثِقَةُ
+  kor: 의지함이니라
+  swa: kutumaini
+
+### Sense 109553 (1 occurrences)
+Grammar: Prep-b | N-mpc | 2fs
+  eng: your–trusted–ones
+  spa: tus–confianzas
+  hin: भरोसों–तेरे–में
+  arb: مَلْجَأَكِ
+  kor: 네–신뢰들–을
+  swa: matumaini–yako
+
+### Sense 109554 (1 occurrences)
+Grammar: N-msc | 3fs
+  eng: its–trust
+  spa: su–confianza
+  hin: भरोसे–उसके
+  arb: ثِقَتِها
+  kor: 의지하는–바–그것의
+  swa: ya–tegemeo–lake
+
+### Sense 109555 (1 occurrences)
+Grammar: N-ms
+  eng: the–trust–of
+  spa: confianza–de
+  hin: भरोसा
+  arb: ثِقَةَ
+  kor: 신뢰–가
+  swa: tumaini
+
+### Sense 109556 (1 occurrences)
+Grammar: N-msc | 3ms
+  eng: his-trust
+  spa: es–su–refugio.
+  hin: उसका–भरोसा
+  arb: ثِقَتُهُ
+  kor: 그의–신뢰가
+  swa: imani–yake
+
+### Sense 109557 (1 occurrences)
+Grammar: N-msc | 1cs
+  eng: my–trust
+  spa: mi–confianza
+  hin: मेरा–भरोसा
+  arb: مُعْتَمَدي
+  kor: 나–의–신뢰
+  swa: tegemeo-langu
+
+### Sense 109558 (1 occurrences)
+Grammar: N-mp
+  eng: secure
+  spa: seguridad
+  hin: सुरक्षित
+  arb: أَمِينَةٍ
+  kor: 안전한
+  swa: salama
+
+### Sense 109559 (1 occurrences)
+Grammar: N-msc | 3ms
+  eng: trust–his
+  spa: confianza–suya
+  hin: आश्रय–उसका
+  arb: تُكْلَانَهُ
+  kor: 그의–신뢰이니라
+  swa: tumaini–lake
+
+## Task
+
+Group these 15 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

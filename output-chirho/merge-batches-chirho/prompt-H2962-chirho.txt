@@ -1,0 +1,126 @@
+# Sense Merge Task for H2962
+
+Lemma: H2962 (POS: Conj-w)
+Total occurrences: 57
+Current sense count: 11
+
+This Hebrew/Greek lemma has been over-split into 11 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 100472 (22 occurrences)
+Grammar: Adv,Prep-b | Adv
+  eng: before
+  spa: antes–de, antes–de–que, antes-de-que
+  hin: पहले, पहले–कि, बतेरेम
+  arb: قَبْلَ, قَبلَ, قَبْلَ–أَنْ
+  kor: 전에, 아직, 전–에
+  swa: kabla, kabla–ya, na–tutamkuta
+
+### Sense 100473 (17 occurrences)
+Grammar: Prep-b | Adv,Adv,Prep-m | Adv
+  eng: before, summer, from–before
+  spa: antes–de, antes–de–que, Antes–de
+  hin: से–पहले, पहले, इससे–पहले
+  arb: قَبْلَ, قَبْلَ–أَنْ, قَبلَ–أَن
+  kor: 전에, 전에–, 오기–전에
+  swa: kabla, kabla–ya, kabla-ya
+
+### Sense 100474 (4 occurrences)
+Grammar: Prep-b | Adv
+  eng: before
+  spa: antes–que, antes–de–que, antes–de
+  hin: पहले, पहले–कि–, पहले–
+  arb: قَبْلَ, قَبْلَ–أَنْ
+  kor: 전에, 전–에, –전에
+  swa: kabla–ya, kabla
+
+### Sense 100475 (3 occurrences)
+Grammar: Conj-w, Prep-b | Adv
+  eng: and–before
+  spa: y–antes–que, y–antes–de, y–antes-de
+  hin: और–पहले, और–इससे–पहले–कि
+  arb: وَ–قَبْلَ, وَ–قَبْلَ–أَنْ
+  kor: 그리고–전에, 그리고–~전에
+  swa: na–kabla, na–kabla–ya
+
+### Sense 100476 (3 occurrences)
+Grammar: Prep-b | Adv
+  eng: before
+  spa: antes–que, antes-de, Antes-de-que
+  hin: इससे–पहले–कि, पहले
+  arb: قَبْلَ–أَنْ, قَبْلَ, قَبلَ
+  kor: 전–에, –전–에, ~전–에
+  swa: kabla-ya, Kabla–ya, Kabla
+
+### Sense 100477 (2 occurrences)
+Grammar: Adv
+  eng: not-yet
+  spa: antes–de
+  hin: अभी–नहीं
+  arb: قَبْلَ
+  kor: 아직
+  swa: kabla
+
+### Sense 100478 (2 occurrences)
+Grammar: Adv
+  eng: not–yet
+  spa: todavía, Acaso–todavía
+  hin: क्या–अभी–तक–नहीं, अभी–तक
+  arb: لَمْ–بَعْدُ, أَ–لَمْ
+  kor: 아직
+  swa: bado
+
+### Sense 100479 (1 occurrences)
+Grammar: Adv
+  eng: before
+  spa: Antes–que
+  arb: قَبْلَ
+  kor: 이전–에
+  swa: kabla
+
+### Sense 100480 (1 occurrences)
+Grammar: Prep-b | Adv
+  eng: Before
+  spa: Antes–de
+  hin: पहले
+  arb: قَبْلَ–أَنْ
+  kor: ~전에
+  swa: Kabla
+
+### Sense 100481 (1 occurrences)
+Grammar: Prep-l
+  eng: before
+  spa: delante–de
+  hin: के–सामने
+  arb: أَمَامَ
+  kor: –앞에
+  swa: mbele–ya
+
+### Sense 100482 (1 occurrences)
+Grammar: Conj-w | Adv
+  eng: and–not-yet
+  spa: y–antes–de
+  hin: और–अभी–नहीं
+  arb: وَ–قَبْلَ
+  kor: 그리고–아직
+  swa: na–kabla
+
+## Task
+
+Group these 11 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

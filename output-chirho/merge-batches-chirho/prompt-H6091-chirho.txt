@@ -1,0 +1,127 @@
+# Sense Merge Task for H6091
+
+Lemma: H6091 (POS: N-mpc | 3fs)
+Total occurrences: 17
+Current sense count: 11
+
+This Hebrew/Greek lemma has been over-split into 11 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 125649 (4 occurrences)
+Grammar: N-mp,Art | N-mp
+  eng: idols, to–idols, the–idols
+  spa: ídolos, los–ídolos, a–ídolos
+  hin: मूर्तियों–से, मूर्तियों–की, मूर्तियां
+  arb: أَصنامًا, بِالأصنامِ, الْأَصْنَامِ
+  kor: 우상들을, 그–우상들의
+  swa: sanamu
+
+### Sense 125650 (2 occurrences)
+Grammar: N-mpc | 3mp
+  eng: their–idols
+  spa: ídolos–suyos, sus–ídolos
+  hin: मूर्तियाँ–अपनी, अपनि-मोओरतियोन-के
+  arb: أَصْنَامَهُمْ, أَصنامِهِم
+  kor: 그들의–우상들의, 그들의–우상들을
+  swa: sanamu–zao
+
+### Sense 125651 (2 occurrences)
+Grammar: N-mpc | 3mp
+  eng: their–idols
+  spa: sus–ídolos
+  hin: उनकी–मूर्तियां, अपनी–मूर्तियों
+  arb: أَصْنَامُهُمْ, أَصْنَامَهُم
+  kor: 그들의–우상들이, 그들의–우상들–을
+  swa: sanamu–zao, sanamu-zao
+
+### Sense 125652 (2 occurrences)
+Grammar: N-mpc | 3mp
+  eng: their–idols
+  spa: sus–ídolos, Sus–ídolos
+  hin: उनकी–मूर्तियों–की, उनकी–मूर्तियाँ
+  arb: أَصنامُهُم, أَصنامَهُم
+  kor: 그들–의–우상들–을, 그들–의–우상들–은
+  swa: sanamu–zao
+
+### Sense 125653 (1 occurrences)
+Grammar: Prep-l, Art | N-mp
+  eng: with–the–idols
+  spa: con–los–ídolos
+  hin: मूर्तियों–से
+  arb: وَالأَصنامُ
+  kor: 에–우상들과
+  swa: na–sanamu
+
+### Sense 125654 (1 occurrences)
+Grammar: N-mpc | 3fs
+  eng: her–idols
+  spa: sus–ídolos
+  hin: उस–की–मूर्तियां
+  arb: تَمَاثِيلِهَا
+  kor: 형상들–그녀의
+  swa: vinyago–vyake
+
+### Sense 125655 (1 occurrences)
+Grammar: Art | N-mp
+  eng: the–idols
+  spa: los–ídolos
+  hin: मूर्तियों
+  arb: الأَصْنَامَ
+  kor: 그–우상들을
+  swa: sanamu
+
+### Sense 125656 (1 occurrences)
+Grammar: Conj-w, Prep-l | N-mpc | 3fs
+  eng: and–to–her–idols
+  spa: y-a-sus-ídolos
+  hin: और–उसकी–मूर्तियों–से
+  arb: وَ–بِـ–أَصْنَامِهَا
+  kor: 그녀의–우상들–에게
+  swa: na-sanamu-zake
+
+### Sense 125657 (1 occurrences)
+Grammar: Prep-l | N-mpc
+  eng: to–the–idols–of
+  spa: a–los–ídolos–de
+  hin: मूर्तियों–के–लिए
+  arb: لِأَصنام
+  kor: 우상들–에게
+  swa: kwa–sanamu–za
+
+### Sense 125658 (1 occurrences)
+Grammar: N-mpc | 3fs
+  eng: her–images
+  spa: sus–ídolos
+  hin: उसकी–मूर्तियां
+  arb: أَصْنَامُهَا
+  kor: 우상들이–그녀의
+  swa: sanamu–zake
+
+### Sense 125659 (1 occurrences)
+Grammar: N-mpc
+  eng: idols-of
+  spa: Ídolos–de
+  hin: मूर्तियाँ
+  arb: أَصْنَامُ
+  kor: 우상들–은
+  swa: sanamu–za
+
+## Task
+
+Group these 11 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

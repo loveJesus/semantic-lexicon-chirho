@@ -1,0 +1,154 @@
+# Sense Merge Task for G5312
+
+Lemma: G5312 (POS: V-AIA-3S)
+Total occurrences: 20
+Current sense count: 14
+
+This Hebrew/Greek lemma has been over-split into 14 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 78331 (3 occurrences)
+Grammar: V-FIP-3S
+  eng: will-be-exalted, will–be–exalted
+  spa: será–exaltado
+  hin: ऊंचा–किया–जाएगा।, ऊंचा–किया–जाएगा, ऊँचा–किया–जाएगा
+  arb: يُرفَعُ, سَيُعَلّى, سَيُرْفَعُ
+  kor: 높아질–것이다, 높아지리라
+  swa: atakwezwa, atainuliwa, Ole
+
+### Sense 78332 (2 occurrences)
+Grammar: V-AIA-3S
+  eng: exalted
+  spa: exaltó
+  hin: ऊंचा–किया
+  arb: رَفَعَ
+  kor: 높이셨다
+  swa: amewainua, akawainua
+
+### Sense 78333 (2 occurrences)
+Grammar: V-FIP-2S
+  eng: will–you–be–exalted, will-you-be-exalted
+  spa: serás–exaltada
+  hin: ऊँचा–किया–जाएगा, उनचअ–किय–जअयेग
+  arb: تُرْفَعينَ, تُرفَعينَ
+  kor: 높아지겠느냐
+  swa: utainuliwa,, utainuliwa
+
+### Sense 78334 (2 occurrences)
+Grammar: V-ANP
+  eng: to–be–lifted–up, to-be-lifted-up
+  spa: ser-levantado
+  hin: ऊँचा–किया–जाना, उठाया–जाना
+  arb: يُرْفَعَ, أَنْ–يُرْفَعَ
+  kor: 들리우라, 높여지다
+  swa: kuinuliwa, anyanyuliwe
+
+### Sense 78335 (2 occurrences)
+Grammar: V-PPA-NMS
+  eng: exalting
+  spa: que–se–exalta
+  hin: ऊंचा–करने–वाला, ऊँचा–करता–है
+  arb: يَرْفَعُ, المُرتَفِعِ
+  kor: 높이는
+  swa: anayejikweza, anayejiinua
+
+### Sense 78336 (1 occurrences)
+Grammar: V-FIA-3S
+  eng: he–will–exalt
+  spa: os–exaltará
+  hin: ऊँचा-करेगा
+  arb: سَيَرفَعُكُم
+  kor: 높이시리라
+  swa: atawainua
+
+### Sense 78337 (1 occurrences)
+Grammar: V-ASP-2P
+  eng: might-be-exalted
+  spa: fuerais–exaltados
+  hin: ऊंचे–किए–जाओ
+  arb: تُرْفَعوا
+  kor: 높아지게
+  swa: mwinuliwe,
+
+### Sense 78338 (1 occurrences)
+Grammar: V-ASP-1S
+  eng: I–am–lifted–up
+  spa: soy-levantado
+  hin: उठाया–जाऊँ
+  arb: رُفِعْتُ
+  kor: 들리우면
+  swa: nikiinuliwa
+
+### Sense 78339 (1 occurrences)
+Grammar: V-AIA-3S
+  eng: lifted-up
+  spa: levantó
+  hin: ऊँचा–किया
+  arb: رَفَعَ
+  kor: 높였다
+  swa: aliinua
+
+### Sense 78340 (1 occurrences)
+Grammar: V-ASA-3S
+  eng: he–may–exalt
+  spa: exalte
+  hin: ऊँचा–करे
+  arb: يَرفَعَكُم
+  kor: 높이시리라
+  swa: awainyue
+
+### Sense 78341 (1 occurrences)
+Grammar: V-FIA-3S
+  eng: will–exalt
+  spa: exalte
+  hin: ऊंचा–करेगा
+  arb: يُعَلِّي
+  kor: 높이면
+  swa: mwenyewe
+
+### Sense 78342 (1 occurrences)
+Grammar: V-AIA-3S
+  eng: exalted
+  spa: exaltó
+  hin: –दाहिनी–ओर–को
+  arb: رَفَعَهُ
+  kor: 높이셨으니
+  swa: alimwinua
+
+### Sense 78343 (1 occurrences)
+Grammar: V-ASA-2P
+  eng: you–lift–up
+  spa: levantéis
+  hin: ऊँचा–करोगे
+  arb: تَرفَعوا
+  kor: 높이면
+  swa: mtainua
+
+### Sense 78344 (1 occurrences)
+Grammar: V-APP-NMS
+  eng: having–been–exalted
+  spa: habiendo–sido–exaltado
+  hin: इस्राएल–का
+  arb: مُرْتَفِعًا
+  kor: 그–의
+  swa: akiinuliwa
+
+## Task
+
+Group these 14 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

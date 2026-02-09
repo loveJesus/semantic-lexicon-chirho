@@ -1,0 +1,134 @@
+# Sense Merge Task for H5869b
+
+Lemma: H5869b (POS: N-csc)
+Total occurrences: 22
+Current sense count: 12
+
+This Hebrew/Greek lemma has been over-split into 12 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 123697 (4 occurrences)
+Grammar: N-csc,N-proper-fs
+  eng: the–spring–of, spring-of
+  spa: fuente–de
+  hin: स्रोत, सोते
+  arb: عَيْنِ
+  kor: 샘
+  swa: chemchemi–ya, chemchemi
+
+### Sense 123698 (4 occurrences)
+Grammar: Art | N-cs
+  eng: the–spring
+  spa: la–fuente
+  hin: सोते, स्रोत, सोते–के
+  arb: الْعَيْنِ
+  kor: 그–샘, 샘
+  swa: chemchemi
+
+### Sense 123699 (3 occurrences)
+Grammar: Art | N-cs
+  eng: the–Spring
+  spa: la–fuente
+  hin: झरने–के, सोते–के
+  arb: الْعَيْنِ, العَينِ
+  kor: 그–샘–의, 그–샘의
+  swa: chemchemi, Chemchemi
+
+### Sense 123700 (2 occurrences)
+Grammar: N-cpc
+  eng: springs-of
+  spa: fuentes–de, fuentes
+  hin: सोते
+  arb: عَيْنَ
+  kor: 샘들이, 샘
+  swa: za–, chemchemi–za
+
+### Sense 123701 (2 occurrences)
+Grammar: Art | N-cs | 3fs
+  eng: to–the–spring
+  spa: a–la–fuente
+  hin: सोते–को
+  arb: إِلَى–الْعَيْنِ
+  kor: 그–샘–으로
+  swa: kisimani
+
+### Sense 123702 (1 occurrences)
+Grammar: Prep-b, Art | N-fs
+  eng: at–the–spring
+  spa: en–el–manantial
+  hin: झरने-पर
+  arb: عِندَ–العَينِ
+  kor: 에–그–샘
+  swa: kwa–chemchemi
+
+### Sense 123703 (1 occurrences)
+Grammar: N-cs
+  eng: spring
+  spa: fuente
+  hin: सोते–के
+  arb: عَيْنٍ
+  kor: 샘
+  swa: chemchemi
+
+### Sense 123704 (1 occurrences)
+Grammar: N-cp
+  eng: springs
+  spa: de–fuentes
+  hin: सोते
+  arb: عُيُونٍ
+  kor: 샘들과
+  swa: chemchemi
+
+### Sense 123705 (1 occurrences)
+Grammar: N-cpc
+  eng: the–fountains–of
+  spa: fuentes–de
+  hin: सोते
+  arb: يَنَابِيعَ
+  kor: 샘–들–을
+  swa: chemchemi–za
+
+### Sense 123706 (1 occurrences)
+Grammar: Art | N-cp
+  eng: the–springs
+  spa: las–fuentes
+  hin: सोतों–के
+  arb: الْعُيُونِ
+  kor: 그–샘들의
+  swa: haayanwot
+
+### Sense 123707 (1 occurrences)
+Grammar: N-csc
+  eng: fountain-of
+  spa: la–fuente–de
+  hin: झरना
+  arb: عَيْنُ
+  kor: 샘(접)
+  swa: chemchemi–ya
+
+### Sense 123708 (1 occurrences)
+Grammar: N-fpc | 3mp
+  eng: [their–eyes]
+  spa: [iniquidades]
+  arb: إثمَيهِم
+  kor: [신명기]
+
+## Task
+
+Group these 12 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

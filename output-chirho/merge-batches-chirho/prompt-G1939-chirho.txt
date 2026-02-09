@@ -1,0 +1,154 @@
+# Sense Merge Task for G1939
+
+Lemma: G1939 (POS: N-AFS)
+Total occurrences: 38
+Current sense count: 14
+
+This Hebrew/Greek lemma has been over-split into 14 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 67712 (7 occurrences)
+Grammar: N-DFP,N-AFP
+  eng: desires, lusts
+  spa: deseos
+  hin: अभिलाषाओं, इचछओन, इच्छाओं
+  arb: شَهَواتِ, شَهَواتِهِم, شَهَواتِهِ
+  kor: 정욕들, 욕망들을, 욕망들에
+  swa: tamaa
+
+### Sense 67713 (7 occurrences)
+Grammar: N-GFS,N-NFS,N-DFS
+  eng: desire
+  spa: concupiscencia
+  hin: अभिलाषा, अभिलाषा–के, अभिलाषा–की
+  arb: شَهوَةُ, شَهوَتُهُ, شَهوَةِ
+  kor: 욕망, 정욕–의,, 정욕
+  swa: tamaa
+
+### Sense 67714 (4 occurrences)
+Grammar: N-DFP,N-GFP
+  eng: desires, by–desires
+  spa: concupiscencias, en–concupiscencias
+  hin: अभिलाषाओं–से, अभिलाषाओं–के–लिए, अभिलाषाओं–के
+  arb: شَهَواتِكُم, شَهَواتٍ, بِشَهَواتٍ
+  kor: 정욕들을, 정욕들에, 정욕들
+  swa: tamaa
+
+### Sense 67715 (4 occurrences)
+Grammar: N-AFS,N-GFS
+  eng: desire
+  spa: deseo
+  hin: इचछ, लालसा, बुरि-इचछ
+  arb: شَهْوَةِ, شَهْوَةَ, شَهوَةَ
+  kor: 욕심, 욕망의, 욕망을
+  swa: tamaa, shauku
+
+### Sense 67716 (3 occurrences)
+Grammar: N-AFP,N-DFP
+  eng: desires, by–desires
+  spa: por–pasiones, pasiones, a–deseos
+  hin: इचछओन
+  arb: لِشَهَواتٍ, بِ–شَهَواتٍ, الشَّهَواتِ
+  kor: 욕망들–에, 욕망들을
+  swa: tamaa
+
+### Sense 67717 (2 occurrences)
+Grammar: N-NFP,N-AFP
+  eng: desires
+  spa: deseos
+  hin: दबा–देती–हैं, इच्छाओं
+  arb: شَهَواتُ, شَهَوات
+  kor: 욕망들이, 욕망들을
+  swa: tamaa
+
+### Sense 67718 (2 occurrences)
+Grammar: N-AFS
+  eng: covetousness
+  spa: codicia
+  hin: इच्छा
+  arb: شَهْوَةٍ, الشَّهْوَةَ
+  kor: 탐심을
+  swa: tamaa
+
+### Sense 67719 (2 occurrences)
+Grammar: N-AFP
+  eng: desires
+  spa: pasiones, deseos
+  hin: इचछओन,
+  arb: –الشَّهَواتِ, شَهَواتِهِم
+  kor: 욕망들–을
+  swa: zao, tamaa
+
+### Sense 67720 (2 occurrences)
+Grammar: N-AFP
+  eng: desires
+  spa: pasiones
+  hin: अभिलाषाओं–के
+  arb: شهوات
+  kor: 욕망들
+  swa: tamaa
+
+### Sense 67721 (1 occurrences)
+Grammar: N-AFP
+  eng: lusts
+  spa: deseos
+  hin: लालसाओं
+  arb: شَهَوَاتٍ
+  kor: 정욕을
+  swa: tamaa.
+
+### Sense 67722 (1 occurrences)
+Grammar: N-DFS
+  eng: With-desire
+  spa: Con-deseo
+  hin: लालसा–से
+  arb: بِشَوْقٍ
+  kor: 소원으로
+  swa: Kwa–shauku
+
+### Sense 67723 (1 occurrences)
+Grammar: N-GFS
+  eng: of–lust
+  spa: de–deseo
+  hin: कअमन–कि
+  arb: الشَّهْوانِ
+  kor: 욕망으로
+  swa: ya–shauku
+
+### Sense 67724 (1 occurrences)
+Grammar: N-DFP
+  eng: desires
+  spa: deseos
+  hin: इचछओन.
+  arb: الشَّهَواتِ
+  kor: 욕심들.
+  swa: shauku
+
+### Sense 67725 (1 occurrences)
+Grammar: N-DFS
+  eng: desire
+  spa: deseo
+  hin: इछ
+  arb: الشَّوْقِ
+  kor: 열망으로.
+  swa: kubwa
+
+## Task
+
+Group these 14 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

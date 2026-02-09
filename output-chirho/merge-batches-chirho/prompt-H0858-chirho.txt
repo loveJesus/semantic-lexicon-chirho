@@ -1,0 +1,127 @@
+# Sense Merge Task for H0858
+
+Lemma: H0858 (POS: V-Hofal-Perf-3mp)
+Total occurrences: 16
+Current sense count: 11
+
+This Hebrew/Greek lemma has been over-split into 11 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 84989 (3 occurrences)
+Grammar: V-Qal-Perf-3ms
+  eng: came
+  spa: vino
+  hin: आया
+  arb: جَاءَ, جاءَ, أَتَى
+  kor: 왔다, 오셨다
+  swa: alikuja
+
+### Sense 84990 (2 occurrences)
+Grammar: V-Hifil-Perf-3mp
+  eng: they-brought
+  spa: trajeron
+  hin: लाए–गए
+  arb: أُحْضِرَتْ
+  kor: 가져왔으며, 가져왔으니
+  swa: wamevileta, waliletwa
+
+### Sense 84991 (2 occurrences)
+Grammar: Conj-w | V-Hifil-ConjPerf-3mp
+  eng: and–they-brought
+  spa: y–trajeron
+  hin: और–लाया–गया, और–लाए–गए
+  arb: وَ–أُحْضِرُوا
+  kor: 그리고–데려왔으니
+  swa: na–waliletwa, na–wakamleta
+
+### Sense 84992 (2 occurrences)
+Grammar: Prep-l | V-Hifil-Inf
+  eng: to–bring
+  spa: que–trajeran
+  hin: लाने–के–लिए
+  arb: بِأَنْ–يُؤْتَى, أَنْ–يُؤْتَى
+  kor: 데려오도록, 가져오라
+  swa: kuwaleta, kuletwa
+
+### Sense 84993 (1 occurrences)
+Grammar: V-Hifil-Perf-3ms
+  eng: brought
+  spa: trajo
+  hin: लाया
+  arb: أَتَى–بِهِ
+  kor: 데려온
+  swa: alimleta
+
+### Sense 84994 (1 occurrences)
+Grammar: Conj-w | V-Qal-Imp-mp
+  eng: and–come
+  spa: y–venid
+  hin: और–आओ
+  arb: وَ–تَعَالَوْا
+  kor: 그리고–오라
+  swa: na–njooni
+
+### Sense 84995 (1 occurrences)
+Grammar: V-Qal-Perf-3mp
+  eng: came
+  spa: vinieron
+  hin: पहुँचे–हैं
+  arb: أَتَوْا
+  kor: 왔다
+  swa: wamefika
+
+### Sense 84996 (1 occurrences)
+Grammar: Conj-w | V-Hofal-ConjPerf-3fs
+  eng: and–was-brought
+  spa: y–fue–traída
+  hin: और–लाया–गया
+  arb: وَ–أُحْضِرَ
+  kor: 그리고–가져왔으니
+  swa: Na–likaletwa
+
+### Sense 84997 (1 occurrences)
+Grammar: V-Qal-Prtcpl-ms
+  eng: coming
+  spa: viniendo
+  hin: आता
+  arb: آتٍ
+  kor: 오는중
+  swa: akija
+
+### Sense 84998 (1 occurrences)
+Grammar: Prep-l | V-Qal-Inf
+  eng: to–come
+  spa: para–que–vinieran
+  hin: आने–के–लिए
+  arb: لِيَأْتُوا
+  kor: 오도록
+  swa: kuja
+
+### Sense 84999 (1 occurrences)
+Grammar: V-Hofal-Perf-3mp
+  eng: were-brought
+  spa: fueron–traídos
+  hin: लाए–गए
+  arb: أُحْضِرُوا
+  kor: 데려와졌다
+  swa: waliletwa
+
+## Task
+
+Group these 11 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

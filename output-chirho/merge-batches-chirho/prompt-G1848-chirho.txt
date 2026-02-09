@@ -1,0 +1,118 @@
+# Sense Merge Task for G1848
+
+Lemma: G1848 (POS: V-ASA-3S)
+Total occurrences: 11
+Current sense count: 10
+
+This Hebrew/Greek lemma has been over-split into 10 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 67422 (2 occurrences)
+Grammar: V-PMA-3S,V-ASA-3S
+  eng: let-despise
+  spa: menosprecie
+  hin: तुच्छ–जाने
+  arb: يَحْتَقِرْهُ, يَحْتَقِرْ
+  kor: 업신여기지, 무시하지
+  swa: mdharau;, asimtweze
+
+### Sense 67423 (1 occurrences)
+Grammar: V-AIA-2P
+  eng: you-despised
+  spa: despreciasteis
+  hin: तुमने–तुछ–जअन,
+  arb: تَحتَقِروهُ
+  kor: 업신여기지,
+  swa: nidharau
+
+### Sense 67424 (1 occurrences)
+Grammar: V-RPM/P-ANP
+  eng: despised
+  spa: despreciadas
+  hin: तुच्छ–ठहराए–गए
+  arb: المُحْتَقَرَ
+  kor: 멸시–받는–것들–을
+  swa: vilivyodharauliwa,
+
+### Sense 67425 (1 occurrences)
+Grammar: V-PPA-AMP
+  eng: despising
+  spa: que–despreciaban
+  hin: तुच्छ–जानने–वालों
+  arb: المُحتَقِرينَ
+  kor: 멸시하는
+  swa: wakiwadharau
+
+### Sense 67426 (1 occurrences)
+Grammar: V-RPM/P-NMS
+  eng: despised
+  spa: despreciable
+  hin: तुच्छ
+  arb: مُحتَقَرٌ
+  kor: 멸시된
+  swa: umedharauliwa.
+
+### Sense 67427 (1 occurrences)
+Grammar: V-PIA-2S
+  eng: do-you-despise
+  spa: menosprecias
+  hin: तुच्छ–जानता–है
+  arb: تَحْتَقِرُ
+  kor: 업신여기느냐
+  swa: unamdharau
+
+### Sense 67428 (1 occurrences)
+Grammar: V-RPM/P-AMP
+  eng: despised
+  spa: despreciados
+  hin: तुच्छ–ठहराए–गए
+  arb: المُحْتَقَرينَ
+  kor: 멸시–받는–자들을
+  swa: wanaodharauliwa
+
+### Sense 67429 (1 occurrences)
+Grammar: V-PMA-2P
+  eng: despise
+  spa: menospreciéis
+  hin: तुछ–समझो
+  arb: تَحْتَقِروا
+  kor: 멸시하지–말라.
+  swa: udharau
+
+### Sense 67430 (1 occurrences)
+Grammar: V-APA-NMS
+  eng: having-treated-with-contempt
+  spa: habiendo-despreciado
+  hin: तुच्छ–जानकर
+  arb: احْتَقَرَهُ
+  kor: 멸시하고
+  swa: alimdharau
+
+### Sense 67431 (1 occurrences)
+Grammar: V-APP-NMS
+  eng: having–been–rejected
+  spa: menospreciada
+  hin: –जो–बना
+  arb: اِسْتُهِينَ
+  kor: 멸시된
+  swa: lililokataliwa
+
+## Task
+
+Group these 10 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

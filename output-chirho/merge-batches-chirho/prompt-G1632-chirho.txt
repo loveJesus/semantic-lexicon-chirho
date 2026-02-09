@@ -1,0 +1,153 @@
+# Sense Merge Task for G1632
+
+Lemma: G1632 (POS: V-FIP-3S)
+Total occurrences: 27
+Current sense count: 14
+
+This Hebrew/Greek lemma has been over-split into 14 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 66864 (10 occurrences)
+Grammar: V-AIA-3S
+  eng: poured-out, he–poured–out
+  spa: derramó
+  hin: उंडेला, तुमने, उन्देल
+  arb: سَكَبَ, سَكَبَهُ
+  kor: 봐았으니, 쏟아–버렸다, 부어주셨다
+  swa: akamimina, alimimina, akamwaga
+
+### Sense 66865 (4 occurrences)
+Grammar: V-PPM/P-NNS
+  eng: being–poured–out, being-poured-out
+  spa: derramada, siendo-derramada, que–es–derramada
+  hin: बहाया–गया, बहाया–जानेवाला, बहाया–जाता–है
+  arb: مَسْفُوكُ, مَسْفوكُ, الْمَسْفُوكُ
+  kor: 쏟아지는, 쏟아진
+  swa: inayomwagwa, juu–ya, inayomwagika
+
+### Sense 66866 (2 occurrences)
+Grammar: V-FIA-1S
+  eng: I–will–pour–out
+  spa: derramaré
+  hin: और
+  arb: أَسْكُبُ
+  kor: 모든
+  swa: nitamimina
+
+### Sense 66867 (1 occurrences)
+Grammar: V-RIM/P-3S
+  eng: has–been–poured–out
+  spa: había–sido–derramado
+  hin: उंडेला–गया
+  arb: ٱنْسَكَبَتْ
+  kor: 부어졌다
+  swa: imemwagwa.
+
+### Sense 66868 (1 occurrences)
+Grammar: V-RIM/P-3S
+  eng: has–been–poured–out
+  spa: ha–sido–derramado
+  hin: उंडेला–गया–है
+  arb: قَد–انسَكَبَت
+  kor: 부어졌으니
+  swa: umemwagwa
+
+### Sense 66869 (1 occurrences)
+Grammar: V-FIP-3S
+  eng: will–be–poured–out
+  spa: se–derramará
+  hin: बह–जाएगी
+  arb: تُهراقُ
+  kor: 쏟아질–것이고
+  swa: utamwagika
+
+### Sense 66870 (1 occurrences)
+Grammar: V-PIM/P-3S
+  eng: is-poured-out
+  spa: se–derrama
+  hin: बहता–है
+  arb: يُهراقُ
+  kor: 쏟아진다
+  swa: humwagika,
+
+### Sense 66871 (1 occurrences)
+Grammar: V-RPM/P-NNS
+  eng: having-been-shed
+  spa: derramada
+  hin: बहाया–गया
+  arb: الْمَسْفوكُ
+  kor: 켐어진
+  swa: iliyomwagwa
+
+### Sense 66872 (1 occurrences)
+Grammar: V-AIP-3S
+  eng: were–poured–out
+  spa: fueron–derramadas
+  arb: اِنْسَكَبَتْ
+  kor: 쏟아졌다
+  swa: yalimwagika
+
+### Sense 66873 (1 occurrences)
+Grammar: V-IIM/P-3S
+  eng: was–being–shed
+  spa: era-derramada
+  hin: बहाया–जा–रहा–था
+  arb: سُفِكَ
+  kor: 쏟아졌다
+  swa: ilipomwagwa
+
+### Sense 66874 (1 occurrences)
+Grammar: V-ANA
+  eng: to–pour–out
+  spa: para–derramar
+  hin: बहाने–को
+  arb: لِسَفكِ
+  kor: 쏟기–에
+  swa: kumwaga
+
+### Sense 66875 (1 occurrences)
+Grammar: V-AIP-3P
+  eng: they–poured–out
+  spa: se–derramaron
+  hin: गिर–पड़े
+  arb: انسكبوا
+  kor: 빠졌으며
+  swa: walijimimina
+
+### Sense 66876 (1 occurrences)
+Grammar: V-PMA-2P
+  eng: pour-out
+  spa: derramad
+  hin: उंडेलो
+  arb: اُسكُبوا
+  kor: 봐라
+  swa: miminie
+
+### Sense 66877 (1 occurrences)
+Grammar: V-AIA-3P
+  eng: they-poured-out
+  spa: derramaron
+  hin: उन्होंने–बहाया
+  arb: سَفَكوا
+  kor: 봐았으니
+  swa: walimwaga,
+
+## Task
+
+Group these 14 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

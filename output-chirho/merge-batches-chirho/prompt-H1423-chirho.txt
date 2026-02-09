@@ -1,0 +1,118 @@
+# Sense Merge Task for H1423
+
+Lemma: H1423 (POS: Conj-w | N-msc)
+Total occurrences: 16
+Current sense count: 10
+
+This Hebrew/Greek lemma has been over-split into 10 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 89435 (3 occurrences)
+Grammar: N-msc,Art | N-ms
+  eng: kid-of, the–kid
+  spa: cabrito–de, un–cabrito
+  hin: बकरे
+  arb: جَديَ, الْجَدْيِ
+  kor: 염소 새끼를, 염소 새끼, 그–염소 새끼
+  swa: mwana–mbuzi
+
+### Sense 89436 (3 occurrences)
+Grammar: N-ms
+  eng: a-young-goat, a–young-goat
+  spa: cabrito
+  hin: बकरी, बकरी–का–बच्चा
+  arb: جَدياً, جَدْيًا
+  kor: 염소–새끼를, 염소를
+  swa: mwana–mbuzi, mwanakondoo
+
+### Sense 89437 (2 occurrences)
+Grammar: N-mpc
+  eng: kids-of
+  spa: cabritos–de
+  hin: बकरों–के, बकरे
+  arb: جَديَي
+  kor: 새끼–염소들의, 새끼–염소들
+  swa: za–mbuzi–wadogo, mbuzi–wadogo
+
+### Sense 89438 (2 occurrences)
+Grammar: N-msc
+  eng: kid-of, a–kid-of
+  spa: cabrito-de–, cabrito-de
+  hin: बकरी–, बकरी
+  arb: جَدْيَ
+  kor: 새끼를, 새끼–염소를
+  swa: mbuzi–mdogo–wa
+
+### Sense 89439 (1 occurrences)
+Grammar: N-ms
+  eng: kid
+  spa: cabrito
+  hin: बकरी
+  arb: الْجَدْيِ
+  kor: 염소
+  swa: mwana-mbuzi
+
+### Sense 89440 (1 occurrences)
+Grammar: N-mp
+  eng: young-goats
+  spa: cabritos
+  hin: बकरियाँ
+  arb: جِدْيَانٍ
+  kor: 염소새끼들을
+  swa: mbuzi
+
+### Sense 89441 (1 occurrences)
+Grammar: N-msc
+  eng: a–kid-of–
+  spa: cabrito–de
+  hin: बकरी
+  arb: جَدْيَ–
+  kor: 염소–새끼를
+  swa: mwana–mbuzi–wa–
+
+### Sense 89442 (1 occurrences)
+Grammar: Art | N-ms
+  eng: the–kid
+  spa: el–cabrito
+  hin: बकरी
+  arb: الْ–جَدْيَ
+  kor: 이–새끼를
+  swa: mbuzi–mdogo
+
+### Sense 89443 (1 occurrences)
+Grammar: Conj-w | N-msc
+  eng: and–a–kid–of
+  spa: y–cabrito–de
+  hin: और-बचच
+  arb: وَ–جَدْيَ
+  kor: 그리고–새끼–염소
+  swa: na–mwana–mbuzi
+
+### Sense 89444 (1 occurrences)
+Grammar: Prep-b | N-msc
+  eng: with–kid-of
+  spa: con–cabrito–de
+  hin: बकरे–के–बच्चे–से
+  arb: بِ–جَدْيِ
+  kor: 에–얼소 새끼
+  swa: kwa–mwana–mbuzi
+
+## Task
+
+Group these 10 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

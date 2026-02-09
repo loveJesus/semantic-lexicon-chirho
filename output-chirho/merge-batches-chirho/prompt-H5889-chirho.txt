@@ -1,0 +1,118 @@
+# Sense Merge Task for H5889
+
+Lemma: H5889 (POS: Adj-ms)
+Total occurrences: 17
+Current sense count: 10
+
+This Hebrew/Greek lemma has been over-split into 10 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 123733 (3 occurrences)
+Grammar: Adj-fs
+  eng: weary
+  spa: cansada, agotada
+  hin: भूमि–में, थके–हुए, थकी–हुई
+  arb: مُتْعَبَةٍ, الْمُتْعَبِ
+  kor: 피곤한
+  swa: yenye–uchovu, yenye–kuchoka, iliyochoka
+
+### Sense 123734 (3 occurrences)
+Grammar: Adj-ms
+  eng: weary, he–is–faint
+  spa: cansado
+  hin: थका–हुआ
+  arb: مُتْعَبٌ, تَعِبٌ
+  kor: 피곤하고, 피곤한–자가
+  swa: umechoka, mchovu, amechoka
+
+### Sense 123735 (3 occurrences)
+Grammar: Adj-mp
+  eng: exhausted, weary
+  spa: cansados
+  hin: थके, थके–हुए
+  arb: مُتْعَبُونَ, مُتعَبينَ
+  kor: 피곤한
+  swa: wamechoka
+
+### Sense 123736 (2 occurrences)
+Grammar: Adj-ms
+  eng: was–exhausted, exhausted
+  spa: cansado
+  hin: थका–हुआ
+  arb: مُتْعَبٌ
+  kor: 피곴한, 피곴하다
+  swa: nimechoka, amechoka
+
+### Sense 123737 (1 occurrences)
+Grammar: Conj-w | Adj-ms
+  eng: and–weary
+  spa: y–cansado
+  hin: और–थके
+  arb: وَ–مُتْعَبٌ
+  kor: 그리고–피곤하고
+  swa: na–wamechoka
+
+### Sense 123738 (1 occurrences)
+Grammar: Prep-l | Adj-fs
+  eng: for–the–weary
+  spa: para–el–cansado
+  hin: थके–हुए–के–लिए
+  arb: لِـ–الْمُتْعَبَةِ
+  kor: 지친–자에게
+  swa: kwa–waliochoka
+
+### Sense 123739 (1 occurrences)
+Grammar: Conj-w | Adj-ms
+  eng: and–weary
+  spa: y–cansada
+  hin: और–थकी–हुई
+  arb: وَ–مُنهَكَةٍ
+  kor: 그리고–피곤한
+  swa: na–iliyochoka
+
+### Sense 123740 (1 occurrences)
+Grammar: Adj-ms
+  eng: the–weary
+  spa: al–cansado
+  hin: थके–हुए–को
+  arb: العَطْشَانَ
+  kor: 피곤한–자에게
+  swa: aliyechoka
+
+### Sense 123741 (1 occurrences)
+Grammar: Adj-fs
+  eng: weary
+  spa: sedienta
+  hin: थकी–हुई
+  arb: مُتْعَبَةٍ
+  kor: 목마른
+  swa: yenye–kiu
+
+### Sense 123742 (1 occurrences)
+Grammar: Prep-l, Art | Adj-ms
+  eng: and–this
+  spa: al–cansado
+  hin: को–थके
+  arb: الْمُتْعَبَ
+  kor: 에–피곤한–자에게
+  swa: mwenye–uchovu
+
+## Task
+
+Group these 10 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

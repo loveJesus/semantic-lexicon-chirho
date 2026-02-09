@@ -1,0 +1,126 @@
+# Sense Merge Task for H4261
+
+Lemma: H4261 (POS: Conj-w | N-mpc | 1cs)
+Total occurrences: 13
+Current sense count: 11
+
+This Hebrew/Greek lemma has been over-split into 11 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 110849 (3 occurrences)
+Grammar: N-msc
+  eng: desire-of–
+  spa: delicia–de
+  arb: مَحْبُوبَةَ
+  kor: 기쁘을
+  swa: furaha–ya
+
+### Sense 110850 (1 occurrences)
+Grammar: N-mpc | 3fs
+  eng: its–precious–things
+  spa: su–tesoro
+  hin: उसके–बहुमूल्यों–के
+  arb: نَفَائِسِهَا
+  kor: 그것의–보물들의
+  swa: machamadeּyha
+
+### Sense 110851 (1 occurrences)
+Grammar: N-mp
+  eng: desirable
+  spa: deseable
+  hin: मनोहर
+  arb: مَحَمِّدِيم
+  kor: 사랑스러움들–이라
+  swa: kupendeza
+
+### Sense 110852 (1 occurrences)
+Grammar: N-mpc | 3fs
+  eng: her–precious–things
+  spa: sus–cosas–preciosas
+  hin: उसकी–बहुमूल्य–वस्तुओं
+  arb: نَفَائِسِهَا
+  kor: 그녀–보물들–을
+  swa: za–thamani–zake
+
+### Sense 110853 (1 occurrences)
+Grammar: N-msc
+  eng: delight-of
+  spa: deseo–de
+  hin: बहुमूल्य
+  arb: شَهْوَةِ
+  kor: 바람직한–것–의
+  swa: tamaa–ya
+
+### Sense 110854 (1 occurrences)
+Grammar: N-mpc
+  eng: precious–ones
+  spa: lo–precioso–de
+  hin: प्रिय–
+  arb: مَحْبُوبَاتِ–
+  kor: 보물들–을
+  swa: wa–thamani–wa
+
+### Sense 110855 (1 occurrences)
+Grammar: N-mpc
+  eng: beloved-ones-of
+  spa: lo–preciado–de
+  hin: रुचिकर
+  arb: مَحبوبَ
+  kor: 귀한–것들을
+  swa: wapendwa–wa
+
+### Sense 110856 (1 occurrences)
+Grammar: N-msc
+  eng: treasure-of
+  spa: lo–preciado
+  hin: रुचिकर
+  arb: مَرغوبُ
+  kor: 귀한–것이
+  swa: hazina–ya
+
+### Sense 110857 (1 occurrences)
+Grammar: Conj-w | N-mpc | 1cs
+  eng: and–my-treasures
+  spa: y–tesoros–míos
+  hin: और–बहुमूल्य–वस्तुएँ–मेरी
+  arb: وَ–نَفائِسي
+  kor: 그리고–나의–보물들
+  swa: na–vitu–vyangu–vya–thamani
+
+### Sense 110858 (1 occurrences)
+Grammar: N-mpc | 1cp
+  eng: our–precious–things
+  spa: lo–que–amábamos
+  hin: वस्तुएँ–प्रिय–हमारी
+  arb: مَحْبُوبَاتِنَا
+  kor: 우리의–귀한–것들이
+  swa: vyote–vya–thamani
+
+### Sense 110859 (1 occurrences)
+Grammar: N-mpc | 3mp
+  eng: (their–treasures)
+  spa: (sus–cosas–preciosas)
+  hin: उन्होंने–अपनी–बहुमूल्य–वस्तुएँ
+  arb: (نَفَائِسَهُمْ)
+  kor: 그들–보물들–을
+  swa: za–thamani–zao
+
+## Task
+
+Group these 11 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

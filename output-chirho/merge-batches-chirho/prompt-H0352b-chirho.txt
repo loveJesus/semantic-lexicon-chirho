@@ -1,0 +1,117 @@
+# Sense Merge Task for H0352b
+
+Lemma: H0352b (POS: Art | N-mp)
+Total occurrences: 33
+Current sense count: 10
+
+This Hebrew/Greek lemma has been over-split into 10 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 81618 (11 occurrences)
+Grammar: Conj-w | N-msc | 3ms,N-msc | 3ms
+  eng: [ketiv]
+  spa: [sus–pilares], [y–sus–pilares]
+  hin: उसके–स्तंभ, और–उसके–स्तंभ
+  kor: 기둥들–그의
+  swa: [nguzo]
+
+### Sense 81619 (6 occurrences)
+Grammar: N-mpc | 3ms
+  eng: its-jambs
+  spa: (sus–pilares)
+  hin: उसके–स्तंभ
+  arb: أَعْمِدَتِهِ, أَعْمِدَتُهُ, أَعْمِدَتَهُ
+  kor: 기둥들–그의
+  swa: nguzo–zake
+
+### Sense 81620 (5 occurrences)
+Grammar: Conj-w | N-mpc | 3ms,Conj-w | Prep | 3ms
+  eng: and–its-jambs
+  spa: (y–sus–pilares)
+  hin: और–उसके–स्तंभ
+  arb: وَأَعْمِدَتُهُ
+  kor: 기둥들–그의
+  swa: nguzo–zake
+
+### Sense 81621 (3 occurrences)
+Grammar: N-mp,Art | N-mp
+  eng: the–jambs, jambs
+  spa: los–pilares
+  hin: स्तंभों, स्तंभ
+  arb: الْأَعْمِدَةَ, الْأَعْمِدَةِ
+  kor: 기둥들을, 그–기둥들의, 그–기둥들을
+  swa: nguzo
+
+### Sense 81622 (3 occurrences)
+Grammar: N-msc,N-ms
+  eng: jamb-of, jamb
+  spa: pilar–de, pilar
+  hin: स्तंभ
+  arb: عَمُودِ, عَمُودَ, الْعَمُودِ
+  kor: 기둥–, 기둥
+  swa: nguzo, nguzo–ya
+
+### Sense 81623 (1 occurrences)
+Grammar: Prep-l, Art | N-mp
+  eng: for–the-jambs
+  spa: para–los–pilares
+  hin: स्तंभों–के–लिए
+  arb: لِلْأَعْمِدَةِ
+  kor: 그–기둥들–에게
+  swa: kwa–nguzo
+
+### Sense 81624 (1 occurrences)
+Grammar: N-mpc | 3mp
+  eng: their-jambs
+  spa: sus–pilares
+  hin: उनके–स्तंभों
+  arb: أَعْمِدَتِهَا
+  kor: 기둥들–그것들의
+  swa: nguzo–zake
+
+### Sense 81625 (1 occurrences)
+Grammar: Art | N-ms
+  eng: the–posts
+  spa: el–dintel
+  hin: चौखट
+  arb: الـ–عَتَبَةُ
+  kor: 기둥의
+  swa: ya–tano
+
+### Sense 81626 (1 occurrences)
+Grammar: N-msc
+  eng: jamb-of–
+  spa: pilar–de
+  hin: स्तंभ–
+  arb: عَمُودَ–
+  kor: 기둥–
+  swa: nguzo–ya
+
+### Sense 81627 (1 occurrences)
+Grammar: Prep-b | N-mp
+  eng: by–jambs-of
+  spa: en–los–pilares–de
+  hin: में–स्तंभों
+  arb: فِي–أَعْمِدَةِ
+  kor: 기둥들–안에서
+  swa: katika–nguzo–za
+
+## Task
+
+Group these 10 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

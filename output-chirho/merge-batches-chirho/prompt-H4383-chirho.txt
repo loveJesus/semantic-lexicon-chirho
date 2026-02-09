@@ -1,0 +1,117 @@
+# Sense Merge Task for H4383
+
+Lemma: H4383 (POS: Art | N-mp)
+Total occurrences: 14
+Current sense count: 10
+
+This Hebrew/Greek lemma has been over-split into 10 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 111524 (3 occurrences)
+Grammar: N-ms
+  eng: stumbling-block
+  spa: tropiezo
+  hin: ठोकर
+  arb: عَثْرَةً
+  kor: 걸림돌을, 걸림돌
+  swa: kikwazo
+
+### Sense 111525 (3 occurrences)
+Grammar: Conj-w | N-msc
+  eng: and–stumbling-block-of
+  spa: y–tropiezo–de
+  hin: और–ठोकर
+  arb: وَعَثْرَةَ
+  kor: 그리고–걸림돌을–
+  swa: na–kikwazo
+
+### Sense 111526 (1 occurrences)
+Grammar: N-ms
+  eng: stumbling
+  spa: escándalo
+  hin: ठोकर–खिलाने–वाली
+  arb: سُقُوطٍ
+  kor: 걸려–넘어짐의
+  swa: wa-kujikwaa
+
+### Sense 111527 (1 occurrences)
+Grammar: N-mp
+  eng: stumbling–blocks
+  spa: tropiezos
+  hin: ठोकरें
+  arb: عَثَرَاتٍ
+  kor: 걸림돌들을
+  swa: vikwazo
+
+### Sense 111528 (1 occurrences)
+Grammar: N-ms
+  spa: tropiezo
+  hin: ठोकर
+  arb: عَثْرَةٌ
+  kor: 그들–에게
+  swa: kujikwaa
+
+### Sense 111529 (1 occurrences)
+Grammar: Prep-l | N-msc
+  eng: for–stumbling-block
+  spa: para–tropiezo
+  hin: ठोकर–के–लिए
+  arb: لِـ–عَثْرَةٍ
+  kor: 걸림돌로–
+  swa: kikwazo
+
+### Sense 111530 (1 occurrences)
+Grammar: Art | N-mp
+  eng: the–stumbling-blocks
+  spa: los–tropiezos
+  hin: ठोकरें
+  arb: الْعَثَرَاتِ
+  kor: 그–넘어짐들을
+  swa: vikwazo
+
+### Sense 111531 (1 occurrences)
+Grammar: Conj-w, Prep-l | N-msc
+  eng: and–as–offense–of
+  spa: y–por–obstáculo–de
+  hin: और–ठोकर–के–लिए
+  arb: وَعَقَبَةً
+  kor: 그리고–마음의–걸림돌로
+  swa: na–kizuizi
+
+### Sense 111532 (1 occurrences)
+Grammar: Prep-l | N-msc
+  eng: stumbling-block-of
+  spa: para–tropiezo–de
+  hin: ठोकर
+  arb: لِـ–عَثْرَةِ
+  kor: 에–걸림돌의
+  swa: kikwazo–cha
+
+### Sense 111533 (1 occurrences)
+Grammar: N-msc
+  eng: stumbling-block-of
+  spa: tropiezo–de
+  hin: ठोकर
+  arb: عَثْرَةَ
+  kor: 걸림돌이
+  swa: kikwazo
+
+## Task
+
+Group these 10 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

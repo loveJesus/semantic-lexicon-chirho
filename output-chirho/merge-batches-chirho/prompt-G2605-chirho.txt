@@ -1,0 +1,145 @@
+# Sense Merge Task for G2605
+
+Lemma: G2605 (POS: V-PNA)
+Total occurrences: 18
+Current sense count: 13
+
+This Hebrew/Greek lemma has been over-split into 13 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 70164 (3 occurrences)
+Grammar: V-PIA-3P
+  eng: proclaim, announce
+  spa: anuncian
+  hin: घोषणा–करते–हैं, घोशन–करते–हैन,
+  arb: يُعلِنونَ, يُنادونَ
+  kor: 전한다, 선포하노라,
+  swa: wanatangaza
+
+### Sense 70165 (2 occurrences)
+Grammar: V-PNA
+  eng: to–proclaim
+  spa: proclamar, a–proclamar
+  hin: येशू–के, घोषणाकरने
+  arb: يُنَادُوا, يُعْلِنُ
+  kor: 선포하니, 선포하기를
+  swa: kutangaza
+
+### Sense 70166 (2 occurrences)
+Grammar: V-AIA-3P,V-IIA-3P
+  eng: were–proclaiming, announced
+  spa: anunciaron, anunciaban
+  hin: प्रचार–करते–थे
+  arb: أَنْبَأُوا, أَعلَنوا
+  kor: 전했다, 그–
+  swa: walitangaza
+
+### Sense 70167 (2 occurrences)
+Grammar: V-PIA-1S
+  eng: proclaim
+  spa: anuncio
+  hin: घोषणा–करता–हूँ
+  arb: أُعلِنُ
+  kor: 전하노라
+  swa: ninatangaza
+
+### Sense 70168 (1 occurrences)
+Grammar: V-PPA-NMS
+  eng: proclaiming
+  spa: anunciando
+  hin: घोषणा–करता–हुआ
+  arb: مُعْلِناً
+  kor: 선포하며
+  swa: nikiwatangazia
+
+### Sense 70169 (1 occurrences)
+Grammar: V-PPA-DMP
+  eng: proclaiming
+  spa: anunciando
+  hin: घोषणा–करने–वालों
+  arb: المُعْلِنينَ
+  kor: 전하는–자들이
+  swa: wanaohubiri,
+
+### Sense 70170 (1 occurrences)
+Grammar: V-AIA-1P
+  eng: we-proclaimed
+  spa: anunciamos
+  hin: प्रचार–किया
+  arb: أَعلَنّا
+  kor: 선포했다
+  swa: lile–
+
+### Sense 70171 (1 occurrences)
+Grammar: V-PIA-2P
+  eng: you-proclaim
+  spa: anunciáis
+  hin: घोषणा–करते–हो
+  arb: تُعلِنونَ
+  kor: 선포하는니라
+  swa: mnatangaza,
+
+### Sense 70172 (1 occurrences)
+Grammar: V-PIA-1P
+  eng: proclaim
+  spa: proclamamos
+  hin: घोशित-करते-हैन
+  arb: نُنادي–بِهِ
+  kor: 선포한다
+  swa: tunamtangaza
+
+### Sense 70173 (1 occurrences)
+Grammar: V-PIM/P-3S
+  eng: is–proclaimed
+  spa: es–anunciado
+  hin: घोषित–की–जाती–है
+  arb: يُنادَى
+  kor: 전해진다
+  swa: unatangazwa,
+
+### Sense 70174 (1 occurrences)
+Grammar: V-PIM/P-3S
+  eng: is–being–proclaimed
+  spa: es–proclamada
+  hin: प्रचारित–किया–जाता–है
+  arb: يُنادَى–بِهِ
+  kor: 전파–되느니라
+  swa: inatangazwa
+
+### Sense 70175 (1 occurrences)
+Grammar: V-PIM/P-3S
+  eng: is–proclaimed
+  spa: es–anunciado
+  hin: घोशित–किय–जअत.
+  arb: يُنادى
+  kor: 전파되노라.
+  swa: anatangazwa
+
+### Sense 70176 (1 occurrences)
+Grammar: V-AIP-3S
+  eng: was-proclaimed
+  spa: fue-anunciada
+  hin: घोषित–किया–गया
+  arb: أُعلِنَت
+  kor: 전파되었다
+  swa: lilihubiriwa
+
+## Task
+
+Group these 13 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

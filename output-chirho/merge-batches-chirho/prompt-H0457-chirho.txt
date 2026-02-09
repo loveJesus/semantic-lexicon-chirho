@@ -1,0 +1,154 @@
+# Sense Merge Task for H0457
+
+Lemma: H0457 (POS: Conj-w)
+Total occurrences: 20
+Current sense count: 14
+
+This Hebrew/Greek lemma has been over-split into 14 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 82568 (4 occurrences)
+Grammar: N-mpc
+  eng: idols–of, his–silver, his–idols
+  spa: ídolos–de
+  hin: मूर्तियां, मूर्तियाँ
+  arb: أَوثَانَ, أَوْثَانُ, أَصْنَامَ
+  kor: 우상들을, 우상들이
+  swa: sanamu–zake–za, sanamu
+
+### Sense 82569 (3 occurrences)
+Grammar: N-mp
+  eng: idols, are–worthless–idols
+  spa: ídolos
+  hin: मूर्तियाँ
+  arb: أَوْثَانٌ, أَصْنَامٌ, أَصناماً
+  kor: 우상들, 우상–이로다, 우상–들을
+  swa: ni–sanamu, sanamu–zisizosema
+
+### Sense 82570 (2 occurrences)
+Grammar: N-mp,Art | N-mp
+  eng: the–idols, idols
+  spa: los–ídolos, de–ídolos
+  hin: मूर्तियों–से
+  arb: الأَوْثَانِ, أَصنَامًا
+  kor: 우상들을, 우상들로
+  swa: sanamu
+
+### Sense 82571 (1 occurrences)
+Grammar: Conj-w | N-mpc
+  eng: and–his–idols
+  spa: e–ídolos–de
+  hin: और–मूर्तियां
+  arb: وَ–أَصْنَامَ
+  kor: 그리고–우상들을
+  swa: na–sanamu
+
+### Sense 82572 (1 occurrences)
+Grammar: Conj-w, Prep-l | N-mpc | 3fs
+  eng: and–to–her–idols
+  spa: y-a-sus-ídolos
+  hin: और–उसकी–मूर्तियों–से
+  arb: وَ–بِـ–أَوْثَانِهَا
+  kor: 그녀의–우상들–에게
+  swa: na-sanamu-zake
+
+### Sense 82573 (1 occurrences)
+Grammar: Prep-b, Art | N-mp
+  eng: in–worthless–idols
+  spa: en–los–ídolos
+  hin: में–मूर्तियों
+  arb: بِ–الأَصْنَامِ
+  kor: 우상–들–로
+  swa: kwa–vinyago
+
+### Sense 82574 (1 occurrences)
+Grammar: Adj-ms
+  eng: worthlessness
+  spa: nada
+  hin: व्यर्थ
+  arb: بَاطِلٍ
+  kor: 쓸모–없는–것–의
+  swa: ubatili
+
+### Sense 82575 (1 occurrences)
+Grammar: Art | N-ms
+  eng: the–idol
+  spa: ídolos
+  hin: मूर्तियों–के
+  arb: الْأَصْنَامِ
+  kor: 우상의
+  swa: za-sanamu
+
+### Sense 82576 (1 occurrences)
+Grammar: N-mp
+  eng: idols
+  spa: ídolos
+  hin: मूर्तियां
+  arb: أَصْنَامًا
+  kor: 우상들을
+  swa: sanamu
+
+### Sense 82577 (1 occurrences)
+Grammar: Conj-w | N-ms
+  eng: and–worthlessness
+  spa: (y–vanidad)
+  hin: और–व्यर्थ
+  arb: وَ–بَاطِلَا
+  kor: (헛된)
+  swa: na–ubatili
+
+### Sense 82578 (1 occurrences)
+Grammar: Art | Adj-ms
+  eng: the–worthless
+  spa: el–ídolo
+  hin: मूर्ख–के
+  arb: الْبَاطِلِ
+  kor: 쓸모–없는
+  swa: asiyefaa
+
+### Sense 82579 (1 occurrences)
+Grammar: Conj-w, Art | N-mp
+  eng: and–the–idols
+  spa: Y–los–ídolos
+  hin: और–मूर्तियां
+  arb: وَ–الأَصنَامُ
+  kor: 우상들은
+  swa: na–sanamu
+
+### Sense 82580 (1 occurrences)
+Grammar: Art | N-mp
+  eng: the–idols
+  spa: los–ídolos
+  hin: मूर्तियों
+  arb: ال–أَوْثَانِ
+  kor: 그–우상들
+  swa: sanamu
+
+### Sense 82581 (1 occurrences)
+Grammar: N-mp
+  eng: worthless-gods
+  spa: imágenes
+  hin: देवताओं–को
+  arb: الْأَصْنَامَ
+  kor: 헛된–것들을
+  swa: vinyago
+
+## Task
+
+Group these 14 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

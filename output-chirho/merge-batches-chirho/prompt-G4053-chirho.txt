@@ -1,0 +1,127 @@
+# Sense Merge Task for G4053
+
+Lemma: G4053 (POS: Adj-GNS)
+Total occurrences: 23
+Current sense count: 11
+
+This Hebrew/Greek lemma has been over-split into 11 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 74632 (6 occurrences)
+Grammar: Adj-NNS,Adj-ANS,Adj-AMS-C,Adj-ANS-C
+  eng: more, more–than, more-abundantly
+  spa: más, de–más, más–que
+  hin: अधिक, बढ़कर
+  arb: أَعظَمَ, مَا–زَادَ–عَلَى–ذٰلِكَ, فَضْلٍ
+  kor: 더, 더한–것을, 더한–것은
+  swa: zaidi, zaidi–ya, zaidi-ya–
+
+### Sense 74633 (4 occurrences)
+Grammar: Adj-ANS-C
+  eng: more–abundantly, more-abundantly
+  spa: más–abundantemente
+  hin: अधिक
+  arb: أَكْثَرَ, بِالأَكثَرِ, أكثَرَ
+  kor: 더욱더, 더욱, 더–풍성히
+  swa: zaidi, zaidi–ya–
+
+### Sense 74634 (3 occurrences)
+Grammar: Adj-AFS-C
+  eng: more-abundant
+  spa: más–abundante
+  hin: अधिक
+  arb: أكثَرَ
+  kor: 더–풀성한
+  swa: zaidi
+
+### Sense 74635 (3 occurrences)
+Grammar: Adj-ANS-C
+  eng: greater
+  spa: mayor
+  hin: अधिक, बहुत
+  arb: أَعظَمَ, أَكثَرَ
+  kor: 더–큰, 더-큰
+  swa: zaidi, Ole
+
+### Sense 74636 (1 occurrences)
+Grammar: Adj-DFS-C
+  eng: more–excessive
+  spa: más–abundante
+  hin: अत्यधिक
+  arb: الأَكثَرِ
+  kor: 더–큰
+  swa: nyingi–zaidi
+
+### Sense 74637 (1 occurrences)
+Grammar: Adv
+  eng: abundantly
+  spa: abundantemente
+  hin: प्रचार–करते–थे
+  arb: أَكْثَرَ–جِدًّا
+  kor: 더–많이
+  swa: sana–zaidi
+
+### Sense 74638 (1 occurrences)
+Grammar: Adj-NNS
+  eng: unnecessary
+  spa: superfluo
+  hin: अनावश्यक
+  arb: زائِدٌ
+  kor: 너무–많다
+  swa: si–lazima
+
+### Sense 74639 (1 occurrences)
+Grammar: Adj-GNS
+  eng: abundance
+  spa: sobremanera
+  hin: अपने–आप
+  arb: زِيادَةٍ
+  kor: 매우
+  swa: kupita–kiasi
+
+### Sense 74640 (1 occurrences)
+Grammar: Adj-NNS-C
+  eng: more
+  spa: más
+  hin: अधिक
+  arb: أَفضَلُ
+  kor: 더-크다
+  swa: ni–zaidi–ya
+
+### Sense 74641 (1 occurrences)
+Grammar: Adj-NNS
+  eng: advantage
+  spa: superior
+  hin: लाभ
+  arb: ميزَةُ
+  kor: 남음
+  swa: faida
+
+### Sense 74642 (1 occurrences)
+Grammar: Adv
+  eng: abundantly
+  spa: abundancia
+  hin: बहुतायत
+  arb: أَكثَر
+  kor: 풍성히
+  swa: kwa–wingi
+
+## Task
+
+Group these 11 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

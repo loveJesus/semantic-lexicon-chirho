@@ -1,0 +1,127 @@
+# Sense Merge Task for H2263
+
+Lemma: H2263 (POS: Prep-l | V-Qal-Inf)
+Total occurrences: 13
+Current sense count: 11
+
+This Hebrew/Greek lemma has been over-split into 11 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 95299 (2 occurrences)
+Grammar: Conj-w | V-Piel-ConsecImperf-3
+  eng: and–embraced
+  spa: y–abrazó
+  hin: और–गले–लगाया–, और–गले–लगाया
+  arb: وَعَانَقَهُمَا, فَعَانَقَهُ
+  kor: 그리고–안았다
+  swa: na–akawakumbatia, na–akamkumbatia
+
+### Sense 95300 (2 occurrences)
+Grammar: V-Piel-Imperf-3fs | 1cs
+  eng: embraces–me
+  spa: me–abraza, me–abrace
+  hin: गले–लगाती, गले–लगाए–मुझे
+  arb: يُعَانِقُنِي, تِحَبِّقِينِي
+  kor: 나–를–껴안네
+  swa: wananibusu
+
+### Sense 95301 (1 occurrences)
+Grammar: V-Piel-Imperf-2ms | 3fse
+  eng: you–embrace–her
+  spa: la–abraces
+  hin: गले–लगा–उसे
+  arb: تُعَانِقُهَا
+  kor: 그녀–를–포옹하면
+  swa: u–i–kumbatie
+
+### Sense 95302 (1 occurrences)
+Grammar: Conj-w | V-Piel-ConsecImperf-3
+  eng: and–he–embraced–him
+  spa: y–abrazó–le
+  hin: और–गले–लगाया–उसे
+  arb: وَ–عانَقَ–هُ
+  kor: 그리고–께안았다
+  swa: akamkumbatia
+
+### Sense 95303 (1 occurrences)
+Grammar: V-Qal-Prtcpl-ms
+  eng: folding
+  spa: cruza
+  hin: बाँधता–है
+  arb: يَطْوِي
+  kor: 깰다
+  swa: anakunjia
+
+### Sense 95304 (1 occurrences)
+Grammar: Prep-m | V-Piel-Inf
+  eng: from–embracing
+  spa: de–abrazar
+  hin: गले–लगाने–से
+  arb: عَنِ–
+  kor: 포옹함–에서
+  swa: na–kukumbatia
+
+### Sense 95305 (1 occurrences)
+Grammar: Conj-w | V-Piel-ConjImperf-2ms
+  eng: and–embrace
+  spa: y–abrazarás
+  hin: और–गले–लगा
+  arb: وَ–تُعَانِقُ
+  kor: 그리고–포옷하겠느냐
+  swa: na–u–kumbatie
+
+### Sense 95306 (1 occurrences)
+Grammar: Prep-l | V-Qal-Inf
+  eng: to–embrace
+  spa: para–abrazar
+  hin: गले–लगाने–का
+  arb: لِلْعِنَاقِ
+  kor: 포옹하기–위한
+  swa: wa–kukumbatia
+
+### Sense 95307 (1 occurrences)
+Grammar: V-Piel-Perf-3cp
+  eng: they–embrace
+  spa: abrazan–
+  hin: वे–गले–लगाते–हैं
+  arb: يَحْضُنُونَ–
+  kor: 꺼안나니–
+  swa: wanakumbatia
+
+### Sense 95308 (1 occurrences)
+Grammar: V-Qal-Prtcpl-fs
+  eng: embracing
+  spa: abrazando
+  hin: गोद–में–लेगी
+  arb: حَاضِنَةٌ
+  kor: 안고–있겠다
+  swa: utashika
+
+### Sense 95309 (1 occurrences)
+Grammar: V-Piel-Perf-3cp
+  eng: embrace
+  spa: abrazan
+  hin: गले–लगाते–हैं
+  arb: عَانَقُوا
+  kor: 껴안았네
+  swa: wanakumbatia
+
+## Task
+
+Group these 11 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

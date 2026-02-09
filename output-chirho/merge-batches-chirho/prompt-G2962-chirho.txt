@@ -1,0 +1,154 @@
+# Sense Merge Task for G2962
+
+Lemma: G2962 (POS: N-VMS)
+Total occurrences: 724
+Current sense count: 14
+
+This Hebrew/Greek lemma has been over-split into 14 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 71284 (571 occurrences)
+Grammar: N-GMS,N-AMS,N-DMS,N-VMS,N-NMS
+  eng: Lord, Kyrios, the-Lord
+  spa: Señor, señor, Kýrios
+  hin: प्रभु, हे–प्रभु, प्रभु–ने
+  arb: الرَّبِّ, الرَّبُّ, يَا–رَبُّ
+  kor: 주, 주여, 주님이여
+  swa: Bwana, Bwana,, Bwana.
+
+### Sense 71285 (70 occurrences)
+Grammar: N-GMS,N-GMP
+  eng: of–Lord, of-Lord, of–Kyrios
+  spa: de–Señor, del–Señor, de-Señor
+  hin: प्रभु–का, प्रभु–की, प्रभु–के
+  arb: الرَّبِّ, رَبِّ, الرَّبَّ
+  kor: 주–의, 주님–의, 주의
+  swa: wa–Bwana, ya–Bwana, la–Bwana
+
+### Sense 71286 (53 occurrences)
+Grammar: N-AMS,N-NMS,N-DMS,N-VMS,N-GMS,N-DMP,N-GMP,N-NMP,N-VMP
+  eng: lord, master, masters
+  spa: señor, señores, de–señores
+  hin: स्वामी, मलिकोन, मअलिक–ने
+  arb: سَيِّدِهِ, سَيِّدُهُ, السَّيِّدُ
+  kor: 주인이, 주인–이, 주인–의
+  swa: bwana, mabwana, wa–
+
+### Sense 71288 (8 occurrences)
+Grammar: N-DMS
+  eng: Lord
+  spa: Señor
+  hin: प्रभु–में
+  arb: الرَّبِّ., الرَّبِّ،, الرَّبِّ
+  kor: 주님
+  swa: Bwana., Bwana,, Bwana
+
+### Sense 71289 (5 occurrences)
+Grammar: N-DMS
+  eng: to-Lord, to-lord, for–Lord
+  spa: para–Señor, para–señor
+  hin: प्रभु–के–लिए
+  arb: لِ–لرَّبِّ, لِلرَّبِّ
+  kor: 주에게, 주–를–위해
+  swa: kwa–Bwana, kwa–bwana
+
+### Sense 71290 (3 occurrences)
+Grammar: N-NMS
+  eng: LORD, Lord
+  spa: SEÑOR
+  hin: प्रभु
+  arb: رَبُّ, رَبٌّ, الرَّبُّ
+  kor: 주이시니라, 주의, 말하는
+  swa: BWANA
+
+### Sense 71291 (2 occurrences)
+Grammar: N-AMS,N-DMS
+  eng: Lord
+  spa: Señor
+  hin: प्रभु–को, प्रभु–की
+  arb: –الرَّبَّ, الرَّبَّ
+  kor: 주님–을, 주–를
+  swa: Bwana;
+
+### Sense 71292 (2 occurrences)
+Grammar: N-VMS
+  eng: Lord
+  spa: señor
+  hin: स्वामी
+  arb: يا–سَيِّدُ
+  kor: 주인님
+  swa: na, Sitaki
+
+### Sense 71293 (2 occurrences)
+Grammar: N-NMS,N-GMS
+  eng: lord
+  spa: señor
+  hin: स्वामी, प्रभु–की
+  arb: رَبِّنَا, رَبُّكُم
+  kor: 주인이, 주님–의
+  swa: bwana, anakuja
+
+### Sense 71294 (2 occurrences)
+Grammar: N-DMP,N-NMP
+  eng: masters
+  spa: amos
+  hin: मालिकों–ने, मालिकों–को
+  arb: سادَةُ, سادَةَ
+  kor: 주인들이, 주인들에게
+  swa: mabwana
+
+### Sense 71295 (2 occurrences)
+Grammar: N-DMS
+  eng: lord
+  spa: señor
+  hin: स्वामी–के–लिए, स्वामीको
+  arb: –الخَاصِّ, السَّيِّدِ
+  kor: 주인에게, 주님에게
+  swa: bwana,, bwana
+
+### Sense 71296 (2 occurrences)
+Grammar: N-AMS
+  eng: Lord
+  spa: Señor?, Señor
+  hin: प्रभु–से, प्रभु
+  arb: الرَّبَّ
+  kor: 주님을
+  swa: Bwana?, Bwana
+
+### Sense 71297 (1 occurrences)
+Grammar: N-NMP
+  eng: owners
+  spa: dueños
+  hin: मालिकों–ने
+  arb: أَصحابُ
+  kor: 주인들이
+  swa: wamiliki
+
+### Sense 71298 (1 occurrences)
+Grammar: N-VMP
+  eng: Sirs
+  spa: Señores
+  hin: हे–स्वामी
+  arb: يا–سادَةُ
+  kor: 선생들이여
+  swa: Mabwana
+
+## Task
+
+Group these 14 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

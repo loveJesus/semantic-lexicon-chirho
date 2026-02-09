@@ -1,0 +1,154 @@
+# Sense Merge Task for G0568
+
+Lemma: G0568 (POS: V-PIA-2P)
+Total occurrences: 19
+Current sense count: 14
+
+This Hebrew/Greek lemma has been over-split into 14 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 62748 (3 occurrences)
+Grammar: V-PIA-3P
+  eng: they–have–received
+  spa: reciben
+  hin: पा–चुके–हैं
+  arb: اِستَوفَوا
+  kor: 받았다
+  swa: wamepata
+
+### Sense 62749 (2 occurrences)
+Grammar: V-PNM
+  eng: to–abstain
+  spa: abstenerse, absteneros
+  hin: दोओर–रेहन
+  arb: الامتِناعَ, أنْ–تَمْتَنِعوا
+  kor: 삼가기를, 멀리하기를
+  swa: kujiepusha
+
+### Sense 62750 (2 occurrences)
+Grammar: V-PIA-3S
+  eng: is-distant
+  spa: está, dista
+  hin: है
+  arb: يَكُونُ, يَبْعُدُ
+  kor: 떨어져–있다
+  swa: iko
+
+### Sense 62751 (2 occurrences)
+Grammar: V-PNM
+  eng: to-abstain
+  spa: abstenerse, absteneros
+  hin: दूर–रहें, दूर–रहना
+  arb: أَن–يَمتَنِعوا, أَن–تَمتَنِعوا
+  kor: 멀리하라고, 멀리하라
+  swa: kujiepusha
+
+### Sense 62752 (1 occurrences)
+Grammar: V-PPA-AFS
+  eng: being-distant
+  spa: distante
+  hin: दूर
+  arb: بَعيدَةٍ
+  kor: 떨어진
+  swa: umbali–wa
+
+### Sense 62753 (1 occurrences)
+Grammar: V-PNM
+  eng: to–abstain
+  spa: absteneos
+  hin: दूर–रहो
+  arb: امتَنِعوا
+  kor: 멀리하라
+  swa: kujiepusha
+
+### Sense 62754 (1 occurrences)
+Grammar: V-IIA-3S
+  eng: was–distant
+  spa: distaba
+  hin: दोओर–थि
+  arb: ابْتَعَدَتْ
+  kor: 떨어져–있었다
+  swa: ilikuwa–mbali
+
+### Sense 62755 (1 occurrences)
+Grammar: V-PMM-2P
+  eng: abstain
+  spa: absteneos
+  hin: दोओर–रहो
+  arb: امْتَنِعوا
+  kor: 삼가라.
+  swa: jiepusheni
+
+### Sense 62756 (1 occurrences)
+Grammar: V-ASA-2S
+  eng: you–may–have
+  spa: tengas
+  hin: तु-पअये
+  arb: تَملِكَهُ
+  kor: 소유하도록
+  swa: kuwa–na
+
+### Sense 62757 (1 occurrences)
+Grammar: V-PPA-GMS
+  eng: being-distant
+  spa: estando
+  hin: होने–पर
+  arb: كانَ
+  kor: 떨어져–있는
+  swa: akiwa
+
+### Sense 62758 (1 occurrences)
+Grammar: V-PIA-3S
+  eng: It-is-enough
+  spa: basta
+  hin: पर्याप्त–है
+  arb: كَفَى
+  kor: 끝났다
+  swa: Imetosha
+
+### Sense 62759 (1 occurrences)
+Grammar: V-PIA-2P
+  eng: you–are–receiving
+  spa: ya–tenéis
+  hin: पा–चुके–हो
+  arb: قَد–نِلتُم
+  kor: 받았다
+  swa: mmepokea
+
+### Sense 62760 (1 occurrences)
+Grammar: V-PPA-GMS
+  eng: being-away
+  spa: estando
+  hin: होते–हुए
+  arb: بُعْدُهُ
+  kor: 떨어져–있을–때
+  swa: akiwa
+
+### Sense 62761 (1 occurrences)
+Grammar: V-PIA-1S
+  eng: I–have
+  spa: recibo
+  hin: मैने–पअय
+  arb: عِنْدي
+  kor: 가졌노라
+  swa: ninayo
+
+## Task
+
+Group these 14 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

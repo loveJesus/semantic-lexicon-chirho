@@ -1,0 +1,136 @@
+# Sense Merge Task for H8672
+
+Lemma: H8672 (POS: Conj-w | Number-ms)
+Total occurrences: 58
+Current sense count: 12
+
+This Hebrew/Greek lemma has been over-split into 12 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 145938 (27 occurrences)
+Grammar: Number-fsc,Number-fs,Number-ms
+  eng: nine
+  spa: nueve, novecientos, veintinueve
+  hin: नौ, उनतीस, उसकी–चौड़ाई
+  arb: تِسْعُ, تِسْعَ, تِسْعَةٌ
+  kor: 아홉, 구백, 아홉의
+  swa: tisa, mia–tisa, mia
+
+### Sense 145939 (17 occurrences)
+Grammar: Conj-w | Number-fsc,Conj-w | Number-fs,Conj-w | Number-ms
+  eng: and–nine
+  spa: y–nueve, y–nueve.
+  hin: और–नौ, और–उनतीस, और
+  arb: وَ–تِسْعَ, وَ–تِسْعِ, وَثَلَاثِينَ
+  kor: 그리고–아홉, 그리고–아텉, 그리고–아홉의
+  swa: na–tisa, na–mia–tisa–za
+
+### Sense 145940 (3 occurrences)
+Grammar: Number-fsc
+  eng: nine–, nine
+  spa: diecinueve, nueve
+  hin: उन्नीस–
+  arb: تِسْعَ–, التَّاسِعَةُ–
+  kor: 열아홉–의, 열아홉–, 아홉–
+  swa: kumi–na–, wa–kumi–na–tisa
+
+### Sense 145941 (2 occurrences)
+Grammar: Prep-b | Number-ms
+  eng: on–the–ninth
+  spa: en–nueve, en–el–noveno–día
+  hin: में–नौवें, नौवीं–तारीख–को
+  arb: فِي–التَّاسِعِ
+  kor: 에–아홉째에, 에–아홉
+  swa: siku–ya–tisa
+
+### Sense 145942 (2 occurrences)
+Grammar: Prep-l | Number-msc
+  eng: to–nine-of, for–nine-of
+  spa: para–las–nueve, a–las–nueve
+  hin: नौ–को
+  arb: لِ–التِّسْعةِ
+  kor: 에게–아홉
+  swa: kwa–makabila–tisa
+
+### Sense 145943 (1 occurrences)
+Grammar: Number-ms
+  eng: nineteen
+  spa: diecinueve
+  hin: उन्नीस
+  arb: تِسْعَةَ
+  kor: 열아홉
+  swa: kumi–na–tisa
+
+### Sense 145944 (1 occurrences)
+Grammar: Prep-b | Number-ms
+  eng: on–ninth
+  spa: En–nueve
+  hin: ब–नौवें
+  arb: فِي–التَّاسِعِ
+  kor: 에–아홉째
+  swa: siku–ya–tisa–ya–
+
+### Sense 145945 (1 occurrences)
+Grammar: Prep-l | Number-msc
+  eng: to–nine-of
+  spa: a–nueve–de
+  hin: को–नौ
+  arb: لِتِسْعَةِ
+  kor: 아홉–의
+  swa: makabila–tisa
+
+### Sense 145946 (1 occurrences)
+Grammar: Prep-b | Number-ms
+  eng: on–nine-of
+  spa: en–el–nueve
+  hin: नौवें
+  arb: فِي–تَاسِعِ
+  kor: 에–아홉
+  swa: katika–tisa
+
+### Sense 145947 (1 occurrences)
+Grammar: Number-fsc
+  eng: nine
+  spa: nueve
+  hin: उन्नेएस–
+  arb: تِسْعَ
+  kor: 아홉–
+  swa: miaka–mia–moja–na–kumi–na–tisa
+
+### Sense 145948 (1 occurrences)
+Grammar: Number-fs
+  eng: nine-of
+  spa: nueve
+  hin: उनचास
+  arb: تِسْعَةً
+  kor: 아홉
+  swa: arobaini
+
+### Sense 145949 (1 occurrences)
+Grammar: Prep-l | Number-ms
+  eng: for–nine
+  spa: Para–nueve–
+  hin: उन्नीस–के–लिए
+  arb: لِلتَّاسِعَةِ
+  kor: 에–열아홉
+  swa: kumi
+
+## Task
+
+Group these 12 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

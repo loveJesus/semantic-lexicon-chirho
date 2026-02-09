@@ -1,0 +1,118 @@
+# Sense Merge Task for G2347
+
+Lemma: G2347 (POS: N-DFS)
+Total occurrences: 45
+Current sense count: 10
+
+This Hebrew/Greek lemma has been over-split into 10 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 69257 (24 occurrences)
+Grammar: N-GFS,N-AFS,N-NFS,N-DFS
+  eng: tribulation, affliction
+  spa: tribulación, aflicción, Aflicción
+  hin: क्लेश, क्लेश,, कशत.
+  arb: ضيقٌ, ضِيقٌ, ضيقٍ
+  kor: 환난, 환난을, 환난–을
+  swa: dhiki, ya–, na
+
+### Sense 69258 (8 occurrences)
+Grammar: N-DFS,N-GFS,N-NFS
+  eng: affliction, of-affliction
+  spa: tribulación, de–tribulación
+  hin: क्लेश, क्लेश–के, क्लेश–की
+  arb: ضيقِنا, ضيقٍ, ضيقٌ
+  kor: 환난, 환난의, 환난이
+  swa: dhiki, dhiki,, la–dhiki,
+
+### Sense 69259 (4 occurrences)
+Grammar: N-DFP,N-GFP
+  eng: afflictions
+  spa: tribulaciones, aflicciones
+  hin: क्लेशोन, कलेएशोन
+  arb: الضّيقاتِ, ضيقاتِ, ضيقاتي
+  kor: 환난들에서, 환난들의, 환난들에
+  swa: dhiki, zangu
+
+### Sense 69260 (2 occurrences)
+Grammar: N-GFP,N-DFP
+  eng: tribulations
+  spa: tribulaciones
+  hin: क्लेशों
+  arb: ضِيقاتٍ, الضِّيقاتِ
+  kor: 환난들을, 환난들
+  swa: dhiki
+
+### Sense 69261 (2 occurrences)
+Grammar: N-GFP,N-NFP
+  eng: afflictions
+  spa: tribulaciones, aflicciones
+  hin: क्लेशों, क्लेश
+  arb: ضِيقَاتِ, ضِيقَاتٍ
+  kor: 환난들이, 고난들–에서
+  swa: dhiki
+
+### Sense 69262 (1 occurrences)
+Grammar: N-DFS
+  eng: tribulation
+  spa: tribulación
+  hin: क्लेश
+  arb: الضِّيقِ
+  kor: 환난에서
+  swa: dhiki,
+
+### Sense 69263 (1 occurrences)
+Grammar: N-GFS
+  eng: tribulation
+  spa: aflicción
+  hin: पीड़ा
+  arb: ضِيقَ
+  kor: 고난–을
+  swa: dhiki
+
+### Sense 69264 (1 occurrences)
+Grammar: N-DFP
+  eng: with-afflictions
+  spa: tribulaciones
+  hin: क्लेशों
+  arb: ضِيقَات
+  kor: 환난들로
+  swa: dhiki
+
+### Sense 69265 (1 occurrences)
+Grammar: N-DFS
+  eng: affliction
+  spa: aflicción
+  hin: क्लेश–में
+  arb: ضيقَتِهِم
+  kor: 환난–에서
+  swa: dhiki
+
+### Sense 69266 (1 occurrences)
+Grammar: N-DFP
+  eng: afflictions
+  spa: tribulaciones
+  hin: क्लेशों
+  arb: ضيقاتٍ
+  kor: 환난들에
+  swa: dhiki,
+
+## Task
+
+Group these 10 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

@@ -1,0 +1,136 @@
+# Sense Merge Task for H1709
+
+Lemma: H1709 (POS: Prep-k)
+Total occurrences: 19
+Current sense count: 12
+
+This Hebrew/Greek lemma has been over-split into 12 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 91307 (3 occurrences)
+Grammar: Art | N-mp
+  eng: the–Fish
+  spa: los–peces, los–pescados
+  hin: मछली–के, मछली–का
+  arb: السَّمَكِ
+  kor: 그–물고기의, 그–물고기들–의
+  swa: samaki, hadaּgiym, Samaki
+
+### Sense 91308 (3 occurrences)
+Grammar: N-mpc
+  eng: fish-of, fish–of
+  spa: peces–de, los–peces–del
+  hin: मछलियों–ने, मछलियां, मछलियाँ
+  arb: سَمَكُ, أَسْماكُ
+  kor: 물고기들–이–, 물고기들–이, 물고기들–
+  swa: samaki–wa
+
+### Sense 91309 (2 occurrences)
+Grammar: Conj-w | N-mpc
+  eng: and–the–fish–of, and–fish–of
+  spa: y–peces–de
+  hin: और–मछली, और–मछलियों
+  arb: وَ–سَمَكَ, وَ–أَسْمَاكَ
+  kor: 그리고–물고기를, 그리고–물고기들–과
+  swa: na–samaki–wa
+
+### Sense 91310 (2 occurrences)
+Grammar: N-ms
+  eng: fish, a–fish
+  spa: pez, pescado
+  hin: मछली
+  arb: سَمَكًا, حُوتًا
+  kor: 생선과, 물고기–를
+  swa: samaki
+
+### Sense 91311 (2 occurrences)
+Grammar: N-mpc
+  eng: fish-of
+  spa: pez–de, peces–de
+  hin: मछलियान, मछलियां–की
+  arb: سَمَكِ
+  kor: 물고기들–의, 물고기들
+  swa: samaki–wa
+
+### Sense 91312 (1 occurrences)
+Grammar: Art | N-mp
+  eng: the–fish
+  spa: los–peces
+  hin: मछलियों
+  arb: السَّمَكِ
+  kor: 그–물고기
+  swa: samaki
+
+### Sense 91313 (1 occurrences)
+Grammar: Prep-k | N-mpc
+  eng: like–the–fish–of
+  spa: como–peces–de–
+  hin: जैसे–मछलियों
+  arb: كَ–أَسماكِ
+  kor: 물고기–같게
+  swa: kama–samaki–wa
+
+### Sense 91314 (1 occurrences)
+Grammar: Art | N-mp
+  eng: the–fish
+  spa: los–Peces
+  hin: मछलियों–के
+  arb: السَّمَكِ
+  kor: 물고기–의
+  swa: Samaki
+
+### Sense 91315 (1 occurrences)
+Grammar: Prep-l, Art | N-ms
+  eng: to–the–fish
+  spa: al–pez
+  hin: मछली–से
+  arb: الْحُوتَ
+  kor: 그–물고기–에게
+  swa: kwa–samaki
+
+### Sense 91316 (1 occurrences)
+Grammar: Prep-k, Art | N-mp
+  eng: like–the–fish
+  spa: como–los–peces
+  hin: मछलियों–के–समान
+  arb: كَ–دَّجِيم
+  kor: 같이–물고기들
+  swa: kama–samaki
+
+### Sense 91317 (1 occurrences)
+Grammar: Art | N-ms
+  eng: the–fish
+  spa: el–pez
+  hin: मछली–के
+  arb: الْحُوتِ
+  kor: 그–물고기–의
+  swa: samaki
+
+### Sense 91318 (1 occurrences)
+Grammar: N-mp
+  eng: of–fish
+  spa: peces
+  hin: मछलियों–के
+  arb: السَّمَكِيَّةِ
+  kor: 물고기들의
+  swa: wa–samaki
+
+## Task
+
+Group these 12 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

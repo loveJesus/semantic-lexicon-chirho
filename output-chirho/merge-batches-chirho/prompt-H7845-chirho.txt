@@ -1,0 +1,153 @@
+# Sense Merge Task for H7845
+
+Lemma: H7845 (POS: Prep-m | N-fs)
+Total occurrences: 23
+Current sense count: 14
+
+This Hebrew/Greek lemma has been over-split into 14 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 139842 (5 occurrences)
+Grammar: N-fs
+  eng: pit, a–pit, the–pit
+  spa: fosa
+  hin: गड्ढे, गड्ढा, गड्ढे–में
+  arb: الهاوِيَةِ, حُفْرَةٌ, حُفْرَةً
+  kor: 구덩이, 구덩이를, 구덩이–가
+  swa: shimo, shimoni
+
+### Sense 139843 (2 occurrences)
+Grammar: Prep-b | N-fs
+  eng: in–the–pit, into–the–pit
+  spa: en–foso
+  hin: में–गर्त
+  arb: فِي–هُوَّةِ, فِي–هُوَّةٍ
+  kor: 함정–에, 구덩이–에
+  swa: shimoni, katika–shimo
+
+### Sense 139844 (2 occurrences)
+Grammar: Prep-m | N-fs
+  eng: from–the–pit
+  spa: de–fosa
+  hin: गड्ढे–से
+  arb: مِنَ–الْهُوَّةِ, مِنَ–الهاويَة
+  kor: 부터–능, 구덩이–에서
+  swa: uhai–wako, kutoka–shimoni
+
+### Sense 139845 (2 occurrences)
+Grammar: Prep-b | N-fsc | 3mp
+  eng: in–pit–their
+  spa: en–su–fosa
+  hin: में–गढ़े–अपने
+  arb: فِي–حُفْرَتِهِمْ
+  kor: 그들의–함정–안에서
+  swa: katika–shimo–lao
+
+### Sense 139846 (2 occurrences)
+Grammar: Prep-b, Art | N-fs
+  eng: the–pit, in-the-pit
+  spa: por–la–fosa, en–el–hoyo
+  hin: गढ़्ढे–में, गड्ढे–में
+  arb: في–الحُفْرَةِ, بِ–الهاوِيَةِ
+  kor: 구덩이를, 구덩이–속에
+  swa: shimoni
+
+### Sense 139847 (2 occurrences)
+Grammar: Prep-l, Art | N-fs
+  eng: to–the–pit
+  spa: a–la–fosa, A–la–fosa
+  hin: गढ़्ढे–को, गड्ढे–के
+  arb: لِ–الْفَسَادِ, لِ–الهاوِيَةِ
+  kor: 구덩이에게, 구덩이–에
+  swa: shimo, kwa–kaburi
+
+### Sense 139848 (1 occurrences)
+Grammar: Prep-m | N-fsc
+  eng: from–the–pit
+  spa: de–la–fosa
+  hin: गड्ढे–से
+  arb: مِنْ–حُفْرَةِ
+  kor: 에서–구덩이
+  swa: kutoka–shimo
+
+### Sense 139849 (1 occurrences)
+Grammar: Prep-l, Art | N-fs
+  eng: to–the–pit
+  spa: en–la–fosa
+  hin: गड्ढे–में
+  arb: فِي–الْحُفْرَةِ
+  kor: 구덩이에서–
+  swa: shimoni
+
+### Sense 139850 (1 occurrences)
+Grammar: Prep-l, Art | N-fs
+  eng: to-the-pit
+  spa: Al–foso
+  hin: में–गड्ढे
+  arb: إِلَى–الْهَاوِيَةِ
+  kor: 구덩이에–
+  swa: shimoni
+
+### Sense 139851 (1 occurrences)
+Grammar: Art | N-fs
+  eng: the–pit
+  spa: la–fosa
+  hin: गड़्ढा
+  arb: الهاوِيَة
+  kor: –구덩이–를
+  swa: shimo
+
+### Sense 139852 (1 occurrences)
+Grammar: N-fs
+  eng: the–pit
+  spa: corrupción
+  hin: सड़ांध
+  arb: الفَسَادَ
+  kor: 구덩이–를
+  swa: uharibifu
+
+### Sense 139853 (1 occurrences)
+Grammar: N-fs
+  eng: the–pit
+  spa: hoyo
+  hin: गड्ढे–में
+  arb: الْحُفْرَةِ
+  kor: 구덩이–로
+  swa: shimo
+
+### Sense 139854 (1 occurrences)
+Grammar: N-fsc
+  eng: pit–of
+  spa: hoyo–de
+  hin: गड्ढे–में
+  arb: حُفْرَةَ
+  kor: 구덩이
+  swa: shimo-la
+
+### Sense 139855 (1 occurrences)
+Grammar: N-fs
+  eng: destruction
+  spa: destrucción
+  arb: الهَلاكِ
+  kor: 멸망–의
+  swa: mwa–uharibifu
+
+## Task
+
+Group these 14 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

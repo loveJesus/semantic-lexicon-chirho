@@ -1,0 +1,126 @@
+# Sense Merge Task for H2895
+
+Lemma: H2895 (POS: V-Qal-Perf-3cp)
+Total occurrences: 24
+Current sense count: 11
+
+This Hebrew/Greek lemma has been over-split into 11 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 100003 (11 occurrences)
+Grammar: V-Qal-Perf-3ms,Adj-ms
+  eng: good
+  spa: bueno, bien
+  hin: अच्छा–लगे, अच्छा
+  arb: حَسُنَ, حَسَنٌ, خَيْرٌ
+  kor: 좋으면, 좋다면, 좋은
+  swa: vyema, ni–vizuri, vizuri
+
+### Sense 100004 (3 occurrences)
+Grammar: Conj-w | V-Qal-ConjPerf-3ms,Conj-w | Adj-ms
+  eng: and–good
+  spa: y–bien, y–sea–bien
+  hin: और–भला–हो, और-अचछ-होत, और-अचछ-होग
+  arb: وَ–يَطِيبُ, وَ–طَابَ, وَخَيْرًا
+  kor: 그리고–좋을것이다, 그리고–좋으리라, 그리고–좋았다
+  swa: na–utakuwa–vizuri, na–iwe–vizuri, na–akawa–vizuri
+
+### Sense 100005 (2 occurrences)
+Grammar: V-Hifil-Perf-2ms
+  eng: you-did-well
+  spa: hiciste–bien
+  hin: हेतीवोता, अच्छा–किया
+  arb: أَحْسَنْتَ
+  kor: 잘–행하였음, 네가–잘하였다
+  swa: umefanya–vizuri, kwamba
+
+### Sense 100006 (1 occurrences)
+Grammar: V-Hifil-Imp-ms | 3fs
+  eng: do–good
+  spa: Haz–bien
+  hin: भलाई–कर
+  arb: أَحسِن
+  kor: 선–을–행하소서
+  swa: Wafanyie–mema
+
+### Sense 100007 (1 occurrences)
+Grammar: V-Hifil-Perf-2ms
+  eng: you–did–well
+  spa: bien–hiciste
+  hin: भला–किया–तूने
+  arb: أَحْسَنْتَ
+  kor: 잘-하셨습니다
+  swa: ulifanya–vyema
+
+### Sense 100008 (1 occurrences)
+Grammar: Prep-l | V-Hifil-Inf
+  eng: to–do–good–to
+  spa: para–hacerles–bien
+  hin: भलाई–करने–को
+  arb: لِأُحْسِنَ
+  kor: 선하게–하기–위해
+  swa: kuwatendea–mema
+
+### Sense 100009 (1 occurrences)
+Grammar: Conj-w | V-Hifil-Prtcpl-ms
+  eng: and–skilled-at
+  spa: y–bien
+  hin: आवाज़
+  arb: وَحَسَنِ
+  kor: 그리고–잘–케는
+  swa: na–mzuri–wa
+
+### Sense 100010 (1 occurrences)
+Grammar: Conj-w | V-Hifil-ConjPerf-1cs
+  eng: and–I-will-do-better
+  spa: y–haré–bien
+  hin: और–मैं–भलाई–करूँगा
+  arb: وَأُحْسِنُ
+  kor: 그리고–내가–좋게–하리라
+  swa: na–nitafanya–vizuri
+
+### Sense 100011 (1 occurrences)
+Grammar: Conj-w | V-Hifil-Prtcpl-ms
+  eng: and–doing–good
+  spa: y–haces–bien
+  arb: وَ–مُحْسِنٌ
+  kor: 그리고–선–을–행하시도다
+  swa: na–kutenda–mema
+
+### Sense 100012 (1 occurrences)
+Grammar: V-Qal-Perf-3cp
+  eng: good
+  spa: hermosas
+  hin: सुंदर–हैं
+  arb: أَجْمَلَ
+  kor: 좋은
+  swa: ni–mazuri
+
+### Sense 100013 (1 occurrences)
+Grammar: V-Qal-Perf-3cp
+  eng: better
+  spa: mejores
+  hin: अच्छे–हैं
+  arb: طُوبُو
+  kor: 좋은가
+  swa: ulivyo–bora
+
+## Task
+
+Group these 11 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

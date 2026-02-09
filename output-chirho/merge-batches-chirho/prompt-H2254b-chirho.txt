@@ -1,0 +1,117 @@
+# Sense Merge Task for H2254b
+
+Lemma: H2254b (POS: Conj-w | V-Piel-ConjPerf-3ms)
+Total occurrences: 12
+Current sense count: 10
+
+This Hebrew/Greek lemma has been over-split into 10 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 95237 (3 occurrences)
+Grammar: Prep-l | V-Piel-Inf
+  eng: to–ruin, to–destroy
+  spa: para–destruir
+  hin: नाश–करने–के–लिए, नष्ट–करनेको, के–नाश–करने
+  arb: لِيُهْلِكَ, لِـ–يُهْلِكَ, لِـ–يُدَمِّرَ
+  kor: 에–멸망시키려고, 멸하려고, 멸하게–하려고
+  swa: kuharibu
+
+### Sense 95238 (1 occurrences)
+Grammar: V-Qal-Inf
+  eng: surely
+  spa: Corrupción
+  hin: बहुत–बुरा
+  arb: فَسَادًا
+  kor: 상하게
+  swa: tumeasi
+
+### Sense 95239 (1 occurrences)
+Grammar: V-Nifal-Imperf-3ms
+  eng: brings–destruction–on
+  spa: será–destruido
+  hin: नष्ट–होगा
+  arb: يَرْتَبِطُ
+  kor: 손해된다
+  swa: ataleta–uharibifu
+
+### Sense 95240 (1 occurrences)
+Grammar: V-Piel-Prtcpl-mp
+  eng: destroying
+  spa: que–arruinan
+  hin: बिगाड़नेवाली
+  arb: مِحَبّْلِيم
+  kor: 망치는–자들
+  swa: wanaoharibu
+
+### Sense 95241 (1 occurrences)
+Grammar: Conj-w | V-Piel-ConjPerf-3ms
+  eng: and–destroy
+  spa: y–destruirá
+  hin: और–नष्ट–करे
+  kor: 그리고–멸하시겠는가
+  swa: na–kuharibu
+
+### Sense 95242 (1 occurrences)
+Grammar: V-Qal-Imperf-1cs
+  eng: I–will–offend
+  spa: arruinaré
+  hin: बिगाड़ूँगा
+  arb: أُفسِدُ
+  kor: 내가–망가뜨리지
+  swa: nitaendelea–kupotoa
+
+### Sense 95243 (1 occurrences)
+Grammar: V-Qal-Perf-1cp
+  eng: we-acted-corruptly
+  spa: nos–corrompimos
+  hin: हमने–किया–है
+  arb: أَفْسَدْنَا
+  kor: 우리가–상하게–했다
+  swa: tumeasi
+
+### Sense 95244 (1 occurrences)
+Grammar: V-Pual-Perf-3fs
+  eng: is–broken
+  spa: está–corrompido
+  hin: टूटी–हुई
+  arb: فَسَدَتْ
+  kor: 상했나니
+  swa: imevunjwa
+
+### Sense 95245 (1 occurrences)
+Grammar: V-Piel-Imperf-3fs
+  eng: it–will–destroy
+  spa: destruirá
+  hin: नष्ट–करेगी
+  arb: تُهْلِكُ
+  kor: 파괴한다
+  swa: inaharibu
+
+### Sense 95246 (1 occurrences)
+Grammar: Conj-w | V-Pual-ConjPerf-3ms
+  eng: and–will-be-broken
+  spa: y-será-destruido
+  hin: और–नाश–होगा
+  arb: وَ–يُحَطَّمُ
+  kor: 깨어지리라
+  swa: na-itavunjwa
+
+## Task
+
+Group these 10 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

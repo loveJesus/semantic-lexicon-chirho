@@ -1,0 +1,143 @@
+# Sense Merge Task for G1085
+
+Lemma: G1085 (POS: N-GNS)
+Total occurrences: 21
+Current sense count: 13
+
+This Hebrew/Greek lemma has been over-split into 13 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 64488 (3 occurrences)
+Grammar: N-NNP,N-ANP
+  eng: kinds
+  spa: géneros
+  hin: प्रकार
+  arb: أنواعُ, أنواعَ
+  kor: 종류들이
+  swa: aina
+
+### Sense 64489 (3 occurrences)
+Grammar: N-GNS,N-NNS,N-ANS
+  eng: family, race
+  spa: linaje
+  hin: वंश, जाति
+  arb: نَسْلِ, نَسَبُ, جِنْسِ
+  kor: 종족–이, 종족–을, 종족–으로부터
+  swa: ukoo
+
+### Sense 64490 (2 occurrences)
+Grammar: N-NNS
+  eng: kind
+  spa: género
+  hin: जाति, जअत
+  arb: جِنْسُ, الجِنْسُ
+  kor: 종류는, 종류–는
+  swa: aina
+
+### Sense 64491 (2 occurrences)
+Grammar: N-NNS
+  eng: offspring
+  spa: linaje, Linaje
+  hin: वंश
+  arb: نَسلٌ
+  kor: 후손이도다, 후손이
+  swa: uzao
+
+### Sense 64492 (2 occurrences)
+Grammar: N-DNS
+  eng: birth
+  spa: de–origen
+  hin: जाति–से
+  arb: ـالْأَصْلِ, ـالأَصْلِ
+  kor: 태생의
+  swa: kizazi
+
+### Sense 64493 (2 occurrences)
+Grammar: N-NNS
+  eng: race, offspring
+  spa: linaje
+  hin: वंश, तारा
+  arb: نَسْلُ, جِنسٌ
+  kor: 후손이다, 족속
+  swa: kizazi
+
+### Sense 64494 (1 occurrences)
+Grammar: N-DNS
+  eng: birth
+  spa: linaje
+  arb: الجِنْسِ
+  swa: uzao
+
+### Sense 64495 (1 occurrences)
+Grammar: N-GNS
+  eng: countrymen
+  spa: mi–raza
+  hin: जाति–से
+  arb: جِنْسي
+  kor: 동족의
+  swa: taifa–langu,
+
+### Sense 64496 (1 occurrences)
+Grammar: N-GNS
+  eng: kind
+  spa: género
+  hin: प्रकर–से
+  arb: نَوعٍ
+  kor: 종류의
+  swa: aina
+
+### Sense 64497 (1 occurrences)
+Grammar: N-DNS
+  eng: nation
+  spa: raza
+  hin: जति
+  arb: جِنسي
+  kor: 민족
+  swa: taifa
+
+### Sense 64498 (1 occurrences)
+Grammar: N-GNS
+  eng: of–race
+  spa: de–linaje
+  hin: वंश–के
+  arb: جِنسِ
+  kor: 혈통
+  swa: wa–uzao
+
+### Sense 64499 (1 occurrences)
+Grammar: N-DNS
+  eng: race
+  spa: de–raza
+  hin: बच्चों–को
+  arb: جِنْسِ
+  kor: 족속
+  swa: kabila
+
+### Sense 64500 (1 occurrences)
+Grammar: N-GNS
+  eng: nation
+  spa: linaje
+  hin: वनश
+  arb: جِنْسِ
+  kor: 민족
+  swa: taifa
+
+## Task
+
+Group these 13 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

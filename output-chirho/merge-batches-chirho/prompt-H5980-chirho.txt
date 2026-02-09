@@ -1,0 +1,136 @@
+# Sense Merge Task for H5980
+
+Lemma: H5980 (POS: Prep-l | 3ms)
+Total occurrences: 32
+Current sense count: 12
+
+This Hebrew/Greek lemma has been over-split into 12 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 124889 (8 occurrences)
+Grammar: Prep-l
+  eng: corresponding-to
+  spa: paralelo–a, frente–a
+  hin: साथ–साथ, समानांतर, के–समान
+  arb: بِ–مُقَابِلِ, بِـ–مُحَاذَاةِ, مُحَاذِيَةُ
+  kor: 맞은편에, 에–나란히, 에–나란히들의
+  swa: sambamba–na
+
+### Sense 124890 (5 occurrences)
+Grammar: Prep-l
+  eng: corresponding-to, corresponding–to
+  spa: igual–a, correspondiente–a, igual
+  hin: सामने
+  arb: مُقَابِلَ
+  kor: 맞편에–, 에–대한–맞은편
+  swa: kama, sawa–na, sawa
+
+### Sense 124891 (5 occurrences)
+Grammar: Prep-l | 3mp
+  eng: alongside-them, beside-them
+  spa: junto–a–ellos
+  hin: उनके–साथ
+  arb: مَعَها, تُجَاهَهَا
+  kor: 그것들과–함께, 그들의–맞은편에서
+  swa: pamoja–nao, kando–yao, karibu–nao
+
+### Sense 124892 (4 occurrences)
+Grammar: Prep-l
+  eng: close–to, close-to
+  spa: frente–a, junto-a, frente-a
+  hin: सामने, पास, के–बराबर
+  arb: مُقَابِلَ, عِنْدَ, تُجاهَ
+  kor: 에–맞은편에, 에–가까이, 가까이–에
+  swa: karibu–na
+
+### Sense 124893 (2 occurrences)
+Grammar: Prep-l
+  eng: against
+  spa: contra
+  hin: के–सामने
+  arb: مُقابِلَ
+  kor: 을–맞서
+  swa: kinyume–na
+
+### Sense 124894 (2 occurrences)
+Grammar: Prep-l | 3ms
+  eng: opposite–him
+  spa: frente–a–él
+  hin: उसके–सामने
+  arb: بِإِزائِهِ–
+  kor: 그와–나란히, 가면서
+  swa: sambamba–naye
+
+### Sense 124895 (1 occurrences)
+Grammar: Prep-l
+  eng: corresponding–to
+  spa: correspondiente–a
+  hin: के–बराबर
+  arb: مُقَابِلَ
+  kor: 에–맞은편에
+  swa: sawa–na
+
+### Sense 124896 (1 occurrences)
+Grammar: Prep-l
+  eng: alongside–
+  spa: junto–a
+  hin: साथ–
+  arb: مُقَابِلَ
+  kor: 맞서–
+  swa: pamoja–na
+
+### Sense 124897 (1 occurrences)
+Grammar: Prep-m, Prep-l | N-msc
+  eng: from–beside
+  spa: desde–junto–a
+  hin: निकट–से
+  arb: مِنْ–مُقَابِلِ
+  kor: 불록한-부분의-반대쪽의
+  swa: ambalo
+
+### Sense 124898 (1 occurrences)
+Grammar: Prep-l
+  eng: corresponding–to
+  spa: frente–a
+  hin: बारी–बारी–से
+  arb: مُقابِلَ
+  kor: 에–대하여
+  swa: kuelekeana–na
+
+### Sense 124899 (1 occurrences)
+Grammar: Prep
+  eng: same-as
+  spa: manera–que
+  hin: उसी–तरह
+  arb: وَغَمٌّ
+  kor: 같이–
+  swa: jinsi
+
+### Sense 124900 (1 occurrences)
+Grammar: Prep-l
+  eng: opposite
+  spa: Junto–a
+  hin: सामने–की–ओर
+  arb: بِ–مُحاذاةِ
+  kor: 에–가까이
+  swa: karibu–na
+
+## Task
+
+Group these 12 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

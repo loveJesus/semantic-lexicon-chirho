@@ -1,0 +1,127 @@
+# Sense Merge Task for H0256
+
+Lemma: H0256 (POS: Conj-w)
+Total occurrences: 93
+Current sense count: 11
+
+This Hebrew/Greek lemma has been over-split into 11 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 80991 (44 occurrences)
+Grammar: N-proper-ms
+  eng: Ahav, Achav, Ahab
+  spa: Acab, Achav
+  hin: अहाब, अहाब–ने, अहाब–से
+  arb: أَخْآب, أَخْأَبُ, أَخآبَ
+  kor: 아합, 아합이, 아합은
+  swa: Ahabu
+
+### Sense 80992 (36 occurrences)
+Grammar: N-proper-ms
+  eng: Ahab, Akhav, Achav
+  spa: Acab, Ajav, Ajab
+  hin: अखाव, अहाबके, अहाब–के
+  arb: أَخْأَبَ, أَخْآبَ, أَخْأَبُ
+  kor: 아합의, 아합–의, 아합
+  swa: Ahabu, ya–Ahabu
+
+### Sense 80993 (3 occurrences)
+Grammar: Prep-l | N-proper-ms
+  eng: to–Achav, of–Achav
+  spa: de–Acab
+  hin: अहाब–के–लिए, अहाब–के
+  arb: لِ–أَخْآب, لِأَخآبَ
+  kor: 아합의, 아합에게
+  swa: kwa–Ahabu
+
+### Sense 80994 (2 occurrences)
+Grammar: Prep-l | N-proper-ms
+  eng: to–Ahav
+  spa: a–Acab
+  hin: को–अहाब
+  arb: لِ–أَخْآب
+  kor: 아합에게
+  swa: kwa–Ahabu, Ahabu
+
+### Sense 80995 (2 occurrences)
+Grammar: Prep-l | N-proper-ms
+  eng: of–Ahab, from–Ahab
+  spa: de–Acab
+  hin: लअखाव
+  arb: لِأَخْأَبَ, لِأَخْآبَ
+  kor: 아합에게서, 아합–에게
+  swa: kwa–Ahabu
+
+### Sense 80996 (1 occurrences)
+Grammar: Prep-l | N-proper-ms
+  eng: to–Ahab
+  spa: para–Ajav
+  hin: के–अहाब
+  arb: أَخْأَبَ
+  kor: 에게–아합
+  swa: na–Ahabu
+
+### Sense 80997 (1 occurrences)
+Grammar: Prep-k | N-proper-ms
+  eng: like–Achav
+  spa: como–Acab
+  hin: अहाब–के–समान
+  arb: كَ–أَخْآب
+  kor: 아합–같은
+  swa: kama–Ahabu
+
+### Sense 80998 (1 occurrences)
+Grammar: Conj-w, Prep-l | N-proper-ms
+  eng: and–to-Ahab
+  spa: Y–de–Acab
+  hin: उलअखाव
+  arb: وَ–لِأَخْآبَ
+  kor: 그리고–아합–에게는
+  swa: na–kwa–Ahabu
+
+### Sense 80999 (1 occurrences)
+Grammar: Conj-w | N-proper-ms
+  eng: and–Ahav
+  spa: Y–Achav
+  hin: और–अहाब
+  arb: وَ–أَخْأَبُ
+  kor: 그리고–아합은
+  swa: na–Ahabu
+
+### Sense 81000 (1 occurrences)
+Grammar: N-proper-ms
+  eng: Ahav
+  spa: Ajav
+  hin: अखाब
+  arb: أَخْآبَ
+  kor: 아합
+  swa: Ahabu
+
+### Sense 81001 (1 occurrences)
+Grammar: Conj-w, Prep-k | N-proper-ms
+  eng: and–like–Ahav
+  spa: y–como–Ajav
+  hin: और–जैसे–अखाब
+  arb: وَكَأَخْآبَ
+  kor: 그리고–아합처럼
+  swa: na–kama–Ahabu
+
+## Task
+
+Group these 11 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

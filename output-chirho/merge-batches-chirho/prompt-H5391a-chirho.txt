@@ -1,0 +1,136 @@
+# Sense Merge Task for H5391a
+
+Lemma: H5391a (POS: V-Qal-Prtcpl-mpc | 2ms)
+Total occurrences: 12
+Current sense count: 12
+
+This Hebrew/Greek lemma has been over-split into 12 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 119560 (1 occurrences)
+Grammar: V-Qal-Imperf-3ms | 3mse
+  eng: will–bite–him
+  spa: lo–morderá
+  hin: काटेगा–उसे
+  arb: يِشِّكِنُّو
+  kor: 물–것이다–그를
+  swa: ataumwa
+
+### Sense 119561 (1 occurrences)
+Grammar: V-Qal-Perf-3ms
+  eng: bit
+  spa: mordía
+  hin: डसा
+  arb: لَدَغَتْ
+  kor: 물었다
+  swa: ameumwa
+
+### Sense 119562 (1 occurrences)
+Grammar: Conj-w | V-Qal-ConjPerf-3ms | 
+  eng: and–bites-him
+  spa: y–le–muerde
+  hin: और–काट–ले–उसको
+  arb: وَ–تَلْدَغُهُ
+  kor: 그리고–물리라
+  swa: na–akaumwa–na
+
+### Sense 119563 (1 occurrences)
+Grammar: V-Qal-Prtcpl-mpc | 2ms
+  eng: your–creditors
+  spa: los–que–te–muerden
+  hin: तेरे–काटने–वाले
+  arb: عاضّوكَ
+  kor: 너–를–무는–자–들이
+  swa: wanaokung'ata
+
+### Sense 119564 (1 occurrences)
+Grammar: V-Qal-Imperf-3ms
+  eng: it–bites
+  spa: morderá
+  hin: काटती–है
+  arb: تَلْدَغُ
+  kor: 물리라
+  swa: huuma
+
+### Sense 119565 (1 occurrences)
+Grammar: Art | V-Qal-Prtcpl-ms
+  eng: the–biting
+  spa: el–que–muerde
+  hin: काटता–है–जो
+  arb: اللَّادِغُ
+  kor: 물리라
+  swa: yule–akachimba
+
+### Sense 119566 (1 occurrences)
+Grammar: Art | V-Qal-QalPassPrtcpl-ms
+  eng: the–bitten
+  spa: el–mordido
+  hin: जो–डसा–हुआ–है
+  arb: الْمَلْدُوغِ
+  kor: 그–물린–자–가
+  swa: aliyeumwa
+
+### Sense 119567 (1 occurrences)
+Grammar: V-Qal-Imperf-3ms
+  eng: bites
+  spa: muerde
+  hin: काटे
+  arb: يِشُّوكْ
+  kor: 물면
+  swa: akiuma
+
+### Sense 119568 (1 occurrences)
+Grammar: Conj-w | V-Piel-ConjPerf-3cp
+  eng: and–they–shall–bite
+  spa: y–os–morderán
+  hin: और–वे–डसेंगे
+  arb: فَتَلْدَغُكُمْ
+  kor: 그리고–그것들이–물리라
+  swa: na–watawauma
+
+### Sense 119569 (1 occurrences)
+Grammar: Conj-w | V-Qal-ConjPerf-3ms | 
+  eng: and–it-will-bite-them
+  spa: y–los–morderá
+  hin: और–काटेगा–उन्हें।
+  arb: فَ–تَلْدَغُهُمْ
+  kor: 그리고–물리라
+  swa: na–atawaumia
+
+### Sense 119570 (1 occurrences)
+Grammar: Art | V-Qal-Prtcpl-mp
+  eng: the–ones–biting
+  spa: los–que–muerden
+  hin: काटने–वालों
+  arb: الْعَاضِّينَ
+  kor: 그–무는–자들
+  swa: wanaotafuna
+
+### Sense 119571 (1 occurrences)
+Grammar: Conj-w | V-Piel-ConsecImperf-3
+  eng: and–bit
+  spa: y–mordieron
+  hin: और–वे–डसते–थे
+  arb: فَ–لَدَغَتْ
+  kor: 그리고–물었다
+  swa: na–wakawauma
+
+## Task
+
+Group these 12 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

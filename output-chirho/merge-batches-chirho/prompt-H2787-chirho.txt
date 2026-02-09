@@ -1,0 +1,124 @@
+# Sense Merge Task for H2787
+
+Lemma: H2787 (POS: Conj-w | V-Qal-ConjPerf-3fs)
+Total occurrences: 11
+Current sense count: 11
+
+This Hebrew/Greek lemma has been over-split into 11 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 99369 (1 occurrences)
+Grammar: V-Nifal-Perf-3ms
+  eng: is–charred
+  spa: se–quemó
+  hin: क्या–
+  arb: احْتَرَقَ
+  kor: 그을렸다
+  swa: imechomeka
+
+### Sense 99370 (1 occurrences)
+Grammar: V-Nifal-Perf-3ms
+  eng: is–burned
+  spa: Se–quemó
+  hin: झुलस–गई–है
+  arb: احْتَرَقَ
+  kor: 타버렸다
+  swa: umeungua
+
+### Sense 99371 (1 occurrences)
+Grammar: V-Qal-Perf-3fs
+  eng: burn
+  spa: arden
+  hin: जलती–हैं
+  arb: احتَرَقَت
+  kor: 탄다
+  swa: inawaka
+
+### Sense 99372 (1 occurrences)
+Grammar: V-Qal-Perf-3cp
+  eng: of–earth
+  spa: fueron–quemados
+  hin: जल–गए
+  arb: اِحْتَرَقَ
+  kor: 말랐으니
+  swa: wamechomwa
+
+### Sense 99373 (1 occurrences)
+Grammar: V-Nifal-Perf-3cp
+  eng: were–angry–
+  spa: se–airaron
+  hin: क्रोधित–थे–
+  arb: نِحَرُو–
+  kor: 분노했네
+  swa: walinikasirikia
+
+### Sense 99374 (1 occurrences)
+Grammar: V-Nifal-Imperf-3mp
+  eng: let-be-charred
+  spa: sean–quemados
+  arb: لِتُحْرَقْ
+  kor: 타리라
+  swa: itachomeka
+
+### Sense 99375 (1 occurrences)
+Grammar: Conj-w | V-Nifal-ConsecImperf-
+  eng: and–it-is-charred
+  spa: y–se–quemó
+  hin: खा–गई–उसे
+  arb: وَاحْتَرَقَ
+  kor: 그리고–그을렸다
+  swa: na–umechomeka
+
+### Sense 99376 (1 occurrences)
+Grammar: Prep-l | V-Piel-Inf
+  eng: to–kindle
+  spa: para–encender–
+  hin: भड़काने–के–लिए–
+  arb: لِيُشْعِلَ–
+  kor: 피우는–자이니라–
+  swa: kuchochea–
+
+### Sense 99377 (1 occurrences)
+Grammar: V-Nifal-Perf-3ms
+  eng: is–parched
+  spa: está–ronca
+  arb: جَفَّ
+  kor: 쉴었도다
+  swa: kimekauka
+
+### Sense 99378 (1 occurrences)
+Grammar: Conj-w | V-Qal-ConjPerf-3fs
+  eng: and–may-glow
+  spa: y–arda
+  arb: وَيَحْتَرِقَ
+  kor: 그리고–달구어지게–하고
+  swa: na–ichomeke
+
+### Sense 99379 (1 occurrences)
+Grammar: V-Nifal-Perf-3cp
+  eng: are–charred
+  spa: se–han–quemado
+  hin: जल–गईं
+  arb: احتَرَقَت
+  kor: 타도다
+  swa: imechomeka
+
+## Task
+
+Group these 11 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

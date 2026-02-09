@@ -1,0 +1,145 @@
+# Sense Merge Task for G4506
+
+Lemma: G4506 (POS: V-ASP-1P)
+Total occurrences: 18
+Current sense count: 13
+
+This Hebrew/Greek lemma has been over-split into 13 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 76240 (3 occurrences)
+Grammar: V-AIM-3S
+  eng: rescued
+  spa: rescató, nos–libró, libró
+  hin: बचअय, छुदय, छुड़ाया
+  arb: أَنقَذَ, أَنْقَذَني
+  kor: 구원했다, 건지셨다, 건져내신
+  swa: alituokoa, aliniokoa, alimwokoa
+
+### Sense 76241 (2 occurrences)
+Grammar: V-FIM-3S
+  eng: will–rescue, will–deliver
+  spa: librará
+  hin: बचअयेग, छुड़ाएगा
+  arb: يُنَجِّي, سَيُنقِذُني
+  kor: 구출할–것이다, 건져내랴
+  swa: ataniokoa
+
+### Sense 76242 (2 occurrences)
+Grammar: V-AMM-2S
+  eng: deliver
+  spa: líbranos
+  hin: बचा, छुड़ा
+  arb: نَجِّنا
+  kor: 구하소서
+  swa: tuokoe
+
+### Sense 76243 (2 occurrences)
+Grammar: V-FIM-3S
+  eng: will–deliver, He–will–deliver
+  spa: librará
+  hin: बचाएगा
+  arb: سَيُنقِذُ
+  kor: 건지실-것이다
+  swa: atatuokoa;
+
+### Sense 76244 (1 occurrences)
+Grammar: V-PPM/P-AMS
+  eng: delivering
+  spa: que–rescata
+  hin: बचने-वअले
+  arb: المُنْقِذَ
+  kor: 구원하시는
+  swa: atuokoaye
+
+### Sense 76245 (1 occurrences)
+Grammar: V-AMM-3S
+  eng: let–him–rescue
+  spa: líbrelo
+  hin: छुड़ाए
+  arb: لِيُنْقِذْهُ
+  kor: 구하라
+  swa: na–amwokoe
+
+### Sense 76246 (1 occurrences)
+Grammar: V-APP-AMP
+  eng: having–been–delivered
+  spa: habiendo–sido–librados
+  hin: छुड़ाए–हुए
+  arb: مُنْقَذِينَ
+  kor: 구원받은–자들–이
+  swa: tumekombolewa
+
+### Sense 76247 (1 occurrences)
+Grammar: V-PNM/P
+  eng: to-rescue
+  spa: rescatar
+  hin: छुड़ाना
+  arb: يُنقِذُ
+  kor: 구하기를;
+  swa: kuwaokoa
+
+### Sense 76248 (1 occurrences)
+Grammar: V-ASP-1P
+  eng: we–may–be–delivered
+  spa: seamos–librados
+  hin: चुतकअर–मिलेइन
+  arb: نُنْقَذَ
+  kor: 우리가–건짐–받도록
+  swa: tuokoleewe
+
+### Sense 76249 (1 occurrences)
+Grammar: V-AIM-3S
+  eng: delivered
+  spa: libró
+  hin: बचाया
+  arb: أَنقَذَنا
+  kor: 건지셨다
+  swa: alituokoa
+
+### Sense 76250 (1 occurrences)
+Grammar: V-ASP-1S
+  eng: I-might-be-delivered
+  spa: sea-librado
+  hin: छुड़ाया–जाऊँ
+  arb: أُنْقَذَ
+  kor: 내가–건져지다
+  swa: niokolewe
+
+### Sense 76251 (1 occurrences)
+Grammar: V-PPM/P-NMS
+  eng: Deliverer
+  spa: Libertador
+  hin: छुड़ाने–वाला
+  arb: الْمُنْقِذُ
+  kor: 구원하시는–이가
+  swa: Mkombozi,
+
+### Sense 76252 (1 occurrences)
+Grammar: V-AIP-1S
+  eng: I–was–rescued
+  spa: fui–librado
+  hin: बचअय–गय
+  arb: أُنْقِذْتُ
+  kor: 구출되었다
+  swa: niliokolewa
+
+## Task
+
+Group these 13 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

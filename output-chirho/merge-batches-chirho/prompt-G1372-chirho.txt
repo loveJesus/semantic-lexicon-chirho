@@ -1,0 +1,118 @@
+# Sense Merge Task for G1372
+
+Lemma: G1372 (POS: V-PPA-NMS)
+Total occurrences: 16
+Current sense count: 10
+
+This Hebrew/Greek lemma has been over-split into 10 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 65712 (3 occurrences)
+Grammar: V-FIA-3S
+  eng: will-thirst
+  spa: tendrá-sed
+  hin: प्यासा–होगा, प्यासा–लगेगा,, प्यासा–लगेगा
+  arb: يَعْطَشَ, يَعْطَشُ
+  kor: 목마르리라, 목마르지–않을–것이다
+  swa: ataona–kiu
+
+### Sense 65713 (2 occurrences)
+Grammar: V-PSA-3S
+  eng: thirsts, he-thirsts
+  spa: tiene-sed
+  hin: प्यासा–हो,, प्यासा–हो
+  arb: عَطِشَ
+  kor: 목마르면
+  swa: ana–kiu,, ana–kiu
+
+### Sense 65714 (2 occurrences)
+Grammar: V-AIA-1S
+  eng: I–was–thirsty
+  spa: tuve–sed
+  hin: प्यासा–था
+  arb: عَطِشْتُ
+  kor: 목말랐다
+  swa: nilikuwa–na–kiu
+
+### Sense 65715 (2 occurrences)
+Grammar: V-PPA-AMS
+  eng: thirsting
+  spa: sediento
+  hin: प्यासा
+  arb: عَطْشَانًا
+  kor: 목마른–것–을
+  swa: una–kiu
+
+### Sense 65716 (2 occurrences)
+Grammar: V-PPA-DMS,V-PPA-NMS
+  eng: thirsting
+  spa: sediento
+  hin: प्यासे–हुए, जल
+  arb: العَطْشانُ, العَطْشانَ
+  kor: 목마른–자에게, 목마른–자는
+  swa: mwenye–kiu, mwenye-kiu
+
+### Sense 65717 (1 occurrences)
+Grammar: V-PIA-1P
+  eng: we–thirst
+  spa: tenemos–sed
+  hin: प्यासे–हैं
+  arb: نَعْطَشُ
+  kor: 목마르다
+  swa: tunaona–kiu,
+
+### Sense 65718 (1 occurrences)
+Grammar: V-PIA-1S
+  eng: I–thirst
+  spa: Tengo-sed
+  hin: मुझे–प्यास–लगी–है
+  arb: أَعْطَشُ
+  kor: 목마르다
+  swa: Ninaona–kiu
+
+### Sense 65719 (1 occurrences)
+Grammar: V-FIA-3P
+  eng: they–will–thirst
+  spa: tendrán–sed
+  hin: वे–प्यासे–लगेंगे
+  arb: يَعطَشوا
+  kor: 목마르지
+  swa: hawatakuwa–na–kiu
+
+### Sense 65720 (1 occurrences)
+Grammar: V-PPA-NMP
+  eng: thirsting
+  spa: que–tienen–sed
+  hin: प्यासे
+  arb: الْعَطْشَانَى
+  kor: 목마른–자들
+  swa: kiu
+
+### Sense 65721 (1 occurrences)
+Grammar: V-PSA-1S
+  eng: I-thirst
+  spa: tenga-sed
+  hin: प्यासा–लगे,
+  arb: أَعْطَشَ
+  kor: 목마르도록
+  swa: one–kiu
+
+## Task
+
+Group these 10 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

@@ -1,0 +1,127 @@
+# Sense Merge Task for G0936
+
+Lemma: G0936 (POS: V-FIA-3S)
+Total occurrences: 21
+Current sense count: 11
+
+This Hebrew/Greek lemma has been over-split into 11 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 64046 (4 occurrences)
+Grammar: V-AIA-3S
+  eng: reigned, reigns
+  spa: reinó
+  hin: राज्य–किया, राज्य–करता–है
+  arb: مَلَكَ, مَلَكَت
+  kor: 왕노릇–했으니, 통치하신다
+  swa: ilitawala, kilitawala, ametawala
+
+### Sense 64047 (4 occurrences)
+Grammar: V-FIA-3P
+  eng: they-will-reign, will–reign, they–will–reign
+  spa: reinarán
+  hin: राज्य–करेंगे, वे–राज्य–करेंगे, और
+  arb: سَيَمْلِكونَ, سَيَملِكونَ
+  kor: 그들이–통치할–것이다, 왕노릇–하리라, 다스릴–것이다
+  swa: watatawala
+
+### Sense 64048 (2 occurrences)
+Grammar: V-ANA
+  eng: to-reign
+  spa: reinar
+  hin: राजा–होना
+  arb: يَملِكُ, أَملِكَ
+  kor: 왕이–되기를
+  swa: kuwatawala, kutawala
+
+### Sense 64049 (2 occurrences)
+Grammar: V-ASA-3S,V-PMA-3S
+  eng: might–reign, let–reign
+  spa: reine
+  hin: राज्य–करे
+  arb: تَملِكْ, تَملِكَ
+  kor: 왕노릇하지, 왕노릇–하기–를
+  swa: itawale
+
+### Sense 64050 (2 occurrences)
+Grammar: V-FIA-3S
+  eng: he–will–reign, he-will-reign
+  spa: reinará
+  hin: वह–राज्य–करेगा, राज्य–करेगा
+  arb: سَيَمْلِكُ, سَيَملِكُ
+  kor: 통치할–것이니, 다스릴–것이다
+  swa: atatawala
+
+### Sense 64051 (2 occurrences)
+Grammar: V-AIA-2P
+  eng: you–reigned
+  spa: reinasteis, reinaseis
+  hin: राज–किया, राज–करते
+  arb: مَلَكْتُمْ
+  kor: 왕이–되었다
+  swa: mngetawala,, mmetawala;
+
+### Sense 64052 (1 occurrences)
+Grammar: V-AIA-3P
+  eng: reigned
+  spa: reinaron
+  hin: राज्य–किया
+  arb: مَلَكوا
+  kor: 그들이–통치하였다
+  swa: wakatawala
+
+### Sense 64053 (1 occurrences)
+Grammar: V-PIA-3S
+  eng: reigns
+  spa: reina
+  hin: राज–करता–है
+  arb: يَمْلِكُ
+  kor: 통치한다
+  swa: anatawala
+
+### Sense 64054 (1 occurrences)
+Grammar: V-PNA
+  eng: to-reign
+  spa: reinar
+  hin: राज्य–करना
+  arb: يَملِكَ
+  kor: 통치하시기
+  swa: kutawala
+
+### Sense 64055 (1 occurrences)
+Grammar: V-AIA-2S
+  eng: you-reigned
+  spa: has–reinado
+  hin: तूने–राज्य–किया।
+  arb: مَلَكتَ
+  kor: 통치하셨나이다
+  swa: umetawala.
+
+### Sense 64056 (1 occurrences)
+Grammar: V-PPA-GMP
+  eng: being–kings
+  spa: que–reinan
+  hin: रअजओन
+  arb: المُلوكِ
+  kor: 왕들–의,
+  swa: wafalme
+
+## Task
+
+Group these 11 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

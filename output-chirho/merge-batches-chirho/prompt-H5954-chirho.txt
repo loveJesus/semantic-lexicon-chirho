@@ -1,0 +1,127 @@
+# Sense Merge Task for H5954
+
+Lemma: H5954 (POS: V-Hofal-Perf-3mp)
+Total occurrences: 17
+Current sense count: 11
+
+This Hebrew/Greek lemma has been over-split into 11 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 124432 (3 occurrences)
+Grammar: V-Qal-Prtcpl-mp,V-Qal-Perf-3fs
+  eng: [ketiv:came-in]
+  spa: [entraron], [entró]
+  hin: [आए], [आई]
+  arb: [دَخَلَ], [دَخَلَتْ]
+  kor: [들어왔다]
+  swa: [waliingia], [aliingia]
+
+### Sense 124433 (3 occurrences)
+Grammar: V-Qal-Perf-3ms
+  eng: went, went-in
+  spa: entró
+  hin: गया
+  arb: دَخَلَ, صَعِدَ
+  kor: 들어갔다, 위–에
+  swa: akaingia, aliingia
+
+### Sense 124434 (2 occurrences)
+Grammar: Prep-l | V-Hifil-Inf
+  eng: to–bring-in
+  spa: que–hicieran–entrar, para–hacer–entrar
+  hin: लाने–के–लिए
+  arb: بِأَنْ–يُحْضَرَ
+  kor: 데려오라
+  swa: kuwalete
+
+### Sense 124435 (2 occurrences)
+Grammar: V-Qal-Prtcpl-mp
+  eng: (qere:came-in)
+  spa: (entraron)
+  hin: (आए)
+  arb: (دَخَلَ)
+  kor: (들어왔으나), (들어왔다)
+  swa: (waliingia)
+
+### Sense 124436 (1 occurrences)
+Grammar: V-Hifil-Imp-ms | 1cs
+  eng: bring-me-in
+  spa: hazme–entrar
+  hin: ले–जा–मुझे
+  arb: أَدْخِلْ–نِي
+  kor: 데려가라
+  swa: nipeleke
+
+### Sense 124437 (1 occurrences)
+Grammar: V-Hofal-Perf-3ms
+  eng: was-brought-in
+  spa: fue–traído
+  hin: लाया–गया
+  arb: أُحْضِرَ
+  kor: 데려와졌더니
+  swa: aliletwa
+
+### Sense 124438 (1 occurrences)
+Grammar: V-Hifil-Perf-3ms
+  eng: brought-in
+  spa: hizo–entrar
+  hin: ले–गया
+  arb: أَدْخَلَ
+  kor: 데려갔다
+  swa: akampeleka
+
+### Sense 124439 (1 occurrences)
+Grammar: V-Qal-Perf-3ms
+  eng: came-in
+  spa: ante
+  hin: पर
+  arb: جَاءَ
+  kor: 위–에
+  swa: aliingia
+
+### Sense 124440 (1 occurrences)
+Grammar: V-Qal-Perf-3fs
+  eng: (qere:came-in)
+  spa: (entró)
+  hin: (आई)
+  arb: (دَخَلَتْ)
+  kor: (들어왔으니)
+  swa: (aliingia)
+
+### Sense 124441 (1 occurrences)
+Grammar: V-Hofal-Perf-3mp
+  eng: were-brought-in
+  spa: fueron–traídos
+  hin: लाए–गए
+  arb: أُحْضِرُوا
+  kor: 데려와졌으나
+  swa: waliletwa
+
+### Sense 124442 (1 occurrences)
+Grammar: V-Hifil-Perf-3ms
+  eng: was-brought
+  spa: fueron–traídas
+  hin: लाई–गई
+  arb: يُحْضَرْ
+  kor: 들여왔더라
+  swa: letwa
+
+## Task
+
+Group these 11 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

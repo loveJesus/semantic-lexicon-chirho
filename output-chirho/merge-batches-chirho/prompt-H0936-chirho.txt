@@ -1,0 +1,118 @@
+# Sense Merge Task for H0936
+
+Lemma: H0936 (POS: Conj-w | V-Qal-ConjImperf-3fs)
+Total occurrences: 12
+Current sense count: 10
+
+This Hebrew/Greek lemma has been over-split into 10 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 85784 (3 occurrences)
+Grammar: V-Qal-Prtcpl-ms
+  eng: he–who–despises
+  spa: El–que–desprecia, el–que–desprecia
+  hin: तुच्छ–करनेवाला, तुच्छ–करता–है
+  arb: مُزْدَرٍ–, مُزْدَرٍ
+  kor: 멸시하는–자–는
+  swa: anayemdharau, anayedharau
+
+### Sense 85785 (1 occurrences)
+Grammar: Conj-w | V-Qal-ConjImperf-3fs
+  eng: and–scorns
+  spa: y–desprecia
+  hin: और–तुच्छ–करती
+  arb: وَ–تَحْتَقِرُ
+  kor: 그리고–무시하는
+  swa: na–linalomdharau
+
+### Sense 85786 (1 occurrences)
+Grammar: V-Qal-Imperf-2ms
+  eng: despise
+  spa: desprecies
+  hin: तुच्छ–कर
+  arb: تَحْتَقِرْ
+  kor: 멸시하지
+  swa: usimdharau
+
+### Sense 85787 (1 occurrences)
+Grammar: V-Qal-Perf-3ms
+  eng: despised
+  spa: menospreció
+  hin: तुच्छ–समझा
+  arb: ازْدَرَى
+  kor: 멸시하였느냐
+  swa: anayedharau
+
+### Sense 85788 (1 occurrences)
+Grammar: V-Qal-Perf-3cp
+  eng: despise
+  spa: desprecian
+  hin: तुच्छ–जाना
+  arb: يَحْتَقِرُونَ
+  kor: 멸시한다
+  swa: wanayadharau
+
+### Sense 85789 (1 occurrences)
+Grammar: V-Qal-Imperf-3mp
+  eng: they–will–despise
+  spa: me–despreciarán
+  hin: नहीं
+  arb: يَحْتَقِرُونَنِي
+  kor: 그들–이–멸시하리라
+  swa: wasingenidharau
+
+### Sense 85790 (1 occurrences)
+Grammar: V-Qal-Imperf-3mp
+  eng: they–will–despise
+  spa: lo–despreciarían
+  hin: प्रेम–के
+  arb: يُحْتَقَرُونَهُ
+  kor: 그들–이–멸시하리라
+  swa: wangemdharau
+
+### Sense 85791 (1 occurrences)
+Grammar: V-Qal-Imperf-3mp
+  eng: do–they–despise
+  spa: tienen–en–poco
+  hin: तुच्छ–जानते
+  arb: يُحْتَقَرُ
+  kor: 멸시한다
+  swa: hawadharau
+
+### Sense 85792 (1 occurrences)
+Grammar: V-Qal-Imperf-3ms
+  eng: he–will–despise
+  spa: despreciará
+  hin: तुच्छ–करेगा
+  arb: يَحْتَقِرُ
+  kor: 멸시하리라–그가
+  swa: atadharau
+
+### Sense 85793 (1 occurrences)
+Grammar: V-Qal-InfAbs
+  eng: utterly
+  spa: desprecio
+  hin: के–बदले–
+  arb: احْتِقَارًا
+  kor: 멸시–로
+  swa: kudharau
+
+## Task
+
+Group these 10 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

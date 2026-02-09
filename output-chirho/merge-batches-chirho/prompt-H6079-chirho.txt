@@ -1,0 +1,118 @@
+# Sense Merge Task for H6079
+
+Lemma: H6079 (POS: Conj-w | N-mdc | 2ms)
+Total occurrences: 10
+Current sense count: 10
+
+This Hebrew/Greek lemma has been over-split into 10 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 125483 (1 occurrences)
+Grammar: Prep-l | N-mdc | 2ms
+  eng: to–your–eyelids
+  spa: a–tus–párpados
+  hin: पलकों–अपनी–को
+  arb: لِأَجْفَانِكَ
+  kor: 네–눈꺼풀–들–에
+  swa: kwa–kope–zako
+
+### Sense 125484 (1 occurrences)
+Grammar: Conj-w | N-mdc | 3ms
+  eng: and–its–eyelids
+  spa: y–sus–párpados
+  hin: और–पलकें–उसकी
+  arb: وَ–أَجْفانُهُ
+  kor: 그리고–그의–눈꺼풀들이
+  swa: na–kope–zake
+
+### Sense 125485 (1 occurrences)
+Grammar: N-mdc | 3ms
+  eng: his–eyelids
+  spa: sus–párpados
+  hin: उसकी–पलकें
+  arb: أَجْفَانُهُ
+  kor: 눈꺼풀들–이
+  swa: kope–zake
+
+### Sense 125486 (1 occurrences)
+Grammar: N-mdc | 1cs
+  eng: my–eyelids
+  spa: mis–párpados
+  hin: मेरी–पलकों
+  arb: أَجْفَانِي
+  kor: 나의–눈꺼풀에
+  swa: kope–zangu
+
+### Sense 125487 (1 occurrences)
+Grammar: Prep-b | N-mdc | 3fs
+  eng: with–her–eyelashes
+  spa: con–sus–párpados
+  hin: पलकों–उसकी–से
+  arb: بِأَجْفَانِهَا
+  kor: 그녀–의–눈꺼풀–들–로
+  swa: kwa–kope–zake
+
+### Sense 125488 (1 occurrences)
+Grammar: Conj-w | N-mdc | 1cp
+  eng: and–our–eyelids
+  spa: y–párpados–nuestros
+  hin: और–पलकें–हमारी
+  arb: وَأَهْدَابُنَا
+  kor: 그리고–우리의–눈꺼풀들이
+  swa: na–kope–zetu
+
+### Sense 125489 (1 occurrences)
+Grammar: Prep-b | N-mdc
+  eng: the–eyelids–of
+  spa: los–párpados–de
+  hin: पलकों–
+  arb: أَهْدابَ
+  kor: 을–눈꺼풀들
+  swa: kope–za
+
+### Sense 125490 (1 occurrences)
+Grammar: Prep-l | N-mdc | 1cs
+  eng: to–my–eyelids
+  spa: a–párpados–míos
+  hin: अपनी–पलकों–को
+  arb: لِـ–أَجْفَانِي
+  kor: 나–의–눈꺼풀–에
+  swa: kwa–kope–zangu
+
+### Sense 125491 (1 occurrences)
+Grammar: Prep-k | N-mdc
+  eng: are-like–the-eyelids-of–
+  spa: como–párpados–de–
+  hin: पलकों–की–तरह
+  arb: كَجُفُونِ–
+  kor: 눈꺼풀들–같다
+  swa: kama–kope–za
+
+### Sense 125492 (1 occurrences)
+Grammar: Conj-w | N-mdc | 2ms
+  eng: and–your–eyelids
+  spa: y–tus–párpados
+  hin: और–पलकें–तेरी
+  arb: وَ–أَجْفَانُكَ
+  kor: 그리고–네–눈꺼풀–들–이
+  swa: na–kope–zako
+
+## Task
+
+Group these 10 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

@@ -1,0 +1,153 @@
+# Sense Merge Task for H6544b
+
+Lemma: H6544b (POS: V-Hifil-Perf-3ms)
+Total occurrences: 15
+Current sense count: 14
+
+This Hebrew/Greek lemma has been over-split into 14 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 128639 (2 occurrences)
+Grammar: V-Qal-Prtcpl-ms
+  eng: he–who–ignores, come–to–him–who–ignores
+  spa: el–que–rechaza, El–que–rechaza
+  hin: त्यागनेवाला
+  arb: رافِضُ
+  kor: 버리는–자는, 무시하는–자–의
+  swa: kwa–anayekataa, anayekataa
+
+### Sense 128640 (1 occurrences)
+Grammar: V-Qal-Perf-3ms | 3ms
+  eng: had-let-loose-them
+  spa: lo–había–desenfrenado
+  hin: उच्छृंखल–होने–दिया–था–उन्हें
+  arb: أَفلَتَهُ
+  kor: 풀어놓았다
+  swa: aliwaachia
+
+### Sense 128641 (1 occurrences)
+Grammar: V-Qal-Imperf-2mp
+  eng: you–shall–uncover
+  spa: descubráis
+  hin: खोलो
+  arb: تُفْرِعُوا
+  kor: 풀어–내리라
+  swa: vifunue
+
+### Sense 128642 (1 occurrences)
+Grammar: V-Qal-QalPassPrtcpl-ms
+  eng: unrestrained
+  spa: desenfrenado
+  hin: उच्छृंखल
+  arb: مُنفَلِتٌ
+  kor: 풀어진
+  swa: wamelegea
+
+### Sense 128643 (1 occurrences)
+Grammar: V-Hifil-Imperf-2mp
+  eng: do-you-make-rest
+  spa: distraéis
+  hin: हतते-हो
+  arb: تُعَطِّلَانِ
+  kor: 너희가–떨어트리느냐
+  swa: mnawazuia
+
+### Sense 128644 (1 occurrences)
+Grammar: V-Hifil-Perf-3ms
+  eng: he–let–loose
+  spa: abandonó
+  hin: बेलगाम–बनाया
+  arb: أَطْلَقَ
+  kor: 그–가–번거롭게–했다
+  swa: aliiacha
+
+### Sense 128645 (1 occurrences)
+Grammar: Conj-w | V-Qal-ConsecImperf-2m
+  eng: and–you–ignored
+  spa: Y–desechasteis
+  hin: और–टाल–दी
+  arb: وَ–أَهْمَلْتُمْ
+  kor: 그리고–저버렸다
+  swa: na–mkapuuza
+
+### Sense 128646 (1 occurrences)
+Grammar: V-Nifal-Imperf-3ms
+  eng: is–unrestrained
+  spa: se–desenfrena
+  hin: अनियंत्रित–होती
+  arb: يَتَعَرَّى
+  kor: 통제를–잃다
+  swa: wanajiachia
+
+### Sense 128647 (1 occurrences)
+Grammar: V-Qal-Imperf-1cs
+  eng: I-will-refrain
+  spa: cederé
+  arb: أَكُفُّ
+  kor: 막으리라
+  swa: jiondoa
+
+### Sense 128648 (1 occurrences)
+Grammar: V-Qal-Imperf-2mp
+  eng: neglect–it
+  spa: la–descuidéis
+  hin: अनदेखा–करो
+  arb: تُهْمِلُوا
+  kor: 무시하지
+  swa: msipuuze
+
+### Sense 128649 (1 occurrences)
+Grammar: V-Qal-Imp-ms | 3ms
+  eng: avoid–it
+  spa: Evítalo
+  hin: छोड़–उसे
+  arb: تَجَنَّبْهُ
+  kor: 그것–을–피하라
+  swa: i–epuke
+
+### Sense 128650 (1 occurrences)
+Grammar: Conj-w | V-Qal-ConjPerf-3ms
+  eng: and–shall–loosen
+  spa: y–soltará
+  hin: और–खोले
+  arb: وَ–يَكْشِفُ
+  kor: 그리고–풀어라
+  swa: Upra
+
+### Sense 128651 (1 occurrences)
+Grammar: V-Qal-QalPassPrtcpl-ms
+  eng: uncovered
+  spa: descubierta
+  hin: अशुद्ध
+  arb: مَكْشُوفًا
+  kor: 풀어진
+  swa: wazi
+
+### Sense 128652 (1 occurrences)
+Grammar: V-Qal-Imperf-3ms
+  eng: he-shall-uncover
+  spa: dejará–descubierta
+  hin: खुला–रखे
+  arb: يَكْشِفْ
+  kor: 풀어놓을–것이다–그는
+  swa: ataacha–wazi
+
+## Task
+
+Group these 14 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

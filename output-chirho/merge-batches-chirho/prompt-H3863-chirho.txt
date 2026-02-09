@@ -1,0 +1,127 @@
+# Sense Merge Task for H3863
+
+Lemma: H3863 (POS: Prep)
+Total occurrences: 23
+Current sense count: 11
+
+This Hebrew/Greek lemma has been over-split into 11 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 108485 (9 occurrences)
+Grammar: Prep
+  eng: if–only, if-only
+  spa: ojalá, si, ¡Oh-si
+  hin: काश, काश–, कअश
+  arb: لَيْتَ, لَوْ, لَيْتَهُ
+  kor: 차라리, 만일, 오–만일
+  swa: Laiti, laiti–, laiti
+
+### Sense 108486 (3 occurrences)
+Grammar: Prep
+  eng: if
+  spa: si
+  hin: यदि
+  arb: لَوْ–, لَوْ, لَو
+  kor: 만일–, 만일, 만야
+  swa: kama, laiti
+
+### Sense 108487 (2 occurrences)
+Grammar: Conj-w | Prep
+  eng: and–if–only, and–if-only
+  spa: y–ojalá
+  hin: काश, और–काश
+  arb: وَ–لَيتَ, لَيْتَنَا
+  kor: 그리고–차라리
+  swa: na–laiti, laiti
+
+### Sense 108488 (2 occurrences)
+Grammar: Prep
+  eng: if–
+  spa: Si
+  hin: यदि–
+  arb: لَوْ–, لَوْ
+  kor: 만일, 만약–
+  swa: kama, Ikiwa
+
+### Sense 108489 (1 occurrences)
+Grammar: Prep
+  eng: (if)
+  spa: (si)
+  hin: अगर
+  arb: (لَوْ)
+  kor: 만일
+  swa: kama
+
+### Sense 108490 (1 occurrences)
+Grammar: Conj-w | Prep
+  eng: (and–even–if)
+  spa: (y–si)
+  hin: और–अगर
+  arb: (وَ–لَوْ)
+  kor: 그리고–비록
+  swa: hata–kama
+
+### Sense 108491 (1 occurrences)
+Grammar: Prep
+  eng: indeed
+  spa: ojalá
+  hin: काश
+  arb: لَوْ
+  kor: 만일
+  swa: je–si
+
+### Sense 108492 (1 occurrences)
+Grammar: Prep
+  eng: If–only
+  spa: Si
+  hin: काश
+  arb: لَيْتَ
+  kor: 오–
+  swa: Laiti
+
+### Sense 108493 (1 occurrences)
+Grammar: 
+  eng: Oh–that
+  spa: ¡Oh–si–
+  hin: काश
+  arb: لَيْتَ–
+  kor: 오–찢으셨더라면
+  swa: laiti
+
+### Sense 108494 (1 occurrences)
+Grammar: Adv-NegPrt
+  eng: not
+  spa: No
+  hin: नहीं
+  arb: لا
+  kor: 않다–
+  swa: hakuna
+
+### Sense 108495 (1 occurrences)
+Grammar: Prep
+  eng: perhaps
+  spa: quizá
+  hin: शायद
+  arb: لَعَلَّ
+  kor: 아마도
+  swa: kwa
+
+## Task
+
+Group these 11 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

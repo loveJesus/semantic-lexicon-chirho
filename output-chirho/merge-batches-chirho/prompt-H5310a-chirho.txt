@@ -1,0 +1,118 @@
+# Sense Merge Task for H5310a
+
+Lemma: H5310a (POS: Conj-w | V-Piel-ConjPerf-3ms)
+Total occurrences: 18
+Current sense count: 10
+
+This Hebrew/Greek lemma has been over-split into 10 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 118568 (9 occurrences)
+Grammar: Conj-w | V-Piel-ConjPerf-1cs
+  eng: and–I–will–shatter
+  spa: y–quebrantaré
+  hin: और–मैं–तोड़ूँगा
+  arb: وَأُحَطِّمُ
+  kor: 그리고–내가–부수리라–너로
+  swa: na–nitawaponda, Na–nitamponda, na–nitaponda
+
+### Sense 118569 (1 occurrences)
+Grammar: V-Pual-Prtcpl-fp
+  eng: not
+  spa: desmenuzadas
+  hin: चूर–चूर
+  arb: مُحَطَّمَةٍ
+  kor: 부수어진
+  swa: yaliyovunjwa
+
+### Sense 118570 (1 occurrences)
+Grammar: V-Piel-Imperf-2ms | 3mp
+  eng: you–shall–shatter–them
+  spa: los–despedazarás
+  hin: तू–उन्हें–चकनाचूर–करेगा
+  arb: تُحَطِّمُهُمْ
+  kor: 토기장이–의
+  swa: utawaponda
+
+### Sense 118571 (1 occurrences)
+Grammar: Conj-w | V-Piel-ConjPerf-3ms
+  eng: and–dashes
+  spa: y–estrelle
+  hin: और–पटकेगा
+  arb: وَيُحَطِّمُ
+  kor: 그리고–메어치는–자
+  swa: na–kuwaponda
+
+### Sense 118572 (1 occurrences)
+Grammar: Conj-w | V-Piel-ConjPerf-1cs |
+  eng: and–I–will–shatter–them
+  spa: Y–los–destrozaré
+  hin: और–पटकूंगा–उन्हें
+  arb: وَ–أُحَطِّمُهُمْ
+  kor: 그리고–내가–부딪리라
+  swa: na–nitawavunja
+
+### Sense 118573 (1 occurrences)
+Grammar: V-Piel-Imperf-3mp
+  eng: they–shall–smash
+  spa: romperán
+  hin: तोड़–डालेंगे
+  arb: يُحَطِّمُونَهَا
+  kor: 부수겠다–그들이
+  swa: wataivunja
+
+### Sense 118574 (1 occurrences)
+Grammar: V-Piel-Inf
+  eng: shattering-of
+  spa: dispersar
+  hin: तोड़ने–का
+  arb: تَفْرِيقِ
+  kor: 흩뜨림의
+  swa: kuvunja
+
+### Sense 118575 (1 occurrences)
+Grammar: Conj-w | V-Piel-ConjPerf-1cs |
+  eng: and–I–shall–break–them–up
+  spa: y–los–desataré
+  hin: और–खोलूंगा–उन्हें
+  arb: وَ–أُفَرِّقُهَا
+  kor: 그리고–내가–풀어놓으리라–그것들을
+  swa: na–wewe
+
+### Sense 118576 (1 occurrences)
+Grammar: V-Qal-QalPassPrtcpl-ms
+  eng: broken
+  spa: quebrado
+  hin: टूटी–हुई
+  arb: الْمُحَطَّمُ
+  kor: 깨어진
+  swa: iliyovunjwa
+
+### Sense 118577 (1 occurrences)
+Grammar: Conj-w | V-Qal-InfAbs
+  eng: and–shattered
+  spa: y–romper
+  hin: और–तोड़े
+  arb: وَ-كَسَرُوا
+  kor: 그리고–깨뜨렸다
+  swa: na–wakavunja
+
+## Task
+
+Group these 10 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

@@ -1,0 +1,154 @@
+# Sense Merge Task for H5699
+
+Lemma: H5699 (POS: N-fs)
+Total occurrences: 25
+Current sense count: 14
+
+This Hebrew/Greek lemma has been over-split into 14 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 122387 (5 occurrences)
+Grammar: N-fs,Art | N-fs
+  eng: cart, the–cart
+  spa: carreta, la–carreta, carro
+  hin: गाड़ी
+  arb: عَجَلَةٍ, عَجَلَةً, العَرَبَةُ
+  kor: 수레, 수레를, 수레가
+  swa: gari, gari–jipya
+
+### Sense 122388 (4 occurrences)
+Grammar: Art | N-fs
+  eng: the–cart
+  spa: la–carreta
+  hin: गाड़ी, गाड़ी–की
+  arb: الـ–عَجَلَةِ, الْعَجَلَةِ
+  kor: 그–수레, 그–수레의
+  swa: gari, za–gari, gari–jipya
+
+### Sense 122389 (3 occurrences)
+Grammar: Art | N-fp
+  eng: the–carts
+  spa: las–carretas
+  hin: गाड़ियाँ
+  arb: الْـعَجَلَاتِ
+  kor: 그–수레들
+  swa: magari
+
+### Sense 122390 (2 occurrences)
+Grammar: N-fp
+  eng: carts
+  spa: carros
+  hin: गाड़ियाँ
+  arb: عَرَبَاتٍ
+  kor: 수레들을
+  swa: ya–Misri, gari
+
+### Sense 122391 (2 occurrences)
+Grammar: Prep-b, Art | N-fs
+  eng: to–the–cart
+  spa: a–la–carreta
+  hin: में–गाड़ी
+  arb: بِـ–الـ–عَجَلَةِ
+  kor: 그–수레에
+  swa: kwenye–gari
+
+### Sense 122392 (1 occurrences)
+Grammar: Art | N-fp
+  eng: the–carts
+  spa: los–carros
+  hin: गाड़ियों
+  arb: الْ–عَرَبَاتِ
+  kor: 수레들을
+  swa: alituma
+
+### Sense 122393 (1 occurrences)
+Grammar: Prep-b, Art | N-fs
+  eng: the–cart
+  spa: el–carro
+  hin: गाड़ी–को
+  arb: بِ–الْعَجَلَةِ
+  kor: 에–그–수레
+  swa: gari
+
+### Sense 122394 (1 occurrences)
+Grammar: N-fpc
+  eng: carts-of
+  spa: carretas
+  hin: गाड़ियाँ
+  arb: عَجَلَاتٍ
+  kor: 수레들
+  swa: magari
+
+### Sense 122395 (1 occurrences)
+Grammar: N-fp
+  eng: the–chariots
+  spa: carros
+  hin: रथों
+  arb: العَرَباتِ
+  kor: 수레들–을
+  swa: magari-ya-vita
+
+### Sense 122396 (1 occurrences)
+Grammar: Prep-b, Art | N-fp
+  eng: in–the–wagons
+  spa: en–los–carros
+  hin: गाड़ियों–में
+  arb: فِي–الْعَجَلَاتِ
+  kor: 에–수레들
+  swa: katika–magari
+
+### Sense 122397 (1 occurrences)
+Grammar: Conj-w, Art | N-fs
+  eng: and–the–cart
+  spa: Y–la–carreta
+  hin: और–गाड़ी
+  arb: وَ–الـ–عَجَلَةُ
+  kor: 그리고–그–수레가
+  swa: na–gari
+
+### Sense 122398 (1 occurrences)
+Grammar: Art | N-fs
+  eng: the–cart
+  spa: carreta
+  hin: गाड़ी–की
+  arb: العَرَبَةِ
+  kor: 수레의
+  swa: gari
+
+### Sense 122399 (1 occurrences)
+Grammar: N-fsc | 3ms
+  eng: the–wheel
+  spa: su–carreta
+  hin: गाड़ी–अपनी–का
+  arb: عَرَبَتِهِ
+  kor: 그–수레의
+  swa: la–gari–lake
+
+### Sense 122400 (1 occurrences)
+Grammar: N-fs
+  eng: wheel
+  spa: carreta
+  hin: गाड़ी–का
+  arb: الْعَرَبَةِ
+  kor: 수레의
+  swa: la–gari
+
+## Task
+
+Group these 14 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

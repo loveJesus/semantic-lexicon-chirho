@@ -1,0 +1,136 @@
+# Sense Merge Task for H6793c
+
+Lemma: H6793c (POS: N-fp)
+Total occurrences: 20
+Current sense count: 12
+
+This Hebrew/Greek lemma has been over-split into 12 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 130298 (7 occurrences)
+Grammar: N-fs
+  eng: shield, large-shield, a–shield
+  spa: escudo, escudo–grande
+  hin: ढाल, छोटी–ढाल
+  arb: تُرْسًا, تُرْس, مِجَنٌّ
+  kor: 큰–방패와, 큰–방패, 큰방패
+  swa: ngao, ngao–ndogo
+
+### Sense 130299 (2 occurrences)
+Grammar: Art | N-fs
+  eng: the–shield
+  spa: el–escudo
+  hin: धल-कि
+  arb: التُّرْسِ
+  kor: 그–큰–방패를
+  swa: ngao
+
+### Sense 130300 (2 occurrences)
+Grammar: Art | N-fs
+  eng: the–large–shield, the–large-shield
+  spa: el–escudo–grande
+  hin: बड़ी–ढाल–पर, बड़ी–ढाल
+  arb: عَلَى–الـ–تُّرْسِ, التُّرسِ
+  kor: 그–큰–방패, 그–방패
+  swa: ngao–kubwa
+
+### Sense 130301 (1 occurrences)
+Grammar: N-fs
+  eng: large–shields–of
+  spa: escudos–grandes
+  hin: बड़ी–ढालें
+  arb: تُرسٍ
+  kor: 큰–방패
+  swa: ngao–kubwa
+
+### Sense 130302 (1 occurrences)
+Grammar: Conj-w | N-fs
+  eng: and–buckler
+  spa: y–broquel
+  hin: और–बड़ी–ढाल
+  arb: وَمِجَنًّا
+  kor: 큰–방패를
+  swa: na–kigao
+
+### Sense 130303 (1 occurrences)
+Grammar: Prep-b | N-fs
+  eng: with–shield
+  spa: con–escudo
+  hin: ढाल–से
+  arb: بِتُرْس
+  kor: 에–큰–방패
+  swa: kwa–ngao
+
+### Sense 130304 (1 occurrences)
+Grammar: Conj-w | N-fs
+  eng: and–large-shield
+  spa: y–escudo
+  hin: और–ढाल
+  arb: وَتُرْسًا
+  kor: 그리고–방패를
+  swa: na–ngao
+
+### Sense 130305 (1 occurrences)
+Grammar: N-fs
+  eng: large-shields-of
+  spa: escudos–grandes
+  hin: बड़ी–ढाल
+  arb: تُرْسٍ
+  kor: 큰–방패를
+  swa: ngao–kubwa–za
+
+### Sense 130306 (1 occurrences)
+Grammar: N-fp
+  eng: shields
+  spa: escudos–grandes
+  hin: बड़ी–ढालें
+  arb: أَتراساً
+  kor: 큰–방패들–을
+  swa: ngao
+
+### Sense 130307 (1 occurrences)
+Grammar: Prep-k, Art | N-fs
+  eng: as–with–a–shield
+  spa: como–escudo
+  hin: जैसे–ढाल–से
+  arb: كَ–التُرْسِ
+  kor: 같이–큰–방패
+  swa: kama–ngao
+
+### Sense 130308 (1 occurrences)
+Grammar: Conj-w | N-fs
+  eng: and–buckler
+  spa: y–broquel
+  hin: और–फरी
+  arb: وَتُرْسًا
+  kor: 그리고–큰–방패를
+  swa: na–kigao
+
+### Sense 130309 (1 occurrences)
+Grammar: Conj-w | N-fs
+  eng: and–large-shield
+  spa: y–pavés
+  hin: और–छोटी–ढाल
+  arb: وَبِالتُّرْسِ
+  kor: 그리고–큰방패
+  swa: na–ngao–ndogo
+
+## Task
+
+Group these 12 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

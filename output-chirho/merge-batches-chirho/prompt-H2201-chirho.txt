@@ -1,0 +1,154 @@
+# Sense Merge Task for H2201
+
+Lemma: H2201 (POS: Prep-l | N-fsc | 1cs)
+Total occurrences: 19
+Current sense count: 14
+
+This Hebrew/Greek lemma has been over-split into 14 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 94819 (4 occurrences)
+Grammar: Art | N-fs,N-fs
+  eng: cry, the–cry, a–cry
+  spa: clamor, el–clamor
+  hin: चीख, चीत्कार–ने, चिल्लाहट
+  arb: صُرَاخًا, صَرْخَةٌ, الصَّرْخَةُ
+  kor: 부르짖음을, 부르짖음이
+  swa: kilio
+
+### Sense 94820 (2 occurrences)
+Grammar: N-fs
+  eng: crying, an–outcry
+  spa: clamor
+  hin: चीख–की, चीख–का
+  arb: صُرَاخٍ
+  kor: 울부짖음의, 부르짖음의
+  swa: ya–kilio
+
+### Sense 94821 (2 occurrences)
+Grammar: N-fsc | 3mp
+  eng: their–cry, outcry-their
+  spa: su–clamor, clamor–de–ellos
+  hin: उनकी–दुहाई, उनकी–चिल्लाहट
+  arb: صُرَاخَهُمْ, صَرْخَتَهُمْ
+  kor: 그들의–부르짖음을
+  swa: kilio–chao
+
+### Sense 94822 (1 occurrences)
+Grammar: N-fsc
+  eng: outcry-of
+  spa: clamor–de
+  hin: चिल्लहत
+  arb: صُرَاخُ
+  kor: 부르짖음이
+  swa: Kilio–cha
+
+### Sense 94823 (1 occurrences)
+Grammar: N-fs
+  eng: a-cry
+  spa: clamor
+  hin: चीख
+  arb: صَرْخَةً
+  kor: 부르짖음을
+  swa: kilio
+
+### Sense 94824 (1 occurrences)
+Grammar: Conj-w | N-fsc | 3mp
+  eng: and–their–cry
+  spa: y–su–clamor
+  hin: और–विलाप
+  arb: وَ‒صُرَاخِهِمْ
+  kor: 그리고–그들의–부르짖음의
+  swa: na–kilio-chao
+
+### Sense 94825 (1 occurrences)
+Grammar: Prep-l | N-fsc | 1cs
+  eng: for–my–cry
+  spa: para–mi–clamor
+  hin: मेरी–दोहाई–के–लिए
+  arb: لِ–صُرَاخِي
+  kor: 나의–부르짖음에
+  swa: kwa–kilio–changu
+
+### Sense 94826 (1 occurrences)
+Grammar: N-fsc
+  eng: cry–of–
+  spa: grito–de–
+  hin: चीत्कार–
+  arb: صُرَاخَ–
+  kor: 부르짖음을–
+  swa: kilio
+
+### Sense 94827 (1 occurrences)
+Grammar: Prep-m | N-fsc
+  eng: than–shout-of
+  spa: más–que–clamor–de
+  hin: से–चिल्लाहट
+  arb: مِ–زَّعَقَت
+  kor: 보다–외침
+  swa: kuliko–kelele–za
+
+### Sense 94828 (1 occurrences)
+Grammar: Prep-m | N-fsc
+  eng: from–cry-of
+  spa: desde–clamor–de
+  hin: से–चिल्लाहट
+  arb: مِنْ–صُرَاخِ
+  kor: 부르짖음에서–
+  swa: Kutoka–kilio–cha
+
+### Sense 94829 (1 occurrences)
+Grammar: Conj-w | N-fs
+  eng: and–an–outcry
+  spa: y–clamor
+  hin: और–चिल्लाहट
+  arb: وَصُرَاخٌ
+  kor: 그리고–울부짖음이
+  swa: na–kilio
+
+### Sense 94830 (1 occurrences)
+Grammar: Prep-m | N-fsc
+  eng: from–cry–of
+  spa: del–clamor–del–
+  hin: चिल्लाहट–से–
+  arb: عَنْ–صُراخِ–
+  kor: 부르짖음–에서–
+  swa: kwa–kilio–cha
+
+### Sense 94831 (1 occurrences)
+Grammar: V-Qal-Inf | 2ms
+  eng: of–your–cry
+  spa: tu–clamor
+  hin: चिल्लाहट–तेरी
+  arb: صُرَاخِكَ
+  kor: 너의–부르짖음의
+  swa: ya–kilio–chako
+
+### Sense 94832 (1 occurrences)
+Grammar: N-fsc
+  eng: cry-of–
+  spa: el–grito–de
+  hin: चीख–
+  arb: صُرَاخِ
+  kor: 외침의–
+  swa: kilio–cha
+
+## Task
+
+Group these 14 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

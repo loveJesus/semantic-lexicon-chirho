@@ -1,0 +1,118 @@
+# Sense Merge Task for G0373
+
+Lemma: G0373 (POS: V-AIA-3P)
+Total occurrences: 12
+Current sense count: 10
+
+This Hebrew/Greek lemma has been over-split into 10 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 62237 (3 occurrences)
+Grammar: V-PIM-2P,V-AMM-2P
+  eng: rest
+  spa: descansad
+  hin: विश्राम–करो, विश्राम–करते–हो, थोड़ा
+  arb: اسْتَرِيحُوا, اسْتَريحوا
+  kor: 쉬어라, 쉬라
+  swa: pumzikeni, mpumzike, kupumzika
+
+### Sense 62238 (1 occurrences)
+Grammar: V-FIP-3P
+  eng: they-will-rest
+  spa: descansarán
+  hin: वे–विश्राम–पाएं
+  arb: يَستَريحوا
+  kor: 쉬리니
+  swa: wapumzike
+
+### Sense 62239 (1 occurrences)
+Grammar: V-AIA-3P
+  eng: they-refreshed
+  spa: descansaron
+  hin: उन्होंने–विश्राम–दिया
+  arb: أَرَاحُوا
+  kor: 쉬게–하였으니
+  swa: waliburudisha
+
+### Sense 62240 (1 occurrences)
+Grammar: V-AMA-2S
+  eng: refresh
+  spa: refresca
+  hin: तअज़अ-कर
+  arb: أَرِحْ
+  kor: 쉬게–해다오
+  swa: kupumzika
+
+### Sense 62241 (1 occurrences)
+Grammar: V-PMM-2S
+  eng: rest
+  spa: descansa
+  hin: आराम–कर
+  arb: اِسْتَرِيحِي
+  kor: 쉬어라
+  swa: pumzika
+
+### Sense 62242 (1 occurrences)
+Grammar: V-RIM/P-3S
+  eng: have–been–refreshed
+  spa: han–sido–refrescadas
+  hin: विस्त्रित-हुइ-है
+  arb: استَراحَت
+  kor: 쉬었다
+  swa: kupumzika
+
+### Sense 62243 (1 occurrences)
+Grammar: V-RIM/P-3S
+  eng: has–been–refreshed
+  spa: ha–sido–refrescado
+  hin: विश्राम–पाया–है
+  arb: استَراحَتْ
+  kor: 쉬었다
+  swa: imepumzishwa
+
+### Sense 62244 (1 occurrences)
+Grammar: V-FIA-1S
+  eng: will–give–rest
+  spa: daré–descanso
+  hin: विश्रम–दुनग
+  arb: أُريحُكُم
+  kor: 쉼게–하리라
+  swa: nitawapumzisha
+
+### Sense 62245 (1 occurrences)
+Grammar: V-PIM-3S
+  eng: rests
+  spa: reposa
+  hin: ठहरता–है
+  arb: عَلَيكُم
+  kor: 쉬시니라
+  swa: anapumzika
+
+### Sense 62246 (1 occurrences)
+Grammar: V-FIM-3P
+  eng: they–should–rest
+  spa: descansen
+  hin: वे–विश्राम–करें
+  arb: يَستَريحوا
+  kor: 쉬도록
+  swa: wapumzike
+
+## Task
+
+Group these 10 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

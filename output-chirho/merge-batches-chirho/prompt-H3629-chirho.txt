@@ -1,0 +1,127 @@
+# Sense Merge Task for H3629
+
+Lemma: H3629 (POS: N-fp)
+Total occurrences: 31
+Current sense count: 11
+
+This Hebrew/Greek lemma has been over-split into 11 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 106559 (15 occurrences)
+Grammar: Art | N-fp
+  eng: the–kidneys, kidneys
+  spa: los–riñones, los-riñones
+  hin: गुर्दों, गुर्दों–को, गुर्दों–के
+  arb: –الكُلْيَتَيْنِ, –اثْنَتَيْنِ, الكُليَتَينِ
+  kor: 그–콩팔들, 그–콩팔들을, 그–콩팝들을
+  swa: figo
+
+### Sense 106560 (3 occurrences)
+Grammar: N-fpc | 1cs
+  eng: my–kidneys
+  spa: mis–riñones
+  hin: मेरे–अंतर्मन, मेरे–अंतरंगों–को, गुर्दों–मेरी
+  arb: كُلْيَتَيَّ, كِلَايَّ
+  kor: 심장들–이, 심장들–과, 나–의–내장–을
+  swa: viini–vyangu, figo–zangu, figo-zangu
+
+### Sense 106561 (3 occurrences)
+Grammar: N-fpc | 1cs
+  eng: my–kidneys, my–inmost–being
+  spa: mis–riñones
+  hin: मेरे–गुर्दों, मेरे–अंतर्मन, अंतर्मन–मेरे
+  arb: كُلْيَتَايَ, كُلْيَتايَ, كُلَايَايَ
+  kor: 콩팔들이–내, 나의–콩팔이, 나의–콩팔을
+  swa: figo–zangu
+
+### Sense 106562 (3 occurrences)
+Grammar: N-fp
+  eng: kidneys, the–kidneys
+  spa: riñones
+  hin: गुर्दों–को, गुर्दों
+  arb: الْكُلَى, الْكُلى, الكُلْى
+  kor: 콩팔들을, 콩팝들과
+  swa: figo
+
+### Sense 106563 (1 occurrences)
+Grammar: Prep-b | N-fpc | 1cs
+  eng: into–my–kidneys
+  spa: en–mis–riñones
+  hin: मेरी–गुर्दों–में
+  arb: فِي–كُلْيَتِي
+  kor: 내–부위들–에
+  swa: katika–figo–zangu
+
+### Sense 106564 (1 occurrences)
+Grammar: Prep-m | N-fpc | 3mp
+  eng: from–their–kidneys
+  spa: de–riñones–sus
+  hin: उनके–गुर्दों–से
+  arb: مِنْ–كُلَاهُمْ
+  kor: 그들의–콩팝들–에서
+  swa: kutoka–figo–zao
+
+### Sense 106565 (1 occurrences)
+Grammar: Conj-w | N-fp
+  eng: and–minds
+  spa: y–riñones
+  hin: और–गुर्दों–को
+  arb: وَ–الكُلَى
+  kor: 그리고–심장들–을
+  swa: na–figo
+
+### Sense 106566 (1 occurrences)
+Grammar: N-fpc
+  eng: of–kidneys
+  spa: de–riñones
+  hin: गुर्दों–की
+  arb: كُلى
+  kor: 콩팔들의
+  swa: ya–figo
+
+### Sense 106567 (1 occurrences)
+Grammar: Conj-w | N-fpc | 1cs
+  eng: and–my–kidneys
+  spa: y–mis–riñones
+  hin: और–मेरे–अंतर्मन–में
+  arb: وَ–كُلْيَتايَ
+  kor: 나–의–콩팝들–이
+  swa: na–figo-zangu
+
+### Sense 106568 (1 occurrences)
+Grammar: Conj-w, Art | N-fp
+  eng: and–the–kidneys
+  spa: y–los–riñones
+  hin: और–गुर्दों–को
+  arb: وَ–الكُلْيَتَيْنِ
+  kor: 그리고–콩팔들을
+  swa: na–figo
+
+### Sense 106569 (1 occurrences)
+Grammar: N-fpc
+  eng: kidneys-of
+  spa: riñones–de
+  hin: गुर्दों–की
+  arb: كُلَى
+  kor: 콩팝들(접)
+  swa: figo–ya
+
+## Task
+
+Group these 11 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

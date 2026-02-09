@@ -1,0 +1,127 @@
+# Sense Merge Task for H2549
+
+Lemma: H2549 (POS: Number-ofsc)
+Total occurrences: 45
+Current sense count: 11
+
+This Hebrew/Greek lemma has been over-split into 11 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 97765 (27 occurrences)
+Grammar: Art | Number-ofs,Art | Number-oms
+  eng: the–fifth, The–fifth
+  spa: el–quinto, El–quinto, la–quinta
+  hin: पाँचवें, पांचवें, पाँचवाँ
+  arb: الْخَامِسِ, الْخَامِسُ, الْخَامِسَةُ
+  kor: 그–다섯째, 다섯째, 그–다섯째의
+  swa: wa–tano, ya–tano, –wa–tano
+
+### Sense 97766 (4 occurrences)
+Grammar: Number-ofsc | 3ms
+  eng: its-fifth
+  spa: su–quinta–parte, quinta–parte–suya
+  hin: उसका–पांचवां, पाँचवां–उसका
+  arb: خُمْسَهُ, خُمْسُهُ
+  kor: 오분의-일을, 그–오분의–일을
+  swa: sehemu–ya–tano–yake
+
+### Sense 97767 (3 occurrences)
+Grammar: Number-oms,Number-ofs
+  eng: fifth
+  spa: quinto, quinta
+  hin: पांचवां, पांचवीं
+  arb: خَامِسٌ, خَامِسًا, خامِسَةً
+  kor: 다섯째
+  swa: ya–tano, wa–tano
+
+### Sense 97768 (2 occurrences)
+Grammar: Prep-b, Art | Number-oms
+  eng: in–the–fifth
+  spa: en–el–quinto
+  hin: में–पाँचवें
+  arb: فِي–الْخَامِسِ
+  kor: 에–다섯째, 그–다섯째에
+  swa: katika–mwezi–wa–tano
+
+### Sense 97769 (2 occurrences)
+Grammar: Number-ofsc
+  eng: fifth-of
+  spa: la–quinta–parte–de
+  hin: पांचवां
+  arb: خُمْسَ
+  kor: 오분의-일을
+  swa: sehemu–ya–tano–ya–
+
+### Sense 97770 (2 occurrences)
+Grammar: Conj-w | Number-ofpc | 3ms,Conj-w | Number-ofsc | 3ms
+  eng: and–its–fifth
+  spa: y–quinta–parte–de–él, y–quintas–partes–suyas
+  hin: और–पाँचवां–उसका, और–पाँचवाँ–भाग
+  arb: وَ–خُمْسَهُ
+  kor: 그리고–오분의–일을, 그리고–그것의–오분의–일
+  swa: na–sehemu–ya–tano–yake, Uhmishtu
+
+### Sense 97771 (1 occurrences)
+Grammar: Number-ofs
+  eng: fifth
+  spa: un–quinto
+  hin: पाँचवाँ
+  arb: الْخُمْسَ
+  kor: 오분의–일을
+  swa: tano
+
+### Sense 97772 (1 occurrences)
+Grammar: Number-ofsc | 3ms
+  eng: a-fifth-of-it
+  spa: una–quinta–parte
+  hin: पांचवां–भाग
+  arb: خُمْسَهُ
+  kor: 오분의–일–그의
+  swa: sehemu–ya–tano–yake
+
+### Sense 97773 (1 occurrences)
+Grammar: Number-ofs
+  eng: a–fifth
+  spa: de–quinta–parte
+  hin: पाँचवाँ–भाग
+  arb: خُمْسٌ
+  kor: 다섯째의
+  swa: sehemu–ya–tano
+
+### Sense 97774 (1 occurrences)
+Grammar: Conj-w, Art | Number-oms
+  eng: and–the–fifth
+  spa: y–el–quinto
+  hin: और–पाँचवां
+  arb: وَالْخَامِسُ
+  kor: 그리고-다섯째는
+  swa: na–wa–tano
+
+### Sense 97775 (1 occurrences)
+Grammar: Art | Number-oms
+  eng: the–fifth
+  spa: el–quinto
+  hin: पाँचवें–का
+  arb: الْخَامِسِ
+  kor: 다섯째–달의
+  swa: mwezi–wa–tano
+
+## Task
+
+Group these 11 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

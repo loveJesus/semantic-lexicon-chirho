@@ -1,0 +1,163 @@
+# Sense Merge Task for H2974
+
+Lemma: H2974 (POS: V-Hifil-Imp-mp)
+Total occurrences: 19
+Current sense count: 15
+
+This Hebrew/Greek lemma has been over-split into 15 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 100530 (2 occurrences)
+Grammar: Conj-w | V-Hifil-ConsecImperf-
+  eng: and–was-determined
+  spa: y–quiso, Y–quiso
+  hin: और–ठाना
+  arb: وَ–عَزَمَ
+  kor: 그리고–감행했다
+  swa: na–wakaamua
+
+### Sense 100531 (2 occurrences)
+Grammar: Conj-w | V-Hifil-ConsecImperf-
+  eng: and–was–content, and–he-was-content
+  spa: Y–consintió
+  hin: और–राज़ी–हुआ, और–राज़ी-हुआ
+  arb: فَ–رَضِيَ
+  kor: 그리고–동의했다
+  swa: Na–akakubali
+
+### Sense 100532 (2 occurrences)
+Grammar: V-Hifil-Imp-ms
+  eng: be-willing, be-pleased
+  spa: Consíntelo
+  hin: होएल, कृपा–करके
+  arb: تَفَضَّلْ, ارْتَضِ
+  kor: 원하소서, 기꺼이
+  swa: tafadhali–kubali
+
+### Sense 100533 (2 occurrences)
+Grammar: V-Hifil-Perf-1cs
+  eng: I–have–ventured
+  spa: he–osado
+  hin: मैने–हिम्मत–कि
+  arb: تَجَاسَرْتُ
+  kor: 내가–감히–했다
+  swa: nimethubutu
+
+### Sense 100534 (1 occurrences)
+Grammar: V-Hifil-Perf-3ms
+  eng: he-was-pleased
+  spa: le–plugo
+  hin: प्रसन्न–हुआ
+  arb: سُرَّ
+  kor: 기뽐하셨다
+  swa: imempendeza
+
+### Sense 100535 (1 occurrences)
+Grammar: Conj-w | V-Hifil-ConsecImperf-
+  eng: and–determined
+  spa: y–quiso
+  hin: और–लगा
+  arb: وَ–عَزَمَ
+  kor: 그리고–결심하였다
+  swa: na–wakaazimia
+
+### Sense 100536 (1 occurrences)
+Grammar: V-Hifil-Imp-ms
+  eng: be-willing
+  spa: Consiente
+  hin: स्वीकार–कर
+  arb: اِرْضَ
+  kor: 동의하라
+  swa: Kubali
+
+### Sense 100537 (1 occurrences)
+Grammar: Conj-w | V-Hifil-ConsecImperf-
+  eng: and–he–was–willing
+  spa: y–quiso
+  hin: और-कोशिश-कि
+  arb: وَ–حَاوَلَ
+  kor: 그리고–시도했다
+  swa: na–akajaribu
+
+### Sense 100538 (1 occurrences)
+Grammar: V-Hifil-Perf-2ms
+  eng: you-were-pleased
+  spa: tuviste–a–bien
+  hin: प्रसन्न–हुआ–है
+  arb: رَضِيتَ
+  kor: 시작하셨다
+  swa: umekubali
+
+### Sense 100539 (1 occurrences)
+Grammar: V-Hifil-Perf-3ms
+  eng: he–willingly
+  spa: voluntariamente
+  hin: प्रसन्न–था
+  arb: قَبِلَ
+  kor: 맞추어
+  swa: alikubali
+
+### Sense 100540 (1 occurrences)
+Grammar: V-Hifil-Perf-3ms
+  eng: undertook
+  spa: comenzó
+  hin: आरम्भ–किया
+  arb: شَرَعَ
+  kor: 시작하였다
+  swa: alianza
+
+### Sense 100541 (1 occurrences)
+Grammar: V-Hifil-Imp-ms
+  eng: be–pleased
+  spa: dígnate
+  hin: प्रसन्न–हो
+  arb: تَنازَل
+  kor: 기뻐하소서
+  swa: ukubali
+
+### Sense 100542 (1 occurrences)
+Grammar: V-Hifil-Perf-1cp
+  eng: we–had–been–willing
+  spa: hubiéramos–consentido
+  hin: हम–राजी–होते
+  arb: رَضينا
+  kor: 원하였더라면
+  swa: tungelikubali
+
+### Sense 100543 (1 occurrences)
+Grammar: V-Hifil-Imp-mp
+  eng: be-willing
+  spa: dignaos
+  hin: चाहो
+  arb: ارْضَوْا
+  kor: 기꺼이–하라
+  swa: tafadhali
+
+### Sense 100544 (1 occurrences)
+Grammar: Conj-w | V-Hifil-ConjImperf.Ju
+  eng: and–would-be-willing
+  spa: Y–consintiera
+  hin: और–चाहे
+  arb: وَلِيَرْضَى
+  kor: 그리고–기꺼이하시기를
+  swa: na–angekubali
+
+## Task
+
+Group these 15 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

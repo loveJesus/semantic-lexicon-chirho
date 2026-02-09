@@ -1,0 +1,136 @@
+# Sense Merge Task for H6633
+
+Lemma: H6633 (POS: Conj-w | V-Qal-ConsecImperf-3mp)
+Total occurrences: 14
+Current sense count: 12
+
+This Hebrew/Greek lemma has been over-split into 12 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 129352 (2 occurrences)
+Grammar: Prep-l | V-Qal-Inf
+  eng: to–serve
+  spa: para–servir, para–hacer-ejército
+  hin: टुकड़ी–में–जुटने–के–लिए, के–सेना–करना
+  arb: لِ–يَخْدِمَ, لِيَخْدِمَ
+  kor: 군무하기–위하여, 군대하기–위하여
+  swa: kutumikia, kujiunga–na–kikosi
+
+### Sense 129353 (2 occurrences)
+Grammar: Art | V-Qal-Prtcpl-mp
+  eng: who–war
+  spa: las–que–guerrean
+  hin: युद्ध–करने–वालों–की
+  arb: الْمُحَارِبِينَ
+  kor: 싸우는
+  swa: yanayopigana
+
+### Sense 129354 (1 occurrences)
+Grammar: Conj-w | V-Qal-ConsecImperf-3m
+  eng: and–they-waged-war
+  spa: Y–guerrearon
+  hin: और–लड़े
+  arb: فَحَارَبُوا
+  kor: 그리고–싸웠다
+  swa: na–wakapigana
+
+### Sense 129355 (1 occurrences)
+Grammar: V-Qal-Perf-3cp
+  eng: warred
+  spa: pelearon
+  hin: लड़े
+  arb: حَارَبَتْ
+  kor: 싸웠던
+  swa: walipigana
+
+### Sense 129356 (1 occurrences)
+Grammar: Art | V-Hifil-Prtcpl-ms
+  eng: the–one–mustering
+  spa: el–que–alistaba
+  hin: ह–भर्ती–करनेवाला
+  arb: الْمُجَنِّدَ
+  kor: 그–징집하는
+  swa: aliyeandikisha
+
+### Sense 129357 (1 occurrences)
+Grammar: Art | V-Qal-Prtcpl-fp
+  eng: the–serving
+  spa: las–que–servían
+  hin: सेवा–करनेवालियों
+  arb: الـ–مُجْتَمِعَاتِ
+  kor: 그–섬기는
+  swa: wa–majeshi
+
+### Sense 129358 (1 occurrences)
+Grammar: Art | V-Qal-Prtcpl-fp
+  eng: the–serving–women
+  spa: las–que–servían
+  hin: सेविकाओं–की
+  arb: الْمُتَجَمِّعَاتِ
+  kor: 그–섬기는–여인들의
+  swa: vya–wanawake–waliohudumu
+
+### Sense 129359 (1 occurrences)
+Grammar: V-Qal-Prtcpl-mpc | 3fs
+  eng: who–war–against–her
+  spa: los–que–la–atacan
+  hin: युद्ध–करने–वालों–उसके
+  arb: الْمُحَارِبِينَ–لَهَا
+  kor: 그것을–공격하는–자들과
+  swa: wanaopigana–nayo
+
+### Sense 129360 (1 occurrences)
+Grammar: V-Qal-Perf-3cp
+  eng: served
+  spa: servían
+  hin: सेवा–करती–थीं
+  arb: تَجَمَّعْنَ
+  kor: 섬겼던
+  swa: walihudumu
+
+### Sense 129361 (1 occurrences)
+Grammar: Prep-l | V-Qal-Inf
+  eng: to–fight
+  spa: para–guerrear
+  hin: युद्ध–करने–के–लिए
+  arb: لِيُحَارِبَ
+  kor: 에–싸우시려고
+  swa: kupigana
+
+### Sense 129362 (1 occurrences)
+Grammar: Art | V-Hifil-Prtcpl-ms
+  eng: who–mustered
+  spa: el–que–alistaba
+  hin: जो–भरती–करता–था
+  arb: الَّذِي–يُجَنِّدُ
+  kor: 모집하는
+  swa: aliyewaandikisha
+
+### Sense 129363 (1 occurrences)
+Grammar: Art | V-Qal-Prtcpl-mp
+  eng: the–ones-warring
+  spa: los–guerreros
+  hin: सैनिकों–के
+  arb: الْـ–مُحَارِبِينَ
+  kor: 그–전쟁하는–자들의
+  swa: wapigaji–vita
+
+## Task
+
+Group these 12 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

@@ -1,0 +1,118 @@
+# Sense Merge Task for G2440
+
+Lemma: G2440 (POS: N-DNS)
+Total occurrences: 61
+Current sense count: 10
+
+This Hebrew/Greek lemma has been over-split into 10 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 69475 (29 occurrences)
+Grammar: N-NNP,N-ANP,N-DNP
+  eng: garments
+  spa: vestidos, mantos, vestiduras
+  hin: वस्त्र, कपड़े, वस्त्रों
+  arb: ثِيَابَهُ, ثِيَابَهُمْ, ثِيَابَ
+  kor: 옷들–을, 옷들을, 겉옷을
+  swa: mavazi, wake, nguo
+
+### Sense 69476 (7 occurrences)
+Grammar: N-GNS
+  eng: garment
+  spa: manto, vestido
+  hin: वस्त्र, वस्त्र–को, वस्त्र–के
+  arb: ثَوْبِهِ, ثَوبِ, ثَوْبَهُ
+  kor: 옷, 옷의, 옷–의
+  swa: vazi, vazi,, nguo
+
+### Sense 69477 (7 occurrences)
+Grammar: N-DNS,N-ANS,N-GNS,N-NNS
+  eng: garment, a–garment, a-garment
+  spa: vestido
+  hin: वस्त्र, वस्त्र–पर, डालता–है
+  arb: ثَوْبٍ, ثَوبٍ, ثَوبًا
+  kor: 옷, 옷이, 옷을
+  swa: vazi, nguo
+
+### Sense 69478 (4 occurrences)
+Grammar: N-ANS
+  eng: robe, in-a-garment, garment
+  spa: manto
+  hin: वस्त्र
+  arb: ثَوْبًا, ثَوْبِهِ, ثَوْبَ
+  kor: 옷–을, 옷, 겉옷을
+  swa: vazi, joho
+
+### Sense 69479 (4 occurrences)
+Grammar: N-ANS
+  eng: garment, cloak
+  spa: manto
+  hin: वस्त्र, कपड़ा
+  arb: رِدَاءَهُ, رِداءَهُ, ثَوْبَهُ
+  kor: 겉옷을, 겉옷–을
+  swa: vazi, ole, joho
+
+### Sense 69480 (3 occurrences)
+Grammar: N-ANP
+  eng: cloaks, garments
+  spa: mantos
+  hin: वस्त्र
+  arb: ثِيَابًا, ثِيابَهُم, الثِّيابَ
+  kor: 옷들–을, 겉옷들–을
+  swa: nguo, na, katika
+
+### Sense 69481 (3 occurrences)
+Grammar: N-ANS
+  eng: cloak, garment
+  spa: manto
+  hin: चोगा–को, चोगा, कपड़ा
+  arb: رِدَاءَكَ, رِداءَ, الرِّدَاءَ
+  kor: 겉옷을, 겉옷
+  swa: joho
+
+### Sense 69482 (2 occurrences)
+Grammar: N-GNP
+  eng: garments
+  spa: mantos
+  hin: छूऊँ
+  arb: ثيابَهُ, ثيابي
+  kor: 옷들을?, 옷들
+  swa: mavazi?, mavazi
+
+### Sense 69483 (1 occurrences)
+Grammar: N-DNP
+  eng: garments
+  spa: vestidos
+  hin: वस्त्रों
+  arb: ثيابٍ
+  kor: 옷들
+  swa: mavazi
+
+### Sense 69484 (1 occurrences)
+Grammar: N-GNP
+  eng: of–garments
+  spa: de–vestidos
+  hin: वस्त्र
+  arb: الثِّيابِ
+  kor: 옷의
+  swa: mavazi
+
+## Task
+
+Group these 10 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

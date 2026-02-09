@@ -1,0 +1,127 @@
+# Sense Merge Task for H7836
+
+Lemma: H7836 (POS: Prep-l | V-Piel-Inf)
+Total occurrences: 12
+Current sense count: 11
+
+This Hebrew/Greek lemma has been over-split into 11 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 139701 (2 occurrences)
+Grammar: V-Piel-Imperf-3mp | 1cs, Pn
+  eng: they–will–seek–me–earnestly, they–will–earnestly–seek–Me
+  spa: me–buscarán–temprano
+  hin: ढूँढ़ेंगे–मुझे, खोजेंगे–मुझे
+  arb: يَطْلُبُونَنِي, يَبحَثونَني
+  kor: 그–들–이–나–를–찾을–것이다, 간절히–찾으리라–나를
+  swa: watanitafuta–mapema, watanitafuta
+
+### Sense 139702 (1 occurrences)
+Grammar: Conj-w | V-Piel-ConjPerf-2ms |
+  eng: and–You-will-seek-me
+  spa: y–me–buscarás
+  hin: और–खोजेगा–तू–मुझे
+  arb: وَتَطْلُبُني
+  kor: 그리고–찾으실–것이다–나를–당신이
+  swa: na–utanitafuta
+
+### Sense 139703 (1 occurrences)
+Grammar: Prep-l | V-Piel-Inf
+  eng: to–seek–eagerly
+  spa: para–buscar
+  hin: ढूँढ़ने
+  arb: لِأَبْحَثَ
+  kor: 찾기–위해
+  swa: kukutafuta
+
+### Sense 139704 (1 occurrences)
+Grammar: V-Piel-Prtcpl-mpc
+  eng: seeking–early
+  spa: madrugando
+  hin: खोजने–वाले
+  arb: بَاكِرِينَ
+  kor: 찾는–자들이–
+  swa: wakitafuta–mapema
+
+### Sense 139705 (1 occurrences)
+Grammar: V-Piel-Imperf-2ms
+  eng: seek-early
+  spa: buscarás–diligentemente
+  hin: खोजेगा
+  arb: تَطْلُبُ
+  kor: 찾으면
+  swa: utamtafuta
+
+### Sense 139706 (1 occurrences)
+Grammar: Conj-w | V-Piel-ConjPerf-3cp
+  eng: and–sought–earnestly
+  spa: y–madrugaban-a–
+  hin: और–तड़के–खोजते–थे–
+  arb: وَبَكَّرُوا–
+  kor: 간절히–찾았나이다
+  swa: na–wakamtafuta–kwa–bidii
+
+### Sense 139707 (1 occurrences)
+Grammar: Conj-w | V-Piel-Prtcpl-mpc | 1
+  eng: and–those–who–seek–me–diligently
+  spa: y–los–que–me–buscan
+  hin: और–ढूँढ़नेवाले–मुझे
+  arb: وَ–الطَّالِبُونَ–إِيَّايَ
+  kor: 그리고–나–를–구하는–자–들–은
+  swa: na–wanaoniktafuta–mapema
+
+### Sense 139708 (1 occurrences)
+Grammar: V-Piel-Imperf-1cs | 2mse
+  eng: I–seek–You–earnestly
+  spa: te–buscaré–de–madrugada
+  hin: मैं–तुझे–तड़के–खोजूंगा
+  arb: أَبكِّرُ–أَطلُبُكَ
+  kor: 구하리이다
+  swa: ninakutafuta-mapema
+
+### Sense 139709 (1 occurrences)
+Grammar: V-Qal-Prtcpl-ms
+  eng: he–who–diligently–seeks
+  spa: el–que–busca–diligente
+  hin: खोजनेवाला
+  arb: مُبَكِّرٌ
+  kor: 구하는–자–는
+  swa: anayetafuta
+
+### Sense 139710 (1 occurrences)
+Grammar: V-Piel-Perf-3ms | 3ms
+  eng: is–diligent–to–discipline
+  spa: lo–busca–temprano
+  hin: खोजता–है–उसे
+  arb: يُبَكِّرُهُ
+  kor: 그–를–일찍–찾는다
+  swa: anamrudi
+
+### Sense 139711 (1 occurrences)
+Grammar: V-Piel-Imperf-1cs | 2mse
+  eng: I–seek–You–earnestly
+  spa: te–busca–temprano
+  hin: खोजती–है–तुझे
+  arb: أَطْلُبُكَ
+  kor: 구하였도다
+  swa: inakutafuta
+
+## Task
+
+Group these 11 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

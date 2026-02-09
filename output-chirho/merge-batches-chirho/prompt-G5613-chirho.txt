@@ -1,0 +1,181 @@
+# Sense Merge Task for G5613
+
+Lemma: G5613 (POS: Adv)
+Total occurrences: 508
+Current sense count: 17
+
+This Hebrew/Greek lemma has been over-split into 17 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 79238 (382 occurrences)
+Grammar: Adv,Conj
+  eng: as, as–, like
+  spa: como, Como, según
+  hin: जैसे, जैसा, जैस
+  arb: كَـ, كَ, كَما
+  kor: 같이, –처럼, ~같이
+  swa: kama, kama–, kana–kwamba
+
+### Sense 79239 (50 occurrences)
+Grammar: Adv
+  eng: when, as
+  spa: cuando, como, Cuando
+  hin: जब, जैसे, जैसा
+  arb: لَمَّا, لَمّا, كَما
+  kor: 같이, 처럼, 때에
+  swa: wakati, wakati–, kama
+
+### Sense 79240 (18 occurrences)
+Grammar: Adv
+  eng: about, in–about, as
+  spa: como
+  hin: लगभग, जैसे, बीच
+  arb: نَحْوَ, نَحوَ, تَقْرِيبًا
+  kor: 약, 대략, 마치
+  swa: kama, karibu, kwa
+
+### Sense 79241 (16 occurrences)
+Grammar: Adv,Conj
+  eng: When, when, as
+  spa: Cuando, Como
+  hin: जब, जैसे
+  arb: وَلَمَّا, كَمَا, لَمَّا
+  kor: 같이, –때에, 때에
+  swa: Wakati, Wakati–, Walipopanda
+
+### Sense 79242 (15 occurrences)
+Grammar: Adv
+  eng: how, how–
+  spa: cómo, como, cuán
+  hin: कैसे, कि, नहीं
+  arb: كَيْفَ, كَيفَ, كَمْ
+  kor: 어떻게, 같이, –처럼
+  swa: jinsi, kama, jinsi–
+
+### Sense 79243 (6 occurrences)
+Grammar: Adv
+  eng: as, As, As–
+  spa: Como
+  hin: जैसे
+  arb: كَـ, كَأَنَّمَا, كَما
+  kor: 같이, 마치, –같이
+  swa: Kama, Nasema, Kama–
+
+### Sense 79244 (4 occurrences)
+Grammar: Adv
+  eng: as, as–though, as–if
+  spa: como
+  hin: जैसे, भक्ति–से
+  arb: كَأَنَّهُمْ, كَأَنَّكُمْ, كَأَنَّ
+  kor: 마치, 자체–의
+  swa: kana–kwamba, kama
+
+### Sense 79245 (4 occurrences)
+Grammar: Adv
+  eng: as–, as
+  spa: Como, como
+  hin: जैसे, जैसा, जैस
+  arb: كَمَا, كَما
+  kor: 같이–, 로, –처럼
+  swa: kama–, Kwa–kuwa, Kama–vile
+
+### Sense 79246 (2 occurrences)
+Grammar: Adv
+  eng: while
+  spa: mientras, Mientras
+  hin: जब–तक
+  arb: مَا–دَامَ
+  kor: 동안
+  swa: wakati
+
+### Sense 79247 (2 occurrences)
+Grammar: Adv
+  eng: as–
+  spa: como
+  hin: जैसे
+  arb: مثل, كما
+  kor: 마치
+  swa: kama
+
+### Sense 79248 (2 occurrences)
+Grammar: Adv
+  eng: so-as
+  spa: para
+  hin: ताकि
+  arb: لِـ, كَمَا
+  kor: 처럼, –처럼
+  swa: kama, ili
+
+### Sense 79249 (2 occurrences)
+Grammar: Adv
+  eng: as
+  spa: como
+  hin: जैसे, कि
+  arb: كَأنَّها, كَأنَّ
+  kor: ~처럼
+  swa: kama–kwamba, kama
+
+### Sense 79250 (1 occurrences)
+Grammar: Adv
+  eng: how
+  spa: cuán
+  hin: कैसे
+  arb: مَا
+  kor: 어츌나
+  swa: jinsi
+
+### Sense 79251 (1 occurrences)
+Grammar: Conj
+  eng: As–
+  spa: Mientras
+  hin: जब
+  arb: وَفيما
+  kor: ~처럼
+  swa: Walipokuwa
+
+### Sense 79252 (1 occurrences)
+Grammar: Adv
+  eng: since
+  spa: desde–que
+  hin: जब–से
+  arb: مُنْذُ
+  kor: –으로부터
+  swa: tangu
+
+### Sense 79253 (1 occurrences)
+Grammar: Adv
+  eng: How
+  spa: cuán
+  hin: कैसे
+  arb: مَا
+  kor: 얼마나
+  swa: Jinsi
+
+### Sense 79254 (1 occurrences)
+Grammar: Adv
+  eng: when
+  spa: cuando
+  hin: जब
+  arb: حالَما
+  kor: –때에
+  swa: mara
+
+## Task
+
+Group these 17 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

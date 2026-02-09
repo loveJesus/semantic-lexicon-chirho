@@ -1,0 +1,136 @@
+# Sense Merge Task for G5111
+
+Lemma: G5111 (POS: V-PSA-3S)
+Total occurrences: 16
+Current sense count: 12
+
+This Hebrew/Greek lemma has been over-split into 12 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 77819 (4 occurrences)
+Grammar: V-IIA-3S
+  eng: was–daring, was-daring, dared
+  spa: osaba, se–atrevía, se-atrevía
+  hin: साहस–किया, हिम्मत–करता–था, उन–से
+  arb: يَجْرُؤْ, تَجَرَّأَ
+  kor: 감히–하였다, 감히–하기–를, 감히-
+  swa: alithubutu, aliyethubutu
+
+### Sense 77820 (2 occurrences)
+Grammar: V-PIA-3S
+  eng: dares
+  spa: ¿Se–atreve, se–atreve
+  hin: साहस–करता–है
+  arb: يَجرُؤُ, يَتَجاسَرُ
+  kor: 감히
+  swa: angethubutu, Je,–anathubutu
+
+### Sense 77821 (1 occurrences)
+Grammar: V-PNA
+  eng: to–dare
+  spa: atreverse
+  hin: हिम्मति
+  arb: يَجْرُؤونَ
+  kor: 담대히
+  swa: wanathubutu
+
+### Sense 77822 (1 occurrences)
+Grammar: V-AIA-3S
+  eng: dared
+  spa: se–atrevió
+  hin: साहस–किया
+  arb: يجرؤ
+  kor: 감히
+  swa: hakuthubutu
+
+### Sense 77823 (1 occurrences)
+Grammar: V-APA-NMS
+  eng: having-courage
+  spa: habiendo–osado
+  hin: साहस–करके
+  arb: مُتَجَرِّئًا
+  kor: 담대히
+  swa: akijasiri
+
+### Sense 77824 (1 occurrences)
+Grammar: V-FIA-1S
+  eng: I-will-dare
+  spa: me-atreveré
+  hin: साहस–करूँगा
+  arb: أَجْتَرِئُ
+  kor: 내가–감히–말하리라
+  swa: nitathubutu
+
+### Sense 77825 (1 occurrences)
+Grammar: V-PIA-1P
+  eng: we-dare
+  spa: osamos
+  hin: हम–हिम्मत–करते
+  arb: نَجرُؤُ
+  kor: 감히
+  swa: tunathubutu
+
+### Sense 77826 (1 occurrences)
+Grammar: V-PSA-3S
+  eng: is-bold
+  spa: se–atreva
+  hin: साहस–करे
+  arb: يَجْرُؤُ
+  kor: 담대하면
+  swa: anathubutu–
+
+### Sense 77827 (1 occurrences)
+Grammar: V-PIA-1S
+  eng: I-am-bold
+  spa: me–atrevo
+  hin: साहस–करता–हूं
+  arb: أَجْرُؤُ
+  kor: 담대한다
+  swa: ninathubutu
+
+### Sense 77828 (1 occurrences)
+Grammar: V-ANA
+  eng: to-dare
+  spa: atreverme
+  hin: हिम्मत–करना
+  arb: أَتَجَرَّأَ
+  kor: 담대하기를
+  swa: kuthubutu
+
+### Sense 77829 (1 occurrences)
+Grammar: V-AIA-3S
+  eng: dared
+  spa: se–atrevió
+  hin: साहस–किया
+  arb: تَجَرَّأَ
+  kor: 감히–하지–못했다
+  swa: mtu–yeyote
+
+### Sense 77830 (1 occurrences)
+Grammar: V-IIA-3P
+  eng: they-were-daring
+  spa: osaban
+  hin: हिम्मत–करते–थे
+  arb: تَجَرَّأوا
+  kor: 감히–하지–못했다
+  swa: hawakuthubutu
+
+## Task
+
+Group these 12 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

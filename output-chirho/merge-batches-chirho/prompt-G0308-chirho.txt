@@ -1,0 +1,154 @@
+# Sense Merge Task for G0308
+
+Lemma: G0308 (POS: V-ASA-2S)
+Total occurrences: 25
+Current sense count: 14
+
+This Hebrew/Greek lemma has been over-split into 14 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 62046 (4 occurrences)
+Grammar: V-APA-NMS
+  eng: looking-up, having-looked-up
+  spa: mirando–arriba, habiendo–mirado–arriba
+  hin: देखकर, देखा, ऊपर–देखकर
+  arb: نَظَرَ, رَفَعَ–نَظَرَهُ, رَفَعَ نَظَرَهُ
+  kor: 하늘을–올려다보시고, 하늘–을–쳐다보시고, 올려다보시고
+  swa: akitazama–juu
+
+### Sense 62047 (3 occurrences)
+Grammar: V-APA-NMS
+  eng: having–looked–up, having-looked-up, Having-looked-up
+  spa: habiendo-mirado-arriba, alzando-la-vista, Habiendo-mirado-arriba
+  hin: ऊपर–देखकर, देख–कर
+  arb: نَظَرَ–إِلى–فَوقُ, نَظَرَ–إِلَى–فَوْقُ
+  kor: 올려다보시고
+  swa: akitazama–juu, Akiinua–macho
+
+### Sense 62048 (3 occurrences)
+Grammar: V-AIA-3S
+  eng: he-saw-again, he–saw–again
+  spa: recobró–la–vista, vio
+  hin: देखा, देखने–लगा, ऊपर–देखा
+  arb: أَبْصَرَ, أَبصَرَ
+  kor: 보았다
+  swa: aliona–tena, akaona–tena, akaona
+
+### Sense 62049 (2 occurrences)
+Grammar: V-ASA-3S,V-ASA-2S
+  eng: you–might–see–again, he–might–see–again
+  spa: recobre–la–vista, recobres–la–vista
+  hin: देखे
+  arb: يُبْصِرَ, تُبْصِرَ
+  kor: 볼–수–있도록
+  swa: uone–tena, aone–tena
+
+### Sense 62050 (2 occurrences)
+Grammar: V-ASA-1S
+  eng: I-see-again, I-may-see-again
+  spa: vea, recobre–la–vista
+  hin: देखूँ, ऊपर–देखूं
+  arb: أُبْصِرَ, أُبصِرَ
+  kor: 보도록, 보게–해–주소서
+  swa: nione–tena, nione
+
+### Sense 62051 (2 occurrences)
+Grammar: V-PIA-3P
+  eng: see–again, see-again
+  spa: ven
+  hin: देखते–हैन, देखते–हैं
+  arb: يُبصِرونَ
+  kor: 본다, 다시–보고
+  swa: wanaona,, wanaona
+
+### Sense 62052 (2 occurrences)
+Grammar: V-AIA-3S
+  eng: received–sight, he–received–sight
+  spa: recibió-la-vista
+  hin: देखने–लगा।, देखने–लगा
+  arb: أَبصَرَ
+  kor: 보게–되었다고, 보게–되었는지
+  swa: alianza–kuona
+
+### Sense 62053 (1 occurrences)
+Grammar: V-APA-GMS
+  eng: having–received–sight
+  spa: que-recibió-la-vista
+  hin: देखनेवाले–को।
+  arb: مُبصِر
+  kor: 보게–된–자의
+  swa: aliyeanza–kuona
+
+### Sense 62054 (1 occurrences)
+Grammar: V-AIA-3P
+  eng: they-received-sight
+  spa: recibieron–la–vista
+  hin: देख–पअये
+  arb: أَبصَرا
+  kor: 보게–되었다
+  swa: na
+
+### Sense 62055 (1 occurrences)
+Grammar: V-AIA-1S
+  eng: looked–up
+  spa: recobré-la-vista
+  hin: देखा
+  arb: أَبْصَرْتُ
+  kor: 다시–보았다
+  swa: nilipata–kuona
+
+### Sense 62056 (1 occurrences)
+Grammar: V-AMA-2S
+  eng: receive–sight
+  spa: recobra-la-vista
+  hin: देखो
+  arb: اُبْصِرْ
+  kor: 다시–보라
+  swa: pata–kuona
+
+### Sense 62057 (1 occurrences)
+Grammar: V-AMA-2S
+  eng: See-again
+  spa: Recobra–la–vista
+  hin: देख
+  arb: أَبصِرْ
+  kor: 보라
+  swa: Ona–tena
+
+### Sense 62058 (1 occurrences)
+Grammar: V-AIA-1S
+  eng: I–received–sight
+  spa: vi
+  hin: देखने–लगा।
+  arb: أَبصَرتُ
+  kor: 보게–되었다
+  swa: nilianza–kuona
+
+### Sense 62059 (1 occurrences)
+Grammar: V-APA-NFP
+  eng: having-looked-up
+  spa: habiendo–alzado–la–vista
+  hin: ऊपर–देखकर
+  arb: نَاظِرَاتٍ
+  kor: 올려다보니
+  swa: wakitazama–juu
+
+## Task
+
+Group these 14 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

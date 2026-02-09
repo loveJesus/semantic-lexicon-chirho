@@ -1,0 +1,118 @@
+# Sense Merge Task for H3157
+
+Lemma: H3157 (POS: Prep-m | N-proper-fs)
+Total occurrences: 36
+Current sense count: 10
+
+This Hebrew/Greek lemma has been over-split into 10 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 101612 (11 occurrences)
+Grammar: N-proper-fs,Prep-l | N-proper-fs,N-proper-ms
+  eng: Jezreel
+  spa: Jezreel, Yizreel
+  hin: यिज्रएल, यिज्रेल, यिज्रेल–के
+  arb: يِزْرَعيلَ, يِزْرَعِيلَ, يِزرَعيلَ
+  kor: 이스르엘의, 이스르엘–의, 이즈르엘로
+  swa: Yezreeli, Yizreeli
+
+### Sense 101613 (7 occurrences)
+Grammar: Prep-b | N-proper-fs
+  eng: in–Jezreel
+  spa: en–Jezreel
+  hin: वयिज्रएल, बयिज्रएल, यिज़रेएल-मेइन
+  arb: في–يِزْرَعيلَ, فِي–يِزْرَعِيلَ, في–يِزرَعيلَ
+  kor: 이스르엘에서, 이스르엘–에서, 에–이즈르엘
+  swa: katika–Yezreeli, Yezreeli
+
+### Sense 101614 (4 occurrences)
+Grammar: N-proper-fs | 3fs
+  eng: to-Jezreel
+  spa: Jezreel
+  hin: यिज्रएलाह
+  arb: يِزْرَعيلَ, إِلَى–يِزْرَعِيلَ
+  kor: 이스르엘로, 이스르엘–로
+  swa: Yezreeli
+
+### Sense 101615 (3 occurrences)
+Grammar: Prep-b | N-proper-fs
+  eng: in–Yizreel
+  spa: en–Jezreel
+  hin: यिज्रेएलमें, यिज़्रेल–में
+  arb: فِي–يِزْرَعِيلَ, في–يَزْرَعيل
+  kor: 이스르엘–에서, 이즈르엘에
+  swa: huko–Yezreeli, katika–Yezreeli
+
+### Sense 101616 (3 occurrences)
+Grammar: N-proper-fs | 3fs
+  eng: Yizreelah
+  spa: Jezreel, a–Jezreel
+  hin: यिज़्रेएलाह, यिज़्रेला
+  arb: يَزْرَعيل, يِزْرَعِيلُ
+  kor: 이즈르엘로
+  swa: Yezreeli
+
+### Sense 101617 (2 occurrences)
+Grammar: N-proper-fs
+  eng: Yizreel
+  spa: Jezreel
+  hin: यिज्रेल, यिज़्रेल–की
+  arb: يَزْرَعيلَ, يَزْرَعيل
+  kor: 이즈르엘의
+  swa: Yezreeli
+
+### Sense 101618 (2 occurrences)
+Grammar: Prep-m | N-proper-fs
+  eng: from–Yizreel
+  spa: de–Yizreel, de–Jezreel
+  hin: यिज्रेल–से
+  arb: مِن–يِزرَعيلَ, مِنْ–يِزْرَعِيلَ
+  kor: 이즈르엘에서, 이스르엘로부터
+  swa: kutoka–Yezreeli
+
+### Sense 101619 (2 occurrences)
+Grammar: N-proper-fs,N-proper-ms
+  eng: Yizreel, Yizre'el
+  spa: Yizreel
+  hin: यिज्रेल
+  arb: يِزْرَعِيلَ, يَزرَعيل
+  kor: 이스르엘
+  swa: Yezreeli
+
+### Sense 101620 (1 occurrences)
+Grammar: N-proper-fs
+  eng: Jezreel
+  spa: Yizreel
+  hin: यिज्रेएल–की
+  arb: يَزْرَعيلَ
+  kor: 이스르엘의
+  swa: Yezreeli
+
+### Sense 101621 (1 occurrences)
+Grammar: Conj-w | N-proper-fs
+  eng: and–Yizreel
+  spa: y–Jezreel
+  hin: और–यिज्रेल
+  arb: وَ–يَزْرَعيلُ
+  kor: 그리고–이스르엘
+  swa: na–Yezreeli
+
+## Task
+
+Group these 10 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

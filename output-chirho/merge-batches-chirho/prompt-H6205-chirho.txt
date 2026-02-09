@@ -1,0 +1,118 @@
+# Sense Merge Task for H6205
+
+Lemma: H6205 (POS: Conj-w | N-ms)
+Total occurrences: 15
+Current sense count: 10
+
+This Hebrew/Greek lemma has been over-split into 10 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 126252 (4 occurrences)
+Grammar: Conj-w | N-ms
+  eng: and–thick–darkness, and–thick-darkness
+  spa: y–oscuridad, y–densa–oscuridad
+  hin: और–घना–अंधकार, और–घटा, और–अंधकार
+  arb: وَضَبَابٌ, وَ–ضَبَابٌ
+  kor: 그리고–칠흡–이, 그리고–칠흑–이, 그리고–짙은–어둠
+  swa: na–giza–nene, na–ukungu–mzito
+
+### Sense 126253 (3 occurrences)
+Grammar: Conj-w | N-ms
+  eng: and–thick-darkness, and–thick–darkness
+  spa: y–densa–oscuridad, y–oscuridad.
+  hin: और–धुंध, और–घने–कोहरे–का, और–अंधेरा
+  arb: وَ–ضَبَابٍ, وَ–ضَبابٍ, وَضَبَابٍ
+  kor: 그리고–흑암–의, 그리고–어둠의, 그리고–밀운–의
+  swa: na–giza–nene
+
+### Sense 126254 (1 occurrences)
+Grammar: Prep-b, Art | N-ms
+  eng: in–the–thick-darkness
+  spa: en–la–oscuridad–densa
+  hin: घने–अन्धकार–में
+  arb: فِي–الـ–ضَّبَابِ
+  kor: –에–짙은–어둠
+  swa: katika–giza–nene
+
+### Sense 126255 (1 occurrences)
+Grammar: Conj-w | N-ms
+  eng: and–thick-darkness
+  spa: y–oscuridad
+  hin: और–घना–कोहरा
+  arb: وَ–ضَبَابٌ
+  kor: 그리고–짙은–구름이
+  swa: na–giza–totoro
+
+### Sense 126256 (1 occurrences)
+Grammar: Prep-l | N-ms
+  eng: to–thick–darkness
+  spa: para–oscuridad
+  hin: घने–अंधेरे–को
+  arb: ظَلَامًا–دَامِسًا
+  kor: 칽칽한–어둡–으로
+  swa: giza–kuu
+
+### Sense 126257 (1 occurrences)
+Grammar: Prep-b, Art | N-ms
+  eng: in–the–thick-darkness
+  spa: en–la–oscuridad
+  hin: में–घने–अन्धकार
+  arb: فِي–الضَّبَابِ
+  kor: 에서–그–흑암
+  swa: katika–giza–nene
+
+### Sense 126258 (1 occurrences)
+Grammar: N-ms
+  eng: thick–darkness
+  spa: la–densa–nube
+  hin: काले–बादल–के
+  arb: ضَبَابٍ
+  kor: 칠흙을
+  swa: giza–nene
+
+### Sense 126259 (1 occurrences)
+Grammar: Art | N-ms
+  eng: the–thick–darkness
+  spa: la–oscuridad
+  hin: अंधकार–घने
+  arb: الضَّبَابِ
+  kor: 그–캠컴한–어둠
+  swa: giza–nene
+
+### Sense 126260 (1 occurrences)
+Grammar: Conj-w | N-ms
+  eng: and–thick–darkness
+  spa: y–oscuridad
+  hin: और–घना–अंधकार
+  arb: وَالضَّبَابَ
+  kor: 그리고–침칠한–어둠을
+  swa: na–giza–nene
+
+### Sense 126261 (1 occurrences)
+Grammar: Conj-w, Art | N-ms
+  eng: and–the–thick–darkness
+  spa: y–la–densa–oscuridad
+  hin: और–घोर–अन्धकार
+  arb: وَالضَّبَابِ
+  kor: 그리고–그–짙은–어둠
+  swa: na–ukungu–mzito
+
+## Task
+
+Group these 10 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

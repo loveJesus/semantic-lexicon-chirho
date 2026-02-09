@@ -1,0 +1,154 @@
+# Sense Merge Task for H7639
+
+Lemma: H7639 (POS: Prep-l)
+Total occurrences: 16
+Current sense count: 14
+
+This Hebrew/Greek lemma has been over-split into 14 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 137831 (2 occurrences)
+Grammar: Art | N-fs
+  eng: the–lattice
+  spa: el–enrejado, (el–enrejado)
+  hin: जाली–के, जाली
+  arb: الـ–شَّبَكَةِ
+  kor: 그-그물의
+  swa: safu, mmoja
+
+### Sense 137832 (2 occurrences)
+Grammar: Conj-w | N-fs
+  eng: and–network, and–a–latticework
+  spa: y–red, y–enrejado
+  hin: और–जाली
+  arb: وَشَبَكَةٌ
+  kor: 그리고–그물이, 그리고–그물과
+  swa: na–wavu
+
+### Sense 137833 (1 occurrences)
+Grammar: N-fs
+  eng: [lattice]
+  spa: [el–enrejado]
+  hin: जाली
+  arb: الـ–شَّبَكَةِ
+  kor: [그물의]
+  swa: mia–mbili
+
+### Sense 137834 (1 occurrences)
+Grammar: Conj-w, Art | N-fp
+  eng: and–the–networks
+  spa: y–las–redes
+  hin: और–जालियाँ
+  arb: وَ–الشَّبَكَتَانِ
+  kor: 그리고–그–그물들
+  swa: na–wavu
+
+### Sense 137835 (1 occurrences)
+Grammar: Prep-l, Art | N-fs
+  eng: for–the–network
+  spa: para–la–red
+  hin: के–लिए–जाली
+  arb: لِلشَّبَكَةِ
+  kor: 에게–그–그물
+  swa: kwa–wavu
+
+### Sense 137836 (1 occurrences)
+Grammar: Art | N-fs
+  eng: the–latticework
+  spa: la–red
+  hin: जाली
+  arb: الشَّبَكَةِ
+  kor: 그물의
+  swa: wavu
+
+### Sense 137837 (1 occurrences)
+Grammar: N-fs
+  eng: lattice
+  spa: enrejado
+  hin: जाली–का
+  arb: شَبَكَةٍ
+  kor: 그물의
+  swa: tundiko
+
+### Sense 137838 (1 occurrences)
+Grammar: Art | N-fp
+  eng: the–lattices
+  spa: los–enrejados
+  hin: जालियों
+  arb: الـ–شَّبَكَتَيْنِ
+  kor: 그물들의
+  swa: kwa–wavu–mmoja
+
+### Sense 137839 (1 occurrences)
+Grammar: Art | N-fs
+  eng: the–network
+  spa: el–enrejado
+  hin: ह–जाली
+  arb: الشَّبَكَةِ
+  kor: 그–그물
+  swa: wavu
+
+### Sense 137840 (1 occurrences)
+Grammar: Art | N-fs
+  eng: the–lattice
+  spa: la–celosía
+  hin: जाली
+  arb: الشُّبَّاكِ
+  kor: 그–격자를
+  swa: wavu
+
+### Sense 137841 (1 occurrences)
+Grammar: Prep-l, Art | N-fs
+  eng: for–the–lattice
+  spa: para–el–enrejado
+  hin: जाली–के–लिए
+  arb: لِ–الـ–شَّبَكَةِ
+  kor: 그물에-대하여
+  swa: zilizokuwa
+
+### Sense 137842 (1 occurrences)
+Grammar: Art | N-fp
+  eng: the–networks
+  spa: redes
+  hin: जालियों
+  arb: الشَّبَكَتَيْنِ
+  kor: 그–그물들
+  swa: mbili
+
+### Sense 137843 (1 occurrences)
+Grammar: N-fs
+  eng: a–snare
+  spa: malla
+  hin: वह–चलता–है
+  arb: سِيَاجٍ
+  kor: 올가미
+  swa: mtego
+
+### Sense 137844 (1 occurrences)
+Grammar: Conj-w, Art | N-fp
+  eng: and–the–lattices
+  spa: y–los–enrejados
+  hin: और–जालियाँ
+  arb: وَ–الـ–شَّبَكَتَانِ
+  kor: 그리고-그물들을
+  swa: na–nyavu
+
+## Task
+
+Group these 14 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

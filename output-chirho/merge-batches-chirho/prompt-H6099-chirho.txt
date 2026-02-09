@@ -1,0 +1,154 @@
+# Sense Merge Task for H6099
+
+Lemma: H6099 (POS: Conj-w | Adj-ms)
+Total occurrences: 31
+Current sense count: 14
+
+This Hebrew/Greek lemma has been over-split into 14 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 125708 (10 occurrences)
+Grammar: Adj-ms,Adj-mp
+  eng: mighty, strong, mightier
+  spa: poderoso, poderosas, poderosa
+  hin: शक्तिशाली
+  arb: أَقْوَى, قَوِيَّةٍ, قَوِيَّةً
+  kor: 강한, 강하고, 힘센
+  swa: lenye–nguvu, wenye–nguvu, yenye–nguvu
+
+### Sense 125709 (6 occurrences)
+Grammar: Conj-w | Adj-ms,Conj-w | Adj-mp
+  eng: and–mighty
+  spa: y–poderoso, y–poderosa, y–fuertes
+  hin: और–शक्तिशाली, और–शक्तिशलि, और–बलवान
+  arb: وَ–قَوِيَّةٍ, وَ–قَوِيَّةً, وَ–قَوِيٍّ
+  kor: 그리고–강한, 그리고–강하다
+  swa: na–lenye–nguvu, na–wenye–nguvu, na–yenye–nguvu
+
+### Sense 125710 (4 occurrences)
+Grammar: Conj-w | Adj-mp
+  eng: and–mightier
+  spa: y–más–fuertes, y–fuertes
+  hin: और–शक्तिशाली
+  arb: وَأَقْوَى
+  kor: 그리고–강한
+  swa: na–yenye–nguvu
+
+### Sense 125711 (1 occurrences)
+Grammar: Adj-mp
+  eng: mighty-ones
+  spa: poderosos
+  hin: शक्तिशालों–को
+  arb: أَقْوِيَاءَ
+  kor: 강한–자들–과
+  swa: wenye–nguvu
+
+### Sense 125712 (1 occurrences)
+Grammar: Conj-w | Adj-mp
+  eng: and–mighty
+  spa: y–numerosos
+  hin: और–बड़े
+  arb: وَ–عَظيمَةٌ
+  kor: 그리고–크다
+  swa: na–makubwa
+
+### Sense 125713 (1 occurrences)
+Grammar: Adj-mp
+  eng: mighty-ones
+  spa: los–fuertes
+  hin: शक्तिशाली
+  arb: الأَقْوِيَاءِ
+  kor: 강한–자들과–함께
+  swa: wenye–nguvu
+
+### Sense 125714 (1 occurrences)
+Grammar: Adj-mp
+  eng: mighty
+  spa: poderosos
+  hin: शक्तिशाली–को
+  arb: أَعِزَّاءَ
+  kor: 강한
+  swa: wenye–nguvu
+
+### Sense 125715 (1 occurrences)
+Grammar: Conj-w | Adj-mp
+  eng: and–numerous
+  spa: y–fuertes
+  hin: और–शक्तिशाली
+  arb: وَ–أَقْوِيَاءَ
+  kor: 그리고–강한–자–들–은
+  swa: na–wenye–nguvu
+
+### Sense 125716 (1 occurrences)
+Grammar: Adj-ms
+  eng: mighty
+  spa: muy–grande
+  hin: बहुत
+  arb: عَظِيمَةٌ
+  kor: 강한
+  swa: imara
+
+### Sense 125717 (1 occurrences)
+Grammar: Adj-mp
+  eng: mighty
+  spa: poderosos
+  hin: बलवानों–के
+  arb: أقْوِياءَ
+  kor: 강한–자들
+  swa: wenye–nguvu
+
+### Sense 125718 (1 occurrences)
+Grammar: Art | Adj-mp
+  eng: the–mighty
+  spa: las-impetuosas
+  hin: बलवान
+  arb: العَظِيمَةَ
+  kor: 강한
+  swa: yenye-nguvu
+
+### Sense 125719 (1 occurrences)
+Grammar: Adj-ms
+  eng: mighty
+  spa: fuerte
+  hin: शक्तिशाली
+  arb: عَظِيمَةٍ
+  kor: 강한
+  swa: lenye–nguvu
+
+### Sense 125720 (1 occurrences)
+Grammar: Adj-ms
+  eng: mighty
+  spa: numeroso
+  hin: अनगिनत
+  arb: عَظيمٍ
+  kor: 많은
+  swa: wengi
+
+### Sense 125721 (1 occurrences)
+Grammar: Prep-b | Adj-mpc | 3ms
+  eng: by–his–might
+  spa: en–sus–fuertes
+  hin: उसकी–शक्ति–से
+  arb: بِ–قُوَّتِهِ
+  kor: 강함–으로
+  swa: kwa–nguvu–zake
+
+## Task
+
+Group these 14 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

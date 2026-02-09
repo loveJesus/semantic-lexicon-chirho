@@ -1,0 +1,127 @@
+# Sense Merge Task for H0834b
+
+Lemma: H0834b (POS: Conj-w)
+Total occurrences: 19
+Current sense count: 11
+
+This Hebrew/Greek lemma has been over-split into 11 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 84765 (5 occurrences)
+Grammar: Prep-b | Pro-r
+  eng: where, in–which
+  spa: donde, En–donde
+  hin: जहाँ
+  arb: حَيْثُ, فِي–حَيْثُ
+  kor: 어디서든, 에서–그것, 에서–그–는
+  swa: popote, mahali–ambapo, mahali–alipopiga–magoti
+
+### Sense 84766 (2 occurrences)
+Grammar: Prep-b | Pro-r
+  eng: in–that, because
+  spa: en-lo-que
+  hin: जैसे–कि
+  arb: بِ–مَا
+  kor: 이는
+  swa: wewe, pamoja–naye
+
+### Sense 84767 (2 occurrences)
+Grammar: Conj-w, Prep-b | Pro-r
+  eng: and–where
+  spa: y–en–donde, y–donde
+  hin: और–जहाँ
+  arb: وَ–حَيْثُ, وَحَيْثُ
+  kor: 그리고–에서–그것, 그리고–어디에
+  swa: na–mahali–ambapo
+
+### Sense 84768 (2 occurrences)
+Grammar: Prep-b | Pro-r
+  eng: in–that
+  spa: en–que
+  hin: जहाँ, क्योंकि
+  arb: بِمَا–, الوَلِيمَةِ
+  kor: 그것–에서
+  swa: kwa–kuwa, Kwa–kuwa
+
+### Sense 84769 (2 occurrences)
+Grammar: Conj-w, Prep-b | Pro-r
+  eng: and–in–what
+  spa: y–en–lo–que
+  hin: और–जिसमें
+  arb: وَ–بِ–الَّذِي, وَبِ–مَا
+  kor: 그리고–그것에서
+  swa: na–katika–kile
+
+### Sense 84770 (1 occurrences)
+Grammar: Prep-b | Pro-r
+  eng: in–that-which
+  spa: en–lo–que
+  hin: जो
+  arb: بِ–الَّذِي
+  kor: 누구에게서–
+  swa: kile–ambacho
+
+### Sense 84771 (1 occurrences)
+Grammar: Prep-b | Pro-r
+  eng: in-wherever
+  spa: en–donde
+  hin: बअशर
+  arb: في–حَيْثُ
+  kor: –에서–어디든지
+  swa: mahali–ambapo
+
+### Sense 84772 (1 occurrences)
+Grammar: Prep-b | Pro-r
+  eng: in–that–which
+  spa: en–lo–que
+  hin: उसमें–जिसमें
+  arb: فِيمَا–
+  kor: 그것–에서
+  swa: katika–lile
+
+### Sense 84773 (1 occurrences)
+Grammar: Prep-b | Pro-r
+  eng: wherever
+  spa: en–donde
+  hin: जहाँ
+  arb: فِي–الَّذِي
+  kor: 에–그
+  swa: mahali–ambapo
+
+### Sense 84774 (1 occurrences)
+Grammar: Prep-b | Pro-r
+  eng: in–which
+  spa: en–las–que
+  hin: जिन–में
+  arb: الَّتِي
+  kor: 그것에
+  swa: ambayo
+
+### Sense 84775 (1 occurrences)
+Grammar: Prep-b | Pro-r
+  eng: on–whose–account
+  spa: por–cuanto
+  hin: किस–के–कारण
+  arb: بِ–سَبَبِ–مَاذَا
+  kor: 그것에
+  swa: kwa–sababu
+
+## Task
+
+Group these 11 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

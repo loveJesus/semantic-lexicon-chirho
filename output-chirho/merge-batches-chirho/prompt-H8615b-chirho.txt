@@ -1,0 +1,136 @@
+# Sense Merge Task for H8615b
+
+Lemma: H8615b (POS: Conj-w | N-fsc | 3mp)
+Total occurrences: 32
+Current sense count: 12
+
+This Hebrew/Greek lemma has been over-split into 12 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 145713 (12 occurrences)
+Grammar: N-fs
+  eng: hope
+  spa: esperanza, más–esperanza, esperanza;
+  hin: आशा
+  arb: رَجاءٌ, رَجَاءٌ, رَجاءٍ
+  kor: 소망이, 소망–이, 희망이
+  swa: tumaini
+
+### Sense 145714 (4 occurrences)
+Grammar: N-fsc | 1cs
+  eng: my–hope, is–my–hope, are–my–hope
+  spa: mi–esperanza, mi–esperanza.
+  hin: मेरी–आशा, मेरी–आशा–है
+  arb: رَجَائِي, رَجائي
+  kor: 나의–희망이, 나의–희망을, 나–의–소망–이
+  swa: tumaini–langu, tumaini-langu
+
+### Sense 145715 (3 occurrences)
+Grammar: Conj-w | N-fsc
+  eng: and–hope-of, but–the–expectation–of
+  spa: y–la–esperanza–del, y–la–esperanza–de, y–esperanza–de
+  hin: और–आशा
+  arb: وَ–رَجَاءُ, وَ–رَجَاءَ, وَرَجاءُ
+  kor: 그리고–희망을, 그리고–소망이, 그러나–소망–은
+  swa: na–tumaini–la, lakini–tumaini–la
+
+### Sense 145716 (3 occurrences)
+Grammar: N-fsc
+  eng: the–hope–of, the–expectation–of, hope-of
+  spa: esperanza–de
+  hin: आशा
+  arb: رَجاءُ, رَجَاءُ
+  kor: 희망이, 소망–이, 기대–는
+  swa: tumaini–la, matarajio–ya
+
+### Sense 145717 (2 occurrences)
+Grammar: Conj-w | N-fsc | 1cs
+  eng: and–my–hope, and–my-hope
+  spa: y–mi–esperanza
+  hin: और–मेरी–आशा–को, और–मेरी–आशा
+  arb: وَ–رَجَائِي, وَرَجائي
+  kor: 그리고–나의–희망을, 그리고–나의–소망–을
+  swa: na–tumaini–langu, na–matumaini–yangu
+
+### Sense 145718 (2 occurrences)
+Grammar: Conj-w | N-fsc | 2ms
+  eng: and–your–hope
+  spa: y–tu–esperanza
+  hin: और–आशा–तेरी
+  arb: وَ–رَجاؤُكَ
+  kor: 그리고–소망은–너–의
+  swa: na–tumaini–lako
+
+### Sense 145719 (1 occurrences)
+Grammar: N-fsc | 3fs
+  eng: hope–her
+  spa: su–esperanza
+  hin: आशा–उसकी
+  arb: رَجَاؤُهَا
+  kor: 그녀의–소망을
+  swa: tumaini–lake
+
+### Sense 145720 (1 occurrences)
+Grammar: Art | N-fs
+  eng: the–hope
+  spa: la–esperanza
+  hin: आशा–के
+  arb: الرَّجَاءِ
+  kor: 그–소망의
+  swa: wa–tumaini
+
+### Sense 145721 (1 occurrences)
+Grammar: N-fsc | 2ms
+  eng: your–hope
+  spa: tu–esperanza
+  hin: तेरी–आशा
+  arb: رَجاؤُكَ
+  kor: 너의–소망이며
+  swa: tumaini–lako
+
+### Sense 145722 (1 occurrences)
+Grammar: N-fsc | 1cp
+  eng: our–hope
+  spa: nuestra–esperanza,
+  hin: आशा
+  arb: رَجَاؤُنَا
+  kor: 소망–우리의
+  swa: tumaini–letu
+
+### Sense 145723 (1 occurrences)
+Grammar: Conj-w | N-fsc | 3mp
+  eng: and–hope-their
+  spa: y–su–esperanza
+  hin: और–उनकी–आशा
+  arb: وَرَجاؤُهُمْ
+  kor: 그리고–그들의–소망–은
+  swa: na–tumaini–lao
+
+### Sense 145724 (1 occurrences)
+Grammar: Conj-w | N-fs
+  eng: and–hope
+  spa: y–esperanza
+  hin: और–आशा
+  arb: وَرَجَاءً
+  kor: 그리고–소망을
+  swa: na–tumaini
+
+## Task
+
+Group these 12 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

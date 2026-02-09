@@ -1,0 +1,153 @@
+# Sense Merge Task for H3738b
+
+Lemma: H3738b (POS: V-Qal-Perf-3ms)
+Total occurrences: 16
+Current sense count: 14
+
+This Hebrew/Greek lemma has been over-split into 14 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 107418 (3 occurrences)
+Grammar: V-Qal-Perf-3cp
+  eng: they–dug
+  spa: cavaron
+  hin: खोदा–है–उन्होंने, खोदा–उन्होंने
+  arb: حَفَرُوا, حَفَروا
+  kor: 파다, 파도다
+  swa: wamechimba, walichimba
+
+### Sense 107419 (1 occurrences)
+Grammar: V-Qal-Perf-3cp
+  eng: have–dug
+  spa: Cavaron
+  arb: حَفَرُوا–
+  kor: 팠나이다
+  swa: wamechimba–
+
+### Sense 107420 (1 occurrences)
+Grammar: V-Qal-Prtcpl-ms
+  eng: one–who–digs
+  spa: El–que–cava–
+  hin: खोदने–वाला–
+  arb: مَنْ–يَحْفُرُ–
+  kor: 파는–자는–
+  swa: anayechimba–
+
+### Sense 107421 (1 occurrences)
+Grammar: Conj-w | V-Qal-ConsecImperf-3m
+  eng: and–dug
+  spa: y–cavaron
+  hin: और–खोदे–
+  arb: وَ–حَفَرَ
+  kor: 그리고–판다
+  swa: na–wakachimba
+
+### Sense 107422 (1 occurrences)
+Grammar: V-Qal-Perf-3ms
+  eng: he–dug
+  spa: cavó
+  hin: उसने–खोदा
+  arb: حَفَرَ
+  kor: 팠도다
+  swa: alichimba
+
+### Sense 107423 (1 occurrences)
+Grammar: V-Nifal-Imperf-3ms
+  eng: is–dug
+  spa: sea–cavada
+  hin: खोदी–जाए
+  arb: تُحْفَرَ
+  kor: 파여지리라
+  swa: itachimbwa
+
+### Sense 107424 (1 occurrences)
+Grammar: V-Qal-Prtcpl-ms
+  eng: digs
+  spa: cava
+  hin: खोदता–है
+  arb: يَحْفِرُ
+  kor: 파느니라
+  swa: anachimba
+
+### Sense 107425 (1 occurrences)
+Grammar: V-Qal-Imperf-3ms
+  eng: digs
+  spa: cave
+  hin: खोदेगा
+  arb: حَفَرَ
+  kor: 파면
+  swa: atachimba
+
+### Sense 107426 (1 occurrences)
+Grammar: V-Qal-Perf-3ms
+  eng: he-had-cut–
+  spa: cavó–
+  hin: खोदी–
+  arb: حَفَرَهَا–
+  kor: 판–것
+  swa: alichimba–
+
+### Sense 107427 (1 occurrences)
+Grammar: Conj-w | V-Qal-ConjImperf-2mp
+  eng: and–you-bargain
+  spa: y–caváis–trampa
+  hin: और–खोदते–हो
+  arb: وَتَحْفُرونَ
+  kor: 그리고–파느냐
+  swa: na–mnajadiliana
+
+### Sense 107428 (1 occurrences)
+Grammar: V-Qal-Perf-1cs
+  eng: dug
+  spa: cavé
+  hin: खोदा–मैंने
+  arb: حَفَرْتُهُ
+  kor: 내가–파놓았다
+  swa: ambaya
+
+### Sense 107429 (1 occurrences)
+Grammar: V-Qal-Imperf-3mp
+  eng: Will-bargain
+  spa: ¿Negociarán
+  hin: क्या–वे–खरीदेंगे
+  arb: يَحْفِرُونَ
+  kor: 파겠느냐
+  swa: watabishana
+
+### Sense 107430 (1 occurrences)
+Grammar: V-Qal-Perf-2ms
+  eng: You–have–dug
+  spa: abriste
+  hin: तूने–खोदे
+  arb: فَتَحْتَ
+  kor: 열어–주셨도다
+  swa: umenitobolea
+
+### Sense 107431 (1 occurrences)
+Grammar: V-Qal-Perf-3cp | 3fs
+  eng: carved–it
+  spa: excavaron–lo
+  hin: खोदी–उसे
+  arb: كَرَوْهَا
+  kor: 파냈다–그것을
+  swa: walichimba
+
+## Task
+
+Group these 14 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

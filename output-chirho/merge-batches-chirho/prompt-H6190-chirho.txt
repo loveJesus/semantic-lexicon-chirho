@@ -1,0 +1,127 @@
+# Sense Merge Task for H6190
+
+Lemma: H6190 (POS: N-fs)
+Total occurrences: 16
+Current sense count: 11
+
+This Hebrew/Greek lemma has been over-split into 11 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 126202 (4 occurrences)
+Grammar: N-fsc | 3ms
+  eng: his–foreskin
+  spa: su–prepucio
+  hin: उस्के–खलनचरम–क, उसकी खलड़ी
+  arb: غُرْلَتِهِ
+  kor: 그의–포피의, 그–의–포피
+  swa: govi–lake
+
+### Sense 126203 (2 occurrences)
+Grammar: N-fpc
+  eng: foreskins–of
+  spa: prepucios–de
+  hin: खलधियोम, खलड़ियों
+  arb: غُلْفَةِ, غُلَفٍ
+  kor: 할례–껍질, 포피
+  swa: govi–za, govi
+
+### Sense 126204 (2 occurrences)
+Grammar: N-fsc
+  eng: foreskin–of, foreskin-of
+  spa: prepucio–de, prepucio-de
+  hin: खलड़ी, अग्ली-खअल
+  arb: غُلْفَةَ, غُرْلَةَ
+  kor: 포피를
+  swa: govi
+
+### Sense 126205 (1 occurrences)
+Grammar: N-fsc | 3mp
+  eng: their–foreskin
+  spa: su–prepucio
+  hin: उनके–खलनचरम–क
+  arb: غُرْلَتِهِمْ
+  kor: 그들의–포피의
+  swa: govi–lao
+
+### Sense 126206 (1 occurrences)
+Grammar: N-fpc
+  eng: foreskins–of
+  spa: los–prepucios–de
+  hin: खलड़ियां
+  arb: غُلَفَ
+  kor: 포피를
+  swa: govi
+
+### Sense 126207 (1 occurrences)
+Grammar: N-fs
+  eng: foreskin
+  spa: prepucio
+  hin: खलड़ी–है
+  arb: غُرْلَةٌ
+  kor: 할례가–있는
+  swa: sitara
+
+### Sense 126208 (1 occurrences)
+Grammar: Art | N-fp
+  eng: the–Foreskins
+  spa: los–prepucios
+  hin: खलड़ियों–की
+  arb: الغُرَلِ
+  kor: 양피들의
+  swa: govi
+
+### Sense 126209 (1 occurrences)
+Grammar: Prep-b | N-fs
+  eng: with–the–uncircumcised
+  spa: con–prepucio
+  hin: में–खलड़ी
+  arb: بِغُرْلَةٍ
+  kor: 할례–안에서
+  swa: lakini–hawakutahiriwa
+
+### Sense 126210 (1 occurrences)
+Grammar: N-fsc | 3ms
+  eng: foreskin-its
+  spa: su–incircuncisión
+  hin: खलड़ी–कैसी–उसकी
+  arb: غُلْفَتَهُ
+  kor: 그의–할례를
+  swa: kutokutahiriwa–kwake
+
+### Sense 126211 (1 occurrences)
+Grammar: N-fpc | 3mp
+  eng: foreskins–their
+  spa: prepucios–suyos
+  hin: उनकि-खलधियअन
+  arb: غُلَفَهُمْ
+  kor: 그들의–할례–껍질을
+  swa: govi–zao
+
+### Sense 126212 (1 occurrences)
+Grammar: N-fsc | 2mp
+  eng: your–foreskin
+  spa: vuestro–prepucio
+  hin: तुमहरे–खलनचरम–क
+  arb: غُرْلَتِكُمْ
+  kor: 너희의–포피의
+  swa: govi–lenu
+
+## Task
+
+Group these 11 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

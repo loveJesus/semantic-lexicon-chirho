@@ -1,0 +1,117 @@
+# Sense Merge Task for H6210
+
+Lemma: H6210 (POS: N-fsc)
+Total occurrences: 10
+Current sense count: 10
+
+This Hebrew/Greek lemma has been over-split into 10 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 126279 (1 occurrences)
+Grammar: N-fsc | 1cs
+  eng: my-bed
+  spa: mi–lecho,
+  hin: मेरी–शैय्या
+  arb: فِراشي
+  kor: 나의–침상이
+  swa: kitanda–changu
+
+### Sense 126280 (1 occurrences)
+Grammar: N-fsc
+  eng: a–bed–of
+  spa: cama–de
+  hin: पलंग
+  arb: سَرِيرُ
+  kor: 침대
+  swa: kitanda–cha
+
+### Sense 126281 (1 occurrences)
+Grammar: N-fsc | 1cs
+  eng: my–couch
+  spa: mi–lecho
+  hin: मेरा–बिस्तरा
+  arb: فِرَاشِي
+  kor: 자리–를
+  swa: godoro–langu
+
+### Sense 126282 (1 occurrences)
+Grammar: N-fsc | 1cp
+  eng: our–couch
+  spa: nuestro–lecho
+  hin: हमारा–बिस्तरा
+  arb: عَرْسِينُو
+  kor: 우리–침상–이
+  swa: kitanda–chetu
+
+### Sense 126283 (1 occurrences)
+Grammar: N-fsc
+  eng: couch-of
+  spa: cama–de
+  hin: बिछौने
+  arb: سَرِيرِ
+  kor: 침상
+  swa: kitanda–cha
+
+### Sense 126284 (1 occurrences)
+Grammar: N-fs
+  eng: couch
+  spa: lecho
+  hin: बिछौने–के।
+  kor: 춤의
+  swa: godoro
+
+### Sense 126285 (1 occurrences)
+Grammar: N-fsc | 1cs
+  eng: my–couch
+  spa: lecho–mío
+  hin: बिस्तरा–अपना
+  arb: سَرِيرِي
+  kor: 나–의–수회–를
+  swa: kitanda–changu
+
+### Sense 126286 (1 occurrences)
+Grammar: N-fpc | 3mp
+  eng: their–couches
+  spa: sus–lechos
+  hin: बिछौनों–अपने
+  arb: أَرائِكِهِمْ
+  kor: 그들의–긴–의자에
+  swa: makochi–yao
+
+### Sense 126287 (1 occurrences)
+Grammar: N-fsc
+  eng: bed–of
+  spa: lecho–de
+  hin: बिछौना
+  arb: فِراشِ
+  kor: 병상
+  swa: kitanda-cha
+
+### Sense 126288 (1 occurrences)
+Grammar: N-fsc | 3ms
+  eng: his–bed
+  spa: su–cama
+  hin: उसका–पलंग
+  arb: سَرِيرُهُ
+  kor: 그의–침대는
+  swa: kitanda–chake
+
+## Task
+
+Group these 10 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

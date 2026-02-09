@@ -1,0 +1,118 @@
+# Sense Merge Task for H6315
+
+Lemma: H6315 (POS: Pro-r | V-Qal-Imperf-3ms)
+Total occurrences: 14
+Current sense count: 10
+
+This Hebrew/Greek lemma has been over-split into 10 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 127205 (2 occurrences)
+Grammar: Conj-w | V-Hifil-ConjImperf-3m
+  eng: but–he–who–breathes–out, but–breathes–out
+  spa: y–el–que–habla
+  hin: और–बोलनेवाला
+  arb: وَ–يُفيضُ
+  kor: 그러나–내뽼는다, 그러나–내뽼는–자–는
+  swa: lakini–anavuma
+
+### Sense 127206 (2 occurrences)
+Grammar: Conj-w | V-Hifil-ConjImperf-3m
+  eng: and–breather–of
+  spa: y–el–que–profiere
+  hin: और–फूंकनेवाला
+  arb: وَ–يُفيضُ
+  kor: 그리고–내뽙는–자는
+  swa: na–anavuma
+
+### Sense 127207 (2 occurrences)
+Grammar: Pro-r | V-Qal-Imperf-3ms
+  eng: that–breathes
+  spa: que–sople
+  hin: फूँके
+  arb: شِيَّفُوحَ
+  kor: 불어올–때
+  swa: itakapovuma
+
+### Sense 127208 (2 occurrences)
+Grammar: V-Hifil-Imperf-3ms
+  eng: he–who–speaks, breathes–out
+  spa: el–que–declara, Que–profiere
+  hin: बोलनेवाला
+  arb: يُفيضُ, يَنْفُخُ
+  kor: 내뽼는다, 내뽼는–자–는
+  swa: anavuma
+
+### Sense 127209 (1 occurrences)
+Grammar: V-Hifil-Imp-fs
+  eng: blow-upon
+  spa: sopla
+  hin: बहा
+  arb: هَفِيحِي
+  kor: 불어라
+  swa: vuma
+
+### Sense 127210 (1 occurrences)
+Grammar: V-Hifil-Imperf-1cs
+  eng: I–will–blow
+  spa: soplaré
+  hin: फूँकूँगा–मैं
+  arb: أَنْفُخُ
+  kor: 불어넣으리라
+  swa: nitapuliza
+
+### Sense 127211 (1 occurrences)
+Grammar: Conj-w | V-Hifil-ConjImperf.Ju
+  eng: and–it–hastens
+  spa: y–jadea
+  hin: और–वह–फूँकता–है
+  arb: وَتَلهَثُ
+  kor: 그리고–이르니
+  swa: na–yanapumua
+
+### Sense 127212 (1 occurrences)
+Grammar: V-Hifil-Imperf-3ms
+  eng: he–pants
+  spa: soplará
+  hin: जिसकी–वह–लालसा–करता–है
+  arb: يَنْفُخُ
+  kor: 헐덫는–자–를
+  swa: anayetamani
+
+### Sense 127213 (1 occurrences)
+Grammar: V-Hifil-Imperf-3mp
+  eng: set–aflame
+  spa: encienden
+  hin: भड़काते
+  arb: يُفْعِمُونَ
+  kor: 들끔다
+  swa: huchochea
+
+### Sense 127214 (1 occurrences)
+Grammar: V-Hifil-Imperf-3ms
+  eng: he–puffs
+  spa: sopla
+  hin: वह–फूंकता–है
+  arb: يَنْفُخُ
+  kor: 비웃나이다
+  swa: huwapulizia
+
+## Task
+
+Group these 10 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

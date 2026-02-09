@@ -1,0 +1,118 @@
+# Sense Merge Task for G3498
+
+Lemma: G3498 (POS: Adj-AMP)
+Total occurrences: 130
+Current sense count: 10
+
+This Hebrew/Greek lemma has been over-split into 10 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 72669 (92 occurrences)
+Grammar: Adj-AMP,Adj-NMP,Adj-GMP,Adj-DMP
+  eng: dead, the–dead, the-dead
+  spa: muertos, muertos,, –muertos
+  hin: मृतकों, मरे–हुओं, मुर्दों
+  arb: الأَمْوَاتِ, الأَمواتِ, الأَمْواتِ
+  kor: 죽은–자들, 죽은–자들이, 죽은–자들을
+  swa: wafu, kwa–wafu, wafu,
+
+### Sense 72670 (14 occurrences)
+Grammar: Adj-NMS,Adj-AMS,Adj-NFS,Adj-NNS
+  eng: dead
+  spa: muerto, muerta
+  hin: मृत, मरा–हुआ, मरा-हुआ
+  arb: مَيِّتٌ, مَيِّتًا, مَيِّتٍ
+  kor: 죽은–자, 죽은–것, 죽은–자로
+  swa: mfu, imekufa, umekufa
+
+### Sense 72671 (14 occurrences)
+Grammar: Adj-GMP
+  eng: of–dead, of-dead, of–dead–ones
+  spa: de–muertos, muertos, de-muertos
+  hin: मृतकों–का, मृतकोंकी, मृतों–की
+  arb: أَمواتٍ, الأَمْوَاتِ, أمواتٍ
+  kor: 죽은–자들–의, 죽은–자들의, 죽은–자들
+  swa: wa–wafu, wa–wafu,, wafu
+
+### Sense 72672 (3 occurrences)
+Grammar: Adj-GMP,Adj-NMP
+  eng: dead
+  spa: muertos
+  hin: मृतकों, मृतक
+  arb: أمواتِ, أمواتُ
+  kor: 죽은–자들이, 죽은–자들–의, 죽은–자들
+  swa: wafu?, wafu
+
+### Sense 72673 (2 occurrences)
+Grammar: Adj-GNP
+  eng: dead
+  spa: muertas
+  hin: मृत
+  arb: مَيِّتَةٍ
+  kor: 죽은
+  swa: mauti
+
+### Sense 72674 (1 occurrences)
+Grammar: Adj-GMS
+  eng: of-a-dead-one
+  spa: de–muerto
+  hin: मृत–का
+  arb: مَيِّتٍ
+  kor: 좽은–자–의
+  swa: ya–maiti;
+
+### Sense 72675 (1 occurrences)
+Grammar: Adj-AFS
+  eng: dead
+  spa: muerta
+  hin: गाड़–दिया
+  arb: مَيِّتَةً
+  kor: 죽어–있는
+  swa: amekufa
+
+### Sense 72676 (1 occurrences)
+Grammar: Adj-DMP
+  eng: to–dead
+  spa: a–muertos
+  hin: मृतकों–को
+  arb: لِلأمواتِ
+  kor: 죽은–자들에게도
+  swa: wafu
+
+### Sense 72677 (1 occurrences)
+Grammar: Adj-AMP
+  eng: dead–ones
+  spa: a–muertos
+  hin: मृतकोंको
+  arb: الأَمْوَاتَ
+  kor: 죽은–자들을
+  swa: wafu
+
+### Sense 72678 (1 occurrences)
+Grammar: Adj-NMS
+  eng: dead-man
+  spa: muerto
+  hin: मुर्दा
+  arb: مَيِّتُ
+  kor: 죽은–자가
+  swa: aliyekufa
+
+## Task
+
+Group these 10 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

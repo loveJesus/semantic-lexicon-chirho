@@ -1,0 +1,154 @@
+# Sense Merge Task for G3403
+
+Lemma: G3403 (POS: V-ASP-1S)
+Total occurrences: 23
+Current sense count: 14
+
+This Hebrew/Greek lemma has been over-split into 14 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 72452 (4 occurrences)
+Grammar: V-AIP-3P
+  eng: remembered, they–remembered, they-remembered
+  spa: recordaron, se-acordaron
+  hin: याद–आया
+  arb: تَذَكَّرَ, تَذَكَّرْنَ, تَذَكَّرُوا
+  kor: 기억했다
+  swa: walikumbuka, wakakumbuka
+
+### Sense 72453 (3 occurrences)
+Grammar: V-ANP
+  eng: to–remember, to-remember
+  spa: recordar
+  hin: स्मरण–करने–को, याद–करो
+  arb: يَذْكُرَ, لِيَذْكُرَ, أنْ–تَتَذَكَّروا
+  kor: 기억하시려고, 기억하기–위해
+  swa: kukumbuka, akikumbuka
+
+### Sense 72454 (2 occurrences)
+Grammar: V-AMP-2P,V-PMM/P-2P
+  eng: remember
+  spa: acordaos
+  hin: याद–करो
+  arb: تَذَكَّرُوا, اذْكُرْنَ
+  kor: 기억하라
+  swa: wakumbukeni, kumbukeni
+
+### Sense 72455 (2 occurrences)
+Grammar: V-AIP-3S,V-AIP-1S
+  eng: remembered, I–remembered
+  spa: recordó, recordé
+  hin: याद–आया
+  arb: تَذَكَّرْتُ, تَذَكَّرَ
+  kor: 기억했다, 기억났다
+  swa: nikakumbuka, alikumbuka
+
+### Sense 72456 (2 occurrences)
+Grammar: V-AMP-2S
+  eng: remember
+  spa: recuerda, acuérdate
+  hin: याद–रख, याद–करना
+  arb: تَذَكَّرْ, اذْكُرْ
+  kor: 기억하소서, 기억하라
+  swa: kumbuka
+
+### Sense 72457 (2 occurrences)
+Grammar: V-ASP-1S,V-FIP-1S
+  eng: I-will-remember
+  spa: me-acordaré
+  hin: याद–करूंगा
+  arb: أَذْكُرُهَا, أَتَذَكَّرَ
+  kor: 기억하지
+  swa: kuzikumbuka, kumbuka
+
+### Sense 72458 (1 occurrences)
+Grammar: V-RIM/P-2P
+  eng: you-have-remembered
+  spa: os–acordáis
+  hin: याद–करते–हो
+  arb: تَذكُرونَ
+  kor: 기억하고
+  swa: mnakumbuka;
+
+### Sense 72459 (1 occurrences)
+Grammar: V-ASP-2S
+  eng: remember
+  spa: recuerdes
+  hin: स्मरण–हो
+  arb: تَذَكَّرْتَ
+  kor: 기억하면
+  swa: ukikumbuka
+
+### Sense 72460 (1 occurrences)
+Grammar: V-AMP-2P
+  eng: remember
+  spa: recordad
+  hin: स्मरण–करो
+  arb: اذكروا
+  kor: 기억하라
+  swa: kumbukeni
+
+### Sense 72461 (1 occurrences)
+Grammar: V-AIP-3S
+  eng: was-remembered
+  spa: fue–recordada
+  hin: याद–की–गई
+  arb: ذُكِرَت
+  kor: 기억되었으니
+  swa: ikakumbukwa
+
+### Sense 72462 (1 occurrences)
+Grammar: V-RPM/P-NMS
+  eng: having–remembered
+  spa: recordando
+  hin: यअद–करते-हुए
+  arb: ذاكِراً
+  kor: 기억하며
+  swa: nikikumbuka
+
+### Sense 72463 (1 occurrences)
+Grammar: V-AIP-1P
+  eng: we–remembered
+  spa: recordamos
+  hin: याद–आया
+  arb: تَذَكَّرْنَا
+  kor: 기억했습니다
+  swa: tunakumbuka
+
+### Sense 72464 (1 occurrences)
+Grammar: V-AIP-3P
+  eng: were–remembered
+  spa: fueron–recordadas
+  hin: स्मरण–किए–गए
+  arb: تُذُكِّرَتْ
+  kor: 기억되었다
+  swa: zimekumbukwa
+
+### Sense 72465 (1 occurrences)
+Grammar: V-PIM/P-2S
+  eng: you–remember
+  spa: te–acuerdas
+  hin: स्मरण–करता–है
+  arb: تَذْكُرُهُ
+  kor: 기억하시나이까
+  swa: umkumbuke
+
+## Task
+
+Group these 14 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

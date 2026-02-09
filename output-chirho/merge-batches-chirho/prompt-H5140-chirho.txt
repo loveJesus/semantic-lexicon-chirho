@@ -1,0 +1,163 @@
+# Sense Merge Task for H5140
+
+Lemma: H5140 (POS: V-Hifil-Perf-3ms)
+Total occurrences: 16
+Current sense count: 15
+
+This Hebrew/Greek lemma has been over-split into 15 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 116940 (2 occurrences)
+Grammar: Conj-w | V-Qal-Prtcpl-mp
+  eng: and–flowing–water, and–flowing
+  spa: y–corrientes
+  hin: और–बहते–हुए, और–बहते–पानी
+  arb: وِ–نُوزْلِيم, وَ–جَارِيَاتٍ
+  kor: 그리고–흐르는–물–을, 그리고–흐르는–것들–이라
+  swa: na–yanayotiririka, na–vijito
+
+### Sense 116941 (1 occurrences)
+Grammar: V-Qal-Perf-3cp
+  eng: flowed
+  spa: fluyeron
+  hin: बहे
+  arb: سالَتْ
+  kor: 녹았다
+  swa: ilitiririka
+
+### Sense 116942 (1 occurrences)
+Grammar: V-Qal-Prtcpl-mp
+  eng: streams
+  spa: corrientes
+  hin: धाराएँ
+  arb: جَدَاوِلَ
+  kor: 흐르는–것들–을
+  swa: vijito
+
+### Sense 116943 (1 occurrences)
+Grammar: V-Qal-Imperf-3mp
+  eng: let–flow
+  spa: que–fluyan
+  hin: बहें
+  arb: يِزّْلُو
+  kor: 흐르게–하라
+  swa: yaenee
+
+### Sense 116944 (1 occurrences)
+Grammar: Conj-w | V-Qal-Prtcpl-mp
+  eng: and–streams
+  spa: y–corrientes
+  hin: और–धाराएँ
+  arb: وَسَوَاقِيَ
+  kor: 그리고–흐르는–것을
+  swa: na–vijito
+
+### Sense 116945 (1 occurrences)
+Grammar: V-Qal-Prtcpl-mp
+  eng: flowing-waters
+  spa: corrientes
+  hin: बहते–हुए
+  arb: السَّائِلَاتُ
+  kor: 흐르는–것들이
+  swa: yanayotiririka
+
+### Sense 116946 (1 occurrences)
+Grammar: V-Qal-Imperf-3mp
+  eng: pour–down
+  spa: fluyen
+  hin: बहते–हैं
+  arb: يَهطِلونَ
+  kor: 흘릴다
+  swa: yanamwagika
+
+### Sense 116947 (1 occurrences)
+Grammar: V-Qal-Prtcpl-mp
+  eng: flowing
+  spa: que–fluyen?
+  hin: बहते
+  arb: مُتَدَفِّقَةٌ
+  kor: 흐르는
+  swa: yanayotiririka
+
+### Sense 116948 (1 occurrences)
+Grammar: Conj-w | V-Qal-Prtcpl-mpc | 3m
+  eng: and–their–streams
+  spa: y–corrientes-de-ellos
+  hin: और–उनकी–धाराओं–को
+  arb: وَجَدَاوِلَهُمْ
+  kor: 그들–의–흐르는–물들–을
+  swa: na–vijito–vyao
+
+### Sense 116949 (1 occurrences)
+Grammar: V-Qal-Imperf-3ms
+  eng: flows
+  spa: Fluirá
+  hin: बहेगा
+  arb: يَجْرِي–
+  kor: 흘러나오리라
+  swa: yatatiririka–
+
+### Sense 116950 (1 occurrences)
+Grammar: V-Qal-Imperf-3mp
+  eng: let–them–pour–down
+  spa: derramen–
+  hin: बरसाएं–
+  arb: لِتَصُبَّ–
+  kor: 흐르라–
+  swa: yamiminie–
+
+### Sense 116951 (1 occurrences)
+Grammar: V-Qal-Imperf-3mp
+  eng: flow–with–
+  spa: fluyan
+  hin: बहें
+  arb: تَسِيلُ–
+  kor: 흘러–내리라–
+  swa: zitiririke
+
+### Sense 116952 (1 occurrences)
+Grammar: V-Hifil-Perf-3ms
+  eng: He–caused–to–flow
+  spa: hizo–fluir
+  hin: उसने–बहाया
+  arb: أَسَالَ
+  kor: 흐르게–하셨으니
+  swa: aliwamiminika
+
+### Sense 116953 (1 occurrences)
+Grammar: V-Qal-Imperf-3mp
+  eng: flow
+  spa: fluyen–
+  hin: बहते–हैं
+  arb: تَجْرِي–
+  kor: 흐르다–
+  swa: yanatiririka
+
+### Sense 116954 (1 occurrences)
+Grammar: V-Qal-Imperf-3fs
+  eng: let–flow
+  spa: destilará
+  hin: बहेगा
+  arb: يَقْطُرُ
+  kor: 흐르리라
+  swa: itatiririka
+
+## Task
+
+Group these 15 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

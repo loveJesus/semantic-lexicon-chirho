@@ -1,0 +1,118 @@
+# Sense Merge Task for H8154
+
+Lemma: H8154 (POS: Conj-w | V-Qal-QalPassPrtcpl-ms)
+Total occurrences: 11
+Current sense count: 10
+
+This Hebrew/Greek lemma has been over-split into 10 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 142954 (2 occurrences)
+Grammar: V-Qal-Prtcpl-mp
+  eng: plunderers
+  spa: saqueadores
+  hin: लुटेरों–के, लुटेरों
+  arb: نَاهِبِينَ, ناهِبينَ
+  kor: 약탈하는–자들의, 약탈자들의
+  swa: waporaji, wanyang'anyi
+
+### Sense 142955 (1 occurrences)
+Grammar: V-Qal-Prtcpl-msc | 3ms
+  eng: plunderer–him
+  spa: saqueador–de–él
+  hin: लूटने–वाले–के
+  arb: نَاهِبِهِ
+  kor: 약탈하는–자의
+  swa: alimchukua
+
+### Sense 142956 (1 occurrences)
+Grammar: Conj-w | V-Qal-QalPassPrtcpl-m
+  eng: and–despoiled
+  spa: y–saqueado
+  hin: और–शिकार–किए–हुए
+  arb: وَمَسْلُوبٌ
+  kor: 그리고–훼친
+  swa: na–kutekwa
+
+### Sense 142957 (1 occurrences)
+Grammar: V-Qal-Prtcpl-mpc
+  eng: plunderers-of
+  spa: saqueadores–de
+  hin: लूटने–वालो
+  arb: يَا–نَاهِبِي
+  kor: 약탈하는–자들아
+  swa: wanaopora
+
+### Sense 142958 (1 occurrences)
+Grammar: V-Qal-Perf-3cp
+  eng: plunder
+  spa: saquearon
+  hin: लूटा
+  arb: نَهَبوا
+  kor: 약탈하였도다
+  swa: wametunyang'anya
+
+### Sense 142959 (1 occurrences)
+Grammar: V-Qal-Imperf-3ms
+  eng: shall-plunder
+  spa: saqueará
+  hin: लूटेगा
+  arb: يَنهَبُ
+  kor: 약탈하리라
+  swa: ataporwa
+
+### Sense 142960 (1 occurrences)
+Grammar: V-Piel-Perf-1cs
+  eng: I-plundered
+  spa: saqueé
+  hin: मैंने–लूटा
+  arb: نَهَبْتُ
+  kor: 탈취했도다
+  swa: nimenyanganya
+
+### Sense 142961 (1 occurrences)
+Grammar: V-Qal-Prtcpl-mpc | 1cp
+  eng: our–plunderers
+  spa: nuestros–despojadores
+  hin: हमारे–लूटने–वालों–का
+  arb: نَاهِبِينَا
+  kor: 우리를–약탈하는–자들의
+  swa: ya–wanaotunyang'anya
+
+### Sense 142962 (1 occurrences)
+Grammar: V-Qal-Prtcpl-mp
+  eng: plundering
+  spa: saqueando
+  hin: लूट–रहे–हैं
+  arb: يَنْهَبُونَ
+  kor: 약탈하고–있다
+  swa: wanaopora
+
+### Sense 142963 (1 occurrences)
+Grammar: V-Qal-Prtcpl-mpc | 3mp
+  eng: their-plunderers
+  spa: sus–saqueadores
+  hin: उनके–लुटेरों–के।
+  arb: ناهِبيهِمْ
+  kor: 그들을–약탈하는–자들의
+  swa: wanyang'anyi–wao
+
+## Task
+
+Group these 10 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

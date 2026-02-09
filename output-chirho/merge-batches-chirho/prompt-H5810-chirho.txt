@@ -1,0 +1,126 @@
+# Sense Merge Task for H5810
+
+Lemma: H5810 (POS: V-Hifil-Perf-3fs)
+Total occurrences: 12
+Current sense count: 11
+
+This Hebrew/Greek lemma has been over-split into 11 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 123360 (2 occurrences)
+Grammar: Conj-w | V-Qal-ConsecImperf-3f
+  eng: and–was-strong
+  spa: y–prevaleció, Y–prevaleció
+  hin: और–बलवान–हुआ, और–प्रबल–हुआ
+  arb: وَ–تَقَوَّتْ
+  kor: 그리고–강했다, 그리고–강해졌다
+  swa: na–ukawa–na–nguvu
+
+### Sense 123361 (1 occurrences)
+Grammar: V-Qal-Imperf-3ms
+  eng: he–took–refuge
+  spa: se–fortaleció
+  hin: और–शक्तिशाली–हुआ
+  arb: تَقَوَّى
+  kor: 강하게–하였도다
+  swa: akawa-na-nguvu
+
+### Sense 123362 (1 occurrences)
+Grammar: V-Qal-Imperf-3fs
+  eng: strengthens
+  spa: fortalece
+  hin: शक्तिशाली–बनाती–है
+  arb: تُقَوِّي
+  kor: 강하게–한다
+  swa: humtia–nguvu
+
+### Sense 123363 (1 occurrences)
+Grammar: V-Qal-Imperf-3fs
+  eng: is–strong
+  spa: fuerte
+  hin: शक्तिशाली–है
+  arb: تَعْظُمُ
+  kor: 강하리라
+  swa: ni–hodari
+
+### Sense 123364 (1 occurrences)
+Grammar: Prep-l | V-Qal-Inf
+  eng: to–take–refuge
+  spa: para–fortalecerse
+  hin: शक्तिशाली–होने–के–लिए
+  arb: لِيَتَقَوَّوْا
+  kor: 에–피하려고
+  swa: kutafuta–nguvu
+
+### Sense 123365 (1 occurrences)
+Grammar: V-Qal-Imperf-3ms
+  eng: prevail
+  spa: prevalecerá
+  hin: शक्तिशाली–होगा
+  arb: يَقْوَى
+  kor: 강하여지리라
+  swa: atakuwa–na–nguvu
+
+### Sense 123366 (1 occurrences)
+Grammar: V-Hifil-Perf-3fs
+  eng: she–made–bold
+  spa: endureció
+  hin: निर्लज्ज–किया
+  arb: أَقْحَمَتْ
+  kor: 뻘뻘해졌다
+  swa: akawa–na–uso–wa–ujasiri
+
+### Sense 123367 (1 occurrences)
+Grammar: Prep-b | V-Qal-Inf
+  eng: when–became–strong
+  spa: cuando–fortificó–él
+  hin: मजबूत–होते–हुए
+  arb: بِتَقْوِيَتِهِ
+  kor: 그–가–강하게하셨을–때–에
+  swa: alipoimarisha
+
+### Sense 123368 (1 occurrences)
+Grammar: V-Qal-Imp-ms | 3fs
+  eng: be–strong
+  spa: fortalece
+  arb: أَيِّدْ
+  kor: 강하게–하소서
+  swa: imarisha
+
+### Sense 123369 (1 occurrences)
+Grammar: V-Qal-Imperf-3ms
+  eng: let–prevail
+  spa: prevalezca
+  hin: प्रबल
+  arb: يَتَقَوَّى
+  kor: 강하게
+  swa: akashinda
+
+### Sense 123370 (1 occurrences)
+Grammar: V-Hifil-Perf-3ms
+  eng: hardens
+  spa: Endurece
+  hin: कठोर–करता–है
+  arb: صَلَّبَ
+  kor: 굳히는니라
+  swa: huimarisha
+
+## Task
+
+Group these 11 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

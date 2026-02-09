@@ -1,0 +1,136 @@
+# Sense Merge Task for H1854
+
+Lemma: H1854 (POS: Conj-w | V-Hifil-ConsecImperf-3ms)
+Total occurrences: 13
+Current sense count: 12
+
+This Hebrew/Greek lemma has been over-split into 12 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 92010 (2 occurrences)
+Grammar: V-Hifil-InfAbs,V-Qal-Perf-3ms
+  eng: fine
+  spa: quedó–fino, fino
+  hin: बारीक
+  arb: نَاعِمًا, ناعِماً
+  kor: 곱게, 가늘어졌느니라
+  swa: laini, ikawa–laini
+
+### Sense 92011 (1 occurrences)
+Grammar: V-Hofal-Imperf-3ms
+  eng: grain
+  spa: se–muele
+  hin: दावनी–जाती–है
+  arb: يُطْحَنُ
+  kor: 부수느냐
+  swa: hutwangwa
+
+### Sense 92012 (1 occurrences)
+Grammar: V-Hifil-Perf-3ms
+  eng: he–beat–fine
+  spa: desmenuzo
+  hin: पीसा
+  arb: سَحَقَهَا
+  kor: 빻었다
+  swa: akaponda
+
+### Sense 92013 (1 occurrences)
+Grammar: Conj-w | V-Hifil-ConsecImperf-
+  eng: and–he–beat–fine
+  spa: y–la–desmenuzo
+  hin: और–पीसा
+  arb: وَسَحَقَهَا
+  kor: 그리고-빻었다
+  swa: na–akaiponda
+
+### Sense 92014 (1 occurrences)
+Grammar: Conj-w | V-Hifil-ConsecImperf-
+  eng: and–crushed
+  spa: y–desmenuzó
+  hin: और–कूटा
+  arb: وَسَحَقَ
+  kor: 그리고–그가–부수었다
+  swa: na–akaisaga
+
+### Sense 92015 (1 occurrences)
+Grammar: Conj-w | V-Hifil-ConjPerf-3ms
+  eng: and–he–crushed
+  spa: y–desmenuzó
+  hin: और–चूर–चूर–किया
+  arb: وَ–سَحَقَ
+  kor: 그리고–그가–빻었다
+  swa: whedak
+
+### Sense 92016 (1 occurrences)
+Grammar: Conj-w | V-Hifil-ConjPerf-2fs
+  eng: and–you–will–crush
+  spa: y–desmenuzarás
+  hin: और–चूर–करेगी
+  arb: وَتَسْحَقِينَ
+  kor: 그리고–부수리라
+  swa: na–utaponda
+
+### Sense 92017 (1 occurrences)
+Grammar: V-Qal-Perf-3ms
+  eng: it-was-fine
+  spa: quedó–fino
+  hin: बारीक
+  arb: دَقَّ
+  kor: 고운
+  swa: unga
+
+### Sense 92018 (1 occurrences)
+Grammar: Prep-l | V-Hifil-Inf
+  eng: to–crush
+  spa: para–desmenuzar
+  hin: चूर–चूर–करने–के–लिए
+  arb: لِيَسْحَقَ
+  kor: 을–빼려고
+  swa: lhedak
+
+### Sense 92019 (1 occurrences)
+Grammar: Conj-w | V-Qal-ConjImperf-2ms
+  eng: and–hills
+  spa: y–desmenuzarás
+  hin: और–चूर्ण–करेगी
+  arb: وَتَسْحَقِينَ
+  kor: 그리고–부수리라
+  swa: na–kuisaga
+
+### Sense 92020 (1 occurrences)
+Grammar: V-Hifil-Imperf-1cs | 3mp
+  eng: I-stamp–them
+  spa: los–pisoteé
+  hin: कुचलूंगा–उन्हें
+  arb: أَدُقُّهُمْ
+  kor: 짓이긴다–그들을
+  swa: nikawakanyaga
+
+### Sense 92021 (1 occurrences)
+Grammar: V-Qal-Imperf-3ms | 3mse
+  eng: not
+  spa: lo–muele
+  hin: दाएंगे–उसे
+  arb: يَسْحَقُهُ
+  kor: 부수지
+  swa: twanga
+
+## Task
+
+Group these 12 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

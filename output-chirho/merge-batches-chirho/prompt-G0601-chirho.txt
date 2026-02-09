@@ -1,0 +1,127 @@
+# Sense Merge Task for G0601
+
+Lemma: G0601 (POS: V-AIP-3S)
+Total occurrences: 26
+Current sense count: 11
+
+This Hebrew/Greek lemma has been over-split into 11 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 62904 (6 occurrences)
+Grammar: V-FIP-3S,V-ANA
+  eng: will-be-revealed, to-reveal, will–be–revealed
+  spa: revelar, será–revelado, será-revelado
+  hin: प्रकश–करन, प्रकत–करने, प्रकतअय–जअयेग
+  arb: يُكْشَفَ, يُكشَفُ, يُعلِنَ
+  kor: 드러내리라, 드러나지, 나타내시려
+  swa: kunifunulia, kumfunulia., kumfunulia
+
+### Sense 62902 (4 occurrences)
+Grammar: V-ANP,V-PNM/P
+  eng: to–be–revealed, to-be-revealed
+  spa: ser–revelada, revelada, a-ser-revelada
+  hin: प्रकट–होने–को, प्रकत–होने., प्रकट
+  arb: تُعلَنُ, الَّذي–سَيُعلَنُ, أَنْ–تُعْلَنَ
+  kor: 나타날, 나타나리니, 나타나도록.
+  swa: kufunuliwa, ujao, ifunuliwe
+
+### Sense 62903 (3 occurrences)
+Grammar: V-PIM/P-3S,V-ASP-3S
+  eng: is-revealed, is–revealed
+  spa: sea–revelado, fuere–revelado, es–revelado
+  hin: प्रकतित–हो, प्रकट–होगा।, प्रकट–हो
+  arb: يُسْتَعْلَنَ, يُستَعلَنُ, أُعلِنَ
+  kor: 나타난다, 나타나면, 계시되면
+  swa: atafunuliwa, akifunuliwa, afunuliwe
+
+### Sense 62905 (3 occurrences)
+Grammar: V-AIP-3S
+  eng: was–revealed, was-revealed, it–was–revealed
+  spa: fue–revelado, fue-revelado
+  hin: प्रकत-हुअ, प्रकट–हुई, प्रकट–किया–गया
+  arb: أُعلِنَ, انْكَشَفَتْ
+  kor: 나타났느냐, 계시되었으니, 계시되었다
+  swa: umefunuliwa, ilivyofunuliwa, ilifunuliwa
+
+### Sense 62907 (2 occurrences)
+Grammar: V-AIA-3S
+  eng: revealed
+  spa: reveló
+  hin: प्रकश–किय, प्रकट–किया
+  arb: يُعْلِنْ, أَعْلَنَ
+  kor: 계시하셨다
+  swa: funulia, alitufunulia
+
+### Sense 62908 (2 occurrences)
+Grammar: V-AIA-2S
+  eng: revealed
+  spa: revelaste, las–revelaste
+  hin: प्रकश–किय, प्रकट–किया
+  arb: أَعلَنتَها, أَظْهَرْتَها
+  kor: 드러내셨으니, 나타내셨나이다
+  swa: umeyafunua, ukawafunulia
+
+### Sense 62909 (2 occurrences)
+Grammar: V-PIM/P-3S
+  eng: it–is–revealed, is–being–revealed
+  spa: es–revelada
+  hin: प्रकट–होती–है
+  arb: يُعلَنُ, يُسْتَعْلَنُ
+  kor: 나타난다, 나타나느니라
+  swa: itafunuliwa;, inafunuliwa,
+
+### Sense 62910 (1 occurrences)
+Grammar: V-FIA-3S
+  eng: will–reveal
+  spa: revelará
+  hin: प्रकत–करेग.
+  arb: سَيَكْشِفُ
+  kor: 나타내시리라.
+  swa: atawafunulia
+
+### Sense 62911 (1 occurrences)
+Grammar: V-ANP
+  eng: to–be–revealed
+  spa: ser–revelado
+  hin: प्रकतअय–जअन
+  arb: أنْ–يُسْتَعْلَنَ
+  kor: 나타나기–위하여
+  swa: afunuliwe
+
+### Sense 62912 (1 occurrences)
+Grammar: V-ASP-3P
+  eng: may–be–revealed
+  spa: sean–revelados
+  hin: प्रकट–हों
+  arb: تُكْشَفَ
+  kor: 드러나게–되도록
+  swa: yafunuliwe
+
+### Sense 62913 (1 occurrences)
+Grammar: V-PIM/P-3S
+  eng: Is–being–revealed
+  spa: Es–revelada
+  hin: प्रकट–होता–है
+  arb: يُعلَنُ
+  kor: 나타나느니라
+  swa: Inafunuliwa
+
+## Task
+
+Group these 11 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

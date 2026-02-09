@@ -1,0 +1,118 @@
+# Sense Merge Task for H5175
+
+Lemma: H5175 (POS: Art | N-mp)
+Total occurrences: 31
+Current sense count: 10
+
+This Hebrew/Greek lemma has been over-split into 10 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 117296 (10 occurrences)
+Grammar: N-ms
+  eng: serpent, a–serpent, fleeing
+  spa: serpiente, la–serpiente, de–serpiente
+  hin: साँप, सर्प, सांप–की
+  arb: حَيَّةٍ, الْحَيَّةِ, نَحَشْ
+  kor: 뽀의, 뱀을, 뽀이다
+  swa: nyoka, ya–nyoka, wa–nyoka
+
+### Sense 117297 (9 occurrences)
+Grammar: Art | N-ms
+  eng: the–serpent
+  spa: la–serpiente, a–la–serpiente
+  hin: उस–सांप, साँप, सांप–ने
+  arb: الحَيَّةُ, الحَيَّةِ, هَ–نَّحَشْ
+  kor: 그–뱀–이, 그–뱀, 뻐–그
+  swa: nyoka, nyoka–wa
+
+### Sense 117298 (3 occurrences)
+Grammar: N-msc
+  eng: serpent–of, serpent-of, a–serpent–of
+  spa: serpiente–de
+  hin: सांप, साँप
+  arb: حَيَّةِ, حَيَّةَ, حَيَّةً
+  kor: 뽀, 뱀–의, 뱀–을
+  swa: nyoka
+
+### Sense 117299 (3 occurrences)
+Grammar: Prep-k | N-ms,Prep-k, Art | N-ms
+  eng: like–the–serpent, like–a–serpent
+  spa: como–la–serpiente, como–serpiente
+  hin: जैसे–साँप, सर्प–जैसे
+  arb: كَالحَيَّةِ, كَ–حَيَّةٍ
+  kor: 처럼–뱀, 뽀처럼–, 같이–뽀
+  swa: kama–nyoka
+
+### Sense 117300 (1 occurrences)
+Grammar: Art | N-mp
+  eng: the–serpents
+  spa: las–serpientes
+  hin: सांपों
+  arb: الحَيَّاتِ
+  kor: 그–뱀들–을
+  swa: nyoka
+
+### Sense 117301 (1 occurrences)
+Grammar: Conj-w, Art | N-ms
+  eng: And–the–serpent
+  spa: Y–la–serpiente
+  hin: और–उस–सांप
+  arb: وَ–الحَيَّةُ
+  kor: 그리고–그–뱀–은
+  swa: Na–nyoka
+
+### Sense 117302 (1 occurrences)
+Grammar: Prep-l | N-ms
+  eng: to–serpent
+  spa: por–serpiente
+  hin: सा̃प
+  arb: حَيَّةً
+  kor: 뽀이
+  swa: nyoka
+
+### Sense 117303 (1 occurrences)
+Grammar: N-mp
+  eng: serpents
+  spa: serpientes
+  hin: साँप
+  arb: حَيَّاتٍ
+  kor: 뱀들을
+  swa: nyoka
+
+### Sense 117304 (1 occurrences)
+Grammar: Conj-w | N-ms
+  eng: and–the–serpent
+  spa: y–la–serpiente
+  hin: और–साँप
+  arb: وَ–الحَيَّةُ
+  kor: 그리고–뽀이
+  swa: na–nyoka
+
+### Sense 117305 (1 occurrences)
+Grammar: Prep-l | N-ms
+  eng: to–snake
+  spa: en–serpiente
+  hin: साँप–में
+  arb: حَيَّةً
+  kor: 뽐으로
+  swa: kuwa–nyoka
+
+## Task
+
+Group these 10 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

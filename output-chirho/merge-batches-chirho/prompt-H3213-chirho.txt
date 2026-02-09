@@ -1,0 +1,144 @@
+# Sense Merge Task for H3213
+
+Lemma: H3213 (POS: Conj-w | V-Hifil-ConjImperf.Cohort-1cs)
+Total occurrences: 31
+Current sense count: 13
+
+This Hebrew/Greek lemma has been over-split into 13 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 102345 (13 occurrences)
+Grammar: V-Hifil-Imp-mp,V-Hifil-Perf-3cp
+  eng: wail, Wail, (wail)
+  spa: Aullad, aullad, gemid
+  hin: विलाप–करो, हाय-करो
+  arb: وَلْوِلُوا, وَلْوِلوا
+  kor: 통곡하라, 울부짖어라, 울부짓어라
+  swa: ombolezeni, Ombolezeni
+
+### Sense 102346 (4 occurrences)
+Grammar: V-Hifil-Imperf-3ms
+  eng: will-wail, wails
+  spa: aullará, aulla
+  hin: विलाप–करेगा, विलाप-करते-हैं, विलाप-करता-है
+  arb: يُولْوِلُ
+  kor: 통곡하리라, 통곡하며
+  swa: wataomboleza, wanaomboleza, ataomboleza
+
+### Sense 102347 (3 occurrences)
+Grammar: V-Hifil-Imp-fs,V-Hifil-Imp-ms
+  eng: wail
+  spa: Aulla, aulla
+  hin: विलाप–कर
+  arb: وَلْوِلِي, وَلْوِلْ
+  kor: 통곡하라, 울부징어라
+  swa: omboleza, Omboleza
+
+### Sense 102348 (2 occurrences)
+Grammar: Conj-w | V-Hifil-Imp-mp
+  eng: and–wail
+  spa: y–gemid, y–aullad
+  hin: और–विलाप–करो, और–रोओ
+  arb: وَ–وَلْوِلُوا, وَ–وَلْوِلوا
+  kor: 그리고–통곡하라
+  swa: na–ombolezeni, na–lieni
+
+### Sense 102349 (1 occurrences)
+Grammar: V-Hifil-Imp-fs
+  eng: [ketiv:wail]
+  spa: [kethiv]
+  arb: [وَلْوِلِي]
+  kor: [통곡하라]
+  swa: [ombolezeni]
+
+### Sense 102350 (1 occurrences)
+Grammar: Conj-w | V-Hifil-ConjPerf-3cp
+  eng: And–they-will-wail
+  spa: Y–gemirán
+  hin: और–विलाप–बन–जाएँगे
+  arb: وَ–تَصِيرُ–صُرَاخًا
+  kor: 그리고–통곡하리라
+  swa: Na–zitakuwa–maombolezo
+
+### Sense 102351 (1 occurrences)
+Grammar: Conj-w | V-Hifil-ConjImperf.Co
+  eng: and–wail
+  spa: y–aullaré
+  hin: और–मैं–रोऊंगा
+  arb: وَ–أُولِولُ
+  kor: 그리고–울부짖겠다
+  swa: na–kulia
+
+### Sense 102352 (1 occurrences)
+Grammar: V-Hifil-Imperf-2mp
+  eng: shall–wail
+  spa: aullaréis
+  hin: विलाप–करोगे
+  arb: تُوَلْوِلُونَ
+  kor: 통곡할–것이다
+  swa: mtapiga–yowe
+
+### Sense 102353 (1 occurrences)
+Grammar: V-Hifil-Imperf-3mp
+  eng: they-wail
+  spa: aullaban
+  hin: सर्वदा
+  arb: يُولْوِلُونَ
+  kor: 울부짖는다
+  swa: wanaomboleza
+
+### Sense 102354 (1 occurrences)
+Grammar: V-Hifil-Imperf-1cs
+  eng: I–wail
+  spa: aullaré
+  hin: मैं–विलाप–करूंगा
+  arb: أُوَلْوِلُ
+  kor: 통곡하겠다–내가
+  swa: nitaomboleza
+
+### Sense 102355 (1 occurrences)
+Grammar: V-Hifil-Imperf-3mp
+  eng: they–wail
+  spa: aúllan
+  hin: विलाप–करते–हैं
+  arb: يُولولونَ
+  kor: 울부짖는도다
+  swa: wanaomboleza
+
+### Sense 102356 (1 occurrences)
+Grammar: Conj-w | V-Hifil-Imp-ms
+  eng: and–wail
+  spa: y–aúlla
+  hin: और–विलाप–कर
+  arb: وَوَلْوِلْ
+  kor: 그리고–통곡하여라
+  swa: na–omboleza
+
+### Sense 102357 (1 occurrences)
+Grammar: Conj-w | V-Hifil-ConjPerf-3ms
+  eng: and–shall–wail
+  spa: y–aullará
+  hin: और–विलाप–करेंगे
+  arb: وَيُوَلْوِلُ
+  kor: 그리고–통곡하겠다
+  swa: na–wataomboleza
+
+## Task
+
+Group these 13 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

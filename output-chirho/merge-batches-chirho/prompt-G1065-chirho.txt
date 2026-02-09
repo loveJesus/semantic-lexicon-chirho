@@ -1,0 +1,127 @@
+# Sense Merge Task for G1065
+
+Lemma: G1065 (POS: Prtcl)
+Total occurrences: 16
+Current sense count: 11
+
+This Hebrew/Greek lemma has been over-split into 11 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 64414 (4 occurrences)
+Grammar: Prtcl
+  eng: indeed, indeed–
+  spa: en–verdad, ciertamente
+  hin: तोह, सचचि
+  arb: حَقًّا, فَعلًا
+  kor: 정말로, 정말
+  swa: kweli
+
+### Sense 64415 (2 occurrences)
+Grammar: Prtcl
+  eng: indeed–
+  spa: –
+  hin: –, हाँ
+  arb: حَقًّا
+  kor: 참으로
+  swa: na–kweli
+
+### Sense 64416 (2 occurrences)
+Grammar: Prtcl
+  eng: indeed–, indeed
+  spa: ciertamente
+  hin: वास्तव–में
+  arb: حَقًّا
+  kor: 진실로, 정말로
+  swa: kweli
+
+### Sense 64417 (1 occurrences)
+Grammar: Prtcl
+  eng: even–
+  spa: aun
+  hin: क्य,
+  arb: نَعَمْ
+  kor: 정말로,
+  swa: basi
+
+### Sense 64418 (1 occurrences)
+Grammar: Prtcl
+  eng: indeed–
+  spa: *
+  hin: तो
+  arb: –بالتَّأْكيدِ
+  kor: 적어도
+  swa: hakika
+
+### Sense 64419 (1 occurrences)
+Grammar: Prtcl
+  eng: indeed–
+  spa: ciertamente
+  hin: तो
+  arb: حَقًّا
+  kor: 실로
+  swa: hakika
+
+### Sense 64420 (1 occurrences)
+Grammar: Prtcl
+  eng: indeed
+  spa: *
+  hin: –दासों–पर
+  arb: حَقًّا
+  kor: 될–것이다
+  swa: kwa–hakika
+
+### Sense 64421 (1 occurrences)
+Grammar: Prtcl
+  eng: indeed–
+  spa: ciertamente
+  hin: तो
+  arb: حَقّاً
+  kor: 적어도
+  swa: kwa–kweli
+
+### Sense 64422 (1 occurrences)
+Grammar: Prtcl
+  eng: indeed–
+  spa: de–veras
+  hin: –तो
+  arb: حَقّاً
+  kor: 정말로
+  swa: kwa–kweli
+
+### Sense 64423 (1 occurrences)
+Grammar: Prtcl
+  eng: indeed–
+  spa: al-menos
+  hin: निश्चय
+  arb: –إِنَّ
+  kor: 참으로
+  swa: kwa–kweli
+
+### Sense 64424 (1 occurrences)
+Grammar: Prtcl
+  eng: indeed–
+  spa: *
+  hin: सचमुच
+  arb: حَقًّا
+  kor: 과연
+  swa: kweli–
+
+## Task
+
+Group these 11 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

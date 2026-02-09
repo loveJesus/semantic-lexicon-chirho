@@ -1,0 +1,136 @@
+# Sense Merge Task for H7666
+
+Lemma: H7666 (POS: V-Qal-Imperf-2mp)
+Total occurrences: 21
+Current sense count: 12
+
+This Hebrew/Greek lemma has been over-split into 12 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 138194 (7 occurrences)
+Grammar: Prep-l | V-Qal-Inf
+  eng: to–buy–, to–buy, to–buy-grain
+  spa: para–comprar
+  hin: खरीदने
+  arb: لِ–يَشْتَرُوا, لِ–نَشْتَرِيَ–, لِ–يَشْتَرُوا–
+  kor: 사려고, 에–사려고
+  swa: kununua, ya–Kaanani, panda
+
+### Sense 138195 (4 occurrences)
+Grammar: V-Qal-Imp-mp
+  eng: buy–, buy
+  spa: comprad
+  hin: खरीदो, ख़रीदो
+  arb: اشْتَرُوا–, اشْتَرُوا
+  kor: 사라, 사고
+  swa: nunueni, kidogo, ata
+
+### Sense 138196 (1 occurrences)
+Grammar: V-Hifil-Prtcpl-ms
+  eng: him–who–sells
+  spa: el–que–vende
+  hin: बेचनेवाले–के
+  arb: مُشْبِعٍ
+  kor: 파는–자–의
+  swa: anayeuza
+
+### Sense 138197 (1 occurrences)
+Grammar: V-Hifil-Imperf-2ms | 1cs
+  eng: you–will–sell–me
+  spa: me–venderás
+  hin: बेचोगे
+  arb: تَبِيعُنِي
+  kor: 네가–팔라–나–에게
+  swa: utaniuzia
+
+### Sense 138198 (1 occurrences)
+Grammar: V-Qal-Prtcpl-mp
+  eng: buying
+  spa: compraban
+  hin: ख़रीद–रहे–थे
+  arb: يَشْتَرُونَ
+  kor: 사고–있던
+  swa: akamzaa
+
+### Sense 138199 (1 occurrences)
+Grammar: V-Qal-Imperf-2mp
+  eng: you–shall–buy
+  spa: compraréis
+  hin: खरीदोगे
+  arb: تَشْتَرُونَ
+  kor: 너희가–사라
+  swa: mtanunua
+
+### Sense 138200 (1 occurrences)
+Grammar: Conj-w | V-Qal-Imp-mp
+  eng: and–buy–
+  spa: y–comprad
+  hin: और–खरीदो
+  arb: وَ–اشْتَرُوا–
+  kor: 그리고–사라
+  swa: na–kununua
+
+### Sense 138201 (1 occurrences)
+Grammar: Conj-w | V-Qal-ConjImperf.Coho
+  eng: and–we–will–buy–
+  spa: y–compraremos
+  hin: और–खरीदेंगे–हम
+  arb: وَ–نَشْتَرِي
+  kor: 그리고–사자
+  swa: na–tutakununua
+
+### Sense 138202 (1 occurrences)
+Grammar: Conj-w | V-Hifil-ConjImperf.Co
+  eng: and–we-will-sell
+  spa: y–venderemos
+  hin: और–बेचें
+  arb: فَ–نَبِيعَ
+  kor: 그리고–우리가–팔리라
+  swa: na–tuuze
+
+### Sense 138203 (1 occurrences)
+Grammar: Conj-w | V-Qal-ConsecImperf-3m
+  eng: and–sold
+  spa: y–vendió
+  hin: और–बेचा
+  arb: وَ–بَاعَ
+  kor: 그리고–팔았다
+  swa: na–akawauzia
+
+### Sense 138204 (1 occurrences)
+Grammar: V-Hifil-Imperf-1cp
+  eng: we-will-sell
+  spa: venderemos
+  hin: बेचें।
+  arb: نَبِيعُ
+  kor: 우리가–팔리라
+  swa: tutauza
+
+### Sense 138205 (1 occurrences)
+Grammar: Art | V-Hifil-Prtcpl-ms
+  eng: the–one-selling
+  spa: el–que–vende
+  hin: बेचनेवाला
+  arb: الْ–بَائِعُ
+  kor: 파는–자
+  swa: wabuzi
+
+## Task
+
+Group these 12 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

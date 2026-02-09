@@ -1,0 +1,154 @@
+# Sense Merge Task for G5623
+
+Lemma: G5623 (POS: V-PIM/P-3S)
+Total occurrences: 15
+Current sense count: 14
+
+This Hebrew/Greek lemma has been over-split into 14 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 79272 (2 occurrences)
+Grammar: V-ASP-2S
+  eng: you-might-be-benefited
+  spa: fueres-beneficiado, fueras–beneficiado
+  hin: लअभ–पओ
+  arb: تَنْتَفِعُ–بِهِ
+  kor: 유익을–얻었을–것이다, 네가–유익–받으면
+  swa: ungalifaidika, nalo
+
+### Sense 79273 (1 occurrences)
+Grammar: V-AIP-3P
+  eng: were-benefited
+  spa: fueron-beneficiados
+  hin: लाभ–हुए
+  arb: يَنْتَفِعْ
+  kor: 유익–을–얻지
+  swa: walifaidika
+
+### Sense 79274 (1 occurrences)
+Grammar: V-FIP-3S
+  eng: will-be-benefited
+  spa: será–beneficiado
+  hin: लअभ–होग
+  arb: يَنْتَفِعُ
+  kor: 유익을–얻겠느냐
+  swa: atafaidika
+
+### Sense 79275 (1 occurrences)
+Grammar: V-PIM/P-1S
+  eng: I-am-profited
+  spa: aprovecho
+  hin: लाभ–होता–है–मुझे
+  arb: أَستَفيدُ
+  kor: 유익이–없느니라
+  swa: ninafaidika
+
+### Sense 79276 (1 occurrences)
+Grammar: V-PIA-3S
+  eng: profits
+  spa: beneficia
+  hin: लाभ–होता–है
+  arb: يَنْفَعُ
+  kor: 유익하겠는가
+  swa: itamfaidia
+
+### Sense 79277 (1 occurrences)
+Grammar: V-PIM/P-3S
+  eng: is-profited
+  spa: es–beneficiado
+  hin: लाभ–होता–है
+  arb: يَسْتَفيدُ
+  kor: 유익하리요
+  swa: anafaidika
+
+### Sense 79278 (1 occurrences)
+Grammar: V-PIA-3S
+  eng: it–was–accomplishing
+  spa: aprovecha
+  hin: लाभ–होता–है
+  arb: لَا–يَنْفَعُ
+  kor: 유익하지–않다
+  swa: kinachofaidi
+
+### Sense 79279 (1 occurrences)
+Grammar: V-PIA-2P
+  eng: you–gain
+  spa: aprovecháis
+  hin: लाभ–होता
+  arb: تَنْفَعُونَ
+  kor: 유익하지
+  swa: hamfaidiki
+
+### Sense 79280 (1 occurrences)
+Grammar: V-APP-NFS
+  eng: having-benefited
+  spa: habiendo–sido–beneficiada
+  hin: परन्तु
+  arb: لَمْ تَنْتَفِعْ
+  kor: 유익–얻지–못한,
+  swa: hakufaidika,
+
+### Sense 79281 (1 occurrences)
+Grammar: V-AIA-3S
+  eng: benefited
+  spa: aprovechó
+  hin: लाभ–पहुंचाया
+  arb: نَفَعَتْ
+  kor: 유익했으니
+  swa: wafaidisha
+
+### Sense 79282 (1 occurrences)
+Grammar: V-PIA-3S
+  eng: profits
+  spa: aprovecha
+  hin: लाभ–होता
+  arb: يَنْفَعُ
+  kor: 유익하지
+  swa: faidishi
+
+### Sense 79283 (1 occurrences)
+Grammar: V-PIA-3S
+  eng: profits
+  spa: aprovecha
+  hin: लाभदायक–है
+  arb: تَنفَعُ
+  kor: 유익하니라
+  swa: inafaidi
+
+### Sense 79284 (1 occurrences)
+Grammar: V-FIA-1S
+  eng: will-I-profit
+  spa: aprovecharé
+  hin: लाभ–करूँगा
+  arb: أُفيدُكُم
+  kor: 유익하게–하리오
+  swa: nitawafaidia
+
+### Sense 79285 (1 occurrences)
+Grammar: V-FIA-3S
+  eng: will-profit
+  spa: aprovechará
+  hin: लअभ–देग.
+  arb: لَن–يَنفَعَكُم
+  kor: 유익하지–않으리라.
+  swa: hatawafaidia
+
+## Task
+
+Group these 14 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

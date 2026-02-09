@@ -1,0 +1,136 @@
+# Sense Merge Task for H1433
+
+Lemma: H1433 (POS: Prep-b | N-msc | 2ms)
+Total occurrences: 13
+Current sense count: 12
+
+This Hebrew/Greek lemma has been over-split into 12 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 89549 (2 occurrences)
+Grammar: N-msc | 3ms
+  eng: his-greatness, His–greatness
+  spa: su–grandeza
+  hin: महानता–उसकी, उसकी–महानता
+  arb: عَظَمَتَهُ
+  kor: 그의–위대함을, 그의–위대하심을
+  swa: ukuu–wake
+
+### Sense 89550 (1 occurrences)
+Grammar: Prep-k | N-msc
+  eng: according-to–greatness-of
+  spa: según–grandeza–de
+  hin: बड़ाई–के–अनुसार
+  arb: كَ–عِظَمِ
+  kor: 크기–에–따라
+  swa: kwa–ukubwa
+
+### Sense 89551 (1 occurrences)
+Grammar: N-ms
+  eng: greatness
+  spa: grandeza
+  hin: महिमा
+  arb: عَظَمَةً
+  kor: 위대함을
+  swa: utukufu
+
+### Sense 89552 (1 occurrences)
+Grammar: Prep-k | N-msc
+  eng: according–to–the–greatness–of
+  spa: conforme-a–grandeza-de
+  hin: महानता–के–अनुसार
+  arb: كَعَظَمَةِ
+  kor: 크기–대로
+  swa: kwa–ukuu–wa
+
+### Sense 89553 (1 occurrences)
+Grammar: N-msc | 3ms
+  eng: his–greatness
+  spa: su–grandeza
+  hin: उसकी–महानता–के
+  arb: عَظَمَتِهِ
+  kor: 그의–크심의
+  swa: ukuu–wake
+
+### Sense 89554 (1 occurrences)
+Grammar: Prep-b | N-msc | 3ms
+  eng: in-its-greatness
+  spa: en–su–grandeza
+  hin: में–बड़ाई–उसकी
+  arb: فِي–عَظَمَتِهِ
+  kor: 큼에서–그의
+  swa: katika–ukubwa–wake
+
+### Sense 89555 (1 occurrences)
+Grammar: N-msc
+  eng: greatness–of
+  spa: grandeza-de
+  hin: घमंड–
+  arb: عَظَمَةِ
+  kor: 큼–것
+  swa: ukuu
+
+### Sense 89556 (1 occurrences)
+Grammar: N-msc | 2ms
+  eng: Your–greatness
+  spa: tu–grandeza
+  hin: और–को–
+  arb: عَظَمَتَكَ
+  kor: 주의–위대하심과
+  swa: ukuu–wako
+
+### Sense 89557 (1 occurrences)
+Grammar: Prep-b | N-msc | 2ms
+  eng: by–your–greatness
+  spa: con–tu–grandeza
+  hin: अपनी–महानता–से
+  arb: بِعَظَمَتِكَ
+  kor: 주의–위대하심으로
+  swa: kwa–ukuu–wako
+
+### Sense 89558 (1 occurrences)
+Grammar: Conj-w, Prep-b | N-msc
+  eng: and–in–greatness–of
+  spa: y-con-altivez-de
+  hin: और–बड़ाई–में
+  arb: وَ–بِـ–عَظَمَةِ
+  kor: 그리고–큰
+  swa: na-katika-ukuu
+
+### Sense 89559 (1 occurrences)
+Grammar: Prep-b | N-msc | 2ms
+  eng: in-your-greatness
+  spa: en–tu–grandeza?
+  hin: में–बड़ाई–तेरी
+  arb: فِي–عَظَمَتِكَ
+  kor: 큼에서–너의
+  swa: katika–ukubwa–wako
+
+### Sense 89560 (1 occurrences)
+Grammar: Conj-w, Prep-b | N-ms
+  eng: and-in–greatness
+  spa: y–en–grandeza
+  hin: और–में–बड़ाई
+  arb: وَفِي–عَظَمَةٍ
+  kor: 그리고–큼으로
+  swa: na–katika–ukubwa
+
+## Task
+
+Group these 12 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

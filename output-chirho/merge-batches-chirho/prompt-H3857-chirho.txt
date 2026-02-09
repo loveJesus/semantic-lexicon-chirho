@@ -1,0 +1,127 @@
+# Sense Merge Task for H3857
+
+Lemma: H3857 (POS: V-Qal-Prtcpl-mp)
+Total occurrences: 11
+Current sense count: 11
+
+This Hebrew/Greek lemma has been over-split into 11 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 108466 (1 occurrences)
+Grammar: Conj-w | V-Piel-ConsecImperf-3
+  eng: and–sets–ablaze
+  spa: y–abrasará
+  hin: और–जलाएगी
+  arb: وَتُشْعِلُ
+  kor: 그리고–태우리라
+  swa: na–utayateketeza
+
+### Sense 108467 (1 occurrences)
+Grammar: Conj-w | V-Piel-ConsecImperf-3
+  eng: and–it–set–him–ablaze
+  spa: y–lo–encendió
+  hin: और–जलाई–उसे
+  arb: فَأَشْعَلَهُ
+  kor: 그리고–태우셨느니라–그를
+  swa: na–ikamwaka
+
+### Sense 108468 (1 occurrences)
+Grammar: V-Piel-Perf-3fs
+  eng: has-set-ablaze
+  spa: abrasó
+  hin: जला–दी
+  arb: أَحْرَقَ
+  kor: 태웠도다
+  swa: umewaka
+
+### Sense 108469 (1 occurrences)
+Grammar: V-Piel-Imperf-3fs
+  eng: kindles
+  spa: enciende
+  hin: जलाता–है
+  arb: يُلْهِبُ
+  kor: 태운다
+  swa: inawasha
+
+### Sense 108470 (1 occurrences)
+Grammar: V-Piel-Imperf-3fs
+  eng: consumed
+  spa: abrasó
+  hin: निगल–गई
+  arb: أَحرَقَت
+  kor: 태웠도다
+  swa: ukawachoma
+
+### Sense 108471 (1 occurrences)
+Grammar: V-Qal-Prtcpl-mp
+  eng: those–who–are–aflame
+  spa: llameantes
+  hin: आग–लगानेवालों
+  arb: مُلتَهِبينَ
+  kor: 불타는
+  swa: walio-na-moto
+
+### Sense 108472 (1 occurrences)
+Grammar: Conj-w | V-Piel-ConjImperf-3fs
+  eng: and–burns–up
+  spa: y–abrasa
+  hin: और–जलाती–है
+  arb: وَ–تُلْهِبُ
+  kor: 그리고–사르리라
+  swa: na–unawateketeza
+
+### Sense 108473 (1 occurrences)
+Grammar: V-Qal-Prtcpl-ms
+  eng: flaming
+  spa: llameante
+  hin: ज्वलन्त
+  arb: مُلتَهِبَةً
+  kor: 타오르는
+  swa: uwakao
+
+### Sense 108474 (1 occurrences)
+Grammar: V-Piel-Imperf-3fs
+  eng: blazes
+  spa: abrasa
+  hin: जला–देती–है
+  arb: تَلْتَهِبُ
+  kor: 태우도다
+  swa: inawaka
+
+### Sense 108475 (1 occurrences)
+Grammar: Conj-w | V-Piel-ConjPerf-3ms
+  eng: and–will–set–ablaze
+  spa: y–los–abrasará
+  hin: और–जला-देगा
+  arb: وَيُحْرِقُ
+  kor: 그리고–태우리라
+  swa: na–itawachoma
+
+### Sense 108476 (1 occurrences)
+Grammar: V-Piel-Imperf-3fs
+  eng: sets–ablaze
+  spa: abrasa
+  hin: झुलसाती–है
+  arb: تُحْرِقُ
+  kor: 태우다
+  swa: uchomao
+
+## Task
+
+Group these 11 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

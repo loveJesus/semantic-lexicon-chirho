@@ -1,0 +1,118 @@
+# Sense Merge Task for G1699
+
+Lemma: G1699 (POS: PPro-NN1P)
+Total occurrences: 76
+Current sense count: 10
+
+This Hebrew/Greek lemma has been over-split into 10 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 67052 (50 occurrences)
+Grammar: PPro-NN1S,PPro-NF1S,PPro-NM1S,PPro-AF1S,PPro-AN1S,PPro-AM1S,PPro-DM1S,PPro-D1S,P
+  eng: my, mine, to–me
+  spa: mío, mía, mi
+  hin: मेरा, मेरे, मेरी
+  arb: –ي, لِي, تي
+  kor: 나의, 나–의, 나의–것이
+  swa: yangu, wangu, langu
+
+### Sense 67055 (4 occurrences)
+Grammar: PPro-NN1P
+  eng: mine, my–things
+  spa: mías
+  hin: मेरा
+  arb: هُوَ–لِي, مَا–لِي, لِي
+  kor: 나–의–것, 나의
+  swa: yangu, vyangu
+
+### Sense 67056 (4 occurrences)
+Grammar: PPro-DN1P,PPro-AF1P,PPro-AN1P,PPro-AM1P
+  eng: my
+  spa: míos, mías
+  hin: मेरे, मेरी
+  arb: –ي, عَبيدي, أَولادي
+  kor: 나–의, 나의
+  swa: zangu, yangu, watumishi–wangu
+
+### Sense 67057 (4 occurrences)
+Grammar: PPro-AN1P,PPro-GN1P,PPro-NN1P
+  eng: mine
+  spa: mías
+  hin: मेरी।, मेरी
+  arb: تي
+  kor: 나의, 나의–것들이, 나의–것들을
+  swa: wangu
+
+### Sense 67058 (4 occurrences)
+Grammar: PPro-GF1S,PPro-G1S,PPro-NN1P,PPro-DF1S
+  eng: my, of–me
+  spa: de–mí
+  hin: मेरे, मेरि, मेर
+  arb: ي
+  kor: 나–의, 나의
+  swa: yangu
+
+### Sense 67059 (3 occurrences)
+Grammar: PPro-G1S,PPro-GF1S
+  eng: mine, my
+  spa: mío, mi
+  hin: मेरा–है, मेरी
+  arb: لِي, –ي
+  kor: 나–의–것에서, 나의
+  swa: yangu, moyo–wangu,
+
+### Sense 67060 (3 occurrences)
+Grammar: PPro-AN1S,PPro-G1S
+  eng: my
+  spa: mío, de–mí
+  hin: मेरे
+  arb: ي, –ي
+  kor: 나–의
+  swa: langu, yangu
+
+### Sense 67061 (2 occurrences)
+Grammar: PPro-AM1P
+  eng: my
+  spa: mías
+  hin: मेरे
+  arb: كَلِماتي, ـنِي–كَلِمَاتِي
+  kor: 나의, 나–의
+  swa: yangu, maneno
+
+### Sense 67062 (1 occurrences)
+Grammar: PPro-DN1P
+  eng: my-own
+  spa: mío
+  hin: अपने
+  arb: ما–هُوَ–لي
+  kor: 나–의–것
+  swa: au
+
+### Sense 67063 (1 occurrences)
+Grammar: PPro-AN1S
+  eng: mine
+  spa: mío
+  hin: अपना
+  arb: مَالِي
+  kor: 나–의–것–을
+  swa: yangu
+
+## Task
+
+Group these 10 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

@@ -1,0 +1,136 @@
+# Sense Merge Task for G5563
+
+Lemma: G5563 (POS: V-PMM/P-3S)
+Total occurrences: 13
+Current sense count: 12
+
+This Hebrew/Greek lemma has been over-split into 12 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 79135 (2 occurrences)
+Grammar: V-PMA-3S
+  eng: let-separate
+  spa: separe
+  hin: अलग–करे
+  arb: يُفَرِّقْهُ
+  kor: 나누지–말라, 나누라
+  swa: –, watenganishe
+
+### Sense 79136 (1 occurrences)
+Grammar: V-ASP-3S
+  eng: she–is–separated
+  spa: se–separe
+  hin: अलग–हो
+  arb: انْفَصَلَتْ
+  kor: 떠났다
+  swa: ameachana,
+
+### Sense 79137 (1 occurrences)
+Grammar: V-PMM/P-3S
+  eng: let–him–separate
+  spa: sepárese
+  hin: अलग–होने–दो
+  arb: لِـيَنْفَصِلْ
+  kor: 떠나라
+  swa: na–aondoke;
+
+### Sense 79138 (1 occurrences)
+Grammar: V-APP-NMS
+  eng: having-departed
+  spa: habiéndose-separado
+  hin: अलग–होकर
+  arb: مُفَارِقًا
+  kor: 떠나
+  swa: akiondoka
+
+### Sense 79139 (1 occurrences)
+Grammar: V-PNM/P
+  eng: to-leave
+  spa: apartarse
+  hin: अलग–होना
+  arb: أَنْ–يُفَارِقَ
+  kor: 떠나라고
+  swa: kuondoka
+
+### Sense 79140 (1 occurrences)
+Grammar: V-ANA
+  eng: to–separate
+  spa: separar
+  hin: अलग–करने–में
+  arb: أَنْ–تُفَرِّقَ
+  kor: 끊으리
+  swa: kututenga
+
+### Sense 79141 (1 occurrences)
+Grammar: V-PIP-3S
+  eng: separates
+  spa: se–separa
+  hin: अलग–होता–है
+  arb: يَنْفَصِلُ
+  kor: 떠난다
+  swa: anaondoka,
+
+### Sense 79142 (1 occurrences)
+Grammar: V-AIP-3S
+  eng: he–was–separated
+  spa: fue–separado
+  hin: वोह-अलग-हुअ
+  arb: افتَرَقَ
+  kor: 떠났다
+  swa: kusimama
+
+### Sense 79143 (1 occurrences)
+Grammar: V-FIA-3S
+  eng: will–separate
+  spa: separará
+  hin: अलग–करेगा
+  arb: يُفَرِّقُ
+  kor: 끊으리요
+  swa: atatutenga
+
+### Sense 79144 (1 occurrences)
+Grammar: V-RPM/P-NMS
+  eng: having–been–separated
+  spa: separado
+  hin: अलग–किया–गया
+  arb: مُنْفَصِلٌ
+  kor: 분리된–이라
+  swa: aliyetengwa
+
+### Sense 79145 (1 occurrences)
+Grammar: V-PNM/P
+  eng: to–depart
+  spa: apartarse
+  hin: प्रतिज्ञा–की
+  arb: يَبْتَعِدُونَ
+  kor: 그러나
+  swa: kuondoka
+
+### Sense 79146 (1 occurrences)
+Grammar: V-ANP
+  eng: to–be–separated
+  spa: separarse
+  hin: अलग–हो
+  arb: تَنْفَصِلْ
+  kor: 떠나라
+  swa: asiachane;
+
+## Task
+
+Group these 12 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

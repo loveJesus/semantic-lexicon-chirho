@@ -1,0 +1,145 @@
+# Sense Merge Task for G2641
+
+Lemma: G2641 (POS: V-AIA-3S)
+Total occurrences: 24
+Current sense count: 13
+
+This Hebrew/Greek lemma has been over-split into 13 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 70272 (8 occurrences)
+Grammar: V-APA-NMS,V-APA-AMP,V-APA-NMP
+  eng: having–left, having-left, leaving-behind
+  spa: habiendo–dejado, dejándolos, dejándola
+  hin: छोड़कर, छोड़े, चोदकर
+  arb: تارِكًا, لَمَّا–تَرَكَ, تَرْكِنَا
+  kor: 버리고, 남겨두고, 떠나
+  swa: kuacha, wao, tukiiacha
+
+### Sense 70273 (3 occurrences)
+Grammar: V-AIA-3S
+  eng: he-left, left–behind
+  spa: dejó
+  hin: छोड़ा, छोड़दिया
+  arb: تَرَكَ
+  kor: 떠났으니, 남겨두었다, 그가–남겨두었다
+  swa: aliwaacha, aliondoka, alimwacha
+
+### Sense 70274 (3 occurrences)
+Grammar: V-FIA-3S
+  eng: will-leave
+  spa: dejará
+  hin: छोदेग, छोड़ेगा, चोदेग
+  arb: يَتْرُكُ, يَترُكُ
+  kor: 떠나리라
+  swa: mtu, ataondoka
+
+### Sense 70275 (1 occurrences)
+Grammar: V-AIP-3S
+  eng: was–left
+  spa: fue-dejado
+  hin: छोड़–दिया–गया
+  arb: تُرِكَ
+  kor: 남겨졌다
+  swa: aliachwa
+
+### Sense 70276 (1 occurrences)
+Grammar: V-AIA-3S
+  eng: left
+  spa: dejó
+  hin: छोड़–दिया
+  arb: تَرَكَتْني
+  kor: 남겨두었습니다
+  swa: ameniacha
+
+### Sense 70277 (1 occurrences)
+Grammar: V-RPM/P-NMS
+  eng: having–been–left–behind
+  spa: dejado
+  hin: छोड़ाहुआ
+  arb: مَتْرُوكٌ
+  kor: 남겨진
+  swa: aliyeachwa
+
+### Sense 70278 (1 occurrences)
+Grammar: V-ASA-3S
+  eng: leaves-behind
+  spa: dejara
+  hin: छोड़–जाए
+  arb: تَرَكَ
+  kor: 남겨두면
+  swa: akimwacha
+
+### Sense 70279 (1 occurrences)
+Grammar: V-AIA-3P
+  eng: they-left
+  spa: dejaron
+  hin: छोड़ा
+  arb: تَرَكوا
+  kor: 남겼다
+  swa: wakaacha
+
+### Sense 70280 (1 occurrences)
+Grammar: V-PPA-NMP
+  eng: having-left
+  spa: habiendo–abandonado
+  hin: छोड़कर
+  arb: تارِكينَ
+  kor: 버린–자들
+  swa: wakiacha
+
+### Sense 70281 (1 occurrences)
+Grammar: V-PIA-3S
+  eng: leaves
+  spa: deja
+  hin: छोड़ता–है
+  arb: يَتْرُكُ
+  kor: 남겨두지
+  swa: awachi
+
+### Sense 70282 (1 occurrences)
+Grammar: V-ANP
+  eng: to–be–left–behind
+  spa: ser–dejados
+  hin: छोद–जअन
+  arb: أنْ–نُتْرَكَ
+  kor: 남겨지는–것을
+  swa: kuachwa
+
+### Sense 70283 (1 occurrences)
+Grammar: V-PPM/P-GFS
+  eng: being–left
+  spa: siendo–dejada
+  hin: छोड़ी–गई
+  arb: مَتْروكٍ
+  kor: 남아–있는
+  swa: ikiwa–imebaki
+
+### Sense 70284 (1 occurrences)
+Grammar: V-AIA-1S
+  eng: I-reserved
+  spa: reservé
+  hin: रखा–है
+  arb: أَبْقَيْتُ
+  kor: 내가–남겨–두었다
+  swa: Nimejiachia
+
+## Task
+
+Group these 13 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

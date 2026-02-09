@@ -1,0 +1,154 @@
+# Sense Merge Task for G3784
+
+Lemma: G3784 (POS: V-PIA-3P)
+Total occurrences: 35
+Current sense count: 14
+
+This Hebrew/Greek lemma has been over-split into 14 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 73630 (7 occurrences)
+Grammar: V-PIA-3S
+  eng: ought, he–ought, he–is–obligated
+  spa: debe
+  hin: चाहिए, उसे–चाहिए
+  arb: يَجِبُ, يَنبَغي
+  kor: 해야–한다, 필요하니, 빚졌다
+  swa: inampasa, –paswi, yampasa,
+
+### Sense 73631 (6 occurrences)
+Grammar: V-PIA-1P
+  eng: ought, we–ought, ought-we
+  spa: debemos
+  hin: चाहिए, चहिये
+  arb: يَجِبُ–عَلَينا, يَجِبُ–عَلَيْنا, يَنبَغي–لَنا
+  kor: 빚졌다, 우리가–빚졌다, 우리가–마땅히
+  swa: tunapaswa
+
+### Sense 73632 (5 occurrences)
+Grammar: V-PIA-2P,V-PIA-1P,V-PIA-3P,V-PIA-3S
+  eng: ought, they-ought, We-ought
+  spa: deben, debéis, debemos
+  hin: चाहिए, उनहे-चहिये
+  arb: يَجِبُ, يَنْبَغِي, يَجِبُ–عَلَيْ–هِمْ
+  kor: 마땅히–해야–한다, 우리–는–마땅히–해야–한다, 마땅하지–않다
+  swa: wanapaswa, waume–wanastahili, mnapaswa
+
+### Sense 73633 (3 occurrences)
+Grammar: V-PIA-2S
+  eng: do-you-owe, you-owe
+  spa: debes
+  hin: देन–है, देना–है–तुझे?, देना–है–तुझे
+  arb: تَدِينُ
+  kor: 빚졌느냐, 빚졌으면
+  swa: unadaiwa
+
+### Sense 73634 (2 occurrences)
+Grammar: V-IIA-3S
+  eng: owed
+  spa: le–debía, debía
+  hin: देन–थ, देना–था
+  arb: كَانَ–يَدِينُهُ, كانَ–يَدينُ
+  kor: 빚졌다
+  swa: alimwia, alidaiwa
+
+### Sense 73635 (2 occurrences)
+Grammar: V-PPM/P-ANS
+  eng: being-owed
+  spa: debido
+  hin: देन
+  arb: المَدِينَ
+  kor: 빚진–것–을
+  swa: deni
+
+### Sense 73636 (2 occurrences)
+Grammar: V-IIA-1S,V-IIA-3S
+  eng: ought, he–was–obligated
+  spa: debía
+  hin: चाहिए–था
+  arb: وَجَبَ, كانَ–يَجِبُ
+  kor: 필요했으니, 마땅히–했다
+  swa: nilipaswa, ilimpasa
+
+### Sense 73637 (2 occurrences)
+Grammar: V-PIA-3S
+  eng: is–obligated
+  spa: debe
+  hin: बंधा–है
+  arb: مُلزَمٌ
+  kor: 의무가–있다
+  swa: anadaiwa
+
+### Sense 73638 (1 occurrences)
+Grammar: V-PPA-DMS
+  eng: owing
+  spa: el–que–debe
+  hin: कर्जदार–को
+  arb: مَدينٍ
+  kor: 빚진–자를
+  swa: anayetudai
+
+### Sense 73639 (1 occurrences)
+Grammar: V-PMA-2P
+  eng: owe
+  spa: debáis
+  hin: देनदार–न–रहो
+  arb: تَدِينُوا
+  kor: 빚지지–말라
+  swa: msidaiwe,
+
+### Sense 73640 (1 occurrences)
+Grammar: V-IIA-2P
+  eng: you–would–be–obligated
+  spa: deberíais
+  hin: चाहिए–था
+  arb: وَجَبَ
+  kor: 해야–한다
+  swa: ingewapasa
+
+### Sense 73641 (1 occurrences)
+Grammar: V-PIA-3S
+  eng: owes
+  spa: debe
+  hin: वोह-देनदअर-है
+  arb: مَدينٌ
+  kor: 빚졌다면
+  swa: kuwa–na–deni
+
+### Sense 73642 (1 occurrences)
+Grammar: V-PPA-NMP
+  eng: being–obligated
+  spa: debiendo
+  hin: चाहिए–थे
+  arb: يَجِبُ–أَنْ–تَكونوا
+  kor: 해야–하는–자들이
+  swa: mngepaswa
+
+### Sense 73643 (1 occurrences)
+Grammar: V-IIA-1P
+  eng: we-owed
+  spa: debíamos
+  hin: करना–चाहिए–था
+  arb: كانَ–عَلَينا
+  kor: 해야–할
+  swa: tulipaswa
+
+## Task
+
+Group these 14 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

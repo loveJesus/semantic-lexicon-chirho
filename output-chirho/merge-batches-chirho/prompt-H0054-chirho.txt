@@ -1,0 +1,118 @@
+# Sense Merge Task for H0054
+
+Lemma: H0054 (POS: N-proper-ms)
+Total occurrences: 30
+Current sense count: 10
+
+This Hebrew/Greek lemma has been over-split into 10 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 79666 (9 occurrences)
+Grammar: N-proper-ms
+  eng: Abiathar
+  spa: Ebyatar, Abiatar
+  hin: एब्यातार–का, एब्यातार, एब्यातार–को
+  arb: أَبِيَاثَارَ, أَبياثارَ, أَبياثارُ
+  kor: 아비아달의, 에비아타를, 에비아타르의
+  swa: Abiathari, kuwa
+
+### Sense 79667 (5 occurrences)
+Grammar: Conj-w, Prep-l | N-proper-ms
+  eng: and–to–Abiathar, and–for–Abiathar
+  spa: y–a–Ebyatar, y–para–Ebyatar
+  hin: और–एब्यातार, और–एब्यातार–को, और–एब्यातार–के–लिए
+  arb: وَلِأَبِيَاثَارَ, وَلِأَبياثارَ
+  kor: 그리고–아비아달을, 그리고–아비아달에게, 그리고–에비아타르에게
+  swa: kuhani, na–Abiathari, mwana–wa
+
+### Sense 79668 (4 occurrences)
+Grammar: N-proper-ms
+  eng: Ebyatar
+  spa: Abiatar
+  hin: एब्यातार, एब्यतर-ने, एब्यतर
+  arb: أَبْيَاثَار
+  kor: 에비아다르가, 에비아다르에게, 에비아다르
+  swa: Abiathari
+
+### Sense 79669 (3 occurrences)
+Grammar: Conj-w | N-proper-ms
+  eng: and–Abiathar
+  spa: y–Ebyatar
+  hin: और–एब्यातार, और–एब्यातार–ने
+  arb: وَأَبياثارُ, وَأَبِيَاثَارُ
+  kor: 그리고–에비아타르가, 그리고–아비아달은
+  swa: na–Abiathari
+
+### Sense 79670 (2 occurrences)
+Grammar: Conj-w | N-proper-ms
+  eng: and–Evyatar
+  spa: y–Evyatar, y–Abiatar
+  hin: और–एब्यातार
+  arb: وَ–أَبِيَاثَارُ, وَأَبْيَاثَارُ
+  kor: 그리고–에비아타르, 그리고–아비아달은
+  swa: na–Abiathari
+
+### Sense 79671 (2 occurrences)
+Grammar: N-proper-ms
+  eng: Evyatar
+  spa: Evyatar, Ebyatar
+  hin: एब्यातार
+  arb: أَبِياثار
+  kor: 에비아다르, 아비아달
+  swa: Abiathari
+
+### Sense 79672 (2 occurrences)
+Grammar: N-proper-ms
+  eng: Evyatar, Abiathar
+  spa: Ebyatar, Ebiatar
+  hin: –एब्यातार–का, एब्यातार–का
+  arb: أَبِيَاثَارَ
+  kor: 에브야달
+  swa: Abiathari
+
+### Sense 79673 (1 occurrences)
+Grammar: Prep-l | N-proper-ms
+  eng: to–Ebyatar
+  spa: a–Abiatar
+  hin: एब्यतर-से
+  arb: لِـ–أَبْيَاثَار
+  kor: 에비아다르에게
+  swa: kwa–Abiathari
+
+### Sense 79674 (1 occurrences)
+Grammar: Prep-l | N-proper-ms
+  eng: for–Abiathar
+  spa: para–Ebyatar
+  hin: एब्यातार–का
+  arb: لِأَبياثارَ
+  kor: 에비아타르의
+  swa: wa–Abiathari
+
+### Sense 79675 (1 occurrences)
+Grammar: Conj-w, Prep-l | N-proper-ms
+  eng: and–for–Evyatar
+  spa: y–a–Ebyatar
+  hin: और–एब्यातार–को
+  arb: وَ–لِ–أَبِيَاثَارَ
+  kor: 그–와–에–에비아다르
+  swa: na–Abiathari
+
+## Task
+
+Group these 10 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

@@ -1,0 +1,127 @@
+# Sense Merge Task for G2540
+
+Lemma: G2540 (POS: N-GMP)
+Total occurrences: 86
+Current sense count: 11
+
+This Hebrew/Greek lemma has been over-split into 11 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 69839 (67 occurrences)
+Grammar: N-GMS,N-DMS,N-NMS,N-AMS
+  eng: time, season, a-time
+  spa: tiempo, –tiempo, oportunidad
+  hin: समय, समय–मेइन, समय–पर
+  arb: وَقْتِ, وَقْتُ, وَقتِ
+  kor: 때에, 때, 때를
+  swa: wakati, wakati,, –wa–mavuno
+
+### Sense 69840 (5 occurrences)
+Grammar: N-NMP,N-AMP,N-DMP
+  eng: times, seasons
+  spa: tiempos
+  hin: समय, समयों, ताज़गी–के
+  arb: الأَزْمِنَةِ, أَوْقَاتُ, أَوقاتًا
+  kor: 때들이, 때들에,, 때들과
+  swa: nyakati, za–baadaye
+
+### Sense 69841 (3 occurrences)
+Grammar: N-DMP
+  eng: in–times
+  spa: en–tiempos
+  hin: समय
+  arb: فِي–أَوْقاتِهِ, فِي–أَوْقاتِها, أَوْقاتِها
+  kor: 때들에, 때들–에
+  swa: kwa–wakati
+
+### Sense 69842 (2 occurrences)
+Grammar: N-DMP,N-AMP
+  eng: times
+  spa: tiempos
+  hin: समयों
+  arb: زَمانَينِ, أَوقاتِها
+  kor: 때들과, 때들
+  swa: zao, nyakati,
+
+### Sense 69843 (2 occurrences)
+Grammar: N-AMP
+  eng: seasons
+  spa: tiempos
+  hin: मोउसमोन,, ऋतुएं
+  arb: أَوقاتًا, أوقاتًا
+  kor: 절기들,, 때들을
+  swa: nyakati, majira
+
+### Sense 69844 (2 occurrences)
+Grammar: N-GMP
+  eng: times
+  spa: tiempos
+  hin: समयोन
+  arb: الأَزْمِنَةِ, الأَزمِنَةِ
+  kor: 때의, 때들의;
+  swa: –za–nyakati, nyakati
+
+### Sense 69845 (1 occurrences)
+Grammar: N-DMS
+  eng: In–time
+  spa: En–tiempo
+  hin: समय–में
+  arb: في–وَقتٍ
+  kor: 때에
+  swa: Wakati
+
+### Sense 69846 (1 occurrences)
+Grammar: N-GMS
+  eng: a–time
+  spa: tiempo–oportuno
+  hin: समय–तक
+  arb: حينٍ
+  kor: 때–까지
+  swa: wakati–mwingine
+
+### Sense 69847 (1 occurrences)
+Grammar: N-DMS
+  eng: in-season
+  spa: en-tiempo
+  hin: समय–पर
+  arb: في–الوَقتِ
+  kor: 때에
+  swa: wakati
+
+### Sense 69848 (1 occurrences)
+Grammar: N-AMP
+  eng: seasons
+  spa: ocasiones
+  hin: पिता–ने
+  arb: أَوْقَاتًا
+  kor: 그–것들–을
+  swa: wakati
+
+### Sense 69849 (1 occurrences)
+Grammar: N-GMP
+  eng: seasons
+  spa: épocas
+  hin: कअल
+  arb: الأوْقاتِ
+  kor: 시기들에–대하여
+  swa: majira
+
+## Task
+
+Group these 11 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

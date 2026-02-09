@@ -1,0 +1,118 @@
+# Sense Merge Task for H4136
+
+Lemma: H4136 (POS: Prep-l)
+Total occurrences: 36
+Current sense count: 10
+
+This Hebrew/Greek lemma has been over-split into 10 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 110112 (12 occurrences)
+Grammar: Prep,Prep-m
+  eng: opposite, from–opposite-of
+  spa: frente–a, frente–de
+  hin: सामने, साम्हने, सअमने
+  arb: مُقَابِلَ, مُقَابِلِ, مُقابِلَ
+  kor: 맞은편에, 맞은편
+  swa: mkabala–na, mbele–ya, kuelekea
+
+### Sense 110113 (11 occurrences)
+Grammar: Prep
+  eng: front-of, in–front–of, the–front–of
+  spa: frente–a, frente–de, frente-de
+  hin: सामने, सामने–से, सामने–की–ओर
+  arb: مُقابِلِ, مُقَابِلِ
+  kor: 맞은편에, 마주보는–쪽으로, 앞
+  swa: mbele–ya
+
+### Sense 110114 (6 occurrences)
+Grammar: Prep-m
+  eng: from–front–of, opposite, from–opposite
+  spa: de–frente–de, frente-a, de–enfrente–de
+  hin: सामने–से, सामने
+  arb: مِنْ–مُقَابِلِ, مِنْ–أَمَامِ, مِن–مُقابِلِ
+  kor: 에서–맞은편, 에서–앞, 에서–맞은편–의
+  swa: kutoka–mbele–ya, mbele–ya
+
+### Sense 110115 (1 occurrences)
+Grammar: Prep
+  eng: facing
+  spa: delante–de
+  hin: सामने
+  arb: مُقابِلِ
+  kor: 맞은편에
+  swa: mbele–ya–
+
+### Sense 110116 (1 occurrences)
+Grammar: Prep
+  eng: opposite
+  spa: frente–a
+  hin: सामने–
+  arb: مُقابِلِ–
+  kor: 맞은편–
+  swa: mkabala–na–
+
+### Sense 110117 (1 occurrences)
+Grammar: Prep-m | 1cs
+  eng: opposite–me
+  spa: frente–a–mí
+  hin: मेरे–सामने
+  arb: مُقَابِلِي
+  kor: 나–맞은편–에
+  swa: mbele–yangu
+
+### Sense 110118 (1 occurrences)
+Grammar: Prep-m
+  eng: opposite
+  spa: frente–al
+  hin: के–सामने
+  arb: مُقَابِلَ
+  kor: 에서–맞은편
+  swa: kuelekea
+
+### Sense 110119 (1 occurrences)
+Grammar: Conj-w | Prep
+  eng: and–facing
+  spa: y–frente–a
+  hin: और–सामने
+  arb: وَ–مُقَابِلَ
+  kor: 그리고-맞은편에
+  swa: dirisha
+
+### Sense 110120 (1 occurrences)
+Grammar: Prep
+  eng: before
+  spa: frente–a–
+  hin: सामने
+  arb: أَمَامَ
+  kor: 앞에
+  swa: mbele–ya
+
+### Sense 110121 (1 occurrences)
+Grammar: Prep-l
+  eng: opposite
+  spa: al–frente
+  hin: विपरीत–दिशा–में
+  arb: إِلى–اليَسارِ
+  kor: 에–맞은편으로
+  swa: upande–wa–kushoto
+
+## Task
+
+Group these 10 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

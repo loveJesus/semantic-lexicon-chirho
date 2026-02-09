@@ -1,0 +1,127 @@
+# Sense Merge Task for H7457
+
+Lemma: H7457 (POS: Conj-w | Adj-mp)
+Total occurrences: 20
+Current sense count: 11
+
+This Hebrew/Greek lemma has been over-split into 11 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 136457 (4 occurrences)
+Grammar: Prep-l, Art | Adj-ms,Prep-l | Adj-ms
+  eng: to–hungry, for–the–hungry
+  spa: al–hambriento
+  hin: भूखे–को, भूखेको
+  arb: لِ–الْجَائِعِ, لِلجَائِعِ
+  kor: 배고프–자에게, 굶주린–자에게–
+  swa: mwenye–njaa, kwa–mwenye–njaa
+
+### Sense 136458 (3 occurrences)
+Grammar: Adj-ms
+  eng: hungry
+  spa: hambriento, tiene–hambre
+  hin: भूखे, भूखा, उसका–बल
+  arb: جَائِعًا, جاعَ, جائِعٌ
+  kor: 배고프면, 배고프고, 굶주린
+  swa: wana–njaa, njaa, ana–njaa
+
+### Sense 136459 (2 occurrences)
+Grammar: Conj-w | Adj-mp
+  eng: and–the–hungry, and–hungry
+  spa: y–hambrientos
+  hin: और–भूखे
+  arb: وَ–جِيَاعًا, وَ–الـ–جِياعُ
+  kor: 그리고–배고픈자들, 그리고–배고픈
+  swa: na–wenye–njaa
+
+### Sense 136460 (2 occurrences)
+Grammar: Adj-mp
+  eng: hungry
+  spa: hambrientos, Hambrientos
+  hin: रेअेवीम, भूखे
+  arb: جياعٌ, جياع
+  kor: 굶주린, 굶주려–있는
+  swa: wenye–njaa
+
+### Sense 136461 (2 occurrences)
+Grammar: Adj-fs
+  eng: hungry
+  spa: hambrienta
+  hin: भूखी, भूखा
+  arb: جائِعَةٌ, جائِعَةً
+  kor: 굶주린
+  swa: yenye–njaa
+
+### Sense 136462 (2 occurrences)
+Grammar: Adj-ms,Art | Adj-ms
+  eng: the–hungry
+  spa: el–hambriento
+  hin: भूखा
+  arb: الْجَائِعُ, الجائِعُ
+  kor: 배고프다–그가, 그–굶주린–자가
+  swa: mwenye–njaa
+
+### Sense 136463 (1 occurrences)
+Grammar: Conj-w | Adj-ms
+  eng: and–hungry
+  spa: y-hambriento
+  hin: और–भूखा
+  arb: وَ–جَائِعًا
+  kor: 배고프도다
+  swa: na-njaa
+
+### Sense 136464 (1 occurrences)
+Grammar: Prep-l, Art | Adj-mp
+  eng: to–the–hungry
+  spa: a–los–hambrientos
+  hin: भूखों–को
+  arb: لِـ–الجِيَاعِ
+  kor: 그–배고픈–자들에게
+  swa: kwa–wenye–njaa
+
+### Sense 136465 (1 occurrences)
+Grammar: Conj-w, Prep | Adj-ms
+  eng: and–from–hungry
+  spa: y–del–hambriento
+  hin: और–भूखे–से
+  arb: وَ–عَنِ–الجَائِعِ
+  kor: 그리고–배고픈–자에게서
+  swa: na–kutoka–kwa–mwenye–njaa
+
+### Sense 136466 (1 occurrences)
+Grammar: Adj-mp
+  eng: the–hungry
+  spa: a–los–hambrientos
+  hin: भूखों–को
+  arb: جياعًا
+  kor: 굶주린–자들–을
+  swa: wenye–njaa
+
+### Sense 136467 (1 occurrences)
+Grammar: Adj-ms
+  eng: of–the–hungry
+  spa: hambriento
+  hin: भूखे–का
+  arb: الْجَائِعِ
+  kor: 굶주린–자의
+  swa: yenye–njaa
+
+## Task
+
+Group these 11 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

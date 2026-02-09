@@ -1,0 +1,163 @@
+# Sense Merge Task for H4864
+
+Lemma: H4864 (POS: N-fs)
+Total occurrences: 16
+Current sense count: 15
+
+This Hebrew/Greek lemma has been over-split into 15 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 114495 (2 occurrences)
+Grammar: N-fsc
+  eng: tax-of
+  spa: tributo–de
+  hin: कर
+  arb: جِزْيَةَ
+  kor: 세금을
+  swa: kodi–ya
+
+### Sense 114496 (1 occurrences)
+Grammar: N-fpc
+  eng: portions
+  spa: porciones
+  hin: भाग
+  arb: حِصَصًا
+  kor: 몰들을
+  swa: zawadi
+
+### Sense 114497 (1 occurrences)
+Grammar: N-fsc
+  eng: rising-of
+  spa: columna–de
+  hin: बादल
+  arb: عَمُودَ
+  kor: 신호를
+  swa: nguzo
+
+### Sense 114498 (1 occurrences)
+Grammar: N-fsc
+  eng: portion–of
+  spa: porción–de
+  hin: भाग
+  arb: حِصَّةُ
+  kor: 몰
+  swa: ya–Binyamini
+
+### Sense 114499 (1 occurrences)
+Grammar: Conj-w | N-fsc
+  eng: and–tribute-of–
+  spa: y–tributo–de–
+  hin: और–भार–
+  arb: وَ–حمْلَ–
+  kor: 그리고–많은–양의
+  swa: na–ushuru–wa
+
+### Sense 114500 (1 occurrences)
+Grammar: Conj-w | N-fs
+  eng: and–a–gift
+  spa: y–regalo
+  hin: और–उपहार
+  arb: وَ–هَدِيَّةً
+  kor: 그리고–선물을
+  swa: na–zawadi
+
+### Sense 114501 (1 occurrences)
+Grammar: Prep-m | N-fpc
+  eng: than–portions–of
+  spa: de–porciones–de
+  hin: भागों–से
+  arb: عَنْ–حِصَصِ
+  kor: 몰들보다
+  swa: zawadi–zao
+
+### Sense 114502 (1 occurrences)
+Grammar: N-mpc
+  eng: oracles
+  spa: oráculos–de
+  hin: भविष्यवाणियां
+  arb: أَحْمَالًا
+  kor: 짐들–을
+  swa: ujumbe
+
+### Sense 114503 (1 occurrences)
+Grammar: N-fpc | 2mp
+  eng: offerings–your
+  spa: vuestros–dones
+  hin: तुम्हारे–भेंट
+  arb: حَمْلَاتِكُمْ
+  kor: 너희의–예물들을
+  swa: matoleo–yenu
+
+### Sense 114504 (1 occurrences)
+Grammar: N-fsc
+  eng: lifting-up-of
+  spa: alzar-de
+  hin: उठाना
+  arb: رَفْعُ
+  kor: 들어–올림–이
+  swa: kuinua
+
+### Sense 114505 (1 occurrences)
+Grammar: Conj-w, Art | N-fs
+  eng: and–the–signal
+  spa: Y–la–columna
+  hin: और–बादल
+  arb: وَ–الْ–عَلَامَةُ
+  kor: 그리고–신호가
+  swa: Na–nguzo
+
+### Sense 114506 (1 occurrences)
+Grammar: N-fs
+  eng: a–burden
+  spa: carga
+  hin: बोझ
+  arb: حَمْلُ
+  kor: 짐
+  swa: mzigo
+
+### Sense 114507 (1 occurrences)
+Grammar: N-fsc
+  eng: a–portion–of
+  spa: porción–de
+  hin: भेंट
+  arb: هَدِيَّةُ
+  kor: 선물이
+  swa: zawadi–ya
+
+### Sense 114508 (1 occurrences)
+Grammar: N-fs
+  eng: gifts
+  spa: regalo
+  hin: उपहार
+  arb: عَطَايَا
+  kor: 선물을
+  swa: zawadi
+
+### Sense 114509 (1 occurrences)
+Grammar: N-fs
+  eng: signal
+  spa: señal
+  hin: संकेत
+  arb: إِشَارَةً
+  kor: 불–신호를
+  swa: ishara–ya–moto
+
+## Task
+
+Group these 15 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

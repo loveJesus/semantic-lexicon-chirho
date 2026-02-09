@@ -1,0 +1,154 @@
+# Sense Merge Task for H5518a
+
+Lemma: H5518a (POS: Prep-l | N-cs)
+Total occurrences: 29
+Current sense count: 14
+
+This Hebrew/Greek lemma has been over-split into 14 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 120772 (6 occurrences)
+Grammar: Art | N-cs
+  eng: the–pot
+  spa: la–olla
+  hin: कड़ाही, हंडी–में, हंडी
+  arb: الْقِدْرُ, الْقِدْرَ, الْقِدْرِ
+  kor: 솔, 그–가마솔이라, 냃–그
+  swa: sufuria
+
+### Sense 120773 (6 occurrences)
+Grammar: Art | N-cp
+  eng: the–pots
+  spa: las–ollas
+  hin: ह–देगचियों, हण्डियों, हण्डियाँ
+  arb: الْقُدُورَ, الْقُدُورُ
+  kor: 솔들을, 그–솔들, 그–솔들이
+  swa: sufuria, vyungu
+
+### Sense 120774 (3 occurrences)
+Grammar: Prep-b, Art | N-cs
+  eng: in–the-pot, in–the–pot
+  spa: en–la–olla
+  hin: हंडी–में, हांडी–में
+  arb: فِي–الْقِدْرِ
+  kor: 솔–에, 에–솥
+  swa: katika–sufuria, sufuriaNi
+
+### Sense 120775 (3 occurrences)
+Grammar: N-cs
+  eng: pot, a–pot
+  spa: olla
+  hin: हांडी, बर्तन
+  arb: قِدْرٍ, قِدْرٌ, قِدْرًا
+  kor: 솔이여, 솔이, 가마솥–을
+  swa: chungu, sufuria
+
+### Sense 120776 (2 occurrences)
+Grammar: N-csc
+  eng: pot-of
+  spa: olla–de–, la-olla-de
+  hin: हांडी, हंडी
+  arb: قِدْرِ
+  kor: 솥, 솔
+  swa: sufuria–ya, chungu–cha
+
+### Sense 120777 (1 occurrences)
+Grammar: N-cpc | 2mp
+  eng: your–pots
+  spa: vuestras–ollas
+  hin: तुम्हारी–हांडियाँ
+  arb: قُدورُكُم
+  kor: 너희–의–솔–들–이
+  swa: sufuria-zenu
+
+### Sense 120778 (1 occurrences)
+Grammar: Prep-l | N-cs
+  eng: for–pot
+  spa: para–olla
+  hin: के–लिए–कड़ाही
+  arb: قِدْرًا
+  kor: 가마솔로
+  swa: sufuria
+
+### Sense 120779 (1 occurrences)
+Grammar: Prep-k, Art | N-cs
+  eng: like–a-pot
+  spa: como–olla
+  hin: हांडी–की–तरह
+  arb: كَالْقِدْرِ
+  kor: 솔–같이
+  swa: kama–sufuria
+
+### Sense 120780 (1 occurrences)
+Grammar: N-csc
+  eng: the–basin–of
+  spa: vasija–de
+  hin: कटोरा
+  arb: مِرجَل
+  kor: 대야
+  swa: sinia–yangu–ya
+
+### Sense 120781 (1 occurrences)
+Grammar: Art | N-cp
+  eng: the–pots
+  spa: las–ollas
+  hin: बर्तनों
+  arb: الـ–قُدُورَ
+  kor: 솔들을
+  swa: na–sepetu
+
+### Sense 120782 (1 occurrences)
+Grammar: N-cpc | 3ms
+  eng: its–pots
+  spa: sus–calderos
+  hin: उसके–गमले
+  arb: قُدورَهُ
+  kor: 그–통들을
+  swa: sufuria–zake
+
+### Sense 120783 (1 occurrences)
+Grammar: Art | N-cp
+  eng: the–pots
+  spa: las–ollas
+  hin: हांडियाँ
+  arb: الْقُدُورَ
+  kor: 그–냄비들을
+  swa: sufuria
+
+### Sense 120784 (1 occurrences)
+Grammar: Prep-b, Art | N-cp
+  eng: in–the–pots
+  spa: en–las–ollas
+  hin: हांडियों–में
+  arb: فِي–الْقُدُورِ
+  kor: 에–그–솥들
+  swa: baּsiּyrwot
+
+### Sense 120785 (1 occurrences)
+Grammar: N-csc
+  eng: is–the–pot–of
+  spa: vasija-de
+  hin: पात्र
+  arb: طَستُ
+  kor: 대야의
+  swa: bakuli-langu
+
+## Task
+
+Group these 14 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

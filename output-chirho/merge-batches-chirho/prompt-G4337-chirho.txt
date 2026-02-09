@@ -1,0 +1,127 @@
+# Sense Merge Task for G4337
+
+Lemma: G4337 (POS: V-PNA)
+Total occurrences: 24
+Current sense count: 11
+
+This Hebrew/Greek lemma has been over-split into 11 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 75825 (6 occurrences)
+Grammar: V-PMA-2P
+  eng: Beware, Watch
+  spa: Guardaos
+  hin: सावधान–रहो
+  arb: اِحذَروا, اِحْذَرُوا
+  kor: 주의하라, 조심하라
+  swa: Jihadharini
+
+### Sense 75826 (3 occurrences)
+Grammar: V-PMA-2P
+  eng: take–heed, take-heed, Take-heed
+  spa: prestad–atención, prestad-atención, Cuidad
+  hin: सोचो, सावधान–रहो, ध्यान–रखो
+  arb: اِحْتَرِسُوا, اِحذَروا
+  kor: 주의하라, 조심하라, 살피라
+  swa: jilindeni, jihadharini, jiangalieni
+
+### Sense 75827 (3 occurrences)
+Grammar: V-PPA-NMP
+  eng: giving–heed, paying-attention
+  spa: prestando–atención
+  hin: ध्यान–देते–हुए, धयअन–देने-वअले, धयअन–देते-हुए
+  arb: مُصْغينَ, مُنتَبِهينَ
+  kor: 주의하여,, 주의하면서, 주의하며
+  swa: wakijishughulisha, mkilisikiliza, jishughulishe
+
+### Sense 75828 (3 occurrences)
+Grammar: V-IIA-3P
+  eng: were–giving–heed
+  spa: atendían
+  hin: ध्यान–देते–थे
+  arb: أَصْغَى, أَصْغَوْا
+  kor: 주목하고–있었다
+  swa: walimsikiliza, walikuwa–makini
+
+### Sense 75829 (2 occurrences)
+Grammar: V-PMA-2P
+  eng: beware
+  spa: guardaos
+  hin: सवधन–रहो
+  arb: احْذَرُوا
+  kor: 주의하라
+  swa: jihadharini
+
+### Sense 75830 (2 occurrences)
+Grammar: V-PNA
+  eng: to–give–heed, to-give-heed
+  spa: prestar–atención, atender
+  hin: ध्यान–देना, धयअन–देन
+  arb: يَهْتَمّوا, لِتُصغِيَ
+  kor: 주의하도록, 주의하기를
+  swa: kusikiliza, kujishughulisha
+
+### Sense 75831 (1 occurrences)
+Grammar: V-PNA
+  eng: to-beware
+  spa: guardarse
+  hin: सवधन–रेहन
+  arb: احْذَرُوا
+  kor: 주의하라
+  swa: kujihadhari
+
+### Sense 75832 (1 occurrences)
+Grammar: V-PPA-AMP
+  eng: giving–attention
+  spa: dados
+  hin: धयअन–देने-वअले
+  arb: مُنْصَرِفينَ
+  kor: 주의하는,
+  swa: wanaojishughulisha
+
+### Sense 75833 (1 occurrences)
+Grammar: V-PMA-2S
+  eng: give–attention
+  spa: presta–atención
+  hin: धयअन–दे
+  arb: اهْتَمَّ
+  kor: 주의하라
+  swa: jitolee
+
+### Sense 75834 (1 occurrences)
+Grammar: V-PNA
+  eng: to–pay–attention
+  spa: prestar–atención
+  hin: ध्यान–देना
+  arb: أَنْ–نَنْتَبِهَ
+  kor: 주의하기를
+  swa: tusikilize
+
+### Sense 75835 (1 occurrences)
+Grammar: V-RIA-3S
+  eng: has–attended
+  spa: se–ha–dedicado
+  hin: नहीं–लगा
+  arb: اهْتَمَّ
+  kor: 대하지–않았으니
+  swa: aliyehudumu
+
+## Task
+
+Group these 11 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

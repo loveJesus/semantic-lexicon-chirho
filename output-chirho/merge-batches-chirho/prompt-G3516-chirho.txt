@@ -1,0 +1,118 @@
+# Sense Merge Task for G3516
+
+Lemma: G3516 (POS: Adj-GMS)
+Total occurrences: 15
+Current sense count: 10
+
+This Hebrew/Greek lemma has been over-split into 10 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 72704 (5 occurrences)
+Grammar: Adj-NMS,Adj-GMS
+  eng: an-infant, infant
+  spa: niño
+  hin: बालक
+  arb: طِفلٍ, طِفلًا, الطِّفلِ
+  kor: 어린아이, 어린아이–의
+  swa: mtoto, utoto
+
+### Sense 72705 (2 occurrences)
+Grammar: Adj-DMP
+  eng: to–infants, to-infants
+  spa: a–niños
+  hin: बालकों–पर, बअलकोन–को
+  arb: لِأَطْفالٍ, لِأَطفالٍ
+  kor: 어린아이들에게
+  swa: watoto-wadogo., kwa–watoto–wachanga
+
+### Sense 72706 (1 occurrences)
+Grammar: Adj-DMP
+  eng: to–infants
+  spa: a–infantes
+  hin: बालकों
+  arb: أَطْفالٍ
+  kor: 아기들–에게
+  swa: watoto–wachanga
+
+### Sense 72707 (1 occurrences)
+Grammar: Adj-NMS
+  eng: infant
+  spa: niño
+  hin: शिशु
+  arb: طِفْلٌ
+  kor: 유아이니
+  swa: mtoto–mchanga
+
+### Sense 72708 (1 occurrences)
+Grammar: Adj-GMP
+  eng: of-infants
+  spa: de-niños
+  hin: बालकों
+  arb: الأَطفالِ
+  kor: 유아들과
+  swa: wanaonyonya
+
+### Sense 72709 (1 occurrences)
+Grammar: Adj-NMS
+  eng: child
+  spa: niño
+  hin: बचच
+  arb: قاصِرٌ
+  kor: 어린아이
+  swa: mtoto
+
+### Sense 72710 (1 occurrences)
+Grammar: Adj-NMP
+  eng: gentle
+  spa: tiernos
+  hin: कोमल
+  arb: لُطَفاءَ
+  kor: 온유한–자들로
+  swa: wapole
+
+### Sense 72711 (1 occurrences)
+Grammar: Adj-GMP
+  eng: of–infants
+  spa: de–niños
+  hin: बालकों–का
+  arb: لِلْأَطفالِ
+  kor: 유아들–의
+  swa: wa–watoto
+
+### Sense 72712 (1 occurrences)
+Grammar: Adj-NMP
+  eng: infants
+  spa: niños
+  hin: बचचे
+  arb: أَطفالًا
+  kor: 어린아이들,
+  swa: watoto
+
+### Sense 72713 (1 occurrences)
+Grammar: Adj-NMP
+  eng: children
+  spa: niños
+  hin: बचचे,
+  arb: قاصِرينَ
+  kor: 어린아이들,
+  swa: watoto
+
+## Task
+
+Group these 10 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

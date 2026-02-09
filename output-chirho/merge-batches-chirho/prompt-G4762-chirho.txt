@@ -1,0 +1,118 @@
+# Sense Merge Task for G4762
+
+Lemma: G4762 (POS: V-APP-NFS)
+Total occurrences: 21
+Current sense count: 10
+
+This Hebrew/Greek lemma has been over-split into 10 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 76786 (12 occurrences)
+Grammar: V-APP-NMP,V-APP-NMS,V-APP-NFS
+  eng: having-turned, having–turned, turning
+  spa: volviéndose, habiéndose-vuelto, habiéndose–vuelto
+  hin: मुड़कर, मुदकर
+  arb: الْتَفَتَ, التَفَتَ, اِلْتَفَتَ
+  kor: 돌아서서, 돌아서시고, 돌아보시며
+  swa: akigeuka, waki-geuka,, akageuka
+
+### Sense 76787 (1 occurrences)
+Grammar: V-AMA-2S
+  eng: turn
+  spa: vuelve
+  hin: मोड़
+  arb: أَدِرْ
+  kor: 돌려라
+  swa: mgeuzie
+
+### Sense 76788 (1 occurrences)
+Grammar: V-PNA
+  eng: to-turn
+  spa: de–convertir
+  hin: बदलने–की
+  arb: أَن–يُحَوِّلوها
+  kor: 돌리는
+  swa: kuyageuza
+
+### Sense 76789 (1 occurrences)
+Grammar: V-AIP-3S
+  eng: she–turned
+  spa: se-volvió
+  hin: मुड़ी
+  arb: الْتَفَتَتْ
+  kor: 돌아섯다
+  swa: akageuka
+
+### Sense 76790 (1 occurrences)
+Grammar: V-AIA-3S
+  eng: turned
+  spa: se–volvió
+  hin: फेरा
+  arb: تَحَوَّلَ
+  kor: 돌렸다
+  swa: akageuka
+
+### Sense 76791 (1 occurrences)
+Grammar: V-AIA-3S
+  eng: returned
+  spa: devolvió
+  hin: लौटाया
+  arb: أَرْجَعَ
+  kor: 돌려주었다
+  swa: alirudisha
+
+### Sense 76792 (1 occurrences)
+Grammar: V-PIM/P-1P
+  eng: we–turn
+  spa: nos–volvemos
+  hin: फिरते–हैं
+  arb: نَتَحَوَّلُ
+  kor: 돌이킨다
+  swa: tunageuka
+
+### Sense 76793 (1 occurrences)
+Grammar: V-ASP-3P
+  eng: may–turn
+  spa: se-vuelvan
+  hin: फिरें
+  arb: يَرْجِعُوا
+  kor: 돌아오지
+  swa: wasigeuke
+
+### Sense 76794 (1 occurrences)
+Grammar: V-AIP-3P
+  eng: turned
+  spa: se–volvieron
+  hin: मुड़े
+  arb: الْتَفَتُوا
+  kor: 돌아섰다
+  swa: wakageuka
+
+### Sense 76795 (1 occurrences)
+Grammar: V-ASP-2P
+  eng: you-turn
+  spa: os–volvéis
+  hin: पलतो
+  arb: تَرْجِعُوا
+  kor: 돌이켜
+  swa: geuka
+
+## Task
+
+Group these 10 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

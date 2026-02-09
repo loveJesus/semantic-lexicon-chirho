@@ -1,0 +1,127 @@
+# Sense Merge Task for G4222
+
+Lemma: G4222 (POS: V-AIA-1S)
+Total occurrences: 15
+Current sense count: 11
+
+This Hebrew/Greek lemma has been over-split into 11 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 75482 (2 occurrences)
+Grammar: V-IIA-3S
+  eng: was–giving–to–drink, was-giving-to-drink
+  spa: daba–de–beber
+  hin: पिलाता–था
+  arb: كَانَ–يُسْقِيهِ, سَقَاهُ
+  kor: 마시게–했다, 마시게-하였다
+  swa: alimnywesha, akamnywesha
+
+### Sense 75483 (2 occurrences)
+Grammar: V-PPA-NMS
+  eng: watering
+  spa: regando
+  hin: सींचनेवाला
+  arb: السّاقي
+  kor: 물–주는–자
+  swa: anayemwagilia;, anayemwagilia,
+
+### Sense 75484 (2 occurrences)
+Grammar: V-ASA-3S
+  eng: gives-to-drink, gives-drink
+  spa: dé–de–beber
+  hin: पिलाए
+  arb: يَسْقِيكُمْ, يَسقيَ
+  kor: 마시면, 마시게–하면
+  swa: mpa, kuwanywesha
+
+### Sense 75485 (2 occurrences)
+Grammar: V-AIA-2P
+  eng: you–gave–to–drink
+  spa: me–disteis–de–beber
+  hin: पिलाया
+  arb: سَقَيْتُمُونِي, تَسْقُونِي
+  kor: 마시게–했다
+  swa: ninywesha, mlininywesha
+
+### Sense 75486 (1 occurrences)
+Grammar: V-AIA-3S
+  eng: watered
+  spa: regó
+  hin: सींचा
+  arb: سَقى
+  kor: 물을–주었다
+  swa: alimwagilia;
+
+### Sense 75487 (1 occurrences)
+Grammar: V-AIP-1P
+  eng: were-made-to-drink
+  spa: fuimos–dados–a–beber
+  hin: पिलाया–गया
+  arb: سُقينا
+  kor: 마시게–되었느니라
+  swa: tulinyweshwa.
+
+### Sense 75488 (1 occurrences)
+Grammar: V-PIA-3S
+  eng: gives-drink
+  spa: da–de–beber
+  hin: पानी–पिलाता?
+  arb: يَسْقِيهِ
+  kor: 물을–먹이지
+  swa: kumnywesha
+
+### Sense 75489 (1 occurrences)
+Grammar: V-RIA-3S
+  eng: has-given-to-drink
+  spa: ha–dado–de–beber
+  hin: पिलाया–है
+  arb: سَقَت
+  kor: 마시게–하였으니
+  swa: imewakinyweshea
+
+### Sense 75490 (1 occurrences)
+Grammar: V-AIA-1P
+  eng: we–gave–to–drink
+  spa: te–dimos–de–beber
+  hin: पिलाया
+  arb: سَقَيْنَاكَ
+  kor: 마시게–했습니까
+  swa: tukakunywesha
+
+### Sense 75491 (1 occurrences)
+Grammar: V-AIA-1S
+  eng: I–gave–to–drink
+  spa: di–de–beber
+  hin: पिलाया
+  arb: سَقَيْتُ
+  kor: 먹였다
+  swa: niliwanywesha;
+
+### Sense 75492 (1 occurrences)
+Grammar: V-PMA-2S
+  eng: give-drink
+  spa: dale-de-beber
+  hin: पिला
+  arb: اسْقِهِ
+  kor: 마시게–하라
+  swa: mnyweshe
+
+## Task
+
+Group these 11 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

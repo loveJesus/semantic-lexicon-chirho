@@ -1,0 +1,118 @@
+# Sense Merge Task for H4539
+
+Lemma: H4539 (POS: Conj-w)
+Total occurrences: 25
+Current sense count: 10
+
+This Hebrew/Greek lemma has been over-split into 10 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 112648 (10 occurrences)
+Grammar: N-msc
+  eng: screen–of, screen-of
+  spa: cortina–de, cortina-de, la–cortina–de
+  hin: परदा
+  arb: سِتْرَ, سِترَةَ, سِتَارَةَ
+  kor: 간막을, 가림막–의, 가리개
+  swa: pazia, pazia-la
+
+### Sense 112649 (4 occurrences)
+Grammar: N-ms,Art | N-ms
+  eng: screen, the–screen, a–screen
+  spa: cortina, pantalla, la–cortina
+  hin: परदा
+  arb: سِتَارَةَ, سِتراً, سِتارَةٌ
+  kor: 차양막이, 차양막을, 그–간막을
+  swa: sitara, pazia
+
+### Sense 112650 (3 occurrences)
+Grammar: Art | N-ms
+  eng: the–screen
+  spa: la–cortina
+  hin: परदे–का, आवरण–का
+  arb: السِّتْرِ, السِّترَةِ, السَّتْرِ
+  kor: 그–간막의, 그–가리개의
+  swa: la–sitara, la–kufunika
+
+### Sense 112651 (2 occurrences)
+Grammar: Conj-w | N-msc
+  eng: and–screen–of, and–screen-of
+  spa: y–cortina-de, Y–cortina–de
+  hin: और–परदा
+  arb: وَ–سَجْفُ, وَسِتْرُ
+  kor: 그리고–휘장, 그리고–간막
+  swa: na–pazia
+
+### Sense 112652 (1 occurrences)
+Grammar: Art | N-ms
+  eng: the–screen
+  spa: la–cortina
+  hin: आवरण–का
+  arb: السِّتْرِ
+  kor: 그–가림막–의
+  swa: kifuniko
+
+### Sense 112653 (1 occurrences)
+Grammar: Prep-l | N-ms
+  eng: for–a–covering
+  spa: por–cubierta
+  hin: आवरण–के–लिए
+  arb: لِسِتر
+  kor: 덮개–로
+  swa: kama–pazia
+
+### Sense 112654 (1 occurrences)
+Grammar: Conj-w, Art | N-ms
+  eng: and–the–screen
+  spa: y–la–cortina
+  hin: और–परदा
+  arb: وَالسِّتْرُ
+  kor: 그리고–그–휘장
+  swa: na–pazia
+
+### Sense 112655 (1 occurrences)
+Grammar: Prep-l, Art | N-ms
+  eng: for–the–screen
+  spa: para–la–cortina
+  hin: परदे–के–लिए
+  arb: لِ–السِّتارَةِ
+  kor: 에–그–차양막
+  swa: kwa–sitara
+
+### Sense 112656 (1 occurrences)
+Grammar: N-msc
+  eng: covering–of
+  spa: cubierta–de
+  hin: परदा
+  arb: سِتَارِ
+  kor: 베일을
+  swa: kinga
+
+### Sense 112657 (1 occurrences)
+Grammar: Art | N-ms
+  eng: the–covering
+  spa: la–cubierta
+  hin: ढकना
+  arb: الْغِطاءَ
+  kor: 그–덮개를
+  swa: kitambaa
+
+## Task
+
+Group these 10 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

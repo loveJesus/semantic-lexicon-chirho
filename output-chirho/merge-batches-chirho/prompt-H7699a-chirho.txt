@@ -1,0 +1,171 @@
+# Sense Merge Task for H7699a
+
+Lemma: H7699a (POS: N-mdc)
+Total occurrences: 21
+Current sense count: 16
+
+This Hebrew/Greek lemma has been over-split into 16 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 138392 (3 occurrences)
+Grammar: N-mdc | 2fs
+  eng: your–breasts
+  spa: tus–pechos, pechos
+  hin: तेरे–स्तन
+  arb: ثَدْيَاكِ, شَدَيِكْ
+  kor: 네–가슴들–이
+  swa: matiti–yako
+
+### Sense 138393 (2 occurrences)
+Grammar: N-md
+  eng: breasts
+  spa: pechos
+  hin: स्तन–से, स्तनों–के
+  arb: الثُّديِّ, الثَّدْيَيْنِ
+  kor: 젖의, 가슴들–의
+  swa: matiti
+
+### Sense 138394 (2 occurrences)
+Grammar: Conj-w | N-md
+  eng: and–breasts
+  spa: y–pechos
+  hin: और–स्तन
+  arb: وَثَدْيَانِ, وَثَديَينِ
+  kor: 그리고–젖들을, 그리고–가슴들–이
+  swa: na–matiti
+
+### Sense 138395 (2 occurrences)
+Grammar: N-md
+  eng: breasts
+  spa: pechos
+  hin: स्तन–तेरे, छातियों
+  arb: ثَدْيَاكِ, الثُّدُويِ
+  kor: 젌가슴들이, 가슴을
+  swa: matiti
+
+### Sense 138396 (1 occurrences)
+Grammar: N-mdc
+  eng: the–breasts–of
+  spa: pechos–de
+  hin: स्तनों
+  arb: ثَدْيَيْ
+  kor: 젖–
+  swa: matiti–ya
+
+### Sense 138397 (1 occurrences)
+Grammar: Conj-w | N-mdc | 2fs
+  eng: and–your-breasts
+  spa: y–pechos–de–ti
+  hin: और–अपने–स्तनों
+  arb: وَثَدْيَيْكِ
+  kor: 그리고–네–가슴을
+  swa: na–matiti–yako
+
+### Sense 138398 (1 occurrences)
+Grammar: N-mdc | 3fs
+  eng: her–breasts
+  spa: sus–pechos
+  hin: स्तनों–उसके
+  arb: ثَديَيها
+  kor: 가슴들–그녀의
+  swa: matiti–yake
+
+### Sense 138399 (1 occurrences)
+Grammar: N-mdc
+  eng: breasts-of–
+  spa: pechos–de
+  hin: स्तन
+  arb: نُهُودِ
+  kor: 가슴들을
+  swa: chuchu–za
+
+### Sense 138400 (1 occurrences)
+Grammar: N-mdc | 1cs
+  eng: my–breasts
+  spa: mis–pechos
+  hin: मेरे–स्तनों–के
+  arb: شَدَي
+  kor: 내–가슴들–의
+  swa: matiti–yangu
+
+### Sense 138401 (1 occurrences)
+Grammar: N-md
+  eng: breasts
+  spa: pechos
+  hin: स्तन
+  arb: ثَدْيانِ
+  kor: 젯들이
+  swa: maziwa
+
+### Sense 138402 (1 occurrences)
+Grammar: Conj-w | N-mdc | 1cs
+  eng: and–my–breasts
+  spa: y–mis–pechos
+  hin: और–स्तन–मेरे
+  arb: وَثَدْيَايَ
+  kor: 그리고–내–가슴들–이
+  swa: na–matiti–yangu
+
+### Sense 138403 (1 occurrences)
+Grammar: Prep-m | N-md
+  spa: de–los–pechos
+  hin: से–स्तनों
+  arb: مِنَ–الثَّدْيَيْنِ
+  kor: 에서–젖가슴
+  swa: matitini
+
+### Sense 138404 (1 occurrences)
+Grammar: N-mdc | 3fp
+  eng: their-breasts
+  spa: pechos–de–ellas
+  hin: उनके–स्तन
+  arb: ثُدُوهُمَا
+  kor: 그들의–가슴이
+  swa: matiti–yao
+
+### Sense 138405 (1 occurrences)
+Grammar: N-mdc
+  eng: breasts-of
+  spa: pechos–de
+  hin: स्तनों
+  arb: ثَدْيَيْ
+  kor: 가슴들–을
+  swa: matiti
+
+### Sense 138406 (1 occurrences)
+Grammar: Conj-w | N-mdc | 2fs
+  eng: and–your–breasts
+  spa: y–tus–pechos
+  hin: और–तेरे–स्तन
+  arb: وَثَدْيَاكِ
+  kor: 그리고–네–가슴들–이
+  swa: na–matiti–yako
+
+### Sense 138407 (1 occurrences)
+Grammar: N-ms
+  eng: the–breast
+  spa: el–pecho
+  hin: स्तन
+  arb: الثَّدْيَ
+  kor: 젯–을
+  swa: matiti
+
+## Task
+
+Group these 16 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

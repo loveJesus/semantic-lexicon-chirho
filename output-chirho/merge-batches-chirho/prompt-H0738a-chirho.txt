@@ -1,0 +1,136 @@
+# Sense Merge Task for H0738a
+
+Lemma: H0738a (POS: Prep-k)
+Total occurrences: 34
+Current sense count: 12
+
+This Hebrew/Greek lemma has been over-split into 12 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 84163 (10 occurrences)
+Grammar: N-mp,N-mpc
+  eng: lions, are–lions
+  spa: leones, de–leones
+  hin: शेर, सिंह, सिंहों–ने
+  arb: أُسُودٌ, وَاقِفَةً, بِجَانِبِ
+  kor: 사자들이, 사자들의, 사자들–이
+  swa: simba, wa–simba, na–mitende
+
+### Sense 84164 (6 occurrences)
+Grammar: Art | N-ms
+  eng: the–lion
+  spa: el–león
+  hin: सिंह–के, शेर, शेर-को
+  arb: الأَسَدِ, الأَسَدُ, الأَسَد
+  kor: 그–사자의, 사자의, 그–사자를
+  swa: simba
+
+### Sense 84165 (4 occurrences)
+Grammar: N-mp
+  eng: lions, the–lions
+  spa: leones, los–leones
+  hin: सिंहों–के, सिंहों–का, शेरों–की
+  arb: أُسُودٍ, الْأُسُودِ, أَرَيُوت
+  kor: 사자들의, 사자들–의
+  swa: simba, –simba, ya–simba
+
+### Sense 84166 (3 occurrences)
+Grammar: Prep-k | N-ms,Prep-k, Art | N-ms
+  eng: like–a–lion, like–lion
+  spa: como–león
+  hin: जैसे–सिंह, सिंह–की–तरह
+  arb: كَأَسَدٍ, كَ–أَسَدٍ
+  kor: 처럼–사자, 사자–처럼, –사자–같이
+  swa: kama–simba
+
+### Sense 84167 (3 occurrences)
+Grammar: N-ms
+  eng: a–lion
+  spa: un–león, león, León–
+  hin: सिंह, सिंह–
+  arb: أَسَدٌ, أَسَدٌ–
+  kor: 사자가, 사자처럼
+  swa: simba, simba–
+
+### Sense 84168 (2 occurrences)
+Grammar: Art | N-mp
+  eng: the–lions
+  spa: los–leones
+  hin: सिंहों
+  arb: الأُسُودَ
+  kor: 사자들을
+  swa: simba
+
+### Sense 84169 (1 occurrences)
+Grammar: Art | N-ms
+  eng: the–lion
+  spa: (el–león)
+  hin: शेर
+  arb: الْأَسَدَ
+  kor: (그–사자를)
+  swa: simba
+
+### Sense 84170 (1 occurrences)
+Grammar: N-ms
+  eng: (a–lion)
+  spa: (león)
+  hin: सिंह
+  arb: (أَسَدٌ)
+  kor: 사자–라
+  swa: simba
+
+### Sense 84171 (1 occurrences)
+Grammar: Prep-m | N-ms
+  eng: than–lion
+  spa: que–un–león?
+  hin: शेर–से
+  arb: مِنَ–الْأَسَدِ
+  kor: 보다–사자
+  swa: kuliko–simba
+
+### Sense 84172 (1 occurrences)
+Grammar: Prep-l | N-mp
+  eng: for–the–lions
+  spa: los–leones
+  hin: शेरों–के
+  arb: لِ–الـ–أُسُودِ
+  kor: 사자들에-대하여
+  swa: simba
+
+### Sense 84173 (1 occurrences)
+Grammar: Prep-m | N-mp
+  eng: than–lions
+  spa: de–leones
+  hin: सिंहों–से
+  arb: مِنَ–الْأُسُودِ
+  kor: 에서–사자들보다
+  swa: kutoka–simba
+
+### Sense 84174 (1 occurrences)
+Grammar: Conj-w, Prep-k | N-ms
+  eng: and–like–lion
+  spa: y–como–león
+  hin: और–सिंह–की–तरह
+  arb: وَ–كَ–أَسَدٍ
+  kor: 그리고–사자–처럼
+  swa: na–kama–simba
+
+## Task
+
+Group these 12 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

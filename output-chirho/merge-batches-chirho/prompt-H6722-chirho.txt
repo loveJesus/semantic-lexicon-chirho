@@ -1,0 +1,136 @@
+# Sense Merge Task for H6722
+
+Lemma: H6722 (POS: Art | N-proper-mp)
+Total occurrences: 16
+Current sense count: 12
+
+This Hebrew/Greek lemma has been over-split into 12 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 129973 (5 occurrences)
+Grammar: N-proper-mp
+  eng: Sidonians
+  spa: sidonios
+  hin: सीदोनी, सीदोनियों–के, सीदोनियों
+  arb: الصِّيدُونِيِّينَ, صِيدُونِيِّينَ, الصّيدونيِّينَ
+  kor: 시돈–사람들의, 시돈인들은, 시돈–사람들을
+  swa: Wasidoni
+
+### Sense 129974 (1 occurrences)
+Grammar: Conj-w, Art | N-proper-ms
+  eng: and–the-Tsidoni
+  spa: y–el–tzidoni
+  hin: और–सीदोनियों–को
+  arb: وَ–الصَّيْدونِيِّ
+  kor: 그리고–그–시돈–사람과
+  swa: na–Wasidoni
+
+### Sense 129975 (1 occurrences)
+Grammar: Art | N-proper-mp
+  eng: the–Sidonians
+  spa: los–sidonios
+  hin: –सीदोनी
+  arb: الصَّيْدُونِيُّونَ
+  kor: 그–시돈–사람들–이
+  swa: Wasidoni
+
+### Sense 129976 (1 occurrences)
+Grammar: Conj-w | N-proper-mp
+  eng: and–Sidonians
+  spa: Y–sidonios
+  hin: और–सीदोनियोंने
+  arb: وَ–الصِّيدونيّونَ
+  kor: 그리고–시돈–사람들
+  swa: na–Wasidoni
+
+### Sense 129977 (1 occurrences)
+Grammar: N-proper-ms
+  eng: Sidonians
+  spa: sidonio
+  hin: सीदोनी
+  arb: صِيدُونِيٍّ
+  kor: 시돈–사람이
+  swa: Msidoni
+
+### Sense 129978 (1 occurrences)
+Grammar: Prep-l, Art | N-proper-mp
+  eng: to–the–Sidonians
+  spa: de–los–sidonios
+  hin: सीदोनियों–की
+  arb: لِ–الصّيدونيِّينَ
+  kor: 에게–시돈–사람의
+  swa: ya–Wasidoni
+
+### Sense 129979 (1 occurrences)
+Grammar: Prep-l, Art | N-proper-mp
+  eng: to–the–Tsidonians
+  spa: a–los–sidonios
+  hin: सीदोनियों–को
+  arb: لِلصَّيْدُونِيِّينَ
+  kor: 에게–그–시돈사람들
+  swa: kwa–Wasidoni
+
+### Sense 129980 (1 occurrences)
+Grammar: Prep-m | N-proper-mp
+  eng: from–Tsidonim
+  spa: de–los–sidonios
+  hin: सीदोनियों–से
+  arb: مِنَ–الصِّيدُونِيِّينَ
+  kor: 시돈에서
+  swa: na–Wasidoni
+
+### Sense 129981 (1 occurrences)
+Grammar: N-proper-mp
+  eng: Tsidonians
+  spa: sidonios
+  hin: त्सीदोनीम–का
+  arb: الصَّيدُونِيِّينَ
+  kor: 시돈의
+  swa: Wasidoni
+
+### Sense 129982 (1 occurrences)
+Grammar: N-proper-fp
+  eng: Sidonian-women
+  spa: sidonias
+  hin: सीदोनी
+  arb: صَيْدُونِيَّاتٍ
+  kor: 시돈–여인들과
+  swa: Wasidoni
+
+### Sense 129983 (1 occurrences)
+Grammar: N-proper-mp
+  eng: Tsidonim
+  spa: los–sidonios
+  hin: सीदोनियों
+  arb: الصِّيدُونِيِّينَ
+  kor: 시돈사람들의
+  swa: ya–Wasidoni
+
+### Sense 129984 (1 occurrences)
+Grammar: Prep-k, Art | N-proper-mp
+  eng: like–the–Sidonians
+  spa: como–los–sidonios
+  hin: सीदोनियों–जैसा
+  arb: كَـ–الصَّيْدُونِيِّينَ
+  kor: 시돈–사람들처럼
+  swa: kama–Wasidoni
+
+## Task
+
+Group these 12 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

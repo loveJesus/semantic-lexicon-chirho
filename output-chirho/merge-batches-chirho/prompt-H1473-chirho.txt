@@ -1,0 +1,153 @@
+# Sense Merge Task for H1473
+
+Lemma: H1473 (POS: Prep-b)
+Total occurrences: 43
+Current sense count: 14
+
+This Hebrew/Greek lemma has been over-split into 14 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 89719 (12 occurrences)
+Grammar: Art | N-fs
+  eng: the–exile, the–exiles
+  spa: el–cautiverio, el–exilio
+  hin: बंधुआई–से–आए–लोगों–के, बंधुआई–के, बंदी–किए–गए–लोगों–के
+  arb: الْجَلاءِ, السَّبْي, الْجَلاَءِ
+  kor: 그–유배민, 그-포로의, 그–유배–의
+  swa: wa–waliohamishwa, waliohamishwa, wa–wahamishwa
+
+### Sense 89720 (5 occurrences)
+Grammar: N-fs
+  eng: exile
+  spa: cautiverio, exilio
+  hin: बंधुआई
+  arb: جَلَاءٍ, الْجَلَاءِ
+  kor: 포로의, 유배의
+  swa: vya–uhamisho, wahamishwao, uhamisho
+
+### Sense 89721 (5 occurrences)
+Grammar: Art | N-fs
+  eng: the–exiles
+  spa: el–cautiverio
+  hin: बन्धुओं, बन्धुओं–के
+  arb: السَّبْيِ
+  kor: 그–포로의, 그–포로에게, 그–포로야
+  swa: wafungwa
+
+### Sense 89722 (5 occurrences)
+Grammar: Prep-b, Art | N-fs
+  eng: into–exile, and–remainder–of
+  spa: al–cautiverio, al–exilio
+  hin: में–बंधुआई, में–बंधुवाई
+  arb: فِي–الْجَلَاءِ, إِلَى–السَّبْيِ،, إلى–السَّبْيِ
+  kor: 포로로, 유배에–, 그–포로–안에서
+  swa: utumwani, uhamishoni, katika–uhamisho
+
+### Sense 89723 (3 occurrences)
+Grammar: Art | N-fs
+  eng: the–exile
+  spa: el–exilio
+  hin: ते–बंधुआई, के–बंधुआई
+  arb: الـ–جَلاءِ
+  kor: 그–포로들, 그–포로들의
+  swa: wahamishwa, uhamisho
+
+### Sense 89724 (3 occurrences)
+Grammar: Art | N-fs
+  eng: the–exile
+  spa: el–cautiverio, el–exilio
+  hin: बंधुआई
+  arb: الْجَلَاءِ
+  kor: 그–포로들에게, 그–포로
+  swa: wafungwa
+
+### Sense 89725 (3 occurrences)
+Grammar: V-Qal-Prtcpl-ms,N-fs
+  eng: exile
+  spa: cautivos
+  hin: गोलाह, गोलेह
+  arb: جَلَاءً
+  kor: 포로로
+  swa: uhamisho
+
+### Sense 89726 (1 occurrences)
+Grammar: Prep-b, Art | N-fs
+  eng: into–the–exile
+  spa: al–cautiverio
+  hin: में–बन्दिवाई
+  arb: إِلَى–السَّبْيِ
+  kor: 그–포로에
+  swa: uhamishoni
+
+### Sense 89727 (1 occurrences)
+Grammar: Prep-m, Art | N-fs
+  eng: from–the–exile
+  spa: del–cautiverio
+  hin: बंधुआई–से
+  arb: مِنَ–السَّبْي
+  kor: 에서–그–유배
+  swa: kutoka–utumwani
+
+### Sense 89728 (1 occurrences)
+Grammar: Art | N-fs
+  eng: the–exiles
+  spa: los–de–la–cautividad
+  hin: बंधुआई
+  arb: الْجَلَاءِ
+  kor: 그–포로
+  swa: waliokimbilia–uhamishoni
+
+### Sense 89729 (1 occurrences)
+Grammar: Prep-b, Art | N-fs
+  eng: into-the-exile
+  spa: en–el–exilio
+  arb: إِلَى–ٱلسَّبْيِ
+  kor: 포로로–
+  swa: utumwani
+
+### Sense 89730 (1 occurrences)
+Grammar: Conj-w, Prep-b, Art | N-fs
+  eng: and–into–exile
+  spa: y–al–cautiverio
+  hin: और–में–बंधुआई
+  arb: وَإِلَى–الْجَلَاءِ
+  kor: 그리고–유배에–
+  swa: na–utumwani
+
+### Sense 89731 (1 occurrences)
+Grammar: Prep-l, Art | N-fs
+  eng: into–exile
+  spa: al–exilio
+  hin: बंधन–में
+  arb: لِلْجَلَاءِ
+  kor: 에게–유배
+  swa: kwa–uhamisho
+
+### Sense 89732 (1 occurrences)
+Grammar: Art | N-fs
+  eng: the–exile
+  spa: el–destierro
+  hin: बंधुआई
+  arb: الـ–جَلاء
+  kor: 그–사로잡힘
+  swa: uhamisho
+
+## Task
+
+Group these 14 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

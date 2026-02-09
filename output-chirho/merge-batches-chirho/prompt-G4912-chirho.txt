@@ -1,0 +1,136 @@
+# Sense Merge Task for G4912
+
+Lemma: G4912 (POS: V-PPM/P-AMS)
+Total occurrences: 12
+Current sense count: 12
+
+This Hebrew/Greek lemma has been over-split into 12 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 77134 (1 occurrences)
+Grammar: V-PIM/P-1S
+  eng: I-am-distressed
+  spa: estoy-angustiado
+  hin: दबाया–हुआ–हूँ
+  arb: أَنَا–مُنْحَصِرٌ
+  kor: 불안하다
+  swa: ninasongwa
+
+### Sense 77135 (1 occurrences)
+Grammar: V-IIM/P-3S
+  eng: was-occupied
+  spa: estaba-constreñido
+  hin: लगा–रहा
+  arb: كَانَ–مُنْحَصِرًا
+  kor: 사로잡혔다
+  swa: alikuwa–akishinikizwa
+
+### Sense 77136 (1 occurrences)
+Grammar: V-FIA-3P
+  eng: will-press-upon
+  spa: te-apretarán
+  hin: दबाएंगे
+  arb: يَضغَطونَ–عَلَي–كِ
+  kor: 조일–것이다
+  swa: watakusonga
+
+### Sense 77137 (1 occurrences)
+Grammar: V-AIA-3P
+  eng: they–held
+  spa: taparon
+  hin: बंद–किए
+  arb: سَدُّوا
+  kor: 막았다
+  swa: walifunika
+
+### Sense 77138 (1 occurrences)
+Grammar: V-PPM/P-AMP
+  eng: being–held
+  spa: afligidos
+  hin: ग्रस्तों–को
+  arb: مَقْبُوضِينَ–عَلَيْهِمْ
+  kor: 잡힌–자들
+  swa: walioshikwa–na
+
+### Sense 77139 (1 occurrences)
+Grammar: V-IIM/P-3P
+  eng: they-were-gripped
+  spa: eran–apresados
+  hin: घिरे–थे
+  arb: أُمسِكوا
+  kor: 사로잡혀–있었다
+  swa: walishikwa
+
+### Sense 77140 (1 occurrences)
+Grammar: V-PPM/P-AMS
+  eng: being–afflicted
+  spa: siendo-afligido
+  hin: पीड़ित,
+  arb: مُصابًا
+  kor: 잡혀서
+  swa: akishikwa
+
+### Sense 77141 (1 occurrences)
+Grammar: V-PIA-3P
+  eng: press-upon
+  spa: te–aprietan
+  hin: घेरती–है
+  arb: يُحيطونَ
+  kor: 누르고–있다
+  swa: wanakusonga
+
+### Sense 77142 (1 occurrences)
+Grammar: V-PPM/P-NFS
+  eng: being–afflicted
+  spa: siendo–afligida
+  hin: जकड़ी–हुई
+  arb: مُصابَةً
+  kor: 사로잡힌
+  swa: ameshikwa
+
+### Sense 77143 (1 occurrences)
+Grammar: V-PPA-NMP
+  eng: holding
+  spa: sosteniendo
+  hin: पकड़े–हुए–थे
+  arb: مُمْسِكونَ
+  kor: 잡고–있는
+  swa: waliomshika
+
+### Sense 77144 (1 occurrences)
+Grammar: V-PIA-3S
+  eng: compels
+  spa: constríñe
+  hin: विवश–करता–है
+  arb: تَحصُرُنا
+  kor: 움켜잡는다
+  swa: unatubana
+
+### Sense 77145 (1 occurrences)
+Grammar: V-PIM/P-1S
+  eng: I–am–pressed
+  spa: soy–constreñido
+  hin: मैन–दबव–मेइन–हुन
+  arb: مُنْحَصِرٌ
+  kor: 눌리노라
+  swa: ninasongwa
+
+## Task
+
+Group these 12 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

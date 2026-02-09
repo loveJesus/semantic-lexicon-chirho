@@ -1,0 +1,127 @@
+# Sense Merge Task for G1127
+
+Lemma: G1127 (POS: V-AIA-3S)
+Total occurrences: 23
+Current sense count: 11
+
+This Hebrew/Greek lemma has been over-split into 11 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 64882 (10 occurrences)
+Grammar: V-PMA-2P
+  eng: watch, Watch, be-watchful
+  spa: velad, Velad
+  hin: जागते–रहो
+  arb: اسْهَرُوا, اِسْهَرُوا, اسهَروا
+  kor: 깨어–있으라, 깨어-있으라
+  swa: kesheni, Kesheni, basi
+
+### Sense 64883 (2 occurrences)
+Grammar: V-PSA-1P
+  eng: we–watch, let–us–watch
+  spa: velemos
+  hin: जअगेन
+  arb: نَسْهَرَ, سَهِرْنا
+  kor: 깨어–있든, 깨어–있고
+  swa: tukesha
+
+### Sense 64884 (2 occurrences)
+Grammar: V-AIA-3S
+  eng: would–have–watched, he-would-have-stayed-awake
+  spa: habría–velado, habría-velado
+  hin: जागता
+  arb: لَسَهِرَ
+  kor: 깨어–있었을–것이다, 깨어–있었으리라
+  swa: angalikesha, ambaye
+
+### Sense 64885 (2 occurrences)
+Grammar: V-ANA
+  eng: to–watch, to-watch
+  spa: velar
+  hin: जागने, जागते–रहने–को
+  arb: أَنْ–تَسْهَرُوا, أَنْ–تَسْهَرَ
+  kor: 깨어–있기–를, 깨어-있기를
+  swa: kukesha
+
+### Sense 64886 (1 occurrences)
+Grammar: V-ASA-2S
+  eng: you–watch
+  spa: velas
+  hin: तू–जागेगा,
+  arb: تَسْهَرْ
+  kor: 깨어있다면
+  swa: hutokesha,
+
+### Sense 64887 (1 occurrences)
+Grammar: V-PPA-NMS
+  eng: one-watching
+  spa: que–vela
+  hin: जागता–रहनेवाला
+  arb: ساهِرِ
+  kor: 깨어–있는–자여
+  swa: akeshaye,
+
+### Sense 64888 (1 occurrences)
+Grammar: V-PPA-NMS
+  eng: watchful
+  spa: vigilante
+  hin: जागता–हुआ,
+  arb: ساهِراً
+  kor: 깨어있는
+  swa: kesha,
+
+### Sense 64889 (1 occurrences)
+Grammar: V-PPA-NMP
+  eng: being–watchful
+  spa: velando
+  hin: जगते-हुए
+  arb: ساهِرينَ
+  kor: 깨어–있으면서
+  swa: mkikesha
+
+### Sense 64890 (1 occurrences)
+Grammar: V-AMA-2P
+  eng: be–watchful
+  spa: velad
+  hin: जागते–रहो
+  arb: اسهَروا
+  kor: 깨어–있으라
+  swa: kesheni
+
+### Sense 64891 (1 occurrences)
+Grammar: V-PPA-AMP
+  eng: watching
+  spa: velando
+  hin: जागते–हुए
+  arb: سَاهِرِينَ
+  kor: 깨어–있는
+  swa: wakikesha
+
+### Sense 64892 (1 occurrences)
+Grammar: V-PSA-3S
+  eng: he-should-watch
+  spa: vele
+  hin: जागता–रहे
+  arb: يَسْهَرَ
+  kor: 깨어-있으라
+  swa: akesha
+
+## Task
+
+Group these 11 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

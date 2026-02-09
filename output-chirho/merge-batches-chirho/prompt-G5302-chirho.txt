@@ -1,0 +1,163 @@
+# Sense Merge Task for G5302
+
+Lemma: G5302 (POS: V-PIM/P-3P)
+Total occurrences: 16
+Current sense count: 15
+
+This Hebrew/Greek lemma has been over-split into 15 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 78290 (2 occurrences)
+Grammar: V-RNA,V-AIA-1S
+  eng: to-have-fallen-short, I-fell-short
+  spa: haber–sido–inferior, fui–inferior
+  hin: मैं–घटा, घटा–होना
+  arb: نَقَصْتُ
+  kor: 모자라지–않았다
+  swa: nilipungukiwa, kupungukiwa
+
+### Sense 78291 (1 occurrences)
+Grammar: V-PNM/P
+  eng: to–lack
+  spa: carezcáis
+  hin: घटी–हो
+  arb: تَنْقُصونَ
+  kor: 부족하지–않다
+  swa: hamkupungukiwa
+
+### Sense 78292 (1 occurrences)
+Grammar: V-PPM/P-DNS
+  eng: lacking
+  spa: tiene–falta
+  hin: घटी–हुई
+  arb: الناقِصِ
+  kor: 부족한–것에게
+  swa: chenye–upungufu
+
+### Sense 78293 (1 occurrences)
+Grammar: V-RNA
+  eng: to–have–fallen–short
+  spa: haber–quedado–atrás
+  hin: चूका–हो
+  arb: قَدْ–قَصَّرَ
+  kor: 모자라게
+  swa: ameshindwa
+
+### Sense 78294 (1 occurrences)
+Grammar: V-PIM/P-1P
+  eng: we–lack
+  spa: carecemos
+  hin: घटते–हैं
+  arb: نَنْقُصُ
+  kor: 부족하지–않다
+  swa: hatupungukiwi.
+
+### Sense 78295 (1 occurrences)
+Grammar: V-PIA-1S
+  eng: do-I-lack
+  spa: me–falta
+  hin: कम–है
+  arb: يَنْقُصُنِي
+  kor: 부족합니까
+  swa: ninakosa
+
+### Sense 78296 (1 occurrences)
+Grammar: V-PPM/P-NMP
+  eng: lacking
+  spa: necesitados
+  hin: तंग–भोगते–हुए,
+  arb: مُعْوَزِينَ
+  kor: 모자라고
+  swa: wakihitaji
+
+### Sense 78297 (1 occurrences)
+Grammar: V-PPA-NMS
+  eng: falling-short
+  spa: quedando-atrás
+  hin: पीछे–रह–जाए
+  arb: مُقَصِّرًا
+  kor: 이르지–못하는–자가
+  swa: anayepungukiwa
+
+### Sense 78298 (1 occurrences)
+Grammar: V-PNM/P
+  eng: to-be-in-need
+  spa: a–padecer-necesidad
+  hin: तंगी–में–रहने।
+  arb: يَحْتَاجُ
+  kor: 궁핸하기를
+  swa: kuhitaji
+
+### Sense 78299 (1 occurrences)
+Grammar: V-PIA-3S
+  eng: lacks
+  spa: falta
+  hin: कमी–है
+  arb: يَنْقُصُكَ
+  kor: 부족하다
+  swa: unakukosa
+
+### Sense 78300 (1 occurrences)
+Grammar: V-PNM/P
+  eng: to–lack
+  spa: tener–necesidad
+  hin: घतन.
+  arb: أَنْ–أَنْقُصَ
+  kor: 부족하기.
+  swa: kupungukiwa
+
+### Sense 78301 (1 occurrences)
+Grammar: V-APA-GMS
+  eng: having-run-out
+  spa: habiendo-faltado
+  hin: कम–होने–पर
+  arb: لَمَّا–نَفِدَ
+  kor: 떨어졌을–때
+  swa: ulipokwisha
+
+### Sense 78302 (1 occurrences)
+Grammar: V-AIA-2P
+  eng: did-you-lack
+  spa: tuvisteis-falta
+  hin: घटी–हुई
+  arb: احْتَجْتُمْ
+  kor: 부족했느냐
+  swa: mlipungukiwa
+
+### Sense 78303 (1 occurrences)
+Grammar: V-APP-NMS
+  eng: having-need
+  spa: habiendo–tenido–necesidad
+  hin: घटी–में–होकर
+  arb: مُحْتاجاً
+  kor: 부족했으나
+  swa: nikihitaji,
+
+### Sense 78304 (1 occurrences)
+Grammar: V-PIM/P-3P
+  eng: fall–short
+  spa: están–destituidos
+  hin: रहित–हैं
+  arb: يَفتَقِرونَ
+  kor: 모자라느니라
+  swa: wanakosa
+
+## Task
+
+Group these 15 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

@@ -1,0 +1,46 @@
+# Batch Sense Merge Task (2 lemmas, each with 7 senses)
+
+You are a biblical lexicographer. For each lemma below, group the over-split sense clusters into REAL lexicographic senses.
+
+Rules:
+- Different grammatical inflections of the same meaning = SAME sense (merge them)
+- Different verb stems (Qal vs Hifil, active vs passive) = often DIFFERENT senses
+- Literal vs metaphorical uses = DIFFERENT senses
+- Every sense ID must appear in exactly one group
+
+For each lemma, the senses are listed with their IDs (S followed by number), occurrence count, grammar tags, and top glosses across languages.
+
+## H8342 (POS: N-msc, "† <strong><span dir="rtl"><span class="lexicon-hebrew" dir="rtl">שָׂשׂוֹן</span>", 22 occ, 7 senses)
+
+- **S144228** (11x) [N-ms] | eng: joy, gladness | spa: gozo | hin: आनन्द–की, आनंद | arb: فَرَحٍ, فَرَحٌ | kor: 기쁨의, 즐거움의 | swa: furaha, ya–furaha
+- **S144229** (2x) [Conj-w | N-ms] | eng: and–joy | spa: y–gozo | hin: और–खुशी | arb: وَ–سُرُورٌ | kor: 그리고–즐거움이, 그리고–즐거움과 | swa: na–shangwe
+- **S144230** (2x) [N-msc] | eng: the–joy–of, joy–of | spa: gozo–de, gozo-de | hin: हर्ष | arb: فَرَحُ, فَرَحَ | kor: 기쁨–이로다, 기쁨–을 | swa: furaha
+- **S144231** (2x) [Prep-b | N-ms] | eng: with–joy | spa: con–gozo | hin: आनन्द–से, आनन्द–के–साथ | arb: بِ–فَرَح, بِـ–فَرَحٍ | kor: 기쁨–으로 | swa: kwa–furaha
+- **S144232** (2x) [N-ms] | eng: joy, gladness | spa: regocijo, alegría | hin: खुशी | arb: فَرَحٌ, ابْتِهَاجٌ | kor: 환희와, 기쁨과 | swa: shangwe
+- **S144233** (2x) [Prep-l | N-ms] | eng: for–joy | spa: para–gozo | hin: के–लिए–हर्ष, आनन्द–को | arb: لِلْفَرَحِ, بَهْجَةً | kor: 기쁨이, 기쁨과 | swa: kwa–furaha, furaha
+- **S144235** (1x) [Prep-l | N-ms] | eng: to–joy | spa: en–gozo | hin: में–आनन्द | arb: إِلَى–فَرَحٍ | kor: 기뼐으로 | swa: kuwa–furaha
+
+## H8585a (POS: N-fs, "† I. <strong><span dir="rtl"><span class="lexicon-hebrew" dir="rtl">תְּעָלָה</sp", 9 occ, 7 senses)
+
+- **S145538** (2x) [N-fs,Art | N-fs] | eng: trench, the–trench | spa: zanja, la–zanja | hin: नाली–ה, नाली | arb: قَناةً, ال–قَناةَ | kor: 도랑, 그–도랑을 | swa: mfereji
+- **S145541** (2x) [Prep-b | N-fsc] | eng: by–the–conduit, at–conduit-of | spa: en–el–canal, en–canal–de | hin: में–नाले, नाली–पर | arb: بِقَنَاةِ, بِـ–قَنَاةِ | kor: 에–수로에, 수로에 | swa: kwenye–mfereji
+- **S145536** (1x) [N-fs] | eng: a–channel | spa: canal | hin: नाली | arb: قَنَاةً | kor: 수로를 | swa: mfereji
+- **S145537** (1x) [N-fsc] | eng: conduit–of | spa: canal-de | hin: नाली | arb: قَنَاةِ | kor: 수로의 | swa: wa-mfereji
+- **S145539** (1x) [Art | N-fs] | eng: the–conduit | spa: el–canal | hin: ह–नाला | arb: القَنَاةَ | kor: 수로와 | swa: mfereji
+- **S145542** (1x) [N-fpc | 3fs] | eng: its-channels | spa: sus–canales | hin: नालियों–अपनी | arb: قَنَوَاتِهَا | kor: 도랑들을–그것의 | swa: mifereji–yake
+- **S145543** (1x) [Prep-b, Art | N-fs] | eng: in–the-trench | spa: en–la–zanja | hin: में–नाली–ה | arb: في–ال–قَناةِ | kor: 그–도랑에 | swa: mferejini
+
+## Response Format
+
+Return a JSON object with one key per lemma ID. Each value is an array of sense groups:
+
+```json
+{
+  "H8342": [
+    {"labelChirho": "short label", "descriptionChirho": "one sentence", "senseIdsChirho": [id1, id2, ...]}
+  ],
+  "H8585a": [...]
+}
+```
+
+IMPORTANT: Return ONLY the JSON object. Every sense ID from every lemma must appear exactly once. Use the numeric sense IDs (without the S prefix).

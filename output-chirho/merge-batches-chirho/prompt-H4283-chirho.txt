@@ -1,0 +1,118 @@
+# Sense Merge Task for H4283
+
+Lemma: H4283 (POS: Prep-m | N-fsc)
+Total occurrences: 32
+Current sense count: 10
+
+This Hebrew/Greek lemma has been over-split into 10 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 110966 (16 occurrences)
+Grammar: Prep-m | N-fs
+  eng: on–the–next-day, on–the–next–day, on-the-next-day
+  spa: al–día–siguiente
+  hin: अगले–दिन, दूसरे–दिन, दूसरे–दिन–से
+  arb: مِنَ–الْغَدِ, مِن–الغَدِ, فِي–الـ–غَدِ
+  kor: 다음날에, 그–다음날, 다음–날에
+  swa: kesho–yake, siku–iliyofuata, kesho-yake
+
+### Sense 110967 (3 occurrences)
+Grammar: Conj-w, Prep-m | N-fs
+  eng: and–the–next–day, and–on–the–next–day, and–on–the–morrow
+  spa: y–el–siguiente, y–desde–el–día–siguiente, y–al–día–siguiente
+  hin: और–दूसरे–दिन, और–अगले–दिन
+  arb: وَ–مِنَ–ال–غَدِ, وَ–مِنَ–الغَدِ, وَفي–الغَدِ
+  kor: 그리고–에서–다음날, 그리고–다음–날에, 그리고–다음–날도
+  swa: na–kesho–yake, na–kesho
+
+### Sense 110968 (3 occurrences)
+Grammar: Prep-m | N-fsc
+  eng: from–the-morrow-of
+  spa: el–día–siguiente–de, desde–el–día–siguiente–de, al–día–siguiente–de
+  hin: दूसरे–दिन–से
+  arb: مِنْ–غَدِ
+  kor: 에서–다음날
+  swa: kesho–ya–, kutoka–kesho–ya–
+
+### Sense 110969 (2 occurrences)
+Grammar: Prep-m | N-fs
+  eng: on–the–morrow, from–the–morrow
+  spa: al–día–siguiente
+  hin: से–दूसरे–दिन, दूसरे–दिन
+  arb: مِن–الغَد, مِنَ–الْغَدِ
+  kor: 에서–다음날, 에서–다음–날에서
+  swa: kesho–yake
+
+### Sense 110970 (2 occurrences)
+Grammar: Prep-l | N-fsc,Prep-l, Art | N-fs
+  eng: on–the–next–day–of, on–the–next–day
+  spa: al–siguiente–día, al–dia–siguiente
+  hin: –के–कल, अगले–दिन
+  arb: فِي–الْغَدِ
+  kor: 에–다음–날
+  swa: siku–iliyofuata, kesho–yake
+
+### Sense 110971 (2 occurrences)
+Grammar: Prep-m | N-fs,Prep-m | N-fsc
+  eng: on–the–morrow
+  spa: al–día–siguiente–de, al–día–siguiente
+  hin: अगले-दिन
+  arb: مِنْ–غَدِ, مِنْ–الغَدِ
+  kor: 다음–날에, 그–다음날
+  swa: kesho–yake
+
+### Sense 110972 (1 occurrences)
+Grammar: Prep-m | N-fsc
+  eng: on-the-next-day-of
+  spa: al–día–siguiente–de
+  hin: दूसरे–दिन
+  arb: مِن–غَدِ
+  kor: 다음–날에
+  swa: siku–iliyofuata
+
+### Sense 110973 (1 occurrences)
+Grammar: Art | N-fs
+  eng: the–next-day
+  spa: el–siguiente
+  hin: दूसरे–के
+  arb: الْغَدِ
+  kor: 그–다음날–의
+  swa: ya–kesho
+
+### Sense 110974 (1 occurrences)
+Grammar: Prep-l | N-fsc | 3mp
+  eng: of–their–next-day
+  spa: del–día–siguiente
+  hin: अग्ले-दिन-कि
+  arb: لِ–غَدِهِم
+  kor: 에게–그들의–다음날
+  swa: kesho–yake
+
+### Sense 110975 (1 occurrences)
+Grammar: Prep-m | N-fsc
+  eng: on–morrow-of
+  spa: desde–día–siguiente–de
+  hin: के–दूसरे–दिन
+  arb: مِنْ–غَدِ
+  kor: 다음–날–에
+  swa: siku–ya–pili–baada–ya
+
+## Task
+
+Group these 10 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

@@ -1,0 +1,118 @@
+# Sense Merge Task for H6723
+
+Lemma: H6723 (POS: Adj-fs)
+Total occurrences: 16
+Current sense count: 10
+
+This Hebrew/Greek lemma has been over-split into 10 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 129985 (4 occurrences)
+Grammar: Adj-fs,N-fs
+  eng: dry, dryness, drought
+  spa: sequedad
+  hin: सूखी, सूखा
+  arb: يَابِسَةً, قَاحِلَةٍ, قاحِلَةٍ
+  kor: 메마른, 황무지, 마른
+  swa: kame, ukame, mkavu
+
+### Sense 129986 (3 occurrences)
+Grammar: Adj-fs
+  eng: land, dryness, drought
+  spa: seca, sequedad
+  hin: सूखी, सूखा
+  arb: يَابِسَةٍ, قَاحِلَةٍ, القَاحِلَةَ
+  kor: 마른
+  swa: kavu
+
+### Sense 129987 (2 occurrences)
+Grammar: Adj-fs
+  eng: parched, dryness
+  spa: sequía, seca
+  hin: सूखी
+  arb: يابِسَةً, قاحِلَةٍ
+  kor: 메마른, 마른
+  swa: kavu
+
+### Sense 129988 (1 occurrences)
+Grammar: Prep-b, Art | N-fs
+  eng: in–the–dry–land
+  spa: en–sequedad
+  hin: सूखे–स्थान–में
+  arb: فِي–الْقَفْرِ
+  kor: 마른–땅–에서
+  swa: jangwani
+
+### Sense 129989 (1 occurrences)
+Grammar: Conj-w | N-fs
+  eng: wilderness
+  spa: y–la–tierra–seca
+  hin: और–सूखी–भूमि
+  arb: وَ–أَرْضٌ–قَاحِلَةٌ
+  kor: 그리고–마른–땅이
+  swa: na–nchi–kame
+
+### Sense 129990 (1 occurrences)
+Grammar: N-fs
+  eng: dry-land
+  spa: lo–árido
+  hin: सूखे–स्थान–को
+  arb: القَفرَ
+  kor: 메마른–땅을
+  swa: nchi–kavu
+
+### Sense 129991 (1 occurrences)
+Grammar: N-fs
+  eng: a–dry–land
+  spa: sequedad
+  hin: सूखा
+  arb: قَاحِلَةٌ
+  kor: 마른–땅으로
+  swa: nchi–kavu
+
+### Sense 129992 (1 occurrences)
+Grammar: N-fs
+  eng: drought
+  spa: Sequía
+  hin: सूखा
+  arb: جَفَافٌ
+  kor: 가뭄과
+  swa: Ukame
+
+### Sense 129993 (1 occurrences)
+Grammar: Prep-b, Art | N-fp
+  eng: in–the–dry–places
+  spa: en–sequedades
+  hin: सूखे–स्थानों–में
+  arb: في–القِفار
+  kor: 마른–곳들–에서
+  swa: katika–jangwa
+
+### Sense 129994 (1 occurrences)
+Grammar: Adj-fs
+  eng: of–drought
+  spa: sequedad
+  hin: सूखे–की
+  arb: جَافَّةٍ
+  kor: 건조한
+  swa: ukame
+
+## Task
+
+Group these 10 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

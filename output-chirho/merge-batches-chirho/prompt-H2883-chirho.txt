@@ -1,0 +1,116 @@
+# Sense Merge Task for H2883
+
+Lemma: H2883 (POS: V-Pual-Perf-3cp)
+Total occurrences: 10
+Current sense count: 10
+
+This Hebrew/Greek lemma has been over-split into 10 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 99890 (1 occurrences)
+Grammar: V-Qal-Imperf.Cohort-1cs
+  eng: me–sink
+  spa: me–hunda
+  arb: أغْرَقَنّ
+  kor: 빠지게–하소서
+  swa: nisizame
+
+### Sense 99891 (1 occurrences)
+Grammar: V-Hofal-Perf-3cp
+  eng: were–settled
+  spa: fueran–hundidos
+  hin: डूबने–के
+  arb: غُرِسَتْ
+  kor: 가라앉았다
+  swa: yalikuwa–yamewekwa
+
+### Sense 99892 (1 occurrences)
+Grammar: Conj-w | V-Qal-ConsecImperf-3m
+  eng: and–sank
+  spa: y–se–hundió
+  hin: और–धँसा
+  arb: فَ–غَرِقَ
+  kor: 그리고–빠졌다
+  swa: na–akazama
+
+### Sense 99893 (1 occurrences)
+Grammar: V-Hofal-Perf-3cp
+  eng: sank
+  spa: hundieron
+  hin: उन्होंने–डुबोया
+  arb: غَرِقَتْ
+  kor: 빠졌다
+  swa: walizamisha
+
+### Sense 99894 (1 occurrences)
+Grammar: V-Hofal-Perf-3cp
+  eng: were–sunk
+  spa: fueron–hundidas
+  hin: गाड़ी–गईं
+  arb: غُرِسَتْ؟
+  kor: 묻혔느냐
+  swa: ulizamishwa
+
+### Sense 99895 (1 occurrences)
+Grammar: V-Qal-Perf-1cs
+  eng: I–have–sunk
+  spa: Me–hundo
+  arb: غَرِقْتُ–
+  kor: 빠졌도다
+  swa: Nimezama
+
+### Sense 99896 (1 occurrences)
+Grammar: V-Pual-Perf-3cp
+  eng: were-drowned
+  spa: fueron–hundidos
+  hin: डूब–गए
+  arb: غَرِقُوا
+  kor: 잠겼다
+  swa: wamezama
+
+### Sense 99897 (1 occurrences)
+Grammar: Conj-w | V-Qal-ConsecImperf-3f
+  eng: and–sank
+  spa: y–se–hundió
+  hin: और-धसअ
+  arb: وَ–غَرَزَ
+  kor: 그리고–박혔다
+  swa: na–ikazama
+
+### Sense 99898 (1 occurrences)
+Grammar: V-Qal-Perf-3cp
+  eng: Have–sunk
+  spa: Se–han–hundido
+  hin: धंस–गए
+  arb: غَاصَتْ
+  kor: 가라앉았네
+  swa: Zimezama
+
+### Sense 99899 (1 occurrences)
+Grammar: V-Qal-Perf-3cp
+  eng: have–sunk
+  spa: Se–hundieron
+  hin: डूब–गईं
+  arb: غَرِقَتْ
+  kor: 빠졌도다
+  swa: Wamezama
+
+## Task
+
+Group these 10 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

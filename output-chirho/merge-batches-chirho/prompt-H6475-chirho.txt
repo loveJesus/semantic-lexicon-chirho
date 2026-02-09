@@ -1,0 +1,136 @@
+# Sense Merge Task for H6475
+
+Lemma: H6475 (POS: V-Qal-Imperf-3ms)
+Total occurrences: 15
+Current sense count: 12
+
+This Hebrew/Greek lemma has been over-split into 12 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 128136 (2 occurrences)
+Grammar: V-Qal-Imp-ms | 1cs
+  eng: rescue–me
+  spa: rescátame, Rescátame
+  hin: निकाल–मुझे
+  arb: افتَدِنِي
+  kor: 구해–내소서–나를
+  swa: niokoe
+
+### Sense 128137 (2 occurrences)
+Grammar: V-Qal-Perf-3cp
+  eng: Opened, Open
+  spa: Han–abierto
+  hin: खोले–हैं, खोलते–हैं
+  arb: فَتَحُوا
+  kor: 열었네
+  swa: Wamefungua
+
+### Sense 128138 (2 occurrences)
+Grammar: V-Qal-Perf-3fs
+  eng: opened
+  spa: abrió
+  hin: खोली, खोला
+  arb: فَتَحَتْ, فَتَحَتِ
+  kor: 열었다, 벌렸느니라
+  swa: ilifunguka, ilifungua
+
+### Sense 128139 (1 occurrences)
+Grammar: Conj-w | V-Qal-Prtcpl-ms
+  eng: and–opening
+  spa: o-abriera
+  hin: या–खोलने–वाला
+  arb: وَ–فَاتِحٌ
+  kor: 벌리는
+  swa: au-aliyefungua
+
+### Sense 128140 (1 occurrences)
+Grammar: V-Qal-Perf-3cp
+  eng: they–open
+  spa: abrieron
+  hin: फाड़ते–हैं
+  arb: فَتَحُوا
+  kor: 벌렸도다
+  swa: Wamefumbua
+
+### Sense 128141 (1 occurrences)
+Grammar: V-Qal-Imp-ms
+  eng: open
+  spa: abre
+  hin: खोल
+  arb: اِفْتَحْ
+  kor: 열어라
+  swa: fungua
+
+### Sense 128142 (1 occurrences)
+Grammar: Conj-w | V-Qal-ConjPerf-3fs
+  eng: and–opens
+  spa: y–abre
+  hin: और–खोलेगी
+  arb: وَ–فَتَحَتِ
+  kor: 그리고–볌린다
+  swa: na–itafunguka
+
+### Sense 128143 (1 occurrences)
+Grammar: V-Qal-Perf-2ms
+  eng: you-have-opened
+  spa: abriste
+  hin: खोला–तूने
+  arb: فَتَحتَ
+  kor: 열었으면
+  swa: umefungua
+
+### Sense 128144 (1 occurrences)
+Grammar: V-Qal-Imperf-3ms
+  eng: opens
+  spa: abre–
+  hin: खोलता–है
+  arb: يَفتَحُ
+  kor: 벌린다
+  swa: anafungua
+
+### Sense 128145 (1 occurrences)
+Grammar: V-Qal-Perf-1cs
+  eng: have-opened–
+  spa: abrí–
+  hin: खोला
+  arb: فَتَحتُ–
+  kor: 열었다–
+  swa: nimefungua
+
+### Sense 128146 (1 occurrences)
+Grammar: V-Qal-Perf-3cp
+  eng: opened
+  spa: abrieron
+  hin: खोले
+  arb: نَطَقَتْ
+  kor: 열었도다
+  swa: zilisema
+
+### Sense 128147 (1 occurrences)
+Grammar: Art | V-Qal-Prtcpl-ms
+  eng: the–one–rescuing
+  spa: el–que-rescata
+  hin: छुड़ानेवाला
+  arb: المُنْقِذُ
+  kor: 그–구해–내시는–분이시라
+  swa: anayemwokoa
+
+## Task
+
+Group these 12 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

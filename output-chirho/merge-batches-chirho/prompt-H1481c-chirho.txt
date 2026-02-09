@@ -1,0 +1,118 @@
+# Sense Merge Task for H1481c
+
+Lemma: H1481c (POS: V-Qal-Imperf-2mp)
+Total occurrences: 10
+Current sense count: 10
+
+This Hebrew/Greek lemma has been over-split into 10 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 89812 (1 occurrences)
+Grammar: V-Qal-Imperf-2ms
+  eng: you-shall-fear
+  spa: temerás
+  hin: डरेगा
+  arb: تَخَفْ
+  kor: 두려워하라
+  swa: mwogope
+
+### Sense 89813 (1 occurrences)
+Grammar: Conj-w | V-Qal-ConsecImperf-3m
+  eng: and–he–feared
+  spa: y–temió
+  hin: और-दरअ
+  arb: وَ–خَافَ
+  kor: 그리고–두려워했다
+  swa: na–akaogopa
+
+### Sense 89814 (1 occurrences)
+Grammar: V-Qal-Imperf-1cs
+  eng: I–feared
+  spa: temo
+  hin: डरता–मैं
+  arb: أَخَافُهُ
+  kor: 내가–두려웠다
+  swa: niliogopa
+
+### Sense 89815 (1 occurrences)
+Grammar: V-Qal-Imperf-3mp
+  eng: are-afraid
+  spa: temen
+  hin: डरते–हैं
+  arb: يَفْزَعُ
+  kor: 두려워한다
+  swa: wanaogopa
+
+### Sense 89816 (1 occurrences)
+Grammar: Conj-w | V-Qal-Imp-mp
+  eng: and–stand–in–awe–of
+  spa: y–temed
+  hin: और–डरो
+  arb: وَاخْشَوْا
+  kor: 그리고–두려워하라
+  swa: na–mcheni
+
+### Sense 89817 (1 occurrences)
+Grammar: V-Qal-Imperf-2mp
+  eng: you–shall–fear
+  spa: temeréis
+  hin: डरोगे
+  arb: تَخافوا
+  kor: 너희가–두려워하여라
+  swa: kuweza
+
+### Sense 89818 (1 occurrences)
+Grammar: V-Qal-Imperf-3mp
+  eng: let–stand–in–awe
+  spa: tiemblen
+  hin: थर–थराएँ
+  arb: يَرْهَبْ
+  kor: 두려워할지어다
+  swa: wawe-na-hofu
+
+### Sense 89819 (1 occurrences)
+Grammar: V-Qal-Imperf-3mp
+  eng: shall-fear
+  spa: temerán
+  hin: डरेंगे
+  arb: يَخافُ
+  kor: 두려워하리라
+  swa: wataogopa
+
+### Sense 89820 (1 occurrences)
+Grammar: Conj-w | V-Qal-ConsecImperf-3m
+  eng: and–feared
+  spa: Y–temió
+  hin: और–डरा
+  arb: وَ–فَزِعَ
+  kor: 그리고–두려워했다
+  swa: Na–akaogopa
+
+### Sense 89821 (1 occurrences)
+Grammar: V-Qal-Imp-mp
+  eng: be–afraid
+  spa: Temed
+  hin: डरो
+  arb: اِخَافُوا
+  kor: 두려워하라
+  swa: ogopeni
+
+## Task
+
+Group these 10 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

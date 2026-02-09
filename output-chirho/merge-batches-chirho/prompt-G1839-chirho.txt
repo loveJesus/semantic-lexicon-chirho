@@ -1,0 +1,135 @@
+# Sense Merge Task for G1839
+
+Lemma: G1839 (POS: V-RNA)
+Total occurrences: 17
+Current sense count: 12
+
+This Hebrew/Greek lemma has been over-split into 12 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 67396 (4 occurrences)
+Grammar: V-IIM-3P
+  eng: were–amazed, they–were–amazed
+  spa: estaban–asombrados, se–asombraban
+  hin: चकित–थे, चकित–हुए, आश्चर्यचकित–होते–थे
+  arb: فَدَهِشُوا, مُنْدَهِشِينَ, انْدَهَشَ
+  kor: 놀랐다, 우리–가, 그들–이
+  swa: walistaajabu, wakashangaa
+
+### Sense 67397 (2 occurrences)
+Grammar: V-AIA-3P,V-IIM-3P
+  eng: they-were-amazed
+  spa: se–asombraron, se–asombraban
+  hin: चकित–हो–गए
+  arb: دَهِشوا
+  kor: 놀랐다, 놀람을–금치–못했다,
+  swa: walishangazwa
+
+### Sense 67398 (2 occurrences)
+Grammar: V-AIA-3P
+  eng: were–amazed
+  spa: se–asombraron, quedaron–atónitos
+  hin: चकित–हुए
+  arb: دَهِشُوا, دَهِشَ
+  kor: 놀랐다
+  swa: wakashangaa., wakashangaa
+
+### Sense 67399 (1 occurrences)
+Grammar: V-AIA-3P
+  eng: were-amazed
+  spa: se–asombraron
+  hin: चकित–हो–गए
+  arb: ذُهِلا
+  kor: 놀람다
+  swa: walistaajabu
+
+### Sense 67400 (1 occurrences)
+Grammar: V-RNA
+  eng: to–have–amazed
+  spa: haber–asombrado
+  hin: आश्चर्य–में–डाला–था
+  arb: أَدْهَشَهُمْ
+  kor: 놀라게–했다
+  swa: alikuwa–amewashangaza
+
+### Sense 67401 (1 occurrences)
+Grammar: V-AIA-3S
+  eng: he-is-out-of-his-mind
+  spa: Está–fuera–de–sí
+  arb: جُنَّ هُوَ
+  kor: 미쳤다
+  swa: amepoteza–akili.
+
+### Sense 67402 (1 occurrences)
+Grammar: V-AIA-3P
+  eng: amazed
+  spa: asombraron
+  hin: चकित–कर–दिया
+  arb: أَدْهَشَتْ
+  kor: 놀라게–했다
+  swa: walitushangaza
+
+### Sense 67403 (1 occurrences)
+Grammar: V-IIM-3S
+  eng: he–was–amazed
+  spa: se–asombraba
+  hin: आश्चर्यचकित–था
+  arb: انْدَهَشَ
+  kor: 놀랐다
+  swa: alistaajabu
+
+### Sense 67404 (1 occurrences)
+Grammar: V-AIA-1P
+  eng: we–were–out–of–our–mind
+  spa: estamos–fuera–de–sí
+  hin: पागल–हुए–हम
+  arb: جُنِنّا
+  kor: 미쳤다면
+  swa: tulikuwa–wazimu,
+
+### Sense 67405 (1 occurrences)
+Grammar: V-PPA-NMS
+  eng: amazing
+  spa: asombrando
+  hin: आश्चर्य–में–डालता–था
+  arb: يُدْهِشُ
+  kor: 놀라게–하며
+  swa: akiwashangaza
+
+### Sense 67406 (1 occurrences)
+Grammar: V-IIM-3P
+  eng: were–amazed
+  spa: se-asombraban
+  hin: चकित–हो–गये
+  arb: بُهِتُوا
+  kor: 놀람으니
+  swa: wakastaajabu
+
+### Sense 67407 (1 occurrences)
+Grammar: V-PNM
+  eng: to-be-amazed
+  spa: asombrarse
+  hin: चकित–होने
+  arb: دَهِشوا
+  kor: 놀랐다
+  swa: kushangazwa
+
+## Task
+
+Group these 12 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

@@ -1,0 +1,171 @@
+# Sense Merge Task for H1215
+
+Lemma: H1215 (POS: N-msc | 2ms)
+Total occurrences: 23
+Current sense count: 16
+
+This Hebrew/Greek lemma has been over-split into 16 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 87630 (4 occurrences)
+Grammar: N-ms
+  eng: profit, gain
+  spa: ganancia, provecho, hay–ganancia
+  hin: लाभ
+  arb: كَسباً, فَائِدَةٌ, رِبْحٌ
+  kor: 이익이냐, 이익이, 이익–을
+  swa: faida
+
+### Sense 87631 (2 occurrences)
+Grammar: N-msc | 3mp
+  eng: their–gain
+  spa: su–ganancia
+  hin: पीछे, उन–का–लाभ
+  arb: مَكْسَبِهِمْ, كَسْبَهُمْ
+  kor: 이익–그들의–을, 그들의–이득의
+  swa: faida–yao
+
+### Sense 87632 (2 occurrences)
+Grammar: N-ms
+  eng: gain
+  spa: codicia
+  hin: लालच
+  arb: طَمَعًا
+  kor: 탐욕을, 부정한–이익을
+  swa: faida–haramu
+
+### Sense 87633 (2 occurrences)
+Grammar: N-ms
+  eng: unjust–gain
+  spa: ganancia–deshonesta
+  hin: लालच–से, लालच
+  arb: الطَّمَعِ, الرِّشْوَةَ
+  kor: 부정한–이익을
+  swa: rushwa, faida–ya–udhalimu
+
+### Sense 87634 (2 occurrences)
+Grammar: N-ms
+  eng: unjust–gain
+  spa: ganancia–injusta, ganancia
+  hin: लाभ–की, लाभ–का
+  arb: طَمَعًا
+  kor: 이익을, 이익–을
+  swa: tamaa, faida–haramu
+
+### Sense 87635 (1 occurrences)
+Grammar: N-msc | 2fs
+  eng: gain–your
+  spa: tu–ganancia–deshonesta
+  hin: तेरे–लालच
+  arb: كَسْبِكِ
+  kor: 네–부당한–이익을
+  swa: faida–yako
+
+### Sense 87636 (1 occurrences)
+Grammar: N-ms
+  eng: gain
+  spa: ganancia
+  arb: الطَّمَعِ
+  kor: 탐욕
+  swa: tamaa
+
+### Sense 87637 (1 occurrences)
+Grammar: N-msc | 3ms
+  eng: his–gain
+  spa: su–codicia
+  hin: उसके–लालचके
+  arb: جَشَعِهِ
+  kor: 그의–탐욕의
+  swa: wa–uchoyo–wake
+
+### Sense 87638 (1 occurrences)
+Grammar: N-msc | 2fs
+  eng: your–unjust–gain
+  spa: tu–codicia
+  hin: तेरे–लोभ–की
+  arb: طَمَعِكِ
+  kor: 탐욕의–너의
+  swa: cha–tamaa–yako
+
+### Sense 87639 (1 occurrences)
+Grammar: N-msc | 2ms
+  eng: gain–your
+  spa: ganancia–tuya
+  hin: लालच–अपनी
+  arb: مَكْسِبِكَ
+  kor: 너의–탐욕에
+  swa: faida–yako–isiyo–halali
+
+### Sense 87640 (1 occurrences)
+Grammar: Art | N-ms
+  eng: the–gain
+  spa: la–ganancia
+  hin: लालच–के
+  arb: الـ–مَكْسَبِ
+  kor: 그–이득
+  swa: faida
+
+### Sense 87641 (1 occurrences)
+Grammar: N-ms
+  eng: profit
+  spa: provecho
+  hin: लाभ–है
+  arb: الفَائِدَةُ
+  kor: 이득–이뇨
+  swa: faida
+
+### Sense 87642 (1 occurrences)
+Grammar: N-ms
+  eng: gain
+  spa: ganar
+  hin: पाने
+  arb: رِبْحٍ
+  kor: 부당한–이익을
+  swa: faida
+
+### Sense 87643 (1 occurrences)
+Grammar: N-msc
+  eng: –plunder-of
+  spa: ganancia–de
+  hin: लूट
+  arb: غَنيمَةَ
+  kor: 이익
+  swa: faida–ya
+
+### Sense 87644 (1 occurrences)
+Grammar: Prep-l | N-msc | 3ms
+  eng: to–his–gain
+  spa: a–su–ganancia
+  hin: अपने–लाभको
+  arb: لِ–رِبْحِهِ
+  kor: 자기–이익으로–
+  swa: kwa–faida–yake
+
+### Sense 87645 (1 occurrences)
+Grammar: Prep-b | N-msc
+  eng: the–gain
+  spa: en–ganancia–de
+  hin: –के–लाभ–में
+  arb: رِبْحَ
+  kor: 에–이득을
+  swa: faida
+
+## Task
+
+Group these 16 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

@@ -1,0 +1,162 @@
+# Sense Merge Task for H5828
+
+Lemma: H5828 (POS: Prep-b | N-msc | 2ms)
+Total occurrences: 22
+Current sense count: 15
+
+This Hebrew/Greek lemma has been over-split into 15 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 123453 (3 occurrences)
+Grammar: N-msc | 3mp
+  eng: their–help
+  spa: su–ayuda
+  hin: उनकी–सहायता
+  arb: عَونُهُم
+  kor: 그들–의–도움–이시요
+  swa: msaada–wao
+
+### Sense 123454 (3 occurrences)
+Grammar: N-msc | 1cs
+  eng: my–help
+  spa: socorro–mío, mi–ayuda, Socorro–mío
+  hin: मेरी–सहायता
+  arb: عَوني, عَوْني
+  kor: 나–의–도움–이시도다, 나–의–도움–이, 나–의–도움–은
+  swa: msaada–wangu, msaada-wangu, Msaada–wangu
+
+### Sense 123455 (2 occurrences)
+Grammar: N-msc | 1cp
+  eng: our–help
+  spa: nuestra–ayuda, Socorro–nuestro
+  hin: हमारी–सहायता, सहायक–हमारा
+  arb: عَوْنُنَا, عَونُنا
+  kor: 우리–의–도움–은, 우리–의–도움
+  swa: msaada-wetu, Msaada–wetu
+
+### Sense 123456 (2 occurrences)
+Grammar: N-ms
+  eng: helper
+  spa: ayuda
+  hin: सहायक
+  arb: مُعِينًا
+  kor: 도우는–자
+  swa: msaidizi
+
+### Sense 123457 (2 occurrences)
+Grammar: N-ms
+  eng: help, a-help
+  spa: ayuda
+  hin: सहायता
+  arb: مَعُونَةً, عَوْنًا
+  kor: 도움을, 도움–을
+  swa: msaada
+
+### Sense 123458 (1 occurrences)
+Grammar: Conj-w | N-ms
+  eng: and–helper
+  spa: y–ayuda
+  hin: और–सहायता
+  arb: وَعَوْنًا
+  kor: 그리고–도우시는–자가
+  swa: na–msaada
+
+### Sense 123459 (1 occurrences)
+Grammar: N-msc | 3ms
+  eng: (help-of-him)
+  spa: (ayuda–de–él)
+  hin: (उसकी–सहायता)
+  arb: عَوْنَهُ
+  kor: (그의–도움을)
+  swa: (wasaidizi)
+
+### Sense 123460 (1 occurrences)
+Grammar: Prep-b | N-msc | 2ms
+  eng: in–your–help
+  spa: en–tu–ayuda
+  hin: तेरी–सहायता–में
+  arb: لِعَوْنِكَ
+  kor: 네–도움에
+  swa: kwa–msaada–wako
+
+### Sense 123461 (1 occurrences)
+Grammar: Prep-b | N-msc | 3ms
+  eng: in–his–help
+  spa: su–ayuda
+  hin: उसकी–सहायता–में
+  arb: بِـ–عَوْنِهِ
+  kor: 에–그의–도움으로
+  swa: msaada–wake
+
+### Sense 123462 (1 occurrences)
+Grammar: Prep-l | N-ms
+  eng: for–profit
+  spa: para–ayuda
+  hin: के–लिए–सहायता
+  arb: لِلْعَوْنِ
+  kor: 에–도움이
+  swa: kwa–msaada
+
+### Sense 123463 (1 occurrences)
+Grammar: N-msc | 3ms
+  eng: [help-of-him]
+  spa: [ayuda]
+  hin: [सहायता]
+  kor: [도움을]
+  swa: [wasaidizi]
+
+### Sense 123464 (1 occurrences)
+Grammar: Prep-b | N-msc | 2ms
+  eng: is–your–help
+  spa: en–tu–ayuda
+  hin: तेरी–सहायता
+  arb: عَونُكَ
+  kor: 네–도움이라
+  swa: msaada–wako
+
+### Sense 123465 (1 occurrences)
+Grammar: Prep-b | N-msc | 1cs
+  eng: my–help
+  spa: en–ayuda–mía
+  hin: में–सहायता–मेरी
+  arb: فِي–عَوْنِي
+  kor: 나의–도움–에
+  swa: msaada–wangu
+
+### Sense 123466 (1 occurrences)
+Grammar: N-msc | 2ms
+  eng: your–help
+  spa: tu–ayuda
+  hin: तुझे–सहायता
+  arb: عَوْنَكَ
+  kor: 도움–을
+  swa: msaada–wako
+
+### Sense 123467 (1 occurrences)
+Grammar: N-msc | 2ms
+  eng: your–help
+  spa: tu–ayuda
+  hin: तेरी–सहायता–की
+  arb: عَوْنِكَ
+  kor: 네–도움의
+  swa: msaada–wako
+
+## Task
+
+Group these 15 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

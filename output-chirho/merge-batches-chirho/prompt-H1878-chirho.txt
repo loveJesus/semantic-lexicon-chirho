@@ -1,0 +1,118 @@
+# Sense Merge Task for H1878
+
+Lemma: H1878 (POS: V-Piel-Perf-2ms)
+Total occurrences: 11
+Current sense count: 10
+
+This Hebrew/Greek lemma has been over-split into 10 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 92355 (2 occurrences)
+Grammar: V-Pual-Imperf-3fs
+  eng: will–be–enriched, is–richly–supplied
+  spa: será–engordada
+  hin: मोटा–होगा
+  arb: تُسَمَّنُ
+  kor: 살찐다
+  swa: itanenepa
+
+### Sense 92356 (1 occurrences)
+Grammar: Prep-l | V-Piel-Inf | 3ms
+  eng: to–remove-its-ashes
+  spa: para–descenicerarlo
+  hin: राख–उठाने–के–लिए
+  arb: لِ–رَمادِهِ
+  kor: 재를–치우려고
+  swa: kuondoa–majivu
+
+### Sense 92357 (1 occurrences)
+Grammar: V-Piel-Imperf-3fs
+  eng: makes–fat
+  spa: engorda
+  hin: मोटा–करता–है
+  arb: يُسَمِّنُ–
+  kor: 살찌게–하느니라–
+  swa: inanenepesha
+
+### Sense 92358 (1 occurrences)
+Grammar: Conj-w | V-Qal-ConjPerf-3ms
+  eng: and–be–fat
+  spa: y–engordará
+  hin: और–मोटा–होगा
+  arb: وَيَسْمَنُ
+  kor: 그리고–살찐리라
+  swa: na–atanenepa
+
+### Sense 92359 (1 occurrences)
+Grammar: V-Piel-Imperf-3ms
+  eng: may–he–regard–with–favor
+  spa: acepte
+  hin: स्वीकार–करे
+  arb: يُدَسِّمُ
+  kor: 받으시기–를
+  swa: aikubali
+
+### Sense 92360 (1 occurrences)
+Grammar: V-Hitpael-Perf-3fs
+  eng: it–is–gorged
+  spa: engrosada
+  hin: चिकनी–हो–गई
+  arb: تَشَحَّمَ
+  kor: 살지웠다
+  swa: umenoneshwa
+
+### Sense 92361 (1 occurrences)
+Grammar: V-Pual-Imperf-3ms
+  eng: shall–be–enriched
+  spa: será–engrosado
+  hin: उपजाऊ–बनेगी
+  arb: يُسَمَّنُ
+  kor: 살지우리라
+  swa: yatanona
+
+### Sense 92362 (1 occurrences)
+Grammar: V-Pual-Imperf-3ms
+  eng: will–be–enriched
+  spa: será–prosperado
+  hin: मोटा–होगा।
+  arb: يَسْمَنُ
+  kor: 살지다
+  swa: atafanikiwa
+
+### Sense 92363 (1 occurrences)
+Grammar: Conj-w | V-Piel-ConjPerf-3cp
+  eng: and–they–shall–remove–ashes-of
+  spa: Y–quitarán-ceniza-de
+  hin: और–राख–हटाएंगे
+  arb: وَيُزِيلُونَ
+  kor: 그리고–치우어라
+  swa: na–wataondoa-majivu-ya
+
+### Sense 92364 (1 occurrences)
+Grammar: V-Piel-Perf-2ms
+  eng: you–anoint
+  spa: ungiste
+  hin: चुपड़ा–है–तूने
+  arb: مَسَحْتَ
+  kor: 기름–부으셨도다
+  swa: umepaka
+
+## Task
+
+Group these 10 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

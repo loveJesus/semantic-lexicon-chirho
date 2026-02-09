@@ -1,0 +1,145 @@
+# Sense Merge Task for H2552
+
+Lemma: H2552 (POS: V-Qal-Imperf-3ms)
+Total occurrences: 13
+Current sense count: 13
+
+This Hebrew/Greek lemma has been over-split into 13 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 97803 (1 occurrences)
+Grammar: V-Qal-Perf-3ms
+  eng: was–hot
+  spa: Se–calentó
+  hin: गर्म–हुआ
+  arb: حَميَ
+  kor: 뜨거웠도다
+  swa: Ulikuwa-moto
+
+### Sense 97804 (1 occurrences)
+Grammar: Conj-w | V-Qal-ConsecImperf-3m
+  eng: and–warms–himself
+  spa: y–se–calienta
+  hin: और–गर्म–होता–है
+  arb: وَيَسْتَدْفِئُ
+  kor: 그리고–따뜻하였다
+  swa: na–akaota–moto
+
+### Sense 97805 (1 occurrences)
+Grammar: V-Piel-Imperf-3fs
+  eng: she–warms–them
+  spa: los–calienta
+  hin: वह–गर्म–करती–है
+  arb: تُدَفِّئُهُ.
+  kor: 따뜻하게–한다
+  swa: anayapasha–joto
+
+### Sense 97806 (1 occurrences)
+Grammar: Conj-w | V-Qal-ConsecImperf-3m
+  eng: and–grew-warm
+  spa: y–se-calentó
+  hin: और–गर्म–हुआ
+  arb: فَدَفِئَ
+  kor: 그리고–따뜻해졌다
+  swa: na–ikapata–joto
+
+### Sense 97807 (1 occurrences)
+Grammar: V-Qal-Imperf-3ms
+  eng: he–warms–himself
+  spa: se–calienta
+  hin: गर्म–होता–है
+  arb: يَدْفَأُ
+  kor: 따뜻하며
+  swa: anaota–moto
+
+### Sense 97808 (1 occurrences)
+Grammar: Conj-w | V-Qal-ConjPerf-3ms
+  eng: and–was–hot
+  spa: y–calentaba
+  hin: और–गर्म–होता–था
+  arb: وَ–حَمِيَتِ
+  kor: 그리고–더우니
+  swa: na–ilipokuwa–joto
+
+### Sense 97809 (1 occurrences)
+Grammar: V-Qal-Perf-1cs
+  eng: I–am–warm
+  spa: me–calenté
+  hin: गर्म–हुआ–मैं
+  arb: اِسْتَدْفَأْتُ
+  kor: 따뜻하였다–나는
+  swa: nimeota–moto
+
+### Sense 97810 (1 occurrences)
+Grammar: Art | V-Nifal-Prtcpl-mp
+  eng: the–ones-inflaming-themselves
+  spa: Los–que–se–encienden
+  hin: गर्म–होनेवाले
+  arb: الْمُتَوَقِّدُونَ
+  kor: 뛰거워지는–자들이니
+  swa: wanaojipasha–moto
+
+### Sense 97811 (1 occurrences)
+Grammar: V-Hitpael-Imperf-3ms
+  eng: he–was–warmed
+  spa: se–calentó
+  hin: गरम–हुआ
+  arb: يَتَدَفَّأُ
+  kor: 그가–따뜻해졌다
+  swa: alipata–joto
+
+### Sense 97812 (1 occurrences)
+Grammar: V-Qal-Imperf-3mp
+  eng: are–hot
+  spa: arden
+  hin: गर्म–होते–हैं
+  arb: يَحمَونَ
+  kor: 뜨거워지는도다
+  swa: wanawaka–moto
+
+### Sense 97813 (1 occurrences)
+Grammar: Prep-l | V-Qal-Inf
+  eng: to–warm–them
+  spa: para–calentarse
+  hin: गर्म–होने–के–लिए
+  arb: لِـ–يَدْفَئِهِمْ
+  kor: 따뜻하기–위한–그들의
+  swa: ya–kuota
+
+### Sense 97814 (1 occurrences)
+Grammar: Conj-w | V-Qal-ConjPerf-3ms
+  eng: and–it–shall–be–warm
+  spa: y–dará–calor
+  hin: और–गर्मी–हो
+  arb: وَيَدْفَأُ
+  kor: 그리고–따뜻하게–될–것이다
+  swa: na–apate–joto
+
+### Sense 97815 (1 occurrences)
+Grammar: Conj-w | V-Qal-ConjPerf-3ms
+  eng: and–warm
+  spa: y–calor
+  hin: और–गर्मी
+  arb: يَدْفَئَانِ
+  kor: 그리고–따뜻하다
+  swa: watapata–joto
+
+## Task
+
+Group these 13 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

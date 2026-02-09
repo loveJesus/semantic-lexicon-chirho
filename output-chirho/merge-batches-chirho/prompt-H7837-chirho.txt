@@ -1,0 +1,127 @@
+# Sense Merge Task for H7837
+
+Lemma: H7837 (POS: Prep-b)
+Total occurrences: 25
+Current sense count: 11
+
+This Hebrew/Greek lemma has been over-split into 11 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 139712 (8 occurrences)
+Grammar: Art | N-ms
+  eng: the–dawn
+  spa: el–alba
+  hin: भोर, भोर–के, प्रभात–के
+  arb: الْفَجْرِ, الْفَجْرُ, الْ–فَجْرِ
+  kor: 새벽이, 그–새벽이, 새벽의
+  swa: alfajiri, wa–mapambazuko, mapambazuko
+
+### Sense 139713 (4 occurrences)
+Grammar: N-ms
+  eng: dawn, the-dawn
+  spa: aurora, alba
+  hin: पौ, भौर–के, भोर–के
+  arb: الفَجْرِ, الْفَجْرِ.
+  kor: 새벽의, 새벽–의
+  swa: alfajiri, asubuhi
+
+### Sense 139714 (3 occurrences)
+Grammar: N-ms
+  eng: dawn
+  spa: el–alba, aurora, alba
+  hin: भोर, प्रभात
+  arb: فَجرٌ, شَحَر, الفَجْرِ
+  kor: 새벽이, 새벽을, 새벽–처럼
+  swa: mapambazuko
+
+### Sense 139715 (2 occurrences)
+Grammar: N-ms
+  eng: the–dawn
+  spa: el–alba, al–alba
+  hin: भौर, भोर–को
+  arb: الفَجرَ, الفَجر
+  kor: 새벽–을
+  swa: mapambazuko
+
+### Sense 139716 (2 occurrences)
+Grammar: Prep-k | N-ms
+  eng: like–dawn
+  spa: como–aurora
+  hin: भोर–जैसे, जैसे–भोर
+  arb: كَ–الفَجْرِ, كَالفَجرِ
+  kor: 새벽–같이, 같으니라–새벽에
+  swa: kama–mapambazuko
+
+### Sense 139717 (1 occurrences)
+Grammar: N-ms
+  eng: [the–dawn]
+  spa: [K:alba]
+  hin: [पौ]
+  arb: [الْفَجْرَ]
+  kor: 새벽을
+  swa: [alfajiri]
+
+### Sense 139718 (1 occurrences)
+Grammar: Art | N-ms
+  eng: the–dawn
+  spa: la–aurora
+  hin: भोर–की
+  arb: الفَجْرِ
+  kor: 새벽–의
+  swa: alfajiri
+
+### Sense 139719 (1 occurrences)
+Grammar: V-Piel-Inf | 3fs
+  eng: its–dawning
+  spa: su–conjuro
+  hin: उसका–प्रभात
+  arb: فَجْرَهُ
+  kor: 그–새벽을
+  swa: asili–yake
+
+### Sense 139720 (1 occurrences)
+Grammar: Prep-k, Art | N-ms
+  eng: like–the–dawn
+  spa: como–el–alba
+  hin: पौकी–तरह
+  arb: كَ–الْفَجْرِ
+  kor: 새벽같이–
+  swa: kama–alfajiri
+
+### Sense 139721 (1 occurrences)
+Grammar: Prep-b, Art | N-ms
+  eng: at–the–dawn
+  spa: en–el–alba
+  hin: भोर–में
+  arb: في–الفَجرِ
+  kor: 에–새벽에
+  swa: wakati–wa–mapambazuko
+
+### Sense 139722 (1 occurrences)
+Grammar: Art | N-ms
+  eng: the–dawn
+  spa: (Q:el–alba)
+  hin: (पौ–को)
+  arb: (الْفَجْرَ)
+  kor: 새벽의
+  swa: alfajiri
+
+## Task
+
+Group these 11 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

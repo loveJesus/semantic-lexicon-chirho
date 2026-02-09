@@ -1,0 +1,127 @@
+# Sense Merge Task for H0894
+
+Lemma: H0894 (POS: Prep-m | N-proper-fs)
+Total occurrences: 262
+Current sense count: 11
+
+This Hebrew/Greek lemma has been over-split into 11 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 85142 (191 occurrences)
+Grammar: N-proper-fs
+  eng: Bavel, Babylon, of–Bavel
+  spa: Babilonia, Babel, Bavel
+  hin: बाबेल, बाबेल–के, बाबेल–का
+  arb: بَابِلَ, بَابِلُ, يَا–بَابِلُ
+  kor: 바벨의, 바벨을, 바벨이
+  swa: Babeli, wa–Babeli, za–Babeli
+
+### Sense 85143 (35 occurrences)
+Grammar: N-proper-fs,N-proper-fs | 3fs,Prep-l | N-proper-fs
+  eng: to–Bavel, to–Babylon, Bavel
+  spa: a–Bavel, Bavel, a–Babilonia
+  hin: बाबेल, बाबेल–को, में–बाबेल
+  arb: بَابِلَ, إِلَى–بَابِلَ
+  kor: 바벨로, 바벨에, 바벨론으로
+  swa: Babeli, baּbelah, lbabel
+
+### Sense 85144 (13 occurrences)
+Grammar: Prep-m | N-proper-fs,Prep-m | N-proper-fs | 3fs
+  eng: from–Bavel, from–Babel
+  spa: de–Babilonia, de–Bavel, de–Babel
+  hin: बाबेल–से, से–बाबेल, से–बाबल
+  arb: مِنْ–بَابِلَ, مِنْ–بابِل, مِن–بَابِلَ
+  kor: 에서–바벨, 바벨에서, 에서–바벨론
+  swa: kutoka–Babeli
+
+### Sense 85145 (6 occurrences)
+Grammar: Prep-b | N-proper-fs,N-proper-fs | 3fs
+  eng: in–Bavel, in–Babylon
+  spa: en–Bavel, en–Babel, en–Babilonia
+  hin: में–बाबेल, ब–बाबेल, बाबेल–में
+  arb: فِي–بَابِلَ
+  kor: 바벨에서, 에–바벨, 바벨론–에
+  swa: katika–Babeli, Babeli, bּbabel
+
+### Sense 85146 (5 occurrences)
+Grammar: N-proper-fs | 3fs
+  eng: Bavel–ward
+  spa: a–Babilonia
+  hin: बाबेल–को, बाबेलाह
+  arb: إِلَى–بَابِلَ
+  kor: 바벨로, 바벨에
+  swa: Babeli
+
+### Sense 85147 (4 occurrences)
+Grammar: Prep-l | N-proper-fs
+  eng: to–Bavel
+  spa: a–Babilonia, contra–Babel, a–Babel
+  hin: बाबेल–को, –को–बाबेल, को–बाबेल
+  arb: إِلَى–بَابِلَ, لِبَابِل, بَابِلَ
+  kor: 에게–바벨, 으로–바벨론
+  swa: Babeli, kwenda–Babeli
+
+### Sense 85148 (3 occurrences)
+Grammar: Conj-w | N-proper-fs
+  eng: and–to–Bavel, and–to–Babylon
+  spa: y–a–Bavel, y–a–Babilonia
+  hin: और–बाबेल
+  arb: وَإِلَى–بَابِلَ, وَ–بَابِلَ
+  kor: 그리고–바벨에, 그리고–바벨로
+  swa: na–Babeli, Na–Babeli
+
+### Sense 85149 (2 occurrences)
+Grammar: Prep-l | N-proper-fs
+  eng: for–Bavel
+  spa: para–Bavel, a–Babel
+  hin: को–बाबेल
+  arb: لِبَابِلَ
+  kor: 에게–바벨, 바벨에서
+  swa: kwa–Babeli
+
+### Sense 85150 (1 occurrences)
+Grammar: Prep-b | N-proper-fs
+  eng: against–Bavel
+  spa: en–Babilonia
+  hin: बाबेल–में
+  arb: بِـ–بَابِلَ
+  kor: 바벨에–
+  swa: katika–Babeli
+
+### Sense 85151 (1 occurrences)
+Grammar: Conj-w | N-proper-fs
+  eng: and–Bavel
+  spa: y–Babel
+  hin: और–बाबेल–को
+  arb: وَبَابِلَ
+  kor: 바벨–을
+  swa: na–Babeli
+
+### Sense 85152 (1 occurrences)
+Grammar: Prep-l | N-proper-fs
+  eng: from–Babylon
+  spa: de–Babilonia
+  hin: बाबेल–से
+  arb: لِـ–بَابِلَ
+  kor: 바벨–에게
+  swa: Babeli
+
+## Task
+
+Group these 11 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

@@ -1,0 +1,127 @@
+# Sense Merge Task for G2008
+
+Lemma: G2008 (POS: V-AIA-3P)
+Total occurrences: 29
+Current sense count: 11
+
+This Hebrew/Greek lemma has been over-split into 11 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 67944 (13 occurrences)
+Grammar: V-AIA-3S
+  eng: rebuked, he-rebuked, he–rebuked
+  spa: reprendió, los–reprendió
+  hin: डांटा, डाँटा, दअन्त
+  arb: انْتَهَرَ, انتَهَرَ, وَبَّخَهُما
+  kor: 꾸짖으셨다, 꾸짖었다, 꾾짓었다
+  swa: aliukemea, alimkemea, wao
+
+### Sense 67945 (4 occurrences)
+Grammar: V-AIA-3P,V-IIA-3P
+  eng: rebuked
+  spa: reprendieron, reprendían, le–reprendían
+  hin: डाँटते–थे, दअन्त, डांटा
+  arb: زَجَروا, انْتَهَرُوهُمْ
+  kor: 꾸짖었다, 꾼짖었다
+  swa: waliwakemea, wao, walimkemea
+
+### Sense 67946 (2 occurrences)
+Grammar: V-PNA
+  eng: to-rebuke
+  spa: reprender, a–reprenderlo
+  hin: दअन्तन, डांटने
+  arb: يَنْتَهِرُهُ
+  kor: 꾾짓기를, 꺼짓기를
+  swa: kumkemea
+
+### Sense 67947 (2 occurrences)
+Grammar: V-AMA-2S
+  eng: rebuke
+  spa: repréndele, reprende
+  hin: डांट, डाँट
+  arb: وَبِّخْ–هُ, زَجِرْ
+  kor: 꾸짖으소서, 꾸짖으라
+  swa: wakemee, mkemee
+
+### Sense 67948 (2 occurrences)
+Grammar: V-PPA-NMS
+  eng: rebuking
+  spa: reprendiendo
+  hin: डांटकर, डाँटते–हुए
+  arb: يَنْتَهِرُهُ, مُنتَهِرًا
+  kor: 꾸짖으며
+  swa: akiyakemea, akamkosoa
+
+### Sense 67949 (1 occurrences)
+Grammar: V-APA-NMS
+  eng: having-rebuked
+  spa: reprendiéndoles
+  hin: डांटकर
+  arb: اِنْتَهَرَهُمْ
+  kor: 경고하시고
+  swa: akiwakemea
+
+### Sense 67950 (1 occurrences)
+Grammar: V-AIA-3S
+  eng: he–warned
+  spa: les-advirtió
+  hin: चेतअवनेए–दि
+  arb: أَوصَاهُم
+  kor: 경고하셨으니
+  swa: aliwakataza
+
+### Sense 67951 (1 occurrences)
+Grammar: V-AOA-3S
+  eng: May–rebuke
+  spa: Reprenda
+  hin: डाँटे
+  arb: لينتهرك
+  kor: 꾸짖으시기를
+  swa: Akukemee
+
+### Sense 67952 (1 occurrences)
+Grammar: V-AMA-2S
+  eng: rebuke
+  spa: exhorta
+  hin: दअन्त,
+  arb: انْتَهِرْ
+  kor: 경책하라
+  swa: kemea
+
+### Sense 67953 (1 occurrences)
+Grammar: V-IIA-3S
+  eng: he-was-rebuking
+  spa: reprendía
+  hin: डाँटता–था
+  arb: انْتَهَرَها
+  kor: 꾸짖으셨다
+  swa: aliwakemea
+
+### Sense 67954 (1 occurrences)
+Grammar: V-IIA-3P
+  eng: were-rebuking
+  spa: reprendían
+  hin: डांटते–थे
+  arb: كَانُوا–يَنْتَهِرُونَهُ
+  kor: 꾼짖었다
+  swa: walimkemea
+
+## Task
+
+Group these 11 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

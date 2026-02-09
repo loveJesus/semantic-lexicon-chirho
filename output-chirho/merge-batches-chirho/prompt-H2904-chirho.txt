@@ -1,0 +1,136 @@
+# Sense Merge Task for H2904
+
+Lemma: H2904 (POS: Conj-w | V-Hifil-Imp-mp | 1cs)
+Total occurrences: 14
+Current sense count: 12
+
+This Hebrew/Greek lemma has been over-split into 12 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 100183 (2 occurrences)
+Grammar: Conj-w | V-Hifil-ConjPerf-1cs
+  eng: And–I–will–hurl
+  spa: Y–te–arrojaré, Y–os–arrojaré
+  hin: और–फेंकूंगा, और–फेंकूँगा
+  arb: وَ–أَطْرَحُكَ, فَ–أَرْمِيكُمْ
+  kor: 그리고–내가–던지리라, 그리고–내가–내던지리라–너희를
+  swa: Na–nitawatupa, Na–nitakutupa
+
+### Sense 100184 (2 occurrences)
+Grammar: Conj-w | V-Hifil-ConsecImperf-
+  eng: and–hurled
+  spa: Y–arrojó
+  hin: और-फेक
+  arb: وَ–رَمَى
+  kor: 그리고–던졌다
+  swa: na–akautupa, na–akatupa
+
+### Sense 100185 (1 occurrences)
+Grammar: Conj-w | V-Hifil-Imp-mp | 1cs
+  eng: and–hurl–me
+  spa: y–lanzadme
+  hin: और–फेंको–मुझे
+  arb: وَ–أَلْقُونِي
+  kor: 그리고–던져라–나를
+  swa: na–mnitupe
+
+### Sense 100186 (1 occurrences)
+Grammar: V-Hofal-Perf-3cp
+  eng: were–hurled
+  spa: fueron–arrojados
+  hin: फेंका–गया–है
+  arb: طُرِحُوا
+  kor: 그들이–던져졌는가
+  swa: ametupwa
+
+### Sense 100187 (1 occurrences)
+Grammar: Conj-w | V-Hifil-ConsecImperf-
+  eng: and–hurled–him
+  spa: y–lo–lanzaron
+  hin: और–फेंका–उसे
+  arb: فَ–أَلْقَوْهُ
+  kor: 그리고–던졌으니라–그를
+  swa: na–wakamtupa
+
+### Sense 100188 (1 occurrences)
+Grammar: V-Hofal-Imperf-3ms
+  eng: is–cast
+  spa: es–echada
+  hin: डाला–जाता–है
+  arb: يُلْقى
+  kor: 던지느니라
+  swa: inatupwa
+
+### Sense 100189 (1 occurrences)
+Grammar: V-Hofal-Imperf-3ms
+  eng: one-is-cast-down
+  spa: será–derribado
+  hin: कोई–गिर–पड़ेगा
+  arb: يُطْرَحُ؟
+  kor: 그가–넘어지리라
+  swa: mtu–anaangushwa
+
+### Sense 100190 (1 occurrences)
+Grammar: V-Hofal-Imperf-3ms
+  eng: is–he–hurled–down
+  spa: será–derribado
+  hin: गिरा–रहेगा
+  arb: يُطْرَحُ
+  kor: 내던져지도다
+  swa: hatotupwa
+
+### Sense 100191 (1 occurrences)
+Grammar: V-Piel-Prtcpl-msc | 2ms
+  eng: hurling–you
+  spa: te–arrojará
+  hin: फेंकने–वाला–है–तुझे
+  arb: يُلْقِيكَ
+  kor: 내던지시리니
+  swa: atakutupa
+
+### Sense 100192 (1 occurrences)
+Grammar: V-Hifil-Imperf-1cs | 2ms
+  eng: I-will-hurl-you
+  spa: te–arrojaré
+  hin: मैं–फेंकूँगा–तुझे
+  arb: أُلْقِيكَ
+  kor: 내가–던지리라–너를
+  swa: nitakutupa
+
+### Sense 100193 (1 occurrences)
+Grammar: V-Hifil-Perf-3ms
+  eng: hurled
+  spa: lanzo
+  hin: फेंकी
+  arb: أَلْقَى
+  kor: 던지셨으니라
+  swa: alitupa
+
+### Sense 100194 (1 occurrences)
+Grammar: Conj-w | V-Hifil-ConsecImperf-
+  eng: and–they–hurled
+  spa: y–lanzaron
+  hin: और–फेंके
+  arb: فَ–أَلْقَوْا
+  kor: 그리고–던졌으니라
+  swa: na–wakatupa
+
+## Task
+
+Group these 12 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

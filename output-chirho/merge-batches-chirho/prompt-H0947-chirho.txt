@@ -1,0 +1,127 @@
+# Sense Merge Task for H0947
+
+Lemma: H0947 (POS: V-Hitpael-Prtcpl-fs)
+Total occurrences: 12
+Current sense count: 11
+
+This Hebrew/Greek lemma has been over-split into 11 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 85809 (2 occurrences)
+Grammar: V-Hitpael-Prtcpl-fs
+  eng: wallowing
+  spa: revolcándote
+  hin: लोटती–हुई
+  arb: مُتَمَرِّغَةً
+  kor: 버둥거리는
+  swa: ukigaagaa
+
+### Sense 85810 (1 occurrences)
+Grammar: Conj-w | V-Qal-ConjImperf-1cs
+  eng: And–I–trod–down
+  spa: Y–pisoteé
+  hin: और–कुचला–मैंने
+  arb: وَ–أَدُوسُ
+  kor: 그리고–내가–밟았다
+  swa: na–niliwakanyaga
+
+### Sense 85811 (1 occurrences)
+Grammar: V-Qal-Imperf-1cs | 3mse
+  eng: I-will-trample–him
+  spa: lo–pisotearé
+  hin: मैं–रौंदूंगा–उसे
+  arb: أَدُوسُهُ
+  kor: 내가–밟으리라
+  swa: nitamkanyaga
+
+### Sense 85812 (1 occurrences)
+Grammar: V-Piel-Perf-3cp
+  eng: have–trampled–down
+  spa: han–pisoteado
+  hin: रौंदा–है
+  arb: دَاسُوا
+  kor: 짓밟았다
+  swa: wamelikanyaga
+
+### Sense 85813 (1 occurrences)
+Grammar: V-Qal-Prtcpl-mp
+  eng: treading
+  spa: pisoteando
+  hin: रौंदते–हुए
+  arb: دَائِسِينَ
+  kor: 밟는–자들
+  swa: wakanyaga
+
+### Sense 85814 (1 occurrences)
+Grammar: V-Qal-Imperf-3ms
+  eng: will–tread–down
+  spa: pisoteará
+  hin: रौंदेगा
+  arb: يَدوس
+  kor: 밟으시리라
+  swa: atawakanyaga
+
+### Sense 85815 (1 occurrences)
+Grammar: V-Hofal-Prtcpl-ms
+  eng: trampled
+  spa: pisoteado
+  hin: रौंदी–गई
+  arb: مَدْرُوسَةٍ
+  kor: 밟힌
+  swa: iliyokanyagwa
+
+### Sense 85816 (1 occurrences)
+Grammar: V-Qal-Imperf-1cp
+  eng: we–trample
+  spa: pisotearemos
+  hin: कुचलेंगे–हम
+  arb: نَدوسُ
+  kor: 밟으리이다
+  swa: tutawakanyaga
+
+### Sense 85817 (1 occurrences)
+Grammar: V-Qal-Imperf-3ms
+  eng: will–trample
+  spa: pisoteará
+  hin: कुचलेगा
+  arb: يَدوسُ
+  kor: 밟으시리라
+  swa: atawakanyaga
+
+### Sense 85818 (1 occurrences)
+Grammar: V-Qal-Imperf-3fs
+  eng: tramples
+  spa: pisotea
+  hin: रौंदता
+  arb: تَدُوسُ
+  kor: 밟다
+  swa: hukanyaga
+
+### Sense 85819 (1 occurrences)
+Grammar: V-Piel-Perf-3cp
+  eng: they–have–trampled–down
+  spa: pisotearon
+  hin: रौंदा
+  arb: دَاسُوا
+  kor: 밟았다
+  swa: wameikanyaga
+
+## Task
+
+Group these 11 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

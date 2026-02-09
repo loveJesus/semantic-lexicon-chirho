@@ -1,0 +1,172 @@
+# Sense Merge Task for H2513a
+
+Lemma: H2513a (POS: Prep-b | N-fsc)
+Total occurrences: 23
+Current sense count: 16
+
+This Hebrew/Greek lemma has been over-split into 16 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 97549 (3 occurrences)
+Grammar: N-fsc
+  eng: portion-of, portion–of
+  spa: porción–de, parcela–de
+  hin: भाग, टुकड़ा
+  arb: قِطْعَةَ, عَلَى–قِطْعَةِ
+  kor: 부분을, 부분이
+  swa: shambani, sehemu–ya, kipande–cha
+
+### Sense 97550 (3 occurrences)
+Grammar: Prep-b | N-fsc
+  eng: in–portion-of, in–portion–of
+  spa: en–porción–de, en–la–porción–de
+  hin: बखेल्कत, भाग–में
+  arb: في–حَقْلِ, بِ–حِلْقَتِ
+  kor: 에–밭의, 밭에서, 밭에
+  swa: katika–shamba–la, katika–sehemu
+
+### Sense 97551 (2 occurrences)
+Grammar: Art | N-fs
+  eng: the–field
+  spa: el–campo
+  hin: खेत
+  arb: الحَقلَ–
+  kor: 밭을–
+  swa: shamba
+
+### Sense 97552 (2 occurrences)
+Grammar: Prep-b, Art | N-fs
+  eng: in–the–portion
+  spa: en–la–porción
+  hin: बखेल्काह
+  arb: في–الْحَقْلِ
+  kor: 밭에서, 밭에
+  swa: katika–shamba
+
+### Sense 97553 (2 occurrences)
+Grammar: Art | N-fs,N-fs
+  eng: the–plot, plot-of
+  spa: parcela, la–parcela
+  hin: भूमि–को, भूमि
+  arb: حَقْلٍ, الْحَقْلِ
+  kor: 밝
+  swa: shamba
+
+### Sense 97554 (1 occurrences)
+Grammar: Art | N-fs
+  eng: the–plot
+  spa: la–porción
+  hin: टुकड़े–के
+  arb: الْقِطْعَةِ
+  kor: 그–밭
+  swa: shamba
+
+### Sense 97555 (1 occurrences)
+Grammar: N-fs
+  eng: plot
+  spa: parcela
+  hin: टुकड़ा
+  arb: قِطْعَةٌ
+  kor: 밭
+  swa: kipande
+
+### Sense 97556 (1 occurrences)
+Grammar: N-fsc
+  eng: field–of
+  spa: campo–de
+  hin: खेत
+  arb: حَقلَ–
+  kor: 밭이–
+  swa: shamba–la
+
+### Sense 97557 (1 occurrences)
+Grammar: Conj-w | N-fs
+  eng: and–plot
+  spa: y–parcela
+  hin: और–टुकड़ा
+  arb: وَ–قِطْعَةٌ
+  kor: 그리고–밭
+  swa: na–kipande
+
+### Sense 97558 (1 occurrences)
+Grammar: N-fsc | 3mp
+  eng: their–portion
+  spa: su–porción
+  hin: उनका–भाग
+  arb: حِصَّتُهُمْ
+  kor: 그들의–몶이
+  swa: sehemu–yao
+
+### Sense 97559 (1 occurrences)
+Grammar: N-fsc | 1cs
+  eng: My–portion
+  spa: porción–mi
+  hin: मेरे–भाग
+  arb: حَقْلِي
+  kor: 내–분까를
+  swa: sehemu–yangu
+
+### Sense 97560 (1 occurrences)
+Grammar: N-fsc
+  eng: plot–of
+  spa: parcela–de
+  hin: टुकड़ा
+  arb: قِطْعَة
+  kor: 구획–은
+  swa: sehemu–ya
+
+### Sense 97561 (1 occurrences)
+Grammar: Art | N-fs
+  eng: the–plot
+  spa: la–parcela
+  hin: टुकड़े–के
+  arb: القِطْعَة
+  kor: 그–구획–의
+  swa: sehemu
+
+### Sense 97562 (1 occurrences)
+Grammar: N-fsc
+  eng: plot-of
+  spa: porción–de
+  hin: टुकड़ा
+  arb: قِطْعَةُ
+  kor: 밭
+  swa: shamba
+
+### Sense 97563 (1 occurrences)
+Grammar: N-fsc
+  eng: the–portion–of
+  spa: porción–de
+  hin: भाग
+  arb: حَقْلَ
+  kor: 분까를
+  swa: sehemu
+
+### Sense 97564 (1 occurrences)
+Grammar: N-fsc
+  eng: portion-of
+  spa: la–porción–del
+  hin: भाग
+  arb: نَصِيبَ
+  kor: 분깍(접)
+  swa: fungu–la
+
+## Task
+
+Group these 16 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

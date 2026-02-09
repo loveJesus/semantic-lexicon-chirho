@@ -1,0 +1,136 @@
+# Sense Merge Task for H3791
+
+Lemma: H3791 (POS: Conj-w)
+Total occurrences: 16
+Current sense count: 12
+
+This Hebrew/Greek lemma has been over-split into 12 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 107924 (3 occurrences)
+Grammar: Prep-k | N-msc | 3fs
+  eng: according-to–its-writing, according–to–its–script
+  spa: según–su–escritura, conforme–a–su–escritura
+  hin: उसकी–लिपि–में, उसकी–लिपि–के–अनुसार, उसकी–अपनी–लिपि–में
+  arb: كَ–كِتَابَتِهَا
+  kor: 그것의–문자대로, 대로–그들의–글로
+  swa: na–watu
+
+### Sense 107925 (2 occurrences)
+Grammar: Art | N-ms
+  eng: the–writing
+  spa: el–escrito
+  hin: दस्तावेज़–की, दस्तावेज़–की
+  arb: الْكِتَابِ
+  kor: 그–글의
+  swa: ya–maandishi
+
+### Sense 107926 (2 occurrences)
+Grammar: N-msc | 3mp
+  eng: their–writing, their–register
+  spa: su–registro
+  hin: सूची–अपनी, अपना–लेखा
+  arb: كِتابَهُمْ, سِجِلَّهُم
+  kor: 그들의–기록을, 그들–의–기록
+  swa: orodha–yao, maandishi–yao
+
+### Sense 107927 (1 occurrences)
+Grammar: Prep-b | N-ms
+  eng: in–writing
+  spa: en–escrito
+  hin: –में–लेख
+  arb: بِكِتَابَةٍ
+  kor: 에–글로
+  swa: kwa–maandishi
+
+### Sense 107928 (1 occurrences)
+Grammar: Prep-k | N-msc | 3mp
+  eng: according–to–their–writing
+  spa: conforme–a–su–escrito
+  hin: लिखित निर्देशों–के अनुसार
+  arb: كَ‒كِتَابَتِهِمَا
+  kor: 대로–그것들의–글에
+  swa: kila
+
+### Sense 107929 (1 occurrences)
+Grammar: Prep-b | N-ms
+  eng: in–writing
+  spa: por–escrito
+  hin: में–लेख
+  arb: بِ–كِتَابٍ
+  kor: 에–편지
+  swa: kwa–barua
+
+### Sense 107930 (1 occurrences)
+Grammar: N-msc
+  eng: writing-of–
+  spa: escrito–de
+  hin: लिखित
+  arb: كِتَابِ
+  kor: 글–
+  swa: ya–sheria
+
+### Sense 107931 (1 occurrences)
+Grammar: Prep-b | N-msc
+  eng: according–to–writing–of
+  spa: según–escrito–de
+  hin: लिखित–में
+  arb: بِكِتَابَةِ
+  kor: 에–글
+  swa: biּktab
+
+### Sense 107932 (1 occurrences)
+Grammar: Conj-w, Prep-b | N-msc
+  eng: and–in–register-of
+  spa: y–en–registro–de
+  hin: और–में–पुस्तक
+  arb: وَفِي–سِجِلِّ
+  kor: 그리고–기록에–
+  swa: na–katika–orodha
+
+### Sense 107933 (1 occurrences)
+Grammar: N-ms
+  eng: a–writing
+  spa: escrito
+  hin: जो
+  arb: كِتَابًا
+  kor: 글이
+  swa: maandishi
+
+### Sense 107934 (1 occurrences)
+Grammar: Prep-b | N-msc
+  eng: in–writing-of
+  spa: en–escritura–de
+  hin: में–लेख
+  arb: فِي–كِتَابِ
+  kor: 에–기록에
+  swa: katika–maandiko
+
+### Sense 107935 (1 occurrences)
+Grammar: Conj-w | N-msc
+  eng: and–writing–of
+  spa: y–escritura–de
+  hin: और
+  arb: وَ–كِتَابَةُ
+  kor: 그리고–글
+  swa: na–maandishi
+
+## Task
+
+Group these 12 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

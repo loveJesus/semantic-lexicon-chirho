@@ -1,0 +1,145 @@
+# Sense Merge Task for H2814
+
+Lemma: H2814 (POS: V-Hifil-Perf-1cs)
+Total occurrences: 16
+Current sense count: 13
+
+This Hebrew/Greek lemma has been over-split into 13 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 99604 (2 occurrences)
+Grammar: V-Hifil-Prtcpl-mp
+  eng: are–silent, are-keeping-silent
+  spa: callando, callamos
+  hin: मख्शीम, चुप–हैं
+  arb: ساكِتونَ
+  kor: 잠잠하고–있다, 잠잘하고–있다
+  swa: tunanyamaza, tunakaa–kimya
+
+### Sense 99605 (2 occurrences)
+Grammar: V-Qal-Imperf-1cs
+  eng: I–shall–be–silent
+  spa: callaré
+  hin: चुप–रहूँगा
+  arb: أَسْكُتُ
+  kor: 내가–잠잠하지–않겠다
+  swa: sitanyamaza
+
+### Sense 99606 (2 occurrences)
+Grammar: V-Hifil-Imp-mp
+  eng: be-silent
+  spa: callad
+  hin: चुप–रहो
+  arb: اصْمُتُوا
+  kor: 잠잠하라
+  swa: nyamazeni
+
+### Sense 99607 (1 occurrences)
+Grammar: V-Hifil-Prtcpl-ms
+  eng: being-silent
+  spa: callé
+  hin: चुप–रहनेवाला
+  arb: سَاكِتٌ
+  kor: 침묵하는–자이니
+  swa: nilinyamaza
+
+### Sense 99608 (1 occurrences)
+Grammar: V-Hifil-Perf-1cs
+  eng: I–have–been–silent
+  spa: callé
+  hin: चुप–रहा–मैं
+  arb: صَمَتُّ
+  kor: 내가–잠잠하였느니라
+  swa: Nimenyamaza
+
+### Sense 99609 (1 occurrences)
+Grammar: V-Qal-Imperf-3mp
+  eng: shall–they–be–silent
+  spa: callarán
+  hin: वे–चुप–रहेंगे
+  arb: يَسْكُتُونَ
+  kor: 그들이–잠잠할–것이다
+  swa: hawatanyamaza
+
+### Sense 99610 (1 occurrences)
+Grammar: Prep-l | V-Qal-Inf
+  eng: to–be-silent
+  spa: para–callar
+  hin: चुप–रहने–का
+  arb: لِلسُّكُوتِ
+  kor: 잠잠하기–위한
+  swa: wa–kunyamaza
+
+### Sense 99611 (1 occurrences)
+Grammar: V-Hifil-Perf-1cs
+  eng: I–was–silent
+  spa: callé
+  hin: मैंने–चुप–रहा
+  arb: سَكَتُّ
+  kor: 잠잠하였도다
+  swa: niliwa-kimya
+
+### Sense 99612 (1 occurrences)
+Grammar: V-Qal-Imperf-2ms
+  eng: you–be–silent
+  spa: calles
+  hin: चुप–रहे–तू
+  arb: تَسْكُتَ
+  kor: 침묵할까
+  swa: ukanyamaza
+
+### Sense 99613 (1 occurrences)
+Grammar: V-Hifil-Prtcpl-mp
+  eng: silent
+  spa: os–quedáis–callados?
+  hin: चुप
+  arb: سَاكِتُونَ
+  kor: 잊고–있는가
+  swa: mnatulia
+
+### Sense 99614 (1 occurrences)
+Grammar: V-Qal-Imperf-2ms
+  eng: will–You–be–silent
+  spa: ¿Callarás
+  hin: चुप–रहेगा
+  arb: تَسْكُتُ
+  kor: 잠잠하시나이까
+  swa: utanyamaza
+
+### Sense 99615 (1 occurrences)
+Grammar: V-Hifil-Prtcpl-mp
+  eng: were–quieting
+  spa: calmando
+  hin: शान्त–किया
+  arb: مُسَكِّتونَ
+  kor: 조용히–하고–있었다
+  swa: waliwanyamazisha
+
+### Sense 99616 (1 occurrences)
+Grammar: Conj-w | V-Qal-ConsecImperf-3m
+  eng: and–were–hushed
+  spa: y–se–aquietaron
+  hin: और–शान्त–हुईं
+  arb: وَ–تَسكُت
+  kor: 그리고–잠잠하였도다
+  swa: na–yakanyamaza
+
+## Task
+
+Group these 13 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

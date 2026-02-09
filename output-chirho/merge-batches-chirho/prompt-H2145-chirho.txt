@@ -1,0 +1,136 @@
+# Sense Merge Task for H2145
+
+Lemma: H2145 (POS: Prep-m | N-ms)
+Total occurrences: 82
+Current sense count: 12
+
+This Hebrew/Greek lemma has been over-split into 12 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 94489 (53 occurrences)
+Grammar: N-ms
+  eng: male, a-male
+  spa: varón, macho, un–varón
+  hin: पुरुष, नर, पुरुष–का
+  arb: ذَكَرٍ, ذَكَرًا, ذَكَرٌ
+  kor: 남자, 남자를, 수컷
+  swa: mwanaume, dume, mwaume
+
+### Sense 94490 (12 occurrences)
+Grammar: Prep-l | N-mp,Art | N-mp
+  eng: males, of–males
+  spa: los–varones, de–varones
+  hin: पुरुष
+  arb: مِنَ–الذُّكُور, لِلذُّكُور
+  kor: 그–남자들, 로–남자들
+  swa: wanaume
+
+### Sense 94491 (3 occurrences)
+Grammar: Art | N-ms
+  eng: the-male
+  spa: del–varón
+  hin: पुरुष–का
+  arb: لِلذَّكَرِ, الذَّكَرِ
+  kor: 남자의
+  swa: ya–mwanaume
+
+### Sense 94492 (3 occurrences)
+Grammar: N-ms
+  eng: a–male, male
+  spa: varón
+  hin: लड़का, पुरुष, नर
+  arb: ذَكَرٌ, ذَكَرًا
+  kor: 남자가, 남자를
+  swa: wa–kiume, mwanaume, mtoto–wa–kiume
+
+### Sense 94493 (2 occurrences)
+Grammar: Prep-l, Art | N-ms
+  eng: for–the–male
+  spa: para–el–varón
+  hin: पहुँचता, और–बहने वाले के लिए
+  arb: لِ–ال–ذَّكَرِ, لِلذَّكَرِ
+  kor: 남자–를–위해
+  swa: kwa–mwanaume, kwa–kiume
+
+### Sense 94494 (2 occurrences)
+Grammar: Art | N-mp
+  eng: the–males
+  spa: los–varones
+  hin: पुरुष
+  arb: الذُّكورِ, الذُّكورُ
+  kor: 남자들, 그–남자들
+  swa: wanaume, ha–waume
+
+### Sense 94495 (2 occurrences)
+Grammar: Art | N-mp
+  eng: the–males
+  spa: los–machos
+  hin: नर
+  arb: الذُّكُورِ, الذُّكُورُ
+  kor: 그–수컷들을, 그–수컷들은
+  swa: dume
+
+### Sense 94496 (1 occurrences)
+Grammar: Art | N-ms
+  eng: the–male
+  spa: el–macho
+  hin: नर
+  arb: الذَّكَرُ
+  kor: 그–수컻을
+  swa: dume
+
+### Sense 94497 (1 occurrences)
+Grammar: N-ms
+  eng: Male
+  spa: varón
+  hin: नर
+  arb: ذَكَرًا
+  kor: 남자
+  swa: Mwanaume
+
+### Sense 94498 (1 occurrences)
+Grammar: Prep-l | N-mp
+  eng: for–males
+  spa: para–varones
+  hin: पुरुषों–के–लिए
+  arb: لِـ–الذُّكُورِ
+  kor: 남자들–에게
+  swa: lizkariym
+
+### Sense 94499 (1 occurrences)
+Grammar: N-ms
+  eng: male
+  spa: varón
+  hin: पुरुष–की
+  arb: ذُكُورٍ
+  kor: 남자의
+  swa: za–kiume
+
+### Sense 94500 (1 occurrences)
+Grammar: Prep-m | N-ms
+  eng: from–male
+  spa: de–varón
+  hin: से–पुरुष
+  arb: مِنْ–ذَكَرٍ
+  kor: 으로부터–남자
+  swa: kutoka–mwanaume
+
+## Task
+
+Group these 12 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

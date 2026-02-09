@@ -1,0 +1,118 @@
+# Sense Merge Task for H1732
+
+Lemma: H1732 (POS: Prep-b | N-proper-ms)
+Total occurrences: 1075
+Current sense count: 10
+
+This Hebrew/Greek lemma has been over-split into 10 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 91396 (853 occurrences)
+Grammar: N-proper-ms,N-proper-ms ,N-proper-ms | 3fs,Prep-b | N-proper-ms, N-proper-ms,Pre
+  eng: David, of–David, to–David
+  spa: David, a–David, de–David
+  hin: दाऊद, दाऊद–ने, दाऊद–के
+  arb: دَاوُدَ, دَاوُدُ, دَاوُد
+  kor: 다윗이, 다윗, 다윗의
+  swa: Daudi, Dawidi, wa–Daudi
+
+### Sense 91397 (73 occurrences)
+Grammar: Prep-l | N-proper-ms
+  eng: of–David
+  spa: de–David, De–David
+  hin: ले–दाऊद–का, दाऊद–का, –दाऊद–का
+  arb: لِدَاوُدَ, لِ–دَاوُدَ, لِـ–دَاوُدَ
+  kor: 다윗–의, 다윗의
+  swa: ya–Daudi, la–Daudi, wa–Daudi
+
+### Sense 91398 (68 occurrences)
+Grammar: Prep-l | N-proper-ms,Prep-b | N-proper-ms
+  eng: to–David, for–David, David
+  spa: a–David, para–David, de–David
+  hin: दाऊद–को, दाऊद–के–लिए, दविद-को
+  arb: لِ–دَاوُدَ, لِـ–دَاوُد, لِداوُدَ
+  kor: 에게–다윗, 다윗에게, 다윗–에게
+  swa: Daudi, kwa–Daudi, wa–Daudi
+
+### Sense 91399 (44 occurrences)
+Grammar: Conj-w | N-proper-ms
+  eng: and–David, And–David
+  spa: y–David, Y–David
+  hin: और–दाऊद, और-दविद, और-दविद-ने
+  arb: وَ–دَاوُد, وَدَاوُدُ, وَداوُدُ
+  kor: 그리고–다윗은, 그리고–다윗이, 그리고–다윗과
+  swa: na–Daudi, Na–Daudi
+
+### Sense 91400 (17 occurrences)
+Grammar: Prep-l | N-proper-ms,Conj-w, Prep-l | N-proper-ms
+  eng: for–David, to–David, of–David
+  spa: para–David, de–David, a–David
+  hin: दाऊद–के–लिए, दाऊद–के, के–लिए–दाऊद
+  arb: لِ–دَاوُدَ, لِـ–دَاوُدَ, لِدَاوُد
+  kor: 에게–다윗–의, 에게–다윗, 다윗–에게
+  swa: kwa–Daudi, wa–Daudi, kwa–Dawidi
+
+### Sense 91401 (9 occurrences)
+Grammar: Prep-k | N-proper-ms
+  eng: like–David, as–David
+  spa: como–David
+  hin: जैसे–दाऊद, जैसे–दाऊद–ने, जैसे-दविद
+  arb: كَ–دَاوُدَ, كَدَاوُدَ, كَ–داوُدَ
+  kor: –처럼–다윗, ~처럼–다윗, 에–따라–다윗
+  swa: kama–Daudi, kama–Dawidi
+
+### Sense 91402 (4 occurrences)
+Grammar: Prep-b | N-proper-ms
+  eng: in–David
+  spa: en–David
+  hin: दाऊद–में
+  arb: فِي–دَاوُدَ, فِي–داوُدَ
+  kor: 에–다윗에게, 에–다윗, 다윗에게
+  swa: katika–Daudi, katika–Dawidi
+
+### Sense 91403 (3 occurrences)
+Grammar: Prep-b | N-proper-ms
+  eng: against–David
+  spa: contra–David
+  hin: दाऊद–के, दविद-पर, दविद-के
+  arb: بِـ–دَاوُد, عَلَى–دَاوُدَ
+  kor: 다윗에게–, 다윗을–향해
+  swa: Daudi, kwa–Daudi
+
+### Sense 91404 (3 occurrences)
+Grammar: Prep-b | N-proper-ms
+  eng: in–David
+  spa: en–David, de–David
+  hin: दाऊद–को, दविद-से, दविद-पर
+  arb: بِـ–دَاوُدَ, بِـ–دَاوُد, بِداوُدَ
+  kor: 에–다윗을, 다윗을–, –에–다윗을
+  swa: katika–Daudi, Dawidi, Daudi
+
+### Sense 91405 (1 occurrences)
+Grammar: Prep-b | N-proper-ms
+  eng: about–David
+  spa: de–David
+  hin: दविद-के-बअरे-मेइन
+  arb: عَنْ–دَاوُد
+  kor: 다윗에–대해
+  swa: kuhusu–Daudi
+
+## Task
+
+Group these 10 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

@@ -1,0 +1,135 @@
+# Sense Merge Task for H6643a
+
+Lemma: H6643a (POS: Art | N-ms)
+Total occurrences: 18
+Current sense count: 12
+
+This Hebrew/Greek lemma has been over-split into 12 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 129427 (4 occurrences)
+Grammar: N-ms,N-msc
+  eng: of–his–glorious, of–glory, beauty
+  spa: gloria, de–la–gloria–de
+  hin: शोभा, सौन्दर्य–का, शोभा–का
+  arb: جَمَالِ, جَمَالٍ
+  kor: 아름다움의
+  swa: uzuri, ya–uzuri
+
+### Sense 129428 (2 occurrences)
+Grammar: N-msc,N-ms
+  eng: glory-of–, glory
+  spa: gloria–de, gloria
+  arb: فَخْرَ, جَمَالًا
+  kor: 영광인–, 영광을
+  swa: utukufu, fahari–ya
+
+### Sense 129429 (2 occurrences)
+Grammar: Art | N-ms
+  eng: the–beautiful
+  spa: la–hermosura
+  hin: शोभा–के
+  arb: الْبَهَاءِ
+  kor: 그–영광의
+  swa: ya–Uzuri, Uzuri
+
+### Sense 129430 (2 occurrences)
+Grammar: N-ms
+  eng: glory
+  spa: ornamento
+  hin: शोभा
+  arb: زِينَةُ
+  kor: 영광이
+  swa: utukufu
+
+### Sense 129431 (1 occurrences)
+Grammar: N-msc
+  eng: beauty-of–
+  spa: hermosura–de–
+  hin: शोभा–
+  arb: بَهَاءِ–
+  kor: 영광–
+  swa: Uzuri–wa–
+
+### Sense 129432 (1 occurrences)
+Grammar: N-ms
+  eng: glory
+  spa: gloria
+  hin: महिमा
+  arb: مَجْدًا
+  kor: 영광이라
+  swa: utukufu
+
+### Sense 129433 (1 occurrences)
+Grammar: Prep-l | N-ms
+  eng: for–beauty
+  spa: para-hermosura
+  hin: सुन्दरता–के–लिए
+  arb: لِلجَمَالِ
+  kor: 아름다움–으로
+  swa: kwa–uzuri
+
+### Sense 129434 (1 occurrences)
+Grammar: Art | N-ms
+  eng: the–gazelle
+  spa: La–gacela
+  hin: हिरण
+  arb: الظَّبْيُ
+  kor: 그–영광이
+  swa: Uzuri
+
+### Sense 129435 (1 occurrences)
+Grammar: Conj-w | N-msc
+  eng: and–beauty-of
+  spa: Y–hermosura–de
+  hin: और–शोभा
+  arb: وَ–بَهاءَ
+  kor: 그리고–아름다움을
+  swa: na–uzuri
+
+### Sense 129436 (1 occurrences)
+Grammar: N-msc
+  eng: beauty–of
+  spa: gloria–de
+  hin: शोभा–
+  arb: زِينَةَ
+  kor: 영화가
+  swa: utukufu
+
+### Sense 129437 (1 occurrences)
+Grammar: N-msc
+  eng: of–the–beauty
+  spa: hermosura–de
+  hin: सुंदर
+  arb: زِينَةِ
+  kor: 아름다운
+  swa: uzuri–wa
+
+### Sense 129438 (1 occurrences)
+Grammar: Art | N-ms
+  eng: the–beautiful-land
+  spa: la–hermosa
+  hin: शोभा
+  arb: الْبَهَاءِ
+  kor: 영광
+  swa: Nchi–Tukufu
+
+## Task
+
+Group these 12 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

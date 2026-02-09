@@ -1,0 +1,154 @@
+# Sense Merge Task for H7761
+
+Lemma: H7761 (POS: V-Qal-Perf-1cs)
+Total occurrences: 26
+Current sense count: 14
+
+This Hebrew/Greek lemma has been over-split into 14 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 139278 (6 occurrences)
+Grammar: V-Nifal-Perf-3ms
+  eng: is–made, set, placed
+  spa: fue–puesto, fue–puesta
+  hin: जारी–किया–है, दिया–आदेश, जारी–किया–था
+  arb: وُضِعَ, صَدَرَ
+  kor: 놓여졌다
+  swa: nimetoa, nilitoa, ilitolewa
+
+### Sense 139279 (5 occurrences)
+Grammar: V-Qal-Perf-3ms
+  eng: placed, made
+  spa: puso
+  hin: जारी–किया, दिया–है, दिया
+  arb: أَصْدَرَ, وَضَعَ
+  kor: 놓았다
+  swa: alitoa, aliwapa
+
+### Sense 139280 (3 occurrences)
+Grammar: V-Nifal-Perf-3ms
+  eng: is-made, was-made
+  spa: se–pone, ha–sido–puesto, fue–puesto
+  hin: रखा–गया, रखा–गया–है
+  arb: يُوضَعُ, وُضِعَ
+  kor: 내려진, 내렸다
+  swa: imetolewa, ilitolewa
+
+### Sense 139281 (2 occurrences)
+Grammar: V-Qal-Perf-3ms
+  eng: set–, set
+  spa: puso
+  hin: रखा
+  arb: وَضَعَ, سَمَّاهُ–
+  kor: 지었음이라–, 두었더니
+  swa: alimwita–, akaweka
+
+### Sense 139282 (1 occurrences)
+Grammar: V-Qal-Perf-3ms
+  eng: gave
+  spa: ha–puesto
+  hin: रखा
+  arb: يَضَعْ
+  kor: 두었나이다
+  swa: weka
+
+### Sense 139283 (1 occurrences)
+Grammar: V-Qal-Perf-1cs
+  eng: have–made
+  spa: he–puesto
+  hin: जारी–किया–है
+  arb: أَصْدَرْتُ
+  kor: 놓았다
+  swa: nimetoa
+
+### Sense 139284 (1 occurrences)
+Grammar: V-Hitpael-Prtcpl-ms
+  eng: being–placed
+  spa: puesta
+  hin: रखी–जा–रही–है
+  arb: يُوضَع
+  kor: 놓여진다
+  swa: zinawekwa
+
+### Sense 139285 (1 occurrences)
+Grammar: V-Hitpael-Imperf-3mp
+  eng: will-be-made
+  spa: serán–convertidas
+  hin: किए–जाएंगे
+  arb: تُجْعَلُ
+  kor: 될–것이다
+  swa: zitafanywa
+
+### Sense 139286 (1 occurrences)
+Grammar: V-Qal-Imp-mp
+  eng: set
+  spa: dad
+  hin: दो
+  arb: أَصْدِرُوا
+  kor: 놓아라
+  swa: toeni
+
+### Sense 139287 (1 occurrences)
+Grammar: Conj-w | V-Nifal-ConjPerf-3fs
+  eng: and–was-laid
+  spa: y–fue–puesta
+  hin: और–रखा–गया
+  arb: وَ–وُضِعَ
+  kor: 그리고–놓였더니
+  swa: na–likawekwa
+
+### Sense 139288 (1 occurrences)
+Grammar: V-Qal-Perf-3mp
+  eng: gave
+  spa: pusieron
+  hin: रखा–है
+  arb: يَضَعُوا
+  kor: 두지
+  swa: weka
+
+### Sense 139289 (1 occurrences)
+Grammar: V-Qal-Perf-2ms
+  eng: made
+  spa: pusiste
+  hin: रखा–है–तूने
+  arb: وَضَعْتَ
+  kor: 내렸다
+  swa: ulitoa
+
+### Sense 139290 (1 occurrences)
+Grammar: V-Qal-Perf-3ms | 3ms
+  eng: appointed
+  spa: puso.
+  hin: उसने–बनाया–था
+  arb: جَعَلَهُ
+  kor: 세웠다–그–를
+  swa: alimweka
+
+### Sense 139291 (1 occurrences)
+Grammar: V-Hitpael-Imperf-3ms
+  eng: is–made
+  spa: sea–dada.
+  hin: दिया–जाए
+  arb: يُصْدَرُ
+  kor: 놓여지라
+  swa: itatolewa
+
+## Task
+
+Group these 14 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

@@ -1,0 +1,116 @@
+# Sense Merge Task for H4688
+
+Lemma: H4688 (POS: N-fs)
+Total occurrences: 11
+Current sense count: 10
+
+This Hebrew/Greek lemma has been over-split into 10 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 113719 (2 occurrences)
+Grammar: N-fs
+  eng: the–depths
+  spa: profundidad
+  arb: العُمْقِ, العُمْقُ
+  kor: 깊음–이, 깊음–의
+  swa: ya-kina-kirefu, kilindi
+
+### Sense 113720 (1 occurrences)
+Grammar: Prep-m | N-fpc
+  eng: from–the–depths–of
+  spa: de–profundidades–de
+  arb: مِنْ–أعْماقِ
+  kor: 깊음–들–에서
+  swa: kutoka–vilindi
+
+### Sense 113721 (1 occurrences)
+Grammar: Prep-b | N-fpc
+  eng: into–depths–of
+  spa: en–profundidades–de
+  hin: गहराइयों–में
+  arb: فِي–أَعْمَاقِ
+  kor: 에–깊은–곳들
+  swa: vilindini–vya
+
+### Sense 113722 (1 occurrences)
+Grammar: Prep-b | N-fp
+  eng: into–the–depths
+  spa: en–profundidades
+  hin: गहराई–में
+  arb: فِي–ال–أَعْمَاقِ
+  kor: 깊은–곳들–에
+  swa: katika–vilindi
+
+### Sense 113723 (1 occurrences)
+Grammar: Prep-b | N-fp
+  eng: in–the–depths
+  spa: en–abismos
+  hin: गहराइयों–में
+  arb: فِي–أَعْمَاقٍ
+  kor: 깊은–물들–에
+  swa: katika–vilindi
+
+### Sense 113724 (1 occurrences)
+Grammar: N-fpc
+  eng: depths–of
+  spa: profundidades–de
+  hin: गहराइयाँ
+  arb: أَعْمَاقِ
+  kor: 깊은–곳들이
+  swa: vilindi–vya
+
+### Sense 113725 (1 occurrences)
+Grammar: N-fs
+  eng: the-deep
+  spa: profundidad
+  hin: गहराई–को
+  arb: الْأَعْمَاقَ
+  kor: 깊은–곳을
+  swa: kilindi
+
+### Sense 113726 (1 occurrences)
+Grammar: Prep-b | N-fs
+  eng: in–the–deep
+  spa: en–lo–profundo
+  hin: गहराई–में
+  arb: في–العُمق
+  kor: 깊음–에서
+  swa: katika–vilindi
+
+### Sense 113727 (1 occurrences)
+Grammar: N-fs
+  eng: into–the–deep
+  spa: a–lo–profundo
+  hin: गहराई–में
+  arb: فِي–الْعُمْقِ
+  kor: 깊은–곳–에
+  swa: kilindini
+
+### Sense 113728 (1 occurrences)
+Grammar: Prep-b | N-fp
+  eng: into–the–depths
+  spa: en–profundidades
+  hin: गहराइयों–में
+  arb: فِي–الْ–أَعْمَاقِ
+  kor: 깊은–곳들–에
+  swa: katika–kina–kirefu
+
+## Task
+
+Group these 10 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

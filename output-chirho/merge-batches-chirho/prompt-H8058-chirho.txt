@@ -1,0 +1,118 @@
+# Sense Merge Task for H8058
+
+Lemma: H8058 (POS: V-Qal-Imp-mp | 3fs)
+Total occurrences: 10
+Current sense count: 10
+
+This Hebrew/Greek lemma has been over-split into 10 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 141833 (1 occurrences)
+Grammar: V-Qal-Perf-3cp
+  eng: they–stumbled
+  spa: se–soltaron
+  hin: लड़खड़ाए
+  arb: عَثَرَتْ
+  kor: 빗나갔다
+  swa: waliteleza
+
+### Sense 141834 (1 occurrences)
+Grammar: V-Qal-Imp-mp | 3ms
+  eng: [ketiv]
+  spa: [Tirádola]
+  hin: [शम्तूहो]
+  arb: [اطْرَحوها]
+  kor: [떨어떰려라–그녀를]
+  swa: [k]
+
+### Sense 141835 (1 occurrences)
+Grammar: V-Qal-Perf-3cp
+  eng: stumbled
+  spa: tropezaron
+  hin: लड़खड़ाए–थे
+  arb: تَعَثَّرَتْ
+  kor: 흐털렸다
+  swa: walijikwaa
+
+### Sense 141836 (1 occurrences)
+Grammar: Conj-w | V-Qal-ConjPerf-2ms
+  eng: And–you–will–release
+  spa: Y–soltarás
+  hin: और–छोड़ना–पड़ेगा–तुझे
+  arb: وَ–تُطْلَقُهَا
+  kor: 그리고–네가–놓치리라
+  swa: Na–utaachia
+
+### Sense 141837 (1 occurrences)
+Grammar: V-Hifil-Imperf.Jus-3fs
+  eng: shall-release
+  spa: soltará
+  hin: छोड़ेगा
+  arb: تُبْرِئُ
+  kor: 놀아주리라
+  swa: msamehe
+
+### Sense 141838 (1 occurrences)
+Grammar: Conj-w | V-Qal-ConsecImperf-3m
+  eng: and–they-threw-her-down
+  spa: y–la–tiraron
+  hin: वय्यिश्मतूहा
+  arb: فَطَرَحوها
+  kor: 그리고–떨어떴렸다–그녀를
+  swa: na–wakamtupa
+
+### Sense 141839 (1 occurrences)
+Grammar: V-Qal-Imp-mp | 3fs
+  eng: throw-her-down
+  spa: Tiradla
+  hin: (शिम्तूहा)
+  arb: (اطْرَحوها)
+  kor: (떨어떰려라–그녀를)
+  swa: (mtupeni)
+
+### Sense 141840 (1 occurrences)
+Grammar: V-Qal-Imperf-2ms | 3fse
+  eng: you-shall-release-it
+  spa: la–dejarás
+  hin: छोड़–दो–उसे
+  arb: تُريحُها
+  kor: 너는–놓아두라
+  swa: utaiacha
+
+### Sense 141841 (1 occurrences)
+Grammar: V-Qal-InfAbs
+  eng: releasing
+  spa: remitirá
+  hin: छोड़ेगा
+  arb: يُبْرِئُ
+  kor: 놀아주리라
+  swa: kusamehe
+
+### Sense 141842 (1 occurrences)
+Grammar: V-Nifal-Perf-3cp
+  eng: are–thrown-down
+  spa: Fueron-despeñados
+  hin: गिराए–गए–हैं
+  arb: سَقَطُوا
+  kor: 넘겨졌도다
+  swa: wametupwa
+
+## Task
+
+Group these 10 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

@@ -1,0 +1,136 @@
+# Sense Merge Task for H4055
+
+Lemma: H4055 (POS: N-ms)
+Total occurrences: 13
+Current sense count: 12
+
+This Hebrew/Greek lemma has been over-split into 12 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 109720 (2 occurrences)
+Grammar: N-mpc | 3ms,Prep-l | N-mpc | 3ms
+  eng: garments–his
+  spa: vestiduras–suyas
+  hin: उस्के-वस्त्रोम-के, अपने-वस्त्र
+  arb: لِـ–ثِيَابِهِ, ثِيَابَهُ
+  kor: 그의–옷을, 그의–옷에
+  swa: mavazi–yake, juu–ya–mavazi–yake
+
+### Sense 109721 (1 occurrences)
+Grammar: Conj-w | N-mpc | 3ms
+  eng: and–his-clothes
+  spa: y–sus–vestidos
+  hin: और–कपड़े–उसके
+  arb: وَ–ثِيَابُهُ
+  kor: 그리고–그의–옷이
+  swa: na–mavazi–yake
+
+### Sense 109722 (1 occurrences)
+Grammar: N-ms
+  eng: strife
+  spa: (de–contención)
+  hin: लंबा
+  arb: عِمْلاقٌ
+  kor: (싸움의)
+  swa: mrefu
+
+### Sense 109723 (1 occurrences)
+Grammar: N-msc | 3ms
+  eng: his–garment
+  spa: vestidura–suya-de
+  hin: वस्त्र–अपना
+  arb: رِدَاءَهُ
+  kor: 그–의–옷을
+  swa: vazi–lake
+
+### Sense 109724 (1 occurrences)
+Grammar: N-ms
+  eng: [k]
+  spa: [de–contención]
+  hin: लंबा
+  arb: عِمْلاقٌ
+  kor: [싸움의]
+  swa: mrefu
+
+### Sense 109725 (1 occurrences)
+Grammar: Conj-w | N-mpc | 3ms
+  eng: and–garments–his
+  spa: y–vestiduras–suyas
+  hin: और-अपने-वस्त्र
+  arb: وَ–ثِيَابَهُ
+  kor: 그리고–그의–옷을
+  swa: na–mavazi–yake
+
+### Sense 109726 (1 occurrences)
+Grammar: N-msc | 3ms
+  eng: his–robe
+  spa: su–túnica
+  hin: अपना–वस्त्र
+  arb: بِ–ثَوْبِهِ
+  kor: 그의–외투
+  swa: joho–lake
+
+### Sense 109727 (1 occurrences)
+Grammar: Prep-l | N-mpc | 3ms
+  eng: his-garment
+  spa: su–ropa
+  hin: अपने–वस्त्रों–के
+  arb: لِ–ثِيابِهِ
+  kor: 그의–옷
+  swa: nguo–yake
+
+### Sense 109728 (1 occurrences)
+Grammar: N-mp
+  eng: –saddle-blankets
+  spa: tapices
+  hin: बिछौने
+  arb: بُسُطٍ
+  kor: 깔개들
+  swa: tandiko
+
+### Sense 109729 (1 occurrences)
+Grammar: N-msc | 3fs
+  eng: measure-its
+  spa: es–su–medida,
+  hin: उसका–माप
+  arb: مِقْياسُها
+  kor: 그것의–치수–가
+  swa: kipimo–chake
+
+### Sense 109730 (1 occurrences)
+Grammar: Prep-k | N-msc | 3ms
+  eng: like–his–robe
+  spa: como–su–vestido
+  hin: वस्त्र–की–तरह
+  arb: كَ–ثَوبِهِ
+  kor: 그–의–옷–같이
+  swa: kama–vazi–lake
+
+### Sense 109731 (1 occurrences)
+Grammar: N-mpc | 2fs
+  eng: your–measure
+  spa: medidas–tuyas
+  hin: तेरे–मापों–का
+  arb: قِيَاسَاتِكِ
+  kor: 네–치수의
+  swa: lako–la–kipimo
+
+## Task
+
+Group these 12 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

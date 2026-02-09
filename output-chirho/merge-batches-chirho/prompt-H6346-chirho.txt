@@ -1,0 +1,145 @@
+# Sense Merge Task for H6346
+
+Lemma: H6346 (POS: N-mpc | 3fs)
+Total occurrences: 28
+Current sense count: 13
+
+This Hebrew/Greek lemma has been over-split into 13 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 127377 (6 occurrences)
+Grammar: N-msc
+  eng: governor–of, governor-of, governor–of–
+  spa: gobernador–de
+  hin: राज्यपाल, राज्यपाल–के, राज्यपाल–
+  arb: وَالِي, وَالٍِ, وَالِي–
+  kor: 총독, 총독–, 방백
+  swa: liwali–wa, wa–gavana, gavana–wa
+
+### Sense 127378 (5 occurrences)
+Grammar: N-mp
+  eng: governors
+  spa: gobernadores
+  hin: राज्यपालों, हाकिमों, अधिपति
+  arb: وُلَاةٍ, وُلَاةً, وُلاةً
+  kor: 총독들과, 총독들을
+  swa: magavana
+
+### Sense 127379 (3 occurrences)
+Grammar: Conj-w, Art | N-mp
+  eng: and–the–governors
+  spa: y–los–gobernadores, Y–los–gobernadores
+  hin: पर–राज्यपाल, और–राज्यपाल
+  arb: وَ–الْوُلاةُ, وَ–الْحُكَّامِ, وَ‒الْوُلاَةِ
+  kor: 그리고–총독들과, 그리고–지방관들과, 그리고–그–총독들은
+  swa: na–magavana, na–wakuu
+
+### Sense 127380 (3 occurrences)
+Grammar: Art | N-ms
+  eng: the–governor
+  spa: el–gobernador
+  hin: राज्यपाल–का, राज्यपाल
+  arb: الْوالي, الوالي
+  kor: 그–총독의, 그–총독과
+  swa: gavana, liwali
+
+### Sense 127381 (2 occurrences)
+Grammar: N-mpc
+  eng: governors-of
+  spa: gobernadores–de
+  hin: राज्यपालों
+  arb: وُلاةِ
+  kor: 방백들
+  swa: magavana–wa
+
+### Sense 127382 (2 occurrences)
+Grammar: N-mpc | 3fs
+  eng: her–governors
+  spa: sus–gobernadores, a–sus–gobernadores
+  hin: उसके–अधिपतियों
+  arb: وُلَاتِهَا
+  kor: 총독들을–그녀의
+  swa: magavana–wake
+
+### Sense 127383 (1 occurrences)
+Grammar: N-msc | 3mp
+  eng: governor-their
+  spa: su–gobernador
+  hin: उनका–राज्यपाल
+  arb: والِيًا
+  kor: 그들의–총독이
+  swa: gavana–wao
+
+### Sense 127384 (1 occurrences)
+Grammar: Art | N-mp
+  eng: the–governors
+  spa: los–gobernadores
+  hin: राज्यपालों
+  arb: الْحُكَّامِ
+  kor: 그–총독들에게
+  swa: juu-ya
+
+### Sense 127385 (1 occurrences)
+Grammar: Conj-w | N-mpc
+  eng: and–the–governors–of
+  spa: y–gobernadores–de
+  hin: और–राज्यपालों–ने
+  arb: وَحُكّامِ
+  kor: 그리고–총독들–이
+  swa: na–magavana
+
+### Sense 127386 (1 occurrences)
+Grammar: N-msc
+  eng: governor
+  spa: de–un–gobernador
+  hin: राज्यपाल–का
+  arb: وَالٍِ
+  kor: 총독의
+  swa: wa–gavana
+
+### Sense 127387 (1 occurrences)
+Grammar: Prep-l | N-msc | 2ms
+  eng: to–your–governor
+  spa: a–gobernador–tuyo
+  hin: को–तुम्हारे-राज्यपाल
+  arb: لِوَالِيكَ
+  kor: 에게–총독–너의
+  swa: kwa–gavana–wako
+
+### Sense 127388 (1 occurrences)
+Grammar: Conj-w | N-mpc
+  eng: and–governors-of
+  spa: y–gobernadores–de
+  hin: और–राज्यपाल
+  arb: وَ–وُلَاةِ
+  kor: 그리고–총독들의
+  swa: na–magavana–wa
+
+### Sense 127389 (1 occurrences)
+Grammar: Conj-w | N-mp
+  eng: and–the–governors–of
+  spa: y–a–los–gobernadores–de
+  hin: और–राज्यपालों–को
+  arb: وَ–وُلاة
+  kor: 그리고–방백들
+  swa: na–magavana
+
+## Task
+
+Group these 13 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

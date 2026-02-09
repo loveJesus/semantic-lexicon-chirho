@@ -1,0 +1,118 @@
+# Sense Merge Task for H3051
+
+Lemma: H3051 (POS: V-Qal-Imp-ms | 3fs)
+Total occurrences: 33
+Current sense count: 10
+
+This Hebrew/Greek lemma has been over-split into 10 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 101258 (10 occurrences)
+Grammar: V-Qal-Imp-mp
+  eng: ascribe
+  spa: dad, Dad
+  hin: दो
+  arb: أَعْطُوا, قَدِّمُوا
+  kor: 드리라, 돌려라
+  swa: mpeni, Mpeni
+
+### Sense 101259 (7 occurrences)
+Grammar: V-Qal-Imp-mp
+  eng: give
+  spa: dad, den, dadme
+  hin: दो
+  arb: هاتوا, هَاتُوا, هاتوا–
+  kor: 주라, 주어라, 내라
+  swa: toeni, nipeni, toa
+
+### Sense 101260 (4 occurrences)
+Grammar: V-Qal-Imp-ms | 3fs
+  eng: come
+  spa: Vamos, venid
+  hin: अओ, आओ
+  arb: هَلُمَّ
+  kor: 자
+  swa: njooni, Njooni
+
+### Sense 101261 (3 occurrences)
+Grammar: V-Qal-Imp-ms | 3fs
+  eng: give, give–
+  spa: da
+  hin: दे
+  arb: هَبْ, هَاتِ, أَعْطِنَا–
+  kor: 주라, 주소서–
+  swa: nipe, toa
+
+### Sense 101262 (3 occurrences)
+Grammar: V-Qal-Imp-fs,V-Qal-Imp-ms
+  eng: give
+  spa: da
+  hin: लाओ, दे।, दे
+  arb: هاتِ, هَاتِي
+  kor: 달라, 가져와라
+  swa: nipe, lete
+
+### Sense 101263 (2 occurrences)
+Grammar: V-Qal-Imp-ms | 3fs
+  eng: give–, give
+  spa: danos–, Danos
+  hin: दे–, दे
+  arb: أَعطِنا–, أَعطِنا
+  kor: 주소서
+  swa: tupe, Tupe
+
+### Sense 101264 (1 occurrences)
+Grammar: V-Qal-Imp-ms | 3fs
+  eng: give
+  spa: Da
+  hin: दे
+  arb: أَعْطِ
+  kor: 주소서
+  swa: leta
+
+### Sense 101265 (1 occurrences)
+Grammar: V-Qal-Imp-ms | 3fs
+  eng: give–
+  spa: da
+  hin: दे–
+  arb: أَعْطِني–
+  kor: 주소서
+  swa: nipe–
+
+### Sense 101266 (1 occurrences)
+Grammar: V-Qal-Imp-mp
+  eng: set
+  spa: poned
+  hin: रख
+  arb: ضَعوا
+  kor: 두라
+  swa: mwekeni
+
+### Sense 101267 (1 occurrences)
+Grammar: V-Qal-Imp-ms | 3fs
+  eng: come
+  spa: dame–
+  hin: दे–
+  arb: هَلُمَّ
+  kor: 허락하라
+  swa: karibu
+
+## Task
+
+Group these 10 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

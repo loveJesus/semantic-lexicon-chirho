@@ -1,0 +1,136 @@
+# Sense Merge Task for H2374
+
+Lemma: H2374 (POS: Art | V-Qal-Prtcpl-mp)
+Total occurrences: 21
+Current sense count: 12
+
+This Hebrew/Greek lemma has been over-split into 12 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 95958 (5 occurrences)
+Grammar: Art | N-ms
+  eng: the–seer
+  spa: el–vidente
+  hin: –के–दर्शी, शमरया, द्रष्टा–की
+  arb: الرَّائِي, الرّائي
+  kor: 그–선견자–의, 그–환상자의, 그–선견자가
+  swa: mwonaji, mwonaji–huyo
+
+### Sense 95959 (5 occurrences)
+Grammar: N-msc
+  eng: seer-of, seer–of, seer-of–
+  spa: vidente–de
+  hin: दर्शी, द्रष्टा–
+  arb: رَائِي
+  kor: 선견자–의, 선견자, 선견자–
+  swa: mwonaji–wa, mwonaji–wa–, chwozeh
+
+### Sense 95960 (2 occurrences)
+Grammar: Art | N-mp
+  eng: the–seers
+  spa: los–videntes
+  hin: दर्शी
+  arb: الرُّائِينَ, الرُّؤَاةُ
+  kor: 그–선견자들을, 그–보는–자들–이
+  swa: waonaji
+
+### Sense 95961 (1 occurrences)
+Grammar: Conj-w, Prep-l, Art | N-mp
+  eng: and–to–the–prophets
+  spa: y–a–los–profetas
+  hin: और–को–दर्शी
+  arb: وَ–لِلْمُبْصِرِينَ
+  kor: 그리고–에게–선견자들에게
+  swa: na–kwa–manabii
+
+### Sense 95962 (1 occurrences)
+Grammar: Art | V-Qal-Prtcpl-mp
+  eng: those–gazing
+  spa: los–que–miran
+  hin: देखने–वाले
+  arb: الرَّائُونَ
+  kor: 보는–자들이
+  swa: wanaona
+
+### Sense 95963 (1 occurrences)
+Grammar: N-ms
+  eng: a–pact
+  spa: visión
+  hin: दर्शन
+  arb: مِيثَاقًا
+  kor: 계약을
+  swa: mapatano
+
+### Sense 95964 (1 occurrences)
+Grammar: N-ms
+  eng: seer
+  spa: vidente
+  hin: दर्शी
+  arb: رَائٍ
+  kor: 선견자
+  swa: mwonaji
+
+### Sense 95965 (1 occurrences)
+Grammar: Art | V-Qal-Prtcpl-mp
+  eng: the–seeing
+  spa: los–que–ven
+  hin: देखनेवालों
+  arb: الرَّائِينَ
+  kor: 그–보는
+  swa: wanaoonea
+
+### Sense 95966 (1 occurrences)
+Grammar: V-Qal-Prtcpl-mp
+  eng: seeing
+  spa: viendo
+  hin: देखनेवाले
+  arb: رَائِينَ
+  kor: 보는–자들이다
+  swa: wakiona
+
+### Sense 95967 (1 occurrences)
+Grammar: Conj-w, Art | V-Qal-Prtcpl-mp
+  eng: and–the–seeing
+  spa: y–los–que–ven
+  hin: और–देखनेवाले
+  arb: وَالرَّائُونَ
+  kor: 그리고–보는
+  swa: na–wanaoonea
+
+### Sense 95968 (1 occurrences)
+Grammar: Art | N-mp
+  eng: the–seers
+  spa: los–videntes
+  hin: दर्शियों–के
+  arb: الرُّؤَاةِ
+  kor: 그–선견자들의
+  swa: hachoziym
+
+### Sense 95969 (1 occurrences)
+Grammar: N-ms
+  eng: seer
+  spa: Vidente
+  hin: हे–दर्शी
+  arb: أَيُّهَا–الرَّائِي
+  kor: 선견자야
+  swa: Mwonaji
+
+## Task
+
+Group these 12 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

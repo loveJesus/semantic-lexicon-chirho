@@ -1,0 +1,117 @@
+# Sense Merge Task for G3522
+
+Lemma: G3522 (POS: V-PIA-1P)
+Total occurrences: 20
+Current sense count: 10
+
+This Hebrew/Greek lemma has been over-split into 10 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 72723 (4 occurrences)
+Grammar: V-PIA-3P
+  eng: fast
+  spa: ayunan
+  hin: के–तो, उपवास–करते–हैं, उपवास–करते
+  arb: يَصومونَ
+  kor: 금식하는데, 금식하는, 금식하느냐
+  swa: hawafungi?, wanafunga,, wanafunga
+
+### Sense 72724 (4 occurrences)
+Grammar: V-PPA-NMP,V-PPA-NMS,V-PPA-GMP
+  eng: fasting
+  spa: ayunando
+  hin: उपवास–करते, उपवास–करते–हुए
+  arb: يَصومونَ, صائِمٌ, صائِمًا
+  kor: 금식하는, 금식하면서, 금식하고–있을–때
+  swa: wanaofunga, wakifunga,, unapofunga
+
+### Sense 72725 (3 occurrences)
+Grammar: V-FIA-3P
+  eng: they-will-fast, they–will–fast
+  spa: ayunarán
+  hin: उपवास–करेंगे
+  arb: سَيَصومونَ, يَصومونَ
+  kor: 금식할–것이다, 금식하리라
+  swa: watakapofunga, watafunga., watafunga
+
+### Sense 72726 (2 occurrences)
+Grammar: V-APA-NMS,V-APA-NMP
+  eng: having–fasted
+  spa: habiendo–ayunado, ayunando
+  hin: उपवास–करके
+  arb: لَمَّا–صَامَ, صامُوا
+  kor: 금식하고
+  swa: wakifunga,, akifunga
+
+### Sense 72727 (2 occurrences)
+Grammar: V-PNA
+  eng: to-fast
+  spa: ayunar
+  arb: أَنْ يَصوموا
+  kor: 금식하다
+  swa: kufunga?, kufunga.
+
+### Sense 72728 (1 occurrences)
+Grammar: V-PIA-1P
+  eng: fast
+  spa: ayunamos
+  hin: उपवास–करते–हैं
+  arb: نَصومُ
+  kor: 금식한다
+  swa: tunafunga
+
+### Sense 72729 (1 occurrences)
+Grammar: V-PIA-1S
+  eng: I-fast
+  spa: ayuno
+  hin: उपवास–करता–हूँ
+  arb: أَصومُ
+  kor: 금식한다
+  swa: ninafunga
+
+### Sense 72730 (1 occurrences)
+Grammar: V-PPA-NMP
+  eng: fasting
+  spa: ayunando
+  hin: फ़रीसियों
+  arb: صائِمينَ
+  kor: 금식하며
+  swa: wakifunga.
+
+### Sense 72731 (1 occurrences)
+Grammar: V-PSA-2P
+  eng: you–fast
+  spa: ayunéis
+  hin: उपवास–करो
+  arb: تَصومونَ
+  kor: 금식하면
+  swa: mnafunga
+
+### Sense 72732 (1 occurrences)
+Grammar: V-ANA
+  eng: to–fast
+  spa: ayunar
+  hin: उपवास
+  arb: يَصومونَ
+  kor: 금식
+  swa: wafunge
+
+## Task
+
+Group these 10 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

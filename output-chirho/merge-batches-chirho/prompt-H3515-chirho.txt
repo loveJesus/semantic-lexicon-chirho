@@ -1,0 +1,118 @@
+# Sense Merge Task for H3515
+
+Lemma: H3515 (POS: Conj-w | Adj-ms)
+Total occurrences: 39
+Current sense count: 10
+
+This Hebrew/Greek lemma has been over-split into 10 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 105295 (26 occurrences)
+Grammar: Adj-ms
+  eng: heavy, in–a–weary, great
+  spa: pesado, pesada, grave
+  hin: भारी, भारी–है, भारी–था
+  arb: ثَقِيلٌ, شَدِيدَةً, شَدِيدٌ
+  kor: 무거운, 심한, 심하였다
+  swa: nzito, kuwa–kali, kubwa
+
+### Sense 105296 (3 occurrences)
+Grammar: Conj-w | Adj-ms,Conj-w | Adj-msc
+  eng: and–heavy, and–heavy-of
+  spa: y–pesado-de, y–pesado, y–pesada
+  hin: और–भारी
+  arb: وَ–ثَقِيلٌ, وَشَدِيدًا, وَثَقِيلُ
+  kor: 그리고–무거운, 그리고–무거웠다
+  swa: na–mzito, na–mzee, akamruka–kali
+
+### Sense 105297 (2 occurrences)
+Grammar: Conj-w | Adj-mpc
+  eng: and–heavy-of
+  spa: y–pesados–de
+  hin: और–भारी
+  arb: وَ–ثَقيلي
+  kor: 그리고–무거운
+  swa: na–uzito–wa
+
+### Sense 105298 (2 occurrences)
+Grammar: Art | Adj-ms
+  eng: the–heavy
+  spa: el–pesado
+  hin: भारी
+  arb: الـ–ثَّقِيلِ, الثَّقيلِ
+  kor: 그–무거운
+  swa: nzito
+
+### Sense 105299 (1 occurrences)
+Grammar: Adj-msc
+  eng: heavy–of
+  spa: pesado–de
+  hin: भारी
+  arb: ثَقِيلُ
+  kor: 무거운–
+  swa: mzito–
+
+### Sense 105300 (1 occurrences)
+Grammar: Art | Adj-ms
+  eng: the–weighty
+  spa: el–pesado
+  hin: भारी
+  arb: الْعَظِيمَ
+  kor: 그–큰
+  swa: wakubwa
+
+### Sense 105301 (1 occurrences)
+Grammar: Adj-msc
+  eng: heavy–with
+  spa: cargado–de
+  hin: भारी
+  arb: مُثقَلٌ
+  kor: 무거운
+  swa: wazito–wa
+
+### Sense 105302 (1 occurrences)
+Grammar: Adj-ms
+  eng: very
+  spa: muy
+  hin: भारी
+  arb: كَثِيرَةٌ
+  kor: 심한
+  swa: mingi
+
+### Sense 105303 (1 occurrences)
+Grammar: Adj-mp
+  eng: heavy
+  spa: pesadas
+  hin: भारी–थे
+  arb: ثَقِيلَتَانِ
+  kor: 무거웠다
+  swa: ilikuwa–mizito
+
+### Sense 105304 (1 occurrences)
+Grammar: Adj-ms
+  eng: heavier
+  spa: más–pesada
+  hin: भारी
+  arb: أَثْقَلُ
+  kor: 무겁다
+  swa: nzito
+
+## Task
+
+Group these 10 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

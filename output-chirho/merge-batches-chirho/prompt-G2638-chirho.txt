@@ -1,0 +1,154 @@
+# Sense Merge Task for G2638
+
+Lemma: G2638 (POS: V-APM-NMP)
+Total occurrences: 15
+Current sense count: 14
+
+This Hebrew/Greek lemma has been over-split into 14 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 70257 (2 occurrences)
+Grammar: V-RPM/P-AFS,V-RIM/P-3S
+  eng: having–been–caught, has–been–caught
+  spa: sorprendida, ha-sido-sorprendida
+  hin: पकड़ी–गई
+  arb: مَقبوضَة, قُبِضَت
+  kor: 잡힌, 잡혔다
+  swa: amekamatwa, aliyekamatwa
+
+### Sense 70258 (1 occurrences)
+Grammar: V-AIA-3S
+  eng: overcame
+  spa: aprehendió
+  hin: समझा।
+  arb: تُدْرِكْهُ
+  kor: 깨닫지–못했다
+  swa: shinda
+
+### Sense 70259 (1 occurrences)
+Grammar: V-ASA-3S
+  eng: may–overtake
+  spa: alcance
+  hin: पकड़–ले
+  arb: تُدْرِكْ
+  kor: 사로잡지
+  swa: liwafikie
+
+### Sense 70260 (1 occurrences)
+Grammar: V-APM-NMP
+  eng: having–perceived
+  spa: habiendo–comprendido
+  hin: पुरुष
+  arb: مُدْرِكِينَ
+  kor: 알아보고
+  swa: wakigundua
+
+### Sense 70261 (1 occurrences)
+Grammar: V-AIM-1S
+  eng: understood
+  spa: comprendí
+  hin: पाया
+  arb: أَدْرَكْتُ
+  kor: 알았다
+  swa: nilipata
+
+### Sense 70262 (1 occurrences)
+Grammar: V-AIA-3S
+  eng: attained
+  spa: alcanzaron
+  hin: पाई
+  arb: أَدْرَكَتْ
+  kor: 얻었다
+  swa: yalipata
+
+### Sense 70263 (1 occurrences)
+Grammar: V-AIP-1S
+  eng: I–was–laid–hold–of
+  spa: fui–alcanzado
+  hin: मैन–पकद–गय,
+  arb: أُدْرِكْتُ
+  kor: 붙잡혔노라,
+  swa: nilikamatwa
+
+### Sense 70264 (1 occurrences)
+Grammar: V-PIM-1S
+  eng: I–perceive
+  spa: comprendo
+  hin: समझता–हूं
+  arb: أُدْرِكُ
+  kor: 깨닫는다
+  swa: naelewa,
+
+### Sense 70265 (1 occurrences)
+Grammar: V-ANM
+  eng: to-comprehend
+  spa: comprender
+  hin: समझन
+  arb: أَن–تُدرِكوا
+  kor: 깨닫도록
+  swa: kuelewa
+
+### Sense 70266 (1 occurrences)
+Grammar: V-ASA-1S
+  eng: I–may–lay–hold
+  spa: alcance
+  hin: मैन–पकदुन,
+  arb: أُدْرِكَ
+  kor: 잡으면,
+  swa: nikapate
+
+### Sense 70267 (1 occurrences)
+Grammar: V-RNA
+  eng: to–have–laid–hold
+  spa: haber–alcanzado
+  hin: पकदे–हुए.
+  arb: أَنّي–قَدْ–أَدْرَكْتُ
+  kor: 붙잡았다고.
+  swa: kuwa–nimepata
+
+### Sense 70268 (1 occurrences)
+Grammar: V-ASA-2P
+  eng: you-may-obtain
+  spa: obtengáis
+  hin: प्राप्त–करो
+  arb: تُدْرِكوا
+  kor: 잡으리라
+  swa: mpate.
+
+### Sense 70269 (1 occurrences)
+Grammar: V-ASA-3S
+  eng: should–overtake
+  spa: alcance
+  hin: पकदे
+  arb: يُدْرِكَ
+  kor: 덮치지–않도록.
+  swa: iwapate
+
+### Sense 70270 (1 occurrences)
+Grammar: V-ASA-3S
+  eng: it-seizes
+  spa: agarre
+  hin: पकड़े
+  arb: يَأْخُذُهُ
+  kor: 붙잡으면
+  swa: anampata
+
+## Task
+
+Group these 14 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

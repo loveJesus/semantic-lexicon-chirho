@@ -1,0 +1,126 @@
+# Sense Merge Task for H5582
+
+Lemma: H5582 (POS: Conj-w | V-Qal-ConjPerf-3ms)
+Total occurrences: 12
+Current sense count: 11
+
+This Hebrew/Greek lemma has been over-split into 11 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 121048 (2 occurrences)
+Grammar: V-Qal-Imp-ms
+  eng: sustain
+  spa: Sustenta
+  hin: सहारा–दे
+  arb: أَسْنِدْ
+  kor: 힘–내라
+  swa: Imarishe
+
+### Sense 121049 (1 occurrences)
+Grammar: V-Qal-Imperf-3ms | 1cs
+  eng: held–me–up
+  spa: me–sostenía
+  hin: संभालती–है–मुझे
+  arb: تَسْنُدُنِي
+  kor: 나–를–붙들어–주셨도다
+  swa: ilinitegemeza
+
+### Sense 121050 (1 occurrences)
+Grammar: Conj-w | V-Qal-Imp-ms | 3fs
+  eng: and–refresh-yourself
+  spa: y–refréscate
+  hin: और–जीमन–खा
+  arb: وَ–تَنَاوَلْ
+  kor: 그리고–먹으라
+  swa: na–ujiimarishe
+
+### Sense 121051 (1 occurrences)
+Grammar: V-Qal-Imperf-3fs | 1cs
+  eng: supported–me
+  spa: me–sostiene
+  hin: सम्भाला–है–मुझे
+  arb: تَسْنُدُنِي
+  kor: 받치시나이다
+  swa: unategemeza
+
+### Sense 121052 (1 occurrences)
+Grammar: Conj-w | V-Qal-Imp-mp
+  eng: and–sustain
+  spa: y–sustentad
+  hin: और–समभलो
+  arb: وَ–اسْنِدُوا
+  kor: 그리고–상쾌하게–하십시오
+  swa: na–mburudishe
+
+### Sense 121053 (1 occurrences)
+Grammar: V-Qal-Imperf-3ms | 2mse
+  eng: may–he–support–you
+  spa: te–sustente
+  hin: संभाले–तुझे
+  arb: يَسْنُدُكَ
+  kor: 받치시기–를
+  swa: akutegemeze
+
+### Sense 121054 (1 occurrences)
+Grammar: V-Qal-Imperf-3ms | 3mse
+  eng: will–sustain–him
+  spa: lo–sostendrá
+  hin: सम्भालेगा–उसे
+  arb: يُسانِدُهُ
+  kor: 붙드시도다–그–를
+  swa: atamsaidia
+
+### Sense 121055 (1 occurrences)
+Grammar: V-Qal-Imperf-3ms
+  eng: sustains
+  spa: sostiene
+  hin: दृढ़–करती–है
+  arb: يُسنِد
+  kor: 붙들리라
+  swa: unaimarisha
+
+### Sense 121056 (1 occurrences)
+Grammar: V-Qal-Imp-ms | 1cs
+  eng: uphold–me
+  spa: Sostenme
+  arb: أَعِنِّي
+  kor: 붙드소서–나–를
+  swa: niimarishe
+
+### Sense 121057 (1 occurrences)
+Grammar: Conj-w, Prep-l | V-Qal-Inf | 3
+  eng: and–to–support–it
+  spa: y-para-sostenerlo
+  hin: और–समर्थन–करने
+  arb: وَ–لِـ–يُسْنِدَهَا
+  kor: 그리고–견고케–하시리니
+  swa: na-kuutegemeza
+
+### Sense 121058 (1 occurrences)
+Grammar: Conj-w | V-Qal-ConjPerf-3ms
+  eng: and–sustained
+  spa: y–él–sostiene
+  hin: और–स्थिर–होता–है
+  arb: وَ–يَدْعَمُ
+  kor: 그리고–떠받치는니라
+  swa: na–hutegemeza
+
+## Task
+
+Group these 11 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

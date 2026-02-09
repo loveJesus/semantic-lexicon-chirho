@@ -1,0 +1,145 @@
+# Sense Merge Task for H7494
+
+Lemma: H7494 (POS: Conj-w | N-ms)
+Total occurrences: 17
+Current sense count: 13
+
+This Hebrew/Greek lemma has been over-split into 13 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 136746 (3 occurrences)
+Grammar: Art | N-ms
+  eng: the–earthquake
+  spa: el–terremoto
+  hin: भूकम्प–के, भूकंप–के।, भूकंप-के
+  arb: الزَّلْزَلَةِ, ال–زَّلْزَلَةِ
+  kor: 그–지진, 지진
+  swa: tetemeko
+
+### Sense 136747 (2 occurrences)
+Grammar: N-ms
+  eng: earthquake
+  spa: terremoto
+  hin: भूकम्प, भूकंप
+  arb: زَلْزَلَةٌ, زَلْزَالٌ
+  kor: 지진
+  swa: tetemeko
+
+### Sense 136748 (2 occurrences)
+Grammar: N-ms
+  eng: earthquake
+  spa: estruendo
+  hin: गरजना
+  arb: رَعْدٍ
+  kor: 진동의
+  swa: ya–tetemeko
+
+### Sense 136749 (1 occurrences)
+Grammar: Prep-b | N-ms
+  eng: in–shaking
+  spa: con-estruendo
+  hin: गरजना–में
+  arb: بِـ–الزَّلْزَلَةِ
+  kor: 소란–가운데
+  swa: kwa-mshtuko
+
+### Sense 136750 (1 occurrences)
+Grammar: Conj-w, Prep-b | N-ms
+  eng: and–with–earthquake
+  spa: y–con–terremoto
+  hin: और–से–भूकंप
+  arb: وَ–بِـ–زَلْزَلَةٍ
+  kor: 그리고–에–지진과
+  swa: na–kwa–tetemeko
+
+### Sense 136751 (1 occurrences)
+Grammar: N-ms
+  eng: rattling
+  spa: estruendo;
+  hin: कंपन
+  arb: رَجَفَةٌ
+  kor: 진동이
+  swa: mtetemeko
+
+### Sense 136752 (1 occurrences)
+Grammar: Conj-w | N-ms
+  eng: and–a–commotion
+  spa: y–estruendo
+  hin: और–कंपकंपी
+  arb: وَرَجَفَةٌ
+  kor: 그리고–떨림이라
+  swa: na–tetemeko
+
+### Sense 136753 (1 occurrences)
+Grammar: Prep-l | N-msc
+  eng: at–the-rattling-of
+  spa: de–estruendo–de
+  hin: काँपने–पर
+  arb: مِنْ–هَزِّ
+  kor: 흔들림–을
+  swa: kwa–kelele
+
+### Sense 136754 (1 occurrences)
+Grammar: Prep-b | N-ms
+  eng: with–trembling
+  spa: con–temblor
+  hin: में–कांपने
+  arb: بِارْتِعَاشٍ
+  kor: 떨림으로
+  swa: kwa–kutetemeka
+
+### Sense 136755 (1 occurrences)
+Grammar: N-ms
+  eng: rattling–of
+  spa: estruendo–de
+  hin: खड़खड़ाहट
+  arb: رَعْدِ
+  kor: 리듭리득
+  swa: –mshindo–wa
+
+### Sense 136756 (1 occurrences)
+Grammar: Prep-b, Art | N-ms
+  eng: in–the-earthquake
+  spa: en–el–terremoto
+  hin: भूकम्प–में
+  arb: في–ال–زَّلْزَلَةِ
+  kor: 지진–에
+  swa: katika–tetemeko
+
+### Sense 136757 (1 occurrences)
+Grammar: Prep-m | N-msc
+  eng: from–rumbling-of
+  spa: desde–estruendo–de
+  hin: से–गरजना
+  arb: مِنْ–ارْتِجَاجِ
+  kor: 떨림에서–
+  swa: kwa–sababu–ya–kishindo–cha
+
+### Sense 136758 (1 occurrences)
+Grammar: Prep-b | N-ms
+  eng: with–fierceness
+  spa: Con–estruendo
+  hin: काँपते–हुए
+  arb: بِارْتِجَاجٍ
+  kor: 떨림–과
+  swa: kwa–msisimko
+
+## Task
+
+Group these 13 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

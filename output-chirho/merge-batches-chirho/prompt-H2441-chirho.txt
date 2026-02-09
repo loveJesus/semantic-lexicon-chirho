@@ -1,0 +1,154 @@
+# Sense Merge Task for H2441
+
+Lemma: H2441 (POS: N-msc | 3fs)
+Total occurrences: 18
+Current sense count: 14
+
+This Hebrew/Greek lemma has been over-split into 14 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 96911 (3 occurrences)
+Grammar: N-msc | 1cs
+  eng: my–palate, my–mouth, my-palate
+  spa: mi–paladar, paladar–mío
+  hin: मेरा–तालू, तालू–मेरा, तालू–अपने–को
+  arb: حَنَكِي, حَنَكي
+  kor: 나의–입천장–이, 나의–입을, 나–의–입천장–이
+  swa: kaakaa–langu
+
+### Sense 96912 (2 occurrences)
+Grammar: Prep-l | N-msc | 1cs
+  eng: to–my–palate
+  spa: a–paladar–de–mí, a–mi–paladar
+  hin: मेरे–तालू–से
+  arb: لِ–حَنَكِي, بِـ–حَنَكِي
+  kor: 나–의–입천장–에, 나–의–입–에
+  swa: kwenye–kaakaa–langu, kwa–kaakaa–langu
+
+### Sense 96913 (2 occurrences)
+Grammar: Conj-w | N-ms
+  eng: and–the–palate, and–palate
+  spa: y–paladar, y–el–paladar
+  hin: और–तालू
+  arb: وَ–الحَنَكُ, وَالحَنَكُ
+  kor: 그리고–입천장–이, 그리고–입맛이
+  swa: na–kaakaa
+
+### Sense 96914 (1 occurrences)
+Grammar: Prep-l | N-msc | 1cs
+  eng: to–my–palate
+  spa: a–mi–paladar
+  hin: मेरे–तालू–को
+  arb: لِ–حِكِّي
+  kor: 내–입천장–에
+  swa: kwa–kaakaa–langu
+
+### Sense 96915 (1 occurrences)
+Grammar: N-msc | 2ms
+  eng: palate-of-you
+  spa: paladar–de–ti
+  hin: तेरे–तालू
+  arb: حَنَكِكَ
+  kor: 너의–입천장
+  swa: kaakaa–lako
+
+### Sense 96916 (1 occurrences)
+Grammar: N-msc | 2ms
+  eng: your–palate
+  spa: tu–paladar
+  hin: तालू–तेरे
+  arb: فَمِكَ
+  kor: 네–입에
+  swa: kinywa–chako
+
+### Sense 96917 (1 occurrences)
+Grammar: N-msc | 3fs
+  eng: is–her–mouth
+  spa: su–paladar
+  hin: तालू–उसका
+  arb: حَنَكُهَا
+  kor: 그녀–의–입천장–은
+  swa: kaakaa–lake
+
+### Sense 96918 (1 occurrences)
+Grammar: N-msc | 3ms
+  eng: his–palate
+  spa: Su–paladar
+  hin: उसका–तालू
+  arb: حِكُّو
+  kor: 그–입–이
+  swa: kinywa–chake
+
+### Sense 96919 (1 occurrences)
+Grammar: N-msc | 2ms
+  eng: your–palate
+  spa: tu–paladar
+  hin: तालू–तेरे
+  arb: حَنَكِكَ
+  kor: 입천장–너–의
+  swa: kaakaa–lako
+
+### Sense 96920 (1 occurrences)
+Grammar: Conj-w | N-msc | 2fs
+  eng: and–your–palate
+  spa: Y–tu–paladar
+  hin: और–तेरा–तालू
+  arb: وَحَنَكُكِ
+  kor: 그리고–네–입–이
+  swa: na–kinywa–chako
+
+### Sense 96921 (1 occurrences)
+Grammar: Prep-l | N-msc | 3mp
+  eng: to–their-palate
+  spa: a–su–paladar
+  hin: उनकी
+  arb: لِ–حَنَكِهِم
+  kor: 그들의–입천장에
+  swa: kwenye–kaakaa–lao
+
+### Sense 96922 (1 occurrences)
+Grammar: N-msc | 3ms
+  eng: his–palate
+  spa: su–paladar.
+  hin: अपने–तालू–के
+  arb: حَنَكِهِ
+  kor: 그의–입천장
+  swa: kaakaa–lake
+
+### Sense 96923 (1 occurrences)
+Grammar: Prep-b | N-msc | 1cs
+  eng: in–my–palate
+  spa: en–mi–paladar
+  hin: तालू–में–अपने
+  arb: فِي–حَنَكِي
+  kor: 나의–입안–에서
+  swa: katika–kaakaa–langu
+
+### Sense 96924 (1 occurrences)
+Grammar: N-msc | 3ms
+  eng: his–palate
+  spa: su–paladar
+  hin: उसके–तालू
+  arb: حَنَكِهِ
+  kor: 그–입천장–에
+  swa: kaakaa–lake
+
+## Task
+
+Group these 14 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

@@ -1,0 +1,117 @@
+# Sense Merge Task for H8574
+
+Lemma: H8574 (POS: Conj-w | N-cs)
+Total occurrences: 15
+Current sense count: 10
+
+This Hebrew/Greek lemma has been over-split into 10 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 145438 (4 occurrences)
+Grammar: Prep-k | N-cs,Prep-k, Art | N-cs
+  eng: like–oven, like–the–furnace, like–an–oven
+  spa: como–horno, como–el–horno
+  hin: तन्दूर–जैसे, तन्दूर–जैसा, तंदूर–की–तरह
+  arb: كَالتَّنُّورِ, كَتَنُّورٍ
+  kor: 같으니라–화덕에, 화덕–처럼, 같이–화로
+  swa: kama–tanuru
+
+### Sense 145439 (2 occurrences)
+Grammar: Art | N-cp
+  eng: the–Ovens
+  spa: los–hornos
+  hin: तन्दूरों–के
+  arb: التَّنّوراتِ, التَّنَّورِينَ
+  kor: 그–화덕들의, 그–화덕들–의
+  swa: tanuru, Tanuri
+
+### Sense 145440 (2 occurrences)
+Grammar: N-cs
+  eng: oven
+  spa: horno
+  hin: तन्दूर, अशुद्ध होगा
+  arb: تَنُّورٍ, تَنُّورٌ
+  kor: 화덕이나, 화덕에
+  swa: tanuru
+
+### Sense 145441 (1 occurrences)
+Grammar: N-csc
+  eng: a-furnace-of
+  spa: horno–de
+  hin: भत्ति
+  arb: تَنُّورٌ
+  kor: 화덕이
+  swa: tanuru
+
+### Sense 145442 (1 occurrences)
+Grammar: Prep-b, Art | N-cs
+  eng: in–the–oven
+  spa: en–el–horno
+  hin: तन्दूर–में
+  arb: فِي–تَنُّورٍ
+  kor: 에–화덕에서
+  swa: katika–tanuru
+
+### Sense 145443 (1 occurrences)
+Grammar: Prep-k | N-csc
+  eng: like–a–fiery–furnace
+  spa: como–horno–de
+  hin: जैसे–भट्ठी
+  arb: كَتَنُّورٍ
+  kor: 화덩–처럼
+  swa: kama–tanuru–ya
+
+### Sense 145444 (1 occurrences)
+Grammar: N-cs
+  eng: an-oven
+  spa: horno
+  hin: तन्दूर–में
+  arb: تَنُّورٍ
+  kor: 화덕–의
+  swa: tanuri
+
+### Sense 145445 (1 occurrences)
+Grammar: Prep-b | N-cs
+  eng: in-oven
+  spa: en–horno
+  hin: में–चूल्हे
+  arb: فِي–تَنُّورٍ
+  kor: 화덕에
+  swa: katika–tanuri
+
+### Sense 145446 (1 occurrences)
+Grammar: Conj-w, Prep-b | N-cpc | 2ms
+  eng: and–in–your–ovens
+  spa: y–en–tus–hornos
+  hin: और–तेरे–तंदूरों–में
+  arb: وَفِي–تَنَانِيرِكَ
+  kor: 그리고–네–화덕들에
+  swa: na–katika–tanuri–zako
+
+### Sense 145447 (1 occurrences)
+Grammar: Conj-w | N-cs
+  spa: y–horno
+  hin: और–भट्टी
+  arb: وَ–تَنُّورٌ
+  kor: 그리고–화덕이
+  swa: na–tanuru–lake
+
+## Task
+
+Group these 10 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

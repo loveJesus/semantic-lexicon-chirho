@@ -1,0 +1,118 @@
+# Sense Merge Task for H7613
+
+Lemma: H7613 (POS: Conj-w | N-fsc | 3ms)
+Total occurrences: 14
+Current sense count: 10
+
+This Hebrew/Greek lemma has been over-split into 10 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 137601 (5 occurrences)
+Grammar: N-fs,N-fsc
+  eng: swelling, swelling–, swelling-of–
+  spa: hinchazón, hinchazón–, hinchazón-de–
+  hin: सूजन, जलन
+  arb: وَرَمٌ, وَرَمُ
+  kor: 부스럼, 부스럼–이
+  swa: uvimbe, uvimbe–wa–, uvimbe–wa
+
+### Sense 137603 (1 occurrences)
+Grammar: Prep-b | N-fs
+  eng: in–the–swelling
+  spa: en–la–hinchazón
+  hin: में–सूजन
+  arb: فِي–الْوَرَمِ
+  kor: 부스럼–에
+  swa: katika–uvimbe
+
+### Sense 137604 (1 occurrences)
+Grammar: Conj-w | N-fsc | 3ms
+  eng: and–his–dignity
+  spa: y–su–dignidad
+  hin: और–उसकी–महिमा
+  arb: وَ–كَرامَتُهُ
+  kor: 그–의–위엄이
+  swa: na–ukuu–wake
+
+### Sense 137605 (1 occurrences)
+Grammar: Conj-w, Prep-l | N-fs
+  eng: and–for–the–swelling
+  spa: Y–para–la–hinchazón
+  hin: और–के लिए
+  arb: وَ–لِلْوَرَمِ
+  kor: 그리고-부풀의
+  swa: Na–kwa–uvimbe
+
+### Sense 137606 (1 occurrences)
+Grammar: V-Qal-Inf
+  eng: lifting-up
+  spa: levantar
+  hin: उठाना
+  arb: رَفْعٌ
+  kor: 들어–올림
+  swa: utakubaliwa
+
+### Sense 137607 (1 occurrences)
+Grammar: N-fs
+  eng: dignity
+  spa: dignidad
+  hin: गरिमा–में
+  arb: عِزَّةٍ
+  kor: 존귀함의
+  swa: wa–kutambua
+
+### Sense 137608 (1 occurrences)
+Grammar: N-fsc | 3ms
+  eng: majesty-his
+  spa: Su–majestad
+  hin: उसका–तेज
+  arb: جَلَالُهُ
+  kor: 그의–위엄–이
+  swa: utukufu–wake
+
+### Sense 137609 (1 occurrences)
+Grammar: Prep-m | N-fsc | 3ms
+  eng: from–his–dignity
+  spa: de–su–dignidad
+  hin: उसके–ऊंचे–पद–से
+  arb: مِن–عِزِّهِ
+  kor: 그–의–높은–위치–에서
+  swa: kutoka–nafasi-yake
+
+### Sense 137610 (1 occurrences)
+Grammar: Conj-w, Prep-m | N-fsc | 3ms
+  eng: and–from–His–majesty
+  spa: y–de–su–majestad
+  hin: और–उसकी–महिमा–से
+  arb: وَ–مِن–عَظَمَتِهِ
+  kor: 그리고–그의–위엄–에서
+  swa: na–ukuu–wake
+
+### Sense 137611 (1 occurrences)
+Grammar: Prep-m | N-fsc | 3ms
+  eng: At–his-rising
+  spa: De–su–levantarse
+  hin: उसके–उठने–से
+  arb: مِنْ–نُهُوضِهِ
+  kor: 그것–의–일어냈–에서
+  swa: kutoka–kuinuka–kwake
+
+## Task
+
+Group these 10 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

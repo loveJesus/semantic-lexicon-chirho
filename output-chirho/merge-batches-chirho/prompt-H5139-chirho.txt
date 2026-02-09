@@ -1,0 +1,118 @@
+# Sense Merge Task for H5139
+
+Lemma: H5139 (POS: Prep-l | N-mp)
+Total occurrences: 16
+Current sense count: 10
+
+This Hebrew/Greek lemma has been over-split into 10 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 116930 (5 occurrences)
+Grammar: Art | N-ms
+  eng: the–Nazirite
+  spa: el–nazareo
+  hin: नाजीर–की, नाजीर, नाजीर–के
+  arb: الْـنَّذِيرِ, الْـنَّذِيرُ
+  kor: 그–나실인, 그–나실인–이
+  swa: Hnzir
+
+### Sense 116931 (3 occurrences)
+Grammar: N-msc
+  eng: Nazirite-of, a–Nazirite-of
+  spa: nazareo–de
+  hin: नज़ीर
+  arb: نَذيرَ, نَذِيرُ
+  kor: 나실인이, 나실인이다
+  swa: Mnaziri–wa, Mnadhiri
+
+### Sense 116932 (1 occurrences)
+Grammar: N-msc
+  eng: consecrated-one-of
+  spa: el–consagrado–de
+  hin: अलग–किए–हुए
+  arb: نَذِيرِ
+  kor: 구별된–자(접)
+  swa: aliyetengwa
+
+### Sense 116933 (1 occurrences)
+Grammar: Prep-l | N-mp
+  eng: as–Nazirites
+  spa: como–nazareos
+  hin: के–लिए–नाज़ीरों
+  arb: نَذيرينَ
+  kor: 나실인들로
+  swa: kuwa–Wanadhiri
+
+### Sense 116934 (1 occurrences)
+Grammar: N-msc
+  eng: prince–of
+  spa: consagrado–de
+  hin: नज़ीर
+  arb: الْمُكَرَّسِ
+  kor: 구별된–자
+  swa: Naziri
+
+### Sense 116935 (1 occurrences)
+Grammar: N-mpc | 3fs
+  eng: its-unpruned-grapes
+  spa: nazareo–de–ella
+  hin: इसके–नज़ीर
+  arb: كُرُومَهَا–الْمُهْمَلَةَ
+  kor: 그것의-가지치지-않은-것을
+  swa: mizabibu–yake–isiyokatwa
+
+### Sense 116936 (1 occurrences)
+Grammar: N-ms
+  eng: Nazirite
+  spa: nazareo
+  hin: नाजीर–की
+  arb: نَذِيرٍ
+  kor: 나실인–의
+  swa: Nzir
+
+### Sense 116937 (1 occurrences)
+Grammar: N-mpc | 2ms
+  eng: your-unpruned-vine
+  spa: tu–nazareo
+  hin: तेरे–नज़ीर
+  arb: كَرْمِكَ–الْمُهْمَلِ
+  kor: 네-가지치지-않은-것의
+  swa: mizabibu–yako–isiyokatwa
+
+### Sense 116938 (1 occurrences)
+Grammar: N-mpc | 3fs
+  eng: her–consecrated–ones
+  spa: sus–nazareos
+  hin: उसके–नाज़ीर
+  arb: نُذُرُهَا
+  kor: 그녀–관원들–이
+  swa: Wanazirite–wake
+
+### Sense 116939 (1 occurrences)
+Grammar: Art | N-mp
+  eng: the–Nazirites
+  spa: a–los–nazareos
+  hin: नाज़ीरों
+  arb: النَّذيرينَ
+  kor: 나실인들에게
+  swa: Wanadhiri
+
+## Task
+
+Group these 10 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

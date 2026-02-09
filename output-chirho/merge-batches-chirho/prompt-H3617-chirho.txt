@@ -1,0 +1,136 @@
+# Sense Merge Task for H3617
+
+Lemma: H3617 (POS: Conj-w | N-fs)
+Total occurrences: 21
+Current sense count: 12
+
+This Hebrew/Greek lemma has been over-split into 12 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 106395 (6 occurrences)
+Grammar: N-fs,N-ms
+  eng: complete–destruction, a–full–end, complete–end
+  spa: exterminio, consumación
+  hin: विनाश, समाप्ति, पूर्ण–विनाश
+  arb: فَنَاءً
+  kor: 끝장을, 끝을, 완전한–끝을
+  swa: mwisho–kamili, mwisho
+
+### Sense 106396 (4 occurrences)
+Grammar: N-fs
+  eng: complete–destruction, complete-destruction, a–complete–destruction
+  spa: exterminio, destrucción, consumación
+  hin: अंत, पूर्ण–विनाश
+  arb: فَنَاءً
+  kor: 종결–을, 완전한, 멸절을
+  swa: mwisho
+
+### Sense 106397 (2 occurrences)
+Grammar: Conj-w | N-fs
+  eng: but–complete–end, and–complete–end
+  spa: pero–fin
+  hin: और–पूर्ण–विनाश, और–अंत
+  arb: وَ–فَنَاءً
+  kor: 그러나–완전한–끝은
+  swa: lakini–mwisho–kamili
+
+### Sense 106398 (1 occurrences)
+Grammar: Prep-l | N-fs
+  eng: completely
+  spa: completamente
+  hin: उसके–बाद
+  arb: لِلكمالِ
+  kor: 완전히
+  swa: kabisa
+
+### Sense 106399 (1 occurrences)
+Grammar: Adv
+  eng: complete
+  spa: completamente
+  hin: पुर
+  arb: كَامِلَةً
+  kor: 완전히
+  swa: kabisa
+
+### Sense 106400 (1 occurrences)
+Grammar: N-fs
+  eng: an–end
+  spa: fin
+  hin: पूरी–तरह
+  arb: فَنَاءً
+  kor: 끝으로
+  swa: mwisho
+
+### Sense 106401 (1 occurrences)
+Grammar: V-Qal-Perf-3ms
+  eng: determined
+  spa: completada
+  hin: तय
+  arb: قُضِيَتْ
+  kor: 결정되었다
+  swa: imeamuliwa
+
+### Sense 106402 (1 occurrences)
+Grammar: N-fs
+  eng: completion
+  spa: fin
+  hin: नाश
+  arb: فَنَاءً
+  kor: 끝을–내시나이까
+  swa: unamaliza
+
+### Sense 106403 (1 occurrences)
+Grammar: Prep-l | N-fs
+  eng: for–destruction
+  spa: para–destruir
+  hin: को–समाप्त
+  arb: لِلْإِفْنَاءِ
+  kor: 멸하기–위하여
+  swa: kuangamiza
+
+### Sense 106404 (1 occurrences)
+Grammar: N-fs
+  eng: destruction
+  spa: consumación
+  hin: विनाश
+  arb: فَنَاءً
+  kor: 끝남과
+  swa: maangamizi
+
+### Sense 106405 (1 occurrences)
+Grammar: Adv
+  eng: completely
+  spa: completamente
+  hin: पूरी–तरह
+  arb: كُلِيَّا
+  kor: 완전히
+  swa: kabisa
+
+### Sense 106406 (1 occurrences)
+Grammar: N-fs
+  eng: complete-destruction
+  spa: consumación
+  hin: अंत
+  arb: الْفَنَاءِ
+  kor: 마침–과
+  swa: mwisho
+
+## Task
+
+Group these 12 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

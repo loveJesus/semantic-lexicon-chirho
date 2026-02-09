@@ -1,0 +1,136 @@
+# Sense Merge Task for H0374
+
+Lemma: H0374 (POS: N-fs)
+Total occurrences: 40
+Current sense count: 12
+
+This Hebrew/Greek lemma has been over-split into 12 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 81778 (11 occurrences)
+Grammar: Art | N-fs,N-fs
+  eng: the–ephah, ephah
+  spa: la–efa, efa, el–efa
+  hin: एपा, एपा–के
+  arb: الْإِيفَةِ, إِيفَةً, الْ–إِيفَةُ
+  kor: 그–에바, 에바, 그–에바를
+  swa: efa, Efa
+
+### Sense 81779 (8 occurrences)
+Grammar: Art | N-fs
+  eng: the–ephah
+  spa: el–efa, la–efa
+  hin: एपा–का, एपाह–का, –के–एपा
+  arb: الْ–إِيفَةِ, –الأَيفَةِ, الْـ–أَيفَةِ
+  kor: 그–에바, 에바의, 그–에바의
+  swa: efa, ya–efa, efa–hiyo
+
+### Sense 81780 (6 occurrences)
+Grammar: Conj-w | N-fs,Conj-w | N-fsc
+  eng: and–ephah
+  spa: y–efa, Y–efa
+  hin: और–एपा, और–एक–पा
+  arb: وَ–إِيفَةً, وَمِكْيَالٌ, وَإِيفَةُ
+  kor: 그리고–에바, 그리고–에바가
+  swa: na–efa, na–kipimo, Na–efa
+
+### Sense 81781 (4 occurrences)
+Grammar: Prep-l, Art | N-fs
+  eng: for–the-ephah
+  spa: por–efa
+  hin: प्रति–एपा, एपा–के–लिए
+  arb: لِـ–الْ–إِيفَةِ
+  kor: 에–에바에, 에–그–에바에
+  swa: kwa–efa
+
+### Sense 81782 (3 occurrences)
+Grammar: N-fs
+  eng: ephah
+  spa: efa, un-efa
+  hin: एक–पा, एपा
+  arb: مِكْيَالٌ, إِيفَةً
+  kor: 에바, 에바를
+  swa: efa
+
+### Sense 81783 (2 occurrences)
+Grammar: N-fsc
+  eng: ephah–of, ephah-of
+  spa: efa–de, efah–de
+  hin: एफह, एपा
+  arb: إِيفَةَ
+  kor: 에바–의, 에바
+  swa: efa–ya–, efa
+
+### Sense 81784 (1 occurrences)
+Grammar: N-fs
+  eng: measure
+  spa: efa
+  hin: एपाह
+  arb: إيفةٌ
+  kor: 되
+  swa: kipimo
+
+### Sense 81785 (1 occurrences)
+Grammar: Conj-w | N-fsc
+  eng: and–ephah-of–
+  spa: y–efah–de
+  hin: और–एपाह
+  arb: وَ–أَيفَةَ–
+  kor: 그리고–에바의
+  swa: na–efa–ya–
+
+### Sense 81786 (1 occurrences)
+Grammar: Conj-w | N-fs
+  eng: and–ephah
+  spa: y–efá
+  hin: और–एपा
+  arb: وَ–إِيفَةٍ
+  kor: 그리고–에바
+  swa: na–efa
+
+### Sense 81787 (1 occurrences)
+Grammar: Conj-w | N-fs
+  eng: and–measure
+  spa: y–efa
+  hin: और–एपाह
+  arb: وَ–إيفةٌ
+  kor: 그리고–되
+  swa: na–kipimo
+
+### Sense 81788 (1 occurrences)
+Grammar: Prep-k | N-fs
+  eng: about–an-ephah-of
+  spa: como–efa–de
+  hin: लगभग–एपा
+  arb: نَحْوَ–إِيفَةٍ
+  kor: 약–에바
+  swa: kama–efa
+
+### Sense 81789 (1 occurrences)
+Grammar: Conj-w | N-fsc
+  eng: and–ephah-of–
+  spa: y–efa–de
+  hin: और–एपा–
+  arb: وَ–إِيفَةُ–
+  kor: 그리고–에바의–
+  swa: na–efa–ya
+
+## Task
+
+Group these 12 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

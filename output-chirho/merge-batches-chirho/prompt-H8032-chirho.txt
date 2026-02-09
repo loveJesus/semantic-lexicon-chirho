@@ -1,0 +1,118 @@
+# Sense Merge Task for H8032
+
+Lemma: H8032 (POS: Adv)
+Total occurrences: 25
+Current sense count: 10
+
+This Hebrew/Greek lemma has been over-split into 10 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 141475 (5 occurrences)
+Grammar: Adv
+  eng: before
+  spa: anteayer
+  hin: परसों, पहले, परसों–की–तरह
+  arb: أَوَّلَ–أَمْسِ, البارِحَةِ
+  kor: 그저께–같이, 그저께, 그저께부터
+  swa: na–juzi, juzi
+
+### Sense 141476 (5 occurrences)
+Grammar: Adv
+  eng: third-day, before-yesterday, three–days–ago
+  spa: anteayer
+  hin: परसों
+  arb: مَا–قَبْلَهُ, أَوْ–أَوَّلَ–أَمْسِ, أَوَّلَ–أَمْسِ
+  kor: 그저께
+  swa: juzi, na–juzi, jana
+
+### Sense 141477 (5 occurrences)
+Grammar: Adv
+  eng: three–days–ago, three-days-ago
+  spa: anteayer, y–anteayer
+  hin: परसों, शिल्शोम, पहले
+  arb: أَوَّلَ–أَمْسِ, وَ–أَوَّلَ–أَمْسِ, وَأَوَّلِ
+  kor: 그저께, 그저께에, 그저께도
+  swa: na–juzi, juzi, mtatu
+
+### Sense 141478 (3 occurrences)
+Grammar: Adv
+  eng: third-day
+  spa: antes-de-ayer
+  hin: परसो̃
+  arb: أَوَّلِ–أَمْسِ
+  kor: 그제처럼, 그제
+  swa: na–juzi
+
+### Sense 141479 (2 occurrences)
+Grammar: Adv
+  eng: three-days-ago
+  spa: anteayer
+  hin: परसों
+  arb: أَوَّلِ–أَمسِ
+  kor: 그저께부터
+  swa: na–juzi
+
+### Sense 141480 (1 occurrences)
+Grammar: Adv
+  eng: [previously]
+  spa: [antes]
+  hin: [तीस]
+  arb: [ثلاثين]
+  kor: [전에]
+  swa: mambo–thelathini
+
+### Sense 141481 (1 occurrences)
+Grammar: Adv
+  eng: the–day–before
+  spa: antes–de–ayer
+  hin: परसोम
+  arb: أَوَّلَ–أَمْسِ
+  kor: 그저께처럼
+  swa: na–juzi
+
+### Sense 141482 (1 occurrences)
+Grammar: Adv
+  eng: before
+  spa: ni–anteayer
+  hin: और–भागेगा
+  arb: أَوْ–مِنْ–قَبْلُ
+  kor: 그저께
+  swa: kabla
+
+### Sense 141483 (1 occurrences)
+Grammar: Prep-m | Adv
+  eng: from–third-day
+  spa: de–antes-de-ayer
+  hin: परसो̃–से
+  arb: مِنْ–أَوَّلِ–أَمْسِ
+  kor: 그전부터
+  swa: tangu–juzi
+
+### Sense 141484 (1 occurrences)
+Grammar: Adv
+  eng: before-yesterday
+  spa: anteayer
+  hin: परसों
+  arb: أَوْ–مِنْ–أَمْسِ
+  kor: 그제부터–
+  swa: juzi
+
+## Task
+
+Group these 10 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

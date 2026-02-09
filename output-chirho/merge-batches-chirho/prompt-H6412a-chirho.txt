@@ -1,0 +1,136 @@
+# Sense Merge Task for H6412a
+
+Lemma: H6412a (POS: N-mpc | 2mp)
+Total occurrences: 19
+Current sense count: 12
+
+This Hebrew/Greek lemma has been over-split into 12 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 127573 (4 occurrences)
+Grammar: Art | N-ms
+  eng: the–fugitive
+  spa: el–fugitivo, el–fugitivo,
+  hin: तुम, को–विरासत
+  arb: ٱلنَّاجِي, النَّاجِي
+  kor: 그–도망친–자의, 그–도망친–자가, 그–도망자의
+  swa: aliyeokoka
+
+### Sense 127574 (2 occurrences)
+Grammar: N-ms
+  eng: survivor, fugitive
+  spa: fugitivo
+  hin: भागा–हुआ, बचा–हुआ
+  arb: نَاجٍ
+  kor: 피난–자–가, 도망자
+  swa: mwenye–kutoroka, aliyeokoka
+
+### Sense 127575 (2 occurrences)
+Grammar: Conj-w | N-ms
+  eng: or–fugitive
+  spa: ni–fugitivo
+  hin: और–भागा–हुआ
+  arb: وَ–نَاجٍ, وَ–فَالِتٍ
+  kor: 그리고–도망자를, 그리고–도망자가
+  swa: na–aliyepona, au–aliyekimbia
+
+### Sense 127576 (2 occurrences)
+Grammar: N-mpc
+  eng: survivors–of, survivors-of
+  spa: sobrevivientes–de
+  hin: बचे–हुए
+  arb: يَا–نَاجِيَ, ناجينَ
+  kor: 피한–자들이, 피난–자들아
+  swa: walioponea, walionusurika-kutoka
+
+### Sense 127577 (2 occurrences)
+Grammar: N-mpc
+  eng: fugitives-of
+  spa: fugitivos–de
+  hin: भगोड़े
+  arb: فارّو
+  kor: 도망자들이
+  swa: wakimbizi–wa
+
+### Sense 127578 (1 occurrences)
+Grammar: N-mpc | 2mp
+  eng: survivors-of-you
+  spa: sobrevivientes–de–ustedes
+  hin: तुम्हारे–बचे–हुए
+  arb: ناجوكُمْ
+  kor: 너희의–피한–자들이
+  swa: walioponea–wenu
+
+### Sense 127579 (1 occurrences)
+Grammar: N-mpc | 3mp
+  eng: survivors-of-them
+  spa: sobrevivientes–de–ellos
+  hin: उनके–बचे–हुए
+  arb: ناجوهُمْ
+  kor: 그들의–피한–자들이
+  swa: walioponea–wao
+
+### Sense 127580 (1 occurrences)
+Grammar: Conj-w | N-mpc
+  eng: and–fugitives-of
+  spa: y–fugitivos–de
+  hin: और–भागे–हुए
+  arb: وَالنَّاجُونَ–مِنَ
+  kor: 그리고–피한–자들이
+  swa: Na–waliotoroka–upanga
+
+### Sense 127581 (1 occurrences)
+Grammar: N-ms
+  eng: an-escapee
+  spa: fugitivo
+  hin: पालीत
+  arb: فارٌّ
+  kor: 도망자가
+  swa: mkimbizi
+
+### Sense 127582 (1 occurrences)
+Grammar: Art | N-ms
+  eng: the–escapee
+  spa: el–fugitivo
+  hin: जो–बच
+  arb: الْ–هَارِبُ
+  kor: 피난–자가
+  swa: mkimbizi
+
+### Sense 127583 (1 occurrences)
+Grammar: N-ms
+  eng: a–survivor
+  spa: sobreviviente
+  hin: बचने–वाला।
+  arb: نَاجٍ
+  kor: 피하는–자가
+  swa: mwokozi
+
+### Sense 127584 (1 occurrences)
+Grammar: Adj-mpc | 3ms
+  eng: his-fugitives
+  spa: sus–fugitivos
+  hin: उस–के–बचे–हुओं
+  arb: –فاريه
+  kor: 그의–도망친–자들을
+  swa: wakimbizi–wake
+
+## Task
+
+Group these 12 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

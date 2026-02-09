@@ -1,0 +1,136 @@
+# Sense Merge Task for H4519
+
+Lemma: H4519 (POS: Conj-w)
+Total occurrences: 146
+Current sense count: 12
+
+This Hebrew/Greek lemma has been over-split into 12 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 112581 (126 occurrences)
+Grammar: N-proper-ms,Art | N-proper-ms,Conj-w | N-proper-ms
+  eng: Manasseh, Menasheh, and–Menasheh
+  spa: Manasés, Menasheh, Menashé
+  hin: मनश्शे, मनश्शे–के, मनश्शेह
+  arb: مَنَسَّى, مَنَسّى, وَ–مَنَسَّى
+  kor: 므낫세의, 므낫세, 므나세가
+  swa: Manase, mnasheּh, na–Manase
+
+### Sense 112583 (8 occurrences)
+Grammar: Art | N-proper-ms
+  eng: the–Manasseh
+  spa: Manasés, el–Manasés
+  hin: मनश्शे–के, सारी–, मनश्शे–का
+  arb: مَنَسَّى
+  kor: 그–므낫세의, 므났세의, 므낫세의
+  swa: ha–Manase, Manase
+
+### Sense 112584 (3 occurrences)
+Grammar: Prep-l | N-proper-ms
+  eng: for–Menasheh
+  spa: de–Manasés, Manasés, De–Manasés
+  hin: मनश्शे–का, मनश्शे–को
+  arb: لِ–مَنَسّى
+  kor: 므낫세에게
+  swa: kwa–Manase
+
+### Sense 112585 (1 occurrences)
+Grammar: Conj-w, Prep-k | N-proper-ms
+  eng: and–as–Manasseh
+  spa: y–como–Menashé
+  hin: और–मनश्शे–जैसा
+  arb: وَكَمَنَسَّى
+  kor: 그리고–같이–므나세
+  swa: na–kama–Manase
+
+### Sense 112586 (1 occurrences)
+Grammar: N-proper-ms
+  eng: Menasheh
+  spa: Moisés
+  hin: मनश्शेह
+  arb: مَنَسَّى
+  kor: 먍세의
+  swa: wa–Manase
+
+### Sense 112587 (1 occurrences)
+Grammar: Art | N-proper-ms
+  eng: the–Menashshite
+  spa: el–de–Manasés
+  hin: –के–मनश्शे
+  arb: الْمَنَسِّيِّ
+  kor: 그–므나세의
+  swa: Manase
+
+### Sense 112588 (1 occurrences)
+Grammar: Prep-b | N-proper-ms
+  eng: in–Manasseh
+  spa: en–Menasheh
+  hin: मनश्शे–में
+  arb: بِ–مَنَسّى
+  kor: 므낯세에서
+  swa: katika–Manase
+
+### Sense 112589 (1 occurrences)
+Grammar: Conj-w, Prep-m | N-proper-ms
+  eng: and–from–Menasheh
+  spa: Y–de–Manasés
+  hin: और–मनश्शे–से
+  arb: وَمِن–مَنَسَّى
+  kor: 그–와–에서–므낫세
+  swa: na–kutoka–Manase
+
+### Sense 112590 (1 occurrences)
+Grammar: Prep-l | N-proper-ms
+  eng: for–Manasseh
+  spa: de–Manasés
+  hin: के–लिए–मनश्शे
+  arb: لِمَنَسَّى
+  kor: 에게–므낫세
+  swa: kwa–Manase
+
+### Sense 112591 (1 occurrences)
+Grammar: Conj-w, Prep-l | N-proper-ms
+  eng: and–for–Menasheh
+  spa: y–a–Manasés
+  hin: और–मनश्शे–को
+  arb: وَ–لِ–مَنَسّى
+  kor: 그리고–므낫세에게
+  swa: na–kwa–Manase
+
+### Sense 112592 (1 occurrences)
+Grammar: Prep-m | N-proper-ms
+  eng: from–Menasheh
+  spa: de–Manasés
+  hin: मनश्शे–से
+  arb: مِن–مَنَسَّى
+  kor: 에서–므낫세
+  swa: kutoka–Manase
+
+### Sense 112593 (1 occurrences)
+Grammar: Prep-l | N-proper-ms
+  eng: to–Menasheh
+  spa: para–Manasés
+  hin: मनश्शे–के–लिए
+  arb: لِمَنَسَّى
+  kor: 에–므낫세
+  swa: wa–Manase
+
+## Task
+
+Group these 12 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

@@ -1,0 +1,125 @@
+# Sense Merge Task for H4033
+
+Lemma: H4033 (POS: Prep-b | N-mpc | 3ms)
+Total occurrences: 11
+Current sense count: 11
+
+This Hebrew/Greek lemma has been over-split into 11 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 109640 (1 occurrences)
+Grammar: N-mpc | 3mp
+  eng: sojourning–their
+  spa: sus–peregrinaciones
+  hin: परदेस–के–उनके
+  arb: غُرْبَتِهِمْ
+  kor: 그들의–체류의
+  swa: ukali–wa–maengo–yao
+
+### Sense 109641 (1 occurrences)
+Grammar: N-mpc | 2ms
+  eng: your–sojournings
+  spa: tus–peregrinaciones
+  hin: तेरे–प्रवसि–क
+  arb: غُرْبَتِكَ
+  kor: 네–거주지들의
+  swa: ya–ugeni–wako
+
+### Sense 109642 (1 occurrences)
+Grammar: N-mpc | 3mp
+  eng: sojournings-their
+  spa: peregrinaciones–de–ellos
+  hin: उनकी–परदेश–की
+  arb: غُرْبَتِ–هِما
+  kor: 그들의–거주하는–곳의
+  swa: kukamatia
+
+### Sense 109643 (1 occurrences)
+Grammar: N-mpc | 1cs
+  eng: my–sojourning
+  spa: peregrinación–de–mí
+  arb: غُرْبَتِي
+  kor: 나–의–나그네–됨–의
+  swa: ugeni–wangu
+
+### Sense 109644 (1 occurrences)
+Grammar: N-mpc | 2ms
+  eng: sojournings–your
+  spa: peregrinajes–tuyos
+  hin: तेरे–प्रवास–का
+  arb: غُرْبَتِكَ
+  kor: 너의–나그네–삶의
+  swa: ya–kumishi–kwako
+
+### Sense 109645 (1 occurrences)
+Grammar: N-mpc | 3mp
+  eng: their–sojournings
+  spa: sus-peregrinaciones
+  hin: उनके–परदेश–की
+  arb: غُرْبَتِهِمْ
+  kor: 그들의–거주지
+  swa: ya–ukazi–wao
+
+### Sense 109646 (1 occurrences)
+Grammar: Prep-b | N-mpc | 3mp
+  eng: are–in–their–dwelling
+  spa: en–su–morada
+  arb: في–مَساكِنِهِم
+  kor: 거처–에
+  swa: katika–makazi-yao
+
+### Sense 109647 (1 occurrences)
+Grammar: N-mpc | 3mp
+  eng: sojournings–their
+  spa: sus–peregrinaciones
+  hin: उनके–परदेश
+  arb: غُرْبَتِهِمْ
+  kor: 그들의–거주의
+  swa: ya–makazi–yao
+
+### Sense 109648 (1 occurrences)
+Grammar: Prep-b | N-mpc | 3ms
+  eng: in–his–dwellings
+  spa: en–sus–moradas
+  hin: उसके–परदेशों–में
+  arb: فِي–مَسَاكِنِهِ
+  kor: 그의–거처들에
+  swa: makazi–yake
+
+### Sense 109649 (1 occurrences)
+Grammar: N-mpc
+  eng: sojournings-of
+  spa: peregrinaciones-de
+  hin: परदेश
+  arb: غُرْبَةِ
+  kor: 거주하는–곳들에
+  swa: ya–ugeni–wa
+
+### Sense 109650 (1 occurrences)
+Grammar: N-mpc | 1cs
+  eng: sojourning–my
+  spa: mis–peregrinaciones
+  hin: परदेस–के–मेरे
+  arb: غُرْبَتِي
+  kor: 나의–체류의
+  swa: ukali–wa–maengo–yangu
+
+## Task
+
+Group these 11 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

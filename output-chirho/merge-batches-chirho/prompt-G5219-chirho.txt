@@ -1,0 +1,136 @@
+# Sense Merge Task for G5219
+
+Lemma: G5219 (POS: V-PIA-3S)
+Total occurrences: 21
+Current sense count: 12
+
+This Hebrew/Greek lemma has been over-split into 12 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 78047 (4 occurrences)
+Grammar: V-PIA-3P,V-PIA-3S
+  eng: they-obey, obey
+  spa: obedecen
+  hin: मानते–हैं, का, आज्ञा–मानते–हैं
+  arb: يُطيعونَ, يُطيعانِهِ, يُطيعانِ
+  kor: 순종한다, 순종하느냐?
+  swa: vinamtii, wanamtii, wana-m-tii?
+
+### Sense 78048 (4 occurrences)
+Grammar: V-PMA-2P
+  eng: obey
+  spa: obedeced
+  hin: अअग्य-मअनो, अअग्य-मनो
+  arb: أَطيعوا
+  kor: 순종하라
+  swa: watiini
+
+### Sense 78049 (2 occurrences)
+Grammar: V-AIA-2P
+  eng: you–obeyed
+  spa: obedecisteis
+  hin: तुमने–अअग्य–मअनि,, आज्ञा–माने
+  arb: أَطَعْتُمْ, أَطَعتُم
+  kor: 순종했으니, 순종했노라,
+  swa: mlitii
+
+### Sense 78050 (2 occurrences)
+Grammar: V-AIA-3S
+  eng: obeyed
+  spa: obedeció
+  hin: माना, मानती–थी
+  arb: أَطَاعَ, أطاعَت
+  kor: 순종하였으니
+  swa: alitii, alimtii
+
+### Sense 78051 (2 occurrences)
+Grammar: V-PPA-DMP
+  eng: obeying
+  spa: que–obedecen
+  hin: मअन्ने-वअलोन, आज्ञा–माननेवालों–के–लिए
+  arb: يُطيعونَ, المُطيعينَ
+  kor: 순종하는–자들에게, 복종하는
+  swa: wanaomtii, oitii
+
+### Sense 78052 (1 occurrences)
+Grammar: V-IIA-3P
+  eng: were–obeying
+  spa: obedecían
+  hin: मानने–लगे
+  arb: أَطَاعُوا
+  kor: 순종했다
+  swa: walitii
+
+### Sense 78053 (1 occurrences)
+Grammar: V-PIA-3S
+  eng: obeys
+  spa: obedece
+  hin: मअने
+  arb: يُطيعُ
+  kor: 복종하면
+  swa: –
+
+### Sense 78054 (1 occurrences)
+Grammar: V-PNA
+  eng: to–obey
+  spa: obedecer
+  hin: आज्ञा–मानने–को
+  arb: تُطيعوا
+  kor: 순종하기
+  swa: muitii
+
+### Sense 78055 (1 occurrences)
+Grammar: V-PIA-2P
+  eng: you–obey
+  spa: obedecéis
+  hin: आज्ञा–मानते–हो
+  arb: تُطيعونَهُ
+  kor: 순종하는도다
+  swa: mnamtii
+
+### Sense 78056 (1 occurrences)
+Grammar: V-AIA-3S
+  eng: it-obeyed
+  spa: os–obedecería
+  hin: आज्ञा–मानता
+  arb: لَأَطاعَتْ
+  kor: 순종했을–것이다
+  swa: ungetii
+
+### Sense 78057 (1 occurrences)
+Grammar: V-ANA
+  eng: to–answer
+  spa: escuchar
+  hin: सुनने–को
+  arb: لِـ–تُجِيبَ
+  kor: 들으려고
+  swa: kusikiliza,
+
+### Sense 78058 (1 occurrences)
+Grammar: V-AIA-3P
+  eng: obeyed
+  spa: obedecieron
+  hin: माना
+  arb: أَطَاعُوا
+  kor: 불순종하였다
+  swa: walitii
+
+## Task
+
+Group these 12 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

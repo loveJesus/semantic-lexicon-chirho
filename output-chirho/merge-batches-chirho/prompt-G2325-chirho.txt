@@ -1,0 +1,154 @@
+# Sense Merge Task for G2325
+
+Lemma: G2325 (POS: V-APA-GMP)
+Total occurrences: 21
+Current sense count: 14
+
+This Hebrew/Greek lemma has been over-split into 14 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 69165 (5 occurrences)
+Grammar: V-FIA-3S
+  eng: will-reap, he-will-reap
+  spa: segará, cosechará
+  hin: काटेगा, कतेग, कतेग.
+  arb: يَحصُدُ, يَحصُدُهُ
+  kor: 거두리라, 거두리라.
+  swa: atavuna, atavuna–, atavuna;
+
+### Sense 69166 (3 occurrences)
+Grammar: V-PPA-NMS
+  eng: reaping, one-reaping
+  spa: que-siega
+  hin: काटनेवाला।, काटनेवाला
+  arb: حَاصِدُ
+  kor: 거두는–자다, 거두는–자는, 거두는–자가
+  swa: anavunaye
+
+### Sense 69167 (2 occurrences)
+Grammar: V-PPA-NMS
+  eng: reaping
+  spa: cosechando
+  hin: काटने–वाला, काटनेवाला
+  arb: حاصِدٌ, تَحْصُدُ
+  kor: 거두시는, 거두는
+  swa: unavuna, nikivuna
+
+### Sense 69168 (1 occurrences)
+Grammar: V-PIA-2S
+  eng: you-reap
+  spa: cosechas
+  hin: काटता–है
+  arb: تَحصُدُ
+  kor: 거두십니다
+  swa: unavuna
+
+### Sense 69169 (1 occurrences)
+Grammar: V-PNA
+  eng: to-reap
+  spa: a-segar
+  hin: काटने
+  arb: لِتَحْصُدُوا
+  kor: 거두도록
+  swa: kuvuna
+
+### Sense 69170 (1 occurrences)
+Grammar: V-PIA-3P
+  eng: do–they–reap
+  spa: siegan
+  hin: काटते
+  arb: تَحصُدُ
+  kor: 거두다
+  swa: kuvuna
+
+### Sense 69171 (1 occurrences)
+Grammar: V-APA-GMP
+  eng: having–harvested
+  spa: que–cosecharon
+  hin: काटनेवालों–की
+  arb: الحاصِدينَ
+  kor: 거둔–자들–의,
+  swa: wavunaji
+
+### Sense 69172 (1 occurrences)
+Grammar: V-AMA-2S
+  eng: reap
+  spa: siega
+  hin: काट
+  arb: اِحصُد
+  kor: 거두라
+  swa: uvune;
+
+### Sense 69173 (1 occurrences)
+Grammar: V-ANA
+  eng: to-reap
+  spa: de–segar
+  hin: काटने–की
+  arb: لِلحَصادِ
+  kor: 거두려고
+  swa: ya–kuvuna,
+
+### Sense 69174 (1 occurrences)
+Grammar: V-FIA-1P
+  eng: shall-reap
+  spa: cosecharemos?
+  hin: काटें
+  arb: نَحْصُدُ
+  kor: 거두리라
+  swa: tutavuna?
+
+### Sense 69175 (1 occurrences)
+Grammar: V-AIP-3S
+  eng: was-reaped
+  spa: fue–segada
+  hin: काटी–गई
+  arb: حُصِدَت
+  kor: 거두어졌으니
+  swa: ikavunwa
+
+### Sense 69176 (1 occurrences)
+Grammar: V-FIA-1P
+  eng: we-will-reap
+  spa: segaremos
+  hin: हुम–कतेनगे
+  arb: سَنَحصُدُ
+  kor: 거두리라
+  swa: tutavuna
+
+### Sense 69177 (1 occurrences)
+Grammar: V-PIA-1S
+  eng: I–reap
+  spa: cosecho
+  hin: काटता–हूं
+  arb: أَحْصُدُ
+  kor: 거둔다
+  swa: ninavuna
+
+### Sense 69178 (1 occurrences)
+Grammar: V-PIA-3P
+  eng: reap
+  spa: cosechan
+  hin: काटते–हैं
+  arb: تَحْصُدُ
+  kor: 거두지–않는다
+  swa: hawavuni
+
+## Task
+
+Group these 14 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

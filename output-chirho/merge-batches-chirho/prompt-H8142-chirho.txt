@@ -1,0 +1,154 @@
+# Sense Merge Task for H8142
+
+Lemma: H8142 (POS: Conj-w | N-fsc | 1cs)
+Total occurrences: 23
+Current sense count: 14
+
+This Hebrew/Greek lemma has been over-split into 14 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 142857 (6 occurrences)
+Grammar: N-fs,N-fp
+  eng: sleep, a–sleep
+  spa: sueño, sueños, el–sueño
+  hin: नींद, नींद–को, नींदें
+  arb: نَوْمًا, نَوْمٍ, نَوْمٌ
+  kor: 잠, 잠을, 잠–이라
+  swa: usingizi
+
+### Sense 142858 (3 occurrences)
+Grammar: Prep-m | N-fsc | 3ms
+  eng: from–his–sleep
+  spa: de–su–sueño
+  hin: अपनी–नींद–से, अपनी–नींद–से।
+  arb: مِنْ–نَوْمِهِ
+  kor: 로부터–그의–잠
+  swa: kutoka–usingizini
+
+### Sense 142859 (2 occurrences)
+Grammar: N-fsc
+  eng: sleep-of
+  spa: sueño–de, el–sueño–de
+  hin: नींद
+  arb: نَوْمَةُ, سُوءٌ
+  kor: 잠, 의–잠이
+  swa: usingizi–wa, usingizi
+
+### Sense 142860 (2 occurrences)
+Grammar: N-fsc
+  eng: a–sleep-of–
+  spa: sueño
+  hin: नींद–
+  arb: نَوْمَ–
+  kor: 잠을–
+  swa: usingizi–wa
+
+### Sense 142861 (1 occurrences)
+Grammar: Prep-m | N-fsc | 2ms
+  eng: from–your–sleep
+  spa: de–tu–sueño
+  hin: नींद–अपनी–से
+  arb: مِنْ–نَوْمِكَ
+  kor: 네–잠–에서
+  swa: kutoka–usingizi–wako
+
+### Sense 142862 (1 occurrences)
+Grammar: Prep-m | N-fsc | 3ms
+  eng: from–sleep–his
+  spa: de–sueño–suyo
+  hin: उस–की–नींद–से
+  arb: مِنْ–نَوْمِهِ
+  kor: 그의–잠에서
+  swa: kutoka–usingizi–wake
+
+### Sense 142863 (1 occurrences)
+Grammar: N-fs
+  eng: sleep
+  spa: sueño
+  hin: नींद
+  arb: نَومًا
+  kor: 잠–을
+  swa: usingizi
+
+### Sense 142864 (1 occurrences)
+Grammar: Prep-m | N-fsc | 3mp
+  eng: from–sleep-their
+  spa: de–su–sueño
+  hin: अपनी–नींद–से
+  arb: مِنْ–نَوْمِهِمْ
+  kor: 그들의–잠에서
+  swa: kutoka–usingizi–wao
+
+### Sense 142865 (1 occurrences)
+Grammar: Conj-w | N-fsc | 1cs
+  eng: and–my–sleep
+  spa: y–mi–sueño
+  hin: और–मेरी–नींद
+  arb: وَنَوْمِي
+  kor: 그리고–나의–잠이
+  swa: na–usingizi–wangu
+
+### Sense 142866 (1 occurrences)
+Grammar: N-fsc | 1cs
+  eng: my-sleep
+  spa: sueño–mío
+  hin: नींद–मेरी
+  arb: نَوْمِي
+  kor: 나의–잠이
+  swa: usingizi–wangu
+
+### Sense 142867 (1 occurrences)
+Grammar: N-fsc | 3mp
+  eng: their–sleep
+  spa: sueño-de-ellos
+  hin: शेनाताम
+  arb: نَوْمَهُمْ
+  kor: 그들–의–잠–을
+  swa: usingizi–wao
+
+### Sense 142868 (1 occurrences)
+Grammar: N-fsc | 2ms
+  eng: will–be–your–sleep
+  spa: tu–sueño
+  hin: नींद–तेरी
+  arb: نَوْمُكَ
+  kor: 네–잠–이
+  swa: utakuwa–mtamu
+
+### Sense 142869 (1 occurrences)
+Grammar: N-fsc | 3mp
+  eng: their–sleep
+  spa: su–sueño
+  hin: नींद–उनकी
+  arb: نَوْمُهُمْ
+  kor: 그–들–의–잠–이
+  swa: usingizi–wao
+
+### Sense 142870 (1 occurrences)
+Grammar: Conj-w | N-fsc | 3ms
+  eng: and–his-sleep
+  spa: y–su–sueño
+  hin: और–उसकी–नींद
+  arb: وَ–نَوْمُهُ
+  kor: 그리고–잠이
+  swa: na–usingizi–wake
+
+## Task
+
+Group these 14 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

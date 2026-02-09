@@ -1,0 +1,118 @@
+# Sense Merge Task for H7916
+
+Lemma: H7916 (POS: Adj-mpc | 3fs)
+Total occurrences: 17
+Current sense count: 10
+
+This Hebrew/Greek lemma has been over-split into 10 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 140368 (6 occurrences)
+Grammar: Adj-ms
+  eng: hired-worker, a-hired-worker, worker
+  spa: jornalero, el–jornalero
+  hin: मजदूर–के, मज़दूर–के, मज़दूर–की
+  arb: أَجِيرٍ
+  kor: 품꾼의, 일꿠–의, 일꾼
+  swa: ya–mfanyakazi, mfanyakazi, mfanya–kazi
+
+### Sense 140369 (2 occurrences)
+Grammar: Conj-w | Adj-ms
+  eng: and–a-hired-worker, and–a-hired-servant
+  spa: y–jornalero, y–asalariado
+  hin: और–मज़दूर
+  arb: وَ–الْأَجِيرُ, وَأَجِيرٌ
+  kor: 그리고–일꾼, 그리고–고용인은
+  swa: na–mfanyakazi–wa–mshahara
+
+### Sense 140370 (2 occurrences)
+Grammar: Prep-k | Adj-ms,Prep-k | Adj-msc
+  eng: as–a-hired-worker
+  spa: Como–jornalero
+  hin: जैसे–मज़दूर
+  arb: كَ–أَجِيرِ, كَ–أَجِيرٍ
+  kor: 같이
+  swa: Kama–mfanyakazi–wa–mshahara
+
+### Sense 140371 (1 occurrences)
+Grammar: Adj-mpc | 3fs
+  eng: her–mercenaries
+  spa: sus–mercenarios
+  hin: उसके–किराए–के–सिपाही
+  arb: مُرْتَزَقُوهَا
+  kor: 그녀의–용병들이
+  swa: waajiriwa–wake
+
+### Sense 140372 (1 occurrences)
+Grammar: Conj-w, Prep-k | Adj-ms
+  eng: and–like-hired-worker
+  spa: y–como–jornalero
+  hin: और–मज़दूर–की–तरह
+  arb: وَكَأَجيرٍ
+  kor: 그리고–같이–일꾼이
+  swa: na–kama–mfanyakazi
+
+### Sense 140373 (1 occurrences)
+Grammar: Adj-ms
+  eng: hired-worker
+  spa: jornalero
+  hin: मज़दूर
+  arb: أَجيرٍ
+  kor: 일꾼의
+  swa: mfanyakazi–wa–mshahara
+
+### Sense 140374 (1 occurrences)
+Grammar: Conj-w, Prep-l | Adj-msc | 2ms
+  eng: and–for-your-hired-worker
+  spa: y–para–tu–jornalero
+  hin: और–तेरे–मज़दूर–के–लिए
+  arb: وَلِ–أَجِيرِكَ
+  kor: 그리고-네-고용인에게
+  swa: na–kwa–mfanyakazi–wako–wa–mshahara
+
+### Sense 140375 (1 occurrences)
+Grammar: Adj-ms
+  eng: a-hired-worker
+  spa: alquilado
+  hin: किराये–पर
+  arb: مُستَأجَرَةً
+  kor: 세낸
+  swa: aliyekodishwa
+
+### Sense 140376 (1 occurrences)
+Grammar: Prep-k | Adj-ms
+  eng: like–hired-worker
+  spa: como–jornalero
+  hin: मज़दूर–की–तरह
+  arb: كَ–أَجِيرٍ
+  kor: 품꾼–같이
+  swa: kama–mfanyakazi
+
+### Sense 140377 (1 occurrences)
+Grammar: Adj-ms
+  eng: hired-worker
+  spa: jornalero
+  hin: मज़दूर
+  arb: أَجِيرًا
+  kor: 품꾼을
+  swa: kibarua
+
+## Task
+
+Group these 10 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

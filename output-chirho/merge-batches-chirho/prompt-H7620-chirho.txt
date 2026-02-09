@@ -1,0 +1,145 @@
+# Sense Merge Task for H7620
+
+Lemma: H7620 (POS: Art | N-mp)
+Total occurrences: 20
+Current sense count: 13
+
+This Hebrew/Greek lemma has been over-split into 13 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 137662 (5 occurrences)
+Grammar: N-mp,Art | N-mp
+  eng: sevens, the–sevens
+  spa: semanas, las–semanas, Semanas
+  hin: सप्ताह, सप्ताहों
+  arb: أَسَابِيعُ, أَسَابِيعَ, الْأَسَابِيعِ
+  kor: 주간, 이레–, 이레–의
+  swa: majuma
+
+### Sense 137663 (2 occurrences)
+Grammar: N-msc
+  eng: week-of
+  spa: semana–de
+  hin: सप्ताह
+  arb: أُسْبُوعَ
+  kor: 주간을
+  swa: juma
+
+### Sense 137664 (2 occurrences)
+Grammar: N-mp,Art | N-mp
+  eng: the–Weeks, Weeks
+  spa: semanas, las–semanas
+  hin: सप्ताहों–के, सप्ताहों–का
+  arb: الْأَسَابِيعِ
+  kor: 칠칠절을, 칠칠절과
+  swa: Wiki
+
+### Sense 137665 (2 occurrences)
+Grammar: N-mp
+  eng: weeks
+  spa: semanas
+  hin: सप्ताह
+  arb: أَسَابِيعَ
+  kor: 주를
+  swa: wiki
+
+### Sense 137666 (1 occurrences)
+Grammar: Conj-w | N-mp
+  eng: and–sevens
+  spa: y–semanas
+  hin: और–सप्ताह
+  arb: وَ–أَسَابِيعُ
+  kor: 그리고–이레–
+  swa: na–majuma
+
+### Sense 137667 (1 occurrences)
+Grammar: Art | N-ms
+  eng: the–seven
+  spa: la–semana
+  hin: सप्ताह
+  arb: الْأُسْبُوعِ
+  kor: 이레–의
+  swa: ya–juma
+
+### Sense 137668 (1 occurrences)
+Grammar: N-mp
+  eng: weeks
+  spa: semanas
+  hin: सप्ताहों–का
+  arb: الأَسابيعِ
+  kor: 주간들의
+  swa: ya–majuma
+
+### Sense 137669 (1 occurrences)
+Grammar: N-ms
+  eng: seven
+  spa: semana
+  hin: सप्ताह
+  arb: أُسْبُوعًا
+  kor: 이레–
+  swa: juma
+
+### Sense 137670 (1 occurrences)
+Grammar: Prep-b | N-mpc | 2mp
+  eng: in–your-weeks
+  spa: en–semanas–de–vosotros
+  hin: सप्ताहों–तुम्हारे–में
+  arb: فِي–أَسَابِيعِكُمْ
+  kor: 너희의–칠칠절에
+  swa: katika–majuma–yenu
+
+### Sense 137671 (1 occurrences)
+Grammar: Art | N-mp
+  eng: the–weeks
+  spa: las–semanas
+  hin: सप्ताहों–के
+  arb: الأَسابيعِ
+  kor: 그–주간들–의
+  swa: ya–Majuma
+
+### Sense 137672 (1 occurrences)
+Grammar: N-md
+  eng: two-weeks
+  spa: dos-semanas
+  hin: सप्ताह
+  arb: أُسْبُوعَيْنِ
+  kor: 두–주
+  swa: wiki–mbili
+
+### Sense 137673 (1 occurrences)
+Grammar: N-mpc
+  eng: weeks
+  spa: las–semanas
+  hin: सप्ताह
+  arb: أَسَابِيعَ
+  kor: 주일들을
+  swa: majuma
+
+### Sense 137674 (1 occurrences)
+Grammar: N-mpc
+  eng: weeks-of
+  spa: semanas–de
+  hin: सप्ताह
+  arb: أَسَابِيعُ
+  kor: 일곱들의
+  swa: ya–wiki–moja
+
+## Task
+
+Group these 13 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

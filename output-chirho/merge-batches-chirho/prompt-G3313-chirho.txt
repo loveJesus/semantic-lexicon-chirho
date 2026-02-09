@@ -1,0 +1,136 @@
+# Sense Merge Task for G3313
+
+Lemma: G3313 (POS: N-NNS)
+Total occurrences: 42
+Current sense count: 12
+
+This Hebrew/Greek lemma has been over-split into 12 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 72220 (14 occurrences)
+Grammar: N-ANS,N-GNS
+  eng: part
+  spa: parte, partido, en–parte
+  hin: अंश, भाग–में, भाग
+  arb: جُزءٍ, جُزْءٍ, جِهَةِ
+  kor: 부분적으로, 부분, 편–의
+  swa: sehemu, sehemu,, sehemu.
+
+### Sense 72221 (11 occurrences)
+Grammar: N-ANS,N-NNS
+  eng: part, portion, a–part
+  spa: parte, negocio
+  hin: भाग, जीवन, अंश
+  arb: نَصيبَهُ, جُزْءٌ, نَصِيبَهُ
+  kor: 몶을, 분깃을, 부분이
+  swa: sehemu, yake
+
+### Sense 72222 (4 occurrences)
+Grammar: N-ANP
+  eng: parts, region
+  spa: regiones, partes
+  hin: कशेत्रोन, प्रदेशों–में, क्षेत्रों
+  arb: نَوَاحِي
+  kor: 지역으로, 지역들, 지역
+  swa: sehemu
+
+### Sense 72223 (3 occurrences)
+Grammar: N-ANP
+  eng: parts
+  spa: partes
+  hin: भागों, भाग, और
+  arb: أَقْسَامَ, أَجْزَاءٍ, أَجزاءٍ
+  kor: 부분들, 부분–으로, 그–
+  swa: sehemu, sehemu;
+
+### Sense 72224 (2 occurrences)
+Grammar: N-ANP
+  eng: regions
+  spa: regiones
+  hin: प्रदेशों
+  arb: الْأَجْزَاءَ, الأَجْزَاءَ
+  kor: 지역을, 지역들을
+  swa: sehemu
+
+### Sense 72225 (2 occurrences)
+Grammar: N-DNS
+  eng: matter
+  spa: respecto, parte
+  hin: भाग, भअग
+  arb: جُزءِ, الجُزءِ–هٰذا
+  kor: 부분에서, 부분에
+  swa: sehemu
+
+### Sense 72226 (1 occurrences)
+Grammar: N-DNS
+  eng: respect
+  spa: respecto
+  hin: भाग
+  arb: الجُزءِ
+  kor: 부분에서
+  swa: sehemu,
+
+### Sense 72227 (1 occurrences)
+Grammar: N-ANS
+  eng: detail
+  spa: parte
+  hin: भाग।
+  arb: جُزْءِيًّا
+  kor: 부분을
+  swa: undani
+
+### Sense 72228 (1 occurrences)
+Grammar: N-ANP
+  eng: parts
+  spa: partes
+  hin: तरफ़
+  arb: الجانِبِ
+  kor: 부분
+  swa: wa
+
+### Sense 72229 (1 occurrences)
+Grammar: N-ANP
+  eng: parts
+  spa: partes
+  hin: भअग
+  arb: أَجزاءِ
+  kor: 곳들에
+  swa: sehemu
+
+### Sense 72230 (1 occurrences)
+Grammar: N-ANS
+  eng: turn
+  spa: turno
+  hin: अंश
+  arb: جُزءٍ
+  kor: 부분으로
+  swa: zamu
+
+### Sense 72231 (1 occurrences)
+Grammar: N-ANS
+  eng: a-piece
+  spa: parte
+  hin: टुकड़ा
+  arb: قِطْعَةً
+  kor: 한–조각을
+  swa: kipande
+
+## Task
+
+Group these 12 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

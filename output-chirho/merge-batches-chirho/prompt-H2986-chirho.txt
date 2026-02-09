@@ -1,0 +1,154 @@
+# Sense Merge Task for H2986
+
+Lemma: H2986 (POS: V-Hifil-Imperf-3mp | 3fs)
+Total occurrences: 18
+Current sense count: 14
+
+This Hebrew/Greek lemma has been over-split into 14 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 100602 (2 occurrences)
+Grammar: V-Hofal-Imperf-3ms
+  eng: is-led, being–led
+  spa: llevado, fue–llevado
+  hin: ले–जाया–जाता–है, ले–जाया–जाता–था
+  arb: يُسَاقُ
+  kor: 이끌리는, 끌려갔고
+  swa: anayeongozwa, alipelekwa
+
+### Sense 100603 (2 occurrences)
+Grammar: V-Hifil-Imperf-3mp,V-Hifil-Imperf-3mp | Pn
+  eng: will–bring
+  spa: traerán
+  hin: वे–लाएंगे
+  arb: يُقَدِّمونَ, يَحْمِلُونَ
+  kor: 가져오리이다, 가져오리라
+  swa: wataleta
+
+### Sense 100604 (2 occurrences)
+Grammar: V-Hofal-Imperf-3ms
+  eng: shall-be-carried, is-carried
+  spa: será–llevado, es–llevado
+  hin: ले–जाया–जाता–है, ले–जाया–जाएगा
+  arb: يُحمَلُ
+  kor: 끌려가리라
+  swa: yanapelekwa, atapelekwa
+
+### Sense 100605 (2 occurrences)
+Grammar: V-Hifil-Imperf-3ms | 1cs
+  eng: will–bring–me
+  spa: me–llevará
+  hin: ले–जाएगा–मुझे, मुझे–ले–जाएगा
+  arb: يُحضِرُني, يَقودُني
+  kor: 인도하리요–나–를, 나를–인도하리오
+  swa: atanipeleka
+
+### Sense 100606 (1 occurrences)
+Grammar: V-Hofal-Imperf-3fp
+  eng: they–are–led
+  spa: Serán–traídas
+  hin: लाई–जाएंगी–वे
+  arb: يُقادُونَ
+  kor: 이끌리리이다–그들–이
+  swa: Wataongozwa
+
+### Sense 100607 (1 occurrences)
+Grammar: V-Hifil-Imperf-3mp
+  eng: let–them–bring
+  spa: traerán
+  hin: योवीलू
+  arb: يُحْضِرُونَ
+  kor: 가져오라
+  swa: walete
+
+### Sense 100608 (1 occurrences)
+Grammar: V-Hifil-Imperf-3mp | 3fs
+  eng: carried–her
+  spa: la–llevaban
+  hin: ले–जाएंगे–उसे
+  arb: حَمَلَتْهَا
+  kor: 이끌었으니
+  swa: miguu–yake–ilimchukua
+
+### Sense 100609 (1 occurrences)
+Grammar: V-Hofal-Imperf-2mp | Pn
+  eng: you-will-be-led
+  spa: seréis–conducidos
+  hin: ले–जाओगे
+  arb: تُسَاقُونَ
+  kor: 인도되리라
+  swa: mtaongozwa
+
+### Sense 100610 (1 occurrences)
+Grammar: V-Hofal-Imperf-1cs
+  eng: I-would-be-carried
+  spa: habría–sido–llevado.
+  hin: मैं–ले–जाया–जाता
+  arb: أُحْمَلُ
+  kor: 내가–운반되었으리라
+  swa: ningebebwa
+
+### Sense 100611 (1 occurrences)
+Grammar: V-Hifil-Imperf-1cs | 3mp
+  eng: I–will–lead–them
+  spa: los–guiaré
+  hin: ले–जाऊँगा–उनको–मैं
+  arb: أَقُودُهُمْ
+  kor: 인도하리라–그들을
+  swa: nitawaongoza
+
+### Sense 100612 (1 occurrences)
+Grammar: V-Hofal-Imperf-3ms
+  eng: is–brought
+  spa: es–llevado
+  hin: ले–जाया–जाता–है
+  arb: يُحْمَلُ
+  kor: 인도되고
+  swa: atapelekwa
+
+### Sense 100613 (1 occurrences)
+Grammar: V-Hofal-Imperf-3mp
+  eng: they–are–led
+  spa: son–llevados.
+  hin: वे–ले–जाएंगे
+  arb: يُسَاقُونَ
+  kor: 인도되나니
+  swa: wanaongozwa
+
+### Sense 100614 (1 occurrences)
+Grammar: V-Hofal-Imperf-3ms
+  eng: will-be-brought–
+  spa: será–traído–
+  hin: लाया–जाएगा–
+  arb: تُجْلَبُ–
+  kor: 가져오리라–
+  swa: italetwa
+
+### Sense 100615 (1 occurrences)
+Grammar: V-Hofal-Imperf-3fs
+  eng: she–is–led
+  spa: será–llevada
+  hin: लाई–जाएगी–वह
+  arb: تُقادُ
+  kor: 이끌리리이다
+  swa: ataongozwa
+
+## Task
+
+Group these 14 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

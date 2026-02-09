@@ -1,0 +1,118 @@
+# Sense Merge Task for G4130
+
+Lemma: G4130 (POS: V-AIP-3P)
+Total occurrences: 24
+Current sense count: 10
+
+This Hebrew/Greek lemma has been over-split into 10 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 74992 (8 occurrences)
+Grammar: V-AIP-3P
+  eng: were–filled, they–were–filled
+  spa: fueron–llenos, fueron–llenados
+  hin: भर–गए, –आत्मा–से, उसे
+  arb: اِمْتَلَأُوا, امتَلَأوا
+  kor: 가득–찼다, 채워졌다, 찼다
+  swa: walijazwa, wakajawa, walijawa
+
+### Sense 74993 (5 occurrences)
+Grammar: V-AIP-3P,V-AIP-3S
+  eng: were–completed, was–fulfilled
+  spa: se–cumplieron, se–cumplió, fueron–cumplidos
+  hin: पूरे–हो–गए, पूरा–हो–गया
+  arb: تَمَّتْ, تَمَّ
+  kor: 찼다
+  swa: zilipotimia, zikatimia, ukatimia
+
+### Sense 74994 (2 occurrences)
+Grammar: V-AIP-3S
+  eng: was–filled
+  spa: fue–lleno, fue–llena
+  hin: भर–गया, भर–गई
+  arb: امْتَلَأَتْ, امْتَلَأَ
+  kor: 충만해졌다
+  swa: akajazwa
+
+### Sense 74995 (2 occurrences)
+Grammar: V-APP-NMS
+  eng: having–been–filled
+  spa: llenándose, habiendo–sido–lleno
+  hin: भरकर
+  arb: مُمْتَلِئًا, امتَلَأَ
+  kor: 채워져서, 가득–차
+  swa: akijazwa
+
+### Sense 74996 (2 occurrences)
+Grammar: V-AIP-3S
+  eng: was–filled, was-filled
+  spa: se–llenó, se-llenó
+  hin: भर–गया
+  arb: امْتَلَأَتِ, امتَلأَ
+  kor: 채워졌다, 차다
+  swa: –, ulijaa
+
+### Sense 74997 (1 occurrences)
+Grammar: V-FIP-3S
+  eng: he–will–be–filled
+  spa: será–lleno
+  hin: भर–जाएगा
+  arb: سَيَمْتَلِئُ
+  kor: 충만해질–것이다
+  swa: atajazwa
+
+### Sense 74998 (1 occurrences)
+Grammar: V-ANP
+  eng: to-be-fulfilled
+  spa: cumplirse
+  hin: पूरी–होने–के–लिए
+  arb: لِيَتِمَّ
+  kor: 성취하기–위하여
+  swa: kutimizwa
+
+### Sense 74999 (1 occurrences)
+Grammar: V-APA-NMS
+  eng: having–filled
+  spa: habiendo–llenado
+  hin: भरकर
+  arb: مَلَأَهَا
+  kor: 채우고
+  swa: akijaza
+
+### Sense 75000 (1 occurrences)
+Grammar: V-ASP-2S
+  eng: be–filled
+  spa: seas–lleno
+  hin: भर–जाए
+  arb: تَمْتَلِئَ
+  kor: 찾–수–있도록
+  swa: ujazwe
+
+### Sense 75001 (1 occurrences)
+Grammar: V-AIA-3P
+  eng: they–filled
+  spa: llenaron
+  hin: भरा
+  arb: مَلَأوا
+  kor: 채웠다
+  swa: wakazijaza
+
+## Task
+
+Group these 10 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

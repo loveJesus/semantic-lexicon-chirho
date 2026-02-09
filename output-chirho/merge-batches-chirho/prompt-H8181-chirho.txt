@@ -1,0 +1,126 @@
+# Sense Merge Task for H8181
+
+Lemma: H8181 (POS: Conj-w | N-msc | 3fs)
+Total occurrences: 28
+Current sense count: 11
+
+This Hebrew/Greek lemma has been over-split into 11 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 143122 (7 occurrences)
+Grammar: N-ms
+  eng: hair
+  spa: pelo
+  hin: बाल, में–वह, में–चमकीले दाग
+  arb: شَعْرٌ, شَعْرٍ, شَعْرًا
+  kor: 털, 털–이, 털–을
+  swa: nywele
+
+### Sense 143125 (5 occurrences)
+Grammar: N-msc | 3ms,Conj-w | N-msc | 3fs
+  eng: his–hair, and–its–hair
+  spa: su–pelo, y–su–pelo
+  hin: अपने बाल, और–शुद्ध होगा, और–अलग करेगा
+  arb: شَعْرِهِ, وَ–شَعْرُهَا
+  kor: 털을-그의, 그리고–그것–의–털–이
+  swa: nywele–zake, na–nywele–yake
+
+### Sense 143123 (4 occurrences)
+Grammar: N-msc
+  eng: hair-of, hair–of
+  spa: cabello–de, el–cabello–de
+  hin: बाल, केश
+  arb: شَعْرَ, شَعْرُ–, شَعرَ–
+  kor: 머리카락–의, 머리카락이, 머리카락을–
+  swa: Shar, nywele–za, nywele
+
+### Sense 143124 (3 occurrences)
+Grammar: Conj-w | N-ms
+  eng: and–hair
+  spa: y–pelo
+  hin: काला, और–बाल, उसकी दिखावट में
+  arb: وَ–شَعْرٌ
+  kor: 그리고–털, 그리고–털–이
+  swa: na–nywele
+
+### Sense 143127 (2 occurrences)
+Grammar: N-msc | 2fs
+  eng: your–hair
+  spa: tu–cabello
+  hin: तेरे–बाल
+  arb: سَعْرِيكْ
+  kor: 네–머리카락–이
+  swa: nywele–zako
+
+### Sense 143128 (2 occurrences)
+Grammar: N-ms
+  eng: hair
+  spa: pelo
+  hin: बाल–का, बालों–का
+  arb: شَعْرٍ
+  kor: 털의
+  swa: nywele, la–nywele
+
+### Sense 143129 (1 occurrences)
+Grammar: Conj-w | N-msc | 2fs
+  eng: and–hair–your
+  spa: y–cabello–de–ti
+  hin: और–बाल–तेरे
+  arb: وَشَعْرُكِ
+  kor: 그리고–네–머리칼이
+  swa: na–nywele–zako
+
+### Sense 143130 (1 occurrences)
+Grammar: Prep-m | N-msc
+  eng: of–the–hair–of
+  spa: del–cabello–de
+  hin: कुछ–बाल
+  arb: مِنْ–شَعْر
+  kor: 에서–머리카락
+  swa: kutoka–nywele
+
+### Sense 143131 (1 occurrences)
+Grammar: Conj-w | N-msc
+  eng: and–hair–of
+  spa: y-pelo-de
+  hin: और–बाल
+  arb: وَ–شَعرَ
+  kor: 털을
+  swa: na-nywele
+
+### Sense 143132 (1 occurrences)
+Grammar: Prep-l, Art | N-ms
+  eng: for–the–hair
+  spa: por–el–pelo
+  hin: को–बाल
+  arb: عَنِ–الشَّعْرِ
+  kor: 노란–에–대해
+  swa: nywele–ya
+
+### Sense 143133 (1 occurrences)
+Grammar: N-ms
+  eng: him–who–walks
+  spa: de–cabellos
+  arb: شَعْرٍ
+  kor: 마리카락–의
+  swa: wenye-nywele
+
+## Task
+
+Group these 11 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

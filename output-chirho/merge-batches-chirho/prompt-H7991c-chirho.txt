@@ -1,0 +1,145 @@
+# Sense Merge Task for H7991c
+
+Lemma: H7991c (POS: Art | N-ms)
+Total occurrences: 16
+Current sense count: 13
+
+This Hebrew/Greek lemma has been over-split into 13 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 141108 (3 occurrences)
+Grammar: Art | N-ms
+  eng: the–officer
+  spa: el–capitán
+  hin: हश्शालीश
+  arb: الثّالِثُ, الثّالِثَ
+  kor: 장관이, 장관을
+  swa: afisa, ofisa
+
+### Sense 141109 (2 occurrences)
+Grammar: N-mp
+  eng: officers
+  spa: capitanes
+  hin: सरदारों
+  arb: قَادَةُ, قَادَةٍ
+  kor: 장교들의, 장교들과
+  swa: mashujaa
+
+### Sense 141110 (1 occurrences)
+Grammar: Number-msc
+  eng: [ketiv]
+  spa: [capitán–de–él]
+  hin: [शलोशेह]
+  arb: [ثالِثِهِ]
+  kor: [그의–장관]
+  swa: [k]
+
+### Sense 141111 (1 occurrences)
+Grammar: Art | N-mp
+  eng: the–three
+  spa: los–tres
+  hin: तीनों–का
+  arb: الثَّلاثَةِ
+  kor: 그–셉장의
+  swa: wa–watatu
+
+### Sense 141112 (1 occurrences)
+Grammar: N-msc | 3ms
+  eng: his–officer
+  spa: su–capitán
+  hin: शलीशो–अपने
+  arb: جُنْدِيُّهُ
+  kor: 그의–장관
+  swa: ofisa–wake
+
+### Sense 141113 (1 occurrences)
+Grammar: N-mpc | 3ms
+  eng: his-officers
+  spa: sus–capitanes
+  hin: सरदार–उसके
+  arb: قَادَتِهِ
+  kor: 그의–장관들이
+  swa: wa–maafisa–wake
+
+### Sense 141114 (1 occurrences)
+Grammar: Conj-w, Prep-l, Art | N-mp
+  eng: and–to-the–officers
+  spa: y–a–los–capitanes
+  hin: वलश्शालीशीम
+  arb: وَٱلْجُنُودِ
+  kor: 그리고–장관들
+  swa: na–maafisa
+
+### Sense 141115 (1 occurrences)
+Grammar: N-mp
+  eng: thirty
+  spa: (treinta)
+  hin: (तीस)
+  arb: (ثَلاثِينَ)
+  kor: (서른–번)
+  swa: mambo–thelathini
+
+### Sense 141116 (1 occurrences)
+Grammar: Conj-w | N-mp
+  eng: and–officers
+  spa: y–capitanes
+  hin: और–सरदार
+  arb: وَ–قَادَةً
+  kor: 그리고–장관들을
+  swa: na–maafisa
+
+### Sense 141117 (1 occurrences)
+Grammar: N-msc | 3ms
+  eng: his-officer
+  spa: capitán–de–él
+  hin: (शालीशो)
+  arb: (ثالِثِهِ)
+  kor: (그의–장관에게)
+  swa: (afisa–wake)
+
+### Sense 141118 (1 occurrences)
+Grammar: Conj-w, Art | N-mp
+  eng: and–the–officers
+  spa: y–los–capitanes
+  hin: वहश्शालीशीम
+  arb: وَٱلْجُنُودُ
+  kor: 그리고–장관들이
+  swa: na–maafisa
+
+### Sense 141119 (1 occurrences)
+Grammar: Conj-w | N-mpc | 3ms
+  eng: and–his-captains
+  spa: y–oficiales–de–él
+  hin: और–उसके–सरदार
+  arb: وَ–قُوَّادُهُ
+  kor: 그리고–그의–삼거리–장교들과
+  swa: na–maafisa–wake
+
+### Sense 141120 (1 occurrences)
+Grammar: N-mpc | 3ms
+  eng: his–officers
+  spa: sus–capitanes
+  hin: कप्तानों–के–उसके
+  arb: ثَوالِثِهِ
+  kor: 그–의–장교들–의
+  swa: wa–maafisa–wake
+
+## Task
+
+Group these 13 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

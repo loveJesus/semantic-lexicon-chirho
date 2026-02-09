@@ -1,0 +1,144 @@
+# Sense Merge Task for H3759
+
+Lemma: H3759 (POS: Conj-w | N-msc | 3ms)
+Total occurrences: 16
+Current sense count: 13
+
+This Hebrew/Greek lemma has been over-split into 13 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 107506 (2 occurrences)
+Grammar: Art | N-ms
+  eng: the–fruitful-field, of–the–orchard
+  spa: vergel, el–vergel
+  hin: बाग–का, फलदार–खेत
+  arb: الْبُسْتَانِ, الـ–كَرْمَلِ
+  kor: 그–과수원–의, 과수원에서
+  swa: bustani
+
+### Sense 107507 (2 occurrences)
+Grammar: Conj-w, Art | N-ms
+  eng: for–a–forest, and–the–fruitful–field
+  spa: y–el–Carmelo, (y–el–campo–fértil)
+  hin: और–कर्मेल, (और–उपजाऊ–खेत)
+  arb: وَ–الْكَرْمَلُ
+  kor: 그리고–그–과수원이, 그리고–그–과수원은
+  swa: na–Karmeli
+
+### Sense 107508 (2 occurrences)
+Grammar: Prep-l, Art | N-ms
+  eng: to–a–fruitful–field, a–fruitful–field
+  spa: para–campo–fértil, al–Carmelo
+  hin: में–कर्मेल, उपजाऊ–खेत
+  arb: كَرْمَلًا, إِلَى–الْكَرْمَلِ
+  kor: 에–과수원으로
+  swa: kuwa–Karmeli
+
+### Sense 107509 (1 occurrences)
+Grammar: Conj-w | N-msc | 3ms
+  eng: and–its–fruitful-field
+  spa: y-su-jardín
+  hin: और–उसके–फलदार–खेत–की
+  arb: وَ–بُسْتَانِهِ
+  kor: 그–들판의
+  swa: na-bustani-yake
+
+### Sense 107510 (1 occurrences)
+Grammar: N-msc | 3ms
+  eng: its-fruitful-field
+  spa: su–Carmelo
+  hin: कर्मेल–उसके
+  arb: كَرْمِلِهِ
+  kor: 기름진–밤–그것의
+  swa: wa–Karmeli
+
+### Sense 107511 (1 occurrences)
+Grammar: Conj-w | N-ms
+  eng: and–fresh-grain
+  spa: y–grano–fresco
+  hin: और–ताज़ी–दाना
+  arb: وَسَنَابِلُ
+  kor: 그리고–새–곡식
+  swa: na–nafaka–mpya
+
+### Sense 107512 (1 occurrences)
+Grammar: Conj-w | N-ms
+  eng: and–fresh-grain
+  spa: y–grano-fresco
+  hin: और–ताज़ा–अनाज
+  arb: وَسُنْبُلًا
+  kor: 그리고–겼
+  swa: na–nafaka–mpya
+
+### Sense 107513 (1 occurrences)
+Grammar: Conj-w | N-ms
+  eng: and–the–fruitful–field
+  spa: [y–campo–fértil]
+  hin: [और–उपजाऊ–खेत]
+  arb: –
+  swa: [na–Karmeli]
+
+### Sense 107514 (1 occurrences)
+Grammar: Prep-b, Art | N-ms
+  eng: in–the–fruitful–field
+  spa: en–el–campo–fértil
+  hin: उपजाऊ–खेत–में
+  arb: فِي–الْكَرْمَلِ
+  kor: 에–과수원에
+  swa: katika–Karmeli
+
+### Sense 107515 (1 occurrences)
+Grammar: Prep-m | N-ms
+  eng: from–the–garden–land
+  spa: de–Karmel
+  hin: से–बगीचे
+  arb: مِنَ–الْكَرْمَلِ
+  kor: 갈멜에서–
+  swa: kutoka–bustani
+
+### Sense 107516 (1 occurrences)
+Grammar: Art | N-ms
+  eng: the–garden–land
+  spa: el–vergel
+  hin: बाग
+  arb: الـ–كَرْمَلُ
+  kor: 그–과수원이
+  swa: bustani–hiyo
+
+### Sense 107517 (1 occurrences)
+Grammar: N-ms
+  eng: of-fresh-ear
+  spa: espiga–fresca
+  hin: बालों
+  arb: سَنَابِلَ
+  kor: 신선한–이삭–의
+  swa: mpya
+
+### Sense 107518 (1 occurrences)
+Grammar: N-msc | 3ms
+  eng: of–its–fruitful–land
+  spa: de–su–Carmelo
+  hin: उसके–उपजाऊ–खेत–का
+  arb: كَرْمَلِهِ
+  kor: 그–과수원의
+  swa: wa–Karmeli–wake
+
+## Task
+
+Group these 13 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

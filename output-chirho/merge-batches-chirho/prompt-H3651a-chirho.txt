@@ -1,0 +1,127 @@
+# Sense Merge Task for H3651a
+
+Lemma: H3651a (POS: Adj-ms)
+Total occurrences: 22
+Current sense count: 11
+
+This Hebrew/Greek lemma has been over-split into 11 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 106692 (5 occurrences)
+Grammar: Adj-mp
+  eng: honest
+  spa: honrados
+  hin: सच्चे
+  arb: صَادِقُونَ, صَادِقِينَ
+  kor: 정직하다고, 정직한–자들이면, 정직한
+  swa: kweli, kaka
+
+### Sense 106693 (4 occurrences)
+Grammar: Adj-ms
+  eng: right
+  spa: así, recta
+  hin: सही, सच, ठीक
+  arb: كَذٰلِكَ, هٰكَذَا
+  kor: 올바른, 바르게, 그렇다
+  swa: hivyo, sawa
+
+### Sense 106694 (3 occurrences)
+Grammar: Adj-ms,Adv
+  eng: so, so–
+  spa: así
+  hin: वैसे, वैसा–, ऐसा
+  arb: هكذا, كَذلِكَ, المَدِينَةِ
+  kor: 그렇게–, 그렇게, 그러하지
+  swa: hivyo
+
+### Sense 106695 (2 occurrences)
+Grammar: Adj-ms
+  eng: rightly
+  spa: rectamente, Bien
+  hin: ठीक
+  arb: صَوَابًا
+  kor: 옮다
+  swa: kweli, Kweli
+
+### Sense 106696 (2 occurrences)
+Grammar: Adj-ms
+  eng: so
+  spa: rectas, así
+  hin: सही–से, ठीक
+  arb: هٰكذا, حَقًّا
+  kor: 옳은, 바르게
+  swa: sawa, hivyo
+
+### Sense 106697 (1 occurrences)
+Grammar: Adv
+  eng: thus
+  spa: así
+  hin: ऐसे
+  arb: هكَذا
+  kor: 그렇게
+  swa: hivyo
+
+### Sense 106698 (1 occurrences)
+Grammar: Adj-ms
+  eng: right
+  spa: recto
+  hin: खेन
+  arb: بِ–صَوابٍ
+  kor: 올바르게
+  swa: sawa
+
+### Sense 106699 (1 occurrences)
+Grammar: Adj-ms
+  eng: true
+  spa: así
+  hin: वैसे
+  arb: هكذا–
+  kor: 이와–같다
+  swa: kwa–hakika
+
+### Sense 106700 (1 occurrences)
+Grammar: Adj-ms
+  eng: yes
+  spa: sí
+  hin: हाँ
+  arb: نَعَم
+  kor: 그렇다
+  swa: ndiyo
+
+### Sense 106701 (1 occurrences)
+Grammar: Adj-ms
+  eng: right
+  spa: Correcto
+  hin: ठीक
+  arb: حَسَنًا
+  kor: 그렇게
+  swa: hivyo
+
+### Sense 106702 (1 occurrences)
+Grammar: Adv
+  eng: so
+  spa: así
+  hin: ऐसे
+  arb: هَكَذَا
+  kor: 그러한
+  swa: kweli
+
+## Task
+
+Group these 11 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

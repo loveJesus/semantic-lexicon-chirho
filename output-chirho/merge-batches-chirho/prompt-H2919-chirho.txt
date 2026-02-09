@@ -1,0 +1,127 @@
+# Sense Merge Task for H2919
+
+Lemma: H2919 (POS: Conj-w)
+Total occurrences: 31
+Current sense count: 11
+
+This Hebrew/Greek lemma has been over-split into 11 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 100241 (13 occurrences)
+Grammar: N-ms,N-msc
+  eng: dew, the–dew–of
+  spa: rocío, rocío–de, el–rocío–de
+  hin: ओस, ओस–की, ओस।
+  arb: نَدًى, نَدىً, نَدَاكَ
+  kor: 이슬이, 이슬의, 이슬을
+  swa: umande, umande–wa, la–umande
+
+### Sense 100242 (4 occurrences)
+Grammar: Art | N-ms
+  eng: the–dew
+  spa: el–rocío
+  hin: ओस–की, ओस
+  arb: الطَّلِّ, النَّدى
+  kor: 그–이슬의, 그–이슬이, 그–이슬
+  swa: umande
+
+### Sense 100243 (3 occurrences)
+Grammar: Conj-w, Prep-k | N-ms,Conj-w, Prep-k, Art | N-ms
+  eng: and–like–dew, and–like–the–dew
+  spa: y–como–rocío, y–como–el–rocío
+  hin: और–ओस–जैसी, और–ओस–के–समान
+  arb: وَكَالنَّدى, وَ–كَنَدىً
+  kor: 그리고–같으니라–이슬에, 그러나–같으니라–이슬
+  swa: na–kama–umande, lakini–kama–umande
+
+### Sense 100244 (3 occurrences)
+Grammar: Prep-k, Art | N-ms,Prep-k | N-ms
+  eng: like–the–dew, like–dew
+  spa: como–el–rocío, como–rocío
+  hin: जैसे–ओस, ओस–के–समान, ओस–की–तरह
+  arb: كَـ–الطَّلِّ, كَالنَّدَى, كَالنَّدى
+  kor: 처럼–이슬, 같이–이슬, 같으니라–이슬에
+  swa: kama–umande
+
+### Sense 100245 (2 occurrences)
+Grammar: Prep-m | N-ms
+  eng: from–dew
+  spa: del–rocío
+  hin: से–ओस।, से–ओस
+  arb: مِنَ–النَّدَى, النَّدَى
+  kor: 에서–이슬
+  swa: umande
+
+### Sense 100246 (1 occurrences)
+Grammar: Prep-m | N-msc
+  eng: from–dew-of
+  spa: de–rocío–de
+  hin: ओस–से
+  arb: مِن–نَدى
+  kor: 에서–이슬을
+  swa: kutoka–umande
+
+### Sense 100247 (1 occurrences)
+Grammar: Prep-k | N-msc
+  eng: like–dew-of
+  spa: Como–rocío–de
+  hin: ओस–की–तरह
+  arb: كَـ–نَدَى–
+  kor: 이슬–같이
+  swa: kama–umande–wa
+
+### Sense 100248 (1 occurrences)
+Grammar: N-msc | 2ms
+  eng: is–Your–dew
+  spa: tu–rocío
+  hin: ओस–तेरी
+  arb: نَدَاكَ
+  kor: 주의–이슬이라
+  swa: ni–umande–wako
+
+### Sense 100249 (1 occurrences)
+Grammar: N-msc | 3mp
+  eng: their–dew
+  spa: su–rocío
+  hin: ओस–अपनी
+  arb: نَدَاهَا
+  kor: 그–이슬을
+  swa: umande–wake
+
+### Sense 100250 (1 occurrences)
+Grammar: Conj-w, Prep-m | N-msc
+  eng: and–from–dew-of
+  spa: y–de–rocío–de
+  hin: और–ओस–से
+  arb: وَ–بَعيداً–عَن–نَدى
+  kor: 그리고–에서–이슬
+  swa: na–mbali–na–umande
+
+### Sense 100251 (1 occurrences)
+Grammar: Conj-w | N-ms
+  eng: and–dew
+  spa: y–rocío
+  hin: ठहरेगी
+  arb: وَ–النَّدى
+  kor: 그리고–이슬이
+  swa: na–umande
+
+## Task
+
+Group these 11 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

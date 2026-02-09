@@ -1,0 +1,127 @@
+# Sense Merge Task for H7270
+
+Lemma: H7270 (POS: Prep-k | V-Piel-Prtcpl-mp)
+Total occurrences: 25
+Current sense count: 11
+
+This Hebrew/Greek lemma has been over-split into 11 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 134672 (9 occurrences)
+Grammar: V-Piel-Prtcpl-mp
+  eng: spies
+  spa: espías
+  hin: जासूस, भेदियों, जासूसों
+  arb: جَوَاسِيسُ, جَوَاسِيسَ, جَواسِيسَ
+  kor: 정탐꾼들이다, 정탐꾼들을, 정탐꾼들
+  swa: wabuzi, wapelelezi
+
+### Sense 134673 (6 occurrences)
+Grammar: Prep-l | V-Piel-Inf
+  eng: to–spy–out, to–spy-out
+  spa: para–espiar, a–espiar
+  hin: जासूसी–करने–को, जासूसी–करने
+  arb: لِ–يَتَجَسَّسُوا, لِ–يَتَجَسَّسَ, لِ–يَتَجَسَّسوا
+  kor: 정탐하려고, 정탐하는–것–에, 에게–정탐하려고
+  swa: kupeleleza
+
+### Sense 134674 (2 occurrences)
+Grammar: Art | V-Piel-Prtcpl-mp
+  eng: the–spies
+  spa: los–espías–de, los–espías
+  hin: भेदी, भेदियों
+  arb: المُتَجَسِّسينَ, المُتَجَسِّسونَ
+  kor: 그–정탐꾼들인
+  swa: wapelelezi
+
+### Sense 134675 (1 occurrences)
+Grammar: Conj-w | V-Piel-ConsecImperf-3
+  eng: and–spied–out
+  spa: y–espiaron
+  hin: और–भेद–लिया
+  arb: وَ–تَجَسَّسوا
+  kor: 그리고–정탐하였다
+  swa: na–wakapeleleza
+
+### Sense 134676 (1 occurrences)
+Grammar: Conj-w | V-Piel-ConsecImperf-3
+  eng: and–he–slandered
+  spa: Y–calumnió
+  hin: और–चुगली–खाई
+  arb: وَوَشَى
+  kor: 그리고-모함하니라-그가
+  swa: na–alisingizia
+
+### Sense 134677 (1 occurrences)
+Grammar: Conj-w, Prep-l | V-Piel-Inf | 
+  eng: and–to–spy–it–out
+  spa: y–para–espiarla
+  hin: और–भेद–लेने–को
+  arb: وَلِتَجَسُّسِها
+  kor: 그리고–염탐하려고–그것을
+  swa: na–kuipeleleza
+
+### Sense 134678 (1 occurrences)
+Grammar: Conj-w | V-Piel-ConsecImperf-3
+  eng: and–they–spied–out
+  spa: y–espiaron
+  hin: और–जासूसी–की
+  arb: وَ–تَجَسَّسوها
+  kor: 그리고–그들이–정탐하였다
+  swa: kumweka
+
+### Sense 134679 (1 occurrences)
+Grammar: Prep-k | V-Piel-Prtcpl-mp
+  eng: as–spies-of
+  spa: como–espías–de
+  hin: जासूसों–जैसे
+  arb: كَ–جَوَاسِيسَ
+  kor: 정탐꾼들처럼
+  swa: kwetu
+
+### Sense 134680 (1 occurrences)
+Grammar: Conj-w, Prep-l | V-Piel-Inf
+  eng: and–to–spy-out
+  spa: y–para–espiar
+  hin: और–जासूसी–करने
+  arb: وَ–لِ–يَتَجَسَّسُوا
+  kor: 그리고–정탐하기–위해
+  swa: na–kupeleleza
+
+### Sense 134681 (1 occurrences)
+Grammar: V-Qal-Perf-3ms
+  eng: slandering
+  spa: calumnió
+  hin: वह–जो–चुगली–करता–है
+  arb: يَمْشِي–بِالنَّمِيمَةِ
+  kor: 비방하지
+  swa: amesengenya
+
+### Sense 134682 (1 occurrences)
+Grammar: Conj-w | V-Piel-Imp-mp
+  eng: and–spy–out
+  spa: y–espiad
+  hin: और–भेद–लो
+  arb: وَ–تَجَسَّسوا
+  kor: 그리고–정탐하라
+  swa: na–pelelezeni
+
+## Task
+
+Group these 11 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

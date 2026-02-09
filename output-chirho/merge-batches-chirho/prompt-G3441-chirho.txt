@@ -1,0 +1,118 @@
+# Sense Merge Task for G3441
+
+Lemma: G3441 (POS: Adj-ANP)
+Total occurrences: 47
+Current sense count: 10
+
+This Hebrew/Greek lemma has been over-split into 10 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 72559 (24 occurrences)
+Grammar: Adj-DMS,Adj-NMS,Adj-GMS,Adj-ANP,Adj-AMS
+  eng: alone, only
+  spa: solo, solos
+  hin: अकेला, केवल, अकेले
+  arb: وَحْدَهُ, وَحدَهُ, وَحْدِي
+  kor: 홀로, 혼자, 만
+  swa: peke–yake, peke–yangu, peke–yako
+
+### Sense 72560 (6 occurrences)
+Grammar: Adj-GMS,Adj-AMS,Adj-DMS,Adj-NMS
+  eng: only, to-only
+  spa: único, al-único
+  hin: एक–मअत्र, एकमात्र, अकेले
+  arb: الوَحيدُ, وَحْدَ, وَحِيدِ
+  kor: 유일한, 유일하신, 유일하시고
+  swa: peke–yake, pekee, kwa–peke–yake
+
+### Sense 72561 (4 occurrences)
+Grammar: Adj-AMP,Adj-AFP,Adj-NMP
+  eng: alone
+  spa: solos, solas
+  hin: अकेले
+  arb: وَحْدَهُمْ, وَحْدَنا, اِنْفِرادٍ
+  kor: 홀로
+  swa: peke–yao, peke–yetu, peke–yake
+
+### Sense 72562 (4 occurrences)
+Grammar: Adj-DMP,Adj-AMP,Adj-NMS
+  eng: only
+  spa: solos, solos?, solo
+  hin: केवल
+  arb: وَحدَهُم, وَحدَكُم, فَقَطْ
+  kor: 오직, 홀로에게
+  swa: peke–yenu, peke–yao, peke-yao?
+
+### Sense 72563 (2 occurrences)
+Grammar: Adj-AMS
+  eng: only
+  spa: solo
+  hin: केवल,
+  arb: فَقَطْ, فَقَط
+  kor: 오직,
+  swa: tu
+
+### Sense 72564 (2 occurrences)
+Grammar: Adj-NMP
+  eng: alone
+  spa: únicos, solos
+  hin: अकेले., अकेले
+  arb: وَحْدَكُمْ, وَحدَهُمْ
+  kor: 오직., 오직
+  swa: tu
+
+### Sense 72565 (2 occurrences)
+Grammar: Adj-AMS,Adj-DMS
+  eng: to–only, only
+  spa: único, al–único
+  hin: एकमात्र
+  arb: –الوحيد, الوحيد
+  kor: 홀로, 유일하신
+  swa: peke–yake, pekee
+
+### Sense 72566 (1 occurrences)
+Grammar: Adj-AFP
+  eng: himself
+  spa: soledad
+  hin: पूछते–थे
+  arb: انْفِرادٍ
+  kor: 홀로
+  swa: upweke,
+
+### Sense 72567 (1 occurrences)
+Grammar: Adj-AFS
+  eng: alone
+  spa: sola
+  hin: अकेली
+  arb: وَحْدَها
+  kor: 혼자
+  swa: peke–yangu
+
+### Sense 72568 (1 occurrences)
+Grammar: Adj-NMS
+  eng: only
+  spa: solo
+  hin: अकेला,
+  arb: فَقَط
+  kor: 홀로
+  swa: peke–yangu
+
+## Task
+
+Group these 10 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

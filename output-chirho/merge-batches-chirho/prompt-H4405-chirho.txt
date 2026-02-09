@@ -1,0 +1,144 @@
+# Sense Merge Task for H4405
+
+Lemma: H4405 (POS: N-fpc | 2ms)
+Total occurrences: 38
+Current sense count: 13
+
+This Hebrew/Greek lemma has been over-split into 13 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 111853 (16 occurrences)
+Grammar: N-fp
+  eng: words
+  spa: palabras, las–palabras, palabras?
+  hin: शब्द, शब्दों–को, शब्दों–से
+  arb: كَلِماتٍ, كَلِماتٌ, كَلِمَاتٍ
+  kor: 말들을, 말들이, 말들–을
+  swa: maneno, ya–maneno
+
+### Sense 111854 (5 occurrences)
+Grammar: N-fpc | 1cs
+  eng: my–words
+  spa: mis–palabras, mi–palabra, mis–palabras;
+  hin: शब्दों–मेरे, शब्द–मेरे, मेरे–शब्द
+  arb: كَلِماتِي, كَلامِي, كَلِمَاتِي
+  kor: 나의–말들을, 나의–말이, 나의–말들의
+  swa: maneno–yangu, ya–maneno–yangu
+
+### Sense 111855 (3 occurrences)
+Grammar: Prep-b | N-fp
+  eng: with–words, by–words
+  spa: con–palabras, con–palabras?
+  hin: शब्दों–से
+  arb: بِ–كَلِمَاتٍ, بِكَلِمَاتٍ
+  kor: 말들로, 말들–로
+  swa: kwa–maneno
+
+### Sense 111856 (3 occurrences)
+Grammar: N-fsc | 1cs
+  eng: my–word, word-my
+  spa: mi–palabra, mi–palabra?
+  hin: मेरी–बात, मेरा–वचन
+  arb: كَلِمَتِي
+  kor: 나의–말을, 나의–말씀–을
+  swa: neno–langu
+
+### Sense 111857 (2 occurrences)
+Grammar: Prep-b | N-fp
+  eng: in–words
+  spa: palabras, en–palabras
+  hin: शब्दों–में, वचनों–को
+  arb: في–الكَلِماتِ, بِ–الكَلِماتِ
+  kor: 에–말들, 말들에서
+  swa: maneno
+
+### Sense 111858 (2 occurrences)
+Grammar: N-fpc | 2ms
+  eng: your–words
+  spa: tus–palabras
+  hin: बातों–तेरी, तेरे–शब्द
+  arb: كَلِماتِكَ, كَلِماتُكَ
+  kor: 말들–의–네, 너의–말들이
+  swa: maneno–yako
+
+### Sense 111859 (1 occurrences)
+Grammar: Prep-l | N-fs
+  eng: for–byword
+  spa: por–refrán
+  hin: कहावत
+  arb: لِ–كَلِمَةٍ
+  kor: 속담이
+  swa: mithali
+
+### Sense 111860 (1 occurrences)
+Grammar: N-fpc | 3mp
+  eng: their–words
+  spa: sus–palabras
+  hin: उनके–शब्द
+  arb: كَلِمَاتُهُمْ
+  kor: 말들–이
+  swa: maneno–yao
+
+### Sense 111861 (1 occurrences)
+Grammar: Conj-w | N-fsc | 3ms
+  eng: and–His–word
+  spa: y–su–palabra
+  hin: और–उसका–वचन
+  arb: وَكَلِمَتُهُ
+  kor: 그리고–그의–말씀이
+  swa: na–neno–lake
+
+### Sense 111862 (1 occurrences)
+Grammar: N-fs
+  eng: a–word
+  spa: palabra
+  hin: शब्द
+  arb: كَلِمَةٌ
+  kor: 말–이
+  swa: neno
+
+### Sense 111863 (1 occurrences)
+Grammar: Conj-w | N-fp
+  eng: and–words
+  spa: y–palabras
+  hin: और–शब्द
+  arb: وَ–بِ–كَلِمَاتٍ
+  kor: 그리고–말들로
+  swa: na–maneno
+
+### Sense 111864 (1 occurrences)
+Grammar: Prep-l | N-fp
+  eng: to–words
+  spa: a–las–palabras
+  hin: समझो
+  arb: لِ–الْكَلِمَاتِ
+  kor: 말들에
+  swa: kwa–maneno
+
+### Sense 111865 (1 occurrences)
+Grammar: N-fsc | 1cs
+  eng: my-speech
+  spa: mi–dicho
+  arb: كَلِمَتِي
+  kor: 나의–말이
+  swa: kauli–yangu
+
+## Task
+
+Group these 13 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

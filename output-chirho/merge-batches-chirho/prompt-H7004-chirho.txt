@@ -1,0 +1,145 @@
+# Sense Merge Task for H7004
+
+Lemma: H7004 (POS: Prep-l | N-fs)
+Total occurrences: 60
+Current sense count: 13
+
+This Hebrew/Greek lemma has been over-split into 13 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 132122 (24 occurrences)
+Grammar: N-fs,N-fsc
+  eng: incense
+  spa: incienso
+  hin: धूप–से, धूप, धूप–की–तरह
+  arb: بَخُورًا, بَخوراً, البَخورِ
+  kor: 향, 향을, 향의
+  swa: uvumba, kama–uvumba
+
+### Sense 132123 (9 occurrences)
+Grammar: N-fsc
+  eng: incense-of, incense–of
+  spa: incienso-de, incienso–de, el–incienso–de
+  hin: धूप
+  arb: بَخورَ, بَخُورَ, بَخُورِ
+  kor: 향을, 향
+  swa: uvumba, ya–uvumba, uvumba–wa–
+
+### Sense 132124 (9 occurrences)
+Grammar: Art | N-fs
+  eng: the–incense
+  spa: el–incienso, el-incienso
+  hin: धूप–की, धूप, –के–धूप
+  arb: البَخورِ, الْبَخُورِ, الـ–بَخورِ
+  kor: 그–향의, 그–향–의
+  swa: uvumba, ya–uvumba, ubani
+
+### Sense 132125 (4 occurrences)
+Grammar: Art | N-fs
+  eng: the–incense
+  spa: el–incienso
+  hin: धूप, धूप–के
+  arb: الْ–بَخُورِ, الْ–بَخُورَ, الْبَخُورِ
+  kor: 향을, 향, 그–향–의
+  swa: uvumba
+
+### Sense 132126 (3 occurrences)
+Grammar: Conj-w, Prep-l | N-fsc
+  eng: and–for–incense-of, and–for-incense-of
+  spa: y–para–el–incienso–de, y–para–incienso–de
+  hin: और–धूप–के–लिए
+  arb: وَ–لِبَخورِ, وَ–لِ–بَخورِ
+  kor: 그리고–향을–위한, 그리고–에–향
+  swa: na–kwa–uvumba
+
+### Sense 132127 (2 occurrences)
+Grammar: Conj-w | N-fs
+  eng: and–incense
+  spa: e–incienso
+  hin: और–धूप
+  arb: وَ–بَخُورٌ, وَ–بَخُورًا
+  kor: 향이, 그리고–향을
+  swa: na–uvumba
+
+### Sense 132128 (2 occurrences)
+Grammar: Conj-w | N-fsc | 1cs
+  eng: and–my-incense, and–incense–my
+  spa: e–incienso–mío, e–incienso–de–mí
+  hin: और–मेरी–धूप, और–धूप–मेरी
+  arb: وَبَخُورِي
+  kor: 그리고–내–향과, 그리고–나의–향을
+  swa: na–uvumba–wangu
+
+### Sense 132129 (2 occurrences)
+Grammar: Conj-w | N-fsc
+  eng: and–incense-of–, and–incense-of
+  spa: y–incienso-de, e–incienso–de–
+  hin: और–धूप–, और–धूप
+  arb: وَبَخُورُ, وَبَخورَ
+  kor: 그리고–향–의, 그리고–향
+  swa: na–uvumba–wa, na–uvumba-wa
+
+### Sense 132130 (1 occurrences)
+Grammar: Prep-l | N-fs
+  eng: for–incense
+  spa: para–el–incienso
+  hin: धूप–के–लिए
+  arb: لِلْبَخُورِ
+  kor: 에게–향
+  swa: kwa–uvumba
+
+### Sense 132131 (1 occurrences)
+Grammar: N-fsc
+  eng: the–incense–of
+  spa: incienso–de
+  hin: सुगंध–के
+  arb: بَخورِ
+  kor: 향–의
+  swa: uvumba
+
+### Sense 132132 (1 occurrences)
+Grammar: Conj-w, Art | N-fs
+  eng: and–the–incense
+  spa: Y-el-incienso
+  hin: और–धूप
+  arb: وَ–البَخورُ
+  kor: 그리고–그–향은
+  swa: na–uvumba
+
+### Sense 132133 (1 occurrences)
+Grammar: N-fsc
+  eng: incense-of–
+  spa: incienso–de
+  hin: धूप–
+  arb: بَخُورَ–
+  kor: 향의–
+  swa: uvumba–wenye
+
+### Sense 132134 (1 occurrences)
+Grammar: N-fs
+  eng: incense
+  spa: incienso
+  hin: धूप
+  arb: البَخُورُ
+  kor: 분향은
+  swa: uvumba
+
+## Task
+
+Group these 13 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

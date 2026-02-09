@@ -1,0 +1,154 @@
+# Sense Merge Task for H1779
+
+Lemma: H1779 (POS: N-ms)
+Total occurrences: 21
+Current sense count: 14
+
+This Hebrew/Greek lemma has been over-split into 14 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 91600 (3 occurrences)
+Grammar: N-ms
+  eng: judgment
+  spa: juicio
+  hin: न्याय–के, न्याय, दीन
+  arb: دَيْنُونَةٍ, دَينونَةٌ, الْحُكْمَ
+  kor: 재판–의, 심판과, 심판–을
+  swa: hukumu
+
+### Sense 91601 (3 occurrences)
+Grammar: N-msc
+  eng: the–cause–of, justice–of, cause–of
+  spa: causa–de, juicio–de
+  hin: न्याय, मुकदमा
+  arb: حُكْمَ, حُكْمِ
+  kor: 소송을, 소송
+  swa: haki–ya
+
+### Sense 91602 (2 occurrences)
+Grammar: N-ms,N-msc
+  eng: case–of, case
+  spa: causa–del, causa
+  hin: मुक़दमा
+  arb: دَعْوَى
+  kor: 소송을
+  swa: shauri
+
+### Sense 91603 (2 occurrences)
+Grammar: Pro-r | N-ms
+  eng: there–is–judgment, [there–is–judgment]
+  spa: que–hay, juicio.
+  hin: न्याय
+  arb: دَيْنُونَةً
+  kor: [심판을], (심판을)
+  swa: hukumu, [hukumu]
+
+### Sense 91604 (2 occurrences)
+Grammar: N-ms
+  eng: the–case, quarrel
+  spa: pleito, juicio
+  hin: विवाद, मुकद्दमा
+  arb: دَعوى, الخِصامُ
+  kor: 소송이, 다툼과
+  swa: shauri, mashindano
+
+### Sense 91605 (1 occurrences)
+Grammar: N-ms
+  eng: cause-of–
+  spa: causa–de
+  hin: मुकदमा–
+  arb: حُكْمَ–
+  kor: 의–송사를–
+  swa: shauri–la–
+
+### Sense 91606 (1 occurrences)
+Grammar: N-msc | 2fs
+  eng: your–cause
+  spa: tu–causa
+  hin: तेरे–मुकदमे
+  arb: قَضِيَّتَكِ
+  kor: 네–소송을
+  swa: kesi–yako
+
+### Sense 91607 (1 occurrences)
+Grammar: N-ms
+  eng: plea
+  spa: causa
+  hin: मुकदमा
+  arb: دَعْوَى
+  kor: 송사
+  swa: kesi
+
+### Sense 91608 (1 occurrences)
+Grammar: Prep-l | N-ms
+  eng: to–plea
+  spa: a–causa
+  hin: को–मुकदमा
+  arb: وَ–دَعْوَى
+  kor: 에–송사
+  swa: na–kesi
+
+### Sense 91609 (1 occurrences)
+Grammar: Conj-w | N-ms
+  eng: and–the–judgment–of–
+  spa: Y–juicio–de–
+  hin: और–न्याय
+  arb: وَ–دَينونَةَ
+  kor: 그리고–심판이
+  swa: na–hukumu–ya
+
+### Sense 91610 (1 occurrences)
+Grammar: Conj-w | N-msc | 1cs
+  eng: and–my–cause
+  spa: y–mi–causa
+  hin: और–मेरा–मुकदमा
+  arb: وَ–دَعْوَايَ
+  kor: 그리고–송사–를
+  swa: na–haki–yangu
+
+### Sense 91611 (1 occurrences)
+Grammar: Conj-w | N-ms
+  eng: and–judgment
+  spa: y–juicio
+  hin: और–न्याय
+  arb: وَ–حُكْمًا
+  kor: 그리고–재판을
+  swa: na–hukumu
+
+### Sense 91612 (1 occurrences)
+Grammar: Prep-m | N-ms
+  eng: from–judgment
+  spa: del-juicio
+  hin: न्याय–से
+  arb: مِنَ–الدَّعْوَى
+  kor: 소송–에서
+  swa: kutoka-haki
+
+### Sense 91613 (1 occurrences)
+Grammar: N-msc
+  eng: justice-of
+  spa: juicio-de
+  hin: न्याय
+  arb: دَيْنَ
+  kor: 소송–을
+  swa: haki–ya
+
+## Task
+
+Group these 14 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

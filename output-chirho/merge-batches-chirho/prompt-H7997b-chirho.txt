@@ -1,0 +1,127 @@
+# Sense Merge Task for H7997b
+
+Lemma: H7997b (POS: Conj-w | V-Qal-ConjPerf-3cp)
+Total occurrences: 14
+Current sense count: 11
+
+This Hebrew/Greek lemma has been over-split into 11 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 141234 (3 occurrences)
+Grammar: Prep-l | V-Qal-Inf,Prep | V-Qal-Inf
+  eng: to–plunder, is-it-to-plunder
+  spa: ¿Para–saquear, para–saquear, Para–saquear
+  hin: लूटने–के–लिए, क्या–लूटने–के–लिए
+  arb: لِتَسْلِبَ, أَلِتَسْلِبَ
+  kor: 약탈하기위하여
+  swa: kuteka, je–kuteka
+
+### Sense 141235 (2 occurrences)
+Grammar: Conj-w | V-Qal-ConjPerf-3cp
+  eng: and–they-will-plunder, and–they-shall-plunder
+  spa: y–despojarán, Y–saquearán
+  hin: और–लूटेंगे
+  arb: وَيَسْلِبُونَ, وَيَسْلُبُونَ
+  kor: 그리고–약탈할것이다, 그리고–약탈할–것이다–그들이
+  swa: watateka–nyara, Na–watateka
+
+### Sense 141236 (1 occurrences)
+Grammar: Conj-w | V-Qal-ConjPerf-3ms
+  eng: and–he-shall-spoil
+  spa: y–saqueará
+  hin: और–लूटेगा
+  arb: وَيَسْلُبُ
+  kor: 그리고–약탈할–것이다–그가
+  swa: na–atateka
+
+### Sense 141237 (1 occurrences)
+Grammar: V-Hitpael-Perf-3cp
+  eng: were–stripped
+  spa: Fueron-despojados
+  hin: एश्तोलेलू
+  arb: اُسْتُلِبَ
+  kor: 탈취당하였나이다
+  swa: Waliporwa
+
+### Sense 141238 (1 occurrences)
+Grammar: V-Qal-Prtcpl-mpc | 3fs
+  eng: who–plunder–her
+  spa: los–que–la–despojaron
+  hin: लूटने–वाले–उसके
+  arb: نَاهِبِيهَا
+  kor: 약탈하는–자들이–그녀를
+  swa: wanaomnyang’anya
+
+### Sense 141239 (1 occurrences)
+Grammar: V-Qal-Prtcpl-mpc | 3mp
+  eng: their–plunderers
+  spa: sus–despojadores
+  hin: उनके–लूटनेवालों
+  arb: سَالِبِيهِمْ
+  kor: 약탈한자들–그들의를
+  swa: waliowapora
+
+### Sense 141240 (1 occurrences)
+Grammar: Prep-l | V-Qal-Inf
+  eng: to–plunder
+  spa: para-saquear
+  hin: के–लूटने
+  arb: لِـ–يَسْلُبَ
+  kor: 탈취하고
+  swa: kuteka
+
+### Sense 141241 (1 occurrences)
+Grammar: V-Qal-Imperf-3mp | 2ms
+  eng: will–plunder–you
+  spa: te–despojarán
+  hin: वे–लूटेंगे–तुझे
+  arb: يَسلُبونَكَ
+  kor: 노략하리라–너–를
+  swa: watakupora
+
+### Sense 141242 (1 occurrences)
+Grammar: V-Hitpael-Prtcpl-ms
+  eng: makes–himself–prey
+  spa: es–despojado
+  hin: लूटा–जाता–है
+  arb: مَسْلُوبٌ
+  kor: 빼앗기고
+  swa: anaporwa
+
+### Sense 141243 (1 occurrences)
+Grammar: Art | V-Qal-Prtcpl-mp
+  eng: the–ones–plundering
+  spa: las–que–os–despojaron
+  hin: लूटने–वाली
+  arb: السَّالِبِينَ
+  kor: 그–약탈하는
+  swa: yanayowateka–nyara
+
+### Sense 141244 (1 occurrences)
+Grammar: V-Qal-Perf-2ms
+  eng: have–plundered
+  spa: despojaste
+  hin: लूटा
+  arb: سَلَبتَ
+  kor: 노략하였으므로
+  swa: umewapora
+
+## Task
+
+Group these 11 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

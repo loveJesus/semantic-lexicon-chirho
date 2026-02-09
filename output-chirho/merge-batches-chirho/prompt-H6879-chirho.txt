@@ -1,0 +1,127 @@
+# Sense Merge Task for H6879
+
+Lemma: H6879 (POS: V-Qal-QalPassPrtcpl-ms)
+Total occurrences: 20
+Current sense count: 11
+
+This Hebrew/Greek lemma has been over-split into 11 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 130737 (8 occurrences)
+Grammar: V-Qal-QalPassPrtcpl-ms,V-Pual-Prtcpl-ms
+  eng: leprous, is-leprous, a–leper
+  spa: leproso
+  hin: कोढ़ी
+  arb: أَبْرَصَ, أَبْرَصُ
+  kor: 나병–걸린–자, 나병–환자, 나병환자가
+  swa: mwenye–ukoma, lakini–mwenye–ukoma
+
+### Sense 130738 (2 occurrences)
+Grammar: Art | V-Pual-Prtcpl-ms,Art | V-Qal-QalPassPrtcpl-ms
+  eng: the–diseased
+  spa: el–tsarua, el–metsorá
+  hin: कोढ़ी
+  arb: الْأَبْرَصِ
+  kor: 나병-환자의, 나병-환자로부터
+  swa: mwenye–ukoma
+
+### Sense 130739 (2 occurrences)
+Grammar: V-Pual-Prtcpl-fsc
+  eng: leprous
+  spa: leprosa:, leprosa
+  hin: कोढ़ी
+  arb: بَرْصَاءُ
+  kor: 나병에–걸린
+  swa: mwenye–ukoma
+
+### Sense 130740 (1 occurrences)
+Grammar: Art | V-Pual-Prtcpl-ms
+  eng: the–leper
+  spa: al–leproso
+  hin: कोढ़ी–को
+  arb: الأَبْرَصَ
+  kor: 그–나병–환자–를
+  swa: mwenye–ukoma
+
+### Sense 130741 (1 occurrences)
+Grammar: Conj-w | V-Pual-Prtcpl-ms
+  eng: or–leper
+  spa: y–leproso
+  hin: और–कोढ़ी
+  arb: وَمَجْذُومٌ
+  kor: 그리고-나병-있는-자와
+  swa: na–mwenye–ukoma
+
+### Sense 130742 (1 occurrences)
+Grammar: Art | V-Pual-Prtcpl-mp
+  eng: the–lepers
+  spa: los–leprosos
+  hin: हमचोराईम
+  arb: الْبُرْصُ
+  kor: 나병환자들이
+  swa: wenye–ukoma
+
+### Sense 130743 (1 occurrences)
+Grammar: V-Pual-Prtcpl-fsc
+  eng: leprous
+  spa: leprosa
+  hin: कोढ़ी
+  arb: بَرْصَاءُ
+  kor: 나병이–들었다
+  swa: una–ukoma
+
+### Sense 130744 (1 occurrences)
+Grammar: V-Qal-QalPassPrtcpl-ms
+  eng: diseased
+  spa: tsarua
+  hin: कोढ़ी
+  arb: أَبْرَصُ
+  kor: 나병환자
+  swa: mwenye–ukoma
+
+### Sense 130745 (1 occurrences)
+Grammar: Conj-w, Art | V-Qal-QalPassPrt
+  eng: and–the–diseased
+  spa: Y–el–tsarua
+  hin: और–कोढ़ी
+  arb: وَ–الْأَبْرَصُ
+  kor: 그리고–그–나병환자–의
+  swa: Na–mwenye–ukoma
+
+### Sense 130746 (1 occurrences)
+Grammar: V-Pual-Prtcpl-mp
+  eng: lepers
+  spa: leprosos
+  hin: मचोराईम
+  arb: بُرْصًا
+  kor: 나병환자들이
+  swa: wenye–ukoma
+
+### Sense 130747 (1 occurrences)
+Grammar: V-Qal-QalPassPrtcpl-ms
+  eng: leprous-one
+  spa: leproso
+  hin: कोढ़ी
+  arb: أَبْرَصَ
+  kor: 문둥병–있는–자
+  swa: Tsrua
+
+## Task
+
+Group these 11 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

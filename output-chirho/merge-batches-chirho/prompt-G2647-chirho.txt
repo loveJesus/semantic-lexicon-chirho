@@ -1,0 +1,143 @@
+# Sense Merge Task for G2647
+
+Lemma: G2647 (POS: V-FIA-3S)
+Total occurrences: 17
+Current sense count: 13
+
+This Hebrew/Greek lemma has been over-split into 13 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 70295 (3 occurrences)
+Grammar: V-FIP-3S,V-ASP-3S
+  eng: will-be-thrown-down, will–be–thrown–down
+  spa: será–derribada, será-derribada, sea–derribada
+  hin: ढाया–जाएगा, ढाया–जाए, ढहाया–जाएगा
+  arb: يُهْدَمَ, يُهدَمُ, يُنقَضُ
+  kor: 헐어지리라, 헐릴–것이다, 허물어지지–않을
+  swa: litabomoshwa, itabomolewa, halitabomolewa
+
+### Sense 70296 (2 occurrences)
+Grammar: V-ANA
+  eng: to–abolish
+  spa: a–abolir, abolir
+  hin: तोड़ने
+  arb: لِأَنْقُضَ
+  kor: 폐하러
+  swa: kubatilisha
+
+### Sense 70297 (2 occurrences)
+Grammar: V-PPA-VMS
+  eng: destroying
+  spa: que–destruye
+  hin: ढाने–वाला, ढानेवाले
+  arb: هَادِمَ
+  kor: 허물는–자여, 허물는-자여
+  swa: ulibomoa, anayebomoa
+
+### Sense 70298 (1 occurrences)
+Grammar: V-ASA-3P
+  eng: they-may-lodge
+  spa: se–alojen
+  hin: टिकें
+  arb: يَنْزِلوا
+  kor: 쉬게–하시고
+  swa: walale
+
+### Sense 70299 (1 occurrences)
+Grammar: V-ANA
+  eng: to–overthrow
+  spa: destruir
+  hin: पाए–जाओ
+  arb: أَنْ–تُبْطِلُوهَا
+  kor: 파괴하는–것–이
+  swa: kuwaangamiza
+
+### Sense 70300 (1 occurrences)
+Grammar: V-FIP-3S
+  eng: it–will–be–overthrown
+  spa: será–destruida
+  arb: سَيَنْحَلُّ
+  swa: itaanguka
+
+### Sense 70301 (1 occurrences)
+Grammar: V-ANA
+  eng: to–destroy
+  spa: destruir
+  hin: ढाना
+  arb: أَنْ–أَهْدِمَ
+  kor: 허물다
+  swa: kulibomoa
+
+### Sense 70302 (1 occurrences)
+Grammar: V-FIA-1S
+  eng: will-destroy
+  spa: destruiré
+  hin: ढहाऊँगा
+  arb: سَأَهْدِمُ
+  kor: 허물리라
+  swa: nitauharibu
+
+### Sense 70303 (1 occurrences)
+Grammar: V-ANA
+  eng: to-lodge
+  spa: a-hospedarse
+  hin: ठहरने
+  arb: لِيَنزِلَ
+  kor: 묵으려고
+  swa: kukaa
+
+### Sense 70304 (1 occurrences)
+Grammar: V-FIA-3S
+  eng: will–destroy
+  spa: destruirá
+  hin: नष्ट–करेगा
+  arb: سَيَهْدِمُ
+  kor: 파괴할–것–이다
+  swa: atapaangamiza
+
+### Sense 70305 (1 occurrences)
+Grammar: V-ASP-3S
+  eng: is–destroyed
+  spa: fuera–destruida
+  hin: गिराया–जाए
+  arb: انهَدَمَ
+  kor: 허물어지면
+  swa: ikibomolewa,
+
+### Sense 70306 (1 occurrences)
+Grammar: V-PMA-2S
+  eng: tear-down
+  spa: destruyas
+  hin: नाश–कर
+  arb: تَهْدِمْ
+  kor: 허물지
+  swa: bomoe
+
+### Sense 70307 (1 occurrences)
+Grammar: V-AIA-1S
+  eng: I-tore-down
+  spa: destruí
+  hin: मैने–तोद,
+  arb: هَدَمتُهُ
+  kor: 허물었노라,
+  swa: niliyoyabomoa
+
+## Task
+
+Group these 13 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

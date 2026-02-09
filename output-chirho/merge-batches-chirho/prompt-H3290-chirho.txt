@@ -1,0 +1,127 @@
+# Sense Merge Task for H3290
+
+Lemma: H3290 (POS: Prep-m | N-proper-ms)
+Total occurrences: 349
+Current sense count: 11
+
+This Hebrew/Greek lemma has been over-split into 11 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 102984 (292 occurrences)
+Grammar: N-proper-ms,Conj-w | N-proper-ms,Conj-w, Prep-l | N-proper-ms
+  eng: Jacob, Yaaqov, and–Jacob
+  spa: Yaaqov, Jacob, Yaakov
+  hin: याकूब, याकूब–के, याकूब–ने
+  arb: يَعْقُوبَ, يَعْقُوبُ, يَعقوبُ
+  kor: 야곱이, 야곱의, 야곱–의
+  swa: Yakobo, wa–Yakobo, ya–Yakobo
+
+### Sense 102985 (34 occurrences)
+Grammar: Prep-l | N-proper-ms
+  eng: to–Jacob, for–Yaaqov, to–Yaaqov
+  spa: a–Yaaqov, a–Jacob, para–Yaaqov
+  hin: याकोब–के–लिए, याकूब–के–लिए, याकूब–को
+  arb: لِيَعْقُوبَ, لِ–يَعْقُوبَ, لِ–يَعقوبَ
+  kor: 야곱에게, 에게–야곱, 야곱–에게
+  swa: kwa–Yakobo, Yakobo, kuhusu–Yakobo
+
+### Sense 102988 (9 occurrences)
+Grammar: Prep-b | N-proper-ms
+  eng: in–Jacob, in–Ya'aqov, against–Jacob
+  spa: en–Jacob, en–Yaʿaqov, en–Yaaqov
+  hin: याकूब–में, में–याकोब, में–याकूब
+  arb: فِي–يَعْقُوبَ, في–يَعقوبَ, بِ–يَعْقُوبَ
+  kor: 야곱–에서, 야곱–에게서, 에–야곱
+  swa: katika–Yakobo, wao, kwa-Yakobo
+
+### Sense 102989 (3 occurrences)
+Grammar: N-proper-ms
+  eng: Yaaqov
+  spa: Jacob, Yaakov
+  hin: याकूब, याकोव
+  arb: يَعْقُوبَ, يَعْقُوب
+  kor: 야곱의, 야곱이
+  swa: Yakobo, wa–Yakobo
+
+### Sense 102990 (3 occurrences)
+Grammar: Prep-m | N-proper-ms
+  eng: from–Jacob, from–Yaaqov
+  spa: de–Jacob
+  hin: याकूब–से
+  arb: مِنْ–يَعْقُوبَ
+  kor: 야곱–에서, 에서–야곱
+  swa: kutoka–Yakobo
+
+### Sense 102991 (3 occurrences)
+Grammar: N-proper-ms
+  eng: Jacob
+  spa: Jacob
+  hin: याकूब–का, याकूब
+  arb: يعقوب
+  kor: 야곱의, 야곱을
+  swa: Yakobo
+
+### Sense 102992 (1 occurrences)
+Grammar: Prep-l | N-proper-ms
+  eng: to–Jacob
+  spa: de–Yaaqov
+  hin: याकूब–के
+  arb: لِ–يَعْقُوبَ
+  kor: 야곱의
+  swa: Yakobo
+
+### Sense 102993 (1 occurrences)
+Grammar: Conj-w | N-proper-ms
+  eng: and–Ya'akov
+  spa: y–Jacob
+  hin: और–यअकोव
+  arb: وَيَعْقُوبَ
+  kor: 그리고–야곱
+  swa: na–Yakobo
+
+### Sense 102994 (1 occurrences)
+Grammar: Prep-b | N-proper-ms
+  eng: Ya'aqov
+  spa: a–Yaakov
+  hin: याकूब–की
+  arb: يَعْقُوبَ
+  kor: 야곱–을
+  swa: Yakobo
+
+### Sense 102995 (1 occurrences)
+Grammar: Prep-l | N-proper-ms
+  eng: of–Jacob
+  spa: de–Jacob
+  hin: याकूब–को
+  arb: لِ–يَعْقُوبَ
+  kor: 야곱–에게
+  swa: kuhusu–Yakobo
+
+### Sense 102996 (1 occurrences)
+Grammar: Prep-b | N-proper-ms
+  eng: against–Ya'aqov
+  spa: contra–Yaakov
+  hin: याकूब–में
+  arb: فِي–يَعْقُوبَ
+  kor: 야곱–안에서
+  swa: dhidi–ya–Yakobo
+
+## Task
+
+Group these 11 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

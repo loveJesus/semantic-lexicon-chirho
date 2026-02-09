@@ -1,0 +1,127 @@
+# Sense Merge Task for H4306
+
+Lemma: H4306 (POS: Prep-k)
+Total occurrences: 38
+Current sense count: 11
+
+This Hebrew/Greek lemma has been over-split into 11 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 111159 (17 occurrences)
+Grammar: Art | N-ms,N-ms,N-msc
+  eng: rain, the–rain, shower
+  spa: lluvia, lluvia–de, la–lluvia
+  hin: वर्षा
+  arb: مَطَرًا, مَطَرٌ, وَابِلاً
+  kor: 비를, 비, 비가
+  swa: mvua, ya–mvua, watakuwa–wamekukosea
+
+### Sense 111160 (5 occurrences)
+Grammar: Prep-l, Art | N-ms
+  eng: for–the–rain, to–the–rain, for–the-rain
+  spa: para–la–lluvia
+  hin: वर्षा–के–लिए
+  arb: لِلْمَطَرِ, لِ–المَطَرِ, لِـ–المَطَرِ
+  kor: 비–를–위하여, 비에게, 비를–위해
+  swa: kwa–mvua, mvua
+
+### Sense 111161 (5 occurrences)
+Grammar: Conj-w | N-ms,Conj-w | N-msc
+  eng: and–rain, and–rain–of
+  spa: y–lluvia, y–lluvia–de, ni–lluvia
+  hin: और–वर्षा, और–वर्षा–
+  arb: وَ–مَطَرًا, وَ–مَطَرٌ, وَمَطَرَ–
+  kor: 그리고–비를, 그리고–비는, 그리고–비–
+  swa: na–mvua, wala–mvua
+
+### Sense 111162 (3 occurrences)
+Grammar: N-msc
+  eng: rain-of–, rain-of
+  spa: lluvia–de, la–lluvia–de
+  hin: वर्षा, बारिश–, बारिश
+  arb: مَطَرَ–, مَطَرَ
+  kor: 비를–, (접)–비를–, (접)–비를
+  swa: mvua, mvua–
+
+### Sense 111163 (2 occurrences)
+Grammar: Prep-k, Art | N-ms,Prep-k | N-ms
+  eng: like–rain, as–the-rain
+  spa: como–lluvia
+  hin: वर्षा–की–तरह, जैसे–वर्षा–के–लिए
+  arb: كَ–مَطَرٍ, كَ–المَطَرِ
+  kor: 비–같이
+  swa: kama–mvua
+
+### Sense 111164 (1 occurrences)
+Grammar: Prep-l | N-msc
+  eng: from–rain-of
+  spa: de–la–lluvia–de
+  hin: से–वर्षा
+  arb: لِمَطَرِ
+  kor: 비로–인하여
+  swa: kwa–mvua
+
+### Sense 111165 (1 occurrences)
+Grammar: Prep-m | N-ms
+  eng: from–rain
+  spa: de–lluvia
+  hin: वर्षा–से
+  arb: مِنَ–الْمَطَرِ
+  kor: –에서–비
+  swa: kutoka–mvua
+
+### Sense 111166 (1 occurrences)
+Grammar: Conj-w, Prep-k, Art | N-ms
+  eng: and–like–rain
+  spa: y–como–lluvia
+  hin: और–जैसे–वर्षा
+  arb: وَ–كَ–الْمَطَرِ
+  kor: 그리고–같이–비
+  swa: na–kama–mvua
+
+### Sense 111167 (1 occurrences)
+Grammar: Conj-w, Prep-m | N-ms
+  eng: and–from–rain
+  spa: y-de-lluvia
+  hin: और–वर्षा–से
+  arb: وَ–مِنَ–المَطَرِ
+  kor: 비–에서
+  swa: na–kutoka–mvua
+
+### Sense 111168 (1 occurrences)
+Grammar: Prep-k, Art | N-ms
+  eng: like–the–rain
+  spa: como–la–lluvia
+  hin: जैसे–मींह
+  arb: كَـ–الْمَطَرِ
+  kor: 같이–비
+  swa: kama–mvua
+
+### Sense 111169 (1 occurrences)
+Grammar: N-mpc
+  eng: showers–of
+  spa: lluvias–de
+  hin: वर्षाओं–की
+  arb: أَمْطَارِ
+  kor: 비들의
+  swa: za–mvua
+
+## Task
+
+Group these 11 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

@@ -1,0 +1,163 @@
+# Sense Merge Task for H6556
+
+Lemma: H6556 (POS: Prep-k | N-ms)
+Total occurrences: 19
+Current sense count: 15
+
+This Hebrew/Greek lemma has been over-split into 15 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 128716 (2 occurrences)
+Grammar: N-ms
+  eng: breach, a-breach
+  spa: brecha
+  hin: दरार
+  arb: ثَغْرَةٌ, ثَغْرَةً
+  kor: 허물어짐이, 파열을
+  swa: uvunjaji, pengo
+
+### Sense 128717 (2 occurrences)
+Grammar: N-ms,N-msc
+  eng: outbreak
+  spa: irrupción, brecha
+  hin: फट, तोड़ना
+  arb: فَجْوَةً, اقْتِحَامًا
+  kor: 터짐을, 터뜨림–을
+  swa: uvunjiko
+
+### Sense 128718 (2 occurrences)
+Grammar: N-ms
+  eng: the–breach, a–breach
+  spa: brecha
+  hin: दरारें, दरारका
+  arb: ثَغْرَةٌ, الثَّغْرَةِ
+  kor: 파손의, 틈이
+  swa: pengo
+
+### Sense 128719 (2 occurrences)
+Grammar: N-ms
+  eng: breach
+  spa: brecha
+  hin: दरार–पर, दरार
+  arb: خَرْقٍ, خَرْقًا
+  kor: 파손으로, 파손
+  swa: pengo
+
+### Sense 128720 (1 occurrences)
+Grammar: Prep-b, Art | N-ms
+  eng: in–the–breach
+  spa: en–la–brecha
+  hin: दरार–में
+  arb: في–الثَّغرَة
+  kor: 깨진–곳–에
+  swa: penye–ufa
+
+### Sense 128721 (1 occurrences)
+Grammar: Conj-w | N-mp
+  eng: and–through-breaches
+  spa: Y–por–brechas
+  hin: और–दरारों–से
+  arb: وَ–مِنْ–ثُغُراتٍ
+  kor: 그리고–성벽틈으로
+  swa: Na–kupitia–mapengo
+
+### Sense 128722 (1 occurrences)
+Grammar: Prep-k | N-ms
+  eng: as–breach
+  spa: Como–brecha
+  hin: दरार–की–तरह
+  arb: كَ–ثَغرَةٍ
+  kor: 넓은
+  swa: kama–kupitia
+
+### Sense 128723 (1 occurrences)
+Grammar: Prep-k | N-ms
+  eng: like–a–breach
+  spa: como–brecha
+  hin: जैसे–दरार
+  arb: كَـ–ثَغْرَةٍ
+  kor: 같이–터진–곳
+  swa: kama–uvunjiko
+
+### Sense 128724 (1 occurrences)
+Grammar: Prep-b, Art | N-ms
+  eng: in–the–breach
+  spa: en–la–brecha
+  hin: में–दरार
+  arb: فِي–الثَّغْرَةِ
+  kor: 그–틈–안에서
+  swa: katika–nafasi
+
+### Sense 128725 (1 occurrences)
+Grammar: N-msc
+  eng: the–breach-of
+  spa: brecha–de
+  hin: दरार
+  arb: الـ–ثَغْرَةَ
+  kor: 턱을
+  swa: pengo–la
+
+### Sense 128726 (1 occurrences)
+Grammar: Prep-b, Art | N-mp
+  eng: into–the–breaches
+  spa: en–las–brechas
+  hin: में–दरारों
+  arb: فِي–الثُّغُورَاتِ
+  kor: 그–틈들–안으로
+  swa: katika–nafasi
+
+### Sense 128727 (1 occurrences)
+Grammar: N-ms
+  eng: a–breach
+  spa: brecha
+  hin: पेरेस
+  arb: اقْتِحَامٌ
+  kor: 터짐을
+  swa: uvunjaji
+
+### Sense 128728 (1 occurrences)
+Grammar: Prep-k | N-msc
+  eng: like–breaking–through–of
+  spa: como–brecha–de
+  hin: जैसे–तोड़ना
+  arb: كَ–اقْتِحَامِ
+  kor: 같이–터지게–함
+  swa: kama–kuvunja–kwa
+
+### Sense 128729 (1 occurrences)
+Grammar: Prep-k | N-msc
+  eng: like–outbreak–of
+  spa: como–brecha–de
+  hin: जैसे–फट
+  arb: كَ–فَجْوَةِ
+  kor: 같이–터뜨림–의
+  swa: kama–uvunjiko–wa
+
+### Sense 128730 (1 occurrences)
+Grammar: N-mpc | 3fp
+  eng: its–breaches
+  spa: sus–brechas
+  hin: दरारों–उसकी
+  arb: شُقُوقَهَا
+  kor: 그것들의–털린–곳들을
+  swa: mapengo–yake
+
+## Task
+
+Group these 15 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

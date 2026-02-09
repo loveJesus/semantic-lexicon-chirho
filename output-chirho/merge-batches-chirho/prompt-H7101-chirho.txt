@@ -1,0 +1,118 @@
+# Sense Merge Task for H7101
+
+Lemma: H7101 (POS: Conj-w | N-mpc)
+Total occurrences: 12
+Current sense count: 10
+
+This Hebrew/Greek lemma has been over-split into 10 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 132657 (2 occurrences)
+Grammar: N-ms,N-msc
+  eng: ruler–of, ruler
+  spa: gobernante, como–gobernante
+  hin: हाकिम
+  arb: رَئِيسَ, رَئِيسًا
+  kor: 통치자로, 통치자가
+  swa: kiongozi–wa, kiongozi
+
+### Sense 132658 (2 occurrences)
+Grammar: Conj-w | N-mpc
+  eng: and–rulers–of
+  spa: y–gobernantes–de
+  hin: और–शासको
+  arb: وَ–قُادَةَ
+  kor: 그리고–지도자들아
+  swa: na–watawala–wa
+
+### Sense 132659 (1 occurrences)
+Grammar: Conj-w, Prep-l | N-ms
+  eng: and–for–commander
+  spa: y–por–capitán
+  hin: और–सेनापति
+  arb: وَ–لِ–قائِدٍ
+  kor: 그리고–지휘관으로
+  swa: na–kiongozi
+
+### Sense 132660 (1 occurrences)
+Grammar: N-mpc | 2fs
+  eng: your–rulers
+  spa: tus–gobernadores
+  hin: तेरे–हाकम
+  arb: رُؤَسَائِكِ
+  kor: 너의–장관들이
+  swa: viongozi–wako
+
+### Sense 132661 (1 occurrences)
+Grammar: N-ms
+  eng: a-commander
+  spa: comandante
+  hin: सरदार–ने
+  arb: قَائِدٌ
+  kor: 장관이
+  swa: kamanda
+
+### Sense 132662 (1 occurrences)
+Grammar: N-mpc
+  eng: the–commanders–of
+  spa: jefes–de
+  hin: सरदारों
+  arb: قادَةِ
+  kor: 지휘관들에게
+  swa: wakuu–wa
+
+### Sense 132663 (1 occurrences)
+Grammar: Prep-l | N-ms
+  eng: for–commander
+  spa: por–capitán
+  hin: सेनापति
+  arb: لِ–قائِدٍ
+  kor: 사령관으로
+  swa: kiongozi
+
+### Sense 132664 (1 occurrences)
+Grammar: N-ms
+  eng: a–ruler
+  spa: gobernante
+  hin: हाकिम
+  arb: قائِدٌ
+  kor: 군장이
+  swa: kiongozi
+
+### Sense 132665 (1 occurrences)
+Grammar: N-mpc
+  eng: rulers–of
+  spa: gobernantes–de
+  hin: हाकिमो
+  arb: يَا–رُؤَسَاءَ
+  kor: 통치자들아
+  swa: watawala–wa
+
+### Sense 132666 (1 occurrences)
+Grammar: N-ms
+  eng: chief
+  spa: capitán
+  hin: प्रधान
+  arb: قَائِدٌ
+  kor: 장관–이
+  swa: mkuu
+
+## Task
+
+Group these 10 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

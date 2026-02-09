@@ -1,0 +1,118 @@
+# Sense Merge Task for H0585
+
+Lemma: H0585 (POS: N-fsc | 1cs)
+Total occurrences: 11
+Current sense count: 10
+
+This Hebrew/Greek lemma has been over-split into 10 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 83301 (2 occurrences)
+Grammar: Conj-w | N-fs
+  eng: and–sighing
+  spa: y–gemido
+  hin: और–आह
+  arb: وَ–تَنَهُّدٌ, وَ–التَّنَهُّدُ
+  kor: 그리고–탄식이
+  swa: na–kuugua
+
+### Sense 83302 (1 occurrences)
+Grammar: N-fsc | 1cs
+  eng: my–groaning
+  spa: mi–gemido
+  hin: मेरी–कराहट
+  arb: أَنيني
+  kor: 나–의–탄식–의
+  swa: kuugua–kwangu
+
+### Sense 83303 (1 occurrences)
+Grammar: N-fsc | 3fs
+  eng: its–sighing
+  spa: su–gemido
+  hin: कराहना
+  arb: التَّنَهُّدَاتِ
+  kor: 탄식을
+  swa: kuugua
+
+### Sense 83304 (1 occurrences)
+Grammar: Prep-b | N-fs
+  eng: in–groaning
+  spa: en–gemido
+  hin: में–आह–भरने
+  arb: بِالتَّنَهُّدِ
+  kor: 탄식–으로
+  swa: kwa–kuugua
+
+### Sense 83305 (1 occurrences)
+Grammar: N-fsc | 1cs
+  eng: my–sighing
+  spa: mi–gemido
+  hin: मेरी–आह
+  arb: تَنَهُّدي
+  kor: 나의–탄식이
+  swa: kuugua–kwangu
+
+### Sense 83306 (1 occurrences)
+Grammar: N-fpc | 1cs
+  eng: my–groans
+  spa: mis–gemidos
+  hin: मेरी–आहें
+  arb: تَنَهُّدَاتِي
+  kor: 내–탄식들–이
+  swa: kilio–changu
+
+### Sense 83307 (1 occurrences)
+Grammar: Conj-w | N-fsc | 1cs
+  eng: and–my–sighing
+  spa: y–mi–suspiro
+  hin: और–आह–मेरी
+  arb: وَتَنَهُّدي
+  kor: 그리고–내–탄식–이
+  swa: na–kuugua-kwangu
+
+### Sense 83308 (1 occurrences)
+Grammar: N-fsc | 1cs
+  eng: my–groaning
+  spa: mi–gemido.
+  hin: मेरी–कराहट
+  arb: آهَاتِي
+  kor: 나의–탄식
+  swa: kilio–changu
+
+### Sense 83309 (1 occurrences)
+Grammar: Prep-b | N-fsc | 1cs
+  eng: with–my–groaning
+  spa: en–mi–gemido
+  hin: में–मेरी–आह
+  arb: فِي–تَنَهُّدِي
+  kor: 나의–탄식에
+  swa: kwa–kuugua–kwangu
+
+### Sense 83310 (1 occurrences)
+Grammar: Prep-b | N-fsc | 1cs
+  eng: with–my–groaning
+  spa: de–mi–gemir
+  hin: अपनी–आहों–से
+  arb: بِ–تَنَهُّدِي
+  kor: 탄식–으로
+  swa: kwa–kuugua–kwangu
+
+## Task
+
+Group these 10 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

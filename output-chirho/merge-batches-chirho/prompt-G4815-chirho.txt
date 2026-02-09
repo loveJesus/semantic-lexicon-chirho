@@ -1,0 +1,152 @@
+# Sense Merge Task for G4815
+
+Lemma: G4815 (POS: V-APA-NMP)
+Total occurrences: 16
+Current sense count: 14
+
+This Hebrew/Greek lemma has been over-split into 14 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 76906 (2 occurrences)
+Grammar: V-ANA
+  eng: to–arrest, to-arrest
+  spa: a–prenderme, a–prender
+  hin: पकड़ने
+  arb: لِتَقْبِضُوا–عَلَيَّ
+  kor: 잡으려고
+  swa: kunishika, kunikamata
+
+### Sense 76907 (2 occurrences)
+Grammar: V-AIA-3S,V-RIA-3S
+  eng: has–conceived, conceived
+  spa: ha–concebido, concibió
+  hin: गर्भवती–है, गर्भवती–हुई
+  arb: حَبِلَتْ
+  kor: 잉태했다
+  swa: amepata–mimba, alipata–mimba
+
+### Sense 76908 (1 occurrences)
+Grammar: V-ANM
+  eng: to–help
+  spa: ayudar
+  hin: मदद–करने–को
+  arb: يُساعِدوهُم
+  kor: 돕도록
+  swa: kuwasaidia
+
+### Sense 76909 (1 occurrences)
+Grammar: V-FIM-2S
+  eng: you–will–conceive
+  spa: concebirás
+  hin: गर्भवती–होगी
+  arb: سَتَحْبَلِينَ
+  kor: 잉태할–것이다
+  swa: utapata–mimba
+
+### Sense 76910 (1 occurrences)
+Grammar: V-APA-NMP
+  eng: Having-seized
+  spa: Habiendo-prendido
+  hin: पकड़कर
+  arb: قَبَضوا
+  kor: 잡아서
+  swa: Wakimkamata
+
+### Sense 76911 (1 occurrences)
+Grammar: V-APA-DMP
+  eng: having–arrested
+  spa: habiendo–apresado
+  arb: قَبَضُوا–عَلَى
+  swa: waliomkamata
+
+### Sense 76912 (1 occurrences)
+Grammar: V-ANA
+  eng: to–seize
+  spa: arrestar
+  hin: पकड़ने–को
+  arb: أَنْ–يَقْبِضَ
+  kor: 잡으려고
+  swa: kumkamata
+
+### Sense 76913 (1 occurrences)
+Grammar: V-APP-AMS
+  eng: having–been–seized
+  spa: habiendo-sido-arrestado
+  hin: पकड़ेगए
+  arb: المَأْسُورَ
+  kor: 붙잡힌
+  swa: aliyekamatwa
+
+### Sense 76914 (1 occurrences)
+Grammar: V-PMM-2S
+  eng: help
+  spa: ayuda
+  hin: मदद–कर
+  arb: ساعِدْ
+  kor: 도와주라
+  swa: wasaidie
+
+### Sense 76915 (1 occurrences)
+Grammar: V-APA-NFS
+  eng: having–conceived
+  spa: habiendo–concebido
+  hin: गर्भ-धारण-करके
+  arb: إذا–حَبِلَت
+  kor: 잉태하여.
+  swa: ikiisha–beba–mimba
+
+### Sense 76916 (1 occurrences)
+Grammar: V-AIA-3P
+  eng: arrested
+  spa: prendieron
+  hin: पकड़ा
+  arb: قَبَضُوا–عَلَى
+  kor: 붙잡았다
+  swa: walimkamata
+
+### Sense 76917 (1 occurrences)
+Grammar: V-AIA-3P
+  eng: they–caught
+  spa: tomaron
+  hin: पकड़ी
+  arb: اصطادوها
+  kor: 잡았던
+  swa: waliovua
+
+### Sense 76918 (1 occurrences)
+Grammar: V-APM-NMP
+  eng: having–seized
+  spa: habiendo-arrestado
+  hin: पकड़कर
+  arb: لَمَّا–أَمْسَكُونِي
+  kor: 붙잡아서
+  swa: walinikamata
+
+### Sense 76919 (1 occurrences)
+Grammar: V-ANP
+  eng: being–conceived
+  spa: ser–concebido
+  hin: गर्भ–में–आने
+  arb: أَنْ–يُحْبَلَ–بِهِ
+  kor: 잉태되기
+  swa: kupata–mimba
+
+## Task
+
+Group these 14 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

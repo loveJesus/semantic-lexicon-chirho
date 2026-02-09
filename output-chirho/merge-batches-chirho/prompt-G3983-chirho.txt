@@ -1,0 +1,145 @@
+# Sense Merge Task for G3983
+
+Lemma: G3983 (POS: V-ASA-3S)
+Total occurrences: 23
+Current sense count: 13
+
+This Hebrew/Greek lemma has been over-split into 13 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 74375 (6 occurrences)
+Grammar: V-AIA-3S
+  eng: he–was–hungry, he-was-hungry
+  spa: tuvo–hambre, tuvo-hambre
+  hin: भूखा–हुआ, भोओखअ–थअ, भूखा–लगी
+  arb: جَاعَ, جاعَ
+  kor: 배고파다, 주리셨다, 배고프셨다
+  swa: na, aliwa–na–njaa, alipoona–njaa
+
+### Sense 74376 (3 occurrences)
+Grammar: V-PSA-3S,V-PIA-3S
+  eng: is-hungry, hungers
+  spa: tiene–hambre, tiene-hambre
+  hin: भूखा–हो, भूखा–रहता–है
+  arb: يَجوعُ, جَاعَ
+  kor: 배고프면, 배고프고
+  swa: ana–njaa,, ana–njaa
+
+### Sense 74377 (2 occurrences)
+Grammar: V-AIA-1S
+  eng: I–was–hungry
+  spa: tuve–hambre
+  hin: भूखा–था
+  arb: جُعْتُ
+  kor: 굶주렸다
+  swa: nilikuwa–na–njaa
+
+### Sense 74378 (2 occurrences)
+Grammar: V-PPA-AMS
+  eng: hungering
+  spa: hambriento
+  hin: भूखा
+  arb: جَائِعًا
+  kor: 굶주린–것–을
+  swa: una–njaa
+
+### Sense 74379 (2 occurrences)
+Grammar: V-PPA-NMP,V-PPA-VMP
+  eng: hungering
+  spa: que–tienen–hambre
+  hin: भूखे
+  arb: لْجَائِعِينَ, لِلجياعِ
+  kor: 배고픈–자들, 배고픈–사람들이여
+  swa: wenye–njaa
+
+### Sense 74380 (1 occurrences)
+Grammar: V-AIA-3S
+  eng: was-hungry
+  spa: tuvo–hambre
+  hin: भूखा
+  arb: جاعَ
+  kor: 굶주렸다
+  swa: aliona–njaa,
+
+### Sense 74381 (1 occurrences)
+Grammar: V-ASA-3S
+  eng: will-hunger
+  spa: tendrá-hambre
+  hin: भूखा–होगा;
+  arb: يَجُوعَ
+  kor: 주리지–않을–것이다
+  swa: ataona–njaa
+
+### Sense 74382 (1 occurrences)
+Grammar: V-PPA-AMP
+  eng: hungry
+  spa: a–hambrientos
+  hin: भूखों–को
+  arb: الْجِيَاعَ
+  kor: 굶주린–자들–을
+  swa: wenye–njaa
+
+### Sense 74383 (1 occurrences)
+Grammar: V-PIA-1P
+  eng: we–hunger
+  spa: tenemos–hambre
+  hin: भूखे–हैं
+  arb: نَجوعُ
+  kor: 배고프다
+  swa: tunaona–njaa
+
+### Sense 74384 (1 occurrences)
+Grammar: V-FIA-2P
+  eng: you–will–hunger
+  spa: tendréis–hambre
+  hin: भूखोगे
+  arb: سَتَجوعونَ
+  kor: 굶주릴–것이다
+  swa: mtaona–njaa
+
+### Sense 74385 (1 occurrences)
+Grammar: V-PNA
+  eng: to–hunger
+  spa: tener–hambre
+  hin: भोओखे–रेहन,
+  arb: أَنْ–أَجوعَ
+  kor: 배고프기,
+  swa: kuona–njaa
+
+### Sense 74386 (1 occurrences)
+Grammar: V-FIA-3P
+  eng: they–will–hunger
+  spa: tendrán–hambre
+  hin: वे–भूखे–लगेंगे
+  arb: يَجوعوا
+  kor: 배고프지
+  swa: hawatakuwa–na–njaa
+
+### Sense 74387 (1 occurrences)
+Grammar: V-AIA-3P
+  eng: were–hungry
+  spa: tuvieron-hambre
+  hin: भोओखे–हुए
+  arb: جَاعُوا
+  kor: 배고파서
+  swa: walikuwa-na-njaa,
+
+## Task
+
+Group these 13 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

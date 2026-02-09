@@ -1,0 +1,118 @@
+# Sense Merge Task for G4103
+
+Lemma: G4103 (POS: Adj-ANS)
+Total occurrences: 67
+Current sense count: 10
+
+This Hebrew/Greek lemma has been over-split into 10 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 74879 (48 occurrences)
+Grammar: Adj-NMS,Adj-VMS,Adj-NMP,Adj-AFS,Adj-NNS,Adj-DMP,Adj-DMS,Adj-AMS,Adj-AFP,Adj-GMS,
+  eng: faithful, to–faithful
+  spa: fiel, fieles, a–fieles
+  hin: विश्वासयोग्य, विशवअस्योग्य, विश्वासी
+  arb: الأَمينُ, أَمينٌ, أَميناً
+  kor: 신실한, 신실하시다, 신실하고
+  swa: mwaminifu, waaminifu, la–kuamini
+
+### Sense 74880 (5 occurrences)
+Grammar: Adj-NMS
+  eng: faithful, Faithful
+  spa: Fiel, fiel
+  hin: विशवअस्योग्य, विश्वासी
+  arb: صادِقَةٌ, صادِقٌ, أَمينًا
+  kor: 신실한, 신실하시다, 신실하다
+  swa: La–kuamini, Mwaminifu
+
+### Sense 74881 (4 occurrences)
+Grammar: Adj-AMP,Adj-NMP,Adj-ANP
+  eng: believing
+  spa: creyentes, fieles
+  hin: विशवअसि, विश्वासी, विशवअसि,
+  arb: مُؤْمِنونَ, مُؤْمِنينَ, المُؤمِنينَ
+  kor: 이니라,, 신실한–자들을, 믿는–자들이
+  swa: waaminio, mwamini
+
+### Sense 74882 (3 occurrences)
+Grammar: Adj-DMP,Adj-GMP
+  eng: of–believers, believing, believers
+  spa: fieles, de–fieles
+  hin: विशवअस–वअलोन
+  arb: المُؤْمِنينَ
+  kor: 신실한–자들–의., 신실한–자들–의,, 신실한–자들,
+  swa: waaminio
+
+### Sense 74883 (2 occurrences)
+Grammar: Adj-GFS,Adj-DMS
+  eng: faithful, believing
+  spa: creyente
+  hin: विश्वासी, विशवसि
+  arb: مُؤمِنَةٍ, المُؤمِنِ
+  kor: 믿음의, 믿는
+  swa: mwaminifu
+
+### Sense 74884 (1 occurrences)
+Grammar: Adj-DMS
+  eng: to–believer
+  spa: a–fiel
+  hin: विश्वासी–को
+  arb: المُؤمِنِ
+  kor: 믿는–자에게
+  swa: ya–mwamini
+
+### Sense 74885 (1 occurrences)
+Grammar: Adj-ANP
+  eng: faithful
+  spa: fieles
+  hin: विश्वसनीय
+  arb: أَمينَةَ
+  kor: 신실한
+  swa: ya–kuaminika.
+
+### Sense 74886 (1 occurrences)
+Grammar: Adj-NMS
+  eng: believing
+  spa: creyente
+  hin: विश्वासी
+  arb: مُؤْمِنًا
+  kor: 믿는–자
+  swa: mwenye–kuamini
+
+### Sense 74887 (1 occurrences)
+Grammar: Adj-NFS
+  eng: believing–woman
+  spa: creyente
+  hin: विशवअसेए-स्त्रेए
+  arb: مُؤْمِنَةٌ
+  kor: 신실한–여자가
+  swa: mwaminio
+
+### Sense 74888 (1 occurrences)
+Grammar: Adj-NMP
+  eng: believers
+  spa: creyentes
+  hin: विश्वासी
+  arb: ٱلْمُؤْمِنُونَ
+  kor: 믿는–자들–이
+  swa: waaminio,
+
+## Task
+
+Group these 10 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

@@ -1,0 +1,136 @@
+# Sense Merge Task for H7281
+
+Lemma: H7281 (POS: Prep-l | N-mp)
+Total occurrences: 22
+Current sense count: 12
+
+This Hebrew/Greek lemma has been over-split into 12 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 134821 (4 occurrences)
+Grammar: N-ms
+  eng: a–moment, until, moment
+  spa: momento, un–momento
+  hin: क्षण, क्षणभर
+  arb: لَحْظَةً, لَحظَةً
+  kor: 잠깐, 순간을, 순간–이
+  swa: wakati, wakati-mfupi, kitambo
+
+### Sense 134822 (4 occurrences)
+Grammar: N-ms,Prep-k | N-ms
+  eng: in–a–moment
+  spa: en–un–momento, en–un–instante
+  hin: क्षण–में, पल–में, तुरन्त
+  arb: فِي–لَحْظَةٍ, لَحْظَةً, في–لَحْظَةٍ
+  kor: 순식간에, 순식간–에, 갑자기
+  swa: ghafla, kwa–dakika
+
+### Sense 134823 (4 occurrences)
+Grammar: Prep-l | N-mp
+  eng: every–moment, every-moment, every
+  spa: a–cada–momento, cada–momento
+  hin: पल–पल, पल्–पल, पलों–को
+  arb: كُلَّ–لَحْظَةٍ
+  kor: 순간마다, 에–순간들, 순간마다–
+  swa: kila–wakati
+
+### Sense 134824 (2 occurrences)
+Grammar: Prep-k | N-ms
+  eng: in–a–moment
+  spa: en–un–instante
+  hin: पल–में
+  arb: فِي–لَحْظَةٍ
+  kor: 순식간에
+  swa: papo–hapo
+
+### Sense 134825 (1 occurrences)
+Grammar: N-ms
+  eng: in–a–moment
+  spa: Instante
+  hin: क्षण–में
+  arb: فَجأَةً
+  kor: 순간에
+  swa: ghafla
+
+### Sense 134826 (1 occurrences)
+Grammar: N-ms
+  eng: Moment
+  spa: Instante
+  hin: क्षण–में
+  arb: لَحْظَةً
+  kor: 순간에
+  swa: Wakati
+
+### Sense 134827 (1 occurrences)
+Grammar: N-ms
+  eng: a–moment
+  spa: en–un–momento
+  hin: एक–क्षण–में
+  arb: عَيْنٍ
+  kor: 순식간–에
+  swa: kwa–sekunde
+
+### Sense 134828 (1 occurrences)
+Grammar: Conj-w, Prep-b | N-ms
+  eng: and–in–moment
+  spa: y–en–un–momento
+  hin: और–एक–क्षण–में
+  arb: وَ–فِي–لَحْظَةٍ
+  kor: 그리고–순간에
+  swa: na–kwa–dakika
+
+### Sense 134829 (1 occurrences)
+Grammar: Conj-w | N-ms
+  eng: And–moment
+  spa: Y–instante
+  hin: और–क्षण–में
+  arb: وَ–لَحْظَةً
+  kor: 그리고–순간에
+  swa: Na–wakati
+
+### Sense 134830 (1 occurrences)
+Grammar: N-ms
+  eng: moment
+  spa: breve
+  hin: पल
+  arb: لَحْظَة
+  kor: 순간
+  swa: wakati
+
+### Sense 134831 (1 occurrences)
+Grammar: N-ms
+  eng: moment
+  spa: un–momento?
+  hin: क्षण
+  arb: لَحْظَةٍ
+  kor: 순간이니라
+  swa: muda–mfupi
+
+### Sense 134832 (1 occurrences)
+Grammar: Prep-b | N-ms
+  eng: for–moment
+  spa: Por–momento
+  hin: क्षणभरके–लिए
+  arb: فِي–لَحْظَةٍ
+  kor: 잠깐–
+  swa: Kwa–wakati
+
+## Task
+
+Group these 12 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

@@ -1,0 +1,118 @@
+# Sense Merge Task for H7481
+
+Lemma: H7481 (POS: V-Qal-Perf-3cp)
+Total occurrences: 13
+Current sense count: 10
+
+This Hebrew/Greek lemma has been over-split into 10 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 136619 (2 occurrences)
+Grammar: Conj-w | V-Hifil-ConsecImperf-
+  eng: and–thundered, and–he-thundered
+  spa: y–tronó
+  hin: और–गरजा
+  arb: وَ–أَرْعَدَ, فَأَرْعَدَ
+  kor: 그리고–천둥치셨도다, 그리고–천둥치게–하셨다
+  swa: na–akanguruma, Na–alinguruma
+
+### Sense 136620 (2 occurrences)
+Grammar: V-Hifil-Imperf.Jus-3ms
+  eng: thunders, he–thunders
+  spa: truena, Truena
+  hin: गरजता–है
+  arb: يُرْعِدُ
+  kor: 천둥치신다, 그가–천둥치신다
+  swa: ananguruma
+
+### Sense 136621 (2 occurrences)
+Grammar: V-Qal-Imperf-3ms
+  eng: let–roar
+  spa: brame, Brame
+  hin: गरजे
+  arb: يَرْعُدُ
+  kor: 우레처럼–울리라
+  swa: na–ingurume
+
+### Sense 136622 (1 occurrences)
+Grammar: V-Hifil-Imperf.Jus-3ms
+  eng: He-thunders
+  spa: tronará
+  hin: गरजेगा
+  arb: يُرْعِدُ
+  kor: 천둥친다
+  swa: atanguruma
+
+### Sense 136623 (1 occurrences)
+Grammar: V-Hifil-Imperf.Jus-3ms
+  eng: thundered
+  spa: Tronó
+  hin: गरजा
+  arb: رَعَدَ
+  kor: 천둥–침다
+  swa: alipiga–ngurumo
+
+### Sense 136624 (1 occurrences)
+Grammar: V-Hifil-Imperf.Jus-2ms
+  eng: can–you–thunder
+  spa: truenas
+  hin: तू–गरजता–है
+  arb: تُرْعِدُ.
+  kor: 네가–천둥치겠느냐
+  swa: utatoa–ngurumo
+
+### Sense 136625 (1 occurrences)
+Grammar: V-Qal-Perf-3cp
+  eng: are-troubled
+  spa: se–perturbaron
+  hin: कांपे
+  arb: ارْتَعَدَتْ
+  kor: 사나웠다
+  swa: wamepauka
+
+### Sense 136626 (1 occurrences)
+Grammar: V-Hifil-Inf | 3fs
+  eng: making-her-tremble
+  spa: hacerla–irritar
+  hin: रोने–के–लिए
+  arb: إِرْعَادِهَا
+  kor: 성나게하다–그녀–를
+  swa: kumkasirisha
+
+### Sense 136627 (1 occurrences)
+Grammar: V-Qal-Imperf-3ms
+  eng: let-thunder
+  spa: Brame
+  hin: गरजे
+  arb: يَرْعَدُ
+  kor: 천둥하라
+  swa: na–liningurume
+
+### Sense 136628 (1 occurrences)
+Grammar: V-Hifil-Perf-3ms
+  eng: thunders
+  spa: truena
+  hin: गरजता–है
+  arb: أَرْعَدَ
+  kor: 천둥치셨도다
+  swa: ananguruma
+
+## Task
+
+Group these 10 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

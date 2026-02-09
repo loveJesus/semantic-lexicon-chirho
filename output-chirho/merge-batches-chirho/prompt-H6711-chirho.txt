@@ -1,0 +1,127 @@
+# Sense Merge Task for H6711
+
+Lemma: H6711 (POS: Conj-w | V-Qal-ConsecImperf-3fs)
+Total occurrences: 13
+Current sense count: 11
+
+This Hebrew/Greek lemma has been over-split into 11 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 129931 (2 occurrences)
+Grammar: Prep-l | V-Piel-Inf
+  eng: to–mock
+  spa: para–burlarse
+  hin: ठठ्ठा–करने–के–लिए
+  arb: لِ–يَسْخَرَ
+  kor: 희롱하려고
+  swa: kufanya–mzushi
+
+### Sense 129932 (2 occurrences)
+Grammar: Conj-w | V-Qal-ConsecImperf-3m,Conj-w | V-Qal-ConsecImperf-3f
+  eng: and–laughed
+  spa: y–rió, Y–rió
+  hin: और–हनसि, और–हनस
+  arb: وَ–ضَحِكَتْ, وَ–ضَحِكَ
+  kor: 그리고–웃었다
+  swa: na–akacheka, Na–akacheka
+
+### Sense 129933 (1 occurrences)
+Grammar: V-Piel-Prtcpl-ms
+  eng: laughing
+  spa: riendo
+  hin: खेल–रहा–था
+  arb: يُداعِبُ
+  kor: 놀고–있었다
+  swa: akimburudisha
+
+### Sense 129934 (1 occurrences)
+Grammar: V-Qal-Imperf-3ms
+  eng: will–laugh
+  spa: reirá
+  hin: हँसेगा
+  arb: يَضْحَكُ
+  kor: 웃으리라–나–에게
+  swa: itacheka
+
+### Sense 129935 (1 occurrences)
+Grammar: Conj-w | V-Piel-ConsecImperf-3
+  eng: and–amused
+  spa: y–los–divirtió
+  hin: और–खेला
+  arb: وَ–لَعِبَ
+  kor: 그리고–웃기게–했다
+  swa: na–akawachekesha
+
+### Sense 129936 (1 occurrences)
+Grammar: V-Qal-Perf-3fs
+  eng: laughed
+  spa: rió
+  hin: हनसि
+  arb: ضَحِكَتْ
+  kor: 웃었는가
+  swa: alicheka
+
+### Sense 129937 (1 occurrences)
+Grammar: V-Qal-Perf-2fs
+  eng: you–laughed
+  spa: reíste
+  hin: तु–हनसि
+  arb: ضَحِكْتِ
+  kor: 웃었다
+  swa: ulicheka
+
+### Sense 129938 (1 occurrences)
+Grammar: Prep-l | V-Piel-Inf
+  eng: to–play
+  spa: a–jugar
+  hin: खेलने–को
+  arb: لِ–يَلعَبوا
+  kor: 놀기–위하여
+  swa: kucheza
+
+### Sense 129939 (1 occurrences)
+Grammar: Prep-k | V-Piel-Prtcpl-ms
+  eng: as–jesting
+  spa: como–bromeando
+  hin: जैसे–मज़क
+  arb: كَ–مُمَازِحٍ
+  kor: 농담하는–자같이
+  swa: kama–kuchekeana
+
+### Sense 129940 (1 occurrences)
+Grammar: V-Piel-Prtcpl-ms
+  eng: mocking
+  spa: burlándose
+  hin: मज़ाक–करते
+  arb: يَسْخَرُ
+  kor: 놀리는
+  swa: akicheka
+
+### Sense 129941 (1 occurrences)
+Grammar: V-Qal-Perf-1cs
+  eng: I–laughed
+  spa: reí
+  hin: मैन–हनसि
+  arb: ضَحِكْتُ
+  kor: 웃다
+  swa: sikucheka
+
+## Task
+
+Group these 11 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

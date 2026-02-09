@@ -1,0 +1,127 @@
+# Sense Merge Task for H5355a
+
+Lemma: H5355a (POS: Adj-ms)
+Total occurrences: 41
+Current sense count: 11
+
+This Hebrew/Greek lemma has been over-split into 11 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 119051 (19 occurrences)
+Grammar: Adj-ms
+  eng: innocent, the–innocent, are–innocent
+  spa: inocente, el–inocente
+  hin: निर्दोष, निर्दोष–को, निर्दोष–का
+  arb: بَرِيئًا, بَرِيءٍ, بَريءٌ
+  kor: 무죄한, 무고한, 순결한–자가
+  swa: isiyo–na–hatia, hana–hatia, asiye–na–hatia
+
+### Sense 119052 (4 occurrences)
+Grammar: Art | Adj-ms
+  eng: the–innocent
+  spa: inocente, la–inocente, el–inocente
+  hin: ह–निर्दोष–का, निर्दोष–के, निर्दोष–का
+  arb: الْبَرِيءِ, الْبَرِيءَ
+  kor: 무죄한, 그–무죄한–자의
+  swa: isiyo–na–hatia, wasio–na–hatia, asiye–na–hatia
+
+### Sense 119053 (3 occurrences)
+Grammar: Adj-mp
+  eng: innocent, are-innocent
+  spa: limpios
+  hin: निर्दोष
+  arb: بَريئونَ, بَريئينَ
+  kor: 무죄하다
+  swa: hatuna–hatia
+
+### Sense 119054 (3 occurrences)
+Grammar: Adj-mp
+  eng: innocents, innocent-ones
+  spa: inocentes, los–inocentes
+  hin: निर्दोषों–के, निर्दोषों–की, निर्दोष
+  arb: الْأَبْرِيَاءِ, الأَبْرِيَاءِ, الأَبْرِياءِ
+  kor: 무죄한–자들의, 무고한–자들–의, 결백한
+  swa: wasio–na–hatia, ya–wasio–na–hatia
+
+### Sense 119055 (3 occurrences)
+Grammar: Conj-w | Adj-ms
+  eng: and–innocent, and–the–innocent
+  spa: y–el–inocente, y–a–inocente, e–inocente
+  hin: और–निर्दोष
+  arb: وَ–البَرِيءُ, وَ–بَريئاً
+  kor: 그리고–무죄한–자가, 그리고–무죄한–자와
+  swa: na–asiye–na–hatia
+
+### Sense 119056 (2 occurrences)
+Grammar: Adj-mp
+  eng: innocent, free-of-guilt
+  spa: inocentes
+  hin: निर्दोष
+  arb: أَبْرِيَاءَ
+  kor: 무죄한–자들이, 무죄한
+  swa: nisiwe, huru
+
+### Sense 119057 (2 occurrences)
+Grammar: Adj-ms
+  eng: free
+  spa: libre
+  hin: मुक्त
+  arb: حُرًّا, بَرِيئًا
+  kor: 풀린–자, 자유로운
+  swa: huru
+
+### Sense 119058 (2 occurrences)
+Grammar: Adj-ms
+  eng: the–innocent
+  spa: inocente, al–inocente
+  hin: निर्दोष–को, निर्दोष–के
+  arb: البَرِيءِ, البَرِيءَ
+  kor: 무죄한–자–에게, 무죄한–자–를
+  swa: asiye–na–hatia
+
+### Sense 119059 (1 occurrences)
+Grammar: Adj-ms
+  eng: exempt
+  spa: exento
+  hin: छूट
+  arb: مُعْفىً
+  kor: 면제
+  swa: aliyeachwa
+
+### Sense 119060 (1 occurrences)
+Grammar: Adj-msc
+  eng: the–clean–of
+  spa: limpio–de
+  hin: शुद्ध
+  arb: نَقِيُّ
+  kor: 깨끗한–자–라
+  swa: Mwenye–usafi–wa
+
+### Sense 119061 (1 occurrences)
+Grammar: Prep-l | Adj-ms
+  eng: for–the–innocent
+  spa: al–inocente
+  hin: निर्दोष–के–लिए
+  arb: لِـ–بَرِيءٍ
+  kor: 무죄한–자–를
+  swa: kwa–asiye–na–hatia
+
+## Task
+
+Group these 11 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

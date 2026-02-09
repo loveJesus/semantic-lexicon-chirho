@@ -1,0 +1,118 @@
+# Sense Merge Task for G2041
+
+Lemma: G2041 (POS: N-ANP)
+Total occurrences: 174
+Current sense count: 10
+
+This Hebrew/Greek lemma has been over-split into 10 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 68043 (156 occurrences)
+Grammar: N-NNP,N-ANP,N-DNP,N-GNP,N-ANS,N-NNS,N-GNS,N-DNS
+  eng: works, work, deed
+  spa: obras, obra, de–obras
+  hin: काम, कअम, कार्य
+  arb: عَمَلٍ, عَمَلِ, عَمَلَ
+  kor: 행위들, 행위들–을, 일을
+  swa: matendo, kazi, tendo
+
+### Sense 68046 (5 occurrences)
+Grammar: N-NNS,N-DNS
+  eng: work, deed
+  spa: obra
+  hin: कर्म, है, काम–में
+  arb: عَمَلُهُ, عَمَلٍ, عَمَلًا
+  kor: 행위가, 행함, 행위로
+  swa: tendo., tendo, kazi
+
+### Sense 68047 (4 occurrences)
+Grammar: N-GNP
+  eng: works
+  spa: obras
+  hin: कर्मों
+  arb: الأَعْمَالِ
+  kor: 행위들로부터, 행위들에서가
+  swa: matendo, matendo;, matendo,
+
+### Sense 68048 (2 occurrences)
+Grammar: N-GNS
+  eng: of–work
+  spa: de–obra
+  hin: काम–का, कअम.
+  arb: عَمَلٍ, بِعَمَلٍ
+  kor: 일의., 일–의--
+  swa: wa–kazi, la–kazi
+
+### Sense 68049 (2 occurrences)
+Grammar: N-GNP
+  eng: works
+  spa: obras
+  hin: करमोन;, करमोन.
+  arb: صالِحَةٍ
+  kor: 행위들–의
+  swa: mema
+
+### Sense 68050 (1 occurrences)
+Grammar: N-DNS
+  eng: deed
+  spa: obra
+  hin: कार्य
+  arb: فِعْلٍ
+  kor: 행함에서
+  swa: tendo
+
+### Sense 68051 (1 occurrences)
+Grammar: N-GNP
+  eng: works
+  spa: obras
+  hin: कामों–के
+  arb: أعمال
+  kor: 행위들
+  swa: matendo
+
+### Sense 68052 (1 occurrences)
+Grammar: N-ANP
+  eng: works
+  spa: obras
+  hin: काम,
+  arb: أَعْمَالاً
+  kor: 일들–을
+  swa: kazi
+
+### Sense 68053 (1 occurrences)
+Grammar: N-DNS
+  eng: by-deed
+  spa: obra
+  hin: कार्य–से
+  arb: فِعْلٍ
+  kor: 행위–로
+  swa: kwa–tendo,
+
+### Sense 68054 (1 occurrences)
+Grammar: N-GNS
+  eng: of–work
+  spa: de–obra
+  hin: कर्म
+  arb: العَمَلِ
+  kor: 행위
+  swa: wa–tendo
+
+## Task
+
+Group these 10 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

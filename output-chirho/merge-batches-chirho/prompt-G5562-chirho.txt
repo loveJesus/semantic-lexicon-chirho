@@ -1,0 +1,118 @@
+# Sense Merge Task for G5562
+
+Lemma: G5562 (POS: V-FNA)
+Total occurrences: 10
+Current sense count: 10
+
+This Hebrew/Greek lemma has been over-split into 10 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 79125 (1 occurrences)
+Grammar: V-PIA-3P
+  eng: have-room-for
+  spa: pueden–recibir
+  hin: समअ–सक्ते
+  arb: يَحْتَمِلُونَ
+  kor: 받아들인다
+  swa: –
+
+### Sense 79126 (1 occurrences)
+Grammar: V-PMA-3S
+  eng: let-him-receive
+  spa: reciba
+  hin: समये
+  arb: لِيَحْتَمِلْ
+  kor: 받아들이라
+  swa: Ndipo
+
+### Sense 79127 (1 occurrences)
+Grammar: V-AMA-2P
+  eng: Make–room–for
+  spa: Haced–lugar
+  hin: जगह–दो
+  arb: اقبَلونا
+  kor: 우리를–받아라
+  swa: Tupeni–nafasi
+
+### Sense 79128 (1 occurrences)
+Grammar: V-PPA-NFP
+  eng: holding
+  spa: cabiendo
+  hin: समाते–हुए
+  arb: تَسَعُ
+  kor: 담을–수–있는
+  swa: zinazoshika
+
+### Sense 79129 (1 occurrences)
+Grammar: V-PIA-3S
+  eng: has–place
+  spa: tiene-lugar
+  hin: समाता
+  arb: تَجِد–مَكانًا
+  kor: 자리가–없다
+  swa: ingia
+
+### Sense 79130 (1 occurrences)
+Grammar: V-PNA
+  eng: to-have-room
+  spa: caber
+  hin: थी
+  arb: يَسَعُ
+  kor: 담을–수–없었다
+  swa: kuwa–na–nafasi,
+
+### Sense 79131 (1 occurrences)
+Grammar: V-ANA
+  eng: to-come
+  spa: llegar
+  hin: आना
+  arb: يَأتوا
+  kor: 이르기를.
+  swa: wafike
+
+### Sense 79132 (1 occurrences)
+Grammar: V-FNA
+  eng: to–contain
+  spa: contendría
+  hin: समाएँगी
+  arb: يَسَعُ
+  kor: 담을–수–있다
+  swa: haungetosha
+
+### Sense 79133 (1 occurrences)
+Grammar: V-PIA-3S
+  eng: goes
+  spa: va
+  hin: जअत–है
+  arb: يَمُرُّ
+  kor: 들어가고
+  swa: kinaenda
+
+### Sense 79134 (1 occurrences)
+Grammar: V-PNA
+  eng: to-receive
+  spa: recibir
+  hin: समन
+  arb: أَنْ–يَحْتَمِلَ
+  kor: 받아들이는–것–을
+  swa: na–apokee
+
+## Task
+
+Group these 10 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

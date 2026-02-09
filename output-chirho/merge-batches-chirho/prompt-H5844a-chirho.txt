@@ -1,0 +1,160 @@
+# Sense Merge Task for H5844a
+
+Lemma: H5844a (POS: Conj-w | V-Qal-ConjPerf-3cp)
+Total occurrences: 15
+Current sense count: 15
+
+This Hebrew/Greek lemma has been over-split into 15 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 123510 (1 occurrences)
+Grammar: V-Hifil-Imperf-3ms
+  eng: covers
+  spa: cubrirá
+  hin: ढाँकती–है
+  arb: يُغَطَّي
+  kor: 입다
+  swa: inatandaza
+
+### Sense 123511 (1 occurrences)
+Grammar: V-Qal-Imperf-2ms
+  eng: you-shall-cover
+  spa: cubrirás
+  arb: تُغَطِّ
+  kor: 가리여라
+  swa: funika
+
+### Sense 123512 (1 occurrences)
+Grammar: Conj-w | V-Qal-ConjPerf-3cp
+  eng: and–will–cover
+  spa: y–cubrirán
+  hin: और–ढांपेंगे
+  arb: وَ–يُغَطُّونَ
+  kor: 그리고–감싸리라
+  swa: na–watafunika
+
+### Sense 123513 (1 occurrences)
+Grammar: Conj-w | V-Qal-ConsecImperf-3m
+  eng: and–He–wrapped–Himself
+  spa: y–se–envolvió
+  hin: और–उसने–लपेटा
+  arb: وَ–الْتَفَّ
+  kor: 그리고–감싸셨다
+  swa: na–akajivika
+
+### Sense 123514 (1 occurrences)
+Grammar: Prep-k | V-Qal-Prtcpl-fs
+  eng: like–one–veiled
+  spa: como–errante
+  hin: ढकी–के–समान
+  arb: كِ–عُوطْيَه
+  kor: 헤매는–자–처럼
+  swa: kama–mzururaji
+
+### Sense 123515 (1 occurrences)
+Grammar: V-Qal-Imperf-3ms
+  eng: he–wraps–around–himself
+  spa: que–lo–cubre
+  hin: जो–पहनता–है
+  arb: يَلبَسُهُ
+  kor: 두르는
+  swa: alivalialo
+
+### Sense 123516 (1 occurrences)
+Grammar: V-Qal-Imperf-3ms
+  eng: wraps–himself
+  spa: envuelve
+  hin: लपेटता–है
+  arb: يَلْتَفُّ
+  kor: 감싸다
+  swa: aifunikavyo
+
+### Sense 123517 (1 occurrences)
+Grammar: V-Qal-Prtcpl-ms
+  eng: wrapped
+  spa: envuelto
+  hin: ओधे-हुए
+  arb: مُتَغَطٍّ
+  kor: 두르고있다
+  swa: amejifunika
+
+### Sense 123518 (1 occurrences)
+Grammar: Conj-w | V-Qal-ConjPerf-3ms
+  eng: and–he–will–wrap–himself
+  spa: y–envolverá
+  hin: और–लपेटेगा
+  arb: وَيَلْتَفُّ
+  kor: 그리고–감싸겠다–그가
+  swa: na–ataifunika
+
+### Sense 123519 (1 occurrences)
+Grammar: V-Hifil-Perf-2ms
+  eng: you–have–covered
+  spa: lo-cubriste
+  hin: तूने–ढाँपा
+  arb: كَسَوْتَهُ
+  kor: 덩으셨나이다
+  swa: umemfunika
+
+### Sense 123520 (1 occurrences)
+Grammar: V-Qal-Imperf-2mp
+  eng: you-shall-cover
+  spa: cubriréis
+  arb: تُغَطُّونَ
+  kor: 가리여라
+  swa: funika
+
+### Sense 123521 (1 occurrences)
+Grammar: V-Qal-Prtcpl-ms
+  eng: wrapping–Yourself
+  spa: El–que–se–cubre
+  hin: ओढ़ने–वाला–
+  arb: المُلتَحِفَ–
+  kor: 덮으시는–이–가
+  swa: unayejifunika–na
+
+### Sense 123522 (1 occurrences)
+Grammar: V-Qal-Imperf-3mp
+  eng: let–them–be–wrapped–in
+  spa: sean–cubiertos
+  hin: ढंके–जाएं
+  arb: يَتَلَحَّفونَ
+  kor: 입게–되라
+  swa: wavae
+
+### Sense 123523 (1 occurrences)
+Grammar: Conj-w | V-Qal-ConjImperf-3mp
+  eng: and–let–them–wrap–themselves
+  spa: y–se–cubrirán
+  hin: और–ओढ़ें
+  arb: وَ–يَتَغَطَّون
+  kor: 그리고–덮이게–하소서
+  swa: na–wajifunike
+
+### Sense 123524 (1 occurrences)
+Grammar: V-Qal-Imperf-3ms
+  eng: he-shall-cover
+  spa: se-cubrirá
+  arb: يَتَغَطَّى
+  kor: 감쌀–것이다
+  swa: atafunika
+
+## Task
+
+Group these 15 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

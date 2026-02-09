@@ -1,0 +1,127 @@
+# Sense Merge Task for G3475
+
+Lemma: G3475 (POS: N-AMS)
+Total occurrences: 80
+Current sense count: 11
+
+This Hebrew/Greek lemma has been over-split into 11 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 72620 (56 occurrences)
+Grammar: N-NMS,N-DMS,N-AMS,N-GMS
+  eng: Mōysēs, Mōusēs, Mousēs
+  spa: Mōysḗs, Mōysēs, Mōÿsēs
+  hin: मूसा, मूसा–ने, मूसा,
+  arb: مُوسَى, موسى, موسَى
+  kor: 모세가, 모세, 모세–는
+  swa: Musa, Mōusēs, Mōysēs
+
+### Sense 72621 (11 occurrences)
+Grammar: N-GMS
+  eng: of-Mōusēs, of–Mōusēs, of–Mousēs
+  spa: de–Mōysḗs, de–Mōysēs, de–Mōÿsēs
+  hin: मूसा–की, मूसा,, मूसा
+  arb: مُوسَى, موسَى, موسى
+  kor: 모세의, 모세–의, 모세와
+  swa: ya–Musa, Musa, ya–Mōysēs
+
+### Sense 72622 (3 occurrences)
+Grammar: N-DMS
+  eng: for-Mōysēs, for-Mōusēs
+  spa: para–Mōysḗs, para–Mōysēs, para–Mōyséi
+  hin: मूसा–के–लिए, मōयसēस–के–लिये
+  arb: لِمُوسَى, لِموسى
+  kor: 모세에게, 모세–를–위해
+  swa: kwa–Mōûsḗs, kwa–Mōusḗs, kwa–Musa
+
+### Sense 72623 (2 occurrences)
+Grammar: N-NMS,N-DMS
+  eng: Mousēs
+  spa: –a-Mōÿsḗs, Mōÿsḗs
+  hin: मूसा,
+  arb: مُوسَى, بِمُوسَى
+  kor: 모세가, 모세–를
+  swa: Mōysēs
+
+### Sense 72624 (2 occurrences)
+Grammar: N-GMS,N-NMS
+  eng: Mōusēs
+  spa: Mousēs, Moisēs
+  hin: मूसाने:, मूसा
+  arb: مُوسَى
+  kor: 모세로부터, 모세가
+  swa: Musa
+
+### Sense 72625 (1 occurrences)
+Grammar: N-NMS
+  eng: Mōusēs
+  spa: Mōysēs
+  hin: जो
+  arb: بِهِ–مُوسَى
+  kor: 모세–가
+  swa: Mōysês,
+
+### Sense 72626 (1 occurrences)
+Grammar: N-DMS
+  eng: Mouses
+  spa: a–Mōysēs
+  hin: मोओशेय,
+  arb: موسى
+  kor: 모세–에게
+  swa: Musa
+
+### Sense 72627 (1 occurrences)
+Grammar: N-DMS
+  eng: to–Mōusēs
+  spa: –a–Mōÿsēs
+  hin: मूसा–से
+  arb: موسى
+  kor: 모세에게
+  swa: Mōusēs
+
+### Sense 72628 (1 occurrences)
+Grammar: N-GMS
+  eng: of–Mōusēs
+  spa: de–Mousēs
+  hin: मूसाकी,
+  arb: موسى
+  kor: 모세–의
+  swa: ya–Musa
+
+### Sense 72629 (1 occurrences)
+Grammar: N-GMS
+  eng: of–Mōysēs
+  spa: de–Mōüsēs
+  hin: मूसा–के
+  arb: موسى
+  kor: 모세의
+  swa: wa–Musa,
+
+### Sense 72630 (1 occurrences)
+Grammar: N-GMS
+  eng: of–Mōusēs
+  spa: de–Mōÿsēs
+  hin: मूसा–की
+  arb: موسى
+  kor: 모세의
+  swa: wa–Musa
+
+## Task
+
+Group these 11 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

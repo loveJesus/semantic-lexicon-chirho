@@ -1,0 +1,127 @@
+# Sense Merge Task for H1062
+
+Lemma: H1062 (POS: N-fsc | 3ms)
+Total occurrences: 14
+Current sense count: 11
+
+This Hebrew/Greek lemma has been over-split into 11 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 86725 (3 occurrences)
+Grammar: Conj-w | N-mpc
+  eng: and–firstborn-of
+  spa: y–primogénitos–de, y–los–primogénitos–de, ni–los–primogénitos–de
+  hin: और–पहिलौठों
+  arb: وَ–أَبْكَارَ, وَ–أَبْكَارِ
+  kor: 그리고–맨처음–내는–것들을
+  swa: na–wazaliwa–wa–kwanza–wa
+
+### Sense 86726 (2 occurrences)
+Grammar: N-fs,Art | N-fs
+  eng: the–birthright, a–birthright
+  spa: primogenitura, la–primogenitura
+  hin: पहलौठापन–को, पहलौठापन
+  arb: الْبُكُورِيَّةِ, الْبُكُورِيَّةُ
+  kor: 장자권이, 그–장자권을
+  swa: haki–ya–uzaliwa–wa–kwanza
+
+### Sense 86727 (1 occurrences)
+Grammar: N-fsc | 2ms
+  eng: your–birthright
+  spa: tu–primogenitura
+  hin: तेरा–पहलौठापन
+  arb: بُكُورِيَّتَكَ
+  kor: 너의–장자권을
+  swa: haki–yako–ya–uzaliwa–wa–kwanza
+
+### Sense 86728 (1 occurrences)
+Grammar: Art | N-fs
+  eng: the–birthright
+  spa: la–primogenitura
+  hin: ज्येष्ठ–का
+  arb: الْبِكْرِيَّةِ
+  kor: 맨–처음–아들의–권리가
+  swa: ya–uzaliwa–wa–kwanza
+
+### Sense 86729 (1 occurrences)
+Grammar: Prep-m | N-mpc
+  eng: from–firstlings-of
+  spa: de–primogénitos–de
+  hin: पहलौठों–से
+  arb: مِنْ–أَبْكَارِ
+  kor: 에서–첫–태생
+  swa: kutoka–wazaliwa–wa–kwanza–wa
+
+### Sense 86730 (1 occurrences)
+Grammar: N-fsc | 3ms
+  eng: his–birthright
+  spa: su–primogenitura
+  hin: उस–का–पहलौठापन
+  arb: بُكُورِيَّتَهُ
+  kor: 그의–장자권을
+  swa: haki–yake–ya–uzaliwa–wa–kwanza
+
+### Sense 86731 (1 occurrences)
+Grammar: Prep-l, Art | N-fs
+  eng: for–the–birthright
+  spa: como–primogenitura
+  hin: पहलौठापन–के–अनुसार
+  arb: كَ–الـ–بَكورِيَّة
+  kor: 에–그–장자권
+  swa: kama–mzaliwa–wa–kwanza
+
+### Sense 86732 (1 occurrences)
+Grammar: N-fsc | 1cs
+  eng: birthright–my
+  spa: mi–primogenitura
+  hin: मेरा–पहलौठापन
+  arb: بِكورِيَّتي
+  kor: 나의–장자권을
+  swa: haki–yangu–ya–uzaliwa–wa–kwanza
+
+### Sense 86733 (1 occurrences)
+Grammar: Prep-k | N-fsc | 3ms
+  eng: according–to–his–birthright
+  spa: según–primogenitura–suya
+  hin: अपने–जेठपन–के–अनुसार
+  arb: كَ–بِكْرِهِ
+  kor: 그의–맨처음과–같이
+  swa: mkubwa
+
+### Sense 86734 (1 occurrences)
+Grammar: N-fsc | 3ms
+  eng: his–birthright
+  spa: su–primogenitura
+  hin: पहलौठापन–उसका
+  arb: بَكورِيَّتُهُ
+  kor: 장자권–그–의
+  swa: haki–yake–ya–uzaliwa–wa–kwanza
+
+### Sense 86735 (1 occurrences)
+Grammar: Conj-w, Art | N-fs
+  eng: and–the–birthright
+  spa: y–la–primogenitura
+  hin: और–पहलौठापन
+  arb: وَ–الـ–بَكورِيَّةُ
+  kor: 그–와–그–장자권
+  swa: na–haki–ya–uzaliwa–wa–kwanza
+
+## Task
+
+Group these 11 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

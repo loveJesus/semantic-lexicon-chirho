@@ -1,0 +1,154 @@
+# Sense Merge Task for G4016
+
+Lemma: G4016 (POS: V-ASM-3S)
+Total occurrences: 23
+Current sense count: 14
+
+This Hebrew/Greek lemma has been over-split into 14 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 74503 (7 occurrences)
+Grammar: V-RPM/P-AMP,V-RPM/P-NMP,V-RPM/P-NFS,V-RPM/P-VFS,V-RPM/P-NMS
+  eng: having-been-clothed, clothed
+  spa: vestidos, vestida–de, vestido–de
+  hin: वस्त्रित, पहिने–हुए, पहने–हुए
+  arb: مُتَسَربِلينَ, مُتَسَرْبِلٌ, مُتَسَربِلَةً
+  kor: 입은
+  swa: wamevikwa, amevikwa, waliovikwa
+
+### Sense 74504 (2 occurrences)
+Grammar: V-RPM/P-NMS,V-RPM/P-AMS
+  eng: clothed-in
+  spa: vestido, envuelto
+  hin: लपेटा–हुआ, पहने–हुए
+  arb: لَابِسًا
+  kor: 두른
+  swa: amevaa, amejifunika
+
+### Sense 74505 (2 occurrences)
+Grammar: V-AIA-2P
+  eng: you–clothed
+  spa: me–vestisteis
+  hin: पहनाया
+  arb: كَسَوْتُمُونِي, تَكْسُونِي
+  kor: 입혔다
+  swa: nivika, mlinivika
+
+### Sense 74506 (2 occurrences)
+Grammar: V-RPM/P-AMS,V-RPM/P-NFS
+  eng: having-been-clothed-with, having-been-clothed
+  spa: vestida–del, envuelto–en
+  hin: पहने–हुए, पहनी–हुई
+  arb: مُتَسَربِلَةٌ, مُتَسَربِلًا
+  kor: 입은
+  swa: amevikwa
+
+### Sense 74507 (1 occurrences)
+Grammar: V-ASM-2S
+  eng: you–may–clothe–yourself
+  spa: te–vistas
+  hin: तू–पहिने,
+  arb: تَلْبَسَ
+  kor: 입도록
+  swa: uvae,
+
+### Sense 74508 (1 occurrences)
+Grammar: V-AIA-1P
+  eng: we–clothed
+  spa: te–vestimos
+  hin: पहनाया
+  arb: كَسَوْنَاكَ
+  kor: 입혔습니까
+  swa: tukakuvika
+
+### Sense 74509 (1 occurrences)
+Grammar: V-AMM-2S
+  eng: put–on
+  spa: Envuélvete
+  hin: ओढ़
+  arb: ٱلْبَسْ
+  kor: 입어라
+  swa: Vaa
+
+### Sense 74510 (1 occurrences)
+Grammar: V-APA-NMS
+  eng: having-clothed
+  spa: habiendo-vestido
+  hin: पहनाकर
+  arb: أَلْبَسَهُ
+  kor: 입혀서
+  swa: akamvikia
+
+### Sense 74511 (1 occurrences)
+Grammar: V-ASM-3S
+  eng: she-might-clothe-herself
+  spa: se–vista
+  hin: वस्त्रित–हो
+  arb: تَتَسَرْبَلَ
+  kor: 그녀가–입도록
+  swa: avae
+
+### Sense 74512 (1 occurrences)
+Grammar: V-ASM-1P
+  eng: shall–we–wear
+  spa: nos–vistamos
+  hin: पहनें
+  arb: نَلبَسُ
+  kor: 입으리?
+  swa: tutavaa
+
+### Sense 74513 (1 occurrences)
+Grammar: V-AIM-3S
+  eng: was-clothed
+  spa: se-vistió
+  hin: पहना–था
+  arb: اكْتَسَى
+  kor: 입지–않았다
+  swa: hakujivika
+
+### Sense 74514 (1 occurrences)
+Grammar: V-AIM-3S
+  eng: was–clothed
+  spa: se–vistió
+  hin: पहना
+  arb: اِكتَسى
+  kor: 입었다
+  swa: hakuvikwa
+
+### Sense 74515 (1 occurrences)
+Grammar: V-AIA-3P
+  eng: they–put–around
+  spa: vistieron
+  hin: पहनाया
+  arb: أَلْبَسُوا
+  kor: 입혔다
+  swa: wakamvika
+
+### Sense 74516 (1 occurrences)
+Grammar: V-FIM-3S
+  eng: will–be–clothed
+  spa: será–vestido
+  hin: पहिनाया–जाएगा
+  arb: سَيَلْبَسُ
+  kor: 입혀지겠다
+  swa: atavikwa
+
+## Task
+
+Group these 14 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

@@ -1,0 +1,136 @@
+# Sense Merge Task for H1107
+
+Lemma: H1107 (POS: Conj-w)
+Total occurrences: 17
+Current sense count: 12
+
+This Hebrew/Greek lemma has been over-split into 12 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 86906 (4 occurrences)
+Grammar: Prep-m | 1cs,Prep | 1cs
+  eng: besides–Me, apart–from–Me
+  spa: fuera–de–mí
+  hin: मेरे–सिवा, मेरे–बिना
+  arb: سِوَايَ
+  kor: 나–외에
+  swa: ila–mimi, zaidi-yangu, bila-Mimi
+
+### Sense 86907 (2 occurrences)
+Grammar: Prep-m
+  eng: apart-from
+  spa: fuera–de
+  hin: सिवाय
+  arb: سِوَى
+  kor: –에서–제외하고
+  swa: isipokuwa
+
+### Sense 86908 (2 occurrences)
+Grammar: Prep | Prep
+  eng: without, was–it–without
+  spa: ¿acaso–sin
+  hin: क्या–बिना, क्या–अलग–से
+  arb: هَلْ–بِدُونِ, أَبِدُونِ
+  kor: 없이–, 어찌–없이–
+  swa: je–bila, bila–
+
+### Sense 86909 (1 occurrences)
+Grammar: Prep | 1cs
+  eng: apart-from–me
+  spa: Fuera–de–mí
+  hin: मेरे–बिन
+  arb: بِدُونِي
+  kor: 나에게서–제외하고
+  swa: Isipokuwa
+
+### Sense 86910 (1 occurrences)
+Grammar: Conj-w, Prep-m | 1cs
+  eng: and–apart–from–Me
+  spa: y–fuera–de–mí
+  hin: और–मेरे–सिवा
+  arb: وَسِوَايَ
+  kor: 그리고–나–외에
+  swa: na–ila–mimi
+
+### Sense 86911 (1 occurrences)
+Grammar: Prep-m
+  eng: besides
+  spa: aparte–de
+  hin: अलावा
+  arb: مِنْ–غَيْرِ
+  kor: 외에–의
+  swa: Mbladi
+
+### Sense 86912 (1 occurrences)
+Grammar: Prep-m
+  eng: besides
+  spa: aparte–del
+  hin: अलावा–
+  arb: مِنْ–غَيْرِ
+  kor: 외에–
+  swa: mbali–na
+
+### Sense 86913 (1 occurrences)
+Grammar: Prep-m
+  eng: except
+  spa: fuera–de
+  hin: के–अलावा
+  arb: غَيْرَ
+  kor: 외에
+  swa: isipokuwa
+
+### Sense 86914 (1 occurrences)
+Grammar: Prep | Prep
+  eng: apart-from
+  spa: ¿acaso–sin
+  hin: क्या–बिना
+  arb: أَبِدُونِ–
+  kor: 없이냐–
+  swa: je–bila–
+
+### Sense 86915 (1 occurrences)
+Grammar: Prep | 1cs
+  eng: not-I
+  spa: sin–mí
+  hin: मेरे–बिना
+  arb: لَيْسَ–بِي
+  kor: 내가아니라
+  swa: si–mimi
+
+### Sense 86916 (1 occurrences)
+Grammar: Conj-w | Prep | 2ms
+  eng: and–without-you
+  spa: y–sin–ti
+  hin: और–तेरे–बिना
+  arb: وَ–بِدُونِكَ
+  kor: 그리고–너없이
+  swa: na–bila–wewe
+
+### Sense 86917 (1 occurrences)
+Grammar: Prep
+  eng: apart–from–what
+  spa: Sin–
+  hin: जो–नहीं–देखता–हूँ–मैं
+  arb: بِلا
+  kor: –없이
+  swa: zaidi–ya–ninavyoona
+
+## Task
+
+Group these 12 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

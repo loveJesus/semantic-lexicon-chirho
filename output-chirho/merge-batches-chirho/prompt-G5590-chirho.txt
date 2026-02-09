@@ -1,0 +1,118 @@
+# Sense Merge Task for G5590
+
+Lemma: G5590 (POS: N-AFS)
+Total occurrences: 103
+Current sense count: 10
+
+This Hebrew/Greek lemma has been over-split into 10 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 79197 (71 occurrences)
+Grammar: N-AFS,N-DFS,N-NFS,N-GFS
+  eng: soul, life, of–soul
+  spa: alma, vida, de–alma
+  hin: प्राण, प्रअन, प्राण–को
+  arb: نَفْسَهُ, نَفْسِي, نَفسَهُ
+  kor: 목숨을, 영혼, 생명을
+  swa: nafsi, uhai, roho
+
+### Sense 79198 (23 occurrences)
+Grammar: N-DFP,N-AFP,N-NFP,N-GFP
+  eng: souls
+  spa: almas, vidas
+  hin: प्राणों–को, प्राण, मनों
+  arb: نُفوسَ, نُفُوسِكُمْ, نُفوسِكُم
+  kor: 영혼들을, 마음들을, 영혼들–을
+  swa: roho, nafsi, zetu
+
+### Sense 79199 (2 occurrences)
+Grammar: N-DFS
+  eng: soul, life
+  spa: alma
+  hin: प्रअन,, प्रअन
+  arb: واحِدَةٍ, نَفْسِهِ
+  kor: 목숨에,, 마음으로
+  swa: uhai, nafsi
+
+### Sense 79200 (1 occurrences)
+Grammar: N-VFS
+  eng: Soul
+  spa: Alma
+  hin: प्राण
+  arb: يَا–نَفْسُ
+  kor: 영혼아
+  swa: Nafsi
+
+### Sense 79201 (1 occurrences)
+Grammar: N-GFS
+  eng: of–life
+  spa: de–vida
+  hin: प्राणका
+  arb: نَفْسٍ
+  kor: 목숨–의
+  swa: uhai
+
+### Sense 79202 (1 occurrences)
+Grammar: N-GFP
+  eng: lives
+  spa: vidas
+  hin: प्राणोंका
+  arb: أَرْوَاحِنَا
+  kor: 목숨들–의
+  swa: maisha
+
+### Sense 79203 (1 occurrences)
+Grammar: N-GFP
+  eng: of–souls
+  spa: de–almas
+  hin: प्राणों–का
+  arb: النُّفوسِ
+  kor: 영혼들의
+  swa: wa–roho
+
+### Sense 79204 (1 occurrences)
+Grammar: N-GFS
+  eng: soul
+  spa: alma
+  hin: प्रअन
+  arb: النَّفسِ
+  kor: 마음–으로
+  swa: nafsi
+
+### Sense 79205 (1 occurrences)
+Grammar: N-NFP
+  eng: souls
+  spa: almas
+  hin: प्राणी
+  arb: نُفوسٍ
+  kor: 영혼들이
+  swa: roho
+
+### Sense 79206 (1 occurrences)
+Grammar: N-AFP
+  eng: souls
+  spa: almas
+  hin: प्राण
+  arb: أَنْفُسٌ
+  kor: 생명들이
+  swa: uhai;
+
+## Task
+
+Group these 10 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

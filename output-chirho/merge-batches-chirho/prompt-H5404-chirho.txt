@@ -1,0 +1,127 @@
+# Sense Merge Task for H5404
+
+Lemma: H5404 (POS: N-mp)
+Total occurrences: 26
+Current sense count: 11
+
+This Hebrew/Greek lemma has been over-split into 11 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 119647 (9 occurrences)
+Grammar: Prep-k | N-ms,Prep-k, Art | N-ms
+  eng: like–an–eagle, like–the–eagle, like–eagle
+  spa: como–águila, como–el–águila, como–un–águila
+  hin: उकाब–की–तरह, जैसे–गिद्ध, गरुड़–जैसे
+  arb: كَنَسْرٍ, كَ–نَسْرٍ, كَ–نَسرٍ
+  kor: 독수리같이, 독수리–처럼, 독수리처럼–
+  swa: kama–tai
+
+### Sense 119648 (4 occurrences)
+Grammar: N-ms,Art | N-ms
+  eng: eagle, the–eagle
+  spa: águila
+  hin: गिद्ध–के।, गिद्ध–का, गरुड़
+  arb: نَسْرٍ, الْنَّسْرِ
+  kor: 독수리의
+  swa: tai
+
+### Sense 119649 (3 occurrences)
+Grammar: N-ms,Art | N-ms
+  eng: the–eagle, eagle–
+  spa: águila, El–águila
+  hin: गरुड़, गरुड़–
+  arb: النَّسْرُ, نَسْرٌ–
+  kor: 독수리가–, 독수리가, 그–독수리가
+  swa: tai
+
+### Sense 119650 (3 occurrences)
+Grammar: Art | N-ms
+  eng: the–eagle
+  spa: el–águila
+  hin: गिद्ध, और–को
+  arb: النَّسْرُ, الْ–نَّسْرَ
+  kor: 그–독수리와, 그–독수리를, 그–독수리가
+  swa: tai
+
+### Sense 119651 (1 occurrences)
+Grammar: Prep-k, Art | N-ms
+  eng: like–the–eagle
+  spa: como–el–águila
+  hin: उकाब–की–तरह
+  arb: –كالنسر
+  kor: 독수리와–같이
+  swa: kama–tai
+
+### Sense 119652 (1 occurrences)
+Grammar: N-mp
+  eng: eagles
+  spa: águilas
+  hin: गरुड़ों–के
+  arb: نُسُورٍ
+  kor: 독수리들의
+  swa: tai
+
+### Sense 119653 (1 occurrences)
+Grammar: Prep-k, Art | N-mp
+  eng: like–eagles
+  spa: como–águilas
+  hin: जैसे–गरुड़
+  arb: كَالنُّسُورِ
+  kor: 같이–독수리
+  swa: kama–tai
+
+### Sense 119654 (1 occurrences)
+Grammar: Prep-m | N-mp
+  eng: than–eagles
+  spa: que–águilas
+  hin: गरुड़ों–से
+  arb: مِنَ–الـ–نُّسُورِ
+  kor: 독수리들보다
+  swa: tai
+
+### Sense 119655 (1 occurrences)
+Grammar: Prep-m | N-mpc
+  eng: than–eagles
+  spa: que–las–águilas–de
+  hin: उकाबों–से–अधिक
+  arb: مِنْ–نُسُورِ
+  kor: 보다–독수리들
+  swa: kuliko–tai
+
+### Sense 119656 (1 occurrences)
+Grammar: Prep-k | N-ms
+  eng: like–an–eagle
+  spa: como–el–águila
+  hin: जैसे–गरुड़
+  arb: كَـ–نَسْرٍ
+  kor: 같이–독수리
+  swa: Kama–tai
+
+### Sense 119657 (1 occurrences)
+Grammar: Prep-m | N-mp
+  eng: than–eagles
+  spa: de–águilas
+  hin: उकाबों–से
+  arb: مِنَ–النُّسُورِ
+  kor: 에서–독수리들보다
+  swa: kutoka–tai
+
+## Task
+
+Group these 11 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

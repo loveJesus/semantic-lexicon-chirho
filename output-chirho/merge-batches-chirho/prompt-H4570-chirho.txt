@@ -1,0 +1,136 @@
+# Sense Merge Task for H4570
+
+Lemma: H4570 (POS: N-fpc | 3fs)
+Total occurrences: 16
+Current sense count: 12
+
+This Hebrew/Greek lemma has been over-split into 12 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 112802 (3 occurrences)
+Grammar: N-fpc | 3fs,N-fpc | 3ms
+  eng: her–paths, his–paths
+  spa: sus–sendas
+  hin: पथ–उसके
+  arb: مَسَالِكُهَا, مَسَالِكِهِ
+  kor: 그녀–의–경로–들–은, 그–의–경로–들–을
+  swa: njia–zake
+
+### Sense 112803 (2 occurrences)
+Grammar: N-msc
+  eng: the–way, the–path–of
+  spa: la–senda–de, camino–de
+  hin: राह, पथ
+  arb: مَسْلَكَ
+  kor: 길을, 경로–를
+  swa: njia–ya, mapito
+
+### Sense 112804 (2 occurrences)
+Grammar: Prep-b, Art | N-ms
+  eng: in–the–encampment
+  spa: en–el–campamento
+  hin: घेरे–में
+  arb: في–المَحَلِّ
+  kor: 에–그수레울타리안에
+  swa: katika–mzingo
+
+### Sense 112805 (1 occurrences)
+Grammar: Conj-w | N-mpc | 2ms
+  eng: and–Your–paths
+  spa: y–tus–sendas
+  hin: और–तेरे–मार्ग
+  arb: وَ–مَساراتُكَ
+  kor: 그리고–주–의–바퀴–자국–들–이
+  swa: na–njia-zako
+
+### Sense 112806 (1 occurrences)
+Grammar: Prep-b | N-mpc
+  eng: in–paths–of–
+  spa: por–sendas–de
+  hin: में–रास्तों–
+  arb: فِي–سُبُلِ–
+  kor: –에–길들
+  swa: katika–njia–za
+
+### Sense 112807 (1 occurrences)
+Grammar: Prep-b | N-fpc | 2ms
+  eng: in–your–paths
+  spa: en–tus–sendas
+  hin: में–तेरे–मार्गों
+  arb: فِي–مَسَالِكِكَ
+  kor: 길들–에서
+  swa: katika–njia–zako
+
+### Sense 112808 (1 occurrences)
+Grammar: Prep-b | N-fpc | 3mp
+  eng: in–their–ways
+  spa: en–sus–sendas
+  hin: पथों–अपने–में
+  arb: فِي–مَسَالِكِهِمْ
+  kor: 그–들–의–경로–들–에서
+  swa: katika–mapito–yao
+
+### Sense 112809 (1 occurrences)
+Grammar: Art | N-ms | 3fs
+  eng: to–the–encampment
+  spa: al–círculo–de–carros
+  hin: गअधि-गोल-घेरे-मेइन
+  arb: الدَّائِرَةَ
+  kor: 그–진영–고리에
+  swa: duru
+
+### Sense 112810 (1 occurrences)
+Grammar: N-msc
+  eng: track
+  spa: senda
+  hin: पथ–
+  arb: مَسْلَكٍ–
+  kor: 경로–를
+  swa: njia
+
+### Sense 112811 (1 occurrences)
+Grammar: Prep-b | N-mpc
+  eng: in–the–paths–of
+  spa: por–sendas–de
+  hin: पथों–में–
+  arb: فِي–مَسَالِكِ–
+  kor: 경로–들–에서
+  swa: katika–njia–za
+
+### Sense 112812 (1 occurrences)
+Grammar: N-ms
+  eng: the–path
+  spa: sendero
+  hin: पाश
+  arb: الطَّرِيقِ
+  kor: 길
+  swa: njia
+
+### Sense 112813 (1 occurrences)
+Grammar: Prep-b | N-fpc | 3mp
+  eng: in–their–paths
+  spa: en–sus–sendas
+  hin: उनके–राहों–में
+  arb: فِي–مَسَالِكِهِمْ
+  kor: 그들의–바퀴자국에–
+  swa: katika–mapito–yao
+
+## Task
+
+Group these 12 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

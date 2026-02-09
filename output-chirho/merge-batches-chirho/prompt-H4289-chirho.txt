@@ -1,0 +1,145 @@
+# Sense Merge Task for H4289
+
+Lemma: H4289 (POS: N-fpc)
+Total occurrences: 22
+Current sense count: 13
+
+This Hebrew/Greek lemma has been over-split into 13 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 111028 (4 occurrences)
+Grammar: N-fsc | 3ms
+  eng: his–fire-pan
+  spa: su–incensario
+  hin: अपनी–धूपदानी
+  arb: مِجْمَرَتَهُ
+  kor: 그의–향로를, 그의–향로
+  swa: chetezo–chake
+
+### Sense 111029 (3 occurrences)
+Grammar: Art | N-fp
+  eng: the–firepans
+  spa: los–braseros, los–incensarios
+  hin: ह–करछियों, धूपदान, अग्निपात्र
+  arb: الْمَجَامِرَ
+  kor: 그–불판들을, 그–불똥–그릇들을, 그–불–받침들
+  swa: vyetezo
+
+### Sense 111030 (2 occurrences)
+Grammar: N-fpc
+  eng: fire-pans-of
+  spa: incensarios–de
+  hin: धूपदानियों
+  arb: مَجَامِرَ
+  kor: 향로들–의
+  swa: vyetezo, Vyetezo
+
+### Sense 111031 (2 occurrences)
+Grammar: Conj-w | N-fpc | 3fs
+  eng: and–its–trays, and–its-trays
+  spa: y–sus–platillos
+  hin: और–उसकी–गुलदानी, और–उसकी–गुलदानियाँ
+  arb: وَ–مَنافِضُها, وَ–مَجامِرَها
+  kor: 그리고–그것의–불똥–그릇들을, 그리고–그–불–접시들이
+  swa: na–vyetezo–vyake
+
+### Sense 111032 (2 occurrences)
+Grammar: Art | N-fs
+  eng: the–fire-pan
+  spa: el–incensario
+  hin: धूपदानी, अंगीठी
+  arb: الْ–مِجْمَرَةِ, الْمِجْمَرَةَ
+  kor: 향로를, 그–화로
+  swa: chetezo
+
+### Sense 111033 (2 occurrences)
+Grammar: N-fp
+  eng: fire-pans
+  spa: incensarios
+  hin: धूपदानियाँ
+  arb: مِجْمَرَةٍ, مَجَامِرَ
+  kor: 향로를, 향로들
+  swa: vyetezo
+
+### Sense 111034 (1 occurrences)
+Grammar: Art | N-fp
+  eng: the–firepans
+  spa: los–braseros
+  hin: अगनि–पात्रों
+  arb: الْمَجَامِرَ
+  kor: 불–받침들을
+  swa: vyetezo
+
+### Sense 111035 (1 occurrences)
+Grammar: Conj-w | N-fpc | 3ms
+  eng: and–its–firepans
+  spa: y–sus–braseros
+  hin: और–उसकी–गुलदानी
+  arb: وَ–مَجامِرَهُ
+  kor: 그리고–그–불–접시들을
+  swa: na–vyetezo–vyake
+
+### Sense 111036 (1 occurrences)
+Grammar: Conj-w, Art | N-fp
+  eng: and–the–firepans
+  spa: y–los–incensarios
+  hin: और–अग्निपात्र
+  arb: وَ–الْمَجَامِرُ
+  kor: 그리고–그–불팔들
+  swa: na–vyetezo
+
+### Sense 111037 (1 occurrences)
+Grammar: N-fpc | 3fs
+  eng: its–trays
+  spa: platillos-de-él
+  hin: उसके–धूपदान
+  arb: مَجَامِرَهَا
+  kor: 그것의–불–받침들
+  swa: vyetezo-vyake
+
+### Sense 111038 (1 occurrences)
+Grammar: N-fsc | 3ms
+  eng: his–censer
+  spa: su–incensario
+  hin: अपनी–धूपदानी–को
+  arb: مِجْمَرَتَهُ
+  kor: 그–의–향로를
+  swa: chetezo–chake
+
+### Sense 111039 (1 occurrences)
+Grammar: Art | N-fp
+  eng: the–fire-pans
+  spa: los–incensarios
+  hin: धूपदानियों
+  arb: الْمَجَامِرَ
+  kor: 향로들을
+  swa: vyetezo
+
+### Sense 111040 (1 occurrences)
+Grammar: Conj-w, Art | N-fp
+  eng: and–the–firepans
+  spa: y–los–incensarios
+  hin: और–अंगीठियाँ
+  arb: وَ–الـ–مَجَامِرُ
+  kor: 그리고-불-팔들은
+  swa: na–vyetezo
+
+## Task
+
+Group these 13 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

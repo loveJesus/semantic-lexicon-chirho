@@ -1,0 +1,145 @@
+# Sense Merge Task for H5848c
+
+Lemma: H5848c (POS: Conj-w | V-Hitpael-ConjImperf-3fs)
+Total occurrences: 13
+Current sense count: 13
+
+This Hebrew/Greek lemma has been over-split into 13 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 123531 (1 occurrences)
+Grammar: Conj-w, Prep-b | V-Hifil-Inf
+  eng: and–when–were-feeble
+  spa: Y–al–debilitarse
+  hin: और–कमज़ोर–होते
+  arb: وَحِينَ–تَضْعُفُ
+  kor: 그리고–약할–때에는
+  swa: Na–wakati–dhaifu
+
+### Sense 123532 (1 occurrences)
+Grammar: Conj-w | V-Hitpael-ConjImperf-
+  eng: and–grows–faint
+  spa: y–desmaya
+  hin: वे–तित्अत्तेफ
+  arb: وَتَغْشَى
+  kor: 소진되다
+  swa: na–itazimia
+
+### Sense 123533 (1 occurrences)
+Grammar: Prep-b | V-Qal-Inf
+  eng: when–faints
+  spa: cuando–desmaye
+  hin: जब–थका–जाता–है
+  arb: عِندَما–يَغشى
+  kor: 약해질–때–에
+  swa: unapozimia
+
+### Sense 123534 (1 occurrences)
+Grammar: V-Qal-Imperf-3ms
+  eng: would-faint
+  spa: desfallecería
+  hin: कमज़ोर–होगी
+  arb: يَخْفُتُ
+  kor: 기절하리니
+  swa: ingeanguka
+
+### Sense 123535 (1 occurrences)
+Grammar: Prep-b | V-Hitpael-Inf | 3mp
+  eng: when–they–faint
+  spa: al–desmayar
+  hin: बेहोश–होते–हुए
+  arb: عِنْدَ–إِغْمَائِهِمْ
+  kor: 기절함–에서–그들–의
+  swa: wanapozimia
+
+### Sense 123536 (1 occurrences)
+Grammar: Prep-b | V-Hitpael-Inf
+  eng: when–grows–faint
+  spa: Cuando–desfallecía
+  hin: जब–मूर्छित–होती–है
+  arb: بِـ–اغْتِمَامِ
+  kor: 기운–이–꺾일–때
+  swa: inapozimia
+
+### Sense 123537 (1 occurrences)
+Grammar: Art | N-mp
+  eng: the–feeble
+  spa: las–débiles
+  hin: कमज़ोर
+  arb: الضَّعِيفَةُ
+  kor: 그–약한–것들이
+  swa: dhaifu
+
+### Sense 123538 (1 occurrences)
+Grammar: V-Hitpael-Imperf-3fs
+  eng: grew–faint
+  spa: desfallecía
+  hin: मूर्छित–हो–गई
+  arb: تَغشى
+  kor: 쇠약하였도다
+  swa: zilidhoofika
+
+### Sense 123539 (1 occurrences)
+Grammar: Prep-b | V-Nifal-Inf
+  eng: when–faint
+  spa: al–desmayar
+  hin: मूर्छित–होने–में
+  arb: عِنْدَ–إِغْمَاءِ
+  kor: 기절함–에서
+  swa: wanapozimia
+
+### Sense 123540 (1 occurrences)
+Grammar: Art | N-mp
+  eng: the–ones–fainting
+  spa: los–desfallecidos
+  hin: जो–मूर्छित–हैं
+  arb: الْمُغْشَى–عَلَيْهِمْ
+  kor: 기절하는–자들–이라
+  swa: wanaozimia
+
+### Sense 123541 (1 occurrences)
+Grammar: V-Qal-Imperf-3ms
+  eng: he–is–faint
+  spa: desfallece
+  hin: वह–व्याकुल–हो
+  arb: يَضعُف
+  kor: 그–가–쇠약해지고
+  swa: anapozimia
+
+### Sense 123542 (1 occurrences)
+Grammar: Conj-w | V-Hitpael-ConsecImper
+  eng: and–grows–faint
+  spa: Y–desfalleció
+  hin: और–मूर्छित–होती–है
+  arb: وَاغْتَمَّتْ
+  kor: 그리고–기력–이–쇠하였나이다
+  swa: na–ikazimia
+
+### Sense 123543 (1 occurrences)
+Grammar: Prep-b | V-Hitpael-Inf
+  eng: when–fainted
+  spa: Al–desmayarse
+  hin: जब–मूर्छित–हुई
+  arb: حِينَ–غُشِيَ–عَلَيَّ
+  kor: 에서–기절함
+  swa: nafsi–yangu–ilipozirai
+
+## Task
+
+Group these 13 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

@@ -1,0 +1,136 @@
+# Sense Merge Task for G3431
+
+Lemma: G3431 (POS: V-PIA-2S)
+Total occurrences: 15
+Current sense count: 12
+
+This Hebrew/Greek lemma has been over-split into 12 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 72536 (2 occurrences)
+Grammar: V-FIA-2S,V-ASA-2S
+  eng: you–shall–commit–adultery, you-shall-commit-adultery
+  spa: cometerás–adulterio, cometas–adulterio
+  hin: व्यभिचार–करेगा, व्यभिचार–कर
+  arb: تَزْنِ
+  kor: 간음하라
+  swa: zini
+
+### Sense 72537 (2 occurrences)
+Grammar: V-PIA-3S
+  eng: commits-adultery
+  spa: adultera
+  hin: व्यभिचार–करता–है।
+  arb: يَزْنِي
+  kor: 간음한다
+  swa: anazini
+
+### Sense 72538 (2 occurrences)
+Grammar: V-FIA-2S,V-ASA-2S
+  eng: you-will-commit-adultery, you-shall-commit-adultery
+  spa: adulterarás
+  hin: व्यभिचार–कर, व्यभिचअर–करेग
+  arb: تَزْنِ, تَزنِ
+  kor: 간음하지–말라, 간음하지
+  swa: –, uzini
+
+### Sense 72539 (1 occurrences)
+Grammar: V-PPA-AMP
+  eng: committing–adultery
+  spa: que–adulteran
+  hin: व्यभिचार–करनेवालों–को
+  arb: الزّانينَ
+  kor: 간음하는–자들–을
+  swa: wazinaio
+
+### Sense 72540 (1 occurrences)
+Grammar: V-PIA-2S
+  eng: do–you–commit–adultery
+  spa: adulteras
+  hin: व्यभिचार–करता–है
+  arb: تَزني
+  kor: 간음하는가
+  swa: unazini
+
+### Sense 72541 (1 occurrences)
+Grammar: V-FIA-2S
+  eng: you-shall-commit-adultery
+  spa: cometerás-adulterio
+  hin: व्यभिचार–करेगा
+  arb: تَزْنِ
+  kor: 간음하지
+  swa: zini,
+
+### Sense 72542 (1 occurrences)
+Grammar: V-PNA
+  eng: to–commit–adultery
+  spa: adulterar
+  hin: व्यभिचार–करना
+  arb: تَزنِ
+  kor: 간음하기–를
+  swa: kuzini
+
+### Sense 72543 (1 occurrences)
+Grammar: V-AIA-3S
+  eng: committed–adultery
+  spa: cometió–adulterio
+  hin: व्यभिचार–किया
+  arb: زَنَى–بِهَا
+  kor: 간음했다
+  swa: amezini–naye
+
+### Sense 72544 (1 occurrences)
+Grammar: V-ANP
+  eng: to–commit–adultery
+  spa: cometer–adulterio
+  hin: व्यभिचारिणी–बनाने
+  arb: تَزْنِي
+  kor: 간음하도록
+  swa: kuzini
+
+### Sense 72545 (1 occurrences)
+Grammar: V-PPM/P-NFS
+  eng: committing–adultery
+  spa: cometiendo-adulterio
+  hin: व्यभिचार–करते–हुए।
+  arb: زانِيَة
+  kor: 간음하는–중에
+  swa: akizini
+
+### Sense 72546 (1 occurrences)
+Grammar: V-ASA-2S
+  eng: you–shall–commit–adultery
+  spa: cometas–adulterio
+  hin: व्यभिचार-करो
+  arb: تَزنِ
+  kor: 간음하지–말라,
+  swa: zini
+
+### Sense 72547 (1 occurrences)
+Grammar: V-PIA-2S
+  eng: you–commit–adultery
+  spa: cometes–adulterio
+  hin: व्यभिचार-करते
+  arb: تَزني
+  kor: 간음하지–않고,
+  swa: huzini
+
+## Task
+
+Group these 12 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

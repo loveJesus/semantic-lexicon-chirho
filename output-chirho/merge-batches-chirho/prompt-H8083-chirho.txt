@@ -1,0 +1,127 @@
+# Sense Merge Task for H8083
+
+Lemma: H8083 (POS: Conj-w | Number-fs)
+Total occurrences: 109
+Current sense count: 11
+
+This Hebrew/Greek lemma has been over-split into 11 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 142048 (95 occurrences)
+Grammar: Conj-w | Number-fs,Conj-w | Number-ms,Conj-w | Number-msc,Number-fs,Number-msc,N
+  eng: eight, and–eight, eighteen
+  spa: ocho, y–ocho, dieciocho
+  hin: और–आठ, आठ, अठारह
+  arb: وَثَمانِيَةٌ, ثَمَانِيَةُ, ثَمَانِيَةَ
+  kor: 그리고–여덟, 여덟, 열여덟
+  swa: na–wanane, na–nane, nane
+
+### Sense 142051 (2 occurrences)
+Grammar: Number-ms
+  eng: eighteen
+  spa: ocho–, ocho
+  hin: अठारह
+  arb: ثَمَانِيَةَ, ثَمانِيَةَ
+  kor: 팔, 열여덟
+  swa: elfu–kumi–na–nane, elfu–kumi–na
+
+### Sense 142052 (2 occurrences)
+Grammar: Prep-b | Number-fs,Prep-b | Number-ms
+  eng: with–eight
+  spa: con–ocho
+  hin: ब–आठ, के–साथ–आठ
+  arb: بِ–ثَمَانِيَةِ, بِثَمانِي
+  kor: 팔백, 여덟–
+  swa: na–watu–wanane, kwa–mia–nane–
+
+### Sense 142053 (2 occurrences)
+Grammar: Prep-b | Number-fs
+  eng: in–eight
+  spa: en–dieciocho
+  hin: बि–आठारहवें
+  arb: فِي–ثَمَانِيَ
+  kor: 열여덟, 에–열여덟째
+  swa: katika–kumi–na–, katika–kumi
+
+### Sense 142054 (2 occurrences)
+Grammar: Conj-w | Number-msc,Conj-w | Number-fs
+  eng: and–eight–
+  spa: y–ocho
+  hin: और–आठ–, उश्मोनेह–
+  arb: وَعِشْرُونَ–, وَثَمَانِيَةُ
+  kor: 팔, 그리고–여덟
+  swa: na–nane–
+
+### Sense 142055 (1 occurrences)
+Grammar: Conj-w, Prep-b | Number-fs
+  eng: and–in–eight
+  spa: y–en–ocho
+  hin: और–आठवें
+  arb: وَ–فِي–السَّنَةِ–الثَّامِنَةِ
+  kor: 그리고–에–여덟
+  swa: wּbishmwoneh
+
+### Sense 142056 (1 occurrences)
+Grammar: Prep-b | Number-fs
+  eng: in–eighteen
+  spa: en–ocho
+  hin: अठारहवें
+  arb: فِي–السَّنَةِ–الثَّامِنَةِ
+  kor: 에–열여덟
+  swa: biּshmwoneh
+
+### Sense 142057 (1 occurrences)
+Grammar: Number-fs
+  eng: eight
+  spa: dieciocho–
+  hin: अठारह–
+  arb: ثَمَانِي–
+  kor: 열여덟–
+  swa: kumi–na
+
+### Sense 142058 (1 occurrences)
+Grammar: Prep-l | Number-ms
+  eng: to–eight
+  spa: a–ocho
+  hin: आठ–को
+  arb: لِ–شْمُونَه
+  kor: 팔곱–에게
+  swa: kwa–nane
+
+### Sense 142059 (1 occurrences)
+Grammar: Number-msc
+  eng: eight-of
+  spa: ocho–de
+  hin: आठ
+  arb: ثَمَانِيَةَ
+  kor: 여덟–의
+  swa: wanane
+
+### Sense 142060 (1 occurrences)
+Grammar: Prep-l | Number-ms
+  eng: for–eight
+  spa: Para–ocho–
+  hin: अठारह–के–लिए
+  arb: لِلثَّامِنَةِ
+  kor: 에–열여덟
+  swa: kumi
+
+## Task
+
+Group these 11 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

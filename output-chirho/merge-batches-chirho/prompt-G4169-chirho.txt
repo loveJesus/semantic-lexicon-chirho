@@ -1,0 +1,136 @@
+# Sense Merge Task for G4169
+
+Lemma: G4169 (POS: IPro-AMS)
+Total occurrences: 33
+Current sense count: 12
+
+This Hebrew/Greek lemma has been over-split into 12 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 75282 (17 occurrences)
+Grammar: IPro-DFS,IPro-NFS,IPro-ANS,IPro-DNS,IPro-GFS,IPro-GMS
+  eng: what, which, what–kind–of
+  spa: cuál, en–cuál, a-qué
+  hin: किस, –से, तुमने
+  arb: أَيِّ, أَيَّ, فِي–أَيِّ
+  kor: 어떤, 어느, 무슨
+  swa: gani, mamlaka–gani, ipi
+
+### Sense 75283 (3 occurrences)
+Grammar: IPro-DMS
+  eng: by–what–kind–of
+  spa: de-qué-clase, con-qué
+  hin: किस, किस–प्रकार–की
+  arb: بِأَيِّ, بِـ–أَيِّ
+  kor: 어떤
+  swa: kifo–gani, kifo-gani
+
+### Sense 75284 (3 occurrences)
+Grammar: IPro-NFS
+  eng: what
+  spa: cuál
+  hin: कैसी
+  arb: أَيُّ
+  kor: 무슨
+  swa: ni–jambo–gani
+
+### Sense 75285 (2 occurrences)
+Grammar: IPro-NFS,IPro-AMS
+  eng: what–kind, what
+  spa: cuál
+  hin: कैसे, कैसी
+  arb: ماذا, أَيِّ
+  kor: 어떠한
+  swa: ya–namna–gani, wakati–gani
+
+### Sense 75286 (1 occurrences)
+Grammar: IPro-ANP
+  eng: What-things
+  spa: cuáles
+  hin: कौन–सी
+  arb: ماذا
+  kor: 어떤–것이냐
+  swa: Gani
+
+### Sense 75287 (1 occurrences)
+Grammar: IPro-NFS
+  eng: Which
+  spa: Cuál
+  hin: कौन–सी
+  arb: أَيَّةُ
+  kor: 어느
+  swa: Amri–gani
+
+### Sense 75288 (1 occurrences)
+Grammar: IPro-AFS
+  eng: what
+  spa: qué
+  hin: किस
+  arb: أَيَّةَ
+  kor: 어떤
+  swa: saa–ipi
+
+### Sense 75289 (1 occurrences)
+Grammar: IPro-AFP
+  eng: Which
+  spa: Cuáles
+  hin: कौनसि
+  arb: أَيُّهَا
+  kor: 어느–것들
+  swa: –
+
+### Sense 75290 (1 occurrences)
+Grammar: IPro-NNS
+  eng: what–kind
+  spa: qué
+  hin: कैसी
+  arb: أَيُّ
+  kor: 무슨
+  swa: sifa–gani
+
+### Sense 75291 (1 occurrences)
+Grammar: IPro-GFS
+  eng: by–what–way
+  spa: por–cuál
+  hin: किस–राह–से
+  arb: أَيَّ
+  kor: 어떻게
+  swa: njia–gani
+
+### Sense 75292 (1 occurrences)
+Grammar: IPro-DNS
+  eng: with-what
+  spa: con–qué
+  hin: किस–प्रकार–के
+  arb: بِأيِّ
+  kor: 어떤
+  swa: kwa–mwili–gani
+
+### Sense 75293 (1 occurrences)
+Grammar: IPro-AMS
+  eng: what–kind–of
+  spa: qué–tipo–de
+  hin: कैसा
+  arb: أَيَّ
+  kor: 어떤
+  swa: gani
+
+## Task
+
+Group these 12 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

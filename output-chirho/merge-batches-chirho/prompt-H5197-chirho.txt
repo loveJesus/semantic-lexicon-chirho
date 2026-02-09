@@ -1,0 +1,162 @@
+# Sense Merge Task for H5197
+
+Lemma: H5197 (POS: V-Hifil-Imperf-2mp)
+Total occurrences: 18
+Current sense count: 15
+
+This Hebrew/Greek lemma has been over-split into 15 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 117547 (3 occurrences)
+Grammar: V-Qal-Perf-3cp
+  eng: dripped
+  spa: gotearon
+  hin: टपके, टपका
+  arb: قَطَرَتْ
+  kor: 떨어졌다, 떨어졌도다
+  swa: zilidondosha-mvua, zilidondosha, yalidondosha
+
+### Sense 117548 (2 occurrences)
+Grammar: Conj-w | V-Hifil-Imp-ms
+  eng: and–drip
+  spa: y–profetiza
+  hin: और–टपका
+  arb: وَأَقْطِرْ
+  kor: 그리고–떨어뜨려라
+  swa: na–hubiri
+
+### Sense 117549 (1 occurrences)
+Grammar: V-Qal-Imperf-3mp
+  eng: will-drip
+  spa: destilarán
+  hin: टपकेंगे
+  arb: تَقْطُرُ
+  kor: 떨어뜨리리라
+  swa: zitadondosha
+
+### Sense 117550 (1 occurrences)
+Grammar: V-Hifil-Imperf-1cs
+  eng: I–will–preach
+  spa: profetizaré
+  hin: मैं–टपकाऊंगा
+  arb: أُقَطِّرُ
+  kor: 예언하겠다
+  swa: nitahubiri
+
+### Sense 117551 (1 occurrences)
+Grammar: V-Qal-Perf-3cp
+  eng: dripped–
+  spa: gotearon–
+  hin: टपके–
+  arb: نَطْفُو–
+  kor: 떨어뜨렸네
+  swa: ilidondosha
+
+### Sense 117552 (1 occurrences)
+Grammar: V-Qal-Imperf-3fp
+  eng: drip
+  spa: gotean
+  hin: टपकता–है
+  arb: تَقْطُرُ
+  kor: 떨어뜨린다
+  swa: i–na–dondosha
+
+### Sense 117553 (1 occurrences)
+Grammar: V-Hifil-Imperf-3mp | Pn
+  eng: they–preach
+  spa: profetizan
+  hin: वे–टपकाते–हैं
+  arb: يُقَطِّرُونَ
+  kor: 예언한다–그들이
+  swa: wanahubiri
+
+### Sense 117554 (1 occurrences)
+Grammar: V-Hifil-Imperf-3mp
+  eng: they–will–preach
+  spa: profetizarán
+  hin: टपकाएं
+  arb: يُقَطِّرُونَ
+  kor: 예언해야–한다
+  swa: hubiri
+
+### Sense 117555 (1 occurrences)
+Grammar: V-Qal-Imperf-3fp
+  eng: drip
+  spa: destilan
+  hin: टपकती–हैं
+  arb: تِطُّوفْنَه
+  kor: 떨어뜨리네
+  swa: inadondoka
+
+### Sense 117556 (1 occurrences)
+Grammar: V-Qal-Prtcpl-fp
+  eng: dripping
+  spa: que–gotean
+  hin: टपकती–हुई
+  arb: نُوطْفُوت
+  kor: 떨어뜨리는
+  swa: yanayodondosha
+
+### Sense 117557 (1 occurrences)
+Grammar: V-Hifil-Prtcpl-msc
+  eng: preacher
+  spa: profeta–de
+  hin: टपकाने–वाला
+  arb: مُقَطِّرُ
+  kor: 예언자–가
+  swa: mhubiri
+
+### Sense 117558 (1 occurrences)
+Grammar: Conj-w | V-Hifil-ConjPerf-3cp
+  eng: and–will-drip
+  spa: y–destilarán
+  hin: और–टपकेंगे
+  arb: وَ–تَقْطُرُ
+  kor: 그리고–떨어지리라
+  swa: na–yatadondosha
+
+### Sense 117559 (1 occurrences)
+Grammar: V-Hifil-Imperf-2mp
+  eng: preach
+  spa: profeticéis
+  hin: टपकाओ
+  arb: تُقَطِّرُوا
+  kor: 예언하지
+  swa: hubiri
+
+### Sense 117560 (1 occurrences)
+Grammar: V-Qal-Imperf-3fs
+  eng: dropped
+  spa: goteaba
+  arb: تَقطُرُ
+  kor: 떨어졌는데
+  swa: ilidondoka
+
+### Sense 117561 (1 occurrences)
+Grammar: V-Hifil-Imperf-2ms
+  eng: you-will-preach
+  spa: prediques
+  hin: बोल
+  arb: تُقَطِّرْ
+  kor: 말을–떨어뜨리지
+  swa: kudondosha
+
+## Task
+
+Group these 15 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

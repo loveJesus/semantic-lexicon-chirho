@@ -1,0 +1,127 @@
+# Sense Merge Task for G4302
+
+Lemma: G4302 (POS: V-PIA-1S)
+Total occurrences: 14
+Current sense count: 11
+
+This Hebrew/Greek lemma has been over-split into 11 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 75673 (2 occurrences)
+Grammar: V-RIA-1P,V-AIA-1P
+  eng: we–told–before, we-have-said-before
+  spa: os–dijimos–de–antemano, antes-dijimos
+  hin: हुमने–पेहले–कह,, पेहले–कह
+  arb: قُلْنا–قَبْلاً, قُلنا–سابِقًا
+  kor: 우리가–미리–말했고,, 우리가–미리–말했고
+  swa: tuliwaambia–mapema, tulivyosema–kabla
+
+### Sense 75674 (2 occurrences)
+Grammar: V-RIA-1S
+  eng: I–have–said–before, I-have-said-before
+  spa: he–dicho–antes, He–dicho–antes
+  hin: मैंने–पहले–कहा–है, पहले–कहा–है–मैंने
+  arb: قُلتُ–مِنْ–قَبلُ, سَبَقَ–وَقُلْتُ
+  kor: 전에–말했다
+  swa: nimekwisha–kusema, Nimekwisha–sema–mapema
+
+### Sense 75675 (2 occurrences)
+Grammar: V-RIA-1S
+  eng: I–have–told–before, I-have-told-beforehand
+  spa: os–he–dicho–de–antemano
+  hin: पहले–से–बता–दिया–है, पहले–से–कहा–है
+  arb: قَدْ–قُلْتُ–لَكُمْ–مِنْ–قَبْلُ, قَدْ–قُلتُ
+  kor: 미리–말했다, 내가-미리-말하였다
+  swa: ninyi, nimewaambia–mapema
+
+### Sense 75676 (1 occurrences)
+Grammar: V-RIA-3S
+  eng: has-foretold
+  spa: dijo–antes
+  hin: पहले–कहा
+  arb: سَبَقَ–فَقَالَ
+  kor: 미리–말씀하셨다
+  swa: alisema–kabla
+
+### Sense 75677 (1 occurrences)
+Grammar: V-RIM/P-3S
+  eng: has–been–said–before
+  spa: se–ha–dicho–antes
+  hin: पहले–कहा–गया
+  arb: قيلَ–سَابِقًا
+  kor: 전에–말씀되었으니
+  swa: imesemwa–kabla
+
+### Sense 75678 (1 occurrences)
+Grammar: V-PIA-1S
+  eng: I-tell-beforehand
+  spa: os-digo-de-antemano
+  hin: मैन–पेहले–कहत–हुन
+  arb: أُنذِرُكُم
+  kor: 미리–말하노라
+  swa: nawaonya
+
+### Sense 75679 (1 occurrences)
+Grammar: V-RPM/P-GNP
+  eng: having-been-spoken-before
+  spa: antes–dichas
+  hin: पहले–कहे–गए
+  arb: المَقولَةِ–سابِقًا
+  kor: 예언된
+  swa: yaliyosemwa–kabla
+
+### Sense 75680 (1 occurrences)
+Grammar: V-IIA-1P
+  eng: we–told–before
+  spa: os–decíamos–de–antemano
+  hin: पेहले–केह-रहे-थे
+  arb: كُنّا–نَقولُ
+  kor: 우리가–미리–말했다
+  swa: tuliwaambia–mapema
+
+### Sense 75681 (1 occurrences)
+Grammar: V-RPM/P-GNP
+  eng: having–been–spoken–before
+  spa: dichas–antes
+  hin: पहले–कहे–गए
+  arb: المقولة–من–قبل
+  kor: 미리–말해진
+  swa: yaliyosemwa–kabla
+
+### Sense 75682 (1 occurrences)
+Grammar: V-PIA-1S
+  eng: I-say-beforehand
+  spa: digo–de–antemano
+  hin: मैं–पहले–से–कहता–हूं
+  arb: أَقولُ–مُسْبَقاً
+  kor: 미리–말한다
+  swa: ninasema–mapema,
+
+### Sense 75683 (1 occurrences)
+Grammar: V-AIA-1S
+  eng: I-said-before
+  spa: antes-dije
+  hin: मैने–पेहले–कह,
+  arb: سَبَقَ–وَأنذَرتُ
+  kor: 미리–말했노라,
+  swa: nilivyosema–kabla
+
+## Task
+
+Group these 11 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

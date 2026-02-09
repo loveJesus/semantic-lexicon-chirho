@@ -1,0 +1,118 @@
+# Sense Merge Task for H1823
+
+Lemma: H1823 (POS: Conj-w | N-fsc)
+Total occurrences: 25
+Current sense count: 10
+
+This Hebrew/Greek lemma has been over-split into 10 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 91863 (10 occurrences)
+Grammar: N-fsc,N-fs
+  eng: likeness-of, likeness-of–
+  spa: semejanza–de, semejanza
+  hin: समानता, आकृति, रूप
+  arb: شَبَهُ, شَبَهٌ, شَبَهِ
+  kor: 형상, 형상이라, 형상이
+  swa: mfano–wa, mfano, wa–mfano
+
+### Sense 91864 (7 occurrences)
+Grammar: Conj-w | N-fsc,Conj-w | N-fs
+  eng: and–likeness-of
+  spa: Y–semejanza–de, y–semejanza–de, Y–semejanza
+  hin: और–समानता, और–आकृति
+  arb: وَ–شَبَهُ, وَ–شَبَهٌ, وَشَبَهُ
+  kor: 그리고–형상, 그리고–형상이, 그리고–형상은
+  swa: na–mfano, na–mfano–wa
+
+### Sense 91865 (1 occurrences)
+Grammar: N-fs
+  eng: will–you–compare
+  spa: semejanza
+  hin: समानता
+  arb: شَبَهًا
+  kor: 형상을
+  swa: mfano
+
+### Sense 91866 (1 occurrences)
+Grammar: Prep-k | N-fsc | 1cp
+  eng: according–to–likeness-our
+  spa: según–nuestra–semejanza
+  hin: हमारी–समानता–में
+  arb: كَ–شَبَهِنَا
+  kor: 에–우리의–모양대로
+  swa: kwa–sura–yetu
+
+### Sense 91867 (1 occurrences)
+Grammar: Prep-k | N-fs
+  eng: like–the–likeness–of
+  spa: como–semejanza-de
+  hin: समान
+  arb: كَ–مِثلِ
+  kor: 모양–으로
+  swa: kama–sumu
+
+### Sense 91868 (1 occurrences)
+Grammar: Prep-k | N-fsc
+  eng: like–likeness-of
+  spa: como–semejanza–de
+  hin: जैसा–समानता
+  arb: كَـ–شَبَهِ
+  kor: 같은–모습의
+  swa: kama–mfano
+
+### Sense 91869 (1 occurrences)
+Grammar: Prep-b | N-fsc
+  eng: in–likeness-of
+  spa: en–semejanza–de
+  hin: स्वरूप–मेइन
+  arb: فِي–شَبَهِ
+  kor: 에–모양
+  swa: kwa–sura–ya
+
+### Sense 91870 (1 occurrences)
+Grammar: Prep-b | N-fsc | 3ms
+  eng: in–likeness-his
+  spa: en–su–semejanza
+  hin: अपनी–स्वरूप–मेइन
+  arb: فِي–شَبَهِهِ
+  kor: 에–그의–모양
+  swa: kwa–sura–yake
+
+### Sense 91871 (1 occurrences)
+Grammar: N-fsc
+  eng: likeness-of
+  spa: diseño–de
+  hin: आकृति
+  arb: شَكْلِ
+  kor: 본–을
+  swa: mfano
+
+### Sense 91872 (1 occurrences)
+Grammar: N-fs
+  eng: likeness–of
+  spa: semejanza–de
+  hin: जैसी–
+  arb: شِبْهُ
+  kor: 모양이라
+  swa: mfano–wa
+
+## Task
+
+Group these 10 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

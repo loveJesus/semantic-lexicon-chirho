@@ -1,0 +1,118 @@
+# Sense Merge Task for H2689
+
+Lemma: H2689 (POS: N-fp)
+Total occurrences: 29
+Current sense count: 10
+
+This Hebrew/Greek lemma has been over-split into 10 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 98653 (10 occurrences)
+Grammar: Prep-b, Art | N-fp
+  eng: with–trumpets, with–the–trumpets
+  spa: con–trompetas, con–las–trompetas
+  hin: तुरहियों–से, में–तुरहियों, ब–तुरहियों
+  arb: بِ–الأَبْوَاقِ, بِ–الْأَبْوَاقِ, بِ–الأَبواقِ
+  kor: 에–그–나팔들, 에서–그–나팔들, 에–나팔들을–가지고
+  swa: kwa–tarumbeta, tarumbeta, kwa–tarumbeta.
+
+### Sense 98654 (4 occurrences)
+Grammar: Conj-w, Art | N-fp
+  eng: and–the–trumpets
+  spa: y–las–trompetas
+  hin: और–तुरहियाँ, और–हखत्सोत्सेरोत
+  arb: وَ–الْأَبْوَاقُ, وَٱلْأَبْوَاقُ, وَالأَبْوَاقُ
+  kor: 그리고–그–나팔들이, 그리고–나팔들이, 그리고–그–나팔들과
+  swa: na–tarumbeta
+
+### Sense 98655 (4 occurrences)
+Grammar: Conj-w, Prep-b, Art | N-fp
+  eng: and–with–trumpets
+  spa: y–con–trompetas
+  hin: और–तुरहियों–से, और–ब–तुरहियों, और–तुरहियोंसे
+  arb: وَ–بِ–أَبْوَاقٍ, وَبِ–أَبْوَاقٍ
+  kor: 그–와–에–나팔들, 그리고–로–그–나팔들, 그리고–나팔들–으로
+  swa: na–kwa–tarumbeta
+
+### Sense 98656 (3 occurrences)
+Grammar: Prep-b, Art | N-fp
+  eng: with–the–trumpets
+  spa: con–las–trompetas
+  hin: तुरहियों–में
+  arb: بِ–الْأَبْوَاقِ
+  kor: 에서–그–나팔들
+  swa: tarumbeta, kwa–tarumbeta
+
+### Sense 98657 (2 occurrences)
+Grammar: N-fp
+  eng: trumpets
+  spa: trompetas
+  hin: तुरहियाँ, खत्सोत्सेरोत
+  arb: أَبْوَاقٌ
+  kor: 나팔들과, 나팔들
+  swa: tarumbeta
+
+### Sense 98658 (2 occurrences)
+Grammar: Conj-w | N-fpc
+  eng: and–trumpets-of
+  spa: y–trompetas–de
+  hin: और–तुरहियां, और–तुरहियाँ
+  arb: وَأَبْوَاقُ, وَأَبواقُ
+  kor: 그리고–나팔들
+  swa: na–tarumbeta–za, na–tarumbeta
+
+### Sense 98659 (1 occurrences)
+Grammar: N-fpc
+  eng: trumpets-of
+  spa: trompetas–de
+  hin: तुरहियां
+  arb: أَبْوَاقٍ
+  kor: 나팔들
+  swa: tarumbeta
+
+### Sense 98660 (1 occurrences)
+Grammar: N-fs
+  eng: trumpet
+  spa: trompeta
+  hin: तुरही
+  arb: البوقَ
+  kor: 나팔을
+  swa: baragumu
+
+### Sense 98661 (1 occurrences)
+Grammar: Prep-b, Art | N-fp
+  eng: with–trumpets
+  spa: Con–trompetas
+  hin: में–तुरहियों
+  arb: بِ–الْأَبْوَاقِ
+  kor: 나팔–들–과
+  swa: kwa–tarumbeta
+
+### Sense 98662 (1 occurrences)
+Grammar: Prep-b, Art | N-fp
+  eng: on–the–trumpets
+  spa: con–las–trompetas
+  hin: बखत्सोत्सेरोत–में
+  arb: بِٱلْأَبْوَاقِ
+  kor: 나팔들을
+  swa: tarumbeta
+
+## Task
+
+Group these 10 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

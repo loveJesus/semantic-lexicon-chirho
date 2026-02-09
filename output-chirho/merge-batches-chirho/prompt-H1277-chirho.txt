@@ -1,0 +1,118 @@
+# Sense Merge Task for H1277
+
+Lemma: H1277 (POS: Art | Adj-fp)
+Total occurrences: 13
+Current sense count: 10
+
+This Hebrew/Greek lemma has been over-split into 10 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 88110 (3 occurrences)
+Grammar: Adj-fp,Art | Adj-fp
+  eng: the–fat, fat
+  spa: las–gruesas, las–gordas, gruesas
+  hin: मोटी
+  arb: مُمْتَلِئَاتٌ, الْ–مُمْتَلِئَاتِ, الْ–سَمِينَاتِ
+  kor: 풍성한, 살찐
+  swa: mazuri, wanene
+
+### Sense 88111 (2 occurrences)
+Grammar: Conj-w | Adj-fpc,Conj-w, Art | Adj-fp
+  eng: and–the–fat, and–fat-of
+  spa: y–las–gordas, y–gordas–de
+  hin: और–मोटी
+  arb: وَ–سَمِينَاتُ, وَ–الْ–سَمِينَاتِ
+  kor: 그리고–살찐
+  swa: na–wanene
+
+### Sense 88112 (1 occurrences)
+Grammar: Adj-mp
+  eng: fattened
+  spa: engordados
+  hin: मोटे
+  arb: مُسَمَّنَةٍ
+  kor: 살진
+  swa: wanona
+
+### Sense 88113 (1 occurrences)
+Grammar: Conj-w | Adj-mpc
+  eng: and–fat-of
+  spa: y–gordos–de
+  hin: और–स्वस्थ
+  arb: وَ–سَمِينَ
+  kor: 그리고–살진
+  swa: na–wanene–wa
+
+### Sense 88114 (1 occurrences)
+Grammar: Art | Adj-fs
+  eng: he–will–eat
+  spa: la–gorda
+  hin: हृष्टपुष्ट–की
+  arb: السَّمِينَةِ
+  kor: 살진–것의
+  swa: walionona
+
+### Sense 88115 (1 occurrences)
+Grammar: Art | Adj-fs
+  eng: the–fat-one
+  spa: la–engordada
+  hin: झुंड़
+  arb: ٱلسَّمِينَةَ
+  kor: 그–살진
+  swa: wanono
+
+### Sense 88116 (1 occurrences)
+Grammar: Adj-fpc
+  eng: fat-of
+  spa: gordas–de
+  hin: मोटी
+  arb: سَمِينَاتُ
+  kor: 살찐
+  swa: wanene
+
+### Sense 88117 (1 occurrences)
+Grammar: Adj-ms
+  eng: fat
+  spa: gordo
+  hin: मोटा
+  arb: بَدينٌ
+  kor: 살찐
+  swa: mnene
+
+### Sense 88118 (1 occurrences)
+Grammar: Adj-fs
+  eng: is–rich
+  spa: abundante
+  hin: स्वादिष्ट
+  arb: دَسِمٌ
+  kor: 기름지니라
+  swa: bora
+
+### Sense 88119 (1 occurrences)
+Grammar: Conj-w | Adj-ms
+  eng: and–fat
+  spa: y–gordo
+  hin: पर–मोटा
+  arb: وَ–صحيحٌ
+  kor: 건강하다
+  swa: na–afya-njema
+
+## Task
+
+Group these 10 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

@@ -1,0 +1,127 @@
+# Sense Merge Task for H8486
+
+Lemma: H8486 (POS: Conj-w | N-fs | 3fs)
+Total occurrences: 23
+Current sense count: 11
+
+This Hebrew/Greek lemma has been over-split into 11 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 145098 (9 occurrences)
+Grammar: N-fs | 3fs
+  eng: southward
+  spa: hacia–el–sur, hacia-sur, el–sur
+  hin: दक्षिण–की–ओर, दक्षिण–में, दक्षिण–दिशा–में
+  arb: جَنُوبًا, جَنُوباً, يَمِينًا
+  kor: 남쪽으로, 남쪽–으로
+  swa: kusini
+
+### Sense 145099 (3 occurrences)
+Grammar: N-fs,Art | N-fs
+  eng: south
+  spa: sur., sur, el–sur
+  hin: दक्षिण–के, दक्षिण–की
+  arb: الْجَنُوبِ, الجَنوبِ
+  kor: 데마–의, 남방의, 그–남쪽의
+  swa: kusini, Kusini
+
+### Sense 145100 (3 occurrences)
+Grammar: N-fs | 3fs
+  eng: southward, toward–the–south
+  spa: al–sur, hacia–el–sur
+  hin: दक्षिण–की–ओर
+  arb: التَّيمَانِيِّ, التَّيمانِ
+  kor: 남쪽으로, 남쪽
+  swa: upande–wa–kusini, kusini
+
+### Sense 145101 (1 occurrences)
+Grammar: N-fs
+  eng: the–south–wind
+  spa: viento-del-sur
+  hin: दक्षिणी–हवा
+  arb: رِيحَ–الْجَنُوبِ
+  kor: 남풍–을
+  swa: upepo–wa–kusini
+
+### Sense 145102 (1 occurrences)
+Grammar: Prep-m | N-fs
+  eng: from–south
+  spa: desde–el–sur
+  hin: दक्षिण–से
+  arb: مِنَ–التَّيْمانِ
+  kor: 에서–남쪽에서
+  swa: kutoka–kusini
+
+### Sense 145103 (1 occurrences)
+Grammar: Conj-w, Prep-m | N-fs
+  eng: and–from–south
+  spa: y–desde–el–sur
+  hin: और–दक्षिण–से
+  arb: وَ–مِنَ–التَّيْمانِ
+  kor: 그리고–에서–남쪽에서
+  swa: na–kutoka–kusini
+
+### Sense 145104 (1 occurrences)
+Grammar: N-fs
+  eng: south
+  spa: Temán
+  hin: दक्षिण
+  arb: التَّيْمانِ
+  kor: 남쪽의
+  swa: kusini
+
+### Sense 145105 (1 occurrences)
+Grammar: Conj-w | N-fs | 3fs
+  eng: and–southward
+  spa: y–al–sur
+  hin: और–दक्षिण
+  arb: وَجَنُوبًا
+  kor: 그리고–남쪽–으로
+  swa: na–kusini
+
+### Sense 145106 (1 occurrences)
+Grammar: N-fs
+  eng: south
+  spa: sur
+  hin: दक्षिण
+  arb: تِيمَن
+  kor: 남풍–아
+  swa: upepo–wa–kusini
+
+### Sense 145107 (1 occurrences)
+Grammar: Prep-l | N-fs
+  eng: toward–the–south
+  spa: hacia–sur
+  hin: दक्षिण–की–ओर
+  arb: نَحْوَ–الْجَنُوبِ؟
+  kor: 남쪽–으로
+  swa: kuelekea–kusini
+
+### Sense 145108 (1 occurrences)
+Grammar: Conj-w, Prep-l | N-fs
+  eng: and–to–the–south
+  spa: y–al–sur
+  hin: और–से–दक्षिण
+  arb: وَلِلجَنُوبِ
+  kor: 그리고–남쪽에게
+  swa: na–kwa–kusini
+
+## Task
+
+Group these 11 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

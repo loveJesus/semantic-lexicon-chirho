@@ -1,0 +1,136 @@
+# Sense Merge Task for G1754
+
+Lemma: G1754 (POS: V-IIM-3S)
+Total occurrences: 21
+Current sense count: 12
+
+This Hebrew/Greek lemma has been over-split into 12 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 67199 (4 occurrences)
+Grammar: V-PIA-3S,V-PIM-3S
+  eng: is–working, works
+  spa: obra, opera, está–obrando
+  hin: कार्य–करती–है, कअरयशेएल–है
+  arb: يَعمَلُ, يَعْمَلُ, تَعْمَلُ
+  kor: 활동하고–있다, 역사하시나니, 역사하고–있다
+  swa: linafanya–kazi, kinafanya–kazi,, inafanya–kazi
+
+### Sense 67200 (3 occurrences)
+Grammar: V-PPA-NMS
+  eng: working
+  spa: que–obra, obrando, obra
+  hin: जो–करत–है, जो–कअम–करत–है, कार्य–करता–है
+  arb: يَعْمَلُ, يَعمَلُ, عامِلُ
+  kor: 행하시는–분, 역사하시는–분이시고
+  swa: anayefanya–kazi, anayefanya
+
+### Sense 67201 (2 occurrences)
+Grammar: V-AIA-3S,V-RIA-3S
+  eng: worked, he-worked
+  spa: obró
+  hin: उस्ने–कअम–किय, उस्ने-कअम-किय
+  arb: فَعَلَ–بِفاعِليَّةٍ, فَعَلَها
+  kor: 역사하셨다, 역사하셨노라
+  swa: alimfanya–kazi–pia, aliifanya
+
+### Sense 67202 (2 occurrences)
+Grammar: V-PIA-3P
+  eng: are–working, are-working
+  spa: obran
+  hin: करय–करति–हैन
+  arb: تَعْمَلُ
+  kor: 활동한다, 역사한다
+  swa: zinafanya–kazi
+
+### Sense 67203 (2 occurrences)
+Grammar: V-PPM-GFS,V-PPM-AFS
+  eng: working
+  spa: que–opera, que–obra
+  hin: जो–प्रभावशाली–है, कअरय-करति-हुइ
+  arb: العامِلِ, العامِلَةِ
+  kor: 역사하는
+  swa: inayofanya–kazi
+
+### Sense 67204 (2 occurrences)
+Grammar: V-PPA-GNS,V-PPM-AFS
+  eng: working, the–
+  spa: operando, obrando
+  hin: कअम-करने-वअले, कअम-करति-हुइ
+  arb: العامِلِ, العامِلَةِ
+  kor: 역사하는
+  swa: ifanyayo–kazi, afanyaye–kazi
+
+### Sense 67205 (1 occurrences)
+Grammar: V-PPM-NFS
+  eng: working
+  spa: obrando
+  hin: कअम–करत–हुअ.
+  arb: يَعمَلُ
+  kor: 역사하는.
+  swa: ifanyayo–kazi
+
+### Sense 67206 (1 occurrences)
+Grammar: V-PPA-GMS
+  eng: working
+  spa: obrando
+  hin: कअम-करने-वअले
+  arb: العامِلِ
+  kor: 역사하시는–분의,
+  swa: afanyaye
+
+### Sense 67207 (1 occurrences)
+Grammar: V-IIM-3S
+  eng: were–working
+  spa: obraban
+  hin: काम–करती–थीं
+  arb: كَانَتْ–تَعْمَلُ
+  kor: 역사하였다
+  swa: zilifanya–kazi
+
+### Sense 67208 (1 occurrences)
+Grammar: V-PNA
+  eng: to–work
+  spa: obrar
+  hin: करन,
+  arb: أَنْ–تَعْمَلوا
+  kor: 행하기를,
+  swa: kutenda
+
+### Sense 67209 (1 occurrences)
+Grammar: V-APA-NMS
+  eng: having-worked
+  spa: habiendo-obrado
+  hin: जिस्ने–कअम–किय
+  arb: فَعَلَ–بِفاعِليَّةٍ
+  kor: 역사하신–분
+  swa: aliyemfanya–kazi
+
+### Sense 67210 (1 occurrences)
+Grammar: V-PPM-NFS
+  eng: being–effective
+  spa: que–obra
+  hin: प्रभावशाली
+  arb: الفَعّالَةُ
+  kor: 역사하는.
+  swa: inayofanya–kazi
+
+## Task
+
+Group these 12 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

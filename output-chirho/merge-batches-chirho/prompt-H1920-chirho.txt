@@ -1,0 +1,118 @@
+# Sense Merge Task for H1920
+
+Lemma: H1920 (POS: V-Qal-Imperf-3mp | 3ms)
+Total occurrences: 11
+Current sense count: 10
+
+This Hebrew/Greek lemma has been over-split into 10 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 92499 (2 occurrences)
+Grammar: V-Qal-Imperf-3ms | 3mse,V-Qal-Perf-3ms | 3ms
+  eng: he-pushed-him
+  spa: lo–empujó, lo–empuja
+  hin: धकेला–उसे
+  arb: دَفَعَهُ
+  kor: 밀친다–그를
+  swa: alimsukuma
+
+### Sense 92500 (1 occurrences)
+Grammar: V-Qal-Perf-3ms | 3ms
+  eng: thrust–him–down
+  spa: lo–empujó
+  hin: धकेला–उसको
+  arb: دَفَعَهُ
+  kor: 밀어냈다–그를
+  swa: aliwasukuma
+
+### Sense 92501 (1 occurrences)
+Grammar: Prep-l | V-Qal-Inf | 3fs
+  eng: to–push–her-away
+  spa: para-empujarla
+  hin: धकेलने–को–उसे
+  arb: لِيَدْفَعَهَا
+  kor: 밀치기–위해–그녀–를
+  swa: kumsukuma
+
+### Sense 92502 (1 occurrences)
+Grammar: Prep-b | V-Qal-Inf
+  eng: when–drives–out
+  spa: cuando–expulse
+  hin: जब–धकेलता
+  arb: عِنْدَ–طَرْدِ
+  kor: 쫓아내실–때에
+  swa: atakapowasukuma
+
+### Sense 92503 (1 occurrences)
+Grammar: V-Qal-Imperf-3ms
+  eng: He–thrusts–away
+  spa: rechaza
+  hin: वह–ठुकराएगा
+  arb: يَدْفَعُ
+  kor: 물리친다
+  swa: anaisukuma–mbali
+
+### Sense 92504 (1 occurrences)
+Grammar: Prep-l | V-Qal-Inf
+  eng: to–drive–out
+  spa: para–expulsar
+  hin: धकेलने–के–लिए
+  arb: لِيَطْرُدَ
+  kor: 쫓아내기–위해
+  swa: kuwafukuza
+
+### Sense 92505 (1 occurrences)
+Grammar: V-Qal-Imperf-3ms | 3mp
+  eng: will–thrust–them–out
+  spa: los–empujará
+  hin: धकेलेगा–उन्हें
+  arb: يَدْفَعُهُمْ
+  kor: 밀어내시리라–그들을
+  swa: atawasukuma
+
+### Sense 92506 (1 occurrences)
+Grammar: Conj-w | V-Qal-ConjPerf-1cs | 
+  eng: and–I-will-thrust–you
+  spa: Y–te–echaré
+  hin: और–धकेलूँगा–तुझे
+  arb: فَأَدْفَعُكَ
+  kor: 그리고–밀어내리라
+  swa: Na–nitakusukuma
+
+### Sense 92507 (1 occurrences)
+Grammar: V-Qal-Imperf-2mp
+  eng: you-push
+  spa: empujáis,
+  hin: और–में–कंधे
+  arb: تَدْفَعُونَ
+  kor: 너희가–밀치고
+  swa: mnasukuma
+
+### Sense 92508 (1 occurrences)
+Grammar: V-Qal-Imperf-3mp | 3ms
+  eng: they–drive–him
+  spa: Lo–empujan
+  hin: वे–उसे–धकेलेंगे
+  arb: يُدْفَعُونَهُ
+  kor: ꬼ리라
+  swa: watamdukiza
+
+## Task
+
+Group these 10 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

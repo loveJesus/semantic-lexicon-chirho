@@ -1,0 +1,118 @@
+# Sense Merge Task for H7970
+
+Lemma: H7970 (POS: Prep-k | Number-cp)
+Total occurrences: 174
+Current sense count: 10
+
+This Hebrew/Greek lemma has been over-split into 10 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 140831 (154 occurrences)
+Grammar: Number-cp,Conj-w | Number-cp
+  eng: thirty, and–thirty, thirty–of
+  spa: treinta, y–treinta, y–treinta.
+  hin: तीस, और–तीस, तिस
+  arb: ثَلَاثِينَ, ثَلَاثُونَ, وَ–ثَلَاثِينَ
+  kor: 삼십, 그리고–삼십, 서른
+  swa: thelathini, na–thelathini, miaka–thelathini
+
+### Sense 140833 (6 occurrences)
+Grammar: Art | Number-cp
+  eng: the–thirty
+  spa: los–treinta
+  hin: तीसों, –के–तीस, तीस
+  arb: الثَّلَاثِينَ, الثَّلَاثِينَ, الثَّلاثِينَ
+  kor: 그–서른–의, 그–삼십, 그–서른
+  swa: thelathini
+
+### Sense 140834 (4 occurrences)
+Grammar: Prep-k | Number-cp
+  eng: about–thirty
+  spa: como–treinta
+  hin: तीस, छत्तीस, करीब
+  arb: نَحْوَ–ثَلَاثِينَ, نَحوَ–ثَلاثينَ
+  kor: 약–삼십, 삼십–쯤
+  swa: karibu–thelathini, kama–thelathini
+
+### Sense 140835 (2 occurrences)
+Grammar: Prep-b | Number-cp
+  eng: in–thirty, in–thirtieth
+  spa: en–treinta
+  hin: में–तीसवें, ब–तीस
+  arb: فِي–ثَلَاثِينَ, في–الثَّلاثينَ
+  kor: 에서–서른일곱, 서른째
+  swa: katika–thelathini, katika–miaka–thelathini–
+
+### Sense 140836 (2 occurrences)
+Grammar: Prep, Art | Number-cp,Prep-b, Art | Number-cp
+  eng: among–the–thirty
+  spa: entre–los–treinta
+  hin: तीस–में, तीसों–में
+  arb: فِي–الثَّلَاثِينَ, فِي–الثَّلاثِينَ
+  kor: 에–그–서른, 에–그–삼십
+  swa: miongoni–mwa–thelathini, katika–thelathini
+
+### Sense 140837 (2 occurrences)
+Grammar: Art | Number-cp
+  eng: [the–thirty]
+  spa: [los–treinta]
+  hin: [तीसों–का], [तीसों]
+  arb: [الثَّلَاثِينَ]
+  kor: [삼십], (크티브)
+  swa: [wa–thelathini]
+
+### Sense 140838 (1 occurrences)
+Grammar: Prep-m, Art | Number-cp
+  eng: of–the–thirty
+  spa: de–los–treinta
+  hin: तीस–में–से
+  arb: مِنَ–الثَّلاثِينَ
+  kor: –에서–그–서른
+  swa: kutoka–miongoni–mwa–thelathini
+
+### Sense 140839 (1 occurrences)
+Grammar: Prep-b | Number-cp
+  eng: in–the–thirty
+  spa: en–treinta
+  hin: में–तीस
+  arb: فِي–السَّابِعَةِ
+  kor: 에–서른일곱–
+  swa: katika–mwaka–wa–thelathini
+
+### Sense 140840 (1 occurrences)
+Grammar: Number-cp
+  eng: [k]
+  spa: [treinta]
+  hin: तीन
+  arb: ثَلاثَةٌ
+  kor: [셋이]
+  swa: watatu
+
+### Sense 140841 (1 occurrences)
+Grammar: Number-cp
+  eng: thirty–
+  spa: treinta
+  hin: तीस–
+  arb: ثَلاثونَ
+  kor: 서른–둘
+  swa: thelathini–
+
+## Task
+
+Group these 10 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

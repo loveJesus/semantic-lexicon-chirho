@@ -1,0 +1,126 @@
+# Sense Merge Task for H3018
+
+Lemma: H3018 (POS: N-msc | 2fs)
+Total occurrences: 16
+Current sense count: 11
+
+This Hebrew/Greek lemma has been over-split into 11 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 100719 (6 occurrences)
+Grammar: N-msc
+  eng: labor-of, the–labor–of, the–labor
+  spa: trabajo–de, la–labor–de, el–trabajo–de
+  hin: परिश्रम, परिश्रम–को
+  arb: تَعَبَ, تَعَبِ, تَعَبُ
+  kor: 수고를, 수고–를, 수고가
+  swa: kazi–ya, kazi
+
+### Sense 100720 (1 occurrences)
+Grammar: N-msc | 3fs
+  eng: produce–her
+  spa: ganancia–de–ella
+  hin: परिश्रम–उसके
+  arb: تَعَبِهَا
+  kor: 그것의–수고를
+  swa: kazi–yake
+
+### Sense 100721 (1 occurrences)
+Grammar: N-msc | 2ms
+  eng: your–labor
+  spa: tu–labor
+  hin: तेरी–मेहनत
+  arb: تَعَبَكَ؟
+  kor: 네–수고를
+  swa: kazi–yako
+
+### Sense 100722 (1 occurrences)
+Grammar: Conj-w, Prep-m | N-msc | 3ms
+  eng: and–from–labor-his
+  spa: y–de–su–trabajo
+  arb: وَ–مِنْ–تَعَبِهِ
+  kor: 그리고–그의–수고–에서
+  swa: na–kutoka–jasho–lake
+
+### Sense 100723 (1 occurrences)
+Grammar: N-msc | 3fs
+  eng: her–labor
+  spa: su–labor
+  hin: उसकी–मेहनत
+  arb: تَعَبُهَا
+  kor: 그것–의–수고가
+  swa: kazi–yake
+
+### Sense 100724 (1 occurrences)
+Grammar: Conj-w | N-msc | 2mp
+  eng: and–your–labor
+  spa: ¿y–vuestro–trabajo
+  hin: और–तुम्हारी–मेहनत
+  arb: وَ–تَعَبَكُمْ
+  kor: 그리고–너희의–수고를
+  swa: na–kazi–yenu
+
+### Sense 100725 (1 occurrences)
+Grammar: N-mpc | 1cs
+  eng: my–labors
+  spa: mis–trabajos
+  hin: मेरी–मेहनत
+  arb: تَعَبي
+  kor: 나의–수고들이
+  swa: yangu–yote
+
+### Sense 100726 (1 occurrences)
+Grammar: Conj-w | N-msc | 3mp
+  eng: and–their–labor
+  spa: y–trabajo-de-ellos
+  hin: और–उनकी–मेहनत
+  arb: وَتَعَبَهُمْ
+  kor: 그들–의–수고–를
+  swa: na–kazi–yao
+
+### Sense 100727 (1 occurrences)
+Grammar: N-msc | 3ms
+  eng: his–labor
+  spa: su–trabajo
+  hin: उसकी–कमाई
+  arb: تَعَبَهُ
+  kor: 그–의–수고–를
+  swa: kazi–yake
+
+### Sense 100728 (1 occurrences)
+Grammar: N-msc | 2ms
+  eng: your-labor
+  spa: tu–trabajo
+  hin: परिश्रम–तेरा
+  arb: تَعَبِكَ
+  kor: 네–수고를
+  swa: ya–kazi–yako
+
+### Sense 100729 (1 occurrences)
+Grammar: N-msc | 2fs
+  eng: your-labor
+  spa: labor–de–ti
+  hin: तेरी–मेहनत
+  arb: تَعَبِكِ
+  kor: 네–수고를
+  swa: kazi–yako
+
+## Task
+
+Group these 11 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

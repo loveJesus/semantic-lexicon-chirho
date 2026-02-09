@@ -1,0 +1,118 @@
+# Sense Merge Task for G5530
+
+Lemma: G5530 (POS: V-PPM/P-NMP)
+Total occurrences: 11
+Current sense count: 10
+
+This Hebrew/Greek lemma has been over-split into 10 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 79040 (2 occurrences)
+Grammar: V-RIM/P-1S,V-AIM-1S
+  eng: have-used, did–I–use
+  spa: usé, he–usado
+  hin: काम–लिया–मैंने, उपयोग–किया–है
+  arb: اسْتَخْدَمْتُ, استَعمَلتُ
+  kor: 사용했다, 사용하였느냐
+  swa: sijatumia, nilitumia?
+
+### Sense 79041 (1 occurrences)
+Grammar: V-PIM/P-1P
+  eng: we–use
+  spa: usamos
+  hin: काम–लेते–हैं–हम
+  arb: نَستَعمِلُ
+  kor: 사용한다
+  swa: tunatumia,
+
+### Sense 79042 (1 occurrences)
+Grammar: V-IIM/P-3P
+  eng: they–were–using
+  spa: usaban
+  hin: उपयोगकरतेथे
+  arb: اسْتَعْمَلُوا
+  kor: 사용하였다
+  swa: walitumia
+
+### Sense 79043 (1 occurrences)
+Grammar: V-AIM-1P
+  eng: did-we-use
+  spa: usamos
+  hin: उपयोग–किया
+  arb: نَسْتَخْدِمْ
+  kor: 사용했다
+  swa: hatukuitumia
+
+### Sense 79044 (1 occurrences)
+Grammar: V-APM-NMS
+  eng: having–treated
+  spa: tratando
+  hin: व्यवहारकरके
+  arb: مُعَامِلًا
+  kor: 대하여
+  swa: akimtendea
+
+### Sense 79045 (1 occurrences)
+Grammar: V-PPM/P-NMP
+  eng: using
+  spa: usando
+  hin: उपयोग–करनेवाले
+  arb: المُسْتَخْدِمونَ
+  kor: 사용하는–자들은
+  swa: wanaotumia
+
+### Sense 79046 (1 occurrences)
+Grammar: V-ASM-1S
+  eng: I-might-use
+  spa: use
+  hin: मैं–व्यवहार–करूं
+  arb: أَسْتَعْمِلَ
+  kor: 사용하지–않게
+  swa: nitumie,
+
+### Sense 79047 (1 occurrences)
+Grammar: V-PSM/P-3S
+  eng: uses
+  spa: usa
+  hin: इस्तेमअल–करे
+  arb: يَسْتَعْمِلُ–هُ
+  kor: 사용하면,
+  swa: aitumie
+
+### Sense 79048 (1 occurrences)
+Grammar: V-PMM/P-2S
+  eng: use
+  spa: usa
+  hin: इस्तेमअल–कर
+  arb: اسْتَعْمِلْ
+  kor: 사용하라,
+  swa: tumia
+
+### Sense 79049 (1 occurrences)
+Grammar: V-AMM-2S
+  eng: make–use–of
+  spa: úsalo
+  hin: उपयोग–करो
+  arb: اسْتَخْدِمْ
+  kor: 사용하라
+  swa: itumie.
+
+## Task
+
+Group these 10 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

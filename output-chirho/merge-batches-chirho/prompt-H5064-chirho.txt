@@ -1,0 +1,118 @@
+# Sense Merge Task for H5064
+
+Lemma: H5064 (POS: V-Nifal-Perf-3fs)
+Total occurrences: 10
+Current sense count: 10
+
+This Hebrew/Greek lemma has been over-split into 10 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 116223 (1 occurrences)
+Grammar: V-Hofal-Prtcpl-mp
+  eng: poured–down
+  spa: derramadas
+  hin: बहाए–गए
+  arb: الْمُنْسَكِبَةِ
+  kor: 쏟아지는
+  swa: yanayomwagika
+
+### Sense 116224 (1 occurrences)
+Grammar: Conj-w | V-Hifil-ConjPerf-1cs
+  eng: and–I–will–pour–down
+  spa: y–derramaré
+  hin: और–मैं–गिराऊंगा
+  arb: وَ–أُسْقِطُ
+  kor: 그리고–굴려–내리겠다
+  swa: na–nitamwaga
+
+### Sense 116225 (1 occurrences)
+Grammar: V-Nifal-Perf-3fs
+  eng: pours–out
+  spa: se–derrama
+  hin: बहती–है
+  arb: انْسَكَبَتْ
+  kor: 흐르네
+  swa: linamwaga–machozi
+
+### Sense 116226 (1 occurrences)
+Grammar: V-Nifal-Prtcpl-fp
+  eng: poured–out
+  spa: derramamientos
+  hin: बहती–हुई
+  arb: مُنْسِكِبَةٌ
+  kor: 쏟아지리라
+  swa: yamemiminwa
+
+### Sense 116227 (1 occurrences)
+Grammar: V-Nifal-Perf-3fs
+  eng: was–stretched–out
+  spa: extendí
+  hin: निग्गेराह
+  arb: تَمَدَّدَتْ
+  kor: 흐르나이다
+  swa: uliinuliwa
+
+### Sense 116228 (1 occurrences)
+Grammar: Conj-w | V-Hifil-Imp-ms | 3mp
+  eng: and–pour–them–out
+  spa: y–entrégalos
+  hin: और–उंड़ेल–उन्हें
+  arb: وَ–ادْحَرِجْهُمْ
+  kor: 그리고–내주라–그들을
+  swa: na–uwamwage
+
+### Sense 116229 (1 occurrences)
+Grammar: Art | V-Nifal-Prtcpl-mp
+  eng: the–poured–out
+  spa: derramadas
+  hin: बहते–हुए
+  arb: المُنسَكِبَةِ
+  kor: 쏟아지는
+  swa: yanayomwagika
+
+### Sense 116230 (1 occurrences)
+Grammar: Conj-w | V-Hifil-ConsecImperf-
+  eng: and–He–pours–out
+  spa: y–derrama
+  hin: वय्यगेर
+  arb: وَ–يَسْكُبُ
+  kor: 붓으시다
+  swa: na–anaimwaga
+
+### Sense 116231 (1 occurrences)
+Grammar: V-Hifil-Imperf-3mp | 3ms
+  eng: they–will–pour–him–out
+  spa: Lo–derramarán
+  hin: वे–गिराए–जाएंगे
+  arb: يُسقَطونَهُ
+  kor: 쫓아내리이다
+  swa: Watatolewa
+
+### Sense 116232 (1 occurrences)
+Grammar: Conj-w | V-Hifil-ConsecImperf-
+  eng: and–you-gave-over
+  spa: y–derramaste
+  hin: और–तूने–बहाया
+  arb: وَأَسْلَمْتَ
+  kor: 그리고–네가–내버렸다
+  swa: na–ukawatoa
+
+## Task
+
+Group these 10 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

@@ -1,0 +1,118 @@
+# Sense Merge Task for G0618
+
+Lemma: G0618 (POS: V-PIA-1P)
+Total occurrences: 10
+Current sense count: 10
+
+This Hebrew/Greek lemma has been over-split into 10 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 62979 (1 occurrences)
+Grammar: V-AIA-2S
+  eng: you-received
+  spa: recibiste
+  hin: पाया–तूने
+  arb: نِلْتَ
+  kor: 받았다
+  swa: ulipokea
+
+### Sense 62980 (1 occurrences)
+Grammar: V-APM-NMS
+  eng: taking
+  spa: habiéndolo–tomado–aparte
+  hin: देखकर
+  arb: أَخَذَهُ
+  kor: 데리고서
+  swa: akimchukua
+
+### Sense 62981 (1 occurrences)
+Grammar: V-PPA-NMP
+  eng: receiving–back
+  spa: recibiendo
+  hin: पाते–हुए
+  arb: نائِلينَ
+  kor: 받았느니라
+  swa: wakipokea.
+
+### Sense 62982 (1 occurrences)
+Grammar: V-PIA-1P
+  eng: we-are-receiving
+  spa: recibimos
+  hin: पाते–हैं
+  arb: نَنالُ
+  kor: 받고–있다
+  swa: tunapokea
+
+### Sense 62983 (1 occurrences)
+Grammar: V-FIM-2P
+  eng: you–will–receive
+  spa: recibiréis
+  hin: तुम-पओगे
+  arb: سَتَنالونَ
+  kor: 너희가–받을–것이다
+  swa: mtapokea
+
+### Sense 62984 (1 occurrences)
+Grammar: V-ASA-2P
+  eng: you–receive
+  spa: recibáis
+  hin: तुम–पाओ।
+  arb: تَنالوا
+  kor: 너희–가–받도록
+  swa: mpokee
+
+### Sense 62985 (1 occurrences)
+Grammar: V-ASA-1P
+  eng: we-might-receive
+  spa: recibamos
+  hin: पअयेइन.
+  arb: نَنالَ
+  kor: 받도록.
+  swa: tuupokee
+
+### Sense 62986 (1 occurrences)
+Grammar: V-ASA-3S
+  eng: will-receive
+  spa: reciba
+  hin: पाएगा
+  arb: يَأخُذُ
+  kor: 받지
+  swa: atapokea
+
+### Sense 62987 (1 occurrences)
+Grammar: V-AIA-3S
+  eng: he-received-back
+  spa: recibió
+  hin: वापस–पाया।
+  arb: اِسْتَرَدَّهُ
+  kor: 도로–받았기–때문이다
+  swa: amemrudisha
+
+### Sense 62988 (1 occurrences)
+Grammar: V-ASA-3P
+  eng: they–might–receive–back
+  spa: reciban
+  hin: वापस–लें
+  arb: يَستَرِدّوا
+  kor: 돌려받도록
+  swa: wapokee
+
+## Task
+
+Group these 10 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

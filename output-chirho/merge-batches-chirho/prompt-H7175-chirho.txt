@@ -1,0 +1,118 @@
+# Sense Merge Task for H7175
+
+Lemma: H7175 (POS: N-mp)
+Total occurrences: 51
+Current sense count: 10
+
+This Hebrew/Greek lemma has been over-split into 10 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 133525 (16 occurrences)
+Grammar: Art | N-ms
+  eng: the–frame, the–board, the–frames
+  spa: el–tablón
+  hin: तख्ते–के, तख्ते–की, तख्तों–के
+  arb: اللَّوحِ, اللَّوحَ
+  kor: 그–널판, 그–널판의
+  swa: mbao, ubao, wa–ubao
+
+### Sense 133526 (10 occurrences)
+Grammar: N-ms,N-mp
+  eng: frames, boards
+  spa: tablones, tablón
+  hin: तख्ते, तख्ता
+  arb: لَوحاً, أَلواحٍ, لَوحَينِ
+  kor: 널판들을, 널판들, 널판
+  swa: mbao
+
+### Sense 133527 (9 occurrences)
+Grammar: Art | N-mp
+  eng: the–boards, the–frames
+  spa: los–tablones
+  hin: तख्ते, तख्तों, तख्तों–के
+  arb: الأَلواحَ, الأَلواحِ
+  kor: 그–널판들을, 그–널판들, 그–널판들의
+  swa: mbao
+
+### Sense 133528 (6 occurrences)
+Grammar: Prep-l | N-mpc
+  eng: for–frames-of, for–boards–of
+  spa: para–tablones–de
+  hin: तख्तों–के–लिए
+  arb: لِ–أَلواحِ, لِأَلواحِ
+  kor: 에–널판들의, 널판들을–위한
+  swa: kwa–mbao–za–, kwa–mbao
+
+### Sense 133529 (3 occurrences)
+Grammar: N-mpc | 3ms
+  eng: its–boards
+  spa: sus–tablones, sus–tablas
+  hin: उसके–तख्ते
+  arb: أَلْوَاحَهُ, أَلواحَهُ
+  kor: 그것의–널판들을, 그것의–널판들과, 그것의–널판들
+  swa: mbao–zake
+
+### Sense 133530 (2 occurrences)
+Grammar: N-mpc
+  eng: frames-of, boards–of
+  spa: tablones–de
+  hin: तख्तों–के, तख्तों
+  arb: أَلواحِ
+  kor: 널판들의, 널판들
+  swa: mbao–za–, mbao
+
+### Sense 133531 (2 occurrences)
+Grammar: N-mpc
+  eng: frames-of
+  spa: tablas-de
+  hin: तख्ते
+  arb: أَلْوَاحُ
+  kor: 널판들, 널빽지들–의
+  swa: mbao-za, mbao
+
+### Sense 133532 (1 occurrences)
+Grammar: Prep-l, Art | N-ms
+  eng: for–the–frame
+  spa: para–el–tablón
+  hin: तख्ते–के–लिए
+  arb: لِ–اللَّوحِ
+  kor: 에–그–널판
+  swa: kwa–mbao
+
+### Sense 133533 (1 occurrences)
+Grammar: Prep-l, Art | N-ms
+  eng: for–the–board
+  spa: para–el–tablón
+  hin: तख्ते–को
+  arb: لِلـ–لَوحِ
+  kor: 널판에게
+  swa: kwa–ubao
+
+### Sense 133534 (1 occurrences)
+Grammar: N-msc | 2fs
+  eng: your-deck
+  spa: tu–cubierta
+  hin: डेक–तेरी
+  arb: سَطْحَكِ
+  kor: 껑을–너의
+  swa: staha–yako
+
+## Task
+
+Group these 10 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

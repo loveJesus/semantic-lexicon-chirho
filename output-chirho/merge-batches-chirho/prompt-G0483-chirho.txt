@@ -1,0 +1,126 @@
+# Sense Merge Task for G0483
+
+Lemma: G0483 (POS: V-PPA-AMS)
+Total occurrences: 11
+Current sense count: 11
+
+This Hebrew/Greek lemma has been over-split into 11 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 62544 (1 occurrences)
+Grammar: V-PPA-AMP
+  eng: talking–back
+  spa: contradecir
+  hin: विरोध–करनेवले;
+  arb: مُعارِضينَ
+  kor: 대꾼하는–자들
+  swa: pinge
+
+### Sense 62545 (1 occurrences)
+Grammar: V-PPA-NMP
+  eng: denying
+  spa: negando
+  hin: कहने–वाले
+  arb: المُنكِرونَ
+  kor: 반박하는
+  swa: wanaopinga
+
+### Sense 62546 (1 occurrences)
+Grammar: V-ANA
+  eng: to-contradict
+  spa: contradecir
+  hin: खण्डन–करना
+  arb: يُناقِضوا
+  kor: 반박하기를
+  swa: kukataa
+
+### Sense 62547 (1 occurrences)
+Grammar: V-PIA-3S
+  eng: speaks–against
+  spa: contradice
+  hin: विरोध–करता–है
+  arb: يُعَارِضُ
+  kor: 반대한다
+  swa: anapinga
+
+### Sense 62548 (1 occurrences)
+Grammar: V-IIA-3P
+  eng: were–contradicting
+  spa: contradecían
+  hin: विरोध–करते–थे
+  arb: قاوَموا
+  kor: 반박했다
+  swa: walipinga
+
+### Sense 62549 (1 occurrences)
+Grammar: V-PIM/P-3S
+  eng: it–is–spoken–against
+  spa: es-contradicha
+  hin: विरोध–की–जाती–है।
+  arb: يُعارَضُ
+  kor: 반대받는다
+  swa: yanapingwa
+
+### Sense 62550 (1 occurrences)
+Grammar: V-PPM/P-ANS
+  eng: being–opposed
+  spa: contradicha
+  hin: विरोध–किए–जानेवाले
+  arb: يُقَاوَمُ
+  kor: 반박받는
+  swa: itakayokanushwa
+
+### Sense 62551 (1 occurrences)
+Grammar: V-PPA-GMP
+  eng: objecting
+  spa: oponiéndose
+  hin: विरोध–करनेपर
+  arb: عارَضَ
+  kor: 반대하니
+  swa: walipopinga
+
+### Sense 62552 (1 occurrences)
+Grammar: V-PPA-AMS
+  eng: speaking-against
+  spa: que-contradice
+  hin: विरोधी
+  arb: مُعَانِدٍ
+  kor: 반박하는
+  swa: wanaopinga.
+
+### Sense 62553 (1 occurrences)
+Grammar: V-ANA
+  eng: to–say–against
+  spa: contradecir
+  arb: أَنْ–يُعَارِضُوا
+  kor: 가졌으니
+  swa: kupinga
+
+### Sense 62554 (1 occurrences)
+Grammar: V-PPA-AMP
+  eng: contradicting
+  spa: que–contradicen
+  hin: विरोध–करनेवअलोन
+  arb: المُعانِدينَ
+  kor: 반대하는–자들–을
+  swa: wanaopinga
+
+## Task
+
+Group these 11 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

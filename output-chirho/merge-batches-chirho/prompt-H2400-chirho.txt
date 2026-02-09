@@ -1,0 +1,136 @@
+# Sense Merge Task for H2400
+
+Lemma: H2400 (POS: Conj-w | Adj-mp)
+Total occurrences: 19
+Current sense count: 12
+
+This Hebrew/Greek lemma has been over-split into 12 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 96328 (4 occurrences)
+Grammar: Adj-mp
+  eng: sinners
+  spa: pecadores
+  hin: पापी
+  arb: الْخُطَاةُ, خَاطِئِينَ, الخُطاةُ
+  kor: 죄인–들–이, 죄인들이, 죄인들의
+  swa: wenye–dhambi
+
+### Sense 96329 (2 occurrences)
+Grammar: Art | Adj-mp
+  eng: the–sinners
+  spa: los–pecadores
+  hin: पापियों–की, पअपियोन
+  arb: الْخَاطِئِينَ, الخُطَاةِ
+  kor: 죄인들, 그–죄인들을
+  swa: wenye–dhambi, vya–wenye–dhambi
+
+### Sense 96330 (2 occurrences)
+Grammar: Adj-mp
+  eng: sinners
+  spa: a–pecadores, Pecadores
+  hin: पापियों–को
+  arb: خُطاةً, الْخُطَاةَ
+  kor: 죄인들–을, 죄인–들–을
+  swa: wenye–dhambi
+
+### Sense 96331 (2 occurrences)
+Grammar: Adj-mp
+  eng: sinners
+  spa: pecadores
+  hin: पापियों–के, पापियों
+  arb: الْخُطَاةِ, الخُطَاةِ
+  kor: 죄인들–과, 죄인들
+  swa: wenye-dhambi, hasimami
+
+### Sense 96332 (2 occurrences)
+Grammar: Conj-w | Adj-mp
+  eng: and–sinners
+  spa: y–pecadores, ni–pecadores
+  hin: न–पापी, और–पापी
+  arb: وَ–الخُطَاةُ
+  kor: 그리고–죄인들–은, 그리고–죄인–들–이
+  swa: na–wenye-dhambi, kwa–maana
+
+### Sense 96333 (1 occurrences)
+Grammar: Conj-w | Adj-mp
+  eng: and–sinners
+  spa: y–pecadores
+  hin: और–पपि
+  arb: وَ–خُطَاةٌ
+  kor: 그리고–죄인들이었다
+  swa: na–wenye–dhambi
+
+### Sense 96334 (1 occurrences)
+Grammar: Conj-w | Adj-mp
+  eng: and–sinners
+  spa: y–pecadores
+  hin: और–पापियों–का
+  arb: وَ–الخُطَاةِ
+  kor: 죄인들에게
+  swa: na–wenye–dhambi
+
+### Sense 96335 (1 occurrences)
+Grammar: Conj-w | Adj-mpc | 3fs
+  eng: and–its–sinners
+  spa: y–sus–pecadores
+  hin: और–उसके–पापियों–को
+  arb: وَ–خُطَايَاهَا
+  kor: 그녀의–죄인들을
+  swa: na–wenye–dhambi–wake
+
+### Sense 96336 (1 occurrences)
+Grammar: Adj-mpc
+  eng: the–sinners-of–
+  spa: los–pecadores–de
+  hin: पापी
+  arb: خُطَاةِ
+  kor: 죄인들이
+  swa: wenye–dhambi
+
+### Sense 96337 (1 occurrences)
+Grammar: Art | Adj-fs
+  eng: the–sinful
+  spa: pecador
+  hin: पापी
+  arb: الْخَاطِئَةِ
+  kor: 그–죄지은
+  swa: wenye–dhambi
+
+### Sense 96338 (1 occurrences)
+Grammar: Prep-b, Art | Adj-mp
+  eng: sinners
+  spa: de–los–pecadores
+  hin: पापियों–से
+  arb: الْخاطِئِينَ
+  kor: 죄인들–을
+  swa: wenye–dhambi
+
+### Sense 96339 (1 occurrences)
+Grammar: Adj-mp
+  eng: offenders
+  spa: pecadores
+  hin: पापी
+  arb: خَاطِئِينَ
+  kor: 죄인들이
+  swa: wakosaji
+
+## Task
+
+Group these 12 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

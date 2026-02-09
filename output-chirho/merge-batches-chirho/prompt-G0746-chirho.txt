@@ -1,0 +1,136 @@
+# Sense Merge Task for G0746
+
+Lemma: G0746 (POS: N-DFS)
+Total occurrences: 57
+Current sense count: 12
+
+This Hebrew/Greek lemma has been over-split into 12 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 63394 (41 occurrences)
+Grammar: N-GFS,N-NFS,N-DFS,N-AFS,N-AFP
+  eng: beginning, the-beginning
+  spa: principio, el-principio, –principio
+  hin: आरम्भ, आरंभ, आदि
+  arb: البَدءِ, بَدْءِ, البِدايَةُ
+  kor: 처음, 처음부터, 시작
+  swa: mwanzo, {mwanzo, wa–uchungu
+
+### Sense 63395 (4 occurrences)
+Grammar: N-DFP,N-AFP,N-NFP
+  eng: rulers
+  spa: principados
+  hin: शअसकोन
+  arb: الرِئاساتِ, رِياساتٌ, الرِّياساتِ
+  kor: 통치들에게, 통치들과, 통치들
+  swa: falme
+
+### Sense 63396 (2 occurrences)
+Grammar: N-AFS,N-GFS
+  eng: rule
+  spa: principado
+  hin: शअसकोन, प्रधानता
+  arb: رِئاسَةٍ
+  kor: 통치와,, 통치와
+  swa: wote, utawala
+
+### Sense 63397 (2 occurrences)
+Grammar: N-DFP
+  eng: corners
+  spa: extremos
+  hin: कोनों–से
+  arb: زَوَايَا
+  kor: 모퉁이로, 끝들–로
+  swa: nne
+
+### Sense 63398 (1 occurrences)
+Grammar: N-AFS
+  eng: domain
+  spa: principado
+  hin: आरम्भ–को
+  arb: رئاسة
+  kor: 처음–지위를
+  swa: mamlaka
+
+### Sense 63399 (1 occurrences)
+Grammar: N-DFS
+  eng: beginning
+  spa: el–principio
+  hin: आरम्भ
+  arb: ٱلْبَدْءِ
+  kor: 처음에
+  swa: mwanzo.
+
+### Sense 63400 (1 occurrences)
+Grammar: N-AFP
+  eng: rulers
+  spa: gobernantes
+  hin: शासकों
+  arb: رِئَاسَاتِ
+  kor: 관리들에게
+  swa: watawala
+
+### Sense 63401 (1 occurrences)
+Grammar: N-DFP
+  eng: to–rulers
+  spa: a–gobernantes
+  hin: शशकोन,
+  arb: لِلرِّياساتِ
+  kor: 통치자들–에게
+  swa: watawala
+
+### Sense 63402 (1 occurrences)
+Grammar: N-NFS
+  eng: Beginning
+  spa: Principio
+  hin: आरम्भ
+  arb: بَدْءُ
+  kor: 시작
+  swa: Mwanzo
+
+### Sense 63403 (1 occurrences)
+Grammar: N-NFP
+  eng: rulers
+  spa: principados
+  hin: प्रधानताएं
+  arb: رِئَاسَاتٌ
+  kor: 권세들도
+  swa: watawala
+
+### Sense 63404 (1 occurrences)
+Grammar: N-GFS
+  eng: rule
+  spa: principado
+  hin: शअसकोन
+  arb: رِياسَةٍ
+  kor: 통치와
+  swa: uongozi
+
+### Sense 63405 (1 occurrences)
+Grammar: N-DFS
+  eng: rule
+  spa: autoridad
+  hin: सरकार
+  arb: –السُّلطَةِ
+  kor: 지배와
+  swa: utawala
+
+## Task
+
+Group these 12 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

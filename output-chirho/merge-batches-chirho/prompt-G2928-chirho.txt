@@ -1,0 +1,163 @@
+# Sense Merge Task for G2928
+
+Lemma: G2928 (POS: V-RPM/P-NMS)
+Total occurrences: 19
+Current sense count: 15
+
+This Hebrew/Greek lemma has been over-split into 15 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 71204 (3 occurrences)
+Grammar: V-AIA-3S
+  eng: hid
+  spa: escondió
+  hin: छिपाया, छिपअयअ
+  arb: أَخْفَى, أَخْفَتْهَا, أَخفَاهُ
+  kor: 감추었다, 숨겼다
+  swa: alificha
+
+### Sense 71205 (2 occurrences)
+Grammar: V-AIP-3S
+  eng: was–hidden
+  spa: se-escondió
+  hin: छिप–गया
+  arb: اِختَبَأَ, اخْتَفَى
+  kor: 숨으셨다, 숨었다
+  swa: alijificha, akajificha
+
+### Sense 71206 (2 occurrences)
+Grammar: V-ANP
+  eng: to–be–hidden
+  spa: esconderse
+  hin: छुपे–नहिन-रेह-सक्ते, छुपाया–जाना
+  arb: تُخْفى, أَنْ–تَخْتَفِيَ
+  kor: 숨겨질, 숨겨지기를
+  swa: kufichwa
+
+### Sense 71207 (1 occurrences)
+Grammar: V-AIP-3S
+  eng: was-hidden
+  spa: fue-escondido
+  hin: छिपाया–गया
+  arb: أُخْفِيَ
+  kor: 숨겨졌으니
+  swa: alifichwa
+
+### Sense 71208 (1 occurrences)
+Grammar: V-AIA-2S
+  eng: you–hid
+  spa: escondiste
+  hin: छिपअय
+  arb: أَخفَيتَ
+  kor: 감추셨으니
+  swa: ulificha
+
+### Sense 71209 (1 occurrences)
+Grammar: V-RPM/P-NNS
+  eng: hidden
+  spa: escondida
+  hin: छिपा–हुआ
+  arb: مَخفِيًّا
+  kor: 감춰져–있었다
+  swa: limefichwa
+
+### Sense 71210 (1 occurrences)
+Grammar: V-RPM/P-GNS
+  eng: having–been–hidden
+  spa: escondido
+  hin: गुप्त–में–से;
+  arb: المَخْفيِّ
+  kor: 감춰진
+  swa: iliyofichwa;
+
+### Sense 71211 (1 occurrences)
+Grammar: V-AIA-1S
+  eng: I–hid
+  spa: escondí
+  hin: छिपाया
+  arb: أَخْفَيْتُ
+  kor: 숨겼습니다
+  swa: niliificha
+
+### Sense 71212 (1 occurrences)
+Grammar: V-AMA-2P
+  eng: hide
+  spa: escondednos
+  hin: छिपाओ
+  arb: أخفينا
+  kor: 숨겨라
+  swa: mtufiche
+
+### Sense 71213 (1 occurrences)
+Grammar: V-RPM/P-ANP
+  eng: things–hidden
+  spa: cosas-escondidas
+  hin: छिपेए–हुइ
+  arb: مَخفِيَّاتٍ
+  kor: 감추어진–것들을
+  swa: yaliyofichwa
+
+### Sense 71214 (1 occurrences)
+Grammar: V-RPM/P-DMS
+  eng: having–been–hidden
+  spa: escondido
+  hin: छिपे–हुए
+  arb: مَخفِيٍّ
+  kor: 감추어진
+  swa: iliyofichwa
+
+### Sense 71215 (1 occurrences)
+Grammar: V-RIM/P-3S
+  eng: has–been–hidden
+  spa: está–escondida
+  hin: छिप-है
+  arb: مُخفاةٌ
+  kor: 감추어져–있다
+  swa: umefichwa
+
+### Sense 71216 (1 occurrences)
+Grammar: V-AIA-3P
+  eng: hid
+  spa: escondieron
+  hin: छिप–गए
+  arb: اختَبأوا
+  kor: 숨겼다
+  swa: wakajificha
+
+### Sense 71217 (1 occurrences)
+Grammar: V-RPM/P-NMS
+  eng: having–been–hidden
+  spa: escondido
+  hin: छिपा–हुआ
+  arb: مُخْتَفِيًا
+  kor: 숨겨진
+  swa: aliyejificha
+
+### Sense 71218 (1 occurrences)
+Grammar: V-AIP-3S
+  eng: it-was-hidden
+  spa: fue-escondido
+  hin: छिपी–है
+  arb: اُخفيَ
+  kor: 감춰졌다
+  swa: yamefichwa
+
+## Task
+
+Group these 15 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

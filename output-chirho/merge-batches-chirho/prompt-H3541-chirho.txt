@@ -1,0 +1,118 @@
+# Sense Merge Task for H3541
+
+Lemma: H3541 (POS: Prep-b | Adv)
+Total occurrences: 577
+Current sense count: 10
+
+This Hebrew/Greek lemma has been over-split into 10 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 105461 (546 occurrences)
+Grammar: Adv,Prep-b | Adv
+  eng: thus, thus–, Thus
+  spa: así, Así, así–
+  hin: इस–प्रकार, यों, ऐसा
+  arb: هٰكَذَا, هَكَذَا, هٰكَذَا–
+  kor: 이같이, 이같이–, 이와–같이
+  swa: hivyo, Hivyo, hivi
+
+### Sense 105464 (19 occurrences)
+Grammar: Conj-w | Adv
+  eng: and–thus
+  spa: y–así
+  hin: और–ऐसा, और–ऐसे, वकोह
+  arb: وَ–هَكَذَا, وَ–هٰكَذَا, وَ–هٰكَذا
+  kor: 그리고–이와–같이, 그리고–이같이, 그리고–이렇게
+  swa: na–hivyo, na–hivi, bali–hivi
+
+### Sense 105465 (4 occurrences)
+Grammar: Adv
+  eng: here
+  spa: aquí
+  hin: यहाँ, इधर
+  arb: هُنا, هٰكَذَا, هُنَا
+  kor: 여기에, 이와–같이, 이리저리
+  swa: hapa, huku
+
+### Sense 105466 (2 occurrences)
+Grammar: Adv
+  eng: there, over–there
+  spa: allá
+  hin: वहाँ
+  arb: هُنَاكَ
+  kor: 여기서, 거기
+  swa: pale, huko
+
+### Sense 105467 (1 occurrences)
+Grammar: Adv
+  eng: now
+  spa: ahora
+  hin: यहाँ
+  arb: الآنَ
+  kor: 지금
+  swa: sasa
+
+### Sense 105468 (1 occurrences)
+Grammar: Adv
+  eng: Thus
+  spa: Así
+  hin: ऐसे
+  arb: هَكَذَا
+  kor: 이렇게
+  swa: hivyo
+
+### Sense 105469 (1 occurrences)
+Grammar: Adv
+  eng: thus–
+  spa: así
+  hin: ऐसा
+  arb: كذا
+  kor: 이같이
+  swa: hivyo
+
+### Sense 105470 (1 occurrences)
+Grammar: Adv
+  eng: (thus)
+  spa: (así)
+  hin: ऐसे
+  arb: (هٰكَذا)
+  kor: 이렇게
+  swa: hivyo
+
+### Sense 105471 (1 occurrences)
+Grammar: Conj-w | Adv
+  eng: and–there
+  spa: y–allí
+  hin: और–उधर
+  arb: وَ–هُنَاكَ
+  kor: 그리고–보았다
+  swa: na–huku
+
+### Sense 105472 (1 occurrences)
+Grammar: Conj-w | Adv
+  eng: and–thus–
+  spa: Y–así–
+  hin: और–इस–प्रकार–
+  arb: وَ–هَكَذَا־
+  kor: 그리고–이같이
+  swa: na–hivyo–
+
+## Task
+
+Group these 10 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

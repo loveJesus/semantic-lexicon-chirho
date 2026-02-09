@@ -1,0 +1,117 @@
+# Sense Merge Task for H4417
+
+Lemma: H4417 (POS: N-proper-fs)
+Total occurrences: 29
+Current sense count: 10
+
+This Hebrew/Greek lemma has been over-split into 10 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 111902 (11 occurrences)
+Grammar: N-ms,N-msc
+  eng: salt, salt-of
+  spa: sal, sal-de
+  hin: नमक, नमक–की, नमक–का
+  arb: مِلْحٍ, مِلْحًا, مِلْحَ
+  kor: 소금, 소금–의, 소금의
+  swa: chumvi, la–chumvi
+
+### Sense 111903 (8 occurrences)
+Grammar: Art | N-ms
+  eng: the–Salt
+  spa: la–sal, el–Salado, la–Sal
+  hin: नमक, खारे–के, –अराबा–के
+  arb: الْ–مِلْحِ, الْمَلحِ, الْمِلْحِ
+  kor: 그–소금의
+  swa: ya–chumvi, ha–Chumvi, Chumvi
+
+### Sense 111904 (2 occurrences)
+Grammar: N-ms
+  eng: the–Salt
+  spa: la–sal, la–Sal
+  hin: नमक–की
+  arb: الْمِلْحِ
+  kor: 그–소금의, 그–소금
+  swa: la–chumvi, Chumvi
+
+### Sense 111905 (2 occurrences)
+Grammar: N-ms
+  eng: Salt
+  spa: Sal
+  hin: नमक–की
+  arb: المِلحِ
+  kor: 소금
+  swa: la–chumvi, Chumvi
+
+### Sense 111906 (1 occurrences)
+Grammar:  
+  eng: [the–Salt]
+  spa: [K]
+  hin: [हम्मेलख]
+  kor: [그–소금]
+  swa: [k]
+
+### Sense 111907 (1 occurrences)
+Grammar: Art | N-ms
+  eng: the–Salt
+  spa: la–sal
+  hin: नमक–क
+  arb: الْ–مِلْحِ
+  kor: 소금의
+  swa: Chumvi
+
+### Sense 111908 (1 occurrences)
+Grammar: Prep-b, Art | N-ms
+  eng: with–the–salt
+  spa: con–la–sal
+  hin: नमक–से
+  arb: بِ–المِلْحِ
+  kor: 그–소금–으로
+  swa: kwa–chumvi
+
+### Sense 111909 (1 occurrences)
+Grammar: Prep-l | N-ms
+  eng: for–salt
+  spa: para–sal
+  hin: को–नमक
+  arb: لِ–مِلْحٍ
+  kor: 에게–소금의
+  swa: kwa–chumvi
+
+### Sense 111910 (1 occurrences)
+Grammar: Conj-w | N-ms
+  eng: and–salt
+  spa: y–sal
+  hin: और–नमक
+  arb: وَمِلْحًا
+  kor: 그리고–소금
+  swa: na–chumvi
+
+### Sense 111911 (1 occurrences)
+Grammar: N-proper-fs
+  eng: (Salt)
+  spa: Sal
+  hin: (नमक–की)
+  arb: ٱلْمِلْحِ
+  kor: 소금
+  swa: (chumvi)
+
+## Task
+
+Group these 10 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

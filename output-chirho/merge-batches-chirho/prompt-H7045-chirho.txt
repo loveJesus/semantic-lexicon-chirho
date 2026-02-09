@@ -1,0 +1,118 @@
+# Sense Merge Task for H7045
+
+Lemma: H7045 (POS: N-fsc)
+Total occurrences: 33
+Current sense count: 10
+
+This Hebrew/Greek lemma has been over-split into 10 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 132322 (7 occurrences)
+Grammar: N-fs
+  eng: a–curse, with–cursing, cursing
+  spa: maldición
+  hin: शाप, शाप–से
+  arb: لَعْنَةً, اللَّعنَة, لَعْنَةٌ
+  kor: 저주로, 저주가, 저주–를
+  swa: laana
+
+### Sense 132323 (6 occurrences)
+Grammar: Conj-w, Prep-l | N-fs
+  eng: and–for–a–curse, and–a–curse
+  spa: y–para–maldición, y–por–maldición, y–por–imprecación
+  hin: और–के–लिए–धिक्कार, और–शाप–को, और–शाप–के–लिए
+  arb: وَلِلَّعْنَةِ, وَ–لِللَّعْنَةِ, وَ–لِ–سَبٍّْ
+  kor: 그리고–저주로, 그리고–에–저주를–위하여, 그리고–에–저주로
+  swa: na–laana, na–shutuma, na–kwa–shutuma
+
+### Sense 132324 (5 occurrences)
+Grammar: Conj-w | N-fs,Conj-w, Art | N-fs
+  eng: and–the–curse, and–curse
+  spa: y–la–maldición, y–maldición
+  hin: और–शाप, और–श्राप
+  arb: وَاللَّعْنَةُ, وَ–اللَّعنَةِ, وَلَعْنَةً
+  kor: 그리고–그–저주를, 그리고–저주를, 그리고–그–저주는
+  swa: na–laana, Na–laana
+
+### Sense 132325 (5 occurrences)
+Grammar: Art | N-fs
+  eng: the–curse
+  spa: la–maldición
+  hin: शाप, श्राप–को
+  arb: اللَّعْنَةِ, اللَّعْنَةَ, الْ–لَعْنَةَ
+  kor: 그–저주를, 저주를, 그–저주
+  swa: laana
+
+### Sense 132326 (3 occurrences)
+Grammar: N-fsc
+  eng: curse-of, a–curse
+  spa: maldición–de
+  hin: शाप, श्राप
+  arb: لَعْنَةُ, لَعْنَة
+  kor: 저주이다, 저주는, 저주–가
+  swa: laana–ya, laana
+
+### Sense 132327 (2 occurrences)
+Grammar: Prep-l | N-fs
+  eng: for–a–curse, a–curse
+  spa: por–maldición, para–maldición
+  hin: शाप–के–लिए, के–लिए–धिक्कार
+  arb: لِلَّعْنَةِ, لَعْنَةً
+  kor: 저주로, 에–저주로
+  swa: laana
+
+### Sense 132328 (2 occurrences)
+Grammar: Art | N-fp
+  eng: the–curses
+  spa: las–maldiciones
+  hin: शापें
+  arb: اللَّعَنَاتِ
+  kor: 그–저주들이
+  swa: za–laana
+
+### Sense 132329 (1 occurrences)
+Grammar: N-fsc | 2ms
+  eng: curse–your
+  spa: tu–maldición
+  hin: तेरा–शाप
+  arb: لَعنَتُكَ
+  kor: 너의–저주가
+  swa: laana–yako
+
+### Sense 132330 (1 occurrences)
+Grammar: Conj-w, Prep-l | N-fs
+  eng: and–a–curse
+  spa: y–para–maldición
+  hin: वे–ले–किलालाह
+  arb: وَلِلَعْنَةٍ
+  kor: 그리고–에게–저주
+  swa: na–laana
+
+### Sense 132331 (1 occurrences)
+Grammar: N-fsc | 3ms
+  eng: his–curse
+  spa: maldición–de–él
+  hin: उसके–शाप–के
+  arb: لَعنَتِهِ–
+  kor: 그의–저주함
+  swa: laana–yake
+
+## Task
+
+Group these 10 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

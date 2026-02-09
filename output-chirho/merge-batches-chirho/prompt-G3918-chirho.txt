@@ -1,0 +1,163 @@
+# Sense Merge Task for G3918
+
+Lemma: G3918 (POS: V-PPA-DNP)
+Total occurrences: 24
+Current sense count: 15
+
+This Hebrew/Greek lemma has been over-split into 15 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 74085 (7 occurrences)
+Grammar: V-PPA-NMS,V-PPA-NMP
+  eng: being-present, being–present
+  spa: presente, estando–presente, estando–presentes
+  hin: उपस्थित–होकर, उपस्थित
+  arb: حاضِراً, حاضِرٍ, حاضِرًا
+  kor: 있을–때, 재한다, 재하는–자로
+  swa: nilipokuwepo, nikiwepo,, tulipokuwepo
+
+### Sense 74086 (2 occurrences)
+Grammar: V-PNA
+  eng: to-be-present
+  spa: estar-presente
+  hin: होनअ,, अअन
+  arb: حُضوري, أن–أكونَ–حاضِرًا
+  kor: 있기를, 있기,
+  swa: niwapo, kuwapo
+
+### Sense 74087 (2 occurrences)
+Grammar: V-PPA-ANS,V-PPA-DFS
+  eng: present
+  spa: presente
+  hin: वर्तमान–में, वर्तमान
+  arb: حَاضِر, الحاضِرِ
+  kor: 현재, 있는
+  swa: sasa, iliyopo
+
+### Sense 74088 (2 occurrences)
+Grammar: V-PIA-3P,V-PIA-3S
+  eng: is-present, are-present
+  spa: están–presentes, están-presentes
+  hin: हैं, आ–गए–हैं
+  arb: حاضِرونَ, تَحضُرُ
+  kor: 있으면, 왔나이다
+  swa: wako, hayapo
+
+### Sense 74089 (1 occurrences)
+Grammar: V-PIA-3S
+  eng: is–here
+  spa: está-presente
+  hin: आया–है
+  arb: حَاضِرٌ
+  kor: 오셨고
+  swa: yupo
+
+### Sense 74090 (1 occurrences)
+Grammar: V-PPA-DNP
+  eng: present-things
+  spa: presentes
+  hin: वर्तमानों–से
+  arb: مَوْجُودَات
+  kor: 현재–있는–것들
+  swa: vilivyopo;
+
+### Sense 74091 (1 occurrences)
+Grammar: V-PNA
+  eng: to–be–present
+  spa: estar-presentes
+  hin: उपस्थितहोना
+  arb: أَنْ–يَحْضُرُوا
+  kor: 있어서
+  swa: kuwepo
+
+### Sense 74092 (1 occurrences)
+Grammar: V-PIA-2P
+  eng: you–are–here
+  spa: estáis–presentes
+  hin: आए–हो
+  arb: حَاضِرُونَ
+  kor: 왔느냐
+  swa: mko–hapa?
+
+### Sense 74093 (1 occurrences)
+Grammar: V-IIA-3P
+  eng: Were-present
+  spa: Estaban-presentes
+  hin: उपस्थित–थे
+  arb: حَضَرَ
+  kor: 있었다
+  swa: Walikuwepo
+
+### Sense 74094 (1 occurrences)
+Grammar: V-PPA-GNS
+  eng: being–present
+  spa: que–está–presente
+  hin: उपस्थित
+  arb: الحاضِرِ
+  kor: 임한
+  swa: iliyokuja
+
+### Sense 74095 (1 occurrences)
+Grammar: V-PIA-1P
+  eng: are–present
+  spa: estamos–presentes
+  hin: उपस्थित–हैं
+  arb: حَاضِرُونَ
+  kor: 있습니다
+  swa: tupo,
+
+### Sense 74096 (1 occurrences)
+Grammar: V-PIA-2S
+  eng: are–you–here
+  spa: estás–aquí
+  hin: आया–है
+  arb: حَضَرْتَ
+  kor: 왔느냐
+  swa: uko–hapa
+
+### Sense 74097 (1 occurrences)
+Grammar: V-FIM-3S
+  eng: will-be-present
+  spa: estará–presente
+  hin: आएगा
+  arb: سَيَحضُرُ
+  kor: 있을–것이니
+  swa: atakuwapo.
+
+### Sense 74098 (1 occurrences)
+Grammar: V-PIA-3S
+  eng: is-present
+  spa: está-presente
+  hin: आया–है,
+  arb: حَاضِرٌ
+  kor: 이르지–않았다
+  swa: upo
+
+### Sense 74099 (1 occurrences)
+Grammar: V-IIA-3P
+  eng: they–came
+  spa: se–presentaron
+  hin: उपस्थित–हुए
+  arb: حَضَرُوا
+  kor: 와–있었다
+  swa: walikuja
+
+## Task
+
+Group these 15 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

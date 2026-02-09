@@ -1,0 +1,118 @@
+# Sense Merge Task for H7054
+
+Lemma: H7054 (POS: Prep-b)
+Total occurrences: 10
+Current sense count: 10
+
+This Hebrew/Greek lemma has been over-split into 10 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 132349 (1 occurrences)
+Grammar: N-fs
+  eng: standing-grain
+  spa: la–mies
+  hin: खड़े–अनाज–की
+  arb: الزَّرْعِ–الْقَائِمِ
+  kor: 곡식을
+  swa: nafaka–iliyosimama
+
+### Sense 132350 (1 occurrences)
+Grammar: N-fs
+  eng: standing-grain
+  spa: grano–en–pie
+  hin: खड़ी–फसल
+  arb: الزَّرْعِ–الـ
+  kor: 곁 선 곡식
+  swa: nafaka–iliyosimama
+
+### Sense 132351 (1 occurrences)
+Grammar: Prep-b, Art | N-fs
+  eng: on–the–standing-grain
+  spa: en–la–mies
+  hin: में–खड़ी–फ़सल
+  arb: فِي–الزَّرْعِ
+  kor: 에–곡식
+  swa: kwa–nafaka–iliyosimama
+
+### Sense 132352 (1 occurrences)
+Grammar: Prep-b | N-fsc
+  eng: into–standing-grain-of
+  spa: en–la–mies–de
+  hin: खेत–में
+  arb: فِي–زَرْعِ
+  kor: 에–곡식
+  swa: katika–mashamba–ya–nafaka
+
+### Sense 132353 (1 occurrences)
+Grammar: N-fs
+  eng: standing–grain
+  spa: crecer
+  hin: अनाज–के
+  arb: قِيَامِهِ
+  kor: 자맀의
+  swa: kukomaa
+
+### Sense 132354 (1 occurrences)
+Grammar: N-fs
+  eng: standing
+  spa: levantarse
+  hin: खड़े–होने–से
+  arb: القِيَامِ
+  kor: 일어–서기
+  swa: kuiva
+
+### Sense 132355 (1 occurrences)
+Grammar: N-fs
+  eng: standing–grain
+  spa: tallo
+  hin: खड़ी–हुई
+  arb: ساقٌ
+  kor: 쑠기가
+  swa: bua
+
+### Sense 132356 (1 occurrences)
+Grammar: Prep-b | N-fpc
+  eng: into–standing-grain-of
+  spa: en–los–campos–de
+  hin: खड़ी–फसलों–में
+  arb: فِي–زُرُوعِ
+  kor: 에–그래–곁 선 곡식
+  swa: katika–nafaka–iliyosimama
+
+### Sense 132357 (1 occurrences)
+Grammar: Art | N-fs
+  eng: the-standing-grain
+  spa: la–mies
+  hin: खड़ी–फसल
+  arb: الزَّرعَ
+  kor: 그–곡식이
+  swa: nafaka–iliyosimama
+
+### Sense 132358 (1 occurrences)
+Grammar: N-fsc
+  eng: standing-grain-of
+  spa: la–mies–de
+  hin: खेत
+  arb: زَرْعِ
+  kor: 곡식
+  swa: mashamba–ya–nafaka
+
+## Task
+
+Group these 10 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

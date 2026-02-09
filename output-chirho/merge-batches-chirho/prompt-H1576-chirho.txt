@@ -1,0 +1,127 @@
+# Sense Merge Task for H1576
+
+Lemma: H1576 (POS: N-msc | 2ms)
+Total occurrences: 19
+Current sense count: 11
+
+This Hebrew/Greek lemma has been over-split into 11 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 90387 (8 occurrences)
+Grammar: N-ms,N-msc
+  eng: recompense, with–the–recompense, what–his–hands–have–done
+  spa: retribución, recompensa–de, recompensa
+  hin: बदला
+  arb: جَزَاءً, عِقَابًا, جَزَاءُ
+  kor: 보복을, 보응을, 보응–을
+  swa: malipo, malipo–ya
+
+### Sense 90388 (2 occurrences)
+Grammar: N-msc | 2mp
+  eng: your-recompense
+  spa: retribución–de–vosotros
+  hin: बदला–तुम्हारा
+  arb: مُكافَأَتَكُمْ
+  kor: 너희의–보복–을
+  swa: malipo–yenu
+
+### Sense 90389 (1 occurrences)
+Grammar: Art | N-ms
+  eng: recompense
+  spa: ¿Retribución
+  hin: क्या–बदला
+  arb: هَلْ–المُكافَأَةَ
+  kor: 보복하느냐
+  swa: Je–malipo
+
+### Sense 90390 (1 occurrences)
+Grammar: N-msc | 2ms
+  eng: your-recompense
+  spa: tu–recompensa
+  hin: तेरा–बदला
+  arb: –جزاؤك
+  kor: 네–보복이
+  swa: malipo–yako
+
+### Sense 90391 (1 occurrences)
+Grammar: Conj-w | N-msc
+  eng: and–the–work–of
+  spa: y–recompensa–de
+  hin: और–प्रतिफल
+  arb: وَ–جَزاءُ
+  kor: 그리고–보상–이
+  swa: na–malipo–ya
+
+### Sense 90392 (1 occurrences)
+Grammar: Prep-k | N-ms
+  eng: according–to–benefit
+  spa: como–recompensa
+  hin: उपकार–के–अनुसार
+  arb: كَمُكَافَأَةٍ
+  kor: 같이–보답
+  swa: kigmul
+
+### Sense 90393 (1 occurrences)
+Grammar: N-msc | 2fs
+  eng: your–recompense
+  spa: tu–recompensa
+  hin: तेरे–व्यवहार
+  arb: مُكَافَأَتِكِ
+  kor: 너–의–보응–을
+  swa: malipo–yako
+
+### Sense 90394 (1 occurrences)
+Grammar: Conj-w | N-msc | 3ms
+  eng: and–his–deed
+  spa: y–su–recompensa
+  hin: और–बदले–उसके
+  arb: وَ–جَزاءُهُ
+  kor: 그리고–보상을–그–의
+  swa: na–malipo–yake
+
+### Sense 90395 (1 occurrences)
+Grammar: N-msc | 3mp
+  eng: their–recompense
+  spa: su–pago
+  hin: बदला–उनका
+  arb: جَزَاءَهُمْ
+  kor: 보응–을
+  swa: malipo-yao
+
+### Sense 90396 (1 occurrences)
+Grammar: Prep-k | N-msc
+  eng: according-to–dealing-of
+  spa: conforme–a–recompensa–de
+  hin: बदलेके–अनुसार
+  arb: كَـ-جَزَاء
+  kor: 같이–보답
+  swa: kulingana–na–stahili–ya
+
+### Sense 90397 (1 occurrences)
+Grammar: N-mpc | 3ms
+  eng: his–benefits
+  spa: sus–beneficios
+  hin: उसके–उपकार
+  arb: إحساناتِهِ
+  kor: 그–의–은혜–들–을
+  swa: yeye
+
+## Task
+
+Group these 11 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

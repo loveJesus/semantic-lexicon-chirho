@@ -1,0 +1,127 @@
+# Sense Merge Task for H6754
+
+Lemma: H6754 (POS: Prep-b | N-msc)
+Total occurrences: 17
+Current sense count: 11
+
+This Hebrew/Greek lemma has been over-split into 11 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 130118 (3 occurrences)
+Grammar: N-mpc
+  eng: images-of
+  spa: imágenes–de, ídolos–de
+  hin: मूरतियां, प्रतिमाओं–को
+  arb: صُوَرَ, تَمَاثِيلِ
+  kor: 형상들을, 조상들
+  swa: sanamu–za, vya–
+
+### Sense 130119 (2 occurrences)
+Grammar: Prep-b | N-msc
+  eng: in–image-of
+  spa: en–imagen–de
+  hin: में–स्वरूप, प्रतिमा-मेइन
+  arb: فِي–صُورَةِ, عَلَى–صُورَةِ
+  kor: 에–형상
+  swa: kwa–sura–ya, kwa–mfano–wa
+
+### Sense 130120 (2 occurrences)
+Grammar: Conj-w | N-mpc
+  eng: and–images-of
+  spa: e–imágenes–de
+  hin: और–मूरतियां, और–प्रतिमाओं
+  arb: وَ–صُوَرَ
+  kor: 그리고–형상들을
+  swa: na–sanamu–za, na–sanamu
+
+### Sense 130121 (2 occurrences)
+Grammar: Prep-b | N-msc | 3ms,Prep-k | N-msc | 3ms
+  eng: in–image-his, according–to–image-his
+  spa: según–su–imagen, en–su–imagen
+  hin: में–अपने–स्वरूप, अपनी–प्रतिमा–मेइन
+  arb: كَ–صُورَتِهِ, فِي–صُورَتِهِ
+  kor: 에–그의–형상대로, 에–그의–형상
+  swa: kwa–mfano–wake
+
+### Sense 130122 (2 occurrences)
+Grammar: N-mpc
+  eng: images-of–, images-of
+  spa: imágenes–de
+  hin: मूर्तियाँ, चित्र
+  arb: صُوَرَ
+  kor: 형상들을, 상들을–
+  swa: sanamu–za, sanamu
+
+### Sense 130123 (1 occurrences)
+Grammar: N-mpc | 2mp
+  eng: your–images
+  spa: sus–imágenes
+  hin: मूर्तियों–तुम्हारी
+  arb: صوَرَكُمْ
+  kor: 너희의–우상들을
+  swa: sanamu–zenu
+
+### Sense 130124 (1 occurrences)
+Grammar: N-mpc | 3ms
+  eng: his–images
+  spa: imágenes–de–él
+  hin: त्सलामाव–उसके
+  arb: تَمَاثِيلَهُ
+  kor: 그의–상들을
+  swa: sanamu–zake
+
+### Sense 130125 (1 occurrences)
+Grammar: N-mpc | 3ms
+  eng: its–images
+  spa: sus–imágenes
+  hin: उसकी–मूर्तियोंको
+  arb: تَمَاثِيلَهُ
+  kor: 그–우상들을
+  swa: sanamu–zake
+
+### Sense 130126 (1 occurrences)
+Grammar: Prep-b | N-msc | 1cp
+  eng: in–image-our
+  spa: en–nuestra–imagen
+  hin: में–हमारे–स्वरूप
+  arb: فِي–صُورَتِنَا
+  kor: 에–우리의–형상
+  swa: kwa–mfano–wetu
+
+### Sense 130127 (1 occurrences)
+Grammar: N-msc | 2mp
+  eng: their–image
+  spa: su–imagen
+  hin: उनकी–छवि
+  arb: صورَتَهُمْ
+  kor: 그들–의–환상–을
+  swa: sura-yao
+
+### Sense 130128 (1 occurrences)
+Grammar: Prep-b | N-ms
+  eng: as–a–shadow
+  spa: como–sombra
+  hin: में–छाया
+  arb: في–ظِلٍّ
+  kor: –그림자–에서
+  swa: kama–kivuli
+
+## Task
+
+Group these 11 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

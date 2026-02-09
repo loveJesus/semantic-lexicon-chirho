@@ -1,0 +1,135 @@
+# Sense Merge Task for H1952
+
+Lemma: H1952 (POS: N-msc | 2fs)
+Total occurrences: 26
+Current sense count: 12
+
+This Hebrew/Greek lemma has been over-split into 12 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 92658 (11 occurrences)
+Grammar: N-ms,N-msc
+  eng: wealth, the–wealth–of, wealth–of
+  spa: riqueza, Riqueza, riqueza–de
+  hin: धन, सम्पत्ति, धन।
+  arb: ثَرْوَةٌ, ثَرْوَةُ, ثَرْوَةٍ
+  kor: 재물–이, 재물–을, 재물–은
+  swa: utajiri, mali, mali–ya
+
+### Sense 92659 (3 occurrences)
+Grammar: N-ms
+  eng: wealth
+  spa: riqueza
+  hin: धन, धन–के
+  arb: غِنًى, ثَمَنٍ
+  kor: 재물
+  swa: utajiri
+
+### Sense 92660 (2 occurrences)
+Grammar: Conj-w | N-ms
+  eng: yet–has–wealth, and–wealth
+  spa: y–riqueza
+  hin: और–धन
+  arb: وَ–ثَرْوَةٌ
+  kor: 재물은, 그리고–재물–이
+  swa: na–utajiri, na–ana–utajiri
+
+### Sense 92661 (2 occurrences)
+Grammar: N-ms
+  eng: enough
+  spa: basta
+  hin: बहुत।
+  arb: كَفى
+  kor: 족하다
+  swa: tosha
+
+### Sense 92662 (1 occurrences)
+Grammar: Prep-m | N-msc | 2ms
+  eng: from–your–wealth
+  spa: con–tu–hacienda
+  hin: धन–अपने–से
+  arb: مِنْ–مَالِكَ
+  kor: 네–재물–에서
+  swa: kwa–mali–yako
+
+### Sense 92663 (1 occurrences)
+Grammar: N-mpc | 2fs
+  eng: your-wealth
+  spa: tus–riquezas
+  hin: धन–तेरे
+  arb: غِنَاكِ
+  kor: 재물의–너의
+  swa: utajiri–wako
+
+### Sense 92664 (1 occurrences)
+Grammar: N-msc
+  eng: wealth-of
+  spa: riqueza–de
+  hin: सब–
+  arb: أَمْوَالِ
+  kor: 재산–을
+  swa: utajiri
+
+### Sense 92665 (1 occurrences)
+Grammar: N-msc | 3ms
+  eng: his–wealth
+  spa: su–riqueza
+  hin: धन–अपना
+  arb: مالَهُ
+  kor: 그의–재산을
+  swa: mali–yake
+
+### Sense 92666 (1 occurrences)
+Grammar: N-ms
+  eng: wealth
+  spa: riqueza
+  arb: غِنًى
+  kor: 재물–보다
+  swa: utajiri
+
+### Sense 92667 (1 occurrences)
+Grammar: Prep-l, Art | N-ms
+  eng: after–wealth
+  spa: a–la–riqueza
+  hin: धन–के–लिए
+  arb: لِلْمالِ
+  kor: 재물을–위해
+  swa: kupata–mali
+
+### Sense 92668 (1 occurrences)
+Grammar: N-msc | 2fs
+  eng: your-wealth
+  spa: Tu–riqueza
+  hin: धन–तेरा
+  arb: غِنَاكِ
+  kor: 재물이–너의
+  swa: Utajiri–wako
+
+### Sense 92669 (1 occurrences)
+Grammar: Conj-w | N-ms
+  eng: but–the–wealth–of
+  spa: y–riqueza–de
+  hin: और–धन
+  arb: وَ–ثَرْوَةُ–
+  kor: 그러나–재물–은
+  swa: lakini–mali–ya
+
+## Task
+
+Group these 12 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

@@ -1,0 +1,181 @@
+# Sense Merge Task for H5794
+
+Lemma: H5794 (POS: Adj-ms)
+Total occurrences: 24
+Current sense count: 17
+
+This Hebrew/Greek lemma has been over-split into 17 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 123114 (8 occurrences)
+Grammar: Adj-fs,Adj-ms
+  eng: strong, fierce, a–city
+  spa: fuerte
+  hin: शक्तिशाली, बलवान, मज़बूत
+  arb: قَوِيٌّ, عَنِيفٌ, عَزِيزٌ
+  kor: 강한, 강하다
+  swa: mwenye–nguvu, wenye–nguvu, nguvu
+
+### Sense 123115 (1 occurrences)
+Grammar: Adj-mp
+  eng: mighty-ones
+  spa: fuertes
+  hin: बलवानों
+  arb: الأَعِزَّاءِ
+  kor: 강한–자들의
+  swa: cha–wenye–nguvu
+
+### Sense 123116 (1 occurrences)
+Grammar: Adj-fp
+  eng: harshly
+  spa: durezas
+  hin: कठोरता–से
+  arb: بِعُنْفٍ
+  kor: 거칠게
+  swa: kwa–ukali
+
+### Sense 123117 (1 occurrences)
+Grammar: Adj-mpc
+  eng: strong-of–
+  spa: fuertes–de–
+  hin: लालची
+  arb: شَدِيدَةُ–
+  kor: 강한–
+  swa: wenye–pupa–ya–
+
+### Sense 123118 (1 occurrences)
+Grammar: Adj-mp
+  eng: mighty
+  spa: impetuosas
+  hin: प्रबल
+  arb: العَزِيزَةِ
+  kor: 강한
+  swa: makali
+
+### Sense 123119 (1 occurrences)
+Grammar: Adj-ms
+  eng: stronger
+  spa: más–fuerte
+  hin: बलवान
+  arb: أَعَزُّ
+  kor: 강한가
+  swa: mkali
+
+### Sense 123120 (1 occurrences)
+Grammar: Adj-ms
+  eng: fierce
+  spa: feroz
+  hin: भीषण
+  arb: شَدِيدٌ
+  kor: 강하다
+  swa: kuwa–kali
+
+### Sense 123121 (1 occurrences)
+Grammar: Adj-fs
+  eng: fierce
+  spa: fuerte
+  hin: प्रचंड
+  arb: شَدِيدَةً
+  kor: 맹렬한
+  swa: kali
+
+### Sense 123122 (1 occurrences)
+Grammar: Adj-ms
+  eng: strong
+  spa: el–fuerte
+  hin: बलवान
+  arb: القَوِيِّ
+  kor: 강한–자
+  swa: mwenye–nguvu
+
+### Sense 123123 (1 occurrences)
+Grammar: Adj-msc
+  eng: fierce
+  spa: fiera–de
+  hin: कठोर
+  arb: قَاسِيَةُ
+  kor: 험악한
+  swa: kali
+
+### Sense 123124 (1 occurrences)
+Grammar: Adj-mp
+  eng: mighty
+  spa: fuertes
+  hin: प्रचंड
+  arb: عَاصِفَةٍ
+  kor: 거센
+  swa: yenye–nguvu
+
+### Sense 123125 (1 occurrences)
+Grammar: Adj-mp
+  eng: the–fierce
+  spa: poderosos
+  hin: शक्तिशाली
+  arb: أَقوياءُ
+  kor: 강한–자–들–이
+  swa: wenye-nguvu
+
+### Sense 123126 (1 occurrences)
+Grammar: N-msc
+  eng: city
+  spa: fuerte
+  hin: शक्तिशाली–
+  arb: حَصِينَةٌ–
+  kor: 강하도다–
+  swa: wenye–nguvu–
+
+### Sense 123127 (1 occurrences)
+Grammar: Conj-w, Prep-m | Adj-ms
+  eng: and–from–strong
+  spa: y–del–fuerte
+  hin: और–बलवान–से
+  arb: وَ–مِنَ–الْعَزِيزِ
+  kor: 그리고–로부터–강한–것
+  swa: na–kutoka–kwa–mkali
+
+### Sense 123128 (1 occurrences)
+Grammar: Adj-ms
+  eng: power
+  spa: poder
+  hin: सामर्थ्य–में
+  arb: قُوَّةٍ
+  kor: 힘의
+  swa: wa–nguvu
+
+### Sense 123129 (1 occurrences)
+Grammar: Adj-ms
+  eng: fierce-of–
+  spa: fuerte–de
+  hin: कठोर–
+  arb: صَلْبُ–
+  kor: 굳센–
+  swa: mkali–wa–
+
+### Sense 123130 (1 occurrences)
+Grammar: Adj-fs
+  eng: strong
+  spa: fuerte
+  hin: क्योंकि
+  arb: عَزِيزَةٌ
+  kor: 강하네
+  swa: imara
+
+## Task
+
+Group these 17 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

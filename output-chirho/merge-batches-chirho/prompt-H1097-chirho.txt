@@ -1,0 +1,170 @@
+# Sense Merge Task for H1097
+
+Lemma: H1097 (POS: Prep | Adv)
+Total occurrences: 58
+Current sense count: 16
+
+This Hebrew/Greek lemma has been over-split into 16 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 86813 (34 occurrences)
+Grammar: Prep-b | Adv,Adv,Prep-m | Adv,Prep-k | Adv,Prep-l | Adv,Prep | Adv
+  eng: without, without–, for–lack–of
+  spa: sin, sin–, por–falta–de–
+  hin: बिना, बिना–, कोई–नहीं
+  arb: بِلا, بِلَا–, بِلَا
+  kor: 없이, 없이–, 없는–것으로–
+  swa: bila, bila–, wasio–na
+
+### Sense 86814 (4 occurrences)
+Grammar: Prep-m | Adv
+  eng: for–lack–of, for–lack–of–, for-lack-of
+  spa: por–falta–de, por-falta-de
+  hin: से–बिना, बिना–के, बिना–
+  arb: بِلَا–, لِعَدَمِ, بِسَبَبِ–عَدَمِ
+  kor: 에서–없음, 없음에서, 없음–으로–
+  swa: kwa–kukosa, kwa–sababu–hakuna
+
+### Sense 86815 (4 occurrences)
+Grammar: Adv
+  eng: without, not
+  spa: sin, no
+  hin: बिना, नहीं
+  arb: لا, غَيرَ, بِ–لا
+  kor: 아니, 없이
+  swa: usio, kutomwambia, haita
+
+### Sense 86816 (3 occurrences)
+Grammar: Prep | Adv
+  eng: is-it-because-there-is-no
+  spa: ¿Acaso–por–falta-de
+  hin: क्या–इसलिए–कि
+  arb: هَلْ–مِنْ–عَدَمِ
+  kor: 없음–때문–에
+  swa: je–kwa–sababu
+
+### Sense 86817 (2 occurrences)
+Grammar: Prep-b | Adv
+  eng: without–
+  spa: sin–, sin
+  hin: से–बिना–, जाने–बूझे
+  arb: بِغَيْرِ–
+  kor: 에서–아니, 없이–
+  swa: bila–
+
+### Sense 86818 (1 occurrences)
+Grammar: Prep-m | Adv
+  eng: from-nothing
+  spa: por–no
+  hin: बिना
+  arb: مِنْ–عَدَمِ
+  kor: (전)–없음–에서
+  swa: kwa–sababu–ya–kutobaki
+
+### Sense 86819 (1 occurrences)
+Grammar: Prep | Adv
+  eng: is-it-because-there-are-no
+  spa: ¿acaso–por–no–haber
+  hin: क्या–इसलिए
+  arb: هَلْ–بِ–سَبَبِ
+  kor: 없기–때문이냐–하
+  swa: Je–kwa–sababu–hakukuwa–na–
+
+### Sense 86820 (1 occurrences)
+Grammar: Conj-w, Prep-m | Adv
+  eng: and–without
+  spa: y–por–falta–de
+  hin: और–बिना
+  arb: وَ–بِلَا
+  kor: 그리고–없이
+  swa: na–bila
+
+### Sense 86821 (1 occurrences)
+Grammar: Prep-m | Adv
+  eng: because–of–inability–of
+  spa: Por–no–poder
+  hin: बिना–
+  arb: لِعَدَمِ–
+  kor: 능력이–없어서
+  swa: kwa–sababu–ya–kutoweza
+
+### Sense 86822 (1 occurrences)
+Grammar: N-ms
+  eng: of–destruction
+  spa: de–nada
+  hin: शून्यता
+  arb: الفَنَاءِ
+  kor: 없음의
+  swa: la–maangamizo
+
+### Sense 86823 (1 occurrences)
+Grammar: N-msc
+  eng: without–
+  spa: que–no
+  hin: बिना–
+  arb: لَا–
+  kor: 없도록–
+  swa: kufikia
+
+### Sense 86824 (1 occurrences)
+Grammar: Adv
+  eng: [without–]
+  spa: [sin–]
+  arb: لا
+  kor: [신명기]
+
+### Sense 86825 (1 occurrences)
+Grammar: Adv
+  eng: without–
+  spa: sin–
+  hin: बिना
+  arb: بِلا
+  kor: 없이
+  swa: Bila
+
+### Sense 86826 (1 occurrences)
+Grammar: Prep-m | Adv
+  eng: without
+  spa: sin–que
+  hin: बिना–
+  arb: بِدُونِ–
+  kor: 없이
+  swa: bali
+
+### Sense 86827 (1 occurrences)
+Grammar: Prep-m | Adv
+  eng: what–is–not
+  spa: sin
+  hin: बिना
+  arb: بِلَا–
+  kor: 아니하여–
+  swa: bila
+
+### Sense 86828 (1 occurrences)
+Grammar: N-msc
+  eng: is–no–more
+  spa: no–haya
+  hin: नहीं–रहेगा
+  arb: بِلا–
+  kor: 없어질
+  swa: hakuna–tena
+
+## Task
+
+Group these 16 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

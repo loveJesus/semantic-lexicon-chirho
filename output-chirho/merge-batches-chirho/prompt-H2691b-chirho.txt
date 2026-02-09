@@ -1,0 +1,136 @@
+# Sense Merge Task for H2691b
+
+Lemma: H2691b (POS: N-cp)
+Total occurrences: 45
+Current sense count: 12
+
+This Hebrew/Greek lemma has been over-split into 12 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 98707 (30 occurrences)
+Grammar: Conj-w | N-cpc | 3fp,Conj-w | N-cpc | 3mp,Conj-w | N-cpc | 3fs
+  eng: and–their–villages, and–their-villages, and–its-villages
+  spa: y–sus–aldeas
+  hin: और–गांवों–उनके, और–उनकी–बस्तियाँ, और–गांवों–उसके
+  arb: وَ–قُراها, وَ–قُرَاهَا
+  kor: 그리고–그들의–마을들, 그리고–그–촌락들, 그리고–그의–마을들이
+  swa: na–vijiji–vyake, na–miji–yake
+
+### Sense 98708 (2 occurrences)
+Grammar: Prep-b | N-cpc | 3mp
+  eng: in–their–villages
+  spa: en–sus–aldeas
+  hin: उनके–गांवों–में
+  arb: فِي–قُرَاهُم
+  kor: 그들의–마을들–에서
+  swa: katika–vijiji–vyao
+
+### Sense 98709 (2 occurrences)
+Grammar: Art | N-cp,N-cp
+  eng: villages, the–villages
+  spa: las–aldeas, aldeas
+  hin: गाँवों, गाँव
+  arb: قُرًى, ال–قُرَى
+  kor: 마을들을, 그–마을들
+  swa: vijiji
+
+### Sense 98710 (2 occurrences)
+Grammar: Conj-w | N-cpc | 3fs,Conj-w | N-cpc | 3mp
+  eng: and–their–villages, and–its–villages
+  spa: y–aldeas–de–ellas, y–aldeas–de–ella
+  hin: और–उसके–गाँवों–में, और–उनके–गाँवों–में
+  arb: وَ–قُرَاهَا, وَ–قُراهَا
+  kor: 그리고–그들의–마을들, 그리고–그것의–마을들
+  swa: na–vijiji–vyake
+
+### Sense 98711 (2 occurrences)
+Grammar: Art | N-cp
+  eng: the–villages
+  spa: las–aldeas
+  hin: बस्तियाँ, गांवों–के
+  arb: الْقُرَى
+  kor: 마을들의, 그–촌락들
+  swa: vijiji, ha–vijiji
+
+### Sense 98712 (1 occurrences)
+Grammar: N-cpc | 3fs
+  eng: villages-of-it
+  spa: sus–aldeas
+  hin: उसकी–बस्तियाँ
+  arb: قُرَاهَا
+  kor: 그–촌락들을
+  swa: vijiji–vyake
+
+### Sense 98713 (1 occurrences)
+Grammar: Prep-b | N-cpc | 3mp
+  eng: in–their–villages
+  spa: en–sus–aldeas
+  hin: उन–के–गाँवों–में
+  arb: بِدِيَارِهِمْ
+  kor: 그들의–마을들–에
+  swa: katika–vijiji–vyao
+
+### Sense 98714 (1 occurrences)
+Grammar: N-cpc | 3fs
+  eng: its–villages
+  spa: sus–aldeas
+  hin: उसके–गांव
+  arb: قُراها
+  kor: 그–마을들
+  swa: vijiji–vyake
+
+### Sense 98715 (1 occurrences)
+Grammar: N-cp
+  eng: villages
+  spa: aldeas
+  hin: गांवों–की
+  arb: فِي–الدِّيَارِ
+  kor: 마을들–의
+  swa: vijiji
+
+### Sense 98716 (1 occurrences)
+Grammar: N-cp
+  eng: villages
+  spa: aldeas
+  hin: बस्तियाँ
+  arb: الدِّيَارُ
+  kor: 마을들을
+  swa: vijiji
+
+### Sense 98717 (1 occurrences)
+Grammar: Prep-b | N-cpc
+  eng: in–villages-of
+  spa: en–aldeas–de
+  hin: –में–गांवों
+  arb: فِي–قُرى
+  kor: 에–마을들–에서
+  swa: katika–vijiji–vya
+
+### Sense 98718 (1 occurrences)
+Grammar: N-cpc
+  eng: villages-of
+  spa: aldeas–de
+  hin: गाँवों–से
+  arb: قُرى
+  kor: 마을들에서
+  swa: vijiji–vya
+
+## Task
+
+Group these 12 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

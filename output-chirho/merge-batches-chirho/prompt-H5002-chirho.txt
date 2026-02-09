@@ -1,0 +1,145 @@
+# Sense Merge Task for H5002
+
+Lemma: H5002 (POS: N-msc)
+Total occurrences: 376
+Current sense count: 13
+
+This Hebrew/Greek lemma has been over-split into 13 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 115387 (207 occurrences)
+Grammar: N-msc
+  eng: declares–, declaration-of–, declares
+  spa: oráculo–de, oráculo–de–, satisfacción–de
+  hin: वचन–, कहता–है–, कहता–है
+  arb: يَقُولُ–, يَقُولُ, نَأُمُ–
+  kor: 의–말씀이다–, 말씀이니라, 말씀이라
+  swa: asema, asema–, num
+
+### Sense 115388 (147 occurrences)
+Grammar: N-msc
+  eng: declares, declares–, declaration-of
+  spa: oráculo–de, oraculo–de, satisfacción–de
+  hin: कहता–है, वाणी, वचन
+  arb: يَقُولُ, يَقُولُ–, يَقولُ–
+  kor: 말씀이다, 말씀이니라, 선언이다
+  swa: asema, asema–, Asema
+
+### Sense 115390 (5 occurrences)
+Grammar: N-msc
+  eng: oracle–of, oracle-of
+  spa: oráculo–de, Oráculo–de
+  hin: वचन
+  arb: وَحْيُ
+  kor: 말씀–의, 선포이다
+  swa: neno–la, neno
+
+### Sense 115391 (4 occurrences)
+Grammar: N-msc
+  eng: declaration-of–, utterance-of
+  spa: oráculo–de
+  hin: वचन–, नेऊम–
+  arb: وَحْيُ–, يَقُولُ–, قَوْلُ–
+  kor: 말씀–, 선언–의
+  swa: asema–, asema
+
+### Sense 115392 (3 occurrences)
+Grammar: Conj-w | N-msc
+  eng: and–oracle–of, and–oracle-of
+  spa: y–oráculo–de
+  hin: और–वचन
+  arb: وَ–وَحْيُ, وَوَحْيُ
+  kor: 그리고–말씀–의, 그리고–선포이다
+  swa: na–neno–la, na–neno
+
+### Sense 115393 (2 occurrences)
+Grammar: N-msc
+  eng: declares–
+  spa: oráculo–de
+  hin: न्ऊम–
+  arb: يَقولُ–
+  kor: 말씀이다
+  swa: asema–
+
+### Sense 115394 (2 occurrences)
+Grammar: N-msc
+  eng: declares–
+  spa: oráculo–de–
+  hin: वचन–
+  arb: نأم–
+  kor: 말씀이니
+  swa: asema
+
+### Sense 115395 (1 occurrences)
+Grammar: N-msc
+  eng: declaration
+  spa: oráculo
+  hin: वचन
+  arb: قَوْلُ–يَهْوَه
+  kor: 말씀이라고
+  swa: neno
+
+### Sense 115396 (1 occurrences)
+Grammar: N-msc
+  eng: declares
+  spa: declaración–de
+  hin: वचन
+  arb: قَوْلُ
+  kor: 말씀이다
+  swa: asema
+
+### Sense 115397 (1 occurrences)
+Grammar: N-msc
+  eng: the–declaration–of
+  spa: Declaración–de
+  hin: कहा
+  arb: قَول
+  kor: 말씀–이시라
+  swa: neno–la
+
+### Sense 115398 (1 occurrences)
+Grammar: N-msc
+  eng: declaration–of
+  spa: oráculo–de
+  hin: कथन
+  arb: وَحْيُ
+  kor: 말씨이다
+  swa: neno–la
+
+### Sense 115399 (1 occurrences)
+Grammar: N-msc
+  eng: declares
+  spa: Oráculo–de
+  hin: वचन
+  arb: قَوْلُ
+  kor: 말씀
+  swa: Tamko-la
+
+### Sense 115400 (1 occurrences)
+Grammar: N-msc
+  eng: declaration-of
+  spa: oráculo–de–
+  hin: कहता–है–
+  arb: إِعْلَانُ
+  kor: 말쥌–이다
+  swa: asema–
+
+## Task
+
+Group these 13 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

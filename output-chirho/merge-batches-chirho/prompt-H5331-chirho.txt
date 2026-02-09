@@ -1,0 +1,144 @@
+# Sense Merge Task for H5331
+
+Lemma: H5331 (POS: Art)
+Total occurrences: 43
+Current sense count: 13
+
+This Hebrew/Greek lemma has been over-split into 13 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 118789 (30 occurrences)
+Grammar: Prep-l | N-ms,N-ms
+  eng: forever, not
+  spa: para–siempre, para–perpetuidad, para–siempre?
+  hin: सदा–के–लिए, सदा, हमेशा–के–लिए
+  arb: إِلَى–الْأَبَدِ, إِلَى–الأَبَدِ, إلى–الأَبَدِ
+  kor: 영원히, 영원–히, 에–영원히
+  swa: milele, na–haitakaliwa, daima
+
+### Sense 118790 (2 occurrences)
+Grammar: Prep-l | N-msc,Prep-l | N-ms
+  eng: to–perpetuity, perpetually
+  spa: por–eternidad, para–siempre
+  hin: सदाके–लिए, सदा
+  arb: لِ–الدَّوَامِ, إِلَى–أَبَدِ
+  kor: 영원히–, 에–영원히
+  swa: kwa–milele, daima
+
+### Sense 118791 (1 occurrences)
+Grammar: N-ms
+  eng: perpetual
+  spa: perpetuo
+  hin: सदा–की
+  arb: أَبَدِيًّا
+  kor: 영원한
+  swa: ya–daima
+
+### Sense 118792 (1 occurrences)
+Grammar: N-ms
+  eng: perpetually
+  spa: perpetuamente
+  hin: निरंतर।
+  arb: دائِمًا
+  kor: 끊임없이
+  swa: daima
+
+### Sense 118793 (1 occurrences)
+Grammar: Prep-l | N-ms
+  eng: perpetually
+  spa: perpetuamente?
+  hin: हमेशा–तक
+  arb: لِلدَّهْرِ
+  kor: 영원히
+  swa: daima
+
+### Sense 118794 (1 occurrences)
+Grammar: N-msc | 1cs
+  eng: my–endurance
+  spa: mi–fortaleza
+  hin: मेरी–आशा
+  arb: رَجَائِي
+  kor: 내–힘–이
+  swa: nguvu–yangu
+
+### Sense 118795 (1 occurrences)
+Grammar: N-msc
+  eng: Glory-of
+  spa: Eternidad–de
+  hin: शअश्वत
+  arb: نَصْرُ
+  kor: 영광
+  swa: Utukufu
+
+### Sense 118796 (1 occurrences)
+Grammar: N-ms
+  eng: the–end
+  spa: fin
+  hin: अंत
+  arb: النِّهايَةِ
+  kor: 끝
+  swa: mwisho
+
+### Sense 118797 (1 occurrences)
+Grammar: N-ms
+  eng: forever
+  spa: eternidad
+  hin: सदा
+  arb: الأبَد
+  kor: 영원히
+  swa: milele
+
+### Sense 118798 (1 occurrences)
+Grammar: N-mp
+  eng: of–perpetuities
+  spa: de–eternidades
+  hin: सदा–के–लिए
+  arb: الْآبَادِ
+  kor: 영원히
+  swa: ya–milele
+
+### Sense 118799 (1 occurrences)
+Grammar: N-ms
+  eng: forever
+  spa: perpetuidad
+  arb: الدّائِمِ
+  kor: 영원한
+  swa: ya-milele
+
+### Sense 118800 (1 occurrences)
+Grammar: Art, Prep-l | N-ms
+  eng: forever
+  spa: ¿Para–siempre
+  hin: क्या–हमेशा–के–लिए
+  arb: هَلْ–إِلَى–الْأَبَدِ
+  kor: 영원히
+  swa: je–upanga–utaendelea–kula
+
+### Sense 118801 (1 occurrences)
+Grammar: Conj-w, Art | N-ms
+  eng: and–the–victory
+  spa: y–la–victoria
+  hin: और–जीत
+  arb: وَالنَّصْرُ
+  kor: 그리고–그–승리와
+  swa: na–ushindi
+
+## Task
+
+Group these 13 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

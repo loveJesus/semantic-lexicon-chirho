@@ -1,0 +1,127 @@
+# Sense Merge Task for H0599
+
+Lemma: H0599 (POS: V-Qal-Imperf-3ms)
+Total occurrences: 14
+Current sense count: 11
+
+This Hebrew/Greek lemma has been over-split into 11 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 83353 (2 occurrences)
+Grammar: V-Qal-Imperf-2ms
+  eng: will–you–be–angry, will–You–be–angry
+  spa: estarás-airado–, estarás-airado
+  hin: क्रोधित–रहेगा–, क्रोधित–रहेगा
+  arb: تَغْضَبُ–, تَغْضَبُ
+  kor: 노하시리이까
+  swa: utakasirika
+
+### Sense 83354 (2 occurrences)
+Grammar: V-Hitpael-Perf-3ms
+  eng: was–angry
+  spa: se–enojó, se–airó
+  hin: क्रोधित–हुआ, क्रोधित–था
+  arb: غَضِبَ
+  kor: 진노하셨느니라, 노하셨다
+  swa: kusokota, alikasirika
+
+### Sense 83355 (2 occurrences)
+Grammar: Conj-w | V-Hitpael-ConsecImper
+  eng: and–was–angry, and–he-was-angry
+  spa: Y–se–enojó
+  hin: और–क्रोधित–हुआ
+  arb: وَ–غَضِبَ, فَغَضِبَ
+  kor: 그리고–노하셨다, 그가–크게–노하셨다
+  swa: na–Yahwe–akakasirika–sana, na–Yahwe–akakasirika
+
+### Sense 83356 (1 occurrences)
+Grammar: V-Qal-Imperf-2ms
+  eng: You–be–angry
+  spa: te–enojarías
+  hin: क्रोधित–होगा
+  arb: تَغْضَبُ–
+  kor: 당신이–노하다–
+  swa: hautakasirika
+
+### Sense 83357 (1 occurrences)
+Grammar: V-Qal-Perf-2ms
+  eng: you-were-angry
+  spa: te–enojaste
+  hin: तूने–क्रोध–किया
+  arb: غَضِبْتَ
+  kor: 노하셨으나
+  swa: ulikuwa–na–hasira
+
+### Sense 83358 (1 occurrences)
+Grammar: Conj-w | V-Qal-ConjPerf-2ms
+  eng: and–you–are–angry
+  spa: y–te–airares
+  hin: और–क्रोधित–होगा
+  arb: وَ–غَضِبْتَ
+  kor: 그리고–진노하시면
+  swa: na–ukawaghadhibikia
+
+### Sense 83359 (1 occurrences)
+Grammar: V-Hitpael-Perf-3ms
+  eng: was–angry–
+  spa: se–enojó
+  hin: क्रोधित–हुआ
+  arb: غَضِبَ–
+  kor: 진노하셨다
+  swa: alikasirikia–
+
+### Sense 83360 (1 occurrences)
+Grammar: V-Qal-Imperf-3ms
+  eng: he–be–angry
+  spa: se–enoje
+  hin: वह–क्रोधित–हो
+  arb: يَغْضَبَ
+  kor: 노하시면
+  swa: na–mwangamie
+
+### Sense 83361 (1 occurrences)
+Grammar: V-Qal-Perf-2ms
+  eng: You–were–angry
+  spa: te–enojaste
+  hin: तू–क्रोधित–हुआ
+  arb: غَضِبتَ
+  kor: 주께서–노하셨나이다
+  swa: ulikuwa-na-hasira
+
+### Sense 83362 (1 occurrences)
+Grammar: Conj-w | V-Hitpael-ConsecImper
+  eng: and–was–angry
+  spa: y–se–enojó
+  hin: और–क्रोधित–हुआ
+  arb: وَغَضِبَ
+  kor: 그리고–진노하셨느니라
+  swa: na–alikasirika
+
+### Sense 83363 (1 occurrences)
+Grammar: Conj-w | V-Qal-ConjPerf-2ms
+  eng: and–you-are-angry
+  spa: y–te–enojarás
+  hin: और–क्रोधित–होगा–तू
+  arb: وَ–غَضِبْتَ
+  kor: 그리고–당신이–노하시면
+  swa: na–wakawachukua–mateka
+
+## Task
+
+Group these 11 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

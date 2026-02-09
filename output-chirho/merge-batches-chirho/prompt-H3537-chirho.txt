@@ -1,0 +1,118 @@
+# Sense Merge Task for H3537
+
+Lemma: H3537 (POS: N-fsc)
+Total occurrences: 18
+Current sense count: 10
+
+This Hebrew/Greek lemma has been over-split into 10 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 105448 (4 occurrences)
+Grammar: N-fsc | 3fs
+  eng: her–jar
+  spa: su–cántaro
+  hin: अपना–घड़ा
+  arb: جَرَّتَهَا
+  kor: 그녀의–물통을
+  swa: mtungi–wake
+
+### Sense 105449 (3 occurrences)
+Grammar: Art | N-fp
+  eng: the–jars
+  spa: los–cántaros
+  hin: घड़ों–को, घड़ों–के
+  arb: الـ-جِرَار
+  kor: 항아리들을, 항아리들의
+  swa: mitungi
+
+### Sense 105450 (2 occurrences)
+Grammar: Conj-w | N-fsc | 3fs
+  eng: and–her–jar
+  spa: y–su–cántaro
+  hin: और–उसका–घड़ा
+  arb: وَجَرَّتُهَا
+  kor: 그리고–그녀의–물통이
+  swa: na–mtungi–wake
+
+### Sense 105451 (2 occurrences)
+Grammar: N-fsc
+  eng: jar-of
+  spa: la–tinaja–de, La–tinaja–de
+  hin: मटका
+  arb: جَرَّةُ
+  kor: 통–의
+  swa: gudulia–la
+
+### Sense 105452 (2 occurrences)
+Grammar: Prep-m | N-fsc | 2fs
+  eng: from–your–jar
+  spa: de–tu–cántaro
+  hin: अपने–घड़े–से
+  arb: مِنْ–جَرَّتِكِ
+  kor: 너의–물통–에서
+  swa: kutoka–mtungi–wako
+
+### Sense 105453 (1 occurrences)
+Grammar: Conj-w | N-fp
+  eng: and–jars
+  spa: y–cántaros
+  hin: और–घड़े
+  arb: وَ-جِرَاراً
+  kor: 그리고–항아리들을
+  swa: na–mitungi
+
+### Sense 105454 (1 occurrences)
+Grammar: N-fsc | 2fs
+  eng: your–jar
+  spa: tu–cántaro
+  hin: अपना–घड़ा
+  arb: جَرَّتَكِ
+  kor: 너의–물통을
+  swa: mtungi–wako
+
+### Sense 105455 (1 occurrences)
+Grammar: N-fp
+  eng: jars
+  spa: cántaros
+  hin: घड़ों
+  arb: جِرارٍ
+  kor: 항아리들
+  swa: gudulia
+
+### Sense 105456 (1 occurrences)
+Grammar: Prep-b, Art | N-fs
+  eng: in–the-jar
+  spa: en–la–tinaja
+  hin: में–मटके
+  arb: في–ال–جَرَّةِ
+  kor: 그–통에
+  swa: katika–gudulia
+
+### Sense 105457 (1 occurrences)
+Grammar: N-fs
+  eng: the–pitcher
+  spa: cántaro
+  hin: घड़ा
+  arb: كَدّ
+  kor: 항아리
+  swa: mtungi
+
+## Task
+
+Group these 10 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

@@ -1,0 +1,117 @@
+# Sense Merge Task for G5561
+
+Lemma: G5561 (POS: N-AFS)
+Total occurrences: 28
+Current sense count: 10
+
+This Hebrew/Greek lemma has been over-split into 10 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 79115 (10 occurrences)
+Grammar: N-DFS,N-AFS,N-GFS
+  eng: region
+  spa: región
+  hin: प्रदेश, देश–में, देशमें
+  arb: مِنْطَقَةِ, كورَةِ, كُورَةِ
+  kor: 지역, 지방을, 지방에서
+  swa: nchi, ile
+
+### Sense 79116 (5 occurrences)
+Grammar: N-AFS,N-GFS
+  eng: country, a-country
+  spa: país, región
+  hin: देश, देश–में, देश–के
+  arb: بِلَادِهِمْ, بِلَادِ, بِلَادٍ
+  kor: 나라, 나라의
+  swa: nchi
+
+### Sense 79117 (5 occurrences)
+Grammar: N-DFS,N-AFS,N-GFS
+  eng: region, country
+  spa: región
+  hin: देश
+  arb: كُورَةَ, كورَةِ, كورَةَ
+  kor: 지역을, 지방과, 지방–에서
+  swa: nchi, nchi.
+
+### Sense 79118 (2 occurrences)
+Grammar: N-DFP,N-AFP
+  eng: regions
+  spa: regiones
+  hin: प्रदेशों, देशों
+  arb: البِلادِ, أَقَالِيمِ
+  kor: 지역들–에, 시골에–있는–자들은
+  swa: nchi
+
+### Sense 79119 (1 occurrences)
+Grammar: N-AFP
+  eng: fields
+  spa: campos
+  hin: खेत
+  arb: حُقولَكُم
+  kor: 밭들을
+  swa: mashamba
+
+### Sense 79120 (1 occurrences)
+Grammar: N-GFS
+  eng: region
+  spa: región
+  arb: الكورَةِ
+  kor: 지역의.
+  swa: nchi.
+
+### Sense 79121 (1 occurrences)
+Grammar: N-NFS
+  eng: land
+  spa: tierra
+  hin: भूमि
+  arb: أَرْضُهُ
+  kor: 땅이
+  swa: ardhi
+
+### Sense 79122 (1 occurrences)
+Grammar: N-NFS
+  eng: region
+  spa: región
+  hin: और
+  arb: كُورَةِ
+  kor: 지방
+  swa: nchi,
+
+### Sense 79123 (1 occurrences)
+Grammar: N-AFP
+  eng: fields
+  spa: campos
+  hin: खेत,
+  arb: حُقُولَ
+  kor: 밤들–을
+  swa: mashamba
+
+### Sense 79124 (1 occurrences)
+Grammar: N-AFS
+  eng: land
+  spa: tierra
+  hin: जमीन
+  arb: أَرْضٌ
+  kor: 땅이
+  swa: nchi
+
+## Task
+
+Group these 10 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

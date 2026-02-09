@@ -1,0 +1,163 @@
+# Sense Merge Task for H5768
+
+Lemma: H5768 (POS: N-mpc | 3mp)
+Total occurrences: 20
+Current sense count: 15
+
+This Hebrew/Greek lemma has been over-split into 15 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 122782 (4 occurrences)
+Grammar: N-ms
+  eng: child, children
+  spa: niño
+  hin: बच्चे
+  arb: طِفْلٍ, طِفْلًا, أَطْفَالًا
+  kor: 아이를, 어린이–와, 아이와
+  swa: watoto, mtoto
+
+### Sense 122783 (2 occurrences)
+Grammar: N-mp,N-mpc
+  eng: infants, children
+  spa: niños
+  hin: बच्चों–को, बच्चों–के
+  arb: الأَطْفَالِ, أَطْفَالَ
+  kor: 어린이들–을, 어린아이들
+  swa: watoto
+
+### Sense 122784 (2 occurrences)
+Grammar: Prep-m | N-ms
+  eng: from–infant, from–child
+  spa: desde–niño
+  hin: बचचेय–से, बचचे-से
+  arb: مِنْ–طِفْلٍ
+  kor: 어린아이에서–, 어린아이에게서
+  swa: mtoto–mchanga, kutoka–mtoto
+
+### Sense 122785 (1 occurrences)
+Grammar: N-mpc | 3fs
+  eng: her–children
+  spa: sus–niños
+  hin: उसके–बच्चे
+  arb: أَطْفَالُهَا
+  kor: 그녀–어린이들–이
+  swa: watoto–wake
+
+### Sense 122786 (1 occurrences)
+Grammar: Conj-w | N-mpc | 3mp
+  eng: and–their-infants
+  spa: y–niños–de–ellos
+  hin: वओललेहेम
+  arb: وَأَطْفالَهُمْ
+  kor: 그리고–그들의–어린이들을
+  swa: na–watoto–wao
+
+### Sense 122787 (1 occurrences)
+Grammar: N-mp
+  eng: children
+  spa: los–niños
+  hin: बच्चे
+  arb: الأَطْفَالُ
+  kor: 어린이들–이
+  swa: Watoto
+
+### Sense 122788 (1 occurrences)
+Grammar: N-mpc | 3mp
+  eng: their–infants
+  spa: sus–niños
+  hin: उनके–बच्चे
+  arb: أَطفالُهُم
+  kor: 그들의–어린–아이들이
+  swa: watoto–wao–wachanga
+
+### Sense 122789 (1 occurrences)
+Grammar: Prep-k | N-mp
+  eng: like–infants
+  spa: como–niños
+  hin: बच्चों–की–तरह
+  arb: كَأَطْفالٍ
+  kor: 같이–아이들
+  swa: kama–watoto–wachanga
+
+### Sense 122790 (1 occurrences)
+Grammar: N-mpc | 2fs
+  eng: of–your–children
+  spa: tus–niños
+  hin: अपने–बच्चों–के
+  arb: أَطْفَالِكِ
+  kor: 네–어린이들–의
+  swa: watoto–wako
+
+### Sense 122791 (1 occurrences)
+Grammar: Conj-w | N-mpc | 3mp
+  eng: and–their–infants
+  spa: Y–sus–niños
+  hin: और–उनके–बच्चे
+  arb: وَ–أَطْفَالُهُمْ
+  kor: 그들의–아이들이
+  swa: na–watoto–wao–wachanga
+
+### Sense 122792 (1 occurrences)
+Grammar: N-mpc | 2fs
+  eng: your–little-ones
+  spa: tus–pequeños
+  hin: तेरे–बच्चों
+  arb: أَطْفَالَكِ
+  kor: 너–의–어린–아이들–을
+  swa: watoto–wako
+
+### Sense 122793 (1 occurrences)
+Grammar: Prep-l | N-mpc | 3mp
+  eng: to–their–infants
+  spa: a–sus–niños
+  hin: ले–अपने–बच्चों–के–लिए
+  arb: لِأَوْلاَدِهِمْ
+  kor: 어린아이들–에게
+  swa: kwa–watoto–wao
+
+### Sense 122794 (1 occurrences)
+Grammar: N-mp
+  eng: children
+  spa: niños
+  hin: बच्चों
+  arb: الأَطْفالَ
+  kor: 어린아이들–과
+  swa: watoto
+
+### Sense 122795 (1 occurrences)
+Grammar: N-mpc | 3fs
+  eng: her–infants
+  spa: niños–de–ella
+  hin: उसके–बच्चे
+  arb: أَطْفَالُهَا
+  kor: 그녀의–어린아이들–이
+  swa: watoto–wake
+
+### Sense 122796 (1 occurrences)
+Grammar: N-mpc | 3fs
+  eng: her–children
+  spa: sus–niños
+  hin: उस–के–बच्चों–से
+  arb: أَطْفَالِهَا
+  kor: 아이들–그녀의
+  swa: watoto–wao
+
+## Task
+
+Group these 15 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

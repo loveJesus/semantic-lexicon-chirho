@@ -1,0 +1,162 @@
+# Sense Merge Task for H2470b
+
+Lemma: H2470b (POS: V-Piel-Imperf-3mp)
+Total occurrences: 16
+Current sense count: 15
+
+This Hebrew/Greek lemma has been over-split into 15 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 97130 (2 occurrences)
+Grammar: Prep-l | V-Piel-Inf
+  eng: to–entreat
+  spa: para–buscar–el–favor–de, a–suplicar
+  hin: के–लिए–मनाने–को, के–लिए–मनाने
+  arb: لِيُسْتَرْضِيَ, لِنَسْتَرْضِيَ
+  kor: 은혜를–구하러, 구하려고
+  swa: kuomba–kibali
+
+### Sense 97131 (1 occurrences)
+Grammar: V-Piel-Imp-ms
+  eng: entreat–
+  spa: suplica
+  hin: मना–
+  arb: اسْتَرْضِ–
+  kor: 간청하라–
+  swa: msihi
+
+### Sense 97132 (1 occurrences)
+Grammar: Conj-w | V-Piel-ConsecImperf-3
+  eng: and–entreated
+  spa: y–suplicó
+  hin: और–मनाया
+  arb: وَ–اسْتَرْضَى
+  kor: 그리고–간청했다
+  swa: na–akamsihi
+
+### Sense 97133 (1 occurrences)
+Grammar: V-Piel-Imp-mp
+  eng: entreat–
+  spa: implorad
+  hin: मनाओ–
+  arb: تَضَرَّعُوا–
+  kor: 빌어라–
+  swa: mwombeni
+
+### Sense 97134 (1 occurrences)
+Grammar: V-Piel-Imperf-3mp
+  eng: will–seek
+  spa: buscarán
+  hin: मनाएंगे
+  arb: يَسْتَعْطِفونَ
+  kor: 구하리이다
+  swa: watatafuta-kibali-chako
+
+### Sense 97135 (1 occurrences)
+Grammar: Conj-w | V-Piel-ConsecImperf-3
+  eng: and–entreated
+  spa: Y–oró
+  hin: और–मनाया
+  arb: وَ–تَضَرَّعَ
+  kor: 그리고–간청했다
+  swa: na–akamsihi
+
+### Sense 97136 (1 occurrences)
+Grammar: Conj-w | V-Piel-ConsecImperf-3
+  eng: and–he–entreated
+  spa: Y–imploró
+  hin: और–मनाया
+  arb: فَتَضَرَّعَ
+  kor: 그리고–간구했다
+  swa: na–aliomba
+
+### Sense 97137 (1 occurrences)
+Grammar: V-Piel-Imperf-3mp
+  eng: entreat
+  spa: buscan–el–favor
+  hin: खुशामद–करते–हैं
+  arb: يَسْتَرْضونَ
+  kor: 구하느니라
+  swa: wanaomba
+
+### Sense 97138 (1 occurrences)
+Grammar: Conj-w | V-Piel-ConjPerf-3cp
+  eng: and–entreat
+  spa: y–implorarán
+  hin: और–खुशामद–करेंगे
+  arb: وَيَتَضَرَّعُ
+  kor: 그리고–애원하리라
+  swa: na–watakuomba
+
+### Sense 97139 (1 occurrences)
+Grammar: Conj-w | V-Piel-ConsecImperf-3
+  eng: and–entreat
+  spa: y–suplicó
+  hin: और–मिन्नत–की
+  arb: فَتَضَرَّعَ
+  kor: 그리고–간청하였다
+  swa: na–akaomba
+
+### Sense 97140 (1 occurrences)
+Grammar: V-Piel-Perf-1cs
+  eng: I-entreated
+  spa: he–implorado
+  hin: मनाया–मैंने
+  arb: أَسْتَرْضِ
+  kor: 구했다–나는
+  swa: niliomba
+
+### Sense 97141 (1 occurrences)
+Grammar: V-Piel-Perf-3ms
+  eng: he–entreated
+  spa: imploró
+  hin: उसने–मनाया
+  arb: اسْتَعْطَفَ
+  kor: 그가–간청했다
+  swa: chilaּh
+
+### Sense 97142 (1 occurrences)
+Grammar: V-Piel-Perf-1cp
+  eng: we-entreated
+  spa: suplicamos
+  hin: मनाया–हमने
+  arb: اسْتَعْطَفْنَا
+  kor: 구했나이다
+  swa: tuliomba
+
+### Sense 97143 (1 occurrences)
+Grammar: Conj-w, Prep-l | V-Piel-Inf
+  eng: and–to–entreat
+  spa: y–a–suplicar
+  hin: और–के–लिए–मनाने
+  arb: وَلِيَسْتَرْضُوا
+  kor: 그리고–은혜를–구하러
+  swa: na–kuomba–kibali
+
+### Sense 97144 (1 occurrences)
+Grammar: V-Piel-Perf-1cs
+  eng: I–sought–favor
+  spa: Supliqué
+  arb: تَضَرَّعْتُ
+  kor: 간구하였나이다
+  swa: nimeomba
+
+## Task
+
+Group these 15 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

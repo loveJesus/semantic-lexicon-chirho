@@ -1,0 +1,154 @@
+# Sense Merge Task for G3930
+
+Lemma: G3930 (POS: V-PMA-2S)
+Total occurrences: 16
+Current sense count: 14
+
+This Hebrew/Greek lemma has been over-split into 14 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 74133 (2 occurrences)
+Grammar: V-PIA-2P
+  eng: do–you–cause, are-you-causing
+  spa: causáis
+  hin: देते–हो
+  arb: تُسَبِّبُونَ
+  kor: 끼치느냐
+  swa: mnamsababishia, mnampa
+
+### Sense 74134 (2 occurrences)
+Grammar: V-IIA-3S,V-IIM-3S
+  eng: was-providing
+  spa: proporcionaba
+  hin: देती–थी, दिलाता–था
+  arb: كَانَ–يُوَفِّرُ, كانَت–تُعطي
+  kor: 주었다, 가져다–주었다
+  swa: aliwapa, alileta
+
+### Sense 74135 (1 occurrences)
+Grammar: V-IIA-3P
+  eng: were–showing
+  spa: mostraban
+  hin: दिखाए
+  arb: قَدَّموا
+  kor: 보여주었다
+  swa: walitupa
+
+### Sense 74136 (1 occurrences)
+Grammar: V-PMA-2S
+  eng: offer
+  spa: ofrece
+  hin: दे
+  arb: أَدِر
+  kor: 내밀어라
+  swa: mpe
+
+### Sense 74137 (1 occurrences)
+Grammar: V-PMA-2S
+  eng: cause
+  spa: causes
+  hin: दे
+  arb: تُسَبِّبْ
+  kor: 말라
+  swa: kunisumbua
+
+### Sense 74138 (1 occurrences)
+Grammar: V-FIM-2S
+  eng: you-should-grant
+  spa: concedas
+  hin: प्रदान–करे
+  arb: تَمنَحَهُ
+  kor: 베풀면
+  swa: utamtendea
+
+### Sense 74139 (1 occurrences)
+Grammar: V-PMA-3S
+  eng: let-cause
+  spa: cause
+  hin: न–दे;
+  arb: فَلا–يُسَبِّب
+  kor: 끼치지–마라;
+  swa: asinisumbue
+
+### Sense 74140 (1 occurrences)
+Grammar: V-PIA-3P
+  eng: bring–about
+  spa: producen
+  hin: उतपन्न–करति-हैन
+  arb: تُسَبِّبُ
+  kor: 제공한다,
+  swa: zinaleta
+
+### Sense 74141 (1 occurrences)
+Grammar: V-PPA-DMS
+  eng: providing
+  spa: que–provee
+  hin: देने-वअले
+  arb: الَّذي–يَمْنَحُنا
+  kor: 주시는–자
+  swa: anayetupatia
+
+### Sense 74142 (1 occurrences)
+Grammar: V-AIA-3P
+  eng: they–kept
+  spa: guardaron
+  hin: रखी
+  arb: أَعْطَوْا
+  kor: 그들이–조용히–했다
+  swa: walitoa
+
+### Sense 74143 (1 occurrences)
+Grammar: V-PMM-2P
+  eng: provide
+  spa: proveed
+  hin: दो
+  arb: قَدِّموا
+  kor: 베풀라
+  swa: wapeni
+
+### Sense 74144 (1 occurrences)
+Grammar: V-PNA
+  eng: to-cause
+  spa: causarme
+  hin: देने
+  arb: تُسَبِّبُ
+  kor: 주니
+  swa: kunisumbua
+
+### Sense 74145 (1 occurrences)
+Grammar: V-PPM-NMS
+  eng: presenting
+  spa: presentando
+  hin: दिखअते–हुए
+  arb: مُقَدِّمًا
+  kor: 보여주며
+  swa: ukijitoa
+
+### Sense 74146 (1 occurrences)
+Grammar: V-APA-NMS
+  eng: having-provided
+  spa: habiendo-dado
+  hin: देकर
+  arb: قَدَّمَ
+  kor: 제공하셨다
+  swa: akitoa
+
+## Task
+
+Group these 14 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

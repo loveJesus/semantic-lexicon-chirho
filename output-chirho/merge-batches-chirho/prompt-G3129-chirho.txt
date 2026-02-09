@@ -1,0 +1,154 @@
+# Sense Merge Task for G3129
+
+Lemma: G3129 (POS: V-PMA-3P)
+Total occurrences: 25
+Current sense count: 14
+
+This Hebrew/Greek lemma has been over-split into 14 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 71908 (4 occurrences)
+Grammar: V-AMA-2P
+  eng: learn
+  spa: aprended
+  hin: सीखो, सेएखो
+  arb: تَعَلَّموا, تَعَلَّمُوا
+  kor: 배우라
+  swa: jifunzeni, –
+
+### Sense 71909 (3 occurrences)
+Grammar: V-PSA-3P,V-PMA-3P
+  eng: may-learn, let–them–learn, let–learn
+  spa: aprendan
+  hin: सेएखेइन, सीखें
+  arb: يَتَعَلَّموا, لِيَتَعَلَّموا
+  kor: 배우도록, 배우고, 배우게–하라
+  swa: wajifunze
+
+### Sense 71910 (3 occurrences)
+Grammar: V-ANA
+  eng: to-learn
+  spa: aprender
+  hin: सीखने, सीखना, जअन्न
+  arb: يَتَعَلَّمنَ, أَن–يَتَعَلَّمَ, أن–أتَعَلَّمَ
+  kor: 배우기를, 배우기–를
+  swa: kujifunza
+
+### Sense 71911 (3 occurrences)
+Grammar: V-AIA-2P
+  eng: you–learned, learned
+  spa: aprendisteis
+  hin: तुमने–सेएख,, तुमने-सिख, तुम-ने-सिख
+  arb: تَعَلَّمْتُمْ, تَعَلَّمتُم
+  kor: 배웠다, 배웠노라,, 너희가–배운
+  swa: mlivyojifunza, mlijifunza, Kristo
+
+### Sense 71912 (2 occurrences)
+Grammar: V-AIA-2S
+  eng: you–learned
+  spa: aprendiste
+  hin: सेएख;, सेएख,
+  arb: تَعَلَّمْتَ
+  kor: 배웠던, 배웠는지
+  swa: uliyojifunza, ulijifunza
+
+### Sense 71913 (2 occurrences)
+Grammar: V-APA-NMS,V-RPA-NMS
+  eng: having-learned
+  spa: habiendo-aprendido, aprendió
+  hin: सीखे–हुए?, सीखने–वाला,
+  arb: مُتَعَلِّمًا, تَعَلَّمَ
+  kor: 배운–적이–없이, 배운–자는
+  swa: kujifunza
+
+### Sense 71914 (1 occurrences)
+Grammar: V-APA-NMS
+  eng: having–learned
+  spa: habiendo-sabido
+  hin: जानकर
+  arb: إِذْ–عَلِمْتُ
+  kor: 알고
+  swa: nikijua
+
+### Sense 71915 (1 occurrences)
+Grammar: V-AIA-2P
+  eng: learned
+  spa: aprendisteis
+  hin: सीखी
+  arb: تَعَلَّمْتُمُوهُ،
+  kor: 배웠다
+  swa: mlijifunza,
+
+### Sense 71916 (1 occurrences)
+Grammar: V-AIA-1S
+  eng: learned
+  spa: aprendí
+  hin: मैने–सेएख
+  arb: تَعَلَّمْتُ
+  kor: 배웠노라
+  swa: nimejifunza
+
+### Sense 71917 (1 occurrences)
+Grammar: V-PMA-3S
+  eng: let–learn
+  spa: aprenda
+  hin: सेएखे
+  arb: لِتَتَعَلَّمْ
+  kor: 배우게–하라
+  swa: ajifunze
+
+### Sense 71918 (1 occurrences)
+Grammar: V-PIA-3P
+  eng: they–learn
+  spa: aprenden
+  hin: सेएखति-हैन
+  arb: يَتَعَلَّمْنَ
+  kor: 배운다,
+  swa: wanajifunza
+
+### Sense 71919 (1 occurrences)
+Grammar: V-PPA-ANP
+  eng: learning
+  spa: aprendiendo
+  hin: सेएखते–हुए,
+  arb: يَتَعَلَّمْنَ
+  kor: 배우는–자들
+  swa: wanaojifunza
+
+### Sense 71920 (1 occurrences)
+Grammar: V-AIA-3S
+  eng: he–learned
+  spa: aprendió
+  hin: सीखा
+  arb: تَعَلَّمَ
+  kor: 배우셨으니
+  swa: alijifunza
+
+### Sense 71921 (1 occurrences)
+Grammar: V-ASA-2P
+  eng: you–might–learn
+  spa: aprendáis
+  hin: सीखो
+  arb: تَتَعَلَّموا
+  kor: 배우라
+  swa: mjifunze
+
+## Task
+
+Group these 14 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

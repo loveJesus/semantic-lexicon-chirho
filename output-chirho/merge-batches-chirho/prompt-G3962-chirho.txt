@@ -1,0 +1,127 @@
+# Sense Merge Task for G3962
+
+Lemma: G3962 (POS: N-DMP)
+Total occurrences: 418
+Current sense count: 11
+
+This Hebrew/Greek lemma has been over-split into 11 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 74289 (401 occurrences)
+Grammar: N-AMS,N-GMS,N-NMS,N-DMS,N-VMS,N-GMP,N-AMP,N-NMP,N-DMP
+  eng: Father, father, fathers
+  spa: Padre, padre, padres
+  hin: पिता, पित, हे–पिता
+  arb: الآبِ, أَب, أَبُ
+  kor: 아버지, 아버지가, 아버지를
+  swa: Baba, baba, baba–zetu
+
+### Sense 74292 (7 occurrences)
+Grammar: N-VMP,N-AMP
+  eng: fathers
+  spa: padres
+  hin: पिताओ, पितओन, पिता
+  arb: يا–آباءُ, الآباءُ, آبَاءُ
+  kor: 아버지들아, 아버지들이여, 아버지들–을
+  swa: baba
+
+### Sense 74293 (2 occurrences)
+Grammar: N-NMP,N-AMP
+  eng: fathers
+  spa: padres
+  hin: पूर्वजों, पूर्वज
+  arb: الآبَاءِ, الآبَاءُ
+  kor: 조상들이요, 조상들을
+  swa: mababu., mababu
+
+### Sense 74294 (1 occurrences)
+Grammar: N-GMP
+  eng: fathers
+  spa: padres
+  hin: पितरों–की
+  arb: –الآبَاءِ
+  kor: 조상들–의
+  swa: baba,
+
+### Sense 74295 (1 occurrences)
+Grammar: N-AMS
+  eng: forefather
+  spa: antepasado
+  hin: पूर्वज
+  arb: أَبونا
+  kor: 조상
+  swa: baba–yetu–wa–kwanza
+
+### Sense 74296 (1 occurrences)
+Grammar: N-GMP
+  eng: parents
+  spa: padres
+  hin: माता–पिता
+  arb: أَبَوَيْهِ
+  kor: 부모들에–의해
+  swa: wazazi
+
+### Sense 74297 (1 occurrences)
+Grammar: N-AMP
+  eng: fathers
+  spa: padres
+  hin: पिताओं
+  arb: آباءٌ
+  kor: 아버지들
+  swa: baba;
+
+### Sense 74298 (1 occurrences)
+Grammar: N-GMS
+  eng: father
+  spa: padre
+  hin: पिता
+  arb: الأَبِ
+  kor: 아버지–의
+  swa: Wanasema
+
+### Sense 74299 (1 occurrences)
+Grammar: N-DMS
+  eng: to–a–father
+  spa: a–padre
+  hin: पित–को
+  arb: وَلَدٌ–لِأَبٍ
+  kor: 아버지에게
+  swa: kwa–baba
+
+### Sense 74300 (1 occurrences)
+Grammar: N-GMP
+  eng: of–fathers
+  spa: de–padres
+  hin: पिताओं–के
+  arb: الْآبَاءِ
+  kor: 아버지들–의
+  swa: baba
+
+### Sense 74301 (1 occurrences)
+Grammar: N-DMS
+  eng: Father
+  spa: Padre
+  hin: पिता
+  arb: –الآب
+  kor: 아버지
+  swa: Baba
+
+## Task
+
+Group these 11 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

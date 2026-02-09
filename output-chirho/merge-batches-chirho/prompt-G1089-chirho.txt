@@ -1,0 +1,118 @@
+# Sense Merge Task for G1089
+
+Lemma: G1089 (POS: V-ASM-3P)
+Total occurrences: 15
+Current sense count: 10
+
+This Hebrew/Greek lemma has been over-split into 10 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 64504 (3 occurrences)
+Grammar: V-ASM-3P
+  eng: will-taste, shall-taste
+  spa: gustarán
+  hin: चखेंगे, चखेइनगे
+  arb: يَذُوقُونَ, يَذُوقُوا, يَذوقوا
+  kor: 맛보지–않을–것이다, 맛보지
+  swa: onja, wataonja
+
+### Sense 64505 (2 occurrences)
+Grammar: V-APM-NMS
+  eng: having–tasted, having-tasted
+  spa: habiendo–gustado, comiendo
+  hin: चखकर, खाकर
+  arb: ذَاقَ
+  kor: 먹은–후에, 맛보고
+  swa: akionja
+
+### Sense 64506 (2 occurrences)
+Grammar: V-FIM-3S,V-ASM-3S
+  eng: will-taste, he–will–taste
+  spa: probará
+  hin: चखेगा
+  arb: يَذوق, سَيَذُوقُ
+  kor: 맛보지–않을–것이다, 맛보지–못할–것이다
+  swa: ataonja
+
+### Sense 64507 (2 occurrences)
+Grammar: V-APM-AMP
+  eng: having–tasted
+  spa: que–gustaron
+  hin: चखे–हुए
+  arb: ذَاقوا, الَّذينَ–ذَاقوا
+  kor: 맛본–자들이고
+  swa: walioonja
+
+### Sense 64508 (1 occurrences)
+Grammar: V-AIM-3S
+  eng: tasted
+  spa: probó
+  hin: चखा
+  arb: ذَاقَ
+  kor: 맛보았다
+  swa: alionja
+
+### Sense 64509 (1 occurrences)
+Grammar: V-ANM
+  eng: to–taste
+  spa: probar
+  hin: खाना
+  arb: أَنْ–يَذُوقَ
+  kor: 맛보기–를
+  swa: kula,
+
+### Sense 64510 (1 occurrences)
+Grammar: V-ANM
+  eng: to–taste
+  spa: probar
+  hin: चखना
+  arb: نَذُوقَ
+  kor: 맛보지–않겠다고
+  swa: kuonja
+
+### Sense 64511 (1 occurrences)
+Grammar: V-ASM-2S
+  eng: taste
+  spa: gustes
+  hin: चखो
+  arb: تَذُقْ
+  kor: 맛보지–말라
+  swa: uonje
+
+### Sense 64512 (1 occurrences)
+Grammar: V-ASM-3S
+  eng: he–might–taste
+  spa: gustara
+  hin: चखे
+  arb: يَذوقَ
+  kor: 맛보시려–함이니
+  swa: aionje
+
+### Sense 64513 (1 occurrences)
+Grammar: V-AIM-2P
+  eng: you–tasted
+  spa: gustasteis
+  hin: तुमने–चखा–है
+  arb: ذُقتُم
+  kor: 맛보았으면
+  swa: mmeonja
+
+## Task
+
+Group these 10 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

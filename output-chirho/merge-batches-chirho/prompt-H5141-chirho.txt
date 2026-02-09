@@ -1,0 +1,118 @@
+# Sense Merge Task for H5141
+
+Lemma: H5141 (POS: N-msc)
+Total occurrences: 17
+Current sense count: 10
+
+This Hebrew/Greek lemma has been over-split into 10 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 116955 (3 occurrences)
+Grammar: N-msc
+  eng: a–ring–of, a-ring-of
+  spa: pendiente–de, anillo–de, Aro–de
+  hin: बाली, नथ, एक–नथ
+  arb: قُرْطُ, قُرْطًا, خِزامَةٌ
+  kor: 고리이요, 고리를, 고리–는
+  swa: pete–ya
+
+### Sense 116956 (3 occurrences)
+Grammar: N-msc,Art | N-ms
+  eng: the–ring, a–ring–of
+  spa: el–pendiente, pendiente–de
+  hin: नथ
+  arb: الْخِزَامَةَ, خِزَامَةً
+  kor: 그–코걸이를, 코걸이를
+  swa: pete–ya–pua
+
+### Sense 116957 (2 occurrences)
+Grammar: N-msc
+  eng: earring-of
+  spa: pendiente–de
+  hin: नथ
+  arb: قُرْط
+  kor: 귀고리–
+  swa: pete–ya–masikioni
+
+### Sense 116958 (2 occurrences)
+Grammar: N-mpc
+  eng: rings-of
+  spa: los–pendientes–de
+  hin: बालियाँ
+  arb: خَزائِمَ
+  kor: 귀고리들을
+  swa: hereni
+
+### Sense 116959 (2 occurrences)
+Grammar: N-mpc
+  eng: earrings-of
+  spa: pendientes–de
+  hin: नथों–का, नथें
+  arb: أَقْرَاط
+  kor: 귀고리들–
+  swa: pete–za–masikioni–za, pete–za–masikioni
+
+### Sense 116960 (1 occurrences)
+Grammar: Conj-w | N-mpc
+  eng: and–the–nose–rings
+  spa: y–aros–de
+  hin: और–नथुने
+  arb: وَ–أَقرَاصِ
+  kor: 코고리들을
+  swa: na–vipuli–vya
+
+### Sense 116961 (1 occurrences)
+Grammar: Art | N-mp
+  eng: the–rings
+  spa: los–pendientes
+  hin: बालियाँ
+  arb: الأَقْراطَ
+  kor: 그–고리들을
+  swa: na–mfalme
+
+### Sense 116962 (1 occurrences)
+Grammar: Conj-w | N-ms
+  eng: and–ring
+  spa: y–pendientes
+  hin: और–नथनी
+  arb: وَ–خِزاماً
+  kor: 그리고–귀고리와
+  swa: na–hereni
+
+### Sense 116963 (1 occurrences)
+Grammar: N-msc | 3fs
+  eng: her–ring
+  spa: su–anillo
+  hin: नथ–उसकी
+  arb: بِأَقراطِها
+  kor: 고리–그녀의–로
+  swa: hereni–zake
+
+### Sense 116964 (1 occurrences)
+Grammar: N-ms
+  eng: ring
+  spa: aro
+  hin: नथ
+  arb: خِزَامَةً
+  kor: 코걸이를
+  swa: pete
+
+## Task
+
+Group these 10 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

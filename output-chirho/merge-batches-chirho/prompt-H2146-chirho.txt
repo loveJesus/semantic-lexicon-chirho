@@ -1,0 +1,145 @@
+# Sense Merge Task for H2146
+
+Lemma: H2146 (POS: N-mpc | 2mp)
+Total occurrences: 24
+Current sense count: 13
+
+This Hebrew/Greek lemma has been over-split into 13 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 94501 (6 occurrences)
+Grammar: Prep-l | N-ms
+  eng: for–memorial, for–a–memorial, for–a-memorial
+  spa: para–memorial, para-memorial
+  hin: स्मरण–के–लिए, के–लिए–स्मरण
+  arb: لِ–تَذكارٍ, لِ–ذِكْرَى, تَذْكَارًا
+  kor: 기념으로, 에–기념으로, 에–기념물
+  swa: kwa–ukumbusho
+
+### Sense 94502 (4 occurrences)
+Grammar: N-msc,N-ms
+  eng: remembrance
+  spa: memoria
+  hin: स्मरण, स्मरण-की
+  arb: ذِكْرٌ, لَهُمْ, تَذْكَارٍ
+  kor: 기억, 기억–의
+  swa: kumbukumbu
+
+### Sense 94503 (2 occurrences)
+Grammar: N-ms
+  eng: memorial
+  spa: memorial
+  hin: स्मरण–के, स्मरण
+  arb: تِذْكَارٍ, تَذكارٍ
+  kor: 기념의
+  swa: ya–ukumbusho, ukumbusho
+
+### Sense 94504 (2 occurrences)
+Grammar: N-ms
+  eng: memorial
+  spa: memorial, Recordatorio
+  hin: यादगार
+  arb: تِذْكَارًا
+  kor: 기억, 기념으로
+  swa: kumbukumbu, Kumbukumbu
+
+### Sense 94505 (2 occurrences)
+Grammar: N-ms,Art | N-ms
+  eng: the–remembrance, remembrance
+  spa: memorial, el–memorial
+  hin: स्मरण–की
+  arb: تَذْكَارٍ, الْـتَّذْكَارِ
+  kor: 기념, 그–기념
+  swa: Zkrun, Hzkrun
+
+### Sense 94506 (1 occurrences)
+Grammar: Art | N-mp
+  eng: the–remembrances
+  spa: los–memoriales
+  hin: इतिहास–की
+  arb: التَّذْكِرَاتِ
+  kor: 그–기록들의
+  swa: cha–kumbukumbu
+
+### Sense 94507 (1 occurrences)
+Grammar: N-mpc | 2mp
+  eng: proverbs-your
+  spa: Vuestros–memoriales
+  hin: तुम्हारी–यादें
+  arb: تَذْكَارَاتُكُمْ
+  kor: 너희의–기억들–은
+  swa: methali–zenu
+
+### Sense 94508 (1 occurrences)
+Grammar: N-ms
+  eng: memorial
+  spa: memorial
+  hin: यादगार–के–लिए
+  arb: تِذْكَارًا
+  kor: 기념으로
+  swa: kumbukumbu
+
+### Sense 94509 (1 occurrences)
+Grammar: N-msc
+  eng: a-memorial-of
+  spa: memorial–de
+  hin: स्मरण
+  arb: ذِكْرُ
+  kor: 기념–의
+  swa: ukumbusho–wa–
+
+### Sense 94510 (1 occurrences)
+Grammar: Conj-w, Prep-l | N-ms
+  eng: and–for–a-memorial
+  spa: y–por–memorial
+  hin: और–स्मरण–के–लिए
+  arb: وَ–لِ–ذِكْرَى
+  kor: 그리고–에–기념으로
+  swa: na–kwa–ukumbusho
+
+### Sense 94511 (1 occurrences)
+Grammar: Conj-w | N-ms
+  eng: and–memorial
+  spa: y–memoria
+  hin: या–स्मरण
+  arb: وَ–لا–ذِكْرٌ
+  kor: 그리고–기념이
+  swa: wala–kumbukumbu
+
+### Sense 94512 (1 occurrences)
+Grammar: N-msc | 2fs
+  eng: your–memorial
+  spa: tu–memorial
+  hin: अपना–स्मारक
+  arb: تِذْكَارَكِ
+  kor: 네–기념물을
+  swa: ukumbusho–wako
+
+### Sense 94513 (1 occurrences)
+Grammar: Prep-l | N-ms
+  eng: for–remembrance
+  spa: para–memorial
+  hin: स्मरण–के–लिए
+  arb: لِ–تَذْكَارٍ
+  kor: 기념–으로
+  swa: kwa–ukumbusho
+
+## Task
+
+Group these 13 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

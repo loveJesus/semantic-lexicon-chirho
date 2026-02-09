@@ -1,0 +1,145 @@
+# Sense Merge Task for H3760
+
+Lemma: H3760 (POS: Conj-w)
+Total occurrences: 24
+Current sense count: 13
+
+This Hebrew/Greek lemma has been over-split into 13 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 107519 (7 occurrences)
+Grammar: Art | N-proper-fs
+  eng: the–Carmel, the–Karmel
+  spa: el–Carmelo, Carmelo
+  hin: कर्मेल–ה, कर्मेल–के, कर्मेल–की।
+  arb: ال–كَرْمَل, الْكَرْمَلِ, الكَرْمَلِ
+  kor: 그–갈멜, 갈멜의, 갈멜
+  swa: Karmeli
+
+### Sense 107520 (3 occurrences)
+Grammar: Prep-b, Art | N-proper-fs
+  eng: in–Carmel
+  spa: en–el–Carmelo
+  hin: कर्मेल–में
+  arb: في–الكَرمَلِ
+  kor: 갈멜에서
+  swa: Karmeli
+
+### Sense 107521 (2 occurrences)
+Grammar: N-proper-fs,N-ms
+  eng: Carmel
+  spa: Carmelo, Carmel
+  hin: कर्मेल
+  arb: كَرْمَلُ, الْكَرْمَلِ
+  kor: 과수원, 갈멜
+  swa: Karmeli
+
+### Sense 107522 (2 occurrences)
+Grammar: N-proper-fs | 3fs,Art | N-proper-fs | 3fs
+  eng: the–Carmel, Carmel
+  spa: al–Carmelo
+  hin: कर्मेल–में, कर्मेल–को
+  arb: الكَرمَلَ
+  kor: 갈멜로
+  swa: Karmeli
+
+### Sense 107523 (2 occurrences)
+Grammar: Conj-w | N-proper-fs
+  eng: and–Karmel, and–Carmel
+  spa: y–Carmelo, y–Carmel
+  hin: और–कर्मेल
+  arb: وَ–الْكَرْمَلُ, وَالْكَرْمَل
+  kor: 그리고–갈멜이, 그리고–갈멜–이
+  swa: na–Karmeli
+
+### Sense 107524 (1 occurrences)
+Grammar: Conj-w, Prep-b, Art | N-ms
+  eng: and–in–the–Karmel
+  spa: y–en–el–Carmelo
+  hin: और–कर्मेल–में
+  arb: وَ–بِـ–الْكَرْمَلِ
+  kor: 그리고–에–그–갈멜
+  swa: na–Karmeli
+
+### Sense 107525 (1 occurrences)
+Grammar: Art | N-proper-fs | 3fs
+  eng: the–Karmel
+  spa: el–Karmel
+  hin: करमेल
+  arb: الكَرْمَلَ
+  kor: 그–갈멜로
+  swa: Karmeli
+
+### Sense 107526 (1 occurrences)
+Grammar: Prep-b | N-proper-fs
+  eng: in–Karmel
+  spa: en–Carmelo
+  hin: कर्मेल–को
+  arb: إِلَى–الْكَرْمَلِ
+  kor: 갈멜에
+  swa: Karmeli
+
+### Sense 107527 (1 occurrences)
+Grammar: Prep-l, Art | N-proper-fs
+  eng: at–the–Carmel
+  spa: del–Carmelo
+  hin: कर्मेल–में
+  arb: لِ–الكَرْمَلِ
+  kor: 에게–갈멜의
+  swa: katika–ha–Karmeli
+
+### Sense 107528 (1 occurrences)
+Grammar: Prep-k, Art | N-proper-fs
+  eng: like–the–Carmel
+  spa: como–el–Karmel
+  hin: कर्मेल–के–समान
+  arb: كَالْكَرْمَلِ
+  kor: 갈멜–처럼
+  swa: kama–Karmeli
+
+### Sense 107529 (1 occurrences)
+Grammar: Art | N-proper-fs
+  eng: of–Karmel
+  spa: del–Carmelo
+  hin: कर्मेल–का
+  arb: الـ–كَرْمَلِ
+  kor: 그–갈멜과
+  swa: wa–Karmeli
+
+### Sense 107530 (1 occurrences)
+Grammar: Conj-w, Prep-k | N-proper-fs
+  eng: and–like–Karmel
+  spa: y–como–Carmelo
+  hin: और–जैसे–कर्मेल
+  arb: وَكَالْكَرْمَلِ
+  kor: 그리고–갈멜처럼–
+  swa: na–kama–Karmeli
+
+### Sense 107531 (1 occurrences)
+Grammar: Art | N-proper-fs
+  eng: the–Karmel
+  spa: el–Karmel
+  hin: कर्मेल
+  arb: الْكَرْمَلَ
+  kor: 갈멜을
+  swa: Karmeli
+
+## Task
+
+Group these 13 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

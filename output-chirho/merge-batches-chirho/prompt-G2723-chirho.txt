@@ -1,0 +1,163 @@
+# Sense Merge Task for G2723
+
+Lemma: G2723 (POS: V-PIA-2P)
+Total occurrences: 23
+Current sense count: 15
+
+This Hebrew/Greek lemma has been over-split into 15 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 70507 (6 occurrences)
+Grammar: V-PNA
+  eng: to–accuse, to-accuse
+  spa: acusar, a-acusar, de–qué–acusar
+  hin: दोष–लगाने, दोषलगाना, दोष–लगाना।
+  arb: يَشْكونَهُ, يَتَّهِمُوا, يَتَّهِمُ
+  kor: 고소하기를, 고발하기를, 고소하는
+  swa: kushtaki, kumshitaki, kumshtaki
+
+### Sense 70508 (3 occurrences)
+Grammar: V-PIA-1P,V-PIA-3P
+  eng: accuse, they–accuse
+  spa: me-acusan, acusamos
+  hin: दोषलगातेहैं
+  arb: يَتَّهِمُونَنِي, نَتَّهِمُهُ
+  kor: 고소하는
+  swa: wanayonishtaki, wananishtaki, tunamshtaki
+
+### Sense 70509 (2 occurrences)
+Grammar: V-PPA-NMS
+  eng: accusing
+  spa: que–acusa, que-acusa
+  hin: दोष–लगानेवाला–है, दोष–लगानेवाला
+  arb: يَشْكُو, المُشتَكي
+  kor: 고발하는–자가, 고발하는
+  swa: awashitakiye, anayewashtaki
+
+### Sense 70510 (1 occurrences)
+Grammar: V-PPA-NMP
+  eng: accusing
+  spa: acusando
+  hin: दोष–लगाते–हुए
+  arb: يَشْكونَهُ
+  kor: 고발하며
+  swa: kukosoa
+
+### Sense 70511 (1 occurrences)
+Grammar: V-PPM/P-NMS
+  eng: being–accused
+  spa: acusado
+  hin: दोषलगायागया
+  arb: المُتَّهَمُ
+  kor: 고소당하는–자가
+  swa: anayeshtakiwa
+
+### Sense 70512 (1 occurrences)
+Grammar: V-PIA-3P
+  eng: they-accuse
+  spa: acusan
+  hin: दोष–लगाते–हैं
+  arb: يَتَّهِمُونَ
+  kor: 고발하느냐
+  swa: wanakushtaki
+
+### Sense 70513 (1 occurrences)
+Grammar: V-PIA-2P
+  eng: you-accuse
+  spa: acusáis
+  hin: लगाते–हो
+  arb: تَشْكونَهُ
+  kor: 고발하는
+  swa: mnakokosa
+
+### Sense 70514 (1 occurrences)
+Grammar: V-ASA-3P
+  eng: they-might-accuse
+  spa: acusen
+  hin: ताकि
+  arb: يَتَّهِموهُ
+  kor: 고발하게
+  swa: wamshtaki
+
+### Sense 70515 (1 occurrences)
+Grammar: V-FIA-1S
+  eng: will-accuse
+  spa: acusaré
+  hin: दोष–लगाऊँगा
+  arb: سَأَشْكُو
+  kor: 고발하겠다
+  swa: nitawashtaki
+
+### Sense 70516 (1 occurrences)
+Grammar: V-PNM/P
+  eng: to–be–accused
+  spa: ser–acusado
+  hin: दोष–लगाए–जाने–पर
+  arb: اتِّهَامِهِ
+  kor: 고발–당하다
+  swa: kushtakiwa
+
+### Sense 70517 (1 occurrences)
+Grammar: V-PMA-3P
+  eng: let–them–accuse
+  spa: acúsenlo
+  hin: दोषलगाएँ
+  arb: لِيَتَّهِمُوهُ
+  kor: 고소하라
+  swa: wamshtaki
+
+### Sense 70518 (1 occurrences)
+Grammar: V-ASA-3P
+  eng: they–might–accuse
+  spa: le-acusaran
+  hin: दोश–लगअयेइन
+  arb: يَشتَكُوا–عَلَيهِ
+  kor: 고발하려–함이라
+  swa: wamshitaki
+
+### Sense 70519 (1 occurrences)
+Grammar: V-IIA-3P
+  eng: were-accusing
+  spa: acusaban
+  hin: दोष–लगाते–थे
+  arb: كَانُوا–يَتَّهِمُونَ
+  kor: 고발하고-있었다
+  swa: walimshtaki
+
+### Sense 70520 (1 occurrences)
+Grammar: V-PIM/P-3S
+  eng: he–was–being–accused
+  spa: era-acusado
+  hin: दोष–लगाया–जाता–है
+  arb: يُتَّهَمُ
+  kor: 고소당하는지
+  swa: alikuwa–akishtakiwa
+
+### Sense 70521 (1 occurrences)
+Grammar: V-PPA-GMP
+  eng: accusing
+  spa: acusando
+  hin: दोष–लगाते
+  arb: المُتَّهِمَةِ
+  kor: 고발하거나
+  swa: yakishtaki
+
+## Task
+
+Group these 15 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

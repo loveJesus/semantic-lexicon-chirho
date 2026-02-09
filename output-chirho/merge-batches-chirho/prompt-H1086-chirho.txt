@@ -1,0 +1,163 @@
+# Sense Merge Task for H1086
+
+Lemma: H1086 (POS: V-Qal-Imperf-3mp)
+Total occurrences: 16
+Current sense count: 15
+
+This Hebrew/Greek lemma has been over-split into 15 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 86783 (2 occurrences)
+Grammar: V-Qal-Perf-3cp,V-Qal-Perf-3fs
+  eng: wore-out
+  spa: se–desgastó, se–desgastaron
+  hin: पुरानी–हुईं, पुरानी–हुई
+  arb: تَبْلَ
+  kor: 닳았다
+  swa: yalichakaa, ilichakaa
+
+### Sense 86784 (1 occurrences)
+Grammar: V-Qal-Perf-3cp
+  eng: wore–out
+  spa: se–gastaron
+  hin: पुराने–हुए
+  arb: تَبْلَ
+  kor: 낡았다
+  swa: chakaa
+
+### Sense 86785 (1 occurrences)
+Grammar: V-Qal-Perf-3cp
+  eng: wasted–away
+  spa: se–envejecieron
+  hin: पुरानी–हो–गईं
+  arb: بَلِيَتْ
+  kor: 쇠하였나이다
+  swa: yalichakaa
+
+### Sense 86786 (1 occurrences)
+Grammar: V-Qal-Imperf-3mp
+  eng: will–wear–out
+  spa: se–envejecerán
+  hin: पुराने–हो–जाएंगे
+  arb: يَبْلَوْنَ
+  kor: 닳으리라
+  swa: watachakaa
+
+### Sense 86787 (1 occurrences)
+Grammar: V-Qal-Imperf-3fs
+  eng: will-wear-out
+  spa: se–envejecerá
+  hin: पुरानी–हो–जाएगी
+  arb: تَبْلَى
+  kor: 닳으리라
+  swa: itachakaa
+
+### Sense 86788 (1 occurrences)
+Grammar: V-Qal-Inf | 1cs
+  eng: I–am–worn–out
+  spa: haberme–marchitado
+  hin: मेरि–बुधपे–के
+  arb: فَنَائِي
+  kor: 내가–닳은
+  swa: kuzeeka–kwangu
+
+### Sense 86789 (1 occurrences)
+Grammar: V-Qal-Perf-3cp
+  eng: are–worn–out
+  spa: se–han–gastado
+  hin: पुराने–हो–गए
+  arb: بَليَت
+  kor: 낡았다
+  swa: vimechakaa
+
+### Sense 86790 (1 occurrences)
+Grammar: Prep-l | V-Piel-Inf
+  eng: to–decay
+  spa: para–consumir
+  hin: क्षय–होने–को
+  arb: لِـيَبْلى
+  kor: –소멸하기–위해
+  swa: litaoza
+
+### Sense 86791 (1 occurrences)
+Grammar: V-Qal-Imperf-3mp
+  eng: will–wear–out
+  spa: se–gastarán
+  hin: पुराने–होंगे
+  arb: تَبلى
+  kor: 낡으리라
+  swa: zitachakaa
+
+### Sense 86792 (1 occurrences)
+Grammar: V-Qal-Imperf-3ms
+  eng: wastes-away
+  spa: se–consume
+  hin: सड़–जाता–है
+  arb: يَبْلَى
+  kor: 닳다
+  swa: anaoza
+
+### Sense 86793 (1 occurrences)
+Grammar: V-Qal-Perf-3fs
+  eng: wore–out
+  spa: se–envejeció
+  hin: पुरानी–हुई
+  arb: تَبْلَى
+  kor: 해어졌다
+  swa: haikuchakaa
+
+### Sense 86794 (1 occurrences)
+Grammar: V-Piel-Perf-3ms
+  eng: He–wasted
+  spa: Ha–consumido
+  hin: सुखा–दिया
+  arb: بَلَى
+  kor: 그–가–닳아빠지게–했네
+  swa: Ameondoa
+
+### Sense 86795 (1 occurrences)
+Grammar: V-Piel-Imperf-3mp
+  eng: shall–enjoy
+  spa: disfrutarán
+  hin: भोगेंगे
+  arb: يُبْلُونَ
+  kor: 누릴–것이다
+  swa: wataifurahia
+
+### Sense 86796 (1 occurrences)
+Grammar: Prep-l | V-Piel-Inf | 3ms
+  eng: to–wear-them-out
+  spa: destruirlo
+  hin: नाश–करने
+  arb: لِ–يُبَدِّدُوهُ
+  kor: 에–소모하다–그–를
+  swa: kuwaharibu
+
+### Sense 86797 (1 occurrences)
+Grammar: V-Piel-Imperf-3mp
+  eng: [they–wear–out]
+  spa: Pasan
+  hin: वे–बिताते–हैं
+  arb: يُقْضُونَ
+  kor: [보내나니]
+  swa: [wanatumia]
+
+## Task
+
+Group these 15 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

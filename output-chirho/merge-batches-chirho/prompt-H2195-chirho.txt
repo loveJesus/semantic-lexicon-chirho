@@ -1,0 +1,162 @@
+# Sense Merge Task for H2195
+
+Lemma: H2195 (POS: Prep-b | N-ms)
+Total occurrences: 22
+Current sense count: 15
+
+This Hebrew/Greek lemma has been over-split into 15 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 94747 (3 occurrences)
+Grammar: N-msc | 1cs
+  eng: indignation–my, my–indignation
+  spa: mi–indignación
+  hin: अपना–क्रोध, मेरे–क्रोध
+  arb: سُخْطِي, سَخَطِي
+  kor: 내–분노를, 분노–나의
+  swa: hasira–yangu, ghadhabu–yangu
+
+### Sense 94748 (2 occurrences)
+Grammar: N-ms
+  eng: of–indignation, indignation
+  spa: indignación
+  hin: रोष, क्रोध–से
+  arb: غَضَبًا
+  kor: 분노를, 분노로
+  swa: hasira, ghadhabu
+
+### Sense 94749 (2 occurrences)
+Grammar: N-msc | 2ms
+  eng: your–indignation, Your–indignation
+  spa: tu–indignación
+  hin: तेरे–क्रोध, क्रोध–तेरे
+  arb: غَضَبِكَ, سَخَطِكَ
+  kor: 주–의–진노, 당신–의–분노–와
+  swa: hasira–yako, ghadhabu-yako
+
+### Sense 94750 (2 occurrences)
+Grammar: Art | N-ms,N-ms
+  eng: wrath, the–wrath
+  spa: la–indignación, ira
+  hin: क्रोध–के, क्रोध
+  arb: الْغَضَبِ
+  kor: 진노가, 진노–의
+  swa: kwa–ghadhabu, ghadhabu
+
+### Sense 94751 (2 occurrences)
+Grammar: N-ms
+  eng: indignation
+  spa: la–indignación, la-indignación
+  hin: क्रोध
+  arb: الْغَيْظُ, السَّخَطُ
+  kor: 진노가, 분노가
+  swa: ghadhabu
+
+### Sense 94752 (2 occurrences)
+Grammar: N-msc | 3ms
+  eng: his–indignation
+  spa: su–indignación
+  hin: उसके–क्रोध–के, अपने–क्रोध–के
+  arb: غَيْظِهِ, سُخْطِهِ
+  kor: 진노의–그의, 그–분노의
+  swa: za–ghadhabu–yake, ghadhabu–yake
+
+### Sense 94753 (1 occurrences)
+Grammar: N-msc | 1cs
+  eng: my–indignation
+  spa: mi-indignación
+  hin: मेरा–क्रोध
+  arb: سَخَطِي
+  kor: 내–분노라
+  swa: ni-ghadhabu-yangu
+
+### Sense 94754 (1 occurrences)
+Grammar: N-msc | 2ms
+  eng: Your–indignation
+  spa: tu–indignación
+  arb: سَخَطَكَ
+  kor: 주–의–분노–를
+  swa: hasira-yako
+
+### Sense 94755 (1 occurrences)
+Grammar: N-msc | 3ms
+  eng: his–indignation
+  spa: indignación–suya
+  hin: उसके–क्रोध–के
+  arb: سَخَطِهِ
+  kor: 그의–분노
+  swa: –ghadhabu–yake
+
+### Sense 94756 (1 occurrences)
+Grammar: Prep-b | N-ms
+  eng: in–indignation
+  spa: Con–indignación
+  hin: क्रोध–में
+  arb: بِالسَّخَطِ
+  kor: 에서–분노
+  swa: kwa–ghadhabu
+
+### Sense 94757 (1 occurrences)
+Grammar: Prep-b | N-msc
+  eng: in–the–indignation
+  spa: en–la–indignación–de
+  hin: अपने–क्रोध–की–
+  arb: بِسَخَطِ–
+  kor: 분노–에서
+  swa: katika–hasira
+
+### Sense 94758 (1 occurrences)
+Grammar: Prep-m | N-msc
+  eng: from–rage–of
+  spa: por–furor–de
+  hin: क्रोध–के–कारण
+  arb: بِسَبَبِ–غَضَبِ
+  kor: 부터–분노에서
+  swa: kwa–sababu–ya–hasira–ya
+
+### Sense 94759 (1 occurrences)
+Grammar: Conj-w | N-ms
+  eng: and–indignation
+  spa: e–indignación
+  hin: और–रोष
+  arb: وَاغْتِيَاظًا
+  kor: 분개–를
+  swa: na–uchungu
+
+### Sense 94760 (1 occurrences)
+Grammar: N-msc | 3ms
+  eng: His–indignation
+  spa: indignación–su
+  hin: उसका–प्रकोप
+  arb: سُخْطَهُ
+  kor: 그의–분노를
+  swa: ghadhabu–yake
+
+### Sense 94761 (1 occurrences)
+Grammar: N-ms
+  eng: indignation
+  spa: indignación
+  hin: क्रोध
+  arb: السُّخْطِ
+  kor: 분노의
+  swa: ghadhabu
+
+## Task
+
+Group these 15 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

@@ -1,0 +1,127 @@
+# Sense Merge Task for H6925
+
+Lemma: H6925 (POS: Prep | 2ms)
+Total occurrences: 46
+Current sense count: 11
+
+This Hebrew/Greek lemma has been over-split into 11 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 131167 (17 occurrences)
+Grammar: Prep
+  eng: before, before–
+  spa: delante–de, ante
+  hin: के–सामने, सामने
+  arb: أَمَامَ, قُدَّامَ, قُدَّامِ
+  kor: 앞–에, 앞에, 앞–에서
+  swa: mbele–ya, mbele–ya–
+
+### Sense 131168 (7 occurrences)
+Grammar: Prep | 1cs
+  eng: before–me, before-me
+  spa: delante–de–mí, mí, ante–mí
+  hin: मेरे–सामने
+  arb: أَمَامِي, قُدَّامِي
+  kor: 내–앞–에, 앞에–나의, 앞–나의
+  swa: mbele–yangu
+
+### Sense 131169 (7 occurrences)
+Grammar: Prep | 3ms
+  eng: before–Him, before–him
+  spa: delante–de–él
+  hin: उसके–सामने, उसके–सामने–से
+  arb: أَمَامَهُ, قُدَّامِهِ, قُدَّامَهُ
+  kor: 그–앞–에서, 그–앞–에, 그의–앞에서
+  swa: mbele–yake, mbele–Yake
+
+### Sense 131171 (4 occurrences)
+Grammar: Prep | 2ms
+  eng: [ketiv:before-you], (qere:before-you)
+  spa: [delante–de–ti], (delante–de–ti)
+  hin: [तेरे–सामने], (तेरे–सामने)
+  arb: [أَمَامَكَ], (أَمَامَكَ)
+  kor: [당신–앞–에], (당신–앞–에)
+  swa: [mbele–yako], (mbele–yako)
+
+### Sense 131170 (3 occurrences)
+Grammar: Prep
+  eng: before
+  spa: delante–de, delante–de–
+  hin: सामने, द्वारा
+  arb: أَمَامَ–, أَمام–, أَمامَ
+  kor: 앞에, 앞에–
+  swa: mbele–ya, ya
+
+### Sense 131172 (2 occurrences)
+Grammar: Prep | 3fs
+  eng: (qere:before-it)
+  spa: delante–de–él
+  hin: (उसके–सामने)
+  arb: قُدَّامِهِ
+  kor: (그것의–앞에서)
+  swa: (mbele–yake)
+
+### Sense 131174 (2 occurrences)
+Grammar: Prep | 3fs
+  eng: [ketiv:before-it]
+  spa: [delante–de–él]
+  hin: [उसके–सामने]
+  arb: (قُدَّامِهِ)
+  kor: [그것의–앞에서]
+  swa: [mbele–yake]
+
+### Sense 131175 (1 occurrences)
+Grammar: Prep | 3fs
+  eng: before–it
+  spa: antes–de–ella
+  hin: उससे–पहले–के
+  arb: قَبْلَهُ
+  kor: 그것의–앞에
+  swa: kabla–yake
+
+### Sense 131176 (1 occurrences)
+Grammar: Prep | 1cs
+  eng: before–me
+  spa: delante–de–mí.
+  hin: मेरे–सामने
+  arb: أَمَامِي
+  kor: 앞에–나
+  swa: mbele–yangu
+
+### Sense 131177 (1 occurrences)
+Grammar: N-mpc | 3mp
+  eng: before–them
+  spa: delante–de–ellos
+  hin: उनके–सामने
+  arb: أَمَامَهُمْ
+  kor: 그들–앞–에
+  swa: mbele–yao
+
+### Sense 131178 (1 occurrences)
+Grammar: Conj-w | Prep | 3ms
+  eng: and–before–Him
+  spa: y–delante–de–él
+  hin: और–उसके–सामने
+  arb: وَ–قُدَّامَهُ
+  kor: 그리고–그의–앞에
+  swa: na–mbele–Yake
+
+## Task
+
+Group these 11 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

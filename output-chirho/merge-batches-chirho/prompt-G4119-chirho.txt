@@ -1,0 +1,145 @@
+# Sense Merge Task for G4119
+
+Lemma: G4119 (POS: Adj-AMP-C)
+Total occurrences: 55
+Current sense count: 13
+
+This Hebrew/Greek lemma has been over-split into 13 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 74935 (22 occurrences)
+Grammar: Adj-ANS-C,Adj-NNS-C,Adj-AMP-C,Adj-NMP-C,Adj-ANP-C,Adj-AMS-C,Adj-GFS-C,Adj-AFS-C
+  eng: more, of–more, more–than
+  spa: más, mayor, más-que
+  hin: अधिक, ज़यअद, बहुतों–ने
+  arb: أَكْثَرَ, أَكثَرَ, أَكْثَرُ
+  kor: 더–많은, 더, 더–많이
+  swa: zaidi, zaidi–ya, wengi–zaidi
+
+### Sense 74936 (6 occurrences)
+Grammar: Adj-ANP-C,Adj-GNP-C,Adj-NMP-C,Adj-NFP-C,Adj-AFP-C
+  eng: more–than
+  spa: más-de, más–de, más
+  hin: अधिक, चालीस
+  arb: أَكْثَرَ, أَكْثَرُ, أَكْثَرَ–مِنْ
+  kor: 더–많은, 이었으니, ~보다–많은
+  swa: zaidi–ya
+
+### Sense 74937 (4 occurrences)
+Grammar: Adj-NNS-C
+  eng: greater–than, greater-than
+  spa: más, mayor-que
+  hin: बड़ा, अधिक
+  arb: أَعْظَمُ, أَعظَمُ
+  kor: 더–큰–자가, 더–큰–이가
+  swa: mkubwa–zaidi, mkubwa-zaidi
+
+### Sense 74938 (4 occurrences)
+Grammar: Adj-ANS-C,Adj-AMS-C
+  eng: longer, further
+  spa: más, más-tiempo
+  hin: अधिक, फैले
+  arb: أَكْثَرَ, فَأَكْثَرَ, أَطْوَلَ
+  kor: 퍼지도록, 더–이상, 더–오랜
+  swa: zaidi, muda–mrefu–zaidi
+
+### Sense 74939 (4 occurrences)
+Grammar: Adj-NMP-C,Adj-DMP-C
+  eng: most, majority
+  spa: más
+  hin: अधिकांश, अधिकों, अधिकांशने
+  arb: الْأَكْثَرُونَ, الأَكْثَرُونَ, أكثَرِهِم
+  kor: 더–많은–이들이, 더–많은–사람들이, 대부분은
+  swa: wengi
+
+### Sense 74940 (4 occurrences)
+Grammar: Adj-DMP-C,Adj-AFP-C
+  eng: many
+  spa: más, muchos, muchas
+  hin: बहुत, अधिक
+  arb: أَكْثَرَ, كَثيرَةٍ
+  kor: 더–많은, 그–
+  swa: nyingi, zaidi, mengi
+
+### Sense 74941 (3 occurrences)
+Grammar: Adj-GMP-C,Adj-AMP-C
+  eng: majority, more
+  spa: más
+  hin: बहुमतों, बहुतों–को, बहुतों
+  arb: الأَكثَرينَ
+  kor: 더–많은–자들의, 더–많은–자들을, 다수에–의한
+  swa: wengi,, wengi.
+
+### Sense 74942 (2 occurrences)
+Grammar: Adj-NMP-C,Adj-AMP-C
+  eng: more
+  spa: más
+  hin: अधिकों, अधिक,
+  arb: كَثيرونَ, الأَكْثَرينَ
+  kor: 더–많은–사람들이, 더–많은–사람들을
+  swa: wengi–zaidi
+
+### Sense 74943 (2 occurrences)
+Grammar: Adj-AFP-C,Adj-GNP-C
+  eng: more, many
+  spa: muchos
+  hin: बहुतोंके, बहुत
+  arb: كَثِيرَةٍ, كَثِيرَةً
+  kor: 여러
+  swa: nyingi, mingi
+
+### Sense 74944 (1 occurrences)
+Grammar: Adj-AMP-C
+  eng: more
+  spa: más
+  hin: अधिक
+  arb: أَكْثَرَ
+  kor: 더–많은
+  swa: wengi
+
+### Sense 74945 (1 occurrences)
+Grammar: Adj-ANS-C
+  eng: more
+  spa: allá
+  hin: ज़यअद,
+  arb: أَكْثَرَ
+  kor: 더–멀리
+  swa: –
+
+### Sense 74946 (1 occurrences)
+Grammar: Adj-GNP-C
+  eng: many-things
+  spa: más–cosas
+  hin: बहुत–बातों
+  arb: كَثيرٍ
+  kor: 많은–것에
+  swa: mengi
+
+### Sense 74947 (1 occurrences)
+Grammar: Adj-NMP-C
+  eng: more
+  spa: más–numerosos
+  hin: बहुतेरे
+  arb: كَثيرونَ
+  kor: 많이
+  swa: wengi
+
+## Task
+
+Group these 13 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

@@ -1,0 +1,118 @@
+# Sense Merge Task for G5177
+
+Lemma: G5177 (POS: V-APA-AFP)
+Total occurrences: 12
+Current sense count: 10
+
+This Hebrew/Greek lemma has been over-split into 10 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 77940 (2 occurrences)
+Grammar: V-AOA-3S
+  eng: it-may-happen
+  spa: acaso
+  hin: हो
+  arb: يُوجَدُ, تُوجَدُ
+  kor: 있다면
+  swa: ikitokea
+
+### Sense 77941 (2 occurrences)
+Grammar: V-APA-AFP,V-APA-AFS
+  eng: ordinary
+  spa: común, comunes
+  hin: सामान्य, साधारण
+  arb: عَادِيَّةٍ, عادِيَّةً
+  kor: 보통이–아닌, 보통–의
+  swa: za–kawaida, ya–kawaida
+
+### Sense 77942 (1 occurrences)
+Grammar: V-ANA
+  eng: to-obtain
+  spa: de-alcanzar
+  hin: प्राप्त–करने
+  arb: يَنالوا
+  kor: 얻기에
+  swa: kuupata
+
+### Sense 77943 (1 occurrences)
+Grammar: V-PPA-NMP
+  eng: enjoying
+  spa: gozando
+  hin: पातेहुए
+  arb: نَائِلِينَ
+  kor: 누리며
+  swa: tukipata
+
+### Sense 77944 (1 occurrences)
+Grammar: V-APA-ANS
+  eng: perhaps
+  spa: quizás
+  hin: शायद
+  arb: لَعَلَّ
+  kor: 아마
+  swa: labda
+
+### Sense 77945 (1 occurrences)
+Grammar: V-APA-NMS
+  eng: having–obtained
+  spa: habiendo-obtenido
+  hin: पाकर
+  arb: نَائِلًا
+  kor: 얻어서
+  swa: niliopata
+
+### Sense 77946 (1 occurrences)
+Grammar: V-ASA-3P
+  eng: they-might-obtain
+  spa: alcancen
+  hin: पाएं।
+  arb: يَنَالُوا
+  kor: 얻기를
+  swa: wapate
+
+### Sense 77947 (1 occurrences)
+Grammar: V-RIA-3S
+  eng: he-has-obtained
+  spa: ha-obtenido
+  hin: प्राप्त–किया
+  arb: نَالَ
+  kor: 얻었으니
+  swa: amepata
+
+### Sense 77948 (1 occurrences)
+Grammar: V-ASA-3P
+  eng: may–obtain
+  spa: obtengan
+  hin: पअयेन,
+  arb: يَنالوا
+  kor: 얻게–하라,
+  swa: wapate
+
+### Sense 77949 (1 occurrences)
+Grammar: V-ANA
+  eng: to–receive
+  spa: recibir
+  hin: पाने।
+  arb: أَنْ–يَنَالَ
+  kor: 받기를
+  swa: kupata
+
+## Task
+
+Group these 10 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

@@ -1,0 +1,118 @@
+# Sense Merge Task for H1753
+
+Lemma: H1753 (POS: V-Qal-Imperf-3fs)
+Total occurrences: 13
+Current sense count: 10
+
+This Hebrew/Greek lemma has been over-split into 10 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 91432 (2 occurrences)
+Grammar: V-Qal-Prtcpl-mp
+  eng: [ketiv:dwell], (qere:dwell)
+  spa: [moran], (moran)
+  hin: रहते–हैं
+  arb: يَسْكُنُونَ, [يَسْكُنُونَ]
+  kor: 사는
+  swa: wanakaa
+
+### Sense 91433 (2 occurrences)
+Grammar: V-Qal-Prtcpl-mp
+  eng: (qere:dwell)
+  spa: (habitan)
+  hin: (रहते–हैं)
+  arb: (يَسْكُنُونَ)
+  kor: (거하는–자들)
+  swa: (wanaishi)
+
+### Sense 91434 (2 occurrences)
+Grammar: V-Qal-Prtcpl-mp
+  eng: [ketiv:dwell]
+  spa: [habitan]
+  hin: [रहते]
+  arb: [يَسْكُنُونَ]
+  kor: [거하는–자들]
+  swa: [wanaishi]
+
+### Sense 91435 (1 occurrences)
+Grammar: V-Qal-Imperf-3fp
+  eng: (qere:dwelt)
+  spa: (moraban)
+  hin: (बसते–थे)
+  arb: (تَسْكُنُ)
+  kor: (거하였다)
+  swa: (waliishi)
+
+### Sense 91436 (1 occurrences)
+Grammar: V-Qal-Prtcpl-mpc
+  eng: (qere:dwellers-of)
+  spa: (los–habitantes–de)
+  hin: (निवासी)
+  arb: (سَاكِنِي)
+  kor: (거하는–자들)
+  swa: (wanaoishi)
+
+### Sense 91437 (1 occurrences)
+Grammar: V-Qal-Prtcpl-mpc
+  eng: [ketiv:dwellers-of]
+  spa: [los–habitantes–de]
+  hin: [निवासी]
+  arb: [سَاكِنِي]
+  kor: [거하는–자들]
+  swa: [wanaoishi]
+
+### Sense 91438 (1 occurrences)
+Grammar: V-Qal-Imperf-3fs
+  eng: dwelt
+  spa: habitaban
+  hin: रहते–थे
+  arb: تَسْكُنُ
+  kor: 거하고
+  swa: waliishi
+
+### Sense 91439 (1 occurrences)
+Grammar: Conj-w | V-Qal-Prtcpl-mpc
+  eng: (qere:and-dwellers-of)
+  spa: (y–los–habitantes–de)
+  hin: (और–निवासियों)
+  arb: (وَ–سَاكِنِي)
+  kor: (그리고–거하는–자들)
+  swa: (na–wanaoishi)
+
+### Sense 91440 (1 occurrences)
+Grammar: V-Qal-Imperf-3mp
+  eng: [ketiv:dwelt]
+  spa: [moraban]
+  hin: [बसते]
+  arb: [تَسْكُنُ]
+  kor: [거하였다]
+  swa: [waliishi]
+
+### Sense 91441 (1 occurrences)
+Grammar: Conj-w | V-Qal-Prtcpl-mpc
+  eng: [ketiv:and-dwellers-of]
+  spa: [y–los–habitantes–de]
+  hin: [और–निवासियों]
+  arb: [وَ–سَاكِنِي]
+  kor: [그리고–거하는–자들]
+  swa: [na–wanaoishi]
+
+## Task
+
+Group these 10 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

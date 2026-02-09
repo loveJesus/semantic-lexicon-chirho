@@ -1,0 +1,136 @@
+# Sense Merge Task for H1237
+
+Lemma: H1237 (POS: Art | N-fs)
+Total occurrences: 20
+Current sense count: 12
+
+This Hebrew/Greek lemma has been over-split into 12 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 87739 (4 occurrences)
+Grammar: Art | N-fs
+  eng: the–valley
+  spa: el–valle, el–valle;, el–valle,
+  hin: ती–घाटी, सूखी–हुईं, घाटी
+  arb: ٱلْبِقَاعِ, الـ–بِقاعِ
+  kor: 그–골짜기의, 그–골짜기
+  swa: bonde
+
+### Sense 87740 (4 occurrences)
+Grammar: Prep-b | N-fsc
+  eng: in–valley-of, in–the–plain–of, in–Valley–of
+  spa: en–valle–de
+  hin: घाटी–में, मैदान–में, तराई–में
+  arb: في–بِقْعةِ, فِي–سَهْلِ, في–بِقْعَةِ
+  kor: 에–골짜기에, 에–골짜기, ~의–평지–에서
+  swa: katika–bonde–la, bּbikat
+
+### Sense 87741 (2 occurrences)
+Grammar: N-fsc
+  eng: valley-of
+  spa: valle–de, el–valle–de
+  hin: तराई, घाटी
+  arb: بِقْعَةَ, بِقْعةِ
+  kor: 골짜기(접), 골짜기
+  swa: tambarare–ya, bonde–la
+
+### Sense 87742 (2 occurrences)
+Grammar: Prep-b, Art | N-fs
+  eng: in–the–valley
+  spa: en–el–valle
+  hin: में–मैदान, तराई–में
+  arb: فِي–الْبِقَاعِ, في–البِقاعِ
+  kor: 그–골짜기에서, 그–골짜기–에서
+  swa: katika–bonde, bondeni
+
+### Sense 87743 (1 occurrences)
+Grammar: N-fp
+  eng: valleys
+  spa: valles
+  hin: घाटियों–में
+  arb: وِديان
+  kor: 골짜기–들–로
+  swa: mabonde
+
+### Sense 87744 (1 occurrences)
+Grammar: Prep-m | N-fs
+  eng: from–Valley-of–
+  spa: de–Valle–de–
+  hin: से–तराई–
+  arb: مِنْ–بِقْعَةِ–
+  kor: 골짜기에서
+  swa: kutoka–Bonde–la
+
+### Sense 87745 (1 occurrences)
+Grammar: Prep-b | N-fsc
+  eng: Megiddon
+  spa: en–llanura–de
+  hin: में–तराई
+  arb: فِي–بِقْعَةِ
+  kor: ~의–골짜기에
+  swa: katika–bonde–la
+
+### Sense 87746 (1 occurrences)
+Grammar: N-fs
+  eng: a-valley
+  spa: llanura
+  hin: मैदन
+  arb: سَهْلًا
+  kor: 평지를
+  swa: bonde
+
+### Sense 87747 (1 occurrences)
+Grammar: Prep-l | N-fs
+  eng: a–plain
+  spa: en–valle
+  hin: मैदान
+  arb: بِقَاعًا
+  kor: 평지로
+  swa: kuwa–tambarare
+
+### Sense 87748 (1 occurrences)
+Grammar: N-fp
+  eng: of–valleys
+  spa: valles
+  hin: घाटियों–के
+  arb: الأَوْدِيَةِ
+  kor: 골짜기들
+  swa: mabonde
+
+### Sense 87749 (1 occurrences)
+Grammar: Conj-w | N-fp
+  eng: and–valleys
+  spa: y–de–valles
+  hin: और–घाटियों–की
+  arb: وَبِقَاعٍ
+  kor: 그리고–골짜기들이라
+  swa: na–mabonde
+
+### Sense 87750 (1 occurrences)
+Grammar: Prep-b, Art | N-fs
+  eng: into–a–valley
+  spa: que–al–valle
+  hin: घाटी–में
+  arb: بِ–الْوَادِي
+  kor: 에–골짜기로
+  swa: bondeni
+
+## Task
+
+Group these 12 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

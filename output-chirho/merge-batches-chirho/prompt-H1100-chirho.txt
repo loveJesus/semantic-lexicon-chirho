@@ -1,0 +1,163 @@
+# Sense Merge Task for H1100
+
+Lemma: H1100 (POS: N-ms)
+Total occurrences: 27
+Current sense count: 15
+
+This Hebrew/Greek lemma has been over-split into 15 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 86831 (6 occurrences)
+Grammar: N-ms
+  eng: Beliyaal, worthlessness
+  spa: Belial
+  hin: बेलियाल, बलियाल, बेलियाल–के
+  arb: بَلِيَّعَال, بَلِيَّعَالَ, بَلِيَّعالَ
+  kor: 불량배, 벨리알의, 불량의
+  swa: Beliali, wa–Beliali, belialu
+
+### Sense 86832 (3 occurrences)
+Grammar: N-ms
+  eng: worthlessness
+  spa: de–Belial, perversidad
+  hin: बेलियाल, नीच
+  arb: بَلِيَّعَلَ, لَئِيمٌ
+  kor: 비천한, 무의한
+  swa: asiye–na–faida
+
+### Sense 86833 (2 occurrences)
+Grammar: N-ms
+  eng: worthlessness
+  spa: Belial
+  hin: बलियाल–की
+  arb: شَرٍّ, بَليَّعال
+  kor: 악한–것–의, 사악한
+  swa: la–uovu, Beliali
+
+### Sense 86834 (2 occurrences)
+Grammar: N-ms
+  eng: worthlessness, the–worthless–one
+  spa: Belial
+  hin: बलियाल
+  arb: بَلِيَّعَال
+  kor: 비리알–이, 비리알–의
+  swa: –uovu, mwovu
+
+### Sense 86835 (2 occurrences)
+Grammar: N-ms
+  eng: Beliyaal
+  spa: Belial
+  hin: बेलियाल–के
+  arb: بَلِيَّعال
+  kor: 불량배
+  swa: beliali
+
+### Sense 86836 (2 occurrences)
+Grammar: N-ms
+  eng: Belial
+  spa: perversidad, Belial
+  hin: बेलीयाल–की, बेलियाल–के
+  arb: بَلِيَّعَالَ, الهَلاكِ
+  kor: 브리알의
+  swa: uovu, Beliali
+
+### Sense 86838 (2 occurrences)
+Grammar: Art | N-ms,N-ms
+  eng: Beliyaal
+  spa: de–Belial, Belial
+  hin: नीचता–के, दुष्ट
+  arb: لَئِيمٌ, بَلِيَّعالَ
+  kor: 악한, 악의
+  swa: wa–uovu
+
+### Sense 86839 (1 occurrences)
+Grammar: N-ms
+  eng: destruction
+  spa: destrucción
+  hin: बेलियाल–की
+  arb: الْهَلاَكِ
+  kor: 비릴–의
+  swa: uharibifu
+
+### Sense 86840 (1 occurrences)
+Grammar: N-ms
+  eng: Belial
+  spa: Belial
+  hin: बलियाल
+  arb: بَلِيَّعالَ
+  kor: 사악함–의
+  swa: Beliali
+
+### Sense 86841 (1 occurrences)
+Grammar: N-ms
+  eng: worthless
+  spa: perversa
+  hin: बुरी
+  arb: بَلِيَّعَالَ
+  kor: 브리알의
+  swa: la–Beliali
+
+### Sense 86842 (1 occurrences)
+Grammar: Conj-w | N-ms
+  eng: and–worthlessness
+  spa: Y–Belial
+  hin: और–बेलीयाल
+  arb: وَاللَّئِيمُ
+  kor: 그리고–블리알은
+  swa: lakini–watu–waovu
+
+### Sense 86843 (1 occurrences)
+Grammar: Conj-w | N-ms
+  eng: and–worthless
+  spa: y–perverso
+  hin: और-बेलियअल
+  arb: وَ–بَلِيَّعالَ
+  kor: 그리고–쓸모없는
+  swa: upumbavu
+
+### Sense 86844 (1 occurrences)
+Grammar: Art | N-ms
+  eng: the–worthlessness
+  spa: el–Belial
+  hin: बेलियाल–के
+  arb: البَلِيَّعالِ
+  kor: 불량의
+  swa: mpumbavu
+
+### Sense 86845 (1 occurrences)
+Grammar: Art | N-ms
+  eng: the–Beliyaal
+  spa: el–Belial
+  hin: बेलियाल–के
+  arb: ال–بَلِيَّعالِ
+  kor: 그–불량배
+  swa: beliali
+
+### Sense 86846 (1 occurrences)
+Grammar: N-ms
+  eng: worthless
+  spa: indigno
+  hin: निकम्मा
+  arb: يا–خَسيسُ
+  kor: 쓰레기
+  swa: asiyefaa
+
+## Task
+
+Group these 15 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

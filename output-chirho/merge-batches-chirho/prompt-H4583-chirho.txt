@@ -1,0 +1,153 @@
+# Sense Merge Task for H4583
+
+Lemma: H4583 (POS: N-msc)
+Total occurrences: 17
+Current sense count: 14
+
+This Hebrew/Greek lemma has been over-split into 14 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 112883 (2 occurrences)
+Grammar: Prep-m | N-msc
+  eng: from–dwelling–of, from-dwelling-of
+  spa: desde–morada–de, desde–la–morada–de
+  hin: से–निवास, निवास–से
+  arb: مِنْ–مَسْكَنِ
+  kor: 로부터–거처, (전)–거처–에서
+  swa: kutoka–makao–yake, kutoka–makao
+
+### Sense 112884 (2 occurrences)
+Grammar: N-ms
+  eng: dwelling
+  spa: morada
+  hin: निवास
+  arb: مَسْكَنٍ, مَسْكَنًا
+  kor: 거처
+  swa: makao
+
+### Sense 112885 (2 occurrences)
+Grammar: N-msc
+  eng: a–haunt–of
+  spa: morada–de
+  hin: मांद, बसेरा
+  arb: مَسْكَنَ
+  kor: 거주지를
+  swa: makao
+
+### Sense 112886 (1 occurrences)
+Grammar: Conj-w, Prep-m | N-msc
+  eng: and–from–dwelling-of
+  spa: y–desde–morada–de
+  hin: और–से–निवास
+  arb: وَ–مِنْ–مَسْكَنِ
+  kor: 그리고–에서–거처에서
+  swa: na–kutoka–makao–yake
+
+### Sense 112887 (1 occurrences)
+Grammar: N-msc | 2ms
+  eng: your–dwelling
+  spa: tu–morada
+  hin: तेरा–निवास
+  arb: مَسْكَنَكَ
+  kor: 네–거처–로
+  swa: makao–yako
+
+### Sense 112888 (1 occurrences)
+Grammar: N-msc
+  eng: a–lair-of–
+  spa: guarida–de
+  hin: निवास–
+  arb: مَسْكَنَ–
+  kor: 거처이–
+  swa: makao–ya
+
+### Sense 112889 (1 occurrences)
+Grammar: N-ms
+  eng: refuge
+  spa: refugio
+  hin: आश्रय
+  arb: مَأْوىً
+  kor: 피난처
+  swa: wa–makazi
+
+### Sense 112890 (1 occurrences)
+Grammar: Prep-l | N-msc
+  eng: a–lair-of
+  spa: para–guarida–de
+  hin: के–लिए–मांद
+  arb: لِمَأْوَى
+  kor: 거처로
+  swa: makao–ya
+
+### Sense 112891 (1 occurrences)
+Grammar: Prep-b | N-msc
+  eng: in–the–dwelling–of
+  spa: en–morada–de
+  arb: في–مَسْكَنِ
+  kor: 거처–에서
+  swa: katika–makazi
+
+### Sense 112892 (1 occurrences)
+Grammar: N-msc
+  eng: is–the–lair–of
+  spa: guarida–de
+  hin: अड्डा
+  arb: عَرِينُ
+  kor: 굴–이
+  swa: pango–la
+
+### Sense 112893 (1 occurrences)
+Grammar: N-ms
+  eng: a–dwelling–place
+  spa: morada
+  hin: निवास
+  arb: مَلْجَأٌ
+  kor: 거처–이시라
+  swa: makao
+
+### Sense 112894 (1 occurrences)
+Grammar: N-msc | 3ms
+  eng: His–dwelling
+  spa: su–morada
+  hin: उसके–निवास
+  arb: مَسْكَنِهِ
+  kor: 그의–처소
+  swa: mwonwo
+
+### Sense 112895 (1 occurrences)
+Grammar: N-msc
+  eng: the–habitation–of
+  spa: morada–de
+  hin: निवास
+  arb: مَسْكَنَ
+  kor: 거처–를
+  swa: makao-ya
+
+### Sense 112896 (1 occurrences)
+Grammar: Prep-l | N-msc
+  eng: to–dwelling-of
+  spa: a–morada–de
+  hin: निवास–तक
+  arb: لِـ–مَسْكَنِ
+  kor: 에–처소–
+  swa: limwon
+
+## Task
+
+Group these 14 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

@@ -1,0 +1,127 @@
+# Sense Merge Task for G1722
+
+Lemma: G1722 (POS: Prep)
+Total occurrences: 2772
+Current sense count: 11
+
+This Hebrew/Greek lemma has been over-split into 11 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 67114 (2417 occurrences)
+Grammar: Prep
+  eng: in, in–, on
+  spa: en, en–, En
+  hin: में, –में, मेइन
+  arb: في, فِي, بِـ
+  kor: –에서, 안–에서, 에
+  swa: katika, katika–, ndani
+
+### Sense 67115 (120 occurrences)
+Grammar: Prep
+  eng: among, among–, with
+  spa: entre, en, entre–
+  hin: में, –में, –मेइन
+  arb: في, فِي, بَيْنَ
+  kor: –에서, 안–에서, 에
+  swa: miongoni–mwa, miongoni–mwenu, miongoni
+
+### Sense 67116 (99 occurrences)
+Grammar: Prep
+  eng: with, with–, in
+  spa: con, en, con–
+  hin: में, –में, –से
+  arb: بِـ, بِ, بِـ–
+  kor: 에, 에–서, 안–에서
+  swa: kwa, kwa–, kwa–ulimi
+
+### Sense 67117 (64 occurrences)
+Grammar: Prep
+  eng: by, by–, in–
+  spa: en, por, en–
+  hin: में, –में, –मेइन
+  arb: بِـ, بِ, بِ–
+  kor: 안–에서, 에, 에서
+  swa: kwa, kwa–, na
+
+### Sense 67119 (22 occurrences)
+Grammar: Prep
+  eng: in–, by–
+  spa: en, a, por
+  hin: में
+  arb: فِي, بِ–, –
+  kor: ~안에, ~안에서
+  swa: katika, ndani–yenu, ndani–yangu
+
+### Sense 67120 (18 occurrences)
+Grammar: Prep
+  eng: by, by–
+  spa: por
+  hin: –में, में, उससे
+  arb: بِ–, –, بِهِ
+  kor: –에서, –에, 에–서
+  swa: –, katika, yeye
+
+### Sense 67121 (17 occurrences)
+Grammar: Prep
+  eng: on, at, at–
+  spa: en, a, por
+  hin: –में, में, –पर
+  arb: في, عَنْ, عَلى
+  kor: 에–, –에, 에
+  swa: katika–, katika, mkono–wa–kuume
+
+### Sense 67122 (7 occurrences)
+Grammar: Prep
+  eng: in–, for–, by–
+  spa: en, por
+  hin: में
+  arb: بِ–, في
+  kor: ~안에
+  swa: katika, kwa
+
+### Sense 67123 (3 occurrences)
+Grammar: Prep
+  eng: to, in
+  spa: en
+  hin: में, –मेइन
+  arb: بِـ, بِهِ
+  kor: 안에서, ~안에서
+  swa: kwangu, kwake, kwa
+
+### Sense 67124 (3 occurrences)
+Grammar: Prep
+  eng: By
+  spa: En, Por
+  hin: –में, में, द्वारा
+  arb: بِـ, بِأَيِّ, بِ
+  kor: 에서, 에, –에서
+  swa: Kwa, Kwa–
+
+### Sense 67125 (2 occurrences)
+Grammar: Prep
+  eng: on
+  spa: en
+  hin: पर
+  arb: على
+  kor: 안–에
+  swa: juu–ya
+
+## Task
+
+Group these 11 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

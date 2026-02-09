@@ -1,0 +1,163 @@
+# Sense Merge Task for G2716
+
+Lemma: G2716 (POS: V-AIM-3S)
+Total occurrences: 22
+Current sense count: 15
+
+This Hebrew/Greek lemma has been over-split into 15 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 70456 (6 occurrences)
+Grammar: V-PIM/P-3S
+  eng: produces, is–producing
+  spa: produce
+  hin: उत्पन्न–करती–है, उत्पन्न–करता–है, उत्पन्न-करती-है
+  arb: يُنتِجُ, يُنشِئُ, تُنتِجُ
+  kor: 이루어낸다, 일으키는도다, 일으키느니라
+  swa: inaleta, unazalisha,, unatufanyia
+
+### Sense 70457 (3 occurrences)
+Grammar: V-PIM/P-1S
+  eng: accomplish, I–accomplish
+  spa: obro, lo–obro
+  hin: करता–हूँ
+  arb: أَفْعَلُ
+  kor: 행하는–것이–아니요, 행하는–것을
+  swa: ninafanya
+
+### Sense 70458 (1 occurrences)
+Grammar: V-APM-NMP
+  eng: having-accomplished
+  spa: habiendo–cumplido
+  hin: पोओर-करके
+  arb: مُتَمِّمينَ
+  kor: 이루고
+  swa: kufanya–yote
+
+### Sense 70459 (1 occurrences)
+Grammar: V-APM-AMS
+  eng: having–done
+  spa: habiendo–obrado
+  hin: करनेवाले–को
+  arb: الفاعِلَ
+  kor: 행한–자를
+  swa: aliyetenda.
+
+### Sense 70460 (1 occurrences)
+Grammar: V-APM-NMS
+  eng: having–worked
+  spa: que–nos–preparó
+  hin: जिसने–तैयार–किया
+  arb: المُعِدُّ
+  kor: 이루신–분이다
+  swa: aliyetuandaa
+
+### Sense 70461 (1 occurrences)
+Grammar: V-PNM/P
+  eng: to–accomplish
+  spa: obrar
+  hin: करना
+  arb: أَنْ–أَصْنَعَ
+  kor: 행하는–것을
+  swa: kutenda
+
+### Sense 70462 (1 occurrences)
+Grammar: V-AIM-3S
+  eng: it–produced
+  spa: produjo
+  hin: उत्पन्न–किया
+  arb: أَنتَجَ
+  kor: 이루어냈는가
+  swa: imezalisha
+
+### Sense 70463 (1 occurrences)
+Grammar: V-RNM/P
+  eng: to–have–accomplished
+  spa: haber–cumplido
+  hin: पूरी–की
+  arb: فَعَلتُم
+  kor: 이룬–것이니
+  swa: kutimiza
+
+### Sense 70464 (1 occurrences)
+Grammar: V-AIM-3S
+  eng: worked-out
+  spa: obró
+  hin: काम–किया
+  arb: يَعْمَلْ–هُ
+  kor: 이루셨다
+  swa: fanya
+
+### Sense 70465 (1 occurrences)
+Grammar: V-PMM/P-2P
+  eng: work–out
+  spa: obrad
+  hin: कअम–करो.
+  arb: تَمِّموا
+  kor: 이루라.
+  swa: utendeni
+
+### Sense 70466 (1 occurrences)
+Grammar: V-AIM-3S
+  eng: produced
+  spa: produjo
+  hin: उत्पन्न–की
+  arb: صَنَعَتْ
+  kor: 이루었다
+  swa: ilileta
+
+### Sense 70467 (1 occurrences)
+Grammar: V-AIP-3S
+  eng: were-performed
+  spa: fueron–realizadas
+  hin: किए–गए
+  arb: انْعَمَلَتْ
+  kor: 이루어졌다
+  swa: zilifanywa
+
+### Sense 70468 (1 occurrences)
+Grammar: V-PPM/P-GMS
+  eng: working–out
+  spa: que–obra
+  hin: करता–है
+  arb: الفاعِلِ
+  kor: 행하는–자–의
+  swa: anayefanya
+
+### Sense 70469 (1 occurrences)
+Grammar: V-PPM/P-NFS
+  eng: producing
+  spa: produciendo
+  hin: उत्पन्न–करनेवाली
+  arb: صَانِعَةً
+  kor: 일으키는
+  swa: inaleta
+
+### Sense 70470 (1 occurrences)
+Grammar: V-PPM/P-NMP
+  eng: working–out
+  spa: obrando
+  hin: करते–हुए
+  arb: فاعِلينَ
+  kor: 행하며
+  swa: wakifanya,
+
+## Task
+
+Group these 15 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

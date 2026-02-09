@@ -1,0 +1,154 @@
+# Sense Merge Task for H2426
+
+Lemma: H2426 (POS: N-ms)
+Total occurrences: 19
+Current sense count: 14
+
+This Hebrew/Greek lemma has been over-split into 14 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 96757 (6 occurrences)
+Grammar: N-msc
+  eng: army-of
+  spa: ejército–de
+  hin: सेना
+  arb: جَيْشُ, جَيْشِ, جَيشِ
+  kor: 군대가, 군대를, 군대
+  swa: jeshi–la, lote
+
+### Sense 96758 (1 occurrences)
+Grammar: Conj-w | N-msc
+  eng: and–army-of
+  spa: y–ejército–de
+  hin: और–सैन्य
+  arb: وَ–جَيْشِ
+  kor: 그리고–군대
+  swa: na–jeshi–la
+
+### Sense 96759 (1 occurrences)
+Grammar: Prep-b | N-msc | 2fs
+  eng: in–your–walls
+  spa: en–muralla–tuya
+  hin: तेरी–दीवारों–में
+  arb: في–أَسوارِكِ
+  kor: 너–의–성벽–안–에
+  swa: ndani–ya–kuta–zako
+
+### Sense 96760 (1 occurrences)
+Grammar: N-ms
+  eng: rampart
+  spa: el–baluarte
+  hin: प्राचीर
+  arb: السُّورَ
+  kor: 외벽–과
+  swa: ukuta–wa–nje
+
+### Sense 96761 (1 occurrences)
+Grammar: N-msc | 3ms
+  eng: his-army
+  spa: ejército–de–él
+  hin: सेना–अपनी–के
+  arb: جَيْشِهِ
+  kor: 그의–군대
+  swa: jeshi–lake
+
+### Sense 96762 (1 occurrences)
+Grammar: Art | N-ms
+  eng: the–army–
+  spa: el–ejército–
+  hin: सेना–
+  arb: –الجيش
+  kor: –군대의
+  swa: jeshi–hili
+
+### Sense 96763 (1 occurrences)
+Grammar: N-msc
+  eng: rampart
+  spa: muralla
+  hin: प्राचीर
+  arb: حِصْنُهَا
+  kor: 군대–가
+  swa: ngome
+
+### Sense 96764 (1 occurrences)
+Grammar: Prep-b | N-msc
+  eng: with–an–army
+  spa: con–ejército
+  hin: सेना–के–साथ
+  arb: بِـ–جَيْشٍ
+  kor: 에–군대와
+  swa: na–jeshi
+
+### Sense 96765 (1 occurrences)
+Grammar: Prep-b | N-msc
+  eng: in–rampart–of
+  spa: en–muro–de
+  hin: दीवार–में
+  arb: بِ–سورِ
+  kor: 성벽–에
+  swa: katika–eneo–la
+
+### Sense 96766 (1 occurrences)
+Grammar: Conj-w | N-ms
+  eng: and–rampart
+  spa: y–baluarte
+  hin: और–गढ़
+  arb: وَسِيَاجًا
+  kor: 그리고–해자로
+  swa: na–ngome
+
+### Sense 96767 (1 occurrences)
+Grammar: Prep-b | N-msc
+  eng: with–army
+  spa: con–ejército
+  hin: में–सेना
+  arb: بِجَيْشٍ
+  kor: 군대로
+  swa: na–jeshi
+
+### Sense 96768 (1 occurrences)
+Grammar: N-msc
+  eng: force-of
+  spa: fuerza–de
+  hin: सेना
+  arb: قُوَّةَ
+  kor: 군대
+  swa: nguvu–za
+
+### Sense 96769 (1 occurrences)
+Grammar: N-msc
+  eng: the–helpless
+  spa: ejército–de
+  hin: बल
+  arb: جَيْشُ
+  kor: 힘
+  swa: nguvu
+
+### Sense 96770 (1 occurrences)
+Grammar: Prep-b, Art | N-ms
+  eng: against–the–rampart
+  spa: en–el–muro
+  hin: दीवार–में
+  arb: فِي–السُّورِ
+  kor: 에–그–외곽
+  swa: kwenye–ngome
+
+## Task
+
+Group these 14 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

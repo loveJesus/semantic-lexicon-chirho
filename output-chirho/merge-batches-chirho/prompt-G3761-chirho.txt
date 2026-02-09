@@ -1,0 +1,145 @@
+# Sense Merge Task for G3761
+
+Lemma: G3761 (POS: Conj)
+Total occurrences: 144
+Current sense count: 13
+
+This Hebrew/Greek lemma has been over-split into 13 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 73519 (92 occurrences)
+Grammar: Conj,Adv
+  eng: nor–, nor, neither–
+  spa: ni, tampoco, ni–siquiera
+  hin: न, न–ही, न–हि
+  arb: وَلَا, وَلا, وَ–لا
+  kor: 또한, 도–아니, 아니고
+  swa: wala, wala–si–, wala–
+
+### Sense 73520 (26 occurrences)
+Grammar: Adv
+  eng: not-even, neither, not–even
+  spa: ni, tampoco, ni–siquiera
+  hin: न–ही, न, न–हि
+  arb: وَلا, وَلَا, وَلا–
+  kor: 또한, 아니다, 또한–아니요
+  swa: wala, hata, wala–
+
+### Sense 73521 (7 occurrences)
+Grammar: Adv
+  eng: neither–, not–even–, neither
+  spa: ni, tampoco
+  hin: न–ही, तो–न
+  arb: وَلا
+  kor: 또한–아니, 아니라, 하나도
+  swa: hata, wala, wala–hakuna
+
+### Sense 73522 (3 occurrences)
+Grammar: Adv
+  eng: not-even–, not-even, neither
+  spa: ni-siquiera, ni
+  hin: न
+  arb: وَ–لاَ, وَلَا, لَا
+  kor: 아니다, 않h–
+  swa: wala
+
+### Sense 73523 (3 occurrences)
+Grammar: Adv
+  eng: Neither
+  spa: Tampoco, Ni
+  hin: न, न–ही
+  arb: وَلَا, وَلا–أَنا, وَلا
+  kor: 아니-하노라, 나–도–아니다, –도–아니다
+  swa: Wala
+
+### Sense 73524 (3 occurrences)
+Grammar: Adv
+  eng: not-even, neither–, neither
+  spa: ni, tampoco
+  hin: न, नहीं–भी
+  arb: وَلَا, وَلَا–حَتَّى
+  kor: 아니다, ~도–않으시리라, ~도–아니하니
+  swa: wala–haiwezi, wala–, wala
+
+### Sense 73525 (3 occurrences)
+Grammar: Adv
+  eng: nor, not–even
+  spa: ni
+  hin: –सम्पत्तियों–में–से, नहीं–है, और–न
+  arb: وَلَا
+  kor: 아니, 누구도–아니
+  swa: wala
+
+### Sense 73526 (2 occurrences)
+Grammar: Adv
+  eng: not-even
+  spa: ni–siquiera
+  hin: समय, जंजीरों–से
+  arb: ولا
+  kor: 도–아니고, –도–않고
+  swa: hata–si–, hata
+
+### Sense 73527 (1 occurrences)
+Grammar: Adv
+  eng: not-even
+  spa: ni-siquiera
+  hin: नहीं–तो
+  arb: لَمْ–كَانَ
+  kor: 아니라
+  swa: hata–asingali–
+
+### Sense 73528 (1 occurrences)
+Grammar: Adv
+  eng: Not–even
+  spa: ni–siquiera
+  hin: यह–भी–नहीं
+  arb: أَوَلَم
+  kor: 아니
+  swa: Wala–hili
+
+### Sense 73529 (1 occurrences)
+Grammar: Adv
+  eng: Not-even
+  spa: Ni
+  hin: क्या–नहीं
+  arb: أَوَلا
+  kor: 아니
+  swa: hakuna
+
+### Sense 73530 (1 occurrences)
+Grammar: Adv
+  eng: not-even
+  spa: ¿Ni
+  hin: क्या–नहीं
+  arb: أوَلا
+  kor: 아니냐
+  swa: wala
+
+### Sense 73531 (1 occurrences)
+Grammar: Adv
+  eng: not-even
+  spa: ni–aun
+  hin: फिर–भी–नहीं
+  arb: وَلا–هكَذا
+  kor: 아니라
+  swa: hata–hivyo
+
+## Task
+
+Group these 13 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

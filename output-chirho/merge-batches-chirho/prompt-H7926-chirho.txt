@@ -1,0 +1,145 @@
+# Sense Merge Task for H7926
+
+Lemma: H7926 (POS: N-msc | 3fs)
+Total occurrences: 21
+Current sense count: 13
+
+This Hebrew/Greek lemma has been over-split into 13 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 140493 (6 occurrences)
+Grammar: N-msc | 3ms
+  eng: his–shoulder, his-shoulder
+  spa: su–hombro, su-hombro
+  hin: उसके–कंधे, उसके–कंधे–की, अपने–कंधे
+  arb: كَتِفِهِ
+  kor: 그의–어깨, 어깨–그의, 그의–어깨의
+  swa: bega–lake, ya-bega-lake, bega–lao
+
+### Sense 140494 (3 occurrences)
+Grammar: N-msc | 3fs
+  eng: her–shoulder
+  spa: su–hombro
+  hin: उसके–कंधे, उसके–कंधे–पर
+  arb: كَتِفِهَا
+  kor: 그녀의–어깨
+  swa: bega–lake, na–mtoto
+
+### Sense 140495 (2 occurrences)
+Grammar: Prep-m | N-msc | 3ms
+  eng: from–his–shoulder
+  spa: desde–su–hombro
+  hin: से–कंधे–अपने, अपने–कंधे–से
+  arb: مِنْ–كَتِفِهِ
+  kor: 그의–어깨–에서
+  swa: kutoka–mabega–yake
+
+### Sense 140496 (1 occurrences)
+Grammar: N-msc | 3mp
+  eng: their-shoulders
+  spa: sus–hombros
+  hin: कंधे–अपने
+  arb: أَكْتَافِهِمْ
+  kor: 그들의–어깨
+  swa: mabega–yao
+
+### Sense 140497 (1 occurrences)
+Grammar: N-ms
+  eng: with–shoulder
+  spa: hombro
+  hin: कंधा
+  arb: كَتِفًا
+  kor: 어깨
+  swa: bega
+
+### Sense 140498 (1 occurrences)
+Grammar: N-ms
+  eng: Shechem
+  spa: Shejem
+  hin: शेकेम
+  arb: شَكَمَ
+  kor: 세걜을
+  swa: Shekemu
+
+### Sense 140499 (1 occurrences)
+Grammar: N-msc | 3ms
+  eng: his–shoulder
+  spa: su–hombro
+  hin: अपना–कंधा
+  arb: كَتِفِهِ
+  kor: 그의–어깨를
+  swa: bega–lake
+
+### Sense 140500 (1 occurrences)
+Grammar: N-msc
+  eng: shoulder-of
+  spa: hombro–de
+  hin: कनधे
+  arb: كَتِفَيْ
+  kor: 어깨
+  swa: mabega–ya
+
+### Sense 140501 (1 occurrences)
+Grammar: N-msc | 1cs
+  eng: my–shoulder
+  spa: mi–hombro
+  hin: कंधे–अपने
+  arb: كَتِفِي
+  kor: 나의–어깨
+  swa: bega–langu
+
+### Sense 140502 (1 occurrences)
+Grammar: N-ms
+  eng: turn–their–back
+  spa: hombro
+  hin: पीठ
+  arb: ظَهْرًا
+  kor: 등–을
+  swa: wakimbie
+
+### Sense 140503 (1 occurrences)
+Grammar: N-msc | 3ms
+  eng: his–shoulder
+  spa: hombro-de-el
+  hin: उसका–कंधा
+  arb: كَتِفَهُ
+  kor: 그의–어깨를
+  swa: bega–lake
+
+### Sense 140504 (1 occurrences)
+Grammar: N-msc | 3ms
+  eng: shoulder–his
+  spa: su–hombro
+  hin: कंधा–अपना
+  arb: كَتِفَهُ
+  kor: 그의–어깨를
+  swa: kamba–yake
+
+### Sense 140505 (1 occurrences)
+Grammar: N-msc | 2ms
+  eng: your–shoulder
+  spa: tu-hombro
+  hin: तेरे–कंधे
+  arb: كَتِفِكَ
+  kor: 네–어깨
+  swa: bega-lako
+
+## Task
+
+Group these 13 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

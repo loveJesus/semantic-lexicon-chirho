@@ -1,0 +1,154 @@
+# Sense Merge Task for H7562
+
+Lemma: H7562 (POS: Prep-m | N-ms)
+Total occurrences: 30
+Current sense count: 14
+
+This Hebrew/Greek lemma has been over-split into 14 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 137141 (11 occurrences)
+Grammar: N-ms
+  eng: wickedness, is–wickedness
+  spa: maldad, impiedad
+  hin: दुष्टता, दुष्टता–के, दुष्टता–की
+  arb: الشَّرِّ, وَلَا–, شَرَّ
+  kor: 악–의, 악함, 악을
+  swa: uovu, ni–uovu
+
+### Sense 137142 (3 occurrences)
+Grammar: N-ms
+  eng: wickedness
+  spa: maldad
+  hin: दुष्टता–से, दुष्टों–के
+  arb: الشَّرَّ, بِ–الشَّرِّ
+  kor: 악한, 악–을, 악–에
+  swa: uovu
+
+### Sense 137143 (3 occurrences)
+Grammar: N-ms
+  eng: wickedness
+  spa: maldad
+  hin: दुष्टताके, दुष्टताकी, दुष्टता
+  arb: –الشَّرِّ, الشَّرِّ
+  kor: 악의
+  swa: ya–uovu, vya–uovu, uovu
+
+### Sense 137144 (2 occurrences)
+Grammar: Prep-m | N-msc | 3ms
+  eng: from–wickedness-of-him, from–his–wickedness
+  spa: de–su–maldad;, de–maldad–de–él
+  hin: से–उसकी–दुष्टता
+  arb: مِنْ–شَرِّهِ
+  kor: 에서–그의–악, 그의–악에서
+  swa: kutoka–uovu–wake
+
+### Sense 137145 (2 occurrences)
+Grammar: Art | N-ms
+  eng: the–wickedness
+  spa: la–maldad
+  hin: दुष्टता
+  arb: الظُلْمُ, الشَّرُّ
+  kor: 악함–그
+  swa: uovu
+
+### Sense 137146 (1 occurrences)
+Grammar: Prep-b | N-ms
+  eng: by–wickedness
+  spa: por–maldad
+  hin: दुष्टता–में
+  arb: بِالشَّرِّ
+  kor: 악–으로
+  swa: kwa–uovu
+
+### Sense 137147 (1 occurrences)
+Grammar: N-msc | 3ms
+  eng: its–wickedness
+  spa: su–maldad
+  hin: उसकी–दुष्टता
+  arb: شَرِّهِ
+  kor: 그의–악함을
+  swa: uovu–wao
+
+### Sense 137148 (1 occurrences)
+Grammar: Prep | N-ms
+  eng: in–wickedness
+  spa: en–maldad
+  hin: दुष्टता–में
+  arb: بِـ–الشَّرِّ
+  kor: 악–으로
+  swa: kwa–uovu
+
+### Sense 137149 (1 occurrences)
+Grammar: N-msc | 3ms
+  eng: his–wickedness
+  spa: su–impiedad
+  hin: उसकी–दुष्टता
+  arb: شَرَّهُ
+  kor: 악–을
+  swa: uovu–wake
+
+### Sense 137150 (1 occurrences)
+Grammar: N-msc | 1cp
+  eng: our–wickedness
+  spa: maldad–nuestra
+  hin: हमारी–दुष्टता
+  arb: شَرَّنَا
+  kor: 우리의–악을
+  swa: uovu–wetu
+
+### Sense 137151 (1 occurrences)
+Grammar: Prep-k | N-msc | 3ms
+  eng: according-to–its-wickedness
+  spa: según–su–maldad
+  hin: अनुसार–दुष्टता–उसकी–के
+  arb: كَشَرِّهِ
+  kor: 악함으로–그의–대로
+  swa: kwa–uovu–wake
+
+### Sense 137152 (1 occurrences)
+Grammar: Art | N-ms
+  eng: wickedness
+  spa: la–maldad
+  hin: दुष्टता–की
+  arb: الشَّرّ
+  kor: 악–의
+  swa: ya–uovu
+
+### Sense 137153 (1 occurrences)
+Grammar: N-msc | 2ms
+  eng: is–your–wickedness
+  spa: tu–maldad
+  hin: दुष्टता–तेरी
+  arb: شَرُّكَ
+  kor: 네–악이요
+  swa: uovu–wako
+
+### Sense 137154 (1 occurrences)
+Grammar: Prep-m | N-ms
+  eng: from–wickedness
+  spa: de–maldad
+  hin: दुष्टता
+  arb: مِنَ–الشَّرِّ
+  kor: 악함–으로부터
+  swa: kutoka–uovu
+
+## Task
+
+Group these 14 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

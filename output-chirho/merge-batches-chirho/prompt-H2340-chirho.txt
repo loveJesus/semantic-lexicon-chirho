@@ -1,0 +1,136 @@
+# Sense Merge Task for H2340
+
+Lemma: H2340 (POS: Art | N-proper-ms)
+Total occurrences: 25
+Current sense count: 12
+
+This Hebrew/Greek lemma has been over-split into 12 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 95671 (3 occurrences)
+Grammar: Conj-w, Art | N-proper-ms
+  eng: and–the–Hivite
+  spa: y–el-jivi, y–el–heveo
+  hin: और–हिववी, और–हिव्वियों–के
+  arb: وَ–الْحِوِّيِّ, وَ–الْ–حِوِّيِّ
+  kor: 그리고–그–히위–사람의
+  swa: na–Mhivi, na–Wahivi
+
+### Sense 95672 (3 occurrences)
+Grammar: Art | N-proper-ms
+  eng: the–Hivite
+  spa: el–hivita, el–heveo
+  hin: हिव्वी, हिववी-को
+  arb: الْحِوِّيِّ, الْ–حِوِّيَّ
+  kor: 히위족의, 히위–사람의, 히위
+  swa: Mhivi, mkubwa
+
+### Sense 95673 (3 occurrences)
+Grammar: Conj-w, Art | N-proper-ms
+  eng: and–the–Hivite
+  spa: y–el–heveo, y–el–jivi
+  hin: और–हिव्वी
+  arb: وَ–الحِوّيُّ, وَ–الحِوِّيَّ, وَالْحِوِّيَّ
+  kor: 그리고–그–히위인과, 그리고–그–히위–사람이, 그리고–그–히와–사람과
+  swa: na–ha–Mhivi, na–Wahivi, na–Mhivi
+
+### Sense 95674 (3 occurrences)
+Grammar: Art | N-proper-ms
+  eng: the–Hivite
+  spa: el–heveo
+  hin: हिव्वी
+  arb: الحِوّيُّ, الحِوّيَّ, الحِوِّيَّ
+  kor: 그–히위–사람
+  swa: ha–Mhivi, Wahivi
+
+### Sense 95675 (2 occurrences)
+Grammar: Art | N-proper-ms
+  eng: the–Hivite
+  spa: el–jiveo, el–heveo
+  hin: हिव्वियों–के, हिव्वियों
+  arb: الْحِوِّيِّينَ, الـ–حِوِّيِّ
+  kor: 그–히위–사람과, 그–히위–사람
+  swa: Wahivi
+
+### Sense 95676 (2 occurrences)
+Grammar: Art | N-proper-ms
+  eng: the–Chivite
+  spa: el–heveo
+  hin: हिव्वी
+  arb: الحِوِّيِّ, الحِوِّيُّ
+  kor: 그–히위족과, 그–히위인에게
+  swa: Wahivi
+
+### Sense 95677 (2 occurrences)
+Grammar: Art | N-proper-ms
+  eng: the-Hivite
+  spa: el–heveo
+  hin: हिव्वी
+  arb: الحِوِّيِّينَ
+  kor: 그–히위–사람과
+  swa: Wahivi, Mhivi
+
+### Sense 95678 (2 occurrences)
+Grammar: Conj-w, Art | N-proper-ms
+  eng: and–the-Chivvi
+  spa: y–el–jivi
+  hin: और–हिव्वियों–को, और–हिव्वियों
+  arb: وَ–الْحِوِّيِّ
+  kor: 그리고–그–히위–사람이, 그리고–그–히위–사람과
+  swa: na–Wahivi
+
+### Sense 95679 (2 occurrences)
+Grammar: Art | N-proper-ms
+  eng: the–Hivite
+  spa: el–jivi, al–heveo
+  hin: हिव्वी
+  arb: الْحِوِّيَّ, الحِوِّيَّ
+  kor: 히위족과, 그–히와–사람과
+  swa: Wahivi, Mhivi
+
+### Sense 95680 (1 occurrences)
+Grammar: Conj-w, Art | N-proper-ms
+  eng: and–the–Chivvite
+  spa: y–el–heveo
+  hin: और–हिव्वियों–से
+  arb: وَالحِوّيِّ
+  kor: 그리고–그–히위–사람
+  swa: na–Wahivi
+
+### Sense 95681 (1 occurrences)
+Grammar: Art | N-proper-ms
+  eng: the–Chivvi
+  spa: el–jeveo
+  hin: हिव्वी
+  arb: الـ–حِوّيّ
+  kor: 그–히위인
+  swa: –Mhivi
+
+### Sense 95682 (1 occurrences)
+Grammar: Art | N-proper-ms
+  eng: the–Hivites
+  spa: el–heveo
+  hin: हिव्वी
+  arb: الـ–حِوِّيُّ
+  kor: 그–히위사람
+  swa: Wahivi
+
+## Task
+
+Group these 12 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

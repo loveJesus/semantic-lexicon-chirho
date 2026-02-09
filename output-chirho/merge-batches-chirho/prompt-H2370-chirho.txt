@@ -1,0 +1,118 @@
+# Sense Merge Task for H2370
+
+Lemma: H2370 (POS: V-Qal-Prtcpl-mp)
+Total occurrences: 31
+Current sense count: 10
+
+This Hebrew/Greek lemma has been over-split into 10 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 95899 (13 occurrences)
+Grammar: V-Qal-Prtcpl-ms
+  eng: seeing
+  spa: viendo, Viendo, estabas–viendo
+  hin: देख, देखता–था, देखता
+  arb: رَأَيْتُ, رَائِيًا, رَأَيْتَ
+  kor: 보는중이었다, 보고–있었다, 보고
+  swa: nilikuwa–ninaona, Nilikuwa–ninaona, uliona
+
+### Sense 95900 (5 occurrences)
+Grammar: V-Qal-Perf-2ms
+  eng: you-saw
+  spa: viste
+  hin: देखा–तूने, तूने–देखा
+  arb: رَأَيْتَ, رَأَيْتَهَا
+  kor: 당신이–본
+  swa: uliona, ulivyoona
+
+### Sense 95901 (4 occurrences)
+Grammar: V-Qal-Perf-1cs
+  eng: I-saw
+  spa: vi
+  hin: देखा, मैंने–देखा, देखा–मैंने
+  arb: رَأَيْتُ, رَأَيْتُهُ, رَأَيْتُهَا
+  kor: 내가–본, 보았는데
+  swa: niliona
+
+### Sense 95902 (3 occurrences)
+Grammar: V-Qal-Perf-3ms,V-Qal-Prtcpl-ms
+  eng: saw, seeing
+  spa: vio, veía
+  hin: देखा
+  arb: رَأَى
+  kor: 보았으니, 보았다, 보셨으니
+  swa: aliona, alikuwa–akiona
+
+### Sense 95903 (1 occurrences)
+Grammar: Prep-l | V-Qal-Inf
+  eng: to–see
+  spa: para–ver
+  hin: देखना
+  arb: أَن–نَرَى
+  kor: 위해–보다
+  swa: kuona
+
+### Sense 95904 (1 occurrences)
+Grammar: V-Qal-Prtcpl-mp
+  eng: seeing
+  spa: viendo
+  hin: देखा
+  arb: رَأَوْا
+  kor: 보았다
+  swa: wakawaona
+
+### Sense 95905 (1 occurrences)
+Grammar: V-Qal-Prtcpl-mp
+  eng: seeing
+  spa: ven
+  hin: देखते
+  arb: تُبْصِرُ
+  kor: 보고
+  swa: oni
+
+### Sense 95906 (1 occurrences)
+Grammar: V-Qal-Prtcpl-ms
+  eng: see
+  spa: veo
+  hin: देखता–हूं
+  arb: أَرَى
+  kor: 보고–있다
+  swa: ninaona
+
+### Sense 95907 (1 occurrences)
+Grammar: V-Qal-Perf-2mp
+  eng: you-see
+  spa: habéis–visto
+  hin: देखा–तुमने
+  arb: رَأَيْتُمْ
+  kor: 너희가–보았기–때문이다
+  swa: mmeona
+
+### Sense 95908 (1 occurrences)
+Grammar: V-Qal-QalPassPrtcpl-ms
+  eng: it-was-seen
+  spa: era–visto
+  hin: देखा–गया–था
+  arb: كَانَ–يُرَى
+  kor: 보여진
+  swa: iliyoonekana
+
+## Task
+
+Group these 10 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

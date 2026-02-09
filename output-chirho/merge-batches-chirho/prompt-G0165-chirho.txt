@@ -1,0 +1,172 @@
+# Sense Merge Task for G0165
+
+Lemma: G0165 (POS: N-GMS)
+Total occurrences: 127
+Current sense count: 16
+
+This Hebrew/Greek lemma has been over-split into 16 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 61557 (50 occurrences)
+Grammar: N-AMP,N-GMP,N-DMP
+  eng: ages, of-ages
+  spa: siglos, siglos., eras
+  hin: युगों, युगोन, युगों–के
+  arb: الدُّهورِ, دُهورِ, أَبَدِ
+  kor: 영원, 영원들–의, 세세들–의
+  swa: milele, milele., milele,
+
+### Sense 61558 (27 occurrences)
+Grammar: N-AMS,N-GMS
+  eng: age
+  spa: siglo, siempre, eternidad
+  hin: युग, सदा।, युग।
+  arb: الأَبَدِ, أَبَدِ, أَبَد
+  kor: 영원히, 영원, 영원에
+  swa: milele, milele., mara
+
+### Sense 61559 (26 occurrences)
+Grammar: N-DMS,N-GMS,N-AMS
+  eng: age, of–age
+  spa: siglo, era, de–siglo
+  hin: युग, युग–के, युग–मेइन
+  arb: الدَّهرِ, الدَّهْرِ, دَهرِ
+  kor: 세상의, 세대–의, 세대의
+  swa: ulimwengu, –wa–ulimwengu, zama
+
+### Sense 61560 (5 occurrences)
+Grammar: N-AMP,N-GMP
+  eng: ages
+  spa: siglos
+  hin: युगों–तक, युगों–को, युगों
+  arb: دُهُور, الدُّهُورَ
+  kor: 영원히, 세세에, 세세
+  swa: vizazi., ulimwengu, vizazi
+
+### Sense 61561 (3 occurrences)
+Grammar: N-GMS
+  eng: age
+  spa: siglo
+  hin: प्राचीनकाल, की
+  arb: الدَّهْرِ
+  kor: 옛날, 예언자들–의, 세상의
+  swa: zamani, ulimwengu,
+
+### Sense 61562 (3 occurrences)
+Grammar: N-AMP
+  eng: ages
+  spa: siglos
+  hin: युगों
+  arb: الدُّهُورِ, الأبَدِ
+  kor: 영원히, 영원
+  swa: milele!, na–milele
+
+### Sense 61563 (2 occurrences)
+Grammar: N-AMP,N-GMP
+  eng: ages
+  spa: siglos
+  hin: युगों–तक, युगों–के
+  arb: دُهُورِ〉, دُهُورِ
+  kor: 세세–에, 세세
+  swa: milele>, milele
+
+### Sense 61564 (2 occurrences)
+Grammar: N-AMS
+  eng: age
+  spa: siglo
+  hin: युग, दोषी
+  arb: الدَّهْرِ, الأَبَدِ
+  kor: 영원히, 세대
+  swa: milele,
+
+### Sense 61565 (2 occurrences)
+Grammar: N-GMP
+  eng: ages
+  spa: siglos
+  hin: युगों
+  arb: دُهورِ, الدّهورِ
+  kor: 시대들–의, 세대들
+  swa: zama,, zama
+
+### Sense 61566 (1 occurrences)
+Grammar: N-GMS
+  eng: age
+  spa: siglo
+  hin: युग–से
+  arb: دهر
+  kor: 영원
+  swa: milele
+
+### Sense 61567 (1 occurrences)
+Grammar: N-GMS
+  eng: age
+  spa: eternidad
+  hin: युगों
+  arb: الأَزَلِ
+  kor: 영원
+  swa: zamani
+
+### Sense 61568 (1 occurrences)
+Grammar: N-GMS
+  eng: of–eternity
+  spa: de–eternidad
+  hin: युग–के
+  arb: الدَّهرِ
+  kor: 영원–의.
+  swa: ya–milele
+
+### Sense 61569 (1 occurrences)
+Grammar: N-AMS
+  eng: age
+  spa: siglo
+  hin: सनसअर,
+  arb: العالَمَ
+  kor: 세상–을
+  swa: ulimwengu
+
+### Sense 61570 (1 occurrences)
+Grammar: N-DMS
+  eng: age
+  spa: siglo
+  hin: युग;
+  arb: –الدَّهرِ
+  kor: 세대–에서
+  swa: ulimwengu
+
+### Sense 61571 (1 occurrences)
+Grammar: N-AMP
+  eng: ages
+  spa: siglos.
+  hin: युगों–में।
+  arb: الدهور
+  kor: 영원토록
+  swa: milele
+
+### Sense 61572 (1 occurrences)
+Grammar: N-AMS
+  eng: age
+  spa: siempre
+  hin: युग
+  arb: الأبد
+  kor: 영원토록
+  swa: milele
+
+## Task
+
+Group these 16 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

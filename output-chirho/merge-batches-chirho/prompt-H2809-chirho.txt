@@ -1,0 +1,118 @@
+# Sense Merge Task for H2809
+
+Lemma: H2809 (POS: N-proper-fs)
+Total occurrences: 38
+Current sense count: 10
+
+This Hebrew/Greek lemma has been over-split into 10 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 99587 (17 occurrences)
+Grammar: N-proper-fs
+  eng: Heshbon, Cheshbon
+  spa: Hesbón, Jeshbón, Jesbón
+  hin: हेशबोन, हेशबोन–के, हेशबोन–का
+  arb: حَشْبُونَ, حَشْبونَ, حَشبونَ
+  kor: 헤스본의, 헤스본–의, 헤시본의
+  swa: Heshboni, ya–Heshboni
+
+### Sense 99588 (9 occurrences)
+Grammar: Prep-b | N-proper-fs
+  eng: in–Heshbon, in–Cheshbon
+  spa: en–Hesbón
+  hin: हेशबोन–में, –हेशबोन–में, हेशबोनमें
+  arb: فِي–حَشْبُونَ, في–حَشْبونَ, في–حَشبونَ
+  kor: 헤스본–에서, 에–헤스본에서, 안–에–헤시봄
+  swa: katika–Heshboni, Heshboni, huko–Heshboni
+
+### Sense 99589 (4 occurrences)
+Grammar: N-proper-fs
+  eng: Heshbon, to–Heshbon
+  spa: Hesbón
+  hin: हेशबोन, हेश्बोन
+  arb: حَشْبُونَ, حَشْبُونُ
+  kor: 헤시봄–이, 헤시봄–은, 헤시봄
+  swa: Heshboni
+
+### Sense 99590 (2 occurrences)
+Grammar: Prep-m | N-proper-fs
+  eng: from–Heshbon, from–Cheshbon
+  spa: de–Jeshbón, de–Hesbón
+  hin: हेशबोन–से, से–हेशबोन
+  arb: مِنْ–حَشْبُونَ
+  kor: 헤시본에서–, 에서–헤시봄
+  swa: kutoka–Heshboni, Heshboni
+
+### Sense 99591 (1 occurrences)
+Grammar: Prep-b | N-proper-fs
+  eng: in–Cheshbon
+  spa: en–Jeshbón
+  hin: में–हेशबोन
+  arb: فِي–حَشْبُونَ
+  kor: 헤시본에서–
+  swa: Heshboni
+
+### Sense 99592 (1 occurrences)
+Grammar: Conj-w, Prep-m | N-proper-fs
+  eng: and–from–Cheshbon
+  spa: y–desde–Hesbón
+  hin: और–हेशबोन–से
+  arb: وَ–مِنْ–حَشْبونَ
+  kor: 그리고–에서–헤스본에서
+  swa: na–kutoka–Heshboni
+
+### Sense 99593 (1 occurrences)
+Grammar: Conj-w | N-proper-fs
+  eng: and–Heshbon
+  spa: y–Jesbón
+  hin: और–हेशबोन
+  arb: وَحَشْبُونَ
+  kor: 그리고–헤시봄과
+  swa: na–Heshboni
+
+### Sense 99594 (1 occurrences)
+Grammar: N-proper-fs
+  eng: Heshbon
+  spa: Hesbón
+  hin: हेश्बोन–का
+  arb: حَشْبُونَ
+  kor: 헤스본의
+  swa: Heshboni
+
+### Sense 99595 (1 occurrences)
+Grammar: N-proper-fs
+  eng: Cheshbon
+  spa: Jesbon
+  hin: हेशबोन
+  arb: حَشبون
+  kor: 헤스본
+  swa: Heshboni
+
+### Sense 99596 (1 occurrences)
+Grammar: Prep-b | N-proper-fs
+  eng: in–Cheshbon
+  spa: Jeshbón
+  hin: हेशबोन–में
+  arb: حَشْبُونَ
+  kor: 헤스본–에
+  swa: ya–Heshboni
+
+## Task
+
+Group these 10 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

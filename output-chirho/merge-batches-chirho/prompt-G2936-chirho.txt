@@ -1,0 +1,118 @@
+# Sense Merge Task for G2936
+
+Lemma: G2936 (POS: V-APA-GMS)
+Total occurrences: 15
+Current sense count: 10
+
+This Hebrew/Greek lemma has been over-split into 10 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 71232 (4 occurrences)
+Grammar: V-AIA-3S,V-AIA-2S
+  eng: created
+  spa: creó, creaste
+  hin: सृजा, रचा, बनाया
+  arb: خَلَقْتَ, خَلَقَهَا, خَلَقَها
+  kor: 창조했다, 창조하였으니, 창조하신
+  swa: uliumba, aliyeumba, aliiumba
+
+### Sense 71233 (2 occurrences)
+Grammar: V-APP-NMP,V-APP-AMS
+  eng: having-been-created
+  spa: creados, creado
+  hin: रचित
+  arb: مَخلوقينَ, المَخلوقَ
+  kor: 창조된
+  swa: tulioumbwa, aliyeumbwa
+
+### Sense 71234 (2 occurrences)
+Grammar: V-AIP-3S,V-RIM/P-3S
+  eng: were–created, have–been–created
+  spa: han–sido–creadas, fueron–creadas
+  hin: रचित-हुअअ, रचित-हुअ
+  arb: قَدْ–خُلِقَ, خُلِقَ
+  kor: 창조되었다
+  swa: vimeumbwa, viliumbwa
+
+### Sense 71235 (1 occurrences)
+Grammar: V-APA-GMS
+  eng: having–created
+  spa: que–lo–creó
+  hin: रचने-वअले
+  arb: خالِقِهِ
+  kor: 창조하신–분의
+  swa: aliyemuumba
+
+### Sense 71236 (1 occurrences)
+Grammar: V-AIP-3P
+  eng: were–created
+  spa: fueron–creadas
+  hin: वे–रचे–गए।
+  arb: خُلِقَتْ
+  kor: 창조되었다
+  swa: viliumbwa.
+
+### Sense 71237 (1 occurrences)
+Grammar: V-APA-AMS
+  eng: Creator
+  spa: Creador
+  hin: सृजनहार
+  arb: الخالِقِ
+  kor: 창조주
+  swa: Muumba,
+
+### Sense 71238 (1 occurrences)
+Grammar: V-AIP-3S
+  eng: was-created
+  spa: fue–creado
+  hin: सृजा–गया
+  arb: يُخلَق
+  kor: 지음받지
+  swa: hakuumbwa
+
+### Sense 71239 (1 occurrences)
+Grammar: V-APA-DMS
+  eng: having-created
+  spa: habiendo–creado
+  hin: रचने-वअले
+  arb: الخالِقِ
+  kor: 창조하신,
+  swa: aliyeviumba
+
+### Sense 71240 (1 occurrences)
+Grammar: V-ASA-3S
+  eng: he-might-create
+  spa: cree
+  hin: वोह-रच
+  arb: يَخلُقَ
+  kor: 창조하시려
+  swa: awaumbe
+
+### Sense 71241 (1 occurrences)
+Grammar: V-APA-NMS
+  eng: having-created
+  spa: que–creó
+  hin: रचनेवल–ने
+  arb: الخَالِقَ
+  kor: 창조하신–분이
+  swa: tangu
+
+## Task
+
+Group these 10 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

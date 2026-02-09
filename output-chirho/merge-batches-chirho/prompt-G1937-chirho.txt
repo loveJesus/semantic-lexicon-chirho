@@ -1,0 +1,172 @@
+# Sense Merge Task for G1937
+
+Lemma: G1937 (POS: V-PPA-NMS)
+Total occurrences: 16
+Current sense count: 16
+
+This Hebrew/Greek lemma has been over-split into 16 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 67695 (1 occurrences)
+Grammar: V-AIA-1S
+  eng: I-desired
+  spa: deseé
+  hin: लालसा–की
+  arb: اشْتَقْتُ
+  kor: 소원했다
+  swa: nimetamani
+
+### Sense 67696 (1 occurrences)
+Grammar: V-PPA-NMS
+  eng: longing
+  spa: deseando
+  hin: चाहता–था
+  arb: كَانَ–يَشْتَهِي
+  kor: 원하며
+  swa: akitamani
+
+### Sense 67697 (1 occurrences)
+Grammar: V-ANA
+  eng: to–desire
+  spa: codiciar
+  hin: ललचाने
+  arb: يَشْتَهِيَهَا
+  kor: 탐내도록
+  swa: kumtamani
+
+### Sense 67698 (1 occurrences)
+Grammar: V-FIA-3P
+  eng: will-desire
+  spa: desearán
+  hin: चाहेंगे
+  arb: يَشْتَهُونَ
+  kor: 갈망할–것이니
+  swa: watatamani
+
+### Sense 67699 (1 occurrences)
+Grammar: V-PIA-2P
+  eng: you–desire
+  spa: codiciáis
+  hin: लालसा-करते-हो
+  arb: تَشتَهونَ
+  kor: 탐내고,
+  swa: mnatamani
+
+### Sense 67700 (1 occurrences)
+Grammar: V-PIA-3P
+  eng: desire
+  spa: desean
+  hin: लालसा–रखते–हैं
+  arb: يَشتاقُ
+  kor: 갈망하는
+  swa: wanatamani
+
+### Sense 67701 (1 occurrences)
+Grammar: V-PIA-1P
+  eng: we–desire
+  spa: deseamos
+  hin: चाहते–हैं
+  arb: نَشْتَهي
+  kor: 원하니
+  swa: tunatamani
+
+### Sense 67702 (1 occurrences)
+Grammar: V-AIA-1S
+  eng: I-coveted
+  spa: codicié
+  hin: ललचाया–नहीं
+  arb: لَمْ–أَشْتَهِ
+  kor: 나는–탐하지–않았다
+  swa: sikutamani
+
+### Sense 67703 (1 occurrences)
+Grammar: V-AIA-3P
+  eng: desired
+  spa: desearon
+  hin: लालचा–की
+  arb: اشتَهَوا
+  kor: 탐하였던것처럼
+  swa: walivyotamani.
+
+### Sense 67704 (1 occurrences)
+Grammar: V-FIA-2S
+  eng: you-shall-covet
+  spa: codiciarás
+  hin: लालच–करेगा
+  arb: تَشْتَهِ
+  kor: 탐내지
+  swa: tamani,
+
+### Sense 67705 (1 occurrences)
+Grammar: V-IIA-3S
+  eng: he-was-longing
+  spa: deseaba
+  hin: चाहता–था
+  arb: كَانَ–يَشْتَهِي
+  kor: 원했다
+  swa: alitamani
+
+### Sense 67706 (1 occurrences)
+Grammar: V-PIA-3S
+  eng: desires
+  spa: desea
+  hin: इचछ–रखत–है,
+  arb: يَشتَهي
+  kor: 욕심하노라,
+  swa: hutamani
+
+### Sense 67707 (1 occurrences)
+Grammar: V-FIA-2P
+  eng: you-will-desire
+  spa: desearéis
+  hin: चाहोगे
+  arb: تَشتَهونَ
+  kor: 원할–것이다
+  swa: mtakapotamani
+
+### Sense 67708 (1 occurrences)
+Grammar: V-FIA-2S
+  eng: you–shall–covet
+  spa: codiciarás
+  hin: लालचायेगा
+  arb: تَشْتَهِ
+  kor: 탐내지–말라
+  swa: usitamani
+
+### Sense 67709 (1 occurrences)
+Grammar: V-PIA-3S
+  eng: he–desires
+  spa: anhela
+  hin: इचछ–करत-है
+  arb: يَرْغَبُ
+  kor: 원한다.
+  swa: anataka
+
+### Sense 67710 (1 occurrences)
+Grammar: V-AIA-3P
+  eng: longed
+  spa: desearon
+  hin: चअहअ
+  arb: اشتَهَوا
+  kor: 원했다
+  swa: walitamani
+
+## Task
+
+Group these 16 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

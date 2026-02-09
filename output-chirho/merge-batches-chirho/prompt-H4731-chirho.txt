@@ -1,0 +1,154 @@
+# Sense Merge Task for H4731
+
+Lemma: H4731 (POS: N-msc)
+Total occurrences: 18
+Current sense count: 14
+
+This Hebrew/Greek lemma has been over-split into 14 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 113963 (4 occurrences)
+Grammar: Art | N-mp
+  eng: the–rods
+  spa: las–varas
+  hin: लाठियों, लाठियां
+  arb: الْعِصِيِّ, الْعِصِيَّ, أَمَامَ
+  kor: 그–막대들을, 그–막대들의, 그–막대들
+  swa: fimbo
+
+### Sense 113964 (2 occurrences)
+Grammar: N-msc | 1cs
+  eng: my–staff
+  spa: mi–cayado
+  hin: लाठी–मेरी
+  arb: عَصَايَ
+  kor: 나의–지팡이
+  swa: fimbo–yangu
+
+### Sense 113965 (1 occurrences)
+Grammar: N-msc
+  eng: staff-of
+  spa: báculo–de
+  hin: छड़ी
+  arb: عُكَّازُ
+  kor: 막대기가
+  swa: mkongojo
+
+### Sense 113966 (1 occurrences)
+Grammar: Prep-b, Art | N-mp
+  eng: with–sticks
+  spa: con–los–palos
+  hin: लअथि-से
+  arb: بِـ–العِصِيِّ
+  kor: 그–막대기들로
+  swa: kwa–fimbo
+
+### Sense 113967 (1 occurrences)
+Grammar: N-msc
+  eng: a–branch
+  spa: rama–de
+  hin: डंडा
+  arb: غُصْنَ
+  kor: 지팡이–를
+  swa: fimbo–ya
+
+### Sense 113968 (1 occurrences)
+Grammar: Prep-b, Art | N-ms
+  eng: with–the–staff
+  spa: con–el–palo
+  hin: लाठी–से
+  arb: بِ–الْعَصَا
+  kor: 안–에–그–지팡이
+  swa: kwa–fimbo
+
+### Sense 113969 (1 occurrences)
+Grammar: N-msc | 3ms
+  eng: staff–his
+  spa: cayado–suyo
+  hin: अपनि-लअथि
+  arb: عَصَاهُ
+  kor: 그의–지팡이를
+  swa: fimbo–yake
+
+### Sense 113970 (1 occurrences)
+Grammar: N-msc
+  eng: rod-of
+  spa: vara–de
+  hin: लाठी
+  arb: عُصِيَّ
+  kor: 막대를
+  swa: fimbo
+
+### Sense 113971 (1 occurrences)
+Grammar: Conj-w | N-msc | 3ms
+  eng: and–their–staff
+  spa: y–su–vara
+  hin: और–लाठी–उसकी
+  arb: وَعَصاهُ
+  kor: 그리고–막대기–그의–가
+  swa: na–fimbo–yake
+
+### Sense 113972 (1 occurrences)
+Grammar: Conj-w, Prep-b | N-msc
+  eng: and–with–war-club
+  spa: y–con–bastón–de
+  hin: और–से–डंडे
+  arb: وَبِالْعَصَا
+  kor: 그리고–막대기–
+  swa: na–fimbo
+
+### Sense 113973 (1 occurrences)
+Grammar: Prep-b, Art | N-mp
+  eng: among–the–rods
+  spa: por–las–varas
+  hin: लाठियों–में
+  arb: عِنْدَ–الْعِصِيِّ
+  kor: 그–막대들에서
+  swa: kwenye–fimbo
+
+### Sense 113974 (1 occurrences)
+Grammar: Conj-w | N-msc | 2mp
+  eng: and–your-staff
+  spa: y–vuestro–bastón
+  hin: और–लाठी–तुम्हारी
+  arb: وَ–عُصِيُّكُمْ
+  kor: 그리고–너희의–지팡이가
+  swa: na–fimbo–zenu
+
+### Sense 113975 (1 occurrences)
+Grammar: N-mp
+  eng: staffs
+  spa: cayados
+  hin: लाठियाँ
+  arb: اثْنَتَيْنِ
+  kor: 지팡이를
+  swa: fimbo
+
+### Sense 113976 (1 occurrences)
+Grammar: Prep-b | N-msc | 1cs
+  eng: with–my–staff
+  spa: con–cayado–mío
+  hin: अपनी–लाठी–से
+  arb: بِ–عَصا–ي
+  kor: 나의–지팡이만으로
+  swa: kwa–fimbo–yangu
+
+## Task
+
+Group these 14 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

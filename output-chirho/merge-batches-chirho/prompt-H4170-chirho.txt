@@ -1,0 +1,153 @@
+# Sense Merge Task for H4170
+
+Lemma: H4170 (POS: Conj-w | N-mpc)
+Total occurrences: 27
+Current sense count: 14
+
+This Hebrew/Greek lemma has been over-split into 14 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 110310 (6 occurrences)
+Grammar: N-ms,N-msc
+  eng: a–snare, snare–of, snare
+  spa: trampa, trampa–de, Trampa
+  hin: फंदा
+  arb: فَخٌّ, فَخًّا
+  kor: 올무이니라, 올무를, 올무이다
+  swa: mtego, ni–mtego
+
+### Sense 110311 (6 occurrences)
+Grammar: Prep-l | N-ms,N-ms
+  eng: a–snare, snare, as-a-snare
+  spa: por–trampa, trampa, para–trampa
+  hin: फंदा, फन्दा, फंदे–के–लिए
+  arb: لِفَخٍّ, لِـ-شَرَك, فَخًّا
+  kor: 올무로, 올무가, 올무–로
+  swa: mtego
+
+### Sense 110312 (3 occurrences)
+Grammar: Prep-m | N-mpc
+  eng: from–the–snares–of, from–snares–of
+  spa: de–trampas–de, de–trampas–de–
+  hin: फंदों–से
+  arb: مِن–فِخاخِ, مِن–أَشراكِ
+  kor: 올무–들–에서, 덫들–에서
+  swa: mitego–ya, kutoka–mitego
+
+### Sense 110313 (2 occurrences)
+Grammar: N-mpc
+  eng: the–snares–of, snares-of
+  spa: lazos–de–, lazos–de
+  hin: फंदे
+  arb: فِخَاخُ, أَشْرَاكُ
+  kor: 올무들–이
+  swa: mitego–ya
+
+### Sense 110314 (1 occurrences)
+Grammar: Prep-l | N-ms
+  eng: as–a-snare
+  spa: por–trampa
+  hin: जाल–के–लिए।
+  arb: لِ–فَخٍّ
+  kor: 에–올무로
+  swa: kama–mtego
+
+### Sense 110315 (1 occurrences)
+Grammar: N-mp
+  eng: snares
+  spa: trampas
+  hin: फंदों–को
+  arb: فِخاخٍ
+  kor: 올무–들–을
+  swa: mitego
+
+### Sense 110316 (1 occurrences)
+Grammar: Prep-l | N-ms
+  eng: a–snare
+  spa: para–lazo
+  arb: شَرَكاً
+  kor: 덧–으로
+  swa: tanzi
+
+### Sense 110317 (1 occurrences)
+Grammar: N-mp
+  eng: snares
+  spa: lazos
+  hin: जाल
+  arb: أَشْرَاكًا
+  kor: 덫들–을
+  swa: tanzi
+
+### Sense 110318 (1 occurrences)
+Grammar: Conj-w | N-mpc
+  eng: and–snares-of
+  spa: y–de–lazos-de
+  hin: और–जालों–से
+  arb: وَمِنْ–أَشْرَاكِ
+  kor: 그리고–올무들–에서
+  swa: na–tanzi–za
+
+### Sense 110319 (1 occurrences)
+Grammar: Conj-w | N-ms
+  eng: and–trap
+  spa: y–lazo
+  hin: और–जाल
+  arb: وَ–شَرَكٌ
+  kor: 그리고–올가미가
+  swa: na–mtego
+
+### Sense 110320 (1 occurrences)
+Grammar: Prep-l | N-ms
+  eng: for–snare
+  spa: por–trampa
+  hin: फन्द
+  arb: لِـ–شَرَكٍ
+  kor: 덫으로–
+  swa: kama–mtego
+
+### Sense 110321 (1 occurrences)
+Grammar: Prep-b | N-mp
+  eng: with–snares
+  spa: con–trampas
+  hin: फंदों–से
+  arb: بِالْفَخَاخِ
+  kor: 덧들–로
+  swa: kwa–mitego
+
+### Sense 110322 (1 occurrences)
+Grammar: Conj-w, Prep-l | N-ms
+  eng: and–for–snare
+  spa: y-por-lazo
+  hin: और–जाल
+  arb: وَ–لِشَرَكٍ
+  kor: 올가미가
+  swa: na-tanzi
+
+### Sense 110323 (1 occurrences)
+Grammar: Conj-w, Prep-l | N-ms
+  eng: and–for–trap
+  spa: y–para–lazo
+  hin: और–जाल–के–लिए
+  arb: وَ–لِشَرَكٍ
+  kor: 그리고–올무로–
+  swa: na–tanzi
+
+## Task
+
+Group these 14 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

@@ -1,0 +1,117 @@
+# Sense Merge Task for H7386
+
+Lemma: H7386 (POS: Art | Adj-fp)
+Total occurrences: 14
+Current sense count: 10
+
+This Hebrew/Greek lemma has been over-split into 10 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 135802 (3 occurrences)
+Grammar: Adj-ms,Adj-fs
+  eng: empty
+  spa: vacía, vacío
+  hin: खाली
+  arb: فَارِغَةً, فارِغَةٌ, بَاطِلًا
+  kor: 헛된, 비었다, 비어서
+  swa: tupu
+
+### Sense 135803 (3 occurrences)
+Grammar: Adj-mp
+  eng: empty
+  spa: vacíos, vacías
+  hin: खाली, निकम्मे
+  arb: فَارِغَةً, فَارِغَة, بَطّالونَ
+  kor: 빈, 건달들
+  swa: wasiofaa, vitupu, mitupu
+
+### Sense 135804 (1 occurrences)
+Grammar: Conj-w | Adj-fs
+  eng: and–empty
+  spa: y–vacía
+  hin: और–खाली
+  arb: وَ–فَارِغَةٌ
+  kor: 그리고–비어있다
+  swa: na–tupu
+
+### Sense 135805 (1 occurrences)
+Grammar: Adj-mp
+  eng: worthless–pursuits
+  spa: vanidades
+  hin: व्यर्थों–का
+  arb: باطِلينَ
+  kor: 헛된–것–들–을
+  swa: ubatili
+
+### Sense 135806 (1 occurrences)
+Grammar: Adj-mp
+  eng: worthless
+  spa: vacíos
+  hin: निकम्मों
+  arb: فَارِغِينَ
+  kor: 빈
+  swa: wasiofaa
+
+### Sense 135807 (1 occurrences)
+Grammar: Art | Adj-fp
+  eng: the–empty
+  spa: las–vacías
+  hin: खाली
+  arb: الْ–فَارِغَاتِ
+  kor: 빈
+  swa: matupu
+
+### Sense 135808 (1 occurrences)
+Grammar: Adj-mp
+  eng: worthless
+  spa: vacíos
+  hin: निकम्मे
+  arb: فارِغونَ
+  kor: 빈
+  swa: watupu
+
+### Sense 135809 (1 occurrences)
+Grammar: Adj-mp
+  eng: vain–things
+  spa: vanidades
+  hin: व्यर्थताओं–के
+  arb: أَباطِيلَ
+  kor: 허된–것들을
+  swa: mambo–matupu
+
+### Sense 135810 (1 occurrences)
+Grammar: Conj-w | Adj-ms
+  eng: and–empty
+  spa: y–vacío
+  arb: وَ–فارِغًا
+  kor: 그리고–빈–자로
+  swa: na–tupu
+
+### Sense 135811 (1 occurrences)
+Grammar: Art | Adj-mp
+  eng: the–worthless-ones
+  spa: los–vacíos
+  hin: मूर्खों–में–से
+  arb: السُّفَهَاءِ
+  kor: 그–빈–자들의
+  swa: wapumbavu
+
+## Task
+
+Group these 10 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

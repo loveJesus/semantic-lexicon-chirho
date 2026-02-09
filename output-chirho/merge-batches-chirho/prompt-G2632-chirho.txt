@@ -1,0 +1,127 @@
+# Sense Merge Task for G2632
+
+Lemma: G2632 (POS: V-AIA-3S)
+Total occurrences: 18
+Current sense count: 11
+
+This Hebrew/Greek lemma has been over-split into 11 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 70241 (4 occurrences)
+Grammar: V-AIA-3S
+  eng: condemned, he-condemned
+  spa: condenó
+  hin: दोषी–ठहराया, दोषी–ठहराया?, दण्ड–दिया
+  arb: دَانَ, دانَ, حَكَمَ
+  kor: 정죄했다,, 정죄하지–않았는가, 정죄하였으니
+  swa: amekuhukumu, aliuhukumu, aliihukumu
+
+### Sense 70242 (4 occurrences)
+Grammar: V-FIA-3P
+  eng: they-will-condemn, will–condemn, will-condemn
+  spa: le–condenarán, la–condenarán, la-condenarán
+  hin: दोषी–ठहराएंगे, दोशि–थह्रयेनगे, दोशि–थह्रअयेनगे
+  arb: يَدِينُونَهُ, يَدينونَهُ, يَحْكُمُونَ–عَلَيْهِ
+  kor: 정죄하리라
+  swa: watakihukumu, yeye, watamhukumu
+
+### Sense 70243 (2 occurrences)
+Grammar: V-FIA-3S
+  eng: will–condemn, will-condemn
+  spa: los–condenará, la-condenará
+  hin: दोषी–ठहराएगी, दोशि–थह्रअयेगेए
+  arb: تَدِينُهُ, تَدينُهُمْ
+  kor: 정죄하리라
+  swa: atawahukumu, atakihukumu
+
+### Sense 70244 (1 occurrences)
+Grammar: V-FIP-3S
+  eng: will-be-condemned
+  spa: será–condenado
+  hin: दण्ड–पाएगा
+  arb: سَيُدَانُ
+  kor: 정죄받으리라
+  swa: atahukumiwa
+
+### Sense 70245 (1 occurrences)
+Grammar: V-PIA-1S
+  eng: condemn
+  spa: condeno
+  hin: दोषी–ठहराता।
+  arb: أَدينُ
+  kor: 정죄하지–않는다
+  swa: sikuhukumu
+
+### Sense 70246 (1 occurrences)
+Grammar: V-AIA-3P
+  eng: condemned
+  spa: condenaron
+  hin: दोषी–ठहराया
+  arb: حَكَمُوا–عَلَيْهِ
+  kor: 정죄하였다
+  swa: walimhukumu
+
+### Sense 70247 (1 occurrences)
+Grammar: V-PPA-NMS
+  eng: condemning
+  spa: que–condena
+  hin: दण्ड–देने–वाला
+  arb: الْمُدِينُ
+  kor: 정죄할–이이냐
+  swa: atayehukumu
+
+### Sense 70248 (1 occurrences)
+Grammar: V-RIM/P-3S
+  eng: has-been-condemned
+  spa: está-condenado
+  hin: दोषी–ठहराया–गया
+  arb: قَدْ–أُدِينَ
+  kor: 정죄받았다
+  swa: amehukumiwa,
+
+### Sense 70249 (1 occurrences)
+Grammar: V-ASP-1P
+  eng: we-may-be-condemned
+  spa: seamos–condenados
+  hin: दण्डित–हों
+  arb: نُدانَ
+  kor: 정죄받지
+  swa: –hukumiwe.
+
+### Sense 70250 (1 occurrences)
+Grammar: V-AIP-3S
+  eng: he–was–condemned
+  spa: fue–condenado
+  hin: दण्डित–हुआ
+  arb: حُكِمَ–عَلَيْهِ
+  kor: 정죄되었다
+  swa: alihukumiwa
+
+### Sense 70251 (1 occurrences)
+Grammar: V-PIA-2S
+  eng: you–condemn
+  spa: condenas
+  hin: दोषी–ठहराता–है
+  arb: تَدينُ
+  kor: 정죄하는도다
+  swa: unajihukumu
+
+## Task
+
+Group these 11 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

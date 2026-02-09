@@ -1,0 +1,154 @@
+# Sense Merge Task for H3303
+
+Lemma: H3303 (POS: Adj-fpc)
+Total occurrences: 43
+Current sense count: 14
+
+This Hebrew/Greek lemma has been over-split into 14 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 103031 (14 occurrences)
+Grammar: Adj-fs,Adj-msc
+  eng: beautiful
+  spa: hermosa, hermoso–de, hermosos
+  hin: सुंदर, सुन्दर, सुंदर–थी
+  arb: يَفَه, جَمِيلِ, جَمِيلَةٌ
+  kor: 아름답다, 아름다운, 아름다웠다
+  swa: mzuri, alikuwa–mzuri
+
+### Sense 103032 (5 occurrences)
+Grammar: Adj-fsc,Adj-fpc
+  eng: beautiful-of, beautiful–of
+  spa: hermosa–de, hermosas–de, hermoso
+  hin: सुंदर, सुन्दर–, सुंदर–
+  arb: حَسَنَاتِ, حَسَنَاتُ, جَمِيلَةُ
+  kor: 아름다운, 아름다운–
+  swa: mzuri–wa, nzuri
+
+### Sense 103033 (4 occurrences)
+Grammar: Conj-w | Adj-fsc,Conj-w | Adj-msc,Conj-w | Adj-fpc
+  eng: and–beautiful-of, and–handsome-of, and–beautiful–of
+  spa: y–hermosa–de, y–hermoso-de, y–hermosas–de
+  hin: और–सुंदर
+  arb: وَ–جَمِيلَاتُ, وَ–جَمِيلَ, وَجَمِيلَةَ
+  kor: 그리고–아름다운, 아름다운
+  swa: na–mzuri–wa, na–uzuri, na–nzuri
+
+### Sense 103034 (4 occurrences)
+Grammar: Adj-msc,Adj-ms
+  eng: beautiful, beautiful-of–, beautiful-of
+  spa: hermoso–de, Hermoso
+  hin: सुंदर, सुन्दर, प्रेम
+  arb: جَمِيلِ, جَمِيلُ, جَمِيلَةُ
+  kor: 아름다운
+  swa: mzuri–wa, mzuri, Mzuri
+
+### Sense 103035 (3 occurrences)
+Grammar: Art | Adj-fs
+  eng: the–fairest
+  spa: la–más–hermosa
+  hin: सुंदरी
+  arb: هَ–يَّفَه
+  kor: 아름다운–자여, 그–아름다운–자여
+  swa: mzuri–kuliko–wote
+
+### Sense 103036 (2 occurrences)
+Grammar: Adj-fsc | 1cs
+  eng: my–beautiful-one
+  spa: hermosa–mía
+  hin: मेरी–सुंदरी
+  arb: يَفَتِي
+  kor: 내–아름다운–자여
+  swa: mzuri–wangu
+
+### Sense 103037 (2 occurrences)
+Grammar: Adj-ms
+  eng: handsome
+  spa: hermoso
+  hin: सुंदर
+  arb: يَفِه, جَميلٌ
+  kor: 아름답다, 아름다운
+  swa: mzuri
+
+### Sense 103038 (2 occurrences)
+Grammar: Adj-ms
+  eng: fitting, beautiful
+  spa: hermoso, es–hermoso
+  hin: सुंदर, उचित–है
+  arb: فِي–, غِنًى
+  kor: 아름답다, 아름답게
+  swa: ni–zuri, kizuri
+
+### Sense 103039 (2 occurrences)
+Grammar: Adj-fp,Art | Adj-fp
+  eng: the–beautiful, beautiful
+  spa: hermosas
+  hin: सुंदर
+  arb: جَمِيلَاتٌ, الْجَمِيلَاتُ
+  kor: 아름다운, 그–아름다운
+  swa: wazuri
+
+### Sense 103040 (1 occurrences)
+Grammar: Adj-fsc
+  eng: beautiful–
+  spa: hermosa–
+  hin: सुंदर–
+  arb: جَمِيلَةَ–
+  kor: 아름다운–
+  swa: mzuri–
+
+### Sense 103041 (1 occurrences)
+Grammar: Adj-msc
+  eng: handsome-of
+  spa: hermoso-de–
+  hin: सुंदर–
+  arb: جَمِيلَ
+  kor: 아름다운
+  swa: na–mzuri
+
+### Sense 103042 (1 occurrences)
+Grammar: Adj-fsc
+  eng: beautiful-of–
+  spa: bella–de
+  hin: सुन्दर
+  arb: جَمِيلَةُ
+  kor: 아름다운–
+  swa: na–nzuri
+
+### Sense 103043 (1 occurrences)
+Grammar: Adj-msc
+  eng: beautiful
+  spa: hermoso
+  hin: सुन्दर
+  arb: جَميل
+  kor: 아름답도다
+  swa: Mzuri
+
+### Sense 103044 (1 occurrences)
+Grammar: V-Qal-Perf-3cp
+  eng: beautiful
+  spa: hermosos
+  hin: सुंदर–हैं
+  arb: أَجْمَلَ
+  kor: 아름다운가
+  swa: ilivyo–nzuri
+
+## Task
+
+Group these 14 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

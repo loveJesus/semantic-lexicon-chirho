@@ -1,0 +1,127 @@
+# Sense Merge Task for G5091
+
+Lemma: G5091 (POS: V-AMA-2P)
+Total occurrences: 21
+Current sense count: 11
+
+This Hebrew/Greek lemma has been over-split into 11 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 77677 (6 occurrences)
+Grammar: V-PMA-2S
+  eng: Honor, honor
+  spa: Honra
+  hin: सम्मन–कर, सम्मान–कर, मअन-दे
+  arb: أَكْرِمْ, أَكرِمْ, أَكرِم
+  kor: 공경하라
+  swa: Mheshimu, mheshimu
+
+### Sense 77678 (4 occurrences)
+Grammar: V-PIA-3S,V-PPA-NMS
+  eng: honors, honoring
+  spa: honra, que-honra
+  hin: सम्मन–करते–हैन, दूर, आदर–करनेवाला
+  arb: يُكْرِمُ, يُكَرِّمُ
+  kor: 공경한다, 공경하는–자는
+  swa: yemheshimu, waniheshimu, wananiheshimu
+
+### Sense 77679 (2 occurrences)
+Grammar: V-FIA-3S
+  eng: will–honor, he-will-honor
+  spa: honrará
+  hin: सम्मान–करेगा, सम्मन–करेग
+  arb: يُكْرِمُ, سَـ–يُكْرِمُهُ
+  kor: 귀히–여길–것이다, 공경할–것이다
+  swa: kumheshimu, atamheshimu
+
+### Sense 77680 (2 occurrences)
+Grammar: V-AMA-2P,V-PMA-2P
+  eng: honor
+  spa: honrad
+  hin: आदर–करो
+  arb: أكرِموا
+  kor: 존경하라
+  swa: waheshimuni, mheshimuni
+
+### Sense 77681 (1 occurrences)
+Grammar: V-PSA-3P
+  eng: might-honor
+  spa: honren
+  hin: आदर–करें
+  arb: يُكْرِمُوا
+  kor: 공경하도록
+  swa: wamheshimu
+
+### Sense 77682 (1 occurrences)
+Grammar: V-PIA-3P
+  eng: they-honor
+  spa: honran
+  hin: आदर–करते–हैं
+  arb: يُكْرِمُونَ
+  kor: 공경한다
+  swa: wanavyomheshimu
+
+### Sense 77683 (1 occurrences)
+Grammar: V-AIA-3P
+  eng: honored
+  spa: nos-honraron
+  hin: सम्मानित–किया
+  arb: أَكرَمونا
+  kor: 존경하였다
+  swa: walituheshimu
+
+### Sense 77684 (1 occurrences)
+Grammar: V-PMA-2S
+  eng: honor
+  spa: honra
+  hin: अअदर–कर
+  arb: أَكْرِمِ
+  kor: 공경하라,
+  swa: waheshimu
+
+### Sense 77685 (1 occurrences)
+Grammar: V-RPM/P-GMS
+  eng: priced–one
+  spa: valorado
+  hin: मूल्यांकित
+  arb: الْمُثَمَّنِ
+  kor: 값–매겨진–자–의
+  swa: aliyethaminishwa
+
+### Sense 77686 (1 occurrences)
+Grammar: V-AIM-3P
+  eng: they–priced
+  spa: valoraron
+  hin: मूल्यांकित–किया
+  arb: ثَمَّنُوهُ
+  kor: 값–매겼다
+  swa: walimthaminisha
+
+### Sense 77687 (1 occurrences)
+Grammar: V-PIA-1S
+  eng: I–honor
+  spa: honro
+  hin: आदर–करता–हूँ
+  arb: أُكرِم
+  kor: 존경한다
+  swa: ninamheshimu
+
+## Task
+
+Group these 11 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

@@ -1,0 +1,154 @@
+# Sense Merge Task for H2572
+
+Lemma: H2572 (POS: Art | Number-cp)
+Total occurrences: 163
+Current sense count: 14
+
+This Hebrew/Greek lemma has been over-split into 14 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 97918 (91 occurrences)
+Grammar: Number-cp
+  eng: fifty, fifty–of
+  spa: cincuenta, doscientos–cincuenta, quinientos
+  hin: पचास, बावन, पचास–का
+  arb: خَمْسِينَ, خَمْسُونَ, خَمسينَ
+  kor: 오십, 쉴십, 오십의
+  swa: hamsini, dhiraa–hamsini, miaka-hamsini
+
+### Sense 97919 (45 occurrences)
+Grammar: Conj-w | Number-cp
+  eng: and–fifty
+  spa: y–cincuenta, Y–cincuenta
+  hin: और–पचास, और–बावन, और-पचास
+  arb: وَخَمْسُونَ, وَ–خَمْسِينَ, وَخَمْسِينَ
+  kor: 그리고–오십, 그리고–쉴십, 그리고-오십
+  swa: na–hamsini, na–hamsini–ya, hamsini
+
+### Sense 97920 (8 occurrences)
+Grammar: Art | Number-cp
+  eng: the–fifty, the–fifties
+  spa: los–cincuenta
+  hin: पचास, पचास–के, पचास–का
+  arb: الْخَمْسِينَ, الْـ–خَمْسِينَ
+  kor: 그–오십–명–의, 오십째, 그–오십
+  swa: hamsini, mia–mbili
+
+### Sense 97921 (4 occurrences)
+Grammar: Number-cp
+  eng: fifties
+  spa: cincuentas, cincuenta
+  hin: पचासों–के
+  arb: خَمْسِينَاتٍ, خَمْسِينَ, خَمْسينَ
+  kor: 오십의, 오십–명–의
+  swa: hamsini
+
+### Sense 97922 (3 occurrences)
+Grammar: Conj-w | Number-cpc | 3ms
+  eng: and–his-fifty
+  spa: y–sus–cincuenta
+  hin: और–उसके–पचास
+  arb: وَخَمْسِينَهُ
+  kor: 그의–오십–명과
+  swa: na–watu–wake–hamsini
+
+### Sense 97923 (2 occurrences)
+Grammar: Number-cpc | 2ms
+  eng: your-fifty
+  spa: tus–cincuenta
+  hin: तेरे–पचास–को
+  arb: خَمْسِينَكَ
+  kor: 네–오십–명–을
+  swa: watu–wako–hamsini
+
+### Sense 97924 (2 occurrences)
+Grammar: Prep-b, Art | Number-cp
+  eng: for–fifty
+  spa: por–ciento
+  hin: में–पचास, डेढ़–सौ
+  arb: بِ–خَمْسِينَ
+  kor: 에–그–오십, –에–오십
+  swa: kwa–mia–na–hamsini, kwa–mia–hamsini
+
+### Sense 97925 (2 occurrences)
+Grammar: Number-cpc | 3ms
+  eng: his-fifty
+  spa: sus–cincuenta
+  hin: उसके–पचास–को
+  arb: خَمْسِينَهُ
+  kor: 그의–오십–명–을
+  swa: watu–wake–hamsini
+
+### Sense 97926 (1 occurrences)
+Grammar: Number-cp
+  eng: the–fifty
+  spa: los–cincuenta
+  hin: पचअस
+  arb: الْخَمْسُونَ
+  kor: 오십의
+  swa: hamsini
+
+### Sense 97927 (1 occurrences)
+Grammar: Prep-b, Art | Number-cp
+  eng: for-fifty
+  spa: por–cincuenta
+  hin: में–पचास
+  arb: بِ–خَمْسِينَ
+  kor: 오십에
+  swa: kwa–hamsini
+
+### Sense 97928 (1 occurrences)
+Grammar: Number-cpc | 3mp
+  eng: their-fifties
+  spa: sus–cincuenta
+  hin: उनके–पचास–को
+  arb: خَمْسِينَاتِهِمْ
+  kor: 그들의–오십–명–을
+  swa: watu–wao–hamsini
+
+### Sense 97929 (1 occurrences)
+Grammar: Number-cp
+  eng: fifty
+  spa: cincuenta
+  hin: पचास–का
+  arb: خَمسِينَ
+  kor: 오십
+  swa: hamsini
+
+### Sense 97930 (1 occurrences)
+Grammar: Prep-b, Art | Number-cp
+  eng: by–fifty
+  spa: por–cincuenta
+  hin: पचास–में
+  arb: بِ–خَمسينَ
+  kor: 에–쉴십
+  swa: kwa–hamsini
+
+### Sense 97931 (1 occurrences)
+Grammar: Prep-l, Art | Number-cp
+  eng: in–fifty
+  spa: en–cincuenta
+  hin: बावन
+  arb: في–الْخَمْسينَ
+  kor: 오십
+  swa: kwa–hamsini
+
+## Task
+
+Group these 14 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

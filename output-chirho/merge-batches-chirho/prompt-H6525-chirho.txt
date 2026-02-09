@@ -1,0 +1,118 @@
+# Sense Merge Task for H6525
+
+Lemma: H6525 (POS: N-msc | 3fs)
+Total occurrences: 17
+Current sense count: 10
+
+This Hebrew/Greek lemma has been over-split into 10 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 128555 (4 occurrences)
+Grammar: Conj-w | N-ms
+  eng: and–blossom, and–a-blossom
+  spa: y–flor
+  hin: और–फूल
+  arb: وَ–زَهرَةٌ
+  kor: 그리고–꼽, 과–꽃
+  swa: na–ua
+
+### Sense 128556 (4 occurrences)
+Grammar: Conj-w | N-mpc | 3fs
+  eng: and–its–blossoms, and–its-blossoms
+  spa: y–sus–flores
+  hin: और–उसके–फूल
+  arb: وَ–زُهورُها, وَ–أَزهارُها
+  kor: 그리고–그것의–꽃들, 그리고–그–꼽들이, 그리고–그–꼽들
+  swa: na–maua–yake
+
+### Sense 128557 (2 occurrences)
+Grammar: N-msc
+  eng: flower-of, blossom-of
+  spa: flor–de
+  hin: फूल
+  arb: زَهْرِ, زَهْرَةُ
+  kor: 꽃의
+  swa: ua–wa–yungi, ua–la
+
+### Sense 128558 (1 occurrences)
+Grammar: Conj-w, Art | N-ms
+  eng: and–the–blossoms
+  spa: y–la–flor
+  hin: और–फूल
+  arb: وَ–الـ–زَّهْرَةُ
+  kor: 그리고-꽃과
+  swa: na–taa
+
+### Sense 128559 (1 occurrences)
+Grammar: Conj-w | N-msc
+  eng: and–the–blossom–of
+  spa: y–flor–de
+  hin: और–फूल
+  arb: وَزَهْرُ
+  kor: 그리고–꽃–이
+  swa: na–maua–ya
+
+### Sense 128560 (1 occurrences)
+Grammar: Conj-w, Art | N-ms
+  eng: and–the–flowers
+  spa: Y–las–flores
+  hin: और–फूल
+  arb: وَ–الزَّهْرُ
+  kor: 그리고–그–꽃
+  swa: na–maua
+
+### Sense 128561 (1 occurrences)
+Grammar: N-msc | 3fs
+  eng: its-flowers
+  spa: su–flor
+  hin: फूल–उसका
+  arb: زَهْرِهَا
+  kor: 그것의–꽃
+  swa: maua–yake
+
+### Sense 128562 (1 occurrences)
+Grammar: N-ms
+  eng: bud
+  spa: flor
+  hin: फूल
+  arb: زَهْرًا
+  kor: 싹–을
+  swa: maua
+
+### Sense 128563 (1 occurrences)
+Grammar: Conj-w | N-msc | 3mp
+  eng: and–their–blossom
+  spa: y-su-flor
+  hin: और–उनका–फूल
+  arb: وَ–زَهرُهُم
+  kor: 그들의–꽃이
+  swa: na–maua–yao
+
+### Sense 128564 (1 occurrences)
+Grammar: N-ms
+  eng: blossom
+  spa: flor
+  hin: फूल
+  arb: الزَّهْرِ
+  kor: 꽃이
+  swa: maua
+
+## Task
+
+Group these 10 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

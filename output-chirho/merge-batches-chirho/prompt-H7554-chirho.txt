@@ -1,0 +1,117 @@
+# Sense Merge Task for H7554
+
+Lemma: H7554 (POS: Conj-w | V-Qal-Imp-ms)
+Total occurrences: 11
+Current sense count: 10
+
+This Hebrew/Greek lemma has been over-split into 10 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 137086 (2 occurrences)
+Grammar: V-Qal-Prtcpl-ms
+  eng: Spreader–of
+  spa: extendedor–de
+  hin: फैलाने–वाला
+  arb: بَاسِطُ
+  kor: 펼치신–자, 펼치는
+  swa: anayetandaza, aliyetandaza
+
+### Sense 137087 (1 occurrences)
+Grammar: V-Qal-Imperf-1cs | 3mp
+  eng: I-spread–them
+  spa: los–aplasté
+  hin: पीटूंगा–उन्हें
+  arb: أَرْضُهُمْ
+  kor: 나를–펼친다–그들을
+  swa: nikawasagasaga
+
+### Sense 137088 (1 occurrences)
+Grammar: Conj-w | V-Piel-ConsecImperf-3
+  eng: and–hammered–them
+  spa: y–los–batieron
+  hin: और–पीटा
+  arb: فَ–طَرَقُوهَا
+  kor: 그리고–두드렸다
+  swa: na–wakavifua
+
+### Sense 137089 (1 occurrences)
+Grammar: V-Pual-Prtcpl-ms
+  eng: beaten–into–plates
+  spa: batida
+  hin: पीटी–हुई
+  arb: مَطْرُوقَةٌ
+  kor: 두드린–
+  swa: iliyofuliwa
+
+### Sense 137090 (1 occurrences)
+Grammar: V-Hifil-Imperf-2ms
+  eng: can–you–spread–out
+  spa: ¿Extiendes
+  hin: फैलाएगा–क्या–तू
+  arb: هَلْ–تَبْسُطُ
+  kor: 네가–펼치겠느냐
+  swa: utaeneza
+
+### Sense 137091 (1 occurrences)
+Grammar: Conj-w | V-Qal-Inf | 2ms
+  eng: and–you-stamped
+  spa: y–pateaste
+  arb: وَدَقِّكَ
+  kor: 그리고–구르기를–너의
+  swa: na–ukakanyaga
+
+### Sense 137092 (1 occurrences)
+Grammar: Conj-w | V-Qal-Imp-ms
+  eng: and–stamp
+  spa: y–patea
+  hin: और–पटक
+  arb: وَ–اِدْعَسْ
+  kor: 그리고–구르라
+  swa: na–ukanyage
+
+### Sense 137093 (1 occurrences)
+Grammar: Conj-w | V-Piel-ConsecImperf-3
+  eng: and–they–hammered
+  spa: Y–batieron
+  hin: और–पीटे
+  arb: وَ–رَقَّعُوا
+  kor: 그리고–늦었다
+  swa: na–wakafulia
+
+### Sense 137094 (1 occurrences)
+Grammar: V-Piel-Imperf-3ms | 3mse
+  eng: overlays–it
+  spa: lo–recubre
+  hin: मढ़ता–है–उसे
+  arb: يُغَشِّيهِ
+  kor: 입히느니라–그것을
+  swa: ataifunika
+
+### Sense 137095 (1 occurrences)
+Grammar: Prep-l | V-Qal-Prtcpl-msc
+  eng: to–the–one–spreading-out
+  spa: Al–que-extendió
+  hin: फैलानेवाले–को
+  arb: لِـ–بَاسِطِ
+  kor: 펴신–이–에게
+  swa: aliyeeneza
+
+## Task
+
+Group these 10 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

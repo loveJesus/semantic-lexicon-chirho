@@ -1,0 +1,154 @@
+# Sense Merge Task for G4921
+
+Lemma: G4921 (POS: V-PNM/P)
+Total occurrences: 16
+Current sense count: 14
+
+This Hebrew/Greek lemma has been over-split into 14 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 77165 (2 occurrences)
+Grammar: V-PIA-3S
+  eng: demonstrates
+  spa: demuestra
+  hin: स्थापित–करता–है
+  arb: يُظهِرُ
+  kor: 드러낸다면, 드러내시는도다
+  swa: inaonyesha, anaonyesha
+
+### Sense 77166 (2 occurrences)
+Grammar: V-PPA-NMP
+  eng: commending
+  spa: recomendando
+  hin: सिफारिश–करते–हुए
+  arb: مُوصينَ
+  kor: 추천하며
+  swa: tukijipendekezea
+
+### Sense 77167 (1 occurrences)
+Grammar: V-PIA-1S
+  eng: I-commend
+  spa: os-recomiendo
+  hin: सिफारिश–करता–हूँ
+  arb: أُقَدِّمُ
+  kor: 내가–추천한다
+  swa: Ninamwpendekeza
+
+### Sense 77168 (1 occurrences)
+Grammar: V-AIA-2P
+  eng: you–demonstrated
+  spa: demostrasteis
+  hin: प्रमाणित–किया–तुमने
+  arb: أَثبَتُّمْ
+  kor: 증명했다
+  swa: mmejidhihirisha
+
+### Sense 77169 (1 occurrences)
+Grammar: V-RPA-NFS
+  eng: consisting
+  spa: subsistiendo
+  hin: बनी–हुई
+  arb: قائِمَةٌ
+  kor: 구성된,
+  swa: ilisimama
+
+### Sense 77170 (1 occurrences)
+Grammar: V-PPA-NMS
+  eng: commending
+  spa: que–recomienda
+  hin: सिफारिश–करनेवाला
+  arb: المادِحُ
+  kor: 추천하는–자가
+  swa: anayejipendekezea,
+
+### Sense 77171 (1 occurrences)
+Grammar: V-PNA
+  eng: to–commend
+  spa: recomendar
+  hin: सिफारिश–करने
+  arb: نِمدَحُ
+  kor: 추천하기를
+  swa: kujipendekezea?
+
+### Sense 77172 (1 occurrences)
+Grammar: V-PIA-3S
+  eng: commends
+  spa: recomienda
+  hin: सिफारिश–करता–है
+  arb: يَمدَحُهُ
+  kor: 추천하신다
+  swa: anampendekezea.
+
+### Sense 77173 (1 occurrences)
+Grammar: V-PNM/P
+  eng: to-be-commended
+  spa: ser–recomendado
+  hin: सिफारिश–किया–जाना
+  arb: أَنْ–تُوصوني
+  kor: 추천받기를
+  swa: kupendekezewa;
+
+### Sense 77174 (1 occurrences)
+Grammar: V-RPA-AMP
+  eng: standing-with
+  spa: que–estaban–con
+  hin: खड़े–हुए
+  arb: الْواقِفَيْنِ
+  kor: 함께–서–있는
+  swa: waliosimama–pamoja–naye
+
+### Sense 77175 (1 occurrences)
+Grammar: V-PIA-1P
+  eng: we–are–commending
+  spa: recomendamos
+  hin: सिफारिश–करते–हैं–हम
+  arb: نِمدَحُ
+  kor: 추천하는–것이–아니다
+  swa: tunajipendekezea
+
+### Sense 77176 (1 occurrences)
+Grammar: V-PPA-GMP
+  eng: commending
+  spa: que–recomiendan
+  hin: सिफारिश–करनेवालों–में
+  arb: المادِحينَ
+  kor: 추천하는–자들의
+  swa: wanaojipendekeza;
+
+### Sense 77177 (1 occurrences)
+Grammar: V-PIA-1S
+  eng: I-prove
+  spa: demuestro
+  hin: मैन–सबित–करत–हुन.
+  arb: أُظهِرُ
+  kor: 증명하노라.
+  swa: najionyesha
+
+### Sense 77178 (1 occurrences)
+Grammar: V-RIA-3S
+  eng: hold–together
+  spa: subsisten
+  hin: स्थिर-है
+  arb: قائِمٌ
+  kor: 함께–서있다
+  swa: vimeshikamana
+
+## Task
+
+Group these 14 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

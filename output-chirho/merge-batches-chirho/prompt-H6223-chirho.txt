@@ -1,0 +1,118 @@
+# Sense Merge Task for H6223
+
+Lemma: H6223 (POS: Adj-mpc | 3fs)
+Total occurrences: 23
+Current sense count: 10
+
+This Hebrew/Greek lemma has been over-split into 10 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 126568 (12 occurrences)
+Grammar: Adj-ms
+  eng: rich, the–rich
+  spa: rico, Rico, El–rico
+  hin: धनी, धनवान–का, धनी।
+  arb: غَنِيٌّ, غَنِيٍّ, غَنِيّ
+  kor: 부자–의, 부자요, 부자와
+  swa: tajiri, Tajiri
+
+### Sense 126569 (2 occurrences)
+Grammar: Adj-ms
+  eng: the–rich, rich-man
+  spa: rico
+  hin: धनीके–साथ, धनी
+  arb: غَنِيٍّ, غَنِيٌّ
+  kor: 부유한–자와–함께, 부유한–자가
+  swa: tajiri–huyo, tajiri
+
+### Sense 126570 (2 occurrences)
+Grammar: Art | Adj-ms
+  eng: the–rich
+  spa: el–rico, El-rico
+  hin: धनी–के, धनी
+  arb: الغَنِيِّ, الغَنِيُّ
+  kor: 부자도, 그–부한
+  swa: tajiri
+
+### Sense 126571 (1 occurrences)
+Grammar: Conj-w | Adj-mp
+  eng: and–the–rich
+  spa: y–ricos
+  hin: और–धनी
+  arb: وَ–عَشِيرِيم
+  kor: 그리고–부자들
+  swa: na–matajiri
+
+### Sense 126572 (1 occurrences)
+Grammar: Adj-mpc
+  eng: richest–of
+  spa: los–ricos–de
+  hin: धनी
+  arb: أَغْنياءُ
+  kor: 부유한–자들–이
+  swa: matajiri-wa
+
+### Sense 126573 (1 occurrences)
+Grammar: Prep-l | Adj-ms
+  eng: to–the–rich–one
+  spa: Al–rico
+  hin: धनी–के–लिए
+  arb: لِلغَنِيِّ
+  kor: 에게–부자
+  swa: tajiri
+
+### Sense 126574 (1 occurrences)
+Grammar: Conj-w | Adj-ms
+  eng: but–rich
+  spa: y–rico
+  hin: परंतु–धनी
+  arb: وَ–غَنِيٌّ
+  kor: 그러나–부자는
+  swa: lakini–tajiri
+
+### Sense 126575 (1 occurrences)
+Grammar: Prep-l | Adj-ms
+  eng: to–a–rich–one
+  spa: al–rico
+  hin: धनी–को
+  arb: لِلْغَنِيِّ
+  kor: 부자–에게
+  swa: kwa–tajiri
+
+### Sense 126576 (1 occurrences)
+Grammar: Adj-mpc | 3fs
+  eng: her–rich–ones
+  spa: sus–ricos
+  hin: धनी
+  arb: أَغْنِيَاؤُهَا
+  kor: 부자들–그녀의–는
+  swa: matajiri–wake
+
+### Sense 126577 (1 occurrences)
+Grammar: Prep-l, Art | Adj-ms
+  eng: for–the–rich
+  spa: del–rico
+  hin: धनवान–की
+  arb: لِسُوئِهِ
+  kor: 부자–에게
+  swa: tajiri
+
+## Task
+
+Group these 10 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

@@ -1,0 +1,118 @@
+# Sense Merge Task for H2600
+
+Lemma: H2600 (POS: V-Qal-Imperf-3mp)
+Total occurrences: 32
+Current sense count: 10
+
+This Hebrew/Greek lemma has been over-split into 10 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 98038 (14 occurrences)
+Grammar: Adv,V-Qal-Imperf-3mp
+  eng: without–cause, without-cause, for–nothing
+  spa: sin–causa, sin–razón, sin–causa?
+  hin: बिना–कारण, व्यर्थ
+  arb: بِلا–سَبَبٍ, بِلَا–سَبَبٍ, مَجّانًا
+  kor: 까닭–없이, 까닭없이, 헛된
+  swa: bure, bila-sababu, bila–sababu
+
+### Sense 98039 (6 occurrences)
+Grammar: Adv
+  eng: for-nothing, without-cost, freely
+  spa: de–balde, gratis, de–gracia
+  hin: मुफ़्त–में, मुफ्त, मुफ़्त
+  arb: مَجَّانًا
+  kor: 거저, 거저–
+  swa: bure
+
+### Sense 98040 (3 occurrences)
+Grammar: Adv
+  eng: without–cause, nothing, in–vain
+  spa: en–vano, vano
+  hin: व्यर्थ
+  arb: بِدُونِ–سَبَبٍ, بَاطِلًا, باطِلٍ
+  kor: 헛되이
+  swa: bure
+
+### Sense 98041 (2 occurrences)
+Grammar: Adv
+  eng: without–cause
+  spa: sin–causa
+  hin: व्यर्थ–में, व्यरथ
+  arb: مَجَّانًا, باطِلاً
+  kor: 공연히
+  swa: bure
+
+### Sense 98042 (2 occurrences)
+Grammar: Adv
+  eng: without-payment
+  spa: de–balde
+  hin: मुफ़्त
+  arb: مَجّاناً
+  kor: 값–없이
+  swa: bure
+
+### Sense 98043 (1 occurrences)
+Grammar: Adv
+  eng: innocence
+  spa: inocencia
+  hin: निर्दोष
+  arb: الْبَرِيءِ
+  kor: 무죄한
+  swa: na–kutoka–juu–ya
+
+### Sense 98044 (1 occurrences)
+Grammar: Adv
+  eng: for–nothing
+  spa: ¿Acaso–de–balde
+  hin: क्या–मुफ्त–में
+  arb: هَلْ–مَجّانًا
+  kor: 까닭없이
+  swa: bure
+
+### Sense 98045 (1 occurrences)
+Grammar: Adv
+  eng: causeless
+  spa: vacía
+  hin: व्यर्थ–का
+  arb: بِلا–سَبَبٍ
+  kor: 헛된
+  swa: bure
+
+### Sense 98046 (1 occurrences)
+Grammar: Adv
+  eng: for–nothing
+  spa: de–balde?
+  hin: मुफ्त-में
+  arb: مَجَّانًا
+  kor: 거저
+  swa: bure
+
+### Sense 98047 (1 occurrences)
+Grammar: Adv
+  eng: free
+  spa: de–gracia
+  hin: मुफ्त
+  arb: مَجَّانِيَّةً
+  kor: 거저
+  swa: bure
+
+## Task
+
+Group these 10 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

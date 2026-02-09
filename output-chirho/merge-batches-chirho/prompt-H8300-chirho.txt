@@ -1,0 +1,136 @@
+# Sense Merge Task for H8300
+
+Lemma: H8300 (POS: Conj-w | N-ms)
+Total occurrences: 29
+Current sense count: 12
+
+This Hebrew/Greek lemma has been over-split into 12 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 143961 (9 occurrences)
+Grammar: N-ms
+  eng: survivor, is–left, for–the–survivor
+  spa: sobreviviente, el–sobreviviente
+  hin: बचा–हुआ, बचे–हुओं–को
+  arb: بَاقٍ, شَارِدًا, بَقِيَّةٌ
+  kor: 생존자를, 생존자–를, 생존자가
+  swa: kilichobaki, aliyesalia, mtu–yeyote
+
+### Sense 143962 (9 occurrences)
+Grammar: N-ms
+  eng: a–survivor, survivor, a-survivor
+  spa: sobreviviente
+  hin: जीवित, बचा–हुआ, सारीद
+  arb: شَريداً, شَريدٍ, شَارِدٍ
+  kor: 생존자를, 생존자와
+  swa: mtu–aliyenusurika, mwenye–kupona, aliyebaki
+
+### Sense 143963 (2 occurrences)
+Grammar: Conj-w | N-ms
+  eng: or–survivor, or–escapee
+  spa: ni–sobreviviente
+  hin: और–शेष, और–बचा–हुआ
+  arb: وَبَاقٍ
+  kor: 그리고–생존자, 그리고–남은–자–가
+  swa: au–aliyesalimika, au–aliyebaki
+
+### Sense 143964 (1 occurrences)
+Grammar: N-ms
+  eng: –the-survivor
+  spa: sobreviviente
+  hin: बचा–हुआ
+  arb: بَقِيَّةٌ
+  kor: 생존자–가
+  swa: mabaki
+
+### Sense 143965 (1 occurrences)
+Grammar: N-mpc
+  eng: survivors–of
+  spa: sobrevivientes–de
+  hin: बचे–हुओं
+  arb: النَّاجُونَ–مِنَ
+  kor: 생존자들의
+  swa: walionusurika–wa
+
+### Sense 143966 (1 occurrences)
+Grammar: Conj-w, Prep-b, Art | N-mp
+  eng: and–among–the–survivors
+  spa: y–entre–los–sobrevivientes
+  hin: और–में–बचे–हुओं
+  arb: وَ–في–الباقينَ
+  kor: 그리고–에서–남은–자들
+  swa: na–kati–ya–waliosalia
+
+### Sense 143967 (1 occurrences)
+Grammar: N-mpc | 3ms
+  eng: his-survivors
+  spa: sus–sobrevivientes
+  hin: उस–के–शेष–बचों–को
+  arb: –ناجيه
+  kor: 그의–생존자들을
+  swa: waliosalia–wake
+
+### Sense 143968 (1 occurrences)
+Grammar: N-mpc | 3ms
+  eng: his-survivors
+  spa: (sus–sobrevivientes)
+  hin: उसके–बचे–हुए
+  arb: (باقوهُ)
+  kor: (그의–생존자들이)
+  swa: waliobaki–wake
+
+### Sense 143969 (1 occurrences)
+Grammar: N-ms
+  eng: survivor
+  spa: sobreviviente
+  hin: बचा–हुआ
+  arb: باقٍ
+  kor: 생존자가
+  swa: aliyesalia
+
+### Sense 143970 (1 occurrences)
+Grammar: Conj-w, Art | N-mp
+  eng: and–the–survivors
+  spa: y–los–sobrevivientes
+  hin: और–बचे–हुए
+  arb: وَ–السّارِدونَ
+  kor: 그리고–생존자들이
+  swa: na–walionusurika
+
+### Sense 143971 (1 occurrences)
+Grammar: N-msc | 3ms
+  eng: [K]
+  spa: [sus–sobrevivientes]
+  hin: उसके–बचे–हुए
+  arb: [باقوهُ]
+  kor: [그의–생존자들이]
+  swa: Waliobaki–wake
+
+### Sense 143972 (1 occurrences)
+Grammar: N-ms
+  eng: remnant
+  spa: sobreviviente
+  hin: बचे–हुए
+  arb: بَقِيَّةً
+  kor: 생존자를
+  swa: mabaki
+
+## Task
+
+Group these 12 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

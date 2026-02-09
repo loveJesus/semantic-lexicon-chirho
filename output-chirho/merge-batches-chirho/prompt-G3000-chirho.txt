@@ -1,0 +1,145 @@
+# Sense Merge Task for G3000
+
+Lemma: G3000 (POS: V-PPA-AMS)
+Total occurrences: 21
+Current sense count: 13
+
+This Hebrew/Greek lemma has been over-split into 13 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 71532 (3 occurrences)
+Grammar: V-PPA-NMP,V-PPA-AMP
+  eng: serving, worshippers
+  spa: que-sirven, que–sirven
+  hin: सेवा–करनेवाले, उपासना–करने–वालों, उपसन–करनेवलोन
+  arb: يَخْدِمُونَ, نَعْبُدُ, خَادِمِينَ
+  kor: 섬기는–자들이, 섬기는–자들은, 섬기는–자들
+  swa: wanaomwabudu, wanaohudumu;, tunaomtumikia
+
+### Sense 71533 (2 occurrences)
+Grammar: V-FIA-3P
+  eng: will–serve, will-serve
+  spa: servirán
+  hin: सेवा–करेंगे
+  arb: سَيَعْبُدُونَ, سَيَعْبُدونَهُ
+  kor: 예배할–것이다, 섹길–것이다
+  swa: wataniabudu, watamtumikia
+
+### Sense 71534 (2 occurrences)
+Grammar: V-PIA-3P
+  eng: they–serve, serve
+  spa: sirven
+  hin: सेवा–करते–हैं, वे–सेवा–करते–हैं
+  arb: يَخْدُمونَ, يَخدِمونَهُ
+  kor: 섬기다, 섬기니
+  swa: wanamtumikia, wanahudumu
+
+### Sense 71535 (2 occurrences)
+Grammar: V-PIA-1S
+  eng: I–worship, I–serve
+  spa: sirvo
+  hin: सेवाकरताहूँ
+  arb: أَعْبُدُ
+  kor: 섬깁니다, 섬기는
+  swa: ninamwabudu, ninamtumikia
+
+### Sense 71536 (2 occurrences)
+Grammar: V-PIA-1S
+  eng: I–serve
+  spa: sirvo
+  hin: सेव–करत–होओन,, सेवा–करता–हूँ
+  arb: أَعْبُدُهُ, أَعبُدُهُ
+  kor: 섬기노라,, 섬기노라
+  swa: ninamtumikia
+
+### Sense 71537 (2 occurrences)
+Grammar: V-FIA-2S
+  eng: you–will–serve, you–shall–serve
+  spa: servirás
+  hin: सेवा–करेगा
+  arb: تَعْبُدُ, تَعبُدُ
+  kor: 섬길–것이다
+  swa: utamtumikia
+
+### Sense 71538 (2 occurrences)
+Grammar: V-PNA
+  eng: to–serve, to-serve
+  spa: servir
+  hin: सेवा–करें, सेवा–करने
+  arb: عِبَادَةِ, أَنْ–نَعْبُدَهُ
+  kor: 섬기기를, 섬기게–하시려고
+  swa: kumtumikia
+
+### Sense 71539 (1 occurrences)
+Grammar: V-AIA-3P
+  eng: served
+  spa: sirvieron
+  hin: सेवा–की
+  arb: عَبَدوا
+  kor: 섬겼느니라
+  swa: wakatumikia
+
+### Sense 71540 (1 occurrences)
+Grammar: V-PNA
+  eng: to–serve
+  spa: servir
+  hin: सेवा–करने–को
+  arb: يَعْبُدُوا
+  kor: 섹기는–것
+  swa: kuabudu
+
+### Sense 71541 (1 occurrences)
+Grammar: V-PPA-NNS
+  eng: serving
+  spa: sirviendo
+  hin: सेवाकरतेहुए
+  arb: عَابِدِينَ
+  kor: 섬기며
+  swa: yakiabudu
+
+### Sense 71542 (1 occurrences)
+Grammar: V-PPA-AMS
+  eng: worshipper
+  spa: que-sirve
+  hin: उपासना–करने–वाले,
+  arb: العَابِدَ
+  kor: 섬기는–자를
+  swa: anayeabudu
+
+### Sense 71543 (1 occurrences)
+Grammar: V-PSA-1P
+  eng: let-us-serve
+  spa: sirvamos
+  hin: सेवा–करें
+  arb: نَعْبُدُ
+  kor: 우리가–섬기자
+  swa: tumtumikie
+
+### Sense 71544 (1 occurrences)
+Grammar: V-PPA-NFS
+  eng: serving
+  spa: sirviendo
+  hin: सेवा–करती–हुई
+  arb: عَابِدَةً
+  kor: 섬기며
+  swa: akimtumikia
+
+## Task
+
+Group these 13 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

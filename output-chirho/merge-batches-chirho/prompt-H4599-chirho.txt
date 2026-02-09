@@ -1,0 +1,163 @@
+# Sense Merge Task for H4599
+
+Lemma: H4599 (POS: N-mpc)
+Total occurrences: 23
+Current sense count: 15
+
+This Hebrew/Greek lemma has been over-split into 15 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 112998 (3 occurrences)
+Grammar: N-ms
+  eng: spring, a–spring
+  spa: manantial
+  hin: सोता, झरना
+  arb: يَنْبُوعًا, يَنْبوعاً, عَيْنٌ
+  kor: 샘–을, 샘이나
+  swa: chemchemi
+
+### Sense 112999 (3 occurrences)
+Grammar: N-msc
+  eng: spring-of
+  spa: manantial–de, manantial-de
+  hin: स्रोतों–को, सोते, झरना
+  arb: يَنْبوعِ, يَنْبُوعِ–
+  kor: 샘
+  swa: chemchemi–ya–, chemchemi–ya, chemchemi
+
+### Sense 113000 (2 occurrences)
+Grammar: N-mp
+  eng: springs
+  spa: manantiales
+  hin: सोते, झरनों–को
+  arb: يَنَابِيعَ, يَنابيعَ
+  kor: 샘들을, 샘–들–을
+  swa: chemchemi
+
+### Sense 113001 (2 occurrences)
+Grammar: N-mpc
+  eng: springs-of
+  spa: fuentes–de
+  hin: स्रोत
+  arb: يَنَابِيعِ, يَنَابِيعُ
+  kor: 샘들
+  swa: chemchemi–za
+
+### Sense 113002 (2 occurrences)
+Grammar: N-mpc
+  eng: springs-of
+  spa: manantiales–de, los-manantiales-de
+  hin: स्रोतों–को, स्रोतों
+  arb: يَنَابِيعِ–, يَنابيعِ
+  kor: 샘들–의, 샘
+  swa: chemchemi–za–, chemchemi–za
+
+### Sense 113003 (2 occurrences)
+Grammar: N-ms,N-msc
+  eng: fountain-of, fountain
+  spa: manantial, Manantial–de
+  hin: झरना
+  arb: مَعْيَن
+  kor: 우물, 샘–이라
+  swa: kisima, chemchemi
+
+### Sense 113004 (1 occurrences)
+Grammar: Conj-w | N-ms
+  eng: and–a-spring
+  spa: y–manantial
+  hin: और–सोता
+  arb: وَ–عَيْنٌ
+  kor: 그리고–샘–이
+  swa: na–chemchemi
+
+### Sense 113005 (1 occurrences)
+Grammar: Art | N-mp
+  eng: the–springs
+  spa: las–fuentes
+  hin: सोतों
+  arb: الْيَنَابِيعِ
+  kor: 그–샘들을
+  swa: hamaּyanwot
+
+### Sense 113006 (1 occurrences)
+Grammar: N-mpc | 2ms
+  eng: your–springs
+  spa: tus–fuentes
+  hin: सोते–तेरे
+  arb: يَنَابِيعُكَ
+  kor: 네–샘–들–이
+  swa: chemchemi–zako
+
+### Sense 113007 (1 occurrences)
+Grammar: N-msc | 3ms
+  eng: his–fountain
+  spa: su–fuente
+  hin: उसका–झरना
+  arb: عَينُهُ
+  kor: 그의–솟이
+  swa: kisima–chake
+
+### Sense 113008 (1 occurrences)
+Grammar: N-mpc | 1cs
+  eng: my–springs
+  spa: fuentes-de-mí
+  hin: मेरे–झरने
+  arb: يَنَابِيعِي
+  kor: 나–의–샘들–이
+  swa: zangu–zote
+
+### Sense 113009 (1 occurrences)
+Grammar: Prep-l | N-msc | 3ms
+  eng: into–a–spring–of
+  spa: en–fuente–de
+  hin: स्रोत
+  arb: يَنبوعَ–
+  kor: 샘–으로
+  swa: kuwa–chemchemi–ya
+
+### Sense 113010 (1 occurrences)
+Grammar: Prep-m | N-mpc
+  eng: from–springs–of
+  spa: de–los–manantiales–de
+  hin: से–सोतों–
+  arb: مِنْ–يَنَابِيعِ
+  kor: 샘들–에서
+  swa: kutoka–chemchemi–za
+
+### Sense 113011 (1 occurrences)
+Grammar: N-ms
+  eng: a–spring
+  spa: Manantial
+  hin: स्रोत
+  arb: يَنْبُوعٌ
+  kor: 샘이니라
+  swa: chemchemi
+
+### Sense 113012 (1 occurrences)
+Grammar: N-mp
+  eng: springs
+  spa: fuentes
+  hin: सोतों
+  arb: يَنَابِيعَ
+  kor: 샘–들–이
+  swa: chemchemi
+
+## Task
+
+Group these 15 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

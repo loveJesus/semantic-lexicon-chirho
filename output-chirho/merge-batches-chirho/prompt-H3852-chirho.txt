@@ -1,0 +1,136 @@
+# Sense Merge Task for H3852
+
+Lemma: H3852 (POS: N-fs)
+Total occurrences: 19
+Current sense count: 12
+
+This Hebrew/Greek lemma has been over-split into 12 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 108449 (5 occurrences)
+Grammar: N-fs
+  eng: flame, of–flame
+  spa: llama
+  hin: लौ, लपट, ज्वाला
+  arb: لَهِيبٍ, لَهِيبًا, لَهيبٍ
+  kor: 불꽃–이, 화염의, 화염–의
+  swa: mwali–wa–moto, mwali, wa–miali
+
+### Sense 108450 (3 occurrences)
+Grammar: Conj-w | N-fs
+  eng: and–flame, and–a–flame
+  spa: y–llama
+  hin: और–लौ, और–लपट
+  arb: وَ–اللَّهيبُ, وَلَهَبٌ, وَاللَّهِيبُ
+  kor: 그리고–불꽃이, 그리고–불꽃–이
+  swa: na–mwali, na–mwali–wa–moto
+
+### Sense 108451 (2 occurrences)
+Grammar: N-fs
+  eng: flame
+  spa: llameante, llama
+  hin: ज्वाला–की, ज्वाला
+  arb: مُلتَهِبَةٍ, اللَّهَبُ
+  kor: 화염의, 화염–에
+  swa: mwali
+
+### Sense 108452 (1 occurrences)
+Grammar: N-fpc
+  eng: flames–of
+  spa: llamas–de
+  hin: लपटों–को
+  arb: لَهَبَ
+  kor: 불꽃들–을
+  swa: miali-ya
+
+### Sense 108453 (1 occurrences)
+Grammar: N-fsc
+  eng: flame-of
+  spa: llama–de
+  hin: लौ
+  arb: لَهِيبَ
+  kor: 불꽃이
+  swa: mwali–wa
+
+### Sense 108454 (1 occurrences)
+Grammar: Conj-w, Prep-b | N-fs
+  eng: and–by–flame
+  spa: y–por–llama
+  hin: और–लपट
+  arb: وَ–بِـ–لَهَبٍ
+  kor: 그리고–에–불꽃과
+  swa: na–kwa–moto
+
+### Sense 108455 (1 occurrences)
+Grammar: N-fs
+  eng: flame
+  spa: llama
+  hin: लौ
+  arb: لهيباً
+  kor: 불꽃이라
+  swa: mwali
+
+### Sense 108456 (1 occurrences)
+Grammar: Conj-w | N-fsc
+  eng: and–blade–of
+  spa: y–hoja–de
+  hin: और-फल
+  arb: وَ–سِنَانُ
+  kor: 그리고–날
+  swa: na–ncha
+
+### Sense 108457 (1 occurrences)
+Grammar: Conj-w, Prep-k | N-fs
+  eng: and–as–a–flame
+  spa: y–como–llama
+  hin: और–लपट–की–तरह
+  arb: وَكَاللَّهَبِ
+  kor: 불꽃–처럼
+  swa: na–kama–mwali
+
+### Sense 108458 (1 occurrences)
+Grammar: N-fp
+  eng: flames
+  spa: de–llamas
+  hin: लपटों–की
+  arb: لَهيبًا
+  kor: 불꽃–을
+  swa: wa–miali
+
+### Sense 108459 (1 occurrences)
+Grammar: Prep-l | N-fs
+  eng: for–flame
+  spa: por-llama
+  hin: ज्वाला–के–लिए
+  arb: لِـ–لَهِيبٍ
+  kor: 화염이–되어
+  swa: mwali
+
+### Sense 108460 (1 occurrences)
+Grammar: N-fs
+  eng: the–flame
+  spa: llama
+  hin: लौ–की
+  arb: اللَّهِيبِ
+  kor: 불꽃의
+  swa: miali
+
+## Task
+
+Group these 12 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

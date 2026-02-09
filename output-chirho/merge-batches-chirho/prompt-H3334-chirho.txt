@@ -1,0 +1,118 @@
+# Sense Merge Task for H3334
+
+Lemma: H3334 (POS: Conj-w | V-Hifil-ConsecImperf-3mp)
+Total occurrences: 10
+Current sense count: 10
+
+This Hebrew/Greek lemma has been over-split into 10 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 103435 (1 occurrences)
+Grammar: Conj-w | V-Qal-ConsecImperf-3m
+  eng: and–it-was-distressing
+  spa: y–fue–estrecho
+  hin: और–तंग–थे
+  arb: وَ–ضاقَ
+  kor: 그리고–괴로웠다
+  swa: na–ilikuwa–dhiki
+
+### Sense 103436 (1 occurrences)
+Grammar: V-Qal-Imperf-3ms
+  eng: will–be–hindered
+  spa: se–angostaran
+  hin: संकुचित–होगी
+  arb: تَضِيقُ
+  kor: 좋아진다
+  swa: banwa
+
+### Sense 103437 (1 occurrences)
+Grammar: Conj-w | V-Qal-ConsecImperf-3f
+  eng: and–was-distressed
+  spa: y–angustia
+  hin: और–संकट–हुई
+  arb: وَ–ضاقَ
+  kor: 그리고–괴로웠다
+  swa: na–ikawa–dhiki
+
+### Sense 103438 (1 occurrences)
+Grammar: Conj-w | V-Qal-ConsecImperf-3m
+  eng: and–it–was–distressing
+  spa: y–fue–angustiado
+  hin: और–संकट–हुआ
+  arb: وَاغتَمَّ
+  kor: 그리고–괴로웠다
+  swa: na–ilimdhiki
+
+### Sense 103439 (1 occurrences)
+Grammar: V-Qal-Imperf-3mp
+  eng: are–shortened
+  spa: Se–estrechan
+  hin: सिकुड़ेंगे
+  arb: تَضِيقُ
+  kor: 좁아지리라
+  swa: zitapunguzwa
+
+### Sense 103440 (1 occurrences)
+Grammar: Conj-w | V-Hifil-ConsecImperf-
+  eng: and–they–oppressed
+  spa: y–los–angustiaron
+  hin: और–सताया
+  arb: فَ–ضَايَقُوا
+  kor: 그리하여–괴롭혀다
+  swa: na–wakawadhulumu
+
+### Sense 103441 (1 occurrences)
+Grammar: V-Qal-Imperf-3ms
+  eng: he–is–in–distress
+  spa: tendrá–angustia
+  hin: उस–पर–संकट–होगा
+  arb: يَضِيقُ
+  kor: 좋아지리라
+  swa: atabanwa
+
+### Sense 103442 (1 occurrences)
+Grammar: Conj-w | V-Qal-ConsecImperf-3f
+  eng: and–was-distressed
+  spa: Y–hubo–angustia
+  hin: और-तनग-हुअ
+  arb: وَ–ضاقَ
+  kor: 그리고–괴로웠다
+  swa: na–akataabika
+
+### Sense 103443 (1 occurrences)
+Grammar: Conj-w | V-Qal-ConsecImperf-3m
+  eng: and–was–distressed
+  spa: y–angostió
+  hin: और–संकट–हुआ
+  arb: وَ–ضاقَ
+  kor: 그리고–괴로워했다
+  swa: na–akataabika
+
+### Sense 103444 (1 occurrences)
+Grammar: V-Qal-Imperf-2fs
+  eng: you-will-be-too-narrow
+  spa: serás–estrecha
+  hin: तू–तंग–होगी
+  arb: تَضِيقِينَ
+  kor: 너무–좋으리라
+  swa: utakuwa–finyu
+
+## Task
+
+Group these 10 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

@@ -1,0 +1,154 @@
+# Sense Merge Task for H7301
+
+Lemma: H7301 (POS: V-Piel-InfAbs)
+Total occurrences: 14
+Current sense count: 14
+
+This Hebrew/Greek lemma has been over-split into 14 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 134974 (1 occurrences)
+Grammar: V-Qal-Imperf.h-1cp
+  eng: let–us–drink–our–fill–of
+  spa: embriaguémonos–de
+  hin: तृप्त–हों
+  arb: نَرْتَوِي
+  kor: 취하자
+  swa: tujishibishe
+
+### Sense 134975 (1 occurrences)
+Grammar: V-Piel-InfAbs
+  eng: watering
+  spa: empapa
+  hin: तू–बहुतायत–से–सींचता–है
+  arb: اِرْوِ
+  kor: 적시소서
+  swa: uinyweshe
+
+### Sense 134976 (1 occurrences)
+Grammar: Conj-w | V-Qal-ConjPerf-3fs
+  eng: and–drink–its–fill
+  spa: y–se–embriagará
+  hin: और–पूरी–होगी
+  arb: وَيَرْتَوِي
+  kor: 그리고–취하겠다
+  swa: na–utakunywa
+
+### Sense 134977 (1 occurrences)
+Grammar: V-Hifil-Perf-3ms | 1cs
+  eng: He–saturated–me
+  spa: me–ha–embriagado
+  hin: मुझे–पिलाया
+  arb: أَرْوَانِي
+  kor: 그–가–취하게–했네–나–를
+  swa: ameninywesha
+
+### Sense 134978 (1 occurrences)
+Grammar: Conj-w | V-Hifil-Prtcpl-ms
+  eng: and–he–who–waters
+  spa: y–el–que–riega
+  hin: और–सींचनेवाला
+  arb: وَ–مُرْوٍ
+  kor: 그리고–적시는–자–는
+  swa: na–anayenywesha
+
+### Sense 134979 (1 occurrences)
+Grammar: V-Piel-Imperf-3mp | 2ms
+  eng: let–satisfy–you
+  spa: te–satisfagan
+  hin: तृप्त–करें–तुझे
+  arb: يُرْوِيكَ
+  kor: 너–를–만족시켜라
+  swa: ya–ku–ridhishe
+
+### Sense 134980 (1 occurrences)
+Grammar: V-Piel-Imperf-1cs | 2fs
+  eng: I-will-drench–you
+  spa: te–regaré
+  hin: भिगोऊँगा–तुझे
+  arb: أُرَوِّيكِ
+  kor: 적시리라
+  swa: nitakulowesha
+
+### Sense 134981 (1 occurrences)
+Grammar: V-Hifil-Perf-1cs
+  eng: I–satisfied
+  spa: sacié
+  hin: तृप्त–किया–है–मैंने
+  arb: أَرْوَيْتُ
+  kor: 흥족하게–했다
+  swa: nimejaza
+
+### Sense 134982 (1 occurrences)
+Grammar: V-Piel-Perf-3fs
+  eng: is–drunk
+  spa: se–ha–embriagado
+  hin: तृप्त–हो–गई
+  arb: رَوِيَتْ
+  kor: 취하였다
+  swa: imelewa
+
+### Sense 134983 (1 occurrences)
+Grammar: Conj-w | V-Piel-ConjPerf-3fs
+  eng: and–shall–be–soaked
+  spa: y–se–embriagará
+  hin: और–तृप्त–हो–जाएगी
+  arb: وَ–تَرْتَوِي
+  kor: 그리고–취할–것이다
+  swa: na–italewa
+
+### Sense 134984 (1 occurrences)
+Grammar: V-Hifil-Perf-2ms | 1cs
+  eng: you–have–satisfied–Me
+  spa: me–saciaste
+  hin: तृप्त–किया–तूने–मुझे
+  arb: تُرْوِينِي
+  kor: 만족시켰느니라–나를
+  swa: nishibisha
+
+### Sense 134985 (1 occurrences)
+Grammar: Conj-w | V-Piel-ConjPerf-1cs
+  eng: and–I–will–satisfy
+  spa: y–saciaré
+  hin: और–तृप्त–करूँगा–मैं
+  arb: وَأُرْوِي
+  kor: 그리고–흥족하게–하리라
+  swa: Na–nitajaza
+
+### Sense 134986 (1 occurrences)
+Grammar: V-Qal-Imperf-3mp | Pn
+  eng: they–feast
+  spa: Se–saciarán
+  hin: तृप्त–होते–हैं
+  arb: يَرْتَوونَ
+  kor: 풍족하리이다
+  swa: Wanashibishwa
+
+### Sense 134987 (1 occurrences)
+Grammar: V-Hifil-Perf-3ms
+  eng: it-saturated
+  spa: empapa
+  hin: सींचती–है
+  arb: أَرْوَى
+  kor: 적시면
+  swa: imeloweka
+
+## Task
+
+Group these 14 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

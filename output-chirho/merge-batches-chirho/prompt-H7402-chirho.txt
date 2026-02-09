@@ -1,0 +1,118 @@
+# Sense Merge Task for H7402
+
+Lemma: H7402 (POS: V-Qal-Prtcpl-mpc | 2fs)
+Total occurrences: 17
+Current sense count: 10
+
+This Hebrew/Greek lemma has been over-split into 10 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 135977 (5 occurrences)
+Grammar: V-Qal-Prtcpl-mpc | 2fs
+  eng: your-traders
+  spa: tus–traficantes
+  hin: व्यापारी–तेरे
+  arb: تُجَّارُكِ
+  kor: 장사꾼들이었다–너의
+  swa: wachuuzi–wako
+
+### Sense 135978 (2 occurrences)
+Grammar: V-Qal-Prtcpl-mpc
+  eng: traders-of–
+  spa: traficantes–de, Traficantes–de
+  hin: व्यापारी–
+  arb: تُجَّارُ
+  kor: 장사꾼들이었다–, 장사꾼들이–
+  swa: wachuuzi–wa, Wachuuzi–wa
+
+### Sense 135979 (2 occurrences)
+Grammar: V-Qal-Prtcpl-fsc | 2fs
+  eng: your-traders, your-trader
+  spa: tu–traficante
+  hin: व्यापारी–तेरी
+  arb: تُجَّارُكِ
+  kor: 장사꾼이었다–너의
+  swa: mchuuzi–wako
+
+### Sense 135980 (2 occurrences)
+Grammar: Conj-w, Art | V-Qal-Prtcpl-mp
+  eng: and–the–merchants
+  spa: y–los–mercaderes, y–de–los–mercaderes
+  hin: और–व्यापारियों–ने, और–व्यापारियों–के
+  arb: وَ–التُّجَّارِ, وَ–التُّجَّارُ
+  kor: 그리고–그–상인들이, 그리고–그–상인들–의
+  swa: na–wafanyabiashara
+
+### Sense 135981 (1 occurrences)
+Grammar: V-Qal-Prtcpl-fs
+  eng: trader-of–
+  spa: comerciante–de
+  hin: व्यापारी–
+  arb: تَاجِرَةِ
+  kor: 상인이여
+  swa: mfanyabiashara–wa
+
+### Sense 135982 (1 occurrences)
+Grammar: Art | V-Qal-Prtcpl-mp
+  eng: the–traders
+  spa: los–mercaderes
+  hin: व्यापारी
+  arb: التُّجَّارُ
+  kor: 그–장사꾼들과
+  swa: wafanyabiashara
+
+### Sense 135983 (1 occurrences)
+Grammar: Art | V-Qal-Prtcpl-mp
+  eng: the–merchants
+  spa: los–mercaderes
+  hin: फेरीवालों–के
+  arb: الـ–تُّجَّارِ
+  kor: 그–행상들의
+  swa: wachuuzi
+
+### Sense 135984 (1 occurrences)
+Grammar: V-Qal-Prtcpl-mp
+  eng: merchants
+  spa: mercaderes
+  hin: व्यापारियों–के
+  arb: التُّجَّارِ
+  kor: 상인들의
+  swa: wafanyabiashara
+
+### Sense 135985 (1 occurrences)
+Grammar: V-Qal-Prtcpl-ms
+  eng: merchant
+  spa: mercader
+  hin: व्यापारी–के
+  arb: رُوكِيل
+  kor: 상인–의
+  swa: wa–mchuuzi
+
+### Sense 135986 (1 occurrences)
+Grammar: V-Qal-Prtcpl-mpc | 2fs
+  eng: your–merchants
+  spa: mercaderes–tuyos
+  hin: अपने–व्यापारियों–को
+  arb: تُجَّارَكِ
+  kor: 너의–상인들–을
+  swa: wafanya–biashara–wako
+
+## Task
+
+Group these 10 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

@@ -1,0 +1,154 @@
+# Sense Merge Task for H2717a
+
+Lemma: H2717a (POS: V-Hifil-Perf-3ms)
+Total occurrences: 16
+Current sense count: 14
+
+This Hebrew/Greek lemma has been over-split into 14 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 98893 (2 occurrences)
+Grammar: V-Pual-Perf-3cp
+  eng: dried
+  spa: se–han–secado, se–habían–secado
+  hin: सूखी–हैं, सूखी–थीं
+  arb: جَفَّتْ
+  kor: 마른
+  swa: bado
+
+### Sense 98894 (2 occurrences)
+Grammar: V-Qal-Perf-3cp
+  eng: dried-up
+  spa: se–secaron
+  hin: सुखा, सुख-गया
+  arb: جَفَّتِ, جَفَّ
+  kor: 마르였다
+  swa: yalikauka, umekauka
+
+### Sense 98895 (1 occurrences)
+Grammar: Conj-w | V-Hifil-ConjPerf-1cs
+  eng: and–I–will–dry–up
+  spa: y–secaré
+  hin: और–सुखा–दूँगा
+  arb: وَأُجَفِّفُ
+  kor: 그리고–내가–말리리라
+  swa: na–nitaikausha
+
+### Sense 98896 (1 occurrences)
+Grammar: V-Qal-Imperf-3ms
+  eng: will-be-parched
+  spa: se–secará
+  hin: सूख–जाएगी
+  arb: يَجِفُّ
+  kor: 마르고
+  swa: utakauka
+
+### Sense 98897 (1 occurrences)
+Grammar: Conj-w | V-Qal-ConjPerf-3cp
+  eng: and–be-dried-up
+  spa: y–se–secarán
+  hin: और–सूख–जाएंगी
+  arb: وَتَجِفُّ
+  kor: 그리고–마르리니
+  swa: na–kukauka
+
+### Sense 98898 (1 occurrences)
+Grammar: Conj-w | V-Qal-ConsecImperf-3m
+  eng: and–it–dried–up
+  spa: y–se–secó
+  hin: और–वह–सूख–गया
+  arb: وَ–جَفَّ
+  kor: 그리고–말랐도다
+  swa: na–ikakauka
+
+### Sense 98899 (1 occurrences)
+Grammar: V-Qal-Imp-fs
+  eng: be–dry
+  spa: sécate
+  hin: सूख–जा
+  arb: اِجْفَفِي
+  kor: 마르라
+  swa: Kauka
+
+### Sense 98900 (1 occurrences)
+Grammar: Conj-w | V-Hifil-ConjImperf-1c
+  eng: and–I–dried–up
+  spa: y–sequé
+  hin: और–मैं–सुखाऊँगा
+  arb: وَ–أُجَفِّفُ
+  kor: 그리고–말리겠다
+  swa: na–nikakausha
+
+### Sense 98901 (1 occurrences)
+Grammar: Conj-w | V-Qal-ConjImperf-3ms
+  eng: and–shall-become-dry
+  spa: y–se–agotará
+  hin: और–सूखेगा
+  arb: وَيَيبَسُ
+  kor: 그리고–말라리라
+  swa: na–utakaushwa
+
+### Sense 98902 (1 occurrences)
+Grammar: V-Hifil-Perf-3ms
+  eng: he–makes–dry
+  spa: agotó
+  hin: वह–सुखा–देता–है
+  arb: يُيَبِّسُ
+  kor: 말리셨도다
+  swa: ameikauka
+
+### Sense 98903 (1 occurrences)
+Grammar: Conj-w | V-Hifil-ConjImperf-1c
+  eng: and–I-will-dry-up
+  spa: y–secaré
+  hin: और–सुखाऊँगा
+  arb: وَأُجَفِّفُ
+  kor: 내가–말리겠다
+  swa: na–nitakausha
+
+### Sense 98904 (1 occurrences)
+Grammar: V-Hifil-Imperf-1cs
+  eng: I–dry–up
+  spa: seco
+  hin: मैं–सुखा–देता–हूं
+  arb: أُجَفِّفُ
+  kor: 마르게–하노라
+  swa: ninakausha
+
+### Sense 98905 (1 occurrences)
+Grammar: Art | V-Hifil-Prtcpl-fs
+  eng: the–one-drying-up
+  spa: la–que–secó
+  hin: सुखाने–वाली
+  arb: الْمُجَفِّفَةَ
+  kor: 말리는–자이니
+  swa: uliyekausha
+
+### Sense 98906 (1 occurrences)
+Grammar: V-Qal-Imperf-3ms
+  eng: dries-up
+  spa: se–seca
+  hin: सूख–जाती–है
+  arb: يَجِفُّ
+  kor: 마르고
+  swa: unakauka
+
+## Task
+
+Group these 14 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

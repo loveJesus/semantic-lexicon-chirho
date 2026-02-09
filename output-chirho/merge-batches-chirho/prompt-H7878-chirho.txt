@@ -1,0 +1,167 @@
+# Sense Merge Task for H7878
+
+Lemma: H7878 (POS: V-Qal-Imperf-3ms)
+Total occurrences: 20
+Current sense count: 16
+
+This Hebrew/Greek lemma has been over-split into 16 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 139963 (3 occurrences)
+Grammar: V-Qal-Imperf.Cohort-1cs,V-Qal-Imperf-1cs
+  eng: I–will–meditate, will–meditate
+  spa: meditaré
+  hin: मैं–बात–करूँगा
+  arb: أَتَأَمَّلُ
+  kor: 묵상하리라, 내가–묵상하리이다
+  swa: nitatafakari, nitazungumza
+
+### Sense 139964 (2 occurrences)
+Grammar: V-Qal-Imperf.Cohort-1cs
+  eng: I–muse
+  spa: medito
+  hin: आसीखाह
+  arb: أَتَأَمَّلُ
+  kor: 묵상하나이다
+  swa: nitatafakari
+
+### Sense 139965 (2 occurrences)
+Grammar: Conj-w | V-Qal-ConjImperf.Coho
+  eng: and–I–will–meditate
+  spa: y–meditaré
+  arb: وَ–أَتَأَمَّلُ
+  kor: 당신–의–율례들–을, 그리고–묵상하리라
+  swa: na–nitatafakari
+
+### Sense 139966 (1 occurrences)
+Grammar: V-Qal-Imperf.Cohort-1cs
+  eng: I–complain
+  spa: me–quejaré
+  arb: أَشكو
+  kor: 탄식하리이다
+  swa: nitaomba
+
+### Sense 139967 (1 occurrences)
+Grammar: V-Qal-Imperf-3fs | 2ms
+  eng: will–talk–with–you
+  spa: hablarán–contigo
+  hin: बोलेगी–तुझसे
+  arb: تُحَدِّثُكَ
+  kor: 말할–것이다
+  swa: nawe
+
+### Sense 139968 (1 occurrences)
+Grammar: Prep-l | V-Qal-Inf
+  eng: to–meditate
+  spa: para–meditar
+  arb: لِ–أَتَأَمَّلَ
+  kor: 묵상하려고
+  swa: kutafakari
+
+### Sense 139969 (1 occurrences)
+Grammar: V-Qal-Imp-mp
+  eng: meditate
+  spa: hablad
+  hin: बोलो
+  arb: تَكَلَّموا
+  kor: 말하라
+  swa: semeni
+
+### Sense 139970 (1 occurrences)
+Grammar: V-Qal-Imperf-3ms
+  eng: meditates
+  spa: meditará
+  arb: يَتَأَمَّلُ
+  kor: 묵상하리라
+  swa: atatafakari
+
+### Sense 139971 (1 occurrences)
+Grammar: V-Piel-Imperf-1cs
+  eng: I–muse
+  spa: reflexiono
+  hin: मैं–बात–करता–हूँ
+  arb: أَتَكَلَّمُ
+  kor: 내–가–깊이–생각하나이다
+  swa: ninazungumzia
+
+### Sense 139972 (1 occurrences)
+Grammar: V-Qal-Imp-mp
+  eng: meditate
+  spa: meditad
+  hin: बोलो
+  arb: تَأَمَّلُوا
+  kor: 말하라
+  swa: semeni
+
+### Sense 139973 (1 occurrences)
+Grammar: V-Qal-Imperf-3mp
+  eng: talk
+  spa: Hablan
+  arb: يَتَحَدَّثونَ
+  kor: 말하도다
+  swa: Wanazungumza
+
+### Sense 139974 (1 occurrences)
+Grammar: V-Qal-Imperf.Cohort-1cs
+  eng: I-will-complain
+  spa: me–quejaré
+  hin: कहूँगा–मैं
+  arb: أَشْكو
+  kor: 탄식하겨다–내가
+  swa: nitalalamika
+
+### Sense 139975 (1 occurrences)
+Grammar: V-Qal-Imp-mp
+  eng: meditate
+  spa: mediten
+  hin: गाओ
+  arb: تَحَدَّثوا
+  kor: 말하라
+  swa: fikirini
+
+### Sense 139976 (1 occurrences)
+Grammar: V-Qal-Imp-ms
+  eng: speak
+  spa: habla
+  hin: बात–कर
+  arb: كَلِّمِ
+  kor: 말하라
+  swa: sema–na
+
+### Sense 139977 (1 occurrences)
+Grammar: V-Qal-Imperf.Cohort-1cs
+  eng: I–will–muse
+  spa: hablaré
+  hin: आसीखाह
+  arb: أَتَحَدَّثُ
+  kor: 묵상하리이다
+  swa: nitatafakari
+
+### Sense 139978 (1 occurrences)
+Grammar: V-Piel-Imperf-3ms
+  eng: considers
+  spa: considerará?
+  hin: विचारेगा
+  arb: يَتَفَكَّرُ
+  kor: 생각하겠는가
+  swa: atakayefikiri
+
+## Task
+
+Group these 16 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

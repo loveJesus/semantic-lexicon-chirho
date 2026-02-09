@@ -1,0 +1,125 @@
+# Sense Merge Task for H0615
+
+Lemma: H0615 (POS: N-ms)
+Total occurrences: 13
+Current sense count: 11
+
+This Hebrew/Greek lemma has been over-split into 11 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 83401 (2 occurrences)
+Grammar: Art | N-mp
+  eng: [the-prisoners]
+  spa: los–prisioneros
+  hin: [बंदियों–के]
+  arb: [الأسرى]
+  kor: 그–겇힌–자들의
+  swa: [ya–wafungwa]
+
+### Sense 83402 (2 occurrences)
+Grammar: N-mpc
+  eng: prisoners–of
+  spa: prisioneros–de
+  hin: बन्दी, बंदी
+  arb: يَا–أَسْرَى–, أَسرى
+  kor: 갇힌–자들아, 갇힌–자들–이여
+  swa: wafungwa
+
+### Sense 83403 (1 occurrences)
+Grammar: N-mpc
+  eng: prisoners-of
+  spa: (prisioneros-de)
+  hin: बंदी
+  arb: أَسْرَى
+  kor: 갇힌–자들
+  swa: wa–mfalme
+
+### Sense 83404 (1 occurrences)
+Grammar: Art | N-mp
+  eng: the–prisoners
+  spa: los–prisioneros
+  hin: बंदियों
+  arb: الْ–أَسْرَى
+  kor: 갇힌–자들을
+  swa: nyumbani
+
+### Sense 83405 (1 occurrences)
+Grammar: N-mpc | 3ms
+  eng: his–prisoners
+  spa: a–sus–prisioneros
+  hin: उसके–बन्दियों–को
+  arb: أَسْرَاهُ
+  kor: 그–포로들을
+  swa: wafungwa–wake
+
+### Sense 83406 (1 occurrences)
+Grammar: N-ms
+  eng: the–prisoner
+  spa: prisionero
+  hin: बन्दी–की
+  arb: الأَسير
+  kor: 포로–의
+  swa: mfungwa
+
+### Sense 83407 (1 occurrences)
+Grammar: N-mp
+  eng: prisoners
+  spa: a–prisioneros
+  arb: الأَسْرى–
+  kor: 갇힌–자–들–을
+  swa: wafungwa
+
+### Sense 83408 (1 occurrences)
+Grammar: N-mp
+  eng: prisoners
+  spa: prisioneros
+  hin: बंदी
+  arb: الأَسْرى
+  kor: 포로들이
+  swa: wafungwa
+
+### Sense 83409 (1 occurrences)
+Grammar: N-mpc
+  eng: prisoners
+  spa: los–prisioneros–de
+  hin: बंदियों–को
+  arb: أَسْرَى
+  kor: 포로들–을
+  swa: wafungwa
+
+### Sense 83410 (1 occurrences)
+Grammar: N-mpc | 3ms
+  eng: His–prisoners
+  spa: sus–prisioneros
+  arb: أَسْراهُ
+  kor: 그–의–갇힌–자–들–을
+  swa: wafungwa-wake
+
+### Sense 83411 (1 occurrences)
+Grammar: N-mpc | 2fs
+  eng: your–prisoners
+  spa: tus–prisioneros
+  hin: बंदियों–तेरे
+  arb: أَسْرَاكِ
+  kor: 너의–갇힌–자들을
+  swa: wafungwa–wako
+
+## Task
+
+Group these 11 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

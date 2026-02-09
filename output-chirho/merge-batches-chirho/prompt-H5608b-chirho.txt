@@ -1,0 +1,145 @@
+# Sense Merge Task for H5608b
+
+Lemma: H5608b (POS: Art | N-ms)
+Total occurrences: 54
+Current sense count: 13
+
+This Hebrew/Greek lemma has been over-split into 13 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 121275 (22 occurrences)
+Grammar: Art | N-ms
+  eng: the–scribe, the–secretary, the–elders
+  spa: el–escriba
+  hin: लेखक, ह–सोफ़ेर, शास्त्री
+  arb: الْكَاتِبِ, الْكَاتِبَ, الْكَاتِبُ
+  kor: 서기관의, 서기관, 그–서기관을
+  swa: mwandishi, cha–mwandishi
+
+### Sense 121276 (8 occurrences)
+Grammar: Art | N-ms
+  eng: the–scribe
+  spa: el–escriba
+  hin: शास्त्री, –लेखक, शास्त्री–से
+  arb: الْكَاتِبَ, الْكَاتِبِ, الْكَاتِبُ
+  kor: 그–서기관, 그–서기관이, 그–서기관이었다
+  swa: mwandishi, hasּwoper, mwandishi–huyo
+
+### Sense 121277 (5 occurrences)
+Grammar: Art | N-ms
+  eng: the–scribe
+  spa: el–escriba
+  hin: शास्त्री, और–शास्त्री
+  arb: ال–كاتِبِ, ال–كاتِبُ, الكاتِب
+  kor: 그–서기관, 그–서기관이
+  swa: mwandishi
+
+### Sense 121278 (3 occurrences)
+Grammar: N-ms
+  eng: scribe, secretary
+  spa: escriba
+  hin: लेखक, लिपिक
+  arb: كَاتِبٌ, كاتِبٌ
+  kor: 서기관이었다, 서기관
+  swa: mwandishi, karani
+
+### Sense 121279 (2 occurrences)
+Grammar: N-ms
+  eng: –the-scribe, a–scribe
+  spa: escriba
+  hin: लेखक–की
+  arb: كاتِبٍ
+  kor: 서기관–의
+  swa: mwandishi
+
+### Sense 121280 (2 occurrences)
+Grammar: N-mp
+  eng: scribes
+  spa: escribas
+  hin: शास्त्री
+  arb: كُتَّابٌ, كَاتِبَانِ
+  kor: 서기관들
+  swa: waandishi, swopriym
+
+### Sense 121281 (2 occurrences)
+Grammar: N-mp
+  eng: scribes
+  spa: escribas
+  hin: शास्त्रियों–की, लेखकों
+  arb: الكَتَبَةِ, الـ–سُفرِيّينَ
+  kor: 서기관들의, 서기관들
+  swa: waandishi
+
+### Sense 121282 (2 occurrences)
+Grammar: N-ms,N-msc
+  eng: scribe–of, a–scribe
+  spa: un–escriba, escriba–de
+  hin: शास्त्री, विशेषज्ञ
+  arb: كاتِب
+  kor: 서기관
+  swa: mwandishi
+
+### Sense 121283 (2 occurrences)
+Grammar: N-msc
+  eng: scribe-of
+  spa: escriba–de
+  hin: सोफेर, लेखक
+  arb: كَاتِبُ
+  kor: 서기관이
+  swa: mwandishi–wa, mwandishi
+
+### Sense 121284 (2 occurrences)
+Grammar: N-mpc
+  eng: scribes-of
+  spa: escribas–de
+  hin: लेखक
+  arb: كُتَّابُ
+  kor: 의–서기관들이, 글써들이
+  swa: waandishi
+
+### Sense 121285 (2 occurrences)
+Grammar: Art | N-ms
+  eng: the–scribe
+  spa: el–escriba
+  hin: लेखक
+  arb: الـ–كاتِبِ
+  kor: 그–서기관의
+  swa: cha–mwandishi
+
+### Sense 121286 (1 occurrences)
+Grammar: Conj-w | N-ms
+  eng: and–a–scribe
+  spa: y–escriba
+  hin: और–शास्त्री
+  arb: وَ–كَاتِبٌ
+  kor: 그리고–서기관
+  swa: na–mwandishi
+
+### Sense 121287 (1 occurrences)
+Grammar: N-msc
+  eng: the–scribe-of
+  spa: escriba
+  hin: लेखक
+  arb: كَاتِبَ
+  kor: 서기관을
+  swa: mwandishi
+
+## Task
+
+Group these 13 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

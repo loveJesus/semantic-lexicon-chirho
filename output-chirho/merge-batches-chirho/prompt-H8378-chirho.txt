@@ -1,0 +1,136 @@
+# Sense Merge Task for H8378
+
+Lemma: H8378 (POS: Conj-w | N-fsc)
+Total occurrences: 21
+Current sense count: 12
+
+This Hebrew/Greek lemma has been over-split into 12 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 144392 (7 occurrences)
+Grammar: N-fsc
+  eng: the–desire–of, desire–of
+  spa: deseo–de, el–deseo–de, El–deseo–del
+  hin: इच्छा, अभिलाषा, अपने–प्राण–की
+  arb: شَهْوَةُ, شَهْوَةَ, شَهْوَةِ
+  kor: 소원–을, 욕심–을, 욕망이
+  swa: tamaa–ya, Tamaa–ya, tamaa
+
+### Sense 144393 (3 occurrences)
+Grammar: N-fs
+  eng: craving, a–craving
+  spa: deseo
+  hin: लालसा, लालच–में
+  arb: شَهْوَةً, شَهوَةً
+  kor: 탐함, 탐욕–을, 욕망을
+  swa: tamaa
+
+### Sense 144394 (2 occurrences)
+Grammar: N-fs
+  eng: is–a–desire, a–desire
+  spa: deseo, Deseo
+  hin: इच्छा
+  arb: شَهْوَةٌ
+  kor: 소원–이, 소원–은
+  swa: tamaa, ni–tamaa
+
+### Sense 144395 (1 occurrences)
+Grammar: Prep-m | N-fsc | 3mp
+  eng: from–their–craving
+  spa: de–deseo-de-ellos
+  hin: अपनी–इच्छा–से
+  arb: عَنْ–شَهْوَتِهِمْ
+  kor: 그들–의–욕망–에서
+  swa: kutoka–tamaa–yao
+
+### Sense 144396 (1 occurrences)
+Grammar: N-fs
+  eng: desirable–
+  spa: deseo–
+  hin: लालच–
+  arb: شَهْوَةٌ–
+  kor: 갈망
+  swa: unapendeza–
+
+### Sense 144397 (1 occurrences)
+Grammar: V-Piel-Imperf-3fs
+  eng: desires
+  spa: desea
+  hin: चाहती
+  arb: تَشْتَهِي
+  kor: 소원한다
+  swa: anatamani
+
+### Sense 144398 (1 occurrences)
+Grammar: N-fs
+  eng: desire
+  spa: deseo
+  hin: इच्छा–के
+  arb: شَهوَةٍ
+  kor: 소원의
+  swa: kitamu
+
+### Sense 144399 (1 occurrences)
+Grammar: Conj-w | N-fsc
+  eng: but–the–desire–of
+  spa: y–deseo–de
+  hin: और–इच्छा
+  arb: وَ–شَهْوَةُ
+  kor: 그러나–소원–을
+  swa: lakini–tamaa–ya
+
+### Sense 144400 (1 occurrences)
+Grammar: N-fsc | 1cs
+  eng: my–longing
+  spa: mi–deseo
+  hin: इच्छा–मेरी
+  arb: شَوْقي
+  kor: 내–소원–이
+  swa: tamaa-yangu
+
+### Sense 144401 (1 occurrences)
+Grammar: Prep-l | N-fs
+  eng: for–desire
+  spa: Para–deseo
+  hin: इच्छा–के–लिए
+  arb: لِشَهْوَةٍ
+  kor: 욕망–을–위하여
+  swa: kwa–tamaa–yake
+
+### Sense 144402 (1 occurrences)
+Grammar: N-fsc
+  eng: and–for–Your–remembrance
+  spa: deseo–de
+  hin: चाहत–
+  arb: شَوْقُ–
+  kor: 소원이라–
+  swa: hamu–
+
+### Sense 144403 (1 occurrences)
+Grammar: Conj-w | N-fsc | 3mp
+  eng: and–their–craving
+  spa: y–deseo-de-ellos
+  hin: और–उनकी–इच्छा
+  arb: وَشَهْوَتَهُمْ
+  kor: 그들–의–욕망–을
+  swa: na–tamaa–yao
+
+## Task
+
+Group these 12 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

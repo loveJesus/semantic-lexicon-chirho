@@ -1,0 +1,154 @@
+# Sense Merge Task for H2483
+
+Lemma: H2483 (POS: Conj-w | N-ms)
+Total occurrences: 24
+Current sense count: 14
+
+This Hebrew/Greek lemma has been over-split into 14 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 97195 (5 occurrences)
+Grammar: N-ms,N-msc
+  eng: sickness, is–my–sickness
+  spa: enfermedad
+  hin: रोग, बीमारी, रोगसे
+  arb: مَرَضٍ, مَرَضِي, مَرَضٌ
+  kor: 질병을, 병이라, 병을
+  swa: ugonjwa, ugonjwa–wangu, magonjwa
+
+### Sense 97196 (3 occurrences)
+Grammar: Prep-m | N-ms
+  eng: from–sickness
+  spa: de–enfermedad–de–mí, de–mi–enfermedad
+  hin: मेखल्यी, इस–बीमारी–से
+  arb: مِنْ–مَرَضي, مِنْ–مَرَضِي
+  kor: 병에서, 이–병–에서
+  swa: kutoka–ugonjwa, kutoka–ugonjwa–wangu
+
+### Sense 97197 (3 occurrences)
+Grammar: N-msc | 3ms
+  eng: his–sickness, his-sickness
+  spa: su–enfermedad
+  hin: रोग–उसका, बीमारी–उस–की, बीमारी–अपनी
+  arb: مَرَضَهُ, مَرَضُهُ
+  kor: 그의–병을, 그의–병으로, 그의–병
+  swa: ugonjwa–wake
+
+### Sense 97198 (2 occurrences)
+Grammar: N-msc | 3ms
+  eng: his–sickness, his–disease
+  spa: su–enfermedad, enfermedad–su
+  hin: बीमारी–उसकी, उसकी–बीमारी
+  arb: مَرَضِهِ
+  kor: 그의–병이, 그–병
+  swa: ugonjwa–wake
+
+### Sense 97199 (2 occurrences)
+Grammar: Prep-b | N-msc | 3ms
+  eng: in–his–sickness, in–his–disease
+  spa: en–su–enfermedad, en–enfermedad–su
+  hin: में–रोग–उसके, ब–बीमारी–उसकी
+  arb: فِي–مَرَضِهِ, في–مَرَضِهِ
+  kor: 에–그의–병, 그–병–에서
+  swa: katika–ugonjwa–wake, katika–ugonjwa-wake
+
+### Sense 97200 (1 occurrences)
+Grammar: Conj-w | N-msc | 3ms
+  eng: and–his–sickness
+  spa: y–su–enfermedad
+  hin: और–उसकी–बीमारी
+  arb: جَمِيلٌ
+  kor: 그리고–병–그의
+  swa: na–ugonjwa–wake
+
+### Sense 97201 (1 occurrences)
+Grammar: Prep-m | N-msc | 3ms
+  eng: from–his–sickness
+  spa: de–su–enfermedad
+  hin: अपनी–बीमारी–से
+  arb: مِنْ–مَرَضِهِ
+  kor: 그의–병에서
+  swa: kutoka–ugonjwa–wake
+
+### Sense 97202 (1 occurrences)
+Grammar: N-mpc | 1cp
+  eng: our–sicknesses
+  spa: nuestras–enfermedades
+  hin: हमारी–बीमारियोंको
+  arb: أَمْرَاضَنَا
+  kor: 우리의–병들을
+  swa: magonjwa–yetu
+
+### Sense 97203 (1 occurrences)
+Grammar: Prep-l | N-ms
+  eng: with–disease
+  spa: con–enfermedad
+  hin: बीमारीसे–
+  arb: بِ–مَرَضٍ
+  kor: 로–병
+  swa: kwa–ugonjwa
+
+### Sense 97204 (1 occurrences)
+Grammar: Conj-w | N-ms
+  eng: and–sickness
+  spa: y–enfermedad
+  hin: और–बीमारी
+  arb: وَسُوءٌ
+  kor: 그리고–병
+  swa: na–ugonjwa
+
+### Sense 97205 (1 occurrences)
+Grammar: Prep-b | N-mp
+  eng: with–sicknesses
+  spa: con–enfermedades
+  hin: रोगोंसे
+  arb: بِ–أَمْرَاضٍ
+  kor: 에–병들
+  swa: kwa–magonjwa
+
+### Sense 97206 (1 occurrences)
+Grammar: Art | N-ms
+  eng: the–sickness
+  spa: la–enfermedad
+  hin: बीमारी
+  arb: المَرَضِ
+  kor: 그–병
+  swa: ugonjwa–huo
+
+### Sense 97207 (1 occurrences)
+Grammar: Prep-l | N-ms
+  eng: for–sickness
+  spa: para–enfermedad
+  hin: रोगी–है
+  arb: مَرِيضٌ
+  kor: 병들었고
+  swa: kina–ugonjwa
+
+### Sense 97208 (1 occurrences)
+Grammar: Conj-w | N-mp
+  eng: and–sicknesses
+  spa: y–enfermedades
+  hin: और–बीमारियाँ
+  arb: وَأَمْرَاضٍ
+  kor: 그리고–질병들을
+  swa: na–magonjwa
+
+## Task
+
+Group these 14 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

@@ -1,0 +1,127 @@
+# Sense Merge Task for G2657
+
+Lemma: G2657 (POS: V-APA-NMS)
+Total occurrences: 14
+Current sense count: 11
+
+This Hebrew/Greek lemma has been over-split into 11 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 70316 (2 occurrences)
+Grammar: V-PIA-2S
+  eng: you–notice, do–you–notice
+  spa: consideras
+  hin: सोचते–हो, देखता–है
+  arb: تَرى, تَتَأَمَّلُ
+  kor: 생각하는가, 생각하느냐?
+  swa: hutambui, angalii?
+
+### Sense 70317 (2 occurrences)
+Grammar: V-ANA
+  eng: to–observe
+  spa: observar
+  hin: देखने–को, देखना
+  arb: يَتَأَمَّلَ
+  kor: 살펴보기–위해, 살펴보기–를
+  swa: kuangalia
+
+### Sense 70318 (2 occurrences)
+Grammar: V-AMA-2P
+  eng: consider
+  spa: considerad
+  hin: गौर–करो
+  arb: تَأَمَّلُوا
+  kor: 살피라
+  swa: fikirini
+
+### Sense 70319 (1 occurrences)
+Grammar: V-IIA-1S
+  eng: I–was–considering
+  spa: observaba
+  hin: देख–रहा–था
+  arb: تَأَمَّلْتُ
+  kor: 살펴보았다
+  swa: niliangalia,
+
+### Sense 70320 (1 occurrences)
+Grammar: V-PSA-1P
+  eng: let-us-consider
+  spa: consideremos
+  hin: ध्यान–दें
+  arb: لِنُلَاحِظْ
+  kor: 생각하자
+  swa: tuangalie
+
+### Sense 70321 (1 occurrences)
+Grammar: V-IIA-3P
+  eng: they–were–noticing
+  spa: observaban
+  hin: देखतेथे
+  arb: لَاحَظُوا
+  kor: 알아보았다
+  swa: waliona
+
+### Sense 70322 (1 occurrences)
+Grammar: V-AMA-2P
+  eng: consider
+  spa: considerad
+  hin: विचार–करो
+  arb: تَأَمَّلوا
+  kor: 생각하라
+  swa: mtafakarini
+
+### Sense 70323 (1 occurrences)
+Grammar: V-PPA-DMS
+  eng: observing
+  spa: que–contempla
+  hin: देखनेवाले
+  arb: ناظِرًا
+  kor: 쳐다보는
+  swa: anayeangalia
+
+### Sense 70324 (1 occurrences)
+Grammar: V-APA-NMS
+  eng: having-perceived
+  spa: habiendo-percibido
+  hin: समझकर
+  arb: فَطَنَ
+  kor: 꿰뚫어–보시고
+  swa: akitambua
+
+### Sense 70325 (1 occurrences)
+Grammar: V-AIA-3S
+  eng: he–considered
+  spa: consideró
+  hin: देखा
+  arb: تَأَمَّلَ
+  kor: 살펴보았으니
+  swa: alitazama
+
+### Sense 70326 (1 occurrences)
+Grammar: V-AIA-3S
+  eng: he–observed
+  spa: contempló
+  hin: देखा
+  arb: نَظَرَ
+  kor: 보았다
+  swa: alijiangalia
+
+## Task
+
+Group these 11 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

@@ -1,0 +1,154 @@
+# Sense Merge Task for H0212
+
+Lemma: H0212 (POS: N-mp)
+Total occurrences: 35
+Current sense count: 14
+
+This Hebrew/Greek lemma has been over-split into 14 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 80569 (8 occurrences)
+Grammar: Art | N-mp
+  eng: the–wheels
+  spa: las–ruedas
+  hin: ते–पहिये, पहिये, ते–पहियों
+  arb: الـ–بَكَراتُ, الْبَكَرَاتُ, الـ–بَكَراتِ
+  kor: 그–바퀴들이, 그–바퀴들의
+  swa: magurudumu, ya–magurudumu, wa–magurudumu
+
+### Sense 80570 (5 occurrences)
+Grammar: Art | N-ms
+  eng: the–wheel
+  spa: la–rueda
+  hin: पहिया, पहिये, ते–पहिये
+  arb: الْبَكَرَةِ, الْبَكَرَةُ, الـ–بَكَرَةِ
+  kor: 그–바퀴의, 그–바퀴가
+  swa: gurudumu
+
+### Sense 80571 (4 occurrences)
+Grammar: Conj-w, Art | N-mp
+  eng: and–the–wheels
+  spa: y–las–ruedas
+  hin: और–पहिये
+  arb: وَالْبَكَرَاتُ, وَ–الـ–بَكَراتُ
+  kor: 그리고–바퀴들이, 그리고–바퀴들은, 그리고–그–바퀴들이
+  swa: na–magurudumu
+
+### Sense 80572 (3 occurrences)
+Grammar: N-msc,N-mpc
+  eng: wheel-of, wheels-of
+  spa: rueda–de–, rueda–de, ruedas–de
+  hin: पहिये, पहिए
+  arb: عَجَلَةِ, عَجَلَاتِ, عَجَلَاتٍ
+  kor: 바퀴의, 바퀴를, 바퀴들의
+  swa: ya–gurudumu, manne, magurudumu
+
+### Sense 80573 (3 occurrences)
+Grammar: N-ms
+  eng: wheel
+  spa: rueda, la–rueda
+  hin: पहिया
+  arb: بَكَرَةٌ, عَجَلَةً
+  kor: 바퀴를, 바퀴가, 바퀴
+  swa: gurudumu
+
+### Sense 80574 (3 occurrences)
+Grammar: Art | N-mp
+  eng: the–wheels
+  spa: las–ruedas
+  hin: पहियों–की, पहिये
+  arb: الـ–عَجَلَاتِ
+  kor: 바퀴들의, 바퀴들이
+  swa: za–magurudumu, ya–magurudumu, manne
+
+### Sense 80575 (2 occurrences)
+Grammar: Prep-b, Art | N-mp
+  eng: in–the–wheels
+  spa: en–las–ruedas
+  hin: में–पहियों
+  arb: في–الـ–بَكَراتِ
+  kor: 에–그–바퀴들
+  swa: katika–magurudumu
+
+### Sense 80576 (1 occurrences)
+Grammar: N-mp
+  eng: wheels
+  spa: ruedas
+  hin: पहिये
+  arb: بَكَرَاتٍ
+  kor: 바퀴들이
+  swa: magurudumu
+
+### Sense 80577 (1 occurrences)
+Grammar: Conj-w | N-ms
+  eng: and–wheel
+  spa: y–rueda
+  hin: और–पहिया
+  arb: وَبَكَرَةٌ
+  kor: 그리고–바퀴가
+  swa: na–gurudumu
+
+### Sense 80578 (1 occurrences)
+Grammar: N-ms
+  eng: wheel
+  spa: rueda!
+  hin: पहिये–की
+  arb: عَجَلَةٍ
+  kor: 바퀴–의
+  swa: –gurudumu
+
+### Sense 80579 (1 occurrences)
+Grammar: Prep, Art | N-mp
+  eng: to–the–wheels
+  spa: A–las–ruedas
+  hin: को–पहियों
+  arb: لِلْبَكَرَاتِ
+  kor: 그–바퀴들에–대하여
+  swa: magurudumu
+
+### Sense 80580 (1 occurrences)
+Grammar: Conj-w | N-msc
+  eng: and–a–cart
+  spa: y–rueda–de
+  hin: और–पहिया
+  arb: وَ–دُولَابُ
+  kor: 그리고–바퀴를
+  swa: na–gurudumu
+
+### Sense 80581 (1 occurrences)
+Grammar: Art | N-ms
+  eng: the–wheel
+  spa: la–rueda
+  hin: पहिये–की
+  arb: الـ–عَجَلَةِ
+  kor: 바퀴의
+  swa: wa–gurudumu–moja
+
+### Sense 80582 (1 occurrences)
+Grammar: N-mpc | 3mp
+  eng: wheels-of-them
+  spa: ruedas–de–ellos
+  hin: उनके–पहिये
+  arb: بَكَرَاتُهُمْ
+  kor: 그들의–바퀴들의
+  swa: magurudumu–yao
+
+## Task
+
+Group these 14 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

@@ -1,0 +1,136 @@
+# Sense Merge Task for G4920
+
+Lemma: G4920 (POS: V-PPA-NMS)
+Total occurrences: 26
+Current sense count: 12
+
+This Hebrew/Greek lemma has been over-split into 12 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 77153 (6 occurrences)
+Grammar: V-AIA-3P
+  eng: understood, they-understood
+  spa: entendieron
+  hin: समझे, रोटियों
+  arb: فَهِمُوا, فَهِموا, يَفْهَمَا
+  kor: 깨달았다, 이해했다, 이해하지
+  swa: walielewa, hawakuelewa, walikuwa–wameelewa
+
+### Sense 77154 (3 occurrences)
+Grammar: V-PPA-GMS,V-PPA-NMS
+  eng: understanding
+  spa: que–entiende, que-entiende, entendiendo
+  hin: समझते–हुए, समझनेवाला
+  arb: يَفهَمُ, فاهِمٌ
+  kor: 깨닫는–자, 깨닫지–못하는
+  swa: elewa, anayeelewa, aelewa
+
+### Sense 77155 (3 occurrences)
+Grammar: V-ASA-3P,V-PSA-3P
+  eng: they–understand, they–should–understand, they-may-understand
+  spa: entiendan
+  hin: समझेइन, समझें,, समझें
+  arb: يَفهَموا, يَفهَمُوا
+  kor: 깨닫지, 깨닫고, 깨닫게–되고
+  swa: wakaelewa, wasielewa
+
+### Sense 77156 (3 occurrences)
+Grammar: V-PMA-2P,V-AMA-2P
+  eng: understand
+  spa: entended, ¡entended!
+  hin: समझो
+  arb: افْهَمُوا, افهَموا
+  kor: 깨달으라
+  swa: mfahamu, fahamu, elewe
+
+### Sense 77157 (2 occurrences)
+Grammar: V-PIA-2P
+  eng: you-understand, comprehend
+  spa: comprendéis
+  hin: समझते, बूझते
+  arb: تَفْهَمُونَ
+  kor: 깨닫지–못하는가, 깨닫지–못하느냐
+  swa: hamjafahamu
+
+### Sense 77158 (2 occurrences)
+Grammar: V-PIA-3P
+  eng: understand, do–they–understand
+  spa: entienden
+  hin: समझते
+  arb: يَفهَمُونَ, يَفهَمونَ
+  kor: 깨닫지–못한다
+  swa: hawaielewi, hawaelewi.
+
+### Sense 77159 (2 occurrences)
+Grammar: V-PNA
+  eng: to–understand, to-understand
+  spa: entender, comprender
+  hin: समझने–को, समझना
+  arb: يَفْهَمُوا, لِيَفْهَموا
+  kor: 이해하는–것–을, 깨닫기–위하여
+  swa: wataelewa, kuelewa
+
+### Sense 77160 (1 occurrences)
+Grammar: V-PSA-3P
+  eng: understand
+  spa: entiendan
+  hin: मुड़ें
+  arb: يَفْهَموا
+  kor: 깨닫지
+  swa: waelewe;
+
+### Sense 77161 (1 occurrences)
+Grammar: V-FIA-3P
+  eng: will-understand
+  spa: entenderán
+  hin: समझेंगे
+  arb: سَيَفْهَمُونَ
+  kor: 깨달으리라
+  swa: wataelewa.
+
+### Sense 77162 (1 occurrences)
+Grammar: V-AIA-2P
+  eng: Have–you–understood
+  spa: ¿Entendéis
+  hin: समझे
+  arb: أَفَهِمتُم
+  kor: 깨달았느냐
+  swa: Mmeelewa
+
+### Sense 77163 (1 occurrences)
+Grammar: V-ASA-2P
+  eng: will–you–understand
+  spa: entenderéis
+  hin: समझोगे
+  arb: تَفهَمُوا
+  kor: 깨닫지–못할–것이다
+  swa: kuelewa
+
+### Sense 77164 (1 occurrences)
+Grammar: V-ASA-2P
+  eng: understand
+  spa: entenderéis
+  hin: समझोगे;
+  arb: تَفهَموا
+  kor: 깨닫지–못하리라
+  swa: mtaelewa
+
+## Task
+
+Group these 12 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

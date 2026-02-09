@@ -1,0 +1,154 @@
+# Sense Merge Task for G4521
+
+Lemma: G4521 (POS: N-GNS)
+Total occurrences: 68
+Current sense count: 14
+
+This Hebrew/Greek lemma has been over-split into 14 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 76272 (34 occurrences)
+Grammar: N-DNS,N-NNS,N-GNS,N-ANS
+  eng: sabbath, Sabbath, on–Sabbath
+  spa: sábado, en–sábado, de–sábado
+  hin: सब्त, सब्त–को, सब्बत
+  arb: سَبتٍ, سَبْتٍ, السَّبْتِ
+  kor: 안식일에, 안식일, 안식일이
+  swa: Sabato, sabato, Sabato,
+
+### Sense 76273 (11 occurrences)
+Grammar: N-DNP
+  eng: Sabbaths, sabbaths
+  spa: sábados
+  hin: सबतोन–मेइन, सब्त–के–दिनों, सब्तों–में
+  arb: سُبُوتِ, سُبوتِ, سَبْتٍ
+  kor: 안식일들에, 안식일에
+  swa: Sabato, sabato
+
+### Sense 76274 (4 occurrences)
+Grammar: N-GNP,N-ANP
+  eng: sabbaths
+  spa: sábados, de–sábados
+  hin: सब्त, सब्बतोन, सब्तों–के
+  arb: سُّبوتِ, سُبوتٍ
+  kor: 안식일들의, 안식일
+  swa: Sabato, Sabato,
+
+### Sense 76275 (3 occurrences)
+Grammar: N-GNP
+  eng: of–Sabbaths, Sabbaths
+  spa: de–sábados, sábados
+  hin: सब्त–के
+  arb: سُبوتِ, السُّبوتِ, السَّبتِ
+  kor: 안식일들–의
+  swa: Sabato, ya–juma
+
+### Sense 76276 (2 occurrences)
+Grammar: N-GNP,N-GNS
+  eng: sabbaths, of-sabbath
+  spa: sábados, del–sábado
+  hin: सप्ताह–के–दिनों, सप्ताह–के–दिन
+  arb: سَبْتٍ, أَسَابِيعِ
+  kor: 주일의, 주일들-중의
+  swa: ya–juma, juma
+
+### Sense 76277 (2 occurrences)
+Grammar: N-GNP
+  eng: week, of–week
+  spa: sábados, de-sábados
+  hin: सब्तों
+  arb: أُسْبُوعِ, أُسْبُوعٍ
+  kor: 안식일–후
+  swa: juma
+
+### Sense 76278 (2 occurrences)
+Grammar: N-DNS,N-ANS
+  eng: sabbath
+  spa: –sábado, sábado
+  hin: सब्त।, सब्त,
+  arb: سَبْتَ, سَبْتٍ
+  kor: 안식일–을, 안식일
+  swa: Sabato
+
+### Sense 76279 (2 occurrences)
+Grammar: N-GNP
+  eng: week
+  spa: sábados
+  hin: सब्बतों, सप्ताह–के
+  arb: الأُسْبُوعِ, أَسابيعِ
+  kor: 안식일의, 안식일들의
+  swa: sabato
+
+### Sense 76280 (2 occurrences)
+Grammar: N-ANS,N-GNS
+  eng: sabbath
+  spa: sábado
+  hin: के
+  arb: السَبْتِ
+  kor: 안식일을, 안식일–의
+  swa: Sabato.
+
+### Sense 76281 (2 occurrences)
+Grammar: N-ANS,N-GNS
+  eng: Sabbath
+  spa: sábado
+  hin: सबत–को, सबत–क
+  arb: سَبتِ, سَبتَ
+  kor: 안식일의, 안식일을
+  swa: Sabato
+
+### Sense 76282 (1 occurrences)
+Grammar: N-GNS
+  eng: of-sabbath
+  spa: de–semana
+  hin: सब्त–के
+  arb: سَبْتٍ
+  kor: 안식일–의
+  swa: ya–wiki
+
+### Sense 76283 (1 occurrences)
+Grammar: N-DNP
+  eng: sabbaths
+  spa: sábados
+  hin: सब्त
+  arb: السَّبْتِ
+  kor: 안식일들–에
+  swa: Sabato,
+
+### Sense 76284 (1 occurrences)
+Grammar: N-GNS
+  eng: week
+  spa: semana
+  hin: सप्ताह–में
+  arb: الأُسبوعِ
+  kor: 주에
+  swa: juma
+
+### Sense 76285 (1 occurrences)
+Grammar: N-DNP
+  eng: Sabbaths
+  spa: sábados
+  hin: सब्तों
+  arb: سُبوتِ
+  kor: 안식일들–에
+  swa: za–Sabato
+
+## Task
+
+Group these 14 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

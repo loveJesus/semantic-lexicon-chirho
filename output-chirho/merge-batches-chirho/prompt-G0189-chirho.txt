@@ -1,0 +1,136 @@
+# Sense Merge Task for G0189
+
+Lemma: G0189 (POS: N-GFS)
+Total occurrences: 24
+Current sense count: 12
+
+This Hebrew/Greek lemma has been over-split into 12 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 61606 (4 occurrences)
+Grammar: N-GFS
+  eng: hearing
+  spa: oír, oída
+  hin: सुन्ने, सुनने–के, सुनने
+  arb: سَماعِ, السَّمْعِ, السَّمَاعِ
+  kor: 들음, 들음의, 들음으로부터
+  swa: kusikia, kusikia,
+
+### Sense 61607 (3 occurrences)
+Grammar: N-NFS
+  eng: hearing
+  spa: oído, oír
+  hin: सुनना
+  arb: سَمعُ, سَمعٌ, السَّمْعُ
+  kor: 들음이면, 들음이냐, 들음은
+  swa: kusikia, kusikia?
+
+### Sense 61608 (3 occurrences)
+Grammar: N-NFS,N-AFS
+  eng: report
+  spa: fama
+  hin: सुनाई, प्रसिद्धि, चरच
+  arb: خَبَرُهُ, خَبَرَ
+  kor: 소문을, 소문–이, 소문
+  swa: habari, sifa
+
+### Sense 61609 (2 occurrences)
+Grammar: N-AFP
+  eng: rumors
+  spa: rumores
+  hin: अफ़वाहें, अफवाहें
+  arb: أَخْبَارَ, أَخبارَ
+  kor: 소문들을
+  swa: za–vita, habari
+
+### Sense 61610 (2 occurrences)
+Grammar: N-AFP
+  eng: ears
+  spa: oídos
+  hin: कानों
+  arb: آذانِ
+  kor: 귀에, 귀들
+  swa: masikio
+
+### Sense 61611 (2 occurrences)
+Grammar: N-DFS
+  eng: With–hearing, In–hearing
+  spa: De-oído, Con–oído
+  hin: सुन्ने–से, सुननेसे
+  arb: سَمعًا
+  kor: 들음으로
+  swa: Kwa–kusikia
+
+### Sense 61612 (2 occurrences)
+Grammar: N-DFS
+  eng: report
+  spa: proclamación, anuncio
+  hin: संदेश–पर, संदेश
+  arb: سَمْعِ, رِسَالَةِ
+  kor: 들은–것을
+  swa: habari
+
+### Sense 61613 (2 occurrences)
+Grammar: N-AFS
+  eng: hearing
+  spa: oído
+  hin: कअनोन;, कअनोन
+  arb: آذانَهُم
+  kor: 귀–를, 귀–가
+  swa: masikio, kusikia
+
+### Sense 61614 (1 occurrences)
+Grammar: N-GFS
+  eng: of–hearing
+  spa: de–oído
+  hin: सुन्ने–क
+  arb: السَّمْعِ
+  kor: 들음의
+  swa: la–kusikia
+
+### Sense 61615 (1 occurrences)
+Grammar: N-DFS
+  eng: hearing
+  spa: oído
+  hin: सुनने–से
+  arb: السَّمعِ
+  kor: 듣는–것에,
+  swa: kusikia
+
+### Sense 61616 (1 occurrences)
+Grammar: N-NFP
+  eng: ears
+  spa: oídos
+  hin: ठीक–से
+  arb: أُذُنَاهُ
+  kor: 귀들–이
+  swa: masikio
+
+### Sense 61617 (1 occurrences)
+Grammar: N-DFP
+  eng: hearing
+  spa: oídos
+  hin: कानों–में
+  arb: الأَسْمَاعِ
+  kor: 들음에서
+  swa: kusikia
+
+## Task
+
+Group these 12 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

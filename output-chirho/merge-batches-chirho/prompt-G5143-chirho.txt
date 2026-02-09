@@ -1,0 +1,163 @@
+# Sense Merge Task for G5143
+
+Lemma: G5143 (POS: V-PPA-NMP)
+Total occurrences: 20
+Current sense count: 15
+
+This Hebrew/Greek lemma has been over-split into 15 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 77879 (3 occurrences)
+Grammar: V-APA-NMS
+  eng: running, having–run
+  spa: habiendo–corrido, corriendo
+  hin: दौड़कर
+  arb: رَكَضَ, رَاكِضًا
+  kor: 달려가서, 달려와서
+  swa: akikimbia
+
+### Sense 77880 (2 occurrences)
+Grammar: V-AIA-3S
+  eng: ran, he-ran
+  spa: corrió
+  hin: दौड़ा, और
+  arb: رَكَضَ
+  kor: 달렸다, 달려왔다
+  swa: alikimbia
+
+### Sense 77881 (2 occurrences)
+Grammar: V-AIA-1S
+  eng: ran, I–ran
+  spa: corrí
+  hin: मैने–दौद., मैने–दौद,
+  arb: سَعَيتُ, أَرْكُضْ
+  kor: 달리지,, 달렸느냐.
+  swa: nilikimbia
+
+### Sense 77882 (2 occurrences)
+Grammar: V-PIA-3P,V-PIA-1S
+  eng: run
+  spa: corro, corren
+  hin: दौड़ते–हैं, दौड़ता–हूँ
+  arb: يَرْكُضونَ, أَرْكُضُ
+  kor: 달린다
+  swa: wanakimbia,, ninakimbia,
+
+### Sense 77883 (1 occurrences)
+Grammar: V-PMA-2P
+  eng: run
+  spa: corred
+  hin: दौड़ो
+  arb: ارْكُضوا
+  kor: 달려라
+  swa: kimbieni,
+
+### Sense 77884 (1 occurrences)
+Grammar: V-AIA-3P
+  eng: they–ran
+  spa: corrieron
+  hin: दौड़ीं
+  arb: رَكَضنَ
+  kor: 달렸다
+  swa: walikimbia
+
+### Sense 77885 (1 occurrences)
+Grammar: V-PSA-3S
+  eng: may–run
+  spa: corra
+  hin: दौदते-रहे
+  arb: تَجْري
+  kor: 달리고
+  swa: lienee
+
+### Sense 77886 (1 occurrences)
+Grammar: V-PSA-1P
+  eng: let-us-run
+  spa: corramos
+  hin: दौड़ें
+  arb: لِنَرْكُضْ
+  kor: 우리가–달리자
+  swa: tukimbie
+
+### Sense 77887 (1 occurrences)
+Grammar: V-PIA-3S
+  eng: she–runs
+  spa: Corre
+  hin: दौड़ती–है
+  arb: تَرْكُضُ
+  kor: 달린다
+  swa: akakimbia
+
+### Sense 77888 (1 occurrences)
+Grammar: V-PPA-GMS
+  eng: one-running
+  spa: que–corre
+  hin: दौड़ने–वाले
+  arb: السَّاعِي
+  kor: 달리는–자의
+  swa: anayekimbia
+
+### Sense 77889 (1 occurrences)
+Grammar: V-PPA-NMP
+  eng: running
+  spa: corriendo
+  hin: दौड़ने–वाले
+  arb: الرّاكِضونَ
+  kor: 달리는–자들은
+  swa: wanaokimbia,
+
+### Sense 77890 (1 occurrences)
+Grammar: V-IIA-3P
+  eng: were–running
+  spa: Corrían
+  hin: दौड़–रहे–थे
+  arb: كَانَا–يَرْكُضَانِ
+  kor: 달리고–있었다
+  swa: walikimbia
+
+### Sense 77891 (1 occurrences)
+Grammar: V-IIA-2P
+  eng: you-were-running
+  spa: Corríais
+  hin: तुम–दौदते–थे
+  arb: كُنتُم–تَسعَونَ
+  kor: 달리고–있었느니라
+  swa: Mlikimbia
+
+### Sense 77892 (1 occurrences)
+Grammar: V-PPA-GMP
+  eng: running
+  spa: corriendo
+  hin: दौड़ते–हुए
+  arb: رَاكِضَةٍ
+  kor: 달리는
+  swa: wakikimbia
+
+### Sense 77893 (1 occurrences)
+Grammar: V-PSA-1S
+  eng: I-run
+  spa: corra
+  hin: मैन–दौरुन
+  arb: أسعى
+  kor: 달리느냐
+  swa: ninakimbia
+
+## Task
+
+Group these 15 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

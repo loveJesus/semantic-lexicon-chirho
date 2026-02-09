@@ -1,0 +1,154 @@
+# Sense Merge Task for G4059
+
+Lemma: G4059 (POS: V-ANP)
+Total occurrences: 18
+Current sense count: 14
+
+This Hebrew/Greek lemma has been over-split into 14 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 74651 (2 occurrences)
+Grammar: V-PNM/P
+  eng: to-be-circumcised
+  spa: circuncidaros, a-circuncidaros
+  hin: खतन–करवने,, खतन–करवन,
+  arb: بِالخِتانِ, أن–تَختَتِنوا
+  kor: 할례받도록,
+  swa: mtahiriwe, kutahiriwa
+
+### Sense 74652 (2 occurrences)
+Grammar: V-PNA
+  eng: to-circumcise
+  spa: circuncidar
+  hin: खतना–करने–को, खतना–करना
+  arb: يَخْتِنُوا, أَن–تُختَنوا
+  kor: 할례하지–말라고, 할례하기를
+  swa: kuwatahiri, kutahiri
+
+### Sense 74653 (2 occurrences)
+Grammar: V-ANA
+  eng: to–circumcise
+  spa: circuncidar, a–circuncidar
+  hin: खतना–करने
+  arb: لِيُخْتَنَ, لِيَخْتِنُوا
+  kor: 할례할, 할례하러
+  swa: kumtahiri
+
+### Sense 74654 (2 occurrences)
+Grammar: V-AIA-3S
+  eng: circumcised
+  spa: circuncidó
+  hin: खतना–किया
+  arb: خَتَنَهُ
+  kor: 할례했다
+  swa: alimtahiri, akamtahiri
+
+### Sense 74655 (1 occurrences)
+Grammar: V-ANP
+  eng: to-be-circumcised
+  spa: a-ser-circuncidado
+  hin: खतन–करने–के–लिये.
+  arb: بِالخِتانِ
+  kor: 할례를.
+  swa: kutahiriwa
+
+### Sense 74656 (1 occurrences)
+Grammar: V-PPM/P-DMS
+  eng: being-circumcised
+  spa: circuncidándose
+  hin: खतन–करवने–वले,
+  arb: يَختَتِنُ
+  kor: 할례를–받는,
+  swa: anayetahiriwa
+
+### Sense 74657 (1 occurrences)
+Grammar: V-ASP-2P
+  eng: you-are-circumcised
+  spa: sois–circuncidados
+  hin: खतना–कराओ
+  arb: تُختَتَنوا
+  kor: 할례받지
+  swa: mtahiriwe
+
+### Sense 74658 (1 occurrences)
+Grammar: V-PPM/P-NMP
+  eng: being-circumcised
+  spa: circuncidándose
+  hin: खतन–करवनेवले
+  arb: المُختَتَنونَ
+  kor: 할례받는–자들이
+  swa: wanaotahiriwa
+
+### Sense 74659 (1 occurrences)
+Grammar: V-PNP
+  eng: to-be-circumcised
+  spa: ser–circuncidados
+  hin: खतना–कराओ
+  arb: أَن–تَختَتِنوا
+  kor: 할례받으라고
+  swa: kutahiriwa
+
+### Sense 74660 (1 occurrences)
+Grammar: V-RPM/P-NMS
+  eng: having–been–circumcised
+  spa: ¿Circuncidado
+  hin: खतना–किया–हुआ
+  arb: مَخْتوناً
+  kor: 할례–받은
+  swa: Je,–mtu–aliyetahiriwa
+
+### Sense 74661 (1 occurrences)
+Grammar: V-AIP-2P
+  eng: you–were–circumcised
+  spa: fuisteis–circuncidados
+  hin: तुम-खतन-किये-गये
+  arb: خُتِنتُمْ
+  kor: 너희가–할례–받았다
+  swa: mlitahiriwa
+
+### Sense 74662 (1 occurrences)
+Grammar: V-PSM/P-2P
+  eng: you-are-circumcised
+  spa: os-circuncidáis
+  hin: तुम–खतन–करवते–हो,
+  arb: اختَتَنتُم
+  kor: 할례를–받으면,
+  swa: mkitahiriwa
+
+### Sense 74663 (1 occurrences)
+Grammar: V-PIA-2P
+  eng: you-circumcise
+  spa: circuncidáis
+  hin: खतना–करते–हो
+  arb: تَخْتِنُونَ
+  kor: 할례를–행한다
+  swa: mnatahiri
+
+### Sense 74664 (1 occurrences)
+Grammar: V-PMM/P-3S
+  eng: let–him–be–circumcised
+  spa: se–circuncide
+  hin: खतना–करवाओ
+  arb: لِـيَخْتَتِنْ
+  kor: 할례–받으라
+  swa: asitahiriwe.
+
+## Task
+
+Group these 14 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

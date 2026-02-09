@@ -1,0 +1,153 @@
+# Sense Merge Task for G3973
+
+Lemma: G3973 (POS: V-PIM-3S)
+Total occurrences: 15
+Current sense count: 14
+
+This Hebrew/Greek lemma has been over-split into 14 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 74316 (2 occurrences)
+Grammar: V-AIM-3S
+  eng: he–stopped, he-ceased
+  spa: cesó
+  hin: रुका
+  arb: تَوَقَّفَ, انتَهى
+  kor: 그치셨을–때, 그쳤을–때
+  swa: kuongea, alipomaliza
+
+### Sense 74317 (1 occurrences)
+Grammar: V-RIM/P-3S
+  eng: has–ceased
+  spa: ha–cesado
+  hin: छूट–गया
+  arb: كَفَّ
+  kor: 그쳤으니
+  swa: ameacha
+
+### Sense 74318 (1 occurrences)
+Grammar: V-AIM-3P
+  eng: they-stopped
+  spa: cesaron
+  hin: थम–गए
+  arb: سَكَنوا
+  kor: 그쳤다
+  swa: vilikoma
+
+### Sense 74319 (1 occurrences)
+Grammar: V-ANM
+  eng: to-cease
+  spa: cesar
+  hin: थमने–के
+  arb: أَنْ–سَكَنَ
+  kor: 멈춘–후에
+  swa: kuisha
+
+### Sense 74320 (1 occurrences)
+Grammar: V-PIM-3S
+  eng: ceases
+  spa: cesa
+  hin: रुकता
+  arb: يَتَوَقَّفُ
+  kor: 그치지
+  swa: huacha
+
+### Sense 74321 (1 occurrences)
+Grammar: V-FIM-2S
+  eng: will–you–cease
+  spa: cesarás
+  hin: छोड़ेगा
+  arb: تَكُفُّ
+  kor: 그치지
+  swa: utaacha
+
+### Sense 74322 (1 occurrences)
+Grammar: V-IIM-3P
+  eng: they–stopped
+  spa: cesaban
+  arb: يَكُفُّوا
+  kor: 가르치며
+  swa: waliisha
+
+### Sense 74323 (1 occurrences)
+Grammar: V-AIM-1S
+  eng: I-ceased
+  spa: cesé
+  hin: रुका
+  arb: أَتَوَقَّفْ
+  kor: 내가–멈추지–않았다
+  swa: niliacha
+
+### Sense 74324 (1 occurrences)
+Grammar: V-PIM-1P
+  eng: we–cease
+  spa: cesamos
+  hin: हुम-रुक्ते-हैन
+  arb: نَكُفُّ
+  kor: 우리가–그치지–않는다
+  swa: kuacha
+
+### Sense 74325 (1 occurrences)
+Grammar: V-PIM-1S
+  eng: I-cease
+  spa: ceso
+  hin: मैन-रुक्त-होओन
+  arb: أَكُفُّ
+  kor: 그치지
+  swa: kushukuru
+
+### Sense 74326 (1 occurrences)
+Grammar: V-AIM-3P
+  eng: they-would-have-ceased
+  spa: hubieran-cesado
+  hin: बंद–हो–जातीं
+  arb: تَوَقَّفَتْ
+  kor: 멈추었으리라
+  swa: kusimama
+
+### Sense 74327 (1 occurrences)
+Grammar: V-AMA-3S
+  eng: let–him–restrain
+  spa: detenga
+  hin: रोके
+  arb: لِيُكَفّ
+  kor: 멈추게–하라
+  swa: azuie
+
+### Sense 74328 (1 occurrences)
+Grammar: V-AIM-3P
+  eng: they-stopped
+  spa: dejaron
+  hin: रुक–गए
+  arb: تَوَقَّفُوا–عَنْ
+  kor: 그들이–멈추었다
+  swa: waliacha
+
+### Sense 74329 (1 occurrences)
+Grammar: V-FIM-3P
+  eng: they-will-cease
+  spa: cesarán
+  hin: बन्द–होंगी
+  arb: سَتَنتَهي
+  kor: 그칠–것이고
+  swa: zitakoma
+
+## Task
+
+Group these 14 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

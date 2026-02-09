@@ -1,0 +1,118 @@
+# Sense Merge Task for G4245
+
+Lemma: G4245 (POS: Adj-NMP-C)
+Total occurrences: 66
+Current sense count: 10
+
+This Hebrew/Greek lemma has been over-split into 10 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 75569 (49 occurrences)
+Grammar: Adj-GMP,Adj-NMP,Adj-DMP,Adj-AMP,Adj-NMP-C,Adj-VMP
+  eng: elders
+  spa: ancianos, ancianos?
+  hin: प्राचीनों, प्राचीन, पुरनियों
+  arb: شُيُوخِ, الشُّيُوخِ, الشُّيُوخُ
+  kor: 장로들–이, 장로들이, 장로들과
+  swa: wazee, –ya–wazee, wa–
+
+### Sense 75570 (6 occurrences)
+Grammar: Adj-GMP,Adj-NMP
+  eng: elders
+  spa: ancianos
+  hin: प्राचीनों,, प्राचीनों।, प्राचीनों;
+  arb: الشُّيوخِ, شُيوخِ, شَيخًا
+  kor: 장로들–의, 장로들이, 장로들
+  swa: wazee,, wazee;, wazee.
+
+### Sense 75571 (3 occurrences)
+Grammar: Adj-GMP-C,Adj-AMP,Adj-NMP
+  eng: elders
+  spa: ancianos
+  hin: बड़ों, प्रचेएन,, पूर्वजों।
+  arb: شُيُوخ, شُيوخاً, شُيوخ
+  kor: 장로들에서, 장로들–을, 선조들이
+  swa: wazee
+
+### Sense 75572 (2 occurrences)
+Grammar: Adj-NMS
+  eng: elder
+  spa: anciano
+  hin: प्राचीन,
+  arb: شَيخُ
+  kor: 장로
+  swa: Mzee
+
+### Sense 75573 (1 occurrences)
+Grammar: Adj-NMS-C
+  eng: older
+  spa: mayor
+  hin: बड़ा
+  arb: الأَكْبَرُ
+  kor: 더–나이–많은
+  swa: mkubwa
+
+### Sense 75574 (1 occurrences)
+Grammar: Adj-DMS-C
+  eng: an–older–man
+  spa: A–anciano
+  hin: बोओधे–पर
+  arb: الشَّيْخَ
+  kor: 장로를
+  swa: Mzee
+
+### Sense 75575 (1 occurrences)
+Grammar: Adj-AMP
+  eng: Elders
+  spa: A–ancianos
+  hin: प्राचीनों–को
+  arb: الشُّيوخَ
+  kor: 장로들을
+  swa: Wazee
+
+### Sense 75576 (1 occurrences)
+Grammar: Adj-AFP-C
+  eng: older–women
+  spa: a–ancianas
+  hin: बोओधि–स्त्रियोन
+  arb: الشَّيْخاتِ
+  kor: 장로들을
+  swa: wake–zake
+
+### Sense 75577 (1 occurrences)
+Grammar: Adj-DMP-C
+  eng: to–elders
+  spa: a–ancianos
+  hin: प्राचीनों–के
+  arb: لِلشُّيوخِ
+  kor: 장로들에게
+  swa: kwa–wazee
+
+### Sense 75578 (1 occurrences)
+Grammar: Adj-GMS
+  eng: an–elder
+  spa: anciano
+  hin: प्रअचिइन
+  arb: شَيْخٍ
+  kor: 장로
+  swa: mzee
+
+## Task
+
+Group these 10 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

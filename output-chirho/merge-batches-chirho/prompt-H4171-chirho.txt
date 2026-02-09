@@ -1,0 +1,145 @@
+# Sense Merge Task for H4171
+
+Lemma: H4171 (POS: V-Hifil-InfAbs)
+Total occurrences: 15
+Current sense count: 13
+
+This Hebrew/Greek lemma has been over-split into 13 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 110324 (2 occurrences)
+Grammar: V-Hifil-Imperf-3ms | 3mse
+  eng: he-substitutes-it, he-shall-substitute-it
+  spa: lo–sustituyere, lo–sustituirá
+  hin: अदला करेगा उसे
+  arb: يُبَدِّلُهُ
+  kor: 대체할것이다-그것을
+  swa: atambadilisha
+
+### Sense 110325 (2 occurrences)
+Grammar: V-Hifil-InfAbs
+  eng: substituting
+  spa: de–cierto
+  hin: अदला करते–हुए
+  arb: إِبْدَالًا
+  kor: 대체하면
+  swa: kubadilisha
+
+### Sense 110326 (1 occurrences)
+Grammar: V-Nifal-Perf-3ms
+  eng: has–changed
+  spa: ha–cambiado
+  hin: बदली
+  arb: تَتَغَيَّرْ
+  kor: 변하였다
+  swa: badilika
+
+### Sense 110327 (1 occurrences)
+Grammar: V-Hifil-Imperf-3ms
+  eng: He–exchanges
+  spa: cambia
+  hin: बदलता–है
+  arb: يُغَيِّرُ
+  kor: 바꾼다
+  swa: anabadilisha
+
+### Sense 110328 (1 occurrences)
+Grammar: V-Hifil-Imperf.Jus-3ms
+  eng: he-shall-exchange
+  spa: permutará
+  hin: बदलेंगे
+  arb: يُبَدِّلُ
+  kor: 바꾸–것이다
+  swa: badilisha
+
+### Sense 110329 (1 occurrences)
+Grammar: V-Hifil-Imperf-3ms
+  eng: does–change
+  spa: cambia
+  hin: बदलता–है
+  arb: يُبَدِّلُ
+  kor: 변하지
+  swa: atabadilisha
+
+### Sense 110330 (1 occurrences)
+Grammar: Conj-w | V-Hifil-ConsecImperf-
+  eng: and–they–exchanged
+  spa: Y–cambiaron
+  hin: और–उन्होंने–बदला
+  arb: وَ–أَبدَلوا
+  kor: 그리고–바꾸었나이다
+  swa: na–wakabadilisha
+
+### Sense 110331 (1 occurrences)
+Grammar: Prep-b | V-Hifil-Inf
+  eng: when–changes
+  spa: en–cambiar
+  hin: में–बदल
+  arb: عِنْدَ–تَغَيُّرِ
+  kor: –변할–때
+  swa: inapobadilika
+
+### Sense 110332 (1 occurrences)
+Grammar: V-Hifil-Imperf-3ms
+  eng: he-shall-substitute
+  spa: sustituirá
+  hin: अदला करेगा
+  arb: يُغَيِّرُ
+  kor: 대체할것이다
+  swa: atambadilisha
+
+### Sense 110333 (1 occurrences)
+Grammar: V-Hifil-Perf-3ms
+  eng: Has–exchanged
+  spa: ¿Ha–cambiado
+  hin: क्या–बदलती–है
+  arb: هَلْ–غَيَّرَ
+  kor: 바꿤느냐
+  swa: je–taifa–limebadili
+
+### Sense 110334 (1 occurrences)
+Grammar: V-Hifil-Perf-3ms
+  eng: has–exchanged
+  spa: ha–cambiado
+  hin: बदला
+  arb: غَيَّرَ
+  kor: 바꿤다
+  swa: wamebadili
+
+### Sense 110335 (1 occurrences)
+Grammar: V-Hifil-Imperf-1cs
+  eng: I–will–exchange
+  spa: cambiaré
+  hin: बदलूँगा
+  arb: أُبَدِّلُ
+  kor: 바꾸겠다
+  swa: nitaubadilisha
+
+### Sense 110336 (1 occurrences)
+Grammar: V-Hifil-Imperf-3ms
+  eng: he-substitutes
+  spa: sustituyere
+  hin: अदला करेगा
+  arb: يُبَدِّلُ
+  kor: 대체할것이다
+  swa: atabadilisha
+
+## Task
+
+Group these 13 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

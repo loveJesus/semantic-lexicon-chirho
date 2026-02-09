@@ -1,0 +1,136 @@
+# Sense Merge Task for G1093
+
+Lemma: G1093 (POS: N-AFS)
+Total occurrences: 252
+Current sense count: 12
+
+This Hebrew/Greek lemma has been over-split into 12 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 64521 (167 occurrences)
+Grammar: N-AFS,N-GFS,N-NFS,N-DFS
+  eng: earth, land, of-earth
+  spa: tierra, tierra,, de–tierra
+  hin: पृथ्वी, पृथ्वी।, पृथ्वी,
+  arb: الأَرْضِ, أَرضِ, الأرضِ
+  kor: 땅, 땅의, 땅–의
+  swa: nchi, dunia,, dunia
+
+### Sense 64522 (64 occurrences)
+Grammar: N-VFS,N-AFS,N-NFS,N-DFS,N-GFS
+  eng: land, ground, soil
+  spa: tierra
+  hin: भूमि, धरति, ज़मीन
+  arb: أَرْضِ, الأَرْضِ, أَرضِ
+  kor: 땅, 땅에, 땅–에서
+  swa: nchi, ardhi, udongo
+
+### Sense 64523 (4 occurrences)
+Grammar: N-GFS,N-AFS
+  eng: earth
+  spa: tierra
+  hin: पृथ्वी–पर, भूमि–की, पृथ्वी–की
+  arb: الأرضِ
+  kor: 땅으로,, 땅에서,, 땅에
+  swa: nchi, ardhi
+
+### Sense 64524 (4 occurrences)
+Grammar: N-GFS
+  eng: ground, earth
+  spa: tierra
+  hin: बीजों, पृथ्वी
+  arb: الأَرْضِ, أرضٍ
+  kor: 땅
+  swa: ardhi,, ardhi
+
+### Sense 64525 (3 occurrences)
+Grammar: N-GFS
+  eng: earth
+  spa: tierra
+  hin: प्रिथवि
+  arb: الأَرضِ
+  kor: 땅의?, 땅에;, 땅
+  swa: ardhi
+
+### Sense 64526 (2 occurrences)
+Grammar: N-DFS
+  eng: for–land, for-land
+  spa: para–tierra
+  hin: भूमि–को, भुमि–के–लिये
+  arb: لِأَرضِ
+  kor: 땅
+  swa: kwa-nchi
+
+### Sense 64527 (2 occurrences)
+Grammar: N-GFS
+  eng: of–soil
+  spa: de–tierra
+  hin: मित्ति–कि, उसे
+  arb: تُربَةٍ, تُرابٍ
+  kor: 흙의
+  swa: –udongo, cha–udongo.
+
+### Sense 64528 (2 occurrences)
+Grammar: N-GFS,N-AFS
+  eng: land
+  spa: tierra
+  hin: किनारे
+  arb: بَرِّ
+  kor: 땅
+  swa: pwani
+
+### Sense 64529 (1 occurrences)
+Grammar: N-GFS
+  eng: land
+  spa: tierra
+  hin: भूमि
+  arb: أرض
+  kor: 땅
+  swa: nchi
+
+### Sense 64530 (1 occurrences)
+Grammar: N-AFS
+  eng: land
+  spa: tierra
+  hin: पृथ्वी
+  arb: أَرضِ
+  kor: 땅–에
+  swa: nchi
+
+### Sense 64531 (1 occurrences)
+Grammar: N-NFS
+  eng: Land
+  spa: Tierra
+  hin: भूमि
+  arb: أَرْضُ
+  kor: 땅
+  swa: Nchi
+
+### Sense 64532 (1 occurrences)
+Grammar: N-GFS
+  eng: EARTH
+  spa: TIERRA
+  hin: पृथ्वी
+  arb: أَرضِ
+  kor: 땅–의
+  swa: NCHI.
+
+## Task
+
+Group these 12 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

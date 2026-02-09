@@ -1,0 +1,143 @@
+# Sense Merge Task for H2363a
+
+Lemma: H2363a (POS: Conj-w | V-Qal-ConsecImperf-3fs)
+Total occurrences: 18
+Current sense count: 13
+
+This Hebrew/Greek lemma has been over-split into 13 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 95871 (6 occurrences)
+Grammar: V-Qal-Imp-ms | 3fs
+  eng: make–haste, hurry, make–haste–
+  spa: apresúrate, apresúrate–, Apresúrate
+  hin: जल्दी–कर
+  arb: أَسْرِعْ, أَسْرِعْ–
+  kor: 서두르소서, 서둘러–주소서
+  swa: fanya-haraka, harakisha, haraka
+
+### Sense 95872 (1 occurrences)
+Grammar: V-Hifil-Imperf-1cs | 3fse
+  eng: will-hasten-it
+  spa: lo–aceleraré
+  hin: जल्दी–करूँगा
+  arb: أُعَجِّلُهَا
+  kor: 서둘러–이루겠다
+  swa: nitaliharakisha
+
+### Sense 95873 (1 occurrences)
+Grammar: V-Qal-QalPassPrtcpl-mp
+  eng: hurrying
+  spa: armados
+  hin: शीघ्र
+  arb: مُسْرِعِينَ
+  kor: 급히
+  swa: kwa–haraka
+
+### Sense 95874 (1 occurrences)
+Grammar: Conj-w | V-Qal-ConjPerf-3ms
+  eng: and–hastens
+  spa: y–se–apresura
+  hin: और–जल्दी
+  arb: وَيُسْرِعُ
+  kor: 그리고–서두른다
+  swa: na–itaharakisha
+
+### Sense 95875 (1 occurrences)
+Grammar: V-Hifil-Imperf.Cohort-3ms
+  eng: let-him-hurry
+  spa: que-se-dé-prisa
+  hin: शीघ्र–करे
+  arb: يُعَجِّلُ
+  kor: 소독하라
+  swa: na–afanye–haraka
+
+### Sense 95876 (1 occurrences)
+Grammar: V-Qal-Prtcpl-ms
+  eng: hastening
+  spa: que–se–apresura
+  hin: जल्दी–करने–वाला
+  arb: مُسرِعٍ
+  kor: 빨리
+  swa: anayeharakisha
+
+### Sense 95877 (1 occurrences)
+Grammar: V-Hifil-Imperf-3ms
+  eng: shall–be–in–haste
+  spa: se–apresure
+  hin: जल्दी–करेगा
+  arb: يَسْتَعْجِلُ
+  kor: 급히–할
+  swa: ataharakisha
+
+### Sense 95878 (1 occurrences)
+Grammar: V-Hifil-Perf-3cp
+  eng: hurried
+  spa: se–apresuraron
+  hin: जल्दी–की
+  arb: أَسْرَعُوا
+  kor: 서둘렀다
+  swa: waliharakisha
+
+### Sense 95879 (1 occurrences)
+Grammar: V-Qal-Inf | 1cs
+  eng: my–haste
+  spa: mi–prisa
+  hin: जल्दी
+  arb: عَجَلَتِي
+  kor: 나의–서두르는–것이
+  swa: wasiwasi–wangu
+
+### Sense 95880 (1 occurrences)
+Grammar: V-Qal-Imp-ms | 3fs
+  eng: hurry
+  spa: apresúrate
+  hin: जलदि-कर
+  arb: عَجِّلْ
+  kor: 서둘러라
+  swa: harakisha
+
+### Sense 95881 (1 occurrences)
+Grammar: Conj-w | V-Qal-ConsecImperf-3f
+  eng: and–has–hastened
+  spa: y–se–apresuró
+  hin: और–जल्दी–की
+  arb: وَ–أَسرَعَت
+  kor: 그리고–서둘렀다
+  swa: na–iliharakisha
+
+### Sense 95882 (1 occurrences)
+Grammar: V-Hifil-Imperf.Cohort-1cs
+  eng: I–would–hasten
+  spa: me–apresuraría
+  arb: أُسرِعُ
+  kor: 서두르리이다
+  swa: Ningefanya-haraka
+
+### Sense 95883 (1 occurrences)
+Grammar: V-Qal-Perf-1cs
+  eng: I–hurried
+  spa: Me–apresuré
+  arb: أَسْرَعْتُ
+  kor: 서둘렀나이다
+  swa: nimeharakisha
+
+## Task
+
+Group these 13 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

@@ -1,0 +1,154 @@
+# Sense Merge Task for H8088b
+
+Lemma: H8088b (POS: N-msc)
+Total occurrences: 17
+Current sense count: 14
+
+This Hebrew/Greek lemma has been over-split into 14 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 142294 (2 occurrences)
+Grammar: N-msc | 2ms
+  eng: your–report
+  spa: tu–fama
+  hin: सुनेंगे, तेरी–ख्याति
+  arb: خَبَرَكَ
+  kor: 당신의–소문을, 너의–소문–을
+  swa: habari–zako, habari–yako
+
+### Sense 142295 (2 occurrences)
+Grammar: N-msc | 3mp
+  eng: the–report-of–them, their–report
+  spa: su–fama, fama–de–ellos
+  hin: समाचार–उनके, उनकी–खबर
+  arb: خَبَرَهُمْ
+  kor: 소문을–그들의, 그들의–소식을
+  swa: habari–zao
+
+### Sense 142296 (2 occurrences)
+Grammar: N-msc | 2ms
+  eng: your–report, the–report–of–you
+  spa: tu–fama, noticia–tuya
+  hin: तेरी–खबर–को
+  arb: خَبَرَكَ
+  kor: 주–의–소문–을, 너의–소식–을
+  swa: habari–zako, habari–yako
+
+### Sense 142297 (1 occurrences)
+Grammar: Prep-l | N-msc
+  eng: By–hearing-of–
+  spa: De–oída–de–
+  hin: कान–से–सुनने
+  arb: بِسَمَاعِ–
+  kor: 듣기–로
+  swa: kwa–kusikia
+
+### Sense 142298 (1 occurrences)
+Grammar: N-msc | 3fs
+  eng: its-report
+  spa: su–fama
+  hin: उसकी–खबर
+  arb: خَبَرَها
+  kor: 그의–소문을
+  swa: habari–yake
+
+### Sense 142299 (1 occurrences)
+Grammar: N-msc
+  eng: the–report–of
+  spa: fama–de
+  hin: ख्याति–की
+  arb: خَبَرَ
+  kor: 소문
+  swa: sifa
+
+### Sense 142300 (1 occurrences)
+Grammar: N-ms
+  eng: report
+  spa: el–informe
+  hin: सुना
+  arb: سَمِعَتْ
+  kor: 소식이
+  swa: habari
+
+### Sense 142301 (1 occurrences)
+Grammar: N-msc
+  eng: report-of
+  spa: fama–de
+  hin: ख्याति
+  arb: سَمْعَ
+  kor: 소문을
+  swa: habari–za
+
+### Sense 142302 (1 occurrences)
+Grammar: N-msc
+  eng: report-of
+  spa: rumor
+  hin: समाचार
+  arb: خَبَرَ
+  kor: 소문을
+  swa: habari
+
+### Sense 142303 (1 occurrences)
+Grammar: N-msc | 1cs
+  eng: my–fame
+  spa: mi–fama
+  hin: ख्याति–मेरी
+  arb: خَبَرِي
+  kor: 나의–소문을
+  swa: habari–zangu
+
+### Sense 142304 (1 occurrences)
+Grammar: N-msc
+  eng: report-of
+  spa: noticia–de
+  hin: ख़बर
+  arb: خَبَرَ
+  kor: 소식을
+  swa: habari–za
+
+### Sense 142305 (1 occurrences)
+Grammar: Prep-l | N-msc
+  eng: at–hearing–of
+  spa: al–oír
+  hin: ले–सुनने–के
+  arb: لِسَمْعِ
+  kor: 들음–에
+  swa: Kwa–kusikia–kwa
+
+### Sense 142306 (1 occurrences)
+Grammar: Prep-k | N-msc
+  eng: at–report–of
+  spa: al–informe–de
+  hin: सुनने–पर
+  arb: كَسَمْعِ
+  kor: 소식–같이
+  swa: kama–habari
+
+### Sense 142307 (1 occurrences)
+Grammar: Prep-k | N-ms
+  eng: according–to–report
+  spa: conforme–a–lo–oído
+  hin: सुनते–ही–जैसे
+  arb: كَسَماعِ
+  kor: 에–들음에–같으니라
+  swa: kama–nilivyosikia
+
+## Task
+
+Group these 14 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

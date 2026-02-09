@@ -1,0 +1,126 @@
+# Sense Merge Task for H4124
+
+Lemma: H4124 (POS: Conj-w)
+Total occurrences: 181
+Current sense count: 11
+
+This Hebrew/Greek lemma has been over-split into 11 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 110013 (161 occurrences)
+Grammar: N-proper-fs,Prep-l | N-proper-fs
+  eng: Moab, Moav, Mo'av
+  spa: Moab, Moav, de–Moab
+  hin: मोआब, मोआब–के, मोआब–की
+  arb: مُوآبَ, مُوآبُ, موآبَ
+  kor: 모압의, 모압, 모압이
+  swa: Moabu, wa–Moabu, ya–Moabu
+
+### Sense 110014 (4 occurrences)
+Grammar: Conj-w | N-proper-fs
+  eng: and–Moab, and–Mo'av
+  spa: y–Moab, y-Moav
+  hin: और–मोआबके, और–मोआब
+  arb: وَ–مُوآبُ, وَمُوآبَ
+  kor: 그리고–모압과, 모압이, 그리고–모압이
+  swa: na–Moabu, na-Moabu
+
+### Sense 110015 (4 occurrences)
+Grammar: Prep-l | N-proper-fs
+  eng: for–Moab, for–Moav
+  spa: por–Moab
+  hin: मोआब–के–लिए, के–लिए–मोआब, के-लिए–मोआब
+  arb: لِـ–مُوآبَ, عَلَى–مُوآبَ
+  kor: 모압–을–위하여, 모압을–위하여
+  swa: kwa–Moabu
+
+### Sense 110016 (3 occurrences)
+Grammar: Prep-l | N-proper-fs
+  eng: to–Moav, from–Moav, concerning–Moav
+  spa: para–Moab, de–Moab, a–Moab
+  hin: से–मोआब, को–मोआब, के–बारे–में–मोआब
+  arb: عَنْ–مُوآبَ, لِمُوآبَ
+  kor: 모압에게–, 모압에게, 모압에–대하여
+  swa: Moabu, Kuhusu–Moabu
+
+### Sense 110017 (2 occurrences)
+Grammar: Conj-w, Prep-m | N-proper-fs
+  eng: and–from–Moab
+  spa: y–de–Moab
+  hin: और–मोआब–से
+  arb: وَ–مِنْ–مُوآبَ, وَمِن–موآبَ
+  kor: 그리고–에서–모압
+  swa: na–kutoka–Moabu
+
+### Sense 110018 (2 occurrences)
+Grammar: Prep-b | N-proper-fs
+  eng: on–Moab, in–Moav
+  spa: en–Moav, en–Moab
+  hin: में–मोआब
+  arb: فِي–مُوأَابَ, عَلى–موآبَ
+  kor: 모압에–, 모압에
+  swa: katika–Moabu, Moabu
+
+### Sense 110019 (1 occurrences)
+Grammar: Prep-l | N-proper-fs
+  eng: toward–Moav
+  spa: hacia–Moav
+  hin: मोआब–के–लिए
+  arb: لِ–موآبَ
+  kor: 에–모압
+  swa: kwa–Moabu
+
+### Sense 110020 (1 occurrences)
+Grammar: Prep-b | N-proper-fs
+  eng: against–Moav
+  spa: contra–Moab
+  hin: मोआब–में
+  arb: بِـ–مُوآب
+  kor: 모압에서
+  swa: dhidi–ya–Moabu
+
+### Sense 110021 (1 occurrences)
+Grammar: Conj-w, Prep-l | N-proper-fs
+  eng: and–for–Moav
+  spa: y–por–Moab
+  hin: और–के–लिए–मोआब
+  arb: وَعَلَى–مُوآبَ
+  kor: 그리고–모압에게–
+  swa: na–kwa–Moabu
+
+### Sense 110022 (1 occurrences)
+Grammar: Conj-w, Prep-b | N-proper-fs
+  eng: and–on–Moab
+  spa: Y–en–Moab
+  arb: وَبِمُوآبَ
+  kor: 그리고–모압에서
+  swa: na–juu–ya–Moabu
+
+### Sense 110023 (1 occurrences)
+Grammar: Prep-l | N-proper-fs
+  eng: in–Mo'av
+  spa: en–Moab
+  hin: मोआब–पर
+  arb: عَلى–موآب
+  kor: 에게–모압
+  swa: huko–Moabu
+
+## Task
+
+Group these 11 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

@@ -1,0 +1,154 @@
+# Sense Merge Task for H7098
+
+Lemma: H7098 (POS: Prep-m | N-fpc)
+Total occurrences: 36
+Current sense count: 14
+
+This Hebrew/Greek lemma has been over-split into 14 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 132641 (11 occurrences)
+Grammar: N-fpc
+  eng: ends-of, ends–of
+  spa: extremos–de, extremos-de, puntas–de
+  hin: सिरों, छोर
+  arb: أَطْرَافِ, أَطرافِ, طَرَفَي
+  kor: 끝들, 끝들에, 끝들의
+  swa: ncha, za–ncha
+
+### Sense 132642 (6 occurrences)
+Grammar: Prep-m | N-fs
+  eng: from–end, from-end, from–the–end
+  spa: del–extremo, de–extremo, desde–extremo
+  hin: सिरे–से, सिरे–पर
+  arb: مِن–الطَّرَفِ, مِن–طَرَفٍ, في–الطَّرَفِ
+  kor: 에서–끝, 끝에서
+  swa: kutoka–ncha, mwishoni
+
+### Sense 132643 (3 occurrences)
+Grammar: Prep-m | N-fpc
+  eng: from–ends-of
+  spa: de–extremos–de, desde–puntas–de
+  hin: छोरों–से, छोर–से
+  arb: مِنْ–أَطْرَافِ
+  kor: 에서–끝–, 끝에서
+  swa: kutoka–miongoni–mwa, kutoka–ncha
+
+### Sense 132644 (3 occurrences)
+Grammar: N-fpc | 3ms
+  eng: its–ends, its–corners, its-ends
+  spa: sus–extremos, sus-extremos
+  hin: उसके–सिरों
+  arb: أَطرافِهِ, الاثنَينِ
+  kor: 그–끝들에, 그–끝들의
+  swa: za–ncha–zake, ncha–zake
+
+### Sense 132645 (2 occurrences)
+Grammar: N-fpc
+  eng: the–ends, of–the–earth
+  spa: extremos, de–los–confines
+  hin: कोनों, कोने
+  arb: أَقْصَى
+  kor: 끝들이, 끝들의
+  swa: wa–miisho, miisho
+
+### Sense 132646 (2 occurrences)
+Grammar: Prep-m | N-fpc | 3mp
+  eng: from–their–ends, from–their-ends
+  spa: de–sus–extremos
+  hin: से–छोरों–उनके, अपनी–सीमाओं–से
+  arb: مِن–أَطْرَافِهِمْ, مِنْ–أَطْرَافِهِمْ
+  kor: 그들의–끝에서
+  swa: kutoka–mipaka–yao, kutoka–miongoni–mwao
+
+### Sense 132647 (2 occurrences)
+Grammar: N-fpc | 3ms
+  eng: its–ends
+  spa: sus–extremos
+  hin: उसके–सिरों, उसके
+  arb: طَرَفَيهِ, الاتّصال
+  kor: 그것의–끝들
+  swa: ncha–zake
+
+### Sense 132648 (1 occurrences)
+Grammar: Prep-l | N-fpc
+  eng: to–ends-of–
+  spa: a–los–confines–de–
+  hin: छोरों–तक
+  arb: إلى–أَقاصي
+  kor: 끝들에–
+  swa: hadi–miisho–ya
+
+### Sense 132649 (1 occurrences)
+Grammar: N-fpc
+  eng: ends-of
+  spa: extremos–de
+  hin: छोरों–से
+  arb: أَطْرَافِ
+  kor: 끝들에서
+  swa: za–mwisho–za
+
+### Sense 132650 (1 occurrences)
+Grammar: Prep-m | N-fpc
+  eng: from–the–ends
+  spa: de–los–extremos
+  hin: से–कोनों
+  arb: مِنْ–أَقْصَى
+  kor: 에서–끝들
+  swa: kutoka–miisho
+
+### Sense 132651 (1 occurrences)
+Grammar: N-fpc | 3mp
+  eng: their–ends
+  spa: sus–extremos
+  hin: उनके–छोरों–तक
+  arb: أَقْصَاهَا
+  kor: 끝들–까지
+  swa: miisho–yake
+
+### Sense 132652 (1 occurrences)
+Grammar: N-fpc | 3ms
+  eng: ends–its
+  spa: extremos–de–él
+  hin: खा–गई
+  arb: الِاثْنَيْنِ
+  kor: 그–끝들을
+  swa: zimeteketezwa
+
+### Sense 132653 (1 occurrences)
+Grammar: N-fpc
+  eng: edges-of
+  spa: son–los–bordes–de
+  hin: किनारे
+  arb: أَطرافُ
+  kor: 끝들이니라
+  swa: miisho
+
+### Sense 132654 (1 occurrences)
+Grammar: N-fp
+  eng: the–ends
+  spa: extremos
+  hin: दूरेस्थ
+  arb: الأقاصي
+  kor: 끝–들–에서
+  swa: miisho
+
+## Task
+
+Group these 14 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

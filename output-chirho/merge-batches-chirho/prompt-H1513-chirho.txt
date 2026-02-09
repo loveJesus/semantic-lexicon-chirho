@@ -1,0 +1,135 @@
+# Sense Merge Task for H1513
+
+Lemma: H1513 (POS: N-fs)
+Total occurrences: 18
+Current sense count: 12
+
+This Hebrew/Greek lemma has been over-split into 12 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 89943 (5 occurrences)
+Grammar: N-mp
+  eng: coals
+  spa: carbones, brasas
+  hin: कोयले, कोयलों–को, अंगारे
+  arb: جَمْرٌ, جَمْرًا
+  kor: 숯들–이, 숨들을, 숙들이
+  swa: makaa, makaa–ya–moto
+
+### Sense 89944 (2 occurrences)
+Grammar: Conj-w | N-mpc
+  eng: and–coals–of–
+  spa: y–carbones–de
+  hin: और–कोयले–
+  arb: وَجَمْرُ–
+  kor: 그리고–숙들–이–
+  swa: na–makaa–ya
+
+### Sense 89945 (2 occurrences)
+Grammar: N-mpc
+  eng: coals-of–, coals-of
+  spa: carbones–de–, carbones-de–
+  hin: कोयले–, अंगारे
+  arb: جَمْرُ, جَمْرَ
+  kor: 숙들–이, 숙–의
+  swa: makaa–ya–, makaa–ya
+
+### Sense 89946 (1 occurrences)
+Grammar: N-mpc | 3ms
+  eng: its–coals
+  spa: sus–brasas
+  hin: कोयलों–उसके
+  arb: جَمْرِهِ
+  kor: 그–숲으로
+  swa: makaa–yake
+
+### Sense 89947 (1 occurrences)
+Grammar: Prep-k | N-mpc
+  eng: like–coals-of–
+  spa: como–carbones–de
+  hin: जैसा–अंगारे–
+  arb: كَـ–جَمْرِ
+  kor: 같이–숯불들–
+  swa: kama–makaa–ya
+
+### Sense 89948 (1 occurrences)
+Grammar: Art | N-mp
+  eng: the–coals
+  spa: las–brasas
+  hin: अंगारों
+  arb: الْجَمْرِ
+  kor: 그–숙불–들–을
+  swa: makaa
+
+### Sense 89949 (1 occurrences)
+Grammar: Prep-l | N-mp
+  eng: for–coals
+  spa: para–brasas
+  hin: अंगारों–के–लिए
+  arb: لِلْجَمْرِ
+  kor: 숙들–을–위함이요
+  swa: kwa–makaa–ya–moto
+
+### Sense 89950 (1 occurrences)
+Grammar: N-mpc
+  eng: coals-of–
+  spa: carbones–de
+  hin: अंगारे–
+  arb: جَمْرَ–
+  kor: 숙–같은–
+  swa: makaa–ya
+
+### Sense 89951 (1 occurrences)
+Grammar: N-fs
+  eng: coal
+  spa: brasa
+  hin: कोयला
+  arb: جَمْرٌ
+  kor: 숲이
+  swa: makaa
+
+### Sense 89952 (1 occurrences)
+Grammar: N-fsc | 1cs
+  eng: my–coal
+  spa: brasa–mía
+  hin: मेरी–चिनगारी
+  arb: جَمرَتي–
+  kor: 내–숯불을
+  swa: kaa–langu
+
+### Sense 89953 (1 occurrences)
+Grammar: N-mpc
+  eng: coals–of
+  spa: carbones–de
+  hin: कोयले
+  arb: جَمرِ
+  kor: 숯–과
+  swa: makaa–ya
+
+### Sense 89954 (1 occurrences)
+Grammar: N-mpc | 3fs
+  eng: its-coals
+  spa: carbones–de–ella
+  arb: جَمْرِهَا
+  kor: 그것의–숯들–위에
+  swa: makaa–yake
+
+## Task
+
+Group these 12 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

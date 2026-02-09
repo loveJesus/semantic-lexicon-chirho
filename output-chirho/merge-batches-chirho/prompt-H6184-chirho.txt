@@ -1,0 +1,145 @@
+# Sense Merge Task for H6184
+
+Lemma: H6184 (POS: Adj-mpc)
+Total occurrences: 20
+Current sense count: 13
+
+This Hebrew/Greek lemma has been over-split into 13 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 126102 (5 occurrences)
+Grammar: Adj-mp
+  eng: shall–fear–You, ruthless, of–ruthless–ones
+  spa: tiranos, tiranas
+  hin: भयानकों–की, भयानकों–का, भयानक
+  arb: الْعُتَاةِ, الطُّغَاةِ, عَتِيَّةٍ
+  kor: 포악한–자들의, 두려운–자들의, 두려운
+  swa: ya–wakatili, wa–wakatili, ya–kutisha
+
+### Sense 126103 (4 occurrences)
+Grammar: Adj-mpc
+  eng: ruthless-of–, ruthless-ones-of
+  spa: los–violentos–de
+  hin: भयानक–लोगों–ने, भयानक–लोगों–को, भयानक–लोग
+  arb: عُتَاةُ, عُتَاةَ
+  kor: 강포한–자들이–, 포악한–자들이라, 강포한–자들을–
+  swa: wakatili–wa
+
+### Sense 126104 (1 occurrences)
+Grammar: Adj-mp
+  eng: the–ruthless
+  spa: violentos
+  hin: क्रूरों–का
+  arb: الْعُتَاةِ
+  kor: 포악한–자들–의
+  swa: wakatili
+
+### Sense 126105 (1 occurrences)
+Grammar: Adj-mp
+  eng: tyrants
+  spa: tiranos
+  hin: अत्याचारियों–की
+  arb: الظّالِمينَ
+  kor: 포악한–자들의
+  swa: wadhalimu
+
+### Sense 126106 (1 occurrences)
+Grammar: Adj-ms
+  eng: tyrant
+  spa: tirano
+  hin: भयानक–की
+  arb: الطَّاغِيَةِ
+  kor: 포악한–자의
+  swa: za–jeuri
+
+### Sense 126107 (1 occurrences)
+Grammar: Prep-l, Art | Adj-ms
+  eng: for–ruthless
+  spa: para–el–opresor
+  hin: अत्याचारी–के–लिए
+  arb: لِ–الْعَاتِي
+  kor: 폭군에게
+  swa: kwa–mdhalimu
+
+### Sense 126108 (1 occurrences)
+Grammar: Conj-w | Adj-mp
+  eng: and–ruthless–ones
+  spa: y–opresores
+  hin: और–अत्याचारियों–ने
+  arb: وَ–طُغاةً
+  kor: 그리고–폭력한–자–들–이
+  swa: na–wadhalimu
+
+### Sense 126109 (1 occurrences)
+Grammar: Adj-mp
+  eng: ruthless–ones
+  spa: tiranos
+  hin: अत्याचारियों–के
+  arb: الطُّغَاةِ
+  kor: 폭압자들의
+  swa: wakatili
+
+### Sense 126110 (1 occurrences)
+Grammar: Adj-ms
+  eng: fearsome
+  spa: poderoso
+  hin: भयानक
+  arb: عَاتٍ
+  kor: 두려운
+  swa: wa–kutisha
+
+### Sense 126111 (1 occurrences)
+Grammar: N-ms
+  eng: the–ruthless
+  spa: el–tirano
+  hin: भयानक
+  arb: الطَّاغِي
+  kor: 포악한–자가
+  swa: mkatili
+
+### Sense 126112 (1 occurrences)
+Grammar: Conj-w | Adj-mp
+  eng: and–ruthless–men
+  spa: y–violentos
+  hin: और–बलशाली
+  arb: وَ–أقْوِياءُ
+  kor: 그리고–강력한–자–들–은
+  swa: lakini–wakatili
+
+### Sense 126113 (1 occurrences)
+Grammar: Adj-mp
+  eng: ruthless-ones
+  spa: opresores
+  hin: अत्याचारियों
+  arb: الطُّغاةِ
+  kor: 폭군들–의
+  swa: wadhalimu
+
+### Sense 126114 (1 occurrences)
+Grammar: Adj-ms
+  eng: ruthless
+  spa: violento
+  hin: भयंकर
+  arb: عاتيًا
+  kor: 폭력적인
+  swa: mkatili
+
+## Task
+
+Group these 13 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

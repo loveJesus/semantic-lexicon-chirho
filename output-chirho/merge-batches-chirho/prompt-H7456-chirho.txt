@@ -1,0 +1,145 @@
+# Sense Merge Task for H7456
+
+Lemma: H7456 (POS: V-Qal-Imperf-3fs)
+Total occurrences: 13
+Current sense count: 13
+
+This Hebrew/Greek lemma has been over-split into 13 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 136444 (1 occurrences)
+Grammar: Conj-w | V-Qal-ConsecImperf-3f
+  eng: and–was-hungry
+  spa: Y–tuvo–hambre
+  hin: और–भूखा–था
+  arb: وَ–جَاعَتْ
+  kor: 그리고–굶주렸다
+  swa: na–ikapata–njaa
+
+### Sense 136445 (1 occurrences)
+Grammar: Conj-w | V-Hifil-ConsecImperf-
+  eng: and–let–you–hunger
+  spa: y–te–hizo–pasar–hambre
+  hin: और–भूखा–रखा–तुझे
+  arb: وَأَجَاعَكَ
+  kor: 그리고–주리게–하셨다–너를
+  swa: na–akakufanya–njaa
+
+### Sense 136446 (1 occurrences)
+Grammar: V-Qal-Imperf-3ms
+  eng: he–is–hungry
+  spa: tiene–hambre
+  hin: भूखा–हो
+  arb: يَجُوعُ
+  kor: 굶주리다
+  swa: ana–njaa
+
+### Sense 136447 (1 occurrences)
+Grammar: V-Qal-Imperf-3ms
+  eng: he-is-hungry
+  spa: tenga-hambre
+  hin: वह–भूखा–होगा
+  arb: يَجُوعُ
+  kor: 배고프면
+  swa: atakapokuwa-na-njaa
+
+### Sense 136448 (1 occurrences)
+Grammar: V-Qal-Perf-3ms
+  eng: he–is–hungry
+  spa: tiene–hambre
+  hin: भूखा–होता–है
+  arb: يَجُوعُ
+  kor: 배고프면서도
+  swa: anaona–njaa
+
+### Sense 136449 (1 occurrences)
+Grammar: V-Qal-Imperf-1cs
+  eng: I–were–hungry
+  spa: tuviera–hambre
+  hin: भूखा–होता
+  arb: جُعْتُ
+  kor: 배고파도
+  swa: ningekuwa–na–njaa
+
+### Sense 136450 (1 occurrences)
+Grammar: V-Qal-Imperf-3fs
+  eng: goes–hungry
+  spa: tendrá–hambre
+  hin: भूखी–रहेगी
+  arb: تَجوعُ
+  kor: 굶주리리라
+  swa: itaona–njaa
+
+### Sense 136451 (1 occurrences)
+Grammar: V-Qal-Imperf-1cp
+  eng: we–will–be–hungry
+  spa: tendremos–hambre
+  hin: भूखे–रहेंगे
+  arb: نَجُوعَ
+  kor: 배고프겠다–우리가
+  swa: ona–njaa
+
+### Sense 136452 (1 occurrences)
+Grammar: Conj-w | V-Qal-ConjPerf-3cp
+  eng: and–hunger
+  spa: y–tienen–hambre
+  hin: और–भूखे–रहते–हैं
+  arb: وَجاعَتْ
+  kor: 주리나
+  swa: na–huona-njaa
+
+### Sense 136453 (1 occurrences)
+Grammar: V-Qal-Imperf-3mp
+  eng: they-will-hunger
+  spa: tendrán–hambre
+  hin: वे–भूखे–रहेंगे
+  arb: يَجُوعُونَ
+  kor: 굶주리리라
+  swa: njaa
+
+### Sense 136454 (1 occurrences)
+Grammar: Conj-w | V-Qal-ConjPerf-3ms
+  eng: and–hungry
+  spa: y-tendrá-hambre
+  hin: और–भूखा
+  arb: وَ–جَائِعٌ
+  kor: 그리고–주리며
+  swa: lakini-bado-na-njaa
+
+### Sense 136455 (1 occurrences)
+Grammar: V-Qal-Imperf-2mp
+  eng: shall–be–hungry
+  spa: tendréis–hambre
+  hin: भूखे–रहोगे
+  arb: تَجُوعُونَ
+  kor: 굶주릴–것이다
+  swa: mtaona–njaa
+
+### Sense 136456 (1 occurrences)
+Grammar: V-Hifil-Imperf-3ms
+  eng: will–let–hunger
+  spa: hará–hambrear
+  hin: भूखा–रखेगा
+  arb: يُجِيعُ
+  kor: 굶주리게하신다
+  swa: hatamwacha–njaa
+
+## Task
+
+Group these 13 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

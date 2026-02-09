@@ -1,0 +1,136 @@
+# Sense Merge Task for H2042
+
+Lemma: H2042 (POS: Prep-b | N-mpc)
+Total occurrences: 12
+Current sense count: 12
+
+This Hebrew/Greek lemma has been over-split into 12 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 93833 (1 occurrences)
+Grammar: N-msc | 1cs
+  eng: Mountain–my
+  spa: Monte–mío
+  hin: पर्वत–मेरे
+  arb: جَبَلِي
+  kor: 내–산이여
+  swa: Mlima–wangu
+
+### Sense 93834 (1 occurrences)
+Grammar: N-mpc
+  eng: mountains-of
+  spa: montes–de
+  hin: पहाड़ों–पर
+  arb: جِبَالِ
+  kor: 산들
+  swa: milima–ya
+
+### Sense 93835 (1 occurrences)
+Grammar: N-mpc
+  eng: the–mountains–of–
+  spa: los–montes–de–
+  hin: पहाड़–
+  arb: جِبَالُ
+  kor: 산–들이–영원한
+  swa: milima–ya
+
+### Sense 93836 (1 occurrences)
+Grammar: Prep-m | N-mpc
+  eng: from–mountains–of
+  spa: de–montes–de
+  hin: पहाड़ों–से
+  arb: مِنْ–جِبَالِ–
+  kor: 동쪽–의–산들–에서
+  swa: kutoka–milima–ya
+
+### Sense 93837 (1 occurrences)
+Grammar: Prep-m | N-mpc
+  eng: more–than–the–mountains–of–
+  spa: desde–montes-de–
+  hin: मे–हर्रे–
+  arb: مِنْ–جِبَالِ–
+  kor: ~의–산들–보다
+  swa: kuliko–milima–ya
+
+### Sense 93838 (1 occurrences)
+Grammar: N-mpc
+  eng: mountains-of
+  spa: los–montes
+  hin: पहाड़ों–
+  arb: جِبَالِ
+  kor: 산들(접)–
+  swa: milima–ya
+
+### Sense 93839 (1 occurrences)
+Grammar: Prep-b | N-mpc
+  eng: in–the–mountains–of
+  spa: en–montes-de–
+  hin: पहाड़ों–में–
+  arb: فِي–جِبَالِ–
+  kor: 거룩한–산들–에
+  swa: katika–milima–ya
+
+### Sense 93840 (1 occurrences)
+Grammar: Conj-w, Prep-m | N-mpc | 3fs
+  eng: and–from–its–hills
+  spa: y–de–cuyos–montes
+  hin: और–उसके–पहाड़ों–से
+  arb: وَمِنْ–جِبَالِهَا
+  kor: 그리고–그것의–산들에서
+  swa: na–kutoka–milima–yake
+
+### Sense 93841 (1 occurrences)
+Grammar: Prep-l | N-msc | 1cs
+  eng: for–my–mountain
+  spa: para–mi–monte
+  hin: को–पहाड़–मेरे
+  arb: لِجَبَلِي
+  kor: 산–에
+  swa: kwa–mlima-wangu
+
+### Sense 93842 (1 occurrences)
+Grammar: Prep-b | N-mpc
+  eng: on–mountains–of
+  spa: en–montes-de–
+  hin: पहाड़ों–पर
+  arb: عَلى–جِبال–
+  kor: –산들–의
+  swa: juu–ya–milima–elfu
+
+### Sense 93843 (1 occurrences)
+Grammar: Prep-m | N-mpc
+  eng: from–mountains-of
+  spa: desde–los–montes–de
+  hin: से–पहाड़ों
+  arb: مِ–هَرْرِي
+  kor: 산들–에서
+  swa: kutoka–milima
+
+### Sense 93844 (1 occurrences)
+Grammar: Prep-k | N-mpc
+  eng: is–like–mountains–of
+  spa: como–montes–de
+  hin: जैसे–पर्वत
+  arb: كَ–جِبالِ
+  kor: –산들–같이
+  swa: kama–milima-ya
+
+## Task
+
+Group these 12 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

@@ -1,0 +1,127 @@
+# Sense Merge Task for H3490
+
+Lemma: H3490 (POS: Conj-w)
+Total occurrences: 42
+Current sense count: 11
+
+This Hebrew/Greek lemma has been over-split into 11 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 105054 (17 occurrences)
+Grammar: N-ms
+  eng: orphan, the–orphan, the–fatherless
+  spa: huérfano, al–huérfano, del–huérfano
+  hin: अनाथ–का, अनाथ, अनाथ–ने
+  arb: يَتِيمٍ, يَتِيمًا, يَتيمٍ
+  kor: 고아와, 고아를, 고아
+  swa: yatima, la–yatima, kwa–yatima
+
+### Sense 105055 (5 occurrences)
+Grammar: Prep-l, Art | N-ms
+  eng: for–the–orphan, to-the-orphan
+  spa: para–el–huérfano, al–huérfano
+  hin: अनाथ–को
+  arb: لِلْيَتِيمِ
+  kor: 고아–에게, (전)–그–고아에게
+  swa: kwa–yatima, yatima
+
+### Sense 105056 (5 occurrences)
+Grammar: N-mp
+  eng: orphans, the–fatherless
+  spa: huérfanos, los–huérfanos
+  hin: अनाथों–के, अनाथों–की, अनाथों–का
+  arb: الْيَتَامَى, الْيَتامَى, الأَيْتامِ
+  kor: 고아들의, 고아들을, 고아들–의
+  swa: yatima, wa–yatima
+
+### Sense 105057 (5 occurrences)
+Grammar: Conj-w | N-ms
+  eng: and–orphan, and–the–fatherless
+  spa: y–huérfano, y–a–huérfano, y–al–huérfano
+  hin: और–अनाथ, और–अनाथ–को, और–अनाथ–का
+  arb: وَ–يَتيمٍ, وَ–يَتيماً, وَيَتِيمٍ
+  kor: 그리고–고아를, 그리고–고아, 고아–를
+  swa: na–yatima
+
+### Sense 105058 (3 occurrences)
+Grammar: Conj-w, Art | N-ms
+  eng: and–the–orphan
+  spa: y–el–huérfano
+  hin: और–अनाथ
+  arb: وَ–الْيَتِيمُ
+  kor: 그리고–고아와, 그리고–그–고아와
+  swa: na–yatima
+
+### Sense 105059 (2 occurrences)
+Grammar: N-mp
+  eng: orphans, fatherless
+  spa: huérfanos
+  hin: अनाथ
+  arb: يَتامى
+  kor: 고아들이, 고아들–로
+  swa: yatima
+
+### Sense 105060 (1 occurrences)
+Grammar: N-mpc | 3ms
+  eng: its–orphans
+  spa: sus-huérfanos
+  hin: उसके–अनाथों
+  arb: يَتَامَاهُ
+  kor: 그의–고아들을
+  swa: yatima-wao
+
+### Sense 105061 (1 occurrences)
+Grammar: N-mp
+  eng: Orphans
+  spa: Huérfanos
+  hin: अनाथ
+  arb: يَتَامَى
+  kor: 고아들–로
+  swa: Yatima
+
+### Sense 105062 (1 occurrences)
+Grammar: Conj-w | N-mp
+  eng: and–the–fatherless
+  spa: y–a–huérfanos
+  hin: और–अनाथों–को
+  arb: وَالْيَتَامَى
+  kor: 그리고–고아–들–을
+  swa: na–mayatima
+
+### Sense 105063 (1 occurrences)
+Grammar: Prep | N-mpc | 3ms
+  eng: to–his–fatherless
+  spa: de–sus–huérfanos
+  hin: उसके–अनाथों–पर
+  arb: لِيَتاماهُ
+  kor: 그–의–고아들–에게
+  swa: mayatima–yake
+
+### Sense 105064 (1 occurrences)
+Grammar: N-mpc | 2ms
+  eng: your–orphans
+  spa: tus–huérfanos
+  hin: अपने–अनाथों–को
+  arb: يَتَامَاكَ
+  kor: 고아들을–너의
+  swa: yatima–wako
+
+## Task
+
+Group these 11 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

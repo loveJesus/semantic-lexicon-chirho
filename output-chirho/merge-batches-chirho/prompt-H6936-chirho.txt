@@ -1,0 +1,126 @@
+# Sense Merge Task for H6936
+
+Lemma: H6936 (POS: N-msc | 3ms)
+Total occurrences: 11
+Current sense count: 11
+
+This Hebrew/Greek lemma has been over-split into 11 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 131200 (1 occurrences)
+Grammar: N-ms
+  eng: crown–of–head
+  spa: la–coronilla
+  hin: माथा।
+  arb: الْقِمَّةَ
+  kor: 정수리를
+  swa: utosi
+
+### Sense 131201 (1 occurrences)
+Grammar: N-msc
+  eng: the–hairy–crown–of
+  spa: coronilla
+  arb: قِمَّةَ
+  kor: 정수리–를
+  swa: utosi
+
+### Sense 131202 (1 occurrences)
+Grammar: N-msc | 3ms
+  eng: his–crown
+  spa: su-coronilla
+  hin: उसकी–चोटी
+  arb: هامَتِهِ
+  kor: 그–정수리
+  swa: utosi–wake
+
+### Sense 131203 (1 occurrences)
+Grammar: Conj-w | N-msc
+  eng: and–crown-of
+  spa: y–coronilla–de
+  hin: और–माथा
+  arb: وَقِمَّةَ
+  kor: 그리고–정수리를
+  swa: na–fuvu–la
+
+### Sense 131204 (1 occurrences)
+Grammar: N-msc | 3ms
+  eng: his–crown
+  spa: coronilla–de–él
+  hin: अपनी–चोटी
+  arb: هامَتِهِ
+  kor: 그의–정수리
+  swa: utosi–wake
+
+### Sense 131205 (1 occurrences)
+Grammar: N-msc
+  eng: crown–of
+  spa: coronilla–de
+  hin: सिर
+  arb: قِمَّةَ
+  kor: 정수리를
+  swa: utosi–wa
+
+### Sense 131206 (1 occurrences)
+Grammar: Conj-w, Prep-l | N-msc
+  eng: and–to–crown-of
+  spa: y–a–la–coronilla–de
+  hin: और–को–माथा
+  arb: وَعَلَى–قِمَّةِ
+  kor: 그리고–에–정수리(접)
+  swa: na–juu–ya–utosi–wa
+
+### Sense 131207 (1 occurrences)
+Grammar: N-msc | 3ms
+  eng: his–skull
+  spa: su–coronilla
+  hin: उसकी–चोटी
+  arb: هَامَتِهِ
+  kor: 정수리–위에
+  swa: utosi–wake
+
+### Sense 131208 (1 occurrences)
+Grammar: N-ms
+  eng: your–crown
+  spa: la–coronilla
+  hin: खोपड़ी
+  arb: رَأْسَكِ
+  kor: 정수리–를
+  swa: utosi–wako
+
+### Sense 131209 (1 occurrences)
+Grammar: N-msc | 2ms
+  eng: your-crown
+  spa: tu–coronilla
+  hin: चोटी–तेरी।
+  arb: قِمَّةِ–رَأْسِكَ
+  kor: 네–정수리
+  swa: utosi–wako
+
+### Sense 131210 (1 occurrences)
+Grammar: Conj-w, Prep-l | N-msc
+  eng: and–on–crown–of
+  spa: y–para–coronilla–de
+  hin: और–पर–माथे
+  arb: وَعَلَى–قِمَّةِ
+  kor: 그리고–에–정수리
+  swa: akamruka–kichwa
+
+## Task
+
+Group these 11 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

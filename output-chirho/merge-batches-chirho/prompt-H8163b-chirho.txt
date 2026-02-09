@@ -1,0 +1,136 @@
+# Sense Merge Task for H8163b
+
+Lemma: H8163b (POS: Conj-w)
+Total occurrences: 53
+Current sense count: 12
+
+This Hebrew/Greek lemma has been over-split into 12 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 142993 (12 occurrences)
+Grammar: Conj-w | N-msc
+  eng: and–male-goat-of, and–male-goat-of–
+  spa: Y–macho–cabrío–de, Y–macho–cabrío–de–, y–macho–cabrío–de–
+  hin: और–बकरा, और–बकरा–
+  arb: وَتَيْسُ, وَتَيْسُ–, وَ–تَيْسَ
+  kor: 그리고–숫염소, 그리고–숙염소–를, 그리고–숙염소
+  swa: na–mbuzi–dume, na–mbuzi–dume–, na–beberu–
+
+### Sense 142994 (12 occurrences)
+Grammar: N-msc
+  eng: male-goat–
+  spa: Macho–cabrío–
+  hin: बकरा–
+  arb: تَيْسُ־
+  kor: 숫염소
+  swa: mbuzi–dume–
+
+### Sense 142995 (9 occurrences)
+Grammar: Art | N-ms
+  eng: the–male-goat
+  spa: el–macho-cabrío, el–macho–cabrío
+  hin: बकरे, बकरे–के, बकरा
+  arb: التَّيْسَ, التَّيْسِ, –التَّيْسِ
+  kor: 그–숙염소, 그–숙염소–의, 그–숙염소–가
+  swa: beberu, cha–beberu
+
+### Sense 142996 (6 occurrences)
+Grammar: N-msc
+  eng: the–male–goat–of, male-goat-of, a–male–goat–of–
+  spa: macho-cabrío-de, un–macho–cabrío-de, macho–cabrío–de
+  hin: बकरे–को, बकरे, बकरा–
+  arb: تَيْسَ, تَيْسَ–
+  kor: 숙염소, 수염소를, 숙염소–의
+  swa: beberu–wa–, mbuzi–dume, mbuzi–dume–
+
+### Sense 142997 (3 occurrences)
+Grammar: N-msc
+  eng: male-goat-of–, male-goat-of
+  spa: macho–cabrío–de
+  hin: बकरा–, बकरा
+  arb: تَيْسَ–, تَيْسَ
+  kor: 숙염소의–, 숙염소의
+  swa: beberu–wa, beberu
+
+### Sense 142998 (2 occurrences)
+Grammar: N-msc
+  eng: a–male-of, a-male-goat-of
+  spa: macho–cabrío-de, macho-de
+  hin: बकरे, बकरा
+  arb: تَيْسَ
+  kor: 수염소를, 수염소
+  swa: mbuzi, beberu
+
+### Sense 142999 (2 occurrences)
+Grammar: Art | N-mp
+  eng: the–male-goats
+  spa: los–machos-cabríos
+  hin: बकरों
+  arb: التُّيُوسَ
+  kor: 그–숙염소
+  swa: wa–mbuzi
+
+### Sense 143000 (2 occurrences)
+Grammar: N-msc
+  eng: male-goat-of–, male-goat-of
+  spa: Macho–cabrío–de–, Macho–cabrío–de
+  hin: बकरा
+  arb: تَيْسُ–, تَيْسُ
+  kor: 숫염소
+  swa: mbuzi–dume–, mbuzi–dume
+
+### Sense 143001 (2 occurrences)
+Grammar: N-mpc
+  eng: male–goats-of, male-goats-of
+  spa: machos–cabríos–de, machos-cabríos-de
+  hin: बक्रोन, बकरे
+  arb: تُيُوسَ
+  kor: 숙염소, 수염소들
+  swa: mbuzi–wa–, beberu–wa–
+
+### Sense 143002 (1 occurrences)
+Grammar: Conj-w, Art | N-ms
+  eng: and–the–male-goat
+  spa: Y–el–macho-cabrío
+  hin: और–बकरा
+  arb: وَ–التَّيْسُ
+  kor: 그리고–그–숙염소–는
+  swa: Na–beberu
+
+### Sense 143003 (1 occurrences)
+Grammar: Art | N-ms
+  eng: the–shaggy
+  spa: el–peludo
+  hin: बालोंवाला
+  arb: الشَّعِرُ
+  kor: 털–많은–것–은
+  swa: mwenye–nywele–ndefu
+
+### Sense 143004 (1 occurrences)
+Grammar: Conj-w | N-mpc
+  eng: and–male-goats-of
+  spa: y–machos–cabríos–de
+  hin: और–बकरे
+  arb: وَ–تُيُوسُ
+  kor: 그리고–숫염소들
+  swa: na–mbuzi–dume–wa
+
+## Task
+
+Group these 12 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

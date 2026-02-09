@@ -1,0 +1,145 @@
+# Sense Merge Task for G4327
+
+Lemma: G4327 (POS: V-PPM/P-DMP)
+Total occurrences: 14
+Current sense count: 13
+
+This Hebrew/Greek lemma has been over-split into 13 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 75742 (2 occurrences)
+Grammar: V-PPM/P-NMS
+  eng: waiting–for, waiting-for
+  spa: esperando
+  hin: प्रतीक्षा–करता–हुआ
+  arb: يَنْتَظِرُ, مُنْتَظِرًا
+  kor: 기다리는
+  swa: akiutarajia, akitazamia
+
+### Sense 75743 (1 occurrences)
+Grammar: V-PPM/P-DMP
+  eng: awaiting
+  spa: que–esperaban
+  hin: प्रतीक्षा–करनेवालों
+  arb: الْمُنْتَظِرِينَ
+  kor: 기다리는
+  swa: waliomtazamia
+
+### Sense 75744 (1 occurrences)
+Grammar: V-IIM/P-3S
+  eng: was-waiting-for
+  spa: esperaba
+  hin: प्रतीक्षा–करता–था
+  arb: كانَ–يَنْتَظِرُ
+  kor: 기다리고–있었다
+  swa: akangojea
+
+### Sense 75745 (1 occurrences)
+Grammar: V-PMM/P-2P
+  eng: receive
+  spa: recibidlo
+  hin: ग्रहन–करो
+  arb: اقْبَلوهُ
+  kor: 영접하라
+  swa: mpokeeni
+
+### Sense 75746 (1 occurrences)
+Grammar: V-AIM-2P
+  eng: you-accepted
+  spa: aceptasteis
+  hin: स्वीकार–किया,
+  arb: قَبِلْتُمْ
+  kor: 받아들였으니
+  swa: mlipokea
+
+### Sense 75747 (1 occurrences)
+Grammar: V-PPM/P-NMP
+  eng: awaiting
+  spa: esperando
+  hin: बाट–जोहते–हुए
+  arb: منتظرين
+  kor: 기다리며
+  swa: mkingoja
+
+### Sense 75748 (1 occurrences)
+Grammar: V-PIM/P-3S
+  eng: receives
+  spa: recibe
+  hin: ग्रहण–करता–है
+  arb: يَقْبَلُ
+  kor: 영접한다
+  swa: anawapokea
+
+### Sense 75749 (1 occurrences)
+Grammar: V-PPM/P-NMP
+  eng: awaiting
+  spa: aguardando
+  hin: इन्तज़अर–करते-हुए
+  arb: مُنتَظِرينَ
+  kor: 기다리는–자들
+  swa: tukingojea
+
+### Sense 75750 (1 occurrences)
+Grammar: V-PPM/P-NMP
+  eng: awaiting
+  spa: esperando
+  hin: प्रतीक्षाकरतेहुए
+  arb: يَنْتَظِرُونَ
+  kor: 기다리고–있다
+  swa: wakingojea
+
+### Sense 75751 (1 occurrences)
+Grammar: V-ASM-2P
+  eng: you-may-receive
+  spa: recibáis
+  hin: ग्रहण–करो
+  arb: تَقْبَلُوهَا
+  kor: 너희가–받아들이라
+  swa: mmpokee
+
+### Sense 75752 (1 occurrences)
+Grammar: V-PIM/P-3P
+  eng: expect
+  spa: aceptan
+  hin: प्रतीक्षाकरतेहैं
+  arb: يَنْتَظِرُونَ
+  kor: 기다린다
+  swa: wanakubali
+
+### Sense 75753 (1 occurrences)
+Grammar: V-PPM/P-DMP
+  eng: waiting-for
+  spa: que-esperan
+  hin: प्रतीक्षा–करने–वालों
+  arb: يَنْتَظِرُونَ
+  kor: 기다리는
+  swa: wanaomngojea
+
+### Sense 75754 (1 occurrences)
+Grammar: V-APM-NMP
+  eng: having-accepted
+  spa: aceptando
+  hin: स्वीकार–करके
+  arb: قَابِلِينَ
+  kor: 받아들이지
+  swa: kukubali
+
+## Task
+
+Group these 13 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

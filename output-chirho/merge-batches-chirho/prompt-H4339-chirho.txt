@@ -1,0 +1,172 @@
+# Sense Merge Task for H4339
+
+Lemma: H4339 (POS: Prep-b | N-mp)
+Total occurrences: 19
+Current sense count: 16
+
+This Hebrew/Greek lemma has been over-split into 16 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 111318 (2 occurrences)
+Grammar: Prep-b | N-mp
+  eng: with–equity
+  spa: con–rectitud
+  hin: न्याय–से
+  arb: بِ–اسْتِقَامَةٍ
+  kor: 공평함–으로
+  swa: kwa–usawa
+
+### Sense 111319 (2 occurrences)
+Grammar: N-mp
+  eng: uprightness
+  spa: rectitudes
+  hin: सीधी–बातें, सत्य–बातों–का
+  arb: بِ–الاِسْتِقَامَةِ, بِـ–الِاسْتِقَامَةِ
+  kor: 정직함을, 올바른–것을
+  swa: uadilifu
+
+### Sense 111320 (2 occurrences)
+Grammar: Conj-w | N-mp
+  eng: and–uprightness
+  spa: y–rectitud
+  hin: और–सीधाई
+  arb: وَ–اسْتِقَامَةٍ, وَ–اسْتِقَامَةً
+  kor: 그리고–정직–을
+  swa: na–unyofu
+
+### Sense 111321 (1 occurrences)
+Grammar: N-mp
+  eng: with–equity
+  spa: con–equidad
+  hin: मेशारीम
+  arb: بِ–اسْتِقامَةٍ
+  kor: 공정–으로
+  swa: kwa–uadilifu
+
+### Sense 111322 (1 occurrences)
+Grammar: N-mp
+  eng: is–level
+  spa: rectitud
+  hin: समतलता
+  arb: مُسْتَقِيمٌ
+  kor: 바른
+  swa: ni–sawa
+
+### Sense 111323 (1 occurrences)
+Grammar: N-mp
+  eng: right–things
+  spa: rectitudes
+  hin: सीधी–बातें
+  arb: بِالْمُسْتَقِيماتِ
+  kor: 정직한–것들을
+  swa: unyofu
+
+### Sense 111324 (1 occurrences)
+Grammar: N-mp
+  eng: is–uprightness
+  spa: rectitudes
+  hin: सीधी–बातें
+  arb: اسْتِقَامَاتٌ
+  kor: 정직함–이다
+  swa: ni–unyofu
+
+### Sense 111325 (1 occurrences)
+Grammar: Prep-b | N-mp
+  eng: with–uprightness
+  spa: con–equidad
+  hin: सीधाई–से
+  arb: بِ–اسْتِقَامَةٍ
+  kor: 공평–으로
+  swa: kwa–unyofu
+
+### Sense 111326 (1 occurrences)
+Grammar: N-mp
+  eng: with–uprightness
+  spa: rectitudes
+  hin: सीधाई–से
+  arb: بِ–استِقامَةٍ
+  kor: 공평함–으로
+  swa: unyofu
+
+### Sense 111327 (1 occurrences)
+Grammar: N-mp
+  eng: uprightness
+  spa: rectitud
+  hin: सीधी–बातें–को
+  arb: اسْتِقَامَةً
+  kor: 공정–을
+  swa: uadilifu
+
+### Sense 111328 (1 occurrences)
+Grammar: N-mp
+  eng: rightly
+  spa: rectamente
+  hin: सीधाई–से
+  arb: مِيشَرِيم
+  kor: 바르게
+  swa: kwa–unyofu
+
+### Sense 111329 (1 occurrences)
+Grammar: N-mp
+  eng: equity
+  spa: rectitudes
+  hin: न्याय
+  arb: الاسْتِقَامَةَ
+  kor: 공평함–을
+  swa: usawa
+
+### Sense 111330 (1 occurrences)
+Grammar: Prep-l | N-mp
+  eng: smoothly
+  spa: suavemente
+  hin: सीधे–से
+  arb: بِاسْتِقَامَةٍ
+  kor: 바르게
+  swa: laini
+
+### Sense 111331 (1 occurrences)
+Grammar: Conj-w | N-mp
+  eng: and–uprightness
+  spa: y–la–rectitud
+  hin: और–सीधी
+  arb: وَبِالاسْتِقَامَةِ
+  kor: 그리고–정직함을
+  swa: na–uadilifu
+
+### Sense 111332 (1 occurrences)
+Grammar: N-mp
+  eng: agreements
+  spa: alianza
+  hin: समझौता
+  arb: مُصَالَحَةً
+  kor: 화평을
+  swa: makubaliano
+
+### Sense 111333 (1 occurrences)
+Grammar: Prep-b | N-mp
+  eng: smoothly
+  spa: suavemente
+  hin: सीधी
+  arb: بِالْمُسْتَقِيمَةِ
+  kor: 부드럽게
+  swa: laini
+
+## Task
+
+Group these 16 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

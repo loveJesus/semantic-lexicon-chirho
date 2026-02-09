@@ -1,0 +1,118 @@
+# Sense Merge Task for G1702
+
+Lemma: G1702 (POS: V-PNA)
+Total occurrences: 13
+Current sense count: 10
+
+This Hebrew/Greek lemma has been over-split into 10 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 67065 (3 occurrences)
+Grammar: V-AIA-3P
+  eng: they–mocked, mocked
+  spa: se–burlaron–de, se–burlaban–de, se-burlaban
+  hin: ठट्ठा–किया, उपहास–किया
+  arb: اسْتَهْزَأُوا, اسْتَهْزَأَ
+  kor: 조롱했다
+  swa: walimdhihaki, wakajenga
+
+### Sense 67066 (2 occurrences)
+Grammar: V-PPA-NMP
+  eng: mocking
+  spa: burlándose
+  hin: ठट्ठा–करते–हुए
+  arb: مُسْتَهْزِئِينَ, سَاخِرِينَ
+  kor: 조롱하며
+  swa: wakidhihaki
+
+### Sense 67067 (1 occurrences)
+Grammar: V-PNA
+  eng: to-mock
+  spa: a–burlarse
+  hin: मज़ाक–उड़ाने।
+  arb: يَسْخَرُونَ
+  kor: 조롱하기를
+  swa: kumdhihaki
+
+### Sense 67068 (1 occurrences)
+Grammar: V-APA-NMS
+  eng: having-mocked
+  spa: habiéndose-burlado
+  hin: उपहास–करके
+  arb: اسْتَهْزَأَ
+  kor: 조롱하고
+  swa: akamjenga
+
+### Sense 67069 (1 occurrences)
+Grammar: V-FIP-3S
+  eng: he-will-be-mocked
+  spa: será–escarnecido
+  hin: ठट्ठा–किया–जाएगा
+  arb: يُستَهزَأُ
+  kor: 조롱당할–것이고
+  swa: atadhihakiwa
+
+### Sense 67070 (1 occurrences)
+Grammar: V-ANA
+  eng: to-mock
+  spa: burlarse
+  hin: मज़अक–उदन
+  arb: يَستَهزِئوا
+  kor: 조롱하고
+  swa: na
+
+### Sense 67071 (1 occurrences)
+Grammar: V-AIP-3S
+  eng: he–was–mocked
+  spa: fue–burlado
+  hin: ठगा–गया
+  arb: سَخِرَ–بِهِ
+  kor: 속임당했다
+  swa: alidanganywa
+
+### Sense 67072 (1 occurrences)
+Grammar: V-FIA-3P
+  eng: they-will-mock
+  spa: se–burlarán–de
+  hin: उपहास–करेंगे
+  arb: يَسْخَرُونَ
+  kor: 조롱하리라
+  swa: watamdhihaki
+
+### Sense 67073 (1 occurrences)
+Grammar: V-AIA-3P
+  eng: they-mocked
+  spa: se–burlaron
+  hin: ठट्ठा–किया
+  arb: سَخِرُوا–مِنْ
+  kor: 조롱한-후에
+  swa: wakimdhihaki
+
+### Sense 67074 (1 occurrences)
+Grammar: V-IIA-3P
+  eng: were-mocking
+  spa: se-burlaban-de
+  hin: उपहास–कर–रहे–थे
+  arb: كانوا–يَسْتَهْزِئونَ
+  kor: 조롱했다
+  swa: walimdhihaki
+
+## Task
+
+Group these 10 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

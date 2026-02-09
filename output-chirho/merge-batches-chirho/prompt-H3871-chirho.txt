@@ -1,0 +1,127 @@
+# Sense Merge Task for H3871
+
+Lemma: H3871 (POS: N-mp)
+Total occurrences: 43
+Current sense count: 11
+
+This Hebrew/Greek lemma has been over-split into 11 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 108531 (20 occurrences)
+Grammar: N-mpc,N-mp
+  eng: tablets–of, tablets-of, tablets
+  spa: tablas–de, las–tablas–de, tablas
+  hin: पट्टियाँ, पटियाओं, पटियाएँ
+  arb: لَوْحَيْ, حَجَرَينِ, –
+  kor: 판들, 판들을, 돌판들
+  swa: vibao, mbili–za, mbao
+
+### Sense 108532 (11 occurrences)
+Grammar: Art | N-mp
+  eng: the–tablets
+  spa: las–tablas, tablas
+  hin: पट्टियों, पटियाओं, पटियाओं–को
+  arb: اللَّوْحَيْنِ, اللَّوحَينِ, –
+  kor: 그–판들, 그–판들을
+  swa: vibao, mbao
+
+### Sense 108533 (3 occurrences)
+Grammar: N-msc
+  eng: the–tablet–of, tablet-of
+  spa: tabla–de
+  hin: पट्टी, पटिया
+  arb: لَوْحِ
+  kor: 판–에, 판을
+  swa: ubao–wa, kibao–cha, bamba–la
+
+### Sense 108534 (2 occurrences)
+Grammar: N-mp
+  eng: boards
+  spa: tablas
+  hin: तख्तों–की, तख्तों–का
+  arb: أَلْوَاحًا, أَلواحاً
+  kor: 판들로, 널빈지들로
+  swa: ya–mbao, mbao
+
+### Sense 108535 (1 occurrences)
+Grammar: N-msc
+  eng: board-of
+  spa: tabla–de
+  hin: तख्ता
+  arb: لَوْحَ
+  kor: 널빤지–를
+  swa: ubao
+
+### Sense 108536 (1 occurrences)
+Grammar: N-md
+  eng: planks
+  spa: los–tablones
+  hin: तख्ते–तेरे
+  arb: الْأَلْوَاحِ
+  kor: 껑들을
+  swa: mbao
+
+### Sense 108537 (1 occurrences)
+Grammar: Art | N-mpc
+  eng: the–plates-of
+  spa: las–placas–de
+  hin: तख्तों
+  arb: الـ–أَلْوَاحِ
+  kor: 판들의
+  swa: mbao
+
+### Sense 108538 (1 occurrences)
+Grammar: Art | N-mp
+  eng: the–tablets
+  spa: las–tablas
+  hin: पट्टियों
+  arb: الأَلواحِ
+  kor: 그–서판–들
+  swa: vibao
+
+### Sense 108539 (1 occurrences)
+Grammar: Conj-w, Art | N-mp
+  eng: and–the–tablets
+  spa: Y–las–tablas
+  hin: और–पट्टियाँ
+  arb: وَ–الأَلواحُ
+  kor: 그리고–그–판들은
+  swa: na–vibao
+
+### Sense 108540 (1 occurrences)
+Grammar: N-ms
+  eng: a–tablet
+  spa: tabla
+  hin: पट्टी
+  arb: لَوْحٍ
+  kor: 서판에
+  swa: ubao
+
+### Sense 108541 (1 occurrences)
+Grammar: Art | N-mp
+  eng: the–tablets
+  spa: tablas
+  hin: पट्टियाँ
+  arb: اللَّوْحَيْنِ
+  kor: 그–판들
+  swa: mbao
+
+## Task
+
+Group these 11 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

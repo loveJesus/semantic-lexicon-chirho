@@ -1,0 +1,136 @@
+# Sense Merge Task for H4522
+
+Lemma: H4522 (POS: Art | N-ms)
+Total occurrences: 23
+Current sense count: 12
+
+This Hebrew/Greek lemma has been over-split into 12 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 112599 (6 occurrences)
+Grammar: Art | N-ms
+  eng: the–forced–labor, the–forced-labor
+  spa: el–tributo, la–leva
+  hin: बेगार, बेगार–के, बेगार–का
+  arb: الـ–سُّخْرَةِ, الْجِزْيَةِ, الـ–جِزْيَةِ
+  kor: 그–부역, 그–부역이, 그–부역의
+  swa: kazi–ya–kulazimishwa, kazi–za–kulazimishwa, juu–ya
+
+### Sense 112600 (5 occurrences)
+Grammar: Prep-l | N-ms,Prep-l | N-msc
+  eng: as–forced-labor, to–forced-labor, for–forced–labor
+  spa: a–tributo, para–tributo
+  hin: बेगार–मज़दूरी–में।, बेगार–में, बेगार–मज़दूरी–में
+  arb: لِ–السُّخْرَةِ, لِلسُّخرَةِ
+  kor: 강제–노역에, 부역–으로
+  swa: kazi–ya–kulazimishwa, kwa–kazi–ya–kulazimishwa, chini–ya–kazi–ya–kulazimishwa
+
+### Sense 112601 (2 occurrences)
+Grammar: Prep-l | N-msc,Prep-l | N-ms
+  eng: for–forced-labor
+  spa: para–tributo, a–tributo
+  hin: बेगार–में, बेगार–
+  arb: لِ–سُخْرةِ–, لِ–السُّخْرةِ
+  kor: 에게–부역–, 부역에
+  swa: kwa–kazi–ya–kulazimishwa, kwa–kazi–ya–
+
+### Sense 112602 (2 occurrences)
+Grammar: Prep-l | N-ms
+  eng: shall–be, for–forced-labor
+  spa: para–tributo
+  hin: के–लिए–बेगार
+  arb: لِلسُّخْرَةِ, لِلتَّسْخِيرِ
+  kor: 에–노역이, 에–강제–노동
+  swa: kwa–kazi–ya–kulazimishwa
+
+### Sense 112603 (1 occurrences)
+Grammar: N-ms
+  eng: forced–labor
+  spa: tributo
+  hin: बेगार
+  arb: جِزْيَةً
+  kor: 부역을
+  swa: kazi–ya–kulazimishwa
+
+### Sense 112604 (1 occurrences)
+Grammar: N-mp
+  eng: forced-labor
+  spa: tributos
+  hin: बेगार–के
+  arb: تَسْخِيرٍ
+  kor: 노역의
+  swa: wa–kazi–ya–kulazimishwa
+
+### Sense 112605 (1 occurrences)
+Grammar: Prep-l | N-ms
+  eng: put–to–forced–labor
+  spa: para–tributo
+  hin: बेगारी–के–लिए
+  arb: لِلْجِزْيَةِ
+  kor: 강제–로린다
+  swa: watumwa
+
+### Sense 112606 (1 occurrences)
+Grammar: Art | N-ms
+  eng: the–forced–labor
+  spa: el–tributo
+  hin: बेगार–पर–था
+  arb: الجِزيَةِ
+  kor: 그–부역
+  swa: kazi–ya–kulazimishwa
+
+### Sense 112607 (1 occurrences)
+Grammar: Prep-l | N-msc
+  eng: for–labor–of–
+  spa: para–tributo
+  hin: के–लिए–बेगार–
+  arb: عَبْدَ–
+  kor: 에–세금–
+  swa: kwa–wasiliana
+
+### Sense 112608 (1 occurrences)
+Grammar: N-ms
+  eng: tribute
+  spa: tributo
+  hin: कर
+  arb: جِزْيَةً
+  kor: 조공을
+  swa: ushuru
+
+### Sense 112609 (1 occurrences)
+Grammar: Prep-l | N-msc
+  eng: for–forced-labor–
+  spa: para–leva–de
+  hin: बेगारी
+  arb: لِـ–سُخْرَةِ–
+  kor: –에–부역–
+  swa: kazi–ya
+
+### Sense 112610 (1 occurrences)
+Grammar: Prep-l | N-ms
+  eng: for–forced–labor
+  spa: para–tributo
+  hin: बेगार–करनेवाली
+  arb: لِلْجِزْيَةِ
+  kor: 공물–으로
+  swa: chini–ya–kazi–ngumu
+
+## Task
+
+Group these 12 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

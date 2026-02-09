@@ -1,0 +1,118 @@
+# Sense Merge Task for H3365
+
+Lemma: H3365 (POS: V-Qal-Perf-2ms)
+Total occurrences: 11
+Current sense count: 10
+
+This Hebrew/Greek lemma has been over-split into 10 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 103575 (2 occurrences)
+Grammar: V-Qal-Imperf-3fs
+  eng: let-be-precious
+  spa: sea-preciada
+  hin: बहुमूल्य–हो
+  arb: لِتَكُنْ–عَزِيزَةً
+  kor: 귀하게–여겨지소서
+  swa: iwe–ya–thamani–, iwe–ya–thamani
+
+### Sense 103576 (1 occurrences)
+Grammar: V-Qal-Perf-3fs
+  eng: was-precious
+  spa: fue–preciosa
+  hin: बहुमूल्य–हुई
+  arb: غَلَت
+  kor: 귀하였다
+  swa: itakuwa–ya–thamani
+
+### Sense 103577 (1 occurrences)
+Grammar: V-Hifil-Imp-ms
+  eng: make–rare
+  spa: Retira
+  hin: घटा
+  arb: أَقْلِلْ
+  kor: 아끼라
+  swa: punguza
+
+### Sense 103578 (1 occurrences)
+Grammar: V-Hifil-Imperf-1cs
+  eng: I-will-make-rare
+  spa: Haré–más–precioso
+  hin: मैं–बहुमूल्य–बनाऊंगा
+  arb: أُنْدِرُ
+  kor: 귀하게–하리라
+  swa: nitamfanya–adimu
+
+### Sense 103579 (1 occurrences)
+Grammar: V-Qal-Perf-3cp
+  eng: precious
+  spa: preciosos
+  hin: बहुमूल्य–हैं
+  arb: غَلَتْ
+  kor: 보배로운지
+  swa: yanavyothaminiwa
+
+### Sense 103580 (1 occurrences)
+Grammar: V-Qal-Perf-2ms
+  eng: you–are–precious
+  spa: fuiste–precioso
+  hin: बहुमूल्य–हुआ–तू
+  arb: غَلِيتَ
+  kor: 귀하였느니라–너가
+  swa: umekuwa–wa–thamani
+
+### Sense 103581 (1 occurrences)
+Grammar: Conj-w | V-Qal-ConjImperf-3ms
+  eng: and–costly
+  spa: y–es–costoso
+  hin: क्योंकि–बहुमूल्य
+  arb: وَ–غالٍ
+  kor: 그리고–귀하도다
+  swa: Kwa–sababu
+
+### Sense 103582 (1 occurrences)
+Grammar: V-Qal-Perf-1cs
+  eng: I–was–valued
+  spa: fui–valorado
+  hin: मैं–मूल्यवान–था
+  arb: ثُمِّنْتُ
+  kor: 내가–값어치를–받았음이라
+  swa: nilikadiriwa
+
+### Sense 103583 (1 occurrences)
+Grammar: Conj-w | V-Qal-ConjImperf-3ms
+  eng: and–will–be–precious
+  spa: y–será–preciosa
+  hin: और–बहुमूल्य
+  arb: وَ–يَغْلو
+  kor: 귀하리이다
+  swa: na–itakuwa-ya-thamani
+
+### Sense 103584 (1 occurrences)
+Grammar: Conj-w | V-Qal-ConsecImperf-3m
+  eng: and–was–precious
+  spa: y–fue–precioso
+  hin: और-बहुमुलय-हुअ
+  arb: وَ–صَارَ–غَالِيًا
+  kor: 그리고–귀하게–되었다
+  swa: na–akawa–mpendwa
+
+## Task
+
+Group these 10 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

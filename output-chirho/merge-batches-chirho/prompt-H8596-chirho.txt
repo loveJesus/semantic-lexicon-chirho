@@ -1,0 +1,127 @@
+# Sense Merge Task for H8596
+
+Lemma: H8596 (POS: Prep-b | N-mp)
+Total occurrences: 17
+Current sense count: 11
+
+This Hebrew/Greek lemma has been over-split into 11 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 145567 (4 occurrences)
+Grammar: Prep-b | N-mp
+  eng: with–tambourines
+  spa: con–panderos
+  hin: से–डफ, दफ़फ़-से, डफलियों–से
+  arb: بِ–دُفُوفٍ, بِ–دُفوفٍ, بِـ–دُفُوفٍ
+  kor: 에–손북들, 에–소고와, 소고로–
+  swa: kwa–matari
+
+### Sense 145568 (2 occurrences)
+Grammar: N-ms
+  eng: the–tambourine, tambourine
+  spa: pandero
+  hin: ढोल
+  arb: دُفٌّ, دُفًّا
+  kor: 소고와, 소고를
+  swa: ngoma
+
+### Sense 145569 (2 occurrences)
+Grammar: Prep-b | N-ms
+  eng: with–tambourine
+  spa: con–pandero
+  hin: डफ–से
+  arb: بِ–الدُّفِّ, بِـ–دُفٍّ
+  kor: 에–소고와
+  swa: kwa–ngoma
+
+### Sense 145570 (2 occurrences)
+Grammar: Conj-w, Prep-b | N-mp
+  eng: and–with–tambourines
+  spa: y–con–panderos
+  hin: और–डफों–से, और–डफों
+  arb: وَ–بِ–دُفُوفٍ, وَبِ–دُفُوفٍ
+  kor: 그리고–소고로, 그–와–에–소고들
+  swa: na–kwa–matari
+
+### Sense 145571 (1 occurrences)
+Grammar: Art | N-ms
+  eng: the–tambourine
+  spa: el–pandero
+  hin: डफली
+  arb: الدُّفَّ
+  kor: 그–소고를
+  swa: tari
+
+### Sense 145572 (1 occurrences)
+Grammar: N-mp
+  eng: of–tambourines
+  spa: panderos
+  hin: डफों–की
+  arb: الدُّفُوفِ
+  kor: 소고의
+  swa: ya–matari
+
+### Sense 145573 (1 occurrences)
+Grammar: N-mpc | 2ms
+  eng: your-tambourines
+  spa: tus–tamboriles
+  hin: डफों–तेरे–की
+  arb: دُفُوفِكَ
+  kor: 소고들의–너의
+  swa: matari–yako
+
+### Sense 145574 (1 occurrences)
+Grammar: Prep-b | N-ms
+  eng: with–tambourine
+  spa: con–pandero
+  hin: ढोल–से
+  arb: بِ–دُفٍّ
+  kor: 에서–소고과
+  swa: kwa–ngoma
+
+### Sense 145575 (1 occurrences)
+Grammar: Prep-k | N-ms
+  eng: as–tambourine
+  spa: pandero
+  hin: डफ–के–साथ
+  arb: كَ–الدُّفِّ
+  kor: 소고–같이
+  swa: matari
+
+### Sense 145576 (1 occurrences)
+Grammar: Conj-w | N-ms
+  eng: and–tambourine
+  spa: y–pandero
+  hin: और–डफ
+  arb: وَ–دُفٌّ
+  kor: 그리고–소고와
+  swa: na–ngoma
+
+### Sense 145577 (1 occurrences)
+Grammar: N-mpc | 2fs
+  eng: your–tambourines
+  spa: tus–panderos
+  hin: अपनी–डफ
+  arb: بِدُفُوفِكِ
+  kor: 네–소고들을
+  swa: matari–yako
+
+## Task
+
+Group these 11 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

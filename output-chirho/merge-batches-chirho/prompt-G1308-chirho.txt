@@ -1,0 +1,127 @@
+# Sense Merge Task for G1308
+
+Lemma: G1308 (POS: V-PIA-2P)
+Total occurrences: 13
+Current sense count: 11
+
+This Hebrew/Greek lemma has been over-split into 11 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 65458 (3 occurrences)
+Grammar: V-PIA-2P
+  eng: you-are-worth-more, are-worth
+  spa: valéis-más, valéis–más
+  hin: अलग–हो, मूल्यवान–हो
+  arb: أَفْضَلُ–أَنْتُمْ, أَفْضَلُ, أَفضَلُ
+  kor: 너희가–귀하다, 나은–것이냐, 귀하니
+  swa: mna–thamani–zaidi, mna-tofauti-na
+
+### Sense 65459 (1 occurrences)
+Grammar: V-PIA-2P
+  eng: are–worth
+  spa: valéis
+  hin: मूल्यवान–हो
+  arb: أَفضَلَ
+  kor: 귀하냐
+  swa: ni–bora–kuliko
+
+### Sense 65460 (1 occurrences)
+Grammar: V-PIA-3S
+  eng: it-matters
+  spa: importa
+  hin: फ़रक–पदत,
+  arb: يُفرِقُ
+  kor: 다르지–않으니,
+  swa: linanihusu
+
+### Sense 65461 (1 occurrences)
+Grammar: V-IIM/P-3S
+  eng: was–being–carried
+  spa: era–difundida
+  hin: फैलता–था
+  arb: انتَشَرَت
+  kor: 펴졌다
+  swa: likaenea
+
+### Sense 65462 (1 occurrences)
+Grammar: V-ASA-3S
+  eng: should-carry
+  spa: llevara
+  hin: ले–जाए
+  arb: يَحْمِلَ
+  kor: 운반하도록
+  swa: apitishe
+
+### Sense 65463 (1 occurrences)
+Grammar: V-PPA-ANP
+  eng: differing
+  spa: que–difieren
+  hin: उत्तम–बातें
+  arb: الأُمورَ–المُختَلِفَةَ
+  kor: 다른–것들
+  swa: yaliyo–bora
+
+### Sense 65464 (1 occurrences)
+Grammar: V-PIA-3S
+  eng: differs
+  spa: difiere
+  hin: श्रेशथ–है
+  arb: يَفضُلُ
+  kor: 귀하니까
+  swa: ana-tofauti
+
+### Sense 65465 (1 occurrences)
+Grammar: V-PIA-3S
+  eng: he-differs
+  spa: difiere
+  hin: फ़रक
+  arb: لا–يَفرِقُ
+  kor: 다르지–않노라
+  swa: tofauti
+
+### Sense 65466 (1 occurrences)
+Grammar: V-PPA-ANP
+  eng: things–differing
+  spa: que–difieren
+  hin: उत्तम,
+  arb: الأُمورَ–المُمْتازَةَ
+  kor: 다른–것들,
+  swa: yaliyo–bora
+
+### Sense 65467 (1 occurrences)
+Grammar: V-PPM/P-GMP
+  eng: being–driven
+  spa: siendo-llevados
+  hin: बहतेहुए
+  arb: مُنْجَرِفِينَ
+  kor: 떠도는
+  swa: tulipokuwa–tukisukumwa
+
+### Sense 65468 (1 occurrences)
+Grammar: V-PIA-3S
+  eng: differs
+  spa: difiere
+  hin: भिन्न–होता–है
+  arb: يَختَلِفُ
+  kor: 다르니라
+  swa: inatofautiana
+
+## Task
+
+Group these 11 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

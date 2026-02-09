@@ -1,0 +1,136 @@
+# Sense Merge Task for H0191
+
+Lemma: H0191 (POS: Adj-ms)
+Total occurrences: 26
+Current sense count: 12
+
+This Hebrew/Greek lemma has been over-split into 12 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 80471 (11 occurrences)
+Grammar: N-ms
+  eng: a–fool, fool, will–be–the–fool
+  spa: necio, insensato, Necio
+  hin: मूर्ख, मूर्ख–की, मूर्ख–का
+  arb: أحْمَقٌ, أحْمَقٍ, أَحْمَقَ
+  kor: 미련한–자–의, 어리석은–자는, 미련한–자–는
+  swa: mpumbavu, ni–mtumwa
+
+### Sense 80472 (3 occurrences)
+Grammar: N-mp
+  eng: fools
+  spa: necios, Necios
+  hin: मूर्खों–ने, मूर्खों–की, मूर्ख
+  arb: حَمْقى, الْحَمْقَى
+  kor: 어리석은–자들–의, 어리석은–자–들–은, 미련한–자–들–은
+  swa: wapumbavu
+
+### Sense 80473 (2 occurrences)
+Grammar: Adj-ms
+  eng: foolish
+  spa: insensato
+  hin: मूर्ख
+  arb: جاهِلٍ, أَحْمَقٌ
+  kor: 어리석은, 어리석다
+  swa: wapumbavu, mpumbavu
+
+### Sense 80474 (2 occurrences)
+Grammar: Conj-w | N-msc
+  eng: but–a–fool–of
+  spa: y–necio–de
+  hin: और–मूर्ख
+  arb: وَ–أَحْمَقُ
+  kor: 그리고–미련한–자–는, 그러나–미련한–자–는
+  swa: na–mpumbavu, lakini–mpumbavu
+
+### Sense 80475 (1 occurrences)
+Grammar: Conj-w | N-mp
+  eng: but–fools
+  spa: y–necios
+  hin: और–मूर्ख
+  arb: وَ–الْجُهَّالُ
+  kor: 그러나–미련한–자–들–은
+  swa: lakini–wapumbavu
+
+### Sense 80476 (1 occurrences)
+Grammar: Conj-w | N-mp
+  eng: not
+  spa: y–los–necios
+  hin: और–मूर्ख
+  arb: وَ–جُهَّالٌ
+  kor: 그리고–어리석은–자들이
+  swa: na–wajinga
+
+### Sense 80477 (1 occurrences)
+Grammar: N-mp
+  eng: fools
+  spa: Insensatos
+  hin: मूर्ख
+  arb: الحَمقى
+  kor: 어리석은–자들–이
+  swa: wajinga
+
+### Sense 80478 (1 occurrences)
+Grammar: Art | N-ms
+  eng: the–fool
+  spa: el–insensato
+  hin: मूर्ख
+  arb: الْجاهِلِ
+  kor: 어리석은–자를
+  swa: mpumbavu
+
+### Sense 80479 (1 occurrences)
+Grammar: Prep-l | N-ms
+  eng: for–a–fool
+  spa: para–el–insensato
+  hin: मूर्ख–के–लिए
+  arb: لِلْجاهِلِ
+  kor: 어리석은–자–에게
+  swa: kwa–mpumbavu
+
+### Sense 80480 (1 occurrences)
+Grammar: N-mp
+  eng: fools
+  spa: necios
+  hin: मूर्ख
+  arb: أَحْمَقٌ
+  kor: 어리석도다
+  swa: wapumbavu
+
+### Sense 80481 (1 occurrences)
+Grammar: N-ms
+  eng: a–fool
+  spa: necio
+  hin: मूर्ख
+  arb: أَحمَقُ
+  kor: 어리석도다
+  swa: mpumbavu
+
+### Sense 80482 (1 occurrences)
+Grammar: Prep-l | N-ms
+  eng: the–fool
+  spa: al–necio
+  hin: मूर्ख–को
+  arb: الأَحْمَقَ
+  kor: 에게–어리석은–자
+  swa: kwa–mpumbavu
+
+## Task
+
+Group these 12 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

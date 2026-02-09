@@ -1,0 +1,136 @@
+# Sense Merge Task for H7999b
+
+Lemma: H7999b (POS: Conj-w | V-Qal-Imp-ms)
+Total occurrences: 13
+Current sense count: 12
+
+This Hebrew/Greek lemma has been over-split into 12 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 141340 (2 occurrences)
+Grammar: V-Hifil-Perf-3fs
+  eng: made-peace, it–has–made–peace
+  spa: hizo–paz
+  hin: संधि–की–उसने, संधि–की
+  arb: صالَحَتْ, صالَحَت
+  kor: 화평한, 화평하였다
+  swa: ulifanya–amani, imefanya–amani
+
+### Sense 141341 (1 occurrences)
+Grammar: V-Hofal-Perf-3fs
+  eng: are–at–peace
+  spa: harán–paz
+  hin: मेल–किया–गया–
+  arb: تُصالِحُكَ
+  kor: 화평했다
+  swa: wamefanya–amani
+
+### Sense 141342 (1 occurrences)
+Grammar: V-Hifil-Imperf-3ms
+  eng: makes–peace
+  spa: hace–estar–en–paz
+  hin: शान्ति–कराता–है
+  arb: يُصالِحُ
+  kor: 화평하게–하시느니라
+  swa: wanafanya–amani
+
+### Sense 141343 (1 occurrences)
+Grammar: Conj-w | V-Hifil-ConsecImperf-
+  eng: and–made–peace
+  spa: E–hizo–paz
+  hin: और–शांति–बनाई
+  arb: وَ–صالَحَ
+  kor: 그리고–평화했다
+  swa: na–akafanya–amani
+
+### Sense 141344 (1 occurrences)
+Grammar: V-Qal-Prtcpl-msc | 1cs
+  eng: the–one–at–peace–with–me
+  spa: al–que–estaba–en–paz–conmigo
+  hin: मुझ–से–मेल–रखनेवाले–को
+  arb: مُسَالِمِي
+  kor: 화평–한–자–에게
+  swa: mwenye–amani–nami
+
+### Sense 141345 (1 occurrences)
+Grammar: V-Hifil-Perf-3cp
+  eng: had–made–peace
+  spa: hicieron–paz
+  hin: संधि–की–थी
+  arb: صالَحوا
+  kor: 화평하였다
+  swa: walifanya–amani
+
+### Sense 141346 (1 occurrences)
+Grammar: Conj-w | V-Qal-Imp-ms
+  eng: and–be–at–peace
+  spa: y–ten–paz;
+  hin: और–शांति–रख
+  arb: وَ–اسْلَمْ
+  kor: 그리고–평안하라
+  swa: na–uwe–na–amani
+
+### Sense 141347 (1 occurrences)
+Grammar: V-Hifil-Imperf-3ms
+  eng: He–fulfills
+  spa: cumple
+  hin: पूरी–करता–है
+  arb: يُتَمِّمُ
+  kor: 이루시며
+  swa: anakamilisha
+
+### Sense 141348 (1 occurrences)
+Grammar: V-Qal-QalPassPrtcpl-mpc
+  eng: peaceable-of
+  spa: de–las–pacíficas
+  hin: शांति–वाली
+  arb: مِنَ–الْمُسَالِمِينَ
+  kor: 평화로운–자들의
+  swa: miongoni–mwa–wenye–amani
+
+### Sense 141349 (1 occurrences)
+Grammar: Prep-k | V-Pual-Prtcpl-ms
+  eng: like–the–one–at–peace
+  spa: como–el–perfecto
+  hin: जैसा–विश्वासपात्र
+  arb: كَالمُكْرَسِ
+  kor: 같이–완전한–자
+  swa: kama–aliyejitolea
+
+### Sense 141350 (1 occurrences)
+Grammar: Conj-w | V-Hifil-ConsecImperf-
+  eng: and–made-peace
+  spa: e–hicieron–paz
+  hin: और–सन्धि–की
+  arb: وَ–صَالَحُوا
+  kor: 그리고–화평했다
+  swa: na–wakafanya–amani
+
+### Sense 141351 (1 occurrences)
+Grammar: V-Hifil-Imperf-3fs
+  eng: it-makes-peace
+  spa: hace–paz
+  hin: संधि–करेगी
+  arb: تُصَالِحُ
+  kor: 화평하면
+  swa: itafanya–amani
+
+## Task
+
+Group these 12 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

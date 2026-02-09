@@ -1,0 +1,118 @@
+# Sense Merge Task for H1448
+
+Lemma: H1448 (POS: Conj-w | N-fpc)
+Total occurrences: 11
+Current sense count: 10
+
+This Hebrew/Greek lemma has been over-split into 10 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 89621 (2 occurrences)
+Grammar: Conj-w | N-fp,Conj-w | N-fpc
+  eng: and–pens-of, and–pens
+  spa: y–corrales–de, y–corrales
+  hin: और–बाड़े
+  arb: وَزَرَائِبَ
+  kor: 그리고–울타리를
+  swa: na–mazizi–ya, na–mazizi
+
+### Sense 89622 (1 occurrences)
+Grammar: N-msc | 3fs
+  eng: her–wall
+  spa: su–cerca
+  hin: दीवार–उसकी
+  arb: سياجَها
+  kor: 담–그녀의–을
+  swa: ukuta–wake
+
+### Sense 89623 (1 occurrences)
+Grammar: Conj-w | N-fpc
+  eng: and–folds–for
+  spa: y–corrales–de
+  hin: और–बाड़े
+  arb: وَحَظَائِرَ
+  kor: 그리고–우리들
+  swa: na–mazizi–ya
+
+### Sense 89624 (1 occurrences)
+Grammar: N-fpc
+  eng: folds–of
+  spa: corrales–de
+  hin: बाड़ों
+  arb: حَظائِرِ
+  kor: 울타리들에
+  swa: mazizi–ya–kondoo
+
+### Sense 89625 (1 occurrences)
+Grammar: Conj-w | N-proper-ms
+  eng: and–Gederah
+  spa: y–Guedera
+  hin: और–गदेरा
+  arb: وَ–جَديرَة
+  kor: 그–와–게데라
+  swa: na–Gedera
+
+### Sense 89626 (1 occurrences)
+Grammar: Prep-b, Art | N-fp
+  eng: on–the–walls
+  spa: en–los–muros
+  hin: बाड़ों–पर
+  arb: فِي–الْأَسْوَارِ
+  kor: 에서–담들
+  swa: katika–kuta
+
+### Sense 89627 (1 occurrences)
+Grammar: N-fpc
+  eng: pens-of
+  spa: corrales–de
+  hin: बाड़े
+  arb: زَرَائِبَ
+  kor: 울타리를
+  swa: mazizi–ya
+
+### Sense 89628 (1 occurrences)
+Grammar: Art | N-fs
+  eng: the–wall
+  spa: el–muro
+  hin: दीवार–के
+  arb: الْ–جِدَارِ
+  kor: 그–담
+  swa: ukuta
+
+### Sense 89629 (1 occurrences)
+Grammar: Prep-b, Art | N-fp
+  eng: among–the–walls
+  spa: entre–los–cercados
+  hin: में–बाड़ों
+  arb: فِي–الْأَسْيِجَةِ
+  kor: 울타리들–사이에서
+  swa: katika–uzio
+
+### Sense 89630 (1 occurrences)
+Grammar: N-fpc | 3ms
+  eng: his–walls
+  spa: cercas-de-el
+  hin: उसकी–दीवारों–को
+  arb: أَسْوَارِهِ
+  kor: 그–의–담들–을
+  swa: zake–zote
+
+## Task
+
+Group these 10 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

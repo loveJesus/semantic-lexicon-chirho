@@ -1,0 +1,172 @@
+# Sense Merge Task for H4692
+
+Lemma: H4692 (POS: N-ms)
+Total occurrences: 26
+Current sense count: 16
+
+This Hebrew/Greek lemma has been over-split into 16 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 113738 (8 occurrences)
+Grammar: Prep-b | N-ms,Prep-b, Art | N-ms
+  eng: in-siege, under–siege, in–the–siege
+  spa: en–el–asedio, en–el–cerco, en–asedio
+  hin: घेरे–में, घेराव–में, में–घेराव
+  arb: فِي–حِصَارٍ, فِي–الْحِصَارِ, فِي–الحِصَارِ
+  kor: (전)–포위–에서, 포위에, 포위–중에
+  swa: katika–mazingira, katika–mzingiro, katika–kuzingirwa
+
+### Sense 113739 (3 occurrences)
+Grammar: N-ms
+  eng: siege, siege-works
+  spa: asedio, sitio
+  hin: घेराबंदी
+  arb: حِصَارًا, حِصارًا
+  kor: 포위를, 포위
+  swa: uzingiraji, mzingiro, kuzingirwa
+
+### Sense 113740 (2 occurrences)
+Grammar: Prep-b, Art | N-ms
+  eng: into–the–siege, into–siege
+  spa: en–sitio
+  hin: ब–घेराबंदी, बा–घेराव–में
+  arb: فِي–الْحِصَارِ
+  kor: 포위-가운데로, 에서–그–포위
+  swa: katika–mzingiro
+
+### Sense 113741 (1 occurrences)
+Grammar: N-ms
+  eng: of–siege
+  spa: fortificada
+  hin: दृढ़
+  arb: مُحَاصَرَةٍ
+  kor: 견고한
+  swa: uliozingirwa
+
+### Sense 113742 (1 occurrences)
+Grammar: Prep-b, Art | N-ms
+  eng: against
+  spa: en–el–sitio
+  hin: में–घेराव
+  arb: فِي–الْحِصَارِ
+  kor: 포위–중에
+  swa: katika–mazingirwa
+
+### Sense 113743 (1 occurrences)
+Grammar: Art | N-ms
+  eng: the–siege
+  spa: el–asedio
+  hin: ते–घेराबंदी
+  arb: الـ–حِصارِ
+  kor: 그–포위의
+  swa: za–mzingiro
+
+### Sense 113744 (1 occurrences)
+Grammar: N-ms
+  eng: a–fortress
+  spa: fortaleza
+  hin: गढ़
+  arb: حِصْنًا
+  kor: 요새를
+  swa: ngome
+
+### Sense 113745 (1 occurrences)
+Grammar: N-ms
+  eng: the–rampart
+  spa: la–fortaleza
+  hin: गढ़
+  arb: الحِصنِ
+  kor: 망대
+  swa: ngome
+
+### Sense 113746 (1 occurrences)
+Grammar: Prep-b, Art | N-ms
+  eng: in–the–siege
+  spa: en–el–sitio
+  hin: में–घेराबंदी
+  arb: فِي–الْحِصَارِ
+  kor: 에–포위
+  swa: kuzingirwa
+
+### Sense 113747 (1 occurrences)
+Grammar: Prep-l | N-ms
+  eng: for–fortress
+  spa: para–fortaleza
+  hin: गढ़ों–के–लिए
+  arb: لِلحِصارِ
+  kor: 요새–를–위해
+  swa: kwa–ngome
+
+### Sense 113748 (1 occurrences)
+Grammar: N-ms
+  eng: siege
+  spa: fortaleza
+  hin: दृढ़
+  arb: الحِصارِ
+  kor: 요새의
+  swa: wenye-ngome
+
+### Sense 113749 (1 occurrences)
+Grammar: N-msc
+  eng: siege-of
+  spa: asedio–de
+  hin: घेराबंदी
+  arb: حِصارِ
+  kor: 포위
+  swa: mzingiro
+
+### Sense 113750 (1 occurrences)
+Grammar: N-ms
+  eng: fortress
+  spa: fortaleza
+  hin: गढ़ों–के
+  arb: حِصارٍ
+  kor: 요새–의
+  swa: yenye–ngome
+
+### Sense 113751 (1 occurrences)
+Grammar: N-msc | 2ms
+  eng: siege-of-you
+  spa: asedio–de–ti
+  hin: तेरी–घेराबंदी
+  arb: حِصارِكَ
+  kor: 네–포위의
+  swa: za–mzingiro–wako
+
+### Sense 113752 (1 occurrences)
+Grammar: N-proper-fs
+  eng: fortress
+  spa: Egipto
+  hin: गढ़–के
+  arb: الْحِصْنِ
+  kor: 이집트–의
+  swa: Misri
+
+### Sense 113753 (1 occurrences)
+Grammar: N-ms
+  eng: siege
+  spa: asedio
+  hin: घेराबंदी–का
+  arb: الْحِصَارِ
+  kor: 포위–의
+  swa: –kuzingirwa
+
+## Task
+
+Group these 16 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

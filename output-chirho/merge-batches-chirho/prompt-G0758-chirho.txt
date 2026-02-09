@@ -1,0 +1,118 @@
+# Sense Merge Task for G0758
+
+Lemma: G0758 (POS: N-VMP)
+Total occurrences: 37
+Current sense count: 10
+
+This Hebrew/Greek lemma has been over-split into 10 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 63441 (9 occurrences)
+Grammar: N-NMP,N-AMP,N-DMP
+  eng: rulers
+  spa: gobernantes
+  hin: शासकों, –प्रभु–के–विरुद्ध, शासकों–ने
+  arb: رُؤَساءُ, رُؤَساءَ, رُؤَسَاؤُهُمْ
+  kor: 통치자들–이, 지도자들이, 지도자들과
+  swa: watawala, viongozi, wa–
+
+### Sense 63442 (7 occurrences)
+Grammar: N-DMS,N-NMS
+  eng: ruler
+  spa: príncipe
+  hin: शासक, प्रधान, अधीन
+  arb: رَئيسِ, رَئِيسُ, رَئِيسِ
+  kor: 통치자가, 두목, 통치자–가
+  swa: mkuu
+
+### Sense 63443 (6 occurrences)
+Grammar: N-AMS,N-NMS
+  eng: a–ruler, ruler, a-ruler
+  spa: gobernante, un-gobernante, príncipe
+  hin: शासक, शअसकोन
+  arb: رَئِيسًا, رَئيسِ, رَئيسُ
+  kor: 다스리는–자–로, 통치자, 관원에게
+  swa: mtawala, mkuu
+
+### Sense 63444 (4 occurrences)
+Grammar: N-NMS,N-GMS
+  eng: ruler, a-ruler
+  spa: gobernante
+  hin: सरदार, अधिकारी–ने, अधिकारी–के
+  arb: رَئيسٌ, رَئِيسٌ, رَئيسِ
+  kor: 관원, 관원이, 관원–이
+  swa: kiongozi, mkuu,, mkuu
+
+### Sense 63445 (4 occurrences)
+Grammar: N-AMP,N-NMP,N-GMP
+  eng: rulers
+  spa: gobernantes
+  hin: शासकों, हाकिमों, शासक
+  arb: رُؤَساءِ, –الحُكَّامُ
+  kor: 통치자들–중에, 통치자들–의, 다스리는–자들은
+  swa: watawala
+
+### Sense 63446 (3 occurrences)
+Grammar: N-GMP
+  eng: rulers
+  spa: gobernantes
+  hin: हाकिमों, सरदारों, अधिकारियों–के
+  arb: رُؤَسَاءِ
+  kor: 통치자들–중, 지도자들의, 지도자들–중에서
+  swa: viongozi, wakuu
+
+### Sense 63447 (1 occurrences)
+Grammar: N-NMS
+  eng: a-ruler
+  spa: jefe
+  hin: अधिकारी
+  arb: رَئيسُ
+  kor: 회장
+  swa: kiongozi
+
+### Sense 63448 (1 occurrences)
+Grammar: N-NMP
+  eng: rulers
+  spa: gobernantes
+  hin: हाकिमों,
+  arb: رُؤَسَاءُ
+  kor: 지도자들이
+  swa: viongozi
+
+### Sense 63449 (1 occurrences)
+Grammar: N-VMP
+  eng: rulers
+  spa: Gobernantes
+  hin: –लोगों–के
+  arb: رُؤَسَاءَ
+  kor: 통치자들–이여
+  swa: Watawala
+
+### Sense 63450 (1 occurrences)
+Grammar: N-AMS
+  eng: A–ruler
+  spa: A–un-gobernante
+  hin: शासकको
+  arb: رَئِيسَ
+  kor: 지도자를
+  swa: Mtawala
+
+## Task
+
+Group these 10 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

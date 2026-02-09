@@ -1,0 +1,136 @@
+# Sense Merge Task for H3940
+
+Lemma: H3940 (POS: Art | N-mp)
+Total occurrences: 14
+Current sense count: 12
+
+This Hebrew/Greek lemma has been over-split into 12 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 109074 (2 occurrences)
+Grammar: N-mp
+  eng: torches
+  spa: antorchas
+  hin: मशालें
+  arb: مَشَاعِلُ, مَشَاعِلَ
+  kor: 횿불들, 횟불들이
+  swa: mienge
+
+### Sense 109075 (2 occurrences)
+Grammar: Art | N-mp,Prep-b, Art | N-mp
+  eng: the–torches
+  spa: las–antorchas
+  hin: मशालों–को, मशालों
+  arb: بِـ-الـ-مَشَاعِل, الْبُرُوقَ
+  kor: 횟불들을, 그–횟불들과
+  swa: mienge, mianga
+
+### Sense 109076 (1 occurrences)
+Grammar: Prep-b, Art | N-mp
+  eng: in–the–torches
+  spa: en–las–antorchas
+  hin: मशालों–में
+  arb: فِي–الْمَشَاعِلِ
+  kor: 에–그–횿불들
+  swa: katika–mienge
+
+### Sense 109077 (1 occurrences)
+Grammar: Conj-w | N-mp
+  eng: and–torches
+  spa: y–antorchas
+  hin: और–मशालें
+  arb: وَ-مَشَاعِلَ
+  kor: 그리고–횟불들을
+  swa: na–mienge
+
+### Sense 109078 (1 occurrences)
+Grammar: Art | N-mp
+  eng: the–torches
+  spa: las–antorchas
+  hin: ती–मशालों
+  arb: الـ–مَشاعِلِ
+  kor: 그–횃불들의
+  swa: mienge
+
+### Sense 109079 (1 occurrences)
+Grammar: Prep-k, Art | N-mp
+  eng: like–the–torches
+  spa: como–antorchas
+  hin: जैसे–मशालों
+  arb: كَالمَشَاعِلِ
+  kor: 같이–횴불들
+  swa: kama–mienge
+
+### Sense 109080 (1 occurrences)
+Grammar: Conj-w | N-msc
+  eng: and–a-torch-of
+  spa: y–antorcha–de
+  hin: और–मशल
+  arb: وَ–مِشْعَلُ
+  kor: 그리고–횴불이
+  swa: na–mwali–wa
+
+### Sense 109081 (1 occurrences)
+Grammar: N-ms
+  eng: torch
+  spa: una–antorcha
+  hin: मशाल
+  arb: مِشْعَلًا
+  kor: 횿불
+  swa: mwenge
+
+### Sense 109082 (1 occurrences)
+Grammar: Conj-w, Prep-k | N-msc
+  eng: and–like–a–torch–of
+  spa: y–como–antorcha–de
+  hin: और–जैसे–मशाल
+  arb: وَ–كَ–مَشْعَلَةِ
+  kor: 그리고–횿불–같이
+  swa: na–kama–mwenge–wa
+
+### Sense 109083 (1 occurrences)
+Grammar: Prep-l, Art | N-ms
+  eng: torch-of
+  spa: Antorcha
+  hin: मशाल
+  arb: مَشْعَلٌ
+  kor: 횹불–이–
+  swa: taa
+
+### Sense 109084 (1 occurrences)
+Grammar: Prep-k | N-mpc
+  eng: like–torches-of
+  spa: como–antorchas–de
+  hin: जैसे–मशालें
+  arb: كَـ–مَشَاعِلِ
+  kor: 같으니라–횃불들에
+  swa: kama–mienge
+
+### Sense 109085 (1 occurrences)
+Grammar: Prep-k | N-ms
+  eng: like–a–torch
+  spa: como–antorcha
+  hin: मशाल–की–तरह
+  arb: كَ–مِشْعَلٍ
+  kor: 횏불처럼
+  swa: kama–mwenge
+
+## Task
+
+Group these 12 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

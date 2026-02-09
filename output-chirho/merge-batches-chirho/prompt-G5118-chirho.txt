@@ -1,0 +1,145 @@
+# Sense Merge Task for G5118
+
+Lemma: G5118 (POS: DPro-AMP)
+Total occurrences: 20
+Current sense count: 13
+
+This Hebrew/Greek lemma has been over-split into 13 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 77839 (4 occurrences)
+Grammar: DPro-DNS,DPro-AMS,DPro-ANS
+  eng: so–much, so-much, by–so–much
+  spa: tanto
+  hin: उतना, इतने, इतना
+  arb: هٰذَا–الزَمَنِ, هٰذَا, بِهذا القَدْرِ
+  kor: 이만큼, 그만큼
+  swa: hivyo, muda–mrefu–hivyo, kwa–kiasi–hicho
+
+### Sense 77840 (2 occurrences)
+Grammar: DPro-ANS,DPro-NMS
+  eng: so-great
+  spa: tan–grande, tan-grande
+  hin: इतनी, इतना–बड़ा
+  arb: هذا, مِثْلَ–هٰذَا
+  kor: 이렇게–큰, 그–큰
+  swa: mkubwa–hivyo, kubwa–hivyo
+
+### Sense 77841 (2 occurrences)
+Grammar: DPro-AFS
+  eng: such, so-great
+  spa: tan–grande, tanta
+  hin: इतना
+  arb: مِثلَ–هَٰذا, بِهٰذا–القَدرِ
+  kor: 이만한, 이렇게–큰
+  swa: kubwa–hivyo, kubwa-hivyo
+
+### Sense 77842 (2 occurrences)
+Grammar: DPro-ANP,DPro-DMS
+  eng: So–many, So–long
+  spa: Tanto, Tantas
+  hin: इतने
+  arb: هٰكَذَا, كَثِيرَةً
+  kor: 이렇게–오랜, 이렇게–많은
+  swa: Muda-mrefu, Ingawa
+
+### Sense 77843 (2 occurrences)
+Grammar: DPro-GNS
+  eng: for–so–much
+  spa: por–tanto
+  hin: –ज़मीन
+  arb: بِهَذَا
+  kor: 이만큼–에
+  swa: kiasi–hiki
+
+### Sense 77844 (1 occurrences)
+Grammar: DPro-ANP
+  eng: so-many-things
+  spa: tantas-cosas
+  hin: इतन
+  arb: كَثيرًا
+  kor: 그렇게–많은–것들을
+  swa: mengi
+
+### Sense 77845 (1 occurrences)
+Grammar: DPro-AMS
+  eng: so-great
+  spa: tan-grande?
+  hin: इतनि
+  arb: بِهٰذَا–الكَثْرَةِ
+  kor: 이만큼의
+  swa: kubwa–kiasi–hiki
+
+### Sense 77846 (1 occurrences)
+Grammar: DPro-ANP
+  eng: so-many
+  spa: tantos
+  hin: इतने
+  arb: هَذِهِ–الكَثِيرَةَ
+  kor: 이–많은
+  swa: miaka–mingi–hii
+
+### Sense 77847 (1 occurrences)
+Grammar: DPro-AMP
+  eng: so-many
+  spa: –tantos
+  hin: इतनों?
+  arb: هَؤُلَاءِ–الْكَثِيرِينَ
+  kor: 이렇게–많은–사람들에게
+  swa: wengi–hivi
+
+### Sense 77848 (1 occurrences)
+Grammar: DPro-GMP
+  eng: so–many
+  spa: tantos
+  hin: इतनी
+  arb: مَعَ–كَثْرَتِها
+  kor: 이렇게–많아도
+  swa: ingawa–wengi
+
+### Sense 77849 (1 occurrences)
+Grammar: DPro-DNS
+  eng: by-so-much
+  spa: tanto-más
+  hin: उतना
+  arb: بِقَدْرِ–مَا
+  kor: 이만큼
+  swa: zaidi
+
+### Sense 77850 (1 occurrences)
+Grammar: DPro-NMP
+  eng: so-many
+  spa: tantos
+  hin: इतनि
+  arb: بِهٰذَا–القَدْرِ
+  kor: 이만큼
+  swa: mingi–kiasi–hiki
+
+### Sense 77851 (1 occurrences)
+Grammar: DPro-NNP
+  eng: so-many
+  spa: tantos
+  hin: इतने
+  arb: كَثيرَةٌ
+  kor: 이만큼
+  swa: nyingi
+
+## Task
+
+Group these 13 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

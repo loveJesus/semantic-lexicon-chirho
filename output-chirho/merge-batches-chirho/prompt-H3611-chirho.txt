@@ -1,0 +1,153 @@
+# Sense Merge Task for H3611
+
+Lemma: H3611 (POS: N-mp)
+Total occurrences: 32
+Current sense count: 14
+
+This Hebrew/Greek lemma has been over-split into 14 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 106213 (9 occurrences)
+Grammar: Art | N-mp
+  eng: the–dogs
+  spa: los–perros, Los–perros
+  hin: कुत्ते, हक्कलावीम, कुत्तों–ने
+  arb: ال–كِلابُ, الْكِلَابُ, الْكِلابُ
+  kor: 그–개들이, 개들이
+  swa: mbwa
+
+### Sense 106214 (7 occurrences)
+Grammar: N-ms
+  eng: a–dog, dog, the–dog
+  spa: perro, un–perro
+  hin: कुत्ता, कुत्ते–के, कुत्ते–की
+  arb: كَلْبٍ, كَلْبٌ, كَلبٍ
+  kor: 개–의, 개의–목을, 개의
+  swa: mbwa, ya–mbwa
+
+### Sense 106215 (4 occurrences)
+Grammar: Art | N-ms
+  eng: the–dog
+  spa: el–perro
+  hin: कुत्ता, हक्केलेव, कुत्ते
+  arb: الْكَلْبُ, الكَلبِ, الكَلبُ–
+  kor: 개가, 그–개, 개냐
+  swa: mbwa
+
+### Sense 106216 (2 occurrences)
+Grammar: Prep-k, Art | N-ms
+  eng: like–the–dog
+  spa: como–perro
+  hin: कुत्ते–की–तरह
+  arb: كَ–الكَلبِ
+  kor: 개–처럼
+  swa: kama–mbwa
+
+### Sense 106217 (1 occurrences)
+Grammar: Prep-l | N-ms
+  eng: to–dog
+  spa: a–perro
+  hin: के–लिए–कुत्ते
+  arb: لِ–كِلِب
+  kor: 개–에게
+  swa: kwa–mbwa
+
+### Sense 106218 (1 occurrences)
+Grammar: Conj-w, Art | N-mp
+  eng: and–the–dogs
+  spa: Y–los–perros
+  hin: और–कुत्ते
+  arb: وَ–الْكِلَابُ
+  kor: 그리고–개들은
+  swa: Na–mbwa
+
+### Sense 106219 (1 occurrences)
+Grammar: Prep-l, Art | N-ms
+  eng: to-the-dog
+  spa: al–perro
+  hin: कुत्ते–को
+  arb: لِ–الكَلبِ
+  kor: 개–에게
+  swa: kwa–mbwa
+
+### Sense 106220 (1 occurrences)
+Grammar: Art | N-mp
+  eng: the–dogs
+  spa: los–perros
+  hin: कुत्तों
+  arb: الْكِلَابَ
+  kor: 개들을
+  swa: mbwa
+
+### Sense 106221 (1 occurrences)
+Grammar: Prep-k | N-ms
+  eng: like–a–dog
+  spa: Como–perro
+  hin: जैसे–कुत्ता
+  arb: كَ–كَلْبٍ
+  kor: 같이–개
+  swa: kama–mbwa
+
+### Sense 106222 (1 occurrences)
+Grammar: N-mpc | 2ms
+  eng: your–dogs
+  spa: tus–perros
+  arb: كِلابِكَ
+  kor: 주–의–개–들–의
+  swa: wa–mbwa-wako
+
+### Sense 106223 (1 occurrences)
+Grammar: N-mp
+  eng: dogs
+  spa: perros
+  hin: कुत्तों–ने
+  arb: كِلاَبٌ
+  kor: 개들–이
+  swa: mbwa
+
+### Sense 106224 (1 occurrences)
+Grammar: N-mpc
+  eng: dogs-of
+  spa: los–perros–de
+  hin: कुत्तों–के
+  arb: كِلابِ
+  kor: 개들–의
+  swa: mbwa–wa
+
+### Sense 106225 (1 occurrences)
+Grammar: N-mp
+  eng: dogs
+  spa: perros
+  hin: कुत्ते
+  arb: كِلَابٌ
+  kor: 개들이니
+  swa: mbwa
+
+### Sense 106226 (1 occurrences)
+Grammar: Art | N-ms
+  eng: am–a–dog
+  spa: acaso–perro
+  hin: क्य-कुत्त
+  arb: هَلْ–كَلْبٌ
+  kor: 개냐–
+  swa: mbwa
+
+## Task
+
+Group these 14 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

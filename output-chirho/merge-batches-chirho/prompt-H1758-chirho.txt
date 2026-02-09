@@ -1,0 +1,154 @@
+# Sense Merge Task for H1758
+
+Lemma: H1758 (POS: Conj-w | V-Qal-Imp-fs)
+Total occurrences: 14
+Current sense count: 14
+
+This Hebrew/Greek lemma has been over-split into 14 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 91493 (1 occurrences)
+Grammar: V-Qal-Perf-3ms
+  eng: threshing
+  spa: estaba–trillando
+  hin: दाव–रहा–था
+  arb: يَدْرُسُ
+  kor: 타작하는–중이었다
+  swa: alikuwa–akipura
+
+### Sense 91494 (1 occurrences)
+Grammar: Prep-l | V-Qal-Inf
+  eng: for–threshing
+  spa: para–trillar
+  hin: लदूश
+  arb: لِلدَّوْسِ
+  kor: ~을–위한–타작
+  swa: kupura
+
+### Sense 91495 (1 occurrences)
+Grammar: Prep-b | V-Qal-Inf | 3ms
+  eng: when–it-threshes
+  spa: en–su–trillar
+  hin: दाँवने–में–उसके
+  arb: فِي–دَيْسِهِ
+  kor: 그–타작할–때에
+  swa: anapopura
+
+### Sense 91496 (1 occurrences)
+Grammar: Prep-k | V-Nifal-Inf
+  eng: as–is–trampled
+  spa: como–se–trilla
+  hin: जैसे–रौंदना
+  arb: كَدَوْسِ
+  kor: 밟는–것–같이
+  swa: kama–kukanyagwa
+
+### Sense 91497 (1 occurrences)
+Grammar: Prep-l | V-Qal-Inf
+  eng: to–thresh
+  spa: trillar
+  hin: दाँवना–को
+  arb: الدَّوسَ
+  kor: 에–타작하기를
+  swa: kupura
+
+### Sense 91498 (1 occurrences)
+Grammar: V-Qal-Inf | 3mp
+  eng: their–threshing
+  spa: trillar–ellos
+  hin: दाँवने–उनके
+  arb: دَرْسِهِمْ
+  kor: 그들이–타작함
+  swa: kupura–kwao
+
+### Sense 91499 (1 occurrences)
+Grammar: Conj-w | V-Qal-Imp-fs
+  eng: and–thresh
+  spa: y–trilla
+  hin: और–दावना–कर
+  arb: وَدُوسِي
+  kor: 그리고–타작하라
+  swa: na–upure
+
+### Sense 91500 (1 occurrences)
+Grammar: Conj-w | V-Nifal-ConjPerf-3ms
+  eng: and–shall–be–trampled
+  spa: y–será–trillado
+  hin: और–रौंदा–जाएगा
+  arb: وَيُدَاسُ
+  kor: 그리고–밟히리니
+  swa: na–atakanyagwa
+
+### Sense 91501 (1 occurrences)
+Grammar: V-Qal-Imperf-2ms
+  eng: you–thresh
+  spa: trillas
+  hin: तूने–दाँया
+  arb: تَدُوسُ
+  kor: 밟으셨도다
+  swa: unapura
+
+### Sense 91502 (1 occurrences)
+Grammar: V-Qal-Imperf-3fs | 3fs
+  eng: may–trample–it
+  spa: los–pisoteará
+  hin: उन्हें–रौंदेगा
+  arb: تَدُوسُهُ.
+  kor: 밟으리라–그것을
+  swa: utayakanyaga
+
+### Sense 91503 (1 occurrences)
+Grammar: V-Hofal-Imperf-3ms
+  eng: is–threshed
+  spa: se–trilla
+  hin: दावनी–जाता–है
+  arb: يُدَاسُ
+  kor: 타작하지
+  swa: hupurwa
+
+### Sense 91504 (1 occurrences)
+Grammar: V-Qal-Imperf-3ms | 3mse
+  eng: threshing
+  spa: lo–trilla
+  hin: दावेगा–उसे
+  arb: يَدُوسُهُ
+  kor: 타작하지
+  swa: atapura
+
+### Sense 91505 (1 occurrences)
+Grammar: Conj-w | V-Qal-ConjPerf-1cs
+  eng: and–I-will-thresh
+  spa: y–trillaré
+  hin: और–पीटूँगा
+  arb: وَ-أَدُوسُ
+  kor: 그리고–타작하겠다
+  swa: na–nitapura
+
+### Sense 91506 (1 occurrences)
+Grammar: V-Qal-Imperf-2ms
+  eng: mountains
+  spa: trillarás
+  hin: दावेगी–तू
+  arb: تَدُوسِينَ
+  kor: 타작하리라
+  swa: utapura
+
+## Task
+
+Group these 14 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

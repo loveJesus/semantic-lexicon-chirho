@@ -1,0 +1,117 @@
+# Sense Merge Task for H3569
+
+Lemma: H3569 (POS: Prep-l)
+Total occurrences: 23
+Current sense count: 10
+
+This Hebrew/Greek lemma has been over-split into 10 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 105786 (8 occurrences)
+Grammar: N-proper-ms,Art | N-proper-ms
+  eng: the–Cushite
+  spa: el–cusita, cusita
+  hin: कूशी–ने, कूशी, कूशी–से
+  arb: الْكوشي, الْكوشيَّ, الكوشِيُّ
+  kor: 그–구시–사람이, 그–구시–사람, 그–구시–사람을
+  swa: Mkushi
+
+### Sense 105787 (5 occurrences)
+Grammar: N-proper-ms,Art | N-proper-ms
+  eng: the–Kushi, the–Kushite, Cushite
+  spa: varón, el–cusita, diciendo
+  hin: कूशी, कूशी–ने
+  arb: الْكُوشِيُّ, الْكُوشِيِّ, الْكُوشِيَّ
+  kor: 구시인이, 구시인에게
+  swa: Mkushi
+
+### Sense 105788 (3 occurrences)
+Grammar: Art | N-proper-mp
+  eng: the–Cushites
+  spa: los–cusitas
+  hin: के–कूशी, के–कूशियों
+  arb: الكُوشِيُّونَ, الكوشيّينَ, الكوشيّونَ
+  kor: 그–구스인들이, 그–구스인들을, 그–구스인들과
+  swa: Wakushi
+
+### Sense 105789 (1 occurrences)
+Grammar: N-proper-mp
+  eng: O–Cushim
+  spa: cusitas
+  hin: कूशियों
+  arb: يَا–كُوشِيُّونَ
+  kor: 구스인들아
+  swa: Wakushi
+
+### Sense 105790 (1 occurrences)
+Grammar: Conj-w | N-proper-mp
+  eng: and–Kushim
+  spa: y–cusitas
+  hin: और–कूशी
+  arb: وَ–الْكُوشِيُّونَ
+  kor: 그리고–구시–사람들이
+  swa: na–Wakushi
+
+### Sense 105791 (1 occurrences)
+Grammar: N-proper-mp
+  eng: Kushim
+  spa: los–cusitas
+  hin: कूशियोंके।
+  arb: الكُوشِيِّينَ
+  kor: 구스인들의
+  swa: Wakushi
+
+### Sense 105792 (1 occurrences)
+Grammar: Conj-w | N-proper-mp
+  eng: and–Cushites
+  spa: y–etíopes
+  arb: وَكوشيّينَ
+  kor: 그리고–구실–사람들
+  swa: na–Wakushi
+
+### Sense 105793 (1 occurrences)
+Grammar: Prep-m | N-proper-mp
+  eng: from–Cushites
+  spa: de–cusitas
+  hin: से–कूशियों
+  arb: مِنَ–الكوشيّينَ
+  kor: 에서–구스인들
+  swa: kutoka–Wakushi
+
+### Sense 105794 (1 occurrences)
+Grammar: Prep-l, Art | N-proper-ms
+  eng: to–the–Cushite
+  spa: al–cusita
+  hin: कूशी–से
+  arb: لِ–الْكوشي
+  kor: 에게–구시–사람
+  swa: kwa–Mkushi
+
+### Sense 105795 (1 occurrences)
+Grammar: N-proper-mp
+  eng: the–Kushites
+  spa: cusitas
+  hin: कूशियों–के
+  arb: الْكُوشِيِّينَ
+  kor: 구신인들의
+  swa: Wakushi
+
+## Task
+
+Group these 10 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

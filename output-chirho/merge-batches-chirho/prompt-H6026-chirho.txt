@@ -1,0 +1,118 @@
+# Sense Merge Task for H6026
+
+Lemma: H6026 (POS: V-Hitpael-Imperf-2ms)
+Total occurrences: 10
+Current sense count: 10
+
+This Hebrew/Greek lemma has been over-split into 10 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 125106 (1 occurrences)
+Grammar: Conj-w | V-Hitpael-Imp-ms
+  eng: and–delight–yourself
+  spa: Y–deléitate
+  hin: और–आनन्दित–हो
+  arb: وَتَلَذَّذْ
+  kor: 그리고–즐거워하라
+  swa: Na–ujifurahishe
+
+### Sense 125107 (1 occurrences)
+Grammar: V-Hitpael-Imperf-2ms
+  eng: you–will–delight
+  spa: te–deleitarás
+  hin: तू–आनंदित–होगा
+  arb: تَتَنَعَّمُ
+  kor: 기뮰하고
+  swa: utajifurahisha
+
+### Sense 125108 (1 occurrences)
+Grammar: Conj-w | V-Hitpael-ConjPerf-3c
+  eng: and–will–delight–themselves
+  spa: y–se–deleitarán
+  hin: और–आनन्दित–होंगे
+  arb: وَيَتَلَذَّذونَ
+  kor: 그리고–즐거워하리이다
+  swa: na–watajifurahisha
+
+### Sense 125109 (1 occurrences)
+Grammar: V-Hitpael-Imperf-2ms
+  eng: you–shall–delight–yourself
+  spa: te–deleitarás
+  hin: आनन्दित–होगा
+  arb: تَتَلَذَّذُ
+  kor: 즐거워하리라
+  swa: utajifurahisha
+
+### Sense 125110 (1 occurrences)
+Grammar: Prep-m | V-Hitpael-Inf
+  eng: from-delicateness
+  spa: por–delicadeza
+  hin: सुकुमार–होने–से
+  arb: مِنَ–التَّنَعُّمِ
+  kor: (전)–사치스러움–에서
+  swa: kwa–kustarehesha
+
+### Sense 125111 (1 occurrences)
+Grammar: V-Hitpael-Imperf-2mp
+  eng: do-you-mock
+  spa: os–burláis
+  hin: ठठ्ठा–करते–हो
+  arb: تَتَلَذَّذُونَ
+  kor: 너희가–즐기는가
+  swa: mnajifurahisha
+
+### Sense 125112 (1 occurrences)
+Grammar: Conj-w | V-Hitpael-ConjPerf-2m
+  eng: and–delight–yourselves
+  spa: y–os–deleitéis
+  hin: और–आनन्द–लो
+  arb: وَتَتَنَعَّمُوا
+  kor: 그리고–즐길–것이다
+  swa: na–kujifurahisha
+
+### Sense 125113 (1 occurrences)
+Grammar: Conj-w, Art | V-Pual-Prtcpl-fs
+  eng: and–the–delicate
+  spa: y–la–delicada
+  hin: और–कोमल
+  arb: وَ–الـ–مُترَفِّهَةُ
+  kor: 그리고–연약한–자를
+  swa: na–mwenye–anasa
+
+### Sense 125114 (1 occurrences)
+Grammar: V-Hitpael-Imperf-3ms
+  eng: he-delights
+  spa: se–deleitará
+  hin: वह–आनंदित–होगा
+  arb: يَتَلَذَّذُ
+  kor: 부르겠느냐
+  swa: atajifurahisha
+
+### Sense 125115 (1 occurrences)
+Grammar: Conj-w | V-Hitpael-ConjImperf-
+  eng: and–let-delight-itself
+  spa: y–se–deleitará
+  hin: और–आनन्दित–हो
+  arb: وَ–تَتَنَعَّمُ
+  kor: 그리고–즐거워하라
+  swa: na–itajifurahisha
+
+## Task
+
+Group these 10 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

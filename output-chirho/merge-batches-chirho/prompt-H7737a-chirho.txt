@@ -1,0 +1,135 @@
+# Sense Merge Task for H7737a
+
+Lemma: H7737a (POS: V-Piel-Perf-1cs)
+Total occurrences: 14
+Current sense count: 12
+
+This Hebrew/Greek lemma has been over-split into 12 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 138932 (2 occurrences)
+Grammar: V-Qal-Prtcpl-ms
+  eng: worth, equal
+  spa: vale, igual
+  hin: पूरा–कर–सकता, काम–आता
+  arb: مُنَاسِبٌ, مُنَاسِبًا
+  kor: 가치있지
+  swa: wakati-wote, anayestahili
+
+### Sense 138933 (2 occurrences)
+Grammar: V-Qal-Imperf-3mp
+  eng: can–compare
+  spa: se–igualan
+  hin: बराबर–
+  arb: تُسَاوِيهَا–
+  kor: 비교된다
+  swa: kulingana
+
+### Sense 138934 (1 occurrences)
+Grammar: V-Piel-Perf-1cs
+  eng: I–have–set–before–me
+  spa: puse
+  arb: وَضَعْتُ
+  kor: 놓았나이다
+  swa: nimeweka
+
+### Sense 138935 (1 occurrences)
+Grammar: V-Piel-Perf-1cs
+  eng: I–have–calmed
+  spa: he–aquietado
+  hin: मैंने–शान्त–किया
+  arb: أُهَدِّئْ
+  kor: 고르게–하였고
+  swa: nimetulia
+
+### Sense 138936 (1 occurrences)
+Grammar: V-Qal-Imperf-2ms
+  eng: you–be–like
+  spa: te–iguales–
+  hin: तू–बराबर–हो–जाए–
+  arb: تَصِيرَ–
+  kor: 같아지리라–네가
+  swa: ukafanana–
+
+### Sense 138937 (1 occurrences)
+Grammar: V-Nithpael-Perf-3fs
+  eng: are–alike
+  spa: son–iguales
+  hin: समान।
+  arb: مُتَساوِيانِ
+  kor: 같다
+  swa: wanafanana
+
+### Sense 138938 (1 occurrences)
+Grammar: V-Piel-Perf-3ms
+  eng: he–has–leveled
+  spa: ha–nivelado
+  hin: समतल–करता–है
+  arb: سَوَّى
+  kor: 그가–고르게–하면
+  swa: kusawazisha
+
+### Sense 138939 (1 occurrences)
+Grammar: Conj-w | V-Hifil-ConjImperf-2m
+  eng: and–make–equal
+  spa: e–igualaréis?
+  hin: और–बराबर–करोगे
+  arb: وَ–تُسَاوُونَ
+  kor: 그리고–같게–하겠느뇨
+  swa: na–kunilinganisha
+
+### Sense 138940 (1 occurrences)
+Grammar: Conj-w | V-Qal-ConjImperf.h-1c
+  eng: says
+  spa: y–seré–igual?
+  hin: और–बराबर–होंगा
+  arb: وَأُسَاوِيهِ
+  kor: 그리고–같겠느뇨
+  swa: na–niwe–sawa
+
+### Sense 138941 (1 occurrences)
+Grammar: V-Qal-Prtcpl-ms
+  eng: profit
+  spa: provecho
+  hin: उचित
+  arb: مُنَاسِبٌ
+  kor: 이익이
+  swa: inafaa
+
+### Sense 138942 (1 occurrences)
+Grammar: V-Hifil-Imperf-1cs
+  eng: shall–I–liken
+  spa: te–igualaré
+  hin: समान–करूं–
+  arb: أُسَاوِي–
+  kor: 내–가–같게–하리오
+  swa: kukufananisha–na
+
+### Sense 138943 (1 occurrences)
+Grammar: V-Qal-Perf-3ms
+  eng: it–was–equal
+  spa: me–fue–igual
+  hin: लाभदायक–था
+  arb: ساوى
+  kor: 합당하였다
+  swa: ilikuwa–sawa
+
+## Task
+
+Group these 12 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

@@ -1,0 +1,117 @@
+# Sense Merge Task for H7430
+
+Lemma: H7430 (POS: Art | V-Qal-Prtcpl-fs)
+Total occurrences: 17
+Current sense count: 10
+
+This Hebrew/Greek lemma has been over-split into 10 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 136092 (3 occurrences)
+Grammar: Art | V-Qal-Prtcpl-fs,Art | V-Qal-Prtcpl-ms
+  eng: the–crawling
+  spa: que–se–arrastra, la–que–se–arrastra, el–que–se–arrastra
+  hin: रेंगने–वाला, रेंगने–वाले
+  arb: الدَّابَّةِ, يَدِبُّ
+  kor: 그–기는, 그–움직이는
+  swa: kinachotambaa, inayotambaa
+
+### Sense 136093 (3 occurrences)
+Grammar: V-Qal-Prtcpl-ms,V-Qal-Imperf-3fs
+  eng: creeps
+  spa: se–arrastra
+  hin: रेनगता, रेंगती–है
+  arb: يَدِبُّ
+  kor: 기는, 기어다니는
+  swa: wanaotambaa, kinatambaa, kinachotambaa
+
+### Sense 136094 (3 occurrences)
+Grammar: Art | V-Qal-Prtcpl-ms
+  eng: the–creeping
+  spa: el–que–se–arrastra, la–que–se–arrastra
+  hin: जो-रेनगते-हैन, जो-रेनगते, जो-रेनगता
+  arb: الَّتِي–تَدِبُّ, يَدِبُّ
+  kor: 그–기는
+  swa: wanaotambaa, vinavyotambaa, kinachotambaa
+
+### Sense 136095 (2 occurrences)
+Grammar: Art | V-Qal-Prtcpl-ms,Art | V-Qal-Prtcpl-fs
+  eng: the–moving, the–creeping
+  spa: la–que-se-mueve, el–que-se-arrastra
+  hin: पर, चलने वाला
+  arb: الزَّاحِفِ, الزَّاحِفَةِ
+  kor: 움직이는
+  swa: kinachotambaa
+
+### Sense 136096 (1 occurrences)
+Grammar: V-Qal-Prtcpl-ms
+  eng: creature–that–moves
+  spa: lo–que–se–mueve
+  arb: ما–يَدِبُّ
+  kor: 기어다니는–것–이
+  swa: kitambaacho
+
+### Sense 136097 (1 occurrences)
+Grammar: V-Qal-Prtcpl-ms
+  eng: crawler
+  spa: que–se–arrastra
+  hin: रेंगने–वाला
+  arb: دَابَّةٍ
+  kor: 기는–것
+  swa: kitambacho
+
+### Sense 136098 (1 occurrences)
+Grammar: V-Qal-Prtcpl-ms
+  eng: creeping
+  spa: el–que–se–arrastra
+  hin: जो-रेनगता
+  arb: مَا–يَدِبُّ
+  kor: 기는–것
+  swa: kitu–kitambaacho
+
+### Sense 136099 (1 occurrences)
+Grammar: V-Qal-Imperf-3fs
+  eng: creeps
+  spa: se–arrastra
+  hin: रेंगते–हैं
+  arb: تَدِبّ
+  kor: 기어다니리라
+  swa: wanatambaa
+
+### Sense 136100 (1 occurrences)
+Grammar: Art | V-Qal-Prtcpl-ms
+  eng: the–creeping
+  spa: el–que–se–arrastra
+  hin: जो–रेंगते–हैं
+  arb: الدَّابَّةِ
+  kor: 그–기는자이다
+  swa: vitambavyo
+
+### Sense 136101 (1 occurrences)
+Grammar: V-Qal-Prtcpl-ms
+  eng: creeping–thing
+  spa: que–se–arrastre
+  hin: रेंगते–की
+  arb: زَاحِفٍ
+  kor: 기는–것의
+  swa: kitambaacho
+
+## Task
+
+Group these 10 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

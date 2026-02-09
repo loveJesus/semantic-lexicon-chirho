@@ -1,0 +1,145 @@
+# Sense Merge Task for H0268
+
+Lemma: H0268 (POS: Conj-w | N-ms)
+Total occurrences: 41
+Current sense count: 13
+
+This Hebrew/Greek lemma has been over-split into 13 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 81045 (26 occurrences)
+Grammar: N-ms,Prep-l | N-ms
+  eng: backward, back, backwards
+  spa: atrás, hacia–atrás
+  hin: पीछे, पीछे–से, को–पीछे
+  arb: إِلَى–الْوَرَاءِ, إِلَى–الوَرَاءِ, إِلى–الوَراءِ
+  kor: 뒤–로, 뒤로, 뒤로–
+  swa: nyuma
+
+### Sense 81046 (3 occurrences)
+Grammar: Conj-w | N-ms
+  eng: and–rear, and–back
+  spa: y–por–detrás, y–atrás
+  hin: और–पीछे, और–पीछे–से
+  arb: وَ–ظَهْرًا, وَ–خَلْفًا, وَمِن–خَلفٍ
+  kor: 그리고–뒤, 그리고–뒤면에
+  swa: na–nyuma
+
+### Sense 81047 (2 occurrences)
+Grammar: Prep-l | N-ms
+  eng: hereafter, for–afterward
+  spa: para–el–futuro, para–después
+  hin: को–भविष्यत, को–पीछे
+  arb: لِلْمُسْتَقْبَلِ
+  kor: 이후에, 이후를–위하여
+  swa: za–baadaye, kwa–wakati–ujao
+
+### Sense 81048 (1 occurrences)
+Grammar: N-mpc | 3mp
+  eng: their-hindquarters
+  spa: sus–traseros
+  hin: उनके–पिछले–भाग
+  arb: أَدْبَارِهَا
+  kor: 그들–의-뒤쪽
+  swa: za–nyuma
+
+### Sense 81049 (1 occurrences)
+Grammar: Prep-b | N-ms
+  eng: in–the–end
+  spa: al–final
+  hin: पीछे–से
+  arb: بِ–الْآخِرِ
+  kor: 뒤에
+  swa: mwishoni
+
+### Sense 81050 (1 occurrences)
+Grammar: Prep-m | N-ms
+  eng: from–west
+  spa: del-occidente
+  hin: पश्चिम–से
+  arb: مِنَ–الْغَرْبِ
+  kor: 뒤–에서
+  swa: kutoka-magharibi
+
+### Sense 81051 (1 occurrences)
+Grammar: N-mpc | 3mp
+  eng: their-hindquarters
+  spa: partes–traseras–de–ellos
+  hin: पीछे–उनके
+  arb: أَعْجَازِهِمْ
+  kor: 그것들의-뒤쪽은
+  swa: nyuma–zao
+
+### Sense 81052 (1 occurrences)
+Grammar: N-mpc
+  eng: back-of
+  spa: parte–trasera–de
+  hin: पीछे
+  arb: مُؤَخِّرِ
+  kor: 뒤에
+  swa: nyuma
+
+### Sense 81053 (1 occurrences)
+Grammar: N-mpc | 1cs
+  eng: my–back
+  spa: mis–espaldas
+  hin: मेरी–पीठ
+  arb: ظَهري
+  kor: 나의–뒷을
+  swa: mgongo–wangu
+
+### Sense 81054 (1 occurrences)
+Grammar: Conj-w, Prep-m | N-ms
+  eng: and–from–behind
+  spa: y–por–detrás
+  hin: और–पीछे–से
+  arb: وَمِن–الخَلفِ
+  kor: 그리고–에서–뒤
+  swa: na–nyuma
+
+### Sense 81055 (1 occurrences)
+Grammar: Conj-w | N-ms
+  eng: and–west
+  spa: y–al–occidente
+  hin: और–पश्चिम–को
+  arb: وَ–أَخْلَفًا
+  kor: 그리고–서쪽으로
+  swa: na–magharibi
+
+### Sense 81056 (1 occurrences)
+Grammar: N-ms
+  eng: behind
+  spa: Detrás
+  hin: पीछे
+  arb: مِنْ–وَرَاءٍ
+  kor: 뒤–와
+  swa: nyuma
+
+### Sense 81057 (1 occurrences)
+Grammar: N-mpc | 3mp
+  eng: backs-of-them
+  spa: espaldas–de–ellos
+  hin: उनकी–पीठ
+  arb: ظُهورُهُمْ
+  kor: 그들의–등을
+  swa: migongo–yao
+
+## Task
+
+Group these 13 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

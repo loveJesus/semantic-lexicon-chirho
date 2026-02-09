@@ -1,0 +1,181 @@
+# Sense Merge Task for G0680
+
+Lemma: G0680 (POS: V-APM-NMS)
+Total occurrences: 36
+Current sense count: 17
+
+This Hebrew/Greek lemma has been over-split into 17 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 63225 (14 occurrences)
+Grammar: V-AIM-3S
+  eng: he-touched, touched, she-touched
+  spa: tocó, le–tocó
+  hin: छूआ, छूई, छुआ
+  arb: لَمَسَ, لَمَسَهُ, لَمَسَتْ
+  kor: 만졌다, 만지셨다, 만졌느냐?
+  swa: alimgusa, aligusa, akamgusa
+
+### Sense 63226 (3 occurrences)
+Grammar: V-ASM-3S,V-PSM-3S
+  eng: he-might-touch
+  spa: tocara, tocase
+  hin: छुए
+  arb: يَلْمِسَهُمْ, يَلْمِسَهُ, يَلمُسَ
+  kor: 만지시도록, 만지도록, 만지기를
+  swa: awaguse, amguse
+
+### Sense 63227 (2 occurrences)
+Grammar: V-APM-NMS
+  eng: having-touched
+  spa: que–me–tocó
+  hin: छूआ
+  arb: لامِسُ
+  kor: 만진–사람이
+  swa: aliyenigusa
+
+### Sense 63228 (2 occurrences)
+Grammar: V-ASM-3P
+  eng: they–might–touch, they-might-touch
+  spa: tocaran
+  hin: छुएन, और
+  arb: يَلْمِسُوا, يَلْمِسوا
+  kor: 만지게;, 만지게
+  swa: waguse
+
+### Sense 63229 (2 occurrences)
+Grammar: V-APM-NMS
+  eng: having-touched
+  spa: tocando, habiendo-tocado
+  hin: छूकर, छुकर
+  arb: لَمَسَ
+  kor: 만지시며, 만지시고
+  swa: akiwagusa, akigusa
+
+### Sense 63230 (2 occurrences)
+Grammar: V-ASM-1S
+  eng: I-touch
+  spa: toque, toco
+  hin: छूउँ, कहती–थी–क्योंकि
+  arb: لَمَسْتُ, لَمَستُ
+  kor: 만지면
+  swa: nikigusa
+
+### Sense 63231 (1 occurrences)
+Grammar: V-PNM
+  eng: to–touch
+  spa: tocar
+  hin: छूने–को
+  arb: أَن–يَلمَسوهُ
+  kor: 만지기를
+  swa: kumgusa
+
+### Sense 63232 (1 occurrences)
+Grammar: V-PIM-3S
+  eng: touches
+  spa: le-toca
+  hin: छूता
+  arb: يَلمِسُهُ
+  kor: 만지지
+  swa: gusi
+
+### Sense 63233 (1 occurrences)
+Grammar: V-AIM-3P
+  eng: touched
+  spa: tocaron
+  hin: छुये
+  arb: لَمَسُوا
+  kor: 만진–자들은
+  swa: waligusa
+
+### Sense 63234 (1 occurrences)
+Grammar: V-AIM-3P
+  eng: touched
+  spa: tocaron
+  hin: आशीष–देता–था
+  arb: لَمَسَهُ
+  kor: 만졌다
+  swa: waliomgusa
+
+### Sense 63235 (1 occurrences)
+Grammar: V-PIM-3S
+  eng: touches
+  spa: toca
+  hin: छूती–है
+  arb: تَلمَسُهُ
+  kor: 만지는
+  swa: anayemgusa
+
+### Sense 63236 (1 occurrences)
+Grammar: V-AIM-3S
+  eng: Touched
+  spa: me–tocó
+  hin: छूआ
+  arb: لَمَسَ
+  kor: 만졌다
+  swa: Alinigusa
+
+### Sense 63237 (1 occurrences)
+Grammar: V-ASM-2S
+  eng: handle
+  spa: toques
+  hin: छुयो
+  arb: تَمَسَّ
+  kor: 맛보지–말라
+  swa: shike
+
+### Sense 63238 (1 occurrences)
+Grammar: V-PNM
+  eng: to–touch
+  spa: tocar
+  hin: छूना
+  arb: أَنْ–يَمَسَّ
+  kor: 만지라
+  swa: asimguse;
+
+### Sense 63239 (1 occurrences)
+Grammar: V-PMM-2S
+  eng: touch
+  spa: te-agarres
+  hin: छू
+  arb: تَلْمِسِي
+  kor: 만지다
+  swa: nishike
+
+### Sense 63240 (1 occurrences)
+Grammar: V-PMM-2P
+  eng: touch
+  spa: toquéis
+  hin: छूओ
+  arb: تَمَسّوا
+  kor: 만지라
+  swa: msiguse.
+
+### Sense 63241 (1 occurrences)
+Grammar: V-ASM-3P
+  eng: they-might-touch
+  spa: toquen
+  hin: उसे
+  arb: يَلْمِسوهُ
+  kor: 만지려고
+  swa: wamguse,
+
+## Task
+
+Group these 17 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

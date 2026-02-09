@@ -1,0 +1,136 @@
+# Sense Merge Task for G0350
+
+Lemma: G0350 (POS: V-APA-NMP)
+Total occurrences: 16
+Current sense count: 12
+
+This Hebrew/Greek lemma has been over-split into 12 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 62188 (3 occurrences)
+Grammar: V-PPA-NMP
+  eng: questioning, examining
+  spa: preguntando, examinando
+  hin: जाँचते–हुए
+  arb: فاحِصينَ, يَفحَصونَ
+  kor: 묻지–말라, 살펴보며
+  swa: bila–kuuliza, wakiyachunguza
+
+### Sense 62189 (2 occurrences)
+Grammar: V-PIM/P-3S
+  eng: it–is–examined, is–examined
+  spa: se–disciernen, es–discernido
+  hin: जाँचा–जाता–है
+  arb: يُفْحَصُ
+  kor: 분별된다, 분별되지–않는다
+  swa: yanahukumiwa., hahukumiwi.
+
+### Sense 62190 (2 occurrences)
+Grammar: V-APA-NMS,V-APA-NMP
+  eng: having–examined
+  spa: habiéndome-examinado, habiendo-examinado
+  hin: जाँचकर
+  arb: فَحَصوني, إِذا–فَحَصْتَ
+  kor: 심문하여, 심문하고
+  swa: waliponiuliza, ukimchunguza
+
+### Sense 62191 (1 occurrences)
+Grammar: V-PIM/P-1P
+  eng: are–being–examined
+  spa: somos–interrogados
+  hin: पूछे–जाते–हैं
+  arb: نُحَاكَمُ
+  kor: 심문–받는다면
+  swa: tunahojiwa
+
+### Sense 62192 (1 occurrences)
+Grammar: V-PIM/P-3S
+  eng: he-is-examined
+  spa: es–examinado
+  hin: जाँचा–जाता–है
+  arb: يُفحَصُ
+  kor: 심리받고
+  swa: anahukumiwa
+
+### Sense 62193 (1 occurrences)
+Grammar: V-PPA-NMS
+  eng: examining
+  spa: juzgando
+  hin: जाँचनेवाला
+  arb: المُحاكِمُ
+  kor: 심판하는–분이
+  swa: anayenihukumu
+
+### Sense 62194 (1 occurrences)
+Grammar: V-APA-NMS
+  eng: having-examined
+  spa: habiendo-examinado
+  hin: जाँचकर
+  arb: فَحَصْتُ
+  kor: 심문하여
+  swa: nikavichunguza
+
+### Sense 62195 (1 occurrences)
+Grammar: V-PPA-DMP
+  eng: examining
+  spa: juzgando
+  hin: जाँचने–वालों
+  arb: المُحاكِمينَ
+  kor: 심문하는–자들–에게
+  swa: wanaonihoji
+
+### Sense 62196 (1 occurrences)
+Grammar: V-PIA-1S
+  eng: I–examine
+  spa: juzgo
+  hin: जाँचता–हूं
+  arb: أُحاكِمُ
+  kor: 심판한다
+  swa: sijihukumu.
+
+### Sense 62197 (1 occurrences)
+Grammar: V-APA-NMS
+  eng: having–examined
+  spa: interrogando
+  hin: जांचकर
+  arb: فَاحِصًا
+  kor: 심문하고
+  swa: akiwahoji
+
+### Sense 62198 (1 occurrences)
+Grammar: V-ASP-1S
+  eng: I–be–examined
+  spa: sea–juzgado
+  hin: जाँचा–जाऊं
+  arb: أُحَاكَمَ
+  kor: 심판–받으리라
+  swa: nihukumiwe,
+
+### Sense 62199 (1 occurrences)
+Grammar: V-PIA-3S
+  eng: examines
+  spa: discierne
+  hin: जाँचता–है
+  arb: يَفْحَصُ
+  kor: 분별한다
+  swa: anahukumu
+
+## Task
+
+Group these 12 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

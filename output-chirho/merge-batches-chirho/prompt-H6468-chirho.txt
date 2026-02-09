@@ -1,0 +1,136 @@
+# Sense Merge Task for H6468
+
+Lemma: H6468 (POS: N-fpc)
+Total occurrences: 14
+Current sense count: 12
+
+This Hebrew/Greek lemma has been over-split into 12 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 128083 (2 occurrences)
+Grammar: N-fsc | 3mp
+  eng: their–reward, their–former–work
+  spa: su–recompensa, su–obra
+  hin: काम–उनका
+  arb: عَمَلَهُمْ, أُجْرَتَهُمْ
+  kor: 그들의–행위를, 그들의–보상을
+  swa: malipo–yao
+
+### Sense 128084 (2 occurrences)
+Grammar: Conj-w | N-fsc | 3ms
+  eng: and–His–recompense
+  spa: y–su–obra
+  hin: और–कार्य–उसका, और–काम–उसका
+  arb: وَ–عَمَلُهُ, وَجَزَاؤُهُ
+  kor: 그리고–그의–보상이, 그리고–그의–갖을–것이
+  swa: na–malipo–yake
+
+### Sense 128085 (1 occurrences)
+Grammar: Prep-l | N-fsc | 2mp
+  eng: for–your-work
+  spa: para–obra–de–ustedes
+  hin: कार्य–तुम्हारे–लिए
+  arb: لِ–عَمَلِكُمْ
+  kor: 너희의–일–에–대하여
+  swa: kwa–kazi–yenu
+
+### Sense 128086 (1 occurrences)
+Grammar: N-fsc
+  eng: the–wages–of
+  spa: obra–de
+  hin: परिश्रम
+  arb: عَمَلُ
+  kor: 일–은
+  swa: kazi–ya
+
+### Sense 128087 (1 occurrences)
+Grammar: Prep-l | N-fsc | 2fs
+  eng: for–your–work
+  spa: para–tu–obra
+  hin: के–लिए–तेरे–काम
+  arb: لِعَمَلِكِ
+  kor: 네–일에–대하여
+  swa: kwa–kazi–yako
+
+### Sense 128088 (1 occurrences)
+Grammar: N-fpc
+  eng: the–works–of
+  spa: obras–de
+  hin: कामों
+  arb: أَعْمَالِ
+  kor: 일들–을
+  swa: kazi-za
+
+### Sense 128089 (1 occurrences)
+Grammar: N-fsc | 3ms
+  eng: his-payment
+  spa: Su–salario
+  hin: मजदूरी–उसकी
+  arb: عَمَلُهُ
+  kor: 보수가–그의
+  swa: Malipo–yake
+
+### Sense 128090 (1 occurrences)
+Grammar: Prep-l | N-fpc
+  eng: as–for–the–deeds–of
+  spa: en–cuanto–a–obras–de
+  hin: ले–कार्यों
+  arb: لِأَعْمَالِ
+  kor: 행위들–에–대하여
+  swa: Kwa–matendo–ya
+
+### Sense 128091 (1 occurrences)
+Grammar: Conj-w | N-fsc | 1cs
+  eng: and–my–reward
+  spa: y–mi–recompensa
+  hin: और–मेरा–प्रतिफल
+  arb: وَ–أُجْرَتِي
+  kor: 그리고–나의–보상은
+  swa: na–thawabu–yangu
+
+### Sense 128092 (1 occurrences)
+Grammar: N-fsc
+  eng: is–the–work–of
+  spa: sea–la–paga–de
+  hin: कर्म
+  arb: أُجرَة
+  kor: 보응–이라
+  swa: iwe–malipo–ya
+
+### Sense 128093 (1 occurrences)
+Grammar: N-fsc
+  eng: wages–of
+  spa: obra–de
+  hin: कार्य
+  arb: أجْرَةَ–
+  kor: 일–을
+  swa: kazi–ya
+
+### Sense 128094 (1 occurrences)
+Grammar: N-fsc
+  eng: wage-of
+  spa: el–salario–de
+  hin: मजदूरी
+  arb: أُجْرَةَ
+  kor: 임금–의
+  swa: ujira–wa–
+
+## Task
+
+Group these 12 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

@@ -1,0 +1,118 @@
+# Sense Merge Task for H0582
+
+Lemma: H0582 (POS: Prep-m | N-ms)
+Total occurrences: 42
+Current sense count: 10
+
+This Hebrew/Greek lemma has been over-split into 10 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 83279 (17 occurrences)
+Grammar: N-ms
+  eng: man, a–man, men
+  spa: hombre, el–hombre, mortal
+  hin: मनुष्य
+  arb: إنسانٌ, الإِنْسَانُ, إِنسانٌ
+  kor: 사람–이, 사람이, 인간이
+  swa: mwanadamu, mtu, wanadamu
+
+### Sense 83280 (12 occurrences)
+Grammar: N-ms
+  eng: man, men
+  spa: hombre, al–hombre
+  hin: मनुष्य–के, मनुष्य–को, मनुष्य–की
+  arb: الْإِنْسَانَ, الإنسان, بَشَراً
+  kor: 사람의, 사람–의, 사람을
+  swa: mwanadamu, mtu, ya–wanadamu
+
+### Sense 83281 (3 occurrences)
+Grammar: N-msc,N-ms
+  eng: men-of, man
+  spa: hombre–de, hombres, el–hombre
+  hin: मनुष्य
+  arb: لِ–إِنْسَانٍ, إِنْسَانِ, أُنَاسٌ
+  kor: 사람이
+  swa: mtu, watu
+
+### Sense 83282 (2 occurrences)
+Grammar: Prep-b | N-ms
+  eng: in–man
+  spa: en–hombre, en–el–hombre
+  hin: मनुष्य–में, मनुष्य–को
+  arb: فِي–الإنسانِ, بِ–إِنْسَانٍ
+  kor: 사람–을, 사람–안에
+  swa: mwanadamu, katika–mwanadamu
+
+### Sense 83283 (2 occurrences)
+Grammar: Prep-l | N-ms
+  eng: to–man, for-man
+  spa: para–el–hombre, al–hombre
+  hin: मनुष्य–को, मनुष्य–के–लिए
+  arb: لِ–الإنسانِ, لِلإِنْسانِ
+  kor: 에게–인간, 사람–에게
+  swa: kwa–mwanadamu
+
+### Sense 83284 (2 occurrences)
+Grammar: Prep-m | N-ms
+  eng: than–man, from–man
+  spa: que–el–hombre, lejos–de–hombre
+  hin: मनुष्य–से
+  arb: مِنَ–إنسانٍ
+  kor: 사람에게서, 사람–보다
+  swa: mbali–na–mtu, kuliko–mwanadamu
+
+### Sense 83285 (1 occurrences)
+Grammar: Prep-m | N-ms
+  eng: from–mankind
+  spa: de–entre–los–hombres
+  hin: मनुष्यों–से
+  arb: مِنَ–النَّاسِ
+  kor: 에서–사람
+  swa: kutoka–kwa–wanadamu
+
+### Sense 83286 (1 occurrences)
+Grammar: Art | N-ms
+  eng: can–a–mortal
+  spa: ¿El–mortal
+  hin: क्या–मनुष्य
+  arb: هَلِ–الإِنْسانُ
+  kor: 인간이
+  swa: je–mwanadamu
+
+### Sense 83287 (1 occurrences)
+Grammar: N-ms
+  eng: mankind
+  spa: mortal
+  hin: मनुष्य–का
+  arb: آدَمَ
+  kor: 인생의
+  swa: binadamu
+
+### Sense 83288 (1 occurrences)
+Grammar: Prep-m | N-ms
+  eng: from–man
+  spa: de–hombre
+  hin: मनुष्य–से
+  arb: مِنْ–إِنْسَانٍ
+  kor: 사람을–
+  swa: mwanadamu
+
+## Task
+
+Group these 10 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

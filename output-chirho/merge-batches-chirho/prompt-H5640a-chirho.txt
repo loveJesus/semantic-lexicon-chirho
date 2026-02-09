@@ -1,0 +1,136 @@
+# Sense Merge Task for H5640a
+
+Lemma: H5640a (POS: V-Qal-Imp-ms)
+Total occurrences: 13
+Current sense count: 12
+
+This Hebrew/Greek lemma has been over-split into 12 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 121420 (2 occurrences)
+Grammar: V-Qal-Imp-ms
+  eng: shut-up, seal-up
+  spa: sella, cierra
+  hin: बन्द–कर, बंद–कर
+  arb: اُغْلُقْ, اخْتِمْ
+  kor: 봉하라, 닫으라
+  swa: yafunge, funga
+
+### Sense 121421 (1 occurrences)
+Grammar: V-Qal-QalPassPrtcpl-ms
+  eng: secret
+  spa: secreto
+  hin: छिपा–हुआ
+  arb: سِرٍّ
+  kor: 비밀이
+  swa: siri
+
+### Sense 121422 (1 occurrences)
+Grammar: V-Qal-Perf-3ms
+  eng: stopped
+  spa: tapó
+  hin: बंद–किया
+  arb: سَدَّ
+  kor: 막았다
+  swa: satam
+
+### Sense 121423 (1 occurrences)
+Grammar: Conj-w | V-Qal-ConsecImperf-3m
+  eng: and–they–stopped–up
+  spa: y–taparon
+  hin: और–बंद–किया
+  arb: وَ–سَدُّوا
+  kor: 그리고–그들이–막았다
+  swa: wayiּstּmwּ
+
+### Sense 121424 (1 occurrences)
+Grammar: V-Qal-Imperf-3mp
+  eng: they-stopped-up
+  spa: cegaron
+  hin: बंद–किया
+  arb: يَسُدُّونَ
+  kor: 막았다
+  swa: wakaziba
+
+### Sense 121425 (1 occurrences)
+Grammar: V-Qal-Imperf-2mp
+  eng: you-shall-stop-up
+  spa: cegaréis
+  hin: बंद–करोगे
+  arb: تَسُدُّونَ
+  kor: 막겠다–너희–가
+  swa: mtaziba
+
+### Sense 121426 (1 occurrences)
+Grammar: Prep-l | V-Qal-Inf
+  eng: to–stop–up
+  spa: para–tapar
+  hin: बंद–करने
+  arb: لِيَسُدَّ
+  kor: 막으려고
+  swa: listּwom
+
+### Sense 121427 (1 occurrences)
+Grammar: Conj-w | V-Piel-ConsecImperf-3
+  eng: and–stopped–them
+  spa: y–los–cegaron
+  hin: और–बंद–कर–दिए
+  arb: وَ–سَدَّها
+  kor: 그리고–막았다–그것들을
+  swa: na–waliziba
+
+### Sense 121428 (1 occurrences)
+Grammar: V-Qal-QalPassPrtcpl-mp
+  eng: shut-up
+  spa: cerradas
+  hin: बन्द
+  arb: مُغْلَقَةٌ
+  kor: 닫혀졌으니라
+  swa: yamefungwa
+
+### Sense 121429 (1 occurrences)
+Grammar: Prep-l | V-Nifal-Inf
+  eng: to–be-stopped
+  spa: a–cerrarse
+  hin: भरने
+  arb: تُسَدُّ
+  kor: 막히기
+  swa: kuzibwa
+
+### Sense 121430 (1 occurrences)
+Grammar: Conj-w, Prep-b | V-Qal-QalPass
+  eng: and–in–the–hidden–part
+  spa: y–en–lo–oculto
+  hin: और–गुप्त–में
+  arb: وَ–فِي–الخَفَاءِ
+  kor: 그리고–은밀한–곳–에서
+  swa: na–kwa-siri
+
+### Sense 121431 (1 occurrences)
+Grammar: V-Piel-Perf-3cp | 3mp
+  eng: stopped–them
+  spa: los–cegaron
+  hin: बंद–कर–दिए
+  arb: سَدَّها
+  kor: 막았다–그것들을
+  swa: waliziba
+
+## Task
+
+Group these 12 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

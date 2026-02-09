@@ -1,0 +1,136 @@
+# Sense Merge Task for G4674
+
+Lemma: G4674 (POS: PPro-D2S)
+Total occurrences: 27
+Current sense count: 12
+
+This Hebrew/Greek lemma has been over-split into 12 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 76566 (6 occurrences)
+Grammar: PPro-DM2S,PPro-DF2S
+  eng: your, your–own
+  spa: tuyo
+  hin: तेरे, अपने, अपनी
+  arb: كَ, لَكَ
+  kor: 네, 당신의, 너–의
+  swa: jina, yako, shamba
+
+### Sense 76567 (5 occurrences)
+Grammar: PPro-GF2S,PPro-AF2S,PPro-DF2S
+  eng: your
+  spa: tuya, tu, tuyo
+  hin: तेरी, थी
+  arb: –كَ, –كِ, خَاصَّتِكَ
+  kor: 당신–의, 당신의, 너–의
+  swa: yako, kuja
+
+### Sense 76568 (3 occurrences)
+Grammar: PPro-NM2P,PPro-AN2P,PPro-NN2P
+  eng: yours, your–things
+  spa: tuyas, de–ti
+  hin: तेरे, तेरी, तेरा
+  arb: لَكَ
+  kor: 당신–의, 너의–것이다, 너–의–것들을
+  swa: yako, wako
+
+### Sense 76569 (2 occurrences)
+Grammar: PPro-AN2S
+  eng: yours
+  spa: tuyo
+  hin: तेरा, तेर
+  arb: مَالُكَ, الَّذي–لَكَ
+  kor: 당신–의–것–을, 네–것–을
+  swa: yako, na
+
+### Sense 76570 (2 occurrences)
+Grammar: PPro-D2S
+  eng: yours, to–you
+  spa: tuyos, Tuyos
+  hin: तेरे
+  arb: لَكَ
+  kor: 당신–의–것
+  swa: walikuwa–wako, wako
+
+### Sense 76571 (2 occurrences)
+Grammar: PPro-NN2P
+  eng: yours
+  spa: tuyas
+  hin: तेरा
+  arb: هُوَ–لَكَ, لَكَ
+  kor: 당신–의–것은, 당신–의–것
+  swa: vyako
+
+### Sense 76572 (2 occurrences)
+Grammar: PPro-NM2S,PPro-NN2S
+  eng: your
+  spa: tuya
+  hin: तेरी, तेरा
+  arb: لَكَ
+  kor: 당신–의, 니–의
+  swa: lako
+
+### Sense 76573 (1 occurrences)
+Grammar: PPro-NN2S
+  eng: yours
+  spa: tuya
+  hin: तेरी
+  arb: ـكَ
+  kor: 당신–의–것이
+  swa: yako
+
+### Sense 76574 (1 occurrences)
+Grammar: PPro-AM2P
+  eng: your-own
+  spa: tuyos
+  hin: और
+  arb: –أَهْلِكَ
+  kor: 너의–것들,
+  swa: wako,
+
+### Sense 76575 (1 occurrences)
+Grammar: PPro-DF2S
+  eng: your
+  spa: tuya
+  hin: तेरी
+  arb: لَكَ
+  kor: 네–의
+  swa: yako
+
+### Sense 76576 (1 occurrences)
+Grammar: PPro-GF2S
+  eng: of–you
+  spa: de–ti
+  hin: तेरि
+  arb: كَ
+  kor: 너–의
+  swa: yako
+
+### Sense 76577 (1 occurrences)
+Grammar: PPro-NM2P
+  eng: your
+  spa: de–ti
+  hin: नहीं
+  arb: –كَ
+  kor: 너–의
+  swa: wako
+
+## Task
+
+Group these 12 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

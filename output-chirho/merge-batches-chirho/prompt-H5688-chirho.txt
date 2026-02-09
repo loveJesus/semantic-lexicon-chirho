@@ -1,0 +1,163 @@
+# Sense Merge Task for H5688
+
+Lemma: H5688 (POS: N-cs)
+Total occurrences: 24
+Current sense count: 15
+
+This Hebrew/Greek lemma has been over-split into 15 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 122329 (4 occurrences)
+Grammar: N-cp
+  eng: thick-boughs, thick-branches
+  spa: las–nubes, nubes, espesura
+  hin: घनी–शाखाओं–की, घनी–डालियों–के
+  arb: الْغَيْمِ, غَيْمٍ, الْأَغْصَانِ–الْغَلِيظَةِ
+  kor: 관목들의, 가지들
+  swa: matawi–manene, matawi–mazito
+
+### Sense 122330 (4 occurrences)
+Grammar: N-cp
+  eng: ropes
+  spa: cuerdas
+  hin: रस्सियां, रस्सियों–से, रस्सियाँ
+  arb: حِبالًا, حِبَالٍ, حِبَالًا
+  kor: 줄들을, 새–줄들로, 새–줄들
+  swa: kamba, kamba–mpya
+
+### Sense 122331 (2 occurrences)
+Grammar: Prep-b | N-cp
+  eng: with–ropes, with–cords
+  spa: con–cuerdas
+  hin: रस्सियों–से
+  arb: بِ–حِبَالٍ, بِالحِبال
+  kor: 줄들–로, 에–새–줄들로
+  swa: kwa–kamba
+
+### Sense 122332 (2 occurrences)
+Grammar: N-cs
+  eng: rope
+  spa: cordón
+  hin: डोरी
+  arb: حَبلٍ
+  kor: 끜의
+  swa: ya–kamba
+
+### Sense 122333 (2 occurrences)
+Grammar: Art | N-cp
+  eng: the–ropes
+  spa: los-cordones
+  hin: डोरी–वाली, डोरियों
+  arb: المَجدولَتَينِ, المَجدولَةَ
+  kor: 그–끜의, 그–끜들의
+  swa: ya–kamba
+
+### Sense 122334 (1 occurrences)
+Grammar: Art | N-cp
+  eng: the–cords–of
+  spa: los–cordones–de
+  hin: डोरियाँ
+  arb: الضَّفَائِرَ
+  kor: 그–밻줄들의
+  swa: kamba
+
+### Sense 122335 (1 occurrences)
+Grammar: N-cs
+  eng: cord
+  spa: cordón
+  hin: डोरी–की
+  arb: ضَفِيرَةٍ
+  kor: 밻줄의
+  swa: ya–kamba
+
+### Sense 122336 (1 occurrences)
+Grammar: N-csc
+  eng: cords-of
+  spa: cuerdas–de
+  hin: रस्सियाँ
+  arb: حِبَالَ
+  kor: 줄들–을
+  swa: kamba–za
+
+### Sense 122337 (1 occurrences)
+Grammar: N-cpc | 3mp
+  eng: their–cords
+  spa: sus–cuerdas
+  hin: उनकी–रस्सियाँ
+  arb: أَرْبِطَتَهُمْ
+  kor: 그들–의–줄들–을
+  swa: kamba–zao
+
+### Sense 122338 (1 occurrences)
+Grammar: Prep-b | N-cpc
+  eng: with–bands-of
+  spa: con–lazos–de
+  hin: बंधनों–से
+  arb: بِرَباطاتِ
+  kor: 에–줄들로
+  swa: kwa–vifungo–vya
+
+### Sense 122339 (1 occurrences)
+Grammar: Art | N-cp
+  eng: the–ropes
+  spa: las–cuerdas
+  hin: रस्सियाँ
+  arb: الْحِبَالُ–الـ
+  kor: 그–새–줄들이
+  swa: kamba
+
+### Sense 122340 (1 occurrences)
+Grammar: Conj-w, Prep-k | N-csc
+  eng: and–as–ropes–of
+  spa: y-como-con-sogas-de
+  hin: और–रस्सियों–से
+  arb: وَ–كَحِبَالِ
+  kor: 밗줄–같이
+  swa: na–kama–kamba–za
+
+### Sense 122341 (1 occurrences)
+Grammar: N-cpc
+  eng: ropes-of
+  spa: cordones-de
+  hin: डोरियों
+  arb: المَجدولَتَينِ
+  kor: 끜들을
+  swa: ya–kamba
+
+### Sense 122342 (1 occurrences)
+Grammar: N-csc | 3ms
+  eng: with–its–rope
+  spa: su–cuerda
+  hin: उसकी–रस्सी–से
+  arb: فِي–الثَّلْمِ
+  kor: 그것–의–밇줄의
+  swa: kwa–kamba–yake
+
+### Sense 122343 (1 occurrences)
+Grammar: Art | N-cp
+  eng: the–cords
+  spa: los–cordones
+  hin: डोरियों–के
+  arb: الضَّفَائِرِ
+  kor: 그–밻줄들의
+  swa: kamba
+
+## Task
+
+Group these 15 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

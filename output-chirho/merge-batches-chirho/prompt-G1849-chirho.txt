@@ -1,0 +1,118 @@
+# Sense Merge Task for G1849
+
+Lemma: G1849 (POS: N-NFP)
+Total occurrences: 102
+Current sense count: 10
+
+This Hebrew/Greek lemma has been over-split into 10 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 67432 (82 occurrences)
+Grammar: N-AFS,N-DFS,N-NFS,N-GFS
+  eng: authority, right
+  spa: autoridad, potestad, autoridad,
+  hin: अधिकार, शक्ति, अधिकार–के
+  arb: سُلْطَةٌ, سُلطانٌ, سُلطانٍ
+  kor: 권세를, 권세로, 권세–를
+  swa: mamlaka, haki, ninafanya
+
+### Sense 67433 (7 occurrences)
+Grammar: N-AFS,N-NFS,N-DFS,N-GFS
+  eng: authority
+  spa: autoridad
+  hin: अधिकार, शक्ति, को
+  arb: سُلْطَةٌ, –السُّلْطَةَ, سُلْطَانٍ
+  kor: 권세가, 권위, 권세와,
+  swa: mamlaka,, mamlaka
+
+### Sense 67434 (4 occurrences)
+Grammar: N-AFP,N-NFP,N-GFS
+  eng: authorities, authority
+  spa: autoridades, autoridad
+  hin: अधिकअरियोन, अधिकारियों
+  arb: سُلطانٍ, سَلَاطِينِ, سَلاطينُ
+  kor: 권세의, 권세들을, 권세들에게
+  swa: mamlaka
+
+### Sense 67435 (2 occurrences)
+Grammar: N-DFP,N-AFP
+  eng: authorities
+  spa: potestades
+  hin: अधिकअरियोन
+  arb: السَّلاطينِ
+  kor: 권세들에게, 권세들–에
+  swa: mamlaka
+
+### Sense 67436 (2 occurrences)
+Grammar: N-DFP
+  eng: to–authorities, to-authorities
+  spa: a–autoridades
+  hin: अधिकारियों–के, अधिकअरियोन,
+  arb: لِ–لسُّلُطَاتِ, لِلسُّلطاتِ
+  kor: 권세들에게, 권세들–에게
+  swa: mamlaka
+
+### Sense 67437 (1 occurrences)
+Grammar: N-GFP
+  eng: authorities
+  spa: autoridades
+  hin: अधिकारियों
+  arb: سَلاطاتٍ
+  kor: 권세들과
+  swa: mamlaka
+
+### Sense 67438 (1 occurrences)
+Grammar: N-NFS
+  eng: authority
+  spa: autoridad
+  hin: अधिकार
+  arb: سلطان
+  kor: 권세가
+  swa: mamlaka
+
+### Sense 67439 (1 occurrences)
+Grammar: N-GFS
+  eng: jurisdiction
+  spa: jurisdicción
+  hin: अधिकार
+  arb: سُلْطانِ
+  kor: 관할구역의
+  swa: hadhi
+
+### Sense 67440 (1 occurrences)
+Grammar: N-AFS
+  eng: authority
+  spa: derecho
+  hin: अधिकार
+  arb: سُلْطَة
+  kor: 권한–을
+  swa: haki,
+
+### Sense 67441 (1 occurrences)
+Grammar: N-AFS
+  eng: authority
+  spa: autoridad
+  hin: अधिकार–से
+  arb: –السُّلْطَةَ
+  kor: 권세를
+  swa: mamlaka?
+
+## Task
+
+Group these 10 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

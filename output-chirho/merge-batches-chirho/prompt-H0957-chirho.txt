@@ -1,0 +1,144 @@
+# Sense Merge Task for H0957
+
+Lemma: H0957 (POS: Conj-w)
+Total occurrences: 25
+Current sense count: 13
+
+This Hebrew/Greek lemma has been over-split into 13 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 85913 (5 occurrences)
+Grammar: Prep-l | N-ms
+  eng: as–plunder
+  spa: para–despojo, para–despojo;, para–despojo.
+  hin: लूट, फिर, को–लूट
+  arb: لِلنَّهْبِ, نَهْبًا
+  kor: 약탈이, 약탈을–위하여, 말씀을–위하여–약탈이
+  swa: nyara, kuwa–nyara
+
+### Sense 85914 (3 occurrences)
+Grammar: Prep-l | N-ms
+  eng: for–plunder, to–plunder
+  spa: para–saqueo, para–botín
+  hin: लूट–के–लिए, को–लूट, के–लिए–लूट
+  arb: لِ–النَّهْبِ, لِلنَّهْبِ
+  kor: 약탈–에게, 노략물로
+  swa: kwa–uporaji, nyara
+
+### Sense 85915 (3 occurrences)
+Grammar: N-ms
+  eng: plunder, prey
+  spa: despojo, presa
+  hin: लूट
+  arb: نَهْبًا
+  kor: 약탈이, 빼앗음을, 노략물을
+  swa: nyara, mali
+
+### Sense 85916 (3 occurrences)
+Grammar: Prep-l | N-ms
+  eng: for–plunder, plunder
+  spa: para–botín, para–despojo?
+  hin: लूट–के–लिए, लूट
+  arb: لِ–غَنِيمَةٍ, نَهْبَةً
+  kor: 약탈물–로
+  swa: mateka, nyara
+
+### Sense 85917 (2 occurrences)
+Grammar: Prep-l | N-ms
+  eng: for–plunder
+  spa: para–despojo
+  hin: ले–लूट, को–लूटने
+  arb: لِلنَّهْبِ
+  kor: 약탈에, 노략거리가
+  swa: mateka
+
+### Sense 85918 (2 occurrences)
+Grammar: N-ms
+  eng: spoil
+  spa: despojo;, despojo
+  hin: छीन
+  arb: نَهْبًا
+  kor: 노략물을
+  swa: mateka
+
+### Sense 85919 (1 occurrences)
+Grammar: Conj-w, Prep-l | N-ms
+  eng: and–to–plunder
+  spa: y–para–despojo
+  hin: और–लूट
+  arb: وَلِلنَّهْبِ
+  kor: 그리고–약탈으로
+  swa: na–kwa–uporaji
+
+### Sense 85920 (1 occurrences)
+Grammar: Prep-l | N-ms
+  eng: for–pillage
+  spa: por–saqueo
+  hin: के–लिए–छीन
+  arb: لِلسَّلْبِ
+  kor: 노략–당하게
+  swa: uporaji
+
+### Sense 85921 (1 occurrences)
+Grammar: Art | N-ms
+  eng: the–spoil
+  spa: el–despojo
+  hin: लूट–का
+  arb: السَّلْبِ
+  kor: 그–전리품의
+  swa: nyara–hizo
+
+### Sense 85922 (1 occurrences)
+Grammar: Prep-l | N-ms
+  eng: as–plunder
+  spa: (para–despojo)
+  arb: (نَهْبًا)
+  kor: 노략물로–
+  swa: kama–nyara
+
+### Sense 85923 (1 occurrences)
+Grammar: Prep-l | N-ms
+  eng: for–prey
+  spa: para–presa
+  hin: लूट
+  arb: لِلنَّهْبِ
+  kor: 노략물–이
+  swa: kupiga
+
+### Sense 85924 (1 occurrences)
+Grammar: Prep-l | N-ms
+  eng: for–plunder
+  spa: para–botín
+  hin: को–लूट
+  arb: لِـ–النَّهْبِ
+  kor: 약탈로
+  swa: kama–nyara
+
+### Sense 85925 (1 occurrences)
+Grammar: N-msc | 3fs
+  eng: her-plunder
+  spa: su–botín
+  hin: छीन–उसकी–को
+  arb: نَهْبَهَا
+  kor: 노략물을–그것의
+  swa: mali–yake
+
+## Task
+
+Group these 13 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

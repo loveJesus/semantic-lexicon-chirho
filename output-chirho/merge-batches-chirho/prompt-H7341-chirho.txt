@@ -1,0 +1,127 @@
+# Sense Merge Task for H7341
+
+Lemma: H7341 (POS: Conj-w | N-msc | 3ms)
+Total occurrences: 101
+Current sense count: 11
+
+This Hebrew/Greek lemma has been over-split into 11 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 135421 (31 occurrences)
+Grammar: Conj-w | N-ms,Conj-w | N-msc,Conj-w, Art | N-ms
+  eng: and–width, and–width-of, and–the-width
+  spa: y–anchura, y–anchura–de, y–la–anchura
+  hin: और–चौड़ाई
+  arb: وَعَرْضُهُ, وَعَرْضُ, وَ–عَرْضُهُ
+  kor: 그리고–너비, 그리고–너비는, 그리고–너비–
+  swa: na–upana, na–upana–wa, Na–upana–wa
+
+### Sense 135422 (31 occurrences)
+Grammar: N-msc,N-ms
+  eng: width, width-of, width–of
+  spa: anchura, anchura–de, ancho
+  hin: चौड़ाई, चौड़ी–, चौड़ाई–में
+  arb: عَرْضًا, عَرضُ, عَرْضُ
+  kor: 너비, 너비–, 너비의
+  swa: upana, upana–wa, dhiraa
+
+### Sense 135423 (23 occurrences)
+Grammar: N-msc | 3fs,N-msc | 3ms
+  eng: its-width, its–width
+  spa: su–anchura, su–ancho, su-ancho
+  hin: उसकी–चौड़ाई, चौड़ाई–उसकी, वह
+  arb: عَرْضُهُ, عَرضُهُ, عَرْضُهَا
+  kor: 그것의–너비, 그것의-너비는, 그–너비의
+  swa: upana–wake, tatu, nyumba
+
+### Sense 135424 (3 occurrences)
+Grammar: N-msc
+  eng: width-of–, breadth–of–
+  spa: la–anchura–de, anchura-de
+  hin: चौड़ाई–
+  arb: عَرْضِ–, عَرضِ–
+  kor: 너비의–, 넓이–
+  swa: upana–wa, upana-wa
+
+### Sense 135425 (3 occurrences)
+Grammar: Prep-b | N-ms,Prep-b | N-msc,Prep-b, Art | N-ms
+  eng: in–width-of, in–width, in–the-width
+  spa: en–la–anchura, en–anchura, En–anchura–de
+  hin: में–चौड़ाई, चौड़ाई–में
+  arb: فِي–عَرْضِ, فِي–الْ–عَرْضِ, فِي–الْعَرْضِ
+  kor: 에–너비의, 에–너비에, 에–너비
+  swa: kwa–upana, katika–upana, Katika–upana–wa
+
+### Sense 135426 (3 occurrences)
+Grammar: Conj-w | N-msc | 3ms,Conj-w | N-msc | 3fs
+  eng: and–its-width, and–its–width
+  spa: y–su–anchura
+  hin: और–उसकी–चौड़ाई, और–चौड़ाई–उसकी
+  arb: وَ–عَرْضُهُ, وَعَرْضُهُ, وَعَرْضَهُ
+  kor: 그리고–너비–그의, 그리고–그것의–넓이가, 그리고–그것–의-너비
+  swa: na–upana–wake
+
+### Sense 135427 (2 occurrences)
+Grammar: N-msc | 3fp,N-msc | 3fs
+  eng: their-width, her–width
+  spa: su–anchura, es–su–anchura
+  hin: उसकी–चौड़ाई, उनकी–चौड़ाई
+  arb: عَرْضُهَا
+  kor: 그것의–넓이가, 그것들의–너비
+  swa: upana–wake
+
+### Sense 135428 (2 occurrences)
+Grammar: Conj-w | N-msc
+  eng: and–width-of
+  spa: Y–ancho–de
+  hin: और–चौड़ाई
+  arb: وَ–عَرضُ
+  kor: 그리고–너비는
+  swa: na–upana
+
+### Sense 135429 (1 occurrences)
+Grammar: Conj-w | N-msc
+  eng: and–breadth–of
+  spa: y–anchura–de
+  hin: और–चौड़ाई
+  arb: وَسَعَةَ
+  kor: 그리고–넓음을
+  swa: kama
+
+### Sense 135430 (1 occurrences)
+Grammar: Conj-w | N-msc
+  eng: and–the–breadth–of
+  spa: y–anchura–de
+  hin: और–चौड़ाई
+  arb: وَ–عَرْضُ
+  kor: 그리고–넓음이
+  swa: na–upana
+
+### Sense 135431 (1 occurrences)
+Grammar: Conj-w, Prep-l | N-msc | 3fs
+  eng: and–to–its-breadth
+  spa: y–a–ancho–de–ella
+  hin: और–उस्कि–चौदै–मे
+  arb: وَ–عَرْضِهَا
+  kor: 그리고–그것의–너비를
+  swa: na–kwa–upana–wake
+
+## Task
+
+Group these 11 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

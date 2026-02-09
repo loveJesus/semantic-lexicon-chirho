@@ -1,0 +1,118 @@
+# Sense Merge Task for G1260
+
+Lemma: G1260 (POS: V-PPM/P-GMP)
+Total occurrences: 16
+Current sense count: 10
+
+This Hebrew/Greek lemma has been over-split into 10 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 65321 (3 occurrences)
+Grammar: V-PIM/P-2P
+  eng: are-you-reasoning, are–you–reasoning
+  spa: razonáis
+  hin: सोचते–हो
+  arb: تُفَكِّرونَ, تَتَفَكَّرُونَ
+  kor: 생각하느냐, 논의하느냐
+  swa: mnafikiri, mnajadiliana
+
+### Sense 65322 (3 occurrences)
+Grammar: V-IIM/P-3P
+  eng: were-reasoning
+  spa: razonaban
+  hin: सोच–रहे–थे, सोचते–थे, विचार–किया
+  arb: كَانُوا–يَتَفَكَّرُونَ, كانوا–يُفَكِّرونَ, تَشاوَروا
+  kor: 의논했다, 논의하였다, 논의하고–있었다
+  swa: walijadiliana, walifikiri, kati–yao
+
+### Sense 65323 (2 occurrences)
+Grammar: V-PPM/P-NMP,V-PIM/P-3P
+  eng: they-are-reasoning, reasoning
+  spa: razonando, razonan
+  hin: में
+  arb: يُفَكِّرونَ
+  kor: 생각하며, 생각하고–있다
+  swa: wanafikiri, wakifikiri
+
+### Sense 65324 (2 occurrences)
+Grammar: V-IIM/P-3P
+  eng: they-were-reasoning
+  spa: razonaban
+  hin: विचार–कर–रहे–थे, विचार–करते–थे
+  arb: كَانُوا–يَتَحَاوَرُونَ
+  kor: 토론했다, 그들이-논의하였다
+  swa: walijadiliana, wakafikiri
+
+### Sense 65325 (1 occurrences)
+Grammar: V-IIM/P-3S
+  eng: was–pondering
+  spa: consideraba
+  hin: सोचती–थी
+  arb: كَانَتْ–تُفَكِّرُ
+  kor: 생각했다
+  swa: akafikiri
+
+### Sense 65326 (1 occurrences)
+Grammar: V-PIM/P-2P
+  eng: are-you-reasoning
+  spa: razonáis
+  hin: विचार–करते–हो
+  arb: تَتَحَاوَرُونَ
+  kor: 토론하느냐
+  swa: mnajadiliana
+
+### Sense 65327 (1 occurrences)
+Grammar: V-PNM/P
+  eng: to–reason
+  spa: a–razonar
+  hin: सोचने
+  arb: يُفَكِّرونَ
+  kor: 생각하기를
+  swa: kufikiri
+
+### Sense 65328 (1 occurrences)
+Grammar: V-IIM/P-2P
+  eng: were-you-discussing
+  spa: razonabais
+  hin: विचार–करते–थे
+  arb: كُنْتُمْ–تَتَحَاوَرُونَ
+  kor: 토론하였느냐
+  swa: mlijadili
+
+### Sense 65329 (1 occurrences)
+Grammar: V-IIM/P-3S
+  eng: he-was-reasoning
+  spa: razonaba
+  hin: सोच–रहा–था
+  arb: كَانَ–يُفَكِّرُ
+  kor: 생각하고–있었다
+  swa: akawaza
+
+### Sense 65330 (1 occurrences)
+Grammar: V-PPM/P-GMP
+  eng: wondering
+  spa: pensando
+  hin: सोचते–हुए
+  arb: يُفَكِّرُونَ
+  kor: 생각하는
+  swa: wote–wakifikiri
+
+## Task
+
+Group these 10 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

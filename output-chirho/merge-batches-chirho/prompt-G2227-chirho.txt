@@ -1,0 +1,118 @@
+# Sense Merge Task for G2227
+
+Lemma: G2227 (POS: V-PPA-GMS)
+Total occurrences: 11
+Current sense count: 10
+
+This Hebrew/Greek lemma has been over-split into 10 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 68856 (2 occurrences)
+Grammar: V-PIA-3S
+  eng: gives-life
+  spa: da-vida
+  hin: जिलाता–है;, जिलाता–है,
+  arb: يُحْيِي
+  kor: 살리신다
+  swa: anawahuisha
+
+### Sense 68857 (1 occurrences)
+Grammar: V-APP-NMS
+  eng: having–been–made–alive
+  spa: vivificado
+  hin: जिलाया–गया
+  arb: مُحيًا
+  kor: 살리심을–받으셨으니
+  swa: akifanywa–hai
+
+### Sense 68858 (1 occurrences)
+Grammar: V-PPA-GMS
+  eng: making–alive
+  spa: que–da–vida
+  hin: जीवित–करता–है
+  arb: المُحيي
+  kor: 살리시는–자
+  swa: anayehuisha
+
+### Sense 68859 (1 occurrences)
+Grammar: V-PPA-NNS
+  eng: giving-life
+  spa: que-da-vida
+  hin: जिलाने–वाला;
+  arb: يُحْيِي
+  kor: 살리는–것이다
+  swa: inayotoa–uzima
+
+### Sense 68860 (1 occurrences)
+Grammar: V-FIP-3P
+  eng: will-be-made-alive
+  spa: serán–vivificados
+  hin: जिलाए–जाएँगे
+  arb: سَيُحيَونَ
+  kor: 살림을–받으리라
+  swa: watafanywa–hai
+
+### Sense 68861 (1 occurrences)
+Grammar: V-PPA-ANS
+  eng: life-giving
+  spa: que–da–vida
+  hin: जीवन–देने–वाला
+  arb: مُحيٍ
+  kor: 살리는
+  swa: inayohuisha
+
+### Sense 68862 (1 occurrences)
+Grammar: V-PIA-3S
+  eng: gives–life
+  spa: vivifica
+  hin: जिलाती–है
+  arb: يُحيي
+  kor: 살린다
+  swa: inahuisha.
+
+### Sense 68863 (1 occurrences)
+Grammar: V-ANA
+  eng: to-give-life
+  spa: vivificar
+  hin: जेएवित–करने,
+  arb: أن–يُحييَ
+  kor: 살리는,
+  swa: kutoa–uzima
+
+### Sense 68864 (1 occurrences)
+Grammar: V-PIM/P-3S
+  eng: is-made-alive
+  spa: es–vivificado
+  hin: जीवित–होता
+  arb: يُحيا
+  kor: 살아나지
+  swa: kinafanywa–hai
+
+### Sense 68865 (1 occurrences)
+Grammar: V-FIA-3S
+  eng: will–make–alive
+  spa: vivificará
+  hin: जिलाएगा
+  arb: سَيُحْيِي
+  kor: 살리리라
+  swa: atahuisha
+
+## Task
+
+Group these 10 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

@@ -1,0 +1,118 @@
+# Sense Merge Task for H5492a
+
+Lemma: H5492a (POS: Conj-w)
+Total occurrences: 15
+Current sense count: 10
+
+This Hebrew/Greek lemma has been over-split into 10 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 120495 (4 occurrences)
+Grammar: N-fs
+  eng: the–whirlwind, the–storm, storm-wind
+  spa: tormenta, torbellino, la–tempestad.
+  hin: आँधी, तूफ़ान, आँधी–के
+  arb: عَاصِفَةٌ, عاصِفَةٌ, الْعَاصِفَةُ
+  kor: 폭풍이, 폭풍–이
+  swa: dhoruba, tufani
+
+### Sense 120496 (2 occurrences)
+Grammar: Conj-w, Prep-k, Art | N-fs
+  eng: and–like–the–whirlwind, and–like–the–storm
+  spa: y–como–torbellino
+  hin: और–आंधी–जैसे, और–आँधी–की–तरह
+  arb: وَ–كَـ–الـ–زَّوْبَعَةِ, وَكَالْعَاصِفَةِ
+  kor: 그리고–폭풍처럼
+  swa: na–kama–dhoruba
+
+### Sense 120497 (2 occurrences)
+Grammar: N-fs
+  eng: whirlwind, storm
+  spa: torbellino, tempestad
+  hin: आंधी, आँधी
+  arb: عَاصِفَةٍ, الْعَاصِفَةِ
+  kor: 회오리바람과, 폭풍의
+  swa: tufani, kimbunga
+
+### Sense 120498 (1 occurrences)
+Grammar: Prep-b | N-fs
+  eng: in–the–whirlwind
+  spa: en–tormenta
+  hin: बवंडर–में
+  arb: بِالزَّوْبَعَةِ
+  kor: 에서–폭풍
+  swa: katika–dhoruba
+
+### Sense 120499 (1 occurrences)
+Grammar: Conj-w | N-fs | 3fs
+  eng: and–whirlwind
+  spa: y–torbellino
+  hin: और–आँधी
+  arb: وَزَوبَعَةً
+  kor: 그리고–폭풍을
+  swa: na–dhoruba
+
+### Sense 120500 (1 occurrences)
+Grammar: Prep-k, Art | N-fs
+  eng: as–the–whirlwind
+  spa: como-torbellino
+  hin: जैसे–आंधी
+  arb: كَالعَاصِفَةِ
+  kor: 회오리바람–같도다
+  swa: kama–dhoruba
+
+### Sense 120501 (1 occurrences)
+Grammar: Prep-k | N-fs
+  eng: like–a–whirlwind
+  spa: como–torbellino
+  hin: बवंडर–की–तरह
+  arb: كَزَوْبَعَةٍ
+  kor: 회오리바람–같이
+  swa: kama–tufani
+
+### Sense 120502 (1 occurrences)
+Grammar: N-fs
+  eng: tempest
+  spa: tempestad
+  hin: तूफान–के।
+  arb: عاصِفَةٍ
+  kor: 폭풍의
+  swa: tufani
+
+### Sense 120503 (1 occurrences)
+Grammar: Conj-w, Prep-b | N-fsc | 2ms
+  eng: and–with–your–storm
+  spa: y–con–torbellino-de-ti
+  hin: और–अपने–तूफ़ान–से
+  arb: وَبِزَوْبَعَتِكَ
+  kor: 당신–의–회오리바람–으로
+  swa: na–kwa–tufani–yako
+
+### Sense 120504 (1 occurrences)
+Grammar: Prep-k | N-fp
+  eng: like–storms
+  spa: Como–torbellinos
+  hin: आँधियों–की–तरह
+  arb: كَعَوَاصِفَ
+  kor: 폭풍들–같이
+  swa: Kama–dhoruba
+
+## Task
+
+Group these 10 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

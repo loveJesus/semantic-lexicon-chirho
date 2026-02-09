@@ -1,0 +1,117 @@
+# Sense Merge Task for H8548
+
+Lemma: H8548 (POS: Art | Adv)
+Total occurrences: 104
+Current sense count: 10
+
+This Hebrew/Greek lemma has been over-split into 10 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 145278 (67 occurrences)
+Grammar: Adv
+  eng: continually, always, continual
+  spa: continuamente, siempre, perpetuo
+  hin: सदा, निरन्तर, नित्य
+  arb: دَائِمًا, دائِماً, دائِمًا
+  kor: 항상, 계속
+  swa: daima
+
+### Sense 145279 (17 occurrences)
+Grammar: Art | Adv
+  eng: the–continual
+  spa: el–continuo
+  hin: नित्य–की
+  arb: الدَّائِمَةِ, الدَّوَامِ
+  kor: 상번제–의, 그–항상, 그–상번의
+  swa: ya–daima, daima
+
+### Sense 145280 (5 occurrences)
+Grammar: Adv
+  eng: continually, continual
+  spa: continuo, continua
+  hin: नित्य
+  arb: دَائِمَةٍ, دَائِمَةٌ, دَائِمَةً
+  kor: 상번의, 계속해서, 항상
+  swa: ya–daima, daima
+
+### Sense 145281 (5 occurrences)
+Grammar: Art | Adv
+  eng: the–daily-sacrifice
+  spa: el–continuo
+  hin: नित्य–बलि, नित्य–का
+  arb: الدَّائِمِ, الدَّائِمُ, الدَّائِمَ
+  kor: 다미드–의, 다미드–가, 다미드
+  swa: sadaka–ya–kila–siku, sadaka–ya–daima, ya–sadaka–ya–daima
+
+### Sense 145282 (3 occurrences)
+Grammar: Adv
+  eng: continual
+  spa: continuidad, continua
+  hin: नित्य, तामीद
+  arb: دَائِمَةً, دائِمَةً, دائِماً
+  kor: 항상, 항상의
+  swa: daima, ya–daima
+
+### Sense 145283 (2 occurrences)
+Grammar: Conj-w | Adv
+  eng: and–continually
+  spa: y–continuamente
+  hin: और–लगातार
+  arb: وَ–دَائِمًا, وَ–دائِماً
+  kor: 그리고–항상
+  swa: na–daima
+
+### Sense 145284 (2 occurrences)
+Grammar: Art | Adv
+  eng: the–continual
+  spa: el–continuo
+  arb: ال–دَّائِمَةِ
+  kor: 그–상시의, 그–상시
+  swa: daima
+
+### Sense 145285 (1 occurrences)
+Grammar: Adv
+  eng: continually
+  spa: continuo
+  hin: निरन्तर
+  arb: دَائِمٍ
+  kor: 항상
+  swa: wa–daima
+
+### Sense 145286 (1 occurrences)
+Grammar: Adv
+  eng: continually
+  spa: continuamente
+  hin: निरंतर
+  arb: دائماً
+  kor: 항상
+  swa: daima
+
+### Sense 145287 (1 occurrences)
+Grammar: Adv
+  eng: continual
+  spa: continuamente
+  hin: नियमित
+  arb: الدَّائِمَةِ
+  kor: 항상
+  swa: za–daima
+
+## Task
+
+Group these 10 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

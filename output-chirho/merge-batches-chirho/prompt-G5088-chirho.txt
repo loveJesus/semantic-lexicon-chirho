@@ -1,0 +1,118 @@
+# Sense Merge Task for G5088
+
+Lemma: G5088 (POS: V-ANA)
+Total occurrences: 18
+Current sense count: 10
+
+This Hebrew/Greek lemma has been over-split into 10 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 77665 (4 occurrences)
+Grammar: V-AIA-3S
+  eng: she–bore, she-bore, bore
+  spa: dio–a–luz
+  hin: जन्म–दिया–था, जन्म–दिया, जना
+  arb: وَلَدَت, وَلَدَتْ, وَلَدَتِ
+  kor: 낳았으니, 낳았다
+  swa: aliyemzaa, alipozaa, akazaa
+
+### Sense 77666 (3 occurrences)
+Grammar: V-FIM-3S,V-FIM-2S
+  eng: will–bear, she–will–bear
+  spa: dará–a–luz, darás–a–luz
+  hin: जनेगी, जन्म–देगी
+  arb: وَ–سَتَلِدُ, تَلِدِينَ, تَلِدُ
+  kor: 낳을–것이다
+  swa: atazaa, utazaa
+
+### Sense 77667 (2 occurrences)
+Grammar: V-PSA-3S,V-PIA-3S
+  eng: she–gives–birth, gives–birth–to
+  spa: da–a–luz, da-a-luz
+  hin: जन्म–देती–है, जन्म-देती-है
+  arb: تَلِدُ
+  kor: 해산한다, 낳는다
+  swa: inazaa, anapojifungua
+
+### Sense 77668 (2 occurrences)
+Grammar: V-ANA
+  eng: to-give-birth
+  spa: de–dar–a–luz, dar–a–luz
+  hin: जन्म–देने–को।, जन्म–देने
+  arb: لِتَلِدَ, أَن–تَلِدَ
+  kor: 낳려고
+  swa: kuzaa., kuzaa,
+
+### Sense 77669 (2 occurrences)
+Grammar: V-ANA
+  eng: to–give–birth
+  spa: dar–a–luz
+  hin: जनने
+  arb: لِتَلِدَ
+  kor: 낳을
+  swa: kuzaa
+
+### Sense 77670 (1 occurrences)
+Grammar: V-AIP-3S
+  eng: was–born
+  spa: nació
+  hin: जन्मा
+  arb: وُلِدَ
+  kor: 태어났다
+  swa: amezaliwa
+
+### Sense 77671 (1 occurrences)
+Grammar: V-APP-NMS
+  eng: having–been–born
+  spa: nacido
+  hin: जन्मा–हुआ
+  arb: الْمَوْلُودُ
+  kor: 태어난
+  swa: aliyezaliwa
+
+### Sense 77672 (1 occurrences)
+Grammar: V-PPA-VFS
+  eng: bearing
+  spa: dando-a-luz
+  hin: जनम–देने–वलि;
+  arb: تَلِدُ
+  kor: 낳지;
+  swa: zaa
+
+### Sense 77673 (1 occurrences)
+Grammar: V-ASA-3S
+  eng: she-gives-birth
+  spa: dé–a–luz
+  hin: वह–जन्म–दे
+  arb: تَلِدَ
+  kor: 낳으니
+  swa: atakapozaa,
+
+### Sense 77674 (1 occurrences)
+Grammar: V-PPA-NFS
+  eng: producing
+  spa: que–produce
+  hin: उत्पन्न–करने–वाली
+  arb: مُنْبِتَةً
+  kor: 낳는
+  swa: ikizaa
+
+## Task
+
+Group these 10 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

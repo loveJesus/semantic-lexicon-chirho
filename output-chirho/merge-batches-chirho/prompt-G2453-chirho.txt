@@ -1,0 +1,136 @@
+# Sense Merge Task for G2453
+
+Lemma: G2453 (POS: Adj-DFS)
+Total occurrences: 195
+Current sense count: 12
+
+This Hebrew/Greek lemma has been over-split into 12 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 69507 (135 occurrences)
+Grammar: Adj-GMP,Adj-DMP,Adj-NMP,Adj-AMP,Adj-VMP
+  eng: Ioudaioi, Jews, Judeans
+  spa: Ioudaîoi, judíos, Ioudaíōn
+  hin: यहूदियों, यहूदी, यहूदियों–ने
+  arb: يَهُودِ, يَهُودُ, يَهود
+  kor: 유대인들이, 유대인들의, 유대인들–의
+  swa: Wayahudi, Wayahudi,, Wayahudi.
+
+### Sense 69508 (24 occurrences)
+Grammar: Adj-GMP,Adj-NMP,Adj-DMP,Adj-AMP
+  eng: Jews
+  spa: judíos, A–judíos
+  hin: यहूदियोंके, यहूदियोंने, यहूदी।
+  arb: اليَهُودِ, اليَهُودُ, يَهودُ
+  kor: 유대인들이, 유대인들–의, 유대인들에게
+  swa: Wayahudi
+
+### Sense 69509 (19 occurrences)
+Grammar: Adj-NMS,Adj-DMS,Adj-AMS,Adj-GFS,Adj-GMS
+  eng: Ioudaios, Jew, a–Jew
+  spa: judío, Judío, ioudaîos
+  hin: यहूदी, यहुदि, यहूदी–को
+  arb: يَهُودِيٌّ, يَهُودِيٍّ, يَهُودِيًّا
+  kor: 유대인, 유대인을, 유대인이면서
+  swa: Myahudi, Myahudi–, Myahudi,
+
+### Sense 69510 (4 occurrences)
+Grammar: Adj-DMS,Adj-GMS
+  eng: to–Jew, of–Jew, of-Jew
+  spa: a–judío, de–judío, de–Ioudaíou
+  hin: यहूदी–को, यहूदी–के, यहूदी–का
+  arb: اليَهودِيِّ, يَهُودِيٍّ, لِلْيَهودِيِّ
+  kor: 유대인에게, 유대인과, 유대인–의
+  swa: Myahudi, ya–Myahudi, kwa–Myahudi
+
+### Sense 69511 (4 occurrences)
+Grammar: Adj-GMP
+  eng: IOUDAIOI, JEWS, Ioudaioi
+  spa: IOUDAIOI, IOUDAÍŌN, IOUDAIŌN
+  hin: यहूदियों, यहूदियों–का
+  arb: يَهُودِ, يَهودِ, الْيَهُودِ
+  kor: 유대인들의, 유대인들–의
+  swa: WAYAHUDI
+
+### Sense 69512 (2 occurrences)
+Grammar: Adj-DMP
+  eng: to–Ioudaioi, to-Ioudaioi
+  spa: para–judíos, a–judíos
+  hin: यहूदियों–को, यहूदियों–के–लिए
+  arb: لِليَهودِ, لِـليَهودِ
+  kor: 유대인들–에게는, 유대인들
+  swa: kwa–Wayahudi, Wayahudi,
+
+### Sense 69513 (2 occurrences)
+Grammar: Adj-GMP,Adj-DMP
+  eng: Jews, Ioudaioi
+  spa: judíos
+  hin: यहूदियों
+  arb: الْيَهُودِ, اليَهودِ
+  kor: 유대인들로부터, 유대인들–에게
+  swa: kwa–Wayahudi, Wayahudi,
+
+### Sense 69514 (1 occurrences)
+Grammar: Adj-DMP
+  eng: to–Ioudaioi
+  spa: a–Judíos
+  hin: यहूदियों
+  arb: لِـ–ٱلْيَهُودِ
+  kor: 유대인들에게만
+  swa: Wayahudi.
+
+### Sense 69515 (1 occurrences)
+Grammar: Adj-DFS
+  eng: a–Jewess
+  spa: judía
+  hin: यहूदन
+  arb: يَهُودِيَّةً
+  kor: 유대인인
+  swa: Myahudi
+
+### Sense 69516 (1 occurrences)
+Grammar: Adj-GMS
+  eng: Ioudaios
+  spa: –ioudaîos
+  hin: यहूदी–के,
+  arb: يَهُودِيٍّ
+  kor: 유대인
+  swa: Myahudi
+
+### Sense 69517 (1 occurrences)
+Grammar: N-AFS
+  eng: Ioudaia
+  spa: Ioudaía
+  hin: यहूदिया
+  arb: يَهُودِيَّةِ
+  kor: 유다
+  swa: Youdaía
+
+### Sense 69518 (1 occurrences)
+Grammar: Adj-GMP
+  eng: of–Ioudaioi
+  spa: Ioudaîoi
+  hin: यहूदियों–का
+  arb: الْيَهُودِ
+  kor: 유대인
+  swa: Wayahudi
+
+## Task
+
+Group these 12 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

@@ -1,0 +1,136 @@
+# Sense Merge Task for H4634
+
+Lemma: H4634 (POS: Prep-m)
+Total occurrences: 20
+Current sense count: 12
+
+This Hebrew/Greek lemma has been over-split into 12 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 113207 (5 occurrences)
+Grammar: N-fpc
+  eng: ranks–of
+  spa: filas–de
+  hin: सजअवतोम, सजअवतोम-क
+  arb: صُفُوفَ, صُفُوفِ
+  kor: 전열들을, 전열들의, 전열들
+  swa: safu–za, mstari–wa–vita
+
+### Sense 113208 (3 occurrences)
+Grammar: Art | N-fs
+  eng: the–battle-line, the–battle–line
+  spa: la–formación
+  hin: सैना–के, सजअवत-कि
+  arb: الـ–مَعْرَكَةِ, الصَّفِّ
+  kor: 그–전열
+  swa: mapigano, safu
+
+### Sense 113209 (2 occurrences)
+Grammar: N-fs
+  eng: battle–line
+  spa: formación
+  hin: सजवत-कि, सजवत
+  arb: صَفٍّ, صَفًّا
+  kor: 전열을
+  swa: safu
+
+### Sense 113210 (2 occurrences)
+Grammar: Art | N-fs
+  eng: to–the–battle–line
+  spa: a–la–formación
+  hin: सजवत-मेइन
+  arb: الصَّفَّ
+  kor: 그–전열에
+  swa: safu
+
+### Sense 113211 (1 occurrences)
+Grammar: Prep-b, Art | N-fs
+  eng: in–the–battle-line
+  spa: en–la–formación
+  hin: में–सैना
+  arb: فِي–الـ–مَعْرَكَةِ
+  kor: 그–전열에서
+  swa: katika–uwanja
+
+### Sense 113212 (1 occurrences)
+Grammar: N-fp
+  eng: rows
+  spa: hileras
+  hin: पंक्तियों–में
+  arb: صُفُوفًا
+  kor: 줄들
+  swa: safu
+
+### Sense 113213 (1 occurrences)
+Grammar: Prep-m | N-fpc
+  eng: (from–ranks–of)
+  spa: de–filas–de
+  hin: (सजअवतोम-से)
+  arb: (مِنْ–صُفُوفِ)
+  kor: (전열에서–)
+  swa: kutoka–safu–za
+
+### Sense 113214 (1 occurrences)
+Grammar: N-fpc
+  eng: battle–lines–of
+  spa: formaciones–de
+  hin: सैनिक–पंक्तियों
+  arb: صُفُوفِ
+  kor: 진영들에
+  swa: safu–za
+
+### Sense 113215 (1 occurrences)
+Grammar: Art | N-fs
+  eng: the–arrangement
+  spa: la–disposición
+  hin: कतार–के
+  arb: التَّرْتِيبِ
+  kor: 그–줄–세운–것의
+  swa: za–kupanga
+
+### Sense 113216 (1 occurrences)
+Grammar: N-fs
+  eng: battle–line
+  spa: formación
+  hin: पंक्ति–के
+  arb: صَفّ
+  kor: 전열
+  swa: safu
+
+### Sense 113217 (1 occurrences)
+Grammar: Prep-m, Art | N-fs
+  eng: from–the–battle-line
+  spa: de–la–formación
+  hin: से–सैना
+  arb: مِنَ–الـ–مَعْرَكَةِ
+  kor: 그–전열–에서
+  swa: kutoka–uwanja
+
+### Sense 113218 (1 occurrences)
+Grammar: Prep-b, Art | N-fs
+  eng: in–the–arrangement
+  spa: en–orden
+  hin: व्यवस्था–से
+  arb: بِ–التَّرْتيبِ
+  kor: 정렬된–방식으로
+  swa: katika–mpangilio
+
+## Task
+
+Group these 12 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

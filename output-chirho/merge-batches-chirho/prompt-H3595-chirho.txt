@@ -1,0 +1,127 @@
+# Sense Merge Task for H3595
+
+Lemma: H3595 (POS: N-mp)
+Total occurrences: 23
+Current sense count: 11
+
+This Hebrew/Greek lemma has been over-split into 11 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 106008 (9 occurrences)
+Grammar: N-msc,Art | N-ms
+  eng: the–basin, basin
+  spa: la–fuente, la-fuente, fuente-de
+  hin: हौदी, हौज़, हौज
+  arb: الْمِرْحَضَةَ, المِرحَضَةَ, مِرحَضَةً
+  kor: 그–물두멍을, 그–물두멍과, 물두멍을
+  swa: birika
+
+### Sense 106009 (3 occurrences)
+Grammar: Art | N-ms,N-ms
+  eng: the–basin, basin
+  spa: la–pila, pila
+  hin: हौद
+  arb: الـ–مِرْحَضَةُ, مِرْحَضَةٌ
+  kor: 대야의, 대야가
+  swa: sinia–moja, kitako–kimoja
+
+### Sense 106010 (2 occurrences)
+Grammar: Art | N-ms
+  eng: the–basin
+  spa: la–fuente
+  hin: हौद, हौज़–को
+  arb: –المِرْحَضَةَ, الْمِرْحَضَةَ
+  kor: 물두멉–을, 그–물두멉을
+  swa: birika
+
+### Sense 106011 (2 occurrences)
+Grammar: Art | N-mp
+  eng: the–basins
+  spa: las–pilas
+  hin: हौद
+  arb: الـ–مَرَاحِضَ
+  kor: 대야들을
+  swa: na–sepetu, juu–ya
+
+### Sense 106012 (1 occurrences)
+Grammar: N-mp
+  eng: basins
+  spa: fuentes
+  hin: हौद
+  arb: مَراحِضَ
+  kor: 물두멉들
+  swa: mabeseni
+
+### Sense 106013 (1 occurrences)
+Grammar: Prep-b, Art | N-ms
+  eng: into–the–kettle
+  spa: en–la–olla
+  hin: कड़ाही–में
+  arb: فِي–الـ–قِدْرِ
+  kor: –에–그–솔
+  swa: ndani–ya–bakuli
+
+### Sense 106014 (1 occurrences)
+Grammar: N-mp
+  eng: basins-of
+  spa: pilas
+  hin: हौद
+  arb: مَرَاحِضَ
+  kor: 대야들을
+  swa: kumi
+
+### Sense 106015 (1 occurrences)
+Grammar: Prep-l, Art | N-ms
+  eng: for–the–basin
+  spa: la–pila
+  hin: हौद–के
+  arb: لِ–الـ–مِرْحَضَةِ
+  kor: 대야에-대하여
+  swa: mabega
+
+### Sense 106016 (1 occurrences)
+Grammar: N-msc
+  eng: a–basin–of
+  spa: una–plataforma–de
+  hin: हौद
+  arb: حَوْضًا
+  kor: 물두멉의
+  swa: jukwaa
+
+### Sense 106017 (1 occurrences)
+Grammar: Prep-k | N-msc
+  eng: like–a–pot–of
+  spa: como–brasero–de
+  hin: जैसे–कड़ाही
+  arb: كَ–مِرْجَلِ
+  kor: 화로–같이
+  swa: kama–chungu–cha
+
+### Sense 106018 (1 occurrences)
+Grammar: Art | N-mp
+  eng: the–basins
+  spa: las–fuentes
+  hin: हौद
+  arb: الْمَرَاحِضَ
+  kor: 그–물두멉들
+  swa: mabeseni
+
+## Task
+
+Group these 11 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

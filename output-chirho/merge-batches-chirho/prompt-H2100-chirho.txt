@@ -1,0 +1,145 @@
+# Sense Merge Task for H2100
+
+Lemma: H2100 (POS: V-Qal-Prtcpl-ms)
+Total occurrences: 42
+Current sense count: 13
+
+This Hebrew/Greek lemma has been over-split into 13 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 94193 (20 occurrences)
+Grammar: V-Qal-Prtcpl-fsc
+  eng: flowing-with, flowing, flowing-of
+  spa: que–fluye, que–mana, que-mana
+  hin: बहती, बहती–हुई, बहती–है
+  arb: تَفِيضُ, فَائِضَةً, فائِضَةً
+  kor: 흐르는, 흘르는
+  swa: itiririkayo, inayotiririka
+
+### Sense 94194 (9 occurrences)
+Grammar: Art | V-Qal-Prtcpl-ms
+  eng: the–one-having-discharge
+  spa: el–que–fluye
+  hin: बहने वाला, बहने वाले, में–वह
+  arb: ال–سَائِلُ, ال–سَائِلِ
+  kor: 그–흐르는–자–가, 그–흐르는–자–의
+  swa: mwenye–maji–yanayotoka
+
+### Sense 94195 (2 occurrences)
+Grammar: V-Qal-Imperf-3ms,V-Qal-Imperf-3fs
+  eng: she-discharges, discharges
+  spa: fluya
+  hin: बहेगा, जो
+  arb: يَسِيلُ, تَسِيلُ
+  kor: 흐르면
+  swa: atatiririka
+
+### Sense 94196 (2 occurrences)
+Grammar: Conj-w | V-Qal-ConsecImperf-3m
+  eng: and–gushed–out, and–flowed
+  spa: y–fluyeron
+  hin: और–बह–निकले, और–बहे
+  arb: وَ–جَرت, فَانْفَجَرَتْ
+  kor: 흐르나이다, 그리고–흘렀도다
+  swa: na–yakatiririka, na–yakabubujika
+
+### Sense 94197 (1 occurrences)
+Grammar: V-Qal-Prtcpl-ms
+  eng: having-discharge
+  spa: flujo
+  hin: से–उसके शरीर
+  arb: سَائِلٌ
+  kor: 흐르는–자
+  swa: na–maji–yanayotoka
+
+### Sense 94198 (1 occurrences)
+Grammar: N-msc | 3fs
+  eng: her–discharge
+  spa: su–flujo
+  hin: उसका स्राव
+  arb: سَيَلَانُهَا
+  kor: 그녀–의–흐름–이
+  swa: mtiririko–wake
+
+### Sense 94199 (1 occurrences)
+Grammar: Conj-w, Art | V-Qal-Prtcpl-ms
+  eng: and–the–one-having-discharge
+  spa: y–el–que–fluye
+  hin: उसकी
+  arb: وَ–ال–سَائِلُ
+  kor: 그리고–흐르는–자–와
+  swa: na–mwenye–maji–yanayotoka
+
+### Sense 94200 (1 occurrences)
+Grammar: Conj-w | V-Qal-ConsecImperf-3m
+  eng: and–gushed–out
+  spa: y–fluyeron
+  hin: और–बहा
+  arb: وَ–جَرَتْ
+  kor: 그리고–흘러나왔느니라
+  swa: na–yakatoka
+
+### Sense 94201 (1 occurrences)
+Grammar: V-Qal-Prtcpl-ms
+  eng: flowing
+  spa: fluye
+  hin: बहती–है
+  arb: يَفِيضُ
+  kor: 흐르는
+  swa: linatiririka
+
+### Sense 94202 (1 occurrences)
+Grammar: V-Qal-Prtcpl-ms
+  eng: one–with–discharge
+  spa: flujo
+  hin: बहनेवाला
+  arb: سَائِلٌ
+  kor: 유출병-있는-자
+  swa: mwenye–kutoka
+
+### Sense 94203 (1 occurrences)
+Grammar: V-Qal-Prtcpl-ms
+  eng: one-with-discharge
+  spa: que–fluye
+  hin: स्राव–वाला
+  arb: ذِي–سَيَلَانٍ
+  kor: 유출–있는–자
+  swa: Zb
+
+### Sense 94204 (1 occurrences)
+Grammar: V-Qal-Prtcpl-ms
+  eng: has-a-discharge
+  spa: con–flujo
+  hin: स्रावी
+  arb: سَائِلٌ
+  kor: 유출–있는
+  swa: mwenye–kutoka
+
+### Sense 94205 (1 occurrences)
+Grammar: V-Qal-Imperf-3mp
+  eng: waste–away
+  spa: ellos–se–desvanecen
+  hin: बहते–हैं
+  arb: يَسِيلُونَ
+  kor: 찔린
+  swa: wanadhoofika
+
+## Task
+
+Group these 13 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

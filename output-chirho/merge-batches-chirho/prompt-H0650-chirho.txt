@@ -1,0 +1,162 @@
+# Sense Merge Task for H0650
+
+Lemma: H0650 (POS: N-mpc | 2ms)
+Total occurrences: 19
+Current sense count: 15
+
+This Hebrew/Greek lemma has been over-split into 15 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 83774 (3 occurrences)
+Grammar: Prep-l, Art | N-mp
+  eng: to–the–ravines
+  spa: a–los–arroyos
+  hin: को–नालों, और–को–घाटियों
+  arb: لِلْأَوْدِيَةِ, لِـ–الأَوْدِيَةِ
+  kor: 그–계곡들에게, 그–골짜기들에게
+  swa: kwa–mifereji, kwa–mabonde
+
+### Sense 83775 (2 occurrences)
+Grammar: N-mpc
+  eng: channels-of
+  spa: corrientes–de, arroyos–de
+  hin: नाले, धाराएँ
+  arb: مَجاري
+  kor: 시내들–이, 시내들
+  swa: mito–ya
+
+### Sense 83776 (2 occurrences)
+Grammar: N-mpc
+  eng: the–channels–of, channels-of
+  spa: cauces–de, canales–de
+  hin: तल
+  arb: مَجَارِي, قِيعَانُ
+  kor: 수로들–이, 물길들–이
+  swa: vijito–vya
+
+### Sense 83777 (1 occurrences)
+Grammar: N-mpc
+  eng: ravines-of–
+  spa: los–cauces–de
+  hin: नदियों
+  arb: مَجَارِي
+  kor: 개울들에–
+  swa: mifereji–ya
+
+### Sense 83778 (1 occurrences)
+Grammar: Prep-k | N-msc
+  eng: like-channel-of
+  spa: como–cauce–de
+  hin: नाले–की–तरह
+  arb: كَمَجْرى
+  kor: 같이–수로–가
+  swa: kama–mkondo–wa
+
+### Sense 83779 (1 occurrences)
+Grammar: N-mpc
+  eng: are–tubes–of
+  spa: tubos–de
+  hin: नलियाँ
+  arb: أَنَابِيبُ
+  kor: 관들이
+  swa: mirija
+
+### Sense 83780 (1 occurrences)
+Grammar: N-mpc
+  eng: channels–of
+  spa: corrientes–de
+  hin: नालों
+  arb: مَجاري
+  kor: –시내들–의
+  swa: vijito-vya
+
+### Sense 83781 (1 occurrences)
+Grammar: N-mpc | 3ms
+  eng: its–channels
+  spa: sus-cauces
+  hin: उसकी–नालियों
+  arb: أَقنِيَتِهِ
+  kor: 그–수로들
+  swa: mifereji-yake
+
+### Sense 83782 (1 occurrences)
+Grammar: Conj-w | N-mp
+  eng: and–the–ravines
+  spa: y–los–cauces
+  hin: और–नालों
+  arb: وَٱلْأَوْدِيَةُ
+  kor: 그리고–개울들이
+  swa: na–mifereji
+
+### Sense 83783 (1 occurrences)
+Grammar: N-mp
+  eng: mighty
+  spa: los–fuertes
+  hin: शक्तिशालों–की
+  arb: حِزامَ
+  kor: 수로들–의–
+  swa: wenye–nguvu
+
+### Sense 83784 (1 occurrences)
+Grammar: N-mpc
+  eng: channels-of
+  spa: corrientes–de
+  hin: धाराओं
+  arb: أَفِيقِي
+  kor: 시내들–의
+  swa: vijito
+
+### Sense 83785 (1 occurrences)
+Grammar: Prep-k | N-mp
+  eng: like–streams
+  spa: como–arroyos
+  hin: धाराओं–की–तरह
+  arb: كَالسُّيول
+  kor: 시내들–같이
+  swa: kama–vijito
+
+### Sense 83786 (1 occurrences)
+Grammar: N-mpc
+  eng: are-channels-of
+  spa: canales–de
+  hin: पंक्तियाँ
+  arb: صُفُوفُ
+  kor: 관들이
+  swa: safu–za
+
+### Sense 83787 (1 occurrences)
+Grammar: Prep-b, Art | N-mp
+  eng: by–the–streams
+  spa: en–los–arroyos
+  arb: فِي–ٱلْأَوْدِيَةِ
+  kor: 에–그–계곡들에서
+  swa: katika–mifereji
+
+### Sense 83788 (1 occurrences)
+Grammar: N-mpc | 2ms
+  eng: your–ravines
+  spa: tus–arroyos,
+  hin: तेरी
+  arb: أَوْدِيَتِكَ
+  kor: 네–계곡들에서
+  swa: mifereji–yako
+
+## Task
+
+Group these 15 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

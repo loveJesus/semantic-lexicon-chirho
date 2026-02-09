@@ -1,0 +1,126 @@
+# Sense Merge Task for H6612a
+
+Lemma: H6612a (POS: Conj-w)
+Total occurrences: 18
+Current sense count: 11
+
+This Hebrew/Greek lemma has been over-split into 11 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 129211 (5 occurrences)
+Grammar: N-mp
+  eng: the–simple, O–simple–ones
+  spa: simples
+  hin: भोलो, भोले, भोलों–का
+  arb: أَيُّهَا–الْبُسَطَاءُ, سُذَّجٌ, الْبُسَطَاءِ
+  kor: 어리석은–자–들–아, 어리석은–자들이, 어리석은–자–들–이
+  swa: wajinga, wasio–na–uzoefu
+
+### Sense 129212 (4 occurrences)
+Grammar: N-ms
+  eng: is–simple, the–simple, simple
+  spa: simple, Simple
+  hin: भोला
+  arb: بَسِيطٌ, ساذِجٌ, الْبَسِيطُ
+  kor: 어리석은–자–야, 어리석은–자가, 어리석은–자–는
+  swa: mjinga
+
+### Sense 129213 (1 occurrences)
+Grammar: N-mp
+  eng: to–the–simple
+  spa: a–simples
+  arb: البُسَطَاءَ
+  kor: 단순한–자들–을
+  swa: mjinga
+
+### Sense 129214 (1 occurrences)
+Grammar: Conj-w, Prep-m | N-ms
+  eng: and–from–simple
+  spa: y–de–simple
+  hin: और–भोले–से
+  arb: وَ–مِنْ–سَاذَجٍ
+  kor: 그리고–에–어리석은–자로부터
+  swa: au–asiyejua
+
+### Sense 129215 (1 occurrences)
+Grammar: Prep-b, Art | N-mp
+  eng: among–the–simple
+  spa: entre–los–simples
+  hin: भोलों–में
+  arb: بَيْنَ–الْبُسَطَاءِ
+  kor: 어리석은–자–들–중–에
+  swa: miongoni–mwa–wajinga
+
+### Sense 129216 (1 occurrences)
+Grammar: Conj-w | N-mp
+  eng: but–the–simple
+  spa: pero–los–simples
+  hin: परंतु–भोले
+  arb: وَ–الْبُسَطاءُ
+  kor: 그러나–어리석은–자들은
+  swa: lakini–wajinga
+
+### Sense 129217 (1 occurrences)
+Grammar: Conj-w | N-ms
+  eng: and–simple
+  spa: y–el–simple
+  hin: और–भोला
+  arb: وَ–ساذِجٌ
+  kor: 그러면–어리석은–자는
+  swa: na–mjinga
+
+### Sense 129218 (1 occurrences)
+Grammar: N-mp
+  eng: simpleness
+  spa: simples
+  hin: भोलापन
+  arb: أَيُّهَا–الْبُسَطَاءُ
+  kor: 어리석은–자–들–아
+  swa: ujinga
+
+### Sense 129219 (1 occurrences)
+Grammar: N-ms
+  eng: the–simple
+  spa: al–simple
+  hin: भोले–को
+  arb: السَّاذَجَ
+  kor: 단순한–자–를
+  swa: mjinga
+
+### Sense 129220 (1 occurrences)
+Grammar: Prep-l | N-mp
+  eng: to–the–simple
+  spa: a–los–simples
+  hin: भोलों–को
+  arb: الْبُسَطَاءِ
+  kor: 어리석은–자–들–에게
+  swa: kwa–wajinga
+
+### Sense 129221 (1 occurrences)
+Grammar: N-mp
+  eng: the–simple
+  spa: a–los–sencillos
+  hin: भोलों–का
+  arb: البُسَطاءَ
+  kor: 어리석은–자들–을
+  swa: wajinga
+
+## Task
+
+Group these 11 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

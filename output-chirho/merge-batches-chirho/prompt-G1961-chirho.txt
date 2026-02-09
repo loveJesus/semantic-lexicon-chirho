@@ -1,0 +1,145 @@
+# Sense Merge Task for G1961
+
+Lemma: G1961 (POS: V-IIA-3P)
+Total occurrences: 17
+Current sense count: 13
+
+This Hebrew/Greek lemma has been over-split into 13 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 67784 (3 occurrences)
+Grammar: V-ANA
+  eng: to–remain, to-remain
+  spa: permanecer
+  hin: ठहरने–को, ठहरने, ठहरना
+  arb: نَبقى, أَنْ–يَمْكُثَ, أَنْ–أَمْكُثَ
+  kor: 머물리기를, 머물러–달라고, 머물라고
+  swa: kukaa
+
+### Sense 67785 (2 occurrences)
+Grammar: V-AIA-1P
+  eng: we–remained, we-remained
+  spa: permanecimos
+  hin: हम–ठहरे, ठहरे
+  arb: أَقَمْنَا, أَقَمنا
+  kor: 우리가–머물렀다, 머물었다
+  swa: tulikaa
+
+### Sense 67786 (2 occurrences)
+Grammar: V-ANA,V-PNA
+  eng: to–remain, to-remain
+  spa: quedarse, permanecer
+  hin: रेहन, रहना
+  arb: أَن–يَبقَى, أَنْ–أَبْقى
+  kor: 머물러–있기로, 머무르기
+  swa: kubaki
+
+### Sense 67787 (1 occurrences)
+Grammar: V-IIA-3P
+  eng: they–continued
+  spa: persistían
+  hin: लगे–रहे
+  arb: اِستَمَرّوا
+  kor: 계속했다
+  swa: kuendelea
+
+### Sense 67788 (1 occurrences)
+Grammar: V-FIA-1S
+  eng: I-will-remain
+  spa: permaneceré
+  hin: मैं–ठहरूँगा
+  arb: وَ–سَأَمْكُثُ
+  kor: 머물리라
+  swa: nitabaki
+
+### Sense 67789 (1 occurrences)
+Grammar: V-PSA-2S
+  eng: you-remain
+  spa: permaneces
+  hin: बना–रहे
+  arb: تَبْقَى
+  kor: 머물러–있으면
+  swa: utaendelea
+
+### Sense 67790 (1 occurrences)
+Grammar: V-PSA-1P
+  eng: should–we–continue
+  spa: permanezcamos
+  hin: बने–रहें
+  arb: أَنَستَمِرُّ
+  kor: 머물러–있을가
+  swa: tuendelee
+
+### Sense 67791 (1 occurrences)
+Grammar: V-IIA-3S
+  eng: continued
+  spa: continuaba
+  hin: लगातार–खटखटाता–रहा
+  arb: ٱسْتَمَرَّ
+  kor: 계속했다
+  swa: akaendelea
+
+### Sense 67792 (1 occurrences)
+Grammar: V-PPA-GMP
+  eng: remaining
+  spa: Permaneciendo
+  hin: ठहरते–हुए
+  arb: وَإِذْ–أَقَمْنَا
+  kor: 머무른–동안
+  swa: Tulipokuwa–tukikaa
+
+### Sense 67793 (1 occurrences)
+Grammar: V-AIA-1S
+  eng: I-remained
+  spa: permanecí
+  hin: मैन–रह
+  arb: مَكَثتُ
+  kor: 머물렀노라
+  swa: nilikaa
+
+### Sense 67794 (1 occurrences)
+Grammar: V-PIA-2P
+  eng: you–continue
+  spa: permanecéis
+  hin: तुम-बने-रहो
+  arb: تَثبُتونَ
+  kor: 너희가–머물면
+  swa: mnaendelea
+
+### Sense 67795 (1 occurrences)
+Grammar: V-PMA-2S
+  eng: continue
+  spa: permanece
+  hin: तिक-रह
+  arb: اثْبُتْ
+  kor: 머물러라
+  swa: endelea
+
+### Sense 67796 (1 occurrences)
+Grammar: V-PSA-3P
+  eng: they-remain
+  spa: permanecen
+  hin: बने–रहें
+  arb: يَبْقَوْا
+  kor: 머물러–있으면
+  swa: endelea
+
+## Task
+
+Group these 13 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

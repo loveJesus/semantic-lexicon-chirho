@@ -1,0 +1,135 @@
+# Sense Merge Task for H4046
+
+Lemma: H4046 (POS: Conj-w)
+Total occurrences: 26
+Current sense count: 12
+
+This Hebrew/Greek lemma has been over-split into 12 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 109685 (10 occurrences)
+Grammar: Art | N-fs
+  eng: the–plague
+  spa: la–plaga
+  hin: महामारी, महामारी–के, विपत्ति
+  arb: الْوَبَاءُ, الْوَبَاءِ, الْوَبَأُ
+  kor: 그–역병이, 그–역병–이, 역병이
+  swa: tauni, tauni–hiyo, pigo
+
+### Sense 109686 (3 occurrences)
+Grammar: Prep-b, Art | N-fs
+  eng: by–the–plague, in–the–plague
+  spa: en–la–plaga, por–la–plaga
+  hin: विपत्ति–से, महामारी–में
+  arb: بِ–الْوَبَاءِ, بِالْوَبَاءِ
+  kor: 역병–으로, 역병–안에서, 그–역병–으로
+  swa: kwa–pigo, kwa–tauni–hiyo
+
+### Sense 109687 (3 occurrences)
+Grammar: N-fs,Art | N-fs
+  eng: the–plague, plague, a–plague
+  spa: plaga, la–plaga
+  hin: महामारी, मार
+  arb: وَباء, ضَرْبَةً, الوَباء
+  kor: 재앙이, 재앙–이, 그–재앙–이
+  swa: tauni
+
+### Sense 109688 (2 occurrences)
+Grammar: N-fs,Art | N-fs
+  eng: the–slaughter, a–slaughter
+  spa: la–derrota, derrota
+  hin: मार
+  arb: ضَرْبَةٌ, الْضَرْبَةُ
+  kor: 학살이, 그–학살이
+  swa: mauaji
+
+### Sense 109689 (1 occurrences)
+Grammar: N-fs
+  eng: plague
+  spa: plaga
+  hin: महामारीसे
+  arb: ضَرْبَةً
+  kor: 재앙으로
+  swa: pigo
+
+### Sense 109690 (1 occurrences)
+Grammar: Prep-k, Art | N-fs
+  eng: like–the–plague
+  spa: como–la–plaga
+  hin: जैसी–महामारी
+  arb: كَهٰذِهِ–الضَّرْبَةِ
+  kor: 그–역병–같이
+  swa: kama–tauni
+
+### Sense 109691 (1 occurrences)
+Grammar: Conj-w, Art | N-fs
+  eng: and–the–plague
+  spa: y–la–plaga
+  hin: और–विपत्ति
+  arb: وَ–الْوَبَاءُ
+  kor: 그리고–역병이
+  swa: na–pigo
+
+### Sense 109692 (1 occurrences)
+Grammar: N-fpc | 1cs
+  eng: my–plagues
+  spa: mis–plagas
+  hin: मेरी–महामारियों
+  arb: ضَرَبَاتِي
+  kor: 내–재앱들을
+  swa: mapigo–yangu
+
+### Sense 109693 (1 occurrences)
+Grammar: Prep-b | N-fs
+  eng: with-a-plague
+  spa: con–plaga
+  arb: بِوَبَاءٍ
+  kor: –역병으로
+  swa: kwa–pigo
+
+### Sense 109694 (1 occurrences)
+Grammar: N-fsc
+  eng: plague–of
+  spa: plaga–de
+  hin: महामारी
+  arb: ضَرْبَةُ
+  kor: 역병이
+  swa: tauni–ya
+
+### Sense 109695 (1 occurrences)
+Grammar: Prep-l | N-fs
+  eng: for–plague
+  spa: para–plaga
+  hin: महामारी–के–लिए
+  arb: لِ–وَبَأٍ
+  kor: 에–역병
+  swa: kwa–tauni
+
+### Sense 109696 (1 occurrences)
+Grammar: N-fs
+  eng: slaughter
+  spa: mortandad
+  hin: मार
+  arb: ضَرْبَةٌ
+  kor: 재앙이
+  swa: tauni
+
+## Task
+
+Group these 12 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

@@ -1,0 +1,136 @@
+# Sense Merge Task for H5472
+
+Lemma: H5472 (POS: V-Nifal-Perf-1cs)
+Total occurrences: 14
+Current sense count: 12
+
+This Hebrew/Greek lemma has been over-split into 12 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 120390 (3 occurrences)
+Grammar: V-Nifal-Imperf-3mp
+  eng: let–turn–back, let–them–be–turned–back
+  spa: retrocedan
+  hin: लौटें, पीछे–मुड़ें, पीछे–फिरें
+  arb: يَرْتَدّونَ, يَرْتَدّوا, يَرتَدّونَ
+  kor: 물러나리이다, 물러가게–하소서, 돌이켜소서
+  swa: warudishwe, warudi, na–warudi
+
+### Sense 120391 (1 occurrences)
+Grammar: V-Qal-Prtcpl-ms
+  eng: the–backslider–of
+  spa: apartado–de
+  hin: पीछे–हटनेवाला
+  arb: مُرْتَدٌّ
+  kor: 돌아선
+  swa: aliyerudi–nyuma
+
+### Sense 120392 (1 occurrences)
+Grammar: Conj-w | V-Nifal-ConsecImperf-
+  eng: and–they–turned–back
+  spa: Y–se-apartaron
+  hin: और–वे–फिर–गए
+  arb: وَارْتَدُّوا
+  kor: 돌아섰나이다
+  swa: Na–wakarudi–nyuma
+
+### Sense 120393 (1 occurrences)
+Grammar: V-Nifal-Perf-3cp
+  eng: they–turned
+  spa: se–volvieron
+  hin: वे–लौट–गईं
+  arb: رَجَعُوا
+  kor: 돌아섰다
+  swa: wakarudi
+
+### Sense 120394 (1 occurrences)
+Grammar: V-Nifal-Prtcpl-mp
+  eng: turning
+  spa: retrocediendo
+  hin: पीछे–हटते
+  arb: مُنْدَحِرِينَ
+  kor: 물러나는
+  swa: wanarudi
+
+### Sense 120395 (1 occurrences)
+Grammar: V-Nifal-Perf-3ms
+  eng: has–turned–back
+  spa: se–volvió
+  hin: फिरा
+  arb: يَرْتَدَّ
+  kor: 물러났도다
+  swa: kurudi
+
+### Sense 120396 (1 occurrences)
+Grammar: Art | V-Nifal-Prtcpl-mp
+  eng: those–who–turn–back
+  spa: los–que–retroceden
+  hin: पीछे–हटने–वालों
+  arb: المُرْتَدِّينَ
+  kor: 물러가는–자들을
+  swa: wanaorudi–nyuma
+
+### Sense 120397 (1 occurrences)
+Grammar: V-Nifal-Perf-1cs
+  eng: I–turned
+  spa: me–volví
+  hin: मैं–हटा
+  arb: رَجَعْتُ
+  kor: 물러서지–않았느니라
+  swa: nimerudi
+
+### Sense 120398 (1 occurrences)
+Grammar: Conj-w | V-Nifal-ConjImperf-3m
+  eng: and–let–them–turn
+  spa: y–volverán
+  hin: और–पीछे–हटें
+  arb: وَلْيَرْتَدُّوا
+  kor: 그리고–물러나리라
+  swa: na–warudi
+
+### Sense 120399 (1 occurrences)
+Grammar: V-Nifal-Perf-3cp
+  eng: They–turn–back
+  spa: serán–vueltos
+  hin: पीछे–हटेंगे
+  arb: اِرْتَدُّوا
+  kor: 돌아갔느니라
+  swa: Watarudishwa
+
+### Sense 120400 (1 occurrences)
+Grammar: V-Qal-Imperf-1cp
+  eng: will–we–turn–back
+  spa: nos-apartaremos
+  hin: हम–फिरेंगे
+  arb: نَرْتَدُّ
+  kor: 우리가–물러가지
+  swa: geuka–nyuma
+
+### Sense 120401 (1 occurrences)
+Grammar: V-Qal-Perf-3ms
+  eng: have–turned–aside
+  spa: se–desviaron
+  hin: भटक–गए–हैं
+  arb: اِرْتَدُّوا
+  kor: 돌이켰도다
+  swa: wamerudi-nyuma
+
+## Task
+
+Group these 12 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

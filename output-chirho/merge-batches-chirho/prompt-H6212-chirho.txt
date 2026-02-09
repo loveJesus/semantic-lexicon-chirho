@@ -1,0 +1,145 @@
+# Sense Merge Task for H6212
+
+Lemma: H6212 (POS: N-ms)
+Total occurrences: 33
+Current sense count: 13
+
+This Hebrew/Greek lemma has been over-split into 13 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 126292 (7 occurrences)
+Grammar: N-ms,N-msc
+  eng: plant, plant-of
+  spa: hierba, hierba–de
+  hin: पौधा, घास
+  arb: نَبَاتٍ, نَبَاتًا, نَبَاتِ
+  kor: 풀
+  swa: mimea, mimea–ya
+
+### Sense 126293 (6 occurrences)
+Grammar: N-ms
+  eng: grass
+  spa: hierba
+  hin: घास
+  arb: عُشْبٍ, الْعُشْبِ, عُشْبًا
+  kor: 풀, 풀을, 풀도
+  swa: majani, nyasi, mimea
+
+### Sense 126294 (4 occurrences)
+Grammar: Prep-k | N-msc,Prep-k, Art | N-ms
+  eng: like–the–grass–of, like–grass
+  spa: como–hierba–de, como–hierba
+  hin: घास–की–तरह
+  arb: كَ–العُشب, كَ–عُشْبِ, كَعُشْبِ
+  kor: 풀–처럼, 풀–같이, 같이–풀
+  swa: kama–nyasi, kama–majani–ya
+
+### Sense 126295 (4 occurrences)
+Grammar: N-msc
+  eng: vegetation–of
+  spa: hierba-de
+  hin: घास
+  arb: عُشْبِ
+  kor: 풀
+  swa: mimea, Musa
+
+### Sense 126296 (3 occurrences)
+Grammar: N-msc,N-ms
+  eng: vegetation, the–plant, grass-of
+  spa: hierba, hierba–de
+  hin: घास
+  arb: عُشْبَ, عُشْبٌ
+  kor: 풀이, 풀
+  swa: majani
+
+### Sense 126297 (2 occurrences)
+Grammar: N-msc,N-ms
+  eng: vegetation, the–vegetation-of–
+  spa: la–hierba–de, hierba
+  hin: घास
+  arb: عُشْبَ
+  kor: 풀을
+  swa: mimea, majani–ya
+
+### Sense 126298 (1 occurrences)
+Grammar: N-ms
+  eng: vegetation
+  spa: la–vegetación
+  hin: पौधे।
+  arb: النَّبَاتِ
+  kor: 풀위에
+  swa: mimea
+
+### Sense 126299 (1 occurrences)
+Grammar: Conj-w | N-ms
+  eng: and–plants
+  spa: y–planta
+  hin: और–पौधे
+  arb: وَ–نَباتًا
+  kor: 그리고–채소–를
+  swa: na–mimea
+
+### Sense 126300 (1 occurrences)
+Grammar: N-ms
+  eng: vegetation
+  spa: hierba
+  hin: पौधा
+  arb: عُشب
+  kor: 풀–을
+  swa: mimea
+
+### Sense 126301 (1 occurrences)
+Grammar: N-msc | 3mp
+  eng: their–vegetation
+  spa: su–hierba
+  hin: घास–उनकी
+  arb: عُشْبِهَا
+  kor: 그들의–풀을
+  swa: majani–yake
+
+### Sense 126302 (1 occurrences)
+Grammar: N-mpc
+  eng: herbs–of
+  spa: hierbas–de
+  hin: जड़ी–बूटियाँ
+  arb: عُشْبُ
+  kor: 풀들이
+  swa: mimea–ya
+
+### Sense 126303 (1 occurrences)
+Grammar: Conj-w | N-msc
+  eng: and–the–grass–of
+  spa: y–hierba–de
+  hin: और–घास
+  arb: وَعُشْبُ
+  kor: 그리고–풀이
+  swa: na–majani
+
+### Sense 126304 (1 occurrences)
+Grammar: Conj-w, Prep-b | N-msc
+  eng: and–on–vegetation–of
+  spa: y–en–hierba-de
+  hin: और–घास–पर
+  arb: وَ–فِي–عُشْبِ
+  kor: 그리고–풀에
+  swa: na–katika–mimea
+
+## Task
+
+Group these 13 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

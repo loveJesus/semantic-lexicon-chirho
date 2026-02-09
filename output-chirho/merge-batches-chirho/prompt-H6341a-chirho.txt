@@ -1,0 +1,144 @@
+# Sense Merge Task for H6341a
+
+Lemma: H6341a (POS: N-msc)
+Total occurrences: 25
+Current sense count: 13
+
+This Hebrew/Greek lemma has been over-split into 13 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 127318 (9 occurrences)
+Grammar: N-ms,N-msc
+  eng: a–trap, snare, trap
+  spa: trampa, trampa–de
+  hin: फन्दा, फंदा, फन्दे–के
+  arb: فَخًّا, فَخٌّ, فَخٍّ
+  kor: 덧이, 올무–를, 덫–을
+  swa: mtego, mtego–wa
+
+### Sense 127319 (2 occurrences)
+Grammar: N-mp
+  eng: snares
+  spa: y–trampas, hay–trampas
+  hin: फंदे
+  arb: فِخَاخٌ, فِخاخٌ
+  kor: 덧이, 덧들이
+  swa: na–mitego, mitego
+
+### Sense 127320 (2 occurrences)
+Grammar: Prep-b, Art | N-ms
+  eng: in–the–snare
+  spa: en–la–trampa, en–el–lazo
+  hin: में–फंदे, फन्दे–में
+  arb: بِالْفَخِّ
+  kor: 올무–에, 올가미에–
+  swa: kwa–mtego, katika–mtego
+
+### Sense 127321 (2 occurrences)
+Grammar: Prep-m | N-msc
+  eng: from–the–snare–of
+  spa: de–trampa–de
+  hin: से–फंदे, फन्दे–से
+  arb: مِن–فَخّ, مِنْ–فَخَّ
+  kor: 올무–에서
+  swa: kutoka–mtego–wa, kutoka–kwenye–mtego
+
+### Sense 127322 (2 occurrences)
+Grammar: Conj-w | N-ms
+  eng: and–snare
+  spa: y–trampa, y–lazo
+  hin: और–फन्दा, और–फंदा
+  arb: وَفَخٌّ
+  kor: 그리고–올무라, 그리고–올가미가
+  swa: na–mtego
+
+### Sense 127323 (1 occurrences)
+Grammar: Conj-w | N-mp
+  eng: and–snares
+  spa: y–lazos
+  hin: और–फंदे
+  arb: وَ–فِخَاخًا
+  kor: 그리고–덧들을
+  swa: na–mitego
+
+### Sense 127324 (1 occurrences)
+Grammar: Prep-l | N-ms
+  eng: a–trap
+  spa: para–trampa
+  arb: فَخّاً
+  kor: 올무–로
+  swa: mtego
+
+### Sense 127325 (1 occurrences)
+Grammar: N-mp
+  eng: coals
+  spa: lazos
+  hin: जाल
+  arb: فِخَاخًا
+  kor: 올무들–을
+  swa: mitego
+
+### Sense 127326 (1 occurrences)
+Grammar: Prep-l | N-ms
+  eng: for–snare
+  spa: para–trampa
+  hin: फन्दे–के–लिए
+  arb: لِفَخٍّ
+  kor: 덧으로–
+  swa: mtego
+
+### Sense 127327 (1 occurrences)
+Grammar: Prep-b, Art | N-ms
+  eng: in–the–snare
+  spa: en–la–trampa
+  hin: फंदे–में
+  arb: بَ–فَّح
+  kor: 덧–에서
+  swa: kwa–mtego
+
+### Sense 127328 (1 occurrences)
+Grammar: Prep-l | N-ms
+  eng: for–trap
+  spa: por-trampa
+  hin: फंदा
+  arb: لِفَخٍّ
+  kor: 덫이
+  swa: mtego
+
+### Sense 127329 (1 occurrences)
+Grammar: N-msc
+  eng: snare-of
+  spa: trampa–de
+  hin: फंदे
+  arb: فَخِّ
+  kor: 덧
+  swa: mtego
+
+### Sense 127330 (1 occurrences)
+Grammar: Art | N-ms
+  eng: the–snare
+  spa: la–trampa
+  hin: फन्दा
+  arb: الفَخّ
+  kor: 올무–가
+  swa: mtego
+
+## Task
+
+Group these 13 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

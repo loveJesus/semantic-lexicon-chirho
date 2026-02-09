@@ -1,0 +1,145 @@
+# Sense Merge Task for G2808
+
+Lemma: G2808 (POS: V-FIA-3S)
+Total occurrences: 16
+Current sense count: 13
+
+This Hebrew/Greek lemma has been over-split into 13 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 70770 (2 occurrences)
+Grammar: V-RPM/P-GFP
+  eng: having–been–shut
+  spa: habiendo-sido-cerradas
+  hin: बन्द–किए–हुए
+  arb: مُغْلَقَةً
+  kor: 잠긴
+  swa: imefungwa
+
+### Sense 70771 (2 occurrences)
+Grammar: V-ANA
+  eng: to–shut, to-shut
+  spa: de–cerrar, cerrar
+  hin: बन्द–करना, बंद–करने–की
+  arb: أَن–يُغلِقوا, أَنْ–يُغْلِقَهُ
+  kor: 닫다, 닫는
+  swa: kuzifunga, kuufunga
+
+### Sense 70772 (2 occurrences)
+Grammar: V-AIP-3S,V-AIP-3P
+  eng: were-shut, was–shut
+  spa: fue–cerrado, fueron-cerradas
+  hin: बन्द–हो–गए, बंद–हुआ
+  arb: أُغْلِقَتْ, أُغلِقَتِ
+  kor: 닫혔다
+  swa: zilifungwa, ilipofungwa
+
+### Sense 70773 (1 occurrences)
+Grammar: V-RPM/P-ANS
+  eng: having–been–locked
+  spa: cerrada
+  hin: बन्द
+  arb: مُغْلَقًا
+  kor: 우리–가
+  swa: limefungwa
+
+### Sense 70774 (1 occurrences)
+Grammar: V-AIP-3S
+  eng: was–shut
+  spa: fue–cerrada
+  hin: बंद–हो–गया
+  arb: أُغْلِقَ
+  kor: 닫혔다
+  swa: ikafungwa
+
+### Sense 70775 (1 occurrences)
+Grammar: V-ASA-3S
+  eng: shuts
+  spa: cierre
+  hin: बन्द–करे
+  arb: أَغلَقَ
+  kor: 닫으면
+  swa: anafunga
+
+### Sense 70776 (1 occurrences)
+Grammar: V-PPA-NMS
+  eng: shutting
+  spa: que–cierra
+  hin: बन्द–करनेवाला,
+  arb: الغالِقُ
+  kor: 닫는–분
+  swa: afungaye,
+
+### Sense 70777 (1 occurrences)
+Grammar: V-APA-NMS
+  eng: having–shut
+  spa: habiendo–cerrado
+  hin: बन्द–करके
+  arb: أَغلِقْ
+  kor: 닫고
+  swa: ukifunga
+
+### Sense 70778 (1 occurrences)
+Grammar: V-ASP-3P
+  eng: will-be-shut
+  spa: serán–cerradas
+  hin: बन्द–होंगे
+  arb: تُغْلَقَ
+  kor: 닫히지
+  swa: fungwa
+
+### Sense 70779 (1 occurrences)
+Grammar: V-FIA-3S
+  eng: will–shut
+  spa: cerrará
+  hin: बन्द–करेगा;
+  arb: يُغْلِقُ
+  kor: 닫지–못한다
+  swa: atakayefunga;
+
+### Sense 70780 (1 occurrences)
+Grammar: V-AIA-3S
+  eng: shut
+  spa: cerró
+  hin: बन्द–किया
+  arb: أَغْلَقَها
+  kor: 잠갔고
+  swa: akafunga
+
+### Sense 70781 (1 occurrences)
+Grammar: V-RIM/P-3S
+  eng: has-been-shut
+  spa: está–cerrada
+  hin: बंद–है
+  arb: مُغْلَقٌ
+  kor: 잠겨졌다
+  swa: umefungwa
+
+### Sense 70782 (1 occurrences)
+Grammar: V-PIA-2P
+  eng: you–shut
+  spa: cerráis
+  hin: बंद–करते–हो
+  arb: تُغلِقونَ
+  kor: 닫는다
+  swa: –
+
+## Task
+
+Group these 13 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

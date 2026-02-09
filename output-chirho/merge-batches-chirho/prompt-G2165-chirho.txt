@@ -1,0 +1,136 @@
+# Sense Merge Task for G2165
+
+Lemma: G2165 (POS: V-PIM/P-3P)
+Total occurrences: 14
+Current sense count: 12
+
+This Hebrew/Greek lemma has been over-split into 12 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 68519 (2 occurrences)
+Grammar: V-PNM/P,V-ANP
+  eng: to-celebrate, To-celebrate
+  spa: regocijarse, a–regocijarse
+  hin: आनन्दित–होने।, आनन्दित–होना
+  arb: يَنْبَغِي–أَنْ–نَفْرَحَ, يَفْرَحُونَ
+  kor: 즐거워하기를, 즐거워하고
+  swa: kufurahi
+
+### Sense 68520 (2 occurrences)
+Grammar: V-AMP-2S,V-PMM/P-2S
+  eng: rejoice
+  spa: Alégrate
+  hin: खुश–हो,, आनन्दित–हो
+  arb: افْرَحي, افرَحي
+  kor: 기뻐하라,, 기뻐하라
+  swa: Furahini, Furahi
+
+### Sense 68521 (1 occurrences)
+Grammar: V-ASP-1S
+  eng: I-might-celebrate
+  spa: me–regocijara
+  hin: आनन्दित–होता।
+  arb: أَفْرَحَ
+  kor: 즐거워하도록
+  swa: nifurahie
+
+### Sense 68522 (1 occurrences)
+Grammar: V-PPA-NMS
+  eng: making–glad
+  spa: que–alegra
+  hin: जो–आनन्दित–करता–है
+  arb: المُفرِحُ
+  kor: 기쁘게–하는–자
+  swa: anayenifurahisha
+
+### Sense 68523 (1 occurrences)
+Grammar: V-AIP-3S
+  eng: was–glad
+  spa: se–alegró
+  hin: –हृदय
+  arb: فَرِحَ
+  kor: 말하니
+  swa: ulifurahi
+
+### Sense 68524 (1 occurrences)
+Grammar: V-PMM/P-2S
+  eng: be-merry
+  spa: algrate
+  hin: मौज–कर
+  arb: افْرَحِي
+  kor: 즐거워하라
+  swa: furahia
+
+### Sense 68525 (1 occurrences)
+Grammar: V-AMP-2P
+  eng: Rejoice
+  spa: alegraos
+  hin: आनन्दित–हो
+  arb: اِفْرَحُوا
+  kor: 기뻐하라
+  swa: Furahini
+
+### Sense 68526 (1 occurrences)
+Grammar: V-IIM/P-3P
+  eng: were–rejoicing
+  spa: se–alegraban
+  hin: आनन्दित–हो–रहे–थे
+  arb: فَرِحُوا
+  kor: 기믭했다
+  swa: wakafurahi
+
+### Sense 68527 (1 occurrences)
+Grammar: V-ASP-1P
+  eng: let-us-celebrate
+  spa: regocijémonos
+  hin: आनन्दित–हों।
+  arb: نَفْرَحُ
+  kor: 즐거워하자
+  swa: tufurahi
+
+### Sense 68528 (1 occurrences)
+Grammar: V-PMM/P-2P
+  eng: rejoice
+  spa: alegraos
+  hin: आनंदित–हो
+  arb: اِفرَحي
+  kor: 기믔하라
+  swa: furahini
+
+### Sense 68529 (1 occurrences)
+Grammar: V-PIM/P-3P
+  eng: celebrate
+  spa: se–alegran
+  hin: मगन–होते–हैं
+  arb: يَبتَهِجونَ
+  kor: 즐거워하니
+  swa: watashangilia,
+
+### Sense 68530 (1 occurrences)
+Grammar: V-PPM/P-NMS
+  eng: enjoying
+  spa: celebrando
+  hin: आनन्दित–होता–हुआ
+  arb: مُتَنَعِّمًا
+  kor: 즐거워하며
+  swa: akifurahi
+
+## Task
+
+Group these 12 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

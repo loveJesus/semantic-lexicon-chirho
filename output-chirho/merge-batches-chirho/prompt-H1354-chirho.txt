@@ -1,0 +1,127 @@
+# Sense Merge Task for H1354
+
+Lemma: H1354 (POS: N-mpc | 2mp)
+Total occurrences: 13
+Current sense count: 11
+
+This Hebrew/Greek lemma has been over-split into 11 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 88895 (2 occurrences)
+Grammar: Conj-w | N-cpc | 3fp,Conj-w | N-cpc | 3mp
+  eng: and–rims-of-them
+  spa: y–aros–de–ellas, Y–aros–de–ellas
+  hin: और–उनके–घेरे
+  arb: وَ–أَطْواقُها
+  kor: 그리고–그것들의–테두리들은, 그리고–그것들의–테두리들
+  swa: na–mikia–yao
+
+### Sense 88896 (2 occurrences)
+Grammar: N-csc | 2fs
+  eng: mound–your
+  spa: altar–de–ti
+  hin: टीला–तेरा
+  arb: قُبَّتَكِ
+  kor: 네–높은–곳을
+  swa: jukwaa–lako
+
+### Sense 88897 (1 occurrences)
+Grammar: N-cpc
+  eng: brows-of
+  spa: cejas-de
+  hin: और–धोएगा
+  arb: حَوَاجِبَ
+  kor: 눈썽들을
+  swa: nyusi–za
+
+### Sense 88898 (1 occurrences)
+Grammar: N-csc
+  eng: back-of
+  spa: respaldo–de
+  hin: पीठ
+  arb: ظَهْرُ
+  kor: 등의
+  swa: msingi–wa
+
+### Sense 88899 (1 occurrences)
+Grammar: N-csc | 1cs
+  eng: my–back
+  spa: espalda–mía
+  hin: मेरी–पीठ
+  arb: ظَهْرِي
+  kor: 나–의–등
+  swa: mgongo–wangu
+
+### Sense 88900 (1 occurrences)
+Grammar: Conj-w | N-cpc | 3mp
+  eng: and–their-rims
+  spa: y–aros–de–ellas
+  hin: और–धारें–उनकी
+  arb: وَ–أَطْوَاقُهَا
+  kor: 그리고-그것들의-테들과
+  swa: na–nira–zake
+
+### Sense 88901 (1 occurrences)
+Grammar: N-cpc
+  eng: bosses-of
+  spa: espaldas–de
+  hin: पीठों
+  arb: ظُهُورِ
+  kor: 등들의
+  swa: migongo–ya
+
+### Sense 88902 (1 occurrences)
+Grammar: N-mpc | 2mp
+  eng: defenses-your
+  spa: vuestras–espaldas
+  hin: तुम्हारे–गढ़
+  arb: حُصُونُكُمْ
+  kor: 너희의–높은–것들–이다
+  swa: migongo–yenu
+
+### Sense 88903 (1 occurrences)
+Grammar: Prep-l | N-mpc
+  eng: to–defenses-of–
+  spa: para–espaldas–de
+  hin: गढ़ों–के–लिए
+  arb: لِ–حُصُونِ–
+  kor: 놓은–것들–이다–
+  swa: migongo–ya
+
+### Sense 88904 (1 occurrences)
+Grammar: Conj-w | N-cpc | 3mp
+  eng: and–backs-of-them
+  spa: y–espalda–de–ellos
+  hin: और–उनकी–पीठ
+  arb: وَظُهُورِهِمْ
+  kor: 그리고–그들의–등과
+  swa: na–migongo–yao
+
+### Sense 88905 (1 occurrences)
+Grammar: N-cs
+  eng: mound
+  spa: altar
+  hin: टीला
+  arb: قُبَّةً
+  kor: 높은–곳을
+  swa: jukwaa
+
+## Task
+
+Group these 11 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

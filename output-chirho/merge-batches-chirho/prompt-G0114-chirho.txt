@@ -1,0 +1,126 @@
+# Sense Merge Task for G0114
+
+Lemma: G0114 (POS: V-PIA-3S)
+Total occurrences: 16
+Current sense count: 11
+
+This Hebrew/Greek lemma has been over-split into 11 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 61381 (4 occurrences)
+Grammar: V-PPA-NMS
+  eng: rejecting
+  spa: que–rechaza, rechaza
+  hin: तुच्छ–जानने–वाला, तुछ–समझने-वअल, अस्वीकार–करता–है
+  arb: الرّافِضُ, يَرْفُضُ
+  kor: 거절하는–자는, 거부하는–자는
+  swa: anayenikataa, anayewakataa, anayekataa
+
+### Sense 61382 (3 occurrences)
+Grammar: V-PIA-3S
+  eng: rejects
+  spa: rechaza
+  hin: तुच्छ–जानता–है, तुछ–समझत
+  arb: يَرْفُضُ
+  kor: 거절하는–것이요, 거절하는–것이다, 거절하는–것이–아니요
+  swa: anakataa, anamkataa
+
+### Sense 61383 (1 occurrences)
+Grammar: V-PIA-3S
+  eng: sets-aside
+  spa: anula
+  hin: रद्द–करत,
+  arb: لا–يُبطِلُهُ
+  kor: 폐하지–않노라,
+  swa: anaikataa
+
+### Sense 61384 (1 occurrences)
+Grammar: V-ANA
+  eng: to-reject
+  spa: rechazar
+  arb: أَنْ يَرْفُضَها
+  kor: 거절하기를
+  swa: kumkataa
+
+### Sense 61385 (1 occurrences)
+Grammar: V-PIA-3P
+  eng: reject
+  spa: rechazan
+  hin: तुच्छ–समझते–हैं
+  arb: يرفضون
+  kor: 거부하며
+  swa: wanakataa
+
+### Sense 61386 (1 occurrences)
+Grammar: V-AIA-3P
+  eng: they–rejected
+  spa: abandonaron
+  hin: तोदअ
+  arb: نَقَضْنَ
+  kor: 저버렸다.
+  swa: wameikataa
+
+### Sense 61387 (1 occurrences)
+Grammar: V-FIA-1S
+  eng: I–will–set–aside
+  spa: rechazaré
+  hin: निकम्मी–करूंगा
+  arb: سَأُبْطِلُ
+  kor: 물리치리라
+  swa: nitaikataa.
+
+### Sense 61388 (1 occurrences)
+Grammar: V-PIA-2P
+  eng: you-set-aside
+  spa: anuláis
+  hin: टालते–हो
+  arb: تُبْطِلُونَ
+  kor: 폐하는구나
+  swa: mnaikataa
+
+### Sense 61389 (1 occurrences)
+Grammar: V-PIA-1S
+  eng: I-set-aside
+  spa: desecho
+  hin: मैन–थुक्रअत
+  arb: أُبطِلُ
+  kor: 폐하노라
+  swa: naikataa
+
+### Sense 61390 (1 occurrences)
+Grammar: V-APA-NMS
+  eng: having-rejected
+  spa: rechazando
+  hin: अस्वीकार–करने–वाला
+  arb: رَافِضٌ
+  kor: 무시한
+  swa: akivunja
+
+### Sense 61391 (1 occurrences)
+Grammar: V-AIA-3P
+  eng: rejected
+  spa: rechazaron
+  hin: अस्वीकार–किया
+  arb: رَفَضوا
+  kor: 거부했다
+  swa: walikataa
+
+## Task
+
+Group these 11 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

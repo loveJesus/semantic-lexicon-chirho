@@ -1,0 +1,136 @@
+# Sense Merge Task for H2194
+
+Lemma: H2194 (POS: V-Qal-Imperf-1cs)
+Total occurrences: 12
+Current sense count: 12
+
+This Hebrew/Greek lemma has been over-split into 12 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 94735 (1 occurrences)
+Grammar: V-Qal-Perf-3ms
+  eng: denounced
+  spa: denunció
+  hin: धिक्कारा
+  arb: يَسْخَطْ
+  kor: 노하셨다
+  swa: kukasirikia
+
+### Sense 94736 (1 occurrences)
+Grammar: V-Qal-QalPassPrtcpl-fs
+  eng: accursed
+  spa: maldita?
+  hin: शापित
+  arb: الْمَلْعُونَةُ
+  kor: 저주받은
+  swa: kilaaniwa
+
+### Sense 94737 (1 occurrences)
+Grammar: V-Qal-Perf-3ms
+  eng: was–indignant
+  spa: maldijo
+  hin: क्रोधित-रहा
+  arb: سَخِطَ
+  kor: 노하셨다
+  swa: amewaghadhibikia
+
+### Sense 94738 (1 occurrences)
+Grammar: Conj-w | V-Qal-ConjPerf-3ms
+  eng: and–indignation
+  spa: y–su–indignación
+  hin: और–क्रोध
+  arb: وَسَخَطُهُ
+  kor: 그리고–진노할–것이다
+  swa: na–ghadhabu
+
+### Sense 94739 (1 occurrences)
+Grammar: V-Qal-Imperf-3mp | 3ms
+  eng: will–denounce–him
+  spa: lo–aborrecerán
+  hin: घृणा–करेंगे–उसे
+  arb: تَسْخَطُهُ
+  kor: 분하리라–그를
+  swa: watakasirikia
+
+### Sense 94740 (1 occurrences)
+Grammar: V-Qal-Imperf-1cs
+  eng: can–I–denounce
+  spa: denunciaré
+  hin: धिक्कारूँ
+  arb: أَسَبُّ
+  kor: 내가–노하리요
+  swa: kumkasirikia
+
+### Sense 94741 (1 occurrences)
+Grammar: V-Qal-QalPassPrtcpl-msc
+  eng: cursed–of
+  spa: el–maldito–por
+  hin: क्रोधित
+  arb: مَغْضُوبٌ
+  kor: 저주받은–자는
+  swa: achukizaye
+
+### Sense 94742 (1 occurrences)
+Grammar: V-Qal-Prtcpl-ms
+  eng: indignant
+  spa: que–se–indigna
+  hin: क्रोधित–होता–है
+  arb: يَسْخَطُ
+  kor: 분노하시는
+  swa: mwenye–hasira
+
+### Sense 94743 (1 occurrences)
+Grammar: Conj-w | V-Qal-ConjPerf-3ms
+  eng: and–be-enraged
+  spa: y–se–enfurecerá
+  hin: और–क्रोधित–होगा
+  arb: وَ–يَغْضَبُ
+  kor: 그리고–분노하리라
+  swa: na–atakasirika
+
+### Sense 94744 (1 occurrences)
+Grammar: V-Qal-Perf-2ms
+  eng: you–have–been–angry
+  spa: te–has–indignado
+  hin: तूने–क्रोध–किया–है
+  arb: سَخِطْتَ–عَلَيْهَا
+  kor: 당신이–분노하셨도다
+  swa: umeikasirikia
+
+### Sense 94745 (1 occurrences)
+Grammar: V-Qal-Imp-ms | 3fs
+  eng: denounce
+  spa: denuncia
+  hin: धिक्कार
+  arb: سَبَّ
+  kor: 저주하라
+  swa: mkasirike–juu–ya
+
+### Sense 94746 (1 occurrences)
+Grammar: V-Nifal-Prtcpl-mp
+  eng: indignant
+  spa: indignados
+  hin: क्रोधित
+  arb: غاضِبَةٌ
+  kor: 노하는
+  swa: za–hasira
+
+## Task
+
+Group these 12 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

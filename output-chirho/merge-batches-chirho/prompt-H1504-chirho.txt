@@ -1,0 +1,127 @@
+# Sense Merge Task for H1504
+
+Lemma: H1504 (POS: V-Nifal-Perf-1cs)
+Total occurrences: 13
+Current sense count: 11
+
+This Hebrew/Greek lemma has been over-split into 11 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 89916 (2 occurrences)
+Grammar: V-Nifal-Perf-3ms
+  eng: he–was–cut-off, he-was-cut-off
+  spa: fue–excluido, fue–cortado
+  hin: काट–दिया–गया, काटा–गया–था
+  arb: قُطِعَ, انْقَطَعَ
+  kor: 끊어졌느니라, 끊겼다
+  swa: alikatiliwa, alikataliwa
+
+### Sense 89917 (2 occurrences)
+Grammar: V-Qal-Imp-mp
+  eng: divide
+  spa: dividid
+  hin: काटो
+  arb: اشْطُرُوا
+  kor: 나누라
+  swa: mkateni
+
+### Sense 89918 (1 occurrences)
+Grammar: V-Nifal-Perf-3ms
+  eng: was-decreed
+  spa: fue–decretado
+  hin: ठहराया–गया–था
+  arb: قُضِيَ
+  kor: 결정되었다
+  swa: kiliamriwa
+
+### Sense 89919 (1 occurrences)
+Grammar: V-Nifal-Perf-3cp
+  eng: are–cut–off
+  spa: fueron-cortados
+  hin: काट–दिए–गए
+  arb: انْقَطَعُوا
+  kor: 끊어졌나이다
+  swa: wamekatiliwa–mbali
+
+### Sense 89920 (1 occurrences)
+Grammar: V-Nifal-Perf-1cp
+  eng: we-are-cut-off
+  spa: fuimos–cortados
+  hin: हमारी
+  arb: اِنْقَطَعْنَا
+  kor: 끊어졌다–우리가
+  swa: tumekatiliwa–mbali
+
+### Sense 89921 (1 occurrences)
+Grammar: Conj-w | V-Qal-ConjImperf-2ms
+  eng: and–you–will–decree
+  spa: Y–decretarás–
+  hin: और–तू–ठानेगा
+  arb: وَ–تَقْضِي–
+  kor: 그리고–정하리라–
+  swa: Na–utaamua
+
+### Sense 89922 (1 occurrences)
+Grammar: Conj-w | V-Qal-ConsecImperf-3m
+  eng: and–he-snatches
+  spa: Y-cortará
+  hin: और–वह–काटेगा
+  arb: وَ–يَقْطَعُ
+  kor: 그리고–찢었으나
+  swa: Na-watakata
+
+### Sense 89923 (1 occurrences)
+Grammar: Conj-w | V-Qal-ConsecImperf-3m
+  eng: and–they-cut
+  spa: y–cortaban
+  hin: वय्यिग्जरू
+  arb: وَقَطَعوا
+  kor: 그리고–베었다
+  swa: na–wakakata
+
+### Sense 89924 (1 occurrences)
+Grammar: Prep-l | V-Qal-Prtcpl-msc
+  eng: to–the–one–dividing
+  spa: Al–que-dividió
+  hin: काटनेवाले–को
+  arb: لِـ–شَاقِّ
+  kor: 가르신–이–에게
+  swa: aliyegawanya
+
+### Sense 89925 (1 occurrences)
+Grammar: V-Qal-Perf-3ms
+  eng: is–cut–off
+  spa: sea–cortado
+  hin: काटा–जाएगा
+  arb: انْقَطَعَتْ
+  kor: 끊어지고
+  swa: imekatwa
+
+### Sense 89926 (1 occurrences)
+Grammar: V-Nifal-Perf-1cs
+  eng: I–am–cut–off
+  spa: soy–cortado
+  hin: मैं–कट–गया
+  arb: انْقَطَعْتُ
+  kor: 내–가–끊어졌네
+  swa: Nimekatiliwa–mbali
+
+## Task
+
+Group these 11 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

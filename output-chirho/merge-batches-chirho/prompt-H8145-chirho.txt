@@ -1,0 +1,118 @@
+# Sense Merge Task for H8145
+
+Lemma: H8145 (POS: Art | Number-ofs)
+Total occurrences: 157
+Current sense count: 10
+
+This Hebrew/Greek lemma has been over-split into 10 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 142884 (102 occurrences)
+Grammar: Art | Number-oms,Art | Number-ofs,Art | Number-ofsc
+  eng: the–second, the-second
+  spa: el–segundo, la–segunda, el-segundo
+  hin: दूसरे, दूसरी, दूसरा
+  arb: الثَّانِي, الثّاني, الـ–ثَّانِي
+  kor: 그–둘째, 둘째의, 그–둘째의
+  swa: wa–pili, ya–pili, la–pili
+
+### Sense 142885 (25 occurrences)
+Grammar: Number-ofsc,Number-ofs
+  eng: second, a–second–time, second-time
+  spa: segunda–vez, segunda-vez, segunda
+  hin: दूसरी–बार, दूसरी बार, सात
+  arb: ثَانِيَةً, ثانِيَةً
+  kor: 두–번째, 두–번째로, 두번째로
+  swa: mara–ya–pili, ya–pili, mara-ya-pili
+
+### Sense 142886 (19 occurrences)
+Grammar: Number-oms,Number-omp,Number-ofs,Art | Number-ofs,Art | Number-oms
+  eng: second, the–second
+  spa: segundo, segunda, la–segunda
+  hin: दूसरा, दूसरे, शेनी
+  arb: ثَانِيًا, ثَانٍ, الثَّانِي
+  kor: 둘째, 두째, 둘째쬵
+  swa: wa–pili, cha–pili, ya–pili
+
+### Sense 142887 (5 occurrences)
+Grammar: Art | Number-ofs
+  eng: the–second
+  spa: la–segunda
+  hin: दूसरी–का, दूस्री–का, उस–दूसरी–का
+  arb: الثَّانِيَةِ, الْأُخْرَى, الـ–ثَّانِيَةِ
+  kor: 둘째의, 그–둘째의, 그–둘째–의
+  swa: wa–pili, la–wa–pili, la–pili
+
+### Sense 142888 (1 occurrences)
+Grammar: Conj-w | Number-omp
+  eng: and–second
+  spa: y–segundos
+  hin: और–दूसरे
+  arb: ثَانِياً
+  kor: 그리고–둘째로
+  swa: na–pili
+
+### Sense 142889 (1 occurrences)
+Grammar: Art | Number-ofs
+  eng: the–second
+  spa: el–segundo
+  hin: दूसरे
+  arb: الثَّانِي
+  kor: 둘째–보다
+  swa: nyingine
+
+### Sense 142890 (1 occurrences)
+Grammar: Conj-w, Art | Number-ofs
+  eng: and–the–second
+  spa: y–lo–segundo
+  hin: और–दूसरी–बात
+  arb: وَالثّاني–
+  kor: 그리고–두–번째로
+  swa: na–pili
+
+### Sense 142891 (1 occurrences)
+Grammar: N-fsc | 3ms
+  eng: its-brim
+  spa: borde–de–él
+  hin: किनारे–उसके
+  arb: شَفَتِهِ
+  kor: 그것의-가장자리까지
+  swa: pande–zote
+
+### Sense 142892 (1 occurrences)
+Grammar: Art | Number-ofs
+  eng: year
+  spa: segundo
+  hin: दूसरे
+  arb: الـ–ثَّانِيَةِ
+  kor: 둘째
+  swa: wa–pili
+
+### Sense 142893 (1 occurrences)
+Grammar: Prep-b, Art | Number-oms
+  eng: on–the–second
+  spa: en–el–segundo
+  hin: में–दूसरे
+  arb: فِي–الثَّانِي
+  kor: 에–그–둘째
+  swa: wa–pili
+
+## Task
+
+Group these 10 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

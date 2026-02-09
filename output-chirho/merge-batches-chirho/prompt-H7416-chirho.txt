@@ -1,0 +1,154 @@
+# Sense Merge Task for H7416
+
+Lemma: H7416 (POS: N-ms)
+Total occurrences: 32
+Current sense count: 14
+
+This Hebrew/Greek lemma has been over-split into 14 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 136028 (6 occurrences)
+Grammar: Conj-w | N-ms
+  eng: and–pomegranate
+  spa: y–granada, y-granada, y–de–granados
+  hin: और–अनार
+  arb: وَ–رُمّانَةٌ, وَ–رُمَّانَةٌ, وَ–رُمَّانٍ
+  kor: 그리고–석류, 그리고–석류의, 그리고–석류나무
+  swa: na–komamanga, na–mkomamanga
+
+### Sense 136029 (4 occurrences)
+Grammar: Art | N-mp
+  eng: the–pomegranates
+  spa: las–granadas
+  hin: अनारों–के, अनारों, अनार
+  arb: الرُّمَّانَاتِ, الرُّمَّانِ
+  kor: 그–석류들, 석류들
+  swa: makomamanga
+
+### Sense 136030 (4 occurrences)
+Grammar: Art | N-mp
+  eng: the–pomegranates
+  spa: las–granadas
+  hin: अनारों–पर, अनार
+  arb: الرُّمَّانَاتُ, هَ–رِّمُّونِيم, الرُّمَّانَاتِ
+  kor: 그–석류들–이, 석류들이, 석류들은
+  swa: makomamanga, –
+
+### Sense 136031 (3 occurrences)
+Grammar: N-mp
+  eng: pomegranates
+  spa: granadas
+  hin: अनार, अनारों–की
+  arb: رُمَّانَاتٍ
+  kor: 석류들, 석류들을
+  swa: makomamanga, za–mataji
+
+### Sense 136032 (3 occurrences)
+Grammar: Conj-w | N-mp
+  eng: and–pomegranates
+  spa: y–granadas
+  hin: और–अनार
+  arb: وَرُمَّانٌ
+  kor: 그리고–석류들이
+  swa: na–makomamanga
+
+### Sense 136033 (2 occurrences)
+Grammar: Art | N-ms
+  eng: the–pomegranate
+  spa: la–granada, granada
+  hin: अनार–के
+  arb: هَ–رِّمُّون
+  kor: 그–석류–의
+  swa: cha–komamanga
+
+### Sense 136034 (2 occurrences)
+Grammar: N-mpc
+  eng: pomegranates–of, pomegranates-of
+  spa: granadas–de, granadas-de
+  hin: अनार
+  arb: رُمّاناتِ, رُمَّانَاتِ
+  kor: 석류들을
+  swa: makomamanga–ya, makomamanga
+
+### Sense 136035 (2 occurrences)
+Grammar: Art | N-mp
+  eng: the–pomegranates
+  spa: las–granadas
+  hin: अनारों–के, अनार
+  arb: الـ–رُّمَّانَاتِ
+  kor: 석류들의, 석류들을
+  swa: mia–nne, akafanya
+
+### Sense 136036 (1 occurrences)
+Grammar: N-ms
+  eng: pomegranate
+  spa: granado
+  hin: अनार
+  arb: الرُّمّانُ
+  kor: 석류나무–와
+  swa: mkomamanga
+
+### Sense 136037 (1 occurrences)
+Grammar: Conj-w, Art | N-mp
+  eng: and–the–pomegranates
+  spa: y–las–granadas
+  hin: और–अनार
+  arb: وَ–الـ–رُّمَّانَاتُ
+  kor: 그리고-석류들은
+  swa: pande–zote
+
+### Sense 136038 (1 occurrences)
+Grammar: Conj-w, Art | N-ms
+  eng: and–the–pomegranate
+  spa: y–el–granado
+  hin: और–अनार
+  arb: وَالرُّمَّانَةُ
+  kor: 그리고–석류나무
+  swa: na–mkomamanga
+
+### Sense 136039 (1 occurrences)
+Grammar: Art | N-ms
+  eng: the–pomegranate
+  spa: el–granado
+  hin: अनार–के–पेड़
+  arb: الـ–رُّمَّانَةِ
+  kor: 그–석류나무
+  swa: Rimoni
+
+### Sense 136040 (1 occurrences)
+Grammar: N-mp
+  eng: pomegranates
+  spa: granados
+  hin: अनारों–का
+  arb: رِمُّونِيم
+  kor: 석류들–의
+  swa: ya–makomamanga
+
+### Sense 136041 (1 occurrences)
+Grammar: N-msc | 1cs
+  eng: my–pomegranate
+  spa: mi–granada
+  hin: मसालेदार
+  arb: رُمَّانِي
+  kor: 내–석류–의
+  swa: ya–komamanga–langu
+
+## Task
+
+Group these 14 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

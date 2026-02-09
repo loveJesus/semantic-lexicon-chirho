@@ -1,0 +1,136 @@
+# Sense Merge Task for H5536
+
+Lemma: H5536 (POS: Art | N-ms)
+Total occurrences: 15
+Current sense count: 12
+
+This Hebrew/Greek lemma has been over-split into 12 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 120874 (2 occurrences)
+Grammar: Art | N-ms
+  eng: the–basket
+  spa: la–canasta
+  hin: टोकरी
+  arb: الْ–سَلِّ, الْـسَّلَّةِ
+  kor: 바구니, 그–바구니
+  swa: viatu, Hsl
+
+### Sense 120875 (2 occurrences)
+Grammar: Prep-b, Art | N-ms
+  eng: in–the–basket
+  spa: en-la-canasta
+  hin: टोकरी–में
+  arb: فِي–السَّلَّةِ
+  kor: 에–그–바구니
+  swa: katika–kikapu
+
+### Sense 120876 (2 occurrences)
+Grammar: N-ms,N-msc
+  eng: the–basket–of, basket
+  spa: canasta-de, canasta
+  hin: टोकरी
+  arb: سَلَّةَ, سَلَّةٍ
+  kor: 바구니를, 바구니
+  swa: kikapu
+
+### Sense 120877 (1 occurrences)
+Grammar: N-msc
+  eng: basket-of
+  spa: canasta–de
+  hin: टोकरी
+  arb: سَلَّةِ
+  kor: 바구니
+  swa: Sl
+
+### Sense 120878 (1 occurrences)
+Grammar: Conj-w | N-msc
+  eng: and–basket-of
+  spa: y–canasta–de
+  hin: और–टोकरी
+  arb: وَ–سَلَّةَ
+  kor: 그리고–바구니
+  swa: Usl
+
+### Sense 120879 (1 occurrences)
+Grammar: Conj-w, Prep-b, Art | N-ms
+  eng: and–in–the–basket
+  spa: y–en–la–canasta
+  hin: और–टोकरी–में
+  arb: وَ–فِي–الْ–سَلِّ
+  kor: 그리고–바구니–에서
+  swa: na–katika–viatu
+
+### Sense 120880 (1 occurrences)
+Grammar: Prep-b, Art | N-ms
+  eng: in–the–basket
+  spa: en–el–canasto
+  hin: टोकरी–में
+  arb: بِ–السَّلَّةِ
+  kor: 바구니에
+  swa: kaputini
+
+### Sense 120881 (1 occurrences)
+Grammar: Conj-w, Prep-m | N-msc
+  eng: and–from–the–basket–of
+  spa: Y–de–canasta-de
+  hin: और–टोकरी–से
+  arb: وَ–مِنْ–سَلَّةِ
+  kor: 그리고–바구니에서
+  swa: Na–kutoka–kikapu
+
+### Sense 120882 (1 occurrences)
+Grammar: Prep-b | N-msc
+  eng: in–the–basket–of
+  spa: en–canasta-de
+  hin: टोकरी–में–है
+  arb: فِي–سَلَّةِ
+  kor: 에–바구니에
+  swa: katika–kikapu
+
+### Sense 120883 (1 occurrences)
+Grammar: Prep-m | N-msc
+  eng: from–basket-of
+  spa: de-canasta-de
+  hin: टोकरी–से
+  arb: مِن–سَلَّةِ
+  kor: 에서–바구니
+  swa: kutoka–kikapu
+
+### Sense 120884 (1 occurrences)
+Grammar: Art | N-mp
+  eng: the–baskets
+  spa: las–canastas
+  hin: टोकरियाँ
+  arb: الْ–سِلَالِ
+  kor: 바구니들은
+  swa: vya–viatu
+
+### Sense 120885 (1 occurrences)
+Grammar: N-mpc
+  eng: baskets-of
+  spa: canastas–de
+  hin: टोकरियाँ
+  arb: سِلَالٍ
+  kor: 바구니들이
+  swa: viatu
+
+## Task
+
+Group these 12 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

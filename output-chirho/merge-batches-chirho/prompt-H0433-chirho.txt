@@ -1,0 +1,153 @@
+# Sense Merge Task for H0433
+
+Lemma: H0433 (POS: Conj-w)
+Total occurrences: 61
+Current sense count: 14
+
+This Hebrew/Greek lemma has been over-split into 14 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 82497 (42 occurrences)
+Grammar: N-ms
+  eng: Eloah, of–Eloah, is–God
+  spa: Eloah, Dios, a–Eloah
+  hin: ईश्वर, एलोहा, ईश्वर–को
+  arb: اللّٰهِ, اللّٰهُ, اللّٰهَ
+  kor: 하나님이, 하나님의, 하나님–이
+  swa: Mungu, za–Mungu, ya–Mungu
+
+### Sense 82498 (3 occurrences)
+Grammar: N-msc,N-ms
+  eng: god, a-god
+  spa: dios, dios–de
+  hin: देवता
+  arb: إِلَهٍ, إِلٰهٍ
+  kor: 신도, 신–, 신
+  swa: mungu, elwoha
+
+### Sense 82499 (2 occurrences)
+Grammar: N-mpc,N-msc
+  eng: the–God–of, the–Eloah–of
+  spa: el–Dios–de, Dios–de
+  hin: एलोहीम, एलोहा
+  arb: إِلَهُ, إله
+  kor: 하나님–을, 하나님
+  swa: Mungu–wa
+
+### Sense 82500 (2 occurrences)
+Grammar: N-mpc | 1cs
+  eng: my–Eloah
+  spa: mi–Dios
+  hin: मेरे–एलोहा, मेरा–एलोहा
+  arb: إِلٰهِي
+  kor: 나의–하나님이시라, 나–의–하나님
+  swa: Mungu–wangu
+
+### Sense 82501 (2 occurrences)
+Grammar: N-ms
+  eng: Eloah
+  spa: a–Dios, al–Dios–que
+  hin: एलोहा
+  arb: الْإِلٰهَ, إِلٰهٍ
+  kor: 하나님이, 하나님(접)
+  swa: Mungu
+
+### Sense 82502 (2 occurrences)
+Grammar: Conj-w, Prep-l | N-msc,Conj-w, Prep-l | N-ms
+  eng: and–to–god-of, and–to-a-god
+  spa: y–a–dios, Y–a–dios–de
+  hin: और–देवता–को
+  arb: وَ–لِـ–إِلَهِ, وَ–لِـ–إِلَهٍ
+  kor: 그리고–에–신을
+  swa: na–mungu
+
+### Sense 82503 (1 occurrences)
+Grammar: Prep-l | N-ms
+  eng: for–Eloah
+  spa: para–Eloah
+  hin: ईश्वर–के–लिए
+  arb: لِ–اللّٰهِ
+  kor: 하나님–에게
+  swa: kwa–Mungu
+
+### Sense 82504 (1 occurrences)
+Grammar: N-msc
+  eng: an–Eloah–of
+  spa: Dios–de
+  arb: إِلَهُ
+  kor: 하나님이시다
+  swa: Mungu–wa
+
+### Sense 82505 (1 occurrences)
+Grammar: N-mpc
+  eng: (elohim-of)
+  spa: dioses–de
+  hin: (देवताओं–के)
+  arb: (إِلٰهَيْ)
+  kor: (신들)
+  swa: (miungu–ya)
+
+### Sense 82506 (1 occurrences)
+Grammar: N-ms
+  eng: an–Eloah
+  spa: dios
+  hin: एलोह
+  arb: إِلٰهٌ
+  kor: 하나님이
+  swa: mungu
+
+### Sense 82507 (1 occurrences)
+Grammar: N-msc
+  eng: [elohim]
+  spa: [K]
+  hin: [देवताओं]
+  arb: [آلِهَةِ]
+  kor: [신들]
+  swa: [k]
+
+### Sense 82508 (1 occurrences)
+Grammar: Prep-m | N-ms
+  eng: more–than–Eloah
+  spa: más–que–Eloah
+  hin: एलोहा–से
+  arb: مِنَ–اللّٰهِ
+  kor: 보다–하나님
+  swa: kuliko–Mungu
+
+### Sense 82509 (1 occurrences)
+Grammar: Conj-w | N-ms
+  eng: and–Eloah
+  spa: y–Eloah
+  hin: और–ईश्वर
+  arb: وَ–اللّٰهُ
+  kor: 그리고–하나님이
+  swa: lakini–Mungu
+
+### Sense 82510 (1 occurrences)
+Grammar: Prep-l | N-ms
+  eng: to–Eloah
+  spa: a–Dios
+  hin: ईश्वर–को
+  arb: اللّٰهَ
+  kor: 하나님–에게
+  swa: Mungu
+
+## Task
+
+Group these 14 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

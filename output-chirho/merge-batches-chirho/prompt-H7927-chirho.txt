@@ -1,0 +1,163 @@
+# Sense Merge Task for H7927
+
+Lemma: H7927 (POS: Conj-w | N-proper-ms)
+Total occurrences: 63
+Current sense count: 15
+
+This Hebrew/Greek lemma has been over-split into 15 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 140506 (41 occurrences)
+Grammar: N-proper-ms,N-proper-fs,Prep-b | N-proper-fs,Prep-b | N-proper-ms
+  eng: Shechem, in–Shechem, into–Shechem
+  spa: Siquem, Shejem, en–Siquem
+  hin: शकेम–के, शकेम, शकेममें
+  arb: شَكِيم, شَكِيمَ, شَكِيمُ
+  kor: 세검–의, 세겔의, 세겔이
+  swa: Shekemu, katika–Shekemu, baba
+
+### Sense 140508 (3 occurrences)
+Grammar: N-proper-fs
+  eng: Shechem
+  spa: Siquem
+  hin: शेकेम, शेकेम–को
+  arb: شَكِيمَ
+  kor: 세겜을, 세겜으로, 세겜에
+  swa: Shekemu
+
+### Sense 140509 (2 occurrences)
+Grammar: Prep-b | N-proper-fs
+  eng: in–Shechem
+  spa: en–Shejem
+  hin: शकेम–में
+  arb: فِي–شَكِيمَ
+  kor: 세겔에서
+  swa: kule–Shekemu
+
+### Sense 140510 (2 occurrences)
+Grammar: N-proper-fs
+  eng: Shekhem
+  spa: a–Siquem, Sejem
+  hin: शेकेम, शकेम
+  arb: شَكيم
+  kor: 세겜
+  swa: Shekemu
+
+### Sense 140511 (2 occurrences)
+Grammar: N-proper-fs | 3fs
+  eng: to–Shechem
+  spa: a–Siquem
+  hin: शकेम
+  arb: شَكِيمَةَ
+  kor: 세검–으로
+  swa: Shekemu
+
+### Sense 140512 (2 occurrences)
+Grammar: N-proper-fs
+  eng: Shekhem, Shechem
+  spa: Siquem
+  hin: शकेम
+  arb: شَكِيمَ
+  kor: 세겜을
+  swa: Shekemu
+
+### Sense 140513 (2 occurrences)
+Grammar: N-proper-fs | 3fs
+  eng: Shechem-ward
+  spa: hacia–Siquem, a–Siquem
+  hin: शेकेम, शकेम–में
+  arb: شَكِيمَ, شَكَمَ
+  kor: 세콰으로, 세겜으로
+  swa: Shekemu
+
+### Sense 140514 (2 occurrences)
+Grammar: N-proper-fs
+  eng: Shechem
+  spa: Siquem, Shejem
+  hin: शकेम–को
+  arb: شَكيمَ
+  kor: 세계–로, 세겜을
+  swa: Shekemu
+
+### Sense 140515 (1 occurrences)
+Grammar: N-proper-fs
+  eng: Shekhem
+  spa: Siquem
+  hin: शेकेम
+  arb: شَكَمَ
+  kor: 세겜
+  swa: Shekemu
+
+### Sense 140516 (1 occurrences)
+Grammar: Conj-w | N-proper-ms
+  eng: and–Shechem
+  spa: y–Shejem
+  hin: और–शकेम
+  arb: وَ–شَكِيمُ
+  kor: 그리고–세겔이
+  swa: mwana
+
+### Sense 140517 (1 occurrences)
+Grammar: Prep-m | N-proper-fs
+  eng: from–Shekhem
+  spa: de–Siquem
+  hin: से–शकेम
+  arb: مِنْ–شَكِيمَ
+  kor: 세겔에서
+  swa: kutoka–Shekemu
+
+### Sense 140518 (1 occurrences)
+Grammar: N-proper-fs | 3fs
+  eng: Shechem
+  spa: hacia–Siquem
+  hin: शेकेम–की–ओर
+  arb: شَكيمَ
+  kor: 세겐을–향하여
+  swa: Shekemu
+
+### Sense 140519 (1 occurrences)
+Grammar: N-proper-fs | 3fs
+  eng: to–Shechem
+  spa: Shejem
+  hin: शकेम
+  arb: شَكِيمَ
+  kor: 세걤으로
+  swa: Shekemu
+
+### Sense 140520 (1 occurrences)
+Grammar: N-proper-fs | 3fs
+  eng: to–Shechem
+  spa: a–Siquem
+  hin: शकेम–को
+  arb: شَكيمَ
+  kor: 세계–으로
+  swa: Shekemu
+
+### Sense 140521 (1 occurrences)
+Grammar: Conj-w | N-proper-fs
+  eng: and–Shekhem
+  spa: y–Siquem
+  hin: और–शकेम
+  arb: وَ–شَكيم
+  kor: 그리고–세겔
+  swa: na–Shekemu
+
+## Task
+
+Group these 15 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

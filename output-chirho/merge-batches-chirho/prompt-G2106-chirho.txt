@@ -1,0 +1,136 @@
+# Sense Merge Task for G2106
+
+Lemma: G2106 (POS: V-AIA-2S)
+Total occurrences: 21
+Current sense count: 12
+
+This Hebrew/Greek lemma has been over-split into 12 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 68363 (4 occurrences)
+Grammar: V-AIA-1S
+  eng: was-well-pleased, I–was–pleased, I–am–well–pleased
+  spa: me–complací, me–complazco
+  hin: प्रसन्न–हुआ, प्रसन्न–होओन, प्रसन्न–हूँ
+  arb: سُرِرْتُ, سُرِرتُ
+  kor: 기뻐한다., 기뻐하였다, 기믭한다
+  swa: nimependezwa
+
+### Sense 68364 (4 occurrences)
+Grammar: V-AIA-3S
+  eng: was–pleased, was-pleased
+  spa: agradó, se–complació, se–agradó
+  hin: भला–लगा, प्रसन्न–था, प्रसन्न-हुअ
+  arb: سُرَّ, سَرَّ
+  kor: 기뻐하셨다, 기뻐하지
+  swa: ilipendeza, ilimpendeza, hakupendezwa
+
+### Sense 68365 (2 occurrences)
+Grammar: V-IIA-1P,V-AIA-1P
+  eng: we–were–pleased
+  spa: tuvimos–a–bien, nos–agrada
+  hin: प्रसन्न-हैन, पसन्द–किय
+  arb: سُرِرْنا
+  kor: 우리가–기쁘게–여겼다, 우리가–기뻐하였다
+  swa: tunapendezwa, tulipendezwa
+
+### Sense 68366 (2 occurrences)
+Grammar: V-AIA-2S
+  eng: you-took-pleasure-in, took-pleasure-in
+  spa: te-agradaron
+  hin: प्रसन्न–हुआ––, प्रसन्न–हुआ।
+  arb: سُرِرْتَ, تُسَرَّ
+  kor: 기믭하셨으니
+  swa: kuzipenda, hutaka
+
+### Sense 68367 (2 occurrences)
+Grammar: V-AIA-3P
+  eng: were-pleased, they-were-pleased
+  spa: tuvieron-a-bien
+  hin: प्रसन्न–हुई
+  arb: سُرَّتْ
+  kor: 기뻐했다
+  swa: walipendezwa
+
+### Sense 68368 (1 occurrences)
+Grammar: V-AIA-1S
+  eng: I-am-well-pleased
+  spa: me–complací
+  hin: मैं
+  arb: سُرِرْتُ
+  kor: 기뻐하였다–내가
+  swa: nimependezwa.
+
+### Sense 68369 (1 occurrences)
+Grammar: V-PIA-3S
+  eng: is-pleased
+  spa: se-agrada
+  hin: प्रसन्न–होती–है
+  arb: تُسَرُّ
+  kor: 기믭하니
+  swa: furahii
+
+### Sense 68370 (1 occurrences)
+Grammar: V-PIA-1S
+  eng: I-am-pleased
+  spa: me–complazco
+  hin: मैं–प्रसन्न–हूं
+  arb: أُسَرُّ
+  kor: 기쁘하다
+  swa: ninapendezwa
+
+### Sense 68371 (1 occurrences)
+Grammar: V-AIA-3S
+  eng: was-pleased
+  spa: se-agradó
+  hin: प्रसन्न–हुआ
+  arb: سُرَّ
+  kor: 기뼐하셨다
+  swa: amependelea
+
+### Sense 68372 (1 occurrences)
+Grammar: V-APA-NMP
+  eng: having–delighted
+  spa: que–se–complacieron
+  hin: प्रसन्न–होने-वअले
+  arb: سُرّوا
+  kor: 기쁘어한
+  swa: waliofurahia
+
+### Sense 68373 (1 occurrences)
+Grammar: V-PIA-1P
+  eng: are–well–pleased
+  spa: preferimos
+  hin: प्रसन्न–हैं–हम
+  arb: نُسَرُّ
+  kor: 기뻐하다
+  swa: tunapendezwa,
+
+### Sense 68374 (1 occurrences)
+Grammar: V-AIA-3S
+  eng: is–well–pleased
+  spa: se-agradó
+  hin: प्रसन्न–हुअ
+  arb: سُرَّت
+  kor: 기뻐하셨으니
+  swa: i-pendezwa
+
+## Task
+
+Group these 12 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

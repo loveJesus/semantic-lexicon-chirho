@@ -1,0 +1,134 @@
+# Sense Merge Task for H4979
+
+Lemma: H4979 (POS: N-fpc | 2mp)
+Total occurrences: 17
+Current sense count: 12
+
+This Hebrew/Greek lemma has been over-split into 12 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 115322 (4 occurrences)
+Grammar: N-fs
+  eng: gift
+  spa: don
+  hin: उपहार, दान–के–रूप–में, दान–की
+  arb: عَطِيَّةً, هِبَةٍ, هِبَةً
+  kor: 선물을, 선물
+  swa: zawadi, wa–zawadi
+
+### Sense 115323 (2 occurrences)
+Grammar: N-fp
+  eng: gifts
+  spa: regalos
+  hin: दान
+  arb: عَطَايَا
+  kor: 선물들을
+  swa: zawadi
+
+### Sense 115324 (2 occurrences)
+Grammar: N-fpc | 2mp
+  eng: your–gifts, your-gifts
+  spa: vuestros–dones
+  hin: तुम्हारे–दानों, तुम्हारी–दानों
+  arb: هِبَاتِكُمْ, عَطَايَاكُمْ
+  kor: 너희의–선물들, 너희–의–선물들
+  swa: zawadi–zenu–zote, zawadi–zenu
+
+### Sense 115325 (1 occurrences)
+Grammar: N-fpc | 2mp
+  eng: gifts–your
+  spa: vuestras–ofrendas
+  hin: अपने–दान
+  arb: عَطَايَاكُمْ
+  kor: 너희의–예물들을
+  swa: zawadi–zenu
+
+### Sense 115326 (1 occurrences)
+Grammar: Prep-b | N-fpc | 2mp
+  eng: with–gifts–your
+  spa: con–vuestras–ofrendas
+  hin: में–अपने–दानों
+  arb: بِعَطَايَاكُمْ
+  kor: 너희의–예물들로
+  swa: kwa–zawadi–zenu
+
+### Sense 115327 (1 occurrences)
+Grammar: N-fp
+  eng: gifts
+  spa: dones
+  arb: عَطايا
+  kor: 선물–들–을
+  swa: zawadi
+
+### Sense 115328 (1 occurrences)
+Grammar: Prep-k | N-fsc
+  eng: according-to–gift-of
+  spa: según–don–de
+  hin: जैसी–देन
+  arb: كَـ–عَطِيَّةِ
+  kor: 대로–선물
+  swa: kwa–zawadi–ya
+
+### Sense 115329 (1 occurrences)
+Grammar: N-fp
+  eng: bribes
+  spa: sobornos
+  hin: उपहारों–को
+  arb: هَدايا
+  kor: 선물들을
+  swa: rushwa
+
+### Sense 115330 (1 occurrences)
+Grammar: N-fs
+  eng: gift
+  spa: soborno
+  hin: उपहार–का
+  kor: 선물–의
+  swa: zawadi
+
+### Sense 115331 (1 occurrences)
+Grammar: Conj-w | N-fp
+  eng: and–gifts
+  spa: y–regalos
+  hin: और–दान
+  arb: وَ‒عَطَايَا
+  kor: 그리고–선물들을
+  swa: na–zawadi
+
+### Sense 115332 (1 occurrences)
+Grammar: N-fpc
+  eng: gifts-of
+  spa: ofrendas-de
+  hin: भेंटों
+  arb: عَطايا
+  kor: 선물들의
+  swa: zawadi
+
+### Sense 115333 (1 occurrences)
+Grammar: Prep-b | N-fpc | 3mp
+  eng: in–gifts–their
+  spa: en–sus–ofrendas
+  hin: में–उनके–दानों
+  arb: بِـ–عَطَايَاهُمْ
+  kor: 그들의–예물들–안에서
+  swa: kwa–zawadi–zao
+
+## Task
+
+Group these 12 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

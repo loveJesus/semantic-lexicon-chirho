@@ -1,0 +1,154 @@
+# Sense Merge Task for G0611
+
+Lemma: G0611 (POS: V-APP-NMS)
+Total occurrences: 232
+Current sense count: 14
+
+This Hebrew/Greek lemma has been over-split into 14 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 62930 (104 occurrences)
+Grammar: V-APP-NMS,V-APP-NMP,V-APP-NFS,V-APP-NNS
+  eng: answering, having-answered, having–answered
+  spa: respondiendo, habiendo–respondido, Respondiendo
+  hin: उत्तर–देकर, उत्तर–देते–हुए, कहा
+  arb: أَجَابَ, أَجابَ, مُجِيبًا
+  kor: 대답하여, 대답한–후에, 대답하셔서
+  swa: akijibu, akajibu, wakijibu
+
+### Sense 62931 (89 occurrences)
+Grammar: V-AIP-3S,V-AIM-3S
+  eng: answered, he-answered, he–answered
+  spa: respondió, Respondió, le-respondió
+  hin: उत्तर–दिया, उत्तरदिया, उत्तर–दी
+  arb: أَجَابَ, أَجابَ, أَجَابَهُ
+  kor: 대답했다, 대답하셨다, 대답하였다
+  swa: alijibu, akajibu, Akajibu
+
+### Sense 62932 (19 occurrences)
+Grammar: V-AIP-3P
+  eng: answered, they–answered, they-answered
+  spa: respondieron, Respondieron
+  hin: उत्तर–दिया, उन्होंने–उत्तर–दिया, उत्तर–दिए
+  arb: أَجَابُوا, أَجابوا, أَجَابَ
+  kor: 대답했다, 대답하였다, 대답하였으니
+  swa: walijibu, Wakajibu, wakajibu
+
+### Sense 62933 (4 occurrences)
+Grammar: V-PIM/P-2S
+  eng: do–you–answer, do-you-answer
+  spa: respondes
+  hin: उत्तर–देता, तू–उत्तर–देता–है, उत्तर–देते
+  arb: تُجِيبُ
+  kor: 대답하느냐, 대답하지–않는냐
+  swa: hujibu, unajibu, chochote
+
+### Sense 62934 (3 occurrences)
+Grammar: V-PIM/P-3S
+  eng: answers
+  spa: Responde, responde
+  hin: उत्तर–देता–है
+  arb: يُجِيبُ
+  kor: 대답한다
+  swa: anajibu
+
+### Sense 62935 (2 occurrences)
+Grammar: V-FIP-3P
+  eng: will–answer
+  spa: responderán
+  hin: उत्तर–देंगे
+  arb: يُجِيبُونَهُ
+  kor: 대답하리라
+  swa: watamjibu, watajibu
+
+### Sense 62936 (2 occurrences)
+Grammar: V-AIP-1S
+  eng: answered, I–answered
+  spa: respondí
+  hin: मैंनेउत्तरदिया, उत्तर–दिया
+  arb: أَجَبْتُ
+  kor: 대답했다, 대답하였다
+  swa: nilijibu
+
+### Sense 62937 (2 occurrences)
+Grammar: V-ANP,V-PNM/P
+  eng: to–answer
+  spa: responder
+  hin: उत्तर–देना, उत्तर-देन
+  arb: أَنْ–يُجيبَهُ, أَنْ–تُجيبوا
+  kor: 대답하도록, 대답하기를
+  swa: yeye, kujibu
+
+### Sense 62938 (2 occurrences)
+Grammar: V-AMP-2P
+  eng: answer, Answer
+  spa: respondedme
+  hin: उत्तर–दो
+  arb: أَجِيبُونِي
+  kor: 대답하라
+  swa: mnijibu
+
+### Sense 62939 (1 occurrences)
+Grammar: V-ASP-2P
+  eng: you-will-answer
+  spa: responderiais
+  hin: उत्तर–दोगे
+  arb: تُجيبوا
+  kor: 대답할–것이다
+  swa: jibu
+
+### Sense 62940 (1 occurrences)
+Grammar: V-FIP-3S
+  eng: he–will–answer
+  spa: responderá
+  hin: उत्तर–देगा
+  arb: يُجِيبُهُمْ
+  kor: 대답하리라
+  swa: atawajibu
+
+### Sense 62941 (1 occurrences)
+Grammar: V-ASP-3P
+  eng: they-should-answer
+  spa: respondieran
+  hin: उत्तर–दें
+  arb: يُجِيبُوا
+  kor: 대답할지
+  swa: kumjibu
+
+### Sense 62942 (1 occurrences)
+Grammar: V-AIP-2S
+  eng: you-answered
+  spa: respondiste
+  hin: उत्तर–दिया
+  arb: أَجَبْتَ
+  kor: 대답하였다
+  swa: umejibu
+
+### Sense 62943 (1 occurrences)
+Grammar: V-ASP-3S
+  eng: he-should-answer
+  spa: respondiera
+  hin: उत्तर–दे
+  arb: يُجِيبُ
+  kor: 대답할지
+  swa: ajibu
+
+## Task
+
+Group these 14 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

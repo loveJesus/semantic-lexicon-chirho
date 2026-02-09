@@ -1,0 +1,163 @@
+# Sense Merge Task for G2722
+
+Lemma: G2722 (POS: V-PPA-NMP)
+Total occurrences: 18
+Current sense count: 15
+
+This Hebrew/Greek lemma has been over-split into 15 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 70492 (2 occurrences)
+Grammar: V-PPA-ANS,V-PPA-NMS
+  eng: restraining
+  spa: que–detiene
+  hin: रोकने-वअलि, रोकने-वअल
+  arb: المانِعُ, المانِعَ
+  kor: 막는–자가, 막는–것을
+  swa: kinachozuia, anayezuia
+
+### Sense 70493 (2 occurrences)
+Grammar: V-PPA-NMP
+  eng: possessing
+  spa: poseyendo
+  hin: रखनेवाले, रखते–हुए
+  arb: مُمْسِكينَ, حائِزينَ
+  kor: 소유하는–자들로, 소유하는
+  swa: wasiomiliki;, tukimiliki.
+
+### Sense 70494 (2 occurrences)
+Grammar: V-ASA-1P
+  eng: we–hold–fast
+  spa: retengamos
+  hin: थाम–रखें
+  arb: تَمَسَّكْنَا
+  kor: 붙잡으면
+  swa: tunashikilia, tukishikilia
+
+### Sense 70495 (1 occurrences)
+Grammar: V-PIA-3P
+  eng: hold-fast
+  spa: la–retienen
+  hin: थामे–रखते–हैं
+  arb: يَحفَظونَ
+  kor: 간직한다
+  swa: wanalishika
+
+### Sense 70496 (1 occurrences)
+Grammar: V-PIA-2P
+  eng: you-hold-fast
+  spa: retenéis
+  hin: तुम–थामे–रहो
+  arb: تَمسِكونَ
+  kor: 간직한다면
+  swa: mnashikilia
+
+### Sense 70497 (1 occurrences)
+Grammar: V-IIM/P-1P
+  eng: we–were–held
+  spa: éramos–retenidos
+  hin: बंधे–जाते–थे
+  arb: كُنَّا–مَحْبُوسِينَ–فِيهِ
+  kor: 매여–있던–것에서
+  swa: tuliyoshikwa
+
+### Sense 70498 (1 occurrences)
+Grammar: V-PSA-1P
+  eng: let-us-hold-fast
+  spa: retengamos
+  hin: थामे–रहें
+  arb: لِنَتَمَسَّكْ
+  kor: 붙잡자
+  swa: tushikilie
+
+### Sense 70499 (1 occurrences)
+Grammar: V-PNA
+  eng: to-take
+  spa: a–ocupar
+  hin: रखने।
+  arb: تَحْتَلُّ
+  kor: 차지하기를
+  swa: kukaa
+
+### Sense 70500 (1 occurrences)
+Grammar: V-IIA-3P
+  eng: they–were–heading
+  spa: se-dirigían
+  hin: जातेथे
+  arb: اتَّجَهُوا
+  kor: 향하였다
+  swa: walielekea
+
+### Sense 70501 (1 occurrences)
+Grammar: V-IIP-3S
+  eng: was-held
+  spa: era-poseido
+  hin: ग्रस्त–था
+  arb: كَانَ–مُمْسَكًا
+  kor: 걸려–있었다
+  swa: alishikwa
+
+### Sense 70502 (1 occurrences)
+Grammar: V-PIA-2P
+  eng: you-hold-fast
+  spa: retenéis
+  hin: थामे–हो
+  arb: تَحفَظونَ
+  kor: 간직하네
+  swa: mnashika.
+
+### Sense 70503 (1 occurrences)
+Grammar: V-PNA
+  eng: to–keep
+  spa: retener
+  hin: रखन
+  arb: أَن–أَحتَفِظَ
+  kor: 붙잡아–두기를
+  swa: kushikilia
+
+### Sense 70504 (1 occurrences)
+Grammar: V-PMA-2P
+  eng: hold–fast
+  spa: retened
+  hin: पकदे-रखो
+  arb: تَمَسَّكوا
+  kor: 붙잡으라.
+  swa: shikeni
+
+### Sense 70505 (1 occurrences)
+Grammar: V-PPA-GMP
+  eng: suppressing
+  spa: que–retienen
+  hin: दबाए–रखते–हैं
+  arb: الحابِسينَ
+  kor: 막는–자들의
+  swa: wanazuia,
+
+### Sense 70506 (1 occurrences)
+Grammar: V-IIA-3P
+  eng: were–holding
+  spa: retenían
+  hin: रोकती–थी
+  arb: كانوا–يُمسِكونَ
+  kor: 붙잡았다
+  swa: wakamzuia
+
+## Task
+
+Group these 15 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

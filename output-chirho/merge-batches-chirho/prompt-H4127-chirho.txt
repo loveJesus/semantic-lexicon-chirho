@@ -1,0 +1,154 @@
+# Sense Merge Task for H4127
+
+Lemma: H4127 (POS: V-Qal-Imperf-3fs)
+Total occurrences: 17
+Current sense count: 14
+
+This Hebrew/Greek lemma has been over-split into 14 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 110032 (4 occurrences)
+Grammar: V-Nifal-Perf-3cp
+  eng: have-melted, they–melt, melted
+  spa: se–derritieron, se–han–derretido
+  hin: गल–गए
+  arb: ذَابُوا, ذابَ
+  kor: 녹았다, 녹았다–그들이
+  swa: wameyeyuka
+
+### Sense 110033 (1 occurrences)
+Grammar: Conj-w | V-Piel-ConjImperf-2ms
+  eng: and–You-dissolve-me
+  spa: y–me–disuelves
+  hin: और–पिघलाता–है–तू–मुझे
+  arb: وَ–تُذيبُنِي
+  kor: 그리고–녹이신다–나를
+  swa: na–unaniyeyusha
+
+### Sense 110034 (1 occurrences)
+Grammar: Conj-w | V-Qal-ConsecImperf-2m
+  eng: and–You–have–melted–us
+  spa: y–nos–has–consumido
+  hin: और–गलाया–है–तूने–हमें
+  arb: وَ–أَذَبْتَنَا
+  kor: 그리고–녹이셨다–우리를
+  swa: na–umetuyeyusha
+
+### Sense 110035 (1 occurrences)
+Grammar: Prep-l | V-Qal-Inf
+  eng: shall–melt
+  spa: derretir
+  hin: पिघले
+  arb: ذَوَبَانِ
+  kor: 녹기–위한
+  swa: uyeyuke
+
+### Sense 110036 (1 occurrences)
+Grammar: Conj-w | V-Qal-ConsecImperf-3f
+  eng: and–it-melts
+  spa: y–se–derrite
+  hin: और–पिघल–जाती–है
+  arb: فَ–تَذُوبُ
+  kor: 그리고–녹도다
+  swa: na–inayeyuka
+
+### Sense 110037 (1 occurrences)
+Grammar: V-Nifal-Prtcpl-mp
+  eng: are–dissolving
+  spa: Se–derriten
+  hin: नेमोगीम
+  arb: تَذوبُ
+  kor: 녹아내리다
+  swa: Inayeyuka
+
+### Sense 110038 (1 occurrences)
+Grammar: V-Qal-Imperf-3fs
+  eng: melts
+  spa: se–derritió
+  hin: पिघल–गई
+  arb: ذابَتِ
+  kor: 녹도다
+  swa: iliyeyuka
+
+### Sense 110039 (1 occurrences)
+Grammar: V-Hitpael-Imperf-3fp
+  eng: will-melt
+  spa: se–derretirán
+  hin: पिघल–जाएँगी।
+  arb: تَذُوبُ
+  kor: 녹아내리리라
+  swa: vitayeyuka
+
+### Sense 110040 (1 occurrences)
+Grammar: V-Hitpael-Imperf-3fs
+  eng: melted
+  spa: se–derretía
+  hin: पिघल–जाती–है
+  arb: تَذوب
+  kor: 녹았도다
+  swa: ziliyeyuka
+
+### Sense 110041 (1 occurrences)
+Grammar: V-Hitpael-Perf-3cp
+  eng: melt
+  spa: se–derriten
+  hin: पिघल–जाती–हैं
+  arb: تَمَيَّعَتْ
+  kor: 녹아내리도다
+  swa: vinayeyuka
+
+### Sense 110042 (1 occurrences)
+Grammar: V-Nifal-Perf-3ms
+  eng: melts
+  spa: derretido
+  hin: पिघल–जाता–है
+  arb: ذَابَ
+  kor: 녹도다
+  swa: linayeyuka
+
+### Sense 110043 (1 occurrences)
+Grammar: V-Piel-Imperf-2ms | 3fse
+  eng: You–soften–it
+  spa: la–ablandas
+  hin: तू–उसे–कोमल–करता–है
+  arb: تُذيبُها
+  kor: 녹이시도다
+  swa: unaifanya-iyeyuke
+
+### Sense 110044 (1 occurrences)
+Grammar: V-Nifal-Perf-3ms
+  eng: melting-away
+  spa: se–derretía
+  hin: पिघलती–थी
+  arb: يَذُوبُ
+  kor: 녹고–있었다
+  swa: ukayeyuka
+
+### Sense 110045 (1 occurrences)
+Grammar: V-Nifal-InfAbs
+  eng: is-melted
+  spa: derretida
+  hin: पिघल–गई
+  arb: ذَابَتْ
+  kor: 녹았도다
+  swa: umeyeyuka
+
+## Task
+
+Group these 14 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

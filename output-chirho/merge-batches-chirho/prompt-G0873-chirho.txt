@@ -1,0 +1,118 @@
+# Sense Merge Task for G0873
+
+Lemma: G0873 (POS: V-ASA-3P)
+Total occurrences: 10
+Current sense count: 10
+
+This Hebrew/Greek lemma has been over-split into 10 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 63835 (1 occurrences)
+Grammar: V-AMA-2P
+  eng: set–apart
+  spa: Apartad
+  hin: अलग–करो
+  arb: أَفرِزوا
+  kor: 구별하라
+  swa: Nitengeni
+
+### Sense 63836 (1 occurrences)
+Grammar: V-IIA-3S
+  eng: separating
+  spa: se-apartaba
+  hin: अलग–करत–थ
+  arb: يَعتَزِلُ
+  kor: 구별했노라
+  swa: alijitenga
+
+### Sense 63837 (1 occurrences)
+Grammar: V-AMP-2P
+  eng: be–separated
+  spa: apartaos
+  hin: अलग–रहो
+  arb: انفَصِلوا
+  kor: 분리되라
+  swa: jitengeni,
+
+### Sense 63838 (1 occurrences)
+Grammar: V-PIA-3S
+  eng: separates
+  spa: separa
+  hin: अलग–करता–है
+  arb: يُفْرِزُ
+  kor: 구분하듯
+  swa: anawatenganisha
+
+### Sense 63839 (1 occurrences)
+Grammar: V-APA-NMS
+  eng: having-set-apart
+  spa: habiendo-apartado
+  hin: जिस्ने–अलग–किय
+  arb: الَّذي–أفرَزَني
+  kor: 구별하신–분
+  swa: aliniteuwa
+
+### Sense 63840 (1 occurrences)
+Grammar: V-RPM/P-NMS
+  eng: having–been–set–apart
+  spa: apartado
+  hin: अलग–किया–हुआ
+  arb: مُفرَزٌ
+  kor: 구별–된
+  swa: aliyetengwa
+
+### Sense 63841 (1 occurrences)
+Grammar: V-FIA-3S
+  eng: he–will–separate
+  spa: separará
+  hin: अलग–करेगा
+  arb: يُفْرِزُ
+  kor: 구분하리라
+  swa: atawatenganisha
+
+### Sense 63842 (1 occurrences)
+Grammar: V-ASA-3P
+  eng: they–exclude
+  spa: os–aparten
+  hin: अलग–करें
+  arb: يُفرِزونَ
+  kor: 분리하면
+  swa: watawatenga
+
+### Sense 63843 (1 occurrences)
+Grammar: V-AIA-3S
+  eng: he-separated
+  spa: separó
+  hin: अलग–किया
+  arb: فَرَزَ
+  kor: 그가–구별했다
+  swa: aliwatenga
+
+### Sense 63844 (1 occurrences)
+Grammar: V-FIA-3P
+  eng: will–separate
+  spa: separarán
+  hin: अलग–करेनगे
+  arb: يَفصِلُونَ
+  kor: 분리할–것이다
+  swa: watawatenganisha
+
+## Task
+
+Group these 10 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

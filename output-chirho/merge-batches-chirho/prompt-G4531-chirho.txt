@@ -1,0 +1,116 @@
+# Sense Merge Task for G4531
+
+Lemma: G4531 (POS: V-ANA)
+Total occurrences: 15
+Current sense count: 10
+
+This Hebrew/Greek lemma has been over-split into 10 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 76297 (3 occurrences)
+Grammar: V-FIP-3P
+  eng: will-be-shaken, will–be–shaken
+  spa: serán–sacudidas, serán-sacudidas
+  hin: हिलाई–जाएंगी
+  arb: سَتَتَزَعْزَعُ, سَتَتَزَعزَعُ, تَتَزَلزَلُ
+  kor: 흔들릴–것이다, 흔들리리라
+  swa: zitatikiswa
+
+### Sense 76298 (2 occurrences)
+Grammar: V-AIP-3S,V-ANP
+  eng: was–shaken, to-be-shaken
+  spa: sacudirse, fue–sacudido
+  hin: हिल–गई
+  arb: تَزَلزَلَت, تَزَعْزَعَ
+  kor: 흔들렸다
+  swa: palitikisika, kutikiswa
+
+### Sense 76299 (2 occurrences)
+Grammar: V-PPM/P-AMS
+  eng: being–shaken, being-shaken
+  spa: sacudida
+  hin: हिलाता–हुआ, हिलते–हुए
+  arb: تَهتَزُّ
+  kor: 흔들리는
+  swa: unaotikiswa, ukitikiswa?
+
+### Sense 76300 (2 occurrences)
+Grammar: V-PPM/P-GNP,V-PPM/P-NNP
+  eng: being-shaken
+  spa: sacudidas
+  hin: हिलाई–जानेवाली–वस्तुओं–के, हिलाई–जानेवाली
+  arb: مُتَزَلْزِلَات, مُتَزَلْزِل
+  kor: 흔들리지, 흔들리는–것들–의
+  swa: yasiyotikisika, yanayotikisika
+
+### Sense 76301 (1 occurrences)
+Grammar: V-PPA-NMP
+  eng: stirring-up
+  spa: agitando
+  hin: हिलाते–हुए
+  arb: يُزعِزِعونَ
+  kor: 흔들며
+  swa: wakitikisa
+
+### Sense 76302 (1 occurrences)
+Grammar: V-RPM/P-ANS
+  eng: shaken–together
+  spa: sacudida
+  hin: हिला–हुआ
+  arb: مَهزوزٌ
+  kor: 흔들어
+  swa: kilichotikiswa
+
+### Sense 76303 (1 occurrences)
+Grammar: V-ASP-1S
+  eng: I–be–shaken
+  spa: sea–movido
+  arb: أَتَزَعْزَعَ
+  swa: nisitikisike
+
+### Sense 76304 (1 occurrences)
+Grammar: V-ANP
+  eng: to–be–shaken
+  spa: ser–sacudidos
+  hin: दगमगअन
+  arb: تَتَزَعْزَعوا
+  kor: 흔들리지–않도록
+  swa: kutikiswa
+
+### Sense 76305 (1 occurrences)
+Grammar: V-ANA
+  eng: to–shake
+  spa: sacudir
+  hin: हिलाने–को
+  arb: أَن–يُزَعزِعَهُ
+  kor: 흔들기를
+  swa: kuitikisa
+
+### Sense 76306 (1 occurrences)
+Grammar: V-AIA-3S
+  eng: shook
+  spa: sacudió
+  hin: हिलाया
+  arb: زَلْزَلَ
+  kor: 흔들었다
+  swa: ilitikisa
+
+## Task
+
+Group these 10 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

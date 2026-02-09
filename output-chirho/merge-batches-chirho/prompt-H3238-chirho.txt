@@ -1,0 +1,153 @@
+# Sense Merge Task for H3238
+
+Lemma: H3238 (POS: V-Hifil-Imperf-2ms | 3mse)
+Total occurrences: 19
+Current sense count: 14
+
+This Hebrew/Greek lemma has been over-split into 14 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 102503 (3 occurrences)
+Grammar: V-Hifil-Imperf-3ms,V-Hifil-Perf-3ms
+  eng: does–he–oppress, he–oppresses
+  spa: oprimió
+  hin: अत्याचार–करता–है
+  arb: يَظْلِمْ, ظَلَمَ
+  kor: 압제한다, 압제하였다
+  swa: mdhulumu, amewadhulumu
+
+### Sense 102504 (2 occurrences)
+Grammar: V-Hifil-Imperf-2mp
+  eng: you-shall-oppress
+  spa: oprimiréis
+  hin: तुम दबाओगे, तुम दबाओ
+  arb: تَغْبِنُوا
+  kor: 너희는-압제하라
+  swa: mtamdhulumu, mdhulumu
+
+### Sense 102505 (2 occurrences)
+Grammar: Art | V-Qal-Prtcpl-fs
+  eng: the–oppressor, oppressing
+  spa: opresora, la–opresora
+  hin: दलनेवाली, अत्याचारी–की
+  arb: الْمُضْطَهِدِ, الظَّالِمِ
+  kor: 학대하는의, 압박하는
+  swa: unaoonea
+
+### Sense 102506 (2 occurrences)
+Grammar: V-Hifil-Perf-3cp
+  eng: they–oppressed, they–oppress
+  spa: oprimieron
+  hin: ठगा–उन्होंने, ठगा
+  arb: ظَلَمُوا
+  kor: 압제했다
+  swa: wameonewa, wameonea
+
+### Sense 102507 (1 occurrences)
+Grammar: Prep-l | V-Hifil-Inf | 3mp
+  eng: to–oppress-them
+  spa: para–despojarles
+  hin: अन्याय–से–उन्हें–हटाने
+  arb: لِـ–يَظْلِمَهُمْ
+  kor: 압제하려고–그들을
+  swa: kuwakandamiza
+
+### Sense 102508 (1 occurrences)
+Grammar: V-Hifil-Prtcpl-mpc | 2fs
+  eng: your–oppressors
+  spa: a–tus–opresores
+  hin: तेरे–सताने–वालों–को
+  arb: ظَالِمِيكِ
+  kor: 너를–학대하는–자들에게
+  swa: wanaokukandamiza
+
+### Sense 102509 (1 occurrences)
+Grammar: Art | V-Qal-Prtcpl-fs
+  eng: the–oppressing
+  spa: la–opresora
+  hin: कबूतर।
+  arb: الْظَالِمَةِ
+  kor: 학대하는
+  swa: unaoonea
+
+### Sense 102510 (1 occurrences)
+Grammar: V-Hifil-Imperf-2ms
+  eng: you-shall-wrong
+  spa: oprimirás
+  hin: सताओ
+  arb: تَظلِمُ
+  kor: 괴롭히지
+  swa: utamdanganya
+
+### Sense 102511 (1 occurrences)
+Grammar: V-Hifil-Imperf-2mp
+  eng: mistreat
+  spa: lo–oprimiréis
+  hin: सताओगे
+  arb: تَظْلِمُونَهُ
+  kor: 학대할–것이다–너희는
+  swa: mtamdhulumu
+
+### Sense 102512 (1 occurrences)
+Grammar: V-Qal-Imperf.h-1cp | 3mp
+  eng: let–us–destroy–them
+  spa: los–oprimiremos
+  arb: نُبيدُهُمْ
+  kor: 압제하자
+  swa: tuwaharibu
+
+### Sense 102513 (1 occurrences)
+Grammar: Art | V-Qal-Prtcpl-fs
+  eng: the–sword
+  spa: la–espada
+  hin: अत्याचारी–के
+  arb: الظَّالِمِ
+  kor: 그–압제하는–자의
+  swa: mdhalimu
+
+### Sense 102514 (1 occurrences)
+Grammar: V-Hifil-Imperf-3mp
+  eng: shall-oppress
+  spa: oprimirán
+  hin: अत्याचार–करेंगे
+  arb: يَظْلِمُونَ
+  kor: 그것들이–압제할–것이다
+  swa: watakandamiza
+
+### Sense 102515 (1 occurrences)
+Grammar: V-Hifil-Imperf-2ms | 3mse
+  eng: you-shall-oppress–him
+  spa: lo–oprimirás
+  hin: सताएगा–उसे
+  arb: تَظْلِمُهُ
+  kor: 압제하리라–그를
+  swa: utamdhulumu
+
+### Sense 102516 (1 occurrences)
+Grammar: V-Hifil-Imperf-2mp
+  eng: oppress
+  spa: opriman
+  hin: सताओ
+  arb: تَظْلِمُوا
+  kor: 학대하지
+  swa: wadanganye
+
+## Task
+
+Group these 14 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

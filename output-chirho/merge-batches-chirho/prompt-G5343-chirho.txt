@@ -1,0 +1,127 @@
+# Sense Merge Task for G5343
+
+Lemma: G5343 (POS: V-FIM-3P)
+Total occurrences: 29
+Current sense count: 11
+
+This Hebrew/Greek lemma has been over-split into 11 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 78517 (6 occurrences)
+Grammar: V-AIA-3P
+  eng: fled, they-fled
+  spa: huyeron
+  hin: भागे, भाग–गए, भागीं
+  arb: هَرَبوا, هَرَبُوا, هَرَبْنَ
+  kor: 도망쳤다, 도망쳤다,
+  swa: walikimbia,, walikimbia, wakakimbia
+
+### Sense 78518 (5 occurrences)
+Grammar: V-AIA-3S
+  eng: fled, he-fled
+  spa: huyó
+  hin: भागी, भागा, भाग–गया
+  arb: هَرَبَت, هَرَبَ, هَرَبَتِ
+  kor: 도망쳤으니, 도망했다, 도망하였다
+  swa: akakimbia, kikakimbia;, ilikimbia
+
+### Sense 78519 (3 occurrences)
+Grammar: V-ANA
+  eng: to–flee
+  spa: huir
+  hin: भागना, भागने
+  arb: أَنْ–تَهْرُبُوا, أَنْ–يَهْرُبُوا
+  kor: 도망하다, 도망하기–를, 도망치기를
+  swa: kukimbia
+
+### Sense 78520 (3 occurrences)
+Grammar: V-PMA-2P
+  eng: flee
+  spa: huid, Huid
+  hin: भागो
+  arb: اُهرُبوا, اهْرُبوا, اهرُبوا
+  kor: 피하라, 도망하라
+  swa: kimbilieni, ikimbieni, Ikimbieni
+
+### Sense 78521 (3 occurrences)
+Grammar: V-PMA-3P
+  eng: let–flee, let-them-flee, let-flee
+  spa: huyan
+  hin: भागें
+  arb: لِيَهرُبوا, لِيَهْرُبُوا
+  kor: 도망치라, 도망하라
+  swa: wakimbilie, wakimbie, kwenye
+
+### Sense 78522 (3 occurrences)
+Grammar: V-PMA-2S
+  eng: flee
+  spa: huye
+  hin: भाग, भअग;, भअग
+  arb: اهْرُبْ
+  kor: 피하라;, 도망가라
+  swa: zikimbie, yakimbie, ukimbie
+
+### Sense 78523 (2 occurrences)
+Grammar: V-PIA-3S
+  eng: flees
+  spa: huye
+  hin: भागती–है, भागता–है।
+  arb: يَهْرُبُ, يَهرُب
+  kor: 도망하니, 도망친다
+  swa: unawaepuka, anakimbia
+
+### Sense 78524 (1 occurrences)
+Grammar: V-AIA-3P
+  eng: escaped
+  spa: escaparon
+  hin: भागे
+  arb: هَرَبُوا
+  kor: 피했으니
+  swa: walikimbia
+
+### Sense 78525 (1 occurrences)
+Grammar: V-FIM-3P
+  eng: will–flee
+  spa: huirán
+  hin: भागेंगी
+  arb: سَتَهرُب
+  kor: 도망칠–것이다
+  swa: watakimbia
+
+### Sense 78526 (1 occurrences)
+Grammar: V-FIM-3S
+  eng: he–will–flee
+  spa: huirá
+  hin: भागेगा
+  arb: سَيَهرُبُ
+  kor: 도망가리라
+  swa: atawakimbia
+
+### Sense 78527 (1 occurrences)
+Grammar: V-ASA-2P
+  eng: might–you–flee
+  spa: huiréis
+  hin: भागोगे
+  arb: تَهرُبونَ
+  kor: 피하리라
+  swa: kutoka
+
+## Task
+
+Group these 11 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

@@ -1,0 +1,172 @@
+# Sense Merge Task for H4209
+
+Lemma: H4209 (POS: Conj-w | N-fs)
+Total occurrences: 19
+Current sense count: 16
+
+This Hebrew/Greek lemma has been over-split into 16 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 110668 (2 occurrences)
+Grammar: Conj-w | N-fs
+  eng: and–discretion
+  spa: y–discreción
+  hin: और–योजना
+  arb: وَ–حَصَافَةً, وَ–تَدْبِيرًا
+  kor: 그리고–근신–을
+  swa: na–busara
+
+### Sense 110669 (2 occurrences)
+Grammar: N-fp
+  eng: evil–devices
+  spa: maquinaciones
+  hin: दुष्ट–योजनाओं–वाला
+  arb: مَكايِدَ
+  kor: 계획–들–의
+  swa: wa–hila
+
+### Sense 110670 (2 occurrences)
+Grammar: N-fpc
+  eng: purposes-of
+  spa: planes–de, pensamientos–de
+  hin: योजनाओं–को, योजनाओं
+  arb: مَقَاصِدَ
+  kor: 의–계획들을, 계획들을
+  swa: mipango–ya, makusudio–ya
+
+### Sense 110671 (1 occurrences)
+Grammar: N-fpc | 3ms
+  eng: his–thoughts
+  spa: sus–pensamientos
+  hin: उसकी–योजनाओं–में
+  arb: أَفْكَارِهِ
+  kor: 생각들–에
+  swa: mawazo–yake
+
+### Sense 110672 (1 occurrences)
+Grammar: N-fsc | 3ms
+  eng: his–plan
+  spa: su–propósito
+  hin: उसकी–युक्ति–है
+  arb: قَصْدُهُ
+  kor: 계획이–그의
+  swa: mpango–wake
+
+### Sense 110673 (1 occurrences)
+Grammar: N-fp
+  eng: schemes
+  spa: maquinaciones
+  hin: षड्यन्त्र
+  arb: مَكائِدَ
+  kor: 음모들–을
+  swa: hila
+
+### Sense 110674 (1 occurrences)
+Grammar: N-fs
+  eng: discretion
+  spa: Discreción
+  hin: योजना
+  arb: الْحَصَافَةُ
+  kor: 근신–이
+  swa: Busara
+
+### Sense 110675 (1 occurrences)
+Grammar: N-fp
+  eng: schemes
+  spa: maquinaciones
+  hin: चालों–का
+  arb: مَكائِدَ
+  kor: 음모들–의
+  swa: hila
+
+### Sense 110676 (1 occurrences)
+Grammar: N-fp
+  eng: discretion
+  spa: pensamientos
+  hin: योजनाओं–का
+  arb: التَّدْبِيرَاتِ
+  kor: 근신–들–의
+  swa: ya–busara
+
+### Sense 110677 (1 occurrences)
+Grammar: N-fp
+  eng: discretion
+  spa: discreciones
+  hin: योजनाएँ
+  arb: حَصَافَةٍ
+  kor: 근신–들–을
+  swa: busara
+
+### Sense 110678 (1 occurrences)
+Grammar: Art | N-fs | 3fs
+  eng: the–evil–schemes
+  spa: la–maldad
+  hin: योजना
+  arb: المَكَائِدَ
+  kor: 음모를
+  swa: mipango–ya
+
+### Sense 110679 (1 occurrences)
+Grammar: Prep-b | N-fp
+  eng: in–the–schemes
+  spa: en–tramas
+  hin: में–योजनाओं
+  arb: بِ–مَكَائِدَ
+  kor: 계략들–에
+  swa: katika–hila
+
+### Sense 110680 (1 occurrences)
+Grammar: N-fs
+  eng: a–scheme
+  spa: plan
+  hin: युक्ति
+  arb: مَكِيدَةً
+  kor: 계획–을
+  swa: hila
+
+### Sense 110681 (1 occurrences)
+Grammar: Prep-l | N-fs
+  eng: for–wickedness
+  spa: para–maldad
+  hin: ज़ुर्म–से
+  arb: لِـ–مَكْرٍ
+  kor: 악한–계획–으로
+  swa: kwa–hila
+
+### Sense 110682 (1 occurrences)
+Grammar: N-fs
+  eng: any-purpose
+  spa: pensamiento
+  hin: कोई–योजना
+  arb: مَقْصَدٌ.
+  kor: 계획이
+  swa: kusudi
+
+### Sense 110683 (1 occurrences)
+Grammar: Conj-w | N-fp
+  eng: and–schemes
+  spa: y–las–intrigas
+  hin: और–योजनाएँ
+  arb: وَ–مُكَايَدَاتِكُمْ
+  kor: 그리고–계식들을
+  swa: na–mipango
+
+## Task
+
+Group these 16 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

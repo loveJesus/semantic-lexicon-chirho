@@ -1,0 +1,145 @@
+# Sense Merge Task for H4334
+
+Lemma: H4334 (POS: Conj-w)
+Total occurrences: 23
+Current sense count: 13
+
+This Hebrew/Greek lemma has been over-split into 13 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 111301 (4 occurrences)
+Grammar: Prep-b, Art | N-ms
+  eng: in–the-plain, in–the–tableland, in–the–plain
+  spa: en–el–llano, en–la–meseta, en–la–llanura
+  hin: मैदान–में
+  arb: في–ال–سَّهْلِ, فِي–السَّهْلِ, في–الْ–سَهْلِ
+  kor: 평지–에, 평지에서–, 에–평지에
+  swa: uwandani, katika–tambarare, katika–ha–uwanda
+
+### Sense 111302 (3 occurrences)
+Grammar: Art | N-ms
+  eng: the–tableland
+  spa: la–llanura, la–llanura–de
+  hin: मैदान
+  arb: الْ–سَهْلِ
+  kor: 그–평지를, 그–평지의
+  swa: tambarare
+
+### Sense 111303 (3 occurrences)
+Grammar: Art | N-ms
+  eng: the–plain
+  spa: la–llanura
+  hin: समतल–का, मैदान–का, मैदान
+  arb: السَّهْلِ, السَّهْلُ
+  kor: 평지의, 평지가, 그–평지의
+  swa: uwanda, tambarare
+
+### Sense 111304 (2 occurrences)
+Grammar: Prep-l | N-ms
+  eng: level, into–level–ground
+  spa: en–llanura, en–llano
+  hin: समतल
+  arb: مُسْتَقِيمًا
+  kor: 평탄함으로
+  swa: kuwa–sawa
+
+### Sense 111305 (2 occurrences)
+Grammar: N-ms
+  eng: level-ground, level
+  spa: rectitud
+  hin: समतल–की, समतल
+  arb: مُسْتَوِيَةٍ, مُسْتَقِيمٍ
+  kor: 평탄한
+  swa: ya–usawa, tambarare
+
+### Sense 111306 (2 occurrences)
+Grammar: Art | N-ms
+  eng: the–plateau
+  spa: la–meseta
+  hin: मैदान–के, और–रामोत
+  arb: السَّهْلِ
+  kor: 그–평원의
+  swa: ya–uwanda, uwanda
+
+### Sense 111307 (1 occurrences)
+Grammar: Prep-l | N-ms
+  eng: to–a–plain
+  spa: ¡una–llanura!
+  hin: के–लिए–समतल।
+  arb: سَهْلًا
+  kor: 에–평지로
+  swa: utakuwa–tambarare
+
+### Sense 111308 (1 occurrences)
+Grammar: Conj-w, Prep-b, Art | N-ms
+  eng: and–in–the–plain
+  spa: y–en–la–llanura
+  hin: और–मैदान–में
+  arb: وَ–بِـ–الْمُسْتَوِي
+  kor: 그리고–에–그–고원
+  swa: na–katika–uwanda
+
+### Sense 111309 (1 occurrences)
+Grammar: Conj-w, Prep-b | N-ms
+  eng: and–in–uprightness
+  spa: y–en–rectitud
+  hin: और–में–सीधाई
+  arb: وَبِالاسْتِقَامَةِ
+  kor: 그리고–에–정직함
+  swa: na–kwa–unyofu
+
+### Sense 111310 (1 occurrences)
+Grammar: Prep-b | N-ms
+  eng: with–fairness
+  spa: con-equidad
+  hin: सीधापन–से
+  arb: بِـ–الاسْتِقَامَةِ
+  kor: 공평–으로
+  swa: kwa-usawa
+
+### Sense 111311 (1 occurrences)
+Grammar: N-ms
+  eng: uprightness
+  spa: equidad
+  hin: न्याय–का
+  arb: اسْتِقامَةٍ
+  kor: 공정–의
+  swa: unyofu
+
+### Sense 111312 (1 occurrences)
+Grammar: N-ms
+  eng: with–equity
+  spa: con–equidad
+  hin: सीधाई–से
+  arb: بِ–اسْتِقامَةٍ
+  kor: 공평함–으로
+  swa: kwa–unyofu
+
+### Sense 111313 (1 occurrences)
+Grammar: Prep-b | N-ms
+  eng: on–level–ground
+  spa: en–lugar–recto
+  hin: में–समतल–जगह
+  arb: فِي–اسْتِقَامَةٍ
+  kor: 평탄한–곳–에
+  swa: mahali-tambarare
+
+## Task
+
+Group these 13 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

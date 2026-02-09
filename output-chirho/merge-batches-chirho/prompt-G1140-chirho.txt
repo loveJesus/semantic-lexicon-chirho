@@ -1,0 +1,127 @@
+# Sense Merge Task for G1140
+
+Lemma: G1140 (POS: N-GNP)
+Total occurrences: 63
+Current sense count: 11
+
+This Hebrew/Greek lemma has been over-split into 11 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 64933 (27 occurrences)
+Grammar: N-ANP,N-GNP,N-NNP
+  eng: demons
+  spa: demonios, a–demonios
+  hin: दुष्टात्माओं–को, दुष्टात्माएं, दुष्टात्माओं
+  arb: شَياطينُ, شَيَاطِينَ, شَياطينَ
+  kor: 귀신들을, 귀신들이, 귀신들–을
+  swa: pepo, mapepo, pepo.
+
+### Sense 64934 (14 occurrences)
+Grammar: N-GNS,N-NNS,N-ANS
+  eng: demon, a–demon, a-demon
+  spa: demonio, un–demonio
+  hin: दुष्टात्मा, दुष्टात्मा–ने, बच्चों
+  arb: شَيطان, شَّيْطَانُ, شَيطانُ
+  kor: 귀신이, 귀신–이, 귀신
+  swa: pepo, pepo,
+
+### Sense 64935 (4 occurrences)
+Grammar: N-ANP,N-GNP
+  eng: demons
+  spa: demonios
+  hin: दुशत–अअतमओन–को, दुशत–अअतमओन–के
+  arb: شَيَاطِينَ, شَيَاطِينِ
+  kor: 관마들을, 관마들의
+  swa: pepo,, pepo.
+
+### Sense 64936 (4 occurrences)
+Grammar: N-ANS
+  eng: A–demon, Demon, A-demon
+  spa: Demonio, demonio
+  hin: दुष्टात्मा, दुशत–अअतम
+  arb: شَيطانٌ, شَيْطَانٌ, شَيطان
+  kor: 귀신을, 귀신이, 관마를
+  swa: Pepo, Ana-pepo!
+
+### Sense 64937 (3 occurrences)
+Grammar: N-GNP
+  eng: of-demons, of–demons
+  spa: de–demonios
+  hin: दुष्टात्माओं–की, दुष्टात्माओं–का, दुशतअतमओन–कि
+  arb: لِلشَّياطينِ, شَياطينَ, الشَّياطينِ
+  kor: 귀신들의, 귀신들–의,, 귀신들–의
+  swa: za–pepo, ya–pepo,, ya–mashetani
+
+### Sense 64938 (3 occurrences)
+Grammar: N-ANP
+  eng: demons
+  spa: demonios
+  hin: दुष्टात्माओं
+  arb: الشَّياطينَ, الشَّيَاطِينَ
+  kor: 귀신들을, 귀신들–이
+  swa: pepo., pepo,
+
+### Sense 64939 (3 occurrences)
+Grammar: N-GNP
+  eng: of-demons, demons
+  spa: de–demonios, demonios
+  hin: दुष्टात्माओं–की, दुष्टात्माओं–का, दुष्टात्माओं
+  arb: شَياطينَ, الشَّياطينِ
+  kor: 귀신들–의
+  swa: ya–mashetani., mashetani, cha–mashetani.
+
+### Sense 64940 (2 occurrences)
+Grammar: N-NNP,N-ANP
+  eng: demons
+  spa: demonios
+  hin: दुष्टात्माओं, दुष्टात्माएँ
+  arb: الشَّيَاطِينِ, الشَّياطينُ
+  kor: 귀신들도, 귀신들과
+  swa: pepo, mashetani,
+
+### Sense 64941 (1 occurrences)
+Grammar: N-GNS
+  eng: of–demon
+  spa: de–demonio
+  hin: दुष्टात्मा–की
+  arb: شَيطانٍ
+  kor: 귀신–의
+  swa: ya–pepo
+
+### Sense 64942 (1 occurrences)
+Grammar: N-DNP
+  eng: to-demons
+  spa: a–demonios
+  hin: दुष्टात्माओं–को
+  arb: لِلشَّياطينِ
+  kor: 귀신들에게
+  swa: kwa–mashetani,
+
+### Sense 64943 (1 occurrences)
+Grammar: N-GNP
+  eng: deities
+  spa: divinidades
+  hin: देवताओं–का
+  arb: آلِهَةٍ
+  kor: 귀신들의
+  swa: miungu
+
+## Task
+
+Group these 11 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

@@ -1,0 +1,126 @@
+# Sense Merge Task for H5019
+
+Lemma: H5019 (POS: Prep-l | N-proper-ms)
+Total occurrences: 59
+Current sense count: 11
+
+This Hebrew/Greek lemma has been over-split into 11 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 115506 (23 occurrences)
+Grammar: N-proper-ms
+  eng: Nevukadretsar, Nebuchadnezzar, Nevukadretstsar
+  spa: Nabucodonosor, Nebukadnetsar, Nevukadnetsar
+  hin: नबूकदनेस्सर, नबूकदनेस्सर–ने, नबूकदनेस्सर–के
+  arb: نَبُوخَذْنَصَّرَ, نَبُوخَذْنَصَّرُ
+  kor: 느부갓네살이, 느부갓네살, 느부갓네살의
+  swa: Nebukadneza, Nebukadreza
+
+### Sense 115507 (20 occurrences)
+Grammar: N-proper-ms
+  eng: Nevukhadnetzar, Nevukhadnetsar, Nevukhadnetztzar
+  spa: Nebukadnetsar, Nabucodonosor, Nebukadnetstsar
+  hin: नबूकदनेस्सर, नबूकदनेत्सर, नबूकदनेस्सर–ने
+  arb: نَبُوخَذْنَصَّرَ, نَبُوخَذْنَصَّرُ, نَبُوكَدْنَصَّرُ
+  kor: 느부갓네살, 느부갓네살이, 느부가드넷살이
+  swa: Nebukadneza
+
+### Sense 115508 (4 occurrences)
+Grammar: N-proper-ms
+  eng: Nebuchadnezzar
+  spa: Nebukadnetsar
+  hin: नबूकदनेस्सर, नबूकदनेस्सर–के, नबूकदनेस्सरने
+  arb: نَبُوخَذْنَصَّرُ, نَبُوخَذْنَصَّرَ
+  kor: 느부갓네살이, 느부갓네살
+  swa: Nebukadneza
+
+### Sense 115509 (4 occurrences)
+Grammar: Prep-l | N-proper-ms
+  eng: of–Nevukadretsar, of–Nevukhadnetzar
+  spa: de–Nebukadnetsar
+  hin: नबूकदनेस्सर–के, नबूकदनेस्सर–का, को–नबूकदनेस्सर
+  arb: لِنَبُوخَذْنَصَّرَ, لِ–نَبُوخَذْنَصَّرَ
+  kor: 에–위한–느부갓네살의, 에게–느부갓네살에게, 느부갓레살의
+  swa: wa–Nebukadneza
+
+### Sense 115510 (2 occurrences)
+Grammar: N-proper-ms
+  eng: Nevukhadnetsar, Nevuchadnetzar
+  spa: Nabucodonosor
+  hin: नबूकदनेस्सर–ने
+  arb: نَبُوخَذْنَصَّرُ
+  kor: 느부갓네살–이, 느부갑네살이
+  swa: mfalme, Nebukadreza
+
+### Sense 115511 (1 occurrences)
+Grammar: N-proper-ms
+  eng: Nevukhadnetsar
+  spa: Nebucadnetsar
+  hin: नबूकदनेस्सर
+  arb: نَبوخَذنَصَّر
+  kor: 느부갓네살
+  swa: Nebukadneza
+
+### Sense 115512 (1 occurrences)
+Grammar: N-proper-ms
+  eng: Nebuchadnezzar
+  spa: Nabucodonosor
+  hin: नबूकदनेस्सर
+  arb: نَبوخَذْنَصَّرُ
+  kor: 느부갑넷살이
+  swa: Nebukadneza
+
+### Sense 115513 (1 occurrences)
+Grammar: Prep-l | N-proper-ms
+  eng: to–Nebuchadnezzar
+  spa: a–Nabucodonosor
+  hin: नबूकदनेस्सर–को
+  arb: لِنَبُوخَذْنَصَّرَ
+  kor: 느부갓네살에게–
+  swa: kwa–Nebukadreza
+
+### Sense 115514 (1 occurrences)
+Grammar: Conj-w | N-proper-ms
+  eng: and–Nevukadretsar
+  spa: y–Nevujadnetsar
+  hin: और–नबूकदनेस्सर
+  arb: وَنَبُوخَذْنَصَّرُ
+  kor: 그리고–느부갓네살이
+  swa: wakati–Nebukadneza
+
+### Sense 115515 (1 occurrences)
+Grammar: N-proper-ms
+  eng: [ketiv:Nebukadretsor]
+  spa: [kethiv]
+  arb: [نَبُوخَذْرَأصُورُ]
+  kor: [느부갓레아솔]
+  swa: [Nebukadreza]
+
+### Sense 115516 (1 occurrences)
+Grammar: N-proper-ms
+  eng: Nevukhadretzar
+  spa: Nebukadretsar
+  hin: नबूकदरेस्सर
+  arb: نَبُوخَذْرَأصَّرَ
+  kor: 느부갓레살
+  swa: Nebukadneza
+
+## Task
+
+Group these 11 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

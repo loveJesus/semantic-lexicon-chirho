@@ -1,0 +1,145 @@
+# Sense Merge Task for H6168
+
+Lemma: H6168 (POS: Conj-w | V-Hitpael-ConjImperf-2fs)
+Total occurrences: 15
+Current sense count: 13
+
+This Hebrew/Greek lemma has been over-split into 13 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 126046 (2 occurrences)
+Grammar: V-Piel-Imp-mp
+  eng: lay-bare
+  spa: arrasad, Arrasad
+  hin: ढा–दो
+  arb: هُدُّوا
+  kor: 헐라
+  swa: bomoa
+
+### Sense 126047 (2 occurrences)
+Grammar: V-Hifil-Perf-3ms
+  eng: he-exposed
+  spa: desnudó, descubrió
+  hin: खोला
+  arb: يَكْشِفُ
+  kor: 드러냈다
+  swa: amefunua
+
+### Sense 126048 (1 occurrences)
+Grammar: V-Piel-InfAbs
+  eng: laying–bare
+  spa: desnudando
+  hin: नंगा–करके
+  arb: كَاشِفًا
+  kor: 드러내셨도다
+  swa: ukifunua
+
+### Sense 126049 (1 occurrences)
+Grammar: V-Nifal-Imperf-3ms
+  eng: is–poured
+  spa: sea–derramado
+  hin: उंडेला–जाए
+  arb: يُسْكَبَ
+  kor: 부어지리라
+  swa: imwagwe
+
+### Sense 126050 (1 occurrences)
+Grammar: Conj-w | V-Hitpael-Prtcpl-ms
+  eng: and–spreading–himself
+  spa: y–extendiéndose
+  hin: और–फैलते–हुए
+  arb: وَمُنْتَشِرًا
+  kor: 그리고–퍼지도다
+  swa: na–akijieneza
+
+### Sense 126051 (1 occurrences)
+Grammar: V-Hifil-Perf-3ms
+  eng: he-poured-out
+  spa: derramó
+  hin: उड़ेल–दिया
+  arb: سَكَبَ
+  kor: 쇟아–부었느니라
+  swa: alimimina
+
+### Sense 126052 (1 occurrences)
+Grammar: Conj-w | V-Hitpael-ConjImperf-
+  eng: and–strip–yourself–naked
+  spa: y–te–desnudarás
+  hin: और–नंगी–होजाएगी
+  arb: وَتَتَعَرَّينَ
+  kor: 그리고–네–가–벌거벗게–되리라
+  swa: na–kujivua–nguo
+
+### Sense 126053 (1 occurrences)
+Grammar: Conj-w | V-Piel-ConsecImperf-3
+  eng: and–emptied
+  spa: y–vació
+  hin: और–उडेला
+  arb: وَأَفْرَغَتْ
+  kor: 그리고–부었다
+  swa: na–akamwaga
+
+### Sense 126054 (1 occurrences)
+Grammar: V-Piel-Imperf.Jus-2ms
+  eng: pour-out
+  spa: desampares
+  hin: उजाड़
+  arb: تُعَرِّ
+  kor: 비우지
+  swa: ache
+
+### Sense 126055 (1 occurrences)
+Grammar: Conj-w | V-Piel-ConjImperf-3mp
+  eng: and–emptied
+  spa: y–vaciaban
+  hin: और–खाली–करते–थे
+  arb: فَيُفْرِغُونَ
+  kor: 그리고–비웠다
+  swa: na–wakalitwalia
+
+### Sense 126056 (1 occurrences)
+Grammar: V-Piel-Imperf-3ms
+  eng: He–will–lay–bare
+  spa: desnudará
+  hin: नंगा–करेगा
+  arb: يَكشِفُ
+  kor: 드러내시리라
+  swa: atavifunua
+
+### Sense 126057 (1 occurrences)
+Grammar: V-Piel-Perf-3ms
+  eng: uncovers
+  spa: descubrió
+  hin: खोला
+  arb: كَشَفَ
+  kor: 벗겨–들었으니
+  swa: imefunua
+
+### Sense 126058 (1 occurrences)
+Grammar: V-Piel-Perf-3ms
+  eng: he–has–stripped
+  spa: ha–sido–desnudado
+  hin: उघाड़ा–गया।
+  arb: كُشِفَتْ
+  kor: 벗겨졌다
+  swa: imefunuliwa
+
+## Task
+
+Group these 13 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

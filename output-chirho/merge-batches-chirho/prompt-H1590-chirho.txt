@@ -1,0 +1,118 @@
+# Sense Merge Task for H1590
+
+Lemma: H1590 (POS: Prep-b | N-mp)
+Total occurrences: 17
+Current sense count: 10
+
+This Hebrew/Greek lemma has been over-split into 10 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 90526 (4 occurrences)
+Grammar: Art | N-ms
+  eng: the-thief, the–thief
+  spa: el–ladrón
+  hin: चोर
+  arb: السّارِقُ, السَّارِقُ
+  kor: 그–도둑이, 도둑을
+  swa: mwizi
+
+### Sense 90527 (3 occurrences)
+Grammar: N-ms
+  eng: a–thief, of–a–thief
+  spa: ladrón
+  hin: चोर, चोर–का
+  arb: سارِقٍ, سارِقًا, السَّارِقِ
+  kor: 도둑을, 도둑–의, 도둑–을
+  swa: mwizi
+
+### Sense 90528 (2 occurrences)
+Grammar: Prep-k, Art | N-ms
+  eng: like–the–thief, as–thief
+  spa: como–ladrón, como–el–ladrón.
+  hin: चोर–की–तरह
+  arb: كَ–لِصٍّ, كَ–السّارِقِ
+  kor: 도둑–같이
+  swa: kama–mwizi
+
+### Sense 90529 (2 occurrences)
+Grammar: N-mp
+  eng: thieves
+  spa: ladrones
+  hin: चोरों–के, चोर
+  arb: لُصُوصٌ, اللُّصُوصِ
+  kor: 도둑들이, 도둑들의
+  swa: wezi
+
+### Sense 90530 (1 occurrences)
+Grammar: Prep-b | N-mp
+  eng: among–thieves
+  spa: entre–ladrones
+  hin: में–चोरों
+  arb: بَيْنَ–اللُّصُوصِ
+  kor: 도둑들–가운데서
+  swa: miongoni–mwa–wezi
+
+### Sense 90531 (1 occurrences)
+Grammar: Prep-k, Art | N-ms
+  eng: like–the–thief
+  spa: como–el–ladrón
+  hin: जैसे–चोर।
+  arb: كَ–السَّارِقِ
+  kor: 같이–도적
+  swa: kama–wezi
+
+### Sense 90532 (1 occurrences)
+Grammar: Conj-w | N-ms
+  eng: and–thief
+  spa: y–ladrón
+  hin: और–चोर
+  arb: وَالسارِقُ
+  kor: 그리고–도둑이
+  swa: na–mwizi
+
+### Sense 90533 (1 occurrences)
+Grammar: Art | N-ms
+  eng: the–thief
+  spa: el–ladrón
+  hin: चोर–के
+  arb: السَّارِقِ
+  kor: 그–도둑의
+  swa: mwizi
+
+### Sense 90534 (1 occurrences)
+Grammar: Prep-l, Art | N-ms
+  eng: the–thief
+  spa: al–ladrón
+  hin: चोर–को
+  arb: السَّارِقُ
+  kor: 도둑–을
+  swa: mwizi
+
+### Sense 90535 (1 occurrences)
+Grammar: N-mp
+  eng: thieves
+  spa: ladrones
+  hin: चोर
+  arb: لصوص
+  kor: 도둑들이
+  swa: wezi
+
+## Task
+
+Group these 10 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

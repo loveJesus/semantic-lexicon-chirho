@@ -1,0 +1,118 @@
+# Sense Merge Task for H4147
+
+Lemma: H4147 (POS: N-mpc | 2mp)
+Total occurrences: 11
+Current sense count: 10
+
+This Hebrew/Greek lemma has been over-split into 10 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 110151 (2 occurrences)
+Grammar: N-fp
+  eng: bonds
+  spa: las–ataduras, ataduras
+  hin: रस्सियाँ, बन्धन
+  arb: قُيُودًا, رُبُطًا
+  kor: 줄들을, 줄들과
+  swa: vifungo–hivyo, kamba
+
+### Sense 110152 (1 occurrences)
+Grammar: Conj-w | N-mpc | 2fs
+  eng: and–your–bonds
+  spa: y–ataduras–tuyas
+  hin: और–तेरी–बेड़ियाँ
+  arb: وَأَغْلَالَكِ
+  kor: 그리고–너의–사슬들–을
+  swa: na–vifungo–vyako
+
+### Sense 110153 (1 occurrences)
+Grammar: N-mpc | 2fs
+  eng: your–bonds
+  spa: tus–ataduras
+  hin: बंधनों–तेरे
+  arb: قُيُودَكِ
+  kor: 네–줄들–을
+  swa: vifungo–vyako
+
+### Sense 110154 (1 occurrences)
+Grammar: Conj-w | N-mpc
+  eng: and–the–bonds–of
+  spa: y–ataduras–de
+  hin: और–बंधन
+  arb: وَقُيُودَ
+  kor: 그리고–밇들을
+  swa: na–vifungo
+
+### Sense 110155 (1 occurrences)
+Grammar: Conj-w | N-mpc | 2ms
+  eng: and–your–bonds
+  spa: y–tus–ataduras
+  hin: और–तेरी–बेड़ियाँ
+  arb: وَرُبُطَكَ
+  kor: 그리고–네–줄들을
+  swa: na–kamba–zako
+
+### Sense 110156 (1 occurrences)
+Grammar: Prep-l | N-mpc | 1cs
+  eng: my–bonds
+  spa: mis–ataduras
+  hin: मेरे–बन्धन
+  arb: قُيودي
+  kor: 나–의–결박–을
+  swa: vifungo–vyangu
+
+### Sense 110157 (1 occurrences)
+Grammar: N-mpc
+  eng: bonds-of
+  spa: ataduras–de
+  hin: बन्धनोंको
+  arb: قُيُودَ
+  kor: 사슬들을–
+  swa: vifungo–vya–
+
+### Sense 110158 (1 occurrences)
+Grammar: Conj-w | N-mpc | 3mp
+  eng: and–their–bonds
+  spa: y–sus–ataduras
+  hin: और–उनके–बन्धनों–को
+  arb: وَ–قُيودَهُم
+  kor: 그리고–그들–의–결박들–을
+  swa: na–vifungo–vyao
+
+### Sense 110159 (1 occurrences)
+Grammar: N-fpc | 3mp
+  eng: their–bonds
+  spa: sus–ataduras
+  hin: उनके–बन्धन
+  arb: قُيُودَهُمْ
+  kor: 그들–의–매인–들
+  swa: vyao
+
+### Sense 110160 (1 occurrences)
+Grammar: N-mpc | 2mp
+  eng: your–bonds
+  spa: vuestras–ataduras
+  hin: बंधन–तुम्हारे
+  arb: قُيُودُكُمْ
+  kor: 너희의–결박이
+  swa: minyororo–yenu
+
+## Task
+
+Group these 10 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

@@ -1,0 +1,145 @@
+# Sense Merge Task for H4082
+
+Lemma: H4082 (POS: Art | N-fp)
+Total occurrences: 53
+Current sense count: 13
+
+This Hebrew/Greek lemma has been over-split into 13 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 109843 (22 occurrences)
+Grammar: N-fs,Conj-w | N-fs
+  eng: province, and–province
+  spa: provincia, y–provincia, provincias
+  hin: प्रान्त, और–प्रान्त–में, प्रत्येक
+  arb: وِلَايَةٍ, فَ–وِلَايَةٍ, وِلَايَةً
+  kor: 지방마다, 그리고–지방마다, 도와
+  swa: jimbo, na–jimbo, kama–maandishi-yake
+
+### Sense 109844 (11 occurrences)
+Grammar: N-fpc
+  eng: provinces-of
+  spa: provincias–de
+  hin: प्रान्तों–में, प्रान्तों–में–हैं, प्रान्तों–के
+  arb: وِلَايَاتِ, وِلاَيَاتِ
+  kor: 도들에, 지방들에, 지방들의
+  swa: yote, ya–mfalme, wa–majimbo
+
+### Sense 109846 (8 occurrences)
+Grammar: Art | N-fp
+  eng: the–provinces
+  spa: las–provincias
+  hin: प्रांतों–के, प्रान्तों–के, प्रान्तों–में
+  arb: ال–مُقاطَعاتِ, الْوِلَايَاتِ, الْوِلاَيَاتِ
+  kor: 그–도들, 그–도들의, 그–지방들의
+  swa: majimbo, wa–majimbo, yote
+
+### Sense 109847 (3 occurrences)
+Grammar: Art | N-fs
+  eng: the–province
+  spa: la–provincia
+  hin: प्रांत–के
+  arb: ال–مُقاطَعَةِ, الْوِلايَةِ, الْمَدِينَةِ
+  kor: 그–지방의, 그–지방
+  swa: mkoa, wa–mkoa
+
+### Sense 109848 (1 occurrences)
+Grammar: N-fs
+  eng: the-province
+  spa: provincia
+  hin: प्रांत–के
+  arb: الْمُقَاطَعَةِ
+  kor: 지방의
+  swa: za–mkoa
+
+### Sense 109849 (1 occurrences)
+Grammar: Prep-l, Art | N-fp
+  eng: for–the–provinces
+  spa: a–las–provincias
+  hin: प्रान्तों–में
+  arb: لِ–الْوِلَايَاتِ
+  kor: 그–도들에게
+  swa: kwa–majimbo
+
+### Sense 109850 (1 occurrences)
+Grammar: Prep-b, Art | N-fp
+  eng: among–the–provinces
+  spa: las–provincias
+  hin: प्रान्तों–में
+  arb: فِي–الْمُدُنِ
+  kor: 지방들–에서
+  swa: katika–majimbo
+
+### Sense 109851 (1 occurrences)
+Grammar: Conj-w, Art | N-fp
+  eng: and–the–provinces
+  spa: y–provincias
+  hin: और–प्रदेशों–का
+  arb: وَالأَقْالِيمِ
+  kor: 그리고–지방들–의
+  swa: na–majimbo
+
+### Sense 109852 (1 occurrences)
+Grammar: Prep-b, Art | N-fs
+  eng: in–the–province
+  spa: en–la–provincia
+  hin: प्रांत–में
+  arb: فِي–الْوِلاَيَةِ
+  kor: 에–그–지방
+  swa: katika–mkoa
+
+### Sense 109853 (1 occurrences)
+Grammar: Prep-b, Art | N-fs
+  eng: in–the–province
+  spa: en–la–provincia
+  hin: प्रदेश–में
+  arb: يُعْبَدُ
+  kor: 지방–에서
+  swa: katika–jimbo
+
+### Sense 109854 (1 occurrences)
+Grammar: Prep-b | N-fpc
+  eng: in–provinces-of
+  spa: en–provincias–de
+  hin: प्रान्तों में
+  arb: فِي‒وِلاَيَاتِ
+  kor: 에–도들에
+  swa: katika–majimbo
+
+### Sense 109855 (1 occurrences)
+Grammar: Prep-m | N-fp
+  eng: from–provinces
+  spa: de–provincias
+  hin: से–प्रांतों
+  arb: مِنَ–الْأَقْطَارِ
+  kor: 지방들에서
+  swa: kutoka–majimbo
+
+### Sense 109856 (1 occurrences)
+Grammar: Art | N-fs
+  eng: the–province
+  spa: la–provincia
+  hin: प्रांत
+  arb: الْمُقَاطَعَةِ
+  kor: 지방–의
+  swa: mkoa
+
+## Task
+
+Group these 13 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

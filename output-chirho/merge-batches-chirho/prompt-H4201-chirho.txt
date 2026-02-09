@@ -1,0 +1,127 @@
+# Sense Merge Task for H4201
+
+Lemma: H4201 (POS: N-fsc | 1cs)
+Total occurrences: 19
+Current sense count: 11
+
+This Hebrew/Greek lemma has been over-split into 11 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 110648 (4 occurrences)
+Grammar: Art | N-fp
+  eng: the–doorposts
+  spa: las–jambas, los–postes
+  hin: चौखटों
+  arb: الْ–بَابِ, الْقَائِمَتَيْنِ–الـ
+  kor: 그–문설주들
+  swa: za–milango, mbili
+
+### Sense 110649 (4 occurrences)
+Grammar: N-fsc
+  eng: doorpost-of
+  spa: jamba–de, la–jamba–de
+  hin: चौखट
+  arb: قَائِمَةِ
+  kor: 문설의, 문설주의, 문설주–의
+  swa: miimo–ya, nguzo–ya–mlango, mwimo–wa
+
+### Sense 110650 (2 occurrences)
+Grammar: N-fpc
+  eng: doorposts-of, doorposts
+  spa: jambas–de, jambas
+  hin: चौखटें
+  arb: قَوَائِمُ, قَوَائِمَ
+  kor: 문설주들을, 문설주들
+  swa: miimo
+
+### Sense 110651 (2 occurrences)
+Grammar: N-fpc
+  eng: doorposts–of, doorposts-of
+  spa: postes–de, los–postes–de
+  hin: चौखटों
+  arb: قَوَائِمِ
+  kor: 문설주들, 문설들
+  swa: miimo–ya
+
+### Sense 110652 (1 occurrences)
+Grammar: Conj-w, Art | N-fs
+  eng: and–the–doorpost
+  spa: y–la–jamba
+  hin: और–चौखटके
+  arb: وَ–الْقَائِمَةِ
+  kor: 그리고–문설에
+  swa: na–mwimo
+
+### Sense 110653 (1 occurrences)
+Grammar: N-fsc | 1cs
+  eng: My-doorpost
+  spa: mi–poste
+  hin: मेरी–चौखट–के
+  arb: قَوَائِمِي
+  kor: 나의–문설
+  swa: miimo–yangu
+
+### Sense 110654 (1 occurrences)
+Grammar: Art | N-fs
+  eng: the-doorpost
+  spa: la–jamba
+  hin: चौखट
+  arb: القائِمَةِ
+  kor: 그–문설주
+  swa: mwimo–wa–mlango
+
+### Sense 110655 (1 occurrences)
+Grammar: Conj-w | N-fsc | 3mp
+  eng: and–their-doorpost
+  spa: y–su–poste
+  hin: और–अपनी–चौखट
+  arb: وَ–قَوَائِمَهُمْ
+  kor: 그리고–그것들의–문설
+  swa: na–miimo–yao
+
+### Sense 110656 (1 occurrences)
+Grammar: Conj-w, Art | N-fp
+  eng: and–the–doorposts
+  spa: y–los–postes
+  hin: और–चौखटें
+  arb: وَ–الـ–قَوَائِمِ
+  kor: 그리고-문설주들은
+  swa: mraba
+
+### Sense 110657 (1 occurrences)
+Grammar: N-fsc
+  eng: doorpost
+  spa: jamba
+  hin: चौखट
+  arb: قَائِمَةُ–الْبَابِ
+  kor: 문설은
+  swa: miimo–ya–mlango
+
+### Sense 110658 (1 occurrences)
+Grammar: N-fpc
+  eng: the–doorposts–of
+  spa: postes–de
+  hin: चौखटों
+  arb: عِضَادَتَيْ
+  kor: 문설주–들–을
+  swa: miimo–ya
+
+## Task
+
+Group these 11 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

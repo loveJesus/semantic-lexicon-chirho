@@ -1,0 +1,145 @@
+# Sense Merge Task for H7110a
+
+Lemma: H7110a (POS: N-ms)
+Total occurrences: 28
+Current sense count: 13
+
+This Hebrew/Greek lemma has been over-split into 13 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 132719 (15 occurrences)
+Grammar: N-ms,Art | N-ms,N-msc
+  eng: wrath, wrath–of, wrath-of
+  spa: ira, ira–de, la–ira
+  hin: क्रोध
+  arb: غَضَبٌ, سَخَطٌ, الْغَضَبُ
+  kor: 진노가, 분노가, 진노–가
+  swa: ghadhabu, ketsep, hasira
+
+### Sense 132720 (2 occurrences)
+Grammar: Conj-w | N-ms
+  eng: and–wrath, and–anger
+  spa: e–ira, Y–con–ira
+  hin: और–क्रोध
+  arb: وَ–غَضَبٌ, وَغَضَبًا
+  kor: 그리고–분노를, 그리고–분노라
+  swa: na–hasira
+
+### Sense 132721 (1 occurrences)
+Grammar: Prep-m | N-msc
+  eng: because–of–the–wrath-of
+  spa: por–la–ira–de
+  hin: से–क्रोध
+  arb: مِنْ–غَضَبِ
+  kor: 에서–진노
+  swa: Kwa–sababu–ya–ghadhabu–ya
+
+### Sense 132722 (1 occurrences)
+Grammar: Conj-w | N-ms
+  eng: and–anger
+  spa: y–furia
+  hin: और–क्रोध
+  arb: أَنْ–يَأْكُلَ
+  kor: 그리고–분노
+  swa: na–ghadhabu
+
+### Sense 132723 (1 occurrences)
+Grammar: Prep-m | N-msc | 3ms
+  eng: At–His–wrath
+  spa: de–ira–su
+  hin: उसके–क्रोध–से
+  arb: مِنْ–غَضَبِهِ
+  kor: 그의–진노–에서
+  swa: kwa–hasira–yake
+
+### Sense 132724 (1 occurrences)
+Grammar: Conj-w, Prep-b | N-ms
+  eng: and–with–wrath
+  spa: y–con–enojo
+  hin: और–में–आग
+  arb: وَ–بِ–غَيْظٍ
+  kor: 그리고–에–노로
+  swa: na–kwa–ukali
+
+### Sense 132725 (1 occurrences)
+Grammar: Conj-w, Prep-b | N-ms
+  eng: and–in–rage
+  spa: y–en–indignación
+  hin: और–में–रोष
+  arb: وَبِسَخَطٍ
+  kor: 그리고–분노에서
+  swa: na–kwa–ukali
+
+### Sense 132726 (1 occurrences)
+Grammar: Conj-w | N-msc | 2ms
+  eng: and–your–wrath
+  spa: y–tu–ira
+  hin: और–तेरे–रोष
+  arb: وَ–غَضَبِكَ
+  kor: 그리고–당신–의–진노
+  swa: na–ghadhabu–yako
+
+### Sense 132727 (1 occurrences)
+Grammar: Prep-b | N-msc | 1cs
+  eng: in–my–wrath
+  spa: en–mi–ira
+  hin: अपने–क्रोध–में
+  arb: بِ–غَضَبِي
+  kor: 에–나의–진노로
+  swa: katika–hasira–yangu
+
+### Sense 132728 (1 occurrences)
+Grammar: N-ms
+  eng: wrath
+  spa: enojo
+  hin: क्रोध
+  arb: غَضَبٍ
+  kor: 분노로–
+  swa: ghadhabu
+
+### Sense 132729 (1 occurrences)
+Grammar: Conj-w, Prep-b | N-ms
+  eng: and-in-fury
+  spa: y–con–indignación
+  hin: और–रोष
+  arb: وَبِ–سَخَطٍ
+  kor: 그리고–에–큰–격노로
+  swa: na–kwa–ukali
+
+### Sense 132730 (1 occurrences)
+Grammar: N-ms
+  eng: anger
+  spa: con–ira
+  hin: बहुत–क्रोध।
+  arb: غَضَبًا
+  kor: 노여움으로
+  swa: hasira
+
+### Sense 132731 (1 occurrences)
+Grammar: Prep-b | N-msc | 2ms
+  eng: in–Your–wrath
+  spa: en–tu–enojo
+  hin: में–क्रोध–तेरे
+  arb: بِ–غَضَبِكَ
+  kor: –주–의–진노–로
+  swa: katika–ghadhabu-yako
+
+## Task
+
+Group these 13 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

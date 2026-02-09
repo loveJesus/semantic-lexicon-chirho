@@ -1,0 +1,145 @@
+# Sense Merge Task for H6105a
+
+Lemma: H6105a (POS: Conj-w | V-Qal-ConjPerf-3ms)
+Total occurrences: 18
+Current sense count: 13
+
+This Hebrew/Greek lemma has been over-split into 13 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 125735 (2 occurrences)
+Grammar: V-Qal-Perf-3cp
+  eng: are–mighty
+  spa: son–poderosos, son–fuertes
+  hin: बलवान–हैं
+  arb: اشْتَدّوا, أَقْوِياءُ
+  kor: 강하도다
+  swa: wengi, wamekuwa-wengi
+
+### Sense 125736 (2 occurrences)
+Grammar: Conj-w | V-Qal-ConsecImperf-3m
+  eng: and–grew-mighty
+  spa: y–se-fortalecieron
+  hin: और–बलवान-हुए
+  arb: وَ–عَظُمُوا
+  kor: 그리고–심히–강해졌다, 그리고–강해졌다
+  swa: na–wakawa–wenye–nguvu
+
+### Sense 125737 (2 occurrences)
+Grammar: V-Qal-Perf-3cp
+  eng: they–are–more
+  spa: son–más
+  hin: वे–बढ़–गए
+  arb: كَثُرَتْ, عَظُمَتْ
+  kor: 강하였도다, 강하도다
+  swa: ni-mengi
+
+### Sense 125738 (2 occurrences)
+Grammar: Conj-w | V-Qal-ConjPerf-3ms
+  eng: and–shall-be-mighty, and–become-strong
+  spa: y–se–hará–fuerte, Y–se–fortalecerá
+  hin: और–शक्तिशाली–होगी, और–शक्तिशाली–होगा
+  arb: وَ–يَقْوَى, وَ–يَعْظُمُ
+  kor: 그리고–강해지리라, 그리고–강하여지리라
+  swa: na–kuwa–na–nguvu, Na–itakuwa–na–nguvu
+
+### Sense 125739 (2 occurrences)
+Grammar: V-Qal-Perf-3cp
+  eng: were–numerous, numerous
+  spa: fueron–numerosos
+  hin: बढ़–गए
+  arb: عَظُمَتْ
+  kor: 강해졌다
+  swa: zimekuwa–nyingi
+
+### Sense 125740 (1 occurrences)
+Grammar: V-Piel-Perf-3ms | 3ms
+  eng: gnawed–his–bones
+  spa: sus–huesos
+  hin: तोड़े–उसकी–हड्डियां
+  arb: عِظَامَهُ
+  kor: 부수었다–그를
+  swa: amemvunja–mifupa
+
+### Sense 125741 (1 occurrences)
+Grammar: V-Qal-Perf-2ms
+  eng: you-are-mightier
+  spa: te–hiciste–poderoso
+  hin: बलवान–हो–गया–
+  arb: صِرتَ
+  kor: 강해졌다–너는
+  swa: umekuwa–na–nguvu
+
+### Sense 125742 (1 occurrences)
+Grammar: V-Qal-Perf-3cp
+  eng: have–been–numerous
+  spa: aumentaron
+  hin: बहुत–हैं
+  arb: عَظُمَتْ
+  kor: 강하다
+  swa: zimeongezeka
+
+### Sense 125743 (1 occurrences)
+Grammar: V-Qal-Perf-3cp
+  eng: More–numerous–became–
+  spa: Se–multiplicaron
+  hin: बढ़–गईं–
+  arb: كَثُرَتْ–
+  kor: 많아졌다
+  swa: Zimeongezeka–
+
+### Sense 125744 (1 occurrences)
+Grammar: Conj-w | V-Hifil-ConsecImperf-
+  eng: and–He–made–them–stronger
+  spa: y–lo–hizo–más–fuerte
+  hin: और–उसने–शक्तिशाली–बनाया–उन्हें
+  arb: وَ–أَقواهُ
+  kor: 그리고–강하게–하셨도다–그들–을
+  swa: na–akawafanya–wengi–kuliko
+
+### Sense 125745 (1 occurrences)
+Grammar: V-Qal-Perf-3cp
+  eng: vast
+  spa: vastas
+  hin: बहुत–हैं
+  arb: عَظُمَتْ
+  kor: 많은지
+  swa: yalivyokuwa–mengi
+
+### Sense 125746 (1 occurrences)
+Grammar: Conj-w, Prep-k | V-Qal-Inf | 3
+  eng: and–when-it-was-strong
+  spa: y–cuando–se–fortaleció
+  hin: और–जब–शक्तिशाली–हुआ
+  arb: وَ–كَـ–قُوَّتِهِ
+  kor: 그리고–강해지매
+  swa: na–alipokuwa–na–nguvu
+
+### Sense 125747 (1 occurrences)
+Grammar: V-Qal-Perf-3cp
+  eng: mighty
+  spa: son–fuertes
+  hin: शक्तिशाली–हैं
+  arb: أَقْوِيَاءُ
+  kor: 강하다
+  swa: ni–wenye–nguvu
+
+## Task
+
+Group these 13 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

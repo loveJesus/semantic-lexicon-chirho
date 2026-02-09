@@ -1,0 +1,163 @@
+# Sense Merge Task for G5278
+
+Lemma: G5278 (POS: V-APA-NMS)
+Total occurrences: 17
+Current sense count: 15
+
+This Hebrew/Greek lemma has been over-split into 15 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 78198 (2 occurrences)
+Grammar: V-FIA-2P
+  eng: you–endure
+  spa: lo–soportáis
+  hin: धीरज–धरो
+  arb: تَصبِرونَ
+  kor: 인내하면, 인내하겠느냐
+  swa: mnavumilia
+
+### Sense 78199 (2 occurrences)
+Grammar: V-APA-NMS
+  eng: having–endured, having-endured
+  spa: que–persevere, habiendo–perseverado
+  hin: सहनेवाला, धैर्य–रखनेवाला
+  arb: صابِرُ, الصَّابِرُ
+  kor: 인내한–자는, 인내한
+  swa: vumilia, hadi
+
+### Sense 78200 (1 occurrences)
+Grammar: V-APA-AMP
+  eng: having–endured
+  spa: que–perseveraron
+  hin: सहनेवालों–को
+  arb: الصّابِرينَ
+  kor: 인내한–자들을.
+  swa: waliovumilia
+
+### Sense 78201 (1 occurrences)
+Grammar: V-PIA-2P
+  eng: endure
+  spa: soportad
+  hin: सहो
+  arb: تَصْبِرُونَ
+  kor: 견디라
+  swa: vumilieni
+
+### Sense 78202 (1 occurrences)
+Grammar: V-RPA-AMS
+  eng: having-endured
+  spa: que-ha-soportado
+  hin: सहनेवाले–पर
+  arb: صَبَرَ
+  kor: 견디신
+  swa: aliyestahimili
+
+### Sense 78203 (1 occurrences)
+Grammar: V-PIA-3S
+  eng: endures
+  spa: persevera
+  hin: सहता-है
+  arb: يَحتَمِلُ
+  kor: 견디는
+  swa: anavumilia
+
+### Sense 78204 (1 occurrences)
+Grammar: V-PIA-3S
+  eng: endures
+  spa: persevera
+  hin: सहन–करता–है
+  arb: تَصبِرُ
+  kor: 견디느니라
+  swa: unavumilia
+
+### Sense 78205 (1 occurrences)
+Grammar: V-AIA-2P
+  eng: you-endured
+  spa: soportasteis
+  hin: सहा
+  arb: صَبَرْتُمْ
+  kor: 견딤으니
+  swa: mlistahimili
+
+### Sense 78206 (1 occurrences)
+Grammar: V-PIA-1P
+  eng: we–endure
+  spa: soportamos
+  hin: सहते–हैन,
+  arb: نَصْبِرُ
+  kor: 인내하면,
+  swa: tunavumilia
+
+### Sense 78207 (1 occurrences)
+Grammar: V-PIA-1S
+  eng: I–endure
+  spa: soporto
+  hin: सहत–होओन
+  arb: أَحْتَمِلُ
+  kor: 참는다
+  swa: ninavumilia
+
+### Sense 78208 (1 occurrences)
+Grammar: V-AIA-3P
+  eng: remained
+  spa: permanecieron
+  hin: रहे
+  arb: بَقِيا
+  kor: 머물렀다
+  swa: walibaki
+
+### Sense 78209 (1 occurrences)
+Grammar: V-AIA-3S
+  eng: remained–behind
+  spa: permaneció
+  hin: रह–गया
+  arb: بَقِيَ
+  kor: 남았다
+  swa: alibaki
+
+### Sense 78210 (1 occurrences)
+Grammar: V-APA-NMS
+  eng: enduring
+  spa: el–que–perseverare
+  hin: धीरज–रखने–वाला
+  arb: صَابِرٌ
+  kor: 인내한-자는
+  swa: avumiliaye
+
+### Sense 78211 (1 occurrences)
+Grammar: V-PPA-NMP
+  eng: enduring
+  spa: perseverando
+  hin: धैर्य–रखते–हुए
+  arb: صَابِرِينَ
+  kor: 인내하는
+  swa: mkivumilia;
+
+### Sense 78212 (1 occurrences)
+Grammar: V-AIA-3S
+  eng: endured
+  spa: soportó
+  hin: सहा
+  arb: صَبَرَ
+  kor: 견디셨다
+  swa: alistahimili
+
+## Task
+
+Group these 15 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

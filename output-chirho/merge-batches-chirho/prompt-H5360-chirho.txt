@@ -1,0 +1,115 @@
+# Sense Merge Task for H5360
+
+Lemma: H5360 (POS: N-fsc | 3mp)
+Total occurrences: 27
+Current sense count: 10
+
+This Hebrew/Greek lemma has been over-split into 10 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 119097 (8 occurrences)
+Grammar: N-fsc
+  eng: the–vengeance-of, vengeance-of–, vengeance-of
+  spa: venganza–de, venganza-de
+  hin: बदला, पलटा
+  arb: انْتِقَامُ, انْتِقَامَ, نَقْمَةِ–
+  kor: 복수를, 복수이, 보복이
+  swa: kisasi–cha, kisasi
+
+### Sense 119098 (6 occurrences)
+Grammar: N-fp
+  eng: vengeance
+  spa: venganzas
+  hin: बदले–का, बदले, बदला
+  arb: انْتِقَامَاتٍ, النَّقَمَاتِ, نَقمَةً
+  kor: 복수를, 복수–의, 복수들을
+  swa: kisasi
+
+### Sense 119099 (3 occurrences)
+Grammar: N-fsc | 1cs
+  eng: my-vengeance
+  spa: mi–venganza
+  arb: ٱنْتِقَامِي
+  kor: 복수를–나의
+  swa: kisasi–changu
+
+### Sense 119100 (3 occurrences)
+Grammar: N-fs
+  eng: vengeance
+  spa: venganza
+  hin: बदले, बदला, पलटा–लेने–का
+  arb: انْتِقَامٍ, انْتِقَامًا
+  kor: 복수의, 복수를, 보복의
+  swa: ya–kisasi, wa–kisasi, kisasi
+
+### Sense 119101 (2 occurrences)
+Grammar: N-fsc | 2ms
+  eng: vengeance–Your, Your–vengeance
+  spa: venganza–tuya
+  hin: बदला–तेरा, तेरा–बदला
+  arb: اِنْتِقَامَكَ, انْتِقَامَكَ
+  kor: 당신의–복수를
+  swa: kisasi–chako
+
+### Sense 119102 (1 occurrences)
+Grammar: N-fsc | 2fs
+  eng: your–vengeance
+  spa: tu–venganza
+  hin: तेरा–बदला
+  arb: انْتِقَامَكِ
+  kor: 복수를–너의
+  swa: kisasi–chako
+
+### Sense 119103 (1 occurrences)
+Grammar: N-fsc | 3mp
+  eng: their–vengeance
+  spa: su–venganza
+  hin: उनका–प्रतिशोध
+  arb: انْتِقَامِهِمْ
+  kor: 그들–복수–를
+  swa: kisasi–chao
+
+### Sense 119104 (1 occurrences)
+Grammar: N-fp
+  eng: vengeances
+  spa: venganzas
+  arb: نَقَمَاتٍ
+  kor: 복수들을
+  swa: visasi
+
+### Sense 119105 (1 occurrences)
+Grammar: Prep-b | N-fs
+  eng: in–vengeance
+  spa: con–venganza
+  arb: بِانْتِقَامٍ
+  kor: 복수로–
+  swa: kwa–kisasi
+
+### Sense 119106 (1 occurrences)
+Grammar: N-fsc | 1cp
+  eng: vengeance–our
+  spa: venganza–nuestra
+  hin: बदला–अपना
+  arb: انْتِقَامَنَا
+  kor: 우리의–복수를
+  swa: kisasi–chetu
+
+## Task
+
+Group these 10 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

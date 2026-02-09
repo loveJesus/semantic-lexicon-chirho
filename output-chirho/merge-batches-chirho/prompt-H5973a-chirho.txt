@@ -1,0 +1,145 @@
+# Sense Merge Task for H5973a
+
+Lemma: H5973a (POS: Prep | 3fs)
+Total occurrences: 978
+Current sense count: 13
+
+This Hebrew/Greek lemma has been over-split into 13 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 124606 (928 occurrences)
+Grammar: Prep,Prep | 3ms,Prep | 2ms,Prep | 2fs,Conj-w | Prep | 2ms,Prep | 3mp,Pro-r | Pre
+  eng: with–, with, with–you
+  spa: con, con–él, con–
+  hin: साथ, साथ–, उसके–साथ
+  arb: مَعَ–, مَعَ, مَعَهُ
+  kor: 와–함께, 그와–함께, 함께–
+  swa: pamoja–na, pamoja–naye, pamoja–nawe
+
+### Sense 124614 (23 occurrences)
+Grammar: Conj-w | Prep | 3ms
+  eng: and–with–him
+  spa: y–con–él
+  hin: और–उसके–साथ, और–उनके–साथ
+  arb: وَ–مَعَهُ, وَمَعَهُ, وَ–مَعَ–هُ
+  kor: 그리고–그–와–함께, 그리고–그와–함께, 그–와–함께–그
+  swa: na–pamoja–naye, na
+
+### Sense 124616 (6 occurrences)
+Grammar: Prep
+  eng: with, against
+  spa: contra, con–
+  hin: के–साथ–
+  arb: عَلَى–, ضِدَّ–, مَعَ
+  kor: 함께, (against)–, 과–함께–
+  swa: dhidi–ya
+
+### Sense 124617 (5 occurrences)
+Grammar: Prep
+  eng: at, near, beside–
+  spa: junto–a, junto–a–
+  hin: पास, के–पास
+  arb: عِنْدَ
+  kor: 곁에, 와–함께, 겱에–
+  swa: karibu–na, walionona
+
+### Sense 124618 (5 occurrences)
+Grammar: Prep
+  eng: with, near
+  spa: cerca–de, junto–a, con
+  hin: पास, –के–पास
+  arb: عِنْدَ
+  kor: 와–함께, 옆에서
+  swa: karibu–na, zilikuwa–karibu–na, walipokuwa–karibu–na
+
+### Sense 124619 (3 occurrences)
+Grammar: Prep | 2mp
+  eng: with–you
+  spa: con–vosotros
+  hin: तुम–के–बीच, तुम्हारे–साथ
+  arb: عِنْدَكُمْ, مَعَ–كُمْ
+  kor: 너희–와–함께, 너희에게
+  swa: pamoja–nanyo, nyinyi
+
+### Sense 124620 (2 occurrences)
+Grammar: Prep
+  eng: by–
+  spa: junto–a–, junto–a
+  hin: पास
+  arb: عِنْدَ–, عِنْدَ
+  kor: 함께, 곡–
+  swa: karibu–na–, karibu-na–
+
+### Sense 124621 (1 occurrences)
+Grammar: Prep
+  eng: beside
+  spa: junto–a
+  hin: पास
+  arb: بِجانِبِ–
+  kor: 겼에–
+  swa: karibu–na
+
+### Sense 124622 (1 occurrences)
+Grammar: Prep
+  eng: is–near–
+  spa: junto–a
+  hin: पास
+  arb: عِندَ
+  kor: 곁에–
+  swa: karibu–na
+
+### Sense 124623 (1 occurrences)
+Grammar: Conj-w | Prep | 1cs
+  eng: and–with–me
+  spa: y–conmigo
+  hin: और–मेरे–साथ
+  arb: وَ–مَعِي
+  kor: 그리고–나와–함께
+  swa: na–kwangu
+
+### Sense 124624 (1 occurrences)
+Grammar: Prep | 1cp
+  eng: is–with–us
+  spa: con–nosotros
+  hin: हमारे–पास
+  arb: عِنْدَنَا
+  kor: 우리–와–함께
+  swa: kwetu
+
+### Sense 124625 (1 occurrences)
+Grammar: Prep
+  eng: with
+  spa: Con
+  hin: से
+  arb: مَعَ
+  kor: 겼에
+  swa: pamoja–na
+
+### Sense 124626 (1 occurrences)
+Grammar: Prep
+  eng: with–
+  spa: con–
+  hin: पास–
+  arb: عِنْدَ
+  kor: ~와–함께한
+  swa: Shekemu
+
+## Task
+
+Group these 13 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

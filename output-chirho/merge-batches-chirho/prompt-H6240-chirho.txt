@@ -1,0 +1,118 @@
+# Sense Merge Task for H6240
+
+Lemma: H6240 (POS: Number-ms)
+Total occurrences: 338
+Current sense count: 10
+
+This Hebrew/Greek lemma has been over-split into 10 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 126697 (313 occurrences)
+Grammar: Number-fs,Number-fsc,Number-ms,Number-msc
+  eng: ten, tenth, year
+  spa: diez, doce, y–diez
+  hin: दस, दो, और–दस
+  arb: عَشَرَ, عَشْرَةَ, عَشَرَةَ
+  kor: 열, 째, 십
+  swa: na–mbili, kumi–na–mbili, kumi
+
+### Sense 126698 (10 occurrences)
+Grammar: Number-fs,Number-ms
+  eng: –
+  spa: diez
+  hin: दस, पंद्रह, ¶
+  arb: عَشرَةَ, عَشَرَةَ, عَشَرَ
+  kor: 열, 열한, 열다섯
+  swa: moja, kumi, tano
+
+### Sense 126699 (7 occurrences)
+Grammar: Number-ms,Number-fsc,Number-fs
+  eng: teen, –
+  spa: diez, décimos, [mes]
+  hin: दस
+  arb: عَشَرَ, عَشْرَةَ, عَشرَةَ
+  kor: 열, 여덟
+  swa: kumi–na, siku, kumi–na–moja
+
+### Sense 126700 (2 occurrences)
+Grammar: Number-ms
+  eng: tenth
+  spa: día
+  hin: तारीख–को
+  arb: عَشَرَ
+  kor: 열
+  swa: na–tano
+
+### Sense 126701 (1 occurrences)
+Grammar: V-Qal-Perf-3ms
+  eng: [ketiv]
+  spa: (ketiv)
+  hin: [बनाया]
+  arb: صَنَعَ
+  kor: [만들었다]
+  swa: [alitengeneza]
+
+### Sense 126702 (1 occurrences)
+Grammar: Number-fs
+  eng: tenth
+  spa: décimo
+  hin: ग्यारहवें
+  arb: عَشْرَةَ
+  kor: 열째의
+  swa: mwezi
+
+### Sense 126703 (1 occurrences)
+Grammar: Number-ms
+  eng: ten–
+  spa: diez–
+  hin: दिन–
+  arb: عَشَرَ
+  kor: 열
+  swa: kumi–na–nne
+
+### Sense 126704 (1 occurrences)
+Grammar: Art | Number-ms
+  eng: the–ten
+  spa: (el–diez)
+  hin: था
+  arb: ال–عاشِرِ
+  kor: 그–열의
+  swa: kumi–na–mbili
+
+### Sense 126705 (1 occurrences)
+Grammar: Number-ms
+  eng: –
+  spa: diez
+  hin: दस
+  arb: عَشَرَةَ
+  kor: *
+  swa: kawaida
+
+### Sense 126706 (1 occurrences)
+Grammar: Art | Number-ms
+  eng: the–ten
+  spa: los–doce
+  hin: दो
+  arb: العَشَرَ
+  kor: 열
+  swa: kumi–na–wawili
+
+## Task
+
+Group these 10 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

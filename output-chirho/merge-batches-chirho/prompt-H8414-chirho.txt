@@ -1,0 +1,181 @@
+# Sense Merge Task for H8414
+
+Lemma: H8414 (POS: Prep-k)
+Total occurrences: 20
+Current sense count: 17
+
+This Hebrew/Greek lemma has been over-split into 17 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 144554 (2 occurrences)
+Grammar: N-ms
+  eng: emptiness, are–emptiness
+  spa: vanidad
+  hin: व्यर्थ
+  arb: عَبَثًا, خَوَاءٌ
+  kor: 헛되이, 공허함이니라
+  swa: ubatili, bure
+
+### Sense 144555 (2 occurrences)
+Grammar: N-ms
+  eng: of–chaos
+  spa: de–desolación, caos
+  hin: शून्यता–की, खालीपन–का
+  arb: الْخَرَابِ
+  kor: 혼돈의
+  swa: ya–utupu, wa–machafuko
+
+### Sense 144556 (2 occurrences)
+Grammar: Conj-w | N-ms
+  eng: and–emptiness, and–confusion
+  spa: y–vanidad, y–vacío
+  hin: और–व्यर्थ
+  arb: وَخَوَاءٌ, وَالخَوَاءِ
+  kor: 그리고–공허함이니라, 그리고–공허함
+  swa: na–utupu
+
+### Sense 144557 (1 occurrences)
+Grammar: N-ms
+  eng: emptiness
+  spa: vanidad
+  hin: शून्यता
+  arb: الْبَاطِلِ
+  kor: 허무를
+  swa: utupu
+
+### Sense 144558 (1 occurrences)
+Grammar: N-ms
+  eng: void
+  spa: el–vacío
+  hin: शून्यता
+  arb: الخَلاءِ
+  kor: 혼돈
+  swa: utupu
+
+### Sense 144559 (1 occurrences)
+Grammar: N-ms
+  eng: formless
+  spa: desordenada
+  hin: निराकार
+  arb: خَرِبَةً
+  kor: 혼돈
+  swa: bila–umbo
+
+### Sense 144560 (1 occurrences)
+Grammar: Prep-b, Art | N-ms
+  eng: into-the-waste
+  spa: en–vacío
+  hin: शून्यता–में
+  arb: في–الفَراغِ
+  kor: 허무–속으로
+  swa: ukiwa
+
+### Sense 144561 (1 occurrences)
+Grammar: Prep-b, Art | N-ms
+  eng: the–righteous
+  spa: con–vanidad
+  hin: में–शून्यता
+  arb: بِـ–الْبَاطِلِ
+  kor: 에–허무로
+  swa: bure
+
+### Sense 144562 (1 occurrences)
+Grammar: Prep-b | N-ms
+  eng: in–waste
+  spa: en–vacío
+  hin: वीराने–में
+  arb: في–فَراغٍ
+  kor: 허무–안에서
+  swa: katika–ukiwa
+
+### Sense 144563 (1 occurrences)
+Grammar: Art | N-ms
+  eng: the–emptiness
+  spa: la–vanidad
+  hin: व्यर्थ
+  arb: الـ–بَاطِلِ
+  kor: 그–헛된–것들
+  swa: ubatili
+
+### Sense 144564 (1 occurrences)
+Grammar: N-ms
+  eng: formless
+  spa: sin–forma
+  hin: शून्य
+  arb: خَرِبَةٌ
+  kor: 혹돈이었다
+  swa: tupu
+
+### Sense 144565 (1 occurrences)
+Grammar: Prep-b | N-ms
+  eng: in–a–trackless–waste
+  spa: en–caos
+  hin: उजाड़–में
+  arb: في–خَلاء
+  kor: 혼돈–에서
+  swa: katika–ukiwa
+
+### Sense 144566 (1 occurrences)
+Grammar: Conj-w, Prep-b | N-ms
+  eng: and–in–waste
+  spa: y–en–vacío
+  hin: और–में–शून्यता
+  arb: وَفِي–خَرَابِ
+  kor: 그리고–에–황량함(접)
+  swa: na–katika–ukiwa
+
+### Sense 144567 (1 occurrences)
+Grammar: Prep-k, Art | N-ms
+  eng: as–emptiness
+  spa: como–vanidad
+  hin: जैसे–व्यर्थ
+  arb: كَالخَوَاءِ
+  kor: 같이–공허함
+  swa: kama–utupu
+
+### Sense 144568 (1 occurrences)
+Grammar: N-ms
+  eng: emptiness
+  spa: vanidad
+  hin: व्यर्थ
+  arb: بَاطِلٌ
+  kor: 헛된–것이다
+  swa: ubatili
+
+### Sense 144569 (1 occurrences)
+Grammar: Prep-l | N-ms
+  eng: for–nothing
+  spa: para–nada
+  hin: शून्यता–के–लिए
+  arb: لِـ–عَبَثٍ
+  kor: 허무하게–
+  swa: kwa–ubatili
+
+### Sense 144570 (1 occurrences)
+Grammar: N-ms
+  eng: emptiness
+  spa: vacío
+  hin: शून्य–के–लिए
+  arb: فَارِغَةً
+  kor: 공허함으로
+  swa: utupu
+
+## Task
+
+Group these 17 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

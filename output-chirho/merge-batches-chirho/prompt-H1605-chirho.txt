@@ -1,0 +1,144 @@
+# Sense Merge Task for H1605
+
+Lemma: H1605 (POS: V-Qal-Imperf-2mp)
+Total occurrences: 14
+Current sense count: 13
+
+This Hebrew/Greek lemma has been over-split into 13 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 90569 (2 occurrences)
+Grammar: V-Qal-Perf-2ms
+  eng: you–have–rebuked, You–have–rebuked
+  spa: Reprendiste
+  hin: तूने–डांटा
+  arb: زَجَرْتَ, انْتَهَرْتَ
+  kor: 꾸짖으셨나이다
+  swa: umewakemea, Umewakemea
+
+### Sense 90570 (1 occurrences)
+Grammar: Conj-w | V-Qal-ConjPerf-3ms
+  eng: and–he-rebukes
+  spa: pero–reprenderá
+  hin: और–डाँटता–है
+  arb: وَ–يَنْهَرُهُ
+  kor: 그리고–꾸짖으시면
+  swa: na–atakemea
+
+### Sense 90571 (1 occurrences)
+Grammar: Conj-w | V-Qal-ConsecImperf-3m
+  eng: and–He–rebuked
+  spa: Y–reprendió
+  hin: और–उसने–डांटा
+  arb: وَ–انتَهَرَ
+  kor: 그리고–꾸짖으시니
+  swa: na–akaikemea
+
+### Sense 90572 (1 occurrences)
+Grammar: V-Qal-Imperf-3ms
+  eng: rebuke
+  spa: ¡Reprenda
+  hin: डांटे
+  arb: يَنْتَهِرُكَ
+  kor: 꾸짖으시기를
+  swa: akemee
+
+### Sense 90573 (1 occurrences)
+Grammar: Conj-w | V-Qal-ConsecImperf-3m
+  eng: and–rebuked
+  spa: y–reprendió–
+  hin: और–डाँटा–
+  arb: وَ–زَجَرَ–هُ
+  kor: 그리고–꾸짖었다
+  swa: na–akamkemea
+
+### Sense 90574 (1 occurrences)
+Grammar: V-Qal-Prtcpl-ms
+  eng: rebuking
+  spa: Reprende
+  hin: डाँटने–वाला
+  arb: يَنْتَهِرُ
+  kor: 꿔짖으시는
+  swa: Anaukemea
+
+### Sense 90575 (1 occurrences)
+Grammar: Conj-w | V-Qal-ConjImperf-3ms
+  eng: and–rebuke
+  spa: ¡Y–reprenda
+  hin: और–डांटे
+  arb: وَيَنْتَهِرُكَ
+  kor: 그리고–꾸짖으시기를
+  swa: na–akemee
+
+### Sense 90576 (1 occurrences)
+Grammar: V-Qal-Prtcpl-ms
+  eng: rebuking
+  spa: reprendiendo
+  hin: डाँटता-हूँ
+  arb: زَاجِرٌ
+  kor: 꾸짖는다
+  swa: ninakemea
+
+### Sense 90577 (1 occurrences)
+Grammar: Conj-w | V-Qal-ConjPerf-1cs
+  eng: and–I–will–rebuke
+  spa: Y–reprenderé
+  hin: और–मैं-डाँटूँगा
+  arb: وَأَزْجُرُ
+  kor: 그리고–꾸짖으리라
+  swa: na–nitakemea
+
+### Sense 90578 (1 occurrences)
+Grammar: V-Qal-Imperf-2mp
+  eng: rebuke
+  spa: la–reprendan
+  hin: डाँटो–
+  arb: تَزْجُرُوا–
+  kor: 그녀를–꾸짖지–마라–
+  swa: yeye
+
+### Sense 90579 (1 occurrences)
+Grammar: V-Qal-Imp-ms
+  eng: rebuke
+  spa: Reprende
+  arb: انْتَهِرْ
+  kor: 꾸짖으소서
+  swa: Mkemee
+
+### Sense 90580 (1 occurrences)
+Grammar: V-Qal-Perf-2ms
+  eng: have–you–rebuked
+  spa: has–reprendido
+  hin: डाँटा–तूने
+  arb: تَزْجُرْ
+  kor: 꾸짖었느냐
+  swa: mkemea
+
+### Sense 90581 (1 occurrences)
+Grammar: Conj-w, Prep-m | V-Qal-Inf
+  eng: and–from–rebuking–
+  spa: y–de–reprender–
+  hin: और–डाँटनेसे
+  arb: وَ–مِنْ–أَنْ–أَزْجُرَكِ–
+  kor: 그리고–꾸짖지–않으리라–
+  swa: na–kutokukemea–
+
+## Task
+
+Group these 13 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

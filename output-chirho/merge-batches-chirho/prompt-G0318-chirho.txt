@@ -1,0 +1,127 @@
+# Sense Merge Task for G0318
+
+Lemma: G0318 (POS: N-DFP)
+Total occurrences: 18
+Current sense count: 11
+
+This Hebrew/Greek lemma has been over-split into 11 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 62104 (3 occurrences)
+Grammar: N-NFS,N-AFS
+  eng: necessity
+  spa: necesidad
+  hin: ज़रूरत, ज़रुरि, आवश्यक
+  arb: ضَرُورَةٌ
+  kor: 필요하다, 필요를, 필연
+  swa: lazima
+
+### Sense 62105 (3 occurrences)
+Grammar: N-AFS,N-NFS,N-GFS
+  eng: necessity
+  spa: necesidad
+  hin: आवश्यकता, मजबूरी–से
+  arb: ضَرورَةٌ, اضطِرارٍ
+  kor: 필요, 필연, 강제로
+  swa: lazima,, lazima, kulazimishwa;
+
+### Sense 62106 (2 occurrences)
+Grammar: N-GFS,N-AFS
+  eng: necessity, just–as–
+  spa: necesidad
+  hin: आवश्यकता,, अनिवार्यता
+  arb: ضَرورَةٍ, ضَرورَةٌ
+  kor: 필요를, 필연적으로
+  swa: lazima
+
+### Sense 62107 (2 occurrences)
+Grammar: N-DFP
+  eng: necessities, hardships
+  spa: necesidades
+  hin: आवश्यकताओं
+  arb: ضَروراتٍ, شَدائِدَ
+  kor: 곤경들에
+  swa: shida,
+
+### Sense 62108 (2 occurrences)
+Grammar: N-NFS
+  eng: necessary, Necessary
+  spa: necesidad, Necesario
+  hin: आवश्यक
+  arb: ضَرورَةٌ
+  kor: 필수이니
+  swa: lazima, Lazima
+
+### Sense 62109 (1 occurrences)
+Grammar: N-AFS
+  eng: necessity
+  spa: necesidad
+  hin: मजबुरेए
+  arb: اضطِرارٍ
+  kor: 필요–를
+  swa: dharura
+
+### Sense 62110 (1 occurrences)
+Grammar: N-AFS
+  eng: Necessity
+  spa: Necesidad
+  hin: आवश्यकता
+  arb: ضَرورَةٌ
+  kor: 필요가
+  swa: Idhaa
+
+### Sense 62111 (1 occurrences)
+Grammar: N-DFS
+  eng: distress
+  spa: necesidad
+  hin: ज़रुउरत
+  arb: الضّيقِ
+  kor: 궁핍과
+  swa: shida
+
+### Sense 62112 (1 occurrences)
+Grammar: N-NFS
+  eng: distress
+  spa: angustia
+  hin: संकट
+  arb: ضيقٌ
+  kor: 고통이
+  swa: dhiki
+
+### Sense 62113 (1 occurrences)
+Grammar: N-AFS
+  eng: necessity
+  spa: necesidad
+  hin: आवश्यकता
+  arb: ضرورة
+  kor: 필요가
+  swa: ulazima
+
+### Sense 62114 (1 occurrences)
+Grammar: N-AFS
+  eng: distress
+  spa: necesidad
+  hin: कठिनाई
+  arb: الضِّيقَةِ
+  kor: 곤란
+  swa: dhiki,
+
+## Task
+
+Group these 11 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

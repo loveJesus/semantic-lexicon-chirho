@@ -1,0 +1,118 @@
+# Sense Merge Task for H8454
+
+Lemma: H8454 (POS: Prep-l | N-fs)
+Total occurrences: 12
+Current sense count: 10
+
+This Hebrew/Greek lemma has been over-split into 10 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 144903 (2 occurrences)
+Grammar: N-fs
+  eng: sound–wisdom
+  spa: sabiduría–sana
+  hin: सफलता
+  arb: حِكْمَةً–سَدِيدَةً
+  kor: 지혜–와, 지혜–를
+  swa: hekima–kamili
+
+### Sense 144904 (2 occurrences)
+Grammar: Conj-w | N-fs
+  eng: and–sound-wisdom
+  spa: y–éxito, y–la–sabiduría–efectiva;
+  hin: और–समझ, और–सफलता
+  arb: وَفَهْمٌ, وَالنَّجاةُ
+  kor: 그리고–지혜–가
+  swa: na–mafanikio, na–hekima
+
+### Sense 144905 (1 occurrences)
+Grammar: Conj-w | N-fs
+  eng: and–wisdom
+  spa: y–sabiduría
+  hin: और–बुद्धि
+  arb: وَالْحِكْمَةُ
+  kor: 그리고–지혜–가
+  swa: na–hekima
+
+### Sense 144906 (1 occurrences)
+Grammar: N-fs
+  eng: success
+  spa: nada–exitoso
+  hin: सफलता
+  arb: نَجاحًا
+  kor: 지혜를
+  swa: mafanikio
+
+### Sense 144907 (1 occurrences)
+Grammar: N-fs
+  eng: in–storm
+  spa: (en–tormenta)
+  hin: तूफ़ान–में
+  arb: (فِطنَةً)
+  kor: (지혜–를)
+  swa: kwa–dhoruba
+
+### Sense 144908 (1 occurrences)
+Grammar: Conj-w | N-fs
+  eng: and–insight
+  spa: y–sabiduría–efectiva
+  hin: और–समझ
+  arb: وَ–فَهماً
+  kor: 그리고–지혜를
+  swa: na–uwezo–wa–kweli
+
+### Sense 144909 (1 occurrences)
+Grammar: Conj-w | N-fs
+  eng: and–sound–wisdom
+  spa: y–sabiduría–práctica
+  hin: और–सफलता
+  arb: وَ–حِكْمَةٌ–سَدِيدَةٌ
+  kor: 그리고–지혜–가
+  swa: na–hekima–ya–kweli
+
+### Sense 144910 (1 occurrences)
+Grammar: Prep-l | N-fs
+  eng: to–sound-wisdom
+  spa: en–entendimiento.
+  hin: समझ–की
+  arb: لِلفَهْمِ
+  kor: 지혜–에
+  swa: kwa–ufahamu
+
+### Sense 144911 (1 occurrences)
+Grammar: N-fs
+  eng: wisdom
+  spa: sabiduría
+  hin: बुद्धि–में
+  arb: حِكْمَةٍ
+  kor: 건전한–지혜–에
+  swa: yote
+
+### Sense 144912 (1 occurrences)
+Grammar: N-fs
+  eng: wisdom
+  spa: la–sabiduría
+  hin: बुद्धि
+  arb: حِكْمَةً
+  kor: 지혜를
+  swa: hekima
+
+## Task
+
+Group these 10 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

@@ -1,0 +1,118 @@
+# Sense Merge Task for H4585
+
+Lemma: H4585 (POS: N-fpc | 3mp)
+Total occurrences: 10
+Current sense count: 10
+
+This Hebrew/Greek lemma has been over-split into 10 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 112901 (1 occurrences)
+Grammar: Prep-b, Art | N-fp
+  eng: in–the–dens
+  spa: en–guaridas
+  hin: माँदों–में
+  arb: فِي–عِرِّيسِهَا
+  kor: 굴들–에서
+  swa: katika–mapango–yao
+
+### Sense 112902 (1 occurrences)
+Grammar: N-fpc | 3mp
+  eng: their–dens
+  spa: sus–guaridas
+  hin: अपनी–मांदों–में
+  arb: أَوكارِها
+  kor: 그들–의–굴–에서
+  swa: mapango–yao
+
+### Sense 112903 (1 occurrences)
+Grammar: Prep-m | N-fsc | 3ms
+  eng: from–his–den
+  spa: desde–su–guarida
+  hin: से–माँद–अपनी
+  arb: مِنْ–عِرِينِهِ
+  kor: 그의–굴에서
+  swa: kutoka–pangoni–mwake
+
+### Sense 112904 (1 occurrences)
+Grammar: Prep-m | N-fpc
+  eng: from–dens-of
+  spa: desde–las–guaridas–de
+  hin: गुफाओं–से
+  arb: مِ–مْعُونُوت
+  kor: 굴들–에서
+  swa: kutoka–mapango
+
+### Sense 112905 (1 occurrences)
+Grammar: Conj-w | N-fpc | 3ms
+  eng: and–his–dens
+  spa: y–guaridas–suyas
+  hin: और–अपनी–माँदें
+  arb: وَأَوْكَارَهُ
+  kor: 그리고–그의–거처들–을
+  swa: na–mapango–yake
+
+### Sense 112906 (1 occurrences)
+Grammar: Prep-b | N-fpc | 1cp
+  eng: into–dwellings–our
+  spa: en–moradas–nuestras
+  hin: में–माँदों–हमारे
+  arb: مَسَاكِنَنَا
+  kor: 우리의–거처들에
+  swa: katika–makao–yetu
+
+### Sense 112907 (1 occurrences)
+Grammar: N-fs
+  eng: refuge
+  spa: refugio
+  hin: निवास
+  arb: مَسْكِنٌ
+  kor: 거처(접)
+  swa: Makao
+
+### Sense 112908 (1 occurrences)
+Grammar: Conj-w | N-fsc | 3ms
+  eng: and–His–dwelling–place
+  spa: y–morada-de-el
+  hin: उ–मेओनातो
+  arb: وَمَسْكَنُهُ
+  kor: 그–의–거처–가
+  swa: na–makao–yake
+
+### Sense 112909 (1 occurrences)
+Grammar: N-msc | 3fs
+  eng: her–dwelling
+  spa: su–morada
+  hin: उसका–निवास
+  arb: مَسْكَنُهَا
+  kor: 처소–그것의–가
+  swa: makazi–yake
+
+### Sense 112910 (1 occurrences)
+Grammar: Conj-w, Prep-b | N-fpc | 3fs
+  eng: and–in–its–dens
+  spa: y–en–sus–moradas
+  hin: और–मांदों–अपनी–में
+  arb: وَ–فِي–مَأْوَاهَا
+  kor: 그리고–그것–의–굴들–에서
+  swa: na–katika–makao–yake
+
+## Task
+
+Group these 10 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

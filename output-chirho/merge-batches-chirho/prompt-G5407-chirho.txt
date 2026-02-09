@@ -1,0 +1,118 @@
+# Sense Merge Task for G5407
+
+Lemma: G5407 (POS: V-AIA-2P)
+Total occurrences: 12
+Current sense count: 10
+
+This Hebrew/Greek lemma has been over-split into 10 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 78683 (3 occurrences)
+Grammar: V-FIA-2S,V-ASA-2S
+  eng: you-shall-murder, you–shall–murder
+  spa: matarás, mates
+  hin: हत्या–कर, हत्या–करेगा
+  arb: تَقْتُلْ, تَقتُلْ
+  kor: 살인하라, 살인하지
+  swa: ue, uue
+
+### Sense 78684 (1 occurrences)
+Grammar: V-AIA-2P
+  eng: you–murdered
+  spa: matasteis
+  hin: हत्या–किया
+  arb: قَتَلتُموهُ
+  kor: 죽였다
+  swa: kati–ya
+
+### Sense 78685 (1 occurrences)
+Grammar: V-FIA-2S
+  eng: you-shall-murder
+  spa: matarás
+  hin: हत्या–करेगा
+  arb: تَقْتُلْ
+  kor: 살인하지
+  swa: ue,
+
+### Sense 78686 (1 occurrences)
+Grammar: V-FIA-2S
+  eng: you-will-murder
+  spa: matarás
+  hin: हत्य–करेग
+  arb: تَقْتُلْ
+  kor: 살인하지–말라
+  swa: Usiibe
+
+### Sense 78687 (1 occurrences)
+Grammar: V-APA-GMP
+  eng: having–murdered
+  spa: que–mataron
+  hin: हत्या–करनेवालों
+  arb: قَتَلَةِ
+  kor: 죽인–자들–의
+  swa: –
+
+### Sense 78688 (1 occurrences)
+Grammar: V-PIA-2P
+  eng: you–murder
+  spa: matáis
+  hin: हत्या-करते-हो
+  arb: تَقتُلونَ
+  kor: 살인하고
+  swa: mnaua
+
+### Sense 78689 (1 occurrences)
+Grammar: V-ASA-2S
+  eng: you–shall–murder
+  spa: mates
+  hin: हत्या-करो
+  arb: تَقتُل
+  kor: 살인하지–말라.
+  swa: ue
+
+### Sense 78690 (1 occurrences)
+Grammar: V-ASA-3S
+  eng: murders
+  spa: mate
+  hin: हत्या–करे
+  arb: يَقْتُلْ
+  kor: 살인하면
+  swa: atakayeua
+
+### Sense 78691 (1 occurrences)
+Grammar: V-PIA-2S
+  eng: you–murder
+  spa: matas
+  hin: हत्या-करते-हो
+  arb: تَقتُلُ
+  kor: 살인하면
+  swa: unaua
+
+### Sense 78692 (1 occurrences)
+Grammar: V-AIA-2P
+  eng: you–murdered
+  spa: matasteis
+  hin: मार-डाला
+  arb: قَتَلتُم
+  kor: 죽였다,
+  swa: mmemuua
+
+## Task
+
+Group these 10 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

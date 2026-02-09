@@ -1,0 +1,117 @@
+# Sense Merge Task for H3476
+
+Lemma: H3476 (POS: Prep-b | N-msc)
+Total occurrences: 14
+Current sense count: 10
+
+This Hebrew/Greek lemma has been over-split into 10 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 104960 (5 occurrences)
+Grammar: N-ms
+  eng: uprightness, uprightly
+  spa: rectitud
+  hin: सीधाई–के, सीधाई, खराई–के
+  arb: الاسْتِقامَةِ, يُوشِير, الِاسْتِقَامَةِ
+  kor: 정직–의, 정직함–에, 올바른
+  swa: unyofu, ukweli
+
+### Sense 104961 (1 occurrences)
+Grammar: Prep-m | N-ms
+  eng: what–is–right
+  spa: de–lo–recto
+  hin: सीधाई–से
+  arb: عَنِ–الإسْتِقامَةِ
+  kor: 마땅함–에서
+  swa: kwa–haki
+
+### Sense 104962 (1 occurrences)
+Grammar: N-msc
+  eng: uprightness–of
+  spa: Rectitud–de–
+  hin: सीधेपन
+  arb: استِقامَةُ
+  kor: 올바름이
+  swa: unyofu
+
+### Sense 104963 (1 occurrences)
+Grammar: Conj-w, Prep-b | N-msc
+  eng: and–because–of–uprightness–of
+  spa: ni–por–la–rectitud–de
+  hin: और–सीधाई–से
+  arb: وَبِاسْتِقَامَةِ
+  kor: 그리고–정직함으로
+  swa: na–kwa–unyofu–wa
+
+### Sense 104964 (1 occurrences)
+Grammar: Prep-b | N-msc | 3ms
+  eng: in–his–uprightness
+  spa: en–rectitud–su
+  hin: सीधाई–में
+  arb: في–اسْتِقامَتِهِ
+  kor: 그–의–정직함–으로
+  swa: kwa–unyofu
+
+### Sense 104965 (1 occurrences)
+Grammar: Conj-w | N-ms
+  eng: and–uprightness
+  spa: y–rectitud
+  hin: और–सीधाई
+  arb: وَاسْتِقَامَةٌ
+  kor: 그리고–정직함–이
+  swa: na–unyofu
+
+### Sense 104966 (1 occurrences)
+Grammar: Conj-w, Prep-b | N-ms
+  eng: and–in–uprightness
+  spa: y–en–rectitud
+  hin: और–सीधाई–में
+  arb: وَ–بِـ–اسْتِقَامَةٍ
+  kor: 그리고–에–정직함으로
+  swa: na–kwa–unyofu
+
+### Sense 104967 (1 occurrences)
+Grammar: Prep-b | N-msc
+  eng: in–uprightness–of
+  spa: en–rectitud–de
+  hin: –में–सच्चाई
+  arb: بِاسْتِقَامَةِ
+  kor: 에–정직함
+  swa: kwa–unyofu–wa
+
+### Sense 104968 (1 occurrences)
+Grammar: Prep-b | N-msc
+  eng: with–uprightness–of
+  spa: con–rectitud–de
+  arb: بِ–اسْتِقَامَةِ
+  kor: 정직함–으로
+  swa: kwa–unyofu–wa
+
+### Sense 104969 (1 occurrences)
+Grammar: N-msc | 3ms
+  eng: his–uprightness
+  spa: su–rectitud
+  hin: सीधेपन–उसका
+  arb: استِقامَتَهُ
+  kor: 그의–올바름을
+  swa: unyofu–wake
+
+## Task
+
+Group these 10 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

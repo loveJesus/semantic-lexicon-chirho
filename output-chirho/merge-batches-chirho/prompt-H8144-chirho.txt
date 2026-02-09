@@ -1,0 +1,136 @@
+# Sense Merge Task for H8144
+
+Lemma: H8144 (POS: Art | N-ms)
+Total occurrences: 42
+Current sense count: 12
+
+This Hebrew/Greek lemma has been over-split into 12 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 142872 (19 occurrences)
+Grammar: N-ms
+  eng: scarlet
+  spa: escarlata
+  hin: लाल, लाल–धागा
+  arb: قِرْمِزٍ, قِرمِزٍ, دودِيٍّ
+  kor: 주홍의, 진홍색의, 진홍의
+  swa: nyekundu
+
+### Sense 142873 (5 occurrences)
+Grammar: Art | N-ms
+  eng: the–scarlet
+  spa: la–escarlata, la-escarlata
+  hin: लाल, लाल–में, लाल–धागा
+  arb: الْقِرْمِزِ, الْ–قِرْمِزُ, الدّودِيَّ
+  kor: 그–진홍색의, 주홍색의, 그–주홍의
+  swa: nyekundu
+
+### Sense 142874 (4 occurrences)
+Grammar: N-ms,Art | N-ms
+  eng: yarn, the–yarn
+  spa: la–escarlata, escarlata
+  hin: लाल, लाल–के
+  arb: القِرمِزِ
+  kor: 진홍의, 그–진홍의
+  swa: rangi–nyekundu
+
+### Sense 142875 (3 occurrences)
+Grammar: N-msc,N-ms
+  eng: scarlet
+  spa: el–carmesí-de, escarlatain
+  hin: जरा, किरमिजी–के, और–को
+  arb: الْقِرْمِزَ, قَانٍ
+  kor: 진홍색
+  swa: nyekundu–ya, nyekundu
+
+### Sense 142876 (2 occurrences)
+Grammar: N-ms
+  eng: in–scarlet
+  spa: escarlatay, escarlata
+  hin: लाल
+  arb: قِرْمِزًا
+  kor: 진홍색을
+  swa: nguo–nyekundu
+
+### Sense 142877 (2 occurrences)
+Grammar: Art | N-ms
+  eng: the–scarlet
+  spa: el–escarlata
+  hin: लाल–का
+  arb: القِرمِزِ
+  kor: 그–주홍의
+  swa: nyekundu
+
+### Sense 142878 (2 occurrences)
+Grammar: Conj-w | N-msc
+  eng: and–scarlet
+  spa: y–carmesí-de
+  hin: कबूतर, और–जरा
+  arb: وَ–قِرْمِزًا
+  kor: 그리고-진홍색
+  swa: na–nyekundu–ya
+
+### Sense 142879 (1 occurrences)
+Grammar: Art | N-ms
+  eng: the–scarlet
+  spa: escarlata
+  hin: लाल–के
+  arb: هَ–شَّنِي
+  kor: 그–진홍–의
+  swa: wa–nyekundu
+
+### Sense 142880 (1 occurrences)
+Grammar: N-mp
+  eng: scarlet
+  spa: escaraata
+  hin: लाल।
+  arb: قِرْمِزاً
+  kor: 진홍색으로
+  swa: nguo–nyekundu
+
+### Sense 142881 (1 occurrences)
+Grammar: Prep-k, Art | N-mp
+  eng: like–scarlet
+  spa: como–escarlata
+  hin: जैसे–लाल–कपड़े
+  arb: كَالقِرمِزِ
+  kor: 주홍–같을지라도
+  swa: kama–zambarau
+
+### Sense 142882 (1 occurrences)
+Grammar: Conj-w | N-msc
+  eng: and–scarlet-of
+  spa: y–escarlata–de
+  hin: और–लाल
+  arb: وَ–قِرْمِزَ
+  kor: 그리고–주홍색
+  swa: na–nyuzi–nyekundu
+
+### Sense 142883 (1 occurrences)
+Grammar: Conj-w, Prep-b | N-msc
+  eng: and–with–scarlet
+  spa: y–con–carmesí-de
+  hin: जूफा
+  arb: وَ–بِ–الْقِرْمِزِ
+  kor: 그리고-안에서-진홍색
+  swa: na–kwa–nyekundu–ya
+
+## Task
+
+Group these 12 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

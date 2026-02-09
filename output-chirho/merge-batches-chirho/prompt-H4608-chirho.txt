@@ -1,0 +1,135 @@
+# Sense Merge Task for H4608
+
+Lemma: H4608 (POS: Prep-m)
+Total occurrences: 18
+Current sense count: 12
+
+This Hebrew/Greek lemma has been over-split into 12 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 113089 (3 occurrences)
+Grammar: N-mpc | 3ms
+  eng: its-ascents
+  spa: (sus–subidas)
+  hin: उसकी–सीढ़ियाँ
+  arb: صُعُودُهُ
+  kor: 올라가는계단들–그의
+  swa: za–kupanda–kwake
+
+### Sense 113090 (3 occurrences)
+Grammar: N-msc | 3ms
+  eng: [ketiv]
+  spa: [sus–subidas]
+  hin: उसकी–सीढ़ियाँ
+  kor: 올라가는계단들–그의
+  swa: [kupanda]
+
+### Sense 113091 (2 occurrences)
+Grammar: N-msc
+  eng: ascent–of, ascent-of
+  spa: subida–de, la–subida–de
+  hin: चढ़ाई
+  arb: صُعُودَ
+  kor: 오르막을–, 오르막길을
+  swa: kupanda–kwa
+
+### Sense 113092 (2 occurrences)
+Grammar: Prep-l | N-msc,N-msc
+  eng: ascent-of
+  spa: subida–de, la–subida–de
+  hin: चढ़ाई
+  arb: مَصْعَدِ, صُعودِ
+  kor: 오르막, 에게–오르막
+  swa: mwpando–wa, kupanda–kwa
+
+### Sense 113093 (1 occurrences)
+Grammar: Prep-b | N-msc
+  eng: by–the–ascent–of
+  spa: en–subida–de
+  hin: चढ़ाई–पर
+  arb: في مَصعَدِ–
+  kor: 오르막에–
+  swa: kwenye–mwinuko
+
+### Sense 113094 (1 occurrences)
+Grammar: Prep-b | N-msc
+  eng: by–ascent-of
+  spa: por–la–subida–de
+  hin: चढ़ाईपर–
+  arb: بِ–مَصْعَدِ
+  kor: 에–오름
+  swa: katika–njia–ya
+
+### Sense 113095 (1 occurrences)
+Grammar: N-msc
+  eng: the–stairs–of
+  spa: plataforma–de
+  hin: सीढ़ियों
+  arb: مِنْبَرِ
+  kor: 단의
+  swa: ngazi–ya
+
+### Sense 113096 (1 occurrences)
+Grammar: Prep-b | N-msc
+  eng: on–ascent-of
+  spa: por–la–subida–de
+  hin: में–चढ़ाई
+  arb: فِي–مَصْعَدِ
+  kor: 오르막을
+  swa: kwenye–upandaji
+
+### Sense 113097 (1 occurrences)
+Grammar: Prep-b | N-msc
+  eng: in–ascent–of
+  spa: en–la–subida–de
+  hin: चढ़ाई–में
+  arb: فِي–مَصْعَدِ
+  kor: 에–올라가는–길
+  swa: bּmaaleh
+
+### Sense 113098 (1 occurrences)
+Grammar: Prep-b, Art | N-ms
+  eng: at–the–ascent
+  spa: en–la–subida
+  hin: चढ़ाई–पर
+  arb: بِ–المَصعَدِ
+  kor: 에–오르막에서
+  swa: katika–kupanda
+
+### Sense 113099 (1 occurrences)
+Grammar: Prep-b | N-msc
+  eng: at–ascent-of–
+  spa: en–subida–de
+  hin: बमअलेह–
+  arb: في–عَقَبَةِ–
+  kor: 오르막에서
+  swa: katika–kupanda–kwa–
+
+### Sense 113100 (1 occurrences)
+Grammar: Prep-m, Prep-l | N-msc
+  eng: from–ascent-of
+  spa: desde–subida–de
+  hin: चढ़ाईसे
+  arb: مِنْ-عَقَبَة
+  kor: 위–에서
+  swa: kutoka–kupanda–kwa
+
+## Task
+
+Group these 12 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

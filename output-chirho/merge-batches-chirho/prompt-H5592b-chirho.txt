@@ -1,0 +1,145 @@
+# Sense Merge Task for H5592b
+
+Lemma: H5592b (POS: N-msc)
+Total occurrences: 25
+Current sense count: 13
+
+This Hebrew/Greek lemma has been over-split into 13 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 121100 (8 occurrences)
+Grammar: Art | N-ms
+  eng: the–threshold
+  spa: la–puerta, el–umbral
+  hin: ह–दहलीज़–के, ह–सफ़, हस्सफ–के
+  arb: الْعَتَبَةِ, ٱلْعَتَبَةِ
+  kor: 그–문턴의, 문의, 그–문턱의
+  swa: kizingiti, wa–mlango, wa–kizingiti
+
+### Sense 121101 (3 occurrences)
+Grammar: Art | N-mp
+  eng: the–thresholds
+  spa: los–umbrales
+  hin: देहलीज़ें, देहलियाँ, दहलीज़ें
+  arb: الْعَتَبَاتُ, الْعَتَبَاتِ
+  kor: 그–문지방들, 그–문설주들을
+  swa: vizingiti, Vizingiti
+
+### Sense 121102 (2 occurrences)
+Grammar: N-msc,N-ms
+  eng: threshold-of, threshold
+  spa: umbral–de, umbral
+  hin: देहली
+  arb: عَتَبَةَ, الْعَتَبَةَ
+  kor: 문지방–, 문지방
+  swa: kizingiti–cha, kizingiti
+
+### Sense 121103 (2 occurrences)
+Grammar: Art | N-mp
+  eng: the–thresholds
+  spa: los–umbrales
+  hin: –की–देहलीज, देहलियोंके।
+  arb: العتبَات, الأَبْوَابِ
+  kor: 그–문턴들의, 그–문지방들
+  swa: vizingiti, milango
+
+### Sense 121104 (2 occurrences)
+Grammar: Art | N-ms
+  eng: the–threshold
+  spa: la–puerta, la–entrada
+  hin: द्वार–का, देहलीज–के
+  arb: الْعَتَبَةِ
+  kor: 문지방의
+  swa: wa–kizingiti, mlango
+
+### Sense 121105 (1 occurrences)
+Grammar: Prep-b | N-msc
+  eng: at–threshold-of–
+  spa: al–umbral–de
+  hin: दहलीज़–में–
+  arb: إِلَى–عتبةِ
+  kor: 에–문지방–
+  swa: kizingiti–cha–
+
+### Sense 121106 (1 occurrences)
+Grammar: Conj-w | N-msc
+  eng: and–threshold-of
+  spa: y–umbral–de
+  hin: और–देहली
+  arb: وَعَتَبَةُ
+  kor: 그리고–문지방–
+  swa: na–kizingiti–cha
+
+### Sense 121107 (1 occurrences)
+Grammar: N-msc | 3mp
+  eng: their-threshold
+  spa: su–umbral
+  hin: अपनी–डेवढ़ी
+  arb: عَتَبَتَهُمْ
+  kor: 그것들의–문지방
+  swa: kizingiti–chao
+
+### Sense 121108 (1 occurrences)
+Grammar: Art | N-ms
+  eng: the–threshold
+  spa: el–umbral
+  hin: दहलीज़
+  arb: العَتَبَةِ
+  kor: 그–문지방
+  swa: kizingiti
+
+### Sense 121109 (1 occurrences)
+Grammar: N-msc | 1cs
+  eng: My-threshold
+  spa: mi–umbral
+  hin: मेरी–डेवढ़ी–के–पास
+  arb: عَتَبَتِي
+  kor: 나의–문지방
+  swa: kizingiti–changu
+
+### Sense 121110 (1 occurrences)
+Grammar: Prep-b, Art | N-ms
+  eng: on–the–threshold
+  spa: en–el–umbral
+  hin: में–देहली–पर
+  arb: فِي–الْعَتَبَةِ
+  kor: 에–문지방
+  swa: katika–kizingiti
+
+### Sense 121111 (1 occurrences)
+Grammar: Art | N-mp
+  eng: the–thresholds
+  spa: los-umbrales
+  hin: देहलीज़ों–की
+  arb: الأَعتَابِ
+  kor: 문지방의
+  swa: ya–vizingiti
+
+### Sense 121112 (1 occurrences)
+Grammar: Prep-b, Art | N-mp
+  eng: at–the–thresholds
+  spa: en–los–umbrales
+  hin: –में–देहलीज
+  arb: عَلَى–العتبَات
+  kor: 에–문지방들–에서
+  swa: katika–vizingiti
+
+## Task
+
+Group these 13 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

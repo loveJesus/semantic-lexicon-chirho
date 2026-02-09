@@ -1,0 +1,136 @@
+# Sense Merge Task for G0435
+
+Lemma: G0435 (POS: N-VMP)
+Total occurrences: 216
+Current sense count: 12
+
+This Hebrew/Greek lemma has been over-split into 12 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 62362 (190 occurrences)
+Grammar: N-AMS,N-NMS,N-DMS,N-GMS,N-NMP,N-AMP,N-GMP,N-DMP,N-VMS,N-VMP
+  eng: men, man, husband
+  spa: varón, hombres, marido
+  hin: पुरुष, पति, पुरुषो
+  arb: رَجُلٌ, أَيُّهَا–الرِّجَالُ, رَجُلٍ
+  kor: 사람이, 남자가, 사람
+  swa: mtu, wanaume, mume
+
+### Sense 62367 (6 occurrences)
+Grammar: N-DMP
+  eng: husbands
+  spa: maridos, esposos
+  hin: पतियोन, पतियों–के, पतियोन,
+  arb: الخاصّينَ, أَزواجِهِنَّ, –أَزواجِهِنَّ
+  kor: 남편들에게, 남편들–에게
+  swa: waume, zenu, zao
+
+### Sense 62368 (5 occurrences)
+Grammar: N-DMS
+  eng: to–man, to–a–man, for–man
+  spa: a‒hombre, para–hombre, con–varón
+  hin: पुरुष–के, मनुष्य–के, पुरुष–से
+  arb: بِرَجُلٍ, لِـ–رَجُلٍ, لِرَجُلٍ
+  kor: 사람, 남자–에게, 사람–에게
+  swa: mtu, mwanaume, kwa–mtu
+
+### Sense 62369 (4 occurrences)
+Grammar: N-GMS
+  eng: of–man, of–a–man, of-man
+  spa: de–varón, varón, de-varón
+  hin: पुरुष–की,, पुरुष–की, पुरुष
+  arb: رَجُلٍ, عَلى–رَجُلٍ
+  kor: 남자–의, 남자–의,
+  swa: mwanaume, ya–mwanaume, wa–mume
+
+### Sense 62370 (2 occurrences)
+Grammar: N-DMS
+  eng: to–husband
+  spa: de–marido
+  hin: पति–की
+  arb: لِرَجُلٍ
+  kor: 남편에게
+  swa: wa–mume
+
+### Sense 62371 (2 occurrences)
+Grammar: N-DMS,N-GMS
+  eng: husband
+  spa: varón
+  hin: पुरुष–को, पति–कि
+  arb: واحِدٍ
+  kor: 남자에게, 남자–의
+  swa: –, mume,
+
+### Sense 62372 (2 occurrences)
+Grammar: N-NMP
+  eng: Men
+  spa: Hombres
+  hin: पुरुष, पुरुश
+  arb: رِجَالُ, رِجالُ
+  kor: 사람들이
+  swa: watu
+
+### Sense 62373 (1 occurrences)
+Grammar: N-DMS
+  eng: for-a-man
+  spa: a–varón
+  hin: पुरुष–को
+  arb: لِرَجُلٍ
+  kor: 남자–가
+  swa: mume
+
+### Sense 62374 (1 occurrences)
+Grammar: N-VMP
+  eng: husbands
+  spa: esposos
+  hin: पतियो
+  arb: الأَزواجُ
+  kor: 남편들–이여
+  swa: ninyi
+
+### Sense 62375 (1 occurrences)
+Grammar: N-DMS
+  eng: husband
+  spa: esposo
+  hin: पति–के–लिए
+  arb: لِرَجُلِها
+  kor: 남편
+  swa: mume
+
+### Sense 62376 (1 occurrences)
+Grammar: N-AMS
+  eng: Husband
+  spa: Marido
+  hin: पति
+  arb: زَوْجٌ
+  kor: 남편–을
+  swa: Mume
+
+### Sense 62377 (1 occurrences)
+Grammar: N-GMS
+  eng: of–man
+  spa: de–varón
+  hin: मनुष्य–का
+  arb: الإنسانِ
+  kor: 사람–의,
+  swa: ya–mtu
+
+## Task
+
+Group these 12 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

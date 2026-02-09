@@ -1,0 +1,126 @@
+# Sense Merge Task for H1832
+
+Lemma: H1832 (POS: Prep-b | N-fs)
+Total occurrences: 23
+Current sense count: 11
+
+This Hebrew/Greek lemma has been over-split into 11 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 91911 (9 occurrences)
+Grammar: N-fs
+  eng: tears
+  spa: lágrima, lágrimas
+  hin: आंसू, आँसू, आँसू–की
+  arb: دُمُوعًا, –(إِيَّا), دُمُوعٍ
+  kor: 눈물을, 눈물의, 눈물로
+  swa: machozi, ya–machozi
+
+### Sense 91912 (3 occurrences)
+Grammar: N-fsc | 1cs
+  eng: my–tears
+  spa: mi–lágrima
+  hin: आंसू–मेरे, मेरे–आँसू
+  arb: دُموعي, دَمعَتي
+  kor: 내–눈물–이, 내–눈물–에, 나–의–눈물–을
+  swa: machozi-yangu
+
+### Sense 91913 (2 occurrences)
+Grammar: Prep-b | N-fp,Prep-b, Art | N-fp
+  eng: with–tears, tears
+  spa: con–lágrimas
+  hin: आंसुओं–से, आँसुओं–से
+  arb: دُمُوعًا, بِالدُّمُوعِ
+  kor: 에–눈물들을, 눈물들–로
+  swa: kwa–machozi
+
+### Sense 91914 (2 occurrences)
+Grammar: N-fsc | 2ms
+  eng: your-tears, am–adding
+  spa: tu–lágrima
+  hin: तेरे–आँसू
+  arb: دُمُوعَكَ, دَمْعَتَكَ
+  kor: 네–눈물을, 네-눈물을
+  swa: machozi–yako
+
+### Sense 91915 (1 occurrences)
+Grammar: Prep-m | N-fs
+  eng: from–tears
+  spa: de–lágrimas
+  hin: से–आँसू
+  arb: عَنِ–الدُّمُوعِ
+  kor: 눈물에서
+  swa: kutoka–machozi
+
+### Sense 91916 (1 occurrences)
+Grammar: N-fsc | 2ms
+  eng: your-tears
+  spa: lágrima–de–ti
+  arb: دُمُوعُكَ
+  kor: 네–눈물을
+  swa: machozi–yako
+
+### Sense 91917 (1 occurrences)
+Grammar: N-fsc | 1cs
+  eng: my–tears
+  spa: con–mis–lágrimas
+  hin: मेरे–आँसुओं–से
+  arb: بِـ–دُمُوعِي
+  kor: 나의–눈물로
+  swa: kwa–machozi–yangu
+
+### Sense 91918 (1 occurrences)
+Grammar: Prep-b | N-fsc | 1cs
+  eng: with–my–tears
+  spa: con–mi–lágrima
+  hin: अपने–आँसुओं–से
+  arb: بِ–دُمُوعِي
+  kor: 눈물–로
+  swa: kwa–machozi–yangu
+
+### Sense 91919 (1 occurrences)
+Grammar: N-fsc
+  eng: tears-of
+  spa: lágrima–de
+  hin: आँसू
+  arb: دُمُوعُ
+  kor: 눈물
+  swa: machozi–ya
+
+### Sense 91920 (1 occurrences)
+Grammar: Prep-b | N-fs
+  eng: in–tears
+  spa: con–lágrima
+  hin: आँसू–में
+  arb: بِالدُّموع
+  kor: 눈물–로
+  swa: kwa–machozi
+
+### Sense 91921 (1 occurrences)
+Grammar: Conj-w | N-fsc | 3fs
+  eng: and–her–tears
+  spa: y–su–lágrima
+  hin: और–उसके–आँसू
+  arb: وَدُمُوعُهَا
+  kor: 그리고–그녀–눈물–이
+  swa: na–machozi–yake
+
+## Task
+
+Group these 11 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

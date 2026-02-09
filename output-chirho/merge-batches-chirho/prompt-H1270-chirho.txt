@@ -1,0 +1,118 @@
+# Sense Merge Task for H1270
+
+Lemma: H1270 (POS: Conj-w)
+Total occurrences: 76
+Current sense count: 10
+
+This Hebrew/Greek lemma has been over-split into 10 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 88054 (58 occurrences)
+Grammar: N-ms,Art | N-ms
+  eng: iron, the–iron, of–iron
+  spa: hierro, el–hierro, Hierro
+  hin: लोहे–के, लोहा, लोहे–की
+  arb: حَدِيدٍ, حَديدٍ, حَدِيدًا
+  kor: 철의, 철을, 철이
+  swa: chuma, ya–chuma, za–chuma
+
+### Sense 88056 (8 occurrences)
+Grammar: Conj-w | N-ms
+  eng: and–iron
+  spa: y–hierro, Y–hierro
+  hin: और–लोहा, और–लोहे–के, और–लोहे–की
+  arb: وَ–حَدِيدٌ, وَ–حَدِيدًا, وَ–حَديدٍ
+  kor: 그리고–철, 그리고–철이다, 그리고–철의
+  swa: na–chuma, na–minyororo
+
+### Sense 88057 (2 occurrences)
+Grammar: Conj-w, Prep-l, Art | N-ms
+  eng: and–for–the–iron
+  spa: y–para–el–hierro
+  hin: और–लोहे–के–लिए
+  arb: وَ–لِلْحَدِيدِ
+  kor: 그리고–에–그–철
+  swa: na–kwa–chuma
+
+### Sense 88058 (2 occurrences)
+Grammar: Prep-b | N-ms,Prep-b, Art | N-ms
+  eng: with–the–iron, by–iron
+  spa: con–hierro, con-hierro
+  hin: लोहे–से
+  arb: بِ–الْحَدِيدِ, بِـ–الْحَدِيدِ
+  kor: 철을, 철–로
+  swa: kwa–chuma, kwa-chuma
+
+### Sense 88059 (1 occurrences)
+Grammar: Prep-l, Art | N-ms
+  eng: for–the–iron
+  spa: para–el–hierro
+  hin: –के–लोहे
+  arb: لِلْحَدِيدِ
+  kor: 에–대한–그–철
+  swa: kwa–chuma
+
+### Sense 88060 (1 occurrences)
+Grammar: Conj-w, Prep-b, Art | N-ms
+  eng: and–in–the–iron
+  spa: y–en–el–hierro
+  hin: और–में–लोहा
+  arb: وَ–بِالْحَدِيدِ
+  kor: 그리고–에서–그–철
+  swa: na–kwa–chuma
+
+### Sense 88061 (1 occurrences)
+Grammar: Prep-b, Art | N-ms
+  eng: in–the–iron
+  spa: en–el–hierro
+  hin: में–लोहा
+  arb: بِالْحَدِيدِ
+  kor: 에서–그–철
+  swa: kwa–chuma
+
+### Sense 88062 (1 occurrences)
+Grammar: Conj-w, Prep-b | N-ms
+  eng: and–with–iron
+  spa: y–con–hierro
+  hin: और–लोहे–में
+  arb: وَ–بِحَدِيدٍ
+  kor: 그리고–철로–
+  swa: na–kwa–chuma
+
+### Sense 88063 (1 occurrences)
+Grammar: Conj-w, Art | N-ms
+  eng: and–the–iron
+  spa: y–el–hierro
+  hin: और–लोहे–की
+  arb: وَ–الحَديدِ
+  kor: 그리고–그–철의
+  swa: na–chuma
+
+### Sense 88064 (1 occurrences)
+Grammar: Prep-k, Art | N-ms
+  eng: like-iron
+  spa: como–hierro
+  hin: कैसे–लोहे
+  arb: كَ–الْحَدِيدِ
+  kor: 철같이
+  swa: kama–chuma
+
+## Task
+
+Group these 10 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

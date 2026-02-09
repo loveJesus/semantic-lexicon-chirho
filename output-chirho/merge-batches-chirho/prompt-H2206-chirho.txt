@@ -1,0 +1,154 @@
+# Sense Merge Task for H2206
+
+Lemma: H2206 (POS: Prep-b | N-cs)
+Total occurrences: 19
+Current sense count: 14
+
+This Hebrew/Greek lemma has been over-split into 14 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 94890 (3 occurrences)
+Grammar: Art | N-cs
+  eng: the–beard
+  spa: la–barba, la-barba
+  hin: वह, दाढ़ी–पर, दाढ़ी
+  arb: اللِّحْيَةِ, اللِّحيَةَ
+  kor: 수염도, 수염, 그–턱수염–의
+  swa: ndevu
+
+### Sense 94891 (3 occurrences)
+Grammar: N-cs
+  eng: beard
+  spa: barba, de–barba
+  hin: दाढ़ी
+  arb: لِحْيَةٍ, اللِّحى
+  kor: 수염이고, 수염이, 수염은
+  swa: ndevu, zote
+
+### Sense 94892 (2 occurrences)
+Grammar: N-csc | 2mp
+  eng: your–beards, your-beards
+  spa: vuestra–barba
+  hin: तुम्हारी–दाढ़ी
+  arb: لِحَاكُمْ, لِحاكُم
+  kor: 수염–너희의가
+  swa: ndevu–zenu
+
+### Sense 94893 (1 occurrences)
+Grammar: N-csc | 3ms
+  eng: his–beard
+  spa: su–barba
+  hin: अपनि-दअधि-के
+  arb: لِحْيَتِهِ
+  kor: 그의–수염에
+  swa: ndevu–zake
+
+### Sense 94894 (1 occurrences)
+Grammar: N-csc | 3mp
+  eng: their-beard
+  spa: su–barba
+  hin: अपनी–दाढ़ी–का
+  arb: لِحْيَتِهِمْ
+  kor: 그들의–수염
+  swa: ndevu–zao
+
+### Sense 94895 (1 occurrences)
+Grammar: Prep-b | N-cs
+  eng: in–beard
+  spa: en–barba
+  hin: में–दाढ़ी
+  arb: فِي–لِحْيَةٍ
+  kor: 턱수염–에
+  swa: katika–ndevu
+
+### Sense 94896 (1 occurrences)
+Grammar: N-csc | 3ms
+  eng: his–beard
+  spa: su–barba
+  hin: और–अपने सब बाल
+  arb: لِحْيَتِهِ
+  kor: 수염을-그의
+  swa: ndevu–zake
+
+### Sense 94897 (1 occurrences)
+Grammar: N-csc | 3mp
+  eng: their–beards
+  spa: sus–barbas
+  hin: उनकी–दाढ़ी
+  arb: لِحاهُم
+  kor: 수염–그들의
+  swa: ndevu–zao
+
+### Sense 94898 (1 occurrences)
+Grammar: Prep-b | N-csc
+  eng: on–beard-of
+  spa: barba–de
+  hin: दाढ़ी–को
+  arb: بِ–لِحْيَةِ
+  kor: 에–턱수염
+  swa: ndevu–za
+
+### Sense 94899 (1 occurrences)
+Grammar: Conj-w | N-csc | 1cs
+  eng: and–my–beard
+  spa: y–mi–barba
+  hin: और–दाढ़ी–के
+  arb: وَ–لِحْيَتِي
+  kor: 그리고–나의–수염–의
+  swa: na–ndevu–zangu
+
+### Sense 94900 (1 occurrences)
+Grammar: N-csc
+  eng: beard-of
+  spa: barba–de
+  hin: दाढ़ी
+  arb: لِحْيَةِ–
+  kor: 수염
+  swa: ndevu–za
+
+### Sense 94901 (1 occurrences)
+Grammar: N-csc | 2ms
+  eng: beard-of-you
+  spa: barba–de–ti
+  hin: तेरी–दाढ़ी
+  arb: لِحْيَتِكَ
+  kor: 네–턱수염을
+  swa: ndevu–zako
+
+### Sense 94902 (1 occurrences)
+Grammar: Prep-b | N-csc | 3ms
+  eng: by–beard–his
+  spa: por–barba–suya
+  hin: उस्कि-दअधि-से
+  arb: بِـ–لِحْيَتِهِ
+  kor: 그의–턱수염에
+  swa: ndevu–zake
+
+### Sense 94903 (1 occurrences)
+Grammar: N-csc | 2ms
+  eng: beard-your
+  spa: tu–barba
+  hin: अपनी–दाढ़ी–के
+  arb: لِحْيَتِكَ
+  kor: 너의–수염
+  swa: ndevu–zako
+
+## Task
+
+Group these 14 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

@@ -1,0 +1,154 @@
+# Sense Merge Task for H4219
+
+Lemma: H4219 (POS: N-mp)
+Total occurrences: 32
+Current sense count: 14
+
+This Hebrew/Greek lemma has been over-split into 14 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 110722 (13 occurrences)
+Grammar: N-msc,Art | N-ms
+  eng: bowl-of, the–bowl
+  spa: tazón, el–tazón
+  hin: कटोरा
+  arb: مِرْشَةٌ, الْـمِرْشَةُ
+  kor: 대야, 그–대야
+  swa: bakuli
+
+### Sense 110723 (3 occurrences)
+Grammar: Conj-w, Art | N-mp
+  eng: and–the–bowls
+  spa: y–los–tazones
+  hin: और–कटोरे, और–कटोरों
+  arb: وَ–الْمَرَاقُ, وَ–الـ–مَنَاضِحُ, وَالْمَرَاشَّ
+  kor: 그리고–그–대접들, 그리고–그–대야들, 그리고-그릿들과
+  swa: na–mabakuli
+
+### Sense 110724 (3 occurrences)
+Grammar: Art | N-mp
+  eng: the–bowls
+  spa: los–tazones
+  hin: कटोरे, कटोरों
+  arb: الْمَرَاشَّ, الْمَرَاقَ
+  kor: 대야들을, 그–대접들
+  swa: mabakuli
+
+### Sense 110725 (3 occurrences)
+Grammar: Art | N-mp
+  eng: the–bowls
+  spa: los–tazones
+  hin: कटोरे, कटोरों
+  arb: الـ–مَنَاضِحَ, الْمَرَاكِنَ
+  kor: 그릿들을, 그–대접들을
+  swa: mabakuli, kufanya, alifanya
+
+### Sense 110726 (1 occurrences)
+Grammar: Art | N-mp
+  eng: the–basins
+  spa: los–tazones
+  hin: ह–छिड़कने–के–बर्तन
+  arb: الْمَنَاضِحَ
+  kor: 그–대약들을
+  swa: mabakuli–ya–kunyunyizia
+
+### Sense 110727 (1 occurrences)
+Grammar: Conj-w | N-mpc | 3ms
+  eng: and–its–basins
+  spa: y–sus–tazones
+  hin: और–उसके–कटोरे
+  arb: وَ–مَناضِحَهُ
+  kor: 그리고–그–대접들과
+  swa: na–mabakuli–yake
+
+### Sense 110728 (1 occurrences)
+Grammar: N-mpc
+  eng: bowls
+  spa: tazones
+  hin: कटोरे
+  arb: مَناضِحَ
+  kor: 대야들
+  swa: mabakuli
+
+### Sense 110729 (1 occurrences)
+Grammar: N-mp
+  eng: bowls
+  spa: tazones
+  hin: मिज्राकोत
+  arb: مَرَاشٌ
+  kor: 대접들과
+  swa: mabakuli–ya–kunyunyizia
+
+### Sense 110730 (1 occurrences)
+Grammar: Prep-k, Art | N-ms
+  eng: like–the–bowl
+  spa: como–el–tazón
+  hin: जैसे–कटोरा
+  arb: كَالْمِنْضَحَةِ
+  kor: 대접–같이
+  swa: kama–bakuli
+
+### Sense 110731 (1 occurrences)
+Grammar: N-mpc
+  eng: bowls-of
+  spa: tazones–de
+  hin: कटोरे
+  arb: مَرَاقَ
+  kor: 대접들의
+  swa: mabakuli
+
+### Sense 110732 (1 occurrences)
+Grammar: Prep-b | N-mpc
+  eng: in–bowls-of–
+  spa: en–tazones–de
+  hin: से–कटोरों
+  arb: بِ–كُؤوسِ
+  kor: 로부터–대접
+  swa: katika–bakuli–za
+
+### Sense 110733 (1 occurrences)
+Grammar: Art | N-mp
+  eng: the–basins
+  spa: los–tazones
+  hin: छिड़कने–के–कटोरे
+  arb: الْمَرَاشِّ
+  kor: 그–물받침들
+  swa: mabakuli
+
+### Sense 110734 (1 occurrences)
+Grammar: N-mpc
+  eng: bowls-of–
+  spa: tazones–de–
+  hin: कटोरे–
+  arb: مَرَاشُ־
+  kor: 대야들
+  swa: bakuli–za
+
+### Sense 110735 (1 occurrences)
+Grammar: Prep-k, Art | N-mp
+  eng: like–the–bowls
+  spa: como–los–tazones
+  hin: जैसे–कटोरे
+  arb: كَالْمَنَاضِحِ
+  kor: 대접들–같이
+  swa: kama–mabakuli
+
+## Task
+
+Group these 14 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

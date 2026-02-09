@@ -1,0 +1,136 @@
+# Sense Merge Task for G2478
+
+Lemma: G2478 (POS: Adj-NNS-C)
+Total occurrences: 29
+Current sense count: 12
+
+This Hebrew/Greek lemma has been over-split into 12 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 69611 (10 occurrences)
+Grammar: Adj-AMS,Adj-NMS,Adj-GFS,Adj-AFS,Adj-DFS,Adj-VFS
+  eng: strong, strong-man, mighty
+  spa: fuerte, poderoso, poderosa
+  hin: शक्तिशाली, शक्तिशालीने, शक्तिशाली,
+  arb: قَوِيٌّ, قَوِيًّا, قَوِيَّةً
+  kor: 강한, 강한–자가, 강하시다
+  swa: mwenye–nguvu, nguvu, mwenye–nguvu,
+
+### Sense 69612 (4 occurrences)
+Grammar: Adj-ANP,Adj-NMP,Adj-NFP
+  eng: strong, powerful
+  spa: fuertes
+  hin: बलवान, सामर्थी, बलवानों–को
+  arb: قَوِيَّةٌ, الأَقْوِياءَ, أَقْوِياءُ
+  kor: 강하다, 강한–자들, 강한–것들–을
+  swa: wenye–nguvu;, zenye–nguvu,, wenye–nguvu
+
+### Sense 69613 (3 occurrences)
+Grammar: Adj-GMS,Adj-AMS
+  eng: strong–man, strong-one
+  spa: fuerte, fuerte?
+  hin: बलवअन–को, बलवअन–के
+  arb: قَوِيِّ, قَوِيَّ, القَوِيَّ
+  kor: 강한–자를, 강한–자의
+  swa: mwenye–nguvu, mwenye-nguvu?, mwenye-nguvu
+
+### Sense 69614 (2 occurrences)
+Grammar: Adj-NNS-C,Adj-NMP-C
+  eng: stronger
+  spa: más–fuertes, más–fuerte
+  hin: अधिक–शक्तिशाली, अधिक–बलवान
+  arb: أَقْوى, أقوى
+  kor: 더–강한–자들이, 더–강하다
+  swa: una–nguvu–zaidi–kuliko, tuna–nguvu–zaidi
+
+### Sense 69615 (2 occurrences)
+Grammar: Adj-NMS-C
+  eng: mightier, a-stronger-one
+  spa: uno–más–fuerte, más–fuerte
+  hin: सामर्थी, अधिक–बलवान
+  arb: الأَقْوَى, الأَقْوى
+  kor: 더–강한–자가, 더–강한–이가–나보다
+  swa: mwenye–nguvu–zaidi
+
+### Sense 69616 (2 occurrences)
+Grammar: Adj-NMP,Adj-GFP
+  eng: mighty
+  spa: poderosos, fuertes,
+  hin: शक्तिशाली
+  arb: قَوِيَّةٍ, أَقْوِيَاء
+  kor: 강한–자들로, 강한
+  swa: zenye–nguvu,, hodari
+
+### Sense 69617 (1 occurrences)
+Grammar: Adj-GMS
+  eng: strong-one
+  spa: fuerte
+  hin: उसकी
+  arb: القَوِيِّ
+  kor: 강한–자의
+  swa: mwenye–nguvu,
+
+### Sense 69618 (1 occurrences)
+Grammar: Adj-NMS-C
+  eng: stronger–than
+  spa: más–poderoso
+  hin: बलवंत
+  arb: أَقْوَى–مِنِّي
+  kor: 더–강한–이가
+  swa: mwenye–nguvu–zaidi
+
+### Sense 69619 (1 occurrences)
+Grammar: Adj-GMP
+  eng: of-mighty-men
+  spa: de–fuertes,
+  hin: शक्तिशालियों–के
+  arb: أَقْوياءَ
+  kor: 강한–자들의
+  swa: za–wenye–nguvu,
+
+### Sense 69620 (1 occurrences)
+Grammar: Adj-NMP
+  eng: strong
+  spa: fuertes
+  hin: शक्तिशाली,
+  arb: الأقوِياءُ
+  kor: 강한–자들–이
+  swa: wenye–nguvu,
+
+### Sense 69621 (1 occurrences)
+Grammar: Adj-NFS
+  eng: severe
+  spa: severa
+  hin: भयानक
+  arb: شَدِيدَةٌ
+  kor: 심한
+  swa: kubwa
+
+### Sense 69622 (1 occurrences)
+Grammar: Adj-NMS-C
+  eng: mightier
+  spa: más–fuerte
+  hin: शक्तिशाली
+  arb: أَقْوَى–مِنِّي
+  kor: 더–강한–자–이다
+  swa: ana–nguvu–kuliko
+
+## Task
+
+Group these 12 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

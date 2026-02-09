@@ -1,0 +1,154 @@
+# Sense Merge Task for G2525
+
+Lemma: G2525 (POS: V-AIA-2S)
+Total occurrences: 22
+Current sense count: 14
+
+This Hebrew/Greek lemma has been over-split into 14 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 69802 (5 occurrences)
+Grammar: V-AIA-3S
+  eng: appointed
+  spa: constituyó, puso
+  hin: नियुक्त–किया, ठहराया
+  arb: أَقَامَكَ, أَقَامَهُ, أَقَامَ
+  kor: 세웠느냐, 세웠다, 세운
+  swa: alikuweka, –, aliniweka
+
+### Sense 69803 (3 occurrences)
+Grammar: V-FIA-3S
+  eng: will-set, he–will–appoint, he-will-set
+  spa: pondrá, lo-pondrá
+  hin: नियुक्त–करेगा, ठहराएगा
+  arb: يُقِيمُهُ, سَيُقِيمُهُ, سَيُقيمُهُ
+  kor: 세우리라, 세울–것이다
+  swa: atamweka, yeye
+
+### Sense 69804 (2 occurrences)
+Grammar: V-PIM/P-3S
+  eng: is–appointed, is-appointed
+  spa: es–constituido, es-constituido
+  hin: नियुक्त–किया–जाता–है, ठहराया–जाता–है;
+  arb: يُقَامُ
+  kor: 세움–받으니, 세우지니
+  swa: anawekwa
+
+### Sense 69805 (2 occurrences)
+Grammar: V-FIA-1S
+  eng: I–will–appoint
+  spa: pondré
+  hin: ठहराऊंगा
+  arb: أُقِيمُكَ
+  kor: 세우리라
+  swa: nitakuweka
+
+### Sense 69806 (1 occurrences)
+Grammar: V-PIA-3S
+  eng: make
+  spa: constituye
+  hin: बनाते–हैं
+  arb: تَجعَلُكُم
+  kor: 세우느니라,
+  swa: yanawafanya
+
+### Sense 69807 (1 occurrences)
+Grammar: V-FIA-1P
+  eng: we–will–appoint
+  spa: pondremos
+  hin: नियुक्त–करेंगे
+  arb: نُقِيمُهُمْ
+  kor: 세우겠다
+  swa: tutawaweka
+
+### Sense 69808 (1 occurrences)
+Grammar: V-ASA-2S
+  eng: might–appoint
+  spa: establezcas
+  hin: नियुक्त–करे
+  arb: تُقيمَ
+  kor: 세우도록
+  swa: uweke
+
+### Sense 69809 (1 occurrences)
+Grammar: V-FIP-3P
+  eng: will–be–made
+  spa: serán–constituidos
+  hin: ठहराये–जाएंगे
+  arb: سَيُجعَلونَ
+  kor: 되리라
+  swa: watafanywa
+
+### Sense 69810 (1 occurrences)
+Grammar: V-PPA-NMP
+  eng: conducting
+  spa: que-conducían
+  hin: पहुँचाने–वाले
+  arb: يوصِلونَ
+  kor: 인도하는–자들이
+  swa: wakimwongoza
+
+### Sense 69811 (1 occurrences)
+Grammar: V-AIP-3P
+  eng: were–made
+  spa: fueron–constituidos
+  hin: ठहराये–गए
+  arb: صاروا
+  kor: 되었으니
+  swa: walifanywa
+
+### Sense 69812 (1 occurrences)
+Grammar: V-PIA-3S
+  eng: appoints
+  spa: constituye
+  hin: ठहराती–है
+  arb: يُقيمُ
+  kor: 세우니
+  swa: huwaweka
+
+### Sense 69813 (1 occurrences)
+Grammar: V-PIM/P-3S
+  eng: is–set
+  spa: se–constituye
+  hin: ठहरी-है
+  arb: يُوضَعُ
+  kor: 자리–잡고–있다
+  swa: umewekwa
+
+### Sense 69814 (1 occurrences)
+Grammar: V-AIA-2S
+  eng: you–appointed
+  spa: pusiste
+  hin: ठहराया
+  arb: أَقَمْتَهُ
+  kor: 세우셨으니
+  swa: ulimweka
+
+### Sense 69815 (1 occurrences)
+Grammar: V-PIM/P-3S
+  eng: is–made
+  spa: se–constituye
+  hin: ठहरता-है
+  arb: يُقامُ
+  kor: 된다.
+  swa: anakuwa
+
+## Task
+
+Group these 14 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

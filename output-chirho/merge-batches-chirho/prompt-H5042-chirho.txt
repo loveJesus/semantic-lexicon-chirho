@@ -1,0 +1,118 @@
+# Sense Merge Task for H5042
+
+Lemma: H5042 (POS: V-Qal-Prtcpl-ms)
+Total occurrences: 11
+Current sense count: 10
+
+This Hebrew/Greek lemma has been over-split into 10 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 115721 (2 occurrences)
+Grammar: V-Hifil-Imperf-3ms
+  eng: pours–out
+  spa: derrama
+  hin: उगलता–है
+  arb: يَنْبُعُ
+  kor: 쏟느니라
+  swa: kinamimina
+
+### Sense 115722 (1 occurrences)
+Grammar: V-Qal-Prtcpl-ms
+  eng: flowing
+  spa: que–fluye
+  hin: बहती
+  arb: نابِعٌ
+  kor: 솟는
+  swa: kinachobubujika
+
+### Sense 115723 (1 occurrences)
+Grammar: V-Hifil-Imperf.Cohort-1cs
+  eng: I–will–pour–out
+  spa: derramaré
+  hin: उँडेलूँगी
+  arb: أُفِيضُ
+  kor: 부어주리라
+  swa: nitawamwagia
+
+### Sense 115724 (1 occurrences)
+Grammar: V-Hifil-Imperf-3mp | Pn
+  eng: they–belch
+  spa: vomitan
+  hin: उगलते–हैं–वे
+  arb: يَفيضونَ
+  kor: 토해내도다
+  swa: wanabubujika
+
+### Sense 115725 (1 occurrences)
+Grammar: V-Hifil-Imperf-3ms
+  eng: pours–forth
+  spa: emite
+  hin: उंडेलता–है
+  arb: يُفِيضُ
+  kor: 쇟아내나이다
+  swa: inabubujika
+
+### Sense 115726 (1 occurrences)
+Grammar: V-Hifil-Imperf-3mp
+  eng: they–shall–pour-forth
+  spa: proclamarán
+  hin: वे–उमड़ेंगे
+  arb: يَفِيضُونَ
+  kor: 넘쳐–흐르게–하리라
+  swa: wataimba
+
+### Sense 115727 (1 occurrences)
+Grammar: V-Hifil-Imperf-3mp
+  eng: they–pour–out
+  spa: Brotan
+  hin: वे–बोलते–हैं
+  arb: يَتَدَفَّقُونَ
+  kor: 쇟아내리라
+  swa: Wanabubujika
+
+### Sense 115728 (1 occurrences)
+Grammar: V-Hifil-Imperf-3fp
+  eng: may–pour–forth
+  spa: Brotarán
+  hin: बोलें
+  arb: لِتَنْضَحْ
+  kor: 내보내리라
+  swa: zilete
+
+### Sense 115729 (1 occurrences)
+Grammar: V-Hifil-Imperf-3ms
+  eng: cause–to–bubble
+  spa: hacen–brotar
+  hin: और–उबालती–हैं
+  arb: يَبِّيعَ
+  kor: 그리고–풍기게–한다
+  swa: na–uharibifu
+
+### Sense 115730 (1 occurrences)
+Grammar: V-Hifil-Imperf.Cohort-1cs
+  eng: I–will–utter
+  spa: proferiré
+  hin: बताऊँगा
+  arb: أُفِيضُ
+  kor: 내보내리이다
+  swa: nitatoa
+
+## Task
+
+Group these 10 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

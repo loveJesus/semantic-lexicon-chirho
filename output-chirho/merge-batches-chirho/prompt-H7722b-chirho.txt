@@ -1,0 +1,118 @@
+# Sense Merge Task for H7722b
+
+Lemma: H7722b (POS: Prep-b | N-fs)
+Total occurrences: 12
+Current sense count: 10
+
+This Hebrew/Greek lemma has been over-split into 10 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 138575 (2 occurrences)
+Grammar: N-fs
+  eng: waste
+  spa: desolación
+  hin: विनाश, उजाड़
+  arb: خَرابٌ, الْقَفْرَ
+  kor: 황폐한–곣을, 황폐와
+  swa: ukame, maangamizi
+
+### Sense 138576 (2 occurrences)
+Grammar: Prep-k | N-fs,Prep-k, Art | N-fs
+  eng: like–the–storm, like–a–storm
+  spa: como–tormenta, como–tempestad
+  hin: तूफान–की–तरह, आँधी–की–तरह
+  arb: كَالْعَاصِفَةِ, (كَعَاصِفَةٍ)
+  kor: 폭풍처럼, 폭풍–같이
+  swa: kama–dhoruba
+
+### Sense 138577 (1 occurrences)
+Grammar: N-fs
+  eng: ruin
+  spa: devastación
+  hin: विनाश–का
+  arb: خَرَابٍ
+  kor: 황폐–의
+  swa: ya–uharibifu
+
+### Sense 138578 (1 occurrences)
+Grammar: Prep-l | N-fs
+  eng: for–destruction
+  spa: para–destrucción
+  hin: –विनाश–के–लिए
+  arb: لِ–الهَلاكِ
+  kor: 멸망–을–위하여
+  swa: kwa–uharibifu
+
+### Sense 138579 (1 occurrences)
+Grammar: Conj-w, Prep-l | N-fs
+  eng: and–for–devastation
+  spa: y-para-devastación
+  hin: और–विपत्ति–के–लिए
+  arb: وَ–لِـ–الْخَرَابِ
+  kor: 황폐가
+  swa: na-kwa-maangamizi
+
+### Sense 138580 (1 occurrences)
+Grammar: Conj-w, Prep-m | N-fsc
+  eng: or–of–the–ruin–of
+  spa: ni–de–la–ruina–de
+  hin: और–विनाश–से
+  arb: وَ–مِنْ–خَرَابِ
+  kor: 그리고–파멸–을
+  swa: wala–uharibifu–wa
+
+### Sense 138581 (1 occurrences)
+Grammar: N-fs
+  eng: devastation
+  spa: destrucción
+  hin: तबाही
+  arb: خَرَابٌ
+  kor: 멸망이
+  swa: maangamizi
+
+### Sense 138582 (1 occurrences)
+Grammar: Prep-b | N-fs
+  eng: into–destruction
+  spa: en
+  hin: में–विनाश
+  arb: بِ–الكارِثَةِ
+  kor: 멸망–안으로
+  swa: kwa–maangamizi
+
+### Sense 138583 (1 occurrences)
+Grammar: N-fs
+  eng: destruction
+  spa: destrucción
+  hin: विनाश
+  arb: كارِثَةٌ
+  kor: 멸망이
+  swa: maangamizi
+
+### Sense 138584 (1 occurrences)
+Grammar: N-fs
+  eng: crash
+  spa: destrucción
+  hin: तबाही–के
+  arb: الخَرابِ
+  kor: 황폐함
+  swa: maangamizi
+
+## Task
+
+Group these 10 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

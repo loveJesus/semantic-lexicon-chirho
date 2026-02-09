@@ -1,0 +1,118 @@
+# Sense Merge Task for H7217
+
+Lemma: H7217 (POS: Prep-b | N-msc | 3fs)
+Total occurrences: 14
+Current sense count: 10
+
+This Hebrew/Greek lemma has been over-split into 10 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 133947 (4 occurrences)
+Grammar: N-msc | 1cs
+  eng: my-head
+  spa: mi–cabeza, cabeza–de–mí
+  hin: मेरे–सिर–के
+  arb: رَأْسِي
+  kor: 내–머리–의, 나의–머리의
+  swa: kichwa–changu
+
+### Sense 133948 (2 occurrences)
+Grammar: N-msc | 3ms
+  eng: his-head, His-head
+  spa: cabeza–de–él
+  hin: उसके–सिर–के
+  arb: رَأْسِهِ
+  kor: 그의–머리의
+  swa: kichwa–chake, kichwa–Chake
+
+### Sense 133949 (1 occurrences)
+Grammar: Prep-b | N-mpc | 3mp
+  eng: at–their–heads
+  spa: en–sus–cabezas.
+  hin: उनके–मुखिया–थे
+  arb: في–رُؤُوسِهِم
+  kor: 에–머리들–그들
+  swa: viongozi–wao
+
+### Sense 133950 (1 occurrences)
+Grammar: N-msc | 2ms
+  eng: your-head
+  spa: tu–cabeza
+  hin: तेरे–सिर
+  arb: رَأْسِ–كَ
+  kor: 머리–당신의
+  swa: kichwa–chako
+
+### Sense 133951 (1 occurrences)
+Grammar: N-msc | 3ms
+  eng: its-head
+  spa: su–cabeza
+  hin: उसका–सिर
+  arb: رَأْسُهُ
+  kor: 머리가–그것의
+  swa: kichwa–chake
+
+### Sense 133952 (1 occurrences)
+Grammar: N-msd
+  eng: the–head
+  spa: la–cabeza
+  hin: सिर
+  arb: رَأْسُ
+  kor: 머리이다
+  swa: kichwa
+
+### Sense 133953 (1 occurrences)
+Grammar: N-msc | 3mp
+  eng: their-heads
+  spa: sus–cabezas
+  hin: उनके–सिर
+  arb: رُؤُوسِهِمْ
+  kor: 머리–그들의
+  swa: vichwa–vyao
+
+### Sense 133954 (1 occurrences)
+Grammar: N-mp
+  eng: heads
+  spa: cabezas
+  hin: सिर
+  arb: رُؤُوسٍ
+  kor: 머리들이
+  swa: vinne
+
+### Sense 133955 (1 occurrences)
+Grammar: Prep-b | N-msc | 3fs
+  eng: on–its-head
+  spa: en–cabeza–de–ella
+  hin: उसके–सिर–पर
+  arb: فِي–رَأْسِهِ
+  kor: 그것의–머리에
+  swa: kichwani–mwake
+
+### Sense 133956 (1 occurrences)
+Grammar: N-msc
+  eng: sum-of
+  spa: resumen–de
+  hin: मुख्य
+  arb: رَأْسَ
+  kor: 처음의
+  swa: muhtasari–wa
+
+## Task
+
+Group these 10 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

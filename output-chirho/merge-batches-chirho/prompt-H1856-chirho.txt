@@ -1,0 +1,118 @@
+# Sense Merge Task for H1856
+
+Lemma: H1856 (POS: V-Pual-Prtcpl-mp)
+Total occurrences: 11
+Current sense count: 10
+
+This Hebrew/Greek lemma has been over-split into 10 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 92030 (2 occurrences)
+Grammar: Conj-w | V-Qal-Imp-ms | 1cs,Conj-w | V-Qal-ConjPerf-3cp | 
+  eng: and–thrust-me-through
+  spa: y–me–atraviesen, y–atraviésame
+  hin: और-छेद-देन-मुझे, और-छेद-दे-मुझे
+  arb: وَ–يَطعَنوني, وَ–اطعَنّي
+  kor: 그리고–찔르고–나를, 그리고–찔러라–나를
+  swa: na–wanichome, na–unichome
+
+### Sense 92031 (1 occurrences)
+Grammar: V-Pual-Prtcpl-mp
+  eng: pierced–through
+  spa: traspasados
+  hin: छेदे–हुए
+  arb: مَطْعُونِينَ
+  kor: 산물들–에서
+  swa: wakichomwa
+
+### Sense 92032 (1 occurrences)
+Grammar: V-Qal-Perf-3cp
+  eng: they–pierced
+  spa: traspasaron
+  hin: उन्होंने–भेदा
+  arb: طَعَنُوهُ
+  kor: 찔른
+  swa: walimchoma
+
+### Sense 92033 (1 occurrences)
+Grammar: Conj-w | V-Qal-ConjPerf-3cp | 
+  eng: and–will–pierce–him
+  spa: y–lo–traspasarán
+  hin: और–वे–उसे–भेदेंगे
+  arb: وَ–يَطْعَنُونَهُ
+  kor: 그리고–찔으리라–그를
+  swa: na–watamchoma
+
+### Sense 92034 (1 occurrences)
+Grammar: Conj-w | V-Pual-Prtcpl-mp
+  eng: and–the–pierced
+  spa: y–alanceados
+  hin: और–बेधे–हुए
+  arb: وَمَطْعُونِينَ
+  kor: 그리고–찔린–자들이
+  swa: na–waliochomwa
+
+### Sense 92035 (1 occurrences)
+Grammar: Conj-w | V-Qal-Imp-ms | 1cs
+  eng: and–thrust–me–through
+  spa: y–traspásame
+  hin: और–छेद–मुझे
+  arb: وَاطْعَنِّي
+  kor: 그리고–찔러라–나를
+  swa: na–unichome
+
+### Sense 92036 (1 occurrences)
+Grammar: V-Pual-Prtcpl-mp
+  eng: wounded
+  spa: heridos
+  hin: घायल
+  arb: مَطْعُونُونَ
+  kor: 찔린
+  swa: waliojeruhiwa
+
+### Sense 92037 (1 occurrences)
+Grammar: V-Nifal-Imperf-3ms
+  eng: will-be-pierced
+  spa: será–traspasado
+  hin: बेधा–जाएगा
+  arb: يُطْعَنُ
+  kor: 찔리고
+  swa: atachomwa
+
+### Sense 92038 (1 occurrences)
+Grammar: Conj-w | V-Qal-ConsecImperf-3m
+  eng: and–thrust–through
+  spa: y–atravesó
+  hin: और–भोंका
+  arb: وَ–طَعَنَ
+  kor: 그리고–찔렀다
+  swa: na–akawachoma
+
+### Sense 92039 (1 occurrences)
+Grammar: Conj-w | V-Qal-ConsecImperf-3m
+  eng: and–pierced–him
+  spa: y–lo–atravesó
+  hin: और–छेदा–उसे
+  arb: فَـ-طَعَنَهُ
+  kor: 그리고–찔렀다–그를
+  swa: na–akamchoma
+
+## Task
+
+Group these 10 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

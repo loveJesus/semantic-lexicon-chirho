@@ -1,0 +1,127 @@
+# Sense Merge Task for H0134
+
+Lemma: H0134 (POS: N-mpc)
+Total occurrences: 57
+Current sense count: 11
+
+This Hebrew/Greek lemma has been over-split into 11 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 80097 (19 occurrences)
+Grammar: Conj-w | N-mpc | 3mp
+  eng: and–their–bases
+  spa: y–sus–basas, y–basas-de-ellas
+  hin: और–उनकी–कुर्सियाँ, और–उनके–आधार
+  arb: وَ–قَواعِدُها, وَ–قَوَاعِدُهَا, وَ–قواعِدُها
+  kor: 그리고–그들의–받침들이, 그리고–그것들의–받침들, 그리고–그것들의–받침들은
+  swa: na–vitako–vyake, na–vitako-vyake
+
+### Sense 80098 (15 occurrences)
+Grammar: N-mp
+  eng: bases
+  spa: basas
+  hin: कुर्सियाँ
+  arb: قاعِدَتانِ, قاعِدَةً, قَاعِدَةٍ
+  kor: 받침들, 받침들을, 받침들이
+  swa: vitako
+
+### Sense 80099 (10 occurrences)
+Grammar: N-mpc
+  eng: bases–of, bases-of
+  spa: basas–de
+  hin: कुर्सियाँ, कुर्सियाँ–
+  arb: قَوَاعِدَ, قَوَاعِدِ, قاعِدَةَ–
+  kor: 받침들을, 받침들의–, 받침들의
+  swa: vitako–vya, vitako–vya–, vitako–
+
+### Sense 80100 (4 occurrences)
+Grammar: N-mpc | 3ms,N-mpc | 3fs
+  eng: its–bases
+  spa: sus–bases, sus–basas
+  hin: उसकी–कुर्सियाँ
+  arb: قَوَاعِدَهُ, قَوَاعِدَهَا, قواعِدَهُ
+  kor: 그것의–받침들을, 그것의–받침들과
+  swa: vitako–vyake
+
+### Sense 80101 (2 occurrences)
+Grammar: Conj-w | N-mpc | 3ms
+  eng: and–its–bases
+  spa: y–basas-de-él
+  hin: और–उसके–आधार
+  arb: وَقَوَاعِدُهُ
+  kor: 그리고–그의–받침들, 그리고–그것의–받침들
+  swa: na–vitako–vyake, na–vitako-vyake
+
+### Sense 80102 (2 occurrences)
+Grammar: N-mpc | 3mp
+  eng: their–bases
+  spa: sus–basas
+  hin: उनकी–कुर्सियाँ
+  arb: قواعِدَها, قاعِدَتِها
+  kor: 그들의–받침들이, 그것들의–받침들
+  swa: vitako–vyake
+
+### Sense 80103 (1 occurrences)
+Grammar: Conj-w, Art | N-mp
+  eng: and–the–bases
+  spa: Y–las–basas
+  hin: और–कुर्सियाँ
+  arb: وَ–الْقَوَاعِدُ
+  kor: 그리고–그–받침들
+  swa: na–vitako
+
+### Sense 80104 (1 occurrences)
+Grammar: Conj-w | N-mpc | 3ms
+  eng: and–its–bases
+  spa: y–sus–basas
+  hin: और–उसकी–कुर्सियाँ
+  arb: وَ–قَوَاعِدُهُ
+  kor: 그리고–그것의–받침들
+  swa: na–vitako–vyake
+
+### Sense 80105 (1 occurrences)
+Grammar: N-mpc | 3fs
+  eng: its–foundations
+  spa: sus–bases
+  hin: उसकी–नींवें
+  arb: قَوَاعِدُهَا
+  kor: 그것–의–기초들이
+  swa: msingi–wake
+
+### Sense 80106 (1 occurrences)
+Grammar: N-mpc
+  eng: pedestals-of–
+  spa: bases–de–
+  hin: आधारों–
+  arb: أَدْنِي–
+  kor: 받침들–의
+  swa: msingi–wa–
+
+### Sense 80107 (1 occurrences)
+Grammar: Prep-l, Art | N-ms
+  eng: for–the–base
+  spa: para–la–basa
+  hin: प्रति–कुर्सी
+  arb: لِلْقَاعِدَةِ
+  kor: 에게–받침
+  swa: kwa–kitako
+
+## Task
+
+Group these 11 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

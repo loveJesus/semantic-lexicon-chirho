@@ -1,0 +1,135 @@
+# Sense Merge Task for H0875
+
+Lemma: H0875 (POS: N-fsc | 2ms)
+Total occurrences: 37
+Current sense count: 12
+
+This Hebrew/Greek lemma has been over-split into 12 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 85083 (13 occurrences)
+Grammar: Art | N-fs
+  eng: the–well
+  spa: el–pozo
+  hin: कुएँ–के, कुएँ, यह–कुआँ
+  arb: الْبِئْرِ, البِئرِ, الْبِئْرُ
+  kor: 그–우물의, 그–우물, 그–우물을
+  swa: kisima, kisima–hicho, hili
+
+### Sense 85084 (10 occurrences)
+Grammar: N-fsc,N-fs
+  eng: well, well-of, the–pit
+  spa: pozo, pozo–de, Pozo
+  hin: कुआँ, कुआं
+  arb: بِئْرٌ, بِئراً, بْأِير
+  kor: 우물을, 우물이–있었다, 우물이
+  swa: kisima, shimo, bwawa
+
+### Sense 85085 (2 occurrences)
+Grammar: N-fs
+  eng: well
+  spa: pozo
+  hin: कुएं–से
+  arb: بِئْرٍ
+  kor: 우물
+  swa: ya–kisima, kisima
+
+### Sense 85086 (2 occurrences)
+Grammar: N-fpc
+  eng: pits-of, pits
+  spa: pozos–de, pozos
+  hin: गधहे
+  arb: آبَارٌ
+  kor: 우물들이다, 우물들
+  swa: mashimo
+
+### Sense 85087 (2 occurrences)
+Grammar: N-fsc
+  eng: the–well–of
+  spa: pozo–de
+  hin: कुएँ–के, कुएँ
+  arb: بِئْرِ
+  kor: 우물
+  swa: ya–maji, kisima
+
+### Sense 85088 (2 occurrences)
+Grammar: Art | N-fp,N-fpc
+  eng: wells-of, the–wells
+  spa: pozos–de, los–pozos
+  hin: कुओं
+  arb: الآبارِ, آبارَ
+  kor: 우물들을, 그–우물들을
+  swa: visima
+
+### Sense 85089 (1 occurrences)
+Grammar: Prep-m, Art | N-fs
+  eng: from–the–well
+  spa: del–pozo
+  hin: कुएँ–से
+  arb: مِنَ–الْبِئْرِ
+  kor: 에서–그–우물
+  swa: kutoka–kisimani
+
+### Sense 85090 (1 occurrences)
+Grammar: Prep-l | N-fsc
+  eng: to–pit–of
+  spa: a–pozo-de
+  arb: إِلى–جُبِّ
+  kor: 우물–에
+  swa: shimoni
+
+### Sense 85091 (1 occurrences)
+Grammar: N-fsc | 2ms
+  eng: your–own–well
+  spa: tu–pozo
+  hin: कुएँ–अपने–के
+  arb: بِئْرِكَ
+  kor: 네–우물–의
+  swa: kisima–chako
+
+### Sense 85092 (1 occurrences)
+Grammar: Conj-w | N-fs
+  eng: and–a–well
+  spa: y–pozo
+  hin: और–कुआं
+  arb: وَ–بِئْرٌ
+  kor: 그리고–우물이니라
+  swa: na–kisima–chembamba
+
+### Sense 85093 (1 occurrences)
+Grammar: N-fs
+  eng: O–well
+  spa: pozo
+  hin: हे–कुएं
+  arb: يَا–بِئْرُ
+  kor: 우물아
+  swa: kisima
+
+### Sense 85094 (1 occurrences)
+Grammar: Prep-l, Art | N-fs
+  eng: to–the–well
+  spa: al–pozo
+  hin: कुअ
+  arb: الْبِئْرُ
+  kor: 우물을
+  swa: kisima
+
+## Task
+
+Group these 12 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

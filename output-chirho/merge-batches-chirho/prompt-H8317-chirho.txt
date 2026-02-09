@@ -1,0 +1,118 @@
+# Sense Merge Task for H8317
+
+Lemma: H8317 (POS: V-Qal-Perf-3cp)
+Total occurrences: 14
+Current sense count: 10
+
+This Hebrew/Greek lemma has been over-split into 10 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 144072 (5 occurrences)
+Grammar: Art | V-Qal-Prtcpl-ms,Art | V-Qal-Prtcpl-fs
+  eng: the–swarming
+  spa: el–que-repta, la–que-hormiguea
+  hin: रेंगने वाला
+  arb: الدَّابِّ, الدَّابَّةِ
+  kor: 기는
+  swa: kinachotambaa, vinavyotambaa, inayotambaa
+
+### Sense 144073 (1 occurrences)
+Grammar: V-Qal-Perf-3ms
+  eng: swarmed
+  spa: Pulularon
+  hin: उगला
+  arb: فاضَت
+  kor: 번성했으니
+  swa: ilizaa
+
+### Sense 144074 (1 occurrences)
+Grammar: V-Qal-Imperf-3mp
+  eng: let–swarm
+  spa: produzcan–abundantemente
+  hin: उमड़ें
+  arb: لِتَفِضْ
+  kor: 번성하라
+  swa: yazae
+
+### Sense 144075 (1 occurrences)
+Grammar: Conj-w | V-Qal-ConsecImperf-3m
+  eng: and–swarmed
+  spa: y–pulularon
+  hin: और–बहुत-हुए
+  arb: وَ–تَوَالَدُوا
+  kor: 그리고–번성했다
+  swa: na–wakaongezeka
+
+### Sense 144076 (1 occurrences)
+Grammar: V-Qal-Imperf-3ms
+  eng: swarms
+  spa: pulule
+  hin: रेंगेगा
+  arb: تَزْحَفُ
+  kor: 우글거릴–것이다
+  swa: inazunguka
+
+### Sense 144077 (1 occurrences)
+Grammar: Art | V-Qal-Prtcpl-ms
+  eng: the–swarming
+  spa: el–que–pululaba
+  hin: जो-खेएनचता
+  arb: الَّتِي–تَدِبُّ
+  kor: 그–번성하는
+  swa: kinachomea
+
+### Sense 144078 (1 occurrences)
+Grammar: V-Qal-Perf-3cp
+  eng: swarmed
+  spa: produjeron–abundantemente
+  hin: उमड़े
+  arb: فَاضَتْ
+  kor: 번성했다
+  swa: yalizaa
+
+### Sense 144079 (1 occurrences)
+Grammar: V-Qal-Imp-mp
+  eng: swarm
+  spa: pululad
+  hin: भूमि-को-भरो
+  arb: تَكَاثَرُوا
+  kor: 우글거려라
+  swa: jaeni
+
+### Sense 144080 (1 occurrences)
+Grammar: Conj-w | V-Qal-ConjPerf-3cp
+  eng: and–let-them-swarm
+  spa: y–pululen
+  hin: और-भूमि-को-भरेनगे
+  arb: وَ–يَتَكَاثَرُونَ
+  kor: 그리고–번성하라
+  swa: na–wajazeane
+
+### Sense 144081 (1 occurrences)
+Grammar: Conj-w | V-Qal-ConjPerf-3ms
+  eng: and–will–swarm
+  spa: Y–pululará
+  hin: और–भर–जाएगी
+  arb: فَيَفِيضُ
+  kor: 그리고–들끓리라
+  swa: na–utajaa
+
+## Task
+
+Group these 10 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

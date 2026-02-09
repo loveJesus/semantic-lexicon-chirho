@@ -1,0 +1,136 @@
+# Sense Merge Task for G5485
+
+Lemma: G5485 (POS: N-GFS)
+Total occurrences: 157
+Current sense count: 12
+
+This Hebrew/Greek lemma has been over-split into 12 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 78937 (130 occurrences)
+Grammar: N-AFS,N-NFS,N-GFS,N-DFS
+  eng: grace, favor, of–grace
+  spa: gracia, de–gracia, de-gracia
+  hin: अनुग्रह, अनुग्रह–के, अनुग्रह,
+  arb: نِعمَةِ, نِعْمَةٌ, نِعْمَةُ
+  kor: 은혜가, 은혜, 은혜를
+  swa: neema, Neema, neema;
+
+### Sense 78938 (7 occurrences)
+Grammar: N-DFS
+  eng: by-grace, grace, by–grace
+  spa: por–gracia, con–gracia, gracia
+  hin: अनुग्रह–से, अनुग्रह-से
+  arb: بِالنِّعمَةِ, بِنِعْمَةِ, بِنِعْمَةٍ
+  kor: 은혜로, 은혜–로, 감사로
+  swa: kwa–neema, kwa–shukrani, kwa–neema,
+
+### Sense 78939 (6 occurrences)
+Grammar: N-NFS
+  eng: thanks
+  spa: gracias, gracia
+  hin: धन्यवाद, अनुग्रह
+  arb: فَضلٍ, شُكْرًا, شُكرٌ
+  kor: 감사가, 감사하라, 감사하노라
+  swa: neema, shukrani,
+
+### Sense 78940 (3 occurrences)
+Grammar: N-AFS
+  eng: a–favor
+  spa: favor
+  hin: अनुग्रह
+  arb: رِضَاً, مَعْرُوفًا
+  kor: 호의를
+  swa: fadhili
+
+### Sense 78941 (3 occurrences)
+Grammar: N-NFS
+  eng: thanks
+  spa: Gracias, gracias
+  hin: धन्यवाद
+  arb: شُكرٌ
+  kor: 감사하라, 감사니라
+  swa: Shukrani, shukrani
+
+### Sense 78942 (2 occurrences)
+Grammar: N-AFS
+  eng: gratitude
+  spa: Gratitud
+  hin: धन्यवअद
+  arb: شُكْراً
+  kor: 감사를
+  swa: Shukrani
+
+### Sense 78943 (1 occurrences)
+Grammar: N-AFS
+  eng: grace
+  spa: gracia
+  hin: अनुग्रह–को
+  arb: نعمة
+  kor: 은혜를
+  swa: neema
+
+### Sense 78944 (1 occurrences)
+Grammar: N-DFS
+  eng: favor
+  spa: gracia
+  hin: अनुग्रह–में
+  arb: نِعْمَةٍ
+  kor: 은혜–에서
+  swa: neema
+
+### Sense 78945 (1 occurrences)
+Grammar: N-AFS
+  eng: gift
+  spa: gracia
+  hin: दान–को
+  arb: نِعْمَتَكُمْ
+  kor: 선물을
+  swa: zawadi
+
+### Sense 78946 (1 occurrences)
+Grammar: N-GFS
+  eng: grace
+  spa: –gracia
+  hin: अनुग्रह।
+  arb: نِعْمَةٍ
+  kor: 은혜
+  swa: neema
+
+### Sense 78947 (1 occurrences)
+Grammar: N-AFS
+  eng: gratitude
+  spa: gratitud
+  hin: धन्यवाद
+  arb: شُكرٌ
+  kor: 감사를
+  swa: shukrani
+
+### Sense 78948 (1 occurrences)
+Grammar: N-DFS
+  eng: grace
+  spa: gracia
+  hin: अनुग्रह,
+  arb: –النِّعمَةِ
+  kor: 은혜–에–의해
+  swa: yake
+
+## Task
+
+Group these 12 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

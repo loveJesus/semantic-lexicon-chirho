@@ -1,0 +1,118 @@
+# Sense Merge Task for H7751a
+
+Lemma: H7751a (POS: V-Qal-Perf-3cp)
+Total occurrences: 11
+Current sense count: 10
+
+This Hebrew/Greek lemma has been over-split into 10 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 138964 (2 occurrences)
+Grammar: Prep-m | V-Qal-Inf
+  eng: from–roaming
+  spa: de–vagar, de-vagar
+  hin: घूमने–से
+  arb: مِنَ–الطَّوَفانِ
+  kor: 에서–두루–다니며
+  swa: kutoka–kuzunguka
+
+### Sense 138965 (1 occurrences)
+Grammar: V-Piel-Prtcpl-fp
+  eng: ranging
+  spa: recorren
+  hin: घूमती–हैं
+  arb: تَجُولاَنِ
+  kor: 달리고–있다
+  swa: yanatazama
+
+### Sense 138966 (1 occurrences)
+Grammar: V-Piel-Imperf-3mp
+  eng: shall-run-to-and-fro
+  spa: correrán
+  hin: दौड़ेंगे
+  arb: يَتَجَوَّلُ
+  kor: 다니리라
+  swa: wengi–watatafuta
+
+### Sense 138967 (1 occurrences)
+Grammar: V-Piel-Imp-mp
+  eng: run–to–and–fro
+  spa: Recorred
+  hin: दौड़ो
+  arb: طُوفُوا
+  kor: 달려라
+  swa: zungukeni
+
+### Sense 138968 (1 occurrences)
+Grammar: Conj-w | V-Hitpael-Imp-fp
+  eng: and–run–to–and–fro
+  spa: y–vaguen
+  hin: और–इधर–उधर–भटको
+  arb: وَطُفْنَ
+  kor: 그리고–이리저리–달리라
+  swa: na–kimbieni
+
+### Sense 138969 (1 occurrences)
+Grammar: V-Piel-Prtcpl-mp
+  eng: roving
+  spa: recorren
+  hin: घूमती–रहती–हैं
+  arb: الْجَائِلَةُ
+  kor: 다니는도다
+  swa: wanaotembea
+
+### Sense 138970 (1 occurrences)
+Grammar: V-Qal-Perf-3cp
+  eng: went-about
+  spa: Se–dispersó
+  hin: फैलते–थे
+  arb: يَجُولُ
+  kor: 헤매었다
+  swa: walitawanyika
+
+### Sense 138971 (1 occurrences)
+Grammar: V-Piel-Imperf-3mp
+  eng: they-will-roam
+  spa: andarán–errantes
+  hin: दौड़ते–फिरेंगे
+  arb: يَجُولُونَ
+  kor: 돌아다니리라
+  swa: watazunguka
+
+### Sense 138972 (1 occurrences)
+Grammar: Conj-w | V-Qal-ConsecImperf-3m
+  eng: and–they-went-about
+  spa: Y–recorrieron
+  hin: और–घूमे
+  arb: فَطَافُوا
+  kor: 그리고–두루–다냈다
+  swa: na–wakazunguka
+
+### Sense 138973 (1 occurrences)
+Grammar: V-Qal-Imp-ms
+  eng: go-about
+  spa: recorre–
+  hin: घूम
+  arb: طُفْ
+  kor: 두루–다니라–
+  swa: zunguka–
+
+## Task
+
+Group these 10 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

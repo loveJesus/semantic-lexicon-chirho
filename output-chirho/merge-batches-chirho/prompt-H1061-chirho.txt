@@ -1,0 +1,136 @@
+# Sense Merge Task for H1061
+
+Lemma: H1061 (POS: Art | N-mp)
+Total occurrences: 18
+Current sense count: 12
+
+This Hebrew/Greek lemma has been over-split into 12 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 86713 (4 occurrences)
+Grammar: N-mpc
+  eng: firstfruits-of
+  spa: primicias–de, las–primicias–de
+  hin: पहले–फल, पहली–उपज–के
+  arb: باكوراتِ
+  kor: 처음–익은–열매의, 처음–익은–것의
+  swa: ya–malimbuko–ya–, wa–malimbuko, malimbuko–ya–
+
+### Sense 86714 (2 occurrences)
+Grammar: N-mp
+  eng: firstfruits
+  spa: primicias
+  hin: पहिलौठी, पहले–फलों
+  arb: بَاكُورَاتٍ, باكُورَاتٍ
+  kor: 처음–익은–것들–의, 처음–익은–것
+  swa: ya–malimbuko, malimbuko
+
+### Sense 86715 (2 occurrences)
+Grammar: N-mpc
+  eng: the–firstfruits–of, firstfruits-of
+  spa: primicias–de, primeros–frutos–de
+  hin: पहिले–फल, पहलौठे
+  arb: بَاكُورَاتِ
+  kor: 첫–열매들의, 처음–열매를
+  swa: malimbuko–ya
+
+### Sense 86716 (2 occurrences)
+Grammar: Art | N-mp
+  eng: the–firstfruits
+  spa: las–primicias
+  hin: पहिलौठी–की, पहले–फलों–के
+  arb: الْـ–بَاكُورَاتِ, الْبَاكُورَاتِ
+  kor: 처음–익은–것의, 그–처음–익은–것
+  swa: wa–malimbuko, matunda–ya–kwanza
+
+### Sense 86717 (1 occurrences)
+Grammar: N-mp
+  eng: first–ripe–figs
+  spa: brevas
+  hin: पहले–फल
+  arb: بَاكُورَاتٍ
+  kor: 첫–열매들
+  swa: matunda–ya–kwanza
+
+### Sense 86718 (1 occurrences)
+Grammar: Conj-w, Prep-l, Art | N-mp
+  eng: and–for–the–firstfruits
+  spa: y–para–las–primicias
+  hin: और–पहिली–उपज–के–लिए
+  arb: وَلِلْبَاكُورَاتِ
+  kor: 그리고–에–처음–열매들을–위하여
+  swa: na–kwa–malimbuko
+
+### Sense 86719 (1 occurrences)
+Grammar: N-mp
+  eng: firstfruits
+  spa: de-primicias
+  hin: पहले–फलों–की
+  arb: بَاكُورَاتٍ
+  kor: 처음–익은–것–의
+  swa: wa–malimbuko
+
+### Sense 86720 (1 occurrences)
+Grammar: N-mpc | 2ms
+  eng: your-firstfruits
+  spa: primicias–tuyas
+  hin: पहले–फलों–तेरी
+  arb: باكُورَاتِكَ
+  kor: 네–처음–익은–것들
+  swa: ya–malimbuko–yako
+
+### Sense 86721 (1 occurrences)
+Grammar: N-mpc
+  eng: firstfruits-of
+  spa: Primicias–de
+  hin: पहले–फल
+  arb: بَاكُورَاتُ
+  kor: 첫–열매들–의
+  swa: Malimbuko
+
+### Sense 86722 (1 occurrences)
+Grammar: Prep-k | N-fs
+  eng: before
+  spa: como–higo–temprano
+  hin: जैसे–पहला–फल–उसका
+  arb: كَـ–بَاكُورَتِهَا
+  kor: 같이–첫–열매
+  swa: kama–tini–ya–mapema
+
+### Sense 86723 (1 occurrences)
+Grammar: N-mpc
+  eng: first-ripe-of
+  spa: primicias–de
+  hin: पहले–फलों–के
+  arb: بَاكُورَاتِ
+  kor: 첫–열매
+  swa: za–malimbuko
+
+### Sense 86724 (1 occurrences)
+Grammar: Conj-w | N-mpc
+  eng: and–the–firstfruits–of
+  spa: y–primicias–de
+  hin: और–पहिले–फल
+  arb: وَ–بَاكُورَاتِ
+  kor: 그리고–처음–열매를
+  swa: na–malimbuko–ya
+
+## Task
+
+Group these 12 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

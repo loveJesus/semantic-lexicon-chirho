@@ -1,0 +1,145 @@
+# Sense Merge Task for G2518
+
+Lemma: G2518 (POS: V-PPA-NMP)
+Total occurrences: 22
+Current sense count: 13
+
+This Hebrew/Greek lemma has been over-split into 13 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 69743 (5 occurrences)
+Grammar: V-PPA-AMP
+  eng: sleeping
+  spa: durmiendo
+  hin: सोते–हुए
+  arb: نَائِمِينَ, نِيَامًا
+  kor: 자고-있는, 자고–있는
+  swa: wamelala, mmelala
+
+### Sense 69744 (3 occurrences)
+Grammar: V-PIA-3S
+  eng: sleeps
+  spa: duerme
+  hin: सोती–है, सो–रही–है
+  arb: نائِمَةٌ, تَنامُ
+  kor: 잠자고–있다, 자고–있다., 자고–있다
+  swa: analala., amelala., amelala
+
+### Sense 69745 (2 occurrences)
+Grammar: V-PIA-2P
+  eng: Sleep
+  spa: Dormid
+  hin: सोते–हो
+  arb: نَامُوا
+  kor: 자라, 자고-있느냐
+  swa: Laleni, Bado–mmelala
+
+### Sense 69746 (2 occurrences)
+Grammar: V-PPA-VMS,V-PPA-NMP
+  eng: sleeping
+  spa: que–duermen, durmiendo
+  hin: सोने-वअले
+  arb: النّائِمونَ, النائِمُ
+  kor: 잠자는–자들은, 자는–자야
+  swa: wanaolala, ulalave
+
+### Sense 69747 (2 occurrences)
+Grammar: V-PSA-1P
+  eng: we–sleep, let–us–sleep
+  spa: durmamos
+  hin: सोएइन
+  arb: نِمْنا, نَنامَ
+  kor: 잠자든, 우리가–잠자지–말자
+  swa: tunalala, lale
+
+### Sense 69748 (1 occurrences)
+Grammar: V-PIA-2S
+  eng: are-you-sleeping
+  spa: duermes
+  hin: सोते–हो
+  arb: أَنَائِمٌ
+  kor: 자고-있느냐
+  swa: umelala
+
+### Sense 69749 (1 occurrences)
+Grammar: V-IIA-3S
+  eng: was-sleeping
+  spa: dormía
+  hin: सोता–था
+  arb: كانَ–نائِمًا
+  kor: 주무시고–있었다
+  swa: alikuwa-amelala.
+
+### Sense 69750 (1 occurrences)
+Grammar: V-PIA-2P
+  eng: are-you-sleeping
+  spa: dormís
+  hin: सोते–हो
+  arb: تَنامونَ
+  kor: 자느냐
+  swa: mmelala
+
+### Sense 69751 (1 occurrences)
+Grammar: V-PPA-NMS
+  eng: sleeping
+  spa: durmiendo
+  hin: सोता–हुआ
+  arb: نائِمًا
+  kor: 주무시는
+  swa: amelala.
+
+### Sense 69752 (1 occurrences)
+Grammar: V-PIA-3P
+  eng: sleep
+  spa: duermen
+  hin: सोते-हैन
+  arb: يَنامونَ
+  kor: 잠잔다
+  swa: wanalala
+
+### Sense 69753 (1 occurrences)
+Grammar: V-IIA-3P
+  eng: were–sleeping
+  spa: dormían
+  hin: सो–गईं
+  arb: نِمْنَ
+  kor: 잠들었다
+  swa: walilala
+
+### Sense 69754 (1 occurrences)
+Grammar: V-PSA-3S
+  eng: he-sleeps
+  spa: duerma
+  hin: सोता–हो
+  arb: يَنامُ
+  kor: 자고
+  swa: akalala,
+
+### Sense 69755 (1 occurrences)
+Grammar: V-PNA
+  eng: sleeping
+  spa: dormir
+  hin: सोते–हुए
+  arb: نَومِ
+  kor: 잠자는–동안
+  swa: kulala
+
+## Task
+
+Group these 13 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

@@ -1,0 +1,153 @@
+# Sense Merge Task for G1166
+
+Lemma: G1166 (POS: V-AMA-2P)
+Total occurrences: 33
+Current sense count: 14
+
+This Hebrew/Greek lemma has been over-split into 14 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 64996 (6 occurrences)
+Grammar: V-AIA-3S
+  eng: showed, he-showed, he–showed
+  spa: mostró
+  hin: दिखाया, दिखाए, उसने–दिखाया
+  arb: أَراني, أَرَاهُمْ, أَرَانِي
+  kor: 보여주셨다, 그가–보여주었다, 보여줬다
+  swa: amenionyesha,, aliwaonyesha, alinionyesha
+
+### Sense 64997 (5 occurrences)
+Grammar: V-AMA-2S
+  eng: show, Show
+  spa: muestra, muéstrame
+  hin: दिखा, अपने–आप–को
+  arb: أَرِ, أَرِهِ, أَرِنَا
+  kor: 보여라, 보이라, 보여주소서
+  swa: jionyeshe, tuonyeshe, nionyeshe
+
+### Sense 64998 (5 occurrences)
+Grammar: V-ASA-1S,V-FIA-1S
+  eng: I–will–show, I-will-show, will–show
+  spa: mostraré, te–mostraré
+  hin: दिखाऊँगा, मैं–दिखाऊँगा
+  arb: سَأُريكَ, أُرِيكَ, أُريكَ
+  kor: 보여주겠다, 보여줄–것이니, 보여주리라
+  swa: nitakuonyesha
+
+### Sense 64999 (4 occurrences)
+Grammar: V-FIA-3S
+  eng: will-show, will–show
+  spa: mostrará
+  hin: दिखाएगा, दिखअयेग
+  arb: سَيُظْهِرُهُ, سَيُرِيهِ, سَيُرِيكُمَا
+  kor: 보이시리라, 보여줄–것이다, 보여줄-것이다
+  swa: atawaonyesha, ataonyesha, atamwonyesha
+
+### Sense 65000 (3 occurrences)
+Grammar: V-PNA,V-ANA
+  eng: to-show, to–show
+  spa: mostrar, para–mostrar
+  hin: दिखाने–के–लिए, दिखन, जो
+  arb: يُظْهِرُ, لِيُرِيَ, لِيُريَ
+  kor: 보여주려고, 보여주기–위해, 보여–주시기를
+  swa: kuonyesha, kuwaonyesha
+
+### Sense 65001 (2 occurrences)
+Grammar: V-PIA-3S
+  eng: shows
+  spa: muestra
+  hin: दिखाता–है
+  arb: يُرِيهِ, أَرَاهُ
+  kor: 보여준다, 보여주신다
+  swa: anamwonyesha
+
+### Sense 65002 (1 occurrences)
+Grammar: V-PIA-1S
+  eng: I-show
+  spa: muestro
+  hin: दिखाता–हूँ
+  arb: أُريكُم
+  kor: 보이노라
+  swa: nawaonyesha.
+
+### Sense 65003 (1 occurrences)
+Grammar: V-PPA-GMS
+  eng: showing
+  spa: mostrándome
+  arb: الَّذي أَراني
+  kor: 보여주는
+  swa: aliyenionyesha
+
+### Sense 65004 (1 occurrences)
+Grammar: V-AMA-2S
+  eng: Show
+  spa: Muestra
+  hin: दिखा
+  arb: أَرِنَا
+  kor: 보여주라
+  swa: Tuonyeshe
+
+### Sense 65005 (1 occurrences)
+Grammar: V-AMA-2P
+  eng: Show
+  spa: Mostrad
+  hin: दिखाओ
+  arb: أَروني
+  kor: 보이라
+  swa: Nionyesheni
+
+### Sense 65006 (1 occurrences)
+Grammar: V-AIA-1S
+  eng: I–showed
+  spa: mostré
+  hin: दिखाए
+  arb: أَرَيتُ
+  kor: 보여–주었다
+  swa: nimewaonyesha
+
+### Sense 65007 (1 occurrences)
+Grammar: V-AMA-3S
+  eng: let–show
+  spa: muestre
+  hin: दिखाए
+  arb: لِيُظهِر
+  kor: 보여라
+  swa: aonyeshe
+
+### Sense 65008 (1 occurrences)
+Grammar: V-PIA-2S
+  eng: show-you
+  spa: muestras
+  hin: दिखाता–है
+  arb: تُرِينَا
+  kor: 보여주느냐
+  swa: unatuonyesha
+
+### Sense 65009 (1 occurrences)
+Grammar: V-APP-AMS
+  eng: having-been-shown
+  spa: mostrado
+  hin: दिखाए–गए
+  arb: المُرَاأى
+  kor: 보여진
+  swa: ulioonyeshwa
+
+## Task
+
+Group these 14 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

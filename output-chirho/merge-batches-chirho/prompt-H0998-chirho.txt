@@ -1,0 +1,154 @@
+# Sense Merge Task for H0998
+
+Lemma: H0998 (POS: N-fsc)
+Total occurrences: 38
+Current sense count: 14
+
+This Hebrew/Greek lemma has been over-split into 14 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 86416 (21 occurrences)
+Grammar: N-fs
+  eng: understanding, meaning, is–understanding
+  spa: entendimiento, es–entendimiento
+  hin: समझ, समझ–का, समझ–के
+  arb: فَهْمًا, فَهْمٍ, الْفِطْنَةِ
+  kor: 분별–을, 이해–를, 분별을
+  swa: ufahamu, ni–ufahamu, akili
+
+### Sense 86417 (5 occurrences)
+Grammar: Conj-w | N-fs
+  eng: and–understanding
+  spa: y–entendimiento, y-de-entendimiento
+  hin: और–समझ, और–समझ–की, और–बुद्धि
+  arb: وَ–فَهْمًا, وَ–فَهْمٌ, وَ–بِصِيرَةً
+  kor: 그리고–분별력, 명철의, 그리고–분별력을
+  swa: na–ufahamu, na-ufahamu
+
+### Sense 86418 (1 occurrences)
+Grammar: Prep-m | N-fsc | 1cs
+  eng: from–my–understanding
+  spa: de–mi–entendimiento
+  hin: मेरी–समझ–से
+  arb: مِنْ–فَهْمِي
+  kor: 나의–분별력에서
+  swa: kutoka–ufahamu–wangu
+
+### Sense 86419 (1 occurrences)
+Grammar: Art, Prep-m | N-fsc | 2ms
+  eng: is–it–by–your–understanding
+  spa: ¿Por–tu–entendimiento
+  hin: क्या–तेरी–समझ–से
+  arb: هَلْ–مِنْ–فِطْنَتِكَ
+  kor: 네–분별–로
+  swa: je–ni–kwa–ufahamu–wako
+
+### Sense 86420 (1 occurrences)
+Grammar: N-fsc | 2ms
+  eng: your–own–understanding
+  spa: tu–inteligencia
+  hin: समझ–अपनी–पर
+  arb: فَهْمِكَ
+  kor: 네–분별–에
+  swa: ufahamu–wako
+
+### Sense 86421 (1 occurrences)
+Grammar: Conj-w | N-fsc
+  eng: and–the–understanding
+  spa: y–entendimiento–de
+  hin: और–समझ
+  arb: وَ–فِطْنَةُ
+  kor: 그리고–명철이
+  swa: na–ufahamu
+
+### Sense 86422 (1 occurrences)
+Grammar: N-fsc
+  eng: understanding–of
+  spa: entendimiento–de
+  hin: समझ
+  arb: فَهْمُ
+  kor: 분별력이
+  swa: ufahamu–wa
+
+### Sense 86423 (1 occurrences)
+Grammar: Prep-l, Art | N-fs
+  eng: for–discernment
+  spa: a–la–inteligencia
+  hin: समझ–के–लिए
+  arb: لِلْفِطْنَةِ
+  kor: 분별–을–위해
+  swa: kwa–ufahamu
+
+### Sense 86424 (1 occurrences)
+Grammar: Prep-l, Art | N-fs
+  eng: to–understanding
+  spa: a–la–inteligencia
+  hin: समझ–को
+  arb: لِلْفَهْمِ
+  kor: 분별–에게
+  swa: ufahamu
+
+### Sense 86425 (1 occurrences)
+Grammar: N-fs
+  eng: understanding
+  spa: entendimiento
+  hin: समझ–से
+  arb: فَهْمًا
+  kor: 분명히
+  swa: kwa–ufahamu
+
+### Sense 86426 (1 occurrences)
+Grammar: Conj-w | N-fsc | 2mp
+  eng: and–your–understanding
+  spa: y–vuestro–entendimiento
+  hin: तुम्हारी–बुद्धि
+  arb: وَفِطْنَتُكُمْ
+  kor: 그리고–너희의–분별이다
+  swa: na–ufahamu–wenu
+
+### Sense 86427 (1 occurrences)
+Grammar: Prep-m | N-fsc | 2ms
+  eng: from–your–understanding
+  spa: de–tu–entendimiento
+  hin: समझ–अपनी–से
+  arb: مِنْ–فَهْمِكَ
+  kor: 분별력–에서–너–의
+  swa: kutoka–kwa–ufahamu–wako
+
+### Sense 86428 (1 occurrences)
+Grammar: Prep-b, Art | N-fs
+  eng: in–understanding
+  spa: en–entendimiento
+  hin: समझ–में
+  arb: فَهْمًا.
+  kor: 분별을
+  swa: ufahamu
+
+### Sense 86429 (1 occurrences)
+Grammar: N-fp
+  eng: of–understanding
+  spa: entendimiento
+  hin: समझ–वाली
+  arb: فِطْنَةٍ
+  kor: 분별의
+  swa: wenye–ufahamu
+
+## Task
+
+Group these 14 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

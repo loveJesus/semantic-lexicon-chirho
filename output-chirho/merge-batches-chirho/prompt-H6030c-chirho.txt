@@ -1,0 +1,145 @@
+# Sense Merge Task for H6030c
+
+Lemma: H6030c (POS: V-Piel-Imp-mp)
+Total occurrences: 14
+Current sense count: 13
+
+This Hebrew/Greek lemma has been over-split into 13 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 125228 (2 occurrences)
+Grammar: V-Qal-Inf
+  eng: singing-of
+  spa: responder–de
+  hin: पुकारने–की
+  arb: صُراخِ
+  kor: 외치는
+  swa: ya–kupiga–kelele–ya–
+
+### Sense 125229 (1 occurrences)
+Grammar: Conj-w | V-Qal-ConjPerf-3cp
+  eng: and–they–will–raise
+  spa: y–levantarán
+  hin: और–वे–उठाएँगे
+  arb: وَيَهْتِفُونَ
+  kor: 그리고–외치리라–그들이
+  swa: na–watapiga–kelele
+
+### Sense 125230 (1 occurrences)
+Grammar: V-Qal-Imperf-3mp
+  eng: they-sang
+  spa: cantaban–
+  hin: गअते-थे–
+  arb: غَنَّوا
+  kor: 노래하였던–
+  swa: waliimba
+
+### Sense 125231 (1 occurrences)
+Grammar: Conj-w | V-Qal-ConsecImperf-3f
+  eng: and–answered
+  spa: Y–respondió
+  hin: और–गाया
+  arb: وَ–أَجَابَتْ
+  kor: 그리고–응답하였다
+  swa: Na–akawajibu
+
+### Sense 125232 (1 occurrences)
+Grammar: V-Piel-Inf
+  eng: singing
+  spa: cantar
+  hin: गाने
+  arb: غِناءٍ
+  kor: 노래하는
+  swa: ya–kuimba
+
+### Sense 125233 (1 occurrences)
+Grammar: V-Piel-Imp-mp
+  eng: sing
+  spa: cantadle
+  hin: गाओ–
+  arb: غَنِّوا–
+  kor: 노래하라–
+  swa: imbieni–
+
+### Sense 125234 (1 occurrences)
+Grammar: V-Qal-Imperf-3mp
+  eng: they–sing
+  spa: respondían
+  hin: गअते-हैन
+  arb: يُرَنِّمُونَ
+  kor: 노래하느냐
+  swa: walijibu
+
+### Sense 125235 (1 occurrences)
+Grammar: V-Qal-Imperf.Jus-3fs
+  eng: may–sing
+  spa: Responderá
+  hin: गाए
+  arb: لِيَنْطِقْ
+  kor: 말하리라
+  swa: iimbe
+
+### Sense 125236 (1 occurrences)
+Grammar: V-Qal-Imp-mp
+  eng: sing
+  spa: cantad
+  hin: उत्तर–दो–
+  arb: غَنُّوا–
+  kor: 노래하라
+  swa: imbeni–
+
+### Sense 125237 (1 occurrences)
+Grammar: V-Qal-Imp-mp
+  eng: sing
+  spa: Cantad
+  hin: गाओ
+  arb: رَنِّمُوا
+  kor: 노래하라
+  swa: imbeni
+
+### Sense 125238 (1 occurrences)
+Grammar: Conj-w | V-Qal-ConsecImperf-3f
+  eng: and–answered
+  spa: Y–respondían
+  hin: और-गअयेएन
+  arb: وَ–أَجَابَتِ
+  kor: 그리고–대답했다
+  swa: na–wakajibu
+
+### Sense 125239 (1 occurrences)
+Grammar: V-Qal-Imperf-3ms
+  eng: he–will–answer
+  spa: responderá
+  hin: उत्तर–देगा
+  arb: يُجِيبُ
+  kor: 대답하시리라
+  swa: atajibu
+
+### Sense 125240 (1 occurrences)
+Grammar: Conj-w | V-Qal-ConsecImperf-3m
+  eng: and–answered
+  spa: Y–respondieron
+  hin: और–उन्होंने–बारी–बारी–गाया
+  arb: وَ–أَجَابُوا
+  kor: 그리고–답하였다
+  swa: na–wakajibu
+
+## Task
+
+Group these 13 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

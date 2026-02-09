@@ -1,0 +1,126 @@
+# Sense Merge Task for H5399
+
+Lemma: H5399 (POS: Prep-m)
+Total occurrences: 12
+Current sense count: 11
+
+This Hebrew/Greek lemma has been over-split into 11 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 119604 (2 occurrences)
+Grammar: Prep-b, Art | N-ms
+  eng: at-twilight
+  spa: al–anochecer
+  hin: बन्नेशेफ
+  arb: في–العَتْمَةِ
+  kor: 어스름에
+  swa: wakati–wa–jioni
+
+### Sense 119605 (1 occurrences)
+Grammar: N-msc | 3ms
+  eng: its–twilight
+  spa: su–crepúsculo
+  hin: उसके–गोधूलि–के
+  arb: غَسَقِهِ
+  kor: 그것의–새벽의
+  swa: jioni–yake
+
+### Sense 119606 (1 occurrences)
+Grammar: Prep-b, Art | N-ms
+  eng: in–the–twilight
+  spa: en-el-crepúsculo
+  hin: संध्या–तक
+  arb: فِي–المَسَاءِ
+  kor: 저녁–에
+  swa: jioni
+
+### Sense 119607 (1 occurrences)
+Grammar: N-msc
+  eng: twilight–of
+  spa: crepúsculo–de
+  hin: संध्या
+  arb: الْغَسَقِ
+  kor: 황혼을
+  swa: la–jioni
+
+### Sense 119608 (1 occurrences)
+Grammar: Prep-m, Art | N-ms
+  eng: from–the–twilight
+  spa: desde–el–crepúsculo
+  hin: शअम-से
+  arb: مِن–الغَسَقِ
+  kor: 에서–그–황혼
+  swa: kutoka–jioni
+
+### Sense 119609 (1 occurrences)
+Grammar: Prep-k, Art | N-ms
+  eng: as–in–twilight
+  spa: como–en–el–crepúsculo
+  hin: शामकी–तरह
+  arb: كَ–الْغَسَقِ
+  kor: 황혼같이–
+  swa: kama–gizani
+
+### Sense 119610 (1 occurrences)
+Grammar: N-ms
+  eng: twilight
+  spa: crepúsculo
+  hin: संध्या–के
+  arb: الْعَتْمَةِ
+  kor: 황혼의
+  swa: ya–giza
+
+### Sense 119611 (1 occurrences)
+Grammar: Prep-b, Art | N-ms
+  eng: dawn
+  spa: al–alba
+  arb: بِالفَجْرِ
+  kor: 새벽–에
+  swa: alfajiri
+
+### Sense 119612 (1 occurrences)
+Grammar: Prep-b | N-ms
+  eng: at–twilight
+  spa: en–crepúsculo
+  hin: गोधूलि–में–
+  arb: فِي–الغَسَقِ–
+  kor: 황혼–에
+  swa: wakati–wa–jioni
+
+### Sense 119613 (1 occurrences)
+Grammar: N-ms
+  eng: twilight
+  spa: el–crepúsculo
+  hin: सांझ
+  arb: الشَّفَقَ
+  kor: 어스름을
+  swa: giza–la–jioni
+
+### Sense 119614 (1 occurrences)
+Grammar: N-ms
+  eng: dawn
+  spa: el–crepúsculo.
+  hin: गोधूलि
+  arb: الغَسَقِ
+  kor: 황혼
+  swa: giza
+
+## Task
+
+Group these 11 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

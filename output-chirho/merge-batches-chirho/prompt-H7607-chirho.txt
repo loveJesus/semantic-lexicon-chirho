@@ -1,0 +1,145 @@
+# Sense Merge Task for H7607
+
+Lemma: H7607 (POS: N-msc)
+Total occurrences: 16
+Current sense count: 13
+
+This Hebrew/Greek lemma has been over-split into 13 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 137566 (3 occurrences)
+Grammar: N-msc
+  eng: relative-of
+  spa: carne-de
+  hin: रक्त–सम्बन्धी
+  arb: قَرِيبَةُ, قَرِيبِ
+  kor: 살–의
+  swa: jamaa
+
+### Sense 137567 (2 occurrences)
+Grammar: N-ms
+  eng: meat
+  spa: carne
+  hin: माँस
+  arb: لَحْمًا
+  kor: 고기–를
+  swa: nyama
+
+### Sense 137568 (1 occurrences)
+Grammar: N-msc | 3ms
+  eng: his–own–flesh
+  spa: carne–de–él
+  hin: शरीर–को
+  arb: لَحْمِهِ
+  kor: 그–의–살–을
+  swa: mwili–wake
+
+### Sense 137569 (1 occurrences)
+Grammar: N-msc | 3ms
+  eng: relative-his
+  spa: pariente–cercano
+  hin: अपने–रक्त–सम्बन्धी
+  arb: قَرِيبَتِهِ
+  kor: 그의–살
+  swa: jamaa–yake
+
+### Sense 137570 (1 occurrences)
+Grammar: Conj-w | N-msc | 1cs
+  eng: and–my–flesh
+  spa: y–mi–carne
+  hin: और–मेरी–देह
+  arb: وَلَحْمِي
+  kor: 그리고–살이–나의
+  swa: na–mwili–wangu
+
+### Sense 137571 (1 occurrences)
+Grammar: Prep-l | N-msc | 3ms
+  eng: his–relative
+  spa: su–pariente–cercano
+  hin: अपने–निकट–संबंधी
+  arb: لِ–قَرِيبِهِ
+  kor: 에게–그의–살
+  swa: jamaa–yake
+
+### Sense 137572 (1 occurrences)
+Grammar: Conj-w | N-msc | 2ms
+  eng: and–your–body
+  spa: y–tu–cuerpo
+  hin: और–मांस–तेरा
+  arb: وَ–جِسْمِكَ
+  kor: 그리고–네–몸–이
+  swa: na–nguvu–yako
+
+### Sense 137573 (1 occurrences)
+Grammar: N-msc | 1cs
+  eng: my–flesh
+  spa: mi–carne
+  hin: मेरा–शरीर
+  arb: لَحْمي
+  kor: 나–의–육체–가
+  swa: mwili-wangu
+
+### Sense 137574 (1 occurrences)
+Grammar: Conj-w | N-msc | 3mp
+  eng: and–their–flesh
+  spa: y–su–carne
+  hin: और–उन–का–मांस
+  arb: وَ–لَحْمَهُمْ
+  kor: 그리고–살–그들의–를
+  swa: na–nyama–yao
+
+### Sense 137575 (1 occurrences)
+Grammar: N-msc | 3fs
+  eng: her-food
+  spa: su–alimento
+  hin: भोजन–उसका
+  arb: طَعامَها
+  kor: 그녀의–음식을
+  swa: chakula–chake
+
+### Sense 137576 (1 occurrences)
+Grammar: Prep-l | N-msc | 3ms
+  eng: to-his-relative
+  spa: a–pariente–de–él
+  hin: रिश्तेदार–उसके
+  arb: لِـ–قَرِيبِهِ
+  kor: 그–가까운–친척–에게
+  swa: kwa–jamaa–yake
+
+### Sense 137577 (1 occurrences)
+Grammar: Prep-m | N-msc
+  eng: relative-of
+  spa: pariente–cercano–de
+  hin: से–शेष
+  arb: مِنْ–قَرِيبِ
+  kor: 가까운-것의
+  swa: kutoka–jamaa–wa–
+
+### Sense 137578 (1 occurrences)
+Grammar: N-msc
+  eng: flesh–of
+  spa: carne–de
+  hin: मांस
+  arb: لَحْمَ
+  kor: 살–을
+  swa: nyama–ya
+
+## Task
+
+Group these 13 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

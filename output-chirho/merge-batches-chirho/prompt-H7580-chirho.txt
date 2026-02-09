@@ -1,0 +1,162 @@
+# Sense Merge Task for H7580
+
+Lemma: H7580 (POS: V-Qal-Perf-1cs)
+Total occurrences: 21
+Current sense count: 15
+
+This Hebrew/Greek lemma has been over-split into 15 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 137247 (6 occurrences)
+Grammar: V-Qal-Imperf-3ms
+  eng: roars, will–roar, shall-roar
+  spa: rugirá
+  hin: गरजेगा, वह–गरजेगा
+  arb: يَزْأَرُ, يَزأَرُ
+  kor: 포효하시리라, 으르렁거리신다, 부르짖으시고
+  swa: atanguruma, ataguruma
+
+### Sense 137248 (2 occurrences)
+Grammar: V-Qal-Prtcpl-mp,V-Qal-Imperf-3mp
+  eng: roaring, roar
+  spa: rugen
+  hin: दहाड़ते–हैं, गरजते–हैं
+  arb: يَزْأَرُ, تَزأَر
+  kor: 포효하리라, 그들이–으르렌거린다
+  swa: wananguruma
+
+### Sense 137249 (1 occurrences)
+Grammar: V-Qal-Imperf-3ms
+  eng: roars–
+  spa: ruge–
+  hin: गरजती–है
+  arb: يُزَمْجِرُ–
+  kor: 포효한다
+  swa: inanguruma
+
+### Sense 137250 (1 occurrences)
+Grammar: V-Qal-InfAbs
+  eng: roaring
+  spa: Rugiendo
+  hin: गरजकर–
+  arb: زَأْرًا
+  kor: 포효하며–또–포효하며
+  swa: kunguruma
+
+### Sense 137251 (1 occurrences)
+Grammar: V-Qal-Prtcpl-ms
+  eng: roaring
+  spa: rugiendo
+  hin: दहाड़ता–हुआ
+  arb: زَائِرٌ
+  kor: 포효하는
+  swa: akinguruma
+
+### Sense 137252 (1 occurrences)
+Grammar: V-Qal-Prtcpl-mp
+  eng: roaring
+  spa: rugientes
+  hin: गरजने–वाले।
+  arb: زَائِرَةٌ
+  kor: 포효하는
+  swa: wanaonguruma
+
+### Sense 137253 (1 occurrences)
+Grammar: V-Qal-Imperf-3mp
+  eng: they–will–roar
+  spa: rugirán
+  hin: वे–गरजेंगे
+  arb: يَزْأَرُونَ
+  kor: 포효하리라–그들이
+  swa: watanguruma
+
+### Sense 137254 (1 occurrences)
+Grammar: V-Qal-Prtcpl-ms
+  eng: roaring
+  spa: rugiente
+  hin: गरजनेवाला
+  arb: زَائِرٍ
+  kor: 포효하는
+  swa: angurumaye
+
+### Sense 137255 (1 occurrences)
+Grammar: Conj-w | V-Qal-Prtcpl-ms
+  eng: and–roaring
+  spa: y–que–ruge
+  hin: और–गरजनेवाला
+  arb: وَزَائِرٌ
+  kor: 그리고–포효하는
+  swa: na–kunguruma
+
+### Sense 137256 (1 occurrences)
+Grammar: V-Qal-Perf-3cp
+  eng: they–roared
+  spa: Rugieron
+  arb: زَمْجَرَ
+  kor: 으르렑거렸나이다
+  swa: Wamenguruma
+
+### Sense 137257 (1 occurrences)
+Grammar: V-Qal-Imperf-3ms
+  eng: does-roar
+  spa: ¿Rugirá
+  hin: क्या–गरजता–है
+  arb: هَلْ–يَزْأَرُ
+  kor: 으르렁거릴–것인가
+  swa: Je–ataunguruma
+
+### Sense 137258 (1 occurrences)
+Grammar: Conj-w | V-Qal-ConjPerf-3ms
+  eng: [ketiv]
+  spa: [ketiv]
+  hin: [और–वह–दहाड़ेगा]
+  arb: (وَ–يَزأَرُ)
+  kor: (ketiv)
+  swa: [ana–nguruma]
+
+### Sense 137259 (1 occurrences)
+Grammar: V-Qal-Imperf-3ms
+  eng: he-roars
+  spa: (rugirá)
+  hin: (वह–दहाड़ेगा)
+  arb: (يَزأَرُ)
+  kor: 포효한다
+  swa: ananguruma
+
+### Sense 137260 (1 occurrences)
+Grammar: V-Qal-Perf-3ms
+  eng: has-roared
+  spa: rugió
+  hin: गरजा
+  arb: زَأَرَ
+  kor: 으르렁거렸다
+  swa: ameunguruma
+
+### Sense 137261 (1 occurrences)
+Grammar: V-Qal-Perf-1cs
+  eng: I–groan
+  spa: gimo
+  hin: चिल्लाया–मैंने
+  arb: زَأَرْتُ
+  kor: 부르짖었도다
+  swa: ninalia
+
+## Task
+
+Group these 15 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

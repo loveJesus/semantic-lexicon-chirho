@@ -1,0 +1,154 @@
+# Sense Merge Task for H4960
+
+Lemma: H4960 (POS: N-msc)
+Total occurrences: 46
+Current sense count: 14
+
+This Hebrew/Greek lemma has been over-split into 14 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 115238 (19 occurrences)
+Grammar: N-ms,N-msc
+  eng: a–feast, feast, a-feast
+  spa: banquete, banquete–de, un–banquete
+  hin: भोज
+  arb: وَلِيمَةً, وَلِيمَةَ, وَليمَةٌ
+  kor: 잔치를, 쟔치가, 잔치이니라
+  swa: karamu, kwa, ana–karamu
+
+### Sense 115239 (7 occurrences)
+Grammar: Art | N-ms
+  eng: the–feast, the–banquet
+  spa: el–banquete
+  hin: भोज–में, भोज
+  arb: الْوَلِيمَةِ, الْوَلِيمَةُ–الـ
+  kor: 그–잔치에, 그–잔치가
+  swa: karamu, kwa, alifanya
+
+### Sense 115240 (6 occurrences)
+Grammar: N-msc,N-ms
+  eng: banquet, feasting, feast
+  spa: banquete, banquete–de
+  hin: भोज–के, भोज–का, दावत–के
+  arb: وَلِيمَةٍ, وَلِيمَةِ, بَيْتِ
+  kor: 잔치의, 잔치와, 잔치–의
+  swa: karamu, ya–karamu, na–kutuma
+
+### Sense 115241 (2 occurrences)
+Grammar: N-mpc | 3ms
+  eng: his-banquet
+  spa: su–bebida
+  hin: उसके–पेय
+  arb: شُرْبِهِ
+  kor: 그의–음료의
+  swa: ya–kinywaji–chake
+
+### Sense 115242 (2 occurrences)
+Grammar: Art | N-ms
+  eng: the–feast
+  spa: el–banquete
+  hin: भोज–के
+  arb: الْوَلِيمَةِ–الـ, الوَليمَةِ
+  kor: 그–잔치의
+  swa: karamu
+
+### Sense 115243 (2 occurrences)
+Grammar: Prep-b | N-msc
+  eng: at–feast-of, at–banquet-of
+  spa: en–banquete–de
+  hin: भोज–में
+  arb: فِي–وَلِيمَةِ
+  kor: 에–잔치
+  swa: katika–karamu
+
+### Sense 115244 (1 occurrences)
+Grammar: Prep-k | N-msc
+  eng: like–feast–of
+  spa: como–banquete–de
+  hin: भोज–की–तरह
+  arb: كَوَليمَةِ
+  kor: 같은–쟔치
+  swa: kama–karamu–ya
+
+### Sense 115245 (1 occurrences)
+Grammar: Prep-m | N-msc
+  eng: from–banquet-of
+  spa: de–banquete–de
+  hin: भोज–से
+  arb: مِنْ–وَلِيمَةِ
+  kor: 에서–잔치
+  swa: kutoka–karamu
+
+### Sense 115246 (1 occurrences)
+Grammar: N-mpc | 3mp
+  eng: their–feasts
+  spa: en-sus-banquetes
+  hin: उनकी–दावतों–में
+  arb: وَلَائِمُهُم
+  kor: 그들의–잔치–에
+  swa: karamu–zao
+
+### Sense 115247 (1 occurrences)
+Grammar: N-mpc | 3mp
+  eng: their–feast
+  spa: su–banquete
+  hin: उनकी–दावत
+  arb: وَلِيمَتَهُمْ
+  kor: 잔치를–그들의
+  swa: karamu–yao
+
+### Sense 115248 (1 occurrences)
+Grammar: Conj-w | N-ms
+  eng: and–drink
+  spa: y–bebida
+  hin: और–पानी
+  arb: وَ–شَرَابًا
+  kor: 그리고–마실것
+  swa: na–kinywaji
+
+### Sense 115249 (1 occurrences)
+Grammar: N-mpc | 3mp
+  eng: their-drink
+  spa: su–bebida
+  hin: उनके–पेय
+  arb: شُرْبِهِمْ
+  kor: 그들의–음료의
+  swa: ya–kinywaji–chao
+
+### Sense 115250 (1 occurrences)
+Grammar: Conj-w | N-ms
+  eng: and–banquet
+  spa: y–banquete
+  hin: और–भोज
+  arb: وَ‒وَلِيمَةً
+  kor: 그리고–잔치와
+  swa: sehemu
+
+### Sense 115251 (1 occurrences)
+Grammar: N-mpc | 2mp
+  eng: your-drink
+  spa: vuestra–bebida
+  hin: तुम्हारे–पेय
+  arb: شَرَابَكُمْ
+  kor: 너희의–음료를
+  swa: kinywaji–chenu
+
+## Task
+
+Group these 14 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

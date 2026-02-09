@@ -1,0 +1,127 @@
+# Sense Merge Task for H5680
+
+Lemma: H5680 (POS: N-proper-mp)
+Total occurrences: 34
+Current sense count: 11
+
+This Hebrew/Greek lemma has been over-split into 11 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 122311 (9 occurrences)
+Grammar: Art | N-proper-mp
+  eng: the–Hebrews
+  spa: los–hebreos
+  hin: इब्रानियों–का, इब्रीयõ–का, इब्रीयõ–के
+  arb: الْعِبْرَانِيِّينَ, الْ–عِبْرَانِيِّينَ
+  kor: 그–히브리인들의, 히브리인들의, 히브리인들과
+  swa: wa–Waebrania, nchi–ya–Wiebrania, Wiebrania
+
+### Sense 122312 (6 occurrences)
+Grammar: N-proper-ms,N-proper-mp
+  eng: Hebrew, a–Hebrew
+  spa: hebreo, hebreos
+  hin: इब्री
+  arb: عِبْرَانِيٌّ, عِبْرَانِيَّانِ, عِبْرَانِيٍّ
+  kor: 히브리인, 히브리, 히브리–사람
+  swa: Mwebrania, Waebrania, Miebrania
+
+### Sense 122313 (5 occurrences)
+Grammar: Art | N-proper-mp,N-proper-mp
+  eng: the–Hebrews, Hebrews
+  spa: los–hebreos, hebreos
+  hin: इब्री, इब्रि, इब्रानियों–के
+  arb: الـ–عِبْرَانِيُّونَ, عِبْرَانِيُّونَ, الـ–عِبْرَانِيِّينَ
+  kor: 히브리인들이, 그–히브리인들이, 그–히브리인들의
+  swa: Waebrania
+
+### Sense 122314 (3 occurrences)
+Grammar: Art | N-proper-ms
+  eng: the–Hebrew
+  spa: el–hebreo
+  hin: इब्री
+  arb: الْعِبْرِيَّ, الْعِبْرَانِيُّ
+  kor: 히브리인, 그–히브리–사람이나
+  swa: Mwebrania
+
+### Sense 122315 (2 occurrences)
+Grammar: Conj-w | N-proper-mp,Conj-w, Art | N-proper-mp
+  eng: and–the–Hebrews, and–Hebrews
+  spa: Y–los–hebreos, Y–hebreos
+  hin: और–इब्री
+  arb: وَ–عِبْرَانِيُّونَ, وَ–الـ–عِبْرَانِيُّونَ
+  kor: 그리고–히브리인들이, 그리고–그–히브리인들
+  swa: na–Waebrania
+
+### Sense 122316 (2 occurrences)
+Grammar: Art | N-proper-fp
+  eng: the–Hebrew-women
+  spa: las–hebreas
+  hin: इब्री-स्त्रियõ
+  arb: الْعِبْرَانِيَّاتِ
+  kor: 히브리–여인들을, 에게–너
+  swa: wanawake–Waebrania, Waebrania
+
+### Sense 122317 (2 occurrences)
+Grammar: Art | N-proper-fp
+  eng: the–Hebrew
+  spa: las–hebreas
+  hin: इब्री
+  arb: الْعِبْرَانِيَّتَيْنِ, الْعِبْرَانِيَّاتُ
+  kor: 히브리인들은, 히브리의
+  swa: wa–Waebrania, wanawake–Waebrania
+
+### Sense 122318 (2 occurrences)
+Grammar: Art | N-proper-ms
+  eng: the–Hebrew
+  spa: el–hebreo
+  hin: इव्रि, इब्री
+  arb: الْ–عِبْرِيَّ, الْ–عِبْرَانِيُّ
+  kor: 히브리
+  swa: Mwebrania, Miebrania
+
+### Sense 122319 (1 occurrences)
+Grammar: Prep-l | N-proper-mp
+  eng: the–Hebrews
+  spa: a–los–hebreos
+  hin: के–लिए–इब्रानियों
+  arb: لِـ–الـ–عِبْرَانِيِّينَ
+  kor: 그–히브리인들–에게
+  swa: kwa–Waebrania
+
+### Sense 122320 (1 occurrences)
+Grammar: Art | N-proper-fs
+  eng: the–Hebrew-woman
+  spa: la–hebrea
+  hin: इब्री–स्त्री
+  arb: الْعِبْرَانِيَّةُ
+  kor: 그–히브리–여인이
+  swa: mwanamke–Mwebrania
+
+### Sense 122321 (1 occurrences)
+Grammar: Conj-w, Art | N-proper-fs
+  eng: and–the–Hebrew–woman
+  spa: y–la–hebrea
+  hin: और–इब्रन
+  arb: وَالْعِبْرِيَّةَ
+  kor: 그리고–히브리인–여자
+  swa: na–Mwebrania
+
+## Task
+
+Group these 11 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

@@ -1,0 +1,163 @@
+# Sense Merge Task for G1520
+
+Lemma: G1520 (POS: Adj-DNS)
+Total occurrences: 350
+Current sense count: 15
+
+This Hebrew/Greek lemma has been over-split into 15 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 66471 (307 occurrences)
+Grammar: Adj-NNS,Adj-NFS,Adj-AFS,Adj-ANS,Adj-AMS,Adj-NMS,Adj-DFS,Adj-DMS,Adj-GFS,Adj-GMS,
+  eng: one, of–one, in-one
+  spa: uno, una, un
+  hin: एक, एक–ने, एक–से
+  arb: واحِدٌ, وَاحِدٌ, وَاحِدًا
+  kor: 하나, 한, 하나의
+  swa: mmoja, moja, kimoja
+
+### Sense 66472 (15 occurrences)
+Grammar: Adj-GMS,Adj-AMS,Adj-DMS
+  eng: one, to–one, to-one
+  spa: a–uno, uno, de–uno
+  hin: एक–को, एक–से, एक–को।
+  arb: وَاحِدًا, واحِدًا, بِوَاحِدٍ
+  kor: 하나를, 하나–에게, 하나
+  swa: mmoja, wa–mmoja, wao
+
+### Sense 66473 (8 occurrences)
+Grammar: Adj-AFS,Adj-DFS,Adj-NFS
+  eng: first, one
+  spa: primero, uno, primer
+  hin: पहले, पहली
+  arb: أَوَّلِ, الْأَوَّلِ, الأَوَّلُ
+  kor: 첫째, 하나가, 하나
+  swa: ya–kwanza, kwanza, wa–kwanza
+
+### Sense 66474 (6 occurrences)
+Grammar: Adj-NMS,Adj-NNS,Adj-ANS
+  eng: One, one
+  spa: Uno, Una, uno
+  hin: एक
+  arb: وَاحِدٌ, واحِدٌ, وَاحِدًا
+  kor: 하나이다, 하나의, 하나가
+  swa: Mmoja, ndiye, Kitu–kimoja
+
+### Sense 66475 (3 occurrences)
+Grammar: Adj-NNS,Adj-ANS,Adj-AFS
+  eng: one, first
+  spa: una
+  hin: एक, एक,
+  arb: وَاحِدَةٌ, واحِدًا, إِنذارٍ
+  kor: 하나, 한번
+  swa: moja, moja–moja
+
+### Sense 66476 (2 occurrences)
+Grammar: Adj-DMS,Adj-ANS
+  eng: –, on–each
+  spa: por–una, a–uno
+  hin: एक
+  arb: واحِدًا, فَوَاحِدَةً
+  kor: 하나–하나, 하나
+  swa: kila–kimoja, kila
+
+### Sense 66477 (1 occurrences)
+Grammar: Adj-ANS
+  eng: one–thing
+  spa: una-cosa
+  hin: एक–बात
+  arb: واحِد
+  kor: 하나를
+  swa: kitu–kimoja
+
+### Sense 66478 (1 occurrences)
+Grammar: Adj-AMS
+  eng: one
+  spa: otro
+  hin: एक
+  arb: الآخَرَ
+  kor: 하나를
+  swa: mwingine
+
+### Sense 66479 (1 occurrences)
+Grammar: Adj-DNS
+  eng: one
+  spa: uno
+  hin: एक–में
+  arb: واحِدَةٍ
+  kor: 하나에서,
+  swa: moja
+
+### Sense 66480 (1 occurrences)
+Grammar: Adj-NFS
+  eng: one
+  spa: una
+  hin: कहता–था
+  arb: وَاحِدَةٌ
+  kor: 하나–로
+  swa: moja
+
+### Sense 66481 (1 occurrences)
+Grammar: Adj-GNS
+  eng: of-one
+  spa: de–una
+  hin: एक–की
+  arb: بِواحِدٍ
+  kor: 하나이니라
+  swa: moja–tu
+
+### Sense 66482 (1 occurrences)
+Grammar: Adj-DFS
+  eng: by-one
+  spa: con–una
+  hin: एक
+  arb: بِوَاحِدَة
+  kor: 하나의
+  swa: kwa–moja
+
+### Sense 66483 (1 occurrences)
+Grammar: Adj-DMS
+  eng: to-one
+  spa: A–uno
+  hin: एक
+  arb: لِكُلِّ
+  kor: 한
+  swa: Lakini–kwa
+
+### Sense 66484 (1 occurrences)
+Grammar: Adj-GNS
+  eng: of-one
+  spa: de–uno
+  hin: एक
+  arb: واحِدٍ
+  kor: 하나의
+  swa: cha–kila
+
+### Sense 66485 (1 occurrences)
+Grammar: Adj-DFS
+  eng: in-one
+  spa: en–un
+  hin: एक
+  arb: في–يَومٍ–واحِدٍ
+  kor: 하루에
+  swa: siku
+
+## Task
+
+Group these 15 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

@@ -1,0 +1,127 @@
+# Sense Merge Task for H0834c
+
+Lemma: H0834c (POS: Prep-m | Pro-r)
+Total occurrences: 17
+Current sense count: 11
+
+This Hebrew/Greek lemma has been over-split into 11 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 84776 (3 occurrences)
+Grammar: Prep-m | Pro-r
+  eng: from–who, from–what, from–those–who
+  spa: de–quien, de–lo–que, de–los–que
+  hin: से–जो, जो, उससे–जो
+  arb: مِنَ–الَّذِينَ, مَا, عَمَّنْ
+  kor: 에서–그–를, 로부터–그–, 그것을–에서
+  swa: kutoka–nini, kutoka–miongoni–mwa–wale, kutoka–kwa-yeye
+
+### Sense 84777 (3 occurrences)
+Grammar: Prep-m | Pro-r
+  eng: from–what, from–which
+  spa: de–lo–que, de–lo-que, de-lo-que
+  hin: जो–से, उससे–जो, उसका हाथ
+  arb: مِمَّا, مِمّا
+  kor: 에서–그것, 에서–그–, 에게서-그것은
+  swa: kutoka–kile–ambacho, kutoka–ambaye
+
+### Sense 84778 (2 occurrences)
+Grammar: Prep-m | Pro-r
+  eng: than–whom, than-who
+  spa: que–los–que, que–los-que
+  hin: मेअशर, उनसे–जो
+  arb: مِنَ–الَّذينَ, مِمَّنْ–مِنَ
+  kor: 보다–그들–은, 보다–그들
+  swa: kuliko–wale
+
+### Sense 84779 (2 occurrences)
+Grammar: Conj-w, Prep-m | Pro-r
+  eng: and–from–which, and–from–that
+  spa: y–de–lo–que, y-de-lo-que
+  hin: और–उससे–जो
+  arb: وَ–مِمّا
+  kor: 그리고–에서–그–, 그리고–에서–그
+  swa: na–kutoka–kwa–vilivyokuwa, na–kutoka–ambaye
+
+### Sense 84780 (1 occurrences)
+Grammar: Prep-m | Pro-r
+  eng: than–those
+  spa: más–que–los–que
+  hin: उनसे–ज्यादा
+  arb: أَكثَرُ
+  kor: 보다
+  swa: kuliko–wale
+
+### Sense 84781 (1 occurrences)
+Grammar: Prep-m | Pro-r
+  eng: than–that
+  spa: más–que
+  hin: इससे–कि–
+  arb: إِلَّا–
+  kor: 그것–보다
+  swa: kuliko
+
+### Sense 84782 (1 occurrences)
+Grammar: Prep-m | Pro-r
+  eng: from–where
+  spa: de-donde
+  hin: जहा̃–से
+  arb: مِنْ–حَيْثُ
+  kor: –에서
+  swa: kutoka–mahali
+
+### Sense 84783 (1 occurrences)
+Grammar: Prep-m | Pro-r
+  eng: because
+  spa: de–que
+  hin: इससे–जो
+  arb: مِمَّا
+  kor: 에서
+  swa: kutoka–ambaye
+
+### Sense 84784 (1 occurrences)
+Grammar: Prep-m | Pro-r
+  eng: more–than
+  spa: más–de–lo–que
+  hin: उससे–जो
+  arb: مِمّا–
+  kor: 보다
+  swa: zaidi–ya
+
+### Sense 84785 (1 occurrences)
+Grammar: Prep-m | Pro-r
+  eng: from–whom
+  spa: de–aquel–que
+  hin: उसके
+  arb: مِنَ–الَّذِي
+  kor: 에서–누구에게서
+  swa: atamnyoshea
+
+### Sense 84786 (1 occurrences)
+Grammar: Prep-m | Pro-r
+  eng: Because
+  spa: desde–que
+  hin: जब–से
+  arb: لِأَنَّكَ
+  kor: 에서–그것
+  swa: Kwa–sababu
+
+## Task
+
+Group these 11 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

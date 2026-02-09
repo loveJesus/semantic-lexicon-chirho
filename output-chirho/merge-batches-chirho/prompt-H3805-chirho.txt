@@ -1,0 +1,118 @@
+# Sense Merge Task for H3805
+
+Lemma: H3805 (POS: Conj-w)
+Total occurrences: 24
+Current sense count: 10
+
+This Hebrew/Greek lemma has been over-split into 10 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 108017 (7 occurrences)
+Grammar: Art | N-fs
+  eng: the–capital
+  spa: el–capitel
+  hin: ह–कोतेरेत, कली–की, कली
+  arb: التَّاجِ, الـ–تَّاجِ
+  kor: 머리의, 머리장식의, 그–말단의
+  swa: taji, wa–taji, na–dhiraa
+
+### Sense 108018 (4 occurrences)
+Grammar: Prep-l, Art | N-fs
+  eng: for–the–capital
+  spa: para–el–capitel, del–capitel
+  hin: कली–के–लिए, कली–के
+  arb: لِ–الـ–تَّاجِ
+  kor: 머리에-대하여, 머리의
+  swa: kwa–taji, taji
+
+### Sense 108019 (4 occurrences)
+Grammar: Art | N-fp
+  eng: the–capitals
+  spa: los–capiteles
+  hin: कलियों–की, कलियों
+  arb: الـ–تَّاجَيْنِ, الـ–تِّيجَانَ
+  kor: 머리들의, 머리들을
+  swa: juu–ya, za–mataji, mataji
+
+### Sense 108020 (2 occurrences)
+Grammar: Conj-w | N-fp
+  eng: and–capitals
+  spa: Y–capiteles
+  hin: और–कलियाँ
+  arb: وَ–تِيجَانٌ
+  kor: 그리고-머리들이, 그리고-머리들은
+  swa: Na–mataji
+
+### Sense 108021 (2 occurrences)
+Grammar: Art | N-fp
+  eng: the–capitals
+  spa: los–capiteles
+  hin: कलशों
+  arb: التِّيجَانِ
+  kor: 그–기둥머리들
+  swa: ya–mataji
+
+### Sense 108022 (1 occurrences)
+Grammar: Conj-w | N-fs
+  eng: and–a–capital
+  spa: y–capitel
+  hin: और–कलस
+  arb: وَتَاجٌ
+  kor: 그리고–머리장식이
+  swa: Na–taji
+
+### Sense 108023 (1 occurrences)
+Grammar: N-fp
+  eng: capitals
+  spa: capiteles
+  hin: कलियों
+  arb: تَاجَيْنِ
+  kor: 머리들을
+  swa: mawili
+
+### Sense 108024 (1 occurrences)
+Grammar: Prep-l, Art | N-fp
+  eng: for–the–capitals
+  spa: para–los–capiteles
+  hin: कलियों–के–लिए
+  arb: لِ–الـ–تِّيجَانِ
+  kor: 머리들에-대하여
+  swa: juu–ya
+
+### Sense 108025 (1 occurrences)
+Grammar: Conj-w, Art | N-fp
+  eng: and–the–capitals
+  spa: y–los–capiteles
+  hin: और–कलशें
+  arb: وَ–التِّيجَانَ
+  kor: 그리고–그–기둥머리들
+  swa: na–mataji
+
+### Sense 108026 (1 occurrences)
+Grammar: Conj-w | N-fs
+  eng: and–capital
+  spa: y–capitel
+  hin: और–कोतेरेत
+  arb: وَتَاجٌ
+  kor: 그리고–말단이
+  swa: na–taji–
+
+## Task
+
+Group these 10 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

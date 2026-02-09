@@ -1,0 +1,154 @@
+# Sense Merge Task for H4962
+
+Lemma: H4962 (POS: Prep-m | N-mp)
+Total occurrences: 22
+Current sense count: 14
+
+This Hebrew/Greek lemma has been over-split into 14 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 115253 (3 occurrences)
+Grammar: N-mpc
+  eng: the–men–of, men–of
+  spa: los–hombres–de–, los–hombres–de, hombres–de–
+  hin: लोगों–ने, लोग, पुरुष
+  arb: رِجَالِ, رِجَالُ–, رِجالُ
+  kor: 사람들이, 사람들이–
+  swa: watu–wa, watu
+
+### Sense 115254 (3 occurrences)
+Grammar: N-mpc
+  eng: men-of, men–of
+  spa: pocos–de, hombres–de, hombres-de
+  hin: मनुष्य, पुरुष, थोड़े
+  arb: قَلِيلِي, رِجَالُ, رِجَالَ
+  kor: 적은–수의, 사람들이라, 사람들–의
+  swa: watu–wa
+
+### Sense 115255 (2 occurrences)
+Grammar: N-mp
+  eng: men
+  spa: varones
+  hin: पुरुष, और–स्त्रियों
+  arb: رِجَالًا
+  kor: 남자들을, 남자들
+  swa: wanaume
+
+### Sense 115256 (2 occurrences)
+Grammar: Prep-b | N-mpc
+  eng: with-few, in-few
+  spa: en–pocos–de, con–pocos–de
+  hin: में–थोड़े, पुरुषों–में
+  arb: بِ–عَدَدٍ
+  kor: (전)–적은–수–의
+  swa: watu–wachache, na–watu–wachache
+
+### Sense 115257 (2 occurrences)
+Grammar: Prep-m | N-mp
+  eng: from–men
+  spa: de–hombres
+  hin: से–लोगों
+  arb: مِنَ–النَّاسِ
+  kor: 사람들–에게서
+  swa: kutoka–kwa–watu, Kutoka–kwa–watu
+
+### Sense 115258 (2 occurrences)
+Grammar: N-mp,N-mpc
+  eng: men-of–, men
+  spa: a–los–hombres–de, a–los–hombres
+  hin: मनुष्यों–को
+  arb: النّاسَ, أَهْلَ
+  kor: 사람들–을–, 사람들–을
+  swa: watu–wa, watu
+
+### Sense 115259 (1 occurrences)
+Grammar: N-mpc | 2fs
+  eng: your–men
+  spa: Tus–hombres
+  hin: तेरे–पुरुष
+  arb: رِجَالُكِ
+  kor: 네–남자들이
+  swa: wanaume–wako
+
+### Sense 115260 (1 occurrences)
+Grammar: N-mpc
+  eng: men–of
+  spa: pocos-de
+  hin: पुरुषों–की
+  arb: مَتِي
+  kor: 적은
+  swa: watu
+
+### Sense 115261 (1 occurrences)
+Grammar: N-mpc
+  eng: O–men
+  spa: hombres
+  hin: पुरुषों
+  arb: يَا–رِجَالَ
+  kor: 사람들아
+  swa: watu
+
+### Sense 115262 (1 occurrences)
+Grammar: N-mp
+  eng: dying–ones
+  spa: los–moribundos
+  hin: मरने–वाले
+  arb: الْمُحْتَضَرُونَ
+  kor: 좽는–자들이
+  swa: wanaokufa
+
+### Sense 115263 (1 occurrences)
+Grammar: N-mpc | 3ms
+  eng: his–men
+  spa: sus–hombres
+  hin: उसके–पुरुष
+  arb: رِجَالُهُ
+  kor: 그의–사람들이
+  swa: watu–wake
+
+### Sense 115264 (1 occurrences)
+Grammar: N-mpc
+  eng: few
+  spa: pocos–de
+  hin: बचे–हुए
+  arb: عَدَدًا
+  kor: 사람들이
+  swa: watu–wachache
+
+### Sense 115265 (1 occurrences)
+Grammar: N-mpc
+  eng: men–of–
+  spa: hombres–de
+  hin: लोगों–
+  arb: رِجَالِ–
+  kor: 사람들–과–
+  swa: watu-wa
+
+### Sense 115266 (1 occurrences)
+Grammar: N-mpc
+  eng: few–in
+  spa: hombres–de
+  hin: थोड़े
+  arb: قليلينَ
+  kor: 사람들–이
+  swa: wachache
+
+## Task
+
+Group these 14 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

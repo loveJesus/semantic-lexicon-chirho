@@ -1,0 +1,127 @@
+# Sense Merge Task for H3028
+
+Lemma: H3028 (POS: Prep-b | N-fd)
+Total occurrences: 17
+Current sense count: 11
+
+This Hebrew/Greek lemma has been over-split into 11 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 100884 (2 occurrences)
+Grammar: N-fsc | 3ms,Prep-b | N-fsc | 3ms
+  eng: his–hand, His-hand
+  spa: su–mano
+  hin: उसका–हाथ, अपना–हाथ
+  arb: يَدَهُ
+  kor: 그–의–손, 그–손–을
+  swa: mkono–wake, mkono–Wake
+
+### Sense 100885 (2 occurrences)
+Grammar: Prep-b | N-fsc | 3ms
+  eng: in–His-hand, into–his-hand
+  spa: en–su–mano, en–mano–de–él
+  hin: उसके–हाथ–में–है, उसके–हाथ–में
+  arb: بِيَدِهِ
+  kor: 에–그의–손에, 그–의–손–에–(있고)
+  swa: mkononi–mwake
+
+### Sense 100886 (2 occurrences)
+Grammar: N-fsc
+  eng: hand-of–, hand-of
+  spa: mano–de, la–mano–de
+  hin: हाथ
+  arb: يَدِ–, يَدِ
+  kor: 손–
+  swa: mkono–wa–, mkono–wa
+
+### Sense 100887 (2 occurrences)
+Grammar: Prep-b | N-fsc | 2ms
+  eng: is–in–your–hand
+  spa: en–tu–mano
+  hin: तेरे–हाथ–में–है
+  arb: في–يَدِكَ
+  kor: 에–손–당신
+  swa: mkononi–mwako
+
+### Sense 100888 (2 occurrences)
+Grammar: Prep-b | N-fd
+  eng: by-hands
+  spa: con–manos
+  hin: हाथों–से
+  arb: بِ–أَيْدٍ
+  kor: 손들로
+  swa: mikono
+
+### Sense 100889 (2 occurrences)
+Grammar: N-fsd
+  eng: the-hand, hand
+  spa: mano, la–mano
+  hin: हाथ–की, हाथ
+  arb: الْيَدِ
+  kor: 손–의
+  swa: mkono
+
+### Sense 100890 (1 occurrences)
+Grammar: N-fsc | 2ms
+  eng: your-hand
+  spa: tu–mano
+  hin: तेरे–हाथ
+  arb: يَدِكَ
+  kor: 손–당신의
+  swa: mkono–wako
+
+### Sense 100891 (1 occurrences)
+Grammar: N-fpc | 1cs
+  eng: my-hands
+  spa: mis–manos?
+  hin: मेरे–हाथों
+  arb: يَدِي
+  kor: 손–나의
+  swa: mikononi–mwangu
+
+### Sense 100892 (1 occurrences)
+Grammar: Prep-b | N-fsc | 2ms
+  eng: into–your-hand
+  spa: en–tu–mano
+  hin: में–तेरे–हाथ
+  arb: بِ–يَدِ–كَ
+  kor: 손에–당신의
+  swa: mkononi–mwako
+
+### Sense 100893 (1 occurrences)
+Grammar: Prep-b | N-fsc
+  eng: into–hand–of
+  spa: en–mano–de
+  hin: हाथ–में
+  arb: بِ–يَد
+  kor: 에–손
+  swa: katika–mkono
+
+### Sense 100894 (1 occurrences)
+Grammar: Prep-b | N-fsc | 3mp
+  eng: in–their–hands
+  spa: en–sus–manos.
+  hin: उनके–हाथों–में
+  arb: بِ–أَيْدِيهِم
+  kor: 에–손들–그들
+  swa: mikononi–mwao
+
+## Task
+
+Group these 11 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

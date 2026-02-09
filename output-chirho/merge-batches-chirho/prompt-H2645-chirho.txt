@@ -1,0 +1,117 @@
+# Sense Merge Task for H2645
+
+Lemma: H2645 (POS: Conj-w | V-Piel-ConsecImperf-3ms | 3ms)
+Total occurrences: 12
+Current sense count: 10
+
+This Hebrew/Greek lemma has been over-split into 10 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 98344 (2 occurrences)
+Grammar: Conj-w | V-Piel-ConsecImperf-3
+  eng: and–he-overlaid-it
+  spa: y–la–cubrió
+  hin: और–मढ़ाया–उसे
+  arb: وَ–غَشَّاهُ
+  kor: 그리고–덮었다–그것–을
+  swa: na–akaipaka
+
+### Sense 98345 (2 occurrences)
+Grammar: V-Piel-Perf-3ms
+  eng: he-paneled, he-overlaid
+  spa: cubrió
+  hin: मढ़ाया, मढ़ाई
+  arb: غَشَّاهُ, غَشَّاهَا
+  kor: 덮었다
+  swa: alivifunika, aliifunika
+
+### Sense 98346 (1 occurrences)
+Grammar: V-Qal-Perf-3cp
+  eng: covered
+  spa: cubrieron
+  hin: ढके
+  arb: غَطَّوا
+  kor: 덮었다
+  swa: wamefunika
+
+### Sense 98347 (1 occurrences)
+Grammar: V-Qal-Perf-3cp
+  eng: was–covered
+  spa: fue–cubierto
+  hin: ढक–दिया–उन्होंने
+  arb: غُطِّيَ
+  kor: 덮였다
+  swa: wa–Hamani
+
+### Sense 98348 (1 occurrences)
+Grammar: Conj-w | V-Piel-ConsecImperf-3
+  eng: and–he-overlaid
+  spa: Y–cubrió
+  hin: और–मढ़ाया
+  arb: وَ–غَشَّى
+  kor: 그리고–덮었다
+  swa: na–akaifunika
+
+### Sense 98349 (1 occurrences)
+Grammar: Conj-w | V-Qal-QalPassPrtcpl-m
+  eng: and–covered
+  spa: y–cubierto
+  hin: और–ढके–हुए
+  arb: وَ–مُغَطَّى
+  kor: 그리고–가리운
+  swa: na–amefunika
+
+### Sense 98350 (1 occurrences)
+Grammar: V-Qal-QalPassPrtcpl-ms
+  eng: covered
+  spa: cubierta
+  hin: ढका–हुआ
+  arb: مُغَطّىً
+  kor: 덮여지고
+  swa: kimefunikwa
+
+### Sense 98351 (1 occurrences)
+Grammar: V-Nifal-Prtcpl-fs
+  eng: covered
+  spa: cubiertas
+  arb: مُغَشّاةٌ
+  kor: 덮인
+  swa: yamefunikwa
+
+### Sense 98352 (1 occurrences)
+Grammar: Conj-w | V-Qal-ConjPerf-3cp
+  eng: and–cover
+  spa: y–cubrieron
+  hin: और–ढांका
+  arb: وَ–غَطَّوْا
+  kor: 그리고–덮었다
+  swa: na–kufunika
+
+### Sense 98353 (1 occurrences)
+Grammar: V-Qal-Perf-3cp
+  eng: they–cover
+  spa: cubrieron
+  hin: ढांका
+  arb: غَطَّوْا
+  kor: 덮었다
+  swa: wakifunika
+
+## Task
+
+Group these 10 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

@@ -1,0 +1,118 @@
+# Sense Merge Task for G2816
+
+Lemma: G2816 (POS: V-FIA-3S)
+Total occurrences: 18
+Current sense count: 10
+
+This Hebrew/Greek lemma has been over-split into 10 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 70799 (4 occurrences)
+Grammar: V-FIA-3P
+  eng: will–inherit, will-inherit
+  spa: heredarán, heredarán?
+  hin: उत्तराधिकारी–होंगे, विरसित–करेनगे., मीरास–पाएँगे
+  arb: سَيَرِثونَ, يَرِثونَ, سَيَرِثُونَ
+  kor: 유업–받으리라, 유업–받을–것이다, 상속받지.
+  swa: watairithi, urithi, hawatarithi?
+
+### Sense 70800 (3 occurrences)
+Grammar: V-ANA,V-PNA
+  eng: to-inherit, to–inherit
+  spa: heredar, de–heredar
+  hin: वारिस–होना, पाना, उत्तराधिकारी–होने
+  arb: يَرِثَ, أَنْ–يَرِثوا
+  kor: 상속할, 상속하기, 상속–받기를
+  swa: kurithi
+
+### Sense 70801 (3 occurrences)
+Grammar: V-FIA-3S
+  eng: will-inherit
+  spa: heredará
+  hin: विरासत–में–पाएगा, विरस–पअयेग, अधिकअरि–होग
+  arb: يَرِثُ, يَرِثَ, سَيَرِثُ
+  kor: 상속할–것이다, 상속받지
+  swa: rithi, atarithi, Wengi
+
+### Sense 70802 (2 occurrences)
+Grammar: V-FIA-1S
+  eng: will-I-inherit
+  spa: heredaré
+  hin: पाऊँ
+  arb: أَرِثُ
+  kor: 상속할까요, 물려받으리이까
+  swa: nitaurithi
+
+### Sense 70803 (1 occurrences)
+Grammar: V-ASA-2P
+  eng: you–might–inherit
+  spa: heredéis
+  hin: पाओ
+  arb: تَرِثوا
+  kor: 상속하라
+  swa: murithe
+
+### Sense 70804 (1 occurrences)
+Grammar: V-ASA-1S
+  eng: I-may-inherit
+  spa: herede
+  hin: उत्तराधिकार–में–पाऊं
+  arb: أَرِثَ
+  kor: 상속하리라
+  swa: niurithi
+
+### Sense 70805 (1 occurrences)
+Grammar: V-AMA-2P
+  eng: inherit
+  spa: heredad
+  hin: मीरास–में–पाओ
+  arb: رِثُوا
+  kor: 상속하라
+  swa: rithi
+
+### Sense 70806 (1 occurrences)
+Grammar: V-PIA-3S
+  eng: inherits
+  spa: hereda
+  hin: वारिस–होता–है
+  arb: يَرِثُ
+  kor: 상속하지–않는니라
+  swa: haurithi
+
+### Sense 70807 (1 occurrences)
+Grammar: V-RIA-3S
+  eng: he–has–inherited
+  spa: ha–heredado
+  hin: पाया–है
+  arb: وَرِثَ
+  kor: 상속하셨느니라
+  swa: amelirithi
+
+### Sense 70808 (1 occurrences)
+Grammar: V-PPA-GMP
+  eng: inheriting
+  spa: que–heredan
+  hin: वारिस–होने–वाले
+  arb: يَرِثونَ
+  kor: 상속하는–자들의
+  swa: wanaorithi
+
+## Task
+
+Group these 10 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

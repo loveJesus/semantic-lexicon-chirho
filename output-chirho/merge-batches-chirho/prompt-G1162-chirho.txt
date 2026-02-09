@@ -1,0 +1,136 @@
+# Sense Merge Task for G1162
+
+Lemma: G1162 (POS: N-DFP)
+Total occurrences: 18
+Current sense count: 12
+
+This Hebrew/Greek lemma has been over-split into 12 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 64970 (2 occurrences)
+Grammar: N-NFS
+  eng: prayer
+  spa: súplica
+  hin: प्रार्थना
+  arb: طَلِبَتُكَ, طَلِبَةُ
+  kor: 간구는, 간구–가
+  swa: ombi, maombi
+
+### Sense 64971 (2 occurrences)
+Grammar: N-DFS
+  eng: prayer, by-prayer
+  spa: súplica
+  hin: प्रार्थना–में, प्रार्थना
+  arb: بِدُعائِهِمْ, الدُّعاءِ
+  kor: 기도에, 기도
+  swa: maombi,, kwa–maombi
+
+### Sense 64972 (2 occurrences)
+Grammar: N-GFS,N-DFS
+  eng: petition
+  spa: súplica
+  hin: विनति
+  arb: طِلبَةٍ
+  kor: 간구–를, 간구–로
+  swa: maombi
+
+### Sense 64973 (2 occurrences)
+Grammar: N-AFP
+  eng: prayers
+  spa: súplicas
+  hin: प्रार्थनाएं
+  arb: طِلْبَاتٍ, صَلَواتٍ
+  kor: 기도들을, 간구들과
+  swa: maombi
+
+### Sense 64974 (2 occurrences)
+Grammar: N-DFS,N-AFS
+  eng: prayer, petition
+  spa: súplica, ruego
+  hin: प्रार्थना, प्रअरथन
+  arb: طَلِبَةٍ, تَضَرُّعِهِم
+  kor: 간구
+  swa: maombi
+
+### Sense 64975 (2 occurrences)
+Grammar: N-AFP,N-DFP
+  eng: supplications
+  spa: súplicas
+  hin: विनतियोन, विनतियन
+  arb: طِلْباتٌ, الطِّلْباتِ
+  kor: 간구들에,, 간구들,
+  swa: maombi
+
+### Sense 64976 (1 occurrences)
+Grammar: N-NFS
+  eng: prayer
+  spa: oración
+  hin: प्रार्थना
+  arb: صَلاةُ
+  kor: 간구–가
+  swa: sala
+
+### Sense 64977 (1 occurrences)
+Grammar: N-AFS
+  eng: petition
+  spa: petición
+  hin: प्रअरथन
+  arb: طَلِبَةَ
+  kor: 간구를
+  swa: maombi
+
+### Sense 64978 (1 occurrences)
+Grammar: N-DFS
+  eng: petition
+  spa: súplica
+  hin: विन्ति,
+  arb: الطِّلْبَةِ
+  kor: 간구,
+  swa: dua
+
+### Sense 64979 (1 occurrences)
+Grammar: N-GFS
+  eng: petition
+  spa: súplica
+  hin: प्रअरथन,
+  arb: طَلِبَةٍ
+  kor: 간구,
+  swa: maombi
+
+### Sense 64980 (1 occurrences)
+Grammar: N-DFP
+  eng: prayers
+  spa: súplicas
+  hin: प्रार्थनाओं–से
+  arb: طَلَبَاتٍ
+  kor: 기도들–로
+  swa: maombi
+
+### Sense 64981 (1 occurrences)
+Grammar: N-DFP
+  eng: prayers
+  spa: súplicas
+  hin: प्रअरथनओन
+  arb: طِلْباتي
+  kor: 간구들
+  swa: maombi
+
+## Task
+
+Group these 12 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

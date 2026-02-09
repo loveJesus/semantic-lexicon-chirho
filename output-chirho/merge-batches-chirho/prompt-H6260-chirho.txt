@@ -1,0 +1,136 @@
+# Sense Merge Task for H6260
+
+Lemma: H6260 (POS: Prep-k | N-mp)
+Total occurrences: 29
+Current sense count: 12
+
+This Hebrew/Greek lemma has been over-split into 12 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 126827 (13 occurrences)
+Grammar: N-mp
+  eng: male-goats
+  spa: machos–cabríos
+  hin: बकरे
+  arb: تُيُوسٌ
+  kor: 숫염소들
+  swa: mbuzi–dume
+
+### Sense 126828 (2 occurrences)
+Grammar: N-mp
+  eng: male–goats
+  spa: machos-cabríos
+  hin: बकरों–का, बकरे
+  arb: تُيوسًا, تُيوس
+  kor: 숙염소들–의, 숙염소들–을
+  swa: mbuzi
+
+### Sense 126829 (2 occurrences)
+Grammar: Conj-w | N-mp
+  eng: and–goats
+  spa: y–machos–cabríos
+  hin: और–बकरों–के
+  arb: وَ–تُيُوسٍ, وَ–التُّيُوسِ
+  kor: 염소들의, 그리고–숙염소들의
+  swa: na–mbuzi–dume, na–mbuzi
+
+### Sense 126830 (2 occurrences)
+Grammar: N-mp
+  eng: male–goats
+  spa: machos–cabríos
+  hin: बकरों–के
+  arb: تُيُوسٍ, تُيوسٍ
+  kor: 수염소들과, 수염소–들–의
+  swa: mbuzi–dume, mbuzi-dume
+
+### Sense 126831 (2 occurrences)
+Grammar: Conj-w | N-mp
+  eng: and–male-goats, and–he–goats
+  spa: y–machos–cabríos
+  hin: और–बकरों, और–बकरे
+  arb: وَتُيُوسًا, وَالتُّيُوسِ
+  kor: 그리고–숙염소들과, 그리고–숙염소들
+  swa: na–mbuzi–dume, na–mbuzi
+
+### Sense 126832 (2 occurrences)
+Grammar: Art | N-mp
+  eng: the–male-goats
+  spa: los–machos–cabríos
+  hin: बकरे
+  arb: الْ–تُيوسِ, الْ–تُيوسُ
+  kor: 그–수염소들이
+  swa: beberu
+
+### Sense 126833 (1 occurrences)
+Grammar: Conj-w, Prep-l, Art | N-mp
+  eng: and–to–the–male-goats
+  spa: y–a–los–machos–cabríos.
+  hin: बीच
+  arb: وَلِلْتُيُوسِ
+  kor: 그리고–그–수염소들을
+  swa: na–kwa–mbuzi
+
+### Sense 126834 (1 occurrences)
+Grammar: N-mpc
+  eng: leaders–of
+  spa: machos–cabríos–de
+  hin: बकरे–
+  arb: رُؤَسَاءِ
+  kor: 염소들을
+  swa: wote–wa
+
+### Sense 126835 (1 occurrences)
+Grammar: Prep-k | N-mp
+  eng: like–male–goats
+  spa: como–machos–cabríos
+  hin: बकरों–की–तरह
+  arb: كَالتُّيُوسِ
+  kor: 숙염소들같이
+  swa: kama–mbuzi–dume
+
+### Sense 126836 (1 occurrences)
+Grammar: Art | N-mp
+  eng: the–he–goats
+  spa: los–machos–cabríos
+  hin: बकरों
+  arb: التُّيُوسِ
+  kor: 그–숙염소들
+  swa: mabeberu
+
+### Sense 126837 (1 occurrences)
+Grammar: Conj-w | N-mp
+  eng: and–he-goats
+  spa: y–machos–cabríos
+  hin: और–बकरों–से
+  arb: وَتُيُوسٍ
+  kor: 그리고–숙염소들로
+  swa: na–mbuzi
+
+### Sense 126838 (1 occurrences)
+Grammar: N-mp
+  eng: male–goats
+  spa: machos–cabríos
+  hin: बकरे।
+  arb: التُّيُوسُ
+  kor: 수염소들이다
+  swa: mbuzi–dume
+
+## Task
+
+Group these 12 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

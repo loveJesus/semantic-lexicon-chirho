@@ -1,0 +1,154 @@
+# Sense Merge Task for H0860
+
+Lemma: H0860 (POS: Art | N-fp)
+Total occurrences: 34
+Current sense count: 14
+
+This Hebrew/Greek lemma has been over-split into 14 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 85035 (10 occurrences)
+Grammar: Art | N-fs
+  eng: the–donkey
+  spa: la–asna
+  hin: गदही–ने, गदही, गधी
+  arb: الأَتَانُ, الأَتَانَ, الأَتَانِ
+  kor: 그–나귀–가, 그–나귀–를, 암나귀–에
+  swa: punda–jike, punda-jike
+
+### Sense 85036 (7 occurrences)
+Grammar: Art | N-fp
+  eng: the–donkeys
+  spa: las–asnas
+  hin: गधियों, गधियाँ, गधियों–की
+  arb: الـ–أُتُنِ, الـ–أُتُنُ
+  kor: 그–나귀들이, 그–나귀들을, 그–나귀들의
+  swa: punda, punda-wake
+
+### Sense 85037 (4 occurrences)
+Grammar: N-fp
+  eng: female–donkeys, female-donkeys
+  spa: asnas
+  hin: गदहियाँ, गधियाँ
+  arb: أُتُنٍ, أُتُنًا, أَتَانٍ.
+  kor: 암나귀와, 암나귀들이, 암나귀들을
+  swa: punda–jike, ya–Misri, punda–wake
+
+### Sense 85038 (2 occurrences)
+Grammar: N-fsc | 2ms
+  eng: your–donkey
+  spa: asna–de–ti
+  hin: तेरी–गदही, अपनी–गदही
+  arb: أَتَانُكَ, أَتَانَكَ
+  kor: 너–의–나귀–를, 너–의–나귀
+  swa: punda–wako
+
+### Sense 85039 (2 occurrences)
+Grammar: N-fsc | 3ms
+  eng: his–donkey
+  spa: asna–de–él
+  hin: अपनी–गदही
+  arb: أَتَانِهِ, أَتَانَهُ
+  kor: 그–의–나귀–를, 그–의–나귀
+  swa: punda–wake
+
+### Sense 85040 (1 occurrences)
+Grammar: Conj-w, Art | N-fp
+  eng: and–the–female–donkeys
+  spa: y–las–asnas
+  hin: और–गदहियाँ
+  arb: وَالأُتُنُ
+  kor: 그리고–그–암나귀들이
+  swa: na–punda
+
+### Sense 85041 (1 occurrences)
+Grammar: Art | N-fp
+  eng: the–donkeys
+  spa: las–asnas
+  hin: –के–गधियों
+  arb: الْأُتُنِ
+  kor: 그–암나귀들
+  swa: punda
+
+### Sense 85042 (1 occurrences)
+Grammar: N-fsc | 3ms
+  eng: donkey–his
+  spa: su–asna
+  hin: गधी–अपनी–के
+  arb: أَتَانَهُ
+  kor: 그의–암나귀
+  swa: punda–yake
+
+### Sense 85043 (1 occurrences)
+Grammar: Prep-l, Art | N-fs
+  eng: to–the–donkey
+  spa: a–la–asna
+  hin: गदही–से
+  arb: لِ–الأَتَانِ
+  kor: 에–대한–그–나귀
+  swa: kwa–punda–jike
+
+### Sense 85044 (1 occurrences)
+Grammar: Conj-w, Prep-l, Art | N-fp
+  eng: and–as–for–the–donkeys
+  spa: Y–en–cuanto–a–las–asnas
+  hin: और–के–लिए–गधियों
+  arb: وَ–لِلـ–أُتُنِ
+  kor: 그리고–그–나귀들에–대하여
+  swa: na–kuhusu–punda
+
+### Sense 85045 (1 occurrences)
+Grammar: Art | N-fp
+  eng: the–donkeys
+  spa: de-las–asnas
+  hin: गधियों–में–से
+  arb: الأُتُنِ
+  kor: 암나귀들–의
+  swa: punda-jike
+
+### Sense 85046 (1 occurrences)
+Grammar: N-fp
+  eng: –donkeys
+  spa: asnas
+  hin: गधियों
+  arb: أُتُنٍ
+  kor: 암나귀들
+  swa: punda–za
+
+### Sense 85047 (1 occurrences)
+Grammar: Conj-w | N-fp
+  eng: and–female-donkeys
+  spa: y–asnas
+  hin: और–गधिय
+  arb: وَ–أُتُنٌ
+  kor: 그리고–암나귀들
+  swa: na–punda–jike
+
+### Sense 85048 (1 occurrences)
+Grammar: N-fp
+  eng: a–donkey
+  spa: asnas
+  hin: गद्हों–के
+  arb: أَتَانٍ
+  kor: 암나귀들의
+  swa: punda–jike
+
+## Task
+
+Group these 14 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

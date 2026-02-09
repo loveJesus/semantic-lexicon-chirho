@@ -1,0 +1,117 @@
+# Sense Merge Task for H7553
+
+Lemma: H7553 (POS: N-fs)
+Total occurrences: 12
+Current sense count: 10
+
+This Hebrew/Greek lemma has been over-split into 10 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 137076 (3 occurrences)
+Grammar: Conj-w | N-fs
+  eng: and–embroidery
+  spa: y–bordado
+  hin: और–बूटेदार–कपड़ा, और–कढ़ाई–के, और–कढ़ाई
+  arb: وَتَطْرِيزٍ, وَمُطَرَّزٌ
+  kor: 그리고–수놓이다, 그리고–수놓은–것의, 그리고–수놓은–것과
+  swa: na–mapambo, na–nguo–za–rangi
+
+### Sense 137077 (1 occurrences)
+Grammar: N-fs
+  eng: –embroidered
+  spa: bordadas
+  hin: कढ़ाई
+  arb: مُطَرَّزَةٍ
+  kor: 수놓은
+  swa: za–tamu
+
+### Sense 137078 (1 occurrences)
+Grammar: N-fd
+  eng: –two-embroidered-cloths
+  spa: dos–bordados
+  hin: दो–कढ़ाई
+  arb: مُطَرَّزَيْنِ
+  kor: 두–수놓은
+  swa: mbili–za–taraza
+
+### Sense 137079 (1 occurrences)
+Grammar: Conj-w | N-fs
+  eng: and–embroidery
+  spa: y–bordado
+  hin: और–कढ़ाई
+  arb: وَتَطْرِيزًا
+  kor: 그리고–수놓은–것
+  swa: na–ya–rangi
+
+### Sense 137080 (1 occurrences)
+Grammar: Art | N-fs
+  eng: the–embroidery
+  spa: el–bordado
+  hin: कढ़ाई
+  arb: الْتَطْرِيزُ
+  kor: 그–수놓이라
+  swa: rangi–mbalimbali
+
+### Sense 137081 (1 occurrences)
+Grammar: N-fsc | 3mp
+  eng: their-embroidery
+  spa: su–bordado
+  arb: تَطْرِيزِهِمْ
+  kor: 수놓은–것의–그들의
+  swa: mapambo–yao
+
+### Sense 137082 (1 occurrences)
+Grammar: Prep-l | N-fp
+  eng: in–embroidered–garments
+  spa: Con–bordados
+  hin: में–रंगीन–वस्त्रों
+  arb: بِ–مُطَرَّزاتٍ
+  kor: –수놓은–옷들–로
+  swa: Kwa–nguo-za-rangi
+
+### Sense 137083 (1 occurrences)
+Grammar: Prep-b | N-fs
+  eng: with–embroidery
+  spa: con–bordado
+  hin: –कढ़ाई–में
+  arb: بِتَطْرِيزٍ
+  kor: 수놓은–것의
+  swa: kwa–mapambo
+
+### Sense 137084 (1 occurrences)
+Grammar: N-fsc | 2fs
+  eng: embroidery–your
+  spa: bordado–de–ti
+  hin: बूटेदार–तेरे
+  arb: تَطْرِيزِكِ
+  kor: 네–수놓의
+  swa: za–rangi
+
+### Sense 137085 (1 occurrences)
+Grammar: N-fs
+  eng: embroidery
+  spa: bordado
+  hin: बूटेदार–कपड़ा
+  arb: مُطَرَّزًا
+  kor: 수놓을
+  swa: nguo–za–rangi
+
+## Task
+
+Group these 10 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

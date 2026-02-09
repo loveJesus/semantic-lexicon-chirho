@@ -1,0 +1,136 @@
+# Sense Merge Task for H5301
+
+Lemma: H5301 (POS: V-Pual-Perf-3ms)
+Total occurrences: 12
+Current sense count: 12
+
+This Hebrew/Greek lemma has been over-split into 12 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 118363 (1 occurrences)
+Grammar: V-Qal-Prtcpl-ms
+  eng: blowing
+  spa: que–sopla
+  hin: फूँकनेवाला
+  arb: النَّافِخَ
+  kor: 불어–넘기는
+  swa: anayepuliza
+
+### Sense 118364 (1 occurrences)
+Grammar: Conj-w | V-Hifil-ConjPerf-2mp
+  eng: and–you–sniff–at
+  spa: y–soplaréis–sobre
+  hin: और–तुम-फूँकते-हो
+  arb: وَنَفَخْتُمْ
+  kor: 그리고–콧바람–불었다
+  swa: na–mnampuuza
+
+### Sense 118365 (1 occurrences)
+Grammar: Conj-w | V-Qal-Imp-fs
+  eng: and–breathe
+  spa: y–sopla
+  hin: ये
+  arb: وَٱنْفُخِي
+  kor: 그리고–불어라
+  swa: uvumie
+
+### Sense 118366 (1 occurrences)
+Grammar: Conj-w | V-Qal-ConsecImperf-3m
+  eng: and–breathed
+  spa: y–sopló
+  hin: और–फूंका
+  arb: وَ–نَفَخَ
+  kor: 그리고–불어–넣으셨다
+  swa: na–akapuliza
+
+### Sense 118367 (1 occurrences)
+Grammar: V-Qal-Perf-3fs
+  eng: she–breathed–out
+  spa: echó
+  hin: हांफी–है
+  arb: لَفَظَتْ
+  kor: 풍어졌다
+  swa: Amepumua
+
+### Sense 118368 (1 occurrences)
+Grammar: V-Qal-QalPassPrtcpl-ms
+  eng: blown
+  spa: soplada
+  hin: उबलती–हुई
+  arb: مَنْفُوخٍ
+  kor: 불타는
+  swa: inayochemka
+
+### Sense 118369 (1 occurrences)
+Grammar: V-Qal-QalPassPrtcpl-ms
+  eng: boiling
+  spa: que–hierve
+  hin: उबलती
+  arb: مَنْفُوخَةً
+  kor: 끓는
+  swa: kinachochemka
+
+### Sense 118370 (1 occurrences)
+Grammar: V-Pual-Perf-3ms
+  eng: blown
+  spa: soplado;
+  hin: फूंकी–गई
+  arb: مَنْفُوخَةٌ
+  kor: 불지른
+  swa: waka
+
+### Sense 118371 (1 occurrences)
+Grammar: Prep-l | V-Qal-Inf
+  eng: to–blow–
+  spa: para–soplar
+  hin: फूँकने–
+  arb: لِيَنْفُخَ
+  kor: 불어넣기–위한–
+  swa: kupuliza
+
+### Sense 118372 (1 occurrences)
+Grammar: V-Hifil-Perf-1cs
+  eng: I–have–caused–to–expire
+  spa: exhalé
+  hin: निकाला–मैंने
+  arb: أَفقَدتُ
+  kor: 내가–내보내었다
+  swa: nilifanya–ipumue
+
+### Sense 118373 (1 occurrences)
+Grammar: Conj-w | V-Qal-ConjPerf-1cs
+  eng: and–I–blew–on
+  spa: y–soplé–en
+  hin: और–मैंने–फूंका
+  arb: وَنَفَخْتُ
+  kor: 그리고–불었다
+  swa: na–niliipuliza
+
+### Sense 118374 (1 occurrences)
+Grammar: Conj-w | V-Qal-ConjPerf-1cs
+  eng: and–I-will-blow
+  spa: y–soplaré
+  hin: और–फूँकूँगा–मैं
+  arb: وَأَنْفُخُ
+  kor: 그리고–불어넣으리라
+  swa: na–nitapuliza
+
+## Task
+
+Group these 12 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

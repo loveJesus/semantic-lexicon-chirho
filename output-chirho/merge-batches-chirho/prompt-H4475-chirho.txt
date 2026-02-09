@@ -1,0 +1,134 @@
+# Sense Merge Task for H4475
+
+Lemma: H4475 (POS: N-fsc | 3ms)
+Total occurrences: 15
+Current sense count: 12
+
+This Hebrew/Greek lemma has been over-split into 12 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 112316 (2 occurrences)
+Grammar: Prep-l | N-fsc
+  eng: for–rule-of
+  spa: para–dominio–de
+  hin: के–लिए–शासन
+  arb: لِحُكْمِ
+  kor: 에–다스림
+  swa: kutawala
+
+### Sense 112317 (2 occurrences)
+Grammar: N-fsc | 3ms
+  eng: his–dominion
+  spa: su–dominio
+  hin: उसके–अधिकार–के, उसका–राज्य
+  arb: سُلْطَتِهِ
+  kor: 통치의–그의, 그의–통치권이
+  swa: utawala–wake, memshaltּwo
+
+### Sense 112318 (2 occurrences)
+Grammar: Prep-l | N-fsc,Prep-l | N-fpc
+  eng: for–rule
+  spa: para–dominio
+  hin: शासन–के–लिए, शासनों–के–लिए
+  arb: لِـ–سُلْطَانِ
+  kor: 다스리도록
+  swa: kutawala
+
+### Sense 112319 (1 occurrences)
+Grammar: N-fpc | 3ms
+  eng: His–dominion
+  spa: su–dominio
+  hin: उसके–राज्य
+  arb: سِيادَتِهِ
+  kor: 그–의–통치–가
+  swa: utawala–wake
+
+### Sense 112320 (1 occurrences)
+Grammar: Conj-w | N-fsc | 2ms
+  eng: and–your–authority
+  spa: y–tu–gobierno
+  hin: और–तेरा–शासन
+  arb: وَسِيَادَتَكَ
+  kor: 그리고–너의–통치를
+  swa: na–mamlaka–yako
+
+### Sense 112321 (1 occurrences)
+Grammar: N-fsc | 3ms
+  eng: his–dominion
+  spa: su–dominio
+  hin: उसके–राज्य–के
+  arb: سُلطانِهِ
+  kor: 그–의–다스림–의
+  swa: nafsi–yangu
+
+### Sense 112322 (1 occurrences)
+Grammar: Conj-w | N-fsc | 2ms
+  eng: and–your–dominion
+  spa: y–tu–dominio
+  hin: और–तेरा–शासन
+  arb: وَسُلْطَانُكَ
+  kor: 그리고–주의–다스림은
+  swa: na–utawala–wako
+
+### Sense 112323 (1 occurrences)
+Grammar: N-fsc | 3ms
+  eng: his-dominion
+  spa: dominio–de–él
+  hin: अपने–राज्य–के
+  arb: سَلْطَنَتِهِ
+  kor: 그의–통치의
+  swa: utawala–wake
+
+### Sense 112324 (1 occurrences)
+Grammar: Art | N-fs
+  eng: the–dominion
+  spa: el–dominio
+  hin: राज्य
+  arb: السِّيَادَةُ
+  kor: 그–지배–가
+  swa: utawala
+
+### Sense 112325 (1 occurrences)
+Grammar: N-fsc
+  eng: dominion–of
+  spa: dominio–de
+  hin: शासन
+  arb: سِيَادَةِ
+  kor: 통치의
+  swa: utawala–wa
+
+### Sense 112326 (1 occurrences)
+Grammar: N-fsc | 3ms
+  eng: his-dominion
+  spa: dominio–su
+  hin: उसका–शासन
+  arb: مَمْلَكَتُهُ
+  kor: 그의–다스림이라
+  swa: utawala–wake
+
+### Sense 112327 (1 occurrences)
+Grammar: N-fsc | 3ms
+  spa: su–dominio
+  arb: سَلْطَنَتِهِ
+  kor: 그의–통치에서
+  swa: ufalme–wake
+
+## Task
+
+Group these 12 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

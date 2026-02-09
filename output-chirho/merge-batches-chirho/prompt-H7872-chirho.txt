@@ -1,0 +1,145 @@
+# Sense Merge Task for H7872
+
+Lemma: H7872 (POS: Prep-l | N-fs)
+Total occurrences: 19
+Current sense count: 13
+
+This Hebrew/Greek lemma has been over-split into 13 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 139945 (2 occurrences)
+Grammar: N-fs
+  eng: gray–hair
+  spa: las–canas, canas
+  hin: सफेद–बाल, पके–बाल
+  arb: شَيْبَةٌ
+  kor: 백발이니라
+  swa: ni–mvi
+
+### Sense 139946 (2 occurrences)
+Grammar: N-fs
+  eng: gray–hair, gray-hair
+  spa: las–canas, canas
+  hin: बूढ़े–के।, बुढ़ापे–के
+  arb: شَيْبَةٍ, الشَّيْبِ
+  kor: 백발의, 백발
+  swa: mwenye–mvi, mvi
+
+### Sense 139947 (2 occurrences)
+Grammar: N-fs
+  eng: gray–hair
+  spa: canas
+  hin: सफेद–बालों, सफेदी
+  arb: الشَّيْبِ, الشَّيبُ
+  kor: 백발이, 백발
+  swa: mvi
+
+### Sense 139948 (2 occurrences)
+Grammar: N-fsc | 1cs
+  eng: my–gray–hair, my-gray-hair
+  spa: canas–mías
+  hin: मेरे–बाल, बुढ़ापे–को–मेरे
+  arb: شَيْبَتِي
+  kor: 나의–백발을
+  swa: nasi, mvi–zangu
+
+### Sense 139949 (2 occurrences)
+Grammar: Prep-b | N-fs
+  eng: in–old–age, in–old-age
+  spa: en–vejez
+  hin: –में–बुढ़ापा, बुढ़ापेमें
+  arb: بِـ-شَيْبَة, بِشَيْبَةٍ
+  kor: 에–노년, 노년–에
+  swa: katika–uzee
+
+### Sense 139950 (2 occurrences)
+Grammar: N-fsc | 3ms
+  eng: his–gray–hair
+  spa: sus–canas
+  hin: उसके–सफेद–बालों–को
+  arb: شَيْبَتَهُ
+  kor: 그의–백발을
+  swa: mvi–zake
+
+### Sense 139951 (1 occurrences)
+Grammar: Prep-b | N-fs
+  eng: in–a–good
+  spa: en–vejez
+  hin: बुढ़ापे–में
+  arb: فِي–شَيْبَةٍ
+  kor: 에–희대
+  swa: katika–uzee
+
+### Sense 139952 (1 occurrences)
+Grammar: Prep-b | N-fs
+  eng: in–old–age
+  spa: en–vejez
+  hin: बुढ़ापे–में
+  arb: فِي–الشَّيْخُوخَةِ
+  kor: 백발–에서
+  swa: uzee
+
+### Sense 139953 (1 occurrences)
+Grammar: Prep-b | N-fs
+  eng: in–gray-hair
+  spa: en–vejez
+  hin: बुधपे–मे
+  arb: بِ–شَيْبَةٍ
+  kor: 백발로
+  swa: katika–uzee
+
+### Sense 139954 (1 occurrences)
+Grammar: Conj-w | N-fs
+  eng: and–gray–hairs
+  spa: y–canas
+  hin: और–सफेद–बालों–वाला
+  arb: وَ–الشَّيْبَةِ
+  kor: 백발
+  swa: na–mvi
+
+### Sense 139955 (1 occurrences)
+Grammar: N-fsc
+  eng: gray–hair–of
+  spa: canas–de
+  hin: बुढ़ापे
+  arb: شَيْبَةَ
+  kor: 백발을
+  swa: kwa
+
+### Sense 139956 (1 occurrences)
+Grammar: N-fsc | 2fs
+  eng: your-old-age
+  spa: tu–vejez
+  hin: बुढ़ापा–तेरे
+  arb: شَيْبَتَكِ
+  kor: 니–노년을
+  swa: uzee–wako
+
+### Sense 139957 (1 occurrences)
+Grammar: Prep-l | N-fs
+  eng: to-be-white-haired
+  spa: como–canas
+  hin: सफ़ेद–बालों–की–तरह
+  arb: شَيْبَةً.
+  kor: 백발–으로
+  swa: kuwa–mvi
+
+## Task
+
+Group these 13 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

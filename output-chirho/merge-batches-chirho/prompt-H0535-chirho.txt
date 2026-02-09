@@ -1,0 +1,118 @@
+# Sense Merge Task for H0535
+
+Lemma: H0535 (POS: V-Pual-Perf-3ms)
+Total occurrences: 16
+Current sense count: 10
+
+This Hebrew/Greek lemma has been over-split into 10 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 82930 (3 occurrences)
+Grammar: V-Pual-Perf-3fs
+  eng: languishes
+  spa: languideció
+  hin: मुरझा–गई, कमजोर–हो–गई–, कमजोर–होती–है
+  arb: ضَعُفَتْ, ذَبُلَتِ–, ذَبُلَتِ
+  kor: 시들었다, 쇠약해졌으니–, 쇠약해졌으니
+  swa: inadhoofika, inadhoofu
+
+### Sense 82931 (2 occurrences)
+Grammar: V-Pual-Perf-3ms,V-Pual-Perf-3fs
+  eng: languish, She–languished
+  spa: languidecieron, Desfalleció
+  hin: मुरझा–गए, कमजोर–हो–गई
+  arb: ذَبُلَتْ
+  kor: 신음하였다, 시들었으며
+  swa: yanakauka, Amedhoofika
+
+### Sense 82932 (2 occurrences)
+Grammar: V-Pual-Perf-3ms,V-Pual-Perf-3fs
+  eng: languishes
+  spa: languideció
+  hin: मुरझा–गया, मुरझा–गई
+  arb: ذَبُلَتْ, ذَبُلَ
+  kor: 시들었도다
+  swa: umedhoofika, imedhoofika
+
+### Sense 82933 (2 occurrences)
+Grammar: V-Pual-Perf-3cp
+  eng: languish
+  spa: languidecieron, desfallecieron
+  hin: कमजोर–हो–गए
+  arb: ضَعُفُوا, ذَبُلَتْ
+  kor: 시들었다, 쇠약해졌으니
+  swa: yamedhoofika, wanadhoofika
+
+### Sense 82934 (2 occurrences)
+Grammar: V-Pual-Perf-3ms
+  eng: languishing, languishes
+  spa: marchitada, Marchitado
+  hin: मुरझाया
+  arb: ذَبُلَ
+  kor: 시들도다
+  swa: yanadhoofika, inadhoofika
+
+### Sense 82935 (1 occurrences)
+Grammar: V-Qal-QalPassPrtcpl-fs
+  eng: weak
+  spa: debilitada
+  hin: कमज़ोर
+  arb: أَضْعَفَ
+  kor: 약하도다
+  swa: ulivyokuwa–dhaifu
+
+### Sense 82936 (1 occurrences)
+Grammar: V-Pual-Perf-3cp
+  eng: they–languish
+  spa: languidecen
+  hin: दुर्बल–हो–गईं
+  arb: ضَعُفَا
+  kor: 그것들–이–신음했네
+  swa: zimelegea
+
+### Sense 82937 (1 occurrences)
+Grammar: V-Pual-Perf-3cp
+  eng: will-languish
+  spa: languidecen
+  hin: मुरझा–जाएंगे
+  arb: يَذْبُلُونَ
+  kor: 시들리라
+  swa: watalegea
+
+### Sense 82938 (1 occurrences)
+Grammar: Conj-w | V-Pual-ConjPerf-3ms
+  eng: and–languishes
+  spa: y–languidecerá
+  hin: और–मुरझाएगा
+  arb: وَيَضمَحِلُّ
+  kor: 그리고–쇠약해진다
+  swa: na–atadhoofika
+
+### Sense 82939 (1 occurrences)
+Grammar: V-Pual-Perf-3fs
+  eng: languishes
+  spa: se–debilitó
+  hin: मुरझाई
+  arb: ذَبُلَتْ
+  kor: 시들다
+  swa: amedhoofika
+
+## Task
+
+Group these 10 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

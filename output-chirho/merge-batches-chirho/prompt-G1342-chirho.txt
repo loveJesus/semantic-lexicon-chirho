@@ -1,0 +1,136 @@
+# Sense Merge Task for G1342
+
+Lemma: G1342 (POS: Adj-VMS)
+Total occurrences: 80
+Current sense count: 12
+
+This Hebrew/Greek lemma has been over-split into 12 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 65635 (50 occurrences)
+Grammar: Adj-NMS,Adj-NNS,Adj-AMS,Adj-VMS,Adj-GMS,Adj-NFS,Adj-AFS,Adj-AMP,Adj-NMP,Adj-GMP,
+  eng: righteous, of–righteous, righteous–ones
+  spa: justo, justos, de–justos
+  hin: धर्मी, धर्मियों, धर्मियों–को
+  arb: بارٌّ, البارُّ, أَبرارًا
+  kor: 의로운, 의로운–자, 의로운–자들–의
+  swa: mwenye–haki, wenye–haki, hadhari
+
+### Sense 65637 (9 occurrences)
+Grammar: Adj-NFS,Adj-AFS,Adj-NNP,Adj-ANS,Adj-GFS,Adj-NNS,Adj-NFP
+  eng: righteous
+  spa: justo, justos, justas
+  hin: धार्मिक, धर्मी, धरमिक
+  arb: عَدْلٌ, عَدلٌ, عَادِلَةَ
+  kor: 의로운, 의로우니, 정의와
+  swa: haki, ya–haki, za–haki
+
+### Sense 65638 (4 occurrences)
+Grammar: Adj-GMS
+  eng: of-a-righteous-one, righteous, of–righteous–one
+  spa: de–justo, justo
+  hin: धर्मी–के, धर्मी–की, धर्मी–का
+  arb: بارٍّ, البارِّ
+  kor: 의로운–자의, 의인, 의로운–자–의
+  swa: ya–mwenye–haki, wa-mwenye-haki, la-mwenye-haki,
+
+### Sense 65639 (3 occurrences)
+Grammar: Adj-ANS,Adj-NNS
+  eng: right
+  spa: justo
+  hin: –परमेश्वर–के, न्याय, उचित
+  arb: عَدْلِ, عَادِلٌ, حَقٌّ
+  kor: 옮은–것을, 옥다면, 마땅한
+  swa: haki
+
+### Sense 65640 (3 occurrences)
+Grammar: Adj-AMS,Adj-GMS
+  eng: Righteous–One
+  spa: Justo
+  hin: धार्मिक, धर्मी–को, और
+  arb: الْبَارَّ, البَارِّ, البَارَّ
+  kor: 의로운–자–의, 의로운–이–를, 의로운–분을
+  swa: Mwenye–Haki, Mwenye–haki
+
+### Sense 65641 (3 occurrences)
+Grammar: Adj-NNS,Adj-AMS,Adj-ANS
+  eng: just, right
+  spa: justo
+  hin: उचित
+  arb: حَقًّا, صَوابًا
+  kor: 정당한–것–을, 옳은–것
+  swa: nitawapa, mtapokea, haki
+
+### Sense 65642 (3 occurrences)
+Grammar: Adj-AMS,Adj-DMS
+  eng: righteous–one, a-righteous-one
+  spa: justo, a–justo
+  hin: धर्मी–को, धर्मी
+  arb: بارًّا, الصِّدِّيقِ, البارَّ
+  kor: 의인을;, 의로운–자를, 의로운–자
+  swa: mwenye–haki, mwenye-haki
+
+### Sense 65643 (1 occurrences)
+Grammar: Adj-AMP
+  eng: righteous
+  spa: justos
+  hin: पापियों–को
+  arb: أَبْرارًا
+  kor: 의로운–자들을
+  swa: wenye–haki,
+
+### Sense 65644 (1 occurrences)
+Grammar: Adj-NNS
+  eng: right
+  spa: justo
+  hin: उचित
+  arb: عَدلٌ
+  kor: 의로운
+  swa: haki
+
+### Sense 65645 (1 occurrences)
+Grammar: Adj-DMS
+  eng: for–a–righteous–one
+  spa: para–justo
+  hin: धरमेए–के-लिये
+  arb: لِلْبارِّ
+  kor: 의인에게
+  swa: kwa–mwenye–haki
+
+### Sense 65646 (1 occurrences)
+Grammar: Adj-NNP
+  eng: righteous
+  spa: justas
+  hin: धर्मी
+  arb: بارَّةً
+  kor: 의로웠다
+  swa: za–haki
+
+### Sense 65647 (1 occurrences)
+Grammar: Adj-NMS
+  eng: righteous
+  spa: Justo
+  hin: धार्मिक
+  arb: عادِلٌ
+  kor: 의로우신–이여
+  swa: Mwenye–haki
+
+## Task
+
+Group these 12 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

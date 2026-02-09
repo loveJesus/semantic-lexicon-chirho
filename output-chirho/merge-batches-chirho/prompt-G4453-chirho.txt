@@ -1,0 +1,136 @@
+# Sense Merge Task for G4453
+
+Lemma: G4453 (POS: V-IIA-3P)
+Total occurrences: 22
+Current sense count: 12
+
+This Hebrew/Greek lemma has been over-split into 12 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 76145 (7 occurrences)
+Grammar: V-PPA-AMP,V-PPA-GMP,V-PPA-DMP
+  eng: selling, ones-selling
+  spa: que-vendían, que–vendían, vendiendo
+  hin: बेचनेवालों–को, बेचनेवालों, बेचने–वालों–को
+  arb: بَائِعِينَ, البائِعينَ, بَائِعِي
+  kor: 파는–자들을, 파는–자들과, 파는–자들–의
+  swa: wanaouza, –, na
+
+### Sense 76146 (3 occurrences)
+Grammar: V-AMA-2S
+  eng: sell
+  spa: vende
+  hin: बेच, बेच–दे
+  arb: بِعْ, بِعْهُ
+  kor: 팔아라, 팔고
+  swa: yauze, yako, viuze
+
+### Sense 76147 (2 occurrences)
+Grammar: V-PIM/P-3S,V-PIM/P-3P
+  eng: are-sold
+  spa: se–venden, se-venden
+  hin: बेची–जाती–हैं, बिकती–हैं
+  arb: تُبَاعُ, تُباعُ
+  kor: 팔리니, 팔리느냐
+  swa: wanauzwa?, hawauzwi
+
+### Sense 76148 (2 occurrences)
+Grammar: V-PPA-NMP,V-APA-NMS
+  eng: selling, having–sold
+  spa: vendiendo, habiendo–vendido
+  hin: बेचकर
+  arb: بَائِعِينَ, بَائِعًا
+  kor: 팔아서
+  swa: waliuza, akiliuza
+
+### Sense 76149 (1 occurrences)
+Grammar: V-ANA
+  eng: to-sell
+  spa: vender
+  hin: बेचने
+  arb: يَبيعَ
+  kor: 팔려고
+  swa: kuuza
+
+### Sense 76150 (1 occurrences)
+Grammar: V-PPA-AMP
+  eng: selling
+  spa: que–venden
+  hin: बेचनेवालों
+  arb: يَبِيعُونَ
+  kor: 파는–자들
+  swa: wauzao
+
+### Sense 76151 (1 occurrences)
+Grammar: V-PIA-3S
+  eng: sells
+  spa: vende
+  hin: बेचतअ–है
+  arb: يَبِيعُ
+  kor: 판다
+  swa: anauza
+
+### Sense 76152 (1 occurrences)
+Grammar: V-AMA-3S
+  eng: let-him-sell
+  spa: venda
+  hin: बेच–दे
+  arb: لِيَبِعْ
+  kor: 팔라
+  swa: na–auze
+
+### Sense 76153 (1 occurrences)
+Grammar: V-AMA-2P
+  eng: Sell
+  spa: Vended
+  hin: बेचो
+  arb: بِيعُوا
+  kor: 팔라
+  swa: Uzeni
+
+### Sense 76154 (1 occurrences)
+Grammar: V-AIA-3S
+  eng: sold
+  spa: vendió
+  hin: सम्पत्ति
+  arb: بَاعَ
+  kor: 팔았다
+  swa: aliuza
+
+### Sense 76155 (1 occurrences)
+Grammar: V-IIA-3P
+  eng: they-were-selling
+  spa: vendían
+  hin: बेचते–थे
+  arb: يَبيعونَ
+  kor: 팔았다
+  swa: waliuza
+
+### Sense 76156 (1 occurrences)
+Grammar: V-PPM/P-ANS
+  eng: being-sold
+  spa: siendo–vendido
+  hin: बिकने–वाला
+  arb: يُباعُ
+  kor: 파는–것을
+  swa: kinachouzwa,
+
+## Task
+
+Group these 12 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

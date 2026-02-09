@@ -1,0 +1,118 @@
+# Sense Merge Task for G4151
+
+Lemma: G4151 (POS: N-VNS)
+Total occurrences: 383
+Current sense count: 10
+
+This Hebrew/Greek lemma has been over-split into 10 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 75107 (357 occurrences)
+Grammar: N-GNS,N-DNS,N-ANS,N-NNS,N-VNS,N-ANP,N-GNP,N-DNP,N-NNP
+  eng: Spirit, spirit, spirits
+  spa: Espíritu, espíritu, espíritus
+  hin: आत्मा, अअतम, अतम
+  arb: الرّوحِ, الرُّوحِ, رُوحُ
+  kor: 성령, 영, 성령이
+  swa: Roho, roho, Roho,
+
+### Sense 75110 (10 occurrences)
+Grammar: N-DNS
+  eng: by-Spirit, with–Spirit, by–Spirit
+  spa: por-Espíritu, por–Espíritu, en–Espíritu
+  hin: अअतम,, अअतम, आत्मा
+  arb: بِالرّوحِ, بِ–الرّوحِ, بِـ–رُوحٍ
+  kor: 성령으로, 성령으로,, 영으로
+  swa: kwa–Roho
+
+### Sense 75111 (4 occurrences)
+Grammar: N-DNS
+  eng: in–spirit, in-spirit
+  spa: en–espíritu
+  hin: आत्मा–में
+  arb: بِالرّوحِ, بِالرُّوحِ
+  kor: 영으로, 영–에서
+  swa: kiroho, rohoni, kwa–roho
+
+### Sense 75112 (4 occurrences)
+Grammar: N-GNP,N-ANP,N-NNP
+  eng: Spirits
+  spa: Espíritus
+  hin: आत्माएँ, आत्माओं–को, आत्माओं,
+  arb: أَرْواحِ, أَرْواحٍ, أرواحِ
+  kor: 영들, 영들–을
+  swa: Roho, Roho,
+
+### Sense 75113 (2 occurrences)
+Grammar: N-ANS,N-DNS
+  eng: Spirit
+  spa: Espíritu
+  hin: आत्मा
+  arb: روح
+  kor: 성령을, 성령으로
+  swa: Roho
+
+### Sense 75114 (2 occurrences)
+Grammar: N-GNP
+  eng: of-spirits
+  spa: de–espíritus
+  hin: आत्माओं–के, आत्माओं–का
+  arb: لِلأرواحِ, أرواحٍ
+  kor: 영들–의
+  swa: wa–roho, kwa–roho
+
+### Sense 75115 (1 occurrences)
+Grammar: N-DNS
+  eng: by–Spirit
+  spa: por–espíritu
+  hin: आत्मा–से
+  arb: بِالرُّوحِ
+  kor: 영으로
+  swa: kwa–roho
+
+### Sense 75116 (1 occurrences)
+Grammar: N-NNS
+  eng: wind
+  spa: viento
+  hin: हवा
+  arb: رِيحُ
+  kor: 바람이
+  swa: upepo
+
+### Sense 75117 (1 occurrences)
+Grammar: N-GNS
+  eng: of–Spirit
+  spa: de–Espíritu
+  hin: अअतम–कि
+  arb: الرّوحِ
+  kor: 성령의
+  swa: wa–Roho
+
+### Sense 75118 (1 occurrences)
+Grammar: N-DNS
+  eng: breath
+  spa: espíritu
+  hin: सअनस
+  arb: روحِ
+  kor: 영으로
+  swa: pumzi
+
+## Task
+
+Group these 10 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

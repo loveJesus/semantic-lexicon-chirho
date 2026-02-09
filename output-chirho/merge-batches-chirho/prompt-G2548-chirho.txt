@@ -1,0 +1,136 @@
+# Sense Merge Task for G2548
+
+Lemma: G2548 (POS: DPro-NNP)
+Total occurrences: 22
+Current sense count: 12
+
+This Hebrew/Greek lemma has been over-split into 12 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 69869 (4 occurrences)
+Grammar: DPro-NMP
+  eng: also–those, also-those
+  spa: también–aquéllos, también-aquellos
+  hin: वे–भी
+  arb: وَ–أُولٰئِكَ, وَأولئِكَ, أُولٰئِكَ–أَيْضًا
+  kor: 그들도, 저들도, 그들–도
+  swa: wao–pia, na–wao–pia
+
+### Sense 69870 (3 occurrences)
+Grammar: DPro-NMS
+  eng: that–one–also, that-one-also, and–that–one
+  spa: y–aquel, y-aquel, también-aquel
+  hin: वह–भी, जितने
+  arb: هُوَ–أَيْضًا, ذَلِكَ–أَيْضًا, ذَاكَ–أَيْضًا
+  kor: 그도, 그–사람도, 그–도
+  swa: yeye–pia, yeye-pia, na–yeye
+
+### Sense 69871 (3 occurrences)
+Grammar: DPro-NNP,DPro-ANP
+  eng: and-those, and–those
+  spa: y–aquellas, y–aquellas-cosas
+  hin: और–वे, और–उन्हें
+  arb: وَتِلْكَ, وَتِلكَ
+  kor: 저것들도, 그리고–그것들이, 그것들도
+  swa: na–hivyo, na–hayo, bila
+
+### Sense 69872 (2 occurrences)
+Grammar: DPro-AMS
+  eng: and-that-one
+  spa: y–a–aquel
+  hin: उसे–भी, उसका–भी
+  arb: وَذاكَ
+  kor: 그리고-그를
+  swa: na–huyo
+
+### Sense 69873 (2 occurrences)
+Grammar: DPro-NMS
+  eng: and-that-one
+  spa: y–aquel, y-aquél
+  hin: और–वह
+  arb: وَ–ذاكَ, وَذلِكَ
+  kor: 그리고–그가, 그–사람이
+  swa: na–yeye, na–huyo
+
+### Sense 69874 (2 occurrences)
+Grammar: DPro-NMP
+  eng: and-those
+  spa: Y–aquellos
+  hin: और–उन्होंने
+  arb: وَأُولَئِكَ
+  kor: 그들은
+  swa: na–wao
+
+### Sense 69875 (1 occurrences)
+Grammar: DPro-NMS
+  eng: and–that-one
+  spa: y-aquel
+  hin: और–उसने
+  arb: وَ–ذَاكَ
+  kor: 그리고–그–분이
+  swa: na–yeye
+
+### Sense 69876 (1 occurrences)
+Grammar: DPro-NMS
+  eng: also–that–one
+  spa: también–aquel
+  hin: वोह–भि
+  arb: هُوَ–أَيْضاً
+  kor: 그분도
+  swa: yeye–pia
+
+### Sense 69877 (1 occurrences)
+Grammar: DPro-AMS
+  eng: also-that-one
+  spa: y-a-aquél
+  hin: उसे–भी
+  arb: وَذٰلِكَ–أَيضًا
+  kor: 그–도
+  swa: yule–pia
+
+### Sense 69878 (1 occurrences)
+Grammar: DPro-AMP
+  eng: and-those
+  spa: y–a–aquellos
+  hin: और–उन्हें
+  arb: وَأُولٰئِكَ
+  kor: 그리고–그들을
+  swa: na–wale
+
+### Sense 69879 (1 occurrences)
+Grammar: DPro-ANP
+  eng: also–those
+  spa: y-aquellas
+  hin: और–उन्हें–भी
+  arb: وَتِلكَ
+  kor: 그것들도
+  swa: na–wale
+
+### Sense 69880 (1 occurrences)
+Grammar: DPro-NMP
+  eng: and-those
+  spa: y-aquéllos
+  hin: और–वे–भी
+  arb: وَ–أُولَئِكَ
+  kor: 그들도
+  swa: nao–pia
+
+## Task
+
+Group these 12 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

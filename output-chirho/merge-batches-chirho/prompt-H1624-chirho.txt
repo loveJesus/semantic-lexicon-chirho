@@ -1,0 +1,127 @@
+# Sense Merge Task for H1624
+
+Lemma: H1624 (POS: V-Hitpael-Imperf-2mp)
+Total occurrences: 15
+Current sense count: 11
+
+This Hebrew/Greek lemma has been over-split into 11 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 90679 (3 occurrences)
+Grammar: V-Hitpael-Imperf-2mp,V-Hitpael-Imperf.Jus-2ms
+  eng: you–shall–provoke
+  spa: te–metas, os–metais
+  hin: भड़काओ, और–नहीं
+  arb: تَتَحَرَّشْ, تَتَحَرَّشُوا
+  kor: 싸우라, 너희가–싸우라
+  swa: usiwachokoe, msiwachokoe
+
+### Sense 90680 (3 occurrences)
+Grammar: V-Piel-Imperf-3ms
+  eng: stirs–up
+  spa: suscita
+  hin: भड़काता, भड़काता–है
+  arb: يُثِيرُ, يُثيرُ
+  kor: 일으키다, 일으키느니라
+  swa: huchochea, anachochea
+
+### Sense 90681 (1 occurrences)
+Grammar: V-Hitpael-Imperf-2ms
+  eng: should–you–stir–up
+  spa: te–provocas
+  hin: तितग्गारेह
+  arb: تَسْتَثِيرُ
+  kor: 네가–맞서게–하겠느냐
+  swa: unajichokoza
+
+### Sense 90682 (1 occurrences)
+Grammar: V-Hitpael-Imperf-3ms
+  eng: shall-be-stirred-up
+  spa: se–preparará–para–guerra
+  hin: युद्ध–करेगा
+  arb: يَتَحَرَّشُ
+  kor: 싸우리라
+  swa: ataandaa–vita
+
+### Sense 90683 (1 occurrences)
+Grammar: Conj-w | V-Hitpael-ConjImperf-
+  eng: (qere:and-he-shall-wage-war)
+  spa: (y–se–preparará–para–guerra)
+  hin: (और–युद्ध–करेगा)
+  arb: وَ–يَتَحَرَّشُ
+  kor: 그리고–싸우리라
+  swa: (na–ataandaa–vita)
+
+### Sense 90684 (1 occurrences)
+Grammar: V-Hitpael-Imperf-3mp
+  eng: contend
+  spa: contenderán
+  hin: लड़ते
+  arb: يُقاوِمُونَهُمْ
+  kor: 다투다
+  swa: hupigana
+
+### Sense 90685 (1 occurrences)
+Grammar: V-Hitpael-Imperf-3mp
+  eng: shall-wage-war
+  spa: se–prepararán–para–guerra
+  hin: युद्ध–करेंगे
+  arb: يَتَحَرَّشُونَ
+  kor: 싸우리라
+  swa: wataandaa–vita
+
+### Sense 90686 (1 occurrences)
+Grammar: Conj-w | V-Hitpael-ConjImperf-
+  eng: [ketiv:and-they-shall-wage-war]
+  spa: [y–se–prepararán–para–guerra]
+  hin: [और–युद्ध–करेंगे]
+  arb: (وَ–يَتَحَرَّشُ)
+  kor: [신명기]
+  swa: [na–wataandaa–vita]
+
+### Sense 90687 (1 occurrences)
+Grammar: V-Hitpael-Perf-2fs
+  eng: you–contended
+  spa: te–enfrentaste
+  hin: तूने–लड़ाई–ली
+  arb: تَحَدَّيْتِ
+  kor: 다투었다–너가
+  swa: ulijishughulisha
+
+### Sense 90688 (1 occurrences)
+Grammar: V-Hitpael-Imperf-2ms
+  eng: stir-up-strife
+  spa: te–provocas
+  hin: उकसाओगे–तू
+  arb: تَتَحَدَّى
+  kor: 도발하느냐
+  swa: ujilete–mwenyewe
+
+### Sense 90689 (1 occurrences)
+Grammar: Conj-w | V-Hitpael-Imp-ms
+  eng: and–engage
+  spa: y–trabá–lucha
+  hin: और–भड़काओ
+  arb: وَتَحَرَّشْ
+  kor: 그리고–싸워라
+  swa: na–uchokoe
+
+## Task
+
+Group these 11 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

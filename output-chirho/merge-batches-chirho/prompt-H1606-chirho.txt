@@ -1,0 +1,127 @@
+# Sense Merge Task for H1606
+
+Lemma: H1606 (POS: Prep-b | N-fsc)
+Total occurrences: 15
+Current sense count: 11
+
+This Hebrew/Greek lemma has been over-split into 11 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 90582 (3 occurrences)
+Grammar: N-fs
+  eng: rebuke, threat
+  spa: reprensión
+  hin: डाँट–को, डाँट
+  arb: تَوْبيخًا, تَوْبيخٌ
+  kor: 꾾짓음–을, 책망이
+  swa: karipio
+
+### Sense 90583 (2 occurrences)
+Grammar: N-fsc
+  eng: the–threat
+  spa: amenaza–de
+  hin: डांट–की
+  arb: زَجْرَةِ
+  kor: 꾸짖음에
+  swa: karipio
+
+### Sense 90584 (2 occurrences)
+Grammar: Prep-m | N-fsc | 2ms
+  eng: at–your–rebuke, at–Your–rebuke
+  spa: por–tu–reprensión, Por–reprensión-de-ti
+  hin: से–डाँट–तेरी, मि–गअरातेखा
+  arb: مِنْ–انْتِهَارِكَ
+  kor: 당신–의–꾸짖음–에서, 꾸짖음–에서
+  swa: kwa–kukemea–kwako, Kwa–kukemea–kwako
+
+### Sense 90585 (1 occurrences)
+Grammar: Prep-b | N-fsc | 1cs
+  eng: by–My–rebuke
+  spa: con–mi–reprensión
+  hin: अपनी–डांट–से
+  arb: بِـ–انْتِهَارِي
+  kor: 나의–꾸짖음으로–
+  swa: kwa–kukemea–kwangu
+
+### Sense 90586 (1 occurrences)
+Grammar: N-fsc
+  eng: rebuke-of
+  spa: reprensión–de
+  hin: डांट–से
+  arb: زَجْرَةَ
+  kor: 꾸짖음을
+  swa: karipio–la–
+
+### Sense 90587 (1 occurrences)
+Grammar: N-fsc
+  eng: rebuke-of
+  spa: reprensión–de
+  hin: डाँट
+  arb: تَوْبِيخِ
+  kor: 꾸짖음
+  swa: karipio–la
+
+### Sense 90588 (1 occurrences)
+Grammar: Conj-w | N-fsc | 3ms
+  eng: and–his–rebuke
+  spa: y–su–reprensión
+  hin: और–डाँट–अपनी
+  arb: وَزَجْرَهُ
+  kor: 그리고–그의–꾸짖음을
+  swa: na–makaripio–yake
+
+### Sense 90589 (1 occurrences)
+Grammar: Prep-b | N-fsc
+  eng: at–rebuke-of
+  spa: por–represión–de
+  hin: घुड़की–से
+  arb: بِ–انْتِهَارِ
+  kor: 에–꾸짖음
+  swa: kwa–karipio–la
+
+### Sense 90590 (1 occurrences)
+Grammar: Prep-m | N-fsc | 3ms
+  eng: at–His-rebuke
+  spa: de–su–reprensión
+  hin: उसकी–डाँट–से
+  arb: مِن–زَجرَتِهِ
+  kor: 그의–꾼짓음에
+  swa: kwa–kemeo–lake
+
+### Sense 90591 (1 occurrences)
+Grammar: N-fsc | 2ms
+  eng: Your–rebuke
+  spa: tu–reprensión
+  hin: तेरी–डांट
+  arb: زَجرتِكَ
+  kor: 당신–의–꾸짖음–에
+  swa: kukemea–kwako
+
+### Sense 90592 (1 occurrences)
+Grammar: Prep-m | N-fsc
+  eng: at–the–rebuke–of
+  spa: por–reprensión-de
+  hin: डाँट–से
+  arb: مِنْ–انْتِهَارِ
+  kor: 꾸짖으심으로–부터
+  swa: kwa–kukemea–kwa
+
+## Task
+
+Group these 11 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

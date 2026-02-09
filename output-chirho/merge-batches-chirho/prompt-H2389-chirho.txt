@@ -1,0 +1,154 @@
+# Sense Merge Task for H2389
+
+Lemma: H2389 (POS: Adj-mpc)
+Total occurrences: 56
+Current sense count: 14
+
+This Hebrew/Greek lemma has been over-split into 14 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 96178 (30 occurrences)
+Grammar: Adj-fs,Adj-ms,Adj-mp
+  eng: strong, mighty, is–strong
+  spa: fuerte, fuertes, fuerte?
+  hin: बलवन्त, शक्तिशाली, बलवान
+  arb: قَوِيَّةٍ, شَدِيدَةً, قَوِيَّةٌ
+  kor: 강한, 강하다, 강한–손
+  swa: wenye–nguvu, imara, ni–mwenye–nguvu
+
+### Sense 96179 (9 occurrences)
+Grammar: Art | Adj-fs
+  eng: the–strong, the–mighty
+  spa: la–fuerte, fuerte, poderosa
+  hin: शक्तिशाली, में–न्याय, मज़बूत
+  arb: الْقَوِيَّةَ, الْقَوِيَّةِ, ٱلْقَوِيَّةَ
+  kor: 그–강한, 그–강하신, 강한
+  swa: wenye–nguvu, ulionyooshwa, mwenye–nguvu
+
+### Sense 96180 (3 occurrences)
+Grammar: Conj-w | Adj-ms,Conj-w, Art | Adj-fs
+  eng: and–strong, and–the–strong
+  spa: y–fuerte, y–el–fuerte
+  hin: और–शक्तिशाली, और–बलवान, और–प्रचण्ड
+  arb: وَ–شَديدَةٌ, وَ–القَوِيُّ, وَالْقَوِيِّ
+  kor: 그리고–강한–자는, 그리고–강한, 그리고–강력한
+  swa: na–wenye–nguvu, na–mwenye–nguvu
+
+### Sense 96181 (3 occurrences)
+Grammar: Adj-ms
+  eng: the–strong, strong, a–mighty–one
+  spa: fuerte, es–fuerte
+  hin: शक्तिशाली, शक्तिशाली–के
+  arb: قَوِيٌّ, القَوِيِّ
+  kor: 강한–자의, 강한–자, 강하시니라
+  swa: mwenye–nguvu
+
+### Sense 96182 (2 occurrences)
+Grammar: Adj-ms
+  eng: severe
+  spa: fuerte
+  hin: कठोर, कठिन
+  arb: شَديدَةٌ, شَديدًا
+  kor: 심한
+  swa: mkali, ilikuwa–kali
+
+### Sense 96183 (1 occurrences)
+Grammar: Adj-mp
+  eng: strong
+  spa: fuertes
+  hin: मज़बूत
+  arb: الصُّلْبَةِ
+  kor: 강한
+  swa: imara
+
+### Sense 96184 (1 occurrences)
+Grammar: Art | Adj-fs
+  eng: the–fiercest
+  spa: la–fuerte
+  hin: प्रचण्ड–के
+  arb: الشَّديدَةِ
+  kor: 그–격렬한
+  swa: makali
+
+### Sense 96185 (1 occurrences)
+Grammar: Conj-w | Adj-mpc
+  eng: and–strong-of–
+  spa: y–fuertes–de
+  hin: और–कठोर–
+  arb: وَ–صُلْبُ
+  kor: 그리고–강한–
+  swa: na–wagumu–wa
+
+### Sense 96186 (1 occurrences)
+Grammar: Prep-m | Adj-ms
+  eng: from–one–stronger
+  spa: del–que–es–más–fuerte
+  hin: से–बलवान
+  arb: مِنَ–الأَقْوى
+  kor: 강한–자–에게서
+  swa: kutoka–aliye-mwenye-nguvu
+
+### Sense 96187 (1 occurrences)
+Grammar: Art | Adj-ms
+  eng: strong
+  spa: ¿fuerte
+  hin: क्या–बलवान
+  arb: أَ–قَوِيٌّ
+  kor: 강한지
+  swa: je–wenye–nguvu
+
+### Sense 96188 (1 occurrences)
+Grammar: Adj-mpc
+  eng: strong-of–
+  spa: fuertes–de
+  hin: कठोर–
+  arb: صُلْبُ
+  kor: 강한–
+  swa: imara–
+
+### Sense 96189 (1 occurrences)
+Grammar: Adj-ms
+  eng: stronger
+  spa: más–fuerte
+  hin: बलवान
+  arb: أَقْوَى
+  kor: 강한–자의
+  swa: yule–aliye–na–nguvu
+
+### Sense 96190 (1 occurrences)
+Grammar: Prep-b | Adj-ms
+  eng: with–strength
+  spa: con–poder
+  hin: में–शक्ति
+  arb: بِ–قُوَّةٍ
+  kor: 에–강함으로
+  swa: kwa–nguvu
+
+### Sense 96191 (1 occurrences)
+Grammar: Adj-mp
+  eng: stronger
+  spa: fuertes
+  hin: बलवान
+  arb: أَقْوَى
+  kor: 강한
+  swa: walikuwa–wenye–nguvu
+
+## Task
+
+Group these 14 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

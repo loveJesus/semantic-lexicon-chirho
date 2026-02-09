@@ -1,0 +1,118 @@
+# Sense Merge Task for H8469
+
+Lemma: H8469 (POS: Conj-w | N-mp)
+Total occurrences: 18
+Current sense count: 10
+
+This Hebrew/Greek lemma has been over-split into 10 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 144967 (8 occurrences)
+Grammar: N-mpc | 1cs
+  eng: my–supplications, my–pleas–for–mercy
+  spa: mis–súplicas, súplicas–mías, súplicas-de-mí
+  hin: विनतियों–मेरी–की, मेरी–बिनती–की, मेरी–बिनती
+  arb: تَضَرُّعَاتِي, تَضَرُّعاتي
+  kor: 나–의–간구들–의, 간구들–의, 나–의–간구들–에
+  swa: maombi–yangu, maombi-yangu
+
+### Sense 144968 (2 occurrences)
+Grammar: Conj-w | N-mp
+  eng: and–supplications
+  spa: y–súplicas, y–de–súplicas
+  hin: और–विनतियाँ, और–बिनतियों–की
+  arb: وَ–تَضَرُّعَاتٍ, وَ–التَّضَرُّعَاتِ
+  kor: 그리고–간구의, 그리고–간구들–을
+  swa: na–maombi, na–dua
+
+### Sense 144969 (1 occurrences)
+Grammar: N-mpc
+  eng: the–supplications–of
+  spa: las–súplicas–de
+  hin: बिनतियों
+  arb: تَضَرُّعَاتِ
+  kor: 간구들의
+  swa: maombi
+
+### Sense 144970 (1 occurrences)
+Grammar: N-mpc | 1cp
+  eng: our-supplications
+  spa: súplicas–de–nosotros
+  hin: अपनी–विनतियाँ
+  arb: تَضَرُّعَاتِنَا
+  kor: 우리–의–간구들–을
+  swa: maombi–yetu
+
+### Sense 144971 (1 occurrences)
+Grammar: N-mpc
+  eng: supplications
+  spa: súplicas–de
+  hin: विनती
+  arb: تَضَرُّعَاتِ
+  kor: 탄원이
+  swa: maombi–ya
+
+### Sense 144972 (1 occurrences)
+Grammar: N-mp
+  eng: pleas-for-mercy
+  spa: súplicas
+  hin: बिनती
+  arb: تَضَرُّعَاتٍ
+  kor: 간청들을
+  swa: maombi
+
+### Sense 144973 (1 occurrences)
+Grammar: N-mpc | 3ms
+  eng: his-supplications
+  spa: súplicas–de–él
+  hin: उसकी–विनतियों
+  arb: تَضَرُّعَاتِهِ
+  kor: 그–의–간구들–을
+  swa: maombi–yake
+
+### Sense 144974 (1 occurrences)
+Grammar: N-mpc | 2ms
+  eng: your-supplications
+  spa: súplicas–de–ti
+  hin: तेरी–विनतियों–के
+  arb: تَضَرُّعَاتِكَ
+  kor: 너–의–간구들–의
+  swa: wa–maombi–yako
+
+### Sense 144975 (1 occurrences)
+Grammar: Conj-w, Prep-b | N-mp
+  eng: and–with–supplications
+  spa: y–con–súplicas
+  hin: और–में–गिड़गिड़ाहट
+  arb: وَبِالتَّضَرُّعَاتِ
+  kor: 그리고–간구들로
+  swa: na–kwa–maombi
+
+### Sense 144976 (1 occurrences)
+Grammar: N-mp
+  eng: supplications
+  spa: Súplicas
+  hin: विनती
+  arb: تَضَرُّعاتٍ
+  kor: 간구를
+  swa: maombi
+
+## Task
+
+Group these 10 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

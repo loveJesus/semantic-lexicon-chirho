@@ -1,0 +1,145 @@
+# Sense Merge Task for H8482
+
+Lemma: H8482 (POS: Prep-b | N-fpc)
+Total occurrences: 19
+Current sense count: 13
+
+This Hebrew/Greek lemma has been over-split into 13 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 145077 (6 occurrences)
+Grammar: N-fp,Adj-fs
+  eng: lowest-parts
+  spa: de–las–profundidades, de–abajo
+  hin: निचली
+  arb: السُّفْلَى, ٱلسُّفْلَى, السُّفْلَيَاتِ
+  kor: 아래의, 낮은–곳들의
+  swa: ya–chini
+
+### Sense 145078 (2 occurrences)
+Grammar: Adj-fp,Adj-fs
+  eng: –the-lower, lower
+  spa: inferiores
+  hin: नीचे–वाले, नीचली।
+  arb: سُفْلى, السُّفْلى
+  kor: 아랫, 아래–것들의
+  swa: za–chini, chini
+
+### Sense 145079 (1 occurrences)
+Grammar: Prep-b | N-fpc
+  eng: into–the–depths–of
+  spa: en–profundidades–de
+  hin: –पृथ्वी–की–गहराइयों–में
+  arb: في–أَسفَلِ
+  kor: 깊은–곳–에
+  swa: sehemu-za-chini
+
+### Sense 145080 (1 occurrences)
+Grammar: Prep-b | N-fsc
+  eng: at–bottom-of
+  spa: al–pie–de–
+  hin: में–तलहटी
+  arb: فِي–أَسْفَلِ
+  kor: 아래–에
+  swa: chini–ya
+
+### Sense 145081 (1 occurrences)
+Grammar: Prep-b | N-fpc
+  eng: in–depths-of
+  spa: en–profundidades-de
+  hin: गहराइयों–में
+  arb: بِـ–أَعْمَاقِ
+  kor: 깊은–곳들–에서
+  swa: vilindini–vya
+
+### Sense 145082 (1 occurrences)
+Grammar: Adj-fs
+  eng: lowest
+  spa: lo–más–bajo
+  hin: नीचे–की
+  arb: السُّفْلَى
+  kor: 가장–깊은
+  swa: chini–kabisa
+
+### Sense 145083 (1 occurrences)
+Grammar: Adj-fs
+  eng: the-lower-millstone
+  spa: inferior
+  hin: नीचे–की–चक्की–का
+  arb: سُفْلِيَّةٍ.
+  kor: 아래의
+  swa: chini
+
+### Sense 145084 (1 occurrences)
+Grammar: N-fpc
+  eng: lowest–parts–of
+  spa: profundidades
+  hin: गहराईयों
+  arb: أَسْفَلَ
+  kor: 아래–것들이여
+  swa: sehemu–za–chini
+
+### Sense 145085 (1 occurrences)
+Grammar: N-fp
+  eng: of–the–depths
+  spa: más–bajo
+  hin: सबसे–गहराईयों–से
+  arb: الأَسْفَلِ
+  kor: 가장–낮은–의
+  swa: la–chini–kabisa
+
+### Sense 145086 (1 occurrences)
+Grammar: Adj-mp
+  eng: lower
+  spa: inferior
+  hin: नीचे-की-मनज़िल
+  arb: سُفْلِيَّةً
+  kor: 아래쬵
+  swa: ya–chini
+
+### Sense 145087 (1 occurrences)
+Grammar: Prep-m | N-fpc
+  eng: from–lowest-parts-of
+  spa: de–las–partes–bajas
+  hin: नीचे–की
+  arb: فِي–الأَسْفَلِ
+  kor: 아래쪽–에
+  swa: katika–sehemu–za–chini
+
+### Sense 145088 (1 occurrences)
+Grammar: Adj-fs
+  eng: the–depths
+  spa: lo-profundo
+  hin: गहरे
+  arb: السُّفْلَى
+  kor: 깊은
+  swa: ya–chini
+
+### Sense 145089 (1 occurrences)
+Grammar: N-fp
+  eng: the–depths
+  spa: lo-profundo
+  hin: नीचे–के
+  arb: سُفْلَى
+  kor: 가장–깊은–곳들–에
+  swa: la–chini–kabisa
+
+## Task
+
+Group these 13 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

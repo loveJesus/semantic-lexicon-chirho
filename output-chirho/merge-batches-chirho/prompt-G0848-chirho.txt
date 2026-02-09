@@ -1,0 +1,136 @@
+# Sense Merge Task for G0848
+
+Lemma: G0848 (POS: PPro-AF3S)
+Total occurrences: 13
+Current sense count: 12
+
+This Hebrew/Greek lemma has been over-split into 12 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 63706 (2 occurrences)
+Grammar: PPro-AM3S
+  eng: himself
+  spa: –a-sí-mismo, a–sí–mismo
+  hin: अपने–आप–को
+  arb: نَفْسَ, نَفسَهُ
+  kor: 자신을, 자신–을
+  swa: mwenyewe
+
+### Sense 63707 (1 occurrences)
+Grammar: PPro-DM3S
+  eng: to–himself
+  spa: a–sí–mismo
+  hin: अपने–अअप–को
+  arb: لِنَفْسِهِ
+  kor: 자기에게
+  swa: kwake
+
+### Sense 63708 (1 occurrences)
+Grammar: PPro-DM3S
+  eng: himself
+  spa: sí–mismo
+  hin: अपने-अअप-मेइन
+  arb: ذاتِهِ
+  kor: 그–자신에게,
+  swa: yeye–mwenyewe
+
+### Sense 63709 (1 occurrences)
+Grammar: PPro-AM3S
+  eng: him
+  spa: él
+  hin: उसके
+  arb: هُ
+  kor: 그–에게
+  swa: yeye},
+
+### Sense 63710 (1 occurrences)
+Grammar: PPro-DM3S
+  eng: himself
+  spa: sí-mismo
+  hin: अपने–आप–में
+  arb: نَفْسِهِ
+  kor: 자기–안에서
+  swa: mwenyewe
+
+### Sense 63711 (1 occurrences)
+Grammar: PPro-AM3P
+  eng: themselves
+  spa: *
+  hin: अपने–आप–को
+  arb: أَنْفُسَهُمْ
+  kor: 자기들–을
+  swa: wenyewe
+
+### Sense 63712 (1 occurrences)
+Grammar: PPro-AM3S
+  eng: himself
+  spa: sí-mismo
+  hin: अपने–आप
+  arb: نَفْسِهِ
+  kor: 자기–자신에게
+  swa: yeye–mwenyewe
+
+### Sense 63713 (1 occurrences)
+Grammar: PPro-DM3S
+  eng: himself
+  spa: sí-mismo
+  hin: अपने–में
+  arb: نَفسِهِ
+  kor: 자기–안에
+  swa: yake
+
+### Sense 63714 (1 occurrences)
+Grammar: PPro-AM3P
+  eng: themselves
+  spa: sí-mismos
+  hin: आपस–में
+  arb: أَنْفُسِهِما
+  kor: 자기들끼리
+  swa: kila
+
+### Sense 63715 (1 occurrences)
+Grammar: PPro-AM3P
+  eng: themselves
+  spa: sí-mismos
+  hin: अपने
+  arb: أَنْفُسِهِمْ
+  kor: 자기들
+  swa: wao–wenyewe
+
+### Sense 63716 (1 occurrences)
+Grammar: PPro-AF3S
+  eng: herself
+  spa: a–sí–misma
+  hin: अपने–आप–को
+  arb: نَفْسَها
+  kor: 자신을
+  swa: mwenyewe
+
+### Sense 63717 (1 occurrences)
+Grammar: PPro-AM3P
+  eng: them
+  spa: ellos
+  hin: आपस
+  arb: أَنْفُسِكُمْ
+  kor: 자신들
+  swa: wao
+
+## Task
+
+Group these 12 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

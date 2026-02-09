@@ -1,0 +1,118 @@
+# Sense Merge Task for H7064
+
+Lemma: H7064 (POS: N-msc | 1cs)
+Total occurrences: 13
+Current sense count: 10
+
+This Hebrew/Greek lemma has been over-split into 10 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 132371 (3 occurrences)
+Grammar: N-msc | 3ms
+  eng: its–nest, his–nest
+  spa: su–nido
+  hin: अपना–घोंसला, उसका–घोंसला
+  arb: عُشَّهُ, عُشَّهُ؟
+  kor: 그의–둥지를, 그것–의–둥지를, 그–의–보금자리–를
+  swa: kiota–chake
+
+### Sense 132372 (2 occurrences)
+Grammar: N-ms
+  eng: nest, a–nest
+  spa: nido
+  hin: घोंसला
+  arb: عُشٌ, عُشًّا
+  kor: 둥지에서, 둥지–를
+  swa: kiota
+
+### Sense 132373 (1 occurrences)
+Grammar: N-msc | 2ms
+  eng: your–nest
+  spa: tu–nido
+  hin: अपना–घोंसला
+  arb: عُشَّكَ
+  kor: 둥지를–너의
+  swa: kiota–chako
+
+### Sense 132374 (1 occurrences)
+Grammar: N-msc | 1cs
+  eng: my-nest
+  spa: mi–nido
+  hin: मरूँगा–मैं
+  arb: عُشِّي
+  kor: 나의–둥지
+  swa: kiota–changu
+
+### Sense 132375 (1 occurrences)
+Grammar: N-msc
+  eng: nest-of–
+  spa: nido–de–
+  hin: घोंसला–
+  arb: عُشُّ–
+  kor: 둥지가–
+  swa: kiota–
+
+### Sense 132376 (1 occurrences)
+Grammar: N-mp
+  eng: rooms
+  spa: compartimentos
+  hin: कम्रे
+  arb: غُرَفًا
+  kor: 방들
+  swa: vyumba
+
+### Sense 132377 (1 occurrences)
+Grammar: Prep-k, Art | N-ms
+  eng: as–the–nest
+  spa: como-nido
+  hin: जैसे–घोंसला
+  arb: كَـ–عُشٍّ
+  kor: 둥지–같이
+  swa: kama-kiota
+
+### Sense 132378 (1 occurrences)
+Grammar: N-msc | 2ms
+  eng: your-nest
+  spa: tu–nido
+  hin: तेरा–घोंसला
+  arb: –عشك
+  kor: 네–둥지를
+  swa: kiota–chako
+
+### Sense 132379 (1 occurrences)
+Grammar: N-msc | 3fs
+  eng: its–nest
+  spa: su–nido
+  hin: अपने–घोंसले
+  arb: عُشِّهِ
+  kor: 그의–둥지
+  swa: kiota–chake
+
+### Sense 132380 (1 occurrences)
+Grammar: N-msc | 2ms
+  eng: your–nest
+  spa: nido–de–ti
+  hin: घोंसला–अपना
+  arb: عُشُّكَ
+  kor: 네–둥지–를
+  swa: kiota–chako
+
+## Task
+
+Group these 10 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

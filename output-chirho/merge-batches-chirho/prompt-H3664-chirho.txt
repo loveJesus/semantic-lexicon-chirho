@@ -1,0 +1,118 @@
+# Sense Merge Task for H3664
+
+Lemma: H3664 (POS: V-Qal-Perf-1cs)
+Total occurrences: 11
+Current sense count: 10
+
+This Hebrew/Greek lemma has been over-split into 10 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 106772 (2 occurrences)
+Grammar: Prep-l | V-Qal-Inf
+  eng: to–gather
+  spa: para–reunir
+  hin: इकट्ठे–करने–के–लिए, इकट्ठा–करने–को
+  arb: لِ–يَجمَعوا, لِيَجْمَعَ
+  kor: 모으기–위해, 로–모으기–위하여
+  swa: kuwakusanya, kukusanya
+
+### Sense 106773 (1 occurrences)
+Grammar: V-Qal-Imp-ms
+  eng: gather
+  spa: reúne
+  hin: इकट्ठा–कर
+  arb: اجْمَعْ
+  kor: 모으라
+  swa: kusanya
+
+### Sense 106774 (1 occurrences)
+Grammar: Prep-k | V-Hitpael-Inf
+  eng: to–wrap–oneself
+  spa: para–envolverse
+  hin: लपेटने–से
+  arb: عَنِ–الِالْتِفَافِ
+  kor: 에–싸기에
+  swa: kujifunga
+
+### Sense 106775 (1 occurrences)
+Grammar: V-Qal-Prtcpl-ms
+  eng: gathering
+  spa: Reunió
+  hin: वह–इकट्ठा–करता–है
+  arb: يَجْمَعُ
+  kor: 모으시니
+  swa: Anakusanya
+
+### Sense 106776 (1 occurrences)
+Grammar: Conj-w | V-Piel-ConjPerf-1cs
+  eng: and–I-will-assemble
+  spa: Y–os–juntaré
+  hin: और–इकट्ठा–करूँगा–मैं
+  arb: وَأَجْمَعُكُمْ
+  kor: 그리고–모으리라
+  swa: Na–nitawakusanya
+
+### Sense 106777 (1 occurrences)
+Grammar: Conj-w, Prep-l | V-Qal-Inf
+  eng: and–to–collect
+  spa: y–para–juntar
+  hin: और–जमा–करने–का
+  arb: الجَمْعِ
+  kor: 그리고–쌍기를
+  swa: na–kurundika
+
+### Sense 106778 (1 occurrences)
+Grammar: Conj-w | V-Piel-ConjPerf-1cs |
+  eng: and–I-gathered-them
+  spa: y–los–reuní
+  hin: और–मैंने–इकट्ठा–किया–उन्हें
+  arb: وَجَمَعْتُهُمْ
+  kor: 그리고–모으겠다–그들을
+  swa: nikawakusanya
+
+### Sense 106779 (1 occurrences)
+Grammar: V-Qal-Perf-1cs
+  eng: I–gathered
+  spa: Reuní
+  hin: मैंने–इकट्ठा–किया
+  arb: جَمَعْتُ
+  kor: 모았다
+  swa: Nilikusanya
+
+### Sense 106780 (1 occurrences)
+Grammar: V-Qal-Inf
+  eng: to–gather
+  spa: para–recoger
+  hin: इकट्ठा–करने–का
+  arb: لِجَمْعِ
+  kor: 모으기–위한
+  swa: wa–kukusanya
+
+### Sense 106781 (1 occurrences)
+Grammar: V-Piel-Imperf-3ms
+  eng: he–gathers
+  spa: reunirá
+  hin: वह–इकट्ठा–करता–है
+  arb: يَجْمَعُ
+  kor: 그가–모으신다
+  swa: anakusanya
+
+## Task
+
+Group these 10 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

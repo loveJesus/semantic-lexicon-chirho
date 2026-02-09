@@ -1,0 +1,145 @@
+# Sense Merge Task for H5945a
+
+Lemma: H5945a (POS: Art | Adj-ms)
+Total occurrences: 23
+Current sense count: 13
+
+This Hebrew/Greek lemma has been over-split into 13 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 124369 (5 occurrences)
+Grammar: Art | Adj-ms
+  eng: the–upper
+  spa: la–alta, la–superior, el–superior
+  hin: ऊपरी, –का–ऊपरी, ऊपरवाले
+  arb: الْعُلْيَا, الْعُلْوِيِّ, الـ–عُلْيا
+  kor: 그–위의, 그–윗쪽의, 그–윗–의
+  swa: ya–Juu, ya–juu, la–juu
+
+### Sense 124370 (3 occurrences)
+Grammar: Art | Adj-fs
+  eng: the–upper, pool
+  spa: superior, la–superior
+  hin: ऊपरी
+  arb: الـ–عُلْيَا, العُلْيَا, العُليَا
+  kor: 윗의, 윗–, 윈–
+  swa: la–juu, la-juu
+
+### Sense 124371 (3 occurrences)
+Grammar: Art | Adj-ms
+  eng: the–upper
+  spa: la–superior
+  hin: हएल्योन, ऊपरी, ऊपर
+  arb: ٱلْعُلْوِيَّ, الْعُلْيَا, الْعُلْوِيَّ
+  kor: 그–높은, 그–높은–것을
+  swa: la–juu, juu
+
+### Sense 124372 (2 occurrences)
+Grammar: Adj-ms
+  eng: high
+  spa: alto
+  hin: ऊँचे, उच्च
+  arb: أَعْلَى
+  kor: 높은–자로
+  swa: juu
+
+### Sense 124373 (2 occurrences)
+Grammar: Art | Adj-ms
+  eng: the–upper
+  spa: la–superior, el–superior
+  hin: ऊपरी
+  arb: الْعُلْيَا, الْأَعْلَى
+  kor: 윗의, 그–윗–
+  swa: wa–juu, la–juu
+
+### Sense 124374 (1 occurrences)
+Grammar: Adj-ms
+  eng: upper
+  spa: la–de–arriba
+  hin: ऊपरले
+  arb: الْ–عُلْيا
+  kor: 윗–것의
+  swa: ya–juu
+
+### Sense 124375 (1 occurrences)
+Grammar: Adj-ms
+  eng: high
+  spa: ruinas
+  hin: ऊँचा
+  arb: عَالِيًا
+  kor: 높은–것으로
+  swa: magofu
+
+### Sense 124376 (1 occurrences)
+Grammar: Art | Adj-ms
+  eng: the–top
+  spa: la–superior
+  hin: ऊपरवाली
+  arb: الْ–أَعْلَى
+  kor: 위의
+  swa: vya–juu
+
+### Sense 124377 (1 occurrences)
+Grammar: Adj-ms
+  eng: Most–High
+  spa: Altísimo
+  hin: सर्वोच्च
+  arb: عَلِيٌّ
+  kor: 지극히–높으신–이시도다
+  swa: Aliye–Juu
+
+### Sense 124378 (1 occurrences)
+Grammar: Art | Adj-fs
+  eng: the–highest
+  spa: la–superior
+  hin: ऊपरी
+  arb: الْعُلْيَا
+  kor: 그–위쪽의
+  swa: juu
+
+### Sense 124379 (1 occurrences)
+Grammar: Art | Adj-fp
+  eng: the–upper
+  spa: las–superiores
+  hin: ऊपरी
+  arb: الْ–عُلْيَا
+  kor: 그–위쪽의
+  swa: vya–juu
+
+### Sense 124380 (1 occurrences)
+Grammar: Adj-ms
+  eng: exalted
+  spa: excelsa
+  hin: ऊँचा
+  arb: عَلِيًّا
+  kor: 높은
+  swa: ya–juu
+
+### Sense 124381 (1 occurrences)
+Grammar: Adj-ms
+  eng: the–highest
+  spa: el-más-alto
+  hin: सर्वोच्च
+  arb: أَعْلَى
+  kor: 지존자–로
+  swa: aliye–juu–sana
+
+## Task
+
+Group these 13 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

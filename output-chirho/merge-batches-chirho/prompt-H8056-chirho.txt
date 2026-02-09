@@ -1,0 +1,127 @@
+# Sense Merge Task for H8056
+
+Lemma: H8056 (POS: Adj-ms)
+Total occurrences: 20
+Current sense count: 11
+
+This Hebrew/Greek lemma has been over-split into 11 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 141799 (5 occurrences)
+Grammar: Adj-ms
+  eng: joyful, glad
+  spa: alegre
+  hin: आनन्दित, आनंदित
+  arb: فَرِحًا, فَرِحٌ
+  kor: 즐거운, 기뻐하며, 기쁜
+  swa: wenye–furaha, ukiwa-na-furaha, mwenye–furaha
+
+### Sense 141800 (4 occurrences)
+Grammar: Adj-mp
+  eng: rejoicing, joyful
+  spa: alegres
+  hin: आनन्दित, आनंदित–होते–हुए
+  arb: فَرِحِينَ, فَرِحين
+  kor: 기뻐하며, 기뻐하는–자들
+  swa: wakifurahi, wenye–furaha, juu–ya
+
+### Sense 141801 (2 occurrences)
+Grammar: Adj-ms
+  eng: rejoicing
+  spa: alegrándose, alegre
+  hin: खुश, आनन्दितथी
+  arb: فَرِحِينَ, فَرِحٌ
+  kor: 기믭하는, 기뮰하고–있었다
+  swa: wanafurahi, wakifurahi
+
+### Sense 141802 (2 occurrences)
+Grammar: Conj-w | Adj-mp
+  eng: and–rejoicing
+  spa: y–regocijándose
+  hin: और–आनन्दित–थे, और–आनंदित–होते–हुए
+  arb: وَيَفْرَحُونَ, وَفَرِحُونَ
+  kor: 그리고–기뻐하였다, 그리고–기뻐하며
+  swa: na–wakifurahi, furaha
+
+### Sense 141803 (1 occurrences)
+Grammar: Adj-mpc
+  eng: those–rejoicing–at
+  spa: los–que–se–alegran
+  hin: आनन्दित–होनेवाले
+  arb: الفَرِحونَ–بِ
+  kor: 기뻐하는–자들을
+  swa: wanaofurahi
+
+### Sense 141804 (1 occurrences)
+Grammar: Adj-ms
+  eng: rejoiced
+  spa: se–alegraba
+  hin: आनन्दित–था
+  arb: فَرِحَ
+  kor: 기믭다
+  swa: ulifurahi
+
+### Sense 141805 (1 occurrences)
+Grammar: Adj-fs
+  eng: joyful
+  spa: gozosa
+  hin: आनन्दित
+  arb: فَرِحَة
+  kor: 즐거운
+  swa: mwenye–furaha
+
+### Sense 141806 (1 occurrences)
+Grammar: Art | Adj-mp
+  eng: those–who–rejoice
+  spa: Los–que–se–alegran
+  hin: आनन्दित–होनेवाले
+  arb: الْفَرِحِينَ
+  kor: 기빠하는–자–들–은
+  swa: Wafurahiao
+
+### Sense 141807 (1 occurrences)
+Grammar: Adj-ms
+  eng: rejoicing
+  spa: el–que–se–alegra
+  hin: आनन्दित–होनेवाला
+  arb: فَرِحٌ
+  kor: 기뻐하는–자는
+  swa: anayefurahi
+
+### Sense 141808 (1 occurrences)
+Grammar: Adj-mpc
+  eng: merry
+  spa: los–alegres–de
+  hin: आनन्दित–
+  arb: فَرِحِي–
+  kor: 즐거운–자들이–
+  swa: wenye–furaha
+
+### Sense 141809 (1 occurrences)
+Grammar: V-Qal-Imperf-3mp
+  eng: let-rejoice
+  spa: Alégrense
+  hin: आनन्दित–हों
+  arb: تَفْرَحُ
+  kor: 기믭하라
+  swa: na–zifurahi
+
+## Task
+
+Group these 11 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

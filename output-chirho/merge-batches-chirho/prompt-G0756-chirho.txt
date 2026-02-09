@@ -1,0 +1,154 @@
+# Sense Merge Task for G0756
+
+Lemma: G0756 (POS: V-ASM-2P)
+Total occurrences: 84
+Current sense count: 14
+
+This Hebrew/Greek lemma has been over-split into 14 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 63425 (58 occurrences)
+Grammar: V-AIM-3S,V-AIM-3P
+  eng: began, he-began, they-began
+  spa: comenzó, comenzaron, Comenzó
+  hin: लगा, आरम्भ–किया, लगे
+  arb: بَدَأَ, ابْتَدَأَ, بَدَأوا
+  kor: 시작했다, 시작하셨다, 시작하였다
+  swa: alianza, walianza, wakaanza
+
+### Sense 63427 (9 occurrences)
+Grammar: V-APM-NMS,V-APM-NMP
+  eng: beginning, having–begun, having-begun
+  spa: comenzando, habiendo-comenzado, habiendo–comenzado
+  hin: शुरू–करके, आरम्भ–करके, शुरु–होकर
+  arb: ابْتَدَأَ, مُبْتَدِئًا, مُبتَدِئًا
+  kor: 시작하여
+  swa: akianza, wakianzia, mkianzia
+
+### Sense 63428 (3 occurrences)
+Grammar: V-APM-GMS,V-PPM-NMS,V-APM-NMS
+  eng: having–begun, having-begun, beginning
+  spa: comenzando
+  hin: शुरू–होकर, शुरु–करते–हुए, आरंभ–करता–हुआ
+  arb: يَبْدَأُ, مُبْتَدِئًا, ابْتَدَأَ
+  kor: 시작했을–때, 시작한, 시작하는
+  swa: alipoanza, likianza
+
+### Sense 63429 (2 occurrences)
+Grammar: V-ASM-3S
+  eng: begins
+  spa: comience
+  hin: शुरू–करे
+  arb: يَبدَأُ, ابْتَدَأَ
+  kor: 시작하면
+  swa: kuwapiga, akaanza
+
+### Sense 63430 (2 occurrences)
+Grammar: V-AIM-3S
+  eng: He-began, Began
+  spa: Comenzó
+  hin: लगा
+  arb: بَدَأَ
+  kor: 시작했다
+  swa: Alianza
+
+### Sense 63431 (2 occurrences)
+Grammar: V-ASM-2P,V-FIM-2P
+  eng: you-will-begin, you-begin
+  spa: comenzaréis, comencéis
+  hin: लगोगे
+  arb: سَتَبْدَؤُونَ, تَبْدَؤُونَ
+  kor: 시작할–것이다
+  swa: mtaanza, mkaanza
+
+### Sense 63432 (1 occurrences)
+Grammar: V-FIM-3P
+  eng: they-will-begin
+  spa: comenzarán
+  hin: लगेंगे
+  arb: يَبْدَأونَ
+  kor: 시작할–것이다
+  swa: wataanza
+
+### Sense 63433 (1 occurrences)
+Grammar: V-ANM
+  eng: to–begin
+  spa: comenzar
+  hin: शुरू–करते–ही
+  arb: أَنْ–أَبْدَأَ
+  kor: 시작할–때
+  swa: kuanza
+
+### Sense 63434 (1 occurrences)
+Grammar: V-PIM-1P
+  eng: Are–we–beginning
+  spa: Comenzamos
+  hin: शुरू–करते–हैं–क्या–हम
+  arb: أَنَبدَأُ
+  kor: 시작하는가
+  swa: Tunaanza
+
+### Sense 63435 (1 occurrences)
+Grammar: V-ASM-2P
+  eng: begin
+  spa: comencéis
+  hin: आरंभ–करो
+  arb: تَبْدَأُوا
+  kor: 시작하지
+  swa: msianze
+
+### Sense 63436 (1 occurrences)
+Grammar: V-FIM-2S
+  eng: you-will-begin
+  spa: comenzarás
+  hin: लगेगा
+  arb: تَبْدَأُ
+  kor: 시작할–것이다
+  swa: utaanza
+
+### Sense 63437 (1 occurrences)
+Grammar: V-ANM
+  eng: to–begin
+  spa: comenzar
+  hin: आरम्भ–होने–का
+  arb: يَبدَأَ
+  kor: 시작할
+  swa: kuanza
+
+### Sense 63438 (1 occurrences)
+Grammar: V-ASM-3P
+  eng: begin
+  spa: comiencen
+  hin: लगें
+  arb: يَبْدَؤُونَ
+  kor: 시작할까
+  swa: wakaanza
+
+### Sense 63439 (1 occurrences)
+Grammar: V-PPM-GNP
+  eng: beginning
+  spa: comenzando
+  hin: शुरू–होते–हुए
+  arb: ابتِدائِيَةٍ
+  kor: 시작하고–있을–때
+  swa: hivi–vikianza
+
+## Task
+
+Group these 14 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

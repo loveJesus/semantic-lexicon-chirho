@@ -1,0 +1,145 @@
+# Sense Merge Task for H8025
+
+Lemma: H8025 (POS: Conj-w | V-Qal-ConsecImperf-3ms | 3fs)
+Total occurrences: 25
+Current sense count: 13
+
+This Hebrew/Greek lemma has been over-split into 13 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 141450 (7 occurrences)
+Grammar: V-Qal-Prtcpl-ms,V-Qal-Prtcpl-mpc
+  eng: drawing
+  spa: desenvainadores–de, que–desenvaina
+  hin: खींचनेवाले
+  arb: سَالِي, سَالّ
+  kor: 뵑는, 뽑는, 뵑는–자들
+  swa: wachomoa, wachombao
+
+### Sense 141451 (4 occurrences)
+Grammar: V-Qal-QalPassPrtcpl-fs
+  eng: drawn
+  spa: desenvainada
+  hin: खींची–हुई, खिंची–हुई
+  arb: مَسْلُولٌ, مَسلولٌ
+  kor: 뽑힌
+  swa: umechomolewa
+
+### Sense 141452 (2 occurrences)
+Grammar: V-Qal-Prtcpl-ms,V-Qal-Prtcpl-msc
+  eng: drawing
+  spa: que-desenvainaban, desenvainando
+  hin: खींचनेवाले
+  arb: سَالِي, سَالًا
+  kor: 뽑는–자, 뽑는
+  swa: wanaovuta, wanaochomoa
+
+### Sense 141453 (2 occurrences)
+Grammar: V-Qal-Prtcpl-ms
+  eng: drawing
+  spa: que–sacan
+  hin: खींचनेवाले
+  arb: سَالِي
+  kor: 뽑는–자
+  swa: wanaovuta
+
+### Sense 141454 (2 occurrences)
+Grammar: V-Qal-Imp-ms
+  eng: draw
+  spa: desenvaina
+  hin: खींच
+  arb: اسْلُلْ
+  kor: 뽑아라, 뵑아라
+  swa: chomoa
+
+### Sense 141455 (1 occurrences)
+Grammar: Conj-w | V-Qal-ConsecImperf-3m
+  eng: and–drew–it
+  spa: y–la–sacó
+  hin: और-खेएनचि-उसे
+  arb: وَ–سَلَّهُ
+  kor: 그리고–뽑았다–그것을
+  swa: na–akautoa
+
+### Sense 141456 (1 occurrences)
+Grammar: V-Qal-Perf-3ms
+  eng: he-drew-out
+  spa: sacó
+  hin: निकाला
+  arb: يَسْحَبْ
+  kor: 빼지
+  swa: hakuutoa
+
+### Sense 141457 (1 occurrences)
+Grammar: V-Qal-Perf-3ms
+  eng: drew
+  spa: desenvainó
+  hin: खींची
+  arb: يَسْلُلْ
+  kor: 뽑았다
+  swa: hakuchomoa
+
+### Sense 141458 (1 occurrences)
+Grammar: V-Qal-Perf-3ms
+  eng: being–pulled-out
+  spa: ser–arrancada
+  hin: उखाड़ने–से
+  arb: يُقْلَعُ
+  kor: 뽑히면
+  swa: kung'olewa
+
+### Sense 141459 (1 occurrences)
+Grammar: V-Qal-Perf-3ms
+  eng: he–draws–it
+  spa: Sacó
+  hin: वह–खींचेगा
+  arb: سَلَّ
+  kor: 빼내니
+  swa: akivuta
+
+### Sense 141460 (1 occurrences)
+Grammar: Conj-w | V-Qal-ConsecImperf-3m
+  eng: and–he-drew-off
+  spa: y–se–quitó
+  hin: और–उतारा
+  arb: وَ–خَلَعَ
+  kor: 그리고–그가–벗었다
+  swa: na–akavua
+
+### Sense 141461 (1 occurrences)
+Grammar: V-Qal-Perf-3ms
+  eng: drew-off
+  spa: quitó
+  hin: उतारता
+  arb: خَلَعَ
+  kor: 벗었다
+  swa: mtu–alivua
+
+### Sense 141462 (1 occurrences)
+Grammar: V-Qal-Imp-ms
+  eng: draw
+  spa: desenvaina
+  hin: खेएनच
+  arb: استَلَّ
+  kor: 빼라
+  swa: uchomoe
+
+## Task
+
+Group these 13 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

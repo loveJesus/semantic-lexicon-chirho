@@ -1,0 +1,143 @@
+# Sense Merge Task for H4272
+
+Lemma: H4272 (POS: V-Qal-Imperf-1cs | 3mp)
+Total occurrences: 14
+Current sense count: 13
+
+This Hebrew/Greek lemma has been over-split into 13 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 110934 (2 occurrences)
+Grammar: V-Qal-Perf-3ms
+  eng: has–shattered, He–has–shattered
+  spa: quebrantará
+  hin: चूर–कर–देगा
+  arb: يَسحَق
+  kor: 부수셨도다
+  swa: amewapiga, amempiga
+
+### Sense 110935 (1 occurrences)
+Grammar: V-Qal-Perf-3ms
+  eng: He-shattered
+  spa: hirió
+  hin: वह–कुचलता–है
+  arb: ضَرَبَ
+  kor: 쳤다
+  swa: alimpiga
+
+### Sense 110936 (1 occurrences)
+Grammar: V-Qal-Imperf-3fs
+  eng: may–strike
+  spa: golpees
+  arb: تَغْمُسَ
+  kor: 밟으리이다
+  swa: uvunje
+
+### Sense 110937 (1 occurrences)
+Grammar: V-Qal-Imperf-1cs | 3mp
+  eng: I–struck–them
+  spa: los–heriré
+  hin: मारूँगा–उन्हें
+  arb: أَسْحَقُهُمْ
+  kor: 구타하나이다
+  swa: Nitawaponda
+
+### Sense 110938 (1 occurrences)
+Grammar: V-Qal-Imperf-3ms
+  eng: he–shatters
+  spa: quebrará
+  hin: मारेगा
+  arb: يَطْعَنُ
+  kor: 관통하리라
+  swa: ataichoma
+
+### Sense 110939 (1 occurrences)
+Grammar: V-Qal-Perf-1cs
+  eng: I–wound
+  spa: hiero
+  hin: घायल–किया–मैंने
+  arb: سَحَقْتُ
+  kor: 내가–치맨다
+  swa: nimejeruhi
+
+### Sense 110940 (1 occurrences)
+Grammar: V-Qal-Imp-ms
+  eng: shatter
+  spa: hiere
+  hin: चोट–पहुँचा
+  arb: اِضْرِبْ
+  kor: 치소서
+  swa: vunja
+
+### Sense 110941 (1 occurrences)
+Grammar: V-Qal-Imperf-3ms
+  eng: will–shatter
+  spa: herirá
+  arb: يَسْحَقُ
+  kor: 부수시리이다
+  swa: atavunja
+
+### Sense 110942 (1 occurrences)
+Grammar: V-Qal-Perf-2ms
+  eng: you–shattered
+  spa: aplastaste
+  hin: तूने–कुचला
+  arb: سَحَقْتَ
+  kor: 치셨도다
+  swa: umemponda
+
+### Sense 110943 (1 occurrences)
+Grammar: V-Qal-Imperf-3ms
+  eng: he–strikes
+  spa: hiere
+  hin: घायल–करता–है
+  arb: يَسْحَقُ
+  kor: 치신다–그가
+  swa: anapiga
+
+### Sense 110944 (1 occurrences)
+Grammar: Conj-w | V-Qal-ConsecImperf-1c
+  eng: and–I-shatter–them
+  spa: y–los–heriré
+  hin: और–कुचलूंगा–उन्हें
+  arb: وَأَسْحَقُهُمْ
+  kor: 그리고–타격했다–그들을
+  swa: na–nikawapiga
+
+### Sense 110945 (1 occurrences)
+Grammar: Conj-w | V-Qal-ConjPerf-3ms
+  eng: and–crushes
+  spa: y–herirá
+  hin: और–कुचलेगा
+  arb: وَ–سَحَقَ
+  kor: 그리고–칠–것이다
+  swa: na–atavunja
+
+### Sense 110946 (1 occurrences)
+Grammar: Conj-w | V-Qal-ConjPerf-3fs
+  eng: and–she-struck
+  spa: y–traspasó
+  hin: और–फोड़ा–उसने
+  arb: وَ–حَطَمَتْ
+  kor: 그리고–부수었다
+  swa: na–akatoboa
+
+## Task
+
+Group these 13 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

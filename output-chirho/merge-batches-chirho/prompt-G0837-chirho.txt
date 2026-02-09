@@ -1,0 +1,154 @@
+# Sense Merge Task for G0837
+
+Lemma: G0837 (POS: V-FIA-3S)
+Total occurrences: 23
+Current sense count: 14
+
+This Hebrew/Greek lemma has been over-split into 14 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 63621 (5 occurrences)
+Grammar: V-IIA-3S
+  eng: was–growing, was–increasing, was-growing
+  spa: crecía
+  hin: बढ़ता–था, बढ़ता–गया
+  arb: نَمَتْ, كَانَ–يَنْمُو, كَانَتْ–تَنْمُو
+  kor: 자랐다, 자라갔다, 자람고
+  swa: lilikua, akakua
+
+### Sense 63622 (3 occurrences)
+Grammar: V-PPM/P-GFS,V-PPM/P-NNS,V-PPM/P-NMP
+  eng: growing, as-grows
+  spa: creciendo
+  hin: बधते-हुए, बधत-हुअ, बढ़ते–हुए
+  arb: يَنمو, نامٍ, نامينَ
+  kor: 자라는, 자라면서
+  swa: mkikua, inayokua, ikizidi
+
+### Sense 63623 (2 occurrences)
+Grammar: V-PIA-3P,V-PIA-3S
+  eng: they–grow, they-grow
+  spa: crecen
+  hin: बढ़ते–हैं, बढ़ती–हैं
+  arb: تَنْمُو, تَنمو
+  kor: 자라는지
+  swa: yanavyokua
+
+### Sense 63624 (2 occurrences)
+Grammar: V-PIA-3S
+  eng: grows
+  spa: crece
+  hin: बधति-है, बधत-है
+  arb: يَنمو
+  kor: 자란다, 자라난다
+  swa: unakua, linakua
+
+### Sense 63625 (2 occurrences)
+Grammar: V-AIA-3S
+  eng: it-grew, increased
+  spa: creció
+  hin: बढ़ा
+  arb: نَمَتْ, نَمَا
+  kor: 자라서, 성장했다
+  swa: waliongezeka, ikakua
+
+### Sense 63626 (1 occurrences)
+Grammar: V-ASP-2P
+  eng: you–may–grow
+  spa: crezcáis
+  hin: बढ़ो
+  arb: تَنموا
+  kor: 너희가–자라
+  swa: mkue
+
+### Sense 63627 (1 occurrences)
+Grammar: V-PPM/P-NNP
+  eng: increasing
+  spa: creciendo
+  hin: और
+  arb: نامِيًا
+  kor: 불어나며
+  swa: yakikua,
+
+### Sense 63628 (1 occurrences)
+Grammar: V-FIA-3S
+  eng: will-increase
+  spa: aumentará
+  hin: बढ़ाएगा
+  arb: سَيُنمّي
+  kor: 자라게–하시리라
+  swa: ataongeza
+
+### Sense 63629 (1 occurrences)
+Grammar: V-ASP-3S
+  eng: it–is–grown
+  spa: creciere
+  hin: बधत–है
+  arb: تَنمُو
+  kor: 자랐을–때
+  swa: ikuapo
+
+### Sense 63630 (1 occurrences)
+Grammar: V-PNA
+  eng: to-increase
+  spa: crecer
+  hin: बढ़ना,
+  arb: يَزْدَادَ
+  kor: 자라다
+  swa: aongezeke
+
+### Sense 63631 (1 occurrences)
+Grammar: V-IIA-3S
+  eng: was–causing–to–grow
+  spa: hacía–crecer
+  hin: बढ़ाया
+  arb: أَنْمى
+  kor: 자라게–하셨다
+  swa: aliukuza.
+
+### Sense 63632 (1 occurrences)
+Grammar: V-ASA-1P
+  eng: we-might-grow
+  spa: crezcamos
+  hin: हुम-बधेन
+  arb: نَنمو
+  kor: 자라게–하라
+  swa: tukue
+
+### Sense 63633 (1 occurrences)
+Grammar: V-PPA-NMS
+  eng: causing–to–grow
+  spa: haciendo–crecer
+  hin: बढ़ानेवाला
+  arb: المُنْمي
+  kor: 자라게–하시는
+  swa: akuzaye
+
+### Sense 63634 (1 occurrences)
+Grammar: V-PMA-2P
+  eng: grow
+  spa: creced
+  hin: बढ़ते–जाओ
+  arb: انمُوا
+  kor: 성장하라
+  swa: kukueni
+
+## Task
+
+Group these 14 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

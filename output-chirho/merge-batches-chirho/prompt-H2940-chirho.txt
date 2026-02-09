@@ -1,0 +1,135 @@
+# Sense Merge Task for H2940
+
+Lemma: H2940 (POS: Conj-w | N-msc)
+Total occurrences: 13
+Current sense count: 12
+
+This Hebrew/Greek lemma has been over-split into 12 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 100412 (2 occurrences)
+Grammar: N-msc | 3ms
+  eng: its–taste, his–taste
+  spa: su–sabor
+  hin: उसका–स्वाद
+  arb: طَعْمُهُ
+  kor: 그의–맛이, 그것의–맛
+  swa: ladha–yake
+
+### Sense 100413 (1 occurrences)
+Grammar: Conj-w | N-msc
+  eng: and–discernment-of
+  spa: y–el–juicio–de
+  hin: और–विवेक
+  arb: وَتَمْييزَ
+  kor: 그리고–분별력–을
+  swa: na–busara–ya
+
+### Sense 100414 (1 occurrences)
+Grammar: N-msc | 3ms 
+  eng: his–behavior
+  spa: su–juicio
+  hin: अपन-बरतअव
+  arb: عَقْلَهُ
+  kor: 그의–행동을
+  swa: akili–yake
+
+### Sense 100415 (1 occurrences)
+Grammar: Prep-k | N-msc
+  eng: like–taste-of
+  spa: como–sabor–de
+  hin: जैसा–स्वाद
+  arb: كَ–طَعْمِ
+  kor: 같이–맛
+  swa: kama–ladha–ya
+
+### Sense 100416 (1 occurrences)
+Grammar: Prep-m | N-msc
+  eng: by–the–decree–of
+  spa: por–decreto–de
+  hin: आज्ञा–से
+  arb: بِ–مَرْسُومِ
+  kor: 부터–조서
+  swa: kwa–amri–ya
+
+### Sense 100417 (1 occurrences)
+Grammar: N-ms
+  eng: taste
+  spa: discernimiento
+  arb: الطَّعْمِ
+  kor: 분별–과
+  swa: wa–ladha
+
+### Sense 100418 (1 occurrences)
+Grammar: Conj-w | N-msc | 3ms
+  eng: and–its–taste
+  spa: y–su–sabor
+  hin: और–स्वाद–उसका
+  arb: وَ–طَعْمُهُ
+  kor: 흰
+  swa: na–ladha–yake
+
+### Sense 100419 (1 occurrences)
+Grammar: N-ms
+  eng: taste
+  spa: sabor
+  hin: स्वाद
+  arb: طَعْمٌ
+  kor: 맛–이
+  swa: ladha
+
+### Sense 100420 (1 occurrences)
+Grammar: N-msc | 3ms
+  eng: his–behavior
+  spa: su–conducta
+  hin: बुद्धि–अपनी
+  arb: طَعْمَهُ
+  kor: 그–의–행동을
+  swa: tabia-yake
+
+### Sense 100421 (1 occurrences)
+Grammar: N-ms
+  eng: discretion
+  spa: discreción
+  hin: विवेक–से
+  arb: ذَوْقٍ
+  kor: 분별–에서
+  swa: busara
+
+### Sense 100422 (1 occurrences)
+Grammar: N-msc | 2fs
+  eng: your–discernment
+  spa: tu–juicio
+  hin: तेरी–बुद्धि
+  arb: فَهمُكِ
+  kor: 네–분별이
+  swa: akili–yako
+
+### Sense 100423 (1 occurrences)
+Grammar: N-ms
+  eng: a–sensible–answer
+  spa: sensatez
+  hin: समझ–के।
+  arb: بِ–فَهْمٍ
+  kor: 지각을
+  swa: kwa–busara
+
+## Task
+
+Group these 12 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

@@ -1,0 +1,118 @@
+# Sense Merge Task for G3327
+
+Lemma: G3327 (POS: V-ASA-3S)
+Total occurrences: 12
+Current sense count: 10
+
+This Hebrew/Greek lemma has been over-split into 10 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 72258 (2 occurrences)
+Grammar: V-APA-NMS
+  eng: having–departed, having-passed-on
+  spa: habiéndose-ido
+  hin: वहन–से–जकर, वहअन–से–चलकर
+  arb: انْتَقَلَ, انتَقَلَ
+  kor: 옮기시어, 옮겨
+  swa: akiondoka
+
+### Sense 72259 (2 occurrences)
+Grammar: V-AMA-2S
+  eng: Move, Depart
+  spa: Pasa
+  hin: हत, चला–जा
+  arb: اِنْتَقِلْ, انْتَقِلْ
+  kor: 옮겨라, 옮겨–가라
+  swa: Ondoka
+
+### Sense 72260 (1 occurrences)
+Grammar: V-APA-NMS
+  eng: having-moved
+  spa: pasándose
+  hin: जाकर
+  arb: ٱنْتَقَلَ
+  kor: 옮겨
+  swa: akiondoka
+
+### Sense 72261 (1 occurrences)
+Grammar: V-AIA-3S
+  eng: he–departed
+  spa: partió
+  hin: चल–गय
+  arb: اِنتَقَلَ
+  kor: 떠나셨으니
+  swa: akaondoka
+
+### Sense 72262 (1 occurrences)
+Grammar: V-RIA-1P
+  eng: we-have-passed
+  spa: hemos-pasado
+  hin: हम–पार–हो–गए–हैं
+  arb: قَدِ–انتَقَلنا
+  kor: 우리–가–옮겨갔다
+  swa: tumepita
+
+### Sense 72263 (1 occurrences)
+Grammar: V-FIM-3S
+  eng: it-will-move
+  spa: pasará
+  hin: हत–जअयेग
+  arb: يَنْتَقِلُ
+  kor: 옮겨질–것이다
+  swa: utaondoka
+
+### Sense 72264 (1 occurrences)
+Grammar: V-RIA-3S
+  eng: has-passed
+  spa: ha-pasado
+  hin: पार–हो–गया–है
+  arb: قَدِ–اِنْتَقَلَ
+  kor: 옮겨갔다
+  swa: amevuka
+
+### Sense 72265 (1 occurrences)
+Grammar: V-ASA-3S
+  eng: he–might–depart
+  spa: pasara
+  hin: जाए
+  arb: يَنْتَقِلَ
+  kor: 옮기려고
+  swa: ahame
+
+### Sense 72266 (1 occurrences)
+Grammar: V-PMA-2P
+  eng: move
+  spa: paséis
+  hin: जाओ–इधर–उधर
+  arb: تَنْتَقِلوا
+  kor: 옮기지
+  swa: hamie
+
+### Sense 72267 (1 occurrences)
+Grammar: V-ASA-3S
+  eng: he-would-depart
+  spa: pasase
+  hin: चला–जाए
+  arb: يَنتَقِلَ
+  kor: 떠나기라
+  swa: aondoke
+
+## Task
+
+Group these 10 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

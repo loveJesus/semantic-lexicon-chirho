@@ -1,0 +1,136 @@
+# Sense Merge Task for H7243
+
+Lemma: H7243 (POS: Number-oms)
+Total occurrences: 55
+Current sense count: 12
+
+This Hebrew/Greek lemma has been over-split into 12 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 134543 (37 occurrences)
+Grammar: Number-oms,Art | Number-oms,Art | Number-ofs
+  eng: the–fourth, fourth, The–fourth
+  spa: el–cuarto, la–cuarta, cuarto
+  hin: चौथे, –चौथा, चौथी
+  arb: الرَّابِعُ, الرَّابِعَةِ, الرَّابِعِ
+  kor: 그–넷째, 넷째, 넷째의
+  swa: wa–nne, ya–nne, –wa–nne
+
+### Sense 134544 (5 occurrences)
+Grammar: Number-ofsc
+  eng: fourth-of, a–fourth–part–of, a-fourth-of
+  spa: cuarta–parte–de, cuarta–de, un–cuarto–de
+  hin: चौथाई
+  arb: رُبْعُ, رُبْعَ, رُبُعَ
+  kor: 사분의–일–을, 사분의–일, 사분의–일–의
+  swa: robo–ya, robo–ya–, robo
+
+### Sense 134545 (3 occurrences)
+Grammar: Conj-w, Art | Number-oms
+  eng: and–the–fourth, and–the-fourth
+  spa: y–el–cuarto, Y–el–cuarto
+  hin: और–चौथा
+  arb: وَالرَّابِعُ, وَ–الرَّابِعُ
+  kor: 그리고–넷째의, 그리고–넷째는, 그리고-넷째는
+  swa: na–wa–nne
+
+### Sense 134546 (2 occurrences)
+Grammar: Number-omp
+  eng: fourth-generation, four-generations
+  spa: cuarta–generación
+  hin: रवीईम
+  arb: ٱلْجِيلِ–ٱلرَّابِعِ
+  kor: 사–대–까지
+  swa: wa–kizazi–cha–nne, kizazi–cha–nne
+
+### Sense 134547 (1 occurrences)
+Grammar: Prep-b, Art | Number-oms
+  eng: in–the–fourth
+  spa: en–el–cuarto
+  hin: में–चौथे
+  arb: في–الرَّابِعِ
+  kor: 그–넷째
+  swa: katika–wa–nne
+
+### Sense 134548 (1 occurrences)
+Grammar: Conj-w | Number-ofs
+  eng: and–a–fourth–part
+  spa: y–cuarta–parte
+  hin: और–चौथाई
+  arb: وَ–رُبُعَاً
+  kor: 그리고–사분의–일은
+  swa: na–robo
+
+### Sense 134549 (1 occurrences)
+Grammar: Number-ofs
+  eng: a–fourth
+  spa: cuarta–parte
+  hin: चौथे–भाग
+  arb: رُبْعٍ
+  kor: 넷째의
+  swa: sehemu–ya–nne
+
+### Sense 134550 (1 occurrences)
+Grammar: Prep-b | Number-ofsc
+  eng: with–fourth-of
+  spa: con–cuarta–parte–de
+  hin: चौथाई–में
+  arb: بِ–رُبْعِ
+  kor: 사분의–일–에
+  swa: na–robo
+
+### Sense 134551 (1 occurrences)
+Grammar: Number-oms
+  eng: fourth
+  spa: cuarta
+  hin: चौथि
+  arb: الرَّابِعُ
+  kor: 넷째에
+  swa: cha–nne
+
+### Sense 134552 (1 occurrences)
+Grammar: Art | Number-oms
+  eng: the–fourth
+  spa: el–cuarto
+  hin: चौथे–का
+  arb: الرَّابِعِ
+  kor: 넷째–달의
+  swa: mwezi–wa–nne
+
+### Sense 134553 (1 occurrences)
+Grammar: Conj-w | Number-ofsc
+  eng: and–fourth-of
+  spa: y–cuarto–de
+  hin: और–चौथाई
+  arb: وَرُبْعُ
+  kor: 그리고–사분의–일–을
+  swa: na–robo–ya
+
+### Sense 134554 (1 occurrences)
+Grammar: Number-ofs
+  eng: square
+  spa: cuadrado
+  hin: चौकोर
+  arb: مُرَبَّعًا
+  kor: 사분의–일이다
+  swa: mraba
+
+## Task
+
+Group these 12 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

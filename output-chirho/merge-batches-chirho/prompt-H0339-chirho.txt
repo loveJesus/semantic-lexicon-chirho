@@ -1,0 +1,145 @@
+# Sense Merge Task for H0339
+
+Lemma: H0339 (POS: N-ms)
+Total occurrences: 36
+Current sense count: 13
+
+This Hebrew/Greek lemma has been over-split into 13 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 81466 (14 occurrences)
+Grammar: N-mp,Art | N-mp
+  eng: the–coastlands, coastlands, islands
+  spa: costas, las–costas, las–islas
+  hin: टापू, द्वीप, टापूओं–ने
+  arb: الْجَزَائِرُ, الجُزُرُ, جَزَائِرُ
+  kor: 섬들이, 그–섬들이, 섬들아
+  swa: visiwa
+
+### Sense 81467 (4 occurrences)
+Grammar: Art | N-ms,N-ms
+  eng: the–coastland, coastland
+  spa: isla, la–isla, la–costa
+  hin: तट, द्वीप–के
+  arb: السَّاحِلِ, الْجَزِيرَةِ
+  kor: 섬의, 그–섬의
+  swa: wa–pwani, visiwa
+
+### Sense 81468 (3 occurrences)
+Grammar: N-mp,Art | N-mp
+  eng: the–coastlands, coastlands
+  spa: las–islas, las–costas, costas
+  hin: टापू, –टापूओं–के
+  arb: جَزَائِرَ, الْجُزُرَ, الْجَزَائِرِ
+  kor: 그–섬들의, 섬들
+  swa: visiwa, pwani
+
+### Sense 81469 (3 occurrences)
+Grammar: Prep-b | N-mpc,Prep-b, Art | N-mp
+  eng: in–the–coastlands, of–the–sea
+  spa: en–las–costas, en–las–islas–de
+  hin: में–टापूओं, में–टापुओं, द्वीपों–में
+  arb: فِي–جُزُرِ, فِي–الْجَزَائِرِ, فِي–الجُزُرِ
+  kor: 에서–섬들에서, 섬들–에서, 그–섬들에서
+  swa: visiwa–vya, visiwani, katika–visiwa
+
+### Sense 81470 (2 occurrences)
+Grammar: Prep-l, Art | N-mp,Prep-l | N-mp
+  eng: to–the–coastlands, to–the-coastlands
+  spa: a–las–costas
+  hin: टापूओंको, को–टापुओं
+  arb: لِ–الْجُزُرِ, لِـ–جُزُرٍ
+  kor: 에–섬들에게, 섬들에게–
+  swa: kwa–visiwa
+
+### Sense 81471 (2 occurrences)
+Grammar: N-mpc
+  eng: the–coastlands–of, coastlands-of
+  spa: islas–de, costas–de
+  hin: द्वीप, तापु
+  arb: جُزُرُ, جَزَائِرِ
+  kor: 섬들이, 섬들
+  swa: visiwa–vya
+
+### Sense 81472 (2 occurrences)
+Grammar: Prep-m | N-mpc
+  eng: from–coastlands-of–
+  spa: de–las–costas–de, desde–las–costas–de
+  hin: –टापूओं–से
+  arb: مِنْ–جَزَائِرِ
+  kor: 섬들에서–
+  swa: kutoka–visiwa–vya
+
+### Sense 81473 (1 occurrences)
+Grammar: Prep-l, Art | N-mp
+  eng: into–islands
+  spa: en–islas
+  hin: को–टापूओं
+  arb: جُزُرًا
+  kor: 섬들로
+  swa: kuwa–visiwa
+
+### Sense 81474 (1 occurrences)
+Grammar: Conj-w | N-mp
+  eng: and–the–islands
+  spa: e–islas
+  hin: और–द्वीपों–के
+  arb: وَ–الجَزائِرِ
+  kor: 섬들–의
+  swa: na–visiwa
+
+### Sense 81475 (1 occurrences)
+Grammar: Conj-w | N-mpc
+  eng: and–islands-of
+  spa: e–islas–de
+  hin: और–टापू
+  arb: وَ‒جُزُرِ
+  kor: 그리고–섬들
+  swa: na–visiwa
+
+### Sense 81476 (1 occurrences)
+Grammar: Conj-w, Prep-m | N-mpc
+  eng: and–from–coastlands–of
+  spa: y-de-islas-de
+  hin: और–टापुओं–से–
+  arb: وَ–مِنْ–جُزُرِ
+  kor: 섬들–에서
+  swa: na-kutoka-visiwa-vya
+
+### Sense 81477 (1 occurrences)
+Grammar: N-msc
+  eng: coastland-of
+  spa: isla–de
+  hin: द्वीप
+  arb: جَزِيرَةِ
+  kor: 섬
+  swa: kisiwa–cha
+
+### Sense 81478 (1 occurrences)
+Grammar: N-mpc
+  eng: to–the–coasts
+  spa: a–las–costas–de
+  hin: द्वीपों
+  arb: جُزُرَ
+  kor: 섬들–에
+  swa: visiwa–vya
+
+## Task
+
+Group these 13 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

@@ -1,0 +1,136 @@
+# Sense Merge Task for H7579
+
+Lemma: H7579 (POS: V-Qal-Imperf-3mp | Pn)
+Total occurrences: 19
+Current sense count: 12
+
+This Hebrew/Greek lemma has been over-split into 12 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 137235 (3 occurrences)
+Grammar: Prep-l | V-Qal-Inf
+  eng: to–draw
+  spa: para–sacar
+  hin: भरने–के–लिए
+  arb: لِتَسْتَقِيَ, لِيَسْتَقِينَ
+  kor: 길어–오려고
+  swa: kuchota
+
+### Sense 137236 (3 occurrences)
+Grammar: Conj-w | V-Qal-Prtcpl-mpc
+  eng: and–drawers–of–, and–drawers–of
+  spa: y–sacadores–de
+  hin: और–भरनेवाले
+  arb: وَ–سُقاةَ
+  kor: 그리고–물–길는–자들이–, 그리고–물–길는–자들로
+  swa: na–wachota–, na–wachota
+
+### Sense 137237 (2 occurrences)
+Grammar: Conj-w | V-Qal-ConsecImperf-3m
+  eng: and–they-drew–, and–they-drew
+  spa: y–sacaron–, y–sacaron
+  hin: और–भरा, और–खींचा
+  arb: وَ–اسْتَقَوْا–, وَاسْتَقَوْا
+  kor: 그리고–길었다–, 그리고–길어올렸다
+  swa: na–wakateka
+
+### Sense 137238 (2 occurrences)
+Grammar: Conj-w | V-Qal-ConsecImperf-3f
+  eng: and–drew
+  spa: y–sacó
+  hin: और–भरी
+  arb: وَاسْتَقَتْ
+  kor: 그리고–길어–왔다
+  swa: na–akachota
+
+### Sense 137239 (2 occurrences)
+Grammar: V-Qal-Imperf-1cs
+  eng: I–will–draw
+  spa: sacaré
+  hin: मैं–भरूँगी
+  arb: أَسْتَقِي
+  kor: 길어–주리라
+  swa: nitachota
+
+### Sense 137240 (1 occurrences)
+Grammar: V-Qal-Prtcpl-msc
+  eng: drawer-of
+  spa: el–que–saca
+  hin: भरनेवाले
+  arb: سَاقِي
+  kor: 긷는–자(접)
+  swa: mchota–maji
+
+### Sense 137241 (1 occurrences)
+Grammar: Art | V-Qal-Prtcpl-fp
+  eng: the–women–drawing–water
+  spa: las–que–sacan–agua
+  hin: पानी–भरने–वालियों–के
+  arb: الْمُسْتَقِيَاتِ
+  kor: 그–길어–오는–여인들의
+  swa: wachota–maji
+
+### Sense 137242 (1 occurrences)
+Grammar: Conj-w | V-Qal-ConsecImperf-3m
+  eng: and–drew–
+  spa: y–sacaron
+  hin: और–खींचा–
+  arb: وَاسْتَقَوْا–
+  kor: 그리고–길어–오린다
+  swa: na–wakateka–
+
+### Sense 137243 (1 occurrences)
+Grammar: V-Qal-Imperf-3mp | Pn
+  eng: draw
+  spa: saquen
+  hin: भरें
+  arb: يَسْتَقِي
+  kor: 그들이–길어오는
+  swa: wamechota
+
+### Sense 137244 (1 occurrences)
+Grammar: Prep-l | V-Qal-Inf
+  eng: to–draw
+  spa: a–sacar
+  hin: के–लिए–खींचने
+  arb: لِ–اسْتِقَاءِ
+  kor: 길어올리려고
+  swa: kuteka
+
+### Sense 137245 (1 occurrences)
+Grammar: Conj-w | V-Qal-ConjPerf-2mp
+  eng: and–you-will-draw–
+  spa: Y–sacaréis–
+  hin: और–तुम–भरोगे–
+  arb: وَ–تَسْتَقُونَ–
+  kor: 길으리라–
+  swa: Na–mtateka
+
+### Sense 137246 (1 occurrences)
+Grammar: V-Qal-Imp-fs
+  eng: draw–
+  spa: saca
+  hin: भर–
+  arb: اسْتَقِي–لَكِ
+  kor: 길어라
+  swa: chota–
+
+## Task
+
+Group these 12 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

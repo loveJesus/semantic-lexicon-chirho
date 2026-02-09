@@ -1,0 +1,127 @@
+# Sense Merge Task for G1869
+
+Lemma: G1869 (POS: V-APA-NMS)
+Total occurrences: 19
+Current sense count: 11
+
+This Hebrew/Greek lemma has been over-split into 11 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 67484 (7 occurrences)
+Grammar: V-APA-NMP,V-APA-NMS,V-APA-NFS
+  eng: having-lifted-up, having–lifted–up, lifting
+  spa: alzando, levantando, habiendo-levantado
+  hin: उठाकर, उथकर
+  arb: رَفَعَ, رَفَعُوا, رافِعَةً
+  kor: 들어–올리시고, 들어올려, 들어–올리고
+  swa: akiinua, wakiinua, akainua
+
+### Sense 67485 (2 occurrences)
+Grammar: V-AIA-3S
+  eng: lifted–up
+  spa: levantó
+  hin: उठाया, आवाज़
+  arb: رَفَعَ
+  kor: 들어–올렸다, 그들–이
+  swa: aliniinulia, aliinua
+
+### Sense 67486 (2 occurrences)
+Grammar: V-AMA-2P
+  eng: lift-up
+  spa: alzad
+  hin: उठाओ
+  arb: اِرْفَعُوا, اِرفَعوا
+  kor: 들어라, 들라
+  swa: inueni
+
+### Sense 67487 (1 occurrences)
+Grammar: V-APA-NMP
+  eng: having–hoisted
+  spa: habiendo-izado
+  hin: उठाकर
+  arb: لَمَّا–رَفَعُوا
+  kor: 올리고
+  swa: wakiinua
+
+### Sense 67488 (1 occurrences)
+Grammar: V-AIP-3S
+  eng: he–was–lifted–up
+  spa: fue–levantado
+  hin: और
+  arb: اُرْتُفِعَ
+  kor: 그–가
+  swa: aliinuliwa
+
+### Sense 67489 (1 occurrences)
+Grammar: V-ANA
+  eng: to-lift
+  spa: alzar
+  hin: उठाना
+  arb: يَرفَعَ
+  kor: 들지
+  swa: kuinua
+
+### Sense 67490 (1 occurrences)
+Grammar: V-AIA-3P
+  eng: they–raised
+  spa: levantaron
+  hin: उठाई
+  arb: رَفَعُوا
+  kor: 그들이–높였다
+  swa: walipaza
+
+### Sense 67491 (1 occurrences)
+Grammar: V-PPM-ANS
+  eng: raising-itself
+  spa: que–se–levanta
+  hin: उठनेवाली
+  arb: مُرتَفِعٍ
+  kor: 들린
+  swa: kinachojinua
+
+### Sense 67492 (1 occurrences)
+Grammar: V-AIA-3P
+  eng: lifted–up
+  spa: alzaron
+  hin: उठाई
+  arb: رَفَعوا
+  kor: 높였다
+  swa: waliinua
+
+### Sense 67493 (1 occurrences)
+Grammar: V-PIM-3S
+  eng: exalts-himself
+  spa: se–enaltece
+  hin: अपने–आप–को–ऊंचा–करता–है
+  arb: يَتَرَفَّعُ
+  kor: 교만하면
+  swa: anajinua,
+
+### Sense 67494 (1 occurrences)
+Grammar: V-PPA-AMP
+  eng: lifting–up
+  spa: levantando
+  hin: उथते-हुए
+  arb: رافِعينَ
+  kor: 들어–올려
+  swa: wakiinua
+
+## Task
+
+Group these 11 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

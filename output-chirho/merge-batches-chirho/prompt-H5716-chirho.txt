@@ -1,0 +1,145 @@
+# Sense Merge Task for H5716
+
+Lemma: H5716 (POS: Prep-b | N-msc)
+Total occurrences: 14
+Current sense count: 13
+
+This Hebrew/Greek lemma has been over-split into 13 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 122539 (2 occurrences)
+Grammar: N-ms
+  eng: with-ornament, ornament
+  spa: adorno
+  hin: गहना, आभूषण
+  arb: زِينَةً, حُلِيًّا
+  kor: 장식으로
+  swa: mapambo
+
+### Sense 122540 (1 occurrences)
+Grammar: Prep-k, Art | N-ms
+  eng: like–ornament
+  spa: como–adorno
+  hin: गहने–की–तरह
+  arb: كَـ–زِينَةٍ
+  kor: 장식같이–
+  swa: kama–pambo
+
+### Sense 122541 (1 occurrences)
+Grammar: N-msc | 3ms
+  eng: ornament-of-him
+  spa: adorno–de–él
+  hin: उसके–आभूषण
+  arb: حُلِيِّهِ
+  kor: 그의–장식의
+  swa: wa–mapambo–yake
+
+### Sense 122542 (1 occurrences)
+Grammar: N-msc | 3ms
+  eng: his–ornaments
+  spa: su–adorno
+  hin: अपने–गहने
+  arb: زينَتَهُ
+  kor: 그의–장식을
+  swa: mapambo–yake
+
+### Sense 122543 (1 occurrences)
+Grammar: N-msc | 3mp
+  eng: their–ornaments
+  spa: su–adorno
+  hin: अपने–गहने
+  arb: زينَتَهُم
+  kor: 그들의–장식을
+  swa: mapambo–yao
+
+### Sense 122544 (1 occurrences)
+Grammar: N-msc
+  eng: ornament–of–
+  spa: adornos–de
+  hin: गहने–
+  arb: بِـ–حُلِيِّ–
+  kor: 장식을
+  swa: kwa–mapambo
+
+### Sense 122545 (1 occurrences)
+Grammar: N-msc | 2ms
+  eng: your–ornaments
+  spa: tu–adorno
+  hin: तेरे–गहने
+  arb: زينَتَكَ
+  kor: 너의–장식을
+  swa: mapambo–yako
+
+### Sense 122546 (1 occurrences)
+Grammar: N-msc | 3ms
+  eng: its–adornment
+  spa: su–adorno
+  hin: साज–उसका
+  arb: زِينَتِهِ
+  kor: 그것들–의–치장을
+  swa: mapambo-yake
+
+### Sense 122547 (1 occurrences)
+Grammar: Prep-b | N-msc
+  eng: in–ornament-of
+  spa: a–ornamento–de
+  hin: में–आभूषण
+  arb: إِلَى–زِينَةِ
+  kor: 장식의–
+  swa: kwa–mapambo
+
+### Sense 122548 (1 occurrences)
+Grammar: N-msc | 2fs
+  eng: your–ornaments
+  spa: tu–adorno
+  hin: तेरे–आभूषण–को
+  arb: عُمرَكِ
+  kor: 네–장식–을
+  swa: uhai–wako
+
+### Sense 122549 (1 occurrences)
+Grammar: N-msc | 3fs
+  eng: her–ornaments
+  spa: de–sus–joyas
+  hin: गहने–अपने
+  arb: حِلْيَهَا
+  kor: 그녀의–장신구들–을
+  swa: mapambo–yake
+
+### Sense 122550 (1 occurrences)
+Grammar: N-mp
+  eng: ornaments
+  spa: ornamentos
+  hin: आभूषणों
+  arb: الزِّينَاتِ
+  kor: 장식들에
+  swa: mazuri
+
+### Sense 122551 (1 occurrences)
+Grammar: N-msc
+  eng: ornaments–of
+  spa: adorno–de
+  hin: गहने
+  arb: حُلِيَّ
+  kor: 장식을
+  swa: mapambo
+
+## Task
+
+Group these 13 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

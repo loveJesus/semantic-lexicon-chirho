@@ -1,0 +1,154 @@
+# Sense Merge Task for H0060
+
+Lemma: H0060 (POS: N-msc)
+Total occurrences: 24
+Current sense count: 14
+
+This Hebrew/Greek lemma has been over-split into 14 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 79715 (4 occurrences)
+Grammar: N-ms
+  eng: mourning
+  spa: luto, duelo
+  hin: शोक–के, प्रशंसा–का–वस्त्र
+  arb: –النَّوْحِ, حُزنٍ, بَيْتِ
+  kor: 애공–의, 애도의, 슬픔을
+  swa: maombolezo
+
+### Sense 79716 (4 occurrences)
+Grammar: N-ms
+  eng: mourning
+  spa: luto, duelo
+  hin: शोक, शोक–था
+  arb: حِدَادٌ, حُزْنٍ, حُزْنًا
+  kor: 애통이, 애통에, 애도를
+  swa: maombolezo
+
+### Sense 79717 (3 occurrences)
+Grammar: Prep-l | N-ms
+  eng: into–mourning, to–mourning
+  spa: en–luto, a–luto
+  hin: शोक–में, में–शोक
+  arb: لِ–نَوْحٍ, إِلَى–نَوْحٍ, إِلَى–حُزْنٍ
+  kor: 으로–애통, 애통–으로, 애도가-되었으니
+  swa: kuwa–maombolezo, maombolezo
+
+### Sense 79718 (2 occurrences)
+Grammar: N-msc
+  eng: mourning-of
+  spa: duelo–por, duelo–de
+  hin: शोक
+  arb: نَوْحِ, حِدادِ
+  kor: 애도의, 애곡(접)
+  swa: za–maombolezo, maombolezo–ya
+
+### Sense 79719 (2 occurrences)
+Grammar: N-ms,Art | N-ms
+  eng: the–mourning, mourning
+  spa: el–duelo, duelo
+  hin: शोक
+  arb: نَوْحَةً, النَّوْحَةَ
+  kor: 애도를, 그–애도를
+  swa: kutokufa
+
+### Sense 79720 (1 occurrences)
+Grammar: Conj-w | N-ms
+  eng: and–mourning
+  spa: y–duelo
+  hin: और–शोक
+  arb: وَ–نَوْحًا
+  kor: 그리고–애통–을
+  swa: na–huzuni
+
+### Sense 79721 (1 occurrences)
+Grammar: N-ms
+  eng: mourning–
+  spa: duelo
+  hin: शोक–
+  arb: نَوْحَةٌ–
+  kor: 애도이다–
+  swa: wao
+
+### Sense 79722 (1 occurrences)
+Grammar: Prep-l | N-ms
+  eng: for–mourning
+  spa: en–luto
+  hin: शोक–के–लिए
+  arb: لِ–نَوحٍ
+  kor: 애곡이
+  swa: kwa–maombolezo
+
+### Sense 79723 (1 occurrences)
+Grammar: Conj-w, Prep-m | N-ms
+  eng: and–from–mourning
+  spa: y–de–luto
+  hin: और–विलाप–से
+  arb: وَ‒مِنْ‒نَوْحٍ
+  kor: 그리고–에서–애도
+  swa: na–kutoka–maombolezo
+
+### Sense 79724 (1 occurrences)
+Grammar: Art | N-ms
+  eng: the–mourning
+  spa: el–luto
+  hin: शोक
+  arb: الحِدادُ
+  kor: 그–애도가
+  swa: maombolezo
+
+### Sense 79725 (1 occurrences)
+Grammar: N-msc | 2fs
+  eng: your–mourning
+  spa: tu–luto
+  hin: तेरे–शोकके
+  arb: مَنَاحَتِكِ
+  kor: 너의–슬픔의
+  swa: za–maombolezo–yako
+
+### Sense 79726 (1 occurrences)
+Grammar: N-ms
+  eng: mourning–for
+  spa: Duelo–de
+  hin: विलाप
+  arb: نَوْحَ
+  kor: 애통을
+  swa: maombolezo
+
+### Sense 79727 (1 occurrences)
+Grammar: N-msc | 3mp
+  eng: their–mourning
+  spa: su–duelo
+  hin: उनके–विलाप
+  arb: نَوْحَهُمْ
+  kor: 그들의–애도를
+  swa: maombolezo–yao
+
+### Sense 79728 (1 occurrences)
+Grammar: Prep-k | N-ms
+  eng: like–mourning-for–
+  spa: como–luto–de
+  hin: जैसे–शोक
+  arb: كَ–حُزْنِ
+  kor: 과–같이–애통
+  swa: kama–maombolezo–ya
+
+## Task
+
+Group these 14 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

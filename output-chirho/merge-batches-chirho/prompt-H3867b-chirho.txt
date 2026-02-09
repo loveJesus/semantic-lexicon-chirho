@@ -1,0 +1,145 @@
+# Sense Merge Task for H3867b
+
+Lemma: H3867b (POS: V-Hifil-Prtcpl-msc)
+Total occurrences: 14
+Current sense count: 13
+
+This Hebrew/Greek lemma has been over-split into 13 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 108508 (2 occurrences)
+Grammar: Conj-w | V-Hifil-Prtcpl-ms
+  eng: and–lending
+  spa: y–presta
+  hin: और–उधार–देने–वाला, और–उधार–देता–है
+  arb: وَ–المُقرِض, وَيُقْرِضُ
+  kor: 그리고–빌려주도다, 그리고–빌려주는
+  swa: na–kuazima, na–hukopesha
+
+### Sense 108509 (1 occurrences)
+Grammar: V-Qal-Prtcpl-ms
+  eng: borrower
+  spa: el–que–toma–prestado
+  hin: उधार–लेनेवाला
+  arb: الْمُقْتَرِضُ
+  kor: 빌리는–자는
+  swa: akopaye
+
+### Sense 108510 (1 occurrences)
+Grammar: V-Hifil-Imperf-2ms
+  eng: you-lend
+  spa: prestas
+  hin: उधार–दो
+  arb: أَقرَضتَ
+  kor: 네가–꾸어주면
+  swa: utakopesha
+
+### Sense 108511 (1 occurrences)
+Grammar: Conj-w | V-Hifil-ConjPerf-2ms
+  eng: and–you-lend
+  spa: y–prestarás
+  hin: और–तू–उधार–देगा
+  arb: وَتُقْرِضُ
+  kor: 그리고–불려주리라
+  swa: na–utakopesha
+
+### Sense 108512 (1 occurrences)
+Grammar: V-Qal-Prtcpl-ms
+  eng: borrows
+  spa: Toma–prestado
+  hin: उधार–लेता–है
+  arb: يَسْتَقْرِضُ
+  kor: 빌리도다
+  swa: Anakopa
+
+### Sense 108513 (1 occurrences)
+Grammar: V-Qal-Perf-1cp
+  eng: we-borrowed
+  spa: pedimos–prestado
+  hin: हमने–उधार–लिया–है
+  arb: اقْتَرَضْنا
+  kor: 우리가–빌렸다
+  swa: tulikopa
+
+### Sense 108514 (1 occurrences)
+Grammar: V-Hifil-Imperf-2ms | 3mse
+  eng: lend-to-him
+  spa: le–prestarás
+  hin: उधार–देगा–उसको
+  arb: تُقْرِضُهُ
+  kor: 그에게–빌려주리라
+  swa: utamkopesha
+
+### Sense 108515 (1 occurrences)
+Grammar: V-Hifil-Imperf-3ms | 2ms
+  eng: lends-to-you
+  spa: te–prestará
+  hin: उधार–देगा–तुझको
+  arb: يُقْرِضُكَ
+  kor: 빌려주리라
+  swa: atakukopesha
+
+### Sense 108516 (1 occurrences)
+Grammar: Prep-k, Art | V-Hifil-Prtcpl-m
+  eng: as–the–lender
+  spa: como–el–que–presta
+  hin: उधार–देने–वाले–की–तरह
+  arb: كَالْمُقْرِضِ
+  kor: 빌려주는–자–같이
+  swa: kama–mkopeshaji
+
+### Sense 108517 (1 occurrences)
+Grammar: Prep-k, Art | V-Qal-Prtcpl-ms
+  eng: so–the–borrower
+  spa: como–el–que–toma–prestado
+  hin: उधार–लेने–वाले–की–तरह
+  arb: كَالْمُقْتَرِضِ
+  kor: 빌리는–자–같이
+  swa: kama–mkopaji
+
+### Sense 108518 (1 occurrences)
+Grammar: V-Qal-Imperf-2ms
+  eng: borrow
+  spa: tomarás–prestado
+  hin: उधार–लेगा।
+  arb: تَقْتَرِضُ
+  kor: 빌리지–않을지니라
+  swa: utakopa
+
+### Sense 108519 (1 occurrences)
+Grammar: V-Hifil-Prtcpl-ms
+  eng: lender
+  spa: que–presta
+  hin: उधार–देनेवाले–के
+  arb: الْمُقْرِضِ
+  kor: 빌려주는
+  swa: akopesha
+
+### Sense 108520 (1 occurrences)
+Grammar: V-Hifil-Prtcpl-msc
+  eng: lending–to
+  spa: El–que–presta–a
+  hin: उधार–देनेवाला
+  arb: مُقْرِضُ
+  kor: 빌려주는–자이니라
+  swa: anamkopesha
+
+## Task
+
+Group these 13 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

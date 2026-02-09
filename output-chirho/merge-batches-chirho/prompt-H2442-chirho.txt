@@ -1,0 +1,154 @@
+# Sense Merge Task for H2442
+
+Lemma: H2442 (POS: Conj-w | V-Piel-ConjPerf-1cp)
+Total occurrences: 14
+Current sense count: 14
+
+This Hebrew/Greek lemma has been over-split into 14 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 96925 (1 occurrences)
+Grammar: Conj-w | V-Piel-ConjPerf-1cp
+  eng: and–we-wait
+  spa: y–esperamos
+  hin: वखिक्कीनू
+  arb: وَانْتَظَرْنا
+  kor: 그리고–기다린다면
+  swa: na–tukasubiri
+
+### Sense 96926 (1 occurrences)
+Grammar: V-Piel-Imperf-2ms
+  eng: you-shall-wait
+  spa: esperarás
+  hin: तखक्केह
+  arb: تَنْتَظِرْ
+  kor: 기다리지
+  swa: kusubiri
+
+### Sense 96927 (1 occurrences)
+Grammar: Art | V-Piel-Prtcpl-ms
+  eng: the-one-waiting
+  spa: el–que–espera
+  hin: प्रतीक्षा–करनेवाला
+  arb: لِلْمُنْتَظِرِ
+  kor: 기다리는–자여
+  swa: amsubirie
+
+### Sense 96928 (1 occurrences)
+Grammar: V-Piel-Imp-ms
+  eng: wait–
+  spa: espéralo–
+  hin: प्रतीक्षा–कर–
+  arb: انتَظِرْها
+  kor: 기다리라
+  swa: yangojee
+
+### Sense 96929 (1 occurrences)
+Grammar: V-Piel-Perf-3cp
+  eng: they–waited
+  spa: esperaron
+  hin: उन्होंने–प्रतीक्षा–की
+  arb: انتَظَروا
+  kor: 기다렸나이다
+  swa: ngoja
+
+### Sense 96930 (1 occurrences)
+Grammar: Conj-w | V-Piel-ConjPerf-1cs
+  eng: and–I-will-wait
+  spa: Y-esperaré
+  hin: और–मैं–प्रतीक्षा–करूंगा
+  arb: وَ–أَنتَظِرُ
+  kor: 내가–기다리리라
+  swa: Na-nitamngojea
+
+### Sense 96931 (1 occurrences)
+Grammar: Art | V-Piel-Prtcpl-mp
+  eng: who–wait
+  spa: Los–que–esperan
+  hin: इंतज़ार–करनेवाले
+  arb: المُنْتَظِرونَ
+  kor: 그–기다리는–자들이
+  swa: wanaongojea
+
+### Sense 96932 (1 occurrences)
+Grammar: V-Piel-Perf-3fs
+  eng: waits
+  spa: esperó
+  hin: प्रतीक्षा–करता–है
+  arb: انْتَظَرَتْ
+  kor: 기다리니
+  swa: inangojea
+
+### Sense 96933 (1 occurrences)
+Grammar: V-Qal-Prtcpl-mpc
+  eng: who–wait
+  spa: los–que–esperan–en
+  hin: प्रतीक्षा–करने–वाले
+  arb: الْمُنْتَظِرِينَ
+  kor: 기다리는–자들이
+  swa: wanaomngojea
+
+### Sense 96934 (1 occurrences)
+Grammar: Prep-l | V-Piel-Prtcpl-msc
+  eng: for–one–waiting
+  spa: para–el–que–lo–espera–
+  hin: प्रतीक्षा–करने–वाले–के–लिए
+  arb: لِ–مُنْتَظِرِهِ–
+  kor: 에–기다리는–자를–위해
+  swa: kwa–wanaomngojea
+
+### Sense 96935 (1 occurrences)
+Grammar: V-Piel-Perf-3ms
+  eng: had–waited
+  spa: esperó
+  hin: इंतज़ार–करता–था
+  arb: انتَظَرَ
+  kor: 기다렸다
+  swa: alisubiri
+
+### Sense 96936 (1 occurrences)
+Grammar: V-Piel-Imperf-3ms
+  eng: waits
+  spa: esperará
+  hin: प्रतीक्षा–करेगा
+  arb: يَنْتَظِرُ
+  kor: 기다리실–것이다
+  swa: atangoja
+
+### Sense 96937 (1 occurrences)
+Grammar: Conj-w, Prep-k | V-Piel-Inf
+  eng: and–as–lying–in–wait–of
+  spa: Y–como–acechadores
+  hin: और–घात–लगानेवालों–जैसे
+  arb: وَكَمَكمَنِ
+  kor: 그리고–같으니라–기다림에
+  swa: Na–kama–wanaovizia
+
+### Sense 96938 (1 occurrences)
+Grammar: V-Piel-Imp-mp
+  eng: wait–
+  spa: esperadme
+  hin: प्रतीक्षा–करो–
+  arb: انْتَظِرُونِي
+  kor: 기다리라–
+  swa: ningojee
+
+## Task
+
+Group these 14 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

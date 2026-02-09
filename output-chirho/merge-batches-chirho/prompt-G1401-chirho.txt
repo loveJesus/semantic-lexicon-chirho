@@ -1,0 +1,145 @@
+# Sense Merge Task for G1401
+
+Lemma: G1401 (POS: N-AMP)
+Total occurrences: 126
+Current sense count: 13
+
+This Hebrew/Greek lemma has been over-split into 13 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 65878 (66 occurrences)
+Grammar: N-DMS,N-NMS,N-GMS,N-VMS,N-AMS
+  eng: slave, servant, a–slave
+  spa: siervo, esclavo, de–siervo
+  hin: दास, दस, दास–को
+  arb: عَبدًا, عَبدٌ, عَبْدَ
+  kor: 종이, 종, 종을
+  swa: mtumwa, mtumishi, yule
+
+### Sense 65879 (32 occurrences)
+Grammar: N-NMP,N-GMP,N-AMP,N-DMP,N-VMP
+  eng: servants, slaves
+  spa: siervos
+  hin: दासों, दासों–को, दास
+  arb: عَبيدَهُ, عَبِيدُ, عَبيدِهِ
+  kor: 종들–을, 종들이, 종들–에게
+  swa: watumishi, watumwa, wake
+
+### Sense 65880 (16 occurrences)
+Grammar: N-NMP,N-AMP,Adj-ANP
+  eng: slaves, bondservants
+  spa: siervos, esclavos
+  hin: दास, दस, दअस
+  arb: عَبيدَةً, عَبيدُ, عَبيدَ
+  kor: 종들, 종들이라, 종들이다
+  swa: watumwa
+
+### Sense 65881 (2 occurrences)
+Grammar: N-NMS
+  eng: slave
+  spa: ¿Esclavo, esclavo
+  hin: दास
+  arb: عَبْداً
+  kor: 종
+  swa: mtumwa,, Je,–uliitwa–ukiwa–mtumwa
+
+### Sense 65882 (2 occurrences)
+Grammar: N-VMP,N-DMP
+  eng: bondservants
+  spa: esclavos
+  hin: दसोन
+  arb: العَبيدِ, العَبيدُ
+  kor: 종들에게, 종들아
+  swa: watumwa
+
+### Sense 65883 (1 occurrences)
+Grammar: N-AMP
+  eng: slaves
+  spa: siervos
+  hin: दअसेन
+  arb: العَبيدَ
+  kor: 종들은
+  swa: watumwa
+
+### Sense 65884 (1 occurrences)
+Grammar: N-GMP
+  eng: slaves
+  spa: esclavos,
+  hin: दासों
+  arb: عَبيدٍ
+  kor: 종들의
+  swa: watumwa,
+
+### Sense 65885 (1 occurrences)
+Grammar: N-AMP
+  eng: male–servants
+  spa: siervos
+  hin: –दासियों–पर
+  arb: عَبِيدِي
+  kor: 마지막
+  swa: watumwa
+
+### Sense 65886 (1 occurrences)
+Grammar: N-VMP
+  eng: slaves
+  spa: siervos
+  hin: दसोन
+  arb: العَبيدُ
+  kor: 종들아
+  swa: ninyi
+
+### Sense 65887 (1 occurrences)
+Grammar: N-VMS
+  eng: Slave
+  spa: Siervo
+  hin: दअस
+  arb: يَا–عَبْدُ
+  kor: 악한–
+  swa: Mtumishi
+
+### Sense 65888 (1 occurrences)
+Grammar: N-NMS
+  eng: slave
+  spa: siervo
+  hin: दास
+  arb: عبدٌ
+  kor: 종이요
+  swa: mtumwa
+
+### Sense 65889 (1 occurrences)
+Grammar: N-GMS
+  eng: from-slave
+  spa: de-esclavo
+  hin: दस,
+  arb: عَن–العَبدِ
+  kor: 종과,
+  swa: na–mtumwa
+
+### Sense 65890 (1 occurrences)
+Grammar: N-NMP
+  eng: Slaves
+  spa: Siervos
+  hin: दास
+  arb: عَبيدٌ
+  kor: 종들이다
+  swa: Watumwa
+
+## Task
+
+Group these 13 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

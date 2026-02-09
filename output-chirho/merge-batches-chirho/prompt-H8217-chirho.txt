@@ -1,0 +1,163 @@
+# Sense Merge Task for H8217
+
+Lemma: H8217 (POS: Adj-ms)
+Total occurrences: 19
+Current sense count: 15
+
+This Hebrew/Greek lemma has been over-split into 15 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 143517 (3 occurrences)
+Grammar: Adj-fs
+  eng: lowly
+  spa: humilde, bajo
+  hin: नीचा
+  arb: وَضِيعَةً
+  kor: 낮은
+  swa: ndogo, mdogo, duni
+
+### Sense 143518 (2 occurrences)
+Grammar: Adj-ms
+  eng: low
+  spa: más-baja
+  hin: नीची
+  arb: أَسْفَلُ
+  kor: 낮으면, 낮다
+  swa: chini
+
+### Sense 143519 (2 occurrences)
+Grammar: Conj-w | Adj-fs
+  eng: and–low
+  spa: y–más-baja
+  hin: सफेद
+  arb: وَ–أَسْفَلُ
+  kor: 그리고–낮지
+  swa: na–chini
+
+### Sense 143520 (1 occurrences)
+Grammar: Adj-ms
+  eng: low
+  spa: bajo
+  hin: नीचे
+  arb: الْوَاطِئَةَ
+  kor: 낮은
+  swa: mfupi
+
+### Sense 143521 (1 occurrences)
+Grammar: Conj-w | Adj-msc
+  eng: but–lowly–of
+  spa: y–humilde–de–
+  hin: और–नम्र–
+  arb: وَ–مُتَواضِعُ–
+  kor: 그러나–겸손한
+  swa: lakini–mnyenyekevu–wa
+
+### Sense 143522 (1 occurrences)
+Grammar: Adj-mp
+  eng: lowly-ones
+  spa: los–humildes
+  hin: नीचोंकी
+  arb: الْمُتَوَاضِعِينَ
+  kor: 낮은–자들의
+  swa: ya–wanyenyekevu
+
+### Sense 143523 (1 occurrences)
+Grammar: Adj-fsc
+  eng: low-of
+  spa: baja–de
+  hin: नीची
+  arb: مُنْخَفِضَةِ
+  kor: 낮은–
+  swa: mfupi
+
+### Sense 143524 (1 occurrences)
+Grammar: Conj-w | Adj-ms
+  eng: and–the–lowly
+  spa: y–al–humilde
+  hin: और–दीन–को
+  arb: وَالمُتَوَاضِعَ
+  kor: 그리고–낮은–자–를
+  swa: mnyenyekevu
+
+### Sense 143525 (1 occurrences)
+Grammar: V-Qal-Inf
+  eng: lowly–of
+  spa: humilde–de
+  hin: नीचा
+  arb: مُتَواضِعُ–
+  kor: 낮은–
+  swa: kuwa–mnyenyekevu
+
+### Sense 143526 (1 occurrences)
+Grammar: Conj-w | Adj-mp
+  eng: and–lowly
+  spa: y–humillados
+  hin: और–नीच
+  arb: وَمُتَضِعِينَ
+  kor: 그리고–낮은
+  swa: na–wa–chini
+
+### Sense 143527 (1 occurrences)
+Grammar: Adj-mp
+  eng: the–lowly
+  spa: a–los–humildes
+  hin: नीचों
+  arb: المُتَواضِعينَ
+  kor: 낮은–자들을
+  swa: wanyonge
+
+### Sense 143528 (1 occurrences)
+Grammar: Prep-b | V-Qal-Inf
+  eng: when–is–low
+  spa: cuando–baje
+  hin: धीमी–होने–पर
+  arb: بِ–شْفَل
+  kor: 낮음–에서
+  swa: yanaposhuka
+
+### Sense 143529 (1 occurrences)
+Grammar: Conj-w | Adj-msc
+  eng: and–lowly-of–
+  spa: y–humilde–de–
+  hin: और–नीचे
+  arb: وَ–مُتَوَاضِعِ–
+  kor: 그리고–낮은–
+  swa: na–mnyenyekevu
+
+### Sense 143530 (1 occurrences)
+Grammar: Art | Adj-ms
+  eng: the–low
+  spa: Al–bajo
+  hin: नीचे
+  arb: الْوَضِيعَ
+  kor: 그–낮은–자를
+  swa: aliye–chini
+
+### Sense 143531 (1 occurrences)
+Grammar: Adj-ms
+  eng: lowly
+  spa: bajo
+  hin: नीचा
+  arb: حَقِيرًا
+  kor: 비천한–자
+  swa: mdogo
+
+## Task
+
+Group these 15 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

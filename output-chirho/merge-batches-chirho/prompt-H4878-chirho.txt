@@ -1,0 +1,116 @@
+# Sense Merge Task for H4878
+
+Lemma: H4878 (POS: Prep-l | N-fsc | 1cs)
+Total occurrences: 13
+Current sense count: 10
+
+This Hebrew/Greek lemma has been over-split into 10 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 114540 (4 occurrences)
+Grammar: N-fs
+  eng: apostate, O–apostate
+  spa: la–apóstata, apóstata
+  hin: धर्मत्यागी
+  arb: الـ–مُرْتَدَّةُ, أَيَّتُهَا–الـ–مُرْتَدَّةُ
+  kor: 배도한
+  swa: mwenye–kuasi
+
+### Sense 114541 (1 occurrences)
+Grammar: Conj-w | N-fpc | 2fs
+  eng: and–your–apostasies
+  spa: y–tus–apostasías
+  hin: और–धर्मत्याग–तेरी
+  arb: وَ–اِرْتِدَادَاتُكِ
+  kor: 그리고–네–배신들–이
+  swa: na–uasi–wako
+
+### Sense 114542 (1 occurrences)
+Grammar: N-fs
+  eng: a–perpetual
+  spa: apostasía
+  hin: विद्रोह
+  arb: اِرْتِدَادًا
+  kor: 배반
+  swa: uasi
+
+### Sense 114543 (1 occurrences)
+Grammar: N-fpc | 2mp
+  eng: your–apostasies
+  spa: vuestras–apostasías
+  hin: धर्मत्याग–तुम्हारे–को
+  arb: اِرْتِدَادَاتِكُمْ
+  kor: 너희의–배도함을
+  swa: uasi–wenu
+
+### Sense 114544 (1 occurrences)
+Grammar: N-fpc | 3mp
+  eng: [ketiv]
+  spa: [sus–apostasías]
+  hin: फिर–जाना–उनका
+  arb: [ارْتِدَادَاتُهُمْ]
+
+### Sense 114545 (1 occurrences)
+Grammar: N-fsc
+  eng: the–waywardness–of
+  spa: apostasía–de
+  hin: फिर–जाना
+  arb: ارْتِدَادَ
+  kor: 돌이킴–이
+  swa: kugeuka–kwa
+
+### Sense 114546 (1 occurrences)
+Grammar: N-fpc | 1cp
+  eng: our–backslidings
+  spa: rebeldías–nuestras
+  hin: हमारे–पलटने
+  arb: رِدَّاتُنَا
+  kor: 우리의–배반들이
+  swa: uasi–wetu
+
+### Sense 114547 (1 occurrences)
+Grammar: N-fpc | 3mp
+  eng: their–backslidings
+  spa: sus–apostasías
+  hin: फिर–जाना–उनका
+  arb: ارْتِدَادَاتُهُمْ
+  kor: 그들의–배도함이
+  swa: uasi–wao
+
+### Sense 114548 (1 occurrences)
+Grammar: Prep-l | N-fsc | 1cs
+  eng: on–my–turning-away
+  spa: de–mi–apostasía
+  hin: मुझ–से–फिरने–की–ओर
+  arb: بِارتِدادي
+  kor: 나의–돌아서려–함에
+  swa: kwa–kurudi–nyuma–kwangu
+
+### Sense 114549 (1 occurrences)
+Grammar: N-fsc | 3mp
+  eng: their–apostasy
+  spa: su–apostasía
+  hin: उनके–फिरने–को
+  arb: ارتِدادَهُم
+  kor: 그들의–돌이킴을
+  swa: kurudi–nyuma–kwao
+
+## Task
+
+Group these 10 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

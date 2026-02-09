@@ -1,0 +1,48 @@
+# Batch Sense Merge Task (2 lemmas, each with 8 senses)
+
+You are a biblical lexicographer. For each lemma below, group the over-split sense clusters into REAL lexicographic senses.
+
+Rules:
+- Different grammatical inflections of the same meaning = SAME sense (merge them)
+- Different verb stems (Qal vs Hifil, active vs passive) = often DIFFERENT senses
+- Literal vs metaphorical uses = DIFFERENT senses
+- Every sense ID must appear in exactly one group
+
+For each lemma, the senses are listed with their IDs (S followed by number), occurrence count, grammar tags, and top glosses across languages.
+
+## H8327 (POS: V-Hifil-Imperf.Jus-3ms, "† <strong>[<span dir="rtl"><span class="lexicon-hebrew" dir="rtl">שָׁרַשׁ</span>", 8 occ, 8 senses)
+
+- **S144116** (1x) [V-Hifil-Imperf.Jus-3ms] | eng: days–shall–take–root | spa: echará–raíces | hin: जड़–पकड़ेगा | arb: يَتَأَصَّلُ | kor: 뿌리를–내리리니 | swa: atashika–mizizi
+- **S144117** (1x) [V-Hifil-Prtcpl-ms] | eng: taking–root | spa: echando–raíces | hin: जड़–जमाता–हुआ | arb: يَتَأَصَّلُ | kor: 뿌리–내리는 | swa: akioteshwa
+- **S144118** (1x) [V-Piel-Imperf-3fs] | eng: would–uproot | spa: desarraigará | hin: जड़–से–उखाड़ती–है | arb: تَستَأصِلُ | kor: 뽑리–뽑는 | swa: inang'oa
+- **S144119** (1x) [Conj-w | V-Piel-ConjPerf-3ms |] | eng: and–uproot–you | spa: y–te–desarraigará | hin: और–उखाड़ेगा–तुझे | arb: وَ–يَسْتَأْصِلُكَ | kor: 그리고–뿌리–를–뽑으시리이다 | swa: na–mizizi-yako
+- **S144120** (1x) [V-Pual-Perf-3cp] | eng: they–took–root | spa: echaron–raíces | hin: जड़–लेते–हैं | arb: تَأَصَّلُوا | kor: 그들이–뿌리–내렸다 | swa: wamejikita
+- **S144121** (1x) [Conj-w | V-Hifil-ConsecImperf-] | eng: and–it–took–deep–root | spa: y–arraigaste | hin: और–जड़ें–जमाईं | arb: فَأَصَّلَتْ | kor: 그리고–뿌리를–내렸나이다 | swa: na–ukautia–mizizi
+- **S144122** (1x) [V-Piel-Perf-3ms] | eng: is–rooted | spa: arraigado | hin: जड़ | arb: يَتَأَصَّلْ | kor: 뿌리를–내린 | swa: shika–mizizi
+- **S144123** (1x) [V-Pual-Imperf-3mp] | eng: be–uprooted | spa: serán–desarraigados | hin: उखाड़े–जाएं | arb: تُستَأصَلُ | kor: 뽑히라 | swa: ving'olewe
+
+## H8505 (POS: V-Nifal-Imperf-3ms, "† <strong><strong>[<span dir="rtl"><span class="lexicon-hebrew" dir="rtl">תָּכַן", 18 occ, 8 senses)
+
+- **S145155** (9x) [V-Nifal-Imperf-3ms,V-Nifal-Imperf-3mp] | eng: is–right, is-right | spa: es–recto, son–rectos? | hin: ठीक, हे–पुत्र | arb: يَسْتَقِيمُ, تَسْتَقِيمُ | kor: 공평한, 공평하지 | swa: sawa, nyooka
+- **S145157** (2x) [Conj-w | V-Qal-Prtcpl-ms] | eng: but–weighs | spa: y–el–que–pesa, pero–pesa | hin: परंतु–जांचनेवाला, और–तोलता–है | arb: وَ–يَزِنُ, وَ–وازِنُ | kor: 그러나–달아보시는니라, 그러나–달아보시느니라 | swa: lakini–hupima, lakini–anapima
+- **S145158** (2x) [V-Piel-Perf-3ms] | eng: marked–off, has–measured | spa: midió?, midió | hin: मापा, नापा | arb: قَاسَ, أَدْرَكَ | kor: 측량하였으며, 측량하였느뇨 | swa: amepima
+- **S145159** (1x) [Art | V-Pual-Prtcpl-ms] | eng: the–weighed | spa: el–pesado | hin: हम्मतुक्कान | arb: ٱلْمَوْزُونَةَ | kor: 달아진 | swa: iliyopimwa
+- **S145160** (1x) [V-Qal-Prtcpl-ms] | eng: he–who–weighs | spa: el–que–pesa | hin: जांचनेवाला | arb: الَّذِي–يَزِنُ | kor: 달아보시는–분이– | swa: anayepima
+- **S145161** (1x) [V-Piel-Perf-1cs] | eng: have–set–firm | spa: he–sostenido | hin: तिक्कन्ती | arb: ثَبَّتُ | kor: 세웠나이다 | swa: nimeweka-imara
+- **S145162** (1x) [V-Nifal-Perf-3cp] | eng: are-weighed | spa: son–pesadas | hin: तौले–गए | arb: تُوزَنُ | kor: 달아진다 | swa: yanapimwa
+- **S145163** (1x) [V-Piel-Perf-3ms] | eng: He-measured | spa: dispuso | hin: वह–निर्धारित–करता–है | arb: وَزَنَ | kor: 정하셨다 | swa: alipima
+
+## Response Format
+
+Return a JSON object with one key per lemma ID. Each value is an array of sense groups:
+
+```json
+{
+  "H8327": [
+    {"labelChirho": "short label", "descriptionChirho": "one sentence", "senseIdsChirho": [id1, id2, ...]}
+  ],
+  "H8505": [...]
+}
+```
+
+IMPORTANT: Return ONLY the JSON object. Every sense ID from every lemma must appear exactly once. Use the numeric sense IDs (without the S prefix).

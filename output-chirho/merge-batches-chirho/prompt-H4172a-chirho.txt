@@ -1,0 +1,127 @@
+# Sense Merge Task for H4172a
+
+Lemma: H4172a (POS: N-msc | 1cs)
+Total occurrences: 11
+Current sense count: 11
+
+This Hebrew/Greek lemma has been over-split into 11 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 110337 (1 occurrences)
+Grammar: Conj-w, Prep-b | N-ms
+  eng: and-with-terror
+  spa: y–con–temor
+  hin: और–भय–से
+  arb: وَبِ–رُعْبٍ
+  kor: 그리고–두려움으로
+  swa: na–kwa–utisho
+
+### Sense 110338 (1 occurrences)
+Grammar: Conj-w, Prep-b | N-ms
+  eng: and–with–terror
+  spa: y–con–terror
+  hin: और–से–भय
+  arb: وَبِرُعْبٍ
+  kor: 그리고–두려움으로
+  swa: na–kwa–hofu
+
+### Sense 110339 (1 occurrences)
+Grammar: N-msc | 3ms
+  eng: its–fear
+  spa: su-temor
+  hin: उसके–भय
+  arb: مَخَافَتَهُم
+  kor: 그들의–두려움을
+  swa: hofu-yao
+
+### Sense 110340 (1 occurrences)
+Grammar: Conj-w, Prep-b | N-mp
+  eng: and–by–terrors
+  spa: y–con–terrores
+  hin: और–भयानक–घटनाओं–में
+  arb: وَبِمَخَاوِفَ
+  kor: 그리고–두려움들–로
+  swa: na–kwa–mambo–ya–kutisha
+
+### Sense 110341 (1 occurrences)
+Grammar: N-msc | 2mp
+  eng: your–fear
+  spa: sea-vuestro-temor
+  hin: तुम्हारा–भय
+  arb: مَخَافَتُكُم
+  kor: 너희의–두려움이요
+  swa: awe-hofu-yenu
+
+### Sense 110342 (1 occurrences)
+Grammar: Prep-l, Art | N-ms
+  eng: to–the–One–to–be–feared
+  spa: al–Temible
+  hin: ला–मोरा
+  arb: لِلْمَهِيبِ
+  kor: 두려운–분–에게
+  swa: kwa–yeye–wa–kuogofya
+
+### Sense 110343 (1 occurrences)
+Grammar: N-msc | 1cs
+  eng: My–fear
+  spa: temor–mío?
+  hin: मेरा–भय
+  arb: مَهَابَتِي
+  kor: 두려움–나의가
+  swa: hofu–yangu
+
+### Sense 110344 (1 occurrences)
+Grammar: N-ms
+  eng: fear
+  spa: temor
+  hin: भय
+  arb: مَهَابَةً
+  kor: 두려움을
+  swa: hofu
+
+### Sense 110345 (1 occurrences)
+Grammar: Conj-w | N-msc | 2mp
+  eng: and–fear-of-you
+  spa: Y–vuestro–temor
+  hin: और-तुम-से-दर
+  arb: وَ–خَوْفُكُمْ
+  kor: 그리고–너희의–두려움
+  swa: Na–hofu–yenu
+
+### Sense 110346 (1 occurrences)
+Grammar: Conj-w | N-msc | 2mp
+  eng: and–your-fear
+  spa: y–vuestro–pavor
+  hin: और–डर–तुम्हारा
+  arb: وَخَوْفَكُمْ
+  kor: 그리고–너희의–경외를
+  swa: na–utisho–wenu
+
+### Sense 110347 (1 occurrences)
+Grammar: Art | N-ms
+  eng: the–terror
+  spa: el–temor
+  hin: भय
+  arb: الْمَهَابَةِ
+  kor: 그–두려움
+  swa: utisho
+
+## Task
+
+Group these 11 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

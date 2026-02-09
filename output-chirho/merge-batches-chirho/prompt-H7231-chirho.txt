@@ -1,0 +1,117 @@
+# Sense Merge Task for H7231
+
+Lemma: H7231 (POS: V-Qal-Perf-3cp)
+Total occurrences: 13
+Current sense count: 10
+
+This Hebrew/Greek lemma has been over-split into 10 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 134345 (3 occurrences)
+Grammar: V-Qal-Perf-3cp
+  eng: many, they–are–more
+  spa: son–más, se–multiplicaron, fueron–muchas
+  hin: बहुत–हैं
+  arb: كَثُرَتْ, كَثُرُوا
+  kor: 많다, 많다–그들이
+  swa: zimeongezeka, zimekuwa–nyingi, wamezidi
+
+### Sense 134346 (2 occurrences)
+Grammar: V-Qal-Perf-3cp
+  eng: they–are–many, many
+  spa: se–han–multiplicado
+  hin: बहुत–हैं–वे, बढ़–गए
+  arb: كَثُرُوا, أَكْثَرَ
+  kor: 많아졌음이라, 많아졌나이까
+  swa: wameongezeka, adui
+
+### Sense 134347 (1 occurrences)
+Grammar: V-Qal-Perf-3cp
+  eng: are–more
+  spa: Son–más
+  arb: كَثُروا–
+  kor: 많도다
+  swa: Wamezidi
+
+### Sense 134348 (1 occurrences)
+Grammar: Conj-w | V-Qal-ConjPerf-3cp
+  eng: and–are–many
+  spa: y–se–multiplican
+  hin: और–बहुत–हैं
+  arb: وَ–تَكثُرُ
+  kor: 그리고–많다
+  swa: na–zimeongezeka
+
+### Sense 134349 (1 occurrences)
+Grammar: V-Pual-Prtcpl-fp
+  eng: bringing-forth–ten-thousands
+  spa: multiplicados-por-diez-miles
+  hin: दस–हज़ार
+  arb: أُلُوفًا
+  kor: 만을–낳는다
+  swa: elfu–kumi
+
+### Sense 134350 (1 occurrences)
+Grammar: Conj-w | V-Qal-ConjPerf-3cp
+  eng: and–many
+  spa: y–serán–multiplicados
+  hin: और–बहुत–होंगे
+  arb: وَيَكْثُرُ
+  kor: 그리고–많을–것이다
+  swa: na–watakuwa–wengi
+
+### Sense 134351 (1 occurrences)
+Grammar: Conj-w | V-Qal-ConjPerf-3cp
+  eng: and–have–multiplied
+  spa: y–se–han–multiplicado
+  hin: और–बढ़–गए–हैं
+  arb: وَكَثُروا
+  kor: 그리고–많도다
+  swa: na–wameongezeka
+
+### Sense 134352 (1 occurrences)
+Grammar: Prep-l | V-Qal-Inf
+  eng: to-multiply
+  spa: a–multiplicarse
+  hin: बधने-
+  arb: يَكْثُرُ
+  kor: 에–많아지기
+  swa: kuongezeka
+
+### Sense 134353 (1 occurrences)
+Grammar: V-Qal-Perf-3cp
+  eng: abound
+  spa: se–multiplicaron
+  hin: बढ़ी
+  arb: كَثُرَتْ
+  kor: 많아졌도다
+  swa: ilipoongezeka
+
+### Sense 134354 (1 occurrences)
+Grammar: V-Qal-Perf-3cp
+  eng: many
+  spa: muchas
+  hin: बहुत–हैं
+  arb: أَكثَرَ
+  kor: 많도다
+  swa: yalivyokuwa–mengi
+
+## Task
+
+Group these 10 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

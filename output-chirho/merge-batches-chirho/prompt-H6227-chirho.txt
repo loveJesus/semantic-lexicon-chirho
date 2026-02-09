@@ -1,0 +1,136 @@
+# Sense Merge Task for H6227
+
+Lemma: H6227 (POS: N-msc | 3fs)
+Total occurrences: 25
+Current sense count: 12
+
+This Hebrew/Greek lemma has been over-split into 12 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 126593 (10 occurrences)
+Grammar: N-ms
+  eng: smoke, are–smoke
+  spa: humo, de-humo
+  hin: धुआँ, धूआं, धुआं–से
+  arb: دُخَانٌ, دُخَانٍ, دُخَانًا
+  kor: 연기가, 연기로, 연기–가
+  swa: moshi, ya–moshi, za-moshi
+
+### Sense 126594 (2 occurrences)
+Grammar: Conj-w, Prep-k, Art | N-ms,Conj-w, Prep-k | N-ms
+  eng: and–like–smoke
+  spa: y–como–humo
+  hin: और–धुएं–के–समान, और–जैसे–धुआँ
+  arb: وَ–كَالدُّخَانِ, وَكَالدُّخانِ
+  kor: 그리고–연기–같다, 그리고–같으니라–연기에
+  swa: na–kama–moshi
+
+### Sense 126595 (2 occurrences)
+Grammar: Prep-b, Art | N-ms,Prep-b | N-ms
+  eng: in–smoke
+  spa: en–humo
+  hin: में–धुएँ, धुएं–में
+  arb: في–الدُّخان, بِ–الدُّخانِ
+  kor: 연기–속–에, –연기–로
+  swa: katika–moshi, kama–moshi
+
+### Sense 126596 (2 occurrences)
+Grammar: N-msc
+  eng: the–smoke–of
+  spa: humo–de
+  hin: धुआं
+  arb: دُخانُ
+  kor: 연기가
+  swa: moshi–wa
+
+### Sense 126597 (2 occurrences)
+Grammar: N-ms
+  eng: smoke
+  spa: humo
+  hin: धुएँ–के।, धुँए–के
+  arb: عَشَن, دُخانٍ
+  kor: 연기–의
+  swa: za–moshi, moshi
+
+### Sense 126598 (1 occurrences)
+Grammar: Art | N-ms
+  eng: the–smoke
+  spa: el–humo
+  hin: धुआँ
+  arb: الدُّخَانِ
+  kor: 연기의
+  swa: ya–moshi
+
+### Sense 126599 (1 occurrences)
+Grammar: N-msc | 3ms
+  eng: its–smoke
+  spa: humo–de–él
+  hin: धुआं–उसका
+  arb: دُخَانُهُ
+  kor: 그–연기가
+  swa: moshi–wake
+
+### Sense 126600 (1 occurrences)
+Grammar: Prep-k | N-msc
+  eng: like–smoke-of
+  spa: como–humo–de–
+  hin: जैसे–धुआं
+  arb: كَ–دُخَانِ
+  kor: 같이
+  swa: kama–moshi–wa
+
+### Sense 126601 (1 occurrences)
+Grammar: Conj-w | N-ms
+  eng: and–smoke
+  spa: y-humo
+  hin: और–धूआं
+  arb: وَ–دُخَانًا
+  kor: 연기이
+  swa: na–moshi
+
+### Sense 126602 (1 occurrences)
+Grammar: Prep-k, Art | N-ms
+  eng: like–smoke
+  spa: como–humo
+  hin: धुएं–की–तरह
+  arb: كَـ–الدُّخَانِ
+  kor: 연기같이–
+  swa: kama–moshi
+
+### Sense 126603 (1 occurrences)
+Grammar: N-msc | 3fs
+  eng: her–smoke
+  spa: su–humo
+  hin: उसका–धुआँ
+  arb: دُخَانُهَا
+  kor: 그–연기가
+  swa: moshi–wake
+
+### Sense 126604 (1 occurrences)
+Grammar: Prep-b, Art | N-ms
+  eng: in–the–smoke
+  spa: en–el–humo
+  hin: धुएँ–में
+  arb: بِالدُّخَانِ
+  kor: 에서–연기
+  swa: katika–moshi
+
+## Task
+
+Group these 12 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

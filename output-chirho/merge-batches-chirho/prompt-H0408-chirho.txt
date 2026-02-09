@@ -1,0 +1,154 @@
+# Sense Merge Task for H0408
+
+Lemma: H0408 (POS: Adv)
+Total occurrences: 725
+Current sense count: 14
+
+This Hebrew/Greek lemma has been over-split into 14 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 82181 (449 occurrences)
+Grammar: Adv,Prep,Conj-w | Adv,Conj-w | Prep
+  eng: not–, not, and–not–
+  spa: no, y–no, no–
+  hin: मत–, मत, और–मत–
+  arb: لَا–, لَا, لا–
+  kor: 말라, 아니–, 말라–
+  swa: usi–, msi, msi–
+
+### Sense 82182 (112 occurrences)
+Grammar: Adv,Prep | 1cs
+  eng: do–not, not–, do-not
+  spa: no, No–, No
+  hin: मत–, न–, ना
+  arb: لَا–, لا–, لا
+  kor: 말라–, 말라, 하지–말라–
+  swa: usi–, usiwe, usi
+
+### Sense 82183 (97 occurrences)
+Grammar: Adv
+  eng: do–not, not–, not
+  spa: no, no–, No
+  hin: मत–, न, मत
+  arb: لَا–, لا, لاَ–
+  kor: 아니, 아니–, 말소서–
+  swa: usi, usiwe, wasi
+
+### Sense 82189 (33 occurrences)
+Grammar: Adv
+  eng: do–not–, let–not–, Do–not
+  spa: no–, No–, no
+  hin: मत, न–, न
+  arb: لا–, لَا–, لا
+  kor: 아니, 하지–마소서, 하지–마라
+  swa: Usi, wasijikuze, wasifedheheshwe
+
+### Sense 82193 (9 occurrences)
+Grammar: Adv
+  eng: no
+  spa: no, No
+  hin: नहीं, ना, न
+  arb: لَا, لا–, لَا–
+  kor: 아니다, 말라–, 하지–말라
+  swa: usiwe, hapana, wala
+
+### Sense 82194 (7 occurrences)
+Grammar: Adv
+  eng: do–not
+  spa: no, No
+  hin: ना, न–
+  arb: لَا, لَا–
+  kor: 하지–말라, 하지–마라
+  swa: msifanye, usijikataze–, usiache
+
+### Sense 82195 (7 occurrences)
+Grammar: Adv
+  eng: not–, not, do-not–
+  spa: no–, No–, no
+  hin: नहीं, मत
+  arb: لا, لَيْسَ, لَا–
+  kor: 하지–말라, 아니다, 아니
+  swa: usi, si
+
+### Sense 82196 (5 occurrences)
+Grammar: Conj-w | Adv
+  eng: and–not, and–no, and–may-not–
+  spa: y–no
+  hin: और–न
+  arb: وَ–لَا–, وَلَا
+  kor: 그리고–하지–말라, 그리고–없기를, 그리고–아니–
+  swa: wala, na–ata, na–asikatike
+
+### Sense 82197 (1 occurrences)
+Grammar: Adv
+  eng: where
+  spa: no–
+  hin: नहि–
+  arb: ألَم
+  kor: 아니하였느냐
+  swa: wapi–
+
+### Sense 82198 (1 occurrences)
+Grammar: Adv
+  eng: no–
+  spa: no
+  hin: नहीं
+  arb: لا
+  kor: 아니오
+  swa: tafadhali
+
+### Sense 82199 (1 occurrences)
+Grammar: Prep-l | Adv
+  eng: to–nothing
+  spa: en–nada
+  hin: शून्य–के–लिए
+  arb: إِلَى–لَا–شَيْءٍ
+  kor: 아무것도–아니게
+  swa: kuwa–bure
+
+### Sense 82200 (1 occurrences)
+Grammar: Prep
+  eng: not
+  spa: no
+  hin: नहीं–
+  arb: لَا–
+  kor: 에게–
+  swa: dhidi–
+
+### Sense 82201 (1 occurrences)
+Grammar: Adv
+  eng: is–no
+  spa: no
+  hin: नहीं
+  arb: لا–
+  kor: 아니
+  swa: hakuna
+
+### Sense 82202 (1 occurrences)
+Grammar: Adv
+  eng: may-not–
+  spa: no
+  hin: न
+  arb: لَا–
+  kor: 아니–
+  swa: na–asitukatalie
+
+## Task
+
+Group these 14 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

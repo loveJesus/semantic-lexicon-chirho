@@ -1,0 +1,144 @@
+# Sense Merge Task for H8138a
+
+Lemma: H8138a (POS:  Conj-w | V-Qal-ConsecImperf-3ms)
+Total occurrences: 13
+Current sense count: 13
+
+This Hebrew/Greek lemma has been over-split into 13 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 142801 (1 occurrences)
+Grammar: V-Piel-Prtcpl-ms
+  eng: changing
+  spa: cambiando
+  hin: बदलने–वाला
+  arb: مُغَيِّرًا
+  kor: 변하게–하시고
+  swa: ukibadilisha
+
+### Sense 142802 (1 occurrences)
+Grammar: Conj-w | V-Hitpael-ConjPerf-2f
+  eng: and–disguise-yourself
+  spa: y–disfrázate
+  hin: और–वेश–बदल
+  arb: وَ–تَنَكَّرِي
+  kor: 그리고–변장하라
+  swa: na–ujibadilishe
+
+### Sense 142803 (1 occurrences)
+Grammar: Prep-b | V-Piel-Inf | 3ms
+  eng: when–he–changed
+  spa: cuando–cambió
+  hin: जब–उसने–बदला
+  arb: عِندَ–تَغْييرِهِ
+  kor: 바꾸었을–때
+  swa: alipobadilisha
+
+### Sense 142804 (1 occurrences)
+Grammar: V-Qal-Perf-1cs
+  eng: I–change
+  spa: cambio
+  hin: बदलता
+  arb: تَغَيَّرْتُ
+  kor: 변했다
+  swa: sijabadilika
+
+### Sense 142805 (1 occurrences)
+Grammar: V-Qal-Prtcpl-mp
+  eng: those–who–change
+  spa: los–que–cambian
+  hin: बदलनेवालों–के
+  arb: الْمُتَغَيِّرِينَ
+  kor: 변하는–자들
+  swa: wanaobadilika
+
+### Sense 142806 (1 occurrences)
+Grammar: Prep-l | V-Piel-Inf
+  eng: to–change
+  spa: para–cambiar
+  hin: बदलने–के–लिए
+  arb: لِـ–تُغَيِّرِي
+  kor: 바꿨려고
+  swa: kubadili
+
+### Sense 142807 (1 occurrences)
+Grammar: V-Qal-Prtcpl-fp
+  eng: different
+  spa: diferentes
+  hin: अलग–हैं
+  arb: مُخْتَلِفَةٌ
+  kor: 다릅니다
+  swa: tofauti
+
+### Sense 142808 (1 occurrences)
+Grammar: V-Qal-Prtcpl-mp
+  eng: differing
+  spa: diferentes
+  arb: مُخْتَلِفَةٍ
+  kor: 다른
+  swa: tofauti
+
+### Sense 142809 (1 occurrences)
+Grammar: Conj-w | V-Piel-ConjImperf-3ms
+  eng: and–pervert
+  spa: y–pervierta
+  hin: और–बदल–दे
+  arb: وَ–يُغَيِّرَ
+  kor: 그리하면–그가–다르게–판단하리라
+  swa: na–akapotosha
+
+### Sense 142810 (1 occurrences)
+Grammar: V-Piel-Imperf-1cs
+  eng: I–will–change
+  spa: cambiaré
+  hin: बदलूँगा
+  arb: أُغَيَِرُ
+  kor: 바꾸리라
+  swa: badilisha
+
+### Sense 142811 (1 occurrences)
+Grammar: Conj-w | V-Piel-ConsecImperf-3
+  eng: and–he-moved-her
+  spa: y–la–trasladó
+  hin: और–उसने–उसे–हटाया
+  arb: وَ–نَقَلَهَا
+  kor: 그리고–옮겼다
+  swa: kwa–bora
+
+### Sense 142812 (1 occurrences)
+Grammar: Conj-w | V-Piel-ConjPerf-3ms
+  eng: and–he–changed
+  spa: y–cambió
+  hin: और–बदल–दिया
+  arb: وَغَيَّرَ
+  kor: 그리고–바꿈다–그가
+  swa: Na–alibadilisha
+
+### Sense 142813 (1 occurrences)
+Grammar:  Conj-w | V-Qal-ConsecImperf-3
+  eng: and–he–changed
+  spa: y–cambió
+  hin: और-बदल
+  arb: وَ–غَيَّرَ
+  kor: 그리고–바꾸었다
+  swa: na–akabadilisha
+
+## Task
+
+Group these 13 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

@@ -1,0 +1,136 @@
+# Sense Merge Task for H2474
+
+Lemma: H2474 (POS: Conj-w)
+Total occurrences: 32
+Current sense count: 12
+
+This Hebrew/Greek lemma has been over-split into 12 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 97175 (9 occurrences)
+Grammar: Conj-w | N-cp,Conj-w, Art | N-cp
+  eng: and–windows, and–the-windows
+  spa: y–ventanas, Y–ventanas, y–las–ventanas
+  hin: और–खिड़कियाँ
+  arb: وَنَوَافِذُ, وَالنَّوَافِذُ
+  kor: 그리고–창문들, 그리고–그–창문들은, 그리고–그–창문들
+  swa: na–madirisha, Na–madirisha
+
+### Sense 97176 (9 occurrences)
+Grammar: Art | N-cs
+  eng: the–window
+  spa: la–ventana
+  hin: खिड़की, हखल्लोन, झरोखे
+  arb: النّافِذَةِ, ٱلنَّافِذَةَ, الْكُوَّةِ
+  kor: 그–창문, 창문으로, 창문
+  swa: dirisha
+
+### Sense 97177 (3 occurrences)
+Grammar: Prep-b, Art | N-cs
+  eng: in-the-window, in–the–window
+  spa: en–la–ventana
+  hin: खिड़की–में, में–खिड़की
+  arb: بِ–النافِذَةِ, فِي–النَّافِذَةِ
+  kor: 그–창문에, 에–창문
+  swa: dirishani, katika–dirisha
+
+### Sense 97178 (2 occurrences)
+Grammar: Conj-w | N-csc | 3ms,Conj-w | N-cpc | 3ms
+  eng: and–its-windows, [ketiv]
+  spa: [y–sus–ventanas], (y–sus–ventanas)
+  hin: और–उसकी–खिड़कियाँ
+  arb: وَنَوَافِذُهُ
+  kor: 창문들–그의
+  swa: madirisha–yake, [madirisha]
+
+### Sense 97179 (2 occurrences)
+Grammar: Art | N-cp
+  eng: the–windows
+  spa: las–ventanas
+  hin: खिड़कियों
+  arb: النَّوَافِذِ, النَّوافِذِ
+  kor: 그–창문들
+  swa: madirisha
+
+### Sense 97180 (1 occurrences)
+Grammar: N-cpc
+  eng: windows-of
+  spa: ventanas–de
+  hin: खिड़कियाँ
+  arb: نَوَافِذَ
+  kor: 창문들을
+  swa: madirisha
+
+### Sense 97181 (1 occurrences)
+Grammar: N-csc
+  eng: window-of
+  spa: ventana–de
+  hin: खिदकी
+  arb: نَافِذَةَ
+  kor: 창문
+  swa: dirisha–la
+
+### Sense 97182 (1 occurrences)
+Grammar: Art | N-cp
+  eng: the–windows
+  spa: las–ventanas
+  hin: झरोखों
+  arb: هَ–حَلُّونُوت
+  kor: 그–창들–을
+  swa: madirisha
+
+### Sense 97183 (1 occurrences)
+Grammar: Prep-k, Art | N-cp
+  eng: like–the-windows
+  spa: como–las–ventanas
+  hin: जैसे–खिड़कियाँ
+  arb: كَهَذِهِ–
+  kor: 그–창문들처럼
+  swa: kama–madirisha
+
+### Sense 97184 (1 occurrences)
+Grammar: N-cpc
+  eng: windows
+  spa: ventanas
+  hin: खिड़कियों
+  arb: نَوَافِذَ
+  kor: 의–창문들을
+  swa: madirisha–yangu
+
+### Sense 97185 (1 occurrences)
+Grammar: Prep-b | N-csc
+  eng: at–the–window–of
+  spa: por–ventana–de
+  hin: खिड़की–से
+  arb: مِنْ–نَافِذَةِ
+  kor: 창문–에서
+  swa: kupitia–dirisha–la
+
+### Sense 97186 (1 occurrences)
+Grammar: Prep-b | N-cpc | 1cp
+  eng: through–our–windows
+  spa: por–ventanas–nuestras
+  hin: में–खिड़कियों–हमारी
+  arb: فِي–نَوَافِذِنَا
+  kor: 우리의–창문들–안으로
+  swa: kupitia–madirisha–yetu
+
+## Task
+
+Group these 12 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

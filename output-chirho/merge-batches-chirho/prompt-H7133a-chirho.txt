@@ -1,0 +1,136 @@
+# Sense Merge Task for H7133a
+
+Lemma: H7133a (POS: N-msc | 3ms)
+Total occurrences: 80
+Current sense count: 12
+
+This Hebrew/Greek lemma has been over-split into 12 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 133290 (36 occurrences)
+Grammar: N-msc | 3ms
+  eng: his-offering, his–offering
+  spa: ofrenda–suya, Su–ofrenda, su–ofrenda
+  hin: भेंट–उसकी, भेंट–अपनी, अपना–चढ़ावा
+  arb: قُرْبَانُهُ, قُرْبَانَهُ, قُرْبَانِهِ
+  kor: 그의–예물, 그–제물, 그–제물–이면
+  swa: sadaka–yake, cha–sadaka–yake, Krbnu
+
+### Sense 133291 (23 occurrences)
+Grammar: N-msc
+  eng: offering-of, an-offering-of, the–offering–of
+  spa: ofrenda–de, ofrenda-de, la–ofrenda-de
+  hin: भेंट, चढ़ावा
+  arb: قُرْبَانُ, قُرْبَانَ, قُرْبَانِ
+  kor: 예물–의, 제물, 예물을
+  swa: sadaka–ya, sadaka, ni–sadaka
+
+### Sense 133292 (5 occurrences)
+Grammar: N-msc | 3mp
+  eng: their-offering, their–offering
+  spa: su–ofrenda
+  hin: भेंट–अपनी, उनका–चढ़ावा, अपना–चढ़ावा
+  arb: قُرْبَانَهُمْ, قُرْبَانِهِمْ
+  kor: 그들의–예물, 그들의–제물을, 그들–의–제물
+  swa: sadaka–yao, sadaka–yao–kila
+
+### Sense 133293 (5 occurrences)
+Grammar: N-ms
+  eng: an-offering, offering
+  spa: ofrenda
+  hin: भेंट, चढ़ावा, चढ़ावे–से
+  arb: قُرْبَانًا, قُرْبَانٍ
+  kor: 예물로, 제물–을, 제물
+  swa: sadaka
+
+### Sense 133294 (4 occurrences)
+Grammar: N-msc | 2mp,N-msc | 2ms
+  eng: your-offering
+  spa: ofrenda–tuya, ofrenda–vuestra
+  hin: भेंट–तेरी, भेंट–अपनी
+  arb: قُرْبَانُكَ, قُرْبَانِكَ, قُرْبَانَكُمْ
+  kor: 네–제물–이면, 네–제물, 너희–제물
+  swa: sadaka–yako, sadaka–yenu
+
+### Sense 133295 (1 occurrences)
+Grammar: Art | N-ms
+  eng: the–offering
+  spa: la–ofrenda
+  hin: चढ़ावे
+  arb: الْقُرْبَانِ
+  kor: 그–제물의
+  swa: sadaka
+
+### Sense 133296 (1 occurrences)
+Grammar: Prep-l | N-msc
+  eng: for–an-offering
+  spa: para–ofrenda–de
+  hin: चढ़ावे–के–लिए
+  arb: لِ–قُرْبَانِ
+  kor: 에–제물–의
+  swa: kwa–sadaka
+
+### Sense 133297 (1 occurrences)
+Grammar: N-mpc | 3mp
+  eng: their–offerings
+  spa: ofrendas–suyas
+  hin: अपने–चढ़ावे
+  arb: قَرَابِينَهُمْ
+  kor: 그들–의–예물들을
+  swa: sadaka–zao
+
+### Sense 133298 (1 occurrences)
+Grammar: Conj-w | N-msc | 3ms
+  eng: and–his-offering
+  spa: Y–su–ofrenda
+  hin: और–भेंट–उसकी
+  arb: وَ–قُرْبَانُهُ
+  kor: 그리고–그의–예물
+  swa: na–sadaka–yake
+
+### Sense 133299 (1 occurrences)
+Grammar: N-msc | 1cs
+  eng: my-offering
+  spa: ofrenda–de–mí
+  hin: भेंट–मेरी
+  arb: قُرْبَانِي
+  kor: 내–제물–을
+  swa: sadaka–yangu
+
+### Sense 133300 (1 occurrences)
+Grammar: N-msc | 3mp
+  eng: offering–their
+  spa: su–ofrenda
+  hin: अपने–चढ़ावे
+  arb: قُرْبَانِهِمْ
+  kor: 그들의–예물을
+  swa: sadaka–zao
+
+### Sense 133301 (1 occurrences)
+Grammar: N-msc | 3fs
+  eng: her–offering
+  spa: ofrenda–de–ella
+  hin: भेंट–उसकी
+  arb: قُرْبَانَهَا
+  kor: 그녀의–예물
+  swa: Krbnh
+
+## Task
+
+Group these 12 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

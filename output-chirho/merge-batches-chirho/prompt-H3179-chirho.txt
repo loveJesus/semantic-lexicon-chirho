@@ -1,0 +1,117 @@
+# Sense Merge Task for H3179
+
+Lemma: H3179 (POS: V-Piel-Perf-3fs | 1cs)
+Total occurrences: 10
+Current sense count: 10
+
+This Hebrew/Greek lemma has been over-split into 10 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 101691 (1 occurrences)
+Grammar: V-Piel-Inf
+  eng: breeding
+  spa: encenderse–en–celo
+  hin: गर्भधारण–के
+  arb: يَحِمُّ
+  kor: 더워지는
+  swa: kupata–joto
+
+### Sense 101692 (1 occurrences)
+Grammar: Conj-w | V-Qal-ConsecImperf-3f
+  eng: and–they-were-in-heat
+  spa: y–se–encendían–en–celo
+  hin: और–गर्मातीं
+  arb: فَتَضَاجَرُ
+  kor: 그리고–더워졌다
+  swa: na–ikawa–na–joto
+
+### Sense 101693 (1 occurrences)
+Grammar: V-Qal-Imperf-3ms
+  eng: he–was–warm
+  spa: se–calentaba
+  hin: गर्मी–होता–था
+  arb: يَدْفَأُ
+  kor: 따뜻해졌다
+  swa: kwake
+
+### Sense 101694 (1 occurrences)
+Grammar: V-Qal-Imperf-3ms
+  eng: is-hot
+  spa: se–caliente
+  hin: गर्म–होगा
+  arb: يَحْمَى
+  kor: 뜨거우면
+  swa: anapata–joto
+
+### Sense 101695 (1 occurrences)
+Grammar: V-Piel-Perf-3fs | 1cs
+  eng: conceived–me
+  spa: me–concibió
+  hin: गर्भधारण–किया–मुझे
+  arb: حَبِلَتْ–بِي
+  kor: 나–의–어머니–가–잉태하였나이다
+  swa: mama-yangu-alinibeba
+
+### Sense 101696 (1 occurrences)
+Grammar: Conj-w | V-Qal-ConsecImperf-3m
+  eng: and–conceived
+  spa: Y–se–encendían–en–celo
+  hin: और–गर्माईं
+  arb: فَتَضَاجَرَتِ
+  kor: 그리고–더워졌다
+  swa: Na–ikawa–na–joto
+
+### Sense 101697 (1 occurrences)
+Grammar: Prep-l | V-Piel-Inf | 3fse
+  eng: to–cause-heat–them
+  spa: para–encenderse–en–celo
+  hin: गर्माने–के–लिए–उन–को
+  arb: لِتَتَضَاجَرَ
+  kor: 더워지게–하려고
+  swa: kupata–joto
+
+### Sense 101698 (1 occurrences)
+Grammar: V-Qal-Imperf-3ms
+  eng: will–be–warm
+  spa: se–calentará?
+  hin: गर्मी–मिलेगी
+  arb: يَدْفَأُ
+  kor: 따뜻해지겠는가
+  swa: atapata–joto
+
+### Sense 101699 (1 occurrences)
+Grammar: V-Qal-Imperf-3fs
+  eng: may-be-hot
+  spa: se–caliente
+  arb: تَحْمَى
+  kor: 뜨거워지게–하고
+  swa: ipate–joto
+
+### Sense 101700 (1 occurrences)
+Grammar: V-Piel-Inf
+  eng: were-in-heat
+  spa: se–encendían–en–celo
+  hin: गर्मातीं
+  arb: الْغَنَمُ
+  kor: 더워지는
+  swa: wanapopata–joto
+
+## Task
+
+Group these 10 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

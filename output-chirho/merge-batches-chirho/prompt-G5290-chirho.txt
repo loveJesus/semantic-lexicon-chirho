@@ -1,0 +1,172 @@
+# Sense Merge Task for G5290
+
+Lemma: G5290 (POS: V-APA-NMP)
+Total occurrences: 35
+Current sense count: 16
+
+This Hebrew/Greek lemma has been over-split into 16 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 78235 (10 occurrences)
+Grammar: V-AIA-3P,V-IIA-3P
+  eng: returned, they–returned, they-returned
+  spa: regresaron, volvieron, regresaban
+  hin: लौटे, वे–लौटे, लौट–गए
+  arb: رَجَعُوا, رَجَعَا, رَجَعا
+  kor: 돌아갔다, 그들–이
+  swa: walirudi, wakarudi
+
+### Sense 78236 (6 occurrences)
+Grammar: V-AIA-3S
+  eng: returned
+  spa: volvió, regresó
+  hin: लौटा, लौट–गया, लौट–गई
+  arb: رَجَعَ, رَجَعَتْ
+  kor: 돌아갔다, 돌아왔다
+  swa: akarudi, alirudi
+
+### Sense 78237 (4 occurrences)
+Grammar: V-APA-NMP,V-APA-NFP
+  eng: having-returned
+  spa: volviendo, habiendo-vuelto, habiendo-regresado
+  hin: लौटकर
+  arb: رَجَعْنَ, لَمّا–رَجَعوا, رَجَعوا
+  kor: 돌아와서, 돌아가서
+  swa: waliporudi, wakirudi, wakarudi
+
+### Sense 78238 (3 occurrences)
+Grammar: V-ANA,V-PNA
+  eng: to-return, to–return
+  spa: volver, de–volver, a-regresar
+  hin: लौटने–को, लौटने–का, लौटने
+  arb: يَرجِعَ, أَن–يَرجِعَ, أَنْ–يَرْجِعَ
+  kor: 돌아오려고, 돌아가지–않을, 돌아가는
+  swa: kurudi
+
+### Sense 78239 (1 occurrences)
+Grammar: V-APA-NMP
+  eng: returning
+  spa: volviendo
+  hin: लौटने–वाले
+  arb: راجِعينَ
+  kor: 돌아와서
+  swa: waliorudi
+
+### Sense 78240 (1 occurrences)
+Grammar: V-FIA-1S
+  eng: I-will-return
+  spa: Volveré
+  hin: लौटूँगी
+  arb: سَأَرْجِعُ
+  kor: 돌아가겠다
+  swa: Nitarudi
+
+### Sense 78241 (1 occurrences)
+Grammar: V-APA-DMS
+  eng: having–returned
+  spa: volviendo
+  hin: लौटने–पर
+  arb: رَاجِعًا
+  kor: 돌아와서
+  swa: niliporudi
+
+### Sense 78242 (1 occurrences)
+Grammar: V-IIA-3P
+  eng: were-returning
+  spa: volvían
+  hin: लौटते–थे
+  arb: رَجَعوا
+  kor: 돌아갔다
+  swa: wakarudi
+
+### Sense 78243 (1 occurrences)
+Grammar: V-PNA
+  eng: returning
+  spa: volver
+  hin: लौटने–पर
+  arb: يَرجِعُ
+  kor: 돌아오는–중에
+  swa: kurudi
+
+### Sense 78244 (1 occurrences)
+Grammar: V-PPA-DMS
+  eng: returning
+  spa: volviendo
+  hin: लौटते–हुए
+  arb: رَاجِعًا
+  kor: 돌아오는
+  swa: alipokuwa–akirudi
+
+### Sense 78245 (1 occurrences)
+Grammar: V-AIA-1S
+  eng: I-returned
+  spa: volví
+  hin: मैन–लौत
+  arb: رَجَعتُ
+  kor: 돌아왔노라
+  swa: nikarudi
+
+### Sense 78246 (1 occurrences)
+Grammar: V-PNA
+  eng: returning
+  spa: regresar
+  hin: लौट–रहे–थे
+  arb: رُجُوعِهِمَا
+  kor: 돌아가기–에
+  swa: waliporudi
+
+### Sense 78247 (1 occurrences)
+Grammar: V-AIA-3P
+  eng: Returned
+  spa: Regresaron
+  hin: लौट–आए
+  arb: رَجَعَ
+  kor: 돌아왔다
+  swa: Walirudi
+
+### Sense 78248 (1 occurrences)
+Grammar: V-PPA-NMS
+  eng: returning
+  spa: regresando
+  hin: लौटते–हुए
+  arb: رَاجِعًا
+  kor: 돌아가는
+  swa: akirudi
+
+### Sense 78249 (1 occurrences)
+Grammar: V-ANA
+  eng: to-turn-back
+  spa: volverse–atrás
+  hin: लौट–जाना
+  arb: يَرجِعوا
+  kor: 돌아서는–것이
+  swa: kugeuka
+
+### Sense 78250 (1 occurrences)
+Grammar: V-PMA-2S
+  eng: Return
+  spa: vuelve
+  hin: लौट
+  arb: اِرجِع
+  kor: 돌아가라
+  swa: Rudi
+
+## Task
+
+Group these 16 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

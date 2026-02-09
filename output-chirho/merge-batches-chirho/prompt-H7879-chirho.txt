@@ -1,0 +1,118 @@
+# Sense Merge Task for H7879
+
+Lemma: H7879 (POS: Prep-b | N-msc | 1cs)
+Total occurrences: 14
+Current sense count: 10
+
+This Hebrew/Greek lemma has been over-split into 10 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 139979 (4 occurrences)
+Grammar: N-msc | 1cs
+  eng: my–complaint, my-complaint
+  spa: mi–queja,, es–mi–queja?, es–mi–queja;
+  hin: अपनी–शिकायत, शिकायत–करता–हूँ, मेरी–शिकायत
+  arb: شَكْوَايَ, شَكْوايَ
+  kor: 나의–탄식–을, 나의–호소이냐, 나의–호소가
+  swa: malalamiko–yangu
+
+### Sense 139980 (2 occurrences)
+Grammar: Prep-b | N-msc | 1cs
+  eng: in–my–complaint
+  spa: en–mi–queja
+  hin: मेरे–ध्यान–में
+  arb: فِي–شَكْواي, في–شَكواي
+  kor: 나–의–탄식–에서
+  swa: katika–mawazo-yangu, katika–malalamiko-yangu
+
+### Sense 139981 (1 occurrences)
+Grammar: Prep-b | N-msc | 1cs
+  eng: in-my-complaint
+  spa: con–mi–queja
+  hin: मेरी–शिकायत–में
+  arb: في–شَكْوايَ
+  kor: 에–나의–탄식을
+  swa: malalamiko–yangu
+
+### Sense 139982 (1 occurrences)
+Grammar: N-ms
+  eng: musing
+  spa: meditación
+  hin: बातचीत
+  arb: مُنْشَغِلٌ
+  kor: 깊이–생각하는
+  swa: anawaza
+
+### Sense 139983 (1 occurrences)
+Grammar: N-msc | 1cs
+  eng: my–complaint
+  spa: mi–queja
+  hin: अपनी–चिंता–को
+  arb: شَكْوَايَ
+  kor: 나–의–탄식–을
+  swa: lalamiko–langu
+
+### Sense 139984 (1 occurrences)
+Grammar: N-ms
+  eng: complaining
+  spa: queja?
+  hin: शिकायत
+  arb: الشَّكْوَى
+  kor: 불평
+  swa: malalamiko
+
+### Sense 139985 (1 occurrences)
+Grammar: N-msc | 3ms
+  eng: his–complaint
+  spa: su–queja
+  hin: अपनी–विनती
+  arb: شَكواهُ
+  kor: 그–의–탄원–을
+  swa: maombi–yake
+
+### Sense 139986 (1 occurrences)
+Grammar: N-msc | 1cs
+  eng: my–meditation
+  spa: mi–meditación
+  hin: मेरा–मनन
+  arb: تَأمُّلي
+  kor: 나–의–묵상–이
+  swa: tafakuri–yangu
+
+### Sense 139987 (1 occurrences)
+Grammar: N-msc | 1cs
+  eng: my-complaint
+  spa: mi–queja
+  hin: चिंता
+  arb: شَكْوَايَ
+  kor: 나–의–명상
+  swa: malalamiko–yangu
+
+### Sense 139988 (1 occurrences)
+Grammar: N-msc | 3ms
+  eng: his-talk
+  spa: habla–de–él
+  hin: सीखो
+  arb: حَديثَهُ
+  kor: 그의–말을
+  swa: maneno–yake
+
+## Task
+
+Group these 10 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

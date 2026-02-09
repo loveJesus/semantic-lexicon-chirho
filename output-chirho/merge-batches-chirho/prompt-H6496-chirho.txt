@@ -1,0 +1,136 @@
+# Sense Merge Task for H6496
+
+Lemma: H6496 (POS: Art | N-ms)
+Total occurrences: 13
+Current sense count: 12
+
+This Hebrew/Greek lemma has been over-split into 12 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 128388 (2 occurrences)
+Grammar: Conj-w | N-ms,Conj-w | N-msc
+  eng: and–overseer-of, and–overseer
+  spa: sobre–ellos, Y–supervisor–de
+  hin: और–अधिकारी, और
+  arb: وَ–رَئِيسُ, وَ–رَئِيسٌ
+  kor: 그리고–감독이었다
+  swa: na–msimamizi–wa, na–msimamizi
+
+### Sense 128389 (1 occurrences)
+Grammar: N-mp
+  eng: overseers
+  spa: supervisores
+  hin: निरीक्षक
+  arb: مُفَتِّشُونَ
+  kor: 감독들이
+  swa: pּkiydiym
+
+### Sense 128390 (1 occurrences)
+Grammar: N-mp
+  eng: overseers-in
+  spa: supervisores
+  hin: निरीक्षक
+  arb: مُرَاقِبِينَ
+  kor: 감독자들이
+  swa: wasimamizi
+
+### Sense 128391 (1 occurrences)
+Grammar: N-ms
+  eng: overseer
+  spa: encargado
+  hin: अधिकारी
+  arb: وَكِيلًا
+  kor: 감독관이
+  swa: msimamizi
+
+### Sense 128392 (1 occurrences)
+Grammar: N-ms
+  eng: overseer
+  spa: supervisor
+  hin: अधिकारी–था
+  arb: رَئِيسٌ
+  kor: 감독이었다
+  swa: msimamizi
+
+### Sense 128393 (1 occurrences)
+Grammar: N-mp
+  eng: overseers
+  spa: oficiales
+  hin: अधिकारी
+  arb: وُكَلَاءَ
+  kor: 관리들을
+  swa: maafisa
+
+### Sense 128394 (1 occurrences)
+Grammar: N-ms
+  eng: officer
+  spa: oficial
+  hin: अधिकारी
+  arb: نَاظِرٌ
+  kor: 감독관이었다
+  swa: msimamizi
+
+### Sense 128395 (1 occurrences)
+Grammar: N-mp
+  eng: overseers
+  spa: supervisores
+  hin: अधिकारियों
+  arb: وُكَلَاءَ
+  kor: 감독들을
+  swa: maafisa
+
+### Sense 128396 (1 occurrences)
+Grammar: N-ms
+  eng: overseer
+  spa: oficial
+  hin: पाक़ीद
+  arb: مُوَكَّلٌ
+  kor: 감독이다
+  swa: msimamizi
+
+### Sense 128397 (1 occurrences)
+Grammar: N-msc | 3ms
+  eng: his-officer
+  spa: su–oficial
+  hin: उसका–अधिकारी
+  arb: وَكِيلُهُ
+  kor: 관리자–그의
+  swa: afisa–wake
+
+### Sense 128398 (1 occurrences)
+Grammar: Conj-w | N-msc
+  eng: and–officer-of
+  spa: y–oficial–de
+  hin: और–अधिकारी
+  arb: وَوَكِيلُ
+  kor: 그리고–감독이
+  swa: na–afisa–wa
+
+### Sense 128399 (1 occurrences)
+Grammar: Art | N-ms
+  eng: the–overseer
+  spa: el–supervisor
+  hin: निर्देशक–के–साथ
+  arb: المُراقِبُ
+  kor: 그–감독이었다
+  swa: msimamizi
+
+## Task
+
+Group these 12 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

@@ -1,0 +1,127 @@
+# Sense Merge Task for G2570
+
+Lemma: G2570 (POS: Adj-NNS)
+Total occurrences: 101
+Current sense count: 11
+
+This Hebrew/Greek lemma has been over-split into 11 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 69990 (44 occurrences)
+Grammar: Adj-AFS,Adj-ANS,Adj-NNS,Adj-AMS,Adj-DFS,Adj-GNS,Adj-NMS,Adj-GFS,Adj-ANP,Adj-DNP,
+  eng: good, of–good, of–a–good
+  spa: buena, buenas, de–buenas
+  hin: अचछि, भलेए, भले
+  arb: الحَسَنَ, جَيِّدَةِ, جَيِّدًا
+  kor: 선한, 좋은, 아름다운
+  swa: nzuri, mema, mzuri
+
+### Sense 69989 (39 occurrences)
+Grammar: Adj-AMS,Adj-ANS,Adj-NNS,Adj-DFS,Adj-NMS
+  eng: good, Good
+  spa: bueno, buen, mejor
+  hin: अच्छा, अछ, अचछ
+  arb: حَسَنٌ, خَيْرٌ, صالِح
+  kor: 좋다, 좋은, 선한
+  swa: ni–vizuri, mzuri, ni–bora
+
+### Sense 69992 (6 occurrences)
+Grammar: Adj-ANS,Adj-DNS
+  eng: good
+  spa: bueno, bien
+  hin: उत्तम, अचछे, भला
+  arb: الْحَسَنَ, الحَسَنَ, حَسَنٍ
+  kor: 선을, 좋은–것, 선한–것을
+  swa: jema
+
+### Sense 69993 (4 occurrences)
+Grammar: Adj-AMP,Adj-AMS,Adj-ANP
+  eng: good
+  spa: buenos, bueno
+  hin: उत्तम, अछेए–को
+  arb: جَيِّدَةً, جَيِّدَ, جَيِّدًا
+  kor: 아름다운, 좋은–것은, 좋은
+  swa: mazuri, zuri, nzuri
+
+### Sense 69994 (2 occurrences)
+Grammar: Adj-AMP,Adj-DMP
+  eng: good, beautiful
+  spa: hermosas, buenas
+  hin: सुन्दर, अछहे
+  arb: جَمِيلَةً, جَميلَةٍ
+  kor: 아름다운
+  swa: nzuri, mazuri
+
+### Sense 69995 (1 occurrences)
+Grammar: Adj-ANP
+  eng: good
+  spa: buenas–cosas
+  hin: भले
+  arb: بِالحَسَنِ
+  kor: 선한–것들을
+  swa: mema,
+
+### Sense 69996 (1 occurrences)
+Grammar: Adj-GNS
+  eng: of–good
+  spa: de–bueno
+  hin: भले–का
+  arb: الخَيْرِ
+  kor: 선과
+  swa: jema
+
+### Sense 69997 (1 occurrences)
+Grammar: Adj-AFS
+  eng: good
+  spa: buena
+  hin: और
+  arb: الجَيِّدَةِ
+  kor: 좋은
+  swa: nzuri,
+
+### Sense 69998 (1 occurrences)
+Grammar: Adj-AMP
+  eng: Fair
+  spa: Buenos
+  hin: अच्छे
+  arb: المَوَانِئِ–الجَمِيلَةِ
+  kor: 아름다운
+  swa: Bandari
+
+### Sense 69999 (1 occurrences)
+Grammar: Adj-ANP
+  eng: good-things
+  spa: cosas-buenas
+  hin: भली
+  arb: حَسَنٍ
+  kor: 선한–것들을
+  swa: mema
+
+### Sense 70000 (1 occurrences)
+Grammar: Adj-NMS
+  eng: good
+  spa: buena
+  hin: उत्तम
+  arb: حَسَنٌ
+  kor: 선하다는
+  swa: njema
+
+## Task
+
+Group these 11 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

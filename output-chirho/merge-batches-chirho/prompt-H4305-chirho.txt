@@ -1,0 +1,154 @@
+# Sense Merge Task for H4305
+
+Lemma: H4305 (POS: V-Hifil-Imperf.Jus-3ms)
+Total occurrences: 17
+Current sense count: 14
+
+This Hebrew/Greek lemma has been over-split into 14 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 111145 (2 occurrences)
+Grammar: V-Nifal-Imperf-3fs,V-Hifil-Imperf-3fs
+  eng: was-rained-upon
+  spa: recibía–lluvia
+  hin: भीगा, बरसा
+  arb: تُمْطِرُ, تُمْطَرُ
+  kor: 비를–받으나, 비가–내리지
+  swa: kuunyeshea, kilinyeshewa
+
+### Sense 111146 (2 occurrences)
+Grammar: Conj-w | V-Hifil-ConsecImperf-
+  eng: and–he–rained–down
+  spa: E–hizo-llover
+  hin: और–बरसाया
+  arb: وَأَمْطَرَ
+  kor: 비–내리셨나이다
+  swa: Na–akanyesha
+
+### Sense 111147 (2 occurrences)
+Grammar: V-Hifil-Prtcpl-ms
+  eng: raining
+  spa: haré–llover, haciendo–llover
+  hin: मैं–बरसाता–हूँ, बरसाता–हूं
+  arb: مُمْطِرٌ, أُمْطِرُ
+  kor: 내가–비같이–내리리라, 내가–내리게–한다
+  swa: ninanyesha
+
+### Sense 111148 (1 occurrences)
+Grammar: V-Hifil-Imperf-1cs
+  eng: I-will-rain-down
+  spa: haré–llover
+  hin: मैं–बरसाऊंगा
+  arb: أُمْطِرُ
+  kor: 비오게하겠다
+  swa: nitanyesha
+
+### Sense 111149 (1 occurrences)
+Grammar: Conj-w | V-Hifil-ConjPerf-1cs
+  eng: and–I-caused-to-rain
+  spa: y–hice–llover
+  hin: और–बरसाया–मैंने
+  arb: وَ–أَمْطَرْتُ
+  kor: 그리고–비를–내리게–하였느니라
+  swa: na–nilinyeshea
+
+### Sense 111150 (1 occurrences)
+Grammar: V-Hifil-Imperf-1cs
+  eng: I-caused-to-rain
+  spa: hice–llover
+  hin: बरसाया
+  arb: أُمْطِرْ
+  kor: 비를–내리지
+  swa: kuunyeshea
+
+### Sense 111151 (1 occurrences)
+Grammar: Prep-m | V-Hifil-Inf
+  eng: from–raining
+  spa: de-no-llover
+  hin: वर्षा–बरसाने–से
+  arb: أَلَّا–تُمطِرَ
+  kor: 비를–내리지–않게
+  swa: kunyesha
+
+### Sense 111152 (1 occurrences)
+Grammar: V-Hifil-Prtcpl-ms
+  eng: causing-to-rain
+  spa: hago–llover
+  hin: बरसाऊनगा
+  arb: أُمْطِرُ
+  kor: 비–내리겠다
+  swa: nitanyesha
+
+### Sense 111153 (1 occurrences)
+Grammar: Conj-w | V-Hifil-ConsecImperf-
+  eng: and–rained
+  spa: e–hizo–llover
+  hin: और–बरसाया
+  arb: فَأَمْطَرَ
+  kor: 그리고–내리셨다
+  swa: na–akanyesha
+
+### Sense 111154 (1 occurrences)
+Grammar: Prep-l | V-Hifil-Inf
+  eng: to–cause–rain
+  spa: Para–hacer–llover
+  hin: बरसाने–को
+  arb: لِيُمْطِرَ
+  kor: 비–를–내리기–위하여
+  swa: kunyesha
+
+### Sense 111155 (1 occurrences)
+Grammar: V-Hifil-Imperf.Jus-3ms
+  eng: he–rains
+  spa: Hará–llover
+  hin: वह–बरसाएगा
+  arb: يُمْطِرُ
+  kor: 비–내리시리로다
+  swa: Atanyesha
+
+### Sense 111156 (1 occurrences)
+Grammar: V-Hifil-Perf-3ms
+  eng: had–caused–rain
+  spa: había–hecho–llover
+  hin: बरसाया–था
+  arb: يُمْطِرْ
+  kor: 비–내렸다
+  swa: amenyesha
+
+### Sense 111157 (1 occurrences)
+Grammar: V-Hifil-Perf-3ms
+  eng: rained
+  spa: hizo–llover
+  hin: वरसय
+  arb: أَمْطَرَ
+  kor: 비를–내렸다
+  swa: akaanguka
+
+### Sense 111158 (1 occurrences)
+Grammar: Conj-w | V-Hifil-ConjImperf.Ju
+  eng: and–rains–down
+  spa: y–hará–llover
+  hin: और–वह–बरसाएगा
+  arb: وَ–يُمْطِرُ
+  kor: 그리고–비를–내리시리라
+  swa: na–atanyesha
+
+## Task
+
+Group these 14 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

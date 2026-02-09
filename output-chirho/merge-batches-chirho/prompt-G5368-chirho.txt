@@ -1,0 +1,154 @@
+# Sense Merge Task for G5368
+
+Lemma: G5368 (POS: V-ANA)
+Total occurrences: 25
+Current sense count: 14
+
+This Hebrew/Greek lemma has been over-split into 14 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 78581 (4 occurrences)
+Grammar: V-PPA-NMS
+  eng: one-loving, loving
+  spa: amando, ama
+  hin: प्रेम–करनेवाला, प्रेम–करता–है
+  arb: مُحِبُّ, يُحِبُّ, مَنْ يُحِبُّ
+  kor: 사랑하는–자는, 사랑하고
+  swa: penda, anayependa
+
+### Sense 78582 (3 occurrences)
+Grammar: V-PIA-3S
+  eng: loves
+  spa: ama
+  hin: प्रेम–करता–है, प्रेम–करता
+  arb: يُحِبُّ
+  kor: 사랑한다, 사랑하지, 사랑하신다
+  swa: anawapenda, anapenda, anampenda
+
+### Sense 78583 (3 occurrences)
+Grammar: V-PIA-1S
+  eng: I–love
+  spa: te-quiero
+  hin: प्रेम–करता–हूँ
+  arb: أُحِبُّكَ
+  kor: 사랑한다
+  swa: ninakupenda
+
+### Sense 78584 (2 occurrences)
+Grammar: V-ASA-1S
+  eng: I–kiss, I-kiss
+  spa: bese
+  hin: चूमूं, चूमूँ
+  arb: أُقَبِّلُهُ, أُقَبِّلُ
+  kor: 입–맞추리라, 내가-입맞추면
+  swa: nitambusu, nitakayembusu
+
+### Sense 78585 (2 occurrences)
+Grammar: V-PIA-3P
+  eng: they–love
+  spa: aman
+  hin: प्रेम–करते–हैं, पसन्द–करते–हैं
+  arb: يُحِبّونَ
+  kor: 좋아한다
+  swa: wanapenda, lakini
+
+### Sense 78586 (2 occurrences)
+Grammar: V-PIA-2S
+  eng: do–you–love
+  spa: me-quieres, Me-quieres
+  hin: प्रेम–करता–है–तू
+  arb: أَ–تُحِبُّنِي
+  kor: 사랑하느냐
+  swa: unanipenda, Unanipenda
+
+### Sense 78587 (2 occurrences)
+Grammar: V-IIA-3S
+  eng: loved, he–loved
+  spa: amaba
+  hin: प्रेम–करता–था
+  arb: كَانَ–يُحِبُّ, أَحَبَّهُ
+  kor: 사랑하셨다, 사랑하셨는가
+  swa: alivyompenda, alimpenda
+
+### Sense 78588 (1 occurrences)
+Grammar: V-PSA-1S
+  eng: I–love
+  spa: amo
+  hin: प्रेम–करता–हूँ,
+  arb: أُحِبُّهُمْ
+  kor: 사랑하면
+  swa: niwapendao,
+
+### Sense 78589 (1 occurrences)
+Grammar: V-PPA-GMP
+  eng: loving
+  spa: amando
+  hin: प्रेम–करने–वालों
+  arb: المُحِبّينَ
+  kor: 좋아하는
+  swa: wanaopenda
+
+### Sense 78590 (1 occurrences)
+Grammar: V-RIA-2P
+  eng: have–loved
+  spa: habéis-amado
+  hin: प्रेम–किया–है
+  arb: قَدْ–أَحْبَبْتُمْ
+  kor: 사랑하였다
+  swa: mmenipenda
+
+### Sense 78591 (1 occurrences)
+Grammar: V-ANA
+  eng: to-kiss
+  spa: para-besar
+  hin: चूमने–को
+  arb: لِيُقَبِّلَهُ
+  kor: 입맞추려고
+  swa: kumbusu
+
+### Sense 78592 (1 occurrences)
+Grammar: V-PIA-2S
+  eng: you–love
+  spa: amas
+  hin: प्रेम–करता–है
+  arb: تُحِبُّهُ
+  kor: 사랑하시는–자가
+  swa: unampenda
+
+### Sense 78593 (1 occurrences)
+Grammar: V-IIA-3S
+  eng: would–love
+  spa: amaría
+  hin: प्रेम–करता
+  arb: أَحَبَّ
+  kor: 사랑했을–것이다
+  swa: ungependa
+
+### Sense 78594 (1 occurrences)
+Grammar: V-PPA-AMP
+  eng: loving
+  spa: que–nos–aman
+  hin: प्रेम–करनेवअलोन
+  arb: –المُحِبّينَ
+  kor: 사랑하는–자들–을
+  swa: wanaotupenda
+
+## Task
+
+Group these 14 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

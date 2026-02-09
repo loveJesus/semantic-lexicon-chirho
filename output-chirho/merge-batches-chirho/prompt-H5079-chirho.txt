@@ -1,0 +1,162 @@
+# Sense Merge Task for H5079
+
+Lemma: H5079 (POS: Art | N-fs)
+Total occurrences: 29
+Current sense count: 15
+
+This Hebrew/Greek lemma has been over-split into 15 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 116408 (6 occurrences)
+Grammar: N-fsc | 3fs
+  eng: her–impurity
+  spa: su–menstruación
+  hin: होगी, पर, उसके लिए
+  arb: طَمْثِهَا, طَمْثُهَا
+  kor: 그녀–의–불결함, 그녀–의–불결함–이
+  swa: hedhi–yake
+
+### Sense 116409 (5 occurrences)
+Grammar: N-fs,Art | N-fs
+  eng: impurity, the–impurity
+  spa: impureza, la–impureza
+  hin: अशुद्धता–दूर–करने–का, अशुद्धता–दूर–करने–के
+  arb: النِّجَاسَةِ
+  kor: 정결–의, 그–정결–의
+  swa: utakaso
+
+### Sense 116410 (3 occurrences)
+Grammar: Prep-b | N-fsc | 3fs
+  eng: in–her–impurity
+  spa: en–su–menstruación
+  hin: में–अशुद्धता
+  arb: فِي–طَمْثِهَا, بِ–طَمْثِهَا
+  kor: 그녀–의–불결함–에
+  swa: katika–hedhi–yake
+
+### Sense 116411 (2 occurrences)
+Grammar: Prep-l | N-fs
+  eng: for–impurity
+  spa: para–inmundicia
+  hin: को–अशुद्धता
+  arb: لِـ–نَجاسَةٍ
+  kor: 부정한–것이, 부정한–것으로
+  swa: uchafu, kama–uchafu
+
+### Sense 116412 (2 occurrences)
+Grammar: Art | N-fs
+  eng: the–menstruation
+  spa: la–menstruante, la–menstruación
+  hin: मासिक–धर्म, उनके
+  arb: ٱلْحَائِضِ, الطَّمْثِ
+  kor: 그–월경의
+  swa: hedhi
+
+### Sense 116413 (2 occurrences)
+Grammar: N-fs
+  eng: impurity
+  spa: impureza
+  hin: अशुद्धि–के, अशुद्धता
+  arb: نَجَاسَةٌ, النَّجَاسَةِ
+  kor: 정결의, 불결함
+  swa: uchafu, kutakasa
+
+### Sense 116414 (1 occurrences)
+Grammar: Prep-b | N-fsc
+  eng: in–impurity-of
+  spa: en–menstruación-de
+  hin: अशुद्धता–में
+  arb: بِ–فَتْرَةِ
+  kor: 에–불결함–의
+  swa: katika–uchafu–wa–
+
+### Sense 116415 (1 occurrences)
+Grammar: Prep-b | N-fsc
+  eng: with–the–impurity–of
+  spa: por–la–impureza–de
+  hin: अशुद्धता–के–साथ
+  arb: بِ–نَجاسَة
+  kor: 에–불결함
+  swa: kwa–uchafu
+
+### Sense 116416 (1 occurrences)
+Grammar: Prep-l | N-fs
+  eng: for–impurity
+  spa: por–inmunda
+  hin: अशुद्ध
+  arb: لِنَجَاسَةٍ
+  kor: 불결한–것–으로
+  swa: kitu–cha–kuchukiza
+
+### Sense 116417 (1 occurrences)
+Grammar: Art | N-fs
+  eng: the–impurity
+  spa: la–inmundicia
+  hin: अशुद्धता
+  arb: النَّجَاسَةَ
+  kor: 그–더러움을
+  swa: uchafu
+
+### Sense 116418 (1 occurrences)
+Grammar: N-fsc
+  eng: impurity-of
+  spa: impureza-de
+  hin: अपनी मासिक धर्म
+  arb: نِجَاسَةِ
+  kor: 불결함–의
+  swa: hedhi
+
+### Sense 116419 (1 occurrences)
+Grammar: N-fs
+  eng: menstruating
+  spa: impura
+  hin: रजस्वला–के–समय
+  arb: حَائِضٍ
+  kor: 월경의
+  swa: wa–hedhi
+
+### Sense 116420 (1 occurrences)
+Grammar: Prep-k | N-fsc | 3fs
+  eng: as–her–impurity
+  spa: como–su–impureza
+  hin: के दिनों के अनुसार
+  arb: كَنِجَاسَتِهَا
+  kor: 그녀–의–불결함–처럼
+  swa: kama–hedhi–yake
+
+### Sense 116421 (1 occurrences)
+Grammar: N-fs
+  eng: impurity
+  spa: impureza
+  arb: نَجاسَة
+  kor: 불결함–의
+  swa: ya–uchafu
+
+### Sense 116422 (1 occurrences)
+Grammar: Conj-w, Prep-l | N-fs
+  eng: and–for–impurity
+  spa: y–para–impureza
+  hin: और–के–लिए–अशुद्धता
+  arb: وَ–لِ–النَّجَاسَةِ
+  kor: 그리고–~을–위한–부정함
+  swa: na–kwa–unajisi
+
+## Task
+
+Group these 15 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

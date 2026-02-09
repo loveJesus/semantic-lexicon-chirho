@@ -1,0 +1,118 @@
+# Sense Merge Task for H0026
+
+Lemma: H0026 (POS: Prep-b | N-proper-fs)
+Total occurrences: 19
+Current sense count: 10
+
+This Hebrew/Greek lemma has been over-split into 10 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 79549 (6 occurrences)
+Grammar: N-proper-fs
+  eng: Abigail
+  spa: Abigail
+  hin: अबीगैल, अबीगैलने, (अबीगैलने)
+  arb: أبيجايِلُ, أبيجايِلَ
+  kor: 아비가일이, 아비가일이고, 아비가일에게
+  swa: Abigaili
+
+### Sense 79550 (3 occurrences)
+Grammar: Conj-w | N-proper-fs
+  eng: and–Abigail
+  spa: y–Abigail
+  hin: और-अबिगयिल, और–अबीगैल
+  arb: وَ–أَبيجايِلُ, وَأَبِيجَايِلُ, وَأبيجايِلُ
+  kor: 그리고–아비가일
+  swa: na–Abigaili
+
+### Sense 79551 (2 occurrences)
+Grammar: Conj-w | N-proper-fs
+  eng: and–Avigayil
+  spa: y–Abigayil, Y–Abigayil
+  hin: और–अबीगैल
+  arb: وَ–أَبيجايِل
+  kor: 그–와–아비가일
+  swa: na–Abigaili, Na–Abigaili
+
+### Sense 79552 (2 occurrences)
+Grammar: Prep-l | N-proper-fs,Prep-b | N-proper-fs
+  eng: to–Abigail
+  spa: con–Abigail, a–Abigail
+  hin: अबीगैल–से
+  arb: لِأبيجايِلَ, بِأبيجايِلَ
+  kor: 에–아비가일에게, 아비가일에게
+  swa: kwa–Abigaili
+
+### Sense 79553 (1 occurrences)
+Grammar: N-proper-fs
+  eng: [Abigail]
+  spa: (Qeré)
+  hin: [अबीगैलने]
+  arb: [كتيب]
+  kor: 아비가일이
+  swa: Abigaili
+
+### Sense 79554 (1 occurrences)
+Grammar: Conj-w, Prep-l | N-proper-fs
+  eng: and–to–Abigail
+  spa: y–a–Abigail
+  hin: और–अबीगैल–को
+  arb: وَلِأبيجايِلَ
+  kor: 그리고–아비가일에게
+  swa: na–kwa–Abigaili
+
+### Sense 79555 (1 occurrences)
+Grammar: N-proper-fs
+  eng: Avigal
+  spa: Abigail
+  hin: अबीगैल
+  arb: أَبيجايِل
+  kor: 아비가일
+  swa: Abigaili
+
+### Sense 79556 (1 occurrences)
+Grammar: Prep-l | N-proper-fs
+  eng: to–Avigayil
+  spa: de–Abigayil
+  hin: अबीगैल–से
+  arb: لِـ–أَبيجايِل
+  kor: 아비가일에게서
+  swa: kwa–Abigaili
+
+### Sense 79557 (1 occurrences)
+Grammar: Prep-l | N-proper-fs
+  eng: [to–Abigail]
+  spa: [para–Abigal]
+  hin: [अबीगैल–से]
+  arb: لِ–أَبِيجَايِلَ
+  kor: (케티브)
+  swa: [kwa–Abigaili]
+
+### Sense 79558 (1 occurrences)
+Grammar: Prep-l | N-proper-fs
+  eng: to–Abigail
+  spa: (para–Abigail)
+  hin: (अबीगैल–से)
+  arb: لِ–أَبِيجَايِلَ
+  kor: 아비가일의-아들이니
+  swa: kwa–Abigaili
+
+## Task
+
+Group these 10 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

@@ -1,0 +1,163 @@
+# Sense Merge Task for G1651
+
+Lemma: G1651 (POS: V-PPM/P-NNP)
+Total occurrences: 18
+Current sense count: 15
+
+This Hebrew/Greek lemma has been over-split into 15 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 66907 (4 occurrences)
+Grammar: V-PMA-2S,V-AMA-2S
+  eng: reprove, rebuke
+  spa: reprende
+  hin: दअन्त, तअ,
+  arb: وَبِّخْ, وَبِّخْهُم
+  kor: 꺼짓으라, 책망하라, 꺼짐하라,
+  swa: wakemee, kemea, karipia
+
+### Sense 66908 (1 occurrences)
+Grammar: V-PPM/P-NNP
+  eng: being-exposed
+  spa: reprendidas
+  hin: सअबित-किये-हुए
+  arb: المُوَبَّخُ
+  kor: 드러난–것들–은
+  swa: yanayokemewa
+
+### Sense 66909 (1 occurrences)
+Grammar: V-PMA-2P
+  eng: expose
+  spa: reprended
+  hin: तुम-सअबित-करो
+  arb: وَبِّخوها
+  kor: 책망하라
+  swa: yakemueni
+
+### Sense 66910 (1 occurrences)
+Grammar: V-AMA-2S
+  eng: reprove
+  spa: reprende
+  hin: समझ
+  arb: وَبِّخْهُ
+  kor: 권고하라
+  swa: mkemee
+
+### Sense 66911 (1 occurrences)
+Grammar: V-PPM/P-NMS
+  eng: being-reproved
+  spa: siendo-reprendido
+  hin: डाँटे–जाते–हुए
+  arb: مُوَبَّخًا
+  kor: 책망–받을–때에
+  swa: unapokemewa
+
+### Sense 66912 (1 occurrences)
+Grammar: V-PNA
+  eng: to–reprove
+  spa: refutar
+  hin: दोखह-देन.
+  arb: يُوَبِّخَ
+  kor: 책망하도록
+  swa: kuwakemea
+
+### Sense 66913 (1 occurrences)
+Grammar: V-PPP-NMP
+  eng: being–convicted
+  spa: convictos
+  hin: धिक्कारे–जाते–हुए
+  arb: مُبَكَّتينَ
+  kor: 책망받아
+  swa: wakihukumiwa
+
+### Sense 66914 (1 occurrences)
+Grammar: V-PPM/P-NMP
+  eng: being–convicted
+  spa: siendo–reprendidos
+  hin: दोषी-ठहराए-जाते-हुए
+  arb: مُوَبَّخينَ
+  kor: 정죄–받으며
+  swa: mkikemewa
+
+### Sense 66915 (1 occurrences)
+Grammar: V-PIA-3S
+  eng: convicts
+  spa: convence
+  hin: दोष–लगाता–है
+  arb: يُبَكِّت
+  kor: 꾸짖는가
+  swa: ananihukumu
+
+### Sense 66916 (1 occurrences)
+Grammar: V-ANA
+  eng: to–convict
+  spa: convencer
+  hin: दोषी–ठहराने–को
+  arb: يوبخ
+  kor: 정죄하려
+  swa: kuwaonya
+
+### Sense 66917 (1 occurrences)
+Grammar: V-PPM/P-NMS
+  eng: being–reproved
+  spa: siendo–reprendido
+  hin: डांटा–जाता–हुआ
+  arb: الْمُوَبَّخُ
+  kor: 책망받는
+  swa: alipoonywa
+
+### Sense 66918 (1 occurrences)
+Grammar: V-PIM/P-3S
+  eng: he-is-convicted
+  spa: es–convencido
+  hin: दोषी–ठहराया–जाता–है
+  arb: يُوَبَّخُ
+  kor: 책망받고
+  swa: anasadikishwa
+
+### Sense 66919 (1 occurrences)
+Grammar: V-FIA-3S
+  eng: will–convict
+  spa: convencerá
+  hin: दोषी–ठहराएगा
+  arb: يُبَكِّتُ
+  kor: 책망할–것이다
+  swa: ataushuhudia
+
+### Sense 66920 (1 occurrences)
+Grammar: V-PIA-1S
+  eng: I–reprove
+  spa: reprendo
+  hin: डाँटता–हूँ
+  arb: أُوَبِّخُهُمْ
+  kor: 책망한다
+  swa: nawakemea
+
+### Sense 66921 (1 occurrences)
+Grammar: V-ASP-3S
+  eng: be-exposed
+  spa: sean-expuestas
+  hin: जाँचे–जाएं
+  arb: تُوَبَّخَ
+  kor: 드러나도록
+  swa: funuliwe
+
+## Task
+
+Group these 15 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

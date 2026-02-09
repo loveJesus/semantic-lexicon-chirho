@@ -1,0 +1,154 @@
+# Sense Merge Task for G4254
+
+Lemma: G4254 (POS: V-PIA-3P)
+Total occurrences: 20
+Current sense count: 14
+
+This Hebrew/Greek lemma has been over-split into 14 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 75593 (3 occurrences)
+Grammar: V-PPA-NMP
+  eng: going-before
+  spa: yendo-delante-de, que–iban–delante, que–iban-delante
+  hin: आगे–जाती–थीं, आगे–चलने–वाले, आगे–चलनेवाले
+  arb: يَتَقَدَّمونَهُ, الْمُتَقَدِّمُونَ, المُتَقَدِّمونَ
+  kor: 앞서–가는–자들이, 앞서–가는, 앞서-가는-자들과
+  swa: waliotangulia, yeye
+
+### Sense 75594 (2 occurrences)
+Grammar: V-ANA
+  eng: to–bring–forth, to-bring-out
+  spa: sacar
+  hin: ले–जाना, लाने–को
+  arb: أَن–يُخرِجوهُما, أَنْ–يُقَدِّمَ
+  kor: 끌어내려고
+  swa: kuwaleta, kumleta
+
+### Sense 75595 (2 occurrences)
+Grammar: V-PNA
+  eng: to–go–before, to-go-ahead
+  spa: ir–delante, ir-delante
+  hin: की, अअगे–जअने
+  arb: يَسْبِقُوهُ, يَسْبِقوا
+  kor: 앞서–가게
+  swa: kutangulia
+
+### Sense 75596 (2 occurrences)
+Grammar: V-FIA-1S
+  eng: I–will–go–before, I-will-go-before
+  spa: iré–delante–de
+  hin: आगे–जाऊंगा, आगे–जाऊँगा
+  arb: سَأَسْبِقُكُمْ, أَسْبِقُ
+  kor: 앞서–가리라, 앞서-가겠다
+  swa: nitawatangulia
+
+### Sense 75597 (2 occurrences)
+Grammar: V-PIA-3S
+  eng: you, he–goes–before
+  spa: va–delante–de
+  hin: आगे–जाता–है
+  arb: يَسْبِقُكُمْ, يَسبِقُ
+  kor: 앞서–간다, 앞서-간다
+  swa: anawatangulia, Anawatangulia
+
+### Sense 75598 (1 occurrences)
+Grammar: V-IIA-3S
+  eng: was–going–before
+  spa: iba–delante–de
+  hin: आगे–आगे–चलता–रहा
+  arb: يَتَقَدَّمُهُمْ
+  kor: 인도했다
+  swa: iliwatangulia
+
+### Sense 75599 (1 occurrences)
+Grammar: V-AIA-1S
+  eng: I–brought–forward
+  spa: lo-traje
+  hin: लाया
+  arb: قَدَّمْتُهُ
+  kor: 데려왔다
+  swa: nimemleta
+
+### Sense 75600 (1 occurrences)
+Grammar: V-PPA-NMS
+  eng: going-before
+  spa: yendo–delante–de
+  hin: आगे–चलता–हुआ
+  arb: مُتَقَدِّمًا
+  kor: 앞서–가는
+  swa: akiwatangulia
+
+### Sense 75601 (1 occurrences)
+Grammar: V-PPA-AFP
+  eng: preceding
+  spa: precedentes
+  hin: पहले–कि
+  arb: السّابِقَةِ
+  kor: 앞서–가는
+  swa: unabii
+
+### Sense 75602 (1 occurrences)
+Grammar: V-PPA-NFP
+  eng: going–before
+  spa: precediendo
+  hin: जअते-हुए
+  arb: سابِقَةٌ
+  kor: 앞서–가는
+  swa: zinazoongoza
+
+### Sense 75603 (1 occurrences)
+Grammar: V-PPA-GFS
+  eng: of–preceding
+  spa: de–precedente
+  hin: पहले–वाली
+  arb: السَّابِقَةِ
+  kor: 앞선–간
+  swa: ya–awali
+
+### Sense 75604 (1 occurrences)
+Grammar: V-APA-NMS
+  eng: having-brought
+  spa: sacando
+  hin: ले–जाकर
+  arb: أَخرَجَهُما
+  kor: 데리고–나와서
+  swa: akiwaleta
+
+### Sense 75605 (1 occurrences)
+Grammar: V-PPA-NMS
+  eng: going–ahead
+  spa: que–se–adelanta
+  hin: आगे–बढ़ता–है,
+  arb: مُتَقَدِّمِ
+  kor: 앞서–가는–자
+  swa: anayeendelea–mbele
+
+### Sense 75606 (1 occurrences)
+Grammar: V-PIA-3P
+  eng: are-going-before
+  spa: van-delante-de
+  hin: आगे–जाती–हैं
+  arb: يَسبِقونَ
+  kor: 앞서–간다
+  swa: ninyi
+
+## Task
+
+Group these 14 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

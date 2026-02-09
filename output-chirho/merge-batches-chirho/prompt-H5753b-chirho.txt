@@ -1,0 +1,118 @@
+# Sense Merge Task for H5753b
+
+Lemma: H5753b (POS: V-Hifil-Perf-1cs)
+Total occurrences: 10
+Current sense count: 10
+
+This Hebrew/Greek lemma has been over-split into 10 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 122734 (1 occurrences)
+Grammar: Conj-w | V-Qal-ConjPerf-1cp
+  eng: and–done-iniquity
+  spa: y–cometimos–iniquidad
+  hin: और–कुटिलता–की–हमने
+  arb: وَ–أَثِمْنَا
+  kor: 그리고–악행했으며
+  swa: na–tumefanya–uovu
+
+### Sense 122735 (1 occurrences)
+Grammar: V-Hifil-Perf-1cs
+  eng: I-have-done-wrong
+  spa: hice–perversamente
+  hin: अधर्म–किया
+  arb: أَسَأْتُ
+  kor: 잘못했다–나는
+  swa: nimekosa
+
+### Sense 122736 (1 occurrences)
+Grammar: V-Nifal-Prtcpl-fsc
+  eng: perverse
+  spa: perversa–de
+  hin: तेधि
+  arb: انْحِرَافِ
+  kor: 사악한
+  swa: mpotovu
+
+### Sense 122737 (1 occurrences)
+Grammar: V-Qal-Perf-3fs
+  eng: wronged
+  spa: ofendió
+  hin: अपराध–किया–है
+  arb: أَسَاءَتْ
+  kor: 범했다
+  swa: Vashti
+
+### Sense 122738 (1 occurrences)
+Grammar: V-Hifil-Perf-1cp
+  eng: we–have–done–wrong
+  spa: cometimos–iniquidad
+  hin: हमने–अन्याय–किया
+  arb: أَثِمنا
+  kor: 악을–행하였나이다
+  swa: tumekosea
+
+### Sense 122739 (1 occurrences)
+Grammar: Prep-b | V-Hifil-Inf | 3ms
+  eng: in–his–doing–wrong
+  spa: cuando–haga–mal
+  hin: वह–कुटिलता–करे
+  arb: عِندَ–إثمِهِ
+  kor: 에–그의–범함
+  swa: akikosa
+
+### Sense 122740 (1 occurrences)
+Grammar: Conj-w | V-Hifil-ConjPerf-1cp
+  eng: and–we-acted-perversely
+  spa: y–actuamos–perversamente
+  hin: और–अधर्म–किया–हमने
+  arb: وَ–أَثِمْنَا
+  kor: 그리고–악을–행하였나이다
+  swa: na–tumekosa
+
+### Sense 122741 (1 occurrences)
+Grammar: V-Hifil-Perf-3ms
+  eng: did–wrong
+  spa: hizo–perversamente
+  hin: पाप–किया
+  arb: أَساءَ
+  kor: 잘못-행한-바
+  swa: alifanya
+
+### Sense 122742 (1 occurrences)
+Grammar: V-Hifil-Perf-1cp
+  eng: we–acted–perversely
+  spa: hicimos–iniquidad
+  hin: टेढ़ा–किया–हमने
+  arb: أَثِمْنَا
+  kor: 우리가-불의를-행했습니다
+  swa: tumekosea
+
+### Sense 122743 (1 occurrences)
+Grammar: V-Hifil-InfAbs
+  eng: to–do–wrong
+  spa: pervertir
+  hin: अधर्म–करने–में
+  arb: الإِثْمَ
+  kor: 불의를–행하는–것을
+  swa: kufanya–uovu
+
+## Task
+
+Group these 10 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

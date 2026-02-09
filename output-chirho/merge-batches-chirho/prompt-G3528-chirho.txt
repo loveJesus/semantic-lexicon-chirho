@@ -1,0 +1,172 @@
+# Sense Merge Task for G3528
+
+Lemma: G3528 (POS: V-PPA-NMS)
+Total occurrences: 28
+Current sense count: 16
+
+This Hebrew/Greek lemma has been over-split into 16 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 72742 (8 occurrences)
+Grammar: V-PPA-DMS,V-PPA-NMS
+  eng: overcoming, one-overcoming
+  spa: que–vence, venciendo
+  hin: जयवन्त–होगा,, जयवन्त–होगा, जयवन्त–को,
+  arb: الغالِبُ, الغالِبِ
+  kor: 이기는–자, 이기는–자가
+  swa: Ashindaye,, ashindaye,, ashindaye
+
+### Sense 72743 (3 occurrences)
+Grammar: V-RIA-2P
+  eng: you-have-overcome, have-overcome
+  spa: habéis-vencido, los-habéis-vencido
+  hin: तुमने–जीता
+  arb: غَلَبتُم, غَلَبتُموهُم
+  kor: 너희–가–이겼다
+  swa: mmemshinda, mmewashinda
+
+### Sense 72744 (2 occurrences)
+Grammar: V-AIA-1S,V-AIA-3S
+  eng: overcame
+  spa: vencí, ha–vencido
+  hin: जय–पाया,, जय–पाया
+  arb: غَلَبْتُ, غَلَبَ
+  kor: 이겨서
+  swa: nilivyoshinda,, ameshinda
+
+### Sense 72745 (2 occurrences)
+Grammar: V-PIA-3S,V-PPA-NMS
+  eng: overcoming, overcomes
+  spa: vence
+  hin: जीतने–वाला, जीतता–है
+  arb: يَغلِبُ, غالِبُ
+  kor: 이긴다, 이기는–자
+  swa: kinaushinda, anayeushinda
+
+### Sense 72746 (2 occurrences)
+Grammar: V-FIA-3S
+  eng: will-overcome, will-conquer
+  spa: vencerá
+  hin: जीतेगा
+  arb: سَيَغلِبُهُم
+  kor: 이길–것이니
+  swa: atawashinda
+
+### Sense 72747 (1 occurrences)
+Grammar: V-APA-NFS
+  eng: having-overcome
+  spa: que-venció
+  hin: जीतने–वाली
+  arb: غَلَبَت
+  kor: 이긴
+  swa: ulioushinda
+
+### Sense 72748 (1 occurrences)
+Grammar: V-ASA-3S
+  eng: conquers
+  spa: lo–venza
+  hin: जीत–ले
+  arb: يَغْلِبُهُ
+  kor: 이기면
+  swa: akimshinda
+
+### Sense 72749 (1 occurrences)
+Grammar: V-ANA
+  eng: to-conquer
+  spa: vencerlos
+  hin: जीतने
+  arb: أَن–يَغلِبَهُم
+  kor: 이기려고
+  swa: kuwashinda
+
+### Sense 72750 (1 occurrences)
+Grammar: V-PPA-NMS
+  eng: conquering
+  spa: venciendo
+  hin: जीतता–हुआ,
+  arb: غالِبًا
+  kor: 이기며
+  swa: akishinda,
+
+### Sense 72751 (1 occurrences)
+Grammar: V-PPA-AMP
+  eng: ones-overcoming
+  spa: vencedores
+  hin: जीतनेवाले
+  arb: الغالِبونَ
+  kor: 이기는–자들을
+  swa: walishinda
+
+### Sense 72752 (1 occurrences)
+Grammar: V-ASA-3S
+  eng: he–might–conquer
+  spa: vencer
+  hin: वह–जीते।
+  arb: يَغلِبَ
+  kor: 이기도록
+  swa: ashinde.
+
+### Sense 72753 (1 occurrences)
+Grammar: V-PMM/P-2S
+  eng: be-overcome
+  spa: seas-vencido
+  hin: हारो
+  arb: تُغْلَبْ
+  kor: 지지
+  swa: shindwe
+
+### Sense 72754 (1 occurrences)
+Grammar: V-FIA-2S
+  eng: will–overcome
+  spa: vencerás
+  hin: जीते
+  arb: تَغلِبَ
+  kor: 이기기–를
+  swa: ushinde
+
+### Sense 72755 (1 occurrences)
+Grammar: V-AIA-3P
+  eng: conquered
+  spa: vencieron
+  hin: जीता
+  arb: غَلَبوهُ
+  kor: 이겼으니
+  swa: walimshinda
+
+### Sense 72756 (1 occurrences)
+Grammar: V-RIA-1S
+  eng: have–overcome
+  spa: he-vencido
+  hin: जीत–लिया–है
+  arb: قَدْ–غَلَبْتُ
+  kor: 이겼다
+  swa: nimeushinda
+
+### Sense 72757 (1 occurrences)
+Grammar: V-PMA-2S
+  eng: overcome
+  spa: vence
+  hin: जीतो
+  arb: اغْلِبْ
+  kor: 이기라
+  swa: shinda
+
+## Task
+
+Group these 16 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

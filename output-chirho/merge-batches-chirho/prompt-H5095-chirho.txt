@@ -1,0 +1,118 @@
+# Sense Merge Task for H5095
+
+Lemma: H5095 (POS: V-Piel-Imperf-3ms)
+Total occurrences: 10
+Current sense count: 10
+
+This Hebrew/Greek lemma has been over-split into 10 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 116583 (1 occurrences)
+Grammar: V-Piel-Perf-2ms
+  eng: You-guided
+  spa: guiaste
+  hin: ले–गया–तूने
+  arb: هَدَيْتَهُ
+  kor: 주께서–이끄셨나이다
+  swa: umewaelekeza
+
+### Sense 116584 (1 occurrences)
+Grammar: Conj-w | V-Piel-ConsecImperf-3
+  eng: and–they–led–them
+  spa: y–los–condujeron
+  hin: और–ले–चले–उनको
+  arb: وَ–قَادُوهُمْ
+  kor: 그리고–인도했다–그들을
+  swa: na–wakawaongoza
+
+### Sense 116585 (1 occurrences)
+Grammar: Conj-w | V-Piel-ConsecImperf-3
+  eng: and–he–guided–them
+  spa: y–los–guio
+  hin: और–उन्हें–ले–गया
+  arb: وَ–قَادَهُمْ
+  kor: 그리고–그가–그들을–인도하셨다
+  swa: waynahalem
+
+### Sense 116586 (1 occurrences)
+Grammar: V-Piel-Imperf-3ms | 1cs
+  eng: he–leads–me
+  spa: me–conduce
+  hin: ले–चलता–है–वह–मुझे
+  arb: يَقُودُنِي
+  kor: 이끌시니–나–를
+  swa: ananiongoza
+
+### Sense 116587 (1 occurrences)
+Grammar: V-Piel-Imperf-3ms | 3mp
+  eng: will-guide-them
+  spa: los–conducirá
+  hin: उन्हें–ले–जाएगा
+  arb: يُرْشِدُهُمْ
+  kor: 그들을–이끌리라
+  swa: atawaongoza
+
+### Sense 116588 (1 occurrences)
+Grammar: V-Piel-Prtcpl-ms
+  eng: one-guiding
+  spa: quien–guíe
+  hin: चलाने–वाला
+  arb: مُرْشِدٌ
+  kor: 인도하는–자가
+  swa: anayeongoza
+
+### Sense 116589 (1 occurrences)
+Grammar: Conj-w | V-Piel-ConsecImperf-3
+  eng: and–guided–them
+  spa: y–los–guió
+  hin: और–ले–गया–उन्हें
+  arb: فَقَادَهُمْ
+  kor: 그리고–인도하였다
+  swa: akampatia–riziki
+
+### Sense 116590 (1 occurrences)
+Grammar: Conj-w | V-Piel-ConjImperf-2ms
+  eng: and–guide–me
+  spa: y–me–conducirás
+  hin: और–ले–चल–मुझे
+  arb: وَتَهْدِينِي
+  kor: 이끄소서
+  swa: na–unisimamie
+
+### Sense 116591 (1 occurrences)
+Grammar: V-Hitpael-Imperf.Cohort-1cs
+  eng: will–lead–on–gently
+  spa: conduciré
+  hin: आगे–बढता–रहूँगा
+  arb: أَتَمَهَّلُ
+  kor: 천천히–가겠다
+  swa: nitanunua
+
+### Sense 116592 (1 occurrences)
+Grammar: V-Piel-Imperf-3ms
+  eng: He–leads
+  spa: guiará
+  hin: ले–जाता–है
+  arb: يَقُودُ
+  kor: 인도하시리라
+  swa: ataongoza
+
+## Task
+
+Group these 10 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

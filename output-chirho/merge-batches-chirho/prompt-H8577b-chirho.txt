@@ -1,0 +1,135 @@
+# Sense Merge Task for H8577b
+
+Lemma: H8577b (POS: Prep-l | N-mp)
+Total occurrences: 14
+Current sense count: 12
+
+This Hebrew/Greek lemma has been over-split into 12 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 145455 (2 occurrences)
+Grammar: Prep-l | N-ms
+  eng: serpent
+  spa: por–serpiente
+  hin: साँप
+  arb: تِنِّينًا
+  kor: 뽐이, 뽀이
+  swa: joka
+
+### Sense 145456 (2 occurrences)
+Grammar: Art | N-ms,N-ms
+  eng: dragon
+  spa: el–dragón, al–dragón?
+  hin: अजगर–को, अजगर
+  arb: التِّنِّينَ
+  kor: 용을
+  swa: joka
+
+### Sense 145457 (1 occurrences)
+Grammar: N-mp
+  eng: serpents
+  spa: serpientes
+  hin: अजगरों–का
+  arb: التَّنَانِينِ
+  kor: 용들의
+  swa: joka
+
+### Sense 145458 (1 occurrences)
+Grammar: N-ms
+  eng: sea-monster
+  spa: el–monstruo–marino,
+  hin: अजगर
+  arb: تِنّينٌ
+  kor: 바다–괴물인가
+  swa: joka
+
+### Sense 145459 (1 occurrences)
+Grammar: Art | N-ms
+  eng: the–great–
+  spa: el–monstruo
+  hin: अजगर
+  arb: التِّنِّينُ
+  kor: 그–큰–용이여
+  swa: joka–kubwa
+
+### Sense 145460 (1 occurrences)
+Grammar: Art | N-mp
+  eng: the–sea-creatures
+  spa: los–grandes–monstruos–marinos
+  hin: बड़े–जलचर
+  arb: التَّنَانِينَ
+  kor: 그–큰–바다–생물들
+  swa: nyangumi–wakubwa
+
+### Sense 145461 (1 occurrences)
+Grammar: Conj-w | N-ms
+  eng: and–the–serpent
+  spa: y–dragón
+  hin: और–अजगर–को
+  arb: وَالتَّنَّينَ
+  kor: 그리고–큰–뱀–을
+  swa: na–joka
+
+### Sense 145462 (1 occurrences)
+Grammar: Prep-l | N-mp
+  eng: serpents
+  spa: por–serpientes
+  hin: साँपें
+  arb: تَنَانِينَ
+  kor: 뽀들이
+  swa: majoka
+
+### Sense 145463 (1 occurrences)
+Grammar: N-cp
+  eng: the–Serpent
+  spa: el–dragón
+  hin: अजगर–के
+  arb: التَّنِّينِ
+  kor: 그–들짐승–의
+  swa: joka
+
+### Sense 145464 (1 occurrences)
+Grammar: N-mp
+  eng: the–sea–monsters
+  spa: monstruos–marinos
+  arb: التَّنّينِ
+  kor: 용들–의
+  swa: vya–majoka
+
+### Sense 145465 (1 occurrences)
+Grammar: N-mp
+  eng: sea-creatures
+  spa: monstruos-marinos
+  hin: अजगरो
+  arb: التَّنَانِينُ
+  kor: 큰–바다–짐승들아
+  swa: nyoka–wakubwa
+
+### Sense 145466 (1 occurrences)
+Grammar: Prep-k, Art | N-ms
+  eng: like–a–serpent
+  spa: como–dragón
+  hin: अजगर–की–तरह
+  arb: كَالتِّنِّينِ
+  kor: 용처럼
+  swa: kama–joka
+
+## Task
+
+Group these 12 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

@@ -1,0 +1,171 @@
+# Sense Merge Task for G2300
+
+Lemma: G2300 (POS: V-ANP)
+Total occurrences: 23
+Current sense count: 16
+
+This Hebrew/Greek lemma has been over-split into 16 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 69034 (5 occurrences)
+Grammar: V-APM-NMS,V-APM-NMP
+  eng: having–seen, having-beheld, having-seen
+  spa: habiendo-visto, viéndolo
+  hin: देखकर
+  arb: رَأَوْا, رَأَى, رَآهُمَا
+  kor: 보고, 보시지–않고, 보시고
+  swa: walioona, wakimwona, akiwaona
+
+### Sense 69035 (3 occurrences)
+Grammar: V-ANM
+  eng: to–see, to-see
+  spa: a–ver
+  hin: देखने, देखने–को
+  arb: لِيَرى, لِتَرَوا, تَرَوا
+  kor: 보려고, 보기–위해
+  swa: –, kuona-nini?, kuona
+
+### Sense 69036 (2 occurrences)
+Grammar: V-ANP
+  eng: to–be–seen
+  spa: ser–vistos
+  hin: देखे–जाने–को, दिखाई–जाने
+  arb: يُراوا, يَراكُم
+  kor: 보이도록
+  swa: na–, kuonekana
+
+### Sense 69037 (1 occurrences)
+Grammar: V-AMM-2P
+  eng: look-at
+  spa: contemplad
+  hin: देखो
+  arb: انْظُرُوا
+  kor: 보라
+  swa: tazameni
+
+### Sense 69038 (1 occurrences)
+Grammar: V-AIM-2P
+  eng: you–beheld
+  spa: visteis
+  arb: شَاهَدْتُمُوهُ
+  kor: 그–를
+  swa: mlivyomwona
+
+### Sense 69039 (1 occurrences)
+Grammar: V-AIM-1P
+  eng: we-beheld
+  spa: contemplamos
+  hin: हमने–देखा
+  arb: شاهَدناهُ
+  kor: 우리–가–바라보았다
+  swa: tulitazama
+
+### Sense 69040 (1 occurrences)
+Grammar: V-AIP-3S
+  eng: was-seen
+  spa: fue–visto
+  hin: देखा–गया–था
+  arb: شُوهِدَ
+  kor: 보였다고
+  swa: alionekana
+
+### Sense 69041 (1 occurrences)
+Grammar: V-RIM/P-1P
+  eng: have-beheld
+  spa: hemos-contemplado
+  hin: देखा–है
+  arb: رَأَينا
+  kor: 보았다
+  swa: tumeona
+
+### Sense 69042 (1 occurrences)
+Grammar: V-ANM
+  eng: to-see
+  spa: veros
+  hin: देखना
+  arb: أَرَا–كُمْ
+  kor: 만나다
+  swa: kuwaona
+
+### Sense 69043 (1 occurrences)
+Grammar: V-AIM-3S
+  eng: he–saw
+  spa: vio
+  hin: देखा
+  arb: رَأى
+  kor: 보았다
+  swa: akamwona
+
+### Sense 69044 (1 occurrences)
+Grammar: V-AIM-3P
+  eng: saw
+  spa: vieron
+  hin: देखा
+  arb: رَأَيْنَ
+  kor: 보았다
+  swa: waliweza
+
+### Sense 69045 (1 occurrences)
+Grammar: V-AIM-1P
+  eng: we-beheld
+  spa: contemplamos
+  hin: देखी
+  arb: رَأَيْنَا
+  kor: 우리가–보았다
+  swa: tuliona
+
+### Sense 69046 (1 occurrences)
+Grammar: V-RIM/P-3S
+  eng: has-seen
+  spa: ha-visto
+  hin: नहीं–देखा
+  arb: رَآهُ
+  kor: 보지–못하였다
+  swa: amemwona
+
+### Sense 69047 (1 occurrences)
+Grammar: V-RIM/P-1S
+  eng: I-have-beheld
+  spa: He-contemplado
+  hin: देखा–है
+  arb: رَأَيْتُ
+  kor: 내가–보았다
+  swa: Nimemwona
+
+### Sense 69048 (1 occurrences)
+Grammar: V-AIM-3P
+  eng: beheld
+  spa: vieron
+  hin: देखा
+  arb: رَأَوْا
+  kor: 보았다
+  swa: waliona
+
+### Sense 69049 (1 occurrences)
+Grammar: V-APM-DMP
+  eng: having-seen
+  spa: que–habían–visto
+  hin: देखनेवालों–पर
+  arb: رَأَوْا
+  kor: 본-자들에게
+  swa: waliomwona
+
+## Task
+
+Group these 16 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

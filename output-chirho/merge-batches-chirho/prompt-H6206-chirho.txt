@@ -1,0 +1,153 @@
+# Sense Merge Task for H6206
+
+Lemma: H6206 (POS: V-Qal-Imperf-1cs)
+Total occurrences: 15
+Current sense count: 14
+
+This Hebrew/Greek lemma has been over-split into 14 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 126262 (2 occurrences)
+Grammar: Prep-l | V-Qal-Inf
+  eng: to–terrify
+  spa: para–aterrorizar
+  hin: कंपाने
+  arb: لِيُرعِبَ
+  kor: 떨게–하려고
+  swa: kutikisa
+
+### Sense 126263 (1 occurrences)
+Grammar: V-Qal-Imperf-2mp | Pn
+  eng: you–shall–dread
+  spa: os–aterroricéis
+  hin: कांपो
+  arb: تَرْتَعِبوا
+  kor: 너희가–놀라지–마라
+  swa: kumtisha
+
+### Sense 126264 (1 occurrences)
+Grammar: V-Qal-Imperf-2fs
+  eng: you–will–cause–terror
+  spa: aterrorizarás
+  hin: तू–डरा–सके
+  arb: تُرْهِبِينَ
+  kor: 두렵게–할–수–있으리라
+  swa: utaweza–kusababisha–hofu
+
+### Sense 126265 (1 occurrences)
+Grammar: V-Qal-Imperf-2ms
+  eng: you–shall–dread
+  spa: te–espantes
+  hin: काँपेगा
+  arb: تَرْتَعِبْ
+  kor: 떨라
+  swa: usishtuke
+
+### Sense 126266 (1 occurrences)
+Grammar: V-Qal-Imperf-2ms
+  eng: you-frighten
+  spa: aterrorizarás
+  hin: तू–डराएगा
+  arb: تُرْعِبُ
+  kor: 당신이–두렵게–하시겠나이까
+  swa: utatisha
+
+### Sense 126267 (1 occurrences)
+Grammar: V-Hifil-Imperf-2mp
+  eng: you-will-dread
+  spa: os-aterréis
+  hin: थरथराओ
+  arb: تَرتَعِبُوا
+  kor: 떨라
+  swa: msitetemeke
+
+### Sense 126268 (1 occurrences)
+Grammar: V-Nifal-Prtcpl-ms
+  eng: greatly–feared
+  spa: temido
+  hin: भयावना
+  arb: مَهِيبٌ
+  kor: 두려운–분–이시라
+  swa: wa–kuogopwa
+
+### Sense 126269 (1 occurrences)
+Grammar: V-Qal-Imperf-2mp
+  eng: you-shall-be-terrified
+  spa: os–aterroricéis
+  hin: कांपोगे
+  arb: تَرْتَعِبُوا
+  kor: 떨리라
+  swa: tetemeke
+
+### Sense 126270 (1 occurrences)
+Grammar: V-Qal-Imperf-2ms
+  eng: be-terrified
+  spa: temas
+  hin: डर
+  arb: تَرْتَعِبْ
+  kor: 두려워하지
+  swa: ogope
+
+### Sense 126271 (1 occurrences)
+Grammar: V-Hifil-Imperf-3mp
+  spa: temerán
+  hin: भय–मानेंगे
+  arb: يُعَظِّمُونَ
+  kor: 경외할–것이다
+  swa: watamcha
+
+### Sense 126272 (1 occurrences)
+Grammar: V-Qal-Imperf-2mp
+  eng: be–terrified
+  spa: tengais–terror
+  hin: घबराओ
+  arb: تَرْتَعِبُوا
+  kor: 떨라
+  swa: msisituke
+
+### Sense 126273 (1 occurrences)
+Grammar: V-Qal-Imperf-1cs
+  eng: I–feared
+  spa: temí
+  hin: डरता–था–मैं
+  arb: أَخَفتُ
+  kor: 내가–두려워하였기에
+  swa: niliogopa
+
+### Sense 126274 (1 occurrences)
+Grammar: V-Hifil-Prtcpl-msc | 2mp
+  eng: your–dread
+  spa: sea-vuestro-terror
+  hin: तुम्हारा–आतंक
+  arb: رُعبُكُم
+  kor: 너희의–떨림이라
+  swa: awe-tetemeko-lenu
+
+### Sense 126275 (1 occurrences)
+Grammar: Prep-l | V-Qal-Inf
+  eng: to–terrify
+  spa: para–aterrorizar
+  hin: कि–आतंकित–करे
+  arb: لِيُرْهِبَ
+  kor: 두렵게–하지
+  swa: kuogofya
+
+## Task
+
+Group these 14 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

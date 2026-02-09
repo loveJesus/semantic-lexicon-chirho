@@ -1,0 +1,145 @@
+# Sense Merge Task for G2837
+
+Lemma: G2837 (POS: V-ASP-3S)
+Total occurrences: 18
+Current sense count: 13
+
+This Hebrew/Greek lemma has been over-split into 13 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 70851 (3 occurrences)
+Grammar: V-PPM/P-GMP,V-APP-AMP
+  eng: having–fallen–asleep
+  spa: que–durmieron, que–duermen
+  hin: सोये-हुओन
+  arb: الرّاقِدينَ
+  kor: 잠자는–자들에–대하여, 잠든–자들을, 잠든–자들보다.
+  swa: waliolala, wanaolala
+
+### Sense 70852 (2 occurrences)
+Grammar: V-RIM/P-3S
+  eng: he–has–fallen–asleep, has–fallen–asleep
+  spa: se-ha-dormido
+  hin: सो–रहा–है।, सो–रहा–है
+  arb: قَدْ–نَامَ
+  kor: 잠들었으면, 잠들었다
+  swa: amelala
+
+### Sense 70853 (2 occurrences)
+Grammar: V-PPM/P-GMP,V-PPM/P-AMP
+  eng: sleeping
+  spa: durmiendo
+  hin: सोते–हुए
+  arb: ونَحنُ–نِيامٌ, نائِمينَ
+  kor: 자고–있는–동안, 자고–있는
+  swa: wamelala, tulipolala
+
+### Sense 70854 (2 occurrences)
+Grammar: V-AIP-3S
+  eng: he–fell–asleep, fell–asleep
+  spa: durmió
+  hin: सो–गया
+  arb: رَقَدَ
+  kor: 잠들었다
+  swa: alilala,, alilala
+
+### Sense 70855 (1 occurrences)
+Grammar: V-AIP-3P
+  eng: have-fallen-asleep
+  spa: durmieron
+  hin: सो–गए
+  arb: رَقَدوا
+  kor: 잠들었느니라
+  swa: wamelala
+
+### Sense 70856 (1 occurrences)
+Grammar: V-APP-NMP
+  eng: having-fallen-asleep
+  spa: que–durmieron
+  hin: सोए–हुए
+  arb: راقِدونَ
+  kor: 잠든–자들이
+  swa: waliolala
+
+### Sense 70857 (1 occurrences)
+Grammar: V-RPM/P-GMP
+  eng: having-fallen-asleep
+  spa: que–duermen
+  hin: सोए–हुओं
+  arb: راقِدينَ
+  kor: 잠든–자들–의
+  swa: waliolala
+
+### Sense 70858 (1 occurrences)
+Grammar: V-PIM/P-3P
+  eng: sleep
+  spa: duermen
+  hin: सोते–हैं
+  arb: يَرقُدونَ
+  kor: 잠들었느니라
+  swa: wanalala
+
+### Sense 70859 (1 occurrences)
+Grammar: V-PPM/P-NMS
+  eng: sleeping
+  spa: durmiendo
+  hin: सोया–हुआ
+  arb: نَائِمًا
+  kor: 자고–있었다
+  swa: amelala
+
+### Sense 70860 (1 occurrences)
+Grammar: V-AIP-3P
+  eng: fell-asleep
+  spa: durmieron
+  hin: सो–गए
+  arb: رَقَدوا
+  kor: 잠들었다,
+  swa: walilala
+
+### Sense 70861 (1 occurrences)
+Grammar: V-FIP-1P
+  eng: we-will-sleep
+  spa: dormiremos
+  hin: सोएँगे
+  arb: سَنَرقُدُ
+  kor: 잠들지
+  swa: tutalala
+
+### Sense 70862 (1 occurrences)
+Grammar: V-ASP-3S
+  eng: sleeps
+  spa: duerma
+  hin: सो–जाए
+  arb: رَقَدَ
+  kor: 잠들었다
+  swa: mume–akilala
+
+### Sense 70863 (1 occurrences)
+Grammar: V-RPM/P-GMP
+  eng: having–fallen–asleep
+  spa: que–habían–dormido
+  hin: सोए–हुए
+  arb: الرَّاقِدِينَ
+  kor: 잠든
+  swa: watakatifu–waliolala
+
+## Task
+
+Group these 13 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

@@ -1,0 +1,145 @@
+# Sense Merge Task for H3407
+
+Lemma: H3407 (POS: N-fpc | 1cs)
+Total occurrences: 54
+Current sense count: 13
+
+This Hebrew/Greek lemma has been over-split into 13 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 104163 (24 occurrences)
+Grammar: Art | N-fs,N-fpc
+  eng: the–curtain, curtains-of, curtains–of
+  spa: la–cortina, cortinas–de, cortinas-de
+  hin: परदे–की, परदे–के, परदा
+  arb: السِّتارَةِ, الشُقَّةِ, شُقَقَ
+  kor: 그–휘장의, 그–휘장, 휘장들을
+  swa: wa–pazia, pazia, ya–pazia
+
+### Sense 104164 (10 occurrences)
+Grammar: Art | N-fp
+  eng: the–curtains
+  spa: las–cortinas
+  hin: परदों, परदे
+  arb: الشُقَقِ, السِّتائِرِ, الشُقَقَ
+  kor: 그–휘장들을, 그–휘장들이, 그–휘장들의
+  swa: mapazia
+
+### Sense 104165 (8 occurrences)
+Grammar: N-fp
+  eng: curtains
+  spa: cortinas
+  hin: परदे, परदों
+  arb: شُقَقٍ, ستارَةً, سَتائِرَ
+  kor: 휘장들을, 휘장들, 휘장들이
+  swa: mapazia
+
+### Sense 104167 (2 occurrences)
+Grammar: Prep-b, Art | N-fs
+  eng: in–the–curtain
+  spa: en–la–cortina
+  hin: परदे–में
+  arb: في–الشُقَّةِ, في–السِّتارَةِ
+  kor: 휘장에, 에–그–휘장
+  swa: katika–pazia
+
+### Sense 104168 (2 occurrences)
+Grammar: N-fpc | 1cs
+  eng: my–curtains
+  spa: mis–cortinas, cortinas–mis
+  hin: मेरे–पर्दे, परदे–मेरे
+  arb: سُتُورِي
+  kor: 내–휘장들을, 나의–휘장들이
+  swa: mapazia–yangu
+
+### Sense 104169 (1 occurrences)
+Grammar: Art | N-fs
+  eng: the–curtain
+  spa: la–tienda
+  hin: तम्बू–के
+  arb: الخَيمَةِ
+  kor: 그–장막
+  swa: mapazia
+
+### Sense 104170 (1 occurrences)
+Grammar: Conj-w | N-fpc
+  eng: and–curtains-of
+  spa: y–cortinas–de
+  hin: और–परदे
+  arb: وَ–ستَائِرَ
+  kor: 그리고–휘장들을
+  swa: na–mapazia–ya–
+
+### Sense 104171 (1 occurrences)
+Grammar: N-fpc
+  eng: the–curtains–of
+  spa: las–cortinas–de–
+  hin: परदे
+  arb: أَسْتَارُ
+  kor: 휘장–들이
+  swa: mapazia–ya
+
+### Sense 104172 (1 occurrences)
+Grammar: Prep-k | N-fpc
+  eng: like–curtains-of
+  spa: como–cortinas–de
+  hin: परदों–के–समान
+  arb: كِ–يِرِيعُوت
+  kor: 휘장들–처럼
+  swa: kama–mapazia
+
+### Sense 104173 (1 occurrences)
+Grammar: N-fp
+  eng: curtains
+  spa: cortinas
+  hin: परदों
+  arb: الشَّقَقِ
+  kor: 휘장들
+  swa: mapazia
+
+### Sense 104174 (1 occurrences)
+Grammar: Prep-k, Art | N-fs
+  eng: like–a–curtain
+  spa: como–cortina
+  hin: परदे–की–तरह
+  arb: كَ–الخَيمَة
+  kor: 휘장–처럼
+  swa: kama–pazia
+
+### Sense 104175 (1 occurrences)
+Grammar: N-fpc | 3mp
+  eng: their–curtains
+  spa: sus–cortinas
+  hin: उनकी–परदे
+  arb: شُقَقُهُمْ
+  kor: 휘장들을–그들의
+  swa: mapazia–yao
+
+### Sense 104176 (1 occurrences)
+Grammar: Prep-b | N-fpc
+  eng: in–curtains-of
+  spa: en–cortinas–de
+  hin: परदों–में
+  arb: في–ستائِرِ
+  kor: 에–휘장들
+  swa: katika–mapazia
+
+## Task
+
+Group these 13 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

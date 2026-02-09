@@ -1,0 +1,145 @@
+# Sense Merge Task for H6937
+
+Lemma: H6937 (POS: V-Hitpael-Perf-3cp)
+Total occurrences: 17
+Current sense count: 13
+
+This Hebrew/Greek lemma has been over-split into 13 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 131211 (4 occurrences)
+Grammar: V-Qal-Prtcpl-ms
+  eng: in–mourning, in–gloom
+  spa: enlutado
+  hin: शोक, शोक–करता–हुआ, उदास
+  arb: حَزينًا
+  kor: 슬프게, 슬퍼하며
+  swa: mwenye–huzuni
+
+### Sense 131212 (2 occurrences)
+Grammar: V-Qal-Perf-3cp
+  eng: grow-dark
+  spa: se–oscurecen
+  hin: काले–पड़–गए
+  arb: أَظْلَما
+  kor: 어두워지고
+  swa: vimekuwa–giza
+
+### Sense 131213 (1 occurrences)
+Grammar: Conj-w | V-Qal-Prtcpl-mp
+  eng: and–the–mourners
+  spa: y–a–los–enlutados
+  hin: और–शोकित
+  arb: وَالحَزِينينَ
+  kor: 그리고–애통하는–자들이
+  swa: na–wanaoomboleza
+
+### Sense 131214 (1 occurrences)
+Grammar: V-Qal-Perf-3cp
+  eng: they–sit–in–gloom
+  spa: se–oscurecieron
+  hin: काले–पड़–गए
+  arb: اِسْوَدَّتْ
+  kor: 그들이–어두워졌다
+  swa: yameota–giza
+
+### Sense 131215 (1 occurrences)
+Grammar: Conj-w | V-Hifil-ConsecImperf-
+  eng: and–I-made-dark
+  spa: e–hice–oscurecer
+  hin: और–अंधेरा–किया–मैंने
+  arb: وَأَظْلَمْتُ
+  kor: 그리고–어둡게–했다–내가
+  swa: na–nilifanya–maombolezo
+
+### Sense 131216 (1 occurrences)
+Grammar: V-Hifil-Imperf-1cs | 3mp
+  eng: I-will-darken-them
+  spa: las–oscureceré
+  hin: मैं–अंधेरा–करूँगा
+  arb: أُظْلِمُهَا
+  kor: 내가–어둡게–하리라–그것들을
+  swa: nitavifanya–giza
+
+### Sense 131217 (1 occurrences)
+Grammar: V-Qal-Perf-1cs
+  eng: I–mourn
+  spa: estoy–enlutado
+  hin: मैं–शोक–में–हूँ
+  arb: اِكْتَأَبْتُ
+  kor: 내가–슬퍼하였다
+  swa: nimeomboleza
+
+### Sense 131218 (1 occurrences)
+Grammar: Art | V-Qal-Prtcpl-mp
+  eng: which-are-dark
+  spa: Los–que–se–oscurecen
+  hin: अंधेरे–होनेवाले
+  arb: المُعْتِمَةُ
+  kor: 어두워지는–것들–은
+  swa: vyenye–giza
+
+### Sense 131219 (1 occurrences)
+Grammar: V-Qal-Prtcpl-ms
+  eng: darkened
+  spa: Oscurecido
+  hin: काला
+  arb: حالِكاً
+  kor: 어둡게
+  swa: mweusi
+
+### Sense 131220 (1 occurrences)
+Grammar: Conj-w | V-Qal-ConjPerf-3cp
+  eng: and–shall–be–dark
+  spa: y–se–oscurecerán
+  hin: और–अंधेरा–होगा
+  arb: وَ–تُظْلِمُ
+  kor: 그리고–어두울–것이다
+  swa: na–zitakuwa–giza
+
+### Sense 131221 (1 occurrences)
+Grammar: Conj-w | V-Hifil-ConjPerf-1cs
+  eng: and–I-will-darken
+  spa: y–haré–oscurecer
+  hin: आकाश
+  arb: وَأُظْلِمُ
+  kor: 그리하여–내가–어둡게–하리라
+  swa: na–nitazifanya–kuwa–giza
+
+### Sense 131222 (1 occurrences)
+Grammar: V-Hitpael-Perf-3cp
+  eng: grew-dark
+  spa: se–oscurecieron
+  hin: काले–हो–गए
+  arb: اسْوَدَّتْ
+  kor: 어두워졌다
+  swa: zikaenea–giza
+
+### Sense 131223 (1 occurrences)
+Grammar: Conj-w | V-Qal-ConjPerf-3ms
+  eng: and–will–be–dark
+  spa: y–se–oscurecerá
+  hin: और–अंधेरा–होगा
+  arb: وَ–يَظْلِمُ
+  kor: 그리고–어두워지리라
+  swa: na–litatiwa–giza
+
+## Task
+
+Group these 13 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

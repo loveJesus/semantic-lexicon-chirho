@@ -1,0 +1,145 @@
+# Sense Merge Task for H7922
+
+Lemma: H7922 (POS: Conj-w | N-ms)
+Total occurrences: 16
+Current sense count: 13
+
+This Hebrew/Greek lemma has been over-split into 13 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 140456 (2 occurrences)
+Grammar: N-ms
+  eng: understanding–, understanding
+  spa: entendimiento
+  hin: बुद्धि–, अर्थ
+  arb: فَهْمًا
+  kor: 이해를, 분별함–
+  swa: ufahamu, shekel
+
+### Sense 140457 (2 occurrences)
+Grammar: N-msc
+  eng: insight–of, insight
+  spa: entendimiento, Prudencia
+  hin: समझ, विवेक
+  arb: فِطْنَةُ, فِطْنَةٌ
+  kor: 지혜는
+  swa: ni–busara, busara–ya
+
+### Sense 140458 (2 occurrences)
+Grammar: N-ms
+  eng: wisdom, discretion
+  spa: prudencia
+  hin: समझ, बुद्धि
+  arb: فَهْمًا, حِكْمَةً
+  kor: 총명, 지혜
+  swa: akili
+
+### Sense 140459 (1 occurrences)
+Grammar: N-ms
+  eng: understanding
+  spa: entendimiento
+  hin: बुद्धि–की
+  arb: الفَهمِ
+  kor: 지혜의
+  swa: akili
+
+### Sense 140460 (1 occurrences)
+Grammar: N-ms
+  eng: insight
+  spa: Entendimiento
+  hin: समझ
+  arb: فِطْنَةٌ–
+  kor: 통찰–은
+  swa: ufahamu
+
+### Sense 140461 (1 occurrences)
+Grammar: N-msc | 3ms
+  eng: his-cunning
+  spa: astucia–de–él
+  hin: उसकी–चतुराई
+  arb: ذَكَائِهِ
+  kor: 그–의–솟기–에
+  swa: ujanja–wake
+
+### Sense 140462 (1 occurrences)
+Grammar: N-msc | 3ms
+  eng: his–insight
+  spa: inteligencia–de–él
+  hin: बुद्धि–के
+  arb: فِطْنَتِهِ
+  kor: 그–의–통찰–의
+  swa: busara–yake
+
+### Sense 140463 (1 occurrences)
+Grammar: Prep-m | N-ms
+  eng: from–understanding
+  spa: de–entendimiento
+  hin: समझ–से
+  arb: عَنِ–الْفَهْمِ
+  kor: 지각에서
+  swa: kutoka–ufahamu
+
+### Sense 140464 (1 occurrences)
+Grammar: N-ms
+  eng: understanding
+  spa: entendimiento
+  hin: समझदार
+  arb: فَهْم
+  kor: 분별력–의
+  swa: mwenye–akili
+
+### Sense 140465 (1 occurrences)
+Grammar: Prep-b | N-ms
+  eng: with–wisdom
+  spa: con–prudencia
+  hin: बुद्धिमान
+  arb: بِ–الْفِطْنَةِ
+  kor: 에–분별력
+  swa: mwenye–hekima
+
+### Sense 140466 (1 occurrences)
+Grammar: Prep-l | N-msc
+  eng: the–wisdom–of
+  spa: la–prudencia–de
+  hin: समझ–को
+  arb: عَقْلَ
+  kor: 지혜를
+  swa: kwa–busara–ya
+
+### Sense 140467 (1 occurrences)
+Grammar: N-ms
+  eng: understanding
+  spa: buen–entendimiento
+  hin: समझ
+  arb: فَهم
+  kor: 명철–이
+  swa: busara
+
+### Sense 140468 (1 occurrences)
+Grammar: Conj-w | N-ms
+  eng: and–good
+  spa: y–buen
+  hin: और–बुद्धि–
+  arb: وَ–فَهْمًا–
+  kor: 그리고–통찰–을
+  swa: na–akili
+
+## Task
+
+Group these 13 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

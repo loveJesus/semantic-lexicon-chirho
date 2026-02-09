@@ -1,0 +1,118 @@
+# Sense Merge Task for H2161
+
+Lemma: H2161 (POS: V-Qal-Perf-1cs)
+Total occurrences: 13
+Current sense count: 10
+
+This Hebrew/Greek lemma has been over-split into 10 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 94565 (3 occurrences)
+Grammar: V-Qal-Perf-3ms
+  eng: purposed, has–purposed, He–purposed
+  spa: planeó, ha–determinado
+  hin: योजना–बनाई–थी, ठाना–है, ठाना–था
+  arb: قَصَدَ
+  kor: 계획하셨다, 그–가–계획한
+  swa: amekusudia, alivyokusudia, alichopanga
+
+### Sense 94566 (2 occurrences)
+Grammar: V-Qal-Perf-1cs
+  eng: I–purposed, I–have–purposed
+  spa: pensé, he–pensado
+  hin: मैंने–ठाना–है, मैंने–ठाना–था
+  arb: قَصَدْتُ
+  kor: 내가–계획하였으니, 내가–계획하였다
+  swa: nimekusudia, nilivyokusudia
+
+### Sense 94567 (1 occurrences)
+Grammar: V-Qal-Perf-1cs
+  eng: I–have–purposed
+  spa: lo–determiné
+  hin: ठाना–मैंने
+  arb: عَزَمْتُ
+  kor: 내가–결정했다
+  swa: nimeazimia
+
+### Sense 94568 (1 occurrences)
+Grammar: V-Qal-Perf-1cs
+  eng: I–have–purposed
+  spa: he–pensado
+  hin: मैंने–ठाना–है
+  arb: هَمَمْتُ
+  kor: 계획하였음이라
+  swa: nimekusudia
+
+### Sense 94569 (1 occurrences)
+Grammar: V-Qal-Perf-3ms
+  eng: he-schemed
+  spa: tramó
+  hin: सोचा–था
+  arb: نَوَى
+  kor: 꿈꾸었다
+  swa: alikusudia
+
+### Sense 94570 (1 occurrences)
+Grammar: V-Qal-Perf-3fs
+  eng: she–considers
+  spa: Considera
+  hin: सोचती
+  arb: فَكَّرَتْ
+  kor: 그녀가–생각한다
+  swa: hupanga
+
+### Sense 94571 (1 occurrences)
+Grammar: V-Qal-Perf-3cp
+  eng: they–plotted
+  spa: tramaron
+  hin: उन्होंने–योजना–बनाई
+  arb: دَبَّرُوا
+  kor: 꾀하였나이다
+  swa: wanapanga
+
+### Sense 94572 (1 occurrences)
+Grammar: V-Qal-Perf-2ms
+  eng: you–have–plotted
+  spa: maquinaste
+  hin: सोची
+  arb: تَآمَرْتَ
+  kor: 네가–꿄했다면
+  swa: umepanga
+
+### Sense 94573 (1 occurrences)
+Grammar: V-Qal-Prtcpl-ms
+  eng: plots
+  spa: Maquina
+  hin: षड्यन्त्र–करता–है
+  arb: يُدَبِّرُ
+  kor: 꾀하도다
+  swa: Anapanga-mabaya
+
+### Sense 94574 (1 occurrences)
+Grammar: V-Qal-Imperf-3mp
+  eng: they-plan
+  spa: planean
+  hin: वे–सोचेनगे
+  arb: يَعْتَزِمُونَ
+  kor: 그들이–계획하는
+  swa: wanakusudia
+
+## Task
+
+Group these 10 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

@@ -1,0 +1,117 @@
+# Sense Merge Task for H4726
+
+Lemma: H4726 (POS: Prep-m | N-msc)
+Total occurrences: 18
+Current sense count: 10
+
+This Hebrew/Greek lemma has been over-split into 10 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 113949 (9 occurrences)
+Grammar: N-msc
+  eng: is–a–fountain–of, fountain–of, a–fountain–of
+  spa: fuente–de, Fuente–de
+  hin: स्रोत, सोते
+  arb: يَنْبوعُ, يَنْبُوعَ, يَنْبُوعُ
+  kor: 샘–이다, 샘이니라, 원천–이
+  swa: ni–chemchemi–ya, chemchemi–ya, chemchemi-ya
+
+### Sense 113950 (1 occurrences)
+Grammar: N-msc | 2ms
+  eng: your–fountain
+  spa: tu–fuente
+  hin: सोता–तेरा
+  arb: يَنْبُوعُكَ
+  kor: 네–우물–이
+  swa: chemchemi–yako
+
+### Sense 113951 (1 occurrences)
+Grammar: Conj-w | N-ms
+  eng: and–a–fountain
+  spa: y–fuente
+  hin: और–कुआं
+  arb: وَ–مَصْدَرٌ
+  kor: 그리고–우물이니라
+  swa: na–chanzo
+
+### Sense 113952 (1 occurrences)
+Grammar: N-msc | 3fs
+  eng: flow-her
+  spa: fuente
+  hin: उसके–स्रोत
+  arb: يَنْبُوعَهَا
+  kor: 그녀의–근원
+  swa: chanzo–chake
+
+### Sense 113953 (1 occurrences)
+Grammar: Prep-m | N-msc
+  eng: from–source-of
+  spa: de–fuente-de
+  hin: और–शुद्ध होगी
+  arb: مِنْ–يَنْبُوعِ
+  kor: 에서–샘
+  swa: kutoka–chanzo–cha
+
+### Sense 113954 (1 occurrences)
+Grammar: N-msc | 3fs
+  eng: her–spring
+  spa: su–manantial
+  hin: उसके–सोते
+  arb: يَنْبُوعَهَا
+  kor: 샘을–그녀의
+  swa: chemchemi–yake
+
+### Sense 113955 (1 occurrences)
+Grammar: N-msc | 3ms
+  eng: his–spring
+  spa: su–manantial
+  hin: उसका–स्रोत
+  arb: يَنبوعُهُ
+  kor: 그의–샘이
+  swa: chemchemi–yake
+
+### Sense 113956 (1 occurrences)
+Grammar: N-ms
+  eng: a–fountain
+  spa: fuente
+  hin: सोता
+  arb: يَنْبُوعٌ
+  kor: 샘이
+  swa: chemchemi
+
+### Sense 113957 (1 occurrences)
+Grammar: N-msc
+  eng: flow-of
+  spa: fuente–de
+  hin: स्रोत
+  arb: يَنْبُوعَ
+  kor: 근원–의
+  swa: chanzo–cha–
+
+### Sense 113958 (1 occurrences)
+Grammar: Prep-m | N-msc
+  eng: from–the–fountain–of
+  spa: desde–fuente–de
+  arb: مِنْ–يَنْبوعِ
+  kor: 샘–에서
+  swa: kutoka–chemchemi
+
+## Task
+
+Group these 10 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

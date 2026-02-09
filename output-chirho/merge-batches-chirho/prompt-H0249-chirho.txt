@@ -1,0 +1,127 @@
+# Sense Merge Task for H0249
+
+Lemma: H0249 (POS: Conj-w)
+Total occurrences: 17
+Current sense count: 11
+
+This Hebrew/Greek lemma has been over-split into 11 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 80874 (6 occurrences)
+Grammar: Art | N-ms
+  eng: the–native
+  spa: el–nativo, nativo, El–nativo
+  hin: देशी–जन, देशी, देशजात
+  arb: الْ–وَطَنِيِّ, الْ–وَطَنِيُّ, ال–وَطَنِيُّ
+  kor: 토박이–는, 그–토착민, 토박이
+  swa: wazaliwa–wa–nchi, mzaliwa–wa–nchi, mzaliwa–kila
+
+### Sense 80875 (2 occurrences)
+Grammar: Prep-k, Art | N-ms
+  eng: as–the-native
+  spa: como–el–nativo
+  hin: देशी–जैसा
+  arb: كَ–الْمَوْلُودِ
+  kor: 그–본토인–같이
+  swa: kama–mzaliwa–wa–nchi
+
+### Sense 80876 (1 occurrences)
+Grammar: Conj-w, Prep-b | N-msc
+  eng: and–among–native-of
+  spa: y–en–el–nativo–de–
+  hin: और–देशी–में
+  arb: وَ–بِ–الْ–مُواطِنِ
+  kor: 그리고–본토박이에서
+  swa: au–mzaliwa
+
+### Sense 80877 (1 occurrences)
+Grammar: Prep-b, Art | N-ms
+  eng: among–the–native
+  spa: entre–el–nativo
+  hin: देशी–में
+  arb: بِ–ال–وَطَنِيِّ
+  kor: 에서–그–토착민
+  swa: mwenyeji
+
+### Sense 80878 (1 occurrences)
+Grammar: Prep-k | N-ms
+  eng: as–native
+  spa: Como–nativo
+  hin: जैसा–देशी
+  arb: كَ–وَطَنِيٍّ
+  kor: 같이–토착민
+  swa: Kama–mzaliwa–wa–nchi
+
+### Sense 80879 (1 occurrences)
+Grammar: Prep-k | N-msc
+  eng: as–native-of
+  spa: como–nativo–de–
+  hin: देशी–के–समान
+  arb: كَ–مُواطِنِ
+  kor: 본토박이–같이
+  swa: kama–mzaliwa
+
+### Sense 80880 (1 occurrences)
+Grammar: Prep-l, Art | N-ms
+  eng: for–the–native
+  spa: para–el–nativo
+  hin: देशी–के–लिए
+  arb: لِ–لْمُواطِنِ
+  kor: 본토박이에게
+  swa: kwa–mzaliwa
+
+### Sense 80881 (1 occurrences)
+Grammar: Conj-w, Prep-l | N-msc
+  eng: and–for–native-of
+  spa: y–para–el–natural–de
+  hin: और–देशी–के–लिए
+  arb: وَ–لِمَوْلُودِ
+  kor: 그리고–에게–본토인
+  swa: na–kwa–mzaliwa
+
+### Sense 80882 (1 occurrences)
+Grammar: Prep-k, Art | N-ms
+  eng: as–the–native
+  spa: como–nativo
+  hin: देशी–जैसे
+  arb: كَ–المَولودِ
+  kor: 그–본토인도
+  swa: kama–mwenyeji
+
+### Sense 80883 (1 occurrences)
+Grammar: Prep-k | N-ms
+  eng: like–native-born
+  spa: como–nativo
+  hin: जैसे–देशवासी
+  arb: كَ–أَصِيلٍ
+  kor: 동족처럼
+  swa: kama–mzaliwa
+
+### Sense 80884 (1 occurrences)
+Grammar: Prep-k | N-ms
+  eng: like–a–native
+  spa: como–árbol–frondoso
+  hin: जैसे–वृक्ष
+  arb: كَ–شَجَرَةٍ–أَصيلَةٍ
+  kor: –토착민–같이
+  swa: kama–mti-wa-kijani
+
+## Task
+
+Group these 11 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

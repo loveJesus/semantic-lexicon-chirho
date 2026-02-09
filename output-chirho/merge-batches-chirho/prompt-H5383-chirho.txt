@@ -1,0 +1,136 @@
+# Sense Merge Task for H5383
+
+Lemma: H5383 (POS: V-Qal-Perf-3cp)
+Total occurrences: 13
+Current sense count: 12
+
+This Hebrew/Greek lemma has been over-split into 12 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 119515 (2 occurrences)
+Grammar: V-Qal-Prtcpl-mp
+  eng: lending
+  spa: prestáis, prestamos
+  hin: लिया–है, उधार–दे–रहे–हैं
+  arb: مُقْرِضونَ
+  kor: 빌려주고–있다, 빌려주고–있는
+  swa: tunakopesha, mnakopesha
+
+### Sense 119516 (1 occurrences)
+Grammar: V-Qal-Prtcpl-ms
+  eng: are-lending
+  spa: prestas
+  hin: उधार–देने–वाला
+  arb: مُقْرِضٌ
+  kor: 빌려주는
+  swa: unamkopesha
+
+### Sense 119517 (1 occurrences)
+Grammar: V-Qal-Prtcpl-mp
+  eng: exacting
+  spa: cargáis
+  hin: ले–रहे–हो
+  arb: مُقْرِضونَ
+  kor: 취하고–있다
+  swa: mnatoza
+
+### Sense 119518 (1 occurrences)
+Grammar: Prep-k | V-Qal-Prtcpl-ms
+  eng: as-a-creditor
+  spa: como–acreedor
+  hin: जैसे–महाजन
+  arb: كَ–مُقرِضٍ
+  kor: 채권자–같이
+  swa: kama–mkopeshaji
+
+### Sense 119519 (1 occurrences)
+Grammar: Conj-w, Art | V-Qal-Prtcpl-ms
+  eng: and–the-creditor
+  spa: Y–el–acreedor
+  hin: और–लेनदार
+  arb: وَالدَّائِنُ
+  kor: 그리고–채권자–가
+  swa: na–mdai
+
+### Sense 119520 (1 occurrences)
+Grammar: V-Hifil-Imperf-2ms
+  eng: you-lend
+  spa: prestes
+  hin: उधार–देगा
+  arb: تُقْرِضُ
+  kor: 빌려주면
+  swa: utakopesha
+
+### Sense 119521 (1 occurrences)
+Grammar: V-Qal-Prtcpl-ms
+  eng: a–creditor
+  spa: el–acreedor
+  hin: महाजन
+  arb: الدَّائِن
+  kor: 채권자–가
+  swa: mdai
+
+### Sense 119522 (1 occurrences)
+Grammar: Prep-k, Art | V-Qal-Prtcpl-ms
+  eng: as–the–creditor
+  spa: como–el–acreedor
+  hin: ब्याज–वसूलने–वाले–की–तरह
+  arb: كَالدَّائِنِ
+  kor: 채권자–같이
+  swa: kama–mdaiwa
+
+### Sense 119523 (1 occurrences)
+Grammar: Prep-m | V-Qal-Prtcpl-mpc | 1c
+  eng: of–My–creditors
+  spa: de–mis–acreedores
+  hin: मेरे–लेनदारों–में–से
+  arb: مِنْ–دَائِنِيَّ
+  kor: 나의–채권자들–중에
+  swa: kati–ya–wanaodai
+
+### Sense 119524 (1 occurrences)
+Grammar: V-Qal-Perf-1cs
+  eng: I–lent
+  spa: presté
+  hin: उधार–दिया–मैंने
+  arb: أُقْرِضْ
+  kor: 내가–빌려주지
+  swa: nimekopesha
+
+### Sense 119525 (1 occurrences)
+Grammar: V-Hifil-Imperf-3ms
+  eng: he-lends
+  spa: prestó
+  hin: उधार–देता–है
+  arb: أَقْرَضَ
+  kor: 빌려주었느니라
+  swa: alidai
+
+### Sense 119526 (1 occurrences)
+Grammar: V-Qal-Perf-3cp
+  eng: they–lent–
+  spa: me–prestaron
+  hin: उधार–दिया–
+  arb: اِقْتَرَضُوا–
+  kor: 그들이–빌려주지
+  swa: wamenikopesha–
+
+## Task
+
+Group these 12 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

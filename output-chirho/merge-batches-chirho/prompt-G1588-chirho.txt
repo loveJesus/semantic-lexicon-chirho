@@ -1,0 +1,127 @@
+# Sense Merge Task for G1588
+
+Lemma: G1588 (POS: Adj-AMS)
+Total occurrences: 23
+Current sense count: 11
+
+This Hebrew/Greek lemma has been over-split into 11 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 66749 (5 occurrences)
+Grammar: Adj-AMP,Adj-GMP
+  eng: elect
+  spa: elegidos, escogidos
+  hin: चुने–हुओं–को, चुनोन,, चुने–हुओं–के
+  arb: مُخْتَارِينَ, مُخْتَارِيهِ, مُخْتَارِي
+  kor: 택하신-자들을, 택함받은–자들,, 택하신–자들을
+  swa: wateule
+
+### Sense 66750 (4 occurrences)
+Grammar: Adj-AMP,Adj-GMP
+  eng: chosen
+  spa: escogidos
+  hin: चुने–हुओं
+  arb: المُختارينَ, مُختاريهِ, مُختاري
+  kor: 택함–받은–자들을, 택함–받은–자들, 택하신–자들의
+  swa: –, wateule, wake
+
+### Sense 66751 (3 occurrences)
+Grammar: Adj-AMS,Adj-NNS
+  eng: chosen
+  spa: escogida, escogido
+  hin: चुना–हुआ
+  arb: مُختارًا, مُختارٌ
+  kor: 택하심을–받은, 택하신
+  swa: teule
+
+### Sense 66752 (2 occurrences)
+Grammar: Adj-NMP
+  eng: chosen–ones, chosen
+  spa: escogidos, elegidos
+  hin: चुने–हुए, चुने-हुए
+  arb: مُختاري, مُختارونَ
+  kor: 택함–받은–자들과, 선택된–자들
+  swa: wateule,, wateule
+
+### Sense 66753 (2 occurrences)
+Grammar: Adj-NMP
+  eng: chosen
+  spa: escogidos
+  hin: चुने–हुए
+  arb: مُختارونَ
+  kor: 택함–받은–자들이다
+  swa: na, Ndipo
+
+### Sense 66754 (2 occurrences)
+Grammar: Adj-DFS,Adj-GFS
+  eng: to–elect, elect
+  spa: elegida, a–elegida
+  hin: चुनी–हुई।, चुनी–हुई
+  arb: مُختارَةِ, مُختارَةٍ
+  kor: 택하신
+  swa: teule
+
+### Sense 66755 (1 occurrences)
+Grammar: Adj-NMS
+  eng: chosen-one
+  spa: elegido
+  hin: चुना–हुआ
+  arb: مُخْتارُ
+  kor: 택함을–받은–자
+  swa: akochaguliwa
+
+### Sense 66756 (1 occurrences)
+Grammar: Adj-DMP
+  eng: to–chosen
+  spa: a–escogidos
+  hin: चुने–हुए
+  arb: إلى–المُختارينَ
+  kor: 택하심을–받은
+  swa: kwa–wateule
+
+### Sense 66757 (1 occurrences)
+Grammar: Adj-GMP
+  eng: of–elect
+  spa: de–elegidos
+  hin: चुनोन
+  arb: مُخْتاري
+  kor: 택함–받은–자들–의
+  swa: ya–wateule
+
+### Sense 66758 (1 occurrences)
+Grammar: Adj-GMP
+  eng: elect
+  spa: escogidos
+  hin: चुने-हुए
+  arb: المُخْتارينَ
+  kor: 택함받은
+  swa: malaika
+
+### Sense 66759 (1 occurrences)
+Grammar: Adj-AMS
+  eng: chosen
+  spa: elegido
+  hin: चुने–हुए–को
+  arb: مُخْتَارِ
+  kor: 택하심–받은
+  swa: mteule
+
+## Task
+
+Group these 11 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

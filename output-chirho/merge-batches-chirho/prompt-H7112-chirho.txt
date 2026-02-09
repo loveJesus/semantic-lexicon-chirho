@@ -1,0 +1,145 @@
+# Sense Merge Task for H7112
+
+Lemma: H7112 (POS: V-Pual-Prtcpl-mp)
+Total occurrences: 14
+Current sense count: 13
+
+This Hebrew/Greek lemma has been over-split into 13 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 132734 (2 occurrences)
+Grammar: V-Qal-QalPassPrtcpl-mpc
+  eng: those–with–cut–, those–with–cut
+  spa: cortados–de
+  hin: कटे–हुओं–को, कटे–हुए
+  arb: مَقْصُوصِي
+  kor: 의–관자놀이를–깎바는–자들을, 깎인–자들을
+  swa: wenye–kujinyoa, waliokatwa–pembe–za
+
+### Sense 132735 (1 occurrences)
+Grammar: Conj-w | V-Qal-ConjPerf-2ms
+  eng: and–you-shall-cut-off
+  spa: Y–cortarás
+  hin: और–काटेगा
+  arb: فَتَقْطَعُ
+  kor: 그리고–너는–끊을지니
+  swa: na–utakata
+
+### Sense 132736 (1 occurrences)
+Grammar: Conj-w | V-Piel-ConsecImperf-3
+  eng: and–they-cut-off
+  spa: y–cortaron
+  hin: और–काट–दिए
+  arb: وَ–قَطَعوا
+  kor: 그리고–그들이–찍었다
+  swa: na–wakakata
+
+### Sense 132737 (1 occurrences)
+Grammar: V-Piel-Perf-3ms
+  eng: cut-off
+  spa: cortó
+  hin: काट–दिया
+  arb: قَطَعَ
+  kor: 잘라냈다
+  swa: alikata
+
+### Sense 132738 (1 occurrences)
+Grammar: Conj-w | V-Piel-ConsecImperf-3
+  eng: and–he-cut-off
+  spa: Y–cortó
+  hin: और–काट–दिया
+  arb: وَقَطَّعَ
+  kor: 그리고–잘랏다
+  swa: na–mfalme–akakata
+
+### Sense 132739 (1 occurrences)
+Grammar: Conj-w | V-Piel-ConsecImperf-3
+  eng: and–they–cut–off
+  spa: y–cortaron
+  hin: और–काटा
+  arb: فَقَطَعُوا
+  kor: 그리고-자를니라
+  swa: wakakata
+
+### Sense 132740 (1 occurrences)
+Grammar: Conj-w | V-Piel-ConsecImperf-3
+  eng: and–he–cut–up
+  spa: y–cortó
+  hin: और–काटा
+  arb: وَقَطَّعَ
+  kor: 그리고-그가-잘라냈다
+  swa: na–akavikata
+
+### Sense 132741 (1 occurrences)
+Grammar: Conj-w | V-Piel-ConjPerf-3ms
+  eng: and–cut
+  spa: y–cortó
+  hin: और–काटे
+  arb: وَ–قَطَّعُوا
+  kor: 그리고–자르다
+  swa: na–akakata
+
+### Sense 132742 (1 occurrences)
+Grammar: Conj-w | V-Piel-ConjPerf-3ms
+  eng: and–cuts
+  spa: y–corta
+  hin: और–काटता–है
+  arb: وَيَقْطَعُ
+  kor: 그리고–꽊으시도다
+  swa: na–anakata
+
+### Sense 132743 (1 occurrences)
+Grammar: Conj-w | V-Piel-ConsecImperf-3
+  eng: and–cut–in–pieces
+  spa: y–cortó
+  hin: और–टुकड़े–किए
+  arb: وَ–كَسَّرَ
+  kor: 그리고–부수었다
+  swa: na–akavunja
+
+### Sense 132744 (1 occurrences)
+Grammar: V-Qal-QalPassPrtcpl-mpc
+  eng: those–with–corners–cut
+  spa: los–de–sienes–rapadas
+  hin: कटी–हुई–
+  arb: مَقْصُوصِي
+  kor: 깎은–자들을
+  swa: waliokata
+
+### Sense 132745 (1 occurrences)
+Grammar: V-Pual-Prtcpl-mp
+  eng: cut-off
+  spa: cortados
+  hin: कटे–हुए
+  arb: مَقْطوعَةً
+  kor: 찍힌–자들이
+  swa: vimekatwa
+
+### Sense 132746 (1 occurrences)
+Grammar: V-Piel-Perf-3ms
+  eng: he–has–cut
+  spa: cortó
+  hin: काट–डालीं
+  arb: قَطَعَ
+  kor: 끊으셨도다
+  swa: amekata
+
+## Task
+
+Group these 13 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

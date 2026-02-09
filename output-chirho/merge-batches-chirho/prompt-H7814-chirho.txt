@@ -1,0 +1,118 @@
+# Sense Merge Task for H7814
+
+Lemma: H7814 (POS: Prep-l | N-ms)
+Total occurrences: 15
+Current sense count: 10
+
+This Hebrew/Greek lemma has been over-split into 10 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 139566 (3 occurrences)
+Grammar: Prep-l | N-ms,Art | N-ms
+  eng: a–laughingstock
+  spa: para–burla, burla
+  hin: के–लिए–ठट्ठे, ठट्ठा
+  arb: لِلسُّخْرِيَّةِ
+  kor: 조롱거리로–, 조롱거리가
+  swa: kichekesho
+
+### Sense 139567 (3 occurrences)
+Grammar: N-msc,N-ms
+  eng: laughingstock, a–laughingstock
+  spa: irrisón, burla, Irrisón
+  hin: ठट्ठा, ठठ्ठा
+  arb: سُخْرِيَةً
+  kor: 웃음–이–, 웃음–으로
+  swa: kichekesho
+
+### Sense 139568 (2 occurrences)
+Grammar: N-ms
+  eng: laughter
+  spa: risa, de–risa
+  hin: हँसी–से
+  arb: ضَحِكًا
+  kor: 웃음을, 웃음–으로
+  swa: kicheko
+
+### Sense 139569 (1 occurrences)
+Grammar: Prep-k | N-ms
+  eng: like–sport
+  spa: como–risa
+  hin: जैसे–हँसी
+  arb: كَالضَّحِكِ
+  kor: 웃음–같다
+  swa: kama–mchezo
+
+### Sense 139570 (1 occurrences)
+Grammar: Prep-b | N-ms
+  eng: in–laughter
+  spa: en–la–risa
+  hin: हँसी–में
+  arb: في–الضَّحِكِ
+  kor: 웃음–에서
+  swa: katika–kicheko
+
+### Sense 139571 (1 occurrences)
+Grammar: Prep-m | N-ms
+  eng: than–laughter
+  spa: que–risa
+  hin: हँसी–से
+  arb: مِنَ–
+  kor: 보다–웃음
+  swa: kuliko–kicheko
+
+### Sense 139572 (1 occurrences)
+Grammar: Prep-l | N-ms
+  eng: of–laughter
+  spa: A–la–risa
+  hin: हँसी–के–विषय–में
+  arb: لِلضَّحِكِ
+  kor: 웃음–에
+  swa: Kwa–kicheko
+
+### Sense 139573 (1 occurrences)
+Grammar: Prep-l | N-ms
+  eng: laughingstock
+  spa: para–risa
+  hin: को–हँसी
+  arb: لِلضَّحِكِ
+  kor: 에게–웃음거리에게
+  swa: kichekesho
+
+### Sense 139574 (1 occurrences)
+Grammar: Prep-l | N-ms
+  eng: for–laughter
+  spa: para–risa
+  hin: हँसी–के–लिए
+  arb: لِ–سِحُوق
+  kor: 웃음–을–위해
+  swa: Kwa–furaha
+
+### Sense 139575 (1 occurrences)
+Grammar: N-msc
+  eng: laughter-of
+  spa: risa–de
+  hin: हँसी
+  arb: ضِحْكُ
+  kor: 웃음
+  swa: kicheko–cha
+
+## Task
+
+Group these 10 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

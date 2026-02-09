@@ -1,0 +1,163 @@
+# Sense Merge Task for G5043
+
+Lemma: G5043 (POS: N-DNS)
+Total occurrences: 99
+Current sense count: 15
+
+This Hebrew/Greek lemma has been over-split into 15 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 77447 (67 occurrences)
+Grammar: N-ANP,N-DNP,N-NNP,N-GNP,N-VNP
+  eng: children
+  spa: hijos, a–hijos
+  hin: सन्तान, बच्चों–को, बचचे
+  arb: أَوْلَادًا, أَولادَ, أَولادُ
+  kor: 자녀들, 자녀들–을, 자녀들을
+  swa: watoto, wenu, wake
+
+### Sense 77448 (8 occurrences)
+Grammar: N-NNS,N-DNS,N-VNS,N-ANS
+  eng: child, a–child
+  spa: hijo
+  hin: बच्चा, बचचे, बचचे,
+  arb: يا–ابْني, الِابْنِ, وَلَدُها
+  kor: 자녀, 자녀가,, 자녀:
+  swa: mwana, mtoto, mtoto,
+
+### Sense 77449 (4 occurrences)
+Grammar: N-ANS,N-NNS,N-GNS
+  eng: a–child, child, a-child
+  spa: hijo, a–hijo
+  hin: सन्तान, संतान
+  arb: وَلَدًا, وَلَدٍ, وَلَدٌ
+  kor: 아이를, 자녀가, 자녀–가
+  swa: mtoto
+
+### Sense 77450 (3 occurrences)
+Grammar: N-VNS
+  eng: Child
+  spa: Hijo
+  hin: हे–बच्चे, पुत्र
+  arb: يَا–وَلَدِي, يَا–بُنَيَّ
+  kor: 아이야
+  swa: Mwanangu, Mtoto
+
+### Sense 77451 (3 occurrences)
+Grammar: N-ANP
+  eng: children
+  spa: hijos
+  hin: बच्चे
+  arb: ابنانِ, أَولادَكِ, أَولادٌ
+  kor: 자녀들–을, 자녀들
+  swa: wawili, wako, atamwoa
+
+### Sense 77452 (2 occurrences)
+Grammar: N-NNP,N-VNP
+  eng: children
+  spa: hijos
+  hin: बचचो, बचचे
+  arb: الأَولادُ, أَبناءَ
+  kor: 자녀들아, 자녀들,
+  swa: watoto
+
+### Sense 77453 (2 occurrences)
+Grammar: N-DNS,N-GNS
+  eng: child
+  spa: hijo
+  hin: बचचे, पुत्र,
+  arb: –ابني, الِابْنِ
+  kor: 자녀–를, 아들–에게
+  swa: mtoto, halisi
+
+### Sense 77454 (2 occurrences)
+Grammar: N-VNS
+  eng: child, Child
+  spa: hijo, Hijo
+  hin: हे–बालक, बेटा
+  arb: يا–بُنَيَّ, يا–ابني
+  kor: 아들아
+  swa: nenda, mwanangu;
+
+### Sense 77455 (2 occurrences)
+Grammar: N-DNP
+  eng: to–children, children
+  spa: hijos, a–hijos
+  hin: बच्चों–को, बच्चों–के–लिए
+  arb: لِأَولادٍ, الأَوْلادِ
+  kor: 자녀들에게
+  swa: watoto., kwa–watoto
+
+### Sense 77456 (1 occurrences)
+Grammar: N-VNS
+  eng: Child
+  spa: Hijo
+  hin: संतान
+  arb: يا بُنَيَّ
+  kor: 아들아
+  swa: Mtoto,
+
+### Sense 77457 (1 occurrences)
+Grammar: N-ANS
+  eng: child
+  spa: a–hijo
+  hin: सन्तान–को
+  arb: وَلَدَهُ
+  kor: 자녀를
+  swa: mtoto.
+
+### Sense 77458 (1 occurrences)
+Grammar: N-DNP
+  eng: children
+  spa: niños
+  hin: बच्चों
+  arb: أَطْفَالٍ
+  kor: 자녀들과–함께
+  swa: watoto
+
+### Sense 77459 (1 occurrences)
+Grammar: N-GNP
+  eng: of–children
+  spa: de–hijos
+  hin: बचचोन
+  arb: الأَوْلادَ
+  kor: 자녀들을
+  swa: wa–watoto
+
+### Sense 77460 (1 occurrences)
+Grammar: N-VNP
+  eng: children
+  spa: hijitos
+  hin: बचचो
+  arb: يا–أولادي
+  kor: 자녀들
+  swa: watoto
+
+### Sense 77461 (1 occurrences)
+Grammar: N-VNP
+  eng: Children
+  spa: Hijos
+  hin: बच्चो
+  arb: يَا–بَنِيَّ
+  kor: 자녀들아
+  swa: Watoto
+
+## Task
+
+Group these 15 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

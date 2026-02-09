@@ -1,0 +1,127 @@
+# Sense Merge Task for H5766a
+
+Lemma: H5766a (POS: N-fs)
+Total occurrences: 22
+Current sense count: 11
+
+This Hebrew/Greek lemma has been over-split into 11 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 122756 (8 occurrences)
+Grammar: N-ms,N-fs
+  eng: iniquity, injustice, unrighteousness
+  spa: iniquidad, injusticia,, injusticia
+  hin: अधर्म, जो, आना
+  arb: إِثْمًا, ظُلْمًا, ظُلْمٌ
+  kor: 불의를, 불의가, 악을
+  swa: uovu
+
+### Sense 122757 (5 occurrences)
+Grammar: N-ms
+  eng: injustice
+  spa: injusticia
+  hin: अधर्म, अन्याय
+  arb: ظُلْمًا, ظُلْمٍ, ظُلماً
+  kor: 불의를, 불의, 불의–를
+  swa: udhalimu, uovu
+
+### Sense 122758 (1 occurrences)
+Grammar: Prep-b | N-msc
+  eng: by–unrighteousness-of–
+  spa: por–la–injusticia–de
+  hin: में–अन्याय
+  arb: بِإِثْمِ
+  kor: 불의로–
+  swa: kwa–udhalimu–wa
+
+### Sense 122759 (1 occurrences)
+Grammar: Prep-m | N-ms
+  eng: from–injustice
+  spa: de–injusticia
+  hin: अधर्म
+  arb: مِنَ–الظُّلمِ
+  kor: 불의–로부터
+  swa: kutoka–dhuluma
+
+### Sense 122760 (1 occurrences)
+Grammar: Prep-m | N-ms
+  eng: from–iniquity
+  spa: de–injusticia
+  hin: से–अधर्म
+  arb: مِنَ–الظُّلْمِ
+  kor: 불의에서–
+  swa: kutoka–uovu
+
+### Sense 122761 (1 occurrences)
+Grammar: N-ms
+  eng: unjustly
+  spa: injusticia
+  hin: अन्याय
+  arb: ظُلْمًا
+  kor: 불의–를
+  swa: kwa–udhalimu
+
+### Sense 122762 (1 occurrences)
+Grammar: N-ms
+  eng: injustice
+  spa: iniquidad
+  hin: अन्यायी
+  arb: ظُلْمٍ
+  kor: 불의의
+  swa: udhalimu
+
+### Sense 122763 (1 occurrences)
+Grammar: Conj-w, Prep-b | N-msc | 3ms
+  eng: and–in–his–injustice
+  spa: y–en–su–injusticia
+  hin: उसकी
+  arb: وَبِإِثْمِهِ
+  kor: 그리고–그의–불의–안에서
+  swa: na–katika–uovu–wake
+
+### Sense 122764 (1 occurrences)
+Grammar: N-ms
+  eng: iniquity
+  spa: maldad
+  hin: अधर्म
+  arb: ظُلْمٌ
+  kor: 불의–가
+  swa: uovu
+
+### Sense 122765 (1 occurrences)
+Grammar: Prep-b | N-msc | 3ms
+  eng: in–iniquity–his
+  spa: por–su–injusticia
+  hin: में–अधर्म–अपने
+  arb: فِي–ظُلْمِهِ
+  kor: 자기–불의에서–
+  swa: kwa–uovu–wake
+
+### Sense 122766 (1 occurrences)
+Grammar: N-ms
+  eng: wrong
+  spa: de–injusticia
+  hin: अधर्म
+  arb: ظُلْمٍ
+  kor: 불의–를
+  swa: udhalimu
+
+## Task
+
+Group these 11 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

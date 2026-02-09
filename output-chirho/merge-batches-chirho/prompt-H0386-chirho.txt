@@ -1,0 +1,135 @@
+# Sense Merge Task for H0386
+
+Lemma: H0386 (POS: Conj-w)
+Total occurrences: 13
+Current sense count: 12
+
+This Hebrew/Greek lemma has been over-split into 12 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 81904 (2 occurrences)
+Grammar: Adj-ms
+  eng: permanence
+  spa: permanente
+  hin: दृढ़–की
+  arb: مَنِيعٍ, دَائِمٍ
+  kor: 견고한
+  swa: nguvu
+
+### Sense 81905 (1 occurrences)
+Grammar: Adj-ms
+  eng: enduring
+  spa: firme
+  hin: मज़बूत
+  arb: مَتِينٌ
+  kor: 견고하다
+  swa: imara
+
+### Sense 81906 (1 occurrences)
+Grammar: Adj-ms
+  eng: ever-flowing
+  spa: aguas–perennes
+  hin: एतान
+  arb: دَائِمٍ
+  kor: 흘르는
+  swa: lenye–maji
+
+### Sense 81907 (1 occurrences)
+Grammar: Conj-w, Art | Adj-ms
+  eng: and–the–enduring–ones
+  spa: y–los–eternos
+  hin: और–चट्टानो
+  arb: وَالأَسَاسَاتِ
+  kor: 그리고–영원한–것들아
+  swa: na–misingi–ya–kudumu–ya
+
+### Sense 81908 (1 occurrences)
+Grammar: Adj-ms
+  eng: ever–flowing
+  spa: perennes
+  arb: دائِمَةً
+  kor: 마르지–않는
+  swa: yenye-nguvu
+
+### Sense 81909 (1 occurrences)
+Grammar: Conj-w | N-ms
+  eng: and–mighty-ones
+  spa: y–a–los–poderosos
+  hin: और–शक्तिशालों–को
+  arb: وَالأَعِزّاءَ
+  kor: 그리고–강한–자들–을
+  swa: na–wenye–nguvu
+
+### Sense 81910 (1 occurrences)
+Grammar: Prep-b | N-ms
+  eng: in–strength
+  spa: en–firmeza
+  hin: में–दृढ़ता
+  arb: فِي–قُوَّةٍ
+  kor: 에–견고함으로
+  swa: na–imara
+
+### Sense 81911 (1 occurrences)
+Grammar: Prep-l | N-msc | 3ms
+  eng: to–its-strength
+  spa: a–su–fuerza
+  hin: शक्ति–अपनी–में
+  arb: إِلَى–قُوَّتِهِ
+  kor: 그의–힘으로
+  swa: nguvu–yake
+
+### Sense 81912 (1 occurrences)
+Grammar: Adj-ms
+  eng: is–their–ruin
+  spa: duro
+  hin: कठोर
+  arb: صَعْبَةٌ
+  kor: 거칠다
+  swa: ni–ngumu
+
+### Sense 81913 (1 occurrences)
+Grammar: Adj-ms
+  eng: enduring
+  spa: robusta
+  hin: शक्तिशाली
+  arb: عَتِيدَةٌ
+  kor: 견고한
+  swa: lenye–nguvu
+
+### Sense 81914 (1 occurrences)
+Grammar: Adj-ms
+  eng: ever-flowing
+  spa: perenne
+  hin: बारहमासी।
+  arb: دائِمٍ
+  kor: 마르지–않는
+  swa: usiokoma
+
+### Sense 81915 (1 occurrences)
+Grammar: Adj-ms
+  eng: constant
+  spa: constante
+  hin: निरंतर
+  arb: دائِمٌ
+  kor: 굳세다
+  swa: imara
+
+## Task
+
+Group these 12 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

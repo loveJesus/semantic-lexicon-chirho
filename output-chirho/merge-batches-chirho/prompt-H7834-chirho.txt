@@ -1,0 +1,135 @@
+# Sense Merge Task for H7834
+
+Lemma: H7834 (POS: Prep-b)
+Total occurrences: 21
+Current sense count: 12
+
+This Hebrew/Greek lemma has been over-split into 12 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 139688 (4 occurrences)
+Grammar: N-mp
+  eng: the–clouds, the–skies
+  spa: nubes
+  hin: बादलों–को, बादल
+  arb: السُّحُبَ, الغُيومُ, الغُيومَ
+  kor: 구름들을, 하늘–들–을, 구름들이
+  swa: mawingu
+
+### Sense 139689 (4 occurrences)
+Grammar: N-mp
+  eng: the–clouds
+  spa: las–nubes, nubes
+  hin: बादलों, बादल
+  arb: السُّحُبِ, الْغُيُومِ, الغَمام
+  kor: 궁창들, 궁창–에, 구름에
+  swa: mawingu, mawinguni
+
+### Sense 139690 (2 occurrences)
+Grammar: N-mp
+  eng: the–skies
+  spa: nubes, cielos
+  hin: शेखाकीम, बादलों–के
+  arb: السَّمَاوَاتُ, السَّمَاءِ
+  kor: 궁창들–이, 궁창들–의
+  swa: mbingu, anga
+
+### Sense 139691 (2 occurrences)
+Grammar: Prep-b, Art | N-ms
+  eng: in–the–sky, in–the–skies
+  spa: en–el-cielo
+  hin: में–आकाश
+  arb: فِي–السَّحَابِ
+  kor: 하늘–에서
+  swa: mbinguni
+
+### Sense 139692 (2 occurrences)
+Grammar: Conj-w | N-mp
+  eng: and–the–clouds, and–clouds
+  spa: y–nubes, y–las–nubes
+  hin: और–बादल
+  arb: وَ–السُّحُبُ, وَالسُّحُبُ
+  kor: 그리고–하늘–들–이, 그리고–구름이
+  swa: na–mawingu
+
+### Sense 139693 (1 occurrences)
+Grammar: N-mp
+  eng: clouds
+  spa: sobre–las–nubes
+  hin: बादलों।
+  arb: السُّحُبَ
+  kor: 구름들을
+  swa: mawingu
+
+### Sense 139694 (1 occurrences)
+Grammar: N-mp
+  eng: the–clouds
+  spa: nubes
+  hin: आकाश–को
+  arb: السَّحُبَ
+  kor: 궁창들–을
+  swa: mawingu
+
+### Sense 139695 (1 occurrences)
+Grammar: Prep-l | N-mp
+  eng: the–skies
+  spa: a–cielos
+  hin: आकाशों–को
+  arb: لِلسُّحُبِ
+  kor: 구름들–을
+  swa: mawingu
+
+### Sense 139696 (1 occurrences)
+Grammar: Prep-b, Art | N-mp
+  eng: is–in–the–skies
+  spa: en–las–nubes
+  arb: في–السُّحُبِ
+  kor: 궁창–에서
+  swa: mawinguni
+
+### Sense 139697 (1 occurrences)
+Grammar: Conj-w, Prep-k | N-msc
+  eng: and–like–dust
+  spa: y–como–polvo–fino
+  hin: और–जैसी–धूल
+  arb: وَكَغُبَارٍ
+  kor: 그리고–같이–먼지
+  swa: na–kama–vumbi
+
+### Sense 139698 (1 occurrences)
+Grammar: N-mp
+  eng: skies
+  spa: cielos
+  hin: आकाश–के
+  arb: السُّحُبِ
+  kor: 구름들
+  swa: ya–anga
+
+### Sense 139699 (1 occurrences)
+Grammar: Prep-b, Art | N-mp
+  eng: in–the–skies
+  spa: en–los–cielos
+  hin: आकाशों–में
+  arb: فِي–السُّحُبِ
+  kor: 구름들–에서
+  swa: katika–mawingu
+
+## Task
+
+Group these 12 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

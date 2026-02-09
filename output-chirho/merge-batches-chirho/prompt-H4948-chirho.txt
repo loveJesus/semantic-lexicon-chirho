@@ -1,0 +1,127 @@
+# Sense Merge Task for H4948
+
+Lemma: H4948 (POS: N-msc)
+Total occurrences: 49
+Current sense count: 11
+
+This Hebrew/Greek lemma has been over-split into 11 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 115207 (14 occurrences)
+Grammar: N-msc | 3ms,N-msc | 3fs
+  eng: its-weight, its–weight
+  spa: su–peso
+  hin: वजन–उसका, भार–का, उसका–वज़न
+  arb: وَزْنُهُ, وَزنُهُ, مِثْقَالٍ
+  kor: 그것의–무게, 그의–무게의, 그–무게가
+  swa: uzito–wake
+
+### Sense 115208 (8 occurrences)
+Grammar: N-msc,N-ms
+  eng: weight-of, weight, the–weight–of
+  spa: peso–de, el–peso–del
+  hin: भार, वज़न
+  arb: وَزْنُ, وَزْنُهَا, وَزْنَ
+  kor: 무게, 무게가, 무게의
+  swa: uzito–wa, uzito
+
+### Sense 115209 (7 occurrences)
+Grammar: N-ms
+  eng: weight, by–weight, a–weight
+  spa: peso
+  hin: तौल, वजन, मिश्काल
+  arb: وَزْنٌ, وَزْنٍ, وَزْنًا
+  kor: 무게, 무게가, 무게의
+  swa: uzito, ya–kupimia
+
+### Sense 115210 (7 occurrences)
+Grammar: Prep-b, Art | N-ms,Prep-b | N-ms,Prep-b | N-msc
+  eng: by–weight, by–the–weight–of
+  spa: en–peso, en–peso–de–
+  hin: –में–तौल, –में–तौल–
+  arb: بِوَزْنٍ, بِالْوَزْنِ, بِوَزْنِ–
+  kor: 에–무게, 에–무게–의–
+  swa: kwa–uzito, kwa–uzito–wa
+
+### Sense 115211 (4 occurrences)
+Grammar: Conj-w | N-msc,Conj-w | N-ms
+  eng: and–weight-of, and–weight–of, And–the–weight
+  spa: y–peso–de, Y–peso, Y–el–peso
+  hin: और–भार, और–तौल, और-वजन
+  arb: وَ–وَزْنُ, وَوَزْنُ, وَوَزْنَ
+  kor: 그리고–무게, 그리고–무게–의
+  swa: na–uzito, na–uzito–wa
+
+### Sense 115212 (3 occurrences)
+Grammar: Prep-b, Art | N-ms,Prep-b | N-ms
+  eng: by–weight, by-weight
+  spa: por–peso
+  hin: वजन–से, में–तौल, तौल–से
+  arb: بِ–الْوَزْنِ, بِ–الوَزْن, بِـ–الوَزْنِ
+  kor: 저울로, 에–무게로, 무게로
+  swa: kwa–uzito
+
+### Sense 115213 (2 occurrences)
+Grammar: N-msc,Art | N-ms
+  eng: the–weight–of, the–weight
+  spa: el–peso–de, el–peso
+  hin: वजन, तौल से
+  arb: وَزْنَ, الوَزْن
+  kor: 무게를, 그–무게가
+  swa: uzito
+
+### Sense 115214 (1 occurrences)
+Grammar: N-msc | 3mp
+  eng: their–weight
+  spa: su–peso
+  hin: उनका–वज़न
+  arb: وَزْنُهُمَا
+  kor: 그들의–무게의
+  swa: uzito–wao
+
+### Sense 115215 (1 occurrences)
+Grammar: Prep-b | N-msc | 3ms
+  eng: in–its–weight
+  spa: en–peso–suyo
+  hin: उसके–वजन–में
+  arb: بِ–وَزْنِهَا
+  kor: 그것의–무게로
+  swa: kwa–uzito–wake
+
+### Sense 115216 (1 occurrences)
+Grammar: Conj-w | N-msc | 3fs
+  eng: and–its–weight
+  spa: y–su–peso
+  hin: और–उसका–वजन
+  arb: وَوَزنُها
+  kor: 그리고–무게–그것의는
+  swa: na–uzito–wake
+
+### Sense 115217 (1 occurrences)
+Grammar: Prep-b, Art | N-ms
+  eng: in–the–weight
+  spa: en–el–peso
+  hin: तौल–में
+  arb: بِ–ال–وَزْنِ
+  kor: 에–그–무게
+  swa: katika–uzito
+
+## Task
+
+Group these 11 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

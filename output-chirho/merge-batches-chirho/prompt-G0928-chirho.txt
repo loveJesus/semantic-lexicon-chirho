@@ -1,0 +1,135 @@
+# Sense Merge Task for G0928
+
+Lemma: G0928 (POS: V-FIP-3P)
+Total occurrences: 12
+Current sense count: 12
+
+This Hebrew/Greek lemma has been over-split into 12 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 64020 (1 occurrences)
+Grammar: V-PPM/P-AMP
+  eng: straining
+  spa: atormentados
+  hin: कष्ट–पाते–हुए
+  arb: مُتَعَبّينَ
+  kor: 괴롭힘–당하는–것을
+  swa: wakitaabika
+
+### Sense 64021 (1 occurrences)
+Grammar: V-FIP-3P
+  eng: they-will-be-tormented
+  spa: serán–atormentados
+  hin: यातना–दिए–जाएंगे
+  arb: سَيُعَذَّبونَ
+  kor: 고통받을–것이다
+  swa: watateswa
+
+### Sense 64022 (1 occurrences)
+Grammar: V-IIA-3S
+  eng: was-tormented
+  spa: atormentaba
+  hin: पीड़ित–करता–था
+  arb: يُعَذِّبُ
+  kor: 괴로워했다;
+  swa: alitesa
+
+### Sense 64023 (1 occurrences)
+Grammar: V-FIP-3P
+  eng: they-will-be-tormented
+  spa: sean–atormentados
+  hin: वे–यातना–दी–जाएं
+  arb: يُعَذَّبُوا
+  kor: 괴롭게–하려고
+  swa: wawateshe
+
+### Sense 64024 (1 occurrences)
+Grammar: V-ANA
+  eng: to-torment
+  spa: atormentar
+  hin: कष्ट–देने–को
+  arb: لِتُعَذِّبَنا
+  kor: 고문하기라
+  swa: kututesa
+
+### Sense 64025 (1 occurrences)
+Grammar: V-PPM/P-NNS
+  eng: being–tossed
+  spa: siendo-azotada
+  hin: सतअयि–ज–रहि–थि
+  arb: مُعَذَّبَةً
+  kor: 시달리고–있었다
+  swa: ikisumbuliwa
+
+### Sense 64026 (1 occurrences)
+Grammar: V-ASA-2S
+  eng: you-torment
+  spa: atormentes
+  arb: تُعَذِّبْني
+  kor: 고문하지.
+  swa: unitese.
+
+### Sense 64027 (1 occurrences)
+Grammar: V-PPM/P-NMS
+  eng: being-tormented
+  spa: siendo–atormentado
+  hin: पीड़ित–होता–हुआ
+  arb: يُعَذَّبُ
+  kor: 괴로워하며
+  swa: ana-teseka.
+
+### Sense 64028 (1 occurrences)
+Grammar: V-ASA-2S
+  eng: torment
+  spa: atormentes
+  hin: सता
+  arb: تُعَذِّب
+  kor: 괴롭히지
+  swa: usinitese
+
+### Sense 64029 (1 occurrences)
+Grammar: V-AIA-3P
+  eng: tormented
+  spa: atormentaron
+  hin: दुख–दिए
+  arb: عَذَّبا
+  kor: 괴롭혔으니
+  swa: waliwatesa
+
+### Sense 64030 (1 occurrences)
+Grammar: V-PPM/P-NFS
+  eng: being-tormented
+  spa: siendo–atormentada
+  hin: तड़पती–हुई
+  arb: مُتَعَذِّبَةً
+  kor: 고통–받는
+  swa: akiteseka
+
+### Sense 64031 (1 occurrences)
+Grammar: V-FIP-3S
+  eng: he-will-be-tormented
+  spa: será–atormentado
+  hin: यातना–दी–जाएगी
+  arb: سَيُعَذَّبُ
+  kor: 고통–받을–것이니
+  swa: atateswa
+
+## Task
+
+Group these 12 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

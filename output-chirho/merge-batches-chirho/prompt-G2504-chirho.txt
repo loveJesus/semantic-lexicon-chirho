@@ -1,0 +1,118 @@
+# Sense Merge Task for G2504
+
+Lemma: G2504 (POS: PPro-N1S)
+Total occurrences: 84
+Current sense count: 10
+
+This Hebrew/Greek lemma has been over-split into 10 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 69679 (41 occurrences)
+Grammar: PPro-N1S
+  eng: and–I, and-I, And-I
+  spa: y-yo, y–yo, Y–yo
+  hin: और–मैं, और–मैन, और–मैंने
+  arb: وَأَنَا, وَ–أَنَا, وَأَنا
+  kor: 나도, 그리고–나–는, 그러면–나는
+  swa: na–mimi, na-mimi, nami
+
+### Sense 69680 (30 occurrences)
+Grammar: PPro-N1S
+  eng: I-also, I–also, also-I
+  spa: también–yo, también-yo, yo–también
+  hin: मैं–भी, भी–मैं, मैन–भि
+  arb: أَنا–أَيْضاً, وَأَنَا, أَنا–أَيضًا
+  kor: 나도, 나–도, 나도,
+  swa: mimi–pia, na–mimi, mimi–pia.
+
+### Sense 69681 (4 occurrences)
+Grammar: PPro-N1S
+  eng: and–I, even–I
+  spa: Y–yo, también–yo
+  hin: और–मैं
+  arb: وَ–أَنا
+  kor: 그리고–나
+  swa: Nami,, mimi., Nami
+
+### Sense 69682 (3 occurrences)
+Grammar: PPro-D1S
+  eng: also–to–me, yet–to–me
+  spa: también–a–mí, pero–a–mí
+  hin: मुझे–भी, परन्तु–मुझे
+  arb: وَ–أَنَا, وَلِي–أَيْضًا, أَنَا–أَيْضًا
+  kor: 나–에게도, 나–에게
+  swa: na–mimi–pia, na–mimi, mimi–pia
+
+### Sense 69683 (1 occurrences)
+Grammar: PPro-D1S
+  eng: and–to–me
+  spa: y-a-mí
+  hin: और–मुझे
+  arb: وَلِي
+  kor: 그리고–나–에게
+  swa: na–mimi
+
+### Sense 69684 (1 occurrences)
+Grammar: PPro-N1S
+  eng: also-I
+  spa: y–yo
+  hin: और–मैने
+  arb: وَأَنَا
+  kor: 나–도
+  swa: mimi–pia
+
+### Sense 69685 (1 occurrences)
+Grammar: PPro-D1S
+  eng: also-to-me
+  spa: también–a–mí
+  hin: मुझे–भी
+  arb: وَلي
+  kor: 나에게도
+  swa: kwangu–pia
+
+### Sense 69686 (1 occurrences)
+Grammar: PPro-A1S
+  eng: also-me
+  spa: también–yo
+  hin: मैं–भी
+  arb: أَنَا–أَيْضًا
+  kor: 나도
+  swa: mimi–pia
+
+### Sense 69687 (1 occurrences)
+Grammar: PPro-A1S
+  eng: and–me
+  spa: y-a-mí
+  hin: और–मुझे
+  arb: وَإِيَّايَ
+  kor: 그리고–나–를
+  swa: na–mimi
+
+### Sense 69688 (1 occurrences)
+Grammar: PPro-A1S
+  eng: Both–me
+  spa: Y-a-mí
+  hin: और–मुझे
+  arb: وَ–أَنَا
+  kor: 나–를–도
+  swa: Na–mimi
+
+## Task
+
+Group these 10 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

@@ -1,0 +1,126 @@
+# Sense Merge Task for H8457
+
+Lemma: H8457 (POS: Prep-m | N-fpc | 2fs)
+Total occurrences: 22
+Current sense count: 11
+
+This Hebrew/Greek lemma has been over-split into 11 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 144915 (7 occurrences)
+Grammar: N-fpc | 3fs
+  eng: her-harlotries, her-harlotry
+  spa: fornicaciones–de–ella, fornicación–de–ella
+  hin: अपनी–व्यभिचार, उसकी–व्यभिचार
+  arb: زِنَاهَا
+  kor: 그녀의–음행들을, 그리고–그녀를
+  swa: ukahaba–wake
+
+### Sense 144916 (3 occurrences)
+Grammar: N-fpc | 2fs,N-fsc | 2fs
+  eng: harlotry–your, harlotries–your
+  spa: fornicación–de–ti, fornicaciones–de–ti
+  hin: व्यभिचार–तेरा
+  arb: زِنَاكِ
+  kor: 네–음행을, 네–음행들을
+  swa: wako
+
+### Sense 144917 (3 occurrences)
+Grammar: Prep-b | N-fpc | 2fs
+  eng: in–harlotries–your
+  spa: en–fornicaciones–de–ti
+  hin: में–व्यभिचारों–तेरे
+  arb: فِي–زِنَاكِ
+  kor: 네–음행들에서
+  swa: katika–ukahaba–wako, kwa–ukahaba–wako
+
+### Sense 144918 (2 occurrences)
+Grammar: Prep-m | N-fsc | 2fs,N-fsc | 2fs
+  spa: [fornicación–de–ti], [de–fornicaciones–de–ti]
+  hin: व्यभिचार–तेरा
+  arb: [مِنْ–زِنَاكِ], [زِنَاكِ]
+  kor: [네–음행들이], [네–음행들을]
+  swa: wako, ukahaba–wako
+
+### Sense 144919 (1 occurrences)
+Grammar: N-fpc | 2fs
+  eng: your-harlotries
+  spa: fornicaciones–de–ti
+  hin: अपनी–व्यभिचार
+  arb: زِنَاكِ
+  kor: 네–음행들을
+  swa: ukahaba–wako
+
+### Sense 144920 (1 occurrences)
+Grammar: Prep-b | N-fsc | 3mp
+  eng: with–their-harlotry
+  spa: con–fornicación–de–ellos
+  hin: में–अपनी–व्यभिचार
+  arb: بِزِنَاهُمْ
+  kor: 그들의–음행들로
+  swa: kwa–ukahaba–wao
+
+### Sense 144921 (1 occurrences)
+Grammar: Conj-w | N-fpc | 2fs
+  eng: and–harlotries–your
+  spa: y–fornicaciones–de–ti
+  hin: और–व्यभिचारों–तेरे
+  arb: وَزِنَاكِ
+  kor: 그리고–네–음행들을
+  swa: haku
+
+### Sense 144922 (1 occurrences)
+Grammar: N-fpc | 2fs
+  eng: harlotries–your
+  spa: (fornicaciones–de–ti)
+  hin: व्यभिचार–तेरा
+  arb: (زِنَاكِ)
+  kor: 네–음행들을
+  swa: wako
+
+### Sense 144923 (1 occurrences)
+Grammar: N-fsc | 3mp
+  eng: their-lust
+  spa: fornicación–de–ellos
+  hin: अपनी–व्यभिचार
+  arb: زِنَاهُمْ
+  kor: 그들의–음행을
+  swa: ukahaba–wao
+
+### Sense 144924 (1 occurrences)
+Grammar: Conj-w | N-fpc | 2fs
+  eng: and–your-harlotry
+  spa: y–fornicaciones–de–ti
+  hin: और–तेरी–व्यभिचार
+  arb: وَزِنَاكِ
+  kor: 그리고–네–음행들이
+  swa: na–ukahaba–wako
+
+### Sense 144925 (1 occurrences)
+Grammar: Prep-m | N-fpc | 2fs
+  eng: of–harlotries–your
+  spa: (de–fornicaciones–de–ti?)
+  hin: व्यभिचार–तेरा
+  arb: (مِنْ–زِنَاكِ)
+  kor: 네–음행들이
+  swa: ukahaba–wako
+
+## Task
+
+Group these 11 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

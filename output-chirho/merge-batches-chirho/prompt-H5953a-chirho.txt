@@ -1,0 +1,136 @@
+# Sense Merge Task for H5953a
+
+Lemma: H5953a (POS: V-Hitpael-Perf-2fs)
+Total occurrences: 13
+Current sense count: 12
+
+This Hebrew/Greek lemma has been over-split into 12 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 124417 (2 occurrences)
+Grammar: V-Piel-Perf-2ms
+  eng: You–dealt–thus, You–dealt
+  spa: me–hiciste, has–tratado
+  hin: तूने–किया–है, तूने–ऐसा–किया–है
+  arb: فَعَلْتَ
+  kor: 당신–이–행하셨네, 당신–이–했나이다
+  swa: umetendea, umenitendea
+
+### Sense 124418 (1 occurrences)
+Grammar: V-Hitpael-Perf-3ms
+  eng: he-dealt-harshly
+  spa: se–burló
+  hin: ठठ्ठा–किया
+  arb: سَخِرَ
+  kor: 희롱했다–그가
+  swa: aliwadhihaki
+
+### Sense 124419 (1 occurrences)
+Grammar: Conj-w | V-Hitpael-ConjPerf-3c
+  eng: and–abuse
+  spa: y–se–burlen
+  hin: और–दुर्व्यवहार–करें–
+  arb: وَيَتَعَبَّثُوا–
+  kor: 그리고–희롱하리라
+  swa: na–wakanifanyia–aibu–
+
+### Sense 124420 (1 occurrences)
+Grammar: Prep-l | V-Hitpael-Inf
+  eng: to–practice
+  spa: para–practicar
+  hin: करने–के–लिए
+  arb: لِـ–أَرْتَكِبَ
+  kor: 행하게
+  swa: kushiriki
+
+### Sense 124421 (1 occurrences)
+Grammar: V-Hitpael-Perf-2fs
+  eng: you–mocked
+  spa: te–burlaste
+  hin: तूने–मेरे–साथ–ठट्ठा–किया
+  arb: سَخِرْتِ
+  kor: 너가–조롱했다
+  swa: umenidhihaki
+
+### Sense 124422 (1 occurrences)
+Grammar: V-Piel-Perf-3fs
+  eng: causes–grief
+  spa: aflige
+  hin: दुखी–करती–है
+  arb: تُؤْلِمُ
+  kor: 해를–끼친네
+  swa: linasababisha–maumivu
+
+### Sense 124423 (1 occurrences)
+Grammar: Conj-w | V-Hitpael-ConsecImper
+  eng: and–abused
+  spa: y–abusaron–de
+  hin: और–दुर्व्यवहार–किया
+  arb: وَ–تَعَلَّلُوا
+  kor: 그리고–학대했다
+  swa: na–wakamtesa
+
+### Sense 124424 (1 occurrences)
+Grammar: V-Pual-Perf-3ms
+  eng: was–dealt
+  spa: me–ha–sido–hecho
+  hin: किया–गया–है
+  arb: فُعِلَ
+  kor: 내렸네
+  swa: yamenitendea
+
+### Sense 124425 (1 occurrences)
+Grammar: Conj-w | V-Piel-Imp-ms
+  eng: and–deal–with–them
+  spa: y–hazles
+  hin: और–कर–उन–पर
+  arb: وَافْعَلْ
+  kor: 그리고–행하소서
+  swa: na–uwatendee
+
+### Sense 124426 (1 occurrences)
+Grammar: V-Hitpael-Perf-1cs
+  eng: I–dealt–harshly
+  spa: me–burlé
+  hin: मैंने–खेल–खिलौना–किया
+  arb: فَعَلْتُهُ
+  kor: 내가–행한–것을
+  swa: nilifanya
+
+### Sense 124427 (1 occurrences)
+Grammar: Conj-w | V-Hitpael-ConjPerf-3c
+  eng: and–they–abuse
+  spa: y–se–burlen
+  hin: और–वे–ठट्ठा–करें–
+  arb: فَ–يَسْخَرُونَ
+  kor: 그리고–그들이–학대하리라–
+  swa: na–wakanidhalilisha
+
+### Sense 124428 (1 occurrences)
+Grammar: Conj-w | V-Hitpael-ConjPerf-3c
+  eng: and–abuse
+  spa: y–se–burlen–
+  hin: और-मज़अक-उद'एन–
+  arb: وَ–يَتَلاعَبونَ–
+  kor: 그리고–희롱하고–
+  swa: na–wanidhalilishe
+
+## Task
+
+Group these 12 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

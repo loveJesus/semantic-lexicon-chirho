@@ -1,0 +1,136 @@
+# Sense Merge Task for G2675
+
+Lemma: G2675 (POS: V-RPM/P-ANP)
+Total occurrences: 13
+Current sense count: 12
+
+This Hebrew/Greek lemma has been over-split into 12 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 70386 (2 occurrences)
+Grammar: V-PPA-AMP
+  eng: mending
+  spa: reparando, remendando
+  hin: ठीक–करते–हुए, के
+  arb: يُصْلِحَانِ
+  kor: 수선하는–것을, 깁고–있는
+  swa: wakitengeneza
+
+### Sense 70387 (1 occurrences)
+Grammar: V-AIM-2S
+  eng: you-prepared
+  spa: preparaste
+  hin: तैयार–किया
+  arb: هَيَّأْتَ
+  kor: 예비하셨으니
+  swa: umeniandalia
+
+### Sense 70388 (1 occurrences)
+Grammar: V-RPM/P-ANP
+  eng: having-been-prepared
+  spa: preparados
+  hin: तैयार–किए–गए
+  arb: مُهَيَّأَةً
+  kor: 준비된
+  swa: vilivyotayarishwa
+
+### Sense 70389 (1 occurrences)
+Grammar: V-AOA-3S
+  eng: equip
+  spa: os-perfeccione
+  hin: सिद्ध–करे
+  arb: يُكَمِّلْكُمْ
+  kor: 갖추시기를
+  swa: awakamilishe
+
+### Sense 70390 (1 occurrences)
+Grammar: V-AIM-2S
+  eng: you-prepared
+  spa: perfeccionaste
+  hin: सिद्ध–किया
+  arb: هَيَّأتَ
+  kor: 완성하셨다
+  swa: Na
+
+### Sense 70391 (1 occurrences)
+Grammar: V-PMM/P-2P
+  eng: be-restored
+  spa: Sed–perfeccionados
+  hin: सिद्ध–हो
+  arb: اكْمَلوا
+  kor: 완전해져라
+  swa: Kamilishweni;
+
+### Sense 70392 (1 occurrences)
+Grammar: V-RNM/P
+  eng: to-have-been-framed
+  spa: haber-sido-hechos
+  hin: तैयार–किए–गए
+  arb: أُسِّسَتْ
+  kor: 지어졌음을
+  swa: kuumbwa
+
+### Sense 70393 (1 occurrences)
+Grammar: V-FIA-3S
+  eng: will–restore
+  spa: os–restaurará
+  hin: सिद्ध–करेगा
+  arb: سَيُكمِّلُكُم
+  kor: 온전하게–하시고
+  swa: atawakamilisha
+
+### Sense 70394 (1 occurrences)
+Grammar: V-RPM/P-NMS
+  eng: having–been–fully–trained
+  spa: completamente–preparado
+  hin: सिद्ध–किया–हुआ
+  arb: مُكتَمِلٌ
+  kor: 완전한
+  swa: aliyekamilishwa
+
+### Sense 70395 (1 occurrences)
+Grammar: V-ANA
+  eng: to–complete
+  spa: completar
+  hin: पोओरअ–करन
+  arb: نُكَمِّلَ
+  kor: 보완하기–위해
+  swa: kukamilisha
+
+### Sense 70396 (1 occurrences)
+Grammar: V-PMA-2P
+  eng: restore
+  spa: restaurad
+  hin: थिक–करो
+  arb: أصلِحوا
+  kor: 회복시키라
+  swa: mrudisheni
+
+### Sense 70397 (1 occurrences)
+Grammar: V-RPM/P-NMP
+  eng: having–been–united
+  spa: unidos
+  hin: पूर्ण–किए–हुए
+  arb: مُتَكامِلينَ
+  kor: 온전하게–된
+  swa: muungane
+
+## Task
+
+Group these 12 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

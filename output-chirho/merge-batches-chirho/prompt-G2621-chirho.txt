@@ -1,0 +1,127 @@
+# Sense Merge Task for G2621
+
+Lemma: G2621 (POS: V-PIM/P-3S)
+Total occurrences: 12
+Current sense count: 11
+
+This Hebrew/Greek lemma has been over-split into 11 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 70220 (2 occurrences)
+Grammar: V-IIM/P-3S
+  eng: were-lying, was-lying
+  spa: yacía, estaba–acostada
+  hin: शिमोन, पड़े–थे
+  arb: كَانَ–يَرْقُدُ, كَانَتْ–مُضْطَجِعَةً
+  kor: 누워–있었다
+  swa: walilala, alikuwa–amelala
+
+### Sense 70221 (1 occurrences)
+Grammar: V-PPM/P-AMS
+  eng: lying
+  spa: acostado
+  hin: पड़े–हुए,
+  arb: مُضْطَجِعًا
+  kor: 누워–있는
+  swa: amelala
+
+### Sense 70222 (1 occurrences)
+Grammar: V-PNM/P
+  eng: to-recline
+  spa: estar–reclinado
+  hin: बैठना
+  arb: أَنْ يَتَّكِئَ
+  kor: 식사하다
+  swa: akiketi–mezani
+
+### Sense 70223 (1 occurrences)
+Grammar: V-IIM/P-3S
+  eng: he–was–lying
+  spa: yacía
+  hin: लेटा–था
+  arb: كانَ–مُضطَجِعًا
+  kor: 누워–있던
+  swa: alichokuwa–amelalia
+
+### Sense 70224 (1 occurrences)
+Grammar: V-PPM/P-AMS
+  eng: reclining
+  spa: recostado
+  hin: बैठा–हुआ
+  arb: جالِساً
+  kor: 누워–있는
+  swa: umeketi–mezani,
+
+### Sense 70225 (1 occurrences)
+Grammar: V-PIM/P-3S
+  eng: he-reclines
+  spa: está–reclinado
+  hin: बैठा–है
+  arb: مُتَّكِئٌ
+  kor: 기대어–있다
+  swa: amelala
+
+### Sense 70226 (1 occurrences)
+Grammar: V-PPM/P-AMS
+  eng: lying
+  spa: postrado
+  hin: लेटा–हुआ
+  arb: مَطْرُوحًا
+  kor: 누워–있는
+  swa: amelala
+
+### Sense 70227 (1 occurrences)
+Grammar: V-IIM/P-3S
+  eng: was-lying
+  spa: yacía
+  hin: यीशु
+  arb: كانَ مُضْطَجِعًا
+  kor: 누워–있었다
+  swa: alipokuwa–amelala.
+
+### Sense 70228 (1 occurrences)
+Grammar: V-PPM/P-NMP
+  eng: reclining
+  spa: reclinados
+  hin: बैठे–हुए
+  arb: مُتَّكِئينَ
+  kor: 앉아–있는
+  swa: wakila
+
+### Sense 70229 (1 occurrences)
+Grammar: V-PNM/P
+  eng: to–be–lying
+  spa: estar-postrado
+  hin: पड़ा–हुआ–था,
+  arb: راقِدًا
+  kor: 누워–있기를
+  swa: alilala
+
+### Sense 70230 (1 occurrences)
+Grammar: V-PPM/P-GMS
+  eng: reclining
+  spa: estando–reclinado
+  hin: बैठे–हुए
+  arb: مُتَّكِئًا
+  kor: 앉아-있을-때
+  swa: akiwa–amelala
+
+## Task
+
+Group these 11 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

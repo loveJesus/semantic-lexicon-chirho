@@ -1,0 +1,118 @@
+# Sense Merge Task for H3247
+
+Lemma: H3247 (POS: N-ms)
+Total occurrences: 20
+Current sense count: 10
+
+This Hebrew/Greek lemma has been over-split into 10 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 102650 (9 occurrences)
+Grammar: N-msc
+  eng: base-of, the–base–of
+  spa: base-de, la–base-de
+  hin: आधार, आधार–पर
+  arb: أَسَاسِ, أَساسِ
+  kor: 기초, 밑바닥에, 밑부분
+  swa: msingi
+
+### Sense 102651 (2 occurrences)
+Grammar: N-msc | 3mp
+  eng: their–foundation
+  spa: su–fundamento, sobre–su–fundamento.
+  hin: उनकी–नींव
+  arb: أَسَاسُهُمْ, أَساسُهُمْ
+  kor: 그들의–기초가
+  swa: msingi–wao
+
+### Sense 102652 (2 occurrences)
+Grammar: N-mpc | 3fs
+  eng: her–foundations, her-foundations
+  spa: sus–cimientos
+  hin: नींवें–उसकी, उसकी–नीवों–को
+  arb: أُسُسُهَا, أُسُسَهَا
+  kor: 기초들이–그것의, 그녀–기초들–을
+  swa: misingi–yake
+
+### Sense 102653 (1 occurrences)
+Grammar: N-msc | 3ms
+  eng: foundation-of-it
+  spa: cimiento–de–ella
+  hin: उसकी–नींव
+  arb: أَسَاسُهُ
+  kor: 그–기초가
+  swa: msingi–wake
+
+### Sense 102654 (1 occurrences)
+Grammar: Art | N-ms
+  eng: the–foundation
+  spa: el–fundamento
+  hin: नींवके
+  arb: الأَسَاسِ
+  kor: 그–기초의
+  swa: Msingi
+
+### Sense 102655 (1 occurrences)
+Grammar: Art | N-ms
+  eng: the–foundation
+  spa: el–cimiento
+  hin: नींव
+  arb: الأَسَاسِ
+  kor: 기초
+  swa: msingi–wake
+
+### Sense 102656 (1 occurrences)
+Grammar: Conj-w | V-Qal-Inf
+  eng: and–foundation-of
+  spa: y–el–fundamento–de
+  hin: और–नींव
+  arb: وَتَأْسِيسُ
+  kor: 그리고–기초
+  swa: na–ujenzi–wa
+
+### Sense 102657 (1 occurrences)
+Grammar: N-msc
+  eng: is–a–foundation
+  spa: fundamento
+  hin: नींव
+  arb: أَسَاسٌ
+  kor: 기초–이다
+  swa: ni–msingi
+
+### Sense 102658 (1 occurrences)
+Grammar: Conj-w | N-mpc | 3fs
+  eng: and–her–foundations
+  spa: y–sus–cimientos
+  hin: और–उस–की–नींवें
+  arb: وَ–أُسُسَهَا
+  kor: 그리고–기초들–그녀의
+  swa: na–misingi–yake
+
+### Sense 102659 (1 occurrences)
+Grammar: N-ms
+  eng: the–foundation
+  spa: el–fundamento
+  hin: नींव
+  arb: الْأَسَاسَ
+  kor: 기초–를
+  swa: msingi
+
+## Task
+
+Group these 10 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

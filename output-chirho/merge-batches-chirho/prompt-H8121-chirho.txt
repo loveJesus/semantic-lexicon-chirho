@@ -1,0 +1,145 @@
+# Sense Merge Task for H8121
+
+Lemma: H8121 (POS: N-csc | 3fs)
+Total occurrences: 134
+Current sense count: 13
+
+This Hebrew/Greek lemma has been over-split into 13 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 142627 (88 occurrences)
+Grammar: Art | N-cs
+  eng: the–sun, the-sun, ten
+  spa: el–sol, sol, el–sol?
+  hin: सूर्य–के, सूर्य, सूरज
+  arb: الشَّمْسِ, الشَّمْسُ, هَ–شَّمِشْ
+  kor: 해–그, 해가, 그–해가
+  swa: jua, ha–jua, ya–jua
+
+### Sense 142628 (28 occurrences)
+Grammar: N-cs,Art | N-cs,N-csc
+  eng: sun, the–sun, sun–of
+  spa: sol, el–sol, sol–de
+  hin: सूर्य, सूर्य–के, सूर्य–की
+  arb: الشَّمْسِ, الشَّمْسُ, ٱلشَّمْسَ
+  kor: 해, 해의, 해를
+  swa: jua, ya–jua, kwa–jua
+
+### Sense 142629 (4 occurrences)
+Grammar: Conj-w, Art | N-cs,Conj-w | N-cs
+  eng: and–the–sun, and–the-sun, and–sun
+  spa: y–el–sol, y–sol, ni–sol
+  hin: और–सूर्य
+  arb: وَالشَّمْسُ, وَ–شَمْساً, وَ–الشَّمْسُ
+  kor: 해–를, 그리고–해가, 그리고–해–가
+  swa: na–jua, wala–jua
+
+### Sense 142630 (4 occurrences)
+Grammar: Prep-l, Art | N-cs
+  eng: to–the–sun
+  spa: al–sol
+  hin: ल–ह–शेमेश, को–सूर्य
+  arb: لِلشَّمْسِ, لِـ–الشَّمْسِ
+  kor: 해에게, 에게–해, 그–태양을
+  swa: kwa–jua, jua
+
+### Sense 142631 (2 occurrences)
+Grammar: Art | N-cs,N-cs
+  eng: the–sun, sun
+  spa: Sol, El–sol
+  hin: सूर्य
+  arb: الشَّمْسُ
+  kor: 해–와, 그–해–가
+  swa: Jua
+
+### Sense 142632 (1 occurrences)
+Grammar: Prep-k, Art | N-cs
+  eng: as–the–sun
+  spa: como–el-sol
+  hin: जैसे–सूर्य
+  arb: كَالشَّمْسِ
+  kor: 해–처럼
+  swa: kama–jua
+
+### Sense 142633 (1 occurrences)
+Grammar: Art | N-cs
+  eng: the–sun
+  spa: el–sol
+  hin: सूर्य
+  arb: الشَّمْسَ
+  kor: 그–해를
+  swa: jua
+
+### Sense 142634 (1 occurrences)
+Grammar: N-csc | 2fs
+  eng: your–sun
+  spa: tu–sol
+  hin: तेरा–सूर्य
+  arb: شَمْسُكِ
+  kor: 너의–해가
+  swa: jua–lako
+
+### Sense 142635 (1 occurrences)
+Grammar: Prep-l, Art | N-cs
+  eng: for–the–sun
+  spa: para–el–sol
+  hin: ले–सूर्य–के–लिए
+  arb: لِلشَّمْسِ
+  kor: 태양–을–위해
+  swa: Kwa–jua
+
+### Sense 142636 (1 occurrences)
+Grammar: Prep-b, Art | N-cs
+  eng: backward
+  spa: con–el–sol
+  hin: सूर्य–से
+  arb: بِ–الشَّمْسِ
+  kor: 해에–의해
+  swa: kwa–jua
+
+### Sense 142637 (1 occurrences)
+Grammar: N-cpc | 2fs
+  eng: your–battlements
+  spa: tus–almenas
+  hin: तेरी–खिड़कियोंको
+  arb: نَوَافِذَكِ
+  kor: 네–창들을
+  swa: madirisha–yako
+
+### Sense 142638 (1 occurrences)
+Grammar: Conj-w, Prep-l, Art | N-cs
+  eng: and–to–the–sun
+  spa: y–al–sol
+  hin: और–को–सूर्य
+  arb: وَ–لِلشَّمْسِ
+  kor: 그리고–해에게
+  swa: na–jua
+
+### Sense 142639 (1 occurrences)
+Grammar: N-csc | 3fs
+  eng: her–sun
+  spa: sol–su
+  hin: उसका–सूर्य
+  arb: شَمْسُهَا
+  kor: 그녀의–해가
+  swa: jua–lake
+
+## Task
+
+Group these 13 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

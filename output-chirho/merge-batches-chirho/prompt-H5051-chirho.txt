@@ -1,0 +1,145 @@
+# Sense Merge Task for H5051
+
+Lemma: H5051 (POS: Conj-w | N-fsc)
+Total occurrences: 19
+Current sense count: 13
+
+This Hebrew/Greek lemma has been over-split into 13 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 116004 (5 occurrences)
+Grammar: Conj-w | N-fsc,Conj-w | N-fs
+  eng: and–brightness, and–brightness–of
+  spa: y–resplandor, y-resplandor-de, Y–el–resplandor
+  hin: और–चमक
+  arb: وَ–ضِياءٌ, وَ–لَمَعَانَ, وَسَنَاءٌ
+  kor: 그리고–광채가, 빛남이, 그리고–빛–이
+  swa: na–mwanga, na–mwangaza–wa, na–mng'ao
+
+### Sense 116005 (2 occurrences)
+Grammar: Prep-m | N-fs
+  eng: from–brightness
+  spa: del–resplandor, Del–resplandor
+  hin: से–चमक, चमक–से
+  arb: مِنَ–السَّنَا
+  kor: –에서–빛남
+  swa: kutoka–mwanga
+
+### Sense 116006 (2 occurrences)
+Grammar: N-msc | 3mp
+  eng: their-brightness
+  spa: resplandor–de–ellas
+  hin: चमक–अपनी।
+  arb: ضِياءَها
+  kor: 그들의–빛–을
+  swa: mwanga–wao
+
+### Sense 116007 (1 occurrences)
+Grammar: Prep-k, Art | N-fs
+  eng: like–the–brightness
+  spa: como–el–resplandor
+  hin: ज्योति–की–तरह
+  arb: كَ–السَّطَاعِ
+  kor: 밝음처럼
+  swa: kama–mwangaza
+
+### Sense 116008 (1 occurrences)
+Grammar: N-fs
+  eng: light
+  spa: resplandor
+  hin: प्रकाश
+  arb: نُورٌ
+  kor: 빛이
+  swa: nuru
+
+### Sense 116009 (1 occurrences)
+Grammar: N-fs
+  eng: dawn
+  spa: alba
+  hin: चमकती–हुई
+  arb: سَاطِعٍ
+  kor: 빛나는
+  swa: mapambazuko
+
+### Sense 116010 (1 occurrences)
+Grammar: N-fs
+  eng: brightness
+  spa: resplandor
+  hin: चमक
+  arb: ضِياءَ
+  kor: 빛남이
+  swa: mwangaza
+
+### Sense 116011 (1 occurrences)
+Grammar: Prep-l | N-fs
+  eng: at–the–gleam–of
+  spa: al–resplandor–de–
+  hin: चमक–के–लिए
+  arb: لِسَنَاءِ
+  kor: 에–번쩍임–으로
+  swa: kwa–mng'ao–wa
+
+### Sense 116012 (1 occurrences)
+Grammar: Art | N-fs
+  eng: the–brightness
+  spa: el–resplandor
+  hin: ती–चमक
+  arb: الـ–ضِّياءِ
+  kor: 그–광채의
+  swa: mwanga
+
+### Sense 116013 (1 occurrences)
+Grammar: Conj-w, Prep | N-fs
+  eng: and–for–brightness
+  spa: ni–para–resplandor
+  hin: और–चमकके–लिए
+  arb: وَ–لِ–سَطَاعٍ
+  kor: 그리고–에–밝음으로
+  swa: na–kwa–mwangaza
+
+### Sense 116014 (1 occurrences)
+Grammar: N-fsc
+  eng: brightness-of
+  spa: resplandor–de
+  hin: चमक
+  arb: ضِيَاءَ
+  kor: 빛으로
+  swa: mwangaza
+
+### Sense 116015 (1 occurrences)
+Grammar: Prep-m | N-fs
+  eng: from–the–brightness
+  spa: de–resplandor
+  hin: से–चमक
+  arb: مِنْ–سَنَاءٍ
+  kor: 빛–에서
+  swa: Kutoka–mwangaza
+
+### Sense 116016 (1 occurrences)
+Grammar: Prep-l | N-fsc
+  eng: to–brightness-of
+  spa: al–resplandor–de
+  hin: चमककी–ओर
+  arb: لِ–سَطَاعِ
+  kor: 에–밝음으로
+  swa: kwa–mwangaza
+
+## Task
+
+Group these 13 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

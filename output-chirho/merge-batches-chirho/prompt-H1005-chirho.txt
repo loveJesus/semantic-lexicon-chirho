@@ -1,0 +1,144 @@
+# Sense Merge Task for H1005
+
+Lemma: H1005 (POS: Conj-w | N-msc | 3ms)
+Total occurrences: 44
+Current sense count: 13
+
+This Hebrew/Greek lemma has been over-split into 13 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 86528 (21 occurrences)
+Grammar: N-msc
+  eng: the–house–of, house–of, house-of
+  spa: la–casa–de, casa–de–, casa–de
+  hin: भवन, भवन–के, भवन–के–लिए
+  arb: بَيْت–, بَيْت, بَيْتِ–
+  kor: 집–, 집
+  swa: nyumba–ya, nyumba, ya–nyumba–ya
+
+### Sense 86529 (5 occurrences)
+Grammar: N-msd
+  eng: house, the–house
+  spa: casa, la–casa, esta–casa
+  hin: भवन
+  arb: الْبَيْت–, الْبَيْت
+  kor: 그–집
+  swa: nyumba
+
+### Sense 86530 (3 occurrences)
+Grammar: Prep-l | N-msc
+  eng: for–the–house–of, to–house–of
+  spa: para–la–casa–de, a–casa–de
+  hin: भवन–के–लिए, भवन–को
+  arb: لِ–بَيْت, إِلَى–بَيْت
+  kor: 위해–집, 에–집
+  swa: kwa–nyumba, kwenye–nyumba
+
+### Sense 86531 (3 occurrences)
+Grammar: Prep-b | N-msc
+  eng: in–the–house–of, in–house–of
+  spa: en–la–casa–de, en–casa–de
+  hin: भवन–में, में
+  arb: في–بَيْت
+  kor: 에–집
+  swa: katika–nyumba
+
+### Sense 86532 (2 occurrences)
+Grammar: Prep-l | N-msc | 3ms
+  eng: to–his-house
+  spa: a–su–casa
+  hin: में–अपने–घर, को–अपने–घर
+  arb: لِ–بَيْتِهِ, إِلَى–بَيْتِهِ
+  kor: 집으로–그의, 그–의–집–에
+  swa: nyumba–yake, nyumbani–kwake
+
+### Sense 86533 (2 occurrences)
+Grammar: Conj-w | N-msc | 3ms
+  eng: and–his–house, and–his-house
+  spa: y–su–casa
+  hin: और–उसका–घर
+  arb: وَ–بَيْتُهُ
+  kor: 그리고–집이–그의, 그리고–그–의–집
+  swa: na–nyumba–zao, na–nyumba–yake
+
+### Sense 86534 (2 occurrences)
+Grammar: Conj-w | N-msd,Conj-w | N-msc
+  eng: and–house–of, and–house
+  spa: y–casa–de, y–casa
+  hin: और–भवन
+  arb: وَ–بَيْت, وَ–الْبَيْت–
+  kor: 그리고–집, 그리고–그–집
+  swa: na–nyumba
+
+### Sense 86535 (1 occurrences)
+Grammar: N-msc | 3ms
+  eng: his–house
+  spa: su–casa
+  arb: بَيْتِهِ
+  kor: 그–의–집
+  swa: nyumba–yake
+
+### Sense 86536 (1 occurrences)
+Grammar: Prep-l | N-msc
+  eng: for–house-of
+  spa: para–casa–de
+  hin: के–लिए–घर
+  arb: لِبَيْتِ
+  kor: 집–으로
+  swa: kuwa–nyumba–ya
+
+### Sense 86537 (1 occurrences)
+Grammar: Conj-w, Prep-b | N-mpc
+  eng: and–your-houses
+  spa: y–vuestras–casas
+  hin: और–तुम्हारे–घर
+  arb: وَ–بُيُوتُكُمْ
+  kor: 그리고–집들이–너희의
+  swa: na–nyumba–zenu
+
+### Sense 86538 (1 occurrences)
+Grammar: Prep-l | N-msc
+  eng: into–house-of
+  spa: a–la–sala–de
+  hin: में–घर
+  arb: إِلَى–بَيْتِ
+  kor: 집–에
+  swa: ndani–ya–nyumba–ya
+
+### Sense 86539 (1 occurrences)
+Grammar: N-msc | 3ms
+  eng: His-house
+  spa: su–casa
+  hin: उसके–घर–के
+  arb: بَيْتِهِ
+  kor: 그–의–집–의
+  swa: nyumba–yake
+
+### Sense 86540 (1 occurrences)
+Grammar: Prep-b | N-msc | 1cs
+  eng: in–my-house
+  spa: en–mi–casa
+  hin: अपने–घर–में
+  arb: فِي–بَيْتِي
+  kor: 내–집–에서
+  swa: katika–nyumba–yangu
+
+## Task
+
+Group these 13 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

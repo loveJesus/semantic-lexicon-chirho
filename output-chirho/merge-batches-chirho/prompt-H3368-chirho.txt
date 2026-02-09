@@ -1,0 +1,118 @@
+# Sense Merge Task for H3368
+
+Lemma: H3368 (POS: Adj-ms)
+Total occurrences: 36
+Current sense count: 10
+
+This Hebrew/Greek lemma has been over-split into 10 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 103597 (26 occurrences)
+Grammar: Adj-fs,Adj-fp,Adj-ms
+  eng: precious, costly
+  spa: preciosa, preciosas, precioso
+  hin: बहुमूल्य, कीमती
+  arb: كَرِيمٍ, ثَمِينَةٌ, كَرِيمَةً
+  kor: 귀한, 값진, 귨한
+  swa: ya–thamani, la–thamani, ykarah
+
+### Sense 103598 (2 occurrences)
+Grammar: Adj-ms
+  eng: precious
+  spa: preciosa
+  hin: शोभायमान, अनमोल
+  arb: ثَميناً, أَغْلى
+  kor: 귀하도다, 귀하게
+  swa: ulivyo-wa-thamani, mzuri
+
+### Sense 103599 (1 occurrences)
+Grammar: Prep-k | Adj-msc
+  eng: like–preciousness–of
+  spa: como–lo–precioso–de
+  hin: जैसे–शोभा
+  arb: كَ–فَخْرِ
+  kor: –귀함–같이
+  swa: kama–utukufu-wa
+
+### Sense 103600 (1 occurrences)
+Grammar: Adj-msc
+  eng: (precious–of)
+  spa: (y–precioso–de)
+  hin: बहुमूल्य
+  arb: (ثَمينُ)
+  kor: (귀한–)
+  swa: mwenye–utulivu
+
+### Sense 103601 (1 occurrences)
+Grammar: Adj-fp
+  eng: precious–ones
+  spa: esplendores
+  hin: बहुमूल्य
+  arb: مُكَرَّماتٌ
+  kor: 귀한–자들이
+  swa: ya–thamani
+
+### Sense 103602 (1 occurrences)
+Grammar: Adj-ms
+  eng: precious
+  spa: lo–precioso
+  hin: बहुमूल्य
+  arb: النَّفِيسَ
+  kor: 귀한–것을
+  swa: cha–thamani
+
+### Sense 103603 (1 occurrences)
+Grammar: Adj-fsc
+  eng: precious
+  spa: precio
+  hin: बहुमूल्य
+  arb: كَرِيمًا
+  kor: 귀한
+  swa: la–thamani
+
+### Sense 103604 (1 occurrences)
+Grammar: Art | Adj-mp
+  eng: the–precious–ones
+  spa: los–preciosos
+  hin: बहुमूल्य
+  arb: الثَّمِينُونَ
+  kor: 귀한
+  swa: wa–thamani
+
+### Sense 103605 (1 occurrences)
+Grammar: Adj-ms
+  eng: rare
+  spa: preciosa
+  hin: बहुमूल्य
+  arb: نَادِرَةً
+  kor: 귀한
+  swa: nadra
+
+### Sense 103606 (1 occurrences)
+Grammar: Prep-b | Adj-fpc | 2ms
+  eng: are–among–Your–precious–ones
+  spa: entre–tus–ilustres
+  hin: में–सम्मानित–स्त्रियों–तेरी
+  arb: في–كَريماتِكَ
+  kor: 주–의–귀한–것들–속에
+  swa: katika–wanawake-wako-wa-heshima
+
+## Task
+
+Group these 10 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

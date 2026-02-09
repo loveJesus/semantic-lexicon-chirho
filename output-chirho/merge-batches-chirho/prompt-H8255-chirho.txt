@@ -1,0 +1,127 @@
+# Sense Merge Task for H8255
+
+Lemma: H8255 (POS: Art | N-ms)
+Total occurrences: 88
+Current sense count: 11
+
+This Hebrew/Greek lemma has been over-split into 11 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 143731 (42 occurrences)
+Grammar: N-mp,N-ms,N-msc
+  eng: shekels, shekel
+  spa: siclos, siclo, siclos–de
+  hin: शेकेल, शेकेलीम
+  arb: شَاقِلًا, شَوَاقِلَ, شَاقِلٍ
+  kor: 세겔, 세겼, 세켈들
+  swa: shekeli
+
+### Sense 143732 (14 occurrences)
+Grammar: Prep-b | N-msc
+  eng: in–shekel-of
+  spa: en–siclo–de
+  hin: शेकेल–में
+  arb: بِ–شَاقِلِ
+  kor: 세겔–에
+  swa: kwa–shekeli–ya
+
+### Sense 143733 (11 occurrences)
+Grammar: Prep-b | N-msc
+  eng: by–shekel-of, by–shekel–of, by-shekel-of
+  spa: en–siclo–de, en–siclo-de, en–el–siclo–de
+  hin: शेकेल–के–अनुसार, में–शेकेल, शेकेल–में
+  arb: بِ–شَاقِلِ, بِشَقْلِ
+  kor: 에–세겔, 세겼에-따라, 세겔로
+  swa: kwa–shekeli, na–elfu, kwa–shekeli–
+
+### Sense 143734 (8 occurrences)
+Grammar: Art | N-ms
+  eng: the–shekel, the-shekel
+  spa: el–siclo, el-siclo
+  hin: शेकेल, शेकेल–का
+  arb: الشَّاقِلِ, الشَّاقِلُ, ال–شَّاقِلِ
+  kor: 그–세겔, 그–세겔의, 세겔은
+  swa: ya–shekeli, shekeli, ni–shekeli
+
+### Sense 143735 (6 occurrences)
+Grammar: Prep-b | N-ms
+  eng: for-a–shekel
+  spa: por–siclo
+  hin: बशेकेल
+  arb: بِ–شاقِلٍ
+  kor: 한–세겔에
+  swa: kwa–shekeli, kwa–shekeli–moja
+
+### Sense 143736 (2 occurrences)
+Grammar: N-msc
+  eng: shekels–of
+  spa: siclo–de
+  hin: शेकेल
+  arb: شِقْلَ, شِقْلٍ
+  kor: 세겔–의, 세겔
+  swa: sheqeli, fedha
+
+### Sense 143737 (1 occurrences)
+Grammar: N-mpc
+  eng: shekels-of
+  spa: siclos–de
+  hin: शेकेल
+  arb: شَواقِلَ
+  kor: 세겔들
+  swa: shekeli–za
+
+### Sense 143738 (1 occurrences)
+Grammar: Conj-w, Art | N-ms
+  eng: and–the-shekel
+  spa: Y–el–siclo
+  hin: और–शेकेल
+  arb: وَ–الشَّاقِلُ
+  kor: 그리고–그–세꼈
+  swa: Na–shekeli
+
+### Sense 143739 (1 occurrences)
+Grammar: N-msc
+  eng: shekel-of
+  spa: siclo–de
+  hin: शेकेल
+  arb: شَاقِلِ
+  kor: 세갈
+  swa: shekeli
+
+### Sense 143740 (1 occurrences)
+Grammar: Prep-l | N-mp
+  eng: to–shekels
+  spa: por–siclos
+  hin: के–लिए–शेकल
+  arb: بِ–شَوَاقِلَ
+  kor: 에게–세겤들
+  swa: shekeli
+
+### Sense 143741 (1 occurrences)
+Grammar: N-ms
+  eng: the–shekel
+  spa: el–siclo
+  hin: शेकेल
+  arb: الشَّاقِلَ
+  kor: 세겔을
+  swa: shekeli
+
+## Task
+
+Group these 11 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

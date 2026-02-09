@@ -1,0 +1,136 @@
+# Sense Merge Task for G1163
+
+Lemma: G1163 (POS: V-PPA-NNS)
+Total occurrences: 104
+Current sense count: 12
+
+This Hebrew/Greek lemma has been over-split into 12 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 64982 (75 occurrences)
+Grammar: V-PIA-3S,V-PPA-NNS,V-PNA
+  eng: it-is-necessary, it–is–necessary, must
+  spa: es–necesario, es-necesario, ser-necesario
+  hin: चाहिए, आवश्यक–है, अवश्य–है
+  arb: يَجِبُ, يَنْبَغِي, يَنبَغي
+  kor: 해야–한다, 필요하다, 필요하니
+  swa: ni–lazima, lazima, inavyopasa
+
+### Sense 64983 (13 occurrences)
+Grammar: V-IIA-3S
+  eng: it–was–necessary, it-was-necessary, was-necessary
+  spa: era–necesario, era-necesario, hubiera-sido-necesario
+  hin: चाहिए–था, आवश्यक–था, ज़रूरी–थी
+  arb: كَانَ–يَنْبَغِي, كانَ–يَنْبَغي, وَجَبَ
+  kor: 마땅히, 해야–했다, 마땅했다
+  swa: ilipasa, ilibidi, ulipaswa
+
+### Sense 64984 (4 occurrences)
+Grammar: V-PIA-3S
+  eng: It-is-necessary
+  spa: Es-necesario, es–necesario, Es–necesario
+  hin: चाहिए, अवश्य–है
+  arb: يَنْبَغِي, يَنْبَغي, يَنبَغي
+  kor: 반드시, 해야–한다, 필요하니
+  swa: Lazima, Ni–lazima, Inapasa
+
+### Sense 64985 (3 occurrences)
+Grammar: V-PIA-3S
+  eng: is–necessary, is-necessary
+  spa: es–necesario, es-necesario
+  hin: चाहिए, चहिये,
+  arb: يَجِبُ
+  kor: 필요한, 마땅한, 마땅하이
+  swa: inavyopasa, yopasa
+
+### Sense 64986 (2 occurrences)
+Grammar: V-PSA-3S
+  eng: it–is–necessary, it-is-necessary
+  spa: sea–necesario, fuera–necesario
+  hin: पड़े, अवश्य–हो
+  arb: وَجَبَ, اضْطُرِرْتُ
+  kor: 필요하더라도, 필요하다면
+  swa: itanipasa, itabidi
+
+### Sense 64987 (1 occurrences)
+Grammar: V-PPA-ANP
+  eng: proper
+  spa: debidas
+  hin: उछित
+  arb: يَجِبُ
+  kor: 해야–할–것들을.
+  swa: yofaa
+
+### Sense 64988 (1 occurrences)
+Grammar: V-IIA-3S
+  eng: it–was–necessary
+  spa: era–necesario
+  hin: चाहिए–था
+  arb: كانَ–يَنبَغي
+  kor: 마땅히
+  swa: ilipasa
+
+### Sense 64989 (1 occurrences)
+Grammar: V-IIA-3S
+  eng: It-was-necessary
+  spa: Era-necesario
+  hin: चाहिए–था
+  arb: كَانَ–يَنْبَغِي
+  kor: 필요했다
+  swa: Ilimbidi
+
+### Sense 64990 (1 occurrences)
+Grammar: V-PIA-3S
+  eng: it-should
+  spa: debe
+  hin: उचित–है
+  arb: يَنْبَغِي
+  kor: 되는
+  swa: hapaswi
+
+### Sense 64991 (1 occurrences)
+Grammar: V-PNA
+  eng: must
+  spa: deber
+  hin: आवश्यक–होना
+  arb: يَنبَغي
+  kor: 해야–함을
+  swa: kupaswa
+
+### Sense 64992 (1 occurrences)
+Grammar: V-IIA-3S
+  eng: It–was–necessary
+  spa: Era-necesario
+  hin: चाहिएथा
+  arb: كَانَ–يَنْبَغِي
+  kor: 마땅하였다
+  swa: Ilipaswa
+
+### Sense 64993 (1 occurrences)
+Grammar: V-PPA-NNS
+  eng: necessary
+  spa: necesario
+  hin: आवश्यक
+  arb: لابُدَّ
+  kor: 필요하면
+  swa: lazima
+
+## Task
+
+Group these 12 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

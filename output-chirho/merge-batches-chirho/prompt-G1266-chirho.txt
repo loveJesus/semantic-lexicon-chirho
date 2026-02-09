@@ -1,0 +1,118 @@
+# Sense Merge Task for G1266
+
+Lemma: G1266 (POS: V-AIM-3P)
+Total occurrences: 12
+Current sense count: 10
+
+This Hebrew/Greek lemma has been over-split into 10 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 65354 (2 occurrences)
+Grammar: V-AIM-3P
+  eng: they–divided, They–divided
+  spa: Repartieron
+  hin: बांट–लिए, बाँटा
+  arb: قَسَمُوا, اقْتَسَمُوا
+  kor: 나누었다
+  swa: Waligawana
+
+### Sense 65355 (2 occurrences)
+Grammar: V-APP-NFS,V-AIP-3S
+  eng: was-divided, having-been-divided
+  spa: fue–dividido, dividido
+  hin: बँटा–है, बँटा–हुआ
+  arb: مُنْقَسِمٍ, اِنْقَسَمَ
+  kor: 나누어지면
+  swa: ukigawanyika, amegawanyika
+
+### Sense 65356 (1 occurrences)
+Grammar: V-PPM-NMP
+  eng: dividing
+  spa: repartiéndose
+  hin: बाँटते–हुए
+  arb: مُقْتَسِمينَ
+  kor: 나누며
+  swa: wakigawanya
+
+### Sense 65357 (1 occurrences)
+Grammar: V-AMA-2P
+  eng: divide
+  spa: repartid
+  hin: बाँट–लो
+  arb: اقْتَسِموا
+  kor: 나누라
+  swa: gawaneni
+
+### Sense 65358 (1 occurrences)
+Grammar: V-RPM/P-NMP
+  eng: divided
+  spa: divididos
+  hin: बँटे–हुए
+  arb: مُنْقَسِمِينَ
+  kor: 나누어지리라
+  swa: wamegawanyika
+
+### Sense 65359 (1 occurrences)
+Grammar: V-PPM/P-NFP
+  eng: being–distributed
+  spa: repartiéndose
+  hin: जीभें
+  arb: مُنْقَسِمَةٌ
+  kor: 나누어지는
+  swa: zikigawanyika
+
+### Sense 65360 (1 occurrences)
+Grammar: V-IIA-3P
+  eng: were–distributing
+  spa: repartían
+  hin: जैसा
+  arb: وَزَّعُوهَا
+  kor: 나누었다
+  swa: waligawanya
+
+### Sense 65361 (1 occurrences)
+Grammar: V-PIM-3P
+  eng: divide
+  spa: reparten
+  hin: बाँटते–हैं
+  arb: يَقْتَسِمُونَ
+  kor: 나누어준다
+  swa: wanagawana
+
+### Sense 65362 (1 occurrences)
+Grammar: V-AIM-3P
+  eng: they–divided
+  spa: repartieron
+  hin: बांट–लिए
+  arb: اقْتَسَمُوا
+  kor: 나누었다
+  swa: waligawana
+
+### Sense 65363 (1 occurrences)
+Grammar: V-FIP-3P
+  eng: will-be-divided
+  spa: estarán-divididos
+  hin: बँटेंगे
+  arb: سَيَنْقَسِمُونَ
+  kor: 나누어지리라
+  swa: watagawanyika
+
+## Task
+
+Group these 10 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

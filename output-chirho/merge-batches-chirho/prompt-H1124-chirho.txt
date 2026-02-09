@@ -1,0 +1,125 @@
+# Sense Merge Task for H1124
+
+Lemma: H1124 (POS: V-Hitpael-Prtcpl-ms)
+Total occurrences: 22
+Current sense count: 11
+
+This Hebrew/Greek lemma has been over-split into 11 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 87110 (6 occurrences)
+Grammar: Prep-l | V-Qal-Inf
+  eng: to–build, for–the–building–of
+  spa: para–construir, para–construir., a–construir
+  hin: बनाने–के–लिए, बनाने
+  arb: لِ–بِنائِهِ, لِ–بِناء
+  kor: 위해–짓다, 위해–짓다–그것–을
+  swa: kujenga
+
+### Sense 87111 (5 occurrences)
+Grammar: V-Hitpael-Imperf-3fs,V-Hitpael-Imperf-3ms
+  eng: is–built, shall–be–built, let–it–be–built
+  spa: sea–construida, es–construida
+  hin: बनाया–जाए
+  arb: يُبْنَى, بُنِيَتْ, تُبْنَى
+  kor: 지어지라, 지어진다면
+  swa: utajengwa, ijengwe
+
+### Sense 87112 (2 occurrences)
+Grammar: V-Qal-Prtcpl-mp
+  eng: building
+  spa: construyen?, construyen
+  hin: बना–रहे–हैं
+  arb: يَبْنُونَهَا, يَبْنُونَ
+  kor: 짓는자들, 짓는다
+  swa: wanajenga
+
+### Sense 87113 (2 occurrences)
+Grammar: V-Hitpael-Prtcpl-ms
+  eng: being–built
+  spa: es–construida
+  hin: बनाया–जा–रहा–है
+  arb: يُبْنَى
+  kor: 지어진다
+  swa: kwa–mawe, inajengwa
+
+### Sense 87114 (1 occurrences)
+Grammar: Conj-w | V-Qal-Prtcpl-mp
+  eng: and–building
+  spa: y–construyendo
+  arb: وَ–نَبْنِي
+  kor: 그리고–짓는자들
+  swa: na–tunajenga
+
+### Sense 87115 (1 occurrences)
+Grammar: V-Qal-Prtcpl-mp
+  eng: were–building
+  spa: construían
+  hin: बनाया
+  arb: بَنَوْا
+  kor: 짓는자들
+  swa: walijenga
+
+### Sense 87116 (1 occurrences)
+Grammar: V-Qal-Imperf-3mp
+  eng: let–them–build
+  spa: construyan
+  hin: बनाने–दो
+  arb: لِيَبْنُوا
+  kor: 짓도록하라
+  swa: waijenge
+
+### Sense 87117 (1 occurrences)
+Grammar: Conj-w | V-Qal-ConjPerf-3mp
+  eng: and–they–built
+  spa: y–construyeron
+  hin: और–उन्होंने–बनाया
+  arb: وَ–بَنَوْا
+  kor: 그리고–지었다
+  swa: na–wakajenga
+
+### Sense 87118 (1 occurrences)
+Grammar: V-Qal-Perf-1cs | 3fs
+  eng: built-it
+  spa: edifiqué
+  hin: बनाया–है
+  arb: بَنَيْتُهَا
+  kor: 건설한
+  swa: nilijenga
+
+### Sense 87119 (1 occurrences)
+Grammar: V-Qal-QalPassPrtcpl-ms
+  eng: built
+  spa: construida
+  arb: بُنِيَ
+  kor: 지어진
+  swa: imejengwa
+
+### Sense 87120 (1 occurrences)
+Grammar: V-Qal-Perf-3ms | 3ms
+  eng: built–it
+  spa: la–construyó
+  hin: जिसने–बनाया
+  arb: بَناهُ
+  kor: 지었다–그것–을
+  swa: alijenga
+
+## Task
+
+Group these 11 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

@@ -1,0 +1,127 @@
+# Sense Merge Task for H8389
+
+Lemma: H8389 (POS: Prep-k | N-msc)
+Total occurrences: 15
+Current sense count: 11
+
+This Hebrew/Greek lemma has been over-split into 11 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 144438 (4 occurrences)
+Grammar: N-ms
+  eng: form
+  spa: forma
+  hin: आकार–में, रूप–की, रूप
+  arb: الْ–هَيْئَةِ, الْ–قَوَامِ, الْقَوَامِ
+  kor: 모습의, 용모와, 모양의
+  swa: wa–umbo, umbo, kuonekana
+
+### Sense 144439 (2 occurrences)
+Grammar: N-ms
+  eng: form
+  spa: forma, figura
+  hin: रूप–में, रूप–की
+  arb: الْمَنْظَرِ, المَنظَرِ
+  kor: 모습의
+  swa: wa–sura, na–akamzaa
+
+### Sense 144440 (1 occurrences)
+Grammar: N-msc | 3ms
+  eng: his–form
+  spa: forma–su
+  hin: उस्क-रोओप
+  arb: شَكلُهُ
+  kor: 그의–모양이냐
+  swa: sura–yake
+
+### Sense 144441 (1 occurrences)
+Grammar: N-ms
+  eng: form
+  spa: forma
+  hin: रुपवअन
+  arb: صُورَةٍ
+  kor: 모습의
+  swa: wa–sura–nzuri
+
+### Sense 144442 (1 occurrences)
+Grammar: Conj-w | N-msc | 3ms
+  eng: and–his–form
+  spa: y–su–forma
+  hin: मनुष्य–से
+  arb: وَ–هَيْئَتُهُ
+  kor: 그리고–그의–형상이
+  swa: na–umbo–lake
+
+### Sense 144443 (1 occurrences)
+Grammar: N-ms
+  eng: form
+  spa: forma
+  hin: रूप–में
+  arb: الشَّكْلِ
+  kor: 모양의
+  swa: wa–sura
+
+### Sense 144444 (1 occurrences)
+Grammar: N-ms
+  eng: form
+  spa: figura
+  hin: रूप
+  arb: الصُّورَةِ
+  kor: 모양의
+  swa: wa–sura
+
+### Sense 144445 (1 occurrences)
+Grammar: N-ms
+  eng: of–form
+  spa: forma
+  hin: आकार–वाला
+  arb: المَنْظَرِ
+  kor: 모양의
+  swa: mazuri
+
+### Sense 144446 (1 occurrences)
+Grammar: N-msc | 3mp
+  eng: their–appearance
+  spa: es–su–apariencia
+  hin: उनका–रूप
+  arb: شَكْلُهُمْ
+  kor: 그들–모습–이
+  swa: sura–yao
+
+### Sense 144447 (1 occurrences)
+Grammar: Prep-k | N-msc
+  eng: like–appearance-of
+  spa: como–forma–de
+  hin: रूपमें
+  arb: كَـ-هَيْئَة
+  kor: 같이–모양
+  swa: kama–umbo–la
+
+### Sense 144448 (1 occurrences)
+Grammar: N-ms
+  eng: form
+  spa: forma
+  hin: रूप
+  arb: شَكْلٌ
+  kor: 형상이
+  swa: sura
+
+## Task
+
+Group these 11 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

@@ -1,0 +1,118 @@
+# Sense Merge Task for H7019
+
+Lemma: H7019 (POS: Conj-w | N-ms)
+Total occurrences: 20
+Current sense count: 10
+
+This Hebrew/Greek lemma has been over-split into 10 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 132165 (5 occurrences)
+Grammar: Prep-b, Art | N-ms
+  eng: in–summer, in–the–summer
+  spa: en–el–verano
+  hin: गर्मी–में, में–गर्मी
+  arb: فِي–الصَّيْفِ, بِ–الصَّيْفِ
+  kor: 여름–에, 여름에, ~에–여름
+  swa: wakati–wa–kiangazi, katika–kiangazi
+
+### Sense 132166 (4 occurrences)
+Grammar: N-ms
+  eng: summer, which, the–summer
+  spa: verano
+  hin: गर्मी, ग्रीष्म–के
+  arb: الصَّيْفِ, الصَّيْفُ, الصَّيْفَ
+  kor: 여름, 여름이
+  swa: kiangazi
+
+### Sense 132167 (2 occurrences)
+Grammar: N-msc | 2fs
+  eng: your–summer–fruit, your–summer-fruit
+  spa: tu–cosecha–de–verano
+  hin: तेरी–गर्मियों–की–फसल
+  arb: قِطَافِكِ, صَيْفِكِ
+  kor: 네–여름–과일과, 너의–여름–과실과
+  swa: mavuno–yako, matunda–yako–ya–kiangazi
+
+### Sense 132168 (2 occurrences)
+Grammar: Conj-w | N-ms
+  eng: and–summer–fruit
+  spa: y–fruta–de–verano
+  hin: और–फल
+  arb: وَ–فَاكِهَةً–صَيْفِيَّةً
+  kor: 그리고–여름–과일을, 그리고–여름–과일
+  swa: na–matunda–ya–kiangazi
+
+### Sense 132169 (2 occurrences)
+Grammar: N-ms
+  eng: summer-fruit
+  spa: fruta–de–verano
+  hin: गर्मी–के–फल–की।, गर्मी–के–फल–की
+  arb: فَاكِهَةِ–صَيْفٍ
+  kor: 여름–과일의
+  swa: matunda–ya–kiangazi
+
+### Sense 132170 (1 occurrences)
+Grammar: N-ms
+  eng: summer–fruit
+  spa: verano
+  hin: गर्मी–के
+  arb: الصَّيْفِ
+  kor: 여름–과일–의
+  swa: majira–ya–kiangazi
+
+### Sense 132171 (1 occurrences)
+Grammar: Art | N-ms
+  eng: the–summer
+  spa: el–verano
+  hin: गर्मी–के
+  arb: الصَّيْفِ
+  kor: 여름의
+  swa: kiangazi
+
+### Sense 132172 (1 occurrences)
+Grammar: Conj-w, Art | N-ms
+  eng: and–the–summer-fruit
+  spa: y–los–frutos–de–verano
+  hin: और–गर्मी–के–फल
+  arb: وَالتينُ–
+  kor: 그리고–여름–과일은
+  swa: na–matunda–ya–kiangazi
+
+### Sense 132173 (1 occurrences)
+Grammar: N-ms
+  eng: summer-fruit
+  spa: frutos–de–verano
+  hin: गर्मी–के–फल
+  arb: تينٍ
+  kor: 여름–과일과
+  swa: matunda–ya–kiangazi
+
+### Sense 132174 (1 occurrences)
+Grammar: Conj-w | N-ms
+  eng: and–summer
+  spa: y–verano
+  hin: और-ग्रीशम
+  arb: وَ–صَيْفٌ
+  kor: 그리고–여름
+  swa: na–kiangazi
+
+## Task
+
+Group these 10 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

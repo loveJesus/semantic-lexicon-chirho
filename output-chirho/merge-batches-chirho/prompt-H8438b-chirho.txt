@@ -1,0 +1,154 @@
+# Sense Merge Task for H8438b
+
+Lemma: H8438b (POS: N-fsc | 3mp)
+Total occurrences: 39
+Current sense count: 14
+
+This Hebrew/Greek lemma has been over-split into 14 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 144730 (19 occurrences)
+Grammar: Conj-w | N-fsc
+  eng: and–worm–of, and–worm-of, and–scarlet-of
+  spa: y–gusano–de, y-gusano-de
+  hin: और–कीड़ा, और–कीड़े–की, और–कीड़े–का
+  arb: وَ–دُودَ, وَ–قِرمِزٍ, وَ–دُودِ
+  kor: 그리고–볌간–실, 그리고–벨레, 그리고–벌레
+  swa: na–nyuzi–za–, na–nyuzi, na–mdudu–wa–
+
+### Sense 144731 (5 occurrences)
+Grammar: N-fs,Art | N-fs
+  eng: the–yarn, yarn
+  spa: el–gusano, gusano
+  hin: शनी, जरा, चूजों
+  arb: دُودِيًّا, الدُّودِيَّةَ, الدُّودِيَّةِ
+  kor: 실의
+  swa: mdudu
+
+### Sense 144732 (3 occurrences)
+Grammar: N-fsc
+  eng: worm-of, worm–of
+  spa: gusano-de, gusano–de
+  hin: कीड़े–का, कीड़े–की
+  arb: قِرمِزٍ, دُودِ, القِرمِزَ
+  kor: 볌간–실을, 볌간–실, 벨레
+  swa: nyuzi, nyuzi–za–
+
+### Sense 144733 (2 occurrences)
+Grammar: N-fsc,N-fs
+  eng: a–worm
+  spa: gusano
+  hin: कीड़ा–हूँ, कीड़ा
+  arb: دُودَةٌ, دُودَةً
+  kor: 벌레라, 벌레–를
+  swa: mdudu
+
+### Sense 144734 (1 occurrences)
+Grammar: N-fs
+  eng: worm
+  spa: gusano
+  hin: कीड़ा
+  arb: دُودٍ
+  kor: 벌레
+  swa: za–mdudu
+
+### Sense 144735 (1 occurrences)
+Grammar: Conj-w, Prep-b | N-fsc
+  eng: and–in–worm–of
+  spa: y–en–gusano–de
+  hin: और–कीड़े–की
+  arb: وَ–بِ–دُودِ
+  kor: 그리고–에–벨레
+  swa: na–katika–nyuzi–za–
+
+### Sense 144736 (1 occurrences)
+Grammar: N-fs
+  eng: worm
+  spa: gusanos
+  hin: कीट
+  arb: رِمَةٌ
+  kor: 볌레라
+  swa: funza
+
+### Sense 144737 (1 occurrences)
+Grammar: N-fsc
+  eng: scarlet-of
+  spa: el–gusano–de
+  hin: कीड़ा
+  arb: دودَةَ
+  kor: 벌레
+  swa: mdudu–wa–
+
+### Sense 144738 (1 occurrences)
+Grammar: Art | N-fs
+  eng: the–worm
+  spa: el–gusano
+  hin: कीड़ा।
+  arb: الدُّودَةُ
+  kor: 그–벌레가
+  swa: minyoo
+
+### Sense 144739 (1 occurrences)
+Grammar: Prep-b | N-fsc
+  eng: in–scarlet-of
+  spa: en–el–gusano–de
+  hin: कीड़े–में
+  arb: بِـ–دودَةِ
+  kor: 벌레로
+  swa: kwa–mdudu–wa–
+
+### Sense 144740 (1 occurrences)
+Grammar: N-fs
+  eng: a–worm
+  spa: lombriz
+  hin: कीट
+  arb: تُرابٌ
+  kor: 볌레이니라
+  swa: mdudu
+
+### Sense 144741 (1 occurrences)
+Grammar: N-fsc
+  eng: O–worm
+  spa: gusano
+  hin: कीड़े
+  arb: يَا–دُودَةَ
+  kor: 벌레
+  swa: mdudu
+
+### Sense 144742 (1 occurrences)
+Grammar: N-fsc
+  eng: worm-of
+  spa: gusano-de
+  hin: कीड़े
+  arb: قِرْمِزٍ
+  kor: 벌레–의
+  swa: rangi-ya-mdudu
+
+### Sense 144743 (1 occurrences)
+Grammar: N-fsc | 3mp
+  eng: their–worm
+  spa: su–gusano
+  hin: कीड़ा–उनका
+  arb: دُودَهُمْ
+  kor: 그들의–벌레가
+  swa: minyoo–yao
+
+## Task
+
+Group these 14 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.

@@ -1,0 +1,136 @@
+# Sense Merge Task for H8403
+
+Lemma: H8403 (POS: Prep-k | N-fsc)
+Total occurrences: 20
+Current sense count: 12
+
+This Hebrew/Greek lemma has been over-split into 12 sense clusters by an automated algorithm. The algorithm fragmented by grammatical inflection (person, number, gender, prepositional prefix) when it should only split by MEANING.
+
+For each sense cluster below, I show: occurrence count, grammar tags, and top glosses in English/Spanish/Hindi.
+
+## Current Sense Clusters
+
+### Sense 144527 (5 occurrences)
+Grammar: N-fsc
+  eng: likeness–of
+  spa: forma–de
+  hin: रूप, जिसे
+  arb: شَكْلَ
+  kor: 모양을
+  swa: mfano–wa
+
+### Sense 144528 (3 occurrences)
+Grammar: N-fsc
+  eng: pattern-of
+  spa: diseño–de, modelo–de
+  hin: नमूना
+  arb: رَسمَ, بِنْيَةَ
+  kor: 모양을, 본
+  swa: mfano, mfano–wa
+
+### Sense 144529 (3 occurrences)
+Grammar: N-fsc
+  eng: form-of
+  spa: forma–de
+  hin: आकृति
+  arb: شَكْلِ, شَكْلُ, شَكْلَ
+  kor: 형상이라, 형상이, 형상을
+  swa: mfano
+
+### Sense 144530 (1 occurrences)
+Grammar: N-fsc
+  eng: the–pattern–of
+  spa: plano–de
+  hin: नक्शा
+  arb: رَسْمَ
+  kor: 도면
+  swa: mchoro–wa
+
+### Sense 144531 (1 occurrences)
+Grammar: N-fsc
+  eng: form-of
+  spa: modelo-de
+  hin: आकृति
+  arb: بِـ–شَكْلِ
+  kor: 모양의
+  swa: mtindo–wa
+
+### Sense 144532 (1 occurrences)
+Grammar: N-fsc | 3ms
+  eng: its-pattern
+  spa: su–modelo
+  hin: नमूना–उसका
+  arb: نَمُوذَجِهِ
+  kor: 그것의–설계를
+  swa: mpango–wake
+
+### Sense 144533 (1 occurrences)
+Grammar: Conj-w | N-fsc
+  eng: And–the–pattern–of
+  spa: Y–plano–de
+  hin: और–नक्शा
+  arb: وَرَسْمَ
+  kor: 그리고–도면
+  swa: na–mchoro–wa
+
+### Sense 144534 (1 occurrences)
+Grammar: Prep-k | N-fsc
+  eng: like–the–form–of
+  spa: como–figura
+  hin: जैसी–आकृति
+  arb: كَشَكْلِ
+  kor: 모양으로–
+  swa: kama–mfano
+
+### Sense 144535 (1 occurrences)
+Grammar: Conj-w, Prep-l | N-fsc
+  eng: and–for–the–pattern–of
+  spa: y–para–plano–de
+  hin: और–नक्शे
+  arb: وَلِرَسْمِ
+  kor: 그리고–에–대한–도면
+  swa: na–kwa–mchoro–wa
+
+### Sense 144536 (1 occurrences)
+Grammar: Art | N-fs
+  eng: the–pattern
+  spa: el–plano
+  hin: –के–नक्शे
+  arb: الرَّسْمِ
+  kor: 그–도면의
+  swa: mchoro
+
+### Sense 144537 (1 occurrences)
+Grammar: Prep-b | N-fsc
+  eng: for–the–image–of
+  spa: por–imagen–de
+  hin: रूप–में
+  arb: بِ–صورَة
+  kor: 형상–으로
+  swa: kwa–mfano–wa
+
+### Sense 144538 (1 occurrences)
+Grammar: Prep-b | N-fsc | 3mp
+  eng: according-to-their-pattern
+  spa: según–su–diseño
+  hin: उनके–नमूने–के–अनुसार
+  arb: بِ–رَسمِها
+  kor: 그들의–모양대로
+  swa: kwa–mfano–wao
+
+## Task
+
+Group these 12 sense clusters into the REAL senses of this word. Typical Hebrew/Greek words have 2-8 genuine senses. Different grammatical inflections of the same meaning (e.g., "returned" vs "return" vs "will return") are the SAME sense. Different verb stems (Qal vs Hifil vs Piel) often ARE different senses.
+
+Respond with a JSON array where each element is a merged sense:
+```json
+[
+  {
+    "labelChirho": "short sense label (2-5 words)",
+    "descriptionChirho": "one sentence description",
+    "senseIdsChirho": [list of sense_id numbers to merge into this sense]
+  }
+]
+```
+
+IMPORTANT: Every sense ID from the input must appear in exactly one group. Return ONLY the JSON array, no other text.
