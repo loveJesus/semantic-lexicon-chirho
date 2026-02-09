@@ -24,7 +24,7 @@ export const load: PageServerLoad = async ({ params }) => {
     )
     .all(lemmaIdChirho);
 
-  // For each sense, get sample occurrences with glosses
+  // For each sense, get sample occurrences with glosses and 3-level domains
   const senseDetailsChirho = sensesChirho.map((senseChirho: any) => {
     const occurrencesChirho = dbChirho
       .prepare(
@@ -51,10 +51,11 @@ export const load: PageServerLoad = async ({ params }) => {
 
     const domainAssignmentsChirho = dbChirho
       .prepare(
-        `SELECT d.name_chirho, da.fit_score_chirho
+        `SELECT d.name_chirho, d.hierarchy_chirho, da.fit_score_chirho
          FROM domain_assignment_chirho da
          JOIN domain_chirho d ON da.domain_id_chirho = d.domain_id_chirho
-         WHERE da.sense_id_chirho = ?`
+         WHERE da.sense_id_chirho = ?
+         ORDER BY d.hierarchy_chirho`
       )
       .all(senseChirho.sense_id_chirho);
 

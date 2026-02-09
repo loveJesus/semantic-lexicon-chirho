@@ -1,0 +1,19 @@
+# For God so loved the world that he gave his only begotten Son,
+# that whoever believes in him should not perish but have eternal life.
+
+name = "lexicon-chirho"
+account_id = "aecd5616f7ef88323e52b6406ba384bd"
+main = ".svelte-kit/cloudflare/_worker.js"
+compatibility_date = "2025-01-01"
+compatibility_flags = ["nodejs_compat"]
+workers_dev = true
+routes = [{ pattern = "lexicon-chirho.bible.systems", custom_domain = true }]
+
+[assets]
+directory = ".svelte-kit/cloudflare"
+binding = "ASSETS"
+
+[[d1_databases]]
+binding = "DB_CHIRHO"
+database_name = "lexicon-chirho"
+database_id = "dba34731-a9c6-4d5e-b42f-daf6b8061013"

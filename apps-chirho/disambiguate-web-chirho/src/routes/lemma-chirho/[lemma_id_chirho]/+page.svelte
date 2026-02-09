@@ -2,6 +2,19 @@
      that whoever believes in him should not perish but have eternal life. -->
 <script lang="ts">
 	let { data } = $props();
+
+	const HIERARCHY_STYLES_CHIRHO: Record<string, { bgChirho: string; fgChirho: string }> = {
+		macro32: { bgChirho: '#1a3a2a', fgChirho: '#98c379' },
+		louw_nida: { bgChirho: '#1a2a3a', fgChirho: '#61afef' },
+		community: { bgChirho: '#2a1a3a', fgChirho: '#c678dd' }
+	};
+
+	function domainLabelChirho(daChirho: any): string {
+		if (daChirho.hierarchy_chirho === 'louw_nida') {
+			return daChirho.name_chirho.replace(/^LN\d+_/, '').replace(/_/g, ' ');
+		}
+		return daChirho.name_chirho.replace(/_/g, ' ');
+	}
 </script>
 
 <a href="/lemma-chirho" style="color: var(--muted-chirho);">Back to Lemmas</a>
@@ -31,10 +44,11 @@
 		{/if}
 
 		{#if senseChirho.domainAssignmentsChirho?.length > 0}
-			<div style="margin-top: 8px;">
+			<div style="margin-top: 8px; display: flex; gap: 6px; flex-wrap: wrap;">
 				{#each senseChirho.domainAssignmentsChirho as daChirho}
-					<span style="background: #1a3a5c; padding: 2px 8px; border-radius: 4px; margin-right: 4px; font-size: 12px;">
-						{daChirho.name_chirho} ({daChirho.fit_score_chirho})
+					{@const styleChirho = HIERARCHY_STYLES_CHIRHO[daChirho.hierarchy_chirho] || { bgChirho: '#1a3a5c', fgChirho: 'var(--accent-chirho)' }}
+					<span style="background: {styleChirho.bgChirho}; color: {styleChirho.fgChirho}; padding: 2px 8px; border-radius: 4px; font-size: 11px;" title="{daChirho.hierarchy_chirho}: {daChirho.name_chirho}">
+						{domainLabelChirho(daChirho)}
 					</span>
 				{/each}
 			</div>

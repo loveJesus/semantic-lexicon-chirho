@@ -28,11 +28,11 @@ export const load: PageServerLoad = async ({ params }) => {
     const domainsChirho = wChirho.sense_id_chirho
       ? (dbChirho
           .prepare(
-            `SELECT d.domain_id_chirho, d.name_chirho, d.level_chirho, da.fit_score_chirho
+            `SELECT d.domain_id_chirho, d.name_chirho, d.level_chirho, d.hierarchy_chirho, da.fit_score_chirho
              FROM domain_assignment_chirho da
              JOIN domain_chirho d ON da.domain_id_chirho = d.domain_id_chirho
              WHERE da.sense_id_chirho = ?
-             ORDER BY d.level_chirho`
+             ORDER BY d.hierarchy_chirho`
           )
           .all(wChirho.sense_id_chirho) as Record<string, any>[])
       : [];

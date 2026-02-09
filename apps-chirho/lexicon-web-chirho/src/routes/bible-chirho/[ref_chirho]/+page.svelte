@@ -1,0 +1,283 @@
+<!-- For God so loved the world that he gave his only begotten Son,
+     that whoever believes in him should not perish but have eternal life. -->
+<script lang="ts">
+	let { data } = $props();
+
+	const BOOK_KEYS_CHIRHO: Record<number, string> = {
+		1:'gen',2:'exod',3:'lev',4:'num',5:'deut',6:'josh',7:'judg',8:'ruth',
+		9:'1sam',10:'2sam',11:'1kgs',12:'2kgs',13:'1chr',14:'2chr',15:'ezra',
+		16:'neh',17:'esth',18:'job',19:'ps',20:'prov',21:'eccl',22:'song',
+		23:'isa',24:'jer',25:'lam',26:'ezek',27:'dan',28:'hos',29:'joel',
+		30:'amos',31:'obad',32:'jonah',33:'mic',34:'nah',35:'hab',36:'zeph',
+		37:'hag',38:'zech',39:'mal',40:'matt',41:'mark',42:'luke',43:'john',
+		44:'acts',45:'rom',46:'1cor',47:'2cor',48:'gal',49:'eph',50:'phil',
+		51:'col',52:'1thess',53:'2thess',54:'1tim',55:'2tim',56:'titus',
+		57:'phlm',58:'heb',59:'jas',60:'1pet',61:'2pet',62:'1john',63:'2john',
+		64:'3john',65:'jude',66:'rev'
+	};
+
+	const BOOK_NAMES_CHIRHO: Record<number, string> = {
+		1:'Genesis',2:'Exodus',3:'Leviticus',4:'Numbers',5:'Deuteronomy',
+		6:'Joshua',7:'Judges',8:'Ruth',9:'1 Samuel',10:'2 Samuel',
+		11:'1 Kings',12:'2 Kings',13:'1 Chronicles',14:'2 Chronicles',
+		15:'Ezra',16:'Nehemiah',17:'Esther',18:'Job',19:'Psalms',20:'Proverbs',
+		21:'Ecclesiastes',22:'Song of Solomon',23:'Isaiah',24:'Jeremiah',
+		25:'Lamentations',26:'Ezekiel',27:'Daniel',28:'Hosea',29:'Joel',
+		30:'Amos',31:'Obadiah',32:'Jonah',33:'Micah',34:'Nahum',35:'Habakkuk',
+		36:'Zephaniah',37:'Haggai',38:'Zechariah',39:'Malachi',
+		40:'Matthew',41:'Mark',42:'Luke',43:'John',44:'Acts',45:'Romans',
+		46:'1 Corinthians',47:'2 Corinthians',48:'Galatians',49:'Ephesians',
+		50:'Philippians',51:'Colossians',52:'1 Thessalonians',53:'2 Thessalonians',
+		54:'1 Timothy',55:'2 Timothy',56:'Titus',57:'Philemon',58:'Hebrews',
+		59:'James',60:'1 Peter',61:'2 Peter',62:'1 John',63:'2 John',
+		64:'3 John',65:'Jude',66:'Revelation'
+	};
+
+	const OT_BOOKS_CHIRHO = Array.from({length: 39}, (_, i) => i + 1);
+	const NT_BOOKS_CHIRHO = Array.from({length: 27}, (_, i) => i + 40);
+
+	let showBookPickerChirho = $state(false);
+
+	// Group words by verse
+	function verseGroupsChirho() {
+		const groupsChirho: Record<number, typeof data.wordsChirho> = {};
+		for (const wChirho of data.wordsChirho) {
+			const vChirho = wChirho.verse_chirho as number;
+			if (!groupsChirho[vChirho]) groupsChirho[vChirho] = [];
+			groupsChirho[vChirho].push(wChirho);
+		}
+		return Object.entries(groupsChirho)
+			.map(([vChirho, wsChirho]) => ({ verseChirho: parseInt(vChirho), wordsChirho: wsChirho }))
+			.sort((aChirho, bChirho) => aChirho.verseChirho - bChirho.verseChirho);
+	}
+
+	let versesChirho = $derived(verseGroupsChirho());
+	let bookKeyChirho = $derived(BOOK_KEYS_CHIRHO[data.bookNumChirho] || data.bookKeyChirho);
+</script>
+
+<style>
+	.word-chirho {
+		display: inline-block;
+		position: relative;
+		padding: 2px 1px;
+		border-radius: 3px;
+		transition: background 0.15s;
+		text-decoration: none;
+		color: inherit;
+	}
+	.word-chirho:hover {
+		background: var(--surface-chirho);
+		text-decoration: none;
+	}
+	.word-surface-chirho {
+		font-size: 19px;
+		line-height: 1.4;
+	}
+	.word-sub-chirho {
+		display: block;
+		font-size: 10px;
+		font-family: 'Source Sans 3', sans-serif;
+		color: var(--muted-chirho);
+		text-align: center;
+		line-height: 1.1;
+		margin-top: 1px;
+		font-weight: 600;
+	}
+	.verse-row-chirho {
+		display: flex;
+		align-items: flex-start;
+		gap: 12px;
+		padding: 6px 0;
+		border-bottom: 1px solid var(--border-chirho);
+	}
+	.verse-ref-chirho {
+		min-width: 32px;
+		color: var(--muted-chirho);
+		font-size: 12px;
+		font-family: 'Source Sans 3', sans-serif;
+		font-weight: 600;
+		padding-top: 4px;
+		text-align: right;
+		user-select: none;
+	}
+	.verse-text-chirho {
+		flex: 1;
+		display: flex;
+		flex-wrap: wrap;
+		gap: 6px;
+	}
+	.verse-text-rtl-chirho {
+		direction: rtl;
+	}
+	.nav-chirho {
+		display: flex;
+		gap: 12px;
+		align-items: center;
+		margin-bottom: 16px;
+		flex-wrap: wrap;
+		font-family: 'Source Sans 3', sans-serif;
+		font-size: 13px;
+	}
+	.nav-chirho a {
+		padding: 4px 10px;
+		border-radius: 4px;
+		background: var(--surface-chirho);
+		border: 1px solid var(--border-chirho);
+	}
+	.chapter-grid-chirho {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 4px;
+	}
+	.chapter-grid-chirho a {
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		width: 28px;
+		height: 28px;
+		font-size: 11px;
+		font-family: 'Source Sans 3', sans-serif;
+		background: var(--surface-chirho);
+		border: 1px solid var(--border-chirho);
+		border-radius: 4px;
+	}
+	.chapter-grid-chirho a.active-chirho {
+		background: var(--accent-chirho);
+		color: #fff;
+		font-weight: bold;
+		border-color: var(--accent-chirho);
+	}
+	.book-picker-chirho {
+		background: var(--surface-chirho);
+		border: 1px solid var(--border-chirho);
+		border-radius: 8px;
+		padding: 16px;
+		margin-bottom: 16px;
+	}
+	.book-section-chirho {
+		margin-bottom: 12px;
+	}
+	.book-section-chirho h3 {
+		font-size: 11px;
+		color: var(--muted-chirho);
+		margin: 0 0 6px 0;
+		text-transform: uppercase;
+		letter-spacing: 1px;
+	}
+	.book-grid-chirho {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 3px;
+	}
+	.book-grid-chirho a {
+		padding: 3px 6px;
+		font-size: 11px;
+		font-family: 'Source Sans 3', sans-serif;
+		background: none;
+		border: 1px solid var(--border-chirho);
+		border-radius: 3px;
+		white-space: nowrap;
+	}
+	.book-grid-chirho a:hover {
+		background: var(--border-chirho);
+		text-decoration: none;
+	}
+	.book-grid-chirho a.current-chirho {
+		background: var(--accent-chirho);
+		color: #fff;
+		border-color: var(--accent-chirho);
+		font-weight: bold;
+	}
+	.picker-toggle-chirho {
+		background: var(--surface-chirho);
+		border: 1px solid var(--border-chirho);
+		color: var(--accent-chirho);
+		padding: 6px 14px;
+		border-radius: 6px;
+		cursor: pointer;
+		font-family: 'Source Sans 3', sans-serif;
+		font-size: 13px;
+		font-weight: 600;
+	}
+	.picker-toggle-chirho:hover {
+		border-color: var(--accent-chirho);
+	}
+</style>
+
+<div style="margin-bottom: 12px; font-family: 'Source Sans 3', sans-serif; font-size: 13px;">
+	<a href="/" style="color: var(--muted-chirho);">Home</a>
+	<span style="color: var(--border-chirho);"> / </span>
+	<a href="/bible-chirho/{bookKeyChirho}.1" style="color: var(--muted-chirho);">{data.bookNameChirho}</a>
+	<span style="color: var(--border-chirho);"> / </span>
+	<span>{data.chapterChirho}</span>
+</div>
+
+<h1 style="margin-bottom: 8px;">{data.bookNameChirho} {data.chapterChirho}</h1>
+
+<!-- Book picker toggle -->
+<div style="margin-bottom: 12px;">
+	<button class="picker-toggle-chirho" onclick={() => showBookPickerChirho = !showBookPickerChirho}>
+		{showBookPickerChirho ? 'Hide' : 'Choose'} Book {showBookPickerChirho ? '&#9652;' : '&#9662;'}
+	</button>
+</div>
+
+{#if showBookPickerChirho}
+	<div class="book-picker-chirho">
+		<div class="book-section-chirho">
+			<h3>Old Testament</h3>
+			<div class="book-grid-chirho">
+				{#each OT_BOOKS_CHIRHO as bChirho}
+					<a href="/bible-chirho/{BOOK_KEYS_CHIRHO[bChirho]}.1"
+						class:current-chirho={bChirho === data.bookNumChirho}>{BOOK_NAMES_CHIRHO[bChirho]}</a>
+				{/each}
+			</div>
+		</div>
+		<div class="book-section-chirho">
+			<h3>New Testament</h3>
+			<div class="book-grid-chirho">
+				{#each NT_BOOKS_CHIRHO as bChirho}
+					<a href="/bible-chirho/{BOOK_KEYS_CHIRHO[bChirho]}.1"
+						class:current-chirho={bChirho === data.bookNumChirho}>{BOOK_NAMES_CHIRHO[bChirho]}</a>
+				{/each}
+			</div>
+		</div>
+	</div>
+{/if}
+
+<div class="nav-chirho">
+	{#if data.chapterChirho > 1}
+		<a href="/bible-chirho/{bookKeyChirho}.{data.chapterChirho - 1}">Ch. {data.chapterChirho - 1}</a>
+	{/if}
+	<span style="color: var(--muted-chirho);">Chapter {data.chapterChirho} of {data.maxChapterChirho}</span>
+	{#if data.chapterChirho < data.maxChapterChirho}
+		<a href="/bible-chirho/{bookKeyChirho}.{data.chapterChirho + 1}">Ch. {data.chapterChirho + 1}</a>
+	{/if}
+</div>
+
+<details style="margin-bottom: 16px;">
+	<summary style="cursor: pointer; color: var(--muted-chirho); font-size: 12px; font-family: 'Source Sans 3', sans-serif;">All chapters</summary>
+	<div class="chapter-grid-chirho" style="margin-top: 6px;">
+		{#each Array.from({length: data.maxChapterChirho}, (_, i) => i + 1) as cChirho}
+			<a href="/bible-chirho/{bookKeyChirho}.{cChirho}"
+				class:active-chirho={cChirho === data.chapterChirho}>{cChirho}</a>
+		{/each}
+	</div>
+</details>
+
+<div style="font-family: 'SBL Hebrew', 'SBL Greek', 'Gentium Plus', 'Cardo', serif;">
+	{#each versesChirho as vGroupChirho}
+		<div class="verse-row-chirho">
+			<div class="verse-ref-chirho">{vGroupChirho.verseChirho}</div>
+			<div class="verse-text-chirho" class:verse-text-rtl-chirho={data.isOtChirho}>
+				{#each vGroupChirho.wordsChirho as wChirho}
+					<a class="word-chirho" href="/lemma-chirho/{wChirho.lemma_id_chirho}{wChirho.ordinal_chirho ? '?sense=' + wChirho.ordinal_chirho : ''}" title="{wChirho.lemma_id_chirho} — {wChirho.grammar_chirho || ''}{wChirho.label_chirho ? ' — ' + wChirho.label_chirho : ''}">
+						<span class="word-surface-chirho">{wChirho.surface_chirho}</span>
+						<span class="word-sub-chirho">
+							{wChirho.lemma_id_chirho}{#if wChirho.ordinal_chirho}.{wChirho.ordinal_chirho}{/if}
+						</span>
+					</a>
+				{/each}
+			</div>
+		</div>
+	{/each}
+</div>

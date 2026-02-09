@@ -7,17 +7,48 @@ import type { PageServerLoad } from "./$types";
 export const load: PageServerLoad = async () => {
   const dbChirho = getDbChirho();
 
-  const domainsChirho = dbChirho
+  // Macro-32 domains (top level)
+  const macro32Chirho = dbChirho
     .prepare(
-      `SELECT d.domain_id_chirho, d.name_chirho, d.level_chirho, d.description_chirho,
-              d.elicitation_chirho, d.parent_id_chirho,
-              COUNT(da.sense_id_chirho) as sense_count_chirho
+      `SELECT d.domain_id_chirho, d.name_chirho, d.description_chirho,
+              (SELECT COUNT(DISTINCT da.sense_id_chirho)
+               FROM domain_assignment_chirho da
+               WHERE da.domain_id_chirho = d.domain_id_chirho) as sense_count_chirho,
+              (SELECT COUNT(*) FROM domain_chirho c
+               WHERE c.hierarchy_chirho = 'louw_nida' AND c.parent_id_chirho = d.domain_id_chirho) as ln_count_chirho
        FROM domain_chirho d
-       LEFT JOIN domain_assignment_chirho da ON d.domain_id_chirho = da.domain_id_chirho
-       GROUP BY d.domain_id_chirho
-       ORDER BY d.level_chirho, d.name_chirho`
+       WHERE d.hierarchy_chirho = 'macro32'
+       ORDER BY d.name_chirho`
     )
     .all() as Record<string, any>[];
 
-  return { domainsChirho };
+  // Louw-Nida 93 domains (mid level)
+  const louwNidaChirho = dbChirho
+    .prepare(
+      `SELECT d.domain_id_chirho, d.name_chirho, d.description_chirho, d.parent_id_chirho,
+              (SELECT COUNT(DISTINCT da.sense_id_chirho)
+               FROM domain_assignment_chirho da
+               WHERE da.domain_id_chirho = d.domain_id_chirho) as sense_count_chirho,
+              (SELECT COUNT(*) FROM domain_chirho c
+               WHERE c.hierarchy_chirho = 'community' AND c.parent_id_chirho = d.domain_id_chirho) as community_count_chirho
+       FROM domain_chirho d
+       WHERE d.hierarchy_chirho = 'louw_nida'
+       ORDER BY d.name_chirho`
+    )
+    .all() as Record<string, any>[];
+
+  // Community fine domains (bottom level)
+  const communitiesChirho = dbChirho
+    .prepare(
+      `SELECT d.domain_id_chirho, d.name_chirho, d.description_chirho, d.parent_id_chirho,
+              (SELECT COUNT(DISTINCT da.sense_id_chirho)
+               FROM domain_assignment_chirho da
+               WHERE da.domain_id_chirho = d.domain_id_chirho) as sense_count_chirho
+       FROM domain_chirho d
+       WHERE d.hierarchy_chirho = 'community'
+       ORDER BY sense_count_chirho DESC`
+    )
+    .all() as Record<string, any>[];
+
+  return { macro32Chirho, louwNidaChirho, communitiesChirho };
 };
