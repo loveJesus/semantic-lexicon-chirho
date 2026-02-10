@@ -1,0 +1,291 @@
+# Sense Refinement Detection — Batch 026
+
+You are a biblical lexicographer reviewing sense entries for a Hebrew/Aramaic/Greek lexicon.
+Each entry below is a single "sense" that was produced by clustering translation signatures 
+and then merging with an LLM. Some senses may have been OVER-LUMPED — they contain genuinely 
+distinct meanings that should be separate senses.
+
+## Your Task
+
+For each sense, determine if it should be SPLIT into multiple senses. Look for:
+- Literal vs. figurative/metaphorical uses lumped together
+- Concrete vs. abstract meanings combined
+- Multiple distinct referents (e.g., "father" = biological parent + patron/advisor + originator)
+- Physical vs. spiritual/theological uses merged
+- Different syntactic frames producing different meanings
+
+## Output Format
+
+Return a JSON array. For senses that need NO splitting, omit them entirely.
+For senses that SHOULD be split, include an entry like:
+
+```json
+[
+  {
+    "senseIdChirho": 79287,
+    "lemmaIdChirho": "H0001",
+    "currentLabelChirho": "father, immediate male parent",
+    "splitProposalChirho": [
+      {
+        "newLabelChirho": "biological/legal father",
+        "criteriaChirho": "Direct parent-child relationship, possessive constructions with specific person"
+      },
+      {
+        "newLabelChirho": "metaphorical father (patron, advisor, protector)",
+        "criteriaChirho": "Title of respect for prophets, advisors, or authority figures; 'father to Pharaoh' type usage"
+      }
+    ],
+    "confidenceChirho": "high",
+    "reasoningChirho": "Description explicitly mentions 'title of respect or metaphorical originator' alongside biological father"
+  }
+]
+```
+
+Only propose splits where you have MEDIUM or HIGH confidence. Do NOT split function words (articles, 
+prepositions, particles, conjunctions) unless there is a genuinely distinct semantic sense (not just 
+syntactic variation). Proper nouns generally should NOT be split.
+
+If NO senses in this batch need splitting, return an empty array: []
+
+## Senses to Review
+
+### H8130 / Sense 142679 (53 occ, sense 2 of 6)
+**Label:** Qal ptcp: hater, enemy
+**Lemma gloss:** To hate, detest, feel aversion toward; as participle: enemy, adversary; as passive: unloved, disfavored
+**Description:** The Qal active participle used substantively to denote a person who hates, i.e. an adversary or enemy; frequently occurs with pronominal suffixes ('those who hate me/you/him/us/them') and functions as a noun meaning 'hater' or 'enemy' in context.
+**Enriched:** The Qal active participle functioning substantivally as 'hater, enemy, adversary.' This is one of Hebrew's chief words for personal enemy, appearing constantly with pronominal suffixes: שֹׂנְאַי 'those who hate me' (Exod 20:5; Ps 69:5). Korean 미워하는 자들 and Swahili wanaonichukia capture the participial-as-noun pattern naturally. In Exodus 18:21 it describes the quality leaders must possess—שֹׂנְאֵי בָצַע, 'haters of unjust gain'—showing the participle can denote moral character.
+
+### G1860 / Sense 67462 (52 occ, sense 1 of 1)
+**Label:** promise, pledge
+**Lemma gloss:** Promise or pledge, especially God's covenant promises to Abraham, Israel, and believers through Christ.
+**Description:** A solemn declaration or assurance, especially a divine promise or covenant commitment; encompasses all case forms (nominative, genitive, dative, accusative) in both singular and plural. Multilingual translations uniformly confirm a single core meaning: spa promesa/promesas, arb الوَعدِ/الوَعدُ (al-wa'd), kor 약속 (yaksok), swa ahadi, hin प्रतिज्ञा/वअद. The genitive 'of promise' (S67464) is merely a grammatical case variant, not a distinct lexical sense, as confirmed by identical renderings across all target languages.
+**Enriched:** A solemn divine pledge or covenant commitment. In Paul's letters the word anchors the argument that God's saving purposes flow through promise to Abraham, not through law (Gal 3:14-18; Rom 4:13-16). In Acts it denotes the promise of the Holy Spirit fulfilled at Pentecost (Acts 1:4; 2:33). Hebrews celebrates the faithfulness of those who died without receiving the promises yet embraced them from afar (Heb 11:13). The German Verheissung and French promesse both convey this as a binding, authoritative declaration rather than a casual commitment.
+
+### G2078 / Sense 68244 (52 occ, sense 1 of 2)
+**Label:** last, final (temporal/ordinal)
+**Lemma gloss:** Last, final, furthest; pertaining to the end of a sequence in time or the extremity of space.
+**Description:** Pertaining to the end or conclusion of a temporal sequence, used of the last days (Acts 2:17 'in the last days'), the last trumpet (1 Cor 15:52), the last state of a person (Matt 12:45 'the last state is worse than the first'), or the last in rank/order. Multilingual evidence: eng 'last/last-things/last-state', spa 'ultimo/ultimas-cosas', hin 'antim/antim-dasha', arb 'al-akhir/al-akhira', kor 'majimak/najungi', swa 'ya-mwisho/hali-ya-mwisho'. S68244 covers the core temporal/ordinal uses and S68246 the substantivized 'last things/state' -- both temporal 'last.'
+**Enriched:** Last or final in a temporal or ordinal sequence, describing the concluding point of a series. This dominant sense (52x) covers eschatological phrases like 'last days' (Acts 2:17, 2 Tim 3:1), 'last trumpet' (1 Cor 15:52), and the morally loaded 'last state' of a person (Matt 12:45, 2 Pet 2:20). Spanish 'último/última,' French 'dernier,' and German 'letzter' all consistently render the temporal sense. Jesus' reversals in Matt 19:30 and 20:16 play on ordinal ranking.
+
+### G3813 / Sense 73700 (52 occ, sense 1 of 1)
+**Label:** child, young child, infant
+**Lemma gloss:** A small child, infant, or young boy/girl; diminutive of pais, used especially of the infant Jesus and children in Gospel narratives.
+**Description:** A young child, infant, or small boy/girl; the diminutive of παῖς used throughout the Gospels for Jesus as an infant (Matt 2:8-14; Luke 2:17, 27, 40), for children brought to Jesus (Matt 18:2-5; 19:13-14; Mark 10:15), and as a term of endearment for disciples (1 John 2:18). Multilingual evidence is uniform across number: Spanish 'niño/niños', Hindi 'बालक/बच्चे', Arabic 'طِفْل/أَوْلَاد', Korean '아이/아이들', Swahili 'mtoto/watoto'. The singular cluster (S73700) and plural cluster (S73701) are purely grammatical number variants of the same lexical sense — a young child or infant — not semantically distinct meanings.
+**Enriched:** A young child, infant, or small boy or girl, expressing the diminutive and affectionate sense of pais. Most prominent in the Gospels for the infant Jesus whom the magi sought and Herod hunted (Matt 2:8-14), for children Jesus embraced as models of kingdom entry (Matt 18:2-5; 19:13-14), and for newborns in John 16:21. German Kindlein and French petit-enfant reflect the tender, diminutive nuance. In Hebrews 2:13-14 it extends metaphorically to the children God has given to Christ, whom he redeems by sharing their mortal nature.
+
+### H1768 / Sense 91553 (52 occ, sense 3 of 6)
+**Label:** genitive marker (of/belonging to)
+**Lemma gloss:** Aramaic relative/conjunction particle: who, which, that; of (genitive); because; when; where.
+**Description:** The genitive or possessive marker function, equivalent to Hebrew construct state, marking possession or attribution ('the God of heaven', 'the vessels of the house'); identified by English 'of', Hindi के/की/का (postpositions), Korean 의 (genitive particle), Swahili wa/ya (possessive concords), Spanish de.
+**Enriched:** The genitive marker: 'of, belonging to' — functioning like Hebrew construct state to express possession, attribution, or material relationship (52 occurrences). 'The God of heaven' (אֱלָהּ שְׁמַיָּא... דִּי), 'the vessels of the house.' English 'of,' French de, Spanish de, and Hindi का/के/की all employ dedicated genitive particles, confirming this as a distinct syntactic function. Concentrated in Daniel 2, where divine attributes and royal possessions are described.
+
+### H1841 / Sense 91961 (52 occ, sense 1 of 1)
+**Label:** Daniel (proper name)
+**Lemma gloss:** Daniel ('God is my judge'), proper name of the exilic prophet and visionary, plus two other biblical figures.
+**Description:** The personal name Daniel/Daniy'el (meaning 'God is my judge'), referring primarily to the exilic prophet and wise man of the book of Daniel, and also to a son of David (1 Chr 3:1) and a postexilic priest (Ezra 8:2, Neh 10:7). All 52 occurrences represent the same proper noun with various prepositions (to, against, in/concerning): spa 'Daniel/a Daniel/contra Daniel,' arb 'دَانِياَلُ/عَلَى دَانِياَلَ/فِي دَانِياَلَ,' kor '다니엘이/다니엘에게,' swa 'Danieli/dhidi ya Danieli/kuhusu Danieli,' hin 'दानिय्येल/दानिय्येल के विरुद्ध.'
+**Enriched:** The personal name Daniel (Daniy'el, 'God is my judge'), chiefly referring to the exilic prophet and wise man who served in the courts of Nebuchadnezzar, Belshazzar, and Darius (Dan 2:13-6:28). His name also belongs to a son of David (1 Chr 3:1) and a postexilic priestly signatory (Neh 10:7). The uniform transliteration across Spanish, French, and German confirms this as a fixed proper noun. Occurrences are heavily concentrated in the book of Daniel itself, where all but two of the 52 uses are found.
+
+### H3117 / Sense 101484 (52 occ, sense 2 of 5)
+**Label:** one's days, lifetime
+**Lemma gloss:** Day, time, lifetime; a unit of time ranging from a single day to an era or lifespan, also used in temporal and comparative expressions.
+**Description:** The span of someone's life or reign, expressed as 'his days,' 'our days,' 'your days,' 'their days,' referring to one's allotted time of living.
+**Enriched:** The biographical sense: 'one's days' as a metonym for a person's lifetime, reign, or allotted span. Phrases like 'the days of Peleg' (Gen 10:25), 'all the days of your life,' and 'his days were 930 years' use yom plurally to encompass an entire existence. The possessive suffix is key — 'his-days,' 'your-days,' 'their-days' — as reflected in Spanish 'días-de-él,' French 'de-son-jours,' and German 'auf-sein-Tag.' This sense appears in both biographical summaries and divine decrees limiting someone's days (e.g., Exod 5:13, Lev 23:37).
+
+### H3925 / Sense 108961 (52 occ, sense 1 of 4)
+**Label:** Piel: teach, instruct
+**Lemma gloss:** To learn, study (Qal); to teach, instruct, train (Piel); a teacher (Piel ptcp.); trained, accustomed (Pual/passive)
+**Description:** The primary Piel (intensive-causative) sense of למד meaning to teach, instruct, or train someone; consistently glossed with Arabic عَلَّمَ (Form II causative 'teach'), Korean 가르치다 (teach), Swahili -fundisha (causative 'teach'), Spanish enseñar (teach), and Hindi सिखाना (teach), encompassing all finite Piel forms (perfect, imperfect, imperative, infinitive, cohortative, consecutive) as well as active participial uses meaning 'teaching' — the core transitive pedagogical sense of the factitive stem.
+**Enriched:** The dominant Piel sense: actively teaching, instructing, or training someone. This is the causative counterpart to the Qal — the teacher's side of the learning relationship. Arabic عَلَّمَ (Form II causative) and Korean 가르치다 consistently confirm the causative-teaching semantics. Especially prominent in Deuteronomy, where Moses is commanded to teach Israel God's statutes (Deut 4:1, 4:10, 4:14), and in the Psalms, where the psalmist asks God directly: 'Teach me your statutes' (Ps 119:12, 26, 64, 68).
+
+### H4279 / Sense 110959 (52 occ, sense 1 of 1)
+**Label:** tomorrow (temporal adverb)
+**Lemma gloss:** Tomorrow, the next day; also used idiomatically for 'in time to come' or 'in the future.'
+**Description:** A Hebrew adverb (מָחָר) meaning 'tomorrow, the next day', used both independently and with the preposition le- ('for tomorrow'). Found frequently in narrative contexts indicating the following day (e.g., Exod 8:19; 9:5; 1 Sam 11:9-10; Josh 11:6). Multilingual evidence is consistent across all forms: eng 'tomorrow/for-tomorrow', spa 'manana/para-manana', arb 'غَدًا/لِغَدٍ', kor '내일/내일을-위하여', swa 'kesho/kwa-kesho', hin 'कल/कल-के-लिए'. The prepositional form le-machar (S110961) is the same temporal adverb with a grammatical preposition, not a separate sense.
+**Enriched:** Tomorrow or the next day, used both as a concrete time reference and in the idiomatic sense of 'in the future, in time to come.' Moses repeatedly announces plagues for 'tomorrow' (Exod 8:23; 9:5, 18), while Joshua uses it to mean 'when future generations ask' (Josh 4:6, 21; 22:24). The construction ka'et machar ('about this time tomorrow') adds temporal precision in royal and prophetic speech (1 Sam 9:16; 1 Kgs 19:2; 20:6). Proverbs 27:1 deploys it for its philosophical weight: do not boast about tomorrow. Spanish manana and French demain preserve the same dual literal-and-figurative range.
+
+### H5159 / Sense 117146 (52 occ, sense 2 of 2)
+**Label:** heritage as covenant portion
+**Lemma gloss:** Inheritance, possession; allotted land or estate; covenantal heritage where God or his people are the treasured portion.
+**Description:** Metaphorical or covenantal inheritance where God's people are his heritage or God himself is the psalmist's portion, emphasizing relational belonging rather than physical land.
+**Enriched:** Metaphorical or covenantal inheritance expressing relational belonging rather than physical land. God declares Israel to be 'my inheritance' (Deut 4:20; 1 Kgs 8:51), and the psalmist responds that God himself is 'my portion and my inheritance' (Ps 16:5-6). French mon héritage and Spanish mi heredad carry the same possessive intimacy. This reciprocal usage — God possessing Israel, Israel possessing God — is one of the most theologically charged patterns in the Hebrew Bible (cf. Exod 15:17; Num 18:20).
+
+### H6440 / Sense 127850 (52 occ, sense 3 of 5)
+**Label:** before, prior to / formerly
+**Lemma gloss:** face, presence, surface; also before (spatial/temporal)
+**Description:** Temporal use meaning 'before, prior to' (a person or event in time) or adverbially 'formerly, in earlier times, of old' (lephanim), cross-linguistically marked by Arabic qabla/qadiman, Korean jeon-e/ijeon-e, Swahili kabla/zamani, distinct from the spatial 'in front of'.
+**Enriched:** The literal physical face of a human being or animal. Glosses use anatomical face vocabulary (Spanish rostro/cara, Arabic وَجْهَ, Hindi मुँह), clearly marking this as the concrete bodily sense rather than the metaphorical extensions.
+
+### H6571b / Sense 128846 (52 occ, sense 1 of 1)
+**Label:** horseman, cavalryman
+**Lemma gloss:** Horseman or cavalryman; a mounted warrior, usually appearing in military contexts alongside chariotry.
+**Description:** A mounted warrior or rider on horseback, used of military cavalry in singular and plural forms across all grammatical contexts.
+**Enriched:** A mounted warrior or cavalryman, typically appearing in plural alongside chariot forces in military narratives. Egyptian horsemen pursue Israel at the Sea (Exod 14:9, 17-28), Philistine parashim vastly outnumber Saul's forces (1 Sam 13:5), and Nahum 3:3 depicts the terrifying charge of Ninevite cavalry. The Arabic cognate faris and Ethiopic faras confirm the deep Semitic association of this root with horse-mounted combat. Cross-linguistic renderings -- Spanish jinetes, French cavaliers, German Reiter -- consistently reflect the military equestrian meaning rather than a civilian rider.
+
+### H7235a / Sense 134381 (52 occ, sense 3 of 7)
+**Label:** be/become many, multiply (Qal)
+**Lemma gloss:** To be or become many, multiply, increase; (Hifil) to make many, cause to multiply; (adverbially) much, greatly, exceedingly
+**Description:** Qal intransitive: to become many, multiply, increase in number -- the subject itself grows numerous (Arabic kathura/yakthuru, Korean 많아지다, Swahili -ongezeka).
+**Enriched:** Qal intransitive (52x): to become many, multiply, increase on one's own. Arabic kathura and Swahili -ongezeka render the spontaneous growth. The creation narrative's 'and they multiplied' (Gen 7:17–18; 8:17) and Israel's demographic explosion in Egypt (Exod 1:20) illustrate populations growing without an expressed causative agent.
+
+### H8077a / Sense 141990 (52 occ, sense 1 of 2)
+**Label:** desolation, waste (abstract state)
+**Lemma gloss:** Desolation, devastation, waste; concretely, desolate place(s) or ruin(s)
+**Description:** The state or condition of being laid waste; devastation, ruin as an abstract concept, often used predicatively or in purpose clauses (e.g., 'I will make it a desolation').
+**Enriched:** The abstract state of devastation or waste (52x), used predicatively or in purpose clauses throughout the prophets. Lev 26:33 warns that the land will become a שְׁמָמָה, and Isa 6:11 envisions cities lying desolate. Ezekiel alone accounts for 18+ occurrences, often paired with מְשַׁמָּה for intensification (Ezek 35:7). The convergence of 'desolation/desolación/désolation/Oede' across translations confirms the abstract, stative reading as the dominant sense.
+
+### H8163b / Sense 142993 (52 occ, sense 1 of 2)
+**Label:** male goat, he-goat
+**Lemma gloss:** A male goat (he-goat), especially as a sacrificial animal; rarely a shaggy creature or goat-demon.
+**Description:** A male goat used in sacrificial, ritual, or agricultural contexts, the primary and most frequent meaning of שָׂעִיר as a noun.
+**Enriched:** Male goat or he-goat used in sacrificial and ritual contexts. The primary meaning across 52 occurrences, central to Priestly legislation. Spanish macho cabrio and French bouc de capture the cultic animal consistently (Gen 37:31, where Joseph's brothers dip his coat in goat's blood; Lev 4:23-24 for the sin offering; Lev 16:5-22 for the Day of Atonement).
+
+### H8334 / Sense 144151 (52 occ, sense 1 of 2)
+**Label:** to minister, serve
+**Lemma gloss:** To minister or serve in an honored capacity; as a substantive, a minister, attendant, or servant of high standing.
+**Description:** The verbal action of serving or ministering, whether in cultic/priestly service or personal attendance, in all finite and infinitive forms.
+**Enriched:** The verbal action of ministering or serving in a position of honor, whether in cultic/priestly duty or personal attendance upon a superior. Covers finite and infinitive forms of the Piel stem. Spanish para-ministrar and German dienen capture the elevated register. The Levites serve (sharat) before the tabernacle (Num 3:6), and the priests minister in the sanctuary (Exod 28:35).
+
+### G1124 / Sense 64841 (51 occ, sense 1 of 1)
+**Label:** Scripture / the Scriptures (sacred writings)
+**Lemma gloss:** Scripture or the Scriptures; the sacred authoritative writings, referring to the Hebrew Bible and, in later NT usage, apostolic texts.
+**Description:** The sacred authoritative writings, referring to the Hebrew Bible (Old Testament) and, by extension in later NT usage, to apostolic writings recognized as having divine authority. The two clusters split singular (31x: 'the Scripture') from plural (20x: 'the Scriptures'), but both denote the same referent — the inspired written word of God. Translations are perfectly parallel across languages: Spanish 'Escritura/Escrituras,' Hindi 'शास्त्र/शास्त्रों' and 'पवित्रशास्त्र/पवित्रशास्त्रों' (holy scripture/s), Arabic 'الكِتاب/كُتُب' (the Book/books — same root k-t-b), Korean '성경/성경들' (Bible/Bibles), Swahili 'Maandiko/maandiko' (writings — capitalization varies but the word is identical). Singular uses often introduce quotation formulas ('the Scripture says,' John 7:38, Gal 3:8), while plural uses reference the corpus as a whole ('searching the Scriptures,' John 5:39, Acts 17:11).
+**Enriched:** The sacred authoritative writings, primarily the Hebrew Bible as cited throughout the New Testament. The singular graphe typically introduces a specific passage ('this Scripture,' Mark 12:10; John 19:37), while the plural hai graphai refers to the scriptural canon as a whole ('you err, not knowing the Scriptures,' Matt 22:29). Jesus grounds his mission in the necessity of scriptural fulfillment (Matt 26:54, 56; Luke 24:27, 44-45), and Paul makes the Scriptures foundational to his kerygma (1 Cor 15:3-4; Rom 1:2). German Schrift and French Ecriture preserve the etymological link to 'writing' while conveying sacred authority.
+
+### G1453 / Sense 66124 (51 occ, sense 1 of 6)
+**Label:** be raised / rise from the dead
+**Lemma gloss:** To raise up, wake, arise; especially of resurrection from the dead; also to get up physically, appear, or rouse from sleep
+**Description:** Passive or middle intransitive use referring to resurrection: the subject is raised from the dead or rises to life. English 'has been raised / was raised / is raised,' Spanish 'ha resucitado / fue resucitado / resucita,' Arabic قامَ/يَقومُ, Korean 일으켜졌다/살아나셨다, Swahili amefufuliwa/amefufuka.
+**Enriched:** Passive or middle intransitive resurrection: the subject is raised from the dead or rises to life. This is the theologically dominant NT sense, appearing in creedal formulas (1 Cor 15:4 ἐγήγερται, 'he has been raised') and throughout the Gospel narratives. The divine passive is crucial—Spanish ha resucitado, Arabic أُقِيمَ, Korean 살아나셨다 all preserve the implication that God is the unspoken agent. Used of both Christ's resurrection and the general resurrection (Matt 11:5, 'the dead are raised').
+
+### G3361 / Sense 72363 (51 occ, sense 4 of 6)
+**Label:** purpose/fear negative (lest)
+**Lemma gloss:** Not (subjective negation); lest; emphatic never; interrogative expecting 'no'; except; perhaps.
+**Description:** Negative particle of apprehension or prevention used after verbs of fearing or in purpose clauses: 'lest,' 'so that...not,' 'for fear that.'
+**Enriched:** Purpose or fear clause negation: 'lest,' 'so that...not,' 'for fear that.' After verbs of fearing or caution — 'lest you strike your foot against a stone' (Matt 4:6). Spanish no sea que, French de peur que, German damit nicht all deploy dedicated apprehensive constructions matching this function.
+
+### G3366 / Sense 72379 (51 occ, sense 1 of 3)
+**Label:** nor
+**Lemma gloss:** Nor, and not; as adverb: not even — negative particle extending or intensifying denial
+**Description:** nor, not (51 occurrences across 1 original clusters)
+**Enriched:** The primary conjunctive use: 'nor,' 'and not' — connecting a negative clause to a preceding negation, extending the scope of denial or prohibition. This is the dominant New Testament function, appearing heavily in Jesus' instructions: 'Do not worry about your life, nor (μηδέ) about your body' (Matt 6:25); 'Do not give what is holy to dogs, nor (μηδέ) cast your pearls before swine' (Matt 7:6). The Spanish 'ni' and French 'ni' exactly mirror this linking-negation function, chaining prohibitions into a rhetorical sequence.
+
+### G4678 / Sense 76580 (51 occ, sense 1 of 1)
+**Label:** of wisdom
+**Lemma gloss:** wisdom — skill, insight, or prudence; in Scripture, the divine attribute and its human reflection in right living
+**Description:** of wisdom, wisdom, with wisdom (51 occurrences across 2 original clusters)
+**Enriched:** Wisdom as a comprehensive quality embracing divine insight, practical discernment, and moral understanding. In the Synoptics, it denotes the extraordinary teaching authority of Jesus (Matt 13:54; Mark 6:2) and the proverbial wisdom of Solomon (Matt 12:42; Luke 11:31). In Paul, sophia undergoes a dramatic redefinition: the world's wisdom is folly before God, while Christ crucified becomes 'the wisdom of God' (1 Cor 1:21-24). In Luke 2:40, 52, the child Jesus grows in sophia as a mark of messianic development. The domain tagging as 'conflict' likely reflects passages where human and divine wisdom clash (1 Cor 1-3), but the word itself is fundamentally a cognitive-moral term. All 51 occurrences share this unified sense of insight rightly applied.
+
+### G5259 / Sense 78160 (51 occ, sense 2 of 3)
+**Label:** under
+**Lemma gloss:** Under, by (agency); with genitive marks the agent performing an action; with accusative indicates position beneath or subordination.
+**Description:** under (51 occurrences across 3 original clusters)
+**Enriched:** Spatial position with the accusative case: 'under, beneath, below.' Covering 51 occurrences, this sense denotes physical location under an object or metaphorical subordination under authority. A lamp is not placed 'under' a basket (Matt 5:15); the centurion declares himself a man 'under' authority (Matt 8:9); Jesus longs to gather Jerusalem's children 'under' his wings (Matt 23:37). Spanish bajo/debajo de, German unter, and Korean arae-e (아래에) all select positional-spatial vocabulary, and the accusative case in Greek itself signals directionality or extent rather than agency.
+
+### H0014 / Sense 79516 (51 occ, sense 1 of 2)
+**Label:** be willing, want
+**Lemma gloss:** To be willing, consent; expressing volitional readiness or deliberate agreement, very often negated.
+**Description:** To be willing or desirous of doing something, expressing volitional inclination or readiness, often used in the negative (was not willing).
+**Enriched:** To be willing, to want or be disposed to do something -- expressing volitional inclination or readiness. Though the underlying meaning is positive ('be willing'), it most often appears negated, forming a strong idiom for refusal. Spanish 'quiso' (from querer, 'to want') captures the volitional core. French 'disposé/fut disposé' and German 'bereit/willig' emphasize readiness. Key: Deut 1:26 (Israel's refusal to enter Canaan), 2 Kgs 13:23 (God's willingness not to destroy). The Ethiopic cognate means 'refuse,' hinting that the negative frame may be original.
+
+### H0157 / Sense 80168 (51 occ, sense 2 of 6)
+**Label:** lover, friend (Qal participle substantive)
+**Lemma gloss:** To love; as participle: lover, friend, paramour; passive: beloved; also the abstract noun 'love' (ahavah)
+**Description:** The Qal active participle used substantivally to denote a person who loves — a lover, friend, companion, or ally — including forms with pronominal suffixes (my friend, your friend, his friends, those who love him/me/you).
+**Enriched:** The Qal active participle used substantivally: a lover, friend, ally, or devotee. Fifty-one occurrences including 'those who love me' in the Decalogue promise (Exod 20:6) and 'the one who loves wisdom' (Prov 29:3). Arabic muhibb ('one who loves') and Spanish el-que-ama confirm the substantivized agent noun, yielding 'my friends/allies' with suffixes.
+
+### H0637 / Sense 83623 (51 occ, sense 1 of 7)
+**Label:** indeed, surely (emphatic)
+**Lemma gloss:** Also, indeed, even, yea; an emphatic conjunction adding force, marking inclusion, or introducing a fortiori arguments.
+**Description:** Emphatic affirmative particle reinforcing a statement, equivalent to English 'indeed, surely, yea, certainly'; often at the head of a clause for rhetorical emphasis.
+**Enriched:** The emphatic-affirmative use: 'indeed, surely, yea.' Comprising 51 occurrences, this sense launches forceful declarations, especially in poetry. Ps 16:6-9 stacks four ʾap clauses to build crescendo praise. Translations render it as 'indeed/ciertamente/aussi/ja,' each capturing rhetorical reinforcement rather than mere addition.
+
+### H2962 / Sense 100472 (51 occ, sense 1 of 3)
+**Label:** before (temporal)
+**Lemma gloss:** Before, not yet; a temporal adverb indicating precedence in time or the unrealized state of an expected event.
+**Description:** Temporal adverb/preposition indicating precedence in time: before something happens or happened.
+**Enriched:** Temporal adverb or conjunction meaning 'before' an event occurs. This is the overwhelming use (51 of 57 occurrences), governing imperfect verbs to establish sequence: 'before they lay down' (Gen 19:4), 'before he had finished speaking' (Gen 24:15). Spanish antes de que and French devant consistently render this temporal precedence. The word structures some of Scripture's most vivid narrative moments, marking the precise instant before a scene changes.
+
+### H3077 / Sense 101360 (51 occ, sense 1 of 1)
+**Label:** Jehoiada, priest
+**Lemma gloss:** Jehoiada — 'the LORD knows,' the high priest who restored the Davidic line and David's warrior Benaiah's father
+**Description:** Proper name Yehoyada (יְהוֹיָדָע), primarily the high priest who orchestrated the overthrow of Queen Athaliah and the coronation of young King Joash (2 Kings 11-12; 2 Chr 23-24); also borne by David's officer Benaiah's father and other figures. The bare nominative and prepositional le- forms denote the same individual(s). Target languages are uniform: Spanish Joiada/Yehoyada, Hindi यहोयादा, Arabic يَهُويَادَاعَ, Korean 여호야다, Swahili Yehoyada.
+**Enriched:** The proper name Yehoyada (Jehoiada), referring primarily to two individuals: (a) the father of Benaiah, David's captain of the Cherethites and Pelethites, recurring in the formulaic patronymic 'Benaiah son of Jehoiada' (2 Sam 8:18; 23:20, 22; 1 Kgs 1:8, 26, 32, 36, 38, 44; 4:4); and (b) the chief priest who hid the infant Joash for six years during Athaliah's reign, then organized the coup that restored the Davidic dynasty (2 Kgs 11:4-12:16; 2 Chr 23-24). All 51 occurrences refer to one of these bearers, with the Septuagint rendering Iodae and variant spellings confirming the same theophoric name across traditions.
+
+### H3119 / Sense 101528 (51 occ, sense 1 of 1)
+**Label:** by day, in the daytime
+**Lemma gloss:** by day, in the daytime — a temporal adverb marking actions that occur during daylight hours
+**Description:** The adverb yōmām (יוֹמָם) meaning 'by day, in the daytime,' used as a temporal adverb to indicate actions occurring during daylight hours, frequently paired with laylāh 'by night' to express continuity or contrast (e.g., Ex 13:21 pillar of cloud by day; Ps 121:6 the sun shall not strike you by day; Jer 31:35 the sun for light by day). English renders 'by day' and 'day'; Spanish 'de día' and 'día'; Arabic نَهَارًا (nahāran) 'in daytime'; Korean 낮에 (naje) 'in the daytime' and 날마다 (nalmada) 'daily'; Swahili mchana 'daytime' and kila siku 'every day'; Hindi दिन (din) 'day' and दिन में (din mẽ) 'during the day.' The two clusters differ only in the presence or absence of the preposition be- and conjunction waw, which are grammatical variations of the same temporal adverbial meaning.
+**Enriched:** A temporal adverb meaning 'by day' or 'during the daytime,' used to locate events within daylight hours and very frequently paired with laylah ('by night') to express ceaseless duration or round-the-clock divine protection. The paradigmatic usage is the Exodus pillar imagery: 'The LORD went before them by day in a pillar of cloud' (Exod 13:21), a motif recalled throughout the Psalms and Prophets (Ps 78:14; Isa 4:5-6; Neh 9:12). The adverbial -am ending is an archaic accusative of time, parallel in formation to other Hebrew temporal adverbs. All 51 occurrences carry this single daytime-temporal sense.
+
+### H3808 / Sense 108050 (51 occ, sense 3 of 5)
+**Label:** privative without
+**Lemma gloss:** Not, no; the objective negative particle negating verbs, clauses, and assertions, also used rhetorically and as a standalone refusal.
+**Description:** Used with prepositions (בְּלֹא, לְלֹא) to form the privative sense 'without, lacking, in the absence of'.
+**Enriched:** The privative sense 'without, lacking,' formed with prepositions belo' (בְּלֹא) or lelo' (לְלֹא). Numbers 35:22-23 uses this construction for killing 'without enmity' and 'without seeing.' German 'ohne' (without) and Spanish 'de-modo-que-no' show how the negative particle combines with prepositions to create a distinct grammatical category expressing absence or privation.
+
+### H4191 / Sense 110424 (51 occ, sense 2 of 7)
+**Label:** be put to death (Hofal passive)
+**Lemma gloss:** To die, be dead; (Hifil) kill, put to death; (Hofal) be executed; (participle) the dead; (infinitive) death
+**Description:** To be put to death, be executed — Hofal (passive of Hifil) expressing judicial or communal execution, frequently in legal codes; Arabic يُقْتَلُ/يُمَاتُ, Korean 죽임을 당하다, Swahili -uawa.
+**Enriched:** The Hofal passive expressing judicial execution: 'he shall be put to death.' Predominantly found in Exodus–Deuteronomy legal codes (Exod 21:12–17), where community-mandated capital punishment is prescribed. Spanish 'morirá,' French 'être mis à mort,' and German 'soll zu Tod gesetzt werden' all employ passive constructions, mirroring the Hebrew Hofal morphology precisely.
+
+### H5162 / Sense 117195 (51 occ, sense 1 of 6)
+**Label:** comfort, console (Piel)
+**Lemma gloss:** To comfort, console; to relent or repent; to have compassion — covering solace given, divine change of course, and reflexive self-comfort.
+**Description:** Piel stem: to comfort, console, or encourage someone in distress — the active transitive sense of providing emotional solace, used of both human and divine agents comforting the bereaved, afflicted, or grieving.
+**Enriched:** Piel stem: to comfort, console, or encourage someone in distress. This is the active transitive sense of providing emotional solace, used of both human and divine agents. Joseph comforts his brothers (Gen 50:21), Ruth is comforted by Boaz's kind words (Ruth 2:13), and God comforts his people (Isa 40:1). The multilingual evidence is unified: Spanish 'consolar,' French 'consoler,' German 'trösten,' and Arabic عَزَّى all point to deliberate, other-directed encouragement. The famous 'Comfort, comfort my people' (Isa 40:1) uses this stem.
+
+### H5321 / Sense 118707 (51 occ, sense 1 of 1)
+**Label:** Naphtali (tribe/person)
+**Lemma gloss:** Naphtali — the sixth son of Jacob (by Bilhah), and the Israelite tribe and territory bearing his name
+**Description:** The proper name Naphtali, referring to the sixth son of Jacob (by Bilhah) and the Israelite tribe descended from him, along with their territorial allotment in northern Canaan. All four clusters are the same name with different prepositions: bare nominative/genitive, with lamed (to/for Naphtali), with beth (in Naphtali), and with min (from Naphtali). Multilingual glosses confirm identity: Arabic Naftali, Spanish Neftali/Naftali, Hindi Naptali, Korean Napdalli, Swahili Naftali. No semantic distinction exists between these grammatical variants of one proper noun.
+**Enriched:** The proper name Naphtali, covering the patriarch (Gen 30:8; 35:25; 46:24; 49:21), the tribe descended from him as an administrative and military unit (Judg 1:33; 4:6, 10; 5:18; Deut 33:23), and the tribal territory in northern Canaan centered around Kedesh-Naphtali (Josh 19:32-39; 20:7). Isaiah 9:1 [8:23] transforms the name into an eschatological marker — the 'land of Naphtali' that will be honored after its humiliation by Assyria (2 Kgs 15:29). All 51 occurrences refer to this single patriarchal-tribal-territorial complex, with BDB noting the possible original sense 'crafty one' alongside the folk etymology of Genesis 30:8.
+
+### H5921a / Sense 123923 (51 occ, sense 4 of 9)
+**Label:** because of, therefore (causal)
+**Lemma gloss:** upon, on, over; against; beside, by, at; because of, therefore; concerning, about; for, on behalf of; to, unto; according to, in addition to
+**Description:** Causal and inferential sense: Arabic مِنْ أَجْلِ (because of), بِسَبَبِ (on account of), لِذلِكَ (therefore); Korean 그러므로 (therefore), 때문에 (because of); Swahili kwa sababu ya (because of), kwa hiyo/kwa hivyo (therefore); Hindi के कारण / इसलिए (because/therefore); includes conjunctive forms (and-for with causal meaning) and interrogative causal contexts.
+**Enriched:** Causal and inferential sense: 'because of, on account of, therefore' marking reason or ground. Target languages use dedicated causal particles: Arabic مِنْ أَجْلِ (because of), بِسَبَبِ (on account of), لِذلِكَ (therefore); Korean 그러므로 (therefore), 때문에 (because of); Swahili kwa sababu ya (because of), kwa hiyo/kwa ajili ya (therefore/for the sake of). Genesis 19:22 'I cannot do anything until you arrive there' (therefore), 20:6 'therefore I kept you from sinning' — 51 occurrences with clear causal force.
+
+### H6172 / Sense 126062 (51 occ, sense 1 of 3)
+**Label:** nakedness, sexual exposure
+**Lemma gloss:** Nakedness, exposure of the body; by extension shame, indecency, or sexual vulnerability
+**Description:** Physical nakedness, especially in the idiom 'uncover the nakedness of' denoting illicit sexual relations (Lev 18-20) or literal bodily exposure.
+**Enriched:** The dominant sense across 51 occurrences, covering both literal bodily exposure (as when Ham sees Noah's nakedness in Gen 9:22-23) and the legal euphemism 'uncover the nakedness of' for prohibited sexual unions in Leviticus 18-20. Translations across languages consistently render it as 'nakedness-of' in construct, reflecting how Hebrew uses this term almost formulaically in legal contexts.
+
+### H8248 / Sense 143608 (51 occ, sense 1 of 4)
+**Label:** give drink to living beings
+**Lemma gloss:** To give drink, water, or irrigate; Hifil causative of drinking — providing water to people, animals, or land.
+**Description:** Hifil causative sense of providing water or drink to persons or animals, the primary meaning of the causative stem (Arabic سقى 'give drink', Hindi पिलाना, Spanish 'dar de beber / abrevar').
+**Enriched:** Giving drink to living beings — persons or animals — the primary sense at 51 occurrences. Rebekah waters the camels (Gen 24:14-46), Lot's daughters give their father wine (Gen 19:32-35), Hagar gives Ishmael water (Gen 21:19), and the psalmist asks God to 'give them tears to drink' (Ps 80:5). Spanish dar de beber, Arabic saqaa, and Hindi pilaana all consistently select interpersonal drinking vocabulary. The Hifil causative force is crucial — the subject enables or compels the drinking of another, making this fundamentally a verb of provision and care (or, as with the bitter water ordeal of Num 5:24-27, a verb of coerced consumption).
+
+### H???? / Sense 145992 (51 occ, sense 18 of 94)
+**Label:** (none)
+**Lemma gloss:** (none)
+**Description:** (none)
+**Enriched:** (none)
+
+### G2212 / Sense 68793 (50 occ, sense 2 of 3)
+**Label:** desire, strive to obtain
+**Lemma gloss:** To seek, search for, desire to obtain; in passive, to be required or demanded
+**Description:** To seek in the sense of desiring, wanting, or striving to obtain something, often abstract such as glory, signs, or an opportunity.
+**Enriched:** Volitional and abstract seeking: to desire, strive for, or pursue something, often intangible — glory, signs, opportunity, or the kingdom of God. Jesus' programmatic command 'seek first his kingdom' (Matt 6:33) and the promise 'seek and you will find' (Matt 7:7) operate in this register. The object is not lost but rather valued and pursued. German sucht and Spanish buscad cover this naturally, as the same verb carries both concrete and volitional weight in those languages.
+
+### G3107 / Sense 71865 (50 occ, sense 1 of 1)
+**Label:** blessed / happy / fortunate
+**Lemma gloss:** blessed, happy, fortunate — pronounced favored by God, a term of divine congratulation rather than mere emotion
+**Description:** A state of divine favor, spiritual happiness, or privileged well-being, often used in beatitudes and macarisms to pronounce someone favored by God. The two clusters differ only in degree: S71865 is the positive form (49x, 'blessed') while S71869 is the comparative (1x, 'more blessed,' Acts 20:35). The comparative is a grammatical inflection, not a distinct meaning. Translations use one core lexeme: eng 'blessed/more-blessed,' spa 'bienaventurado/mas-bienaventurada,' hin dhanya (धन्य/अधिक-धन्य), arb tuba (طُوبَى/أَسْعَدُ), kor bok-itda (복있다/더-복되다), swa 'heri' (unchanged even for comparative).
+**Enriched:** An adjective of divine pronouncement declaring someone favored, blessed, or privileged in God's eyes, used in macarisms (beatitude formulas) that reverse worldly expectations. The Sermon on the Mount (Matt 5:3-11) establishes the pattern: those who mourn, hunger for righteousness, and suffer persecution are declared makarios because the kingdom of heaven belongs to them. Extended through Pauline theology (Rom 4:7-8, citing Ps 32:1-2), Johannine apocalyptic (seven beatitudes of Revelation), and wisdom instruction (Jas 1:12, 25). All 50 occurrences share this core sense of divinely conferred blessedness, though the classical overtone of enviable prosperity occasionally surfaces (as in the congratulatory sense of Luke 1:45, 'blessed is she who believed').
+
+### G3704 / Sense 73262 (50 occ, sense 1 of 2)
+**Label:** so that
+**Lemma gloss:** A conjunction expressing purpose ('so that, in order that') or manner ('how, in what way').
+**Description:** so that (50 occurrences across 2 original clusters)
+**Enriched:** Purpose conjunction: 'so that, in order that.' Introduces the intended result or goal of an action. Found across nearly every NT genre. Spanish para que, French afin que, and German damit all converge on purposive meaning (Matt 2:8; Matt 5:16). This is by far the dominant usage, appearing about 50 times.
+
+### G3765 / Sense 73559 (50 occ, sense 1 of 1)
+**Label:** no longer
+**Lemma gloss:** no longer, no more, not any further — a temporal negative adverb marking the cessation of a previous state
+**Description:** no longer, No longer, any longer (50 occurrences across 2 original clusters)
+**Enriched:** A temporal negative adverb indicating that a previously existing condition, action, or state has come to an end: 'no longer,' 'no more,' 'not anymore.' Structurally it presupposes a prior reality now superseded, making it a key word for expressing theological transformation — believers are no longer slaves but children (Gal 4:7), death no longer has dominion over the risen Christ (Rom 6:9), and the law is no longer a guardian now that faith has come (Gal 3:25). Also used in narrative contexts for cessation of physical states (Mark 5:3, no one could bind him 'any longer'; Matt 22:46, no one dared question him 'any longer'). All 50 occurrences share this single cessative-temporal function.
+

@@ -1,0 +1,291 @@
+# Sense Refinement Detection — Batch 017
+
+You are a biblical lexicographer reviewing sense entries for a Hebrew/Aramaic/Greek lexicon.
+Each entry below is a single "sense" that was produced by clustering translation signatures 
+and then merging with an LLM. Some senses may have been OVER-LUMPED — they contain genuinely 
+distinct meanings that should be separate senses.
+
+## Your Task
+
+For each sense, determine if it should be SPLIT into multiple senses. Look for:
+- Literal vs. figurative/metaphorical uses lumped together
+- Concrete vs. abstract meanings combined
+- Multiple distinct referents (e.g., "father" = biological parent + patron/advisor + originator)
+- Physical vs. spiritual/theological uses merged
+- Different syntactic frames producing different meanings
+
+## Output Format
+
+Return a JSON array. For senses that need NO splitting, omit them entirely.
+For senses that SHOULD be split, include an entry like:
+
+```json
+[
+  {
+    "senseIdChirho": 79287,
+    "lemmaIdChirho": "H0001",
+    "currentLabelChirho": "father, immediate male parent",
+    "splitProposalChirho": [
+      {
+        "newLabelChirho": "biological/legal father",
+        "criteriaChirho": "Direct parent-child relationship, possessive constructions with specific person"
+      },
+      {
+        "newLabelChirho": "metaphorical father (patron, advisor, protector)",
+        "criteriaChirho": "Title of respect for prophets, advisors, or authority figures; 'father to Pharaoh' type usage"
+      }
+    ],
+    "confidenceChirho": "high",
+    "reasoningChirho": "Description explicitly mentions 'title of respect or metaphorical originator' alongside biological father"
+  }
+]
+```
+
+Only propose splits where you have MEDIUM or HIGH confidence. Do NOT split function words (articles, 
+prepositions, particles, conjunctions) unless there is a genuinely distinct semantic sense (not just 
+syntactic variation). Proper nouns generally should NOT be split.
+
+If NO senses in this batch need splitting, return an empty array: []
+
+## Senses to Review
+
+### H3809 / Sense 108068 (81 occ, sense 1 of 2)
+**Label:** not (Aramaic negative particle)
+**Lemma gloss:** Not -- the standard Aramaic negative particle negating verbs, participles, and clauses; once used substantivally as 'nothing.'
+**Description:** The standard Aramaic negative particle 'not,' used to negate verbs, adjectives, and clauses in both declarative and interrogative contexts; glossed as no/no-es (Spa), नहीं/क्या नहीं (Hin), لاَ/لَمْ/أَلَمْ (Arb), 않다/아니냐 (Kor), haku-/je (Swa). The interrogative usage (S108070: 'did not?', 'is not?') retains the same core negation semantics wrapped in a question frame, as confirmed by Arabic أَلَمْ (interrogative lām + negative) and Korean 아니냐 (negative + interrogative ending).
+**Enriched:** The standard Aramaic negative particle 'not,' used to negate verbs, participles, adjectives, and clauses in both statements and questions. Functionally equivalent to Hebrew lo and consistently rendered across languages -- Spanish no, French ne...pas, German nicht, Hindi nahi. Pervasive throughout the Aramaic sections of Ezra (4:13-16) and Daniel (2:5-10), covering 81 of 82 occurrences.
+
+### G0652 / Sense 63169 (80 occ, sense 1 of 1)
+**Label:** apostle, messenger, one sent forth
+**Lemma gloss:** apostle, one sent with authority; a commissioned messenger or envoy, especially of Christ
+**Description:** A person sent with a commission, specifically one of the authoritative messengers of Christ — either one of the Twelve, Paul, or more broadly a delegate or envoy of a church. The term apostolos carries the fundamental idea of authorized sending (from apostellein). In the NT it applies to the Twelve (Matt 10:2; Luke 6:13), to Paul (Rom 1:1; 1 Cor 9:1), and occasionally to other commissioned agents (Rom 16:7; 2 Cor 8:23; Phil 2:25). Multilingual evidence is uniform: Spanish 'apóstol/apóstoles,' Hindi 'prerit' (प्रेरित), Arabic 'rasuul/rusul' (رسول/رسل), Korean 'sado' (사도), and Swahili 'mtume/mitume.' The two clusters differ only in number — S63169 (plural: apostles) vs S63170 (singular: apostle) — with no semantic distinction between them.
+**Enriched:** A person commissioned and sent forth with delegated authority, especially one of Christ's authorized representatives. The term encompasses the Twelve (Matt 10:2; Mark 3:14), Paul, and broader church envoys. Classical Greek usage as an ambassador or naval commander underscores the weight of official delegation. Every major translation tradition preserves the term as a near-transliteration, signaling its irreplaceable theological specificity.
+
+### G2540 / Sense 69839 (80 occ, sense 1 of 3)
+**Label:** definite time or period
+**Lemma gloss:** An appointed time, season, or decisive moment; a point or period marked by divine purpose or particular significance.
+**Description:** A point or period of time, often with the sense of an appointed or decisive moment in God's plan.
+**Enriched:** The dominant sense across roughly 80 occurrences designates a definite, appointed, or decisive point or period in time, often within God's redemptive plan. Spanish 'tiempo,' French 'temps,' German 'Zeit' are used consistently. Encompasses harvest time (Matt 13:30), the time of visitation (Luke 19:44), the present time (Rom 3:26; 8:18), and eschatological moments (Matt 8:29, 'before the time'). The word often carries theological weight—this is not just any moment but the moment appointed by God.
+
+### G3475 / Sense 72620 (80 occ, sense 1 of 1)
+**Label:** Moses (biblical figure)
+**Lemma gloss:** Moses, the lawgiver and prophet who led Israel from Egypt and received the Torah at Sinai
+**Description:** The proper name Moses, referring to the great lawgiver and prophet who led Israel out of Egypt, received the Torah on Sinai, and mediated God's covenant with Israel.
+**Enriched:** The proper name of Israel's preeminent lawgiver and prophet, used both as a personal reference (the Transfiguration, Matt 17:3) and as a metonym for the Mosaic writings and legal code ('the law of Moses,' John 7:23; Acts 28:23). In Luke 16:29 and 2 Cor 3:15, 'Moses' denotes the Pentateuch itself, showing how deeply the person and his literary legacy merged in Jewish and early Christian thought.
+
+### G3844 / Sense 73759 (80 occ, sense 1 of 9)
+**Label:** from, away from (source)
+**Lemma gloss:** beside, from beside; source (genitive), proximity (dative), motion/comparison (accusative)
+**Description:** Indicates source or origin, marking the person or place from which something comes or proceeds (with genitive).
+**Enriched:** Marking the person or place from whom something originates or proceeds, this sense dominates with genitive objects. Spanish consistently renders de or de parte de, while French uses auprès de across contexts. English 'from' captures the source nuance seen in Matthew 2:4 (learning from the chief priests) and Matthew 21:42 (from the Lord's doing). The genitive signals not just physical origin but also authority or agency.
+
+### G5204 / Sense 78006 (80 occ, sense 1 of 1)
+**Label:** water
+**Lemma gloss:** water; the essential natural substance used literally and symbolically for life, purification, and baptism
+**Description:** The common noun for water (Greek ὕδωρ), encompassing all NT uses: natural water (seas, rivers, wells, rain), water for purification and ritual washing, baptismal water, and drinking water. All grammatical cases and numbers (singular, plural, nominative, genitive, dative, accusative) and prepositional constructions ('with water,' 'in water,' 'of water') refer to the same substance. Uniformly translated: Spanish 'agua/aguas,' Arabic 'مَاءِ/مَاءَ,' Hindi 'पानी,' Korean '물,' Swahili 'maji.' The instrumental uses ('with water' for baptism) represent contextual application, not a distinct lexical sense.
+**Enriched:** The common substance water in all its New Testament occurrences: natural bodies of water (seas, rivers, wells), drinking water, water for Jewish purification rites, and the water of baptism. Jesus contrasts physical water with 'living water' (John 4:10-14), and John the Baptist distinguishes water-baptism from Spirit-baptism (Matt 3:11). The universal simplicity of the translation — agua, eau, Wasser — belies the term's deep symbolic freight.
+
+### H2822 / Sense 99663 (80 occ, sense 1 of 1)
+**Label:** darkness, absence of light
+**Lemma gloss:** darkness, obscurity; the absence of light whether physical, primordial, metaphorical, or theophanic
+**Description:** Physical or primordial darkness, the absence of light whether in creation, night, deep places, or as a tangible phenomenon.
+**Enriched:** The absence or opposite of light, encompassing primordial darkness before creation (Gen 1:2), the supernatural plague-darkness in Egypt (Exod 10:21-22), theophanic cloud-darkness at Sinai (Deut 4:11), and metaphorical darkness signifying death, judgment, or moral blindness (Job 17:12; Isa 45:7). Hebrew treats choshek as a near-tangible reality that God actively creates, not merely the passive absence of illumination.
+
+### H3083 / Sense 101375 (80 occ, sense 1 of 1)
+**Label:** Jonathan (proper name)
+**Lemma gloss:** Jonathan, 'YHWH has given'; proper name borne by several biblical figures, chiefly Saul's son
+**Description:** Proper masculine name meaning 'YHWH has given' (יְהוֹנָתָן / יוֹנָתָן). Refers to multiple biblical individuals including Jonathan son of Saul (1 Sam 14-20), Jonathan son of Abiathar (2 Sam 15:27), Jonathan the scribe (Jer 37:15-20), Jonathan in Chronicles genealogies (1 Chr 8:33-34; 9:39-40), Jonathan uncle of David (1 Chr 27:32), Jehonathan the Levite teacher (2 Chr 17:8), and Jonathan in Nehemiah (Neh 12:18). The orthographic alternation between the full form יְהוֹנָתָן and shortened יוֹנָתָן is purely scribal and carries no semantic distinction. Prepositional prefixes (ב, ל, ו) are inflectional, not sense-bearing.
+**Enriched:** A theophoric proper name meaning 'YHWH has given,' borne primarily by Saul's son Jonathan, celebrated for his covenant bond with David (1 Sam 18:1-3; 20:17) and battlefield valor (1 Sam 14:6-14). Also designates Jonathan son of Abiathar (2 Sam 15:27), David's giant-slaying nephew (2 Sam 21:21), and several post-exilic figures in Ezra and Nehemiah. The name's theology of divine gift resonates through every bearer.
+
+### H3559a / Sense 105593 (80 occ, sense 1 of 12)
+**Label:** prepare, make ready (Hifil)
+**Lemma gloss:** prepare, make ready; be/make firm, established; be ready/right/certain; direct, aim
+**Description:** Hifil causative sense: to prepare, make ready, or provide something in advance; Arabic أَعَدَّ / هَيَّأَ confirms the 'preparation' meaning across all inflections.
+**Enriched:** The Hifil sense of preparing or making ready appears 80 times and represents the most frequent usage. Genesis 43:16 records Joseph commanding his steward to prepare a meal, Numbers 23:1 describes Balaam preparing seven altars. Arabic أَعَدَّ ('prepare in advance') and Swahili -andaa ('prepare') consistently render this cluster. The causative stem signals deliberate action to make something ready for use or an event.
+
+### H5493 / Sense 120506 (80 occ, sense 2 of 8)
+**Label:** turn aside, go aside (Qal)
+**Lemma gloss:** To turn aside, remove, depart, or deviate; spanning physical diversion, removal, departure, moral deviation, and passive being removed
+**Description:** Qal stem: to turn aside physically from a path or road, to turn in to visit or enter a place — physical deviation or diversion.
+**Enriched:** Qal: to turn aside physically from a path or road, to turn in to visit. Arabic inhaarafa 'to deviate' and Korean dolda 'to turn' confirm spatial redirection. Paradigmatic in Moses turning aside to see the bush (Exod 3:4) and Israel turning aside from the way (Exod 32:8; Deut 9:12). Also covers hospitality scenes where a traveler 'turns in' to someone's home.
+
+### H6419 / Sense 127617 (80 occ, sense 1 of 3)
+**Label:** pray (Hitpael)
+**Lemma gloss:** To pray, intercede, or mediate; primarily in the Hitpael, to direct supplication toward God; in the Piel, to judge or intervene.
+**Description:** To pray, make supplication, or intercede in prayer to God, the primary and most common meaning of this lemma in the Hitpael stem across all grammatical inflections.
+**Enriched:** The overwhelmingly primary sense (80 of 84 occurrences): to pray, make supplication, or intercede before God in the Hitpael stem. The reflexive form suggests directing oneself toward God. Covers all major biblical prayers—intercessory (Gen 20:17; Num 21:7), penitential (Deut 9:26), dedicatory (1 Kgs 8:28), and desperate (2 Kgs 19:15; Jonah 2:1). Cross-linguistic evidence is consistent: English 'prayed,' Spanish 'oró,' French 'pria,' German 'betete' all converge on supplicatory prayer.
+
+### H7133a / Sense 133290 (80 occ, sense 1 of 1)
+**Label:** offering, oblation (qorban)
+**Lemma gloss:** offering, oblation (qorban); the standard Levitical term for any gift brought near to God at the sanctuary
+**Description:** A sacrificial offering or gift brought near to God, encompassing grain offerings, animal sacrifices, and other dedicated gifts presented at the sanctuary — the standard Levitical term for any consecrated oblation (Hebrew קָרְבָּן from קרב 'to draw near').
+**Enriched:** The general Levitical term for any sacrificial gift or oblation brought near to God, derived from q-r-b ('to draw near'). Encompasses animal burnt offerings (Lev 1:2-3), grain offerings (Lev 2:1), firstfruits (Lev 2:12), and precious-metal dedications (Num 31:50). The word frames worship as an act of approach — drawing near to the divine presence with a consecrated gift. Used almost exclusively in priestly literature (Leviticus, Numbers, Ezekiel).
+
+### H7451a / Sense 136193 (80 occ, sense 2 of 6)
+**Label:** evil, harm, calamity
+**Lemma gloss:** Bad, evil, wicked; spanning moral corruption, harmful calamity, poor quality, ugly appearance, fierce severity, and sad countenance
+**Description:** Abstract evil as harm, misfortune, disaster, or calamity; the substantive concept of evil or trouble befalling someone (Arabic sharr, Korean ak, Swahili uovu).
+**Enriched:** Evil as substantivized harm, calamity, or disaster — the abstract noun usage where ra'ah denotes misfortune, trouble, or destructive consequence befalling someone. Arabic sharr as abstract noun and Korean ak confirm the shift from adjective to substantive. Deuteronomy warns that disobedience provokes God 'to evil' against the people (Deut 4:25; 9:18), and prophetic judgment oracles announce ra'ah as divine disaster (Num 32:13; Deut 17:2).
+
+### H7992 / Sense 141121 (80 occ, sense 1 of 6)
+**Label:** third (ordinal)
+**Lemma gloss:** Third (ordinal); also a third part, three-year-old, or third story — the ordinal adjective with fractional and specialized extensions.
+**Description:** The ordinal number 'third' indicating position in a sequence, used attributively or predicatively of days, years, rivers, sons, kings, and other items in an ordered series.
+**Enriched:** The ordinal number 'third,' indicating position in a sequence. Used attributively or predicatively of days (Gen 1:13; Gen 22:4 'on the third day'), years (1 Kgs 18:1 'in the third year'), rivers (Gen 2:14 'the third river'), sons, and kings. With 80 occurrences this is overwhelmingly the dominant sense. Spanish 'el tercero/la tercera,' French 'le troisième,' German 'der dritte,' and Arabic الثالث all straightforwardly correspond. The 'third day' motif carries particular theological weight as a marker of divine intervention and resolution.
+
+### H8548 / Sense 145278 (80 occ, sense 1 of 2)
+**Label:** continually, always, perpetually
+**Lemma gloss:** Continuity; as adverb 'continually, always, perpetually'; as noun 'the daily/continual offering (tamid).'
+**Description:** Adverbial and adjectival use meaning 'continually, constantly, at all times, perpetually,' modifying verbs or nouns to express unceasing duration or regularity.
+**Enriched:** Adverbial use meaning 'continually, always, perpetually,' expressing unceasing duration or regularity. Especially frequent in the Psalms (Ps 16:8; 71:14) and prophets (Isa 49:16; 51:13), often paired with temporal phrases like 'all the day.' Spanish 'continuamente,' French 'continuellement,' and German 'continually' all render this consistent temporal sense of ongoing, uninterrupted action or state.
+
+### G2597 / Sense 70128 (79 occ, sense 1 of 3)
+**Label:** go/come down physically
+**Lemma gloss:** To go down, come down, descend; physical downward movement of persons, objects, or divine manifestations.
+**Description:** To move downward from a higher to a lower place, said of persons traveling, descending mountains, going down to cities, etc.
+**Enriched:** The core and dominant sense (79 occurrences): physical downward movement from a higher to a lower location. Covers persons descending mountains, traveling from elevated cities, going down to water, and divine/heavenly figures descending. Key passages include the Spirit descending at Jesus' baptism (Matt 3:16), rain descending on a house (Matt 7:25), and the bread of life descending from heaven (John 6:33). Spanish 'bajó/descendió,' French 'descendre,' and German 'hinabsteigen/steigt herab' all uniformly express directional downward motion.
+
+### G3306 / Sense 72151 (79 occ, sense 1 of 4)
+**Label:** abide, continue, persist in
+**Lemma gloss:** To remain, abide, stay; in a place: lodge, dwell temporarily; in a state or relationship: continue, persist, indwell; of things: last, endure; also to wait for, await.
+**Description:** To remain or abide in a state, relationship, or condition, especially in Johannine spiritual union, corresponding to Arabic ثَبَتَ/يَثْبُتُ (hold fast, persevere) and يَبْقَى (remain), Korean 거하다 (abide/dwell in), and Swahili kukaa/kudumu (endure, remain).
+**Enriched:** To abide, continue, or persist in a state, relationship, or condition — the most frequent sense at 79 occurrences, theologically dominant in Johannine literature. In John 15:4-10 Jesus commands 'abide in me' (meinate en emoi) repeatedly, making meno the signature verb of spiritual indwelling and covenant union. In 1 John 2:6 the one who says he 'abides in him' must walk as Christ walked; in 1 John 4:12-16 'God abides in us.' Beyond John, 1 Cor 7:8 uses meno for remaining in one's current social state, and 2 Tim 3:14 urges Timothy to 'continue in what you have learned.' Arabic thabata/yathbutu ('hold firm, persevere') captures the spiritual-relational dimension precisely, while Korean kohada selects abiding vocabulary that mirrors John's intimacy language. German bleiben and French demeurer serve as the default translation across Johannine and Pauline contexts alike. The theological weight is immense: meno becomes the New Testament's primary metaphor for the ongoing mutual presence of God and believer.
+
+### G3598 / Sense 72989 (79 occ, sense 1 of 3)
+**Label:** way, road, path (literal and figurative)
+**Lemma gloss:** Way, road, path; a physical route, a figurative course of life or conduct, or 'the Way' as the early Christian movement.
+**Description:** The core sense of hodos covering both the literal meaning of a physical road, way, or path and the figurative meaning of a way of life or course of conduct. The singular forms (ὁδός, ὁδόν, ὁδοῦ, ὁδῷ) appear extensively: literal roads (Matt 2:12 'another way'; Matt 4:15 'way of the sea'; Matt 8:28; Matt 10:5, 10; Matt 13:4, 19 'along the path'; Matt 15:32; Matt 20:17, 30), figurative moral and spiritual ways (Matt 3:3/Mark 1:3/Luke 3:4 'prepare the way of the Lord'; Matt 7:13-14 'narrow/broad way'; Matt 22:16 'way of God'), and the journey sense (Luke 11:6 'from a journey'). The singular 'path' occurrences (Mark 4:4, 15) and 'of way' (Jas 5:20) are contextual specifications of this same lexeme. Hebrew consistently derekh ('way/road/path'), Arabic ṭarīq, Korean gil, Spanish camino.
+**Enriched:** A physical road, route, or path, and by natural extension a figurative way of life, conduct, or spiritual direction. This encompasses the vast majority of occurrences (79x) in singular forms. Literal uses include the road to Egypt (Matt 2:12), the 'way of the sea' (Matt 4:15), and the path along which the sower's seed falls (Matt 13:4). Figurative uses include 'the way of the Lord' (Matt 3:3), 'the way of righteousness' (Matt 21:32), and Jesus' self-identification as 'the way' (John 14:6). Spanish camino and French chemin span both registers identically.
+
+### G4982 / Sense 77280 (79 occ, sense 1 of 4)
+**Label:** save spiritually, grant salvation
+**Lemma gloss:** To save, deliver, rescue, or heal; encompasses spiritual salvation, physical rescue from danger, and restoration to wholeness or health.
+**Description:** To save or deliver from spiritual death and eternal judgment, granting eternal salvation through faith, encompassing both the act of saving and the state of being saved.
+**Enriched:** The primary theological sense of delivering from sin, spiritual death, and divine judgment, granting eternal life through faith. This overwhelmingly dominant usage (79 of 108 occurrences) spans from the angel's announcement that Jesus 'will save his people from their sins' (Matt 1:21) through eschatological promises like 'the one who endures to the end will be saved' (Matt 24:13). Across all major target languages — Spanish salvar, French sauver, German retten, Arabic khallasa — the translations converge on deliverance vocabulary rather than healing terms, confirming a distinct soteriological sense.
+
+### G5087 / Sense 77604 (79 occ, sense 1 of 4)
+**Label:** place, put, lay
+**Lemma gloss:** To place, put, or lay something down; by extension, to appoint to a role, lay down one's life sacrificially, or resolve in one's heart.
+**Description:** Physical placement or positioning of an object or person; the core meaning of τίθημι. Arabic consistently uses وَضَعَ (waḍaʿa, to place), Korean uses 놓다/두다 (to put/place), Swahili uses -weka (to place/put), Hindi uses रखना (to place/keep). Includes passive forms (be placed/laid), imperatives, infinitives, and the idiomatic τίθημι τὰ γόνατα (kneel = place the knees, Swahili -piga magoti, Korean 무릎을 꿇다).
+**Enriched:** The core physical meaning: to place, put, or lay an object or person in a location. Arabic consistently renders this with waḍaʿa (to place), Korean with 놓다/두다 (to put/place), and Swahili with -weka (to place). This covers setting a lamp on a stand (Mark 4:21), laying a body in a tomb (Matt 27:60), and placing enemies under one's feet (Matt 22:44). The physicality is always concrete — something moves to a new position.
+
+### H2145 / Sense 94489 (79 occ, sense 1 of 2)
+**Label:** male (human being)
+**Lemma gloss:** Male -- a male human being or male animal, used in contexts of creation, law, census, genealogy, and sacrificial offering.
+**Description:** A male person, man or boy, used in contrast to female when describing human gender in contexts of creation, census, law, and genealogy.
+**Enriched:** A male human being -- man or boy -- used in contrast to female (neqevah) when describing gender in creation narratives (Gen 1:27, 'male and female he created them'), census records, legal codes, and genealogies. Spanish consistently renders varon for the human sense while French and German use male/Mannlicher, all confirming the primary anthropological reference across 79 occurrences.
+
+### H2416c / Sense 96507 (79 occ, sense 1 of 4)
+**Label:** wild beast, animal
+**Lemma gloss:** Living creature, wild beast, animal; also the visionary 'living beings' of Ezekiel, and abstractly 'life' or 'vitality.'
+**Description:** A wild animal or beast, especially in the phrase 'beast of the field/earth'; the general zoological sense referring to land animals, particularly wild or dangerous ones. Arabic consistently uses وَحْش (wahsh, 'wild beast') or حَيَوَان (hayawan, 'animal'); Korean 짐승 (jimseung, 'beast'); Swahili mnyama/wanyama ('animal'); Hindi जानवर/पशु/जन्तु ('animal/beast'); Spanish bestia/animal.
+**Enriched:** The general zoological sense of a wild animal or beast, especially in construct phrases like chayyat hassadeh ('beast of the field') and chayyat ha'arets ('beast of the earth'). This is the dominant usage at 79 occurrences, covering everything from the serpent in Eden (Gen 3:1) to prophetic warnings about wild beasts devouring the land (Ezek 14:15). Arabic wahsh, Spanish bestia/animal, French bête, and German Tier all converge on the wild-animal reading, distinguishing this clearly from domesticated livestock (behemah).
+
+### H3212 / Sense 102204 (79 occ, sense 2 of 5)
+**Label:** walk in, follow a way
+**Lemma gloss:** To go, walk, travel, depart; figuratively to walk in a way of life; idiomatically 'come!' as an invitation; in Hifil, to lead or drive.
+**Description:** Walking in a path or way of life, moral conduct or lifestyle; distinguished by Arabic سَلَكَ (salaka) and يَمْشِي (yamshi), Korean 걷다 (geotda), and Swahili kutembea, often used with 'in the ways/statutes of'.
+**Enriched:** Qal figurative: to walk in a way, follow a path of conduct — 79 occurrences where halak combines with a prepositional phrase (be-darke, be-chuqqot, 'in the ways/statutes of') to describe moral conduct or lifestyle. 'If you walk in my statutes' (Lev 26:3); 'they walked in the statutes of the nations' (2 Kgs 17:8). Arabic salaka ('to travel a path') and yamshi ('to walk, conduct oneself') both select path-following vocabulary distinct from simple 'go.' Korean 걷다 (geotda, 'to walk') and Swahili kutembea ('to walk about') similarly shift register. This is the conceptual metaphor LIFE IS A JOURNEY lexicalized into Hebrew grammar.
+
+### H5046 / Sense 115768 (79 occ, sense 2 of 7)
+**Label:** Hifil: to declare, proclaim
+**Lemma gloss:** To tell, report, declare; Hifil: inform, proclaim, reveal; Hofal: be told; participle: messenger
+**Description:** The Hifil sense of nagad used for public, formal, or prophetic declaration and proclamation, often in solemn or liturgical contexts where the emphasis is on making something widely known or officially announced rather than private interpersonal telling.
+**Enriched:** A heightened Hifil sense: to declare, proclaim, or announce publicly and formally — often in prophetic, liturgical, or royal settings. The shift from private telling to public proclamation is reflected in Spanish anunciad/declarad and German verkuende. Deut 5:5 (Moses declaring God's words), Deut 26:3 (the pilgrim's solemn declaration), and prophetic announcements throughout Isaiah exemplify this elevated register.
+
+### H7794 / Sense 139403 (79 occ, sense 1 of 1)
+**Label:** ox, bull
+**Lemma gloss:** ox, bull; a single head of cattle used in agricultural, legal, sacrificial, and poetic contexts
+**Description:** A bovine animal, whether a working ox or a bull; used of individual cattle in legal, sacrificial, agricultural, and poetic contexts throughout the Hebrew Bible.
+**Enriched:** An individual bovine animal, whether a working ox or a sacrificial bull, distinct from the collective baqar ('herd'). Central to Israelite legal tradition — the goring-ox laws (Exod 21:28-36) and the sabbath rest commandment (Exod 20:17; Deut 5:14) — and prominent in sacrificial contexts. The golden calf is memorably described as 'an ox that eats grass' (Ps 106:20). Spanish buey/toro and German Ochse/Rind together capture the working-animal and sacrificial-animal dimensions.
+
+### G3860 / Sense 73855 (78 occ, sense 1 of 6)
+**Label:** hand over, deliver to custody
+**Lemma gloss:** To hand over, deliver, betray, transmit, entrust, surrender, or permit — spanning custody transfer, treacherous betrayal, tradition-passing, and self-giving
+**Description:** To transfer a person into the power, custody, or control of another, whether to courts, authorities, prisons, or hostile parties, without implying personal treachery on the part of the agent; this is the broadest and most frequent sense, covering judicial delivery, prophetic announcements of the Son of Man being delivered up, and general transfers of persons between authorities.
+**Enriched:** To hand over or deliver a person into custody (78x): the dominant sense, covering the transfer of a person into the power, control, or jurisdiction of another — courts, rulers, prisons, or hostile parties — without implying personal treachery by the agent. Spanish entregó ('handed over'), French livrer, and German ueberliefern all cover this neutral transfer. Jesus tells the disciples they will be 'delivered' to councils and synagogues (Matt 10:17), brother will deliver brother to death (Matt 10:21), and the Son of Man will be 'delivered' to the Gentiles (Matt 20:19). The agent may be hostile, but the verb itself describes transfer, not treason.
+
+### G4750 / Sense 76754 (78 occ, sense 1 of 1)
+**Label:** mouth, oral opening
+**Lemma gloss:** mouth; the physical organ of speech and eating, and by metonymy the words or testimony spoken
+**Description:** The physical mouth as an organ of speech, eating, or expression, and by metonymy the words or testimony that proceed from it. This is the overwhelmingly dominant NT sense, encompassing every occurrence of stoma. It includes the mouth as organ of speech (Matt 5:2, 12:34, 13:35, Luke 1:64, 1:70, 4:22, 6:45), the mouth of witnesses for testimony (Matt 18:16), the mouth of animals (Matt 17:27), the mouths of prophets and saints (Heb 11:33-34), the mouths of horses (Jas 3:3), and the mouths of apocalyptic creatures (Rev 9:17-18). The 'edge' of the sword (Luke 21:24, Heb 11:34) is literally 'mouth of sword' in Greek idiom. Confessing with the mouth (Rom 10:10) uses the same physical organ metaphorically for verbal declaration. All clusters represent the same fundamental sense with only case, number, or contextual variation.
+**Enriched:** The mouth as a physical organ and, by metonymy, the speech, testimony, or decree that issues from it. Jesus teaches that the mouth reveals the heart's contents (Matt 12:34; 15:11), and the legal principle of 'two or three witnesses' invokes stoma for authoritative testimony (Matt 18:16). In apocalyptic imagery, a sword proceeds from Christ's mouth (Rev 1:16; 19:15), fusing the physical organ with the power of the spoken divine word.
+
+### G5217 / Sense 78029 (78 occ, sense 1 of 2)
+**Label:** go, proceed
+**Lemma gloss:** To go, proceed, depart — a verb of motion often used in commands, sometimes implying withdrawal or departure.
+**Description:** To go or move from one place to another, used as a general verb of motion often in commands ('Go!') or statements of travel.
+**Enriched:** General movement or travel: 'go, proceed, be on one's way.' The dominant sense across 78 occurrences, used in imperatives where Jesus sends people on missions or errands (Matt 5:24, 'Go, first be reconciled'; Matt 8:4, 'Go, show yourself to the priest'). French 'va' and Spanish 'id/voy' render this straightforwardly as simple motion toward a destination.
+
+### H3220 / Sense 102371 (78 occ, sense 2 of 3)
+**Label:** west, westward
+**Lemma gloss:** Sea or large body of water; the direction 'west' (from Israel's Mediterranean orientation); or the first element of geographic sea-names.
+**Description:** Directional sense derived from the Mediterranean Sea lying to Israel's west; used absolutely or with directional he (yammah) to indicate the western compass direction or movement toward the west.
+**Enriched:** The direction 'west' or 'westward,' derived from Israel's geographic orientation where the Mediterranean lay to the west. Appears prominently in tabernacle construction (Exod 26:22, 'the rear of the tabernacle yammah') and tribal boundary descriptions. French 'vers-l'ouest,' Spanish 'al-oeste,' and German 'westwärts' confirm the directional reading. The directional he suffix (yammah) frequently reinforces this sense, though context alone sometimes suffices.
+
+### H7892a / Sense 140043 (78 occ, sense 1 of 2)
+**Label:** song, musical composition
+**Lemma gloss:** Song, musical composition — a lyric piece for worship, celebration, or artistic expression.
+**Description:** A song or musical composition, often a hymn of praise, thanksgiving, or worship directed to God, used both in liturgical and general contexts.
+**Enriched:** A song or musical composition used in worship, celebration, or artistic expression — encompassing hymns of praise, thanksgiving songs, triumphal odes, and lyric poetry. Attested across 78 occurrences, from Deborah's victory song (Judg 5:12) to the organized temple music under David's Levitical singers (1 Chr 6:31; 25:7). Spanish 'canto/cántico' and French 'cantique' emphasize the liturgical register, while German 'ein Lied' keeps the broader 'song' sense.
+
+### G3384 / Sense 72421 (77 occ, sense 1 of 3)
+**Label:** mother
+**Lemma gloss:** Mother; a woman in her role as parent, also used figuratively of cities, covenants, and spiritual relationships.
+**Description:** mother, Mother, MOTHER (77 occurrences across 2 original clusters)
+**Enriched:** The primary sense: mother as a biological or social parent, accounting for 77 of 84 occurrences. Covers the literal relationship of a woman to her child, whether in narrative (Matt 2:11, 'the child with Mary his mother'), legal discourse (Matt 15:4, 'honor your father and mother'), or theological declaration (Gal 4:26, 'the Jerusalem above is our mother'). Every target language renders this identically: English 'mother,' Spanish 'madre,' French 'mère,' German 'Mutter'—a rare case of perfect cross-linguistic convergence.
+
+### G4334 / Sense 75770 (77 occ, sense 1 of 3)
+**Label:** approach or come to physically
+**Lemma gloss:** To come to, approach, or draw near; used of physical movement toward a person, cultic approach to God, or purposeful visiting.
+**Description:** To move toward someone or something in physical space, drawing near to a person, place, or group, whether in narrative action or as a formulaic introduction to speech.
+**Enriched:** The vast majority of occurrences (about 77) describe physical approach—coming to, drawing near to, or moving toward someone in narrative space. Matthew uses it as a standard introduction formula: 'and having approached (προσελθών), he/they said...' (Matt 4:11; 8:2, 5, 19). The multilingual glosses are consistent: Spanish 'acercándose,' French 's'approcher,' German 'tritt heran.' It covers everything from disciples approaching Jesus to crowds gathering and individuals seeking healing.
+
+### G4592 / Sense 76412 (77 occ, sense 1 of 1)
+**Label:** sign, miraculous sign
+**Lemma gloss:** sign, miraculous sign; a visible token or wonder that authenticates divine authority or prophetic message
+**Description:** A sign, token, or miraculous indicator serving as evidence of divine authority, prophetic fulfillment, or authenticating power. All three clusters represent the same core meaning — a sign or miraculous sign — differing only in grammatical number (singular vs. plural) and case (nominative, accusative, genitive, dative). Multilingual evidence shows perfect convergence on a single sign-concept: Spanish 'señal' / 'señales' (sign / signs), Hindi 'चिह्न' / 'चिन्ह' / 'चिन्हों' (sign, variant spellings), Arabic 'آيَةً' / 'آيَاتٍ' / 'بِآيَاتٍ' (sign / signs / by signs, from the Quranic vocabulary for divine sign), Korean '표적을' / '표적들을' / '표적들과' (sign / signs / with signs), Swahili 'ishara' / 'kwa ishara' (sign / by signs).
+**Enriched:** A miraculous sign or authenticating token that points to divine authority and purpose. In the Synoptics, opponents demand a semeion as proof (Matt 12:38-39), while John's Gospel organizes around seven signs revealing Jesus' glory. Paul appeals to 'signs, wonders, and mighty works' as apostolic credentials (2 Cor 12:12). Eschatological discourse warns of deceptive signs (Matt 24:24). The term inherently combines visibility with signification — a semeion always points beyond the event to its divine source.
+
+### H2428 / Sense 96776 (77 occ, sense 2 of 5)
+**Label:** valor, bravery in battle
+**Lemma gloss:** Army, military force; valor, bravery; wealth, riches; strength, power, might; ability, competence, virtue.
+**Description:** Martial courage, prowess, or heroic might, often in the construct 'ish chayil' (man of valor) or the phrase 'asah chayil' (to act valiantly); denotes the quality of a warrior rather than the force itself.
+**Enriched:** Martial valor, prowess, or heroic courage — the quality of a warrior rather than the force itself. Found in the construct ish chayil ('man of valor,' Judg 18:2; 1 Sam 9:1) and the phrase asah chayil ('to act valiantly,' Num 24:18; Ps 60:14). Spanish distinguishes 'valor' from 'ejército,' and German uses 'Tapferkeit' rather than 'Heer,' marking this as a qualitative rather than collective noun.
+
+### H6944 / Sense 131346 (77 occ, sense 4 of 6)
+**Label:** holiness (with possessive pronoun)
+**Lemma gloss:** holiness, sacredness, sanctuary, holy thing; the state of being set apart for God or the consecrated place, object, or offering
+**Description:** God's holiness or a person's holiness expressed with a pronominal suffix (his/my/your/our holiness), referring to the divine or human quality of consecrated apartness as a possessed attribute.
+**Enriched:** Holiness with a possessive pronoun — his holiness, my holiness, your holiness — expressing the divine or human quality of consecrated apartness as a possessed attribute. Spanish su-santidad, French sa-sainteté, and German sein-Heiligkeit all preserve the possessive structure. Psalm 89:35 (once for all I have sworn by my holiness) and Leviticus 20:3 (to profane my holy name) show God's holiness as something personally staked and jealously guarded.
+
+### H8605 / Sense 145628 (77 occ, sense 1 of 1)
+**Label:** prayer, supplication
+**Lemma gloss:** Prayer or supplication directed to God, whether personal petition, intercession, or liturgical address in the temple.
+**Description:** A prayer or supplication directed to God, whether personal petition, intercessory plea, or liturgical prayer (from פלל Hitpael 'to pray'); covers all grammatical inflections including construct, suffixed, articulated, and plural forms.
+**Enriched:** A prayer or supplication lifted to God, encompassing personal petition (Ps 4:1; 2 Sam 7:27), intercessory plea on behalf of others (Jer 7:16; 2 Kgs 19:4), and corporate liturgical prayer at the temple (1 Kgs 8:38, 54). The construct beth tephillah, 'house of prayer' (Isa 56:7), extends the term to designate sacred space itself.
+
+### G2098 / Sense 68349 (76 occ, sense 1 of 1)
+**Label:** good news
+**Lemma gloss:** Good news; the gospel — the announcement of God's saving action in Christ, or a reward for bearing such news.
+**Description:** good news, gospel (76 occurrences across 4 original clusters)
+**Enriched:** The good news or gospel — God's saving action proclaimed through Jesus Christ. Used both as a general term for glad tidings (Matt 4:23; 24:14) and as a semi-technical designation for the apostolic message preached to all nations (Mark 1:1; Rom 1:16). Every target language renders it with a single loanword or calque from the Greek.
+
+### G2419 / Sense 69433 (76 occ, sense 1 of 1)
+**Label:** Jerusalem
+**Lemma gloss:** Jerusalem — the holy city, capital of Judea and site of the Temple; also used symbolically for the heavenly city.
+**Description:** The indeclinable proper noun Ἱερουσαλήμ (the Semitic/Hebrew form of 'Jerusalem'), referring to the holy city of Jerusalem, capital of Judea and site of the Temple. This is a single referent, not polysemous. Uniformly rendered Ger. 'Jerusalem,' Fr. 'Jérusalem,' Heb. 'יְרוּשָׁלַיִם,' Spa. 'Jerusalén/Ierousalēm,' Arb. 'أُورُشَلِيمَ,' Kor. '예루살렘,' Hin. 'यरूशलेम.' The four auto-clusters (69433, 69434, 69435, 69436) are split only on minor transliteration differences (Ierousalēm vs. Ierousalem, with/without 'of') and different grammatical cases in surrounding context (genitive 'of Jerusalem,' dative 'in Jerusalem,' accusative 'to Jerusalem,' vocative 'O Jerusalem'). As an indeclinable noun, the form never changes; it is always Ἱερουσαλήμ. All 76 occurrences refer to the same city. Contexts include: the Gospels (Matt 23:37, Luke 2:25/41/43/45, 4:9, 9:31/51/53, 10:30, 13:4/33/34), Acts, Romans 15, and Revelation 3:12.
+**Enriched:** The proper noun for Jerusalem, the holy city and Temple site, used both for the literal city (Matt 23:37; Luke 2:25, 41) and symbolically for the heavenly Jerusalem (Gal 4:26; Heb 12:22). This Semitic-form spelling is preferred by Luke and Paul, contrasting with the Hellenized Hierosolyma in Mark and John.
+
+### G2919 / Sense 71121 (76 occ, sense 1 of 4)
+**Label:** judge, pass judgment
+**Lemma gloss:** To judge, pass judgment, condemn; also to decide or determine; in passive, to be judged or stand trial
+**Description:** To evaluate, judge, or pass judgment on someone or something in a judicial or moral sense (active voice).
+**Enriched:** The active judicial sense: to judge, evaluate, pass judgment, or condemn. This is the dominant use, spanning Jesus' teaching on mutual judgment (Matt 7:1, Luke 6:37), the eschatological authority to judge the twelve tribes (Matt 19:28), and God's righteous judgment (John 5:22, Rom 2:16). Spanish juzgar, French juger, and German richten all render this core forensic meaning. The verb encompasses both fair evaluation and condemnatory judgment depending on context.
+
+### G3992 / Sense 74423 (76 occ, sense 1 of 2)
+**Label:** send, dispatch (active)
+**Lemma gloss:** To send, dispatch — to commission or direct a person or thing toward a destination or purpose.
+**Description:** To send or dispatch a person or thing to a destination or for a purpose, covering all active voice forms including aorist, future, present indicative, subjunctive, imperative, and participial uses.
+**Enriched:** Active sending or dispatching: to send a person, message, or thing to a destination for a specific purpose. Covers the overwhelming majority (76 of 79 occurrences), including Jesus' parables of sent servants (Luke 20:11-12), the sending of the Spirit (John 1:33), and requests to send help (Luke 16:24). Spanish 'que envió,' French 'envoyer,' and German 'senden' all render this with standard dispatch vocabulary.
+

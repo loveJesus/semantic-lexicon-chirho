@@ -1,0 +1,291 @@
+# Sense Refinement Detection — Batch 016
+
+You are a biblical lexicographer reviewing sense entries for a Hebrew/Aramaic/Greek lexicon.
+Each entry below is a single "sense" that was produced by clustering translation signatures 
+and then merging with an LLM. Some senses may have been OVER-LUMPED — they contain genuinely 
+distinct meanings that should be separate senses.
+
+## Your Task
+
+For each sense, determine if it should be SPLIT into multiple senses. Look for:
+- Literal vs. figurative/metaphorical uses lumped together
+- Concrete vs. abstract meanings combined
+- Multiple distinct referents (e.g., "father" = biological parent + patron/advisor + originator)
+- Physical vs. spiritual/theological uses merged
+- Different syntactic frames producing different meanings
+
+## Output Format
+
+Return a JSON array. For senses that need NO splitting, omit them entirely.
+For senses that SHOULD be split, include an entry like:
+
+```json
+[
+  {
+    "senseIdChirho": 79287,
+    "lemmaIdChirho": "H0001",
+    "currentLabelChirho": "father, immediate male parent",
+    "splitProposalChirho": [
+      {
+        "newLabelChirho": "biological/legal father",
+        "criteriaChirho": "Direct parent-child relationship, possessive constructions with specific person"
+      },
+      {
+        "newLabelChirho": "metaphorical father (patron, advisor, protector)",
+        "criteriaChirho": "Title of respect for prophets, advisors, or authority figures; 'father to Pharaoh' type usage"
+      }
+    ],
+    "confidenceChirho": "high",
+    "reasoningChirho": "Description explicitly mentions 'title of respect or metaphorical originator' alongside biological father"
+  }
+]
+```
+
+Only propose splits where you have MEDIUM or HIGH confidence. Do NOT split function words (articles, 
+prepositions, particles, conjunctions) unless there is a genuinely distinct semantic sense (not just 
+syntactic variation). Proper nouns generally should NOT be split.
+
+If NO senses in this batch need splitting, return an empty array: []
+
+## Senses to Review
+
+### H2416a / Sense 96463 (87 occ, sense 2 of 5)
+**Label:** oath formula: as X lives
+**Lemma gloss:** Alive, living; having life; substantively: living creature; in oath formulas 'as X lives'; also raw, fresh.
+**Description:** The specialized construct-state form used in oath and adjuration expressions such as 'as YHWH lives' (חַי יְהוָה) or 'as I live' (חַי אָנִי); Arabic حَيٌّ consistently appears without case variation, Korean uses the honorific 살아 계신 (for divine oaths) or 살아 계시도다, Swahili employs kama aishivyo ('as he lives') or kwa uhai wangu ('by my life'), confirming a fixed idiomatic oath pattern distinct from the ordinary adjective.
+**Enriched:** The oath and adjuration formula: 'as X lives' (chay YHWH, chay 'ani, chay naph'shekha) — 87 occurrences, heavily concentrated in the Deuteronomistic History (Judges through Kings) and the Prophets. The formula functions as the strongest possible oath, staking the claim on the inviolable life of God himself. First appears at Ruth 3:13 (Boaz swearing by YHWH's life), then becomes almost formulaic in Saul's and David's mouths (1 Sam 14:39, 45; 19:6; 20:3; 2 Sam 4:9; 12:5). Arabic uses a parallel construction wa-hayati ('by my life'), confirming the cross-Semitic oath pattern. Korean 여호와의 사심으로 and Spanish 'Vive Jehova' both construct dedicated periphrastic formulas, recognizing this as a fixed speech act rather than a simple adjective.
+
+### H3499a / Sense 105142 (87 occ, sense 1 of 4)
+**Label:** rest, remainder, remnant
+**Lemma gloss:** Remainder, rest, or remnant of a group; also excellence or preeminence, surplus or abundance, and adverbially 'exceedingly.'
+**Description:** The remaining portion or people of a group, often in construct with a following noun denoting what the rest belongs to.
+**Enriched:** The dominant sense: the remaining portion or people of a group, frequently in the construct phrase 'the rest of the acts of...' throughout Kings and Chronicles. English renders it 'rest' or 'remainder,' Spanish 'resto,' French 'reste,' German 'Rest.' This covers remnants of crops left by locusts (Joel 1:4), remaining vessels in Jerusalem (Jer 27:19), and the residue of a tribal allotment (Deut 3:13). The implied sense is what is left after the primary portion has been accounted for.
+
+### H6051 / Sense 125418 (87 occ, sense 1 of 1)
+**Label:** cloud
+**Lemma gloss:** Cloud — a visible mass in the sky; especially the theophanic cloud of God's guiding, sheltering presence
+**Description:** A visible mass of water vapor in the sky, used of meteorological clouds, the theophanic cloud of God's presence (pillar of cloud, Sinai, tabernacle, temple), and figuratively of transience or covering.
+**Enriched:** A cloud-mass in the sky, used predominantly of the theophanic cloud manifesting God's presence — the pillar of cloud leading Israel (Exod 13:21–22), the heavy cloud on Sinai (Exod 19:9, 16), and the glory-cloud filling the tabernacle and temple (1 Kgs 8:10–11). Also used of ordinary weather clouds and figuratively of what is transient (Hos 6:4) or concealing (Job 26:9). The overwhelming association with divine presence sets this term apart from mere meteorological vocabulary.
+
+### H8002 / Sense 141354 (87 occ, sense 1 of 1)
+**Label:** peace offering(s)
+**Lemma gloss:** Peace offering — a shared sacrificial meal expressing fellowship, gratitude, or vow-fulfillment before God
+**Description:** The שְׁלָמִים (shelamim), a sacrificial offering of well-being or fellowship in which the meat was shared among the offerer, the priest, and God, expressing gratitude, fulfillment of a vow, or voluntary devotion (Lev 3; 7:11-36).
+**Enriched:** A sacrificial offering of well-being or fellowship (שְׁלָמִים) in which the meat was shared among God, priest, and worshiper, expressing gratitude, vow-fulfillment, or voluntary devotion. Central to Levitical legislation (Lev 3:1–17; 7:11–21) and appearing at key narrative moments such as Exod 32:6. The LXX's dual renderings — εἰρηνική and σωτήριον — reflect longstanding scholarly discussion about whether the root שׁלם here emphasizes 'peace,' 'wholeness,' or 'recompense.'
+
+### G0444 / Sense 62401 (86 occ, sense 2 of 2)
+**Label:** people, humankind
+**Lemma gloss:** A human being, person; collectively, people or humankind -- the standard Greek term for a member of the human race.
+**Description:** People collectively or humanity in general, often in plural or generic singular referring to the human race or a group of people rather than a specific individual.
+**Enriched:** People collectively or humankind in general, often in the plural hoi anthropoi or in generic singular statements about the human race. With 86 occurrences, this sense appears in universalizing contexts: 'so that they may see your good works' (Matt 5:16), 'while men slept' (Matt 13:25), 'every idle word that men speak' (Matt 12:36). The shift from individual to collective is visible in translations where languages like Spanish and German use plural forms ('hombres,' 'Menschen') to mark the generic reading.
+
+### G4336 / Sense 75800 (86 occ, sense 1 of 1)
+**Label:** pray to God
+**Lemma gloss:** Pray — to address God in petition, supplication, intercession, or worship
+**Description:** To offer prayer or supplication to God, covering all grammatical forms of the single core meaning of προσεύχομαι in the New Testament.
+**Enriched:** To offer prayer, supplication, or worship directed to God, encompassing petition, intercession, thanksgiving, and devotional communion. Used of Jesus' own prayer life (Matt 14:23; Mark 1:35; Luke 6:12) and his teaching on prayer (Matt 6:5–9), as well as apostolic and congregational prayer throughout Acts and the Epistles. The middle voice form (προσεύχομαι) conveys personal engagement — one directs oneself toward God in address. Multilingual evidence uniformly renders this as the core 'pray' verb: Spanish orando, French prier, German beten.
+
+### H3206 / Sense 102145 (86 occ, sense 1 of 2)
+**Label:** child, boy, youth
+**Lemma gloss:** Child, boy, youth — a young human from infancy through adolescence; rarely, the young of animals
+**Description:** A young human being, from infancy through adolescence. Used for singular children (Gen 21:8 the child grew; Ex 2:3 she hid the child), plural children (Gen 33:1 he saw the children; Ex 1:17-18 the midwives kept the children alive; 1 Sam 1:2), possessive constructions (Gen 30:26 my children; Gen 32:22 his children; Ex 21:4 her children), and older youths or young men (Gen 4:23 a young man; 1 Kgs 12:8 the young men who had grown up with him; Dan 1:4 youths without blemish). The singular/plural and possessive/non-possessive variations are inflectional, not semantic. Covers the full range from nursing infant to adolescent male.
+**Enriched:** A young human being — child, boy, or youth from infancy through adolescence. Covers singular and plural, masculine forms with feminine referents sometimes implied. Spanish 'niño,' French 'enfant,' German 'Kind,' and Arabic 'طفل' uniformly indicate a young person rather than a relational category like 'son.' Central passages include Gen 21:8 ('the child grew and was weaned'), Exod 2:6 ('she saw the child, and behold, the baby was crying'), and Ruth 4:16 ('Naomi took the child and laid him on her lap').
+
+### H6944 / Sense 131355 (86 occ, sense 3 of 6)
+**Label:** holy things, sacred offerings (plural)
+**Lemma gloss:** holiness, sacredness, sanctuary, holy thing; the state of being set apart for God or the consecrated place, object, or offering
+**Description:** Multiple consecrated items, sacred contributions, or dedicated offerings viewed collectively; the Arabic plural aqdas and Swahili vi-takatifu (plural thing class) mark this as the concrete plural of sacred objects.
+**Enriched:** Holy things or sacred offerings in the plural — consecrated items, contributions, or dedicated objects viewed collectively. Arabic aqdas (broken plural) and Swahili vi-takatifu (plural thing class) confirm the concrete plural. Exodus 29:37 (whatever touches the altar shall become most holy) and Leviticus 22:15 (they shall not profane the holy things) treat these as a category of objects requiring special handling.
+
+### G0018 / Sense 61011 (85 occ, sense 1 of 3)
+**Label:** good (moral quality)
+**Lemma gloss:** Good; morally excellent, virtuous, or beneficial—of persons, deeds, or things; also substantivized as 'good things' or 'the good.'
+**Description:** Adjectival use describing persons or things as morally good, virtuous, upright, or beneficial in quality.
+**Enriched:** Adjectival use describing persons, actions, or things as morally good, virtuous, upright, or beneficial in quality. This is the overwhelming sense (85x), from the good tree and good fruit of the Sermon on the Mount (Matt 7:17-18) to the 'good and faithful servant' (Matt 25:21) and the 'good soil' of the parable of the sower (Luke 8:8). Across languages—Spanish bueno, French bon, German gut—this maps directly and needs no disambiguation.
+
+### H2220 / Sense 94959 (85 occ, sense 1 of 3)
+**Label:** arm, physical limb
+**Lemma gloss:** Arm, the physical limb; figuratively: divine or human might, power, military forces; the shoulder or foreleg of a sacrificial animal.
+**Description:** The literal arm or arms of a human being as a body part, used in both singular and plural with various possessive suffixes and prepositions; consistently glossed as 팔 (Korean), mkono/mikono (Swahili), ذِرَاع (Arabic cognate dhira'), and brazo (Spanish), encompassing contexts of physical action such as holding, embracing, stretching out, and breaking.
+**Enriched:** The literal arm or arms of a human being as a physical body part, and overwhelmingly its metaphorical extension: the mighty arm of God as agent of deliverance, judgment, and creation (85 occurrences). The formula בְּיָד חֲזָקָה וּבִזְרוֹעַ נְטוּיָה ('with a strong hand and an outstretched arm') is foundational exodus language (Deut 4:34; 5:15; 26:8). Arabic ذِرَاع, Swahili mkono, French bras, and German Arm all translate the physical limb consistently, while the theological metaphor of God's arm as instrument of power pervades psalms (Ps 89:10, 13; 98:1) and prophets (Isa 40:10; 51:5; 52:10). The arm broken by God (Ezek 30:21-22) inverts the image to signal destroyed power.
+
+### H2896b / Sense 100096 (85 occ, sense 1 of 3)
+**Label:** good, what is good
+**Lemma gloss:** Good, goodness; what is good, beneficial, or right; also prosperity, well-being, and inherent good quality.
+**Description:** The abstract or moral concept of good, what is right and beneficial, often as a general noun denoting goodness or the good in contrast to evil.
+**Enriched:** The overwhelming majority of occurrences (about 85 of 90) use טוֹב as a general noun meaning 'good' or 'what is good,' spanning moral, ethical, and practical dimensions. It appears in foundational passages like Gen 2:9 ('the tree of the knowledge of good and evil') and Gen 3:5, 22, where the concept defines the boundary of human knowledge. The multilingual evidence is remarkably consistent: English 'good/goodness,' Spanish 'bien,' French 'bon,' German 'gut.' The word functions in many constructions—as an object of verbs like 'see,' 'seek,' 'find,' and 'give'—showing its breadth as the default term for what is beneficial, right, or desirable.
+
+### H3615 / Sense 106234 (85 occ, sense 1 of 11)
+**Label:** complete a task (Piel)
+**Lemma gloss:** to complete, finish, bring to an end; consume, destroy; fail, be exhausted; fulfill a purpose or decree
+**Description:** To bring a work, speech, or activity to its intended conclusion; transitive completion of a defined task (Arabic akmala/faraġa, Korean 마쳤다/끝냈다, Swahili -maliza/-kamilisha).
+**Enriched:** The core transitive Piel sense of bringing a defined task or project to its intended conclusion — building a house, delivering a speech, completing a journey. Arabic, Korean, and Swahili translations consistently distinguish this purposeful completion (akmala, 마쳤다, -maliza) from mere cessation, reflecting the biblical emphasis on finished work from Genesis creation to temple construction.
+
+### H3722a / Sense 107329 (85 occ, sense 1 of 7)
+**Label:** make ritual atonement (Piel)
+**Lemma gloss:** Make atonement, cover over sin; appease, pacify; forgive — the central verb of Israel's sacrificial system
+**Description:** Piel stem core cultic sense: to perform a ritual act of atonement or expiation, typically by offering a sacrifice to cover sin and restore the offerer's standing before God — the dominant sense of the root in Levitical legislation; Arabic يُكَفِّرُ (yukaffiru, 'he atones'), Korean 속죄하다 (sokjoe-hada, 'make atonement'), Swahili kufanya upatanisho ('make reconciliation/atonement'), Hindi प्रायश्चित करना (praayashchit karnaa, 'make atonement'), Spanish expiar ('atone/expiate').
+**Enriched:** The overwhelming dominant sense — Piel cultic atonement — accounting for over 80% of occurrences. Arabic كَفَّرَ (the exact cognate) and Swahili -fanya upatanisho both capture the ritual performative quality. The Levitical formula 'and the priest shall make atonement for him, and he shall be forgiven' (Lev 4:26, 31, 35) is the defining pattern. French expier and German Sühne preserve the expiatory rather than merely propitiatory nuance.
+
+### H6437 / Sense 127721 (85 occ, sense 1 of 10)
+**Label:** Qal: turn, turn around
+**Lemma gloss:** turn, turn toward, face, orient; prepare or clear a way; turn of time (evening); look, regard; decline, pass away
+**Description:** Physical turning of the body or changing direction; Arabic الْتَفَتَ (iltafata, turn around) consistently across all persons/numbers; Korean 돌아보았다/돌이켰다/돌았다 (turned/turned back); Swahili -geuka (turn); includes consecutive imperfects, perfects, imperfects, imperatives, jussives, and infinitives expressing the basic Qal sense of turning or changing direction
+**Enriched:** The primary physical sense of rotating the body or changing direction in space, supported by consistent use of Arabic الْتَفَتَ (turn around), Korean 돌아보았다/돌이켰다 (turned/turned back), and Swahili -geuka across all grammatical forms. This is the default meaning with 85 occurrences, including Moses turning to look right and left (Exodus 2:12) and military forces turning to flee (Judges 20:45).
+
+### H8269 / Sense 143823 (85 occ, sense 2 of 4)
+**Label:** chief of a specific office
+**Lemma gloss:** Chief, ruler, prince, official, captain; a person of authority or rank in civil, military, or royal administration.
+**Description:** Head or chief of a particular department or household office, used in construct state (שַׂר הַטַּבָּחִים chief of the guard, שַׂר הַמַּשְׁקִים chief cupbearer, שַׂר הָאֹפִים chief baker, etc.) — denoting the administrative head of a defined role or corps.
+**Enriched:** Head or chief of a specific office or household department, used characteristically in the construct chain sar ha-X. The classic examples are Joseph-cycle titles: sar ha-tabbachim ('chief of the guard,' Gen 37:36), sar ha-mashqim ('chief cupbearer,' Gen 40:2), sar ha-ofim ('chief baker,' Gen 40:2). This construct-state pattern — appearing 85 times — creates functional title compounds that behave like English 'chief-of-X.' Korean renders these with the suffix -장 (jang, 'head of'), and Spanish uses jefe de, both confirming a lexicalized title-forming pattern distinct from the general 'prince/noble' sense.
+
+### G0756 / Sense 63425 (84 occ, sense 1 of 1)
+**Label:** begin, start
+**Lemma gloss:** Begin, start — to commence or initiate an action, typically followed by an infinitive
+**Description:** To begin or commence an action, used in the middle voice (ἄρχομαι) throughout the NT to indicate the initiation of an activity or state, often followed by an infinitive specifying the action begun.
+**Enriched:** To begin or commence an action, used in the middle voice (ἄρχομαι) throughout the New Testament with an infinitive complement specifying the activity initiated. Prominent in the Gospels for marking narrative transitions — Jesus 'began to preach' (Matt 4:17), 'began to teach' (Mark 4:1), 'began to show' suffering (Matt 16:21). Spanish comenzó, French commencer, and German anfangen all converge on this single inchoative sense, with no NT attestation of the Classical active meaning 'to rule.'
+
+### G1125 / Sense 64852 (84 occ, sense 1 of 4)
+**Label:** to write, compose (a letter or document)
+**Lemma gloss:** To write, compose, or inscribe; of authoring documents, citing Scripture with 'it stands written,' and recording in texts or books.
+**Description:** The active sense of writing or composing a letter, epistle, decree, or other document, encompassing all persons, tenses, and moods of the active voice used for the act of authoring written communication.
+**Enriched:** To write or compose a letter, document, or decree: The active sense of authoring written communication—Moses writing commandments, Paul composing epistles, Pilate issuing a title for the cross. Luke 1:3 has the evangelist deliberately choosing to 'write an orderly account,' and Luke 16:6–7 shows a debtor hastily rewriting a bill. Spanish alternates between 'escribí' (I wrote) and 'escribe' (write!), French uses 'écrire,' and German 'schreiben'—all treating this as the straightforward, unmarked sense of putting words to a medium.
+
+### G3699 / Sense 73255 (84 occ, sense 1 of 1)
+**Label:** where
+**Lemma gloss:** Where, wherever — relative adverb of place indicating location or destination
+**Description:** where, wherever, Where (84 occurrences across 3 original clusters)
+**Enriched:** A relative adverb of place meaning 'where' or 'wherever,' locating an action or state with reference to a previously mentioned or implied place. Frequent in Jesus' teaching for drawing spatial-theological connections: where your treasure is (Matt 6:19–21), where the body is (Matt 24:28), where I am (John 14:3). With ἄν or ἐάν it forms the generalizing 'wherever' (Mark 6:56; 14:9). Translations across languages converge on a single locative sense: Spanish donde, French où, German wo.
+
+### H1115 / Sense 86933 (84 occ, sense 1 of 5)
+**Label:** negative purpose or result
+**Lemma gloss:** A particle of negation meaning 'not, so as not to, except, without'; from a root meaning 'failure' or 'cessation', used for negative purpose, exclusion, and privation.
+**Description:** Expresses negation of purpose or result, typically with the preposition ל, glossed as 'so as not to', 'to not', 'for not', indicating that an action is done to prevent something.
+**Enriched:** The dominant negative-purpose construction, typically לְבִלְתִּי plus infinitive, expressing 'so as not to, in order not to, lest.' French afin-que-ne-pas and Spanish para-no both capture this final-clause negation cleanly. Found 84 times from Genesis to Ezekiel, it governs divine warnings (Gen 3:11), protective measures (Gen 4:15, Lev 18:30), and prophetic prohibitions. This is the Hebrew writer's primary tool for expressing purposeful prevention.
+
+### H1817c / Sense 91725 (84 occ, sense 1 of 3)
+**Label:** door, gate
+**Lemma gloss:** Door or gate; the hinged closure of an opening in a building, room, city wall, or sacred structure.
+**Description:** A physical door or gate of a building, room, city, or sacred structure; the movable barrier that closes an opening in a wall or entrance.
+**Enriched:** The primary and overwhelmingly dominant sense: a physical door or gate, the movable barrier that closes an opening in a wall, building, or enclosure. Attested 84 times across diverse contexts—household doors (Gen 19:9-10; Judg 3:23-25), city gates (Deut 3:5; Neh 3:3), and temple doors (1 Kgs 6:34; Ezek 41:24). Multilingual evidence is uniform: Spanish 'puerta,' French 'porte,' German 'Tuer' all translate straightforwardly, confirming no ambiguity in this core meaning.
+
+### H2450 / Sense 96972 (84 occ, sense 1 of 4)
+**Label:** wise, prudent
+**Lemma gloss:** Wise, prudent; substantively: sages, royal counselors; also skilled craftsman; feminine: wise women.
+**Description:** Describes a person possessing wisdom, discernment, or prudence as a moral-intellectual quality; the basic adjectival sense of the word used attributively or predicatively.
+**Enriched:** Describes a person possessing wisdom, discernment, or prudence as a moral-intellectual quality — the default adjectival use covering 84 occurrences. In Deut 4:6 Israel's observance of Torah will cause nations to say 'Surely this great nation is a wise and understanding people.' In 2 Sam 13:3 Jonadab is described as 'very wise' (hakham me'od), though his counsel proves morally bankrupt — a reminder that hakham marks cognitive ability, not necessarily virtue. Spanish sabio and German weise both cover this sense cleanly, while French sage adds a philosophical overtone that captures the Proverbs tradition well. The multilingual evidence shows remarkable consistency: nearly every language uses its primary wisdom-adjective here, confirming this as the root's semantic center of gravity.
+
+### H2459 / Sense 97047 (84 occ, sense 1 of 2)
+**Label:** fat, suet
+**Lemma gloss:** Fat, suet — the fatty portions of sacrificial animals; figuratively, the best or richest part of something
+**Description:** The physical fat or suet of an animal, especially the fatty portions of sacrificial animals offered on the altar, and fat as a bodily substance.
+**Enriched:** Physical fat or suet — the adipose tissue of animals, especially the sacrificial fat portions (kidneys, entrails, liver lobe) consecrated to God and burned on the altar. French 'graisse,' German 'Fett,' and Spanish 'grasa' all render the concrete substance. Leviticus 3–4 details which fat belongs to God (Lev 3:9–11, 14–16), and Judg 3:22 memorably describes Ehud's sword being swallowed by Eglon's belly fat.
+
+### H3092 / Sense 101403 (84 occ, sense 1 of 1)
+**Label:** Yehoshafat / Jehoshaphat (proper name)
+**Lemma gloss:** Jehoshaphat — 'YHWH has judged,' a proper name borne chiefly by the king of Judah (son of Asa)
+**Description:** A Hebrew proper name meaning 'YHWH has judged,' referring primarily to the king of Judah (son of Asa) and also to other individuals (a recorder under David/Solomon, the father of Jehu). With 84 occurrences, all three clusters represent the same proper noun in different prepositional and case frames: nominative/conjunctive, with lamed ('to Jehoshaphat'), and with lamed-possessive ('of Jehoshaphat') (eng 'Jehoshaphat/Yehoshafat,' spa 'Josafat/Yehoshafat,' arb 'يَهُوشَافَاطُ,' kor '여호샤받/여호사밟,' swa 'Yehoshafati,' hin 'यहोशापाट/यहोशापात').
+**Enriched:** A theophoric proper name meaning 'YHWH has judged,' borne primarily by the king of Judah, son of Asa, who reigned during a significant period of reform and alliance (1 Kgs 15:24; 2 Chr 17–20). Also designates a recorder under David (2 Sam 8:16), the father of Jehu (2 Kgs 9:2), and a Solomonic officer (1 Kgs 4:17). The multilingual forms — Spanish Josafat, French Josaphat, German Josaphat — derive from the Septuagint's Ἰωσαφάτ rather than the Hebrew directly.
+
+### G1510 / Sense 66369 (83 occ, sense 4 of 6)
+**Label:** subjunctive/imperative, may be / let be
+**Lemma gloss:** to be, exist; copulative, existential, locative, and divine self-revelation
+**Description:** Subjunctive, optative, or imperative forms expressing wish, purpose, condition, or command regarding a state of being (e.g., 'let it be', 'may you be', 'be!').
+**Enriched:** Jesus' 'I AM' (ἐγώ εἰμι) statements serve as divine self-revelation throughout John's Gospel, reaching a climax in 'before Abraham was, I AM' (8:58) where the present tense claims eternal being—the very name God revealed at the burning bush.
+
+### G5399 / Sense 78642 (83 occ, sense 1 of 3)
+**Label:** be afraid, fear
+**Lemma gloss:** To fear, be afraid; to reverence or stand in awe of God; encompasses terror before danger and worshipful awe before the divine.
+**Description:** To be in a state of apprehension or alarm, experiencing fear of danger, harm, or an intimidating presence.
+**Enriched:** To be afraid, to experience fear or alarm in the face of danger, threat, or the supernatural. This dominant sense (83 occurrences) covers human terror before storms (Matt 14:26), fear of authorities (Matt 10:28), dread of bad news (Matt 1:20 — 'do not be afraid'), and alarm at divine manifestations. Spanish 'temieron/temáis' and German 'sich fürchten' consistently render this visceral, involuntary fear. The angelic 'Fear not!' (me phobou) presupposes this very human reaction to the overwhelming.
+
+### G5620 / Sense 79265 (83 occ, sense 1 of 1)
+**Label:** so that, with the result that, therefore
+**Lemma gloss:** So that, therefore — consecutive conjunction introducing a result, consequence, or conclusion
+**Description:** A consecutive conjunction introducing a result, consequence, or logical conclusion: 'so that,' 'therefore,' 'with the result that.' Greek ὥστε (from ὡς + τε) functions to express the outcome or natural consequence of what precedes. Multilingual evidence across both clusters is highly convergent: eng 'so-that / so-as,' spa 'de modo que / para,' hin इसलिए/ताकि (isliye/tāki, therefore/so-that), arb حَتَّى (ḥattā, so that/until), kor 그러므로/정도로 (geureomeuro/jeongdoro), swa 'hata/ili' (so that/in order to). While English glosses vary between 'so that' and 'so as,' the underlying Greek conjunction is identical and translations converge on the same consecutive/resultative function.
+**Enriched:** A consecutive conjunction expressing result, consequence, or logical conclusion — 'so that,' 'with the result that,' 'therefore.' Constructed either with an infinitive for natural result (Matt 8:24, the boat was being swamped 'so that' it was covered) or as a sentence-level connector drawing conclusions (1 Cor 3:21, 'so then, let no one boast'). Spanish de-modo-que, French de-sorte-que, and German so-dass uniformly reflect the resultative force. Especially prominent in Pauline argumentation.
+
+### H4758 / Sense 114108 (83 occ, sense 1 of 3)
+**Label:** appearance, outward form
+**Lemma gloss:** Sight, appearance, or vision; the outward look of a person or thing, a prophetic visionary experience, or the act of seeing.
+**Description:** The visual aspect or outward look of a person, creature, or object, including beauty and countenance, covering all inflected and construct-state forms where the meaning is how something appears to the eye (Arabic cognate manzar, Korean moyang/moseup/oemo, Swahili mwonekano/sura).
+**Enriched:** The outward visual form or look of a person, creature, or object—covering beauty, countenance, and general presentation. This is by far the dominant sense (83x), used of attractive women like Sarah and Rebekah, of the servant of the LORD whose appearance was marred (Isa 52:14), and of Daniel's healthy countenance (Dan 1:15). Spanish apariencia and German Angesicht align here, while the construct state mar'eh often functions attributively ('beautiful of appearance').
+
+### H5048 / Sense 115959 (83 occ, sense 1 of 6)
+**Label:** before, in the presence of
+**Lemma gloss:** In front of, before, opposite; in the presence of; at a distance facing; away from before; against; corresponding to
+**Description:** Spatial or relational sense indicating position in front of or in the sight of someone, often implying awareness or audience.
+**Enriched:** The primary adverbial/prepositional sense of being in front of or in the presence of someone, with the implication that the person is aware and can see what is before them. French devant and German gegenueber both encode the 'in plain sight' nuance. Gen 31:32 ('in front of our kinsmen, identify what is yours'), Exod 34:10 ('before all your people I will do wonders'), and Ps 78:12 anchor this sense in contexts of witness and awareness.
+
+### H7451b / Sense 136241 (83 occ, sense 1 of 5)
+**Label:** evil, wickedness (moral)
+**Lemma gloss:** Evil, wickedness; bad, harmful; calamity, distress — covering moral evil, qualitative badness, experiential misfortune, and intentional harm.
+**Description:** Abstract moral evil or wickedness as a substantive concept, the opposite of good — what is morally wrong, sinful, or contrary to God's will.
+**Enriched:** Moral evil or wickedness as abstract concept — the dominant sense at 83 occurrences, functioning as the substantive opposite of 'good' in the biblical moral framework. This is the ra' of the tree of knowledge of good and evil (Gen 2:9, 17; 3:5, 22), the 'evil in the sight of the LORD' formula throughout Judges and Kings, and the prophetic denunciation of those who 'devise evil' (Mic 2:1). Spanish el mal, French mal, and German Böses all render this with their primary moral-evil terms. Arabic sharr covers this sense exactly, while Korean 악 (ak) is the standard Sino-Korean term for wickedness. The phrase tov va-ra' ('good and evil') becomes a merism for complete moral knowledge, making this sense foundational to biblical anthropology and theodicy.
+
+### H7843 / Sense 139732 (83 occ, sense 1 of 7)
+**Label:** Hifil: destroy, annihilate
+**Lemma gloss:** To destroy, ruin, corrupt, act wickedly; be corrupted or ruined (Niphal); be blemished (Hofal)
+**Description:** Causative active destruction of people, cities, or lands, corresponding to Arabic أَهْلَكَ/يُهْلِكُ (ahlaka) and Korean 멸하다/파괴하다, the dominant sense of the Hifil stem across all inflections.
+**Enriched:** The dominant Hifil causative sense: to destroy, annihilate, or demolish people, cities, or lands. Abraham's intercession for Sodom (Gen 18:28-32), the destroying angel in Egypt (Exod 12:23), and the annihilation of Canaanite cities all use this form. Arabic ahlaka and Korean 멸하다 convey the same totality of causative destruction.
+
+### H7911 / Sense 140288 (83 occ, sense 1 of 6)
+**Label:** Qal: to forget
+**Lemma gloss:** To forget, cease to remember; passive: to be forgotten; causative: to cause to forget
+**Description:** The basic Qal active sense covering all finite verb forms (perfect, imperfect, imperative, cohortative, consecutive, jussive) with or without pronominal suffixes: to forget, to cease to remember; the primary cognitive sense of losing awareness of or failing to retain in memory a person, thing, obligation, or event — uniformly rendered by Arabic نَسِيَ, Korean 잊다, Swahili -sahau, Hindi भूल, Spanish olvidar across all inflections.
+**Enriched:** The foundational Qal active sense covering 83 occurrences across all finite forms — perfect, imperfect, imperative, cohortative, and consecutive. Human subjects forget God, covenant, law, and past experiences; God is implored not to forget his people. Deuteronomy alone accounts for a substantial cluster of warnings (4:9, 23; 6:12; 8:11, 14, 19). Arabic nasiya and Korean itda confirm the universal cognitive-failure mapping.
+
+### G1538 / Sense 66568 (82 occ, sense 1 of 1)
+**Label:** each, every one
+**Lemma gloss:** Each, every one — distributive pronoun singling out individual members of a group
+**Description:** Distributive adjective/pronoun meaning 'each' or 'every individual one,' picking out members of a group individually rather than collectively. This single sense covers all 82 NT occurrences across all case forms (nominative hekastos, accusative hekaston, dative hekasto, genitive hekastou, feminine hekaste). Used in narrative (Matt 16:27 render to each according to deeds, Matt 18:35, 25:15, 26:22), teaching (Luke 2:3, 6:44, 13:15, 16:5), Johannine discourse (John 6:7, 7:53, 16:32, 19:23), Acts (2:3,6,8,38, 3:26, 4:35, 17:27, 20:31, 21:19,26), and epistolary literature (1 Cor 3:8,13, 7:2,7,17,20,24, 12:7,11,18, Eph 4:7,16,25, 5:33, Col 4:6, Heb 3:13, 6:11, 8:11, 1 Pet 1:17, Rev 2:23, 6:11, 20:13, 21:21, 22:2,12). Cross-linguistic evidence is perfectly uniform: Arb kullu-wahidin (each one), Heb kol-echad/ish (each one/man), Kor gakgak/gak-saram (each/each person), Spa cada-uno (each one), Fra chacun (each), Deu jeder (each), Hin har-ek/pratyeka (each one/each). The auto-clusters for genitive, feminine, and 'one' uses are purely morphological or contextual variants with no semantic differentiation.
+**Enriched:** A distributive adjective or pronoun meaning 'each' or 'every individual one,' isolating members of a group for individual attention rather than treating them collectively. Theologically important in contexts of personal accountability — 'each will receive his own reward' (1 Cor 3:8), 'if each of you does not forgive' (Matt 18:35). Also used in narrative distribution such as Luke 2:3 ('each went to his own city'). Spanish cada-uno, French chacun, and German jeder consistently preserve the individualizing force.
+
+### H0518a / Sense 82788 (82 occ, sense 2 of 6)
+**Label:** disjunctive particle: or
+**Lemma gloss:** Conditional particle: if, or, whether; also concessive (though) and asseverative (surely) in oaths
+**Description:** Functions as a disjunctive conjunction meaning 'or', often in paired constructions (אִם...אִם 'whether...or') or simple alternatives.
+**Enriched:** Disjunctive 'or' (82x), presenting alternatives or choices. German oder and Spanish o clearly mark this as distinct from the conditional. Paired constructions 'im...'im ('whether...or') appear in Gen 24:21 and Gen 37:32, where the speaker poses two possibilities. The Arabic cognate 'am similarly serves as a disjunctive particle, confirming the Semitic pedigree of this usage.
+
+### H2734 / Sense 99065 (82 occ, sense 1 of 5)
+**Label:** anger was kindled
+**Lemma gloss:** To burn or be kindled (of anger); God's or man's wrath blazing hot; reflexively, to fret oneself or become vexed.
+**Description:** The Qal stem meaning for anger or wrath to be kindled or burn hot, used overwhelmingly in the idiom 'his anger burned' (חָרָה אַף) for both divine and human wrath, across all Qal inflections including perfect, imperfect, jussive, consecutive, infinitive, and infinitive absolute.
+**Enriched:** Anger was kindled, wrath burned — the massive Qal sense at 82 occurrences, covering both divine and human anger in the frozen idiom charah 'af ('his nostril/anger burned'). Divine wrath: God's anger burns against Israel in the wilderness (Num 11:1, 10), against Moses for resisting his call (Exod 4:14), against Balaam (Num 22:27). Human wrath: Cain's face 'fell' when his anger burned (Gen 4:5), Potiphar's anger 'kindled' at the accusation against Joseph (Gen 39:19), David 'burned' at Nathan's rich-man parable (2 Sam 12:5). Spanish se-encendio and German entbrannte both preserve the combustion metaphor. Arabic ghadiba/ishtaala and Swahili -waka ('ignite') confirm the fire imagery is not a mere Hebraism but a cross-linguistic anger-as-heat conceptual mapping.
+
+### H5158a / Sense 117075 (82 occ, sense 1 of 4)
+**Label:** wadi, seasonal brook
+**Lemma gloss:** Wadi, torrent-valley, brook -- a seasonal watercourse or ravine, sometimes a perennial stream, and poetically a rushing torrent of floodwater.
+**Description:** A seasonal watercourse or brook, typically dry in summer and flowing in the rainy season; the default sense of nachal used for named wadis (Kidron, Arnon, Besor, Eshcol, etc.) and for generic brooks in pastoral and narrative contexts — Arabic وَادِي (wadi), Korean 시내 (brook/stream), Swahili kijito (brook) or bonde (valley-wadi), Spanish arroyo.
+**Enriched:** Wadi or seasonal brook (~82x) -- the default and most frequent sense, covering named wadis (Kidron, Arnon, Besor, Eshcol, Zered) and generic seasonal watercourses. Deut 2:13-14 tracks Israel's crossing of the wadi Zered; 1 Sam 30:9-10 uses the wadi Besor as a staging point. Arabic وادي (wadi) and French torrent-de both render this geographic-hydrological sense. The construct chain nachal + place-name is the characteristic formula, appearing in boundary descriptions and travel narratives throughout the Pentateuch and historical books.
+
+### H6912 / Sense 130958 (82 occ, sense 1 of 5)
+**Label:** bury (Qal active)
+**Lemma gloss:** To bury a dead person in a grave or tomb; in passive stems, to be buried; by extension, one who buries.
+**Description:** Qal finite forms, infinitives, and infinitive absolute of קבר: to bury a dead person in a grave or tomb, covering all persons, numbers, tenses, moods, and pronominal suffixes; Arabic cognate دَفَنَ / قَبَرَ, Korean 장사하다/묻다, Swahili -zika.
+**Enriched:** The core Qal active sense: to bury a dead person in a grave, tomb, or sepulcher. This accounts for the vast majority of occurrences and spans the full range of finite forms, infinitives, and the infinitive absolute. Abraham buries Sarah in the cave of Machpelah (Gen 23:19), Joseph fulfills Jacob's dying wish to be buried in Canaan (Gen 50:13), and Deuteronomy 21:23 insists that even an executed criminal must be buried the same day. The cross-Semitic unanimity is striking: Arabic dafana, Swahili -zika, Korean 장사하다/묻다, and Spanish enterrar/sepultar all converge on dedicated burial vocabulary rather than generic 'put in ground' language.
+
+### G3123 / Sense 71901 (81 occ, sense 1 of 1)
+**Label:** more
+**Lemma gloss:** More, rather — comparative adverb intensifying degree or expressing preference
+**Description:** more, rather (81 occurrences across 2 original clusters)
+**Enriched:** A comparative adverb meaning 'more' (in degree) or 'rather' (in preference), the comparative form of μάλα. Prominent in Jesus' qal wahomer ('how much more') arguments: 'how much more will your Father give good things' (Matt 7:11; cf. 6:26, 30). Also used by Paul for emphatic intensification — πολλῷ μᾶλλον 'much more' (Phil 2:12; Rom 5:9) — and for expressing corrective preference, 'rather' (Eph 4:28; 5:11). Spanish más, French plus/plutôt, and German mehr capture the dual comparative and preferential senses.
+
+### H0430 / Sense 82429 (81 occ, sense 2 of 4)
+**Label:** gods (pagan deities)
+**Lemma gloss:** God (the God of Israel); gods (pagan deities); a god or goddess (individual foreign deity). The majestic plural form of eloah.
+**Description:** Foreign or pagan gods in the plural — the deities of the surrounding nations, as in 'the gods of Egypt' or 'you shall have no other gods'; identified by Arabic آلِهَة, Korean 신들, Swahili miungu, Hindi देवताओं, Spanish dioses.
+**Enriched:** Pagan gods collectively — 81 occurrences where elohim functions as a genuine plural referring to the deities of surrounding nations. 'Put away the foreign gods' (Gen 35:2), 'against all the gods of Egypt I will execute judgments' (Exod 12:12), 'you shall have no other gods before me' (Exod 20:3). Arabic alihah, Korean sindeul, Swahili miungu, and Hindi devataon all deploy their standard plural-deity vocabulary, sharply distinct from the singular God-of-Israel terms. The syntactic markers — plural verbs, plural adjectives, and 'other/foreign' modifiers — make this sense reliably identifiable.
+
+### H3064 / Sense 101320 (81 occ, sense 1 of 1)
+**Label:** Jew, Jewish person
+**Lemma gloss:** Jew, Jewish person; gentilic adjective and substantive denoting a member of the people of Judah
+**Description:** A person belonging to the people of Judah; used as both a substantive noun (singular and plural) and a gentilic adjective denoting Jewish identity or ethnicity.
+**Enriched:** Designates a person of Jewish identity, used as both a gentilic adjective (ish yehudi, 'a Jewish man,' Zech 8:23) and a substantive noun in singular and plural. In Nehemiah and Esther the term serves as the standard communal label for the post-exilic people, carrying strong connotations of covenant solidarity. Translations across languages converge on a single ethnic-identity rendering.
+
+### H3772 / Sense 107580 (81 occ, sense 2 of 5)
+**Label:** cut off / destroy (Hifil causative)
+**Lemma gloss:** To cut — physically cutting trees or objects, cutting a covenant, or being cut off as divine punishment; spans Qal, Niphal, Hifil, and Hofal stems.
+**Description:** Hifil causative: to cause to be cut off, i.e., to destroy, exterminate, or eliminate someone or something by divine or royal agency; Arabic often uses abada (annihilate), afna (exterminate), yuhliku (destroy) alongside qataa, Korean kkeunda (sever), Swahili -katilia mbali or -angamiza (destroy).
+**Enriched:** Hifil causative: to cause to be cut off, meaning to destroy, exterminate, or eliminate by divine or royal authority. The 81 Hifil occurrences carry the most severe theological weight — God actively cutting off idolaters (Lev 20:3,5,6), false worship (Lev 26:30), and entire nations. Arabic 'abada' (annihilate) and 'afna' (exterminate) capture the intensified agency of the causative stem. The Hifil marks divine or sovereign initiative in destruction, distinguishing it from the Niphal passive and the Qal covenant sense.
+

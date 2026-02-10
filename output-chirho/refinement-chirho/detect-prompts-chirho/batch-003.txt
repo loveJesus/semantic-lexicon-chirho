@@ -1,0 +1,291 @@
+# Sense Refinement Detection — Batch 003
+
+You are a biblical lexicographer reviewing sense entries for a Hebrew/Aramaic/Greek lexicon.
+Each entry below is a single "sense" that was produced by clustering translation signatures 
+and then merging with an LLM. Some senses may have been OVER-LUMPED — they contain genuinely 
+distinct meanings that should be separate senses.
+
+## Your Task
+
+For each sense, determine if it should be SPLIT into multiple senses. Look for:
+- Literal vs. figurative/metaphorical uses lumped together
+- Concrete vs. abstract meanings combined
+- Multiple distinct referents (e.g., "father" = biological parent + patron/advisor + originator)
+- Physical vs. spiritual/theological uses merged
+- Different syntactic frames producing different meanings
+
+## Output Format
+
+Return a JSON array. For senses that need NO splitting, omit them entirely.
+For senses that SHOULD be split, include an entry like:
+
+```json
+[
+  {
+    "senseIdChirho": 79287,
+    "lemmaIdChirho": "H0001",
+    "currentLabelChirho": "father, immediate male parent",
+    "splitProposalChirho": [
+      {
+        "newLabelChirho": "biological/legal father",
+        "criteriaChirho": "Direct parent-child relationship, possessive constructions with specific person"
+      },
+      {
+        "newLabelChirho": "metaphorical father (patron, advisor, protector)",
+        "criteriaChirho": "Title of respect for prophets, advisors, or authority figures; 'father to Pharaoh' type usage"
+      }
+    ],
+    "confidenceChirho": "high",
+    "reasoningChirho": "Description explicitly mentions 'title of respect or metaphorical originator' alongside biological father"
+  }
+]
+```
+
+Only propose splits where you have MEDIUM or HIGH confidence. Do NOT split function words (articles, 
+prepositions, particles, conjunctions) unless there is a genuinely distinct semantic sense (not just 
+syntactic variation). Proper nouns generally should NOT be split.
+
+If NO senses in this batch need splitting, return an empty array: []
+
+## Senses to Review
+
+### H1419a / Sense 89375 (486 occ, sense 1 of 6)
+**Label:** great, large (general quality)
+**Lemma gloss:** Great, large; of size, importance, rank, or age; substantivized as 'great ones/nobles' or 'great deeds/wonders'
+**Description:** Core adjectival sense of being great, large, or significant in size, extent, importance, or intensity -- the primary meaning of the adjective covering physical magnitude, greatness of status, and general amplification. Arabic عَظِيم (ʿaẓīm) / كَبِير (kabīr) for greatness/largeness, Korean 큰 (keun) = big/great, Swahili kubwa/mkubwa = great/large. Includes all inflectional forms (ms, fs, mp, fp), article-prefixed forms, construct chains expressing quality (great-of), prepositional phrases (from-great, as-the-great, in/at-the-great), comparative uses (greater/greatest), and conjunctive forms (and-the-great).
+**Enriched:** The core adjectival sense: great, large, or significant in size, extent, importance, or intensity. Arabic عظيم (ʿaẓiim) and كبير (kabiir), Spanish grande, and German groß all converge here. Covers physical magnitude ('great sea,' Num 34:6), emotional intensity ('great fear,' Gen 15:12), and theological weight ('great nation,' Gen 12:2).
+
+### H6680 / Sense 129697 (483 occ, sense 1 of 5)
+**Label:** command, order, charge
+**Lemma gloss:** To command, order, charge; in Pual, to be commanded; by extension, to appoint, commission, or send word.
+**Description:** Piel active: to command or order someone with authority, to lay a charge upon, to give instructions or directives (Arabic amara/awsa); covers all persons, numbers, tenses, and conjugations of the active Piel.
+**Enriched:** The overwhelmingly dominant sense: to command, order, or lay a charge upon someone with authority. This covers the full range of Piel active forms across all tenses, persons, and numbers — from God commanding Adam (Gen 2:16) to Moses commanding Israel (Deut 4:5) to human kings and officials issuing directives. The Arabic rendering amara and German befehlen/gebieten both capture the authoritative tone, while Spanish mandó and French commanda reflect the juridical weight. At 483 occurrences, this sense accounts for over 97% of the word's usage, confirming tsavah as essentially a one-sense verb with specialized peripheral extensions.
+
+### G4160 / Sense 75137 (473 occ, sense 1 of 11)
+**Label:** do, act, perform
+**Lemma gloss:** do, make, perform, act; produce, create; cause; spend time; keep; commit
+**Description:** General sense of performing an action, doing a deed, or carrying out an activity, corresponding to Arabic فَعَلَ/يَفْعَلُ and Korean 하다/행하다.
+**Enriched:** The foundational sense of performing any action or deed—the general 'do' that appears 473 times. Arabic فَعَلَ/يَفْعَلُ and Korean 하다/행하다 capture this universal activity sense. When Jesus asks 'What do you want me to do for you?' (Matt 9:28) or the Pharisees challenge 'Why are you doing what is not lawful?' (Matt 12:2), this basic sense dominates. It's the default for unspecified action—whatever deed is contextually relevant, whether righteous or wicked, miraculous or mundane.
+
+### G3588 / Sense 72952 (471 occ, sense 3 of 6)
+**Label:** substantivizer or pronoun
+**Lemma gloss:** The definite article; also substantivizer, connective, and comparative marker across all cases and genders
+**Description:** The article used substantivally without an explicit noun, functioning as a pronoun meaning 'the one,' 'he who,' or 'that which.'
+**Enriched:** Substantivizer turning adjectives, participles, or prepositional phrases into noun phrases: 'the one who,' 'those who,' 'that which.' English often requires added words ('the ones'), while Spanish 'los/las' can substantivize directly, paralleling the Greek construction naturally (Acts 1:6; 2:7).
+
+### G0444 / Sense 62398 (469 occ, sense 1 of 2)
+**Label:** human being, person
+**Lemma gloss:** A human being, person; collectively, people or humankind -- the standard Greek term for a member of the human race.
+**Description:** An individual human being, a person (as opposed to animals, angels, or God), used in singular and plural for specific or indefinite individuals.
+**Enriched:** An individual human being or person, whether named or indefinite, as distinct from God, angels, or animals. This dominant sense (469 occurrences) covers specific individuals (Matt 9:9, the call of Matthew), indefinite persons in parables and teachings (Matt 7:9, 'what man among you'), and the christological title 'Son of Man.' Cross-linguistically, all languages use their primary person-noun: spa 'hombre,' fra 'homme,' deu 'Mensch,' hin 'manushya.' Key passages: Matt 4:4 (human dependence on God's word), Matt 8:9 (the centurion as 'a man under authority').
+
+### H1471a / Sense 89662 (466 occ, sense 1 of 3)
+**Label:** nations, peoples (plural/collective)
+**Lemma gloss:** Nation, people-group; in the plural often 'the nations' (i.e., non-Israelite peoples, Gentiles).
+**Description:** Multiple nations or peoples viewed collectively, often referring to the surrounding foreign nations or all the peoples of the earth.
+**Enriched:** The plural or collective sense: 'nations, peoples'—the dominant usage (466 occurrences), typically referring to multiple foreign peoples or all the nations of the earth. Often carries a contrastive force against Israel: 'all the nations which the LORD your God is giving before you' (Deut 7:1). The consistent rendering as 'las-naciones' (Spanish), 'les-nations' (French), and 'die-Völker' (German) confirms the collective-political reading. Includes contexts of judgment on nations (Isa 2:4), blessing through Abraham's seed (Gen 18:18), and the scope of divine sovereignty (Ps 82:8).
+
+### H0310a / Sense 81281 (459 occ, sense 1 of 2)
+**Label:** behind, after (spatial/pursuit)
+**Lemma gloss:** After, behind — spatial position following or pursuing; temporal succession, afterward.
+**Description:** Spatial position behind or following in pursuit of someone or something, including directional 'from behind' with min-preposition.
+**Enriched:** Spatial position behind or following in pursuit, including directional 'from behind' with the min-preposition. Translations consistently use spatial terms: detrás de (Spa.), hinter (Ger.), après in spatial contexts (Fra.). Frequent with halak ('to walk/go after') to describe following a leader, army, or deity (Gen 37:17; 1 Kgs 18:21).
+
+### H7760a / Sense 139000 (444 occ, sense 1 of 12)
+**Label:** put, place, set physically
+**Lemma gloss:** put, place, set; make into; appoint; set heart/attention upon; give, bestow
+**Description:** Qal: to put, place, or set an object in a physical location, covering all inflections of the basic placement meaning.
+**Enriched:** The core physical sense of placing an object in a location appears 444 times and dominates Scripture's usage. Multilingual glosses (Spanish puso, French mit, German legte) consistently render this without metaphorical extension. Key passages include Genesis 22:6 (Abraham placing wood on Isaac) and Genesis 28:11 (Jacob placing a stone as a pillow), where the action is concrete and spatial.
+
+### G1487 / Sense 66278 (442 occ, sense 1 of 2)
+**Label:** if (conditional)
+**Lemma gloss:** If -- the primary Greek conditional particle, also used in the combination 'ei me' (if not, except, unless).
+**Description:** The primary conditional particle introducing protases of conditional sentences across all types (real, unreal, general). This is the overwhelmingly dominant NT sense with 439+ occurrences spanning every corpus: simple conditions (Matt 4:3,6 'if you are the Son of God'), contrary-to-fact (Matt 11:21,23 'if mighty works had been done'), logical conditions in Paul (Rom 4:2, 8:9,11,13,17,31, 1 Cor 15:12-19), and pastoral conditions (1 Tim 3:1, 5:8). All languages translate with their basic conditional particle: Arb in/law (if/if-counterfactual), Heb im (if), Kor manil (if), Spa si (if), Fra si (if), Deu wenn (if/when), Hin yadi/agar (if). Includes the concessive 'even if' usage (2 Cor 12:11, Heb 6:9) where ei kai or kai ei yield Hin yadyapi (although), Kor birok (even though), Spa aunque (although), as this is compositional rather than a distinct lexical sense.
+**Enriched:** The conditional particle introducing 'if'-clauses across all conditional types: real conditions (ei + indicative), hypothetical scenarios, and rhetorical questions. With 442 occurrences this is the dominant function, spanning doctrinal arguments (Rom 8:9, 'if the Spirit of God dwells in you'), temptation narratives (Matt 4:3, 'if you are the Son of God'), and ethical instruction (Matt 5:29-30). All languages render it with their standard conditional: spa 'si,' fra 'si,' deu 'wenn,' confirming its transparent grammatical function.
+
+### H1931 / Sense 92548 (441 occ, sense 2 of 3)
+**Label:** demonstrative that one
+**Lemma gloss:** He, she, it (personal pronoun); that one (demonstrative); it is (copular identifier)
+**Description:** Demonstrative pronoun or adjective meaning 'that' or 'that one,' pointing to a specific, often distant referent, consistently translated with demonstrative vocabulary across languages (aquel, ذٰلِكَ, उस, ile).
+**Enriched:** The demonstrative use meaning 'that' or 'that one,' pointing to a specific referent that is typically distant in space, time, or discourse. Multilingual evidence confirms the demonstrative reading: Spanish renders it 'aquel/aquella,' Arabic 'ذٰلِكَ,' and German 'jener/jenes' — all distinctly demonstrative rather than merely pronominal. Key passages include Gen 19:35 ('that night'), Gen 21:31 ('that place'), and Gen 26:24 ('that night'), where temporal or spatial distance is foregrounded.
+
+### H0136 / Sense 80109 (440 occ, sense 1 of 2)
+**Label:** Lord (divine title)
+**Lemma gloss:** Lord, master -- as divine title (Adonai, Lord God) and as respectful address to a human superior.
+**Description:** Adonai as a divine title and name for God, used in direct address, predication, and reference across all grammatical forms (absolute, construct, with prepositions and conjunctions).
+**Enriched:** The divine title Adonai, used 440 times to address or refer to God as sovereign Lord. This includes direct prayer address (Gen 15:2, 'O Lord GOD, what will you give me?'), prophetic invocations (Deut 3:24, 'O Lord GOD, you have begun to show your servant your greatness'), and liturgical declarations. The intensive plural form with first-person suffix (adonay) signals majesty. Cross-linguistically every tradition uses its highest title: spa 'Senor/Adonai,' fra 'Seigneur,' deu 'Herr,' reflecting the universal recognition of divine sovereignty.
+
+### H6965b / Sense 131695 (432 occ, sense 1 of 12)
+**Label:** Qal: to rise, arise, get up
+**Lemma gloss:** to rise, arise, stand up; to stand firm, endure, remain valid; causative: to raise up (a person, leader), to establish (covenant, kingdom), to erect (structure), to fulfill (word, oath)
+**Description:** The basic physical sense of rising from a seated, lying, or lower position, or arising to take action; the most frequent use of qum in narrative (wayyaqom, 'and he arose') and commands (qum, 'arise!').
+**Enriched:** Basic physical rising: to get up from a seated, lying, or lower position. The narrative workhorse wayyaqom ('and he arose') appears constantly. Genesis 22:3 has Abraham rising early to sacrifice Isaac. Genesis 4:8 recounts Cain rising against Abel—the verb of motion preceding violence. The imperative qum ('arise!') summons to action across prophetic and historical texts. Cross-linguistic glosses (Spanish 'levantarse,' French 'se lever,' German 'aufstehen') cluster tightly around vertical motion.
+
+### H7969 / Sense 140792 (431 occ, sense 1 of 1)
+**Label:** cardinal number three
+**Lemma gloss:** three — the cardinal number, used independently, in construct, and in compound numerals
+**Description:** The cardinal number three, used independently, in construct chains with pronominal suffixes (three-of-them), and as a component in compound numerals (thirteen, twenty-three, three hundred).
+**Enriched:** The cardinal number three in its masculine (shalosh) and feminine (sheloshah) forms, used for counting persons, objects, time periods, and measurements. Appears independently (Gen 6:10 'three sons'), in construct with pronominal suffixes (Gen 9:19 'three of them'), and as a component in compound numerals like thirteen or three hundred (Gen 5:22). All 431 occurrences denote the same numerical value without metaphorical extension.
+
+### H0505 / Sense 82690 (427 occ, sense 1 of 4)
+**Label:** cardinal number thousand
+**Lemma gloss:** Thousand (numeral); in dual 'two thousand'; in plural 'thousands'; also 'clan, tribal subdivision.'
+**Description:** The numeral one thousand (1,000) used in counting, measurements, quantities, and temporal expressions, with all grammatical inflections (singular, construct, with prepositions and articles).
+**Enriched:** The cardinal numeral 'one thousand' (1,000) used in counting, census totals, measurements, monetary amounts, and temporal expressions (427 occurrences). Abraham receives אֶלֶף pieces of silver in Gen 20:16; the Exodus census counts thousands of fighting men (Exod 12:37). Spanish 'mil,' French 'mille,' and German 'tausend' all render this transparently. Appears in singular, construct, and with prepositions and articles across every grammatical environment.
+
+### G3754 / Sense 73501 (425 occ, sense 2 of 3)
+**Label:** because, for (causal)
+**Lemma gloss:** Conjunction: that (introducing content clauses); because, for (causal); rarely a relative: what, whatever.
+**Description:** Conjunction introducing a causal or explanatory clause, translated 'because', 'for', or 'since' in English. This is the second most frequent use (425 occurrences). The multilingual signatures clearly differentiate this from the content-clause sense: Arabic 'li-anna' (because) vs. 'anna' (that), Hindi 'kyonki' (because) vs. 'ki' (that), Korean 'waenyahamyeon' (because) vs. '-eul/-rago' (that-marker), Spanish 'porque' (because) vs. 'que' (that). German and French are less discriminating ('dass'/'que' for both), but the Arabic, Hindi, Korean, and Spanish translations provide unambiguous causal marking. Prominent in the Beatitudes (Matt 5:3-12): 'Blessed are the poor in spirit, FOR theirs is the kingdom of heaven.'
+**Enriched:** The causal conjunction 'because, for, since,' introducing a reason or explanation for what precedes. With 425 occurrences, this is the second most frequent use, prominent in the Beatitudes (Matt 5:4-10) where each blessing is followed by hoti + reason: 'Blessed are those who mourn, because they shall be comforted.' Spanish porque, French parce que/car, and German denn/weil all deploy distinct causal vocabulary here, whereas Greek relies on the same particle as sense 1 — a persistent challenge for translators and exegetes who must determine from context whether hoti means 'that' or 'because.'
+
+### H0834d / Sense 84787 (424 occ, sense 1 of 7)
+**Label:** as, just as (comparative)
+**Lemma gloss:** As, just as (comparative); when (temporal); because, since (causal); according to what; after
+**Description:** Introduces a comparison or manner clause: 'as', 'just as', 'like'. The most common use of כַּאֲשֶׁר, establishing a correspondence between two situations or actions.
+**Enriched:** Comparative: 'as,' 'just as,' 'like' — the dominant sense at roughly 83% of occurrences, establishing correspondence between two situations. The formulaic ka'asher tsivvah ('as [the LORD] commanded') recurs throughout the Pentateuch (Gen 7:9, 7:16, Exod 39:1). French comme and German wie render this uniformly, while Korean cheoreom distinguishes it from temporal uses.
+
+### G1096 / Sense 64535 (421 occ, sense 1 of 8)
+**Label:** become, change state
+**Lemma gloss:** To become, happen, come into being, or exist; spanning transformation, event occurrence, arrival, birth, and states of being
+**Description:** To undergo a change of state or condition, transitioning from one quality or status to another; the core transformative meaning of ginomai (Arabic: صَارَ sara; Korean: 되다 doeda; Swahili: -kuwa).
+**Enriched:** The primary transformative sense: to undergo a change of state, to become something one was not before. Arabic sara and Korean doeda both denote change-of-state transitions. This covers the majority of occurrences (421x) including formulaic 'and it came to pass' narrative pivots (Matt 1:22; Matt 7:28) and statements of transformation like 'the Word became flesh.'
+
+### H6258 / Sense 126822 (421 occ, sense 1 of 2)
+**Label:** and now
+**Lemma gloss:** Now -- a temporal adverb marking the present moment, often in the transitional phrase 'and now' or in 'from now on.'
+**Description:** and now, And now, but now (421 occurrences across 3 original clusters)
+**Enriched:** The present temporal adverb 'now,' overwhelmingly appearing in the discourse formula we'attah ('and now') to mark a transition from past narration or situation to present action, command, or conclusion. With 421 occurrences this is the dominant pattern, spanning every genre: patriarchal dialogue (Gen 12:19), covenant stipulations (Gen 20:7, 'now return the man's wife'), prophetic indictment (Isa 1:21, 'but now murderers'), and royal speech (1 Kgs 12:4). All languages render it with their standard temporal marker: spa 'y-ahora,' fra 'et-maintenant,' deu 'und-nun.'
+
+### G3588 / Sense 72935 (420 occ, sense 4 of 6)
+**Label:** dative article (indirect object/locative)
+**Lemma gloss:** The definite article; also substantivizer, connective, and comparative marker across all cases and genders
+**Description:** The article in the dative case marking the indirect object, location, or instrument, often rendered 'to the,' 'in the,' or 'by the.'
+**Enriched:** Dative article marking indirect objects, locations, or instruments. Greek's synthetic case system packs meaning into the article form itself (τῷ, τῇ), while analytic languages unpack it into prepositions: English 'to the/in the,' Spanish 'al/en el,' German 'dem' (Matt 5:22, 24, 25).
+
+### G3708 / Sense 73272 (419 occ, sense 1 of 5)
+**Label:** see, perceive visually
+**Lemma gloss:** To see, perceive visually; as interjection 'behold!'; in passive, to appear or become visible; by extension, to perceive mentally.
+**Description:** To see with the eyes, the basic act of visual perception in any tense, person, or number.
+**Enriched:** To see with the eyes, the basic act of visual perception — 419 occurrences spanning every narrative context in the New Testament. The magi 'saw' the star and rejoiced (Matt 2:10), Jesus 'saw' the crowds and went up the mountain (Matt 5:1), the disciples 'saw' Jesus walking on the sea (Matt 14:26). The aorist participle idon ('having seen') is especially common as a narrative transition device, often translated 'when he saw.' Spanish ver, German sehen, French voir, Korean 보다, and Arabic ra'a all converge on straightforward visual perception. This sense includes both physical sight and the emphatic 'seeing' of witnesses — as in 'we have seen his glory' (John 1:14) — where the visual act carries evidentiary weight.
+
+### G3962 / Sense 74289 (413 occ, sense 1 of 3)
+**Label:** father or divine Father
+**Lemma gloss:** Father -- biological parent, God the Father, or ancestral forefather; rarely 'parents' (both father and mother).
+**Description:** A male parent, either biological/adoptive father or God as heavenly Father, across all grammatical inflections.
+**Enriched:** A male parent or God as Father, covering the vast majority of occurrences. Includes Jesus' address to God as Father (Matt 6:9; John 17:1), human fathers in genealogies and narratives (Matt 3:9; Luke 1:59), and the Father-Son relational theology of Paul and John. Glosses universally render this as 'Father'/'Padre'/'père'/'Vater,' with the divine-versus-human distinction residing in context rather than vocabulary.
+
+### H4310 / Sense 111178 (413 occ, sense 1 of 2)
+**Label:** interrogative who/whom
+**Lemma gloss:** Interrogative pronoun 'who?' asking about identity of persons; also indefinite 'whoever, anyone who' in conditional contexts.
+**Description:** Direct interrogative pronoun asking about the identity of a person, functioning as subject ('who?') or object ('whom?'), including with prepositional prefixes (to whom, from whom, by whom) and conjunctive waw.
+**Enriched:** The direct interrogative 'who?' or 'whom?' — by far the dominant usage (413 of 423 occurrences). Functions as subject or object in questions about personal identity, often with prepositional prefixes (to whom, from whom). All major translations map it to dedicated interrogative pronouns: English 'who,' Spanish quién, French qui, German wer/wen. Key passages include God's question in Gen 3:11 and Pharaoh's challenge in Exod 5:2.
+
+### H0996 / Sense 86392 (410 occ, sense 1 of 1)
+**Label:** between, among
+**Lemma gloss:** Between, among; preposition marking spatial, relational, or conceptual interval separating two or more entities
+**Description:** Preposition indicating spatial, relational, or conceptual interval separating two or more entities; used with pronominal suffixes and in combination with other prepositions (מִבֵּין 'from between', וּבֵין 'and between') without change of core meaning
+**Enriched:** Preposition indicating the interval or space separating two or more referents, whether spatial (Gen 15:17 'between the pieces'), relational (Gen 26:28 'between us'), temporal, or conceptual (Gen 1:4 'between the light and the darkness'). Cognate Arabic bayn and Aramaic ben confirm the pan-Semitic role of this word. Pronominal suffixes and compound forms like mibben extend its reach across virtually every genre of biblical literature.
+
+### H2719 / Sense 98927 (410 occ, sense 1 of 3)
+**Label:** sword, weapon of war
+**Lemma gloss:** Sword, the primary bladed weapon of warfare and divine judgment; rarely 'knives' (flint blades) or 'ruins' (by homophonic confusion).
+**Description:** A bladed weapon used in combat, execution, and warfare; includes literal swords wielded by soldiers and kings, the personified/metaphorical 'sword of YHWH' as instrument of divine judgment, and all prepositional/possessive/plural inflections thereof (Arabic cognate sayf, Korean kal, Swahili upanga all confirm a single sense across all grammatical forms).
+**Enriched:** A bladed weapon used in combat, execution, and divine judgment, covering virtually all occurrences. Includes literal swords wielded by soldiers and kings (Gen 34:26; Exod 17:13), the flaming sword guarding Eden (Gen 3:24), and the personified 'sword of YHWH' as an instrument of covenant curse and prophetic wrath (Lev 26:25; Jer 14:12). Glosses across languages are remarkably consistent: 'espada,' 'épée,' 'Schwert,' all pointing to the standard war sword.
+
+### H7586 / Sense 137296 (406 occ, sense 1 of 1)
+**Label:** Saul / Shaul (proper name)
+**Lemma gloss:** Saul/Shaul; proper name meaning 'asked [of God],' borne by Israel's first king and several other figures
+**Description:** The proper name שָׁאוּל (Shaul/Saul), referring to (a) King Saul son of Kish, first king of Israel, (b) an Edomite king from Rehoboth on the River (Gen 36:37–38), and (c) Shaul son of Simeon by a Canaanite woman (Gen 46:10); all 15 clusters differ only by prefixed prepositions (ל ,מ) and the conjunction ו, not by meaning.
+**Enriched:** Proper masculine name from the root sha'al ('to ask, request'), applied primarily to Israel's first king, son of Kish of Benjamin (1 Sam 9:2), whose 360+ occurrences dominate the corpus. Also borne by an Edomite king (Gen 36:37), a Simeonite clan ancestor (Gen 46:10; Exod 6:15), and a Levite (1 Chr 6:9). The etymological link to 'asking' resonates with the narrative of Israel requesting a king.
+
+### H4994 / Sense 115357 (404 occ, sense 1 of 1)
+**Label:** please, I pray (particle of entreaty)
+**Lemma gloss:** Please, I pray; enclitic particle of entreaty, exhortation, or rhetorical softening
+**Description:** An enclitic particle of entreaty or exhortation, expressing polite request, urgent appeal, or rhetorical softening; typically untranslatable but rendered as 'please,' 'I pray,' 'now' in English. Extremely common in dialogue and prayer throughout the Hebrew Bible (Gen 12:11,13, 13:8,9, 15:5, 18:3,4,21,27,30,31,32, etc.). The three clusters represent the same particle: the main form (400x), a variant punctuation form (3x), and a ketiv reading (1x). Translations converge across languages: Spanish 'por favor,' Hindi कृपया (please), Arabic رَجَاءً (please), Korean 제발/부디 (please/I beg), Swahili tafadhali (please). No semantic distinction exists between the clusters.
+**Enriched:** An enclitic discourse particle appended primarily to imperatives and cohortatives to express entreaty, polite request, or rhetorical softening. Its tone spans gentle courtesy (Gen 13:9 'separate yourself, please') to urgent plea (Gen 22:2) to ironic challenge (Isa 47:12). Virtually untranslatable as a standalone word, it modulates the illocutionary force of the verb it accompanies. The wide variation in target-language renderings (English 'please,' German 'doch,' French 'je t'en prie') underscores its pragmatic rather than semantic content.
+
+### H4196 / Sense 110596 (403 occ, sense 1 of 1)
+**Label:** altar (place of sacrifice)
+**Lemma gloss:** Altar; a raised cultic installation for offering sacrifices, from the root zavach ('to slaughter')
+**Description:** A cultic installation for offering sacrifices to God or to false gods, derived from the root זבח (to slaughter); used of both legitimate Yahwistic altars and idolatrous high-place altars throughout the OT.
+**Enriched:** A cultic installation constructed for the presentation of animal sacrifices, grain offerings, or incense to deity, derived from the root z-b-ch ('to slaughter'). Encompasses the patriarchal open-air altars (Gen 8:20; 12:7), the bronze altar of burnt offering and golden incense altar of the Tabernacle (Exod 27:1; 30:1), Solomon's Temple altar, and also illegitimate altars to foreign gods whose demolition the prophets demanded. The Arabic cognate madhbah confirms the 'place of slaughter' etymology across Semitic.
+
+### H4725 / Sense 113895 (400 occ, sense 1 of 2)
+**Label:** place, location, site
+**Lemma gloss:** Place, location, site — a physical spot, locality, or appointed position; rarely, a measured distance or space.
+**Description:** A physical location, site, or named place; the general spatial sense of maqom covering a specific spot, a locality, a region, or an appointed position. This encompasses all grammatical inflections including construct forms, pronominal suffixes, prepositional prefixes, singular and plural, and conjunctive forms.
+**Enriched:** A physical place, location, site, or appointed position (400x). This overwhelmingly dominant sense covers everything from the sacred ground at the burning bush (Exod 3:5) to the place Abraham stood before the LORD (Gen 18:24) to regions and named localities. All major translations converge on a single core spatial term — English 'the place,' Spanish el lugar, French le lieu, German Ort — confirming a remarkably stable semantic core across contexts of worship, travel, habitation, and law.
+
+### H8104 / Sense 142343 (399 occ, sense 1 of 6)
+**Label:** Qal: keep, observe (law/covenant)
+**Lemma gloss:** keep, watch, observe, guard, preserve; to maintain faithful custody over persons, things, commands, or covenants
+**Description:** Qal stem sense of keeping, observing, or obeying commandments, statutes, covenant, sabbath, and ordinances; the obedient adherence to divine or legal instruction.
+**Enriched:** Qal stem: to keep, observe, or obey commandments, statutes, covenants, and ordinances — the dominant sense covering nearly 400 occurrences. Spanish guardar, French garder, and German bewahren/beachten all preserve the dual meaning of custodial keeping and legal observance. Exodus 12:17 (keep the feast of unleavened bread) and Deuteronomy 5:12 (keep the Sabbath) show the verb at the heart of covenant loyalty.
+
+### H6310 / Sense 127068 (395 occ, sense 1 of 9)
+**Label:** mouth (body part)
+**Lemma gloss:** mouth, edge, opening, command; from the physical organ to its extensions (sword edge, well opening, proportional measure)
+**Description:** The physical mouth of a person or animal, used for speaking, eating, or as the organ of speech; includes all pronominal and prepositional inflections where the referent is the literal mouth.
+**Enriched:** The literal physical mouth appears in 395 passages, covering eating, speaking, and all pronominal/prepositional phrases where the referent is the bodily organ. This foundational sense anchors the semantic network from which the other meanings derive through metaphor and metonymy.
+
+### G5613 / Sense 79238 (394 occ, sense 1 of 7)
+**Label:** comparative: as, like
+**Lemma gloss:** As, like (comparative); when, while (temporal); about (approximative); how! (exclamatory); as if; so as to; since
+**Description:** Introduces a comparison or manner clause, indicating similarity or likeness between two things or actions.
+**Enriched:** Comparative: 'as,' 'like' — the dominant sense at roughly 78% of occurrences, drawing a likeness or manner parallel. 'Your will be done on earth as it is in heaven' (Matt 6:10) and 'be perfect as your Father is perfect' (Matt 5:48) are paradigmatic. Spanish como, French comme, and German wie all converge here with their default comparative meaning.
+
+### H7651 / Sense 138023 (393 occ, sense 1 of 2)
+**Label:** seven (cardinal number)
+**Lemma gloss:** Seven — the cardinal number, used independently or in compounds; rarely as a multiplicative 'seven times.'
+**Description:** The cardinal number seven, used independently or in compound numbers (seventeen, twenty-seven, etc.), across all grammatical forms (masculine/feminine, construct/absolute, with prefixed prepositions, conjunctions, article, or pronominal suffixes).
+**Enriched:** The cardinal number seven (393x), used across all grammatical forms — masculine, feminine, construct, absolute, with prefixed prepositions, and in compound numbers like seventeen or twenty-seven. Translations are perfectly uniform: English 'seven,' Spanish siete, French sept, German sieben. This sense covers genealogical ages (Gen 5:7, 25, 31), ritual stipulations (seven days, seven lambs), and narrative counts (Gen 7:2, seven pairs of clean animals).
+
+### H3701 / Sense 107078 (391 occ, sense 1 of 2)
+**Label:** silver (the metal)
+**Lemma gloss:** Silver as a precious metal; by extension, money or currency weighed out for payment, purchase, or redemption.
+**Description:** The precious metal silver, used as material for crafting objects, ornamentation, temple vessels, or in descriptions of composition, appearance, and refining.
+**Enriched:** The precious metal silver in its physical sense — as raw ore, refined material, or crafted substance used for temple furnishings, idols, jewelry, and ornamentation. This covers the vast majority of occurrences (391x). German Silber and Spanish plata capture the material referent directly. Key contexts include the tabernacle construction (Exodus 25-38) and prophetic imagery of refining silver (Zech 13:9, Mal 3:3, Ps 12:7).
+
+### H2091 / Sense 94143 (389 occ, sense 1 of 1)
+**Label:** gold (the metal)
+**Lemma gloss:** Gold; the precious metal, whether raw ore, refined material, currency, or figurative standard of value
+**Description:** The precious metal gold, used as material for crafting objects, as currency/wealth, and as a standard of value; Hebrew zahav covers all occurrences whether referring to raw gold, gold as a crafting material, gold as wealth, or gold in figurative comparisons.
+**Enriched:** The precious metal gold in all its biblical roles: as raw ore mined from the earth (Gen 2:11-12; Job 28:1), as refined material for sacred furnishings such as the Ark's overlay and the menorah (Exod 25:11, 31), as a measure of wealth and royal splendor (1 Kgs 10:11), and as a figurative standard of purity and worth (Prov 17:3; Job 23:10). Cognate across the Semitic family -- Arabic dhahab, Aramaic dehav, Sabean dhb -- confirming its deep antiquity as a lexical item.
+
+### G2250 / Sense 68926 (388 occ, sense 1 of 2)
+**Label:** day
+**Lemma gloss:** Day — a calendar day or period of time; also the daylight hours as opposed to night.
+**Description:** A day as a unit of time, whether a specific calendar day, a period of days, or a significant appointed day. This is the core and overwhelmingly dominant meaning of ἡμέρα across its NT occurrences (380+ tokens). Uniformly rendered Ger. 'Tag,' Fr. 'jour,' Heb. 'יוֹם/יָמִים,' Kor. '날/날들,' Hin. 'दिन/दिनों,' Spa. 'día/días,' Arb. 'يوم/أيّام.' Encompasses calendrical references (Matt 2:1 'in the days of Herod,' Matt 4:2 'forty days'), eschatological references (Matt 7:22 'on that day,' Matt 10:15 'day of judgment'), narrative time markers (Mark 2:1 'after some days,' Acts 25:13), and theological uses (Matt 12:40 'three days and three nights,' Rom 14:6, Jude 6). Auto-clusters 'day,' 'Of days,' and the second 'day' cluster are all inflectional variants of this single meaning.
+**Enriched:** A day as a unit of time (388x) — whether a specific calendar day, a counted period, or a significant appointed day. This encompasses ordinary temporal references ('on the third day'), extended periods ('in the days of Herod'), and eschatological usage ('the day of the Lord'). All translations converge on a single term: English 'day,' Spanish día, French jour, German Tag. The breadth is enormous, from Matt 6:34 ('sufficient for the day is its own trouble') to apocalyptic judgment scenes.
+
+### G3778 / Sense 73588 (383 occ, sense 2 of 3)
+**Label:** this person, these people
+**Lemma gloss:** This, this one, these — near demonstrative pronoun for persons, things, and explanatory constructions
+**Description:** Demonstrative pronoun referring to specific persons, used as a substantive meaning 'this one, this man, this woman, these people,' in any case, gender, or number.
+**Enriched:** Demonstrative pronoun referring to specific persons: 'this one,' 'this man,' 'this woman,' 'these people.' Used as a substantive in masculine and feminine forms, it identifies individuals within the narrative. Matt 3:3 ('this is he who was spoken of'), Matt 12:23 ('could this be the Son of David?'), and Matt 11:10 all illustrate personal reference. Spanish 'éste/este' and French 'celui-ci' distinctly mark personal rather than thing-reference.
+
+### G5207 / Sense 78013 (382 occ, sense 1 of 1)
+**Label:** son, descendant, one characterized by
+**Lemma gloss:** Son, descendant, or one characterized by a quality; used both literally and in Semitic idiom ('son of...')
+**Description:** The Greek noun υἱός denoting a male offspring, descendant, or one belonging to a category (e.g., 'sons of light,' 'sons of Abraham'). All 382 NT occurrences—whether nominative, accusative, genitive, dative, singular or plural—share this core meaning. Multilingual evidence is uniform: Spanish 'hijo/hijos,' Arabic 'ابن/بنين,' Hindi 'पुत्र,' Korean '아들,' Swahili 'mwana/wana.' The split between S78013 (379x, all cases singular and plural) and S78016 (3x, dative/nominative plural with prepositional collocations like 'with-sons' or 'to-sons') reflects only grammatical case and number variation, not a distinct sense. Both clusters translate identically across all target languages.
+**Enriched:** Greek noun denoting a male offspring, a descendant, or one who belongs to or is characterized by a particular quality or group. Literal usage covers biological sons (Matt 1:21, the son born to Mary). The christological title ho huios tou theou ('the Son of God,' Matt 3:17; 16:16) and the apocalyptic ho huios tou anthropou ('the Son of Man,' Matt 8:20) dominate the theological landscape. Semitic-influenced category usage ('sons of light,' 'sons of Abraham') extends the word beyond kinship into spiritual identity and covenant belonging.
+
+### H1870 / Sense 92118 (376 occ, sense 1 of 5)
+**Label:** road, path, way
+**Lemma gloss:** Road, path, way; metaphorically one's way of life, conduct, or manner; also a journey or distance traveled.
+**Description:** A physical road, path, or route — the concrete thoroughfare on which one walks or travels, including named roads (way of the Red Sea, way of the land of the Philistines), roads between cities, and paths in the wilderness; Arabic طَرِيق, Korean 길, Swahili njia, Hindi मार्ग/रास्ता/सड़क.
+**Enriched:** A physical road, path, or route — the concrete thoroughfare on which people walk or travel, appearing 376 times. This covers named routes ('the way of the land of the Philistines,' Exod 13:17), roads between cities (Gen 35:19), paths in the wilderness (Gen 24:27; 28:20), and even animal tracks. Spanish camino, German Weg, French chemin, and Arabic tariq all map directly to this spatial sense. The construct form derek + place-name ('way of the Red Sea,' 'way of Bashan') functions almost as a geographical proper noun, and Gen 3:24 — the cherubim guarding the 'way to the tree of life' — gives this concrete sense immediate theological weight.
+
+### H5002 / Sense 115387 (376 occ, sense 1 of 1)
+**Label:** utterance, oracle, declaration
+**Lemma gloss:** Utterance, oracle, declaration; a solemn prophetic formula marking speech as divinely authorized
+**Description:** A solemn prophetic utterance or divine declaration, used almost exclusively in the formulaic expression נְאֻם יהוה ('declares the LORD') to mark speech as a direct oracle from God.
+**Enriched:** A solemn prophetic noun used almost exclusively in the construct phrase ne'um YHWH ('declares the LORD') to mark speech as a direct divine oracle transmitted through the prophet. Outside this formula, it introduces the ecstatic utterances of Balaam (Num 24:3, 15) and David's last words (2 Sam 23:1). Its rigid syntactic behavior -- always in construct, never inflected independently -- gives it a formulaic, nearly liturgical character that functions as a divine speech-act marker rather than an ordinary noun.
+
+### H2022 / Sense 93581 (373 occ, sense 1 of 3)
+**Label:** mountain, mount, hill
+**Lemma gloss:** Mountain, hill, or highland region; a single peak, a range of mountains, or an inhabited hill country district.
+**Description:** A single elevated landmass or peak, whether a specific named mountain (Mount Sinai, Mount Zion), a contextually identified mountain, or a lesser hill; includes all singular inflections, construct-state combinations with proper names, prepositional prefixes, directional he, and pronominal suffixes.
+**Enriched:** A single elevated landmass or peak, whether a famous named mountain like Sinai (Exod 19:2) or Zion, or any contextually identified hill. Multilingual glosses consistently render this with singular forms: 'la-montagne,' 'der-Berg,' 'el-monte.' This is the overwhelmingly dominant sense, covering named sacred mountains, battlefield high ground, and poetic imagery of God's dwelling place.
+

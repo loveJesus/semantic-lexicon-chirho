@@ -1,0 +1,291 @@
+# Sense Refinement Detection — Batch 041
+
+You are a biblical lexicographer reviewing sense entries for a Hebrew/Aramaic/Greek lexicon.
+Each entry below is a single "sense" that was produced by clustering translation signatures 
+and then merging with an LLM. Some senses may have been OVER-LUMPED — they contain genuinely 
+distinct meanings that should be separate senses.
+
+## Your Task
+
+For each sense, determine if it should be SPLIT into multiple senses. Look for:
+- Literal vs. figurative/metaphorical uses lumped together
+- Concrete vs. abstract meanings combined
+- Multiple distinct referents (e.g., "father" = biological parent + patron/advisor + originator)
+- Physical vs. spiritual/theological uses merged
+- Different syntactic frames producing different meanings
+
+## Output Format
+
+Return a JSON array. For senses that need NO splitting, omit them entirely.
+For senses that SHOULD be split, include an entry like:
+
+```json
+[
+  {
+    "senseIdChirho": 79287,
+    "lemmaIdChirho": "H0001",
+    "currentLabelChirho": "father, immediate male parent",
+    "splitProposalChirho": [
+      {
+        "newLabelChirho": "biological/legal father",
+        "criteriaChirho": "Direct parent-child relationship, possessive constructions with specific person"
+      },
+      {
+        "newLabelChirho": "metaphorical father (patron, advisor, protector)",
+        "criteriaChirho": "Title of respect for prophets, advisors, or authority figures; 'father to Pharaoh' type usage"
+      }
+    ],
+    "confidenceChirho": "high",
+    "reasoningChirho": "Description explicitly mentions 'title of respect or metaphorical originator' alongside biological father"
+  }
+]
+```
+
+Only propose splits where you have MEDIUM or HIGH confidence. Do NOT split function words (articles, 
+prepositions, particles, conjunctions) unless there is a genuinely distinct semantic sense (not just 
+syntactic variation). Proper nouns generally should NOT be split.
+
+If NO senses in this batch need splitting, return an empty array: []
+
+## Senses to Review
+
+### G3419 / Sense 72509 (32 occ, sense 1 of 3)
+**Label:** (none)
+**Lemma gloss:** A tomb, burial monument, or memorial for the dead
+**Description:** (none)
+**Enriched:** The primary singular sense: a specific tomb or burial place, typically a rock-hewn chamber. Joseph's tomb (Matt 27:60), the empty tomb at the resurrection (Matt 28:8), and Lazarus's tomb (John 11:38) all fall here. French 'tombeau,' Spanish 'sepulcro,' and German 'Grab' all denote a constructed burial space rather than a simple grave in the ground.
+
+### G3441 / Sense 72559 (32 occ, sense 1 of 3)
+**Label:** alone, by oneself
+**Lemma gloss:** Alone, by oneself; only, unique, sole; merely, exclusively (restrictive)
+**Description:** Solitary, without companions or assistance; being by oneself, separated from others.
+**Enriched:** The most common sense: alone, by oneself, solitary, without others present or assisting. Jesus withdraws 'alone' to pray (Matt 14:23), teaches that humans do not live by bread 'alone' (Matt 4:4), and declares that no one knows the day 'except the Father alone' (Matt 24:36). Spanish solo and German allein consistently render this solitary sense across all traditions.
+
+### G4119 / Sense 74935 (32 occ, sense 1 of 5)
+**Label:** more in quantity (comparative)
+**Lemma gloss:** More, greater (comparative of polys); of quantity, number, extent, duration, rank, or importance; substantively, 'the majority.'
+**Description:** Used as a comparative adjective or adverb indicating a greater number or amount than something else, often with an explicit 'than' comparison (e.g., 'more than five hundred,' 'more than the others').
+**Enriched:** The core comparative sense: more in quantity or number than something else, with an explicit or implicit standard of comparison. This is the default, unmarked use at 32 occurrences. 'Unless your righteousness exceeds (pleion) that of the scribes' (Matt 5:20); 'more than twelve legions of angels' (Matt 26:53); 'more than all of them' (Luke 21:3, the widow's mite). Spanish más que, German mehr als, and French plus que all align with straightforward quantitative comparison. The comparative genitive or conjunction e ('than') typically marks this sense syntactically.
+
+### G4221 / Sense 75479 (32 occ, sense 1 of 1)
+**Label:** cup, drinking vessel
+**Lemma gloss:** cup — a drinking vessel; literally of tableware, figuratively of one's divinely appointed portion of suffering or blessing
+**Description:** A drinking vessel or its contents; used literally of a physical cup (Mt 10:42; 23:25-26; Mk 7:4,8; 9:41; Lk 11:39; 22:17,20; 1 Cor 11:25-28) and metaphorically of a divinely appointed portion of suffering or judgment (Mt 20:22-23; 26:27,39; Mk 10:38-39; 14:23,36; Lk 22:42; Jn 18:11; 1 Cor 10:16,21; Rev 14:10; 16:19; 17:4; 18:6). All number forms (singular and plural, all cases) are merged as grammatical variation of one lexical sense. Translations: eng 'cup/cups,' spa 'copa/copas,' arb كَأْسَ/كُؤُوسٍ (ka's/ku'us, drinking cup), hin कटोरा/प्याला (katora/pyala, cup/goblet), kor 잔/잔들 (jan, cup), swa 'kikombe/vikombe' (cup/cups).
+**Enriched:** A drinking vessel or its metaphorical contents representing a divinely ordained portion. Literal uses include tableware (Matt 23:25-26; Mark 7:4) and a cup of cold water given in discipleship (Matt 10:42; Mark 9:41). The Gethsemane cup expresses Jesus' appointed suffering (Matt 26:39; Mark 14:36; John 18:11). The eucharistic cup signifies the new covenant in his blood (Luke 22:20; 1 Cor 11:25-28). Revelation deploys it for Babylon's abominations (Rev 17:4) and God's wrath (Rev 14:10; 16:19).
+
+### G5281 / Sense 78221 (32 occ, sense 1 of 1)
+**Label:** endurance, patient perseverance
+**Lemma gloss:** endurance, patient perseverance — steadfast remaining under trial without yielding, a cardinal Christian virtue
+**Description:** The Greek noun ὑπομονή denoting steadfast endurance, patient perseverance, or the capacity to remain under trial without yielding. All 32 NT occurrences express this single abstract quality, whether as a virtue to cultivate (Rom 5:3-4, Jas 1:3-4), a characteristic of the saints (Rev 13:10, 14:12), or a quality produced by testing (Rom 5:3). S78221 (30x, all four cases) and S78222 (2x, dative) differ only in that the latter cluster contains minor orthographic variation in Hindi ('धेएरज' vs 'धीरज'). Translations are identical: Spanish 'perseverancia/paciencia,' Arabic 'صبر,' Hindi 'धीरज/धैर्य,' Korean '인내,' Swahili 'uvumilivu/saburi.' No semantic distinction exists.
+**Enriched:** Steadfast endurance under trial, active perseverance that refuses to surrender or retreat. Paul's chain in Romans 5:3-4 places it between suffering and proven character as a transformative virtue. Jesus ties it to fruitfulness in the parable of the sower (Luke 8:15) and to eschatological survival (Luke 21:19). James insists it must be brought to completion (Jas 1:3-4). In Revelation, it defines the saints who keep God's commandments under persecution (Rev 13:10; 14:12).
+
+### H0325 / Sense 81422 (32 occ, sense 1 of 1)
+**Label:** Achashverosh
+**Lemma gloss:** Ahasuerus (Xerxes) — the Persian king of the book of Esther, husband of Vashti then Esther
+**Description:** Achashverosh, Ahasuerus, [kethiv] (32 occurrences across 4 original clusters)
+**Enriched:** The proper name of the Persian king (identified with Xerxes I, r. 486-465 BC) who dominates the narrative of Esther. He dismisses Vashti (Est 1:12-19), marries Esther (Est 2:17), unwittingly authorizes Haman's genocide (Est 3:10-12), and ultimately reverses the decree (Est 8:7-12). Also mentioned as the king during whose reign adversaries accused Judah (Ezra 4:6) and as the father of Darius the Mede (Dan 9:1).
+
+### H0352b / Sense 81618 (32 occ, sense 1 of 2)
+**Label:** pillar or jamb of gateway
+**Lemma gloss:** Projecting pillar, pilaster, or jamb flanking a gateway or door entrance, especially in temple architecture.
+**Description:** A projecting architectural pillar or jamb forming part of a gateway structure, especially in Ezekiel's temple vision.
+**Enriched:** A projecting pillar or jamb built into the wall on each side of a gate entrance, forming the structural frame of the gateway. Overwhelmingly attested in Ezekiel 40-41, where these pilasters are measured, paired, and described as integral to every gate chamber. The Hebrew suffixed forms (eilav, 'its jambs') appear repeatedly as Ezekiel catalogs dimensions. Spanish 'sus pilares' and English 'its jambs' consistently mark these as paired architectural features (Ezek 40:9-10, 16, 21, 24).
+
+### H0591 / Sense 83326 (32 occ, sense 1 of 1)
+**Label:** ship, seagoing vessel
+**Lemma gloss:** ship, fleet, seagoing vessel — a large watercraft for maritime trade, warfare, or transport
+**Description:** A large watercraft used for sea travel, trade, or naval expeditions; encompasses both singular and plural references to ships and fleets.
+**Enriched:** A seagoing vessel used for trade, military expeditions, or transport. Covers Solomon's Ophir fleet (1 Kgs 9:26-28; 10:22), Jehoshaphat's wrecked ships (1 Kgs 22:48), and Jonah's flight vessel (Jon 1:3-5). Prophetic imagery deploys ships as emblems of commercial pride and vulnerability — Isaiah's 'ships of Tarshish' (Isa 2:16; 23:1, 14) and Ezekiel's allegory for Tyre (Ezek 27:9, 25-29). Deuteronomy 28:68 threatens return to Egypt 'in ships' as covenant curse.
+
+### H0816 / Sense 84614 (32 occ, sense 1 of 4)
+**Label:** be or become guilty
+**Lemma gloss:** Offend, be guilty, incur guilt — to commit a trespass or become liable before God, sometimes involving desolation as consequence.
+**Description:** To be guilty, become guilty, or incur guilt before God or in a legal/cultic sense (Qal stem, all inflections including infinitive absolute as intensifier).
+**Enriched:** To be or become guilty — incurring guilt before God through a specific trespass, especially in cultic and legal contexts. This is the dominant Qal sense spanning nearly all occurrences. Leviticus 4:13-27 and 5:2-5 use it repeatedly as the trigger for guilt offerings: once a person 'becomes guilty,' sacrificial remedy is required. Numbers 5:6-7 pairs it with confession and restitution. Spanish 'se hizo culpable' and 'fue culpable' consistently mark the transition into a state of liability. Hosea 4:15 and 10:2 extend the concept to national guilt, while 2 Chronicles 19:10 warns judges to help others avoid 'becoming guilty before the LORD.'
+
+### H0842 / Sense 84838 (32 occ, sense 1 of 2)
+**Label:** Asherah pole / sacred tree
+**Lemma gloss:** Asherah — a Canaanite goddess, or the wooden cult pole/sacred tree erected in her honor at high places.
+**Description:** A wooden cult object (pole, stylized tree, or carved image) erected at high places and beside altars in honor of the goddess Asherah; the physical artifact that kings of Judah and Israel set up or destroyed. Includes singular and plural forms (אֲשֵׁרִים / אֲשֵׁרוֹת) with all grammatical inflections.
+**Enriched:** The physical cult object — a wooden pole, carved image, or stylized sacred tree erected beside Canaanite altars and Israelite high places. Almost always appears in the plural 'Asherim' alongside 'pillars' (masseboth) in destruction commands (Exod 34:13; Deut 7:5; Judg 6:25-26). The consistent pairing with 'high places' and 'altars of Baal' across translations (Spanish 'las Asherot,' French 'les Asheras,' German 'Aschera') confirms this as a recognized category of cultic furniture rather than a personal name in these contexts.
+
+### H1840 / Sense 91953 (32 occ, sense 1 of 1)
+**Label:** Daniel (proper noun)
+**Lemma gloss:** Daniel — 'God is my judge'; the exilic prophet-sage and several other biblical figures of this name
+**Description:** Daniel (Hebrew דָּנִיֵּאל / דָּנִאֵל, 'God is my judge'), a proper noun referring to several individuals in the Hebrew Bible: (1) a son of David and Abigail (1 Chr 3:1); (2) a priest of the line of Ithamar who returned with Ezra (Ezra 8:2; Neh 10:6); (3) a legendary figure of wisdom mentioned by Ezekiel alongside Noah and Job (Ezek 14:14,20; 28:3); (4) the protagonist of the book of Daniel, a Judean exile in Babylon who served at the royal court and received apocalyptic visions (Dan 1:6-8,9,11,17,19,21; 8:1,15,27; 10:1). All inflectional and prepositional forms (to Daniel, like Daniel, than Daniel) are variants of this single proper noun.
+**Enriched:** The proper name 'God is my judge,' chiefly designating the exilic prophet-sage who interprets dreams for Nebuchadnezzar and receives apocalyptic visions in Babylon (Dan 1-12). Ezekiel cites a figure named Daniel as a model of righteousness alongside Noah and Job (Ezek 14:14, 20) and as surpassingly wise (Ezek 28:3). Also borne by a son of David and Abigail (1 Chr 3:1) and a post-exilic priest of the line of Ithamar (Ezra 8:2; Neh 10:6).
+
+### H2181 / Sense 94631 (32 occ, sense 2 of 5)
+**Label:** prostitute, harlot (noun)
+**Lemma gloss:** Commit fornication, be a harlot; figuratively, be spiritually unfaithful to God; as noun, a prostitute; in Hifil, cause to prostitute.
+**Description:** The feminine noun zonah denoting a woman who engages in sexual immorality for payment or as a profession; used with articles, prepositions, and in plural forms to refer to prostitutes or harlots as a class or as individuals.
+**Enriched:** Zonah as noun: prostitute, harlot. The Qal feminine participle lexicalized as a substantive designating a woman who sells sexual services. Used with the article, prepositions, and in construct chains. Rahab the harlot (Josh 2:1, 6:17), the two prostitutes before Solomon (1 Kgs 3:16), and the 'harlot's house' as a place of danger in Proverbs. Spanish 'ramera/prostituta,' German 'Hure,' and French 'prostituée' all treat this as a stable nominal. Distinguished from qedeshah (cult prostitute) in Gen 38:21-22.
+
+### H2256a / Sense 95252 (32 occ, sense 1 of 4)
+**Label:** cord, rope, line
+**Lemma gloss:** A cord, rope, or measuring line; by extension a measured portion of territory, an allotted inheritance, or a band of people
+**Description:** A physical cord, rope, or measuring line made of twisted fibers, used for binding, tying, lowering, or measuring. Rahab lowered the spies by a rope through her window (Josh 2:15), David measured Moabites with a line (2 Sam 8:2), ropes were put on heads as a sign of submission (1 Kgs 20:31-32), cords of affliction bind the righteous (Job 36:8), the cords of death/Sheol encompass the psalmist (2 Sam 22:6; Ps 18:4-5; 116:3), wickedness is drawn with cords of falsehood (Isa 5:18), God leads Ephraim with cords of love (Hos 11:4), and Leviathan's tongue cannot be pressed down with a cord (Job 40:25). The literal sense extends to figurative 'cords' binding or constraining.
+**Enriched:** The concrete, foundational sense: a physical cord, rope, or line made from twisted fibers. Used for lowering people (Josh 2:15; Jer 38:6), dragging stones (2 Sam 17:13), binding (Job 40:25), tent rigging (Isa 33:20), and ship tackling (Isa 33:23). David's measurement of Moabite captives with cords (2 Sam 8:2) bridges the literal rope and the measuring-line usage. Spanish 'cuerda' and French 'corde' both preserve this core sense with precision, while German sometimes shifts toward the extended territorial meaning 'Gebiet' even in physical contexts.
+
+### H2398 / Sense 96218 (32 occ, sense 2 of 9)
+**Label:** Hifil: to cause to sin
+**Lemma gloss:** to sin, miss the mark, purify from sin; moral failure (Qal), causing sin (Hifil), ritual purification (Piel/Hitpael)
+**Description:** The Hifil causative meaning 'to cause/lead someone to sin', a distinct semantic role from the Qal; Arabic جَعَلَ يَخْطَأُ (caused to sin), Korean 범하게 하다 (caused to commit), Swahili kuwakosesha/kuwafanya kutenda dhambi (to make them sin), Spanish hizo pecar/hacer pecar (made to sin).
+**Enriched:** The Hifil causative (32 occurrences) introduces a distinct argument structure: X causes Y to sin. Key passages include Exodus 23:33 (foreign gods causing Israel to sin), 1 Kings 14:16 (Jeroboam's sins leading the nation astray). Multilingual glosses preserve causative morphology: caused to sin, hizo pecar, causa à péché.
+
+### H2474 / Sense 97175 (32 occ, sense 1 of 1)
+**Label:** window, opening in wall
+**Lemma gloss:** window — an opening in a wall or structure for light, air, and observation
+**Description:** An opening in a wall or structure for light and air, used both of ordinary domestic windows and of temple or architectural openings.
+**Enriched:** An opening in a wall for light, ventilation, and observation, used of domestic, military, and sacred architecture. Narrative windows serve as dramatic focal points: Noah's ark window (Gen 8:6), Rahab's escape route (Josh 2:15), Michal watching David (2 Sam 6:16), Jezebel's fatal appearance (2 Kgs 9:30). In Ezekiel's temple visions (40:16-46:2), the word becomes a technical architectural term for narrowing apertures.
+
+### H3332 / Sense 103397 (32 occ, sense 1 of 4)
+**Label:** pour out liquid
+**Lemma gloss:** To pour or pour out liquid (oil, water, blood); to cast molten metal into a mold; rarely, to be firm/hard or to set something down.
+**Description:** To pour out a liquid such as water, oil, or blood, whether in active, passive, or causative forms, including pouring as an act of serving.
+**Enriched:** To pour out a liquid — oil, water, blood, or broth — whether in ritual anointing, sacrificial offering, or everyday service. Jacob poured oil on the pillar at Bethel (Gen 28:18, 35:14); Moses poured anointing oil on Aaron's head (Lev 8:12); Elisha is identified as the one who 'poured water on the hands of Elijah' (2 Kgs 3:11). Spanish uses 'vertio' (poured) and 'derramaba' (was pouring); German 'goss' and 'giesse'; French 'verser.' Isaiah 44:3 extends the image metaphorically: 'I will pour out my Spirit' — where the liquid poured is divine blessing. This is the dominant sense, covering 32 of 52 occurrences.
+
+### H3611 / Sense 106213 (32 occ, sense 1 of 1)
+**Label:** dog (animal)
+**Lemma gloss:** dog — a domestic canine, often associated with scavenging and used figuratively as a term of contempt
+**Description:** A dog, the domestic animal (כֶּלֶב), used literally of dogs (scavengers, watchdogs) and figuratively as a term of contempt or self-deprecation.
+**Enriched:** The domestic dog, viewed primarily as a scavenger and culturally despised animal. Literal references depict fierce, hungry dogs devouring corpses and licking blood in the Deuteronomistic judgment oracles (1 Kgs 14:11; 21:19; 2 Kgs 9:10, 36). Figuratively, 'dead dog' expresses extreme self-abasement (1 Sam 24:14; 2 Sam 9:8). Job 30:1 names the only working dog — the sheep-dog — and even there it implies low status. Deut 23:18 bans the 'price of a dog' from the sanctuary.
+
+### H3830 / Sense 108285 (32 occ, sense 1 of 2)
+**Label:** garment, clothing
+**Lemma gloss:** Garment, clothing, or raiment; what one wears, both literally and as a figure for dignity or condition.
+**Description:** A piece of clothing or apparel worn on the body, used both for literal everyday dress and for garments of special significance.
+**Enriched:** A garment or article of clothing worn on the body, encompassing everyday dress, ceremonial attire, and figurative garments of honor or shame. The multilingual consensus is strong: English 'clothing/garment,' Spanish 'vestido/ropa,' French 'vêtement,' German 'Kleid/Kleidung.' Key passages range from Jacob's blessing describing garments washed in wine (Gen 49:11) to Job's lament that God seizes him by the collar of his coat (Job 30:18), to the woman of valor clothed in strength and dignity (Prov 31:25).
+
+### H3847 / Sense 108367 (32 occ, sense 2 of 4)
+**Label:** Hifil: clothe someone
+**Lemma gloss:** To put on or wear a garment; causatively to clothe someone; participially to be clothed in; passively to have been dressed
+**Description:** Causative stem meaning to dress or clothe another person, to put garments upon someone else (Hifil all conjugations): the subject causes another to be dressed.
+**Enriched:** The Hifil causative: to clothe someone else, to dress another person. Theologically significant from its first occurrence when God clothes the first humans (Gen 3:21), this sense appears in royal investiture (Gen 41:42), maternal care (Gen 27:15-16), and prophetic symbolism. Spanish vestir a alguien and French revêtir capture the transitive action. Priestly ordination language (Exod 28:41) relies heavily on this stem.
+
+### H3967 / Sense 109341 (32 occ, sense 2 of 3)
+**Label:** military unit of hundreds
+**Lemma gloss:** Hundred; cardinal numeral for 100 (singular, dual, plural); also a military/administrative unit; rarely a fractional hundredth part.
+**Description:** The plural 'hundreds' used as a designation for military or administrative divisions (companies of a hundred men), typically with the article ('the hundreds') in phrases like 'captains of hundreds'.
+**Enriched:** The plural 'hundreds' (הַמֵּאוֹת) functioning as a designation for military or administrative divisions—companies of roughly one hundred men. Typically appears with the article in the phrase 'captains/officers of hundreds' (שָׂרֵי מֵאוֹת, Exod 18:21, 25; Num 31:14, 48). The multilingual glosses often include the article ('the-hundreds,' 'las-centenas,' 'der-Hunderte'), confirming this is a recognized institutional title rather than a mere count.
+
+### H3972 / Sense 109368 (32 occ, sense 1 of 1)
+**Label:** anything, something
+**Lemma gloss:** anything, something — an indefinite pronoun, typically in negative contexts meaning 'nothing at all'
+**Description:** An indefinite pronoun meaning 'anything' or 'something,' typically appearing in negative or interrogative contexts to mean 'nothing at all' or 'not anything.' Frequent in patriarchal narratives concerning Joseph's stewardship in Potiphar's house (Gen 39:6, 9, 23) and his protest of innocence (Gen 40:15). Used in legal contexts for responsibility over property (Exod 22:7-8; Deut 13:17; 24:10). Samuel invokes it in his farewell address to demonstrate his integrity (1 Sam 12:4-5; cf. 1 Sam 20:26, 39; 21:3; 25:7). Also in wisdom literature (Eccl 5:15) and prophetic contexts (2 Kgs 5:20; 1 Kgs 10:21; 2 Chr 9:20). Derived from מָה וּמָה according to Thesaurus, functioning as an emphatic indefinite.
+**Enriched:** An indefinite pronoun used overwhelmingly in negative clauses to mean 'nothing at all, not anything.' Abraham is told not to do me'umah to Isaac (Gen 22:12), Jacob refuses me'umah from Laban (Gen 30:31), and Samuel claims he has taken me'umah from no one (1 Sam 12:4-5). The word also appears in euphemistic negation for wrongdoing (Gen 40:15). Its Assyrian cognates mamman/mimma confirm the generalizing indefinite function.
+
+### H4186 / Sense 110383 (32 occ, sense 1 of 4)
+**Label:** dwelling place, settlement
+**Lemma gloss:** A seat or sitting-place; an assembly; a dwelling-place, settlement, or habitation; also the act or period of dwelling.
+**Description:** A place where people live or settle; a habitation, residence, or dwelling-place, whether of individuals or communities.
+**Enriched:** The dominant sense: a dwelling-place, settlement, habitation, or residence where individuals or communities live. It appears in genealogical summaries listing the territories of clans (Gen 10:30, 'their dwelling was from Mesha'), in covenant law specifying regulations for 'all your dwelling-places' (Exod 12:20), and in prophetic visions of restoration (Ezek 34:13). The plural construct mōšebōtêhem ('their dwelling-places') is especially common in legislative and prophetic texts. Spanish 'morada/moradas' and German 'Wohnsitz/Wohnung' consistently confirm this residential meaning across our translation evidence.
+
+### H4219 / Sense 110722 (32 occ, sense 1 of 1)
+**Label:** sacrificial bowl or basin
+**Lemma gloss:** bowl, basin — a ritual vessel for catching and sprinkling sacrificial blood or presenting offerings
+**Description:** A bowl or basin (mizraq) used in tabernacle and temple worship for catching and sprinkling sacrificial blood or other cultic purposes.
+**Enriched:** A ritual bowl or basin used for catching, holding, and sprinkling sacrificial blood or presenting offerings. Named from zaraq ('to throw/sprinkle'), it is standard altar equipment (Exod 27:3; 38:3; Num 4:14). Twelve silver bowls filled with grain offerings dominate the tribal dedication in Numbers 7. Solomon's temple had both bronze and gold versions (1 Kgs 7:40-50). Amos 6:6 condemns secular misuse for wine-drinking; Zechariah 14:20 envisions universal holiness extending to these vessels.
+
+### H4283 / Sense 110966 (32 occ, sense 1 of 1)
+**Label:** the next day, the morrow
+**Lemma gloss:** the next day, the morrow — a temporal noun denoting the day following a referenced event
+**Description:** Temporal noun indicating the day following a reference point, used adverbially (often with מִן or לְ) or in construct chains to denote 'the day after' a specified event.
+**Enriched:** A temporal noun indicating the day immediately following a narrative or calendrical reference point. In narrative, mimochorat ('on the morrow') advances the plot to the next morning after pivotal events — Sodom's destruction (Gen 19:34), the golden calf (Exod 32:30), Saul's death (1 Sam 31:8). In liturgical contexts, 'the morrow of the sabbath' (Lev 23:11, 15-16) and 'the morrow of the Passover' (Num 33:3; Josh 5:11) set precise ritual calendrical timing.
+
+### H4791 / Sense 114257 (32 occ, sense 1 of 4)
+**Label:** heaven, the celestial realm
+**Lemma gloss:** Height, elevated place, or the heavenly heights; used of physical summits, the celestial dwelling of God, and as a title of divine exaltation.
+**Description:** The heavenly heights where God dwells; 'on high' or 'from on high' referring to the celestial/divine sphere above the earth.
+**Enriched:** The heavenly heights, the celestial realm where God dwells — 'on high' or 'from on high.' This is the dominant poetic use, appearing in nearly two-thirds of all occurrences. God sends rescue 'from on high' (2 Sam 22:17); He makes peace 'in his heights' (Job 25:2); the Spirit is poured out 'from on high' (Isa 32:15). Spanish consistently renders this as 'de lo alto' or 'desde lo alto' (from on high), French as 'de hauteur,' and German as 'Hohe.' The prepositional phrases bam-marom and lam-marom function almost as technical terms for the divine sphere, paralleling shamayim (heavens) in many poetic cola.
+
+### H6032 / Sense 125314 (32 occ, sense 1 of 1)
+**Label:** Answer / respond (Qal: to reply verbally)
+**Lemma gloss:** to answer, respond (Aramaic) — to reply verbally, always paired with 'and said' in Daniel
+**Description:** The verb עָנָה I in the Qal stem meaning 'to answer, respond, reply,' encompassing both declarative past forms (perfect, participle: 'answered/they answered,' 30x) and imperative requests ('answer us/me,' 2x). Multilingual evidence: English 'answered/answer,' Spanish 'respondió/respóndeme,' Hindi उत्तर दिया / उत्तर दे ('gave answer / give answer'), Arabic أَجَابَ / أَجِبنا / أَجِبني ('he answered / answer us / answer me'), Korean 대답하여/대답하였다/응답하소서 ('answered/replied/please respond'), Swahili akajibu/na-utujibu/na-unijibu ('answered/answer us/answer me'). All three clusters share the same Qal stem and the same core semantic of verbal response; they differ only in conjugation (perfect vs imperative) and pronominal objects, which are grammatical rather than semantic distinctions.
+**Enriched:** The Aramaic verb 'to answer, respond,' always coupled with amar ('said') in the formulaic phrase 'answered and said.' Covers both direct reply to a question (Dan 2:5; 3:16; 5:17; 6:13) and responsive speech prompted by a situation rather than a direct query (Dan 2:15, 20, 47; 3:9, 14, 28; 4:27). The pairing frames every major dialogue in Daniel's court narratives and vision interpretations.
+
+### H6186a / Sense 126118 (32 occ, sense 1 of 4)
+**Label:** arrange in order
+**Lemma gloss:** To arrange, set in order, draw up in battle array, prepare a table, or compare in value; fundamentally about placing things in proper arrangement.
+**Description:** To set things in proper order or arrangement, especially wood on an altar, showbread on a table, or a legal case before God (Qal general/cultic sense; Arabic رَتَّبَ 'put in order', Swahili -panga, Korean 정돈하다 / 배열하다).
+**Enriched:** To arrange or set things in proper order, especially in cultic and domestic contexts. This is the broadest and most frequent sense: Abraham arranges wood on the altar (Gen 22:9), priests arrange showbread on the table (Exod 40:23), and Aaron arranges lamps (Exod 27:21). Leviticus uses it repeatedly for laying out pieces of a sacrifice in order upon the wood (Lev 1:7-8, 12). Arabic رَتَّبَ ('put in order') and Swahili -panga ('arrange') both match this methodical, careful placement. The emphasis falls on proper sequence and right positioning — things placed where they belong.
+
+### H6442 / Sense 127934 (32 occ, sense 1 of 1)
+**Label:** the inner
+**Lemma gloss:** inner — an adjective describing the interior section of a building, especially the temple or its courts
+**Description:** the inner, in the inner (32 occurrences across 3 original clusters)
+**Enriched:** An adjective denoting the interior portion of a sacred or royal building, always used with the definite article. In Solomon's temple it marks the inner court and chambers (1 Kgs 6:27, 36; 7:12, 50). In Ezekiel 40-46, it dominates the temple vision, specifying inner gates, inner courts, and inner rooms as spatial markers of increasing holiness. The word maps sacred architecture into concentric zones radiating inward toward God's presence.
+
+### H6485a / Sense 128191 (32 occ, sense 4 of 15)
+**Label:** Qal: visit, attend to, care for
+**Lemma gloss:** to attend to, visit; to count, muster, number; to appoint, set in charge; to punish; to miss, be missing; to deposit
+**Description:** To visit someone with gracious attention, care for, look after, remember (positive divine visitation); Arabic افتقد, Korean 돌보다/방문하다, Hindi देखभाल करना/भेंट देना, Swahili tembelea/kumbuka.
+**Enriched:** To visit with gracious attention or care (32x) marks positive divine visitation. 'The LORD visited Sarah as He had said' (Gen 21:1), Joseph tells his brothers 'God will surely visit you and bring you up from this land' (Gen 50:24-25). Arabic uses افتقد (iftaqada, Form VIII, 'visit with care, remember'), Korean 돌보다/방문하다 (care for/visit), Hindi देखभाल करना (take care of), Swahili tembelea/kumbuka (visit/remember). The attention brings blessing and deliverance.
+
+### H6591 / Sense 128995 (32 occ, sense 1 of 1)
+**Label:** interpretation (Aramaic)
+**Lemma gloss:** interpretation — the meaning of a dream or vision, an Aramaic noun used exclusively in Daniel
+**Description:** The Aramaic noun peshar (פְּשַׁר) means 'interpretation' or 'explanation,' appearing exclusively in Daniel in the context of dream and vision interpretation. All three clusters convey the same core meaning — the decoded meaning of a dream or sign — varying only in grammatical form: conjunctive with pronominal suffix 'and its interpretation' (S128995, the most frequent pattern in Daniel's formulaic revelations), determinate or construct 'the interpretation' (S128997), and the bare plural 'interpretations' (S129001). Multilingual evidence is fully consistent: English 'interpretation/interpretations,' Spanish 'interpretacion/interpretaciones,' Hindi 'arth' (अर्थ) throughout, Arabic 'tafsir/tafsirat' (تَفْسِير/تَفْسِيرَاتٍ), Korean 'haeseok' (해석) throughout, Swahili 'tafsiri' throughout. Number (singular vs. plural) and determination are grammatical, not semantic distinctions.
+**Enriched:** The Aramaic noun for interpretation, specifically of dreams and visions in the court narratives and apocalyptic visions of Daniel. It names what the Babylonian wise men cannot provide (Dan 2:4-11; 4:3-4; 5:7-8) and what God reveals exclusively through Daniel (Dan 2:27-45; 4:15-16; 5:12-26). The emphatic form pishra and construct peshar alternate throughout. This term later influenced the Qumran pesher exegetical tradition.
+
+### H6955 / Sense 131526 (32 occ, sense 1 of 1)
+**Label:** Kohath (proper name)
+**Lemma gloss:** Kohath — second son of Levi, ancestor of the Kohathite Levitical clan charged with carrying sacred furnishings
+**Description:** The proper name Kohath (קְהָת), second son of Levi and ancestor of the Kohathite clan responsible for transporting sacred furnishings (Gen 46:11; Ex 6:16,18; Nu 3:17,19,27,29-30; 4:2,4,15,34-37; 7:9; 10:21; 26:57-58; Josh 21:5,10,20,26; 1Chr 6:1-2,16,18,22,38,46,54,61,66,70; 15:5; 23:6,12; 2Chr 29:12; 34:12). All clusters are the same person with different grammatical particles: bare name, with conjunction waw, and with preposition lamed. Spanish 'Coat/Quehat,' Arabic 'قَهَاتَ,' Korean '고핫,' Swahili 'Kohathi,' and Hindi 'कहात' are uniform throughout.
+**Enriched:** The proper name of Levi's second son and eponymous ancestor of the Kohathite clan. Genealogies trace the line from Kohath through Amram to Moses and Aaron (Exod 6:16-20; Num 3:17-19). The Kohathites bore the holiest tabernacle furnishings — the ark, altars, lampstand — under strict prohibitions against touching or viewing them uncovered (Num 4:4-20). Census and city-assignment lists appear in Numbers 3-4, 26:57-58, Joshua 21:4-5, and 1 Chronicles 6.
+
+### H7121 / Sense 132833 (32 occ, sense 3 of 6)
+**Label:** proclaim, announce publicly
+**Lemma gloss:** Call, summon, name; cry out in distress; proclaim publicly; read aloud; invite to a gathering
+**Description:** Qal: to proclaim or publicly announce a message, decree, or fast (Arabic نَادَى nada / يُنَادِي yunadi; Korean 선포하다; Swahili kutangaza); the sense of formal or authoritative public declaration.
+**Enriched:** Formal public proclamation or announcement (32x). Korean 선포하다 and Swahili kutangaza mark the official, authoritative register. Exod 33:19 and 34:5-6 (God proclaiming his own name and attributes) show the theological weight this sense carries. Lev 23:2 (proclaiming sacred assemblies) illustrates its ritual-administrative function in Israelite life.
+
+### H7364 / Sense 135575 (32 occ, sense 2 of 4)
+**Label:** wash something with water
+**Lemma gloss:** To wash, bathe, or rinse with water; covering full-body bathing for purification, washing specific objects or body parts, and passive reception of washing.
+**Description:** To wash an object, body part, or another person with water, such as washing hands, feet, entrails, or garments (Qal transitive).
+**Enriched:** To wash a specific object, body part, or another person with water — the transitive use. Washing feet is the paradigmatic example: Abraham offers water for his guests' feet (Gen 18:4), a gesture repeated throughout the patriarchal narratives (Gen 19:2, 24:32, 43:24). The verb also covers washing sacrificial entrails and legs on the altar (Lev 1:9, 13) and washing one's hands or face (Gen 43:31, Exod 30:19-21). Spanish lavaron and French laver straightforwardly render this active, object-directed washing. Job 29:6 extends it metaphorically: 'I washed my steps in butter.'
+
+### H7887 / Sense 139996 (32 occ, sense 1 of 1)
+**Label:** Shiloh (place name)
+**Lemma gloss:** Shiloh — the Israelite cultic center in Ephraim where the tabernacle stood from the conquest to the early monarchy
+**Description:** The proper noun Shiloh, a major Israelite cultic center in the hill country of Ephraim where the Tabernacle was stationed from the conquest until the early monarchy. Shiloh features prominently in the tribal allotment (Josh 18:1, 18:8-10, 19:51, 21:2, 22:9, 22:12), the annual festival and the Benjaminite wives episode (Judg 21:12, 21:19, 21:21), the Samuel narratives (1 Sam 1:3, 1:9, 1:24, 2:14, 3:21, 4:3-4, 14:3), the Ahijah prophecy (1 Kgs 2:27, 11:29, 14:2-4), and the prophetic warning of its destruction (Jer 7:12, 7:14, 26:6, 26:9, 41:5, Ps 78:60). All three sense clusters represent prepositional variants of the same toponym: beth/lamed 'in/at/to Shiloh' (27x), min 'from Shiloh' (3x), and kaph 'like Shiloh' (2x). Multilingual evidence is uniform: Spanish 'Silo/Shilo,' Arabic 'shiluh,' Hindi 'shilo,' Korean 'sillo,' Swahili 'Shilo.'
+**Enriched:** The proper name of Israel's central cultic site in Ephraim, home of the tabernacle from Joshua through early Samuel. Joshua stationed the Tent of Meeting there (Josh 18:1) and allocated tribal territories from it (Josh 18:8-10; 19:51). Samuel grew up at Shiloh under Eli (1 Sam 1:3-9; 3:21), and the ark was taken from there to battle (1 Sam 4:3-4). Its destruction became Jeremiah's warning to Jerusalem (Jer 7:12-14; 26:6-9); Psalm 78:60 laments God's abandoning the mishkan at Shiloh.
+
+### H8552 / Sense 145331 (32 occ, sense 1 of 6)
+**Label:** be complete, be finished (Qal)
+**Lemma gloss:** Be complete or finished; be consumed or perish; (Hifil) bring to completion or destroy; (Hitpael) show oneself blameless
+**Description:** Qal intransitive sense of reaching completion or being finished, used of tasks, works, time periods, and provisions coming to their natural end; Arabic consistently uses تمّ (tamma) 'be complete', Korean 끝났다/다하였다 'ended/was exhausted', Swahili -maliza/-isha 'finish/end', Spanish terminar/acabar 'finish'
+**Enriched:** The core Qal intransitive meaning: reaching completion, being finished, or coming to an end. Used of provisions being exhausted (Gen 47:15, 18), construction being completed (1 Kgs 7:22), time periods expiring (Lev 25:29), and tasks reaching their natural conclusion. Arabic tamma provides a precise cognate, and the multilingual glosses converge on 'finished/completed' — Spanish 'se acabó,' French 'achever.' The subject naturally comes to its end rather than being forcibly terminated.
+
+### H8615b / Sense 145713 (32 occ, sense 1 of 1)
+**Label:** hope, expectation
+**Lemma gloss:** hope, expectation — confident anticipation of a future outcome, whether grounded in God or in human aspiration
+**Description:** Confident anticipation or expectation directed toward a future outcome, whether grounded in God, circumstances, or human aspiration; used across all grammatical forms (absolute, construct, with pronominal suffixes, with article and conjunction) with no semantic differentiation.
+**Enriched:** Confident anticipation or expectation directed toward a future outcome, spanning theological trust in God and everyday human aspiration. In wisdom literature, hope separates the righteous from the wicked (Prov 10:28; 11:7; Job 8:13). Jeremiah promises 'hope for your future' to exiled mothers (Jer 31:17), and Hosea names the Valley of Achor a 'door of hope' (Hos 2:17). Lamentations 3:29 urges hope even in suffering.
+
+### G0417 / Sense 62333 (31 occ, sense 1 of 1)
+**Label:** wind
+**Lemma gloss:** wind — a natural movement of air, from gentle breeze to violent storm; also used figuratively of instability
+**Description:** A natural movement of air, wind — ranging from a gentle breeze to a violent storm. Both singular and plural inflections (nominative, accusative, genitive, dative in both numbers) represent the same meteorological phenomenon; the plural often denotes multiple winds or winds from various directions. Multilingual evidence is uniform: Spanish 'viento/vientos,' Hindi 'हवा/हवाएँ' (havā singular / havāẽ plural — same root), Arabic 'ريحٍ/الرّيحُ/رِياحُ' (rīḥ singular / riyāḥ broken plural — same root ر-ي-ح), Korean '바람/바람들' (baram / baram-deul, singular/plural of same word), Swahili 'upepo/pepo' (upepo = wind, pepo = winds/spirits — both from same stem). Used literally of sea winds (Matt 7:25, 27; 14:24, 30, 32; Mark 4:37-41; Acts 27:4-7, 14-15) and figuratively of doctrinal instability (Eph 4:14; Jude 1:12) and the four winds of heaven (Matt 24:31; Rev 7:1).
+**Enriched:** A natural movement of air, ranging from a breeze to a violent gale. Dominates the Synoptic storm-stilling narratives where Jesus commands the wind and it obeys (Matt 8:26; Mark 4:39; Luke 8:24). Used figuratively of doctrinal instability (Eph 4:14) and of the doubter tossed like a wave (Jas 1:6). In Revelation 7:1, four angels hold back the four winds of the earth as an apocalyptic image of cosmic restraint.
+
+### G1242 / Sense 65249 (31 occ, sense 1 of 2)
+**Label:** covenant, solemn agreement between parties
+**Lemma gloss:** Covenant or testament; a binding agreement between God and his people, or a legal will activated by the testator's death.
+**Description:** A binding agreement or pact, especially between God and his people; rendered 'covenant' (eng), 'pacto' (spa), 'वाचा' (hin), 'العهد/عهد' (arb), '언약' (kor), 'agano/maagano' (swa). Covers both singular and plural inflections across all cases (nominative, genitive, dative, accusative). Includes the Abrahamic, Mosaic, and New Covenant references spanning 31 of 33 total occurrences. The plural forms (S65250) are simply number inflections of the same covenantal concept.
+**Enriched:** Covenant — a solemn, binding agreement, especially between God and his people. This accounts for 31 of 33 occurrences and spans the entire arc of salvation history: God's covenant with Abraham (Acts 3:25; 7:8; Gal 3:17), the old covenant mediated through Moses (2 Cor 3:14; Heb 8:9), and the new covenant inaugurated at the Last Supper (Matt 26:28; Mark 14:24; Luke 22:20; 1 Cor 11:25). Spanish 'pacto,' French 'alliance,' Hindi 'वाचा,' Arabic 'العهد,' and Swahili 'agano' uniformly render it as a pact or bond rather than a legal will. Hebrews 8:6-13 develops the contrast between old and new covenants most extensively.
+
+### G1537 / Sense 66562 (31 occ, sense 2 of 3)
+**Label:** at (position/side)
+**Lemma gloss:** Preposition: from, out of (source/origin); at, on (position/side); by means of, with (instrument/cause).
+**Description:** Positional use of ἐκ denoting location at or on a side, especially in the fixed expression ἐκ δεξιῶν/ἐξ εὐωνύμων ('at the right/left hand'). Found in eschatological seating (Matt 20:21, 23; 25:33-34, 41), the session of Christ (Matt 22:44; 26:64; Mark 10:37, 40; 14:62), and judgment scenes. Hindi renders as पर 'at/on', Spanish as a, English as 'at', while Arabic عن and Hebrew מ preserve ablative coloring.
+**Enriched:** A positional or locative sense meaning 'at, on (a side),' concentrated in the fixed expressions ek dexion ('at the right hand') and ex euonymon ('at the left'). With 31 occurrences, this specialized usage appears prominently in eschatological judgment scenes (Matt 25:33-34, sheep at the right, goats at the left) and royal seating requests (Matt 20:21, 'that these two sons of mine may sit, one at your right and one at your left'). The shift from directional 'out of' to static 'at' likely traces to the idiom's origin: one stands 'from the right side' and thus 'at the right.' Spanish a and German zu sometimes replace the expected de/aus here, showing that translators feel the positional force.
+
+### G2046 / Sense 68064 (31 occ, sense 2 of 3)
+**Label:** that which was spoken
+**Lemma gloss:** To say, speak, or tell; used actively of declaring something and passively in prophetic fulfillment formulas ('what was spoken').
+**Description:** The passive sense used in prophetic fulfillment formulas ('what was spoken by the prophet') and quotation formulas ('it was said'), referring to utterances previously delivered.
+**Enriched:** The passive sense used in prophetic fulfillment and quotation formulas: 'that which was spoken' or 'it was said.' Heavily concentrated in Matthew (1:22; 2:15, 17, 23; 3:3), this usage frames Old Testament prophecy as divinely delivered speech now finding its target. The passive construction elevates the utterance itself — it is not merely someone's words but an authoritative declaration now being fulfilled. French 'dire' and German 'spricht' both preserve the root speech sense even in these formulaic contexts.
+

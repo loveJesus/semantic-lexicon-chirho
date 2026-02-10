@@ -1,0 +1,291 @@
+# Sense Refinement Detection — Batch 004
+
+You are a biblical lexicographer reviewing sense entries for a Hebrew/Aramaic/Greek lexicon.
+Each entry below is a single "sense" that was produced by clustering translation signatures 
+and then merging with an LLM. Some senses may have been OVER-LUMPED — they contain genuinely 
+distinct meanings that should be separate senses.
+
+## Your Task
+
+For each sense, determine if it should be SPLIT into multiple senses. Look for:
+- Literal vs. figurative/metaphorical uses lumped together
+- Concrete vs. abstract meanings combined
+- Multiple distinct referents (e.g., "father" = biological parent + patron/advisor + originator)
+- Physical vs. spiritual/theological uses merged
+- Different syntactic frames producing different meanings
+
+## Output Format
+
+Return a JSON array. For senses that need NO splitting, omit them entirely.
+For senses that SHOULD be split, include an entry like:
+
+```json
+[
+  {
+    "senseIdChirho": 79287,
+    "lemmaIdChirho": "H0001",
+    "currentLabelChirho": "father, immediate male parent",
+    "splitProposalChirho": [
+      {
+        "newLabelChirho": "biological/legal father",
+        "criteriaChirho": "Direct parent-child relationship, possessive constructions with specific person"
+      },
+      {
+        "newLabelChirho": "metaphorical father (patron, advisor, protector)",
+        "criteriaChirho": "Title of respect for prophets, advisors, or authority figures; 'father to Pharaoh' type usage"
+      }
+    ],
+    "confidenceChirho": "high",
+    "reasoningChirho": "Description explicitly mentions 'title of respect or metaphorical originator' alongside biological father"
+  }
+]
+```
+
+Only propose splits where you have MEDIUM or HIGH confidence. Do NOT split function words (articles, 
+prepositions, particles, conjunctions) unless there is a genuinely distinct semantic sense (not just 
+syntactic variation). Proper nouns generally should NOT be split.
+
+If NO senses in this batch need splitting, return an empty array: []
+
+## Senses to Review
+
+### G4151 / Sense 75107 (370 occ, sense 1 of 5)
+**Label:** Holy Spirit / Spirit of God
+**Lemma gloss:** Spirit, spirit; the Holy Spirit or Spirit of God; also a spirit being, the human spirit, wind, or life-breath.
+**Description:** The divine Spirit, the Spirit of God or of Christ, the Holy Spirit as active agent in creation, revelation, empowerment, and sanctification.
+**Enriched:** The Holy Spirit, the Spirit of God or of Christ — the massively dominant sense at 370 of 383 occurrences. This covers the Spirit's role in the conception of Jesus (Matt 1:18, 20), the empowerment of believers at Pentecost (Acts 2:4), the indwelling presence that produces fruit (Gal 5:22), and the agent of prophetic revelation (2 Pet 1:21). Spanish Espiritu, German Geist, French esprit, and Korean 성령 (seongnyeong, 'Holy Spirit') all capitalize or use special modifiers to mark this divine referent. The phrase pneuma hagion ('Holy Spirit') appears over 90 times, but many other occurrences are identifiable as divine Spirit only from context — a perpetual translation challenge across all target languages.
+
+### G3326 / Sense 72254 (368 occ, sense 1 of 2)
+**Label:** with
+**Lemma gloss:** With (genitive: accompaniment, association); after (accusative: temporal sequence) -- a core Greek preposition of proximity.
+**Description:** with, With (368 occurrences across 3 original clusters)
+**Enriched:** Accompaniment, association, or participation, governing the genitive case. With 368 occurrences this is the primary sense: being with someone (Matt 2:3, Herod 'with all Jerusalem'), acting together (Matt 5:41, 'go with him two miles'), or possessing an attendant quality. The cross-linguistic evidence is perfectly uniform: spa 'con,' fra 'avec,' deu 'mit,' all dedicated accompaniment markers. Key passages: Matt 2:11 ('with his mother'), Matt 26:38 ('stay here and watch with me').
+
+### H5221 / Sense 117658 (362 occ, sense 1 of 15)
+**Label:** Hifil: to strike in battle, smite enemies
+**Lemma gloss:** to strike, smite, hit; to kill, defeat; to beat, wound; to afflict with plague; to clap (hands)
+**Description:** The primary military Hifil sense of נכה: to strike, smite, or attack an enemy in warfare, encompassing striking persons, armies, and cities in battle narratives; all languages uniformly use generic 'strike' vocabulary (Arabic ضَرَبَ, Swahili -piga, Korean 치다, Spanish golpear/herir) without specialized martial terms, indicating the base combative sense.
+**Enriched:** The primary military Hifil (362x) dominates Scripture's warfare narratives. Moses 'struck Egypt with all His plagues' (Exod 7:20, 8:17, 9:25), Joshua 'struck the Canaanites' (Josh 10:28-40 repeatedly), David 'struck the Philistines' (2 Sam 5:20, 8:1). All languages use generic 'strike/smite': Spanish herir/golpear, Korean 치다, Arabic ضَرَبَ, Swahili piga. The military context involves striking enemies, armies, cities in battle, with varying lethality.
+
+### G0191 / Sense 61649 (360 occ, sense 1 of 5)
+**Label:** hear, perceive sound
+**Lemma gloss:** To hear, perceive sound; to listen to, heed, obey; passively, to be heard; to learn by hearing or receive a report.
+**Description:** Basic auditory perception: to hear a sound, voice, word, or message with the physical ear, encompassing all active tenses, persons, numbers, and most participles of ἀκούω where the focus is on the act of hearing itself.
+**Enriched:** Basic auditory perception: to hear a sound, voice, word, or message with the physical ear. At 360 occurrences, this is the overwhelming default sense, covering everything from Herod hearing of Jesus' birth (Matt 2:3) to the crowds hearing his teaching (Matt 13:2) to the disciples hearing the voice from the cloud at the Transfiguration (Matt 17:5). All active indicative and most participial forms fall here. Korean deutda and Arabic sami'a both select their basic, unmarked hearing verbs, while German horen and French entendre serve as the general auditory terms. The participial aorist akousas ('having heard') functions almost as a narrative connective — 'when X heard this, X did Y' — across all four Gospels.
+
+### H0595 / Sense 83346 (359 occ, sense 1 of 1)
+**Label:** I (first person singular pronoun, emphatic)
+**Lemma gloss:** I (emphatic first person singular pronoun); the longer, solemn form alongside the shorter 'ani
+**Description:** The first person singular independent pronoun אָנֹכִי ('I'), the longer/emphatic form alongside אֲנִי (H0589). With 359 occurrences, it appears across all genres; often used in solemn or emphatic declarations, especially divine speech ('I am YHWH your God who brought you out,' Exod 20:2; Deut 5:6), covenant contexts, and emphatic self-identification. The three clusters differ only in syntactic frame: standalone (293x), conjunction-prefixed וְאָנֹכִי 'and I / but I' (64x), and interrogative-prefixed הַאָנֹכִי 'am I...?' (2x). Multilingual rendering is identical to H0589: spa yo, hin मैं, arb أَنَا, kor 내가/나는, swa mimi.
+**Enriched:** The emphatic or solemn form of the first person singular independent pronoun ('I'), used alongside the shorter 'ani (H0589). Favored in formal declarations, divine self-identification (Exod 20:2 'I am the LORD your God'), and emotionally charged speech (Gen 3:10 'I was afraid'). Its Akkadian cognate anaku and absence from Aramaic, Arabic, and Ethiopic point to archaic origins. The ku element may relate to a demonstrative base, giving the pronoun a 'here I am' quality that the shorter form lacks.
+
+### H???? / Sense 145956 (352 occ, sense 3 of 94)
+**Label:** (none)
+**Lemma gloss:** (none)
+**Description:** (none)
+**Enriched:** (none)
+
+### H3290 / Sense 102984 (349 occ, sense 1 of 1)
+**Label:** Jacob (patriarch/nation)
+**Lemma gloss:** Jacob; the patriarch (son of Isaac), later renamed Israel, and by extension the nation descended from him
+**Description:** The proper noun Ya'aqov (Jacob), referring to the patriarch Isaac's son (later renamed Israel) and by extension to his descendants or the nation bearing his name; all 11 clusters differ only by prepositional prefix or conjunction, not by meaning.
+**Enriched:** Proper masculine name of the patriarch, son of Isaac and Rebekah (Gen 25:26), whose 349 occurrences span his personal biography and his role as eponymous ancestor of the twelve tribes. The name is folk-etymologized from 'aqev ('heel,' Gen 25:26) and 'aqav ('to supplant,' Gen 27:36). After his theophany at Peniel he received the name Israel (Gen 32:28), and thereafter 'Jacob' and 'Israel' alternate as designations for the covenant people, especially in prophetic and poetic parallelism (Isa 41:8; Ps 14:7).
+
+### H0168 / Sense 80317 (348 occ, sense 1 of 2)
+**Label:** tent, portable dwelling
+**Lemma gloss:** Tent; a portable dwelling of cloth or skins, used for nomadic habitation, worship (the Tabernacle), and military encampment.
+**Description:** A portable shelter made of cloth or skins used as a dwelling, covering all singular and plural inflections, construct chains, and pronominal suffixes; target languages uniformly render 'tent' (Arabic خَيْمَة/خِيَام, Korean 장막, Swahili hema/mahema, Hindi तम्बू, Spanish tienda) whether the referent is a personal dwelling, a military camp tent, or the sacred Tabernacle (אֹהֶל מוֹעֵד).
+**Enriched:** A portable shelter of cloth, skins, or curtains serving as a dwelling place. This encompasses nomadic tents (Gen 4:20; 25:27), military encampments, the tabernacle/Tent of Meeting (Exod 28:43; 29:4), and metaphorical uses for one's household or life. Target languages are strikingly uniform: Arabic khayma, French tente, German Zelt, Spanish tienda -- all pointing to a single concrete referent with contextual extensions to sacred and figurative domains.
+
+### H0175 / Sense 80404 (347 occ, sense 1 of 1)
+**Label:** Aaron (personal name)
+**Lemma gloss:** Aaron; elder brother of Moses, first high priest of Israel, and ancestor of the Levitical priesthood
+**Description:** Proper masculine name of uncertain etymology. Aaron was the elder brother of Moses (Exod 7:7) and the first high priest of Israel. He served as Moses' spokesman before Pharaoh (Exod 4:14-16, 27-30), was consecrated with his sons for the priestly office (Exod 28-29; Lev 8-9), and led Israel's worship. Despite the golden calf incident (Exod 32) and his complaint with Miriam (Num 12), his rod budded as divine confirmation of his priestly selection (Num 17). He died on Mount Hor (Num 20:28; 33:38). Appears 347 times across Pentateuch, historical books, Psalms (106:16; 133:2), and Chronicles. Multilingual glosses uniformly render as Aaron/Aharon (arb: هَارُونُ, hin: हारून, kor: 아론). All auto-clusters are syntactic variants (with prepositions ל, ב, and conjunction ו) of the same name.
+**Enriched:** Proper masculine name of uncertain etymology, borne by Moses' elder brother (Exod 7:7) who became Israel's first high priest. He served as Moses' spokesman before Pharaoh (Exod 4:14-16), was consecrated in an elaborate ordination ceremony (Lev 8), and established the hereditary priestly line ('sons of Aaron,' Lev 1:5; Num 3:3). The narrative also records his failures, including the golden calf incident (Exod 32) and his death on Mount Hor before entering the land (Num 20:24-28). Called 'the holy one of the LORD' in Psalm 106:16.
+
+### H0784 / Sense 84435 (345 occ, sense 1 of 4)
+**Label:** fire, physical flames
+**Lemma gloss:** Fire; physical flames and burning; also fire as divine presence, instrument of judgment, and celestial lightning.
+**Description:** Literal, physical fire — burning, flames, conflagration — including fire used for cooking, sacrifice, signal, or warmth.
+**Enriched:** Literal, physical fire in all its practical uses: burning, flames, conflagration, cooking fire, sacrificial fire, signal fire, destructive fire in warfare, and domestic warmth. At 345 occurrences this covers the vast majority of uses. From Abraham's covenant fire (Gen 15:17) through the Levitical burnt offerings 'by fire' (Lev 1:7-9), through the burning of cities in conquest narratives (Josh 6:24), through Samson's foxes with torches (Judg 15:4-5). Arabic nar, Korean 불, Spanish fuego, and German Feuer all map straightforwardly here. The word is syntactically versatile — appearing with be- ('in/with fire'), le- ('to/for fire'), and in construct chains (esh YHWH, 'fire of the LORD').
+
+### G0080 / Sense 61289 (343 occ, sense 1 of 1)
+**Label:** brother, fellow believer
+**Lemma gloss:** Brother; fellow believer; kinsman — the primary NT term for sibling or spiritual family member
+**Description:** A male sibling by blood or, far more frequently in the NT, a fellow member of the believing community addressed in familial terms; the dominant NT relational term covering both literal kinship (e.g., Andrew and Peter, James and John) and the spiritual brotherhood of Christians (Paul's habitual address ἀδελφοί 'brothers'). Spanish hermano/hermanos, Arabic الإخْوَة/أَخيهِ (al-ikhwah/akhihi), Korean 형제 (hyeongje), Hindi भाई/भाइयो (bhai/bhaiyo), Swahili ndugu. The two clusters (S61289 with 337 occurrences across all cases and numbers, S61294 with 6 singular forms) show no semantic distinction — both are used interchangeably for biological brothers and spiritual brothers depending on context, and the translations are identical.
+**Enriched:** A male sibling or, far more often in the NT, a fellow member of the believing community addressed with familial warmth. The word's etymological root (a- copulative + delphys, 'womb') underscores shared origin — whether biological or spiritual. Paul's letters alone account for scores of occurrences in the communal sense (e.g., Rom 1:13; 1 Cor 1:10), while the literal kinship sense appears in contexts like Matt 4:18 (Peter and Andrew).
+
+### H7218a / Sense 133957 (343 occ, sense 1 of 7)
+**Label:** head (body part)
+**Lemma gloss:** Head (body part); chief or leader; top or summit; military company; beginning; choicest portion; census total
+**Description:** The physical head of a person or animal, including all possessive and prepositional inflections (my head, his head, on the head of, from his head, etc.), as consistently indicated by Arabic ra's, Korean meori, Swahili kichwa, and Hindi sir across all grammatical forms.
+**Enriched:** The literal, physical head of a human or animal — the default, unmarked sense appearing in roughly 57% of occurrences. Arabic ra's, Spanish cabeza, and German Haupt all converge on the anatomical meaning. Key passages include the baker's dream in Gen 40:20 and Jacob blessing Ephraim by placing his hand on the boy's head (Gen 48:14).
+
+### G3588 / Sense 72939 (340 occ, sense 5 of 6)
+**Label:** genitive article (possessive/partitive)
+**Lemma gloss:** The definite article; also substantivizer, connective, and comparative marker across all cases and genders
+**Description:** The article in the genitive case marking possession, source, or partitive relationship, often rendered 'of the.'
+**Enriched:** Genitive article marking possession, source, or partitive relationships. The form τοῦ/τῆς/τῶν signals 'of the,' rendered in French as 'du/de la,' Spanish 'del/de la,' and German 'des/der.' Especially prominent in Pauline theology where chains of genitives define doctrinal relationships (Rom 1:3-5).
+
+### G1437 / Sense 66020 (339 occ, sense 1 of 1)
+**Label:** if, in the event that (conditional particle)
+**Lemma gloss:** If, in the event that — conditional particle introducing hypothetical or potential clauses
+**Description:** A conditional conjunction introducing a protasis (the 'if' clause) of a conditional sentence, typically with the subjunctive mood to express a potential or hypothetical condition; uniformly rendered 'if' (eng), 'si' (spa), 'यदि/अगर' (hin), 'إن' (arb), '만일/만약' (kor), 'kama/ikiwa' (swa). All 339 occurrences across the three clusters function as the same conditional particle. S66022 (3x) shows minor contextual coloring but the same grammatical and semantic function, while S66024 (2x) combines with adverbs for emphasis ('if indeed') without altering the core conditional meaning.
+**Enriched:** A conditional conjunction introducing a protasis whose fulfillment is presented as possible but uncertain, regularly followed by the subjunctive mood. It frames the 'if' clause of third-class conditions, where the speaker neither assumes nor denies the outcome. Key passages include Matt 5:13 ('if salt loses its flavor') and 1 John 1:9 ('if we confess our sins'), where the open contingency is theologically deliberate.
+
+### G1520 / Sense 66471 (339 occ, sense 1 of 4)
+**Label:** cardinal number one
+**Lemma gloss:** One; the cardinal numeral denoting a single entity, also used for 'first,' distributive 'each,' and correlative 'the other'
+**Description:** The numeral 'one' used as a cardinal number, indicating a single entity or expressing unity, across all genders and cases.
+**Enriched:** The cardinal numeral 'one,' marking a single entity, quantity, or instance. With 339 occurrences this is overwhelmingly the dominant use. All major languages translate straightforwardly — English 'one,' Spanish 'un/una/uno,' French 'un,' German 'ein' — confirming a stable cross-linguistic core. Jesus uses it emphatically: 'not one jot' (Matt 5:18), 'one of these least commandments' (Matt 5:19), underscoring singularity and totality simultaneously.
+
+### H5307 / Sense 118380 (339 occ, sense 1 of 13)
+**Label:** Qal: fall down physically
+**Lemma gloss:** to fall, fall down; to lie prostrate; to cast lots; to desert; to attack; to dismount; causative: to cause to fall, cast down, allot
+**Description:** The core physical sense of falling or collapsing, covering all Qal inflections where the subject physically falls to the ground. Arabic consistently uses سَقَطَ (saqaṭa) 'to fall' and its imperfect يَسْقُطُ, matching the basic intransitive meaning. Korean distinguishes 떨어졌다 'fell/dropped' and 쓰러졌다 'collapsed/toppled', but these are sub-aspects of the same physical falling. Swahili uses the base verb -anguka 'fall' across tenses (akaanguka, ataanguka, ameanguka) with no derivational shift. Hindi गिरा/गिरे/गिरेंगे are simple tense variants of the same girna 'to fall'.
+**Enriched:** Core physical falling or collapsing to the ground. Arabic consistently uses سَقَطَ (saqaṭa) 'to fall,' confirming the primary sense across Semitic languages. Genesis 17:3 has Abraham falling on his face before God—the posture of reverence. Genesis 45:14 shows Joseph falling on Benjamin's neck in embrace. The versatility of the root appears in its Qal inflections spanning narrative (wayyipol, 'and he fell') and commands.
+
+### H8179 / Sense 143055 (337 occ, sense 1 of 2)
+**Label:** gate, entrance, doorway
+**Lemma gloss:** Gate or entrance to a city, temple, or palace; metonymically, a community or territorial jurisdiction ('within your gates').
+**Description:** A physical gate or entrance in a city wall, temple, palace, or camp — the concrete architectural opening through which one passes; includes singular and plural forms referring to actual gate structures.
+**Enriched:** A physical gate, entrance, or doorway (337x) — the concrete architectural structure in a city wall, temple, palace, or camp. This covers gates being opened and shut (Josh 2:5-7, Isa 45:1), the city gates of Jerusalem (Neh 7:3), temple gates (2 Chr 23:15, 20), and gates in prophetic vision (Ezekiel 40-48). Translations uniformly use their word for gate: English 'gate,' Spanish puerta, French porte, German Tor. The gate served as both passage point and civic gathering place where elders judged (Ruth 4:1, Prov 31:23).
+
+### G1325 / Sense 65522 (336 occ, sense 1 of 5)
+**Label:** give, bestow
+**Lemma gloss:** To give, bestow, grant; passively, to be given; by extension, to put/place, yield/produce, or hand over/surrender.
+**Description:** To give, hand over, or bestow something to someone — the general act of transfer from giver to recipient, across all active tenses, moods, persons, and numbers.
+**Enriched:** The core active sense: to give, bestow, or hand something to someone. At 336 occurrences, this encompasses the vast majority of the word's usage — God giving authority (Matt 10:1), Jesus giving bread to the disciples (Matt 14:19), a master distributing talents to servants (Matt 25:15), and the simple act of handing over a cup (Matt 26:27). Arabic a'ta, Korean juda, Spanish dio, German gab, and Swahili -pa all converge on their primary transfer verbs. The range of objects given is extraordinary: authority, grace, peace, signs, the Holy Spirit, eternal life, bread, money, a name, glory — making this sense the semantic backbone of New Testament soteriology and Christology alike.
+
+### H8432 / Sense 144653 (335 occ, sense 1 of 4)
+**Label:** midst/middle of (spatial-locative)
+**Lemma gloss:** Midst, middle, center; spatially the central region; relationally 'among' persons or peoples; the interior or midpoint.
+**Description:** The core spatial meaning of the central area or middle region of a place, land, sea, fire, or other spatial entity, used with various prepositions (b- 'in', min 'from', directional 'into/through') and pronominal suffixes; Arabic consistently renders wasaṭ, Korean 가운데 (gaunde), Swahili katikati/kati.
+**Enriched:** The core spatial-locative sense: the middle region or central area of a place, land, body of water, fire, or other physical space. At 335 occurrences this is the overwhelming default. The firmament divides waters 'in the midst of' the waters (Gen 1:6); Abraham walks 'in the midst of' the pieces of the covenant sacrifice (Gen 15:17); Israel passes through 'the midst of the sea' (Exod 14:22). Arabic wasat, Korean 가운데, and German Mitte/inmitten all map cleanly to this central-region meaning. The sense is always relational — tavekh requires a genitive or pronominal suffix specifying what space is being centered.
+
+### H6240 / Sense 126697 (334 occ, sense 1 of 3)
+**Label:** ten (cardinal number)
+**Lemma gloss:** Ten (used exclusively after unit digits to form the compound numbers eleven through nineteen, both cardinal and ordinal).
+**Description:** The cardinal number ten, used independently or in compound numbers (twelve, thirteen, etc.), with or without the definite article.
+**Enriched:** The cardinal number 'ten' as the compounding element in teen-numbers (334x). It never stands alone but always follows a unit digit: sheneim asar 'twelve,' sheloshah asar 'thirteen,' and so forth. The gender alternation (asar/esreh) parallels Arabic ashar/ashrata in the teens. Every translation language renders these as simple compound numerals — doce, douze, zwölf — collapsing the two-word Hebrew construction into a single lexeme. Pervasive in genealogies (Gen 5:8), chronologies, and census lists.
+
+### G2596 / Sense 70056 (332 occ, sense 1 of 11)
+**Label:** according to, in conformity with
+**Lemma gloss:** according to, in conformity with; each, every; throughout; at, in; by; toward; alone; concerning; down; beyond; against
+**Description:** Marks a standard, norm, or basis for action or judgment; the most frequent NT sense of kata with the accusative, expressing conformity or correspondence (e.g., kata ton nomon = according to the law).
+**Enriched:** The dominant New Testament sense appearing 332 times: marking conformity to a standard, norm, or basis for judgment. This 'according to' usage with the accusative expresses that actions, judgments, or states correspond to some measure—kata ton nomon (according to the law), kata sarka (according to the flesh). Cross-linguistic parallels appear in countless translations rendering this normative sense. Paul constantly uses it for theological standards: kata pneuma (according to the Spirit), kata charin (according to grace). The sense establishes the measuring stick by which reality is assessed.
+
+### H5375 / Sense 119148 (330 occ, sense 1 of 20)
+**Label:** Qal: to lift up, raise
+**Lemma gloss:** to lift, carry, bear; to take, receive; to forgive sin; to exalt, raise up (eyes, voice, hands, head)
+**Description:** Physical or metaphorical lifting up, raising (eyes, hands, voice, head), including all Qal inflections where the core meaning is upward motion or elevation.
+**Enriched:** Physical or metaphorical upward motion dominates 330 occurrences. Abraham 'lifted his eyes' (Gen 18:2), Jacob 'lifted his voice and wept' (Gen 21:16), Abraham 'lifted up his eyes and saw the ram' (Gen 22:13). Spanish consistently uses alzar/levantar (raise), French élever/lever (lift up), German erheben (elevate), and Korean 들다 (lift). The evidence spans lifting eyes, hands, voice, head, and abstract concepts like soul or heart.
+
+### H8064 / Sense 141848 (329 occ, sense 1 of 6)
+**Label:** heavens / sky
+**Lemma gloss:** Heavens, sky; the visible dome above the earth, God's dwelling place, the cosmic vault of stars and weather.
+**Description:** The heavens or sky as the visible expanse above the earth, including the atmosphere where birds fly, clouds form, and rain falls, as well as the cosmic vault where celestial bodies are set; the most common absolute and articulated forms of shamayim in all grammatical positions.
+**Enriched:** The primary sense: the heavens or sky as the visible expanse above the earth — the atmosphere where birds fly (Gen 1:20), clouds gather, rain falls, and celestial bodies shine (Gen 1:14-17). This is the overwhelmingly dominant usage (329 occurrences), rendered consistently across languages: Spanish los cielos, French les cieux, German der Himmel, Arabic السَّمَاوَات. The singular 'heaven' in some English translations versus the always-plural Hebrew form is a persistent translation challenge.
+
+### G5101 / Sense 77760 (327 occ, sense 1 of 4)
+**Label:** what / which (interrogative, things)
+**Lemma gloss:** Interrogative pronoun: what, which, who, whom, why; rarely indefinite 'someone, something.'
+**Description:** Interrogative pronoun asking about the identity, nature, or selection of a thing, event, or concept: 'what?', 'which?', 'to what?', 'by what?', 'what kind?'.
+**Enriched:** Interrogative pronoun asking about the identity, nature, or selection of a thing, event, or concept: 'what?', 'which?', 'what kind?' This is the most frequent use (327 occurrences). Jesus asks τί ποιήσει ὁ κύριος ('what will the master do?') and τί ὑμῖν δοκεῖ ('what do you think?'). Spanish 'qué' and German 'was' consistently render this thing-oriented interrogation, while French 'qui' sometimes conflates person and thing senses.
+
+### H1818 / Sense 91756 (327 occ, sense 1 of 3)
+**Label:** blood (physical substance)
+**Lemma gloss:** Blood as physical substance (sacrificial, dietary, bodily); bloodshed or violence (metonymic); bloodguilt or blood-liability (juridical).
+**Description:** The literal red fluid in the body of humans and animals, including sacrificial blood, ritual blood application, blood as food prohibition (Gen 9:4; Lev 17:11-14), blood of wounds, menstrual and birth blood, and blood used in covenant ceremonies.
+**Enriched:** The literal red fluid of humans and animals, encompassing sacrificial blood applied to altars and doorposts (Exod 12:7, 13, 22; Lev 4:30), the dietary prohibition against consuming blood (Gen 9:4; Lev 17:11-14), blood of wounds and battlefield slaughter, and menstrual or postpartum blood (Lev 12:7). Glosses across all languages converge: 'la-sangre,' 'le-sang,' 'das-Blut,' 'the-blood.' This overwhelmingly dominant sense (327 occurrences) is the foundation upon which the metonymic senses build.
+
+### H???? / Sense 145962 (327 occ, sense 4 of 94)
+**Label:** (none)
+**Lemma gloss:** (none)
+**Description:** (none)
+**Enriched:** (none)
+
+### H0176a / Sense 80414 (320 occ, sense 1 of 1)
+**Label:** (none)
+**Lemma gloss:** Or — disjunctive conjunction presenting alternatives or introducing particular cases
+**Description:** (none)
+**Enriched:** A disjunctive conjunction that presents two or more alternatives, functioning like English 'or.' In legislative contexts (Leviticus, Exodus), it frequently introduces a particular case under a broader statute — 'or if he gore a son' (Exod 21:31). Occasionally it carries the nuance of 'or rather,' suggesting preference between options, as in Gen 24:55 ('days or ten'). The uniform cross-linguistic rendering (spa: 'o,' fra: 'ou,' deu: 'oder') reflects its straightforward semantic role.
+
+### H4421 / Sense 111915 (319 occ, sense 1 of 1)
+**Label:** war, battle, armed conflict
+**Lemma gloss:** War, battle — armed conflict between opposing forces, whether a single engagement or prolonged campaign
+**Description:** Armed conflict or military engagement between opposing forces, whether a single battle or an ongoing war.
+**Enriched:** Armed conflict or military engagement between opposing forces, encompassing both individual battles and sustained wars. The noun derives from the root l-ch-m and appears in theologically significant constructions like 'wars of YHWH' (Num 21:14; 1 Sam 18:17) and as a cognate accusative with nilcham ('to wage war,' 1 Sam 8:20). Its scope ranges from the coalition battle of Gen 14:2 to the cosmic warfare imagery of Isaiah 42:13.
+
+### H5439 / Sense 120216 (319 occ, sense 1 of 3)
+**Label:** around, all around (spatial)
+**Lemma gloss:** Round about, all around; as a substantive, the surrounding area or neighboring peoples.
+**Description:** Adverbial or prepositional use indicating spatial surrounding or encirclement, including all pronominal suffixes and conjunctive/prepositional prefixes (מִן 'from around,' waw-conjunctive 'and around,' בְּ 'in the area around'), corresponding to Arabic حَوْلَ, Korean 둘레에/주변에/사방, Swahili kuzunguka/pande zote.
+**Enriched:** Adverbial and prepositional 'around, all around, on every side' (319x) — the dominant spatial sense indicating encirclement or surrounding position. Appears with prepositions (min-sabib 'from around,' al-sabib 'upon the circuit of') and pronominal suffixes. Genesis 23:17 uses it for Abraham's field boundaries; Ezekiel's temple visions are saturated with this word for architectural measurements. French tout autour, German ringsum, and Spanish alrededor all confirm a single unified spatial concept across every occurrence.
+
+### H1870 / Sense 92119 (318 occ, sense 2 of 5)
+**Label:** way of life, conduct
+**Lemma gloss:** Road, path, way; metaphorically one's way of life, conduct, or manner; also a journey or distance traveled.
+**Description:** One's way of life, behavior, or moral conduct — a metaphorical extension from 'path' to the course of life one follows, including both righteous and wicked conduct; often in construct with a person or group ('way of the wicked', 'his ways'); Arabic طَرِيق/طُرُق in moral sense, Swahili njia/mwenendo, Korean 길/행실, Hindi मार्ग/राह (figurative).
+**Enriched:** One's way of life, moral conduct, or habitual behavior — 318 occurrences forming the great metaphorical extension of the word. God examines human 'ways' (Gen 6:12; Ps 139:3), commands his people to walk in his 'ways' (Deut 8:6; 10:12), and the wicked are defined by their 'ways' (Ps 1:6; Prov 4:19). Korean 길/도 and Chinese 道 (dao) both carry this same path-to-ethics metaphor natively, while Swahili njia and Arabic tariq also extend naturally from road to conduct. The Psalms and Proverbs are the heartland of this sense, where derek becomes virtually synonymous with a person's character before God (Ps 119:27-30; Prov 3:6; 14:12).
+
+### H5030 / Sense 115586 (317 occ, sense 1 of 1)
+**Label:** Prophet, divine spokesperson
+**Lemma gloss:** Prophet — a divinely appointed spokesperson who declares God's message to the people
+**Description:** A person who speaks on behalf of a deity, delivering divinely inspired messages, warnings, or predictions; the standard term for both individual prophets (Moses, Elijah, Isaiah) and the prophetic class as an institution, encompassing all grammatical forms including singular, plural, construct, and possessed forms with no translation-signature evidence for semantic splitting across Arabic (nabiyy/anbiya), Korean (seonjiJa/ye-eonJa), Swahili (nabii/manabii), or Hindi (nabi/bhavishyavakta).
+**Enriched:** A person commissioned by God to deliver divinely inspired messages, whether warnings, promises, or judgments. The term encompasses both true prophets (Moses, Elijah, Isaiah) and false ones denounced in Deuteronomy 18:20 and Jeremiah. Originally distinguished from the 'seer' (ro'eh, 1 Sam 9:9), the navi became the standard designation for those who spoke 'thus says YHWH.' The uniform rendering across languages (spa: 'profeta,' fra: 'prophète,' deu: 'Prophet') traces back to the LXX's prophetes.
+
+### H1129 / Sense 87125 (316 occ, sense 1 of 4)
+**Label:** Qal: build, construct
+**Lemma gloss:** To build, construct; Nifal: be built, be established; as participle: builder; figuratively of God building a woman, a dynasty, or a people.
+**Description:** Core active Qal sense of physically building, constructing, or erecting a structure (city, house, altar, wall, tower), encompassing all finite verb forms (perfect, imperfect, imperative, consecutive, cohortative, jussive), infinitives construct and absolute, and prepositional infinitives -- every inflection of the basic transitive meaning. Glosses: eng 'built / will build / build / let us build / to build', spa 'edifico / construyo / edifiquemos', hin 'बनाया / बनाएगा / बनाओ / बनाने को', arb 'بَنَى / يَبْنِي / اِبْنِ / لِيَبْنِيَ / نَبْنِي', kor '지었다 / 세웠다 / 건축했다 / 짓자 / 짓기 위해', swa '-jenga / kujenga / jengeni'.
+**Enriched:** The core Qal active sense: physically building, constructing, or erecting a structure — a city, house, altar, wall, tower, or fortification. At 316 occurrences this dominates the lemma's profile, spanning the entire biblical narrative from the first altar (Gen 8:20) through the postexilic rebuilding of Jerusalem's walls (Neh 2-6). The verb appears in all finite Qal forms (perfect, imperfect, imperative, wayyiqtol consecutive). Arabic bana, Spanish construir/edificar, Korean 짓다/세우다, and Swahili -jenga all map to this concrete construction meaning without ambiguity. Key passages include the Tower of Babel (Gen 11:4), Solomon's temple (1 Kgs 6:1), and the second temple (Ezra 3:10).
+
+### H7704b / Sense 138468 (316 occ, sense 1 of 3)
+**Label:** cultivated field, plot of land
+**Lemma gloss:** Field, cultivated land; also open country or wild terrain as opposed to settled, worked agricultural plots.
+**Description:** The primary sense of שָׂדֶה denoting a cultivated or owned field, a parcel of agricultural land, including all grammatical inflections (singular, plural, construct, with prepositions and pronominal suffixes). Arabic consistently renders حَقْل (ḥaql) and its plural حُقُول (ḥuqūl) in all case forms, the standard Semitic term for a delimited, cultivatable plot. Korean uses 밭 (bat, 'dry field/cultivated plot') and 들 (deul, 'field') with various particles. Swahili uniformly uses shamba (cultivated field/farm) and its plural mashamba, with locative -ni suffix for 'in the field.' Hindi uses खेत (khet, cultivated field) as the primary rendering. This covers the overwhelming majority of occurrences — land as property, place of agricultural work, and named fields (e.g. 'field of Boaz,' 'field of Ephron').
+**Enriched:** Cultivated field, owned plot of agricultural land (316x) — the overwhelmingly dominant sense. Covers fields that are plowed, sown, harvested, bought, sold, and inherited. Includes construct forms (sedeh-Moab 'the territory of Moab,' Ruth 1:1) and all inflections with prepositions and suffixes. Genesis 23:17 records Abraham's purchase of the field of Machpelah; Leviticus 25:3 legislates sabbatical rest for 'your field.' German das Feld, French le champ, and Arabic haql all map to this primary agricultural sense.
+
+### H6242 / Sense 126712 (315 occ, sense 1 of 1)
+**Label:** twenty (cardinal number)
+**Lemma gloss:** Twenty — the cardinal number used for counting, age, measurement, and compound numerals
+**Description:** The cardinal number twenty, used independently or in compound numerals (twenty-one, twenty-five, etc.) for counting, age, measurement, dates, and quantities throughout biblical narrative, law, and genealogy.
+**Enriched:** The cardinal number twenty, employed across legal, narrative, and genealogical texts for quantities, ages, measurements, and dates. As the ancient plural of 'eser ('ten'), it reflects a base-ten counting system. It appears in formulas like 'from twenty years old and upward' (Num 1:3) for military census and in architectural measurements of the tabernacle and temple. Compound uses such as 'twenty thousand' (1 Chr 18:4) are common.
+
+### G2228 / Sense 68866 (313 occ, sense 1 of 2)
+**Label:** or (disjunctive)
+**Lemma gloss:** Or (presenting alternatives), or than (after comparatives); the primary Greek disjunctive and comparative conjunction.
+**Description:** Disjunctive conjunction presenting alternatives: 'or, either...or.' The primary and overwhelmingly dominant sense of ἤ in the NT (312+ occurrences). Uniformly rendered Ger. 'oder,' Fr. 'ou,' Heb. 'אוֹ,' Kor. '또는,' Hin. 'या,' Spa. 'o,' Arb. 'أَوْ.' Used in questions (Matt 9:5 'which is easier...or'), lists of alternatives (Matt 5:17-18, 6:24-25, 7:4/9/10/16), and conditional/hypothetical pairings (Matt 12:33 'Either make the tree good...or make it bad'). The cluster labeled 'Either' (68871, Matt 12:33) is simply a sentence-initial capitalization of this same disjunctive sense, not a distinct meaning.
+**Enriched:** The disjunctive conjunction 'or,' presenting two or more alternatives. This overwhelmingly dominant sense (313 of 352 occurrences) is rendered uniformly across target languages -- German 'oder,' Spanish 'o,' French 'ou,' Hebrew 'o' -- reflecting its transparent, universal logic. Used in simple either/or constructions (Matt 5:17; 6:24) as well as chains of multiple alternatives.
+
+### H5975 / Sense 124649 (310 occ, sense 1 of 7)
+**Label:** to stand, stand up
+**Lemma gloss:** To stand, take one's stand; stand firm or endure; stop, stand still; station or appoint; set up, establish; serve, attend
+**Description:** Qal: physical standing, taking a standing position, being in a standing posture — the basic, unmarked sense of עמד covering all Qal inflections where the meaning is simply positional standing.
+**Enriched:** Physical standing or taking a standing posture — the basic, unmarked Qal sense covering about 59% of occurrences. Abraham stood by the angels under the tree (Gen 18:8), and Pharaoh stood by the Nile in his dream (Gen 41:1). Spanish pararse/ponerse de pie and French se tenir capture this concrete positional meaning uniformly.
+
+### G3056 / Sense 71705 (309 occ, sense 1 of 4)
+**Label:** word, message, speech
+**Lemma gloss:** Word, message, or speech; also account/reckoning, the divine Logos, and reason/cause — the fullest expression of rational communication
+**Description:** A spoken or written communication, statement, or message, including divine proclamation ('the word of God') and general discourse or teaching.
+**Enriched:** A spoken or written communication: 'word,' 'message,' 'speech,' 'teaching,' or 'proclamation.' With 309 occurrences this is the dominant sense, spanning Jesus' sayings ('let your word be yes,' Matt 5:37), the parabolic 'word of the kingdom' (Matt 13:19), and apostolic preaching ('the word of God'). All major languages translate with a single core term — English 'word,' Spanish 'palabra,' French 'parole,' German 'Wort' — yet the range is enormous, from casual utterance to divine revelation, unified by the thread of meaningful communication.
+
+### H2568 / Sense 97890 (309 occ, sense 1 of 4)
+**Label:** cardinal number five
+**Lemma gloss:** Five; the cardinal numeral, also forming compounds fifteen and fifteenth, and used with ordinal force for 'fifth'
+**Description:** The cardinal numeral 'five' used independently or with prepositions/articles to denote the quantity five.
+**Enriched:** The cardinal numeral 'five' used independently or in construct to denote the quantity five. With 309 occurrences this is the primary use, appearing from the genealogies of Genesis 5 ('Enosh lived five years,' Gen 5:6) through measurements of the tabernacle and temple. All target languages translate uniformly — English 'five,' Spanish 'cinco,' French 'cinq,' German 'fünf' — confirming unambiguous numerical semantics across the entire range.
+
+### H3069 / Sense 101351 (306 occ, sense 1 of 1)
+**Label:** YHWH (the divine name)
+**Lemma gloss:** YHWH — the sacred Tetragrammaton, the proper covenant name of the God of Israel
+**Description:** The proper name of the God of Israel, the Tetragrammaton (יהוה), occurring over 6,800 times in the Hebrew Bible. All three clusters represent the identical divine name in different syntactic frames: standalone nominative (eng 'YHWH,' spa 'Yahweh,' arb 'يَهْوَه,' kor '여호와,' swa 'Yahwe/BWANA,' hin 'यहोवा'), with conjunction+preposition (eng 'and-to-YHWH'), and in variant attestation. No semantic distinction exists among these; the splits are purely grammatical (case, conjunction, preposition).
+**Enriched:** The proper name of the God of Israel, the Tetragrammaton (יהוה), here in the variant vocalization used in combination with Adonai to prevent liturgical repetition. Most of these 306 occurrences appear in the prophetic formula 'Adonai YHWH' (e.g., Gen 15:2, 15:8; Deut 3:24; Ezek passim). The name derives from the root h-y-h ('to be') and was considered too sacred to pronounce, leading to the Qere substitution preserved in the Masoretic pointing.
+
+### H2896a / Sense 100015 (305 occ, sense 1 of 5)
+**Label:** good (quality or moral)
+**Lemma gloss:** Good, pleasant, agreeable; of moral quality, practical suitability, beauty, or emotional gladness; also substantivized as 'goodness' or 'welfare.'
+**Description:** General positive quality — morally upright, practically suitable, or inherently desirable — the core adjectival sense of tov across all genders, numbers, and prepositional/conjunctive contexts.
+**Enriched:** The core adjectival sense: morally upright, practically suitable, or inherently desirable quality. This massive cluster (305 occurrences) anchors the word's usage from Genesis 1 ('God saw that it was good') through the Deuteronomic exhortations to do 'what is good and right' (Deut 6:18; 12:28). The convergence of English 'good,' Spanish bueno, French bon, German gut, Arabic khayr, and Korean 좋은 across these contexts confirms a single, stable core meaning. When applied to land it means fertile (Exod 3:8), to counsel it means wise (2 Sam 17:14), to a word it means fitting or true (1 Kgs 2:38).
+

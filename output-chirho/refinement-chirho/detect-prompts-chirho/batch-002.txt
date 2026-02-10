@@ -1,0 +1,291 @@
+# Sense Refinement Detection — Batch 002
+
+You are a biblical lexicographer reviewing sense entries for a Hebrew/Aramaic/Greek lexicon.
+Each entry below is a single "sense" that was produced by clustering translation signatures 
+and then merging with an LLM. Some senses may have been OVER-LUMPED — they contain genuinely 
+distinct meanings that should be separate senses.
+
+## Your Task
+
+For each sense, determine if it should be SPLIT into multiple senses. Look for:
+- Literal vs. figurative/metaphorical uses lumped together
+- Concrete vs. abstract meanings combined
+- Multiple distinct referents (e.g., "father" = biological parent + patron/advisor + originator)
+- Physical vs. spiritual/theological uses merged
+- Different syntactic frames producing different meanings
+
+## Output Format
+
+Return a JSON array. For senses that need NO splitting, omit them entirely.
+For senses that SHOULD be split, include an entry like:
+
+```json
+[
+  {
+    "senseIdChirho": 79287,
+    "lemmaIdChirho": "H0001",
+    "currentLabelChirho": "father, immediate male parent",
+    "splitProposalChirho": [
+      {
+        "newLabelChirho": "biological/legal father",
+        "criteriaChirho": "Direct parent-child relationship, possessive constructions with specific person"
+      },
+      {
+        "newLabelChirho": "metaphorical father (patron, advisor, protector)",
+        "criteriaChirho": "Title of respect for prophets, advisors, or authority figures; 'father to Pharaoh' type usage"
+      }
+    ],
+    "confidenceChirho": "high",
+    "reasoningChirho": "Description explicitly mentions 'title of respect or metaphorical originator' alongside biological father"
+  }
+]
+```
+
+Only propose splits where you have MEDIUM or HIGH confidence. Do NOT split function words (articles, 
+prepositions, particles, conjunctions) unless there is a genuinely distinct semantic sense (not just 
+syntactic variation). Proper nouns generally should NOT be split.
+
+If NO senses in this batch need splitting, return an empty array: []
+
+## Senses to Review
+
+### H5869a / Sense 123598 (734 occ, sense 1 of 3)
+**Label:** in the eyes/sight of (evaluative)
+**Lemma gloss:** Eye: in the evaluative idiom 'in the eyes of' (judgment/opinion); the physical organ of sight; outward appearance or visible surface.
+**Description:** Prepositional construction 'in the eyes of X' or 'before the eyes of X' meaning 'in X's judgment, opinion, or estimation' — the dominant evaluative-metaphorical usage of עַיִן, covering all person/number/gender suffixed forms with Prep-b or Prep-l framing.
+**Enriched:** The evaluative-metaphorical idiom 'in the eyes of X' or 'before the eyes of X,' meaning 'in X's judgment, opinion, or estimation.' This dominant sense (734 occurrences) encompasses the formulaic 'to find favor in the eyes of' (Gen 6:8; 19:19), the Deuteronomistic refrain 'he did evil in the eyes of the LORD,' and all constructions where 'eyes' stand for perspective or approval. Spanish en ojos de, French dans les yeux de, German in den Augen, Arabic في عيون, and Hindi की दृष्टि में all preserve the body-part metaphor, making this one of the most stable cross-linguistic idioms in the biblical corpus.
+
+### H3588a / Sense 105933 (723 occ, sense 2 of 7)
+**Label:** declarative: that
+**Lemma gloss:** that; because, for; when; but, rather; if; surely, indeed; though, even though
+**Description:** Introduces a content clause (noun clause) after verbs of perception, speech, or knowledge, functioning as a complementizer.
+**Enriched:** Declarative complementizer: 'that' — introducing content clauses after verbs of perception, speech, or knowledge. Genesis 1:4 inaugurates this use: 'God saw that it was good' (Spanish 'que,' French 'ce/que,' German 'dass'). Genesis 12:14 has the Egyptians seeing 'that' the woman was beautiful. This is the second-largest usage, functioning as the syntactic hinge between a mental verb and its object clause.
+
+### H5650 / Sense 121725 (723 occ, sense 1 of 3)
+**Label:** Servant, attendant, subject
+**Lemma gloss:** Servant, attendant, subject; slave or bondservant; honorific title 'servant of God' for patriarchs, prophets, and kings.
+**Description:** A person who serves another in a household, court, or political capacity; encompasses attendants, officials, vassals, and the polite self-referential 'your servant' meaning 'I/me' in deferential address.
+**Enriched:** A servant, attendant, official, or subject — any person who serves another in a household, royal court, military, or political capacity, including the deferential self-reference 'your servant' meaning 'I/me.' This overwhelmingly dominant sense (723 occurrences) covers Pharaoh's servants (Gen 20:8; Exod 7:10), royal officials, household attendants, and the ubiquitous politeness formula where speakers refer to themselves as 'your servant' before a superior. Spanish siervo/siervos, French serviteur/serviteurs, German Knecht/Knechte, and Arabic عبد/عبيد all converge on the general service relationship. The breadth is striking: the same word names Joseph as Potiphar's household manager and courtiers advising kings.
+
+### H0408 / Sense 82181 (712 occ, sense 1 of 4)
+**Label:** prohibitive negation do-not
+**Lemma gloss:** Negative particle of prohibition or wish: 'do not, let not'; also standalone 'no' or rhetorical negation.
+**Description:** The primary use of אַל as a prohibitive or vetitive particle meaning 'do not' or 'let not', used with jussive and cohortative verb forms to express commands, prohibitions, wishes, and entreaties.
+**Enriched:** The dominant prohibitive or vetitive use, pairing with jussive and cohortative imperfects to express negative commands, entreaties, and wishes: 'do not!', 'let not!' (712 of 725 occurrences). Found across every genre — patriarchal assurance (Gen 15:1 אַל־תִּירָא), the binding of Isaac (Gen 22:12 אַל־תִּשְׁלַח יָדְךָ), and psalmic petition. Spanish 'No-' and French 'vers' both reflect this directive, volitional quality that sets אַל apart from the indicative negator לֹא.
+
+### H7971 / Sense 140842 (701 occ, sense 1 of 7)
+**Label:** to send, dispatch (Qal)
+**Lemma gloss:** send, dispatch; stretch out (hand); send away, dismiss, release; be sent; set fire to; expel, drive out
+**Description:** The basic Qal meaning of שָׁלַח: to send a person, messenger, or thing to a destination; Arabic أَرْسَلَ (arsala), Korean 보내다, Swahili kutuma, Hindi भेजा — covering all Qal inflections (perfect, imperfect, imperative, infinitive, participle, cohortative) with the core 'dispatch/send' semantics.
+**Enriched:** The basic Qal meaning 'to send, dispatch' (701x) — sending persons, messengers, gifts, or objects to a destination. Arabic أَرْسَلَ, Korean 보내다, Swahili kutuma, Hindi भेजा converge on directed purposeful movement. Genesis 8:7–12 (Noah sending the raven and dove) and Genesis 20:2 (Abraham sending Sarah) are paradigmatic early instances. This sense dominates the entire Hebrew narrative.
+
+### H0398 / Sense 81968 (697 occ, sense 1 of 5)
+**Label:** eat (consume food)
+**Lemma gloss:** To eat, consume food; figuratively to devour or consume destructively; in Nifal, to be eaten; in Hifil, to feed or cause to eat.
+**Description:** Qal sense of literal eating or consuming food, the basic meaning of the verb encompassing all persons, numbers, and tenses where the action is physical ingestion of food.
+**Enriched:** The basic Qal sense of literal eating — physical ingestion of food in any tense, person, or number. This overwhelmingly dominant sense (697 occurrences) covers everything from ordinary meals to theologically charged acts of eating: the forbidden fruit (Gen 3:6), the Passover lamb (Exod 12:11), manna in the wilderness (Exod 16:35), and priestly portions (Lev 6:26). Spanish comer, German essen, French manger, and Korean 먹다 all converge on basic alimentary consumption, confirming this as the unmarked core meaning. The verb's frequent pairing with 'bread' (lechem) creates a near-idiom for sustenance itself.
+
+### H1571 / Sense 90365 (693 occ, sense 1 of 7)
+**Label:** also, too
+**Lemma gloss:** Also, too; even; both...and; indeed; neither/nor; because also — a versatile additive-scalar particle
+**Description:** Basic additive conjunction indicating addition or inclusion; cross-linguistically uniform: eng 'also', spa 'también', hin 'भी', arb 'أيضًا', kor '또한', swa 'pia'.
+**Enriched:** The default additive sense: 'also, too, in addition.' Eve 'gave also to her husband' (Gen 3:6); Abel 'also brought' an offering (Gen 4:4). With 693 occurrences this is the overwhelming majority use. Cross-linguistically uniform—Spanish también, Hindi भी, Arabic أيضًا, Swahili pia, Korean 또한—confirming a simple inclusive-addition reading.
+
+### G2192 / Sense 68602 (680 occ, sense 1 of 6)
+**Label:** possess / have
+**Lemma gloss:** Have, possess; hold fast; be in a state; be pregnant; regard as; neighboring (middle participle)
+**Description:** General sense of possession, ownership, or having something at one's disposal, across all tenses, moods, persons, and participial forms of the active voice: has, have, had, having, to have.
+**Enriched:** General possession or having (680x) — the overwhelming default sense. Spanish tiene, French avoir, and German haben all map here without ambiguity. Matt 8:20 ('the Son of Man has nowhere to lay his head') and Matt 13:12 ('whoever has, to him more will be given') show echo in its most basic possessive function, covering material goods, qualities, relationships, and abstract attributes alike.
+
+### H8147 / Sense 142895 (666 occ, sense 1 of 4)
+**Label:** cardinal number two
+**Lemma gloss:** Two, both, a pair; the cardinal numeral for two in masculine and feminine dual forms, also used in compound numbers.
+**Description:** The basic cardinal numeral 'two', used with various prepositions, conjunctions, and in construct chains to count pairs of persons, things, or units.
+**Enriched:** The basic cardinal numeral 'two,' used to count pairs of persons, objects, time units, or measurements — 666 occurrences, by far the dominant sense. Lamech takes 'two wives' (Gen 4:19); Methuselah lives 'two and eighty and seven hundred years' (Gen 5:26); Moses receives 'two tablets of stone' (Exod 31:18). The multilingual evidence is trivially unanimous: Spanish dos, French deux, German zwei, Arabic ithnayn, Korean 둘, and Swahili mbili all select their basic cardinal numeral. Both masculine (shenayim) and feminine (shtayim) forms appear, agreeing with the gender of the counted noun as expected in Semitic grammar.
+
+### G2443 / Sense 69488 (665 occ, sense 1 of 2)
+**Label:** so that, in order that (purpose/result)
+**Lemma gloss:** So that, in order that (purpose/result conjunction); rarely as interrogative 'why?' with ti.
+**Description:** Purpose or result conjunction: 'so that, in order that, that.' The overwhelmingly dominant NT use of ἵνα (665 occurrences). Uniformly rendered Ger. 'damit,' Fr. 'afin que,' Heb. 'לְמַעַן/כְּדֵי/שֶׁ,' Spa. 'para que/que,' Arb. 'لِكَيْ/أَنْ,' Kor. '~하기 위하여/~하도록,' Hin. 'ताकि/कि.' Introduces purpose clauses after verbs of command, desire, or action (Matt 1:22, 2:15 'that it might be fulfilled,' Matt 4:3 'command that these stones become bread,' Matt 7:1 'judge not, that you be not judged,' Matt 7:12, 8:8, 9:6, 10:25, 12:10/16/17, 14:15). This is the standard Koine Greek final/consecutive conjunction, the most common subordinating conjunction in the NT.
+**Enriched:** Purpose or result conjunction meaning 'so that' or 'in order that,' introducing subordinate clauses of divine intent, human aim, or consequential outcome. Overwhelmingly dominant at 665 occurrences, rendered damit (Ger.), afin que (Fra.), para que (Spa.). Central to Johannine theology: 'that whoever believes in him should not perish' (John 3:16; Matt 1:22).
+
+### H0854 / Sense 84913 (665 occ, sense 1 of 5)
+**Label:** with (accompaniment)
+**Lemma gloss:** With, together with (accompaniment); from with (ablative source with min-); also functions as the direct object marker in certain textual traditions.
+**Description:** Comitative preposition indicating accompaniment, association, or being together with someone or something.
+**Enriched:** Comitative: 'with,' indicating accompaniment, association, or togetherness — the dominant sense at 665 occurrences. Noah entered the ark 'with his sons' (Gen 7:7); God remembered Noah and all the animals 'with him' (Gen 8:1); God established his covenant 'with Noah' (Gen 9:8). Arabic ma'a and Korean 함께 (hamkke, 'together with') are the standard equivalents, while Spanish con and German mit serve as exact functional parallels. This is the relational backbone of the preposition: proximity, partnership, divine presence.
+
+### G2962 / Sense 71284 (661 occ, sense 1 of 4)
+**Label:** Lord (divine title)
+**Lemma gloss:** Lord, master, owner, sir: title of divine sovereignty, human authority, property ownership, or respectful address.
+**Description:** God or Christ addressed or referred to as Lord, the supreme divine authority and sovereign ruler over all creation.
+**Enriched:** The supreme divine title — God or Christ addressed as Lord, the sovereign ruler over all creation. This dominates New Testament usage (661 of 724 occurrences) and carries immense theological weight because the LXX used κύριος to translate YHWH. In Matthew 4:7 and 4:10, Jesus quotes Deuteronomy using κύριος for God; Paul's confession κύριος Ἰησοῦς (1 Cor 12:3) is the earliest Christian creed. Spanish 'Señor' and German 'Herr' both maintain the reverent capital-letter usage.
+
+### H4100 / Sense 109883 (654 occ, sense 1 of 8)
+**Label:** what (interrogative pronoun)
+**Lemma gloss:** What? how? why? how much?; interrogative and exclamatory pronoun for things, manner, degree, quantity, and cause
+**Description:** Interrogative pronoun asking about the identity or nature of something: 'what?', 'what is it?'
+**Enriched:** The core interrogative use: 'what?' — asking about the identity, nature, or content of something. At 654 occurrences this dominates overwhelmingly. Gen 4:10 ('what have you done?') and Gen 3:13 ('what is this you have done?') are paradigmatic. All target languages deploy their basic interrogative: Spanish 'qué,' French 'quoi,' German 'was.' The Aramaic cognate ma and Arabic ma confirm this as the pan-Semitic interrogative root for things.
+
+### G0575 / Sense 62789 (649 occ, sense 1 of 3)
+**Label:** from
+**Lemma gloss:** Preposition of separation: from, away from, of (origin, cause, or partitive); rarely temporal 'since'.
+**Description:** from, of, From (649 occurrences across 3 original clusters)
+**Enriched:** The overwhelmingly dominant sense: spatial, causal, or partitive 'from/of/by.' Covers origin ('from Nazareth,' Matt 21:11), agency ('by their fruits,' Matt 7:16), and partitive relations. The Spanish split between 'de' (origin/possession) and 'desde' (departure point) reveals the range this single Greek preposition covers. Found in genealogies (Matt 1:17), commissioning formulas, and countless narrative transitions.
+
+### H5315 / Sense 118590 (647 occ, sense 1 of 6)
+**Label:** soul, inner being
+**Lemma gloss:** Soul, life, self, person; the breathing inner being — seat of desire, emotion, and vital existence
+**Description:** The immaterial inner self of a person, the seat of emotions, will, and spiritual life; the core sense of nephesh as the animating inner person — consistently glossed as 영혼 (Korean), nafsi (Swahili), alma (Spanish), نَفْس (Arabic), and प्राण/आत्मा (Hindi) in contexts of prayer, distress, devotion, and reflexive self-reference.
+**Enriched:** The immaterial inner self or soul (647x) — the seat of emotions, will, and spiritual life. Korean 영혼 and Swahili nafsi consistently mark this core sense. Gen 49:6 ('let my soul not enter their council') and Ps 42:1 show nephesh as the conscious, feeling self that relates to God and others. This is the dominant sense across nearly all genres.
+
+### H4191 / Sense 110421 (645 occ, sense 1 of 7)
+**Label:** die (Qal: natural/general death)
+**Lemma gloss:** To die, be dead; (Hifil) kill, put to death; (Hofal) be executed; (participle) the dead; (infinitive) death
+**Description:** To die, cease living — the basic intransitive Qal sense covering natural death, death by plague/famine, death in battle, and general mortality; Arabic مَاتَ/يَمُوتُ, Korean 죽다, Swahili -fa.
+**Enriched:** The unmarked Qal sense covering all intransitive dying—natural death (Gen 5 genealogies: 'and he died'), plague, famine, battlefield death, and general mortality. Arabic mâta, Swahili -fa, Korean 죽다 all render it with their basic 'die' verb, confirming this as the prototypical sense. Gen 5:5 ('and he died') establishes the refrain of human mortality.
+
+### G0235 / Sense 61826 (644 occ, sense 1 of 1)
+**Label:** but, rather, on the contrary
+**Lemma gloss:** but, rather, on the contrary — adversative conjunction introducing contrast, correction, or exception
+**Description:** Adversative conjunction introducing a contrast, correction, or exception to a preceding statement. Covers the full range from mild contrast ('but') to strong adversative ('on the contrary, rather') and the emphatic 'but also' (ἀλλὰ καί). With 644 NT occurrences it is the primary Greek adversative particle. Multilingual evidence is uniform across all uses: Spanish 'sino/pero/ciertamente,' Hindi 'परन्तु/बलकि' (balki = rather), Arabic 'بَلْ' (strong correction), Korean '오히려/그러나/또한,' Swahili 'bali/lakini/hakika.' The single ἀλλὰ καί usage (S61828) is not a separate lexical sense but simply the conjunction in its emphatic combination.
+**Enriched:** An adversative conjunction that introduces a contrasting, correcting, or superseding clause, ranging in force from mild opposition ('but,' Matt 5:15) to strong antithetical correction ('on the contrary,' Rom 3:31). Often paired with a preceding negative (ou...alla, 'not X but Y') as in Matt 4:4. All 644 NT occurrences serve this single contrastive-corrective function across narrative, discourse, and epistolary genres.
+
+### H3389 / Sense 104093 (643 occ, sense 1 of 1)
+**Label:** Jerusalem (city)
+**Lemma gloss:** Jerusalem — the holy city, capital of united and southern Israel, center of temple worship
+**Description:** The proper noun Yerushalayim (Jerusalem), the capital city of ancient Israel and Judah, used across all grammatical contexts (bare, with prepositions b/l/m/k, with conjunction w, and with directional -ah suffix).
+**Enriched:** The proper noun Yerushalayim, designating the city that served as the political capital of David's united monarchy and the southern kingdom of Judah, and as the cultic center where the Temple stood. All 643 occurrences — including directional (to-Jerusalem), locative (in-Jerusalem), and ablative (from-Jerusalem) forms — refer to this single city. Attested in Assyrian records as Urusalim and in the Tell el-Amarna letters.
+
+### H4714 / Sense 113829 (631 occ, sense 1 of 2)
+**Label:** Egypt (the land)
+**Lemma gloss:** Egypt (the land and nation); Mizraim (son of Ham, ancestor of the Egyptians in the Table of Nations).
+**Description:** The geographic and political entity of Egypt, used with various prepositions (in, from, to, against, on) and conjunctions across all grammatical contexts referring to the nation or territory.
+**Enriched:** The geographic and political entity of Egypt — the land, its people, and its government as the defining foreign power in Israel's narrative. Covers all prepositional constructions: dwelling in, coming out of, going down to, and prophetic oracles against Egypt. Uniformly Egipto (Spa.), Égypte (Fra.), Ägypten (Ger.) across 631 occurrences (Gen 37:36; Exod 1:1; Isa 19:1).
+
+### G3956 / Sense 74219 (616 occ, sense 1 of 5)
+**Label:** all (collective plural)
+**Lemma gloss:** All, every, each, the whole; collective totality of a group, distributive 'every/each,' substantive 'everything,' or temporal 'always.'
+**Description:** Refers to the totality of a group of people or things taken together, often translating as 'all' with plural nouns (e.g., all the nations, all the disciples).
+**Enriched:** Collective plural: 'all' taken together as a totality — the dominant sense at 616 occurrences. Refers to the entirety of a group viewed as a whole: 'all the chief priests' (Matt 2:4), 'all the region' (Matt 4:24), 'all who were sick' (Matt 4:24). Spanish todos/todas, French tous, German alle, and Korean 모든 all converge on aggregate-totality vocabulary. The emphasis falls on completeness rather than on individual members — no one is excluded from the set.
+
+### G2064 / Sense 68123 (588 occ, sense 1 of 6)
+**Label:** come / arrive (physical movement toward)
+**Lemma gloss:** To come, arrive, or approach; used of physical movement, messianic advent, imperative summons, and temporal reference
+**Description:** Core sense of physical movement toward the speaker or a destination, including arrival. Covers all tenses, persons, moods, and participial forms where the basic meaning is 'come' or 'arrive.' Arabic uses the root j-'-' (جَاءَ / يَأْتِي), Korean 오다 (oda), Swahili -kuja / -fika, Spanish venir / llegar, Hindi aana (आना). This is the overwhelmingly dominant sense of erchomai in the NT.
+**Enriched:** The default sense covering physical movement toward a person or place -- arriving, approaching, journeying to. Arabic uses the root j-ʾ-ʾ (جاء), Spanish viene, German kommt, all mapping cleanly to directional arrival. Dominant across every Gospel narrative (Matt 8:9; 17:11).
+
+### G1223 / Sense 65185 (582 occ, sense 1 of 7)
+**Label:** through, by means of
+**Lemma gloss:** Through, by means of; because of; why?; during; for the sake of; after; therefore — preposition of mediation and cause
+**Description:** Spatial passage or instrumental agency: moving through a space, or the means/agent by which something is accomplished.
+**Enriched:** The dominant sense: spatial passage ('through a place') or instrumental agency ('by means of, through the agency of'). With the genitive case, dia names the channel, medium, or agent. Acts 1:2 'through the Holy Spirit,' Acts 2:16 'through the prophet Joel.' Spanish por medio de, French par, German durch all capture the mediating-channel meaning. This is the preposition par excellence for divine agency in the NT.
+
+### H4325 / Sense 111232 (582 occ, sense 1 of 2)
+**Label:** water, waters
+**Lemma gloss:** Water in all its forms: drinking, rivers, seas, rain, floods, and ritual purification; the elemental liquid of life and judgment.
+**Description:** The primary and overwhelmingly dominant sense of mayim: water as a physical substance — encompassing drinking water, river and sea water, well and spring water, rain, flood water, ritual purification water, cosmic/primordial waters of creation, waters as part of place-names (waters of Meribah, waters of Megiddo), possessive forms (his/her/your/my/their/our waters), and all figurative extensions including simile (poured out like water) and metaphor (waters of distress, waters of abundance); Arabic ماء/مِيَاه, Korean 물, Swahili maji, Hindi पानी/जल.
+**Enriched:** Water as a physical substance in all its natural and ritual manifestations: drinking water, well and spring water, river and sea water, rain, floodwaters, and water used in purification rites. With 582 occurrences this is effectively the only operative sense. All 43 target languages render it with their primary water noun (eng 'water,' spa 'agua,' fra 'eau,' deu 'Wasser,' hin 'jal/pani,' arb 'ma''), showing complete cross-linguistic unanimity. Key passages: Gen 1:6 (cosmic separation), Exod 14:21 (Red Sea), Ps 23:2 (still waters).
+
+### H7121 / Sense 132803 (575 occ, sense 1 of 6)
+**Label:** call, summon, name
+**Lemma gloss:** Call, summon, name; cry out in distress; proclaim publicly; read aloud; invite to a gathering
+**Description:** Qal: to call someone by name, summon, or assign a name to (Arabic دَعَا da'a; Korean 부르다; Swahili kuita/kumwita); the core sense covering naming, summoning, and general calling upon persons.
+**Enriched:** The core sense of calling, summoning, or naming (575x). Arabic da'a, Korean 부르다, and Swahili kuita all converge here. Gen 2:19 (Adam naming animals), Gen 22:11 (the angel calling Abraham), and Gen 20:8 (Abimelech summoning servants) illustrate the breadth — from bestowing identity to commanding attention. This is the semantic center from which all other senses radiate.
+
+### H0251 / Sense 80887 (573 occ, sense 1 of 2)
+**Label:** brother (blood sibling)
+**Lemma gloss:** Brother (blood sibling sharing parents); by extension kinsman, fellow countryman, or national brethren.
+**Description:** A literal brother sharing one or both parents — the primary and dominant sense of אָח, covering full brothers, half-brothers, and siblings in general; uniformly glossed as hermano (Spanish), أَخ/إِخْوَة (Arabic), 형제/형/오빠 (Korean), ndugu/kaka (Swahili), भाई (Hindi) across all grammatical inflections (possessive suffixes, prepositions, conjunction, singular and plural).
+**Enriched:** A literal brother sharing one or both parents — the primary kinship sense covering full brothers, half-brothers, and siblings. Universally rendered hermano (Spa.), frère (Fra.), Bruder (Ger.), akh (Arabic). Dominates at 573 occurrences, from Cain and Abel (Gen 4:9) to the sons of Jacob to tribal genealogies (1 Chr 5:7; 15:5).
+
+### H3820a / Sense 108129 (572 occ, sense 1 of 3)
+**Label:** heart, inner self (mind/will/emotion)
+**Lemma gloss:** Heart; the inner self as seat of thought, will, emotion, and conscience; also the physical center or midst of something.
+**Description:** The inner person as the seat of thought, understanding, volition, emotion, conscience, and moral character; the comprehensive Hebrew anthropological term for the core of human consciousness and intentionality, encompassing what English splits into mind, will, feelings, and conscience. Universally glossed as corazón (Spa), हृदय/दिल/मन (Hin), قَلْب/قُلُوب (Arb), 마음 (Kor), moyo/mioyo (Swa) across all inflections, possessive suffixes, and prepositional frames. Includes the cognitive sub-use 'understanding/sense' (Swa akili, Spa entendimiento) which shares the same Arabic قَلْب and Korean 마음, confirming a single polysemous range rather than a separate lexical sense.
+**Enriched:** The inner person as the center of thought, volition, emotion, and moral discernment—the dominant biblical-anthropological sense covering nearly all 572 occurrences. In Exodus 35:21 the heart 'stirs' someone to give; in Proverbs 23:15 a wise son makes his father's heart glad. Every major translation language maps this to a single core word (Spanish 'corazón,' French 'cœur,' German 'Herz'), confirming the universality of the metaphor. Encompasses understanding (Exod 28:3), intention (Gen 8:21), courage (2 Sam 17:10), and conscience (1 Sam 24:5).
+
+### H3541 / Sense 105461 (569 occ, sense 1 of 3)
+**Label:** thus, so, in this manner
+**Lemma gloss:** Demonstrative adverb: thus, so, in this manner; also spatial 'here/there'; rarely temporal 'now'.
+**Description:** Adverb of manner indicating 'thus, so, in this way', the primary and overwhelmingly dominant sense of כֹּה, often introducing direct speech ('thus says the LORD') or referring to a described manner of action.
+**Enriched:** The adverb of manner: 'thus, so, in this way'—the overwhelmingly dominant sense, found 569 times. Nearly always points forward to what follows, especially in the prophetic messenger formula 'thus says the LORD' (כֹּה אָמַר יְהוָה), which alone accounts for hundreds of occurrences. Also used in reported speech ('thus he said,' Gen 32:4) and comparative descriptions ('thus shall your seed be,' Gen 15:5). Spanish 'así,' French 'ainsi,' and German 'so' consistently capture this deictic-of-manner function.
+
+### G1519 / Sense 66436 (561 occ, sense 2 of 8)
+**Label:** purpose: for, in order to
+**Lemma gloss:** Preposition: into, to, toward; for, in order to; in, among; against; concerning; as
+**Description:** Indicating purpose, goal, or intended outcome of an action (e.g., εἰς ἄφεσιν ἁμαρτιῶν 'for the forgiveness of sins').
+**Enriched:** Purpose, goal, or intended outcome: 'for' or 'in order to.' Spanish 'para' captures the telic dimension. Theologically crucial in passages like Matthew 26:28 ('for the forgiveness of sins') and Romans 10:10 ('believes unto righteousness'). The multilingual evidence consistently distinguishes purpose εἰς from directional εἰς through contextual glossing.
+
+### H3967 / Sense 109336 (550 occ, sense 1 of 3)
+**Label:** cardinal numeral hundred
+**Lemma gloss:** Hundred; cardinal numeral for 100 (singular, dual, plural); also a military/administrative unit; rarely a fractional hundredth part.
+**Description:** The basic cardinal number 'hundred' used in counting, enumerating quantities, ages, measurements, and monetary amounts, including singular, dual (two hundred), and plural inflected forms with various prepositions, articles, and conjunctions.
+**Enriched:** The cardinal numeral 'hundred' in all its inflected forms—singular, dual ('two hundred'), and plural ('hundreds')—used for counting people, years, measures, and monetary amounts. This is the basic quantitative sense covering ages (Gen 5:4–32), dimensions (Exod 27:9–18), military tallies (Num 31:32–46), and tribute payments. Spanish 'cientos,' French 'cent/centaines,' and German 'hundert' all translate straightforwardly as the numeral.
+
+### H1323 / Sense 88590 (545 occ, sense 1 of 2)
+**Label:** daughter, female offspring
+**Lemma gloss:** Daughter, female offspring or descendant; figuratively a dependent village or satellite town of a larger city.
+**Description:** A female child in relation to her parents; by extension, a granddaughter, female descendant, young woman, or woman belonging to a people or place (e.g., 'daughter of Zion'), including vocative address and figurative class-membership uses such as 'daughters of the ostrich' (= ostriches).
+**Enriched:** A female child in relation to her parents; by extension granddaughter, female descendant, young woman, or woman belonging to a people or place ('daughter of Zion'). Rendered hija (Spa.), fille (Fra.), Tochter (Ger.) across 545 occurrences. Includes vocative address to a young woman (Ruth 2:8) and collective identity markers like 'daughters of Israel' (2 Sam 1:24; 1 Chr 3:5).
+
+### G5547 / Sense 79085 (540 occ, sense 1 of 1)
+**Label:** Christ, Messiah, Anointed One
+**Lemma gloss:** Christ, Messiah — the Anointed One, used as title and proper name for Jesus of Nazareth
+**Description:** The substantivized adjective Christos used as a title and proper name for Jesus of Nazareth, translating Hebrew mashiach ('anointed one'). With 540 occurrences across the NT, this is by far the most frequent christological designation. It functions both as a title ('the Christ/Messiah,' especially in the Gospels and Acts where messianic identity is under discussion) and as a virtual proper name ('Christ' or in the compound 'Jesus Christ / Christ Jesus,' dominant in the Pauline epistles). All multilingual signatures converge consistently: Arabic 'al-masih,' Hebrew 'mashiach,' Korean 'geurisdo,' Hindi 'masih,' German 'Christus,' Spanish 'Christos,' French 'Christ.' The four auto-clusters represent merely different grammatical cases (nominative, genitive, dative) and syntactic positions (standalone vs. compound with 'of'), not distinct lexicographic senses. Whether used as subject, genitive modifier, or object of a preposition, the referent and semantic content remain identical.
+**Enriched:** The substantivized Greek adjective meaning 'anointed,' serving in the NT both as the messianic title ('the Christ,' Matt 2:4) and as a proper name tightly bound to Jesus ('Jesus Christ,' Rom 1:1). Translates Hebrew mashiach and carries connotations of royal and priestly consecration. All 540 occurrences point to a single referent — Jesus of Nazareth — whether in confessional formulas (Matt 16:16), kerygmatic proclamation (Acts 2:36), or epistolary salutation (Phil 1:1).
+
+### H0120 / Sense 79974 (527 occ, sense 1 of 3)
+**Label:** man, human being (individual/generic)
+**Lemma gloss:** Man, human being; mankind/humanity collectively; also the proper name Adam.
+**Description:** An individual human being or person, or 'man' used generically to mean any person; the dominant sense of אָדָם covering singular and generic uses across all prepositional and conjunctive inflections, consistently glossed as إِنْسَان (Arabic), 사람 (Korean), and mtu/mwanadamu (Swahili), distinct from the collective 'mankind' sense and the proper name Adam.
+**Enriched:** An individual human being or 'man' in the generic sense (any person, someone), covering the vast majority of occurrences (527 times). Functions in legal texts ('if a man brings an offering,' Lev 1:2), proverbial wisdom ('blessed is the man,' Ps 1:1), and narrative. Distinguished from אִישׁ by its species-level focus: not 'a male' but 'a human.' Spanish 'hombre,' French 'homme,' and German 'Mensch/Mann' all serve here, though German 'Mensch' (human) better captures the non-gendered force than 'Mann' (male). Includes all inflected forms with prepositions and conjunctions.
+
+### H2063 / Sense 93879 (527 occ, sense 1 of 6)
+**Label:** this (demonstrative pronoun)
+**Lemma gloss:** This (fem. demonstrative pronoun); also in prepositional idioms: like this, in this, to this, and connective 'and this'
+**Description:** Feminine demonstrative pronoun pointing to a specific person, thing, or situation that is present, nearby, or just mentioned in discourse.
+**Enriched:** The core demonstrative 'this,' pointing to a near entity or situation. Spanish esta/este and German diese map directly. Ubiquitous in covenant formulae ('this land,' Gen 15:7, 18) and narrative identification ('this woman,' Gen 21:10), functioning as the primary feminine deictic across all genres.
+
+### G4314 / Sense 75706 (520 occ, sense 1 of 8)
+**Label:** direction: to, toward
+**Lemma gloss:** To, toward; for, in order to; with; at, near; among; against; according to; because of
+**Description:** Indicates movement, direction, or orientation toward a person, place, or goal, the core spatial sense of πρός with accusative.
+**Enriched:** The primary directional sense with accusative: 'to,' 'toward,' indicating movement or orientation toward a person, place, or goal. At 520 occurrences this is the overwhelming default. Matt 3:5 ('going out to him'), Matt 3:13 ('Jesus came to the Jordan'). Spanish 'a/hacia,' French 'vers,' and German 'zu' all mark directionality. John 1:1 ('the Word was pros God') may begin here but transcends simple direction into relational presence.
+
+### H0802 / Sense 84495 (519 occ, sense 1 of 4)
+**Label:** woman, female person
+**Lemma gloss:** Woman, wife, female; a female human being whether unmarried, married, or as a female animal's mate.
+**Description:** A female human being, without specific reference to marital status; used generically for any woman or group of women.
+**Enriched:** A woman, a female person — 519 occurrences where 'ishsha denotes a female human being without primary reference to marital status. This is the generic, unmarked sense covering women in narrative, law, prophecy, and wisdom literature. Pharaoh's daughter sends 'a woman' to fetch the basket (Exod 2:7); the Israelite women contribute to the tabernacle (Exod 35:29); the wise woman of Abel speaks to Joab (2 Sam 20:16). French femme, Spanish mujer, and German Frau all serve double duty for both 'woman' and 'wife,' while Korean distinguishes 여자 ('woman') from 아내 ('wife'), and Arabic uses imra'a ('woman') versus zawja ('wife'), helping to confirm where this generic sense operates independently.
+
+### G1473 / Sense 66221 (518 occ, sense 2 of 2)
+**Label:** first person plural pronoun
+**Lemma gloss:** First person pronoun: 'I/me/my' (singular) and 'we/us/our' (plural), in all grammatical cases
+**Description:** First person plural personal pronoun in all cases: nominative 'we', genitive 'of us / our', dative 'to us / for us / with us', and accusative 'us'.
+**Enriched:** First person plural pronoun ('we, us, our') in all cases, voicing collective identity and shared experience. The multilingual split is clear: Spanish 'de-nosotros / nuestro,' French 'de-nous,' German 'unser.' Found in communal prayers and confessions — 'Our Father who is in heaven' (Matt 6:9), 'This is the heir; let us kill him' (Mark 12:7), 'he has visited us' (Luke 1:72). About 518 occurrences.
+
+### G3767 / Sense 73562 (505 occ, sense 1 of 1)
+**Label:** therefore
+**Lemma gloss:** therefore, then, accordingly — inferential conjunction drawing a logical conclusion from what precedes
+**Description:** therefore, then (505 occurrences across 5 original clusters)
+**Enriched:** An inferential and transitional conjunction indicating that the following statement is a consequence, conclusion, or continuation of preceding discourse. Functions as a narrative sequencer in the Gospels (Matt 1:17 'so all the generations') and as a logical connector in the Epistles (Rom 5:1 'therefore, having been justified'). All 505 occurrences express this single inferential-transitional role, distinguishing it from the causal gar and the adversative alla/de.
+
+### H1992 / Sense 93274 (497 occ, sense 1 of 8)
+**Label:** they (independent pronoun)
+**Lemma gloss:** They, them, those; 3rd-person plural pronoun with prepositional forms (to/for/from/like/in them)
+**Description:** Third-person plural independent pronoun used as subject or predicate ('they', 'they are'), including conjunctive forms ('and they', 'but they') and parenthetical/ketiv-qere variants.
+**Enriched:** The independent pronoun functioning as subject or predicate: 'they' or 'they are.' With 497 occurrences, this is the unmarked default. All target languages render it with their standard third-plural pronoun — Spanish 'ellos,' French 'ils,' German 'sie.' Gen 3:7 ('and they knew') and Gen 6:4 ('they were the mighty ones') typify narrative subject use. The form alternates freely between hemmah and hem with no semantic difference, only rhythmic preference.
+
+### H3651c / Sense 106707 (495 occ, sense 1 of 7)
+**Label:** so, thus (manner)
+**Lemma gloss:** So, thus; therefore; this, that (anaphoric); then; indeed; to such a degree — adverb of manner, cause, and reference
+**Description:** Adverb of manner indicating 'in this way, like this, likewise,' describing how something is done by comparison or analogy.
+**Enriched:** The primary adverb of manner: 'so, thus, in this way, likewise.' Describing conformity between command and execution, it pervades the Creation account—'and it was so' (Gen 1:7, 9, 11, 15, 24). Spanish así, French ainsi, German so all map cleanly. This sense answers the question 'how?' by pointing to a preceding description or standard.
+
+### G3588 / Sense 72932 (493 occ, sense 2 of 6)
+**Label:** connective or structural article
+**Lemma gloss:** The definite article; also substantivizer, connective, and comparative marker across all cases and genders
+**Description:** The article used in a connective or discourse-structural role, linking clauses or marking topical transitions, sometimes rendered as a conjunction.
+**Enriched:** Connective or structural article linking clauses, marking transitions, or organizing lists. Most visible in Matthew 1's genealogy where repeated articles structure each generation. French 'le/la' and Spanish 'el/la' serve similar connective roles, but many translations suppress the article when its function is purely structural.
+

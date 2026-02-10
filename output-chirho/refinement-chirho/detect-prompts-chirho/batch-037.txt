@@ -1,0 +1,291 @@
+# Sense Refinement Detection — Batch 037
+
+You are a biblical lexicographer reviewing sense entries for a Hebrew/Aramaic/Greek lexicon.
+Each entry below is a single "sense" that was produced by clustering translation signatures 
+and then merging with an LLM. Some senses may have been OVER-LUMPED — they contain genuinely 
+distinct meanings that should be separate senses.
+
+## Your Task
+
+For each sense, determine if it should be SPLIT into multiple senses. Look for:
+- Literal vs. figurative/metaphorical uses lumped together
+- Concrete vs. abstract meanings combined
+- Multiple distinct referents (e.g., "father" = biological parent + patron/advisor + originator)
+- Physical vs. spiritual/theological uses merged
+- Different syntactic frames producing different meanings
+
+## Output Format
+
+Return a JSON array. For senses that need NO splitting, omit them entirely.
+For senses that SHOULD be split, include an entry like:
+
+```json
+[
+  {
+    "senseIdChirho": 79287,
+    "lemmaIdChirho": "H0001",
+    "currentLabelChirho": "father, immediate male parent",
+    "splitProposalChirho": [
+      {
+        "newLabelChirho": "biological/legal father",
+        "criteriaChirho": "Direct parent-child relationship, possessive constructions with specific person"
+      },
+      {
+        "newLabelChirho": "metaphorical father (patron, advisor, protector)",
+        "criteriaChirho": "Title of respect for prophets, advisors, or authority figures; 'father to Pharaoh' type usage"
+      }
+    ],
+    "confidenceChirho": "high",
+    "reasoningChirho": "Description explicitly mentions 'title of respect or metaphorical originator' alongside biological father"
+  }
+]
+```
+
+Only propose splits where you have MEDIUM or HIGH confidence. Do NOT split function words (articles, 
+prepositions, particles, conjunctions) unless there is a genuinely distinct semantic sense (not just 
+syntactic variation). Proper nouns generally should NOT be split.
+
+If NO senses in this batch need splitting, return an empty array: []
+
+## Senses to Review
+
+### G3709 / Sense 73322 (36 occ, sense 1 of 1)
+**Label:** wrath, anger
+**Lemma gloss:** Wrath, anger, or fierce indignation; both divine judgment-fury and human passionate anger
+**Description:** Deep, intense anger or indignation, used both of divine wrath (God's righteous fury against sin) and of human anger; the core semantic concept is the same across all 36 occurrences with variation being purely grammatical (nominative, accusative, genitive, dative). Multilingual evidence: spa 'ira' in both clusters, hin 'क्रोध' (krodh, fierce anger) throughout, arb 'الغَضَبِ/غَضَبُ/غَضَبِي' all from root غ-ض-ب (ghadab, wrath), kor '진노' (jinno, wrath) in both, swa 'ghadhabu' (divine fury) and 'hasira' (anger) reflect register difference rather than distinct senses. Covers Romans 1:18, Ephesians 2:3, Revelation 6:16-17 and similar passages.
+**Enriched:** Deep, intense anger or indignation, encompassing both the settled judicial wrath of God and the passionate emotional response of humans. The divine sense dominates: John the Baptist warns of 'the coming wrath' (Matt 3:7), Paul speaks of being 'saved from the wrath' (Rom 5:9), and Revelation depicts 'the great day of their wrath' (Rev 6:17). Mark 3:5 supplies the human dimension, where Jesus looks around 'with anger.' The uniform cross-linguistic rendering—'ira,' 'colere,' 'Zorn'—confirms a single semantic core.
+
+### G3880 / Sense 73997 (36 occ, sense 1 of 2)
+**Label:** take along, bring with
+**Lemma gloss:** To take along or bring with oneself; to receive or accept what is handed down (tradition, teaching, authority).
+**Description:** To take someone or something along with oneself, escort, or bring to a place, including passive uses where one is taken away.
+**Enriched:** To take along, bring with, or escort. Physical accompaniment — taking a person or thing from one place to another. Spanish habiendo tomado and French prendre avec emphasize the 'alongside' element. Prominent in the infancy narratives (Matt 1:20, 24; 2:13-14, 20-21 where Joseph takes his family), in Jesus taking disciples aside (Matt 17:1; 20:17), and in eschatological sayings about one being 'taken' and another left (Matt 24:40-41).
+
+### G4061 / Sense 74672 (36 occ, sense 1 of 1)
+**Label:** circumcision
+**Lemma gloss:** Circumcision; the covenant rite of cutting the foreskin, and by metonymy the Jewish people
+**Description:** The Jewish rite of cutting away the foreskin as a sign of covenant membership, and by metonymy the Jewish people or covenant community themselves ('those of the circumcision'); a central term in Pauline theology for the debate over whether Gentile believers must undergo the physical rite. Multilingual evidence is uniform: spa 'circuncisión,' hin 'खतना' (khatnā), arb 'الخِتان' (al-ḫitān), kor '할례' (hallye), swa 'tohara/waliotahiriwa' (circumcision/those who were circumcised). The genitive constructions in S74674 ('of circumcision') function attributively or possessively but carry the same lexical meaning as the nominative, accusative, and dative forms in S74672. All 36 occurrences represent one unified sense encompassing both the physical act and the metonymic reference to the circumcised community.
+**Enriched:** The rite of cutting away the foreskin as a sign of covenant membership, and by extension the Jewish people or covenant community defined by that rite. John 7:22-23 traces it to the patriarchs; Acts 10:45 and 11:2 use it as a group label ('those of the circumcision'). Paul's theological argument in Romans 2:25-29 and Galatians 5:6 redefines the term spiritually. The cross-linguistic uniformity—Spanish 'circuncision,' French 'circoncision,' German 'Beschneidung'—reflects the concrete referent, while the metonymic sense is always context-driven.
+
+### G4183 / Sense 75321 (36 occ, sense 3 of 5)
+**Label:** great, large (of magnitude)
+**Lemma gloss:** Many, much, great; of number, quantity, magnitude, or degree; also comparative 'far more' and frequentative 'many times.'
+**Description:** Great or large in size, significance, or intensity, emphasizing magnitude or importance rather than mere quantity.
+**Enriched:** Great, large — emphasizing magnitude, significance, or intensity rather than mere number. Thirty-six occurrences where polys functions almost as a synonym for megas ('great'): 'great is your reward' (Matt 5:12), 'a great crowd' (Matt 14:14; 20:29), and 'great power and glory' (Matt 24:30). The distinction from senses 1-2 is subtle but real: here the emphasis falls on impressiveness or scale rather than counting or measuring. German uses groß ('great') rather than viel ('many/much') in several of these contexts, and Korean shifts to 큰 ('big/great') alongside 많은.
+
+### G4567 / Sense 76362 (36 occ, sense 1 of 1)
+**Label:** Satan (the adversary)
+**Lemma gloss:** Satan, the Adversary; the chief spiritual enemy and accuser in biblical theology
+**Description:** The proper name Satan, referring to the spiritual adversary and accuser. All three clusters represent the same referent in different grammatical cases (vocative, nominative, genitive, dative, accusative). Multilingual evidence is perfectly uniform with no semantic divergence: Spanish 'Satanás' throughout, Hindi 'शैतान' / 'शैतान की' / 'शैतान का' (Satan / Satan's), Arabic 'الشَّيْطانُ' / 'الشَّيْطانِ' (the Satan, using the definite article al- with case endings), Korean '사탄이' / '사탄아' / '사탄의' (Satan + subject/vocative/possessive markers), Swahili 'Shetani' / 'wa Shetani' (Satan / of Satan). The Hebrew-origin name (שָׂטָן, adversary) passed through Greek Σατανᾶς into all target languages as a proper noun.
+**Enriched:** The proper name for the spiritual adversary and accuser of humanity. Drawn from Hebrew 'satan' (opponent), the New Testament uses it as a fixed proper noun across all case forms (nominative, genitive, dative, accusative, vocative). Jesus addresses him directly at the temptation (Matt 4:10) and rebukes Peter with the same name (Matt 16:23, Mark 8:33). Paul refers to his schemes (2 Cor 2:11) and power (2 Thess 2:9). The universal transliteration across languages—Spanish, French, German all retain 'Satan'—shows full lexicalization as a name.
+
+### G5056 / Sense 77517 (36 occ, sense 1 of 3)
+**Label:** end, conclusion, termination
+**Lemma gloss:** End, conclusion, termination (esp. eschatological); tax, toll, or customs duty; goal, outcome, or purpose.
+**Description:** The end-point or termination of a period, process, or state; frequently used of the eschatological end of the age. In Mt 24:6 'the end (telos) is not yet'; in Mt 24:13-14 enduring 'to the end (telos)' and the gospel preached 'then the end (telos) will come'; in Mt 26:58 Peter followed 'to the end (telos)' to see the outcome; in Mk 3:26 and 13:7, 13 similarly of the end; in Lk 1:33 of Christ's kingdom there shall be no 'end (telos)'; in Lk 21:9 'the end (telos) is not immediately'; in Lk 22:37 the things concerning Jesus have an 'end (telos)' i.e. fulfillment; in Jn 13:1 Jesus loved them 'to the end (telos)'; in Rom 6:21-22 the 'end (telos)' of sin is death vs. the end of sanctification is eternal life; in 1 Cor 10:11 'upon whom the ends (tele) of the ages have come'; in 1 Cor 15:24 'then the end (telos).' Arabic 'nihaya/nihayat' (end/ending), Hebrew 'qets/sof' (end/terminus), German 'Ende' (end), Korean 'kkeut' (end), Spanish 'fin' (end) uniformly confirm temporal termination.
+**Enriched:** The end-point, conclusion, or termination of a period, process, or state — frequently carrying eschatological weight as the end of the age. This dominant sense (36 occurrences) appears in the Olivet Discourse's repeated 'the end is not yet' (Matt 24:6; Mark 13:7) and 'he who endures to the end' (Matt 10:22; 24:13). The phrase eis telos ('to the end, utterly, finally') intensifies the sense of completion in John 13:1 ('he loved them to the end') and 2 Corinthians 3:13 (the fading glory). Spanish fin, French fin, and German Ende converge uniformly here. Paul's declaration that Christ is the telos of the law (Rom 10:4) straddles this sense and sense 3 in one of the NT's great lexical ambiguities.
+
+### G5618 / Sense 79263 (36 occ, sense 1 of 1)
+**Label:** (none)
+**Lemma gloss:** Just as, even as; a comparative adverb introducing analogies and similitudes
+**Description:** (none)
+**Enriched:** A comparative particle meaning 'just as' or 'even as,' introducing parallels and similitudes. It strengthens simple hos with the emphatic per, producing a more exact or emphatic comparison. Jesus uses it for parabolic analogies (Matt 12:40, 13:40) and ethical comparisons (Matt 6:2, 6:7). Paul employs it for typological parallels between Adam and Christ (Rom 5:19, 1 Cor 15:22). Multilingual glosses—Spanish 'asi como,' French 'comme,' German 'gleichwie'—converge on the comparative function without semantic variation.
+
+### H0339 / Sense 81466 (36 occ, sense 1 of 1)
+**Label:** island, coastland
+**Lemma gloss:** Island, coastland, or distant shore; remote habitable lands across or beside the sea
+**Description:** Habitable land across the sea, whether an island or a distant coastal region; used both for specific geographical locations and in prophetic contexts for remote peoples and nations.
+**Enriched:** Habitable land across or alongside the sea, whether a literal island or a distant coastland. The term appears in geographic catalogs (Gen 10:5, the 'coastlands of the nations') and in prophetic oracles summoning far-off peoples (Isa 41:1, 42:4, 49:1). Specific referents include Caphtor/Crete (Jer 47:4), Kittim/Cyprus (Jer 2:10), and Elishah (Ezek 27:7). Spanish splits between 'islas' and 'costas,' French between 'ile' and 'cote,' reflecting the word's genuine ambiguity between island and coastland.
+
+### H0398 / Sense 81986 (36 occ, sense 3 of 5)
+**Label:** be eaten (passive)
+**Lemma gloss:** To eat, consume food; figuratively to devour or consume destructively; in Nifal, to be eaten; in Hifil, to feed or cause to eat.
+**Description:** Nifal sense expressing the passive of eating: being eaten, being consumed, or being fit to be eaten; Arabic يُؤْكَلُ (yu'kalu), Korean 먹히다/먹어지다, Swahili -liwa.
+**Enriched:** The Nifal passive: being eaten, being consumed, or being permitted to be eaten — 36 occurrences concentrated in legal and cultic legislation. Exodus 12:46 stipulates the Passover lamb 'shall be eaten in one house'; Leviticus repeatedly specifies which sacrificial portions 'shall be eaten' and by whom (Lev 6:16, 23, 26; 7:6). Spanish se-comera and German gegessen-werden both use standard passive constructions, while Korean 먹히다 employs the dedicated passive suffix. The sense is functionally distinct because the subject is the food itself, not the eater — a reversal of semantic roles essential for dietary and sacrificial law.
+
+### H0400 / Sense 82146 (36 occ, sense 1 of 3)
+**Label:** food, nourishment
+**Lemma gloss:** Food, nourishment, provisions; the act of eating or a meal; rarely, prey caught by a predator.
+**Description:** Food or nourishment as a substance, including provisions and sustenance for people or animals.
+**Enriched:** Food as a substance — provisions, nourishment, or a food supply, whether stored grain, purchased rations, or God-given sustenance. This is the dominant sense across the Joseph narrative (Gen 41:35–36, 48; 42:7, 10, 33; 43:2, 4, 20, 22; 44:1–2, 25) and in cultic contexts where offerings become 'food' on the altar (Mal 1:12). German 'Speise' and Spanish 'comida' consistently render this concrete, substantive meaning. The Psalmist affirms that God gives 'food to all flesh' (Ps 136:25; 145:15), extending the word from pantry to providence.
+
+### H1637 / Sense 90711 (36 occ, sense 1 of 2)
+**Label:** threshing floor
+**Lemma gloss:** A threshing floor, the open ground where grain is beaten and winnowed; once a Ketiv variant read as 'throat.'
+**Description:** An open area where grain is threshed and winnowed; all six languages consistently use a single equivalent (eng 'threshing-floor', spa 'era', hin खलिहान, arb بَيْدَر, kor 타작마당, swa sakafu/uwanja ya kupuria) across singular, plural, construct, prepositional, and possessive forms, confirming one unified sense.
+**Enriched:** An open area, typically on a hilltop or elevated ground, where harvested grain is threshed and winnowed. The consistent cross-linguistic rendering — English 'threshing-floor,' Spanish 'era,' French 'aire,' German 'Tenne,' Arabic بَيْدَر, Korean 타작마당 — confirms a single, stable agricultural referent across all 36 occurrences. Key passages include Jacob's funeral procession pausing at the 'threshing floor of Atad' (Gen 50:10-11), Ruth's nighttime encounter with Boaz (Ruth 3:2-14), and David's purchase of Araunah's floor (2 Sam 24:18-24), which became the site of Solomon's Temple (2 Chr 3:1). Micah 4:12 uses the image metaphorically: nations gathered like sheaves to the threshing floor.
+
+### H1644 / Sense 90761 (36 occ, sense 1 of 4)
+**Label:** drive out, expel
+**Lemma gloss:** Drive out, expel; divorce (as passive participle); be banished; of water: surge, toss up
+**Description:** To forcefully remove or banish a person or group from a place, used in the Piel stem and Qal active participle for the active expulsion of inhabitants, enemies, or individuals.
+**Enriched:** To drive out or expel forcefully, the dominant sense covering God's expulsion of Adam from Eden (Gen 3:24), the driving out of Canaanite peoples before Israel (Exod 34:11; Judg 2:3; 1 Chr 17:21), and the banishment of individuals such as Hagar (Gen 21:10) and Moses' future role in compelling Pharaoh to release Israel (Exod 6:1; 11:1). Spanish 'expulsar' and French 'chasser' both emphasize the violent, compulsory nature of the removal.
+
+### H2015 / Sense 93490 (36 occ, sense 1 of 8)
+**Label:** Nifal: be changed, be transformed
+**Lemma gloss:** To turn, overturn, overthrow, or transform; covering physical reversal, divine destruction, and inner change of state
+**Description:** Passive or reflexive change of state or condition; Arabic تحوّل/انقلب (tahawwala/inqalaba), Korean 변하다, Swahili -badilika/-geuka.
+**Enriched:** Niphal passive: being changed or transformed in state. Covers blood turning to another substance (Exod 7:15-20), skin conditions changing appearance (Lev 13:3), and hearts being altered. Arabic تحوّل (tahawwala) and Korean 변하다 confirm the involuntary transformation. The subject undergoes change rather than causing it.
+
+### H2388 / Sense 96001 (36 occ, sense 3 of 18)
+**Label:** Hifil: repair (buildings, as agent noun)
+**Lemma gloss:** to be strong, firm; to seize, grasp; to strengthen, encourage; to repair buildings; to harden (heart); to prevail
+**Description:** Hifil sense specifically used for repairing buildings and walls, appearing prominently in Nehemiah as participial agent nouns ('repairers of'). Arabic uses مُرَمِّمِي (murammimī, 'repairers', active participle of رَمَّمَ). Korean uses 수리하는 자들 (surihaneun jadeul, 'those who repair'). Swahili uses wakarabati wa ('repairers of'). Though categorized under Hifil morphology, the semantic overlap with the Piel repair sense is strong, but the Arabic active-participle form and Nehemiah-specific usage distinguishes this as the Hifil counterpart.
+**Enriched:** Hifil 'repair buildings' (36x) concentrates in Nehemiah's wall-rebuilding account, where participial forms dominate: 'the repairers of' (Neh 3:4ff). Arabic uses مُرَمِّمِي (murammimī, active participle of رَمَّمَ, 'to repair'—yet another distinct root), Korean 수리하다 (repair), Spanish reparar (repair). The connection to 'strengthen' is metaphorical: making walls firm again.
+
+### H2388 / Sense 96007 (36 occ, sense 4 of 18)
+**Label:** Piel: strengthen, encourage (transitive)
+**Lemma gloss:** to be strong, firm; to seize, grasp; to strengthen, encourage; to repair buildings; to harden (heart); to prevail
+**Description:** Piel factitive/causative sense of making someone strong, encouraging, or supporting. Arabic uses قَوَّى (qawwā, Form II causative, 'to strengthen'), شَدَّدَ (shaddada, 'to fortify'), and شَجَّعَ (shajjaʿa, 'to encourage'). Korean uses 강하게 하다 (ganghage hada, 'make strong') and 격려하다 (gyeongnyeohada, 'encourage'). Swahili uses -imarisha (causative of -imarika, 'strengthen') and -tia nguvu ('give power') and -tia moyo ('give heart/encourage'). This covers all Piel forms that mean to strengthen, encourage, or support a person.
+**Enriched:** Piel causative/factitive 'strengthen, encourage' (36x) means making someone else strong. 'Strengthen his hands for the work' (Ezra 6:22), God says 'I will strengthen him' (Isa 41:10). Arabic uses قَوَّى (qawwā, Form II causative of q-w-y, 'to strengthen') and شَجَّعَ (shajjaʿa, 'to encourage'), Korean 강하게 하다 (make strong), Spanish fortalecer (fortify). The Piel adds transitive causation to the Qal's intransitive state.
+
+### H2932 / Sense 100350 (36 occ, sense 1 of 1)
+**Label:** ritual or moral uncleanness
+**Lemma gloss:** Uncleanness, impurity; ritual defilement or moral corruption rendering one unfit for sacred contact
+**Description:** State of being ritually or morally impure, encompassing ceremonial defilement (e.g., from bodily discharges, contact with the dead) and moral corruption (e.g., idolatry, sexual sin), used throughout Levitical and prophetic literature.
+**Enriched:** The state of being ritually or morally impure, rendering a person, object, or place unfit for sacred contact. The Levitical usage covers bodily contamination—discharges (Lev 15), corpse contact (Num 19:13), and dietary violations (Lev 7:20-21). The prophetic extension applies to idolatry and covenant betrayal (Ezek 36:25, 29). Lamentations 1:9 uses it of Jerusalem's moral degradation. German 'Unreinheit' and Spanish 'impureza' both capture the abstract quality, while French paraphrases with contextual renderings.
+
+### H3515 / Sense 105295 (36 occ, sense 1 of 4)
+**Label:** heavy, severe, grievous
+**Lemma gloss:** Heavy, weighty; severe, grievous; burdensome; by extension, abundant or numerous
+**Description:** Physically heavy in weight or figuratively severe/grievous in intensity, including comparative forms and all grammatical inflections of the core sense.
+**Enriched:** The dominant sense spanning both literal and figurative weight: physically heavy (Moses' hands in Exod 17:12, Absalom's hair in 2 Sam 14:26) and figuratively severe or grievous (a heavy famine in Gen 12:10; 41:31; 43:1, a burdensome yoke in 1 Kgs 12:4, sore mourning in Gen 50:11). The Spanish 'pesada/grave' and German 'schwer' consistently translate both the physical and metaphorical dimensions. This sense accounts for the vast majority of occurrences and forms the semantic backbone of the word.
+
+### H4405 / Sense 111853 (36 occ, sense 1 of 3)
+**Label:** word(s), utterance
+**Lemma gloss:** Word, utterance, speech; poetic synonym for 'dabar,' concentrated almost entirely in Job
+**Description:** A word or collection of words spoken or written, the basic sense of millah as a unit of speech or communication.
+**Enriched:** The primary sense: a word or collection of words as a unit of speech. Job's friends offer 'words' of counsel (Job 4:2, 4); Job demands they hear 'my words' (Job 13:17; 19:23); David's last oracle begins 'his word was on my tongue' (2 Sam 23:2). Spanish 'palabra(s),' French 'parole,' and German 'Wort' converge on straightforward verbal content.
+
+### H4501 / Sense 112466 (36 occ, sense 1 of 2)
+**Label:** cultic lampstand (menorah)
+**Lemma gloss:** Lampstand, menorah; the golden seven-branched cultic lampstand of the Tabernacle/Temple, or a household lamp-stand
+**Description:** The golden seven-branched lampstand of the Tabernacle or Temple, a sacred ritual furnishing described in detail in Exodus 25 and 37.
+**Enriched:** The golden seven-branched lampstand (menorah) of the Tabernacle or Temple, a sacred ritual furnishing. Hebrew consistently pairs this with gold and other cultic objects; Spanish 'candelabro' and German 'Leuchter' both capture the formal, ornamental quality. The detailed specifications in Exodus 25:31-40 and its prominent placement in priestly literature (appearing over 30 times in Exodus-Numbers) underscore its centrality to Israelite worship. The ten lampstands of Solomon's Temple (1 Kgs 7:49; 2 Chr 4:7) and the singular lampstand of the Second Temple (2 Chr 13:11) represent later developments of this cultic tradition.
+
+### H4709 / Sense 113796 (36 occ, sense 1 of 1)
+**Label:** Mizpah (place name)
+**Lemma gloss:** Mizpah ('watchtower'); a place name for several biblical sites, especially in Benjamin and Gilead
+**Description:** The proper noun Mizpah (מִצְפָּה, 'watchtower'), referring to one or more biblical locations including Mizpah in Benjamin and Mizpah in Gilead, used with various grammatical prefixes (prepositions, conjunctions, article) that do not alter the semantic identity of the place name.
+**Enriched:** A proper place name meaning 'watchtower,' referring to multiple biblical sites. Mizpah in Benjamin was a national assembly point (Judg 20:1, 1 Sam 7:5) and post-exile administrative center (2 Kgs 25:23, Jer 40:6-10). Mizpah in Gilead figures in the Laban covenant (Gen 31:49) and Jephthah's story (Judg 11:11, 34). A third site near Hermon appears in Josh 11:3. All translations transliterate rather than translate: Spanish 'Mizpa,' French 'Mitspa,' German 'Mizpa'—treating it as a recognized toponym.
+
+### H5048 / Sense 115960 (36 occ, sense 2 of 6)
+**Label:** opposite, facing across from
+**Lemma gloss:** In front of, before, opposite; in the presence of; at a distance facing; away from before; against; corresponding to
+**Description:** Spatial sense of being directly across from or facing toward something or someone, emphasizing the facing orientation rather than mere proximity.
+**Enriched:** The spatial sense of being directly opposite or facing across from something, emphasizing frontal orientation rather than mere proximity. French en face de and Spanish enfrente de both specify facing directionality. Exod 19:2 (Israel encamped 'opposite the mountain'), Josh 3:16 (waters standing in a heap at a distance 'opposite' Adam), Josh 8:33 (half of Israel 'opposite' Mount Gerizim, half 'opposite' Mount Ebal), and 1 Kgs 8:22 (Solomon standing 'before' the altar facing the assembly) all demand a facing-toward spatial reading.
+
+### H5148 / Sense 116982 (36 occ, sense 1 of 3)
+**Label:** lead, guide along a way
+**Lemma gloss:** To lead, guide, or conduct along a path; of God guiding his people, or of settling someone in a place
+**Description:** To lead or guide a person or group along a path or route, often with God as subject leading his people; the core sense of directing someone's course of movement or life.
+**Enriched:** The dominant sense: leading or guiding someone along a path, route, or way of life, often with God as the subject. God led Israel through the wilderness (Exod 13:17, 21), guided them to his holy dwelling (Exod 15:13), and shepherded them by the hand of Moses and Aaron (Ps 77:20). The Psalms apply this to individual petition -- 'lead me in a level path' (Ps 27:11), 'guide me in your truth' (Ps 25:5). Spanish 'guiar/conducir' and German 'fuhren' capture the purposive, directional quality. The verb presupposes a guide who knows the way and a follower who depends on that knowledge.
+
+### H5462 / Sense 120322 (36 occ, sense 1 of 7)
+**Label:** shut, close (Qal)
+**Lemma gloss:** To shut, close, deliver up, quarantine, or confine; of gold: pure, refined; in Pual: firmly barred
+**Description:** To physically shut or close a door, gate, or opening; Arabic أَغْلَقَ (aghlaqa 'to close') and سَدَّ (sadda 'to block up'); Korean 닫다 (datda 'to shut/close'); Swahili -funga ('to close/lock'); includes active Qal forms (perfect, imperfect, imperative, infinitive, active participle) and Qal passive participle in the sense of 'shut/closed' (state of being physically closed)
+**Enriched:** The foundational meaning: to physically shut or close a door, gate, or opening. Arabic uses aghlaqa and sadda, Korean datda, Swahili -funga, each dedicated closing verbs, while Hebrew encompasses them all. Key passages include God closing the ark behind Noah (Gen 7:16) and shutting Adam's flesh (Gen 2:21). The 36 occurrences span everyday and theologically charged closings alike.
+
+### H6040 / Sense 125342 (36 occ, sense 1 of 2)
+**Label:** affliction, misery, suffering
+**Lemma gloss:** Affliction, misery, or suffering endured through hardship or oppression; rarely, humility or meekness of spirit.
+**Description:** Noun denoting affliction, distress, poverty, or wretchedness, whether physical hardship, oppression, or emotional suffering endured by an individual or group.
+**Enriched:** Affliction, misery, distress, or suffering endured through poverty, oppression, or hardship. This is the condition that provokes divine compassion and intervention: God sees Hagar's affliction (Gen 16:11), hears Israel's cry from Egypt (Exod 3:7), and remembers Jacob's hardship (Gen 31:42). Joseph names his son Ephraim because 'God has made me fruitful in the land of my affliction' (Gen 41:52). The word consistently appears at the hinge between suffering and deliverance. Spanish 'afliccion,' French 'affliction,' and German 'Elend' all converge on the same semantic profile of deep, often prolonged distress.
+
+### H6908 / Sense 130885 (36 occ, sense 3 of 4)
+**Label:** Qal: gather, collect
+**Lemma gloss:** To gather, collect, assemble; Piel: reassemble the dispersed; Nifal: come together; Qal: collect.
+**Description:** Active simple gathering or collecting of people, animals, or things by an agent (Qal stem), including transitive uses with direct objects and purposive infinitives.
+**Enriched:** Qal simple active: to gather, collect — covering 36 occurrences of straightforward transitive gathering of people, animals, or things by an agent. In Gen 41:35 Joseph proposes to 'gather all the food' of the good years; in Gen 41:48 he 'gathered up all the food.' Deut 13:16 commands gathering all the spoil of a condemned city. In 1 Sam 7:5 Samuel says 'gather all Israel to Mizpah'; in Judg 12:4 Jephthah 'gathered all the men of Gilead.' Spanish reunio and German versammelte both use the standard transitive gathering verb. The Qal differs from the Piel (sense 1) in lacking the intensifying and restorative nuance — here the gathering is a practical act of collection rather than a prophetic drama of restoration. 1 Kgs 18:19-20 (Elijah at Carmel) and 1 Kgs 20:1 (Ben-hadad mustering forces) illustrate the military-administrative register.
+
+### H7114b / Sense 132762 (36 occ, sense 1 of 1)
+**Label:** reap, harvest grain
+**Lemma gloss:** To reap or harvest grain; to cut and gather a crop, literally or figuratively
+**Description:** To cut and gather a crop (especially grain) at harvest time, whether literal agricultural reaping or used figuratively of reaping what one has sown.
+**Enriched:** To cut and gather a standing crop at harvest, whether literally or figuratively. The literal sense dominates in Torah legislation about gleaning rights (Lev 19:9, 23:22, Deut 24:19) and harvest narratives (Ruth 2:9, 1 Sam 6:13, 8:12). The figurative extension—reaping what one has sown—appears in prophetic and wisdom texts (Hos 10:12, Jer 12:13, Job 4:8, Prov 22:8). Spanish 'segar' and 'cosechar' distinguish the act of cutting from the broader gathering, while the Hebrew verb covers both.
+
+### H7350 / Sense 135463 (36 occ, sense 2 of 4)
+**Label:** from afar, at a distance
+**Lemma gloss:** Distant, far, remote — spatially, temporally, or adverbially ('from afar'); also as a noun: distance
+**Description:** Used adverbially with prepositions (מִן, בְּ, לְ) to express observing, standing, or coming from a remote spatial point — 'from afar,' 'at a distance,' 'to a far place.'
+**Enriched:** Adverbial use with prepositions (מֵרָחוֹק 'from afar,' לְמֵרָחוֹק 'to a distance,' בְּרָחוֹק 'at a distance') — expressing observation, standing, or movement relative to a remote point. Abraham 'saw the place from afar' (Gen 22:4), Joseph's brothers 'recognized him from a distance' (Gen 37:18), Miriam 'stationed herself at a distance' (Exod 2:4), and the people 'stood far off' at Sinai (Exod 20:18, 21). German von fern, Swahili kwa mbali, and Korean 멀리서 consistently render this adverbial-prepositional pattern.
+
+### H7414 / Sense 136014 (36 occ, sense 1 of 1)
+**Label:** Ramah (place name)
+**Lemma gloss:** Ramah — 'the Height,' a town in Benjamin associated with Samuel's ministry and Rachel's weeping
+**Description:** Ramah (ha-Ramah, 'the Height'), a prominent town in the territory of Benjamin, identified with modern er-Ram about 5 miles north of Jerusalem. Principal location of Samuel's ministry (1 Sam 1:19, 7:17, 8:4, 15:34, 16:13, 19:18-23, 20:1, 25:1, 28:3), a border fortress between Israel and Judah (1 Kgs 15:17-22, 2 Chr 16:1-6), mentioned in prophetic oracles of Rachel weeping (Jer 31:15) and Isaiah's invasion route (Isa 10:29). Also listed in Joshua's allotments for Benjamin (Josh 18:25) and Naphtali (Josh 19:36). The city appears in settlement lists (Ezra 2:26, Neh 7:30, 11:33) and Hosea 5:8. Uniformly transliterated across all languages: arb ar-Ramah, kor Rama, spa Rama/Ramah. The variant 'Ramath' in Josh 19:8 likely refers to 'Ramath of the South' (Ramoth-Negev), a related but distinct southern site.
+**Enriched:** The proper noun Ramah, denoting a Benjaminite town on the border with Ephraim, situated on the central ridge road north of Jerusalem. Functions as Samuel's prophetic headquarters (1 Sam 1:19; 2:11; 7:17; 25:1), a strategic military chokepoint in the Asa-Baasha conflict (1 Kgs 15:17-22 = 2 Chr 16:1-6), and a site of prophetic lament (Jer 31:15; echoed in Matt 2:18). The alternate form ha-Ramathaim ('the two Heights,' 1 Sam 1:1) may point to twin ridges. The Septuagint renders it Rama or Armathaim. Spanish 'Rama,' French 'Rama,' German 'Rama' all transliterate directly.
+
+### H8074 / Sense 141922 (36 occ, sense 1 of 6)
+**Label:** be desolate, lie waste
+**Lemma gloss:** To be desolate, lie in ruins; to be appalled, horrified; causative: to devastate, make desolate; as participle: desolator
+**Description:** Stative or intransitive physical desolation of land, cities, or persons — Qal stative/participle and Nifal passive describing a state of ruin or devastation (Arabic خَرِبَ/مُقْفِرَة, Korean 황폐한, Swahili ukiwa/kuharibika).
+**Enriched:** The stative-intransitive sense of being desolate or lying waste — 36 occurrences describing land, cities, sanctuaries, and roads in a state of ruin or abandonment. Leviticus 26:22 warns that highways will become desolate; Isaiah 49:8 promises that desolate heritages will be restored. Arabic khariba ('to be ruined') and Korean hwangpyehan ('desolate') converge on this physical-geographical meaning. The Qal stative and Nifal passive forms dominate, depicting desolation as an enduring condition rather than an event.
+
+### H8165a / Sense 143007 (36 occ, sense 1 of 1)
+**Label:** Seir (place name)
+**Lemma gloss:** Seir — the mountainous territory southeast of the Dead Sea, homeland of Esau and the Edomites
+**Description:** The proper noun Seir, referring to the mountainous region and territory associated with Esau/Edom southeast of the Dead Sea. All four clusters represent the same toponym with different prepositional constructions: bare nominative (eng: 'Seir', arb: سَعِيرَ, kor: 세일, swa: Seiri), with preposition bet 'in Seir' (spa: 'en Seir', arb: فِي سَعِيرَ), with preposition min 'from Seir' (hin: सेईर से, arb: مِنْ سَعِيرَ), and with conjunction waw 'and Seir' (arb: وَسِعِيرُ, swa: na Seiri). The consistent transliteration across all languages confirms a single referent.
+**Enriched:** The proper toponym Seir, designating the mountainous region southeast of the Dead Sea that became the territorial homeland of Esau/Edom. Appears in three registers: theophanic poetry where God advances from Seir (Judg 5:4; Deut 33:2), patriarchal narrative where Esau settles the land (Gen 32:3; 33:14, 16; 36:8-9), and prophetic judgment oracles against Edom (Isa 21:11; Ezek 35:2-15). The Horites were the pre-Edomite population (Gen 14:6; Deut 2:12, 22). Translations consistently transliterate: Spanish 'Seir,' French 'Seir,' German 'Seir,' preserving the Hebrew proper noun across all target languages.
+
+### H8393 / Sense 144457 (36 occ, sense 1 of 3)
+**Label:** agricultural produce or crop yield
+**Lemma gloss:** Produce, yield: crops from the land; income or revenue from labor or trade; the harvest as an event.
+**Description:** The physical produce, crop, or yield of the land, referring to what the ground or a field brings forth as agricultural output.
+**Enriched:** The physical produce, crop, or yield of cultivated land — what the earth brings forth. This overwhelmingly dominant sense (36 occurrences) governs agricultural legislation: the land's tevuah during the sixth year must sustain Israel through the sabbatical fallow (Lev 25:20-22), and the firstfruits of one's tevuah belong to God (Prov 3:9). Spanish cosecha, French produit, and German Ertrag all center on the agricultural harvest. The word pairs naturally with 'the land' (tevuat ha-aretz) in Exodus 23:10, Leviticus 19:25, and Joshua 5:12, where it marks the transition from manna to Canaan's own produce.
+
+### H8398 / Sense 144513 (36 occ, sense 1 of 1)
+**Label:** world / inhabited earth
+**Lemma gloss:** world, inhabited earth — poetic synonym for the terrestrial realm as God's creative domain
+**Description:** The noun תֵּבֵל denoting the inhabited world or productive earth, used poetically for the whole terrestrial realm as God's domain. All three clusters express the same single meaning in different syntactic frames: absolute/construct (S144513, 32x), conjunctive/prepositional 'and-the-world' / 'and-from-the-world' (S144514, 3x), and prepositional 'in-His-inhabited [world]' (S144516, 1x). Multilingual evidence is perfectly consistent: Spanish 'mundo' / 'del mundo' throughout, Arabic المسكونة / العالم (both 'the inhabited world'), Hindi जगत / संसार (both 'world'), Korean 세상 / 세계 interchangeably, Swahili 'ulimwengu' uniformly. No semantic distinction exists between the clusters; the variation is purely grammatical case and conjunction.
+**Enriched:** The inhabited world conceived as God's established creation, used in parallelism with eretz ('earth') across psalmic, prophetic, and wisdom poetry. Carries a tone of cosmic grandeur absent from the prosaic eretz. Key collocations include tevel u-melo'ah ('the world and its fullness,' Ps 89:12; 96:13), tevel ve-yoshvei vah ('the world and its inhabitants,' Isa 18:3; Nah 1:5), and the foundational assertion that God 'established the tevel by his wisdom' (Jer 10:12 = 51:15). Never determined by the article, always absolute or construct. French 'monde,' Spanish 'mundo,' German 'Welt' all render it as a universal term without distinction from eretz, though in Hebrew the poetic register is unmistakable.
+
+### G1228 / Sense 65230 (35 occ, sense 1 of 2)
+**Label:** the Devil, Satan (proper name)
+**Lemma gloss:** The Devil, Satan as supreme adversary of God; also adjectival: slanderous, given to malicious accusation
+**Description:** The supreme adversary of God and humanity, used as a quasi-proper noun referring to Satan; uniformly rendered as 'devil/Devil' (eng), 'diablo' (spa), 'शैतान' (hin), 'إبليس' (arb), '마귀' (kor), 'ibilisi/shetani' (swa). All 35 occurrences across nominative, accusative, genitive, and dative singular masculine forms denote the same supernatural being. The genitive cluster (S65231) is purely a case inflection of the same referent, not a distinct sense.
+**Enriched:** The Devil as a personal spiritual being, the supreme adversary of God and humanity. Used as a substantive proper noun across the Gospels, Acts, and Epistles, uniformly translated 'devil/diablo/Teufel/diable' in European languages and with dedicated terms in Asian and Middle Eastern languages (Hindi शैतान, Korean 마귀, Arabic إبليس). Key passages include the temptation narrative (Matt 4:1–11) and Jesus' identification of the devil as a murderer and liar from the beginning (John 8:44).
+
+### G1330 / Sense 65595 (35 occ, sense 1 of 4)
+**Label:** pass through a region
+**Lemma gloss:** To go through, pass through, traverse; by extension to cross over, to spread abroad, or to pierce through.
+**Description:** To travel through or across a place, going from one side to the other, used of journeying through cities, territories, or areas.
+**Enriched:** The primary and most frequent sense: to travel or pass through a region, city, or territory, going from one area to another. This is the standard meaning for itinerant journeys in the Gospels and Acts — Jesus passing through towns (Luke 4:30; 9:6), an unclean spirit wandering 'through waterless places' (Matt 12:43), or Paul traversing Macedonia and Achaia (Acts 19:21). Spanish 'atravesando/atravesaba' and German 'hindurchgehen' consistently render the directional through-motion. The word implies transit rather than arrival, emphasizing the journey through rather than the destination.
+
+### G2007 / Sense 67922 (35 occ, sense 1 of 3)
+**Label:** lay/place upon
+**Lemma gloss:** To lay or place upon; by extension, to add, impose, or attack
+**Description:** To place or lay something (especially hands) upon a person or object, in contexts of blessing, healing, ordination, or general physical placement.
+**Enriched:** The dominant physical sense: placing or laying something upon a person or object. The laying on of hands for healing (Matt 9:18; 19:13, 15), ordination (Acts 6:6; 13:3), and the Spirit (Acts 8:17; 19:6) forms the theological core. Burdens placed on shoulders (Matt 23:4) and a name bestowed (Mark 3:16) extend the image. Spanish 'imponer/poner' and German 'auflegen' mirror the straightforward placement.
+
+### G2501 / Sense 69674 (35 occ, sense 1 of 2)
+**Label:** of ōsēph
+**Lemma gloss:** Joseph — indeclinable proper name borne by several biblical figures, from the patriarch to the husband of Mary
+**Description:** of ōsēph, ōsēph (35 occurrences across 2 original clusters)
+**Enriched:** The standard form Iōsēph (Ἰωσήφ), covering all named bearers: the patriarch (Acts 7:9; Heb 11:22), the husband of Mary (Matt 1:16–24), Joseph of Arimathea (Matt 27:57), a brother of Jesus (Matt 13:55), and two ancestors in Luke's genealogy (Luke 3:24, 30). All major translations render it consistently — English 'Joseph,' Spanish 'José,' French and German 'Joseph/Josef' — reflecting its status as an indeclinable loanword from Hebrew יוֹסֵף.
+
+### G3144 / Sense 71977 (35 occ, sense 1 of 1)
+**Label:** witness (one who testifies)
+**Lemma gloss:** witness — one who testifies to what has been seen or known, later developing into the sense of 'martyr'
+**Description:** A person who bears testimony or gives evidence, whether in a judicial, historical, or theological context. The singular and plural forms reflect the same core meaning across all attestations. Multilingual evidence uniformly confirms a single sense: spa 'testigo/testigos,' hin 'gavaah/gavaahon,' arb 'shahid/shuhud,' kor 'jeungin,' swa 'shahidi/mashahidi.' The NT uses this term for eyewitnesses of events (Acts), legal witnesses (Matt 18:16, 2 Cor 13:1), and witnesses to the faith (Heb 12:1, Rev 1:5). No semantic split between singular and plural; these are purely morphological variants of one lexeme.
+**Enriched:** A person who bears testimony to truth, whether in a judicial proceeding, as an eyewitness to events, or through faithful proclamation even unto death. The classical legal sense governs the Gospel trial narratives (Matt 26:65; Mark 14:63) and the Deuteronomic two-witness rule (Matt 18:16; 2 Cor 13:1). The apostolic-kerygmatic sense dominates Acts, where the Twelve are 'witnesses of his resurrection' (Acts 1:22; 2:32; 10:41). The trajectory toward suffering testimony emerges in Revelation, where Antipas is ho martys mou ho pistos ('my faithful witness,' Rev 2:13) and Stephen is implied as proto-martyr (Acts 22:20). Spanish 'testigos,' French 'temoin,' German 'Zeuge' all preserve the legal-testimonial core.
+
+### G3404 / Sense 72466 (35 occ, sense 1 of 3)
+**Label:** hate, detest, abhor
+**Lemma gloss:** Hate, detest; to feel deep hostility, or in Semitic idiom, to love less by comparison
+**Description:** To feel intense hostility or aversion toward a person, group, or action; active emotional hatred directed at someone or something perceived as evil or opposed.
+**Enriched:** Active, intense hostility or aversion toward a person, group, or behavior. This covers the full emotional range from personal animosity (Matt 5:43-44, 'love your enemies') to the world's hatred of Christ and his followers (John 15:18-25; 1 John 3:13). Spanish alternates between 'aborrecer' (to abhor, implying moral revulsion) and 'odiar' (to hate), reflecting nuance within this sense. The Johannine writings particularly develop hatred as a theological marker of opposition to God.
+
+### G3694 / Sense 73246 (35 occ, sense 1 of 1)
+**Label:** after, behind, back
+**Lemma gloss:** after, behind, back — spatial or temporal adverb for following, being behind, or turning backward
+**Description:** Adverb and preposition expressing spatial position behind or temporal sequence after someone or something; used of following a person ('come after me'), looking back, or being behind. Spanish 'detrás/tras/atrás/de-atrás' all express the same directional concept. Hindi 'पीछे' (behind/after) is identical across all three clusters. Arabic 'وَراءَ/وَرَائِي/وَرَاءَهُ' are the same root w-r-ʾ with pronominal suffixes. Korean '뒤에/뒤로/뒤를' (behind-at/behind-to/behind-obj) differ only in case particles. Swahili 'nyuma/nyuma-ya/nyuma-yangu' is one word with possessive additions. The three clusters merely reflect the dual prepositional and adverbial syntactic function of a single spatial-temporal concept across all 35 occurrences.
+**Enriched:** An adverb and preposition expressing spatial position behind, temporal sequence after, or directional movement backward. Three dominant New Testament patterns emerge: the discipleship call deute opiso mou ('come after me,' Matt 4:19; 16:24; Mark 8:34), establishing following as the essence of discipleship; the Baptist's subordination formula ho opiso mou erchomenos ('the one coming after me,' Matt 3:11; John 1:15, 27), marking temporal and hierarchical sequence; and the 'looking back' warning eis ta opiso (Luke 9:62; 17:31; John 6:66), evoking apostasy or regression. Spanish 'detras de' and French 'derriere' capture the spatial core, while German 'hinter/nach' reflects the spatial-temporal duality.
+
+### H0001 / Sense 79296 (35 occ, sense 3 of 3)
+**Label:** head of a fathers' house
+**Lemma gloss:** Father: immediate male parent; ancestor or forefather (plural); patriarchal clan head in Israel's tribal organization.
+**Description:** Patriarchal head or clan leader in the institutional sense of 'fathers' houses' (בֵּית אָבוֹת), the organizational unit of Israelite tribal structure; Hindi distinctively renders पितृवंश (patriarchal lineage/clan) rather than simple 'father' or 'ancestor'.
+**Enriched:** The patriarchal clan head in the institutional phrase bet avot ('fathers' houses'), the basic organizational unit of Israelite tribal structure used for census, military muster, and priestly service. Concentrated in Numbers and Chronicles (35 occurrences), this administrative sense surfaces in passages like 1 Chr 7:40 ('heads of fathers' houses, choice men, mighty warriors'). Hindi distinctively renders this as पितृवंश (patriarchal lineage), while most European translations resort to periphrasis ('heads of ancestral houses'), signaling that this is an institutional concept without neat equivalents outside the biblical world.
+

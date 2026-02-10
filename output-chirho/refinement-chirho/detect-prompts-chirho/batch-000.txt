@@ -1,0 +1,291 @@
+# Sense Refinement Detection — Batch 000
+
+You are a biblical lexicographer reviewing sense entries for a Hebrew/Aramaic/Greek lexicon.
+Each entry below is a single "sense" that was produced by clustering translation signatures 
+and then merging with an LLM. Some senses may have been OVER-LUMPED — they contain genuinely 
+distinct meanings that should be separate senses.
+
+## Your Task
+
+For each sense, determine if it should be SPLIT into multiple senses. Look for:
+- Literal vs. figurative/metaphorical uses lumped together
+- Concrete vs. abstract meanings combined
+- Multiple distinct referents (e.g., "father" = biological parent + patron/advisor + originator)
+- Physical vs. spiritual/theological uses merged
+- Different syntactic frames producing different meanings
+
+## Output Format
+
+Return a JSON array. For senses that need NO splitting, omit them entirely.
+For senses that SHOULD be split, include an entry like:
+
+```json
+[
+  {
+    "senseIdChirho": 79287,
+    "lemmaIdChirho": "H0001",
+    "currentLabelChirho": "father, immediate male parent",
+    "splitProposalChirho": [
+      {
+        "newLabelChirho": "biological/legal father",
+        "criteriaChirho": "Direct parent-child relationship, possessive constructions with specific person"
+      },
+      {
+        "newLabelChirho": "metaphorical father (patron, advisor, protector)",
+        "criteriaChirho": "Title of respect for prophets, advisors, or authority figures; 'father to Pharaoh' type usage"
+      }
+    ],
+    "confidenceChirho": "high",
+    "reasoningChirho": "Description explicitly mentions 'title of respect or metaphorical originator' alongside biological father"
+  }
+]
+```
+
+Only propose splits where you have MEDIUM or HIGH confidence. Do NOT split function words (articles, 
+prepositions, particles, conjunctions) unless there is a genuinely distinct semantic sense (not just 
+syntactic variation). Proper nouns generally should NOT be split.
+
+If NO senses in this batch need splitting, return an empty array: []
+
+## Senses to Review
+
+### G3588 / Sense 72913 (18298 occ, sense 1 of 6)
+**Label:** definite article
+**Lemma gloss:** The definite article; also substantivizer, connective, and comparative marker across all cases and genders
+**Description:** The basic definite article marking a noun as definite or previously mentioned, across all cases, genders, and numbers.
+**Enriched:** The basic definite article marking a noun as known, specific, or previously mentioned. With over 18,000 occurrences, this is the default function. German preserves full case/gender agreement (der/die/das), Spanish contracts with prepositions (al, del), while languages like Japanese and Korean lack articles entirely and leave it implicit.
+
+### H0853 / Sense 84875 (10915 occ, sense 1 of 2)
+**Label:** definite direct object marker
+**Lemma gloss:** Direct object marker for definite nouns; also a homographic preposition meaning 'with, beside, near'
+**Description:** Marks the definite direct object of a verb, indicating that the following noun is the accusative complement. This is the primary and overwhelmingly dominant function of אֵת, appearing both independently and with the conjunctive waw prefix (וְאֵת). Includes all pronominal suffix forms (אֹתוֹ 'him', אֹתָהּ 'her', אֹתָם 'them', אֹתִי 'me', אֹתְךָ 'you [ms]', אֹתָנוּ 'us', etc.) which serve as accusative pronoun objects.
+**Enriched:** The definite direct object marker, prefixed to nouns that are determined (by article, construct, proper name, or suffix). Untranslatable in most target languages — English, French, and German leave it unmarked, while Spanish sometimes uses the accusative preposition 'a.' Its sheer frequency (10,915x) reflects how pervasive transitive verb constructions are in biblical Hebrew narrative and law. Gen 1:1 ('et the heavens and 'et the earth) and Gen 1:28 ('et the fish, 'et the birds) illustrate its role framing the created order.
+
+### G2532 / Sense 69825 (8312 occ, sense 1 of 2)
+**Label:** (none)
+**Lemma gloss:** Conjunction 'and'; also adverbial 'also, even, likewise' for emphasis or addition
+**Description:** (none)
+**Enriched:** The copulative conjunction 'and,' joining words, phrases, and clauses in sequence. This is the default connective of Greek prose and narrative, carrying the story forward or coordinating parallel elements. Every language renders it with its basic conjunction: Spanish 'y,' French 'et,' German 'und.' Matt 1:2 and Matt 2:9 show its narrative chain function. It accounts for over 8,300 of its 9,083 occurrences.
+
+### H3068 / Sense 101337 (6522 occ, sense 1 of 1)
+**Label:** YHWH (the divine name)
+**Lemma gloss:** Yahweh -- the covenantal personal name of the God of Israel, the Tetragrammaton YHWH
+**Description:** The Tetragrammaton יהוה (Yahweh), the proper covenantal name of the God of Israel, occurring approximately 6,823 times in the Hebrew Bible making it by far the most frequent proper noun in Scripture. Traditionally read as Adonai (אֲדֹנָי) in Jewish liturgical practice, rendered as 'the LORD' (κύριος) in the Septuagint, and transliterated or translated variously across languages: Arabic الرَّبّ (the Lord), Korean 여호와 (Yehovah), Spanish Yahve, German der HERR, Hindi यहोवा, French l'Eternel. The name is associated with the self-revelation at the burning bush (Exod 3:14-15) and appears across all genres: narrative, law, prophecy, psalmody, and wisdom. All inflectional variants -- with prepositions (ל, מ, ב, כ), conjunctions (ו), or standalone -- refer to the same divine person and do not constitute distinct lexical senses. The auto-clustering by prepositional prefix is purely grammatical, not semantic.
+**Enriched:** The divine personal name Yahweh, revealed at the burning bush (Exod 3:14-15) and used throughout Scripture as the covenantal name binding God to Israel. Multilingual renderings reflect the ancient substitution tradition: Spanish Yahve retains the phonetic form, French l'Eternel emphasizes everlastingness, and German HERR follows the Adonai tradition. Its massive frequency (6,522 occurrences) underscores that biblical theology is fundamentally anchored in this named, covenant-keeping God.
+
+### G0846 / Sense 63645 (5552 occ, sense 1 of 3)
+**Label:** third-person pronoun reference
+**Lemma gloss:** He, she, it; self; the same — third-person pronoun with intensive and identity uses
+**Description:** Personal pronoun referring to a third-person entity (he, him, his, she, her, it, its, they, them, their) in all cases, genders, and numbers.
+**Enriched:** The default and overwhelmingly dominant use: a personal pronoun for the third person in every grammatical case, gender, and number. Across all target languages the translations are simple pronoun forms — 'de él,' 'de lui,' 'seiner' — confirming its purely referential, anaphoric function. It appears over 5,500 times from Matt 1:2 onward, making it the workhorse of Greek narrative and discourse.
+
+### H5921a / Sense 123883 (5443 occ, sense 1 of 9)
+**Label:** upon, on, over (spatial)
+**Lemma gloss:** upon, on, over; against; beside, by, at; because of, therefore; concerning, about; for, on behalf of; to, unto; according to, in addition to
+**Description:** Core spatial sense of surface contact or vertical superiority: Arabic consistently عَلَى, Korean 위에 (upon/on top), Swahili juu ya (on top of); includes all pronominal suffix forms (him, her, it, me, us) and conjunctive forms (and-over) where the underlying meaning remains spatial position or superposition.
+**Enriched:** Core spatial sense of surface contact or vertical superiority: literally 'on top of' or 'upon.' Arabic consistently renders עַל as عَلَى, Korean 위에 (on top/above), Swahili juu ya (on top of), showing pan-linguistic recognition of the prototypical spatial meaning. This sense accounts for 5,443 of 5,769 occurrences and includes all pronominal suffixed forms (upon him, upon her, upon me, upon us, etc.). Examples: 'Abraham fell on his face' (Genesis 17:17), 'laid wood on the altar' (22:9), 'sat on the throne' (1 Kings 1:46).
+
+### H0413 / Sense 82262 (5366 occ, sense 1 of 7)
+**Label:** directional: to, toward
+**Lemma gloss:** to, toward; into; upon, on; against; for, concerning; with, among
+**Description:** Movement or orientation toward a person, place, or thing — the primary spatial/directional sense of the preposition.
+**Enriched:** Primary directional sense: 'to' or 'toward' a person, place, or thing. With over 5,300 occurrences, this dominates Hebrew prose. Spanish 'a,' French 'à,' and German 'zu' converge on the same particle. Genesis 1:9 gathers waters 'to one place.' It follows every verb of motion and speech, marking destination or addressee.
+
+### H3605 / Sense 106067 (5352 occ, sense 1 of 5)
+**Label:** all, every, whole
+**Lemma gloss:** All, every, whole, everything; the universal quantifier expressing totality, completeness, or distributive scope.
+**Description:** Attributive quantifier modifying a noun to express totality or universality: 'all the people,' 'every nation,' 'the whole land.'
+**Enriched:** The attributive quantifier modifying a noun to express totality or universality: 'all the people,' 'every nation,' 'the whole land.' This overwhelmingly dominant sense (5,352 occurrences) appears from Genesis to Malachi. Spanish 'todos/toda/todas,' French 'tout,' and German 'alle' converge on the same all-embracing scope, whether the referent is people, land, time, or creation itself (Gen 11:9; 18:25).
+
+### H0559 / Sense 83071 (5297 occ, sense 1 of 3)
+**Label:** say, speak, tell
+**Lemma gloss:** To say, speak, tell; to think inwardly; to declare or proclaim formally
+**Description:** Qal basic sense of verbal communication: to say something to someone, introduce direct or indirect speech, command, or answer — the default and overwhelmingly dominant sense of אמר.
+**Enriched:** The Qal basic sense covering verbal communication in all its forms: saying, speaking, telling, commanding, answering, and introducing both direct and indirect speech. With over 5,290 occurrences, it is the default narrative speech verb from Gen 1:3 ('and God said') onward. Every target language maps it to its most common speech verb — 'dijo,' 'dit,' 'sprach' — with no semantic specialization required.
+
+### H1121a / Sense 87013 (4914 occ, sense 1 of 3)
+**Label:** son, male offspring, descendant
+**Lemma gloss:** son, male child; member of a class; age designation
+**Description:** A male child in relation to a parent; by extension, a grandson, descendant, or member of a people or class (e.g., 'sons of Israel' = Israelites, 'son of man' = human being, 'son of death' = one deserving death), covering all grammatical forms including construct chains, possessives, and prepositional phrases, confirmed by Arabic ibn/bani (ابن/بني), Korean adeul/adeuldeul (아들/아들들), and Swahili mwana/wana.
+**Enriched:** Male offspring in the direct biological or legal sense, including descendants. This core kinship meaning dominates the usage in genealogies and narratives. Cross-linguistic glosses uniformly use basic words for male child: Spanish hijo, Arabic ابْنَ, Hindi बेटा/पुत्र.
+
+### H0834a / Sense 84728 (4839 occ, sense 1 of 4)
+**Label:** relative pronoun (who/which/that)
+**Lemma gloss:** Relative particle: who, which, that; also used as a substantive relative (what/that which), and occasionally as a causal or temporal conjunction.
+**Description:** The core relative pronoun function of אֲשֶׁר introducing a relative clause that modifies a definite antecedent, translatable as 'who, whom, whose, which, that', including occurrences with prepositional prefixes (ל 'to whom', ב 'in which') and the conjunction ו ('and who').
+**Enriched:** The core relative pronoun function, accounting for nearly 98% of all occurrences. Asher introduces a subordinate clause that modifies a definite antecedent: 'the firmament which God made' (Gen 1:7), 'all that he had done' (Gen 2:2), 'the tree of which I commanded you' (Gen 3:11). It serves for persons ('who'), things ('which'), and possessives ('whose') alike. The multilingual evidence neatly tracks this: Spanish el que/que, French lequel/qui, and German das/dass all deploy their standard relative pronouns, while Korean and Japanese use noun-modifying verb forms rather than a separate pronoun — highlighting that asher's relativizing function is a structural feature of Hebrew that other languages encode quite differently.
+
+### H3808 / Sense 108045 (4839 occ, sense 1 of 5)
+**Label:** simple negation (not)
+**Lemma gloss:** Not, no; the objective negative particle negating verbs, clauses, and assertions, also used rhetorically and as a standalone refusal.
+**Description:** The standard Hebrew negative particle used to negate verbs, adjectives, and clauses, including with conjunctive waw ('and not') and in relative clauses ('who/that not').
+**Enriched:** The standard negative particle used to negate verbs, adjectives, and clauses — the plain assertion that something is not the case. This accounts for the vast majority of occurrences (4,839x), from 'it had not rained' (Gen 2:5) to 'he did not regard' (Gen 4:5). Spanish 'no,' French 'pas,' and German 'nicht' all function identically, reflecting the universality of simple propositional negation.
+
+### H???? / Sense 145954 (4670 occ, sense 1 of 94)
+**Label:** (none)
+**Lemma gloss:** (none)
+**Description:** (none)
+**Enriched:** (none)
+
+### H1961 / Sense 92684 (3505 occ, sense 1 of 5)
+**Label:** be, exist, was (Qal copular/existential)
+**Lemma gloss:** To be, exist, become, come to pass; the foundational Hebrew verb of existence and state-change, serving as copula and narrative marker.
+**Description:** The general copular and existential sense of היה in the Qal stem: 'to be, was, is, will be, there was/is,' serving as the Hebrew copula linking subject to predicate, expressing existence or state, and functioning as the narrative past tense backbone (wayyiqtol ויהי introducing temporal clauses), across all persons, numbers, genders, and conjugations including perfect, imperfect, consecutive imperfect, imperative, infinitive, and participle.
+**Enriched:** The copular and existential backbone of Hebrew narrative and discourse: 'to be, was, exist, there was.' This sense encompasses the verb as a linking word between subject and predicate, as a marker of existence, and as the formulaic wayyehi opening temporal clauses. It appears over 3,500 times, making it the workhorse of Hebrew syntax. The translation signatures are remarkably consistent across languages — Spanish 'y-fue,' French 'et-ce-fut,' German 'und-es-geschah' — all reflecting the narrative-sequential 'and it was/came to pass' formula (e.g., Gen 11:2, Gen 15:17).
+
+### H3588a / Sense 105931 (3498 occ, sense 1 of 7)
+**Label:** causal: because, for
+**Lemma gloss:** that; because, for; when; but, rather; if; surely, indeed; though, even though
+**Description:** Introduces a causal clause giving the reason or ground for the preceding statement.
+**Enriched:** Causal conjunction: 'because, for' — introducing the reason for what precedes. Dominant across nearly 3,500 occurrences. Spanish 'porque,' French 'car,' and German 'denn' track the causal force. Genesis 3:10 has Adam explaining 'because I was afraid.' The particle anchors Hebrew's reasoning architecture.
+
+### G1161 / Sense 64966 (2806 occ, sense 1 of 2)
+**Label:** and
+**Lemma gloss:** Adversative and connective particle: 'but, and, now, however' — marking contrast or continuation
+**Description:** and, but, now (2806 occurrences across 3 original clusters)
+**Enriched:** The connective-transitional use meaning 'and, now, then,' advancing narrative or explanation without strong opposition. This covers the vast majority of occurrences (2,806x). French 'or' ('now') and Spanish '*-y' reveal the continuative flavor. In genealogies like Matt 1:2-16, de marks each successive generation. In discourse, it introduces the next thought or explanatory aside, much as English 'now' or 'and' does.
+
+### H4428 / Sense 112104 (2518 occ, sense 1 of 2)
+**Label:** king, human ruler
+**Lemma gloss:** King: a human sovereign ruling a city, nation, or territory; also a divine title for God as supreme King
+**Description:** A human sovereign or monarch who rules over a city, nation, or territory, including both Israelite and foreign kings.
+**Enriched:** A human sovereign or monarch who rules over a city-state, nation, or empire. This covers Israelite kings (Saul, David, Solomon), foreign kings (Pharaoh, Nebuchadnezzar, Cyrus), and petty kings of Canaan. The cross-linguistic uniformity is striking — every language uses its basic royal term without qualification: English 'the king,' Spanish 'el rey,' French 'le roi,' German 'der Konig / des Konigs.' Gen 39:20 (Pharaoh), 1 Sam 8:9 (Israel's demand for a king), and 1 Sam 12:13 (Saul's installation) illustrate the range. About 2,518 occurrences.
+
+### H3478 / Sense 105005 (2507 occ, sense 1 of 1)
+**Label:** Israel (proper name and nation)
+**Lemma gloss:** Israel -- the patriarch Jacob's covenant name and the nation descended from him
+**Description:** The Hebrew proper name יִשְׂרָאֵל (Yisrael/Israel), the most frequent proper noun in the Hebrew Bible with over 2,500 occurrences. Originally the name given to the patriarch Jacob after wrestling with the divine being at Peniel (Gen 32:29), meaning 'God persists/contends' (from שָׂרָה + אֵל). Subsequently used to designate: (1) the patriarch himself, (2) the twelve-tribe confederation, (3) the united monarchy under Saul, David, and Solomon, (4) the northern kingdom after the schism, and (5) the covenant people as a theological entity. The multilingual evidence shows remarkable consistency: Israël in French, Yisrael in Spanish, إِسْرَائِيل in Arabic, इस्राएल in Hindi, and 이스라엘 in Korean. Prepositional forms (ב-ישראל, מ-ישראל, ל-ישראל), the conjunctive (ו-ישראל), and adversative constructions (על-ישראל 'against Israel') are all grammatical inflections of this single referent, not distinct senses.
+**Enriched:** The proper name Israel, first bestowed on Jacob after wrestling with God at Peniel (Gen 32:28) and thereafter denoting the covenant people descended from him. The name functions at multiple levels -- patriarch, twelve-tribe nation, northern kingdom, and eschatological remnant -- yet remains a single lexical identity. Cross-lingual evidence confirms total uniformity: every target language renders it as 'Israel,' reflecting its irreducible status as a proper noun rather than a translatable concept.
+
+### H0430 / Sense 82415 (2502 occ, sense 1 of 4)
+**Label:** God (of Israel)
+**Lemma gloss:** God (the God of Israel); gods (pagan deities); a god or goddess (individual foreign deity). The majestic plural form of eloah.
+**Description:** The one true God, YHWH, the God of Israel — the dominant sense of Elohim throughout the Hebrew Bible, used with the article, in construct chains, with pronominal suffixes and prepositions, always referring to the covenant God.
+**Enriched:** The God of Israel — the overwhelming dominant sense at 2,502 occurrences, covering God as creator, covenant-maker, lawgiver, judge, and redeemer. Used with the article (ha-elohim), in construct chains (elohei Yisrael), with pronominal suffixes (eloheinu, 'our God'), and after prepositions. Takes singular verb agreement despite its plural morphology. Every major target language has a dedicated supreme-deity term here: Arabic Allah, French Dieu, German Gott, Korean hananim, Hindi Parameswar/Ishwar, Swahili Mungu — all singular, all capitalized or marked for uniqueness, confirming that translators worldwide perceive a sharp boundary between this sense and the plural-gods sense.
+
+### G1722 / Sense 67114 (2442 occ, sense 1 of 5)
+**Label:** locative: in, within
+**Lemma gloss:** In, within, among, by means of; the primary Greek locative preposition extending to instrumental, associative, and distributive uses.
+**Description:** Marker of position within a space, realm, state, or condition — the core spatial and metaphorical 'in' sense of the preposition.
+**Enriched:** The foundational locative sense: 'in, within,' marking position inside a space, realm, condition, or metaphorical sphere. This covers physical location ('in Bethlehem,' Matt 2:1), spiritual state ('in Christ,' 'in the Spirit'), temporal setting ('in those days'), and abstract domains ('in truth'). With over 2,400 occurrences it is overwhelmingly the dominant use. The cross-linguistic consistency is striking — Spanish 'en,' French 'dans,' German 'in' — reflecting how naturally this core spatial meaning maps across Indo-European languages (e.g., Matt 1:18, Matt 2:2, Matt 3:3).
+
+### H0935 / Sense 85513 (2413 occ, sense 1 of 4)
+**Label:** come, arrive (Qal)
+**Lemma gloss:** To come, arrive, enter; in Hifil, to bring; in Hofal, to be brought. One of Hebrew's most frequent verbs of motion.
+**Description:** General motion toward a reference point: to come, arrive, reach a destination; Arabic jaʾa/ataa, Korean 왔다/오다, Swahili -kuja/-fika.
+**Enriched:** The dominant Qal sense: to come, arrive, reach a destination — 2,413 occurrences covering general motion toward a reference point. This encompasses narrative arrivals ('and Abraham came to Hebron,' Gen 13:18), prophetic formulas ('the word of the LORD came to...'), and eschatological expectations ('the day of the LORD will come'). Arabic ja'a/ata, Korean oda/watta, Swahili kuja/fika, Spanish vino/llego, and German kam all deploy basic arrival vocabulary. The verb's flexibility allows it to cover physical, metaphorical, and temporal 'coming' — events 'come to pass,' plagues 'come upon' Egypt, and blessings 'come upon' the obedient.
+
+### H6213a / Sense 126309 (2383 occ, sense 1 of 6)
+**Label:** do, perform, act
+**Lemma gloss:** Do, perform, act; make, construct; be done (Niphal); produce, yield; work, labor
+**Description:** General action sense of Qal עשׂה: to do, perform, carry out a deed or command (Arabic faʿala فَعَلَ), encompassing all inflections of the basic 'to do' meaning including imperatives, imperfects, perfects, infinitives, participles denoting doers/agents of action, executing judgments, and dealing with persons.
+**Enriched:** The default Qal sense: to do, perform, carry out an action or command. With 2,383 occurrences, this covers obedience ('Noah did all that God commanded,' Gen 6:22), wrongdoing ('he did evil,' Gen 38:10), and every kind of purposeful activity. Spanish 'hizo' and German 'tat' match its generality perfectly.
+
+### H0776 / Sense 84316 (2323 occ, sense 1 of 4)
+**Label:** land, country, territory
+**Lemma gloss:** earth, land, ground; the world, a nation's territory, or physical soil
+**Description:** A geopolitical region, nation, or territory — the dominant sense of erets in the Hebrew Bible, covering 'the land of X,' possessive constructions (my/your/his/our land), and directional phrases (to/from/in the land); consistently glossed as nchi (Swahili = country/nation), देश (Hindi desh = country), أَرْضِ in construct chains (Arabic), and 땅 with possessives (Korean), distinguishing it from the cosmological 'earth' sense by territorial specificity.
+**Enriched:** Territorial land or country, the dominant biblical sense covering covenant geography ('the land of X'). The Swahili use of nchi (nation/country) and Hindi देश confirm this geopolitical framing, distinguishing territorial specificity from cosmic generality.
+
+### H3117 / Sense 101460 (2231 occ, sense 1 of 5)
+**Label:** day, specific time
+**Lemma gloss:** Day, time, lifetime; a unit of time ranging from a single day to an era or lifespan, also used in temporal and comparative expressions.
+**Description:** A day as a general unit of time, a specific calendar day, or a period/era marked by events (the day of X, in those days, today).
+**Enriched:** The general temporal sense: a day as a unit of time, a specific date, or a period/era marked by events. This massively dominant sense (2,231 occurrences) spans 'the third day' (Gen 2:2), 'on that day' (Gen 26:32), and epochal 'day of the LORD' expressions. The prepositional prefix ke- ('in/on the day') frequently attaches, yielding 'in-the-day' and 'on-the-day' glosses across languages. Spanish 'en-el-día,' French 'dans-le-jour,' and German 'am-Tag' all preserve the temporal-locative construction. This sense serves as the basic building block for biblical chronology and narrative sequencing.
+
+### G3004 / Sense 71547 (2226 occ, sense 1 of 5)
+**Label:** say, tell, speak
+**Lemma gloss:** say, speak, tell; to utter words in speech, name something, or declare
+**Description:** To utter words in direct or indirect speech, conveying a message or statement to someone — the primary and overwhelmingly common sense of λέγω covering all active voice inflections.
+**Enriched:** The default narrative speech introducer, functioning as a quotative marker throughout biblical narrative. Spanish consistently uses dijo/dice, Arabic قَالَ, and Chinese 说, confirming this as the unmarked speech verb across 1,183 occurrences.
+
+### H0376 / Sense 81792 (2130 occ, sense 1 of 4)
+**Label:** man, person, human male
+**Lemma gloss:** Man (as opposed to woman), husband, each one; covers individual males, persons in general, and distributive pronominal use.
+**Description:** A human male or person in general; the primary sense of אִישׁ covering individual men, groups of men, 'men of X' construct chains, and generic references to a person or someone, across all grammatical inflections, prepositions, and conjunctions.
+**Enriched:** The primary sense: a man, male person, human individual — 2,130 occurrences spanning narrative, law, poetry, and prophecy. This covers named individuals ('the man Moses'), generic references ('if a man does...'), collective designations ('the men of Israel'), and construct chains denoting social function ('men of valor,' 'men of the city'). Arabic rajul, Spanish hombre/varon, French homme, German Mann, Korean namja/saram, and Swahili mtu all deploy their basic 'adult male human' vocabulary. The breadth of this cluster reflects ish's role as the unmarked, default word for a male person in Hebrew — parallel to Latin vir rather than homo, though it occasionally shades toward the latter in inclusive contexts like 'blessed is the man who...' (Ps 1:1).
+
+### G1510 / Sense 66354 (2095 occ, sense 1 of 6)
+**Label:** copulative, linking predication
+**Lemma gloss:** to be, exist; copulative, existential, locative, and divine self-revelation
+**Description:** Functions as the copula connecting subject to predicate nominative, adjective, or prepositional complement, expressing identity, quality, or classification (e.g., 'God is love', 'you are the Christ').
+**Enriched:** Functions as a copula linking subject to predicate, establishing identity or classification. This is the verb behind 'the Word was God' (John 1:1) and 'you are the Christ' (Matt 16:16). Cross-linguistic glosses use basic copulative verbs (Spanish es/son, Arabic هُوَ, Chinese 是).
+
+### G1473 / Sense 66220 (2084 occ, sense 1 of 2)
+**Label:** first person singular pronoun
+**Lemma gloss:** First person pronoun: 'I/me/my' (singular) and 'we/us/our' (plural), in all grammatical cases
+**Description:** First person singular personal pronoun in all cases: nominative 'I', genitive 'of me / my', dative 'to me / for me / with me', and accusative 'me'.
+**Enriched:** First person singular pronoun ('I, me, my') in all cases. Central to self-disclosure and authority: Jesus's 'I am the one coming after me' (Matt 3:11), 'This is my beloved Son' (Matt 3:17), and 'Not everyone who says to me Lord, Lord' (Matt 7:21). Spanish 'de-mi / mi' and French 'de-moi' consistently mark singularity. About 2,084 occurrences, making it the dominant sense of ego across the New Testament.
+
+### H1004b / Sense 86442 (2015 occ, sense 1 of 4)
+**Label:** house, dwelling, building
+**Lemma gloss:** House, dwelling, building; by extension: household, family, dynasty; spatially: inside, interior, inward; also: temple.
+**Description:** A physical structure used as a residence, shelter, or meeting place — including singular and plural forms, all pronominal suffixes and prepositional combinations; Arabic بَيْت (bayt), Korean 집 (jip), and Swahili nyumba uniformly render this core architectural sense across all grammatical inflections.
+**Enriched:** The overwhelmingly dominant sense: a physical structure used as a residence, shelter, storehouse, prison, or meeting place — accounting for over 2,000 of approximately 2,050 occurrences. This covers houses (Gen 19:2-4), palaces (2 Sam 5:11), the temple as 'house of Yahweh' (1 Kgs 6:1), and all prepositional and pronominal inflections. The construct form bet- in 'house of X' is so productive it borders on grammaticalization. Arabic bayt, Korean 집 (jip), Swahili nyumba, and Spanish casa all render this consistently, while German Haus and French maison confirm the cross-linguistic stability of this core architectural meaning.
+
+### H6440 / Sense 127821 (1870 occ, sense 1 of 5)
+**Label:** before, in front of (spatial)
+**Lemma gloss:** face, presence, surface; also before (spatial/temporal)
+**Description:** Spatial preposition meaning 'before, in front of, in the presence of' (primarily in the construction lipne / millipne), including directional 'facing, toward the front' and spatial 'from before / away from the presence of', with Arabic amama, Korean ap-e, Swahili mbele ya as cross-linguistic markers.
+**Enriched:** The face or presence of the Lord, most frequently in the expression 'before the LORD' (liphnê YHWH). This theological usage emphasizes divine presence and accessibility in worship, with multilingual glosses maintaining the prepositional idiom (Spanish delante de, Arabic أَمَامَ الرَّبِّ, Swahili mbele za Bwana).
+
+### H5414 / Sense 119724 (1855 occ, sense 1 of 7)
+**Label:** give, bestow
+**Lemma gloss:** To give, put, set, make, deliver; the primary Hebrew verb for transferring possession or placing something
+**Description:** To give something to someone as a gift, payment, or transfer of possession (Arabic root signal: أَعْطَى ʾaʿṭā 'to give'); the core and most frequent Qal sense of natan covering all inflections of basic giving.
+**Enriched:** The default and overwhelmingly dominant sense: to give, bestow, or transfer possession. Arabic أَعْطَى and German geben confirm the core semantics across language families. Covers gifts (Gen 24:53), payments (Gen 23:13), divine grants (Gen 12:7), and offerings (Gen 14:20). The sheer frequency (1,855 of ~2,015 occurrences) shows this as the unmarked meaning of the root.
+
+### G4771 / Sense 76807 (1853 occ, sense 1 of 2)
+**Label:** you (plural address)
+**Lemma gloss:** Second person pronoun: 'you' (singular and plural), in all grammatical cases
+**Description:** Second person plural pronoun addressing multiple individuals, across all grammatical cases (nominative, accusative, genitive, dative).
+**Enriched:** Second person plural pronoun ('you all') across all cases, used when addressing multiple individuals. The multilingual evidence is decisive: Spanish 'a-vosotros / os,' French 'vous / a-vous,' and German 'euch' all mark plurality distinctly. Dominant in Jesus's teaching to groups — Matt 10:15 ('I tell you'), Matt 10:19 ('what you are to say'), Matt 12:31 ('I tell you, every sin will be forgiven'). About 1,853 occurrences.
+
+### H5971a / Sense 124504 (1836 occ, sense 1 of 3)
+**Label:** people, nation
+**Lemma gloss:** People, nation, community — a collective body of persons, especially Israel or the nations
+**Description:** A collective body of people, whether Israel, a foreign nation, or nations in general — the dominant sense covering singular and plural, with or without article, prepositions, and possessive suffixes referring to God's people, a king's people, etc.
+**Enriched:** The dominant and nearly exclusive sense: a collective body of people, whether Israel as God's covenant people, a foreign nation, or nations in general. It encompasses singular and plural uses, with or without article, prepositions, and possessive suffixes. Glosses across all target languages converge on collective nouns — 'el pueblo,' 'le peuple,' 'das Volk' — affirming a single core meaning. From Gen 19:4 ('all the people') through the prophets, this sense carries covenantal, ethnic, and national weight.
+
+### G3756 / Sense 73507 (1635 occ, sense 1 of 1)
+**Label:** not (negation particle)
+**Lemma gloss:** ou -- the Greek objective negation particle, denying facts and statements
+**Description:** The standard objective negation particle negating indicative statements and factual assertions, contrasted with mē which negates subjunctive/volitional expressions. Spanish 'no' is consistent across all uses. Hindi 'नहीं' (not) and 'न' (not, literary) are stylistic variants of negation. Arabic 'لا/لَا' is invariant. Korean '아니/아니다' (not/is-not) are inflectional forms. Swahili 'si' (is-not) and 'hapana' (no/not-there) are contextual variants. The prohibitive uses (S73511, 'Not' in commandments with Swahili 'Usi-') still function as the same factual negation particle ou rather than the volitional mē. All three clusters represent the single negation function across 1635 occurrences, with S73512's 'no' as standalone answer being a syntactic shortening of the same particle.
+**Enriched:** The objective negation particle used with indicative mood verbs and factual assertions, forming the counterpart to me (subjective/volitional negation). In passages like Matt 5:14 ('a city set on a hill cannot be hidden') and Matt 1:25 ('he did not know her'), ou flatly negates reality rather than expressing prohibition. All target languages map it uniformly -- Spanish no, French ne-pas, German nicht -- reflecting its single, unambiguous grammatical function across 1,635 New Testament occurrences.
+
+### H3027 / Sense 100759 (1596 occ, sense 1 of 7)
+**Label:** physical hand (body part)
+**Lemma gloss:** Hand; by extension: side, power, portion, means; also tenon (joinery) and handle/armrest
+**Description:** The literal hand as a body part, including singular, dual, and plural forms with all pronominal suffixes and prepositions; the concrete limb used for grasping, striking, lifting, etc.
+**Enriched:** The literal hand as a body part, dominant at 1,596 occurrences. Arabic يَدٌّ, Aramaic יְדָא, and Ethiopic እድ preserve the shared Semitic root. Encompasses 'hand of God' (power), 'into the hand of' (custody), 'by the hand of' (agency). Functions as both concrete noun and base for dozens of Hebrew idioms (Gen 27:17, Gen 39:6).
+
+### H1931 / Sense 92547 (1431 occ, sense 1 of 3)
+**Label:** personal pronoun he/she/it
+**Lemma gloss:** He, she, it (personal pronoun); that one (demonstrative); it is (copular identifier)
+**Description:** Third-person singular personal pronoun used as subject or resumptive pronoun, referring to a previously mentioned person, animal, or thing, with gender and conjunctive variants being purely grammatical.
+**Enriched:** The standard third-person singular personal pronoun: he, she, or it. It serves as subject pronoun, resumptive pronoun, and general anaphoric reference throughout the Hebrew Bible. All target languages render it with their basic pronoun forms — 'él,' 'il,' 'er' — confirming its unmarked referential function. From Gen 4:20 onward it appears over 1,400 times as the default way to track a discourse participant.
+
+### G2316 / Sense 69123 (1315 occ, sense 1 of 3)
+**Label:** God, the true God
+**Lemma gloss:** God, the one true God; a god or pagan deity; a goddess
+**Description:** The one supreme deity, the God of Israel and of the Christian faith, referred to with reverence across all grammatical cases.
+**Enriched:** The supreme deity of biblical faith: God the Father, the God of Abraham, Isaac, and Jacob, the God and Father of the Lord Jesus Christ. This sense accounts for virtually all NT occurrences (1,315 of 1,328). Every target language renders it with its standard word for the one God — 'Dios,' 'Dieu,' 'Gott' — with no hedging or pluralization. Key passages span every genre: Matt 1:23 (Immanuel, 'God with us'), Matt 3:16 (the Spirit of God descending), and throughout the Pauline epistles.
+
+### H7200 / Sense 133710 (1257 occ, sense 1 of 6)
+**Label:** Qal: to see, perceive
+**Lemma gloss:** To see, perceive, look at; (Nifal) appear, be seen; (Hifil) show; (Hofal) be shown; as participle, a seer or prophet.
+**Description:** Basic Qal sense of visual perception, observation, looking, gazing, experiencing — Arabic ra'a / yara / nazara, Korean boda, Swahili kuona — covering all Qal finite forms, infinitives, imperatives, and active participles used predicatively.
+**Enriched:** The vast core of the verb in all Qal forms: seeing, observing, perceiving, experiencing. Multilingual translations consistently use basic sight verbs — Spanish vio, French vit, German sah, Korean boda, Swahili kuona. Covers everything from 'God saw the light' (Gen 1:4) to 'I have seen affliction' (Lam 3:1), including metaphorical seeing as understanding.
+
+### H5704 / Sense 122421 (1238 occ, sense 1 of 5)
+**Label:** until, unto, as far as
+**Lemma gloss:** Until, as far as, unto, while, even; a preposition and conjunction of extent marking spatial, temporal, and scalar limits.
+**Description:** Spatial or temporal preposition indicating extent or limit: 'until' a time, 'unto' a place, 'as far as' a boundary, including with pronominal suffixes and conjunctive waw.
+**Enriched:** The core prepositional sense of spatial or temporal extent: 'until, unto, as far as, up to.' This overwhelmingly dominant usage (1,238 occurrences) marks boundaries in both dimensions — 'until you return to the ground' (Gen 3:19), 'from man to beast' (Gen 6:7), 'as far as Sidon' (Gen 10:19). With conjunctive waw and pronominal suffixes it yields 'and-until,' 'unto-him,' etc. The cross-linguistic signatures are tightly consistent: Spanish 'hasta,' French 'jusqu'a,' German 'bis' — all boundary-marking prepositions. The spatial and temporal uses are syntactically identical, distinguished only by context.
+
+### H1697 / Sense 91131 (1235 occ, sense 1 of 7)
+**Label:** word, speech, utterance
+**Lemma gloss:** Word, speech, matter, thing, event; the Hebrew noun bridging spoken utterance and objective reality
+**Description:** A spoken or written word, message, or divine utterance (Arabic kalima/kalam, Korean malsseum/mal, Swahili neno), including all possessive and prepositional inflections referring to speech content.
+**Enriched:** The primary sense: a spoken or written word, divine utterance, or prophetic message. Arabic كَلِمَة/كَلَام, Korean 말씀/말, Swahili neno all converge on verbal communication. Dominates at 1,235 occurrences, including the formulaic 'the word of the LORD came to' (Gen 15:1, 1 Sam 3:7, 1 Sam 15:10) that anchors prophetic revelation throughout the Hebrew Bible.
+

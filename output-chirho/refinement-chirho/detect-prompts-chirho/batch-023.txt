@@ -1,0 +1,291 @@
+# Sense Refinement Detection — Batch 023
+
+You are a biblical lexicographer reviewing sense entries for a Hebrew/Aramaic/Greek lexicon.
+Each entry below is a single "sense" that was produced by clustering translation signatures 
+and then merging with an LLM. Some senses may have been OVER-LUMPED — they contain genuinely 
+distinct meanings that should be separate senses.
+
+## Your Task
+
+For each sense, determine if it should be SPLIT into multiple senses. Look for:
+- Literal vs. figurative/metaphorical uses lumped together
+- Concrete vs. abstract meanings combined
+- Multiple distinct referents (e.g., "father" = biological parent + patron/advisor + originator)
+- Physical vs. spiritual/theological uses merged
+- Different syntactic frames producing different meanings
+
+## Output Format
+
+Return a JSON array. For senses that need NO splitting, omit them entirely.
+For senses that SHOULD be split, include an entry like:
+
+```json
+[
+  {
+    "senseIdChirho": 79287,
+    "lemmaIdChirho": "H0001",
+    "currentLabelChirho": "father, immediate male parent",
+    "splitProposalChirho": [
+      {
+        "newLabelChirho": "biological/legal father",
+        "criteriaChirho": "Direct parent-child relationship, possessive constructions with specific person"
+      },
+      {
+        "newLabelChirho": "metaphorical father (patron, advisor, protector)",
+        "criteriaChirho": "Title of respect for prophets, advisors, or authority figures; 'father to Pharaoh' type usage"
+      }
+    ],
+    "confidenceChirho": "high",
+    "reasoningChirho": "Description explicitly mentions 'title of respect or metaphorical originator' alongside biological father"
+  }
+]
+```
+
+Only propose splits where you have MEDIUM or HIGH confidence. Do NOT split function words (articles, 
+prepositions, particles, conjunctions) unless there is a genuinely distinct semantic sense (not just 
+syntactic variation). Proper nouns generally should NOT be split.
+
+If NO senses in this batch need splitting, return an empty array: []
+
+## Senses to Review
+
+### H5088 / Sense 116519 (60 occ, sense 1 of 1)
+**Label:** vow or solemn pledge
+**Lemma gloss:** A vow — a solemn pledge made to God, promising sacrifice, service, or devotion in exchange for divine favor.
+**Description:** A solemn promise or pledge made to God, often involving a commitment to offer a sacrifice, gift, or act of devotion, encompassing both the act of vowing and the thing vowed.
+**Enriched:** A solemn vow or pledge made to God, encompassing both the act of promising and the thing promised — whether a sacrifice (Lev 7:16; 22:21), personal consecration as a Nazirite (Num 6:2, 5, 21), or a conditional commitment seeking divine favor (Gen 28:20; 1 Sam 1:11; 2 Sam 15:7-8). Numbers 30 provides detailed legislation on the binding force and annulment of vows. All target languages use a single dedicated term — Spanish voto, French voeu, German Gelubde — confirming its tight semantic unity.
+
+### H5262 / Sense 118040 (60 occ, sense 1 of 2)
+**Label:** drink offering, libation
+**Lemma gloss:** Drink offering or libation poured out in worship; also a cast metal image or molten idol.
+**Description:** A liquid offering (typically wine) poured out as part of sacrificial worship, accompanying burnt offerings and grain offerings in the Israelite cultus.
+**Enriched:** A drink offering or libation, a liquid (usually wine) poured out as part of sacrificial worship. This sense accounts for 60 of 64 occurrences, deeply embedded in the Priestly legislation of Numbers 15 and 28-29. Multilingual evidence uniformly points to cultic liquid offerings: German Trankopfer ('drink-sacrifice'), French boire-offrande ('drink-offering'), and Spanish libacion all specify ritual pouring. Jacob pours a nesekh on his memorial pillar at Bethel (Gen 35:14), and Joel laments that the grain offering and drink offering are cut off from the house of the LORD (Joel 1:9, 13).
+
+### H7004 / Sense 132122 (60 occ, sense 1 of 1)
+**Label:** incense, aromatic offering
+**Lemma gloss:** Incense — aromatic spices compounded and burned as a sacred offering before YHWH in the tabernacle and temple.
+**Description:** The aromatic substance (compounded spices) burned as a sacrificial offering before YHWH, used throughout the tabernacle/temple cultus and metaphorically of prayer ascending to God.
+**Enriched:** The aromatic compound of spices ritually burned before YHWH, both the substance itself and the fragrant smoke it produces (Exod 25:6; 30:1, 7-8, 34-38). Used daily on the incense altar in the tabernacle and temple (Lev 16:13; Num 16:7, 17-18; 2 Chr 29:7), and offered by the tribal princes at the dedication (Num 7:14, 86). Psalm 141:2 metaphorically equates prayer with rising incense. Every target language renders it with a single sacred-aromatic term — Spanish incienso, French encens, German Weihrauch.
+
+### H7235a / Sense 134374 (60 occ, sense 2 of 7)
+**Label:** much, greatly, exceedingly (adverbial)
+**Lemma gloss:** To be or become many, multiply, increase; (Hifil) to make many, cause to multiply; (adverbially) much, greatly, exceedingly
+**Description:** Hifil infinitive absolute or imperative used adverbially: much, many, very, exceedingly, greatly, thoroughly -- modifies another verb to indicate intensity or abundance (Arabic kathiran, Korean 많이/심히, Swahili sana/mengi).
+**Enriched:** Adverbial usage via Hifil infinitive absolute (60x): functioning as an intensifier meaning 'much, greatly, exceedingly.' Arabic kathiran and Korean manhi/simhi parallel this grammaticalized shift from verb to adverb. 'Your reward shall be very great' (Gen 15:1) and 'he gathered much' (Exod 16:17) show the construction modifying diverse predicates without any sense of numerical multiplication.
+
+### H7462b / Sense 136494 (60 occ, sense 2 of 4)
+**Label:** to shepherd, tend, pasture
+**Lemma gloss:** To shepherd, tend, or pasture flocks; also the agent noun 'shepherd'; by extension, to graze (intransitive) or to devour figuratively.
+**Description:** The transitive verbal sense of actively tending, shepherding, or pasturing a flock (or people metaphorically), where the subject is the shepherd acting upon the flock — expressed across all finite conjugations (imperfect, perfect, imperative, infinitive, consecutive forms) and verbal participles, translated as apacentar/pastorear (Spanish), يَرْعَى transitive (Arabic), 치다/목양하다/먹이다 (Korean), -chunga/-lisha transitive (Swahili), चराना (Hindi).
+**Enriched:** The transitive verbal sense: to shepherd, tend, or pasture a flock (or, metaphorically, a people). The subject is the shepherd acting upon the flock as object. Covers all finite conjugations — perfect, imperfect, imperative, infinitive — across 60 occurrences. Spanish apacentar ('to pasture [transitively]') and French paître/faire paître cleanly distinguish this from intransitive grazing. Key passages: Genesis 30:31 ('I will again shepherd your flock'), Micah 5:3 ('he shall shepherd in the strength of the LORD'), and Micah 7:14 ('Shepherd your people with your staff').
+
+### H8130 / Sense 142677 (60 occ, sense 1 of 6)
+**Label:** Qal: to hate, detest
+**Lemma gloss:** To hate, detest, feel aversion toward; as participle: enemy, adversary; as passive: unloved, disfavored
+**Description:** To feel hatred, animosity, or aversion toward a person, thing, or action; the basic Qal active sense covering all finite verb forms (perfect, imperfect, imperative, consecutive) expressing the emotion or attitude of hatred or strong dislike.
+**Enriched:** The core Qal finite sense: to feel hatred, animosity, or moral aversion toward a person, thing, or practice. Covers perfect, imperfect, imperative, and consecutive forms. The multilingual evidence is remarkably consistent—Spanish aborrezco, French haïr, German hasst, Arabic يَكْرَهُ—all converging on visceral emotional hostility. Used of both human interpersonal hatred (Gen 37:4, Esau's brothers) and God's hatred of idolatrous practices (Deut 12:31, 16:22).
+
+### H???? / Sense 145985 (60 occ, sense 14 of 94)
+**Label:** (none)
+**Lemma gloss:** (none)
+**Description:** (none)
+**Enriched:** (none)
+
+### G1138 / Sense 64924 (59 occ, sense 1 of 1)
+**Label:** of Dauid
+**Lemma gloss:** David — king of Israel, ancestor of the Messiah, psalmist; used in titles like 'Son of David' and 'Key of David.'
+**Description:** of Dauid, Dauid, of David (59 occurrences across 2 original clusters)
+**Enriched:** The proper name David, referring to the king of Israel, psalmist, and messianic ancestor. Used historically (Matt 1:6; Acts 13:22), as the attributed author of psalms (Mark 12:36; Heb 4:7), and as a christological title-bearer — 'Son of David' for the Messiah (Matt 1:1; 9:27), 'throne of David' (Luke 1:32), 'root of David' (Rev 5:5), and 'key of David' (Rev 3:7). Universally transliterated across all target languages without variation.
+
+### G1320 / Sense 65489 (59 occ, sense 1 of 1)
+**Label:** teacher, instructor
+**Lemma gloss:** Teacher, instructor — one who teaches with authority; used as a respectful title for Jesus and for teachers in the church.
+**Description:** A person who teaches or instructs, especially in a religious or authoritative context; used as a title of respect for Jesus (Greek didaskalos) and for teachers in the early church. Multilingual evidence confirms a unified sense across singular and plural: Spanish 'maestro/maestros,' Hindi 'guru/shikshak,' Arabic 'mu'allim/mu'allimin,' Korean 'seonsaengnim/gyosadeul,' Swahili 'mwalimu/walimu.' The singular forms frequently serve as a vocative title ('Teacher!') while the plural denotes the office or role of teachers in the community.
+**Enriched:** A teacher or instructor, especially one who teaches with authority in a religious or communal setting. Applied to Jesus as a title of respect equivalent to Rabbi (Matt 8:19; Mark 4:38; John 1:38; 3:2), and to authoritative figures in the early church — apostles, prophets, and teachers forming a foundational triad (1 Cor 12:28; Eph 4:11; Jas 3:1). Spanish maestro, French maitre, and German Lehrer all carry the same dual note of expertise and authority.
+
+### G3037 / Sense 71650 (59 occ, sense 1 of 1)
+**Label:** stone / rock
+**Lemma gloss:** Stone, rock — a piece of rock whether natural, hewn for building, precious, or used figuratively for hardness and rejection.
+**Description:** A piece of rock, whether a natural stone, building block, precious stone, or stone used as a weapon or boundary marker. All three clusters are inflectional variants covering singular, plural, and instrumental-dative forms with no semantic differentiation. Multilingual evidence confirms unity: eng 'stone/stones/with-stones,' spa 'piedra/piedras/con-piedras,' hin patthar/pattharon (पत्थर/पत्थरों), arb hajar/hijaara (حَجَر/حِجارَة), kor dol/doldeul (돌/돌들), swa 'jiwe/mawe/kwa-mawe.'
+**Enriched:** A stone or rock in its full range: natural stones (Matt 3:9; 4:3), building blocks of the temple (Mark 13:1-2), the stone rolled before a tomb (Matt 27:60; 28:2), precious stones (Rev 21:19), and weapons for stoning (John 8:59; Acts 7:58-59). Figuratively, a key christological image — the rejected cornerstone (Matt 21:42; 1 Pet 2:7), the stumbling stone (Rom 9:33), and the living stone of the spiritual temple (1 Pet 2:4-5). All target languages render it with a single undifferentiated stone-word.
+
+### G3319 / Sense 72238 (59 occ, sense 1 of 1)
+**Label:** midst, middle
+**Lemma gloss:** Middle, midst — the center or interior of a space, group, or situation; used spatially, socially, and temporally.
+**Description:** The central point or interior of a spatial or social grouping, used substantively with the article or as a locative adjective. Rendered consistently across languages as deu 'Mitte', fra 'milieu', spa 'medio', arb 'wasat', heb 'tokh/emtsa', kor 'gaunde'. Covers the vast majority of NT occurrences including Jesus sending disciples 'into the midst' of wolves (Matt 10:16), standing 'in the midst' of assemblies (Matt 18:2, 20; Luke 2:46; Acts 4:7), casting out from the midst (Luke 4:30, 35), and eschatological placement (Rev 1:13, 2:1). The temporal sub-use for 'midnight' (Matt 25:6 meses nuktos; Acts 26:13 meses hemeras 'midday') and nautical 'middle of the sea' (Acts 27:27) show identical cross-linguistic rendering with arb 'nisf' (half-point) and heb 'chatsi', confirming these are contextual extensions of the same spatial-center concept rather than a distinct lexical sense.
+**Enriched:** The middle, center, or midst of a spatial area or social gathering, used substantively or as a locative adjective. Spatially: the midst of wolves (Matt 10:16), a child placed in the midst (Matt 18:2), standing in the middle of the Areopagus (Acts 17:22). Temporally: the middle of the night (Acts 27:27), mid-feast (John 7:14). Socially: Christ present 'in the midst' of his assembled people (Matt 18:20; Rev 1:13). German Mitte, French milieu, Spanish medio all confirm a unified center-point meaning.
+
+### G5479 / Sense 78910 (59 occ, sense 1 of 1)
+**Label:** (none)
+**Lemma gloss:** Joy, gladness, delight — deep happiness rooted in God's saving acts, the gospel, or the presence of the Spirit.
+**Description:** (none)
+**Enriched:** Joy, gladness, or deep delight — characteristically rooted in God's redemptive action, the reception of the gospel, and the work of the Spirit. Describes the response to Christ's birth (Matt 2:10; Luke 2:10), the reception of the word (Matt 13:20, 44), a fruit of the Spirit (Gal 5:22), and the eschatological reward of the faithful servant (Matt 25:21, 23). Jesus himself speaks of 'my joy' being made full in his followers (John 15:11; 17:13). Spanish gozo, French joie, and German Freude confirm a unified semantic core across all contexts.
+
+### H0859c / Sense 85018 (59 occ, sense 1 of 1)
+**Label:** you (fem. sg.)
+**Lemma gloss:** You (fem. sg.) — second person feminine singular independent pronoun, addressing an individual woman.
+**Description:** Second person feminine singular independent pronoun, used to address a female individual. All occurrences represent the same pronominal sense regardless of orthographic variation (ketiv/qere), conjunction prefixation (waw-copulative), or maqqef attachment.
+**Enriched:** The second person feminine singular independent pronoun 'you,' used to address a female individual directly. Appears in pivotal addresses to women throughout the Hebrew Bible (Gen 12:11, 13; 24:23, 60; Ruth 3:11). Three passages (Num 11:15; Deut 5:24; Ezek 28:14) employ it with masculine referents, likely reflecting Aramaic convergence of gender in this pronoun. All target languages render it with their standard second-person singular form — Spanish tu, French tu, German du — since most lack grammatical gender in pronouns.
+
+### H3627 / Sense 106438 (59 occ, sense 2 of 7)
+**Label:** weapon or armor
+**Lemma gloss:** Vessel, utensil, container; weapon, armor; implement, article, tool; goods, baggage; musical instrument
+**Description:** An implement of war such as a sword, spear, bow, or defensive armor (Arabic: سِلاح / أَسْلِحَة; Korean: 무기; Swahili: silaha).
+**Enriched:** Weapons and armor (59x): implements of warfare including swords, spears, bows, and defensive gear. Arabic silah and Swahili silaha capture this military register. Simeon and Levi's 'vessels of violence' (Gen 49:5) is the earliest attestation; the phrase kele milhamah ('weapons of war') becomes formulaic in Deuteronomy and the histories (Deut 1:41; Judg 18:11).
+
+### H4080 / Sense 109835 (59 occ, sense 1 of 1)
+**Label:** Midian (proper noun)
+**Lemma gloss:** Midian — son of Abraham by Keturah; the Arabian tribe and territory descended from him
+**Description:** Midian (Hebrew מִדְיָן), the proper name referring to (1) the son of Abraham and Keturah (Gen 25:2, 4; 1 Chr 1:32-33), (2) the Arabian tribal people descended from him, and (3) the territory they inhabited east of the Jordan and south of Moab. Appears with various prepositions (in Midian, Exod 2:15; 4:19; against Midian, Judg 8:1; from Midian, 1 Kgs 11:18; as/like Midian, Ps 83:9) and conjunctions (and Midian, Judg 7:12; 1 Chr 1:32), all of which are syntactic variants of the same proper noun. Uniformly rendered Midian/Madian/مِدْيَان/미디안/मिद्यान across all target languages with 59 total occurrences.
+**Enriched:** The proper noun encompassing the patriarch, the people, and their land. Multilingual renderings — Spanish 'Madián,' French 'Madian,' German 'Midian' — uniformly transliterate the name. All 59 occurrences converge on a single referent: whether designating tribal kings and princes (Num 31:8; Judg 7:25), dromedaries of Midian (Isa 60:6), or the territory itself (Exod 2:15; Hab 3:7).
+
+### H4116a / Sense 109959 (59 occ, sense 1 of 2)
+**Label:** hurry, make haste (Piel)
+**Lemma gloss:** To hurry, make haste (Piel); to be rash or impetuous (Nifal) — urgency of action versus rashness of character.
+**Description:** To act quickly or with urgency, moving or doing something without delay — the standard Piel active sense covering all finite forms, imperatives, infinitives, and participles of hurrying.
+**Enriched:** To act quickly, hurry, or make haste — the Piel active sense describing deliberate urgency in movement or action. Dominates with 59 occurrences across narrative and command contexts. Abraham hastens to Sarah's tent (Gen 18:6), Lot is urged to hurry out of Sodom (Gen 19:22), and Rebekah quickly lowers her jar (Gen 24:18). Spanish "apresurarse," French "se hâter," and German "eilen" all consistently point to purposeful speed without negative connotation.
+
+### H5019 / Sense 115506 (59 occ, sense 1 of 1)
+**Label:** Nebuchadnezzar (king of Babylon)
+**Lemma gloss:** Nebuchadnezzar — the great king of Babylon who destroyed Jerusalem and exiled Judah
+**Description:** Proper name of Nebuchadnezzar II, king of Babylon (r. 605–562 BCE), who conquered Jerusalem and exiled Judah; all clusters reflect the same referent with minor orthographic variants (נְבוּכַדְנֶאצַּר / נְבוּכַדְרֶאצַּר) and prefixed prepositions/conjunctions.
+**Enriched:** The proper name of Nebuchadnezzar II, king of Babylon. All 59 occurrences refer to the same historical ruler despite minor orthographic variation between the -retsar and -netsar spellings. Spanish 'Nabucodonosor' follows the Greek Septuagint tradition, while German 'Nebukadnezar' and French 'Nebucadnetsar' stay closer to the Hebrew. Key passages include his conquest of Jerusalem (2 Kgs 24:1, 10–11), his dream visions (Dan 2–4), and prophetic oracles against him (Jer 21:2; 25:1).
+
+### H5707 / Sense 122443 (59 occ, sense 1 of 2)
+**Label:** witness (person who testifies)
+**Lemma gloss:** Witness: a person who testifies in legal, covenantal, or divine settings; also evidence or attestation (a thing serving as testimony).
+**Description:** A person who sees or knows something and can give testimony, used of legal witnesses, divine witnesses, and those who attest to events or covenants.
+**Enriched:** A witness as a person — someone who has seen or knows something and can testify to it, whether in a legal proceeding, a covenant ceremony, or a divine tribunal. This dominant sense (59 occurrences) covers the ninth commandment's 'false witness' (Exod 20:16), the requirement of multiple witnesses for conviction (Num 35:30; Deut 17:6), Laban declaring God as witness to the Mizpah covenant (Gen 31:48, 50), God as Job's witness in heaven (Job 16:19), and prophetic appeals where Israel is called as YHWH's witnesses (Isa 43:10, 12). Spanish testigo, French temoin, and German Zeuge all preserve the personal dimension, with Korean 증인 and Arabic شاهد confirming the cross-linguistic stability of the person-who-testifies concept.
+
+### H5785 / Sense 123067 (59 occ, sense 1 of 3)
+**Label:** skin of a person
+**Lemma gloss:** Skin, hide, leather; the outer covering of a human body, an animal's hide, or processed leather used for articles and garments.
+**Description:** The outer bodily covering of a human being, especially in contexts of disease (Leviticus skin afflictions), suffering (Job, Lamentations), or physical description.
+**Enriched:** The outer bodily covering of a human being, especially in contexts of disease, suffering, and physical description. Fifty-nine occurrences make this the dominant sense, with Leviticus 13 alone accounting for over half as the priest examines skin for signs of tsar'at (traditionally 'leprosy'). Job's tormented body (Job 7:5; 10:11; 19:20, 26) and Ezekiel's valley of dry bones receiving skin (Ezek 37:6, 8) show the word marking the boundary between life and death, wholeness and decay. The construct 'or basar ('skin of the flesh') in Levitical law became a technical diagnostic phrase.
+
+### H6921 / Sense 131088 (59 occ, sense 1 of 2)
+**Label:** east, eastward (direction)
+**Lemma gloss:** The east as a cardinal direction or boundary marker; also the scorching east wind (sirocco) from the desert, often an instrument of divine judgment.
+**Description:** The cardinal direction east, used for geographical orientation, boundaries, and directional movement, including with various prepositions (to, from, toward) and the locative suffix.
+**Enriched:** The cardinal direction east, used for geographical orientation, territorial boundaries, and directional movement. Ezekiel employs it prolifically for the eastern gate of the temple and tribal land divisions (Ezek 11:1; 48:1-28). The locative suffix qadimah ('eastward') appears frequently in boundary descriptions. German 'Osten' and 'ostwarts,' Spanish 'este' and 'hacia el este,' French 'est' and 'vers l'est' all render this purely directional sense without atmospheric connotation.
+
+### H7069 / Sense 132431 (59 occ, sense 1 of 6)
+**Label:** Buy, purchase
+**Lemma gloss:** To buy, purchase; to acquire, obtain (esp. wisdom); to create or possess (of God); passive: to be bought
+**Description:** Commercial acquisition through payment; the core transactional sense of qanah used for buying fields, slaves, goods, and commodities, encompassing the buyer (participle), the act of buying (infinitive/imperfect), and completed purchases (perfect).
+**Enriched:** The dominant commercial sense — to buy or purchase through monetary transaction — accounting for 59 of 86 occurrences. Covers buying fields (Gen 25:10; 33:19; Jer 32:7-15), slaves (Gen 47:19; Lev 22:11; 25:44-45), goods, and livestock. The participial form qoneh functions as 'buyer' in market contexts. Spanish comprar, French acheter, and German kaufen unanimously confirm the transactional meaning.
+
+### H8210 / Sense 143412 (59 occ, sense 1 of 6)
+**Label:** pour out (liquid/libation)
+**Lemma gloss:** To pour out, shed, or spill — liquid, blood, wrath, or spirit; covering ritual libation, violent bloodshed, passive outpouring, metaphorical effusion, and reflexive dissolution
+**Description:** To pour out a liquid such as water, oil, or a drink offering, typically in a ritual or everyday context; the basic Qal active sense of physically emptying a vessel.
+**Enriched:** To pour out a liquid or libation (Qal active, 59x): the basic physical sense of emptying a vessel — water, oil, blood, or a drink offering — typically in ritual or everyday contexts. Spanish derramar ('to spill, pour'), French répandre ('to spread, pour'), and German ausgiessen ('to pour out') all converge on this core meaning. Dominates the Levitical sacrificial system: blood poured at the altar base (Lev 4:7, 18, 25, 30, 34), water poured on the ground (Deut 12:16, 24), and Moses pouring anointing oil (Exod 29:12). The Gideon narrative has the broth poured out before the angel (Judg 6:20), and Elijah's contest on Carmel involves water poured on the altar (1 Kgs 18:28).
+
+### H8346 / Sense 144245 (59 occ, sense 1 of 1)
+**Label:** sixty
+**Lemma gloss:** Sixty — the cardinal number sixty, used in measurements, ages, counts, and time periods
+**Description:** sixty, and sixty, and with sixty (59 occurrences across 4 original clusters)
+**Enriched:** The cardinal number sixty, used in genealogical ages (Gen 5:15, 21), temple dimensions (1 Kgs 6:2; Ezek 40:14), troop counts, and legal time periods. Translations are straightforwardly numeric: Spanish 'sesenta,' French 'soixante,' German 'sechzig.' The consistency across all 59 occurrences and four original clusters confirms a single, unambiguous numerical sense with no figurative extension.
+
+### H???? / Sense 145986 (59 occ, sense 15 of 94)
+**Label:** (none)
+**Lemma gloss:** (none)
+**Description:** (none)
+**Enriched:** (none)
+
+### G4412 / Sense 76056 (58 occ, sense 1 of 1)
+**Label:** first
+**Lemma gloss:** First, firstly — adverb of priority in time, sequence, or importance
+**Description:** first, First (58 occurrences across 3 original clusters)
+**Enriched:** Adverb of temporal or logical priority meaning 'first, before anything else.' Spanish 'primero,' French 'premièrement,' and German 'zuerst' all capture the sequential force. In Jesus' teaching, it often introduces an imperative prerequisite (Matt 5:24; 7:5; 12:29). Paul uses it to order stages of God's redemptive plan (Rom 1:16; 2:9-10). The word presupposes a sequence and foregrounds what must come at its head.
+
+### H0347 / Sense 81576 (58 occ, sense 1 of 1)
+**Label:** Job (proper name)
+**Lemma gloss:** Job — the righteous sufferer from the land of Uz, central figure of the wisdom book bearing his name
+**Description:** The proper name of the righteous patriarch from the land of Uz, central figure of the Book of Job, known for enduring suffering and divine testing. All 58 occurrences refer to a single individual across various grammatical contexts — nominative (eng: Job, spa: Job/Iyov, arb: أَيُّوبُ, hin: अय्यूब, kor: 욥, swa: Ayubu), with preposition beth 'against Job' (arb: بِ–أَيّوبَ, kor: 욥–을–향해), and with preposition kaph 'like Job' (arb: كَ–أَيّوبَ, swa: kama–Ayubu). These are purely syntactic inflectional variants of a single proper noun referent.
+**Enriched:** The proper name of the righteous patriarch from Uz. All 58 occurrences refer to the same individual: 56 within the Book of Job itself and two in Ezekiel 14:14, 20 where he exemplifies personal piety. Spanish and French preserve 'Job,' while German uses 'Hiob' and Hebrew transliterations give 'Iyov/Iyyov.' The name's etymology remains debated — possibly 'object of enmity' from the root איב — but its narrative weight as a byword for patient suffering is unmistakable.
+
+### H0477 / Sense 82617 (58 occ, sense 1 of 1)
+**Label:** Elisha
+**Lemma gloss:** Elisha — the prophet of Israel who succeeded Elijah, known for miraculous deeds in the northern kingdom
+**Description:** Elisha, and Elisha, of Elisha (58 occurrences across 3 original clusters)
+**Enriched:** The proper name of the prophet Elisha, successor of Elijah. All 58 occurrences fall within 1-2 Kings, referring to the same individual. Spanish 'Eliseo,' French 'Élisée,' and German 'Elisa' each adapt the theophoric name differently, but the underlying meaning 'God is salvation' is universally recognized. His call narrative (1 Kgs 19:16-19) and double-portion request (2 Kgs 2:9) establish him as Elijah's authorized successor.
+
+### H0609 / Sense 83393 (58 occ, sense 1 of 1)
+**Label:** Asa (proper name)
+**Lemma gloss:** Asa — king of Judah who pursued religious reform; also a Levite ancestor
+**Description:** The proper noun אָסָא (Asa), referring primarily to Asa king of Judah (1 Kings 15-16, 2 Chronicles 14-16), the third king of the southern kingdom who reigned ~910-869 BCE, and also to a Levite in 1 Chronicles 9:16. All 58 occurrences across languages consistently render this as the same personal name: eng 'Asa', spa 'Asa', hin 'आसा', arb 'آسَا/آسا', kor '아사', swa 'Asa'. The two clusters differ only in prefixed prepositions: S83393 (47x) includes bare forms and waw-conjunction, while S83394 (11x) has the lamed-preposition ('of/to Asa'). These are grammatical particles not affecting referent identity.
+**Enriched:** The proper name Asa, borne by the reforming king of Judah and a Levite ancestor. All 58 occurrences point to these two individuals, with the king dominating. Remarkably, every language sampled — Spanish, French, German, English — renders the name identically as 'Asa,' reflecting its short, distinctive phonology. Key passages include his accession (1 Kgs 15:8-9), his reforms (1 Kgs 15:11-14; 2 Chr 14–15), and the Chronicler's critique of his final years (2 Chr 16:7-12).
+
+### H0834d / Sense 84788 (58 occ, sense 2 of 7)
+**Label:** when (temporal)
+**Lemma gloss:** As, just as (comparative); when (temporal); because, since (causal); according to what; after
+**Description:** Introduces a temporal clause: 'when', 'at the time that'. Marks the time at which an event occurs or a condition holds.
+**Enriched:** Temporal: 'when,' 'at the time that' — introducing a time clause. Abram entered Egypt 'when' (ka'asher) he drew near (Gen 12:11), and the LORD departed 'when' he finished speaking (Gen 18:33). Spanish cuando and German als clearly mark this temporal reading, separating it from comparative como/wie.
+
+### H1272 / Sense 88069 (58 occ, sense 1 of 4)
+**Label:** flee, run away (Qal)
+**Lemma gloss:** To flee or run away; in Hifil, to chase away or put to flight; also of a bar that runs through or passes across.
+**Description:** To flee or run away from danger, pursuit, or an undesirable situation, used across all Qal inflections including perfects, imperfects, imperatives, participles, infinitives, and cohortatives.
+**Enriched:** The core Qal meaning: to flee, run away, or escape from danger, pursuit, or hardship. This is by far the most frequent usage (58 of 65 occurrences), spanning patriarchal narratives (Gen 27:43; 31:20-22), prophetic oracles (Isa 48:20), and wisdom literature (Job 9:25; 27:22). All major translations converge — English 'fled,' Spanish 'huyó,' French 'fuit,' German 'floh' — confirming a stable, universally recognized sense of panicked or purposeful flight.
+
+### H1836 / Sense 91944 (58 occ, sense 1 of 1)
+**Label:** this, that, thus (Aramaic demonstrative)
+**Lemma gloss:** This, that, thus — Aramaic demonstrative pronoun used attributively and predicatively in Daniel and Ezra
+**Description:** Aramaic demonstrative pronoun meaning 'this,' 'that,' or (with preposition ke-) 'like this, thus.' Extremely common in the Aramaic portions of Ezra and Daniel, functioning as both an attributive and predicative demonstrative. In Ezra 4-5, it appears dozens of times modifying nouns like 'this house,' 'this city,' 'this decree.' In Dan 2:10, no king has asked a thing like this (kidnah). In Dan 2:43, referring to 'that' kingdom. In Dan 5:25 with conjunction 'and this' (udnah). In Jer 10:11 (the sole Aramaic verse in Jeremiah), used adverbially as 'thus' (kidnah). All forms -- bare, with ke-, with waw -- are inflectional variants of a single demonstrative lexeme. Glosses: arb hadhihi/hadha/haakadha, deu dieses, kor igot/iwa gati, spa esta/esto/asi, hin yah/aise, fra ceci.
+**Enriched:** Aramaic demonstrative pronoun meaning 'this, that, thus.' All 58 occurrences cluster in Ezra 4–7 and Daniel 2–7, the Aramaic sections of the Hebrew Bible. Spanish distinguishes gender ('este/esta'), French uses 'ceci,' and German 'dieses,' each mapping naturally to a single deictic function. With the preposition כְּ it extends to the adverbial sense 'like this, thus' (Dan 2:10; 7:5). The pronoun anchors discourse references in official correspondence and visionary interpretation alike.
+
+### H1892 / Sense 92409 (58 occ, sense 1 of 3)
+**Label:** vanity, futility, absurdity
+**Lemma gloss:** Vapor, breath, fleeting puff; figuratively, vanity, futility, absurdity; applied to idols as worthless nothings.
+**Description:** The abstract, philosophical sense dominant in Ecclesiastes: the fundamental futility, meaninglessness, or absurdity of human endeavor and earthly existence under the sun.
+**Enriched:** The dominant abstract sense — vanity, futility, absurdity — the keynote of Ecclesiastes where human striving, wisdom, pleasure, and toil are all declared hevel 'under the sun.' This is not nihilism but a hard-won recognition that earthly endeavors cannot secure lasting meaning on their own (Eccl 1:2; 12:8). Job uses the word similarly when he declares his days are hevel (Job 7:16). Spanish 'vanidad' and German 'Nichtigkeit' both convey this philosophical weight without reducing it to mere emptiness.
+
+### H1992 / Sense 93278 (58 occ, sense 4 of 8)
+**Label:** those (demonstrative)
+**Lemma gloss:** They, them, those; 3rd-person plural pronoun with prepositional forms (to/for/from/like/in them)
+**Description:** Used with the article as a demonstrative pronoun or adjective meaning 'those', 'the-those', including both plural and singular feminine demonstrative forms.
+**Enriched:** With the definite article functioning as a demonstrative: 'those.' Especially common in the temporal formula bayyamim hahem ('in those days'), which appears scores of times across Kings, Jeremiah, and Zechariah. Spanish 'aquellos,' French 'ces,' and German 'jene' all shift to their demonstrative forms. Gen 6:4 and Exod 2:11 show this pointing function anchoring narrative time references.
+
+### H1995a / Sense 93340 (58 occ, sense 1 of 4)
+**Label:** multitude, crowd, throng
+**Lemma gloss:** Sound, roar, tumult; a crowd or multitude of people; abundance or wealth of possessions
+**Description:** A large group of people, whether a nation's populace, an army, or a gathered assembly.
+**Enriched:** A multitude, crowd, or throng of people — the most frequent sense, covering national populations, armies, gathered assemblies, or masses. Used of the Aramean host (1 Kgs 20:13, 28), the remaining populace of Jerusalem (2 Kgs 7:13), and prophetically of Gog's vast horde (Ezek 39:11, 15). Arabic جُمْهُور ('throng'), Swahili umati ('crowd'), and Korean 무리 ('multitude') consistently confirm the collective-human reference. Often appears in construct chains: הֲמוֹן גּוֹגִ ('the multitude of Gog'), הֲמוֹן מִצְרַיִם ('the multitude of Egypt').
+
+### H3058 / Sense 101290 (58 occ, sense 1 of 1)
+**Label:** Jehu, king of Israel
+**Lemma gloss:** Jehu — primarily the zealous king of Israel who overthrew the house of Ahab; also a prophet and others
+**Description:** Proper name Yehu (יֵהוּא), primarily the zealous king of Israel who overthrew the house of Ahab and destroyed Baal worship (2 Kings 9-10); also borne by a prophet (1 Chr 12:3) and others. The bare nominative and prepositional le- forms denote the same individual(s). Target languages are consistent: Spanish Jehú, Hindi येहू, Arabic يَاهُو, Korean 예후, Swahili Yehu — all rendering this proper name uniformly across grammatical cases.
+**Enriched:** The proper name Jehu, shared by several individuals but dominated by the king of Israel (r. c. 841–814 BCE). Transliterations are consistent: Spanish 'Jehú,' French 'Jéhu,' German 'Jehu,' English 'Jehu/Yehu.' The lion's share of the 58 occurrences narrate his violent coup and purge of Baal worship (2 Kgs 9–10). The prophet Jehu son of Hanani (1 Kgs 16:1, 7; 2 Chr 19:2; 20:34) and a Davidic warrior (1 Chr 12:3) account for the remainder.
+
+### H3588a / Sense 105938 (58 occ, sense 3 of 7)
+**Label:** temporal: when
+**Lemma gloss:** that; because, for; when; but, rather; if; surely, indeed; though, even though
+**Description:** Introduces a temporal clause indicating the time at which an event occurs or a situation obtains.
+**Enriched:** Temporal conjunction: 'when' — marking the time at which something occurs. Genesis 6:1 opens with 'when mankind began to multiply.' Spanish 'cuando,' French 'quand,' and German 'als/wenn' confirm the temporal reading. The shift from causal to temporal is natural: cause and occasion share a logical structure.
+
+### H5291 / Sense 118315 (58 occ, sense 1 of 3)
+**Label:** young woman, girl
+**Lemma gloss:** young woman, girl; often marriageable or of service age; can denote maidservant or female attendant
+**Description:** A young woman or girl, typically of marriageable age, used in singular to refer to an individual female without connotation of servitude.
+**Enriched:** The singular typically designates an individual young woman of marriageable status, as when Abraham's servant prayed that 'the young woman' who offers him water would be Isaac's bride (Gen 24:14, 16). The German jung Frau and French jeune-femme preserve the age-stage designation. This sense focuses on the woman's social standing and marriageability rather than subordinate status, appearing throughout the betrothal narrative in Genesis 24 and in Deuteronomy's laws about young women accused of unchastity (Deut 22:15-29).
+
+### G0846 / Sense 63668 (57 occ, sense 2 of 3)
+**Label:** the same identical
+**Lemma gloss:** He, she, it; self; the same — third-person pronoun with intensive and identity uses
+**Description:** Predicate or attributive use with the article meaning 'the same, the very same, identical,' indicating sameness or continuity.
+**Enriched:** With the article prefixed, αὐτός takes on the meaning 'the same, the very same, identical.' This is a well-attested classical Greek usage that persists in the NT: Jesus prayed τὸν αὐτὸν λόγον (Matt 26:44, Mark 14:39), and shepherds were in τῇ χώρᾳ τῇ αὐτῇ (Luke 2:8). Multilingual glosses shift from pronoun forms to adjectives of identity — 'mismo/misma' in Spanish — marking the sense boundary clearly.
+
+### G0906 / Sense 63895 (57 occ, sense 1 of 6)
+**Label:** throw, cast, hurl
+**Lemma gloss:** To throw, cast, hurl; to put or place into; passive: to be thrown, cast out; also to lie prostrate, pour out, or strike upon
+**Description:** To propel something through the air with force; physical throwing or casting of objects (stones, nets, people) into locations (sea, fire, prison), including figurative casting out (fear, figs from a tree).
+**Enriched:** Active throwing, casting, or hurling with physical force. The broadest and most frequent sense, covering stones cast, nets thrown into the sea (Matt 4:18), pearls thrown before swine (Matt 7:6), and the dramatic 'cast yourself down' of the temptation narrative (Matt 4:6). Spanish arrojó/echó, Arabic طَرَحَ/أَلْقَى, and Swahili kutupa all capture the forceful propulsion. Jesus' saying 'I did not come to bring peace but a sword' (Matt 10:34) uses this verb metaphorically for casting conflict into the world.
+
+### G1854 / Sense 67446 (57 occ, sense 1 of 2)
+**Label:** outside, out, outer (spatial direction/location)
+**Lemma gloss:** Outside, out; spatially indicating exterior location or movement outward, and substantivally designating outsiders or non-believers.
+**Description:** Adverb and preposition indicating spatial location or movement outside of a place, or used attributively to describe the exterior. Covers physical movement outward ('cast out,' 'go outside') and attributive description ('outer darkness'). Multilingual evidence: eng 'outside/out/outer', spa 'fuera/afuera/exterior' (outside/outward/exterior), hin 'baahar/baahri' (outside/outer), arb 'kharijan/al-khariju' (outwardly/the exterior), kor 'bak-euro/bakkat-ui' (to outside/of the outside), swa 'nje/wa nje' (outside/of outside). Prominent in Jesus's parables and actions: casting out (Matt 21:39), outer darkness (Matt 8:12, 22:13), going outside the city (John 19:17).
+**Enriched:** Spatial adverb and preposition indicating location or movement outside of a place, or describing the exterior of something. Covers casting out (Matt 5:13), going outside a house (Matt 12:46), and attributive uses like "outer darkness" (Matt 8:12). Spanish distinguishes direction ("afuera") from static location ("fuera de"), while French uniformly uses "dehors" — both confirming this as the primary, overwhelmingly frequent sense with 57 occurrences.
+

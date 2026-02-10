@@ -1,0 +1,291 @@
+# Sense Refinement Detection — Batch 011
+
+You are a biblical lexicographer reviewing sense entries for a Hebrew/Aramaic/Greek lexicon.
+Each entry below is a single "sense" that was produced by clustering translation signatures 
+and then merging with an LLM. Some senses may have been OVER-LUMPED — they contain genuinely 
+distinct meanings that should be separate senses.
+
+## Your Task
+
+For each sense, determine if it should be SPLIT into multiple senses. Look for:
+- Literal vs. figurative/metaphorical uses lumped together
+- Concrete vs. abstract meanings combined
+- Multiple distinct referents (e.g., "father" = biological parent + patron/advisor + originator)
+- Physical vs. spiritual/theological uses merged
+- Different syntactic frames producing different meanings
+
+## Output Format
+
+Return a JSON array. For senses that need NO splitting, omit them entirely.
+For senses that SHOULD be split, include an entry like:
+
+```json
+[
+  {
+    "senseIdChirho": 79287,
+    "lemmaIdChirho": "H0001",
+    "currentLabelChirho": "father, immediate male parent",
+    "splitProposalChirho": [
+      {
+        "newLabelChirho": "biological/legal father",
+        "criteriaChirho": "Direct parent-child relationship, possessive constructions with specific person"
+      },
+      {
+        "newLabelChirho": "metaphorical father (patron, advisor, protector)",
+        "criteriaChirho": "Title of respect for prophets, advisors, or authority figures; 'father to Pharaoh' type usage"
+      }
+    ],
+    "confidenceChirho": "high",
+    "reasoningChirho": "Description explicitly mentions 'title of respect or metaphorical originator' alongside biological father"
+  }
+]
+```
+
+Only propose splits where you have MEDIUM or HIGH confidence. Do NOT split function words (articles, 
+prepositions, particles, conjunctions) unless there is a genuinely distinct semantic sense (not just 
+syntactic variation). Proper nouns generally should NOT be split.
+
+If NO senses in this batch need splitting, return an empty array: []
+
+## Senses to Review
+
+### H6499 / Sense 128402 (130 occ, sense 1 of 2)
+**Label:** young bull, bullock
+**Lemma gloss:** A young bull or bullock, predominantly a sacrificial animal; figuratively, a symbol of fierce strength or aggression.
+**Description:** A young male bovine, especially as a sacrificial or offering animal in ritual contexts; the primary and overwhelmingly common sense of par covering singular, plural, construct, and all inflected forms used in cultic/legal/narrative passages.
+**Enriched:** A young bull selected for sacrifice and offering — the primary and overwhelmingly dominant sense across 130 occurrences. Used in burnt offerings (Exod 29:1), sin offerings (Lev 4:3; Exod 29:36), peace offerings (Exod 24:5), and festival liturgies (Num 28-29). Spanish novillo and toro, French taureau, and German Stier all converge on the same bovine referent. The construct phrase par ha-chattat ('bull of the sin offering') appears as a fixed ritual formula.
+
+### G4862 / Sense 77004 (129 occ, sense 1 of 1)
+**Label:** (none)
+**Lemma gloss:** With — preposition expressing accompaniment, association, joint action, or combined presence
+**Description:** (none)
+**Enriched:** Preposition governing the dative to express accompaniment, association, and shared action. In narrative contexts it marks physical companionship — Jesus 'with' his disciples (Matt 26:35), criminals crucified 'with' him (Matt 27:38). In Pauline theology it gains profound participatory force: believers are 'with Christ' in his death, burial, and resurrection (Rom 6:8; Col 2:12-13; 1 Thess 4:17). Spanish 'con,' French 'avec,' and German 'mit' render it consistently, though none fully captures the participatory depth Paul invests in the syn- prefix across his compound verbs.
+
+### H0157 / Sense 80167 (129 occ, sense 1 of 6)
+**Label:** love (verb, active Qal)
+**Lemma gloss:** To love; as participle: lover, friend, paramour; passive: beloved; also the abstract noun 'love' (ahavah)
+**Description:** The basic Qal verbal sense of emotional attachment, affection, or devotion directed toward a person, God, or thing — covering all active finite forms (perfect, imperfect, imperative, consecutive, cohortative) regardless of person, number, or gender.
+**Enriched:** The core Qal verbal sense: active loving — emotional attachment, devotion, and affection directed toward persons, God, or things. At 129 occurrences this is the verb's center: Jacob loved Rachel (Gen 29:18), 'love your neighbor as yourself' (Lev 19:18). Arabic ahabba, Spanish amar, French aimer, and Korean saranghada all render the basic verbal action.
+
+### H3426 / Sense 104391 (129 occ, sense 1 of 3)
+**Label:** there is, there are (existence)
+**Lemma gloss:** There is, there are; an existential particle asserting presence or existence, occasionally used as a copula with suffixes or as 'substance.'
+**Description:** Existential particle asserting the presence or existence of something, including declarative, interrogative, conditional, and conjunction-prefixed contexts: 'there is,' 'is there?,' 'if there is,' 'and there is.'
+**Enriched:** The standard existential particle: 'there is, there are,' asserting that something exists or is present — 129 occurrences spanning declarative, interrogative, conditional, and conjunctive contexts. Jacob hears that 'there is grain in Egypt' (Gen 42:1); the LORD is in this place and 'I did not know it' (Gen 28:16). French il y a, Spanish hay, and German es gibt all converge on impersonal existential constructions, while Korean 있다 and Arabic hunaka provide direct equivalents. The particle's negative counterpart is en/eyn ('there is not'), and together they form the primary existential framework of Biblical Hebrew.
+
+### H6944 / Sense 131344 (129 occ, sense 1 of 6)
+**Label:** sanctuary, holy place
+**Lemma gloss:** holiness, sacredness, sanctuary, holy thing; the state of being set apart for God or the consecrated place, object, or offering
+**Description:** A sacred location set apart for worship, especially the tabernacle sanctuary or temple inner chamber (the Holy Place); Arabic cognate maqdis and Swahili pa-takatifu (locative class) confirm the spatial sense.
+**Enriched:** A sanctuary or holy place — the sacred location set apart for worship, especially the tabernacle's inner chamber or the temple. Arabic maqdis and Swahili pa-takatifu (locative noun class) confirm the spatial reading. Exodus 26:33 (the veil shall separate the holy place from the most holy) and Exodus 28:29 (Aaron shall bear the names when he goes into the holy place) define the sanctuary as the spatial locus of divine encounter.
+
+### H7451a / Sense 136192 (129 occ, sense 1 of 6)
+**Label:** morally evil, wicked
+**Lemma gloss:** Bad, evil, wicked; spanning moral corruption, harmful calamity, poor quality, ugly appearance, fierce severity, and sad countenance
+**Description:** Ethically evil or wicked, describing persons, conduct, or character as morally corrupt (Arabic shirrīr/sharīr, Korean akhan, Swahili mwovu/waovu).
+**Enriched:** Morally evil, wicked — describing persons, conduct, hearts, or deeds as ethically corrupt. This is the dominant sense (129x), anchoring the great moral assessments of Scripture. Genesis 6:5 declares every thought of the heart 'only evil continually,' and the Deuteronomistic historians repeatedly condemn kings who 'did evil in the sight of the LORD.' Arabic shirrīr/sharīr, Korean akhan, and Swahili mwovu all converge on moral wickedness, confirming a clear cross-linguistic category.
+
+### G1484 / Sense 66258 (128 occ, sense 1 of 2)
+**Label:** Gentiles, non-Jewish nations
+**Lemma gloss:** Nation, people, ethnic group; in the NT often 'the Gentiles' — non-Jewish peoples collectively contrasted with Israel.
+**Description:** The non-Jewish peoples collectively, often contrasted with Israel, used as a quasi-technical term in NT discourse for those outside the covenant community.
+**Enriched:** The Gentiles — non-Jewish peoples collectively, often set in contrast with Israel and the covenant community. This quasi-technical NT usage dominates, appearing 128 times. Translations across languages typically use the plural 'nations' (spa naciones, fra nation, deu Völker), but the theological context makes the Gentile reference clear. Rom 1:5 declares Paul's apostleship 'among all the nations'; Rom 2:14 and 2:24 set up the Jew-Gentile dialectic that shapes Paul's entire argument. The Spanish gloss gentiles appears alongside naciones, reflecting awareness of the specialized sense.
+
+### G1510 / Sense 66359 (128 occ, sense 3 of 6)
+**Label:** infinitival, to be
+**Lemma gloss:** to be, exist; copulative, existential, locative, and divine self-revelation
+**Description:** Infinitive εἶναι used as subject, complement, or in articular constructions expressing the concept of being, becoming, or existing in the abstract.
+**Enriched:** Expresses spatial location, answering 'where' rather than 'what.' Combined with prepositions, εἰμί situates people and things. Korean 있었다 inherently encodes both existence and location.
+
+### H5869a / Sense 123617 (127 occ, sense 2 of 3)
+**Label:** eye (literal body part)
+**Lemma gloss:** Eye: in the evaluative idiom 'in the eyes of' (judgment/opinion); the physical organ of sight; outward appearance or visible surface.
+**Description:** The physical organ of sight — eyes that see, weep, grow dim, are lifted up, or are referenced as body parts in non-evaluative contexts, including possessive ('his eyes,' 'my eye'), instrumental ('with your eyes'), and directional ('from my eyes') constructions across all inflections.
+**Enriched:** The literal physical organ of sight — eyes that see, weep, grow dim with age, are lifted up in prayer, or serve as anatomical referents. With 127 occurrences, this includes Leah's 'tender eyes' (Gen 29:17), Israel's eyes growing 'heavy with age' (Gen 48:10), and the lex talionis formula 'eye for eye' (Exod 21:24). Korean 눈, Hindi आँख, Arabic عين, and Swahili macho all render this with straightforward body-part terms. The distinction from sense 1 is that here the eyes function as physical organs rather than metaphors for judgment — though the boundary is sometimes exegetically debated.
+
+### G1401 / Sense 65878 (126 occ, sense 1 of 1)
+**Label:** slave, bondservant
+**Lemma gloss:** Slave, bondservant — one bound in service to a master, used literally of slaves and figuratively of devoted service to God or Christ
+**Description:** A person bound in servitude to a master, used both literally of slaves in household or economic contexts and figuratively of one who serves God or Christ with total devotion.
+**Enriched:** A person held in bondage to a master, ranging from literal slaves in household and economic settings (Matt 18:26-27; Matt 24:45-46) to the self-designation of apostles and believers as bondservants of Christ (Rom 1:1; Gal 1:10; Phil 1:1). The term carries the full weight of Greco-Roman slave status — absence of self-determination and total availability to the master's will. Spanish distinguishes 'esclavo' (literal slave) from 'siervo' (dignified servant), French uses 'serviteur,' and German 'Knecht,' but none fully resolves the NT paradox where slavery to Christ constitutes true freedom.
+
+### H3678 / Sense 106898 (125 occ, sense 1 of 3)
+**Label:** royal throne
+**Lemma gloss:** A seat of honor or throne; the royal or divine seat of authority, and by extension any seat of dignity or judgment.
+**Description:** The seat of royal or divine authority; the throne of a king or of God, symbolizing sovereignty, dominion, and the right to rule.
+**Enriched:** The royal or divine throne — 125 occurrences, the dominant sense by far. This covers the thrones of Israelite and foreign kings (Exod 11:5; Deut 17:18; 2 Sam 3:10), the throne of God (Ps 45:6; Ps 93:2; Isa 6:1), and the throne as metonym for dynastic rule ('I will establish his throne forever,' 2 Sam 7:13). Spanish trono, French trone, German Thron, and Korean 왕좌/보좌 all select explicitly royal-authority vocabulary. The theological density is enormous: God's throne is in heaven (Ps 11:4), righteousness and justice are its foundation (Ps 89:14), and the promise of an eternal Davidic throne runs through the Prophets into the New Testament.
+
+### G0749 / Sense 63408 (123 occ, sense 1 of 1)
+**Label:** high priest, chief priest
+**Lemma gloss:** High priest, chief priest — the principal priestly officer of the Jerusalem temple, or collectively the senior priestly leadership
+**Description:** The chief priest or high priest of the Jewish temple system, used both for the singular office-holder (the high priest, e.g. Caiaphas) and for the collective priestly leadership ('chief priests' in the Sanhedrin). All three clusters represent the same title in different number/case forms. Spanish uses 'sumo sacerdote' (sg) / 'sumos sacerdotes' (pl) throughout; Arabic 'رَئِيسِ الْكَهَنَةِ' (sg) / 'رُؤَسَاءُ الْكَهَنَةِ' (pl); Korean '대제사장' uniformly; Swahili 'kuhani mkuu' (sg) / 'makuhani wakuu' (pl); Hindi 'महायाजक' throughout. S63410 is a low-frequency plural variant that matches S63408 exactly in meaning.
+**Enriched:** The chief priest or high priest of the Jewish temple system, used in the singular for the office-holder who alone performed the Day of Atonement ritual (Caiaphas in Matt 26:57; Annas in Luke 3:2), and in the plural for the broader priestly aristocracy who wielded religious-political authority in Jerusalem (Matt 2:4; 21:23). Hebrews reappropriates the title for Christ as the eternal high priest after Melchizedek's order (Heb 4:14; 9:11). Spanish 'sumo sacerdote/principales sacerdotes,' French 'grand pretre/principaux sacrificateurs,' and German 'Hohepriester/Hohenpriester' reflect the singular-plural distinction.
+
+### G3748 / Sense 73482 (123 occ, sense 1 of 2)
+**Label:** who, which (indefinite relative pronoun)
+**Lemma gloss:** Indefinite relative pronoun 'who, which, whoever'; sometimes generalizing to 'whoever, whatever.'
+**Description:** The standard relative pronoun function of hostis/hētis/hoti, meaning 'who,' 'which,' or 'that,' introducing relative clauses that identify or describe a person or thing. This is the overwhelmingly dominant NT usage, covering plural forms (οἵτινες, αἵτινες) and singular forms (ὅστις, ἥτις, ἅτινα) across all genders. The distinction between the 'who' cluster (referring to persons: Matt 7:15; 16:28; 19:12; 21:41; 25:1; Mark 4:20; 9:1; 12:18; 15:7; Luke 8:3, 15; 9:30; Rom 16:6, 12; etc.) and the 'which' cluster (referring to things: Matt 23:27; 27:62; Luke 1:20; 2:4, 10; 8:26; John 21:25; Acts 11:28; 12:10; 16:12; 1 Cor 3:17; 5:1; Gal 4:24; Col 2:23; etc.) is purely an English translation choice, not a genuine Greek semantic distinction. Hebrew consistently 'asher throughout, Arabic alladhī/allatī, Korean geu/geudeul-eun, Spanish quien/el cual/los cuales.
+**Enriched:** The standard relative-pronoun function meaning 'who,' 'which,' or 'that,' introducing clauses that identify or describe a specific referent. This is the dominant NT usage (123 of 140 occurrences). Cross-lingual glosses converge on simple relative forms: Spanish 'quienes / los cuales,' French 'qui,' German 'die.' Found throughout narrative and didactic contexts, as in Matt 7:15 (false prophets 'who come to you') and Matt 16:28 ('some standing here who will not taste death').
+
+### G3752 / Sense 73498 (123 occ, sense 1 of 1)
+**Label:** (none)
+**Lemma gloss:** Whenever, when — temporal conjunction introducing indefinite or anticipated future events and recurring conditions
+**Description:** (none)
+**Enriched:** Temporal-conditional conjunction formed from hote + an, introducing events that are indefinite, anticipated, or recurrent rather than fixed in past time. Jesus employs it to frame habitual actions — 'when you pray, when you fast' (Matt 6:5-6, 16) — and future eschatological moments — 'when the Son of Man comes in his glory' (Matt 25:31). It also governs general truths: 'when the unclean spirit goes out of a person' (Matt 12:43). Spanish 'cuando,' French 'quand,' and German 'wenn' all approximate the blend of temporal and conditional force that hotan carries.
+
+### H6153 / Sense 125973 (123 occ, sense 1 of 2)
+**Label:** evening, time of day
+**Lemma gloss:** Evening, the period from late afternoon through sunset; in dual form, the ritual 'two evenings' or twilight interval.
+**Description:** The period of the day from late afternoon to nightfall, used as a general temporal reference in narrative, law, and prophecy.
+**Enriched:** Evening as a general time of day — from late afternoon through sunset and into early darkness. Used in narrative (Gen 8:11, the dove returning at evening), legal texts (Lev 11:24, unclean 'until evening'), and prophetic imagery (Zech 14:7). Rendered universally as la tarde, le soir, der Abend. The 123 occurrences span every genre, often paired with boqer (morning) to express totality of time.
+
+### H6944 / Sense 131342 (123 occ, sense 2 of 6)
+**Label:** holiness, sacredness (abstract quality)
+**Lemma gloss:** holiness, sacredness, sanctuary, holy thing; the state of being set apart for God or the consecrated place, object, or offering
+**Description:** The abstract quality of being set apart, sacred, or consecrated to God; the divine attribute of holiness itself, often in construct chains like 'spirit of holiness' or as a predicate ('is holy'); Arabic quds and Swahili utakatifu (u-class abstract) confirm the abstract sense.
+**Enriched:** The abstract quality of holiness, sacredness, or consecration — the divine attribute itself or the state of being set apart. Multilingual glosses converge on abstract nouns: Spanish santidad, French sainteté, German Heiligkeit. Exodus 3:5 (the ground on which you stand is holy) and Exodus 15:11 (majestic in holiness) show holiness as both a predicated quality of places and an intrinsic attribute of God.
+
+### H8055 / Sense 141717 (123 occ, sense 1 of 5)
+**Label:** Qal: rejoice, be glad
+**Lemma gloss:** To rejoice, be glad; in Piel, to make glad or gladden; a fundamental emotion word spanning festive celebration, spiritual joy, and divine delight.
+**Description:** The basic Qal stem expressing the intransitive emotion of rejoicing or being glad; covers all finite verb forms (perfect, imperfect, imperative, jussive, cohortative, consecutive, waw-conjunctive) across all persons, numbers, and genders, with consistent cross-linguistic reflexes: Arabic fariha/yafraḥu, Korean gippŏhada, Swahili -furahi, Hindi ānandita honā.
+**Enriched:** The basic Qal intransitive: to rejoice, be glad — the dominant sense at 123 occurrences spanning all finite verb forms (perfect, imperfect, imperative, jussive, cohortative, consecutive). This is the core emotional experience of gladness in response to God's acts (Ps 16:9, 'my heart is glad'), at festivals (Deut 12:18, 'you shall rejoice before Yahweh'), in victory (1 Sam 11:15), and in everyday life (Eccl 11:9, 'rejoice, young man'). Arabic fariha, Spanish se alegró/alegrarse, Korean 기뻐하다, and Swahili -furahi all converge on their most general gladness vocabulary. The verb frequently parallels gil and ranan in poetic parallelism (Ps 14:7, 31:7, 32:11), confirming its place as the semantically broadest joy term.
+
+### H8193 / Sense 143163 (123 occ, sense 1 of 5)
+**Label:** lip, lips (body part)
+**Lemma gloss:** Lip(s), speech; the edge or rim of an object; the shore or bank of water; also language or tongue.
+**Description:** The physical lip(s) of a person, used literally for the organ of speech or in expressions involving lips (covering, opening, flattering, guarding, etc.); Arabic شَفَة/شَفَتَيْنِ, Korean 입술, Swahili midomo.
+**Enriched:** The physical lip or lips as the organ of speech — the dominant sense at 123 occurrences, spanning all major genres. Lips speak (Ps 34:13), lie (Ps 12:2-3), flatter (Prov 7:21), guard wisdom (Prov 5:2), tremble in prayer (1 Sam 1:13), and are touched by a burning coal in Isaiah's commissioning (Isa 6:5-7). Moses protests he is 'uncircumcised of lips' (Exod 6:12, 30) — a striking idiom for speech impediment. Arabic shafah (شَفَة) and Korean 입술 track this body-part sense exactly. The dual form sefatayim dominates, reflecting the natural pairing of upper and lower lips.
+
+### G5100 / Sense 77710 (122 occ, sense 2 of 5)
+**Label:** some, certain ones (plural)
+**Lemma gloss:** Indefinite pronoun: someone, anyone, something, anything; as adjective, 'a certain, some'; in plural, 'some, certain ones.'
+**Description:** Plural indefinite pronoun or adjective referring to an unspecified subgroup: 'some, certain ones, some of them' — Arabic بَعْضُ, Korean 어떤 이들, Swahili baadhi/wengine.
+**Enriched:** Plural indefinite pronoun: 'some, certain ones, some of them' — 122 occurrences where tines refers to an unspecified subgroup within a larger set. In Matt 9:3 'some of the scribes said,' Matt 16:28 'some standing here,' and Matt 28:11 'some of the guard' — the word picks out a subset without identifying individuals. Spanish algunos, German einige, Korean 어떤 이들, and Arabic ba'duhum all select dedicated plural-indefinite forms. This sense is particularly important in Acts and the Epistles for describing factions and dissenting groups ('some from James,' Gal 2:12; 'some were persuaded,' Acts 28:24).
+
+### H0227a / Sense 80749 (122 occ, sense 1 of 1)
+**Label:** then
+**Lemma gloss:** Then — temporal adverb marking a point in past or future time, often signaling the onset of a new action or condition
+**Description:** then, Then, and then (122 occurrences across 2 original clusters)
+**Enriched:** Temporal adverb pointing to a definite moment in past or future time, often marking the dramatic onset of action. With past reference it narrates inception — 'then Moses and the Israelites sang this song' (Exod 15:1); 'then men began to call on YHWH's name' (Gen 4:26). With future reference it introduces prophetic transformation — 'then the eyes of the blind shall be opened' (Isa 35:5). The notable construction az + imperfect for past narration signals a solemn or ceremonial commencement. Spanish 'entonces,' French 'alors,' and German 'dann/damals' split its temporal range across distinct words.
+
+### H5288 / Sense 118217 (122 occ, sense 1 of 4)
+**Label:** Youth, young man
+**Lemma gloss:** A boy, youth, or young man; also a personal servant or attendant regardless of age; occasionally in temporal expressions meaning 'from youth.'
+**Description:** A youth, adolescent, or young man of vigorous age; emphasizes stage of life between childhood and full maturity, used of young warriors, the young Absalom, Joseph as a seventeen-year-old, and groups of young men generally (Arabic فَتًى/شَابّ/غُلَام, Korean 젊은이/소년, Swahili kijana/vijana, Hindi जवान, Spanish joven/muchacho).
+**Enriched:** A youth or young man of vigorous age (122x), emphasizing the life-stage between childhood and full maturity. Used of Joseph at seventeen (Gen 37:2), the young Absalom, and groups of fighting-age men. Korean 젊은이 ('young person') and Spanish joven consistently select age-focused vocabulary. In Exodus 24:5 the 'young men of Israel' serve as sacrificial assistants, blending youth with cultic function.
+
+### H7126 / Sense 133046 (122 occ, sense 1 of 6)
+**Label:** offer, present sacrificially
+**Lemma gloss:** To draw near or approach; in Hifil, to bring near or present an offering; statively, to be near or at hand.
+**Description:** Hifil cultic: to offer or present a sacrifice or offering to God — the dominant ritual/liturgical use (Arabic yuqarribu يُقَرِّبُ Form II; Korean 드리다/바치다; Hindi चढ़ाना; Swahili -toa)
+**Enriched:** The dominant Hifil cultic sense: presenting a sacrifice, grain offering, or animal to Yahweh according to prescribed ritual. Leviticus uses this form overwhelmingly (Lev 1:13-14; 3:3-9), and the multilingual evidence is striking — Arabic Form II yuqarribu mirrors the Hebrew causative exactly, while Korean 드리다/바치다 and Hindi चढ़ाना all select dedicated 'offering' vocabulary rather than generic 'approach' words, confirming a lexicalized ritual sense distinct from mere physical movement.
+
+### H0587 / Sense 83312 (121 occ, sense 1 of 1)
+**Label:** we (first person plural pronoun)
+**Lemma gloss:** We — first person common plural independent pronoun, used for emphasis, contrast, or as explicit subject
+**Description:** The first person common plural independent pronoun אֲנַחְנוּ ('we'), one of the most frequent pronouns in biblical Hebrew with 121 occurrences. The two clusters differ solely in the presence of the conjunctive waw prefix: S83312 (89x) is the bare pronoun 'we' and S83313 (32x) adds וְ yielding 'and we / but we'. Cross-lingual evidence is unanimous in treating these as the same pronoun: eng 'we/and we', spa 'nosotros/y nosotros', hin 'हम/और हम', arb 'نَحْنُ/وَنَحْنُ', kor '우리는/그리고 우리는', swa 'sisi/na sisi'. The conjunction is a grammatical connector, not a semantic distinction.
+**Enriched:** The independent first person common plural pronoun 'we,' deployed in biblical Hebrew when the speaker(s) wish to make the subject explicit for emphasis, contrast, or identification. It frequently appears in self-identifying declarations — 'we are your brothers' (Gen 42:13), 'we are passing through' (Judg 19:18) — and can follow participles or be appended to verbs for rhetorical weight (Gen 19:13; 2 Kgs 10:4). Cognate forms across Semitic (Aramaic anachna, Arabic nahnu) confirm its ancient pedigree. Spanish 'nosotros,' French 'nous,' and German 'wir' render it uniformly.
+
+### H???? / Sense 145968 (121 occ, sense 8 of 94)
+**Label:** (none)
+**Lemma gloss:** (none)
+**Description:** (none)
+**Enriched:** (none)
+
+### G1722 / Sense 67115 (120 occ, sense 2 of 5)
+**Label:** distributive: among
+**Lemma gloss:** In, within, among, by means of; the primary Greek locative preposition extending to instrumental, associative, and distributive uses.
+**Description:** Marker of position in the midst of a group or collective, indicating distribution or inclusion among persons or things.
+**Enriched:** The distributive sense: 'among, in the midst of,' marking position within a group or collective rather than within an enclosed space. Jesus is 'among' the teachers (Luke 2:46), the greatest 'among' those born of women (Matt 11:11), and whoever would be great 'among' you must serve (Matt 20:26). Spanish shifts from 'en' to 'entre' for this sense, revealing the semantic distinction that Greek collapses under a single preposition. French maintains 'dans' but the context of plurality signals the distributive reading.
+
+### G2288 / Sense 68974 (120 occ, sense 1 of 1)
+**Label:** death
+**Lemma gloss:** Death — the cessation of life, whether physical, judicial, or spiritual; the ultimate enemy overcome in Christ's resurrection
+**Description:** Death as the cessation of physical life, whether natural or violent. The single core lexical meaning of θάνατος across all its NT occurrences (120 tokens). Uniformly rendered Ger. 'Tod,' Fr. 'mort,' Heb. 'מָוֶת,' Kor. '죽음,' Hin. 'मृत्यु,' Spa. 'muerte,' Arb. 'المَوْتِ.' The auto-clusters 'of death,' 'by death,' 'deaths,' and 'death' are merely case-inflected forms (genitive θανάτου, dative θανάτῳ, accusative θάνατον, plural θανάτοις) of the same meaning, not distinct senses. Used of: Christ's death (Matt 20:18, 26:38/66, Mark 10:33, 14:34/64, Luke 22:33, John 12:33, 18:32, 21:19, Phil 2:27), physical death generally (Matt 4:16, Luke 1:79, 2:26, 9:27, Heb 7:23, 11:5), the realm/power of death (Matt 16:28 'shadow of death'), and multiple mortal perils (2 Cor 11:23 θανάτοις plural). All map to one semantic domain: the end of biological life.
+**Enriched:** Death as the termination of physical life, encompassing natural death (Heb 7:23), violent killing (Matt 10:21), judicial execution (Matt 20:18; Mark 14:64), and the theological reality of spiritual death as the consequence of sin (Rom 5:12; 6:23). Paul and John personify thanatos as an enemy power that Christ has conquered through resurrection — 'death is swallowed up in victory' (1 Cor 15:54) — and that faces final abolition (Rev 20:14; 21:4). Spanish 'muerte,' French 'mort,' and German 'Tod' all cover the full literal-to-metaphorical spectrum without requiring separate lexemes.
+
+### G5228 / Sense 78098 (120 occ, sense 1 of 5)
+**Label:** on behalf of, for
+**Lemma gloss:** Preposition/adverb: on behalf of, for the sake of; above, beyond, more than; concerning; exceedingly
+**Description:** Benefactive or substitutionary: acting for the sake of, in the interest of, or in place of someone.
+**Enriched:** The dominant benefactive and substitutionary sense: acting for the sake of, in the interest of, or in place of someone. This is the preposition of atonement theology — 'the bread which I will give hyper the life of the world' (John 6:51), 'this is my blood poured out hyper you' (Luke 22:20). Spanish 'por', French 'pour', and German 'für' all converge on this agency-for-another meaning. With 120 occurrences it accounts for the vast majority of NT uses, spanning intercession (Rom 8:34), self-sacrifice (Gal 2:20), and general advocacy (Mark 9:40).
+
+### H2403b / Sense 96344 (120 occ, sense 2 of 5)
+**Label:** sin-offering, sacrifice for sin
+**Lemma gloss:** Sin or sin-offering — the act of missing the mark before God, and the sacrificial remedy prescribed to atone for it.
+**Description:** The sacrificial offering prescribed to atone for sin — a technical cultic term prominent in Leviticus, Numbers, and Ezekiel; distinguished by English 'sin-offering', Spanish 'ofrenda por el pecado', Hindi पापबलि, Arabic ذَبِيحَة الخَطِيئَة, Korean 속죄제, Swahili 'sadaka ya dhambi', and invariably occurring in ritual/sacrificial contexts describing the preparation, slaughter, or presentation of the offering.
+**Enriched:** The sin-offering — the specific sacrificial animal or ritual prescribed in the Priestly legislation to effect atonement. With 120 occurrences concentrated in Leviticus 4-5, Numbers 15, 28-29, and Ezekiel 40-46, this is a fully technical cultic term. The multilingual evidence is decisive: English adds 'offering' (sin-offering), Spanish expands to 'ofrenda por el pecado,' French to 'offrande pour le peche,' and German compounds it as 'Sundopfer' — all signaling that translators recognize a distinct referent (the sacrifice) rather than the abstract moral condition. Key passages include Leviticus 4:8 (the fat of the sin-offering) and Exodus 30:10 (annual sin-offering on the Day of Atonement).
+
+### H5921a / Sense 123903 (120 occ, sense 2 of 9)
+**Label:** against (adversative)
+**Lemma gloss:** upon, on, over; against; beside, by, at; because of, therefore; concerning, about; for, on behalf of; to, unto; according to, in addition to
+**Description:** Hostile or adversative sense: Arabic عَلَى in adversative contexts, Korean 대항하여/대적하여 (opposing/resisting) and 향하여 (directed toward), Swahili dhidi ya (against); English consistently renders 'against' rather than 'upon'; includes all pronominal forms (against-you, against-me, against-them, against-it, against-us).
+**Enriched:** Adversative or hostile sense: 'against' as opposition or enmity. Though Hebrew continues using עַל, target languages shift decisively: Arabic عَلَى in hostile contexts, Korean 대항하여/대적하여 (opposing/resisting), Swahili dhidi ya (against), English 'against,' Spanish contra, French contre, German gegen. Genesis 50:20 'you meant evil against me,' Deuteronomy 7:22 'lest wild beasts multiply against you,' showing 120 occurrences where the relational context is conflictual rather than neutral spatial contact.
+
+### H6828 / Sense 130484 (120 occ, sense 1 of 3)
+**Label:** north, cardinal direction
+**Lemma gloss:** North, the northern direction; the north as source of invasion and judgment; Zaphon, the sacred mountain
+**Description:** The compass direction north, used as a geographical reference point for locations, boundaries, and orientations, including with directional he suffix meaning 'northward' and various prepositional constructions (from/to/in the north).
+**Enriched:** The cardinal direction north — a geographical and spatial reference point used for orientation, boundary descriptions, and positioning — covering 120 of 153 occurrences. Appears with directional he (tsaphonah, 'northward'), in construct chains (mitstsephon le-, 'north of'), and as a compass label alongside south, east, and west (Gen 13:14; 28:14). Ezekiel's temple visions rely heavily on this sense for architectural orientation. Spanish norte, French nord, and Arabic shamal all translate this spatial meaning directly.
+
+### H7453 / Sense 136354 (120 occ, sense 1 of 5)
+**Label:** neighbor, fellow man
+**Lemma gloss:** Friend, companion, neighbor, fellow; a person connected by proximity, affection, or shared activity.
+**Description:** A person in proximity or in the same community, especially in legal and ethical contexts such as 'love your neighbor' or 'do not bear false witness against your neighbor'; Arabic consistently renders qarib (قَرِيب, proximity-based), Korean uses i-ut (이웃, neighbor), Swahili uses jirani (neighbor), Hindi uses parosi (पड़ोसी), and Spanish uses projimo (fellow man).
+**Enriched:** Neighbor or fellow member of the community — the dominant legal-ethical sense at 120 occurrences. This is the rea' of the Ten Commandments (Exod 20:17; Deut 5:20), the Holiness Code's 'love your neighbor' (Lev 19:18), and the prophetic denunciations of social injustice. Arabic jar (جَار, neighbor) and Korean 이웃 consistently mark this as proximity-and-obligation rather than affection. The context is overwhelmingly legal, ethical, or contractual: do not steal from, lie about, or covet your rea'. Spanish prójimo captures this well — literally 'the one near.'
+
+### H2351 / Sense 95811 (119 occ, sense 1 of 4)
+**Label:** outside, exterior space
+**Lemma gloss:** The outside, the area beyond a building, camp, or city; in the plural, streets or public squares; rarely, open countryside.
+**Description:** The spatial noun/adverb denoting the area outside a building, camp, or city, used with various prepositions (from outside, to outside, in the outside) to indicate location or direction relative to an enclosed space.
+**Enriched:** The outside, exterior space — the area beyond the walls, door, or boundary of a building, camp, or city. Used with prepositions (min-chuts, 'from outside'; el-chuts, 'to outside'; ba-chuts, 'on the outside') to express location or direction relative to an enclosure. Noah sends the raven 'outside' the ark (Gen 8:7 context); lepers are put 'outside the camp' (Lev 13:46); blood is poured 'outside' the sanctuary. Spanish 'afuera de' and 'fuera de,' French 'dehors' and 'a l'exterieur,' and German 'ausserhalb' all consistently render this fundamental spatial meaning across 119 occurrences.
+
+### H4941 / Sense 115044 (119 occ, sense 2 of 7)
+**Label:** judgment, judicial decision
+**Lemma gloss:** Justice, judgment, ordinance; a judicial decision, legal case, prescribed regulation, or established custom
+**Description:** An act of judging or a judicial verdict rendered by God or a human authority (Arabic حُكْم/قَضَاء, Korean 재판/심판, Swahili hukumu), including divine eschatological judgment (Arabic دَيْنُونَة).
+**Enriched:** A concrete act of judging or a judicial verdict, whether human or divine. The multilingual evidence splits between Arabic hukm/qada (judicial ruling) and Korean jaepan/simpan (trial/judgment). Exodus 28:15 names the high priest's breastpiece the 'breastpiece of judgment,' linking this sense to theophanic decision-making. The eschatological dimension — God's coming judgment — extends naturally from the forensic setting.
+
+### H5104 / Sense 116603 (119 occ, sense 1 of 1)
+**Label:** river, stream
+**Lemma gloss:** River, stream — a perennial flowing watercourse; often 'the River' (the Euphrates) or poetic cosmic floods
+**Description:** A perennial flowing watercourse, used of rivers in general and specifically of the Euphrates ('the River') and the Nile, as well as poetic/cosmic floods and currents.
+**Enriched:** A perennial river or major stream, used for specific watercourses such as the Euphrates ('the River,' Gen 15:18; Deut 1:7), the rivers of Eden (Gen 2:10-14), and the Nile region streams (Isa 19:6). In poetic and prophetic texts nahar takes on cosmological and eschatological dimensions — primordial floods that challenge God's sovereignty (Ps 93:3), rivers that rejoice at his coming (Ps 98:8), and healing waters flowing from the future temple (Ezek 47:1-12). Spanish 'rio,' French 'fleuve,' and German 'Strom' convey the sense of a major permanent watercourse, distinct from the seasonal wadi (nachal).
+
+### H7291 / Sense 134871 (119 occ, sense 1 of 7)
+**Label:** Qal: pursue, chase
+**Lemma gloss:** To pursue, chase after, or persecute; also to follow after or seek earnestly a goal, ideal, or person.
+**Description:** Physical or military pursuit of a person or group, the core Qal meaning of actively chasing after someone to catch or overtake them.
+**Enriched:** The core Qal meaning covering 119 of 144 occurrences: physically chasing a person or group to catch them. Gen 14:14 has Abram pursuing the captors of Lot; Exod 14:8-9 depicts Pharaoh's army chasing Israel. Translations across languages consistently use 'pursued/persiguieron/poursuivit/verfolgte,' confirming a straightforward military-chase sense.
+
+### H1060 / Sense 86693 (118 occ, sense 1 of 1)
+**Label:** firstborn
+**Lemma gloss:** Firstborn — the first child or offspring, bearing special inheritance rights; figuratively, preeminence or primacy
+**Description:** The first child or offspring born to a parent, whether human or animal; by extension used figuratively to denote primacy or preeminence (e.g., 'firstborn of death' = most deadly, 'firstborn of the poor' = poorest). Encompasses all morphological forms including construct, with article, and with possessive suffixes.
+**Enriched:** The first offspring born to a parent, human or animal, carrying rights of primacy including the double inheritance portion (Deut 21:17). The exodus narrative pivots on the firstborn: God strikes Egypt's firstborn (Exod 12:29) and claims Israel's in return (Exod 13:2), establishing the Levitical substitution (Num 3:12-13) and the requirement to redeem firstborn sons (Num 18:15-16). Figuratively bekhor conveys preeminence — Israel as God's 'firstborn' (Exod 4:22), 'firstborn of death' as the deadliest plague (Job 18:13), 'firstborn of the poor' as the most destitute (Isa 14:30). Spanish 'primogenito,' French 'premier-ne,' and German 'Erstgeborener' all center on birth-order priority.
+
+### H2022 / Sense 93584 (118 occ, sense 2 of 3)
+**Label:** mountains
+**Lemma gloss:** Mountain, hill, or highland region; a single peak, a range of mountains, or an inhabited hill country district.
+**Description:** Mountains as a plural or collective reference, including multiple mountains in geographic descriptions, poetic or prophetic address to mountains, and possessive constructions referring to a group of mountains.
+**Enriched:** Mountains as a plural or collective reference, encompassing geographic descriptions of multiple peaks, poetic and prophetic addresses ('O mountains of Israel,' Ezek 36:1), and passages where mountains as a class respond to God's power. The shift from singular to plural is not merely grammatical; the plural often carries a cosmic or rhetorical sweep, as in 'the mountains saw you and writhed' (Hab 3:10). Glosses like 'Montes,' 'les-montagnes,' and 'Berge' mark this collective sense across traditions.
+
+### H6951 / Sense 131493 (118 occ, sense 1 of 2)
+**Label:** assembly or congregation
+**Lemma gloss:** Assembly, congregation, or gathered company; the convoked community of Israel or any large assembled group.
+**Description:** A gathered assembly or congregation, especially the assembled community of Israel for religious or civic purposes.
+**Enriched:** The formally convoked assembly or congregation, especially the gathered community of Israel for religious worship, legal proceedings, or civic decision-making (Lev 4:13-14; Deut 23:2-9; Neh 8:2). French assemblee and German Versammlung consistently render the organized, purposeful gathering. The 'congregation of Yahweh' (Num 16:3; 20:4) underscores its covenantal, sacral character.
+
+### H2534 / Sense 97652 (117 occ, sense 1 of 3)
+**Label:** wrath, fury, rage
+**Lemma gloss:** Heat, rage, wrath, fury; intense anger especially of God; also venom or poison of serpents.
+**Description:** Intense anger or indignation, both divine and human, encompassing wrath, fury, and rage in all grammatical inflections and prepositional contexts.
+**Enriched:** Wrath, fury, rage — the dominant sense at 117 occurrences, describing intense anger in both divine and human contexts. God's chemah is 'poured out' (2 Chr 12:7; 34:25), 'kindled' (Ps 89:46), and threatens to 'consume' (Jer 4:4). Human chemah drives Esau's murderous intent (Gen 27:44), Nebuchadnezzar's rage (Dan 3:13), and the fury of the wicked (Job 19:29; 36:18). Spanish furor/furia, German Grimm, French fureur, and Arabic ghadab all converge on the burning-anger pole. The possessive forms — chamati ('my wrath'), chamato ('his wrath') — account for a large share of occurrences, almost always referring to God's own fury in prophetic judgment oracles.
+
+### H6529 / Sense 128568 (117 occ, sense 1 of 3)
+**Label:** fruit, produce
+**Lemma gloss:** Fruit, produce of trees and ground; metaphorically, offspring or result of one's actions
+**Description:** Literal fruit or produce of trees, vines, and the ground, including construct chains like 'fruit of the land' and 'fruit of the tree', with all grammatical inflections (pronominal suffixes, prepositional prefixes, conjunctions).
+**Enriched:** The literal, concrete sense covering all agricultural produce: fruit of trees (Gen 1:11-12, Gen 3:2), fruit of the vine (2 Kgs 19:29, Isa 65:21), and fruit of the ground (Gen 4:3, Deut 7:13). This sense accounts for the vast majority of occurrences and appears in nearly every construct-chain combination. Spanish fruto, French fruit, and German Frucht all track this primary meaning straightforwardly. The term encompasses both individual fruits and collective harvest yield.
+

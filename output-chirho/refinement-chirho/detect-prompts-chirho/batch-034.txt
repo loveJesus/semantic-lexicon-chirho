@@ -1,0 +1,291 @@
+# Sense Refinement Detection — Batch 034
+
+You are a biblical lexicographer reviewing sense entries for a Hebrew/Aramaic/Greek lexicon.
+Each entry below is a single "sense" that was produced by clustering translation signatures 
+and then merging with an LLM. Some senses may have been OVER-LUMPED — they contain genuinely 
+distinct meanings that should be separate senses.
+
+## Your Task
+
+For each sense, determine if it should be SPLIT into multiple senses. Look for:
+- Literal vs. figurative/metaphorical uses lumped together
+- Concrete vs. abstract meanings combined
+- Multiple distinct referents (e.g., "father" = biological parent + patron/advisor + originator)
+- Physical vs. spiritual/theological uses merged
+- Different syntactic frames producing different meanings
+
+## Output Format
+
+Return a JSON array. For senses that need NO splitting, omit them entirely.
+For senses that SHOULD be split, include an entry like:
+
+```json
+[
+  {
+    "senseIdChirho": 79287,
+    "lemmaIdChirho": "H0001",
+    "currentLabelChirho": "father, immediate male parent",
+    "splitProposalChirho": [
+      {
+        "newLabelChirho": "biological/legal father",
+        "criteriaChirho": "Direct parent-child relationship, possessive constructions with specific person"
+      },
+      {
+        "newLabelChirho": "metaphorical father (patron, advisor, protector)",
+        "criteriaChirho": "Title of respect for prophets, advisors, or authority figures; 'father to Pharaoh' type usage"
+      }
+    ],
+    "confidenceChirho": "high",
+    "reasoningChirho": "Description explicitly mentions 'title of respect or metaphorical originator' alongside biological father"
+  }
+]
+```
+
+Only propose splits where you have MEDIUM or HIGH confidence. Do NOT split function words (articles, 
+prepositions, particles, conjunctions) unless there is a genuinely distinct semantic sense (not just 
+syntactic variation). Proper nouns generally should NOT be split.
+
+If NO senses in this batch need splitting, return an empty array: []
+
+## Senses to Review
+
+### H6833 / Sense 130507 (40 occ, sense 1 of 1)
+**Label:** bird, small bird, sparrow
+**Lemma gloss:** bird, sparrow — a small bird or any bird generically; used in ritual purification and as a figure of freedom
+**Description:** A bird, especially a small passerine bird or sparrow (tsippor); used generically for birds in general and specifically for sparrows, covering all grammatical forms including singular, plural, construct, with articles, prepositions, and conjunctions across literal, simile, and ritual-law contexts.
+**Enriched:** A bird in general or specifically a small bird / sparrow, used across three main domains: (1) the Levitical purification rite, where two tsipporim figure in the cleansing of skin disease and contaminated houses (Lev 14:4-7, 49-53) — one killed, one released alive; (2) proverbial imagery of freedom and vulnerability — the bird fleeing its nest (Prov 27:8), escaping the snare (Ps 124:7), perching alone in grief (Ps 102:7), or finding sanctuary near God's altar (Ps 84:3); (3) general zoological reference as 'every winged bird' (kol-tsippor kanaf, Deut 4:17; 14:11). The Noahic narrative includes tsippor among the creatures entering the ark (Gen 7:14). The onomatopoeic root ts-p-r evokes chirping, linking the word to its referent acoustically.
+
+### H6965b / Sense 131717 (40 occ, sense 4 of 12)
+**Label:** Hifil: to establish, confirm (covenant/kingdom/word)
+**Lemma gloss:** to rise, arise, stand up; to stand firm, endure, remain valid; causative: to raise up (a person, leader), to establish (covenant, kingdom), to erect (structure), to fulfill (word, oath)
+**Description:** The causative-abstract sense of establishing, confirming, or upholding a covenant, kingdom, throne, or decree; glossed as 'establish/confirm' (Spanish establecer/confirmar, Arabic uqimu/yuthabbitu, Swahili kuimarisha/kuthibitisha).
+**Enriched:** Hifil causative-abstract: to establish, confirm, or uphold a covenant, kingdom, throne, or decree. Genesis 6:18 has God establishing his covenant with Noah ('establecer mi pacto'). 2 Samuel 7:12 promises David's throne will be established forever. Spanish 'establecer/confirmar,' Arabic 'يُثَبِّتُ' (yuthabbitu), and Swahili 'kuthibitisha' capture the solidifying, stabilizing force—making something stand firm.
+
+### H7130 / Sense 133230 (40 occ, sense 2 of 3)
+**Label:** inward part, inner being
+**Lemma gloss:** Inward part, midst, interior; the physical interior of a body, the social center of a group, or the literal viscera of a sacrificial animal.
+**Description:** The interior of a person or entity understood as the seat of thoughts, emotions, and volition, consistently rendered with Arabic dākhil (داخِل), qalb (قَلْب), or bāṭin (باطِن), Korean sok (속) or an (안), and Swahili ndani or moyo.
+**Enriched:** The psychological-spiritual interior of a person: inner being, heart, inward self. In 40 occurrences the word shifts from communal geography to personal interiority — Sarah laughs beqirbah ('within herself,' Gen 18:12), Nabal's heart dies beqirbo ('within him,' 1 Sam 25:37), and the psalmist cries 'bless the LORD, O my soul, and all that is within me' (Ps 103:1). Arabic selects qalb ('heart') or batin ('inner, hidden') rather than wasat here, and Korean sok (속, 'inside') replaces gaunde, marking this as an internal-experiential sense distinct from spatial location among others.
+
+### H7891 / Sense 140008 (40 occ, sense 2 of 3)
+**Label:** to sing
+**Lemma gloss:** To sing; also as a participle: a singer or temple musician, especially the Levitical choristers of Chronicles-Ezra-Nehemiah.
+**Description:** The active verbal action of singing, whether in Qal or Piel stem, across all finite conjugations (perfect, imperfect, cohortative, consecutive) and infinitive construct forms.
+**Enriched:** About 40 occurrences preserve the active verbal sense: the act of singing, whether in celebration, worship, or lament. Spans Qal and Piel stems across all conjugations—perfect, imperfect, imperative, cohortative, and infinitive. The foundational instance is Exod 15:1, 'Then Moses and the Israelites sang (יָשִׁיר) this song.' Spanish 'cantad/cantaré,' German 'singen,' and French 'chantez' confirm the straightforward verbal reading. Key passages include Num 21:17 (the well song), Judg 5:1 (Deborah's song), and the Psalms' repeated imperative שִׁירוּ ('sing!').
+
+### H7971 / Sense 140849 (40 occ, sense 3 of 7)
+**Label:** to stretch out, extend (Qal)
+**Lemma gloss:** send, dispatch; stretch out (hand); send away, dismiss, release; be sent; set fire to; expel, drive out
+**Description:** The Qal sense of שָׁלַח meaning to stretch out or extend (especially the hand); Arabic مَدَّ (madda), Korean 내밀다/뻗다, Swahili kunyoosha, Hindi बढ़ाया — semantically distinct from 'send' and consistently rendered with 'extend/stretch' equivalents across translations.
+**Enriched:** Qal with יָד as object: 'to stretch out, extend the hand' (40x). Arabic مَدَّ, Korean 내밀다, Swahili kunyoosha mark a clear semantic departure from 'send.' Genesis 3:22 ('lest he stretch out his hand'), Genesis 22:10 (Abraham stretching out his hand for the knife), and Exodus 3:20 ('I will stretch out my hand') show this gesture of power, violence, or intent. The hand becomes the semantic signal distinguishing this sense.
+
+### H8127 / Sense 142646 (40 occ, sense 1 of 4)
+**Label:** tooth, teeth (body part)
+**Lemma gloss:** Tooth or teeth; ivory; a jagged crag or rocky peak; also a fork (for meat). From the physical image of a sharp, protruding point.
+**Description:** A tooth or teeth as a part of the body, used literally for biting, gnashing, or in the lex talionis ('tooth for tooth'), with various possessive and prepositional inflections.
+**Enriched:** A tooth or teeth as a body part — the dominant sense at 40 occurrences, covering human and animal dentition in literal, legal, and figurative contexts. The lex talionis repeats shen tachat shen ('tooth for tooth') across three legal codes (Exod 21:24, Lev 24:20, Deut 19:21), and Exodus 21:27 applies it practically: if a master knocks out a slave's tooth, the slave goes free. Figurative uses are vivid and varied: gnashing teeth in rage (Lam 2:16, Job 16:9, Ps 35:16), teeth set on edge by sour grapes in the proverb of inherited guilt (Jer 31:29-30, Ezek 18:2), teeth white with milk as a blessing on Judah (Gen 49:12), and teeth like a flock of shorn ewes in the Song of Songs (4:2, 6:6). Spanish diente, French dent, and German Zahn all straightforwardly select anatomical vocabulary throughout this cluster. The breadth of figurative elaboration — legal, emotional, proverbial, erotic — testifies to the tooth's centrality in Hebrew bodily imagination.
+
+### H???? / Sense 146000 (40 occ, sense 21 of 94)
+**Label:** (none)
+**Lemma gloss:** (none)
+**Description:** (none)
+**Enriched:** (none)
+
+### G1125 / Sense 64851 (39 occ, sense 3 of 4)
+**Label:** written, having been written (recorded text)
+**Lemma gloss:** To write, compose, or inscribe; of authoring documents, citing Scripture with 'it stands written,' and recording in texts or books.
+**Description:** Passive participial and aorist passive forms describing something that has been written down or recorded in a document, book, or inscription — referring to the resultant state of a text rather than citing Scripture formulaically.
+**Enriched:** Written or having been written (recorded text): Passive participles and aorist passives describing the resultant state of a text—something that exists in written form. Luke 4:17 has Jesus finding 'the place where it was written,' and Revelation repeatedly refers to names 'written in the book of life' (Rev 20:15; 21:27). The focus is not on the act of writing but on the completed inscription as a fixed record. Spanish 'escrito/escritas' (written, f.pl.) and the participial forms across languages all point to the document or inscription as a finished artifact.
+
+### G1909 / Sense 67573 (39 occ, sense 3 of 12)
+**Label:** (none)
+**Lemma gloss:** on, upon (surface); to, toward (direction); in, at (location); during (time); about, concerning; before (presence); against (hostility); by, on the basis of (ground)
+**Description:** (none)
+**Enriched:** Sense uncertain but involving hostility or opposition. Matthew 12:26 warns that a kingdom divided 'against' itself cannot stand (contra sí misma). Matthew 24:7 predicts nation rising 'against' nation (contra nación). The glosses (English 'against,' Spanish 'contra,' French 'contre') cluster around adversarial meaning, though the grammatical construction varies.
+
+### G2228 / Sense 68867 (39 occ, sense 2 of 2)
+**Label:** than (comparative)
+**Lemma gloss:** Or (presenting alternatives), or than (after comparatives); the primary Greek disjunctive and comparative conjunction.
+**Description:** Comparative conjunction following comparative adjectives or adverbs: 'than.' Cross-linguistically distinguished from the disjunctive 'or' by translation into comparative particles: Arb. 'مِنْ,' Eng. 'than,' Hin. 'से/य,' Kor. '~보다,' Spa. 'que,' while Ger. retains 'oder' and Fr. retains 'ou' (ambiguous). Heb. uses the comparative preposition 'מִן/מֵ.' Found after comparatives like 'more tolerable...than' (Matt 10:15, 11:22/24), 'better...than' (Matt 18:8-9, Mark 9:43/45/47), 'easier for a camel...than' (Matt 19:24, Mark 10:25, Luke 9:13), etc. The single occurrence in Acts 17:21 (68870) shows identical comparative function and merges with the main cluster.
+**Enriched:** The comparative conjunction 'than,' appearing after comparative adjectives or adverbs (39 occurrences). Cross-linguistic evidence is especially revealing here: while French 'ou' and German 'oder' retain the same form as the disjunctive, Arabic deploys the distinct preposition min and Spanish uses 'que,' confirming a genuine semantic distinction. Key passages include Matt 10:15 and 18:8-9, where judgments or body parts are weighed against each other.
+
+### G2334 / Sense 69191 (39 occ, sense 1 of 3)
+**Label:** see, perceive visually
+**Lemma gloss:** To see, watch, or gaze at; visual perception ranging from simple sight to attentive contemplation
+**Description:** To see or perceive something with one's eyes; basic visual perception of objects, persons, or events, often with a sense of direct witness.
+**Enriched:** Basic visual perception: to see, behold, or perceive something with one's eyes, often as a direct witness to events. The women came to 'see' the tomb (Matt 28:1), people 'saw' the healed demoniac sitting calmly (Mark 5:15), and unclean spirits 'saw' Jesus and fell before him (Mark 3:11). The German 'schauen' and French 'contempler' both suggest more than a passing glance — there is a quality of taking in, registering, and recognizing what one sees. This is sight that grasps the significance of what is before it.
+
+### G2342 / Sense 69229 (39 occ, sense 1 of 2)
+**Label:** beast (apocalyptic)
+**Lemma gloss:** A beast or wild animal; in the NT overwhelmingly the apocalyptic Beast of Revelation, but also any dangerous or wild creature.
+**Description:** The apocalyptic Beast of Revelation, a supernatural malevolent figure symbolizing opposition to God and his people. The dominant NT use of θηρίον (39 occurrences, almost entirely in Revelation). Rendered Ger. 'Tier,' Fr. 'bête,' Heb. 'חַיָּה' (living creature), Spa. 'bestia,' Arb. 'وَحش,' Kor. '짐승,' Hin. 'पशु.' Includes the beast from the sea (Rev 13:1-4), the beast from the earth/false prophet (Rev 13:11-15), references to the beast's mark/image/number (Rev 13:14-18), and the beast's final destruction. Also Heb 12:20 where a beast touching the mountain must be stoned (OT allusion, but still 'beast' generically). This cluster represents the overwhelmingly Revelation-centered usage of θηρίον as a specific apocalyptic entity.
+**Enriched:** The apocalyptic Beast of Revelation — a supernatural, malevolent figure symbolizing opposition to God and his people. Nearly all NT occurrences (39 of 46) belong here, concentrated in Revelation 11-20. Every major translation tradition renders it with a single consistent term: Spanish 'bestia,' French 'bête,' German 'Tier.' Rev 13:1 introduces the beast rising from the sea; Rev 11:7 the beast ascending from the abyss. Heb 12:20, quoting Exod 19:13, stands at the boundary — a literal animal in an OT citation framing divine unapproachability.
+
+### G4263 / Sense 75615 (39 occ, sense 1 of 1)
+**Label:** sheep
+**Lemma gloss:** sheep — a domesticated ovine animal; in the NT, a pervasive figure for God's people under pastoral care
+**Description:** A domesticated ovine animal, used extensively in the NT both literally (as livestock and sacrificial animals) and metaphorically (believers as sheep of the Good Shepherd, lost sheep, sheep among wolves). Consistently rendered: Spanish 'oveja/ovejas', Hindi 'bhed' (भेड़/भेड़ें), Arabic 'ghanam/khiraaf' (غَنَم/خِرافٍ), Korean 'yang' (양/양들), Swahili 'kondoo'. The three clusters represent only case/number inflections (nominative/accusative singular and plural, genitive plural and singular) of the same single lexical concept.
+**Enriched:** A domesticated sheep, used both literally (the Temple market's sacrificial animals driven out by Jesus, John 2:14-15; the sabbath rescue scenario, Matt 12:11-12) and in sustained metaphorical systems: believers as the shepherd's flock (John 10:1-27; 21:16-17), the lost and scattered (Matt 9:36; 10:6; 15:24; 18:12; Mark 6:34), those sent into danger (Matt 10:16), and the righteous separated from goats at the final judgment (Matt 25:32-33). The quotation from Psalm 44:22 — 'as sheep for the slaughter' (Rom 8:36) — extends the metaphor into martyrdom theology. Spanish 'ovejas,' French 'brebis,' and German 'Schafe' confirm a single semantic referent without distinction between literal and figurative uses.
+
+### G4314 / Sense 75712 (39 occ, sense 3 of 8)
+**Label:** association: with, in company of
+**Lemma gloss:** To, toward; for, in order to; with; at, near; among; against; according to; because of
+**Description:** Expresses accompaniment, association, or being in the presence of someone, akin to French 'chez' or 'auprès de'.
+**Enriched:** Association or accompaniment: 'with,' 'in the presence of,' 'face-to-face with.' This is the theologically pregnant sense of John 1:1 ('the Word was with God'). Matt 26:18 ('I will keep the Passover at your house / with you'). French 'auprès de' and Spanish 'junto a' capture relational proximity. The 39 occurrences reveal pros conveying not mere spatial togetherness but oriented, facing relationship — richer than simple meta or sun.
+
+### G4690 / Sense 76619 (39 occ, sense 1 of 2)
+**Label:** seed, offspring, descendant(s)
+**Lemma gloss:** Seed; offspring or descendants (esp. Abraham's seed); literal agricultural seeds in botanical or theological contrast.
+**Description:** Used figuratively of human progeny, descendants, or posterity — the dominant NT sense (33 of 43 occurrences). Refers to Abraham's seed/offspring (Jn 8:33, 37; Rom 4:13, 16, 18; 9:7-8, 29; 11:1; 2 Cor 11:22; Gal 3:16, 19, 29; Heb 2:16; 11:11, 18), David's seed (Jn 7:42; Rom 1:3; 2 Tim 2:8), and the messianic Seed (Gal 3:16, 19). Spanish 'descendencia/simiente' denote lineage; Hindi 'वंश' means clan/lineage; Arabic 'نَسْل' is progeny; Korean '씨' serves as both seed and offspring; Swahili 'uzao' means posterity. This sense encompasses the singular 'Seed' (= Christ, Gal 3:16) and collective 'offspring' as one figurative extension of the agricultural term to human reproduction and descent.
+**Enriched:** Offspring, descendants, or posterity -- the dominant NT sense. Central to Abrahamic covenant theology: 'your seed' (John 8:33; Rom 9:7-8; Gal 3:29) and the Davidic line (Rom 1:3; 2 Tim 2:8). Spanish 'descendencia' and 'simiente' both capture the progeny meaning. Paul's singular/plural argument in Galatians 3:16 turns entirely on this word. Also used in the parable of the wheat and tares (Matt 13:24, 37-38) where seed = people sown in the world.
+
+### H0539 / Sense 82943 (39 occ, sense 2 of 6)
+**Label:** faithful, trustworthy, sure
+**Lemma gloss:** To believe, be faithful, support; also to nurse or rear — spanning cognitive trust, steadfast reliability, and parental nurture.
+**Description:** Niphal participle (adjectival) and adjective forms: faithful, trustworthy, reliable, sure, enduring — describing a person or thing as dependable; Arabic أَمِينٌ / أُمَنَاء 'faithful/trustworthy', Korean 신실한 'faithful', Swahili mwaminifu/waaminifu 'faithful/trustworthy', Hindi विश्वासयोग्य / विश्वसनीय 'trustworthy'.
+**Enriched:** Niphal participle used adjectivally: faithful, trustworthy, sure, enduring. Describes persons, promises, or institutions as dependable and firm. God's covenant is 'faithful' (Deut 7:9), his servant Moses is 'faithful in all my house' (Num 12:7), and David is promised a 'sure house' (1 Sam 2:35). Spanish 'fiel,' French 'fidèle,' and Arabic أمين all capture this adjectival quality of proven reliability, distinct from the active cognitive sense of believing.
+
+### H0582 / Sense 83279 (39 occ, sense 1 of 3)
+**Label:** man, human being
+**Lemma gloss:** Man, human being (individual or generic); mankind, humanity collectively; mortal, frail human (poetic emphasis).
+**Description:** An individual human person, used generically or specifically to refer to a man or human being in various grammatical contexts.
+**Enriched:** An individual human person, used generically or specifically to refer to a man or human being — the basic lexical meaning covering most occurrences. This dominant sense (39 occurrences) appears across Job's anguished questions ('Is not the life of enosh a hard service?' Job 7:1), prophetic oracles (Isa 13:12; 56:2), and the Psalms (Ps 55:14, where 'a man, my equal, my companion' uses enosh for the intimate betrayer). Spanish hombre, French homme, and German Mensch all render this with their standard 'man/human' vocabulary. The parallelism with ben-adam ('son of man') in passages like Isaiah 56:2 and Psalm 8:4 confirms enosh as a poetic synonym for 'human being.'
+
+### H0817 / Sense 84639 (39 occ, sense 1 of 3)
+**Label:** guilt offering (sacrifice)
+**Lemma gloss:** Guilt, offense, or wrongdoing; a guilt offering (sacrifice); compensation or restitution for trespass
+**Description:** A sacrificial offering prescribed for trespass or guilt, the animal or ritual itself presented to make atonement for specific offenses.
+**Enriched:** The guilt offering as a specific sacrificial rite, prescribed primarily in Leviticus 5–7 and Numbers 6:12; 18:9. Unlike the sin offering, the asham addresses offenses where restitution is possible—violations of holy things, false dealings with neighbors, or uncertain guilt (Lev 5:6, 15–16; 14:12). Ezekiel envisions it continuing in the restored temple (Ezek 40:39; 42:13; 46:20). Spanish ofrenda por la culpa and French sacrifice de culpabilité both gloss it as a sacrifice for guilt.
+
+### H1197a / Sense 87511 (39 occ, sense 1 of 4)
+**Label:** burn, be on fire
+**Lemma gloss:** To burn, be on fire (Qal); to kindle, set ablaze (Piel/Hifil); to purge or remove evil from the community
+**Description:** Intransitive burning or being ablaze (Qal and Pual), describing fire that burns, blazes, or is alight without an explicit agent causing it.
+**Enriched:** Intransitive burning — fire that blazes, is kindled, or is alight without an explicit agent causing it. This is the Qal and Pual base sense: the bush that 'burned with fire yet was not consumed' (Exod 3:2), the fire that 'burned among them' at Taberah (Num 11:1, 3), or Mount Sinai 'burning with fire' (Deut 4:11). Spanish arde and French brûlant consistently gloss this as ongoing, intransitive combustion. Coals that 'burned' from the divine presence (Ps 18:9 = 2 Sam 22:9) and the prophet's word 'like a burning fire shut up in my bones' (Jer 20:9) extend the image powerfully.
+
+### H1389 / Sense 89195 (39 occ, sense 1 of 3)
+**Label:** hills (plural, common noun)
+**Lemma gloss:** A hill or elevated mound of earth; plural hills; also the proper name Gibeah, a Benjaminite town.
+**Description:** Hills in the plural, referring to multiple elevated landforms, including with articles, prepositions, conjunctions, construct states, and possessive suffixes.
+**Enriched:** Multiple elevated landforms viewed collectively. The plural form appears most often in prophetic and poetic texts as a merism with 'mountains' to denote all terrain (Deut 12:2; Isa 40:12). French 'collines' and German 'Hügel' track the Hebrew plural consistently, while Spanish alternates between 'colinas' and 'collados,' reflecting the generic landscape meaning.
+
+### H1439 / Sense 89588 (39 occ, sense 1 of 1)
+**Label:** Gideon (proper name)
+**Lemma gloss:** Gideon — Israelite judge from Manasseh who defeated Midian with 300 men by divine command (Judges 6-8)
+**Description:** The proper name Gideon (Gid'on), the Israelite judge from the tribe of Manasseh who defeated the Midianites (Judges 6-8). All 39 occurrences across both clusters refer to the same individual in various syntactic positions: nominative and accusative (eng: Gideon, spa: Guidon, hin: गिदोन, arb: جِدْعُون, kor: 기드온, swa: Gideoni) and with conjunctive/prepositional prefixes (eng: and-for-Gideon, spa: para-Guidon, arb: لِـ-جِدْعُون, swa: kwa-Gideoni). The name means 'hewer/feller.'
+**Enriched:** The proper name of Israel's fifth judge, appearing in all 39 occurrences within Judges 6-8. Multilingual renderings preserve the Hebrew phonology with minimal adaptation — Spanish 'Guidón,' French 'Gédéon,' German and English 'Gideon' — reflecting the name's widespread familiarity through the biblical narrative of the fleece, the 300 warriors, and the rout of Midian.
+
+### H1481a / Sense 89763 (39 occ, sense 1 of 4)
+**Label:** Qal: to sojourn as alien
+**Lemma gloss:** To sojourn as a resident alien; to dwell temporarily in a foreign land; as participle, a sojourner or guest.
+**Description:** To dwell temporarily in a land that is not one's own, living as a resident alien or stranger; the core verbal sense covering all finite forms, infinitives, and verbal participles where the emphasis is on the foreignness and transience of the stay, confirmed by Arabic tagarraba (to live abroad as a stranger) and Korean cheryuhada (to stay temporarily).
+**Enriched:** The core verbal sense: to sojourn, to live temporarily in a land not one's own, with emphasis on alien status and vulnerability. Abraham sojourns in Egypt during famine (Gen 12:10), Lot among the Sodomites (Gen 19:9). German als Fremder wohnen ('to dwell as a stranger') and Arabic jara ('to turn aside, take temporary refuge') both highlight the provisional, dependent nature of this dwelling.
+
+### H1571 / Sense 90367 (39 occ, sense 2 of 7)
+**Label:** even, so far as
+**Lemma gloss:** Also, too; even; both...and; indeed; neither/nor; because also — a versatile additive-scalar particle
+**Description:** Scalar/concessive particle emphasizing an unexpected or extreme case; distinguished by swa 'hata' (not 'pia'), kor '심지어' (not '또한'), arb occasionally 'حتّى', spa 'aun' (not 'también'), indicating a genuinely different lexical selection across languages.
+**Enriched:** Scalar or concessive 'even, so far as,' marking an unexpected or extreme case on a scale of likelihood. Multilingual evidence is diagnostic: Swahili shifts to hata (not pia), Korean to 심지어 (not 또한), Arabic occasionally to حتّى, and Spanish to aun (not también). This scalar force appears prominently in Lev 26:44 ('and even for all that') and Deut 12:31.
+
+### H1875 / Sense 92228 (39 occ, sense 2 of 7)
+**Label:** inquire of, consult
+**Lemma gloss:** To seek, inquire of, consult, investigate, require; be sought or consulted (Niphal); care for
+**Description:** To inquire of God or a prophet, to consult an oracle or divine authority for guidance (Qal, Arabic سَأَلَ 'sa'ala' = to ask/inquire); a specialized sense of seeking divine direction.
+**Enriched:** A specialized sense of seeking divine direction: consulting God, a prophet, or an oracle for guidance. Rebekah 'inquired of the LORD' about her twins (Gen 25:22), and kings routinely sought prophetic counsel before battle (1 Kgs 22:5). Spanish consultar and the Arabic sa'ala ('to ask') capture the formal, deliberative quality of this oracular inquiry.
+
+### H2029 / Sense 93764 (39 occ, sense 1 of 3)
+**Label:** to conceive, become pregnant
+**Lemma gloss:** To conceive, become pregnant; as participle, the one who conceived; passively, to be conceived
+**Description:** The core inchoative meaning of becoming pregnant, used across all active finite forms (perfect, imperfect, consecutive imperfect, conjunctive perfect) and infinitive absolute constructions, including literal conception of children and figurative conception of plans or trouble.
+**Enriched:** The core inchoative meaning: to conceive or become pregnant. This dominates the patriarchal narratives with the formulaic 'and she conceived and bore' (Gen 4:1; 16:4; 25:21; 38:18). It also extends metaphorically to conceiving trouble or iniquity (Ps 7:14; Isa 59:4). Spanish 'concibio' and French 'concut' track the biological event consistently.
+
+### H2205 / Sense 94844 (39 occ, sense 2 of 3)
+**Label:** old, aged person
+**Lemma gloss:** Old, aged; an elder or community leader; used both as an adjective for age and a title for civic authority.
+**Description:** Adjectival or substantive use describing physical old age or an elderly person without institutional connotation, including 'old man,' 'the aged,' and comparative uses; Arabic شَيْخ (shaykh) in its age-descriptive sense, Korean consistently renders 늙은/늘은 (neulgeun, old) or 노인 (noin, elderly person) rather than 장로, and Swahili mzee (singular) marks individual aged persons.
+**Enriched:** Old, aged -- a physical description of advanced years without institutional connotation. Used adjectivally ('an old man,' 'an old prophet') or substantively ('the old and the young'). Genesis 18:11 describes Abraham and Sarah as 'old, advanced in days,' and Genesis 19:4 speaks of 'old and young' among the men of Sodom. Spanish 'viejo,' French 'vieux,' and German 'alt' render the purely descriptive sense. The Arabic cognate 'shaykh' in its non-titular sense captures the same physical meaning.
+
+### H4503 / Sense 112484 (39 occ, sense 2 of 4)
+**Label:** offering/oblation (general cultic)
+**Lemma gloss:** Gift, tribute, offering; from secular presents between persons, through vassal tribute, to the grain/cereal offering of the Levitical cult.
+**Description:** The broader cultic sense of מִנְחָה as any offering presented to God, including both animal and vegetable offerings (as in Genesis 4:3-5 where both Cain's produce and Abel's animal are called מִנְחָה), and prophetic/devotional contexts; Arabic still uses تَقْدِمَة (taqdīma) but Korean shifts to generic 제물 (jemul, 'sacrifice/offering') or 예물 (yemul, 'votive offering') rather than the specific 소제, Swahili uses plain sadaka ('offering') without the ya nafaka ('of grain') qualifier, Hindi uses the general भेंट (bheṇṭ, 'offering/presentation') rather than the specific अन्नबलि, and one occurrence shows Arabic ذَبِيحَة (dhabīḥa, 'slaughtered sacrifice') confirming the non-grain-specific scope of this sense.
+**Enriched:** Any offering or oblation presented to God — 39 occurrences where minchah denotes a general cultic gift without specific restriction to grain. The paradigmatic instance is Genesis 4:3-5, where both Cain's produce and Abel's animal offering are called minchah, demonstrating that the word predates its Levitical specialization. Similarly in Judges 6:18 Gideon prepares a minchah that includes meat and broth. Spanish ofrenda and German Opfergabe ('offering-gift') capture this broader cultic sense. The distinction from sense 1 is real: here the emphasis is on the act of presenting to God rather than on the specific flour-and-oil composition prescribed in Leviticus.
+
+### H4820 / Sense 114375 (39 occ, sense 1 of 1)
+**Label:** deceit, treachery
+**Lemma gloss:** Deceit, treachery, fraud — dishonesty in speech, commerce, or interpersonal dealings
+**Description:** The noun mirmah denoting deceit, fraud, or treachery as a moral failing. All four clusters represent the same semantic concept with variation only in grammatical form (absolute, construct, with prepositions, with conjunctions). Multilingual evidence uniformly converges: eng 'deceit/treachery', spa 'engano/traicion', hin 'chhal/dhokha' (छल/धोखा), arb 'ghishsh/khadi'ah' (غِشّ/خديعة), kor 'sogim' (속임), swa 'udanganyifu/hila'. S114381 uses 'treachery' (eng) and 'hila' (swa) but these are synonymous intensifications of the same deception concept, not a distinct sense. The prepositional forms (b-/l- in S114378) simply add syntactic framing ('with deceit', 'to deceit') without changing the core meaning.
+**Enriched:** Deceit, treachery, or fraud as a moral failing, encompassing dishonest commercial practices ('deceptive balances,' Amos 8:5; Prov 11:1), crafty speech (Ps 52:6; 109:2), and interpersonal betrayal (Gen 27:35; 2 Kgs 9:23). Cross-lingual glosses converge on a single concept — Spanish 'engaño,' French 'tromperie,' German 'Betrug' — confirming a unified semantic profile across all 39 occurrences.
+
+### H4847 / Sense 114451 (39 occ, sense 1 of 1)
+**Label:** Merari (proper name)
+**Lemma gloss:** Merari — third son of Levi; ancestor of the Merarite Levitical clan serving in tabernacle and temple
+**Description:** A masculine proper noun referring to Merari, the third son of Levi (Genesis 46:11; Exodus 6:16) and ancestor of the Merarite clan of Levites who served in the tabernacle and temple (Numbers 3-4, 7, 10, 26; Joshua 21; 1 Chronicles 6, 9, 15, 23-24, 26; 2 Chronicles 29, 34; Ezra 8). Multilingual glosses consistently transliterate: English 'Merari,' Spanish 'Merari,' Hindi 'Marari' (मरारी), Arabic 'Marari' (مَرَارِي), Korean 'Meurari' (므라리), Swahili 'Merari.' The two clusters differ only by conjunction waw prefix ('and Merari'), not by referent.
+**Enriched:** The personal name Merari, Levi's third son and eponymous ancestor of the Merarite clan of Levites. Every occurrence appears in genealogical or cultic-service contexts: the Pentateuchal census lists (Num 3-4, 26), the Levitical city allocations (Josh 21), and the Chronicler's temple rosters (1 Chr 6, 15, 23-24). Translations uniformly transliterate — 'Merari' in English, Spanish, German; 'Mérari' in French — reflecting its status as a stable proper noun.
+
+### H5060 / Sense 116078 (39 occ, sense 2 of 6)
+**Label:** reach, arrive, extend to (Hifil/Qal)
+**Lemma gloss:** To touch, reach, strike; to arrive at; to cause to reach; to afflict, smite; to be stricken or defeated
+**Description:** Reaching a destination, arriving at a place, or extending to a point — includes both Qal occurrences with 'reach' semantics and intransitive Hifil; Arabic بَلَغَ/وَصَلَ/يَصِلُ/حَلَّ, Korean 닿다/이르다/도달하다/도착하다, Swahili -fika/-fikia, Hindi पहुँचना/आना, Spanish llegar/alcanzar.
+**Enriched:** The Qal and intransitive Hifil sense of reaching a destination, arriving at a place, or extending to a point in space or time. Arabic balagha and wasala (reach, arrive) employ different roots from touch or strike, confirming a distinct semantic domain. Gen 28:12 (the ladder 'reaching' to heaven), 2 Chr 3:11 (cherub wings 'reaching' the wall), and 1 Sam 14:9 ('if they say come up to us, we will go up, for the LORD has given them into our hand') all show arrival or spatial extension rather than mere contact.
+
+### H5331 / Sense 118789 (39 occ, sense 1 of 5)
+**Label:** perpetuity, forever
+**Lemma gloss:** Perpetuity, forever; eminence, glory; endurance; victory -- a word spanning time, majesty, and triumph.
+**Description:** Duration without end; everlastingness, used adverbially (often with preposition lamed) to mean 'forever, perpetually, in perpetuity'.
+**Enriched:** The dominant temporal-adverbial sense: perpetuity, forever, everlastingly. Almost always preceded by the preposition lamed (la-netsach) or ad (ad-netsach), it functions as a time adverb in psalmic lament ('Will you forget me forever?' Ps 13:1), prophetic judgment ('perpetual desolations,' Ps 74:3), and wisdom teaching (Prov 21:28). Spanish para siempre, German ewiglich, and French pour toujours all converge on unbounded duration. The 39 occurrences are spread across Job, Psalms, Isaiah, Jeremiah, and Amos, making this one of the Bible's most common words for eternity.
+
+### H5467 / Sense 120382 (39 occ, sense 1 of 1)
+**Label:** Sodom (city)
+**Lemma gloss:** Sodom — ancient city of the Jordan plain destroyed by divine judgment; proverbial for wickedness
+**Description:** The ancient city of Sodom in the Jordan plain, destroyed by divine judgment (Genesis 19), frequently invoked as a paradigm of wickedness and catastrophic punishment throughout prophetic and wisdom literature. All four clusters represent the same toponym with different prepositions: bare nominative/genitive, with ke- (like Sodom), with be- (in Sodom), and directional (to/toward Sodom). Multilingual glosses are uniform: Arabic Saduma, Spanish Sodoma/Sedom, Hindi Sadom/Sedom, Korean Sodom, Swahili Sodoma. Purely grammatical variants of one place name.
+**Enriched:** The proper place name Sodom, used both as a historical referent for the destroyed city (Gen 10:19; 13:10-13; 14:2-22; 18-19) and as a prophetic-proverbial type of extreme wickedness and divine catastrophe (Isa 1:9-10; 13:19; Jer 23:14; Deut 29:22; Zeph 2:9). Spanish preserves the Hebrew closely as 'Sedom/Sodoma,' French as 'Sodome,' confirming universal recognition of this place name across all 39 attestations.
+
+### H5857 / Sense 123560 (39 occ, sense 1 of 2)
+**Label:** Ai (Canaanite city)
+**Lemma gloss:** Ai — the ancient Canaanite city near Bethel, destroyed by Joshua; also a variant form Ayyah in post-exilic lists.
+**Description:** The ancient Canaanite city near Bethel, always appearing with the article (ha-Ai) in its primary form. Featured prominently in the conquest narrative: the failed first attack (Josh 7:2-5), the successful ambush and destruction (Josh 8:1-29), and referenced in the list of defeated kings (Josh 12:9). Also mentioned in Abraham's journeys (Gen 12:8, 13:3). Later references include the post-exilic lists (Ezra 2:28, Neh 7:32) and Jeremiah 49:3. The variant form Ayyat (Isa 10:28) describes the same location in the march against Jerusalem. Transliterations: Arabic al-Ay, German Ai, French Ai, Spanish Hai/Ai, Korean Ai, Hindi Ay/Ai. All auto-clusters (the Ai, and the Ai, Ai, Aiath) refer to the same geographical location in different syntactic frames or spelling variants.
+**Enriched:** The Canaanite city near Bethel, central to the conquest narrative. Always with the article ha-Ai ('the ruin'), appearing in Genesis as a geographic marker (Gen 12:8; 13:3 — Abraham pitched his tent between Bethel and Ai) and then dominating Joshua 7-8 with the failed first attack, Achan's sin, and the successful ambush. Also listed in the returnee census (Ezra 2:28; Neh 7:32). French 'le Aï' and German 'der Ai' preserve the distinctive article that sets this toponym apart from ordinary place names.
+
+### H5921a / Sense 123941 (39 occ, sense 5 of 9)
+**Label:** concerning, about (topical)
+**Lemma gloss:** upon, on, over; against; beside, by, at; because of, therefore; concerning, about; for, on behalf of; to, unto; according to, in addition to
+**Description:** Topical or referential sense indicating the subject matter: Arabic عَنْ (about) alongside عَلَى, Korean 에 대하여 (regarding/concerning), Swahili kuhusu (about/concerning); Hindi विषय में / बारे में (about); distinct from causal 'because of' in that the topic is referenced without implying causation.
+**Enriched:** Topical or referential: 'concerning, about, regarding' introducing the subject matter of speech, thought, or action. Arabic uses عَنْ (about) alongside عَلَى, Korean 에 대하여 (regarding/concerning), Swahili kuhusu (about/concerning), Hindi विषय में / बारे में (regarding/about). Genesis 21:12 'whatever Sarah says to you concerning the boy,' 21:25 'Abraham reproved Abimelech concerning the well' — 39 occurrences where עַל marks discourse topic rather than physical or causal relation.
+
+### H6002 / Sense 124999 (39 occ, sense 1 of 1)
+**Label:** Amalek (proper noun)
+**Lemma gloss:** Amalek — grandson of Esau; eponymous ancestor of the Amalekites, perennial foes of Israel
+**Description:** Proper noun referring to Amalek, the eponymous ancestor of the Amalekites or the Amalekite nation/people collectively. All seven sense clusters represent the same referent with purely morphological and syntactic variation: bare nominative, with conjunction, with various prepositions (b-, l-, min-), and with the article. Spanish 'Amalec/Amaleq,' Hindi 'amalek,' Arabic 'amaliq,' Korean 'amallek,' Swahili 'Amaleki/Waamaleki' all consistently render the same proper noun across all syntactic contexts without any semantic differentiation.
+**Enriched:** The proper noun Amalek, functioning as both a personal ancestor name (Gen 36:12, 16) and a gentilic collective for the Amalekite nation across all periods of Israel's history — Exodus (Exod 17:8-16), wilderness wandering (Num 13:29; 24:20), judges (Judg 3:13; 6:3), monarchy (1 Sam 14-15; 30), and remnant erasure (1 Chr 4:43). Multilingual glosses transliterate uniformly — 'Amalek/Amaleq' in all target languages — reflecting its consistent referential identity.
+
+### H6485a / Sense 128181 (39 occ, sense 3 of 15)
+**Label:** Qal: count, number, muster
+**Lemma gloss:** to attend to, visit; to count, muster, number; to appoint, set in charge; to punish; to miss, be missing; to deposit
+**Description:** To count, number, or muster persons or things (Qal active); Arabic عَدَّ / أحصى, Korean 세다/계수하다, Hindi गिनना, Swahili hesabu — the census/enumeration sense used extensively in Numbers.
+**Enriched:** To count, number, or muster (39x) appears extensively in Numbers. 'Number the people of Israel' (Exod 30:12), 'Moses numbered them according to the word of the LORD' (Num 1:19). Arabic uses عَدَّ (ʿadda, 'count') / أحصى (aḥṣā, 'enumerate'), Korean 세다/계수하다 (count), Hindi गिनना (count), Swahili hesabu (count). The census sense: attending to each person by enumeration.
+
+### H6908 / Sense 130887 (39 occ, sense 2 of 4)
+**Label:** Nifal/Hitpael: assemble, be gathered
+**Lemma gloss:** To gather, collect, assemble; Piel: reassemble the dispersed; Nifal: come together; Qal: collect.
+**Description:** Middle, reflexive, or passive gathering where people assemble themselves or are gathered together (Nifal and Hitpael stems), confirmed by Arabic ijtama'a (Form VIII reflexive) and Swahili intransitive -kusanyika across both stems.
+**Enriched:** Nifal and Hitpael: to assemble, be gathered together, gather oneself — the middle/passive/reflexive voice covering 39 occurrences where the emphasis falls on the assembled group rather than the agent who gathers them. In Gen 49:2 Jacob summons his sons: 'Gather yourselves together (hiqqabetsu) and hear!' In Josh 9:2 and 10:6 enemy kings 'gathered themselves together' against Israel. 1 Sam 7:6 records Israel gathering at Mizpah for prayer and repentance. Spanish se reunieron ('they gathered themselves') and French se rassemblerent consistently use reflexive constructions, confirming the middle-voice reading. Swahili's intransitive kusanyika ('be gathered') parallels the Nifal passive-resultative reading. The Hitpael adds a deliberate, purposive nuance absent from the Nifal — Josh 9:2 describes coalition-building, an act of political will.
+
+### H7355 / Sense 135495 (39 occ, sense 1 of 5)
+**Label:** have compassion/mercy on
+**Lemma gloss:** To have compassion, show mercy; Piel: actively exercise tender care; Pual: be shown mercy; related to rechem ('womb').
+**Description:** Piel: to show compassion, mercy, or pity toward someone, used of both God and humans exercising active tenderness and care
+**Enriched:** The dominant Piel sense: God or a person actively exercising compassion, mercy, and tender care toward another — 39 occurrences spanning the entire canon. God declares to Moses: 'I will have compassion on whom I will have compassion' (Exod 33:19, the programmatic statement); the Psalms celebrate it (Ps 103:13, the father-metaphor); the prophets promise it as the ground of restoration after exile (Isa 14:1; 49:13; 54:8, 10; 55:7). German sich erbarmen, French avoir compassion, and Spanish compadecer all cluster tightly around the active-tenderness frame. Korean 긍휼히 여기다 ('to regard with deep pity') captures the deliberate, relational quality — this is not passive sympathy but chosen, willed mercy.
+
+### H8435 / Sense 144719 (39 occ, sense 1 of 1)
+**Label:** generations / genealogical record
+**Lemma gloss:** Generations, genealogical account — family descent records; structural formula of Genesis ('these are the toledot of...')
+**Description:** The noun תּוֹלֵדוֹת meaning 'generations', 'genealogical account', or 'family history', used as a structural marker in Genesis ('these are the generations of...') and in genealogical lists throughout the Pentateuch and Chronicles. All three clusters share the same core meaning: S144719 (25x, with pronominal suffixes 'their generations'), S144720 (13x, construct 'generations of'), and S144726 (1x, 'according to their births'). Multilingual evidence is uniform: Spanish 'generaciones' throughout, Arabic مواليد (births/generations) consistently, Hindi वंशावली (genealogy/lineage) across all clusters, Korean 족보 / 후손들 (genealogy/descendants), Swahili 'vizazi' (generations) uniformly. The single occurrence in S144726 rendered 'according to their births' is the same word in a comparative prepositional frame, not a distinct lexical sense.
+**Enriched:** Genealogical account or record of descendants, used as a literary-structural marker ('these are the toledot of...') dividing Genesis into ten narrative sections (Gen 2:4; 5:1; 6:9; 10:1 etc.), and as census or clan-roster headings in Numbers, Exodus, and Chronicles. Cross-lingual evidence confirms the genealogical core: Spanish 'generaciones,' French 'générations,' German 'Geschlechter/Geschlechterfolge' — all pointing to familial succession as the primary semantic content across all 39 attestations.
+
+### H???? / Sense 146001 (39 occ, sense 22 of 94)
+**Label:** (none)
+**Lemma gloss:** (none)
+**Description:** (none)
+**Enriched:** (none)
+

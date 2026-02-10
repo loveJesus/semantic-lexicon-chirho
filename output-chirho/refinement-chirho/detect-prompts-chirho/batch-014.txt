@@ -1,0 +1,291 @@
+# Sense Refinement Detection — Batch 014
+
+You are a biblical lexicographer reviewing sense entries for a Hebrew/Aramaic/Greek lexicon.
+Each entry below is a single "sense" that was produced by clustering translation signatures 
+and then merging with an LLM. Some senses may have been OVER-LUMPED — they contain genuinely 
+distinct meanings that should be separate senses.
+
+## Your Task
+
+For each sense, determine if it should be SPLIT into multiple senses. Look for:
+- Literal vs. figurative/metaphorical uses lumped together
+- Concrete vs. abstract meanings combined
+- Multiple distinct referents (e.g., "father" = biological parent + patron/advisor + originator)
+- Physical vs. spiritual/theological uses merged
+- Different syntactic frames producing different meanings
+
+## Output Format
+
+Return a JSON array. For senses that need NO splitting, omit them entirely.
+For senses that SHOULD be split, include an entry like:
+
+```json
+[
+  {
+    "senseIdChirho": 79287,
+    "lemmaIdChirho": "H0001",
+    "currentLabelChirho": "father, immediate male parent",
+    "splitProposalChirho": [
+      {
+        "newLabelChirho": "biological/legal father",
+        "criteriaChirho": "Direct parent-child relationship, possessive constructions with specific person"
+      },
+      {
+        "newLabelChirho": "metaphorical father (patron, advisor, protector)",
+        "criteriaChirho": "Title of respect for prophets, advisors, or authority figures; 'father to Pharaoh' type usage"
+      }
+    ],
+    "confidenceChirho": "high",
+    "reasoningChirho": "Description explicitly mentions 'title of respect or metaphorical originator' alongside biological father"
+  }
+]
+```
+
+Only propose splits where you have MEDIUM or HIGH confidence. Do NOT split function words (articles, 
+prepositions, particles, conjunctions) unless there is a genuinely distinct semantic sense (not just 
+syntactic variation). Proper nouns generally should NOT be split.
+
+If NO senses in this batch need splitting, return an empty array: []
+
+## Senses to Review
+
+### G0040 / Sense 61137 (98 occ, sense 1 of 4)
+**Label:** the Holy One, Holy Spirit
+**Lemma gloss:** Holy, sacred, set apart; of persons (saints, the Holy One), places (sanctuary, holy of holies), and things consecrated to God.
+**Description:** Substantive singular use referring to the Holy Spirit (πνεῦμα ἅγιον), the Holy One of God, or divine holiness as a personal attribute.
+**Enriched:** The substantive singular use designating the Holy Spirit (pneuma hagion) or 'the Holy One' as a divine title — the largest cluster at 98 occurrences. Nearly every Gospel and Acts passage about the Spirit uses this construction (Matt 1:18, 3:11, 28:19; Acts 1:8). Across languages the rendering is remarkably consistent as a proper title: Spanish Espiritu Santo, French Saint-Esprit, German Heiliger Geist, Korean 성령 (Seongnyeong). The uniformity confirms this is a lexicalized title, not merely an adjective modifying 'spirit.' Jesus' warning about blasphemy against the Holy Spirit (Matt 12:32) shows how this title carries its own theological weight distinct from ordinary adjectival 'holiness.'
+
+### G0129 / Sense 61412 (98 occ, sense 1 of 1)
+**Label:** blood
+**Lemma gloss:** Blood — the vital fluid of life; used for sacrificial atonement, covenant ratification, guilt for bloodshed, and the blood of Christ
+**Description:** All three clusters refer to the single concept of blood (literal or figurative/sacrificial). The multilingual evidence is completely uniform: English 'blood / bloods / in blood' all denote the same substance, Spanish 'sangre / sangres / en sangre', Arabic 'دم / دماء / بدم' (blood / bloods / with blood), Korean '피' throughout all clusters, Hindi 'लहू' (blood) in all three, and Swahili 'damu' (blood) throughout. S61413 is merely the genitive plural and S61416 is a dative singular prepositional form. These are purely inflectional variants of the single lexeme, not distinct senses.
+**Enriched:** The vital fluid of human or animal bodies, extending to the theologically rich domains of sacrificial atonement, covenant ratification, guilt for murder, and mortal human nature. The 'blood of Christ' — poured out for the new covenant (Matt 26:28), securing eternal redemption (Heb 9:12) — forms the theological center. 'Flesh and blood' denotes human frailty (Matt 16:17; Gal 1:16), while 'his blood be on us' (Matt 27:25) carries the weight of responsibility for violence. Spanish 'sangre,' French 'sang,' and German 'Blut' each cover the full literal-to-sacrificial spectrum with a single word.
+
+### G1519 / Sense 66439 (98 occ, sense 3 of 8)
+**Label:** locative: in, among, at
+**Lemma gloss:** Preposition: into, to, toward; for, in order to; in, among; against; concerning; as
+**Description:** Static location or position within a place or state, reflecting the Koine Greek broadening of εἰς beyond purely directional usage.
+**Enriched:** Static location 'in' or 'among,' reflecting the well-documented Koine merger of εἰς and ἐν. Spanish 'en' serves both senses without distinction. John 1:18 ('in the bosom of the Father') and Mark 9:42 illustrate this post-classical development where motion-into has bleached into simple location, a shift visible across all target languages.
+
+### G2570 / Sense 69990 (98 occ, sense 1 of 3)
+**Label:** good, right, excellent
+**Lemma gloss:** Good, beautiful, excellent; morally commendable or aesthetically fine, also used as a proper-name element in 'Fair Havens.'
+**Description:** Morally good, commendable, or of fine quality; used of persons, deeds, fruit, soil, and abstract concepts like conscience or works.
+**Enriched:** Morally good, commendable, excellent, or of fine quality—used of persons, deeds, fruit, soil, conscience, and works. This dominant sense (98x) pervades the parables and ethical teaching of the Gospels: the 'good seed' sown by the Son of Man (Matt 13:24), 'good works' that glorify the Father (Matt 5:16), and the 'good fight' of faith (1 Tim 6:12). French beau and German schon hint at the aesthetic undertone that distinguishes kalos from agathos, though most translations flatten both to 'good.'
+
+### G3761 / Sense 73519 (98 occ, sense 1 of 2)
+**Label:** nor, neither (conjunctive)
+**Lemma gloss:** Negative conjunction 'nor, neither' or emphatic adverb 'not even,' extending or intensifying a negation.
+**Description:** Conjunctive negation connecting two negative clauses or items, meaning 'and not, nor, neither', continuing a prior negation to add another negated element.
+**Enriched:** Conjunctive negation joining two or more negated elements: 'nor,' 'and not,' 'neither.' Continues a prior negative to add another excluded item or clause. The cross-lingual glosses converge tightly—Spanish 'ni,' French 'ni,' German 'auch nicht'—reflecting the straightforward additive-negative function. Central in Jesus's argument from nature in Matt 6:26 ('they neither sow nor reap') and in catalogue denials like Matt 6:20.
+
+### H0571 / Sense 83218 (98 occ, sense 1 of 3)
+**Label:** truth, verity
+**Lemma gloss:** Firmness, faithfulness, truth; what is reliable, trustworthy, and real; often paired with chesed as a covenant attribute of God.
+**Description:** Factual truth or correctness, what is real and accurate, often in phrases like 'in truth' or 'the truth', referring to objective reality or reliable information.
+**Enriched:** Truth as factual reality, correctness, or verity — the dominant sense at 98 occurrences. This covers assertions of objective accuracy ('Is it true?'), truthful speech ('words of truth'), and characterizations of things as genuine or real. In Gen 24:49 and 47:29, the request to deal 'in truth' means honestly and without deception. In Exod 34:6, God is described as 'abounding in truth,' where truth denotes the reliability of his word and character. Spanish verdad, German Wahrheit, and French verite all converge here. The phrase be'emet ('in truth') functions almost adverbially to mean 'truly, indeed.'
+
+### H1471a / Sense 89665 (98 occ, sense 2 of 3)
+**Label:** nation, people-group (singular)
+**Lemma gloss:** Nation, people-group; in the plural often 'the nations' (i.e., non-Israelite peoples, Gentiles).
+**Description:** A single nation or people-group, whether Israel itself or any other ethnic/political entity.
+**Enriched:** The singular sense: 'a nation, people-group'—a single political or ethnic entity (98 occurrences). May designate Israel itself ('a great nation,' Gen 12:2; 'a holy nation,' Exod 19:6) or any other people ('a nation you do not know,' Deut 28:36). Spanish and German both use the singular 'nación/Nation' or 'Volk' here, distinct from the plural collective. Key theological passages include God's promise to make Abraham into a nation (Gen 35:11) and rhetorical questions about Israel's uniqueness (Deut 4:7–8).
+
+### H3956 / Sense 109259 (98 occ, sense 1 of 4)
+**Label:** tongue, physical organ of speech
+**Lemma gloss:** Tongue; the physical organ of speech, and by extension language, a tongue-shaped bay of the sea, or a bar/wedge of gold
+**Description:** The physical tongue in the mouth, including its figurative extension as the instrument of speech used for praise, deceit, slander, or eloquence; Arabic cognate lisan confirms the same primary sense, Korean 혀 (hyeo) and Swahili ulimi/ndimi consistently render this as the anatomical organ across all pronominal suffixes and grammatical inflections.
+**Enriched:** The literal organ in the mouth, extended figuratively as the instrument of speech -- praise, prayer, slander, and cunning all operate through it. Exodus 4:10 records Moses protesting he is 'heavy of tongue,' while 2 Samuel 23:2 places God's word upon David's tongue. Arabic لِسَان and Ethiopic ልሳን share this primary meaning across Semitic, and virtually every target language (Korean 혀, Swahili ulimi, Hindi जीभ) renders it with the basic anatomical term.
+
+### H5769 / Sense 122799 (98 occ, sense 2 of 5)
+**Label:** everlasting, perpetual (attributive)
+**Lemma gloss:** Long duration; eternity, forever; antiquity, ancient times; everlasting (attributive); age(s) or era(s).
+**Description:** Attributive or adjectival use denoting an enduring, perpetual quality of a noun (covenant, statute, possession, etc.), functioning as a modifier rather than a temporal adverb; corresponding to Arabic أَبَدِيّ / أَبَدِيَّة (abadiyy), Korean 영원한 (yeongwonhan), Swahili ya milele / wa milele, Spanish 'eterno / perpetuo,' Hindi सदा की / अनन्त.
+**Enriched:** Attributive or adjectival use: 'everlasting,' 'perpetual,' qualifying a noun with the sense of enduring permanence. Found 98 times modifying covenants (berit olam, Gen 9:16; 17:7), statutes (chuqqat olam, Exod 29:28), possessions (achuzzat olam, Gen 17:8), and priesthoods (kehunnat olam, Exod 40:15). The shift from adverbial 'forever' to adjectival 'everlasting' is marked cross-linguistically: Arabic abadiyy (adjective) versus ila al-abad (adverb), Korean yeongwonhan (attributive adjective) versus yeongwonhi (adverb), and Spanish eterno (adjective) versus para siempre (adverbial phrase). This sense is theologically central to the Abrahamic covenant structure.
+
+### H7637 / Sense 137824 (98 occ, sense 1 of 1)
+**Label:** seventh (ordinal numeral)
+**Lemma gloss:** Seventh — ordinal numeral for the number seven, marking the seventh day, month, year, or item in a sequence
+**Description:** The Hebrew ordinal numeral (שְׁבִיעִי) meaning 'seventh,' used across 98 occurrences for the seventh day, month, year, or other sequential items. The two clusters differ only in the presence of a prefixed preposition (beth 'in/at the seventh') versus the bare or articled form ('the seventh'), which is a grammatical surface variation, not a semantic distinction. Evidence: eng 'the seventh / at the seventh,' spa 'el séptimo / a la séptima,' arb 'السَّابِعِ / في السّابِعَةِ,' kor '일곱째 / 일곱째에,' swa 'wa saba / mara ya saba,' hin 'सातवें / में सातवीं.' All translations render the same ordinal meaning throughout.
+**Enriched:** The ordinal numeral 'seventh,' always used with the definite article, marking position in a sequence — most prominently the seventh day of creation and Sabbath rest (Gen 2:2-3; Exod 20:10), the seventh month of the liturgical calendar with its concentration of festivals (Lev 23:24, 27, 34), and the seventh year of release (Exod 21:2; 23:11). Spanish 'el septimo,' French 'le septieme,' and German 'der siebte' all render the ordinal straightforwardly, though no translation can fully convey the theology of completion and holiness that 'seventh' carries as the capstone of the biblical number system.
+
+### H8199 / Sense 143267 (98 occ, sense 1 of 6)
+**Label:** to judge, adjudicate
+**Lemma gloss:** To judge, govern, vindicate, contend at law; as participle: judge (office-holder); Niphal: be judged, stand trial
+**Description:** The basic Qal verbal action of judging, rendering a legal verdict, or administering justice — covering all finite Qal inflections (perfect, imperfect, imperative, consecutive, infinitive, infinitive absolute) where the sense is the general act of judicial decision-making; Arabic qada/hakama, Korean simpanhada/jaepanhada.
+**Enriched:** The foundational Qal verbal action: judging, rendering verdicts, administering justice. Ninety-eight occurrences from Samuel judging Israel at Bethel, Gilgal, and Mizpah (1 Sam 7:16) to Solomon's prayer for judicial wisdom (1 Kgs 3:9). Arabic hakama, Spanish juzgar, French juger, and Korean simpanhada converge on forensic adjudication.
+
+### G0740 / Sense 63381 (97 occ, sense 1 of 1)
+**Label:** bread, loaf
+**Lemma gloss:** Bread, loaf — baked grain food as daily sustenance; figuratively, the bread of life, the bread of the Presence, and eucharistic bread
+**Description:** Bread or loaves of bread — the staple food product made from grain, used both literally (feeding miracles, daily sustenance) and in sacramental contexts (Last Supper, bread of life). All three clusters are the same noun in different number and case forms: singular (S63381), plural (S63382), and genitive plural (S63384). Spanish uniformly uses 'pan/panes'; Arabic 'خُبْزًا' (khubz) throughout; Korean '빵/떡' (ppang/tteok = bread/rice cake); Swahili 'mkate/mikate' (singular/plural of bread); Hindi 'रोटी/रोटियाँ' (roṭī = flatbread). No semantic distinction exists between these grammatical variants.
+**Enriched:** Bread or a loaf — the primary grain-based food of the ancient world, used literally for daily sustenance and miraculous provision (Matt 6:11; 14:17; 15:34), and figuratively for spiritual nourishment and eucharistic sign. Jesus' declaration 'I am the bread of life' (John 6:35) and the Last Supper institution ('this is my body,' Matt 26:26) give artos a sacramental weight beyond its everyday meaning. Spanish 'pan,' French 'pain,' and German 'Brot' all preserve the single-word simplicity, but the theological resonance — manna, showbread, eucharist — accumulates across the narrative.
+
+### G4183 / Sense 75320 (97 occ, sense 2 of 5)
+**Label:** much, abundant (of quantity)
+**Lemma gloss:** Many, much, great; of number, quantity, magnitude, or degree; also comparative 'far more' and frequentative 'many times.'
+**Description:** A large amount, degree, or extent of something, used with mass or abstract nouns and in adverbial constructions to indicate intensity or abundance.
+**Enriched:** Much, abundant — a large amount, degree, or extent of something, typically with mass nouns or abstract concepts. Ninety-seven occurrences include 'much weeping' (Matt 2:18), 'much suffering' (Matt 16:21), 'much fruit' (John 12:24; 15:5), and adverbial uses like 'praying much' or 'speaking much.' Spanish mucho (singular mass) versus muchos (plural count) perfectly mirrors this sense boundary, as does Korean's shift from 많은 (count) to 많이 (adverbial extent). Paul's 'much boldness' (Phlm 1:8) and 'much affliction' (2 Cor 2:4) exemplify the abstract-quantity usage.
+
+### H3162b / Sense 101632 (97 occ, sense 1 of 1)
+**Label:** together
+**Lemma gloss:** Together, as one — adverb of communal action, spatial proximity, or simultaneous occurrence
+**Description:** together, altogether, and together (97 occurrences across 2 original clusters)
+**Enriched:** An adverb expressing joint action, shared location, or simultaneity — 'together, as one, altogether.' It covers communal activity such as walking together (Gen 22:6, 8), dwelling together (Gen 13:6; Deut 25:5), and worshipping together (Ps 34:4). Spanish 'juntos/juntamente,' French 'ensemble,' and German 'zusammen' each capture the core meaning. The repeated 'and the two of them went together' in the binding of Isaac (Gen 22:6, 8) demonstrates how this seemingly simple adverb can carry immense narrative pathos when placed at a moment of supreme testing.
+
+### H3772 / Sense 107582 (97 occ, sense 1 of 5)
+**Label:** cut a covenant / make a pact
+**Lemma gloss:** To cut — physically cutting trees or objects, cutting a covenant, or being cut off as divine punishment; spans Qal, Niphal, Hifil, and Hofal stems.
+**Description:** Qal idiom: to cut (karat) a covenant or agreement, where the literal cutting refers to the ancient ritual of cutting sacrificial animals to ratify a treaty; Hindi consistently renders as bandha (to bind/tie), Korean as matda/seuda (establish/make), Swahili as kufanya agano (make covenant), while Arabic retains qataa.
+**Enriched:** The covenant idiom: to 'cut' (karat) a covenant, treaty, or agreement. With 97 occurrences, this is the single most frequent use of the verb, reflecting the centrality of covenant in biblical theology. Genesis 15:18 ('on that day the LORD cut a covenant with Abram') is the paradigmatic instance, where the literal cutting of animals (Gen 15:10,17) gives rise to the idiom. Exodus 24:8 and 34:27 extend it to the Sinai covenant. Hindi 'bandha' (to bind) and Korean 'gyeyak-eul maekda' (to tie a covenant) show that target languages interpret the idiom's meaning rather than its etymology, while French 'couper' preserves the cutting metaphor.
+
+### H6215 / Sense 126543 (97 occ, sense 1 of 1)
+**Label:** Esau (personal name, son of Isaac)
+**Lemma gloss:** Esau — the firstborn son of Isaac and Rebekah, twin brother of Jacob, ancestor and eponym of the Edomites
+**Description:** The proper noun 'Esav refers to the firstborn son of Isaac and Rebekah, twin brother of Jacob, and ancestor of the Edomites. All four clusters represent the same individual with only morphosyntactic variation: bare nominative, with preposition lamed ('to/for Esau'), with conjunctive waw ('and Esau'), and minor spelling variants. Multilingual glosses are entirely consistent: Spanish 'Esav/Esau', Hindi 'Esav', Arabic 'Iysuw' throughout, Korean 'Eseo/Eseu', and Swahili 'Esau'. No semantic distinction exists between any of these clusters.
+**Enriched:** The proper name Esav, designating the elder son of Isaac and Rebekah, twin brother of Jacob (Gen 25:25). All 97 occurrences refer to this single individual, though the name frequently extends by metonymy to his descendants and their territory — 'the mount of Esau' (Obad 8-9), 'the house of Esau' (Obad 18), and plain 'Esau' standing for Edom (Jer 49:8). Spanish 'Esav,' French 'Esau,' and German 'Esaw' all transliterate the Hebrew. The name's etymology is debated, sometimes linked to the root for 'hairy' (se'ar), matching the birth narrative of Gen 25:25.
+
+### H1755 / Sense 91444 (96 occ, sense 1 of 4)
+**Label:** generation, contemporaries
+**Lemma gloss:** A generation or age: the people living in a given period, successive posterity, or the formula 'from generation to generation' expressing perpetuity.
+**Description:** A group of people living at the same time; a specific cohort or age-class, often with the article or demonstrative ('this generation,' 'O generation'), referring to the people of a particular era.
+**Enriched:** A generation as a group of contemporaries — the people alive at the same time, characterized as a moral or spiritual cohort. 'This generation' may be righteous (Gen 7:1, where Noah stands alone in his generation) or wicked (Deut 32:5, 20; Ps 12:7). Often preceded by the article or a demonstrative, it functions almost like a collective noun. Spanish 'generacion' and German 'Geschlecht' consistently render this. The 96 occurrences make this the primary sense — dor as the people who share a historical moment.
+
+### H1875 / Sense 92226 (96 occ, sense 1 of 7)
+**Label:** seek, search for
+**Lemma gloss:** To seek, inquire of, consult, investigate, require; be sought or consulted (Niphal); care for
+**Description:** To seek or search for someone or something, whether physically or metaphorically (Qal active, Arabic طَلَبَ 'talaba' = to seek/request); the primary and most frequent sense of darash.
+**Enriched:** The broadest and most frequent sense: to seek or search for someone or something, whether physically, spiritually, or metaphorically. 'Seek the LORD and His strength' (1 Chr 16:11) exemplifies the devotional register. Spanish buscar and French chercher render this straightforwardly, while Arabic talaba preserves the sense of active pursuit.
+
+### H2543 / Sense 97725 (96 occ, sense 1 of 1)
+**Label:** donkey (male ass)
+**Lemma gloss:** Donkey — the male domesticated ass, a primary beast of burden, transport, and livestock wealth in ancient Israel
+**Description:** A male domesticated donkey (Equus asinus), used as a beast of burden, for riding, and as livestock property throughout the Hebrew Bible; חֲמוֹר is the standard term for this animal in all its occurrences, with no metaphorical or extended senses attested.
+**Enriched:** The male domesticated donkey (Equus asinus), the standard beast of burden and riding animal in ancient Israel. Hamor covers the animal in all its roles: as a measure of patriarchal wealth (Gen 12:16; 30:43), a mount for travel (Num 22:21; 1 Sam 25:20), a load-bearer (Gen 42:26; 1 Sam 16:20), and a subject of legal regulation regarding Sabbath rest (Exod 23:12) and firstborn redemption (Exod 13:13). Spanish 'asno,' French 'ane,' and German 'Esel' all denote the same animal. The name itself derives from a Semitic root linked to reddish coloring.
+
+### H5060 / Sense 116072 (96 occ, sense 1 of 6)
+**Label:** touch physically (Qal)
+**Lemma gloss:** To touch, reach, strike; to arrive at; to cause to reach; to afflict, smite; to be stricken or defeated
+**Description:** Physical contact or touching of a person, object, or sacred item in the Qal stem, covering general tactile contact, prohibited/taboo touch (do not touch), and ritual contact contexts; Arabic لَمَسَ/يَلْمِسُ/مَسَّ, Korean 만지다, Swahili -gusa, Hindi छूना, Spanish tocar.
+**Enriched:** The Qal sense of physical touching or contact — laying hands on a person, object, or sacred item. This covers general tactile contact, prohibited/taboo touch (the tree in Eden, holy vessels, unclean things), and ritual purity contexts. Arabic lamasa (touch) uses a root entirely distinct from reaching or striking. Gen 3:3 ('God said you shall not touch it'), Exod 29:37 ('whatever touches the altar shall be holy'), and Lev 5:2-3 (touching unclean things) are paradigmatic of this sense's range from the mundane to the sacral.
+
+### H7307 / Sense 135001 (96 occ, sense 3 of 6)
+**Label:** Spirit of God / Holy Spirit
+**Lemma gloss:** Wind, breath, spirit; the Spirit of God; human disposition or mind; compass direction; spirit beings.
+**Description:** The divine Spirit, the Spirit of God or of the LORD, the Holy Spirit as the active agent of God's power, prophecy, creation, and empowerment — Arabic رُوح الله, Korean 하나님의 영, Swahili Roho ya Mungu, Hindi परमेश्वर की आत्मा.
+**Enriched:** The Spirit of God, the Holy Spirit — the divine agent of creation, prophecy, empowerment, and revelation (96 occurrences). Characteristically appears in construct with divine names: רוּחַ אֱלֹהִים (Gen 1:2), רוּחַ יהוה (Judg 3:10). Arabic رُوح الله, Korean 하나님의 영, Spanish Espíritu de Dios, and German Geist Gottes all capitalize or otherwise mark the divine referent. The semantic continuity with sense 2 (wind) is theologically intentional: God's Spirit moves like wind, unseen but powerful (cf. Ezek 37:9-10 where wind/breath/Spirit converge).
+
+### H7592 / Sense 137324 (96 occ, sense 1 of 6)
+**Label:** ask, inquire, question
+**Lemma gloss:** To ask, inquire, request, demand, borrow, or lend; covering question-asking, petition, and the loan transaction in both directions
+**Description:** Qal sense of asking a question or making an inquiry of someone, corresponding to Arabic sa'ala and Korean mul-eotda (물었다), used when seeking information rather than material goods.
+**Enriched:** To ask a question or make an inquiry, seeking information from another person or from God. Arabic sa'ala and Korean mul-eotda (to ask) consistently mark this as the information-seeking register. This is the dominant sense (96x), ranging from simple interpersonal questions (Gen 26:7 'the men of the place asked about his wife') to formal divine inquiry through priest or prophet (Judg 1:1; 1 Sam 10:22). The construction often takes a double accusative — asking someone about something — and the multilingual glosses converge on consultar/demander/befragen, all emphasizing the investigative dimension.
+
+### G1563 / Sense 66667 (95 occ, sense 1 of 1)
+**Label:** there
+**Lemma gloss:** There — adverb of place indicating a location away from the speaker, sometimes used with verbs of motion for 'thither'
+**Description:** there, There, him (95 occurrences across 2 original clusters)
+**Enriched:** A locative adverb meaning 'there, in that place,' pointing to a location distinct from the speaker's position. Across its 95 New Testament occurrences it serves narrative geography — placing events at specific sites (Matt 2:13, 15; John 11:15) — and sometimes absorbs directional force ('thither,' with verbs of motion). Its most theologically resonant uses include Matt 18:20 ('there am I among them') and Matt 6:21 ('where your treasure is, there your heart will be'). Spanish 'alli,' French 'la,' and German 'dort' consistently render this straightforward spatial deictic.
+
+### G1799 / Sense 67285 (95 occ, sense 1 of 1)
+**Label:** before, in the presence of
+**Lemma gloss:** Before, in the presence of — an improper preposition (with genitive) denoting position in someone's sight or presence
+**Description:** An improper preposition (with genitive) meaning 'before, in the presence of, in the sight of,' used extensively to denote being in the presence of God (Luke 1:15, 1:19, 12:6; Rev 1:4, 4:5, 8:2) or of people/authorities (Luke 1:17, 24:19; Acts 4:10, 6:5, 10:33). All 95 occurrences carry this single spatial/relational sense of 'face-to-face presence before someone,' with no distinct metaphorical or abstract submeaning. Multilingual evidence is uniform: Spanish 'delante/delante de,' Hindi 'सामने,' Arabic 'أَمامَ,' Korean '앞–에/앞–에서,' Swahili 'mbele ya/mbele yangu.' The single hapax in S67286 is morphologically and semantically identical to the main cluster.
+**Enriched:** An improper preposition (with genitive) meaning 'before, in the presence of, in the sight of,' conveying the sense of being under someone's direct observation or authority. Its heaviest concentration falls in Luke-Acts and Revelation, where it repeatedly places human action before the divine gaze — walking blamelessly 'before God' (Luke 1:6, 75), speaking boldly 'before' rulers (Acts 4:19), and the heavenly court assembled 'before' the throne (Rev 1:4; 4:5; 8:2). Spanish 'delante de,' French 'devant,' and German 'vor' all mirror the spatial-to-relational gradient this preposition carries.
+
+### H0954 / Sense 85860 (95 occ, sense 1 of 4)
+**Label:** to be ashamed, feel shame (Qal)
+**Lemma gloss:** To be ashamed, feel shame or disgrace; causatively to put to shame; also to delay or tarry (Piel); rarely to dry up
+**Description:** Qal stative sense: to be ashamed, feel shame, be put to shame, be disgraced — the core meaning of the root covering all Qal inflections (perfect, imperfect, imperative, infinitive, infinitive absolute, cohortative, participle, waw-consecutive) and the single Hitpael occurrence (reflexive 'feel ashamed within oneself'); consistently rendered with Arabic خَزِيَ (khaziya) / يَخْزَى (yakhzaa) / خَجِلَ (khajila, to be embarrassed); Korean 부끄러워하다 (to feel ashamed); Swahili -aibishwa / -aibika (to be shamed); Hindi लज्जित होना (to become ashamed); Spanish avergonzado/avergonzarse.
+**Enriched:** The foundational Qal stative sense covering the feeling of shame, disgrace, or humiliation. The subject experiences shame internally, whether as divine judgment, social exposure, or moral failure. The breadth is striking: it ranges from the shame of defeated nations (Isa 37:27) to personal penitence (Jer 31:19). Spanish avergonzar and German sich schämen both preserve this reflexive, inward-turning quality. Dominant across Psalms, Jeremiah, and Isaiah, this sense accounts for the vast majority of occurrences.
+
+### H7126 / Sense 133053 (95 occ, sense 2 of 6)
+**Label:** draw near, approach
+**Lemma gloss:** To draw near or approach; in Hifil, to bring near or present an offering; statively, to be near or at hand.
+**Description:** Qal intransitive: to draw near, approach, come close to a person, place, or situation (Arabic iqtaraba/taqaddama; Korean 가까이 오다/가다; Hindi निकट आना; Swahili -karibia)
+**Enriched:** The basic Qal intransitive meaning: to draw near, come close, approach a person, place, or situation. This is the root spatial sense from which all others develop. Found in narrative (Lev 9:5-8, Moses commanding Aaron to approach the altar) and prophetic speech alike. Arabic iqtaraba and Swahili -karibia both preserve this core 'move-toward' semantics, as does Korean 가까이 오다.
+
+### G5117 / Sense 77836 (94 occ, sense 1 of 1)
+**Label:** place, location, position
+**Lemma gloss:** Place — a physical location, region, or designated spot; sometimes a position, opportunity, or space in a figurative sense
+**Description:** A physical location, spot, or designated area. This is the dominant sense of 'topos' in the NT, covering all ninety-four occurrences which refer to geographic places, positions, or spaces. The multilingual evidence is highly consistent across both original clusters: Spanish 'lugar/lugares,' Hindi 'sthan/jagah/sthanon,' Arabic 'makan/amakina,' Korean 'got/jangso,' Swahili 'mahali/nafasi/sehemu.' The two clusters differ only in grammatical number—singular forms (AMS, NMS, GMS, DMS) vs plural forms (GMP, AMP, DMP). The semantic range includes specific named places, generic locations, spatial positions, and metaphorical 'room/opportunity' (as in 'give place to wrath'), but the core meaning of a defined spatial location unifies all occurrences.
+**Enriched:** A physical location, spot, region, or designated area, covering the full range from specific named sites to general spaces. In the Gospels topos identifies particular locations in the narrative landscape — deserted places (Matt 14:13), holy places (Matt 24:15), and named localities (Matt 27:33). Epistolary usage extends toward abstract 'room' or 'opportunity' — giving no place to the devil (Eph 4:27). Spanish 'lugar,' French 'lieu,' and German 'Ort' all preserve this literal-to-figurative gradient across the word's 94 occurrences.
+
+### H3034 / Sense 100900 (94 occ, sense 1 of 5)
+**Label:** give thanks, praise (Hifil)
+**Lemma gloss:** To give thanks, praise, or confess (Hifil/Hitpael); originally 'to throw, cast' (Piel); the core gesture of publicly declaring what God has done.
+**Description:** To give thanks or praise to God in worship and doxological contexts, the dominant Hifil sense of ידה covering imperatives, imperfects, infinitives, participles, and perfects expressing thanksgiving or praise.
+**Enriched:** The dominant Hifil sense covering 94 of 114 occurrences: to give thanks to or praise God. Spanish Te-alabaré ('I will praise you') and French célébrer ('to celebrate') reflect the doxological force. This is the verb of the great thanksgiving psalms (Ps 107:1, 118:1, 136:1 — 'Give thanks to the LORD, for he is good') and of David's appointment of Levitical singers (1 Chr 16:7-8). The Hifil causative nuance suggests making known, declaring publicly.
+
+### H5315 / Sense 118599 (94 occ, sense 2 of 6)
+**Label:** life, vitality
+**Lemma gloss:** Soul, life, self, person; the breathing inner being — seat of desire, emotion, and vital existence
+**Description:** Physical life or vital existence that can be endangered, lost, saved, or risked; the life-force as something at stake — diagnostically glossed as 생명/목숨 (Korean), uhai/maisha (Swahili), vida (Spanish), جان/जान (Hindi), and distinguished from 'soul' by contexts of mortal danger, preservation, and life-for-life exchange.
+**Enriched:** Physical life or vital existence (94x) that can be risked, lost, or saved. Korean 생명/목숨 and Swahili uhai/maisha distinguish this from the inner-self sense. Exod 21:23 ('life for life') and Exod 4:19 ('those who sought your life') show nephesh as the stake in mortal danger — something concretely at risk rather than an interior state.
+
+### H5982 / Sense 124902 (94 occ, sense 1 of 2)
+**Label:** pillar, column (architectural)
+**Lemma gloss:** Pillar, column — both architectural supports and the theophanic pillar of cloud/fire guiding Israel
+**Description:** A structural pillar or column of a building, the tabernacle, the temple, or other construction; also used figuratively for the pillars of heaven or earth.
+**Enriched:** An architectural pillar or column supporting a building, the tabernacle, or the temple. Encompasses the acacia-wood pillars of the tabernacle (Exod 26:32, 37), the cedar pillars of Solomon's palace (1 Kgs 7:2), and the load-bearing columns Samson seized (Judg 16:25-29). Also used figuratively for the 'pillars of heaven' and 'pillars of the earth' (Job 9:6; 26:11). The multilingual pattern (spa: las-columnas, fra: les-colonnes, deu: der-Saeulen) consistently yields simple plural nouns across 94 occurrences.
+
+### H8313 / Sense 143997 (94 occ, sense 1 of 4)
+**Label:** burn, set fire to
+**Lemma gloss:** To burn or set fire to; consume with fire, whether actively, passively, or as a resulting state of having been burned
+**Description:** Qal active transitive sense: to burn or set fire to something, consuming it with fire; consistently rendered as Arabic أَحْرَقَ/يُحْرِقُ (Form IV ح-ر-ق), Korean 태우다/불태우다/불사르다 (all transitive), Swahili -choma/-teketeza, Spanish quemar across all finite forms (perfect, imperfect, consecutive, cohortative), infinitives, and infinitive absolute
+**Enriched:** The active transitive sense: to burn, set fire to, or consume something with fire. This is the overwhelmingly dominant use, covering destruction of idols (Deut 7:5), disposal of sacrificial remains (Lev 4:12), and military devastation (Josh 11:9). Arabic أَحْرَقَ (Form IV), Korean 태우다/불태우다, and Swahili kuchoma all render it as a straightforward transitive 'burn.'
+
+### G1515 / Sense 66427 (93 occ, sense 1 of 1)
+**Label:** peace, well-being, harmony
+**Lemma gloss:** Peace — a state of tranquility, wholeness, and right relationship; the Greek counterpart of Hebrew shalom
+**Description:** A state of tranquility, harmony, and well-being -- encompassing interpersonal reconciliation, inner spiritual rest, and the messianic peace of God's kingdom. This is the Greek counterpart of Hebrew 'shalom', used extensively across the NT in greetings, blessings, and theological discourse (Matt 10:13, 10:34; Mark 5:34; Luke 1:79, 2:14, 2:29; John 14:27, 16:33, 20:19; Rom 1:7, 5:1, 8:6, 14:17; Gal 5:22; Eph 2:14-17; Phil 4:7; Col 3:15). All translations converge on one concept: Spanish 'paz/de paz', Hindi 'shanti' (शान्ति/शान्ति का), Arabic 'salamun/salamin' (سَلامٌ/سَلامٍ), Korean 'pyeonghwa' (평화가/평화의), Swahili 'amani/wa amani/ya amani'. S66429 is simply the genitive case ('of peace') of the same noun, not a distinct lexical meaning.
+**Enriched:** A state of wholeness, tranquility, harmony, and right relationship — encompassing interpersonal concord, inner spiritual rest, and the eschatological peace of God's kingdom. As the Septuagint's standard rendering of Hebrew shalom, eirene carries covenantal weight beyond mere absence of war. Key passages include Jesus' farewell gift of peace (John 14:27), the risen Christ's greeting (John 20:19), Paul's declaration that believers have peace with God through Christ (Rom 5:1), and peace as a fruit of the Spirit (Gal 5:22). Spanish 'paz,' French 'paix,' and German 'Friede/Frieden' all reflect this comprehensive range.
+
+### G3614 / Sense 73019 (93 occ, sense 1 of 2)
+**Label:** house, dwelling (physical structure)
+**Lemma gloss:** House or dwelling as a physical structure; by metonymy, a household or the people living in a house.
+**Description:** A physical house or building used as a dwelling, including singular and plural forms across all cases. The dominant sense covering the vast majority of occurrences: eng 'house/houses/of houses,' spa 'casa/casas/de casas,' hin 'ghar,' arb 'bayt/buyut,' kor 'jip/jipdeul,' swa 'nyumba.' S73021 (genitive plural 'of houses') is simply the plural genitive of this physical-structure sense, referring to multiple buildings as in the warning against those who 'devour widows' houses' (Mark 12:40 par.).
+**Enriched:** A physical house, building, or dwelling — the dominant sense covering the vast majority of occurrences. Jesus teaches about a house built on rock versus sand (Matt 7:24-26), and his followers gather in houses for meals and instruction (Matt 5:15; Mark 2:15). Spanish casa, French maison, and German Haus all render this straightforwardly as a physical structure.
+
+### G4228 / Sense 75502 (93 occ, sense 1 of 1)
+**Label:** foot
+**Lemma gloss:** Foot — the lower extremity of the body, frequently used in contexts of submission, authority, ritual purity, and travel
+**Description:** The lower extremity of the human body used for standing and walking, frequently appearing in contexts of submission (falling at someone's feet), authority (enemies as footstool under feet), and ritual (washing of feet, shaking dust from feet). Consistently rendered: Spanish 'pie/pies', Hindi 'pair' (पैर/पैरों), Arabic 'qadamayhi/rijl' (قَدَمَيْهِ/رِجْل), Korean 'bal' (발), Swahili 'mguu/miguu/nyayo'. The three clusters are purely inflectional variants covering singular, plural, and genitive forms of the identical body-part referent.
+**Enriched:** The physical foot, the lower extremity used for standing and walking. In the New Testament pous carries heavy symbolic freight: falling at someone's feet signals reverence or supplication (Mark 5:22; Rev 1:17), washing feet expresses humble service (John 13:5-14), shaking dust from feet pronounces prophetic judgment (Matt 10:14), and enemies placed 'under the feet' denotes total subjugation (1 Cor 15:25-27, drawing on Ps 110:1). Spanish 'pies,' French 'pied,' and German 'Fuss' all denote the same body part, though the cultural and theological resonances require context to appreciate.
+
+### G5315 / Sense 78347 (93 occ, sense 1 of 1)
+**Label:** eat, consume food
+**Lemma gloss:** Eat, consume food — the aorist form of the verb for eating, covering literal meals, figurative consumption, and eschatological feasting
+**Description:** To eat or consume food, used of literal eating in all grammatical forms including indicative, subjunctive, imperative, infinitive, future, and participial constructions.
+**Enriched:** To eat or consume food, used of literal eating across all grammatical forms — indicative, subjunctive, imperative, infinitive, future, and participial. The 93 occurrences span ordinary meals, miraculous feedings (Matt 14:16, 20; Mark 6:37), disputes over lawful food (Matt 12:4; Mark 7:3-5), fasting and its breaking, and eschatological banqueting (Luke 22:30; Rev 2:7). Spanish 'comer,' French 'manger,' and German 'essen' all render the action simply, though in the Gospels the act of eating frequently becomes a locus of theological controversy — who eats, with whom, and what.
+
+### H0256 / Sense 80991 (93 occ, sense 1 of 1)
+**Label:** Ahab (proper name)
+**Lemma gloss:** Ahab — personal name meaning 'father's brother,' chiefly the infamous king of Israel, also a false prophet in Babylon
+**Description:** The proper name Ahab (אַחְאָב, 'father's brother'), used of Ahab king of Israel and Ahab son of Kolaiah, with all grammatical variants (bare, prepositional, conjunctive) representing inflectional variation of a single name.
+**Enriched:** The proper name Ahav ('father's brother'), used primarily for Ahab son of Omri, king of Israel (r. ca. 874-853 BCE), whose politically powerful but spiritually ruinous reign dominates 1 Kings 16:28-22:40 and echoes through 2 Kings and 2 Chronicles. His promotion of Baal worship through Jezebel provoked the great contest on Mount Carmel (1 Kgs 18). A second bearer is Ahab son of Kolaiah, a false prophet in Babylon cursed by Jeremiah (Jer 29:21-22). Spanish 'Acab,' French 'Ahav,' and German 'Ahab' all derive from the Septuagint form Achaab.
+
+### H2708 / Sense 98798 (93 occ, sense 1 of 3)
+**Label:** statute or ordinance
+**Lemma gloss:** A prescribed statute or ordinance; a binding regulation from God or a ruler, often permanent and ritual in character.
+**Description:** A specific law, regulation, or decree prescribed by God or a ruler, binding on the people as a permanent obligation.
+**Enriched:** The core sense: a specific statute or ordinance prescribed by God, binding as a permanent obligation on Israel. This covers the ritual statutes of Passover (Exod 12:14, 43), priestly regulations (Exod 27:21; 28:43), the Day of Atonement (Lev 16:29, 34), and the recurring phrase chuqqat olam ('an everlasting statute'). Also includes God's statutes given to the patriarchs (Gen 26:5) and the statutes Moses teaches Israel. Spanish 'estatuto-de,' French 'statut-de,' and German 'Satzung-von' reflect this juridical-ritual core.
+
+### H4639 / Sense 113225 (93 occ, sense 1 of 6)
+**Label:** craftsmanship, workmanship
+**Lemma gloss:** Deed, work, craftsmanship; spanning artisan handiwork, productive labor, human conduct, divine acts, and agricultural yield
+**Description:** The skill, technique, or product of artisan labor — handiwork, manufacture, the way something is made (Arabic صَنْعَة, Korean 솜씨/작품, Hindi कारीगरी/बनावट).
+**Enriched:** Craftsmanship or workmanship — the skill, technique, or manufactured product of artisan labor. Dominant in the Exodus tabernacle instructions (93x): the curtains are 'the work of a skillful workman' (Exod 26:1, 31), the altar grating is 'network of bronze' (Exod 27:4), and priestly garments require 'the work of an embroiderer' (Exod 28:6). Arabic san'ah and Korean sol-ssi/jag-pum confirm the artisanal, product-focused semantics. The phrase ma'aseh yadayim 'work of hands' often denotes idols in prophetic polemic (Isa 2:8; Jer 1:16).
+
+### H5656 / Sense 121820 (93 occ, sense 1 of 4)
+**Label:** cultic service of tabernacle
+**Lemma gloss:** Labor, service, or ministry -- especially cultic service of the tabernacle/temple, but also general duty, manual work, and oppressive bondage.
+**Description:** Service performed in connection with the tabernacle, temple, or sanctuary worship, often in construct with a following genitive specifying the sacred object or place (Arabic خِدْمَة, Swahili utumishi/huduma, Korean 봉사/섬김).
+**Enriched:** Cultic service of the tabernacle or temple (~93x) -- by far the dominant sense. This covers the Levitical duties of transporting, assembling, and maintaining the sanctuary (Num 3:7-8; 4:4-33), the service of worship and sacrifice (1 Chr 28:13-14), and temple maintenance (2 Chr 34:13). French service-de and German Dienst-von both render it as ministerial duty tied to the sacred precinct. The construct chain 'avodat ha-mishkan' or 'avodat ohel mo'ed' is the characteristic formula.
+
+### G1321 / Sense 65493 (92 occ, sense 1 of 2)
+**Label:** teach, instruct actively
+**Lemma gloss:** To teach or instruct; in the passive, to be taught or receive instruction from another.
+**Description:** To impart knowledge, doctrine, or skill to others through verbal instruction, used of Jesus teaching crowds, apostles teaching in churches, and general didactic activity.
+**Enriched:** Active teaching and instruction — the deliberate impartation of knowledge, doctrine, or practical wisdom to others. This dominant sense covers Jesus' public ministry (Matt 4:23; 7:29), apostolic teaching in churches, and general didactic activity. All major translation languages render it consistently: Spanish enseñando, French enseigner, German lehren. The emphasis falls on the teacher's authoritative act of communicating truth.
+

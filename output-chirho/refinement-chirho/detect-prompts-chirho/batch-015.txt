@@ -1,0 +1,291 @@
+# Sense Refinement Detection — Batch 015
+
+You are a biblical lexicographer reviewing sense entries for a Hebrew/Aramaic/Greek lexicon.
+Each entry below is a single "sense" that was produced by clustering translation signatures 
+and then merging with an LLM. Some senses may have been OVER-LUMPED — they contain genuinely 
+distinct meanings that should be separate senses.
+
+## Your Task
+
+For each sense, determine if it should be SPLIT into multiple senses. Look for:
+- Literal vs. figurative/metaphorical uses lumped together
+- Concrete vs. abstract meanings combined
+- Multiple distinct referents (e.g., "father" = biological parent + patron/advisor + originator)
+- Physical vs. spiritual/theological uses merged
+- Different syntactic frames producing different meanings
+
+## Output Format
+
+Return a JSON array. For senses that need NO splitting, omit them entirely.
+For senses that SHOULD be split, include an entry like:
+
+```json
+[
+  {
+    "senseIdChirho": 79287,
+    "lemmaIdChirho": "H0001",
+    "currentLabelChirho": "father, immediate male parent",
+    "splitProposalChirho": [
+      {
+        "newLabelChirho": "biological/legal father",
+        "criteriaChirho": "Direct parent-child relationship, possessive constructions with specific person"
+      },
+      {
+        "newLabelChirho": "metaphorical father (patron, advisor, protector)",
+        "criteriaChirho": "Title of respect for prophets, advisors, or authority figures; 'father to Pharaoh' type usage"
+      }
+    ],
+    "confidenceChirho": "high",
+    "reasoningChirho": "Description explicitly mentions 'title of respect or metaphorical originator' alongside biological father"
+  }
+]
+```
+
+Only propose splits where you have MEDIUM or HIGH confidence. Do NOT split function words (articles, 
+prepositions, particles, conjunctions) unless there is a genuinely distinct semantic sense (not just 
+syntactic variation). Proper nouns generally should NOT be split.
+
+If NO senses in this batch need splitting, return an empty array: []
+
+## Senses to Review
+
+### G1343 / Sense 65648 (92 occ, sense 1 of 1)
+**Label:** (none)
+**Lemma gloss:** Righteousness — moral uprightness, covenant faithfulness, and the right standing before God that defines the just life
+**Description:** (none)
+**Enriched:** Righteousness in its full biblical range: moral uprightness conforming to God's standards, covenant faithfulness, and — especially in Paul — the saving action by which God declares sinners just through faith in Christ (Rom 3:21-22; Phil 3:9). In the Sermon on the Mount it describes the ethical life God requires and rewards (Matt 5:6, 10, 20; 6:1). In Pauline theology it becomes the pivotal concept linking divine character, human justification, and ethical transformation. Spanish 'justicia,' French 'justice,' and German 'Gerechtigkeit' encompass both the judicial and moral dimensions, reflecting the same breadth as the Greek.
+
+### G1722 / Sense 67117 (92 occ, sense 4 of 5)
+**Label:** instrumental: by means of
+**Lemma gloss:** In, within, among, by means of; the primary Greek locative preposition extending to instrumental, associative, and distributive uses.
+**Description:** Marker of the instrument, means, or agency by which an action is performed or a result is achieved.
+**Enriched:** The instrumental sense: 'by means of, by, through,' marking the instrument, agency, or means by which something is accomplished. 'By Beelzebul he casts out demons' (Matt 12:24), 'by the Spirit of God' (Matt 12:28), 'by what measure you measure' (Matt 7:2). Spanish reveals this with 'por' (by/through), distinctly different from locative 'en.' The Pharisees' accusation in Matt 12:24 and Jesus' counter in 12:27–28 use en instrumentally in rapid succession, making the agency reading unmistakable.
+
+### H0413 / Sense 82273 (92 occ, sense 2 of 7)
+**Label:** into, entering within
+**Lemma gloss:** to, toward; into; upon, on; against; for, concerning; with, among
+**Description:** Movement into an enclosed space or interior, indicating penetration or entry rather than mere direction.
+**Enriched:** Movement into an enclosed space or interior — 'into' rather than merely 'toward.' The distinction is subtle but real: Deuteronomy 31:7 sends Joshua 'into' the land God promised, not merely toward it. French 'vers' and German 'in-zu' sometimes distinguish this penetrative sense from mere directionality. The spatial endpoint is not a surface but an interior.
+
+### H1116 / Sense 86964 (92 occ, sense 1 of 2)
+**Label:** cultic high place, shrine
+**Lemma gloss:** High place; a raised site for worship (often illicit cultic shrines) or a geographic elevation, ridge, or mountain height.
+**Description:** A raised open-air worship site, often associated with Canaanite or illicit Israelite ritual practice, frequently condemned by the prophets and deuteronomistic historians.
+**Enriched:** A raised open-air worship site, typically associated with illicit or Canaanite-influenced ritual. Condemned throughout Kings and the prophets (1 Kgs 12:31; 2 Kgs 23:5), these shrines appear in every language as elevated cultic sites: Spanish 'lugares altos,' French 'hauts lieux,' German 'Hoehen.' The 92 occurrences span condemnation formulas, reform narratives, and prophetic warnings.
+
+### H1616 / Sense 90637 (92 occ, sense 1 of 1)
+**Label:** sojourner, resident alien
+**Lemma gloss:** A sojourner or resident alien dwelling in a land without inherited rights, often under divine legal protection
+**Description:** A person residing in a land not their own, without full native rights; a stranger or foreigner dwelling among the Israelites, often protected by specific legal provisions in the Torah.
+**Enriched:** A non-native resident dwelling among the Israelites without ancestral land inheritance, dependent on the community's hospitality and subject to specific Torah protections. Abraham at Hebron (Gen 23:4) and Moses in Midian (Exod 2:22) exemplify this status. The multilingual glosses — Spanish 'extranjero,' French 'étranger-résident,' German 'Fremdling' — all converge on the idea of a protected outsider living within but not fully belonging to the host society.
+
+### H1697 / Sense 91136 (92 occ, sense 2 of 7)
+**Label:** deeds, acts, chronicles
+**Lemma gloss:** Word, speech, matter, thing, event; the Hebrew noun bridging spoken utterance and objective reality
+**Description:** Recorded deeds, historical acts, or annals of a person or nation, as in the formulaic 'the acts/chronicles of king X' (Arabic umur/akhbar, Korean haengjeok/yeondaegi, Swahili mambo ya).
+**Enriched:** Deeds, acts, or chronicles — the plural devarim as a record of what someone did, not just said. Arabic أُمُور/أَخْبَار and Korean 행적/연대기 show the shift from speech to action. Found in the recurring formula 'the rest of the acts of [king]' (1 Kgs 11:41), and in legal contexts where 'matters' requiring judgment include concrete disputes (Deut 17:8).
+
+### H3754 / Sense 107462 (92 occ, sense 1 of 1)
+**Label:** vineyard, cultivated grape plot
+**Lemma gloss:** A vineyard; a cultivated plot of land where grapevines are planted and tended
+**Description:** A vineyard — a cultivated plot of land where grapevines are grown, whether referred to individually or collectively, and regardless of possessive or prepositional inflection.
+**Enriched:** A cultivated plot for growing grapevines, central to Israelite agriculture, economy, and religious symbolism. From Noah's first planting (Gen 9:20) through the laws of Deuteronomy to the prophetic imagery of Isaiah 5, the vineyard serves both as literal farmland and as a potent metaphor for God's people. Translations across Spanish ('viña'), French ('vigne'), and German ('Weinberg') uniformly reflect this concrete agricultural sense.
+
+### H7993 / Sense 141146 (92 occ, sense 1 of 5)
+**Label:** to throw, cast (Hifil)
+**Lemma gloss:** To throw, cast, hurl, or fling (Hifil); to be thrown or cast (Hofal); figuratively, to cast away or reject.
+**Description:** The core Hifil meaning of שׁלך: physically throwing, casting, or hurling an object or person — into water, a pit, fire, onto the ground, etc. Arabic أَلْقَى/طَرَحَ, Korean 던지다, Spanish arrojar/lanzar, Swahili -tupa, Hindi फेंकना/डालना.
+**Enriched:** The core Hifil sense: to throw, cast, or hurl an object or person with force toward a specific location — into water, a pit, fire, onto the ground, or against a surface. This is the dominant cluster at 92 occurrences, covering Joseph thrown into a pit (Gen 37:24), Moses' staff cast to the ground (Exod 4:3; 7:9-10), the Egyptian army hurled into the sea (Exod 15:1), Jezebel thrown from a window (2 Kgs 9:33), and fire-and-hail cast upon the earth in Revelation's Old Testament background passages. Arabic alqa/taraha, Spanish arrojar/lanzar, Korean 던지다, and Swahili -tupa all select high-energy throwing verbs, confirming the forceful nature of the action.
+
+### G1849 / Sense 67432 (91 occ, sense 1 of 4)
+**Label:** authority, power
+**Lemma gloss:** Authority, power, right; the capacity to act with legitimate force, including governing powers as entities, jurisdictional domains, and granted privileges.
+**Description:** Abstract authority or power exercised over persons or things, the ability or capability to act with force or control.
+**Enriched:** Abstract authority or power — the capacity, right, or freedom to act with legitimate force and control. This overwhelmingly dominant sense (91 of 102 occurrences) spans from Jesus' teaching authority (Matt 7:29), to his power to forgive sins (Matt 9:6), to the authority delegated to the disciples (Matt 10:1), to Pilate's claim of judicial authority (John 19:10). Spanish autoridad, French autorité, and German Vollmacht converge consistently, distinguishing this from brute force (dynamis/dunamis). The word emphasizes the rightful, sanctioned nature of the power — whether divine, delegated, or political.
+
+### G2087 / Sense 68265 (91 occ, sense 1 of 3)
+**Label:** other, another
+**Lemma gloss:** Other, another, different; denoting an additional entity, qualitative distinction, or the next in temporal sequence.
+**Description:** Denotes an additional or alternative entity of the same kind, referring to one or more distinct from those already mentioned or implied.
+**Enriched:** The broad, unmarked sense: another or an additional entity of the same general kind. This is the default reading in 91 of 98 occurrences. In Matt 6:24 it contrasts two masters; in Matt 8:21 'another disciple' steps forward. The multilingual glosses — Spanish 'otro,' French 'autre,' German 'anderer' — all map cleanly to this numerically-additive meaning without implying qualitative difference.
+
+### G2281 / Sense 68963 (91 occ, sense 1 of 1)
+**Label:** sea, large body of water
+**Lemma gloss:** Sea; a large body of water, whether a specific named sea or the sea as a cosmic entity
+**Description:** A large body of water, whether a specific named sea (the Sea of Galilee, the Red Sea, the Mediterranean) or the sea in general as a cosmic or geographical entity. All 91 NT occurrences share this single core meaning; the two clusters differ only in grammatical case, with S68964 being genitive constructions ('of the sea'). Multilingual evidence is uniform: spa 'mar / del mar', hin 'samudra / samudra ki', arb 'al-bahr', kor 'bada / bada-ui', swa 'bahari / ya bahari'. The genitive uses describe things belonging to or located in the sea (creatures of the sea, sand of the sea) but denote the same referent.
+**Enriched:** Any large body of water, whether a specific named sea such as the Sea of Galilee (Matt 4:18) or the Red Sea (Heb 11:29), or the sea as a general geographic and cosmic entity. In Revelation the sea carries eschatological symbolism as a realm of chaos that will pass away (Rev 21:1). The uniform rendering across English ('sea'), Spanish ('mar'), French ('mer'), and German ('Meer') confirms a single cohesive sense across all New Testament occurrences.
+
+### G2398 / Sense 69391 (91 occ, sense 1 of 4)
+**Label:** one's own, belonging to oneself
+**Lemma gloss:** One's own, personal, private; used adverbially for 'privately/apart' and substantively for 'one's own people'
+**Description:** Possessive adjective indicating personal ownership or belonging, used attributively or predicatively with various nouns (one's own land, body, master, etc.).
+**Enriched:** The standard possessive adjective meaning 'one's own, belonging to oneself,' used attributively or predicatively with various nouns. Jesus returns to 'his own city' (Matt 9:1), the master entrusts servants with 'his own possessions' (Matt 25:14-15), and Paul speaks of 'one's own body' and 'one's own husband/wife' (1 Cor 7:2-4). Spanish propio/propia, French propre, and German eigen all render this core possessive meaning directly.
+
+### H3742 / Sense 107437 (91 occ, sense 1 of 1)
+**Label:** cherub, angelic guardian being
+**Lemma gloss:** Cherub; a supernatural winged being guarding sacred space and bearing the divine presence
+**Description:** A supernatural winged being associated with the divine presence, serving as guardians of sacred space (Eden, the Ark of the Covenant, the Temple) and bearers of God's throne-chariot in prophetic visions.
+**Enriched:** A supernatural winged being stationed at the boundary between the divine and earthly realms, serving as guardian of sacred space and bearer of God's throne-presence. They appear guarding Eden (Gen 3:24), atop the Ark (Exod 25:18–20), throughout Solomon's Temple (1 Kgs 6:23–28), and as the living creatures of Ezekiel's chariot-throne (Ezek 10). The consistent transliteration across languages — Spanish 'querubines,' German 'Cherubim' — signals a being without mundane parallel.
+
+### H7657 / Sense 138063 (91 occ, sense 1 of 1)
+**Label:** seventy (cardinal numeral)
+**Lemma gloss:** Seventy; the cardinal numeral used for exact counts and as a round number of completeness
+**Description:** The Hebrew cardinal numeral (שִׁבְעִים) meaning 'seventy,' used across 91 occurrences for counts of people, years, days, and other quantities (e.g., the seventy elders, Daniel's seventy weeks, seventy years of exile). The two clusters differ only in the presence of the preposition beth ('with/in seventy,' 1x in Judges 9:2) versus the bare or conjoined form ('seventy / and seventy,' 90x), which is a grammatical surface variation, not a semantic distinction. Evidence: eng 'seventy / with seventy,' spa 'setenta / Con setenta,' arb 'سَبْعُونَ / بِسَبْعِينَ,' kor '칠십,' swa 'sabini / Watu sabini,' hin 'सत्तर / में सत्तर.'
+**Enriched:** The cardinal number seventy, employed both for precise enumeration and as a conventionally round figure conveying completeness or totality. The seventy elders at Sinai (Exod 24:1), the seventy years of Babylonian exile (Jer 25:11), and Daniel's seventy weeks (Dan 9:24) all illustrate its dual function as literal count and symbolic fullness. Multilingual glosses — 'setenta,' 'soixante-dix,' 'siebzig' — converge on a single, unambiguous numerical sense.
+
+### H7760a / Sense 138999 (91 occ, sense 2 of 12)
+**Label:** make into, turn into
+**Lemma gloss:** put, place, set; make into; appoint; set heart/attention upon; give, bestow
+**Description:** Qal: to make or turn someone or something into something else, a transformative sense where the subject causes a change of state or identity.
+**Enriched:** This transformative sense (91 occurrences) shows the verb meaning 'make into' or 'turn into,' as when God promises to make Abraham's descendants like the dust of the earth (Genesis 13:16) or sand grains beyond counting (Genesis 32:12). Arabic, Korean, and Swahili translations often shift to creation or transformation verbs here, revealing a distinct semantic cluster where the subject causes a change of identity or state rather than mere location.
+
+### G1411 / Sense 65953 (90 occ, sense 1 of 6)
+**Label:** power, might, force
+**Lemma gloss:** Power, might, miraculous deed, cosmic force, ability, or meaning — from God's inherent strength to specific miracles, spiritual beings, and the force of an utterance
+**Description:** Inherent power, might, or strength, whether of God, the Spirit, or human agents — the abstract capacity or force itself (singular).
+**Enriched:** Inherent power, might, or strength (90x): the abstract capacity or force itself, whether divine, spiritual, or human. Spanish poder, French puissance, and German Kraft all converge on this core meaning. Covers the power of God (Matt 22:29 'you do not know the power of God'), the power of the Spirit (Luke 1:35; 4:14; Acts 1:8), eschatological power (Matt 24:30 'coming with power and great glory'), and the power at work in believers (Eph 1:19; 3:20). Mark 5:30 captures the concreteness: Jesus perceives that 'power had gone out from him' — dynamis as almost a tangible substance.
+
+### G4413 / Sense 76059 (90 occ, sense 1 of 4)
+**Label:** first in order or time
+**Lemma gloss:** First in sequence, time, or rank; chief or foremost person; by extension, best in quality or first in logical priority.
+**Description:** Ordinal adjective indicating first position in a sequence, series, or temporal order (first day, first covenant, first commandment).
+**Enriched:** The dominant usage denoting first position in a sequence or temporal order — first day, first covenant, first commandment. Cross-linguistically stable: English 'first,' Spanish 'primero/primer,' French 'premier,' German 'erster' all converge on simple ordinal meaning. This covers chronological priority (Matt 26:17, the first day of Unleavened Bread), ranking in lists (Matt 10:2, 'first, Simon'), and the rhetorical 'first and greatest commandment' (Matt 22:38).
+
+### H1847 / Sense 91979 (90 occ, sense 1 of 2)
+**Label:** knowledge, discernment
+**Lemma gloss:** Knowledge, discernment; the capacity to perceive, understand, or recognize — occasionally as verbal infinitive 'knowing'
+**Description:** Abstract noun denoting knowledge, understanding, or discernment, used in all nominal forms including construct state, with pronominal suffixes, prepositions, conjunctions, and the article.
+**Enriched:** Abstract knowledge or discernment — the intellectual and moral capacity to perceive, understand, and evaluate. Covers the vast majority of occurrences across all grammatical forms (absolute, construct, with suffixes and prepositions). Spanish 'conocimiento,' French 'connaissance,' and German 'Erkenntnis' uniformly confirm this as a cognitive-faculty noun. Key texts include Prov 2:10 ('when knowledge enters your heart'), Isa 53:11 ('by his knowledge'), and the technical legal phrase בִּבְלִי דַעַת meaning 'without knowledge, unintentionally' (Deut 4:42; Josh 20:3).
+
+### H2088 / Sense 94106 (90 occ, sense 2 of 4)
+**Label:** from this, from here (source)
+**Lemma gloss:** This, this one (demonstrative pronoun); with prepositions: from here, in this, like this/thus.
+**Description:** With prepositional prefix מִן indicating spatial or figurative origin: 'from here,' 'from this side,' 'from this one,' often in directional pairs מִזֶּה...וּמִזֶּה 'on this side and on that side.'
+**Enriched:** With the preposition min: miz-zeh meaning 'from this,' 'from here,' 'from this side' — approximately 90 occurrences. This sense is especially prominent in the directional pair miz-zeh...u-miz-zeh ('on this side and on that side'), used to describe spatial flanking positions (Exod 17:12; Josh 8:22). In Gen 37:17 Joseph is told 'they have departed from here'; in Gen 15:4 God promises an heir who will come 'from your own body' (literally 'from this one'). Spanish de aqui, French d'ici, German von hier, and Korean 여기서 all use spatial-origin vocabulary rather than demonstrative forms, confirming that the prepositional fusion has produced a semantically distinct adverbial function.
+
+### H4390 / Sense 111548 (90 occ, sense 1 of 11)
+**Label:** fill (causative)
+**Lemma gloss:** be full, fill; fulfill, complete; satisfy; follow fully; set/inlay
+**Description:** Piel causative: to fill something or someone, to make full, actively causing fullness (Arabic: مَلَأَ/يَمْلَأُ, Korean: 채우다, Swahili: -jaza).
+**Enriched:** The causative Piel makes something full—actively filling a container, space, or entity with contents. Appearing 90 times, this matches Arabic مَلَأَ/يَمْلَأُ, Korean 채우다, and Swahili -jaza. God commands humanity to 'fill the earth' (Gen 1:28, 9:1), Abraham's servant finds Rebekah who 'filled her jar' at the well (Gen 21:19, 24:16). Moses fills basins with blood (Exod 24:6), priests' hands are 'filled' with offerings at ordination. The sense covers both physical filling (liquids, spaces) and metaphorical filling (with glory, with the Spirit).
+
+### H7458 / Sense 136468 (90 occ, sense 1 of 2)
+**Label:** famine (widespread food shortage)
+**Lemma gloss:** Famine or hunger; a severe widespread food shortage affecting a land, or the personal physical sensation of being hungry.
+**Description:** A prolonged, severe shortage of food affecting a land or region, often referring to specific historical famines in the biblical narrative.
+**Enriched:** A prolonged, severe food shortage afflicting a land or region, often a specific historical famine driving the biblical narrative. The patriarchal famines of Genesis (12:10; 26:1; 41:27-57), the famine of David's reign (2 Sam 21:1), and the siege famines of Kings and Jeremiah all use ra'av this way. German 'Hungersnot' and Spanish 'el hambre' (with article, as a known calamity) capture this collective, national dimension.
+
+### H8057 / Sense 141810 (90 occ, sense 1 of 2)
+**Label:** joy, gladness, delight
+**Lemma gloss:** Joy, gladness, or mirth; ranging from sacred celebration before God to pleasure evaluated as a human pursuit.
+**Description:** The feeling or state of joy, gladness, and delight — the predominant sense of simkhah (שִׂמְחָה), covering rejoicing before God, happiness at good fortune, festive gladness, sacred celebration, and general emotional well-being, whether described absolutely, with prepositions, pronominal suffixes, or in construct chains indicating the source or occasion of that joy.
+**Enriched:** The predominant sense of joy, gladness, and delight — encompassing rejoicing before God, festive celebration, happiness at good fortune, and sacred worship. Spanish alegría and German Freude consistently render this broad emotional and ceremonial sense. The people shout with great joy at Solomon's anointing (1 Kgs 1:40), and Israel is commanded to serve the Lord 'with gladness' (Deut 28:47; Ps 100:2).
+
+### G0302 / Sense 61973 (89 occ, sense 1 of 5)
+**Label:** indefinite generalizer
+**Lemma gloss:** Modal particle indicating contingency, indefiniteness, or hypothetical conditions; combines with relative pronouns, conjunctions, and verb moods.
+**Description:** Particle combined with relative pronouns or adverbs to form indefinite expressions: whoever (ὃς ἄν), whatever (ὃ ἄν), wherever (ὅπου ἄν), rendering the clause universally applicable rather than specific.
+**Enriched:** Indefinite generalizer — the largest cluster at 89 occurrences, where an combines with relative pronouns and adverbs to form universal indefinite expressions: hos an ('whoever'), ho an ('whatever'), hopou an ('wherever'). In Matt 16:25 'whoever (hos an) wants to save his life will lose it,' the particle transforms a specific 'who' into a universal 'whoever.' Korean -든지 and Spanish -quiera (quienquiera, dondequiera) both deploy dedicated indefiniteness morphology, while Arabic man ('whoever') with the jussive achieves the same universalizing effect. This is the particle's most frequent and most recognizable function in New Testament Greek.
+
+### G5043 / Sense 77447 (89 occ, sense 1 of 2)
+**Label:** child, offspring
+**Lemma gloss:** Child or offspring, whether biological, spiritual, or as a warm vocative address to a younger person.
+**Description:** A child or offspring, whether biological or spiritual/metaphorical, used referentially in all grammatical cases and numbers.
+**Enriched:** The primary sense of child or offspring, covering biological descendants, spiritual children, and metaphorical progeny. Used referentially across all cases and numbers. Spanish hijos, French enfant, and German Kinder uniformly render this sense. Jesus declares that God can raise up 'children' (tekna) to Abraham from stones (Matt 3:9), and Paul speaks of believers as 'children of promise' (Gal 4:28).
+
+### G5100 / Sense 77709 (89 occ, sense 4 of 5)
+**Label:** something, anything (thing)
+**Lemma gloss:** Indefinite pronoun: someone, anyone, something, anything; as adjective, 'a certain, some'; in plural, 'some, certain ones.'
+**Description:** Substantive indefinite pronoun referring to an unspecified thing: 'something, anything' — Arabic شَيْئًا, Korean 무엇/어떤 것, Swahili kitu/chochote.
+**Enriched:** Substantive indefinite pronoun referring to an unspecified thing: 'something, anything' — 89 occurrences where the neuter ti means 'some thing' rather than 'some person.' In Matt 5:23 'if you... remember that your brother has something against you,' and Mark 8:23 Jesus asks the blind man 'do you see anything?' Spanish algo, German etwas, Korean 무엇/어떤 것, and Arabic shay'an all select dedicated thing-referring indefinites distinct from person-referring forms. The grammatical ambiguity of Greek tis (where only context distinguishes 'someone' from 'something') is resolved differently in each target language, making this cross-linguistically one of the clearest sense boundaries.
+
+### H0622 / Sense 83418 (89 occ, sense 1 of 8)
+**Label:** gather, collect (Qal active)
+**Lemma gloss:** To gather, collect, assemble; by extension to remove, take away; euphemism for dying ('gathered to one's people')
+**Description:** To actively gather or collect people, crops, or things together, the core Qal transitive sense of asap confirmed by Arabic jamaʿa and Korean 모았다/모으다.
+**Enriched:** The basic Qal transitive action of collecting people, animals, or harvest into one place. Arabic jamaʿa and Korean 모으다 both confirm the core 'gather together' meaning. Dominates narrative contexts like gathering elders (Exod 3:16) or grain (Gen 6:21).
+
+### H3667a / Sense 106811 (89 occ, sense 1 of 2)
+**Label:** Canaan (proper noun: land/person)
+**Lemma gloss:** Canaan -- the grandson of Noah and eponymous ancestor of the Canaanites; the promised land west of the Jordan; by metonymy, a merchant.
+**Description:** The proper noun Canaan, referring either to the grandson of Noah (son of Ham) or to the geographic territory of the land of Canaan promised to Israel; consistently transliterated across languages as Canaán/Kenaan (Spa), कनान (Hin), كَنْعَان (Arb), 가나안 (Kor), Kanaani (Swa). Both bare and conjunction-prefixed forms carry identical referential semantics pointing to either the ancestor or the land named after him.
+**Enriched:** The proper noun Canaan, denoting either the person (grandson of Noah, son of Ham, cursed in Gen 9:25-27, ancestor of the Canaanite nations listed in Gen 10:15-18) or the geographic territory west of the Jordan settled by Israel. Cross-linguistically transliterated with near-uniformity -- Canaan (Eng/Fra), Canaan/Kenaan (Spa), Kanaan (Deu) -- confirming its stable proper-noun status across all 89 occurrences.
+
+### H3671 / Sense 106836 (89 occ, sense 1 of 3)
+**Label:** wing of bird or angel
+**Lemma gloss:** Wing of a bird, angel, or cherub; also the skirt or hem of a garment, or the edge/extremity of a land.
+**Description:** Physical wing of a bird, cherub, seraph, or other winged creature, including attributive use (winged) and figurative use of God's protective wings.
+**Enriched:** The primary sense is the physical wing of a bird, cherub, seraph, or other winged being, appearing in the vast majority of occurrences. This includes the eagle's wings of Exod 19:4 and Deut 32:11, the seraphim's six wings of Isa 6:2, and the cherubim's wings overshadowing the ark (1 Kgs 6:24; 8:7). Crucially it extends to the metaphor of God's protective wings (Ps 17:8; 36:7; 91:4), rendered across languages as spa 'alas,' fra 'ailes,' deu 'Fluegel'—all preserving the avian image.
+
+### H3789 / Sense 107844 (89 occ, sense 2 of 7)
+**Label:** Qal active: write, compose
+**Lemma gloss:** To write, inscribe, record, compose; in passive: written, recorded; as substantive: scribe, writer
+**Description:** Qal stem active sense of writing, composing, or recording text onto a surface (tablets, scrolls, letters, books); includes all Qal finite forms (perfect, imperfect, imperative, consecutive), infinitives, infinitive absolute, and conjunctive forms. Arabic consistently uses kataba (كَتَبَ), Korean uses both girokada (기록하다, record/chronicle) and sseuda (쓰다, write), Swahili uses -andika. This covers the entire range of active writing regardless of person, number, gender, or tense inflection.
+**Enriched:** The Qal active finite forms — perfect, imperfect, imperative, and waw-consecutive — denote the concrete act of writing, composing, or recording text onto a physical surface. From Moses writing the Lord's words (Exod 24:4) to Jeremiah dictating to Baruch (Jer 36:18), these forms span divine command, royal correspondence, and prophetic documentation. German schrieb and Spanish escribió uniformly confirm the active composition sense.
+
+### G2033 / Sense 67997 (88 occ, sense 1 of 1)
+**Label:** seven
+**Lemma gloss:** Seven; the cardinal numeral, frequently carrying symbolic significance in biblical usage
+**Description:** seven, Seven (88 occurrences across 2 original clusters)
+**Enriched:** The cardinal number seven, used across the New Testament for literal counting and as a symbol of divine completeness and totality. It appears in miracle narratives such as the seven loaves (Matt 15:36) and dominates Revelation's literary structure with seven churches, seals, trumpets, and bowls. The consistent cross-linguistic rendering — Spanish 'siete,' French 'sept,' German 'sieben' — confirms a single unified numerical sense across all 88 occurrences.
+
+### H0776 / Sense 84324 (88 occ, sense 2 of 4)
+**Label:** ground, soil, surface
+**Lemma gloss:** earth, land, ground; the world, a nation's territory, or physical soil
+**Description:** The physical ground or soil beneath one's feet — the surface to which one falls, bows, or casts something down; consistently glossed as chini (Swahili = down/below), ardhini (Swahili = on the ground), भूमि (Hindi bhumi = ground/soil), أَرْضًا with tanwin (Arabic indefinite = a piece of ground), and 땅에/땅으로 (Korean directional = to/onto the ground).
+**Enriched:** The earth as created order, the whole world in the 'heaven and earth' merism (Gen 1:1). Multilingual glosses shift to cosmic vocabulary—Swahili dunia, Hindi पृथ्वी, Arabic الْأَرْضِ with universal scope—distinguishing this from the territorial sense.
+
+### H2931 / Sense 100335 (88 occ, sense 1 of 1)
+**Label:** ritually or morally unclean
+**Lemma gloss:** Unclean; ritually impure or morally defiled, the opposite of tahor (clean/pure)
+**Description:** Describes persons, animals, objects, or conditions that are ceremonially impure according to Levitical law, or metaphorically defiled in a moral or spiritual sense.
+**Enriched:** Ceremonially impure or morally defiled, describing persons, animals, objects, or conditions that fall outside the bounds of ritual purity as defined by Torah legislation. Covers dietary prohibitions (Lev 11:8), bodily impurity (Lev 13–15), corpse contamination (Num 19), and metaphorical defilement like Isaiah's 'unclean lips' (Isa 6:5). The uniform rendering across languages — 'impuro,' 'impur,' 'unrein' — reflects a universally recognized concept of a polluted state requiring prescribed purification.
+
+### H5797 / Sense 123150 (88 occ, sense 1 of 4)
+**Label:** strength, might, power
+**Lemma gloss:** Strength, might, power — whether physical fortitude, divine majesty, or the fierce energy of authority and praise.
+**Description:** Physical or abstract strength, might, or power, whether of God, a person, or a nation; the dominant sense of the noun, rendered consistently as Arabic عِزّ/قُوَّة, Korean 힘/능력, and Swahili nguvu across all pronominal suffixes and prepositional prefixes.
+**Enriched:** The dominant sense: strength, might, power in its full range — divine omnipotence ('give unto the LORD glory and strength,' 1 Chr 16:28), royal authority ('the king shall joy in thy strength,' Ps 21:1), physical vigor (2 Sam 6:14), and national force. Arabic عِزّ (honor-through-power) and Korean 힘/능력 converge on this sense. The Psalms use it more than any other book, often in parallelism with כָּבוֹד (glory) and תִּפְאֶרֶת (splendor).
+
+### H6588 / Sense 128948 (88 occ, sense 1 of 2)
+**Label:** transgression, offense against God
+**Lemma gloss:** Transgression, willful offense; a deliberate violation of God's law or covenantal authority, sometimes shading into political revolt
+**Description:** The dominant sense of פֶּשַׁע: a willful violation or offense against God's law, covenant, or moral standard — covering the vast majority of occurrences across all grammatical inflections (singular/plural, all pronominal suffixes, construct chains, prepositional prefixes); rendered consistently as English 'transgression', Spanish 'transgresion', Hindi अपराध, Arabic مَعْصِيَة/مَعَاصِي (ma'siya/ma'asi = disobedience), Korean 범죄 (beomjoe = crime) or 허물 (heomul = fault), Swahili 'makosa' (faults/offenses) or 'kosa' (fault).
+**Enriched:** Transgression or willful offense against God — a deliberate violation of divine law, covenant stipulations, or moral standards. This dominant sense covers singular and plural forms across all grammatical contexts. Spanish 'transgresión,' French 'transgression,' and German 'Vergehen' converge on intentional breach. Central in confessional and prophetic texts: Exod 34:7 ('forgiving iniquity and transgression and sin'), Amos 1:3–2:6 (the nations' recurring offenses), and Ps 51:3 ('blot out my transgressions').
+
+### H8255 / Sense 143731 (88 occ, sense 1 of 1)
+**Label:** shekel (unit of weight/currency)
+**Lemma gloss:** Shekel; a standard unit of weight (~11.4 g) used as the primary measure of value and currency
+**Description:** A standard unit of weight (approx. 11.4 g) used for measuring precious metals and as the primary monetary denomination in ancient Israel; all 88 occurrences denote this single concrete measure whether used absolutely, in construct, or with prepositions.
+**Enriched:** A standard unit of weight approximately 11.4 grams, serving as ancient Israel's principal measure of value for silver, gold, and bronze. It functions both as a weight placed on scales and as a monetary denomination in commercial and cultic transactions. From tabernacle inventories (Exod 38:24–29) to Amos's denunciation of dishonest traders (Amos 8:5), the shekel is Israel's baseline economic measure. The transliterated forms across languages — 'siclo,' 'sicle,' 'Schekel' — signal a culture-specific unit with no native equivalent.
+
+### G2112 / Sense 68387 (87 occ, sense 1 of 1)
+**Label:** immediately / at once
+**Lemma gloss:** Immediately, at once, straightway; a temporal adverb indicating action without delay
+**Description:** Temporal adverb meaning 'immediately', 'at once', 'straightway', indicating that an event follows another with no perceptible delay. The 86-occurrence cluster and the 1-occurrence cluster share identical semantics — both denote temporal immediacy. Multilingual evidence is uniformly consistent: Spanish 'inmediatamente/pronto' (immediately/quickly), Hindi 'तुरन्त/जल्दी' (turant = immediately, jaldī = quickly), Arabic 'لِلْوَقْتِ/حَالًا/سَريعاً' (immediately/at once/quickly), Korean '즉시/곧' (jeuksi = immediately, got = soon), Swahili 'mara/mara–moja/upesi' (immediately/at once/quickly). The minor variant 'pronto/quickly' in the singleton is simply a stylistic translation choice, not a different sense.
+**Enriched:** A temporal adverb expressing that an action occurs without delay or interval, conveying the immediacy and decisiveness of events — particularly divine interventions and responses to Jesus' authority. Characteristic of Mark's rapid narrative style, it appears at pivotal moments: the Spirit's descent at baptism (Matt 3:16), the disciples' instant obedience (Matt 4:20), and instant healings (Matt 8:3). Cross-linguistic equivalents — 'inmediatamente,' 'aussitot,' 'sogleich' — uniformly capture the sense of instantaneous action.
+
+### G3195 / Sense 72072 (87 occ, sense 1 of 4)
+**Label:** be about to / be on the point of
+**Lemma gloss:** To be about to, be on the point of doing something; as participle, coming or future; also to intend, be ready, or delay
+**Description:** Core sense of imminent futurity: something is about to happen, or someone is on the verge of doing something. Covers all tenses, persons, moods, and participial forms where the basic meaning is 'be about to' or 'be going to.' Arabic consistently uses عَلَى وَشْكِ (on the verge of) or the future particle سَوْفَ / سَيَ, Korean uses 장차 (jangcha, 'in the future') or 하려고 (haryeogo, 'about to do'), Swahili uses -karibu ('near to') or -kusudia ('intend'), Spanish está/estaba a punto de ('is/was about to'), Hindi वाला है / वाला था (waala hai/tha, 'is/was about to'). This is the overwhelmingly dominant sense of mellō in the NT, accounting for roughly 87 of 110 occurrences.
+**Enriched:** The core periphrastic sense: to be about to, be on the point of, be going to do something. This overwhelmingly dominant usage creates a near-future construction, signaling imminence. It appears across all persons, tenses, and moods — from narrative (Matt 2:13, Jesus about to be betrayed in Matt 17:22) to apocalyptic revelation (the things about to happen). Spanish a punto de and German wird both reflect this prospective aspect. The construction often carries overtones of divine necessity or destined outcome.
+
+### G3777 / Sense 73581 (87 occ, sense 1 of 1)
+**Label:** neither, nor (negative conjunction)
+**Lemma gloss:** Neither...nor; a correlative negative conjunction coordinating negated clauses or items
+**Description:** A correlative negative conjunction used to negate and coordinate clauses or phrases, typically appearing in pairs (οὔτε...οὔτε = 'neither...nor') or in series to list multiple negated items. All 87 occurrences represent the same grammatical function with variation limited to sentence position (initial capitalized 'Neither' vs. medial 'nor'). Multilingual evidence: spa 'ni/tampoco' (nor/neither), hin 'न/न–ही/नहीं' (na/na hī/nahīṅ, not/nor), arb 'وَلا/وَلَا/لَا' (wa-lā, and-not), kor '아니/~도–아니고' (ani, not/nor), swa 'wala/Wala' (nor, same word capitalized at sentence start). Covers Matt 6:20, 22:30, John 1:25, Gal 1:12, Rev 5:3 etc.
+**Enriched:** A correlative negative conjunction that coordinates negated elements, characteristically appearing in oute...oute pairs meaning 'neither...nor.' It structures comprehensive negations, from Jesus' teaching on heavenly treasure immune to moth and rust (Matt 6:20) to Paul's soaring declaration that neither death nor life nor any created thing can separate from God's love (Rom 8:38–39). The uniform cross-linguistic rendering — Spanish 'ni,' French 'ni,' German 'weder' — confirms a single grammatical function across all 87 New Testament uses.
+
+### H0567 / Sense 83196 (87 occ, sense 1 of 1)
+**Label:** Amorite (people group)
+**Lemma gloss:** Amorite — a Canaanite people group inhabiting both sides of the Jordan before Israel's conquest
+**Description:** Gentilic proper noun designating the Amorites, a Canaanite people group frequently listed among the nations inhabiting the Promised Land prior to the Israelite conquest, including the kingdoms of Sihon and Og in Transjordan.
+**Enriched:** A gentilic proper noun designating the Amorites, a major Canaanite people group inhabiting the hill country on both sides of the Jordan. Called a 'son of Canaan' in the Table of Nations (Gen 10:16), they are most prominent in the conquest narratives as rulers of Transjordan (Num 21:13; Deut 3:9). The term's near-universal use with the article marks it as a collective ethnic designation rather than an individual name.
+
+### H0753 / Sense 84233 (87 occ, sense 1 of 3)
+**Label:** spatial length, measurement
+**Lemma gloss:** Length; spatial measurement or dimension; duration of time ('length of days'); forbearance, patience ('length of anger').
+**Description:** Physical length or dimension of an object, used primarily for architectural and spatial measurements (e.g., length of the tabernacle, temple, courtyard).
+**Enriched:** Physical length or spatial dimension of an object, overwhelmingly used for architectural and construction measurements (87 occurrences). This is the sense that pervades Exodus 25-27 (the tabernacle), 1 Kings 6-7 (Solomon's temple), and Ezekiel 40-48 (the visionary temple). The formulaic pairing with רֹחַב ('breadth') appears scores of times. Spanish longitud/largo, French longueur, and German Länge all translate this uniformly, confirming a stable, cross-linguistically basic dimensional term.
+

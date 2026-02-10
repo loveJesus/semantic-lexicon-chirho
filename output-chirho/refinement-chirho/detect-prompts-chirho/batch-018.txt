@@ -1,0 +1,291 @@
+# Sense Refinement Detection — Batch 018
+
+You are a biblical lexicographer reviewing sense entries for a Hebrew/Aramaic/Greek lexicon.
+Each entry below is a single "sense" that was produced by clustering translation signatures 
+and then merging with an LLM. Some senses may have been OVER-LUMPED — they contain genuinely 
+distinct meanings that should be separate senses.
+
+## Your Task
+
+For each sense, determine if it should be SPLIT into multiple senses. Look for:
+- Literal vs. figurative/metaphorical uses lumped together
+- Concrete vs. abstract meanings combined
+- Multiple distinct referents (e.g., "father" = biological parent + patron/advisor + originator)
+- Physical vs. spiritual/theological uses merged
+- Different syntactic frames producing different meanings
+
+## Output Format
+
+Return a JSON array. For senses that need NO splitting, omit them entirely.
+For senses that SHOULD be split, include an entry like:
+
+```json
+[
+  {
+    "senseIdChirho": 79287,
+    "lemmaIdChirho": "H0001",
+    "currentLabelChirho": "father, immediate male parent",
+    "splitProposalChirho": [
+      {
+        "newLabelChirho": "biological/legal father",
+        "criteriaChirho": "Direct parent-child relationship, possessive constructions with specific person"
+      },
+      {
+        "newLabelChirho": "metaphorical father (patron, advisor, protector)",
+        "criteriaChirho": "Title of respect for prophets, advisors, or authority figures; 'father to Pharaoh' type usage"
+      }
+    ],
+    "confidenceChirho": "high",
+    "reasoningChirho": "Description explicitly mentions 'title of respect or metaphorical originator' alongside biological father"
+  }
+]
+```
+
+Only propose splits where you have MEDIUM or HIGH confidence. Do NOT split function words (articles, 
+prepositions, particles, conjunctions) unless there is a genuinely distinct semantic sense (not just 
+syntactic variation). Proper nouns generally should NOT be split.
+
+If NO senses in this batch need splitting, return an empty array: []
+
+## Senses to Review
+
+### H0426 / Sense 82366 (76 occ, sense 1 of 2)
+**Label:** God, the true God
+**Lemma gloss:** God or deity (Aramaic); used for the God of Israel and also for pagan gods in Daniel and Ezra.
+**Description:** The God of Israel, the supreme deity worshipped by Daniel, Ezra, and the Jewish people, used in definite, construct, and pronominal-suffix forms referring to the one true God.
+**Enriched:** The God of Israel, the supreme and true deity worshipped by Daniel, Ezra, and the Jewish exiles. Used in definite, construct, and suffixed forms. Ezra speaks of 'the God of heaven' who stirred Cyrus (Ezra 5:1), and Daniel's God delivers him from the lions' den (Dan 6:23). Spanish Dios, French Dieu, and German Gott all render this uniformly as a proper reference to the one true God.
+
+### H1270 / Sense 88054 (76 occ, sense 1 of 1)
+**Label:** iron (metal, tools, weapons; fig. strength/hardness)
+**Lemma gloss:** Iron — the metal in raw, worked, or figurative form, signifying strength, hardness, and unyielding severity.
+**Description:** The metal iron, encompassing literal uses (raw material, tools, weapons, fetters, chariots, implements) and figurative/metaphorical uses (strength, hardness, severity, oppression). All grammatical forms (with article, prepositions, conjunctions) represent a single lexical sense.
+**Enriched:** Iron in all its biblical applications: ore in the ground (Deut 8:9; Job 28:2), worked material for tools, weapons, and chariots (Gen 4:22; Josh 17:16), and a figure for strength and oppressive severity — the 'iron furnace' of Egypt (Deut 4:20) and the 'iron yoke' (Deut 28:48). Cognates in Aramaic, Akkadian, and Arabic confirm a shared Semitic metallurgical term.
+
+### H3778 / Sense 107757 (76 occ, sense 1 of 2)
+**Label:** Chaldeans (people/nation)
+**Lemma gloss:** Chaldeans, Chaldea -- the people of southern Mesopotamia (especially under Nebuchadnezzar) and their territorial homeland.
+**Description:** The Chaldean people, the inhabitants of southern Mesopotamia, often appearing as aggressors or as an ethnic-national designation (כַּשְׂדִּים plural).
+**Enriched:** The Chaldean people as an ethnic-national group -- the inhabitants of southern Mesopotamia, especially as aggressors and imperial overlords under the Neo-Babylonian dynasty. Spanish 'los caldeos,' French 'les Chaldeens,' and German 'der Chaldaeer' all treat this as a stable gentiliic. Prominent in prophetic judgment oracles (Isa 13:19, 'the glory of the Chaldeans') and in the historical narratives of Jerusalem's fall (2 Kgs 25:4-5).
+
+### H3920 / Sense 108881 (76 occ, sense 1 of 6)
+**Label:** capture, seize (Qal)
+**Lemma gloss:** To capture, seize, or take — by military conquest, by lot, by snare, or by freezing together; covering active seizure, passive capture, entrapment, and cohesion
+**Description:** To capture or seize a city, territory, or person by military force or decisive action (Qal active stem).
+**Enriched:** To capture or seize by military force (Qal active, 76x): the primary sense, covering the taking of cities, territories, and persons in war. Spanish capturó and German eroberte ('conquered') confirm the martial register. Dominates the conquest narratives — Joshua taking Ai (Josh 8:21), Caleb taking Debir (Judg 1:12), David taking the water-city of Rabbah (2 Sam 12:27-28) — and extends to kings seizing fortresses throughout the historical books (Num 21:32; Deut 2:34; 3:4).
+
+### H6485a / Sense 128176 (76 occ, sense 1 of 15)
+**Label:** Qal passive participle: numbered ones, enrollment
+**Lemma gloss:** to attend to, visit; to count, muster, number; to appoint, set in charge; to punish; to miss, be missing; to deposit
+**Description:** The Qal passive participle used substantivally for those who have been counted/enrolled in a census (מְפֻקָּדִים); Arabic الْمَعْدُودُونَ, Korean 계수된 자들, Hindi गिनती/गिने गए, Swahili waliohesabiwa.
+**Enriched:** The Qal passive participle used substantivally (76x) dominates Numbers census accounts: 'their numbered ones' (Num 1:21, 23, 25, 27, 29), referring to those enrolled in Israel's military census. Arabic الْمَعْدُودُونَ (the counted ones), Korean 계수된 자들 (those counted), Hindi गिने गए (those counted), Swahili waliohesabiwa (those who were counted). The participial construction marks the status of having been attended to via enumeration.
+
+### H6942 / Sense 131232 (76 occ, sense 1 of 7)
+**Label:** sanctify, consecrate (Piel factitive)
+**Lemma gloss:** To be holy, sanctify, consecrate, set apart as sacred; declare or make holy across Qal, Piel, Hifil, Hitpael, Niphal, Pual stems
+**Description:** Piel factitive/declarative sense: to make holy, sanctify, consecrate, or declare sacred — an agent actively imparts holiness to a person, object, or time (Arabic قَدَّسَ qaddasa intensive form II; Korean 거룩하게 하다; Swahili -takasa transitive).
+**Enriched:** The Piel factitive is the workhorse of biblical consecration: an agent actively makes someone or something holy. God sanctifies the seventh day (Gen 2:3), Moses consecrates the people (Exod 19:14), and Israel is commanded to hallow the Sabbath (Exod 20:8). Arabic qaddasa (Form II intensive) and Spanish santificar both capture this declarative-causative force.
+
+### H7462b / Sense 136489 (76 occ, sense 1 of 4)
+**Label:** shepherd (agent noun)
+**Lemma gloss:** To shepherd, tend, or pasture flocks; also the agent noun 'shepherd'; by extension, to graze (intransitive) or to devour figuratively.
+**Description:** The Qal active participle used as a substantive noun denoting a shepherd or pastor — one whose role or occupation is tending flocks — appearing in singular, plural, feminine, construct, and with articles, prepositions (k-/l-/m-), and possessive suffixes, and translated consistently as راعٍ/رُعَاة (Arabic), 목자 (Korean), mchungaji/wachungaji (Swahili), pastor/pastores (Spanish), चरवाहा/चरवाहे (Hindi).
+**Enriched:** The Qal active participle used as an agent noun: 'shepherd, herdsman, pastor.' With 76 occurrences this is the most frequent usage, functioning as a standalone substantive rather than a verbal form. It appears across singular and plural, masculine and feminine (Rachel as רֹעָה in Gen 29:9), construct chains ('shepherds of Israel,' Ezek 34:2), and with the article. Cognate languages confirm the pattern: Aramaic רְעָא, Arabic رَاعِي, all denoting the occupation. The theological metaphor is paramount — Psalm 23:1 'The LORD is my shepherd' (רֹעִי) and Ezekiel 34's extended shepherd allegory both rest on this participial noun.
+
+### H???? / Sense 145980 (76 occ, sense 12 of 94)
+**Label:** (none)
+**Lemma gloss:** (none)
+**Description:** (none)
+**Enriched:** (none)
+
+### G0305 / Sense 62013 (75 occ, sense 1 of 5)
+**Label:** go up, ascend
+**Lemma gloss:** To go up, ascend; physically traveling upward, ascending to heaven, growing (of plants), or boarding (a vessel).
+**Description:** To move physically upward or travel to a higher location, especially going up to Jerusalem, a mountain, or an upper room
+**Enriched:** To go up, ascend physically — the overwhelmingly dominant sense at 75 occurrences, covering travel to higher ground, ascending mountains, going up to Jerusalem, and entering upper rooms. Jesus goes up a mountain to pray (Matt 14:23), comes up out of the baptismal water (Matt 3:16), and 'goes up to Jerusalem' for the final Passover (Matt 20:17). The Jerusalem-pilgrimage usage is especially significant — Hebrew 'alah carries the same 'go up to the holy city' valence, and Greek anabaino preserves this Semitic topographical-theological framing. Spanish subio, German hinaufsteigen, and Korean 올라가다 all translate this with their standard upward-motion verbs. Swahili -panda ('to climb, go up') confirms the basic spatial semantics.
+
+### G1427 / Sense 65996 (75 occ, sense 1 of 1)
+**Label:** twelve
+**Lemma gloss:** Twelve — the cardinal number, often designating the twelve tribes of Israel or the twelve apostles.
+**Description:** twelve, Twelve (75 occurrences across 5 original clusters)
+**Enriched:** The cardinal number twelve, used in ordinary counting (Matt 9:20, twelve years; Matt 14:20, twelve baskets) and as a theologically charged designation for the twelve apostles (Matt 10:1-2; 1 Cor 15:5), deliberately evoking the twelve tribes. All target languages render it with their standard numeral — Spanish doce, French douze, German zwolf.
+
+### G2776 / Sense 70663 (75 occ, sense 1 of 1)
+**Label:** head (literal and figurative)
+**Lemma gloss:** Head — the anatomical body part; figuratively, authority, preeminence, or source of origin.
+**Description:** The head, encompassing both the literal anatomical body part and the metaphorical/figurative sense of authority, preeminence, or source. Greek κεφαλή is used for the physical head of a person or creature (Matt 5:36, 8:20, 14:8, 27:29-30; John 13:9, 19:2, 20:7, 20:12; Rev 1:14, 4:4, 9:7, 12:1, 13:1) as well as metaphorically for Christ as 'head' of the church (Eph 1:22, 4:15, 5:23; Col 1:18, 2:10, 2:19), the husband as 'head' of the wife (1 Cor 11:3; Eph 5:23), and the rejected cornerstone becoming the 'head' of the corner (Matt 21:42; Mark 12:10; Luke 20:17; Acts 4:11; 1 Pet 2:7). Spanish 'cabeza(s)' (head/heads); Hindi सिर / सिरों (head/heads oblique); Arabic رَأسُ / رؤوسٌ (head/heads); Korean 머리 / 머리들 (head/heads); Swahili kichwa / vichwa (head/heads, Bantu noun class singular/plural). The two clusters S70663 (singular case forms) and S70664 (plural case forms) are number inflections, not semantic distinctions, so they merge into a single polysemous sense covering both literal and figurative uses.
+**Enriched:** The head, both the literal anatomical body part (Matt 5:36; 6:17; 14:8 — the severed head of the Baptist) and the metaphorical sense of authority or preeminence (1 Cor 11:3; Eph 1:22; Col 1:18 — Christ as head of the church). Spanish cabeza, French tete, and German Haupt all carry both physical and figurative senses, mirroring the Greek.
+
+### G4383 / Sense 75988 (75 occ, sense 1 of 2)
+**Label:** face, countenance
+**Lemma gloss:** Face, countenance; by extension, presence, surface, or person — reflecting the Semitic breadth of Hebrew panim.
+**Description:** The physical face or countenance of a person, angel, or creature, and by Semitic extension (reflecting Hebrew panim) the 'face' as presence or front surface. This is the dominant NT sense, covering literal facial reference (the face shining at the Transfiguration, Matt 17:2; falling on the face in prayer, Matt 26:39; spitting in the face, Matt 26:67; disfiguring faces while fasting, Matt 6:16-17; veiling Moses' face, 2 Cor 3:18; seeing face to face, 1 Thess 2:17; faces of apocalyptic creatures, Rev 9:7), and the Hebraism 'before the face of' meaning 'before, in the presence of' (Matt 11:10, Mark 1:2, Luke 2:31, 7:27, Acts 3:13, 5:41, 7:45, 17:26, Heb 9:24). Also includes the 'face of the earth' (Acts 17:26, surface). Multilingual glosses uniformly give face/visage/Angesicht/wajh/panim across all cases. Singular and plural forms (prosopa, faces, Rev 7:11, 9:7, 11:16, Matt 6:16, Luke 24:5, 2 Cor 1:11) are included as grammatical number variation of the same sense.
+**Enriched:** The physical face or countenance, and by Semitic idiom (mirroring Hebrew panim), the presence, front, or surface of something. All major translations use a face/countenance word — spa. rostro, deu. Angesicht, fra. visage — confirming the concrete-to-spatial range. In Matt 17:2 Jesus' face shines at the Transfiguration; in Acts 3:20 it denotes God's presence.
+
+### G4613 / Sense 76443 (75 occ, sense 1 of 1)
+**Label:** Simon (proper noun, personal name)
+**Lemma gloss:** Simon — a common Greek personal name (from Hebrew Shimon), borne by Simon Peter and several other NT figures.
+**Description:** The Greek form of the Hebrew name Shimon, borne by several NT individuals including Simon Peter (the leading apostle), Simon the Zealot, Simon of Cyrene, Simon the leper, Simon the tanner, and Simon Magus. All 75 occurrences represent the same proper name across nominative, vocative, accusative, genitive, and dative case forms. Multilingual translations uniformly transliterate: Swahili 'Simoni/Simon', Hindi 'Shamoun/Shamaon', Korean 'Simon', Arabic Sim-an (سِمْعَانُ), Spanish Simon. The S76445 cluster (3x, accusative/dative with prepositional phrases) is merely a case-form variant of S76443 (72x, all cases) with no semantic difference; the particular individuals referred to are determined by context, not by the morphological form of the name itself.
+**Enriched:** The Greek proper name Simon (from Hebrew Shimon, 'he has heard'), applied to multiple NT individuals — most prominently Simon Peter (Matt 4:18; 16:16), but also Simon the Zealot, Simon of Cyrene, Simon the leper, Simon the tanner, and Simon Magus. Every target language transliterates it directly, relying on narrative context to distinguish bearers.
+
+### H0398 / Sense 81989 (75 occ, sense 2 of 5)
+**Label:** devour (consume destructively)
+**Lemma gloss:** To eat, consume food; figuratively to devour or consume destructively; in Nifal, to be eaten; in Hifil, to feed or cause to eat.
+**Description:** Qal sense of devouring, consuming, or destroying, often with fire or in judgment contexts, where the eating is figurative or violent destruction rather than literal food consumption; distinguished by Korean 삼키다, Swahili -teketeza, Hindi भस्म करना.
+**Enriched:** Figurative devouring or consuming destructively — 75 occurrences where the 'eating' agent is fire, sword, plague, or judgment rather than a person at table. God appears as 'a consuming fire' at Sinai (Exod 24:17; Deut 4:24; 9:3), fire from Heshbon 'devoured' Moab (Num 21:28), and nations 'eat up' Israel (Lev 26:38). The multilingual signal is clear: Spanish shifts to devorar/consumir, German to verzehren/fressen, and French to dévorer, all selecting specifically destructive vocabulary rather than alimentary terms. This metaphorical extension is ancient and appears across Semitic languages — Akkadian akalu and Arabic akala both carry the same fire-consumption sense.
+
+### H1768 / Sense 91552 (75 occ, sense 2 of 6)
+**Label:** complementizer (that/so-that)
+**Lemma gloss:** Aramaic relative/conjunction particle: who, which, that; of (genitive); because; when; where.
+**Description:** The subordinating conjunction function introducing content clauses and purpose clauses ('he said that...', 'so that...'); distinguished from the relative pronoun by Arabic أَنَّ/أَنْ (not الَّذِي), Hindi कि (not जो), Swahili kwamba (not amba-), Spanish que/para que. This is a genuinely different syntactic-semantic function from the relative pronoun.
+**Enriched:** The complementizer: 'that, so that' — introducing content clauses after verbs of saying, knowing, or commanding, and purpose clauses (75 occurrences). Distinguished from sense 1 because it does not modify a noun but subordinates a full clause. Arabic أَنَّ (not الَّذِي), Hindi कि, Spanish que (conjunction, not pronoun), and French que (conjonction) all use formally or functionally distinct items. Ezra 4:13-16 illustrates the causal-purpose chain: 'let it be known that... so that...'
+
+### H2930a / Sense 100264 (75 occ, sense 1 of 6)
+**Label:** Qal: be/become unclean
+**Lemma gloss:** To be or become ritually unclean, to defile, to declare unclean; spanning stative impurity, causative defilement, reflexive self-defilement, and priestly pronouncement
+**Description:** Stative/inchoative Qal stem expressing the state of being ritually or physically unclean, or the process of becoming unclean (Arabic يَتَنَجَّسُ, Korean 부정하다, Swahili -wa mchafu/najisi).
+**Enriched:** Qal stative/inchoative: to be or become ritually unclean through contact, condition, or circumstance. Arabic yatanajjasu (to become impure) and Korean bujeong-hada (to be unclean) mark the non-agentive state. The most frequent sense (75x), dominating Leviticus 11-15 where contact with carcasses (Lev 11:24-28), bodily discharges (Lev 15:18), and skin diseases trigger automatic impurity until evening or until purification. The construction 'he shall be unclean until evening' is the signature formula, appearing dozens of times in the purity code.
+
+### H4639 / Sense 113227 (75 occ, sense 2 of 6)
+**Label:** work, labor, task
+**Lemma gloss:** Deed, work, craftsmanship; spanning artisan handiwork, productive labor, human conduct, divine acts, and agricultural yield
+**Description:** The activity of working, a task or undertaking, one's occupation or business — work in the general sense of effort or employment (Arabic عَمَل as labor, Korean 일, Swahili kazi).
+**Enriched:** Work, labor, or task as productive activity — the effort, occupation, or undertaking itself rather than its product. Anchors the Sabbath framework: 'six days you shall do your work' (Exod 23:12). Covers harvest labor ('the work of your hands,' Exod 23:16), Deuteronomy's blessings on enterprise (Deut 14:29; 16:15; 24:19), and post-exilic rebuilding efforts. Arabic 'amal 'labor' and Swahili kazi 'work' mark generic productive activity. Distinguished from sense 1 by focusing on the process rather than the product.
+
+### H5922 / Sense 124013 (75 occ, sense 1 of 6)
+**Label:** upon, on, over
+**Lemma gloss:** Aramaic preposition: upon, over, on; to, unto; concerning, about; against; because of; more than
+**Description:** Spatial superessive sense indicating position on, upon, on top of, or over something, the primary and most frequent meaning of this Aramaic preposition.
+**Enriched:** The primary spatial-superessive sense — 'upon, on, over' — accounting for 75 of 103 occurrences. This covers physical position on a surface, authority exercised over a domain, and general superposition. Spanish sobre, French sur, and German ueber all converge on this core spatial meaning, appearing consistently throughout the Aramaic sections of Ezra and Daniel (Ezra 4:11-20; Dan 2:28-46).
+
+### H7646 / Sense 137864 (75 occ, sense 1 of 3)
+**Label:** be satisfied, have enough
+**Lemma gloss:** To be satisfied or sated (with food or other good); causatively, to satisfy or fill someone; by extension, to be surfeited or wearied to excess.
+**Description:** Qal (and Nifal) intransitive sense of being satisfied, full, or having plenty, encompassing all person/number/gender inflections including perfect, imperfect, imperative, consecutive, cohortative, infinitive construct, infinitive absolute, and participle forms across the full paradigm.
+**Enriched:** The Qal and Nifal intransitive sense: to be satisfied, full, or to have enough. This is the dominant meaning across 75 occurrences, spanning blessing formulas (Deut 6:11, 'you will eat and be satisfied'), wisdom literature (Prov 12:11), and prophetic promises. The multilingual glosses — Spanish 'se-sacia,' French 'rassasier,' German 'sättigen' — all point to contented fullness. Often paired with 'eating' as its natural complement, it describes the ideal state of provision received with gratitude.
+
+### H7931 / Sense 140526 (75 occ, sense 1 of 6)
+**Label:** Qal: dwell, inhabit
+**Lemma gloss:** To settle down, dwell, inhabit; of God's presence: to tabernacle; causative: to cause to dwell, place, settle
+**Description:** Basic intransitive sense of residing, dwelling, or inhabiting a place, encompassing all Qal finite forms and infinitives where the meaning is ongoing or permanent habitation (Arabic يَسْكُنُ / سَكَنَ, Korean 거하다, Swahili -kaa).
+**Enriched:** The basic Qal sense of dwelling or inhabiting a place as an ongoing state. Covers the broadest range: Shem dwelling in the tents of Japheth (Gen 9:27), Zebulun dwelling by the seashore (Gen 49:13), Israel dwelling in the land, and God dwelling among his people (Exod 25:8). Arabic يَسْكُنُ, Spanish habitará, and Korean 거하다 all converge on settled, continuous residence. This sense anchors the theological use—when God 'dwells' among Israel, the same ordinary verb is elevated to express covenant presence.
+
+### G0991 / Sense 64186 (74 occ, sense 1 of 7)
+**Label:** see, perceive visually
+**Lemma gloss:** To see, look at, perceive visually; also to beware, watch out for, or direct one's gaze with attention.
+**Description:** To see with the eyes, perceive visually; the basic sense of physical sight, whether actively or passively noticing what is before one.
+**Enriched:** The basic sense of physical sight, covering 74 occurrences. Matt 13:13-14 quotes Isaiah's paradox: 'seeing they do not see.' Translations uniformly use 'see/ve/voir/sehen.' This is the unmarked default — the eyes functioning as they should, whether the object is a speck in a brother's eye (Matt 7:3) or the works of Christ (Matt 11:4).
+
+### G4442 / Sense 76120 (74 occ, sense 1 of 1)
+**Label:** fire
+**Lemma gloss:** Fire — literal combustion or divine/eschatological fire of judgment, purification, and theophany.
+**Description:** Fire in both literal and eschatological senses, encompassing the physical phenomenon of combustion as well as divine judgment by fire. All three clusters represent the same core meaning — fire — differing only in case usage (nominative/accusative/genitive/dative) and the prepositions governing them. Multilingual evidence is perfectly uniform: Spanish 'fuego' (with prepositional variants 'de fuego,' 'con fuego,' 'para fuego'), Hindi 'आग' (with postpositions '-की,' '-से,' '-में,' '-के लिए'), Arabic 'نارٍ' / 'بِنَارٍ' / 'لِلنّارِ' (fire / with fire / for fire), Korean '불' / '불에' / '불의' (fire / in fire / of fire), Swahili 'moto' / 'kwa moto' (fire / by fire). No semantic distinction exists across these clusters.
+**Enriched:** Fire in both its literal sense (a hearth fire, Mark 14:54; Luke 22:55) and its far more frequent eschatological sense — divine judgment (Matt 3:10; 13:42; 25:41), purification (1 Cor 3:13), and apocalyptic destruction (Rev 20:14). All target languages — Spanish fuego, French feu, German Feuer — render it with a single fire-word, confirming semantic unity.
+
+### H2491a / Sense 97319 (74 occ, sense 1 of 3)
+**Label:** slain, fatally pierced
+**Lemma gloss:** One who is pierced, slain, or fatally wounded; a battlefield casualty or corpse left by violence.
+**Description:** A person or persons who have been killed, especially by the sword or in battle; the primary and most frequent sense of the noun חָלָל, consistently glossed as slain/killed across languages (Arabic قَتْلَى/قَتِيل, Korean 죽임 당한 자, Swahili waliouawa, Hindi मारे हुए/गए, Spanish muertos), covering all grammatical inflections including singular, plural, construct, and pronominal suffixes.
+**Enriched:** The dominant sense across roughly 74 occurrences: a person or persons killed in battle or by violence. The multilingual glosses converge strongly—Arabic قتلى 'killed ones,' Spanish 'los muertos,' French 'tué,' German 'Erschlagener.' Often used collectively in the plural (חֲלָלִים) for heaps of battlefield dead, as in Num 23:24 and throughout Ezekiel 30-32. The construct chain חַלְלֵי חֶרֶב ('slain of the sword') in Isa 22:2, Jer 14:18, and frequently in Ezekiel marks this as the standard biblical term for war casualties.
+
+### H3772 / Sense 107581 (74 occ, sense 3 of 5)
+**Label:** be cut off / be eliminated (Niphal)
+**Lemma gloss:** To cut — physically cutting trees or objects, cutting a covenant, or being cut off as divine punishment; spans Qal, Niphal, Hifil, and Hofal stems.
+**Description:** Niphal passive/reflexive: to be cut off from one's people, land, or life as divine punishment or natural consequence; Arabic yuqtau (passive) or yanqatiu (Form VII reflexive), Korean kkeuneojida (be severed), Swahili -katiliwa mbali (be cut off far away), Hindi kaata jaega (will be cut).
+**Enriched:** Niphal passive/reflexive: to be cut off from one's people, land, or life. With 74 occurrences, this is the standard penalty formula in Priestly legislation — 'that soul shall be cut off from Israel' (Exod 12:15,19; 30:33,38). The passive voice emphasizes the result rather than the agent, though God is understood as the implied cause. Arabic 'yunqatiu' (Form VII reflexive) and Korean 'kkeuneojida' (to become severed) reflect the passive/resultative morphology. This formula appears almost exclusively in legal contexts as the ultimate sanction for covenant violation.
+
+### H5542 / Sense 120892 (74 occ, sense 1 of 1)
+**Label:** (none)
+**Lemma gloss:** Selah — a liturgical or musical notation in the Psalms and Habakkuk, of uncertain meaning; perhaps a pause or cue.
+**Description:** (none)
+**Enriched:** A liturgical or musical notation of uncertain meaning, appearing 71 times in the Psalms and 3 times in Habakkuk (Ps 3:2, 4, 8; Hab 3:3, 9). Possibly from salal ('to lift up'), it may signal a pause, melodic shift, or doxological cue. The Septuagint renders it diapsalma ('interlude'). Nearly all modern languages simply transliterate it — Selah, Sela.
+
+### H7998 / Sense 141245 (74 occ, sense 1 of 1)
+**Label:** spoil, plunder, booty
+**Lemma gloss:** Spoil, plunder, or booty — goods seized by force in war, including livestock, garments, precious metals, and captives.
+**Description:** Goods, possessions, or property seized by force in war or raiding; the material plunder or booty taken from a defeated enemy or captured city.
+**Enriched:** Goods, property, and persons seized by force in warfare — garments, precious metals, livestock, and captives (Gen 49:27; Deut 20:14; Josh 7:21; 1 Sam 30:20). Often paired with baz as a near-synonym. The prophetic name Maher-shalal-hash-baz (Isa 8:1-3) elevates the noun into eschatological symbol. All target languages use a single war-spoils term — Spanish botin, French butin, German Beute.
+
+### G0011 / Sense 60994 (73 occ, sense 1 of 1)
+**Label:** Abraam
+**Lemma gloss:** Abraham — the patriarch, father of Isaac, to whom God gave the covenant of promise and the land of Canaan.
+**Description:** Abraam, of Abraam (73 occurrences across 2 original clusters)
+**Enriched:** The proper name of the patriarch Abraham, father of Isaac and grandfather of Jacob, to whom God gave the foundational covenant of promise (Gen 12:1-3; 15:6; 17:5). In the New Testament he appears as the paradigm of faith (Rom 4:3; Gal 3:6-9; Heb 11:8-19), the ancestor invoked in genealogies (Matt 1:1-2), and the figure whose 'bosom' signifies blessed rest (Luke 16:22). All target languages transliterate the name directly.
+
+### G4095 / Sense 74732 (73 occ, sense 1 of 1)
+**Label:** drink (literal or figurative)
+**Lemma gloss:** To drink — consume liquid; figuratively, to partake of suffering, judgment, or spiritual sustenance.
+**Description:** To consume a liquid by drinking, used both literally of drinking water, wine, or other beverages, and figuratively of partaking in suffering (drinking the cup), spiritual sustenance (drinking living water, drinking Christ's blood), or divine judgment.
+**Enriched:** To drink or consume a liquid, used literally of drinking water, wine, or other beverages in everyday and festive contexts (Matt 6:25; 11:18-19; Luke 7:33-34; John 2:10), and figuratively of partaking in Christ's suffering (Matt 20:22; Mark 10:38 — 'drinking the cup'), receiving spiritual sustenance (1 Cor 10:4; John 7:37), and sharing in the eucharistic covenant (Matt 26:27-29; 1 Cor 11:25). All target languages use their standard verb for drinking, confirming a unified semantic core.
+
+### H0730 / Sense 84091 (73 occ, sense 1 of 1)
+**Label:** cedar tree or wood
+**Lemma gloss:** Cedar — the cedar tree (Cedrus libani), famed for its height, fragrance, and prized timber; a symbol of majesty and pride.
+**Description:** The cedar tree (Cedrus libani), especially the cedar of Lebanon, used both for the living tree and its timber as building material.
+**Enriched:** The cedar tree (Cedrus libani), encompassing the living tree growing on Lebanon (Ps 104:16; Judg 9:15; Isa 2:13), its harvested timber used for temples, palaces, and ships (1 Kgs 5:6-10; 6:15; Ezek 27:5), and its ritual use in purification ceremonies alongside hyssop (Lev 14:4, 49-52). Figuratively, the cedar represents towering majesty (Ezek 31:3-14; Num 24:6) and, when felled by God, the humbling of human pride (Isa 2:13; Zech 11:1-2). Cognates across Aramaic, Arabic, and Ethiopic confirm a shared Semitic term.
+
+### H0776 / Sense 84325 (73 occ, sense 3 of 4)
+**Label:** earth, world, created order
+**Lemma gloss:** earth, land, ground; the world, a nation's territory, or physical soil
+**Description:** The whole earth as a cosmological entity, the world in the 'heaven and earth' pairing, the planet as created order or inhabited sphere; marked by Swahili dunia/duniani (world), Hindi पृथ्वी (prithvi = earth/world), Arabic الْأَرْضِ with universal scope, and Korean 땅 in absolute contexts; includes the 'dry land' sub-sense (as opposed to sea) since both denote the earth's surface as a whole.
+**Enriched:** Physical ground or soil, the surface beneath one's feet where things fall, are cast down, or upon which one bows. Swahili ardhini (on the ground) and Hindi भूमि (soil) mark this tactile, immediate sense.
+
+### H1288 / Sense 88188 (73 occ, sense 2 of 7)
+**Label:** Qal passive participle: blessed
+**Lemma gloss:** To bless, kneel; Piel: invoke blessing; Qal passive: blessed; euphemistically: curse, blaspheme
+**Description:** Adjectival state of being blessed, used predicatively or as an exclamation of praise (Qal passive participle barukh); Arabic mubarak, Korean bok-issda, conveying a state rather than an action.
+**Enriched:** The Qal passive participle barukh: a state of being blessed, used predicatively or as a doxological exclamation. Arabic mubarak and Swahili mbarikiwa confirm the adjectival-stative force. 'Blessed be Yahweh' (Exod 18:10) and the Deuteronomic blessing formulas (Deut 28:3–6) show barukh functioning as Israel's characteristic expression of praise and gratitude — a state declared, not an action performed.
+
+### H3225 / Sense 102422 (73 occ, sense 1 of 3)
+**Label:** right side (direction / position)
+**Lemma gloss:** The right hand, right side, or south; denoting spatial direction, the hand as instrument of power, and the southern cardinal direction.
+**Description:** The right as a spatial direction or positional location, including 'at someone's right' as a place of honor or proximity; cross-linguistically distinguished by Spanish 'derecha' (directional, vs 'diestra'), Swahili 'kulia' or 'upande wa kulia' without 'mkono' (no hand reference), Korean 오른쪽 (oreunjjok, 'right side') or 오른편 (oreunpyeon, 'right area'), and Arabic يَمِين (yamīn) with directional prepositions عَن/مِن (from/at).
+**Enriched:** The right side as a spatial direction or positional location — 73 occurrences. This covers turning right, standing at someone's right, the right side of an object or place, and the right as a position of honor or proximity. Abraham tells Lot 'if you go to the right, I will go to the left' (Gen 13:9); the priest's right ear, thumb, and toe receive the blood of consecration (Exod 29:20). Spanish derecha and French droite consistently select directional vocabulary here, while German nach-rechts and Korean 오른쪽 confirm the spatial-orientational framing distinct from the body-part sense.
+
+### H5012 / Sense 115455 (73 occ, sense 1 of 2)
+**Label:** prophesy, deliver oracle
+**Lemma gloss:** To prophesy -- speaking God's word by divine authority (Nifal) or prophesying ecstatically under Spirit compulsion (Hitpael).
+**Description:** To speak or deliver a message as a prophet under divine authority, conveying God's word in the Nifal stem (standard prophetic speech, commands to prophesy, participial 'the one who prophesies').
+**Enriched:** Prophesying in the Nifal stem (73x) -- the standard form for delivering divine oracles, commands to prophesy, and participial descriptions of 'the one who prophesies.' This is the voice of classical prophecy: Jeremiah is commanded 'prophesy!' (Jer 19:14; 20:6), Ezekiel speaks over the dry bones (Ezek 37:7), and the Chronicler records levitical prophesying with instruments (1 Chr 25:2-3). Multilingual renderings are straightforward -- Spanish 'profetiza,' French 'prophetise!,' German 'weissagen' -- treating it as authorized divine communication.
+
+### H5676 / Sense 122249 (73 occ, sense 1 of 3)
+**Label:** beyond, region across
+**Lemma gloss:** The region across or beyond (a river or boundary); a side, flank, or direction relative to an object; plural: sides, edges.
+**Description:** The region or area on the other side of a river, boundary, or geographic feature; used with various prepositions (be-/min-/le-) to express location or motion relative to the far side, as in 'beyond the Jordan' or 'from beyond the river'.
+**Enriched:** The region across or beyond a geographic feature, especially a river, sea, or border (73 occurrences). This dominant sense appears with prepositions to mark location (בְּעֵבֶר, 'on the far side of') or motion (מֵעֵבֶר, 'from beyond'). The expression עֵבֶר הַנָּהָר ('beyond the River,' i.e., the Euphrates) functions as a semi-proper geographic designation in Joshua 24:2-3. Spanish al otro lado de, French au-delà de, and German jenseits all employ compound prepositional phrases, reflecting the inherent two-term spatial relationship: this side versus that side.
+
+### H6098 / Sense 125666 (73 occ, sense 1 of 4)
+**Label:** counsel, advice
+**Lemma gloss:** Counsel, advice, plan — guidance given or received, whether human deliberation, political strategy, or God's sovereign purpose.
+**Description:** Guidance or recommendation given by a person to another, the ordinary sense of counsel or advice in interpersonal contexts.
+**Enriched:** Counsel, advice — the ordinary interpersonal sense: guidance recommended by one person to another. Ahithophel's counsel (2 Sam 15:31, 16:23), the counsel of the elders versus the young men (1 Kgs 12:8-14), and the advice Ezra receives (Ezra 10:3). Spanish consejo and French conseil render it directly. Proverbs 1:25 personifies Wisdom lamenting that 'you ignored all my counsel,' giving the word its sapential weight.
+
+### H6213a / Sense 126344 (73 occ, sense 3 of 6)
+**Label:** be done, be made (Niphal)
+**Lemma gloss:** Do, perform, act; make, construct; be done (Niphal); produce, yield; work, labor
+**Description:** Niphal passive of עשׂה: to be done, be made, be performed (Arabic yuṣnaʿu يُصنَعُ / yufʿalu يُفعَلُ), expressing that an action or product results without specifying the agent.
+**Enriched:** Niphal passive: to be done or be made, removing the agent from view. Genesis 20:9 asks 'what have you done to us?' using a form that emphasizes the deed over the doer. French 'être fait' and Spanish 'se hará' capture this impersonal construction common in legal contexts and divine pronouncements (Gen 22:16).
+
+### H7592 / Sense 137326 (73 occ, sense 2 of 6)
+**Label:** request, petition, demand
+**Lemma gloss:** To ask, inquire, request, demand, borrow, or lend; covering question-asking, petition, and the loan transaction in both directions
+**Description:** Qal sense of requesting or demanding something from someone, corresponding to Arabic Talaba (طَلَبَ) and Korean guhaetda (구했다), used when seeking to obtain goods, favors, or outcomes rather than information.
+**Enriched:** To request, petition, or demand something from someone, seeking to obtain goods, favors, or outcomes rather than information. Arabic talaba (to seek/request) and Korean guhaetda (to seek to obtain) distinguish this from mere inquiry. Covers Moses's statement of what God 'asks of' Israel (Deut 10:12), Caleb's daughter requesting springs of water (Josh 15:18), and the elders demanding a king (1 Sam 8:10). Spanish pedir and French demander in the petitionary register confirm the shift from question to request. Hannah's naming of Samuel — she'iltiv, 'I asked him of the LORD' (1 Sam 1:20) — is the theological pinnacle of this sense.
+
+### H8147 / Sense 142899 (73 occ, sense 2 of 4)
+**Label:** both (pronominal)
+**Lemma gloss:** Two, both, a pair; the cardinal numeral for two in masculine and feminine dual forms, also used in compound numbers.
+**Description:** Used with pronominal suffixes to mean 'both of them/us/you', emphasizing the totality of a pair rather than simply counting.
+**Enriched:** Pronominal 'both' — 73 occurrences where suffixed forms (shenehem, shenenu, sheneykhem, etc.) mean 'both of them/us/you,' emphasizing the completeness or totality of a pair rather than merely counting. Adam and Eve 'were both naked' (Gen 2:25); Abraham and Abimelech 'both swore an oath' (Gen 21:31); Abraham and Isaac 'went both of them together' toward Moriah (Gen 22:6, 8). Spanish ambos, French tous deux, Korean 둘 다, and German beide all shift from cardinal-numeral to totality-pronoun vocabulary, confirming a genuine pronominal function distinct from simple enumeration.
+
+### H0499 / Sense 82671 (72 occ, sense 1 of 1)
+**Label:** Eleazar (proper name)
+**Lemma gloss:** Eleazar — 'God has helped'; a proper name borne by Aaron's son the high priest and several later biblical figures.
+**Description:** A masculine proper name meaning 'God has helped' (from אֵל 'God' + עָזַר 'to help'), borne by several individuals in the Hebrew Bible, most prominently: (a) Eleazar son of Aaron, who became high priest after Aaron's death (Exod 6:23, 25; Num 3:2, 4, 32; 16:37, 39; 19:3-4; 20:25-28; 31:29, 41; Josh 14:1; 24:33; Judg 20:28), and (b) other minor figures including Eleazar son of Abinadab (1 Sam 7:1), Eleazar son of Dodo (2 Sam 23:9), and Levites in Chronicles and Ezra. All four clusters represent the same proper noun; the splits arose from prepositional variants (ל 'to/for' Eleazar) and minor transliteration differences (Eleazar vs. Elazar), not from distinct referents requiring separate lexicographic senses.
+**Enriched:** The masculine proper name Eleazar ('God has helped'), referring primarily to Aaron's third son who became Israel's second high priest after Aaron's death on Mount Hor (Num 20:25-28; Exod 6:23; Josh 14:1), and secondarily to several later figures: the guardian of the ark (1 Sam 7:1), one of David's mighty warriors (2 Sam 23:9; 1 Chr 11:12), Levites in the temple service (1 Chr 23:21-22), and postexilic priests and laymen (Ezra 8:33; 10:25). All target languages transliterate the name directly.
+
+### H1008 / Sense 86545 (72 occ, sense 1 of 1)
+**Label:** Bethel (city)
+**Lemma gloss:** Bethel — 'house of God'; an ancient Canaanite city in Ephraim, a major Israelite cultic site tied to Jacob's vision.
+**Description:** The ancient Canaanite city renamed by Jacob (formerly Luz), located north of Jerusalem in the hill country of Ephraim; a major cultic site where Jacob saw the ladder to heaven (Gen 28), where the ark of the covenant was kept (Judg 20), and later where Jeroboam set up a golden calf shrine (1 Kgs 12–13).
+**Enriched:** The place name Bethel ('house of God'), identifying the ancient city in the hill country of Ephraim where Jacob saw the heavenly ladder and consecrated a pillar (Gen 28:10-19; 35:1-15), where the ark was housed during the judges (Judg 20:26-28), and where Jeroboam I later erected a golden calf, turning it into a center of condemned worship (1 Kgs 12:28-33; Amos 3:14; Hos 10:15). All target languages transliterate the name, though its etymology — beth ('house') + el ('God') — is transparent in Hebrew.
+

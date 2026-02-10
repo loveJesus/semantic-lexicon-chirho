@@ -1,0 +1,291 @@
+# Sense Refinement Detection — Batch 001
+
+You are a biblical lexicographer reviewing sense entries for a Hebrew/Aramaic/Greek lexicon.
+Each entry below is a single "sense" that was produced by clustering translation signatures 
+and then merging with an LLM. Some senses may have been OVER-LUMPED — they contain genuinely 
+distinct meanings that should be separate senses.
+
+## Your Task
+
+For each sense, determine if it should be SPLIT into multiple senses. Look for:
+- Literal vs. figurative/metaphorical uses lumped together
+- Concrete vs. abstract meanings combined
+- Multiple distinct referents (e.g., "father" = biological parent + patron/advisor + originator)
+- Physical vs. spiritual/theological uses merged
+- Different syntactic frames producing different meanings
+
+## Output Format
+
+Return a JSON array. For senses that need NO splitting, omit them entirely.
+For senses that SHOULD be split, include an entry like:
+
+```json
+[
+  {
+    "senseIdChirho": 79287,
+    "lemmaIdChirho": "H0001",
+    "currentLabelChirho": "father, immediate male parent",
+    "splitProposalChirho": [
+      {
+        "newLabelChirho": "biological/legal father",
+        "criteriaChirho": "Direct parent-child relationship, possessive constructions with specific person"
+      },
+      {
+        "newLabelChirho": "metaphorical father (patron, advisor, protector)",
+        "criteriaChirho": "Title of respect for prophets, advisors, or authority figures; 'father to Pharaoh' type usage"
+      }
+    ],
+    "confidenceChirho": "high",
+    "reasoningChirho": "Description explicitly mentions 'title of respect or metaphorical originator' alongside biological father"
+  }
+]
+```
+
+Only propose splits where you have MEDIUM or HIGH confidence. Do NOT split function words (articles, 
+prepositions, particles, conjunctions) unless there is a genuinely distinct semantic sense (not just 
+syntactic variation). Proper nouns generally should NOT be split.
+
+If NO senses in this batch need splitting, return an empty array: []
+
+## Senses to Review
+
+### H4480a / Sense 112338 (1198 occ, sense 1 of 4)
+**Label:** source or separation
+**Lemma gloss:** From, out of, away from; also comparative 'more than,' partitive 'some of,' and causal 'because of, on account of.'
+**Description:** Indicates origin, source, or separation: 'from' a place, person, or thing, including movement away from or out of.
+**Enriched:** The dominant ablative sense expressing source, origin, or separation: 'from,' 'out of,' 'away from' — accounting for approximately 1,198 of 1,226 occurrences. This is the bedrock spatial meaning: Adam is formed 'from' the dust (Gen 2:7), Eve is taken 'from' Adam's side (Gen 2:22), Cain's offering rises 'from' the ground (Gen 4:10). The preposition governs both physical departure ('he went out from the city') and figurative origin ('from the mouth of the LORD'). Arabic min, Spanish de/desde, French de, German von/aus, and Korean -에서 (-eseo) all map consistently to this ablative function. The first-person singular suffix form (mimmenni, 'from me') is included in this lemma subset.
+
+### G3739 / Sense 73376 (1149 occ, sense 1 of 4)
+**Label:** relative pronoun who/which/that
+**Lemma gloss:** Relative pronoun: who, which, that, whom; also indefinite-relative whoever/whatever; correlative one...another; rarely 'where.'
+**Description:** Standard definite relative pronoun introducing a relative clause with a specific antecedent, across all case, gender, and number inflections: who, which, whom, whose, that, to whom, of which, etc.
+**Enriched:** The standard definite relative pronoun introducing a clause with a specific antecedent: 'who,' 'which,' 'that,' 'whom,' 'whose,' 'to whom,' 'of which' — by far the dominant sense at approximately 1,149 occurrences. This covers all case, gender, and number inflections and spans every genre of the New Testament. In Matt 2:16 Herod inquires about the time 'which' the star appeared; in Matt 12:4 David eats the bread 'which' was not lawful. Spanish que/cual, French qui/que, German der/die/das, and Korean (relative clause markers using -는/-은) all render this with their standard relative pronoun apparatus. The sheer frequency makes this the grammatical backbone of Greek hypotaxis.
+
+### H1696 / Sense 90981 (1105 occ, sense 1 of 7)
+**Label:** speak, say, tell (Piel)
+**Lemma gloss:** speak, say, declare; (Qal ptc.) speaker; (Hifil) subdue; (Pual) be spoken; (Hifil) destroy
+**Description:** The primary Piel sense of דבר I: to speak, say, tell, declare, converse — covering all finite forms, infinitives, imperatives, and participles of the Piel stem where the meaning is active verbal communication, confirmed by the consistent Arabic cognate تَكَلَّمَ (takallama) across nearly all occurrences.
+**Enriched:** The overwhelmingly dominant sense (1,105x), covering all Piel forms: perfect, imperfect, imperative, infinitive, and participle. Every major target language renders this as active verbal communication — Spanish habló, French parla, German sprach. The phrase וַיְדַבֵּר יְהוָה introduces divine speech hundreds of times from Genesis 8:15 onward.
+
+### H5892b / Sense 123746 (1093 occ, sense 1 of 1)
+**Label:** city, town
+**Lemma gloss:** ir -- a city or town; any inhabited urban settlement in the ancient Near East
+**Description:** An inhabited settlement or urban center, used for both individual cities and groups of cities, with no semantic distinction across grammatical inflections (articles, prepositions, pronominal suffixes, singular/plural, conjunction waw); Arabic مدينة/مدن, Korean 성읍/성, and Swahili mji/miji are uniform throughout all 1093 occurrences.
+**Enriched:** An inhabited urban settlement, whether a major fortified city or a smaller town, encompassing the full spectrum from Cain's first city (Gen 4:17) to the fortified cities of Judah to metaphorical and eschatological usage. The word appears with every combination of article, preposition, and suffix, yet cross-lingual evidence -- Spanish ciudad, French ville, German Stadt -- converges on a single undifferentiated concept of 'city/town' with no semantic subdivision warranted by the translation signatures.
+
+### G4771 / Sense 76809 (1077 occ, sense 2 of 2)
+**Label:** you (singular address)
+**Lemma gloss:** Second person pronoun: 'you' (singular and plural), in all grammatical cases
+**Description:** Second person singular pronoun addressing one individual, across all grammatical cases (nominative, accusative, genitive, dative).
+**Enriched:** Second person singular pronoun ('you' addressing one person) across all cases. Spanish 'de-ti,' French 'de-toi,' and German 'deiner' all confirm singularity. Found in direct personal address: the angel to Joseph about Mary (Matt 1:20 'that which is conceived in her is of the Holy Spirit — your child'), Jesus to Satan (Matt 4:10 'you shall worship the Lord your God'), and intimate instruction (Matt 5:23-24 'if you are offering your gift'). About 1,077 occurrences.
+
+### H1732 / Sense 91396 (1075 occ, sense 1 of 1)
+**Label:** David (proper name)
+**Lemma gloss:** David -- Israel's second and greatest king, son of Jesse, ancestor of the Messiah
+**Description:** The proper noun David (דָּוִד), referring to the biblical king and patriarch. All 10 clusters are split purely by Hebrew prepositional prefixes (ב ,ל ,כ) and the conjunction ו, not by meaning. Cross-linguistic evidence is unanimous: eng 'David', spa 'David', hin 'दाऊद', arb 'دَاوُد', kor '다윗', swa 'Daudi/Dawidi' — all transliterate the same proper name with no semantic variation.
+**Enriched:** The proper name of Israel's second king, son of Jesse, anointed at Bethlehem (1 Sam 16:13), conqueror of Jerusalem, recipient of the eternal dynastic covenant (2 Sam 7), and traditional author of the Psalms. The name's 1,075 occurrences are split across variant spellings (dawid / dawid) and prepositional prefixes, but cross-lingual evidence is unanimous -- every language renders it simply as 'David' -- confirming a single undifferentiated proper-noun sense with no polysemy.
+
+### G1519 / Sense 66435 (1061 occ, sense 1 of 8)
+**Label:** direction: into, to, toward
+**Lemma gloss:** Preposition: into, to, toward; for, in order to; in, among; against; concerning; as
+**Description:** Spatial or directional motion into or toward a destination, the core and most frequent sense of εἰς.
+**Enriched:** Spatial or directional motion into or toward a destination — the core classical sense. Spanish 'a/en' and French 'en' reflect the directional force. With over a thousand occurrences, this is the default reading: entering a house (Matt 2:11), going into the wilderness, descending into water. The directional sense anchors all metaphorical extensions.
+
+### H2088 / Sense 94103 (1059 occ, sense 1 of 4)
+**Label:** this, this one (demonstrative)
+**Lemma gloss:** This, this one (demonstrative pronoun); with prepositions: from here, in this, like this/thus.
+**Description:** Near demonstrative pronoun pointing to a person, thing, or situation in immediate context: 'this,' 'this one,' 'these.'
+**Enriched:** The core demonstrative pronoun meaning 'this,' 'this one,' 'this thing' — by far the dominant sense at approximately 1,059 of 1,178 occurrences. It points to persons, objects, places, times, and situations in immediate proximity or discourse context: 'this day' (Gen 7:11), 'this man' (Gen 19:21), 'this place' (Gen 20:11). Spanish este/esta, French ce/cette, German dieser/diese, Korean 이 (i), and Arabic hadha all deploy their standard near-demonstrative forms, confirming the unmarked deictic function. The word frequently combines with the article (haz-zeh) for emphatic specification.
+
+### G1063 / Sense 64411 (1047 occ, sense 1 of 1)
+**Label:** (none)
+**Lemma gloss:** gar -- causal conjunction 'for,' introducing reason, explanation, or ground for a preceding claim
+**Description:** (none)
+**Enriched:** A causal conjunction introducing the reason or explanatory ground for a preceding assertion. In Matt 1:20 the angel explains 'for (gar) that which is conceived in her is from the Holy Spirit,' and in Matt 2:6 a prophetic quotation is introduced with explanatory force. Spanish porque, French car, and German denn all converge on the same explanatory-causal function, with no evidence of polysemy across 1,047 occurrences.
+
+### H0001 / Sense 79287 (1031 occ, sense 1 of 3)
+**Label:** father, immediate male parent
+**Lemma gloss:** Father: immediate male parent; ancestor or forefather (plural); patriarchal clan head in Israel's tribal organization.
+**Description:** Biological or legal father in a direct parent-child relationship; also used for grandfather, father-in-law, adoptive father, and as a title of respect or metaphorical originator — all singular uses where target languages uniformly render 'father' (Korean 아버지, Hindi पिता, Arabic أَب, Swahili baba).
+**Enriched:** The immediate male parent — biological father, and by extension grandfather, father-in-law, adoptive father, or any singular authority figure addressed with filial respect. This dominant sense (1,030+ occurrences) spans from 'honor your father' (Exod 20:12) to Joseph's self-identification as 'a father to Pharaoh' (Gen 45:8). Spanish padre, French père, German Vater, and Arabic أب all converge on the basic parental term. The polite self-referential 'your servant' parallels the use of 'your father' as a term of respect for prophets and advisors (2 Kgs 2:12).
+
+### G3778 / Sense 73584 (1003 occ, sense 1 of 3)
+**Label:** this thing, these things
+**Lemma gloss:** This, this one, these — near demonstrative pronoun for persons, things, and explanatory constructions
+**Description:** Demonstrative pronoun referring to things, concepts, situations, or abstract realities (neuter or general usage), in any case or number.
+**Enriched:** Demonstrative pronoun pointing to things, concepts, situations, or abstract realities — the neuter and general usage. This is the most frequent sense, covering over 1,000 occurrences. It appears in phrases like διὰ τοῦτο ('because of this,' Matt 6:25), μετὰ ταῦτα ('after these things'), and ταῦτα πάντα ('all these things,' Matt 6:33). Glosses converge on neuter demonstratives: 'esto,' 'ceci,' 'dieses.'
+
+### H???? / Sense 145953 (1002 occ, sense 2 of 94)
+**Label:** (none)
+**Lemma gloss:** (none)
+**Description:** (none)
+**Enriched:** (none)
+
+### H5973a / Sense 124606 (956 occ, sense 1 of 4)
+**Label:** accompaniment, together with
+**Lemma gloss:** With, together with; preposition of accompaniment, proximity, opposition, or possession.
+**Description:** Comitative sense expressing accompaniment, association, or being in the company of someone, the dominant meaning of the preposition עִם across all pronominal suffix forms and with or without conjunctive waw.
+**Enriched:** The overwhelming comitative sense: accompaniment, association, being together with someone or something. This accounts for 956 of 978 occurrences and is the default meaning across all suffix forms and constructions. Abraham pleads with God concerning Sodom: 'Will you sweep away the righteous with the wicked?' (Gen 18:23). The multilingual evidence is unanimous — Spanish con, French avec, German mit/bei, Arabic ma'a, and Swahili pamoja na all converge on simple togetherness. The sense covers everything from physical presence ('God was with the boy,' Gen 21:20) to covenantal partnership ('I will make my covenant with you,' Gen 17:2).
+
+### H0259 / Sense 81004 (940 occ, sense 1 of 7)
+**Label:** one (cardinal numeral)
+**Lemma gloss:** one; first; once; each; a few; eleven (compound with עָשָׂר)
+**Description:** The cardinal number 'one,' used as an adjective or substantive to denote a single entity, including constructs like 'one of,' 'the one,' 'from one,' 'to one,' 'with one,' and 'in one,' across all grammatical genders, prepositional prefixes, and article combinations.
+**Enriched:** The cardinal numeral 'one' in its basic sense (940x), appearing from the very first chapter of Genesis ('day one,' Gen 1:5) onward. Universally glossed as a simple numeral — Spanish uno/una, French un, German eine/einen — this sense covers adjectival, substantive, and construct uses. It encompasses theologically loaded passages like Genesis 2:24 ('one flesh') and Deuteronomy 6:4 ('the LORD is one').
+
+### H3947 / Sense 109092 (940 occ, sense 1 of 6)
+**Label:** take, seize, grasp (Qal)
+**Lemma gloss:** To take, seize, grasp; receive, accept; fetch, bring; take away; (Nifal) be taken; (Hitpael) flash, flame.
+**Description:** The core Qal active sense of לקח — to take, lay hold of, seize, or pick up a person or object; covers all inflections (perfect, imperfect, imperative, infinitive, participle) and persons of the basic transitive 'take' meaning, confirmed by Arabic أَخَذَ, Korean 취하다, and Swahili -chukua across all clusters.
+**Enriched:** The core Qal transitive sense: to take, seize, grasp, pick up. By far the most frequent use, covering physical grasping, selecting, capturing, and acquiring. Arabic akhatha, Korean chwihada, Swahili kuchukua, Spanish tomar all converge on active appropriation. From 'God took the man' (Gen 2:15) to 'take your son' (Gen 22:2).
+
+### H3427 / Sense 104422 (937 occ, sense 1 of 6)
+**Label:** Qal: to dwell, inhabit
+**Lemma gloss:** To sit, dwell, inhabit, remain; (Hifil) settle, cause to dwell; (Nifal) be inhabited; (Hofal) be settled.
+**Description:** To reside, live in, or inhabit a place; also used substantively as 'inhabitant(s) of' a land or city (Qal stem, all inflections).
+**Enriched:** The dominant Qal sense: to dwell, reside, inhabit. Covers permanent settlement and the substantival participle yoshev, 'inhabitant(s) of.' German Bewohner, Spanish habitantes, French habitants, Swahili wakaaji all cluster around residential language. Foundational in covenant contexts — 'you shall dwell in the land' (Lev 25:18).
+
+### G2424 / Sense 69442 (924 occ, sense 1 of 1)
+**Label:** (none)
+**Lemma gloss:** Iesous -- Jesus, the Greek form of Hebrew Yehoshua/Joshua, meaning 'Yahweh saves'
+**Description:** (none)
+**Enriched:** The Greek form of Hebrew Yehoshua ('Yahweh saves'), used primarily for Jesus of Nazareth, the Messiah and Son of God, whose name is theologically interpreted at his birth: 'you shall call his name Jesus, for he will save his people from their sins' (Matt 1:21). With 924 occurrences it is the most frequent proper noun in the New Testament. Cross-lingual evidence shows near-total phonetic preservation -- Spanish and German Jesus, French Jesus -- confirming a single proper-noun identity.
+
+### H8085 / Sense 142065 (921 occ, sense 1 of 7)
+**Label:** Qal: hear, perceive aurally
+**Lemma gloss:** To hear, listen, heed, obey; in Hifil: cause to hear, proclaim; in Niphal: be heard
+**Description:** Basic auditory perception in Qal — the ear receives sound. Arabic consistently uses سَمِعَ (samiʿa) in perfective and يَسْمَعُ (yasmaʿu) in imperfective, the unmarked root meaning 'to hear/perceive.' Korean uses the neutral 듣다/들다 (deutda/deulda) 'to hear,' and Swahili uses the base form -sikia 'to hear/feel/perceive' without any derivational extensions. This is the core physical-perceptual sense: sound reaching the ear and being registered, as in 'David heard that Nabal was dead' or 'the sound of the trumpet was heard.' Hindi सुना/सुनी (sunā/sunī) in simple past and सुनता है (suntā hai) habitual confirm unmarked perception. All inflectional variants (person, number, gender, tense, prepositional prefix for temporal clauses) collapse here when the meaning is simply 'perceive by ear.'
+**Enriched:** Basic auditory perception in the Qal: the ear receives sound without implied volition. Arabic سَمِعَ (samiʿa) and cognates across Semitic languages confirm this as the unmarked root meaning. Dominant at 921 occurrences — Lamech says 'hear my voice' (Gen 4:23), and prophetic reception is described as simply hearing (Num 12:6).
+
+### H3318 / Sense 103087 (891 occ, sense 1 of 5)
+**Label:** Qal: go out, depart, come forth
+**Lemma gloss:** To go out, come forth, depart; in Hifil, to bring out, lead forth, produce. The fundamental Hebrew verb of outward movement.
+**Description:** Basic intransitive movement outward from an enclosed or defined space -- physical departure, going forth from a city/camp/house, emerging, proceeding forth, escaping. Arabic consistently uses خَرَجَ (kharaja, perfect), يَخْرُجُ (yakhruju, imperfect), خَارِج (khaarij, participle), and خُرُوج (khuruwj, infinitive), all from root خ-ر-ج 'exit.' Korean uses 나가다 (nagada, 'go out') and 나오다 (naoda, 'come out'), both basic directional exit verbs. Swahili uses -toka ('go out, come from') consistently with class-appropriate subject prefixes (akatoka, wakatoka, ikatoka). This is the overwhelmingly dominant sense covering Qal perfects, imperfects, waw-consecutives, imperatives, jussives, cohortatives, infinitives construct and absolute, and participles (substantival, attributive, and construct) across all persons, numbers, and genders. Includes temporal uses ('at the going out of the year'), military going forth ('the one going out and coming in'), water/springs issuing forth, decrees proceeding, and metaphorical extensions like 'fly away' (Prov 23:5 -- Arabic still تَخْرُجُ from خ-ر-ج, though English renders 'fly away'; Swahili itaruka is context-driven). Also includes ketiv variants.
+**Enriched:** Qal intransitive: to go out, come forth, depart — the overwhelming base sense at 891 occurrences. Physical movement outward from an enclosed or defined space: leaving a city (Gen 14:8), departing a tent (Gen 31:33), emerging from an ark (Gen 8:7), escaping a doomed place (Gen 19:14). Arabic kharaja and Korean 나가다 both select basic exit vocabulary. The range extends naturally to water 'going forth' from springs, fire 'coming out' from the LORD's presence, and descendants 'proceeding' from a patriarch's loins — all unified by the directional schema of inside-to-outside.
+
+### G1537 / Sense 66561 (886 occ, sense 1 of 3)
+**Label:** from, out of (source/origin)
+**Lemma gloss:** Preposition: from, out of (source/origin); at, on (position/side); by means of, with (instrument/cause).
+**Description:** The primary spatial and causal sense of ἐκ/ἐξ: denoting origin, source, separation, or extraction — 'from', 'out of'. This is the dominant NT usage (885+ occurrences). Covers genealogical origin (Matt 1:3ff ἐκ τῆς Θαμάρ), geographical departure (Matt 2:15 ἐξ Αἰγύπτου), material source (Matt 3:9 ἐκ τῶν λίθων), and partitive uses. Glosses are remarkably uniform: Arabic من, German aus, French de, Hebrew מִ/מִן, Hindi से, Korean 에서, Spanish de.
+**Enriched:** The primary sense of source, origin, separation, or extraction — 'from, out of.' This overwhelming majority usage (886 occurrences) encompasses spatial movement out of a place (Matt 2:15, 'out of Egypt I called my son'), genealogical origin (Matt 1:3-16, the genealogy's repeated ek to mark parentage), material source, cause, and partitive separation ('one from among you'). Spanish de, French de, German aus, and Arabic من all converge on a basic ablative/source preposition. The genealogical thread is especially revealing: Matthew's ek tou David, ek tes Marias shows origin-marking as a core NT function.
+
+### H3212 / Sense 102195 (884 occ, sense 1 of 5)
+**Label:** go, depart, travel
+**Lemma gloss:** To go, walk, travel, depart; figuratively to walk in a way of life; idiomatically 'come!' as an invitation; in Hifil, to lead or drive.
+**Description:** Basic motion from one place to another, departing or traveling; the primary Qal sense of directed movement rendered in Arabic as ذَهَبَ (dhahaba) and in Korean as 가다 (gada).
+**Enriched:** Qal basic: to go, depart, travel — the primary sense at 884 occurrences, covering all directed movement from one place to another. Abraham 'went' as the LORD had spoken (Gen 12:4); Jacob 'went on his way' (Gen 32:1); messengers 'went' and returned. Arabic dhahaba ('to go, depart') and Korean 가다 (gada, 'to go') are the standard equivalents. Spanish fue/fueron and German ging/gingen likewise use their unmarked motion verbs. This is the semantic baseline from which all other senses extend.
+
+### G3754 / Sense 73500 (881 occ, sense 1 of 3)
+**Label:** that (content clause)
+**Lemma gloss:** Conjunction: that (introducing content clauses); because, for (causal); rarely a relative: what, whatever.
+**Description:** Conjunction introducing a content (declarative) clause after verbs of saying, knowing, perceiving, or believing, translated 'that' in English. This is the most frequent NT use of hoti (880+ occurrences). The multilingual signatures are highly consistent: German 'dass', French 'que', Spanish 'que', Arabic 'anna/inna', Hindi 'ki', Korean '-eul/-rago'. The Hebrew back-translation uniformly gives 'ki'. This use functions as a complementizer: 'He knew THAT the time had come' (John), 'It is written THAT...' (Matthew). Sense 73505 (Matt 19:8, capitalized 'That') is simply a clause-initial token of this same complementizer function and belongs here rather than as a separate sense.
+**Enriched:** The declarative complementizer 'that,' introducing content clauses after verbs of perception, cognition, and communication. This overwhelmingly dominant sense (880+ occurrences) appears in sentences like 'when Herod saw that he had been tricked' (Matt 2:16) and 'do not think that I came to abolish the Law' (Matt 5:17). Spanish que, French que, and German dass all converge on a dedicated complementizer, while Korean uses the clause-final marker -는 것을, confirming the cross-linguistic naturalness of this grammatical function.
+
+### H2009 / Sense 93453 (881 occ, sense 1 of 3)
+**Label:** presentative particle: behold, look
+**Lemma gloss:** Presentative particle: behold, look, lo; with 1st-person suffix: behold me/I; as a response to a summons: here I am.
+**Description:** The core deictic interjection drawing attention to a fact, situation, or person, used bare or with waw-conjunction and/or 2nd/3rd-person pronominal suffixes, uniformly translated as 'behold,' 'he aquí,' 'dekho,' 'tazama,' '보라' across languages.
+**Enriched:** The core presentative particle meaning 'behold, look, lo' — directing the hearer's attention to a fact, situation, person, or scene. This dominant sense (881 occurrences) appears with bare hinneh or with second/third-person pronominal suffixes and waw-conjunction. From God showing Adam 'behold, I have given you every seed-bearing plant' (Gen 1:29) to prophetic visions ('behold, a ladder set up on earth,' Gen 28:12), it functions as a discourse spotlight. Spanish he aqui, French voici, and German siehe form a remarkably stable equivalence class across all target languages.
+
+### H8141 / Sense 142829 (880 occ, sense 1 of 1)
+**Label:** year, unit of time
+**Lemma gloss:** shanah -- year; the primary Hebrew unit for measuring extended time periods
+**Description:** A year as a standard temporal unit used for dating events, measuring reigns, marking ages, and reckoning periods, encompassing singular, plural, dual, construct, and all inflected forms of שָׁנָה.
+**Enriched:** The standard unit of annual time measurement, used for genealogical ages (Gen 5:3-5), regnal dating, sabbatical and jubilee cycles (Lev 25:4, 10), and prophetic time spans. Singular, dual, and plural forms -- along with every prepositional and construct combination -- all point to a single undifferentiated temporal concept. Cross-lingual glosses converge cleanly: Spanish anos, French ans, German Jahre, confirming no polysemy across 880 occurrences.
+
+### H0589 / Sense 83317 (874 occ, sense 1 of 1)
+**Label:** I (first person singular pronoun)
+**Lemma gloss:** ani -- I; the first-person singular independent pronoun in Hebrew
+**Description:** The first person singular independent pronoun אֲנִי/אֲנוּ ('I'), one of the two Hebrew forms for 'I' (alongside אָנֹכִי H0595). Extremely frequent (874 occurrences) across all genres—narrative, prophetic, legal, wisdom, and poetic. Used in divine self-declarations ('I am YHWH,' Exod 6:2), prophetic speech ('and I will...'), human discourse, and emphatic subject marking. The three clusters differ only in syntactic context: standalone (694x), conjunction-prefixed וַאֲנִי 'and I / but I' (178x), and relative-pronoun-prefixed שֶׁאֲנִי 'that I' (2x). All languages render uniformly: spa yo, hin मैं, arb أَنَا, kor 나는/내가, swa mimi.
+**Enriched:** The unmarked first-person singular independent pronoun, used by both human and divine speakers to identify themselves as the subject of discourse. Distinguished from the more solemn anokhi (H0595), ani is the common default form across narrative, poetry, prophecy, and wisdom literature. Its cross-lingual rendering is maximally uniform -- Spanish yo, French je, German ich -- with 874 occurrences showing no semantic differentiation whatsoever.
+
+### H7725 / Sense 138613 (874 occ, sense 1 of 8)
+**Label:** to return, come/go back (Qal)
+**Lemma gloss:** To turn back, return; (Hifil) bring back, restore, answer, repay; (Polel) restore thoroughly; turn away, apostatize
+**Description:** Physical or spatial return; coming or going back to a place, person, or prior state — the basic Qal meaning of שׁוּב covering all inflections (perfect, imperfect, imperative, infinitive, participle).
+**Enriched:** The foundational Qal sense: physical or spatial return to a place, person, or prior condition. With 874 occurrences this is the default meaning across all narrative contexts. Multilingual glosses consistently render directional motion — Spanish 'volvió,' French 'retourna,' German 'kehrte zurück.' Key passages like Gen 8:9 (the dove returning to the ark) and Gen 22:19 (Abraham returning from Moriah) exemplify straightforward spatial return.
+
+### H8034 / Sense 141493 (856 occ, sense 1 of 2)
+**Label:** Name (designation / identifier)
+**Lemma gloss:** Name, designation; by extension fame, reputation, or renown — the word by which someone is known or remembered.
+**Description:** The word by which a person, place, or thing is known and called — the core meaning of Hebrew shem (Arabic cognate ism), covering personal names, place names, divine Name, naming acts, and all inflected forms with articles, possessive suffixes (his/her/their/my/our name), construct chains (name-of X), and prepositional prefixes (by/for/to/in/like/from the name), as well as plural forms used in genealogies, census rolls, and enumeration lists (names of the sons of X, by their names).
+**Enriched:** The word by which a person, place, or thing is identified and called — covering personal names, place names, the divine Name, and naming acts. Translations universally render this as nombre (Spa.), nom (Fra.), Name (Ger.), reflecting its core denotation as a designation or identifier. Central to covenant theology when applied to God's Name (Exod 3:15; Deut 12:5).
+
+### H8033 / Sense 141485 (835 occ, sense 1 of 1)
+**Label:** There (locative adverb)
+**Lemma gloss:** sham -- there, thither; a locative adverb pointing to a previously mentioned or implied place
+**Description:** The common locative adverb שָׁם meaning 'there,' one of the most frequent words in the Hebrew Bible (835 occurrences), indicating a location previously mentioned or implied in the discourse. All three clusters represent the same adverb in different syntactic environments: standalone or with conjunction (S141485, 716x: eng 'there', spa 'allí/allá', hin वहाँ, arb هُنَاكَ, kor 거기에, swa 'huko/pale'), with the ablative preposition מִן (S141486, 116x: eng 'from there', spa 'de allí', hin वहाँ से, arb مِنْ هُنَاكَ, kor 거기에서, swa 'kutoka huko'), and in existential or emphatic constructions (S141490, 3x: eng 'there/is there', spa 'allí', hin वहां, arb هُنَاكَ, swa 'huko'). The prepositional combination מִשָּׁם is a standard grammatical collocation, not a distinct sense.
+**Enriched:** A locative adverb indicating a place previously mentioned or contextually implied, functioning both as static 'there' and directional 'thither.' First appearing in Gen 2:8 ('there he put the man'), it serves as essential spatial scaffolding throughout biblical narrative and poetry. German dort and Spanish alli map to it with complete consistency across 835 occurrences. The word's three original clusters (reflecting minor morphological variation) show no semantic differentiation, confirming a single deictic sense.
+
+### G3361 / Sense 72357 (834 occ, sense 1 of 6)
+**Label:** subjective negation (not)
+**Lemma gloss:** Not (subjective negation); lest; emphatic never; interrogative expecting 'no'; except; perhaps.
+**Description:** General subjective negative particle used with non-indicative moods (subjunctive, imperative, infinitive, participle) to negate actions, commands, or conditions.
+**Enriched:** General subjective negation with non-indicative moods: subjunctive, imperative, infinitive, participle. Spanish no, French ne...pas, German nicht all translate it flatly, but the grammatical context — commands, conditions, general statements — sets it apart from ou. The backbone of all prohibitions: 'do not worry' (Matt 6:25), 'do not judge' (Matt 7:1).
+
+### H3045 / Sense 100980 (829 occ, sense 1 of 13)
+**Label:** Qal: to know, perceive, understand
+**Lemma gloss:** to know (cognitively, relationally, carnally); to perceive, understand, recognize, be acquainted with
+**Description:** The primary Qal sense of ידע covering cognitive knowledge of facts, situations, and truth; awareness, perception, and understanding. Includes all inflections (perfect, imperfect, imperative, cohortative, jussive, infinitive construct) across all persons and numbers where the meaning is general knowing/perceiving.
+**Enriched:** The overwhelming majority sense: cognitive knowledge spanning facts, situations, and truth. Multilingual glosses converge on 'know' (English), 'conocer/saber' (Spanish), 'connaître/savoir' (French), 'erkennen/wissen' (German), revealing a universal semantic core. Exodus 7:5 ('the Egyptians shall know that I am the LORD') exemplifies recognition through divine action.
+
+### H0518a / Sense 82786 (827 occ, sense 1 of 6)
+**Label:** conditional particle: if
+**Lemma gloss:** Conditional particle: if, or, whether; also concessive (though) and asseverative (surely) in oaths
+**Description:** Introduces a conditional protasis ('if X, then Y'), including waw-prefixed forms and temporal-conditional uses ('when/if').
+**Enriched:** The dominant conditional use (827x), introducing protases with imperfect or perfect verbs. Spanish si, French si, and German wenn/ob all converge on the conditional reading. Key passages like Gen 4:7 ('if you do well') and Gen 13:16 ('if one could count the dust') show both real and hypothetical conditions. The cross-linguistic uniformity here confirms a single stable sense.
+
+### H3063 / Sense 101303 (819 occ, sense 1 of 1)
+**Label:** Judah (proper noun)
+**Lemma gloss:** Judah — the patriarch, the tribe descended from him, or the southern kingdom bearing his name
+**Description:** The proper noun Yehudah/Judah, referring to the patriarch (fourth son of Jacob), the tribe descended from him, or the southern kingdom of Judah, with all grammatical variations (prepositional and conjunctive prefixes) representing the same lexical identity.
+**Enriched:** The proper name Yehudah, applied to Jacob's fourth son by Leah (Gen 29:35), the tribe that bore his name and received the royal blessing (Gen 49:8-10), and the southern kingdom centered on Jerusalem. All 819 occurrences, including prepositional and conjunctive variants, refer to this single referent across its personal, tribal, and geo-political dimensions.
+
+### H5927 / Sense 124053 (779 occ, sense 1 of 7)
+**Label:** go up, ascend (Qal)
+**Lemma gloss:** go up, ascend; offer up sacrifice; bring up, lead out; rise; be taken up; set up lamps; bring up cud
+**Description:** Physical movement upward to a place, ascending a mountain, hill, or city; traveling up geographically; going up to battle or to appear before God (Arabic صَعِدَ, Korean 올라가다/올라오다, Swahili panda/kupanda).
+**Enriched:** The dominant Qal sense (779x): physical movement upward — ascending mountains, entering cities at higher elevation, going up to battle, or approaching God's sanctuary. Arabic صَعِدَ, Korean 올라가다, Swahili kupanda all confirm the spatial upward vector. Genesis 13:1 (Abram going up from Egypt) and 1 Kings 18:42 (Elijah ascending Carmel) are paradigmatic instances.
+
+### G2532 / Sense 69826 (771 occ, sense 2 of 2)
+**Label:** (none)
+**Lemma gloss:** Conjunction 'and'; also adverbial 'also, even, likewise' for emphasis or addition
+**Description:** (none)
+**Enriched:** The adverbial or ascensive use meaning 'also, even, likewise,' adding emphasis or an unexpected element. Spanish distinctly renders this as 'tambien' rather than 'y,' revealing the semantic shift. Found in passages like Matt 5:39-40 ('if anyone strikes your right cheek, turn the other also') and Matt 5:46 ('do not even the tax collectors do the same?'). This sense covers about 771 occurrences where kai goes beyond simple conjunction to signal addition, climax, or surprise.
+
+### H4872 / Sense 114527 (766 occ, sense 1 of 1)
+**Label:** Moses (proper name)
+**Lemma gloss:** Moses — the lawgiver, prophet, and leader who brought Israel out of Egypt
+**Description:** The proper noun Mosheh (Moses), the great lawgiver and prophet who led Israel out of Egypt. All four clusters refer to the same individual with variation only in prepositional framing and conjunction: bare name (S114527, 760x), with preposition 'against/in' (S114531, S114533), 'through' (S114534), and with conjunction 'and' (S114520 via S114531). Multilingual evidence is perfectly uniform: eng 'Moses', spa 'Moises/Mosheh', hin 'Musa' (मूसा), arb 'Musa' (مُوسَى), kor 'Mose' (모세), swa 'Musa'. There is no semantic distinction between these uses; they are all references to the same biblical figure with different syntactic roles.
+**Enriched:** The proper name Mosheh (Moses), referring exclusively to the son of Amram and Jochebed of the tribe of Levi, who led Israel out of Egypt and mediated the covenant at Sinai. All 766 occurrences denote this one individual. Prepositional variants (to-Moses, from-Moses, by-Moses) reflect syntactic framing rather than any semantic distinction.
+
+### G1909 / Sense 67571 (757 occ, sense 1 of 12)
+**Label:** on, upon (spatial surface)
+**Lemma gloss:** on, upon (surface); to, toward (direction); in, at (location); during (time); about, concerning; before (presence); against (hostility); by, on the basis of (ground)
+**Description:** Indicates position on a surface or location upon something, the core spatial sense of ἐπί with genitive or dative: 'on the earth', 'upon his head'.
+**Enriched:** Core spatial sense: on a surface, upon something. The genitive or dative construction signals position on top of or supported by. Matthew 5:15 places a lamp 'on' a stand (sobre un candelero). Acts describes the Spirit descending 'upon' believers (sur eux). The cross-linguistic consistency (Spanish 'sobre,' French 'sur,' German 'auf') confirms this as the semantic anchor of ἐπί.
+
+### H3548 / Sense 105503 (750 occ, sense 1 of 1)
+**Label:** priest, cultic officiant
+**Lemma gloss:** priest — one appointed to perform sacrifices, rituals, and sacred mediation between God and the people
+**Description:** One appointed to serve in a cultic or religious capacity, performing sacrifices, rituals, and mediating between God and the people; used of Aaronic/Levitical priests, pagan priests, and Melchizedek.
+**Enriched:** A person consecrated to cultic service, responsible for offering sacrifices, maintaining the sanctuary, and mediating between the deity and the community. Encompasses Aaronic and Levitical priests (Exod 29:30), the priest-king Melchizedek (Gen 14:18), pagan cult officials (2 Kgs 10:19), and the eschatological priest of Zechariah 6:13. Aramaic kahana and Ethiopic kahen attest to the deep Semitic roots of this office.
+
+### H0428 / Sense 82391 (746 occ, sense 1 of 1)
+**Label:** these (demonstrative pronoun)
+**Lemma gloss:** these — near demonstrative pronoun pointing to a previously mentioned or forthcoming group of persons or things
+**Description:** Near demonstrative pronoun referring to a plural set of persons, things, or concepts previously mentioned or about to be specified, used with various prepositional prefixes (from, to, in, like) that do not alter the pronoun's core deictic meaning.
+**Enriched:** The near plural demonstrative pronoun, used to indicate a set of referents already introduced or about to be specified in the discourse. Frequently opens formulaic lists (Gen 10:20 'these are the sons of Ham') and legal enumerations (Deut 18:12 'these things'). All 746 occurrences, including prepositional compounds, express a single deictic function without semantic variation.
+
+### H0859a / Sense 85001 (743 occ, sense 1 of 1)
+**Label:** you (2nd person masculine singular pronoun)
+**Lemma gloss:** you — second person masculine singular independent pronoun for direct address
+**Description:** The independent second person masculine singular pronoun, used throughout the Hebrew Bible for direct address. All three clusters are identical in meaning: the bare pronoun (eng: you/You, spa: tú/Tú, hin: तू/तूने, arb: أَنْتَ, kor: 네가/너는, swa: wewe), the conjunctive form with waw (eng: and-you/but-you, spa: y-tú/Y-tú, arb: وَ-أَنْتَ, hin: और-तू, swa: na-wewe), and a rare ketiv variant (S85007) that is simply a scribal spelling variant of the same pronoun. Multilingual evidence is perfectly uniform.
+**Enriched:** The free-standing second person masculine singular pronoun, employed either as an independent subject or as an emphatic reinforcement of a pronominal suffix. Covers all 743 occurrences including conjunctive forms (we-attah, 'and you'). Used in divine address (Gen 3:14), covenant formulas (Gen 6:18), and prophetic confrontation — always denoting the same grammatical person without semantic subdivision.
+
+### H0369 / Sense 81690 (738 occ, sense 1 of 4)
+**Label:** existential negation: there is not
+**Lemma gloss:** There is not, nothing, nought; a particle of non-existence used for negating being, presence, or availability.
+**Description:** Core sense of non-existence: 'there is not, there is no (one/thing)' — including all person/number inflections (1cs, 2ms, 2fs, 2mp, 3ms, 3fs, 3mp) and with/without conjunctive waw; Arabic consistently uses لَيْسَ (laysa, existential negation) with pronominal suffixes (لَسْتُ, لَسْتَ, لَسْتُمْ, لَيْسُوا, لَيْسَتْ); Korean 없다 (eopda, non-existence verb); Swahili hakuna/hakuwa/hawako (class-inflected non-existence)
+**Enriched:** The core existential negation: 'there is not, there are not, he/she/it is not present.' This massive cluster of 738 occurrences covers all inflected forms with pronominal suffixes (1cs through 3mp) and with or without conjunctive waw. It functions as the standard negator of existence and presence throughout the Hebrew Bible. Joseph tells Pharaoh 'there is none who can interpret' (Gen 41:15); the spies report 'there is no one in the city' (Gen 19:31). Arabic laysa, French il n'y a pas, and German es gibt nicht all converge on the same existential-negation frame. The pseudo-verbal suffix conjugation ('eneni, 'enekha, 'enennu, etc.) gives this particle a verbal feel unmatched by simple adverbs.
+

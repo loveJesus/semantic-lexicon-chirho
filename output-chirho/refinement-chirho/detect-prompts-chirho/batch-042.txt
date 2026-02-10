@@ -1,0 +1,291 @@
+# Sense Refinement Detection — Batch 042
+
+You are a biblical lexicographer reviewing sense entries for a Hebrew/Aramaic/Greek lexicon.
+Each entry below is a single "sense" that was produced by clustering translation signatures 
+and then merging with an LLM. Some senses may have been OVER-LUMPED — they contain genuinely 
+distinct meanings that should be separate senses.
+
+## Your Task
+
+For each sense, determine if it should be SPLIT into multiple senses. Look for:
+- Literal vs. figurative/metaphorical uses lumped together
+- Concrete vs. abstract meanings combined
+- Multiple distinct referents (e.g., "father" = biological parent + patron/advisor + originator)
+- Physical vs. spiritual/theological uses merged
+- Different syntactic frames producing different meanings
+
+## Output Format
+
+Return a JSON array. For senses that need NO splitting, omit them entirely.
+For senses that SHOULD be split, include an entry like:
+
+```json
+[
+  {
+    "senseIdChirho": 79287,
+    "lemmaIdChirho": "H0001",
+    "currentLabelChirho": "father, immediate male parent",
+    "splitProposalChirho": [
+      {
+        "newLabelChirho": "biological/legal father",
+        "criteriaChirho": "Direct parent-child relationship, possessive constructions with specific person"
+      },
+      {
+        "newLabelChirho": "metaphorical father (patron, advisor, protector)",
+        "criteriaChirho": "Title of respect for prophets, advisors, or authority figures; 'father to Pharaoh' type usage"
+      }
+    ],
+    "confidenceChirho": "high",
+    "reasoningChirho": "Description explicitly mentions 'title of respect or metaphorical originator' alongside biological father"
+  }
+]
+```
+
+Only propose splits where you have MEDIUM or HIGH confidence. Do NOT split function words (articles, 
+prepositions, particles, conjunctions) unless there is a genuinely distinct semantic sense (not just 
+syntactic variation). Proper nouns generally should NOT be split.
+
+If NO senses in this batch need splitting, return an empty array: []
+
+## Senses to Review
+
+### G2147 / Sense 68452 (31 occ, sense 2 of 3)
+**Label:** be found, be discovered
+**Lemma gloss:** To find, discover, or come upon someone or something; passive: to be found, turn out to be, be revealed.
+**Description:** Passive: to be found, be discovered, turn up, or turn out to be (Arabic wujida/yujad, Korean 발견되었다, Swahili -patikana/-onekana).
+**Enriched:** The passive sense: to be found, be discovered, turn up, or turn out to be in a certain state. Used when the subject is the one discovered rather than the discoverer—Mary 'was found' with child (Matt 1:18), the lost son 'has been found' (Luke 15:24, 32). Swahili -patikana and Arabic wujida capture this passivity well. Often theologically loaded: being found worthy, being found in Christ, or being revealed in one's true character (Luke 17:18).
+
+### G2409 / Sense 69418 (31 occ, sense 1 of 1)
+**Label:** priest
+**Lemma gloss:** priest — one who performs sacred rites and offers sacrifices, especially Jewish temple priests and Christ as high priest
+**Description:** A priest, one who performs sacred rites and offers sacrifices; in the NT used of Jewish priests serving in the Jerusalem temple (Zechariah, those who examined healed lepers), the high priest's associates, and metaphorically of Christ as priest after the order of Melchizedek (Hebrews). Multilingual evidence treats singular and plural uniformly: Spanish 'sacerdote/sacerdotes', Hindi 'yajak/yajakon', Arabic 'kahinun/kahanatan', Korean 'jesajang/jesajangdeuri', Swahili 'kuhani/makuhani'. The singular (N-DMS, N-NMS, N-AMS) and plural (N-DMP, N-NMP, N-AMP, N-GMP) forms are number inflection of one sense.
+**Enriched:** A cultic officiant who performs sacred rites and offers sacrifices. In the Gospels, refers to Jewish temple priests who certify healing (Matt 8:4; Luke 17:14), with the Good Samaritan parable naming one who passes by (Luke 10:31). Zechariah serves as a priest of the division of Abijah (Luke 1:5). Hebrews redefines the office christologically: Jesus is priest forever after Melchizedek's order (Heb 5:6; 7:11-21), rendering the Aaronic priesthood obsolete.
+
+### G3668 / Sense 73175 (31 occ, sense 1 of 1)
+**Label:** likewise
+**Lemma gloss:** likewise, in the same way — adverb drawing a parallel between actions, situations, or commands
+**Description:** likewise, Likewise (31 occurrences across 5 original clusters)
+**Enriched:** An adverb drawing an explicit parallel between two actions or situations, meaning 'in the same way.' Used to chain narrative events — the brothers who each married the same widow (Matt 22:26), Peter's vow alongside the others (Matt 26:35), the mocking priests at the cross (Mark 15:31). Also carries ethical force, as in Jesus' command 'go and do likewise' (Luke 10:37). In the epistles, structures parallel exhortations to different groups (1 Pet 3:1; 5:5).
+
+### G3854 / Sense 73823 (31 occ, sense 1 of 3)
+**Label:** arrive at a place
+**Lemma gloss:** To arrive at a destination; to appear or come on the scene publicly; to be present or come alongside someone.
+**Description:** To come to or reach a destination, emphasizing the physical movement and arrival at a specific location.
+**Enriched:** Physical arrival at a specific place or destination, emphasizing the journey's completion. This dominant sense (31 occurrences) covers the Magi arriving in Jerusalem (Matt 2:1), messengers reaching Jesus (Luke 7:4, 20), Mary's family coming to find him (Luke 8:19), and travelers arriving after a journey (Luke 11:6). Spanish habiendo llegado, French arriver, and German ankommen all converge on the directional arrival reading. The verb consistently marks the endpoint of movement rather than the journey itself.
+
+### G4893 / Sense 77081 (31 occ, sense 1 of 1)
+**Label:** conscience, moral self-awareness
+**Lemma gloss:** conscience — the inner moral faculty by which a person evaluates their own conduct as right or wrong
+**Description:** The inner faculty of moral self-evaluation by which a person judges their own actions as right or wrong; used extensively in Pauline and Petrine epistles regarding a clear, good, weak, or defiled conscience. Singular and plural inflections represent the same concept. Spanish 'conciencia/conciencias' directly parallels the Latin-derived English term; Hindi 'विवेक' (discernment, moral judgment) emphasizes the discriminative faculty; Arabic 'ضَمير/ضَمائِر' (conscience, inner voice) derives from a root meaning 'hidden/inner'; Korean '양심' (良心, good-heart) uses a Sino-Korean compound highlighting the moral-goodness aspect of this inner awareness; Swahili 'dhamiri' (conscience) is a Bantu-Arabic loan. The Hindi 'ज़मेएर' variant parallels the Arabic 'ضمير', showing cross-linguistic borrowing chains.
+**Enriched:** The inner moral faculty that evaluates one's own actions and motives, bearing witness alongside reason and the law. Paul grounds Gentile moral accountability in conscience (Rom 2:15) and extensively discusses the 'weak conscience' regarding idol-food (1 Cor 8:7-12; 10:25-29). Hebrews contrasts the inability of animal sacrifice to purify the conscience with Christ's blood that cleanses from dead works (Heb 9:9, 14; 10:22). First Peter presents baptism as the appeal of a good conscience toward God (1 Pet 3:21).
+
+### G5443 / Sense 78790 (31 occ, sense 1 of 1)
+**Label:** tribe, clan
+**Lemma gloss:** tribe, clan — a division of a people by ancestral descent, especially the twelve tribes of Israel
+**Description:** A division of a people based on descent from a common ancestor, especially the twelve tribes of Israel; used extensively in Revelation for the eschatological gathering (Rev 5:9, 7:4-9, 11:9, 13:7, 14:6) and in references to specific Israelite tribes (Luke 2:36 tribe of Asher; Phil 3:5 tribe of Benjamin; Heb 7:13-14 tribe of Judah). Singular and plural forms are purely number inflection. Multilingual evidence is uniform: Spanish 'tribu(s)', Arabic 'سِبط/قَبائِل/أسباط', Korean '지파(들)', Swahili 'kabila/makabila', Hindi 'गोत्र/गोत्रों'.
+**Enriched:** A division of a people united by descent from a common ancestor, especially the twelve tribes of Israel. Jesus assigns the Twelve thrones to judge Israel's tribes (Matt 19:28; Luke 22:30). Paul identifies himself as of the tribe of Benjamin (Phil 3:5). Hebrews notes Jesus' descent from Judah, a non-priestly tribe (Heb 7:13-14). Revelation expands tribal language into universal scope: the Lamb redeems from every tribe and nation (Rev 5:9; 7:4-9).
+
+### H0268 / Sense 81045 (31 occ, sense 1 of 5)
+**Label:** backward, behind (direction)
+**Lemma gloss:** The back, rear, or hinder part; used adverbially for backward or behind, temporally for afterward, anatomically for the back of a body, and geographically for west.
+**Description:** Spatial adverbial sense indicating motion or position toward the rear, translated as backward, back, or behind.
+**Enriched:** The dominant adverbial sense: backward, back, or behind as a direction of motion or position. This accounts for the great majority of occurrences and appears overwhelmingly in poetry. Enemies are driven 'backward' (Ps 35:4; 40:14), warriors fall 'backward' (Gen 49:17; Isa 28:13), and God is both 'behind and before' (Ps 139:5). The Spanish atrás/hacia-atrás and French en arrière consistently render this directional sense. The Niphal and Hiphil verbs it modifies — nasog, hashiv, nakah — create vivid images of retreat, repulsion, and defeat.
+
+### H0505 / Sense 82691 (31 occ, sense 2 of 4)
+**Label:** dual two thousand
+**Lemma gloss:** Thousand (numeral); in dual 'two thousand'; in plural 'thousands'; also 'clan, tribal subdivision.'
+**Description:** The dual form meaning two thousand (2,000), used as a specific numeric quantity.
+**Enriched:** The dual form אַלְפַּיִם meaning specifically 'two thousand' (2,000), used as a distinct numeric quantity (31 occurrences). Numbers 4:36 counts two thousand seven hundred Levites; Numbers 35:5 measures two thousand cubits for pastureland boundaries. French 'deux-mille' and German 'zwei-Tausend' preserve the dual precision, while the Hebrew morphology (dual suffix -ayim) marks this as a grammatically distinct form.
+
+### H0505 / Sense 82693 (31 occ, sense 3 of 4)
+**Label:** thousands as large number
+**Lemma gloss:** Thousand (numeral); in dual 'two thousand'; in plural 'thousands'; also 'clan, tribal subdivision.'
+**Description:** The plural 'thousands' used as a large round number or multiplied quantity, often in enumerations, census totals, and expressions of abundance.
+**Enriched:** The plural אֲלָפִים meaning 'thousands' as a large round number, a multiplied quantity, or an expression of overwhelming abundance (31 occurrences). Exodus 20:6 promises God's covenant loyalty 'to thousands' of generations; Rebecca is blessed to become 'thousands of ten thousands' (Gen 24:60). Spanish 'miles/millares' and French 'milliers' capture both the countable and the hyperbolic registers of this form.
+
+### H0995 / Sense 86282 (31 occ, sense 2 of 9)
+**Label:** have understanding (Hifil stative)
+**Lemma gloss:** understand, perceive, discern; (Qal) grasp, perceive; (Niphal) be discerning; (Hifil) understand, teach; (Hitpael) consider
+**Description:** Hifil in its internal/elative sense meaning to possess or exercise understanding, be intelligent — Arabic fāhim (فَاهِم), Korean 분별하는/깨닫는 자, Swahili anayeelewa/mwenye ufahamu.
+**Enriched:** Hifil in its internal or stative sense describes possessing understanding—being one who has insight or intelligence. 1 Kings 3:11 (you asked for understanding), 1 Chronicles 15:22 (Chenaniah was skillful in understanding), and Proverbs passages about the wise versus fools illustrate this adjectival-like usage. Arabic fāhim (one who understands) and Korean 분별하는 자 (one who discerns) capture the attributive quality. Spanish el que entiende and German der Verstand reflect nominal or participial forms.
+
+### H1347 / Sense 88781 (31 occ, sense 1 of 4)
+**Label:** pride, arrogance (negative)
+**Lemma gloss:** Exaltation, majesty, or pride; used positively of divine glory and negatively of human arrogance and haughtiness
+**Description:** Sinful pride, haughtiness, or self-exaltation, used negatively of individuals or nations who elevate themselves against God or others.
+**Enriched:** The dominant negative sense: sinful pride, arrogance, or haughtiness — the self-exaltation of humans or nations who elevate themselves against God. This is the prophets' characteristic use: 'I will break the pride of your power' (Lev 26:19), 'I will punish the world for its evil, and the arrogant for their pride' (Isa 13:11). Proverbs 8:13 lists it among the things the LORD hates. Spanish consistently distinguishes this with 'soberbia' or 'orgullo,' while French 'orgueil' and German 'Hochmut' serve for both positive and negative valences, sometimes obscuring the moral dimension.
+
+### H1406 / Sense 89312 (31 occ, sense 1 of 1)
+**Label:** roof / rooftop
+**Lemma gloss:** roof, rooftop — the flat upper surface of a building, used for daily activities, refuge, and proclamation
+**Description:** The flat upper surface of a building, used in ancient Israel for drying goods, sleeping, prayer, public proclamation, and as a place of refuge or concealment; also appears in architectural descriptions of the Temple.
+**Enriched:** The flat upper surface of a building, integral to daily life in the ancient Near East. Used for concealment (Rahab hides the spies, Josh 2:6), royal observation (David sees Bathsheba, 2 Sam 11:2), private conversation (Samuel and Saul, 1 Sam 9:25), public proclamation (2 Sam 16:22), and mourning (Isa 15:3; Jer 19:13). Deuteronomy 22:8 requires a parapet for safety. Extended to the top of the incense altar (Exod 30:3; 37:26).
+
+### H1697 / Sense 91143 (31 occ, sense 4 of 7)
+**Label:** thing, something, anything
+**Lemma gloss:** Word, speech, matter, thing, event; the Hebrew noun bridging spoken utterance and objective reality
+**Description:** An indefinite thing or entity, often in negative constructions meaning nothing or in questions meaning anything (Arabic shay', Korean geot, Swahili kitu).
+**Enriched:** An indefinite 'thing' or 'something,' especially in negated constructions meaning 'nothing at all.' Arabic شَيْء, Korean 것, Swahili kitu confirm the generalized referent. Lot says 'I cannot do a thing' (Gen 19:8), regulations specify 'every thing that may abide the fire' (Num 31:23), and accusations note 'not a thing was lacking' (Exod 9:4).
+
+### H2428 / Sense 96784 (31 occ, sense 3 of 5)
+**Label:** wealth, riches, property
+**Lemma gloss:** Army, military force; valor, bravery; wealth, riches; strength, power, might; ability, competence, virtue.
+**Description:** Material wealth, riches, possessions, or substance; the economic resources or property belonging to a person or community, rendered consistently as Arabic ثروة, Korean 재물/재산, and Swahili utajiri/mali.
+**Enriched:** Wealth, riches, material possessions. The economic capacity of a person or community (Gen 34:29; Deut 8:17–18; Job 5:5). Arabic ثروة, Korean 재물/재산, and Swahili utajiri all converge on the financial sense. Theologically charged in Deuteronomy 8:18, where God 'gives you power to produce chayil (wealth),' tying economic abundance to divine provision.
+
+### H2803 / Sense 99488 (31 occ, sense 2 of 7)
+**Label:** be reckoned, be counted
+**Lemma gloss:** To think, reckon, plan, or devise; encompasses cognitive activity from arithmetic calculation to purposeful scheming to artistic design.
+**Description:** Nifal (and Hitpael) passive and reflexive forms: to be reckoned, be counted, be regarded, be accounted as; the passive counterpart of both the counting and esteeming senses (Arabic يُحْسَبُ/حُسِبَ passive; Korean 여겨지다 be regarded; Swahili -hesabiwa passive of count).
+**Enriched:** Nifal and Hitpael passive/reflexive: 'be reckoned, be counted, be regarded as.' Thirty-one occurrences show people or things being assigned to a category. Lev 25:31 says unwalled villages 'shall be reckoned' as open country; Gen 31:15 has Leah and Rachel asking whether they are 'regarded' as foreigners. Arabic yuḥsabu (يُحْسَبُ) preserves the passive formation faithfully.
+
+### H2889 / Sense 99919 (31 occ, sense 2 of 4)
+**Label:** pure in quality or substance
+**Lemma gloss:** Clean or pure — ritually clean according to Levitical law, pure in material substance (e.g., pure gold), morally or spiritually pure, or purity as an abstract noun.
+**Description:** Describes materials or substances that are unmixed, refined, or of the highest quality, such as pure gold, pure frankincense, or pure oil.
+**Enriched:** Purity of material substance — unmixed, refined, or of the highest quality. This sense dominates the tabernacle construction narrative: pure gold (zahav tahor) overlaying the ark, the mercy seat, the table, the lampstand (Exod 25:11, 17, 24, 31); pure frankincense on the showbread (Lev 24:7); pure oil for the lamps. Spanish 'puro' and English 'pure' capture the metallurgical and chemical sense of an unalloyed substance. The thirty-one occurrences cluster heavily in Exodus 25–39 and 1 Chronicles 28.
+
+### H2919 / Sense 100241 (31 occ, sense 1 of 1)
+**Label:** dew, night moisture
+**Lemma gloss:** dew, night moisture — atmospheric condensation symbolizing divine blessing, refreshment, and abundance
+**Description:** Atmospheric moisture that condenses on surfaces overnight, used literally of weather and figuratively as a symbol of divine blessing, refreshment, or abundance.
+**Enriched:** Atmospheric moisture that condenses overnight, used literally of weather and figuratively as a symbol of divine blessing and abundance. Isaac's blessing invokes 'the dew of heaven' (Gen 27:28). Manna arrives with the dew (Exod 16:13-14; Num 11:9). Gideon's fleece test hinges on dew's miraculous behavior (Judg 6:37-40). Hosea likens God's restorative love to dew (Hos 14:5), while Psalm 133:3 compares brotherly unity to Hermon's dew.
+
+### H3213 / Sense 102345 (31 occ, sense 1 of 1)
+**Label:** wail, howl loudly
+**Lemma gloss:** wail, howl — to cry out in loud lamentation, expressing intense grief, distress, or prophetic mourning
+**Description:** To cry out in loud lamentation or grief, expressing intense sorrow or distress through prolonged vocal mourning (Hifil of yalal).
+**Enriched:** To utter a loud, prolonged wail of grief or distress, used almost exclusively in prophetic judgment oracles. Isaiah commands nations to howl at the approach of the Day of the LORD (Isa 13:6; 14:31; 15:2-3; 23:1). Jeremiah directs it at Moab (Jer 48:20, 31) and doomed shepherds (Jer 25:34). Joel summons wailing over agricultural devastation (Joel 1:5, 11). Typically parallels za'aq and tsa'aq, forming an intense vocabulary of communal lamentation.
+
+### H3715a / Sense 107302 (31 occ, sense 1 of 1)
+**Label:** young lion, lion cub
+**Lemma gloss:** young lion — an adolescent lion old enough to hunt, used literally and as a figure of fierce power or threat
+**Description:** A young or adolescent lion (כְּפִיר), used literally of lion cubs and figuratively of fierce or predatory agents; all 31 occurrences denote the same zoological referent with variation only in grammatical inflection (singular/plural, prepositions, conjunctions, construct-state suffixes).
+**Enriched:** A young or adolescent lion, past the helpless cub stage but not fully mature, old enough to hunt prey. Samson encounters one at Timnah (Judg 14:5). Ezekiel allegorizes Judah's princes as young lions trained to devour (Ezek 19:2-6). The Psalms use the image for lurking danger (Ps 17:12) and divine provision that surpasses even a lion's strength (Ps 34:10). Isaiah's messianic vision places the young lion peacefully beside the calf (Isa 11:6). Micah casts Israel as a kephir among sheep (Mic 5:7).
+
+### H4327 / Sense 111290 (31 occ, sense 1 of 1)
+**Label:** according its kind
+**Lemma gloss:** Kind, species; a category of living thing, always in the formula 'according to its kind' in creation and legal texts.
+**Description:** according its kind, according kind its, according kinds their (31 occurrences across 4 original clusters)
+**Enriched:** A biological or taxonomic category denoting a distinct type of plant or animal. Always occurs with the preposition le- and a possessive suffix ('according to its/their kind'). In Genesis 1:11-25, it structures the entire creation taxonomy; in Leviticus 11 and Deuteronomy 14, it organizes the dietary purity lists. The word implies divinely established boundaries between species rather than a modern scientific classification.
+
+### H4609b / Sense 113103 (31 occ, sense 1 of 4)
+**Label:** steps, stairs, stairway
+**Lemma gloss:** Step, stair; ascent; psalm title 'Song of Ascents' for the pilgrimage psalms (Pss 120-134); upper story
+**Description:** Physical steps or stairs of a building, temple, or city, including the steps/degrees on the sundial of Ahaz and the stairs of the temple and city of David.
+**Enriched:** Physical steps or stairs belonging to a structure such as the temple gates (Ezek 40:6, 22, 26), the altar (Exod 20:26; Ezek 43:17), Solomon's throne (1 Kgs 10:19-20), a royal house (2 Kgs 9:13), or the city of David (Neh 3:15; 12:37). Also the graduated steps of the sundial of Ahaz (2 Kgs 20:9-11 = Isa 38:8). French 'marches' and German 'Stufen' point clearly to architectural stairs, while English and Spanish shift between 'steps' and 'gradas.'
+
+### H5087 / Sense 116496 (31 occ, sense 1 of 1)
+**Label:** make a vow
+**Lemma gloss:** To vow, make a solemn promise to God; to pledge an offering, service, or act of devotion, often conditionally.
+**Description:** To solemnly promise or dedicate something to God, typically involving a conditional or unconditional pledge of offerings, service, or abstinence.
+**Enriched:** To make a solemn vow or pledge to God, typically involving a conditional promise of offerings, dedication, or service. The classic pattern is nadar neder, 'to vow a vow,' seen in Jacob's Bethel vow (Gen 28:20), Hannah's prayer (1 Sam 1:11), and the Nazirite consecration (Num 6:2). Deuteronomy and Ecclesiastes stress the gravity of fulfillment: a vow once spoken becomes a binding obligation before the Lord.
+
+### H5175 / Sense 117296 (31 occ, sense 1 of 1)
+**Label:** serpent, snake
+**Lemma gloss:** Serpent, snake; the archetypal creature of Eden and a symbol of danger, cunning, and divine judgment.
+**Description:** A serpent or snake, used both for literal snakes encountered in the natural world and for the archetypal serpent of Genesis 3 and prophetic/wisdom imagery; all 10 clusters represent the same lexical meaning differing only in grammatical inflection (definiteness, number, preposition, conjunction, construct state).
+**Enriched:** A serpent or snake, encompassing both the literal reptile and its rich symbolic range. In Genesis 3:1-14 it is the cunning tempter in Eden; in Numbers 21:6-9 it appears as the lethal 'fiery serpent' and then as the bronze image that heals. Amos 5:19 and Ecclesiastes 10:8 use it for sudden mortal danger. Isaiah 27:1 extends it to a cosmic sea-monster figure. All occurrences share the core image of a creature that is dangerous, feared, and theologically potent.
+
+### H5641 / Sense 121437 (31 occ, sense 2 of 5)
+**Label:** Nifal: hide oneself, be hidden
+**Lemma gloss:** To hide, conceal; reflexively to hide oneself; causatively to hide another; of God hiding his face in judgment or discipline.
+**Description:** Reflexive and passive sense in the Nifal stem: to hide oneself, to be hidden, or to be concealed; includes substantival participle uses referring to hidden things or hidden faults, as well as all Nifal finite forms, imperatives, infinitives, and participles.
+**Enriched:** Nifal reflexive/passive: to hide oneself, to be hidden, to become concealed. At 31 occurrences this covers both active self-concealment (Cain fearing he will be 'hidden from God's face,' Gen 4:14; the prudent man seeing danger and hiding himself, Prov 27:12) and the passive state of being hidden (hidden faults in Ps 19:12; secret things belonging to the LORD in Deut 29:29). German verborgen sein captures the stative 'being hidden' while sich verbergen catches the reflexive 'hiding oneself.' The substantival participle nistarot ('hidden things') at Deut 29:29 has become a key text in Jewish theology about the boundary between revealed and concealed knowledge.
+
+### H7262 / Sense 134621 (31 occ, sense 1 of 1)
+**Label:** Rabshakeh (chief cupbearer title)
+**Lemma gloss:** Rab-shakeh; an Assyrian military title meaning 'chief cupbearer' or 'chief officer,' used of Sennacherib's envoy.
+**Description:** The compound Assyrian title Rab-Shaqeh meaning 'chief cupbearer' or 'chief of the cupbearers,' a high-ranking military/diplomatic official sent by Sennacherib to Jerusalem (2 Kgs 18-19, Isa 36-37). The four clusters represent the two halves of this compound title split across word boundaries: S134621 and S134624 capture the 'Rab/Rav' (chief) component, while S134622 and S134623 capture the 'Shaqeh' (cupbearer) component. Arabic rab-shaqi (رَبّ شَاقِي), Spanish Rab-Saces, Hindi rab-shakeh (रब–शाकेह), Korean chong-yokde (총–욕데), and Swahili mkuu-wa-wanyweshaji 'chief of cupbearers' all treat this as a single unified title.
+**Enriched:** The Assyrian military-diplomatic title 'chief cupbearer' or 'chief officer,' designating Sennacherib's principal envoy to Jerusalem. In 2 Kings 18:17-37 and Isaiah 36:2-22, this official delivers threatening speeches in Hebrew outside Jerusalem's walls, challenging Hezekiah's trust in Yahweh. The title is a compound of rav ('chief') and shaqeh ('cupbearer'), reflecting the Assyrian court hierarchy borrowed into biblical Hebrew for these specific narrative contexts.
+
+### H7523 / Sense 136970 (31 occ, sense 1 of 7)
+**Label:** murderer, manslayer (Qal ptc.)
+**Lemma gloss:** to murder, kill unlawfully; the manslayer; used in the Decalogue prohibition against illicit killing
+**Description:** Qal active participle used as agent noun: one who murders or kills unlawfully, the manslayer/murderer, frequently in legal contexts of cities of refuge.
+**Enriched:** The Qal active participle functioning as an agent noun — 'murderer' or 'manslayer' — a legal technical term in the cities-of-refuge legislation. Spanish el homicida and German Totschläger both capture the legal agent sense. Numbers 35:6–34 uses this participle over twenty times to define the manslayer's rights and the blood-avenger's jurisdiction, making it the central term for homicide law in the Torah.
+
+### H7650 / Sense 137966 (31 occ, sense 2 of 3)
+**Label:** cause to swear, adjure (Hiphil)
+**Lemma gloss:** To swear or take an oath (Niphal); to cause to swear, adjure, or administer an oath (Hiphil).
+**Description:** Hiphil (causative) stem: the subject causes another party to swear an oath, administers an oath, or adjures/charges someone solemnly. Includes both juridical oath-administration (e.g., Joshua making Israel swear, Gen 50:25) and solemn entreaty/charge (e.g., Song of Solomon 'I adjure you, daughters of Jerusalem'). Cross-linguistic causative morphology confirms unity: Arabic أَحْلَفَ / اسْتَحْلَفَ / حَلَّفَ (Forms IV/X/II causatives), Swahili -apisha (causative of -apa), Korean 맹세하게 하다 / 맹세시키다, Hindi शपथ खिलाई / शपथ दिलाई (causative light-verb constructions), Spanish hizo jurar / conjurar.
+**Enriched:** To cause to swear, adjure, or administer an oath (Hiphil stem). The subject compels or solemnly charges another party to swear. Abraham makes his servant swear (Gen 24:3), Joseph makes the sons of Israel swear to carry his bones (Gen 50:25), and the Song of Solomon's refrain 'I adjure you, O daughters of Jerusalem' (Song 2:7; 3:5) uses this causative form. About 31 occurrences carry this sense. The Hiphil shifts agency: the swearer acts under another's authority or solemn charge.
+
+### H8438b / Sense 144730 (31 occ, sense 1 of 2)
+**Label:** crimson/scarlet dye material
+**Lemma gloss:** Worm or maggot (literal/figurative); scarlet dye material from the coccus ilicis insect used in tabernacle fabrics
+**Description:** The scarlet or crimson dyestuff derived from the coccus ilicis insect, used almost exclusively in the construct chain תּוֹלַעַת שָׁנִי for the scarlet yarn/fabric of the tabernacle, priestly garments, and purification rites.
+**Enriched:** Scarlet or crimson dye material derived from the coccus ilicis insect, appearing almost exclusively in the construct תּוֹלַעַת שָׁנִי alongside תְּכֵלֶת (blue) and אַרְגָּמָן (purple) in Exodus and Leviticus tabernacle instructions. English and Spanish both render 'scarlet/gusano,' while German uses 'Scharlach,' all pointing to the dyestuff rather than the creature. Dominant across 31 of 39 occurrences (Exod 25:4; 26:1, 31, 36).
+
+### H8549 / Sense 145289 (31 occ, sense 2 of 4)
+**Label:** blameless, upright (moral)
+**Lemma gloss:** Complete, sound, without blemish — of sacrificial animals, morally upright persons, God's perfect way, and whole time-periods.
+**Description:** Morally blameless, having integrity — used of persons who walk uprightly before God, including substantival uses ('the blameless ones') and adverbial/prepositional expressions ('in integrity, blamelessly').
+**Enriched:** Blameless, upright, having moral integrity — used of persons who walk with God in wholeness of heart. Noah was 'righteous, blameless in his generation' (Gen 6:9); God tells Abraham 'walk before me and be blameless' (Gen 17:1). The substantival plural 'the blameless ones' appears in Proverbs (11:5, 20) and Psalms (119:1). Spanish perfecto and French intègre both render this, though the Hebrew holds physical and moral wholeness together in a way translations must split apart.
+
+### H???? / Sense 146012 (31 occ, sense 25 of 94)
+**Label:** (none)
+**Lemma gloss:** (none)
+**Description:** (none)
+**Enriched:** (none)
+
+### G0680 / Sense 63225 (30 occ, sense 1 of 3)
+**Label:** touch physically for healing
+**Lemma gloss:** To touch physically, especially for healing; to touch as prohibited or restricted contact; to touch with intent to harm or affect.
+**Description:** To touch a person or object physically, especially in the context of healing or seeking power through physical contact with Jesus or his garments.
+**Enriched:** Physical touch, especially in healing contexts -- reaching out to make bodily contact with Jesus, his garments, or sick persons, with the expectation or result of healing power being conveyed. This overwhelmingly dominant sense (30 occurrences) includes Jesus touching the leper (Matt 8:3), touching Peter's mother-in-law (Matt 8:15), the hemorrhaging woman touching his cloak (Matt 9:20), and blind men whose eyes Jesus touched (Matt 9:29). Spanish tocar/le toco, French toucher, and German beruehren uniformly render the tactile action without distinguishing healing from ordinary touch.
+
+### G0907 / Sense 63953 (30 occ, sense 2 of 3)
+**Label:** baptize, administer baptism
+**Lemma gloss:** To baptize or be baptized; to immerse in water as a rite of repentance, identification, or purification.
+**Description:** To perform the rite of baptism on someone, immersing or washing them as a sign of repentance or initiation into the faith community.
+**Enriched:** To baptize or administer baptism—the active voice usage across 30 occurrences, where the subject performs the rite upon another. John declares 'I baptize you with water' (Matt 3:11; Mark 1:8); Jesus commands the disciples to 'baptize in the name of the Father, Son, and Holy Spirit' (Matt 28:19). Spanish 'bauticé' (I baptized), English 'baptize/baptized,' and German 'taufen' (active) all reflect the agent's role. This sense distinguishes the baptizer's authority and commission from the recipient's experience.
+
+### G1014 / Sense 64279 (30 occ, sense 1 of 3)
+**Label:** want, wish, desire
+**Lemma gloss:** To wish, want, desire; to will or determine by sovereign decree; to intend or purpose a deliberate course of action.
+**Description:** To want or wish for something, expressing personal desire or preference without necessarily implying deliberate resolve or formal decision.
+**Enriched:** General desire or wish without implying formal resolve -- simply wanting or preferring something. This dominant sense (30 occurrences) covers everyday volition: Pilate wanting to satisfy the crowd (Mark 15:15), the council wanting to kill the apostles (Acts 5:33), Barnabas wanting to take John Mark along (Acts 15:37). Spanish queriendo, French vouloir, and German wollen all converge on the basic volitional verb, confirming the broad desiderative function.
+
+### G1322 / Sense 65516 (30 occ, sense 1 of 1)
+**Label:** teaching, doctrine
+**Lemma gloss:** Teaching, doctrine; the content or act of authoritative instruction, especially the teachings of Jesus or the apostles.
+**Description:** The content or act of instruction, especially authoritative religious teaching or doctrine; encompasses both what is taught and the activity of teaching itself. Singular and plural forms represent the same core meaning. Spanish 'enseñanza/doctrina,' Hindi 'shiksha,' Arabic 'ta'lim/ta'alim,' Korean 'gareuchim,' Swahili 'mafundisho.' Used both for the teaching of Jesus that astonished crowds and for false doctrines that believers must reject (e.g., Heb 13:9 'strange teachings').
+**Enriched:** Authoritative instruction or doctrine, covering both the activity of teaching and the body of content conveyed. When applied to Jesus (Matt 7:28, Mark 1:27), it highlights the striking authority of his teaching compared to the scribes. In Acts 2:42, it names one of the four pillars of early church life. Paul warns against didache that deviates from the apostolic standard (Rom 16:17). The breadth of the term—from classroom act to creedal substance—is confirmed by its varied multilingual renderings.
+
+### G1451 / Sense 66118 (30 occ, sense 1 of 1)
+**Label:** near, close (spatial or temporal proximity)
+**Lemma gloss:** Near, close by; denoting spatial proximity or temporal imminence, often with eschatological overtones.
+**Description:** Denotes proximity in space or time, used as both adverb and preposition to indicate nearness to a place, person, or event. Multilingual evidence confirms a single unified sense: Spanish 'cerca/cercana', Hindi 'nikat' (निकट), Arabic 'qariban/qaribatun' (قَرِيبًا/قَريبَةٌ), Korean 'gakkai/gakkawuni' (가까이/가까우니), and Swahili 'karibu/karibu-na'. The singular occurrence S66121 is simply a prepositional use with feminine agreement in Arabic, not a distinct meaning.
+**Enriched:** Nearness in space or time, used as adverb or preposition to express proximity. Spatially, it locates places or persons close at hand (John 11:18, 19:20). Temporally, it signals imminence—festivals approaching (John 6:4, 11:55) or eschatological fulfillment at hand (Matt 24:32-33, Rom 13:11). The fig-tree parable (Matt 24:32) pivots on engys: when the signs appear, 'know that it is near, at the very gates.' All multilingual renderings converge on a single proximity sense.
+
+### G3062 / Sense 71729 (30 occ, sense 1 of 2)
+**Label:** the rest (persons)
+**Lemma gloss:** Remaining, the rest; substantive adjective for the remaining persons or things of a group
+**Description:** Substantive adjective referring to the remaining people, the others, those left over from a group of persons.
+**Enriched:** The remaining people, the rest of a group of persons, used substantively. Spanish 'los demas' and French 'le reste' both capture this partitive sense of those left over after a subset has been identified. Jesus distinguishes the disciples from 'the rest' who receive teaching in parables (Luke 8:10); Paul refers to 'the rest of the apostles' (1 Cor 9:5); and Revelation repeatedly speaks of 'the rest of the dead' or 'the rest of her offspring' (Rev 20:5; 12:17). German 'die Uebrigen' emphasizes the 'left-over' quality -- these are the ones who remain after the principal actors have been named.
+
+### G3739 / Sense 73407 (30 occ, sense 3 of 4)
+**Label:** one/another, some/others (correlative-distributive)
+**Lemma gloss:** Relative pronoun: who, which, that, whom; also indefinite-relative whoever/whatever; correlative one...another; rarely 'where.'
+**Description:** Correlative or distributive use in the pattern ὃς μέν...ὃς δέ meaning 'one...another' or 'some...others,' functioning as an indefinite pronoun rather than a relative.
+**Enriched:** The correlative-distributive use in the pattern hos men...hos de, meaning 'one...another' or 'some...others' — approximately 30 occurrences. This construction effectively repurposes the relative pronoun as an indefinite, partitioning a group into subsets. The Parable of the Sower illustrates it vividly: 'some [seed] fell on the path...other on rocky ground...other among thorns...other on good soil' (Matt 13:4-8). Spanish distinguishes with uno...otro, French with l'un...l'autre, and German with der eine...der andere — all using dedicated correlative pairs rather than relative pronouns, confirming that this is a functionally distinct construction in Greek even though it reuses the relative morphology.
+
+### G4128 / Sense 74978 (30 occ, sense 1 of 2)
+**Label:** multitude, crowd, large group of people
+**Lemma gloss:** A multitude, crowd, or large number; a great quantity of people gathered together, or occasionally of things.
+**Description:** A large number of people gathered together, a crowd or throng; used frequently in Luke-Acts of the multitude of disciples, the crowd following Jesus, or the assembly of believers. This is the dominant sense covering nearly all 31 occurrences. Multilingual evidence is consistent: Spanish 'multitud' / 'muchedumbre' / 'multitudes' (multitude/crowd/multitudes), Hindi 'bhiir' (crowd, throng of people), Arabic 'jumhuur' / 'jam' / 'jamaahiiru' (public crowd / gathering / multitudes), Korean 'muri' / 'muri ga' / 'murideuл i' (crowd / crowd [subject] / crowds [subject]), Swahili 'umati' / 'makundi' (crowd / groups). S74980 'multitudes' is simply the nominative plural of the same noun referring to the same concept of a large gathering; it is an inflectional variant, not a separate sense.
+**Enriched:** A large group of people gathered together, a crowd, throng, or assembly. This overwhelmingly dominant sense (30x) appears throughout Luke-Acts and Mark, describing disciples, worshipers, and public gatherings. Translations are remarkably uniform: Spanish multitud, French multitude, German Menge. The heavenly host of Luke 2:13 and the miraculous catch of fish drawing a plethos in Luke 5:6 illustrate the word's range from celestial armies to everyday crowds.
+
+### G4374 / Sense 75946 (30 occ, sense 1 of 3)
+**Label:** offer a sacrifice or gift
+**Lemma gloss:** To offer a sacrifice or gift; to bring someone or something to another; to deal with, treat
+**Description:** To offer or present something (especially a sacrifice, gift, or prayer) in a religious or ritual context.
+**Enriched:** The cultic and devotional sense: to offer, present, or sacrifice before God. This includes the Magi's gifts (Matt 2:11), offerings commanded by the Law of Moses (Matt 8:4; Mark 1:44), the repeated offerings of Hebrews' priestly theology (Heb 9:7, 25; 10:1-2), and Christ's self-offering (Heb 9:14, 28). Spanish ofrecer, German darbringen, and French offrir uniformly mark this as sacred presentation.
+
+### G4655 / Sense 76543 (30 occ, sense 1 of 1)
+**Label:** darkness
+**Lemma gloss:** Darkness, gloom; physical absence of light and metaphorical spiritual-moral blindness or divine judgment.
+**Description:** Darkness as absence of light, used both literally (physical darkness at the crucifixion, Mt 27:45; outer darkness, Mt 8:12) and metaphorically (spiritual/moral darkness contrasted with light, Jn 1:5; 2 Cor 6:14; 1 Jn 1:6). All 30 NT occurrences represent the same lexical meaning across inflectional cases (nominative, accusative, dative, genitive singular). Multilingual evidence is uniform: Spanish 'oscuridad/tinieblas/tiniebla' all denote darkness; Hindi 'अंधकार/अन्धकार/घोर अन्धकार' consistently mean darkness (the last intensified as 'deep darkness'); Arabic 'الظُّلمَةِ/ظُلْمَةٍ/ظلام' are morphological variants of the same root ظ-ل-م; Korean '어둠/흑암' both mean darkness; Swahili 'giza/weusi' denote darkness and blackness respectively. The three clusters are merely case-form splits of a single sense.
+**Enriched:** Darkness as the absence or opposite of light, spanning physical, moral, and eschatological registers. Literally, it marks the crucifixion darkness over the land (Matt 27:45, Mark 15:33). As a metaphor for spiritual blindness, it opposes the light of God and Christ (John 1:5, Acts 26:18, Col 1:13). The 'outer darkness' (Matt 8:12, 22:13, 25:30) represents final exclusion from God's presence. Paul urges believers to live as 'children of light,' not of darkness (1 Thess 5:4-5).
+

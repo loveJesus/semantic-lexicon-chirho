@@ -1,0 +1,291 @@
+# Sense Refinement Detection — Batch 035
+
+You are a biblical lexicographer reviewing sense entries for a Hebrew/Aramaic/Greek lexicon.
+Each entry below is a single "sense" that was produced by clustering translation signatures 
+and then merging with an LLM. Some senses may have been OVER-LUMPED — they contain genuinely 
+distinct meanings that should be separate senses.
+
+## Your Task
+
+For each sense, determine if it should be SPLIT into multiple senses. Look for:
+- Literal vs. figurative/metaphorical uses lumped together
+- Concrete vs. abstract meanings combined
+- Multiple distinct referents (e.g., "father" = biological parent + patron/advisor + originator)
+- Physical vs. spiritual/theological uses merged
+- Different syntactic frames producing different meanings
+
+## Output Format
+
+Return a JSON array. For senses that need NO splitting, omit them entirely.
+For senses that SHOULD be split, include an entry like:
+
+```json
+[
+  {
+    "senseIdChirho": 79287,
+    "lemmaIdChirho": "H0001",
+    "currentLabelChirho": "father, immediate male parent",
+    "splitProposalChirho": [
+      {
+        "newLabelChirho": "biological/legal father",
+        "criteriaChirho": "Direct parent-child relationship, possessive constructions with specific person"
+      },
+      {
+        "newLabelChirho": "metaphorical father (patron, advisor, protector)",
+        "criteriaChirho": "Title of respect for prophets, advisors, or authority figures; 'father to Pharaoh' type usage"
+      }
+    ],
+    "confidenceChirho": "high",
+    "reasoningChirho": "Description explicitly mentions 'title of respect or metaphorical originator' alongside biological father"
+  }
+]
+```
+
+Only propose splits where you have MEDIUM or HIGH confidence. Do NOT split function words (articles, 
+prepositions, particles, conjunctions) unless there is a genuinely distinct semantic sense (not just 
+syntactic variation). Proper nouns generally should NOT be split.
+
+If NO senses in this batch need splitting, return an empty array: []
+
+## Senses to Review
+
+### G0518 / Sense 62607 (38 occ, sense 1 of 3)
+**Label:** report or tell news
+**Lemma gloss:** To report, bring back word; to proclaim or announce publicly; to be reported to
+**Description:** To bring back word or report information to someone, conveying specific news or facts about events or situations.
+**Enriched:** The primary and most frequent sense: to bring back a report, to relay news or information. A messenger or witness tells someone what happened -- the Gadarene swineherds 'reported' to the town (Matt 8:33), Jesus tells John's disciples 'report what you hear and see' (Matt 11:4), and the women rush to 'report' the empty tomb (Matt 28:8). This is the default narrative communication verb, with equivalents in Spanish (informar/anunciar), French (rapporter), and German (berichten).
+
+### G1453 / Sense 66125 (38 occ, sense 2 of 6)
+**Label:** rise / get up (physical)
+**Lemma gloss:** To raise up, wake, arise; especially of resurrection from the dead; also to get up physically, appear, or rouse from sleep
+**Description:** Intransitive or middle use meaning to stand up, get up from sitting or lying, or to arise and go; used as a command ('Rise!') or narrative ('he arose'). English 'rise / arise / arose,' Spanish 'levántate / se levantó,' Arabic قُمْ/نَهَضَ, Korean 일어나라/일어났다, Swahili inuka/simama.
+**Enriched:** Intransitive or middle use meaning to rise physically, get up from sitting or lying, or arise and go. Frequently appears as a command—Ἔγειρε, 'Rise!' (Matt 9:5 to the paralytic)—or in narrative transitions where someone arises to act (Matt 1:24, Joseph arose; Matt 2:13-14, arising to flee to Egypt). Spanish levántate, Arabic قُمْ, and Swahili simama all treat this as ordinary physical movement, distinct from the resurrection sense.
+
+### G2065 / Sense 68181 (38 occ, sense 1 of 2)
+**Label:** request, beseech, entreat
+**Lemma gloss:** To ask; either making a request or entreaty, or posing a question to gain information — two senses often blending in context.
+**Description:** To make a request, plea, or earnest appeal to someone, often implying supplication or entreaty.
+**Enriched:** To make a request, plea, or earnest appeal — asking someone to do something rather than asking for information. Prominent in passages where Jesus is entreated for healing or help (Mark 7:26; Luke 4:38; Luke 5:3). Spanish distinguishes this clearly with "rogar" (to beseech) and "pedir" (to request), as opposed to "preguntar" (to inquire). French uses "demander" for both, but German "bitten" (to request) can separate it from "fragen" (to question).
+
+### G4002 / Sense 74460 (38 occ, sense 1 of 1)
+**Label:** five
+**Lemma gloss:** Five — the cardinal number five
+**Description:** five, Five (38 occurrences across 2 original clusters)
+**Enriched:** The cardinal number five, used across 38 New Testament occurrences in narrative, parabolic, and apocalyptic contexts. Multilingual glosses show perfect one-to-one correspondence — Spanish 'cinco,' French 'cinq,' German 'fünf' — confirming a single, unambiguous numerical sense with no semantic extension or figurative development.
+
+### G4137 / Sense 75022 (38 occ, sense 1 of 5)
+**Label:** fulfill prophecy (passive)
+**Lemma gloss:** To fill, make full; to fulfill prophecy or complete a purpose; passively, to be filled with the Spirit, joy, or content.
+**Description:** Scripture or prophetic word is brought to completion — Arabic تَمَّ/يَتِمَّ (passive of t-m-m), Korean 이루어지다/성취되다 (be accomplished), Swahili -timizwa (be fulfilled); consistently passive voice across all target languages, indicating divine/providential agency rather than human action.
+**Enriched:** To fulfill prophecy or Scripture (passive) — the largest sense at 38 occurrences, overwhelmingly concentrated in Matthew and John. The characteristic formula hina plerothe ('in order that it might be fulfilled') appears 16 times in Matthew alone, structurally organizing the Gospel as a narrative of prophetic completion. Arabic tamm/yatimm (passive of the root t-m-m, 'to be completed'), Korean 이루어지다/성취되다 ('to be accomplished/achieved'), and Swahili -timizwa all select completion/accomplishment vocabulary rather than physical filling, confirming this as a deeply lexicalized sub-sense. Key passages: Matt 1:22 (virgin birth fulfills Isaiah), Matt 2:15 (flight to Egypt fulfills Hosea), John 19:24 (casting lots fulfills the Psalms).
+
+### H0006 / Sense 79392 (38 occ, sense 2 of 5)
+**Label:** to destroy, annihilate (Piel)
+**Lemma gloss:** To perish, be destroyed; in Piel, to destroy or annihilate; in Hifil, to cause to perish; also to be lost, go astray.
+**Description:** Piel intensive-active sense: to destroy, exterminate, annihilate — the transitive counterpart where an agent actively destroys the object; Arabic أَهْلَكَ (ahlaka, Form IV), أَبَادَ (abaada), إِبَادَة (ibaada); Korean 멸망시키다/파괴하다; Swahili kuangamiza (causative -iza), kuharibu; covering all Piel inflections (perfect, imperfect, infinitive absolute, participle, consecutive).
+**Enriched:** To destroy, exterminate, annihilate (Piel intensive) — 38 occurrences of active, agent-driven destruction. Israel is commanded to destroy idolatrous high places (Deut 12:2), and God threatens to destroy disobedient peoples (Num 33:52). The Piel stem's intensive force means not just killing but eradicating — wiping out every trace. Arabic ahlaka (أَهْلَكَ, Form IV causative) and abada (أَبَادَ) both select total-destruction vocabulary. Spanish destruirás and German zerstören similarly opt for complete destruction rather than mere killing.
+
+### H0223a / Sense 80714 (38 occ, sense 1 of 1)
+**Label:** Uriah / Uriyahu (proper name, theophoric)
+**Lemma gloss:** Uriah / Uriyahu — theophoric name ('YHWH is my light') borne by a Hittite warrior, a priest, and others
+**Description:** Proper masculine name with theophoric element meaning 'YHWH is my light,' appearing in two orthographic variants: the short form אוּרִיָּה (Uriyah, 36x) and the long form אוּרִיָּהוּ (Uriyahu, 2x). English 'Uriah / Uriyah / Uriyahu,' Spanish 'Urías / Uriyahu,' Hindi 'ऊरिय्याह / ऊरिय्याहू,' Arabic 'أُورِيّا / أُورِيَّا,' Korean '우리야 / 우리야가,' Swahili 'Uria / Uriya.' The two clusters reflect only the well-known -yah/-yahu alternation in Hebrew theophoric names; the referent(s) are identical across both forms.
+**Enriched:** The theophoric proper name Uriah/Uriyahu, borne by at least three biblical figures: Uriah the Hittite, David's slain officer (2 Sam 11:3-26; 23:39); Uriah the priest under Ahaz (2 Kgs 16:10-16; Isa 8:2); and a postexilic Uriah (Ezra 8:33; Neh 3:4). Despite multiple referents, the name remains a single lexical entry. Translations consistently transliterate — English 'Uriah,' Spanish 'Urías,' French 'Urie,' German 'Uria' — with minimal phonological adaptation.
+
+### H0270 / Sense 81101 (38 occ, sense 1 of 7)
+**Label:** seize, grasp, hold physically
+**Lemma gloss:** To grasp, seize, take hold of; figuratively: be gripped by fear; also to fasten, take possession, or be caught
+**Description:** Core Qal active sense: to physically seize, grasp, take hold of, or hold onto a person or object with the hand, covering all active inflections (perfect, imperfect, imperative, infinitive, participle); Arabic أَمْسَكَ (amsaka = grasp/hold) consistently distinguishes this from the figurative sense; Korean 잡다/붙잡다 (jabda/butjabda = grab/seize); Swahili kushika/kukamata (hold/catch).
+**Enriched:** The core Qal active sense: to physically seize, grasp, or take hold of someone or something with the hand. Thirty-eight occurrences cover the full range of Qal inflections. Arabic akhadha ('to take'), Korean jabda ('to grab'), and Swahili -shika ('to grasp') all parallel this primary meaning. Jacob grasping Esau's heel (Gen 25:26) and Moses seizing the serpent (Exod 4:4) are paradigmatic instances.
+
+### H0713 / Sense 84051 (38 occ, sense 1 of 1)
+**Label:** purple (fabric/dye)
+**Lemma gloss:** Purple cloth/dye — costly murex-derived textile used in tabernacle furnishings, priestly garments, and royal attire
+**Description:** Purple cloth or dye (אַרְגָּמָן), a costly textile dyed with murex-derived pigment, used extensively in tabernacle/temple furnishings and royal garments. Multilingual evidence is uniform: eng 'purple', spa 'púrpura', hin 'बैंगनी', arb 'أُرْجُوَان', kor '자주색', swa 'zambarau'. The two clusters differ only in the presence or absence of conjunction waw, the article, and construct-state morphology — purely grammatical variation with no semantic distinction between the 35-occurrence and 3-occurrence groups.
+**Enriched:** Purple or red-purple dyed fabric and thread, primarily attested in cultic textile lists for the tabernacle (Exod 25:4; 26:1, 31, 36; 27:16; 28:5-8, 15, 33; 35:6, 23, 25, 35; 36:8-37; 38:18, 23; 39:1-29) and secondarily for royal or luxurious contexts (Judg 8:26; 2 Chr 2:6, 13; 3:14; Esth 1:6; 8:15; Prov 31:22; Song 3:10; 7:6). All target languages render with their standard purple term — Spanish 'púrpura,' French 'pourpre,' German 'Purpur' — reflecting a single, stable referent.
+
+### H0998 / Sense 86416 (38 occ, sense 1 of 1)
+**Label:** understanding/discernment
+**Lemma gloss:** Understanding, discernment, insight — the cognitive faculty of perceiving distinctions and grasping wisdom
+**Description:** The cognitive faculty or capacity of discernment, insight, and comprehension; the ability to perceive distinctions and grasp meaning, especially in matters of wisdom, moral judgment, and divine knowledge
+**Enriched:** Understanding, discernment, or insight as a cognitive and moral faculty — encompassing the act of comprehension (Dan 9:22; Isa 33:19), the innate capacity to perceive distinctions (Job 20:3; 39:26; Prov 3:5), the prized object of intellectual pursuit (Prov 4:5, 7; 16:16; Job 28:12, 20), and its personification alongside Wisdom (Prov 7:4; 8:14). Multilingual glosses converge: Spanish 'entendimiento,' French 'intelligence/discernement,' German 'Verständnis' — all mapping to a unified field of cognitive-moral perception.
+
+### H1101a / Sense 86847 (38 occ, sense 1 of 4)
+**Label:** to mix, mingle (with oil)
+**Lemma gloss:** To mix or mingle; predominantly a cultic term for grain offerings mixed with oil, but also to confuse language and to mingle among nations.
+**Description:** Qal passive participle used as a cultic technical term for grain offerings mixed or mingled with oil. This is by far the most frequent use (38+ occurrences), appearing in the sacrificial prescriptions of Exodus 29:2, 40, Leviticus 2:4-5, 7:10, 12, 9:4, 14:10, 21, 23:13, Numbers 6:15, 7:13ff (repeated for each tribal offering), 8:8, 15:4-9, 28-29 (festival offerings). The Qal passive participle forms (בְּלוּלֹת fp, בְּלוּלָה fs, בָּלוּל ms) all describe flour 'mixed with oil.' Multilingual glosses are consistent: Arabic مَلتوتَة/مَخْلُوطَة (kneaded/mixed), German gemischt (mixed), Korean 섞은/섞인 (mixed), Hindi मिली हुई/सनी हुई (mixed), Spanish mezclada(s) (mixed), French melange (mixed).
+**Enriched:** The dominant cultic-technical sense: grain offerings mixed or mingled with oil. Nearly all occurrences (38x) use the Qal passive participle bĕlûlāh in the Priestly source's sacrificial prescriptions — 'fine flour mixed with oil' (Lev 2:4-5; Num 7:13ff.). Spanish mezclada, French mélangé, and German gemischt all converge on straightforward physical mixing. This formulaic usage runs from Exod 29:2 through Numbers' dedicatory offerings.
+
+### H1540 / Sense 90101 (38 occ, sense 2 of 10)
+**Label:** Hifil: exile or deport
+**Lemma gloss:** uncover, reveal, go into exile — verb of exposure and displacement: literal (nakedness, covering) or abstract (secrets, divine truth); causative stems = exile
+**Description:** Hifil causative sense of causing someone to go into exile, deporting, or carrying away captive (Arabic: سبى sabaa / أجلى ajlaa; Korean: 사로잡아 갔다/추방했다; Swahili: kupeleka uhamishoni).
+**Enriched:** Hifil 'exile, deport' (38×) is causative: forcibly sending into captivity or removing a population. Arabic سَبَى/أَجْلَى, Korean 사로잡아 갔다/추방했다, Swahili kupeleka uhamishoni, Spanish deportar/desterrar. Assyrian and Babylonian deportations dominate: 2 Kgs 15:29, 17:6, 17:11, 24:14–15, 25:11; Jer 52:15; Amos 5:27. The semantic link to 'uncover' may be 'strip away from homeland', though some see two homonyms.
+
+### H1800 / Sense 91664 (38 occ, sense 1 of 4)
+**Label:** poor, needy (socioeconomic)
+**Lemma gloss:** Poor, needy; weak, feeble; humble, lowly; thin, gaunt
+**Description:** Describes a person of low socioeconomic status, lacking material resources; the most common sense of dal, used substantively or attributively for the poor as a social class.
+**Enriched:** A person of low socioeconomic status, lacking material resources. This is the predominant sense, used both as adjective and substantive for the poor as a social class. The Torah insists on justice for the dal (Exod 23:3; Lev 19:15), and the offering regulations provide alternatives for those too poor to afford the standard sacrifice (Lev 14:21). Proverbs contrasts the dal with the ashir (rich) repeatedly (Prov 10:15; 22:16; 28:11), and Ruth 3:10 praises Ruth for not pursuing young men 'whether poor or rich.' Spanish 'pobres' and French 'pauvre' consistently render this sense.
+
+### H2315 / Sense 95554 (38 occ, sense 1 of 1)
+**Label:** room, inner chamber
+**Lemma gloss:** room, inner chamber — a private room within a building, used for sleeping, seclusion, or concealment
+**Description:** A room or chamber, often an inner or private room within a larger structure, used for sleeping, storage, or seclusion.
+**Enriched:** A room or inner chamber within a larger structure, emphasizing privacy, enclosure, and withdrawal from public space. Used for bedrooms (Judg 15:1; 2 Sam 13:10; 1 Kgs 1:15), hiding places (Judg 16:9, 12; 1 Kgs 20:30; 22:25), and metaphorically for hidden recesses — 'the innermost parts of the belly' (Prov 18:8; 20:30, reading chadre-veten). Deuteronomy 32:25 pairs it with the outdoors: 'from without the sword bereaves, and from the chambers, terror.' The construct chadre is frequent, binding the room to what it contains or conceals.
+
+### H2809 / Sense 99587 (38 occ, sense 1 of 1)
+**Label:** Heshbon (city)
+**Lemma gloss:** Heshbon — the Amorite capital east of the Jordan, city of Sihon, later Reubenite and Gadite territory
+**Description:** Heshbon (Cheshbon), an ancient Amorite city east of the Jordan, capital of Sihon and later assigned to Reuben and Gad, mentioned in contexts of conquest, territory, and prophetic judgment.
+**Enriched:** The proper noun Cheshbon, identifying the ancient Transjordanian city that served as Sihon's Amorite capital (Num 21:26; Deut 1:4; 2:24-30) and whose conquest opened Israel's settlement east of the Jordan. It appears in historical narrative (Num 21:25-34; Josh 9:10; 12:2, 5; Judg 11:19, 26), tribal allotment texts (Josh 13:10, 17, 21, 26-27; 21:39; Num 32:3, 37), prophetic oracles against Moab (Isa 15:4; 16:8-9; Jer 48:2, 34, 45), and as a poetic simile in Song of Songs 7:5. The site is identified with modern Tell Hesban in Jordan. Translations uniformly transliterate: Spanish 'Hesbon,' French 'Heshbon,' German 'Heschbon.'
+
+### H3190 / Sense 101725 (38 occ, sense 2 of 12)
+**Label:** Qal: be good, be pleasing
+**Lemma gloss:** be good, pleasing; do good to, treat well; be glad (of heart); amend, improve; play/perform skillfully; well, thoroughly
+**Description:** Qal stative/intransitive sense: a situation, action, or state 'is good' or 'is pleasing' to someone. Arabic consistently uses حَسُنَ (ḥasuna, 'be good/beautiful') and يَحْسُنُ (yaḥsunu) for this sense, distinguishing it from the 'glad heart' sense which uses طَابَ (ṭāba). Korean renders with stative 좋다 forms (좋으면, 좋으리라, 좋은) rather than causative constructions. Swahili uses stative -kuwa vizuri ('be good') and -pendeza ('be pleasing') without causative -isha derivation. Covers all Qal imperfect, consecutive imperfect, and conjunctive imperfect forms expressing the idea 'it is/was/will be good/pleasing/well'.
+**Enriched:** The Qal stative/intransitive sense 'be good, be pleasing' accounts for 38 occurrences, describing situations, actions, or states that are good or pleasing to someone. Genesis 41:37 notes 'the thing was good in the eyes of Pharaoh,' Genesis 45:16 records 'it pleased Pharaoh' to hear Joseph's brothers had come. Arabic حَسُنَ (ḥasuna, 'be good/beautiful') and يَحْسُنُ (yaḥsunu) distinguish this stative sense from the active Hifil, revealing a genuine Semitic semantic split.
+
+### H3384b / Sense 104022 (38 occ, sense 1 of 8)
+**Label:** Hifil: teach, instruct
+**Lemma gloss:** To throw, shoot, teach, or direct; uniting the physical casting of projectiles with the authoritative imparting of instruction
+**Description:** The primary Hifil sense of ירה I meaning to teach, instruct, or give instruction; consistently glossed with Arabic عَلَّمَ (teach), Korean 가르치다 (teach), Swahili -fundisha (teach), Spanish enseñar (teach), and Hindi सिखाना (teach), across all finite verbal inflections including imperfect, perfect, imperative, infinitive, and consecutive forms — the core pedagogical sense of the causative stem.
+**Enriched:** The dominant Hifil sense: formal teaching and instruction. Arabic عَلَّمَ (teach), Korean 가르치다, and Swahili -fundisha all converge on pedagogical transmission. God teaches Moses what to say (Exod 4:12), and Levitical priests teach Israel the statutes (Lev 10:11). The noun torah derives directly from this sense.
+
+### H3871 / Sense 108531 (38 occ, sense 1 of 2)
+**Label:** tablet for writing
+**Lemma gloss:** Tablet (esp. the stone tablets of the covenant) or board/plank used in construction and shipbuilding.
+**Description:** A flat tablet, especially the stone tablets of the covenant or a writing surface for inscriptions.
+**Enriched:** A flat tablet for writing, especially the stone tablets bearing the Decalogue. Dominates usage in Exodus (24:12; 31:18; 32:15-16, 19; 34:1-4, 28-29) and Deuteronomy (4:13; 5:22; 9:9-17; 10:1-5). Also used metaphorically of the heart as a writing surface (Prov 3:3; 7:3; Jer 17:1) and of a prophet's tablet for public display (Isa 30:8; Hab 2:2). Spanish 'tablas de,' French 'tables de,' and German 'Tafeln von' consistently convey inscribed slabs.
+
+### H4306 / Sense 111159 (38 occ, sense 1 of 1)
+**Label:** rain, showers
+**Lemma gloss:** rain — precipitation sent or withheld by God, viewed as blessing on the land or instrument of judgment
+**Description:** Precipitation falling from the sky, whether a single rainfall or repeated showers; used of both literal weather and God-sent rain as blessing or judgment.
+**Enriched:** Rain or showers as precipitation from the sky, predominantly framed as divinely bestowed agricultural blessing or withheld as covenantal punishment. The characteristic formula is natan matar ('to give rain,' Deut 11:14; 28:12; 1 Kgs 8:36), pairing rainfall with divine sovereignty over the land. Paired with tal ('dew') in 1 Kings 17:1 and with yoreh and malqosh ('early and latter rains') in Deuteronomy 11:14. The Exodus plague narrative uses matar for the hail-storm: 'Yahweh rained hail on the land of Egypt' (Exod 9:33-34). Job 28:26 and 36:27 celebrate rain as evidence of divine wisdom in ordering creation. French 'pluie,' Spanish 'lluvia,' German 'Regen' all render it straightforwardly.
+
+### H5414 / Sense 119756 (38 occ, sense 3 of 7)
+**Label:** make, render, appoint
+**Lemma gloss:** To give, put, set, make, deliver; the primary Hebrew verb for transferring possession or placing something
+**Description:** To make, render, or appoint someone or something into a new state or role (Arabic root signal: جَعَلَ jaʿala 'to make/render'; Korean 만들다 'to make'; Swahili -fanya 'to make').
+**Enriched:** A transformative-causative sense: to make, render, or appoint someone into a new state or role. Arabic جَعَلَ ('to make/render') and Korean 만들다 ('to make') mark this as distinct from simple giving. Joseph is made ruler over Egypt (Gen 41:43), God promises to make Abraham a great nation, and Israel's pride is made like iron (Lev 26:19).
+
+### H5739 / Sense 122601 (38 occ, sense 1 of 1)
+**Label:** flock or herd of livestock
+**Lemma gloss:** flock, herd — a group of livestock (sheep, goats, or cattle) tended together, often used in pastoral imagery
+**Description:** A group of domesticated animals (sheep, goats, or cattle) kept together, used both literally of actual livestock and in similes comparing people or nations to a flock.
+**Enriched:** A group of domesticated animals — primarily sheep and goats, occasionally cattle — kept and tended together. Used literally for pastoral livelihood (Gen 29:2-3, 8; 30:40; 1 Sam 17:34; Prov 27:23) and in figurative speech comparing people to flocks under a shepherd's care (Isa 40:11; Ezek 34:12; Mic 5:7). Frequently appears in construct: eder tso'n ('flock of sheep,' Gen 29:2; Joel 1:18), eder harehelim ('flock of ewes,' Song 6:6). The word conveys both vulnerability and abundance. Spanish 'rebano,' French 'troupeau,' German 'Herde' all render a unified pastoral sense with no semantic splitting needed.
+
+### H5782 / Sense 123016 (38 occ, sense 1 of 6)
+**Label:** Hifil: to awaken, stir up (causative)
+**Lemma gloss:** To rouse, awaken, stir up; in Qal, to wake from sleep; in Hifil, to cause awakening or incite action; in Piel, to rouse intensively.
+**Description:** Causative Hifil stem meaning to cause someone to awake or to stir up a person, nation, or spirit, confirmed by Arabic أَيْقَظَ (ayqaẓa, causative awakening) and يُثِيرُ (yuthīru, to incite/stir up), Korean 깨우다 (to awaken someone) and 일으키다 (to raise up), covering all Hifil finite forms, participles, infinitive, waw-consecutives, and imperatives.
+**Enriched:** Hifil causative: to awaken someone, stir up, incite — the most frequent sense at 38 occurrences. God is the typical agent, stirring up the spirit of kings (2 Chr 36:22; Ezra 1:1), rousing nations for judgment (Jer 6:22; 50:41), or awakening a protective instinct like an eagle stirring its nest (Deut 32:11). Arabic yuqizu ('he awakens') and German erwecken both select dedicated causative vocabulary here, while Spanish despertar and Korean 깨우다 confirm the caused-awakening frame. The theological pattern is striking: human agents rarely 'stir up' well — it is God's prerogative to awaken history.
+
+### H7097a / Sense 132614 (38 occ, sense 2 of 3)
+**Label:** farthest extent of territory or earth
+**Lemma gloss:** End, extremity, edge; the tip or border of an object; the farthest reach of territory or earth; the end of a time period.
+**Description:** The uttermost part, farthest reach, or extremity of a land, territory, or the earth itself. Often in the expression miqqtseh ('from the end of') to denote the far boundary of a region (Gen 47:2, 21; Num 34:3; Deut 4:32; 13:7; 28:49, 64), or biqqtseh ('at the end of') for position at the outer edge of a territory (Gen 23:9; Deut 30:4; Josh 15:5, 8, 21; 18:15; Neh 1:9; Isa 7:18; Prov 17:24; Ps 19:6; 61:2; 135:7). Includes the distributive use 'from every quarter' (Gen 19:4; Jer 51:31). Glossed as 'from end of/at end of' (eng), 'من أقصى/في أقصى' (arb), '끝에서' (kor), 'desde extremo de' (spa).
+**Enriched:** The farthest extent, outermost boundary, or uttermost part of a territory, nation, or the earth itself (38 occurrences). Frequently in the construction מִקְצֵה הָאָרֶץ ('from the end of the earth,' Deut 28:49; Isa 5:26) or מִקָּצֶה ('from the edge of,' Gen 47:21). This sense scales up from local edges to cosmic horizons — the same word describes the edge of a field (Gen 23:9) and the ends of the heavens (Deut 4:32). German am Ende and Swahili mwisho wa maintain the boundary-marking function at geographic scale.
+
+### H7356b / Sense 135529 (38 occ, sense 1 of 2)
+**Label:** compassion, mercy
+**Lemma gloss:** Compassion, tender mercies — deep visceral feeling of mercy, often as a divine attribute (plurale intensivum).
+**Description:** Tender compassion or mercies, often as a divine attribute expressing God's gracious disposition toward His people or as a human plea for mercy.
+**Enriched:** Compassion or mercies as a moral-theological quality, especially of God toward His people. The dominant sense (38 of 40 occurrences), used in prayers and praise: 'Let us fall into the hand of the LORD, for His mercies are great' (2 Sam 24:14), and 'according to Your great compassion blot out my transgressions' (Ps 51:1, alluding to this word family). Paired with chesed in Hos 2:21 and Ps 40:12, confirming its place in the covenant-love vocabulary. French 'compassion' and Spanish 'compasiones' render the abstract theological force, while Neh 9:19-31 uses it repeatedly to describe God's patience through Israel's rebellions.
+
+### H7604 / Sense 137483 (38 occ, sense 3 of 3)
+**Label:** leave remaining, spare (Hifil)
+**Lemma gloss:** To remain, be left over, survive; as participle, the remnant or survivors; in Hifil, to leave remaining or spare.
+**Description:** The causative Hifil meaning of שׁאר: to leave remaining, leave over, let survive, spare — the agent deliberately causes someone or something to remain; Arabic أَبْقَى / يُبْقِ, Korean 남기다, Swahili -acha / -bakiza.
+**Enriched:** Hifil causative: to leave remaining, leave over, spare, let survive. At 38 occurrences this is the agent-oriented counterpart to senses 1-2: someone deliberately causes others to remain alive or causes something to be left over. In Num 21:35 Israel 'left no survivor'; in Deut 2:34 they 'left none remaining.' Spanish dejaron ('they left'), Korean 남기다 ('to cause to remain'), and Arabic abqa ('to make survive') all select causative morphology, confirming the stem-driven sense boundary. The theological import is heavy: God is often the implicit agent who 'leaves a remnant' (cf. Isa 1:9).
+
+### H8065 / Sense 141879 (38 occ, sense 1 of 1)
+**Label:** heaven(s), sky
+**Lemma gloss:** heaven(s), sky — the Aramaic form of shamayim, denoting the visible sky or God's celestial dwelling
+**Description:** The visible sky or the celestial realm above the earth; Hebrew שָׁמַיִם (shamayim) is inherently dual/plural in form. The two clusters differ only in grammatical state: S141879 includes construct (שְׁמֵי, 'heavens of') and absolute forms with prepositions, while S141880 shows absolute plural. All translations converge on a single referent: eng 'heavens/the-heavens', spa 'cielo/cielos', hin आकाश, arb السَّمَاء/السَّمَاوَات, kor 하늘, swa mbingu. No semantic distinction warrants separate senses; the split is purely morphosyntactic (construct vs. absolute, with/without article).
+**Enriched:** The Aramaic noun for 'heavens' or 'sky,' always in the emphatic plural shamayya, functioning both as the visible firmament and as the realm of divine authority. In Daniel, it denotes the physical sky — birds (2:38; 4:9, 18), dew (4:12, 20, 22, 30; 5:21), winds (7:2), and clouds (7:13) — and simultaneously the seat of divine sovereignty: 'heaven rules' (4:23). The compound elah shamayya ('God of heaven,' Dan 2:18-19, 37, 44; Ezra 5:11-12; 7:12, 21, 23) became the standard designation for Israel's God in official Aramaic correspondence of the Persian period. Translations converge uniformly: Spanish 'cielos,' French 'cieux,' German 'Himmel.'
+
+### H8084 / Sense 142061 (38 occ, sense 1 of 1)
+**Label:** Eighty (cardinal numeral)
+**Lemma gloss:** eighty — the cardinal numeral used in ages, census counts, measurements, and chronological reckonings
+**Description:** The cardinal numeral שְׁמֹנִים meaning 'eighty,' used in census counts, ages, measurements, and chronological reckonings throughout the Hebrew Bible. All three clusters represent the same numeral in different prepositional environments: bare or with conjunction (S142061, 36x: eng 'eighty/and eighty', spa 'ochenta/y ochenta', hin अस्सी/और अस्सी, arb ثَمَانِينَ/وَثَمَانِينَ, kor 팔십, swa 'themanini/na themanini'), with ב for price or exchange (S142063, 1x: eng 'for eighty', spa 'por ochenta', arb بِثَمانينَ, swa 'kwa shekeli themanini'), and with ב for temporal location (S142064, 1x: eng 'in eighty', spa 'en ochenta', arb فِي ثَمَانِينَ). These are purely grammatical variations of a single cardinal number.
+**Enriched:** The cardinal numeral 'eighty,' an indeclinable plural form used throughout the Hebrew Bible in age formulas (Gen 5:25-26, 28; 16:16; 35:28; Exod 7:7; Ps 90:10), military and census counts (2 Kgs 10:24; Jer 41:5; 2 Chr 26:17), chronological reckonings (1 Kgs 6:1; Judg 3:30), and enumerations of persons or concubines (Song 6:8; Ezra 8:8; 1 Chr 15:9). Typically modifies a singular noun (shanah, 'year') or stands alone. French 'quatre-vingts' (four-twenties) reveals that the vigesimal numeral system persists in some translation traditions, while Spanish 'ochenta' and German 'achtzig' follow decimal convention.
+
+### H8123 / Sense 142641 (38 occ, sense 1 of 1)
+**Label:** Samson
+**Lemma gloss:** Samson — the Danite judge whose name evokes 'sun,' famed for supernatural strength and tragic downfall
+**Description:** Samson, Shimshon, for Shimshon (38 occurrences across 2 original clusters)
+**Enriched:** The proper masculine name Shimshon, identifying the Danite judge-hero whose exploits against the Philistines fill Judges 13-16. All 38 occurrences are confined to these four chapters, tracing his career from miraculous birth (13:24) through feats of supernatural strength (14:6, 19; 15:14-15; 16:3, 29-30) to his betrayal by Delilah and sacrificial death (16:4-30). The name derives from shemesh ('sun'), fitting his connection to the Sorek valley near Beth-shemesh. Translations uniformly transliterate: Greek Sampson, Spanish 'Sanson,' French 'Samson,' German 'Simson.' The Assyrian parallel name Shamshanu confirms the solar theophoric element.
+
+### H8144 / Sense 142872 (38 occ, sense 1 of 2)
+**Label:** scarlet, crimson color/dye
+**Lemma gloss:** Scarlet, crimson; the vivid red color or dye derived from the kermes insect, used for fabrics, garments, and thread
+**Description:** The color scarlet or crimson, derived from the kermes insect dye, used attributively to describe fabrics, garments, and materials in tabernacle/temple construction, priestly vestments, and purification rituals, as well as figuratively for sin (Isa 1:18).
+**Enriched:** The color scarlet or crimson, derived from the kermes insect dye, used attributively of fabrics, garments, and materials. Spanish 'escarlata' and German 'Karmesin/scharlachrot' both preserve the rich chromatic specificity. This sense pervades the Tabernacle construction (Exod 25:4; 26:1,31,36) and priestly vestments (Exod 28:5-8), where scarlet appears in a fixed triad with blue and purple. It also colors royal garments (2 Sam 1:24), the clothing of the virtuous woman (Prov 31:21), and Isaiah's metaphor for indelible sin (Isa 1:18), where French 'écarlate' captures the same dye-fast permanence that makes the image so striking.
+
+### H8179 / Sense 143060 (38 occ, sense 2 of 2)
+**Label:** gates as territory or community
+**Lemma gloss:** Gate or entrance to a city, temple, or palace; metonymically, a community or territorial jurisdiction ('within your gates').
+**Description:** Metonymic use of 'gates' (especially with possessive suffixes) to denote a city, town, or community jurisdiction — as in Deuteronomic law where 'within your gates' means 'within your settlements or territory.'
+**Enriched:** Gates as a metonym for territory, community, or civic jurisdiction (38x). Concentrated in Deuteronomic law, 'within your gates' (bish'arekha) means 'within your settlements' — designating the towns and territory of Israel rather than literal doorways. The Sabbath command extends to 'the sojourner who is within your gates' (Exod 20:10, Deut 5:14), and Deuteronomy's instructions about worship, tithing, and justice use this phrasing repeatedly (Deut 6:9, 12:12, 14:27-29). The possessive suffixes in all languages — English 'your gates,' Spanish tus puertas, German dein Tore — mark this community-referencing sense.
+
+### H8283 / Sense 143932 (38 occ, sense 1 of 1)
+**Label:** Sarah (personal name)
+**Lemma gloss:** Sarah — wife of Abraham and mother of Isaac, the matriarch whose name means 'princess'
+**Description:** Proper noun שָׂרָה (Sarah): wife of Abraham and mother of Isaac, the matriarch of Israel whose name was changed from Sarai (Gen 17:15). S143932 covers nominative/bare occurrences (29x, e.g. 'Sarah said', 'Sarah laughed'), while S143933 covers prepositional and conjunctive forms (9x, 'to Sarah', 'and Sarah'). All translations preserve the same anthroponym: eng Sarah, spa Sarah, hin सरह/सारा, arb سَارَة, kor 사라, swa Sara. The split is purely syntactic (preposition/conjunction attachment), referring to one and the same person throughout Genesis.
+**Enriched:** The proper feminine name Sarah ('princess'), identifying the wife of Abraham and mother of Isaac. All 38 occurrences refer to this single individual across the Abrahamic narrative cycle (Gen 17-25) and Isaiah's exilic encouragement (51:2). The name change from Sarai to Sarah (Gen 17:15) functions as a divine re-commissioning parallel to Abraham's own renaming. Key episodes cluster around the promise and birth of Isaac (Gen 17:19; 18:6-15; 21:1-7), encounters with foreign rulers (Gen 20:2-18), and her death and burial (Gen 23:1-2, 19; 25:10; 49:31). Translations consistently transliterate: Greek Sarra, Spanish 'Sara,' French 'Sara,' German 'Sara.'
+
+### H8336b / Sense 144197 (38 occ, sense 1 of 1)
+**Label:** fine linen (fabric)
+**Lemma gloss:** fine linen, byssus — high-quality white Egyptian linen used for priestly garments and tabernacle furnishings
+**Description:** Fine linen or byssus, a high-quality textile used in priestly garments and tabernacle furnishings. All translations converge: Spanish 'lino/lino fino' (linen/fine linen), Arabic 'كَتّانٍ/بُوصًا' (linen/byssus), Hindi 'सन/बारीक कपड़ा' (flax/fine cloth), Korean '고운 베/세마포' (fine cloth/fine linen), Swahili 'kitani/kitani safi' (linen/fine linen). The split is purely grammatical—conjunctive 'and fine linen' versus bare noun or prepositional 'in fine linen'—with no semantic distinction.
+**Enriched:** Fine Egyptian linen or byssus, a premium white textile associated with royalty, priesthood, and sacred space. In the tabernacle texts (Exod 25-28, 35-39), shesh is the base fabric for nearly every woven element — curtains (26:1, 31, 36), the court hangings (27:9, 18), and the priestly garments (28:5, 6, 8, 15, 39; 39:2-29). Women skilled in spinning produced the thread (Exod 35:25). Outside the tabernacle corpus, it marks royal investiture (Gen 41:42), covenant metaphor (Ezek 16:10, 13; 27:7), and domestic virtue (Prov 31:22). The word is an Egyptian loanword (Coptic shens), confirming that Israel imported both the material and its name from Egypt.
+
+### H8492 / Sense 145120 (38 occ, sense 1 of 1)
+**Label:** new wine / must
+**Lemma gloss:** new wine, must — freshly pressed grape juice, listed with grain and oil as a sign of agricultural blessing
+**Description:** Freshly pressed grape juice or new wine (tirosh), frequently listed alongside grain and oil as agricultural produce and a sign of divine blessing or abundance.
+**Enriched:** Freshly pressed grape juice or must, representing the yield of the vineyard before full fermentation. Characteristically appears in the agricultural triad dagan-tirosh-yitshar ('grain, new wine, oil') as shorthand for covenant prosperity (Deut 7:13; 11:14; 14:23; 28:51; Hos 2:10, 24; Joel 2:19). Distinguished from yayin ('fermented wine') in Micah 6:15 and Hosea 4:11, though the boundary between them is permeable. Genesis 27:28 includes tirosh in Isaac's patriarchal blessing, and Numbers 18:12 assigns its firstfruits to the priests. Judges 9:13 personifies the vine: 'should I leave my tirosh, which cheers God and men?' The term connotes abundance, freshness, and divine generosity.
+
+### G0758 / Sense 63441 (37 occ, sense 1 of 1)
+**Label:** ruler, leader, chief
+**Lemma gloss:** ruler, leader, chief — one who holds authority, whether civic magistrate, religious leader, or supernatural power
+**Description:** One who holds authority and governs, whether a civic official, religious leader, or supernatural power — the Greek noun ἄρχων (archōn) used of human rulers (magistrates, synagogue leaders, members of the Sanhedrin) and cosmic/spiritual rulers alike.
+**Enriched:** One who holds governing authority or official power, whether over a civic body, religious assembly, or spiritual domain. The semantic range spans synagogue officials (Matt 9:18; Luke 8:41), Sanhedrin members (John 3:1; Acts 4:5-8), Roman magistrates (Acts 16:19), and supernatural powers including Satan as 'ruler of this world' (John 12:31; 14:30). The Spanish 'gobernante' and German 'Herrscher' both capture the broad ruling function. Paul's 'rulers of this age' (1 Cor 2:6-8) deliberately blurs the human-demonic boundary.
+
+### G1380 / Sense 65758 (37 occ, sense 1 of 4)
+**Label:** think, suppose, believe
+**Lemma gloss:** To think, suppose; to seem or appear; impersonally, to seem good or decide; to be reputed or esteemed.
+**Description:** To hold an opinion or form a judgment about something, to think or suppose that something is the case.
+**Enriched:** The cognitive core: to think, suppose, or hold an opinion. This is the most frequent sense (37 occurrences), used when someone forms a judgment or entertains a belief. Jesus' pointed 'Do you think...?' (Matt 3:9; 26:53) and Paul's rhetorical challenges deploy this sense to provoke reflection. English 'think,' Spanish 'pensáis,' and German 'meinen' all point to the same deliberative mental act, while French 'penser' serves as a broad catch-all across multiple senses.
+
+### G1683 / Sense 67018 (37 occ, sense 1 of 1)
+**Label:** myself (reflexive pronoun)
+**Lemma gloss:** myself — first-person reflexive pronoun indicating the speaker as both subject and object of action
+**Description:** First-person singular reflexive pronoun used in genitive ('of myself'), dative ('to/for myself'), and accusative ('myself') cases to indicate the speaker as both subject and object of the action. All inflectional forms express the same reflexive self-reference. Multilingual evidence: eng 'myself/of myself/to myself', spa 'mi mismo/de mi mismo/para mi mismo', hin 'apne aap/apne liye/apna' (oneself/for oneself/one's own), arb 'nafsi/li-nafsi' (my soul/for my soul), kor 'na jasin/na jasin-ege' (my self/to my self), swa 'mwenyewe/kwangu/yangu' (himself/at mine/mine). Paul uses it extensively to describe his own apostolic conduct (1 Cor 4:6, 2 Cor 11:7, Phil 3:13).
+**Enriched:** First-person singular reflexive pronoun functioning in genitive ('of myself'), dative ('to/for myself'), and accusative ('myself') to mark the speaker as simultaneously agent and recipient of the verb's action. Theologically significant in the Johannine Jesus speeches where it underscores voluntary subordination — 'I do nothing of myself' (John 5:30; 8:28) — and in Paul's rhetorical self-presentations: 'I buffet my body' (1 Cor 9:27), 'I became all things to all' (1 Cor 9:22). The idiomatic en emauto ('in myself') appears in John 5:26 for the Father's self-existent life given to the Son.
+
+### G2168 / Sense 68533 (37 occ, sense 1 of 2)
+**Label:** give thanks actively
+**Lemma gloss:** To give thanks, express gratitude; rarely passive: to be thanked or received with thanksgiving
+**Description:** To express gratitude or thanksgiving to God or to someone, used actively across all grammatical persons, numbers, tenses, and moods (indicative, participle, imperative, infinitive).
+**Enriched:** To give thanks actively — expressing gratitude to God or another person. Spans all grammatical forms: indicative, participle, imperative, and infinitive. Used for Jesus' blessing at meals (Matt 15:36; Mark 8:6; 14:23), Paul's habitual epistolary thanksgivings (Rom 1:8; 1 Cor 1:4; Phil 1:3), and the grateful leper returning to Jesus (Luke 17:16). Every major translation language converges: 'doy gracias' (Spanish), 'rendre graces' (French), 'danken' (German), confirming a single unified active sense across 37 occurrences.
+
+### G2455 / Sense 69520 (37 occ, sense 1 of 1)
+**Label:** Judas / Judah (proper name)
+**Lemma gloss:** Judas / Judah — proper name from Hebrew yehudah, borne by the patriarch, the betrayer, and several others
+**Description:** The proper name Ioudas (Judas/Judah), used in the NT for multiple individuals: Judas Iscariot the betrayer, Judas son of James (apostle), Judas brother of Jesus, Judas of Galilee (Acts 5:37), Judas called Barsabbas (Acts 15:22), Judas of Damascus (Acts 9:11), and the patriarch Judah in genealogies. All 37 occurrences share the same lexical form. Multilingual evidence is consistent across clusters: Hindi 'yahuda', Arabic 'yahudha', Korean 'yudaga/yuda-ui', Swahili 'Yuda/Ioudas', Spanish 'Ioudas'. The two clusters differ only in frequency and minor case distribution (genitive-only vs. full paradigm), representing inflectional variation of one proper noun.
+**Enriched:** The proper name Ioudas (from Hebrew Yehudah), applied to multiple individuals across the NT including the patriarch Judah son of Jacob (Matt 1:2-3; Rev 5:5; 7:5), Judas Iscariot the betrayer (Matt 10:4; 26:14-47; John 13:2, 26-30), Judas son of James the apostle (Luke 6:16; John 14:22; Acts 1:13), Judas the Lord's brother (Matt 13:55; Jude 1), Judas of Galilee (Acts 5:37), Judas Barsabbas (Acts 15:22, 27), and Judas of Damascus (Acts 9:11). The geographic and tribal use — 'land of Judah' (Matt 2:6), 'tribe of Judah' (Heb 7:14) — preserves the patriarchal connection.
+
+### G2573 / Sense 70008 (37 occ, sense 1 of 1)
+**Label:** well
+**Lemma gloss:** well, rightly, fittingly — adverb affirming that something is done in a good, proper, or commendable manner
+**Description:** well, rightly, Well (37 occurrences across 3 original clusters)
+**Enriched:** An adverb affirming that an action is performed rightly, fittingly, or commendably, derived from the adjective kalos ('beautiful, good'). Used both sincerely — 'you will do well' (Acts 15:29; 3 John 6) — and with pointed irony: 'well do you reject the commandment of God' (Mark 7:9). In the formula kalos poieo ('to do well/rightly'), it appears in ethical exhortation (1 Cor 7:37-38; Jas 2:8, 19). Jesus' 'well did Isaiah prophesy' (Matt 15:7; Mark 7:6) turns the commendation into a stinging indictment. The uniform multilingual rendering — Spanish 'bien,' French 'bien,' German 'gut' — confirms its unambiguous adverbial function.
+
+### G2744 / Sense 70565 (37 occ, sense 1 of 2)
+**Label:** boast, glory, take pride
+**Lemma gloss:** To boast, glory, or exult in something; one textual variant yields 'be burned' (1 Cor 13:3)
+**Description:** To boast or glory in something, expressing pride or exultation, whether in oneself, in others, or in the Lord.
+**Enriched:** To boast, glory, or take pride in something — whether positively or negatively. Paul dominates the usage, employing it for illegitimate boasting in the law (Rom 2:17, 23), legitimate boasting in hope of glory (Rom 5:2), paradoxical boasting in suffering (Rom 5:3), and exultant glorying in God through Christ (Rom 5:11). Spanish distinguishes 'jactarse' (vain boasting) from 'gloriarse' (glorying), while German uniformly uses 'sich ruhmen.' The verb's flexibility allows Paul to subvert Greco-Roman honor culture by redefining what is worth boasting about.
+

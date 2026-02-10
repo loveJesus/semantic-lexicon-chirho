@@ -1,0 +1,291 @@
+# Sense Refinement Detection — Batch 039
+
+You are a biblical lexicographer reviewing sense entries for a Hebrew/Aramaic/Greek lexicon.
+Each entry below is a single "sense" that was produced by clustering translation signatures 
+and then merging with an LLM. Some senses may have been OVER-LUMPED — they contain genuinely 
+distinct meanings that should be separate senses.
+
+## Your Task
+
+For each sense, determine if it should be SPLIT into multiple senses. Look for:
+- Literal vs. figurative/metaphorical uses lumped together
+- Concrete vs. abstract meanings combined
+- Multiple distinct referents (e.g., "father" = biological parent + patron/advisor + originator)
+- Physical vs. spiritual/theological uses merged
+- Different syntactic frames producing different meanings
+
+## Output Format
+
+Return a JSON array. For senses that need NO splitting, omit them entirely.
+For senses that SHOULD be split, include an entry like:
+
+```json
+[
+  {
+    "senseIdChirho": 79287,
+    "lemmaIdChirho": "H0001",
+    "currentLabelChirho": "father, immediate male parent",
+    "splitProposalChirho": [
+      {
+        "newLabelChirho": "biological/legal father",
+        "criteriaChirho": "Direct parent-child relationship, possessive constructions with specific person"
+      },
+      {
+        "newLabelChirho": "metaphorical father (patron, advisor, protector)",
+        "criteriaChirho": "Title of respect for prophets, advisors, or authority figures; 'father to Pharaoh' type usage"
+      }
+    ],
+    "confidenceChirho": "high",
+    "reasoningChirho": "Description explicitly mentions 'title of respect or metaphorical originator' alongside biological father"
+  }
+]
+```
+
+Only propose splits where you have MEDIUM or HIGH confidence. Do NOT split function words (articles, 
+prepositions, particles, conjunctions) unless there is a genuinely distinct semantic sense (not just 
+syntactic variation). Proper nouns generally should NOT be split.
+
+If NO senses in this batch need splitting, return an empty array: []
+
+## Senses to Review
+
+### G4434 / Sense 76100 (34 occ, sense 1 of 1)
+**Label:** (none)
+**Lemma gloss:** Poor, destitute; one who is reduced to begging, lacking material resources or spiritual self-sufficiency
+**Description:** (none)
+**Enriched:** Materially and socially destitute — a beggar or person reduced to extreme poverty, dependent on charity. Jesus announces that the gospel is preached to such people as a messianic sign (Matt 11:5; Luke 4:18). The rich young ruler is told to give to the poor (Matt 19:21), and the poor are always present as objects of compassion (Matt 26:11). Multilingual evidence (Spanish 'pobres,' French 'pauvre,' German 'arm') uniformly points to material lack, though Jesus' phrase 'poor in spirit' (Matt 5:3) extends the concept to spiritual neediness before God.
+
+### G5290 / Sense 78235 (34 occ, sense 1 of 2)
+**Label:** return to a place
+**Lemma gloss:** To return, go back — physical travel to a previous location; rarely, to turn back from a course
+**Description:** To go back or come back to a previous location or starting point, used of physical travel back to a city, home, or region.
+**Enriched:** To return physically to a prior location — going back to a city, home, or region after a journey or errand. This accounts for nearly all NT occurrences and dominates Luke-Acts (Luke 1:56; 2:20, 43, 45; 4:1; Acts 8:28; 13:13). Translations across all languages use dedicated return-verbs (spa 'regresar/volver', fra 'retourner', deu 'zurückkehren'), showing no semantic variation within this sense.
+
+### H0197 / Sense 80489 (34 occ, sense 1 of 1)
+**Label:** porch, vestibule, portico
+**Lemma gloss:** Porch, vestibule, portico; the covered entrance hall of a temple or palace
+**Description:** The entrance hall or covered porch of a building, especially the vestibule of the temple or of a royal palace.
+**Enriched:** The covered entrance hall or vestibule of a sacred or royal building — a portico forming the front section of the temple or palace. Concentrated in descriptions of Solomon's temple (1 Kgs 6:3; 7:19, 21), his palace complex with its 'porch of pillars' and 'porch of the throne' (1 Kgs 7:6–7), and Ezekiel's visionary temple (Ezek 40:7–49). Joel 2:17 invokes the space 'between the porch and the altar' as the locus of priestly lament, underscoring its liturgical significance.
+
+### H0738a / Sense 84163 (34 occ, sense 1 of 1)
+**Label:** lion (large predatory feline)
+**Lemma gloss:** Lion; a large predatory feline symbolizing strength, royalty, courage, and divine judgment
+**Description:** A lion, the well-known large cat used throughout Scripture as a symbol of strength, courage, and ferocity; all 34 occurrences refer to the same animal whether singular or plural, definite or indefinite, or in simile constructions.
+**Enriched:** A lion (Panthera leo), whether literal or figurative — the powerful predatory cat used across Scripture as an image of strength, danger, and royal authority. Narrative uses include Samson's encounter (Judg 14:5) and David's defense of his sheep (1 Sam 17:34, 36–37). Figurative uses include Balaam's blessing of Israel as a crouching lion (Num 23:24; 24:9) and decorative lion carvings on Solomon's throne and temple furnishings (1 Kgs 7:29, 36; 10:19–20). All target languages render it with their standard word for lion.
+
+### H0860 / Sense 85035 (34 occ, sense 1 of 1)
+**Label:** female donkey
+**Lemma gloss:** She-donkey, female ass; a domesticated animal used for riding, transport, and as a measure of wealth
+**Description:** A she-ass, the female of the domestic donkey (Equus asinus), used as a riding and pack animal and valued for breeding mules; distinguished from חֲמוֹר (male donkey) by sex
+**Enriched:** A female donkey (she-ass), the domesticated animal valued for riding, burden-bearing, and breeding. Prominent in Balaam's narrative where the she-donkey sees the angel and speaks (Num 22:21–33), in patriarchal wealth inventories (Gen 12:16; 32:15; Job 1:3; 42:12), and in the messianic prophecy of Zechariah 9:9 where the king comes on the foal of a she-donkey. The gender-specific term contrasts with חֲמוֹר (male donkey); multilingual glosses (Spanish 'asna,' German 'Eselinnen') consistently mark the feminine.
+
+### H0884 / Sense 85103 (34 occ, sense 1 of 1)
+**Label:** Beer-sheba (city)
+**Lemma gloss:** Beer-sheba; a city in the Negev marking Israel's traditional southern boundary, associated with Abraham and Isaac
+**Description:** The city of Beer-sheba (בְּאֵר שֶׁבַע), a prominent settlement in the Negev marking the traditional southern boundary of the land of Israel, associated with the patriarchs Abraham and Isaac who dug wells and made covenants there (Gen 21:31–33; 26:23–33). The name means 'well of the oath' or 'well of seven.'
+**Enriched:** The proper name of a city in the Negev desert, traditionally marking Israel's southern border. Founded in the patriarchal period through Abraham's well-digging and oath with Abimelech (Gen 21:14, 31–33), and reaffirmed by Isaac (Gen 26:23, 33). Appears in the phrase 'from Dan to Beer-sheba' (Judg 20:1; 2 Sam 17:11) denoting the whole land. Also significant as the departure point for Elijah's flight to Horeb (1 Kgs 19:3) and Jacob's journey to Egypt (Gen 46:1, 5).
+
+### H1653 / Sense 90825 (34 occ, sense 1 of 2)
+**Label:** rain, precipitation
+**Lemma gloss:** Rain, rainfall — the general Hebrew term for rain; once an intense downpour
+**Description:** General term for rain in all grammatical forms (singular, plural, construct, with article, conjunctions, prepositions, pronominal suffixes); consistently translated with the same base vocabulary across languages: eng 'rain', spa 'lluvia', hin 'varsha/barish', arb 'matar', kor 'bi', swa 'mvua'.
+**Enriched:** Rain or precipitation in general — the ordinary, unmarked term for rainfall in Hebrew, covering light showers, seasonal rains, and sustained downpour alike. Used across narrative (Gen 7:12; 8:2), law (Lev 26:4), prophecy (Hos 6:3; Joel 2:23), wisdom (Prov 25:14, 23), and poetry (Song 2:11). All major translations use their basic rain word (spa 'lluvia', fra 'pluie', deu 'Regen', eng 'rain') with no differentiation across the 34 occurrences.
+
+### H2132 / Sense 94300 (34 occ, sense 1 of 3)
+**Label:** olive tree
+**Lemma gloss:** Olive tree, olive fruit; also used in the toponym 'Mount of Olives'
+**Description:** The olive tree (Olea europaea) as a cultivated plant, including singular and plural references, possessive forms, agricultural contexts, orchards/groves, and figurative comparisons to an olive tree.
+**Enriched:** The olive tree itself -- cultivated Olea europaea in orchards, fields, and figurative speech. Genesis 8:11 introduces the olive branch; Deuteronomy 8:8 lists it among the promised land's seven species; Psalm 52:8 compares the righteous to a flourishing olive tree. Spanish 'olivo,' French 'olivier,' and German 'Oelbaum' designate the tree specifically.
+
+### H2372 / Sense 95913 (34 occ, sense 1 of 5)
+**Label:** see, perceive visually
+**Lemma gloss:** To see, behold, perceive; poetic synonym of ra'ah, ranging from physical sight to prophetic vision and reverent contemplation.
+**Description:** Basic visual perception — to see something or someone with one's eyes, including ordinary sight in various tenses and persons.
+**Enriched:** Basic visual perception — to see, perceive, look at — the broadest sense cluster at 34 occurrences spanning all conjugations and persons. In Exod 18:21 Jethro tells Moses 'you shall select' (literally 'you shall see/identify') capable men; in Job 15:17 Eliphaz says 'what I have seen, I will declare.' The multilingual evidence shows a clean mapping to standard sight vocabulary: German schauen, Spanish ver/vieron, French voir. This is chazah at its most semantically unmarked, though even here the poetic register distinguishes it from the prosaic ra'ah.
+
+### H2436 / Sense 96876 (34 occ, sense 1 of 2)
+**Label:** bosom, lap, embrace
+**Lemma gloss:** Bosom, lap, or embrace (of body or garment fold); also the base or bottom ledge of an altar structure
+**Description:** The chest or lap area of the body, used for carrying, embracing, or holding close, often expressing intimacy, comfort, or protection.
+**Enriched:** The bosom, lap, or chest area as a place of intimacy, protection, and concealment. Used for carrying children (Num 11:12; Isa 40:11), the marital embrace (Prov 5:20; Deut 13:6), hiding objects in the garment fold (Exod 4:6–7; Prov 16:33; 21:14), and as a metaphor for God's intimate care. English 'bosom' and Spanish 'seno' converge on the bodily sense, while the construct 'wife of your bosom' across languages consistently marks spousal intimacy. Covers 34 of 38 occurrences.
+
+### H2518 / Sense 97574 (34 occ, sense 1 of 1)
+**Label:** Hilkiah (personal name)
+**Lemma gloss:** Hilkiah; a theophoric personal name meaning 'my portion is YHWH,' borne by several priests and Levites
+**Description:** Proper masculine name meaning 'my portion is YHWH,' spelled variously as Chilqiyahu, Chilqiyah, Chilkiyahu, Chilkiyah. Borne by several individuals: (1) the high priest who found the Book of the Law in the temple during Josiah's reign (2 Kgs 22:4-14, 23:4, 24; 2 Chr 34:9-22, 35:8); (2) the father of Eliakim, Hezekiah's palace steward (2 Kgs 18:18, 26, 37; Isa 22:20, 36:3, 22); (3) the father of the prophet Jeremiah (Jer 1:1, 29:3); (4) a Merarite Levite (1 Chr 6:13, 45; 26:11); (5) a priest who stood with Ezra at the reading of the Law (Neh 8:4, 11:11, 12:7, 21). Greek form: Chelkias.
+**Enriched:** The proper masculine name Hilkiah (חִלְקִיָּהוּ / חִלְקִיָּה), meaning 'my portion is YHWH,' borne by several biblical figures. Most notably the high priest who found the Torah scroll during Josiah's temple repair (2 Kgs 22:4, 8; 2 Chr 34:14–15), the father of Eliakim under Hezekiah (2 Kgs 18:18, 26; Isa 36:3), and the father of Jeremiah the prophet (Jer 1:1). Also names several Levites and a postexilic priest (1 Chr 6:30; 26:11; Neh 8:4; 12:7).
+
+### H2549 / Sense 97765 (34 occ, sense 1 of 2)
+**Label:** ordinal fifth
+**Lemma gloss:** Fifth (ordinal number) or a fifth part (fraction); used in counting and in legal restitution contexts
+**Description:** The ordinal number 'fifth' used as an adjective or substantive to indicate position in a sequence (fifth day, fifth month, fifth year, fifth river, etc.).
+**Enriched:** The ordinal number 'fifth' marking position in a sequence, attested 34 times for days (Genesis 1:23, the fifth day of creation), months (2 Kings 25:8, the fifth month), years (Leviticus 19:25, the fifth year of fruit trees), tribal allotments (Joshua 19:24), and birth order (Genesis 30:17, Zilpah's fifth son). All major translation languages render this with a straightforward ordinal: Spanish quinto/quinta, French cinquieme, German funfte, Arabic al-khamis. The consistent cross-linguistic uniformity confirms a simple enumerative function.
+
+### H2740 / Sense 99109 (34 occ, sense 1 of 2)
+**Label:** fierce burning of anger
+**Lemma gloss:** Burning anger, fierce wrath; the blazing heat of divine fury, nearly always used of God's anger
+**Description:** The burning heat or fierceness of wrath, used predominantly in construct with אַף to denote the intense, blazing quality of divine or human anger.
+**Enriched:** The burning heat or fierceness of wrath, predominantly used in construct with af ('anger') to form the idiom charon af -- the fierce burning of God's anger. French 'ardeur de la colere' and Spanish 'ardor de ira' both emphasize the thermal metaphor. This construction dominates the word's usage across Pentateuch, Prophets, and Writings: Moses pleads with God to turn from charon af after the golden calf (Exod 32:12); Joshua must purge the camp so God's charon af will subside (Josh 7:26); and Jeremiah repeatedly warns that charon af is coming upon Judah (Jer 4:8,26; 25:37-38). The word thus functions less as an independent noun than as a coloring element intensifying the anger concept.
+
+### H2865 / Sense 99808 (34 occ, sense 1 of 4)
+**Label:** be dismayed or afraid
+**Lemma gloss:** To be shattered or dismayed; to break in pieces; causatively, to terrify or cause dread before overwhelming power
+**Description:** To be filled with fear, dread, or dismay, often in the face of enemies or danger (Qal/Nifal intransitive emotional sense).
+**Enriched:** The dominant emotional sense: to be filled with dread, terror, or dismay that paralyzes action. This is the verb of the battlefield exhortation — 'do not fear and do not be dismayed' (Josh 1:9; Deut 31:8). The Spanish 'desmayar' (to faint, lose heart) and French 'être consterné' (to be in consternation) together reveal the inner collapse of will this word describes. It appears characteristically paired with ירא ('to fear') in covenant encouragement contexts.
+
+### H3157 / Sense 101612 (34 occ, sense 1 of 2)
+**Label:** Jezreel (place name)
+**Lemma gloss:** Jezreel — 'God sows'; a city in Issachar, a town in Judah, and a symbolic personal name (Hosea's son)
+**Description:** The city or valley of Jezreel (יִזְרְעֶאל), a prominent location in the territory of Issachar, associated with Ahab's palace, Naboth's vineyard, and Jehu's revolt, as well as a town in Judah (Joshua 15:56); all prepositional and directional variations refer to the same geographic referent.
+**Enriched:** Jezreel as a place name — primarily the prominent city in the territory of Issachar at the edge of the great valley (Josh 19:18; 1 Kgs 18:45–46), scene of Naboth's judicial murder and Jehu's revolt, and secondarily a town in Judah's Negev (Josh 15:56). French renders it 'Jizréel,' German 'Jesreel/Jezreel,' Spanish 'Jezreel/Yizreel,' each preserving the theophoric element. The valley name (ʿēmeq Yizrĕʿeʾl) extends the toponym to the entire fertile plain.
+
+### H3240 / Sense 102522 (34 occ, sense 1 of 6)
+**Label:** place, set, put down
+**Lemma gloss:** To place, set down, leave, or give rest; in Hifil, to deposit in a location, abandon, permit, or settle; in Hofal, to be placed or left.
+**Description:** To place, put, or set an object or person in a specific location (Hifil causative of נוח); Arabic diagnostic: وَضَعَ (waḍaʿa)
+**Enriched:** The core Hifil causative sense of placing, putting, or setting down an object or person in a specific location. God places Adam in Eden (Gen 2:15), the manna is deposited before the Testimony (Exod 16:33), and Moses sets the staff before the LORD (Num 17:7). Spanish depositó/puso, French déposer, and Arabic waḍaʿa all converge on physical placement, confirming this as the prototypical meaning. At 34 occurrences, this is the most frequent sense.
+
+### H3374 / Sense 103772 (34 occ, sense 1 of 3)
+**Label:** reverential awe of God
+**Lemma gloss:** Fear, reverence, awe; ranging from terror before danger to devout piety toward God
+**Description:** Reverential fear, awe, or piety directed toward God or a superior, typically in construct state 'fear of the LORD' expressing devotion and worship.
+**Enriched:** Reverential awe and piety directed toward God, almost always in construct with a divine name: 'fear of the LORD,' 'fear of God,' 'fear of the Almighty' (Gen 20:11; Prov 10:27; 14:26-27; 15:16; 19:23; 22:4). This sense dominates the Wisdom tradition, where yir'at YHWH is the foundation of moral and intellectual life. Spanish 'temor de' and French 'crainte de' regularly appear in this devotional register.
+
+### H3802 / Sense 107978 (34 occ, sense 1 of 3)
+**Label:** side, slope, flank
+**Lemma gloss:** Shoulder (body part); side or slope of a geographical feature or structure; shoulder-piece of the priestly ephod.
+**Description:** The side or slope of a geographic feature, city, building, or structure, extending the body-part metaphor to terrain and architectural contexts.
+**Enriched:** The side, slope, or flank of a geographical feature, city, or structure. The body-part metaphor maps onto terrain: the 'shoulder' of a hill is its slope, and the 'shoulder' of a gate or wall is its lateral face. Spanish 'ladera' (hillside) and French 'pente' (slope) capture the topographic meaning, while 'côté' (side) covers architectural contexts. This sense dominates in Joshua's boundary lists (Josh 15:8, 10-11; 18:12-19) and in tabernacle construction descriptions (Exod 27:14-15; 38:14-15).
+
+### H3812 / Sense 108090 (34 occ, sense 1 of 1)
+**Label:** Leah (proper noun: Jacob's first wife)
+**Lemma gloss:** Leah; Jacob's first wife and elder daughter of Laban, mother of six tribes of Israel
+**Description:** The proper name Leah, referring to the elder daughter of Laban and first wife of the patriarch Jacob, mother of six of the twelve tribes of Israel; consistently transliterated across all prepositional and conjunctive frames as Leah/Leá (Spa), लेआ/लेआह (Hin), لَيْئَة (Arb), 레아 (Kor), Lea (Swa). The variation between bare nominative, dative (to-Leah), comparative (more-than-Leah), and conjunction-prefixed forms represents purely syntactic packaging of a single proper-noun referent, with no semantic distinction across the three clusters.
+**Enriched:** The proper name Leah, referring to the elder daughter of Laban and first wife of the patriarch Jacob. Mother of Reuben, Simeon, Levi, Judah, Issachar, Zebulun, and Dinah (Gen 29:32–35; 30:17–21; 35:23). Her narrative spans Genesis 29–35 and 46:15–18, and she is buried in Machpelah (Gen 49:31). Ruth 4:11 memorializes her as a matriarch who built up the house of Israel. Transliterations are stable across languages — French 'Léa,' German 'Lea,' Spanish 'Leah.'
+
+### H4150 / Sense 110184 (34 occ, sense 2 of 5)
+**Label:** appointed feast or festival
+**Lemma gloss:** An appointed time, place, or assembly; most often in 'tent of meeting' (ohel moed), also for sacred festivals and set times.
+**Description:** Religious festivals and appointed seasons of worship; Arabic مَوْسِم (mawsim, season/festival) and أَعْيَاد (aʿyād, festivals), Korean 절기 (jeolgi, festival season), Swahili sikukuu (holiday/festival), Hindi पर्व (parv, festival), Spanish fiesta/fiestas señaladas all distinguish this from mere temporal appointment — these are the cyclical sacred observances of Israel
+**Enriched:** The appointed religious festivals and sacred seasons, as in Leviticus 23:2 where God declares 'these are my appointed feasts.' The Arabic mawsim ('season/festival'), Korean jeolgi, and Swahili sikukuu ('holiday') all confirm the calendrical, celebratory sense. These moadim structure Israel's worship year: Passover, Weeks, Tabernacles, and the solemn assemblies. Zechariah 8:19 envisions a day when fasts themselves become joyful moadim.
+
+### H4603 / Sense 113023 (34 occ, sense 1 of 2)
+**Label:** act unfaithfully, commit treachery
+**Lemma gloss:** To act unfaithfully, commit treachery — covenant breach against God through sacrilege or disloyalty
+**Description:** To act in covenant unfaithfulness or sacrilege against God, committing a breach of faith through treacherous or disloyal action — used of individuals or the people of Israel violating their covenant obligations.
+**Enriched:** To act unfaithfully or commit sacrilege against God — the verbal sense describing the act of covenant breach, used of individuals (Achan at Jericho, Josh 7:1; Uzziah in the temple, 2 Chr 26:16) and collectively of Israel (Lev 26:40; Ezra 10:2). The characteristic construction māʿal maʿal ('trespassed a trespass') intensifies the gravity. Spanish 'cometer infidelidad' and French 'agir infidèlement' both convey the relational dimension — this is not mere rule-breaking but betrayal of a covenant partner. The term is concentrated in Leviticus, Numbers, Ezekiel, and Chronicles, marking it as distinctly priestly language.
+
+### H4899 / Sense 114630 (34 occ, sense 1 of 4)
+**Label:** anointed one, king or priest
+**Lemma gloss:** Anointed one; a king, priest, or leader consecrated by oil, culminating in the eschatological Messiah
+**Description:** A person (king, priest, or leader) who has been consecrated by anointing with oil, used as a substantive adjective with various pronominal suffixes and prepositions referring to a specific anointed individual.
+**Enriched:** The core usage: a specific person -- king or high priest -- consecrated through the ritual of anointing with sacred oil. Applied to Israelite kings as 'the LORD's anointed' (meshiach YHWH) throughout Samuel and the Psalms (1 Sam 24:6; Ps 2:2; 2 Sam 22:51), and to the high priest as 'the anointed priest' (Lev 4:3, 5, 16). English glosses like 'his-anointed' and 'anointed-of' with pronominal suffixes confirm the relational possessive construction tying the anointed to God.
+
+### H4904 / Sense 114689 (34 occ, sense 1 of 4)
+**Label:** bed, couch (furniture)
+**Lemma gloss:** A bed or couch for sleeping; by extension, a bedroom, the act of lying down, or a euphemism for sexual intercourse.
+**Description:** A physical piece of furniture for sleeping or reclining, including all pronominal and prepositional inflections referring to the concrete object.
+**Enriched:** The physical bed or couch as a piece of furniture for sleeping, resting, or reclining. This is the dominant sense, covering over two-thirds of occurrences. It includes beds of the sick (Exod 21:18), beds rendered unclean (Lev 15:4-5, 21), beds where the psalmist weeps (Ps 6:7), and the lovers' bed of Song of Songs 3:1. Spanish 'cama' and French 'couche / lit' straightforwardly name the furniture. The pronominal suffixes ('his bed,' 'my bed') keep the reference concrete.
+
+### H4941 / Sense 115057 (34 occ, sense 4 of 7)
+**Label:** prescribed ordinance, regulation
+**Lemma gloss:** Justice, judgment, ordinance; a judicial decision, legal case, prescribed regulation, or established custom
+**Description:** A single prescribed rule, ordinance, or statute governing ritual or civil conduct (Arabic حُكْم/فَرِيضَة/شَرِيعَة in prescriptive sense, Korean 규례/법도 singular, Swahili sheria/utaratibu/amri).
+**Enriched:** A single prescribed regulation or procedural rule governing ritual or civic life. Where sense 3 is collective, this is the individual ordinance — 'according to the ordinance' (Exod 21:9, 31). German Ordnung and Arabic farida both capture the prescriptive force. These rulings establish standard procedure for everything from sacrifice (Lev 5:10) to the tabernacle's construction pattern (Exod 26:30).
+
+### H5020 / Sense 115517 (34 occ, sense 1 of 1)
+**Label:** Nebuchadnezzar (proper name)
+**Lemma gloss:** Nebuchadnezzar; the powerful king of Babylon who conquered Jerusalem, destroyed the temple, and exiled Judah
+**Description:** The proper noun Nevukhadnetztzar (Nebuchadnezzar), the famous king of Babylon who conquered Jerusalem and exiled Judah. All four clusters refer to the same individual with variation only in preposition (le- 'to'), conjunction (waw 'and'), and ketiv/qere orthographic variants. Multilingual evidence is perfectly uniform: eng 'Nevukhadnetztzar/Nevukhadnetsar', spa 'Nebukadnetstsar/Nabucodonosor', hin 'Nabukadnessar' (नबूकदनेस्सर), arb 'Nabukhadhnassar' (نَبُوخَذْنَصَّر), kor 'Nebugatnesal' (느부갓네살), swa 'Nebukadneza'. S115519 represents ketiv variant spellings of the same royal name, not a different person or sense.
+**Enriched:** The proper name Nebuchadnezzar (Aramaic נְבוּכַדְנֶצַּר), king of Babylon, who conquered Judah, destroyed the first temple, and deported its people. Prominent in Daniel (Dan 2:1–4:37) where he interacts with Jewish exiles and eventually acknowledges God's sovereignty, and in Ezra where his seizure and return of temple vessels frame the restoration narrative (Ezra 2:1; 5:12, 14; 6:5). Multilingual spellings reflect varying reception traditions — Spanish 'Nabucodonosor' via Latin, versus more Hebraized forms in other languages.
+
+### H5545 / Sense 120900 (34 occ, sense 1 of 3)
+**Label:** forgive, pardon (Qal active)
+**Lemma gloss:** To forgive, pardon (always divine); to be forgiven (Nifal passive of divine pardon)
+**Description:** Qal active of salach: to forgive or pardon sin, transgression, or iniquity, used exclusively with God as subject (or in petitions addressed to God), encompassing all finite forms, imperatives, infinitives, and the participle.
+**Enriched:** The Qal active: God pardons, forgives, or remits sin and iniquity. Always with God as subject, whether in direct speech ('I have forgiven,' Num 14:20), petition ('Forgive, O Lord,' Dan 9:19), or promise ('I will forgive their iniquity,' Jer 31:34). Multilingual evidence is consistent: Spanish perdonar, German vergeben, French pardonner all reflect the exclusively divine character of this act.
+
+### H5927 / Sense 124125 (34 occ, sense 3 of 7)
+**Label:** bring up, lead out (Hifil)
+**Lemma gloss:** go up, ascend; offer up sacrifice; bring up, lead out; rise; be taken up; set up lamps; bring up cud
+**Description:** Causative movement of persons: bringing people up from one place to another, especially leading Israel up out of Egypt; raising someone up, fetching or summoning upward (Arabic أَصْعَدَ with personal objects, Korean 이끌어 올리다/데려가다, Swahili kupandisha/kuleta).
+**Enriched:** The Hifil causative with persons as object (34x): bringing up, leading out, or raising people from one place to another — preeminently God bringing Israel up from Egypt. Spanish 'hice subir,' French 'apporta en haut,' German 'brachte hinauf' all capture the causative directional movement. Exodus 3:8 and Genesis 46:4 anchor this exodus-defining sense.
+
+### H6967 / Sense 131931 (34 occ, sense 1 of 2)
+**Label:** height of structure/object
+**Lemma gloss:** Height, stature; the vertical measurement of a structure or the physical build of a person
+**Description:** The vertical measurement or dimensional height of a building, wall, pillar, altar, or other constructed object, consistently rendered with Arabic ارتفاع (irtifāʿ), Korean 높이 (nopi), and Swahili urefu.
+**Enriched:** The measured vertical dimension of a building, wall, pillar, altar, or other constructed object, appearing 34 times primarily in construction narratives. Arabic irtifa', Korean nopi, and Swahili urefu consistently render this as abstract dimensional measurement. Found densely in Exodus 25-27 (tabernacle specifications), 1 Kings 6-7 (Solomon's temple), and Genesis 6:15 (Noah's ark at thirty cubits). The word functions here as a technical architectural term within precise cubit-based descriptions.
+
+### H7971 / Sense 140896 (34 occ, sense 4 of 7)
+**Label:** to send away, dismiss, release (Piel)
+**Lemma gloss:** send, dispatch; stretch out (hand); send away, dismiss, release; be sent; set fire to; expel, drive out
+**Description:** The Piel of שָׁלַח meaning to send away, dismiss, let go, or release — often of divorcing a wife, freeing slaves, or dismissing persons; Arabic أَطْلَقَ (atlaqa) / صَرَفَ (sarafa), Korean 보내다 with 'away' markers, Swahili kuachia/kuruhusu, Hindi छोड़ दिया/विदा किया.
+**Enriched:** Piel meaning 'send away, dismiss, let go, release' (34x) — often of divorcing a wife, freeing slaves, or releasing captives. Arabic أَطْلَقَ/صَرَفَ, Korean 보내다 with directional 'away,' and French 'envoie-moi' capture the separative force. Genesis 18:16 (Abraham sending off the angels), Genesis 31:27 (Laban's complaint about Jacob's departure), and the Exodus refrain of Pharaoh refusing to 'let the people go' are central.
+
+### H8104 / Sense 142352 (34 occ, sense 2 of 6)
+**Label:** Niphal: beware, take heed
+**Lemma gloss:** keep, watch, observe, guard, preserve; to maintain faithful custody over persons, things, commands, or covenants
+**Description:** Niphal stem reflexive sense of guarding oneself, being on one's guard, taking heed, or being careful to avoid danger or wrongdoing.
+**Enriched:** Niphal stem: to beware, take heed, guard oneself — a reflexive sense warning against danger or wrongdoing. Spanish cuídate/guárdate and French garder-toi-même make the reflexive structure explicit. Genesis 24:6 (take heed that you do not take my son back there) and Exodus 19:12 (take heed not to go up the mountain) frame self-guarding as a response to divine boundaries.
+
+### H8184 / Sense 143136 (34 occ, sense 1 of 1)
+**Label:** barley
+**Lemma gloss:** barley — the bearded cereal grain, one of the seven species of the Land, used for food, feed, and offerings
+**Description:** Noun שְׂעֹרָה (se'orah): the cereal grain barley, one of the seven species of the Land of Israel, used for food, animal feed, and offerings. S143136 covers standalone and articular forms ('barley', 'the barley'), while S143137 covers conjunctive occurrences ('and barley'), often paired with wheat in lists. All translations converge: eng 'barley/and-barley', spa 'cebada/y-cebada', hin जौ/और-जौ, arb شَعير/وَشَعِيرًا, kor 보리/그리고-보리, swa shayiri/na-shayiri. The split is purely syntactic (presence of conjunction waw), not semantic.
+**Enriched:** The cereal grain barley (Hordeum vulgare), cultivated widely in ancient Israel and the broader Near East. Appears in agricultural contexts as a crop that ripens before wheat (Exod 9:31), among the seven species of the promised land (Deut 8:8), as harvested grain marking the seasonal calendar (Ruth 1:22; 2:23), in economic transactions (Hos 3:2; 2 Kgs 7:1), and in cultic grain-offerings (Num 5:15; Ezek 45:13). Cognate with Aramaic se'arta and Arabic sha'ir.
+
+### H8210 / Sense 143416 (34 occ, sense 2 of 6)
+**Label:** shed (blood)
+**Lemma gloss:** To pour out, shed, or spill — liquid, blood, wrath, or spirit; covering ritual libation, violent bloodshed, passive outpouring, metaphorical effusion, and reflexive dissolution
+**Description:** To shed blood, i.e., to kill or cause bloodshed; a specialized Qal sense distinguished by the Arabic cognate سَفَكَ (safaka) and collocating almost exclusively with דָּם (blood).
+**Enriched:** To shed blood (Qal, 34x): a specialized collocation with dam ('blood') forming the Bible's primary idiom for killing and bloodguilt. Arabic safaka (the direct cognate) preserves this identical blood-shedding specialization, confirming the antiquity of the collocation. German Blut vergiessen and Spanish derramar sangre similarly treat 'shedding blood' as a fixed expression. Foundational in Gen 9:6 ('whoever sheds the blood of man, by man shall his blood be shed'), extended through the bloodguilt laws (Num 35:33; Deut 21:7), and weaponized by the prophets against unjust rulers (Ezek 22:3, 6, 27). The participial form shofekh dam functions nearly as a legal term: 'blood-shedder.'
+
+### H???? / Sense 146006 (34 occ, sense 24 of 94)
+**Label:** (none)
+**Lemma gloss:** (none)
+**Description:** (none)
+**Enriched:** (none)
+
+### G0863 / Sense 63754 (33 occ, sense 2 of 8)
+**Label:** permit, allow, let
+**Lemma gloss:** To send away, release; hence to leave, abandon; to permit, allow; to forgive, pardon; to neglect; to yield up
+**Description:** To permit, allow, or let someone do something; Arabic uses samaha (سَمَحَ) or da'a (دَعَ/يَدَعُ), Korean uses heorak-hada (허락하다), Swahili uses -ruhusu, Hindi uses aagya dena (आज्ञा देना) or rahne dena (रहने देना). Includes indicative statements of permitting and imperatives meaning 'let/allow/leave alone' where the sense is non-interference rather than physical departure.
+**Enriched:** Permitting, allowing, or letting someone act — a volitional sense distinct from physical departure. Arabic samaha/da'a, Korean 허락하다, and Hindi aagya dena mark this as a separate semantic field. Jesus tells John, 'Permit it now' at his baptism (Matt 3:15); he instructs disciples to 'let' the children come (Matt 19:14).
+
+### G1166 / Sense 64996 (33 occ, sense 1 of 1)
+**Label:** show, display, reveal
+**Lemma gloss:** show, display, reveal — to cause someone to see, whether by pointing out a physical object or disclosing a truth
+**Description:** To cause someone to see something by pointing it out, displaying it, or making it known, whether a physical object or a disclosed truth.
+**Enriched:** To cause someone to perceive something, whether by physically pointing it out or by disclosing hidden truth. Covers Satan's display of kingdoms to Jesus (Matt 4:8), the leper's presentation to the priest (Matt 8:4; Mark 1:44), Jesus' promise of 'greater works' (John 5:20), and the angelic unveiling of apocalyptic visions throughout Revelation (Rev 1:1; 17:1; 21:10; 22:1). The verb bridges sensory showing and divine disclosure.
+
+### G1208 / Sense 65106 (33 occ, sense 1 of 2)
+**Label:** second (ordinal)
+**Lemma gloss:** Second (ordinal) or a second time (adverbial); indicating sequence, rank, or repetition
+**Description:** The ordinal numeral 'second,' used to indicate sequence or rank (the second seal, the second angel, the second death, etc.). This includes genitive, nominative, accusative, and dative forms across genders. Spanish uses 'segundo/segunda' (second masc/fem); Hindi uses 'दूसरी/दूसरे' (dusri/dusre, second fem/masc); Arabic uses 'الثاني/ثانية' (ath-thani/thaniya, second masc/fem); Korean uses '둘째/둘째가/둘째의' (duljjae, second); Swahili uses 'wa pili/ya pili/la pili' (second with various noun class agreements). The genitive singular form S65111 is simply a case variant of this ordinal sense.
+**Enriched:** The ordinal numeral 'second' indicating position in a sequence or rank, attested 33 times. Used for the second commandment (Matthew 22:39), the second angel or seal in Revelation's apocalyptic series (Revelation 6:3, 8:8), and sequential narrative events (Mark 12:21, the second brother). Spanish segunda/segundo, French deuxieme, and German zweite all render this uniformly as a positional ordinal. Key passages include Hebrews 8:7 ('no place for a second') and Revelation 20:6 ('the second death has no power'), where rank and classification are in view.
+
+### G3745 / Sense 73452 (33 occ, sense 2 of 5)
+**Label:** as many as (persons)
+**Lemma gloss:** A correlative pronoun meaning 'as many as, as much as, whatever, whoever, how much, as long as'; marks quantity, extent, degree, or duration relative to a reference set.
+**Description:** Correlative pronoun referring to all the persons who belong to a specified group: 'as many as,' 'all who,' 'whoever' (typically masculine plural, nominative or accusative, pointing to people).
+**Enriched:** The masculine plural use referring to persons: 'as many as, all who, whoever' — 33 occurrences pointing to people within a group. Spanish cuantos and French qui both render the personal reference. Prominent in healing narratives (Matt 14:36, Mark 6:56: 'as many as touched him were healed') and in Acts' summaries of conversion (Acts 2:39, 4:6). This personal use carries an inclusive, boundary-drawing force: everyone within the specified group, without exception.
+
+### G5092 / Sense 77688 (33 occ, sense 1 of 2)
+**Label:** honor, esteem, respect
+**Lemma gloss:** Honor, esteem, respect; also price or monetary value in commercial contexts.
+**Description:** Worth, value, or esteem ascribed to a person, office, or thing; the social recognition and respect due to someone. This is the primary and most frequent sense of time in the NT. Used of honor due to God (1 Tim 1:17, 6:16 -- 'to Him be honor'), honor accorded to persons in the body of Christ (1 Cor 12:23-24 -- members given more 'honor'), honor shown to fellow believers (Rom 12:10 -- 'outdo one another in honor'), honor given to governing authorities (Rom 13:7 -- 'honor to whom honor'), honor for prophets (John 4:44 -- 'a prophet has no honor'), honor for elders (1 Tim 5:17 -- 'double honor'), honor for the body/vessel (1 Thess 4:4, Col 2:23 -- 'in honor'), and honors bestowed as gifts of gratitude (Acts 28:10 -- timais, 'with many honors'). Multilingual glosses converge on honor/respect: Arabic karama/ikram, Spanish honra/honor, French honneur, German Ehre, Hebrew kavod/yeqar, Korean jon-gwi/jon-gyeong, Hindi aadar/sammaan.
+**Enriched:** Honor, esteem, worth, or respect ascribed to a person, office, or thing. The primary and most frequent sense (33 occurrences). Multilingual evidence uniformly renders this as honor/honra (Spanish), honneur (French), Ehre (German). Used of honor due to God and Christ (1 Tim 1:17; Rev 4:9), the honor believers seek (Rom 2:7), honor within the body of Christ (1 Cor 12:23-24), and the prophet without honor (John 4:44).
+
+### G5108 / Sense 77796 (33 occ, sense 1 of 3)
+**Label:** such a person, such ones
+**Lemma gloss:** Such, of such a kind; referring to persons, qualities, or things of a described character
+**Description:** Substantive use referring to a person or persons of a certain kind or quality, translated 'such a one' or 'such people'.
+**Enriched:** Substantive use referring to a person or persons of a certain described character — 'such a one,' 'such people.' Jesus declares that the kingdom belongs to 'such as these' (Matt 19:14; Mark 9:37), pointing to a category of person defined by childlike qualities. Paul similarly refers to 'such ones' who practice certain behaviors (Gal 6:1; 2 Thess 3:12). The Spanish 'tal/tales' and German 'solch' both capture this substantivized force: it is the person-as-type that matters, not a named individual.
+
+### G5154 / Sense 77904 (33 occ, sense 1 of 3)
+**Label:** third (ordinal)
+**Lemma gloss:** Third; the ordinal numeral 'third,' also used as the fraction 'one-third' and adverbially as 'a third time.'
+**Description:** Functions as a standard ordinal numeral modifying a noun such as 'day' or 'hour,' or used substantively to identify the third in a sequence. Uniformly glossed as 'third' across all languages (Arabic الثَّالِث, German dritte, Hebrew שְׁלִישִׁי, Hindi तीसरा/तीसरे, Korean 셋째, Spanish tercero). Covers the Gospels' frequent references to the 'third day' of resurrection (Matt 16:21, 17:23, 20:19; Luke 9:22, 18:33, 24:7, 24:21, 24:46), the third hour (Matt 20:3, Mark 15:25), parables with a third servant (Matt 22:26, Luke 20:12, 20:31; Mark 12:21), and the third seal in Revelation (Rev 6:5).
+**Enriched:** The standard ordinal numeral 'third,' modifying nouns like 'day,' 'hour,' or 'angel,' or standing alone to identify the third item in a sequence. Jesus repeatedly predicts he will rise 'on the third day' (Matt 16:21, 17:23, 20:19). Spanish tercera, French troisieme, and German dritte all render it straightforwardly. This sense also covers the 'third hour' of the crucifixion (Mark 15:25) and the third servant in parables (Matt 22:26), serving as basic sequential ordering.
+

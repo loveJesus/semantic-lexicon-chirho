@@ -1,0 +1,291 @@
+# Sense Refinement Detection — Batch 006
+
+You are a biblical lexicographer reviewing sense entries for a Hebrew/Aramaic/Greek lexicon.
+Each entry below is a single "sense" that was produced by clustering translation signatures 
+and then merging with an LLM. Some senses may have been OVER-LUMPED — they contain genuinely 
+distinct meanings that should be separate senses.
+
+## Your Task
+
+For each sense, determine if it should be SPLIT into multiple senses. Look for:
+- Literal vs. figurative/metaphorical uses lumped together
+- Concrete vs. abstract meanings combined
+- Multiple distinct referents (e.g., "father" = biological parent + patron/advisor + originator)
+- Physical vs. spiritual/theological uses merged
+- Different syntactic frames producing different meanings
+
+## Output Format
+
+Return a JSON array. For senses that need NO splitting, omit them entirely.
+For senses that SHOULD be split, include an entry like:
+
+```json
+[
+  {
+    "senseIdChirho": 79287,
+    "lemmaIdChirho": "H0001",
+    "currentLabelChirho": "father, immediate male parent",
+    "splitProposalChirho": [
+      {
+        "newLabelChirho": "biological/legal father",
+        "criteriaChirho": "Direct parent-child relationship, possessive constructions with specific person"
+      },
+      {
+        "newLabelChirho": "metaphorical father (patron, advisor, protector)",
+        "criteriaChirho": "Title of respect for prophets, advisors, or authority figures; 'father to Pharaoh' type usage"
+      }
+    ],
+    "confidenceChirho": "high",
+    "reasoningChirho": "Description explicitly mentions 'title of respect or metaphorical originator' alongside biological father"
+  }
+]
+```
+
+Only propose splits where you have MEDIUM or HIGH confidence. Do NOT split function words (articles, 
+prepositions, particles, conjunctions) unless there is a genuinely distinct semantic sense (not just 
+syntactic variation). Proper nouns generally should NOT be split.
+
+If NO senses in this batch need splitting, return an empty array: []
+
+## Senses to Review
+
+### H6963a / Sense 131603 (256 occ, sense 1 of 6)
+**Label:** voice (human, general)
+**Lemma gloss:** voice, sound; human speech, divine utterance, thunder, noise, or report — the audible expression of will or event
+**Description:** The human voice as the instrument of speech, crying, singing, or any vocal utterance — includes possessive inflections (my voice, his voice, your voice, their voice, her voice, our voice) and all prepositional forms (to/with/in the voice of) — Arabic صَوْت (vocal), Korean 목소리/음성/소리, Swahili sauti, Hindi आवाज़/स्वर.
+**Enriched:** The ordinary human voice used in speech, crying out, singing, or any vocal utterance. Multilingual glosses converge on 'voice/voz/voix/Stimme' without further qualification, confirming this as the unmarked default. Deuteronomy 27:14 (the Levites proclaim with a loud voice) and 1 Samuel 1:13 (Hannah's silent lips contrasted with her voice) illustrate the range from public declaration to whispered prayer.
+
+### H0802 / Sense 84499 (255 occ, sense 2 of 4)
+**Label:** wife, spouse
+**Lemma gloss:** Woman, wife, female; a female human being whether unmarried, married, or as a female animal's mate.
+**Description:** A woman in her capacity as a married partner; used in construct with possessive suffixes or in contexts clearly denoting a marital relationship.
+**Enriched:** A wife, a married woman — 255 occurrences where the marital relationship is primary, typically marked by construct forms ('eshet PN'), possessive suffixes ('ishto, 'his wife'), or explicit marriage contexts. Abram takes Sarai 'his wife' to Egypt (Gen 12:5); the law governs how a man relates to 'the wife of his neighbor' (Lev 18:20). The multilingual signatures split clearly here: Spanish shifts to esposa, Korean to 아내, Arabic to zawja, and Swahili to mke, all selecting dedicated spousal vocabulary. This distinction matters for translation — rendering 'ishsha as 'woman' where 'wife' is meant (or vice versa) can distort entire narratives.
+
+### H3824 / Sense 108209 (250 occ, sense 1 of 3)
+**Label:** heart, inner self (mind/will/emotion)
+**Lemma gloss:** Heart, inner self; the seat of thought, will, emotion, and moral character; rarely, the physical center or midst.
+**Description:** The inner person as the seat of thought, understanding, volition, emotion, and moral character; the core of human consciousness and intentionality, encompassing what English distinguishes as mind, will, conscience, and feelings. Universally glossed as corazón (Spa), हृदय/दिल/मन (Hin), قلب (Arb), 마음 (Kor), moyo (Swa) across all inflections and prepositional frames.
+**Enriched:** The inner person as the seat of thought, understanding, volition, emotion, and moral character — an overwhelming 250 of 252 occurrences. This is the lebab of the Shema (Deut 6:5), of Solomon's request for a 'discerning lebab' (1 Kgs 3:9), and of the new-covenant promise that God will write his law on the lebab (Jer 31:33, using the form leb). All major target languages must pick a single organ-metaphor — Hindi hriday, Korean maeum, Spanish corazon, Arabic qalb — but none of them capture the full cognitive-volitional-emotional range the way Hebrew lebab does. Deuteronomy alone uses this word over 40 times, almost always in the command to align one's whole inner orientation toward God.
+
+### H0113 / Sense 79881 (249 occ, sense 1 of 4)
+**Label:** lord, human superior
+**Lemma gloss:** Lord, master, sovereign — title of authority for human superiors, property owners, God as supreme ruler, or plural lords
+**Description:** Respectful address or reference to a human authority figure such as a king, husband, military commander, or social superior, expressing deference and subordination (Arabic sayyidi, Korean ju-in-iyeo, Swahili bwana wangu, Hindi mere prabhu/svami).
+**Enriched:** Respectful address or reference to a human authority figure — a king, husband, commander, or social superior. This is by far the most frequent use (249x), functioning like the Arabic sayyidi or Spanish mi señor. The term expresses subordination and deference in direct speech (Gen 23:6 'my lord, hear us') and narrative reference alike. Cross-linguistic evidence confirms the honorific register: Korean ju-in-iyeo, Swahili bwana, and Hindi prabhu all carry the same respectful social distance.
+
+### H0520a / Sense 82865 (246 occ, sense 1 of 3)
+**Label:** cubit (unit of length)
+**Lemma gloss:** Cubit; a unit of linear measure (approx. 18 inches / 45 cm), the standard dimension for construction, distance, and depth.
+**Description:** A linear unit of measurement approximately 18 inches (45 cm), used for dimensions of buildings, objects, distances, and depths, in all grammatical forms including singular, plural, dual, with articles, prepositions, and conjunctions.
+**Enriched:** A cubit as a standard unit of linear measurement, approximately 18 inches or 45 cm — the near-universal sense at 246 occurrences. Used for dimensions of buildings (the temple, tabernacle, city walls), objects (the altar, the ark of the covenant, Goliath's spear shaft), water depths (Gen 7:20), and distances. Every target language renders it with a dedicated measurement term: Spanish codo, French coudee, German Elle, Korean 규빗, Swahili dhiraa. The word appears in singular, dual (ammatayim, 'two cubits'), and plural forms, with articles and in construct chains, but the referent is always the same linear unit.
+
+### H3381 / Sense 103805 (242 occ, sense 1 of 9)
+**Label:** Qal: to go down, descend (physical movement)
+**Lemma gloss:** to go down, descend, bring down; physical descent from higher to lower place, including persons, liquids, and objects
+**Description:** The primary sense of yarad in Qal: physical downward movement of persons or groups descending from a higher to a lower elevation, including going down mountains, into valleys, to cities at lower elevation, or into battle.
+**Enriched:** The dominant Qal sense (242 occurrences) covers all finite verb forms of persons or groups physically descending mountains, entering valleys, or traveling to lower-lying cities. Cross-linguistic glosses preserve the spatial vector: descended, bajó, descendit, ging hinab across English, Spanish, French, German.
+
+### G1438 / Sense 66025 (239 occ, sense 1 of 4)
+**Label:** reflexive pronoun (direct/indirect)
+**Lemma gloss:** Reflexive pronoun: himself, herself, itself, themselves; also possessive (his own) and reciprocal (one another)
+**Description:** The core reflexive use of the pronoun where the subject acts upon or directs action toward itself as direct or indirect object, covering all persons (himself, herself, itself, themselves, ourselves, yourselves) and all cases except genitive; Arabic consistently uses nafs- (نَفْس) forms, Korean uses 자기/자신 with accusative or dative particles, and Swahili uses mwenyewe/wenyewe.
+**Enriched:** The core reflexive use where the subject acts upon or directs action toward itself as direct or indirect object: 'let him deny himself' (Matt 16:24), 'whoever humbles himself' (Matt 23:12). This covers all persons — himself, herself, themselves, ourselves, yourselves — unified by the grammatical function of co-reference with the subject. Spanish a sí mismo and German sich selbst parallel the construction precisely, while languages like Korean use jasin as a dedicated reflexive marker.
+
+### G4102 / Sense 74875 (239 occ, sense 1 of 2)
+**Label:** faith, trust, belief
+**Lemma gloss:** Faith, trust, belief in God or Christ; also faithfulness or trustworthiness as a character quality
+**Description:** The active disposition of trust, confidence, and belief directed toward God, Christ, or the gospel message; the subjective act or state of believing. This is the dominant NT sense of pistis, covering soteriological faith (Eph 2:8 'by grace through faith'), Christological trust (Gal 2:16 'faith in Christ Jesus'), and the general virtue of believing (Heb 11 'by faith' catalogue). Multilingual evidence confirms a unified semantic core: Spanish 'fe' / 'por fe' (faith / by faith), Hindi 'vishvaas' / 'vishvaas se' (belief / by belief), Arabic 'al-iimaani' / 'bi-iimaan' (the faith / by faith), Korean 'mideum' / 'mideumeuuro' (faith / by faith), Swahili 'imani' / 'kwa imani' (faith / by faith). S74876 'by faith' is the same sense in the dative-instrumental case, not a different meaning.
+**Enriched:** The subjective disposition of trust, confidence, and belief directed toward God, Christ, or the gospel message — the central soteriological concept of the NT. With 239 occurrences, this sense spans the Synoptic healing narratives (Matt 8:10, the centurion's great faith; Matt 9:22, 'Your faith has made you well'), the Pauline justification theology (Rom 1:17, 'the righteous shall live by faith'; Gal 3:11), the Hebrews 11 'hall of faith,' and the Johannine equivalents. Cross-lingual evidence is strikingly uniform: Spanish 'fe,' French 'foi,' German 'Glaube' — all treating pistis as active personal trust rather than mere intellectual assent.
+
+### H3372 / Sense 103616 (239 occ, sense 1 of 7)
+**Label:** fear, be afraid (Qal)
+**Lemma gloss:** To fear, be afraid; to revere or stand in awe of God; (Nifal ptc.) awesome, terrible; (Piel) to frighten, terrify
+**Description:** Emotional fear or dread in response to danger, threats, enemies, or alarming situations; Arabic khafa, Korean duryeowohada, Swahili -ogopa.
+**Enriched:** The dominant sense (239x): visceral fear or dread triggered by danger, enemies, or divine theophanies. Arabic khafa and Swahili -ogopa consistently render this emotional terror. The repeated divine assurance 'al tira' ('do not fear,' Gen 15:1; 21:17; 46:3) presupposes precisely this involuntary alarm, making it the single most frequent usage across the Hebrew Bible.
+
+### H5046 / Sense 115765 (237 occ, sense 1 of 7)
+**Label:** Hifil: to tell, report
+**Lemma gloss:** To tell, report, declare; Hifil: inform, proclaim, reveal; Hofal: be told; participle: messenger
+**Description:** The core Hifil meaning of nagad: to tell, report, or inform someone of facts, events, or news in an interpersonal or narrative context, covering all inflections (perfect, imperfect, imperative, infinitive, consecutive, cohortative, jussive) where the sense is straightforward communication of information.
+**Enriched:** The core Hifil meaning: to tell, report, or inform someone of facts, events, or news in ordinary interpersonal contexts. This workhorse sense accounts for the majority of occurrences. Arabic akhbara (he informed) and Swahili arifu (to report) capture the neutral, narrative register. Gen 9:22 (Ham reports to his brothers), Gen 14:13 (a fugitive reports to Abram), and Gen 29:12 (Jacob tells Rachel) are characteristic.
+
+### H7272 / Sense 134689 (236 occ, sense 1 of 5)
+**Label:** foot (body part)
+**Lemma gloss:** Foot, feet; by extension leg, pace, step; idiomatically 'on foot' (pedestrian) and 'times' (occurrences).
+**Description:** The physical foot of a human or animal, including uses with possessive suffixes and prepositions indicating location, contact, or proximity (at/on/to one's feet).
+**Enriched:** The primary anatomical sense: the physical foot of a human or animal — 236 of 251 occurrences, making this overwhelmingly dominant. Covers foot-washing hospitality (Gen 18:4; 24:32), the sacred command to remove sandals on holy ground (Exod 3:5), the priestly ritual of applying blood to the right foot (Lev 8:23), skin disease inspection extending to the feet (Lev 13:12), and dozens of prepositional phrases meaning 'at/under/to one's feet.' Spanish pie/pies, Korean 발, Arabic رِجْل, and Swahili miguu all select basic foot vocabulary. The dual raglayim is the standard form in most contexts, reflecting the natural pairing of the body part.
+
+### H3915 / Sense 108849 (234 occ, sense 1 of 2)
+**Label:** night, period of darkness
+**Lemma gloss:** Night; the dark period from sunset to sunrise, opposite of day; also the named cosmic entity 'Night' in creation.
+**Description:** The dark period between sunset and sunrise, opposite of day, used as a temporal reference for events, duration, or repeated cycles.
+**Enriched:** The dark interval from sunset to sunrise, used as a temporal marker for events, durations, and recurring cycles. Translations uniformly render it as 'night' (noche, nuit, Nacht), and it appears in every genre — law ('that same night,' Exod 12:42), narrative ('by night,' Gen 14:15), wisdom ('her lamp does not go out at night,' Prov 31:18), and lament ('every night I drench my bed,' Ps 6:7). The 234 occurrences testify to night as the primary structuring opposite of day in biblical temporality.
+
+### H7451c / Sense 136266 (234 occ, sense 1 of 5)
+**Label:** moral evil or wickedness
+**Lemma gloss:** Evil, wickedness, calamity, harm, or distress — the noun form encompassing moral badness, disaster, injury, and suffering.
+**Description:** Moral badness, sinfulness, or wickedness as a quality or abstract concept, often in construct with a possessor or used attributively.
+**Enriched:** The dominant sense: abstract moral evil, wickedness, or sinfulness as a quality or condition. Encompasses nearly 77% of occurrences, appearing in constructs like 'the evil of the heart' (Gen 6:5) and 'repay evil for good' (Gen 44:4). All major target languages converge on a single moral-badness term here — English 'evil,' Spanish 'mal,' French 'mal,' German 'Böses' — confirming the moral-quality reading. Often in opposition to tov ('good'), establishing the fundamental biblical moral axis.
+
+### G4100 / Sense 74802 (233 occ, sense 1 of 4)
+**Label:** believe / have faith in
+**Lemma gloss:** To believe, trust, have faith in; in the passive, to be entrusted with or believed; the central NT verb for saving faith.
+**Description:** To believe, trust, or have faith in God, a person, or a message — the core active sense of pisteuo covering all person/number/tense/mood inflections; Arabic consistently uses root ʾ-m-n (آمَنَ/يُؤْمِنُ 'believe'), Korean 믿다 (believe/trust), Swahili -amini (believe), Hindi विश्वास करना (to have faith), Spanish creer (believe); includes both absolute use ('they believed') and prepositional constructions ('believe in him').
+**Enriched:** The overwhelming primary sense (233x): to believe in, trust, or have faith in God, Christ, a person, or a message. Spans all voice/tense/mood inflections in the active. Arabic آمَنَ and Korean 믿다 uniformly select dedicated 'believe' roots. Key passages include Mark 16:16 ('whoever believes and is baptized'), John 3:16, and Romans 10:9. The construction πιστεύω εἰς ('believe into') is a distinctly NT innovation expressing union with the object of faith.
+
+### G0611 / Sense 62930 (232 occ, sense 1 of 1)
+**Label:** answer or respond verbally
+**Lemma gloss:** To answer, respond, reply; to give a verbal response, often introducing direct speech in narrative
+**Description:** To give a verbal reply or response to a question, statement, or situation, often used in narrative to introduce direct speech (Hebraistic usage includes beginning to speak without a prior question).
+**Enriched:** To give a verbal reply or response to a question, statement, or situation, frequently employed as a participial narrative formula (apokritheis, 'having answered') to introduce direct speech in the Gospels. Follows a Hebraistic pattern where responding does not require a prior question but marks the beginning of speech in a dialogical context (Matt 3:15; 11:25). Spanish respondiendo and German antwortet confirm the uniform verbal-reply reading across all translation traditions.
+
+### G3739 / Sense 73375 (232 occ, sense 2 of 4)
+**Label:** whoever/whatever (indefinite relative)
+**Lemma gloss:** Relative pronoun: who, which, that, whom; also indefinite-relative whoever/whatever; correlative one...another; rarely 'where.'
+**Description:** Indefinite or generalizing relative pronoun meaning 'whoever, whatever, whichever, whomever,' often used with ἄν or ἐάν to express a universal or conditional referent.
+**Enriched:** The indefinite or generalizing relative pronoun meaning 'whoever, whatever, whichever, whomever' — approximately 232 occurrences, typically appearing with the particles an or ean to signal universal or conditional scope. In Matt 10:27 'what I tell you in darkness, speak in the light'; in Matt 16:19 'whatever you bind on earth.' Spanish lo que and French quiconque shift toward indefinite vocabulary, while Korean 무엇이든지 ('whatever it may be') and German was auch immer mark the generalization explicitly. This sense is syntactically distinguished from sense 1 by the modal particle and by the lack of a specific referential antecedent.
+
+### G3686 / Sense 73221 (231 occ, sense 1 of 1)
+**Label:** name, title, reputation
+**Lemma gloss:** Name, title, or reputation; used of persons, places, and divine authority ('in the name of').
+**Description:** A personal designation, title, or identifying label applied to a person, place, or divine being; extends to reputation and authority ('in the name of'). Spanish 'nombre/nombres' is uniform across all clusters. Hindi 'नाम/नामों' (name/names) shows only number inflection. Arabic 'اسْمِ/اسمِ/أَسْمَاءٍ' are case/number variants of the same root ism. Korean '이름/이름이/이름들이' are the same noun with particles and plural markers. Swahili 'jina/majina' (name/names) are singular/plural of one noun. The dative instrumental cluster (S73222, 'by-name/in-the-name-of') and the plural cluster (S73223, 'names') are inflectional forms, not distinct senses; the prepositional usage 'in the name of' is governed by the dative case, not a separate lexical meaning. All 231 occurrences represent the same fundamental sense.
+**Enriched:** A personal designation, title, or identifying label applied to a person, place, or divine being, extending naturally to reputation and delegated authority. The construction 'in the name of' (en to onomati) marks agency, invocation, or appeal to another's standing. All major translations converge on a single core rendering (Spanish 'nombre,' French 'nom,' German 'Name'), confirming this as a unified semantic field despite its wide application from simple introductions (Matt 1:25) to theological declarations of divine power (Phil 2:9-10).
+
+### G3956 / Sense 74220 (227 occ, sense 2 of 5)
+**Label:** every, each (distributive)
+**Lemma gloss:** All, every, each, the whole; collective totality of a group, distributive 'every/each,' substantive 'everything,' or temporal 'always.'
+**Description:** Distributive sense referring to each individual member of a class or group, typically with singular nouns, translating as 'every,' 'each,' or 'any' (e.g., every person, each city).
+**Enriched:** Distributive singular: 'every' or 'each' member of a class individually — 227 occurrences. With singular nouns, pas shifts from group-totality to individual-by-individual scope: 'every city' (Matt 4:23), 'everyone who is angry' (Matt 5:22), 'every good tree' (Matt 7:17). Spanish todo/toda (singular) and German jeder show the distributive frame clearly, though interestingly French tout handles both collective and distributive, as does Korean 모든, confirming that the distinction is more grammatical context than separate lexemes in most languages.
+
+### H1288 / Sense 88187 (227 occ, sense 1 of 7)
+**Label:** Piel: bless, invoke blessing
+**Lemma gloss:** To bless, kneel; Piel: invoke blessing; Qal passive: blessed; euphemistically: curse, blaspheme
+**Description:** To actively bestow blessing or invoke divine favor upon someone (Piel stem); the primary and most frequent sense of barak, covering all Piel finite forms, imperatives, infinitives, participles, and consecutive forms where the subject blesses an object or God.
+**Enriched:** The primary Piel sense: to actively bestow blessing or invoke divine favor upon someone. Arabic baraka and Swahili bariki share the same Semitic root, underscoring pan-Semitic continuity. From God blessing creation (Gen 1:22, 28) to patriarchs blessing sons (Gen 27:27) to priests blessing the people (Num 6:23), this sense pervades every register of biblical life — liturgical, familial, and covenantal.
+
+### H0410 / Sense 82204 (223 occ, sense 1 of 5)
+**Label:** God, the true God
+**Lemma gloss:** God (El); generic Semitic deity word; also 'mighty one, power'; in divine epithets (El Shaddai, El Elyon).
+**Description:** The one true God of Israel, used as a divine name or title (El) referring to YHWH, including in compound divine epithets (El Shaddai, El Elyon, El Olam, El Bethel) and with possessive suffixes (my God), articles, prepositions, and conjunctions — Arabic اللّٰه, Korean 하나님, Swahili Mungu (capitalized), Hindi परमेश्वर/ईश्वर.
+**Enriched:** The one true God of Israel, used as a divine name or title — 223 of 245 occurrences, the overwhelming majority. This covers El as a standalone divine designation in poetry (Ps 18:31, 'Who is El besides YHWH?'), in compound epithets (El Shaddai, Gen 17:1; El Elyon, Gen 14:18; El Olam, Gen 21:33; El Bethel, Gen 35:7), with possessive suffixes ('my God,' 'your God'), and in attributive constructions ('a jealous God,' Exod 34:14; 'a merciful God,' Deut 4:31). Arabic Allah, Korean 하나님, Hindi परमेश्वर, Swahili Mungu, and Spanish Dios all consistently deploy their primary monotheistic God-term here. The poetic register is notable: El dominates in Job, Psalms, and Isaiah far more than in historical prose.
+
+### H5771 / Sense 122851 (222 occ, sense 1 of 5)
+**Label:** iniquity, sin, wrongdoing
+**Lemma gloss:** Iniquity, sin, wrongdoing; guilt, liability for sin; punishment or consequence of sin.
+**Description:** The wrongful act itself — moral perversity, crookedness, or transgression against God's standard; the dominant sense of עָוֹן covering the vast majority of occurrences across all grammatical forms (singular/plural, all pronominal suffixes, construct chains, and prepositional prefixes).
+**Enriched:** The wrongful act itself: moral perversity, crookedness, transgression against God's standard. By far the dominant sense (222 occurrences), spanning every genre from Torah to Wisdom. In Exod 20:5 God 'visits the avon of the fathers upon the children,' and in Isa 53:6 the LORD 'laid on him the avon of us all.' Arabic إثم, Spanish 'iniquidad,' and German 'Missetat/Schuld' converge here. The root idea is something bent or twisted away from the straight path.
+
+### H???? / Sense 145964 (222 occ, sense 6 of 94)
+**Label:** (none)
+**Lemma gloss:** (none)
+**Description:** (none)
+**Enriched:** (none)
+
+### H3091 / Sense 101397 (218 occ, sense 1 of 1)
+**Label:** Yehoshua / Joshua (proper name)
+**Lemma gloss:** Yehoshua (Joshua) -- proper name meaning 'YHWH is salvation'; Moses' successor and later the high priest.
+**Description:** A Hebrew proper name meaning 'YHWH is salvation,' primarily referring to Joshua son of Nun (Moses' successor who led Israel into Canaan) and also to Joshua the high priest (Haggai, Zechariah). With 218 occurrences, all three clusters represent the same name in different grammatical frames: nominative, with conjunctions, and with prepositions (eng 'Yehoshua/Joshua,' spa 'Josué/Yehoshúa,' arb 'يَشوعُ/يَهُوشُعَ,' kor '여호수아,' swa 'Yoshua,' hin 'यहोशू/यहोशूआ'). The variation is purely syntactic, not semantic.
+**Enriched:** A Hebrew proper name meaning 'YHWH is salvation,' borne primarily by Joshua son of Nun, Moses' military commander and successor who led Israel's conquest of Canaan (Exod 17:9; Josh 1:1), and secondarily by Joshua the high priest of the restoration era (Hag 1:1; Zech 3:1). The later contracted form Yeshua links directly to the Greek Iesous (Jesus), giving this name profound typological significance across both Testaments.
+
+### G5100 / Sense 77708 (217 occ, sense 1 of 5)
+**Label:** someone, anyone (person)
+**Lemma gloss:** Indefinite pronoun: someone, anyone, something, anything; as adjective, 'a certain, some'; in plural, 'some, certain ones.'
+**Description:** Substantive indefinite pronoun referring to an unspecified person: 'someone, anyone, a certain one' — Arabic أَحَدٌ, Korean 누구/어떤 사람, Swahili mtu yeyote.
+**Enriched:** Substantive indefinite pronoun referring to an unspecified person: 'someone, anyone, a certain one' — 217 occurrences. This is the core pronominal use where tis stands alone as subject or object meaning 'somebody.' In Matt 16:24 'if anyone wishes to come after me,' the indefiniteness creates an open invitation; in Matt 12:29 'how can anyone enter a strong man's house,' it poses a rhetorical challenge. Spanish alguien/alguno, German jemand, Korean 누군가/어떤 사람, Arabic ahadun, and Swahili mtu yeyote all converge on person-referring indefinite pronouns. The negative context ei tis ('if anyone... not') is especially common in Johannine and Pauline discourse.
+
+### H0517 / Sense 82741 (217 occ, sense 1 of 2)
+**Label:** mother, female parent
+**Lemma gloss:** Mother; a female parent of humans; also the dam or mother of an animal in legal and cultic contexts.
+**Description:** Biological or social mother of a human being, including all pronominal inflections (my/your/his/her/their mother), plural forms (mothers), and figurative/proverbial uses where the referent is still a human mother; Arabic cognate أُمّ in all inflected forms, Korean 어머니, Swahili mama, Hindi माता/माँ uniformly throughout.
+**Enriched:** A human female parent, encompassing biological motherhood, social role, and figurative extensions. The 217 occurrences span from Eve as 'mother of all living' (Gen 3:20) to proverbial instruction ('do not forsake your mother's teaching,' Prov 1:8) and lament ('their mothers,' Lam 2:12). Spanish madre, French mère, German Mutter, and Arabic umm all preserve the same intimate familial sense. Pronominal forms (his mother, my mother) dominate, reflecting the deeply relational character of the word.
+
+### H0899b / Sense 85192 (216 occ, sense 1 of 1)
+**Label:** garment, article of clothing
+**Lemma gloss:** Garment, article of clothing; any wearable covering from a leper's rags to priestly vestments.
+**Description:** A piece of clothing or covering worn on the body; used of any garment whether singular or plural, with no semantic distinction across inflections, possessive suffixes, or prepositional prefixes -- all 216 occurrences uniformly gloss as Arabic ثَوْب/ثِيَاب, Korean 옷, Swahili nguo/mavazi, Spanish vestido/vestidura, Hindi वस्त्र/कपड़ा.
+**Enriched:** Any article of clothing or bodily covering, used without distinction of quality or status -- from the filthy clothes of a leper (Lev 13:47) to the holy robes of the high priest (Exod 28:2). Appears across all periods of biblical Hebrew in contexts of daily life, ritual consecration (Lev 8:23-24), deception (Gen 27:15, Tamar in Gen 38:14), and symbolic acts of grief such as tearing garments. Spanish 'vestidos/vestiduras' and French 'vetements' confirm a single undifferentiated sense.
+
+### G5037 / Sense 77433 (215 occ, sense 1 of 1)
+**Label:** and, both, also (enclitic conjunction)
+**Lemma gloss:** And, both, also -- an enclitic conjunction linking words, phrases, or clauses.
+**Description:** An enclitic coordinating particle that connects clauses, phrases, or words, typically appearing postpositively. In its primary use (211 of 215 occurrences) it functions as a simple connective 'and' or correlative 'both...and' (τε...καί, τε...τε). Occasional contextual renderings as 'also' (3x) or 'even' (1x) reflect translation choices rather than distinct lexical senses. Spanish renders it as connective markers 'y/también'; Hindi 'और/भी' both serve as coordinating connectives; Arabic 'وَ' is the standard conjunction throughout; Korean '그리고' (and) is consistent; Swahili 'na/pia/hata' range from 'and' to 'also' to 'even' but all express the same additive conjunction. The three clusters represent no semantic distinction — all are the same enclitic particle τε functioning as a lightweight connective, with minor translational variation driven by context rather than meaning.
+**Enriched:** An enclitic coordinating particle that connects words, phrases, or clauses, typically appearing postpositively after the first word of its clause. Most often functions as a simple connective 'and' or in the correlative pair te...kai ('both...and'), binding elements in closer logical unity than kai alone. Concentrated in Luke-Acts and Hebrews (Acts 5:19, 5:42; Heb 1:3), reflecting elevated Hellenistic prose style. Spanish 'y,' French 'et,' and German 'und' uniformly confirm its conjunctive function.
+
+### H8337 / Sense 144206 (215 occ, sense 1 of 1)
+**Label:** six (cardinal number)
+**Lemma gloss:** Six -- the cardinal number, used independently and as the base in compounds like sixteen and six hundred.
+**Description:** The cardinal number six, used independently or as the base component in compound numerals (sixteen, six hundred, etc.), across all grammatical inflections (masculine/feminine, absolute/construct) and prepositional contexts.
+**Enriched:** The cardinal number six, appearing in masculine (shesh) and feminine (shisha) forms across absolute and construct states. Functions independently ('six days,' Exod 20:9; 'six cubits,' 1 Sam 17:4) and as a base component in compound numerals (sixteen, sixty, six hundred). Its most prominent theological context is the six days of creation and labor preceding Sabbath rest (Gen 1; Exod 23:12). All target languages render it with a single numeral equivalent -- Spanish 'seis,' French 'six,' German 'sechs' -- confirming one unified sense.
+
+### H8478 / Sense 144995 (215 occ, sense 2 of 3)
+**Label:** instead of, in place of
+**Lemma gloss:** Underneath, below (spatial); instead of, in place of (substitution); because, inasmuch as (causal).
+**Description:** Substitution or succession, indicating that one person or thing takes the role or position of another; includes 'in his place' (succession of kings), 'instead of' (general replacement), and 'in exchange for', with all pronominal suffix forms.
+**Enriched:** Substitution, succession, or exchange: one entity taking the role or position of another. Central to dynastic succession formulas ('he reigned in his place,' 1 Kgs 15:8) and to the theology of substitutionary offering (Gen 22:13, the ram 'instead of' Isaac). Spanish 'en-su-lugar' and French 'à-la-place-de-lui' consistently distinguish this from the spatial sense. Also covers 'in exchange for' in commercial or retributive contexts (an eye tachath an eye, Exod 21:24).
+
+### H1242 / Sense 87813 (214 occ, sense 1 of 1)
+**Label:** morning
+**Lemma gloss:** Morning -- the early part of the day, from dawn until midday; used of time, sacrifice, and divine faithfulness.
+**Description:** The period of daylight from dawn until midday; the early part of the day, used literally of the time of day (morning sacrifices, morning watches, rising early in the morning) and in temporal expressions (morning by morning, from evening to morning, until the morning). Encompasses singular and plural forms and all prepositional constructions.
+**Enriched:** The period of daylight from dawn until midday, referring to the point of time rather than a duration. Used literally for early-morning activities -- rising (Gen 22:3), offering morning sacrifices (Exod 29:39), and keeping the morning watch (Exod 14:24) -- and figuratively for divine faithfulness that is 'new every morning' (Lam 3:23). The evening-to-morning formula structures priestly time-keeping (Gen 1:5). Spanish 'en la manana,' French 'dans le matin,' and German 'am Morgen' uniformly confirm a single temporal sense.
+
+### H3130 / Sense 101568 (213 occ, sense 1 of 1)
+**Label:** Joseph (proper name)
+**Lemma gloss:** Joseph -- proper name meaning 'he adds'; the patriarch, and by metonymy the northern tribes descended from him.
+**Description:** The proper name Joseph (יוֹסֵף / יְהוֹסֵף), meaning 'he adds, he increases.' Refers primarily to the patriarch Joseph son of Jacob and Rachel (Gen 30:24ff), but also used metonymically for the tribe/territory of Joseph (the half-tribes of Ephraim and Manasseh) and for other individuals bearing this name throughout Scripture. All 213 occurrences across all four clusters share identical multilingual renderings: Arabic يُوسُف, German Josef, French Joseph, Spanish Yosef/Jose, Hindi योसेफ़, Korean 요셉. Prepositional prefixes (ל to/for) are inflectional, not semantic distinctions.
+**Enriched:** The proper name Joseph (Yosef / Yehoseph), meaning 'he adds' or 'may he add,' referring primarily to the patriarch Joseph son of Jacob and Rachel (Gen 30:24), whose narrative of exile, suffering, and providential exaltation spans Genesis 37-50. Used metonymically for the combined tribal territory of Ephraim and Manasseh (Deut 33:13; Ps 80:2; Ezek 37:16). The dual etymology in Genesis 30:23-24 connects it to both asaf ('take away') and yasaf ('add'), enriching its meaning with themes of loss reversed and blessing multiplied.
+
+### H4264 / Sense 110862 (212 occ, sense 1 of 3)
+**Label:** camp or encampment
+**Lemma gloss:** Camp, encampment; a temporary dwelling-place of tents, especially Israel's wilderness camp, and by metonymy the army or host encamped there.
+**Description:** A place where people temporarily dwell in tents or shelters, whether for travel, military campaigning, or wilderness sojourning.
+**Enriched:** A camp or encampment — the overwhelmingly dominant sense at 212 occurrences. Covers the Israelite wilderness camp organized around the tabernacle (Exod 16:13; 19:17; 32:26-27), military encampments before battle (Josh 10:5; Judg 7:15; 1 Sam 4:3), and caravan camps during travel (Gen 32:8, 21). The camp functions as both physical space and social-sacred boundary: being 'in the camp' means inclusion in the covenant community, while being sent 'outside the camp' signals exclusion (Num 5:2-3; 12:14-15). Arabic mu'askar, Spanish campamento, Korean jinying (진영), and Swahili kambi all select temporary-collective-dwelling vocabulary, confirming a unified sense covering wilderness sojourning, military bivouac, and traveling encampment alike.
+
+### G3956 / Sense 74223 (211 occ, sense 3 of 5)
+**Label:** all things, everything (substantive)
+**Lemma gloss:** All, every, each, the whole; collective totality of a group, distributive 'every/each,' substantive 'everything,' or temporal 'always.'
+**Description:** Used substantively (often neuter plural or singular) to mean 'everything' or 'all things,' referring to the totality of reality or circumstances.
+**Enriched:** Substantive neuter: 'all things' or 'everything' — 211 occurrences where pas stands alone (often as ta panta or panta) without a modified noun, referring to the totality of things, circumstances, or reality. Theologically pivotal in passages like Col 1:16 ('all things were created through him') and 1 Cor 15:27 ('he has put all things under his feet'). Spanish todas las cosas and German alles both nominalize the adjective. Korean 만물 ('all creation/things') is especially revealing — it uses a dedicated compound for cosmic totality that is never used for the simple quantifier 'all people.'
+
+### H0127 / Sense 80039 (210 occ, sense 1 of 5)
+**Label:** ground, land (territory)
+**Lemma gloss:** Ground, land, soil; cultivable earth, homeland, territory; the physical substance from which humanity was formed.
+**Description:** Cultivable land or territory belonging to a people or person; homeland, country, or promised land as a geographic/political entity.
+**Enriched:** Cultivable land, territory, homeland — the dominant and broadest sense (210 occurrences). Covers both the arable ground of Gen 2:5, 9 and the promised national territory of Deuteronomy's covenant language ('the adamah which the LORD swore to your fathers,' Deut 7:13; 28:11). Arabic أرض, Spanish tierra, and French terre all serve this encompassing sense. In prophetic usage it becomes virtually synonymous with 'eretz (land) but retains the earthy, agricultural connotation.
+
+### H0639 / Sense 83655 (210 occ, sense 1 of 5)
+**Label:** anger, wrath
+**Lemma gloss:** Nostril, nose, face; by metonymy anger or wrath; in the dual idiom 'erekh appayim, slow to anger.
+**Description:** Metaphorical extension of 'nose' to denote anger or wrath, often as a divine attribute (חֲרוֹן אַף 'burning anger'), covering all inflected and prepositional forms expressing rage, fury, or indignation.
+**Enriched:** The dominant metaphorical sense: anger, wrath, fury — 210 of 276 occurrences. The underlying image is of nostrils flaring and breath coming in hot blasts, but the anatomical origin is entirely bleached in most contexts. The phrase charon 'ap ('burning anger') appears overwhelmingly of divine wrath (Exod 32:12; Num 25:4; Deut 29:24), though human anger also features (Gen 30:2; 49:6). Multilingual evidence uniformly selects dedicated emotion vocabulary — Spanish ira, German Zorn, Korean 분노, Arabic غَضَب, Swahili hasira — never nasal terms, confirming full lexicalization as an emotion word. The construct chain 'ap YHWH ('the anger of the LORD') functions almost as a compound noun in prophetic discourse.
+
+### G3779 / Sense 73613 (209 occ, sense 1 of 1)
+**Label:** thus, so, in this manner
+**Lemma gloss:** Thus, so, in this way -- adverb of manner pointing to how something is done or occurs.
+**Description:** Adverb of manner indicating 'in this way' or 'in such a manner,' pointing to the way something is done or occurs. Spanish 'así/Así' (thus) is uniform across the dominant cluster and S73616. Hindi 'ऐसे/ऐसा' (like this) maintains the manner sense. Arabic 'هكَذا/هٰكَذا/هَكَذَا' are orthographic variants of the same word. Korean '이와-같이/이렇게' (like this/in this way) are synonymous manner expressions. Swahili 'hivyo/vivyo-hivyo' (like that/exactly like that) confirms the manner reading. S73616 is identical in meaning to the main cluster. S73617 with Spanish 'tan' (so, degree) and Hindi 'इतना' (so much) represents degree modification, but this is a contextual extension of the same adverb rather than a separate lexical sense. All 209 occurrences are unified as one demonstrative manner adverb.
+**Enriched:** Demonstrative adverb of manner meaning 'in this way,' 'thus,' or 'so,' derived from the pronoun houtos. Functions both anaphorically (pointing back to what was described) and cataphorically (pointing forward, often paired with kathos or hosper). Carries intensifying force in passages like John 3:16 ('God so loved the world') and structuring force in Jesus' teaching (Matt 5:12, 5:16). Spanish 'asi,' French 'ainsi,' German 'so,' and Hindi 'aise' uniformly confirm a single manner-demonstrative sense with no semantic subdivision.
+
+### H8354 / Sense 144257 (209 occ, sense 1 of 3)
+**Label:** drink, consume liquid
+**Lemma gloss:** To drink, consume liquid; the basic act of drinking water, wine, or any beverage, including participial use for habitual drinkers.
+**Description:** The basic Qal sense of consuming a liquid beverage, encompassing all finite verb forms (perfect, imperfect, imperative, consecutive, jussive), infinitives (construct and absolute), and verbal participles across every person, number, and gender inflection.
+**Enriched:** The core verbal sense: to drink, consume a liquid. At 209 occurrences this covers all finite forms (perfect, imperfect, imperative, jussive, consecutive) and infinitives denoting the act of drinking water, wine, milk, or any beverage. Found in hospitality scenes (Gen 24:14, 'drink, and I will water your camels'), covenant meals (Gen 26:30, 'they ate and drank'), prophetic sign-acts (Ezek 4:11), and legal regulations (Num 6:3, the Nazirite shall not drink wine). The multilingual evidence is strikingly uniform: Spanish beber, French boire, German trinken, Arabic shariba, Korean masida (마시다), Swahili -nywa — all select the unmarked, basic 'consume liquid' verb, confirming this as a single undifferentiated core sense rather than multiple sub-senses.
+
+### G3762 / Sense 73532 (207 occ, sense 1 of 3)
+**Label:** no one, nobody (pronominal)
+**Lemma gloss:** No one, nobody, nothing; a strong negative pronoun negating persons or things absolutely.
+**Description:** Used as a pronoun referring to persons, meaning no one, nobody, not anyone, in both subject and object positions.
+**Enriched:** Pronominal use referring to persons: 'no one,' 'nobody,' 'not anyone' — the dominant sense at 207 occurrences, used in both subject and object positions. 'No one knows the Son except the Father' (Matt 11:27); 'No one can enter a strong man's house' (Mark 3:27). Spanish nadie, German niemand, French personne, and Korean 아무도...않다 all deploy their dedicated person-negating pronouns here. The absolute, exceptionless quality of this negation gives it particular theological force in Johannine and Pauline usage.
+
+### H1320 / Sense 88507 (207 occ, sense 1 of 3)
+**Label:** body, physical being
+**Lemma gloss:** Flesh, meat; the physical body, edible animal tissue, or the outer skin; humanity in its frailty before God.
+**Description:** The living body of a person or animal, bodily existence and the corporeal self as opposed to spirit or soul; the dominant sense of basar in the Hebrew Bible, glossed as mwili (Swahili), शरीर (Hindi), 육체/살 (Korean), جَسَد (Arabic), and used for the body in contexts of washing, disease, mortality, and human frailty.
+**Enriched:** The living body as a whole, the corporeal self as opposed to spirit, soul, or inner life — the overwhelmingly dominant sense at 207 occurrences. 'All flesh' (kol basar) is a standard idiom for all living creatures or all humanity (Gen 6:12-13, 17). The body-as-person sense is confirmed cross-linguistically: Swahili mwili, Hindi sharir, Korean 육체 all select 'body/physical being' vocabulary rather than 'meat' words. This is the sense at work when the psalmist says 'my flesh also shall rest in hope' (Ps 16:9) — not his meat, but his whole embodied self.
+
+### H3627 / Sense 106435 (206 occ, sense 1 of 7)
+**Label:** vessel or container
+**Lemma gloss:** Vessel, utensil, container; weapon, armor; implement, article, tool; goods, baggage; musical instrument
+**Description:** A receptacle or container for holding liquids, grain, or other substances, such as a pot, jar, bowl, or vat (Arabic: إِنَاء / آنِيَة).
+**Enriched:** The core and most frequent sense (206x): a receptacle or container — pot, jar, bowl, vat, or sacred vessel. Arabic ina'/aniya maps directly here. Tabernacle inventory lists (Exod 27:19; 38:3, 30) account for a large share, and the potter's vessel of Jer 18:4 became a powerful prophetic metaphor for divine sovereignty over human destiny.
+

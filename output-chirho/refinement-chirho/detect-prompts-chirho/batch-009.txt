@@ -1,0 +1,291 @@
+# Sense Refinement Detection — Batch 009
+
+You are a biblical lexicographer reviewing sense entries for a Hebrew/Aramaic/Greek lexicon.
+Each entry below is a single "sense" that was produced by clustering translation signatures 
+and then merging with an LLM. Some senses may have been OVER-LUMPED — they contain genuinely 
+distinct meanings that should be separate senses.
+
+## Your Task
+
+For each sense, determine if it should be SPLIT into multiple senses. Look for:
+- Literal vs. figurative/metaphorical uses lumped together
+- Concrete vs. abstract meanings combined
+- Multiple distinct referents (e.g., "father" = biological parent + patron/advisor + originator)
+- Physical vs. spiritual/theological uses merged
+- Different syntactic frames producing different meanings
+
+## Output Format
+
+Return a JSON array. For senses that need NO splitting, omit them entirely.
+For senses that SHOULD be split, include an entry like:
+
+```json
+[
+  {
+    "senseIdChirho": 79287,
+    "lemmaIdChirho": "H0001",
+    "currentLabelChirho": "father, immediate male parent",
+    "splitProposalChirho": [
+      {
+        "newLabelChirho": "biological/legal father",
+        "criteriaChirho": "Direct parent-child relationship, possessive constructions with specific person"
+      },
+      {
+        "newLabelChirho": "metaphorical father (patron, advisor, protector)",
+        "criteriaChirho": "Title of respect for prophets, advisors, or authority figures; 'father to Pharaoh' type usage"
+      }
+    ],
+    "confidenceChirho": "high",
+    "reasoningChirho": "Description explicitly mentions 'title of respect or metaphorical originator' alongside biological father"
+  }
+]
+```
+
+Only propose splits where you have MEDIUM or HIGH confidence. Do NOT split function words (articles, 
+prepositions, particles, conjunctions) unless there is a genuinely distinct semantic sense (not just 
+syntactic variation). Proper nouns generally should NOT be split.
+
+If NO senses in this batch need splitting, return an empty array: []
+
+## Senses to Review
+
+### G2588 / Sense 70035 (158 occ, sense 1 of 1)
+**Label:** heart (inner self, mind, will)
+**Lemma gloss:** Heart; the inner self as seat of thought, emotion, will, and spiritual life
+**Description:** The noun καρδία denoting the heart as the seat of thought, emotion, will, and moral/spiritual life — the inner person in its entirety. Used extensively throughout the NT for the center of human consciousness, intention, and relationship with God (Matt 5:8, 6:21, 12:34, 15:18-19; Mark 7:21; Luke 6:45; John 14:1; Acts 2:37; Rom 2:29, 10:9-10; 2 Cor 4:6; Eph 1:18; Heb 4:12; Rev 2:23). All three clusters represent the same lexical meaning across all inflectional forms (singular/plural, all cases): eng 'heart(s)/in heart(s)', spa 'corazón/corazones', hin हृदय/हृदयों, arb قَلْبِ/قُلُوبِ, kor 마음/마음들, swa 'moyo/mioyo'. The prepositional nuance 'in heart(s)' (S70038, S70039) is supplied by the dative case or preposition, not by a different sense of the noun.
+**Enriched:** The inner self or core of a person encompassing thought, emotion, will, and moral-spiritual orientation. Across 158 occurrences, kardia appears as the locus of faith (Rom 10:9), understanding (Matt 13:15), hardness (Mark 3:5), and purity (Matt 5:8). The remarkable cross-linguistic stability — Spanish 'corazón,' French 'coeur,' German 'Herz,' Arabic 'قلب,' Korean '마음' — reflects the near-universal metaphorical mapping of the physical heart to the seat of personhood and intention.
+
+### G3972 / Sense 74313 (158 occ, sense 1 of 1)
+**Label:** of Paulos
+**Lemma gloss:** Paul; the apostle to the Gentiles (also Sergius Paulus, the Roman proconsul)
+**Description:** of Paulos, Paulos, with Paulos (158 occurrences across 3 original clusters)
+**Enriched:** The proper name Paulos, referring primarily to the apostle Paul (formerly Saul of Tarsus), the chief missionary to the Gentile world and author of most New Testament epistles. Also used once for Sergius Paulus, the Roman proconsul of Cyprus (Acts 13:7). The 158 occurrences span Acts 13–28 and the epistolary salutations (Rom 1:1, 1 Cor 1:1, Gal 1:1). Translations uniformly transliterate — 'Pablo,' 'Paulo,' 'Paulus,' 'Павел' — preserving the Latin-origin name across all language families.
+
+### H4399 / Sense 111810 (158 occ, sense 1 of 5)
+**Label:** work, labor, task
+**Lemma gloss:** Work, occupation, labor; craftsmanship; property, goods; any productive activity from temple construction to daily business.
+**Description:** General work, labor, or task — the common sense covering construction projects, agricultural effort, ritual service, and any productive activity.
+**Enriched:** General work, labor, or task — the overwhelming majority at 158 occurrences. This encompasses construction projects (the tabernacle in Exodus 35-40, the temple in 1 Kings 5-7, Jerusalem's walls in Nehemiah), agricultural labor, royal service, and especially the Sabbath prohibition against melakhah (Exod 20:10, 31:14-15, Lev 23:7-8). Arabic 'amal and Spanish obra both select broad productive-activity vocabulary. The Sabbath usage is theologically foundational: the same word describes God's six-day creative work (Gen 2:2-3) and the work humans must cease on the seventh day, creating a profound link between divine and human labor.
+
+### G1510 / Sense 66363 (157 occ, sense 2 of 6)
+**Label:** participial, being (circumstantial/attributive)
+**Lemma gloss:** to be, exist; copulative, existential, locative, and divine self-revelation
+**Description:** Present participle ὤν used in circumstantial (temporal, causal, concessive) or attributive constructions, describing a state or condition concurrent with the main action.
+**Enriched:** Asserts existence or presence, often translated 'there is/was.' This existential sense introduces new participants into narrative space. French il y avait and Arabic كَانَ use specialized existential constructions.
+
+### G4074 / Sense 74697 (156 occ, sense 1 of 1)
+**Label:** Peter (proper name)
+**Lemma gloss:** Peter; Simon Peter, the leading apostle, named 'Rock' by Jesus
+**Description:** The personal name of Simon Peter (Shimon Kepha), the leading apostle of Jesus Christ, used 156 times in the NT across all grammatical cases (nominative, accusative, genitive, dative, vocative). The three clusters represent purely inflectional variation of the same proper noun: S74697 covers the vast majority of occurrences across all cases, S74698 is genitive ('of Peter'), and S74699 is a single dative occurrence ('to/in Peter'). Multilingual renderings are uniformly consistent: Spanish 'Petros' / 'de Petros' / 'a Petros', Hindi 'Patras' / 'Patras ne' / 'Patras ke', Arabic 'Butrus' in various case endings, Korean 'Bedeuро' with different particles, Swahili 'Petro' / 'ya Petros'. There is no semantic distinction among these clusters; they are the same referent in different syntactic positions.
+**Enriched:** The proper name of Simon Peter, the foremost apostle among the Twelve, given the name Petros ('Rock') by Jesus as a translation of Aramaic Kepha (John 1:42, Matt 16:18). Used 156 times across all grammatical cases, it appears in narratives of his call (Matt 4:18), his confession (Matt 16:16), his denial (Matt 26:69–75), and his leadership of the early church (Acts 2:14). Translations either transliterate — 'Petros' (Spanish), 'Petrus' (German) — or translate the meaning: 'Pierre' (French, literally 'stone').
+
+### H0352a / Sense 81594 (156 occ, sense 1 of 1)
+**Label:** ram (male sheep)
+**Lemma gloss:** Ram; a male sheep, used prominently in sacrifice, tribute, food, and prophetic symbolism
+**Description:** A male sheep, used extensively in sacrificial and ritual contexts, as well as in agricultural and metaphorical imagery.
+**Enriched:** A mature male sheep, prominent across sacrificial, agricultural, economic, and visionary contexts in the Hebrew Bible. The ram appears as Abraham's substitute sacrifice (Gen 22:13), as the prescribed animal for priestly consecration and guilt offerings (Exod 29:15, Lev 5:15), as a commodity of trade and tribute (2 Kgs 3:4, 2 Chr 17:11), and as an apocalyptic symbol of royal power (Dan 8:3). Cross-linguistic evidence — Spanish 'carneros,' French 'béliers,' German 'Widder' — consistently identifies the male ovine without semantic ambiguity.
+
+### H3467 / Sense 104800 (156 occ, sense 1 of 4)
+**Label:** save, deliver, rescue (Hifil active)
+**Lemma gloss:** To save, deliver, rescue (Hifil); a savior or deliverer (Hifil participle); to be saved or receive salvation (Nifal).
+**Description:** Active causative meaning in the Hifil stem: to save, deliver, or rescue someone from danger, enemies, or distress, with God or a human agent as subject (Arabic khallasa/anqadha, Korean guwonhada, Swahili -okoa).
+**Enriched:** Active Hifil causative: to save, deliver, or rescue someone from danger, enemies, distress, or oppression — the largest sense at 156 occurrences spanning every major corpus. God saves Israel at the Red Sea (Exod 14:30), raises up judges to save them from enemies (Judg 3:31, 7:7, 10:1), and promises future deliverance through the prophets (Isa 35:4, 45:22). Human agents also 'save' — David's mighty men, military commanders, and kings who deliver their people. Arabic khallasa/anqadha, Korean 구원하다 (guwonhada), and Swahili -okoa all converge on rescue-from-peril semantics. The Psalms' urgent imperative hoshi'eni ('save me!') — as in Ps 3:7, 6:4, 22:21 — captures the verb at its most existentially charged.
+
+### H6086 / Sense 125535 (156 occ, sense 1 of 7)
+**Label:** tree, living tree
+**Lemma gloss:** Tree, wood, timber; firewood, stick, stake/gallows, wooden shaft; broad term for any woody plant or product
+**Description:** A living woody plant, used of trees in general, specific named trees (e.g. tree of life, tree of knowledge), orchards, and forests — Arabic شَجَرَة/شَجَر, Swahili mti/miti, Spanish árbol/árboles, Hindi पेड़/वृक्ष.
+**Enriched:** A living, standing tree — individually, collectively, or as a named species. Arabic shajara and Swahili mti/miti match this botanical sense. The Edenic trees of life and knowledge (Gen 2:9; 3:3) anchor the word theologically, while Judges 9:8 personifies the trees in Jotham's fable. Jer 17:8 and Ps 1:3 use the planted tree as the quintessential image of the righteous person rooted beside water.
+
+### H7218a / Sense 133958 (156 occ, sense 2 of 7)
+**Label:** chief, leader, head of group
+**Lemma gloss:** Head (body part); chief or leader; top or summit; military company; beginning; choicest portion; census total
+**Description:** A chief, leader, or head of a clan, tribe, family, or administrative unit, as indicated by Arabic ra'is/ru'asa, Korean udumeori/jokjang, Swahili kiongozi/mkuu/wakuu, Hindi mukhiya/pradhan/sardar, and Spanish jefe/principal.
+**Enriched:** A chief, leader, or head of a clan, tribe, or administrative unit. The metaphor from body part to authority figure is pan-Semitic (Arabic ra'is, Swahili mkuu/kiongozi, Korean udumeori). Prominent in the genealogical registers of Chronicles (1 Chr 5:7, 5:24) where tribal leaders are enumerated by their headship.
+
+### H8145 / Sense 142884 (156 occ, sense 1 of 2)
+**Label:** ordinal: second
+**Lemma gloss:** Second (ordinal numeral); used adverbially as 'a second time'; rarely of a second story or tier.
+**Description:** The ordinal number 'second' in all grammatical forms (definite/indefinite, masculine/feminine, with conjunctions or prepositions), including adverbial use 'a second time'.
+**Enriched:** The ordinal number 'second' across all grammatical forms — definite and indefinite, masculine and feminine, with prepositions and conjunctions. Used temporally ('the second day,' Gen 7:11; 'the second year,' Gen 47:18), sequentially ('the second son,' Gen 41:52), and adverbially meaning 'a second time' or 'again' (Gen 22:15; Mal 2:13). Multilingual glosses uniformly confirm ordinal meaning: Spanish 'el segundo/la segunda,' French 'le deuxième,' German 'der zweite/dem zweiten.'
+
+### G0243 / Sense 61847 (155 occ, sense 1 of 2)
+**Label:** another, other, different
+**Lemma gloss:** Another, other; denotes a distinct or additional entity of the same kind, sometimes used in correlative pairs.
+**Description:** Denotes a distinct or additional person, thing, or entity of the same kind, functioning as an adjective or substantive ('another,' 'other,' 'others,' 'the other').
+**Enriched:** The standard adjectival and substantive use meaning 'another,' 'other,' or 'others' — a distinct or additional entity of the same kind. Covers the vast majority of occurrences (155x), including phrases like 'another way' (Matt 2:12), 'other ground' (Mark 4:5, 7), and 'another wife' (Mark 10:12). Multilingual evidence is consistent: Spanish 'otro/a otro,' French 'autre,' German 'anderer' — all general-purpose words for 'another' without differentiation by kind.
+
+### H3709 / Sense 107189 (155 occ, sense 1 of 7)
+**Label:** palm of the hand
+**Lemma gloss:** Palm of the hand, sole of the foot; also: ladle/dish, hip socket, paw, handle, palm-frond
+**Description:** The open hand or palm, used of persons grasping, holding, striking, or as a surface for placing objects; Arabic kaff confirms the primary Semitic meaning.
+**Enriched:** The open palm or hand — by far the dominant sense, covering grasping, holding, striking, clapping, spreading in prayer, and placing objects on the palm. Genesis 40:11 has the cupbearer pressing grapes into Pharaoh's kaf; Leviticus 8:27 places offerings on Aaron's kappayim. Arabic kaff, Spanish palma, and German Handfläche all confirm the primary anatomical meaning. The dual form kappayim appears frequently for both hands together.
+
+### H6726 / Sense 129997 (154 occ, sense 1 of 1)
+**Label:** Zion (place name)
+**Lemma gloss:** Zion — the fortified hill of Jerusalem, extending to denote the holy city, its temple mount, and God's covenant people
+**Description:** Proper noun designating the fortified hill in Jerusalem captured by David (2 Sam 5:7), extended to refer to the Temple mount, the city of Jerusalem, and by metonymy the people of God dwelling there; all 16 clusters differ only by prefixed prepositions (בְּ, מִן, לְ) and conjunctions (וְ), not by meaning.
+**Enriched:** The proper noun Zion, originally the fortified ridge captured by David (2 Sam 5:7; 1 Chr 11:5), later extended to the Temple mount and the whole city of Jerusalem. In prophetic and poetic usage it becomes a theological symbol for God's chosen dwelling place and, by metonymy, his covenant people — as when Isaiah speaks of the 'daughter of Zion' (Isa 1:8). Translation languages consistently transliterate rather than translate: Spanish 'Sion,' French 'Sion,' German 'Zion.'
+
+### H7650 / Sense 137957 (154 occ, sense 1 of 3)
+**Label:** swear, take an oath (Niphal)
+**Lemma gloss:** To swear or take an oath (Niphal); to cause to swear, adjure, or administer an oath (Hiphil).
+**Description:** Niphal stem: the subject swears or takes an oath, whether promissory (covenant commitment), assertory (affirming truth), or imprecatory (invoking divine witness). All Niphal finite forms (perfect, imperfect, imperative, consecutive, jussive), infinitives (construct and absolute), and participles across every person, number, and gender inflection belong here. Cross-linguistic uniformity confirms a single sense: Arabic حَلَفَ / أَقْسَمَ, Korean 맹세하다, Swahili -apa, Hindi शपथ खाई, Spanish jurar all translate every Niphal occurrence identically.
+**Enriched:** To swear or take an oath (Niphal stem). The subject binds himself or herself by an oath, whether promissory (committing to a future action, as in covenant-making), assertory (affirming the truth of a statement), or imprecatory (invoking God as witness with implicit self-curse if false). This is the dominant sense at 154 occurrences. God swears to Abraham (Gen 24:7), David and Jonathan swear mutual loyalty (1 Sam 20:42), and Nehemiah makes the people swear not to intermarry (Neh 13:25). The reflexive Niphal form highlights that oath-taking is self-binding.
+
+### H2572 / Sense 97918 (151 occ, sense 1 of 2)
+**Label:** fifty (cardinal number)
+**Lemma gloss:** Fifty; the cardinal number, or a military/organizational unit of fifty men under a commander.
+**Description:** The cardinal number fifty, used for counting quantities such as measurements, ages, prices, and enumerations.
+**Enriched:** The cardinal number fifty, used for counting quantities — measurements, ages, prices, durations, and enumerations. This covers the vast majority of occurrences (151x). Gen 6:15 gives the ark's width as fifty cubits; Gen 18:24 asks whether God will spare the city for fifty righteous. Translations uniformly converge: spa cincuenta, fra cinquante, deu fünfzig. The number functions in arithmetic combinations (e.g., 'a hundred and fifty days,' Gen 7:24; 8:3) and as a round figure in negotiations and census lists.
+
+### H4150 / Sense 110181 (151 occ, sense 1 of 5)
+**Label:** meeting (tent of meeting)
+**Lemma gloss:** An appointed time, place, or assembly; most often in 'tent of meeting' (ohel moed), also for sacred festivals and set times.
+**Description:** The place or act of meeting, predominantly in the phrase ohel moed (tent of meeting); Arabic الاِجْتِمَاعِ (al-ijtimāʿ, gathering), Korean 만남 (mannam, meeting), Swahili mkutano (meeting), Hindi मिलाप (milāp, meeting), Spanish reunión all consistently point to 'meeting/assembly' as a distinct sense from 'appointed time' or 'feast'
+**Enriched:** The designated place of meeting with God, appearing overwhelmingly in the formula ohel moed ('tent of meeting'). This accounts for roughly two-thirds of all occurrences and saturates Exodus through Numbers. The Arabic al-ijtimai ('the gathering') and Swahili mkutano ('meeting') preserve the communal dimension: this is not private audience but congregational encounter. The tent of meeting was the nexus of divine-human communion in the wilderness period (Exod 27:21; 29:4).
+
+### H7725 / Sense 138642 (151 occ, sense 2 of 8)
+**Label:** to bring back, restore (Hifil)
+**Lemma gloss:** To turn back, return; (Hifil) bring back, restore, answer, repay; (Polel) restore thoroughly; turn away, apostatize
+**Description:** Causative return — causing someone or something to return, bringing back, restoring to a former state or place; the primary Hifil meaning of שׁוּב.
+**Enriched:** The Hifil causative: causing someone or something to come back, restoring to a former state. Spans military contexts (bringing back captives), legal ones (returning pledged garments, Deut 24:13), and prophetic promises of national restoration (Gen 48:21, 'God will bring you back'). French 'ramènerai' and Spanish 'haré volver' both capture the causative force that distinguishes this from the simple Qal return.
+
+### G4561 / Sense 76353 (150 occ, sense 1 of 1)
+**Label:** flesh, physical body
+**Lemma gloss:** Flesh — the material substance of the body; by extension, human nature, mortal frailty, and life apart from the Spirit
+**Description:** The physical substance of the human (or animal) body, flesh as material reality. This encompasses several closely related sub-uses: the physical body as created by God ('the two shall become one flesh,' Matt 19:5-6, Mark 10:8), the mortal human condition ('all flesh' = all living beings, Matt 24:22, Mark 13:20, Luke 3:6), the incarnation of the Word ('became flesh,' John 1:14), flesh and blood as markers of human mortality and limitation ('flesh and blood did not reveal this,' Matt 16:17), the physical body of the risen Christ ('a spirit does not have flesh and bones,' Luke 24:39), and the born-of-flesh/born-of-spirit contrast in John 3:6. Also includes the Johannine eucharistic language of eating Christ's flesh (John 6). The Pauline theological extension where 'flesh' denotes the unregenerate human nature or sinful impulse (Rom 7-8, Gal 3:3, 5:13-24) arises naturally from this physical sense through metonymy and is not a separate lexical entry but a contextual theological development. All four clusters represent the same word across different grammatical forms and contextual nuances.
+**Enriched:** The physical substance of the human or animal body, encompassing literal flesh, the mortal body as a whole, human nature in its creaturely finitude, and — especially in Paul — the unredeemed orientation of life apart from God's Spirit (Rom 8:4-9; Gal 5:16-17). Spanish 'carne,' French 'chair,' and German 'Fleisch' all preserve the same literal-to-figurative gradient. The incarnational use in John 1:14 ('the Word became flesh') shows the term can carry profound theological dignity even as Paul employs it for moral frailty.
+
+### H0804 / Sense 84580 (149 occ, sense 1 of 2)
+**Label:** Assyria the nation/land
+**Lemma gloss:** Asshur/Assyria; the eponymous ancestor, or the nation, empire, land, and people of Assyria.
+**Description:** The geopolitical entity Assyria, referring to the land, empire, or people of Assyria as a nation (feminine proper noun), across all grammatical frames (bare, prepositional, conjunctive, directional).
+**Enriched:** The geopolitical entity Assyria — land, empire, people, and invading armies — appearing across all syntactic frames: bare, with prepositions ('to Assyria,' 2 Kgs 15:20), with conjunctions, and with directional suffixes. Dominates with 149 occurrences, spanning historical narrative (2 Kgs 15:19, 29; 16:7), prophetic judgment (Isa 10:5; 30:31), and eschatological vision (Zech 10:11). Multilingual glosses converge: Spanish 'Asiria,' French 'Assyrie,' German 'Assyrien.'
+
+### H1368 / Sense 89045 (148 occ, sense 1 of 3)
+**Label:** warrior, mighty man of valor
+**Lemma gloss:** Mighty, strong; a warrior or mighty man of valor; as a divine title: the Mighty One.
+**Description:** A human warrior, soldier, or valiant fighting man, used of military figures and men of combat prowess in singular, plural, and construct forms.
+**Enriched:** A warrior, mighty man of valor, or champion—the substantival use for human fighters. This is the overwhelming majority of occurrences, designating soldiers, military heroes, and valiant men: David's mighty men (2 Sam 10:7, 23:8), warriors of various armies (Josh 10:2, Judg 6:12), and Nimrod the 'mighty hunter' (Gen 10:9). Spanish valientes ('valiant ones'), French vaillants, and German Helden ('heroes') consistently render this martial sense. Plural construct גִּבּוֹרֵי חַיִל is the classic 'mighty men of valor.'
+
+### H6213a / Sense 126315 (148 occ, sense 2 of 6)
+**Label:** make, construct, fabricate
+**Lemma gloss:** Do, perform, act; make, construct; be done (Niphal); produce, yield; work, labor
+**Description:** To make, build, or construct a physical object or structure (Arabic ṣanaʿa صَنَعَ), including crafting tabernacle furnishings, fashioning idols, building altars, preparing provisions, and all manufacturing or artisanal activity.
+**Enriched:** To make, build, or construct a physical object. Concentrated in Exodus 25-40 where the tabernacle furnishings are fashioned: 'you shall make a mercy seat' (Exod 25:17). Spanish 'harás' and German 'machen' both distinguish this constructive sense from mere doing, paralleling the English make/do split.
+
+### H6607 / Sense 129166 (148 occ, sense 1 of 2)
+**Label:** entrance or opening
+**Lemma gloss:** Opening, entrance, doorway; the passage into a tent, house, temple, or city, occasionally the door or gate structure itself.
+**Description:** The opening, entryway, or doorway of a tent, tabernacle, temple, house, cave, or city — the space one passes through to enter, often in construct 'entrance of'.
+**Enriched:** The opening, entryway, or doorway of a tent, tabernacle, temple, house, cave, or city — the space or threshold one passes through to enter. This is the dominant usage across 148 occurrences, typically in construct form ('entrance of the tent,' 'entrance of the gate'). Spanish entrada-de, French entrée-de, and German Eingang-von all render this spatial-passage meaning faithfully. Gen 18:1 places Abraham at the entrance of his tent in the heat of the day; Exod 29:4 stations the priests at the entrance of the Tent of Meeting.
+
+### G0281 / Sense 61940 (147 occ, sense 1 of 1)
+**Label:** amen
+**Lemma gloss:** Amen — a Hebrew affirmation of truth and assent, used to confirm statements, close prayers, and (uniquely by Jesus) introduce solemn declarations
+**Description:** amen, Amen, amēn (147 occurrences across 4 original clusters)
+**Enriched:** A Hebrew-origin particle expressing solemn affirmation, truth, and assent. In liturgical contexts it closes prayers and doxologies as a congregational 'so be it' (1 Cor 14:16; Rev 5:14). Distinctively, Jesus uses it to open declarations — 'Amen, I say to you' (Matt 5:18; doubled in John 1:51) — a formula without rabbinic parallel that claims intrinsic authority. The word crosses every translation boundary virtually unchanged: Spanish 'amen,' French 'amen,' German 'amen,' preserving its Hebrew character as a universal marker of divine trustworthiness.
+
+### G3568 / Sense 72860 (147 occ, sense 1 of 1)
+**Label:** now
+**Lemma gloss:** Now — adverb of present time, marking the current moment, the present age, or a logical transition in argument
+**Description:** now, Now, present (147 occurrences across 3 original clusters)
+**Enriched:** Temporal adverb marking the present moment, the current age, or an argumentative pivot point. Beyond simple chronology, New Testament writers deploy nyn to highlight the eschatological 'now' of God's saving action — 'but now, apart from the law, the righteousness of God has been revealed' (Rom 3:21) — and to contrast former existence with present transformation (Eph 2:13; Col 1:22). Spanish 'ahora,' French 'maintenant,' and German 'jetzt' all preserve its immediacy, though the theological weight of the 'now' in Pauline rhetoric goes beyond what any single translation word can carry.
+
+### H3414 / Sense 104223 (147 occ, sense 1 of 1)
+**Label:** Jeremiah (proper noun)
+**Lemma gloss:** Jeremiah — personal name (Yirmeyahu), chiefly the prophet from Anathoth, also several other biblical figures
+**Description:** Personal name Yirmeyahu/Yirmeyah, referring to several individuals in the Hebrew Bible. Most prominently the prophet Jeremiah son of Hilkiah from Anathoth (Jer 1:1; 7:1; 11:1; 14:1; 18:1 and throughout the book of Jeremiah), but also: a warrior from Gad (1 Chr 12:11), another Gadite (1 Chr 12:14), a head of a family in Manasseh (1 Chr 5:24), father of Hamutal (2 Kgs 23:31; 24:18), and a priest who sealed the covenant (Neh 10:2; 12:1, 12, 34). The spelling alternates between the longer form yirmeyahu and the shorter yirmeyah; both are the same name. All inflectional variations (with prepositions, conjunctions, etc.) are the same referent class.
+**Enriched:** The proper name Yirmeyahu/Yirmeyah, a theophoric compound likely meaning 'Yah exalts' or 'Yah loosens.' Overwhelmingly it designates the prophet Jeremiah of Anathoth (Jer 1:1), whose ministry spanned the reigns of Josiah through the fall of Jerusalem. Secondary bearers include the father of Josiah's wife Hamutal (2 Kgs 23:31), a Gadite warrior (1 Chr 12:13), and post-exilic priests and leaders. The LXX form Ieremias passed into Spanish 'Jeremias,' French 'Jeremie,' and German 'Jeremia,' all reflecting the Greek mediation of the Hebrew original.
+
+### G4396 / Sense 76027 (146 occ, sense 1 of 1)
+**Label:** prophet, spokesperson of God
+**Lemma gloss:** Prophet — one who speaks on behalf of God, delivering divine messages, warnings, and promises to the people
+**Description:** One who speaks on behalf of God, a prophet. This is the single core meaning of the noun throughout the New Testament, encompassing Old Testament prophets referenced in fulfillment formulas ('spoken through the prophet,' Matt 1:22, 2:5, 2:15, etc.), named prophets like Isaiah and Jeremiah, prophets as a class in Israel's history ('they persecuted the prophets,' Matt 5:12), Jesus identified as a prophet (Luke 7:16, John 9:17), the prophesied 'Prophet like Moses' (Acts 3:22, 7:37), and New Testament prophets exercising the gift of prophecy in the church (1 Cor 14:32, Eph 3:5). All auto-clustered variants represent mere grammatical case or number differences (singular/plural, nominative/genitive/dative/accusative) of this single lexical sense, not genuinely distinct meanings.
+**Enriched:** A person who speaks on behalf of God, delivering divine revelation, warning, or promise. In the New Testament this covers Old Testament prophets referenced in Scripture citations (Matt 1:22; 2:5), Jesus recognized as a prophet by the crowds (Matt 21:11; Luke 24:19), and Spirit-gifted prophets in early Christian communities (1 Cor 14:29; Eph 4:11). The underlying idea throughout is authorized divine speech — the prophet does not originate the message but transmits what God has given. Spanish 'profeta,' French 'prophete,' and German 'Prophet' all derive directly from this Greek term.
+
+### H0001 / Sense 79293 (146 occ, sense 2 of 3)
+**Label:** ancestor, forefather
+**Lemma gloss:** Father: immediate male parent; ancestor or forefather (plural); patriarchal clan head in Israel's tribal organization.
+**Description:** Previous generations of a people or family, used in the plural to denote forefathers or patriarchs of Israel; target languages shift to ancestor-specific terms (Korean 조상, Hindi पूर्वज/पितर, Arabic آبَاء as collective ancestors, Swahili baba zao in ancestral sense).
+**Enriched:** Ancestors or forefathers, used overwhelmingly in the plural (avot) to denote previous generations of Israel's lineage — those who came out of Egypt, received the covenant, or sinned in the wilderness. With 146 occurrences, this sense anchors phrases like 'the God of your fathers' (Exod 3:13) and 'the land sworn to your fathers.' Korean 조상, Hindi पूर्वज/पितर, and Arabic آباء all employ dedicated ancestor vocabulary distinct from 'father,' underscoring that the Hebrew plural avot carries a collective, transgenerational meaning absent from the singular.
+
+### H1992 / Sense 93277 (146 occ, sense 2 of 8)
+**Label:** to/for them (dative)
+**Lemma gloss:** They, them, those; 3rd-person plural pronoun with prepositional forms (to/for/from/like/in them)
+**Description:** With preposition lamed expressing dative, benefactive, or directional sense ('to them', 'for them', 'belonging to them', 'on them', 'among them', 'against them'), including conjunctive forms.
+**Enriched:** Combined with lamed to express the dative or benefactive: 'to them,' 'for them,' 'belonging to them.' At 146 occurrences this is the most common prepositional form. Spanish 'a ellos' and 'para ellos,' French 'à eux,' and German 'zu ihnen' all preserve the directional-benefactive range. Lev 4:20 and Deut 7:5 illustrate commands directed toward or on behalf of groups.
+
+### H2026 / Sense 93668 (146 occ, sense 1 of 4)
+**Label:** kill, slay (active)
+**Lemma gloss:** To kill or slay violently; as participle, a slayer or the slain; in passive stems, to be killed.
+**Description:** Active Qal finite forms and infinitives meaning to kill or slay violently and intentionally, encompassing all persons, numbers, tenses, moods, and pronominal suffixes.
+**Enriched:** The core Qal active meaning: to kill, slay — the deliberate taking of life through violence, whether in war, judicial execution, personal vengeance, or divine judgment. This dominates with 146 occurrences spanning every major narrative corpus. From Cain's fear of retribution (Gen 4:14) to Esau's murderous vow (Gen 27:42) to the sword of the Babylonians, harag is the standard verb for lethal violence. Spanish 'mató/mataron' and French 'tua/tuèrent' render it straightforwardly, while German 'erschlugen' ('struck dead') sometimes adds the manner of killing.
+
+### H2416a / Sense 96464 (146 occ, sense 1 of 5)
+**Label:** alive, living (state/attribute)
+**Lemma gloss:** Alive, living; having life; substantively: living creature; in oath formulas 'as X lives'; also raw, fresh.
+**Description:** The core adjectival meaning of being alive, having life, used predicatively ('he is alive'), attributively ('the living God,' 'living water'), and substantively ('the living ones,' 'land of the living'); Arabic حَيٌّ / حَيًّا / الْحَيُّ / الْأَحْيَاءِ, Korean 살아 있다 / 살아 있는 / 산 자들, Swahili hai / aliye hai / walio hai all confirm a single semantic core across all inflectional and syntactic variants.
+**Enriched:** The core adjectival sense: alive, living, having life — 146 of 244 occurrences. Used predicatively ('Is your father still alive?' Gen 43:7, 27), attributively ('the living God,' Deut 5:26; Josh 3:10; 1 Sam 17:26), and substantively ('the land of the living,' Ps 27:13; Isa 38:11). This sense spans the entire biological-to-theological spectrum: from Jacob's relief that Joseph is alive (Gen 45:26) to the prophetic vision of dry bones coming to life (Ezek 37:3). Spanish vivo/viviente, Korean 살아 있는, Arabic حَيّ, and Swahili hai all deploy their primary vitality adjective. The phrase 'eretz hachayyim ('land of the living') appears eleven times as a poetic designation for this present world in contrast with Sheol.
+
+### H2451 / Sense 97003 (146 occ, sense 1 of 3)
+**Label:** wisdom, discernment
+**Lemma gloss:** Wisdom, discernment, sound judgment; technical skill or craftsmanship; prudent counsel
+**Description:** The intellectual and moral quality of wisdom, sound judgment, and discernment — the general abstract sense encompassing knowledge, insight, and prudent understanding, whether attributed to God or humans.
+**Enriched:** The broad intellectual and moral quality of wisdom, discernment, and sound judgment — covering 146 of 149 occurrences. This ranges from Solomon's legendary insight in governance and natural history (1 Kgs 4:29-34; 5:12), through Proverbs' ethical instruction (Prov 1:2, 7; 2:2, 6, 10; 4:5, 7, 11; 9:10), to Ecclesiastes' philosophical interrogation of wisdom's value (Eccl 1:13, 16-18; 2:3, 9, 12-13, 21, 26; 7:12, 19, 23, 25; 8:1, 16; 9:10, 13, 15-16, 18). It also encompasses prophetic contexts where wisdom is attributed to foreign powers (Jer 49:7; Ezek 28:4-5, 7, 12, 17; Isa 10:13; 29:14). German Weisheit, French sagesse, and Arabic hikmah uniformly map to this sense.
+
+### H0977 / Sense 86071 (145 occ, sense 1 of 5)
+**Label:** choose, select (Qal active)
+**Lemma gloss:** To choose, select, prefer; of God's sovereign election of persons and places, and of human deliberate choice; passive: chosen, elect.
+**Description:** The core Qal active sense of deliberately choosing or selecting a person, place, or thing, covering all finite verb forms, imperatives, infinitives, cohortatives, and active participles across all persons and numbers.
+**Enriched:** The core Qal active sense of deliberately choosing or selecting — by far the dominant usage at 145 occurrences. This covers both divine election (God choosing Abraham, Israel, Levites, Jerusalem, David's line: Deut 4:37, 7:6-7, Neh 9:7) and human choice (Joshua told to 'choose men' at Exod 17:9; Job declaring 'I would choose' at Job 9:14). Arabic yakhtāru, Korean 택하다, and Swahili -chagua all converge on deliberate, volitional selection. The verb regularly takes the preposition be- to mark the object chosen, a distinctive Hebrew idiom that Spanish renders with the direct object (escoja a) while German uses erwählen.
+
+### H2416e / Sense 96560 (145 occ, sense 1 of 2)
+**Label:** life, lifespan, lifetime
+**Lemma gloss:** Life, lifespan, lifetime; the abstract state of being alive, or substantively 'the living' (living ones).
+**Description:** The abstract concept of being alive, one's duration of life, or the state of living, used across all grammatical inflections and prepositional constructions.
+**Enriched:** The abstract concept of life, lifespan, or the state of being alive — covering physical existence, its duration, and its quality. Appears 145 times in diverse frames: 'breath of life' (Gen 2:7; 7:15), 'years of the life of Sarah' (Gen 23:1), 'my life is bitter' (Gen 27:46), and 'your lovingkindness is better than life' (Ps 63:4). Multilingual glosses converge emphatically: Spanish 'vida/la vida,' French 'vie,' German 'Leben/des Lebens' — all abstract life-nouns without exception.
+
+### H3097 / Sense 101418 (145 occ, sense 1 of 1)
+**Label:** Joab (proper name)
+**Lemma gloss:** Joab — personal name meaning 'YHWH is father,' primarily David's nephew and military commander
+**Description:** The Hebrew proper name Joab (יוֹאָב), meaning 'YHWH is father,' a theophoric name compounding the divine name (יו, shortened from יהוה) with אָב ('father'). The primary bearer is David's nephew (son of Zeruiah, David's sister) who served as commander-in-chief of David's army throughout his reign. Joab appears prominently in the narratives of 2 Samuel, 1 Kings 1-2, and the parallel account in 1 Chronicles, playing key roles in the capture of Jerusalem (2 Sam 5:8; 1 Chr 11:6), the wars against Ammon and Aram (2 Sam 10-12), the Absalom rebellion (2 Sam 14, 18-19), and court intrigues (1 Kgs 1-2). An ancestor of returned exiles also bears this name (Ezra 2:6; 8:9; Neh 7:11). All inflectional variants (with prepositions ל, conjunctions ו, or standalone) are purely grammatical and refer to the same proper noun.
+**Enriched:** The Hebrew proper name Yoav, a theophoric compound meaning 'YHWH is father.' Its dominant referent is David's nephew through Zeruiah, who served as commander-in-chief of Israel's forces across David's entire reign — from the civil war with Ish-bosheth (2 Sam 2:13) through Absalom's revolt (2 Sam 18:2) to his own death under Solomon (1 Kgs 2:34). Minor bearers include a Judahite in 1 Chr 4:14 and a post-exilic family name in Ezra 2:6. Spanish and German both render it 'Joab,' while the Septuagint gives Ioab.
+
+### H4519 / Sense 112581 (145 occ, sense 1 of 2)
+**Label:** Manasseh (proper name)
+**Lemma gloss:** Manasseh; the firstborn of Joseph, his tribal descendants, their territory, or later persons of that name.
+**Description:** The proper noun Manasseh (מְנַשֶּׁה), referring to the firstborn son of Joseph, the Israelite tribe descended from him, the territory allotted to that tribe, or later individuals bearing the same name (e.g., King Manasseh of Judah).
+**Enriched:** The proper noun Manasseh (מְנַשֶּׁה), covering the individual (Joseph's firstborn, Gen 41:51; 48:1–20), the Israelite tribe descended from him, their territorial allotment both east and west of the Jordan (Josh 17; Num 32), and later bearers of the name including King Manasseh of Judah. Multilingual glosses are consistent transliterations: Spanish 'Manasés,' French 'Manassé,' German 'Manasse' — all recognizable proper-noun forms preserving the Hebrew phonology.
+
+### H6666 / Sense 129580 (145 occ, sense 1 of 3)
+**Label:** righteousness, moral uprightness
+**Lemma gloss:** Righteousness, justice; right conduct before God and society; concrete righteous acts or deeds of vindication
+**Description:** The abstract moral quality of conformity to God's standard of right — the dominant sense of צְדָקָה covering the vast majority of occurrences, rendered Arabic بِرّ (birr, piety/righteousness) or عَدْل (adl, justice), Korean 의/의로움 (ui/uiroum), Swahili haki/uadilifu; includes all singular inflections with article, construct, pronominal suffixes (my/your/his/our/their righteousness), prepositional prefixes (in/from/for/according-to righteousness), and conjunctions.
+**Enriched:** The abstract moral quality of righteousness — conformity to God's standard of right, covenant faithfulness, and ethical uprightness — covering 145 of 159 occurrences. This encompasses both divine and human righteousness: God's saving righteousness (Ps 24:5; Isa 45:8; 46:13), the righteousness credited to Abram's faith (Gen 15:6), royal justice executed alongside mishpat (2 Sam 8:15; Isa 9:7), and personal moral conduct (Deut 6:25; Ezek 18:19-22). Arabic birr, Spanish justicia, and Korean uiro converge on this core ethical-relational meaning. The word functions as both a relational term (right standing before God) and a behavioral one (right action in society).
+
+### H7307 / Sense 135003 (145 occ, sense 1 of 6)
+**Label:** human spirit / disposition / mind
+**Lemma gloss:** Wind, breath, spirit; the Spirit of God; human disposition or mind; compass direction; spirit beings.
+**Description:** The inner person, human spirit, disposition, temper, mood, will, or courage — the immaterial seat of emotions and volition in a person — Arabic رُوح (human), Korean 영/심령/마음, Swahili roho (lowercase), Hindi आत्मा (of a person).
+**Enriched:** The human spirit, disposition, mind, mood, or inner life — the immaterial seat of emotions, will, and courage (145 occurrences). Includes 'shortness of spirit' (Exod 6:9, impatience/anguish), 'a new spirit' (Ezek 18:31), and 'a willing spirit' (Ps 51:12). Korean renders this as 심령/마음 (heart-mind), Swahili as roho (lowercase, human), and Hindi as मन/आत्मा — each language choosing from its own interior-life vocabulary. The broad application to jealousy, anger, patience, and courage confirms this as the seat of the whole inner person, not merely intellect.
+
+### G2147 / Sense 68449 (144 occ, sense 1 of 3)
+**Label:** find, discover
+**Lemma gloss:** To find, discover, or come upon someone or something; passive: to be found, turn out to be, be revealed.
+**Description:** To locate, come upon, or discover someone or something, whether by deliberate search or unexpectedly (Arabic wajada/yajidu, Korean 찾았다/발견했다, Swahili -pata/-kuta).
+**Enriched:** The active sense: to find, discover, or come upon by searching or by chance. This covers the vast majority of occurrences—locating people (Matt 20:6, finding idle workers), objects (Matt 13:44, treasure in a field), or abstract realities (finding rest, finding favor). Arabic wajada/yajidu and Korean 찾았다 consistently render this active discovery. The word moves fluidly between physical search and cognitive recognition.
+
+### H5127 / Sense 116783 (144 occ, sense 1 of 7)
+**Label:** flee, run away (Qal)
+**Lemma gloss:** To flee, escape, run away from danger; as participle: a fugitive; Hifil: put to flight, drive away
+**Description:** To flee or run away from danger, battle, an enemy, or a threatening situation — the core Qal meaning of נוס covering all finite verb forms (perfect, imperfect, imperative, consecutive, cohortative, infinitive with prepositions) and the infinitive absolute, attested across all persons, numbers, and genders.
+**Enriched:** The core Qal meaning covering the vast majority of occurrences: to flee or run away from danger, enemies, battle, or divine judgment. From Jacob fleeing Esau to Israelite armies routed in war, this sense pervades narrative, law (cities of refuge, Num 35:25), and poetry alike. Spanish huir and French fuir directly render this urgent, survival-driven motion.
+
+### H7626 / Sense 137726 (144 occ, sense 1 of 4)
+**Label:** tribe, tribal division
+**Lemma gloss:** Rod, staff, scepter, or tribe; a stick used for striking, discipline, or rule, and by metonymy a tribal division of Israel.
+**Description:** A tribal division or clan of Israel, one of the twelve (or more) socio-political units descended from the sons of Jacob. Arabic cognate سِبْط (sibṭ, pl. أَسْبَاط asbāṭ) is a direct Semitic cognate sharing the same triconsonantal root š-b-ṭ, used exclusively for tribal/genealogical groupings and never for physical objects. Korean 지파 (jipa) is the dedicated term for 'tribe' in biblical Korean, morphologically unambiguous and entirely distinct from 막대기 (makdaegi, 'rod') or 홀 (hol, 'scepter'). Swahili uses kabila (sg.) / makabila (pl.) = 'tribe(s)', a noun class 5/6 pair that is never used for implements. Hindi गोत्र (gotra) = 'clan/tribe' confirms the same semantic field. All grammatical inflections — construct state, pronominal suffixes (your/his/their tribes), prepositional prefixes (ל to, ב in/among, מ from) — reflect morphological variation of a single sense.
+**Enriched:** Tribe or tribal division of Israel: The most frequent sense by far—one of the socio-political units descended from the sons of Jacob. Genesis 49:28 concludes the tribal blessings with 'all these are the twelve tribes (shivtei) of Israel,' and the word appears constantly in Numbers, Joshua, and Judges for the allotment and governance of tribal territories. Arabic سِبْط (sibṭ, pl. أَسْبَاط asbāṭ) is a direct Semitic cognate sharing both form and meaning. Spanish 'tribus,' French 'tribus,' and German 'Stämme' all map this to the standard word for a lineage-based social division.
+

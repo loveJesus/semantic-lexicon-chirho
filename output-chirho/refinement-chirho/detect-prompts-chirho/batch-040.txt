@@ -1,0 +1,291 @@
+# Sense Refinement Detection — Batch 040
+
+You are a biblical lexicographer reviewing sense entries for a Hebrew/Aramaic/Greek lexicon.
+Each entry below is a single "sense" that was produced by clustering translation signatures 
+and then merging with an LLM. Some senses may have been OVER-LUMPED — they contain genuinely 
+distinct meanings that should be separate senses.
+
+## Your Task
+
+For each sense, determine if it should be SPLIT into multiple senses. Look for:
+- Literal vs. figurative/metaphorical uses lumped together
+- Concrete vs. abstract meanings combined
+- Multiple distinct referents (e.g., "father" = biological parent + patron/advisor + originator)
+- Physical vs. spiritual/theological uses merged
+- Different syntactic frames producing different meanings
+
+## Output Format
+
+Return a JSON array. For senses that need NO splitting, omit them entirely.
+For senses that SHOULD be split, include an entry like:
+
+```json
+[
+  {
+    "senseIdChirho": 79287,
+    "lemmaIdChirho": "H0001",
+    "currentLabelChirho": "father, immediate male parent",
+    "splitProposalChirho": [
+      {
+        "newLabelChirho": "biological/legal father",
+        "criteriaChirho": "Direct parent-child relationship, possessive constructions with specific person"
+      },
+      {
+        "newLabelChirho": "metaphorical father (patron, advisor, protector)",
+        "criteriaChirho": "Title of respect for prophets, advisors, or authority figures; 'father to Pharaoh' type usage"
+      }
+    ],
+    "confidenceChirho": "high",
+    "reasoningChirho": "Description explicitly mentions 'title of respect or metaphorical originator' alongside biological father"
+  }
+]
+```
+
+Only propose splits where you have MEDIUM or HIGH confidence. Do NOT split function words (articles, 
+prepositions, particles, conjunctions) unless there is a genuinely distinct semantic sense (not just 
+syntactic variation). Proper nouns generally should NOT be split.
+
+If NO senses in this batch need splitting, return an empty array: []
+
+## Senses to Review
+
+### H0160 / Sense 80284 (33 occ, sense 1 of 2)
+**Label:** love (abstract noun)
+**Lemma gloss:** Love, affection, devotion — as abstract noun or verbal infinitive expressing the act and attitude of loving.
+**Description:** The emotion or attitude of love, affection, or devotion, used as an abstract noun in various grammatical forms (absolute, construct, with article, with pronominal suffixes, and prepositional prefixes).
+**Enriched:** The abstract emotion or disposition of love — covering covenant faithfulness (Deut 7:8), deep friendship (1 Sam 20:17; 2 Sam 1:26 'your love was more wonderful than the love of women'), romantic desire (Song 2:4-5; 8:6-7), and everyday human affection (Prov 10:12 'love covers all offenses'). Translations across languages converge on a single core term (amor, amour, Liebe), confirming this is one unified semantic field. Construct forms with pronominal suffixes (אַהֲבָתוֹ, אַהֲבָתִי) point to love as a relational quality belonging to someone.
+
+### H0335 / Sense 81441 (33 occ, sense 1 of 3)
+**Label:** where? (interrogative of place)
+**Lemma gloss:** Interrogative particle: where? which? how? -- asking about location, selection, or manner
+**Description:** Interrogative particle asking about location, position, or source of origin — 'where?', 'from where?', 'whither?'
+**Enriched:** The dominant locative sense: asking 'where?' about a person or place. Genesis 3:9 ('Where are you?') and 4:9 ('Where is Abel?') set the tone -- divine confrontations, not neutral questions. The suffixed 'ayyo' in 2 Kings 19:13 anticipates its noun. Spanish 'donde' and French 'ou' map cleanly onto this spatial interrogative.
+
+### H0962 / Sense 85968 (33 occ, sense 1 of 4)
+**Label:** plunder, take as spoil
+**Lemma gloss:** To plunder, take spoil; as participle, a plunderer; in passive stems, to be plundered or despoiled.
+**Description:** Qal active: to plunder, loot, carry off goods or possessions as spoil of war or raiding, including all finite forms (perfect, imperfect, imperative, cohortative, jussive) and infinitives expressing purpose or result.
+**Enriched:** The primary active sense: to plunder, loot, or carry off possessions as spoil of war. This covers the full range of finite verb forms — perfect, imperfect, imperative, cohortative, and infinitive. It dominates the Pentateuchal war narratives (Num 31:9, 32, 53; Deut 2:35; 3:7) and the conquest accounts (Josh 8:2; 11:14), where victorious armies systematically strip defeated peoples of livestock, goods, and treasures. Spanish 'saqueamos' (we plundered) and German 'plünderte' reflect the straightforward military pillaging. Nahum 2:10's doubled imperative 'Plunder! Plunder!' captures the frenzied intensity the word can carry.
+
+### H1416 / Sense 89350 (33 occ, sense 1 of 1)
+**Label:** band, troop, raiding party
+**Lemma gloss:** band, troop, raiding party — a detachment of men organized for warfare or plunder
+**Description:** A band of men, especially a raiding party or troop of soldiers; used of marauding bands, military detachments, and organized groups of warriors.
+**Enriched:** A band of armed men assembled for raiding, plundering, or military incursion. David's pursuit of the Amalekite raiding party at Ziklag exemplifies the term (1 Sam 30:8-23). Recurring in Kings for marauding border bands (2 Kgs 5:2; 6:23; 13:20-21; 24:2). The wordplay in Gen 49:19 puns on Gad's name. Used figuratively of God's hostile 'troops' in Job 19:12 and of priestly bands committing violence in Hos 6:9.
+
+### H1540 / Sense 90116 (33 occ, sense 3 of 10)
+**Label:** Nifal: be revealed or appear
+**Lemma gloss:** uncover, reveal, go into exile — verb of exposure and displacement: literal (nakedness, covering) or abstract (secrets, divine truth); causative stems = exile
+**Description:** Nifal (and Pual) reflexive-passive sense of being revealed, being uncovered, appearing, or manifesting oneself, including divine self-revelation (Arabic: انكشف inkashafa / أُعلن u'lina; Korean: 드러나다/나타나다).
+**Enriched:** Nifal 'be revealed, appear' (33×) is reflexive-passive: being uncovered, manifested, or disclosed—often of divine self-revelation. Arabic اِنْكَشَفَ/أُعلِنَ, Korean 드러나다/나타나다, Spanish ser-revelado/manifestarse. God 'revealed Himself' to Abraham (Gen 35:7), to Samuel (1 Sam 3:21), 'the LORD's arm is revealed' (Isa 53:1). Also human shame 'being uncovered' (Isa 47:3) or secrets 'being exposed' (Jer 11:20).
+
+### H1661 / Sense 90849 (33 occ, sense 1 of 1)
+**Label:** Gath (Philistine city)
+**Lemma gloss:** Gath — a major Philistine city-state, home of Goliath and site of key encounters between Israel and Philistia
+**Description:** The proper geographical name for Gath (Hebrew גַּת, 'winepress'), one of the five major Philistine city-states, home of Goliath and a key locale in the David narratives. All three clusters represent prepositional and case variants of the same toponym: the primary form 'Gath/in Gath' covering the vast majority of occurrences (eng Gath/in-Gath, spa Gat/en-Gat, hin गत/गत-में, arb جَتَّ/فِي-جَتَّ, kor 에-가드/가드의, swa Gathi/katika-Gathi), the ablative/source form 'from Gath' (eng from-Gath, spa de-Gat, hin गत-से, arb مِنْ-جَتَّ, kor 가드에서, swa kutoka-Gathi), and the dative/benefactive 'for Gath' (eng for-Gath, spa para-Gat, hin गत-के-लिए, arb لِـجَتّ, kor 가드에, swa kwa-Gathi). All translations consistently render this as a single place name.
+**Enriched:** The proper name of a major Philistine city, one of the pentapolis alongside Gaza, Ashkelon, Ashdod, and Ekron. Famous as Goliath's hometown (1 Sam 17:4), the place of David's exile under Achish (1 Sam 21:10; 27:2), and the setting of the proverbial lament 'Tell it not in Gath' (2 Sam 1:20). Also appears in Amos 6:2 as a cautionary example. Etymologically means 'winepress.'
+
+### H2296 / Sense 95454 (33 occ, sense 1 of 3)
+**Label:** gird on, fasten around
+**Lemma gloss:** To gird, fasten around the body (a belt, sword, sackcloth, or garment); in stative use, to be girded or equipped.
+**Description:** To bind or fasten something (a sword, belt, sackcloth, ephod, or other garment/weapon) around the waist or body of oneself or another person, including all active, imperative, imperfect, perfect, infinitive, and active participial forms of the primary root חגר I.
+**Enriched:** To gird on or fasten something around the body — the active transitive sense covering the binding of sackcloth in mourning, the strapping on of swords for battle, and the fastening of priestly garments for service. Moses girds Aaron and his sons (Lev 8:7, 13), Ehud straps a dagger to his thigh (Judg 3:16), and David girds on his sword (1 Sam 25:13). Spanish 'ceñir' and French 'ceindre' preserve the tight-wrapping force. The wide range of objects — sackcloth, swords, ephods, belts — makes this verb the default for any act of fastening to the body.
+
+### H2399 / Sense 96307 (33 occ, sense 1 of 3)
+**Label:** sin, transgression
+**Lemma gloss:** Sin, transgression against God or man; rarely a sin offering or minor fault
+**Description:** Moral or religious transgression against God's law; the primary sense covering singular and plural forms with various pronominal suffixes and prepositional prefixes.
+**Enriched:** The primary sense: sin or transgression against God's law and covenant. This covers 33 of 35 occurrences, spanning both singular and plural forms with various pronominal suffixes. Key passages include Leviticus 19:17 ('you shall not bear sin because of him'), Psalm 51:11 ('hide your face from my sins'), and Isaiah 1:18 ('though your sins be as scarlet'). Every target language renders it with its standard sin vocabulary — Spanish 'pecado,' French 'péché,' German 'Sünde' — confirming the unified theological core.
+
+### H3233 / Sense 102496 (33 occ, sense 1 of 1)
+**Label:** the right
+**Lemma gloss:** right (adj.) — pertaining to the right hand or right side, used of body parts, architectural features, and ritual
+**Description:** the right, (the right one), (the right) (33 occurrences across 4 original clusters)
+**Enriched:** Pertaining to the right hand or right side, used both of body parts in ritual contexts and of architectural orientation. In priestly consecration and purification rites, the right ear, right thumb, and right big toe receive blood and oil (Exod 29:20; Lev 8:23-24; 14:14-28). In temple descriptions, it identifies the right pillar Jachin (1 Kgs 7:21) and the right side of the sanctuary (1 Kgs 6:8; Ezek 47:1-2). Always contrasted with semali ('left').
+
+### H3368 / Sense 103597 (33 occ, sense 1 of 3)
+**Label:** precious, costly, valuable
+**Lemma gloss:** Precious, costly, rare; of great value whether material, personal, or in scarcity
+**Description:** Of great material or intrinsic worth, applied to stones, metals, vessels, and abstract things prized for their value.
+**Enriched:** The primary and most frequent sense: precious, costly, of great material or intrinsic worth. Applied to building stones (1 Kgs 5:17; 7:9-11), vessels, wealth (Prov 1:13; 12:27), and the abstract value of wisdom and life itself. Isaiah 28:16 speaks of a 'precious cornerstone,' combining material and theological value. Spanish 'costosas/preciosa' and French 'precieux' converge here, as do virtually all target languages, reflecting cross-linguistic stability for this core meaning.
+
+### H3468 / Sense 104911 (33 occ, sense 1 of 2)
+**Label:** salvation, deliverance
+**Lemma gloss:** Deliverance, salvation, safety — God's rescuing act or the resulting state of security and well-being
+**Description:** The act of divine rescue or deliverance, especially God's saving intervention on behalf of His people or an individual.
+**Enriched:** Active divine deliverance or salvation — the mighty act by which God rescues his people from enemies, oppression, or distress (2 Sam 22:3, 36; Ps 27:1; Isa 62:11). This is the dominant sense, appearing in doxological exclamations and covenant affirmations. Spanish consistently renders 'salvación,' French 'salut,' and the possessive suffixes ('my salvation,' 'your salvation') underscore the personal, relational character of God's saving intervention. In Hab 3:13, the word takes an infinitival function — 'you went out to save your anointed.'
+
+### H3876 / Sense 108546 (33 occ, sense 1 of 1)
+**Label:** Lot
+**Lemma gloss:** Lot — Abraham's nephew who chose Sodom's plain, ancestor of Moab and Ammon
+**Description:** Lot, and Lot, against Lot (33 occurrences across 4 original clusters)
+**Enriched:** The personal name of Abraham's nephew, whose narrative arc in Genesis 11-19 moves from accompaniment to separation, captivity, rescue, and escape from Sodom's destruction. His choice of the Jordan plain (Gen 13:10-12), rescue by Abraham (Gen 14:12-16), and deliverance from Sodom (Gen 19:1-26) define him. Deuteronomy 2:9, 19 and Psalm 83:9 reference his descendants, the Moabites and Ammonites.
+
+### H4150 / Sense 110182 (33 occ, sense 3 of 5)
+**Label:** appointed time
+**Lemma gloss:** An appointed time, place, or assembly; most often in 'tent of meeting' (ohel moed), also for sacred festivals and set times.
+**Description:** A designated or fixed point in time; Arabic مِيعَاد/مَوْعِد (mīʿād/mawʿid, appointment), Korean 정한 때 (jeonghan ttae, appointed time), Swahili wakati (time), Hindi नियत समय (niyat samay, fixed time), Spanish tiempo señalado all converge on temporal appointment rather than festival or place
+**Enriched:** A designated or fixed point in time, without specific reference to festivals or the tabernacle. God promises Abraham a son 'at the appointed time' (Gen 18:14), and Samuel tells Saul to wait until 'the appointed time' (1 Sam 13:8). The Arabic miad/mawid ('appointment/date') and Korean jeonghan ttae ('set time') capture this precisely. The emphasis falls on divine or authoritative scheduling: something will happen because it was decreed for this moment.
+
+### H4191 / Sense 110446 (33 occ, sense 5 of 7)
+**Label:** the dead (Qal participle nominal)
+**Lemma gloss:** To die, be dead; (Hifil) kill, put to death; (Hofal) be executed; (participle) the dead; (infinitive) death
+**Description:** The dead, a dead person, corpse — Qal participle used as a substantive noun referring to a deceased person or corpse, often with possessive suffixes (my dead, your dead, his dead) or in prepositional phrases (among the dead, like the dead, for the dead); Arabic مَيِّتٌ/مَيِّتينَ, Korean 죽은 자, Swahili maiti/wafu.
+**Enriched:** The Qal participle used substantively to denote 'the dead, a dead person, a corpse.' Abraham's negotiation for Sarah's burial (Gen 23:3–8) repeats 'my dead' (methi) five times, establishing a tender idiom for the deceased. Spanish 'muertos,' French 'le mort,' and German 'Tote' all nominalize the participle identically. This usage bridges verb and noun, person and remains.
+
+### H4318 / Sense 111218 (33 occ, sense 1 of 1)
+**Label:** Micah (person name)
+**Lemma gloss:** Micah — personal name borne by several biblical figures, notably the Ephraimite of Judges and the prophet
+**Description:** The proper noun Mikah (Micah), referring to several biblical persons including the Ephraimite of Judges 17-18, the prophet Micah of Moresheth, and others. All four clusters represent the same personal name with minor spelling variants and prepositional differences: the main form Mikhah (eng: Mikhah/Mikah, spa: Mica/Micaias, arb: مِيخَا/مِيكَا, kor: 미가, swa: Mika), a variant spelling Micah (eng: Micah, spa: Miqueas), the prepositional form to-Mikhah (eng: to-Mikhah, arb: لِ–مِيخَا), and a ketiv variant Mikhayehu (spa: Mijayehu, arb: ميكهو). Hindi consistently renders मीकाह/मीका across all forms.
+**Enriched:** A personal name meaning 'Who is like YHWH?' borne by multiple biblical figures. The Ephraimite Micah of Judges 17-18 established a private shrine with an idol and a hired Levite, illustrating pre-monarchic religious disorder. The prophet Micah of Moresheth (Mic 1:1) delivered oracles against Samaria and Jerusalem; Jer 26:18 cites his prophecy. Other bearers include a descendant of Saul (1 Chr 8:34; 9:40) and Levitical figures in Chronicles.
+
+### H5307 / Sense 118404 (33 occ, sense 2 of 13)
+**Label:** Hifil: cause to fall / strike down
+**Lemma gloss:** to fall, fall down; to lie prostrate; to cast lots; to desert; to attack; to dismount; causative: to cause to fall, cast down, allot
+**Description:** The basic Hifil causative meaning: to cause someone or something to fall, knock down, or strike down. Arabic uses the Form IV causative أَسْقَطَ (asqaṭa) / يُسْقِطُ (yusqiṭu) 'to cause to fall', the morphological causative of سَقَطَ, and also أَوْقَعَ (awqaʿa) 'to cause to befall'. Korean uses 떨어뜨리다 (tteoreotteurida) 'to make fall/drop' and 쓰러뜨리다 (ssureotteurida) 'to topple/knock down', both causative derivations. Swahili uses the causative -angusha 'to cause to fall' (from -anguka), with forms like akaangusha, nitamwangusha, kuangusha. Hindi गिराना (girānā) is the explicit causative of गिरना.
+**Enriched:** Hifil causative: 'to cause to fall,' 'to strike down,' 'to knock down.' Arabic uses Form IV causative أَسْقَطَ (asqaṭa), perfectly mirroring the Hebrew morphology. Genesis 2:21 has God causing deep sleep to fall on Adam. Deuteronomy 25:2 allows a judge to cause a guilty man to fall (be beaten). The martial nuance appears frequently: causing enemies to fall means defeating them.
+
+### H5437 / Sense 120102 (33 occ, sense 2 of 9)
+**Label:** surround, encompass (Qal)
+**Lemma gloss:** turn, surround, go around; (Qal) turn, encircle, traverse; (Niphal) wind, turn; (Hifil) cause to turn, bring around; (Hofal) be turned
+**Description:** To encircle or surround a person, place, or object, including hostile besieging and protective encompassing (Qal stem with object; Arabic ahata).
+**Enriched:** To encircle or surround a person, place, or object—sometimes hostile (besieging), sometimes protective or encompassing. Genesis 2:11, 13 (rivers surrounding lands), Genesis 37:7 (sheaves surrounding Joseph's), Judges 16:2, 20:5 (surrounding a house or city for attack) illustrate the transitive use with an object. Arabic aḥāṭa (to surround) and Spanish rodear are standard equivalents. This sense emphasizes static or dynamic encirclement, from geographical features to military siege.
+
+### H5941 / Sense 124347 (33 occ, sense 1 of 1)
+**Label:** Eli
+**Lemma gloss:** Eli — the aged priest at Shiloh who raised Samuel and whose house fell under divine judgment
+**Description:** Eli, and Eli (33 occurrences across 3 original clusters)
+**Enriched:** The personal name of the priest and judge at Shiloh who mentored the boy Samuel. His narrative spans Hannah's vow (1 Sam 1:9-17), Samuel's nocturnal call (1 Sam 3:1-18), the oracle against his house for tolerating his sons' corruption (1 Sam 2:27-36), and his death upon hearing of the ark's capture (1 Sam 4:12-18). His priestly line's removal is completed in 1 Kings 2:27.
+
+### H6241 / Sense 126707 (33 occ, sense 1 of 1)
+**Label:** tenth part, tithe measure (issaron)
+**Lemma gloss:** tenth part (issaron) — a dry measure equal to one-tenth of an ephah, prescribed for grain offerings
+**Description:** A fractional unit of dry measure equal to one-tenth of an ephah, used almost exclusively in cultic grain-offering prescriptions (Lev 14:10, Num 15:4, 28:5). The singular עִשָּׂרוֹן (eng: tenth, spa: décima, arb: عُشْرٍ, kor: 십분의–일, swa: ya-kumi) and plural עֶשְׂרֹנִים (eng: tenths, spa: décimas, hin: दसवें–भाग, arb: أَعْشَارٍ, swa: za-kumi) are grammatical inflections of the same measurement noun, not distinct senses.
+**Enriched:** A standard dry measure equal to one-tenth of an ephah, used exclusively in Priestly cultic texts to quantify the fine flour for grain offerings. Scaled to the accompanying sacrifice: one issaron per lamb (Num 15:4), two per ram (Num 15:6), three per bull (Num 15:9). Dominates the festival calendar of Numbers 28-29. Identified with the omer of Exodus 16:36 and rendered by the Septuagint as dekaton tou oiphi.
+
+### H6430 / Sense 127671 (33 occ, sense 2 of 2)
+**Label:** Philistine (individual person)
+**Lemma gloss:** Philistine(s) — the people of the coastal plain of Canaan, or an individual member of that nation
+**Description:** A single Philistine individual, used in the masculine singular form typically with the article, often referring to Goliath or another specific Philistine warrior.
+**Enriched:** A single Philistine individual, appearing 33 times exclusively in the singular (happelištî, 'the Philistine'). Nearly all occurrences cluster in 1 Samuel 17–19, referring to Goliath as David's famous antagonist (1 Sam 17:8, 23, 26), with one later reference to a Philistine slain by Abishai (2 Sam 21:17). The Spanish 'el filisteo' and French 'le Philistin' mirror this individuating singular article construction precisely.
+
+### H7045 / Sense 132322 (33 occ, sense 1 of 1)
+**Label:** curse, malediction
+**Lemma gloss:** curse, malediction — a solemn pronouncement invoking harm, often set opposite blessing in covenantal contexts
+**Description:** A solemn invocation of divine or covenantal punishment upon a person or people; the state of being under such a pronouncement, often as the consequence of disobedience to God's commands.
+**Enriched:** A solemn pronouncement invoking divine harm or the resulting state of being accursed. Most often paired antithetically with berakhah ('blessing') in covenantal formulae (Deut 11:26-28; Josh 8:34). Covers Rebekah's willingness to bear Jacob's curse (Gen 27:12-13), the groundless curse of Prov 26:2, Shimei's grievous curse against David (1 Kgs 2:8), and Jeremiah's repeated use of the word for nations that become objects of horror and execration (Jer 24:9; 25:18; 29:22).
+
+### H7068 / Sense 132408 (33 occ, sense 1 of 3)
+**Label:** jealousy, passionate possessiveness
+**Lemma gloss:** Jealousy, passionate possessiveness; zeal or ardent devotion; envy or resentful rivalry
+**Description:** Intense possessive emotion, whether divine jealousy (God's exclusive claim on His people) or human jealousy (spousal suspicion, rivalry), translated as 'jealousy/celos/غَيْرَة/질투/wivu' across languages.
+**Enriched:** Intense possessive emotion, whether divine jealousy over Israel (Num 25:11; Ezek 5:13) or human spousal suspicion (Num 5:14; Prov 6:34; 27:4). Song 8:6 pairs it with love: 'jealousy is cruel as the grave.' Arabic 'ghayra' and Swahili 'wivu' consistently mark this possessive rather than envious emotion across all 33 occurrences.
+
+### H7223 / Sense 134097 (33 occ, sense 2 of 8)
+**Label:** former (previous in time)
+**Lemma gloss:** First, former, chief; as adjective: first in sequence or time; substantively: former things, ancestors, the beginning
+**Description:** Adjective meaning 'former' or 'previous,' referring to an earlier state, condition, or entity as contrasted with a later one.
+**Enriched:** Adjective meaning 'former' or 'previous,' contrasting an earlier state with a present or later one. Hosea 2:9 uses it for the wife's 'former husband,' and Haggai 2:3 for the 'former glory' of the temple. Arabic sābiq ('preceding') and Spanish anterior capture this temporal-comparative nuance.
+
+### H7626 / Sense 137728 (33 occ, sense 2 of 4)
+**Label:** rod, staff, stick
+**Lemma gloss:** Rod, staff, scepter, or tribe; a stick used for striking, discipline, or rule, and by metonymy a tribal division of Israel.
+**Description:** A physical rod, staff, or stick used as a walking aid, implement of striking, instrument of discipline, or shepherd's tool. Arabic عَصَا (ʿaṣā) is the consistent translation — a common Semitic word for 'stick/staff' from a root meaning 'to be rigid/strong,' entirely distinct from سِبْط (tribe) or صَوْلَجَان (scepter). Korean shows 막대기 (makdaegi, 'rod/stick'), 지팡이 (jipangi, 'walking staff/cane'), and 매 (mae, 'switch/whipping rod') — all physical implements, never confused with 지파 (tribe) or 홀 (scepter). Swahili fimbo = 'stick/rod' consistently, sometimes with possessive fimbo yake/yako. Hindi uses लाठी (lāṭhī, 'staff/club'), डंडा (ḍaṇḍā, 'stick'), and छड़ी (chaṛī, 'rod/switch'). Includes the disciplinary/corrective usage (Prov 13:24 etc.) where Arabic translates as لِلتَّأْدِيبِ (lit-taʾdīb, 'for discipline') and Swahili as kwa adhabu ('for punishment'), and the threshing-stick usage (Isa 28:27) where English 'cumin' is a mistranslation but Arabic بِالْقَضِيبِ (bil-qaḍīb, 'with the rod') and Swahili kwa ufito ('with a stick') confirm the rod sense.
+**Enriched:** Rod, staff, or stick (physical implement): A concrete object used for striking, disciplining, herding, or as a weapon. Exodus 21:20 legislates the case of a master striking a slave 'with a rod,' and Proverbs 22:15 prescribes the 'rod of discipline' for a child's heart. Second Samuel 23:21 describes Benaiah seizing a staff from an Egyptian warrior—shebet as an improvised weapon. German 'Stab' (staff), French 'bâton' (stick), and Arabic عَصَا (ʿaṣā, rod/staff) all reflect the plain physical object, distinguishing it clearly from the tribal meaning.
+
+### H7628a / Sense 137788 (33 occ, sense 1 of 2)
+**Label:** captivity, state of exile
+**Lemma gloss:** Captivity or captives; the state of being taken prisoner or the persons so taken, especially in contexts of exile and divine judgment.
+**Description:** The abstract condition of being held captive or taken into exile; used of the state or experience of captivity, often with prepositions indicating movement into, location in, or release from that condition.
+**Enriched:** The abstract condition of being held captive or living in exile. Hebrew pairs it with verbs of motion — הָלַךְ בַּשְּׁבִי 'went into captivity' (Am 9:4; Nah 3:10) — and locative prepositions. Spanish 'cautiverio' and German 'Gefangenschaft' consistently render this sense, distinguishing it from the concrete. Ezra 2:1 uses the construct בְּנֵי שְׁבִי to denote 'children of the captivity,' treating exile as a defining collective experience.
+
+### H7673a / Sense 138240 (33 occ, sense 1 of 6)
+**Label:** cause to cease, put an end to
+**Lemma gloss:** To cease, desist, rest; in Hifil, to cause to cease, put an end to, remove, or abolish; to observe Sabbath rest.
+**Description:** Hifil causative: actively bringing something to a stop or termination — God or a human agent puts an end to joy, sacrifice, festivals, warfare, or other activities (Arabic أَبْطَلَ/أَبَادَ/أَوْقَفَ, Korean 그치게 하다, Swahili kukomesha/kusababisha kukoma).
+**Enriched:** Hifil causative: to cause to cease, put an end to — the largest sense at 33 occurrences, where God or a human agent actively terminates an ongoing activity, condition, or institution. God will 'cause to cease' the mirth of Israel (Hos 2:11), will 'put an end to' war in the land (Lev 26:6), and Pharaoh accuses Moses of making the people 'cease' from their labors (Exod 5:5). Arabic abṭala/awqafa ('nullify/halt') and Spanish hacer cesar ('cause to stop') both select causative cessation vocabulary. The objects terminated range from joy and sacrifice to warfare and memory, giving this sense a sweeping destructive-restorative range in prophetic discourse.
+
+### G0142 / Sense 61436 (32 occ, sense 2 of 8)
+**Label:** take up, pick up, gather
+**Lemma gloss:** To lift, take up, carry, or remove; spanning physical elevation, acquisition, sustained bearing, and figurative removal
+**Description:** To take up or pick up an object from where it lies, including picking up a bed or mat, gathering leftover fragments, or taking up serpents; focuses on acquiring possession of something at hand.
+**Enriched:** Physical acquisition: picking up an object from where it rests. Arabic رَفَعَ and Swahili -inua both point to 'lift from the ground.' Prominent in the feeding miracles where disciples 'took up' leftover fragments (Matt 14:20, 15:37), and in Jesus' command to take up one's bed (Matt 9:6).
+
+### G0165 / Sense 61558 (32 occ, sense 2 of 5)
+**Label:** eternity, forever (singular)
+**Lemma gloss:** An age, era, or epoch; eternity or perpetuity; in doxologies, 'forever and ever'; rarely, the material world.
+**Description:** Singular αἰών denoting unbounded duration or perpetuity, as in εἰς τὸν αἰῶνα (forever), with Spanish siempre/eternidad, Arabic الأَبَد, Korean 영원히, Swahili milele.
+**Enriched:** Singular perpetuity: aion in the phrase eis ton aiona ('unto the age,' i.e., forever) expressing unending duration without the stacked-plural intensification. Found 32 times, this is the form used in Jesus' pronouncements of permanent states — 'you shall never eat fruit again' (Matt 21:19), 'shall never have forgiveness' (Mark 3:29), 'shall never die' (John 11:26). Spanish eternidad/siempre, German Ewigkeit, and Korean 영원히 all render this as simple perpetuity. The boundary with sense 1 is formal (singular vs. plural formula) rather than deeply semantic, but the singular tends to appear in speech and narrative while the plural dominates worship.
+
+### G0165 / Sense 61559 (32 occ, sense 3 of 5)
+**Label:** age, era, world-age
+**Lemma gloss:** An age, era, or epoch; eternity or perpetuity; in doxologies, 'forever and ever'; rarely, the material world.
+**Description:** A bounded period or dispensation, as in 'this age' versus 'the age to come,' with Arabic الدَّهر, Korean 세상/세대, Swahili ulimwengu/zama indicating a temporal-worldly rather than strictly eternal reference.
+**Enriched:** A bounded age, era, or world-order — 32 occurrences where aion denotes a temporal dispensation rather than eternity. Jesus' parables distinguish 'this age' from 'the age to come' (Matt 12:32; Mark 10:30; Luke 18:30), and the disciples ask about 'the end of the age' (Matt 24:3; 28:20). Arabic ad-dahr ('epoch, era') and Korean 세상/세대 ('world/generation') select temporal-bounded vocabulary here, diverging sharply from the 'forever' renderings of senses 1-2. This is the sense that carries the weight of New Testament eschatology: the two-age schema that structures apocalyptic thought.
+
+### G0169 / Sense 61581 (32 occ, sense 1 of 1)
+**Label:** unclean, impure
+**Lemma gloss:** unclean, impure — ritually or morally defiled; used especially of unclean spirits in the Gospels and Acts
+**Description:** All three clusters denote the single adjectival concept of ritual or moral uncleanness/impurity. The multilingual evidence is consistent throughout: English 'unclean / unclean things / impure person', Spanish 'inmundo / inmundas / impuro' (all 'unclean/impure'), Arabic 'نجس / نجاسات / نجس' (unclean / uncleannesses / unclean), Korean '더러운 / 더러운 것들을 / 더러운 자나' (unclean / unclean things / unclean person), Hindi 'अशुद्ध' across all three clusters, and Swahili 'mchafu / uchafu / mchafu' (dirty/unclean / dirtiness / dirty). The differences are purely morphological (singular, plural neuter substantive, singular masculine substantive) and do not represent distinct lexicographic senses.
+**Enriched:** Ritually or morally unclean, impure, defiled. Dominantly modifies 'spirit' to designate demonic beings in the Synoptics and Acts (Mark 1:23-27; 5:2; Luke 4:36; Acts 5:16; 8:7), drawing on the Levitical purity framework where the LXX uses akathartos for Hebrew tame. Also applied to forbidden foods (Acts 10:14, 28), moral defilement (2 Cor 6:17; Eph 5:5), and the abominations of Revelation (Rev 18:2).
+
+### G0264 / Sense 61894 (32 occ, sense 1 of 3)
+**Label:** to sin, commit sin
+**Lemma gloss:** To sin, miss the mark, commit transgression against God; as participle, one who sins, a sinner.
+**Description:** To act sinfully or commit a transgression against God's law, used of the general act of sinning in finite verb forms (indicative, subjunctive, imperative) across all persons and numbers.
+**Enriched:** To sin or commit transgression — the finite verb in all its active forms (indicative, subjunctive, imperative), covering the general act of sinning against God, against another person, or against one's own conscience. Jesus teaches how to confront a brother 'if he sins against you' (Matt 18:15, 21), the prodigal rehearses his confession (Luke 15:18, 21), and Paul declares universally that 'all have sinned' (Rom 3:23; 5:12). German 'sündigen' and Spanish 'pecar' render the action consistently. The word encompasses deliberate rebellion, moral failure, and covenant violation alike.
+
+### G0302 / Sense 61976 (32 occ, sense 2 of 5)
+**Label:** counterfactual conditional
+**Lemma gloss:** Modal particle indicating contingency, indefiniteness, or hypothetical conditions; combines with relative pronouns, conjunctions, and verb moods.
+**Description:** Particle marking the apodosis of contrary-to-fact (unreal) conditions, typically with past indicative tenses, indicating what would have happened or would be the case if the condition were met.
+**Enriched:** Counterfactual conditional marker — 32 occurrences where an appears in the apodosis of contrary-to-fact conditions, typically with past indicative tenses. In Matt 11:21 'if the mighty works done in you had been done in Tyre, they would have (an) repented long ago,' the particle signals that the repentance did not actually occur. Spanish's conditional tense (habrían) and German's Konjunktiv II (hätten) both shift to dedicated irrealis morphology to render this force. Korean -었을 것이다 similarly marks the unrealized outcome. The particle is the hinge between real and unreal worlds.
+
+### G0537 / Sense 62658 (32 occ, sense 1 of 1)
+**Label:** all, every, the whole (universal quantifier)
+**Lemma gloss:** all, every one, the whole — emphatic universal quantifier, stronger than pas, meaning 'altogether, each and every'
+**Description:** Adjective/pronoun functioning as a universal quantifier meaning 'all, every, the whole of,' used substantively and attributively across persons, things, and abstractions. All three clusters are gender/case/number inflections of the same semantic concept. S62658 has masculine plural (persons: 'all [people]'), S62659 has various singular/mixed forms ('all/every'), S62660 has neuter plural ('all things'). Spanish 'todos/toda/todo/todas–las–cosas' (all-masc/all-fem/all-neut/all-things), Hindi 'सब/सारे' (all) throughout, Arabic 'جَمِيع/كُلّ' (all/every), Korean '모든/모두' (all/every), Swahili 'wote/yote/vyote' (all in various noun classes). Translation signatures are identical across clusters.
+**Enriched:** An emphatic form of the universal quantifier meaning 'absolutely all, each and every, the whole without exception.' Used substantively and attributively to underscore completeness: the entire crowd astonished (Mark 1:27), every person swept away in the flood (Luke 17:27), all things reported to the authorities (Matt 28:11). Predominant in Luke-Acts (over 20x), where it signals narrative totality. Most target languages render it identically to pas, lacking a dedicated emphatic equivalent.
+
+### G0630 / Sense 63066 (32 occ, sense 1 of 5)
+**Label:** release, set free
+**Lemma gloss:** To release, dismiss, divorce, or forgive; freeing captives, dispersing crowds, repudiating a spouse, pardoning sins.
+**Description:** To release or set free a person from custody, bondage, or obligation, covering all inflections of ἀπολύω where the sense is liberating someone held captive or under authority, confirmed by Arabic أَطْلَقَ/يُطْلِقَ (Form IV, release), Korean 석방하다/놓아주다 (release from prison/let go), Swahili -achilia (set free), and Spanish soltar (release).
+**Enriched:** To release or set free from custody, bondage, or obligation — 32 occurrences concentrated in the Passion narratives around the Passover custom of releasing a prisoner (Matt 27:15-26; Mark 15:6-15; John 18:39). Also covers releasing from illness (Luke 13:12, the woman bound by Satan). Arabic atlaqa ('set free') and Swahili -achia ('release') map precisely to this liberation frame. Korean 놓아 주다 ('let go') similarly selects freedom-specific vocabulary.
+
+### G0906 / Sense 63897 (32 occ, sense 2 of 6)
+**Label:** be thrown, be cast
+**Lemma gloss:** To throw, cast, hurl; to put or place into; passive: to be thrown, cast out; also to lie prostrate, pour out, or strike upon
+**Description:** Passive voice: to be thrown, cast, or hurled into a place (sea, fire, Gehenna, prison), often expressing divine judgment or violent removal.
+**Enriched:** Passive voice: to be thrown, cast, or hurled, typically into a place of destruction or confinement. Dominates judgment language—every tree not bearing fruit 'is thrown into the fire' (Matt 3:10), the worthless servant 'is cast into outer darkness' (Matt 25:30), and the beast 'was thrown into the lake of fire' (Rev 19:20). Spanish es echado/fue arrojado, Arabic يُلْقَى/طُرِحَ, and Korean 던져지다 all preserve the passive voice. The theological weight of this sense is enormous in eschatological contexts.
+
+### G1100 / Sense 64764 (32 occ, sense 1 of 2)
+**Label:** tongue (body part)
+**Lemma gloss:** The tongue as a physical organ; by extension, speaking in tongues as Spirit-empowered ecstatic or foreign-language utterance.
+**Description:** The physical organ of the tongue in the mouth. Occurrences include Mk 7:33, 35 (healing of the man whose tongue was loosed), Lk 1:64 (Zechariah's tongue loosed), Lk 16:24 (rich man begging to cool his tongue), Acts 2:3 (tongues of fire as visible phenomenon), Acts 2:26 (my tongue rejoiced, citing Ps 16), Rom 3:13 (their tongues practice deceit), Rom 14:11 (every tongue shall confess), Phil 2:11 (every tongue confess). Cross-linguistic translations consistently use the physical organ word: arb lisan, deu Zunge, fra langue, heb lashon, hin jibh, kor hyeo, spa lengua. This sense covers the literal body part and its metonymic extensions to speech and confession.
+**Enriched:** The physical organ of the tongue. Used of the body part itself, especially in contexts of healing, speech, and physical sensation. Spanish lengua, French langue, and German Zunge all retain the bodily reference. Key passages include the healing of the deaf-mute (Mark 7:33, 35), Zechariah's restored speech (Luke 1:64), and the rich man's torment (Luke 16:24). James uses it vividly as a 'fire' that no one can tame (Jas 3:5-8).
+
+### G1247 / Sense 65256 (32 occ, sense 1 of 2)
+**Label:** to serve or minister to
+**Lemma gloss:** To serve, minister to, or wait upon someone; in the passive, to be served or receive ministry from others.
+**Description:** To render service, wait on, or minister to someone, whether in a concrete sense (serving at table) or a broader sense (Christian ministry and practical assistance).
+**Enriched:** To render active service, minister to, or wait upon someone in either a practical or spiritual capacity. The range spans from serving food at table (Luke 10:40; John 12:2) to women who provided for Jesus out of their own means (Matt 27:55; Luke 8:3) to angelic ministry after the wilderness temptation (Matt 4:11). Jesus' self-description in Matt 20:28 — 'the Son of Man came not to be served but to serve' — elevates this ordinary verb into the defining posture of discipleship. All major translations use cognates of a single 'serve' root (spa 'servir,' fra 'servir,' deu 'dienen').
+
+### G1832 / Sense 67378 (32 occ, sense 1 of 1)
+**Label:** it is lawful, it is permitted
+**Lemma gloss:** it is lawful, it is permitted — impersonal verb expressing legal or moral permissibility under Torah or custom
+**Description:** Impersonal verb indicating that something is legally or morally permissible, typically used in questions about what the Law allows or prohibits. All inflectional forms (indicative, participial) express the same concept of lawfulness or permission. Multilingual evidence uniformly reflects this: eng 'is lawful/are permitted/it is permitted', spa 'es licito/son licitas/siendo permitido' (is lawful/are lawful/being permitted), hin 'uchit hai/anumati hai/vaidh hai' (is proper/has permission/is valid), arb 'yajuzu/mubahun' (is permissible/allowed), kor 'heorakdoenda/heorakdoen' (is permitted), swa 'inaruhusiwa/ruhusa/kuruhusiwa' (is permitted/permission/to be permitted). Central to Sabbath controversies (Matt 12:2, Mark 3:4) and ethical questions (Matt 14:4, 1 Cor 6:12).
+**Enriched:** An impersonal verb indicating that an action is legally or morally permissible, typically within the framework of Torah or established custom. Dominates Sabbath controversies — healing (Matt 12:10; Luke 14:3), plucking grain (Matt 12:2; Mark 2:24), doing good (Mark 3:4) — and also governs questions of divorce (Matt 19:3), taxation (Matt 22:17), and priestly prerogatives (Matt 12:4). Paul adapts it as a maxim of Christian liberty: 'all things are lawful' but not all edify (1 Cor 6:12; 10:23).
+
+### G2190 / Sense 68598 (32 occ, sense 1 of 1)
+**Label:** enemy / hostile one
+**Lemma gloss:** enemy, foe, hostile adversary — one who is personally, nationally, or spiritually opposed
+**Description:** Substantive adjective used as a noun meaning 'enemy', 'foe', or 'hostile person', referring to personal, national, or spiritual adversaries. The plural forms (AMP, NMP, GMP, 21x) and singular forms (AMS, NMS, GMS, VMS, 11x) represent the same lexical meaning with only grammatical number difference. Multilingual evidence is entirely consistent: Spanish 'enemigos/enemigo' (pl/sg), Hindi 'शत्रुओं–को/शत्रु' (shatrūon = enemies, shatru = enemy), Arabic 'أَعداءَ/أَعْدَاءَكَ' (a'dā' = enemies, pl) and 'عَدُوُّ/عَدوًّا' ('aduww = enemy, sg), Korean '원수들을/원수들이' (wonsudeur = enemies) and '원수가/원수인' (wonsu = enemy), Swahili 'adui' (enemy, same form sg/pl). The word covers enemies of God, of Christ, of believers, and personal foes (as in 'love your enemies').
+**Enriched:** An enemy or hostile adversary, covering personal, national, and spiritual opposition. Jesus commands love toward enemies in the Sermon on the Mount (Matt 5:43-44), then identifies the devil as the enemy in the parable of the tares (Matt 13:39). Paul designates death itself as the 'last enemy' to be destroyed (1 Cor 15:25-26), quoting Psalm 110's enthronement oracle. Mary's Magnificat celebrates deliverance from enemies (Luke 1:71, 74).
+
+### G2246 / Sense 68923 (32 occ, sense 1 of 1)
+**Label:** sun (the celestial body)
+**Lemma gloss:** sun — the solar body as source of light, heat, and metaphor for radiant glory or divine judgment
+**Description:** The sun as a celestial body, the primary source of light and heat for the earth. All 32 NT occurrences refer to the same physical sun, with the two clusters differing only in grammatical case (nominative/accusative vs genitive 'of the sun'). Multilingual evidence is uniform: spa 'sol' / 'de sol', hin 'surya' (suraj), arb 'al-shams', kor 'hae', swa 'jua' / 'ya jua'. Used literally of the sun darkening at the crucifixion, the sun's brilliance in apocalyptic imagery, and the sun as a metaphor for Christ's glory (Rev 1:16). No semantic split exists between the nominative and genitive clusters.
+**Enriched:** The sun as celestial body, source of light and warmth, with rich metaphorical extension. Used literally of sunrise and sunset (Matt 5:45; Mark 1:32; Eph 4:26) and as a simile for radiant glory — Jesus' face at the Transfiguration (Matt 17:2), the righteous in the kingdom (Matt 13:43), the angel of Revelation 10:1. Apocalyptic darkening of the sun signals cosmic upheaval (Matt 24:29; Rev 6:12; 8:12; 9:2). The woman clothed with the sun (Rev 12:1) unites creation imagery with eschatological hope.
+

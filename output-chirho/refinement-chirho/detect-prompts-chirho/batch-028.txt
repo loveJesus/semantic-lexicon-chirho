@@ -1,0 +1,291 @@
+# Sense Refinement Detection — Batch 028
+
+You are a biblical lexicographer reviewing sense entries for a Hebrew/Aramaic/Greek lexicon.
+Each entry below is a single "sense" that was produced by clustering translation signatures 
+and then merging with an LLM. Some senses may have been OVER-LUMPED — they contain genuinely 
+distinct meanings that should be separate senses.
+
+## Your Task
+
+For each sense, determine if it should be SPLIT into multiple senses. Look for:
+- Literal vs. figurative/metaphorical uses lumped together
+- Concrete vs. abstract meanings combined
+- Multiple distinct referents (e.g., "father" = biological parent + patron/advisor + originator)
+- Physical vs. spiritual/theological uses merged
+- Different syntactic frames producing different meanings
+
+## Output Format
+
+Return a JSON array. For senses that need NO splitting, omit them entirely.
+For senses that SHOULD be split, include an entry like:
+
+```json
+[
+  {
+    "senseIdChirho": 79287,
+    "lemmaIdChirho": "H0001",
+    "currentLabelChirho": "father, immediate male parent",
+    "splitProposalChirho": [
+      {
+        "newLabelChirho": "biological/legal father",
+        "criteriaChirho": "Direct parent-child relationship, possessive constructions with specific person"
+      },
+      {
+        "newLabelChirho": "metaphorical father (patron, advisor, protector)",
+        "criteriaChirho": "Title of respect for prophets, advisors, or authority figures; 'father to Pharaoh' type usage"
+      }
+    ],
+    "confidenceChirho": "high",
+    "reasoningChirho": "Description explicitly mentions 'title of respect or metaphorical originator' alongside biological father"
+  }
+]
+```
+
+Only propose splits where you have MEDIUM or HIGH confidence. Do NOT split function words (articles, 
+prepositions, particles, conjunctions) unless there is a genuinely distinct semantic sense (not just 
+syntactic variation). Proper nouns generally should NOT be split.
+
+If NO senses in this batch need splitting, return an empty array: []
+
+## Senses to Review
+
+### H6299 / Sense 127012 (49 occ, sense 1 of 6)
+**Label:** redeem or ransom (Qal active)
+**Lemma gloss:** To ransom or redeem by paying a price; deliver from bondage, death, or danger; (Nifal) be redeemed; (participle) redeemer, the redeemed
+**Description:** To redeem or ransom someone by paying a price, delivering from bondage, danger, or death — the core Qal active meaning across all finite forms, imperatives, and infinitives.
+**Enriched:** The core Qal active meaning: to redeem or ransom by paying a price, delivering from bondage, danger, or death. This covers the full range of finite forms, imperatives, and infinitives — from cultic law (ransoming a firstborn, Exod 13:13; Num 18:15–16) to national deliverance (God redeeming Israel from Egypt, Deut 9:26; 2 Sam 7:23) to personal rescue (Ps 25:22; 26:11; 49:7–8). Spanish 'redimir/rescatar' and French 'racheter' both preserve the transactional character. The verb consistently implies a cost borne by the redeemer on behalf of the one redeemed.
+
+### H6697 / Sense 129883 (49 occ, sense 1 of 4)
+**Label:** rock, cliff, crag
+**Lemma gloss:** Rock, cliff, or crag as a physical formation; metaphorically, God as 'the Rock' — protector and refuge; also flint (for cutting) and edge of a blade.
+**Description:** A large natural mass of stone; a rock formation, cliff, or crag as a physical geological feature, including as a place of refuge, water source, or landmark.
+**Enriched:** A large natural formation of stone — a rock, cliff, or crag serving as a landmark, refuge, water source, or place of shelter. This is the dominant physical sense, covering Moses striking the rock at Horeb (Exod 17:6), God placing Moses in the cleft of the rock (Exod 33:21–22), Balaam surveying Israel from the top of the rocks (Num 23:9), and the wild goats dwelling among the crags (1 Sam 24:2). Spanish 'roca,' French 'rocher,' and German 'Fels' all converge on this geological meaning. The rock yields water, honey, and oil — it is barren stone that by divine provision becomes a source of life.
+
+### H7105a / Sense 132670 (49 occ, sense 1 of 1)
+**Label:** harvest (act/season)
+**Lemma gloss:** harvest — the season, act, or gathered crop of reaping grain and produce
+**Description:** The time or activity of reaping grain and other crops; the harvest season, used both literally of agricultural reaping and figuratively of divine judgment or reward.
+**Enriched:** The season, activity, or product of reaping grain crops, functioning simultaneously as a calendrical marker, an agricultural reality, and a theological metaphor. As season: anchored in Gen 8:22 ('seedtime and harvest'), it structures the festival calendar (Exod 23:16 'feast of harvest'; Exod 34:22 'wheat harvest'). As labor and product: workers are hired for it (1 Sam 8:12), gleanings are left for the poor (Lev 19:9; 23:22). As metaphor: it images divine judgment (Jer 8:20 'the harvest is past'; Hos 6:11; Joel 3:13) and spiritual opportunity (Prov 10:5 'he who gathers in summer is wise'). All 49 occurrences orbit this unified harvest concept.
+
+### H8504 / Sense 145149 (49 occ, sense 1 of 1)
+**Label:** blue (violet-blue yarn/fabric)
+**Lemma gloss:** blue/violet — the precious violet-blue dye and yarn used for sacred textiles and tabernacle furnishings
+**Description:** The color blue/violet-blue, used primarily for sacred textiles and tabernacle furnishings. All 49 occurrences refer to the same color concept. S145149 covers standalone and conjunctive forms (eng 'blue', spa 'azul', arb 'أَزْرَقَ/أَسمانجونِيٍّ', kor '청색', swa 'bluu', hin 'नीला') while S145153 adds the prepositional prefix bet ('in the blue': eng 'in the blue', spa 'en el azul', arb 'بِالْأَسْمَانْجُونِيِّ', kor '청색으로', swa 'kwa buluu'). The split is purely grammatical — prepositional vs bare noun — not semantic.
+**Enriched:** The violet-blue dye derived from the murex snail, and by metonymy the yarn, thread, or fabric dyed with it. Overwhelmingly a cultic textile term, appearing in the triad tekhelet-argaman-tola'at shani (blue-purple-scarlet) for tabernacle curtains, veils, and priestly vestments (Exod 25:4; 26:1, 31, 36; 28:5-33). Also used for the blue cord of the high priest's turban plate (Exod 28:37; 39:31), the covering cloths for sacred vessels during transport (Num 4:6-12), and the citizen's garment fringe (Num 15:38). Extends to temple and palace hangings (2 Chr 2:6; Esth 1:6). All 49 occurrences share this single color-and-textile sense.
+
+### H8628 / Sense 145743 (49 occ, sense 1 of 5)
+**Label:** blow a trumpet/horn
+**Lemma gloss:** To thrust, drive, blow (a trumpet), clap (hands), strike hands (in pledge) — physical impact producing sound or securing an object.
+**Description:** To blow a wind instrument (shofar, trumpet, horn), producing a sound as a signal, call to assembly, or act of worship — the primary and most frequent sense of תקע, confirmed by Arabic نَفَخَ (nafakha, blow), Korean 불다 (bulda, blow), and Swahili -piga (tarumbeta, blow trumpet).
+**Enriched:** The dominant sense: blowing a wind instrument — shofar, trumpet, or horn — to produce a signal, summons, alarm, or act of worship. With 49 occurrences, this covers the trumpet blasts at Sinai, the shofar at Jericho (Josh 6:4-20), Gideon's signal horns (Judg 7:18-22), and liturgical blowing on feast days (Num 10:3-10). Arabic nafakha (نَفَخَ, to blow) appears consistently, as does Korean bulda (불다, to blow). Spanish tocó and French souffla both mean 'sounded/blew.' The physical action is breath thrust forcefully through an instrument — the same core thrust that underlies the other senses.
+
+### G1715 / Sense 67092 (48 occ, sense 1 of 1)
+**Label:** before, in front of, ahead
+**Lemma gloss:** before, in front of, ahead — a spatial and relational marker of position or rank in someone's presence
+**Description:** Spatial and relational preposition/adverb indicating position or direction in front of someone or something, used both as a preposition with genitive ('before God,' 'before men') and as an adverb ('ahead,' 'in front'). Multilingual translations uniformly confirm a single core spatial-relational meaning: eng 'before/in front/ahead', spa 'delante de/delante/adelante', hin 'saamne/aage' (in front/ahead), arb 'amaam' (in front of), kor 'ap-eseo/apseo' (at the front/ahead), swa 'mbele ya/mbele' (in front of/ahead). Used for spatial position (Matt 5:24, before the altar), metaphorical presence (Matt 10:32-33, before my Father), and temporal priority (John 1:15, he was before me).
+**Enriched:** A preposition or adverb indicating spatial position in front of, directional movement ahead of, or relational standing in the presence and sight of another. Spatial: the star going 'before' the Magi (Matt 2:9), casting pearls 'before' swine (Matt 7:6). Relational-presentational: doing good works 'before men' (Matt 5:16), confessing or denying 'before my Father' (Matt 10:32-33), laying gifts 'before the altar' (Matt 5:24). Temporal-priority or rank: John the Baptist's testimony that Christ 'was before me' (John 1:15, 30). All 48 occurrences share this unified 'in front of / in the presence of' sense across its spatial, presentational, and priority dimensions.
+
+### G1909 / Sense 67576 (48 occ, sense 2 of 12)
+**Label:** to, toward (direction/motion)
+**Lemma gloss:** on, upon (surface); to, toward (direction); in, at (location); during (time); about, concerning; before (presence); against (hostility); by, on the basis of (ground)
+**Description:** Indicates motion toward or onto a goal, typically with the accusative: 'to him', 'upon the lake', often implying arrival at a destination.
+**Enriched:** Motion toward or onto a goal, typically with accusative case. Matthew 14:34 has the boat coming 'to' the land (a la tierra). Mark 5:21 shows Jesus crossing 'to' the other side. The directionality is clear: not static position, but movement culminating in arrival at or upon a destination. The accusative signals the goal-oriented trajectory.
+
+### G2504 / Sense 69679 (48 occ, sense 1 of 2)
+**Label:** and I / and me
+**Lemma gloss:** And I, and me, I also, me too -- crasis of kai ego, joining the speaker to a preceding statement or adding emphasis.
+**Description:** Connective use of κἀγώ where καί functions as a simple conjunction ('and'), linking the speaker to the preceding clause or participant, across all grammatical cases.
+**Enriched:** Connective use where kai functions as the simple conjunction 'and,' linking the speaker's action or identity to the preceding clause or participant. The speaker joins an existing discourse without special emphasis on inclusion. Spanish 'Y yo' and German 'und ich' parallel this straightforward connective reading. Key passages: Matt 11:28 ('and I will give you rest'), Matt 16:18 ('and I say to you').
+
+### G2920 / Sense 71180 (48 occ, sense 1 of 1)
+**Label:** judgment / condemnation
+**Lemma gloss:** judgment, condemnation — the act of rendering a verdict, divine or human, and its resulting sentence
+**Description:** The act or process of judging, rendering a verdict, or executing divine condemnation. All three clusters represent inflectional variants (nominative, accusative, dative, genitive; singular and plural) of the same core meaning. Multilingual evidence confirms unity: eng 'judgment/judgments,' spa 'juicio/juicios,' hin nyaay (न्याय), arb daynuuna/ahkaam (الدَّينونَة/أَحْكام), kor simpan (심판), swa 'hukumu.' No semantic differentiation across number or case forms.
+**Enriched:** The act, process, or result of rendering judicial verdict — encompassing divine eschatological judgment (Matt 10:15 'day of judgment'; Matt 12:36 'every careless word'), the authority to judge delegated to Christ (John 5:22, 27 'the Father has given all judgment to the Son'), and the ethical sense of justice as a moral obligation (Matt 23:23 'justice, mercy, faithfulness'). Also denotes condemnation as the outcome of judgment (Mark 12:40 'greater condemnation'; John 3:19 'this is the judgment, that light has come'). All 48 occurrences share this judicial-evaluative core, whether the forum is eschatological, christological, or ethical.
+
+### G4043 / Sense 74553 (48 occ, sense 1 of 3)
+**Label:** conduct oneself, live
+**Lemma gloss:** To walk physically on foot; figuratively, to conduct oneself or live in a certain manner, describing ethical and spiritual behavior.
+**Description:** To live or conduct oneself in a particular manner, describing one's ethical or spiritual way of life (figurative extension of walking as a metaphor for behavior).
+**Enriched:** The figurative sense: to conduct oneself, to live or behave in a particular way. Nearly half the occurrences (48x) describe manner of life — walking in darkness or light (John 12:35), walking according to the flesh or Spirit (Rom 8:4), walking worthily of one's calling (Eph 4:1). Spanish 'andad/caminad' and German 'wandeln/wandelt' both serve this ethical register. Mark 7:5 uses it for following tradition, showing the metaphor extends from moral to cultural conduct.
+
+### H0561 / Sense 83151 (48 occ, sense 1 of 2)
+**Label:** words, sayings, utterances
+**Lemma gloss:** Word, saying, utterance; poetic term for spoken words, divine speech, or an authoritative decree.
+**Description:** Spoken words, sayings, or utterances, typically in plural construct or absolute form, referring to the content of speech or discourse.
+**Enriched:** Words, sayings, utterances — spoken content in poetic or elevated discourse, often in the plural. Covers the speech of humans (Job 6:26; 32:12–14), the teachings of sages (Prov 2:1; 4:10, 20; 7:1), the oracles of Balaam (Num 24:4, 16), and the words of God (Ps 107:11; Josh 24:27). French 'paroles' and Spanish 'palabras/dichos' confirm the general speech sense across 48 occurrences.
+
+### H1544 / Sense 90247 (48 occ, sense 1 of 1)
+**Label:** idols (contemptuous)
+**Lemma gloss:** idols — a contemptuous term for false gods, from a root suggesting dung or shapeless blocks
+**Description:** Derogatory term for false gods or idols, used almost exclusively in Ezekiel; etymologically related to gillel (dung), conveying contempt. All 18 clusters share uniform translations across all six witness languages: eng 'idols', spa 'ídolos' (one occurrence 'imágenes'), hin 'मूर्तियों/मूर्तियाँ', arb 'أصنام' (with synonym 'أوثان' in two occurrences), kor '우상들', swa 'sanamu' (one occurrence 'vinyago'). The splits are entirely grammatical: pronominal suffixes (3ms, 3mp, 3fs, 3fp, 2ms, 2mp, 2fp), prepositional prefixes (b-, l-), conjunction w-, and article ha-. No genuine semantic distinction is attested.
+**Enriched:** A polemical, contemptuous designation for false gods and their images, etymologically evoking dung (gelel) or shapeless logs to express visceral disgust. Overwhelmingly an Ezekielian term (39 of 48 occurrences), wielded as the prophet's characteristic weapon against Israel's idolatry — from the initial command to destroy the gillulim on the high places (Ezek 6:4-6) through the vision of abominations in the temple (Ezek 8:10) to the retrospective indictment of the wilderness generation (Ezek 20:7-31). Outside Ezekiel, it marks Levitical curses (Lev 26:30), editorial judgments on apostate kings (1 Kgs 15:12; 2 Kgs 21:11, 21; 23:24), and Jeremiah's taunt against Babylon (Jer 50:2). All 48 occurrences serve this single contemptuous-polemical sense.
+
+### H2450 / Sense 96973 (48 occ, sense 2 of 4)
+**Label:** wise men, sages
+**Lemma gloss:** Wise, prudent; substantively: sages, royal counselors; also skilled craftsman; feminine: wise women.
+**Description:** Used substantively to denote a recognized social class of wise men, sages, or counselors — often royal advisors, elders, or a professional class in ancient Near Eastern courts.
+**Enriched:** Used substantively to denote a recognized social class of sages, counselors, or court advisors — 48 occurrences. In Gen 41:8 Pharaoh summons 'all the wise men of Egypt' alongside the magicians; in Exod 7:11 the hakhamim appear as a professional class parallel to sorcerers; Jeremiah 18:18 lists counsel from 'the wise' alongside torah from the priest and vision from the prophet, confirming their institutional standing. Spanish sabios and German die Weisen both nominalize the adjective to mark the social-class reading. The Arabic parallel hukama' (حُكَماء) similarly functions both as adjective and substantive, suggesting this adjectival-to-noun shift is deeply Semitic. In wisdom literature (Prov 13:20; Eccl 7:4-5), the term oscillates between the class designation and the moral ideal.
+
+### H2595 / Sense 98015 (48 occ, sense 1 of 1)
+**Label:** spear, lance
+**Lemma gloss:** chanith -- spear, lance; a thrusting and throwing weapon carried by warriors and kings in ancient Israel
+**Description:** A thrusting weapon consisting of a pointed tip affixed to a long shaft, used in warfare and combat throughout the biblical period.
+**Enriched:** A spear or lance used in warfare, both for thrusting and throwing, and as a symbol of royal and military authority. Saul's chanith serves as a marker of his presence and a weapon of rage (1 Sam 18:10-11; 26:7), Goliath's massive spear symbolizes Philistine might (1 Sam 17:7), and the prophetic reversal of spears into pruning hooks envisions universal peace (Isa 2:4; Mic 4:3). Spanish lanza, French lance, and German Speer confirm a single, stable referent across all 48 occurrences with no semantic subdivision.
+
+### H2654a / Sense 98376 (48 occ, sense 1 of 2)
+**Label:** take pleasure in, delight in
+**Lemma gloss:** To delight in or take pleasure in someone or something; also to desire, want, or be willing to act.
+**Description:** To experience emotional pleasure, satisfaction, or delight in someone or something; used of both God's delight in His people/righteousness and of human pleasure in God's ways, encompassing the participial 'one who delights in' (Arabic سُرَّ/يُسَرُّ/مَسْرُورٌ/رَضِيَ, Korean 기뻐하다, Swahili -furahia/-pendezwa).
+**Enriched:** To experience emotional pleasure, satisfaction, or delight in someone or something — the affective dimension of engaged approval. Across 48 occurrences, this sense covers both divine and human delight. Spanish 'quisiera/desea' and German 'Gefallen haben' capture the warmth. If the LORD delights in us, He will bring us into the land (Num 14:8); Jonathan delighted greatly in David (1 Sam 19:1); and God's delight is not in the strength of horses but in those who fear Him (Ps 147:10-11). The participial form chaphets functions almost adjectivally: 'one who delights in' God's commands (Ps 112:1).
+
+### H2850 / Sense 99727 (48 occ, sense 1 of 1)
+**Label:** Hittite (gentilic)
+**Lemma gloss:** Chitti -- Hittite; a gentilic adjective denoting members of the Hittite people in Canaan and beyond
+**Description:** Gentilic noun denoting a member of the Hittite people or the Hittite nation collectively, used of individuals (e.g., Ephron the Hittite, Uriah the Hittite), in lists of Canaanite peoples, and of Hittite women.
+**Enriched:** A gentilic noun or adjective designating a member of the Hittite people, used of specific named individuals (Ephron the Hittite in Gen 23:10; Uriah the Hittite in 2 Sam 11:3), in formulaic lists of Canaanite nations (Exod 3:8; Deut 7:1; Josh 3:10), and of Hittite women whom Solomon loved (1 Kgs 11:1). The term also carries geographical force in Josh 1:4, referring to the wider Hittite territory. Spanish heteo, French Hittite, and German Hethiter render it consistently across all 48 occurrences.
+
+### H3050 / Sense 101254 (48 occ, sense 1 of 1)
+**Label:** Yah
+**Lemma gloss:** Yah -- a contracted form of the divine name YHWH, used in poetry, praise, and the exclamation Hallelujah
+**Description:** Yah, in Yah, by Yah (48 occurrences across 4 original clusters)
+**Enriched:** The contracted poetic form of the divine name Yahweh, used in early victory poetry (Exod 15:2; 17:16), prophetic citation (Isa 12:2; 26:4; 38:11), and extensively in the Psalter as the core of the hallelu-Yah doxology (Pss 113:1; 115:18; 146:1; 150:6). Its restriction to liturgical, poetic, and exclamatory contexts distinguishes it from the full tetragrammaton. Spanish Yah, French Yah, and German JAH transliterate it directly, reflecting its status as a distinct form of the divine name across all 48 occurrences.
+
+### H3458 / Sense 104753 (48 occ, sense 1 of 1)
+**Label:** Ishmael (proper name)
+**Lemma gloss:** Yishmael -- Ishmael ('God hears'); son of Abraham and Hagar, and several other biblical figures
+**Description:** The Hebrew proper masculine name יִשְׁמָעֵאל (Yishmael/Ishmael), meaning 'God hears' (from שָׁמַע + אֵל). Refers to multiple individuals in Scripture: (1) the son of Abraham and Hagar, progenitor of the Ishmaelite tribes (Gen 16-25), who received divine promises of great nationhood; (2) the son of Nethaniah who assassinated Gedaliah governor of Judah (2 Kgs 25:25, Jer 40-41); and (3) several minor figures in Chronicles and Ezra. Rendered as Ismael/Jischmael in German, Ismael in French, إِسْمَاعِيل in Arabic (preserving the Semitic cognate), and इश्माएल in Hindi. The 48 total occurrences include bare forms, prepositional constructions (ל-ישמעאל), and conjunctive forms (ו-ישמעאל), all representing the same proper name.
+**Enriched:** The proper name Ishmael, meaning 'God hears,' applied to multiple individuals, chiefly Abraham's son through Hagar (Gen 16:11-15; 17:18-26; 25:9-17), whose birth narrative turns on the divine hearing of affliction, and the son of Nethaniah who assassinated Gedaliah (Jer 40:8-41:18; 2 Kgs 25:23-25). Smaller clusters designate Benjaminite, Judahite, and priestly figures (1 Chr 8:38; 2 Chr 19:11; Ezra 10:22). Spanish Ismael, French Ismael, and German Ismael confirm a single proper-name referent with no polysemy.
+
+### H3588b / Sense 105972 (48 occ, sense 2 of 4)
+**Label:** except, unless (exceptive)
+**Lemma gloss:** Compound conjunction 'ki im': but/rather (adversative), except/unless (exceptive), for/because (causal), or surely/that (asseverative).
+**Description:** Marks an exception or conditional restriction, limiting a preceding general statement ('except that', 'unless').
+**Enriched:** Exceptive 'except, unless' (~48x), restricting a preceding general statement to carve out an exception. French sauf and German ausser both render this sense distinctly from the adversative. Gen 39:9 is paradigmatic: Potiphar has placed everything in Joseph's hands except (ki im) his wife. In Gen 32:26 Jacob will not release the angel unless he receives a blessing -- the conditional-restrictive nuance is clear.
+
+### H3957 / Sense 109303 (48 occ, sense 1 of 1)
+**Label:** chamber or room
+**Lemma gloss:** lishkah -- chamber, room, or hall; a side room in a temple, palace, or public building for storage or assembly
+**Description:** A chamber, room, or hall in a temple, palace, or public building, used for various purposes including storage, dining, or priestly duties.
+**Enriched:** A room, chamber, or hall within a temple, palace, or public building complex, serving various functions including sacrificial dining (1 Sam 9:22), prophetic encounter (Jer 35:2-4; 36:10), storage of tithes and offerings (Neh 10:37-39; 13:4-9), and priestly quarters (Ezek 40:17; 42:1-13; 1 Chr 9:26, 33). The architectural specificity varies from a single dining hall in early narratives to entire suites of thirty chambers in Ezekiel's temple vision. Spanish camara, French chambre, and German Kammer converge on a single 'chamber' concept across all 48 occurrences.
+
+### H5027 / Sense 115531 (48 occ, sense 1 of 5)
+**Label:** look, gaze upon
+**Lemma gloss:** To look, gaze, behold — in Hifil: directing one's eyes toward something, often with attention, concern, or evaluative intent.
+**Description:** The basic Hifil sense of visual looking or gazing at something, encompassing general acts of beholding without special directional or evaluative nuance (Arabic naẓara, Korean 바라보다/보다, Swahili -tazama/-angalia).
+**Enriched:** The basic sense of visual looking or gazing — directing one's eyes toward something without special evaluative or directional nuance. This is the unmarked, general act of beholding. God tells Abram to look toward the heavens and count the stars (Gen 15:5); Lot's wife looked back toward Sodom (Gen 19:26); Moses hid his face, afraid to look at God (Exod 3:6). Spanish miró, French regarda, German blickte, and Korean baraboda (바라보다) all converge on simple directed vision. With 48 occurrences, this is the default reading.
+
+### H5193 / Sense 117503 (48 occ, sense 1 of 3)
+**Label:** plant vegetation
+**Lemma gloss:** To plant vegetation, trees, or vineyards; figuratively, to establish people in a land or fix something in place
+**Description:** To plant trees, vineyards, gardens, or other vegetation in the ground for growth, encompassing all literal agricultural uses across all conjugations and inflections.
+**Enriched:** The literal agricultural sense: to plant trees, vines, gardens, or other vegetation in the ground. This is the dominant usage across the Hebrew Bible, from God planting the Garden of Eden (Gen 2:8) and Noah planting the first vineyard (Gen 9:20), through laws about newly planted fruit trees (Lev 19:23), to prophetic promises of planting vineyards and eating their fruit (Amos 9:14). The Spanish 'Y plantó' and German 'du pflanzen' faithfully reflect this concrete horticultural action across diverse passage types.
+
+### H5608b / Sense 121275 (48 occ, sense 1 of 2)
+**Label:** scribe, royal secretary
+**Lemma gloss:** A scribe, secretary, or learned official; either an individual court officer or a professional class of writers.
+**Description:** A court official serving as secretary of state or royal recorder, responsible for administrative documents and official correspondence (e.g., Shaphan, Shebna, Baruch).
+**Enriched:** A scribe or royal secretary -- an individual court official responsible for administrative documents, official correspondence, and state records. This is the dominant sense (48x), covering figures like Shebna the secretary (2 Kgs 18:18), Shaphan the scribe who reads the Torah to Josiah (2 Kgs 22:8), and Baruch son of Neriah who writes at Jeremiah's dictation (Jer 36:32). Spanish 'el escriba,' French 'le scribe,' and the muster-officer nuance in Judg 5:14 all point to an official with both literary and administrative authority.
+
+### H5838 / Sense 123496 (48 occ, sense 1 of 1)
+**Label:** Azariah (high priest / king alias)
+**Lemma gloss:** Azaryah -- Azariah ('Yah has helped'); a proper name borne by kings, priests, and officials in Judah
+**Description:** Proper name meaning 'Yah has helped,' used for multiple individuals in the Hebrew Bible, most prominently: (1) Azariah the high priest who confronted King Uzziah for burning incense (2 Chr 26:17-20); (2) Azariah as the birth name of King Uzziah of Judah (2 Kgs 14:21, 15:1-8); (3) several Azariahs in Chronicler genealogies (1 Chr 2:8, 2:38, 3:12, 6:9-14, 6:36, 9:11). Appears in two orthographic forms: longer Azaryahu and shorter Azaryah. Transliterated consistently: Arabic Azarya, German Asarja, French Azaria, Spanish Azarias, Korean Asarya, Hindi Ajaryah. All auto-clusters (Azaryah, and Azaryah, and Azaryahu, of Azaryah, and Azariah) represent syntactic variants (conjunction, preposition) of the same proper name across its various referents, not different lexical senses.
+**Enriched:** The proper name Azariah, meaning 'Yah has helped,' used for multiple individuals including King Azariah/Uzziah of Judah (2 Kgs 14:21; 15:1-7), the high priest who opposed Uzziah's incense offering (2 Chr 26:17-20), several priestly figures in Chronicler genealogies (1 Chr 5:35-40; Ezra 7:1-3), Solomonic officials (1 Kgs 4:2, 5), and a post-exilic leader (Neh 10:3). Its frequency reflects how common Yah-compounded theophoric names were among Judahite elites. Spanish Azarya, French Azaria, and German Asarja confirm a single proper-name usage throughout.
+
+### H5975 / Sense 124655 (48 occ, sense 3 of 7)
+**Label:** to station, appoint
+**Lemma gloss:** To stand, take one's stand; stand firm or endure; stop, stand still; station or appoint; set up, establish; serve, attend
+**Description:** Hifil: placing or positioning a person — stationing, appointing, setting someone in a role or physical position.
+**Enriched:** Hifil causative: stationing, appointing, or positioning a person in a role or place. Joseph stationed his father before Pharaoh (Gen 47:7), and Moses stationed the Levites (Num 8:13). Spanish establecio/puso and German stellte mark the causative agency clearly distinct from intransitive standing.
+
+### H5975 / Sense 124674 (48 occ, sense 4 of 7)
+**Label:** to stand still, stop
+**Lemma gloss:** To stand, take one's stand; stand firm or endure; stop, stand still; station or appoint; set up, establish; serve, attend
+**Description:** Qal: cessation of motion — standing still, stopping, halting, ceasing movement or activity.
+**Enriched:** Standing still, halting, ceasing motion or activity — the cessation aspect of standing. Lot was told not to stand still when fleeing Sodom (Gen 19:17), and Leah stopped bearing (Gen 29:35, lit. 'stood from bearing'). Korean meomchuda and French s'arreter distinguish this stopping sense from static posture.
+
+### H6817 / Sense 130373 (48 occ, sense 1 of 3)
+**Label:** cry out in distress
+**Lemma gloss:** To cry out in distress or for help; in the Nifal, to be summoned or assembled by proclamation.
+**Description:** To shout or cry aloud, typically as an expression of distress, anguish, or urgent appeal to God or others (Qal and Piel stems).
+**Enriched:** To cry out in distress, anguish, or urgent appeal — the core Qal and Piel sense. Spanish 'clamar' and French 'crier' both preserve the vocal intensity. Abel's blood 'cries out' from the ground (Gen 4:10), Esau 'cried with a great and bitter cry' (Gen 27:34), and the Israelites 'cried out to the LORD' repeatedly under oppression (Exod 14:10; Judg 3:9, 15; 4:3; 6:6). The cry is nearly always directed toward someone — God or a human authority — with the expectation of response.
+
+### H7453 / Sense 136361 (48 occ, sense 2 of 5)
+**Label:** friend
+**Lemma gloss:** Friend, companion, neighbor, fellow; a person connected by proximity, affection, or shared activity.
+**Description:** A person with whom one has a bond of personal affection, loyalty, or trust, distinct from mere proximity; Arabic renders sadiq (صَدِيق, true friend) or sometimes sahib in affective contexts, Korean uses chingu (친구, friend) or beot (벗, literary friend), Swahili uses rafiki (friend), Hindi uses mitra (मित्र) or sakha (सखा, intimate friend), and Spanish uses amigo.
+**Enriched:** Friend, one bound by personal affection and loyalty — 48 occurrences, concentrated in narrative and wisdom texts. Judah's rea' Hirah the Adullamite (Gen 38:12, 20), Moses as God's rea' (Exod 33:11), Jonathan warning David through rea' networks, and Proverbs' reflections on faithful friendship (Prov 17:17; 27:6, 9-10). Arabic sadiq (صَدِيق) and Korean 친구 select true-friend vocabulary, distinct from the proximity sense. The emotional and volitional dimensions — loyalty, trust, mutual delight — are what separate this from sense 1.
+
+### H7706 / Sense 138522 (48 occ, sense 1 of 1)
+**Label:** Shaddai (divine name, the Almighty)
+**Lemma gloss:** Shaddai -- the Almighty; a divine name or epithet for God, especially in patriarchal promises and the Book of Job
+**Description:** Proper divine name Shaddai, traditionally rendered 'the Almighty,' used as a name or epithet for God throughout the Hebrew Bible, especially in Job and the patriarchal narratives. All four clusters represent the same proper noun in different syntactic contexts: nominative, with preposition ל (to), with preposition מן (from), and with the article. Multilingual renderings are consistent: Arabic شَدَّاي/القَدِير (Shaddai/the Almighty), Korean 전능자 (the Almighty), Hindi सर्वशक्तिमान/शद्दै (Almighty/Shaddai), Spanish Shaddai/Todopoderoso (Shaddai/Almighty), Swahili Mwenyezi (Almighty). No polysemy -- purely grammatical variation of one divine name.
+**Enriched:** A divine name or epithet traditionally rendered 'the Almighty,' used in two primary settings: patriarchal covenant-making, where God reveals himself as El Shaddai (Gen 17:1; 35:11; Exod 6:3), and the poetic dialogues of Job, where Shaddai is the dominant divine name (Job 5:17; 8:3; 11:7; 31:2). It also appears in Balaam's oracles (Num 24:4, 16) and prophetic judgment texts (Isa 13:6; Joel 1:15). French le Tout-Puissant and the LXX pantokrator capture the 'almighty' tradition, while German Feld-von reflects alternative etymological proposals.
+
+### G0268 / Sense 61920 (47 occ, sense 1 of 1)
+**Label:** sinner, sinful person
+**Lemma gloss:** hamartolos -- sinner, sinful; a person characterized by sin, used as both adjective and substantive noun
+**Description:** A person characterized by sin, either as a substantive noun ('a sinner') or attributive adjective ('sinful'). All auto-clusters represent inflectional variants (singular/plural, nominative/genitive/dative/accusative) and minor English gloss differences ('sinners,' 'sinner,' 'a sinner,' 'sinful') of the same core meaning. Used extensively in the Gospels for the social-religious category of those deemed unrighteous: tax collectors and sinners dining with Jesus (Matt 9:10-13; Mark 2:15-17; Luke 5:30-32), the sinful woman who anoints Jesus' feet (Luke 7:37-39), the Pharisee and the sinner parable (Luke 18:13), Zacchaeus (Luke 19:7), the man born blind debate (John 9:16,24-25), and in Pauline theology (Rom 3:7; 5:8,19; 7:13; Gal 2:15,17). Also in general epistles (Jas 5:20; 1 Pet 4:18; Heb 7:26). Cross-linguistically uniform: Arabic khatia/khutah (خَاطِئ/خُطَاة), German Suender, French pecheur, Korean joein (죄인), Hindi papi (पापी), Spanish pecador/pecadores. Hebrew equivalents hote (חוֹטֵא) and hattaim (חַטָּאִים). Mark 8:38 uses the adjective with 'generation' (sinful generation), and Luke 24:7 with 'men' (sinful men), but these are adjectival uses of the same lexeme, not a distinct sense.
+**Enriched:** A person characterized by sin, used both as an attributive adjective ('sinful') and as a substantive noun ('a sinner'), carrying social stigma in the Gospels and theological weight in the Epistles. Jesus's table fellowship with 'sinners' (Matt 9:10-13; Luke 15:1-2) provokes controversy and defines his mission. Luke's 'sinful woman' (7:37) and the tax collector who cries 'a sinner' (18:13) use the term with penitential force, while Paul employs it in doctrinal summary (Rom 5:8; Gal 2:17). Spanish pecadores, French pecheur, and German Sunder confirm a single semantic concept without subdivision.
+
+### G0686 / Sense 63257 (47 occ, sense 1 of 2)
+**Label:** then, so, therefore
+**Lemma gloss:** Then, so, therefore — an inferential particle drawing conclusions; rarely an interrogative marker expecting uncertainty
+**Description:** Inferential conjunction or particle drawing a logical conclusion from what precedes: 'then,' 'so,' 'therefore,' 'so then.' This is the overwhelmingly dominant NT sense, used in logical argumentation especially by Paul (Rom 5:18, 7:3,21,25, 8:1,12, 9:16,18, 10:17, 14:12,19; Gal 6:10; Eph 2:19) and in the Gospels for rhetorical conclusions (Matt 12:28, 18:1, 19:25,27, 24:45; Luke 1:66, 8:25, 11:20,48, 12:42, 22:23; Mark 4:41) and in Acts (11:18, 12:18, 21:38). Often combined with other particles: ἄρα οὖν (so then), ἄραγε (then indeed, Matt 7:20, 17:26). Cross-linguistically stable: Ger 'also,' Fra 'donc,' Spa 'entonces/asi-que,' Arb 'idhan,' Heb 'efo/az/lakhen/akhen' (then/truly/therefore), Kor 'geureomyeon/geureumeuro' (then/therefore), Hin 'to/tab/isliye/atah' (then/so/therefore). The variation between 'then' and 'so/therefore' reflects contextual English translation choices, not distinct Greek senses.
+**Enriched:** Inferential conjunction meaning 'then,' 'so,' 'therefore,' drawing a logical conclusion from preceding evidence or argument. Overwhelmingly dominant (47 of 48 occurrences), it appears in Jesus's teaching (Matt 12:28; 17:26) and saturates Paul's epistles, especially Romans (Rom 5:18; 7:3; 8:1). All major translations converge: 'then/therefore' (eng), 'pues/entonces' (spa), 'donc' (fra), 'also' (deu) — each language reaching for its standard logical connector.
+
+### G2097 / Sense 68320 (47 occ, sense 1 of 2)
+**Label:** proclaim good news
+**Lemma gloss:** To announce good news, preach the gospel; in the passive, to have good news proclaimed to oneself.
+**Description:** To actively announce or preach the gospel / good news to people, used across all active and middle voice forms including participles, infinitives, indicatives, and subjunctives in various persons and tenses.
+**Enriched:** To actively proclaim or preach good news, whether the kingdom of God or the gospel broadly. This is the dominant use across the New Testament (47 of 55 occurrences). Spanish 'anunciar buenas nuevas' and German 'Evangelium verkuendigen' both preserve the 'good news' root. Key passages: Luke 4:18 (Jesus' manifesto), Acts 8:35 (Philip to the Ethiopian). The middle-voice form emphasizes the herald's personal engagement with the message.
+
+### G3759 / Sense 73516 (47 occ, sense 1 of 1)
+**Label:** woe
+**Lemma gloss:** ouai -- woe!; an exclamation of grief, warning, or prophetic denunciation against persons, cities, or behaviors
+**Description:** woe, Woe, Woes (47 occurrences across 2 original clusters)
+**Enriched:** An exclamation of prophetic denunciation, lament, and warning, directed at persons, cities, or behaviors under divine judgment. Jesus pronounces woe against unrepentant Galilean cities (Matt 11:21), against Pharisaic hypocrisy in a withering sevenfold series (Matt 23:13-29), and against the betrayer (Matt 26:24). In Revelation it signals cosmic catastrophe and the three eschatological woes (Rev 8:13; 9:12; 11:14). Spanish ay, French malheur, and German wehe all preserve the exclamatory force across all 47 occurrences.
+
+### G4043 / Sense 74550 (47 occ, sense 2 of 3)
+**Label:** walk physically
+**Lemma gloss:** To walk physically on foot; figuratively, to conduct oneself or live in a certain manner, describing ethical and spiritual behavior.
+**Description:** To move on foot in a literal, physical sense, whether walking along a road, through a building, or on water.
+**Enriched:** The literal, physical sense: to move on foot, to walk somewhere. Jesus walking on the sea (Matt 14:25), the healed paralytic walking (Matt 9:5), and crowds walking along roads all use this concrete meaning. With 47 occurrences, the physical sense nearly matches the figurative in frequency — a reminder that the metaphor stays grounded. Spanish 'camina/caminando' and the identical French 'marcher' carry this straightforward ambulatory meaning.
+
+### G4253 / Sense 75587 (47 occ, sense 1 of 1)
+**Label:** before
+**Lemma gloss:** pro -- before; a preposition of temporal priority, spatial position in front, or superiority in rank
+**Description:** before, Before (47 occurrences across 6 original clusters)
+**Enriched:** A preposition meaning 'before' in temporal, spatial, and metaphorical senses, governing the genitive. Temporal priority dominates: 'before the foundation of the world' (John 17:24; Eph 1:4), 'before all things' for Christ's pre-existence (Col 1:17), and 'before the feast of Passover' (John 13:1). Spatial use appears in 'before the door' (Acts 5:23; 12:6), and James 5:12 uses it for precedence ('above all'). Spanish antes, French avant, and German vor consistently map to this single prepositional sense across all 47 occurrences.
+
+### G5401 / Sense 78669 (47 occ, sense 1 of 1)
+**Label:** fear, dread, reverence
+**Lemma gloss:** fear, dread, reverence — the emotion of alarm before danger or awe before the divine
+**Description:** The emotion of fear, whether directed toward danger (dread, terror) or toward God (reverential awe). All 47 occurrences across singular cases (N-GMS, N-AMS, N-NMS, N-DMS) and plural (N-NMP) converge on a single lexical concept: spa 'temor/miedo/temores', hin 'bhay/dar' (fear/dread), arb 'khawf/makhawif' (fear/fears), kor 'duryeoum/duryeoumdeul' (fear/fears), swa 'hofu' (fear). The prepositional usage 'with fear' (S78670) and the plural 'fears' (S78673) are grammatical variations, not distinct senses. Context determines whether the referent is human dread or divine reverence, but the word itself denotes a single emotional state.
+**Enriched:** The full emotional range from panic dread to reverential awe, encompassing terror before supernatural manifestations (Matt 14:26 the disciples' fear on the sea; Matt 28:4 the guards at the tomb), communal awe following miracles or divine judgments (Luke 7:16; Acts 5:11), and the godly reverence commended as an ethical posture (Rom 13:7 'fear to whom fear'; Phil 2:12 'with fear and trembling'). The multilingual evidence — Spanish 'miedo/temor,' French 'crainte,' German 'Furcht' — uniformly renders all 47 occurrences with a single term, confirming that the semantic unity of phobos resists subdivision into separate lexical senses.
+
+### H0214 / Sense 80592 (47 occ, sense 1 of 3)
+**Label:** treasury, treasure-house
+**Lemma gloss:** Treasure, treasury, storehouse; stored wealth, a building for valuables, or a granary for provisions and cosmic reserves.
+**Description:** A dedicated room or building where valuables are stored, especially a royal or temple treasury.
+**Enriched:** A dedicated room, building, or vault where valuables are stored — particularly the royal or temple treasury. In Josh 6:19, the captured metals go into the 'treasury of the LORD,' and 1 Kgs 7:51 describes Solomon depositing items in the temple treasuries. German 'Schatzhaus' (treasure-house) captures this architectural sense precisely. The emphasis is on the place of storage rather than the wealth itself, often appearing with the construct state indicating possession (treasury of the king, treasury of the house of the LORD).
+
+### H0346 / Sense 81570 (47 occ, sense 1 of 1)
+**Label:** where? (interrogative of location)
+**Lemma gloss:** where? — an interrogative adverb asking about location, often with rhetorical or accusatory force
+**Description:** Interrogative particle asking about location or whereabouts, frequently used in direct questions and prophetic challenges ('Where is your God?'). English 'where / where–is / and–where,' Spanish '¿Dónde / dónde / ¿dónde–están,' Hindi 'कहाँ / कहाँ–है / और–कहाँ–हैं,' Arabic 'أَيْنَ / وَ–أَيْنَ,' Korean '어디에 / 어디–에 / 그리고–어디에,' Swahili 'yuko–wapi / iko–wapi / wako–wapi / na–wako–wapi.' Both clusters express the identical interrogative meaning; the only difference is the presence of the conjunctive waw prefix in S81573 (2x) versus standalone use in S81570 (45x).
+**Enriched:** An interrogative adverb of place used in direct questions about the location or whereabouts of persons and things, frequently carrying rhetorical or accusatory force. Appears in genuine inquiries (Gen 18:9 'Where is Sarah?'; Gen 22:7 'Where is the lamb?'), in prophetic challenges that mock absent gods (Jer 2:28; Ps 115:2; Joel 2:17 'Where is their God?'), and in existential cries that imply the answer is 'nowhere' (Isa 33:18; Job 15:23). The particle never takes a verb directly, distinguishing it syntactically from 'eyfoh. All 47 uses share this single locative-interrogative function, with rhetorical coloring determined by context rather than by lexical distinction.
+
+### H0389 / Sense 81923 (47 occ, sense 3 of 3)
+**Label:** but, however (adversative)
+**Lemma gloss:** A discourse particle: surely, indeed (asseverative); only, merely (restrictive); but, however (adversative).
+**Description:** Adversative particle introducing a contrast, limitation, or qualification to a preceding statement.
+**Enriched:** Adversative: 'but, however, yet.' Introduces a contrast, qualification, or concession against what precedes. In Genesis 9:4, after granting permission to eat meat: 'but flesh with its life-blood you shall not eat.' In Genesis 20:12, Abraham qualifies: 'but indeed she is my sister.' Spanish pero/sin embargo and German aber render this contrastive pivot clearly. This sense often softens or redirects, rather than flatly contradicting.
+
+### H0530 / Sense 82897 (47 occ, sense 1 of 3)
+**Label:** faithfulness, fidelity, reliability
+**Lemma gloss:** Faithfulness, fidelity, trustworthiness; also personal faith/trust and physical steadiness
+**Description:** The quality of being faithful, trustworthy, and reliable — used predominantly of God's covenant faithfulness and also of human fidelity, often paired with חֶסֶד (steadfast love) and sometimes shading into 'truth' as an attribute of dependable character.
+**Enriched:** The quality of being faithful, reliable, and trustworthy — the dominant sense across 47 occurrences. Used of God's covenant fidelity (Deut 32:4; Ps 36:5) and of human integrity in office (2 Kgs 12:15; 1 Chr 9:22). Frequently paired with chesed ('steadfast love'). French 'fidélité' and Spanish 'fidelidad/con-verdad' capture this relational trust.
+

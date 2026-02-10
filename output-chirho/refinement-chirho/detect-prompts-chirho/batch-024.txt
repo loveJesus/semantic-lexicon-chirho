@@ -1,0 +1,291 @@
+# Sense Refinement Detection — Batch 024
+
+You are a biblical lexicographer reviewing sense entries for a Hebrew/Aramaic/Greek lexicon.
+Each entry below is a single "sense" that was produced by clustering translation signatures 
+and then merging with an LLM. Some senses may have been OVER-LUMPED — they contain genuinely 
+distinct meanings that should be separate senses.
+
+## Your Task
+
+For each sense, determine if it should be SPLIT into multiple senses. Look for:
+- Literal vs. figurative/metaphorical uses lumped together
+- Concrete vs. abstract meanings combined
+- Multiple distinct referents (e.g., "father" = biological parent + patron/advisor + originator)
+- Physical vs. spiritual/theological uses merged
+- Different syntactic frames producing different meanings
+
+## Output Format
+
+Return a JSON array. For senses that need NO splitting, omit them entirely.
+For senses that SHOULD be split, include an entry like:
+
+```json
+[
+  {
+    "senseIdChirho": 79287,
+    "lemmaIdChirho": "H0001",
+    "currentLabelChirho": "father, immediate male parent",
+    "splitProposalChirho": [
+      {
+        "newLabelChirho": "biological/legal father",
+        "criteriaChirho": "Direct parent-child relationship, possessive constructions with specific person"
+      },
+      {
+        "newLabelChirho": "metaphorical father (patron, advisor, protector)",
+        "criteriaChirho": "Title of respect for prophets, advisors, or authority figures; 'father to Pharaoh' type usage"
+      }
+    ],
+    "confidenceChirho": "high",
+    "reasoningChirho": "Description explicitly mentions 'title of respect or metaphorical originator' alongside biological father"
+  }
+]
+```
+
+Only propose splits where you have MEDIUM or HIGH confidence. Do NOT split function words (articles, 
+prepositions, particles, conjunctions) unless there is a genuinely distinct semantic sense (not just 
+syntactic variation). Proper nouns generally should NOT be split.
+
+If NO senses in this batch need splitting, return an empty array: []
+
+## Senses to Review
+
+### G3870 / Sense 73927 (57 occ, sense 1 of 5)
+**Label:** entreat, beseech, implore
+**Lemma gloss:** To call alongside; entreat, exhort, encourage, comfort, or invite — spanning earnest appeal, pastoral urging, and consolation.
+**Description:** To earnestly request or plead with someone, appealing for a favor, action, or mercy (active voice; Arabic تَوَسَّلَ/طَلَبَ, Korean 간청하다, Swahili -sihi/-omba).
+**Enriched:** To entreat, beseech, or implore — the largest cluster at 57 occurrences. This is the parakaleo of desperate petition: the centurion begging Jesus to heal his servant (Matt 8:5), the Gadarene demons pleading to enter the swine (Matt 8:31), the woman with the hemorrhage touching his garment after the crowd 'pressed' him (Mark 5:23). The subject is typically in a position of need or inferiority, appealing upward. Arabic tawassala and Korean 간청하다 both select the 'earnest plea' register, while Swahili -sihi carries the nuance of humble supplication. Paul uses this sense when he 'begs' the Corinthians to be reconciled to God (2 Cor 5:20).
+
+### H0116 / Sense 79942 (57 occ, sense 1 of 1)
+**Label:** then
+**Lemma gloss:** Then, at that time — Aramaic temporal adverb marking sequential or consequential action
+**Description:** then, and then (57 occurrences across 2 original clusters)
+**Enriched:** Aramaic temporal adverb meaning 'then, at that time, thereupon.' All 57 occurrences appear in the Aramaic sections of Ezra (4–7) and Daniel (2–7). Spanish 'entonces,' French 'alors,' and German 'dann/daraufhin' each capture the sequential-consequential force. The word typically opens a new narrative clause, signaling that what follows is a direct response to or result of the preceding action (Ezra 4:9, 23, 24; 5:2, 4; Dan 2:14, 17, 19, 35, 46, 48).
+
+### H0251 / Sense 80893 (57 occ, sense 2 of 2)
+**Label:** kinsman, fellow countryman, brethren
+**Lemma gloss:** Brother (blood sibling sharing parents); by extension kinsman, fellow countryman, or national brethren.
+**Description:** A broader relational sense extending beyond blood siblings to denote kinsmen, tribal relatives, fellow Israelites, or national brethren; Arabic glosses in these clusters favor إِخْوَان (brethren/fellow members) over إِخْوَة (blood brothers), signaling a wider semantic scope; Korean 형제들 and Swahili ndugu likewise carry this broader 'kinsman' range in the relevant contexts.
+**Enriched:** A broader relational sense extending beyond blood to encompass kinsmen, tribal relatives, fellow Israelites, or national brethren. Arabic glosses favor ikhwan (brethren/fellows) over akh (brother) in these contexts, revealing the semantic shift. Used when Moses adjudicates between Israelite 'brothers' (Deut 1:16), when Levites serve alongside priestly 'brothers' (Num 18:6), and in covenant address (Num 20:3).
+
+### H0389 / Sense 81921 (57 occ, sense 1 of 3)
+**Label:** only, merely (restrictive)
+**Lemma gloss:** A discourse particle: surely, indeed (asseverative); only, merely (restrictive); but, however (adversative).
+**Description:** Restrictive particle limiting scope to what follows, indicating exclusivity or sole applicability.
+**Enriched:** Restrictive: 'only, merely, nothing but.' Limits the scope of what follows, marking an exception or condition. In Exodus 12:16 no work shall be done, 'only what is eaten by every person—that alone shall be prepared.' Spanish solamente and German nur render this limiting function precisely. The particle narrows the field of possibility, functioning much like English 'only' or 'just' (Gen 34:23, Exod 10:17).
+
+### H0389 / Sense 81922 (57 occ, sense 2 of 3)
+**Label:** surely, indeed (asseverative)
+**Lemma gloss:** A discourse particle: surely, indeed (asseverative); only, merely (restrictive); but, however (adversative).
+**Description:** Emphatic asseverative particle affirming the certainty or truth of a statement.
+**Enriched:** Asseverative: 'surely, indeed, certainly.' Introduces emphatic affirmation, often marking the speaker's sudden realization or confident assertion. Laban's 'Surely you are my bone and flesh!' (Gen 29:14), Samuel's 'Surely the Lord's anointed is before him!' (1 Sam 16:6). French certes/certainement and German fürwahr capture this emphatic certainty. Often appears in colloquial, emotionally charged speech.
+
+### H0929 / Sense 85429 (57 occ, sense 2 of 2)
+**Label:** livestock, cattle (domesticated)
+**Lemma gloss:** Beast, animal, cattle — a large land creature, either wild or domesticated; collectively, livestock or animals in general.
+**Description:** Domesticated herd animals kept for agricultural purposes, including cattle, sheep, and other farm animals; used in contexts of ownership, husbandry, and economic provision, consistently glossed as ganado (Spa), 가축 (Kor), and mifugo (Swa).
+**Enriched:** Domesticated herd animals — cattle, livestock — kept for agricultural labor, food, or economic value. The possessive constructions ('your beast,' 'his beast') signal ownership and husbandry. German consistently shifts to 'Vieh' (livestock) and Spanish to 'ganado' (cattle/herd) in these contexts. Central to covenant life: Sabbath rest extends to your behemah (Exod 20:10), and the righteous person cares for the life of his behemah (Prov 12:10).
+
+### H1097 / Sense 86813 (57 occ, sense 1 of 2)
+**Label:** without, not, for lack of
+**Lemma gloss:** Without, not, for lack of; rarely as substantive: nothingness, destruction
+**Description:** Negative particle functioning as preposition or adverb expressing privation or absence; used alone (בְּלִי 'without'), or in combination with prefixed prepositions: מִבְּלִי 'for lack of, because there is no', בִּבְלִי 'without', לִבְלִי 'so as not to, lest', כִּבְלִי 'as without'; also with interrogative ה in the rhetorical formula הַמִבְּלִי 'is it because there is no...?'; and in the temporal phrase עַד־בְּלִי 'until there is no more, forever'
+**Enriched:** The dominant usage across 57 occurrences, functioning as a preposition or adverb meaning 'without,' 'not,' or 'for lack of.' In Gen 31:20 it negates a finite verb in prose (בְּלִי הִגִּיד 'without telling'), while in Job it frequently governs nouns to express privation (Job 8:11 בְּלִי־מַיִם 'without water'). Multilingual glosses converge on 'without/sin/sans/ohne,' underscoring the universal privative reading. Compounds with מִן and לְ intensify causal force, as in Deut 28:55.
+
+### H3405 / Sense 104149 (57 occ, sense 1 of 1)
+**Label:** Jericho (place name)
+**Lemma gloss:** Jericho -- the ancient Canaanite city in the Jordan Valley, first major conquest under Joshua
+**Description:** Proper feminine noun יְרִיחוֹ / יְרִיחֹה / יְרֵחוֹ designating the ancient Canaanite city of Jericho in the Jordan Valley. The three orthographic forms are scribal variants with no semantic distinction. Occurs extensively across Joshua (Josh 2:1-3, 5:13, 6:1-26, 7:2, 8:2, 9:3, 10:1, 16:1-7, 18:12, 20:8, 24:11), Numbers (Num 22:1, 26:3, 26:63, 31:12, 33:48-50, 34:15, 35:1, 36:13), Deuteronomy (Deut 32:49, 34:1-3), Samuel (2 Sam 10:5), Kings (1 Kgs 16:34; 2 Kgs 2:5-18, 25:5), Chronicles (1 Chr 6:63, 19:5), Jeremiah (Jer 39:5, 52:8), and Nehemiah (Neh 3:2, 7:36). All prepositional prefixes (ב 'in,' ל 'to,' מ 'from,' ו 'and') are inflectional, not sense-bearing.
+**Enriched:** The ancient city in the Jordan Valley, appearing in three orthographic variants reflecting scribal tradition. Best known as the site of Joshua's dramatic conquest (Josh 6:1-21), it also serves as a prophetic center under Elisha (2 Kgs 2:4-5) and a landmark in Zedekiah's capture (Jer 39:5). Spanish Jerico, French and German Jericho preserve the toponym uniformly.
+
+### H3588b / Sense 105970 (57 occ, sense 1 of 4)
+**Label:** but, rather (adversative)
+**Lemma gloss:** Compound conjunction 'ki im': but/rather (adversative), except/unless (exceptive), for/because (causal), or surely/that (asseverative).
+**Description:** Introduces an adversative or contrastive clause, correcting or opposing a preceding negative statement (often 'not X but Y').
+**Enriched:** Adversative 'but, rather' -- the most frequent use (~57x), typically following a negation to introduce the contrasting truth. Spanish sino and German sondern both confirm the strong adversative force. In Gen 32:28, Jacob is told his name will no longer be Jacob ki im Israel, and in Deut 7:5 Israel is commanded not to make treaties but rather to tear down altars. The pattern 'not X ki im Y' is the hallmark construction.
+
+### H4210 / Sense 110684 (57 occ, sense 1 of 1)
+**Label:** (none)
+**Lemma gloss:** mizmor -- a psalm; a technical superscription term for a musical composition sung with instrumental accompaniment
+**Description:** (none)
+**Enriched:** A technical term for a psalm meant for musical performance, confined to superscriptions of 57 psalms. It appears alone (Ps 98:1), with Davidic attribution (Ps 3:1; 23:1), or paired with shir (Ps 30:1; 92:1). Cognate forms in Arabic, Syriac, and Ethiopic confirm it as the pan-Semitic word for psalmody. Spanish Salmo, French psaume, and German Psalm render it uniformly.
+
+### H4605 / Sense 113068 (57 occ, sense 1 of 4)
+**Label:** and upward, onward (additive extent)
+**Lemma gloss:** Above, upward -- used in adverbial and prepositional phrases for additive extent ('and upward'), source from above, upward direction, and static position on top.
+**Description:** Adverbial use marking the lower bound of a range extending upward; 'and upward, and beyond, and onward.' The characteristic formula is X wa-ma'lah 'from X and upward/onward,' especially in census and Levitical service regulations: 'from twenty years old and upward' (Exod 30:14; 38:26; Num 1:3, 20; 14:29; 26:2; 32:11; 1 Chr 23:24, 27; 27:23; 2 Chr 25:5; 31:17; Ezra 3:8), 'from a month old and upward' (Num 3:15, 22, 28, 34, 39, 40, 43; 18:16; 26:62), and measurement thresholds (Lev 27:7; 1 Sam 9:2; 10:23; Ezek 41:7).
+**Enriched:** Additive extent 'and upward, and onward' (~57x) -- the characteristic formula X wa-ma'lah marking an open lower bound: 'from twenty years old and upward' (Num 1:3), 'from a month old and upward' (Num 3:15). German und-aufwaerts and Spanish y-arriba consistently render this quantitative-threshold sense. It appears overwhelmingly in census lists, Levitical age requirements, and measurement specifications throughout Numbers, Leviticus, and Chronicles.
+
+### H6869b / Sense 130686 (57 occ, sense 1 of 2)
+**Label:** distress, trouble
+**Lemma gloss:** Distress, trouble, affliction — personal or national hardship (singular); concrete instances of repeated troubles or adversities (plural).
+**Description:** The state or condition of being in distress, affliction, or trouble — used of personal, national, or existential hardship experienced as a singular reality.
+**Enriched:** The state or condition of distress, affliction, or trouble experienced as a singular pressing reality — personal anguish, national crisis, or existential hardship. With 57 occurrences, this sense appears in Jacob's recognition of Joseph's 'distress of soul' (Gen 42:21), the phrase 'in the day of my distress' (Gen 35:3; Ps 77:3; 86:7), the Israelites crying to God 'in the time of their trouble' (Judg 10:14), and the prophetic 'day of distress' passages (Nah 1:7; Zeph 1:15). German Bedrängnis and Trübsal capture the sense of being pressed in, Spanish angustia conveys the constriction metaphor, and French détresse tracks the English 'distress' closely. The singular form emphasizes trouble as an encompassing condition rather than a countable event.
+
+### G1905 / Sense 67552 (56 occ, sense 1 of 1)
+**Label:** ask, question, inquire
+**Lemma gloss:** eperotao -- to ask, question, or interrogate someone; to make inquiry of a person for information or testing
+**Description:** To direct a question or inquiry to someone, seeking information or clarification, whether in ordinary conversation, formal interrogation, or theological debate.
+**Enriched:** To ask or question someone directly, whether seeking information, testing an interlocutor, or conducting formal interrogation. In Matt 22:35 a lawyer questions Jesus to test him; in Mark 9:32 the disciples fear to ask about his passion prediction; in Matt 27:11 Pilate interrogates Jesus. Spanish pregunto, French interroger, and German fragen converge on this single questioning sense across 56 occurrences.
+
+### G4864 / Sense 77035 (56 occ, sense 1 of 1)
+**Label:** synagogue, place of Jewish assembly
+**Lemma gloss:** synagoge -- synagogue; the Jewish assembly or its meeting place for worship, prayer, and Scripture reading
+**Description:** A building or gathering place where Jews assemble for worship, prayer, and reading of Scripture; used throughout the Gospels and Acts for the local houses of worship where Jesus and the apostles taught. Singular and plural forms represent the same core referent. Cross-linguistic evidence is remarkably uniform: Spanish 'sinagoga/sinagogas', Hindi 'आराधनालय' (house of worship) and 'सभागृह' (assembly hall), Arabic 'مَجمَع/مَجَامِع' (gathering place), Korean '회당' (assembly hall), Swahili 'sinagogi/masinagogi' — all consistently denoting a Jewish worship assembly place. The Hindi gloss 'सभागृह' (assembly house) highlights the communal gathering aspect rather than purely religious function.
+**Enriched:** The Jewish place of assembly for worship, prayer, and Torah reading. Jesus teaches and heals in synagogues throughout Galilee (Matt 4:23; 9:35), Paul visits them first in each new city (Acts 13:5; 17:1-2), and they become sites of both proclamation and persecution. Spanish sinagoga, French synagogue, and German Synagoge are direct Greek borrowings confirming a single referent.
+
+### H0518b / Sense 82805 (56 occ, sense 2 of 6)
+**Label:** restrictive: only, except
+**Lemma gloss:** Compound particle ki im: if, only/except, but/rather, surely; used in conditions, restrictions, adversatives, and oaths
+**Description:** Functions as a restrictive or exceptive particle limiting scope to a single alternative ('only, except, nothing but, unless').
+**Enriched:** The restrictive or exceptive sense, typically following a negation, limiting the scope to a single alternative: 'only, except, nothing but, unless.' French seulement and German nur both encode this narrowing function. Gen 39:6 (Potiphar entrusted everything to Joseph and 'did not concern himself with anything except [ki im] the food he ate'), Gen 39:9 ('he has withheld nothing from me except [ki im] you'), and Lev 21:2, 14 (priestly purity laws listing exceptions) show how the compound funnels discourse down to one permitted alternative.
+
+### H0519 / Sense 82838 (56 occ, sense 1 of 1)
+**Label:** female servant, maidservant
+**Lemma gloss:** amah -- a female servant or handmaid; used both as a social status term and a self-deprecating form of address
+**Description:** A female slave or servant in a household, used both as a straightforward social designation and as a self-deprecating form of address by women speaking to superiors.
+**Enriched:** A female servant within a household, used both as a social designation in legal contexts (Exod 20:10; 21:20) and as a deferential self-reference by women addressing superiors -- Hannah before Yahweh (1 Sam 1:11), Abigail before David (1 Sam 25:24). Spanish sierva, French servante, and German Magd reflect this single semantic range across all 56 occurrences.
+
+### H2022 / Sense 93587 (56 occ, sense 3 of 3)
+**Label:** hill country, highland region
+**Lemma gloss:** Mountain, hill, or highland region; a single peak, a range of mountains, or an inhabited hill country district.
+**Description:** A mountainous district or highland area rather than a single peak, used for regions like the hill country of Ephraim or Judah, where the referent is an inhabited upland territory; distinguished by Korean 산지 (sanji) and English 'hill country' translations.
+**Enriched:** A mountainous district or highland region rather than a single peak, used for inhabited territories like the hill country of Ephraim (Josh 17:15), Judah, or Seir (Gen 36:8-9). Korean and French glosses often render this as 'hill country of' or 'colline-pays-de,' capturing the territorial nuance. Distinguished from senses 1 and 2 by context: when har precedes a tribal or regional name in construct, it typically means the upland district, not a solitary mountain.
+
+### H2490c / Sense 97237 (56 occ, sense 2 of 5)
+**Label:** Hifil: begin, start
+**Lemma gloss:** Piel: to profane, defile, desecrate; Hifil: to begin; Nifal/Pual: be profaned; also to treat fruit as common
+**Description:** Root I חלל in the Hifil stem (causative/inchoative): to begin or start doing something; the most frequent sense of this homograph, consistently glossed across languages as begin/start (Arabic ابْتَدَأَ/بَدَأَ, Korean 시작하다, Swahili -anza, Hindi शुरू करना), encompassing all persons, numbers, and tenses of the Hifil including the Hofal passive 'was begun' and the Nifal inchoative 'begins'.
+**Enriched:** The Hifil inchoative 'begin, start' — 56 occurrences making it the second most frequent sense. Genesis 4:26 records humanity beginning to call on the LORD's name; Genesis 6:1 marks when humankind 'began' to multiply; Genesis 9:20 introduces Noah as the one who 'began' to be a farmer. Spanish 'comenzó/empezó' and French 'commença' render this uniformly. The Arabic cognate خَلَّ (untie, loosen, make free) illuminates the semantic bridge: to begin is to 'open up' an activity, releasing it into existence. This sense is morphologically distinct (Hifil stem) from the Piel profane sense.
+
+### H2555 / Sense 97828 (56 occ, sense 1 of 2)
+**Label:** violence, physical brutality
+**Lemma gloss:** Violence, brutality, or destructive aggression; also moral wrong, injustice, or malicious harm done to another person.
+**Description:** Physical violence, brutal force, or destructive aggression directed against persons or property.
+**Enriched:** Physical violence, brutal force, or destructive aggression directed against persons, property, or the social order. This dominant sense covers 56 occurrences and is the term's primary semantic weight. Spanish 'violencia,' French 'violence,' and German 'Gewalt/Gewalttat' consistently render this concrete dimension. The antediluvian world filled with violence (Gen 6:11, 13), the bloodshed of Shechem (Judg 9:24), and the Chaldean campaigns of destruction (Hab 1:9; 2:8, 17) all exemplify raw, physical חָמָס.
+
+### H3988a / Sense 109446 (56 occ, sense 1 of 4)
+**Label:** reject, refuse
+**Lemma gloss:** To reject, refuse, or repudiate; to despise or scorn; in the Nifal, to be rejected or deemed reprobate; also to loathe or find abhorrent.
+**Description:** To actively reject, refuse, or repudiate someone or something, the primary Qal sense attested across all persons and tenses with consistent Arabic rafada, Swahili kataa, and Spanish rechazar/desechar translations.
+**Enriched:** The primary Qal sense: to reject, refuse, or repudiate a person, thing, or divine command. Convergent across languages — Arabic rafada, Swahili kataa, Spanish rechazar/desechar — this sense covers the major covenantal crises: Israel rejecting God's kingship (1 Sam 8:7), God rejecting Saul (1 Sam 15:23, 26), Israel spurning the Torah (Lev 26:43–44), and the people refusing the gentle waters of Shiloah (Isa 8:6). The rejection is always active, deliberate, and consequential — not passive indifference but a conscious turning away from what was offered or commanded.
+
+### H4217 / Sense 110691 (56 occ, sense 1 of 2)
+**Label:** east, cardinal direction
+**Lemma gloss:** The east as a cardinal direction; also the rising of the sun, often in the phrase 'mizrach hashemesh.'
+**Description:** The compass direction east, used absolutely or relationally to indicate location or orientation toward the east.
+**Enriched:** The cardinal direction east, used absolutely or with directional heh to indicate location, orientation, or geographic boundary. This sense dominates with 56 occurrences, confirmed by translations using straightforward directional terms: Spanish 'al oriente/hacia el este,' French 'orient/vers l'est,' German 'Osten.' The tabernacle entrance faced eastward (Num 3:38), tribal territories were assigned 'on the east side' (Num 2:3; 32:19), and Ezekiel's temple vision orients toward the east gate (Ezek 43:1-2; 47:1-2).
+
+### H5329 / Sense 118780 (56 occ, sense 1 of 3)
+**Label:** choirmaster, musical director (Piel ptcp.)
+**Lemma gloss:** Choirmaster or musical director (Piel ptcp.); to oversee or supervise work (Piel); enduring, perpetual (Nifal ptcp.).
+**Description:** Piel participle used substantively as a technical musical term in Psalm superscriptions meaning 'choirmaster' or 'musical director,' the one who leads or oversees the performance of liturgical music. Appears 55+ times in Psalm titles (e.g., Ps 4:1, 5:1, 6:1, 8:1, 9:1, 11:1, 12:1, 13:1, 14:1, 18:1, 19:1, 20:1, 21:1, 22:1, 31:1) and in Hab 3:19. Multilingual glosses confirm: Ger 'Chorleiter,' Spa 'director,' Arb 'ra'is al-mughannin' (chief of singers), Hin 'pradhan gayak' (chief singer), Kor 'indoja' (leader/director).
+**Enriched:** The Piel participle used as a substantive in 56 psalm superscriptions: lamnatseach, 'to the choirmaster' or 'for the music director.' This is the most frequent and recognizable use, functioning as a technical liturgical rubric. Spanish al director, French au chef de musique, and Korean indobajayege ('to the conductor') all identify a specific worship leader responsible for performance. Habakkuk 3:19 uses the same form outside the Psalter, confirming it as a recognized office rather than a mere scribal notation.
+
+### H???? / Sense 145989 (56 occ, sense 16 of 94)
+**Label:** (none)
+**Lemma gloss:** (none)
+**Description:** (none)
+**Enriched:** (none)
+
+### G2521 / Sense 69758 (55 occ, sense 1 of 3)
+**Label:** sit enthroned, reign
+**Lemma gloss:** To sit, be seated; to sit enthroned or reign in authority; to dwell, reside, inhabit a place or condition.
+**Description:** To be seated on a throne or in a position of authority and judgment, often of God, Christ, or rulers exercising dominion.
+**Enriched:** To sit enthroned, to be seated in a position of authority, rule, or judgment (55 occurrences). This is the dominant New Testament sense, covering Christ seated at God's right hand (Matt 26:64; Rev 4:2), God enthroned in heaven (Rev 4:9-10), rulers on judgment seats, and the apocalyptic riders of Revelation. Korean 앉으시다 (honorific 'sit') and Hindi विराजमान ('enthroned') deploy elevated register, while Spanish sentado en el trono and German auf dem Thron sitzend add explicit throne vocabulary — all confirming that translators perceive royal dignity beyond mere posture.
+
+### G4091 / Sense 74726 (55 occ, sense 1 of 1)
+**Label:** Pilate (Pontius Pilatus)
+**Lemma gloss:** Pilatos -- Pontius Pilate, the Roman prefect of Judea who presided over the trial and crucifixion of Jesus
+**Description:** The Roman prefect of Judea (ca. AD 26–36) who presided over the trial and crucifixion of Jesus; a proper noun appearing 55 times across the Gospels, Acts, and 1 Timothy. All occurrences refer to the same historical person regardless of grammatical case. Multilingual transliterations are consistent: spa 'Pilâtos/Pilátos,' hin 'पिलातुस/पीलातुस' (Pilātus), arb 'بِيلَاطُس' (Bīlāṭus), kor '빌라도' (Billado), swa 'Pilato/Pilâtos.' The single genitive occurrence in S74728 ('of Pilate,' used in a temporal or possessive construction) denotes the same referent as the 54 nominative, accusative, and dative occurrences in S74726. There is no semantic distinction to be drawn for proper nouns across case inflections.
+**Enriched:** The Roman prefect of Judea (ca. AD 26-36) who presided over the trial and crucifixion of Jesus. Pilate appears in all four Passion narratives (Matt 27; Mark 15; Luke 23; John 18-19), in Luke's chronological note (Luke 3:1), and in the creedal confession of 1 Tim 6:13. Spanish Pilatos, French Pilate, and German Pilatus retain the Latin cognomen consistently.
+
+### H0134 / Sense 80097 (55 occ, sense 1 of 2)
+**Label:** socket or pedestal base
+**Lemma gloss:** Socket, pedestal base (of the Tabernacle); broadly, foundation or base of a structure
+**Description:** A metal socket or pedestal base used to support the boards, pillars, and posts of the Tabernacle and its court, typically made of silver or bronze.
+**Enriched:** The primary technical sense (55x): a metal socket or pedestal base used in Tabernacle construction. Each board required two silver sockets (Exod 26:19–21), and each pillar one bronze socket, totaling nearly a hundred for the entire structure. Multilingual glosses ('bases/basas/bases/Fuesse') consistently render architectural hardware. The Exodus 38:27 summary tallies one hundred sockets from one hundred talents of silver, emphasizing their material weight.
+
+### H0490 / Sense 82643 (55 occ, sense 1 of 2)
+**Label:** widow, bereaved woman
+**Lemma gloss:** Widow, bereaved woman; possibly a homograph meaning palace or fortress (Isa 13:22)
+**Description:** A woman whose husband has died, often mentioned alongside the fatherless and sojourner as a vulnerable class deserving protection and provision under the Torah.
+**Enriched:** A widow or bereaved woman (55x), one of the Torah's paradigmatic vulnerable persons. Gen 38:11 introduces Tamar sent to her father's house as an אַלְמָנָה, and Exod 22:22 commands Israel not to afflict any widow or orphan. Translations universally converge on 'widow/viuda/veuve/Witwe.' The legal and prophetic corpus builds an extensive theology of divine advocacy for widows, from Deuteronomic legislation (Deut 10:18, 24:17) to prophetic indictment (Isa 1:17, Jer 7:6).
+
+### H0635 / Sense 83618 (55 occ, sense 1 of 1)
+**Label:** Esther (proper name)
+**Lemma gloss:** Esther -- the Jewish queen of Persia, heroine of the book bearing her name, also known as Hadassah
+**Description:** The proper noun אֶסְתֵּר (Esther), the Persian name (possibly from Old Persian 'stara', star, or the goddess Ishtar) of Hadassah, the Jewish queen of Persia and protagonist of the Book of Esther. All 55 occurrences appear exclusively in the Book of Esther and render consistently across languages: eng 'Esther', spa 'Ester', hin 'एस्तेर', arb 'أَسْتِيرُ/أَسْتِيرَ', kor '에스더', swa 'Esta'. The two clusters differ only in prefixed prepositions: S83618 (54x) includes bare, lamed-prefixed, and waw-conjunction forms, while S83621 (1x) has the min-preposition ('from Esther'). These are grammatical variations, not semantic distinctions.
+**Enriched:** The Jewish queen of Persia who saved her people from Haman's genocidal plot. Her name may derive from Persian 'star' or the goddess Ishtar; her Hebrew name Hadassah means 'myrtle' (Esth 2:7). All 55 occurrences fall within the Book of Esther, from queenship (Esth 2:17) through courageous intervention (Esth 4:16). Spanish Ester, French and German Esther preserve the name uniformly.
+
+### H0681 / Sense 83914 (55 occ, sense 1 of 2)
+**Label:** beside, near (proximity)
+**Lemma gloss:** A substantive preposition meaning 'beside, near, next to'; with min-prefix, 'from beside, away from the proximity of.'
+**Description:** Spatial proximity indicating location next to or beside someone or something, with or without pronominal suffixes.
+**Enriched:** Static spatial proximity: 'beside, near, next to' someone or something, with or without pronominal suffixes. Across 55 occurrences, this covers scenes of positioning and location. Spanish 'junto a,' French 'à côté de,' and German 'neben' all converge on this locative sense. Key passages include Potiphar's wife describing Joseph as being beside her (Gen 39:15-18), the visionary wheels beside the living creatures (Ezek 1:15), and Wisdom beside God as a master craftsman (Prov 8:30).
+
+### H1612 / Sense 90606 (55 occ, sense 1 of 1)
+**Label:** vine, grapevine
+**Lemma gloss:** gephen -- vine, grapevine; the cultivated grape plant, both literal and as a figure for Israel and blessing
+**Description:** The grapevine plant (Vitis vinifera), used both literally for viticulture and figuratively for Israel/people; all 6 languages use a single consistent lexeme throughout (eng 'vine', spa 'vid', hin 'दाखलता', arb 'كَرْمَة', kor '포도나무', swa 'mzabibu'), with cluster splits arising solely from grammatical variation (article, preposition, conjunction, possessive suffix, number).
+**Enriched:** The grapevine used both literally for viticulture and figuratively for Israel. It appears in the cupbearer's dream (Gen 40:9-10), Nazirite legislation (Num 6:4), and the promise land's bounty (Deut 8:8). Figuratively, Israel is Yahweh's vine (Ps 80:8-16; Isa 5:1-7; Hos 10:1). Spanish vid, French vigne, and German Weinstock confirm a single concept across all 55 occurrences.
+
+### H1961 / Sense 92736 (55 occ, sense 2 of 5)
+**Label:** become, come to be (Qal inchoative)
+**Lemma gloss:** To be, exist, become, come to pass; the foundational Hebrew verb of existence and state-change, serving as copula and narrative marker.
+**Description:** The inchoative-transformative sense of היה in the Qal stem: 'to become, come to be, turn into,' indicating a change of state rather than mere existence, distinctly evidenced by Arabic صَارَ/صِرْتُ (as opposed to copular كَانَ), Korean 되다 (become, as opposed to existential 있다), Hindi हो गया (became), and Spanish 'llegó a ser / se volvió' (became).
+**Enriched:** The inchoative or transformative sense: 'to become, turn into, come to be,' marking a change of state rather than static existence. Distinguished from sense 1 by implying transition — Aaron's rod 'became' a serpent (Exod 7:12), a river 'became' four branches (Gen 2:10), Jacob confessing 'I have become' unworthy (Gen 32:10). The Arabic cognate صَارَ ('to become') parallels this inchoative force. Spanish 'fui' and German 'bin-ich-geworden' capture the transformational aspect that English 'became' renders naturally.
+
+### H2233 / Sense 95086 (55 occ, sense 2 of 3)
+**Label:** agricultural seed, grain
+**Lemma gloss:** Seed, offspring; literal plant seed for sowing, human descendants or lineage, and the season of sowing.
+**Description:** Literal plant seed or grain used for sowing or as produce: the physical seed of crops, trees, herbs, or fruit, including semen in procreative contexts (Arabic zar'/badhr, Swahili mbegu, Hindi bij, Korean ssiat, Spanish semilla).
+**Enriched:** Literal plant seed or grain used for sowing, eating, or as produce — 55 occurrences concentrated in Genesis 1 (seed-bearing plants), the agricultural laws (Lev 11:37-38; 19:19; 27:16), and scattered narrative. 'Seed-bearing herb' and 'tree yielding fruit whose seed is in itself' (Gen 1:11-12, 29) establish this as the creation-order sense. Arabic zar/badhr, Swahili mbegu, Hindi bij, Korean ssi, and Spanish semilla all use dedicated botanical vocabulary. This includes a few occurrences where zera refers to human semen in a procreative-biological rather than genealogical sense (Lev 15:16-18; 18:20).
+
+### H2603a / Sense 98050 (55 occ, sense 1 of 6)
+**Label:** be gracious, show favor (Qal)
+**Lemma gloss:** To show favor, be gracious, have mercy; in Hitpael, to implore grace or supplicate; the root of chen ('grace') and channun ('gracious').
+**Description:** Qal stem: to be gracious, show favor, or have mercy — the core meaning of the root, used of both divine and human agents bestowing unmerited kindness or compassion; Arabic ارْحَمْ/يَتَحَنَّنُ (have mercy/be compassionate), Korean 은혜를 베풀다 (bestow grace), Swahili -hurumia (have mercy), Hindi दया करना/अनुग्रह करना (show mercy/grace), Spanish tener piedad/misericordia (have pity/mercy).
+**Enriched:** Qal: to be gracious, show favor, have mercy — the core sense at 55 occurrences, overwhelmingly with God as subject. The paradigm passage is Exod 33:19 where Yahweh declares sovereign freedom in bestowing grace, and the Aaronic blessing invokes it: 'May the LORD be gracious to you' (Num 6:25). The Psalms account for the largest share, with channeni ('be gracious to me!') as a standard prayer opening (Ps 4:1; 6:2; 9:13; 25:16; 26:11; 27:7; 30:10; 31:9; 51:1; 56:1; 57:1; 86:3; 119:29, 58, 132). Spanish ten misericordia de mí, French fais-moi grâce, and German sei mir gnädig all confirm the mercy-petition frame. When humans are the agents (Gen 33:5, 11; 43:29), the sense softens to 'deal kindly with' — Jacob's acknowledgment that God 'has graciously given' his children.
+
+### H3293a / Sense 102999 (55 occ, sense 1 of 2)
+**Label:** forest, wood, thicket
+**Lemma gloss:** Forest, wood, thicket; once as a place name (Yaar) associated with Kiriath-jearim
+**Description:** A wooded area, forest, or dense thicket; used of natural woodland terrain including named forests like the forest of Lebanon or the forest of Hereth.
+**Enriched:** A forest, wood, or thicket (55x), referring to natural wooded terrain. Deut 19:5 envisions a man going with his neighbor into the יַעַר to cut trees, and 2 Sam 18:6–8 describes the forest of Ephraim consuming more soldiers than the sword in Absalom's rebellion. Jer 10:3 speaks of cutting wood from the forest to make an idol. Multilingual evidence ('forest/bosque/forêt/Wald') is unanimous in rendering natural woodland. The term carries occasional overtones of danger and wildness, as beasts of the forest threaten in Ps 50:10 and Isa 56:9.
+
+### H5674a / Sense 121936 (55 occ, sense 3 of 10)
+**Label:** Qal: pass away, cease
+**Lemma gloss:** to pass over, pass through, pass by; to cross (a boundary, river); to pass away, cease; to transgress; to cause to pass; to remove
+**Description:** To pass away, vanish, or cease to exist; used of temporal passing (time, harvest, seasons), death, wrath subsiding, and things coming to an end or being no more.
+**Enriched:** A Qal sense describing temporal passing, cessation, or vanishing — time, seasons, wrath, or life passing away. The days of mourning 'passed' (Gen 50:4), the battle 'passed beyond' Beth-aven (1 Sam 14:23), the harvest 'is past' (Jer 8:20), and God's wrath 'passes over' when judgment subsides (Job 14:13). The translations reflect endings and disappearances (Arabic inqaḍā 'to elapse', Korean 지나가다 in temporal sense), an extension from spatial to temporal motion.
+
+### H5921a / Sense 123924 (55 occ, sense 3 of 9)
+**Label:** beside, by, at (proximity)
+**Lemma gloss:** upon, on, over; against; beside, by, at; because of, therefore; concerning, about; for, on behalf of; to, unto; according to, in addition to
+**Description:** Proximity or locative-adjacency sense: Arabic عِنْدَ (at/beside) distinctly replaces عَلَى, Korean 에서 (at) and 옆에 (beside), Swahili karibu na (near/beside), kando ya (alongside), kwenye (at); English 'by/beside/at'; semantically distinct from spatial 'upon' in denoting adjacency rather than superposition.
+**Enriched:** Proximity or locative adjacency: 'beside, by, at' indicating nearness without surface contact. Here Arabic replaces عَلَى with عِنْدَ (at/beside), Korean uses 에서 (at location) and 옆에 (beside), Swahili employs karibu na (near/beside), kando ya (alongside), kwenye (at). English renders 'at/by/beside.' Genesis 24:13 'I am standing by the spring,' Exodus 2:15 'Moses sat by the well' — 55 occurrences where spatial relation is horizontal proximity rather than vertical superiority or contact.
+
+### H6041 / Sense 125361 (55 occ, sense 1 of 4)
+**Label:** poor, needy person
+**Lemma gloss:** Poor, afflicted, humble; one who is materially destitute, oppressed in suffering, or lowly in spirit before God.
+**Description:** One who is materially destitute or in a state of economic poverty, often as a social class deserving justice and compassion.
+**Enriched:** The materially poor or destitute person, forming a recognized social class in Israelite law. Spanish 'pobre' and French 'pauvre' both render this economic sense directly. The Torah mandates leaving harvest corners and fallen grain for the 'ani (Lev 19:10; 23:22), guaranteeing same-day wages (Deut 24:15) — protections reflecting genuine economic vulnerability rather than mere misfortune.
+
+### H7126 / Sense 133048 (55 occ, sense 3 of 6)
+**Label:** bring near, cause to approach
+**Lemma gloss:** To draw near or approach; in Hifil, to bring near or present an offering; statively, to be near or at hand.
+**Description:** Hifil non-cultic causative: to bring someone or something near, cause to approach physically — not sacrificial offering but physical bringing close (Arabic qarraba قَرَّبَ or qaddama قَدَّمَ; Korean 가까이 가져오다/데려오다; Hindi निकट लाना; Swahili -leta karibu/-karibisha)
+**Enriched:** Hifil causative in non-cultic contexts: to bring someone or something near physically, to cause another to approach. Distinct from sense 1 because no sacrifice is in view — rather, Moses brings the Levites before the congregation (Num 8:9-10), or Pharaoh's army is brought near (Exod 14:10). Spanish distinguishes this well: hizo acercar ('caused to come near') versus ofrecer ('to offer').
+
+### H7311a / Sense 135093 (55 occ, sense 1 of 11)
+**Label:** lift up, raise (physical)
+**Lemma gloss:** to be high, exalted; to lift up, raise (physically or in status); to exalt, extol (God or a person); to contribute (an offering)
+**Description:** Hifil causative sense of physically lifting, raising, or picking up an object, person, or standard — Arabic رَفَعَ (rafa'a), Korean 들어올리다 (deureo-ollida), Swahili -inua.
+**Enriched:** The primary Hifil causative sense of physically lifting, raising, or picking up an object, body part, or person. Abraham lifts his hand to swear (Gen 14:22), Jacob erects a stone pillar (Gen 31:45), the cupbearer lifts Pharaoh's head (Gen 40:20). Arabic rafa'a 'to raise', Korean 들어올리다 'to lift up', and Swahili -inua 'to raise' all confirm the concrete physical action. This literal sense grounds the metaphorical extensions.
+
+### H8441 / Sense 144747 (55 occ, sense 2 of 2)
+**Label:** abomination, detestable thing
+**Lemma gloss:** Abomination, detestable thing or practice -- something morally or ritually abhorrent to God or culturally repugnant.
+**Description:** Something morally or ritually abhorrent, used in the singular (absolute or construct) to denote a detestable act, practice, or object — often predicated of specific behaviors as offensive to God or to right order.
+**Enriched:** The singular form (55x) identifying a specific act, practice, or object as morally or ritually detestable. Genesis 43:32 applies it to Egyptian cultural taboo against eating with Hebrews, Exodus 8:26 to sacrificial practices repugnant to Egyptians, and Deuteronomy's laws mark individual offenses as 'an abomination to the LORD' (Deut 7:25; 22:5; 23:18). The singular carries a pointed, focused force -- 'this specific thing is abhorrent' -- that the plural broadens into comprehensive catalogs. German distinguishes nuance with both 'Greuel' and 'Grauel.'
+

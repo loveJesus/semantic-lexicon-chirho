@@ -1,0 +1,291 @@
+# Sense Refinement Detection — Batch 030
+
+You are a biblical lexicographer reviewing sense entries for a Hebrew/Aramaic/Greek lexicon.
+Each entry below is a single "sense" that was produced by clustering translation signatures 
+and then merging with an LLM. Some senses may have been OVER-LUMPED — they contain genuinely 
+distinct meanings that should be separate senses.
+
+## Your Task
+
+For each sense, determine if it should be SPLIT into multiple senses. Look for:
+- Literal vs. figurative/metaphorical uses lumped together
+- Concrete vs. abstract meanings combined
+- Multiple distinct referents (e.g., "father" = biological parent + patron/advisor + originator)
+- Physical vs. spiritual/theological uses merged
+- Different syntactic frames producing different meanings
+
+## Output Format
+
+Return a JSON array. For senses that need NO splitting, omit them entirely.
+For senses that SHOULD be split, include an entry like:
+
+```json
+[
+  {
+    "senseIdChirho": 79287,
+    "lemmaIdChirho": "H0001",
+    "currentLabelChirho": "father, immediate male parent",
+    "splitProposalChirho": [
+      {
+        "newLabelChirho": "biological/legal father",
+        "criteriaChirho": "Direct parent-child relationship, possessive constructions with specific person"
+      },
+      {
+        "newLabelChirho": "metaphorical father (patron, advisor, protector)",
+        "criteriaChirho": "Title of respect for prophets, advisors, or authority figures; 'father to Pharaoh' type usage"
+      }
+    ],
+    "confidenceChirho": "high",
+    "reasoningChirho": "Description explicitly mentions 'title of respect or metaphorical originator' alongside biological father"
+  }
+]
+```
+
+Only propose splits where you have MEDIUM or HIGH confidence. Do NOT split function words (articles, 
+prepositions, particles, conjunctions) unless there is a genuinely distinct semantic sense (not just 
+syntactic variation). Proper nouns generally should NOT be split.
+
+If NO senses in this batch need splitting, return an empty array: []
+
+## Senses to Review
+
+### G3664 / Sense 73155 (45 occ, sense 1 of 1)
+**Label:** like, similar, resembling
+**Lemma gloss:** like, similar, resembling — expressing likeness or analogy, especially in parables and visions
+**Description:** Adjective expressing resemblance or likeness, used extensively in parables ('the kingdom of heaven is like...') and comparative descriptions. Spanish 'semejante/semejantes' is invariant across all three clusters, confirming a single meaning. Hindi 'समान' (equal/similar) and 'सदृश' (resembling) are standard synonyms for likeness. Arabic 'شَبيهٌ/شَبِيهَةٌ' (similar, masc/fem) and 'مثل' (like) are inflectional and stylistic variants. Korean '같은/같다/비슷하다' (same/is-like/is-similar) all express comparison. Swahili 'kama' (like), 'mfano' (example/likeness), and 'unafanana' (it resembles) are all equivalents. The three clusters represent purely grammatical variation (nominative, accusative, plural) of one adjective sense across all 45 occurrences.
+**Enriched:** An adjective of resemblance or analogy, predicating likeness between two entities or situations. Dominates the parabolic formula homoia estin he basileia ('the kingdom is like...') throughout Matthew 13 and 20, and extends to visionary descriptions in Revelation where heavenly beings and cosmic phenomena are depicted through analogy (Rev 1:13; 4:3, 7; 9:7, 10, 19). Also used in ethical comparison — the wise man is 'like' one who builds on rock (Matt 7:24), and servants are called to be 'like' those waiting for their master (Luke 12:36). All 45 occurrences express this single comparative function, differing only in what is being compared.
+
+### G3745 / Sense 73451 (45 occ, sense 1 of 5)
+**Label:** as much as / whatever (things)
+**Lemma gloss:** A correlative pronoun meaning 'as many as, as much as, whatever, whoever, how much, as long as'; marks quantity, extent, degree, or duration relative to a reference set.
+**Description:** Correlative pronoun referring to all the things, events, or amounts in a given set: 'whatever,' 'as much as,' 'whatever things,' 'all that' (typically neuter or feminine plural, encompassing things rather than persons).
+**Enriched:** The neuter or feminine plural use referring to things, events, or amounts: 'whatever things, as much as, all that.' Encompasses 45 occurrences where hosos gathers an entire class of objects or actions. Spanish cuantas-cosas ('how many things') is particularly expressive. Key passages include Matt 7:12 ('whatever you wish others to do for you'), Matt 18:18 ('whatever you bind on earth'), and Phil 4:8 ('whatever things are true... think on these'). The pronoun draws a boundary around a complete set.
+
+### G4143 / Sense 75084 (45 occ, sense 1 of 2)
+**Label:** boat, small fishing vessel
+**Lemma gloss:** A floating vessel: a small boat or fishing craft on inland waters; also a larger sea-going ship for Mediterranean voyages.
+**Description:** A small watercraft or fishing boat, used primarily in the Synoptic Gospels and John for the boats on the Sea of Galilee. This covers the vessels used by the disciples for fishing (Luke 5:2-11; Mark 1:19-20; Matt 4:21-22), the boat from which Jesus taught the crowds (Matt 13:2), the boats caught in storms on the lake (Matt 8:23-24; 14:22-33; Mark 4:36-37; 6:47-51), and the small boats the disciples used to cross the sea (Matt 14:13; 15:39; Mark 8:10). Hebrew glosses consistently use sirah (small boat) for these Gospel occurrences, Arabic uses safina, Korean uses bae, and Spanish uses barca (boat) rather than barco (ship). The plural ploia refers to multiple small boats as in Mark 4:36 (other boats accompanying) and Luke 5:2, 7, 11 (the fishing boats by the shore).
+**Enriched:** A small boat or fishing vessel used on inland waters, primarily the Sea of Galilee. The Synoptic Gospels and John use ploion for the disciples' working craft — the boats from which they fish (Luke 5:2-3), into which Jesus steps to teach (Mark 4:1), and which are tossed by storms (Matt 8:23-24; Mark 4:37). Spanish 'barca,' French 'bateau,' and German 'Boot' all carry the connotation of a modest, oar-or-sail-powered craft rather than a large vessel.
+
+### G4226 / Sense 75499 (45 occ, sense 1 of 2)
+**Label:** (none)
+**Lemma gloss:** An interrogative adverb meaning 'where?' — used to ask about location, destination, or (rarely) general indefinite place.
+**Description:** (none)
+**Enriched:** Direct or indirect interrogative 'where?' asking about place, location, or destination. This covers virtually all NT uses (45 of 46). Spanish distinguishes static 'dónde' from directional 'adónde,' revealing a subtle locative-vs-allative nuance the Greek leaves unmarked. Key passages include the Magi's question in Matt 2:2, Jesus' question about Lazarus in John 11:34 ('Where have you laid him?'), and the repeated Johannine theme of origin — 'Where is your Father?' (John 8:19). In indirect questions it follows verbs of knowing or seeking: 'they did not know where it came from' (John 2:9).
+
+### G5225 / Sense 78067 (45 occ, sense 1 of 3)
+**Label:** to be, to exist
+**Lemma gloss:** To exist or be in a state; substantivized as possessions or property belonging to someone
+**Description:** Copulative or existential use indicating a state of being, existing, or being in a certain condition, equivalent to εἰμί in many contexts.
+**Enriched:** The primary New Testament usage: to be, to exist, or to be in a certain state or condition. Functions as an elevated alternative to εἰμί, often signaling something already in place or inherently true about a subject. Luke uses it extensively — more than any other NT author — to describe existing conditions (Luke 7:25, 'those in splendid clothing'; Luke 16:14, the Pharisees 'being money-lovers'). The multilingual glosses (Spanish 'eran/estaban', French 'être', German 'sein') consistently reflect this copulative or existential force.
+
+### H0194 / Sense 80486 (45 occ, sense 1 of 1)
+**Label:** (none)
+**Lemma gloss:** perhaps, peradventure — an adverb expressing hopeful possibility, anxious doubt, or conditional supposition
+**Description:** (none)
+**Enriched:** An adverb of contingent possibility, introducing a clause whose outcome is uncertain but contemplated with hope, fear, or speculation. Most commonly expresses a hopeful wish ('perhaps God will be gracious,' 2 Sam 16:12; 'perhaps I shall be built up through her,' Gen 16:2) or an apprehensive doubt ('perhaps the woman will not follow me,' Gen 24:5, 39). In the Sodom intercession (Gen 18:24-32), it functions as a conditional protasis ('if perhaps there are fifty righteous'). Occasionally tinged with irony, as when prophets mock pagan reliance on rituals (Isa 47:12; Jer 51:8). All 45 occurrences share this single modal-epistemic sense of uncertain possibility.
+
+### H0835 / Sense 84811 (45 occ, sense 1 of 1)
+**Label:** blessed, happy, fortunate
+**Lemma gloss:** blessed! happy! — a beatitude formula pronouncing someone fortunate, always in the construct plural ashrey
+**Description:** An exclamatory interjection in the construct plural form (ashrey) used to pronounce someone blessed, happy, or fortunate. Functions as a beatitude formula, almost always sentence-initial: 'Blessed is the one who...' or 'Happy are those who...' Found prominently in Psalms (1:1; 2:12; 32:1-2; 33:12; 34:8; 40:4; 41:1; 65:4; 84:4-5; 89:15; 94:12; 106:3; 112:1; 119:1-2; 127:5; 128:1-2; 137:8-9; 144:15; 146:5), Proverbs (3:13; 8:32, 34; 14:21; 16:20; 20:7; 28:14; 29:18), and wisdom literature (Job 5:17). Also appears in historical/prophetic contexts (Deut 33:29; 1 Kgs 10:8; 2 Chr 9:7; Isa 30:18; 56:2; Dan 12:12). Takes pronominal suffixes (ashrayv 'blessed is he,' ashreykha 'blessed are you') and the conjunction (ve-ashrey 'and blessed'). All forms express the same exclamatory declaration of blessedness, with pronominal and syntactic variation rather than distinct senses.
+**Enriched:** A beatitude interjection in the construct plural form, invariably sentence-initial, pronouncing a person or group genuinely fortunate or blessed on account of their relationship to God, their moral conduct, or their receipt of divine favor. Opens the Psalter (Ps 1:1) and recurs throughout the psalms and wisdom literature as a fixed formula: 'ashrey + the person who...' (Ps 32:1-2; 34:8; 84:5, 12; 112:1; 119:1-2; 128:1). Extended to nations (Ps 33:12; Deut 33:29) and to those who find wisdom (Prov 3:13; 8:34). All 45 occurrences share this exclamatory-declarative function, distinct from the verbal root 'ashar ('to go straight, advance').
+
+### H1366 / Sense 88987 (45 occ, sense 2 of 4)
+**Label:** territory, region (enclosed area)
+**Lemma gloss:** Border, boundary line; by extension, the territory enclosed within borders; rarely, the physical edge or rim of an object.
+**Description:** The territory or region enclosed within borders, emphasizing the area rather than the boundary line itself. Used with possessive suffixes ('your territory', 'their territory', 'territory of X') to denote a people's or nation's land area. Common in Exodus ('your territory' in plague and covenant contexts), Deuteronomy ('when the LORD enlarges your territory'), Samuel/Kings/Chronicles (territorial references), and the prophets. BDB sense 1b: 'territory' as enclosed region. Translates as English 'territory', Spanish 'territorio', Arabic تخوم (tukhuom), Hindi सीमा, Korean 영토/지경, Swahili mipaka.
+**Enriched:** Territory or region enclosed within borders (45x), emphasizing the area rather than the line. Possessive constructions like 'your territory' (Exod 10:4, 14) and 'territory of Israel' shift the focus from edge to interior. Spanish territorio and German Gebiet clearly distinguish this from the 'line' sense. When locusts enter 'your territory' (Exod 10:4) or leaven is removed from 'your territory' (Exod 13:7), the entire enclosed space is meant.
+
+### H1834 / Sense 91923 (45 occ, sense 1 of 1)
+**Label:** Damascus (city)
+**Lemma gloss:** Damascus — the ancient Aramean capital, a major Near Eastern city and perennial rival of Israel
+**Description:** The ancient city of Damascus, capital of Aram (Syria), referenced throughout the Old Testament as a major regional center and sometimes as a symbol of foreign power.
+**Enriched:** The proper noun Damascus (dammeseq/darmeseq), the ancient capital of Aram (Syria) located in a well-watered plain east of the Anti-Lebanon range. Functions as a geographic reference point in patriarchal narratives (Gen 14:15; 15:2), a political center of Aramean power rivaling Israel and Judah (1 Kgs 11:24; 2 Kgs 8:7-9; 16:10), and a prophetic symbol of foreign judgment (Isa 7:8; 17:1; Amos 1:3; Jer 49:23-27). All 45 occurrences refer to this single city, with orthographic variants (Chronicles: darmeseq; 2 Kgs 16:10: dummeseq) reflecting scribal or dialectal alternation rather than semantic difference.
+
+### H2074 / Sense 93928 (45 occ, sense 1 of 1)
+**Label:** Zebulun (person, tribe, territory)
+**Lemma gloss:** Zebulun — the sixth son of Jacob and Leah; the Israelite tribe and its territory in the Galilee region
+**Description:** Proper noun referring to Zebulun, the sixth son of Jacob and Leah (Gen 30:20), and by metonymy the Israelite tribe and its tribal territory in the Galilee region; all 13 clusters differ only in prepositional prefixes (b-, l-, m-) and the conjunction w-, not in meaning.
+**Enriched:** The proper noun Zebulun (zevulun), referring to the sixth son of Jacob and Leah (Gen 30:20; 35:23), the Israelite tribe descended from him (Num 1:30-31; Judg 4:6, 10; 5:14, 18), and the tribal territory in the lower Galilee (Josh 19:10-16; Isa 8:23). Jacob's blessing associates Zebulun with the sea (Gen 49:13), and Deborah's song celebrates the tribe's battlefield valor (Judg 5:18). All 45 occurrences denote this person, tribe, or territory; prepositional and construct variations reflect syntax, not distinct senses.
+
+### H2167 / Sense 94585 (45 occ, sense 1 of 1)
+**Label:** sing praises, make music
+**Lemma gloss:** sing praises, make music — to celebrate God with song and instrumental melody (Piel of zamar)
+**Description:** To sing praises or make music in worship, celebrating God with song and instrumental melody (Piel of zamar); used across all persons and moods with consistent multilingual translation evidence showing no semantic differentiation.
+**Enriched:** To make music or sing praises in worship of God, encompassing vocal melody and instrumental accompaniment. Used exclusively in poetry, concentrated in the Psalms (over 40 of 45 occurrences), with the earliest instance in Deborah's victory song (Judg 5:3) and a parallel in David's thanksgiving (2 Sam 22:50). Governs both imperative calls to communal worship ('sing praises to the LORD,' Ps 9:11; 30:4; 47:6-7) and personal vows of praise ('I will sing praises to your name,' Ps 18:49; 61:8; 104:33). The cognate noun mizmor confirms the musical dimension. All 45 occurrences share this unified worship-music sense.
+
+### H2691b / Sense 98707 (45 occ, sense 1 of 1)
+**Label:** villages, settlements
+**Lemma gloss:** villages, settlements — unwalled hamlets or dependent localities surrounding a named town
+**Description:** Small unwalled settlements or hamlets associated with a larger town, used in geographical lists to denote dependent localities surrounding a named city.
+**Enriched:** Small unwalled settlements, hamlets, or dependent villages associated with a larger fortified town. Appears almost formulaically in Joshua's tribal allotment lists as 'city X and its villages' (Josh 15:32-62; 19:6-8; 21:12), and in the Chronicler's parallel genealogies (1 Chr 4:33; 6:56). The Levitical legislation of Lev 25:31 defines them as houses 'which have no wall around them,' distinguishable from walled cities for purposes of property redemption. The earliest occurrence describes the Ishmaelite encampments as chatsrim alongside tiroth ('tent-circles,' Gen 25:16). All 45 occurrences share this sense of a small, dependent, unwalled habitation.
+
+### H2790b / Sense 99410 (45 occ, sense 1 of 3)
+**Label:** be silent, keep quiet
+**Lemma gloss:** To be silent, hold one's peace, keep quiet; also to be deaf, unable or unwilling to hear
+**Description:** To refrain from speaking, to hold one's peace, to remain silent whether by choice or as a response to circumstances.
+**Enriched:** To refrain from speaking, to hold one's peace—the dominant sense across nearly all occurrences. Used of human restraint (Gen 24:21; Gen 34:5), divine command to be still (Exod 14:14), and appeals that God not remain silent (Ps 35:22; 83:1; 109:1). The Hiphil causative can mean 'to cause silence' or 'to hold someone else silent' (Num 30:4, 7). Spanish callar and German schweigen consistently reflect this volitional silence.
+
+### H3001 / Sense 100633 (45 occ, sense 1 of 3)
+**Label:** be dry, wither (intransitive)
+**Lemma gloss:** To be dry or wither; causatively, to dry up; by extension (Hifil), to be put to shame.
+**Description:** To become dry, to dry up, or to wither, said of water, plants, land, or bones (Qal and Nifal stems).
+**Enriched:** The intransitive sense of becoming dry, drying up, or withering — said of water sources (Gen 8:7, 14), vegetation (Isa 19:7; Ezek 17:10), bones (Ezek 37:11), and hands (1 Kgs 13:4). This is the Qal and Nifal usage where no external agent is named; things simply lose their moisture and vitality. The image is foundational in biblical poetry: 'the grass withers, the flower fades' (Isa 40:7). French 'dessécher' and Spanish 'secarse' both carry this reflexive, intransitive drying.
+
+### H5186 / Sense 117359 (45 occ, sense 1 of 10)
+**Label:** stretch out hand/arm (Qal)
+**Lemma gloss:** stretch out, incline, turn aside, spread — verb of directional extension: literal (hand, arm, tent) or figurative (heart, ear, justice)
+**Description:** Physical stretching out of the hand or arm, often in divine action or human gesture (Arabic madda/مَدَّ); includes imperative, consecutive imperfect, perfect, infinitive, and conjunctive perfect forms in Qal active voice.
+**Enriched:** Qal 'stretch out hand/arm' (45×) describes physical extension, most famously God or Moses stretching out a hand in judgment or miracle. Arabic مَدَّ (madda), Korean 펴다/뻗다, Spanish extender, Swahili kunyoosha all confirm this literal sense. Concentrated in Exodus plagues (Ex 7:5, 7:19, 8:5–6, 8:16) and conquest (Josh 8:18–19, 26). The 'outstretched arm' becomes a theological motif for divine power.
+
+### H6453 / Sense 127952 (45 occ, sense 1 of 2)
+**Label:** Passover (festival)
+**Lemma gloss:** Passover: the annual festival commemorating Israel's deliverance from Egypt, or the sacrificial lamb offered at it
+**Description:** The Passover festival commemorating Israel's deliverance from Egypt, one of the three major pilgrimage feasts. Instituted on the fourteenth of Nisan (Exod 12:11,21,27,43,48; 34:25; Lev 23:5; Num 9:2-14; Deut 16:1-6). Celebrated at key moments: Joshua's Passover at Gilgal (Josh 5:10-11), Josiah's great Passover (2 Kgs 23:22-23; 2 Chr 35:1-18), Hezekiah's Passover (2 Chr 30:17), and the returnees' Passover (Ezra 6:19-20). Arabic فِصْح (Passover, from the same Semitic root), French Paque, German Passah/Passover, Hindi फ़सह/फसह, Korean 유월절 (month-passing festival), Spanish Pascua/Pesaj. All auto-clusters (the Passover, Passover, the Pesach, like the Passover) refer to the same festival in varying morphological forms (with article, prepositions, comparatives). No genuine semantic split between 'Passover' and 'Pesach' -- these are translation variants for the identical referent.
+**Enriched:** The Passover festival as a whole, commemorating Israel's exodus from Egypt and observed annually on the fourteenth of Nisan. This dominant sense (45 of 49 occurrences) spans the institution narrative in Exodus 12, the wilderness observance in Numbers 9, and the great reforms under Josiah (2 Kgs 23:21-23). Translations uniformly render it as a proper-noun festival name: 'Passover' (eng), 'Pascua' (spa), 'Pâque' (fra), 'Passah' (deu), reflecting how deeply the Hebrew term embedded itself in global vocabulary.
+
+### H6925 / Sense 131167 (45 occ, sense 1 of 2)
+**Label:** before, in the presence of
+**Lemma gloss:** Before, in the presence of; an Aramaic preposition marking spatial presence or (rarely) temporal priority
+**Description:** Spatial/positional preposition indicating location in front of or in the presence of someone, used across all pronominal suffixes in biblical Aramaic contexts (Daniel, Ezra) with consistent multilingual evidence: Arabic أَمَامَ/قُدَّامَ, Spanish delante de, Hindi के सामने, Swahili mbele ya.
+**Enriched:** Spatial and relational preposition meaning 'before, in the presence of,' used 45 times in formal Aramaic court and cultic settings. Governs pronominal suffixes across all persons (qodamai, qodamakh, qodamohi, etc.). The multilingual evidence is remarkably uniform -- French devant, Spanish ante/delante de, German vor -- all spatial. Key passages include Daniel 2:9 ('to say before me') and Ezra 4:18 ('read before us'), where the sense conveys face-to-face presence before an authority.
+
+### H6999a / Sense 132064 (45 occ, sense 2 of 5)
+**Label:** burn sacrifice on altar (Hifil)
+**Lemma gloss:** To make sacrifices smoke on the altar or burn incense in worship or idolatry; encompasses both Piel (incense) and Hifil (altar offerings) stems.
+**Description:** To cause fat portions, offerings, or sacrifices to smoke on the altar (Hifil stem); Arabic أَوْقَدَ / يُوقِدُ (kindle/light), Korean 태우다/불사르다, Swahili -fukiza (without incense specification), Hindi जलाना.
+**Enriched:** The Hifil stem denotes causing the fat, entrails, or whole burnt offerings to go up in smoke on the altar — the quintessential Levitical sacrificial act. Spanish Y-hará-humear ('he will make smoke') captures the causative nuance well. Concentrated in Exodus and Leviticus (Exod 29:13, 18, 25; Lev 1-9), this sense is the technical term for the priestly burning of sacrificial portions, distinct from the incense-specific Piel.
+
+### H7243 / Sense 134543 (45 occ, sense 1 of 3)
+**Label:** fourth (ordinal)
+**Lemma gloss:** Fourth (ordinal numeral); a fourth part or quarter (fractional); rarely, square or foursquare (geometric).
+**Description:** The ordinal number 'fourth,' used attributively or predicatively to indicate position in a sequence (fourth day, fourth river, fourth generation, etc.), across all grammatical forms including with article, conjunction, and preposition prefixes.
+**Enriched:** The ordinal 'fourth,' indicating position in a sequence — fourth day, fourth river, fourth son, fourth generation, fourth month, etc. French 'quatrième' and Spanish 'cuarto/cuarta' translate consistently. From the fourth river of Eden (Gen 2:14) through the fourth row of priestly stones (Exod 28:20) to the fourth year of kings' reigns (1 Kgs 6:1; Jer 39:2), this is by far the most frequent use, appearing in both masculine and feminine forms with and without the article.
+
+### H8416 / Sense 144588 (45 occ, sense 1 of 3)
+**Label:** praise, act of praising
+**Lemma gloss:** Praise, song of praise, or renown; verbal and musical celebration of God's character, deeds, and the fame they confer.
+**Description:** The activity or expression of praise directed toward God or a person, including all inflected forms with pronominal suffixes and prepositional prefixes.
+**Enriched:** The act or expression of praising God, encompassing verbal declarations, liturgical worship, and personal adoration. This dominant sense (45 occurrences) appears with every pronominal suffix — 'my praise,' 'your praise,' 'his praise' — showing that praise in Hebrew is always relational. Key passages include the call to 'declare his praise' (Isa 42:10) and Nehemiah's great assembly of praise (Neh 12:46). German Lobpreis and French louange both underscore the active, vocal nature of this sense.
+
+### G1080 / Sense 64454 (44 occ, sense 2 of 3)
+**Label:** be born, come into existence
+**Lemma gloss:** To beget (of a father), be born (passive), or give birth to (of a mother); encompasses physical lineage, spiritual rebirth, and divine generation.
+**Description:** To be born or brought into existence (passive), whether physical birth, spiritual rebirth ('born of God/Spirit'), or conception, with the one born as the grammatical subject.
+**Enriched:** To be born or come into existence (passive/middle), with the one born as subject. Physical birth appears in Matt 2:1 ('Jesus, having been born in Bethlehem'), while spiritual rebirth dominates in John 3 and 1 John ('born of God,' 'born of the Spirit'). German distinguishes this with 'geboren-werden,' and Spanish shifts to 'ha nacido.' The 44 occurrences span the full range from literal delivery to metaphorical regeneration.
+
+### G2449 / Sense 69501 (44 occ, sense 1 of 1)
+**Label:** Judea (geographical region)
+**Lemma gloss:** Judea — the southern province of Palestine centered on Jerusalem, heartland of the Jewish nation
+**Description:** The geographical region of Judea (Ἰουδαία), the southern province of Palestine centered on Jerusalem; used as a proper noun in various cases (genitive, nominative, dative, accusative) to denote origin, location, or destination. All three clusters represent the same geographical referent with identical translations across languages: eng 'Judea/Ioudaia', spa 'Judea/Ioudaía', hin यहूदिया, arb يَهُودِيَّةِ, kor 유대/유다, swa 'Yudea'. The minor orthographic variations (e.g., hin यहोओदियअ vs यहूदिया) are transliteration variants, not semantic distinctions.
+**Enriched:** The geographical-political region of Judea (Ioudaia, literally 'the Jewish [land]'), the southern province of Roman Palestine centered on Jerusalem and extending from the Judean hill country to the Dead Sea and Negev. Functions as a narrative setting for the birth of Jesus (Matt 2:1, 5-6), John's baptismal ministry (Matt 3:1; Mark 1:5), and the early church's missionary base (Acts 1:8; 8:1; 9:31). Contrasted with Galilee to the north and Samaria between them, forming the tripartite geographic framework of Luke-Acts. All 44 occurrences refer to this single region in various grammatical cases — genitive of origin, dative of location, accusative of destination.
+
+### G3485 / Sense 72650 (44 occ, sense 1 of 2)
+**Label:** temple, sanctuary (inner shrine)
+**Lemma gloss:** Temple, sanctuary; the inner shrine of God's dwelling, or a pagan model shrine
+**Description:** The inner sanctuary or temple proper (as distinct from the broader temple complex hieron), referring to the dwelling place of God or the metaphorical temple of Christ's body and believers. Singular forms across all cases constitute the primary cluster: eng 'temple,' spa 'templo/santuario,' hin 'mandir,' arb 'haykal,' kor 'seongjeon,' swa 'hekalu.' The plural dative (S72651) is the same sense in plural form, translated identically across languages: eng 'temples,' spa 'templos,' swa 'mahekalu.'
+**Enriched:** The inner sanctuary or temple proper as the dwelling place of deity, covering 44 of 45 occurrences. Used for the Jerusalem temple's holy place (Matthew 23:16-17, where Jesus distinguishes swearing by the naos from swearing by its gold), for Christ's body (John 2:19-21), for believers corporately (1 Corinthians 3:16-17, 2 Corinthians 6:16), and for the heavenly temple in Revelation (11:19, 15:5-8). Spanish santuario sometimes distinguishes this from the broader templo, but most languages -- French temple, German Tempel, Korean seonggeon -- use a single form, relying on the hieron/naos distinction that Greek itself provides.
+
+### H0637 / Sense 83624 (44 occ, sense 2 of 7)
+**Label:** also, too (additive)
+**Lemma gloss:** Also, indeed, even, yea; an emphatic conjunction adding force, marking inclusion, or introducing a fortiori arguments.
+**Description:** Additive particle indicating inclusion of an additional item or person, equivalent to English 'also, too'; frequently paired with waw-conjunctive as וְאַף 'and also'.
+**Enriched:** The additive-inclusive use: 'also, too.' With 44 occurrences, this is the plain conjunctive function, often as waʾap ('and also'). Lev 26 uses it repeatedly to pile up covenant consequences. BDB notes that gam is more common in prose for this function, making ʾap the more elevated or marked additive. Spanish 'también' and German 'auch' consistently appear here.
+
+### H0970 / Sense 86007 (44 occ, sense 1 of 2)
+**Label:** young man, youth
+**Lemma gloss:** A young man in his prime, of fighting or marriageable age; rarely, a chosen or elect one (from the root בחר, 'to choose').
+**Description:** A young man of fighting or marriageable age; the substantivized passive participle used as a common noun for male youth, often in collective plural referring to a community's young men or warriors.
+**Enriched:** A young man of military or marriageable age, the standard substantival use. The pairing בָּחוּר וּבְתוּלָה ('young man and young woman') recurs across poetry and prophecy (Deut 32:25; 2 Chr 36:17; Ps 148:12). Spanish 'joven/jóvenes,' French 'jeune homme/jeunes hommes,' and German 'Jüngling/junge Männer' all capture the age-specific sense. Saul is described as a בָּחוּר in his prime (1 Sam 9:2); Proverbs 20:29 celebrates the strength of young men. In prophetic judgment oracles (Jer 6:11; 48:15; Lam 1:15), the collective plural evokes the devastating loss of an entire generation.
+
+### H1005 / Sense 86528 (44 occ, sense 1 of 1)
+**Label:** house/temple
+**Lemma gloss:** house, temple — a building or dwelling; especially the house of God (the Jerusalem temple) in Aramaic portions
+**Description:** A building or dwelling place; used of ordinary houses, royal palaces, and especially the temple (house of God) in Jerusalem. All 13 clusters reflect the same concrete sense fragmented by Aramaic inflection (construct state, prepositions, possessive suffixes).
+**Enriched:** A building used as dwelling, palace, or temple. In Ezra, beth elaha ('house of God') dominates with 28 of 44 uses tied to the Jerusalem temple's reconstruction (Ezra 5:2-3; 6:7). In Daniel it denotes the Babylonian royal palace (Dan 4:4) and private houses (Dan 2:17).
+
+### H1323 / Sense 88599 (44 occ, sense 2 of 2)
+**Label:** dependent village, satellite town
+**Lemma gloss:** Daughter, female offspring or descendant; figuratively a dependent village or satellite town of a larger city.
+**Description:** A smaller settlement or village dependent on a larger fortified city, where the 'daughters' of a city are its surrounding unwalled towns (as confirmed by translations rendering the word as 'villages' or 'aldeas' in Spanish, 'vijiji' in Swahili, and '마을들' in Korean).
+**Enriched:** A dependent village or satellite settlement surrounding a larger fortified city, where the 'daughters' are unwalled towns economically and defensively tied to the mother-city. Spanish translators shift from hija to aldeas (villages) in these contexts, confirming the metaphorical leap from kinship to geography. Concentrated in conquest and settlement narratives (Num 21:25, 32; Josh 15:45; Josh 17:11; Judg 11:26).
+
+### H2008 / Sense 93446 (44 occ, sense 1 of 2)
+**Label:** hither, here
+**Lemma gloss:** Hither, here; a deictic adverb of place meaning 'to this place,' extended temporally to mean 'now, up to this point.'
+**Description:** A deictic adverb of place indicating direction toward the speaker or a proximate location, meaning 'hither' or 'here.' The primary and most frequent use of hennah across the Hebrew Bible (Gen 15:16, 21:23, 42:15, 45:5-13; Num 14:19; Josh 2:2, 3:9, 8:20, 18:6; Judg 16:2, 19:12; 1 Sam 7:12, etc.). All multilingual glosses consistently render it as a spatial deictic: Arabic huna/hahuna ('here'), German hierher/hier, French ici, Korean yeogi, Spanish aqui/aca. Includes conjunctive forms with waw.
+**Enriched:** Spatial deictic — 'hither, to this place, here.' The primary and most frequent usage (44 occurrences), directing attention toward the speaker's location or a proximate destination. Repeated forms like 'hither and thither' (hennah wa-hennah) convey back-and-forth motion (2 Kgs 4:35). Spanish 'acá/aquí' and German 'hierher' consistently mark this directional sense (Gen 15:16; 42:15; 45:5; Josh 2:2).
+
+### H2763a / Sense 99178 (44 occ, sense 1 of 7)
+**Label:** utterly destroy (Hifil active)
+**Lemma gloss:** to devote to destruction, utterly destroy under the ban; consecrate irrevocably to God
+**Description:** To devote to complete destruction as an act of divine judgment or holy war, annihilating persons, cities, or nations under the ban (herem).
+**Enriched:** The dominant Hifil active sense: to devote persons, cities, or nations to utter destruction under the ban (herem) as an act of divine judgment or holy war. Spanish destruir totalmente and French consacré à destruction both capture the totality. Numbers 21:2–3 records Israel's vow to 'utterly destroy' Canaanite cities, and Deuteronomy 2:34–3:6 chronicles the annihilation of Sihon and Og's kingdoms.
+
+### H3129 / Sense 101562 (44 occ, sense 1 of 1)
+**Label:** Jonathan (proper name)
+**Lemma gloss:** Jonathan — 'YHWH has given'; son of Saul and David's beloved companion, plus other biblical figures
+**Description:** The proper name Yehonatan (יְהוֹנָתָן), meaning 'YHWH has given,' referring primarily to Jonathan son of Saul and secondarily to other biblical figures of the same name. All three sense clusters represent the same personal name with different syntactic frames: bare nominative (S101562, 41x), with article or preposition beth (S101565, 2x), and with waw-copulative plus preposition lamed (S101566, 1x). Multilingual renderings are identical across all clusters: Spanish Jonatán/Yonatan, Arabic يُونَاثَان (Yūnāthān), Hindi योनातान (Yonātān), Korean 요나단 (Yonadan), Swahili Yonathani. These are purely grammatical variations of a single proper name.
+**Enriched:** The theophoric name meaning 'YHWH has given,' applied chiefly to Saul's son whose covenant friendship with David (1 Sam 18:1-4) and death at Gilboa (1 Sam 31:2) are paradigmatic. Also designates Abiathar's son (2 Sam 15:27), David's nephew (2 Sam 21:21), and the Levite of Judges 18:30.
+
+### H3162a / Sense 101628 (44 occ, sense 1 of 1)
+**Label:** together, all together, alike
+**Lemma gloss:** together, all at once, alike — adverb expressing community of action, place, or time
+**Description:** Adverb from the noun יַחַד ('unitedness') used to express joint or simultaneous action: 'together,' 'all at once,' 'alike.' Attested 44 times across all four auto-clusters, which differ only in prefixed particles (וְ 'and,' לְ 'for/to') and one ketiv variant, not in underlying meaning. Multilingual glosses are uniformly consistent: English 'together'; German zusammen; French ensemble; Spanish juntos/juntas; Arabic معًا; Hindi एक-साथ ('one-with') or एकसाथ; Korean 함께. The prepositional phrase לְיָחַד (1 Chr 12:18) means 'for unitedness/together' and the conjunctive form וְיַחַד (Ps 31:14) means 'and together.' All represent a single adverbial sense of collective or simultaneous action.
+**Enriched:** Adverb from the noun yachad ('unitedness'), expressing joint action (Job 38:7, 'morning stars sang together'), shared place (Deut 33:5), or common quality (Ps 14:3, 'all alike become filthy'). The Arabic cognate wahdun means 'alone' — an instructive semantic inversion highlighting Hebrew's collective emphasis.
+
+### H3372 / Sense 103623 (44 occ, sense 2 of 7)
+**Label:** awesome, terrible (Nifal Ptc)
+**Lemma gloss:** To fear, be afraid; to revere or stand in awe of God; (Nifal ptc.) awesome, terrible; (Piel) to frighten, terrify
+**Description:** Nifal participle used adjectivally to describe God, his name, deeds, or places as awe-inspiring, fearsome, or terrible; Arabic mahib/rahib/marhub, Swahili -tisha/-ogofya.
+**Enriched:** Nifal participle functioning adjectivally (44x): describing God, his name, deeds, or sacred places as awe-inspiring and terrible. Arabic deploys mahib/rahib where the Qal uses khafa, marking a clear semantic shift. Jacob's 'How awesome is this place!' (Gen 28:17) and the Song of the Sea's 'awesome in praises' (Exod 15:11) are paradigmatic.
+
+### H3381 / Sense 103809 (44 occ, sense 3 of 9)
+**Label:** Qal: to go down, descend (participial/substantive)
+**Lemma gloss:** to go down, descend, bring down; physical descent from higher to lower place, including persons, liquids, and objects
+**Description:** The Qal active participle used substantively or attributively to describe persons going down, especially 'those going down to the pit/Sheol' (yorde bor), a recurring formula in poetic and prophetic literature referring to those who descend to death or the underworld.
+**Enriched:** The Qal active participle used substantively appears 44 times, especially in the recurring phrase 'yorde bor' (those descending to the pit/Sheol). Poetic and prophetic literature favor this formulaic expression. Translations handle it as a nominal: those going down, los que descienden, descendant, hinabgehend.
+
+### H4026 / Sense 109605 (44 occ, sense 1 of 3)
+**Label:** tower, fortified structure
+**Lemma gloss:** Tower, fortified structure; also a place-name element (Migdal) and a raised platform or pulpit
+**Description:** A tall fortified structure used for defense, watchkeeping, or as part of city walls and fortifications.
+**Enriched:** A tall fortified structure for defense, watchkeeping, or urban protection — the primary sense across 44 occurrences. From Babel's hubris (Gen 11:4) to Hezekiah's fortifications (2 Chr 32:5), the tower symbolizes both human ambition and divine refuge (Prov 18:10). Spanish 'torre' and German 'Turm' reflect this consistently.
+
+### H4639 / Sense 113232 (44 occ, sense 3 of 6)
+**Label:** deed, act, conduct
+**Lemma gloss:** Deed, work, craftsmanship; spanning artisan handiwork, productive labor, human conduct, divine acts, and agricultural yield
+**Description:** A human action or behavior, especially as subject to moral evaluation — deeds, acts, doings (Arabic عَمَل/فِعْل/أَعْمَال, Korean 행위, Swahili matendo).
+**Enriched:** Deed, act, or conduct subject to moral evaluation — human behavior judged as righteous or wicked. Joseph accuses his brothers: 'What deed is this you have done?' (Gen 44:15). The Exodus covenant demands 'you shall not do according to their deeds' (Exod 23:24). Micah indicts Omri's 'ma'asim' as corrupt statecraft (Mic 6:16). Arabic fi'l/a'mal and Korean haeng-wi shift to ethical vocabulary, confirming the moral-evaluation register. This sense carries the weight of covenant accountability throughout the Deuteronomistic history.
+
+### H4818 / Sense 114348 (44 occ, sense 1 of 1)
+**Label:** chariot, war-chariot
+**Lemma gloss:** chariot — a horse-drawn vehicle used in warfare, royal procession, or transport
+**Description:** A wheeled vehicle drawn by horses, used for warfare, transport, or ceremonial processions; the standard Hebrew term for chariot (merkavah).
+**Enriched:** A horse-drawn vehicle used primarily as a war-chariot, often paired with sus ('horse') as a military hendiadys. Ranges from Pharaoh's chariots at the sea (Exod 14:25) to Solomon's trade imports (1 Kgs 10:29) and Zechariah's apocalyptic four chariots (Zech 6:1). Distinguished from the collective rekhev ('chariotry').
+
+### H4910 / Sense 114768 (44 occ, sense 1 of 4)
+**Label:** Qal: to have dominion, exercise power over
+**Lemma gloss:** To rule, have dominion, reign; in Hifil, to grant dominion or set as ruler over someone or something.
+**Description:** The Qal sense of mashal denoting dominion, mastery, or the active exercise of power and authority over persons or things — often with a nuance of control or subjugation rather than mere administrative governance. Arabic predominantly uses تَسَلَّطَ (tasallata, Form V of s-l-t, 'to exercise power, dominate') and the active participle مُتَسَلِّط (mutasallit, 'one exercising authority/power'), or the related noun تَسَلُّط (tasallut, 'domination'). A secondary Arabic rendering is سادَ (sada, 'to prevail, be lord/master') with root s-w-d, denoting social preeminence and lordship — e.g., 114774 يَسودُ/تَسودُ ('he/she prevails'), 114786 وَسادَ ('and he prevailed'), 114791 أنْ يَسودَ ('to prevail'), 114795 سَادُوا ('they prevailed'), 114813 تَسود ('she prevails'). The co-occurrence of both Arabic roots for this single Hebrew sense shows that mashal in these contexts encompasses both 'active domination' and 'prevailing mastery.' Korean uses 다스리다 (tasurida, 'to govern/rule' verbal) and in stronger contexts 지배하다 (jibaehada, 'to dominate, control'). Swahili uses verbal -tawala forms often with extended morphology (e.g., -watawala, -tutawala). This sense covers imperfect ('he/she/they will rule'), perfect ('they ruled'), infinitive ('to rule,' 'ruling'), infinitive absolute ('indeed ruling'), participle used verbally ('ruling,' 'the one ruling'), and the 'have dominion' mandate of Gen 1:26-28 (114797: 'let them have dominion,' Arabic يَتَسَلَّطُوا, Korean 지배하지). The nuance of 'having power/authority' (114818: 'he shall have power,' Arabic يَتَسَلَّطُ, Korean 그가 권리가 있다, Swahili mamlaka 'authority') also belongs here.
+**Enriched:** The broadest Qal usage: exercising dominion, mastery, or control over persons, animals, or cosmic bodies. Often carries a nuance of subjugation or imposed authority — the sun ruling the day (Gen 1:18), sin crouching to master Cain (Gen 4:7), or a husband exercising authority over his wife (Gen 3:16). Spanish dominar and Arabic sallata capture this forceful, controlling aspect.
+
+### H5641 / Sense 121433 (44 occ, sense 1 of 5)
+**Label:** Hifil: hide, conceal (causative)
+**Lemma gloss:** To hide, conceal; reflexively to hide oneself; causatively to hide another; of God hiding his face in judgment or discipline.
+**Description:** Causative active sense in the Hifil stem: to hide or conceal someone or something, including with pronominal suffixes indicating the object hidden (e.g., 'hide me,' 'hide them,' 'he concealed me'); covers all Hifil finite forms, imperatives, infinitives, infinitive absolutes, and participles.
+**Enriched:** Hifil causative: to hide or conceal someone or something, including the theologically crucial idiom hester panim ('hiding the face'). This is the dominant sense at 44 occurrences, spanning God concealing his face in judgment (Deut 31:17-18; Ps 13:1; Isa 54:8), Moses hiding his face at the burning bush (Exod 3:6), and humans concealing others from danger. Spanish esconder and Arabic satara both handle the causative force, while Korean 숨기다 consistently distinguishes this active concealment from reflexive self-hiding (숨다). The hester panim passages are theologically foundational — they express not annihilation but relational withdrawal, the most devastating form of divine discipline.
+
+### H5715 / Sense 122524 (44 occ, sense 1 of 2)
+**Label:** testimony, covenant document
+**Lemma gloss:** Testimony or covenant document, especially the tablets of the Law and the Ark/Tabernacle housing them; in the plural, God's decrees and ordinances.
+**Description:** The testimony as a singular entity: the tablets of the Law, the covenant stipulation, or by metonymy the Ark/Tabernacle that houses them (the Ark of the Testimony, the Tabernacle of the Testimony).
+**Enriched:** The testimony as a singular covenantal entity: the tablets of the Law containing the Ten Words, or by metonymy the Ark and Tabernacle that house them. Across 44 occurrences, this is predominantly Priestly vocabulary. Spanish 'el testimonio,' French 'le témoignage,' and German 'das Zeugnis' render it consistently. Key constructions include 'the tablets of the testimony' (Exod 31:18; 32:15), 'the Ark of the testimony' (Exod 25:22; Num 7:89), and 'the Tabernacle of the testimony' (Num 1:50, 53), all pointing to the physical embodiment of covenant.
+
+### H6381 / Sense 127452 (44 occ, sense 1 of 7)
+**Label:** wonders, marvelous deeds
+**Lemma gloss:** To be surpassing or extraordinary; God's wonders; to do wondrously; too difficult; to make a special vow
+**Description:** Nifal feminine plural participle used substantivally for God's extraordinary acts of power and salvation — the most frequent usage of this root, referring to miraculous deeds in history, creation, and redemption (Arabic عَجَائِب ʿajāʾib, Korean 기이한 일들 gi-ihan ildeul, Swahili maajabu/miujiza).
+**Enriched:** The dominant usage: Nifal participle nifla'ot as a substantive noun for God's wonders, marvelous deeds of salvation, creation, and judgment. Arabic aja'ib and Korean gisajeok ('miraculous') both denote wonders but through unrelated roots. These 44 occurrences form the heart of Israel's praise vocabulary, from the Exodus (Exod 3:20) to the Psalter's hymns (Ps 77:11, 1 Chr 16:9).
+

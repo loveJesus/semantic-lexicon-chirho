@@ -1,0 +1,291 @@
+# Sense Refinement Detection — Batch 033
+
+You are a biblical lexicographer reviewing sense entries for a Hebrew/Aramaic/Greek lexicon.
+Each entry below is a single "sense" that was produced by clustering translation signatures 
+and then merging with an LLM. Some senses may have been OVER-LUMPED — they contain genuinely 
+distinct meanings that should be separate senses.
+
+## Your Task
+
+For each sense, determine if it should be SPLIT into multiple senses. Look for:
+- Literal vs. figurative/metaphorical uses lumped together
+- Concrete vs. abstract meanings combined
+- Multiple distinct referents (e.g., "father" = biological parent + patron/advisor + originator)
+- Physical vs. spiritual/theological uses merged
+- Different syntactic frames producing different meanings
+
+## Output Format
+
+Return a JSON array. For senses that need NO splitting, omit them entirely.
+For senses that SHOULD be split, include an entry like:
+
+```json
+[
+  {
+    "senseIdChirho": 79287,
+    "lemmaIdChirho": "H0001",
+    "currentLabelChirho": "father, immediate male parent",
+    "splitProposalChirho": [
+      {
+        "newLabelChirho": "biological/legal father",
+        "criteriaChirho": "Direct parent-child relationship, possessive constructions with specific person"
+      },
+      {
+        "newLabelChirho": "metaphorical father (patron, advisor, protector)",
+        "criteriaChirho": "Title of respect for prophets, advisors, or authority figures; 'father to Pharaoh' type usage"
+      }
+    ],
+    "confidenceChirho": "high",
+    "reasoningChirho": "Description explicitly mentions 'title of respect or metaphorical originator' alongside biological father"
+  }
+]
+```
+
+Only propose splits where you have MEDIUM or HIGH confidence. Do NOT split function words (articles, 
+prepositions, particles, conjunctions) unless there is a genuinely distinct semantic sense (not just 
+syntactic variation). Proper nouns generally should NOT be split.
+
+If NO senses in this batch need splitting, return an empty array: []
+
+## Senses to Review
+
+### H1369 / Sense 89113 (41 occ, sense 1 of 5)
+**Label:** might, power, strength
+**Lemma gloss:** Strength, might, power; heroic valor; mighty deeds or acts of power, especially of God or warriors.
+**Description:** The core abstract sense of might, power, or strength as a quality or attribute of God, a king, or a person; rendered consistently as Arabic جَبَرُوت or قُوَّة, Korean 능력/힘, Hindi शक्ति/सामर्थ्य, and Swahili nguvu/uweza.
+**Enriched:** The core abstract sense: might, power, or strength as an attribute of God, a king, or any mighty being — 41 of 62 occurrences. This is gevurah as a quality or possession: the strength of the sun going forth in its might (Judg 5:31), the physical vigor of a mature man versus old age (Ps 90:10; Eccl 10:17), the might of the crocodile's limbs (Job 41:12), and above all the power of God himself (Isa 11:2 — 'the spirit of counsel and gevurah'). Arabic jabarut/quwwa, Korean him/neungnyeok, Hindi shakti/samarthya, and Spanish poder all converge on abstract personal power. The Kings formula 'and the rest of his acts and his gevurah' (1 Kgs 16:5, 27; 22:45 etc.) belongs here — it refers to the king's might as a general attribute.
+
+### H1390 / Sense 89220 (41 occ, sense 1 of 3)
+**Label:** Gibeah (proper noun)
+**Lemma gloss:** Gibeah, a city of Benjamin; also Geba (a distinct Levitical city); rarely, 'hill' as a common noun
+**Description:** The city of Gibeah in the territory of Benjamin, prominent in the narrative of the Levite's concubine (Judges 19-20) and as the home of Saul; includes all prepositional and article variants.
+**Enriched:** The city of Gibeah in Benjamin, appearing across its long biblical history from the terrible events of Judges 19-20 through Saul's reign (1 Sam 10:26; 22:6) and into the prophetic oracles of Hosea (9:9; 10:9). All translations consistently render this as a proper noun: Spanish 'Guibea,' French 'Givah,' German 'Gibea.'
+
+### H1537 / Sense 90086 (41 occ, sense 1 of 1)
+**Label:** Gilgal (place name)
+**Lemma gloss:** Gilgal (multiple sites: 'circle of stones')
+**Description:** A significant Israelite cultic and political site, most prominently the first encampment after crossing the Jordan where Joshua set up twelve memorial stones and the people were circumcised. The three clusters are purely prepositional/conjunctive variants of the same toponym: bare/articular form (28x), with preposition beth/lamed 'in/at Gilgal' (11x), and with conjunctive waw 'and Gilgal' (2x). All translations confirm a single place name: Spanish 'Gilgal/Guilgal', Hindi 'गिल्गाल/गिलगाल' (Gilgal), Arabic 'الجِلجالَ/الْجِلْجَالَ' (al-Jiljal), Korean '길갈' (Gilgal), Swahili 'Gilgali'. Appears extensively in Joshua 4-5, 9-10, 14-15; Judges 2:1, 3:19; 1 Samuel 7:16, 10:8, 11:14-15, 13:4-15, 15:12-33; Hosea 4:15, 9:15, 12:12; Amos 4:4, 5:5; Micah 6:5.
+**Enriched:** A place name (primarily the Jordan valley site) meaning 'circle,' likely of memorial stones erected by Joshua (Joshua 4:19-20). All languages transliterate Gilgal unchanged, recognizing its status as a major biblical site. The etymology connects to the Hebrew root for 'roll,' which Joshua 5:9 exploits in a wordplay: 'I have rolled away the reproach of Egypt.' Multiple Gilgals in biblical geography reflect the name's association with sacred stone circles.
+
+### H1588 / Sense 90467 (41 occ, sense 1 of 2)
+**Label:** garden, cultivated enclosure
+**Lemma gloss:** Garden, cultivated enclosure; an enclosed plot for growing plants, from Eden's paradise to royal pleasure grounds.
+**Description:** A cultivated plot or enclosed garden, used of orchards, pleasure gardens, and the primordial Garden of Eden; uniformly rendered across all six witness languages as garden/huerto/jardín (spa), बाग/बाग़ (hin), جنّة/حديقة (arb), 동산/정원 (kor), bustani (swa), with variation only in grammatical inflection (prepositions, articles, construct chains, possessive suffixes, and number).
+**Enriched:** A cultivated plot or enclosed garden, whether for agriculture, pleasure, or sacred purpose. This overwhelmingly dominant sense (41 occurrences) is uniformly rendered across all witness languages as garden/jardín/jardin/Garten. Anchored by the Eden narrative (Gen 2:8-16), royal gardens (2 Kgs 21:18; Esth 1:5; 7:7), the beloved as 'a garden locked' (Song 4:12), and prophetic imagery of restored gardens (Isa 51:3; Ezek 36:35).
+
+### H2148a / Sense 94516 (41 occ, sense 1 of 1)
+**Label:** Zechariah (proper noun)
+**Lemma gloss:** Zechariah — personal name meaning 'Yah has remembered,' borne by over a dozen individuals in the Hebrew Bible
+**Description:** Zechariah (Hebrew זְכַרְיָהוּ / זְכַרְיָה, 'The LORD has remembered'), a proper noun borne by numerous individuals in the Hebrew Bible, including: (1) Zechariah son of Jeroboam II, king of Israel (2 Kgs 14:29; 15:8,11); (2) several Levites and musicians in David's and Solomon's eras (1 Chr 9:21,37; 15:18,20,24; 26:2,11,14); (3) a prince sent by Jehoshaphat to teach the law (2 Chr 17:7); (4) a Levite son of Asaph in Hezekiah's reign (2 Chr 29:1,13); (5) an overseer of temple repairs under Josiah (2 Chr 34:12; 35:8); (6) Zechariah the prophet, son of Berechiah son of Iddo, who prophesied during the rebuilding of the temple (Isa 8:2; Zech 1:1; Ezra 5:1; 8:3,11,16; Neh 11:4,5,12; 12:16,35,41). All prepositional and conjunctional forms (and Zechariah, to Zechariah, for Zechariah) are inflectional variants of this single proper noun.
+**Enriched:** The proper masculine name Zekharyahu/Zekharyah ('Yah has remembered'), shared by numerous individuals spanning the monarchic and postexilic periods. Key bearers include the brief Israelite king assassinated by Shallum (2 Kgs 15:8-11), the maternal grandfather of Hezekiah (2 Kgs 18:2), Isaiah's witness (Isa 8:2), several Levites and musicians (1 Chr 15:18, 20; 26:2, 11), and officials under Jehoshaphat and Uzziah (2 Chr 17:7; 26:5). Greek Zacharias, Spanish 'Zacarias,' French 'Zacharie' preserve the name across translation traditions.
+
+### H2181 / Sense 94633 (41 occ, sense 1 of 5)
+**Label:** be spiritually unfaithful (Qal metaphorical)
+**Lemma gloss:** Commit fornication, be a harlot; figuratively, be spiritually unfaithful to God; as noun, a prostitute; in Hifil, cause to prostitute.
+**Description:** The Qal stem of zanah used figuratively of spiritual harlotry: Israel or Judah 'playing the harlot' by forsaking YHWH for other gods, foreign alliances, or idolatrous practices; the dominant prophetic idiom in Hosea, Ezekiel 16 and 23, Jeremiah 3, and the Deuteronomistic history (Judg 2:17, 8:27,33), as well as cultic legislation warning against 'whoring after' Molech, goat-demons, or foreign deities (Lev 17:7, 20:5; Exod 34:15-16).
+**Enriched:** Qal metaphorical: to be spiritually unfaithful, 'play the harlot' after other gods. The dominant prophetic usage where Israel's idolatry is depicted as marital betrayal — 'whoring after' the Baals (Judg 2:17, 8:27), foreign alliances (Ezek 16:26, 28), or pagan practices (Lev 17:7, 20:5). Hosea's entire marriage narrative embodies this sense. The construction with 'acharê (after) or tachath (under, i.e., instead of) marks the metaphorical usage. French 'se prostituer' and German 'huren' carry the same double register of sexual and covenantal vocabulary.
+
+### H2232 / Sense 95042 (41 occ, sense 1 of 5)
+**Label:** sow seed, plant crops
+**Lemma gloss:** To sow seed, plant; of agricultural sowing, bearing seed (of plants), being sown (passive), and conceiving offspring (figurative).
+**Description:** The active Qal sense of physically sowing seed in the ground for agriculture, including literal field-sowing and the positive metaphorical extension of 'planting' people in a land (Arabic زَرَعَ zara'a, Korean 심다/뿌리다 simda/ppurida, Swahili -panda, Hindi बोना bona, Spanish sembrar).
+**Enriched:** The dominant Qal active sense: physically sowing seed in the ground for agricultural purposes. This covers both literal field-sowing (Gen 26:12, 'Isaac sowed in that land and reaped a hundredfold') and the positive metaphorical extension of 'planting' people in a land (Jer 31:27, 'I will sow the house of Israel with the seed of man and beast'). Arabic zara'a and Korean 씨를 뿌리다 both select dedicated sowing vocabulary. The imperatives in Hosea 10:12 ('Sow for yourselves righteousness') show the metaphorical elasticity of this core sense. Forty-one occurrences make this the overwhelming default.
+
+### H2803 / Sense 99486 (41 occ, sense 1 of 7)
+**Label:** plan, devise, plot
+**Lemma gloss:** To think, reckon, plan, or devise; encompasses cognitive activity from arithmetic calculation to purposeful scheming to artistic design.
+**Description:** Qal and Piel active forms meaning to plan, devise, scheme, or plot, often with negative connotation of crafting evil or harm against someone (Arabic دَبَّرَ scheme; Korean 꾀하다/꿇하다 plot; Swahili -panga plan); includes participial agent nouns 'one who plots/devises'.
+**Enriched:** To plan, devise, or plot — the most frequent sense at 41 occurrences. Often carries negative connotation: Esth 9:24 says Haman 'devised' to destroy the Jews; Mic 2:1 denounces those who 'devise wickedness.' Arabic dabbara (دَبَّرَ) and Korean kkoehada (꾀하다) both capture this purposeful scheming. The Piel stem often intensifies this to crafty or persistent plotting.
+
+### H2896c / Sense 100117 (41 occ, sense 1 of 4)
+**Label:** goodness, moral good
+**Lemma gloss:** Goodness, welfare, benefit; concrete good things or deeds; divine bounty — the feminine noun form of the adjective 'good.'
+**Description:** The abstract quality or concept of goodness, moral good, or what is beneficial and right, often with the article or in construct with a following genitive.
+**Enriched:** The abstract quality of goodness or moral good — what is right, beneficial, and praiseworthy. Often appearing with the article ('the good') or in construct chains, this sense dominates the distribution (41 occurrences). English 'goodness,' Spanish 'bien/bueno,' French 'bien/bon,' and German 'Gutes' all converge on the same abstract moral concept. Key passages include Judges 8:35, where Israel fails to repay the goodness Gideon showed, and 1 Samuel 24:17, where Saul acknowledges David's moral goodness toward him.
+
+### H2983 / Sense 100586 (41 occ, sense 1 of 1)
+**Label:** Jebusite (gentilic noun)
+**Lemma gloss:** Jebusite — gentilic noun for the Canaanite people who inhabited Jerusalem (Jebus) before David's conquest
+**Description:** The Jebusite(s), a Canaanite people descended from the third son of Canaan, inhabiting the region of Jerusalem (Jebus) before the Israelite conquest; used both as a singular gentilic adjective and as a collective/plural designation for the entire people group.
+**Enriched:** The gentilic noun Yevusi, designating the Canaanite population of Jebus (pre-Davidic Jerusalem). Most occurrences fall within the stereotyped list of displaced peoples in divine land-promises (Gen 15:21; Exod 3:8, 17; 23:23; 33:2; 34:11; Deut 7:1; 20:17) and conquest summaries (Josh 9:1; 11:3; 12:8; 24:11). The specific Jebusite connection to Jerusalem emerges in Judges 19:10-11, 2 Samuel 5:6-8, and the Araunah/Ornan threshing-floor narrative (2 Sam 24:16-24; 2 Chr 3:1). Spanish 'jebuseo,' French 'Jebusien,' German 'Jebusiter' all render the gentilic form consistently.
+
+### H3303 / Sense 103031 (41 occ, sense 1 of 2)
+**Label:** beautiful, handsome, fair
+**Lemma gloss:** Beautiful, handsome, fair (of persons, animals, objects); occasionally 'fitting' or 'appropriate' in wisdom contexts.
+**Description:** Aesthetic beauty or physical attractiveness of persons, animals, or objects, used across genders (masculine 'handsome' and feminine 'beautiful/fair') including superlative and possessive forms.
+**Enriched:** Physical beauty or handsomeness of persons, animals, or objects. Used of women (Gen 12:11, 14; 1 Sam 25:3; Esth 2:7), men (2 Sam 14:25; 1 Kgs 1:6), cows (Gen 41:2, 4), and trees (Jer 11:16). The construct phrase 'beautiful of form/appearance' (yephat-toar, yephat-mareh) is formulaic. Spanish 'hermosa,' French 'belle/beau,' and German 'schon' all consistently render aesthetic attractiveness.
+
+### H3985 / Sense 109421 (41 occ, sense 1 of 1)
+**Label:** refuse, be unwilling
+**Lemma gloss:** refuse, be unwilling — Piel verb expressing deliberate refusal or obstinate unwillingness to comply
+**Description:** To refuse or decline to do something, expressing unwillingness or rejection of a request, command, or expectation.
+**Enriched:** To refuse or decline with deliberate intent, expressing willful unwillingness rather than incapacity. The word spans a moral spectrum: from righteous refusal (Joseph refusing adultery, Gen 39:8; the man of God refusing reward, 1 Kgs 20:35) to culpable obstinacy (Pharaoh refusing to let Israel go, Exod 7:14; 9:2; 10:3-4; Israel refusing to repent, Jer 5:3; 8:5; 15:18). Typically takes an infinitive with lamed for the refused action. Rachel's 'refusing to be comforted' (Gen 37:35; Jer 31:15) shows emotional intensity beyond mere decision. Spanish 'rehusar,' French 'refuser,' German 'sich weigern' capture the volitional core.
+
+### H4060a / Sense 109780 (41 occ, sense 1 of 5)
+**Label:** measure or measurement
+**Lemma gloss:** Measure, measurement; a measured dimension, allotted section, bodily stature, or (rarely) a garment.
+**Description:** A standard unit of measurement, the act of measuring, or a measured quantity, including constructions with prepositions meaning 'according to the measure' or 'by measure'.
+**Enriched:** The dominant sense: a standard unit of measurement, the act of measuring, or a measured quantity — 41 of 54 occurrences. Covers the tabernacle curtain specifications (Exod 26:2, 8; 36:9, 15), Levitical fair-measure laws (Lev 19:35), Ezekiel's measuring reed and temple dimensions (Ezek 40:3, 5; 42:15-19), and figurative uses like Job 28:25's 'measure for the wind.' French mesure, Spanish medida, and German Mass all converge cleanly on this core sense. The prepositional constructions ke-middah ('according to the measure') confirm the word's role as a metrological standard.
+
+### H4256 / Sense 110828 (41 occ, sense 1 of 2)
+**Label:** division, course
+**Lemma gloss:** Division, course; an organizational unit especially of priests and Levites, or an allotted tribal portion of land.
+**Description:** An organizational division or rotating course, especially of priests and Levites serving at the temple.
+**Enriched:** An organizational division or rotating course, especially of priests and Levites serving at the temple in scheduled turns. This is the dominant usage (41 occurrences), concentrated in 1 Chronicles 23-27 and 2 Chronicles. Multilingual evidence converges on division/división/division/Abteilung. Key passages include David's organization of Levitical courses (1 Chr 23:6; 24:1) and the monthly military divisions (1 Chr 27:1-15). The land-allotment passages in Joshua (11:23; 12:7; 18:10) also fall here, denoting tribal divisions of territory.
+
+### H4631 / Sense 113190 (41 occ, sense 1 of 1)
+**Label:** cave, cavern, den
+**Lemma gloss:** cave, cavern — a natural rock chamber used for shelter, burial, hiding, or as a den for beasts and robbers
+**Description:** A natural underground hollow or rock shelter used for burial, hiding, habitation, or as a lair; includes the metaphorical 'den of robbers' (Jer 7:11) which is literally 'cave of robbers', as well as all singular, plural, construct, and prepositional inflections.
+**Enriched:** A natural rock-hewn or subterranean chamber, used across Scripture for burial (the Machpelah cave, Gen 23:9-19), hiding and refuge from enemies (Josh 10:16-27; Judg 6:2; 1 Sam 13:6; 22:1; 24:3), divine encounter (Elijah at Horeb, 1 Kgs 19:9-13), and as a lair for beasts (Isa 32:14). Jeremiah's me'arat paritsim ('cave of robbers,' Jer 7:11) bridges literal and metaphorical usage. The multilingual glosses are remarkably consistent: Spanish 'cueva,' French 'caverne,' German 'Hoehle' — all indicating a single unified sense across all 41 occurrences.
+
+### H4960 / Sense 115238 (41 occ, sense 1 of 2)
+**Label:** feast, banquet
+**Lemma gloss:** A feast or banquet centered on drinking; less commonly, the drink or drinking itself, as opposed to the festive occasion.
+**Description:** A drinking feast or banquet, a festive occasion involving eating and drinking, often royal or celebratory.
+**Enriched:** A drinking feast or banquet — a festive social occasion involving eating and especially drinking. The collocation עָשָׂה מִשְׁתֶּה ('make a feast') is the standard biblical formula for hosting a banquet (Gen 19:3; 21:8; 26:30). Spanish 'banquete/festín,' French 'festin/fête,' and German 'Fest/Mahl' consistently render the celebratory occasion. The book of Esther alone accounts for roughly a third of all occurrences, with its elaborate court feasts driving the narrative. Samson's seven-day wedding feast (Judg 14:10-17) and Nabal's sheep-shearing feast (1 Sam 25:36) illustrate the range from joyful to reckless.
+
+### H5927 / Sense 124061 (41 occ, sense 2 of 7)
+**Label:** offer up sacrifice (Hifil)
+**Lemma gloss:** go up, ascend; offer up sacrifice; bring up, lead out; rise; be taken up; set up lamps; bring up cud
+**Description:** Causative sacrificial use: offering up burnt offerings and sacrifices upon an altar, causing the offering to ascend as smoke to God (Arabic أَصْعَدَ in ritual context, Korean 드리다/올리다, Swahili kutoa).
+**Enriched:** The Hifil causative in sacrificial contexts (41x): causing an offering to ascend, i.e., offering up burnt offerings on the altar. Spanish ofrecer, Korean 드리다, and Swahili kutoa converge on the ritual sense. Genesis 8:20 (Noah's post-flood offering) and Genesis 22:2, 13 (the binding of Isaac) are foundational. The עֹלָה 'burnt offering' derives from this very root.
+
+### H5978 / Sense 124879 (41 occ, sense 1 of 3)
+**Label:** with me
+**Lemma gloss:** With me; a preposition expressing accompaniment, proximity, association, or opposition toward the speaker.
+**Description:** with me, with Me, against me (41 occurrences across 7 original clusters)
+**Enriched:** With me — expressing accompaniment, presence, partnership, or association between the speaker and another party. This overwhelmingly dominant sense covers divine presence ('the LORD was with me'), human companionship ('go with me'), covenant solidarity ('deal kindly with me'), and even adversarial encounter ('contend with me'). God promises 'I am with you' (Gen 21:22; 26:3, 28), Abraham asks Abimelech to 'deal kindly with me' (Gen 21:23), and Rachel pleads 'give me children' naming the personal stake. Spanish 'conmigo' and French 'avec moi' carry the same relational breadth.
+
+### H7043 / Sense 132259 (41 occ, sense 1 of 12)
+**Label:** Piel: curse
+**Lemma gloss:** be light, swift, trifling; curse; lighten; despise; shake
+**Description:** In the Piel intensive stem, the primary meaning of pronouncing a curse upon someone, confirmed uniformly by Arabic لَعَنَ (curse), Korean 저주하다 (curse), and Swahili -laani (curse).
+**Enriched:** The intensive Piel stem expresses the solemn act of pronouncing a curse—declaring someone accursed before God and community. Cross-linguistic evidence is strikingly uniform: Arabic لَعَنَ (curse), Korean 저주하다, and Swahili -laani all converge on the ritual speech act of invoking divine judgment. This appears 41 times, making it the most frequent sense, notably in covenantal contexts (Gen 12:3, Exod 21:17) where cursing parents or God's chosen brings severe consequences.
+
+### H7181 / Sense 133547 (41 occ, sense 1 of 3)
+**Label:** pay attention, give heed
+**Lemma gloss:** To pay attention, listen carefully, give heed; attentive listening that implies obedience
+**Description:** To direct one's attention or ear toward something; to listen carefully, attend, or heed (Hifil finite forms: imperatives, perfects, imperfects, cohortatives, consecutive imperfects, infinitives with preposition)
+**Enriched:** The main Hifil verbal sense: to pay attention, give heed, listen carefully. Encompasses imperatives ("Attend!" Isa 28:23), narrative perfects (Jer 23:18), and prayers for divine attention (Ps 5:2; 66:19). Spanish Escucha/Atiende and French prêter l'oreille both highlight the deliberate, effortful quality. In 1 Sam 15:22, qashav stands parallel to shama but carries the added weight of obedient responsiveness — not just hearing but heeding.
+
+### H8098 / Sense 142330 (41 occ, sense 1 of 1)
+**Label:** Shemaiah (proper name)
+**Lemma gloss:** Shemaiah — theophoric name meaning 'Yahweh has heard,' borne by prophets, priests, Levites, and others
+**Description:** Proper masculine name meaning 'Yahweh has heard' (Hebrew שְׁמַעְיָה / שְׁמַעְיָהוּ, short and long theophoric forms), referring to multiple individuals across the Hebrew Bible: (1) the prophet in Rehoboam's time who forbade civil war (1 Kgs 12:22; 2 Chr 11:2, 12:5-15), (2) Levites and priests in genealogical and service lists (1 Chr 3:22, 4:37, 5:4, 9:14-16, 15:8-11, 24:6, 26:4-7), (3) a Levitical teacher under Jehoshaphat (2 Chr 17:8), (4) various returnees from exile (Ezra 8:16; Neh 12:18), and (5) the false prophet Shemaiah the Nehelamite condemned by Jeremiah (Jer 26:20, 29:24-32, 36:12). Cross-linguistically uniform as a proper name: Arabic شَمَعْيَا, German Schemaja, Korean 스마야/셰마야, Spanish Semaias, Hindi शमैयाह/शमायाह, French Schemaeja. The auto-clusters split by book provenance and orthographic variant (with/without final waw) but represent a single onomastic entry.
+**Enriched:** The proper masculine name Shema'yah/Shema'yahu ('Yahweh has heard'), identifying at least fifteen different individuals across the biblical record. The most theologically significant are the prophet who delivered God's word to Rehoboam against civil war (1 Kgs 12:22; 2 Chr 11:2) and the false prophet from Nehelam whom Jeremiah denounced (Jer 29:24-32). The remainder are genealogical entries in Chronicles, Ezra, and Nehemiah — Levites (1 Chr 9:14, 16; 15:8; 24:6; 26:4-7), priests (Neh 10:8; 12:6, 18), and laymen (Ezr 8:13; 10:21, 31). Greek renders it Samaias; translations consistently transliterate: Spanish 'Semaias,' German 'Schemaja.'
+
+### H8394 / Sense 144487 (41 occ, sense 1 of 2)
+**Label:** understanding, discernment
+**Lemma gloss:** Understanding, discernment, insight; the faculty of comprehension and the practical skill that flows from it.
+**Description:** The cognitive faculty of comprehension, insight, and discernment, whether human or divine, including the ability to perceive, distinguish, and judge rightly.
+**Enriched:** The cognitive faculty of comprehension, insight, and discernment, whether human or divine. Covers the ability to perceive, distinguish, and judge rightly. Multilingual glosses converge on 'understanding/entendimiento/intelligence/Einsicht,' confirming a unified semantic core. Used of the Spirit-given wisdom for tabernacle construction (Exod 31:3), the nation lacking counsel (Deut 32:28), and divine creation wisdom (Prov 3:19; Jer 10:12).
+
+### G2799 / Sense 70734 (40 occ, sense 1 of 1)
+**Label:** weep, cry, wail
+**Lemma gloss:** weep, cry, wail — to shed tears from grief, mourning, sorrow, or deep spiritual anguish
+**Description:** To shed tears as an expression of grief, sorrow, distress, or mourning, encompassing all grammatical forms of the verb κλαίω across indicative, imperative, subjunctive, infinitive, and participial uses.
+**Enriched:** To shed tears as an outward expression of grief, sorrow, mourning, or spiritual distress. The verb spans the entire emotional register of weeping in the NT: Rachel's inconsolable grief for her children (Matt 2:18, quoting Jer 31:15), Peter's bitter tears of repentance (Matt 26:75; Luke 22:62), mourners wailing for Jairus's daughter (Mark 5:38-39), Mary Magdalene weeping at the empty tomb (John 20:11-15), and Jesus weeping over Jerusalem's coming destruction (Luke 19:41). Spanish 'llorar,' French 'pleurer,' and German 'weinen' all capture the broad sense of tearful lamentation without distinction between subdued and violent expressions.
+
+### G4352 / Sense 75869 (40 occ, sense 1 of 2)
+**Label:** worship God or deity
+**Lemma gloss:** To prostrate oneself in worship before God or in reverent homage before a person of authority; to bow down, do obeisance.
+**Description:** To prostrate oneself in worship before God, a divine being, or an object of religious devotion, expressing adoration and reverence.
+**Enriched:** Full religious worship directed toward God, a divine being, or an object of devotion, expressing adoration and reverence. This covers 40 occurrences and includes worship of the true God (John 4:23-24; Rev 4:10), idolatrous worship (Matt 4:9; Rev 13:4), and angelic refusal of worship (Rev 19:10; 22:9). Spanish 'adorar,' French 'adorer,' and German 'anbeten' all converge on the devotional, religious dimension. The Samaritan woman dialogue (John 4:20-24) provides the richest theological exploration of this sense.
+
+### H0374 / Sense 81778 (40 occ, sense 1 of 1)
+**Label:** ephah (dry measure)
+**Lemma gloss:** ephah — a dry measure of approximately 22 liters, used for grain and flour, especially in offerings
+**Description:** A unit of dry measure equal to approximately 22 liters (about three-fifths of a bushel), used for measuring grain, flour, and other dry goods; sometimes rendered generically as 'measure'.
+**Enriched:** A standard unit of dry capacity equal to approximately 22 liters, used for measuring grain, flour, and other dry goods in both cultic and quotidian settings. Most frequently appears in priestly offering regulations as the base from which fractional quantities are specified — 'a tenth of an ephah' (Lev 5:11; Num 5:15; 28:5). Ezekiel's visionary temple mandates exact ephah measures for prince and people (Ezek 45:13, 24; 46:5-14). Outside the cult, Ruth's harvest (Ruth 2:17) and Gideon's offering (Judg 6:19) demonstrate its everyday use. Spanish 'efa,' French 'epha,' German 'Efa' — all transliterations — confirm that no native equivalent existed in target languages.
+
+### H0558 / Sense 83065 (40 occ, sense 1 of 1)
+**Label:** Amaziah (proper name)
+**Lemma gloss:** Amaziah — theophoric name meaning 'Yah(weh) is mighty,' borne by a Judahite king and several others
+**Description:** A masculine proper name meaning 'Yah(weh) is mighty' (from אמץ 'to be strong' + יה/יהו theophoric element), appearing in two orthographic variants: the longer form אֲמַצְיָהוּ (Amatsyahu) predominantly in Kings, and the shorter form אֲמַצְיָה (Amatsyah) in Kings, Chronicles, and Amos. The name is borne by at least two distinct individuals: (1) Amaziah king of Judah, son of Joash and father of Azariah/Uzziah (2 Kgs 12:21; 14:1-21; 15:1, 3; 2 Chr 24:27; 25:1-27), and (2) Amaziah the priest of Bethel who opposed the prophet Amos (Amos 7:10, 12, 14). All four clusters represent the same proper noun, with differences arising only from the two standard orthographic forms of the theophoric suffix (-yahu vs. -yah) and prepositional prefixes (ל 'of/to' and ב 'against/in'), not from genuinely distinct lexicographic senses.
+**Enriched:** The proper masculine name Amatsyah/Amatsyahu ('Yah is mighty'), identifying principally the king of Judah who reigned c. 796-767 BCE. His narrative dominates 2 Kings 14 and 2 Chronicles 25 — initial fidelity, Edomite victory, then hubris provoking war with Israel's Jehoash, followed by defeat and eventual assassination (2 Kgs 14:19; 2 Chr 25:27). The name also identifies the priest of Bethel who opposed Amos (Amos 7:10-14), a Simeonite chief (1 Chr 4:34), and a Levite (1 Chr 6:30). The two orthographic forms — shorter Amatsyah in Kings and longer Amatsyahu in Chronicles — reflect standard Judahite theophoric variation. Translations uniformly transliterate: Spanish 'Amasias,' German 'Amazja.'
+
+### H0779 / Sense 84397 (40 occ, sense 1 of 4)
+**Label:** cursed (state/condition)
+**Lemma gloss:** To curse or pronounce a malediction; as passive participle, to be in a state of being cursed or accursed.
+**Description:** Qal passive participle used adjectivally to denote the state of being under a curse, as in pronouncements of doom or covenant malediction.
+**Enriched:** The dominant passive-participial sense: the state of being under a divine or authoritative curse, functioning almost as an adjective. This is the arur of covenant curses (Deut 27:15-26), primeval judgments (Gen 3:14, 17; 4:11), and patriarchal pronouncements (Gen 9:25). Spanish maldito, French maudit, and German verflucht all preserve the participial-adjectival force. With 40 occurrences, this is overwhelmingly how the word appears — not as an action but as a pronounced condition, a status declaration that marks its object as standing outside blessing.
+
+### H1167 / Sense 87423 (40 occ, sense 1 of 6)
+**Label:** owner or master of property
+**Lemma gloss:** Owner, master, lord; husband; lords/citizens of a city; one possessing a quality (idiomatic 'ba'al of X')
+**Description:** The owner or master of an animal, field, house, pit, or other possession, translating as dueño/मालिक/주인/mwenye.
+**Enriched:** The primary legal-economic sense of owner or master of property — 40 occurrences spanning ownership of animals (Exod 21:28-29, 34; 22:8-14), houses (Judg 19:22-23), fields (Job 31:39), pits (Exod 21:34), and debts (Deut 15:2). The Covenant Code in Exodus 21-22 alone accounts for a dense cluster, establishing ba'al as the default legal term for a property holder with attendant liability. Spanish dueno, Hindi malik, Korean juin, and Swahili mwenye all converge on this proprietary core, while German Herr preserves the 'lord/master' overtone that English 'owner' flattens.
+
+### H1540 / Sense 90100 (40 occ, sense 1 of 10)
+**Label:** Piel: uncover or strip bare
+**Lemma gloss:** uncover, reveal, go into exile — verb of exposure and displacement: literal (nakedness, covering) or abstract (secrets, divine truth); causative stems = exile
+**Description:** Piel factitive sense of physically uncovering, stripping bare, removing a covering, or exposing nakedness (Arabic: كشف kashafa physical; Korean: 벗기다; Hindi: उघाड़ना).
+**Enriched:** Piel 'uncover, strip bare' (40×) is the factitive sense: physically removing a covering, exposing nakedness, or stripping something bare. Arabic كَشَفَ, Korean 벗기다/드러내다, Hindi उघाड़ना, Spanish descubrir. Concentrated in Leviticus 18 ('You shall not uncover the nakedness of…' 18:6–18) and Ezekiel 16, 23. Also metaphorical: uncovering the foundation (Hab 3:13), uncovering the shield (Isa 22:6). Multilingual glosses clearly focus on physical exposure.
+
+### H1715 / Sense 91338 (40 occ, sense 1 of 1)
+**Label:** grain, cereal crop
+**Lemma gloss:** grain, cereal crop — especially wheat and barley as agricultural produce, frequently paired with new wine
+**Description:** Grain or cereal (especially wheat) as agricultural produce or commodity; all 6 languages use a single consistent translation equivalent throughout all 40 occurrences (eng 'grain', spa 'grano/trigo', hin 'अनाज/अन्न', arb 'حِنْطَة/قَمْح', kor '곡식', swa 'nafaka'), with variation only in grammatical inflection (article, construct, possessive suffixes, conjunctions, prepositions) and no semantic differentiation
+**Enriched:** Cultivated cereal produce (especially wheat and barley) as a category of agricultural wealth and divine blessing. Characteristically appears in the triad dagan-tirosh-yitshar ('grain, new wine, oil') representing the full bounty of the Promised Land (Deut 7:13; 11:14; 28:51; Hos 2:8-9; Joel 2:19). Isaac's blessing invokes dagan as a mark of divine favor (Gen 27:28, 37). Prophets use its withdrawal as a sign of judgment (Hos 2:9; Joel 1:10; Hag 1:11) and its restoration as a sign of redemption (Jer 31:12; Zech 9:17). The Phoenician cognate in the expression 'land of grain' (erets dagan) points to deep Canaanite agricultural vocabulary. All six translation languages render it with a single equivalent throughout, confirming semantic unity.
+
+### H2885 / Sense 99901 (40 occ, sense 1 of 2)
+**Label:** ring or loop for attachment
+**Lemma gloss:** Ring; a metal ring used either as a functional loop for carrying sacred objects or as a signet ring of authority and adornment.
+**Description:** A metal ring or loop attached to an object (such as the ark, altar, or ephod) through which poles or cords are inserted for carrying or fastening.
+**Enriched:** Functional ring or loop for attachment — a metal ring affixed to the tabernacle furnishings (ark, altar, table, ephod) through which poles or cords were threaded for transport or fastening. This is the dominant use (40 occurrences), concentrated in Exodus 25–39. Spanish 'argollas' (hardware loops) versus French 'anneaux' captures the utilitarian character (Exod 25:12–15; 26:24; 28:23–28).
+
+### H3176 / Sense 101659 (40 occ, sense 1 of 3)
+**Label:** to hope, wait expectantly
+**Lemma gloss:** To wait, hope, expect; to place confident hope in God or await an outcome with anticipation
+**Description:** To place one's hope or expectation in someone (especially God), to wait with confident anticipation; the primary meaning of יחל across Piel, Hifil, and Nifal stems.
+**Enriched:** The primary meaning spanning all stems: to place one's hope or expectation in someone, especially God, or to wait with confident anticipation. In Psalms this is the dominant posture of faith (Ps 31:24; 33:22; 38:15; 130:5-7). Genesis 8:12 shows the more concrete 'wait' end of the spectrum. The Hiphil causative nuance appears in passages where God is said to cause hope.
+
+### H3335 / Sense 103447 (40 occ, sense 1 of 6)
+**Label:** form, fashion, create
+**Lemma gloss:** To form, fashion, shape; of a potter molding clay, God creating humanity and the world, and metaphorically, devising a plan or purpose.
+**Description:** Qal active sense of physically shaping, forming, or creating something, especially God forming humans, animals, or the earth (Arabic جَبَلَ/صَوَّرَ, Korean 빚다/지으시다, Swahili kuumba/kufanya).
+**Enriched:** Qal active: to form, fashion, shape, or create — the primary sense at 40 occurrences, dominated by God as subject. God forms the human from dust (Gen 2:7), forms every beast of the field (Gen 2:19), forms the eye (Ps 94:9), forms the mountains (Amos 4:13), forms the earth to be inhabited (Isa 45:18), and forms Israel as his people (Isa 43:1, 7, 21; 44:2, 21, 24). Arabic jabala ('to mold, create') and sawwara ('to fashion, give form') both select creation-specific vocabulary, while Korean 빚다 and 지으시다 alternate between artisanal and divine-creative registers. The theological weight is immense: yatsar insists that creation is not accidental but deliberately shaped, like clay on a wheel.
+
+### H3615 / Sense 106236 (40 occ, sense 3 of 11)
+**Label:** come to an end (Qal)
+**Lemma gloss:** to complete, finish, bring to an end; consume, destroy; fail, be exhausted; fulfill a purpose or decree
+**Description:** To reach a natural end, be finished, or run out; intransitive cessation or completion of a process, supply, or period (Arabic faniya/intahā/nafida, Korean 끝났다/없어지다, Swahili -isha/-kwisha/-malizika).
+**Enriched:** The intransitive Qal sense where processes or supplies reach their natural endpoint without an agent actively finishing them. Water in the wineskin runs out (Gen 21:15), seven years of plenty end (Gen 41:53), temple construction reaches completion (Exod 39:32). The Korean 끝났다 'it ended' and Arabic intahā 'it concluded' capture the passive, inevitable quality of this sense.
+
+### H5045 / Sense 115737 (40 occ, sense 2 of 3)
+**Label:** the Negev region
+**Lemma gloss:** The south as a cardinal direction; also the Negev, the specific arid region south of Judah.
+**Description:** The Negev, the arid region in southern Israel used as a proper geographic designation, often translated as 'the Negev' or 'the Negeb' rather than simply 'south'.
+**Enriched:** The Negev as a proper geographic designation—the arid, semi-desert region south of the Judean highlands, stretching roughly from the hills below Hebron to the wilderness of Kadesh. Abraham sojourns there (Gen 20:1; 24:62), spies enter the land through it (Num 13:17, 22), and it is subdivided into named districts: the Negev of Judah, of the Jerahmeelites, of the Kenites (1 Sam 27:10; 30:14). Across languages this is often transliterated rather than translated: spa 'Neguev,' fra 'Negev,' deu 'Negev.'
+
+### H5674a / Sense 121939 (40 occ, sense 4 of 10)
+**Label:** Hifil: bring across, cause to cross
+**Lemma gloss:** to pass over, pass through, pass by; to cross (a boundary, river); to pass away, cease; to transgress; to cause to pass; to remove
+**Description:** To cause to pass over or bring across a physical boundary (Hifil causative); used of leading people across a river, ferrying goods or persons, making armies cross, dedicating firstborn by causing them to pass over to the LORD, and generally transporting from one side to another.
+**Enriched:** A Hifil causative sense of bringing across, causing to cross, or leading over a physical boundary. God 'brought' a wind over the earth to dry the flood (Gen 8:1), the man 'brought Israel over' the Jordan (2 Sam 19:18), Moses commands 'you shall cause to pass through fire' as dedication or pagan ritual (Exod 13:12, Lev 18:21). The causative morphology signals agency (Arabic a'bara 'to cause to cross', Korean 건너게 하다 'to make cross'), distinguishing this from intransitive crossing.
+
+### H5703 / Sense 122408 (40 occ, sense 1 of 5)
+**Label:** perpetuity, forever (future)
+**Lemma gloss:** Perpetuity, forever; as noun: everlasting duration (past or future); as preposition: unto, until, as far as.
+**Description:** Temporal perpetuity directed toward the future, meaning 'forever, evermore,' often in the idiom לְעוֹלָם וָעֶד 'forever and ever' or standing alone as לָעַד 'for ever.'
+**Enriched:** Future-directed perpetuity: 'forever, evermore,' the dominant sense at 40 occurrences. Found overwhelmingly in the liturgical formula le'olam wa'ed (Exod 15:18; Ps 9:5; 1 Chr 28:9) and in prophetic promises of enduring kingship and righteousness (Ps 21:7; Prov 12:19; 29:14). The multilingual convergence is strong — Spanish para siempre, French pour toujours, German ewiglich, and Korean 영원히 all select dedicated 'forever' vocabulary rather than mere 'continuation' words, confirming this as a lexicalized temporal-infinity sense distinct from the prepositional root.
+
+### H5923 / Sense 124035 (40 occ, sense 1 of 1)
+**Label:** yoke (burden/servitude)
+**Lemma gloss:** yoke — a wooden bar for draft animals; figuratively, the burden of servitude, oppression, or subjugation
+**Description:** A wooden bar placed across the necks of draft animals, used literally of agricultural implements and figuratively of subjugation, oppression, or bondage imposed by a ruler or foreign power.
+**Enriched:** A wooden bar placed on the necks of draft animals, used literally in a few agricultural and ritual contexts (Num 19:2; Deut 21:3; 1 Sam 6:7) but predominantly as a figure for subjugation, servitude, and political oppression. The metaphor is politically decisive in Rehoboam's kingdom-splitting exchange (1 Kgs 12:4-14). Jeremiah's 'yoke' sign-act (Jer 27-28) dramatizes submission to Babylon, while Hananiah's breaking of the wooden yoke triggers the threat of an iron one (Jer 28:13-14). The liberating counter-image — 'breaking the yoke' — signals divine deliverance from bondage (Lev 26:13; Isa 9:4; 10:27; Jer 30:8; Ezek 34:27; Nah 1:13). Spanish 'yugo,' French 'joug,' and German 'Joch' all preserve both the concrete and metaphorical range.
+
+### H6677a / Sense 129659 (40 occ, sense 1 of 1)
+**Label:** neck (body part)
+**Lemma gloss:** neck, back of neck — the body part connecting head and torso; site of embrace, ornament, and subjugation
+**Description:** The neck as a physical body part, the anatomical region connecting the head to the torso; used literally across all occurrences whether singular or plural, with various possessive suffixes and prepositional prefixes.
+**Enriched:** The anatomical neck, the body part connecting head and torso, appearing in three primary contextual clusters: (1) the embrace idiom nafal al-tsavvar, 'fall upon the neck,' expressing intense reunion emotion (Gen 33:4; 45:14; 46:29); (2) adornment and authority — gold chains (Gen 41:42; Dan 5:7, 16, 29) and jewelry (Song 1:10; 4:4, 9; Prov 1:9; 3:3, 22); (3) subjugation — the neck bears the literal or figurative yoke (Deut 28:48; Isa 8:8; 10:27; Jer 27:8, 12; 28:10-14; Lam 1:14). French 'cou,' Spanish 'cuello,' and German 'Hals' consistently translate with a single anatomical term, confirming that all occurrences share one core referent despite the varied symbolic uses.
+
+### H6743b / Sense 130075 (40 occ, sense 1 of 3)
+**Label:** prosper, succeed (intransitive)
+**Lemma gloss:** To prosper, succeed, or cause to prosper; also to be fit or useful for a purpose.
+**Description:** To prosper, succeed, or thrive — used intransitively in both Qal and Hifil stems where the subject itself experiences success or prosperity.
+**Enriched:** To prosper, succeed, or thrive intransitively — the subject itself experiences success. Spanish 'prosperar' and French 'prospérer' match directly. Joseph 'prospered' in Potiphar's house (Gen 39:2), warriors ask whether their 'way will prosper' (Judg 18:5), and God's purpose 'prospers' through the Servant (Isa 53:10). This is the most common sense, spanning narrative, wisdom, and prophetic literature.
+

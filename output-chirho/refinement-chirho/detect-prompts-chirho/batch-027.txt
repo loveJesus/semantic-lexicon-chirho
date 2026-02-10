@@ -1,0 +1,291 @@
+# Sense Refinement Detection — Batch 027
+
+You are a biblical lexicographer reviewing sense entries for a Hebrew/Aramaic/Greek lexicon.
+Each entry below is a single "sense" that was produced by clustering translation signatures 
+and then merging with an LLM. Some senses may have been OVER-LUMPED — they contain genuinely 
+distinct meanings that should be separate senses.
+
+## Your Task
+
+For each sense, determine if it should be SPLIT into multiple senses. Look for:
+- Literal vs. figurative/metaphorical uses lumped together
+- Concrete vs. abstract meanings combined
+- Multiple distinct referents (e.g., "father" = biological parent + patron/advisor + originator)
+- Physical vs. spiritual/theological uses merged
+- Different syntactic frames producing different meanings
+
+## Output Format
+
+Return a JSON array. For senses that need NO splitting, omit them entirely.
+For senses that SHOULD be split, include an entry like:
+
+```json
+[
+  {
+    "senseIdChirho": 79287,
+    "lemmaIdChirho": "H0001",
+    "currentLabelChirho": "father, immediate male parent",
+    "splitProposalChirho": [
+      {
+        "newLabelChirho": "biological/legal father",
+        "criteriaChirho": "Direct parent-child relationship, possessive constructions with specific person"
+      },
+      {
+        "newLabelChirho": "metaphorical father (patron, advisor, protector)",
+        "criteriaChirho": "Title of respect for prophets, advisors, or authority figures; 'father to Pharaoh' type usage"
+      }
+    ],
+    "confidenceChirho": "high",
+    "reasoningChirho": "Description explicitly mentions 'title of respect or metaphorical originator' alongside biological father"
+  }
+]
+```
+
+Only propose splits where you have MEDIUM or HIGH confidence. Do NOT split function words (articles, 
+prepositions, particles, conjunctions) unless there is a genuinely distinct semantic sense (not just 
+syntactic variation). Proper nouns generally should NOT be split.
+
+If NO senses in this batch need splitting, return an empty array: []
+
+## Senses to Review
+
+### G3850 / Sense 73799 (50 occ, sense 1 of 1)
+**Label:** parable, illustrative comparison
+**Lemma gloss:** parable, comparison, proverb — a figurative illustration placed alongside a truth to make it vivid and memorable
+**Description:** A figurative narrative or comparison placed alongside a truth to illustrate it; the primary teaching method of Jesus in the Synoptic Gospels. Used for individual parables (Matt 13:3, 18, 24, 31, 33, 34; Mark 4:2, 10, 13, 30, 33, 34; Luke 8:4-11; 12:16, 41; 13:6; 14:7; 15:3; 18:1, 9; 19:11; 20:9, 19; 21:29) and for the genre collectively. Multilingual translations are semantically invariant: Spanish 'parábola/parábolas', Hindi 'दृष्टान्त/दृष्टान्तों', Arabic 'مَثَل/أَمثَال', Korean '비유/비유들', Swahili 'mfano/mifano'. The singular (S73799) and plural (S73800) represent grammatical number variation of one lexical sense — an illustrative story or comparison.
+**Enriched:** A figurative narrative, comparison, or proverbial saying placed alongside a truth to illuminate it, functioning as the primary vehicle of Jesus' kingdom teaching. Covers extended story-parables (the Sower, Matt 13:3-9, 18-23; the Wicked Tenants, Matt 21:33-44), compact similes (the Leaven, Matt 13:33; the Pearl, Matt 13:45-46), and enigmatic sayings that blur into proverb (Luke 4:23, 'Physician, heal yourself'). Mark 4:10-12, 33-34 frames parabolic speech as both a pedagogical strategy and a revelatory mystery. In Hebrews 9:9 and 11:19, the word takes its older Greek sense of 'type' or 'figure,' referring to the tabernacle as a parabole of heavenly reality. All 50 occurrences share the root concept of illustrative analogy, whether narrative or gnomic.
+
+### H0854 / Sense 84923 (50 occ, sense 3 of 5)
+**Label:** direct object marker
+**Lemma gloss:** With, together with (accompaniment); from with (ablative source with min-); also functions as the direct object marker in certain textual traditions.
+**Description:** Grammatical particle marking the definite direct object of a verb, with no independent semantic content.
+**Enriched:** Direct object marker (orthographic overlap): grammatical particle marking the definite direct object — 50 occurrences where the suffixed forms of et-accompaniment have merged orthographically with the direct object marker et. This is especially common in later biblical prose: 'pitch it within and without' (Gen 6:14); 'the place where he had stood before the LORD' (Gen 19:27). Spanish and French typically leave this untranslated (using word order for object marking), while German and Korean use case markers. The overlap is a real feature of the textual tradition, not a scribal error, and is concentrated in Joshua-Kings, Jeremiah, and Ezekiel as BDB notes.
+
+### H0905 / Sense 85263 (50 occ, sense 2 of 7)
+**Label:** apart from, besides
+**Lemma gloss:** Separation, alone, by oneself; apart from, besides; also: poles/staves, limbs, branches, bars
+**Description:** Prepositional compound mil-levad meaning 'apart from, besides, except, other than'; Arabic ma-ada / min ghayri / siwa, Korean oe-e, Swahili mbali na / zaidi ya — expressing exclusion or addition.
+**Enriched:** The compound preposition mil-levad ('from-separation-of') means 'apart from, besides, except.' It adds or excludes items from a count: 'besides women and children' (Exod 12:37), 'apart from the regular burnt offering' (Lev 9:17; 23:38). Arabic siwa/ma-ada, Swahili mbali na, and Spanish además de all render this exclusionary-additive prepositional function.
+
+### H0995 / Sense 86273 (50 occ, sense 1 of 9)
+**Label:** understand, perceive (Qal)
+**Lemma gloss:** understand, perceive, discern; (Qal) grasp, perceive; (Niphal) be discerning; (Hifil) understand, teach; (Hitpael) consider
+**Description:** Basic Qal sense of cognitive understanding, perceiving, or comprehending a matter — Arabic fahima (فَهِمَ), Korean 깨닫다/이해하다, Swahili kuelewa.
+**Enriched:** The foundational Qal active sense: to grasp mentally, comprehend, or perceive a fact or situation. Deuteronomy 32:29 (if only they were wise and understood) and 1 Samuel 3:8 (Eli perceived the Lord was calling) show cognitive realization. Arabic fahima and Korean 깨닫다/이해하다 mirror the mental grasp. Swahili kuelewa serves across translations. This is straightforward intellectual apprehension, the verb's simplest meaning.
+
+### H1157 / Sense 87340 (50 occ, sense 1 of 7)
+**Label:** on behalf of, for the sake of
+**Lemma gloss:** On behalf of; through; behind; around — a preposition expressing separation, passage, or interposition
+**Description:** Benefactive sense expressing action done for someone's benefit or sake, consistently rendered by Arabic مِنْ أَجْلِ / لِأَجْلِ / عَنْ, Korean 위하여, and Swahili kwa ajili ya across all pronominal suffixes.
+**Enriched:** The dominant benefactive sense, appearing roughly half the time. Arabic renders it with purposive prepositions (مِنْ أَجْلِ, لِأَجْلِ), Korean with 위하여, and Swahili with kwa ajili ya — all confirming the 'for the benefit of' reading. Typical in priestly contexts where atonement is made 'for' someone (Lev 9:7, 16:6). The pronominal suffixes (בַּעֲדִי, בַּעֲדוֹ) attach directly to indicate the beneficiary.
+
+### H1330 / Sense 88716 (50 occ, sense 1 of 1)
+**Label:** virgin, young woman
+**Lemma gloss:** virgin, maiden — a young unmarried woman, with emphasis on sexual purity; also used figuratively of cities and nations
+**Description:** A young woman of marriageable age, typically emphasizing sexual purity and virginity; used of individual maidens, collectively of groups of young women, and figuratively of cities or nations personified as a maiden (e.g., 'virgin Israel', 'virgin daughter of Zion').
+**Enriched:** A young woman defined by virginity, encompassing both the literal sense of an unmarried maiden dwelling in her father's house (Gen 24:16; Exod 22:16-17; Lev 21:3, 14; Deut 22:19, 23, 28) and the figurative personification of cities and nations as a 'virgin' — typically to express vulnerability, purity, or the pathos of devastation (Isa 37:22, 'virgin daughter of Zion'; Amos 5:2, 'virgin Israel has fallen, never to rise again'; Lam 1:15; 2:13). The word is sometimes paired with bachur ('young man') in meristic expressions for the entire youth of a community (Deut 32:25; Ps 78:63; Jer 31:13). All 50 occurrences share the core semantic of youthful female purity, whether applied to individuals or to personified communities.
+
+### H1755 / Sense 91446 (50 occ, sense 2 of 4)
+**Label:** generations, posterity
+**Lemma gloss:** A generation or age: the people living in a given period, successive posterity, or the formula 'from generation to generation' expressing perpetuity.
+**Description:** Plural construct with possessive suffixes in cultic and legal formulas meaning 'throughout your/their generations' — successive descendants who will inherit an ordinance or covenant; Arabic ajyal, Korean sedaedeul, Swahili vizazi.
+**Enriched:** Successive generations, posterity — used in the plural with possessive suffixes in covenant and cultic legislation to express an obligation binding on all descendants. The formula ledorotam/ledorotekem ('throughout their/your generations') pervades Pentateuchal law: circumcision (Gen 17:7, 12), Passover (Exod 12:14), Sabbath (Exod 31:13), and priestly statutes. Spanish 'para vuestras generaciones' and German 'für ihre Geschlechter' preserve the distributive force. This sense shifts from a single living cohort to a chain of future ones.
+
+### H1945 / Sense 92648 (50 occ, sense 1 of 2)
+**Label:** woe
+**Lemma gloss:** An exclamatory interjection: 'woe! alas!' in lament or judgment; rarely 'ho! come!' as a summons.
+**Description:** woe, Woe, Alas (50 occurrences across 3 original clusters)
+**Enriched:** Exclamation of grief, lament, or prophetic judgment: 'woe! alas!' Introduces declarations of divine displeasure or mourning cries. Spanish ay de, French malheur, and German wehe all converge on this sorrowful and admonitory tone. Found across the prophets, especially in Isaiah's woe oracles (Isa 1:4; 5:8) and funeral laments (1 Kgs 13:30; Jer 22:18). The 50 occurrences establish this as the overwhelmingly dominant use.
+
+### H2389 / Sense 96178 (50 occ, sense 1 of 4)
+**Label:** strong, mighty, powerful
+**Lemma gloss:** Strong, mighty, powerful; also severe or fierce in intensity; hard or unyielding in character; forcefully (adverbial).
+**Description:** Possessing or exhibiting physical or figurative strength, power, or might, including comparative uses ('stronger').
+**Enriched:** The dominant sense (50x): possessing or exhibiting physical or figurative strength, power, or might. This covers the 'strong hand' of the Lord in the Exodus narratives (Exod 3:19; 6:1), mighty warriors (Num 13:18, 31), comparative uses ('stronger than,' Judg 18:26), and the strong arm of Pharaoh (Ezek 30:22). The translation evidence is strikingly uniform: Spanish 'fuerte,' French 'fort/puissant,' German 'stark/mächtig' — all core vocabulary for strength. Joshua 14:11 captures the personal dimension: Caleb declares himself still as 'strong' at eighty-five as when Moses first sent him out.
+
+### H4191 / Sense 110425 (50 occ, sense 3 of 7)
+**Label:** surely die (מוֹת יוּמָת death formula)
+**Lemma gloss:** To die, be dead; (Hifil) kill, put to death; (Hofal) be executed; (participle) the dead; (infinitive) death
+**Description:** The emphatic death-penalty formula מוֹת יוּמָת (dying he shall die / he shall surely die) — Qal infinitive absolute used adverbially to intensify the finite verb, typically in legal pronouncements prescribing capital punishment or divine warnings of certain death; Arabic مَوْتًا يَمُوتُ, Korean 반드시 죽으리라, Swahili hakika atakufa.
+**Enriched:** The emphatic formula moth yumath (Qal infinitive absolute + Yiqtol), rendered 'surely die' or 'certainly die,' marking solemn divine or legal pronouncements. First heard in Gen 2:17 as God's warning to Adam, it recurs throughout covenant law (Gen 26:11; Exod 19:12). Multilingual translations consistently use emphatic adverbs: Spanish 'ciertamente morirá,' French 'certainement,' German 'des Todes.'
+
+### H4191 / Sense 110466 (50 occ, sense 4 of 7)
+**Label:** kill / put to death (Hifil causative)
+**Lemma gloss:** To die, be dead; (Hifil) kill, put to death; (Hofal) be executed; (participle) the dead; (infinitive) death
+**Description:** To kill, put to death, cause to die — Hifil causative covering intentional killing (murder, war, execution by an agent), with various subjects and objects; Arabic أَمَاتَ/قَتَلَ, Korean 죽이다, Swahili -ua.
+**Enriched:** The Hifil causative meaning 'to kill, put to death, cause to die,' with an active agent doing the killing. Unlike Hofal (passive), here a subject acts: God threatens (Exod 4:24), brothers conspire (Gen 37:18), a king commands (2 Sam 1:15). Arabic 'amâta and Korean 죽이다 both use their standard causative 'kill' forms, distinguishing this cleanly from intransitive 'die.'
+
+### H4392 / Sense 111709 (50 occ, sense 1 of 4)
+**Label:** full of, filled with
+**Lemma gloss:** Full, filled, complete — whether of physical contents, wholeness of measure, pregnancy, or vocal intensity.
+**Description:** Containing something to capacity or abounding in a substance or quality, used with a genitive complement specifying what fills.
+**Enriched:** The dominant sense (50x): containing something to capacity or abounding in a specified substance or quality. Nearly always construed with a genitive complement telling what fills the container — bowls full of flour, spoons full of incense (Num 7:13–86), houses full of goods (Deut 6:11), a cage full of birds (Jer 5:27). The multilingual translations uniformly reach for 'full of' constructions: Spanish 'llena de,' French 'plein de,' German 'voll von.' The construction is so formulaic in Numbers 7 that it appears in 24 consecutive verses.
+
+### H6908 / Sense 130886 (50 occ, sense 1 of 4)
+**Label:** Piel: gather together, reassemble
+**Lemma gloss:** To gather, collect, assemble; Piel: reassemble the dispersed; Nifal: come together; Qal: collect.
+**Description:** Intensive active gathering, often used of God or a leader regathering dispersed people back together (Piel stem), carrying a connotation of deliberate, thorough collection or restoration from scattering.
+**Enriched:** Piel intensive: to gather together, reassemble deliberately — the most frequent sense at 50 occurrences, dominated by prophetic promises of national restoration. In Deut 30:3-4 God promises 'he will gather you (qibbetsekha) again from all the peoples where the LORD your God has scattered you; even from the farthest end of the heavens the LORD your God will gather you.' Ezekiel deploys this verb repeatedly in restoration oracles (11:17; 20:34, 41; 28:25; 34:13; 36:24; 37:21; 39:27). Spanish reunire and French rassembler both capture the re-assembly nuance. German versammeln selects communal-gathering vocabulary. The Piel stem adds intentionality and thoroughness — this is not casual collection but purposeful, comprehensive ingathering. Neh 1:9 places it in a conditional covenant framework: 'if you return to me... I will gather them from there.' Ps 106:47 and 1 Chr 16:35 use it in liturgical petition.
+
+### H6918 / Sense 131055 (50 occ, sense 1 of 5)
+**Label:** holy (divine attribute)
+**Lemma gloss:** Sacred, holy; set apart for God; as a divine title, 'the Holy One'; in the plural, holy ones or saints.
+**Description:** Adjective describing holiness as an intrinsic attribute of God or as a quality predicated of persons/things, used predicatively or attributively in the singular.
+**Enriched:** Adjectival predication of holiness: qadosh used predicatively or attributively to describe God, persons, places, objects, or times as sacred or set apart. This is the broadest sense at 50 occurrences, covering 'a holy nation' (Exod 19:6), 'a holy place' (Lev 6:16, 26-27), 'holy ground' (Exod 3:5), and 'you shall be holy' (Lev 11:44-45; 19:2; 20:7). Spanish santo/santa, German heilig, French saint, and Korean 거룩한 all map consistently to this adjectival use. The levitical holiness code deploys this sense most densely, demanding that Israel's conduct match God's character.
+
+### H6965b / Sense 131706 (50 occ, sense 2 of 12)
+**Label:** Qal: to stand firm, endure, be valid
+**Lemma gloss:** to rise, arise, stand up; to stand firm, endure, remain valid; causative: to raise up (a person, leader), to establish (covenant, kingdom), to erect (structure), to fulfill (word, oath)
+**Description:** The stative sense of remaining standing, enduring, persisting, or being valid/established; used of counsel, words, plans, or entities that remain in force (yaqum, 'it shall stand'; Arabic yathbutu, 'it is firm').
+**Enriched:** Stative sense: to stand firm, to endure, to remain valid. Not the act of rising, but the state of standing. Genesis 23:17, 20 use qum for land 'standing' (being confirmed) as Abraham's possession. Leviticus uses it for valuations that 'stand' (remain in force). Arabic يَثْبُتُ (yathbutu) 'it remains/persists' and Korean '유효하다' (valid) confirm the endurance nuance—what rises and remains standing.
+
+### H6999a / Sense 132066 (50 occ, sense 1 of 5)
+**Label:** burn incense (Piel)
+**Lemma gloss:** To make sacrifices smoke on the altar or burn incense in worship or idolatry; encompasses both Piel (incense) and Hifil (altar offerings) stems.
+**Description:** To burn incense as a cultic act of worship or idolatry (Piel stem); Arabic بَخَّرَ, Korean 분향하다/향을 피우다, Swahili -fukiza ubani/uvumba, Hindi धूप जलाना.
+**Enriched:** The Piel stem denotes the ritual act of burning incense as worship or, frequently, as idolatrous practice. Arabic بَخَّرَ and Swahili -fukiza ubani both specify incense fumigation, matching this cultic sense precisely. Dominant in the prophetic condemnations of Jeremiah and Hosea (e.g., Jer 19:13, Hos 11:2), where Israel burns incense to foreign gods. The 50 occurrences span both legitimate temple worship (1 Sam 2:16) and the illicit high places.
+
+### H7175 / Sense 133525 (50 occ, sense 1 of 2)
+**Label:** frame or board of Tabernacle
+**Lemma gloss:** A board or structural frame, especially the acacia-wood frames of the Tabernacle; once the deck-planking of a ship.
+**Description:** An upright structural frame or board used in the construction of the Tabernacle, made of acacia wood and overlaid with gold (Exodus 26, 36; Numbers 3-4).
+**Enriched:** Upright frame or board of the Tabernacle. The dominant meaning across 50 occurrences, referring to the acacia-wood structural elements overlaid with gold that formed the walls of the wilderness sanctuary. French cadre ('frame') and German Rahmen ('frame') emphasize the structural function, while Spanish tablon ('plank') highlights the material. Central to Exodus 26:15-30 and 36:20-34, with additional references in Numbers 3:36 and 4:31 for Levitical transport duties.
+
+### H7346 / Sense 135452 (50 occ, sense 1 of 1)
+**Label:** Rehoboam (king of Judah)
+**Lemma gloss:** Rehoboam — Solomon's son and first king of the divided kingdom of Judah, whose harshness split the nation
+**Description:** The proper name Rehoboam (רְחַבְעָם), son of Solomon and first king of the divided southern kingdom of Judah. The two clusters differ only in prepositional framing (nominative vs. lamed-preposition 'to Rehoboam'), not in referent: eng Rehoboam/to-Rehoboam, spa Roboam/para-Roboam, hin रहब्आम/रहब्आम-को, arb رَحُبعامُ/לִ-רָחַבְעָם, kor 르호보암-이/에게-르호보암, swa Rehoboamu/kwa-Rehoboamu. All 50 occurrences refer to the same historical individual.
+**Enriched:** The proper name Rehoboam (Rechav'am), referring exclusively to the son of Solomon who reigned as king of Judah after the united monarchy's dissolution (c. 930-913 BC). His refusal to lighten the tax burden at Shechem led to the secession of the ten northern tribes (1 Kgs 12:1-17; 2 Chr 10:1-17), and his reign was marked by the Egyptian pharaoh Shishak's invasion of Jerusalem (1 Kgs 14:25-26; 2 Chr 12:2-9). All 50 occurrences — whether in nominative, conjunctive, or prepositional forms — refer to this single king, with the Septuagint rendering Roboam confirming the identification across manuscript traditions.
+
+### H7489a / Sense 136650 (50 occ, sense 1 of 5)
+**Label:** do evil, act wickedly
+**Lemma gloss:** Be evil or displeasing; do evil, act wickedly; as participle, evildoer — covering moral wrongdoing and its stative counterpart.
+**Description:** Hifil active sense: to do evil, act wickedly, cause harm, or treat someone badly, encompassing all finite verb and infinitive forms of volitional wrongdoing.
+**Enriched:** Hifil active: to do evil, act wickedly, cause harm, or treat someone badly. The dominant sense, covering volitional wrongdoing across narrative, prophetic, and legal texts. Pharaoh's oppression of Israel (Exod 5:23), Laban's cheating of Jacob (Gen 31:7), and the general warning against doing evil (Jer 4:22, 13:23). German 'Böses tun' and Spanish 'hacer mal' consistently mark this as deliberate moral action rather than mere state.
+
+### H7665 / Sense 138081 (50 occ, sense 1 of 8)
+**Label:** Qal: break, shatter
+**Lemma gloss:** To break, shatter, smash; in Niphal: be broken; figuratively of hearts, spirits, power, and covenant-breaking
+**Description:** Active transitive breaking or shattering of a physical object (bone, yoke, vessel, gate, idol), the basic Qal sense corresponding to Arabic kasara and Korean 부수다/꺾다.
+**Enriched:** Active Qal transitive breaking or shattering of physical objects — vessels, bones, yokes, gates, idols. Arabic kasara and Korean 부수다/꺾다 match directly. This foundational sense covers Gideon's jars (Judg 7:20), the Passover prohibition against breaking bones (Exod 12:46), and the breaking of yokes as liberation metaphor (Lev 26:13).
+
+### H8549 / Sense 145288 (50 occ, sense 1 of 4)
+**Label:** without blemish (sacrificial)
+**Lemma gloss:** Complete, sound, without blemish — of sacrificial animals, morally upright persons, God's perfect way, and whole time-periods.
+**Description:** Physically unblemished, without defect — used of sacrificial animals and offerings required to be free from any bodily imperfection (Lev, Num, Ezek).
+**Enriched:** Without blemish, physically unblemished — the technical cultic term for sacrificial animals free from bodily defect, required throughout the Priestly legislation (Exod 12:5, Lev 1:3, Num 28-29, Ezek 43:22-25). Spanish sin defecto and French sans défaut render the idea precisely. This is the quantitatively dominant sense, reflecting how central spotless offerings were to Israelite worship.
+
+### H???? / Sense 145993 (50 occ, sense 19 of 94)
+**Label:** (none)
+**Lemma gloss:** (none)
+**Description:** (none)
+**Enriched:** (none)
+
+### G0891 / Sense 63873 (49 occ, sense 1 of 1)
+**Label:** until
+**Lemma gloss:** until, as far as — a temporal and spatial conjunction or preposition marking the endpoint of an action or extent
+**Description:** until, as far as, Until (49 occurrences across 3 original clusters)
+**Enriched:** A preposition (with genitive) and conjunction marking the temporal endpoint ('until') or spatial extent ('as far as') of an action, state, or condition. In temporal use, it governs key salvation-historical boundaries: the silence of Zechariah 'until' the birth of John (Luke 1:20), the ascension timeline 'until the day he was taken up' (Acts 1:2), and Pauline eschatological markers like 'until the fullness of the Gentiles' (Rom 11:25). In Revelation, it punctuates apocalyptic transitions (Rev 2:26; 20:3). The spatial sense ('as far as') appears occasionally in Acts (Acts 11:5; 13:6). Distinguished from heos (more common in the Gospels) mainly by stylistic preference, with achri favored in Acts, Paul, and Revelation. All 49 occurrences share this single limitative-boundary function.
+
+### G0907 / Sense 63952 (49 occ, sense 1 of 3)
+**Label:** be baptized, receive baptism
+**Lemma gloss:** To baptize or be baptized; to immerse in water as a rite of repentance, identification, or purification.
+**Description:** To undergo the rite of baptism, receiving immersion or washing as a sign of repentance, identification with Christ, or entry into the believing community.
+**Enriched:** To be baptized or receive baptism—the passive/middle voice usage covering 49 occurrences. Denotes undergoing the rite of water immersion as a sign of repentance (Matt 3:6; Mark 1:5), identification with Christ's death and resurrection (Rom 6:3-4), or entry into the believing community (Acts 2:41; 8:12-13). Spanish 'ser bautizados,' French 'baptiser' (passive), and German 'getauft werden' all mark the recipient perspective. The phrase 'baptized into Christ' (Gal 3:27) shows how the passive form carries rich theological freight.
+
+### G1080 / Sense 64453 (49 occ, sense 1 of 3)
+**Label:** beget, father a child
+**Lemma gloss:** To beget (of a father), be born (passive), or give birth to (of a mother); encompasses physical lineage, spiritual rebirth, and divine generation.
+**Description:** To beget or sire offspring, with the father as the active agent, used both of physical lineage (genealogies) and of God's unique relationship to the Son.
+**Enriched:** To beget or father a child, with the male parent as agent. This is the genealogical workhorse of Matt 1:2-16, where the formula 'A begot B' chains forty-two generations. It also describes God's unique generation of the Son (Heb 1:5, quoting Ps 2:7). Spanish 'engendró' and French 'engendrer' both preserve the active paternal force. The 49 occurrences cluster heavily in genealogies and christological declarations.
+
+### G2094 / Sense 68313 (49 occ, sense 1 of 1)
+**Label:** year
+**Lemma gloss:** year — a unit of time measuring one complete annual cycle, used for ages, durations, and historical reckoning
+**Description:** A unit of time measuring one complete annual cycle, used in the NT for ages of persons (Luke 2:42 'when he was twelve years old'), durations of events (Gal 1:18 'after three years'), and historical periods (Heb 3:17 'forty years'). Multilingual evidence is perfectly uniform: eng 'years/year', spa 'anos/ano', hin 'varsh/varshon', arb 'sana/sanawat', kor 'hae/nyeon', swa 'miaka/mwaka'. The three clusters differ only in grammatical number (plural vs. singular) and case (accusative, genitive, dative, nominative), representing no semantic distinction whatsoever.
+**Enriched:** A complete annual cycle used as the primary unit for measuring extended time in the New Testament, whether reckoning a person's age (Luke 2:42 'when he was twelve years old'; Mark 5:42 the girl was twelve years old), the duration of an affliction or event (Mark 5:25 'twelve years'; Gal 1:18 'after three years'), or historical periodization (Acts 7:6 'four hundred years'; Heb 3:17 'forty years'). All 49 occurrences share this single temporal-measurement sense; the multilingual evidence is perfectly uniform across every witness language.
+
+### G3173 / Sense 72030 (49 occ, sense 2 of 6)
+**Label:** greater or greatest (comparative/superlative)
+**Lemma gloss:** Great, large; of physical size, rank, intensity, or degree; comparative 'greater' and superlative 'greatest.'
+**Description:** Comparative and superlative forms indicating a higher or highest degree of greatness, importance, size, or rank.
+**Enriched:** Comparative and superlative forms — 49 occurrences of meizon ('greater') and megistos ('greatest'). Central to Jesus' kingdom-reversal teaching: 'the greatest among you shall be your servant' (Matt 23:11); 'among those born of women none is greater than John' (Matt 11:11). Korean uses 더 큰 (comparative) and 가장 큰 (superlative), while Spanish mayor serves for both. The theological freight of these forms in the Gospels makes them a distinct usage cluster.
+
+### G3367 / Sense 72384 (49 occ, sense 1 of 3)
+**Label:** no one, nobody
+**Lemma gloss:** No one, nobody; nothing, not anything; no, not any (as adjective). Negative pronoun/adjective used in non-indicative contexts.
+**Description:** Substantive use referring to persons: no one, nobody, not anyone — used as a pronoun denying the existence or involvement of any person.
+**Enriched:** Substantive use referring to persons: 'no one, nobody, not anyone' (49 occurrences). This is the most frequent function, appearing in prohibitions ('tell no one,' Matt 8:4; Mark 1:44), warnings ('let no one deceive you,' 2 Thess 2:3), and generalizations ('no one can serve two masters' uses οὐδείς, but the μηδείς parallel appears in conditional and hortatory frames). Spanish nadie, French personne, German niemand, and Arabic لا أحد all deploy dedicated person-negating pronouns, confirming cross-linguistic stability.
+
+### G5185 / Sense 77976 (49 occ, sense 1 of 2)
+**Label:** blind (physical)
+**Lemma gloss:** Blind, sightless; literally of physical inability to see, figuratively of spiritual ignorance or moral imperception.
+**Description:** Describes a person who lacks the physical ability to see, used literally of those afflicted with blindness whom Jesus heals or encounters. All four auto-clustered senses share identical multilingual glosses: Arabic أَعمى (blind), French aveugle, Hebrew עִוֵּר (blind), Hindi अंधा/अन्धा (blind), Korean 눈먼 (eye-closed), Spanish ciego (blind). The split across clusters is purely inflectional (singular vs. plural, nominative vs. accusative vs. dative vs. genitive), not semantic. Covers healing narratives (Matt 9:27-28, 12:22, 20:30; Mark 8:22-23, 10:46-51; Luke 7:21-22, 18:35; John 9:1-13), Jesus' commission to give sight to the blind (Luke 4:18), and the parable of the blind leading the blind (Matt 15:14, Luke 6:39).
+**Enriched:** Physical blindness — the inability to see with the eyes. This is the overwhelmingly dominant sense (49 of 50 occurrences), covering every Gospel healing narrative and Jesus' references to 'blind guides' who are literally sightless. Spanish consistently renders 'ciego,' French 'aveugle,' and German 'blind,' with no variation across these passages (Matt 9:27–28; 11:5; 12:22; John 9:1–41).
+
+### G5532 / Sense 79051 (49 occ, sense 1 of 1)
+**Label:** need, necessity, lack
+**Lemma gloss:** need, necessity, lack — a state of requiring what is absent, or the service/task that must be done
+**Description:** A state of requiring something that is lacking, or the thing that is required; used of spiritual needs (Matt 9:12 'those who are well have no need of a physician'), practical necessities (Acts 2:45, 4:35, 20:34 providing for material needs), the need for teaching (Heb 5:12 'you have need of someone to teach you'), divine self-sufficiency (Acts 17:25 'not as though he needed anything'), and the absence of need in the new creation (Rev 21:23, 22:5 'no need of sun'). Singular and plural forms are purely inflectional. Spanish 'necesidad(es)', Arabic 'حَاجَة/احتِيَاجَات', Korean '필요(들)', Swahili 'haja/mahitaji', Hindi 'आवश्यकता/ज़रूरतें'.
+**Enriched:** A state of requiring something that is lacking, the thing required, or the service to be rendered. Spans Jesus' pronouncement that the healthy need no physician (Matt 9:12), the divine foreknowledge of human needs (Matt 6:8 'your Father knows what you need'), the early community's radical sharing (Acts 2:45 'as any had need'), and Paul's ecclesiology of mutual dependence (1 Cor 12:21). In a few passages the sense tilts toward 'business' or 'errand' (Acts 6:3 'this task'). All 49 occurrences orbit this unified semantic of necessity-and-supply.
+
+### H0113 / Sense 79886 (49 occ, sense 2 of 4)
+**Label:** master, owner of servants
+**Lemma gloss:** Lord, master, sovereign — title of authority for human superiors, property owners, God as supreme ruler, or plural lords
+**Description:** The owner or proprietor who has authority over servants, slaves, or property, emphasizing a relationship of possession and control rather than mere social deference (Arabic sayyiduhu, Korean geu-ui ju-in, Swahili bwana wake/mkubwa, Hindi malik/uska svami).
+**Enriched:** The owner or proprietor who holds authority over servants, slaves, or property, emphasizing possession and control rather than mere social courtesy. Eliezer calls Abraham 'his master' (Gen 24:9-10), and Potiphar is Joseph's 'adon (Gen 39:2-3). Arabic sayyiduhu ('his master') and German sein Herr capture this possessive nuance. The relationship is legally and economically defined, not merely ceremonial.
+
+### H0646 / Sense 83763 (49 occ, sense 1 of 1)
+**Label:** ephod (priestly garment)
+**Lemma gloss:** ephod — a priestly vestment worn over the shoulders, used in worship and oracular inquiry
+**Description:** A distinctive priestly vestment (אֵפוֹד/אֵפֹד) worn over the robe of the high priest, described in detail in Exodus 28-29 and 39. It was made of gold, blue, purple, and scarlet yarn with fine linen, had two shoulder pieces joined together, and bore two onyx stones engraved with the names of the twelve tribes. The breastpiece of judgment was attached to it. The ephod served as the garment to which the Urim and Thummim were attached for divine consultation. All occurrences with the definite article (הָאֵפֹד/הָאֵפוֹד) in the Pentateuch (Exod 25:7; 28:6-31; 29:5; 35:9, 27; 39:2-22; Lev 8:7) refer to this specific high-priestly vestment. The indefinite occurrences in Judges (8:27; 17:5; 18:14) and Samuel (1 Sam 2:18, 28; 14:3; 22:18; 23:6; 2 Sam 6:14; 1 Chr 15:27) include both references to the priestly ephod used in seeking oracles and to the ephod Gideon made. Hosea 3:4 lists the ephod alongside other cultic objects. All four clusters (with/without article, with conjunction, with preposition) represent the same cultic garment, differing only in syntactic context and definiteness.
+**Enriched:** A priestly vestment of varying elaborateness: in its fullest form, the high-priestly shoulder-garment of gold, blue, purple, and scarlet thread with onyx shoulder-stones (Exod 28:6-12; 39:2-7), bearing the breastplate of judgment with the Urim and Thummim; in simpler form, a linen ephod worn by ordinary priests (1 Sam 22:18) and by Samuel and David in worship contexts (1 Sam 2:18; 2 Sam 6:14). The ephod's association with oracular inquiry (1 Sam 23:9; 30:7) and its potential for misuse as an idol (Judg 8:27; 17:5) show its centrality to Israel's cult. All 49 occurrences denote this single garment type across its various manifestations.
+
+### H0953a / Sense 85831 (49 occ, sense 1 of 3)
+**Label:** pit, hole in the ground
+**Lemma gloss:** Pit, cistern, or dungeon; a hewn cavity in the ground used for water storage, trapping, confinement, or as a figure for Sheol.
+**Description:** A pit or hole dug in the ground, including trapping pits and the metaphorical pit of Sheol or death, translated as 'pit' (eng), 'foso/fosa/hoyo' (spa), 'गड्ढा' (hin), 'الجب/الحفرة/الهوة' (arb), '구덩이' (kor), 'shimo' (swa).
+**Enriched:** The primary sense covers a pit or hole in the ground, whether natural or dug deliberately. This includes trapping pits for animals or enemies and, in poetic and prophetic texts, the metaphorical pit of Sheol or the grave — 'those going down to the pit' (Ps 28:1, Isa 14:15). Arabic al-hufra ('the pit') and Spanish foso both reflect the concrete image of a dangerous open cavity. The 49 occurrences span from Joseph's pit (Gen 37:20-29) to eschatological imagery in Ezekiel and Isaiah.
+
+### H1320 / Sense 88509 (49 occ, sense 2 of 3)
+**Label:** flesh, meat (edible substance)
+**Lemma gloss:** Flesh, meat; the physical body, edible animal tissue, or the outer skin; humanity in its frailty before God.
+**Description:** The physical tissue of an animal or human as material substance, especially edible meat, sacrificial flesh-portions, or food; consistently glossed as 고기 (Korean), nyama (Swahili), meat (English), and لَحْم in food/sacrifice contexts (Arabic).
+**Enriched:** Edible flesh or meat — animal tissue as food, sacrificial material, or physical substance, appearing 49 times. The Passover instructions specify eating the basar roasted (Exod 12:8); the Israelites crave basar in the wilderness (Num 11:4-13); the priests consume basar of the peace offering (Exod 29:31-32). Korean 고기 and Swahili nyama consistently select dedicated 'meat/food' vocabulary here, distinguishing this from the body-as-person sense. The cultic and dietary contexts provide the clearest boundary marker.
+
+### H1698 / Sense 91277 (49 occ, sense 1 of 1)
+**Label:** pestilence, plague
+**Lemma gloss:** pestilence, plague — deadly epidemic disease, typically sent or threatened as divine judgment
+**Description:** Deadly epidemic disease, typically sent by God as divine judgment or threatened as covenant punishment; uniformly rendered across all six witness languages (eng pestilence/plague, spa peste/pestilencia, hin महामारी, arb وَبَاء, kor 역병/전염병, swa tauni) with no cross-linguistic evidence of semantic differentiation — all 13 clusters differ only by prefixed prepositions (bet, lamed, min), conjunction (waw), article, or pronominal suffix, not by meaning.
+**Enriched:** Deadly epidemic disease understood as a divine instrument of judgment or covenantal punishment, frequently paired with sword (cherev) and famine (ra'av) in the prophetic formula of triple catastrophe (Jer 14:12; 21:7; Ezek 5:12). First threatened against Egypt (Exod 5:3; 9:3, 15), it recurs in wilderness warnings (Num 14:12), Deuteronomic curses (Deut 28:21), David's census judgment (2 Sam 24:13-15), Solomon's temple prayer (1 Kgs 8:37), and the personified plague marching before God in Habakkuk's theophany (Hab 3:5). Hosea 13:14 turns it into a rhetorical challenge: 'Where, O Death, are your plagues?' All 49 occurrences share this single pestilential sense.
+
+### H3220 / Sense 102374 (49 occ, sense 3 of 3)
+**Label:** Sea of (geographic name)
+**Lemma gloss:** Sea or large body of water; the direction 'west' (from Israel's Mediterranean orientation); or the first element of geographic sea-names.
+**Description:** The noun in construct state forming part of a geographic proper name (Sea of Chinnereth, Sea of the Arabah, Sea of Reeds, etc.), functioning as the nomen regens before a place designation.
+**Enriched:** The noun yam in construct state forming the first element of a geographic proper name: yam-suf (Sea of Reeds, Exod 13:18), yam kinneret (Sea of Chinnereth, Num 34:11), yam ha-aravah (Sea of the Arabah, Deut 3:17). Multilingual glosses like 'Sea-of,' 'mar-de,' 'Mer-de,' and 'Meer-von' consistently mark this as a name-forming pattern. Distinguished from sense 1 by the tight construct bond with the following place name.
+
+### H3885a / Sense 108594 (49 occ, sense 1 of 3)
+**Label:** lodge overnight
+**Lemma gloss:** To lodge or spend the night; of things, to remain overnight; figuratively, to dwell or abide in a place.
+**Description:** To spend the night, pass the night at a place as a temporary sojourner or traveler (Qal and Hitpael of persons lodging somewhere).
+**Enriched:** To spend the night at a location as a traveler or temporary guest, the core hospitality meaning. This is the most frequent sense, appearing in narrative contexts of journeying and receiving lodging. Spanish 'pernoctar/pasar la noche,' French 'passer la nuit,' and German 'übernachten' all center on the overnight stay. Key passages include Lot's invitation to the angels (Gen 19:2) and Jacob's night at Bethel (Gen 28:11).
+
+### H4390 / Sense 111547 (49 occ, sense 2 of 11)
+**Label:** be full (stative)
+**Lemma gloss:** be full, fill; fulfill, complete; satisfy; follow fully; set/inlay
+**Description:** Qal stative: to be full, to be filled with something, describing a state of fullness (Arabic: امتلأ/مَلِيء, Korean: 가득하다/차다, Swahili: -jaa).
+**Enriched:** The Qal stative describes being in a state of fullness—filled with something. With 49 occurrences, this corresponds to Arabic امتلأ/مَلِيء, Korean 가득하다/차다, Swahili -jaa. The earth is 'full of violence' in Noah's day (Gen 6:13), the temple becomes 'full of the glory of the LORD' (2 Chr 5:13), the house is 'full of people' (Judg 16:27). Unlike the causative sense which requires an agent filling something, this stative simply describes the resulting state of fullness.
+
+### H4427a / Sense 112027 (49 occ, sense 2 of 3)
+**Label:** make king, cause to reign (Hifil)
+**Lemma gloss:** To reign, be or become king; in the Hifil, to make someone king or cause to reign over a people or territory.
+**Description:** The causative Hifil sense of מלך: to make someone king, to install as ruler, to cause to reign. Arabic uses the Form II intensive/causative مَلَّكَ (mallaka) with shadda on the lam, clearly distinct from Form I مَلَكَ — this morphological contrast (Form I vs Form II) is the strongest Semitic evidence for a genuine sense boundary. Korean switches to a completely different verbal construction: 왕으로 세우다 (wang-euro seuda, 'to establish as king') or 왕으로 삼다 (wang-euro samda, 'to appoint as king'), using causative/appointment verbs rather than the intransitive 'rule' verbs of the Qal. Swahili shifts from simple -tawala to the periphrastic causative kumfanya mfalme ('to make [someone] a chief/king') or the rare -tawaza ('to enthrone'), both morphologically marked causatives. This covers all Hifil forms: perfect (מִלַּכְתִּי ,הִמְלִיךְ), imperfect (נַמְלִיךְ), consecutive imperfect (וַיַּמְלִיכוּ), infinitive (לְהַמְלִיךְ), and participle (הַמַּמְלִיךְ).
+**Enriched:** The causative Hifil sense (49x): to install someone as king, to cause to reign. Structurally distinct from Sense 1 — the subject is the kingmaker, not the king. Key passages include Judges 9:6 where the citizens of Shechem 'made Abimelech king,' and 1 Samuel 8:22 where YHWH tells Samuel to 'make them a king.' Arabic mallaka (Form II, with doubled middle radical) parallels this causative pattern precisely. Spanish hacer rey and French faire roi capture the two-participant structure.
+
+### H4948 / Sense 115207 (49 occ, sense 1 of 1)
+**Label:** weight, heaviness
+**Lemma gloss:** weight — the measurable heaviness of an object, often specified in gold, silver, or bronze
+**Description:** The measurable heaviness of an object, often specified by material (gold, silver, bronze) and used in inventories and descriptions of temple furnishings, offerings, and other items.
+**Enriched:** The measurable heaviness of a physical object, typically expressed in shekels or talents of gold, silver, or bronze. Used in inventories of personal ornaments (Gen 24:22), war spoils (Judg 8:26), military armor (1 Sam 17:5; 2 Sam 21:16), temple furnishings (1 Kgs 7:47), and tabernacle offerings (Num 7:13-85, eleven occurrences). Also carries ethical force in laws demanding honesty in weighing (Lev 19:35; Ezek 4:16) and poetic force in God's assigning weight to the wind (Job 28:25). All 49 occurrences share this unified sense of quantified heaviness.
+

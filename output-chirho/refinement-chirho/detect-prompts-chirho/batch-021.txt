@@ -1,0 +1,291 @@
+# Sense Refinement Detection — Batch 021
+
+You are a biblical lexicographer reviewing sense entries for a Hebrew/Aramaic/Greek lexicon.
+Each entry below is a single "sense" that was produced by clustering translation signatures 
+and then merging with an LLM. Some senses may have been OVER-LUMPED — they contain genuinely 
+distinct meanings that should be separate senses.
+
+## Your Task
+
+For each sense, determine if it should be SPLIT into multiple senses. Look for:
+- Literal vs. figurative/metaphorical uses lumped together
+- Concrete vs. abstract meanings combined
+- Multiple distinct referents (e.g., "father" = biological parent + patron/advisor + originator)
+- Physical vs. spiritual/theological uses merged
+- Different syntactic frames producing different meanings
+
+## Output Format
+
+Return a JSON array. For senses that need NO splitting, omit them entirely.
+For senses that SHOULD be split, include an entry like:
+
+```json
+[
+  {
+    "senseIdChirho": 79287,
+    "lemmaIdChirho": "H0001",
+    "currentLabelChirho": "father, immediate male parent",
+    "splitProposalChirho": [
+      {
+        "newLabelChirho": "biological/legal father",
+        "criteriaChirho": "Direct parent-child relationship, possessive constructions with specific person"
+      },
+      {
+        "newLabelChirho": "metaphorical father (patron, advisor, protector)",
+        "criteriaChirho": "Title of respect for prophets, advisors, or authority figures; 'father to Pharaoh' type usage"
+      }
+    ],
+    "confidenceChirho": "high",
+    "reasoningChirho": "Description explicitly mentions 'title of respect or metaphorical originator' alongside biological father"
+  }
+]
+```
+
+Only propose splits where you have MEDIUM or HIGH confidence. Do NOT split function words (articles, 
+prepositions, particles, conjunctions) unless there is a genuinely distinct semantic sense (not just 
+syntactic variation). Proper nouns generally should NOT be split.
+
+If NO senses in this batch need splitting, return an empty array: []
+
+## Senses to Review
+
+### G2068 / Sense 68217 (64 occ, sense 1 of 2)
+**Label:** eat food
+**Lemma gloss:** To eat food; by extension, to consume or devour in a destructive or figurative sense.
+**Description:** To eat or partake of food in the literal, ordinary sense, including all grammatical inflections (indicative, participle, subjunctive, infinitive, imperative).
+**Enriched:** To eat or partake of food in the ordinary, literal sense. This overwhelmingly dominant sense covers every grammatical form -- indicative, participle, subjunctive, infinitive, imperative -- across 64 occurrences. Spanish come/comen, French manger, German essen/isst all converge on basic physical eating. The word appears in pivotal scenes: the feeding of the five thousand (Matt 14:20-21), the Last Supper (Matt 26:26), controversies over eating with unwashed hands (Matt 15:2), and the early church's disputes over dietary law (1 Cor 10:25-28).
+
+### G2212 / Sense 68791 (64 occ, sense 1 of 3)
+**Label:** seek, search for, look for
+**Lemma gloss:** To seek, search for, desire to obtain; in passive, to be required or demanded
+**Description:** To physically search for or look for a person, place, or thing, attempting to find or locate what is sought.
+**Enriched:** Physical, concrete seeking: to search for, look for, or attempt to locate a person, place, or thing. The unclean spirit 'seeks' rest (Matt 12:43), Herod's men 'seek' the child's life (Matt 2:20), and Jesus' family 'seeks' him in the crowd (Matt 12:46-47). This is the most tangible sense, involving actual effort to find something currently unknown or lost. Spanish buscaban and French chercher both capture this active searching movement.
+
+### G2414 / Sense 69428 (64 occ, sense 1 of 1)
+**Label:** (none)
+**Lemma gloss:** Hierosolyma -- Jerusalem; the holy city, capital of Judea, in its Hellenized Greek form
+**Description:** (none)
+**Enriched:** The Hellenized Greek name for Jerusalem, capital of Judea and epicenter of Israel's worship, used in the Gospels and Acts for the earthly city where Jesus taught, suffered, died, and rose (Matt 2:1; 3:5; 20:17-18). The form Hierosolyma (neuter plural, declinable) is favored by the Evangelists and contrasts with the indeclinable Ierousalem preferred by Paul and Revelation. In Galatians 4:25-26, Hebrews 12:22, and Revelation 3:12; 21:2, the name extends to the heavenly and eschatological city. Spanish, French, and German all render it uniformly as Jerusalem across 64 occurrences.
+
+### G3735 / Sense 73369 (64 occ, sense 1 of 1)
+**Label:** (none)
+**Lemma gloss:** oros -- a mountain or hill; used of physical elevations and as a setting for divine revelation
+**Description:** (none)
+**Enriched:** A mountain or hill, denoting a physical elevation that frequently serves as a setting for divine revelation and pivotal events. Jesus is tempted on a high mountain (Matt 4:8), teaches from a mountainside (Matt 5:1), is transfigured on one (Matt 17:1), and delivers his eschatological discourse on the Mount of Olives (Matt 24:3). Paul's allegory of Sinai versus the Jerusalem above (Gal 4:24-25) extends the term into theological symbolism. Spanish monte, French montagne, and German Berg uniformly render this single concrete-yet-symbolically-rich concept across 64 New Testament occurrences.
+
+### H2472 / Sense 97154 (64 occ, sense 1 of 1)
+**Label:** dream, nocturnal vision
+**Lemma gloss:** chalom -- a dream; a nocturnal vision, often bearing prophetic or revelatory significance
+**Description:** A dream experienced during sleep, often carrying prophetic or revelatory significance in biblical narrative; all 20 clusters represent the same noun meaning with purely grammatical variation (singular/plural, article, prepositions, possessive suffixes).
+**Enriched:** A dream experienced during sleep, encompassing both ordinary nocturnal visions and divinely sent revelatory dreams. The prophetic dream is a major narrative engine in Genesis, driving the Joseph cycle (Gen 37:5-20; 40:5-41:32) and the Abimelech and Laban episodes (Gen 20:3; 31:24). Spanish sueno, French songe, and German Traum all render it uniformly. The 64 occurrences across multiple grammatical forms (absolute, construct, suffixed) show no semantic differentiation -- the word is monosemous, with prophetic versus ordinary use determined by context rather than lexical distinction.
+
+### H2896a / Sense 100016 (64 occ, sense 2 of 5)
+**Label:** better (comparative degree)
+**Lemma gloss:** Good, pleasant, agreeable; of moral quality, practical suitability, beauty, or emotional gladness; also substantivized as 'goodness' or 'welfare.'
+**Description:** Comparative or superlative sense — 'better than', 'best of' — marked by Arabic خَيْرٌ/أَفْضَلُ, Swahili bora, Spanish mejor, and Korean 낫다.
+**Enriched:** The comparative and superlative degree: 'better than,' 'best of.' With 64 occurrences, this is a robust sub-sense marked formally by min-comparisons and contextually by evaluative judgment. Arabic khayrun (comparative) and Spanish mejor both deploy dedicated comparative morphology rather than the base adjective, confirming this is a lexicalized usage rather than a contextual inference. Especially prominent in Ecclesiastes (e.g., Eccl 4:3, 6, 9, 13) and Proverbs (e.g., Prov 15:16-17; 16:16, 19), where 'better-than' sayings form a distinct literary genre. Korean 낫다 and Swahili bora similarly select specialized comparative vocabulary.
+
+### H3878 / Sense 108551 (64 occ, sense 1 of 1)
+**Label:** Levi (patriarch and tribe)
+**Lemma gloss:** Levi -- third son of Jacob and Leah; the priestly tribe descended from him
+**Description:** The proper noun לֵוִי (Levi), referring to the third son of Jacob and Leah, and by extension the tribe descended from him. All four clusters represent the same personal/tribal name with variation only in conjunctions (and-Levi), prepositions (to/for Levi), and the article (the Levite, referring to the tribe). Arabic consistently uses لَاوِي (Lāwī), Korean uses 레위 (Rewi, 'Levi'), Hindi uses लेवी (Levī), Swahili uses Lawi, and Spanish uses Leví/Levi. The gentilicn 'the Levite' (S108555) is still the same proper name used attributively rather than a distinct sense, as the multilingual evidence shows identical roots across all translations.
+**Enriched:** The proper name of Jacob's third son by Leah (Gen 29:34) and the tribe descended from him, set apart for cultic service. The etymology in Genesis connects the name to the root lwh ('to join'), expressing Leah's hope that her husband would finally attach himself to her. Numbers 18:2-4 makes a priestly wordplay on this same root. Spanish Levi, French Levi, and German Levi all preserve the name identically, confirming a single proper-noun sense across all 64 occurrences with no polysemy.
+
+### H5608a / Sense 121188 (64 occ, sense 1 of 5)
+**Label:** Piel: to recount, tell, narrate
+**Lemma gloss:** To count, number (Qal); to recount, narrate, declare (Piel); to be counted (Nifal); to be told (Pual) — linking enumeration with storytelling.
+**Description:** The core Piel (intensive) stem meaning of saphar: to recount, tell, narrate, relate, or declare events, deeds, or information to others, covering all Piel inflections (perfect, imperfect, imperative, infinitive, cohortative, consecutive, participle, jussive) used for verbal communication and storytelling.
+**Enriched:** Piel: to recount, tell, narrate, declare — the largest sense at 64 occurrences, covering the intensive stem's core meaning of verbal narration and declaration. This is the saphar of storytelling: Abraham's servant 'told' everything that had happened (Gen 24:66), Joseph's brothers 'recounted' their dreams (Gen 37:9-10), and the Psalmist pledges to 'declare' God's works (Ps 9:1; 73:28; 78:4). The Piel intensification suggests not casual mention but deliberate, thorough recounting. Spanish contar and declarar, French raconter, and Korean 선포하다/이야기하다 all select narrative-declaration vocabulary. The imperative forms — 'tell me!' (Gen 37:16; Judg 7:13) — underscore the conversational urgency of this sense.
+
+### H7093 / Sense 132591 (64 occ, sense 1 of 2)
+**Label:** end, termination of time
+**Lemma gloss:** End or limit of a period of time; by extension, the farthest spatial extremity or boundary.
+**Description:** The temporal conclusion or appointed limit of a period, event, or existence, including prepositional and suffixed forms (at the end of, my/our/your/his end, to the end).
+**Enriched:** The conclusion or appointed limit of a period of time. Found overwhelmingly in temporal phrases like miqqets ('at the end of'), this sense covers both definite durations (Gen 8:6, 'at the end of forty days'; Gen 41:1, 'at the end of two years') and indefinite spans (Gen 4:3, 'in the course of time'). Prophetic usage extends to the terminal end of a nation or life (Amos 8:2; Ezek 7:2; Dan 9:26). Spanish al-fin-de, French de-fin-de, and German Ende all converge on simple temporal finality.
+
+### H7611 / Sense 137582 (64 occ, sense 1 of 2)
+**Label:** remnant of a people
+**Lemma gloss:** Remnant, remainder; the surviving portion of a people after judgment, or what is left over of things.
+**Description:** The surviving portion of a nation, community, or people group, often used in prophetic contexts for those who remain after judgment or exile (e.g., 'the remnant of Israel,' 'the remnant of Judah').
+**Enriched:** The surviving portion of a people or nation after calamity. This theologically loaded sense accounts for nearly all occurrences, appearing across the prophets as a motif of both judgment and hope. Translations uniformly employ 'remnant' language -- Spanish remanente-de, French reste, German Rest -- signaling a recognized technical term. Joseph tells his brothers that God sent him ahead to preserve a she'erith on earth (Gen 45:7). Isaiah and Jeremiah use it for the survivors of exile (2 Kgs 19:31; Jer 40:11), while Amos and Zephaniah warn that judgment may leave no remnant at all.
+
+### H???? / Sense 145982 (64 occ, sense 13 of 94)
+**Label:** (none)
+**Lemma gloss:** (none)
+**Description:** (none)
+**Enriched:** (none)
+
+### G1122 / Sense 64835 (63 occ, sense 1 of 2)
+**Label:** scribe / expert in the Law
+**Lemma gloss:** Scribe, an expert in the Mosaic Law and Jewish tradition; also a civic secretary or town clerk.
+**Description:** A Jewish scribe, an expert and teacher of the Mosaic Law and traditions, frequently appearing alongside Pharisees and chief priests as religious authorities who interact with or oppose Jesus. The singular and plural forms represent the same role. Spanish uses 'escribas/escriba'; Hindi uses 'शास्त्री/शास्त्रियों' (shastri, law expert); Arabic uses 'كتبة/كاتب' (kataba/katib, scribes/scribe); Korean uses '서기관들/서기관' (seogigwan, scribes); Swahili uses 'waandishi/mwandishi' (writers/writer). This is the dominant NT usage referring to Jewish religious scholars.
+**Enriched:** A Jewish scribe, an expert and teacher of the Mosaic Law. Appearing 63 times, this sense dominates the New Testament usage. Translations consistently employ specialized religious vocabulary -- Spanish escribas, French scribe, German Schriftgelehrter ('Scripture-learned one') -- rather than generic 'secretary,' confirming the technical religious meaning. Jesus declares that the scribes' righteousness is insufficient (Matt 5:20), debates them on the greatest commandment (Mark 12:28-34), and warns against their hypocrisy (Matt 23:2-7, 13-29).
+
+### G1565 / Sense 66672 (63 occ, sense 2 of 3)
+**Label:** that one, he/she (substantive pronoun)
+**Lemma gloss:** That, that one; a distal demonstrative pronoun pointing to a previously mentioned person or thing, often with emphatic force.
+**Description:** Used substantively as an independent pronoun referring to a specific person already identified in context, often with emphatic or contrastive force, functioning as a third-person pronoun ('that one', 'he', 'she').
+**Enriched:** Substantive pronoun referring to a specific individual: 'that one,' 'he,' 'she' — 63 occurrences, especially concentrated in John's Gospel. When John the Baptist says 'I am not the Christ' and then points to Jesus as 'that one who comes after me' (John 1:15, 27, 30), ekeinos carries emphatic, almost reverential force. In John 14-16 the Spirit is repeatedly called ekeinos ('that one will teach you'), creating a pattern of dignified reference. Korean geu-bun ('that honored person') and Swahili yule ('that one, distant') both capture the referential weight.
+
+### G1699 / Sense 67052 (63 occ, sense 1 of 2)
+**Label:** my (attributive possessive)
+**Lemma gloss:** My, mine — first-person possessive pronoun, used attributively ('my Father') or substantively ('what is mine').
+**Description:** First-person possessive pronoun used attributively to modify a noun, meaning 'my' or 'of me'.
+**Enriched:** Attributive possessive 'my,' modifying a noun to express first-person ownership or relationship. Spanish mi, French mon, and German mein all render it straightforwardly. Jesus uses it repeatedly in John's Gospel to claim a unique personal bond: 'my commandments' (John 14:15), 'my joy' (John 15:11), 'my Father' (Matt 20:23).
+
+### G2307 / Sense 69056 (63 occ, sense 1 of 1)
+**Label:** will, desire, purpose
+**Lemma gloss:** thelema -- will, desire, purpose; what someone wishes, intends, or determines should happen
+**Description:** The will, desire, or purpose of a person or of God; what one wishes or intends to happen. The dominant cluster (61x singular) and the minor cluster (2x plural 'wills/wishes') both express the same semantic concept of volition and intention. The plural simply denotes multiple desires or acts of will rather than a categorically different meaning. Multilingual evidence confirms a single sense: spa 'voluntad / voluntades', hin 'iccha / icchaen', arb 'mashi'a / mashi'at', kor 'tteut / tteut-deul-eul', swa 'mapenzi' (identical form for both). Predominantly used of God's will in the NT (e.g., Matt 6:10 'thy will be done'), also of human desires (Eph 2:3 'desires of the flesh').
+**Enriched:** The will, desire, or settled purpose of a person or of God, denoting what one wishes or intends to bring about. Theologically dominant in the Lord's Prayer ('your will be done,' Matt 6:10), in Jesus' criterion for discipleship ('whoever does the will of my Father,' Matt 7:21; 12:50), and in Paul's doctrine of divine purpose (Eph 1:5, 9, 11). The two-occurrence plural cluster ('wills/desires,' as in Eph 2:3) expresses the same semantic core applied to human cravings. Spanish voluntad, French volonte, and German Wille render it uniformly across all 63 occurrences.
+
+### G2362 / Sense 69294 (63 occ, sense 1 of 1)
+**Label:** throne, seat of authority
+**Lemma gloss:** thronos -- throne, seat of royal or divine authority; both the physical seat and the sovereignty it represents
+**Description:** A throne or seat of royal/divine authority, denoting both the physical seat and the power or sovereignty it represents. Overwhelmingly used in the NT for God's throne or Christ's throne (especially in Revelation), also of the thrones of earthly rulers and of the twenty-four elders. The two clusters differ only in number: singular 'throne' (55x) vs plural 'thrones' (8x). Multilingual evidence is uniform: spa 'trono / tronos', hin 'singhasan / singhasanon', arb 'al-arsh / urush', kor 'bwajwa / bwajwa-deul', swa 'kiti cha enzi / viti vya enzi'. The plural denotes multiple thrones (e.g., Col 1:16 cosmic thrones, Rev 20:4 judgment thrones) but the core sense of a seat of ruling authority is identical.
+**Enriched:** A throne or seat of royal and divine authority, designating both the physical object and the sovereignty it symbolizes. Jesus invokes God's throne as the ultimate seat of judgment ('heaven is God's throne,' Matt 5:34), promises thrones to the Twelve (Matt 19:28), and receives David's throne as messianic fulfillment (Luke 1:32). The word reaches its greatest density in Revelation's throne-room visions (Rev 4-5; 20:11). Spanish trono, French trone, and German Thron render it without variation across all 63 occurrences, confirming a single sense encompassing literal and metonymic uses.
+
+### G3140 / Sense 71938 (63 occ, sense 1 of 2)
+**Label:** testify, bear witness
+**Lemma gloss:** To testify, bear witness; in passive, to be attested or well-spoken-of — the act and reception of testimony.
+**Description:** To give testimony or bear witness to something, actively declaring what one has seen, heard, or knows to be true.
+**Enriched:** To actively testify, bear witness, or declare what one has seen, known, or believed to be true. Spanish testifica, French témoigner, and German bezeugen all preserve the courtroom-to-proclamation range. John the Baptist is the paradigm: he came 'to bear witness about the light' (John 1:7-8), and the verb appears repeatedly as Jesus, the Spirit, and Scripture all testify (John 5:39; 15:26).
+
+### G5463 / Sense 78862 (63 occ, sense 1 of 2)
+**Label:** rejoice, be glad
+**Lemma gloss:** To rejoice, be glad, or experience joy; also a conventional greeting meaning 'hail' or 'greetings.'
+**Description:** To experience or express joy, gladness, or delight, used across a wide range of contexts from personal happiness to eschatological exhortation.
+**Enriched:** To experience or express joy, gladness, and delight — the emotional core of the word across 63 occurrences. Translations emphasize rejoicing: Spanish 'regocijaos/alegraos/gozaos,' German 'sich freuen,' French 'se réjouir.' The Magi rejoiced with exceeding great joy (Matt 2:10), Jesus told the persecuted to 'rejoice and be glad' (Matt 5:12), and the shepherd rejoices over the found sheep more than the ninety-nine (Matt 18:13). Paul's letters elevate this to a programmatic command: 'Rejoice in the Lord always' (Phil 4:4).
+
+### H0074 / Sense 79805 (63 occ, sense 1 of 1)
+**Label:** Abner (personal name)
+**Lemma gloss:** Abner -- 'my father is Ner (a lamp)'; Saul's cousin and commander of his army
+**Description:** Proper masculine name meaning 'my father is Ner' (or 'my father is a lamp'). Refers to the son of Ner, Saul's cousin and commander of his army (1 Sam 14:50; 17:55; 26:14). After Saul's death, Abner installed Ish-bosheth as king over Israel (2 Sam 2:8) but later defected to David (2 Sam 3:6-21) and was killed by Joab (2 Sam 3:27). Also appears in genealogical lists (1 Chr 26:28; 27:21). Multilingual glosses consistently render as Abner/Avner/Aviner (arb: أَبْنِير, kor: 아브넬, hin: अबनेर). All five auto-clusters are simply different syntactic contexts (with prepositions, conjunctions) of the same personal name.
+**Enriched:** The proper name of Saul's cousin and army commander, son of Ner (1 Sam 14:50-51). Abner is a key figure in the contested succession after Saul's death: he champions Ish-bosheth's claim (2 Sam 2:8), later negotiates defection to David (2 Sam 3:12), and is killed by Joab in blood revenge (2 Sam 3:27). The name appears in both shorter (Abner) and longer (Abiner) spellings without semantic difference. Spanish Abner, French Abner, and German Abner all preserve it identically, confirming a single proper-noun sense across 63 occurrences.
+
+### H0622 / Sense 83419 (63 occ, sense 2 of 8)
+**Label:** assemble, gather together (Nifal)
+**Lemma gloss:** To gather, collect, assemble; by extension to remove, take away; euphemism for dying ('gathered to one's people')
+**Description:** To gather oneself or assemble as a group in reflexive/middle voice, confirmed by Arabic ijtamaʿa (Form VIII reflexive) and Swahili kukusanyika (reflexive -ika form).
+**Enriched:** Nifal reflexive/middle voice: people gather themselves or are assembled as a group. Arabic ijtamaʿa (Form VIII reflexive) and Swahili kukusanyika (reflexive -ika suffix) precisely mirror this middle-voice nuance. See Gen 29:3 where shepherds gather at the well, or Exod 32:26 at the golden calf crisis.
+
+### H1980 / Sense 92960 (63 occ, sense 3 of 6)
+**Label:** to walk about, traverse (Hitpael)
+**Lemma gloss:** To go, walk, travel; metaphorically to conduct oneself; in Hitpael to walk about; in Piel to walk habitually
+**Description:** Reflexive and iterative walking in the Hitpael stem, denoting walking about, going to and fro, wandering, strolling, or walking in intimate companionship (as Enoch walked with God), across all Hitpael inflections.
+**Enriched:** Hitpael stem expressing reflexive or iterative walking: walking about, going to and fro, or walking in intimate companionship. Enoch 'walked with God' (Gen 5:22, 24), Noah likewise (Gen 6:9), and God himself walks in the garden (Gen 3:8). Arabic تمشّى (tamashsha, 'stroll about') and Korean 거닐다 reflect this intensified movement.
+
+### H3212 / Sense 102203 (63 occ, sense 3 of 5)
+**Label:** come, come now
+**Lemma gloss:** To go, walk, travel, depart; figuratively to walk in a way of life; idiomatically 'come!' as an invitation; in Hifil, to lead or drive.
+**Description:** Idiomatic invitation or summons meaning 'come!' or 'come now!'; rendered in Arabic as تَعَالَ (ta'ala) or هَلُمَّ (halumma), Korean 오라 (ora), and Swahili njoo/njooni.
+**Enriched:** Imperative as invitation: 'come!, come now!' — 63 occurrences where the imperative lekh/lekhu functions pragmatically not as 'go away!' but as 'come!' or 'come, let us...' inviting joint action. 'Come, let us sell him' (Gen 37:27); 'Come, let us make our father drink wine' (Gen 19:32); 'Go, I am sending you' (Gen 37:13, where 'go' is a commissioning rather than dismissal). Arabic ta'ala and halumma ('come!') and Korean 오라 (ora, 'come!') all use dedicated invitation vocabulary, confirming that this imperative has undergone pragmatic bleaching from directional 'go' to hortatory 'come.' Spanish Venid/ven makes the shift explicit.
+
+### H4294 / Sense 111057 (63 occ, sense 2 of 4)
+**Label:** staff, rod, scepter
+**Lemma gloss:** Staff, rod, or branch; by metonymy, a tribe of Israel descended from a patriarch, the dominant biblical usage.
+**Description:** A wooden stick used as a walking aid, weapon, instrument of authority (scepter), or implement for striking, including Moses' staff and Aaron's rod (Arabic عَصَا, Korean 지팡이, Swahili fimbo).
+**Enriched:** A physical wooden staff, rod, or scepter (63x) — the concrete object from which the tribal metaphor derives. Moses' staff at the burning bush (Exod 4:2), Aaron's rod that budded (Num 17:8), and Pharaoh's magicians' rods (Exod 7:12) all use this sense. Spanish vara, French bâton, and German Stab consistently render it as a handheld stick, while Arabic عَصَا ('staff') matches precisely. Can denote authority when functioning as a scepter (Isa 10:24).
+
+### H4422 / Sense 111956 (63 occ, sense 1 of 5)
+**Label:** Nifal: escape, flee
+**Lemma gloss:** Slip away, escape; in Piel, deliver or rescue; in rare usage, bring forth or lay eggs.
+**Description:** Nifal stem intransitive sense: to escape, slip away, flee from danger or pursuit (Arabic najaa/haraba, Korean 피했다/도망쳤다, Swahili -toroka/-okoka).
+**Enriched:** Nifal: to escape, slip away, flee from danger or pursuit. The most frequent sense, covering self-extrication from mortal peril. Lot flees the destruction of Sodom (Gen 19:17, 20, 22); Ehud escapes to Seirah (Judg 3:26); the psalmist's soul escapes like a bird from a snare (Ps 124:7). Arabic مَلَصَ 'slip from the hand' illuminates the core image. Korean 도망치다/피하다 and Swahili -toroka capture the urgency of self-preserving flight.
+
+### H5061 / Sense 116162 (63 occ, sense 1 of 4)
+**Label:** skin disease or affliction
+**Lemma gloss:** Stroke, plague, skin affliction; a blow or mark ranging from a physical wound to a divine plague to the Levitical 'plague-spot' on skin, fabric, or walls.
+**Description:** A diseased spot or skin affliction examined by the priest, the technical Levitical term for leprous or eruptive conditions on skin, garments, or houses.
+**Enriched:** The technical Levitical term for a diseased spot or eruptive skin condition submitted to priestly examination. Spanish 'plaga' and German 'Elend' both render this clinical sense. Leviticus 13–14 uses nega' dozens of times for marks on skin, garments, and house walls — a diagnostic vocabulary without true parallel in surrounding cultures. The priest does not heal; he classifies and isolates.
+
+### H5650 / Sense 121740 (63 occ, sense 2 of 3)
+**Label:** Slave, bondservant
+**Lemma gloss:** Servant, attendant, subject; slave or bondservant; honorific title 'servant of God' for patriarchs, prophets, and kings.
+**Description:** A person held as property or in involuntary servitude; used in legal contexts for chattel slaves, persons sold into bondage, and the institution of slavery itself.
+**Enriched:** A slave or bondservant — a person held as property, bought with money, born in the house, or subjected to involuntary servitude under biblical law. With 63 occurrences, this sense surfaces in legal codes (Exod 21:2-6, the Hebrew slave law; Lev 25:39-46, regulations on Israelite versus foreign slaves) and economic inventories listing slaves alongside livestock and possessions (Gen 12:16; 24:35). Spanish shifts to esclavo, French to esclave, and German to Sklave in these contexts, while Arabic retains عبد but the legal framing makes the chattel sense unmistakable. The curse of Canaan — 'a servant of servants shall he be' (Gen 9:25) — uses the superlative construction eved avadim to express the lowest social station.
+
+### H6485a / Sense 128177 (63 occ, sense 2 of 15)
+**Label:** Qal: punish, bring judgment
+**Lemma gloss:** to attend to, visit; to count, muster, number; to appoint, set in charge; to punish; to miss, be missing; to deposit
+**Description:** To visit with punishment, to bring judgment upon (negative divine visitation); Arabic عاقب, Korean 벌하다, Hindi दण्ड देना/दंड देना, Swahili adhibu.
+**Enriched:** To visit with punishment or bring judgment (63x) describes negative divine visitation. 'I the LORD visit the iniquity of the fathers on the children' (Exod 20:5, 34:7, Deut 5:9), 'I will punish Amalek' (1 Sam 15:2). Arabic shifts to عاقب (ʿāqaba, 'punish'—a completely different root ʿ-q-b), Korean 벌하다 (punish), Hindi दण्ड देना (give punishment), Swahili adhibu (punish). The attending is hostile inspection bringing consequences.
+
+### H6667 / Sense 129626 (63 occ, sense 1 of 1)
+**Label:** Zedekiah
+**Lemma gloss:** Tsidqiyyahu -- Zedekiah, 'Yahweh is my righteousness'; name of several persons, chiefly Judah's last king
+**Description:** Proper noun meaning 'Yahweh is my righteousness'; refers to several persons: (1) the last king of Judah, originally Mattaniah; (2) a false prophet under Ahab; (3) a false prophet in Jeremiah's time; (4) a prince in Jeremiah's time; (5) a priest in Nehemiah's time; (6) possibly a son of Jehoiachin. All are the same name with variant spellings -yahu/-yah.
+**Enriched:** A theophoric name meaning 'Yahweh is my righteousness,' referring primarily to Judah's last king (originally Mattaniah, renamed by Nebuchadnezzar, 2 Kgs 24:17), whose reign ended in the catastrophic fall of Jerusalem (586 BC). The name also designates a false prophet who struck Micaiah (1 Kgs 22:24) and one condemned by Jeremiah (Jer 29:21-22). Spanish Sedecias, French Sedecias, and German Zedekia reflect variant transliteration traditions, but all point to the same proper-noun identity across 63 occurrences with no semantic polysemy.
+
+### H7323 / Sense 135282 (63 occ, sense 1 of 6)
+**Label:** Qal: run, move swiftly
+**Lemma gloss:** To run, move swiftly; as participle: runner, royal guard (bodyguard corps); causative: to chase, rush someone
+**Description:** Physical running or swift movement on foot in all Qal finite forms, infinitives, imperatives, and cohortatives; Arabic rakada (رَكَضَ), Korean dallida (달리다), Swahili -kimbia.
+**Enriched:** The core Qal sense of physical running or swift movement on foot — appearing in all finite forms, infinitives, and imperatives across 63 occurrences. Arabic rakada, Korean dallida, and Swahili -kimbia all map uniformly to this sense. Abraham's double running in Genesis 18 (to the visitors, then to the herd) epitomizes the hospitality urgency this verb often carries.
+
+### H7971 / Sense 140853 (63 occ, sense 2 of 7)
+**Label:** to send, dispatch (Piel)
+**Lemma gloss:** send, dispatch; stretch out (hand); send away, dismiss, release; be sent; set fire to; expel, drive out
+**Description:** The Piel intensive of שָׁלַח with the core meaning 'send/dispatch' — sending messages, messengers, or delegations with purposeful intent; Arabic أَرْسَلَ (arsala), Korean 보내다, Swahili kutuma, Hindi भेजा — all Piel inflections where the meaning is active dispatching rather than releasing or dismissing.
+**Enriched:** The Piel intensive 'send, dispatch' (63x) — purposeful commissioning of messengers, delegations, or communications with deliberate intent. Arabic أَرْسَلَ and Korean 보내다 maintain the same lexical field as sense 1. The Piel intensification often implies formal or repeated sending, as at Genesis 26:27 (Philistines sending Isaac away) and Exodus 8:32 (Pharaoh's repeated dispatching of messengers).
+
+### H7999a / Sense 141270 (63 occ, sense 1 of 7)
+**Label:** pay, repay, recompense
+**Lemma gloss:** Be complete, be at peace; repay, recompense; fulfill vows; make restitution; bring to completion
+**Description:** Piel: to pay back, requite, or recompense someone for what they have done, whether for good (reward) or evil (retribution), the dominant transactional sense of the Piel stem.
+**Enriched:** The dominant Piel sense of repayment and recompense, covering nearly two-thirds of occurrences. Spanish pagar, French payer, and German bezahlen/vergelten all confirm the transactional reading. The sense spans both positive recompense (reward) and negative (retribution), as in Exod 21:34–36 where damages must be repaid. Arabic يُجَازِي captures the dual-direction quality of requital.
+
+### H8198 / Sense 143237 (63 occ, sense 1 of 1)
+**Label:** maidservant, female slave
+**Lemma gloss:** shiphchah -- maidservant, female slave; also a humble self-designation by a woman addressing a superior
+**Description:** A female servant or slave-girl in a household, also used as a conventional humble self-designation by a woman addressing a superior.
+**Enriched:** A female servant or slave-girl belonging to a household, used of actual bondwomen like Hagar (Gen 16:1), Bilhah, and Zilpah (Gen 29:24, 29), as well as a conventional self-humbling term by women addressing superiors -- as when Hannah speaks to Eli (1 Sam 1:16) or Abigail to David (1 Sam 25:24-28). Spanish sierva, French servante, and German Magd consistently render the word, with possessive suffixes (-her, -his, -your) reflecting the relational nature of servanthood. All 63 occurrences share a single semantic core of female domestic service or deferential self-reference.
+
+### H8441 / Sense 144749 (63 occ, sense 1 of 2)
+**Label:** abominations, detestable practices
+**Lemma gloss:** Abomination, detestable thing or practice -- something morally or ritually abhorrent to God or culturally repugnant.
+**Description:** Plural form referring to multiple abominable acts or idolatrous practices collectively — used absolutely, in construct, or with pronominal suffixes to catalog the detestable deeds of nations, cities, or individuals.
+**Enriched:** The plural form (63x) cataloging multiple detestable acts or idolatrous practices collectively, used extensively in prophetic indictments. Ezekiel alone accounts for a large share, enumerating the accumulated 'abominations' of Jerusalem and the nations. Leviticus 18:26-30 frames the entire collection of sexual prohibitions under this plural, and multilingual renderings -- Spanish 'abominaciones,' French 'abominations,' German 'Greuel' -- consistently use corresponding plurals. The construct and suffixed forms ('abominations of,' 'your abominations') emphasize corporate guilt.
+
+### G1140 / Sense 64933 (62 occ, sense 1 of 2)
+**Label:** demon, evil spirit
+**Lemma gloss:** A supernatural spirit; usually an evil demon afflicting people, occasionally a pagan deity or divine being in classical usage.
+**Description:** A malevolent supernatural being or unclean spirit that afflicts people, frequently cast out by Jesus and the apostles in the NT.
+**Enriched:** A malevolent supernatural being or unclean spirit that oppresses and possesses people, cast out by divine authority. This is the dominant NT usage with 62 of 63 occurrences, spanning the Synoptic exorcism narratives (Matt 7:22; Mark 1:34; Luke 11:14) and doctrinal passages. Every major translation language treats this uniformly — Spanish "demonios," French "démon," German "Dämon" — confirming the sense is unmistakable across linguistic traditions.
+
+### G3571 / Sense 72864 (62 occ, sense 1 of 1)
+**Label:** night
+**Lemma gloss:** nyx -- night; the period of darkness from sunset to sunrise, also used figuratively for moral darkness
+**Description:** The period of darkness between sunset and sunrise; nighttime. Used both literally of the time of day (Matt 2:14, 14:25, Acts 9:25, 16:33, 27:27) and in temporal expressions like 'forty days and forty nights' (Matt 4:2). Singular and plural forms share the same core meaning. Multilingual evidence: spa noche/noches, hin रात/रातों, arb لَيْلًا/لَيَالٍ, kor 밤/밤들, swa usiku — all denoting the dark portion of the diurnal cycle without semantic differentiation between number forms.
+**Enriched:** The period of darkness from sunset to sunrise, used literally for the nighttime setting of key events -- the flight to Egypt (Matt 2:14), the fourth-watch sea crossing (Matt 14:25), Paul's basket escape (Acts 9:25) -- and in temporal formulas like 'forty days and forty nights' (Matt 4:2). Also employed figuratively for the era of spiritual darkness that gives way to eschatological dawn (Rom 13:12; 1 Thess 5:5). Spanish noche, French nuit, and German Nacht converge on a single concept across all 62 occurrences.
+
+### G4160 / Sense 75153 (62 occ, sense 2 of 11)
+**Label:** make, construct, create
+**Lemma gloss:** do, make, perform, act; produce, create; cause; spend time; keep; commit
+**Description:** To fashion, fabricate, or bring something into existence, corresponding to Arabic صَنَعَ/يَصْنَعُ and Korean 만들다.
+**Enriched:** To fashion, construct, or bring something into material existence—the concrete 'make' appearing 62 times. Arabic صَنَعَ/يَصْنَعُ and Korean 만들다 specify this creative/constructive sense. John the Baptist quotes Isaiah: 'Make his paths straight' (Matt 3:3). Jesus teaches we cannot 'make one hair white or black' (Matt 5:36). The sense covers both physical fabrication (making a whip, building a tabernacle) and social construction (making disciples, making arrangements). The object clause defines what comes into being through the subject's agency.
+
+### G4190 / Sense 75352 (62 occ, sense 1 of 4)
+**Label:** evil, wicked (adjectival)
+**Lemma gloss:** Evil, wicked, morally bad; substantivized as 'the Evil One' (Satan) or 'evil/wickedness' as abstract concept; rarely, physically harmful.
+**Description:** Describing persons, things, actions, or conditions as morally bad, wicked, or worthless, used attributively or predicatively across all genders, numbers, and cases.
+**Enriched:** The dominant adjectival sense: evil, wicked, morally bad. Describes persons (Matt 7:11 'you who are evil'), actions (Matt 9:4 'evil thoughts'), spiritual conditions (Matt 6:23 'if your eye is evil'), and fruit or outcomes (Matt 7:17–18). Spanish malo/mala, French mauvais, and German böse all render this broad moral quality consistently across the Gospels and Epistles.
+
+### G5602 / Sense 79222 (62 occ, sense 1 of 1)
+**Label:** here
+**Lemma gloss:** hode -- here, in this place; a demonstrative adverb of location pointing to the speaker's vicinity
+**Description:** here, Here (62 occurrences across 4 original clusters)
+**Enriched:** A demonstrative adverb indicating the speaker's location or the place under discussion, meaning 'here' or 'in this place.' It punctuates dramatic Christological declarations: 'something greater than the temple is here' (Matt 12:6), 'greater than Solomon is here' (Matt 12:42), and the pivotal 'he is not here; he has risen' (Matt 28:6). Occasionally implies motion toward: 'bring them here to me' (Matt 14:18). Spanish aqui, French ici, and German hier render it identically across 62 occurrences, confirming monosemous deictic function.
+
+### H0518b / Sense 82804 (62 occ, sense 1 of 6)
+**Label:** conditional: if
+**Lemma gloss:** Compound particle ki im: if, only/except, but/rather, surely; used in conditions, restrictions, adversatives, and oaths
+**Description:** Introduces the protasis of a conditional clause, marking a hypothetical or contingent situation ('if X, then Y').
+**Enriched:** The conditional sense where ki and im each retain independent force, introducing the protasis of a hypothetical clause ('if,' 'that if,' 'for if'). German wenn and French si map directly onto this use. Gen 32:26 ('I will not let you go unless [ki im] you bless me') and Gen 32:28 ('for you have striven with God and with men') show the conditional particle at work in the Jacob-at-Peniel narrative. Exod 8:17 and 9:2 ('for if you refuse to let my people go') illustrate the 'for if' combination in the plague sequence.
+
+### H0853 / Sense 84897 (62 occ, sense 2 of 2)
+**Label:** with, beside (preposition)
+**Lemma gloss:** Direct object marker for definite nouns; also a homographic preposition meaning 'with, beside, near'
+**Description:** Preposition meaning 'with, beside, near, in the company of' — homographic with but etymologically and functionally distinct from the direct object marker. Governs a noun or pronominal suffix to express accompaniment or proximity (e.g., אִתּוֹ 'with him', אִתְּךָ 'with you'). Distinguished from the accusative particle by context, vocalization (אֶת vs. אֵת in some traditions), and semantic role.
+**Enriched:** A preposition meaning 'with, beside, in the company of,' homographic with but functionally distinct from the object marker. German glosses reveal the distinction clearly: 'mit-(Akk)' versus bare '(Akk).' Found 62 times in contexts of accompaniment or proximity, as in Num 5:19 ('if no man has lain with you') and Ps 31:7 (the LORD's faithfulness 'with' the psalmist). The Moabite cognate similarly distinguishes the two functions.
+

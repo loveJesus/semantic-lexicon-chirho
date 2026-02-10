@@ -1,0 +1,291 @@
+# Sense Refinement Detection — Batch 012
+
+You are a biblical lexicographer reviewing sense entries for a Hebrew/Aramaic/Greek lexicon.
+Each entry below is a single "sense" that was produced by clustering translation signatures 
+and then merging with an LLM. Some senses may have been OVER-LUMPED — they contain genuinely 
+distinct meanings that should be separate senses.
+
+## Your Task
+
+For each sense, determine if it should be SPLIT into multiple senses. Look for:
+- Literal vs. figurative/metaphorical uses lumped together
+- Concrete vs. abstract meanings combined
+- Multiple distinct referents (e.g., "father" = biological parent + patron/advisor + originator)
+- Physical vs. spiritual/theological uses merged
+- Different syntactic frames producing different meanings
+
+## Output Format
+
+Return a JSON array. For senses that need NO splitting, omit them entirely.
+For senses that SHOULD be split, include an entry like:
+
+```json
+[
+  {
+    "senseIdChirho": 79287,
+    "lemmaIdChirho": "H0001",
+    "currentLabelChirho": "father, immediate male parent",
+    "splitProposalChirho": [
+      {
+        "newLabelChirho": "biological/legal father",
+        "criteriaChirho": "Direct parent-child relationship, possessive constructions with specific person"
+      },
+      {
+        "newLabelChirho": "metaphorical father (patron, advisor, protector)",
+        "criteriaChirho": "Title of respect for prophets, advisors, or authority figures; 'father to Pharaoh' type usage"
+      }
+    ],
+    "confidenceChirho": "high",
+    "reasoningChirho": "Description explicitly mentions 'title of respect or metaphorical originator' alongside biological father"
+  }
+]
+```
+
+Only propose splits where you have MEDIUM or HIGH confidence. Do NOT split function words (articles, 
+prepositions, particles, conjunctions) unless there is a genuinely distinct semantic sense (not just 
+syntactic variation). Proper nouns generally should NOT be split.
+
+If NO senses in this batch need splitting, return an empty array: []
+
+## Senses to Review
+
+### H7393 / Sense 135884 (117 occ, sense 1 of 2)
+**Label:** chariot, chariotry
+**Lemma gloss:** Chariot or chariotry (collective war-vehicle force); rarely, the upper millstone of a hand-mill.
+**Description:** A wheeled war vehicle or the collective chariot force of an army — the dominant sense covering single chariots, chariot fleets, and chariot corps, confirmed by Arabic مَرْكَبَة/مَرْكَبَات, Korean 병거/전차, and Swahili magari ya vita across all grammatical inflections.
+**Enriched:** A wheeled war vehicle or the collective chariot force of an army -- Pharaoh's chariots (Exod 14:7), Sisera's nine hundred iron chariots (Judg 4:3), Solomon's chariot corps (1 Kgs 10:26). Often paired with cavalry (parashim) and horses (susim). Arabic markabat/markabat, Spanish carro/carros, and Korean byeongeo converge on the military-vehicle reading. The collective sense ('chariotry') is more common than reference to a single vehicle.
+
+### H0216 / Sense 80668 (116 occ, sense 1 of 4)
+**Label:** light (general / metaphorical)
+**Lemma gloss:** Light: daylight, dawn, sunlight; metaphorically life, divine favor, salvation; also lightning; the luminaries.
+**Description:** Physical light, daylight, or metaphorical light representing life, divine favor, guidance, or well-being
+**Enriched:** Light in its full physical and metaphorical range — the overwhelming primary sense at 116 occurrences, spanning creation narrative, wisdom literature, prophetic vision, and psalmody. In Gen 1:3 God creates light itself as the first act of ordering chaos; in Job 3:20 the sufferer asks 'Why is light given to him who is in misery?' — where 'light' means life. Ps 27:1 declares 'The LORD is my light and my salvation,' fusing the physical and theological. Isa 9:2 promises 'The people who walked in darkness have seen a great light' — prophetic hope rendered as dawn breaking. Spanish luz, French lumiere, German Licht, and Arabic nur all carry this same physical-to-spiritual polysemy, confirming that the metaphorical extension from illumination to life/salvation/joy is deeply cross-linguistic. The breadth of this sense reflects the fact that Hebrew does not lexically distinguish between 'daylight,' 'light-as-life,' and 'light-as-divine-favor' — context and parallelism do that work.
+
+### H2076 / Sense 93942 (116 occ, sense 1 of 3)
+**Label:** Qal: offer sacrifice (cultic)
+**Lemma gloss:** to slaughter for sacrifice; to offer cultic sacrifice
+**Description:** To sacrifice or offer a cultic sacrifice to God or to idols, encompassing all Qal forms where the multilingual glosses consistently indicate a ritual religious offering (Hindi बलि/बलिदान, Arabic ذَبَحَ in sacrificial context, Swahili kutoa dhabihu, Korean 제사하다); this is the primary and most frequent sense of זָבַח.
+**Enriched:** The cultic act of offering sacrifice to the Lord or to false gods. Multilingual translations consistently use dedicated sacrificial vocabulary (Hindi बलि, Arabic ذَبَحَ, Swahili kutoa dhabihu, Korean 제사하다), distinguishing this religious ritual from mere slaughter.
+
+### H5387a / Sense 119530 (116 occ, sense 1 of 2)
+**Label:** leader, chief, head of tribe
+**Lemma gloss:** A chief, prince, or tribal leader; one raised up to authority over a clan, tribe, or nation.
+**Description:** A designated leader or chief of a tribal, clan, or communal group, especially the heads of the twelve tribes of Israel as in Numbers and Chronicles.
+**Enriched:** The designated head of a tribal, clan, or communal group -- particularly the chiefs of Israel's twelve tribes appointed for census and camp organization (Num 2:3-29). Spanish principe and French chef both converge on the administrative, delegated-authority sense. The term appears in formulaic lists (Num 1:5-16; 7:10-83) where each leader represents his father's house before the congregation.
+
+### H6664 / Sense 129554 (116 occ, sense 1 of 2)
+**Label:** righteousness, justice
+**Lemma gloss:** Righteousness, justice, rightness; the moral standard of what is upright, fair, and correct before God and in society.
+**Description:** Abstract moral quality of being right, just, or upright; the standard ethical attribute of God or of human conduct, encompassing all pronominal, prepositional, and conjunctive inflections of the base noun tsedheq.
+**Enriched:** The abstract moral quality of being right, just, or upright -- the dominant sense encompassing God's righteousness (Ps 4:2; Isa 41:10), judicial fairness (Deut 1:16; Prov 31:9), honest commercial standards (Lev 19:36, 'just balances, just weights'), and the righteous character of the ideal king (Isa 32:1). German Gerechtigkeit, French justice, and Spanish justicia all converge on this unified ethical-legal quality.
+
+### G0026 / Sense 61088 (115 occ, sense 1 of 2)
+**Label:** of love
+**Lemma gloss:** Love -- God's self-giving love, believers' mutual love, and (rarely) the communal love-feast of the early church.
+**Description:** of love, love (115 occurrences across 2 original clusters)
+**Enriched:** The overarching concept of love (115x), spanning divine love, human love for God, and mutual love among believers. This is the word behind 'God is love' (1 John 4:8), Jesus' promise that love will identify his disciples (John 13:35), and Paul's declaration that nothing can separate us from God's love (Rom 8:35-39). Multilingual evidence is strikingly uniform -- Spanish 'amor,' French 'amour,' German 'Liebe' -- reflecting how universally translators recognized agape as the definitive word for self-giving love. Matthew 24:12's warning that 'the love of many will grow cold' shows it can also describe love that fails.
+
+### G0935 / Sense 64039 (115 occ, sense 1 of 1)
+**Label:** king, ruler, sovereign
+**Lemma gloss:** King, ruler, sovereign; used of earthly monarchs, the Messiah, and God as supreme ruler
+**Description:** A male monarch or supreme ruler exercising royal authority over a people or territory; used both of earthly kings and of God or Christ as the ultimate King. Singular and plural forms across all cases represent the same lexical meaning with only grammatical inflection variation. Multilingual evidence: spa 'rey/reyes,' hin 'राजा/राजाओं,' arb 'مَلِكُ/المَلِكُ/مُلوكٍ,' kor '왕/왕들,' swa 'mfalme/wafalme.' The 115 occurrences span references to Herod (Matt 2:1), Jesus as King of the Jews (Matt 27:11, John 18:37), God as King (1 Tim 1:17, 6:15), the superlative 'King of kings' (1 Tim 6:15, Rev 17:14, 19:16), and various earthly monarchs throughout the Gospels, Acts, and Revelation.
+**Enriched:** A male monarch or supreme ruler exercising royal authority over a people or territory. Covers earthly kings such as David (Matt 1:6), Herod (Matt 2:1), and foreign sovereigns, as well as God and Christ as ultimate King. Translations across languages consistently use direct royal equivalents (Spanish 'rey,' French 'roi'), underscoring the term's unambiguous semantic core of sovereign rule.
+
+### H3581b / Sense 105829 (115 occ, sense 1 of 3)
+**Label:** strength, force, might
+**Lemma gloss:** Strength, power, might; physical force, vigor, or the capacity to act; also wealth or resources derived from one's strength.
+**Description:** Physical or general strength, force, or might inherent in a person, animal, or entity; the raw power exerted in action or possessed as an attribute, rendered consistently as Arabic quwwa, Korean him, and Swahili nguvu across all grammatical inflections and prepositional frames.
+**Enriched:** Physical or general strength, force, and might — the dominant sense at 115 occurrences. This covers Samson's raw physical power (Judg 16:17), the vigor sustained by food (1 Kgs 19:8), the strength that fails in old age (Ps 71:9), and the divine might behind cosmic acts (Jer 10:12; 27:5). Arabic quwwa, Korean him (힘), Spanish fuerza, German Kraft, and French force all converge on this sense. The word appears in memorable character-revealing moments: Jacob's blessing calls Reuben 'my strength and the firstfruits of my vigor' (Gen 49:3), and Deuteronomy warns Israel not to say 'my strength and the might of my hand have gotten me this wealth' (Deut 8:17).
+
+### H2677 / Sense 98604 (114 occ, sense 1 of 2)
+**Label:** half, fractional portion
+**Lemma gloss:** Half, one of two equal parts; also the middle or midpoint of a spatial or temporal span.
+**Description:** One of two equal parts of a whole; used for half of a tribe, half of spoils, half a cubit, half the kingdom, etc.
+**Enriched:** One of two equal parts of any measurable whole -- half of the blood (Exod 24:6), half a cubit (Exod 25:10), half the tribe of Manasseh (Josh 13:29), half the kingdom (Esth 5:3). Spanish mitad and French moitie uniformly mark the fractional, quantitative reading. This overwhelmingly dominant sense (114x) covers cultic measurements, territorial allotments, and proportional divisions.
+
+### G2983 / Sense 71406 (113 occ, sense 2 of 6)
+**Label:** take, take up
+**Lemma gloss:** To take, receive, obtain, or seize; encompasses physical grasping, receiving gifts or authority, and forceful seizure.
+**Description:** To actively take or take up something with one's hands — such as bread, a cup, a scroll, or provisions — including participial forms meaning 'having taken' in preparation for an action.
+**Enriched:** To actively take or take up something with one's hands — 113 occurrences, especially prominent in narrative action sequences. The participial form 'having taken' (labon) is almost formulaic before blessing and breaking bread (Matt 14:19; 15:36; 26:26). Here the agent exercises initiative: taking a cup, picking up a scroll, gathering provisions. Hindi lena and Arabic akhadha both align with this volitional-grasping sense, distinct from mere reception.
+
+### G4314 / Sense 75707 (113 occ, sense 2 of 8)
+**Label:** purpose: for, in order to
+**Lemma gloss:** To, toward; for, in order to; with; at, near; among; against; according to; because of
+**Description:** Marks the purpose, aim, or intended beneficiary of an action, often translatable as 'for' or 'in order to'.
+**Enriched:** Purpose or aim: 'for,' 'in order to,' 'with a view to.' Matt 6:1 ('do not practice your righteousness before men to be seen by them') and Matt 5:28 ('everyone who looks at a woman for the purpose of lusting'). Spanish 'para' and French 'pour' map naturally. The 113 occurrences show pros competing with eis for purpose marking, with pros often emphasizing the interpersonal orientation of the intended goal.
+
+### H0269 / Sense 81058 (113 occ, sense 1 of 2)
+**Label:** sister (female sibling)
+**Lemma gloss:** Sister, female sibling or close kinswoman; idiomatically, 'counterpart' or 'one to another' of paired objects.
+**Description:** A female sibling or close female relative, used of literal kinship relationships between persons.
+**Enriched:** A female sibling or close female relative by blood -- the dominant kinship sense across 113 occurrences. Sarah called Abraham's sister (Gen 12:13; 20:2), Dinah as Jacob's daughter and the brothers' sister (Gen 34:13-31), Tamar and Absalom (2 Sam 13). Spanish hermana mia, French ma soeur, and German meine Schwester uniformly confirm the literal familial relationship.
+
+### H7307 / Sense 135002 (113 occ, sense 2 of 6)
+**Label:** wind (meteorological)
+**Lemma gloss:** Wind, breath, spirit; the Spirit of God; human disposition or mind; compass direction; spirit beings.
+**Description:** Physical wind, a natural movement of air, including strong wind, storm wind, east wind, and winds in the plural — Arabic رِيح / رِيَاح, Korean 바람 / 바람들, Swahili upepo, Hindi हवा/वायु.
+**Enriched:** Physical wind, a natural movement of air (113 occurrences) — including the east wind (רוּחַ קָדִים) that dries seas and blasts crops, storm winds, gentle breezes, and the four winds as cosmic forces. Arabic رِيح, Korean 바람, Hindi हवा, and Swahili upepo all isolate this as a purely meteorological term. Key passages include Gen 8:1, where God sends a wind over the flood waters, and Job 1:19, where a great wind destroys Job's children's house.
+
+### G0565 / Sense 62719 (112 occ, sense 1 of 4)
+**Label:** go away, depart physically
+**Lemma gloss:** To go away, depart; to leave one place for another; of things or conditions: to pass away, come to an end; also of news spreading abroad or of going after something.
+**Description:** To physically leave or go away from a place or person, the core meaning of moving away from one location to another.
+**Enriched:** To go away or depart physically from a place or person — the overwhelming core sense at 112 occurrences, covering ordinary human movement throughout the narrative sections of the New Testament. In Matt 8:33 the swineherds 'went away' into the city; in Matt 9:7 the paralytic 'went away' to his house; in Matt 13:46 the merchant 'went and sold' everything for the pearl of great price. The verb frequently follows encounters with Jesus — people depart having been healed, instructed, or challenged. Spanish se fue and partio render straightforward departure; German weggehen and French s'en aller both preserve the 'away' prefix that mirrors Greek apo-. The verb takes eis + accusative for destination ('went away into the mountain,' Mark 6:46), pros + accusative for personal destination ('went to him,' John 6:68), and absolute use with no stated goal. In John 6:66-68 disciples 'go away' from Jesus, prompting Peter's great confession — here the spatial verb carries the theological weight of apostasy versus fidelity.
+
+### G0649 / Sense 63130 (112 occ, sense 1 of 3)
+**Label:** send on a mission
+**Lemma gloss:** To send forth on a mission or commission; to dispatch an authorized representative, messenger, or agent; passive, to be sent.
+**Description:** To dispatch someone with authority or commission, especially to send a messenger, servant, or agent on a specific errand or mission (the core meaning of ἀποστέλλω, from which ἀπόστολος derives).
+**Enriched:** The dominant active sense: to send someone forth on a specific mission or errand with the sender's authority. This accounts for 112 of 133 occurrences and is the core from which the noun apostolos derives. Jesus sends the Twelve (Matt 10:5), landowners send servants to collect from tenants (Matt 21:34), and God sends prophets and angels. Spanish envio, German sendet, and French envoyer all converge on purposeful dispatching. The key distinction from pempo is that apostello foregrounds the commission — the sender's purpose travels with the one sent.
+
+### G3624 / Sense 73069 (112 occ, sense 1 of 2)
+**Label:** house, dwelling
+**Lemma gloss:** House, dwelling place; by extension, household or family lineage as a social unit
+**Description:** A physical house or dwelling place, the primary concrete sense of oikos. Used extensively for domestic residences (Matt 9:6-7; Mark 2:1, 11, 26; 3:20; 5:19, 38; 7:17, 30; Luke 16:4; Acts 8:3; 20:20), the Jerusalem temple as God's house (Matt 21:13; Mark 11:17), and houses in the plural (Matt 11:8; 1 Tim 3:12; Titus 1:11). All multilingual glosses converge: Arabic bayt/buyut, German Haus, French maison, Hebrew bayit/batim, Hindi ghar, Korean jip, Spanish casa.
+**Enriched:** A physical house, dwelling, or building — from private residences (Matt 9:6-7, 'go to your house') to the Jerusalem temple called God's house (Matt 21:13, 'my house shall be called a house of prayer'). Covers domestic spaces, rooms, tents, and sacred structures. The multilingual glosses (spa: casa, fra: maison, deu: Haus) uniformly treat this as the default, unmarked sense across all 112 occurrences.
+
+### H0834a / Sense 84740 (112 occ, sense 2 of 4)
+**Label:** substantive relative (what/that which)
+**Lemma gloss:** Relative particle: who, which, that; also used as a substantive relative (what/that which), and occasionally as a causal or temporal conjunction.
+**Description:** אֲשֶׁר used without an explicit antecedent as an indefinite or substantive relative meaning 'what, that which, whatever', often in phrases like 'that which he did' or 'what was spoken'.
+**Enriched:** Substantive or headless relative use — 'what,' 'that which,' 'whatever' — where asher has no explicit antecedent and itself fills the noun slot. In Gen 27:8 Rebekah commands Jacob 'do that which I command you'; in Gen 41:25 Joseph tells Pharaoh 'what God is about to do he has shown to Pharaoh.' Spanish lo que ('that which') and German welcher ('whichever') distinguish this from the headed relative in sense 1, confirming it as a genuine separate function. Found 112 times, often in legal and instructional discourse.
+
+### H0935 / Sense 85569 (112 occ, sense 2 of 4)
+**Label:** enter, go in (Qal)
+**Lemma gloss:** To come, arrive, enter; in Hifil, to bring; in Hofal, to be brought. One of Hebrew's most frequent verbs of motion.
+**Description:** Motion into an enclosed or bounded space: to enter, go into a house, city, tent, or territory; Arabic dakhala, Korean 들어갔다/들어왔다, Swahili -ingia.
+**Enriched:** Qal with a specific 'enter' nuance: to go into an enclosed, bounded, or defined space — 112 occurrences. Noah 'entered' the ark (Gen 7:7), Lot urged the angels to 'enter' his house (Gen 19:3), and Israel is commanded to 'enter' the land. The spatial containment distinguishes this from sense 1's open-ended arrival. Arabic dakhala ('to enter'), Korean deureogada/deureowada ('go in/come in'), Swahili ingia ('enter'), and Spanish entro ('entered') all select entry-specific vocabulary distinct from their general arrival terms, confirming a real cross-linguistic sense boundary. The idiom bo el ('come in to') for sexual relations (Gen 16:4; 19:33) belongs here as a specialized extension of the 'enter' metaphor.
+
+### H1058 / Sense 86641 (112 occ, sense 1 of 3)
+**Label:** Qal: to weep, cry
+**Lemma gloss:** To weep, cry aloud; in Piel, to bewail or lament for someone with intensified mourning
+**Description:** Intransitive weeping or crying, expressing grief, sorrow, joy, or supplication, in all Qal finite and participial forms (bakah בָּכָה corresponds to Arabic بَكَى baka, Korean 울다, Swahili kulia).
+**Enriched:** The Qal form covering intransitive weeping in all its registers: grief (Gen 37:35, Abraham weeping for Sarah), joy (Gen 33:4, Jacob and Esau's reunion), supplication (Judg 20:23, Israel weeping before the Lord), and sorrow at impending loss (Gen 21:16, Hagar weeping in the wilderness). This is overwhelmingly the dominant sense at 112 occurrences. Arabic baka, Korean ulda, and Swahili kulia all track this basic intransitive 'to weep.' Spanish llorar and German weinte appear consistently across the corpus.
+
+### H3789 / Sense 107843 (112 occ, sense 1 of 7)
+**Label:** Qal passive participle: written, recorded
+**Lemma gloss:** To write, inscribe, record, compose; in passive: written, recorded; as substantive: scribe, writer
+**Description:** Qal passive participle (katub/ketubim) used as a stative adjective meaning 'written' or 'recorded,' describing texts, laws, or words that stand in a written state; includes absolute and construct forms, with and without the article, and the formulaic kakkatuv ('as written') references to authoritative texts. Arabic uses maktub (مَكْتُوب) in all its case/gender inflections, Korean uses girokdoen (기록된, that which is recorded), Swahili uses the passive -andikwa with various noun class prefixes.
+**Enriched:** The Qal passive participle katuv/ketuvim functions as a stative adjective: 'written, recorded.' It became the standard citation formula ('as it is written in the book of...') across Kings, Chronicles, and post-exilic literature (1 Kgs 11:41; 14:19). Spanish escritos and French écrit mirror this participial use. This is the single most frequent form of the root, anchoring the concept of authoritative written tradition.
+
+### H4467 / Sense 112275 (112 occ, sense 1 of 2)
+**Label:** kingdom, realm
+**Lemma gloss:** Kingdom, realm; also the abstract exercise of kingship, royal sovereignty, or dominion.
+**Description:** A political territory, state, or nation ruled by a king; the concrete domain over which royal authority is exercised, whether singular or plural, with or without pronominal suffixes and prepositions.
+**Enriched:** A political territory, state, or nation under royal rule (112x) -- the concrete domain over which a king exercises authority. This covers everything from Sihon's realm (Deut 3:4, 10, 13) to the great kingdoms of the earth (Ps 46:6; Isa 14:16). All major translation languages use concrete territorial terms: Spanish 'el reino,' French 'le royaume,' German 'das Konigreich.' The plural 'mamlakhot' appears in sweeping panoramas of world powers (Deut 28:25; 2 Chr 32:15), often paralleled with 'goy' (nation) and 'am' (people).
+
+### G3498 / Sense 72669 (111 occ, sense 1 of 2)
+**Label:** the dead (persons)
+**Lemma gloss:** Dead — as a substantive, the dead (deceased persons collectively); as an adjective, lifeless, whether literally or figuratively.
+**Description:** Substantive use referring to deceased persons collectively, as in 'resurrection of the dead' or 'God is not God of the dead'
+**Enriched:** The dead as a collective substantive — deceased persons considered as a group, especially in eschatological and resurrection contexts. Central to New Testament proclamation: 'God raised him from the dead' (Rom 10:9), 'resurrection of the dead' (1 Cor 15:12-21), 'judge the living and the dead' (2 Tim 4:1). The 111 occurrences cluster heavily in Paul and Acts. All target languages use substantivized forms (muertos, mort, Tote), confirming the nominal reading.
+
+### H0053 / Sense 79657 (111 occ, sense 1 of 1)
+**Label:** Absalom (personal name)
+**Lemma gloss:** Absalom — personal name meaning 'my father is peace'; David's third son who led a famous rebellion
+**Description:** A Hebrew personal name meaning 'my father is peace'; primarily refers to the third son of King David who led a rebellion, and also to Abishalom father of Maacah (1 Kings 15:2,10). All case, prepositional, and spelling variants refer to the same proper noun.
+**Enriched:** A proper masculine name meaning 'my father is peace,' primarily identifying David's third son whose rebellion and death are narrated across 2 Samuel 13–18 (over 90 occurrences). A secondary Absalom appears as Maacah's father (1 Kgs 15:2, 10). The name's ironic etymology — 'peace' — contrasts sharply with the strife that defines the character's story.
+
+### H1984b / Sense 93181 (111 occ, sense 1 of 5)
+**Label:** praise, laud (Piel)
+**Lemma gloss:** To praise, laud (God); boast or glory in; be praised/praiseworthy; be mad or act foolishly
+**Description:** Active doxological praise or commendation directed toward God or a person, encompassing the Piel imperative (including הַלְלוּ יָהּ), imperfect, perfect, infinitive, and participle in all persons and numbers.
+**Enriched:** The active Piel praise sense — the liturgical heart of the Hebrew Bible. This covers the imperative הַלְלוּ יָהּ (Hallelujah), along with all Piel perfects, imperfects, infinitives, and participles directing praise toward God or commending a person. Spanish 'alabad' and French 'louez' consistently render the plural imperative. The Hallel psalms (113-118) concentrate this usage, while 1 Chronicles 23:5 records 4,000 Levites appointed to הלל the LORD. Psalm 104:35 and 105:45 frame entire compositions with this doxological cry.
+
+### H4397 / Sense 111769 (111 occ, sense 1 of 2)
+**Label:** angel, divine messenger
+**Lemma gloss:** Messenger or angel; a human envoy sent on a mission, or a divine heavenly being sent by God.
+**Description:** A supernatural heavenly being sent by God, often appearing as 'angel of the LORD' (mal'akh YHWH), consistently rendered with Arabic مَلَاك/مَلَائِكَة, Korean 천사, and Swahili malaika.
+**Enriched:** A supernatural heavenly being dispatched by God, most often in the phrase mal'akh YHWH ('angel of the LORD'). This figure appears to Hagar (Gen 16:7-11), stands in Balaam's path (Num 22:22-35), and commissions Gideon (Judg 6:11-22). Arabic consistently renders this sense as malak/mala'ika, Korean as 천사, and Swahili as malaika — all dedicated 'angel' terms. The 111 occurrences include both individual theophanies and collective references to God's heavenly host (Ps 103:20; 148:2).
+
+### G0225 / Sense 61804 (110 occ, sense 1 of 1)
+**Label:** truth, reality
+**Lemma gloss:** Truth, reality, faithfulness; divine truth, sincerity, and what accords with fact as opposed to falsehood
+**Description:** The quality of being true, real, or in accord with fact and divine reality; used in the NT for divine truth (the gospel, God's faithfulness), moral truthfulness (honesty, sincerity), and ontological reality (what is genuinely real as opposed to false or deceptive). All 110 occurrences across dative, accusative, genitive, and nominative singular cases convey this unified semantic domain. Multilingual evidence is fully consistent: Spanish 'verdad,' Arabic 'al-haqq/haqq' (الحق/حق), Hindi 'satya/sachchai' (सत्य/सच्चाई), Korean 'jilli' (진리), Swahili 'ukweli/kweli.' The prepositional phrase 'in truth' (en aletheia, S61808) represents an adverbial usage ('truly, in reality') but remains within the same core semantic field of truth/reality rather than introducing a distinct sense.
+**Enriched:** The quality of being true, real, or in accord with fact and divine reality. Covers honest speech (Mark 5:33, 'she told him the whole truth'), divine faithfulness and gospel truth (Gal 2:5), and the Johannine theological sense where Jesus embodies truth itself (John 14:6). The consistent rendering across languages — Spanish 'verdad,' German 'Wahrheit' — confirms its stable semantic core spanning sincerity, factual accuracy, and ultimate reality.
+
+### G3361 / Sense 72359 (110 occ, sense 2 of 6)
+**Label:** emphatic negation (never, by no means)
+**Lemma gloss:** Not (subjective negation); lest; emphatic never; interrogative expecting 'no'; except; perhaps.
+**Description:** Emphatic or absolute denial, often in the construction οὐ μή with the aorist subjunctive, expressing strong future negation: 'by no means,' 'never,' 'certainly not.'
+**Enriched:** Emphatic negation in the ou me construction with aorist subjunctive: 'by no means,' 'never,' 'certainly not.' Spanish de ninguna manera, French jamais capture the intensified force. Jesus' solemn assurances rely on this — 'I will never again drink of this fruit' (Matt 26:29), 'you will never taste death' (John 8:52).
+
+### H4054 / Sense 109704 (110 occ, sense 1 of 3)
+**Label:** pasture-land of a city
+**Lemma gloss:** Pasture-land, open common surrounding a city; specifically the grazing grounds allotted to Levitical cities
+**Description:** The open land or common surrounding a Levitical city designated for grazing livestock, used predominantly in the allotment lists of Joshua and Chronicles.
+**Enriched:** The dominant technical-legal sense: designated pasture-land or common attached to Levitical cities for grazing livestock. This accounts for 110 of 115 occurrences, clustered heavily in Joshua 21, 1 Chronicles 6, and Numbers 35. The term appears almost formulaically: 'the city and its pasture-lands' (Josh 21:11, 13). German Weide-Land and French paturage reflect the pastoral function, while Spanish campos captures the open-field quality. The root g-r-sh ('drive') suggests land where cattle are driven out to graze.
+
+### H4941 / Sense 115049 (110 occ, sense 3 of 7)
+**Label:** ordinances, statutes (plural)
+**Lemma gloss:** Justice, judgment, ordinance; a judicial decision, legal case, prescribed regulation, or established custom
+**Description:** Prescribed divine or royal decrees and regulations, typically in the plural (Arabic أَحْكَام, Korean 법도들/규례들, Swahili hukumu plural), often with possessive suffixes referring to God or a ruler.
+**Enriched:** The plural form designating God's collected ordinances and covenant stipulations. Arabic ahkam and Korean beopdo-deul reflect this legislative plurality. Frequently paired with 'statutes' (huqqot) in Levitical and Deuteronomic literature (Lev 18:4; 26:46), these are the case-laws that flesh out Torah's principles into actionable communal norms binding Israel to her covenant Lord.
+
+### H2706 / Sense 98740 (109 occ, sense 1 of 4)
+**Label:** statute, ordinance, decree
+**Lemma gloss:** Something prescribed: a statute, ordinance, or decree; an allotted portion or due; a fixed boundary or limit.
+**Description:** A prescribed law, ordinance, or decree established by divine or human authority. Arabic consistently translates with فَرِيضَة (farīḍa, sg.) / فَرَائِض (farā'iḍ, pl.) from the root ف-ر-ض (faraḍa, 'to impose, ordain'), confirming a single semantic field of enacted regulation. Korean renders this as 규례 (kyurye, 'regulation'), 율례 (yullye, 'statute'), or 법령 (beopryeong, 'decree'), all within the legal-prescriptive domain. Swahili uses sheria ('law') and amri ('command, ordinance'), both indicating binding directives. This sense covers all grammatical inflections—singular/plural, construct/absolute, with pronominal suffixes (my/your/his) and prepositional prefixes (ב/ל/מ)—since these are purely morphological, not semantic, variations. Includes one occurrence glossed 'custom' (desturi in Swahili, sense 98769) and one glossed 'conditions' (sense 98773), which are contextual renderings of the same core meaning of an established rule.
+**Enriched:** A prescribed law, ordinance, or statute established by divine or human authority — the dominant sense at 109 occurrences, forming the backbone of Torah's legal vocabulary. In Exod 15:25 God makes for Israel 'a statute and an ordinance' at Marah; in Lev 26:46 the hoqqim are the comprehensive regulations given at Sinai. The plural huqqim pairs systematically with mishpatim ('judgments') throughout Deuteronomy (4:5, 6, 8; 5:1; 6:1) and the Psalms (Ps 119 uses hoq/huqqim repeatedly). Spanish estatutos and German Satzungen both select enacted-law vocabulary, while Arabic farida/fara'id (from the root meaning 'to impose as obligation') captures the sense of divine imposition. French statuts and les ordonnances preserve the two-word pairing that mirrors the Hebrew doublet. The term implies permanence — these are not ad hoc rulings but enduring prescriptions engraved into Israel's covenant life.
+
+### H4908 / Sense 114731 (109 occ, sense 1 of 2)
+**Label:** Tabernacle, sacred sanctuary
+**Lemma gloss:** Dwelling place or habitation; predominantly the Tabernacle, Israel's portable wilderness sanctuary.
+**Description:** The portable sanctuary or tent of meeting where God's presence dwelt among Israel, used primarily in Exodus-Numbers cultic contexts.
+**Enriched:** The Tabernacle—Israel's portable sanctuary and tent of meeting, the designated place of God's indwelling presence during the wilderness period and beyond. This sense accounts for 109 of 139 occurrences and dominates the Priestly source in Exodus through Numbers. Cross-lingual glosses are highly technical and consistent: Spanish 'el tabernáculo,' French 'le tabernacle,' German 'die Stiftshütte.' Key passages include the initial divine blueprint (Exod 25:9), the construction details (Exod 26:1–30), and the cloud covering the mishkan at Sinai (Num 9:15).
+
+### H8083 / Sense 142048 (109 occ, sense 1 of 1)
+**Label:** eight (cardinal number)
+**Lemma gloss:** Eight (cardinal number); used independently and in compound numerals like eighteen and eighty
+**Description:** The cardinal number eight (שְׁמֹנֶה/שְׁמֹנָה), used independently or in compound numerals such as eighteen (שְׁמֹנֶה עָשָׂר), across masculine and feminine forms, absolute and construct states, and with various prepositional and conjunctive prefixes.
+**Enriched:** The cardinal number eight, used for counting, measuring, and dating across narrative, legal, and genealogical texts. Appears in the patriarchal age formulas of Genesis 5 (e.g., Gen 5:4, 'eight hundred years'), in compound numerals like eighteen, and in specifications of quantities (1 Sam 17:12, 'eight sons'). The masculine/feminine alternation follows standard Hebrew numeral agreement rules, with no semantic distinction between the forms.
+
+### H8111 / Sense 142606 (109 occ, sense 1 of 1)
+**Label:** Samaria (city/region)
+**Lemma gloss:** Samaria (Shomron) — capital city of the northern kingdom of Israel; also the surrounding region
+**Description:** The proper name Shomron (Samaria), referring to the city built by King Omri as capital of the Northern Kingdom of Israel, and by extension the surrounding region/territory; all 12 clusters differ only by prepositional prefixes (beth 'in', min 'from', lamed 'to') and conjunctions (waw 'and'), not by meaning.
+**Enriched:** The proper name Shomron (Samaria), designating the fortified capital city founded by Omri on a hill purchased from Shemer (1 Kgs 16:24) and, by metonymy, the northern kingdom's territory. Central to narratives of the Omride dynasty, the prophets Elijah and Elisha, and the Assyrian deportation (2 Kgs 17). Ezekiel personifies it as an unfaithful woman (Ezek 23:4), underscoring its symbolic weight in prophetic literature.
+
+### H3327 / Sense 103383 (108 occ, sense 1 of 1)
+**Label:** Isaac (proper noun)
+**Lemma gloss:** Isaac (Yitshaq) — patriarch, son of Abraham and Sarah; his name means 'he laughs'
+**Description:** The patriarch Isaac (Yitshaq), son of Abraham and Sarah, one of the three patriarchs of Israel. All 108 occurrences across all seven sense clusters refer to the same individual person with only grammatical variation (prepositional prefixes: b/l/w, construct states). Multilingual glosses are perfectly consistent: Arabic إِسْحَاق/يِسْحَاق (Ishaq), Spanish 'Isaac/Yitzchaq/Yitsjaq' (variant transliterations), Korean 이삭 (Isak), Swahili 'Isaka' (Isaka), Hindi इसहाक/यित्सखाक/इसाक (Ishak, variant transliterations). Proper nouns with spelling variants remain a single sense since they all denote the same referent.
+**Enriched:** The proper masculine name Yitshaq (Isaac), designating the son of Abraham and Sarah, second of the three patriarchs. The name's etymology ('he laughs') connects to both Sarah's incredulous laughter (Gen 18:12) and joyful laughter (Gen 21:6). All 108 occurrences refer to the same individual, appearing in covenant formulas (Lev 26:42), genealogies (1 Chr 1:28), and poetically as a metonym for Israel (Amos 7:9, 16).
+
+### H6083 / Sense 125496 (108 occ, sense 1 of 3)
+**Label:** dust, dry earth, soil
+**Lemma gloss:** Dust, dry earth, or loose soil; the material of human creation and mortality, also rubble or fine powder.
+**Description:** Loose dry particles of earth or ground; the basic physical substance of the earth's surface, used literally of soil, dirt, and the material from which man was formed and to which he returns.
+**Enriched:** The dominant sense covering nearly all occurrences: dust, dry earth, or loose soil as a physical substance. This includes the dust of human creation (Gen 2:7), the dust of mortality (Gen 3:19; Eccl 3:20), dust thrown in grief (Josh 7:6; Job 2:12), earth used in ritual purification (Lev 14:41–42; Num 5:17), and dust as a figure of innumerability (Gen 13:16) or humiliation (Gen 3:14; Mic 7:17). Multilingual evidence is remarkably uniform: spa 'polvo,' fra 'poussiere,' deu 'Staub'—all pointing to the same fine, dry particulate matter.
+
+### H7535 / Sense 137025 (108 occ, sense 1 of 2)
+**Label:** only, merely, surely (restrictive/asseverative particle)
+**Lemma gloss:** Only, merely, surely — a restrictive or asseverative particle limiting or emphasizing a statement; rarely 'except'
+**Description:** The primary adverbial sense of רַק functioning as a restrictive particle ('only,' 'merely,' 'nothing but') or with asseverative force ('surely,' 'certainly'), limiting or emphasizing a statement. This covers the vast majority of occurrences (108 of 109). Arabic فَقَطْ (faqaṭ, 'only/just'), Spanish solo/ciertamente ('only/certainly'), Hindi केवल/बस (keval/bas, 'only/just'), Korean 오직/다만 (ojik/daman, 'only/merely'), Swahili tu/hakika ('only/surely'). Used throughout the Pentateuch and historical books to restrict commands (Genesis 6:5 'only evil,' 20:11 'surely there is no fear'), qualify permissions (Genesis 34:15 'only on this condition'), and emphasize assertions (Deuteronomy 4:9 'only take heed').
+**Enriched:** A restrictive or asseverative adverb meaning 'only,' 'merely,' 'nothing but,' or with emphatic force 'surely,' 'certainly.' Limits or intensifies the clause it modifies. Gen 6:5 uses it to devastating effect: every inclination of human thoughts was 'only evil continually.' Amos 3:2 employs it for exclusive divine election: 'only you have I known.' The cross-linguistic convergence is near-total (spa: solo/solamente, fra: seulement, deu: nur/gewiss), confirming a single well-defined restrictive function across 108 occurrences.
+
+### G2476 / Sense 69554 (107 occ, sense 1 of 6)
+**Label:** stand, be standing
+**Lemma gloss:** To stand, set, place, cause to stand, stand firm, stop, or establish; spanning physical stance, transitive placement, moral endurance, cessation, and institutional confirmation
+**Description:** Intransitive sense: to stand in a place, be in a standing position, or rise to one's feet — the core physical-positional meaning of the intransitive 2nd aorist (ἔστην), perfect (ἕστηκα), and pluperfect stems. All voices and tenses share the common meaning of bodily upright position. Cross-linguistic evidence: Arabic وَاقِف / يَقِف (standing, positional), Korean 서다 / 서 있다 (to stand / be standing), Swahili -simama (stand), Hindi खड़ा होना (to stand), Spanish 'de pie / estar de pie'.
+**Enriched:** Intransitive: to stand, be standing, or be in a standing position — the core physical-positional sense. Arabic waqafa (to stand) and Korean seo-itda (to be standing) consistently mark static bodily position. The dominant sense (107x), covering crowds standing by the sea (Matt 13:2), workers standing idle in the marketplace (Matt 20:3, 6), and the apocalyptic 'abomination of desolation standing where it should not' (Matt 24:15; Mark 13:14). The perfect tense hestekos ('having taken one's stand') frequently appears as a present-state participle, confirming the stative-resultative meaning.
+
+### H0905 / Sense 85262 (107 occ, sense 1 of 7)
+**Label:** alone, by oneself
+**Lemma gloss:** Separation, alone, by oneself; apart from, besides; also: poles/staves, limbs, branches, bars
+**Description:** Adverbial use with preposition le- and pronominal suffixes meaning 'alone, by oneself, only'; Arabic wahda-hu, Korean holro, Swahili peke yake — denoting solitary state or exclusivity regardless of person, number, or gender of the suffix.
+**Enriched:** With le- and pronominal suffixes (levaddo, levaddi, etc.), bad expresses solitary state: 'alone, by oneself, only.' Genesis 2:18 establishes the existential weight ('not good to be alone'), while Zechariah 12:12-14 repeats levad to emphasize isolated mourning. Arabic wahdahu, Swahili peke yake, and Korean holro all confirm this adverbial-exclusive meaning across language families.
+
+### H4194 / Sense 110553 (107 occ, sense 1 of 6)
+**Label:** death (event of dying)
+**Lemma gloss:** Death — the event of dying, the state of being dead, death personified as a cosmic power, and death as judicial penalty or standard of comparison
+**Description:** The physical event or process of dying, ceasing to live, including references to specific persons' deaths.
+**Enriched:** Death as the physical event or process of dying — ceasing to live. This is the dominant sense (107x), covering natural death, violent death, and references to the deaths of named individuals. Arabic mawt and Korean jug-eum both center on the concrete cessation of life. Key constructions include yom mavet ('day of death,' Gen 27:2), shenat mavet ('year of death,' Isa 6:1), ad mavet ('until death,' Num 35:25), and the pivotal deuteronomistic formula setting 'life and death' before Israel (Deut 30:15, 19). From Deuteronomy's capital punishment laws (Deut 21:22; 22:26) to the narratives of royal and prophetic deaths, this sense anchors the word in human mortality.
+
+### H7223 / Sense 134094 (107 occ, sense 1 of 8)
+**Label:** first (ordinal sequence)
+**Lemma gloss:** First, former, chief; as adjective: first in sequence or time; substantively: former things, ancestors, the beginning
+**Description:** Ordinal 'first' indicating position in a sequence such as first month, first day, first year, or first in a list.
+**Enriched:** Straightforward ordinal 'first' in a sequence — first month, first day, first son. Arabic awwal and Korean 첫째/첫번째 match precisely. This is the dominant usage (107 of 182 occurrences), anchoring calendrical and genealogical lists throughout the Pentateuch and historical books (Gen 25:25; Exod 12:15).
+

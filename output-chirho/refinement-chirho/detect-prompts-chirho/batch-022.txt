@@ -1,0 +1,291 @@
+# Sense Refinement Detection — Batch 022
+
+You are a biblical lexicographer reviewing sense entries for a Hebrew/Aramaic/Greek lexicon.
+Each entry below is a single "sense" that was produced by clustering translation signatures 
+and then merging with an LLM. Some senses may have been OVER-LUMPED — they contain genuinely 
+distinct meanings that should be separate senses.
+
+## Your Task
+
+For each sense, determine if it should be SPLIT into multiple senses. Look for:
+- Literal vs. figurative/metaphorical uses lumped together
+- Concrete vs. abstract meanings combined
+- Multiple distinct referents (e.g., "father" = biological parent + patron/advisor + originator)
+- Physical vs. spiritual/theological uses merged
+- Different syntactic frames producing different meanings
+
+## Output Format
+
+Return a JSON array. For senses that need NO splitting, omit them entirely.
+For senses that SHOULD be split, include an entry like:
+
+```json
+[
+  {
+    "senseIdChirho": 79287,
+    "lemmaIdChirho": "H0001",
+    "currentLabelChirho": "father, immediate male parent",
+    "splitProposalChirho": [
+      {
+        "newLabelChirho": "biological/legal father",
+        "criteriaChirho": "Direct parent-child relationship, possessive constructions with specific person"
+      },
+      {
+        "newLabelChirho": "metaphorical father (patron, advisor, protector)",
+        "criteriaChirho": "Title of respect for prophets, advisors, or authority figures; 'father to Pharaoh' type usage"
+      }
+    ],
+    "confidenceChirho": "high",
+    "reasoningChirho": "Description explicitly mentions 'title of respect or metaphorical originator' alongside biological father"
+  }
+]
+```
+
+Only propose splits where you have MEDIUM or HIGH confidence. Do NOT split function words (articles, 
+prepositions, particles, conjunctions) unless there is a genuinely distinct semantic sense (not just 
+syntactic variation). Proper nouns generally should NOT be split.
+
+If NO senses in this batch need splitting, return an empty array: []
+
+## Senses to Review
+
+### H0935 / Sense 85555 (62 occ, sense 3 of 4)
+**Label:** bring, carry to (Hifil)
+**Lemma gloss:** To come, arrive, enter; in Hifil, to bring; in Hofal, to be brought. One of Hebrew's most frequent verbs of motion.
+**Description:** Causative: to bring someone or something to a location, to fetch, carry, or deliver; Arabic ahdara, Korean 가져왔다/데려왔다, Swahili -leta.
+**Enriched:** Hifil causative: to bring, fetch, carry, or deliver someone or something to a location — 62 occurrences. Isaac asks Esau to 'bring' him game (Gen 27:4), Joseph's brothers 'brought' Benjamin to Egypt (Gen 43:15), and God promises to 'bring' Israel into the land. Arabic ahdara ('to bring/present'), Korean gajyeoda/deryeoda ('bring a thing/bring a person'), Swahili leta ('bring'), and Spanish trajo/trajeron all use dedicated causative-motion vocabulary. The Hifil stem morphology is confirmed by cross-linguistic evidence: every major target language shifts to a distinct 'bring' lexeme rather than simply adding 'cause to come.'
+
+### H2388 / Sense 96002 (62 occ, sense 1 of 18)
+**Label:** Qal: be strong, be courageous
+**Lemma gloss:** to be strong, firm; to seize, grasp; to strengthen, encourage; to repair buildings; to harden (heart); to prevail
+**Description:** Intransitive Qal sense of inherent strength or courage, typically in exhortations ('be strong!') and stative descriptions ('was strong'). Arabic consistently uses تَشَدَّدَ / تَقَوَّى (reflexive strengthening verbs from Form V), Korean uses 강하라 (kanghara, 'be strong' imperative) and 강해졌다 (kanghaejyeotda, 'became strong'), Swahili uses kuwa hodari ('be brave/strong') or kuwa imara ('be firm'). This covers all Qal imperative, imperfect, perfect, and cohortative forms expressing the intransitive state of being strong or becoming strong, including future promises of strength.
+**Enriched:** The stative-intransitive Qal (62x) expresses inherent strength or courage, especially in Moses' exhortations: 'Be strong and courageous!' (Deut 31:6-7). Arabic uses تَشَدَّدَ/تَقَوَّى (reflexive 'steel oneself'), Korean 강하다/용감하다 (be strong/be brave), Spanish ser fuerte/esforzarse (be strong). The sense is not competitive overpowering but inner fortitude—emotional, moral, or physical resilience.
+
+### H3225 / Sense 102424 (62 occ, sense 2 of 3)
+**Label:** right hand (body part / power)
+**Lemma gloss:** The right hand, right side, or south; denoting spatial direction, the hand as instrument of power, and the southern cardinal direction.
+**Description:** The physical right hand as a body part or instrument of power and action, especially of God or a ruler; cross-linguistically distinguished by Spanish 'diestra' (vs 'derecha'), Swahili 'mkono wa kulia/kuume' (explicitly 'hand of the right'), Korean 오른손 (oreunson, 'right hand'), and Hindi दाहिना हाथ (dāhinā hāth, 'right hand'); Arabic consistently uses يَمِين (yamīn) with possessive suffixes referring to the physical hand grasping, striking, or upholding.
+**Enriched:** The physical right hand as a body part and instrument of divine or royal power — 62 occurrences. This is the yamin of Exodus 15:6, 'Your right hand, O LORD, is glorious in power,' and of Psalm 110:1, where the king sits at God's right hand. The hand here is not merely directional but agentive — it acts, strikes, upholds, and blesses. Spanish diestra (vs. derecha) and Swahili mkono wa kulia both select body-part vocabulary. The theological concentration is remarkable: God's right hand rescues (Ps 17:7), creates (Ps 89:13), and sustains (Isa 41:10), making this sense a pillar of biblical theology of divine action.
+
+### H3254 / Sense 102666 (62 occ, sense 1 of 7)
+**Label:** add, increase (Hifil)
+**Lemma gloss:** To add, increase; to continue, do again; in Nifal: be added, join oneself to
+**Description:** To add something, increase quantity or degree; Arabic زاد/يزيد (zada) or أضاف/يُضيف (aḍafa) indicating quantitative augmentation in the Hifil causative stem.
+**Enriched:** The Hifil causative expresses adding quantity, increasing a measure, or augmenting — as in Leviticus's penalty formulas where one 'shall add a fifth' (Lev 5:16; 27:31). Spanish añadir/aumentar and French ajouter confirm the straightforward additive meaning. Arabic zada (increase) and aḍafa (add) both cover this core quantitative sense.
+
+### H3254 / Sense 102670 (62 occ, sense 2 of 7)
+**Label:** continue, do again (Hifil)
+**Lemma gloss:** To add, increase; to continue, do again; in Nifal: be added, join oneself to
+**Description:** To continue doing, resume, do again as auxiliary verb; Arabic عاد/يعود (ʿada/yaʿudu) indicating repetition or continuation of an action in the Hifil stem.
+**Enriched:** As an auxiliary verb in the Hifil, yasaf means 'to continue' or 'to do again,' governing an infinitive or implied action. In Exodus 8:29 Pharaoh must 'not continue to deceive,' and Genesis 8:21 records God's resolve 'not again to curse the ground.' Korean da-si (again) and Swahili kuendelea (continue) show how languages must choose between repetition and continuation framings for this single Hebrew construction.
+
+### H5975 / Sense 124658 (62 occ, sense 2 of 7)
+**Label:** to stand firm, endure
+**Lemma gloss:** To stand, take one's stand; stand firm or endure; stop, stand still; station or appoint; set up, establish; serve, attend
+**Description:** Qal: metaphorical steadfastness — standing firm, enduring, persisting, remaining, withstanding opposition or the passage of time.
+**Enriched:** Standing firm, enduring, or persisting — a metaphorical extension where the physical posture becomes a figure for steadfastness against opposition or time. 'Who can stand before the LORD?' (1 Sam 6:20) and 'no man shall stand before you' (Josh 10:8) exemplify this. Korean gyeondida and Spanish permanecer distinguish this from mere physical posture.
+
+### H7138 / Sense 133326 (62 occ, sense 1 of 4)
+**Label:** near, close (spatial)
+**Lemma gloss:** Near, close; spatially proximate, temporally imminent, relationally kin, or cultically admitted into God's presence.
+**Description:** Physically near or close in space, describing proximity of location, used predicatively or attributively of places, cities, or persons in a spatial sense.
+**Enriched:** Physically near or close in space, describing the proximity of places, cities, roads, or persons to a reference point. French 'proche' and Spanish 'cerca/cercano' render this straightforwardly. Exodus 13:17 notes God did not lead Israel by the near road, and Genesis 19:20 has Lot begging to flee to a city that is qarov. Often paired with its antonym rachoq ('far') to express totality: near and far meaning everyone.
+
+### H7927 / Sense 140506 (62 occ, sense 1 of 2)
+**Label:** Shechem (city)
+**Lemma gloss:** Shechem — the ancient Canaanite city (modern Nablus) between Gerizim and Ebal, and the personal name of Hamor's son.
+**Description:** The ancient Canaanite city of Shechem (modern Nablus), situated in the hill country of Ephraim between Mount Gerizim and Mount Ebal, an important cultic and political center throughout Israelite history (Gen 12:6; Josh 20:7; Judg 9; 1 Kgs 12:1).
+**Enriched:** The ancient Canaanite city of Shechem, situated between Mount Gerizim and Mount Ebal in Ephraim's hill country, modern Nablus. A site of tremendous theological weight: Abram's first altar in Canaan (Gen 12:6), Jacob's purchase of land (Gen 33:18-19), Joshua's covenant ceremony (Josh 24:1), and Abimelech's turbulent reign (Judg 9). With 62 occurrences, it is one of the most frequently named cities in the Hebrew Bible. Spanish "Siquem," French "Sichem," and German "Sichem" all preserve the ancient sibilant opening.
+
+### G0027 / Sense 61091 (61 occ, sense 1 of 1)
+**Label:** beloved
+**Lemma gloss:** agapetos -- beloved, dearly loved; used of God's unique Son and as an affectionate address among believers
+**Description:** beloved, Beloved (61 occurrences across 7 original clusters)
+**Enriched:** An adjective expressing deep, cherished love, used in two principal contexts: as a divine title for Jesus ('this is my beloved Son,' Matt 3:17; 17:5; Mark 1:11), where it echoes the Isaianic Servant and the binding of Isaac; and as a warm term of address among believers in the epistles ('beloved brethren,' 1 Cor 15:58; Phil 4:1; 1 John 4:1). Spanish amado, French bien-aime, and German geliebt all render it consistently. The Christological and communal uses share a single lexical sense of one who is specially loved, with context determining whether the referent is the Son of God or a fellow Christian.
+
+### G0040 / Sense 61139 (61 occ, sense 3 of 4)
+**Label:** saints, holy ones (persons)
+**Lemma gloss:** Holy, sacred, set apart; of persons (saints, the Holy One), places (sanctuary, holy of holies), and things consecrated to God.
+**Description:** Substantive plural use referring to God's people, believers, or the consecrated community (οἱ ἅγιοι).
+**Enriched:** Substantive plural designating God's people — 'the saints,' 'the holy ones' (hoi hagioi) — 61 occurrences concentrated in Acts and the Pauline epistles. Paul greets 'all the saints in Christ Jesus' (Phil 1:1); Peter visits 'the saints at Lydda' (Acts 9:32); the risen saints emerge from tombs at the crucifixion (Matt 27:52). Korean 성도들 (seongdodeul) and Swahili watakatifu both have dedicated terms for this communal identity marker, distinct from the adjective. The term encodes ecclesiology: believers are not merely 'good people' but a consecrated community set apart for God's purposes, echoing the Old Testament qahal ('assembly').
+
+### G0154 / Sense 61508 (61 occ, sense 1 of 2)
+**Label:** ask for, request
+**Lemma gloss:** To ask for, request (in prayer or of people); in stronger register: to demand, require with authority or insistence.
+**Description:** To ask for or request something from someone, whether from God in prayer or from a person; the core and predominant sense of αἰτέω covering humble petitions, earnest requests, and general asking, as evidenced consistently across languages by Spanish pedir, Hindi maangna, Arabic طلب, Korean 구하다/요청하다, and Swahili omba.
+**Enriched:** To ask for, request, or petition — the standard sense of making a request either of God in prayer or of a human being, carrying a tone of genuine need, hope, or humble petition. This core sense (61 occurrences) appears in Jesus' great invitation 'ask and it will be given to you' (Matt 7:7-8), the reassurance that 'your Father knows what you need before you ask him' (Matt 6:8), and the command to generosity: 'give to the one who asks you' (Matt 5:42). Spanish pedir/pedimos, French demander, and German bitten converge on the polite, expectant register. James 1:5-6 crystallizes the sense: 'if any of you lacks wisdom, let him ask (aiteo) God,' with faith and not doubting.
+
+### G0165 / Sense 61557 (61 occ, sense 1 of 5)
+**Label:** eternity, forever (plural doxological)
+**Lemma gloss:** An age, era, or epoch; eternity or perpetuity; in doxologies, 'forever and ever'; rarely, the material world.
+**Description:** Plural αἰῶνες in doxological and liturgical formulae expressing boundless eternity, as in εἰς τοὺς αἰῶνας τῶν αἰώνων (forever and ever), with Arabic الدُّهور, Korean 영원/세세, Swahili milele.
+**Enriched:** Plural doxological usage: aiones in liturgical and hymnic formulae expressing unbounded, piled-up eternity — 'forever and ever' (eis tous aionas ton aionon). This is the most frequent sense at 61 occurrences, dominating the epistolary benedictions (Gal 1:5; Phil 4:20; 1 Tim 1:17) and the heavenly worship scenes of Revelation (Rev 1:6; 4:9-10; 5:13). The plural-of-plurals construction is an intensifying device unparalleled in classical Greek; Arabic ad-duhur (the ages) and Korean 세세 (generation upon generation) both attempt the stacking effect. Swahili milele na milele ('forever and forever') mirrors the doubling pattern exactly.
+
+### G1056 / Sense 64374 (61 occ, sense 1 of 1)
+**Label:** Galilee (region in northern Israel)
+**Lemma gloss:** Galilaia -- Galilee, the northern region of Palestine central to Jesus's earthly ministry
+**Description:** The proper noun designating the northern region of Israel/Palestine, central to Jesus's ministry. Both sense clusters represent the same toponym in different grammatical cases (nominative, accusative, genitive, dative). All translations confirm a single referent: Spanish 'Galilaía/Galilaías,' Hindi 'गलील,' Arabic 'جَلِيل/الجَلِيلِ' (with and without the definite article), Korean '갈릴리,' Swahili 'Galilaía/Galilaia.' The 61 total occurrences span Gospel narratives of Jesus's Galilean ministry (Matt 4:12-25, Mark 1:9, Luke 4:14, John 7:41) and Acts references. No semantic distinction exists between the two clusters — they differ only in morphological case, which is a purely syntactic feature.
+**Enriched:** The proper geographical name for the northern region of Israel/Palestine, encompassing the area around the Sea of Galilee where Jesus was raised in Nazareth and conducted the bulk of his teaching and miracle ministry. Cross-lingual evidence shows uniform transliteration -- Spanish Galilea, French Galilee, German Galiläa -- confirming a single toponymic identity across all 61 occurrences regardless of grammatical case (nominative, genitive, accusative).
+
+### G2235 / Sense 68897 (61 occ, sense 1 of 1)
+**Label:** (none)
+**Lemma gloss:** ede -- already, by this time; a temporal adverb marking completed or arrived time
+**Description:** (none)
+**Enriched:** A temporal adverb indicating that something has occurred or a state has been reached by the present moment, often with the nuance that this has happened sooner than anticipated. Key passages include Jesus's declaration that lustful looking 'already' constitutes adultery (Matt 5:28) and the disciples' observation that evening has 'already' come (Matt 14:15). Multilingual glosses converge tightly -- Spanish ya, French deja, German schon -- confirming a unified temporal-completive sense across all 61 occurrences.
+
+### G2784 / Sense 70675 (61 occ, sense 1 of 1)
+**Label:** proclaim, preach, herald
+**Lemma gloss:** kerusso -- to proclaim publicly, preach, herald; to announce a message with authority
+**Description:** To publicly proclaim or preach a message, especially the gospel or the kingdom of God, serving as a herald who announces authoritatively.
+**Enriched:** To publicly proclaim or herald a message with official authority, encompassing both John the Baptist's wilderness preaching of repentance (Matt 3:1) and Jesus's proclamation of the kingdom (Matt 4:17, 23). The word's etymological link to kerux ('herald') underscores that this is not casual conversation but authoritative announcement meant for wide hearing. Cross-lingual renderings -- Spanish predicar, French precher, German verkündigen -- consistently reflect the formal proclamation sense across all 61 occurrences.
+
+### G2962 / Sense 71286 (61 occ, sense 2 of 4)
+**Label:** master, lord (human authority)
+**Lemma gloss:** Lord, master, owner, sir: title of divine sovereignty, human authority, property ownership, or respectful address.
+**Description:** A human lord, master, or authority figure who exercises dominion over servants, slaves, or subordinates.
+**Enriched:** A human lord, master, or authority figure exercising dominion over servants, slaves, or subordinates. Jesus uses this sense in parables — 'no one can serve two masters' (Matt 6:24), 'a disciple is not above his master' (Matt 10:24). The slave-master relationship is literal and concrete here. French 'Seigneur' and Spanish 'señor' (lowercase in some traditions) mark the distinction from divine usage, though the boundary is often theologically blurred.
+
+### H0034 / Sense 79573 (61 occ, sense 1 of 1)
+**Label:** needy, poor, destitute
+**Lemma gloss:** evyon -- needy, poor, destitute; one who is materially impoverished and vulnerable
+**Description:** Describes a person or group in a state of material poverty, want, or neediness, used both as an adjective and substantively to refer to the poor as a social class deserving protection and justice.
+**Enriched:** A person in a state of severe material poverty and social vulnerability, used both adjectivally and substantively for the destitute who are subject to exploitation and who depend upon divine and communal protection. Prophetic texts like Amos 2:6 and 8:6 pair evyon with dal ('weak') to condemn economic oppression, while Deuteronomy 15:7-11 legislates open-handed provision for the evyon. Multilingual glosses -- Spanish necesitado, French necessiteux, German Armer -- uniformly point to material neediness across all 61 occurrences.
+
+### H0087 / Sense 79835 (61 occ, sense 1 of 1)
+**Label:** Abram (proper name)
+**Lemma gloss:** Avram -- Abram, the original name of the patriarch Abraham before the covenant renaming
+**Description:** The proper masculine name Abram (Hebrew אַבְרָם), the original name of the patriarch Abraham before God renamed him (Genesis 17:5). All 61 occurrences refer to the same individual with only prepositional/conjunctional variation. Multilingual translations are fully consistent: eng 'Abram', spa 'Abram/Avram', hin अव्रम, arb أَبْرَام, kor 아브람, swa 'Abramu'. The prepositional form (S79838 'in Abram') is a syntactic variant, not a distinct sense.
+**Enriched:** The proper masculine name of the patriarch before his covenantal renaming to Abraham in Genesis 17:5. The name likely means 'exalted father' (from av + ram), and its 61 occurrences cluster in Genesis 11-17, with retrospective mentions in 1 Chronicles 1:27 and Nehemiah 9:7. Cross-lingual uniformity is total -- Spanish Abram, French Abram, German Abram -- confirming a single proper-noun identity with no polysemy, the grammatical variation being limited to prepositional prefixes (with-Abram, to-Abram).
+
+### H0349a / Sense 81585 (61 occ, sense 1 of 1)
+**Label:** how! (exclamatory/interrogative adverb)
+**Lemma gloss:** ekh -- how! an exclamatory and interrogative adverb of manner, wonder, or lament
+**Description:** Exclamatory and interrogative adverb expressing astonishment, dismay, or rhetorical questioning about manner, used prominently in prophetic laments and wisdom literature ('How the mighty have fallen!'). English 'how / How / and–how / then–how,' Spanish 'cómo / Cómo / y–cómo / ¿y–cómo,' Hindi 'कैसे / और–कैसे,' Arabic 'كَيْفَ / وَكَيْفَ / وَ–كَيْفَ,' Korean '어찌 / 어떻게 / 그리고–어떻게,' Swahili 'jinsi–gani / Jinsi–gani / na–jinsi–gani / na–vipi.' Both clusters express the identical exclamatory-interrogative force; the only difference is presence (18x) or absence (43x) of the conjunctive waw prefix.
+**Enriched:** An exclamatory and interrogative adverb expressing manner, astonishment, dismay, or rhetorical protest. In lament contexts it opens cries of devastation -- 'How the mighty have fallen!' (2 Sam 1:19); 'How you have fallen from heaven!' (Isa 14:12). In interrogative use it frames expostulations of impossibility or protest: 'How can I alone bear your burden?' (Deut 1:12). Multilingual glosses -- Spanish como, French comment, German wie -- converge on a single manner-adverb function across all 61 occurrences.
+
+### H1516 / Sense 89957 (61 occ, sense 1 of 1)
+**Label:** valley, ravine
+**Lemma gloss:** gay -- valley, ravine; a geographic depression between hills, often in place names
+**Description:** A valley or ravine, used both as a common noun for geographic lowlands and in construct chains as part of proper place names (e.g., Valley of Hinnom, Valley of Salt); all 6 languages consistently translate with a single lexeme (eng 'valley', spa 'valle', hin 'घाटी', arb 'وادي', kor '골짜기/계곡', swa 'bonde') across singular, plural, definite, construct, and prepositional forms, confirming a single semantic sense.
+**Enriched:** A valley or ravine between hills or mountains, used both as a common geographic noun and as part of theologically significant place names. The most consequential compound is ge-hinnom, the Valley of Hinnom south of Jerusalem (Josh 15:8; 2 Kgs 23:10), whose association with child sacrifice and later refuse-burning became the source of the New Testament term Gehenna. Cross-lingual glosses -- Spanish valle, French vallee, German Tal -- map uniformly to a single geographic-depression concept across all 61 occurrences.
+
+### H1697 / Sense 91148 (61 occ, sense 3 of 7)
+**Label:** matter, affair, concern
+**Lemma gloss:** Word, speech, matter, thing, event; the Hebrew noun bridging spoken utterance and objective reality
+**Description:** A matter, affair, or issue of practical concern requiring attention or action (Arabic amr, Korean il, Swahili jambo), including legal cases, disputes, and situational affairs.
+**Enriched:** A matter, affair, or concern demanding practical attention. Arabic أَمْر, Korean 일, Swahili jambo mark this as a distinct semantic cluster. Covers legal cases (Gen 12:17, 'the LORD plagued Pharaoh because of the matter of Sarai'), situational problems (Gen 20:11), and administrative business (Gen 24:9). Context shifts davar from utterance to the thing being discussed.
+
+### H2275a / Sense 95359 (61 occ, sense 1 of 1)
+**Label:** Hebron (city)
+**Lemma gloss:** Chevron -- Hebron, an ancient city in the Judean hill country with deep patriarchal associations
+**Description:** A proper noun designating Hebron (also spelled Chevron), one of the oldest continuously inhabited cities in the ancient Near East, located in the hill country of Judah about 19 miles south of Jerusalem. Named from the root ch-b-r meaning 'association, league.' The city is prominent throughout Scripture: as the site of Abraham's encampment at the oaks of Mamre (Gen 13:18; 23:2, 19; 35:27; 37:14), a major Canaanite city conquered by Joshua (Josh 10:3ff; 14:13-15; 15:13, 54; 20:7; 21:11, 13), assigned as a Levitical city of refuge (Josh 21:11), David's royal capital during his seven-year reign over Judah (2 Sam 2:1-11; 3:2-32; 5:1-5, 13; 15:7-9), and a significant city in the tribal allotments (Num 13:22; 1 Chr 11:1-3; 16:18).
+**Enriched:** The proper name of the ancient city in the Judean highlands, associated with Abraham's settlement at the oaks of Mamre (Gen 13:18), the burial cave of Machpelah (Gen 23), and David's first royal capital (2 Sam 2:1-4; 5:1-5). Its 61 occurrences span patriarchal narrative, conquest accounts (Josh 10:3-5), tribal allotments (Josh 14:13-14), and Davidic history. Cross-lingual evidence -- Spanish Hebron, French Hebron/Chevron, German Hebron/Chevron -- confirms a single toponymic identity with no polysemy.
+
+### H2282 / Sense 95403 (61 occ, sense 1 of 2)
+**Label:** feast, festival, pilgrim-feast
+**Lemma gloss:** A sacred festival or pilgrim-feast, especially the three annual pilgrimage celebrations; by metonymy, the festal sacrifice itself.
+**Description:** A sacred festival or appointed feast, especially one of the three annual pilgrimage festivals (Unleavened Bread, Weeks, Tabernacles) but also any joyous religious celebration.
+**Enriched:** The primary sense designating a sacred festival or pilgrim-feast, especially the three annual pilgrimage festivals commanded in the Torah (Exod 23:14-17; Deut 16:14). Spanish 'fiesta,' French 'fête,' and German 'Fest' all converge on the celebratory dimension, while the Arabic cognate حَجّ preserves the original pilgrimage nuance. This covers 61 of 62 occurrences, including feasts to YHWH, idolatrous celebrations (Exod 32:5), and prophetic warnings against hollow festivals (Amos 5:21).
+
+### H2506a / Sense 97516 (61 occ, sense 1 of 3)
+**Label:** portion, share, allotment
+**Lemma gloss:** Portion, share, or allotted tract; one's assigned part of goods, land, or covenantal inheritance.
+**Description:** An allotted portion or share of something, whether material goods, food, spoils, or one's lot in life.
+**Enriched:** The broad, dominant sense: an allotted portion or share of something divisible — spoils of war (Gen 14:24), food offerings (Lev 6:17), or one's lot in life (Eccl 9:6, 9). The 61 occurrences span concrete distribution (Num 31:36, 'portion of the booty') to abstract destiny (Eccl 11:2, 'give a portion to seven'). Spanish parte, French part, and German Anteil all render this general distributive meaning. The preposition be- with heleq indicates 'having a share in' something, including political allegiance (2 Sam 20:1).
+
+### H2580 / Sense 97943 (61 occ, sense 1 of 2)
+**Label:** favor, goodwill
+**Lemma gloss:** Favor or goodwill, especially in the phrase 'find favor in one's eyes'; also grace, charm, or elegance as an attractive quality.
+**Description:** Favor or goodwill shown by a superior to an inferior, typically in the phrase 'find favor in the eyes of' (matsa chen be-ene), denoting acceptance, kindly regard, or gracious disposition toward someone; the dominant sense throughout the Pentateuch and historical books (Gen 6:8; 18:3; 19:19; 30:27; 32:5; 33:8; 39:4, 21; 47:25, 29; 50:4; Exod 3:21; 11:3; 12:36).
+**Enriched:** Favor or goodwill extended by a superior, overwhelmingly in the idiom matsa chen be-ene ('find favor in the eyes of'). This relational sense dominates the Torah narratives — Noah before God (Gen 6:8), Moses before Pharaoh (Exod 33:12-13), Ruth before Boaz (Ruth 2:2, 10, 13). The multilingual glosses converge uniformly: English 'favor,' Spanish 'gracia,' French 'grâce,' German 'Gnade' — all pointing to unmerited acceptance rather than inherent attractiveness.
+
+### H3423 / Sense 104250 (61 occ, sense 2 of 9)
+**Label:** Hifil: dispossess or drive out
+**Lemma gloss:** to possess, inherit, dispossess; taking possession of land (Qal), driving out inhabitants (Hifil), receiving inheritance (Qal), becoming poor (Nifal)
+**Description:** To drive out or dispossess inhabitants from their land by force (causative; Arabic: طَرَدَ tarada = expel; Korean: 쫓아내다 jjochaneda; Swahili: -fukuza; Hindi: निकालना).
+**Enriched:** The Hifil causative (61 occurrences) expresses forcible dispossession: driving out the Canaanites, Amorites, or other inhabitants. This sense dominates in conquest contexts (Numbers 14:24, 21:32, 33:52-53). Arabic tarada (to expel), Korean jjochaneda (to drive out), Swahili -fukuza (to expel) confirm the causative shift from taking possession to removing current occupants.
+
+### H8199 / Sense 143268 (61 occ, sense 2 of 6)
+**Label:** judge (person, office-holder)
+**Lemma gloss:** To judge, govern, vindicate, contend at law; as participle: judge (office-holder); Niphal: be judged, stand trial
+**Description:** The Qal active participle used as a substantive noun designating a person who holds the office of judge (shofet/shoftim), including singular, plural, and construct forms with possessive suffixes; Arabic qadin/qudat, Korean jaepangwan, Swahili hakimu/mwamuzi.
+**Enriched:** The Qal active participle lexicalized as the substantive 'judge' (shofet/shoftim). Sixty-one occurrences spanning judicial appointment (Deut 16:18), the divine title 'Judge of all the earth' (Gen 18:25), and the era's named officeholders. Arabic al-qadi, Spanish el juez, and German der Richter confirm fully nominalized status.
+
+### G0615 / Sense 62947 (60 occ, sense 1 of 2)
+**Label:** kill, put to death
+**Lemma gloss:** To kill or put to death; in passive forms, to be killed, slain, or martyred.
+**Description:** To cause the death of a person or animal by violent means; to slay, murder, or execute in active agency
+**Enriched:** To cause the death of a person or animal by violent, judicial, or hostile action — the active sense of killing or slaying. This dominant sense (60 occurrences) encompasses murder, execution, and prophetic violence. Multilingual glosses uniformly use active killing verbs: Spanish 'matar/mataron,' French 'tuer,' German 'töten.' Key passages include Jesus' teaching on fearless witness (Matt 10:28), the vineyard tenants killing the owner's servants (Matt 21:35), and Herod's desire to kill John the Baptist (Matt 14:5).
+
+### G4245 / Sense 75569 (60 occ, sense 1 of 4)
+**Label:** elder, community leader
+**Lemma gloss:** Elder; a community leader, ancestor, or older person — spanning official authority, ancestral honor, and comparative age.
+**Description:** A recognized leader or official in the Jewish or Christian community, used as a quasi-title for members of the Sanhedrin, synagogue leaders, or church overseers.
+**Enriched:** The dominant institutional sense: a recognized leader or official bearing the quasi-title 'elder' within Jewish or early Christian governance. In the Gospels, these elders conspire with chief priests against Jesus (Matt 16:21; 26:3); in Acts and the Epistles they shepherd local congregations. The multilingual evidence is remarkably stable — English 'elders,' Spanish 'ancianos,' French 'ancien,' German 'Älteste' — confirming a single well-understood social role across translation traditions.
+
+### G4521 / Sense 76272 (60 occ, sense 1 of 2)
+**Label:** Sabbath day of rest
+**Lemma gloss:** The Sabbath, the seventh day of rest and worship; by extension, the week as a unit of seven days measured from Sabbath to Sabbath.
+**Description:** The seventh day of the week observed as a day of rest and worship, including singular and plural forms referring to the same institution.
+**Enriched:** The Sabbath — the seventh day of the week consecrated for rest and worship, central to Jewish observance and to Jesus' controversies with religious authorities. Both singular and plural forms (sabbaton, sabbata) denote the same single day. The Synoptic Gospels concentrate usage around Sabbath healing disputes (Matt 12:1-12; Mark 2:23-3:6; Luke 6:1-11). French 'sabbat,' German 'Sabbat,' and Spanish 'sabado' all transliterate or derive directly from the Hebrew, reflecting the institution's universal recognition.
+
+### H0441b / Sense 82534 (60 occ, sense 1 of 1)
+**Label:** chief, clan leader
+**Lemma gloss:** alluph -- chief, clan leader; a tribal headman, especially of Edomite clans
+**Description:** A tribal chief or clan leader, especially of Edomite clans. Denominative from אֶלֶף II ('clan, thousand'). Used almost exclusively in the genealogical lists of Esau's descendants in Genesis 36 (vv. 15-43) and the parallel in 1 Chronicles 1:51-54, where it designates the heads of Edomite sub-clans: 'chief Teman, chief Omar, chief Zepho' etc. Also appears in Zechariah 9:7 and 12:5-6 for chiefs/clans of Judah. The construct plural אַלּוּפֵי ('chiefs of'), the suffixed forms אַלּוּפֵיהֶם ('their chiefs'), and the comparative כְּאַלּוּף ('like a chief,' Zech 9:7) are all inflectional variants of the same noun. Multilingual glosses consistently render as chief/leader (arb: أَمِير, deu: Hauptling, fra: chef, hin: सरदार).
+**Enriched:** A tribal chief or clan headman, used almost exclusively for the leaders of Edomite sub-clans in the genealogical register of Genesis 36 (vv. 15-43) and its parallel in 1 Chronicles 1:51-54. The term also appears in the Song of the Sea (Exod 15:15) where Edom's chiefs tremble, and in Zechariah 12:5-6 for the clans of Judah. Cross-lingual glosses -- Spanish jefe, French chef, German Häuptling -- consistently render it as a chieftain title across all 60 occurrences.
+
+### H0560 / Sense 83131 (60 occ, sense 1 of 3)
+**Label:** to say, speak, tell
+**Lemma gloss:** To say, speak, tell; to command or order; passively, to be said or called (Aramaic).
+**Description:** The basic sense of verbal communication: to utter words, declare, or relay information to someone.
+**Enriched:** The basic, overwhelmingly dominant sense of verbal communication — to say, speak, tell, or declare. This covers ordinary speech, responses in dialogue ('answered and said,' Dan 2:7), reporting information (Ezra 5:3-4, 9), and prophetic interpretation (Dan 2:25-26). Spanish 'dijo/decía,' French 'dit,' and German 'sprach' all render this straightforward communicative act. The verb appears in every conjugation and person across the Aramaic portions of Daniel and Ezra.
+
+### H1109a / Sense 86919 (60 occ, sense 1 of 1)
+**Label:** Balaam (personal name)
+**Lemma gloss:** Bil'am -- Balaam, the Mesopotamian prophet-diviner hired to curse Israel but compelled to bless
+**Description:** The Mesopotamian prophet/diviner Balaam son of Beor, hired by Balak king of Moab to curse Israel but compelled by God to bless them instead (Numbers 22-24). All occurrences — nominative, with prepositions (to/for Balaam), and with conjunctions — refer to a single individual. Multilingual evidence is unanimous: eng 'Balaam', spa 'Balaam', hin 'बिलआम', arb 'بِلْعَام', kor '발람', swa 'Balaamu'.
+**Enriched:** The proper name of the Mesopotamian prophet/diviner, son of Beor, hired by Balak of Moab to curse Israel but repeatedly compelled by God to bless them instead (Num 22-24). The Balaam cycle includes the famous talking-donkey episode (Num 22:28) and the messianic star oracle (Num 24:17). Later texts condemn him for the counsel that led Israel into idolatry at Baal-Peor (Num 31:16; cf. 2 Pet 2:15; Rev 2:14). Cross-lingual evidence -- Spanish Balaam, French Balaam, German Bileam -- confirms a single proper-noun referent across all 60 occurrences.
+
+### H1316 / Sense 88476 (60 occ, sense 1 of 1)
+**Label:** Bashan (territory)
+**Lemma gloss:** Bashan — the fertile highland region east of the Jordan, originally the kingdom of Og, famed for its cattle and oaks.
+**Description:** A proper territorial name designating the region of Bashan, east of the Jordan River, originally the kingdom of Og. The name refers to a fertile highland plateau encompassing modern-day Golan Heights and Hauran. Used throughout the Pentateuch, historical books, Psalms, and prophets with various prepositional prefixes (in Bashan, from Bashan, and Bashan) and the article, all denoting the same geographical territory.
+**Enriched:** The proper territorial name for the region of Bashan east of the Jordan, encompassing the modern Golan Heights and Hauran plateau — originally the kingdom of Og (Num 21:33; Deut 3:1-3), later a type of exceptional fertility. Its oaks, bulls, and cows became stock images of strength and abundance (Ps 22:12; Amos 4:1; Isa 2:13). All target languages transliterate rather than translate, confirming it functions as a fixed geographic proper noun.
+
+### H2199 / Sense 94770 (60 occ, sense 1 of 4)
+**Label:** cry out, call for help
+**Lemma gloss:** To cry out in distress or supplication; in the Nifal, to be summoned or assembled; in the Hifil, to call together or proclaim aloud.
+**Description:** Qal: to cry out in distress, anguish, or supplication; to call aloud to God or to another person for aid or attention.
+**Enriched:** The Qal sense: to cry out in distress, anguish, or supplication — calling aloud to God or to another person for help. This is the dominant usage at 60 occurrences, forming the backbone of the Judges deliverance cycle: Israel cries out under oppression (Judg 3:9, 15; 6:6), the Israelites cry out to God at the Red Sea (Exod 2:23), and Tamar cries out after her violation (2 Sam 13:19). Spanish 'clamar/clamaron,' French 'crier,' and German 'schreien' all converge on the vocalized urgency. The cry is always public, audible, and directed — not an internal groan but a shout that demands a response.
+
+### H2889 / Sense 99918 (60 occ, sense 1 of 4)
+**Label:** ritually or physically clean
+**Lemma gloss:** Clean or pure — ritually clean according to Levitical law, pure in material substance (e.g., pure gold), morally or spiritually pure, or purity as an abstract noun.
+**Description:** Describes persons, animals, places, or objects that are ceremonially clean or free from defilement according to Levitical law.
+**Enriched:** Ritual or ceremonial cleanness according to the Levitical system. Clean animals are distinguished from unclean for sacrifice and diet (Gen 7:2, 8:20, Lev 20:25, Deut 14:11); persons become clean after purification rites (Lev 13:13, 17; Num 9:13); places and vessels are designated clean for sacred use (Lev 4:12, 10:14). English 'clean,' Spanish 'limpio/limpia,' French 'pur,' and German 'rein' all serve this sense. The distinction between tahor and tame (unclean) structures much of Levitical theology (Lev 10:10, Ezek 22:26, 44:23).
+
+### H3847 / Sense 108368 (60 occ, sense 1 of 4)
+**Label:** Qal: put on, wear
+**Lemma gloss:** To put on or wear a garment; causatively to clothe someone; participially to be clothed in; passively to have been dressed
+**Description:** To put on or wear garments or coverings (Qal active): the subject dons clothing upon themselves, including all finite verb forms (perfect, imperfect, imperative, jussive, consecutive, infinitive) in the basic stem.
+**Enriched:** The active Qal sense: to put on, wear, or don a garment. The subject clothes themselves. This covers the majority of occurrences and spans everyday dressing (Gen 28:20), priestly investiture (Lev 6:10-11), and metaphorical clothing with attributes like righteousness or strength. Spanish vestirse and German bekleiden both reflect the reflexive dimension. The range of objects worn — linen, sackcloth, armor, splendor — makes this sense contextually versatile.
+
+### H4043 / Sense 109663 (60 occ, sense 1 of 3)
+**Label:** shield, defensive weapon
+**Lemma gloss:** Shield or buckler used in warfare; metaphorically, God as protector; rarely, an armed man or a ruler/patron.
+**Description:** A small defensive armament (shield, buckler) used in battle, often used metaphorically of God as protector, in all singular and plural inflections with possessive and conjunctive forms.
+**Enriched:** The dominant sense across 60 occurrences: a defensive shield or buckler used in combat, and by metaphorical extension, God as the believer's protector and defense. Concrete military uses span Judges 5:8, 2 Samuel 1:21, Nahum 2:3, and the arsenal passages in Chronicles. The metaphorical register — 'The LORD is my shield' (Gen 15:1; Ps 3:3; 18:2, 30; 28:7; 33:20; 84:11; 115:9-11) — is pervasive in the Psalter. Spanish escudo, French bouclier, Arabic ad-dir', German Schild, and Korean bangpae all cover both the physical weapon and the divine-protector image.
+
+### H4438 / Sense 112187 (60 occ, sense 1 of 3)
+**Label:** kingdom, realm
+**Lemma gloss:** Royalty, royal power, reign, or kingdom; the domain, exercise, or dignity of kingly rule (chiefly late Hebrew).
+**Description:** A political domain, territory, or sovereign state ruled by a king; the most common sense of מַלְכוּת, referring to a concrete or abstract kingdom as an entity.
+**Enriched:** The most frequent sense (about two-thirds of occurrences) designates a kingdom as a political entity or territorial domain—the realm over which a king exercises sovereignty. Spanish consistently renders 'reino,' French 'royaume,' and German 'Königreich.' Used of human kingdoms (1 Sam 20:31; 1 Kgs 2:12) and of God's universal kingdom (Ps 145:11-13). The cluster includes possessive constructions ('his kingdom,' 'kingdom of') showing the kingdom as belonging to a ruler.
+
+### H4782 / Sense 114213 (60 occ, sense 1 of 1)
+**Label:** Mordecai (Jewish leader in Persia)
+**Lemma gloss:** Mordecai — the Jewish leader in the Persian court, cousin and adoptive father of Esther, hero of the Purim narrative.
+**Description:** All four clusters refer to the same person Mordecai (Mordechai), the Jewish leader and cousin/adoptive father of Esther in the Persian court. The clusters differ only in grammatical prefixes: bare name, prepositional 'to/for,' conjunctive 'and,' and prepositional 'against.' Multilingual evidence is perfectly uniform: Arabic uses Murdakhai (مُرْدَخَايَ/مُرْدَخَايُ) throughout; Korean uses Moreudeugae (모르드개) in all clusters; Spanish uses Mardoqueo consistently; Hindi uses Mardakai (मर्दकै) in all; Swahili uses Mordekai throughout. This is one personal proper noun referring to a single biblical figure.
+**Enriched:** The personal name Mordecai, referring primarily to the Jewish leader in the Persian court who raises Esther and thwarts Haman's genocidal plot (Esth 2:5-7; 4:1-17; 8:1-2; 10:3), and secondarily to a figure listed among the returnees with Zerubbabel (Ezra 2:2; Neh 7:7). Possibly derived from the Babylonian divine name Marduk. All target languages transliterate rather than translate — Spanish Mardoqueo, French Mardochee — confirming its proper-noun status.
+

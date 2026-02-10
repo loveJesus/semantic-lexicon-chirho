@@ -1,0 +1,291 @@
+# Sense Refinement Detection — Batch 025
+
+You are a biblical lexicographer reviewing sense entries for a Hebrew/Aramaic/Greek lexicon.
+Each entry below is a single "sense" that was produced by clustering translation signatures 
+and then merging with an LLM. Some senses may have been OVER-LUMPED — they contain genuinely 
+distinct meanings that should be separate senses.
+
+## Your Task
+
+For each sense, determine if it should be SPLIT into multiple senses. Look for:
+- Literal vs. figurative/metaphorical uses lumped together
+- Concrete vs. abstract meanings combined
+- Multiple distinct referents (e.g., "father" = biological parent + patron/advisor + originator)
+- Physical vs. spiritual/theological uses merged
+- Different syntactic frames producing different meanings
+
+## Output Format
+
+Return a JSON array. For senses that need NO splitting, omit them entirely.
+For senses that SHOULD be split, include an entry like:
+
+```json
+[
+  {
+    "senseIdChirho": 79287,
+    "lemmaIdChirho": "H0001",
+    "currentLabelChirho": "father, immediate male parent",
+    "splitProposalChirho": [
+      {
+        "newLabelChirho": "biological/legal father",
+        "criteriaChirho": "Direct parent-child relationship, possessive constructions with specific person"
+      },
+      {
+        "newLabelChirho": "metaphorical father (patron, advisor, protector)",
+        "criteriaChirho": "Title of respect for prophets, advisors, or authority figures; 'father to Pharaoh' type usage"
+      }
+    ],
+    "confidenceChirho": "high",
+    "reasoningChirho": "Description explicitly mentions 'title of respect or metaphorical originator' alongside biological father"
+  }
+]
+```
+
+Only propose splits where you have MEDIUM or HIGH confidence. Do NOT split function words (articles, 
+prepositions, particles, conjunctions) unless there is a genuinely distinct semantic sense (not just 
+syntactic variation). Proper nouns generally should NOT be split.
+
+If NO senses in this batch need splitting, return an empty array: []
+
+## Senses to Review
+
+### G0782 / Sense 63525 (54 occ, sense 1 of 3)
+**Label:** greet, send greetings
+**Lemma gloss:** To greet or send greetings; to welcome or embrace warmly; to say farewell or take leave of someone.
+**Description:** To greet someone or send greetings, especially in epistolary contexts where the writer conveys salutations to or from individuals and churches.
+**Enriched:** To greet someone or send greetings, especially in epistolary contexts. This overwhelmingly dominant sense (54 of 60 occurrences) fills the closing sections of Paul's letters: 'Greet Prisca and Aquila' (Rom 16:3), 'All the saints greet you' (2 Cor 13:13). Spanish consistently uses 'saludad/saludaos' (the imperative greeting command), French 'saluer,' and German 'grüssen.' Jesus invokes this social convention in Matthew 5:47: 'If you greet only your brothers, what more are you doing?' -- suggesting that the act of greeting carried real social weight, not mere formality.
+
+### G1188 / Sense 65037 (54 occ, sense 1 of 1)
+**Label:** right (hand/side)
+**Lemma gloss:** dexios -- right (hand or side); the position of honor, power, and divine authority
+**Description:** The right hand or the right side, used both literally (the right hand or right side of the body, e.g., 'if your right hand causes you to sin') and positionally (the place of honor and authority, e.g., 'at the right hand of God'). All three clusters cover the same semantic concept with variation only in grammatical gender, case, and number (genitive plural, nominative/accusative singular/plural, accusative feminine plural). Spanish uses 'diestra/derecha/derecho' (right hand/right); Hindi uses 'दाहिने/दाहिनी ओर/दहिने' (dahine/dahini or, right/right side); Arabic uses 'يمين/اليمنى' (yamin/al-yumna, right); Korean uses '오른쪽/오른편/오른손' (oreunjjok/oreunpyeon/oreunson, right side/right hand); Swahili uses 'kulia/mkono wa kulia/kuume' (right/right hand).
+**Enriched:** The right hand or right side, encompassing literal bodily reference (Matt 5:29-30) and the theologically charged seat of divine authority. 'At the right hand of God' (Mark 16:19; Acts 2:33; Heb 1:3) draws on Ps 110:1 for Christ's exaltation. In Gal 2:9 it signifies partnership. Spanish diestra, French droite, and German rechte confirm a single concept across 54 occurrences.
+
+### G1223 / Sense 65192 (54 occ, sense 2 of 7)
+**Label:** because of, on account of
+**Lemma gloss:** Through, by means of; because of; why?; during; for the sake of; after; therefore — preposition of mediation and cause
+**Description:** Causal ground or reason for an action or state, indicating the cause that motivates or explains what follows.
+**Enriched:** Causal ground with the accusative: 'because of, on account of,' indicating the reason or motive behind an action. Matt 13:58 'he did not do many miracles there because of their unbelief'; Matt 12:31 'because of this I say to you.' Spanish por, French à cause de, and German wegen signal causation rather than instrumentality, and the accusative case is diagnostic.
+
+### G2440 / Sense 69475 (54 occ, sense 1 of 2)
+**Label:** garment or clothing (general)
+**Lemma gloss:** An outer garment or cloak; more broadly, clothing or garments in general, often used in the plural for one's clothes.
+**Description:** Clothing or garments in a general sense, referring to what one wears without specifying the outer cloak in particular, frequently used in the plural for 'clothes' or 'garments'.
+**Enriched:** Clothing or garments in a general, non-specific sense, frequently appearing in the plural to mean 'clothes' or 'what one wears.' This is the dominant usage across 54 occurrences. Spanish 'vestidos/vestiduras,' French 'vêtement,' and German 'Kleider' all render this generically. Key passages include the woman touching Jesus' garments (Matt 9:20), old garments receiving new patches (Matt 9:16), and crowds spreading clothes on the road (Matt 21:8).
+
+### G3137 / Sense 71933 (54 occ, sense 1 of 1)
+**Label:** Mary / Mariam (proper name)
+**Lemma gloss:** Maria / Mariam -- Mary; the name of several women in the NT including the mother of Jesus and Mary Magdalene
+**Description:** The proper name Maria/Mariam, referring to several women in the NT including Mary the mother of Jesus, Mary Magdalene, Mary of Bethany, and others. The two clusters represent different grammatical cases of the same indeclinable or lightly declined proper noun: S71933 covers nominative, genitive, accusative, vocative, and dative (52x) while S71934 covers accusative and dative in oblique constructions (2x). All translations use the same name form: eng 'Mariam/Maria,' spa 'Maria/Mariam,' hin Mariyam (मरियम), arb Maryam (مَرْيَم), kor Maria (마리아), swa 'Maria/Mariam.'
+**Enriched:** The name Mary/Mariam, shared by several New Testament women. Chief is Mary the mother of Jesus (Matt 1:16; Luke 1:27; Acts 1:14), followed by Mary Magdalene (Mark 16:1; John 20:1-18), Mary of Bethany (Luke 10:39), and Mary wife of Clopas (John 19:25). The two Greek forms carry no semantic distinction. Spanish Maria, French Marie, and German Maria confirm uniform treatment.
+
+### G4098 / Sense 74772 (54 occ, sense 1 of 5)
+**Label:** fall down, prostrate oneself
+**Lemma gloss:** To fall; physically dropping or collapsing, prostrating oneself in worship, stumbling morally, or being destroyed.
+**Description:** To fall to the ground, especially in reverence, worship, or submission before someone, often rendered as prostrating oneself.
+**Enriched:** To fall down in prostration, worship, or reverent submission — by far the dominant sense at 54 occurrences. The Magi fall before the child Jesus (Matt 2:11), the leper falls before him pleading for healing, and in Revelation worshippers repeatedly fall before the throne. Greek consistently uses pipto with epi prosopon ('on one's face') or pros tous podas ('at the feet') as collocational markers. Korean 엎드리다 ('to prostrate, bow face-down') and Arabic سَجَدَ ('to prostrate in worship') both select reverence-specific vocabulary rather than generic 'fall' words, confirming this as a lexicalized ritual sense distinct from mere physical dropping.
+
+### G4103 / Sense 74879 (54 occ, sense 1 of 2)
+**Label:** faithful, trustworthy, reliable
+**Lemma gloss:** Faithful, trustworthy, reliable (passive: worthy of trust); also believing, a believer (active: one who exercises faith).
+**Description:** Passive sense: worthy of trust or belief; dependable, steadfast, loyal — used of God, persons, or sayings that can be relied upon.
+**Enriched:** Passive sense: faithful, trustworthy, dependable — describing persons, God, or statements that can be relied upon. The parables of Jesus prize the pistos servant who manages resources well (Matt 24:45; 25:21, 23). Paul applies it to God's character (1 Cor 1:9; 10:13; 1 Thess 5:24) and to doctrinal formulas ('faithful is the saying,' 1 Tim 1:15; 2 Tim 2:11). The multilingual uniformity is striking: English 'faithful,' Spanish 'fiel,' French 'fidele,' German 'treu' — all encode reliability and steadfastness.
+
+### G5550 / Sense 79095 (54 occ, sense 1 of 1)
+**Label:** time, period, duration
+**Lemma gloss:** time, period, duration — a measurable span of time, as distinct from a decisive moment (kairos)
+**Description:** Chronos denotes time as a measurable extent or duration, in contrast to kairos which emphasizes the qualitative character of a moment. It appears in the NT both in singular ('a long time,' 'after some time,' 'the time of the star,' Matt 2:7, 2:16) and in plural ('times,' 'periods,' Luke 8:29, 20:9, Acts 1:7, 1 Pet 1:20, Jude 18). The semantic content is uniform across all occurrences: Arabic 'zaman / azminah,' Hebrew 'zman / z'manim,' Korean 'ttae / shigan,' Hindi 'samay,' German 'Zeit,' Spanish 'tiempo/tiempos,' French 'temps.' The auto-clustering split singular from plural and isolated two single occurrences, but these are purely grammatical number distinctions, not different lexicographic senses. Whether referring to the duration Herod inquired about (Matt 2:7), the long time a demoniac suffered (Luke 8:29), or the times and seasons God has set (Acts 1:7), the underlying concept of temporal duration remains constant.
+**Enriched:** Time conceived as a measurable extent, duration, or period — the stretch of time that can be long or short, counted or estimated, elapsed or anticipated. Covers temporal spans in narrative ('after a long time,' Matt 25:19), inquiries about duration (Mark 9:21), and theological periodization ('the times of ignorance,' Acts 17:30). Distinguished from kairos by its emphasis on quantity rather than quality, on the clock rather than the moment. All 54 occurrences share this single durational sense.
+
+### H0433 / Sense 82497 (54 occ, sense 1 of 3)
+**Label:** God, the true God
+**Lemma gloss:** God or a god; a singular poetic form especially frequent in Job, also used for pagan deities in late biblical texts.
+**Description:** Eloah as a designation for the one true God, used especially in Job and poetic texts as a singular form parallel to Elohim.
+**Enriched:** The one true God of Israel. This is by far the dominant usage, carrying the full theological weight of the divine name in poetic register. Job alone accounts for most occurrences, where Eloah appears in speeches by Job, Elihu, and the divine speeches themselves (e.g., Job 3:4, 3:23). Spanish consistently renders it 'Dios' with a capital D, French 'Dieu,' and German 'Gott,' all indicating an unambiguous reference to the supreme deity. The choice of this singular form over Elohim lends a personal, intimate quality to the poet's address.
+
+### H1168a / Sense 87463 (54 occ, sense 1 of 2)
+**Label:** Baal (the deity)
+**Lemma gloss:** Baal — the Canaanite storm deity; in the plural Baalim, the various local cult manifestations of Baal worship.
+**Description:** The Canaanite storm deity Baal, referred to in the singular as the specific god whose worship rivaled YHWH worship in Israel and Judah.
+**Enriched:** The singular Canaanite deity Ba'al, the storm god whose worship rivaled YHWH. All translations treat this as a proper name: spa. el-Baal, fra. le-Baal, deu. der-Baal, with the definite article marking the specific god. Elijah's challenge on Carmel (1 Kgs 18:21) and Gideon's destruction of Baal's altar (Judg 6:25-32) are defining passages.
+
+### H1581 / Sense 90437 (54 occ, sense 1 of 1)
+**Label:** camel (domestic animal)
+**Lemma gloss:** camel — the domesticated one-humped beast of burden, a marker of wealth and travel in the ancient Near East
+**Description:** The one-humped domesticated camel (Camelus dromedarius), used as a beast of burden and measure of wealth in the ancient Near East. All 23 clusters represent the same referent split only by grammatical inflection (article, conjunction, preposition, pronominal suffix, number, construct state, and feminine plural). Cross-linguistic evidence is uniform: eng camel/camels, spa camello/camellos, hin ऊँट/ऊँटों, arb جَمَل/جِمَال, kor 낙타, swa ngamia. The feminine plural form (sense 90449, spa 'Camellas', hin ऊँटनियाँ) denotes she-camels but is the same lexical sense, not a distinct meaning.
+**Enriched:** The one-humped domesticated camel used for long-distance transport, trade caravans, and as a measure of pastoral wealth. Appears throughout patriarchal cycles (Gen 12:16; 24:10-64), in Mosaic dietary law as an unclean animal (Lev 11:4; Deut 14:7), and in later narratives of trade and warfare. All 54 occurrences denote the same animal referent; grammatical variants (construct, suffixed, plural) reflect syntax rather than semantic differentiation.
+
+### H1706 / Sense 91298 (54 occ, sense 1 of 1)
+**Label:** honey
+**Lemma gloss:** honey — the sweet substance produced by bees, also used of fruit syrup and as a figure for sweetness
+**Description:** Honey as a natural sweet substance, used literally of bee honey and figuratively of sweetness; the concrete noun devash in all grammatical constructions (with articles, prepositions, pronominal suffixes).
+**Enriched:** Honey as a natural sweet substance, encompassing bee honey found wild in rocks and forests (Deut 32:13; Judg 14:8-9) and possibly date-honey or fruit syrup as a trade commodity (Gen 43:11; Ezek 27:17). Used literally as food and figuratively for the sweetness of divine speech (Ps 19:10) and the covenant promise of agricultural abundance ('flowing with milk and honey,' Exod 3:8). All 54 occurrences share this unified sweet-substance sense; the Arabic cognate dibs points to the fruit-syrup extension already present in the Semitic root.
+
+### H2001 / Sense 93400 (54 occ, sense 1 of 1)
+**Label:** Haman (proper name, Persian official)
+**Lemma gloss:** Haman — the Agagite official who plotted the destruction of the Jews in the Book of Esther
+**Description:** The proper name הָמָן referring to Haman the Agagite, the chief antagonist in the Book of Esther who plotted to destroy the Jewish people. All 54 occurrences refer to this single individual, whether appearing bare, with prepositions (to-Haman, from-Haman), or with the conjunction waw (and-Haman). Translated as English 'Haman,' Spanish 'Aman,' Hindi 'Haman' (हामान), Arabic 'Hamanu' (هَامَانُ), Korean 'Haman' (하만), Swahili 'Hamani.' The split between bare and conjunctive forms is purely syntactic, not semantic.
+**Enriched:** The proper name Haman (Hebrew haman), referring exclusively to Haman the Agagite, the antagonist of the Esther narrative who obtained a royal decree to annihilate the Jewish people (Esth 3:8-11) and was ultimately hanged on his own gallows (Esth 7:10). All 54 occurrences appear within the Book of Esther and refer to this single individual across all syntactic forms — nominative, prepositional, and conjunctive.
+
+### H2114a / Sense 94243 (54 occ, sense 1 of 5)
+**Label:** stranger, foreigner (person)
+**Lemma gloss:** To be strange or foreign; as participle: a stranger, outsider, foreigner, or alien — one who does not belong to the family, community, or covenant.
+**Description:** A person who is foreign, alien, or an outsider — used substantively or attributively of people who do not belong to the community or family.
+**Enriched:** The dominant participial use, functioning as a substantive noun: a stranger, foreigner, or unauthorized outsider. The multilingual evidence is remarkably consistent — Spanish extraños, French étranger, German Fremder all converge on the core meaning of social and ritual exclusion. In Levitical contexts (Lev 22:10, 12, 13; Exod 29:33), this denotes anyone outside the priestly household who is forbidden to eat holy offerings. In broader usage (Isa 29:5; Hos 5:7), it refers to foreign enemies or those outside the covenant community.
+
+### H3837a / Sense 108325 (54 occ, sense 1 of 1)
+**Label:** Laban (person)
+**Lemma gloss:** Laban — the Aramean patriarch, brother of Rebekah and father-in-law of Jacob
+**Description:** The proper noun Laban (לָבָן II), referring to the Aramean patriarch, son of Bethuel and brother of Rebekah, who lived in Paddan-Aram (Haran). He is primarily known as the father of Leah and Rachel, and the father-in-law of Jacob. All 54 occurrences across Genesis 24-31 refer to this same individual in various grammatical constructions: nominative and accusative (Laban, 50x), with conjunctive waw (and-Laban, 3x), and with preposition beth (with-Laban, 1x). Multilingual translations uniformly render a single referent: spa 'Lavan/a Lavan', hin 'लाबान/लाबान-ने', arb 'لَابَانُ/لَابَانَ', kor '라반이/라반의', swa 'Labani/kwa Labani'. The prepositional and conjunctive variations are purely syntactic and do not indicate different senses.
+**Enriched:** The proper noun Laban (lavan, 'white'), son of Bethuel and grandson of Nahor, known primarily as the father of Leah and Rachel, and as Jacob's father-in-law and employer in Paddan-Aram (Gen 29-31). Also appears as Rebekah's brother in the betrothal narrative (Gen 24:29-50). All 54 occurrences refer to this single patriarch; the epithet 'the Aramean' (ha-Arammi) in several passages emphasizes his non-Israelite lineage and geographic setting.
+
+### H4886 / Sense 114565 (54 occ, sense 1 of 3)
+**Label:** anoint ceremonially for consecration
+**Lemma gloss:** To smear or anoint with oil; especially to consecrate kings, priests, and sacred objects; also to apply paint or cosmetic oil.
+**Description:** To apply oil ritually to a person (king, priest, prophet) or sacred object (tabernacle, altar) in order to consecrate or set apart for divine service.
+**Enriched:** Ritual anointing to consecrate a person or sacred object for divine service. This dominant sense covers kings (1 Sam 9:16; 16:3), priests (Exod 28:41; 29:7), prophets (1 Kgs 19:16), and cultic objects such as the tabernacle, altar, and vessels (Exod 30:26; 40:9-11). Spanish 'ungir' and French 'oindre' both carry the sacral connotation, while German 'salben' preserves the oil-application root. The act signifies divine election and empowerment.
+
+### H4931 / Sense 114902 (54 occ, sense 1 of 6)
+**Label:** charge, assigned duty
+**Lemma gloss:** Guard, watch, charge, duty; an obligation or post of responsibility, especially Levitical service; also custody, safekeeping, and divine ordinance.
+**Description:** An assigned obligation, responsibility, or service duty, especially the Levitical charge of guarding or maintaining the tabernacle/temple and its furnishings.
+**Enriched:** Assigned charge, sacred duty — the dominant sense at 54 occurrences, overwhelmingly in the Levitical legislation of Numbers and Chronicles. The Levites are charged with mishmeret ha-mishkan, the 'charge of the tabernacle' (Num 1:53; 3:7-8, 25, 28, 31, 32, 36, 38), covering everything from the curtains and frames to the altar vessels. Each clan — Gershonites, Kohathites, Merarites — receives its specific mishmeret. Spanish encargo de ('charge of') and French charge de match the obligation semantics precisely. The word implies both privilege and accountability: to hold a mishmeret is to be entrusted with something worth guarding.
+
+### H5045 / Sense 115734 (54 occ, sense 1 of 3)
+**Label:** south, cardinal direction
+**Lemma gloss:** The south as a cardinal direction; also the Negev, the specific arid region south of Judah.
+**Description:** The cardinal direction south or southward, used as a general geographic orientation rather than referring to the specific Negev region.
+**Enriched:** The cardinal direction south or southward, used for general geographic orientation without specific reference to the Negev region. This appears in tabernacle construction (Exod 26:18; 27:9; 36:23; 38:9; 40:24), tribal boundary descriptions (Josh 15:1; 18:5), and directional phrases like 'north and south' (Gen 13:14; 28:14). French 'sud,' Spanish 'al-sur,' and German 'Sueden' all render this as a pure compass direction.
+
+### H6566 / Sense 128785 (54 occ, sense 1 of 6)
+**Label:** spread out, stretch forth
+**Lemma gloss:** To spread out, extend, stretch forth; of hands in prayer, wings in flight, garments, nets, and coverings; in Piel, to spread intensively or scatter.
+**Description:** Qal active: to spread out or stretch forth (hands in prayer, wings, garments, nets, a scroll), the primary and most common sense of the verb covering all Qal active finite and participial forms.
+**Enriched:** Qal active: to spread out, stretch forth, extend — the dominant sense covering 54 of 67 occurrences. This encompasses spreading hands in prayer (Exod 9:29, 33; 1 Kgs 8:22; Ezra 9:5), wings being spread in flight or covering (Exod 37:9; Deut 32:11; 1 Kgs 6:27), garments laid out (Judg 8:25; Deut 22:17), nets spread for trapping (Hos 7:12; Ezek 12:13), and coverings extended. Spanish extender, German ausbreiten, and French etendre all converge on the same physical-extension semantics. The breadth of objects spread — hands, wings, cloth, nets, scrolls — is unified by the shared kinesthetic image of opening outward from a center.
+
+### H7896 / Sense 140080 (54 occ, sense 1 of 6)
+**Label:** place, set, put
+**Lemma gloss:** To put, set, place; to make or render into a state; to appoint; passive: to be placed or imposed
+**Description:** To place or set an object, person, or abstract entity in a location or position (Qal active, core spatial/positional sense; Arabic وَضَعَ/أَضَعُ, Korean 놓다/두다, Swahili -weka).
+**Enriched:** The core spatial-positional sense of placing, setting, or putting an object, person, or abstract entity in a specific location — covering 54 of 86 occurrences across Qal active forms. God sets enmity (Gen 3:15), Eve names her son for the seed God 'placed' (Gen 4:25), and Jacob sets his face toward Gilead (Gen 31:21). Arabic wada'a, Korean nohda/duda, and Swahili -weka all converge on this foundational sense of deliberate positioning. The breadth of objects placed — from physical items to abstract trust (Ps 73:28) — shows how spatial placement anchors the entire semantic field.
+
+### H8672 / Sense 145938 (54 occ, sense 1 of 2)
+**Label:** nine (cardinal number)
+**Lemma gloss:** Nine (cardinal numeral); in temporal formulas with בְּ, ninth (ordinal sense)
+**Description:** The cardinal numeral nine, used independently or in compound numbers (nineteen, twenty-nine, nine hundred, etc.), in both masculine and feminine forms, with or without conjunction waw and various prepositions.
+**Enriched:** The cardinal numeral 'nine,' attested 54 times across genealogies (Gen 5:5, 5:8, 5:11), censuses, and compound numbers. Translations uniformly render it as 'nine/nueve/neuf/neun,' with no semantic ambiguity. It appears in both independent and compound constructions (969 years in Gen 5:27, nineteen in various tallies), always carrying straightforward numerical value.
+
+### H???? / Sense 145991 (54 occ, sense 17 of 94)
+**Label:** (none)
+**Lemma gloss:** (none)
+**Description:** (none)
+**Enriched:** (none)
+
+### G0071 / Sense 61230 (53 occ, sense 1 of 5)
+**Label:** bring, lead, take (physically)
+**Lemma gloss:** To lead, bring, or take; escort a person; intransitively, to go; figuratively, to guide or direct.
+**Description:** To physically bring, lead, or take a person from one place to another, whether toward the speaker (bring, fetch) or away (lead, take), including leading before authorities, escorting under arrest, and being led or taken passively; the core transitive sense of conducting someone along a path.
+**Enriched:** The dominant physical sense: to bring, lead, or take a person from one place to another — over three-quarters of all occurrences. Includes bringing toward the speaker (Matt 21:7, the donkey), leading away (Luke 4:1, the Spirit taking Jesus into the wilderness), and escorting under arrest (Mark 13:11). Spanish distinguishes trajeron ('brought toward') from llevaron ('took away'), revealing directional flexibility. German fuehren and French conduire preserve the personal-escort dimension.
+
+### G1352 / Sense 65688 (53 occ, sense 1 of 1)
+**Label:** therefore
+**Lemma gloss:** therefore, wherefore — an inferential conjunction drawing a strong conclusion from stated premises
+**Description:** therefore, Therefore (53 occurrences across 2 original clusters)
+**Enriched:** A strong inferential conjunction meaning 'wherefore' or 'for which reason,' introducing a conclusion that follows necessarily from the preceding argument or narrative. Heavier than oun, it marks climactic inferences in theological reasoning (Rom 1:24 'therefore God gave them over'; Phil 2:9 'therefore God exalted him') and decisive exhortations (1 Cor 10:14 'therefore flee idolatry'). All 53 occurrences serve this single causal-inferential function, sometimes strengthened by kai (dio kai, 'therefore also').
+
+### G1544 / Sense 66586 (53 occ, sense 1 of 6)
+**Label:** cast out / expel forcibly
+**Lemma gloss:** To cast out, expel (esp. demons); to throw out, eject; to take out, extract; to bring forth, produce; to send out
+**Description:** Active transitive use denoting forceful expulsion of demons, persons, or entities from a place or community; the dominant sense of ekballo covering exorcism, excommunication, and driving out. English 'cast out / drove out / expel,' Spanish 'echó fuera / expulsó,' Arabic أَخرَجَ / طَرَدَ, Korean 쫓아내다 / 내쫓다, Swahili -toa / -fukuza.
+**Enriched:** The dominant active sense of forceful expulsion — casting out demons, driving out persons, or ejecting entities from a place or community. Fifty-three occurrences make this the overwhelming core of ekballo in the New Testament, covering Jesus' exorcisms (Matt 8:16; Mark 1:34; Luke 11:14), the disciples' commission to cast out demons (Matt 10:1; Mark 3:15; 6:13), and the removal of persons from assemblies or communities (John 9:34-35; 3 John 1:10). Spanish echar fuera, French chasser, and German austreiben all preserve the forceful outward trajectory. The Beelzebul controversy (Matt 12:24-28) makes this sense a theological flashpoint: by whose authority does one ekballo?
+
+### G1680 / Sense 67015 (53 occ, sense 1 of 1)
+**Label:** (none)
+**Lemma gloss:** hope, expectation — confident anticipation of a future good, grounded in trust or promise
+**Description:** (none)
+**Enriched:** Confident expectation of a future good, especially as grounded in divine promise or the resurrection of Christ. Central to Pauline theology as one of the abiding triad (1 Cor 13:13) and the anchor of the soul (Heb 6:19). Appears as the content of hope ('the hope of glory,' Col 1:27), the subjective act of hoping (Rom 8:24 'hope that is seen is not hope'), and the objective basis of hope (Acts 23:6 'the hope of the resurrection'). All 53 occurrences share this anticipatory sense, though Acts 16:19 extends it to secular expectation of financial gain.
+
+### G3361 / Sense 72361 (53 occ, sense 3 of 6)
+**Label:** interrogative negative (expects 'no')
+**Lemma gloss:** Not (subjective negation); lest; emphatic never; interrogative expecting 'no'; except; perhaps.
+**Description:** Negative particle introducing questions that expect a negative answer or express surprise: 'surely not?', 'is it not the case that...?'
+**Enriched:** Interrogative use expecting a negative answer: 'surely not?', 'it cannot be that...?' In Matt 7:9 — 'What man among you, if his son asks for bread, will give him a stone?' The expected answer is 'no one.' French est-ce que...ne...pas and Spanish acaso signal the rhetorical force.
+
+### G3780 / Sense 73618 (53 occ, sense 1 of 1)
+**Label:** not? (rhetorical/interrogative negation)
+**Lemma gloss:** not? do not? — a rhetorical negative particle expecting an affirmative answer
+**Description:** Strengthened form of ou used in rhetorical questions expecting an affirmative answer ('is it not so?', 'do you not know?') and emphatic negations. Spanish '¿no' and 'no' serve both interrogative and declarative negation. Hindi 'क्या-नहीं' (is-it-not?) marks the interrogative force explicitly. Arabic 'أَلَيْسَ/أَلَيسَ' (is-it-not?) is a dedicated rhetorical interrogative form, while 'كَلَّا' (certainly not!) and 'لَيْسَ' (it-is-not) serve emphatic denial. Korean '아니냐' (is-it-not?) and '않았느냐' (did-not?) both encode the rhetorical question. Swahili 'si/je' (not/question-marker) pair for questions, while 'hapana' serves standalone denial. S73623 with 'not-also' is a compound usage of the same interrogative particle. All three clusters represent the single emphatic interrogative negation particle across 53 occurrences, differing only in syntactic context.
+**Enriched:** A strengthened negative particle (ou + chi) employed in rhetorical questions that anticipate an affirmative answer, effectively functioning as an appeal for agreement rather than a true negation. Jesus uses it repeatedly in the Sermon on the Mount to challenge minimalist ethics (Matt 5:46-47 'do not even the tax collectors do the same?') and to argue from lesser to greater (Matt 6:25-26 'is not life more than food?'). All 53 occurrences serve this rhetorical-interrogative function, distinguishing ouchi from the plain declarative negative ou.
+
+### H2319 / Sense 95582 (53 occ, sense 1 of 1)
+**Label:** new, fresh
+**Lemma gloss:** new, fresh — recently made, not previously existing, or renewed in quality and purpose
+**Description:** An adjective meaning new, fresh, or recently made, applied broadly to things not previously existing or recently acquired. Used of a new king who did not know Joseph (Exod 1:8), new grain offerings (Lev 23:16; Num 28:26), a new house (Deut 20:5; 22:8), a newly married man (Deut 24:5), new ropes (Judg 15:13; 16:11-12), a new cart (1 Sam 6:7; 2 Sam 6:3), new gods recently arrived (Deut 32:17; Judg 5:8), new garments (Josh 9:13), a new song of praise to YHWH (Ps 33:3; 40:3; 96:1; 98:1; 144:9; 149:1; Isa 42:10), new things God declares before they spring forth (Isa 42:9; 43:19; 48:6), a new covenant (Jer 31:22, 31), new mercies every morning (Lam 3:23), and a new heart and spirit (Ezek 11:19; 18:31; 36:26). The substantivized feminine plural chadashot means 'new things' in prophetic contexts.
+**Enriched:** An adjective denoting what is recently made, previously nonexistent, or qualitatively renewed. Applied to physical objects (a new house, Deut 20:5; new wineskins, Job 32:19), to persons and powers (a new king, Exod 1:8; new gods, Deut 32:17), and to theological realities of supreme importance — the new covenant (Jer 31:31), the new song of redemptive praise (Ps 33:3; 96:1; 149:1), and the new things God declares before they spring forth (Isa 42:9; 48:6). All 53 occurrences share the core semantic of novelty, whether physical freshness or eschatological renewal.
+
+### H2617a / Sense 98145 (53 occ, sense 2 of 6)
+**Label:** Kindness, goodness
+**Lemma gloss:** Covenant faithfulness, steadfast love, mercy, kindness; God's loyal love toward his people and human kindness between persons.
+**Description:** Interpersonal kindness or benevolence shown between humans, often in social or relational contexts where the emphasis is on generous, gracious conduct (Arabic ihsan, Korean chinjeol, Swahili wema).
+**Enriched:** Interpersonal kindness and benevolence between humans — 53 occurrences, concentrated in Genesis and the narrative books. Abraham asks Abimelech to 'deal kindly' (Gen 20:13); the spies promise Rahab chesed (Josh 2:12). Here the relational, horizontal dimension dominates over the vertical/divine. Arabic ihsan ('doing good to others') and Swahili wema ('goodness') both select human-to-human beneficence vocabulary, distinguishing this from God's covenantal faithfulness.
+
+### H2977 / Sense 100574 (53 occ, sense 1 of 1)
+**Label:** Josiah, king of Judah
+**Lemma gloss:** Josiah — the reforming king of Judah who rediscovered the Book of the Law and purged idolatry
+**Description:** Proper name Yoshiyahu (יֹאשִׁיָּהוּ), the righteous king of Judah who instituted major religious reforms (2 Kings 22-23); both bare nominative and prepositional (le-) forms refer to the same individual. Cross-linguistically uniform: Spanish Josías, Hindi योशिय्याहू, Arabic يُوشِيَّاهُو, Korean 요시야, Swahili Yosia — all rendering the same personal name across grammatical contexts.
+**Enriched:** The proper name Yoshiyahu (Josiah), referring to the son of Amon who reigned as king of Judah from approximately 640 to 609 BC. Prophetically named a generation before his birth (1 Kgs 13:2), he is celebrated for the Deuteronomic reforms of 621 BC (2 Kgs 22-23) and remembered as the king who turned to the LORD with all his heart, soul, and might (2 Kgs 23:25). All 53 occurrences — including the prepositional form le-Yoshiyahu — refer to this single individual. Zechariah 6:10 mentions a returned exile of the same name, but that occurrence falls under the alternate form.
+
+### H3381 / Sense 103825 (53 occ, sense 2 of 9)
+**Label:** Hifil: to bring down, take down (persons/objects)
+**Lemma gloss:** to go down, descend, bring down; physical descent from higher to lower place, including persons, liquids, and objects
+**Description:** The Hifil causative of yarad meaning to bring down, take down, or lead down persons or objects from a higher place, including bringing someone down from a wall, lowering objects, or escorting someone downward.
+**Enriched:** The Hifil causative (53 times) shifts agency: bringing someone or something down from a higher place. Passages include Genesis 24:18 (lowering a jar), 37:25 (taking Joseph to Egypt), 42:38 (bringing Benjamin down). Translations uniformly render causative morphology: brought down, hizo descender, apporte en bas, bringt hinab.
+
+### H3407 / Sense 104163 (53 occ, sense 1 of 2)
+**Label:** curtain, tent panel
+**Lemma gloss:** A curtain or cloth panel, especially of the tabernacle or a tent; by extension, the dwelling itself.
+**Description:** A curtain or panel of cloth, especially the curtains of the tabernacle or a tent, used in both literal and figurative contexts.
+**Enriched:** A curtain or panel of cloth, particularly the woven strips forming the tabernacle walls or a tent covering. This accounts for nearly all occurrences (53x). The tabernacle instructions in Exodus 26 alone use it over 30 times. Spanish 'la cortina,' French 'le rideau,' and German 'der Vorhang' all render the textile sense. Beyond the tabernacle, the word appears in figurative contexts: Ps 104:2 compares the heavens to a curtain; Isa 54:2 uses expanding curtains as a metaphor for Jerusalem's restoration; Song 1:5 likens beauty to the curtains of Solomon.
+
+### H3498 / Sense 105075 (53 occ, sense 1 of 4)
+**Label:** the remaining, remnant (Nifal participle)
+**Lemma gloss:** To remain over, be left, survive; in Hifil, to leave remaining, preserve alive, or cause to abound and exceed.
+**Description:** Nifal participle used substantivally (usually with the article) to denote the remainder, the remnant, or the surviving ones/things.
+**Enriched:** The Nifal participle used as a substantive meaning 'the remainder,' 'the rest,' or 'the remnant' — functioning essentially as a noun. At 53 occurrences this is the most frequent usage, appearing in ritual instructions about leftover offerings (Exod 12:10; Lev 2:3), lists of remaining tribes or territories (Exod 28:10), and historical summaries of surviving peoples. Spanish lo sobrante/la restante and German der Rest confirm the nominal, 'leftover' quality of this participle. French sometimes paraphrases with le remaining, showing the challenge of capturing the substantival force.
+
+### H4082 / Sense 109843 (53 occ, sense 1 of 1)
+**Label:** province, administrative district
+**Lemma gloss:** Province or administrative district of an empire, especially the territorial divisions of the Persian and Babylonian realms.
+**Description:** A province or administrative district, especially one of the territorial subdivisions of the Persian or Babylonian empire, used for both the singular jurisdiction and the collective provinces of a realm.
+**Enriched:** A governed territorial subdivision within an empire. The multilingual evidence uniformly renders this as 'province' across English, Spanish, French, and German, reflecting a single stable semantic core. In 1 Kings 20 it describes Ahab's districts with appointed governors; in Esther 1:1 it denotes the 127 provinces stretching from India to Ethiopia; in Lamentations 1:1 it is used with bitter irony for subjugated Judah.
+
+### H4682 / Sense 113646 (53 occ, sense 1 of 1)
+**Label:** unleavened bread/cakes
+**Lemma gloss:** Unleavened bread or cakes, prepared without yeast for Passover, sacrificial offerings, and urgent hospitality.
+**Description:** Flat bread or cakes made without leaven (yeast), eaten during Passover and with certain sacrificial offerings, and by extension the referent in the festival name 'Festival of Unleavened Bread' (חַג הַמַּצּוֹת).
+**Enriched:** Unleavened bread or flat cakes prepared without yeast, used in Passover observance (Exod 12:8, 15-18), sacrificial grain offerings (Lev 2:4-5), peace offerings (Lev 7:12), and priestly consecration (Exod 29:2). The Spanish azimos and French sans levain both point to the absence of leaven as the essential feature, while the German Gebote reflects a liturgical framing of the commanded bread. Whether for urgent hospitality (Gen 19:3) or sacred ritual, the word always denotes bread whose purity lies in what it lacks.
+
+### H5560 / Sense 120973 (53 occ, sense 1 of 1)
+**Label:** fine flour
+**Lemma gloss:** Fine flour (semolina), the highest-quality wheat flour used in grain offerings, temple ritual, and elite cuisine.
+**Description:** Finely ground wheat flour (semolina), the highest quality flour used predominantly in grain offerings and temple rituals, but also in elite domestic food preparation. All three clusters represent the same noun סֹלֶת with different prepositional framing (bare noun, 'from the fine flour of,' construct state). Cross-lingual evidence confirms unified meaning: Arabic دَقِيق (daqiq, fine flour) and سَمِيد (samid, semolina), Swahili 'unga laini' (fine flour) and 'unga mzuri' (good flour), Hindi मैदा (maida, refined wheat flour), Korean 고운 가루 (goun garu, fine powder) and 고운 밀가루 (goun milgaru, fine wheat flour), Spanish 'flor de harina' (flower of flour, finest grade). Heavily concentrated in Leviticus and Numbers for meal offerings (Lev 2:1-7, 5:11, 6:15,20, 7:12, 14:10,21, 23:13,17, 24:5; Num 6:15, 7:13-79, 8:8, 15:4-9, 28-29), with some narrative uses (Gen 18:6; 1 Kgs 4:22; 2 Kgs 7:1,16,18; Ezek 16:13,19, 46:14).
+**Enriched:** Finely ground wheat flour of superior quality, used predominantly in Levitical grain offerings (Lev 2:1-7; Num 28-29) and also in elite domestic hospitality. The multilingual glosses -- English fine flour, Spanish flor de harina, French fine farine, German fein Mehl -- all highlight the refined, premium character distinguishing solet from coarser qemach. Abraham's offering of solet to his angelic guests (Gen 18:6) and Ezekiel's catalogue of Jerusalem's luxuries (Ezek 16:13, 19) show that this flour connoted both sacred worthiness and social prestige.
+
+### H5826 / Sense 123400 (53 occ, sense 1 of 5)
+**Label:** Qal: to help, aid
+**Lemma gloss:** To help, assist, succor; as participle, a helper or ally; in Nifal, to be helped; in Hifil, to render aid.
+**Description:** Basic active Qal meaning: to help, assist, or aid someone, encompassing all finite verb forms (perfect, imperfect, imperative, waw-consecutive) and infinitive constructs with the core sense of rendering active assistance.
+**Enriched:** Qal finite forms: to help, aid, or assist someone — the core verbal sense at 53 occurrences. This covers military assistance (Josh 1:14; 10:4-6, the Gibeonites crying 'come up and help us'), divine help (Gen 49:25; Ps 118:13, 'the LORD helped me'), and general aid between persons. Spanish ayudar, German helfen, and Korean 돕다 all align without ambiguity. The verb often takes a direct object or a lamed-prefixed beneficiary, and the imperative form ozreni ('help me!') appears as a direct plea to God in Ps 109:26 and 119:86.
+
+### H6659 / Sense 129491 (53 occ, sense 1 of 1)
+**Label:** Zadok (personal name)
+**Lemma gloss:** Zadok ('righteous'), a personal name borne chiefly by David and Solomon's high priest and several later figures.
+**Description:** A proper noun referring to Zadok (Hebrew tsadoq, 'righteous'), primarily the high priest who served under David and Solomon and whose line became the dominant priestly dynasty; also borne by several other individuals in the OT (Neh 3:4,29; 10:21; 13:13; 1 Chr 6:12; 2 Kgs 15:33). All three clusters are syntactic variants of the same name: bare/conjunctive/prepositional 'Zadok/Tsadoq/and Zadok' (S129491), dative 'to Zadok/for Zadok' (S129493), and a further prepositional variant 'for Tsadok' (S129496). Multilingual evidence is uniform: 'सादोक' (hin), 'صَادُوقَ/صادوق' (arb), '사독' (kor), 'Sadoki' (swa), 'Tsadoq/Sadoc' (spa). Prepositional prefixes (le-, bet-, etc.) create no semantic distinction.
+**Enriched:** The personal name Zadok (tsadoq, 'righteous'), designating primarily the high priest who served under David and Solomon and founded the dominant priestly dynasty. Ezekiel's vision reserves the inner sanctuary for the 'sons of Zadok' who remained faithful (Ezek 44:15). The name also appears for a Chronicler-era priest (1 Chr 5:38), Uzziah's father-in-law (2 Kgs 15:33), and Nehemiah's wall-builders (Neh 3:4, 29). Cross-linguistic renderings (Greek Sadok, Spanish Sadoc, German Zadok) are simple transliterations confirming its proper-noun status.
+
+### H7604 / Sense 137481 (53 occ, sense 1 of 3)
+**Label:** remain, be left over (Nifal)
+**Lemma gloss:** To remain, be left over, survive; as participle, the remnant or survivors; in Hifil, to leave remaining or spare.
+**Description:** The core Nifal meaning of שׁאר: to remain, be left (over), survive after destruction or departure — used of persons, animals, or things that continue to exist when others have perished or been removed; Arabic بَقِيَ, Korean 남다, Swahili -baki.
+**Enriched:** Nifal intransitive: to remain, be left over, survive after others have perished, departed, or been consumed. The core sense at 53 occurrences, spanning narrative and prophetic literature alike. After the Flood, only Noah 'was left' (Gen 7:23); Joseph's grain is all that 'remains' in Egypt (Gen 47:18). Spanish quedaron and German uebriggeblieben both capture the stative aftermath — what is still standing when the dust settles. Arabic baqiya provides an exact semantic parallel, and Korean 남다 confirms the intransitive survival frame.
+

@@ -1,0 +1,291 @@
+# Sense Refinement Detection — Batch 008
+
+You are a biblical lexicographer reviewing sense entries for a Hebrew/Aramaic/Greek lexicon.
+Each entry below is a single "sense" that was produced by clustering translation signatures 
+and then merging with an LLM. Some senses may have been OVER-LUMPED — they contain genuinely 
+distinct meanings that should be separate senses.
+
+## Your Task
+
+For each sense, determine if it should be SPLIT into multiple senses. Look for:
+- Literal vs. figurative/metaphorical uses lumped together
+- Concrete vs. abstract meanings combined
+- Multiple distinct referents (e.g., "father" = biological parent + patron/advisor + originator)
+- Physical vs. spiritual/theological uses merged
+- Different syntactic frames producing different meanings
+
+## Output Format
+
+Return a JSON array. For senses that need NO splitting, omit them entirely.
+For senses that SHOULD be split, include an entry like:
+
+```json
+[
+  {
+    "senseIdChirho": 79287,
+    "lemmaIdChirho": "H0001",
+    "currentLabelChirho": "father, immediate male parent",
+    "splitProposalChirho": [
+      {
+        "newLabelChirho": "biological/legal father",
+        "criteriaChirho": "Direct parent-child relationship, possessive constructions with specific person"
+      },
+      {
+        "newLabelChirho": "metaphorical father (patron, advisor, protector)",
+        "criteriaChirho": "Title of respect for prophets, advisors, or authority figures; 'father to Pharaoh' type usage"
+      }
+    ],
+    "confidenceChirho": "high",
+    "reasoningChirho": "Description explicitly mentions 'title of respect or metaphorical originator' alongside biological father"
+  }
+]
+```
+
+Only propose splits where you have MEDIUM or HIGH confidence. Do NOT split function words (articles, 
+prepositions, particles, conjunctions) unless there is a genuinely distinct semantic sense (not just 
+syntactic variation). Proper nouns generally should NOT be split.
+
+If NO senses in this batch need splitting, return an empty array: []
+
+## Senses to Review
+
+### H6235 / Sense 126649 (177 occ, sense 1 of 1)
+**Label:** ten
+**Lemma gloss:** Ten — the cardinal number, appearing in both masculine and feminine forms across counting, ages, and measurements
+**Description:** The cardinal number ten, used as both masculine (עֲשָׂרָה) and feminine (עֶשֶׂר) forms in Hebrew, appearing in a vast range of biblical contexts: ages and genealogies (Gen 5:14, 16:3), counting (Gen 18:32, 24:10, 32:15, 42:3), measurements (Exod 26:1, 27:12), the Ten Commandments (עֲשֶׂרֶת הַדְּבָרִים, Exod 34:28, Deut 4:13, 10:4), tribal divisions, and temporal references. Also used with prepositions: כַּעֲשֶׂרֶת 'about ten' (Judg 3:29, Ruth 1:4, 1 Sam 25:38), מֵעֲשָׂרָה 'more than ten' (1 Sam 1:8, Eccl 7:19), and as a plural עֲשָׂרֹת 'tens' for administrative divisions of tens of people (Exod 18:21,25; Deut 1:15). Uniformly translated across all languages: Arabic عَشْر/عَشَرَة, German zehn, French dix, Hindi दस, Korean 열/십, Spanish diez. All auto-clusters (ten, about ten, tens, than ten, the ten) are morphological or prepositional variants of the same numeral with no genuine semantic differentiation.
+**Enriched:** The cardinal number ten, occurring in masculine ('asarah, with feminine nouns) and feminine ('eser, with masculine nouns) forms per Hebrew numeral agreement rules. Used for ages (Gen 5:14), quantities (Gen 24:10, ten camels), covenantal standards (Gen 18:32, ten righteous), and administrative divisions (Exod 18:21, rulers of tens). All target languages render it with their basic numeral: Spanish diez, French dix, German zehn.
+
+### G1093 / Sense 64521 (176 occ, sense 1 of 4)
+**Label:** earth, the world
+**Lemma gloss:** Earth, land, ground — the world as a whole, a specific territory or country, soil as physical substance, or dry land versus sea
+**Description:** The earth as a whole, the created world or planet, often in contrast with heaven or as the totality of the inhabited world.
+**Enriched:** The earth as a whole — the created world or planet, often set in contrast with heaven. 'Your will be done, on earth as it is in heaven' (Matt 6:10), 'the meek shall inherit the earth' (Matt 5:5), and 'till heaven and earth pass away' (Matt 5:18) all invoke ge as the totality of the terrestrial realm. This cosmic sense dominates (176x). Every target language uses its broadest geographic term: Spanish tierra, Arabic al-ard, Korean ttang/sesang, Swahili dunia.
+
+### G3173 / Sense 72029 (176 occ, sense 1 of 6)
+**Label:** great in size or extent
+**Lemma gloss:** Great, large; of physical size, rank, intensity, or degree; comparative 'greater' and superlative 'greatest.'
+**Description:** Describes something large in physical size, spatial extent, or general magnitude (a great city, a large crowd, a great multitude).
+**Enriched:** Great in physical size, spatial extent, or general magnitude — the dominant sense at 176 occurrences. Covers great cities (Rev 11:8), large crowds (Matt 14:14), great lights (Matt 4:16), loud voices (Rev 1:10), great storms (Matt 8:24), and great joy (Matt 2:10). Spanish gran/grande, German groß, and French grand all map cleanly here. The breadth of this cluster reflects megas's role as the unmarked, default 'big/great' adjective in Koine Greek.
+
+### G3793 / Sense 73659 (175 occ, sense 1 of 1)
+**Label:** crowd, multitude, throng
+**Lemma gloss:** Crowd, multitude, throng — a gathered mass of people, especially those following Jesus or assembling in public
+**Description:** The noun ochlos denoting a gathering of people, whether a specific crowd following Jesus, a general multitude, or the populace at large. All four auto-clusters represent identical semantics with no distinguishing translation signatures: English 'crowd(s)/multitude(s)', Spanish 'multitud(es)/muchedumbre', French 'foule', German 'Volksmenge/Menge', Arabic 'jumu/jam', Hebrew 'hamonim/hamon', Hindi 'bhiRen/bhiR', Korean 'murideul/gunjung'. The split was driven entirely by minor morphological and inflectional variation (nominative plural ochloi vs. accusative singular ochlon vs. genitive singular ochlou vs. accusative plural ochlous) and slight translation variance between 'Volksmenge' and 'Menge' in German. Sense 73663 from Rev 19:1,6 ('of a multitude') is the same word in the genitive -- not a different meaning. Sense 73664 (Matt 21:46) is simply another accusative plural 'crowds' identical to the main cluster. In NT usage ochlos appears prominently for the crowds that follow Jesus in the Gospels (Matt 4:25, 5:1, 7:28), the Jerusalem mob scenes in Acts, and the heavenly multitude in Revelation 19. These are all contextual instances of the single sense 'crowd, multitude'.
+**Enriched:** A gathering of people viewed as a mass rather than an organized body — the crowd, multitude, or throng. In the Gospels, the ochlos is the ever-present popular audience around Jesus, drawn by miracles and teaching (Matt 14:5; Mark 2:4). The term carries a faint class nuance from classical Greek (mob vs. citizenry) that surfaces in passages like John 7:49. Spanish multitud and French foule both preserve the sense of an undifferentiated popular gathering.
+
+### H0085 / Sense 79827 (175 occ, sense 1 of 1)
+**Label:** Abram / Abraham (proper noun)
+**Lemma gloss:** Abram / Abraham — the patriarch, father of Isaac and Ishmael, whose name was changed by God in Genesis 17:5
+**Description:** The patriarch Abram (later renamed Abraham), father of Isaac and Ishmael; a proper noun with a single referent across all grammatical contexts — nominative, with prepositions (to, from, belonging-to), and with conjunctions (and-Abraham). All inflectional variation is purely syntactic, not semantic.
+**Enriched:** The patriarch originally named Abram ('exalted father'), renamed Abraham by divine command at the covenant of circumcision (Gen 17:5). A single referent across all 175 occurrences, appearing in various grammatical frames — nominative, with prepositions (to, from, of), and with conjunctions. The name spans from the call narrative (Gen 12) through post-exilic memory (Neh 9:7). All target languages preserve the name with minimal phonological adaptation.
+
+### G0266 / Sense 61913 (173 occ, sense 1 of 1)
+**Label:** sin, failure, transgression
+**Lemma gloss:** Sin; a failure to meet God's standard, moral transgression, missing the mark of righteousness
+**Description:** A failure to meet a standard, a missing of the mark, moral transgression against God's law or will. Covers both singular and plural inflections (nominative, accusative, genitive, dative in both numbers) as purely grammatical variants of the same lexical meaning. Multilingual evidence is strikingly uniform across number: Spanish 'pecado/pecados,' Hindi 'पाप/पापों' (pāp singular and plural), Arabic 'الخَطيئَةِ/خَطايا' (khaṭīʾa singular / khaṭāyā broken plural — same root خ-ط-أ), Korean '죄/죄들' (joe / joe-deul), Swahili 'dhambi' (invariant for singular and plural). The concept encompasses personal sins, the abstract power of sin, and the state of sinfulness throughout the NT (Romans 3-8; John 1:29; 1 John 1:8-9; Heb 9:26).
+**Enriched:** The fundamental New Testament term for moral and spiritual failure before God, encompassing both deliberate transgression and the condition of fallenness. Used 173 times across every case and number, it ranges from specific sinful acts (Matt 12:31) to sin as a personified power that reigns over humanity (Rom 5:21). Translations across all 43 languages converge on a single equivalent, underscoring its semantic clarity.
+
+### H2142 / Sense 94342 (173 occ, sense 1 of 5)
+**Label:** Qal: remember, recall
+**Lemma gloss:** Remember, recall; be remembered (Nifal); remind, cause to remember, mention, invoke, proclaim (Hifil); the recorder (Hifil ptcp).
+**Description:** To bring to mind, recall, think of again; the basic Qal active meaning of calling something or someone to memory, whether past events, persons, covenant promises, or God's deeds.
+**Enriched:** The basic Qal active sense: to bring someone or something to mind, to recall or think of again. Covers past events, persons, covenant promises, and divine deeds. When God is the subject (Gen 8:1; Exod 2:24), 'remembering' implies saving action, not merely cognition — multilingual evidence shows Korean 기억하다, Spanish 'recordar', and Arabic ذَكَرَ all converging on this core meaning across 173 occurrences.
+
+### H7812 / Sense 139492 (173 occ, sense 1 of 3)
+**Label:** prostrate oneself, bow down, worship
+**Lemma gloss:** To bow down, prostrate oneself in worship or obeisance; also: to bow low (Qal), to depress or weigh down (Hiphil).
+**Description:** Hitpael reflexive: to prostrate oneself, bow down in obeisance or worship before God or a human superior — the dominant sense covering all Hitpael inflections (consecutive imperfect, imperfect, perfect, imperative, infinitive, participle, cohortative) across all persons and numbers, with Arabic سَجَدَ (sajada), Korean 절하다/경배하다, Swahili -sujudu/-abudu, Hindi दण्डवत करना, and Spanish postrarse all confirming a single unified sense.
+**Enriched:** The dominant Hitpael reflexive sense: to prostrate oneself, bow down in worship or obeisance. This covers nearly all 173 occurrences and encompasses bowing before God in worship (Exod 34:8, Ps 95:6), before idols (Exod 20:5), and before human superiors in social deference (Gen 18:2, Gen 23:7, Gen 33:3). The multilingual evidence is remarkably consistent—Spanish postrarse/inclinarse, French se prosterner, German sich beugen/anbeten—all reflecting the dual worship-and-respect register of this verb.
+
+### H2233 / Sense 95085 (172 occ, sense 1 of 3)
+**Label:** offspring, descendants
+**Lemma gloss:** Seed, offspring; literal plant seed for sowing, human descendants or lineage, and the season of sowing.
+**Description:** Human progeny or lineage, especially in covenantal and theological contexts: the 'seed' of Abraham, David, Israel, etc., referring to descendants, posterity, or a specific promised heir (Arabic nasl/dhurriyya, Swahili uzao, Hindi vansh/santan, Korean huson/jason, Spanish descendencia).
+**Enriched:** Human offspring, descendants, or lineage — the dominant sense at 172 occurrences, overwhelmingly in covenantal, genealogical, and theological contexts. The 'seed of Abraham' (Gen 13:15-16; 22:17-18), the 'seed of David' (2 Sam 7:12), the 'holy seed' of the restored community (Ezra 9:2; Isa 6:13). Arabic nasl/dhurriyya, Swahili uzao, Korean jaseon, and Spanish descendencia all select dedicated progeny vocabulary here, distinct from their agricultural 'seed' words. The singular-collective ambiguity of zera — is it one descendant or many? — is theologically exploited in Gen 3:15 and Gal 3:16.
+
+### H3318 / Sense 103097 (172 occ, sense 2 of 5)
+**Label:** Hifil: bring out, lead out, take out (persons)
+**Lemma gloss:** To go out, come forth, depart; in Hifil, to bring out, lead forth, produce. The fundamental Hebrew verb of outward movement.
+**Description:** Causative: causing someone to exit -- bringing people out of a place, leading Israel out of Egypt, extracting prisoners, sending someone out. Arabic consistently uses أَخْرَجَ ('akhraja, Form IV causative of خ-ر-ج), the regular morphological causative, with its perfect أَخْرَجَ, imperfect يُخْرِجُ (yukhriju), imperative أَخْرِجْ ('akhrij), infinitive إِخْرَاج ('ikhraaj), and participle مُخْرِج (mukhrij). Korean uses 인도하다 (indohada, 'to lead/guide'), 데리고 나오다 (derigo naoda, 'to take someone and come out'), 내보내다 (naebonaeda, 'to send out'), and 이끌어 내다 (ikkuleo naeda, 'to pull/draw out') -- all transitive verbs requiring a human patient. Swahili uses -toa ('take out, remove') and -watoa (applied form with human objects: niliwatoa 'I took them out', aliwatoa 'he took them out'), sharply distinct from Qal's -toka. The Hifil-Qal opposition (أَخْرَجَ vs. خَرَجَ, -toa vs. -toka, 인도하다 vs. 나가다) is the core causative-intransitive split of this lemma.
+**Enriched:** Hifil causative with persons: to bring out, lead out, take out — 172 occurrences, dominated by the Exodus formula 'who brought you out of the land of Egypt' (Exod 6:13, 6:27; Deut 5:6). The causative adds a powerful agent: God, Moses, or a human leader causes people to exit bondage, prison, or danger. Arabic akhraja (Form IV causative) mirrors the Hebrew morphology exactly, and both Spanish sacó ('took out') and German brachte-heraus ('brought out') consistently select causative extraction vocabulary. This is arguably the most theologically loaded sense of the verb.
+
+### H4687 / Sense 113673 (172 occ, sense 1 of 2)
+**Label:** Commandment(s) — divine/covenant precept
+**Lemma gloss:** Commandment, precept, directive — a binding instruction from God as covenant law or from a human authority as an executive order.
+**Description:** The primary sense of mitswah: a commandment or precept given by God as covenant legislation — the mitzvot that Israel is commanded to keep, whether singular (the commandment) or plural (the commandments), with any possessive suffix (my/your/his commandments), article, conjunction, or preposition, referring to divine law as standing covenant obligation; Arabic consistently renders waṣiyya/waṣāyā (injunction/precepts) and Korean uses both 명령 (myeongryeong) and 계명 (gyemyeong, specifically religious precept), while Swahili uses amri throughout.
+**Enriched:** A commandment or precept given by God as covenant legislation — the mitzvot Israel is called to observe. Used both in the singular to denote the whole code of divine instruction and in the plural for specific precepts. Spanish 'mandamientos,' French 'commandements,' and German 'Gebote' all carry the same covenantal force. Central to Deuteronomic theology (Deut 6:1, 8:1) and the piety of the Psalms, where the psalmist delights in God's mitswah (Ps 119:96). In Leviticus 4-5, unwitting violation of any mitswah requires atonement.
+
+### H8085 / Sense 142074 (172 occ, sense 2 of 7)
+**Label:** Qal: listen, heed, pay attention
+**Lemma gloss:** To hear, listen, heed, obey; in Hifil: cause to hear, proclaim; in Niphal: be heard
+**Description:** Volitional attentive listening in Qal — the subject intentionally directs the ear toward a speaker or message. Arabic uses the imperative اسْمَعْ/اِسْمَعُوا (ismaʿ/ismaʿū) which in context demands directed attention, not mere perception. Korean distinguishes this with 들으라 (deureura) and the honorific 들으소서 (deureusoSEO) as respectful petitions for attention, contrasting with neutral 들었다 (deureotda) for perception. Swahili consistently uses -sikiliza (applicative derivation of -sikia, literally 'hear-for/toward') rather than base -sikia, marking directed intentional listening: sikiliza, sikilizeni, kusikiliza. Hindi uses सुनो (suno) imperative and सुनने वाला (sunne vālā) 'one who listens.' This sense covers imperatives calling for attention ('Hear, O Israel!'), participles describing habitual listeners, and contexts where obedient reception of a command is implied without full obedience semantics.
+**Enriched:** Volitional, attentive listening — hearing directed by intention. Imperative forms carry this force: 'Hear now, you rebels' (Num 20:10). Arabic اِسْمَعْ in imperative demands directed attention; Korean 들으라 shifts similarly. Balaam's command 'Rise up, Balak, and listen' (Num 23:18) and the Shema formula (Deut 6:4) exemplify this sense.
+
+### G5259 / Sense 78159 (171 occ, sense 1 of 3)
+**Label:** by
+**Lemma gloss:** Under, by (agency); with genitive marks the agent performing an action; with accusative indicates position beneath or subordination.
+**Description:** by, from (171 occurrences across 3 original clusters)
+**Enriched:** Agency marker with the genitive case: 'by' a person, force, or divine actor. At 171 occurrences this is the overwhelmingly dominant sense, appearing in passive constructions throughout the New Testament. Matthew's fulfillment formula 'what was spoken by the Lord through the prophet' (Matt 1:22; 2:15) is paradigmatic. Spanish por, German von, and Korean -에 의해 (-e uihae, 'by means of') all consistently select agentive vocabulary, distinguishing this clearly from the spatial sense. The construction hypo + genitive became the standard Koine marker of personal agency, replacing classical Greek instrumental uses of the dative.
+
+### G0032 / Sense 61102 (170 occ, sense 1 of 2)
+**Label:** heavenly angel
+**Lemma gloss:** Angel, messenger — a supernatural heavenly being serving God, or a human envoy sent to deliver a message.
+**Description:** A supernatural celestial being who serves as God's agent, attendant, or herald in heaven and on earth.
+**Enriched:** A supernatural celestial being who serves as God's agent, attendant, or herald — announcing divine messages, guarding God's people, executing judgment, and worshiping in heaven. All major languages have a dedicated loanword: 'angel' (eng), 'ángel' (spa), 'ange' (fra), 'Engel' (deu), all derived from this very Greek word. Angels appear at every pivotal moment: Jesus' birth (Matt 1:20; Luke 2:9), temptation (Matt 4:11), resurrection (Matt 28:2), and promised return (Matt 25:31).
+
+### G1565 / Sense 66671 (170 occ, sense 1 of 3)
+**Label:** that, those (demonstrative reference)
+**Lemma gloss:** That, that one; a distal demonstrative pronoun pointing to a previously mentioned person or thing, often with emphatic force.
+**Description:** Distal demonstrative pronoun or adjective pointing to a previously mentioned or contextually identified person, thing, or group, used attributively or as a modifier ('that day', 'those people', 'that place').
+**Enriched:** Attributive or adjectival demonstrative: 'that' or 'those' modifying a noun, pointing to a previously mentioned or contextually distant referent — 170 occurrences. 'On that day' (Matt 7:22), 'in that hour' (Matt 8:13), 'those cities' (Matt 11:24). The temporal use is especially prominent in eschatological discourse, where 'that day' becomes almost a technical term for the day of judgment. Spanish aquel/aquella, French celui-la/celle-la, and German jene all select their dedicated distal demonstrative forms, confirming the deictic distance as cross-linguistically salient.
+
+### G2041 / Sense 68043 (170 occ, sense 1 of 2)
+**Label:** deed or action
+**Lemma gloss:** Work, deed, or action; what one does or produces, whether moral conduct, labor, or an enterprise undertaken.
+**Description:** A deed, act, or action, especially in the moral or religious sense (e.g., 'works of the law', 'good works', 'evil deeds'), referring to what someone has done or does as conduct.
+**Enriched:** A deed, act, or piece of conduct viewed especially in its moral or spiritual dimension. This is the dominant New Testament usage, covering 'works of the law,' 'good works,' and 'evil deeds.' Translations across languages converge on a single broad term (eng works, spa obras, fra œuvre, deu Werke), reflecting how central this concept is to Pauline and Johannine theology. John 3:19-21 presents the sharpest contrast: those whose works are evil avoid the light, while those who practice truth come to it. Jesus appeals to his works as testimony in John 5:36.
+
+### G5101 / Sense 77761 (170 occ, sense 2 of 4)
+**Label:** who (interrogative, persons)
+**Lemma gloss:** Interrogative pronoun: what, which, who, whom, why; rarely indefinite 'someone, something.'
+**Description:** Interrogative pronoun asking about the identity of a person in any grammatical case: 'who?', 'whom?', 'whose?', 'to whom?', 'of whom?'.
+**Enriched:** Interrogative pronoun asking about the identity of a person: 'who?', 'whom?', 'whose?' (170 occurrences). In Matt 3:7, τίς ὑπέδειξεν ὑμῖν — 'who warned you to flee?' Spanish 'quién' and German 'wer' clearly mark the person-directed question, a distinction the Greek form carries through case inflection rather than a separate lexeme.
+
+### H2403b / Sense 96347 (170 occ, sense 1 of 5)
+**Label:** sin, transgression
+**Lemma gloss:** Sin or sin-offering — the act of missing the mark before God, and the sacrificial remedy prescribed to atone for it.
+**Description:** The act or state of sin itself — moral failure, transgression, or offense against God; the dominant sense of חַטָּאת covering the majority of occurrences across all grammatical inflections (singular/plural, all pronominal suffixes, construct chains, prepositional prefixes), rendered consistently as English 'sin', Spanish 'pecado', Hindi पाप, Arabic خَطِيئَة/خَطَايَا, Korean 죄/죄들, Swahili 'dhambi'.
+**Enriched:** Sin as act, condition, or offense — the fundamental sense of moral failure or transgression against God or neighbor. Covering 170 occurrences, this is the majority usage across narrative, prophetic, and wisdom literature. Genesis 4:7 ('sin is crouching at the door') personifies it; Leviticus 4:3 ('if the anointed priest sins') introduces the cultic context. All languages use their basic sin-word: English 'sin,' Spanish 'pecado,' French 'peche,' German 'Sunde.' Possessive suffixes are extremely common ('his sin,' 'your sins,' 'my sin'), reflecting the deeply personal nature of chattat in Hebrew theology.
+
+### H3519 / Sense 105325 (170 occ, sense 1 of 5)
+**Label:** glory, splendor of God
+**Lemma gloss:** Glory, honor, splendor; the visible radiance of God's presence, human dignity and esteem, or material wealth.
+**Description:** The visible radiance, majesty, or manifest presence of God or a divine/royal figure, often in theophanic or doxological contexts.
+**Enriched:** The dominant theophanic and doxological sense: the visible radiance, splendor, and manifest presence of God. This is the kavod that appears in the cloud over Sinai (Exod 24:16-17), fills the tabernacle and temple (Exod 40:34; 1 Kgs 8:11), and which Isaiah sees enthroned (Isa 6:3). The 170 occurrences confirm this as the overwhelmingly primary meaning. German Herrlichkeit, Spanish gloria, and Korean 영광 all lexicalize this theophanic-doxological sense as distinct from mere 'honor.' When Joshua says 'give glory to the LORD' (Josh 7:19), the word means both 'acknowledge his weightiness' and 'let his radiance be seen.'
+
+### H5159 / Sense 117139 (170 occ, sense 1 of 2)
+**Label:** inherited land or property
+**Lemma gloss:** Inheritance, possession; allotted land or estate; covenantal heritage where God or his people are the treasured portion.
+**Description:** Concrete allotted territory or estate received as a permanent possession, typically tribal or familial land in the promised land.
+**Enriched:** Concrete allotted territory or estate received as a permanent possession — typically the tribal and familial land distributed in Canaan. Rendered consistently as 'inheritance' (heredad/herencia in Spanish, héritage in French, Erbe in German), this sense dominates in Numbers, Joshua, and Deuteronomy (e.g., Num 27:7 'give them a possession of an inheritance'; Josh 13:23 'the inheritance of the children of Reuben'). The land is not merely owned but divinely granted and protected by law against permanent alienation.
+
+### H1144 / Sense 87290 (169 occ, sense 1 of 1)
+**Label:** Benjamin (proper noun)
+**Lemma gloss:** Benjamin; youngest son of Jacob and Rachel, the tribe and territory descended from him
+**Description:** The personal name Benjamin, the youngest son of Jacob and Rachel, and by extension the tribe of Israel descended from him and the tribal territory they inhabited. All occurrences refer to this single proper noun regardless of prepositional prefix or syntactic context.
+**Enriched:** The proper name Benjamin, referring to Jacob's youngest son born to Rachel, and by metonymy the Israelite tribe and its territorial allotment. Across 169 occurrences the name appears in patriarchal narrative (Gen 42:4), tribal census lists (Num 1:36), territorial descriptions (Josh 18:20), and prophetic oracles (Hos 5:8). Translations consistently transliterate: 'Benjamín' (Spanish), 'Benjamin' (French/German), preserving the Hebrew etymological identity.
+
+### H2009 / Sense 93455 (168 occ, sense 2 of 3)
+**Label:** self-referential presentative: behold me/I
+**Lemma gloss:** Presentative particle: behold, look, lo; with 1st-person suffix: behold me/I; as a response to a summons: here I am.
+**Description:** Hinneh with 1st-person suffix used not as a response to a call but to draw attention to the speaker's imminent action, state, or declaration, retaining standard presentative translations such as 'behold I/me,' 'he aquí yo,' 'dekho main,' 'tazama mimi,' '보라 내가.'
+**Enriched:** Hinneh with first-person suffix (hinneni/hinni) used not as a response to a call but as a self-referential declaration drawing attention to the speaker's imminent action or state — 'Behold, I am about to...' With 168 occurrences, this sense dominates divine speech: 'Behold, I am bringing the flood' (Gen 6:17), 'Behold, I will send swarms of flies' (Exod 8:21), 'Behold, I am about to rain bread from heaven' (Exod 16:4). Spanish he aqui yo, French voici je, and German siehe ich all preserve the first-person pronoun. The function is performative announcement — God or a prophet declaring what they are about to do.
+
+### H3201 / Sense 101881 (168 occ, sense 1 of 3)
+**Label:** be able, can
+**Lemma gloss:** To be able, have power; to prevail or overcome; to endure or bear hardship.
+**Description:** General ability or capability to do something; the basic modal sense of having the power, capacity, or permission to perform an action.
+**Enriched:** General ability or capability: 'to be able,' 'can.' This is the overwhelmingly dominant sense (168 occurrences), functioning as the standard Hebrew modal for having the power, permission, or capacity to do something. It appears with infinitive complements: 'I am not able to flee to the mountain' (Gen 19:19), 'the land was not able to bear them' (Gen 13:6). Spanish 'poder,' French 'pouvoir,' and German 'können' all render this straightforwardly as the basic capacity modal.
+
+### H7970 / Sense 140831 (168 occ, sense 1 of 3)
+**Label:** thirty (cardinal number)
+**Lemma gloss:** Thirty; also used as a title for David's elite corps of warriors ('the Thirty').
+**Description:** The cardinal number thirty, used for counting, ages, measurements, monetary amounts, and in date formulas (e.g., 'thirty years old,' 'thirty shekels,' 'in the thirtieth year'), with or without prepositions, articles, or conjunctions.
+**Enriched:** The cardinal number thirty used in counting, measurement, age formulas, monetary amounts, and date expressions. This covers the overwhelming majority of occurrences: thirty years old (Gen 5:3, 2 Sam 5:4), thirty cubits (Gen 6:15), thirty shekels (Exod 21:32), thirty days (Num 20:29). All languages render it straightforwardly—Spanish treinta, French trente, German dreißig—with no semantic ambiguity.
+
+### G1391 / Sense 65819 (167 occ, sense 1 of 1)
+**Label:** glory, splendor, divine radiance
+**Lemma gloss:** Glory, splendor, radiant majesty; the visible manifestation of divine excellence and honor
+**Description:** The radiant magnificence, honor, or splendor attributed to God, Christ, or reflected in creation and human dignity; uniformly rendered 'glory' (eng), 'gloria' (spa), 'महिमा' (hin), 'مجد' (arb), '영광' (kor), 'utukufu' (swa) across all 167 occurrences. The three clusters represent purely inflectional variation: singular across all four cases (S65819, 163x), accusative feminine plural (S65821, 3x meaning 'glories'), and dative singular (S65824, 1x 'in glory'). Every translation language uses the same root word regardless of cluster, confirming a single unified sense.
+**Enriched:** The radiant magnificence, honor, and sovereign splendor of God made visible or acknowledged by creatures. Spanning 167 occurrences, it covers the glory of God's kingdom (Matt 6:13), the transfigured Christ (Luke 9:32), the hope of future glorification (Rom 5:2), and doxological praise (Phil 4:20). The cross-linguistic convergence — Spanish 'gloria,' Arabic 'مجد,' Korean '영광,' Hindi 'महिमा' — witnesses to a remarkably stable semantic core across the world's theological vocabularies.
+
+### H2617a / Sense 98144 (167 occ, sense 1 of 6)
+**Label:** Covenant faithfulness, steadfast love
+**Lemma gloss:** Covenant faithfulness, steadfast love, mercy, kindness; God's loyal love toward his people and human kindness between persons.
+**Description:** God's enduring, faithful love grounded in covenant relationship, the dominant theological sense of chesed expressing Yahweh's unwavering commitment to his people (Arabic rahma, Korean injahashim, Swahili upendo-wa-agano).
+**Enriched:** The dominant theological sense: God's enduring, covenant-rooted faithful love toward his people — 167 of 249 occurrences. This is the chesed of the Psalms' great refrain ki le'olam chasdo ('for his steadfast love endures forever,' Ps 136). It combines loyalty, love, and reliability in a way no single target-language word captures. Spanish misericordia, German Gnade, and French bonté each catch a facet but miss the covenantal backbone that Korean 인자하심 and Arabic rahma attempt to convey.
+
+### H3898a / Sense 108709 (167 occ, sense 1 of 2)
+**Label:** Nifal: to fight, wage war
+**Lemma gloss:** To fight, wage war, do battle; in Nifal the standard verb for armed conflict, in rare Qal a poetic fighter or combatant.
+**Description:** The standard Nifal (reciprocal-reflexive) sense of לחם meaning to fight, engage in battle, or wage war against an enemy; this covers the vast majority of occurrences across all inflections (perfect, imperfect, imperative, infinitive, participle) and includes both human-initiated combat and divine warfare on behalf of Israel. All target languages confirm a single undifferentiated military sense: Arabic حارَبَ (ḥāraba, Form III reciprocal 'to wage war'), Korean 싸우다 (ssauda, 'to fight'), Swahili -pigana (reciprocal of -piga, 'to fight one another'), Spanish pelear/luchar, uniformly rendering every Nifal occurrence without semantic variation.
+**Enriched:** The Nifal (reciprocal-reflexive) stem covering the overwhelming majority of occurrences: to fight, engage in battle, wage war against an enemy. The multilingual evidence — spa pelear/luchar, fra combattre, deu kämpfen — uniformly points to organized military conflict. Exod 17:8-10 narrates the paradigmatic scene: Amalek comes to fight Israel, and Joshua is sent out to fight them. Num 21:1, 23 shows the pattern repeated across the wilderness narratives.
+
+### G2309 / Sense 69060 (166 occ, sense 1 of 5)
+**Label:** want, desire
+**Lemma gloss:** To want, wish, be willing, or purpose; the primary Greek verb for expressing desire, consent, intention, and delight.
+**Description:** To have a desire or inclination for something; the basic volitional sense expressing a subject's want or desire, across all persons, tenses, and moods (Arabic أَرَادَ/يُرِيدُ, Korean 원하다, Swahili -taka).
+**Enriched:** The basic volitional sense: to want or desire something. This is the most frequent use by far, spanning every mood and tense. In Matthew 16:24 ('if anyone wants to come after me') and Matthew 15:32 ('I do not want to send them away hungry'), thelo expresses straightforward desire or want. The Arabic arada/yuridu, Korean wonhada, and Swahili -taka all converge here. The breadth of subjects — God, Jesus, disciples, crowds, opponents — shows this is the unmarked, default sense of the verb.
+
+### H5750 / Sense 122670 (166 occ, sense 2 of 6)
+**Label:** still, yet (continuative)
+**Lemma gloss:** still, yet, again, more, besides; continuance or repetition of action or state — also 'another, else' and temporal 'while yet'
+**Description:** Continuative adverb indicating that a state or condition persists: 'still,' 'yet,' including all inflected forms with pronominal suffixes and interrogative contexts, corresponding to Spanish 'todavía / aún,' Hindi 'अभी,' Arabic 'بَعْدُ / لا يزال,' Korean '아직,' Swahili 'bado.'
+**Enriched:** Continuative adverb: 'still, yet,' indicating an ongoing state. Spanish todavía, French encore, and German noch uniformly convey persistence through time. Genesis 7:4 ('in yet seven days') and Genesis 29:7 ('it is still high day') illustrate temporal continuation, while the suffixed forms (odennu, 'while he was still') create compact simultaneity clauses as in Genesis 18:22.
+
+### H5800a / Sense 123202 (166 occ, sense 1 of 5)
+**Label:** forsake, abandon (Qal active)
+**Lemma gloss:** To leave, forsake, or abandon; ranges from covenantal betrayal and physical departure to the state of being forsaken and even helping with a burden.
+**Description:** To willfully abandon, forsake, or desert a person, place, covenant, or God — the primary Qal active sense of deliberate relational or covenantal abandonment, encompassing all finite verb forms, participles, imperatives, and infinitives in the Qal stem (Arabic taraka/hajara, Korean beorida).
+**Enriched:** The dominant Qal active sense: to willfully forsake, abandon, or desert. This covers covenantal abandonment of God (Deut 29:25; Judg 2:12-13; 10:6), desertion of people, and forsaking of commandments. The Arabic hajara/taraka, Korean beorida, and Swahili kuacha all converge on deliberate relational severance. The prophets use it as a covenant-lawsuit term: Israel has 'forsaken' the Lord who redeemed them, inverting the exodus relationship.
+
+### G4172 / Sense 75303 (165 occ, sense 1 of 1)
+**Label:** city, town
+**Lemma gloss:** City, town; an inhabited urban settlement, whether named or generic
+**Description:** A city, town, or populated urban center -- the standard and overwhelmingly dominant sense of polis in the NT with 165 occurrences. Used for named cities (Jerusalem, Bethlehem, Nazareth, Capernaum, Ephesus, Philippi, etc.), for generic references to cities and towns visited during Jesus's ministry and the apostolic missions, and for the eschatological 'holy city' (Rev 21-22). Covers all grammatical forms: nominative polis, accusative polin, genitive poleos, dative polei, and plurals poleis/polesin/poleon. The auto-clustered groups split by grammatical case (genitive 'of city,' nominative plural 'cities') and by proper-noun usage ('Polis' in compound names like Hierapolis) do not represent genuinely distinct senses -- polis as part of the compound place-name Hierapolis (Col 4:13) and as the common noun for 'city' in Acts 16:11-14 share the same lexical meaning. Multilingual glosses are completely uniform: Hebrew ir/arim, Arabic madina/mudun, German Stadt/Stadte, Korean dosi/seong, Spanish ciudad/ciudades, French ville/villes.
+**Enriched:** An inhabited urban center or town, used 165 times for both named cities (Jerusalem, Bethlehem, Nazareth, Ephesus) and generic references to towns and population centers. Polis provides the geographic scaffolding for the Gospels and Acts, from the nativity in Bethlehem (Matt 2:23) to Paul's missionary journeys through the cities of Asia Minor. The term extends to the eschatological 'holy city' of Revelation 21:2, giving it theological as well as geographical resonance.
+
+### H0854 / Sense 84914 (165 occ, sense 2 of 5)
+**Label:** from with (ablative source)
+**Lemma gloss:** With, together with (accompaniment); from with (ablative source with min-); also functions as the direct object marker in certain textual traditions.
+**Description:** Used with the prefixed preposition מִן to indicate source or origin, meaning 'from (the presence of)' or 'from with'.
+**Enriched:** Ablative source with min-prefix: 'from with,' 'from the presence of' — 165 occurrences where me'et indicates origin or departure from someone's vicinity or authority. 'The LORD rained brimstone from with the LORD out of heaven' (Gen 19:24); Esau went out 'from the presence of' Isaac (Gen 27:30); slaves purchased 'from with' foreigners (Gen 17:27). Arabic min 'inda ('from at/with') and French de-avec ('from-with') both preserve the compound spatial logic. Korean -에게서 (-egeseo, 'from a person') similarly marks the personal-source frame. This sense is morphologically transparent but semantically distinct from simple accompaniment.
+
+### H2398 / Sense 96215 (165 occ, sense 1 of 9)
+**Label:** Qal: to sin, commit sin
+**Lemma gloss:** to sin, miss the mark, purify from sin; moral failure (Qal), causing sin (Hifil), ritual purification (Piel/Hitpael)
+**Description:** The basic Qal active meaning of committing sin or transgression against God or moral law; all person/number/gender/tense inflections of the Qal finite verb and infinitive share this core sense, evidenced by consistent Arabic أَخْطَأَ/خَطِئَ (to err/sin), Korean 죄를 범하다 (to commit sin), Swahili kutenda dhambi (to commit sin), Spanish pecar (to sin), and Hindi पाप करना (to sin).
+**Enriched:** The Qal finite verb and infinitive (165 passages) express active commission of sin or moral failure. All person/number/gender/tense forms share this core meaning. Cross-linguistic evidence shows dedicated sin vocabulary: pecado (Spanish), péché (French), gesündigt (German), confirming chata' as the standard Hebrew term for moral transgression.
+
+### H7130 / Sense 133222 (165 occ, sense 1 of 3)
+**Label:** midst, among
+**Lemma gloss:** Inward part, midst, interior; the physical interior of a body, the social center of a group, or the literal viscera of a sacrificial animal.
+**Description:** Spatial or social location in the middle of a group, place, or territory, consistently rendered with Arabic wasaṭ (وَسَط), Korean gaunde (가운데), and Swahili katikati/miongoni.
+**Enriched:** The dominant prepositional sense: midst, among, in the center of a collective entity. Appearing 165 times, qereb with be- or min- locates something spatially or socially within a group, city, nation, or territory. God promises to walk beqereb the camp (Deut 23:14); idolaters are purged miqqereb Israel (Deut 13:5). Arabic wasat, Korean gaunde (가운데), and Swahili katikati all consistently render this as a spatial-relational center rather than a personal interior, confirming a genuine sense boundary against the anatomical uses.
+
+### G0932 / Sense 64035 (163 occ, sense 1 of 1)
+**Label:** kingdom, reign, royal dominion
+**Lemma gloss:** Kingdom, reign, royal dominion; the sovereign rule of a king and the realm where that rule holds
+**Description:** The domain, rule, or sovereign authority of a king; encompasses both the abstract concept of royal power and the concrete territory over which a king reigns. Singular and plural forms represent the same lexical meaning with only grammatical number variation (160 singular + 3 plural occurrences). Multilingual evidence: spa 'reino/reinos,' hin 'राज्य/राज्यों,' arb 'مَلَكوتِ/مَمَالِكِ,' kor '나라/나라들,' swa 'ufalme/falme.' Overwhelmingly used in the phrase 'kingdom of God' or 'kingdom of heaven' in the Synoptics and John, but also of earthly kingdoms (Matt 4:8, 12:25-26; Luke 4:5; Rev 11:15, 16:10). The plural 'kingdoms' (Matt 4:8, Luke 4:5, Rev 11:15) refers to multiple earthly realms but shares the same core semantics.
+**Enriched:** The sovereign rule, royal authority, or dominion of a king, together with the realm or territory over which that authority extends. Occurring 163 times, basileia overwhelmingly appears in the phrase 'kingdom of God' or 'kingdom of heaven' (Matt 3:2, 5:3, 6:33), encompassing both the present breaking-in of God's reign through Jesus and its future consummation. Cross-linguistic evidence — Spanish 'reino,' French 'royaume,' German 'Reich,' Arabic 'ملكوت' — uniformly treats it as a single undivided concept.
+
+### H6963a / Sense 131602 (163 occ, sense 2 of 6)
+**Label:** voice of God / divine voice
+**Lemma gloss:** voice, sound; human speech, divine utterance, thunder, noise, or report — the audible expression of will or event
+**Description:** The voice of the LORD (קוֹל יהוה), the voice of God speaking in revelation, command, or theophany — a distinctly theological use where the voice carries divine authority and demands obedience (שׁמע בְּקוֹל = obey the voice of); frequently in construct with divine names — Arabic صَوْتُ الرَّبِّ, Korean (하나님의) 음성, Swahili sauti ya Bwana, Hindi यहोवा की आवाज़.
+**Enriched:** The voice of God — qol YHWH — in theophany, revelation, and sovereign command. Spanish voz-de, French voix-de, and German Stimme-von all preserve the construct-chain structure, marking this as a possessive theological formula rather than a general sound. Genesis 3:8 (the LORD walking in the garden) and Deuteronomy 4:12 (you heard the sound of words but saw no form) anchor this sense in Israel's foundational encounters with divine speech.
+
+### H0312 / Sense 81330 (161 occ, sense 1 of 2)
+**Label:** another, other, different
+**Lemma gloss:** Another, other, different; occasionally 'next' or 'following' in temporal or sequential contexts.
+**Description:** A different or additional person, thing, or group; the primary adjectival sense of אַחֵר covering both 'another' (an additional one) and 'other' (a different one), across all grammatical inflections, prepositional prefixes, and article combinations.
+**Enriched:** Another, other, or different — the primary adjectival sense covering an additional or distinct person, thing, or group. This is the workhorse usage across all grammatical forms (masculine, feminine, singular, plural). Translations converge tightly: spa otra/otros, fra autre, deu andere. Gen 29:27 illustrates 'another seven years'; Deut 5:7 warns against 'other gods' (אֱלֹהִים אֲחֵרִים). The domain is discourse-referential: pointing away from the current referent to a distinct one.
+
+### G5119 / Sense 77852 (160 occ, sense 1 of 1)
+**Label:** then
+**Lemma gloss:** Then; at that time, marking temporal sequence or logical consequence in narrative
+**Description:** then, Then (160 occurrences across 2 original clusters)
+**Enriched:** A temporal adverb meaning 'at that time' or 'then,' used 160 times to mark sequential progression in narrative or to introduce the next event in a chain. Especially prominent in Matthew's Gospel as a structural connective (Matt 2:7, 3:13, 4:1), tote links episodes and signals logical consequence. Every surveyed language renders it with a straightforward temporal adverb — Spanish 'entonces,' French 'alors,' German 'dann' — with no semantic divergence across the translation corpus.
+
+### H2077 / Sense 94028 (160 occ, sense 1 of 3)
+**Label:** sacrifice (animal offering)
+**Lemma gloss:** A sacrifice, animal offering slaughtered in worship; the most common and ancient Israelite cultic offering.
+**Description:** The primary sense of זֶבַח: an animal slaughtered as a cultic offering to God (or to idols), encompassing all grammatical inflections (singular/plural, construct, with prepositions and possessive suffixes); uniformly attested across languages by Arabic ذَبِيحَة/ذَبَائِح (ritual slaughter-offering), Korean 제사/제물 (ritual sacrifice/offering), Hindi बलिदान/बलि (sacrifice), Swahili dhabihu, and Spanish/English 'sacrifice(s)'.
+**Enriched:** The primary sense: an animal sacrifice offered in worship, whether to the Lord or to other gods. This encompasses the full range of grammatical forms—singular, plural, construct chains ('sacrifice of peace offerings'), prepositional phrases ('with a sacrifice'), and possessive constructions ('his sacrifice'). It covers fellowship offerings (Lev 3:1), votive offerings (Lev 7:16), and even sacrifices to idols (Deut 32:38). Spanish sacrificio, French sacrifice, and German Opfer/Schlachtopfer all render this consistently across all contexts.
+
+### G1096 / Sense 64536 (158 occ, sense 2 of 8)
+**Label:** happen, occur, take place
+**Lemma gloss:** To become, happen, come into being, or exist; spanning transformation, event occurrence, arrival, birth, and states of being
+**Description:** To take place as an event or incident, denoting that something occurred, came to pass, or will come to pass (Arabic: حَدَثَ hadatha; Korean: 일어나다 ireonada; Swahili: -tokea).
+**Enriched:** Denotes an event taking place or occurring, without implying personal transformation. Arabic hadatha 'it happened' and Korean ireonada 'to arise/occur' mark this as event-occurrence rather than state-change. Frequently introduces temporal clauses in the Gospels (Matt 8:16; Matt 14:15) and Acts narrative transitions.
+

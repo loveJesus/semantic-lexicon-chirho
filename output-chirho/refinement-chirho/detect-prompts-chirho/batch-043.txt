@@ -1,0 +1,261 @@
+# Sense Refinement Detection — Batch 043
+
+You are a biblical lexicographer reviewing sense entries for a Hebrew/Aramaic/Greek lexicon.
+Each entry below is a single "sense" that was produced by clustering translation signatures 
+and then merging with an LLM. Some senses may have been OVER-LUMPED — they contain genuinely 
+distinct meanings that should be separate senses.
+
+## Your Task
+
+For each sense, determine if it should be SPLIT into multiple senses. Look for:
+- Literal vs. figurative/metaphorical uses lumped together
+- Concrete vs. abstract meanings combined
+- Multiple distinct referents (e.g., "father" = biological parent + patron/advisor + originator)
+- Physical vs. spiritual/theological uses merged
+- Different syntactic frames producing different meanings
+
+## Output Format
+
+Return a JSON array. For senses that need NO splitting, omit them entirely.
+For senses that SHOULD be split, include an entry like:
+
+```json
+[
+  {
+    "senseIdChirho": 79287,
+    "lemmaIdChirho": "H0001",
+    "currentLabelChirho": "father, immediate male parent",
+    "splitProposalChirho": [
+      {
+        "newLabelChirho": "biological/legal father",
+        "criteriaChirho": "Direct parent-child relationship, possessive constructions with specific person"
+      },
+      {
+        "newLabelChirho": "metaphorical father (patron, advisor, protector)",
+        "criteriaChirho": "Title of respect for prophets, advisors, or authority figures; 'father to Pharaoh' type usage"
+      }
+    ],
+    "confidenceChirho": "high",
+    "reasoningChirho": "Description explicitly mentions 'title of respect or metaphorical originator' alongside biological father"
+  }
+]
+```
+
+Only propose splits where you have MEDIUM or HIGH confidence. Do NOT split function words (articles, 
+prepositions, particles, conjunctions) unless there is a genuinely distinct semantic sense (not just 
+syntactic variation). Proper nouns generally should NOT be split.
+
+If NO senses in this batch need splitting, return an empty array: []
+
+## Senses to Review
+
+### G4863 / Sense 77005 (30 occ, sense 1 of 3)
+**Label:** assemble together (intransitive)
+**Lemma gloss:** To gather or bring together; of people assembling; of welcoming strangers with hospitality
+**Description:** People coming together or being gathered as a group, used in middle/passive voice to describe crowds, congregations, or assemblies forming.
+**Enriched:** The intransitive or middle/passive sense: people assembling, coming together, or being gathered as a group. Large crowds 'gathered together' around Jesus (Matt 13:2), the Pharisees 'assembled' to question him (Matt 22:34, 41), and early believers met in gathered communities. The Spanish 'fueron reunidos' / 'habiéndose reunido' and German 'versammelt' all capture this reflexive quality — the gathering happens to or among the subjects themselves. Jesus' promise in Matt 18:20 ('where two or three are gathered') makes this sense theologically foundational.
+
+### H0054 / Sense 79666 (30 occ, sense 1 of 1)
+**Label:** Abiathar (priest)
+**Lemma gloss:** Abiathar; a priest, son of Ahimelech, who served David faithfully but was banished by Solomon.
+**Description:** Abiathar, son of Ahimelech the priest, who escaped Saul's massacre at Nob and served as priest under David, later banished by Solomon.
+**Enriched:** The proper name Abiathar, designating the priest who escaped Saul's slaughter at Nob and became David's loyal priestly companion. He is associated with the ephod used for divine inquiry (1 Sam 23:6, 9; 30:7) and served alongside Zadok during David's reign (2 Sam 15:35, 20:25). His dismissal by Solomon (1 Kgs 2:26-27) marks the end of the Elide priestly line and the ascendancy of the Zadokite priesthood.
+
+### H0543 / Sense 83016 (30 occ, sense 1 of 1)
+**Label:** Amen
+**Lemma gloss:** Amen; a solemn affirmation of truth, agreement, or doxological praise—'truly,' 'so be it,' 'let it stand.'
+**Description:** Amen, amen, and amen (30 occurrences across 3 original clusters)
+**Enriched:** A liturgical and covenantal affirmation meaning 'truly,' 'so be it,' or 'it is established.' In Deuteronomy 27:15-26, the congregation ratifies each covenant curse with 'Amen,' accepting its binding force. In the Psalter doxologies (Ps 41:13, 72:19, 89:52, 106:48), doubled 'Amen, Amen' closes each book of the Psalms with emphatic praise. Numbers 5:22 uses the double Amen in the oath of the suspected adulteress. The word itself derives from the root 'mn, connoting firmness and reliability—hence Isaiah 65:16's remarkable epithet 'God of Amen.'
+
+### H0631 / Sense 83561 (30 occ, sense 1 of 6)
+**Label:** bind or tie physically
+**Lemma gloss:** To tie, bind, imprison; bind by a vow; harness animals; as substantive, a prisoner or captive.
+**Description:** To bind, tie, or fasten a person or object with ropes, cords, or fetters, including binding someone as an act of capture or imprisonment.
+**Enriched:** To bind or tie physically with ropes, cords, or fetters — the core sense at 30 occurrences. Joseph binds Simeon (Gen 42:24), Jacob ties his donkey's foal to the vine (Gen 49:11), and the Philistines bind Samson with new ropes (Judg 15:13) and bronze fetters (Judg 16:21). Arabic asara and Akkadian asāru both preserve this basic physical restraint meaning. Spanish atar and French lier map cleanly. The sense encompasses both temporary tying (ropes to an object) and punitive binding (fettering a captive), unified by the physical act of fastening.
+
+### H0639 / Sense 83670 (30 occ, sense 2 of 5)
+**Label:** nose, nostrils
+**Lemma gloss:** Nostril, nose, face; by metonymy anger or wrath; in the dual idiom 'erekh appayim, slow to anger.
+**Description:** The literal anatomical sense referring to the nose, nostrils, or snout of a person or animal, including singular, dual, and construct forms with pronominal suffixes and prepositions.
+**Enriched:** The literal anatomical sense: nostril, nose, or snout — 30 occurrences preserving the original body-part reference. God breathes into Adam's nostrils (Gen 2:7), the breath of life is in the nostrils of all flesh (Gen 7:22), and Rebekah receives a ring on her nose (Gen 24:47). The dual 'appayim sometimes specifies the two nostrils explicitly. Spanish nariz, Korean 코, and Arabic أَنْف all select nasal vocabulary here rather than emotion terms. In poetic theophany passages like 2 Sam 22:9 and Ps 18:9, smoke goes up from God's nostrils — a liminal context where anatomy and fury merge, the very hinge on which the metaphorical extension turns.
+
+### H1129 / Sense 87138 (30 occ, sense 2 of 4)
+**Label:** Nifal: be built, be established
+**Lemma gloss:** To build, construct; Nifal: be built, be established; as participle: builder; figuratively of God building a woman, a dynasty, or a people.
+**Description:** Nifal passive/reflexive sense meaning 'to be built, to be constructed, to be established' -- the passive counterpart of the Qal, used of cities and structures being built, and metaphorically of persons or families being built up or established. Glosses: eng 'was built / will be built / to be built / being built / is built / I will be built up', spa 'fue edificada / sera edificada / para ser edificada / se construia', hin 'बनाया गया / बनाई जाएगी / बनते समय', arb 'بُنِيَتْ / تُبْنَى / يُبْنَى / لِيُبْنَى', kor '지어졌다 / 세워지리라 / 건축될 것이다', swa '-jengwa / kujengwa / itajengwa'.
+**Enriched:** The Nifal passive and reflexive sense: to be built, be constructed, be established. Appearing 30 times, it serves as the natural passive of sense 1 — cities 'are built' (Num 21:27; Deut 13:16), the temple 'was being built' (1 Kgs 6:7). But a striking metaphorical extension emerges in the matriarchal narratives: Rachel and Leah hope to 'be built up' through children (Gen 16:2; 30:3), exploiting the banah/ben ('build'/'son') wordplay. Spanish fue construida/fue edificada and Korean 건축되다 both preserve the passive construction frame, while the figurative 'be established as a family' sense requires creative solutions in most languages.
+
+### H1322 / Sense 88569 (30 occ, sense 1 of 2)
+**Label:** shame, disgrace
+**Lemma gloss:** Shame, disgrace, or humiliation; also used as a scribal substitute for Baal in personal names (Bosheth).
+**Description:** Abstract noun denoting the state or condition of shame, humiliation, or disgrace, covering all grammatical forms with pronominal suffixes and prepositional constructions.
+**Enriched:** Shame, disgrace, or humiliation as an abstract condition. The dominant sense across 30 occurrences, it describes the state of being shamed before God, enemies, or society. Found in constructions like boshet panim (shame of face, Dan 9:7-8; Ezra 9:7), labash boshet (to clothe with shame, Job 8:22; Ps 35:26), and as the bitter fruit of idolatry (Jer 3:24-25). Spanish vergüenza, French honte, and German Schande all converge on this core meaning of public disgrace and inner humiliation.
+
+### H1497 / Sense 89881 (30 occ, sense 1 of 1)
+**Label:** rob, seize, snatch away
+**Lemma gloss:** To seize, rob, snatch away by force; to plunder property, livestock, or people through violent dispossession.
+**Description:** To rob, seize, plunder, or snatch away by force; used of taking property, people, or possessions violently; includes passive forms meaning 'to be robbed/plundered.'
+**Enriched:** To seize, rob, or snatch away by force, involving the violent taking of property, livestock, or persons. Abraham confronts Abimelech about a well that was gazal-ed (Gen 21:25). Leviticus 5:23 and 19:13 legislate restitution for what is seized. Judges 21:23 describes the Benjaminites snatching wives. In prophetic indictment, Ezekiel 18:7, 12, 16, 18 and Micah 3:2 use gazal to denounce oppressive rulers who strip the vulnerable of their livelihood. The passive form gazul ('robbed, plundered') in Deuteronomy 28:29 describes covenantal curse—continual victimization with no rescuer.
+
+### H1869 / Sense 92063 (30 occ, sense 1 of 5)
+**Label:** tread, trample
+**Lemma gloss:** To tread, march, trample; to bend the bow; in Hifil, to lead or guide along a path, or to cause to trample.
+**Description:** Qal: to tread upon, step on, trample — the basic physical action of placing one's foot upon something, including treading grapes in a winepress, treading upon enemies, or walking on a path.
+**Enriched:** The basic Qal sense: to tread upon, step on, trample — 30 occurrences covering the full range of physical foot-placement. This includes treading grapes in the winepress (Isaiah 63:3's dramatic 'I have trodden the winepress alone'), walking upon conquered territory (Deut 1:36; 11:24; Josh 1:3 — 'every place the sole of your foot shall tread'), and trampling enemies or thresholds (1 Sam 5:5). Spanish pisadores/el que pisa ('treaders/the one who treads') and French fouler ('to trample') both preserve the forceful physicality. Korean 밟다 ('to step on') maps directly to this concrete sense.
+
+### H1980 / Sense 92963 (30 occ, sense 4 of 6)
+**Label:** to walk habitually (Piel)
+**Lemma gloss:** To go, walk, travel; metaphorically to conduct oneself; in Hitpael to walk about; in Piel to walk habitually
+**Description:** Intensive or habitual walking in the Piel stem, denoting sustained, repeated, or characteristic going about, sometimes applied to travelers, flowing rivers, or habitual conduct.
+**Enriched:** Piel stem conveying intensive or habitual walking -- sustained, repeated, or characteristic going about. Applied to mourning processions (Ps 38:6), the destitute wandering for bread (Job 24:10), and ongoing patterns of behavior (Job 31:5). The intensive force distinguishes these from single-event Qal motion, marking a lifestyle or repeated action.
+
+### H2370 / Sense 95899 (30 occ, sense 1 of 2)
+**Label:** to see, behold (active)
+**Lemma gloss:** To see or behold, especially visions and dreams; the Aramaic verb for prophetic sight in Daniel and Ezra.
+**Description:** To see or behold, especially in a visionary or prophetic context; the active perception of a sight or vision by a subject.
+**Enriched:** To see, behold, or perceive actively, especially in prophetic dreams and visions. This dominant sense (30x) pervades Daniel's apocalyptic narratives and appears once in Ezra 4:14. The participial form chazeh is characteristically used in periphrastic constructions for ongoing vision: I was seeing (Dan 7:4, 7, 9). Spanish estabas viendo and French voir capture the active, experiential quality. Key passages include Nebuchadnezzar's dream image (Dan 2:31) and Daniel's vision of the Son of Man (Dan 7:13).
+
+### H2406 / Sense 96448 (30 occ, sense 1 of 1)
+**Label:** wheat (grain crop)
+**Lemma gloss:** wheat — the staple cereal grain of ancient Israel, cultivated as a primary food crop and trade commodity
+**Description:** Wheat as a cereal grain crop, one of the primary agricultural products of ancient Israel, mentioned in harvest contexts (Gen 30:14; Exod 34:22; Judg 6:11; Ruth 2:23; 1 Sam 6:13; 12:17), as trade goods (1 Kgs 5:11; 2 Chr 2:10, 15; Ezra 6:9; Ezek 27:17), and in offerings (Num 18:12). All three clusters represent the same noun in different syntactic positions: plain nominal 'wheat / the wheat' (arb: قَمْح / الْقَمْح, kor: 밀을/밀과, swa: ngano), construct/genitive 'of wheat' (arb: الْحِنْطَةِ / حِنْطَةٍ, hin: गेहूँ की, kor: 밀의, swa: ya ngano), and prepositional 'with wheat of' (arb: بِحِنْطَةِ, kor: 밀로, swa: kwa ngano ya). All languages uniformly translate as wheat — spa: trigo, hin: गेहूँ/गेहूं, kor: 밀, swa: ngano — confirming a single undifferentiated sense.
+**Enriched:** Wheat as a cultivated cereal grain and staple food, one of the seven species defining the land's fertility (Deut 8:8). Appears in harvest-calendar formulas (Gen 30:14; Exod 34:22; Ruth 2:23), as a metaphor for divine bounty — 'the fat of wheat' (Deut 32:14; Ps 81:17) — and as a trade commodity exported to Tyre (Ezek 27:17). Multilingual glosses converge uniformly: Spanish 'trigo,' French 'ble,' German 'Weizen.'
+
+### H2421 / Sense 96619 (30 occ, sense 2 of 7)
+**Label:** Piel: revive, give life to
+**Lemma gloss:** To live, be alive; to revive, restore to life; to keep alive, spare; to recover from illness
+**Description:** To revive, restore to life, give life to someone, make alive (Piel causative-intensive); Arabic أَحْيَا / يُحْيِي, Korean 살리다, Swahili -huisha/-fufua.
+**Enriched:** Piel intensive-causative (30x): to revive, restore to life, give life. Arabic ahya/yuhyi and Korean sallida capture the causative force. Hannah's song ('the LORD kills and makes alive,' 1 Sam 2:6) and the theological declaration of Deut 32:39 define this as a uniquely divine prerogative — only God vivifies.
+
+### H2876 / Sense 99870 (30 occ, sense 1 of 2)
+**Label:** executioner, bodyguard (royal slaughterer)
+**Lemma gloss:** A royal executioner or bodyguard ('slaughterer'); rarely, a cook who slaughters and prepares food.
+**Description:** The masculine noun טַבָּח in its primary biblical sense denotes a royal executioner or bodyguard — literally 'slaughterer' — a member of the king's armed retinue charged with executions and security. This usage dominates the OT (30 of 32 occurrences), especially in the phrase רַב־טַבָּחִים 'chief of the executioners/guard' applied to Potiphar (Gen 37:36, 39:1) and Nebuzaradan (2 Kgs 25, Jer 39-52). S99870 covers the construct/absolute plural (טַבָּחִים, 24x) and S99872 the articled forms (הַטַּבָּחִים, 6x). Multilingual translations reflect the guard/executioner sense: Arabic الشُّرَطِ/الْجَلَّادِينَ (police/executioners), Spanish guardia/verdugos (guard/executioners), Hindi देहरक्षकों/अंगरक्षकों (bodyguards), Korean 친위대/경호대/호위대 (royal guard/escort), Swahili walinzi (guards).
+**Enriched:** A royal executioner, bodyguard, or member of the king's armed retinue — the 'slaughterer' who served the monarch in matters of security and capital punishment. Potiphar is 'captain of the guard' (sar hattabbachim) in Genesis (37:36; 39:1), and Nebuzaradan holds the parallel title rab tabbachim throughout the Babylonian siege narratives (2 Kgs 25:8-20; Jer 39:9-14; 52:12-30). Spanish 'guardias'/'los-guardias' and French 'garde' uniformly render this as a military-security role. The Aramaic cognate in Daniel 2:14 (rab tabbachayya) confirms the semantic continuity across biblical languages.
+
+### H3498 / Sense 105077 (30 occ, sense 2 of 4)
+**Label:** remain, be left (Nifal)
+**Lemma gloss:** To remain over, be left, survive; in Hifil, to leave remaining, preserve alive, or cause to abound and exceed.
+**Description:** Nifal finite forms expressing the stative/passive sense of remaining, being left over, or surviving after others are removed.
+**Enriched:** Nifal finite verb forms expressing the stative or passive sense of remaining behind, being left over, or surviving after others have departed or been destroyed. Jacob 'was left alone' at Peniel (Gen 32:24), the youngest son 'remains' with his father (Gen 44:20), and nothing 'was left' after the locusts (Exod 10:15). Spanish quedar/quedaron and German bleiben consistently select stative verbs of remaining, distinguishing these 30 occurrences from the participial-nominal usage of Sense 1 by their finite verbal force — these describe events of remaining, not static categories of leftovers.
+
+### H3513 / Sense 105202 (30 occ, sense 1 of 12)
+**Label:** honor / show respect (Piel)
+**Lemma gloss:** be heavy (weight); honor, respect; be honored, glorified; make heavy, harden; be/make glorious; be rich
+**Description:** Piel active: to honor, respect, or esteem a person (parents, elders, God), corresponding to Arabic كَرَّمَ, Korean 공경하다, Swahili -heshimu.
+**Enriched:** The Piel active sense of honoring or showing respect appears 30 times, primarily with parents, elders, and God as objects. Exodus 20:12 commands 'Honor your father and mother,' Numbers 22:17 records Balak's plea to Balaam 'I will honor you greatly.' Arabic كَرَّمَ ('honor, make noble'), Korean 공경하다 ('show respect'), and Swahili -heshimu ('respect') consistently distinguish this from physical weight, marking the metaphorical extension where social and spiritual weight equals honor.
+
+### H3563a / Sense 105749 (30 occ, sense 1 of 1)
+**Label:** cup, goblet, chalice
+**Lemma gloss:** cup, goblet — a drinking vessel; figuratively, one's divinely allotted portion or fate
+**Description:** A drinking vessel (כּוֹס), used both for a literal cup or goblet and figuratively for one's allotted portion or fate.
+**Enriched:** A drinking vessel used for wine or other beverages, appearing in literal narrative contexts such as the cupbearer's dream (Gen 40:11-21), Nathan's parable (2 Sam 12:3), and the Rechabites' refusal (Jer 35:5). Also describes the ornamental rim of Solomon's molten sea (1 Kgs 7:26). The concrete usage anchors the word's richer metaphorical extensions in prophetic and wisdom literature.
+
+### H3978 / Sense 109396 (30 occ, sense 1 of 1)
+**Label:** food, nourishment
+**Lemma gloss:** food, nourishment — edible substance or provision for eating, including fruit, grain, and prepared meals
+**Description:** Edible substance or provision for eating, referring to food in general whether as sustenance, animal feed, or produce designated for consumption.
+**Enriched:** Edible substance or nourishment in the broadest sense, covering raw produce, prepared meals, and provisions. First appears describing Eden's trees as 'good for food' (Gen 2:9; 3:6), then Noah's ark provisions (Gen 6:21), fruit-bearing trees in legal codes (Lev 19:23; Deut 20:20), and royal fare (1 Kgs 10:5). Habakkuk extends it figuratively to conquered peoples devoured like fish (Hab 1:16). Samson's riddle plays on the word: 'out of the eater came food' (Judg 14:14).
+
+### H4643 / Sense 113323 (30 occ, sense 1 of 2)
+**Label:** tithe, religious tenth offering
+**Lemma gloss:** Tithe or tenth part; a sacred tenth of produce given to God or the Levites, or simply a numerical fraction.
+**Description:** A tenth part of produce, livestock, or income set apart as a sacred offering to God or for the Levites, used in both singular and plural forms across various grammatical constructions.
+**Enriched:** A tenth portion of produce, livestock, or income consecrated as a religious offering to God or designated for the Levites, covering 30 of 32 occurrences. From Abraham's voluntary gift to Melchizedek (Gen 14:20) through the Levitical regulations (Lev 27:30-32; Num 18:21-26) to Malachi's call to faithfulness (3:8-10). All major translations render it with dedicated cultic terms: 'diezmo' (Spa), 'dîme' (Fra), 'Zehnte' (Deu).
+
+### H4853a / Sense 114460 (30 occ, sense 1 of 5)
+**Label:** physical burden or load
+**Lemma gloss:** Load, burden, carrying; also prophetic oracle, tribute, or lifting up of desire — from the root נָשָׂא 'to lift, bear'
+**Description:** A physical weight or load carried by a person or animal, including figurative burdens of responsibility or oppression.
+**Enriched:** The dominant sense: a tangible weight or load borne by animals (donkeys in Exod 23:5, mules in 2 Kgs 5:17, camels in 2 Kgs 8:9), or carried by people in contexts like the Levitical transport of the tabernacle (Num 4:15, 24, 27). This extends figuratively to the 'burden' of caring for people (Num 11:11; Deut 1:12), being a weight upon someone (2 Sam 15:33; Job 7:20), and the crushing load of iniquity (Ps 38:5). The Sabbath prohibition on carrying loads (Jer 17:21-27; Neh 13:15, 19) shows its everyday concreteness. Spanish 'carga' and French 'charge/fardeau' consistently render this sense.
+
+### H4908 / Sense 114735 (30 occ, sense 2 of 2)
+**Label:** dwelling place, habitation
+**Lemma gloss:** Dwelling place or habitation; predominantly the Tabernacle, Israel's portable wilderness sanctuary.
+**Description:** A dwelling or habitation in general, used of human settlements, cities, or God's abode in poetic and prophetic contexts, often in plural forms.
+**Enriched:** A dwelling place, habitation, or abode in a broader sense—used of God's heavenly or temple dwelling in poetic contexts, or of human and communal habitations. Spanish shifts to 'morada(s),' German to 'Wohnung,' distinguishing this from the technical Tabernacle sense. Balaam's oracle admires Israel's 'dwelling places' (Num 24:5), the psalmist celebrates God's mishkan among his people (Ps 46:5; 26:8), and prophetic warnings target the habitations of enemies (Ezek 25:4) and the wicked.
+
+### H5126 / Sense 116782 (30 occ, sense 1 of 1)
+**Label:** (none)
+**Lemma gloss:** Nun — personal name, father of Joshua, consistently identified in the patronymic 'Joshua son of Nun'
+**Description:** (none)
+**Enriched:** The proper name of Joshua's father, from the tribe of Ephraim. Invariably occurs in the fixed patronymic formula 'Joshua son of Nun' across the Pentateuch (Exod 33:11; Num 11:28; Deut 1:38), the conquest narratives (Josh 1:1; 2:1), and post-conquest references (Judg 2:8; 1 Kgs 16:34; Neh 8:17). The genealogy of 1 Chronicles 7:25-27 places Nun in the Ephraimite line. No independent narrative is preserved about the figure himself.
+
+### H5186 / Sense 117358 (30 occ, sense 3 of 10)
+**Label:** outstretched arm (Qal passive participle)
+**Lemma gloss:** stretch out, incline, turn aside, spread — verb of directional extension: literal (hand, arm, tent) or figurative (heart, ear, justice)
+**Description:** Passive participle describing the state of being stretched out, characteristically used of God's outstretched arm (Arabic mamduda/مَمْدُودَة); includes both feminine and masculine forms, with and without article.
+**Enriched:** Qal passive participle 'outstretched' (30×) describes a state of extension—almost exclusively God's 'outstretched arm' (זְרוֹעַ נְטוּיָה), a fixed expression for redemptive power. Arabic مَمْدُودَة, Korean 펴신, Spanish extendido/extendida, German der-outstretched. Deuteronomy formula: 'with a mighty hand and an outstretched arm' (Deut 4:34, 5:15, 7:19, 9:29, 11:2).
+
+### H5234a / Sense 117874 (30 occ, sense 1 of 7)
+**Label:** recognize or identify
+**Lemma gloss:** To recognize, discern, or acknowledge; also to show partiality, make oneself known, or deny recognition
+**Description:** To recognize, identify, or discern a person, thing, or situation by sight or perception (Hifil active).
+**Enriched:** The primary Hiphil sense: to recognize or identify by perception. Joseph recognized his brothers but they did not recognize him (Gen 42:8); Naomi's neighbors recognized her upon return (Ruth 1:18). Spanish 'reconocio' and French 'reconnaitre' map directly. This covers visual identification, discerning voices, and perceiving situations through evidence.
+
+### H5674a / Sense 121957 (30 occ, sense 5 of 10)
+**Label:** Qal: transgress, violate
+**Lemma gloss:** to pass over, pass through, pass by; to cross (a boundary, river); to pass away, cease; to transgress; to cause to pass; to remove
+**Description:** To transgress, violate, or go beyond a covenant, commandment, or established boundary in a moral or legal sense; used of breaking God's covenant, overstepping divine decrees, exceeding proper limits, and acting treacherously.
+**Enriched:** A specialized Qal sense denoting moral or legal transgression — crossing the boundary of covenant, commandment, or oath. Moses warns 'Why do you transgress the commandment of the Lord?' (Num 14:41), Balaam refuses to 'go beyond the word of the Lord' (Num 22:18), and Joshua marks stones as witness 'lest you transgress' (Josh 24:27). The translations render this as violation (Arabic tajaawaza 'to transgress', Korean 어기다 'to violate'), a metaphorical extension of boundary-crossing into the moral domain.
+
+### H5678 / Sense 122285 (30 occ, sense 1 of 3)
+**Label:** wrath, fury, rage
+**Lemma gloss:** Wrath, fury, overflowing rage (especially divine); arrogance or insolent excess; outbursts or torrents of anger.
+**Description:** Intense anger or fury, especially divine wrath poured out in judgment; the primary and most common sense of the word across all inflections, pronominal suffixes, and prepositional prefixes.
+**Enriched:** Intense wrath, fury, or rage — overwhelmingly divine anger unleashed in judgment, though also applied to human fury (Gen 49:7; Prov 14:35). This dominant sense (30 occurrences) encompasses 'the day of the LORD's wrath' (Zeph 1:15, 18), the burning fury sent upon Egypt (Ps 78:49), and the rod of God's fury wielded against the nations (Isa 10:6; 14:6). Spanish ira/furor, French colere/fureur, German Zorn/Grimm, Arabic غَضَب, and Hindi क्रोध converge emphatically. The word's gravitational pull is toward the language of catastrophic judgment — it appears alongside af ('nostril-anger'), chemah ('heat-rage'), and zaam ('indignation') in some of Scripture's most fearsome judgment oracles (Ps 78:49; Isa 13:9).
+
+### H5945b / Sense 124382 (30 occ, sense 1 of 1)
+**Label:** Most High
+**Lemma gloss:** Most High — a divine title emphasizing God's supreme sovereignty above all powers and nations
+**Description:** Most High, the Most High, of the Most High (30 occurrences across 8 original clusters)
+**Enriched:** A divine title meaning 'Most High,' affirming God's supreme position above all cosmic and earthly powers. First attested in the Melchizedek blessing as El Elyon, 'God Most High, creator of heaven and earth' (Gen 14:18-22). Deuteronomy 32:8 assigns Elyon the sovereign act of apportioning nations. In the Psalms it combines freely with YHWH (Ps 7:18), Elohim (Ps 57:3), and El (Ps 78:35). Psalm 82:6 extends the epithet metaphorically to angelic or human rulers as 'sons of the Most High.'
+
+### H6459 / Sense 127995 (30 occ, sense 1 of 1)
+**Label:** carved image, idol
+**Lemma gloss:** carved image, graven idol — a hewn figure of wood, stone, or metal used in idolatrous worship
+**Description:** A physical image hewn or carved from wood or stone, used as an object of idolatrous worship; the standard Biblical Hebrew term for a graven image, always pejorative in context.
+**Enriched:** A physical image carved from wood, stone, or cast from metal, serving as an object of illicit worship. Prohibited in the Decalogue (Exod 20:4; Deut 5:8) and covenant curses (Deut 27:15). The Micah narrative illustrates domestic idol-making and its theft by the Danites (Judg 17:3-4; 18:14-31). Isaiah's workshop satire shows a single log split between fuel and deity (Isa 40:19-20; 44:9-17). Jeremiah indicts goldsmiths shamed by their pesel (Jer 10:14; 51:17).
+
+### H7070 / Sense 132487 (30 occ, sense 1 of 7)
+**Label:** reed, cane (plant)
+**Lemma gloss:** Reed, cane; stalk of grain; branch or shaft of the lampstand; aromatic calamus; beam of scales; upper arm bone
+**Description:** A reed or cane plant growing in marshy areas, also used as a measuring rod (Ezekiel's measuring reed); the basic and most frequent sense of qaneh.
+**Enriched:** The primary sense: a marsh-growing reed or cane, used literally of waterside vegetation (1 Kgs 14:15; Isa 19:6) and figuratively of fragile support (2 Kgs 18:21, the 'bruised reed'). Spanish caña, French roseau, and German Rohr all converge on 'reed,' while the measuring-reed usage in Ezekiel (40:3-5) extends from the plant's straight, rigid stalk.
+
+### H7121 / Sense 132829 (30 occ, sense 4 of 6)
+**Label:** be called, be named (Nifal/Pual)
+**Lemma gloss:** Call, summon, name; cry out in distress; proclaim publicly; read aloud; invite to a gathering
+**Description:** Nifal/Pual passive: to be called, be named, or be known by a name (Arabic دُعِيَ du'iya / يُدْعَى yud'a; Korean 불리다/불림받다; Swahili -itwa); the passive voice indicating receiving a name or designation.
+**Enriched:** Passive: to be called or named (Nifal/Pual, 30x). Arabic du'iya, Korean 불리다, and Swahili -itwa consistently render the passive voice. Gen 48:6 ('they shall be called by the name of their brothers') and Deut 28:10 ('all peoples shall see that you are called by the name of the LORD') show naming as identity-conferral from outside the individual.
+
+### H7259 / Sense 134608 (30 occ, sense 1 of 1)
+**Label:** Rebekah (proper name)
+**Lemma gloss:** Rebekah — matriarch of Israel, wife of Isaac, mother of Esau and Jacob
+**Description:** Proper feminine name רִבְקָה (Rivqah/Rebekah), wife of Isaac and mother of Esau and Jacob, prominent in the patriarchal narratives of Genesis 22-49 and referenced in Ruth 4. The two clusters differ only by the presence of the conjunction waw ('and Rebekah' vs. 'Rebekah'). Eng 'Rebekah / and Rebekah,' Spa 'Rivqah / Y Rivqah,' Hin 'रिबका / और रिबका,' Arb 'رِفْقَةَ / وَرِفقَةُ,' Kor '리브가가 / 그리고 리브가가,' Swa 'Rebeka / Na Rebeka.' No semantic distinction; conjunction is purely syntactic.
+**Enriched:** The proper feminine name of Isaac's wife and the mother of Esau and Jacob, a central matriarch in Israel's covenant story. Introduced through her hospitality at the well (Gen 24:15-67), she receives a divine oracle about two nations in her womb (Gen 25:22-23) and orchestrates Jacob's acquisition of the blessing (Gen 27:5-17). Her burial at Machpelah is noted in Jacob's final words (Gen 49:31). All 30 occurrences fall within Genesis.
+
+### H7495 / Sense 136760 (30 occ, sense 1 of 7)
+**Label:** Qal: to heal
+**Lemma gloss:** To heal, cure, restore to health; as participle: physician; also to repair or mend (of objects)
+**Description:** Active healing performed by an agent (God, a person) in the Qal stem, encompassing all finite verb forms, infinitives, and the infinitive absolute with transitive meaning 'to heal, cure, restore to health.'
+**Enriched:** The core Qal active meaning: to heal, cure, or restore to health, with God or a human agent as subject. Covers 30 occurrences across finite forms, infinitives, and the infinitive absolute. Arabic rafa'a ('to mend'), Swahili -ponya ('to heal'), and Korean gochida ('to cure') each capture a facet. Key passages include God healing Abimelech's household (Gen 20:17) and Hezekiah's prayer for healing (2 Kgs 20:5).
+
+### H7562 / Sense 137141 (30 occ, sense 1 of 1)
+**Label:** wickedness, evil
+**Lemma gloss:** wickedness, guilt — moral evil as a quality of character or conduct, opposed to God's righteous order
+**Description:** Moral wickedness or evil conduct, referring to the quality or state of being wicked, ungodly, or morally corrupt.
+**Enriched:** Moral wickedness or guilt as a quality of character and conduct, standing in fundamental opposition to God's righteous order. Functions as the antithesis of tsedaqah in wisdom literature (Prov 10:2; Eccl 3:16). In the prophets, it becomes socially concrete: the 'fist of wickedness' (Isa 58:4), 'bonds of wickedness' (Isa 58:6), and 'treasuries of wickedness' (Mic 6:10). The ancient proverb in 1 Samuel 24:13 treats resha' as self-perpetuating evil. Ezekiel 7:11 personifies it as a rod that has blossomed.
+
+### H8227b / Sense 143553 (30 occ, sense 1 of 1)
+**Label:** Shaphan (personal name)
+**Lemma gloss:** Shaphan — royal scribe under Josiah who read the discovered Book of the Law; patriarch of a prominent family
+**Description:** Proper noun שָׁפָן (Shaphan): primarily the scribe/secretary who served under King Josiah and read the discovered Book of the Law (2 Kgs 22:3-14; 2 Chr 34:8-20), also the father of Ahikam, Elasah, and Gemariah (Jer 26:24; 29:3; 36:10-12). S143553 covers bare and conjunctive occurrences of the name (29x), while S143554 is a single conjunctive use 'and Shaphan'. All translations preserve the same anthroponym: eng Shaphan, spa Shafan/Safán, hin शापान/शाफ़ान, arb شَافَان, kor 샤반/사반, swa Shafani. No semantic distinction exists.
+**Enriched:** The personal name of a royal scribe-secretary in Josiah's court who catalyzed Judah's reform by reading the discovered Torah scroll before the king (2 Kgs 22:3-14; 2 Chr 34:8-20). Also designates the patriarch of a family whose sons played key roles in Jeremiah's era: Ahikam protected the prophet (Jer 26:24), Gedaliah served as governor after the fall (2 Kgs 25:22; Jer 39:14; 40:5-11), and Elasah carried Jeremiah's letter to Babylon (Jer 29:3). Ezekiel 8:11 records a Jaazaniah son of Shaphan in an idolatrous scene.
+
+### H???? / Sense 146013 (30 occ, sense 26 of 94)
+**Label:** (none)
+**Lemma gloss:** (none)
+**Description:** (none)
+**Enriched:** (none)
+

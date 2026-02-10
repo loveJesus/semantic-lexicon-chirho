@@ -1,0 +1,291 @@
+# Sense Refinement Detection — Batch 019
+
+You are a biblical lexicographer reviewing sense entries for a Hebrew/Aramaic/Greek lexicon.
+Each entry below is a single "sense" that was produced by clustering translation signatures 
+and then merging with an LLM. Some senses may have been OVER-LUMPED — they contain genuinely 
+distinct meanings that should be separate senses.
+
+## Your Task
+
+For each sense, determine if it should be SPLIT into multiple senses. Look for:
+- Literal vs. figurative/metaphorical uses lumped together
+- Concrete vs. abstract meanings combined
+- Multiple distinct referents (e.g., "father" = biological parent + patron/advisor + originator)
+- Physical vs. spiritual/theological uses merged
+- Different syntactic frames producing different meanings
+
+## Output Format
+
+Return a JSON array. For senses that need NO splitting, omit them entirely.
+For senses that SHOULD be split, include an entry like:
+
+```json
+[
+  {
+    "senseIdChirho": 79287,
+    "lemmaIdChirho": "H0001",
+    "currentLabelChirho": "father, immediate male parent",
+    "splitProposalChirho": [
+      {
+        "newLabelChirho": "biological/legal father",
+        "criteriaChirho": "Direct parent-child relationship, possessive constructions with specific person"
+      },
+      {
+        "newLabelChirho": "metaphorical father (patron, advisor, protector)",
+        "criteriaChirho": "Title of respect for prophets, advisors, or authority figures; 'father to Pharaoh' type usage"
+      }
+    ],
+    "confidenceChirho": "high",
+    "reasoningChirho": "Description explicitly mentions 'title of respect or metaphorical originator' alongside biological father"
+  }
+]
+```
+
+Only propose splits where you have MEDIUM or HIGH confidence. Do NOT split function words (articles, 
+prepositions, particles, conjunctions) unless there is a genuinely distinct semantic sense (not just 
+syntactic variation). Proper nouns generally should NOT be split.
+
+If NO senses in this batch need splitting, return an empty array: []
+
+## Senses to Review
+
+### H1077 / Sense 86767 (72 occ, sense 1 of 1)
+**Label:** not (poetic negation)
+**Lemma gloss:** Not — a poetic and archaic particle of negation, synonymous with lo but found almost exclusively in elevated verse.
+**Description:** Poetic and archaic adverb of negation, functioning as an elevated synonym of לֹא ('not'). Found almost exclusively in poetry: extensively in the Psalms (Ps 10:4, 6, 11, 15, 18; 16:2, 4, 8; 17:3, 5; 21:2, 7; 32:9; 57:9; 73:1; 108:3; 119:22; 149:7 and many more), in Job (41:23), Proverbs (19:23), Isaiah (14:21; 26:14, 18; 33:20; 40:24; 43:17; 44:8-9; 56:3), Hosea (9:16), and 1 Chronicles 16:30. Sometimes carries modal nuances: 'lest' in Ps 32:9 and Isa 14:21, purposive negation. The auto-split clusters labeled 'among the' and 'on the' in Ps 57:9 and 149:7 appear to be translation artifacts where the negation was mistranslated or combined with adjacent prepositions. All 69 occurrences represent the single Hebrew negation particle בַּל. Multilingual glosses uniformly render it as negation: Arabic لا (no), German nicht (not), Korean 아니 (not), Hindi नहीं (not), Spanish no (not), French ne...pas (not).
+**Enriched:** A poetic negation particle functioning identically to lo ('not') but reserved for elevated literary register. Found almost exclusively in the Psalms (Ps 10:4, 6, 11; 16:8; 21:7; 46:5), Isaiah (Isa 26:10-18; 33:20-24; 44:8-9), Proverbs, and Hosea. Often repeated for rhetorical effect in extended sequences of denial or assurance. Its distinction from lo is purely stylistic — all target languages render it with their standard negation word, confirming no semantic difference.
+
+### H1410 / Sense 89334 (72 occ, sense 1 of 1)
+**Label:** Gad (proper name: patriarch, tribe, or prophet)
+**Lemma gloss:** Gad — 'fortune'; Jacob's seventh son by Zilpah, the tribe descended from him, or the prophet who served David.
+**Description:** Proper noun referring to (a) Gad the seventh son of Jacob by Zilpah, (b) the Israelite tribe descended from him and its territorial allotment in Transjordan, or (c) Gad the prophet/seer who served David. The three clusters are purely grammatical: bare/articular form (68x), with conjunctive waw 'and Gad' (2x), and with prepositional lamed 'to/for Gad' (2x). All translations confirm a single proper name: Spanish 'Gad', Hindi 'गाद' (Gaad), Arabic 'جَادَ/جَادُ' (Jad), Korean '갓/가드' (Gat/Gadeu), Swahili 'Gadi'. Appears extensively in Genesis, Numbers, Deuteronomy, Joshua, 1-2 Samuel, and 1-2 Chronicles across all three referents, unified as a single lexical entry.
+**Enriched:** The proper name Gad, referring to (a) Jacob's seventh son by Zilpah, named at birth with the exclamation 'Fortune has come!' (Gen 30:11; 35:26; 46:16), (b) the Israelite tribe descended from him and their Transjordanian territory in Gilead (Num 32:1-5; Deut 33:20-21; Josh 13:24-28), known for military valor (Gen 49:19; 1 Chr 12:8), and (c) Gad the prophet/seer who served David (1 Sam 22:5; 2 Sam 24:11-19; 1 Chr 21:9). Context alone distinguishes the referents; all languages transliterate the name directly.
+
+### H4069 / Sense 109817 (72 occ, sense 1 of 1)
+**Label:** why
+**Lemma gloss:** Why? Wherefore? — an interrogative adverb probing motive or cause, often expressing surprise, reproach, or lament.
+**Description:** why, Why, and why (72 occurrences across 2 original clusters)
+**Enriched:** An interrogative adverb meaning 'why?' or 'on what account?', probing the motive or cause behind an action. Used in direct questions within narrative (Gen 26:27; 40:7; Exod 1:18; 2:18; 3:3), prophetic confrontation and lament (Jer 2:14, 31; 8:5, 19, 22; Isa 5:4; 50:2; 63:2), and indirect questions expressing puzzlement (Exod 3:3). Probably contracted from mah-yadua ('what being known?'). All languages render it with their standard 'why' interrogative.
+
+### H6285 / Sense 126897 (72 occ, sense 1 of 3)
+**Label:** side, direction
+**Lemma gloss:** Corner, side, or edge; a boundary portion of a structure, territory, or body, including the temples of the head.
+**Description:** A side or direction of a structure, territory, or boundary, used extensively in architectural and geographical descriptions (e.g., north side, south side of the tabernacle, temple, or promised land).
+**Enriched:** The dominant sense across 72 occurrences: a side or directional face of a structure, territory, or boundary. Extensively used in architectural prescriptions for the tabernacle (Exod 26:18, 27:9-11) and in Ezekiel's temple and land-allotment visions. English 'side of,' Spanish 'lado de,' French 'côté de,' and German 'Seite von' all converge on directional orientation. The term functions almost as a technical compass-direction marker: 'the south side,' 'the north side.'
+
+### H7198 / Sense 133679 (72 occ, sense 1 of 2)
+**Label:** bow (weapon)
+**Lemma gloss:** Bow — a weapon for shooting arrows in warfare or hunting; also the rainbow as God's covenantal sign in the sky.
+**Description:** A bow used as a weapon for shooting arrows, whether in warfare or hunting, including all grammatical inflections (possessive suffixes, prepositions, conjunctions, plurals).
+**Enriched:** The weapon bow used to shoot arrows in battle or hunting. This is the dominant sense across 72 occurrences, confirmed by translations uniformly rendering it as a weapon: Spanish 'arco,' French 'arc,' German 'Bogen.' It represents military might — Joseph's bow remained strong (Gen 49:24), Jonathan's bow never turned back (2 Sam 1:22), and God breaks the bow to end war (Ps 46:9). The 'Song of the Bow' (2 Sam 1:18) is David's lament for the fallen warrior.
+
+### H7205 / Sense 133915 (72 occ, sense 1 of 1)
+**Label:** Reuben (person and tribe)
+**Lemma gloss:** Reuben — 'behold, a son!'; Jacob's firstborn by Leah, and the Israelite tribe settled in Transjordan.
+**Description:** The proper noun Reuben, referring to Jacob's firstborn son and the Israelite tribe descended from him, including their territorial allotment in Transjordan. All four clusters represent the same name with different prepositional and conjunctional frames: bare noun (69x), ke- (as/like Reuben), le- (for/to Reuben), and waw (and-Reuben). Multilingual evidence is perfectly uniform: Arabic ra'ubiyna (رَأُوبِينَ), Spanish Ruben, Hindi ruben/ra'uben (रूबेन/रऊबेन), Korean reuben (르우벤), and Swahili Reubeni/Rubeni throughout all clusters.
+**Enriched:** The proper name Reuben, designating (a) Jacob's firstborn son by Leah, named with a wordplay on 'behold, a son' and 'God has seen my affliction' (Gen 29:32; 35:22; 49:3-4), (b) the Israelite tribe descended from him and their Transjordanian territory east of the Dead Sea (Num 32; Josh 13:15-23; Deut 33:6), and (c) the tribal allotment in Ezekiel's eschatological vision (Ezek 48:6-7). Despite losing the birthright (1 Chr 5:1), Reuben retains his place in all tribal lists. All languages transliterate the name directly.
+
+### H7819a / Sense 139596 (72 occ, sense 1 of 5)
+**Label:** slaughter an animal (Qal active)
+**Lemma gloss:** To slaughter, kill (an animal); primarily ritual sacrifice; in Nifal, to be slaughtered; also of violent killing of persons.
+**Description:** To slaughter or kill an animal, typically in a ritual or sacrificial context, encompassing all Qal active finite forms, infinitives, and the infinitive absolute.
+**Enriched:** Qal active: to slaughter an animal, typically in a ritual or sacrificial context — the dominant sense at 72 occurrences, concentrated in Leviticus, Numbers, and Exodus. This covers the Passover lamb (Exod 12:21), burnt offerings (Lev 1:5, 11), peace offerings (Lev 3:2, 8), sin offerings (Lev 4:24, 29), and the slaughter of animals for food after military victory (1 Sam 14:32). Spanish degollar ('to slit the throat'), German schlachten, and Korean 잡다 consistently render the sacrificial act. The verb specifies the killing stroke itself — the moment the knife meets the throat — within a larger ritual sequence of presenting, laying on hands, slaughtering, sprinkling, and burning.
+
+### G2411 / Sense 69424 (71 occ, sense 1 of 1)
+**Label:** temple
+**Lemma gloss:** Temple — the sacred precinct in Jerusalem, especially the temple complex including its courts, porticoes, and sanctuary.
+**Description:** temple (71 occurrences across 2 original clusters)
+**Enriched:** The temple complex or sacred precinct, referring to the entire Jerusalem temple grounds including its courtyards, porticoes, and surrounding structures — as distinct from naos, which designates the inner sanctuary proper. Jesus teaches in the hieron (Matt 21:23; Luke 19:47; John 7:14), drives out merchants from its courts (Matt 21:12; Mark 11:15), and is tested at its pinnacle (Matt 4:5). The early church gathers there daily (Acts 2:46; 5:20-21). Spanish templo, French temple, and German Tempel do not preserve the hieron/naos distinction.
+
+### G5457 / Sense 78845 (71 occ, sense 1 of 2)
+**Label:** light (illumination)
+**Lemma gloss:** Light; natural, divine, or metaphorical illumination; rarely the glow of a fire.
+**Description:** Light as illumination, whether natural (sunlight, daylight), divine (God's light, spiritual light), or metaphorical (moral/intellectual enlightenment). The vast majority of occurrences (69 singular + 2 plural = 71 of 72) carry this meaning with consistent multilingual evidence: spa 'luz/luces', hin 'jyoti/roshni' (light/luminance), arb 'al-nur/anwar' (the light/lights), kor 'bit/bitdeul' (light/lights), swa 'nuru/mwanga' (light/brightness). Singular and plural are purely inflectional variants of the same core meaning.
+**Enriched:** Light as illumination in its full range: natural daylight (Matt 17:2), divine radiance (2 Cor 4:6), spiritual enlightenment (John 1:5; 8:12), and moral transparency (Matt 5:16). This sense dominates with 71 of 72 occurrences. Translations are remarkably uniform — Spanish 'luz,' French 'lumière,' German 'Licht' — reflecting how naturally these languages map onto the same breadth of literal and metaphorical illumination.
+
+### H0226 / Sense 80725 (71 occ, sense 1 of 3)
+**Label:** sign, miraculous sign
+**Lemma gloss:** Sign, miraculous portent, covenant token, or tribal standard; a visible marker conveying divine meaning or group identity.
+**Description:** A visible indicator, portent, or miraculous act serving as evidence of divine power or a message from God, including the plagues of Egypt and other wonders.
+**Enriched:** A visible sign, portent, or miraculous act serving as evidence of divine power or prophetic authenticity. This is the dominant sense, covering everything from the plagues of Egypt (Exod 4:8-9) to prophetic confirmations (1 Sam 10:7) to the sign promised to Ahaz (Isa 7:14). In all four major European translations — English 'sign,' Spanish 'señal,' French 'signe,' German 'Zeichen' — the same core word is used, reflecting the universality of the concept. The emphasis is on divine communication: God makes himself known through visible, often extraordinary, acts.
+
+### H0452 / Sense 82553 (71 occ, sense 1 of 1)
+**Label:** Elijah (proper name)
+**Lemma gloss:** Elijah -- the prophet from Tishbe whose name means 'my God is Yahweh,' champion against Baal worship
+**Description:** The Hebrew proper name Elijah (אֵלִיָּה / אֵלִיָּהוּ, meaning 'my God is YHWH'), the prominent prophet from Tishbe in Gilead who confronted Baal worship and was taken up to heaven in a whirlwind (1 Kings 17-2 Kings 2). All 71 occurrences denote the same individual across grammatical contexts: nominative (eng: Elijah/Eliyahu, spa: Elías, arb: إيلِيّا, hin: एलिय्याहू, kor: 엘리야, swa: Eliya), with conjunction 'and Elijah' (arb: وَ–إِيلِيَّا, hin: और–एलिय्याह), and with preposition min 'from Elijah' (arb: مِنْ–إِيلِيَا, swa: kutoka–kwa–Eliya). These represent purely syntactic variation.
+**Enriched:** The proper name Elijah, borne primarily by the great ninth-century prophet who declared drought (1 Kgs 17:1), was fed by ravens and a widow, triumphed on Carmel (1 Kgs 18:36-39), and ascended in a whirlwind (2 Kgs 2:11). Also applied to a Benjamite and two men of Ezra's era, but cross-lingual glosses -- Spanish Elias, French Elie, German Elia -- treat them uniformly as a single proper-noun sense, as expected for a personal name.
+
+### H1486 / Sense 89830 (71 occ, sense 1 of 2)
+**Label:** lot (object cast for decisions)
+**Lemma gloss:** Lot, allotment — a small object cast for divine decision-making; by extension, the portion or destiny so assigned.
+**Description:** A lot, the small object (stone, pebble, or piece of wood) cast or drawn to determine God's will or to make decisions by chance; used literally of the act of casting lots.
+**Enriched:** The lot as a physical object cast or drawn to determine divine will or settle disputes — the concrete instrument of decision-making. Covers 71 occurrences, prominently in the Day of Atonement ritual where Aaron casts lots over two goats (Lev 16:8-10) and in the land distribution narratives (Num 26:55; Josh 18:11). Spanish 'suerte' and French 'sort' both carry the dual sense of 'lot cast' and 'fate determined,' while German 'Los' preserves the concrete lottery sense.
+
+### H3205 / Sense 101979 (71 occ, sense 3 of 8)
+**Label:** Qal passive / Niphal: be born
+**Lemma gloss:** To bear, give birth, beget, or be born; covering maternal birthing, paternal begetting, passive birth, and midwifery
+**Description:** The passive sense 'to be born,' realized through Qal passive (QalPass) and Niphal stems. Arabic uniformly uses وُلِدَ (wulida, passive of walada) and يُولَدُ (yuuladu, imperfect passive); Korean switches to the entirely different verb 태어나다 (taeeonada) 'to be born' (not 낳다); Swahili uses the passive -zaliwa (e.g., alizaliwa, walizaliwa) — the -w- passive morpheme is a clear discriminator. Spanish uses nacer/nacio (intransitive 'to be born') rather than dar a luz or engendrar. This is a genuine distinct sense confirmed by all six languages using different morphological or lexical strategies from the active senses.
+**Enriched:** Qal passive and Niphal: to be born. Arabic wulida (passive of walada) and Korean taeonada 'to be born' confirm the passive orientation. Appears in genealogical summaries ('to them were born sons,' Gen 6:1; 10:1), the pivotal 'a child is born' oracles, and the Psalms' declarations of divine sonship (Ps 2:7).
+
+### H3844 / Sense 108349 (71 occ, sense 1 of 1)
+**Label:** Lebanon (geographical region)
+**Lemma gloss:** Lebanon -- the forested mountain range north of Israel, famed for cedars and snow-capped cliffs
+**Description:** The proper noun Lebanon (לְבָנוֹן), referring to the mountainous region and territory north of Israel, known for its cedars and forests; all 15 clusters represent the same place name differing only in prepositional prefix (in, from, like, to) or article/conjunction, not in meaning.
+**Enriched:** The geographic proper noun designating the mountain range north of Israel, employed both as a literal place name (Deut 1:7; Josh 1:4; 1 Kgs 5:13) and as a poetic symbol of majesty, fertility, and fragrance (Ps 29:6; Song 4:11, 15; Isa 35:2). The etymological link to lavan ('white') evokes either snow-covered peaks or pale limestone cliffs. All target languages -- Spanish Libano, French Liban, German Libanon -- render it as a single undifferentiated toponym across all 71 occurrences.
+
+### H6963a / Sense 131604 (71 occ, sense 3 of 6)
+**Label:** sound / noise (non-vocal)
+**Lemma gloss:** voice, sound; human speech, divine utterance, thunder, noise, or report — the audible expression of will or event
+**Description:** An audible sound, noise, or acoustic phenomenon not produced by a human or divine voice — the sound of water, wind, chariots, trumpets, wings, millstones, battle, or other non-vocal sources — Arabic صَوْت (of things), Korean 소리, Swahili sauti, Hindi ध्वनि/आवाज़.
+**Enriched:** Non-vocal audible phenomena: the sound of water, wind, chariots, wings, grinding, or battle. Multilingual glosses shift from 'voice' to 'sound/sonido/son/Klang,' signaling acoustic rather than communicative content. The rustling in the balsam trees (2 Sam 5:24) and the sound of the trumpet growing louder (Exod 19:19) exemplify environmental or instrumental noise distinct from speech.
+
+### H7979 / Sense 141046 (71 occ, sense 1 of 1)
+**Label:** table
+**Lemma gloss:** shulchan -- a table for dining, royal feasts, or ritual use; by metonymy, the provision set upon it
+**Description:** A table as a piece of furniture for eating, serving, or ritual use (including the table of showbread in the tabernacle/temple), and by metonymy the provision or sustenance associated with dining at someone's table.
+**Enriched:** A table as a piece of furniture -- whether a humble mat on the ground (as the etymological background suggests), a king's banquet table (1 Kgs 2:7; 2 Sam 9:7), the sacred table of showbread in the tabernacle (Exod 25:23-30; Num 4:7), or even idol tables that provoke divine jealousy (Isa 65:11; Mal 1:7). By extension the word carries metonymic force: 'my table' means 'my provision and hospitality' (Ps 23:5; Ps 69:23). Spanish mesa, French table, and German Tisch map uniformly to this unified sense.
+
+### G0166 / Sense 61573 (70 occ, sense 1 of 2)
+**Label:** eternal
+**Lemma gloss:** Eternal, everlasting; pertaining to an age without end, especially of divine life, punishment, and covenant realities.
+**Description:** eternal, of eternal (70 occurrences across 4 original clusters)
+**Enriched:** Eternal or everlasting, describing what pertains to unending duration or the age to come. Covers 70 of 71 occurrences across the full theological spectrum: eternal life (Matt 19:16, 29; John 3:16), eternal fire and punishment (Matt 18:8; 25:41, 46), eternal glory (2 Tim 2:10), and the eternal God (Rom 16:26). The striking uniformity of translations — Spanish 'eterno,' French 'éternel,' German 'ewig' — reflects a stable, unambiguous core meaning across all contexts.
+
+### G1325 / Sense 65524 (70 occ, sense 2 of 5)
+**Label:** be given, be granted
+**Lemma gloss:** To give, bestow, grant; passively, to be given; by extension, to put/place, yield/produce, or hand over/surrender.
+**Description:** To be given or granted something — the passive reception of what is bestowed, used when the recipient is the grammatical subject.
+**Enriched:** Passive voice: to be given, be granted, be bestowed upon. Found 70 times, these forms shift the grammatical focus to the recipient and frequently employ the divine passive — where God is the unstated agent. 'To you it has been given to know the mysteries' (Matt 13:11), 'it was given to him to make war' (Rev 13:7), and 'every good gift is given from above' (Jas 1:17, alluding to didomi). Spanish fue dada/dado, Korean ju-eo-jyeotta (passive form), and Arabic u'tiya all select dedicated passive constructions. The theological import is that the recipients are entirely dependent — they do not earn or seize what is given.
+
+### G1342 / Sense 65635 (70 occ, sense 1 of 3)
+**Label:** righteous, upright (of persons)
+**Lemma gloss:** Righteous, just, upright; of persons in right standing with God, of actions that are fair, and as a messianic title.
+**Description:** Describing a person who is morally upright, just, and in right standing before God or by ethical standards.
+**Enriched:** Describes a person who consistently lives in moral alignment with God's will and ethical norms. The Greek dikaios in this personal sense spans Hebrew tsaddiq territory — the covenant-keeper, the one whose life matches profession. In Matt 5:45, God sends rain on the righteous and unrighteous alike; in Matt 13:43, the righteous shine like the sun. Spanish 'justo' and French 'juste' both preserve the legal-ethical double register that makes this word so rich.
+
+### G5140 / Sense 77867 (70 occ, sense 1 of 1)
+**Label:** three
+**Lemma gloss:** treis -- three; the cardinal number, often carrying symbolic weight in Scripture
+**Description:** three, Three (70 occurrences across 3 original clusters)
+**Enriched:** The cardinal numeral three, used for literal counting and for theologically significant groupings throughout the New Testament -- three days (Matt 12:40; 1 Cor 15:4), three witnesses (Matt 18:16; 2 Cor 13:1), three tabernacles at the Transfiguration (Matt 17:4). All grammatical forms (nominative, genitive, dative; masculine, feminine, neuter) converge in cross-lingual evidence: Spanish tres, French trois, German drei, confirming a single undifferentiated numeral sense.
+
+### G5613 / Sense 79239 (70 occ, sense 2 of 7)
+**Label:** temporal: when, while
+**Lemma gloss:** As, like (comparative); when, while (temporal); about (approximative); how! (exclamatory); as if; so as to; since
+**Description:** Functions as a temporal conjunction introducing a time clause, indicating when or while an event occurs.
+**Enriched:** Temporal: 'when,' 'while' — introducing a time clause, especially in Luke-Acts narrative. 'When the days of his service were completed' (Luke 1:23) and 'when Elizabeth heard Mary's greeting' (Luke 1:41). Korean ttae ('when') and Spanish cuando distinguish this sharply from the comparative como, confirming a genuine temporal sense.
+
+### H1835 / Sense 91937 (70 occ, sense 1 of 1)
+**Label:** Dan (proper noun)
+**Lemma gloss:** Dan -- Jacob's fifth son through Bilhah, the tribe descended from him, and a city on Israel's northern frontier
+**Description:** Dan, a proper noun used of: (1) the fifth son of Jacob, born to Bilhah (Gen 30:6; 35:25; 46:23; 49:16-17; Ex 1:4; 1 Chr 2:2); (2) the tribe of Dan descended from him, frequently in census and allotment lists (Num 1:12,38-39; 2:25; Deut 33:22; Josh 19:47; Judg 5:17; 18:29); (3) the city of Dan (formerly Laish) at the northern boundary of Israel, used idiomatically in the phrase 'from Dan to Beersheba' to denote the entire land (Judg 20:1; 1 Sam 3:20; 2 Sam 3:10; 17:11; 24:2,15; 1 Kgs 4:25; Jer 4:15; 8:16). All prepositional forms (from Dan, in Dan, for Dan, and Dan) are inflectional variants of this single proper noun.
+**Enriched:** The proper noun Dan, encompassing the patriarch (Gen 30:6; 49:16-17), the tribe descended from him (Num 1:38-39; Judg 18), and the northern border city that anchored the proverbial phrase 'from Dan to Beersheba' (Judg 20:1; 2 Sam 3:10). The etymological meaning 'judge' (from din) is activated in Jacob's blessing (Gen 49:16, 'Dan shall judge his people'). Cross-lingual evidence is perfectly uniform -- every language renders it simply as Dan -- confirming a single proper-noun identity.
+
+### H3477 / Sense 104971 (70 occ, sense 1 of 4)
+**Label:** upright, righteous (of persons)
+**Lemma gloss:** Straight, upright, righteous; of persons: morally upright; of actions: right, correct, pleasing to God; physically: straight, level; also a proper name (Book of Yashar).
+**Description:** Adjective יָשָׁר as a character quality of persons meaning 'upright, righteous, morally straight.' Applied to individuals: Job is 'blameless and upright' (Job 1:1, 1:8, 2:3, 8:6); David walks in integrity (1 Sam 29:6); the psalmist celebrates the upright (Ps 7:10, 11:2, 11:7, 25:8, 32:11, 33:1, 49:14, 64:10, 92:16, 94:15, 97:11, 107:42, 112:2, 112:4, 119:137, 140:13). Proverbs extensively uses the plural יְשָׁרִים 'the upright' as a class contrasted with the wicked (Prov 2:7, 2:21, 3:32, 11:3, 11:6, 11:11, 12:6, 14:9, 14:11, 15:8, 16:17, 21:2, 21:18, 28:10, 29:10, 29:27). Includes abstract quality sense in Ps 111:8 and Mic 3:9 ('uprightness'). Glosses: مُسْتَقيم (arb), aufrichtig (deu), droit (fra), recto (spa), सीधा/धर्मी (hin), 정직한 (kor).
+**Enriched:** Describes a person who is morally upright, righteous, or of good character — the dominant sense at 70 occurrences, forming a key term in biblical wisdom vocabulary. In Job 1:1, 1:8, and 2:3, yashar pairs with tam ('blameless') as a double predicate of exemplary righteousness; in Num 23:10 Balaam wishes to 'die the death of the upright' (yesharim). Proverbs uses the substantive yesharim as a quasi-social category: 'the upright will inhabit the land' (Prov 2:21), 'the prayer of the upright is his delight' (15:8). German aufrichtig and Spanish recto both derive from spatial-straightness metaphors applied to character, mirroring the Hebrew semantic transfer precisely. French droit similarly moves from 'straight' to 'just.' The multilingual evidence confirms that the physical-to-moral extension is deeply cross-linguistic, but Hebrew yashar carries a particular covenantal weight: to be yashar is to walk the path God has made straight.
+
+### H3606 / Sense 106171 (70 occ, sense 1 of 3)
+**Label:** all, every, whole
+**Lemma gloss:** All, every, whole; the Aramaic quantifier expressing totality, universality, or indefinite distribution across a class.
+**Description:** Totality or universality applied to a class or group, indicating every member or the entirety of something (Aramaic כֹּל in construct or absolute with various prepositions).
+**Enriched:** Totality applied to a defined group or class—'all the wise men,' 'the whole kingdom' (Dan 6:2-4). This is the most frequent usage (70x), appearing in construct with a plural noun to indicate every member of the specified set. The BDB notes this as kol with a collective noun, and it dominates in the royal decree formulas of Daniel and the administrative language of Ezra (e.g., Ezra 7:16 'all the silver and gold').
+
+### H3669a / Sense 106818 (70 occ, sense 1 of 2)
+**Label:** Canaanite (ethnic designation)
+**Lemma gloss:** Canaanite; a member of the pre-Israelite people of Canaan; by metonymic extension, a merchant or trader.
+**Description:** Gentilic noun referring to a member or members of the Canaanite people group, the pre-Israelite inhabitants of the land of Canaan, in all grammatical forms including masculine, feminine, singular, plural, and with various prepositions and conjunctions.
+**Enriched:** The gentilic designation for a member of the Canaanite people, the pre-Israelite inhabitants of the land of Canaan. Covering 70 of 71 occurrences, this sense spans the patriarchal narratives (Gen 12:6; 13:7), conquest accounts (Judg 1:1, 3, 9), and genealogies (Gen 46:10). Translations consistently use standard gentilic forms — Spanish 'cananeo,' French 'Cananéen,' German 'Kanaaniter' — underscoring the stable ethnic reference across all contexts, from individual identifications (Gen 38:2) to collective designations of the people group.
+
+### H3684 / Sense 107041 (70 occ, sense 1 of 1)
+**Label:** fool, dullard
+**Lemma gloss:** kesil -- a fool, dullard; one who is morally obtuse and stubbornly rejects wisdom
+**Description:** A stupid fellow, dullard, or fool -- one who is morally and intellectually obtuse, rejecting wisdom. The most common wisdom term for a fool in Proverbs, appearing 70 times total. Used extensively in Proverbs for the person who despises wisdom and discipline (Prov 1:32 the complacency of fools destroys them; 10:1 a foolish son is a grief to his mother; 10:18, 23; 12:23; 13:16, 19, 20; 14:7, 16, 24; 15:2, 7, 14, 20; 17:10, 12, 16, 21, 24, 25; 18:2, 6, 7; 19:1, 10, 29; 21:20; 23:9; 26:1-12), in Ecclesiastes for folly as the opposite of wisdom (Eccl 2:14, 16; 4:5; 5:1, 3, 4; 7:4-9; 10:2, 12, 15), in Psalms for moral blindness (Ps 49:11; 92:6; 94:8), and in prophetic literature (Isa 19:11; 35:8). The singular (kesil) and plural (kesilim) forms, with and without articles and prepositions, are all inflectional variants of the same lexeme designating the fool as a moral-intellectual type in the wisdom tradition.
+**Enriched:** A morally obtuse fool who deliberately shuns wisdom and embraces folly, the primary term of opprobrium in Proverbs' pedagogical framework. Distinguished from evil ('simpleton,' H0191) and naval ('contemptible fool,' H5036), the kesil is characterized by willful stupidity rather than mere ignorance: he hates knowledge (Prov 1:22), pours forth folly (Prov 15:2), and despises his mother (Prov 15:20). Spanish necio, French insense, and German Tor converge on the same blend of moral and intellectual failing across all 70 occurrences.
+
+### H4735 / Sense 113984 (70 occ, sense 1 of 2)
+**Label:** livestock, cattle, herds
+**Lemma gloss:** Livestock, cattle — domesticated animals as movable wealth; occasionally the act or result of acquisition (from q-n-h, 'to acquire').
+**Description:** Collective noun denoting domesticated animals — cattle, sheep, goats, donkeys — viewed as movable property; used in pastoral, sacrificial, plague, and enumeration contexts across all grammatical inflections and pronominal suffixes, consistently rendered as Arabic mashiya/mawashi, Korean gachuk, and Swahili mifugo.
+**Enriched:** Collective noun for domesticated livestock — cattle, sheep, goats, donkeys, and camels viewed as movable pastoral property. Spanish ganado, French bétail, and German Vieh all confirm this as the default reading. Abraham's wealth is measured in miqneh (Gen 13:2); the plagues strike Egypt's miqneh (Exod 9:3); and the Transjordan tribes have abundant miqneh requiring pastureland (Num 32:1).
+
+### H5973b / Sense 124627 (70 occ, sense 1 of 2)
+**Label:** source from proximity
+**Lemma gloss:** Compound preposition 'from with, from beside' (source from someone's presence/proximity); rarely comparative 'more than what is with.'
+**Description:** Indicates origin or source from someone's presence or proximity, 'from with' or 'from beside', used with various pronominal suffixes to express departure or derivation from a person's vicinity.
+**Enriched:** Source from proximity: 'from with,' 'from beside,' indicating departure, origin, or derivation from someone's presence or company. This overwhelmingly dominant sense (70 occurrences) governs verbs of departing, taking, removing, and requesting — Lot separating from Abraham (Gen 13:14), the spirit of the LORD departing from Saul (1 Sam 16:14), Elisha asking for a double portion before Elijah is taken 'from with you' (2 Kgs 2:9), and Moses asking 'what does the LORD require from you?' (Deut 10:12). Spanish de-junto-a and German von capture the ablative force, while French de-avec preserves both components of the compound preposition. The pronominal suffixes (me'immo, me'immanu, me'immakhem) confirm the relational, person-oriented nature of this spatial concept.
+
+### H7023 / Sense 132178 (70 occ, sense 1 of 2)
+**Label:** wall (building/interior)
+**Lemma gloss:** Wall; a structural wall of a building, house, or temple; occasionally a city fortification wall.
+**Description:** A structural wall of a building, house, or temple — the standard sense of qir as an interior or structural partition, distinct from a city fortification wall.
+**Enriched:** A structural wall belonging to a building, house, or temple — the dominant sense covering nearly all occurrences. Whether sprinkled with sacrificial blood (Lev 1:15; 5:9), inspected for mold (Lev 14:37, 39), or forming the inner partitions of Solomon's temple, qir is the everyday word for a built wall. German 'Wand' (interior wall) and French 'mur' both confirm this architectural, non-military usage.
+
+### H7218a / Sense 133962 (70 occ, sense 3 of 7)
+**Label:** top, summit, peak
+**Lemma gloss:** Head (body part); chief or leader; top or summit; military company; beginning; choicest portion; census total
+**Description:** The top, summit, or peak of a mountain, pillar, tower, tree, or other elevated object, as distinguished by Korean kkokdaegi/jeongsang, Swahili kilele, Hindi choti/shikhar, and Spanish cima/cumbre rather than cabeza.
+**Enriched:** The top, summit, or peak of a physical object — a mountain, pillar, tree, or tower. Korean kkokdaegi, Spanish cima/cumbre, and Swahili kilele all distinguish this spatial sense from the body-part meaning. Moses standing on the top of the hill with the staff of God (Exod 17:9-10) and the cloud covering Sinai's summit (Exod 19:20) are defining passages.
+
+### G0190 / Sense 61618 (69 occ, sense 1 of 2)
+**Label:** follow physically, accompany
+**Lemma gloss:** Follow — to walk behind or accompany someone; especially, to follow as a disciple in committed allegiance
+**Description:** To move behind or alongside someone, walking after them or accompanying them on a journey; literal spatial following.
+**Enriched:** Physical following or accompanying — to move behind or alongside someone, walking after them on a journey or through a crowd. The basic spatial sense from which the metaphorical meaning grows. French 'suivre,' German 'nachfolgen,' Spanish 'seguir' all treat this as ordinary locomotion. Prominent in crowd scenes: Matt 4:25 ('great crowds followed him from Galilee'), Matt 8:1, and Matt 8:10 ('not even in Israel have I found such faith' — said to one who came following).
+
+### G0450 / Sense 62429 (69 occ, sense 1 of 4)
+**Label:** rise, stand up (physical)
+**Lemma gloss:** To rise or stand up physically; to rise from the dead or be resurrected; causatively to raise someone from death or to prominence
+**Description:** To physically rise from a seated or lying position, to stand up or get up, used of ordinary bodily movement.
+**Enriched:** The basic intransitive physical sense: to rise, stand up, get up from a seated, reclined, or prostrate position. This is the most frequent usage, appearing in narrative transitions throughout the Gospels and Acts. Jesus rises and departs (Mark 7:24), the high priest stands up at trial (Matt 26:62), and people rise in response to events. Spanish levantarse and German aufstehen both capture this everyday bodily movement. The sense often carries narrative momentum — rising signals the beginning of a new action or journey.
+
+### G4487 / Sense 76206 (69 occ, sense 1 of 1)
+**Label:** word, utterance, saying
+**Lemma gloss:** rhema -- a spoken word, utterance, or saying; a discrete unit of speech often carrying divine authority
+**Description:** A spoken word, utterance, or saying, emphasizing the content of speech as a discrete communicative unit. In singular form it denotes a specific word or statement: 'every word that proceeds from the mouth of God' (Matt 4:4/Luke 4:4), 'the word of the Lord' coming to John (Luke 3:2), Mary's acceptance of the angel's word (Luke 1:38), the word of Jesus that Peter remembered (Matt 26:75), or a legal matter established by witnesses (Matt 18:16). In plural it refers to collections of spoken words or sayings: Jesus's words (John 6:63, 6:68, 8:20, 8:47), the words of the prophets (Acts 2:14), and words remembered or reported (Luke 1:65, 2:19, 24:8). The singular 'matter/thing' nuance (as in Acts 5:32) represents the common Semitic extension of 'word' to 'thing/matter' (cf. Hebrew dabar), not a genuinely separate sense. All clusters represent the same fundamental meaning across number and contextual variation.
+**Enriched:** A spoken word or utterance conceived as a discrete communicative act, emphasizing the said quality of speech rather than its conceptual content (cf. logos). Used of divine pronouncements ('every rhema from God's mouth,' Matt 4:4; Luke 1:37 'no rhema from God will be void of power'), prophetic fulfillment (Matt 26:75, Peter 'remembered the rhema of Jesus'), and ordinary human speech (Matt 12:36; Matt 18:16). Spanish palabra, French parole, and German Wort render it uniformly across all 69 occurrences.
+
+### G5101 / Sense 77763 (69 occ, sense 3 of 4)
+**Label:** why (interrogative, causal)
+**Lemma gloss:** Interrogative pronoun: what, which, who, whom, why; rarely indefinite 'someone, something.'
+**Description:** Interrogative used to ask about cause, reason, or purpose, often in prepositional phrases: 'why?', 'for what reason?', 'for what purpose?'.
+**Enriched:** Causal interrogative meaning 'why?', 'for what reason?', 'to what purpose?' (69 occurrences), typically appearing as τί or διὰ τί in prepositional phrases. In Matt 8:26, Jesus asks the disciples τί δειλοί ἐστε — 'why are you fearful?' Spanish splits this into 'por qué' (cause) and 'para qué' (purpose), revealing a distinction that the Greek leaves ambiguous. Found frequently in Jesus' rebukes and challenges.
+
+### H0205 / Sense 80534 (69 occ, sense 1 of 6)
+**Label:** iniquity, wickedness
+**Lemma gloss:** Trouble, sorrow, wickedness; ranges from harmful wrongdoing and its guilty consequences to emptiness, vanity, and mourning.
+**Description:** Moral evil, wrongdoing, or unrighteousness, often used of sinful conduct or the guilt that results from it.
+**Enriched:** Iniquity, wickedness, wrongdoing — the dominant sense at 69 occurrences, covering active moral evil, the sinful condition, and the guilt that clings to the evildoer. The phrase po'ale aven ('workers of iniquity') is nearly formulaic in the Psalms (Ps 5:5; 6:8; 14:4; 36:12; 53:4; 59:2; 92:7; 94:4; 125:5; 141:9), branding persistent wrongdoers as a class. Job's friends insist that those who 'plow iniquity and sow trouble reap the same' (Job 4:8), revealing how this sense shades into consequence. Spanish iniquidad, French iniquité, and German Missetat all select moral-evil vocabulary, while Arabic ithm ('sin, guilt') confirms the ethical-juridical weight.
+
+### H6010 / Sense 125035 (69 occ, sense 1 of 1)
+**Label:** valley, broad lowland plain
+**Lemma gloss:** emeq -- a broad valley or lowland plain between hills, often the site of battles and settlements
+**Description:** A broad, open valley or low-lying plain between hills or mountains, used both as a common geographic noun and as part of fixed place names (e.g., Valley of Jezreel, Valley of Rephaim).
+**Enriched:** A broad, flat-bottomed valley or lowland plain situated between hills or mountains, typically suitable for agriculture and often the locale of military engagements. Distinguished from gay' (narrow gorge, H1516) and nachal (wadi, H5158) by its breadth and openness. Appears frequently in toponymic constructions: Valley of Elah (1 Sam 17:2), Valley of Jezreel (Judg 6:33), Valley of the King (Gen 14:17; 2 Sam 18:18). Spanish valle, French vallee, and German Tal converge uniformly, confirming a single undivided geographic sense.
+
+### H6862c / Sense 130627 (69 occ, sense 1 of 2)
+**Label:** adversary, enemy, foe
+**Lemma gloss:** Adversary, foe, or oppressor; also narrowness or distress as an abstract state of affliction.
+**Description:** A hostile person, opponent, or national enemy; the substantival use of צַר from root צ-ר-ר denoting one who presses against or is hostile, confirmed by Arabic عَدُوّ/أَعْدَاء/مُضَايِق/خَصْم (adversary/enemies/oppressor/opponent), Korean 대적/적/원수 (adversary/enemy/foe), and Swahili adui/mpinzani (enemy/opponent) — all inflectional variants (pronominal suffixes, prepositional prefixes, singular/plural, participle) collapse to a single lexical sense.
+**Enriched:** A hostile person, opponent, or national enemy who presses against or oppresses another. Across 69 occurrences, translations consistently use adversary-type glosses: Spanish 'adversario,' German 'Feind/Widersacher,' French 'adversaire/ennemi.' Abraham's victory delivered his enemies into his hand (Gen 14:20), and Israel was to sound trumpets against the adversary pressing upon them (Num 10:9). The substantival use often appears in construct chains — 'adversaries of Israel' (Ezra 4:1) — or with possessive suffixes expressing personal hostility.
+
+### H7121 / Sense 132807 (69 occ, sense 2 of 6)
+**Label:** cry out in distress
+**Lemma gloss:** Call, summon, name; cry out in distress; proclaim publicly; read aloud; invite to a gathering
+**Description:** Qal: to cry out, shriek, or call out in anguish or urgent need (Arabic صَرَخَ sarakha; Korean 부르짖다/외치다; Swahili kupiga kelele/kumlilia); emphasizes vocal distress or desperate appeal, often directed to God or for help.
+**Enriched:** Crying out in distress or urgent appeal (69x). Korean 부르짖다/외치다 and Spanish clamar/gritar distinguish this from neutral calling. Judg 15:18 (Samson crying out in thirst) and Judg 16:28 (his final prayer) show the desperate vocal quality. Swahili kupiga kelele ('make a commotion') captures the intensity. The cry is typically directed upward — to God — or outward in alarm.
+
+### H7782 / Sense 139352 (69 occ, sense 1 of 2)
+**Label:** ram's horn trumpet
+**Lemma gloss:** Shofar; a ram's horn trumpet used for warfare, assembly, worship, and theophany; occasionally the horn itself as object.
+**Description:** A shofar, the ram's horn used as a musical signal instrument for warfare, assembly, religious ceremony, and theophany; the primary sense covering the vast majority of biblical occurrences where the instrument's sounding function is in view.
+**Enriched:** The ram's horn as a signal instrument, covering warfare (Judg 7:8, 16), theophany (Exod 19:16; 20:18), religious assembly (Lev 25:9; Joel 2:1), and prophetic announcement (Isa 27:13; 58:1). This is the dominant sense across 69 of 72 occurrences. Translations vary revealingly: German 'Posaune' (trombone/trumpet) emphasizes the sound, Spanish 'cuerno' the material, while French 'trompette' and many languages simply transliterate 'shofar,' reflecting its unique cultural status.
+
+### H8045 / Sense 141606 (69 occ, sense 1 of 2)
+**Label:** destroy, exterminate
+**Lemma gloss:** To destroy or exterminate (Hifil); to be destroyed or perish (Nifal) -- total annihilation of peoples, nations, or things.
+**Description:** Hifil causative: to actively destroy, annihilate, or exterminate a people, nation, or entity -- the agent deliberately causes total destruction. Cross-linguistic evidence uniformly supports a single causative sense: Arabic uses active forms of IV-stem roots abad (أَبَادَ) and ahlaka (أَهْلَكَ) interchangeably; Korean consistently uses 멸하다 (to destroy/exterminate); Swahili uses kuangamiza (active destruction); Hindi uses nash karna (destroy) and nasht karna. The Arabic variation between abad/ahlaka/dammara reflects translator choice, not polysemy. Includes all Hifil inflections: perfect, imperfect, imperative, infinitive construct, infinitive absolute, consecutive imperfect, and forms with pronominal suffixes and prepositional prefixes.
+**Enriched:** The Hifil causative sense: to actively destroy, annihilate, or exterminate a people, nation, or entity through deliberate action. The agent -- whether God, a king, or Israel -- causes total obliteration. Spanish destruir and French detruire/exterminer uniformly confirm a single core meaning across 69 occurrences. Key passages include Deut 2:22 (God destroying the Horites) and 2 Kgs 21:3 (Hezekiah's reforms reversed).
+

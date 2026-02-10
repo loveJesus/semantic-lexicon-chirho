@@ -1,0 +1,291 @@
+# Sense Refinement Detection — Batch 038
+
+You are a biblical lexicographer reviewing sense entries for a Hebrew/Aramaic/Greek lexicon.
+Each entry below is a single "sense" that was produced by clustering translation signatures 
+and then merging with an LLM. Some senses may have been OVER-LUMPED — they contain genuinely 
+distinct meanings that should be separate senses.
+
+## Your Task
+
+For each sense, determine if it should be SPLIT into multiple senses. Look for:
+- Literal vs. figurative/metaphorical uses lumped together
+- Concrete vs. abstract meanings combined
+- Multiple distinct referents (e.g., "father" = biological parent + patron/advisor + originator)
+- Physical vs. spiritual/theological uses merged
+- Different syntactic frames producing different meanings
+
+## Output Format
+
+Return a JSON array. For senses that need NO splitting, omit them entirely.
+For senses that SHOULD be split, include an entry like:
+
+```json
+[
+  {
+    "senseIdChirho": 79287,
+    "lemmaIdChirho": "H0001",
+    "currentLabelChirho": "father, immediate male parent",
+    "splitProposalChirho": [
+      {
+        "newLabelChirho": "biological/legal father",
+        "criteriaChirho": "Direct parent-child relationship, possessive constructions with specific person"
+      },
+      {
+        "newLabelChirho": "metaphorical father (patron, advisor, protector)",
+        "criteriaChirho": "Title of respect for prophets, advisors, or authority figures; 'father to Pharaoh' type usage"
+      }
+    ],
+    "confidenceChirho": "high",
+    "reasoningChirho": "Description explicitly mentions 'title of respect or metaphorical originator' alongside biological father"
+  }
+]
+```
+
+Only propose splits where you have MEDIUM or HIGH confidence. Do NOT split function words (articles, 
+prepositions, particles, conjunctions) unless there is a genuinely distinct semantic sense (not just 
+syntactic variation). Proper nouns generally should NOT be split.
+
+If NO senses in this batch need splitting, return an empty array: []
+
+## Senses to Review
+
+### H0212 / Sense 80569 (35 occ, sense 1 of 1)
+**Label:** wheel
+**Lemma gloss:** wheel — a rotating circular component of chariots, temple lavers, threshing carts, and Ezekiel's vision
+**Description:** A wheel, whether of a chariot, laver stand, threshing cart, cistern mechanism, or the celestial wheels in Ezekiel's vision; all occurrences denote a rotating circular component.
+**Enriched:** A wheel or rotating disc, denoting a functional mechanical component across several contexts: chariot wheels removed in divine judgment at the Sea (Exod 14:25) or clattering in battle (Nah 3:2); the ornate bronze wheels of Solomon's temple laver-stands with axles, rims, and spokes (1 Kgs 7:30-33); the threshing-cart wheel as an instrument of winnowing or punishment (Isa 28:27; Prov 20:26); and most dramatically, the celestial 'wheel within a wheel' (ophan betokh ha-ophan) of Ezekiel's merkavah vision, alive with eyes and spirit (Ezek 1:15-21; 10:6-19). French 'roues,' Spanish 'ruedas,' German 'Raeder' uniformly render the mechanical sense, though Ezekiel's visionary wheels transcend ordinary taxonomy.
+
+### H0875 / Sense 85083 (35 occ, sense 1 of 2)
+**Label:** well, cistern (dug water source)
+**Lemma gloss:** A well dug for water; figuratively, a pit of destruction or moral danger.
+**Description:** A shaft dug into the ground to access water (or other substance such as bitumen); the primary literal sense covering wells at which patriarchs meet, watering wells for flocks, and wells as sources of living water. Includes Gen 14:10 bitumen pits (same physical structure) and figurative-at-sentence-level uses in Prov 5:15 and Song 4:15 where the word itself retains its literal meaning.
+**Enriched:** A shaft dug into the ground to access water (or, in Gen 14:10, bitumen). This is the patriarchal well of encounter and contention: Abraham at Beersheba (Gen 21:25-30), Isaac at Rehoboth (Gen 26:22), Jacob at Haran (Gen 29:2-3). Spanish 'pozo,' French 'puits,' and German 'Brunnen' all consistently translate the literal water-well. Numbers 21:17-18 preserves an ancient 'Song of the Well,' and Proverbs 5:15 uses 'your own well' as a metaphor for marital faithfulness — still literal in form, figurative in application.
+
+### H1730 / Sense 91368 (35 occ, sense 1 of 3)
+**Label:** beloved, lover
+**Lemma gloss:** Beloved or lover (especially in Song of Solomon); a paternal uncle; love or caresses as an abstract noun.
+**Description:** A beloved person, romantic lover or darling, used extensively in Song of Solomon; cross-linguistically rendered as spa 'amado', hin 'प्रीतम/प्रेमी', arb 'دُود/حَبِيب', kor '사랑하는 자', swa 'mpenzi', consistently distinct from the kinship term 'uncle'.
+**Enriched:** A beloved person, romantic lover, or darling. This is the dominant sense, concentrated almost entirely in Song of Solomon, where the woman addresses her partner as dodi ('my beloved') in passages like Song 1:13-14, 2:3, and 2:8-10. Cross-linguistic evidence confirms the romantic register: Spanish renders it 'amado,' Hindi uses 'प्रीतम' (preetam, a poetic term for a lover), Arabic 'حَبِيب' (habib), Korean '사랑하는 자,' and Swahili 'mpenzi.' The consistency across these unrelated language families underscores that the romantic connotation is unmistakable in context.
+
+### H2377 / Sense 95977 (35 occ, sense 1 of 1)
+**Label:** vision of
+**Lemma gloss:** vision — a prophetic revelation received in an ecstatic or visionary state, or the prophetic oracle itself
+**Description:** vision of, vision, the vision (35 occurrences across 5 original clusters)
+**Enriched:** A prophetic vision or divine revelation received through ecstatic perception, also denoting the resulting oracle or prophetic message. Functions in three registers: as a book-level genre label in prophetic superscriptions (Isa 1:1; Obad 1:1; Nah 1:1), framing the entire work as divinely disclosed; as a specific visionary experience in narrative contexts, especially Daniel's apocalyptic visions (Dan 8:1-2, 15, 17, 26; 10:14); and as a general term for prophetic activity whose absence signals covenant breakdown (1 Sam 3:1; Prov 29:18; Lam 2:9; Ezek 7:26). Often paralleled with qesem ('divination,' Mic 3:6) or chalom ('dream,' Dan 1:17). Spanish 'vision,' French 'vision,' German 'Gesicht/Vision' preserve the core semantic range.
+
+### H2574 / Sense 97933 (35 occ, sense 1 of 1)
+**Label:** Hamath (city and region)
+**Lemma gloss:** Hamath — a major Syrian city-state on the Orontes, marking the ideal northern boundary of Israel's land
+**Description:** Hamath (also transliterated Chamat/Chamath), a major ancient city and kingdom on the Orontes River in modern-day Syria, serving as a key geographical marker for the northern boundary of the Promised Land and Israelite territory. The phrase 'the entrance of Hamath' (לְבוֹא חֲמָת) functions as a standard boundary formula throughout the Hebrew Bible. Appears across multiple biblical contexts: boundary descriptions (Num 13:21, 34:8; Josh 13:5; Judg 3:3), Davidic conquests and alliances (2 Sam 8:9; 1 Kgs 8:65), Northern Kingdom expansion (2 Kgs 14:25/28), Assyrian conquest accounts (2 Kgs 17:24/30, 18:34, 19:13, 23:33, 25:21), and Chronicles parallels (1 Chr 13:5, 18:3/9; 2 Chr 8:4). All morphological variants (bare form, with prepositions מִן/בְּ/לְ, directional ה-) refer to the same geographic entity. Multilingual glosses are remarkably consistent in transliterating: Hamath/Hamat/Chamat (Eng/Deu/Fra/Spa), حَمَاة (Arb), हमात/खमात (Hin), 하맛/하마 (Kor).
+**Enriched:** The proper noun Chamath/Hamath, designating the Syrian city-state on the Orontes that served as the conventional northern boundary marker of Israelite territory. The stereotyped phrase levo Chamath ('the entrance/approach of Hamath') appears in boundary descriptions from Numbers through Ezekiel (Num 13:21; 34:8; Josh 13:5; 1 Kgs 8:65; 2 Kgs 14:25; Ezek 47:16, 20). Historically, its king Toi allied with David (2 Sam 8:9 = 1 Chr 18:9), and Assyrian propaganda cited its fall to intimidate Jerusalem (2 Kgs 18:34; Isa 10:9; 36:19; 37:13). Translations transliterate variously: Spanish 'Hamat/Jamat,' French 'Hamath/Chamath,' German 'Hamat/Chamath.'
+
+### H2891 / Sense 99936 (35 occ, sense 1 of 5)
+**Label:** Qal: be clean, be pure
+**Lemma gloss:** Be clean or pure; in Piel, cleanse or pronounce clean; in Hitpael, purify oneself — of ritual, moral, and physical purity.
+**Description:** Intransitive/stative sense in the Qal stem (and adjectival form): the subject is, becomes, or will be ritually or morally clean/pure, used of persons, objects, and land after defilement or disease.
+**Enriched:** Qal stative: to be or become ritually, morally, or physically clean. The subject undergoes or achieves a state of purity — a leper after immersion (Lev 14:8-9), an object after sunset washing (Lev 11:32), or a woman after her purification period (Lev 12:7-8). German 'rein sein' and Spanish 'estar puro' both capture this stative quality. Most occurrences cluster in Levitical purity legislation.
+
+### H3198 / Sense 101823 (35 occ, sense 1 of 7)
+**Label:** rebuke, reprove
+**Lemma gloss:** Rebuke, reprove; argue or plead a case; decide, judge, arbitrate; discipline; appoint, designate
+**Description:** To verbally censure or admonish someone for wrongdoing (Hifil active); Arabic وَبَّخَ (wabbakha 'rebuke'), Korean 꾸짖다/책망하다 (kkujitda/chaemang-hada 'rebuke/reprove'), Swahili -kemea ('rebuke'), Hindi डाँटना (daantna 'scold/rebuke'). This is the core Hifil sense covering all inflections of direct verbal reproof.
+**Enriched:** The most frequent sense: to rebuke or reprove someone for wrongdoing, whether human or divine correction. Arabic wabbakha ('rebuke'), Korean kkujitda ('scold'), and Swahili -kemea ('rebuke') all converge on this confrontational speech-act. Lev 19:17 commands direct reproof of a neighbor rather than harboring hidden resentment; 2 Kgs 19:4 records Hezekiah's plea that God rebuke Assyria's taunts.
+
+### H3470a / Sense 104927 (35 occ, sense 1 of 1)
+**Label:** Yeshayahu / Isaiah (proper noun)
+**Lemma gloss:** Isaiah (Yeshayahu) — 'Yah is salvation,' the prophet son of Amoz who ministered in 8th-century Judah
+**Description:** The Hebrew proper name meaning 'Yahweh is salvation', referring primarily to the prophet Isaiah son of Amoz who ministered during the reigns of Uzziah, Jotham, Ahaz, and Hezekiah of Judah (8th century BCE). All grammatical variants — nominative, with conjunction (and-Isaiah), and different discourse positions — refer to the same proper name. Multilingual renderings are uniform: eng 'Isaiah/Yeshayahu', spa 'Isaias/Yeshayahu', hin 'yashayahu' (यशायाहू), arb 'Isha'ya' (إِشَعْيَا/إِشَعْيَاءُ), kor 'Isaya' (이사야), swa 'Isaya/Yeshaya'. The 35 occurrences span 2 Kings, 2 Chronicles, and Isaiah itself.
+**Enriched:** The proper masculine name Yeshayahu ('Yah is salvation'), identifying the 8th-century Judahite prophet son of Amoz. Narrative occurrences concentrate in 2 Kings 19-20 and their Isaiah parallels (chs. 37-39), where he serves as Hezekiah's prophetic counselor during the Sennacherib crisis and the king's illness. The superscription of the book bearing his name (Isa 1:1) and the Chronicles references (2 Chr 26:22; 32:20, 32) establish him as both prophet and historiographer. A secondary Yeshayahu appears among the sons of Jeduthun (1 Chr 25:3, 15). The Greek Esaias, Spanish 'Isaias,' and German 'Jesaja' all derive from the Hebrew through Septuagintal transmission.
+
+### H3612 / Sense 106227 (35 occ, sense 1 of 1)
+**Label:** Caleb (Israelite leader)
+**Lemma gloss:** Caleb — the faithful Kenizzite spy who wholly followed the LORD and inherited Hebron
+**Description:** The proper name Kalev (כָּלֵב), primarily referring to Caleb son of Jephunneh the Kenizzite, one of the twelve spies sent into Canaan and one of only two (with Joshua) who brought a faithful report and were permitted to enter the Promised Land (Num 13-14, 26:65, 32:12; Deut 1:36; Josh 14:6-14, 15:13-19; Judg 1:12-20; 1 Sam 25:3, 30:14; 1 Chr 4:15, 6:56). Also used for Caleb son of Hezron (1 Chr 2:18,42,46,48-50). English renders as Caleb/Kalev; Spanish Caleb/Kalev; Hindi कालेब (Kaaleb); Arabic كالِب (Kalib); Korean 갈렙/갈렛 (Gallep/Gallet); Swahili Kalebu. Both clusters refer to the same individual(s) — the second adds conjunctive and prepositional prefixes (and-Caleb, to-Caleb) without semantic distinction.
+**Enriched:** The proper name Kalev (Caleb), identifying the son of Jephunneh the Kenizzite who, with Joshua, brought a faithful report from scouting Canaan and was rewarded with the promise of Hebron. The phrase 'he wholly followed the LORD' (Num 14:24; 32:12; Deut 1:36; Josh 14:8-9, 14) functions as a formulaic epithet. Narrative appearances cluster in Numbers 13-14 (the spy episode), Joshua 14-15 (claiming the inheritance at age 85), and Judges 1:12-20 (the Othniel-Achsah sequel). The genealogies in 1 Chronicles 2:18-19, 42-50 and 4:15 integrate Caleb into the tribe of Judah. Translations transliterate uniformly: Greek Chaleb, Spanish 'Caleb,' French 'Caleb,' German 'Kaleb.'
+
+### H3772 / Sense 107598 (35 occ, sense 4 of 5)
+**Label:** cut / cut down physically
+**Lemma gloss:** To cut — physically cutting trees or objects, cutting a covenant, or being cut off as divine punishment; spans Qal, Niphal, Hifil, and Hofal stems.
+**Description:** Qal literal sense: to physically cut, fell, or chop down trees, branches, or objects; Arabic qataa (cut), Korean jallada/beoda (cut/fell), Hindi kaata (cut), Swahili -kata (cut), with no covenant or destruction nuance.
+**Enriched:** Qal literal: to physically cut, fell, or chop down trees, branches, or material objects. The 35 occurrences include felling Asherah poles (Exod 34:13), cutting a grape cluster (Num 13:23-24), cutting trees for siege works (Deut 20:19-20), and the prohibition against castration (Lev 22:24). Hindi 'kaata,' Swahili '-kata,' Arabic 'qataa,' and Korean 'jallada/beoda' all use basic physical cutting verbs, confirming the concrete, non-idiomatic sense. This is the etymological base from which the covenant and judgment senses derive.
+
+### H3816 / Sense 108099 (35 occ, sense 1 of 2)
+**Label:** people, nation
+**Lemma gloss:** People, nation — a poetic term for ethnic or tribal communities, often parallel to gôy and ʿam
+**Description:** A people or nation viewed as an ethnic or tribal group, used in both singular and plural to denote human communities defined by shared descent or identity.
+**Enriched:** A people or nation as an ethnic community — the primary lexical sense covering virtually all occurrences. Used in singular for Israel (Isa 51:4, 'my nation') or for individual peoples like Edom (Gen 25:23), and in the plural for the nations at large (Ps 2:1, 'Why do the peoples rage?'; Isa 34:1). The multilingual evidence — Spanish 'pueblos,' French 'peuple/nation,' German 'Völker/Nationen' — consistently renders it as a collective ethnic term. The word is distinctly poetic; prose equivalents would be gôy or ʿam.
+
+### H4136 / Sense 110112 (35 occ, sense 1 of 2)
+**Label:** opposite, facing, in front of
+**Lemma gloss:** Front, opposite, in front of — a substantive and preposition indicating spatial position directly facing something
+**Description:** Spatial preposition indicating a position directly across from or in front of something, including grammatical variants with prefixed מִן (from opposite), לְ (toward opposite), waw conjunction, and pronominal suffixes.
+**Enriched:** Spatial preposition meaning 'opposite,' 'facing,' or 'in front of' — the dominant usage across 35 occurrences. Employed in cultic instructions for the tabernacle (Exod 26:9; 28:25, 27, 37), geographical orientation (Deut 1:1; 3:29 'opposite Beth-peor'), and architectural descriptions (1 Kgs 7:5). French 'en face de' and German 'Vorderseite von' reflect the directional precision, while Spanish 'frente a' captures the facing relationship. Often appears with prefixed prepositions: mimmûl ('from opposite'), lĕmûl ('toward the front of').
+
+### H4436 / Sense 112162 (35 occ, sense 1 of 1)
+**Label:** queen
+**Lemma gloss:** queen — a woman who reigns or holds royal consort status, especially the Queen of Sheba, Vashti, and Esther
+**Description:** A female royal ruler or consort, used predominantly of the Queen of Sheba (1 Kings 10:1-13; 2 Chronicles 9:1-12), Queen Vashti and Queen Esther (Esther 1:9-18, 2:22, 5:2-12, 7:1-8, 8:1, 9:12, 9:31), and figuratively of queens in Song of Songs 6:8-9. All 35 occurrences share this single lexical meaning across singular definite (הַמַּלְכָּה 'the queen'), construct (מַלְכַּת 'queen of'), and plural (מְלָכוֹת 'queens') forms. Multilingual evidence is uniform: Arabic الْمَلِكَة (al-malikah), Spanish 'reina', Hindi रानी (raani) / रानियाँ (raaniyaan, plural), Korean 왕비/여왕 (wangbi/yeowang), Swahili 'malkia'. The grammatical variation across definite, construct, and plural forms represents inflection, not distinct senses.
+**Enriched:** A female sovereign or royal consort. The word overwhelmingly denotes named queens in narrative — the Queen of Sheba testing Solomon's wisdom (1 Kgs 10:1-13), Vashti refusing the king's command (Est 1:9-19), and Esther interceding for Israel (Est 5-9). The plural in Song of Songs 6:8-9 ranks queens above concubines in a royal household.
+
+### H5046 / Sense 115767 (35 occ, sense 3 of 7)
+**Label:** Hofal: to be told, be informed
+**Lemma gloss:** To tell, report, declare; Hifil: inform, proclaim, reveal; Hofal: be told; participle: messenger
+**Description:** The Hofal (passive of Hifil) stem of nagad, meaning to be told, be informed, or have something reported to one, used for passive reception of information.
+**Enriched:** The Hofal (passive of Hifil): to be told, be informed, have something reported to one. Arabic ukhbira and Korean algo-doeda (to become known to someone) reflect this passive reception. The formula 'and it was told to X' recurs as a narrative pivot — Gen 22:20 (told to Abraham), Gen 27:42 (told to Rebekah), Gen 38:13 (told to Judah) — consistently introducing consequential plot turns.
+
+### H5162 / Sense 117199 (35 occ, sense 2 of 6)
+**Label:** relent, repent, change mind (Nifal)
+**Lemma gloss:** To comfort, console; to relent or repent; to have compassion — covering solace given, divine change of course, and reflexive self-comfort.
+**Description:** Nifal stem: to relent, repent, or change one's mind regarding a planned action — most often used of God relenting from judgment or a person regretting a decision; distinguished by Arabic نَدِمَ and Korean 뉘우치다/후회하다.
+**Enriched:** Niphal stem: to relent, repent, or change one's mind regarding a planned action. Most often predicated of God turning from intended judgment — 'the LORD relented concerning the disaster' (Exod 32:14; Amos 7:3, 6). Also used of humans regretting decisions (Gen 6:6-7, where God 'was sorry' he had made humanity). Spanish 'se arrepintió' and Korean 회개하다/뉘우치다 ('repent/regret') capture this sense, which is theologically distinct from comfort. The passage 1 Samuel 15:29 notably asserts God 'will not relent,' creating tension with the many passages where he does.
+
+### H5221 / Sense 117689 (35 occ, sense 2 of 15)
+**Label:** Hifil: to strike, beat (physical blows)
+**Lemma gloss:** to strike, smite, hit; to kill, defeat; to beat, wound; to afflict with plague; to clap (hands)
+**Description:** The Hifil sense of נכה for non-lethal, non-military physical striking: beating, hitting, or disciplining a person; distinguished by Korean 때리다 (beat, hit personally) instead of generic 치다, Spanish 'azotes' (lashes/stripes) for punishment, imperative commands to strike in personal rather than battle contexts, and participial legal formulas describing 'the one who strikes' in casuistic law.
+**Enriched:** Non-lethal physical striking (35x) includes beating, hitting, or disciplining persons outside warfare. 'If a man strikes his servant with a rod' (Exod 21:20), 'Should I strike you to the ground?' (2 Sam 2:22), 'Moses saw an Egyptian beating a Hebrew' (Exod 2:11). Korean shifts to 때리다 (beat personally rather than generic 치다), Spanish uses azotar/golpear (beat/hit), Arabic ضَرَبَ (beat). The distinction from #1 is non-military, interpersonal violence.
+
+### H5514 / Sense 120763 (35 occ, sense 1 of 1)
+**Label:** Sinai (place name)
+**Lemma gloss:** Sinai — the sacred mountain and wilderness where God gave the Torah to Moses
+**Description:** The proper noun designating Mount Sinai / the Sinai wilderness, the sacred mountain where God gave the Torah to Moses. All 35 occurrences refer to the same geographic location regardless of prepositional framing (bare noun or with min 'from'). Multilingual evidence is uniform: eng 'Sinai / from Sinai', spa 'Sinaí / de Sinaí', arb 'سِينَاءَ / مِنْ سِينَاءَ', kor '시내 / 에서 시나이', swa 'Sinai / kutoka Sinai'. The prepositional variant (1x) is purely grammatical inflection, not a distinct meaning.
+**Enriched:** The proper name for the mountain and desert region of the Mosaic covenant. Concentrated in Exodus, Leviticus, and Numbers (P source), it marks the location of the giving of the law (Exod 19:11-20; 31:18), the census instructions (Num 1:1), and wilderness encampments (Num 33:15-16). The alternate name Horeb in E and D designates the same site.
+
+### H5631 / Sense 121374 (35 occ, sense 1 of 2)
+**Label:** eunuch, castrated court servant
+**Lemma gloss:** Eunuch, court official; a castrated male servant of the royal household, or more broadly a high-ranking royal officer
+**Description:** A castrated male, especially one serving in a royal household or harem, as in the court of Persian, Babylonian, or Israelite kings (e.g., the eunuchs of Esther's court, those who threw Jezebel down, Isaiah 56:3-4).
+**Enriched:** A castrated male, especially one serving in a royal court or harem. The multilingual evidence is telling: English oscillates between 'eunuch' and 'officer,' while Spanish consistently uses 'eunuco' and German 'Kaemmerer' (chamberlain), reflecting the close association between castration and harem service. This sense dominates in the court narratives of Kings and Esther -- the eunuchs who threw Jezebel from the window (2 Kgs 9:32), the doorkeepers of Esther's palace (Est 2:21), and Isaiah's oracle promising eunuchs an everlasting name (Isa 56:3-5) all presuppose the literal physical meaning.
+
+### H5668 / Sense 121891 (35 occ, sense 1 of 2)
+**Label:** for the sake of, because of
+**Lemma gloss:** For the sake of, because of; in order that, so that — a prepositional particle expressing cause, benefit, or purpose.
+**Description:** Causal or benefactive use indicating the reason, cause, or person on whose account something is done: 'for the sake of,' 'because of,' 'on account of.'
+**Enriched:** For the sake of, because of, on account of — causal or benefactive, indicating the reason, ground, or person motivating an action. Covers 35 of 49 occurrences. The ground was cursed 'because of you' (Gen 3:17), and divine blessing is channeled 'for the sake of' key figures (Gen 18:26, 29; 26:24; 2 Sam 5:12; 7:21). Spanish 'por causa de' and French 'pour cause de' consistently mark this causal sense (Exod 9:16; Mic 2:10; Ps 106:32).
+
+### H5695 / Sense 122358 (35 occ, sense 1 of 1)
+**Label:** calf, young bull
+**Lemma gloss:** calf, young bull — a young bovine, literal or as a molten idol (the golden calf)
+**Description:** A young bovine animal, used both of literal calves in pastoral and sacrificial contexts and of the molten calf-idol (golden calf); the word itself carries a single core meaning across all occurrences.
+**Enriched:** A young bovine animal, used literally of a calf raised for food or sacrifice (1 Sam 28:24; Mal 4:2) and figuratively as a molten idol. The golden calf at Sinai (Exod 32:4-24) and Jeroboam's calves at Bethel and Dan (1 Kgs 12:28) dominate polemical usage. Hosea's 'your calf, O Samaria' (8:5) and Isaiah's peaceable kingdom (11:6) extend the image.
+
+### H5705 / Sense 122439 (35 occ, sense 1 of 1)
+**Label:** until, up to (temporal/spatial limit)
+**Lemma gloss:** until, up to — Aramaic preposition and conjunction marking temporal, spatial, or quantitative limit
+**Description:** Aramaic preposition marking a temporal or spatial endpoint, meaning 'until, up to, as far as'. Used in Daniel and Ezra for durations and boundaries. All multilingual evidence converges on the same limiting preposition: eng 'until / and-up-to', spa 'hasta / y-hasta', hin 'जब-तक / और-तक', arb 'حتى / و-حتى', kor '까지 / 그리고-까지', swa 'hadi / na-hadi'. S122440 differs only by the conjunction waw prefix (and-until), not a distinct semantic sense.
+**Enriched:** An Aramaic preposition marking a boundary in time, space, or quantity, equivalent to Hebrew ad. Temporal use dominates: 'until the time of the end' (Dan 7:26), 'until now' (Ezra 5:16). Also marks amount ('up to a hundred talents,' Ezra 7:22) and space ('up to here,' Dan 7:28). The conjunction ad di introduces temporal subordinate clauses (Dan 2:34; 4:30).
+
+### H5769 / Sense 122801 (35 occ, sense 3 of 5)
+**Label:** ancient times, of old
+**Lemma gloss:** Long duration; eternity, forever; antiquity, ancient times; everlasting (attributive); age(s) or era(s).
+**Description:** Bounded remote past time or antiquity, not unlimited eternity but historical ancientness, often with מִן 'from' or as a bare noun modifier; corresponding to Arabic الْقِدَمِ / الْقَدِيمِ / قَدِيمًا (al-qidami), Korean 옛날 / 옛 (yennal), Swahili zamani / kale, Spanish 'desde antiguo / antiguo,' Hindi प्राचीन काल / पुराने.
+**Enriched:** Bounded past antiquity: 'ancient times,' 'of old,' 'long ago.' Found 35 times, referring not to infinite past eternity but to historical ancientness within human memory or national tradition. The 'days of old' (yemei olam, Isa 63:9; Amos 9:11), 'ancient paths' (netivot olam, Jer 6:16), 'ancient gates' (pitchei olam, Ps 24:7), and the 'men of old' (anshei olam, Gen 6:4) all point to a remote but bounded past. Arabic al-qidami ('of antiquity') and Korean yennal ('olden times') select dedicated antiquity vocabulary distinct from their eternity words, confirming a real sense boundary. Micah 5:1 uses olam for the Messiah's origins 'from of old,' hovering suggestively between finite antiquity and something deeper.
+
+### H6311 / Sense 127199 (35 occ, sense 2 of 2)
+**Label:** from here
+**Lemma gloss:** Here; from here — a deictic adverb of spatial reference indicating present location or point of departure.
+**Description:** from here, and from here (35 occurrences across 2 original clusters)
+**Enriched:** Adverb of origin or direction: 'from here, from this place,' often paired with spatial complements to describe movement away from a reference point. Prominent in Ezekiel's temple vision (Ezek 40:10, 12), where measurements are taken 'from here and from here' (on each side). Spanish splits between 'de-aquí' and 'de-allí,' revealing the directional nuance that English 'from here' captures in a single phrase.
+
+### H6327a / Sense 127227 (35 occ, sense 1 of 4)
+**Label:** Hifil: scatter, disperse (causative)
+**Lemma gloss:** To scatter, disperse, or be scattered; of peoples driven apart, armies broken, or nations spread abroad.
+**Description:** Causative active scattering: God or an agent disperses people, nations, or objects — Arabic بَدَّدَ/شَتَّتَ (Form II), Korean 흩으-/흩뜨리- (transitive), Swahili -tawanya (transitive).
+**Enriched:** Hifil causative: to scatter or disperse actively, the dominant sense at 35 occurrences. God scatters the nations at Babel (Gen 11:8-9), disperses Israel among the peoples (Deut 4:27; Ezek 20:34), and scatters enemies (Ps 68:1). Arabic baddada (Form II causative) and Korean 흩뜨리다 (transitive dispersal) both select agent-focused vocabulary. The theological weight is enormous — scattering is the anti-exodus, the undoing of gathering, and the prophets repeatedly threaten and then promise reversal of this Hifil action.
+
+### H6467 / Sense 128054 (35 occ, sense 1 of 3)
+**Label:** deed, work, act
+**Lemma gloss:** Deed, work, act; rarely wages or recompense for labor
+**Description:** An action, deed, or work performed by a person, often in the context of moral or divine evaluation of conduct.
+**Enriched:** The dominant sense: a deed or act performed by God or humans, subject to moral evaluation. Deuteronomy 32:4 celebrates God's 'work' as perfect; Psalm 44:1 recalls ancestral testimony of divine 'work'; Ruth 2:12 applies it to human courageous conduct. Spanish 'obra,' French 'oeuvre,' and German 'Tat' center on purposeful action and its enduring results.
+
+### H6883 / Sense 130756 (35 occ, sense 1 of 1)
+**Label:** skin disease / leprosy (tsara'at)
+**Lemma gloss:** tsara'at — a ritually defiling skin disease (also affecting garments and houses) requiring priestly diagnosis
+**Description:** The noun tsara'at denotes the ritually significant skin disease described in Leviticus 13-14 and in the narratives of Naaman (2 Kings 5) and others. All four clusters represent the same medical-ritual concept with grammatical variation only: absolute and construct forms (tsara'at, tsara'at-X 'skin-disease of'), definite article (ha-tsara'at 'the skin-disease'), possessive suffix (mi-tsara'to 'from his leprosy'), and conjunctive forms (we-ha-tsara'at 'and the leprosy'). Multilingual glosses are uniform: Arabic baras (برص), Spanish lepra/tsaraat, Korean nabbyeong (나병), Swahili ukoma, and Hindi kodh (कोढ़). The term covers a range of skin afflictions in the Levitical system but functions as a single lexical sense.
+**Enriched:** A ritually defiling condition requiring priestly inspection and elaborate purification rites. In Leviticus 13-14, the priest examines skin lesions for color, depth, and spread to pronounce tameh or tahor (Lev 13:2-8). Naaman's healing (2 Kgs 5:1-14) and Gehazi's punishment (2 Kgs 5:27) illustrate its narrative role. Extended to garments (Lev 13:47) and house walls (Lev 14:34), probably denoting mold or fungus.
+
+### H7311a / Sense 135095 (35 occ, sense 2 of 11)
+**Label:** be exalted, rise up (intransitive)
+**Lemma gloss:** to be high, exalted; to lift up, raise (physically or in status); to exalt, extol (God or a person); to contribute (an offering)
+**Description:** Qal imperfect/perfect/infinitive intransitive sense: to rise, become exalted, be lifted in status or glory — Arabic يَرْتَفِعُ (yartafi'u), Korean 높아지다 (nopajida), Swahili -inuliwa/-inuka.
+**Enriched:** The intransitive Qal sense describing rising, becoming elevated, or being exalted without an external agent. Floodwaters rose in Noah's day (Gen 7:17), Israel's king shall rise in power (Num 24:7), hearts become proud (Deut 8:14, 17:20). The translations capture the stative or inchoative quality (Arabic yartafi'u 'it rises', Korean 높아지다 'to become high'), distinguishing this from the causative lifting of sense 1.
+
+### H7622 / Sense 137691 (35 occ, sense 1 of 2)
+**Label:** captivity, exile
+**Lemma gloss:** Captivity, exile; or fortune/condition, especially in the idiom 'restore the captivity/fortunes of'
+**Description:** The state of being taken captive or held in exile; used of Israel's and other nations' captivity, often in the construct 'captivity of [people/place]' with various pronominal suffixes.
+**Enriched:** The state of captivity or exile, being taken away and held in a foreign land. Spanish 'cautividad de' and French 'captivite' directly name this condition. The word appears across the major restoration promises: Deuteronomy 30:3 ('the LORD your God will restore your captivity'), Psalm 126:4 ('restore our captivity like streams in the Negev'), and the prophetic oracles where God promises to turn back the captivity of Israel, Judah, Moab, Ammon, and Egypt (Jer 30:3; 48:47; 49:6,39; Ezek 29:14). Psalm 85:1 celebrates that God has already 'returned the captivity of Jacob,' looking back on a historical restoration from exile.
+
+### H7665 / Sense 138086 (35 occ, sense 3 of 8)
+**Label:** Piel: shatter, smash thoroughly
+**Lemma gloss:** To break, shatter, smash; in Niphal: be broken; figuratively of hearts, spirits, power, and covenant-breaking
+**Description:** Intensive or iterative breaking, smashing into pieces or thoroughly destroying, corresponding to Arabic kassara (Form II intensive) and Korean 부수다 with intensifying particles.
+**Enriched:** Piel intensive: thorough smashing or systematic destruction — breaking hail that shatters every plant (Exod 9:25), Moses shattering the tablets (Exod 32:19), or the command to demolish pagan altars (Exod 23:24). Arabic kassara (Form II intensive) parallels the morphological intensification. The repeated Piel in Exodus 23:24 underscores the totality demanded.
+
+### H8269 / Sense 143829 (35 occ, sense 3 of 4)
+**Label:** military captain, commander
+**Lemma gloss:** Chief, ruler, prince, official, captain; a person of authority or rank in civil, military, or royal administration.
+**Description:** A military leader or army officer: captain, commander — used for those exercising authority specifically over troops or military operations, evidenced by Arabic قَائِد, Hindi सेनापति, Korean 지휘관, Swahili jemadari/makamanda.
+**Enriched:** A military leader or army officer: captain, commander — specifically one exercising authority over troops or military operations. Found 35 times, especially in the Mosaic organization of Israel (Exod 18:21-25 'commanders of thousands, hundreds, fifties, and tens') and in the conquest-era battle narratives. Arabic qaid ('military commander'), Hindi senapati ('army chief'), and Swahili jemadari ('military officer') all select dedicated martial vocabulary here rather than generic 'ruler' words, confirming a distinct semantic profile from the courtier sense.
+
+### G0975 / Sense 64131 (34 occ, sense 1 of 1)
+**Label:** book, scroll, written document
+**Lemma gloss:** book, scroll, written document — a papyrus roll, codex, or register; diminutive of biblos
+**Description:** A written document in scroll or codex form, ranging from a physical papyrus roll to a book or register. Diminutive of βίβλος (papyrus). Cross-linguistically uniform: Arabic كتاب/سفر, German Buch, Spanish libro/carta, Hebrew ספר, Korean 책/두루마리, Hindi पुस्तक/पत्र, French livre. Luke 4:17,20 (scroll of Isaiah handed to Jesus in the synagogue -- Korean renders 두루마리 'scroll-roll'). Matt 19:7 and Mark 10:4 (βιβλίον ἀποστασίου, certificate/scroll of divorce -- English 'certificate', Spanish carta, Hindi पत्र 'letter/document'). John 20:30, 21:25 (things written in this book). Gal 3:10 (book of the Law). Heb 9:19, 10:7 (the scroll/book). Rev 1:11 (write in a scroll); Rev 5:1-9 (the sealed scroll/book with seven seals); Rev 6:14 (sky rolled up like a scroll); Rev 10:8 (the little scroll); Rev 13:8, 17:8, 20:12, 21:27 (book of life); Rev 22:7-19 (the book of this prophecy). Plural βιβλία in John 21:25 (the world itself could not contain the books), 2 Tim 4:13 (bring the books), Rev 20:12 (books were opened). All singular, plural, and case variants represent one lexical sense of a written document.
+**Enriched:** A written document in scroll or codex form, ranging from legal certificates to prophetic and apocalyptic texts. Covers the divorce certificate (Matt 19:7; Mark 10:4), Isaiah's scroll read at Nazareth (Luke 4:17), the sealed scroll of Revelation (Rev 5:1-9), and the book of life (Rev 20:12; 21:27). The diminutive of biblos, it spans the mundane and the cosmic.
+
+### G1210 / Sense 65135 (34 occ, sense 1 of 3)
+**Label:** bind, tie physically
+**Lemma gloss:** To bind, tie, or fasten; figuratively to constrain by obligation or to decree authoritatively
+**Description:** To physically bind, tie up, or fasten a person, animal, or object with ropes, chains, or fetters, including binding prisoners, tying a donkey to a post, or bundling tares for burning; the dominant sense of δέω across all NT contexts, uniformly rendered as atar/atado (Spanish), بَاندھ/ربط/قيّد (Arabic), 묶다 (Korean), funga (Swahili).
+**Enriched:** The primary physical sense of binding, tying, or fastening with ropes, chains, or fetters. Covers prisoners bound in custody (Matt 14:3, Mark 6:17), animals tied to posts (Matt 21:2), and tares bundled for burning (Matt 13:30). Translations uniformly reach for concrete binding verbs: Spanish 'atado,' French 'lier,' German 'binden.'
+
+### G1248 / Sense 65274 (34 occ, sense 1 of 1)
+**Label:** ministry, service
+**Lemma gloss:** ministry, service — active service to God and neighbor, encompassing both apostolic commission and practical care
+**Description:** Ministry, service, or attendance to a duty, encompassing both apostolic commission and practical serving. All 34 NT occurrences (Lk 10:40; Acts 1:17, 25, 6:1, 4, 11:29, 12:25, 20:24, 21:19; Rom 11:13, 12:7, 15:31; 1 Cor 12:5, 16:15; 2 Cor 3:7-9, 4:1, 5:18, 6:3, 8:4, 9:1, 12-13, 11:8; Eph 4:12; Col 4:17; 1 Tim 1:12; 2 Tim 4:5, 11; Heb 1:14; Rev 2:19) share uniform cross-linguistic translations: arb khidma (service), deu Dienst (service/duty), fra service, heb sherut (service/ministry), hin seva/sevkai (service/ministry), kor saygim/saryok/bongsa (serving/ministry/service), spa ministerio/servicio. The auto-clusters separated 'ministry' from 'service' and inflectional variants, but these represent a single lexical sense spanning the spectrum from Martha's table-serving (Lk 10:40) through relief aid (Acts 11:29) to Paul's apostolic commission (2 Cor 3-5), all unified by the core concept of active service performed for others.
+**Enriched:** Active service rendered to God or neighbor, spanning practical care and apostolic vocation. Includes Martha's table service (Luke 10:40), the daily distribution that prompted the Seven's appointment (Acts 6:1-4), famine relief for Jerusalem (Acts 11:29), and Paul's apostolic charge (Rom 11:13; 2 Cor 4:1). In 2 Corinthians 3-6, Paul develops it into a theology of new covenant ministry.
+
+### G1453 / Sense 66123 (34 occ, sense 3 of 6)
+**Label:** raise from the dead (active)
+**Lemma gloss:** To raise up, wake, arise; especially of resurrection from the dead; also to get up physically, appear, or rouse from sleep
+**Description:** Active transitive use: a divine agent raises someone from the dead, i.e., causes resurrection. English 'raised (him),' Spanish 'resucitó / levantó,' Arabic أَقَامَ, Korean 일으켰다/살렸다, Swahili alimfufua.
+**Enriched:** Active transitive resurrection: a divine agent raises someone from the dead. The subject is typically God (Acts 2:24, 'God raised him') or Jesus commissioning the disciples (Matt 10:8, 'raise the dead'). Distinguished from sense 1 by having an explicit agent performing the raising. Arabic أَقَامَهُ (with object suffix) and Korean 일으키셨다 both mark the transitive causative structure. John 2:19-20 plays on this sense when Jesus says 'I will raise it [the temple/body] in three days.'
+
+### G3196 / Sense 72120 (34 occ, sense 1 of 1)
+**Label:** member / bodily part
+**Lemma gloss:** member, bodily part — a limb or organ of the human body, used literally and as a metaphor for the church
+**Description:** A part or limb of the human body, used both literally (physical body parts, Rom 6:13, 6:19, Jas 3:5-6) and figuratively (members of the body of Christ, 1 Cor 12:12-27). Singular and plural forms carry the same semantic content. Multilingual evidence is consistent across number: spa 'miembro/miembros,' hin 'ang/angon,' arb 'udw/a'daa,' kor 'jiche/jichedeul,' swa 'kiungo/viungo.' The metaphorical extension to ecclesiology (believers as body parts) is a natural Pauline figure that does not warrant a separate lexical sense, as the body-part imagery is preserved in all usages.
+**Enriched:** A limb or organ of the physical body, extended metaphorically to the community of believers. Jesus uses it of eye and hand in radical discipleship sayings (Matt 5:29-30). Paul develops dual application: ethical, as body parts offered to sin or righteousness (Rom 6:13; 7:23), and ecclesiological, as interdependent parts of Christ's body (1 Cor 12:12-27). James warns of the tongue as a small but dangerous member (Jas 3:5-6).
+
+### G3340 / Sense 72290 (34 occ, sense 1 of 1)
+**Label:** repent, change one's mind
+**Lemma gloss:** repent, change one's mind — to undergo a fundamental reorientation of heart and conduct toward God
+**Description:** To feel remorse and turn from sin, changing one's mind and heart in response to God's call, encompassing all grammatical forms of μετανοέω across indicative, imperative, subjunctive, infinitive, and participial uses.
+**Enriched:** To undergo a decisive change of mind and heart, turning from sin toward God. Inaugurates the preaching of both John the Baptist (Matt 3:2) and Jesus (Matt 4:17), and becomes the apostolic call at Pentecost (Acts 2:38; 3:19). In Revelation, the risen Christ demands it of five churches (Rev 2:5, 16, 21; 3:3, 19), demonstrating that repentance is not a one-time act but an ongoing posture before God.
+
+### G3383 / Sense 72420 (34 occ, sense 1 of 1)
+**Label:** (none)
+**Lemma gloss:** neither, nor — negative conjunction used in pairs (mete...mete) to deny two or more alternatives
+**Description:** (none)
+**Enriched:** A negative correlative conjunction pairing as mete...mete ('neither...nor') to systematically exclude alternatives. Central to Jesus' prohibition of oaths — 'neither by heaven, nor by earth, nor by Jerusalem' (Matt 5:34-36) — echoed in James 5:12. Paul uses the paired construction to enumerate what cannot sever believers from divine love (Rom 8:38-39) and to relativize circumcision (Gal 6:15).
+
+### G3483 / Sense 72647 (34 occ, sense 1 of 1)
+**Label:** yes
+**Lemma gloss:** Yes; indeed; an affirmative particle expressing strong agreement, assent, or solemn confirmation
+**Description:** yes, Yes (34 occurrences across 2 original clusters)
+**Enriched:** An emphatic affirmative response or solemn confirmation — 'yes, indeed, certainly.' Used both in direct replies to questions (Matt 9:28; 13:51) and as a rhetorical intensifier affirming prophetic truth (Matt 11:9). The multilingual glosses uniformly render it as a simple affirmative (French 'oui,' Spanish 'sí'), reflecting its straightforward semantic core, yet in context it often carries the weight of an oath or covenant commitment.
+
+### G3631 / Sense 73083 (34 occ, sense 1 of 1)
+**Label:** wine
+**Lemma gloss:** Wine; fermented grape juice, the standard drink of the ancient Mediterranean world
+**Description:** Fermented grape juice; the standard alcoholic beverage of the ancient Mediterranean world. Used of wine at the wedding in Cana (John 2:3,9-10), new wine bursting old wineskins (Matt 9:17, Mark 2:22, Luke 5:37-38), the wine mixed with gall/myrrh offered at the crucifixion (Matt 27:34, Mark 15:23), and metaphorical 'wine of God's wrath' in Revelation (14:8,10, 16:19, 17:2, 18:3). The lone dative-instrumental form ('with wine', Eph 5:18) is the same substance in a different syntactic frame. Multilingual evidence: spa vino, hin दाखरस 'grape-juice/wine', arb خَمْر 'wine/intoxicant', kor 포도주 'grape-wine', swa divai/mvinyo 'wine'.
+**Enriched:** Fermented grape juice, the principal alcoholic beverage of antiquity — wine as a physical drink used in meals, celebrations, and religious offerings. Appears in literal contexts such as the wedding at Cana (John 2:3), the parable of the wineskins (Matt 9:17; Mark 2:22), and the vinegar-wine offered at the crucifixion (Matt 27:34). Translations across all target languages consistently use a single, well-established term (French 'vin,' German 'Wein'), confirming this as a universally recognized referent.
+
+### G3844 / Sense 73760 (34 occ, sense 3 of 9)
+**Label:** beside, near, at
+**Lemma gloss:** beside, from beside; source (genitive), proximity (dative), motion/comparison (accusative)
+**Description:** Indicates spatial proximity or location alongside someone or something (with dative), often translated 'beside', 'by', or 'near'.
+**Enriched:** Physical adjacency—standing, sitting, walking beside something—uses dative case. Matthew 4:18 (walking beside the sea) and 13:1 (sitting beside the sea) show literal spatial use. Spanish junto a and German bei emphasize the nearness, while the French auprès de serves for all proximity contexts. This is the preposition's most concrete spatial sense.
+

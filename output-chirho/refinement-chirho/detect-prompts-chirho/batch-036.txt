@@ -1,0 +1,291 @@
+# Sense Refinement Detection — Batch 036
+
+You are a biblical lexicographer reviewing sense entries for a Hebrew/Aramaic/Greek lexicon.
+Each entry below is a single "sense" that was produced by clustering translation signatures 
+and then merging with an LLM. Some senses may have been OVER-LUMPED — they contain genuinely 
+distinct meanings that should be separate senses.
+
+## Your Task
+
+For each sense, determine if it should be SPLIT into multiple senses. Look for:
+- Literal vs. figurative/metaphorical uses lumped together
+- Concrete vs. abstract meanings combined
+- Multiple distinct referents (e.g., "father" = biological parent + patron/advisor + originator)
+- Physical vs. spiritual/theological uses merged
+- Different syntactic frames producing different meanings
+
+## Output Format
+
+Return a JSON array. For senses that need NO splitting, omit them entirely.
+For senses that SHOULD be split, include an entry like:
+
+```json
+[
+  {
+    "senseIdChirho": 79287,
+    "lemmaIdChirho": "H0001",
+    "currentLabelChirho": "father, immediate male parent",
+    "splitProposalChirho": [
+      {
+        "newLabelChirho": "biological/legal father",
+        "criteriaChirho": "Direct parent-child relationship, possessive constructions with specific person"
+      },
+      {
+        "newLabelChirho": "metaphorical father (patron, advisor, protector)",
+        "criteriaChirho": "Title of respect for prophets, advisors, or authority figures; 'father to Pharaoh' type usage"
+      }
+    ],
+    "confidenceChirho": "high",
+    "reasoningChirho": "Description explicitly mentions 'title of respect or metaphorical originator' alongside biological father"
+  }
+]
+```
+
+Only propose splits where you have MEDIUM or HIGH confidence. Do NOT split function words (articles, 
+prepositions, particles, conjunctions) unless there is a genuinely distinct semantic sense (not just 
+syntactic variation). Proper nouns generally should NOT be split.
+
+If NO senses in this batch need splitting, return an empty array: []
+
+## Senses to Review
+
+### G3141 / Sense 71973 (37 occ, sense 1 of 1)
+**Label:** testimony / witness / attestation
+**Lemma gloss:** testimony, witness, attestation — the act or content of bearing witness, especially regarding Christ and the gospel
+**Description:** The act or content of bearing witness, giving testimony, or providing evidence, used in the NT for the testimony of John the Baptist, the witness of God concerning His Son, the testimony of Jesus, and the testimony of believers. The two clusters are singular (36x) vs. plural (1x, Rev 11:7 'testimonies') inflections of the same feminine noun martyria. All translations use one lexeme with regular number morphology: eng 'testimony/testimonies,' spa 'testimonio/testimonios,' hin gavahi (गवाही/गवाहियाँ), arb shahada/shahadat (شَهادَة/شَهَادَات), kor jeunggeo/jeungeon (증거/증언들), swa 'ushuhuda/ushahidi.'
+**Enriched:** The act or content of bearing witness, encompassing legal testimony, prophetic attestation, and christological witness. In John's Gospel it carries a quasi-forensic weight as competing claims are adjudicated: the Baptist's testimony about Jesus (John 1:7, 19; 5:33-36), Jesus' self-testimony challenged by the Pharisees (John 8:13-14), and the Father's testimony confirmed by works (John 5:36-37). Mark's trial narrative uses it for the false testimony sought against Jesus (Mark 14:55-56, 59). Revelation transforms it into the ground of eschatological fidelity — 'the testimony of Jesus' that saints maintain unto death (Rev 6:9; 12:11, 17; 19:10). Spanish 'testimonio,' French 'temoignage,' German 'Zeugnis' all preserve the legal-evidentiary core.
+
+### G3367 / Sense 72383 (37 occ, sense 2 of 3)
+**Label:** nothing, not anything
+**Lemma gloss:** No one, nobody; nothing, not anything; no, not any (as adjective). Negative pronoun/adjective used in non-indicative contexts.
+**Description:** Substantive use referring to things: nothing, not anything — used as a pronoun denying the existence or relevance of any thing or matter.
+**Enriched:** Substantive use referring to things: 'nothing, not anything' (37 occurrences). The neuter μηδέν functions as a pronoun negating the existence or relevance of any thing or matter: 'take nothing for the journey' (Mark 6:8), 'expecting nothing in return' (Luke 6:35), 'be anxious about nothing' (Phil 4:6). Spanish nada, French rien, German nichts, and Korean 아무것도 all employ thing-negating pronouns distinct from the person-negating forms of sense 1, showing that languages consistently bifurcate this semantic space.
+
+### G3775 / Sense 73578 (37 occ, sense 1 of 1)
+**Label:** ear (body part)
+**Lemma gloss:** ear — the physical organ of hearing, used literally and figuratively for spiritual receptivity or refusal
+**Description:** The physical organ of hearing, used both literally (the bodily ear) and in figurative expressions about spiritual receptivity ('he who has ears, let him hear'). All 37 occurrences denote the same anatomical referent with variation limited to grammatical number (singular 'ear' vs. plural 'ears') and case. Multilingual evidence: spa 'oído/oídos/oreja' (ear/ears, inner and outer), hin 'कान/कानों' (kān/kānon, ear/ears), arb 'أُذُنٌ/آذَانِ' ('udhun/ādhān, ear sg/pl from same root أ-ذ-ن), kor '귀/귀를/귀로' (gwi, ear in various particles), swa 'sikio/masikio' (ear sg class 5/pl class 6, standard Bantu number pairing). Used in Matt 10:27, 11:15, 13:9, Mark 4:9, Luke 4:21, Acts 7:57, Rev 2:7 etc.
+**Enriched:** The physical organ of hearing, employed both for the literal body part and as a figure for spiritual perception or its absence. Literal uses include the high priest's servant whose ear Peter severed (Luke 22:50; John 18:10, 26) and the whispered-then-proclaimed message of Matt 10:27. The figurative refrain 'he who has ears, let him hear' (Matt 11:15; 13:9, 43; Mark 4:9, 23; Rev 2-3) makes the ear a metonym for willing receptivity. The Isaiah 6:10 tradition of 'heavy ears' that refuse to hear reverberates through Acts 7:51 and Acts 28:27, where the ear becomes a site of spiritual resistance.
+
+### G3844 / Sense 73761 (37 occ, sense 2 of 9)
+**Label:** with, in the presence of
+**Lemma gloss:** beside, from beside; source (genitive), proximity (dative), motion/comparison (accusative)
+**Description:** Indicates being in someone's company or possession, often translated 'with' in the sense of association, accompaniment, or being in the presence of someone.
+**Enriched:** When paired with dative, παρά locates someone in another's presence or company—'with' in relational rather than instrumental sense. Matthew 6:1 (reward with your Father) and 19:26 (with God all things are possible) illustrate the association. Spanish alternates between con and ante, while German bei captures both proximity and accompaniment. This overlaps with possession: having something 'with oneself.'
+
+### G4335 / Sense 75793 (37 occ, sense 1 of 1)
+**Label:** prayer, act of praying
+**Lemma gloss:** prayer — the act of praying or a specific prayer offered, especially directed to God in petition and worship
+**Description:** The act or practice of prayer as communication with God, encompassing both the activity itself and specific prayers offered. This is the dominant sense throughout the New Testament, appearing in the Gospels, Acts, and Epistles. It covers prayer in general ('devoted to prayer,' Acts 1:14; Rom 12:12), specific prayers offered to God (Acts 10:31, 'your prayer has been heard'), and prayer as a spiritual discipline (1 Cor 7:5, James 5:17). The plural form simply denotes multiple instances of this same activity rather than a different sense. The genitive construction 'house of prayer' (Matt 21:13, Mark 11:17, Luke 19:46) uses the word in the same core meaning, designating the temple by its intended purpose.
+**Enriched:** The act of praying or a specific prayer directed to God, encompassing petition, intercession, thanksgiving, and communal worship. Jesus' declaration that the Temple is an oikos proseuches ('house of prayer,' Matt 21:13; Mark 11:17; Luke 19:46) elevates the term to define sacred space itself. The early church's devotion to proseuche as corporate discipline (Acts 1:14; 2:42; 6:4) and Paul's frequent pairing of proseuche with deesis ('supplication,' Eph 6:18; Phil 4:6; 1 Tim 2:1) show the word functioning as the broadest category of God-directed speech. A secondary use in Acts 16:13, 16 designates a physical place of prayer — a riverside gathering site at Philippi.
+
+### G5376 / Sense 78605 (37 occ, sense 1 of 1)
+**Label:** Philip (proper name)
+**Lemma gloss:** Philip — Greek name meaning 'lover of horses,' borne by the apostle, the evangelist, and Herodian tetrarchs
+**Description:** The Greek proper noun Φίλιππος ('lover of horses'), used in the NT for several individuals: Philip the apostle (John 1:43-48, 6:5-7, 12:21-22, 14:8-9), Philip the evangelist/deacon (Acts 6:5, 8:5-40, 21:8), Philip the tetrarch son of Herod (Matt 14:3, Mark 6:17, Luke 3:1, 3:19). All 37 occurrences are the same proper name in various grammatical cases. S78605 (32x, nominative/accusative/genitive/dative/vocative singular) and S78606 (5x, genitive singular in 'of Philip' constructions) differ only in syntactic function. Translations uniformly transliterate: Spanish 'Phílippos,' Arabic 'فيلبس,' Hindi 'फिलिप्पुस,' Korean '빌립,' Swahili 'Filipo.' No semantic distinction exists between the clusters.
+**Enriched:** The Greek proper name Philippos ('horse-lover'), designating at least four individuals in the NT: Philip the apostle from Bethsaida who brought Nathanael to Jesus (John 1:43-48) and mediated for Greek seekers (John 12:21-22); Philip the evangelist, one of the Seven (Acts 6:5), who preached in Samaria and baptized the Ethiopian eunuch (Acts 8:5-39); Philip the tetrarch, son of Herod, who governed Iturea and Trachonitis (Luke 3:1); and Philip the husband of Herodias (Matt 14:3; Mark 6:17). The name's Greek origin — rare among the Twelve — may signal the Hellenized Galilean milieu of Bethsaida.
+
+### H0274 / Sense 81198 (37 occ, sense 1 of 1)
+**Label:** Ahaziah (proper name)
+**Lemma gloss:** Ahaziah — Hebrew name meaning 'Yah has grasped,' borne by a king of Israel and a king of Judah
+**Description:** A Hebrew proper name (אֲחַזְיָהוּ, 'YHWH has grasped') referring to two kings in the Hebrew Bible: (1) Ahaziah son of Ahab, king of Israel (1 Kgs 22:40,49; 2 Kgs 1), and (2) Ahaziah son of Jehoram, king of Judah (2 Kgs 8:24-29; 2 Chr 22). All three sense clusters are purely grammatical variants of the same proper noun — bare nominative, with prepositions (to/of Ahaziah), and with conjunction (and-Ahaziah). Multilingual renderings are uniform: spa 'Ocozias', arb 'أَخَزْيَا', hin 'अहज्याहू', kor '아하시야', swa 'Ahazia'.
+**Enriched:** The theophoric proper name Achazyahu/Achazyah ('Yah has grasped'), identifying primarily two Israelite kings. Ahaziah son of Ahab ruled Israel briefly (c. 853-852 BC), fell through his upper-room lattice, and died after consulting Baal-zebub instead of YHWH (1 Kgs 22:40, 49, 51; 2 Kgs 1:2-18). Ahaziah son of Jehoram of Judah reigned one year before being killed by Jehu alongside the house of Ahab (2 Kgs 8:24-29; 9:16-29; 2 Chr 22:1-9). The LXX Ochozias, Spanish 'Ocozias,' and French 'Achazia' uniformly transliterate. A shortened form Achzai identifies a postexilic priest in Nehemiah 11:13.
+
+### H0369 / Sense 81694 (37 occ, sense 2 of 4)
+**Label:** privative: without, for lack of
+**Lemma gloss:** There is not, nothing, nought; a particle of non-existence used for negating being, presence, or availability.
+**Description:** Prepositional/adverbial sense meaning 'without, in the absence of, for lack of' — often with prefixed מִן (min-ayin) or בְּ (be-ayin) or לְ (le-ayin); Arabic uses distinctly privative prepositions بِلَا (bilā), مِنْ دُونِ (min dūni), بِدُونِ (bidūni), and لِعَدَمِ (li-ʿadami) rather than existential لَيْسَ; Korean 없이 (eopsi, 'without') and 없음에 (eopseum-e, 'in the absence'); Swahili bila ('without'), kwa kukosa ('for lack of')
+**Enriched:** Privative prepositional sense: 'without, for lack of, in the absence of.' Thirty-seven occurrences, typically with prefixed min (me'ayin), be (be'en), or le (le'en), yielding compound prepositions meaning 'without.' Exodus 21:11 stipulates a slave-wife may go free 'without payment'; Nehemiah exhorts the people to feast 'for those who have nothing prepared' (Neh 8:10). Spanish sin, German ohne, and Arabic bila all select dedicated privative prepositions here, distinguishing this clearly from simple non-existence. The semantic shift from 'there is not X' to 'lacking X' is natural but produces a genuinely distinct syntactic and semantic pattern.
+
+### H0905 / Sense 85266 (37 occ, sense 3 of 7)
+**Label:** poles, staves
+**Lemma gloss:** Separation, alone, by oneself; apart from, besides; also: poles/staves, limbs, branches, bars
+**Description:** Carrying poles or staves used to transport tabernacle furniture (ark, altar, table); Arabic al-isiyy / awarid, Korean chae-deul, Swahili mipiko / miti — always in plural, often with article or possessive suffix.
+**Enriched:** As a concrete noun in the plural (baddim), bad denotes the carrying poles or staves inserted through rings to transport the ark, altar, and table of the tabernacle (Exod 25:13-15, 27-28). Spanish varas, French barres, and Swahili mipiko all confirm the instrumental meaning. These poles physically embody the 'separate, extended piece' at the root's core.
+
+### H1364 / Sense 88963 (37 occ, sense 1 of 1)
+**Label:** high, tall, lofty
+**Lemma gloss:** high, tall, lofty — adjective describing physical height or figurative exaltation and pride
+**Description:** Adjective describing physical height (tall person, high wall, lofty tree) or figurative elevation (haughty, proud, exalted), used across all gender/number forms with various prepositions and articles.
+**Enriched:** Physical or spatial height — describing mountains (Gen 7:19; Isa 40:9; 57:7; Ezek 17:22; 40:2), fortified walls (Deut 3:5; 28:52), tall structures like Haman's gallows (Est 5:14; 7:9), tall persons like Saul (1 Sam 9:2), lofty trees (Ezek 17:24; 31:3), and prominent horns (Dan 8:3). The formula 'al kol-har gavoah ('upon every high mountain,' Isa 30:25; Jer 3:6) and 'al kol-giv'ah gevohah' ('upon every high hill,' 1 Kgs 14:23; 2 Kgs 17:10; Jer 2:20; 17:2) recurs in prophetic denunciations of illicit worship on elevated sites. Spanish 'alta/altas,' French 'haut,' German 'Hoehe' all render the straightforward spatial sense.
+
+### H1391 / Sense 89234 (37 occ, sense 1 of 1)
+**Label:** Gibeon (place name)
+**Lemma gloss:** Gibeon — a major Canaanite city that became a Levitical city in Benjamin, site of the tabernacle and famous treaty
+**Description:** A major Canaanite city that became a Levitical city in the territory of Benjamin, identified with modern el-Jib northwest of Jerusalem. Prominently featured in Joshua 9:3-17 (Gibeonite treaty with Israel), Joshua 10:1-12 (the battle where the sun stood still), Joshua 11:19 and 18:25 (city lists), Joshua 21:17 (Levitical allocation), 2 Samuel 2:12-16 (the pool of Gibeon combat), 2 Samuel 20:8 (Amasa's assassination), 1 Kings 3:4-5 and 9:2 (Solomon's sacrifice and dream at the great high place), 1 Chronicles 8:29, 9:35, 14:16, 16:39, 21:29 (genealogies and tabernacle location), 2 Chronicles 1:3, 1:13 (Solomon at Gibeon), Isaiah 28:21, Jeremiah 28:1 and 41:12, 41:16. The directional form gibeonah appears in 2 Sam 2:12 and 1 Kgs 3:4. All multilingual glosses uniformly render the same toponym across prepositional contexts.
+**Enriched:** The proper place name Giv'on, designating a Levitical city in Benjamin's territory. All 37 occurrences refer to this single location. It functions in four main narrative clusters: the Gibeonite treaty (Josh 9-10), David's military and political dealings (2 Sam 2:12-16; 3:30; 20:8), the tabernacle's pre-temple location (1 Kgs 3:4; 1 Chr 16:39; 2 Chr 1:3), and prophetic reference (Isa 28:21; Jer 28:1; 41:12, 16). Spanish 'Gabaon,' French 'Gabaon,' and English 'Gibeon' all derive from the LXX Gabaon.
+
+### H2620 / Sense 98236 (37 occ, sense 1 of 1)
+**Label:** take refuge, seek shelter
+**Lemma gloss:** to seek refuge, take shelter — predominantly used of trusting in God as one's protective hiding place
+**Description:** To take refuge or seek shelter in someone (especially God) for protection and safety, expressing trust and dependence on the protector.
+**Enriched:** To seek refuge or take shelter, expressing trust and dependence by fleeing to a protector. Nearly all occurrences describe the act of seeking divine protection, with God portrayed as fortress, rock, or sheltering bird. The participial form chosim ('those who take refuge') functions as a virtual title for the faithful (Ps 2:12; 5:12; 17:7; 34:9; Na 1:7). Jotham's fable uniquely applies the verb to trees: 'come, take refuge in my shade' (Judg 9:15). The Spanish 'refugiarse,' French 'se refugier,' and German 'Zuflucht nehmen' all capture the reflexive-physical metaphor of fleeing to shelter.
+
+### H2930a / Sense 100270 (37 occ, sense 2 of 6)
+**Label:** Piel factitive: defile, make unclean
+**Lemma gloss:** To be or become ritually unclean, to defile, to declare unclean; spanning stative impurity, causative defilement, reflexive self-defilement, and priestly pronouncement
+**Description:** Causative-factitive Piel stem expressing the active causation of defilement — making someone or something unclean, whether by ritual contamination, sexual sin, idolatry, or bloodshed (Arabic يُنَجِّسُ, Korean 더럽히다, Swahili -tia unajisi).
+**Enriched:** Piel factitive: to defile or make unclean, actively causing the defilement of a person, place, or thing. Arabic yunajjisu (to pollute, causative) and Korean deoreopida (to defile) mark the agentive causation. Covers a wide moral-ritual range (37x): Shechem defiling Dinah (Gen 34:5, 13, 27), Israel defiling the land through idolatry (Jer 2:7), and bloodshed contaminating the sanctuary (Lev 15:31). The shift from Qal state to Piel agency reflects the theological principle that defilement can be both suffered passively and inflicted deliberately.
+
+### H3079 / Sense 101367 (37 occ, sense 1 of 1)
+**Label:** Yehoyaqim
+**Lemma gloss:** Jehoiakim — theophoric name meaning 'Yah raises up,' borne by the last-but-one king of Judah and two others
+**Description:** Yehoyaqim, Yehoyakim, Jehoiakim (37 occurrences across 2 original clusters)
+**Enriched:** The proper masculine name Yehoyaqim ('Yah raises up'), principally identifying the penultimate Davidic king of Judah. Of 37 occurrences, the vast majority cluster in Jeremiah and 2 Kings, where Jehoiakim emerges as a foil to his reforming father Josiah — a king who builds palaces with unpaid labor (Jer 22:13-17) and burns prophetic scrolls (Jer 36:23). The shorter form Yoyaqim (Neh 12:10) identifies the postexilic priestly figure. Greek Ioakim, Spanish 'Joacim/Joaquin,' and German 'Jojakim' all reflect the LXX rendering.
+
+### H3556 / Sense 105544 (37 occ, sense 1 of 1)
+**Label:** star, celestial body
+**Lemma gloss:** star — a luminous celestial body, used literally of the night sky and figuratively for multitude or royalty
+**Description:** A luminous celestial body visible in the night sky, used both literally of the physical stars and figuratively as a symbol of multitude, divine promise, or heavenly beings.
+**Enriched:** A luminous celestial body visible in the night sky, serving both literal and figurative functions. Literally, stars are created objects of the fourth day (Gen 1:16), named and numbered by God (Ps 147:4; Isa 40:26). Figuratively, they represent: (a) innumerability in the Abrahamic promise (Gen 15:5; 22:17; Deut 1:10; 28:62), (b) royal or messianic destiny in Balaam's oracle (Num 24:17), (c) cosmic upheaval in prophetic judgment (Isa 13:10; Joel 2:10; 4:15), and (d) angelic or heavenly beings (Job 38:7). The multilingual glosses — Spanish 'estrellas,' French and German borrowing the Hebrew form in brackets — highlight the word's transparency across traditions.
+
+### H3588b / Sense 105969 (37 occ, sense 3 of 4)
+**Label:** for, because (causal)
+**Lemma gloss:** Compound conjunction 'ki im': but/rather (adversative), except/unless (exceptive), for/because (causal), or surely/that (asseverative).
+**Description:** Introduces a causal or explanatory clause, giving the reason or ground for a preceding statement.
+**Enriched:** Causal 'for, because, for if' (~37x), giving the ground or reason for what precedes, often introducing a conditional protasis. French car and German denn consistently mark this sense. The Exodus plague narratives use it repeatedly (Exod 8:21; 9:2; 10:4): 'for if you refuse to let my people go...' -- here ki retains its causal force while im adds the conditional element.
+
+### H3602 / Sense 106030 (37 occ, sense 1 of 1)
+**Label:** thus, so, in this manner
+**Lemma gloss:** thus, so, in this manner — a demonstrative adverb of manner, slightly more emphatic than koh
+**Description:** Demonstrative adverb indicating manner, meaning 'thus, so, in this way,' used to refer to actions or states previously described or about to be described; uniformly glossed as así (Spa), ऐसा/ऐसे/वैसे (Hin), هَكَذَا (Arb), 이같이/그렇게 (Kor), hivyo (Swa). All three clusters—standalone adverb, conjunction-prefixed, and relative-pronoun-prefixed—share identical deictic-manner semantics with only surface-level syntactic variation.
+**Enriched:** A demonstrative adverb specifying manner, meaning 'thus, so, in this way,' used to point forward to an instruction or backward to a described action. Frequently collocates with 'asah ('to do') in prophetic sign-acts: Jeremiah's sash burial illustrates 'thus will I ruin the pride of Judah' (Jer 13:9), and his sinking scroll enacts 'thus shall Babylon sink' (Jer 51:64). In narrative, it introduces rhetorical questions about someone's condition (2 Sam 13:4) or conduct (1 Sam 19:17). Distinguished from koh by its slightly heavier emphasis and its preference for qualifying the word it precedes. The uniform rendering across Spanish 'asi,' French 'ainsi,' and German 'so' confirms a single, stable semantic profile.
+
+### H4013 / Sense 109563 (37 occ, sense 1 of 1)
+**Label:** fortress, stronghold
+**Lemma gloss:** fortress, stronghold, fortified place — a defensive structure or walled city built for military protection
+**Description:** A fortified place or defensive structure; used of walled cities, military strongholds, and fortifications, including attributive use (fortified city).
+**Enriched:** A fortified place, defensive stronghold, or walled city designed for military protection and resistance to siege. The characteristic collocation 'ir mivtsar ('fortified city') appears across historical narrative (Josh 10:20; 19:29, 35; 1 Sam 6:18; 2 Kgs 3:19; 17:9; 18:8) and prophetic oracle (Jer 4:5; 5:17; 8:14; 34:7). In prophetic judgment, fortresses become symbols of misplaced trust: God destroys Judah's fortresses (Lam 2:2, 5), and Hosea, Nahum, and Daniel all depict divine overthrow of seemingly impregnable defenses (Hos 10:14; Nah 3:12, 14; Dan 11:15, 24, 39). Spanish 'fortaleza,' French 'forteresse,' and German 'Festung' consistently render the military-architectural sense.
+
+### H4148 / Sense 110161 (37 occ, sense 1 of 5)
+**Label:** moral discipline and instruction
+**Lemma gloss:** Discipline, correction, instruction; formative moral training and chastening, whether by teaching, reproof, or punishment.
+**Description:** The formative training of character through teaching, guidance, and habituation in wisdom and righteousness — the primary sense in Proverbs and wisdom literature.
+**Enriched:** Formative moral discipline and character training — the dominant sense at 37 occurrences, concentrated in Proverbs and Job. This is musar as the total process of moral formation: accepting instruction, internalizing correction, growing in wisdom. 'Hear, my son, your father's musar' (Prov 1:8); 'whoever loves musar loves knowledge' (Prov 12:1); 'do not despise the musar of the Almighty' (Job 5:17). Spanish disciplina, German Zucht, and French discipline all converge here on the educational-formative sense. The word presupposes a relationship of authority — parent to child, sage to student, God to human — and the willingness to be shaped.
+
+### H4393 / Sense 111730 (37 occ, sense 1 of 2)
+**Label:** fullness, full measure
+**Lemma gloss:** Fullness, the full amount or contents of something; by extension, a full band or company of people.
+**Description:** The content or full amount that fills a space, container, or hand; used in construct ('fullness of X') to denote the entire contents or complete quantity of something.
+**Enriched:** The full measure or entire contents of a container, space, or grouping. Construct chains such as 'fullness of your fists' (Exod 9:8), 'fullness of the omer' (Exod 16:33), and 'fullness of the earth' (Ps 24:1) show the word marking completeness of quantity. Spanish 'lleno/llena-de' and French 'plénitude' consistently reflect this quantitative totality. Genesis 48:19 extends the idea to people: Jacob prophesies Ephraim will become a 'fullness of nations,' where multilingual renderings split between 'multitud' (spa) and abstract 'Fülle' (deu).
+
+### H5186 / Sense 117363 (37 occ, sense 2 of 10)
+**Label:** incline ear/heart (Hifil causative)
+**Lemma gloss:** stretch out, incline, turn aside, spread — verb of directional extension: literal (hand, arm, tent) or figurative (heart, ear, justice)
+**Description:** Hifil causative meaning to incline or direct one's ear or heart toward God or instruction (Arabic amala/أَمَالَ or amil/أَمِلْ); includes imperative, imperfect, perfect, and infinitive Hifil forms used in prayer and exhortation.
+**Enriched:** Hifil 'incline ear/heart' (37×) is the causative-metaphorical sense: directing attention or devotion toward God, instruction, or wisdom. Arabic أَمَالَ/أَمِلْ, Korean 기울이다, Spanish inclinar support this semantic field. Classic examples: 'Incline your ear and hear' (2 Kgs 19:16), 'incline your heart to the LORD' (Josh 24:23). The multilingual glosses clearly distinguish this from physical stretching.
+
+### H5355a / Sense 119051 (37 occ, sense 1 of 4)
+**Label:** innocent, guiltless
+**Lemma gloss:** Innocent, guiltless; free from guilt, obligation, or duty; clean and pure in hands or conscience.
+**Description:** Free from guilt or blame, not deserving punishment; describes a person who has done no wrong and bears no liability for bloodshed or sin.
+**Enriched:** Free from guilt or blame, not deserving punishment — the dominant sense covering the vast majority of occurrences. Central to the Deuteronomic concern with 'innocent blood' (dam naqi), which must not be shed in the land (Deut 19:10). Job's friends and enemies debate his innocence using this very word (Job 4:7; 9:23; 22:19). French 'innocent' and Spanish 'inocente' uniformly confirm this forensic, moral meaning. Proverbs 6:17 lists 'hands that shed innocent blood' among the things the Lord hates.
+
+### H5437 / Sense 120101 (37 occ, sense 1 of 9)
+**Label:** turn, change direction (Qal)
+**Lemma gloss:** turn, surround, go around; (Qal) turn, encircle, traverse; (Niphal) wind, turn; (Hifil) cause to turn, bring around; (Hofal) be turned
+**Description:** Intransitive turning of a subject: turning around, turning back, turning aside, or changing one's facing direction, including withdrawal and evasive turning (Qal stem; Arabic dara, iltafata, inhaarafa).
+**Enriched:** Intransitive turning of a subject: the person or thing turns around, turns back, or changes facing direction. Genesis 42:24 (Joseph turned away from them), Deuteronomy 2:3 (you have circled this mountain long enough—turn northward), and 1 Samuel 15:12, 27 (Saul turned aside) show change of direction without an object. Arabic dāra and iltafata (turn, turn around) and Spanish vuelve/se volvió capture the self-motion. This is the verb's most basic intransitive sense.
+
+### H5511 / Sense 120756 (37 occ, sense 1 of 1)
+**Label:** Sihon (personal name)
+**Lemma gloss:** Sihon — the Amorite king of Heshbon defeated by Israel, whose territory became the first conquest in Canaan
+**Description:** Proper masculine name referring to Sihon, the Amorite king of Heshbon who refused Israel passage through his territory and was defeated in battle, with his land allocated to Reuben and Gad (Num 21:21-35, Deut 1:4, 2:24-36, 3:2-6, Josh 2:10, 9:10, 12:2,5, 13:10,21,27; Judg 11:19-21; Neh 9:22; Ps 135:11, 136:19). Transliterated uniformly: eng 'Sihon/Sichon', spa 'Sijón/Sihón', arb 'سيحون', kor '시혼', swa 'Sihoni', hin 'सीहोन'. The two clusters differ only by the prepositional lamed prefix, not by referent.
+**Enriched:** The proper masculine name Sichon/Sihon, designating the Amorite king of Heshbon whose defeat by Israel in Transjordan (Num 21:21-32) became a foundational event in Israel's conquest narrative. All 37 occurrences refer to this single figure. The name appears in three literary contexts: (a) the original battle account in Numbers and Deuteronomy, (b) historical retrospectives citing Sihon alongside Og as proof of divine aid (Josh 2:10; 9:10; Judg 11:19-21; 1 Kgs 4:19), and (c) liturgical celebration (Ps 135:11; 136:19; Neh 9:22). Greek Seon, Spanish 'Sihon/Sijon,' German 'Sihon' reflect consistent transliteration.
+
+### H6239 / Sense 126682 (37 occ, sense 1 of 1)
+**Label:** wealth, riches
+**Lemma gloss:** wealth, riches — material abundance and possessions, often paired with honor or contrasted with wisdom
+**Description:** Material wealth, riches, or abundance of possessions, whether possessed by an individual or spoken of in general terms.
+**Enriched:** Material wealth, riches, or abundance of possessions, evaluated both positively as a divine blessing and critically as a spiritual snare. The word frequently collocates with kavod ('honor/glory') in a formulaic pair: 'riches and honor' (1 Kgs 3:13; 1 Chr 29:12, 28; 2 Chr 1:11-12; 17:5; 18:1; 32:27; Prov 3:16; 8:18; 22:4; Eccl 6:2). Wisdom literature explores its ambiguity: wealth comes from God (Prov 22:4) but cannot ransom life (Ps 49:7) or endure judgment (Prov 11:4). Ecclesiastes warns of 'osher kept by its owner to his hurt' (5:13). Jeremiah 17:11 pictures riches departing like a partridge that hatches eggs it did not lay.
+
+### H6370 / Sense 127423 (37 occ, sense 1 of 1)
+**Label:** concubine, secondary wife
+**Lemma gloss:** concubine — a secondary wife of lower legal status, present in patriarchal, Levitical, and royal households
+**Description:** A woman cohabiting with a man as a secondary wife of lower legal status than a full wife, used uniformly across all OT occurrences whether of patriarchal households, Levitical narratives, or royal harems.
+**Enriched:** A secondary wife of inferior legal standing, distinguished from a full wife ('ishah) by reduced inheritance and divorce rights for her children. The institution appears without moral commentary in patriarchal narratives (Gen 22:24; 25:6; 35:22; 36:12), where concubines' sons receive gifts but not the primary inheritance. In the monarchic period, pilagshim become a marker of royal power and a political flashpoint: appropriating a king's concubine constitutes a claim to his throne (2 Sam 3:7; 16:21-22). The Levite's concubine narrative (Judg 19-20) uses her vulnerability to expose societal breakdown. Spanish 'concubina,' French 'concubine,' and the German glosses preserve the Latin-derived term, while the Hebrew word's non-Semitic origin (possibly Hittite or Greek pallake) reflects the international antiquity of the institution.
+
+### H7141 / Sense 133370 (37 occ, sense 1 of 1)
+**Label:** Korah (proper name)
+**Lemma gloss:** Korah — personal name possibly meaning 'baldness,' borne by Levite rebels, Edomite chiefs, and psalm-singing clans
+**Description:** The proper name Korah (קֹרַח), referring to several OT figures: most prominently the Levite who led a rebellion against Moses (Nu 16:1,5,6,16,19,24,27,32,40,49; 26:9-11; 27:3), also an Edomite clan chief (Gen 36:5,14,16,18; 1Chr 1:35), and the eponymous ancestor of the 'sons of Korah' psalm superscriptions (Ps 42:1; 44:1; 45:1; 46:1; 47:1; 48:1; 49:1; 84:1; 85:1; 87:1; 88:1; 1Chr 6:7,22; 9:19,31; 26:1,19). All three clusters are identical in reference with only grammatical variation: bare name, with preposition kaph ('like Korah'), and with conjunction waw ('and Korah'). Spanish 'Coré/Qoraj,' Arabic 'قُورَحَ/قورَح,' Korean '고라,' Swahili 'Kora,' and Hindi 'कोरह' are uniform.
+**Enriched:** The proper name Qorach, identifying multiple OT figures and their descendants. The Levite rebel of Numbers 16 dominates the name's profile (Num 16:1-49; 26:9-11; 27:3), but the 'sons of Korah' who survived became a Levitical guild of temple musicians whose name appears in eleven psalm superscriptions (Pss 42, 44-49, 84-85, 87-88) — a remarkable redemption arc from father's rebellion to sons' worship. The Edomite Korah appears in Genesis 36's genealogy as a chief (alluph) of Esau. A Judahite Korah in 1 Chronicles 2:43 is likely a clan name. Greek Kore, Spanish 'Core/Coraj,' German 'Korach' all derive from the LXX tradition. The coexistence of rebellion and worship under one name makes Korah one of the Bible's most theologically layered proper nouns.
+
+### H7364 / Sense 135574 (37 occ, sense 1 of 4)
+**Label:** bathe the body
+**Lemma gloss:** To wash, bathe, or rinse with water; covering full-body bathing for purification, washing specific objects or body parts, and passive reception of washing.
+**Description:** To wash one's entire body in water, especially for ritual purification in Levitical law or for personal hygiene (Qal intransitive/reflexive).
+**Enriched:** To bathe the entire body in water, typically intransitive or reflexive. This is overwhelmingly the Levitical purification sense — after contact with uncleanness, one 'shall bathe in water' (Lev 15:5, and dozens of similar commands). Spanish lavará and se lavará both capture this reflexive bathing. Pharaoh's daughter 'came down to bathe' at the Nile (Exod 2:5), and Bathsheba was 'bathing' when David saw her (2 Sam 11:2). The sense emphasizes the whole body being immersed or doused, whether for ritual restoration or personal cleanliness.
+
+### H7392 / Sense 135829 (37 occ, sense 1 of 4)
+**Label:** Qal participle: rider, charioteer
+**Lemma gloss:** To ride, mount; as participle 'rider/charioteer'; in Hifil 'cause to ride, set upon a mount, or load cargo onto an animal.'
+**Description:** The Qal active participle used substantivally to denote 'rider' or 'charioteer' — both singular (רֹכֵב) and plural (רֹכְבִים, רֹכְבֵי) construct and absolute forms, including 'the One who rides' as a divine epithet.
+**Enriched:** The Qal participle used substantivally as 'rider' or 'charioteer,' both singular and plural, including the theophanic title 'the One who rides the heavens.' French 'cavalier' and Spanish 'jinete/cabalgadores' capture the martial dimension. Exodus 15:1 pairs horse and rokev in triumph; Deuteronomy 33:26 elevates the image to cosmic scale — God rides the skies in majesty. Amos 2:15 warns that the rokev of horses will not deliver himself.
+
+### H7778 / Sense 139335 (37 occ, sense 1 of 1)
+**Label:** gatekeeper, porter
+**Lemma gloss:** Gatekeeper or porter stationed at a gate to guard access, especially at the Temple or city gates
+**Description:** A person stationed at a gate to guard and control access, especially the gatekeepers of the Temple, city gates, or royal palace; a participial noun from the root sh-'-r (gate), used throughout Chronicles, Ezra, and Nehemiah for the Levitical order of doorkeepers.
+**Enriched:** A guardian stationed at a gate, controlling who enters and exits. In its primary usage across Chronicles, Ezra, and Nehemiah, this refers to the Levitical gatekeepers of the Temple—a consecrated office. Spanish 'porteros' and German 'Tore' both capture the gate-ward function. The role encompassed guarding thresholds (1 Chr 9:22), the Ark procession (1 Chr 15:23-24), and the city gate in wartime (2 Kgs 7:10-11).
+
+### H???? / Sense 146003 (37 occ, sense 23 of 94)
+**Label:** (none)
+**Lemma gloss:** (none)
+**Description:** (none)
+**Enriched:** (none)
+
+### G0142 / Sense 61435 (36 occ, sense 1 of 8)
+**Label:** take away, remove
+**Lemma gloss:** To lift, take up, carry, or remove; spanning physical elevation, acquisition, sustained bearing, and figurative removal
+**Description:** To take away, remove, or deprive someone of something, whether physically removing an object, pruning branches, taking away sin, or carrying someone off; the multilingual glosses consistently use removal vocabulary (Arabic يَنْزِعُ, Swahili ondoa, Korean 빼앗다/제거하다).
+**Enriched:** The most frequent sense: active removal or deprivation. Spanish quitar and German aufheben confirm the 'take away' force. Covers pruning branches (John 15:2), removing privileges (Matt 21:43), and the flood 'carrying off' people (Matt 24:39). The directional focus is away-from rather than upward.
+
+### G0737 / Sense 63377 (36 occ, sense 1 of 1)
+**Label:** now
+**Lemma gloss:** Now, just now, at the present moment; marks temporal immediacy or the current time
+**Description:** now, just now, present (36 occurrences across 2 original clusters)
+**Enriched:** Temporal adverb indicating the present moment or what has just occurred. Across all 36 occurrences, the word centers on immediacy: 'just now' (Matt 9:18), 'from now on' (Matt 23:39, 26:29), or 'at the present time' (1 Cor 13:12). The multilingual evidence—Spanish 'ahora,' French 'maintenant,' German 'jetzt'—converges on a single temporal sense with no semantic split, though English glosses show a subtle range from 'now' to 'just now' to 'present.'
+
+### G1484 / Sense 66260 (36 occ, sense 2 of 2)
+**Label:** nation, people, ethnic group
+**Lemma gloss:** Nation, people, ethnic group; in the NT often 'the Gentiles' — non-Jewish peoples collectively contrasted with Israel.
+**Description:** A nation, people, or ethnic group as a political or cultural entity, used of any people including Israel (e.g., 'every nation,' 'a great nation').
+**Enriched:** A nation, people, or ethnic group as a political or cultural entity, without the Jew-Gentile contrast — used of any people including Israel. Matt 24:7 ('nation shall rise against nation') uses it in the generic geopolitical sense; Matt 21:43 applies it to a future covenant community. German distinguishes Volk (singular people) from Völker (nations collectively), and this sense aligns with the singular. Matt 4:15 cites Isaiah's 'Galilee of the nations,' where the word retains its older, broader meaning of an ethnic territory.
+
+### G1492 / Sense 66294 (36 occ, sense 2 of 2)
+**Label:** know personally or recognize
+**Lemma gloss:** To know; from the perfect of eidon ('to see'), meaning to know facts or truths, or to know personally through acquaintance.
+**Description:** To know a person, place, or thing through direct acquaintance or recognition, implying relational or experiential familiarity (Spanish 'conocer', Arabic 'ʿarafa').
+**Enriched:** To know a person, place, or thing through direct encounter or personal acquaintance (36 occurrences). The Spanish distinction is illuminating: this sense aligns with 'conocer' and Arabic 'arafa,' both implying relational or experiential familiarity rather than abstract knowledge. Pilate 'knew' (recognized) that the chief priests had delivered Jesus out of envy (Matt 27:18); the disciples 'did not know' how to respond to the Transfiguration (Mark 9:6).
+
+### G1939 / Sense 67712 (36 occ, sense 1 of 2)
+**Label:** sinful desire or lust
+**Lemma gloss:** Desire, craving, or longing — usually sinful lust but occasionally earnest positive yearning
+**Description:** Craving or passionate desire for what is forbidden or contrary to God's will, including fleshly lusts, worldly desires, and covetousness.
+**Enriched:** Sinful desire, lust, or craving for what is forbidden or contrary to God's will. Covers fleshly lusts (Rom 1:24; Gal 5:16), worldly desires that choke the word (Mark 4:19), the covetousness exposed by the law (Rom 7:7), and the desires of the devil (John 8:44). Spanish 'concupiscencia' and German 'Begierde' both carry the strongly negative connotation that dominates 36 of 38 occurrences. Paul and Peter frequently pair it with 'flesh' (σάρξ) to mark it as opposed to the Spirit.
+
+### G2048 / Sense 68091 (36 occ, sense 1 of 3)
+**Label:** wilderness (noun, geographic place)
+**Lemma gloss:** Wilderness, desert; desolate or uninhabited place; forsaken, left desolate (prophetic)
+**Description:** Substantival use of ἔρημος as a noun denoting the wilderness or desert as a geographic location — the uninhabited region where John baptized, Israel wandered, and Jesus was tempted; includes both singular and plural forms.
+**Enriched:** The substantival use where eremos stands alone as a proper geographic designation: 'the wilderness.' This is the desert of Israel's forty years, the Jordan wilderness of John's baptism (Matt 3:1-3), and the place of Jesus' testing (Matt 4:1). With 36 occurrences it dominates New Testament usage. All major translation traditions render it with a single dedicated noun -- desierto, desert, Wueste.
+
+### G2504 / Sense 69680 (36 occ, sense 2 of 2)
+**Label:** I also / me too
+**Lemma gloss:** And I, and me, I also, me too -- crasis of kai ego, joining the speaker to a preceding statement or adding emphasis.
+**Description:** Additive or intensive use of κἀγώ where καί functions as an adverbial particle meaning 'also, too, even', emphasizing the speaker's inclusion or correspondence, across all grammatical cases.
+**Enriched:** Additive or intensive use where kai functions adverbially as 'also, too, even,' emphasizing the speaker's inclusion, correspondence, or reciprocal action. Spanish 'tambien yo' and German 'auch ich' make the additive nuance explicit. Key passages: Matt 10:32 ('I also will confess before my Father'), Matt 2:8 ('that I too may come and worship him').
+
+### G2564 / Sense 69934 (36 occ, sense 2 of 4)
+**Label:** to call to salvation or vocation
+**Lemma gloss:** To call, name, summon, or invite — covering designation by name, divine calling to salvation, summoning to come, and inviting to a feast or gathering.
+**Description:** To call or choose someone for receipt of a special benefit, divine purpose, or spiritual vocation; God as the agent who calls believers to faith, holiness, or service. Predominantly Pauline and epistolary usage, identified by Korean 부르심을 받다 and contextual divine-agent framing.
+**Enriched:** To call or choose someone for divine purpose, salvation, or spiritual vocation — God as the agent who calls believers to faith, holiness, or service. Predominantly Pauline and epistolary, with 36 occurrences. This is the theologized sense that generates the noun κλῆσις ('calling/vocation') and the adjective κλητός ('called one'). Romans 8:30 chains it into the golden sequence: 'those whom he predestined he also called; those whom he called he also justified.' Spanish fue llamado and Korean 부르심을 받다 (burusim-eul badda, 'to receive a calling') both mark the passive reception of divine initiative. 1 Corinthians 1:9 and Galatians 1:15 are key passages.
+
+### G2730 / Sense 70535 (36 occ, sense 1 of 3)
+**Label:** dwell, inhabit a place
+**Lemma gloss:** To dwell, inhabit, settle; residing in a place as an established inhabitant
+**Description:** To reside or live in a particular location as an inhabitant, used of persons dwelling in cities, regions, or the earth generally.
+**Enriched:** The primary sense: to dwell in or inhabit a place as an established resident. Used extensively in Acts for populations of cities and regions (Acts 1:19; 2:5; 4:16) and in Revelation for "those who dwell on the earth" as a recurring phrase (Rev 3:10; 6:10). Spanish habitar, French habiter, and German wohnen all confirm the durative, settled character. Matthew 23:21 extends this to God dwelling in the Temple.
+

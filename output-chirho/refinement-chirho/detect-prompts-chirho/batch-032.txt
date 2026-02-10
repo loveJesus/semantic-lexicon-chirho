@@ -1,0 +1,291 @@
+# Sense Refinement Detection — Batch 032
+
+You are a biblical lexicographer reviewing sense entries for a Hebrew/Aramaic/Greek lexicon.
+Each entry below is a single "sense" that was produced by clustering translation signatures 
+and then merging with an LLM. Some senses may have been OVER-LUMPED — they contain genuinely 
+distinct meanings that should be separate senses.
+
+## Your Task
+
+For each sense, determine if it should be SPLIT into multiple senses. Look for:
+- Literal vs. figurative/metaphorical uses lumped together
+- Concrete vs. abstract meanings combined
+- Multiple distinct referents (e.g., "father" = biological parent + patron/advisor + originator)
+- Physical vs. spiritual/theological uses merged
+- Different syntactic frames producing different meanings
+
+## Output Format
+
+Return a JSON array. For senses that need NO splitting, omit them entirely.
+For senses that SHOULD be split, include an entry like:
+
+```json
+[
+  {
+    "senseIdChirho": 79287,
+    "lemmaIdChirho": "H0001",
+    "currentLabelChirho": "father, immediate male parent",
+    "splitProposalChirho": [
+      {
+        "newLabelChirho": "biological/legal father",
+        "criteriaChirho": "Direct parent-child relationship, possessive constructions with specific person"
+      },
+      {
+        "newLabelChirho": "metaphorical father (patron, advisor, protector)",
+        "criteriaChirho": "Title of respect for prophets, advisors, or authority figures; 'father to Pharaoh' type usage"
+      }
+    ],
+    "confidenceChirho": "high",
+    "reasoningChirho": "Description explicitly mentions 'title of respect or metaphorical originator' alongside biological father"
+  }
+]
+```
+
+Only propose splits where you have MEDIUM or HIGH confidence. Do NOT split function words (articles, 
+prepositions, particles, conjunctions) unless there is a genuinely distinct semantic sense (not just 
+syntactic variation). Proper nouns generally should NOT be split.
+
+If NO senses in this batch need splitting, return an empty array: []
+
+## Senses to Review
+
+### H0983 / Sense 86209 (42 occ, sense 1 of 1)
+**Label:** security, safety, confidence
+**Lemma gloss:** security, safety — used adverbially for dwelling, walking, or lying down in a state of confident safety
+**Description:** A masculine noun meaning security, safety, or confidence, functioning primarily as an adverbial accusative or with prepositions (לָבֶטַח 'in safety/securely,' בֶּטַח 'securely'). The semantic range covers physical safety from external threats (Lev 25:18-19, Deut 12:10, 33:12, 28, Judg 8:11, 18:7, 1 Sam 12:11, 1 Kgs 4:25), a state of being undisturbed and free from anxiety (Ps 4:8, 16:9, 78:53, Prov 1:33, 3:23, 29, 10:9), and the abstract concept of security as a condition (Isa 32:17 וָבֶטַח 'and security,' Job 11:18, 24:23). The overwhelming majority of occurrences use the prepositional phrase לָבֶטַח functioning adverbially. Glosses are remarkably consistent across languages: arb آمِنِين/أَمَان, deu Sicherheit/sicher, fra sûreté/sécurité, hin सुरक्षित, kor 안전하게, spa seguridad/con seguridad. All six auto-generated clusters represent the same lexeme with trivial variation in prepositional framing or context.
+**Enriched:** Security or confident trust, functioning almost exclusively as an adverbial modifier of verbs of settled existence. The collocation yashav lavetach ('dwell securely') recurs across legal (Lev 25:18-19), prophetic (Jer 32:37; Ezek 34:25), and wisdom (Prov 3:29) contexts. Ezekiel 38:8, 11 extend it to eschatological peace. Spanish 'con seguridad,' French 'en surete' confirm a unified semantic profile.
+
+### H1141 / Sense 87282 (42 occ, sense 1 of 1)
+**Label:** Benaiah (personal name)
+**Lemma gloss:** Benaiah — personal name meaning 'Yah has built up,' borne by David's warrior-captain and several others
+**Description:** A masculine proper noun (meaning 'Yah has built up') referring to several individuals in the Hebrew Bible, most prominently Benaiah son of Jehoiada, one of David's mighty warriors and captain of the bodyguard who later served Solomon. Also borne by Levitical musicians and other figures in Chronicles and Ezekiel. The clusters reflect only surface variation: bare citation form, with conjunctive waw ('and Benaiah'), with preposition lamed ('and to Benaiah'), and minor spelling variants. All refer to the same proper name across 2 Samuel, 1-2 Kings, 1 Chronicles, Ezra, and Ezekiel.
+**Enriched:** The proper name Benayahu/Benayah ('Yah has built up'), borne by at least eight individuals. Most notable is the son of Jehoiada who commanded David's Cherethites and Pelethites (2 Sam 8:18; 20:23) and secured Solomon's accession (1 Kgs 1-2). All 42 occurrences, in both the -yahu and -yah spellings, denote a single personal name. Spanish 'Benaias,' French 'Benaja.'
+
+### H2351 / Sense 95815 (42 occ, sense 2 of 4)
+**Label:** street, broad place
+**Lemma gloss:** The outside, the area beyond a building, camp, or city; in the plural, streets or public squares; rarely, open countryside.
+**Description:** A public open area within a town or city, typically used in the plural to denote streets, lanes, or broad squares where people gather, trade, or travel.
+**Enriched:** Streets, broad places, public squares — the plural form (chutsot) denoting open thoroughfares within a settled area where communal life takes place. David's lament forbids announcing Saul's death 'in the streets of Ashkelon' (2 Sam 1:20); Wisdom cries 'in the streets' (Prov 1:20); children play 'in the streets of Jerusalem' (Zech 8:5). Spanish shifts decisively to 'calles' ('streets') and 'plazas,' marking a clear lexical distinction from the generic 'outside' sense. The 42 occurrences cluster in prophetic and wisdom literature.
+
+### H2461 / Sense 97071 (42 occ, sense 1 of 4)
+**Label:** milk
+**Lemma gloss:** Milk; by extension cheese or curds; metonymically a suckling infant; also a proper name (Huram).
+**Description:** Milk as a food product or symbol of abundance and nourishment, often in the phrase 'land flowing with milk and honey'.
+**Enriched:** The primary and overwhelmingly dominant sense: fresh milk as a food product and symbol of fertility and divine provision. It appears in the patriarchal narratives (Gen 18:8, where Abraham serves milk alongside curds to his guests) and saturates the covenant vocabulary through the phrase 'land flowing with milk and honey.' The distinction from ḥem'ah (curds/butter) is carefully maintained in poetry (Judg 5:25; Prov 30:33), though the two can stand in parallel. Spanish 'leche,' French 'lait,' and German 'Milch' uniformly confirm the basic meaning across our multilingual evidence.
+
+### H2945 / Sense 100432 (42 occ, sense 1 of 1)
+**Label:** little ones, young children
+**Lemma gloss:** little ones, small children — collective noun for the young dependents of a household or community
+**Description:** Young children or dependents in a family or community, as distinct from adult men and women capable of labor or warfare.
+**Enriched:** A collective term for young children and dependents, distinct from fighting or laboring adults. Appears in inventory-style enumerations — 'their little ones, their wives, and their livestock' (Gen 34:29; 46:5) — and in contexts specifying non-combatants (Num 31:9, 17-18). Never pluralized, never in construct. Judges 18:21 and 2 Samuel 15:22 confirm its use beyond the Pentateuch.
+
+### H3190 / Sense 101729 (42 occ, sense 1 of 12)
+**Label:** Hifil: do good to, treat well
+**Lemma gloss:** be good, pleasing; do good to, treat well; be glad (of heart); amend, improve; play/perform skillfully; well, thoroughly
+**Description:** Core Hifil causative meaning: actively doing good to someone, treating someone well, bestowing benefit. Arabic uses the Form IV أَحْسَنَ (aḥsana) / يُحْسِنُ (yuḥsinu, 'do well/do good') — the standard Arabic causative of ح-س-ن. Korean uses 선대하다 ('treat well'), 선을 행하다 ('practice goodness'), 잘 대하다 ('treat well'). Swahili uses -tendea mema ('do good to') and -fanya mema ('do good') — the applicative -tendea confirms a benefactive/transitive action directed at someone. Covers all Hifil finite forms (perfect, imperfect, imperative, jussive, participle, consecutive) expressing the sense 'do good / treat well / act rightly toward someone'.
+**Enriched:** The core Hifil causative sense of actively doing good to someone or treating them well appears 42 times. Genesis 12:16 records Pharaoh treating Abram well on account of Sarai, Genesis 32:9-12 repeats God's promise 'I will do good to you.' Arabic Form IV أَحْسَنَ (aḥsana, 'do well/good') and Korean 선대하다 ('treat well') mark this as transitive beneficence: the subject acts to benefit the object.
+
+### H3448 / Sense 104732 (42 occ, sense 1 of 1)
+**Label:** Jesse (father of King David)
+**Lemma gloss:** Jesse — the Bethlehemite father of King David, grandson of Ruth and Boaz
+**Description:** The proper name Yishai (יִשַׁי), the Bethlehemite father of David and grandson of Ruth and Boaz. All 42 occurrences across both clusters refer to the same individual, appearing extensively in 1 Samuel 16-22, Ruth 4:17,22, 1 Chronicles 2:12-13, Isaiah 11:1,10 (the root/stump of Jesse), and other passages. English renders as Jesse/Yishai; Spanish Isaí/Yishai; Hindi यिशै (Yishai); Arabic يَسَّى (Yassa); Korean 이새 (Isae); Swahili Yese/Yishai. The second cluster (1x) is simply the prepositional form 'of Jesse' (le-Yishai), representing the same person with a grammatical prefix rather than a distinct sense.
+**Enriched:** The proper name Yishai, the Bethlehemite father of David, descended from Boaz and Ruth (Ruth 4:17, 22). All 42 occurrences denote this single individual. Functions as narrative identifier (1 Sam 16:1-3) and politically charged patronymic — Saul's dismissive 'son of Jesse' (1 Sam 22:7-8) contrasts with the messianic 'root of Jesse' (Isa 11:10).
+
+### H3490 / Sense 105054 (42 occ, sense 1 of 1)
+**Label:** orphan, fatherless child
+**Lemma gloss:** orphan, fatherless child — one deprived of a father, paradigmatic figure of vulnerability in Israelite law
+**Description:** A child who has lost a father (or both parents), frequently paired with widow and sojourner in legal and prophetic texts as a paradigmatic vulnerable person under divine protection.
+**Enriched:** A fatherless child, paradigmatic figure of social vulnerability in covenant law. Participates in the formulaic triad yatom-almanah-ger ('orphan-widow-sojourner') across legal (Deut 10:18; 24:17), prophetic (Isa 1:17; Jer 7:6; Zech 7:10), and wisdom (Job 29:12; 31:17) literature. Lamentations 5:3 extends it metaphorically to exilic Israel. Arabic yatim and Aramaic yatma attest pan-Semitic antiquity.
+
+### H3559a / Sense 105596 (42 occ, sense 2 of 12)
+**Label:** be established, stand firm (Nifal)
+**Lemma gloss:** prepare, make ready; be/make firm, established; be ready/right/certain; direct, aim
+**Description:** Nifal passive/stative sense: to be established, stand firm, or endure; Arabic يَثْبُتُ / تَثْبُتُ indicates a state of firmness or permanence.
+**Enriched:** The Nifal passive/stative sense 'be established, stand firm' accounts for 42 occurrences and covers enduring structures and states. Genesis 41:32 explains that the dream was doubled because 'the thing is established by God,' and 2 Samuel 7:16 promises David 'your throne shall be established forever.' Arabic يَثْبُتُ ('be firm, endure') and Korean 확고하다 mark this as a state of permanence distinct from active preparation.
+
+### H3658 / Sense 106750 (42 occ, sense 1 of 1)
+**Label:** lyre, harp (stringed instrument)
+**Lemma gloss:** lyre, harp — the kinnor, a portable stringed instrument used in worship, celebration, and lament
+**Description:** A stringed musical instrument (lyre or harp), the kinnor, used in worship, celebration, and lamentation throughout the Old Testament.
+**Enriched:** A portable stringed instrument spanning the full range of Israelite musical life — pastoral celebration (Gen 31:27), prophetic ecstasy (1 Sam 10:5), temple worship (2 Chr 29:25), and lamentation (Job 30:31; Ps 137:2). Often paired with ugav ('pipe'), tof ('tambourine'), and nevel ('psaltery'). French 'harpe,' German 'Zither,' Spanish 'lira' reflect uncertainty about its exact form; iconography suggests a portable lyre.
+
+### H4390 / Sense 111549 (42 occ, sense 4 of 11)
+**Label:** become filled (passive/middle)
+**Lemma gloss:** be full, fill; fulfill, complete; satisfy; follow fully; set/inlay
+**Description:** Niphal: to be filled, become full, receive filling as a passive or middle event (Arabic: امتلأ/يمتلئ Form VIII, Korean: 차다/채워지다, Swahili: -jazwa/-jaa).
+**Enriched:** The Niphal passive or middle: being filled or becoming full as an event one undergoes. Forty-two occurrences correspond to Arabic امتلأ/يمتلئ (Form VIII reflexive), Korean 차다/채워지다, Swahili -jazwa/-jaa. The earth 'was filled with violence' (Gen 6:11), Egypt's houses 'were filled' with swarms (Exod 8:21), the Israelites 'filled the land' by multiplication (Exod 1:7). This grammatical voice focuses on the recipient or location receiving fullness rather than the agent causing it.
+
+### H4611 / Sense 113125 (42 occ, sense 1 of 1)
+**Label:** deeds, acts, practices
+**Lemma gloss:** deeds, practices — habitual actions or conduct, usually evaluated morally as evil or (rarely) good
+**Description:** Actions or conduct of a person or group, often evaluated morally (whether good or evil); used of habitual behavior and specific acts alike.
+**Enriched:** Habitual conduct or characteristic deeds of persons or communities, predominantly evaluated morally. Jeremiah's phrase ro'a ma'alelekhem ('the evil of your practices,' Jer 4:4; 21:12) summons repentance. Hosea 5:4 and 7:2 apply it to entrenched waywardness. The positive usage — God's own deeds in worship (Ps 77:12; 78:7) — shows the term is neutral in principle though overwhelmingly negative in prophecy.
+
+### H4672 / Sense 113382 (42 occ, sense 3 of 6)
+**Label:** Niphal participle: those present
+**Lemma gloss:** To find, discover, encounter; Niphal: be found, be present; Hifil: deliver, present; rarely: suffice, be enough.
+**Description:** The Niphal participle of מצא used substantivally (typically with the article) to mean 'those who were found/present' — a formulaic expression especially frequent in Chronicles for people assembled or on hand.
+**Enriched:** The Niphal participle used substantivally, especially with the article (הַנִּמְצְאִים), to mean 'those who were present/found.' This formulaic usage dominates in Chronicles (e.g., 2 Chr 34:32) for assembled people, functioning almost as a census term. The distinctiveness shows in how translations handle it: English 'those present,' Spanish los que se hallaban, French ceux qui se trouvaient — all employing periphrastic constructions rather than a simple passive.
+
+### H5012 / Sense 115458 (42 occ, sense 2 of 2)
+**Label:** prophesy ecstatically, act as prophet
+**Lemma gloss:** To prophesy -- speaking God's word by divine authority (Nifal) or prophesying ecstatically under Spirit compulsion (Hitpael).
+**Description:** To prophesy in the Hitpael stem, often with a connotation of ecstatic or Spirit-compelled prophetic activity, being seized by prophetic impulse, or acting in the role of a prophet.
+**Enriched:** Prophesying in the Hitpael stem (42x), carrying connotations of ecstatic or Spirit-compelled prophetic activity -- being seized by prophetic impulse rather than deliberately delivering an oracle. The paradigmatic scenes are Numbers 11:25-27, where the Spirit rests on the seventy elders and they 'prophesy ecstatically,' and 1 Samuel 10:5-13, where Saul is overtaken among the band of prophets. Translations such as Spanish 'profetizaron' and German 'und sie weissagten' use the same verb but the Hebrew stem signals a phenomenologically different experience -- involuntary, often accompanied by music, and sometimes surprising even to the prophet.
+
+### H5324 / Sense 118718 (42 occ, sense 1 of 6)
+**Label:** Nifal: stand, be standing
+**Lemma gloss:** To stand, station oneself, take one's stand (Nifal); to set up, erect, establish (Hifil); as participle, an officer or governor.
+**Description:** Intransitive physical posture of standing or stationing oneself, including taking a stand or remaining upright (Nifal stem across all inflections).
+**Enriched:** Nifal intransitive: to stand, be standing, station oneself — the dominant sense at 42 occurrences. Covers physical posture in narrative: three men stand before Abraham (Gen 18:2), Rebekah stands by the spring (Gen 24:43), Joseph's sheaf stands upright in his dream (Gen 37:7), and the LORD stands above the ladder at Bethel (Gen 28:13). Spanish de pie and German standen both map to simple standing posture. The Nifal here functions as a true middle voice — the subject places himself in an upright position.
+
+### H5416 / Sense 119992 (42 occ, sense 1 of 1)
+**Label:** Nathan (personal name)
+**Lemma gloss:** Nathan — personal name meaning 'he gave,' borne by the prophet who confronted David and others
+**Description:** Proper masculine name meaning 'he gave', referring primarily to the prophet Nathan who confronted David about Bathsheba (2 Sam 7,12) and supported Solomon's succession (1 Kgs 1), as well as Nathan son of David (2 Sam 5:14) and other figures. Transliterated uniformly: eng 'Nathan/Natan', spa 'Natán/Natan', arb 'ناثان', kor '나단', swa 'Nathani', hin 'नातान'. The two clusters differ only in grammatical context (with/without conjunction and preposition), not in referent or meaning.
+**Enriched:** The proper name Nathan ('he gave'), borne most prominently by the prophet who delivered the Davidic covenant oracle (2 Sam 7), pronounced judgment after Bathsheba (2 Sam 12:1-15), and ensured Solomon's coronation (1 Kgs 1). Also identifies David's son (2 Sam 5:14), a warrior's father (2 Sam 23:36), and postexilic figures (Ezr 8:16; 10:39).
+
+### H5975 / Sense 124670 (42 occ, sense 5 of 7)
+**Label:** to set up, establish
+**Lemma gloss:** To stand, take one's stand; stand firm or endure; stop, stand still; station or appoint; set up, establish; serve, attend
+**Description:** Hifil: causative erection or establishment — setting up, erecting, establishing, confirming, raising up an object, institution, or decree.
+**Enriched:** Hifil: setting up, erecting, or establishing an object, institution, or decree. The priest shall set the person before the LORD (Lev 14:11), and offerings are set up before the tabernacle (Lev 16:7). The Aramaic cognate in 'pillar' (ammuda) preserves this concrete causative sense of raising something upright.
+
+### H6031b / Sense 125242 (42 occ, sense 1 of 10)
+**Label:** Piel: afflict, oppress
+**Lemma gloss:** afflict, oppress, humble, bring low; violate (sexually); humble oneself, fast; be bowed down, be afflicted; answer, respond
+**Description:** To cause suffering, distress, or oppression to someone; the primary active transitive sense of the Piel stem, used of taskmasters oppressing Israel, God disciplining his people, and general mistreatment (e.g., Exod 1:11-12, Deut 8:2-3, Ps 119:71).
+**Enriched:** The dominant active Piel sense: causing suffering, distress, or oppression to someone. Used paradigmatically of Egyptian taskmasters afflicting Israel (Exodus 1:11-12), human mistreatment (Genesis 31:50 'if you afflict my daughters'), and God's disciplining action. Consistently rendered across languages: Hindi सताना (oppress), Arabic يُعَذِّبُ/يُضَايِقُ (torment/oppress), Spanish afligir/oprimir, showing unified semantic recognition of active causation of suffering.
+
+### H6086 / Sense 125543 (42 occ, sense 3 of 7)
+**Label:** firewood, fuel wood
+**Lemma gloss:** Tree, wood, timber; firewood, stick, stake/gallows, wooden shaft; broad term for any woody plant or product
+**Description:** Wood gathered or used as fuel for burning — firewood, kindling — Arabic حَطَب, Swahili kuni, Spanish leña/leños, Hindi लकड़ी/लकड़ियाँ (in fuel context).
+**Enriched:** Wood gathered or designated as fuel for burning — firewood and kindling. Arabic hatab and Swahili kuni specify this combustion use. The Aqedah narrative is saturated with it: Abraham splits the firewood, Isaac carries it, and it is laid on the altar (Gen 22:3, 6, 7, 9). Levitical offering instructions repeatedly specify the wood arrangement on the altar fire (Lev 1:7–8), linking this sense to sacrificial worship.
+
+### H6865 / Sense 130674 (42 occ, sense 1 of 1)
+**Label:** Tyre (city)
+**Lemma gloss:** Tyre — the great Phoenician coastal city, renowned for trade, maritime power, and Tyrian purple
+**Description:** Tyre (Hebrew tsur/tsor), the renowned Phoenician coastal city-state on the Mediterranean, a major commercial and maritime power in the ancient Near East. Referenced extensively in prophetic oracles of judgment (Isa 23; Ezek 26-28), historical narratives of alliance with Israel (Josh 19:29; 2 Sam 5:11; 1 Kgs 5:1; 9:11), and poetic texts (Ps 45:12; 83:7; 87:4). All prepositional forms (bare, min-, le-, we-, ke-) denote this same city across all occurrences.
+**Enriched:** The proper noun Tsor/Tsur, the Phoenician coastal city famed for maritime commerce and craftsmanship. Appears as Israel's trading partner under Hiram (2 Sam 5:11; 1 Kgs 5:1) and as target of prophetic judgment for arrogance (Amos 1:9-10; Isa 23; Ezek 26-28). Called mivtsar-Tsor ('fortress of Tyre,' 2 Sam 24:7). Attested in Assyrian as Surru.
+
+### H6912 / Sense 130957 (42 occ, sense 2 of 5)
+**Label:** be buried (Nifal/Pual passive)
+**Lemma gloss:** To bury a dead person in a grave or tomb; in passive stems, to be buried; by extension, one who buries.
+**Description:** Nifal and Pual finite forms and Qal passive participles of קבר: to be buried, to be interred in a grave or tomb; Arabic دُفِنَ (passive), Korean 묻히다/장사되다, Swahili -zikwa.
+**Enriched:** The Nifal and Pual passive: to be buried, to be interred. This form carries immense theological weight in the Deuteronomistic history, where the formulaic 'and he was buried in...' (wayyiqqaber be-) signals the closure of a king's or judge's life. Being buried well is a mark of divine favor and social honor; the refusal of burial is one of Scripture's harshest judgments (Jer 22:19). Korean 묻히다/장사되다, Swahili -zikwa, and Spanish fue sepultado all shift to passive constructions, confirming that this voice distinction is a real semantic boundary across languages.
+
+### H7378 / Sense 135674 (42 occ, sense 1 of 5)
+**Label:** Qal: quarrel, contend, strive
+**Lemma gloss:** To strive, contend, quarrel; to plead or litigate a case; as noun: a dispute or lawsuit.
+**Description:** General interpersonal strife, dispute, or contention without specific juridical nuance; consistently Arabic khaasama (خَاصَمَ) and takhaasama (تَخَاصَمَ), Korean datuda (다투다), Swahili -shindana and -gombana, Hindi jhagdaa (झगड़ा) and ladaa (लड़ा).
+**Enriched:** General interpersonal strife, quarreling, or contention without a formal legal framework. Isaac's herdsmen quarrel with the herdsmen of Gerar over wells (Gen 26:20-22); Israel contends with Moses at the waters (Exod 17:2); Nehemiah contends with the nobles over usury (Neh 13:11, 17, 25). Arabic khaasama (خَاصَمَ, to quarrel) and Korean datuda (다투다, to argue/dispute) consistently mark this as non-juridical conflict. Spanish contendió and disputaron, French contester — all point to interpersonal strife rather than courtroom advocacy. This is the most frequent sense at 42 occurrences.
+
+### H7604 / Sense 137482 (42 occ, sense 2 of 3)
+**Label:** the remaining ones, remnant (Nifal participle)
+**Lemma gloss:** To remain, be left over, survive; as participle, the remnant or survivors; in Hifil, to leave remaining or spare.
+**Description:** Substantival use of the Nifal participle of שׁאר: the remaining (ones), the remnant, survivors — often a technical/theological term for those who survive divine judgment or military defeat; Arabic الْبَاقِينَ / الْبَاقِي, Korean 남은 자들, Swahili waliobaki.
+**Enriched:** Nifal participle used substantivally: the remaining ones, the remnant, the survivors — a 42-occurrence cluster that became one of the Hebrew Bible's most theologically loaded constructions. In Gen 32:8 Jacob divides his camp so that 'the remaining company' might escape; in Isaiah and the prophetic books, 'the remnant' denotes those preserved through divine judgment (cf. the derivative noun she'erit). Spanish el-que-quedo ('the one who remained'), German der-bleibend, and Swahili waliobaki all substantivize the participle. The shift from verbal process to nominal category — from 'remaining' to 'the Remnant' — is a crucial lexicographic boundary.
+
+### H8064 / Sense 141850 (42 occ, sense 2 of 6)
+**Label:** in the heavens
+**Lemma gloss:** Heavens, sky; the visible dome above the earth, God's dwelling place, the cosmic vault of stars and weather.
+**Description:** The heavens as a locative domain — the place where something exists or occurs, often expressing God's dwelling place or the cosmic sphere where divine action takes place; includes prepositional beth ('in') and related locative constructions.
+**Enriched:** The heavens as a locative domain — 'in the heavens' (בַּשָּׁמַיִם) — marking where something exists or occurs, especially God's dwelling (Deut 4:39; 1 Kgs 8:30). French dans les cieux and Spanish en los cielos preserve the prepositional structure. This usage carries strong theological weight: the heavens are not merely above but are the place from which God sees, judges, and acts.
+
+### H8242 / Sense 143574 (42 occ, sense 1 of 2)
+**Label:** sackcloth for mourning
+**Lemma gloss:** Sackcloth worn in mourning or penitence; also a coarse bag or sack for carrying grain
+**Description:** Coarse woven cloth (typically of goat hair) worn against the body or spread as a sign of mourning, penitence, or distress.
+**Enriched:** Coarse woven cloth (usually of goat hair) worn against the skin as a sign of mourning, lamentation, or penitence before God. Dominating with 42 of 48 occurrences, this sense pervades prophetic and narrative literature. Jacob dons sackcloth for Joseph (Gen 37:34), David commands it after Abner's death (2 Sam 3:31), and Rizpah spreads it on the rock during her vigil (2 Sam 21:10). The psalmist celebrates when God turns 'my sackcloth into dancing' (Ps 30:11). The multilingual evidence — 'cilicio' (spa), 'sac' (fra), 'Sacktuch' (deu) — consistently points to a penitential garment rather than a container.
+
+### G0386 / Sense 62269 (41 occ, sense 1 of 2)
+**Label:** (none)
+**Lemma gloss:** Resurrection, rising; the act of being raised from the dead, or figuratively, a rising up in destiny.
+**Description:** (none)
+**Enriched:** Bodily resurrection from the dead, the eschatological raising of deceased persons to life. This is the overwhelmingly dominant New Testament usage (41 of 42 occurrences). All six witness languages converge on a single dedicated term (resurrection/resurrección/résurrection/Auferstehung), reflecting a fixed theological concept. Key passages include the Sadducee controversy (Matt 22:23-31), Paul at Athens (Acts 17:18), and the resurrection hope (1 Cor 15:12-42; Phil 3:11).
+
+### G0514 / Sense 62596 (41 occ, sense 1 of 1)
+**Label:** worthy, deserving, fitting
+**Lemma gloss:** worthy, deserving, fitting — describing someone or something as meriting honor, punishment, or a particular status
+**Description:** Describes a person or thing as worthy, deserving, or fitting — whether of honor, punishment, or a particular status. The adjective axios carries a consistent evaluative force across all NT occurrences. Multilingual evidence confirms a single semantic core: Spanish 'digno,' Hindi 'yogya' (योग्य), Arabic 'mustahiqq' (مُسْتَحِقّ), Korean 'hapdanghan' (합당한), and Swahili 'anastahili' all converge on the idea of worthiness or desert. The two clusters differ only in grammatical inflection (various cases and numbers in S62596 vs nominative forms in S62597), not in meaning. Both clusters apply to divine worthiness (Rev 4:11 'You are worthy') and human moral evaluation alike.
+**Enriched:** Evaluative adjective: a person or thing measures up to a standard of honor, reward, or condemnation. Jesus uses it to set the hospitality threshold (Matt 10:11, 13). Paul extends it to moral exhortation: 'walk worthy of the calling' (Eph 4:1). Judicially, 'deserving punishment' (Luke 23:15; Acts 25:11). Revelation's 'worthy is the Lamb' (5:12) is the supreme positive application.
+
+### G0622 / Sense 62997 (41 occ, sense 1 of 4)
+**Label:** perish, be destroyed (intransitive)
+**Lemma gloss:** To destroy utterly, cause to perish; to lose or fail to keep; in the middle/intransitive, to perish, be ruined, or be lost.
+**Description:** To come to destruction, ruin, or death; intransitive middle sense used of persons dying, things being ruined, or undergoing eschatological destruction.
+**Enriched:** The intransitive middle sense: to perish, be destroyed, come to ruin or death. Used of persons facing mortal danger ('Lord, save us, we are perishing!' — Matt 8:25), old wineskins that burst and are ruined (Matt 9:17), and the solemn eschatological warning that 'broad is the way that leads to destruction' (Matt 7:13). Spanish perecerá and German verderben consistently render this existential finality.
+
+### G2523 / Sense 69783 (41 occ, sense 1 of 3)
+**Label:** sit down, take a seat
+**Lemma gloss:** To sit down, take a seat; causatively, to seat someone; also to stay, remain, or settle in a place
+**Description:** To assume a seated position, the basic intransitive sense of physically sitting down or being in a seated posture.
+**Enriched:** The basic intransitive sense: to sit down or assume a seated position. Jesus sits to teach (Matt 5:1), sits by the sea (Matt 13:48), and promises the disciples they will sit on thrones judging the twelve tribes (Matt 19:28). The seated posture carries authority in the ancient world—a judge, a teacher, a king sits. French asseoir and German sich setzen reflect this fundamental physical action.
+
+### G2896 / Sense 71015 (41 occ, sense 1 of 2)
+**Label:** cry out loudly in distress
+**Lemma gloss:** To cry out, scream, or shout loudly, whether in distress, urgency, or public proclamation.
+**Description:** To shout or scream with a loud voice, typically expressing urgency, distress, pain, or strong emotion, often directed at someone present.
+**Enriched:** To cry out loudly from distress, fear, pain, or urgent need. This is the dominant sense (41x), conveying raw emotional intensity. Spanish 'clamó/gritaban' and German 'schreien' capture the visceral quality. Seen in the Canaanite woman's desperate plea (Matt 15:22), Peter sinking in the waves (Matt 14:30), and the demoniacs' terrified recognition of Jesus (Matt 8:29). The cry is typically involuntary or at least urgently compelled.
+
+### G4594 / Sense 76416 (41 occ, sense 1 of 1)
+**Label:** (none)
+**Lemma gloss:** today, this very day — adverb marking the present day, often with theological force for divine immediacy
+**Description:** (none)
+**Enriched:** An adverb denoting the present day, used both in ordinary temporal reference and in theologically charged declarations of divine action in the present moment. The Synoptic sayings employ it for daily providence ('sufficient for the day,' Matt 6:34) and for eschatological announcement ('today you will be with me in paradise,' Luke 23:43). Hebrews extends it into an exhortation theology, citing Psalm 95:7 repeatedly to make semeron the hinge of faith's response (Heb 3:7, 13, 15; 4:7). Spanish 'hoy,' French 'aujourd'hui,' and German 'heute' uniformly confirm the single-sense profile.
+
+### G5064 / Sense 77535 (41 occ, sense 1 of 1)
+**Label:** four
+**Lemma gloss:** four — the cardinal numeral four, used as an adjective modifying nouns across all cases and genders
+**Description:** The cardinal numeral four, used as an adjective modifying nouns of various genders and cases. All forty-one occurrences carry the same numeric value with no semantic variation. Cross-linguistic evidence is perfectly uniform: Spanish 'cuatro,' Hindi 'char/charon,' Arabic 'arbaʿa,' Korean 'net/ne,' Swahili 'wanne/-nne.' The two original clusters differ only in inflectional breadth—the first covers multiple gender/case combinations (GMP, GNP, AFP, ANP, DFP, DNP, NFP) while the second is a single GMP form. Both denote the identical cardinal number four without any semantic distinction.
+**Enriched:** The cardinal number four, modifying nouns without semantic extension or metaphorical shift. In narrative contexts it quantifies concrete groups: four men (Mark 2:3), four days (John 11:17, 39), four soldiers (John 19:23). In apocalyptic vision it supplies the architecture of cosmic order: four living creatures (Rev 4:6-8), four angels (Rev 7:1; 9:14-15), four corners of the earth (Rev 7:1; 20:8). Spanish 'cuatro,' French 'quatre,' and German 'vier' render it uniformly across all contexts.
+
+### G5083 / Sense 77557 (41 occ, sense 1 of 4)
+**Label:** observe or obey commands
+**Lemma gloss:** To watch over, guard, keep, or observe; ranging from obeying commands to protecting persons to reserving things for the future.
+**Description:** To keep, observe, or obey commandments, words, teachings, or laws — the most frequent sense of τηρέω in the NT, confirmed by Hindi मानना (to obey), Arabic حفظ (in the sense of observance), Korean 지키다 with commandment objects, and Swahili kushika.
+**Enriched:** The most frequent NT sense: to observe, obey, or keep commandments, teachings, words, or the law with faithful attentiveness. Hindi मानना ('to obey') and Arabic حفظ (in the sense of religious observance) confirm the core notion of careful adherence. Exemplified in Matt 28:20 ('teaching them to observe all I commanded you') and John 8:51 ('if anyone keeps my word, he shall never see death'). The emphasis falls less on mere compliance and more on vigilant, loving fidelity to what has been entrusted.
+
+### G5342 / Sense 78479 (41 occ, sense 1 of 5)
+**Label:** bring or fetch
+**Lemma gloss:** To bear, bring, carry; fetching objects, bearing fruit, transporting physically, being driven by force, enduring.
+**Description:** To bring, fetch, or convey someone or something toward the speaker or a specified destination.
+**Enriched:** To bring, fetch, or convey toward a destination — the dominant sense at 41 occurrences. Covers bringing a paralytic to Jesus (Mark 2:3), fetching water turned to wine (John 2:8), and the command 'bring them here to me' (Matt 14:18; 17:17). Spanish Trae/Traed and German bringen map directly, while French apporter emphasizes toward-the-speaker directionality. Imperative forms are especially prominent in miracle narratives where Jesus commands persons or objects to be brought.
+
+### G5438 / Sense 78754 (41 occ, sense 1 of 3)
+**Label:** prison, place of confinement
+**Lemma gloss:** A guarding, a watch of the night, a guard post, or (most commonly in the NT) a prison or place of confinement
+**Description:** A place of imprisonment or confinement; a jail, dungeon, or detention facility. This is the most frequent NT sense of phylake, attested across the Gospels, Acts, Epistles, and Revelation. Includes both singular and plural forms. Used of literal prisons: John the Baptist imprisoned (Matt 14:3, 10 phylake; Mark 6:17, 27 phylake), the parable of the unforgiving servant cast into prison (Matt 18:30), Jesus's teaching on visiting those in prison (Matt 25:36, 39, 43, 44), Peter imprisoned (Luke 22:33 phylaken; Acts 5:19, 22, 25 phylakes/phylake; Acts 8:3, 12:4-6, 17; 16:23-40), Paul's imprisonments (Acts 22:4, 26:10 phylakas; 2 Cor 6:5, 11:23 phylakais), imprisonment of the faithful (Heb 11:36 phylakes), spirits in prison (1 Pet 3:19 phylake), Satan bound in the abyss/prison (Rev 20:7 phylakes). Multilingual glosses uniformly confirm: Arabic sijn/sujuun, Spanish carcel, French prison, German Gefaengnis, Hebrew mishmar/beit kele/ma'asarim, Korean gamok, Hindi bandikhaana/kaaragrih.
+**Enriched:** The dominant NT usage, referring to a place of imprisonment or detention. Jesus teaches about being thrown into prison until debts are paid (Matt 5:25), John the Baptist languishes in Herod's prison (Matt 14:3, 10), and the righteous visit those in prison (Matt 25:36). Translations uniformly render this as 'prison' (cárcel in Spanish, Gefängnis in German, prison in French).
+
+### G5565 / Sense 79153 (41 occ, sense 1 of 1)
+**Label:** without, apart from
+**Lemma gloss:** without, apart from, besides — preposition with genitive expressing separation, exclusion, or independence
+**Description:** Choris functions both as an adverb ('separately, apart') and as an improper preposition with the genitive ('without, apart from, besides'). In the NT it predominantly takes the prepositional sense: 'without faith' (Heb 11:6), 'without the shedding of blood' (Heb 9:22), 'apart from the law' (Rom 3:21, 7:8-9), 'without counting women and children' (Matt 14:21, 15:38), 'apart from Christ' (Eph 2:12), 'without holiness' (Heb 12:14), and 'besides the things without' (2 Cor 11:28). The adverbial use at John 20:7 ('folded up separately/apart') and the prepositional uses share the same core semantics of separation or exclusion. Multilingual glosses confirm uniformity: Arabic 'bidun / ma ada,' Hebrew 'b'li / milv'ad / bil'adeha,' German 'ohne / abgesehen,' Korean 'eobsi / oee,' Hindi 'bina / alag,' Spanish 'sin / aparte de.' The auto-clusters merely reflect minor English gloss variation ('without' vs. 'apart from' vs. 'apart' vs. 'which') rather than genuine semantic distinction.
+**Enriched:** An improper preposition with the genitive denoting separation, absence, or exclusion — 'without' or 'apart from.' Carries heavy theological freight in Paul and Hebrews: 'apart from law' (Rom 3:21; 7:8-9), 'without faith' (Heb 11:6), 'without the shedding of blood' (Heb 9:22). John 1:3 and 15:5 use it for absolute dependence on Christ. Also functions in counting exceptions: 'besides women and children' (Matt 14:21; 15:38). Spanish 'sin,' French 'sans,' and German 'ohne' uniformly confirm the privative core, while the additive 'besides' sense is contextually determined.
+
+### H0238 / Sense 80781 (41 occ, sense 1 of 1)
+**Label:** give ear, listen attentively
+**Lemma gloss:** give ear, listen attentively — Hiphil verb of attentive hearing, almost exclusively poetic, often paired with shama
+**Description:** To listen with deliberate attention, to give ear or hearken to someone's words, used across all grammatical forms (imperative, perfect, imperfect, participle) with a consistent meaning of attentive, purposeful listening.
+**Enriched:** To listen with focused, deliberate attention — 'give ear' — almost always in elevated or poetic register. Typically occupies the second line of a bicolon parallel with shama ('hear'): 'Hear, O heavens, and give ear, O earth' (Isa 1:2; cf. Deut 32:1; Ps 49:2). In the Psalms it voices urgent petition to God (Ps 17:1; 55:2; 86:6; 143:1), while in prophetic address it summons human audiences to solemn attention (Joel 1:2; Isa 28:23; 32:9). The participial form me'azin in Proverbs 17:4 describes one who 'gives ear' to malicious speech. Spanish 'prestar oido,' French 'preter l'oreille,' and German 'Ohr geben' preserve the denominative image of directing one's ear.
+
+### H0271 / Sense 81162 (41 occ, sense 1 of 1)
+**Label:** Ahaz king of Judah
+**Lemma gloss:** Ahaz — king of Judah (c. 735-715 BCE), son of Jotham, father of Hezekiah, name meaning 'he has grasped'
+**Description:** The personal name Ahaz (meaning 'he has grasped,' abbreviated from Jehoahaz), referring to the king of Judah (c. 735-715 BCE), son of Jotham and father of Hezekiah. The bulk of occurrences appear in 2 Kings 15:38-16:20 narrating his reign, his appeal to Tiglath-pileser of Assyria, and his altar modifications. Also referenced in Isaiah 1:1; 7:1-12; 38:8 (the sundial of Ahaz) and in the Chronicles genealogies (1 Chr 8:35-36; 9:42). All spelling variants (Achaz, Ahaz, Ahas) and prepositional/conjunctive forms (with l-, w-) represent the same individual and are purely syntactic variations, not distinct senses.
+**Enriched:** The proper masculine name Achaz ('he has grasped,' short for Jehoahaz), identifying the king of Judah who succeeded Jotham and fathered Hezekiah. All 41 occurrences refer to this individual, with a minor secondary reference to a Benjamite descendant of Jonathan (1 Chr 8:35-36; 9:42). The king's significance lies in the Syro-Ephraimite crisis and his fateful decision to seek Assyrian vassalage rather than trust the prophetic word (Isa 7:1-12; 2 Kgs 16:7-9). Greek Achaz, Spanish 'Acaz,' French 'Achaz' preserve the name uniformly.
+
+### H1035 / Sense 86594 (41 occ, sense 1 of 1)
+**Label:** Bethlehem
+**Lemma gloss:** Bethlehem — town in Judah south of Jerusalem, birthplace of David, meaning 'house of bread'
+**Description:** A town in the territory of Judah, about 8 km south of Jerusalem; birthplace of David and site of Rachel's burial; also called Ephrath/Ephrathah (Gen 35:19; Mic 5:1). A second, lesser-known Bethlehem exists in the territory of Zebulun (Josh 19:15).
+**Enriched:** The proper place name Beth Lechem ('house of bread'), primarily designating the Judahite town associated with Rachel's burial (Gen 35:19), the Levite's concubine narrative (Judg 19), Ruth's fields (Ruth 1-4), David's origins (1 Sam 16-17), and the messianic expectation of Micah 5:1. Also called Ephrathah (Ruth 4:11; Mic 5:1). A second Bethlehem in Zebulun appears at Joshua 19:15. Spanish 'Belen,' French 'Bethleem,' German 'Bethlehem,' and the Arabic Beit Lahm all reflect continuous habitation and name transmission across millennia.
+
+### H1280 / Sense 88122 (41 occ, sense 1 of 2)
+**Label:** bar, bolt, crossbar
+**Lemma gloss:** Bar, bolt, crossbar for gates or structural framing; also (as homograph) a fugitive, one who flees.
+**Description:** A wooden or metal bar used to secure city gates or as a structural crossbar in tabernacle construction; from the root ברח in the sense of passing through (a slot or bracket).
+**Enriched:** A wooden or metal bar used as a structural crossbar in tabernacle construction or as a bolt securing city gates. Multilingual glosses converge tightly: English 'bar/bars,' Spanish barras, French barres, German Riegel. The tabernacle construction narratives (Exod 26:26-29; 36:31-34; Num 3:36; 4:31) and city fortification passages (Deut 3:5; Judg 16:3; 1 Kgs 4:13; Nah 3:13) form the core usage across 41 occurrences.
+

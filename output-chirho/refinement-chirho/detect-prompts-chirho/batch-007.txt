@@ -1,0 +1,291 @@
+# Sense Refinement Detection — Batch 007
+
+You are a biblical lexicographer reviewing sense entries for a Hebrew/Aramaic/Greek lexicon.
+Each entry below is a single "sense" that was produced by clustering translation signatures 
+and then merging with an LLM. Some senses may have been OVER-LUMPED — they contain genuinely 
+distinct meanings that should be separate senses.
+
+## Your Task
+
+For each sense, determine if it should be SPLIT into multiple senses. Look for:
+- Literal vs. figurative/metaphorical uses lumped together
+- Concrete vs. abstract meanings combined
+- Multiple distinct referents (e.g., "father" = biological parent + patron/advisor + originator)
+- Physical vs. spiritual/theological uses merged
+- Different syntactic frames producing different meanings
+
+## Output Format
+
+Return a JSON array. For senses that need NO splitting, omit them entirely.
+For senses that SHOULD be split, include an entry like:
+
+```json
+[
+  {
+    "senseIdChirho": 79287,
+    "lemmaIdChirho": "H0001",
+    "currentLabelChirho": "father, immediate male parent",
+    "splitProposalChirho": [
+      {
+        "newLabelChirho": "biological/legal father",
+        "criteriaChirho": "Direct parent-child relationship, possessive constructions with specific person"
+      },
+      {
+        "newLabelChirho": "metaphorical father (patron, advisor, protector)",
+        "criteriaChirho": "Title of respect for prophets, advisors, or authority figures; 'father to Pharaoh' type usage"
+      }
+    ],
+    "confidenceChirho": "high",
+    "reasoningChirho": "Description explicitly mentions 'title of respect or metaphorical originator' alongside biological father"
+  }
+]
+```
+
+Only propose splits where you have MEDIUM or HIGH confidence. Do NOT split function words (articles, 
+prepositions, particles, conjunctions) unless there is a genuinely distinct semantic sense (not just 
+syntactic variation). Proper nouns generally should NOT be split.
+
+If NO senses in this batch need splitting, return an empty array: []
+
+## Senses to Review
+
+### H3651c / Sense 106708 (206 occ, sense 2 of 7)
+**Label:** therefore (causal inference)
+**Lemma gloss:** So, thus; therefore; this, that (anaphoric); then; indeed; to such a degree — adverb of manner, cause, and reference
+**Description:** Causal-inferential conjunction meaning 'therefore, for this reason, on account of this,' drawing a logical conclusion or consequence from what precedes.
+**Enriched:** Causal-inferential conjunction 'therefore, for this reason, on account of this,' typically in the compound laken (לָכֵן). Drawing logical conclusions from prior premises, it is the backbone of prophetic judgment oracles: 'therefore thus says the LORD' (Num 20:12; Isa 5:13). Spanish por tanto, French c'est pourquoi, German darum all signal inferential force.
+
+### H5375 / Sense 119147 (205 occ, sense 2 of 20)
+**Label:** Qal: to carry, bear, transport
+**Lemma gloss:** to lift, carry, bear; to take, receive; to forgive sin; to exalt, raise up (eyes, voice, hands, head)
+**Description:** Carrying a physical load or burden, bearing objects, transporting items or persons from one place to another, including all participle forms meaning 'bearer/carrier'.
+**Enriched:** Carrying physical loads appears 205 times, distinct from mere lifting. Joseph's brothers 'carried' him to Egypt (Gen 46:5), poles designed 'to bear' the ark (Exod 25:14), Levites appointed as 'bearers' (participle form). Spanish shifts to llevar/contener (carry/contain), Korean to 나르다 (transport), Arabic حَمَلَ (bear burden). The participial 'bearers of' construction appears frequently in temple service contexts.
+
+### H3205 / Sense 101975 (204 occ, sense 1 of 8)
+**Label:** Qal active: bear/give birth (female subject)
+**Lemma gloss:** To bear, give birth, beget, or be born; covering maternal birthing, paternal begetting, passive birth, and midwifery
+**Description:** The core Qal active sense with a female subject meaning 'to bear, give birth to a child.' Arabic وَلَدَتْ (waladat) consistently marks feminine active birthing; Korean 낳다 (nahda) 'to give birth' is uniform across all these clusters; Swahili uses -zaa (active birthing, e.g., alizaa, akazaa, alimzaa, alimzalia with applicative). This covers all Qal perfects, imperfects, infinitives, and waw-consecutives with feminine subjects, including participial forms meaning 'one who bears / woman in labor' (Arabic الْوَالِدَة al-waalida; Korean 해산하는 여인 haesanhaneun yeoin; Swahili mzazi, anayezaa).
+**Enriched:** Qal active with a female subject: to bear, give birth to a child. Arabic waladat (feminine active) and Korean nahda 'to give birth' consistently mark the maternal act. Dominates birth narratives from Eve bearing Cain (Gen 4:1) through the matriarchs (Gen 4:17, 25) and into prophetic oracles about women in labor.
+
+### H1768 / Sense 91551 (203 occ, sense 1 of 6)
+**Label:** relative pronoun (who/which/that)
+**Lemma gloss:** Aramaic relative/conjunction particle: who, which, that; of (genitive); because; when; where.
+**Description:** The basic relative pronoun function of Aramaic di, introducing relative clauses ('the king who...', 'the house which...'); identified across languages by Arabic الَّذِي/الَّتِي, Swahili amba- class concords (ambayo, ambao, ambaye), Hindi जो/जिसे/जिसकी, Korean 그/곧, Spanish que/quien. Includes waw-conjunctive forms (and-who, and-which) and oblique cases (whom, whose).
+**Enriched:** The basic relative pronoun: 'who, which, that' — introducing relative clauses that modify a preceding noun (203 occurrences). This is the primary and most frequent function, directly parallel to Hebrew אֲשֶׁר. Arabic الَّذِي/الَّتِي, Spanish que/el cual, and French qui/que all employ dedicated relative pronouns here. In Ezra 4:10-12 alone, דִּי appears repeatedly chaining relative clauses in official Aramaic correspondence.
+
+### H5647 / Sense 121538 (203 occ, sense 1 of 8)
+**Label:** worship, serve (God/deity)
+**Lemma gloss:** To work, serve, worship, till, or enslave; spanning religious devotion, personal service, agricultural labor, and forced servitude
+**Description:** To serve or worship a deity (God or idols) in a religious or covenantal sense; Arabic root ʿ-b-d (عبد) consistently distinguishes this from personal service (kh-d-m) and labor (ʿ-m-l).
+**Enriched:** To worship or serve a deity in a religious or covenantal sense — by far the dominant use (203x). Arabic abd consistently distinguishes divine service from personal or productive labor. Covers both proper worship of YHWH (Exod 10:11, 26; Num 4:24) and idolatrous service to foreign gods, making it the key verb for covenant fidelity and apostasy throughout Deuteronomy and the historical books.
+
+### H8451 / Sense 144823 (203 occ, sense 1 of 3)
+**Label:** Law / Torah (divine covenant instruction)
+**Lemma gloss:** Torah, law, instruction; the Mosaic Law as divine covenant legislation, specific statutes and regulations, or human/prophetic teaching.
+**Description:** The Mosaic Law, the Torah of YHWH, divine covenant legislation, or 'the Law' as a body of authoritative divine instruction — including all inflected forms with article, possessive suffixes (Your/My/His law when referring to God), construct chains (Torah-of Moses, law-of YHWH), and prepositional prefixes (in/from/according-to the Torah).
+**Enriched:** The Mosaic Law, the Torah of YHWH — the dominant sense at 203 occurrences. This covers the Torah as a comprehensive body of divine covenant instruction, whether specified as 'the Torah of Moses' (Josh 8:31), 'the Torah of the LORD' (Ps 19:7), or simply 'the Torah' with the article. It includes the Pentateuch as a written document, the covenant stipulations, and the entire Mosaic legislative-narrative complex. Spanish la Tora/la ley, Arabic al-sharia or al-tawrah, and Korean yulbeop (율법) all treat this as a proper or near-proper noun, reflecting its status as Israel's foundational legal-theological document. The range of contexts — from Deuteronomy's exhortations to keep 'this Torah' to the psalmist's meditative delight in God's Torah — shows the word functioning simultaneously as legal code, covenant charter, and object of devotion.
+
+### G0435 / Sense 62362 (202 occ, sense 1 of 3)
+**Label:** man, male person
+**Lemma gloss:** Man, adult male; a man as opposed to woman, a husband in relation to his wife, or generically a human person.
+**Description:** An adult male human being, as distinguished from a woman or child.
+**Enriched:** An adult male human being, a man as distinguished from a woman or child — the dominant sense at 202 occurrences. Used in direct address (andres adelphoi, 'men and brothers,' Acts 1:16), narrative description (Luke 5:8, 'Simon Peter, a sinful man'), and general reference to male persons. Spanish varon/hombre, Arabic rajul, Korean namja (남자), and Swahili mtu (with masculine context) all consistently select male-specific vocabulary. The vocative form aner is particularly common in Luke-Acts as a formal rhetorical address to male audiences. This sense includes both individual reference and collective address to groups of men.
+
+### G4183 / Sense 75319 (202 occ, sense 1 of 5)
+**Label:** many, numerous (of plurality)
+**Lemma gloss:** Many, much, great; of number, quantity, magnitude, or degree; also comparative 'far more' and frequentative 'many times.'
+**Description:** A large number of individual persons or things, used with count nouns or substantivized to refer to 'many people' or 'many things'.
+**Enriched:** Many, numerous — referring to a large number of countable persons or things. The dominant sense at 202 occurrences, covering 'many will come from east and west' (Matt 8:11), 'many prophets and righteous people' (Matt 13:17), and 'many signs' (John 20:30). When substantivized, hoi polloi means simply 'the many' or 'many people' (Matt 20:28; Rom 5:15). Spanish muchos, German viele, Korean 많은, and Arabic kathirun all deploy standard count-plural forms. The word frequently appears with ochlos ('crowd') to indicate 'a great crowd' (Matt 14:14), where the boundary with sense 3 (magnitude) can blur.
+
+### H1245 / Sense 87836 (200 occ, sense 1 of 5)
+**Label:** seek, search for
+**Lemma gloss:** To seek, search for, require, or entreat; the intensive Piel of active pursuit whether for persons, things, justice, or divine favor.
+**Description:** To seek or search for someone or something, the core Piel meaning of actively looking for a person, object, or abstract goal (Arabic: طَلَبَ/بَحَثَ/فَتَّشَ 'seek/search'; Korean: 찾다/구하다; Swahili: kutafuta; Hindi: ढूँढना/खोजना).
+**Enriched:** The core Piel meaning: to actively search for or seek someone or something. This covers the vast majority of occurrences, from Saul seeking his father's donkeys (1 Sam 10:2) to enemies seeking David's life (1 Sam 23:10). The Arabic talab and bahath, Korean chajda/guhada, and Swahili kutafuta all converge on this active-pursuit sense. The breadth is remarkable: physical search, intellectual inquiry, and even the seeking of God's face (2 Chr 7:14) all fall under this umbrella.
+
+### H3205 / Sense 101973 (198 occ, sense 2 of 8)
+**Label:** Qal active: beget/father (male subject)
+**Lemma gloss:** To bear, give birth, beget, or be born; covering maternal birthing, paternal begetting, passive birth, and midwifery
+**Description:** The Qal active sense with a male subject meaning 'to beget, to father.' Arabic وَلَدَ (walada) with masculine conjugation; English consistently uses 'fathered, begot, begat'; Spanish engendro; Korean 낳다 (nahda) with male subject markers or 낣다 variant; Swahili -zaa (same root but male context, e.g., alizaa, akazaa). Distinguished from the female-subject sense by consistent cross-linguistic male-subject framing (engendrar vs dar a luz in Spanish; 'fathered' vs 'bore' in English). Includes Qal perfects, imperfects, participles, and infinitives with masculine subjects.
+**Enriched:** Qal active with a male subject: to beget, to father a child. Arabic walada (masculine conjugation), Spanish engendro, and German zeugte all mark paternal generation. This sense builds the great genealogical chains — Genesis 4:18's threefold 'begot' and the toledot formulae — encoding lineage and covenant succession through the father.
+
+### H7965 / Sense 140751 (198 occ, sense 1 of 6)
+**Label:** peace, absence of conflict
+**Lemma gloss:** Completeness, soundness, welfare, peace; spanning tranquility, well-being, greeting formulas, interpersonal alliance, and wholeness
+**Description:** A state of harmony, tranquility, or absence of war and strife, used both of interpersonal relations and of broader national or cosmic peace.
+**Enriched:** Peace as the absence of conflict, war, or strife — the dominant sense covering the vast majority of occurrences (198x). This ranges from God granting peace in the land (Lev 26:6) to the Aaronic blessing 'the LORD give you peace' (Num 6:26) to prophetic visions of cosmic peace (Isa 9:7; 11:6-9). Arabic salam, Spanish paz, French paix, and German Friede all converge here. It includes both interpersonal peace ('go in peace,' Gen 43:23; 1 Sam 1:17) and the eschatological 'Prince of Peace' (Isa 9:6).
+
+### G1410 / Sense 65907 (197 occ, sense 1 of 2)
+**Label:** be able, can
+**Lemma gloss:** To be able, to have power; as a verb 'can/could'; substantivally, 'the powerful one' or 'the mighty.'
+**Description:** Core dynamic sense: to possess the capability or power to do something; used across all tenses, moods, persons, and numbers as a finite verb, infinitive, subjunctive, or circumstantial participle expressing situational ability or possibility. English 'is able / was able / will be able / to be able,' Spanish 'puede / podía / podrá / poder,' Arabic يَقْدِرُ / يَسْتَطِيعُ, Korean 할 수 있다 / 할 수 없다, Swahili anaweza / aliweza / ataweza / kuweza.
+**Enriched:** Core verbal sense of possessing capability or power to do something — 'to be able,' 'can,' 'could.' Used across all persons, tenses, and moods to express practical, moral, or divine capacity. 'God is able from these stones to raise up children to Abraham' (Matt 3:9); 'no one can serve two masters' (Matt 6:24); 'if you can do anything, have compassion' (Mark 9:22). Spanish puede, French pouvoir, and German kann/können mirror this modal auxiliary function. The 197 occurrences make it one of the most frequent verbs in the NT.
+
+### H0727 / Sense 84072 (197 occ, sense 1 of 3)
+**Label:** ark (covenant vessel)
+**Lemma gloss:** Chest or box; the Ark of the Covenant, a money-collection chest, or a coffin for burial.
+**Description:** The sacred chest or ark, especially the Ark of the Covenant containing the tablets of the law, carried by the Levites and housed in the tabernacle/temple.
+**Enriched:** The Ark of the Covenant, the gold-overlaid wooden chest that held the stone tablets, Aaron's rod, and a jar of manna. Nearly every occurrence of this lemma (197 of 202) refers to this sacred object. Multilingual translations consistently distinguish it: English 'ark,' Spanish 'arca,' French 'arche,' German 'Lade' -- all reserving a special term for this unique cultic vessel. Key passages include its construction (Exod 25:10-22), its role in crossing the Jordan (Josh 3:6), and its capture by the Philistines (1 Sam 4:11).
+
+### G1097 / Sense 64676 (196 occ, sense 1 of 6)
+**Label:** know, be acquainted with
+**Lemma gloss:** To know, recognize, understand, perceive, or learn; spanning relational acquaintance, intellectual comprehension, passive recognition, and discovery
+**Description:** To know through personal experience, relationship, or acquaintance; general active-voice knowing encompassing all tenses, persons, numbers, and moods (present, aorist, perfect, future, imperfect indicative; subjunctive; imperative; infinitive; active participle) where the multilingual evidence does not disambiguate a more specific sense (Arabic عَرَفَ/عَلِمَ, Korean 알다, Swahili -jua, Spanish conocer/saber, Hindi जानना).
+**Enriched:** To know through experience, relationship, or acquaintance — the broad active-voice sense covering the vast majority of occurrences (196x). This is personal, engaged knowing: Jesus knows his sheep (John 10:14, 27), disciples know the truth (John 8:32), and believers know God (1 John 4:8). Arabic 'arafa 'to know by acquaintance,' Korean alda, and Spanish conocer/saber all converge here. The sense spans present knowledge (Matt 12:15), past recognition (Matt 16:8), aorist realization (Matt 22:18), and perfect settled conviction, making it the default cognitive verb of the New Testament.
+
+### G3551 / Sense 72818 (196 occ, sense 1 of 1)
+**Label:** law (esp. the Mosaic Law)
+**Lemma gloss:** Law, ordinance; especially the Mosaic Torah, but also law as a principle or system.
+**Description:** Law in general and specifically the Torah or Mosaic Law, including its use with and without the article, in singular and plural, and in various syntactic roles. All three clusters are inflectional and stylistic variants of the same core meaning: eng 'law/laws/by law,' spa 'ley/leyes/por ley,' hin 'vyavastha/vyavasthayen,' arb 'al-namus/nawamis/bi-namus,' kor 'yulbeop/yulbeopdeul,' swa 'sheria/kwa sheria.' The plural (S72820) denotes multiple laws or commandments within the Law, and the instrumental dative (S72823) is a standard case usage, not a distinct semantic sense.
+**Enriched:** Law in general and specifically the Torah or Mosaic Law, encompassing the Pentateuch, the broader Old Testament canon, and the principle of divine ordinance. Appears with the article (ho nomos) for the specific Mosaic code and without it for law as a governing principle (Rom 7:21-23). Central to Pauline theology where it functions as pedagogue (Gal 3:24), revealer of sin (Rom 7:7), and that which Christ fulfills (Matt 5:17). Spanish 'ley,' French 'loi,' and German 'Gesetz' confirm a unified semantic field across inflectional variation.
+
+### H4616 / Sense 113149 (196 occ, sense 1 of 3)
+**Label:** purpose: so that, in order that
+**Lemma gloss:** For the sake of, in order that; a preposition-conjunction expressing purpose, cause, or the beneficiary of an action.
+**Description:** Conjunctional use introducing a purpose or result clause, expressing the intended goal or outcome of an action.
+**Enriched:** Purpose or result: 'so that, in order that' (196x). Introduces a clause expressing the intended goal or expected outcome of the action in the main clause. Genesis 12:13 — 'Say you are my sister, so that (lemaan) it may go well with me.' Genesis 18:19 — God chose Abraham 'in order that (lemaan) he may command his children.' Spanish para que, French afin que, and German damit all consistently mark the purposive reading. This is the most frequent function and the one closest to a pure conjunction.
+
+### H6662 / Sense 129499 (195 occ, sense 1 of 4)
+**Label:** righteous person (substantive)
+**Lemma gloss:** Just, righteous; of persons who act uprightly, of God's moral perfection, of nations, or of being in the right forensically.
+**Description:** A morally upright person or group of people, used substantively or attributively of individuals — the dominant sense of tsaddiq across all inflections, numbers, and prepositional/conjunctive prefixes.
+**Enriched:** Righteous person (substantive): The overwhelmingly dominant use—tsaddiq as a noun or substantivized adjective describing a morally upright individual or group. From Noah walking blamelessly (Gen 6:9) to the Psalmist's confidence that the righteous will flourish like a palm tree (Ps 92:12), this sense pervades Wisdom literature and narrative alike. Spanish 'justo,' French 'juste,' and German 'Gerechte/Gerechter' all treat this as a near-technical term for the person who lives in conformity with God's standards. The plural tsaddiqim in Exodus 23:8 warns that bribes blind the eyes of the righteous—showing the word's forensic overtones even in its ethical core.
+
+### G2453 / Sense 69507 (194 occ, sense 1 of 2)
+**Label:** Jewish person, Jew
+**Lemma gloss:** Jewish person; Judea — an adjective denoting Jewish identity, used substantively for a Jew or geographically for the region of Judea.
+**Description:** Substantive adjective referring to a Jewish person, used of individuals or groups identified as ethnically or religiously Jewish, in all grammatical cases, numbers, and genders.
+**Enriched:** A person identified as Jewish by ethnicity, religion, or covenant membership. Used substantively across all cases, numbers, and genders. The near-unanimous cross-linguistic rendering — 'Jews' (eng), 'Judíos' (spa), 'Juif' (fra), 'Juden' (deu) — reflects a stable referent. In John's Gospel especially, the term often narrows to the religious authorities opposing Jesus (John 5:16, 7:1), though it also carries the broader sense of the covenant nation (Rom 1:16; Matt 27:11).
+
+### G1831 / Sense 67339 (193 occ, sense 1 of 4)
+**Label:** go/come out physically
+**Lemma gloss:** To go out, come out, depart; of physical exit from a place, authoritative commands to exit, and figurative spreading or issuing forth.
+**Description:** To move from inside a place to outside, physically exiting or leaving a location such as a house, city, or gathering.
+**Enriched:** Physical movement from inside to outside — the dominant sense at 193 occurrences, covering all concrete instances of exiting, leaving, or departing a location. Jesus 'went out' of the house (Matt 13:1), the whole city 'came out' to meet him (Matt 8:34), the sower 'went out' to sow (Matt 13:3), and unclean spirits 'came out' of possessed persons (Matt 17:18). Spanish salió, French sortit, Korean 나갔다, and Swahili -toka all converge on the same directional motion frame. The aorist form exelthen is overwhelmingly narrative, driving story forward from scene to scene.
+
+### H6635a / Sense 129370 (192 occ, sense 1 of 3)
+**Label:** army, host (military force)
+**Lemma gloss:** Army, host, or organized force; also hard service, compulsory duty, or warfare as an activity.
+**Description:** An organized military body or assembled force, whether of a nation, king, or God; the most common sense of the word, used for armies in battle, numbered troops, and hosts of heaven.
+**Enriched:** An army, host, or organized military force. This is the dominant sense (192 occurrences), covering both human armies mustered for battle and the heavenly host -- whether angelic forces or celestial bodies marshalled under God's command. The Numbers census material (Num 1-2) uses it formulaically for the tribal hosts. In 'LORD of hosts' (Yhwh tseva'ot), the term reaches cosmic scope. Translations across languages converge: Spanish 'ejército,' French 'armée,' German 'Heer' -- all standard military vocabulary.
+
+### G1135 / Sense 64901 (190 occ, sense 1 of 2)
+**Label:** woman, adult female
+**Lemma gloss:** Woman, adult female; wife or spouse in marital contexts. Greek gynē covers both gender identity and conjugal relationship.
+**Description:** An adult female human being, without specific reference to marital relationship; used generically or as a form of address.
+**Enriched:** An adult female human being, without specific reference to marital status. Used generically of women encountered by Jesus — the hemorrhaging woman (Matt 9:20-22), the Canaanite woman (Matt 15:22), the woman with leaven (Matt 13:33) — and as a form of address (gynai). Spanish mujer, French femme, and German Frau all serve this general sense. The vocative use in John 2:4 and 19:26 is respectful, not dismissive, closer to 'dear lady' in tone.
+
+### H0241 / Sense 80801 (188 occ, sense 1 of 1)
+**Label:** ear, organ of hearing
+**Lemma gloss:** Ear, organ of hearing; often in 'in the ears of' meaning 'in the hearing/presence of.'
+**Description:** The anatomical ear as the organ of hearing, used both literally (the physical ear that can be pierced or anointed) and metonymically in prepositional constructions ('in the ears of' = 'in the hearing of'; 'incline the ear' = 'pay attention'), covering all singular, dual, construct, and suffixed forms.
+**Enriched:** The anatomical ear as the organ of hearing, used both literally (the physical ear that can be pierced for servitude in Exod 21:6, anointed with blood in priestly consecration in Lev 8:23, or adorned with earrings in Gen 35:4) and metonymically in the prepositional phrase be'ozne ('in the ears of') to indicate public hearing or witnessed proclamation (Gen 23:10, 16; Deut 31:30). Spanish 'oidos,' French 'oreilles,' and German 'Ohren' uniformly confirm a single sense covering both physical and figurative auditory reference.
+
+### H1366 / Sense 88981 (188 occ, sense 1 of 4)
+**Label:** border, boundary (geographic line)
+**Lemma gloss:** Border, boundary line; by extension, the territory enclosed within borders; rarely, the physical edge or rim of an object.
+**Description:** The boundary line marking the edge of a territory, used in geographic descriptions of tribal allotments and national borders. Typically occurs in formulaic boundary descriptions ('the border went out to...', 'the border turned to...'). Predominantly in Joshua (tribal allotments), Numbers 34 (Canaan's borders), and Ezekiel 47-48 (eschatological land division). BDB sense 1a: 'border, boundary' as a line of demarcation. Translates as English 'border/boundary', Spanish 'frontera/límite', Arabic الحدّ/التخم, Hindi सीमा, Korean 경계, Swahili mpaka.
+**Enriched:** The primary sense (188x): a geographic boundary line marking the edge of a territory. Dominates in the formulaic survey descriptions of Numbers 34 and Joshua 13-19, with characteristic verbs like יָצָא ('went out') and עָלָה ('went up'). Spanish frontera, French frontière, and German Grenze all select 'boundary line' vocabulary. Genesis 10:19 uses it for the Canaanite border, and Numbers 20:23 for the border of Edom — establishing it as the standard cartographic term.
+
+### H5337 / Sense 118813 (188 occ, sense 1 of 6)
+**Label:** deliver, rescue, save (Hifil)
+**Lemma gloss:** To deliver, rescue, snatch away; Niphal: escape, be delivered; Piel: strip, plunder; Hifil: save from danger or enemies
+**Description:** The primary Hifil causative meaning of natsal: to snatch someone out of danger, to deliver or rescue from enemies, distress, or death — Arabic أَنْقَذَ / نَجَّى (rescue/deliver), Korean 건지다 / 구하다 / 구원하다 (rescue/save), Swahili -okoa (save/rescue), covering all Hifil finite forms (perfect, imperfect, imperative, jussive, cohortative, consecutive), infinitives (construct and absolute), and participles across all persons, numbers, genders, and pronominal suffixes.
+**Enriched:** The dominant Hifil causative: to deliver, rescue, or save someone from danger, enemies, or death. At 188 occurrences this is natsal's gravitational center — from the Passover deliverance (Exod 12:27) to David's praise of divine rescue (2 Sam 22:1). Arabic anjadha/najja, Spanish librar, and Korean geonjida all converge on forcible extraction from peril.
+
+### G3956 / Sense 74221 (187 occ, sense 4 of 5)
+**Label:** (none)
+**Lemma gloss:** All, every, each, the whole; collective totality of a group, distributive 'every/each,' substantive 'everything,' or temporal 'always.'
+**Description:** (none)
+**Enriched:** Whole or entire (with singular articular nouns): 'all of,' 'the whole' — 187 occurrences where pas modifies a singular noun with the article to mean the entirety of one thing rather than every member of a class. 'All the city' (Matt 8:34), 'all the crowd' (Matt 13:2), 'all Judea' (Matt 3:5), 'all righteousness' (Matt 3:15). The distinction from sense 1 is subtle but real: here a single entity is viewed as complete, not multiple entities gathered. Spanish toda la ciudad and German die ganze Stadt both show the 'whole/entire' framing. This is the sense that BDB's classical entry glosses as 'the whole' for a single referent.
+
+### H6440 / Sense 127832 (187 occ, sense 2 of 5)
+**Label:** face, countenance
+**Lemma gloss:** face, presence, surface; also before (spatial/temporal)
+**Description:** The literal face of a person or animal, including possessive forms (my face, your face, his/her face, their faces), and extended to mean countenance, appearance, or personal presence.
+**Enriched:** Spatial orientation or position, meaning 'before,' 'in front of,' or 'facing.' Cross-linguistic evidence shows consistent directional vocabulary (Spanish delante, French devant, Chinese 面前), distinguishing this physical-spatial sense from the theological presence sense.
+
+### G2889 / Sense 70999 (185 occ, sense 1 of 2)
+**Label:** world
+**Lemma gloss:** World, ordered creation, human society; also adornment — the created order, inhabited earth, or system of human values; rarely, outward decoration.
+**Description:** The created order, the inhabited earth, or the system of human society and its values, especially as the sphere in which God's redemptive purposes unfold (e.g., 'God so loved the world,' 'the world knew him not'). The two clusters (S70999 at 183x, S71001 at 2x) represent the same meaning in different grammatical cases (genitive, nominative, accusative, dative); the dative uses with prepositions ('upon the world,' 'to the world') are syntactic, not semantic, variations. Eng 'world,' spa 'mundo,' hin sansaar throughout, arb al-aalami consistently, kor sesang, swa ulimwengu uniformly.
+**Enriched:** The created order, the inhabited earth, or the system of human society and its values — the sphere in which God's redemptive work unfolds. All major languages render it with a single dominant term: 'world' (eng), 'mundo' (spa), 'monde' (fra), 'Welt' (deu). In John's theology, it carries a layered range: the object of God's love (John 3:16), the arena Jesus enters to save (John 12:47), and simultaneously the system that rejects the light (John 1:10; 1 John 2:15-17). Paul uses it for the whole created order (Rom 1:20) and for Gentile humanity beyond Israel (Rom 11:12).
+
+### H1241 / Sense 87768 (183 occ, sense 1 of 1)
+**Label:** cattle, herd (bovine livestock)
+**Lemma gloss:** Cattle, herd — collective noun for bovine livestock, whether viewed as a group or as individual oxen and cows
+**Description:** Collective noun for bovine cattle viewed as a herd or as individual oxen/cows; covers all grammatical inflections including articled, conjoined, prepositional, and suffixed forms, as well as contextual renderings such as 'oxen' or 'bulls' where the referent narrows to adult males within the same bovine collective — confirmed by uniform Arabic cognate بَقَر (baqar), Korean 소 (so), and Swahili ng'ombe across all occurrences with no translation-signature differentiation.
+**Enriched:** Collective noun for bovine cattle — oxen, cows, and calves viewed as a herd or individually. The term derives from the root meaning 'to plough,' reflecting the ox's agricultural centrality. Spanning patriarchal wealth lists (Gen 12:16), sacrificial contexts (Num 7:88), and prophetic imagery (Isa 11:7), the word is rendered uniformly across target languages: Spanish ganado, French bétail, German Herde/Rind.
+
+### H3383 / Sense 104000 (183 occ, sense 1 of 1)
+**Label:** Jordan River (proper noun)
+**Lemma gloss:** Jordan — the principal river of Palestine, flowing from the Sea of Galilee southward to the Dead Sea
+**Description:** The Jordan River (יַרְדֵּן, Yarden), the major river flowing from the Sea of Galilee to the Dead Sea, serving as a geographical boundary and crossing point throughout biblical narrative.
+**Enriched:** The proper name of Palestine's major river, flowing south from the Sea of Galilee to the Dead Sea. Almost always appears with the article (ha-Yarden) in prose. Its crossings mark pivotal moments: Israel's entry into Canaan (Josh 3-4), tribal boundary disputes (Judg 12:5-6), and prophetic acts (2 Kgs 5:10-14). The name is preserved nearly unchanged across all target languages.
+
+### H4294 / Sense 111050 (183 occ, sense 1 of 4)
+**Label:** tribe, clan
+**Lemma gloss:** Staff, rod, or branch; by metonymy, a tribe of Israel descended from a patriarch, the dominant biblical usage.
+**Description:** A tribal division of Israel or other people group, referring to one of the hereditary socio-political units descended from a common ancestor (Arabic سِبْط, Korean 지파, Swahili kabila).
+**Enriched:** The most frequent sense by far (183x), denoting a hereditary tribal division — especially of Israel. Arabic سِبْط and Korean 지파 both select dedicated 'tribe' vocabulary here, confirming full lexicalization distinct from 'rod.' Dominant in Numbers 1-4, Joshua 13-21, and 1 Kings 7-8 tribal census and allotment texts. The metonymic leap from 'branch' to 'tribal branch' parallels English 'branch of a family.'
+
+### H7901 / Sense 140158 (183 occ, sense 1 of 6)
+**Label:** lie down, rest, sleep
+**Lemma gloss:** To lie down, recline, sleep; euphemism for sexual intercourse; Hifil: lay someone down; also: pour out (liquid)
+**Description:** To lie down for rest, sleep, or repose, the basic physical action of reclining (Qal stem in all inflections), corresponding to Arabic اضْطَجَعَ and Korean 누웠다.
+**Enriched:** The fundamental Qal sense: lying down for rest, sleep, or repose. At 183 occurrences this dominates — Samuel lying in the temple (1 Sam 3:5, 9), the idiom 'lie down and rise up' bracketing daily life (Deut 6:7). Arabic ittaja'a ('to recline'), Spanish acostarse, and Korean nuwotda all converge on the basic posture of physical rest.
+
+### G2531 / Sense 69822 (182 occ, sense 1 of 2)
+**Label:** just as
+**Lemma gloss:** Just as, even as; how — a comparative conjunction introducing correspondence or manner, rarely used as an interrogative.
+**Description:** just as, as, Just as (182 occurrences across 2 original clusters)
+**Enriched:** Comparative conjunction meaning 'just as,' 'even as,' or 'as' — introducing a standard of comparison, a fulfilled pattern, or a basis for action. The cross-linguistic unanimity is striking: 'como' (spa), 'comme' (fra), 'wie' (deu) all map to a single comparative function. Pervasive in fulfillment formulas ('just as it is written,' Matt 26:24), ethical exhortations ('love one another as I have loved you,' John 13:34), and theological correspondences ('as the Father sent me,' John 20:21).
+
+### G3303 / Sense 72137 (182 occ, sense 1 of 1)
+**Label:** indeed
+**Lemma gloss:** Indeed, on the one hand — a discourse particle expressing affirmation or marking the first element of a correlative pair
+**Description:** indeed (182 occurrences across 6 original clusters)
+**Enriched:** A discourse particle serving dual functions: (a) affirmative emphasis ('indeed, truly') when standing alone, and (b) correlative marker introducing the first member of a men...de contrast ('on the one hand...but on the other'). French d'une part and German zwar reveal the contrastive structure more transparently than English, where the particle is often absorbed into word order. Pervasive in Acts and the Pauline epistles.
+
+### H4124 / Sense 110013 (181 occ, sense 1 of 1)
+**Label:** Moab (place/people)
+**Lemma gloss:** Moab — the nation, people, and territory east of the Dead Sea, descended from Lot
+**Description:** The proper noun Moab, referring to the land east of the Dead Sea, its people (descendants of Lot), or the nation, used across all grammatical contexts (bare, with prepositions, with conjunctions).
+**Enriched:** Proper noun designating the land east of the Dead Sea, its people (understood as descendants of Lot per Gen 19:37), and the kingdom ruled by figures such as Balak (Num 22:4) and Mesha. The term functions as person, nation, and territory depending on context. Jeremiah 48 alone accounts for over 30 occurrences in an extended oracle against Moab. The name passes unchanged into virtually all target languages.
+
+### H0669 / Sense 83868 (180 occ, sense 1 of 1)
+**Label:** Ephraim (proper name)
+**Lemma gloss:** Ephraim — Joseph's younger son, the Israelite tribe descended from him, and their allotted territory
+**Description:** The proper name Ephraim (אֶפְרַיִם), referring to Joseph's younger son, the Israelite tribe descended from him, or the territory allotted to that tribe, with all grammatical variations (bare, conjunctive, prepositional) representing the same proper noun.
+**Enriched:** Proper name referring to Joseph's younger son blessed by Jacob (Gen 48:13-20), the prominent Israelite tribe descended from him, and the central hill-country territory allotted to that tribe. In prophetic literature, especially Hosea, 'Ephraim' becomes a synecdoche for the entire northern kingdom. The name's etymology ('doubly fruitful,' from parah) is given at Gen 41:52. All target languages preserve the name with minor transliteration variants.
+
+### H4430 / Sense 112144 (180 occ, sense 1 of 1)
+**Label:** king
+**Lemma gloss:** King — Aramaic noun for a sovereign ruler, used predominantly of Babylonian and Persian monarchs in Daniel and Ezra
+**Description:** Aramaic noun meaning king, sovereign ruler. The emphatic/determined form malka is the standard Aramaic equivalent of Hebrew melek. Used overwhelmingly of the king of Babylon (Nebuchadnezzar, Belshazzar) and of the Persian kings (Cyrus, Darius, Artaxerxes) throughout Ezra 4-7 and Daniel 2-7. All inflectional variants (absolute melek, emphatic malka, plural malkin, with prepositions le- and we-) denote the same single sense of a human sovereign or monarch.
+**Enriched:** Aramaic noun for a sovereign ruler or monarch, functioning as the determined-state equivalent of Hebrew melek. Found overwhelmingly in Daniel and Ezra, it refers primarily to Babylonian kings (Nebuchadnezzar, Belshazzar) and Persian monarchs (Cyrus, Darius, Artaxerxes). The emphatic form malka accounts for the vast majority of attestations. In Dan 7:17, the plural malkin denotes 'kingdoms' by metonymy.
+
+### H8081 / Sense 142008 (180 occ, sense 1 of 4)
+**Label:** oil (substance)
+**Lemma gloss:** Oil, fat, ointment; primarily olive oil for anointing, offerings, cooking, and lighting, but also fatness/fertility and perfumed cosmetic oil.
+**Description:** Olive oil as a physical substance used for anointing, cooking, offerings, lighting, and general domestic/cultic purposes; the primary and most common sense of shemen.
+**Enriched:** Olive oil as a physical substance: The dominant sense covering nearly all occurrences—liquid pressed from olives, used for anointing kings and priests (1 Sam 16:13), mixing into cereal offerings (Lev 2:1–2), fueling lamps (Exod 25:6), and cooking. The material is so central to Israelite life that shemen appears in nearly every genre of Scripture. Spanish 'aceite' and French 'huile' both derive from Latin oleum (olive), and the consistent German 'Öl' confirms how universally translators map this to the core meaning of pressed olive oil.
+
+### G1525 / Sense 66498 (179 occ, sense 1 of 3)
+**Label:** enter a place physically
+**Lemma gloss:** To enter, go into, or come in; of physical entry into a place or figurative entry into a state or condition.
+**Description:** To go into or enter a physical location such as a house, city, temple, boat, or other bounded space.
+**Enriched:** To enter a place physically -- going into a house, city, temple, boat, or other bounded location. This is the default and most frequent sense (179 of 195 occurrences). Spanish 'entró,' French 'entrer,' and German 'eingehen/hineingehen' all render straightforward spatial movement. Key passages include Jesus entering the synagogue (Mark 1:21), entering Jerusalem (Matt 21:10), and entering the temple (Luke 19:45).
+
+### G5495 / Sense 78966 (179 occ, sense 1 of 1)
+**Label:** hand / hands (physical body part)
+**Lemma gloss:** Hand, hands — the physical body part, also expressing agency, power, custody, and divine action
+**Description:** The physical human hand or hands, used broadly across the NT for literal body part, agency, power, custody, and action. All three clusters represent the same lexeme cheir in various grammatical cases (nominative, accusative, genitive, dative; singular and plural). Multilingual evidence is uniform: English 'hand/hands', Spanish 'mano/manos', Hindi हाथ/हाथों, Arabic يَدِ/يَدَيْهِ, Korean 손/손을, Swahili mkono/mikono. S78968 (genitive singular 'of her hand') and S78969 (accusative plural 'hands') are simply inflectional variants of the dominant cluster S78966 (177 occurrences covering all case/number combinations). No semantic distinction exists among these three clusters; they all denote the same concrete body part and its metonymic extensions.
+**Enriched:** The physical human hand or hands, extending by metonymy to agency, power, custody, and divine action. Covers literal usage (healing touch in Mark 6:5; nail-scarred hands in Luke 24:40), instrumental agency ('by the hand of,' Acts 7:25), and theological idiom ('the right hand of God,' Acts 2:33). Spanish manos, French main, and German Hand all exhibit the same polysemic breadth, showing this extension is cross-linguistically natural.
+
+### H2421 / Sense 96617 (177 occ, sense 1 of 7)
+**Label:** Qal: live, be alive
+**Lemma gloss:** To live, be alive; to revive, restore to life; to keep alive, spare; to recover from illness
+**Description:** To live, be alive, remain alive as an ongoing state of existence, including infinitive absolute emphatic usage (Qal stem); Arabic عَاشَ / يَحْيَا, Korean 살다/살리라, Swahili -ishi.
+**Enriched:** The broadest and most frequent sense (177x): to live, be alive, continue in existence. Arabic 'asha/yahya and Swahili -ishi render the basic state. The Genesis genealogies ('and Adam lived 930 years,' Gen 5:5) and covenantal promises ('that you may live,' Deut 30:16) exemplify this as the default, unmarked meaning of the Qal stem.
+

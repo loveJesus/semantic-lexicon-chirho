@@ -1,0 +1,291 @@
+# Sense Refinement Detection — Batch 029
+
+You are a biblical lexicographer reviewing sense entries for a Hebrew/Aramaic/Greek lexicon.
+Each entry below is a single "sense" that was produced by clustering translation signatures 
+and then merging with an LLM. Some senses may have been OVER-LUMPED — they contain genuinely 
+distinct meanings that should be separate senses.
+
+## Your Task
+
+For each sense, determine if it should be SPLIT into multiple senses. Look for:
+- Literal vs. figurative/metaphorical uses lumped together
+- Concrete vs. abstract meanings combined
+- Multiple distinct referents (e.g., "father" = biological parent + patron/advisor + originator)
+- Physical vs. spiritual/theological uses merged
+- Different syntactic frames producing different meanings
+
+## Output Format
+
+Return a JSON array. For senses that need NO splitting, omit them entirely.
+For senses that SHOULD be split, include an entry like:
+
+```json
+[
+  {
+    "senseIdChirho": 79287,
+    "lemmaIdChirho": "H0001",
+    "currentLabelChirho": "father, immediate male parent",
+    "splitProposalChirho": [
+      {
+        "newLabelChirho": "biological/legal father",
+        "criteriaChirho": "Direct parent-child relationship, possessive constructions with specific person"
+      },
+      {
+        "newLabelChirho": "metaphorical father (patron, advisor, protector)",
+        "criteriaChirho": "Title of respect for prophets, advisors, or authority figures; 'father to Pharaoh' type usage"
+      }
+    ],
+    "confidenceChirho": "high",
+    "reasoningChirho": "Description explicitly mentions 'title of respect or metaphorical originator' alongside biological father"
+  }
+]
+```
+
+Only propose splits where you have MEDIUM or HIGH confidence. Do NOT split function words (articles, 
+prepositions, particles, conjunctions) unless there is a genuinely distinct semantic sense (not just 
+syntactic variation). Proper nouns generally should NOT be split.
+
+If NO senses in this batch need splitting, return an empty array: []
+
+## Senses to Review
+
+### H2975 / Sense 100545 (47 occ, sense 1 of 3)
+**Label:** the Nile River
+**Lemma gloss:** The Nile River (Egyptian loanword); by extension, any major river, stream, or irrigation canal.
+**Description:** The Nile River in Egypt, used as a proper noun (yeʾor as the Egyptian loanword designating the Nile specifically), including with various prepositions (in, into, like, by).
+**Enriched:** The Nile River as a proper noun — the great river of Egypt, center of the Exodus narrative and prophetic oracle. The 47 occurrences include Pharaoh's dream (Gen 41:1-3), the plague of blood (Exod 7:20-21), the infant Moses set among reeds (Exod 2:3), and prophetic judgment against Egypt (Isa 19:5-8). Spanish el Rio, French le Nil, German der Nil, and Arabic an-nil all treat it as a definite, singular river. The definite article (hayye'or) is standard, reflecting the loanword's quasi-proper-noun status.
+
+### H3101 / Sense 101429 (47 occ, sense 1 of 1)
+**Label:** Yoash / Joash (proper name)
+**Lemma gloss:** Joash / Jehoash — a theophoric name ('YHWH has given'), borne by kings of Judah and Israel and other figures
+**Description:** A Hebrew proper name meaning 'YHWH has given' or 'fire of YHWH,' referring to multiple individuals in the Hebrew Bible, most prominently Joash king of Judah (son of Ahaziah, hidden in the temple by Jehosheba) and Joash king of Israel (son of Jehoahaz). With 47 occurrences, all three clusters represent the same proper noun in different grammatical frames: nominative and with prepositions, with lamed-preposition ('of Yoash'), and with conjunction ('and Yoash') (eng 'Yoash/Joash,' spa 'Joás/Yoash,' arb 'يُوآشَ,' kor '요아시/요아스,' swa 'Yoashi,' hin 'योआश').
+**Enriched:** A theophoric proper name meaning 'YHWH has given' or 'YHWH is strong,' referring to multiple biblical individuals. The most prominent bearers are Joash king of Judah, hidden as an infant in the temple during Athaliah's usurpation and crowned at age seven (2 Kgs 11:2-12; 2 Chr 24:1), and Joash king of Israel, who visited the dying Elisha and received the oracle of victory over Aram (2 Kgs 13:14-25). Other bearers include Gideon's father (Judg 6:11), a Benjaminite warrior of David (1 Chr 12:3), and several minor figures. The full form Yeho'ash and shortened Yo'ash alternate freely across all 47 occurrences, with the Chronicler and the author of Kings sometimes using both within the same narrative block.
+
+### H3603 / Sense 106036 (47 occ, sense 1 of 3)
+**Label:** talent (unit of weight)
+**Lemma gloss:** Something round: a talent (unit of weight, ~30 kg); a round district or plain, especially the Jordan Valley; a round loaf of bread.
+**Description:** A unit of weight and monetary value, approximately 30-34 kg, used for measuring gold, silver, bronze, and other precious materials.
+**Enriched:** A talent, the largest standard unit of weight in the biblical system, approximately 30-34 kilograms. Used extensively in accounts of temple construction (Exod 25:39; 38:24-27), royal tribute, and commercial transactions. Spanish 'talento,' French 'talent,' and German 'Talent' all borrow the same Greco-Latin loanword that itself derives from this Semitic weight standard. The dual form (two talents) and plural (talents of gold/silver) are common in Kings and Chronicles.
+
+### H3615 / Sense 106245 (47 occ, sense 2 of 11)
+**Label:** consume, destroy (Piel)
+**Lemma gloss:** to complete, finish, bring to an end; consume, destroy; fail, be exhausted; fulfill a purpose or decree
+**Description:** To bring people or things to utter destruction; annihilative consumption, often of God's wrath against enemies (Arabic afnā/yufnī, Korean 멸하다/멸망시키다, Swahili -angamiza/-teketeza).
+**Enriched:** An intensified Piel usage where completion becomes total annihilation — God threatening to consume Israel in the wilderness (Exod 32), famine consuming a land (Gen 41). The multilingual evidence shows this isn't merely ending but obliterating: Arabic afnā 'to destroy utterly', Korean 멸하다 'to exterminate', Swahili -angamiza 'to annihilate'. The crossover from 'finish' to 'finish off' reflects the verb's capacity for totality.
+
+### H3707 / Sense 107127 (47 occ, sense 1 of 3)
+**Label:** provoke to anger (causative)
+**Lemma gloss:** To provoke to anger or be vexed; causatively to incite wrath (especially divine), or intransitively to experience anger or indignation oneself.
+**Description:** Hifil (and theological Piel) causative: to provoke someone — typically God — to anger through sin, idolatry, or disobedience; also God provoking a nation to jealous anger (Arabic أَغَاظَ Form IV causative; Korean 노하게 하다/진노케 하다 'cause to be angry'; Swahili -kasirisha causative of -kasirika).
+**Enriched:** The dominant causative use (Hifil and theological Piel): provoking someone — overwhelmingly God — to anger through idolatry, sin, or rebellion. Spanish 'provocar a ira' and Arabic أَغَاظَ both capture the causative force. This is the language of covenant lawsuit: 'they provoked me to anger with their idols' (Deut 32:16, 21). Nearly every occurrence in Kings uses this sense to explain why judgment fell on Israel.
+
+### H4058 / Sense 109759 (47 occ, sense 1 of 3)
+**Label:** to measure
+**Lemma gloss:** To measure dimensions or quantity; passively, to be measured; reflexively, to stretch oneself upon
+**Description:** To determine the dimensions, extent, or quantity of something by using a standard unit; active measuring in Qal and Piel stems across all persons and conjugations.
+**Enriched:** The active Qal and Piel sense of measuring, encompassing 47 of 51 occurrences. Ezekiel's temple vision (chs. 40-47) dominates with the repeated formula 'and he measured,' but the verb also appears in Ruth 3:15 (Boaz measuring barley), Exodus 16:18 (measuring manna), and Numbers 35:5 (measuring Levitical pasturelands). The Spanish 'midio' and French 'il mesura' consistently render the straightforward act of determining dimensions.
+
+### H4376 / Sense 111455 (47 occ, sense 1 of 4)
+**Label:** Sell (Qal active)
+**Lemma gloss:** To sell (goods, property, or persons); in Nifal, to be sold; in Hitpael, to sell oneself into servitude or evil.
+**Description:** Active transactional selling in the Qal stem, covering the sale of property, goods, and persons (including into slavery), as well as the metaphorical divine 'selling' of Israel into the hand of enemies; encompasses all finite verb forms (perfect, imperfect, imperative, infinitive, cohortative) across all persons and numbers.
+**Enriched:** Active Qal selling: the straightforward transfer of goods, property, or persons for payment. Esau sells his birthright (Gen 25:33), Joseph's brothers sell him (Gen 37:27–28), and land transactions appear throughout Leviticus 25. Also includes the powerful theological metaphor where God 'sells' Israel to enemies (Judg 2:14; Ps 44:12). French vendre and Spanish vender consistently mark this active commercial sense.
+
+### H4592 / Sense 112939 (47 occ, sense 1 of 7)
+**Label:** a little, small quantity
+**Lemma gloss:** A little, few, small amount; almost, nearly; soon, in a moment; gradually, little by little
+**Description:** Basic sense of smallness in quantity or degree, used adjectivally or adverbially to indicate a small amount of something.
+**Enriched:** The basic quantitative sense: 'a little' of something, a small amount. Gen 18:4 ('let a little water be brought') and Gen 24:17 ('give me a little water to drink') are paradigmatic. Spanish poco, French peu, and German wenig converge on this core meaning. The word functions as a substantive governing a partitive construction, indicating a small portion of a larger whole.
+
+### H5288 / Sense 118220 (47 occ, sense 3 of 4)
+**Label:** Boy, child, infant
+**Lemma gloss:** A boy, youth, or young man; also a personal servant or attendant regardless of age; occasionally in temporal expressions meaning 'from youth.'
+**Description:** A young child or infant, emphasizing tender age rather than social role; used of baby Moses in the basket, the child Samuel, Ishmael as a boy, and newborns or small children generally (Arabic صَبِيٌّ, Korean 아이/어린이, Swahili mtoto, Hindi बच्चा/बालक, Spanish niño).
+**Enriched:** A young child, boy, or infant (47x), emphasizing tender age. Used of baby Moses at three months (Exod 2:6), the child Samuel, the boy Ishmael (Gen 21:12-19), and newborns (1 Sam 4:21). Arabic صَبِيٌّ ('small child'), Korean 아이, and Spanish niño all select dedicated child vocabulary, confirming semantic distance from sense 1. Judges 13:5-12 uses it repeatedly for the Nazirite child to be born to Manoah's wife.
+
+### H6310 / Sense 127069 (47 occ, sense 2 of 9)
+**Label:** edge of sword
+**Lemma gloss:** mouth, edge, opening, command; from the physical organ to its extensions (sword edge, well opening, proportional measure)
+**Description:** The cutting edge or blade of a weapon, especially in the idiom 'by the mouth/edge of the sword' (lefi cherev); Arabic hadd, Korean kalnal, Swahili makali, Hindi dhaar.
+**Enriched:** The 'edge of the sword' (lefi cherev) occurs 47 times, a stock phrase for violent death. Multilingual evidence shows distinct lexemes: Arabic hadd (sharp edge), Korean kalnal (blade), Swahili makali (sharpness), Hindi dhaar (cutting edge), confirming this as a stable metaphorical extension from mouth to weapon's edge.
+
+### H6311 / Sense 127198 (47 occ, sense 1 of 2)
+**Label:** here
+**Lemma gloss:** Here; from here — a deictic adverb of spatial reference indicating present location or point of departure.
+**Description:** here, and here (47 occurrences across 2 original clusters)
+**Enriched:** Deictic adverb indicating present location: 'here, in this place.' Used when a speaker draws attention to the immediate spot, as when Abraham commands his servants to stay 'here' (Gen 22:5) or Joseph identifies himself to his brothers 'here' in Egypt (Gen 45:12). Spanish 'aquí' and French 'ici' consistently render this locative sense across all 47 occurrences.
+
+### H6965b / Sense 131719 (47 occ, sense 3 of 12)
+**Label:** Hifil: to raise up a person
+**Lemma gloss:** to rise, arise, stand up; to stand firm, endure, remain valid; causative: to raise up (a person, leader), to establish (covenant, kingdom), to erect (structure), to fulfill (word, oath)
+**Description:** The causative sense of raising up a person — a deliverer, prophet, king, shepherd, or enemy — bringing them onto the stage of history; glossed as 'raise up' (Spanish levantar, Arabic aqama, Korean ileukhida).
+**Enriched:** Hifil causative: to raise up a person—deliverer, prophet, king, or enemy. Genesis 38:8 commands raising up seed for one's brother (levirate duty). Judges cycles through the LORD raising up deliverers. Amos 6:14 warns God will raise up a nation against Israel. Spanish 'levantar,' Arabic 'aqama,' and Swahili 'kuinua' all track the causative morphology: bringing someone onto the stage of history.
+
+### H7167 / Sense 133475 (47 occ, sense 1 of 5)
+**Label:** tear, rend (garments)
+**Lemma gloss:** To tear or rend, especially garments in grief or anger; also to be torn (Nifal) or to cut open, split apart.
+**Description:** The primary active Qal sense of tearing or rending, typically garments as a sign of grief, mourning, or anger, across all grammatical inflections.
+**Enriched:** The primary active sense: to tear or rend, overwhelmingly of garments as an expression of grief, mourning, anger, or religious horror — 47 of 63 occurrences. This is the great biblical gesture of lament: Jacob tears his garment at the news of Joseph (Gen 37:29, 34), Joshua and Caleb tear theirs at Israel's rebellion (Num 14:6), David tears his at Saul's death (2 Sam 1:11), and Josiah tears his at hearing the forgotten Torah (2 Kgs 22:11). The idiom qara begadav ('he tore his garments') is nearly formulaic. Spanish rasgar, French déchirer, and German zerreissen all select dedicated fabric-tearing vocabulary. The verb also extends to tearing kingdoms (1 Kgs 11:11-12) and curtains (Eccl 3:7), where the metaphorical force derives from the garment-rending prototype.
+
+### H7354 / Sense 135489 (47 occ, sense 1 of 1)
+**Label:** Rachel (proper name)
+**Lemma gloss:** Rachel — the beloved wife of Jacob, daughter of Laban, mother of Joseph and Benjamin
+**Description:** The personal name Rachel, the younger daughter of Laban and beloved wife of Jacob, mother of Joseph and Benjamin. All 47 occurrences refer to the same individual across narrative, genealogical, and prophetic contexts (Genesis 29–35, Ruth 4:11, Jeremiah 31:15). The three clusters differ only in prefixed particles: bare name, conjunctive waw (and-Rachel), and comparative kaph (like-Rachel). Multilingual transliterations confirm a unified referent: Arabic رَاحِيلُ (Rāḥīlu), Spanish Rajel/Raquel, Hindi राहेल (Rāhel), Korean 라헬 (Rahel), Swahili Raheli. Jeremiah 31:15 extends her name metaphorically to represent mourning for exiled Israel, but the referent remains the matriarch Rachel.
+**Enriched:** The proper name Rachel (rakhel, 'ewe'), designating exclusively the younger daughter of Laban, second wife of Jacob, and mother of Joseph and Benjamin. Her 47 occurrences concentrate in the patriarchal narratives of Genesis 29-35 (the well encounter, the wedding deception, the barrenness and birth stories, the theft of the teraphim, and her death near Ephrath). Two prophetic and poetic uses extend her significance beyond the narrative: Jeremiah's image of Rachel weeping at Ramah for the exiled tribes (Jer 31:15) and the blessing in Ruth 4:11 that invokes Rachel alongside Leah as builders of Israel.
+
+### H7891 / Sense 140007 (47 occ, sense 1 of 3)
+**Label:** singer, temple musician
+**Lemma gloss:** To sing; also as a participle: a singer or temple musician, especially the Levitical choristers of Chronicles-Ezra-Nehemiah.
+**Description:** Substantivized participle (both Qal and Piel, masculine and feminine) designating a person whose role is singing, especially the Levitical temple singers in Chronicles, Ezra, and Nehemiah, including prepositional phrases referring to them.
+**Enriched:** About 47 occurrences use the participle substantively to designate a singer or temple musician—a person whose defined role is singing, particularly within the Levitical worship system. Spanish 'los cantores,' German 'Sänger,' and French 'chanter' (used nominally) all reflect this. The feminine form שָׁרוֹת appears in 2 Sam 19:35 for singing women. Chronicles, Ezra, and Nehemiah concentrate this usage heavily, listing the singers alongside priests and gatekeepers as a distinct temple guild (1 Chr 6:33; 9:33; Neh 7:1).
+
+### H7925 / Sense 140471 (47 occ, sense 1 of 3)
+**Label:** rise early, get up early
+**Lemma gloss:** To rise early, get up at dawn (Hifil); used adverbially for persistent, earnest action; as participle, 'early riser.'
+**Description:** To rise or get up early in the morning, used of individuals or groups physically arising at dawn to undertake an action; the core Hifil sense of שׁכם covering all finite verb forms (consecutive imperfect, perfect, imperfect, imperative, cohortative) across all persons and numbers.
+**Enriched:** The core Hifil finite verb: to rise early in the morning, to get up at dawn for action. The 47 occurrences span patriarchal narratives (Gen 19:27, 20:8, 21:14, 22:3), conquest accounts (Josh 3:1, 6:12), and everyday situations (Judg 19:9, 1 Sam 15:12). Spanish madrugo ('he rose early'), French il se leva tot, and Korean ilchig ireonada all render this concrete, physical rising at dawn. The verb regularly chains with another action verb — 'rose early and built an altar,' 'rose early and went' — emphasizing the initiative taken at first light.
+
+### G0455 / Sense 62463 (46 occ, sense 1 of 3)
+**Label:** to open (transitive)
+**Lemma gloss:** To open or be opened; of doors, eyes, mouths, seals, and heavens — in active, passive, and stative uses.
+**Description:** To open something such as a door, gate, book, seal, mouth, or eyes — the active transitive use where an agent performs the opening.
+**Enriched:** The active, transitive use: an agent opens something — a door, gate, mouth, book, seal, or eyes. In Matt 2:11, the magi open their treasures; in Matt 5:2, Jesus opens his mouth to teach; in Matt 13:35, Scripture is fulfilled through parables that 'open' hidden things. Spanish 'abrió' and German 'öffnet' both clearly mark the transitive agency. This is the most frequent use, appearing across narrative, discourse, and apocalyptic genres.
+
+### G0863 / Sense 63748 (46 occ, sense 1 of 8)
+**Label:** leave, abandon, depart from
+**Lemma gloss:** To send away, release; hence to leave, abandon; to permit, allow; to forgive, pardon; to neglect; to yield up
+**Description:** To physically leave a place or person behind, abandon, or forsake; Arabic consistently uses taraka (تَرَكَ), Korean uses beorida/tteonada (버리다/떠나다), Swahili uses -acha, Hindi uses chhodna (छोड़ना). Covers all tenses and persons of the active 'leave/depart' meaning.
+**Enriched:** Physical leaving or abandoning — departing from a place, forsaking a person, or leaving something behind. Arabic taraka, Korean 버리다/떠나다, and Swahili -acha all render this concretely. Jesus' disciples leave their nets (Matt 4:20), fever leaves Peter's mother-in-law (Matt 8:15), and a man leaves father and mother (Matt 19:5).
+
+### G3761 / Sense 73520 (46 occ, sense 2 of 2)
+**Label:** not even (emphatic adverb)
+**Lemma gloss:** Negative conjunction 'nor, neither' or emphatic adverb 'not even,' extending or intensifying a negation.
+**Description:** Adverbial emphatic negation meaning 'not even', intensifying the negation to indicate that even the least expected item is excluded.
+**Enriched:** Emphatic adverbial negation meaning 'not even,' intensifying the denial to stress that even the least expected case is included in the exclusion. Spanish distinguishes this with 'tampoco' and 'ni aun' where the conjunctive sense uses simple 'ni,' confirming the heightened force. Prominent in Matt 6:29 ('not even Solomon') and Matt 27:14 (Jesus did not answer 'not even one word').
+
+### G4717 / Sense 76675 (46 occ, sense 1 of 1)
+**Label:** crucify, fasten to a cross
+**Lemma gloss:** crucify — to execute by fastening to a cross; figuratively, to put to death the power of sin
+**Description:** To execute by nailing or binding to a cross or stake, used both of the literal act of crucifixion and of figurative identification with Christ's death.
+**Enriched:** To execute by nailing or binding to a cross, and by extension, to destroy the power of something through identification with that death. Used literally of the crucifixion of Jesus across all four Passion narratives (Matt 27:22-38; Mark 15:13-27; Luke 23:21-33; John 19:6-23) and in the early kerygma proclaiming 'the crucified Christ' (Acts 2:36; 1 Cor 1:23; 2:2). Paul extends the verb figuratively to the believer's decisive break with the old self — 'those who belong to Christ Jesus have crucified the flesh' (Gal 5:24) — and to the cosmic rupture between the apostle and the world through the cross (Gal 6:14). All 46 occurrences serve this unified field of literal execution and its theological appropriation.
+
+### G4991 / Sense 77340 (46 occ, sense 1 of 1)
+**Label:** of salvation
+**Lemma gloss:** salvation, deliverance — rescue from danger or sin, the comprehensive saving act of God
+**Description:** of salvation, salvation (46 occurrences across 2 original clusters)
+**Enriched:** Deliverance, preservation, and salvation in the fullest sense — encompassing past rescue (the accomplished work of Christ), present experience (the ongoing life of faith), and future consummation (the eschatological hope). Zechariah sings of a 'horn of salvation' raised in the house of David (Luke 1:69, 71), Paul identifies the gospel as 'the power of God for salvation' (Rom 1:16), and the author of Hebrews calls it 'so great a salvation' first announced by the Lord (Heb 2:3). The genitive construction ('of salvation') predominates, qualifying nouns like 'day,' 'helmet,' 'hope,' and 'message.' All 46 occurrences participate in this single, richly layered semantic — physical deliverance, spiritual rescue from sin, and the final redemption of all things.
+
+### H0623 / Sense 83549 (46 occ, sense 1 of 1)
+**Label:** Asaph (proper name)
+**Lemma gloss:** Asaph — 'gatherer'; a Levitical musician of David's court, ancestor of a temple singing guild
+**Description:** The proper name Asaph (אָסָף, 'gatherer'), referring primarily to: (1) the Levitical musician appointed by David, ancestor of a major guild of temple singers and credited with multiple psalms (1 Chr 6:39, 15:17, 16:5–7; 2 Chr 5:12, 29:30; Ps 50, 73–83 superscriptions), (2) the keeper of the king's forest under Artaxerxes (Neh 2:8), and (3) a Levitical ancestor (1 Chr 26:1). The three clusters represent the bare name and conjunction-prefixed forms (31x), preposition-prefixed לְאָסָף 'of Asaph' used in psalm superscriptions (12x), and another prepositional usage 'to/for Asaph' (3x). All are the same referential name: spa Asaf, hin आसाप, arb آسَافَ, kor 아삽, swa Asafu.
+**Enriched:** The proper name Asaph (asaf, 'gatherer'), referring primarily to the Levitical musician whom David appointed as chief singer before the ark (1 Chr 6:39; 16:5-7), credited with prophetic gifting (2 Chr 29:30) and the composition of Psalms 50 and 73-83. His descendants — the 'sons of Asaph' — formed a hereditary guild of temple singers active from the first temple through the post-exilic restoration (Ezra 2:41; Neh 7:44; 12:35-46). Secondary bearers of the name include the father of Joah the recorder under Hezekiah (2 Kgs 18:18, 37; Isa 36:3, 22) and a keeper of the royal forest under Artaxerxes (Neh 2:8). All 46 occurrences refer to one of these individuals or to the Asaphite guild.
+
+### H0738b / Sense 84175 (46 occ, sense 1 of 1)
+**Label:** lion
+**Lemma gloss:** lion — the Asiatic lion as predator, royal symbol, and metaphor for power, courage, and divine judgment
+**Description:** A masculine noun (אַרְיֵה) denoting a lion, one of several Hebrew words for lion (cf. כְּפִיר 'young lion,' לָבִיא 'lioness,' שַׁחַל 'fierce lion'). Used both literally of the animal (Judg 14:5–8, 1 Sam 17:34–36, 1 Kgs 13:24–28, 2 Kgs 17:25–26, Dan 6) and in simile/metaphor for strength, ferocity, or predatory danger (Gen 49:9, Num 24:9, Ps 7:3, 10:9, 17:12, 22:14, Prov 22:13, 26:13, Isa 31:4, Hos 5:14, Amos 3:8). The three clusters represent: the noun with various prefixes—bare, with article, conjunction (35x); with comparative preposition כְּ 'like a lion' (10x); and a ketiv/qere variant (1x). All are the same lexeme. Multilingual: spa león, hin सिंह, arb أَسَد, kor 사자, swa simba.
+**Enriched:** The Asiatic lion as both a real animal encountered in the biblical landscape and a pervasive metaphor for strength, royalty, and divine power. Used literally of lions in narrative encounters (Judg 14:5-8 Samson; 1 Kgs 13:24-28 the disobedient prophet; 2 Sam 23:20 Benaiah's exploit). Used figuratively in tribal blessings to symbolize warrior prowess (Gen 49:9 'Judah is a lion's whelp'; Deut 33:22 Dan), in prophetic speech to represent invading enemies (Jer 4:7; 5:6) or God's own terrible judgment (Lam 3:10; Hos 11:10), and in wisdom literature to illustrate the futility of death (Eccl 9:4 'a living dog is better than a dead lion'). All 46 occurrences share the single referent of the lion, with context determining the literal or figurative register.
+
+### H1350a / Sense 88820 (46 occ, sense 1 of 6)
+**Label:** Redeem, buy back
+**Lemma gloss:** To redeem or act as kinsman; as participle: kinsman-redeemer, divine Redeemer, or avenger of blood — covering legal, theological, and judicial redemption.
+**Description:** Qal active finite forms: to redeem, ransom, or buy back property, persons from slavery, or pledged items; the core transactional sense of ga'al covering all Qal perfects, imperfects, imperatives, infinitives, and cohortatives where a kinsman or God acts as subject to recover what was lost or enslaved — includes both human legal redemption (Leviticus 25, Ruth 4) and divine redemptive acts (Exodus 6:6, Isaiah 43:1, 44:22, 48:20, Hosea 13:14).
+**Enriched:** Qal active finite forms: to redeem, ransom, or buy back — the core transactional sense covering the redemption of property, persons from servitude, or pledged items. Leviticus 25 lays out the legal framework: a kinsman 'redeems' a field that has been sold (Lev 25:25), or a person sold into bondage (Lev 25:48). God 'redeems' Israel from Egypt (Exod 6:6; 15:13). Spanish 'redimir,' French 'racheter,' German 'erlösen,' and Arabic فَدَى all converge on this buy-back meaning. With 46 occurrences, this is the most frequent sense.
+
+### H2007 / Sense 93424 (46 occ, sense 1 of 2)
+**Label:** they, these (fem. pl. pronoun)
+**Lemma gloss:** They/these (feminine plural pronoun); rarely 'hither, behold' as a presentative adverb
+**Description:** Third person feminine plural pronoun or demonstrative, referring anaphorically ('they') or deictically ('these/those') to feminine plural entities, with or without prefixed prepositions (ב ,ל ,מ ,כ) and conjunctive waw.
+**Enriched:** Third-person feminine plural pronoun or demonstrative, referring to previously mentioned feminine entities as 'they' or 'these/those.' With 46 of 48 occurrences, this is the standard grammatical function. It governs feminine plurals across narrative and legal material: the 'daughters of men' (Gen 6:2), the seven lean cows (Gen 41:19,26), Rachel's and Leah's children (Gen 33:6). Translations map directly to feminine pronoun forms: 'ellas' (spa), 'elles' (fra), 'sie' (deu).
+
+### H2388 / Sense 96003 (46 occ, sense 2 of 18)
+**Label:** Hifil: seize, grasp, take hold of
+**Lemma gloss:** to be strong, firm; to seize, grasp; to strengthen, encourage; to repair buildings; to harden (heart); to prevail
+**Description:** Hifil sense of physically seizing, grasping, or taking hold of a person or object. Arabic consistently uses أَمْسَكَ (amsaka, Form IV, 'to seize, grasp, hold') — a completely different root (m-s-k) from any of the strength vocabulary (q-w-y, sh-d-d). Korean uses 붙잡다 (butjapda, 'to grab, seize') and 잡다 (japda, 'to catch'). Swahili uses -shika ('grab, seize') and -kamata ('catch, arrest'). This is arguably the most semantically distinct sense of חזק, involving physical prehension rather than strength.
+**Enriched:** The Hifil 'seize, grasp' (46x) marks deliberate physical taking hold. The angels 'seized Lot by the hand' (Gen 19:16), the man 'seized her' (Deut 22:25). Arabic shifts to أَمْسَكَ (amsaka, Form IV, a completely different root m-s-k meaning 'grasp, hold'), Korean 붙잡다 (seize), Spanish asir/agarrar (grasp). This causative Hifil transforms inner firmness into outward grip.
+
+### H2671 / Sense 98535 (46 occ, sense 1 of 1)
+**Label:** arrow, projectile weapon
+**Lemma gloss:** arrow — a pointed missile shot from a bow, used of weapons of war and as a figure for divine judgment
+**Description:** A pointed missile shot from a bow, used literally of arrows as weapons of war, hunting, or divine judgment, encompassing all grammatical inflections (singular, plural, construct, with pronominal suffixes and prepositional prefixes).
+**Enriched:** A pointed projectile shot from a bow, encompassing literal arrows used in warfare and hunting, prophetic sign-acts involving arrows, and the vivid metaphor of God's arrows as instruments of judgment and affliction. Literal uses include Jonathan's signal to David (1 Sam 20:20-36), battlefield references (Gen 49:23 archers attack Joseph; Num 24:8 Israel's arrows), and Elisha's sign-act with Joash (2 Kgs 13:15-18). Metaphorical uses portray divine wrath ('I will make my arrows drunk with blood,' Deut 32:42; 'the arrows of the Almighty are in me,' Job 6:4) and providential protection (Ps 91:5 'the arrow that flies by day'). All 46 occurrences, across singular, plural, construct, and suffixed forms, share this unified referent of the arrow as weapon and symbol.
+
+### H3254 / Sense 102667 (46 occ, sense 3 of 7)
+**Label:** and added, and continued (Hifil consecutive)
+**Lemma gloss:** To add, increase; to continue, do again; in Nifal: be added, join oneself to
+**Description:** Waw-consecutive Hifil imperfect narrating sequential addition or continuation; covers both Arabic وعاد (wa-ʿada, 'and resumed') and وأضاف/وزاد (wa-aḍafa/wa-zada, 'and added') in narrative past contexts.
+**Enriched:** The waw-consecutive Hifil imperfect (wayyosef) narrates sequential addition or continuation in past tense: 'and she again bore' (Gen 4:2), 'and he waited yet another seven days' (Gen 8:10). This narrative form dominates in Genesis and the Former Prophets. Spanish Y-añadió and Y-continuó split what Hebrew unifies, revealing the dual semantic load this single conjugation carries.
+
+### H4437 / Sense 112170 (46 occ, sense 1 of 3)
+**Label:** kingdom, realm
+**Lemma gloss:** Kingdom, reign, or royal dominion; the Aramaic term for sovereign rule, territorial realm, and kingly authority in Daniel and Ezra.
+**Description:** A kingdom or realm as a political entity or domain ruled by a king, including possessive forms (my kingdom, your kingdom, his kingdom).
+**Enriched:** A kingdom or realm as a political and territorial entity ruled by a sovereign. This dominant sense (46 occurrences) covers Nebuchadnezzar's Babylonian empire (Dan 2:37), the successive world-kingdoms of Daniel's statue vision (Dan 2:39–40), and God's eternal kingdom (Dan 2:44, 7:27). Spanish el reino, French le royaume, and German das Koenigreich all treat it as a concrete domain. The emphatic state malkuta in Aramaic often carries the definite article sense, 'the kingdom.'
+
+### H4713 / Sense 113812 (46 occ, sense 1 of 3)
+**Label:** Egypt (country/land)
+**Lemma gloss:** Egyptian; a gentilic adjective/noun for persons from Egypt (masculine or feminine) and for the land of Egypt itself.
+**Description:** The land and nation of Egypt (Mitsrayim), used as a geographic and political proper noun referring to the country itself.
+**Enriched:** The land and nation of Egypt (Mitsrayim) used as a geographic and political proper noun. In Gen 41:55-56, 'all the land of Egypt' (kol-erets mitsrayim) suffers famine; in Gen 45:2, Joseph's weeping is heard in 'the house of Pharaoh' in Egypt. Spanish 'Mitsráyim' sometimes preserves the Hebrew name directly, while French 'Égypte' and German 'Ägypten' use the Greco-Latin derivation. This geographic sense accounts for the majority of occurrences and frames Egypt as both setting and symbol throughout the biblical narrative.
+
+### H5146 / Sense 116976 (46 occ, sense 1 of 1)
+**Label:** Noah (person name)
+**Lemma gloss:** Noah — the righteous patriarch who built the ark and survived the great flood, ancestor of all post-flood humanity
+**Description:** Proper noun denoting Noah (Noakh), the righteous patriarch who built the ark and survived the great flood (Gen 5:29-32, 6:8-9:29), ancestor of all post-flood humanity. Also referenced in prophetic and wisdom literature (Isa 54:9, Ezek 14:14,20, 1 Chr 1:4). The three clusters differ only in grammatical form: standalone 'Noah' (41x), conjunctive 'and-Noah' (3x), and variant spelling 'Noach' (2x). Uniformly transliterated across languages: Spanish Noe/Noaj, Hindi नूह, Arabic نُوح, Korean 노아, Swahili Nuhu. All clusters represent the same person with no semantic distinction.
+**Enriched:** The proper name Noah (noakh, related to nuakh 'rest'), referring exclusively to the antediluvian patriarch who found favor with God, built the ark, and became the sole survivor through whom humanity was preserved (Gen 6:8-9:29). His genealogical placement as tenth from Adam (Gen 5:29-32) and father of Shem, Ham, and Japheth makes him the bridge between the primeval and the post-flood epochs. Outside Genesis, he serves as a byword for exceptional righteousness (Ezek 14:14, 20 alongside Daniel and Job) and his flood as a type of God's irrevocable covenant mercy (Isa 54:9). All 46 occurrences refer to this single individual, with 1 Chronicles 1:4 placing him in the Chronicler's genealogical framework.
+
+### H5271a / Sense 118126 (46 occ, sense 1 of 1)
+**Label:** youth, youthful period
+**Lemma gloss:** youth, early life — the period of immaturity or formative years, used of persons and nations alike
+**Description:** The period of being young; youth or early life, used of both persons and nations, always denoting the time of immaturity or early development.
+**Enriched:** The period of being young, encompassing childhood through early adulthood, denoting immaturity, formative development, or the earliest stage of one's life. Frequently governs the prepositional phrase min-ne'urim ('from youth onward'), which serves as a biographical formula — whether confessing lifelong sin (Gen 8:21; 1 Sam 12:2), professing lifelong devotion (Ps 71:5, 17), or characterizing a nation's earliest history (Jer 2:2; Ezek 23:3). The figurative extension to nations treats their founding era as a 'youth' subject to the same moral evaluation as a human life. All 46 occurrences share this single temporal-biographical sense.
+
+### H6918 / Sense 131056 (46 occ, sense 2 of 5)
+**Label:** the Holy One (divine title)
+**Lemma gloss:** Sacred, holy; set apart for God; as a divine title, 'the Holy One'; in the plural, holy ones or saints.
+**Description:** Substantivized singular adjective used as a divine title, especially in the construct phrase 'the Holy One of Israel' (qedosh Yisra'el), referring to God as the uniquely set-apart one.
+**Enriched:** Substantivized divine title: 'the Holy One' (haqqadosh or qedosh) used as a name for God, most characteristically in the construct phrase qedosh Yisra'el, 'the Holy One of Israel.' Found 46 times, this is Isaiah's signature divine epithet (Isa 1:4; 5:19, 24; 10:17, 20; 12:6; 29:19; 30:11-12, 15; 31:1; 37:23; 41:14, 16, 20; 43:3, 14-15; 45:11; 47:4; 48:17; 49:7; 54:5; 55:5; 60:9, 14), but it also appears in Psalms (71:22; 78:41; 89:18) and in Habakkuk's 'my Holy One' (Hab 1:12). Arabic al-Quddus is one of Allah's 99 names, and the Quranic usage confirms the substantival-title force. Korean 거룩하신 분 ('the Holy Being') and Swahili Mtakatifu both lexicalize the shift from adjective to proper title.
+
+### H7381 / Sense 135775 (46 occ, sense 1 of 3)
+**Label:** pleasing sacrificial aroma
+**Lemma gloss:** Scent, odor, or aroma; most often the pleasing sacrificial fragrance ascending to God, but also natural fragrances and figurative reputation.
+**Description:** The pleasant smell of a burnt offering or sacrifice presented to the LORD, typically in the phrase reyach nichoach (soothing aroma), used in cultic/ritual contexts throughout the Torah and prophets.
+**Enriched:** The technical cultic phrase reyach nichoach ('soothing aroma') describes the ascending fragrance of a burnt offering that pleases God. Appearing 46 times, it dominates Leviticus, Numbers, and Exodus 29. Spanish olor de and German Geruch von consistently mark it as a specialized ritual term. The phrase first appears at Noah's altar (Gen 8:21) and becomes the standard vocabulary for acceptable sacrifice throughout the Priestly source and Ezekiel.
+
+### H7665 / Sense 138083 (46 occ, sense 2 of 8)
+**Label:** Niphal: be broken
+**Lemma gloss:** To break, shatter, smash; in Niphal: be broken; figuratively of hearts, spirits, power, and covenant-breaking
+**Description:** Passive or middle-voice sense of being broken, becoming shattered, or suffering destruction, corresponding to Arabic inkasara/tahattama and Swahili passive -vunjwa/-vunjika.
+**Enriched:** Niphal passive: being broken or becoming shattered, whether physically (a broken vessel, Lev 6:28) or metaphorically (a broken nation). Arabic inkasara (Form VII passive) and Swahili -vunjwa/-vunjika precisely mirror the passive morphology. Eli's neck is broken in his fatal fall (1 Sam 4:18); ships are broken by east winds (Ezek 27:26).
+
+### H8040 / Sense 141567 (46 occ, sense 1 of 3)
+**Label:** left side, direction
+**Lemma gloss:** The left side or left hand; occasionally denoting the north (when facing east)
+**Description:** The left side or leftward direction, often used with prepositions to indicate spatial orientation relative to a person or object (e.g., 'on the left', 'to the left', 'from the left').
+**Enriched:** The primary spatial sense covering 46 of 54 occurrences, indicating the left side or leftward direction. It regularly appears in merismus with yamin ('right') in phrases like 'to the right or to the left' (Gen 13:9; Num 20:17; 2 Sam 2:19). Prepositional constructions with min, 'al, and le specify location or movement relative to the left side of landmarks, armies, or persons.
+
+### H8334 / Sense 144152 (46 occ, sense 2 of 2)
+**Label:** minister, servant, attendant
+**Lemma gloss:** To minister or serve in an honored capacity; as a substantive, a minister, attendant, or servant of high standing.
+**Description:** A substantivized participle denoting one who serves or ministers, used as a noun for a royal attendant, priestly minister, or personal servant.
+**Enriched:** A substantivized participle functioning as a noun: 'minister,' 'attendant,' 'servant' — one who occupies a recognized role of honored service. Joshua is called meshareth Mosheh, 'minister of Moses' (Exod 24:13; Josh 1:1), and Samuel serves as attendant before the Lord (1 Sam 2:11). French serviteur and German Diener both render this as a title of dignified office rather than menial labor.
+
+### H???? / Sense 145995 (46 occ, sense 20 of 94)
+**Label:** (none)
+**Lemma gloss:** (none)
+**Description:** (none)
+**Enriched:** (none)
+
+### G2347 / Sense 69257 (45 occ, sense 1 of 1)
+**Label:** tribulation, affliction, distress
+**Lemma gloss:** tribulation, affliction, distress — pressure from outward hardship, persecution, or eschatological trial
+**Description:** Pressure, affliction, or distress caused by outward circumstances such as persecution, suffering, or hardship, used both of specific trials and of eschatological tribulation.
+**Enriched:** Pressure, distress, or affliction caused by external circumstances such as persecution, societal opposition, or eschatological catastrophe. The root metaphor is physical crushing or pressing, extended to psychological and spiritual anguish. Covers present-day trials endured by believers (Rom 5:3; 2 Cor 1:4; 1 Thess 3:3), specific persecutions (Acts 11:19; 2 Thess 1:4), and the climactic eschatological tribulation prophesied in the Olivet Discourse (Matt 24:21, 29) and Revelation (Rev 7:14). Paul develops a distinctive theology in which thlipsis produces character and hope (Rom 5:3-5). All 45 occurrences share this core semantic of externally imposed suffering.
+
+### G2556 / Sense 69893 (45 occ, sense 1 of 3)
+**Label:** evil, wickedness (abstract/moral)
+**Lemma gloss:** Bad, evil, wicked; of moral corruption, harmful effects, or persons who practice wickedness
+**Description:** The substantivized neuter or abstract concept of evil and moral wickedness, used as a noun or adjective describing what is morally bad or contrary to good.
+**Enriched:** The substantivized or abstract concept of evil and moral wickedness — the dominant NT usage. Jesus names evil thoughts (Mark 7:21) as springing from the heart, and Paul warns that bad company corrupts good morals (1 Cor 15:33). Across languages this sense consistently takes moral-weight terms: Spanish 'mal,' French 'mauvais,' German 'böse.'
+
