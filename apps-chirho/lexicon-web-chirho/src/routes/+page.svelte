@@ -42,58 +42,70 @@
 	</div>
 </div>
 
+{#snippet lemmaCardChirho(lChirho: Record<string, any>)}
+	{@const idChirho = lChirho.lemma_id_chirho as string}
+	{@const terseChirho = (lChirho.gloss_terse_chirho || lChirho.gloss_clean_chirho || '') as string}
+	{@const enrichedChirho = (data.enrichedMapChirho[idChirho] || '') as string}
+	{@const isExpandedChirho = expandedChirho[idChirho] ?? false}
+	<div style="background: var(--surface-chirho); border: 1px solid var(--border-chirho); border-radius: 10px; padding: 16px 18px; display: flex; flex-direction: column; gap: 6px;">
+		<div style="display: flex; justify-content: space-between; align-items: baseline;">
+			<a href="/lemma-chirho/{idChirho}" style="font-weight: bold; font-size: 17px; text-decoration: none; color: var(--accent-chirho); font-family: 'Source Sans 3', sans-serif;">
+				{idChirho}
+			</a>
+			<div style="display: flex; gap: 10px; align-items: baseline;">
+				{#if lChirho.pos_chirho}
+					<span style="color: var(--muted-chirho); font-style: italic; font-size: 12px;">{lChirho.pos_chirho}</span>
+				{/if}
+				<span style="font-size: 12px; color: var(--muted-chirho);">{(lChirho.occurrence_count_chirho as number).toLocaleString()}&times;</span>
+				<span style="font-size: 12px; background: var(--accent-chirho); color: #fff; padding: 1px 7px; border-radius: 10px;">{lChirho.sense_count_chirho} senses</span>
+			</div>
+		</div>
+
+		<div style="font-style: italic; font-size: 14px; color: var(--fg-chirho); line-height: 1.4;">
+			{#if isExpandedChirho}
+				{terseChirho}
+			{:else}
+				{truncateChirho(terseChirho, 160)}
+			{/if}
+		</div>
+
+		{#if enrichedChirho}
+			<div style="font-size: 13px; color: var(--muted-chirho); line-height: 1.45; margin-top: 2px;">
+				{#if isExpandedChirho}
+					{enrichedChirho}
+				{:else}
+					{truncateChirho(enrichedChirho, 140)}
+				{/if}
+			</div>
+		{/if}
+
+		<div style="display: flex; justify-content: space-between; align-items: center; margin-top: 4px;">
+			<button
+				onclick={() => toggleChirho(idChirho)}
+				style="background: none; border: none; color: var(--accent-chirho); cursor: pointer; font-size: 13px; padding: 0; font-family: 'Source Sans 3', sans-serif;"
+			>
+				{isExpandedChirho ? 'Show less' : 'Read more'}
+			</button>
+			<a href="/lemma-chirho/{idChirho}" style="font-size: 13px; color: var(--accent-chirho); text-decoration: none;">
+				View entry &rarr;
+			</a>
+		</div>
+	</div>
+{/snippet}
+
+<h2 style="margin-top: 32px;">Some Random Lemmas</h2>
+
+<div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 16px; margin-top: 12px;">
+	{#each data.randomLemmasChirho as lChirho}
+		{@render lemmaCardChirho(lChirho as Record<string, any>)}
+	{/each}
+</div>
+
 <h2 style="margin-top: 32px;">Most Frequent Lemmas</h2>
 
 <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 16px; margin-top: 12px;">
 	{#each data.topLemmasChirho as lChirho}
-		{@const idChirho = (lChirho as Record<string, any>).lemma_id_chirho as string}
-		{@const terseChirho = ((lChirho as Record<string, any>).gloss_terse_chirho || (lChirho as Record<string, any>).gloss_clean_chirho || '') as string}
-		{@const enrichedChirho = (data.enrichedMapChirho[idChirho] || '') as string}
-		{@const isExpandedChirho = expandedChirho[idChirho] ?? false}
-		<div style="background: var(--surface-chirho); border: 1px solid var(--border-chirho); border-radius: 10px; padding: 16px 18px; display: flex; flex-direction: column; gap: 6px;">
-			<div style="display: flex; justify-content: space-between; align-items: baseline;">
-				<a href="/lemma-chirho/{idChirho}" style="font-weight: bold; font-size: 17px; text-decoration: none; color: var(--accent-chirho); font-family: 'Source Sans 3', sans-serif;">
-					{idChirho}
-				</a>
-				<div style="display: flex; gap: 10px; align-items: baseline;">
-					{#if (lChirho as Record<string, any>).pos_chirho}
-						<span style="color: var(--muted-chirho); font-style: italic; font-size: 12px;">{(lChirho as Record<string, any>).pos_chirho}</span>
-					{/if}
-					<span style="font-size: 12px; color: var(--muted-chirho);">{((lChirho as Record<string, any>).occurrence_count_chirho as number).toLocaleString()}&times;</span>
-					<span style="font-size: 12px; background: var(--accent-chirho); color: #fff; padding: 1px 7px; border-radius: 10px;">{(lChirho as Record<string, any>).sense_count_chirho} senses</span>
-				</div>
-			</div>
-
-			<div style="font-style: italic; font-size: 14px; color: var(--fg-chirho); line-height: 1.4;">
-				{#if isExpandedChirho}
-					{terseChirho}
-				{:else}
-					{truncateChirho(terseChirho, 160)}
-				{/if}
-			</div>
-
-			{#if enrichedChirho}
-				<div style="font-size: 13px; color: var(--muted-chirho); line-height: 1.45; margin-top: 2px;">
-					{#if isExpandedChirho}
-						{enrichedChirho}
-					{:else}
-						{truncateChirho(enrichedChirho, 140)}
-					{/if}
-				</div>
-			{/if}
-
-			<div style="display: flex; justify-content: space-between; align-items: center; margin-top: 4px;">
-				<button
-					onclick={() => toggleChirho(idChirho)}
-					style="background: none; border: none; color: var(--accent-chirho); cursor: pointer; font-size: 13px; padding: 0; font-family: 'Source Sans 3', sans-serif;"
-				>
-					{isExpandedChirho ? 'Show less' : 'Read more'}
-				</button>
-				<a href="/lemma-chirho/{idChirho}" style="font-size: 13px; color: var(--accent-chirho); text-decoration: none;">
-					View entry &rarr;
-				</a>
-			</div>
-		</div>
+		{@render lemmaCardChirho(lChirho as Record<string, any>)}
 	{/each}
 </div>
 

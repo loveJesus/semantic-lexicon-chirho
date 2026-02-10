@@ -2,6 +2,23 @@
      that whoever believes in him should not perish but have eternal life. -->
 <script lang="ts">
 	let { data } = $props();
+	let expandedChirho = $state<Record<string, boolean>>({});
+
+	function toggleChirho(idChirho: string) {
+		expandedChirho = { ...expandedChirho, [idChirho]: !expandedChirho[idChirho] };
+	}
+
+	function truncateChirho(textChirho: string, maxChirho: number): string {
+		if (textChirho.length <= maxChirho) return textChirho;
+		return textChirho.slice(0, maxChirho).trimEnd() + '...';
+	}
+
+	function langLabelChirho(codeChirho: string): string {
+		if (codeChirho === 'heb') return 'Hebrew';
+		if (codeChirho === 'arc') return 'Aramaic';
+		if (codeChirho === 'grc') return 'Greek';
+		return codeChirho;
+	}
 </script>
 
 <style>
@@ -39,6 +56,38 @@
 	.search-btn-chirho:hover {
 		opacity: 0.9;
 	}
+	.result-card-chirho {
+		background: var(--surface-chirho);
+		border: 1px solid var(--border-chirho);
+		border-radius: 10px;
+		padding: 0;
+		overflow: hidden;
+	}
+	.result-header-chirho {
+		display: flex;
+		align-items: baseline;
+		gap: 12px;
+		flex-wrap: wrap;
+		padding: 12px 18px;
+		border-bottom: 1px solid var(--border-chirho);
+		background: color-mix(in srgb, var(--surface-chirho), var(--border-chirho) 15%);
+	}
+	.result-body-chirho {
+		padding: 12px 18px;
+	}
+	.meta-tag-chirho {
+		font-size: 12px;
+		color: var(--muted-chirho);
+		font-family: 'Source Sans 3', sans-serif;
+	}
+	.sense-badge-chirho {
+		font-size: 12px;
+		background: var(--accent-chirho);
+		color: #fff;
+		padding: 1px 7px;
+		border-radius: 10px;
+		font-family: 'Source Sans 3', sans-serif;
+	}
 </style>
 
 <h1>Search Lexicon</h1>
@@ -73,30 +122,49 @@
 	{/if}
 </p>
 
-<table>
-	<thead>
-		<tr style="border-bottom: 2px solid var(--border-chirho);">
-			<th style="text-align: left; padding: 8px 6px;">ID</th>
-			<th style="text-align: left; padding: 8px 6px;">Gloss</th>
-			<th style="text-align: left; padding: 8px 6px;">Lang</th>
-			<th style="text-align: left; padding: 8px 6px;">POS</th>
-			<th style="text-align: right; padding: 8px 6px;">Senses</th>
-			<th style="text-align: right; padding: 8px 6px;">Occurrences</th>
-		</tr>
-	</thead>
-	<tbody>
-		{#each data.resultsChirho as rChirho}
-			<tr style="border-bottom: 1px solid var(--border-chirho);">
-				<td style="padding: 8px 6px;"><a href="/lemma-chirho/{rChirho.lemma_id_chirho}">{rChirho.lemma_id_chirho}</a></td>
-				<td style="padding: 8px 6px;">{rChirho.gloss_clean_chirho || '—'}</td>
-				<td style="padding: 8px 6px; color: var(--muted-chirho); font-size: 13px;">{rChirho.language_chirho}</td>
-				<td style="padding: 8px 6px; color: var(--muted-chirho); font-style: italic;">{rChirho.pos_chirho || '—'}</td>
-				<td style="text-align: right; padding: 8px 6px;">{rChirho.sense_count_chirho}</td>
-				<td style="text-align: right; padding: 8px 6px;">{rChirho.occurrence_count_chirho}</td>
-			</tr>
-		{/each}
-	</tbody>
-</table>
+<div style="display: flex; flex-direction: column; gap: 12px;">
+	{#each data.resultsChirho as rChirho}
+		{@const idChirho = (rChirho as Record<string, any>).lemma_id_chirho as string}
+		{@const terseChirho = ((rChirho as Record<string, any>).gloss_terse_chirho || '') as string}
+		{@const cleanChirho = ((rChirho as Record<string, any>).gloss_clean_chirho || '') as string}
+		{@const glossChirho = terseChirho || cleanChirho}
+		{@const isExpandedChirho = expandedChirho[idChirho] ?? false}
+		<div class="result-card-chirho">
+			<div class="result-header-chirho">
+				<a href="/lemma-chirho/{idChirho}" style="font-weight: bold; font-size: 17px; text-decoration: none; color: var(--accent-chirho); font-family: 'Source Sans 3', sans-serif;">
+					{idChirho}
+				</a>
+				<span class="meta-tag-chirho">{langLabelChirho((rChirho as Record<string, any>).language_chirho as string)}</span>
+				{#if (rChirho as Record<string, any>).pos_chirho}
+					<span class="meta-tag-chirho" style="font-style: italic;">{(rChirho as Record<string, any>).pos_chirho}</span>
+				{/if}
+				<span class="meta-tag-chirho">{((rChirho as Record<string, any>).occurrence_count_chirho as number).toLocaleString()} occurrences</span>
+				<span class="sense-badge-chirho">{(rChirho as Record<string, any>).sense_count_chirho} senses</span>
+			</div>
+			<div class="result-body-chirho">
+				{#if glossChirho}
+					<div style="font-size: 14px; color: var(--fg-chirho); line-height: 1.5;">
+						{#if isExpandedChirho}
+							{glossChirho}
+						{:else}
+							{truncateChirho(glossChirho, 240)}
+						{/if}
+					</div>
+					{#if glossChirho.length > 240}
+						<button
+							onclick={() => toggleChirho(idChirho)}
+							style="background: none; border: none; color: var(--accent-chirho); cursor: pointer; font-size: 13px; padding: 0; margin-top: 6px; font-family: 'Source Sans 3', sans-serif;"
+						>
+							{isExpandedChirho ? 'Show less' : 'Read more'}
+						</button>
+					{/if}
+				{:else}
+					<span style="color: var(--muted-chirho); font-size: 14px;">&mdash;</span>
+				{/if}
+			</div>
+		</div>
+	{/each}
+</div>
 
 {#if data.totalPagesChirho > 1}
 	<div style="display: flex; gap: 8px; justify-content: center; margin-top: 24px; font-family: 'Source Sans 3', sans-serif; font-size: 13px;">

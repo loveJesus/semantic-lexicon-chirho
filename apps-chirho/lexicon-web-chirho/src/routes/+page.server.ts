@@ -13,7 +13,17 @@ export const load: PageServerLoad = async ({ platform }) => {
     dbChirho.prepare("SELECT COUNT(*) as c FROM sense_reference_chirho"),
   ]);
 
-  const recentChirho = await dbChirho
+  const randomChirho = await dbChirho
+    .prepare(
+      `SELECT lemma_id_chirho, gloss_clean_chirho, gloss_terse_chirho, pos_chirho, sense_count_chirho, occurrence_count_chirho
+       FROM lemma_entry_chirho
+       WHERE gloss_terse_chirho IS NOT NULL AND length(gloss_terse_chirho) > 0
+       ORDER BY RANDOM()
+       LIMIT 9`
+    )
+    .all();
+
+  const topChirho = await dbChirho
     .prepare(
       `SELECT lemma_id_chirho, gloss_clean_chirho, gloss_terse_chirho, pos_chirho, sense_count_chirho, occurrence_count_chirho
        FROM lemma_entry_chirho
@@ -22,12 +32,14 @@ export const load: PageServerLoad = async ({ platform }) => {
     )
     .all();
 
-  // Get first enriched sense for each top lemma
-  const lemmaIdsChirho = (recentChirho.results as Record<string, any>[]).map(
-    (rChirho) => rChirho.lemma_id_chirho as string
-  );
+  // Get first enriched sense for each lemma (random + top combined)
+  const allLemmaIdsChirho = [
+    ...(randomChirho.results as Record<string, any>[]).map((rChirho) => rChirho.lemma_id_chirho as string),
+    ...(topChirho.results as Record<string, any>[]).map((rChirho) => rChirho.lemma_id_chirho as string),
+  ];
+  const uniqueIdsChirho = [...new Set(allLemmaIdsChirho)];
   const enrichedMapChirho: Record<string, string> = {};
-  for (const idChirho of lemmaIdsChirho) {
+  for (const idChirho of uniqueIdsChirho) {
     const senseChirho = await dbChirho
       .prepare(
         `SELECT enriched_chirho FROM sense_entry_chirho
@@ -50,7 +62,8 @@ export const load: PageServerLoad = async ({ platform }) => {
       glossesChirho: statsChirho[2].results[0].c as number,
       refsChirho: statsChirho[3].results[0].c as number,
     },
-    topLemmasChirho: recentChirho.results,
+    randomLemmasChirho: randomChirho.results,
+    topLemmasChirho: topChirho.results,
     enrichedMapChirho,
   };
 };

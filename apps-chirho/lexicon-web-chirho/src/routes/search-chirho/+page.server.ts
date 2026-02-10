@@ -40,7 +40,7 @@ export const load: PageServerLoad = async ({ platform, url }) => {
 
   const resultsChirho = await dbChirho
     .prepare(
-      `SELECT lemma_id_chirho, language_chirho, gloss_clean_chirho, pos_chirho, sense_count_chirho, occurrence_count_chirho
+      `SELECT lemma_id_chirho, language_chirho, gloss_clean_chirho, gloss_terse_chirho, pos_chirho, sense_count_chirho, occurrence_count_chirho
        FROM lemma_entry_chirho ${whereChirho}
        ORDER BY occurrence_count_chirho DESC
        LIMIT ?${paramsChirho.length + 1} OFFSET ?${paramsChirho.length + 2}`
