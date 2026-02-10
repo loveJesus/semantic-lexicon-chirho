@@ -198,7 +198,8 @@ Rules:
     const fullPromptChirho = `${instructionsChirho}\n\n${groupChirho.map((pChirho) => pChirho.promptBlockChirho).join("\n\n")}`;
 
     const batchNumChirho = gChirho + BATCH_START_CHIRHO;
-    const filePathChirho = `${OUTDIR_CHIRHO}/batch-${String(batchNumChirho).padStart(4, "0")}-${lemmaListChirho}.txt`;
+    const suffixChirho = lemmaListChirho.length <= 180 ? `-${lemmaListChirho}` : "";
+    const filePathChirho = `${OUTDIR_CHIRHO}/batch-${String(batchNumChirho).padStart(4, "0")}${suffixChirho}.txt`;
     writeFileSync(filePathChirho, fullPromptChirho);
   }
 
