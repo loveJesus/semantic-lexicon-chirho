@@ -30,7 +30,12 @@
   },
 )
 
-#set text(font: "New Computer Modern", size: 8.5pt, lang: "en")
+#set text(
+  font: ("New Computer Modern", "Noto Sans Syriac", "Apple SD Gothic Neo"),
+  size: 8.5pt,
+  lang: "en",
+  fallback: true,
+)
 #set par(justify: true, leading: 0.5em)
 
 // --- Title page ---

@@ -6,6 +6,7 @@ declare global {
 		interface Platform {
 			env: {
 				DB_CHIRHO: D1Database;
+				ASSETS_R2_CHIRHO: R2Bucket;
 			};
 		}
 	}
