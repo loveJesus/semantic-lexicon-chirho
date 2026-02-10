@@ -2,6 +2,16 @@
      that whoever believes in him should not perish but have eternal life. -->
 <script lang="ts">
 	let { data } = $props();
+	let expandedChirho = $state<Record<string, boolean>>({});
+
+	function toggleChirho(idChirho: string) {
+		expandedChirho = { ...expandedChirho, [idChirho]: !expandedChirho[idChirho] };
+	}
+
+	function truncateChirho(textChirho: string, maxChirho: number): string {
+		if (textChirho.length <= maxChirho) return textChirho;
+		return textChirho.slice(0, maxChirho).trimEnd() + '...';
+	}
 </script>
 
 <h1>Biblical Lexicon</h1>
@@ -33,29 +43,60 @@
 </div>
 
 <h2 style="margin-top: 32px;">Most Frequent Lemmas</h2>
-<table>
-	<thead>
-		<tr style="border-bottom: 2px solid var(--border-chirho);">
-			<th style="text-align: left; padding: 8px 6px;">ID</th>
-			<th style="text-align: left; padding: 8px 6px;">Gloss</th>
-			<th style="text-align: left; padding: 8px 6px;">POS</th>
-			<th style="text-align: right; padding: 8px 6px;">Senses</th>
-			<th style="text-align: right; padding: 8px 6px;">Occurrences</th>
-		</tr>
-	</thead>
-	<tbody>
-		{#each data.topLemmasChirho as lChirho}
-			<tr style="border-bottom: 1px solid var(--border-chirho);">
-				<td style="padding: 8px 6px;"><a href="/lemma-chirho/{lChirho.lemma_id_chirho}">{lChirho.lemma_id_chirho}</a></td>
-				<td style="padding: 8px 6px;">{lChirho.gloss_clean_chirho || '—'}</td>
-				<td style="padding: 8px 6px; color: var(--muted-chirho); font-style: italic;">{lChirho.pos_chirho || '—'}</td>
-				<td style="text-align: right; padding: 8px 6px;">{lChirho.sense_count_chirho}</td>
-				<td style="text-align: right; padding: 8px 6px;">{lChirho.occurrence_count_chirho}</td>
-			</tr>
-		{/each}
-	</tbody>
-</table>
 
-<div style="margin-top: 24px;">
-	<a href="/search-chirho" style="display: inline-block; background: var(--accent-chirho); color: #fff; padding: 10px 20px; border-radius: 6px; font-weight: bold; font-family: 'Source Sans 3', sans-serif; font-size: 14px;">Search Lexicon</a>
+<div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 16px; margin-top: 12px;">
+	{#each data.topLemmasChirho as lChirho}
+		{@const idChirho = (lChirho as Record<string, any>).lemma_id_chirho as string}
+		{@const terseChirho = ((lChirho as Record<string, any>).gloss_terse_chirho || (lChirho as Record<string, any>).gloss_clean_chirho || '') as string}
+		{@const enrichedChirho = (data.enrichedMapChirho[idChirho] || '') as string}
+		{@const isExpandedChirho = expandedChirho[idChirho] ?? false}
+		<div style="background: var(--surface-chirho); border: 1px solid var(--border-chirho); border-radius: 10px; padding: 16px 18px; display: flex; flex-direction: column; gap: 6px;">
+			<div style="display: flex; justify-content: space-between; align-items: baseline;">
+				<a href="/lemma-chirho/{idChirho}" style="font-weight: bold; font-size: 17px; text-decoration: none; color: var(--accent-chirho); font-family: 'Source Sans 3', sans-serif;">
+					{idChirho}
+				</a>
+				<div style="display: flex; gap: 10px; align-items: baseline;">
+					{#if (lChirho as Record<string, any>).pos_chirho}
+						<span style="color: var(--muted-chirho); font-style: italic; font-size: 12px;">{(lChirho as Record<string, any>).pos_chirho}</span>
+					{/if}
+					<span style="font-size: 12px; color: var(--muted-chirho);">{((lChirho as Record<string, any>).occurrence_count_chirho as number).toLocaleString()}&times;</span>
+					<span style="font-size: 12px; background: var(--accent-chirho); color: #fff; padding: 1px 7px; border-radius: 10px;">{(lChirho as Record<string, any>).sense_count_chirho} senses</span>
+				</div>
+			</div>
+
+			<div style="font-style: italic; font-size: 14px; color: var(--fg-chirho); line-height: 1.4;">
+				{#if isExpandedChirho}
+					{terseChirho}
+				{:else}
+					{truncateChirho(terseChirho, 160)}
+				{/if}
+			</div>
+
+			{#if enrichedChirho}
+				<div style="font-size: 13px; color: var(--muted-chirho); line-height: 1.45; margin-top: 2px;">
+					{#if isExpandedChirho}
+						{enrichedChirho}
+					{:else}
+						{truncateChirho(enrichedChirho, 140)}
+					{/if}
+				</div>
+			{/if}
+
+			<div style="display: flex; justify-content: space-between; align-items: center; margin-top: 4px;">
+				<button
+					onclick={() => toggleChirho(idChirho)}
+					style="background: none; border: none; color: var(--accent-chirho); cursor: pointer; font-size: 13px; padding: 0; font-family: 'Source Sans 3', sans-serif;"
+				>
+					{isExpandedChirho ? 'Show less' : 'Read more'}
+				</button>
+				<a href="/lemma-chirho/{idChirho}" style="font-size: 13px; color: var(--accent-chirho); text-decoration: none;">
+					View entry &rarr;
+				</a>
+			</div>
+		</div>
+	{/each}
+</div>
+
+<div style="margin-top: 20px; text-align: center;">
+	<a href="/search-chirho" style="display: inline-block; background: var(--accent-chirho); color: #fff; padding: 12px 28px; border-radius: 8px; font-weight: bold; font-family: 'Source Sans 3', sans-serif; font-size: 15px; text-decoration: none;">View Full Lexicon</a>
 </div>
