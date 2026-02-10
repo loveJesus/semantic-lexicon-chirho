@@ -40,6 +40,7 @@ interface SenseJsonChirho {
 
 interface LemmaJsonChirho {
   lemmaIdChirho: string;
+  headwordChirho: string;
   languageChirho: string;
   posChirho: string;
   glossTerseChirho: string;
@@ -48,6 +49,18 @@ interface LemmaJsonChirho {
   senseCountChirho: number;
   occurrenceCountChirho: number;
   sensesChirho: SenseJsonChirho[];
+}
+
+function extractHeadwordChirho(glossHtmlChirho: string, langChirho: string): string {
+  // Hebrew/Aramaic: first <span class="lexicon-hebrew" dir="rtl">WORD</span>
+  // Greek: first <span class="lexicon-greek">WORD</span>
+  const classChirho = langChirho === "heb" ? "lexicon-hebrew" : "lexicon-greek";
+  const reChirho = new RegExp(`<span[^>]*class="${classChirho}"[^>]*>([^<]+)</span>`);
+  const matchChirho = glossHtmlChirho.match(reChirho);
+  if (matchChirho) {
+    return matchChirho[1].trim();
+  }
+  return "";
 }
 
 function formatRefChirho(
@@ -66,7 +79,7 @@ function extractDataChirho(): LemmaJsonChirho[] {
   const lemmasChirho = dbChirho
     .query(
       `SELECT lemma_id_chirho, language_chirho, pos_chirho,
-              gloss_terse_chirho, gloss_readable_chirho, gloss_clean_chirho,
+              gloss_raw_chirho, gloss_terse_chirho, gloss_readable_chirho, gloss_clean_chirho,
               sense_count_chirho, occurrence_count_chirho
        FROM lemma_entry_chirho
        ORDER BY lemma_id_chirho`,
@@ -83,6 +96,7 @@ function extractDataChirho(): LemmaJsonChirho[] {
             community_chirho, ln_domain_chirho, macro32_chirho
      FROM sense_entry_chirho
      WHERE lemma_id_chirho = ?1
+       AND (label_chirho IS NULL OR label_chirho NOT LIKE '[split]%')
      ORDER BY ordinal_chirho`,
   );
 
@@ -172,9 +186,14 @@ function extractDataChirho(): LemmaJsonChirho[] {
       });
     }
 
+    const langChirho = lemmaChirho.language_chirho as string;
+    const glossRawChirho = (lemmaChirho.gloss_raw_chirho as string) || "";
+    const headwordChirho = extractHeadwordChirho(glossRawChirho, langChirho);
+
     resultChirho.push({
       lemmaIdChirho: lemmaIdChirho,
-      languageChirho: lemmaChirho.language_chirho as string,
+      headwordChirho,
+      languageChirho: langChirho,
       posChirho: (lemmaChirho.pos_chirho as string) || "",
       glossTerseChirho: (lemmaChirho.gloss_terse_chirho as string) || "",
       glossReadableChirho:

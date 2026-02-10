@@ -133,9 +133,17 @@
   // Place metadata marker for running headers
   [#metadata(l-chirho.lemmaIdChirho) <lemma-marker-chirho>]
 
-  // Headword line: lemma ID bold + POS + occurrence count
+  // Headword line: original script + lemma ID + POS + occurrence count
   {
-    text(weight: "bold", size: 9.5pt)[#l-chirho.lemmaIdChirho]
+    if l-chirho.headwordChirho != "" {
+      if l-chirho.languageChirho == "heb" {
+        text(weight: "bold", size: 12pt, dir: rtl)[#l-chirho.headwordChirho]
+      } else {
+        text(weight: "bold", size: 11pt)[#l-chirho.headwordChirho]
+      }
+      [ ]
+    }
+    text(size: 8pt, fill: rgb("#555"))[#l-chirho.lemmaIdChirho]
     [ ]
     if l-chirho.posChirho != "" {
       text(size: 7pt, style: "italic", fill: rgb("#555"))[#l-chirho.posChirho]

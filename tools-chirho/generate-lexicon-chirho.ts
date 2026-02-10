@@ -38,6 +38,8 @@ function createLexiconDbChirho(): Database {
     language_chirho TEXT NOT NULL DEFAULT 'heb',
     gloss_raw_chirho TEXT,
     gloss_clean_chirho TEXT,
+    gloss_terse_chirho TEXT,
+    gloss_readable_chirho TEXT,
     pos_chirho TEXT,
     sense_count_chirho INTEGER DEFAULT 0,
     occurrence_count_chirho INTEGER DEFAULT 0,
@@ -55,6 +57,7 @@ function createLexiconDbChirho(): Database {
     community_chirho TEXT,
     ln_domain_chirho TEXT,
     macro32_chirho TEXT,
+    enriched_chirho TEXT,
     FOREIGN KEY (lemma_id_chirho) REFERENCES lemma_entry_chirho(lemma_id_chirho)
   )`);
 
@@ -147,15 +150,31 @@ function generateLexiconChirho(): void {
 
   // Prepared statements for lexicon DB
   const insertLemmaChirho = lexDbChirho.prepare(`
-    INSERT OR REPLACE INTO lemma_entry_chirho
+    INSERT INTO lemma_entry_chirho
     (lemma_id_chirho, language_chirho, gloss_raw_chirho, gloss_clean_chirho, pos_chirho, sense_count_chirho, occurrence_count_chirho)
     VALUES (?1, ?2, ?3, ?4, ?5, ?6, ?7)
+    ON CONFLICT(lemma_id_chirho) DO UPDATE SET
+      language_chirho = excluded.language_chirho,
+      gloss_raw_chirho = excluded.gloss_raw_chirho,
+      gloss_clean_chirho = excluded.gloss_clean_chirho,
+      pos_chirho = excluded.pos_chirho,
+      sense_count_chirho = excluded.sense_count_chirho,
+      occurrence_count_chirho = excluded.occurrence_count_chirho
   `);
 
   const insertSenseChirho = lexDbChirho.prepare(`
-    INSERT OR REPLACE INTO sense_entry_chirho
+    INSERT INTO sense_entry_chirho
     (sense_id_chirho, lemma_id_chirho, ordinal_chirho, label_chirho, description_chirho, occurrence_count_chirho, community_chirho, ln_domain_chirho, macro32_chirho)
     VALUES (?1, ?2, ?3, ?4, ?5, ?6, ?7, ?8, ?9)
+    ON CONFLICT(sense_id_chirho) DO UPDATE SET
+      lemma_id_chirho = excluded.lemma_id_chirho,
+      ordinal_chirho = excluded.ordinal_chirho,
+      label_chirho = excluded.label_chirho,
+      description_chirho = excluded.description_chirho,
+      occurrence_count_chirho = excluded.occurrence_count_chirho,
+      community_chirho = excluded.community_chirho,
+      ln_domain_chirho = excluded.ln_domain_chirho,
+      macro32_chirho = excluded.macro32_chirho
   `);
 
   const insertGlossChirho = lexDbChirho.prepare(`
