@@ -1,0 +1,113 @@
+You are a biblical lexicographer composing glosses for a digital lexicon.
+For each lemma below, compose a JSON object. Separate objects with "---".
+
+Format for each:
+{
+  "lemma_id": "...",
+  "gloss_terse": "under 120 chars, concise definition covering the word's semantic range",
+  "gloss_readable": "2-5 sentences, 40-120 words. Don't start with 'This word'. Warm study-Bible footnote tone. Engaging, not dry.",
+  "senses": {
+    "1": "enriched 20-60 word description. Reference multilingual evidence when illuminating. Don't repeat the label verbatim.",
+    "2": "..."
+  }
+}
+
+Rules:
+- No markdown fences, just JSON objects separated by ---
+- Reference multilingual evidence naturally when it reveals something
+- gloss_readable should feel like a good study Bible footnote: helpful, clear, occasionally surprising
+- Each sense enrichment: how does the evidence support this sense? Mention 1-2 key passages when helpful.
+
+=== G1266 ===
+Language: Greek, POS: V-AIM-3P, Occurrences: 12, Senses: 2
+
+BDB excerpt: διαμερ-ίζω, divide, Refs 5th c.BC+; distribute, τὸ ἐπιβάλλον Refs 4th c.BC+:—passive, to be cut up, Refs 5th c.BC+ __II part, separate, Refs 4th c.BC+:—middle, divide or part among themselves, NT+5th c.AD+:—passive, to be set at variance, NT
+Senses:
+  Sense 1: "distribute or apportion among" (8x)
+    Desc: To divide and distribute something among a group of recipients, such as dividing garments, sharing possessions, or apportioning resources.
+    Domain: QUANTITY_NUMBER > Whole, Unite, Part, Divide
+    Glosses: eng: They-divided, being-distributed, divide | spa: Repartieron, reparten, repartid | fra: diviser | deu: verteilen, verteilt
+    Refs: Matt 27:35, Matt 27:35, Mark 15:24, Luke 22:17, Luke 23:34
+  Sense 2: "be divided against" (4x)
+    Desc: To be split or divided internally, describing a state of division or disunity, as when a kingdom or household is divided against itself.
+    Domain: QUANTITY_NUMBER > Whole, Unite, Part, Divide
+    Glosses: eng: divided, having-been-divided, was-divided | spa: dividido, divididos, estarán-divididos | fra: diviser | deu: verteilt
+    Refs: Luke 11:17, Luke 11:18, Luke 12:52, Luke 12:53
+
+=== G2206 ===
+Language: Greek, POS: V-PIA-3S, Occurrences: 12, Senses: 2
+
+BDB excerpt: ζηλ-όω, (ζῆλος): __I with accusative person, vie with, emulate, τινα Refs 5th c.BC+:—passive, Refs 5th c.BC+; in bad sense, to be jealous of, envy, ζηλοῖ δέ τε γείτονα γείτων LXX+8th c.BC+: absolutely, to be jealous, NTthrough jealousy, NT __b with accusative person, to be jealous for, LXX __2 esteem or pronounce happy, admire, praise, τινά τινος one for a thing, Refs 5th c.BC+: more rarely, ζ. τινά τι Refs 5th c.BC+; ζ. σε ὁθούνεκα.. Refs 4th c.BC+; τὴν πόλιν, ὅτι.. Refs 5th c.BC+; πολλά σε ζηλῶ βίου, μάλιστα δ᾽ εἰ.. Refs 5th c.BC+: with participle, σε ζ. θανόντα πρὶν κακῶν ἰδεῖν βάθος Refs 5
+Senses:
+  Sense 1: "be zealous, earnestly desire" (7x)
+    Desc: To eagerly pursue or be ardently devoted to something, a positive striving (1 Cor 12:31 earnestly desire greater gifts; 1 Cor 14:1, 14:39 earnestly desire spiritual gifts; Gal 4:17-18 be zealous; Rev ...
+    Domain: EMOTION_ATTITUDE > Attitudes and Emotions
+    Glosses: eng: be-zealous, earnestly-desire, they-are-zealous | spa: anhelad, celéis, os-celan | fra: eifern, être-zélé | deu: eifern
+    Refs: 1Cor 12:31, 1Cor 14:1, 1Cor 14:39, Gal 4:17, Gal 4:17
+  Sense 2: "be jealous, envy" (5x)
+    Desc: To feel jealousy or envy toward another person, a negative emotional response (Acts 7:9 patriarchs jealous of Joseph; Acts 17:5 Jews jealous; 1 Cor 13:4 love does not envy; Jas 4:2 you covet/are jealo...
+    Domain: EMOTION_ATTITUDE > Attitudes and Emotions
+    Glosses: eng: I-am-jealous, being-jealous, having-been-jealous | spa: Teniendo-celos, celo, teniendo-celos | fra: eifern, être-zélé | deu: eifern, Ζηλώσαντες, ζηλώσαντες
+    Refs: Acts 7:9, Acts 17:5, 1Cor 13:4, 2Cor 11:2, Jas 4:2
+
+=== G2563 ===
+Language: Greek, POS: N-AMS, Occurrences: 12, Senses: 2
+
+BDB excerpt: κάλᾰμος [κᾰ], ὁ, reed, used for thatching or wattling, Refs 5th c.BC+; various species, κ. εὐώδης, ἀρωματικός, sweet flag, Acorus Calamus, Refs 4th c.BC+; κ. αὐλητικός pole-reed, Arundo Donax, Refs 4th c.BC+; κ. εἰλετίας marram, Ammophila arundinacea, Refs; κ. ἐπίγειος bush-grass, Calamagrostis epigeios, Refs; κ. Ἰνδικός bamboo, Bambusa arundinacea, Refs 5th c.BC+; κ. Ἰνδικὸς ὁ ἄρρην male bamboo, Dendrocalamus strictus, Refs 4th c.BC+; κ. κύπριος, ={δόναξ}, Refs 3rd c.BC+; κ. πλόκιμος spear-grass, Phragmites communis, Refs 4th c.BC+; κ. Χαρακίας, Arundo Donax, Refs __II applied to various uses
+Senses:
+  Sense 1: "reed (plant or staff)" (11x)
+    Desc: A reed -- the tall marsh grass (Arundo donax or Phragmites) or a rod/staff made from it, used literally of the plant or figuratively of fragility and as a makeshift instrument. In Matt 11:7 and Luke 7...
+    Domain: PLANTS_AGRICULTURE > Plants
+    Glosses: eng: a-reed, on-a-reed, reed | spa: caña, caña,, con-caña | fra: roseau | deu: Rohr, κάλαμον, καλάμῳ
+    Refs: Matt 11:7, Matt 12:20, Matt 27:29, Matt 27:30, Matt 27:48
+  Sense 2: "pen (writing instrument)" (1x)
+    Desc: A reed pen -- a writing instrument made from a sharpened reed, attested in 3 John 1:13 where John says 'I had many things to write to you but I do not wish to write to you with pen (kalamou) and ink.'...
+    Domain: PLANTS_AGRICULTURE > Plants
+    Glosses: eng: pen | spa: caña | fra: roseau | deu: Rohr
+    Refs: 3John 1:13
+
+=== G2618 ===
+Language: Greek, POS: V-FIA-3S, Occurrences: 12, Senses: 2
+
+BDB excerpt: κατακαίω, Attic dialect κατακάω [ᾱ], Epic dialect infinitive κατακαιέμεν Refs 8th c.BC+: future -καύσωRefs 5th c.BC+: aorist κατέκαυσα Refs 5th c.BC+; Epic dialect 3rd.pers. singular κατέκηε Refs 8th c.BC+; 1st pers. plural subjunctive κατακήομεν (variant{-κείομεν}) Refs 8th c.BC+; infinitive κατακῆαι Refs 8th c.BC+: perfect -κέκαυκαRefs 5th c.BC+:—passive, future -καυθήσομαιRefs 5th c.BC+, -καήσομαι NTaorist κατεκαύθην (the Attic dialect form) Refs 5th c.BC+; Laconian dialect infinitive -καῆμενRefs 1st c.AD+; -εκαύσθην Refs 4th c.BC+: perfect -κέκαυμαιRefs 5th c.BC+:—burn completely, in Refs 
+Senses:
+  Sense 1: "to be burned up, consumed by fire (passive)" (7x)
+    Desc: To be consumed or destroyed by fire (passive/intransitive uses indicating the subject undergoes burning).
+    Domain: NATURAL_WORLD > Physical Events and States
+    Glosses: eng: are-burned, is-burned, she-will-be-burned | spa: es-quemada, fue-quemada, será-quemada | fra: brûler, consumer | deu: verbrennen, κατακαίεται
+    Refs: Matt 13:40, 1Cor 3:15, Heb 13:11, Rev 8:7, Rev 8:7
+  Sense 2: "to burn up, consume by fire (active)" (5x)
+    Desc: To cause something to be consumed by fire, to burn completely (active/transitive uses of katakaiō with the intensifying kata- prefix).
+    Domain: NATURAL_WORLD > Physical Events and States
+    Glosses: eng: he-will-burn, they-will-burn, to-burn | spa: quemaban, quemarla, quemará | fra: brûler, consumer | deu: verbrennen, κατέκαιον, κατακαύσει
+    Refs: Matt 3:12, Matt 13:30, Luke 3:17, Acts 19:19, Rev 17:16
+
+=== G2621 ===
+Language: Greek, POS: V-PIM/P-3S, Occurrences: 12, Senses: 2
+
+BDB excerpt: κατάκειμαι, Epic dialect 3rd.pers. plural κατακείαται Refs 8th c.BC+: Ionic dialect pluperfect κατεκέατο Refs 5th c.BC+; subjunctive -κέωμαιRefs 5th c.BC+ —passive, only in present and imperfect with future middle -κείσομαι:—lie down, μῆλα τὰ δὴ κατάκειτ᾽ ἐσφαγμένα Refs 8th c.BC+; ἐπὶ πλευρὰς κ. Refs 8th c.BC+; νέκυς κ. Refs 7th c.BC+ __2 lie hid, ἐν λόχμῃ.. κατέκειτο μέγας σῦς Refs 8th c.BC+ __3 lie stored up, δοιοὶ γάρ τε πίθοι κατακείαται ἐν Διὸς οὔδει Refs 8th c.BC+ __3.b to be deposited, of deeds in a registry, Refs 3rd c.AD+ __4 lie sick, keep one's bed, NT+5th c.BC+; lie in bed, NT+5th 
+Senses:
+  Sense 1: "lie down, be bedridden" (7x)
+    Desc: To lie down physically, often of one who is sick, resting, or prostrate on a bed or mat.
+    Domain: MOVEMENT > Stances
+    Glosses: eng: he-was-lying, lying, to-be-lying | spa: acostado, estaba-acostada, estar-postrado | fra: être-couché | deu: liegen, κατέκειτο, κατακείμενον
+    Refs: Mark 1:30, Mark 2:4, Luke 5:25, John 5:3, John 5:6
+  Sense 2: "recline at table" (5x)
+    Desc: To recline at a meal table in the customary ancient dining posture, used of guests at a banquet or feast.
+    Domain: MOVEMENT > Stances
+    Glosses: eng: he-reclines, reclining, to-recline | spa: estando-reclinado, estar-reclinado, está-reclinado | fra: être-couché | deu: liegen, κατάκειται, κατακείμενοι
+    Refs: Mark 2:15, Mark 14:3, Luke 5:29, Luke 7:37, 1Cor 8:10
+
+=== G3705 ===
+Language: Greek, POS: N-DNS, Occurrences: 12, Senses: 2
+
+BDB excerpt: ὅρᾱμ-α, ατος, τό, that which is seen, visible object, sight, Refs 4th c.BC+; sight, spectacle, Refs 5th c.BC+; vision during sleep, dream, LXX+3rd c.BC+ __II device, plan, τὸ ὅ. Θάλεω (Camer. εὕρημα) Refs 4th c.BC+
+Senses:
+  Sense 1: "?" (11x)
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: a-vision, vision | spa: visión | fra: vision | deu: Erscheinung
+    Refs: Matt 17:9, Acts 9:10, Acts 9:12, Acts 10:3, Acts 10:17
+  Sense 2: "?" (1x)
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: sight | spa: visión | fra: vision | deu: Erscheinung
+    Refs: Acts 7:31

@@ -1,0 +1,145 @@
+You are a biblical lexicographer composing glosses for a digital lexicon.
+For each lemma below, compose a JSON object. Separate objects with "---".
+
+Format for each:
+{
+  "lemma_id": "...",
+  "gloss_terse": "under 120 chars, concise definition covering the word's semantic range",
+  "gloss_readable": "2-5 sentences, 40-120 words. Don't start with 'This word'. Warm study-Bible footnote tone. Engaging, not dry.",
+  "senses": {
+    "1": "enriched 20-60 word description. Reference multilingual evidence when illuminating. Don't repeat the label verbatim.",
+    "2": "..."
+  }
+}
+
+Rules:
+- No markdown fences, just JSON objects separated by ---
+- Reference multilingual evidence naturally when it reveals something
+- gloss_readable should feel like a good study Bible footnote: helpful, clear, occasionally surprising
+- Each sense enrichment: how does the evidence support this sense? Mention 1-2 key passages when helpful.
+
+=== H3334 ===
+Language: Hebrew, POS: Conj-w | V-Hifil-ConsecImperf-3mp, Occurrences: 10, Senses: 3
+
+BDB excerpt: I. צָרַר vb. bind, tie up, be restricted, narrow, scant, cramped (NH id.; Arabic صَرَّ bind, tie up; so Aramaic צְרַר, ܨܰܪ );— A. trans.: Qal Pf. 3 ms. צָרַר Ho 4:19; Pr 30:4; Imv. צוֹר Is 8:16; Inf. cstr. צְרוֹר Pr 26:8 (?); Pt. act. צֹרֵר Jb 26:8; pass. צָרוּר Ho 13:12, f. צְרוּרָה 1 S 25:29; fpl. צְרֻרֹת Ex 12:34; 2 S 20:3;—bind or tie up, of kneading-troughs Ex 12:34 (E); fig. of a life preserved by י׳, נֶפֶשׁ צְרוּרָה בִּצְרוֹר הַחַיִּים 1 S 25:29; of preserving prophetic teaching Is 8:16; of retention of guilt Ho 13:12; of י׳’s binding waters in (a garment of) cloud Pr 30:4 Jb 26:8; = sh
+Senses:
+  Sense 1: "be in distress" (6x)
+    Desc: Qal: to be distressed, troubled, or anguished, describing emotional or psychological suffering.
+    Domain: DANGER_DELIVERANCE > Trouble, Hardship, Relief
+    Glosses: eng: and-it-was-distressing, and-was-distressed, he-is-in-distress | spa: Y-hubo-angustia, tendrá-angustia, y-angostió | fra: et-cela-fut-distressing, et-fut-distressed, et-il-était-distressing | deu: [יצר], und-es-war-distressing, und-es-war-ihm-angst
+    Refs: Gen 32:7, Judg 2:15, Judg 10:9, 1Sam 30:6, 2Sam 13:2
+  Sense 2: "be narrow or constricted" (3x)
+    Desc: Qal: to be narrow, too small, or shortened, describing spatial or physical constriction.
+    Domain: DANGER_DELIVERANCE > Trouble, Hardship, Relief
+    Glosses: eng: are-shortened, will-be-hindered, you-will-be-too-narrow | spa: Se-estrechan, se-angostaran, serás-estrecha | fra: [תצרי], יצר, יצרו | deu: [יצר], [יצרו], [תצרי]
+    Refs: Job 18:7, Prov 4:12, Isa 49:19
+  Sense 3: "oppress or cause distress" (1x)
+    Desc: Hifil: to oppress or cause distress to someone, the causative form indicating the subject inflicts anguish on others.
+    Domain: DANGER_DELIVERANCE > Trouble, Hardship, Relief
+    Glosses: eng: and-they-oppressed | spa: y-los-angustiaron | fra: [ויצרו] | deu: [ויצרו]
+    Refs: Neh 9:27
+
+=== H3524 ===
+Language: Hebrew, POS: Adj-mp, Occurrences: 10, Senses: 3
+
+BDB excerpt: † כַּבִּיר adj. great, mighty, much, only poet., and only Jb Is 1:—Is 10:13 Qr (but read as Kt כְּאַבִּיר), 17:22 and 28:2 מים כבירים (usually מַיִם רַבִּים), Jb 8:2 ורוח כביר אמרי פיך a mighty wind, 15:10 כביר מאביך ימים (Ges§131, R 5 a) = aged: of God, 34:17 צַדִּיק כַּבִּיר the just mighty one, 36:5 a, v b כ׳ כֹּחַ לֵב mighty in strength of understanding; 34:24 כבירים mighty men; of quantity = much, Is 16:14 שְׁאָר מְעַט מִזְעָר לוֹא כַבִּיר, Jb 31:25 ובי כביר מצאה ידי had gotten much.
+Senses:
+  Sense 1: "mighty, powerful (of persons or God)" (6x)
+    Desc: Adjective describing personal might or power, applied to God or strong individuals. Arabic عَظيمٌ/عُظَماءَ 'great/mighty ones' and عاتِيَةٌ 'fierce/violent' reflect personal power. Spanish 'poderoso' ...
+    Domain: PROPERTIES_RELATIONS > Able, Capable
+    Glosses: eng: mighty, the-Mighty, the-mighty | spa: fuerte, muchos, poderoso | fra: [כביר], puissant | deu: [כביר], maechtig
+    Refs: Job 8:2, Job 34:17, Job 34:24, Job 36:5, Job 36:5
+  Sense 2: "great, mighty (of things, forces, quantity)" (3x)
+    Desc: Adjective describing greatness of impersonal things like waters, forces, or general magnitude. Arabic كَثِيرَةٍ 'many/abundant' and جَارِفَةٍ 'sweeping/torrential' describe powerful natural forces. Sp...
+    Domain: PROPERTIES_RELATIONS > Able, Capable
+    Glosses: eng: greater, mighty | spa: impetuosas, mayor, poderosas | fra: [כבירים], puissant | deu: [כבירים], maechtig
+    Refs: Job 15:10, Isa 17:12, Isa 28:2
+  Sense 3: "much, abundant (quantity)" (1x)
+    Desc: Adjective emphasizing sheer quantity or abundance rather than power or size. Arabic عَظيماً here functions as 'greatly/abundantly' rather than 'mighty.' Spanish 'abundante' (abundant) is the clearest ...
+    Domain: PROPERTIES_RELATIONS > Adequate, Qualified
+    Glosses: eng: much | spa: abundante | fra: puissant | deu: maechtig
+    Refs: Job 31:25
+
+=== H5753b ===
+Language: Hebrew, POS: V-Hifil-Perf-1cs, Occurrences: 10, Senses: 3
+
+BDB excerpt: † [עָוָה] vb. denom. (Gerber90) commit iniquity, do wrong (Aramaic עוי commit sin, עֲוָיָא sin, cf. LevyNHWB iii. 626);— Qal (late) Pf. 3 fs. עָֽוְתָה Est 1:16 she hath done wrong (c. עַל); 1 pl. עָוִינוּ Dn 9:5 we have committed iniquity (‖ חָטָא). Hiph. commit iniquity;—Pf. 3 ms. הֶעֱוָה 2 S 19:20; 1 s. הֶעֱוֵיתִי 24:17 (‖ חָטָא); 1 pl. הֶעֱוִינוּ 1 K 8:47 = 2 Ch 6:37, ψ 106:6 (all ‖ חָטָא); Inf. abs. הַעֲוֵה Je 9:4, cstr. sf. הַעֲוֹתוֹ 2 S 7:14.—Jb 33:27 v. עָוָה" dir="rtl" >I. עָוָה.
+Senses:
+  Sense 1: "act perversely (Hifil)" (7x)
+    Desc: To act perversely or do wrong in the Hifil stem, with a factitive/declarative nuance of deliberately twisting what is right, committing iniquity with moral culpability.
+    Domain: MORAL_QUALITY > Moral and Ethical Qualities
+    Glosses: eng: I-have-done-wrong, and-we-acted-perversely, did-wrong | spa: cometimos-iniquidad, cuando-haga-mal, hice-perversamente | fra: [העוה], [העוינו], dans-son-faisant-tort | deu: [העוה], [העוינו], ich-habe-getan-Unrecht
+    Refs: 2Sam 7:14, 2Sam 19:19, 2Sam 24:17, 1Kgs 8:47, 2Chr 6:37
+  Sense 2: "commit iniquity (Qal)" (2x)
+    Desc: To do wrong or commit iniquity in the basic active Qal stem, emphasizing the act of wrongdoing or offense against another.
+    Domain: MORAL_QUALITY > Moral and Ethical Qualities
+    Glosses: eng: and-done-iniquity, wronged | spa: ofendió, y-cometimos-iniquidad | fra: [עותה], et-pervertir | deu: [ועוינו], [עותה]
+    Refs: Esth 1:16, Dan 9:5
+  Sense 3: "be perverted (Nifal)" (1x)
+    Desc: To be perverse or crooked in the Nifal participial form, describing a state of moral distortion or deviation from what is right.
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: perverse | spa: perversa-de | fra: perverse | deu: perverse
+    Refs: 1Sam 20:30
+
+=== H6743a ===
+Language: Hebrew, POS: V-Qal-Imperf-3ms, Occurrences: 10, Senses: 3
+
+BDB excerpt: † I. [צָלַח] vb. rush;—(Thes al. cp. 𝔗 צְלַח, Syriac ܨܠܰܚ, cleave, penetrate, then advance, v. foll.);— Qal Pf. 3 fs. וְצָֽלְחָה consec. 1 S 10:6; 3 pl. וְצָֽלְחוּ 2 S 19:18; Impf. 3 ms. יִצְלַח Am 5:6 (v. infr.), 3 fs. וַתִּצְלַח Ju 14:6 +;—rush, וְצ׳ הַיַּרְדֵּן 2 S 19:18 they rushed into the Jordan (dub., v. Dr HPS), יִצ׳ כָּאֵשׁ בֵּית יוֹסֵף Am 5:6 lest he rush like fire upon the house of Joseph (or O house, etc. GASm; Now conj. יַצִּית בָּאֵשׁ); especially of sudden possession by (אֱלֹהִים) רוּחַ י׳, c. עַל pers. Ju 14:6 the Spirit … rushed upon him, so v 19; 15:14 1 S 10:6, 10; 11:6; c. 
+Senses:
+  Sense 1: "to rush upon, come mightily upon (of the Spirit)" (8x)
+    Desc: Qal verb describing the Spirit of YHWH rushing or coming mightily upon a person, empowering them for action (Judges, 1 Samuel). Multilingual glosses consistently use terms of powerful descent or arriv...
+    Domain: COMMUNICATION > Communication
+    Glosses: eng: and-rushed, and-she-rushed, and-will-rush | spa: Y-vendrá, Y-vino, Y-vino-con-poder | fra: et-elle-se-précipita, et-fera-rush, et-rushed | deu: und-rushed, und-sie-rushed, und-wird-rush
+    Refs: Judg 14:6, Judg 14:19, Judg 15:14, 1Sam 10:6, 1Sam 10:10
+  Sense 2: "to break out, blaze forth (of fire)" (1x)
+    Desc: Qal verb describing fire or wrath breaking out or blazing forth, a metaphorical extension of the 'rushing' root applied to the sudden eruption of flame. Glosses confirm a distinct semantic profile: En...
+    Domain: ECONOMICS_PROPERTY > Possess, Transfer, Exchange
+    Glosses: eng: breaks-out | spa: se-lance | fra: prospérer | deu: [יצלח]
+    Refs: Amos 5:6
+  Sense 3: "to rush through, cross swiftly" (1x)
+    Desc: Qal verb describing rapid physical movement through a space, as in soldiers rushing or crossing through territory. Glosses suggest swift traversal rather than divine descent or fiery eruption: English...
+    Domain: MOVEMENT > Linear Movement
+    Glosses: eng: and-they-rushed | spa: y-cruzaron | fra: et-ils-se-précipita | deu: und-sie-rushed
+    Refs: 2Sam 19:17
+
+=== H7600 ===
+Language: Hebrew, POS: Adj-ms, Occurrences: 10, Senses: 3
+
+BDB excerpt: † שַׁאֲנָן adj. at ease, secure (BaNB § 143 a Ges§ 84 b k);—abs. שׁ׳ Is 33:20; pl. שַׁאֲנַנִּים Am 6:1 +, שַׁאֲנַנּוֹת Is 32:9, 11, 18;— 1. at ease, secure: נָוֶה שׁ׳ Is 33:20 secure habitation (of Jerus.), cf. מְנוּחוֹת שׁ׳ 32:18 (‖ מִבְטַחִים). 2. as subst., one at ease, free from misfortune, Jb 12:5. 3. at ease, with collat. idea of careless, wanton, arrogant, Am 6:1; Is 32:9, 11; Zc 1:15 ψ 123:4. 4. as subst. abstr. = arrogance: sf. שַׁאֲנַנְךָ 2 K 19:28 (‖ הִתְרַגֶּזְךָ) = Is 37:29, but שְׁאוֹנְךָ thine uproar, BuZAW xii (1892), 36 Gr Che Marti Kit (perhaps), Bur. cf. שַׁלְאֲנָן" dir="rtl
+Senses:
+  Sense 1: "complacent, carefree, at ease (pejorative)" (5x)
+    Desc: Describes false security, carelessness, or complacency in a negative, rebuking sense, as in Isa 32:9,11 'women who are at ease' and Amos 6:1 'Woe to those who are at ease in Zion.'
+    Domain: DANGER_DELIVERANCE > Trouble, Hardship, Relief
+    Glosses: eng: at-ease, the-carefree, the-complacent-ones | spa: de-los-que-están-tranquilos, las-tranquilas, los-que-están-tranquilos | fra: insouciantes, le-insouciant, sans-souci | deu: [השאננים], [שאננות], der-carefree
+    Refs: Ps 123:4, Isa 32:9, Isa 32:11, Amos 6:1, Zech 1:15
+  Sense 2: "at ease, secure, tranquil (positive)" (3x)
+    Desc: Describes genuine peace, security, or undisturbed rest in a positive sense, as in Isa 32:18 'my people will dwell in quiet resting places' and Isa 33:20 describing Jerusalem as a 'quiet habitation.'
+    Domain: DANGER_DELIVERANCE > Trouble, Hardship, Relief
+    Glosses: eng: at-ease, habitation, quiet | spa: tranquila, tranquilo,, tranquilos | fra: insouciant, insouciantes, שאנן | deu: [שאנן], [שאננות]
+    Refs: Job 12:5, Isa 32:18, Isa 33:20
+  Sense 3: "arrogance, insolent pride" (2x)
+    Desc: Extended sense denoting aggressive self-assurance or insolent rage, as in 2 Kgs 19:28 / Isa 37:29 where God addresses Sennacherib's arrogance and tumult against him.
+    Domain: MORAL_QUALITY > Moral and Ethical Qualities
+    Glosses: eng: and-your-arrogance | spa: y-tu-arrogancia | fra: et-insouciant, et-ton-arrogance | deu: [ושאננך], und-dein-arrogance
+    Refs: 2Kgs 19:28, Isa 37:29
+
+=== H8082 ===
+Language: Hebrew, POS: Adj-ms, Occurrences: 10, Senses: 3
+
+BDB excerpt: † שָׁמֵן adj. fat, robust;—שׁ׳ m. Ju 3:29 +, f. שְׁמֵנָה Gn 49:20 +;— 1. fat, rich, of food, Gn 49:20 (poem in J), Is 30:23 (+ דָּשֵׁן), Hb 1:16 (‖ בְּרִאָה); of land, fertile Nu 13:20 (E), Ne 9:25, 35, pasturage Ez 34:14 1 Ch 4:40. (1 S 15:9 v. מִשְׁנֶה 3). 2. stout, robust, of men Ju 3:29 (‖ אִישׁ חַיִל; v. GFM); f. coll. (fig. of flock) Ez 34:16 (+ הַחֲזָקָה).
+Senses:
+  Sense 1: "fat, fertile (of land/soil)" (6x)
+    Desc: The sense of fatness/richness applied to land, soil, or pasture -- describing fertile, productive ground. Eng 'fat,' 'shall graze,' 'and the fat'; spa 'fértil,' 'y abundante,' 'y la fértil'; hin 'उपजा...
+    Domain: PROPERTIES_RELATIONS > Features of Objects
+    Glosses: eng: and-the-fat, fat, shall-graze | spa: fértil, graso, y-abundante | fra: [והשמנה], et-huile, graisse | deu: [והשמנה], [ושמן], [שמן]
+    Refs: Num 13:20, 1Chr 4:40, Neh 9:25, Neh 9:35, Isa 30:23
+  Sense 2: "rich, sumptuous (of food/substance)" (2x)
+    Desc: The sense of richness or sumptuousness applied to food, oil, or other consumable substances -- describing something greasy, oily, or luxurious in quality. Eng 'rich,' 'fat'; spa 'grasoso,' 'es grasa';...
+    Domain: PROPERTIES_RELATIONS > Features of Objects
+    Glosses: eng: fat, rich | spa: es-grasa, grasoso | fra: gras, riche | deu: [שמן], fett
+    Refs: Gen 49:20, Hab 1:16
+  Sense 3: "fat, robust (of animals/persons)" (2x)
+    Desc: The sense of physical fatness or robustness applied to living creatures -- animals or people who are well-fed and fleshy. Eng 'robust,' 'the fat'; spa 'robusto,' 'la gorda'; hin 'हृष्ट पुष्ट' (hale an...
+    Domain: PROPERTIES_RELATIONS > Features of Objects
+    Glosses: eng: robust, the-fat | spa: la-gorda, robusto | fra: [השמנה], robust | deu: [השמנה], robust
+    Refs: Judg 3:29, Ezek 34:16

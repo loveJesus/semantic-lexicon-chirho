@@ -1,0 +1,123 @@
+You are a biblical lexicographer composing glosses for a digital lexicon.
+For each lemma below, compose a JSON object. Separate objects with "---".
+
+Format for each:
+{
+  "lemma_id": "...",
+  "gloss_terse": "under 120 chars, concise definition covering the word's semantic range",
+  "gloss_readable": "2-5 sentences, 40-120 words. Don't start with 'This word'. Warm study-Bible footnote tone. Engaging, not dry.",
+  "senses": {
+    "1": "enriched 20-60 word description. Reference multilingual evidence when illuminating. Don't repeat the label verbatim.",
+    "2": "..."
+  }
+}
+
+Rules:
+- No markdown fences, just JSON objects separated by ---
+- Reference multilingual evidence naturally when it reveals something
+- gloss_readable should feel like a good study Bible footnote: helpful, clear, occasionally surprising
+- Each sense enrichment: how does the evidence support this sense? Mention 1-2 key passages when helpful.
+
+=== H5140 ===
+Language: Hebrew, POS: V-Hifil-Perf-3ms, Occurrences: 16, Senses: 4
+
+BDB excerpt: † [נָזַל] vb. flow, trickle, drop, distil (poet.) (𝔗 נְזַל of flowing water; Syriac ܢܙܠ descendit, defluet PS2331; Arabic نَزَلَ descend (milk into udder, but also in gen.));— Qal Pf. נָֽזְלוּ Ju 5:5; Impf. יִזַּל Nu 24:7, etc.; Pt. נֹזְלִים Ex 15:8 +, etc.;— 1. flow, subj. water, Nu 24:7 (JE); ψ 147:18; cf. Je 18:14; subj. clouds, Jb 36:28 sq. rain as acc. mat. Ges§ 117 z (‖ רעף and, v 27, זקק), cf. Je 9:17 (of eyelids); so fig. Is 45:8 sq. צֶדֶק (‖ רעף); of mts. (i.e. their torrents) Ju 5:5 according to 𝔙 Ew GFM al., but v. זָלַל" dir="rtl" >I. זלל; especially pt. as subst., = streams, flood
+Senses:
+  Sense 1: "flow, stream (of water)" (12x)
+    Desc: Water flowing in streams, wadis, or rivers; includes the substantivized participle used as 'streams' and verbal forms describing the natural movement of water along a course.
+    Domain: PHYSICAL_ACTION > Activities Involving Liquids
+    Glosses: eng: and-flowing, and-flowing-water, and-streams | spa: Fluirá, corrientes, fluyan | fra: [ונזלים], [יזלו], [נוזלים] | deu: Ströme, [ונזלים], [יזלו]
+    Refs: Exod 15:8, Num 24:7, Judg 5:5, Ps 78:16, Ps 78:44
+  Sense 2: "pour down from above" (2x)
+    Desc: Rain or moisture pouring down from the skies or heavens, emphasizing the downward cascading of water from above rather than horizontal flow along the ground.
+    Domain: PHYSICAL_ACTION > Activities Involving Liquids
+    Glosses: eng: let-them-pour-down, pour-down | spa: derramen-, fluyen | fra: [יזלו], couler | deu: [יזלו]
+    Refs: Job 36:28, Isa 45:8
+  Sense 3: "cause to flow (Hifil)" (1x)
+    Desc: Causative stem indicating making water flow, as when God caused streams to flow from the rock in the wilderness.
+    Domain: PHYSICAL_ACTION > Activities Involving Liquids
+    Glosses: eng: He-caused-to-flow | spa: hizo-fluir | fra: [הזיל] | deu: [הזיל]
+    Refs: Isa 48:21
+  Sense 4: "drip, distil" (1x)
+    Desc: A gentle dripping or distilling, often used figuratively of speech, honey, or myrrh slowly dropping, as distinct from the full flow of a stream.
+    Domain: PHYSICAL_ACTION > Activities Involving Liquids
+    Glosses: eng: let-flow | spa: destilará | fra: laisse-flow | deu: lass-flow
+    Refs: Deut 32:2
+
+=== H5377 ===
+Language: Hebrew, POS: V-Hifil-Imperf.Jus-3ms | 2ms, Occurrences: 16, Senses: 4
+
+BDB excerpt: † II. [נָשָׁא] vb. only Niph.Hiph. beguile, deceive;—(kindred with I. שׁוא, from which, however, the forms can hardly be derived (conj. WeComp 2. 351));— Niph. Pf. 3 pl. נִשְּׁאוּ Is 19:13 the princes have been beguiled (‖ נוֹאֲלוּ, הִתְעוּ). Hiph. Pf. הִשִּׁיא Je 49:16, sf. הִשִּׁאַ֫נִי Gn 3:13, הִשִּׁיאֶ֑ךָ Ob 3; 2 ms. הִשֵּׁאתָ Je 4:10; 3 pl. sf. הִשִּׁיא֫וּךָ Ob 7; Impf. only juss. יַשִּׁיא 2 Ch 32:15, so ψ 55:16 Qr (v. infr.); יַשִּׁ(י)א 2 K 18:29 Is 36:14, sf. יַשִּׁאֲךָ 2 K 19:10 Is 37:10; 2 mpl. תַּשִּׁאוּ Je 37:9; Inf. abs. הַשֵּׁא Je 4:10;—beguile, usually c. acc. pers. Gn 3:13 (J; n
+Senses:
+  Sense 1: "deceive, beguile (Hifil active)" (13x)
+    Desc: To actively deceive or mislead someone, used in warnings against false prophets and in narratives of deception, across all Hifil conjugations (perfect, imperfect, jussive, infinitive absolute, various...
+    Domain: FAITH_BELIEF > Hold a View, Believe, Trust
+    Glosses: eng: You-have-deceived, deceive, deceive-you | spa: engañar, engañaste, engañéis | fra: [ישיא], que-trompe, que-trompe-tu | deu: [ישיא], betrog-dich, betrogen-dich
+    Refs: Gen 3:13, 2Kgs 18:29, 2Kgs 19:10, 2Chr 32:15, Isa 36:14
+  Sense 2: "be deceived (Nifal passive)" (1x)
+    Desc: To be deceived or led astray, the passive/reflexive Nifal stem indicating the subject undergoes the deception rather than causing it.
+    Domain: FAITH_BELIEF > Hold a View, Believe, Trust
+    Glosses: eng: are-deceived | spa: fueron-engañados | fra: tromper | deu: sie-erhoben
+    Refs: Isa 19:13
+  Sense 3: "come upon, overtake suddenly" (1x)
+    Desc: To rush upon or overtake suddenly, used of death or destruction seizing someone, a distinct semantic development from the root idea of surprising or catching unawares.
+    Domain: FAITH_BELIEF > Hold a View, Believe, Trust
+    Glosses: eng: let-come | spa: acometa | fra: séduire | deu: lass-kommen
+    Refs: Ps 55:15
+  Sense 4: "utterly, completely (Qal intensifier)" (1x)
+    Desc: Qal infinitive absolute functioning as an adverbial intensifier, reinforcing the completeness of a related verbal action, from a possibly distinct root or semantic extension.
+    Domain: QUANTITY_NUMBER > Degree
+    Glosses: eng: lifting | spa: olvidando | fra: tromper | deu: erhob
+    Refs: Jer 23:39
+
+=== G4531 ===
+Language: Greek, POS: V-ANA, Occurrences: 15, Senses: 4
+
+BDB excerpt: σαλ-εύω, future σαλεύσω LXX: aorist ἐσάλευσα Refs 5th c.BC+:— passive, future σαλευθήσομαι LXX+NT: aorist ἐσαλεύθην LXX+NT+5th c.BC+perfect σεσάλευμαι (see. below): (σάλος):—cause to rock, make to vibrate or oscillate, with accusative, [τὰς ἀγκύρας] οὐδεὶς χειμὼν σαλεύει Refs 4th c.BC+; σ. τρικυμίᾳ πέδον, of the sea, Refs 3rd c.BC+; of an earthquake, LXX+1st c.AD+heartrending, Refs 2nd c.AD+; σ. τοὺς ὄχλους stir them up, LXX+NT:—passive, to be shaken to and fro, waver, totter, reel, χθὼν σεσάλευται Refs 5th c.BC+; of teeth or nails, to be loosened, Refs 1st c.AD+; of persons, ἐκ Βρομίου γυῖα σ
+Senses:
+  Sense 1: "be physically shaken" (9x)
+    Desc: To be shaken or caused to tremble physically, said of cosmic bodies, the earth, buildings, or other physical things.
+    Domain: MOVEMENT > Non-Linear Movement
+    Glosses: eng: being-shaken, to-be-shaken, was-shaken | spa: fue-sacudido, sacudida, sacudidas | fra: ébranler | deu: erschuettern, erschüttert
+    Refs: Matt 11:7, Matt 24:29, Mark 13:25, Luke 7:24, Luke 21:26
+  Sense 2: "shake or agitate actively" (3x)
+    Desc: To shake something or someone actively, including stirring up people or crowds, or causing physical movement of an object.
+    Domain: MOVEMENT > Non-Linear Movement
+    Glosses: eng: shook, stirring-up, to-shake | spa: agitando, sacudir, sacudió | fra: ébranler | deu: erschuettern, erschüttert
+    Refs: Luke 6:48, Acts 17:13, Heb 12:26
+  Sense 3: "be inwardly disturbed" (2x)
+    Desc: To be shaken metaphorically in one's inner stability or composure, i.e., to be mentally unsettled, disturbed, or moved from a firm position.
+    Domain: MOVEMENT > Non-Linear Movement
+    Glosses: eng: I-be-shaken, to-be-shaken | spa: sea-movido, ser-sacudidos | fra: ébranler | deu: erschuettern, erschüttert
+    Refs: Acts 2:25, 2Thess 2:2
+  Sense 4: "shake together to compact" (1x)
+    Desc: To shake a container so its contents settle and compress together, as in compacting a measure of grain.
+    Domain: MOVEMENT > Non-Linear Movement
+    Glosses: eng: shaken-together | spa: sacudida | fra: ébranler | deu: erschüttert
+    Refs: Luke 6:38
+
+=== H2527 ===
+Language: Hebrew, POS: Conj-w | N-ms, Occurrences: 15, Senses: 4
+
+BDB excerpt: † חֹם n.m.Je 17:8 heat;—חֹם abs. Gn 8:22 + 3 times + 1 S 21:7 (v. infrom); cstr. Gn 18:1 + 3 times; of heat of (mid-)day חֹם היום Gn 18:1 (J), 1 S 11:11; 2 S 4:5; in promise of regular seasons Gn 8:22 (opp. קֹר); cf. Is 18:4(×2) (ח׳ קָצִיר); but as dangerous to plant-life Je 17:8; it melts snow Jb 24:19; לֶחֶם חֹם 1 S 21:7 bread of heat = hot bread, read perhaps ל׳ חָם (as Jos 9:12).
+Senses:
+  Sense 1: "heat of day or sun" (12x)
+    Desc: Atmospheric or solar heat, referring to the warmth of the day, season, or sun's intensity.
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: [ktiv], and-heat, as-heat-of | spa: (cuando-calor-de), [qeré], calentar-de | fra: Cham, [ktiv], [בחם] | deu: [ktiv], [בחם], [בחמו]
+    Refs: Gen 8:22, Gen 18:1, 1Sam 11:9, 1Sam 11:9, 1Sam 11:11
+  Sense 2: "inflamed with passion" (1x)
+    Desc: Figurative use of being heated, describing people burning with anger, lust, or intense emotion.
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: when-they-are-heated | spa: en-su-calor | fra: [בחמם] | deu: [בחמם]
+    Refs: Jer 51:39
+  Sense 3: "hot in temperature" (1x)
+    Desc: Describing an object as hot or heated, such as freshly baked bread.
+    Domain: PROPERTIES_RELATIONS > Features of Objects
+    Glosses: eng: hot | spa: caliente | fra: hot | deu: hot
+    Refs: 1Sam 21:7
+  Sense 4: "bodily warmth" (1x)
+    Desc: Physical warmth for the body, the comfort of being warm rather than cold.
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: warmth | spa: calor | fra: Léhem | deu: Brot
+    Refs: Hag 1:6

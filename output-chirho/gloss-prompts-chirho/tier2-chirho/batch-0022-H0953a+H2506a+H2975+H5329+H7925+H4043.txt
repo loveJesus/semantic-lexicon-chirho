@@ -1,0 +1,145 @@
+You are a biblical lexicographer composing glosses for a digital lexicon.
+For each lemma below, compose a JSON object. Separate objects with "---".
+
+Format for each:
+{
+  "lemma_id": "...",
+  "gloss_terse": "under 120 chars, concise definition covering the word's semantic range",
+  "gloss_readable": "2-5 sentences, 40-120 words. Don't start with 'This word'. Warm study-Bible footnote tone. Engaging, not dry.",
+  "senses": {
+    "1": "enriched 20-60 word description. Reference multilingual evidence when illuminating. Don't repeat the label verbatim.",
+    "2": "..."
+  }
+}
+
+Rules:
+- No markdown fences, just JSON objects separated by ---
+- Reference multilingual evidence naturally when it reveals something
+- gloss_readable should feel like a good study Bible footnote: helpful, clear, occasionally surprising
+- Each sense enrichment: how does the evidence support this sense? Mention 1-2 key passages when helpful.
+
+=== H0953a ===
+Language: Hebrew, POS: Prep-m | N-msc, Occurrences: 66, Senses: 3
+
+BDB excerpt: † I. בּוֹר n.m. Gn 37:20 pit, cistern, well (= בְּאֹר, MI בר, Arabic بُؤْرَةٌ hole or hollow for cooking, Assyrian bûrtum DlPr 182, bûru Lotz TP 169)—בּ׳ abs. Gn 37:22 +; בֹּר Ex 21:33 (2 S 23:20 Qr, v. באר supr.); cstr. בּוֹר 2 K 10:14 + (2 S 23:15, 16 Qr, v. באר supr.); בֹּ֫רָה (ָה loc.) Gn 37:24; sf. בּוֹרוֹ Is 36:16 = בֹּרוֹ 2 K 18:31; בּוֹרֶ֑ךָ Pr 5:15; pl. בֹּרוֹת Gn 37:20 + 3 times; בֹּרֹת Dt 6:11:— 1. cistern, containing water, made by digging (חצב) Dt 6:11 2 Ch 26:10 Ne 9:25; also (without ref. to origin) Pr 5:15 (‖ בְּאֵר), Lv 11:36 (‖ מַעְיָן), 1 S 19:22 Is 36:16 = 2 K 18:31. 2. lat
+Senses:
+  Sense 1: "pit, hole in the ground" (49x)
+    Desc: A pit or hole dug in the ground, including trapping pits and the metaphorical pit of Sheol or death, translated as 'pit' (eng), 'foso/fosa/hoyo' (spa), 'गड्ढा' (hin), 'الجب/الحفرة/الهوة' (arb), '구덩이' ...
+    Domain: GEOGRAPHY_SPACE > Geographical Objects and Features
+    Glosses: eng: pit, the-pit, those-going-down | spa: al-foso, al-pozo, el-calabozo | fra: [הבור], fosse, la-fosse | deu: Grube, der-Grube, die-Grube
+    Refs: Gen 37:20, Gen 37:22, Gen 37:24, Gen 37:28, Gen 37:29
+  Sense 2: "cistern, well for water" (15x)
+    Desc: A cistern or well used for drawing or storing water, translated as 'cistern/well' (eng), 'cisterna/pozo' (spa), 'कुआँ/कुएँ' (hin), 'بئر' (arb), '우물' (kor), 'kisima/visima' (swa).
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: [ketiv], and-cistern, and-cisterns | spa: [cisterna], cisterna-de, cisternas | fra: [ברות], [מבור], citerne-de | deu: Grube, Grube-von, Zisterne-von
+    Refs: Gen 37:24, Lev 11:36, Deut 6:11, 1Sam 19:22, 2Kgs 10:14
+  Sense 3: "prison, dungeon" (2x)
+    Desc: Metaphorical use of 'pit' for a prison or dungeon, a place of confinement, translated as 'calabozo' (spa), 'السجن' (arb), '감옥' (kor), 'gereza' (swa).
+    Domain: BUILDINGS > Constructions
+    Glosses: eng: the-pit | spa: el-calabozo, el-pozo | fra: la-fosse | deu: der-Grube, der-pit
+    Refs: Gen 41:14, Exod 12:29
+
+=== H2506a ===
+Language: Hebrew, POS: N-msc | 3ms, Occurrences: 66, Senses: 3
+
+BDB excerpt: † I. חֵ֫לֶק n.m. Jos 18:5 portion, tract, territory—ח׳ abs. Gn 31:14 +; cstr. Gn 14:24 +; sf. חֶלְקִי ψ 16:5 + 6 times; חֶלְקְךָ Nu 18:20 Ec 9:9; חֶלְקֶ֑ךָ ψ 50:18; חֶלְקֵךְ Is 57:6; חֶלְקוֹ Hb 1:16 + 5 times; חֶלְקָם Gn 14:24 + 3 times; pl. חֲלָקִים Jos 18:5 + 5 times; sf. חֶלְקֵיהֶם Ho 5:7;— 1. portion, share: a. of booty Gn 14:24(×2) Nu 31:36 (P) 1 S 30:24(×2). b. of food Lv 6:10 (P); ח׳ כּח׳ יאכלו Dt 18:8; = food Hb 1:16 (‖ מַאֲכָל); so (of unrestricted charity) Ec 11:2 v. Now. c. sq. בְּ, share or interest in Ec 9:6, with idea of obligation to Gn 31:14 (E; in father’s house), 2 S 20:1 = 1
+Senses:
+  Sense 1: "portion, share, allotment" (61x)
+    Desc: An allotted portion or share of something, whether material goods, food, spoils, or one's lot in life.
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: a-portion, portion, portion-of | spa: la-porción-de, parte, parte-de | fra: [חלק], part, part-de | deu: Anteil, Anteil-von, Teil
+    Refs: Gen 14:24, Gen 31:14, Lev 6:17, Num 18:20, Num 18:20
+  Sense 2: "tract of land, plot" (4x)
+    Desc: A specific piece or parcel of land, a field or tract viewed as a bounded area rather than an abstract share.
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: in-portion-of, the-portion | spa: En-porción-de, en-porción-de, la-porción | fra: dans-part-de, part | deu: der-Teil, in-Anteil-von
+    Refs: 2Kgs 9:10, 2Kgs 9:36, 2Kgs 9:37, Amos 7:4
+  Sense 3: "inheritance, patrimony" (1x)
+    Desc: One's inherited portion or patrimony, emphasizing the permanent, covenantal aspect of a divinely or legally granted possession.
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: my-inheritance | spa: mi-herencia | fra: part | deu: mein-Erbteil
+    Refs: Ps 16:5
+
+=== H2975 ===
+Language: Hebrew, POS: Prep-k | N-proper-fs, Occurrences: 65, Senses: 3
+
+BDB excerpt: † יְאֹר, יְאוֹר n.m. Ex 7:21 stream of the Nile, stream, canal (Egyptian loan-word = Egyptian ’iotr, ’ioʾr, watercourse, Copt. eioor, ior; also ’iotrʿo, ’io’rʿo, Copt. eiero, iaro, Nile, SteindorffBAs i. 612; in Assyrian i̯a’uru, stream, ’Iaruʾû, river Nile, Id.ib., Hptib. 171 Jägerib 466)—abs. הַיְאֹר Gn 41:1 + 37 times; הַיְאוֹר Is 19:8; הַיְ֫אֹרָה Ex 1:22; יְאוֹר Is 19:7(×3) + 2 times; כָּאֹר (error for כַּיְאֹר) Am 8:8; cstr. כִּיאֹר Am 9:5; כִּיאוֹר Am 8:8; sf. יְאֹרִי Ez 29:3 b (Co יאר, cf. v 9 and 𝔖 𝔗); pl. יְאֹרִים Ex 8:1 + 4 times; cstr. יְאֹרֵי Is 7:18 + 2 times; יְאוֹרֵי 2 K 19:24; 
+Senses:
+  Sense 1: "the Nile River" (47x)
+    Desc: The Nile River in Egypt, used as a proper noun (yeʾor as the Egyptian loanword designating the Nile specifically), including with various prepositions (in, into, like, by).
+    Domain: GEOGRAPHY_SPACE > Geographical Objects and Features
+    Glosses: eng: in-the-Nile, the-Nile | spa: el-Río, el-río, en-el-río | fra: dans-le-Nil, le-Nil | deu: der-Nil, in-der-Nil
+    Refs: Gen 41:1, Gen 41:2, Gen 41:3, Gen 41:3, Gen 41:17
+  Sense 2: "river, stream" (12x)
+    Desc: A river or stream as a common noun (singular or with possessive suffixes), often still referring to the Nile but used generically for a major waterway.
+    Domain: GEOGRAPHY_SPACE > Geographical Objects and Features
+    Glosses: eng: his-rivers, my-river, rivers | spa: los-ríos, mi-río, ríos-de | fra: Nil, canal, fleuves-de | deu: Fluesse-von, Kanal, ihr-Ströme
+    Refs: 2Kgs 19:24, Ps 78:44, Isa 7:18, Isa 37:25, Ezek 29:3
+  Sense 3: "canal, channel, watercourse" (6x)
+    Desc: An artificial canal, irrigation channel, or broad watercourse, referring to the branches and man-made waterways of the Nile delta or similar engineered water systems.
+    Domain: GEOGRAPHY_SPACE > Geographical Objects and Features
+    Glosses: eng: broad, by-the-Nile, canals-of | spa: arroyos, canales, canales-de | fra: Nil, canal, le-canals | deu: Kanal, [ביארים], [יארים]
+    Refs: Exod 7:19, Exod 8:5, Job 28:10, Isa 19:6, Isa 33:21
+
+=== H5329 ===
+Language: Hebrew, POS: V-Piel-Prtcpl-mp, Occurrences: 65, Senses: 3
+
+BDB excerpt: † I. [נָצַח] vb. be pre-eminent, enduring (Ecclus [Pi.] make brilliant 43:5, 13 [?] (cf. Oxford ed.xxxiii); NH נָצַח conquer, etc.; Ph. נצח, Aramaic נְצַח, ܢܨܰܚ shine, be illustrious, pre-eminent, victorious; Arabic نَصَحَ be pure, reliable; Ethiopic ነድሐ be pure, innocent; both classes of meaning prob. derived from shine, be bright, brilliant, v. also Dr 1 S 15:29);— Niph. Pt. act. f. נִצַּ֫חַת Je 8:5 enduring (מְשֻׁבָה apostasy). Piel = act as overseer, superintendent, director, only Chr. and ψ-titles;—Inf. לְנַצֵּחַ 1 Ch 15:21 + 4 times; pt. לַמְנַצֵּחַ Hb 3:19 ψ 4:1 + 54 times ψψ; pl. מְנַצ
+Senses:
+  Sense 1: "choirmaster, musical director (Piel ptcp.)" (56x)
+    Desc: Piel participle used substantively as a technical musical term in Psalm superscriptions meaning 'choirmaster' or 'musical director,' the one who leads or oversees the performance of liturgical music. ...
+    Domain: COMMUNICATION > Communication
+    Glosses: eng: to-the-choirmaster | spa: Al-director, al-director | fra: à-au-chef-de-musique | deu: zu-der-dem-Chorleiter
+    Refs: Ps 4:1, Ps 5:1, Ps 6:1, Ps 8:1, Ps 9:1
+  Sense 2: "oversee, direct, supervise (Piel)" (8x)
+    Desc: Piel infinitive and participle denoting the act of overseeing or directing work, especially construction and temple service. Used of Levitical supervisors in 1 Chr 15:21, 23:4; 2 Chr 2:2, 2:18, 34:12-...
+    Domain: AUTHORITY_RULE > Control, Rule
+    Glosses: eng: and-overseeing, and-overseers, overseers | spa: capataces, para-dirigir, para-supervisar | fra: diriger, et-diriger | deu: [ומנצחים], [לנצח], [מנצחים]
+    Refs: 1Chr 15:21, 1Chr 23:4, 2Chr 2:2, 2Chr 2:18, 2Chr 34:12
+  Sense 3: "perpetual, enduring (Nifal ptcp.)" (1x)
+    Desc: Nifal participle feminine used adjectivally to mean 'perpetual' or 'enduring,' describing an ongoing, unceasing state. In Jer 8:5, it modifies 'backsliding' (meshuvah nitsachat) to indicate a persiste...
+    Domain: TIME > Time
+    Glosses: eng: backsliding | spa: perpetua | fra: [נצחת] | deu: [נצחת]
+    Refs: Jer 8:5
+
+=== H7925 ===
+Language: Hebrew, POS: V-Hifil-Imperf.Cohort-1cp, Occurrences: 65, Senses: 3
+
+BDB excerpt: [שָׁכַם65] vb. Hiph. denom. start, rise, early (proposes load backs of beasts for day’s journey);—Pf. 3 ms. consec. וְהִשְׁכִּים 2 S 15:2; Jb 1:5, etc.; Impf. 3 ms. וַיַּשְׁכֵּם Gn 19:27 +, 2 ms. תַּשְׁכִּים Ju 9:33, etc.; Imv. הַשְׁכֵּם Ex 8:16 +; Inf. abs. הַשְׁכֵּם Je 7:25 +, -כֵּים Je 44:4; Pr 27:14, erron. אַשְׁכֵּים Je 25:3 (Ges§ 53 k); Pt. מַשְׁכִּים Ho 6:4 +, etc.;—rise early, make an early start, of journey (Hex only JE); לְדַרְכְּכֶם Ju 19:9 (+ מָחָר), cf. Ct 7:13; + vb. of going Gn 19:2 (J), standing 2 S 15:2, encamping Ju 7:1, etc.; + inf. 1 S 15:12 (cf. Dr), 29:11; 2 K 6:15 (לָקוּ
+Senses:
+  Sense 1: "rise early, get up early" (47x)
+    Desc: To rise or get up early in the morning, used of individuals or groups physically arising at dawn to undertake an action; the core Hifil sense of שׁכם covering all finite verb forms (consecutive imperf...
+    Domain: TIME > Time
+    Glosses: eng: and-he-rose-early, and-rose-early, and-they-rose-early | spa: Y-madrugaron, Y-madrugó, y-madrugó | fra: [וישכם], et-il-se-leva-tôt, et-ils-se-leva-tôt | deu: und-er-erhob-sich-early, und-er-stand-auf-frueh, und-erhob-sich-early
+    Refs: Gen 19:2, Gen 19:27, Gen 20:8, Gen 21:14, Gen 22:3
+  Sense 2: "rising early (persistent action)" (14x)
+    Desc: The infinitive absolute used adverbially to express earnest, persistent, or diligent action, especially in the prophetic idiom 'rising early and sending/speaking/warning' (frequent in Jeremiah and Chr...
+    Domain: TIME > Time
+    Glosses: eng: and-rising-early, early, rising-early | spa: madrugando, madrugándose, por-la-mañana | fra: [השכם], et-se-lever-tôt, se-lever-tôt | deu: early, frueh, frueh-aufstehen
+    Refs: 1Sam 17:16, 2Chr 36:15, Prov 27:14, Jer 7:13, Jer 7:25
+  Sense 3: "early riser (substantive/adjectival)" (4x)
+    Desc: The Hifil participle used substantivally or adjectivally to describe one who habitually rises early or something characteristically early, as in 'those who rise early' (Isa 5:11, Ps 127:2) or 'the ear...
+    Domain: TIME > Time
+    Glosses: eng: early, rising-early, those-rising-early | spa: de-los-que-madrugan, los-que-madrugan, que-madruga | fra: de-se-lever-tôt, se-levant-tôt, se-lever-tôt | deu: frueh, frueh-aufstehen, rising-früh
+    Refs: Ps 127:2, Isa 5:11, Hos 6:4, Hos 13:3
+
+=== H4043 ===
+Language: Hebrew, POS: Conj-w | N-csc | 3mp, Occurrences: 63, Senses: 3
+
+BDB excerpt: † מָגֵן n.m. 1 K 14:27, & f. 1 K 10:17, shield (Arabic مِجَنٌّ, Aramaic מְגִנָּא, ܡܓܶܢܳܐ )—מָגֵן Gn 15:1 + 33 times (also cstr. Dt 33:29 Na 2:4); sf. מָגִנִּי ψ 7:11 + 5 times; מָגִנֵּנוּ ψ 33:20 + 3 times; מָגִנָּם ψ 115:9, 10, 11; pl. מָגִנִּים 1 K 10:17 + 6 times; מָגִנּוֹת 2 Ch 23:9; cstr. מָגִנֵּי 1 K 14:26 + 4 times; sf. מָגִנָּיו Jb 15:26; מָגִנֶּיהָ Ho 4:18;—shield, buckler, carried by warrior for defence Ju 5:8 2 S 1:21(×2) 2 K 19:32 = Is 37:33, 1 Ch 5:18; 2 Ch 14:7; 17:17; 23:9; 26:14; 32:5 Ne 4:10 ψ 76:4 Je 46:3, 9 Ez 23:24; 38:4, 5; 39:9 Na 2:4 Is 22:6 cf. 21:5 (anoint the shield, 
+Senses:
+  Sense 1: "shield, defensive weapon" (60x)
+    Desc: A small defensive armament (shield, buckler) used in battle, often used metaphorically of God as protector, in all singular and plural inflections with possessive and conjunctive forms.
+    Domain: ARTIFACTS > Artifacts
+    Glosses: eng: a-shield, buckler, shield | spa: el-escudo, el-escudo-pequeño, escudo | fra: bouclier, bouclier-de, de-jardin | deu: Schild, Schild-von, bin-ein-Schild
+    Refs: Gen 15:1, Deut 33:29, Judg 5:8, 2Sam 1:21, 2Sam 1:21
+  Sense 2: "armed man, shield-bearer" (2x)
+    Desc: One who carries a shield; an armed or equipped warrior, used as a substantive describing a person rather than the weapon itself.
+    Domain: ARTIFACTS > Artifacts
+    Glosses: eng: a-shield, shields | spa: armado, de-escudo | fra: bouclier | deu: Schild
+    Refs: Prov 6:11, Prov 24:34
+  Sense 3: "ruler, protector" (1x)
+    Desc: A metaphorical extension meaning a ruler, prince, or protector of a people, one who shields or defends others in a governing capacity.
+    Domain: ARTIFACTS > Artifacts
+    Glosses: eng: her-rulers | spa: sus-escudos | fra: bouclier | deu: [מגניה]
+    Refs: Hos 4:18

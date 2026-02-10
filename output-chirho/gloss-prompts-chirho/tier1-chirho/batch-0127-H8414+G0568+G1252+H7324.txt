@@ -1,0 +1,123 @@
+You are a biblical lexicographer composing glosses for a digital lexicon.
+For each lemma below, compose a JSON object. Separate objects with "---".
+
+Format for each:
+{
+  "lemma_id": "...",
+  "gloss_terse": "under 120 chars, concise definition covering the word's semantic range",
+  "gloss_readable": "2-5 sentences, 40-120 words. Don't start with 'This word'. Warm study-Bible footnote tone. Engaging, not dry.",
+  "senses": {
+    "1": "enriched 20-60 word description. Reference multilingual evidence when illuminating. Don't repeat the label verbatim.",
+    "2": "..."
+  }
+}
+
+Rules:
+- No markdown fences, just JSON objects separated by ---
+- Reference multilingual evidence naturally when it reveals something
+- gloss_readable should feel like a good study Bible footnote: helpful, clear, occasionally surprising
+- Each sense enrichment: how does the evidence support this sense? Mention 1-2 key passages when helpful.
+
+=== H8414 ===
+Language: Hebrew, POS: Prep-k, Occurrences: 20, Senses: 4
+
+BDB excerpt: † תֹּ֫הוּ n.m. 1 S 12, 21 (AlbrZAW xvi (1896), 112) formlessness, confusion, unreality, emptiness (primary meaning difficult to seize; Vrss usually κενόν, οὐδέν, μάταιον, inane, vacuum, vanum; cf. LagOr. ii. 60; BN 144);— 1. formlessness, of primaeval earth Gn 1:2 (P), of land reduced to primaeval chaos Je 4:23 (both + וָבֹהוּ and voidness), Is 34:11 קַו־תֿ׳ (‖ אבְנֵי בֹהוּ), 45:18 לֹא ת׳ בְרָאָהּ (‖ לָשֶׁבֶת יְצָרָהּ); 24:10 קִרְיַת־תּ׳ city of chaos (of ruined city); = nothingness, empty space, Jb 26:7 נֹטֶה צָפן עַל־תּ׳; of empty, trackless waste Dt 32:10 (‖ מִדְבָּר), Jb 6:18; 12:24 = ψ 10
+Senses:
+  Sense 1: "emptiness, vanity, futility" (9x)
+    Desc: That which is devoid of value, purpose, or reality — used of idols, false prophets, and worthless human endeavors, emphasizing moral and theological emptiness.
+    Domain: ECONOMICS_PROPERTY > Value
+    Glosses: eng: and-confusion, and-emptiness, are-emptiness | spa: como-vanidad, la-vanidad, para-nada | fra: comme-vide, et-vide, le-néant | deu: Leere, der-emptiness, emptiness
+    Refs: 1Sam 12:21, 1Sam 12:21, Isa 40:17, Isa 40:23, Isa 41:29
+  Sense 2: "wasteland, desolation" (5x)
+    Desc: A trackless, uninhabitable waste or desert — physical desolation of land, whether as divine judgment reducing a place to wilderness or describing an empty, pathless terrain.
+    Domain: ECONOMICS_PROPERTY > Value
+    Glosses: eng: and-in-waste, in-a-trackless-waste, in-waste | spa: con-vanidad, en-caos, en-vacío | fra: dans-néant, dans-vide, dans-בתהו | deu: [בתהו], in-Leere, in-ein-trackless-waste
+    Refs: Deut 32:10, Job 6:18, Job 12:24, Ps 107:40, Isa 29:21
+  Sense 3: "formlessness, primordial chaos" (4x)
+    Desc: The primeval unformed state of the earth before God's creative ordering, as in Genesis 1:2 (tohu wabohu), and by extension any return to that chaotic condition.
+    Domain: ECONOMICS_PROPERTY > Value
+    Glosses: eng: formless, of-chaos | spa: caos, de-desolación, desordenada | fra: informe, vide | deu: Leere, wüst
+    Refs: Gen 1:2, Isa 24:10, Isa 34:11, Jer 4:23
+  Sense 4: "void, nothingness" (2x)
+    Desc: The state of non-existence or unreality — used of the empty void over which God stretches the heavens, or of things reduced to nothing.
+    Domain: ECONOMICS_PROPERTY > Value
+    Glosses: eng: emptiness, void | spa: el-vacío, vacío | fra: vide, תהו | deu: Leere, [תהו]
+    Refs: Job 26:7, Isa 45:18
+
+=== G0568 ===
+Language: Greek, POS: V-PIA-2P, Occurrences: 19, Senses: 4
+
+BDB excerpt: ἀπέχω, future ἀφέξω, and Refs 8th c.BC+aorist ἀπέσχον:— keep off or away from, αἴ κεν τυδέος υἱὸν ἀπόσχη Ἰλίου ἱρῆςRefs 8th c.BC+; κληῖδες ἀπ᾽ ὤμων αὐχέν᾽ ἔχουσιν the collar-bone parts the neck from the shoulders, Refs 8th c.BC+; Εὐβοίης ἀπέχειν.. αἶγας Oracle texts cited in Refs 5th c.BC+ __2 with dative person, τοι.. χεῖρας ἀφέξωRefs 8th c.BC+ __3 with a preposition, ἀ. φρένα περισσῶν παρὰ φωτῶνRefs 5th c.BC+ __4 c.accusative only, keep off or away, σκοτεινὸν ἀ. ψόγονRefs 5th c.BC+ __5 οὐδὲν ἀπέχει with infinitive, nothing hinders, debars one from doing, Refs 5th c.BC+ __II middle, κακῶν ἄπο
+Senses:
+  Sense 1: "receive in full / have back" (6x)
+    Desc: To have received in full, often in a commercial or transactional sense indicating complete receipt of what is owed. In Matt 6:2,5,16 the hypocrites 'have received' (ἀπέχουσιν) their reward in full -- ...
+    Domain: ECONOMICS_PROPERTY > Possess, Transfer, Exchange
+    Glosses: eng: I-have, they-have-received, you-are-receiving | spa: reciben, recibo, tengas | fra: être-loin | deu: hat-genug, ἀπέχω, ἀπέχῃς
+    Refs: Matt 6:2, Matt 6:5, Matt 6:16, Luke 6:24, Phil 4:18
+  Sense 2: "abstain from" (6x)
+    Desc: To hold oneself away from, to abstain or refrain from; the middle voice (ἀπέχεσθαι) used for moral and dietary self-restraint. In the Apostolic Decree (Acts 15:20, 29) the Gentile believers are told '...
+    Domain: ECONOMICS_PROPERTY > Possess, Transfer, Exchange
+    Glosses: eng: abstain, to-abstain | spa: absteneos, absteneros, abstenerse | fra: recevoir-en-plein, être-loin | deu: hat-genug, ἀπέχεσθαι, ἀπέχεσθε
+    Refs: Acts 15:20, Acts 15:29, 1Thess 4:3, 1Thess 5:22, 1Tim 4:3
+  Sense 3: "be distant from" (6x)
+    Desc: To be at a spatial or metaphorical distance from a place or person. In Matt 14:24 the boat 'was distant' (ἀπεῖχεν) many stadia from the land. In Matt 15:8 (=Mark 7:6, quoting Isa 29:13) 'their heart i...
+    Domain: ECONOMICS_PROPERTY > Possess, Transfer, Exchange
+    Glosses: eng: being-away, being-distant, is-distant | spa: dista, distaba, distante | fra: être-loin | deu: hat-genug, ἀπέχει
+    Refs: Matt 14:24, Matt 15:8, Mark 7:6, Luke 7:6, Luke 15:20
+  Sense 4: "it is enough / it is settled" (1x)
+    Desc: Impersonal use meaning 'it is enough,' 'it is settled,' or 'the matter is concluded.' In Mark 14:41 Jesus says in Gethsemane ἀπέχει ('It is enough') after finding the disciples sleeping the third time...
+    Domain: PROPERTIES_RELATIONS > Adequate, Qualified
+    Glosses: eng: It-is-enough | spa: basta | fra: être-loin | deu: ἀπέχει
+    Refs: Mark 14:41
+
+=== G1252 ===
+Language: Greek, POS: V-AIA-3S, Occurrences: 19, Senses: 4
+
+BDB excerpt: διακρίνω [ρῑ], future -κρῐνῶ, Epic dialect and Delph. -κρῐνέωRefs 8th c.BC+:—separate one from another, ὥς τ᾽ αἰπόλια.. αἰπόλοι ἄνδρες ῥεῖα διακρίνωσιν Refs 8th c.BC+; part combatants, εἰς ὅ κε δαίμων ἄμμε διακρίνη Refs 8th c.BC+:—passive, to be parted, of hair, Refs 8th c.BC+, etc.: also in future middle, διακρινέεσθαι Refs 8th c.BC+; διακρίνεσθαι πρός.. part and join different parties, Refs __b passive, to be divorced, Refs __2 in Philosophy, separate, decompose into elemental parts, opposed to συγκρίνω, chiefly in passive, Refs 5th c.BC+ __3 ἄστρων διακρίνει φάη σελάνα probably sets apart, 
+Senses:
+  Sense 1: "doubt or waver" (9x)
+    Desc: To be uncertain, hesitate in belief, or waver internally — used of persons who lack faith or confidence in God's promises.
+    Domain: MENTAL_LIFE > Understand
+    Glosses: eng: doubting, doubts, he-wavered | spa: a-los-que-dudan, dudando, dudareis | fra: distinguer, doutant;, douter | deu: der-Zweifelnden, unterscheiden, διακρίναντα
+    Refs: Matt 21:21, Mark 11:23, Acts 10:20, Acts 11:12, Rom 4:20
+  Sense 2: "discern or evaluate" (5x)
+    Desc: To examine carefully, judge the quality or truth of something, or reach a decision through careful assessment.
+    Domain: MENTAL_LIFE > Understand
+    Glosses: eng: discerning, let-discern, to-decide | spa: discerniendo, discernir, juzgar | fra: distinguer, douter | deu: unterscheiden, διακρίνειν
+    Refs: Matt 16:3, 1Cor 6:5, 1Cor 11:29, 1Cor 11:31, 1Cor 14:29
+  Sense 3: "distinguish or differentiate" (3x)
+    Desc: To make a distinction between persons or things, recognizing differences or showing partiality by separating one from another.
+    Domain: MENTAL_LIFE > Understand
+    Glosses: eng: distinguishes, have-you-discriminated, he-distinguished | spa: distingue?, distinguió, hicisteis-distinción | fra: distinguer, douter | deu: unterscheiden, διέκρινεν
+    Refs: Acts 15:9, 1Cor 4:7, Jas 2:4
+  Sense 4: "contend or dispute" (2x)
+    Desc: To argue, quarrel, or engage in verbal conflict with someone, often in a hostile or adversarial manner.
+    Domain: COMMUNICATION > Communication
+    Glosses: eng: disputing, were-contending | spa: contendían, disputando | fra: disputant,, distinguer | deu: streitend, διεκρίνοντο
+    Refs: Acts 11:2, Jude 1:9
+
+=== H7324 ===
+Language: Hebrew, POS: Conj-w | V-Hifil-Imp-ms, Occurrences: 19, Senses: 4
+
+BDB excerpt: † [רִיק] vb. Hiph. make empty, empty out (Arabic رَاقَ (ى) pour out, forth, intrans. (of water, blood, etc.); Aramaic רִיק empty, pour, ܪܳܩ in deriv.; Assyrian rêḳu, empty);—Pf. 1 s. הֲרִיקֹ֫תִי Lv 26:33 Mal 3:10; 3 pl. הֵרִיקוּ Ez 28:7; 30:11; Impf. 3 ms. יָרִיק Hb 1:17, וַיָּ֫רֶק Gn 14:14 (but v. infr.); Imv. ms. הָרֵק ψ 35:3; Inf. cstr. הָרִיק Is 32:6; Pt. pl. מְרִיקִים Gn 42:35 Zc 4:12;— 1. empty vessels Gn 42:35 (E) Je 48:12; keep empty, לְהָרִיק נֶפֶשׁ רָעֵב Is 32:6 (i.e. keep hungry). 2. pour out or down, rain Mal 3:10 Ec 11:3, oil Zc 4:12. 3. empty out (i.e. draw) sword (cf. Assyrian k
+Senses:
+  Sense 1: "draw out a sword" (8x)
+    Desc: To unsheathe or draw out a sword from its scabbard, used of military action or divine threat (Hifil: Spanish 'desenvainar', Arabic 'جرّد', Hindi 'खींचना/निकालना').
+    Domain: VIOLENCE_CONFLICT > Violence, Harm, Destroy, Kill
+    Glosses: eng: I-shall-unsheathe, I-will-draw, and-I-will-draw-out | spa: Y-saca, desenvainaré, y-desenvainarán | fra: Je---tirer, et-je-fera-draw-dehors, et-le-vider | deu: [אריק], [והריקו], ich-wird-ziehen
+    Refs: Exod 15:9, Lev 26:33, Ps 35:3, Ezek 5:2, Ezek 5:12
+  Sense 2: "empty out, pour out" (8x)
+    Desc: To empty a container or pour out its contents, whether literal (emptying vessels, sacks) or metaphorical (pouring out people, blessings); Hifil active sense (Spanish 'vaciar/derramar', Hindi 'खाली करन...
+    Domain: VIOLENCE_CONFLICT > Violence, Harm, Destroy, Kill
+    Glosses: eng: I-cast-them-out, and-pour-out, emptying | spa: derramarán, los-vaciaré, para-vaciar | fra: [יריקו], [להריק], emptying | deu: [המריקים], [והריקתי], [יריק]
+    Refs: Gen 42:35, Ps 18:42, Eccl 11:3, Isa 32:6, Jer 48:12
+  Sense 3: "be poured out, be emptied" (2x)
+    Desc: Passive (Hofal) of the emptying/pouring sense: to be emptied out or poured forth (Spanish 'fue vaciado/derramado', Hindi 'उंडेला गया').
+    Domain: PHYSICAL_ACTION > Activities Involving Liquids
+    Glosses: eng: he-has-been-poured, poured-out | spa: derramado, fue-vaciado | fra: [הורק], répandue | deu: [הורק], [תורק]
+    Refs: Song 1:3, Jer 48:11
+  Sense 4: "muster, lead out troops" (1x)
+    Desc: To lead out or muster trained men for battle, a specialized military extension of 'drawing out' (cf. Genesis 14:14; Spanish 'armó', Arabic 'جهّز', Korean '이끌었다').
+    Domain: MOVEMENT > Linear Movement
+    Glosses: eng: and-he-led-out | spa: y-armó | fra: et-il-conduisit-dehors | deu: und-ließ-ausrücken
+    Refs: Gen 14:14

@@ -1,0 +1,122 @@
+You are a biblical lexicographer composing glosses for a digital lexicon.
+For each lemma below, compose a JSON object. Separate objects with "---".
+
+Format for each:
+{
+  "lemma_id": "...",
+  "gloss_terse": "under 120 chars, concise definition covering the word's semantic range",
+  "gloss_readable": "2-5 sentences, 40-120 words. Don't start with 'This word'. Warm study-Bible footnote tone. Engaging, not dry.",
+  "senses": {
+    "1": "enriched 20-60 word description. Reference multilingual evidence when illuminating. Don't repeat the label verbatim.",
+    "2": "..."
+  }
+}
+
+Rules:
+- No markdown fences, just JSON objects separated by ---
+- Reference multilingual evidence naturally when it reveals something
+- gloss_readable should feel like a good study Bible footnote: helpful, clear, occasionally surprising
+- Each sense enrichment: how does the evidence support this sense? Mention 1-2 key passages when helpful.
+
+=== G4982 ===
+Language: Greek, POS: V-AIA-3S, Occurrences: 108, Senses: 4
+
+BDB excerpt: σῴζω, with ι wherever ζ follows ω, as σῴζω, Refs 5th c.BC+, but otherwise without it, e.g. ἔσωσε Refs 5th c.BC+; but Didym. (and many Hellenistic and later Inscrr. and Papyri) rejected the ι everywhere, see Refs 5th c.BC+; σοζ[, i.e. σωζ[, occurs in Refs: future σώσω Refs 5th c.BC+; early Attic dialect σωῶ Refsperfect σέσωκα, also σέσῳκα, see. {ἀνασῴζω}:— middle, future σώσομαι Refs 5th c.BC+: aorist ἐσωσάμην Refs 5th c.BC+:—passive, future σωθήσομαι Refs 5th c.BC+: aorist ἐσώθην Refs 5th c.BC+: perfect σέσωσμαι Refs 5th c.BC+; said to be Attic dialect by Refs 9th c.AD+; διασεσῳμένους is found
+Senses:
+  Sense 1: "save spiritually, grant salvation" (79x)
+    Desc: To save or deliver from spiritual death and eternal judgment, granting eternal salvation through faith, encompassing both the act of saving and the state of being saved.
+    Domain: DANGER_DELIVERANCE > Danger, Risk, Safe, Save
+    Glosses: eng: to-save, will-be-saved | spa: a-salvar, salvar, será-salvado | fra: sauver | deu: retten, rettet
+    Refs: Matt 1:21, Matt 10:22, Matt 16:25, Matt 18:11, Matt 24:13
+  Sense 2: "rescue from danger" (12x)
+    Desc: To rescue or deliver someone from physical danger, peril, or death, including pleas for help and saving life versus destroying it.
+    Domain: DANGER_DELIVERANCE > Danger, Risk, Safe, Save
+    Glosses: eng: let-him-save, save, to-save | spa: salvad, salvar, se-salvaría | fra: sauver, sauvez, | deu: retten, rettet
+    Refs: Matt 8:25, Matt 14:30, Matt 24:22, Matt 27:40, Mark 3:4
+  Sense 3: "make whole through faith" (9x)
+    Desc: To make whole or restore completely in the declaration 'your faith has saved/healed you,' bridging physical healing and spiritual deliverance where translations split between save (Arabic khallasa, Sw...
+    Domain: DANGER_DELIVERANCE > Danger, Risk, Safe, Save
+    Glosses: eng: has-saved, he-will-be-saved | spa: será-salvado, será-salvo, te-ha-salvado | fra: sauver | deu: retten, rettet
+    Refs: Matt 9:22, Mark 5:34, Mark 10:52, Luke 7:50, Luke 8:48
+  Sense 4: "heal, restore to health" (8x)
+    Desc: To heal or cure someone of a physical illness or disability, restoring them to bodily health, as confirmed by Arabic shafa/yushfa, Korean natta, and Swahili -ponya/-ponywa translations.
+    Domain: DANGER_DELIVERANCE > Danger, Risk, Safe, Save
+    Glosses: eng: I-will-be-saved, has-been-healed, she-may-be-saved | spa: eran-sanados, fue-salvada, fue-sanado | fra: sauver | deu: retten, rettet
+    Refs: Matt 9:21, Matt 9:22, Mark 5:23, Mark 5:28, Mark 6:56
+
+=== H2416c ===
+Language: Hebrew, POS: Conj-w | N-fsc | 3mp, Occurrences: 107, Senses: 4
+
+BDB excerpt: † I. חַיָּה n.f. living thing, animal (Zinj. wild beast DHMSendsch. 34)—ח׳ Gn 8:17 +; cstr. חַיַּת Is 57:10 +; old case ending (poetic) חַיְתוֹ Gn 1:24 ψ 50:10; 79:2; 104:11, 20 Is 56:9(×2) Zp 2:14; sf. חַיָּתִי ψ 143:3, etc.; pl. חַיּוֹת Lv 14:4 + 12 times— 1. animal, as a living, active being: a. in general, Gn 8:17 Lv 11:2, 27, 47(×2) Nu 35:3 (P) ψ 104:25 Is 46:1 Dn 8:4. b. wild animals, on account of their vital energy and activity Gn 7:14, 21; 8:1, 19; 9:5 (P) Lv 17:13; 25:7 (H) Jb 37:8 ψ 148:10 Is 40:16 Ez 14:15; 33:27 Zp 2:14, 15; ח׳ קנה ψ 68:31 wild animal of the reeds; ח׳ רעה evil bea
+Senses:
+  Sense 1: "wild beast, animal" (79x)
+    Desc: A wild animal or beast, especially in the phrase 'beast of the field/earth'; the general zoological sense referring to land animals, particularly wild or dangerous ones. Arabic consistently uses وَحْش...
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: beast-of, beasts-of-, creature-of | spa: animal-de, bestia-de, la-bestia-de | fra: animal, bête-de, creature-de | deu: Getier, Tier, Tier-von
+    Refs: Gen 1:25, Gen 1:30, Gen 2:19, Gen 2:20, Gen 3:1
+  Sense 2: "living creature (visionary being)" (16x)
+    Desc: A supernatural or visionary 'living creature,' particularly the four living creatures in Ezekiel's visions (Ezek 1, 10) and similar apocalyptic contexts. Distinctly marked by Korean 생물 (saengmul, 'liv...
+    Domain: BODY_HEALTH > Physiological Processes and States
+    Glosses: eng: and-the-living-creatures, living-creatures, the-living-creature | spa: Y-los-seres-vivientes, el-ser-viviente, la-criatura | fra: et-le-êtres-vivants, l'être-vivant, les-êtres-vivants | deu: Tiere, das-Tier, die-Tiere
+    Refs: Ps 104:25, Ezek 1:5, Ezek 1:13, Ezek 1:13, Ezek 1:14
+  Sense 3: "life, vitality" (11x)
+    Desc: Abstract 'life' or 'vitality,' often with possessive suffixes ('his life,' 'my life,' 'their life'). Clearly distinguished by Arabic حَيَاة (hayat, 'life') — a different nominal pattern from حَيَوَان ...
+    Domain: BODY_HEALTH > Physiological Processes and States
+    Glosses: eng: (and-his-life), [and-my-life], and-his-life | spa: (y-su-vida), [y-mi-vida], la-vida-de | fra: animal, et-leur-animal-eux, et-mon-animal-moi | deu: Tier, mein-Leben, und-Tier
+    Refs: Job 33:18, Job 33:20, Job 33:22, Job 33:28, Job 33:28
+  Sense 4: "?" (1x)
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: and-the-appetite-of | spa: y-apetito-de | fra: et-animal | deu: und-Tier
+    Refs: Job 38:39
+
+=== H3498 ===
+Language: Hebrew, POS: V-Nifal-Perf-3ms, Occurrences: 107, Senses: 4
+
+BDB excerpt: [יָתַר107] vb. remain over (NH id.; Aramaic יְתַר, ܝܺܬܰܪ id.; Zinj. יתר n. rest, remainder; Ethiopic ወተረ Assyrian [atâru], remain over, in der. conj., DlHWB; in Sab. ותר CIS iv, 15, 46, p. 77; especially n. ותר as epithet of king = noble one, and as n.pr. ותרם MordtZMG, 1876, 37, 292 DHMZMG, 1883, 15 CISiv, 10; Arabic وَتَرَ is make single, make to be one, or an odd number)— †Qal Pt. הַיּוֹתֵר 1 S 15:15 the remainder†. Niph. be left over, remain over; Pf. נוֹתַר Ex 10:15 + 8 times, etc.; Impf. יִוָּתֵר 2 K 20:17 + 2 times; יִוָּתֶ֥ר בָּ֑הּ Zc 13:8; וַיִּוָּתֵר Gn 32:25 + 2 times; וָאִוָּתֵר 1 
+Senses:
+  Sense 1: "the remaining, remnant (Nifal participle)" (53x)
+    Desc: Nifal participle used substantivally (usually with the article) to denote the remainder, the remnant, or the surviving ones/things.
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: and-the-remainder, the-remaining | spa: Y-lo-sobrante, la-restante, los-que-quedaron | fra: et-le-remainder, laisser, le-remaining | deu: der-remaining, uebriglassen, und-der-Rest
+    Refs: Gen 30:36, Exod 12:10, Exod 28:10, Exod 29:34, Lev 2:3
+  Sense 2: "remain, be left (Nifal)" (30x)
+    Desc: Nifal finite forms expressing the stative/passive sense of remaining, being left over, or surviving after others are removed.
+    Domain: GEOGRAPHY_SPACE > Existence in Space
+    Glosses: eng: and-I-remain, and-he-remains, and-is-left | spa: Y-quedaron, Y-quedó, hubiera-quedado | fra: avait-été-gauche, et-il-reste, et-je-reste | deu: [יותר], [יותרו], bleibe
+    Refs: Gen 32:24, Gen 44:20, Exod 10:15, Exod 29:34, Num 26:65
+  Sense 3: "leave remaining, preserve (Hifil)" (18x)
+    Desc: Hifil causative forms meaning to cause to remain, leave over, leave surviving, or preserve alive.
+    Domain: GEOGRAPHY_SPACE > Existence in Space
+    Glosses: eng: and-I-shall-leave, and-I-shall-leave-remaining, and-having-left-over | spa: Y-dejaré, Y-dejaré-sobrevivir, deja-en-vida | fra: elle-gauche-sur, et-elle-avait-gauche-sur, et-gauche | deu: [הותרה], [ותתר], bewahren
+    Refs: Exod 10:15, Exod 12:10, Exod 16:19, Exod 16:20, Lev 22:30
+  Sense 4: "have abundance, exceed (Hifil)" (6x)
+    Desc: Hifil forms expressing excess, abundance, or preeminence — causing to overflow or surpass in quantity.
+    Domain: QUANTITY_NUMBER > Quantity
+    Glosses: eng: and-having-left-over, and-left-over, and-makes-you-abound | spa: Y-te-hará-abundar, tendrás-preeminencia, y-sobraba | fra: avoir-preeminence, et-gauche-au-dessus, et-having-gauche-au-dessus | deu: sollst-du-Vorrang-haben, und-having-linke-ueber, und-linke-ueber
+    Refs: Gen 49:4, Exod 36:7, Deut 28:11, Deut 30:9, 2Kgs 4:43
+
+=== G1849 ===
+Language: Greek, POS: N-NFP, Occurrences: 102, Senses: 4
+
+BDB excerpt: ἐξουσ-ία, ἡ, (ἔξεστι) power, authority to do a thing, with infinitive, χαίρειν καὶ νοσεῖν ἐ. πάρεστι Refs 5th c.BC+; ἐξουσίαν ὁ νόμος δέδωκε permission to do.., Refs 5th c.BC+; ἐπὶ τῇ τῆς εἰρήνης ἐ. with the freedom permitted by peace, Refs 4th c.BC+ power of life and death, Refs 2nd c.AD+; πρᾶγμα οὗ τὴν ἐ. ἔχουσιν ἄλλοι control over.., Refs 2nd c.AD+; ἐ. τινός power over, licence in a thing, τοῦ λέγειν Refs 5th c.BC+; ἐν μεγάλῃ ἐ. τοῦ ἀδικεῖνRefs; κατὰ τὴν οὐκ ἐ. τῆς ἀγωνίσεως from want of qualification for.., Refs 5th c.BC+: absolutely, power, authority, Refs 5th c.BC+ __2 abuse of authority
+Senses:
+  Sense 1: "authority, power" (91x)
+    Desc: Abstract authority or power exercised over persons or things, the ability or capability to act with force or control.
+    Domain: AUTHORITY_RULE > Control, Rule
+    Glosses: eng: authority | spa: autoridad | fra: autorité | deu: Vollmacht
+    Refs: Matt 7:29, Matt 8:9, Matt 9:6, Matt 9:8, Matt 10:1
+  Sense 2: "governing authorities, powers" (9x)
+    Desc: Authorities as concrete entities — rulers, governing powers, or supernatural principalities that wield dominion (typically plural).
+    Domain: AUTHORITY_RULE > Control, Rule
+    Glosses: eng: authorities, authority, to-authorities | spa: a-autoridades, autoridad, autoridades | fra: autorité | deu: Vollmacht
+    Refs: Luke 12:11, Rom 13:1, Eph 3:10, Eph 6:12, Col 1:16
+  Sense 3: "jurisdiction, domain" (1x)
+    Desc: The sphere, territory, or domain over which authority extends; a bounded area of governmental or legal control.
+    Domain: AUTHORITY_RULE > Control, Rule
+    Glosses: eng: jurisdiction | spa: jurisdicción | fra: autorité | deu: Vollmacht
+    Refs: Luke 23:7
+  Sense 4: "right, privilege" (1x)
+    Desc: The right, entitlement, or liberty to do something, emphasizing warrant or permission rather than raw power.
+    Domain: AUTHORITY_RULE > Control, Rule
+    Glosses: eng: authority | spa: derecho | fra: autorité | deu: Vollmacht
+    Refs: Heb 13:10

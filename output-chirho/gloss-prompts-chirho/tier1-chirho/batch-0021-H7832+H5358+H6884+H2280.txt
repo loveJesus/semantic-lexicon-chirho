@@ -1,0 +1,158 @@
+You are a biblical lexicographer composing glosses for a digital lexicon.
+For each lemma below, compose a JSON object. Separate objects with "---".
+
+Format for each:
+{
+  "lemma_id": "...",
+  "gloss_terse": "under 120 chars, concise definition covering the word's semantic range",
+  "gloss_readable": "2-5 sentences, 40-120 words. Don't start with 'This word'. Warm study-Bible footnote tone. Engaging, not dry.",
+  "senses": {
+    "1": "enriched 20-60 word description. Reference multilingual evidence when illuminating. Don't repeat the label verbatim.",
+    "2": "..."
+  }
+}
+
+Rules:
+- No markdown fences, just JSON objects separated by ---
+- Reference multilingual evidence naturally when it reveals something
+- gloss_readable should feel like a good study Bible footnote: helpful, clear, occasionally surprising
+- Each sense enrichment: how does the evidence support this sense? Mention 1-2 key passages when helpful.
+
+=== H7832 ===
+Language: Hebrew, POS: Prep-b | V-Qal-Inf, Occurrences: 36, Senses: 6
+
+BDB excerpt: † שָׂחַק vb. laugh (‖ צהק, q.v.; NH שָׂחַק, סָחַק; Ethiopic ሠሐቀ: );— Qal Pf. 3 ms. וְשׂ׳ consec. Pr 29:9; 3 pl. שָֽׂחֲקוּ La 1:7; Jb 30:1; Impf. 3 ms. יִשְׂחַק Jb 39:7 +, etc.; Inf. cstr. שְׂחוֹק Ju 16:27; Ec 3:4;— 1. a. laugh at, usually in contempt, derision, c. עַל pers. Jb 30:1 ψ 52:8; עַל rei La 1:7; c. ל pers. God subj. ψ 37:13; 59:9 (‖ לָעַג); c. ל rei vel pers. = have no fear of, Hb 1:10; Jb 5:22; Pr 31:25, also, fig., of noble animals Jb 39:7, 18, 22; 41:21; abs., Pr 29:9 (opp. רָגַז), of י׳ ψ 2:4 (‖ לָעַג), of wisdom Pr 1:26 (ב temp.; ‖ id.). b. c. אֶל pers., appar. of friendly laugh
+Senses:
+  Sense 1: "laugh at, mock, scorn" (13x)
+    Desc: Qal: to laugh at someone or something in derision, mockery, or contempt, treating them as insignificant or foolish.
+    Domain: EMOTION_ATTITUDE > Attitudes and Emotions
+    Glosses: eng: and-he-laughs, and-laughing, and-she-laughs | spa: Se-ríe, se-burlaron, se-reirán | fra: et-rire, ils-ont-ri, jouer | deu: [וישחק], [ושחק], [ותשחק]
+    Refs: Job 30:1, Job 39:7, Job 39:18, Job 39:22, Job 41:29
+  Sense 2: "play, sport, frolic" (8x)
+    Desc: Piel: to play, engage in sport or physical activity, including children's play, competitive wrestling, and performing for entertainment.
+    Domain: EMOTION_ATTITUDE > Attitudes and Emotions
+    Glosses: eng: Will-you-play-, and-let-him-amuse, and-let-them-compete | spa: juega-, jugando, para-jugar | fra: et-que-eux-compete, et-que-lui-amuse, rire | deu: [התשחק], [ישחקו], [משחקים]
+    Refs: Judg 16:25, 2Sam 2:14, Job 40:20, Job 41:5, Ps 104:26
+  Sense 3: "celebrate, make merry" (8x)
+    Desc: Piel: to celebrate festively, make merry, or rejoice with music and dancing, often in a liturgical or communal context.
+    Domain: EMOTION_ATTITUDE > Attitudes and Emotions
+    Glosses: eng: and-I-will-celebrate, and-celebrating, celebrating | spa: celebraban, jugando, las-que-tocaban | fra: [ומשחק], [משחקים], celebrating | deu: [ומשחק], [משחקים], celebrating
+    Refs: 1Sam 18:7, 2Sam 6:5, 2Sam 6:21, 1Chr 13:8, 1Chr 15:29
+  Sense 4: "laugh with joy" (5x)
+    Desc: Qal: to laugh with gladness, joy, or relief, often in response to God's blessing or a surprising turn of fortune.
+    Domain: EMOTION_ATTITUDE > Attitudes and Emotions
+    Glosses: eng: I-smiled, in-amusement-of, to-laugh | spa: Me-reía, en-la-diversión-de, me-reiré | fra: dans-amusement-de, rire, à-rire | deu: [אשחק], [לשחוק], [תשחק]
+    Refs: Judg 16:27, Job 5:22, Job 29:24, Prov 1:26, Eccl 3:4
+  Sense 5: "?" (1x)
+    Domain: EMOTION_ATTITUDE > Attitudes and Emotions
+    Glosses: eng: joking | spa: estoy-bromeando | fra: rire | deu: [משחק]
+    Refs: Prov 26:19
+  Sense 6: "?" (1x)
+    Domain: COMMUNICATION > Communication
+    Glosses: eng: laughing | spa: riéndose | fra: [משחיקים] | deu: [משחיקים]
+    Refs: 2Chr 30:10
+
+=== H5358 ===
+Language: Hebrew, POS: Conj-w | V-Nifal-ConjImperf.Cohort-1cs, Occurrences: 35, Senses: 6
+
+BDB excerpt: † [נָקַם] vb. avenge, take vengeance (Ecclus 461 e להנקם נקמי אויב (Niph. + acc. cogn.); נקם n. also 12:6 (cf. Dt 32:41), 39:30; 48:7; NH נָקַם especially in deriv.; Aramaic נ��קַם (rare), ܢܩܰܡ in der. species; Arabic نَقَمَ take vengeance (عَلَ upon), Lane3037; cf. Ethiopic ቂም Di458 vindictae studium, ultionis cupido; Assyrian iḳḳimu, vengeance, requital, is poss. from √ אקם JägerBAS ii. 279);— Qal Pf. 3 ms. sf. נְקָמַ֫נִי 1 S 24:13; Impf. יִקּוֹם Dt 32:43; יִקֹּם Jos 10:13; 2 ms. תִּקֹּם Lv 19:18; Inf. abs. נָקֹם Ex 21:20; cstr. נְקֹם Ez 24:8; 25:12; Imv. נְקֹם Nu 31:2; Pt. נֹקֵם Na 1:2 + 3 
+Senses:
+  Sense 1: "Nifal: avenge oneself" (13x)
+    Desc: Nifal reflexive and middle-voice forms meaning to avenge oneself or to obtain vengeance for oneself.
+    Domain: JUSTICE_PUNISHMENT > Punish, Reward
+    Glosses: eng: I-am-avenged, and-I-will-avenge-myself, and-I-will-be-avenged | spa: me-vengo, para-vengarse, será-vengado | fra: [להנקם], et-je-fera-être-vengea, et-le-vengeance | deu: [וינקמו], [ונקמו], er-soll-sein-raechte
+    Refs: Exod 21:20, Exod 21:21, Judg 15:7, Judg 16:28, 1Sam 14:24
+  Sense 2: "Qal: take vengeance" (8x)
+    Desc: Active Qal finite forms and infinitives meaning to avenge or take vengeance upon an enemy or wrongdoer.
+    Domain: JUSTICE_PUNISHMENT > Punish, Reward
+    Glosses: eng: and-may-avenge-me, avenge, avenging | spa: Venga, al-vengarse, para-vengar | fra: et-peut-venge-moi, il-fera-venger, prit-vengeance | deu: [בנקם], [לנקם], avenging
+    Refs: Exod 21:20, Lev 19:18, Num 31:2, Deut 32:43, Josh 10:13
+  Sense 3: "Hitpael: avenge oneself repeatedly" (5x)
+    Desc: Hitpael reflexive-intensive forms denoting self-avenging, often with iterative or emphatic nuance.
+    Domain: JUSTICE_PUNISHMENT > Punish, Reward
+    Glosses: eng: and-avenger, and-the-avenger, avenge-itself | spa: se-vengará, y-al-vengador, y-el-que-se-venga | fra: et-de-venger, venger | deu: raechen, und-avenger, und-der-avenger
+    Refs: Ps 8:2, Ps 44:16, Jer 5:9, Jer 5:29, Jer 9:9
+  Sense 4: "Qal participle: avenger" (5x)
+    Desc: Qal active participle used substantivally or attributively to denote an avenger or one who takes vengeance.
+    Domain: JUSTICE_PUNISHMENT > Punish, Reward
+    Glosses: eng: and-avenging, avenging, but-avenging | spa: vengador, vengadora-de, y-vengador | fra: avenging, et-venger, venger | deu: aber-avenging, avenging, raechte
+    Refs: Lev 26:25, Ps 99:8, Nah 1:2, Nah 1:2, Nah 1:2
+  Sense 5: "Piel: execute vengeance" (2x)
+    Desc: Piel intensive stem expressing the vigorous or thorough execution of vengeance.
+    Domain: JUSTICE_PUNISHMENT > Punish, Reward
+    Glosses: eng: and-I-will-avenge, and-I-will-take-vengeance | spa: y-vengaré | fra: et-je-fera-venge, et-venger | deu: und-ich-wird-avenge, und-raechen
+    Refs: 2Kgs 9:7, Jer 51:36
+  Sense 6: "Hofal: be avenged" (2x)
+    Desc: Hofal passive and Qal passive forms indicating that vengeance is enacted upon or on behalf of someone.
+    Domain: JUSTICE_PUNISHMENT > Punish, Reward
+    Glosses: eng: is-avenged-, shall-be-avenged | spa: será-vengado, será-vengado- | fra: --être-vengea, est-vengea- | deu: soll-gerächt-werden, wird-gerächt-
+    Refs: Gen 4:15, Gen 4:24
+
+=== H6884 ===
+Language: Hebrew, POS: Conj-w | V-Qal-ConjImperf.h-1cs | 3mse, Occurrences: 34, Senses: 6
+
+BDB excerpt: † צָרַף vb. smelt, refine, test (NH id.; Ph. מצרף smelter: Assyrian ṣurrupu, refined, ṣarpu, silver, naṣraptu, crucible; Arabic صِرْفٌ is pure, unmixed (especially of wine);* very doubtful is Sab. צדף silver, money, cf. MordtmHim. Inschr. pp. 14, 29 CIS iv, No. 291, l. 1);— Qal Pf. 3 ms. צ׳ Je 6:29, sf. צְרָפָ֑תְהוּ ψ 105:19; 2 ms. sf. צְרַפְתָּנִי ψ 17:3, etc.; Impf. 1 s. אֶצְרֹף Is 1:25, sf. אֶצְרְפֶנּוּ Ju 7:4; Imv. ms. צרופה ψ 26:2 Kt, צָרְפָה Qr; Inf. abs. צָרוֹף Je 6:29; cstr. לִצְרוֹף Dn 11:35, etc.; Pt. act. sf. צוֹרְפָם Je 9:6, etc.; pass. צָרוּף ψ 12:7, etc.;— 1. smelt, refine: Je 6:
+Senses:
+  Sense 1: "goldsmith, silversmith (artisan)" (11x)
+    Desc: Qal participle used as a substantive denoting a professional metalworker — goldsmith, silversmith, or smelter — who crafts or casts objects from precious metals.
+    Domain: RELIGIOUS_LIFE > Religious Activities
+    Glosses: eng: a-goldsmith, and-a-goldsmith, casting | spa: al-fundidor, de-los-orfebres, funde | fra: [הצרפים], [צורפים], et-purifier | deu: [הצרפים], [צורפים], laeutern
+    Refs: Judg 17:4, Neh 3:8, Neh 3:32, Prov 25:4, Isa 40:19
+  Sense 2: "refine, smelt, purify" (10x)
+    Desc: The active process of refining, smelting, or purifying metals by fire, used both literally of metallurgy and figuratively of God purifying his people.
+    Domain: RELIGIOUS_LIFE > Religious Activities
+    Glosses: eng: I-have-refined-you, [ketiv], am-refining-them | spa: [qere], como-refinar-, como-se-refina | fra: affiner, comme-affiner, et-purifier | deu: [ketiv], [וצרפתים], [כצרף]
+    Refs: Ps 26:2, Ps 26:2, Ps 66:10, Isa 1:25, Isa 48:10
+  Sense 3: "refined, pure (state)" (5x)
+    Desc: Qal passive participle indicating the resultative state of having been refined or purified, describing words, promises, or silver as pure and tested.
+    Domain: RELIGIOUS_LIFE > Religious Activities
+    Glosses: eng: is-refined, refined | spa: Probada, purificada, refinada | fra: affiner, refined, צרופה | deu: [צרופה], ist-refined, refined
+    Refs: 2Sam 22:31, Ps 12:6, Ps 18:30, Ps 119:140, Prov 30:5
+  Sense 4: "test, try, prove" (4x)
+    Desc: Metaphorical extension from metallurgical refining to the testing or proving of persons, where God or circumstances assay someone's character as a refiner tests metal.
+    Domain: PHYSICAL_ACTION > Physical Impact
+    Glosses: eng: You-refined-us, and-I-will-test-him, tested-him | spa: lo-probó, me-has-refinado, nos-refinaste | fra: affiner, et-je-sera-éprouver-lui | deu: du-haben-geprüft-mich, du-refined-uns, geprüft-ihn
+    Refs: Judg 7:4, Ps 17:3, Ps 66:10, Ps 105:19
+  Sense 5: "refiner, purifier (agent)" (3x)
+    Desc: Piel participle or Qal infinitive absolute used as an agent noun denoting one who refines or purifies metals, emphasizing the purification process rather than the craft (as in Malachi 3:2-3).
+    Domain: RELIGIOUS_LIFE > Religious Activities
+    Glosses: eng: refiner, refining | spa: el-fundidor, refinador | fra: purifier | deu: laeutern, von-laeuterte
+    Refs: Jer 6:29, Mal 3:2, Mal 3:3
+  Sense 6: "?" (1x)
+    Domain: RELIGIOUS_LIFE > Religious Activities
+    Glosses: eng: and-be-refined | spa: y-serán-refinados | fra: et-purifier | deu: und-laeutern
+    Refs: Dan 12:10
+
+=== H2280 ===
+Language: Hebrew, POS: V-Qal-Imperf.Cohort-1cs, Occurrences: 33, Senses: 6
+
+BDB excerpt: † [חָבַשׁ] vb. bind, bind on, bind up (NH id.; Assyrian abâšu, according to DlW 70, Pr 174; Arabic حَبَسَ confine, restrict; yet on Assyrian ḫibšu ‘Kopfbinde’ (c. חֿ), etc., v. ZehnpfundBAS i. 499, 526; Aramaic ܚܒܰܫ; cf. ܚܒܽܘܫܝܳܐ, חֲבוּשְׁיָא imprisonment, etc.)— Qal Pf. 2 ms. וְחָבַשְׁתָּ֫ Ex 29:9; 2 mpl. חֲבַשְׁתֶּם Ez 34:4; Impf. יַחֲבוֹשׁ Jb 34:17; וַיַּחֲבֹשׁ Gn 22:3 + 4 times; וִיַּחֲבָשׁ־ 1 K 13:23; וְיֶחְבָּ֑שׁ Jb 5:18; וַיַּחְבְּשֵׁנוּ Ho 6:1; 3 fs. וַתַּחֲבֹשׁ 2 K 4:24; אֶהֱבֹשׁ Ez 34:16; cohort. אֶחְבְּשָׁה־ 2 S 19:27 (but cf.infr.); וָאֶחְבְּשֵׁךְ Ez 16:10; וַיַּחְבְּשׁוּ־ 1 K 13:1
+Senses:
+  Sense 1: "saddle an animal" (13x)
+    Desc: To saddle a donkey or other animal for riding or carrying loads, placing and fastening riding equipment on the beast.
+    Domain: ANIMALS > Animals
+    Glosses: eng: I-will-saddle, and-he-saddled, and-he-saddled- | spa: Y-ensilló, aparejados, enalbardad | fra: et-elle-saddled, et-il-saddled, et-il-saddled- | deu: ich-wird-saddle, saddle-, saddled
+    Refs: Gen 22:3, Num 22:21, Judg 19:10, 2Sam 16:1, 2Sam 17:23
+  Sense 2: "bind up wounds" (12x)
+    Desc: To bandage or bind up wounds, injuries, or brokenness, often in a healing or restorative context (literal or metaphorical).
+    Domain: MOVEMENT > Linear Movement
+    Glosses: eng: I-will-bind-up, and-He-will-bind-us, and-binding-up | spa: fue-vendado, para-vendar, para-vendarlo | fra: [חבש], [חבשו], [לחבש] | deu: [אחבש], [ויחבש], [ויחבשנו]
+    Refs: Exod 29:9, Job 5:18, Ps 147:3, Isa 1:6, Isa 3:7
+  Sense 3: "bind or tie" (4x)
+    Desc: To bind, tie, or fasten something in a general sense, such as tying objects together or restraining.
+    Domain: PHYSICAL_ACTION > Attachment
+    Glosses: eng: and-bound, bind, bound | spa: ata, atadas, y-ató | fra: bander, et-lia, lier | deu: [חבוש], [חבש], [חבשים]
+    Refs: Lev 8:13, Job 40:13, Ezek 24:17, Ezek 27:24
+  Sense 4: "wrap or swathe" (2x)
+    Desc: To wrap or swathe with cloth, as in wrapping a turban or swaddling garments around a person.
+    Domain: MOVEMENT > Linear Movement
+    Glosses: eng: and-I-wrapped-you, was-wrapped | spa: envuelta, y-te-ceñí | fra: et-lier, lier | deu: [ואחבשך], [חבוש]
+    Refs: Ezek 16:10, Jonah 2:5
+  Sense 5: "?" (1x)
+    Domain: AUTHORITY_RULE > Control, Rule
+    Glosses: eng: he-dammed | spa: detuvo | fra: bander | deu: [חבש]
+    Refs: Job 28:11
+  Sense 6: "?" (1x)
+    Domain: AUTHORITY_RULE > Control, Rule
+    Glosses: eng: can-He-govern | spa: gobernará | fra: bander | deu: [יחבוש]
+    Refs: Job 34:17

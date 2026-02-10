@@ -1,0 +1,115 @@
+You are a biblical lexicographer composing glosses for a digital lexicon.
+For each lemma below, compose a JSON object. Separate objects with "---".
+
+Format for each:
+{
+  "lemma_id": "...",
+  "gloss_terse": "under 120 chars, concise definition covering the word's semantic range",
+  "gloss_readable": "2-5 sentences, 40-120 words. Don't start with 'This word'. Warm study-Bible footnote tone. Engaging, not dry.",
+  "senses": {
+    "1": "enriched 20-60 word description. Reference multilingual evidence when illuminating. Don't repeat the label verbatim.",
+    "2": "..."
+  }
+}
+
+Rules:
+- No markdown fences, just JSON objects separated by ---
+- Reference multilingual evidence naturally when it reveals something
+- gloss_readable should feel like a good study Bible footnote: helpful, clear, occasionally surprising
+- Each sense enrichment: how does the evidence support this sense? Mention 1-2 key passages when helpful.
+
+=== H0653 ===
+Language: Hebrew, POS: Prep-k, Occurrences: 10, Senses: 2
+
+BDB excerpt: † אֲפֵלָה n.f. darkness, gloominess, calamity—א׳ Ex 10:22 +; אֲפֵלָתְךָ Is 58:10; pl. אֲפֵלוֹת Is 59:9— 1. darkness Dt 28:29 Pr 7:9 (‖ אִישׁוֹן לַיְלָה); of supernatural darkness in Egypt Ex 10:22; of day of י׳ (cf. Am 5:20 sub אָפֵל) Jo 2:2 Zp 1:15 (both ‖ חשׁך, ענן, ערפל) sim. of wickedness Je 23:12 Pr 4:19. 2. fig. of calamity Is 8:22 (‖ חֲשֵׁכָה), 58:10 (‖ חשׁך, opp. צהרים), 59:9 (‖ id., opp. נגהות).
+Senses:
+  Sense 1: "darkness, deep gloom (literal)" (5x)
+    Desc: Literal darkness or thick gloom; used of the supernatural darkness of the Egyptian plague (Exod 10:22), the darkness of evening/night (Prov 7:9), and the cosmic darkness of the Day of YHWH (Joel 2:2, ...
+    Domain: NATURAL_WORLD > Physical Events and States
+    Glosses: eng: and-darkness, and-gloom, and-thick-darkness | spa: oscuras, y-densas-tinieblas, y-oscuridad | fra: [ואפלה], et-obscurité, et-ואפלה | deu: [ואפלה], dick
+    Refs: Exod 10:22, Prov 7:9, Isa 8:22, Joel 2:2, Zeph 1:15
+  Sense 2: "darkness, gloom (figurative: calamity, judgment)" (5x)
+    Desc: Figurative darkness representing calamity, divine judgment, or moral/spiritual ruin; used of groping in darkness as covenant curse (Deut 28:29), the slippery darkness of false prophets' doom (Jer 23:1...
+    Domain: NATURAL_WORLD > Physical Events and States
+    Glosses: eng: and-your-gloom, in-darkness, in-the-darkness | spa: en-la-oscuridad, en-tinieblas, es-como-oscuridad | fra: [באפלה], [באפלות], [ואפלתך] | deu: [באפלה], [באפלות], [ואפלתך]
+    Refs: Deut 28:29, Prov 4:19, Isa 58:10, Isa 59:9, Jer 23:12
+
+=== H1607 ===
+Language: Hebrew, POS: V-Hitpael-Imperf-3mp, Occurrences: 10, Senses: 2
+
+BDB excerpt: † [גָּעַשׁ] vb. shake, quake (NH id.)— Qal Impf. וַתִּגְעַשׁ ψ 18:8a = 2 S 22:8a Kt (Qr Hithp.);—quake of earth at theoph, ψ 18:8 = 2 S 22:8 (read Kt; ‖ רעשׁ). Pu. Impf. be shaken up, convulsed יְגֹעֲשׁוּ־עָם Jb 34:20 a people are convulsed. Hithp. shake back and forth, toss or reel to and fro וַיִּתְגָּעַשׁ Qr 2 S 22:8a (Qal); יִתְגָּֽעֲשׁוּ Je 46:7, וַיִּתְגָּֽעֲשׁוּ ψ 18:8b + 2 times;—of mountains ψ 18:8b = 2 S 22:8b; of waves of sea, Je 5:22; of waters of Nile Je 46:7 (cf. v 8). Hithpo. Pf. וְהִתְגֹּעֲשׁוּ consec. Je 25:16; Impf. יִתְגֹּעֲשׁוּ Je 46:8; id. of waters of Nile Je 46:8; of dru
+Senses:
+  Sense 1: "to shake, quake, toss" (9x)
+    Desc: Describes violent shaking or quaking, used of cosmic and natural convulsions. In the Qal, the earth shakes at YHWH's theophanic anger (Ps 18:8 = 2 Sam 22:8, wattig'ash 'and the earth shook'). In the H...
+    Domain: NATURAL_WORLD > Physical Events and States
+    Glosses: eng: [k], and-it-shook, and-shook | spa: (y-se-estremeció), [y-se-estremeció], se-agitan | fra: [k], [ויתגעשו], [יתגעשו] | deu: [k], [ויתגעשו], [יגעשו]
+    Refs: 2Sam 22:8, 2Sam 22:8, 2Sam 22:8, Job 34:20, Ps 18:7
+  Sense 2: "to stagger, reel (figurative)" (1x)
+    Desc: Figurative extension of the quaking sense, describing the staggering or reeling of nations under divine judgment, as in Jeremiah 25:16 (wehitgo'ashu 'and they shall stagger,' of nations drinking the c...
+    Domain: NATURAL_WORLD > Physical Events and States
+    Glosses: eng: and-stagger | spa: y-se-tambalearán | fra: [והתגעשו] | deu: [והתגעשו]
+    Refs: Jer 25:16
+
+=== H1855 ===
+Language: Hebrew, POS: V-Hifil-Perf-3mp, Occurrences: 10, Senses: 2
+
+BDB excerpt: † [דְּקַק] vb. be shattered, fall to pieces (BH);— Pe. Pf. 3 mpl. דָּקוּ Dn 2:35. Haph. break in pieces: Pf. 3 fs. הַדֶּ֫קֶת 2:34, 45, 3 mpl. הַדִּ֑קוּ 6:25 (all sq. acc.); Impf. 3 fs. תַּדִּק 2:40 (abs.), v 44 (acc.); sf. תַּדֱּקִנַּהּ 7:23; Pt. act. מְהַדֵּק 2:40 (acc.), f. מַדֱּקָה (K§ 46, 3b)) abs. 7:7, 19.
+Senses:
+  Sense 1: "crush, shatter (Hifil)" (9x)
+    Desc: To crush, shatter, or pulverize something into fine pieces (Hifil causative); used of the apocalyptic stone crushing the image in Daniel and of grinding/breaking objects to dust.
+    Domain: PHYSICAL_ACTION > Physical Impact
+    Glosses: eng: and-crush-it, and-crushed, and-crushing | spa: desmenuza, desmenuzaba, desmenuzará | fra: broyer, et-broyer | deu: und-zermalmen, zermalmen
+    Refs: Dan 2:34, Dan 2:40, Dan 2:40, Dan 2:44, Dan 2:45
+  Sense 2: "be crushed (Qal passive)" (1x)
+    Desc: To be crushed or pulverized (Qal passive); the intransitive/passive counterpart describing the state of being ground to pieces.
+    Domain: PHYSICAL_ACTION > Physical Impact
+    Glosses: eng: were-crushed | spa: fueron-desmenuzados | fra: broyer | deu: zermalmen
+    Refs: Dan 2:35
+
+=== H2102 ===
+Language: Hebrew, POS: V-Qal-Perf-3cp, Occurrences: 10, Senses: 2
+
+BDB excerpt: † [זִיד, זוּד] vb. boil up, seethe, act proudly, presumptuously, rebelliously (NH Hiph. הזיד as Heb.; Aramaic of Zinjirli זד presumptuous, DHMSendsch. 56; Arabic زَادَ (med. ى) increase, exceed, exaggerate, e.g. in talk; also Sab. n.pr. זיד (زَيْد) DHMEpigr. Denkm. 44 זידאל Id. ib. 52 (on distinct. betw. זוד and זיד in Sab. v. Sab.Denkm. 64); perhaps also Sab. מזדודן great one, prince, e.g. SabDenkm 89)— Qal Pf. 3 fs. זָ֫דָה Je 50:29; 3 pl. זָ֫דוּ Ex 18:11;—of Egyptians, בַּדָּבָר אֲשֶׁר זָדוּ עֲלֵיהֶם Ex 18:11 (E) in the matter as to which they acted presumptuously against them; of Babylon, א
+Senses:
+  Sense 1: "to act presumptuously, be arrogant" (9x)
+    Desc: To act with insolent pride, presumption, or arrogance — behaving with willful defiance against God or proper authority (Exod 18:11; 21:14; Deut 1:43; 17:13; 18:20; Neh 9:10,16,29; Jer 50:29)
+    Domain: MORAL_QUALITY > Moral and Ethical Qualities
+    Glosses: eng: acted-arrogantly, acts-presumptuously, and-you-acted-presumptuously | spa: actuaron-con-soberbia, actuaron-soberbiamente, actuarán-con-soberbia | fra: [הזידו], [זדה], agit-avec-présomption | deu: [הזידו], [זדה], acts-presumptuously
+    Refs: Exod 18:11, Exod 21:14, Deut 1:43, Deut 17:13, Deut 18:20
+  Sense 2: "to boil, seethe" (1x)
+    Desc: To boil or cook by boiling — a distinct homonymous root referring to the physical act of cooking food (Gen 25:29, Jacob boiled pottage)
+    Domain: PHYSICAL_ACTION > Household Activities
+    Glosses: eng: and-boiled | spa: Y-coció | fra: et-bouilli | deu: und-kochte
+    Refs: Gen 25:29
+
+=== H2648 ===
+Language: Hebrew, POS: V-Qal-Imperf-3ms, Occurrences: 10, Senses: 2
+
+BDB excerpt: † [חָפַז] vb. be in trepidation, hurry, or alarm (Arabic حَفَزَ hasten, incite, urge);— Qal Impf. יַחְפּוֹז Jb 40:23; תַּחְפְּזוּ Dt 20:3; Inf. cstr. sf. בְּחָפְזִי ψ 31:23; 116:11; בְּחָפְזָהּ 2 S 4:4; בְּחָפְזָם 2 K 7:15 Qr (Kt הֵחָֽפְזֵם);— 1. be in a hurry or alarm, of hurried flight 2 S 4:4 2 K 7:15; Inf. c. ב = noun, in my alarm ψ 31:23; 116:11; 2. be alarmed Dt 20:3 (‖ תיראו), Jb 40:23 (of hippopot.) Niph. Pf. נֶחְפָּ֑זוּ ψ 48:6 (‖ נִבְהֲלוּ) hurry away in alarm; so Impf. יֵחָפֵז֑וּן ψ 104:7 (‖ יְנוּסוּן); Inf. הֵחָֽפְזֵם 2 K 7:15 Kt v. supr.; Pt. נֶחְפָּז 1 S 23:26 hurried ויהי דוד נ׳ 
+Senses:
+  Sense 1: "hurry, make haste" (6x)
+    Desc: To act quickly or with urgency, referring to general haste or rushing without the connotation of fear or panic.
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: [ketiv], hurrying, in-her-hurrying | spa: [en-su-prisa], apresurándose, en-apresurarse-ella | fra: [ketiv], dans-leur-haste, dans-sa-se-hâtant | deu: [ketiv], du-soll-sein-in-haste, hurrying
+    Refs: Deut 20:3, 1Sam 23:26, 2Sam 4:4, 2Kgs 7:15, 2Kgs 7:15
+  Sense 2: "flee in alarm or panic" (4x)
+    Desc: To be startled, alarmed, or agitated, often resulting in panicked flight or trembling distress.
+    Domain: TIME > Time
+    Glosses: eng: in-my-alarm, it-is-alarmed, they-fled-in-alarm | spa: en-mi-apresuramiento, huyeron, se-apresura | fra: dans-se-hâter, se-hâter | deu: [יחפוז], in-mein-alarm, sie-floh-in-alarm
+    Refs: Job 40:23, Ps 48:5, Ps 104:7, Ps 116:11
+
+=== H3286 ===
+Language: Hebrew, POS: Conj-w | V-Qal-ConsecImperf-3ms, Occurrences: 10, Senses: 2
+
+BDB excerpt: † I. [יָעֵף] vb. be weary, faint (Arabic وَغَفَ run and shew weariness)— Qal Pf. וְיָעֵ֑פוּ consec. Je 51:58, 64; Impf. יִיעַף Is 40:28; וַיִּעָ֑ף 44:12; יִֽעֲפוּ 40:30; יִיעָ֑פוּ v 31 Je 2:24; יִעָ֑פוּ Hb 2:13;—be or grow weary Je 2:24 (in seeking); = exhaust oneself fruitlessly Hb 2:13 (‖ יגע), hence Je 51:58, 64 (repeated by error from v 58); of י׳ (neg.); Is 40:28 (‖ יגע); youth 40:30 (‖ id.); the god-fearing v 31 (‖ id.); be faint from lack of water 44:12 (‖ אֵין כֹּחַ from hunger). Hoph. Pt. wearied Dn 9:21 מֻעָף בִּיעָף (v. יְעָף).
+Senses:
+  Sense 1: "grow weary / become exhausted" (9x)
+    Desc: Qal verb and derived adjective: to grow weary, to become tired or faint from exertion. All six clusters describe the same state of exhaustion across various conjugations (imperfect, consecutive imperf...
+    Domain: BODY_HEALTH > Physiological Processes and States
+    Glosses: eng: Grow-faint, and-is-weary, and-not | spa: Y-se-cansarán, desfallece, los-cansados | fra: et-se-fatiguer, ils-voleront, le-exhausted | deu: [וייעף], [ויעפו], [ייעף]
+    Refs: Judg 8:15, Isa 40:28, Isa 40:30, Isa 40:31, Isa 44:12
+  Sense 2: "fly / caused to fly (Hofal)" (1x)
+    Desc: Hofal causative-passive participle: to be made to fly, to fly swiftly. This is either a distinct root (ya'af II) or a dramatically different stem-derived meaning from the weariness root. The multiling...
+    Domain: MOVEMENT > Linear Movement
+    Glosses: eng: caused-to-fly | spa: volando | fra: fatiguer | deu: [מעף]
+    Refs: Dan 9:21

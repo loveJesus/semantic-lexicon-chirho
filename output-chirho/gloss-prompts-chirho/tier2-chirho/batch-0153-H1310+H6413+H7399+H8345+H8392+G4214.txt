@@ -1,0 +1,115 @@
+You are a biblical lexicographer composing glosses for a digital lexicon.
+For each lemma below, compose a JSON object. Separate objects with "---".
+
+Format for each:
+{
+  "lemma_id": "...",
+  "gloss_terse": "under 120 chars, concise definition covering the word's semantic range",
+  "gloss_readable": "2-5 sentences, 40-120 words. Don't start with 'This word'. Warm study-Bible footnote tone. Engaging, not dry.",
+  "senses": {
+    "1": "enriched 20-60 word description. Reference multilingual evidence when illuminating. Don't repeat the label verbatim.",
+    "2": "..."
+  }
+}
+
+Rules:
+- No markdown fences, just JSON objects separated by ---
+- Reference multilingual evidence naturally when it reveals something
+- gloss_readable should feel like a good study Bible footnote: helpful, clear, occasionally surprising
+- Each sense enrichment: how does the evidence support this sense? Mention 1-2 key passages when helpful.
+
+=== H1310 ===
+Language: Hebrew, POS: Conj-w | V-Piel-ConjPerf-2ms, Occurrences: 28, Senses: 2
+
+BDB excerpt: † בָּשַׁל vb. boil, seethe (intr.), grow ripe (Aramaic בְּשַׁל, ܒܫܶܠ ripen, Nas. ܒܫܰܠ boil, NSyr. ܒܵܫܸܠ be boiled, cooked, cf. Assyrian bašâlu (bašlu, cooked) ZimBP 76)— Qal Pf. בָּשַׁל Jo 4:13, בָּֽשְׁלוּ Ez 24:5;—boil, cook (intr.) Ez 24:5; grow ripe (of קציר) Jo 4:13;— Pi. Pf. 3 ms. sf. בִּשְּׁלָם 1 K 19:21; וּבִשַּׁלְתָּ֫ Ex 29:31; Dt 16:7, בִּשְּׁלוּ La 4:10 + 2 times, וּבִשְּׁלוּ consec. Zc 14:21; Impf. 3 fs. וַתְּבַשֵּׁל 2 S 13:8; 2 ms. תְּבַשֵּׁל Ex 23:19 + 2 times, יְבַשְּׁלוּ Ez 46:20, 24, וַיְבַשְּׁלוּ 2 Ch 35:13, תְּבַשְּׁלוּ Ex 16:23, וַנְּבַשֵּׁל 2 K 6:29; Imv. בַּשֵּׁל 2 K 4:38,
+Senses:
+  Sense 1: "cook, boil" (25x)
+    Desc: To cook or boil food by heating in liquid (Piel active and Pual passive); the core culinary sense of בָּשַׁל covering all standard cooking references including roasting, which in biblical Hebrew falls...
+    Domain: PHYSICAL_ACTION > Household Activities
+    Glosses: eng: and-cook, and-she-cooked, and-they-will-cook | spa: Coced, Y-cocerás, cocerán | fra: [בשלו], [המבשלים], [ובשלו] | deu: [בשלו], [המבשלים], [ובשלו]
+    Refs: Exod 12:9, Exod 16:23, Exod 16:23, Exod 23:19, Exod 29:31
+  Sense 2: "ripen, become ripe" (3x)
+    Desc: To ripen or reach maturity (of fruit or produce); a figurative extension from the heat-of-cooking domain to the natural ripening process (Qal and Hifil stems).
+    Domain: PHYSICAL_ACTION > Household Activities
+    Glosses: eng: is-ripe, let-be-cooked, ripened | spa: cocínense, maduraron, maduró | fra: [בשל], [בשלו], ripened | deu: [בשל], [בשלו], reiften
+    Refs: Gen 40:10, Ezek 24:5, Joel 3:13
+
+=== H6413 ===
+Language: Hebrew, POS: Conj-w | N-fsc, Occurrences: 28, Senses: 2
+
+BDB excerpt: † פְּלֵיטָה n.f. escape (on form cf.> BaNB 144, 166);—abs. פ׳ Gn 32:9 +, פְּלֵטָה Ex 10:5 +; cstr. פְּלֵיטַת 2 K 19:30 +;— 1. escape, deliverance Gn 45:7 (E) Je 25:35. 2. elsewhere prob. always escaped remnant: a. of green things (from locusts) Ex 10:5 (J) Jo 2:3. b. of pers. Gn 32:9 (J) Ju 21:17 Is 15:9 Je 50:29 1 Ch 4:43 2 Ch 12:7; 20:24; 30:6 Ezr 9:8; Dn 11:42; + מִפְּנֵי 2 S 15:14. c. specif. of those of Judah escaped from Assyrian 2 K 19:30, 31 (+ מִן) = Is 37:31, 32, cf. Is 10:20; from Bab. Ne 1:2 Ezr 9:13, 14, 15, cf. Ez 14:22; after י׳’s future judgment Is 4:2; Ob 17; Jo 3:5.
+Senses:
+  Sense 1: "remnant or survivors" (18x)
+    Desc: The concrete group of people (or things) that escaped or survived destruction; the remnant that remains after judgment or catastrophe. Includes individual escapees, collective survivors, and construct...
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: a-remnant, and-escape, and-escaped | spa: como-remanente, el-remanente, escapada-de | fra: der-reste, délivrance, et-délivrance | deu: Entkommener, [הפלטה], [הפליטה]
+    Refs: Exod 10:5, Judg 21:17, 2Kgs 19:30, 2Kgs 19:31, 1Chr 4:43
+  Sense 2: "escape or deliverance" (10x)
+    Desc: The abstract act or means of escaping danger, destruction, or captivity; deliverance from peril. Arabic consistently glosses نَجَاة (najah), Korean 피함 (escape-act), Swahili wokovu (salvation/deliveran...
+    Domain: DANGER_DELIVERANCE > Danger, Risk, Safe, Save
+    Glosses: eng: an-escape, and-escape, deliverance | spa: escapatoria, escape, para-escape | fra: délivrance, délivrance,, et-délivrance | deu: Entkommener, Rettung, [ופליטה]
+    Refs: Gen 32:8, Gen 45:7, 2Sam 15:14, 2Chr 12:7, Jer 25:35
+
+=== H7399 ===
+Language: Hebrew, POS: Prep-b, Occurrences: 28, Senses: 2
+
+BDB excerpt: † רְכוּשׁ, רְכֻשׁ n.m. Gn 13, 6 property, goods;—abs. רְכוּשׁ Nu 16:32 +, רְכֻשׁ Gn 14:16, 21; cstr. רְכוּשׁ 2 Ch 35:7, רְכֻשׁ Gn 14:11; sf. רְכֻשׁוֹ v 12 +, רְכוּשָׁם 12:5 +, etc.;—property, goods, PRChr Dn Gn 14: 1. gen. term for movable possessions of all kinds (often specif. incl. cattle), Gn 12:5; 15:14; Nu 16:32; 1 Ch 27:31; 28:1; 2 Ch 31:3; 32:29; Ezr 8:21; 10:8. 2. used specif. of cattle, flocks, etc. Gn 13:6; 31:18; 36:7; Nu 35:3; 2 Ch 35:7. 3. of stores, utensils, etc. Gn 46:6; Ezr 1:4, 6, as camp-baggage Dn 11:13, especially as booty Gn 14:11, 12, 16(×2), 21; 2 Ch 20:25; 21:14, 17; 
+Senses:
+  Sense 1: "property, possessions, wealth" (22x)
+    Desc: General term for owned property, possessions, or accumulated wealth, whether inherited, acquired, or held as an estate — the core meaning of rĕkush covering livestock, land, and all material assets.
+    Domain: ECONOMICS_PROPERTY > Possess, Transfer, Exchange
+    Glosses: eng: and-for-their-property, and-his-possessions, and-the-possessions | spa: con-posesión, hacienda-suya, la-hacienda | fra: [הרכוש], [רכוש], [רכושו] | deu: Besitz, Habe, [רכושו]
+    Refs: Gen 12:5, Gen 13:6, Gen 14:11, Gen 14:12, Gen 14:16
+  Sense 2: "goods, spoil, movable belongings" (6x)
+    Desc: Movable goods, belongings, or spoil acquired through travel, migration, or conquest — distinguished in Arabic by ghanīma (spoil/booty) and amtiʿa (goods/chattels) rather than the general amwāl (wealth...
+    Domain: ECONOMICS_PROPERTY > Possess, Transfer, Exchange
+    Glosses: eng: and-goods, and-possessions, and-with-goods | spa: con-los-bienes, con-riquezas, y-con-bienes | fra: [ברכוש], [וברכוש], [ורכוש] | deu: Besitz, [ברכוש], [וברכוש]
+    Refs: 2Chr 20:25, Ezra 1:4, Ezra 1:6, Dan 11:13, Dan 11:24
+
+=== H8345 ===
+Language: Hebrew, POS: Number-ofsc, Occurrences: 28, Senses: 2
+
+BDB excerpt: שִׁשִּׁי m.22 שִׁשִׁית f.6 adj.num. ordin. sixth;—(הַ)יוֹם הַשִּׁשִּׁי Gn 1:31 + 5 times, etc.; בַּשָּׁנָה הַשִּׁשִּׁית Lv 25:21 Ez 8:1, etc.; cstr. שִׁשִּׁית הַהִין Ez 4:11 6th part of the hin, cf. 45:13; 46:14; read שׁ׳ also 45:13b (v. [שִׁשָּׁה] infra).
+Senses:
+  Sense 1: "sixth (ordinal number)" (25x)
+    Desc: The ordinal numeral 'sixth,' indicating position in a sequence, used for days, months, years, sons, captains, and other ordered lists. The multilingual glosses are consistently ordinal: eng 'the sixth...
+    Domain: QUANTITY_NUMBER > Sequence
+    Glosses: eng: The-sixth, in-the-sixth, the-sixth | spa: El-sexto, el-sexto, en-el-sexto | fra: dans-sixième, der-sixième, le-sixième | deu: [הששי], der-Sechste, der-sechste
+    Refs: Gen 1:31, Gen 30:19, Exod 16:5, Exod 16:22, Exod 16:29
+  Sense 2: "sixth part, one-sixth (fraction)" (3x)
+    Desc: A fractional quantity meaning one-sixth of a whole, used in Ezekiel for measurements of offerings (hin, ephah). Distinguished from the ordinal by the partitive construct: eng 'sixth of', spa 'sexta pa...
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: sixth-of | spa: sexta-de, sexta-parte-de | fra: sixième | deu: sechster
+    Refs: Ezek 4:11, Ezek 45:13, Ezek 46:14
+
+=== H8392 ===
+Language: Hebrew, POS: Prep-l, Occurrences: 28, Senses: 2
+
+BDB excerpt: † תֵּבָה n.f. ark (proposes chest, box (cf. NH תֵּבָה); prob. Egypt. loan-word from ṯ-b-t, chest, coffin (Brugsch, ErmanZMG xlvi (1892), 123); > Bab. word JenZA iv (1889), 272f. HalJAs., 1888 (Nov.-Dec.), 517);—abs. ת׳ Gn 7:1 +; cstr. תֵּבַת 6:14 Ex 2:3;—vessel in which infant Moses was laid among reeds v 3 (made of papyrus, גֹּמֶא), v 5 (both E; 𝔊 θῖβις, θήβη, cf. LewyFremdw. 100); vessel which saved Noah and his family, with animals, during flood (𝔊 κιβωτός): Gn 7:1, 7, 9, 17, 23; 8:6, 9(×2), 10, 13; 9:18 (all J), 6:14 (made of עֲצֵי גֹפֶר), v 14, 15, 16(×2), 18, 19; 7:13, 15, 18; 8:1, 4, 16
+Senses:
+  Sense 1: "the ark" (26x)
+    Desc: the ark, in the ark, ark of (26 occurrences across 4 original clusters)
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: the-ark | spa: el-arca | fra: l'arche | deu: der-Arche, die-Arche
+    Refs: Gen 6:14, Gen 6:14, Gen 6:15, Gen 6:16, Gen 6:16
+  Sense 2: "basket of" (2x)
+    Desc: basket of, the basket (2 occurrences across 2 original clusters)
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: basket-of, the-basket | spa: arca-de, el-arca | fra: corbeille-de, le-corbeille | deu: Koerbchen-von, der-Koerbchen
+    Refs: Exod 2:3, Exod 2:5
+
+=== G4214 ===
+Language: Greek, POS: IPro-AFS, Occurrences: 27, Senses: 2
+
+BDB excerpt: πόσος, Ionic dialect κόσος, η, ον, interrogative adjective of what quantity? __1 of Number, how many? κόσοι τινές εἰσι οἱ Αακεδαιμόνιοι Refs 5th c.BC+: with singular Nouns, how great? how much? π. πλῆθος νεῶ; Refs 5th c.BC+ __2 of Distance, how far? πόσον ἄπεστιν ἐνθένδε τὸ στράτευμ; Refs; π. τις ὁδὸς εἴηRefs 5th c.BC+ __3 of Time, how long? π. τινὰ χρόνο; Refs 5th c.BC+ __4 of Value, how much? πόσον δίδω; Refsat what price? Refs 5th c.BC+; ἐπὶ πόσ;Refs 5th c.BC+; ἐκ πόσου is falsa lectio for{ὁπόσου} in Refs 4th c.BC+ __5 of Degree, how great? πόθο; πόσος τι; Refs 5th c.BC+: neuter adverb πόσο
+Senses:
+  Sense 1: "how much" (16x)
+    Desc: how much, How much, How long (16 occurrences across 4 original clusters)
+    Domain: QUANTITY_NUMBER > Quantity
+    Glosses: eng: How-long, How-much, how-great | spa: Cuánto, cuánta, cuánto | fra: combien, combien?, qui | deu: wie-viel
+    Refs: Matt 6:23, Matt 7:11, Matt 10:25, Matt 12:12, Mark 9:21
+  Sense 2: "how many" (11x)
+    Desc: how many, How many, how many things (11 occurrences across 1 original clusters)
+    Domain: QUANTITY_NUMBER > Quantity
+    Glosses: eng: How-many, how-many, how-many-things | spa: Cuántos, cuántas, cuántas-cosas | fra: combien, qui | deu: wie-viel
+    Refs: Matt 15:34, Matt 16:9, Matt 16:10, Matt 27:13, Mark 6:38

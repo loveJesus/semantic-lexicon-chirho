@@ -1,0 +1,145 @@
+You are a biblical lexicographer composing glosses for a digital lexicon.
+For each lemma below, compose a JSON object. Separate objects with "---".
+
+Format for each:
+{
+  "lemma_id": "...",
+  "gloss_terse": "under 120 chars, concise definition covering the word's semantic range",
+  "gloss_readable": "2-5 sentences, 40-120 words. Don't start with 'This word'. Warm study-Bible footnote tone. Engaging, not dry.",
+  "senses": {
+    "1": "enriched 20-60 word description. Reference multilingual evidence when illuminating. Don't repeat the label verbatim.",
+    "2": "..."
+  }
+}
+
+Rules:
+- No markdown fences, just JSON objects separated by ---
+- Reference multilingual evidence naturally when it reveals something
+- gloss_readable should feel like a good study Bible footnote: helpful, clear, occasionally surprising
+- Each sense enrichment: how does the evidence support this sense? Mention 1-2 key passages when helpful.
+
+=== G0245 ===
+Language: Greek, POS: Adj-DNS, Occurrences: 14, Senses: 3
+
+BDB excerpt: ἀλλότριος, Aeolic dialect ἀλλότερρος Refs, α, ον, (ἄλλος) of or belonging to another, βίοτος, νηῦς, ἄχεα, Refs 8th c.BC+; γυνή another man's wife, Refs 4th c.BC+; ἀλλοτρίων χαρίσασθαι to be bountiful of what is another's, Refs 8th c.BC+; γναθμοῖσι γελοίων ἀλλοτρίοισιν with faces unlike their own, of a forced, unnatural laugh, Refs; ἀ. ὄμμασιν εἷρπον by the help of another's eyes, Refs 5th c.BC+; οὐκ ἀ. ἄτην not inflicted by other hands, Refs; but ἀ. φόνος murder of a strangerRefs 5th c.BC+ reap where one has not sown, Refs 8th c.BC+; ἀλλοτριωτάτοις τοῖς σώμασιν χρῆσθαι deal with one's body as 
+Senses:
+  Sense 1: "belonging to another, not one's own" (7x)
+    Desc: Attributive adjective describing something that pertains to or is the property of a different person, covering another's servant, foundation, labors, sins, possessions, or blood (Rom 14:4; 15:20; 2 Co...
+    Domain: GROUPS_COMMUNITY > Groups and Classes of Persons
+    Glosses: eng: another's, of-another, of-others | spa: ajena, ajeno, ajenos | fra: d'autrui, étranger | deu: fremd, ἀλλοτρίῳ
+    Refs: Luke 16:12, Rom 14:4, Rom 15:20, 2Cor 10:15, 2Cor 10:16
+  Sense 2: "stranger, unknown person" (4x)
+    Desc: Used substantivally to denote a person who is unknown, unrecognized, or outside the in-group, as opposed to those who belong (Matt 17:25-26 outsiders vs. sons; John 10:5 the stranger vs. the shepherd)...
+    Domain: GROUPS_COMMUNITY > Groups and Classes of Persons
+    Glosses: eng: a-stranger, strangers | spa: -a-extraño, extraños | fra: d'autrui | deu: fremd, ἀλλοτρίων
+    Refs: Matt 17:25, Matt 17:26, John 10:5, John 10:5
+  Sense 3: "foreign, of another nation or land" (3x)
+    Desc: Denotes geographic or national foreignness, applied to lands where one sojourns as an alien and to the armies of foreign peoples (Acts 7:6; Heb 11:9, 34).
+    Domain: GROUPS_COMMUNITY > Groups and Classes of Persons
+    Glosses: eng: foreign, of-foreigners | spa: ajena, de-extranjeros, extranjera | fra: d'autrui, étranger | deu: fremd, ἀλλοτρίᾳ
+    Refs: Acts 7:6, Heb 11:9, Heb 11:34
+
+=== G0726 ===
+Language: Greek, POS: V-PIA-3S, Occurrences: 14, Senses: 3
+
+BDB excerpt: ἁρπάζω, future -άξωRefs 8th c.BC+ -άσω Refs 5th c.BC+, (ἀν-) Refs 5th c.BC+; in Attic dialect more commonly ἁρπάσομαιRefs 5th c.BC+, (ἀν-) Refs 5th c.BC+; contraction ἁρπῶμαι, ἁρπᾷLXX: aorist ἥρπαξαRefs 8th c.BC+; Trag. and Attic dialect ἥρπασαRefs 8th c.BC+: perfect ἥρπακαRefs 5th c.BC+:—middle, aorist ἡρπασάμηνRefs 5th c.BC+:—passive, perfect ἥρπασμαιRefs 5th c.BC+ (ἀν-): Refspluperfect ἥρπαστοRefs 2nd c.AD+, infinitive -άχθαιRefs 1st c.BC+aorist 1 ἡρπάσθην Refs 5th c.BC+ 4, etc., -χθην Refs 1st c.BC+; later, aorist 2 ἡρπάγην [ᾰ] Refs 3rd c.BC+: future ἁρπᾰγήσομαιNT+1st c.AD+; participle ἁρπ
+Senses:
+  Sense 1: "snatch or seize by force" (9x)
+    Desc: To forcefully seize, snatch away, or take by violence — used of wolves snatching sheep, people seizing someone, snatching from another's grasp, or rescuing someone from danger.
+    Domain: PHYSICAL_ACTION > Attachment
+    Glosses: eng: seize, snatched-away, snatches | spa: arrebata, arrebatan, arrebatando | fra: arrachant;, enlever, saisir | deu: rauben, reißend, ἁρπάζει
+    Refs: Matt 11:12, Matt 13:19, John 6:15, John 10:12, John 10:28
+  Sense 2: "catch up in divine transport" (4x)
+    Desc: To be supernaturally caught up or carried away by God's power, as in Paul's rapture to the third heaven or the eschatological catching up of believers.
+    Domain: PHYSICAL_ACTION > Attachment
+    Glosses: eng: having-been-caught-up, he-was-caught-up, was-snatched-away | spa: arrebatado, fue-arrebatado, seremos-arrebatados | fra: enlever, saisir | deu: rauben
+    Refs: 2Cor 12:2, 2Cor 12:4, 1Thess 4:17, Rev 12:5
+  Sense 3: "plunder or carry off goods" (1x)
+    Desc: To rob or plunder property by force, as in carrying off the possessions of a strong man's house.
+    Domain: PHYSICAL_ACTION > Attachment
+    Glosses: eng: to-plunder | spa: saquear | fra: saisir | deu: ἁρπάσαι
+    Refs: Matt 12:29
+
+=== G2840 ===
+Language: Greek, POS: V-PMA-2S, Occurrences: 14, Senses: 3
+
+BDB excerpt: κοιν-όω, future κοινώσω Refs 4th c.BC+: aorist ἐκοίνωσα Refs 5th c.BC+; Doric dialect ἐκοίνᾱσα Refs 5th c.BC+:—middle, future κοινώσομαι Refs codices (to be read -άσομαι (Doric dialect)), Refs 5th c.BC+: aorist ἐκοινωσάμην Refs 4th c.BC+:—passive, aorist ἐκοινώθην Refs 5th c.BC+perfect κεκοίνωμαι (in middle sense) Refs 5th c.BC+:—communicate, impart information, κ. τινί τι Refs 5th c.BC+; νυκτὶ κοινάσαντες ὁδόν having imparted their journey to night alone (i.e. travelling by night without consulting any one), Refs 5th c.BC+ __2 make common, share, κοινώσαντας τὴν δύναμιν κοινὰ καὶ τὰ ἀποβαίνον
+Senses:
+  Sense 1: "to defile, make ritually unclean" (11x)
+    Desc: To render someone or something ritually impure or morally defiled; active voice uses across various tenses and moods in Jesus's teaching about what truly defiles a person (Matt 15, Mark 7)
+    Domain: RELIGIOUS_LIFE > Religious Activities
+    Glosses: eng: defile, defiled, defiles | spa: contamina, contaminan, contaminando | fra: rendre-commun, souiller | deu: verunreinigen, verunreinigt
+    Refs: Matt 15:11, Matt 15:11, Matt 15:18, Matt 15:20, Matt 15:20
+  Sense 2: "to declare profane, call common" (2x)
+    Desc: To treat as ritually common or profane what God has cleansed; used in Peter's vision (Acts 10:15, 11:9) where God commands not to call unclean what He has made clean
+    Domain: RELIGIOUS_LIFE > Religious Activities
+    Glosses: eng: make-common | spa: hagas-común | fra: rendre-commun | deu: verunreinigt
+    Refs: Acts 10:15, Acts 11:9
+  Sense 3: "to be defiled (passive)" (1x)
+    Desc: To be in a state of having been made ritually unclean; passive participle referring to those defiled by contact with uncleanness (Heb 9:13)
+    Domain: RELIGIOUS_LIFE > Religious Activities
+    Glosses: eng: having-been-defiled | spa: contaminados | fra: souiller | deu: verunreinigen
+    Refs: Heb 9:13
+
+=== G3464 ===
+Language: Greek, POS: N-DNS, Occurrences: 14, Senses: 3
+
+BDB excerpt: μύρον [ῠ], τό, sweet oil, unguent, perfume, Refs 7th c.BC+; mixed with wine, Refs 2nd c.AD+; various kinds in Refs 1st c.AD+; μ. Μενδήσιον, ἠθητόν, Refs 3rd c.BC+ sweet oil on lentils, i.e. 'a jewel of gold in a swine's snout', Refs 5th c.BC+ __2 place where unguents were sold, perfume-market, τὰ μειράκια.. τἀν τῷ μ. Refs 5th c.BC+ __3 metaphorically, anything graceful or charming, Refs
+Senses:
+  Sense 1: "of ointment" (10x)
+    Desc: of ointment, ointment, ointments (10 occurrences across 2 original clusters)
+    Domain: ARTIFACTS > Artifacts
+    Glosses: eng: of-ointment, ointment, ointments | spa: de-perfume, de-ungüento, perfume | fra: parfum | deu: Salbe
+    Refs: Matt 26:7, Matt 26:12, Mark 14:3, Mark 14:4, Mark 14:5
+  Sense 2: "with ointment" (3x)
+    Desc: with ointment, ointment (3 occurrences across 1 original clusters)
+    Domain: ARTIFACTS > Artifacts
+    Glosses: eng: ointment, with-ointment | spa: con-perfume, perfume | fra: parfum | deu: Salbe
+    Refs: Luke 7:38, Luke 7:46, John 11:2
+  Sense 3: "ointment" (1x)
+    Desc: ointment (1 occurrences across 1 original clusters)
+    Domain: ARTIFACTS > Artifacts
+    Glosses: eng: ointment | spa: ungüento | fra: parfum | deu: Salbe
+    Refs: Rev 18:13
+
+=== G3581 ===
+Language: Greek, POS: Adj-GNP, Occurrences: 14, Senses: 3
+
+BDB excerpt: ξένος, ὁ, Epic dialect and Ionic dialect ξεῖνος (also frequently in Refs 5th c.BC+, used by Trag. for the sake of meter even in trimeter, mostly in vocative, Refs 5th c.BC+, Aeolic dialect ξέννος Refs; scanned ¯ ?~X and written ξεῖνος in Refs 3rd c.BC+. __I guest-friend, applied to persons and states bound by a treaty or tie of hospitality, Refs 8th c.BC+ __I.2 of parties giving or receiving hospitality, Refs 8th c.BC+; mostly of the guest, opposed to the host, ξεινοδόκοι καὶ ξεῖνος Refs, etc.; ἁ ξείνα the visitor, Refs 3rd c.BC+; of guests at a club, opposed to σύνδειπνοι, Refs 2nd c.BC+: les
+Senses:
+  Sense 1: "stranger, foreigner (person)" (11x)
+    Desc: The substantivized adjective xenos used to denote a stranger, foreigner, or alien—someone who is not a member of the local community or nation. Covers both the plural forms (ξένοι/ξένους, 'strangers')...
+    Domain: GROUPS_COMMUNITY > Groups and Classes of Persons
+    Glosses: eng: Of-foreign, a-stranger, strangers | spa: De-extranjeros, extranjeros, extraños | fra: étranger | deu: Fremder, Fremdlinge
+    Refs: Matt 25:35, Matt 25:38, Matt 25:43, Matt 25:44, Matt 27:7
+  Sense 2: "strange, foreign (qualitative adjective)" (2x)
+    Desc: The purely adjectival use of xenos meaning 'strange,' 'foreign,' or 'unfamiliar' when modifying abstract nouns rather than referring to persons. Found in Heb 13:9 (ξέναις διδαχαῖς, 'strange teachings'...
+    Domain: GROUPS_COMMUNITY > Groups and Classes of Persons
+    Glosses: eng: strange, strange-thing | spa: cosa-extraña, extrañas | fra: étranger | deu: Fremdlinge
+    Refs: Heb 13:9, 1Pet 4:12
+  Sense 3: "host (one who receives strangers)" (1x)
+    Desc: A specialized reciprocal sense of xenos meaning 'host'—the one who receives and entertains strangers, the opposite pole of the guest-host relationship inherent in the Greek concept of xenia. Attested ...
+    Domain: GROUPS_COMMUNITY > Groups and Classes of Persons
+    Glosses: eng: host | spa: hospedador | fra: étranger | deu: Fremdlinge
+    Refs: Rom 16:23
+
+=== G5013 ===
+Language: Greek, POS: V-ASA-3S, Occurrences: 14, Senses: 3
+
+BDB excerpt: τᾰπειν-όω, lower, in point of height, reduce, σπλῆνα (swollen spleen) Refs 1st c.AD+:—passive, πᾶν ὄρος ταπεινωθήσεται LXX+5th c.BC+; of a plant, decrease in size, Refs 4th c.BC+; of rivers, Refs 1st c.BC+; Astrology texts, of a planet, suffer dejection, Refs 2nd c.AD+ __II metaphorically, lessen, τὸν φθόνον Refs 5th c.BC+; disparage, minimize, Refs 2nd c.BC+:—passive, to be lowered or lessened, Refs 5th c.BC+ __II.2 humble, abase, Refs 5th c.BC+:—passive, ταπεινωθεὶς ἕπεται Refs 5th c.BC+ __II.2.b violate a woman, LXX __II.3 in moral sense, make lowly, humble, ἑαυτόν NT+1st c.BC+:—passive, hu
+Senses:
+  Sense 1: "to humble, bring low (active/transitive)" (7x)
+    Desc: To lower or humble someone, to bring someone low, used in active voice forms including indicative, subjunctive, future, and active participle.
+    Domain: AUTHORITY_RULE > Status
+    Glosses: eng: he-humbled, humbling, might-humble | spa: humillando, humillare, humille | fra: humilier, ἐταπείνωσεν | deu: erniedrigen, erniedrigt
+    Refs: Matt 18:4, Matt 23:12, Luke 14:11, Luke 18:14, 2Cor 11:7
+  Sense 2: "to be humbled, be brought low (passive)" (5x)
+    Desc: To be humbled or brought low by another, used in passive voice forms including future passive and passive infinitive.
+    Domain: AUTHORITY_RULE > Status
+    Glosses: eng: to-be-humbled, will-be-brought-low, will-be-humbled | spa: ser-humillado, será-humillado, será-rebajada | fra: humilier, ταπεινοῦσθαι | deu: erniedrigen, erniedrigt
+    Refs: Matt 23:12, Luke 3:5, Luke 14:11, Luke 18:14, Phil 4:12
+  Sense 3: "to humble oneself (middle/reflexive)" (2x)
+    Desc: To humble oneself, used in middle voice imperative forms exhorting voluntary self-humbling before God.
+    Domain: AUTHORITY_RULE > Status
+    Glosses: eng: Humble-yourselves | spa: Humillaos, humillaos | fra: Ταπεινώθητε, ταπεινώθητε | deu: erniedrigen
+    Refs: Jas 4:10, 1Pet 5:6

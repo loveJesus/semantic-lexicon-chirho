@@ -1,0 +1,115 @@
+You are a biblical lexicographer composing glosses for a digital lexicon.
+For each lemma below, compose a JSON object. Separate objects with "---".
+
+Format for each:
+{
+  "lemma_id": "...",
+  "gloss_terse": "under 120 chars, concise definition covering the word's semantic range",
+  "gloss_readable": "2-5 sentences, 40-120 words. Don't start with 'This word'. Warm study-Bible footnote tone. Engaging, not dry.",
+  "senses": {
+    "1": "enriched 20-60 word description. Reference multilingual evidence when illuminating. Don't repeat the label verbatim.",
+    "2": "..."
+  }
+}
+
+Rules:
+- No markdown fences, just JSON objects separated by ---
+- Reference multilingual evidence naturally when it reveals something
+- gloss_readable should feel like a good study Bible footnote: helpful, clear, occasionally surprising
+- Each sense enrichment: how does the evidence support this sense? Mention 1-2 key passages when helpful.
+
+=== G4578 ===
+Language: Greek, POS: N-NMS, Occurrences: 14, Senses: 2
+
+BDB excerpt: σεισμ-ός, ὁ, (σείω) shaking, shock, γῆς σ. earthquake, Refs 5th c.BC+ __2 generally, shock, agitation, commotion, σ. τοῦ σώματος Refs 5th c.BC+; ἔξωθεν.. προσφέρειν τοῖς.. πάθεσι σεισμόν a shock, NT+2nd c.AD+ __3 blackmail, extortion, Refs 2nd c.BC+; συκοφάντεια καὶ σ. Refs 2nd c.BC+
+Senses:
+  Sense 1: "earthquake" (13x)
+    Desc: A seismic event, a shaking of the earth. The singular and plural clusters represent the same sense — an earthquake — differing only in grammatical number and case. Multilingual evidence is highly conv...
+    Domain: NATURAL_WORLD > Physical Events and States
+    Glosses: eng: an-earthquake, earthquake, earthquakes | spa: terremoto, terremotos | fra: tremblement-de-terre | deu: Erdbeben
+    Refs: Matt 24:7, Matt 27:54, Matt 28:2, Mark 13:8, Luke 21:11
+  Sense 2: "violent storm, tempest" (1x)
+    Desc: A violent shaking of the sea or atmosphere, a storm or tempest (not a geological earthquake). This sense extends seismos from earth-shaking to sea-shaking, as in the storm on the Sea of Galilee (Matt ...
+    Domain: NATURAL_WORLD > Physical Events and States
+    Glosses: eng: a-shaking | spa: temblor | fra: tremblement-de-terre | deu: Erdbeben
+    Refs: Matt 8:24
+
+=== G5103 ===
+Language: Greek, POS: N-GMS, Occurrences: 14, Senses: 2
+
+BDB excerpt: Τίτος, -ου, ὁ Titus; __1. St. Paul's disciple and companion: 2Co.2:13 7:6 7:13-14 8:6 8:16 8:23 12:18, Gal.2:1, 3, 2Ti.4:10, Tit.1:4, subscr., Rec. (Τῖτος). __2. One surnamed Justus: Act.18:7, RV (T, WH, Τίτιος).† (From Abbott-Smith. LSJ has no entry)
+Senses:
+  Sense 1: "Titus (companion of Paul)" (13x)
+    Desc: The proper name Titus (Greek Τίτος), referring to Paul's Gentile co-worker and delegate to Corinth and Crete. Consistently rendered across languages as a transliterated proper noun: Spanish 'Títos,' A...
+    Domain: DISCOURSE_NAMES > Names of Persons and Places
+    Glosses: eng: Titos, of-Titos, to-Titos | spa: Títos, a-Títos, de-Títos | fra: Tite, Τίτον, Τίτος | deu: Titius
+    Refs: 2Cor 2:13, 2Cor 7:6, 2Cor 7:13, 2Cor 7:14, 2Cor 8:6
+  Sense 2: "Titius (variant personal name)" (1x)
+    Desc: A variant proper name Titius (Greek Τίτιος), likely referring to Titius Justus (Acts 18:7), a different individual from Paul's companion Titus. Distinguished in transliteration: Spanish 'Títios,' Hind...
+    Domain: DISCOURSE_NAMES > Names of Persons and Places
+    Glosses: eng: Titios | spa: Títios | fra: Tite | deu: Τιτίου
+    Refs: Acts 18:7
+
+=== G5180 ===
+Language: Greek, POS: V-PNA, Occurrences: 14, Senses: 2
+
+BDB excerpt: τύπτω, Refs 8th c.BC+: future τύψω Refs 4th c.AD+aorist 1 ἔτυψα, Epic dialect τύψα, Refs 8th c.BC+, but rare in Trag. and Attic dialect, as Refs 5th c.BC+: Attic dialect future τυπτήσω Refs 5th c.BC+aorist 1 ἐτύπτησα first in Refs 5th c.BC+: aorist 2 ἔτῠπον Refs 5th c.BC+; Epic dialect participle τετυπόντες Refs 3rd c.BC+perfect τέτῠφα only in Refs 2nd c.AD+:— middle, Refs 7th c.BC+: aorist 1 ἐτυψάμην Refs 5th c.BC+future (in passive sense) τυπτήσομαι Refs 5th c.BC+:—passive, aorist 1 ἐτύφθην Refs 1st c.AD+aorist 2 ἐτύπην [ῠ] Refs 8th c.BC+: perfect τέτυμμαι Refs 8th c.BC+, infinitive τετύφθαι
+Senses:
+  Sense 1: "strike, beat (active)" (13x)
+    Desc: To strike or beat someone physically, whether in violence, punishment, or assault; encompasses all active voice inflections including participles and infinitives (Mt 24:49; 27:30; Mk 15:19; Lk 6:29; 1...
+    Domain: PHYSICAL_ACTION > Physical Impact
+    Glosses: eng: To-strike, beating, striking | spa: Golpear, a-golpear, de-golpear | fra: frapper, tyran | deu: schlagen, schlägt
+    Refs: Matt 24:49, Matt 27:30, Mark 15:19, Luke 6:29, Luke 12:45
+  Sense 2: "be struck (passive)" (1x)
+    Desc: To be struck or beaten, the passive counterpart of the active sense (Acts 23:3).
+    Domain: PHYSICAL_ACTION > Physical Impact
+    Glosses: eng: to-be-struck | spa: ser-golpeado | fra: tyran | deu: schlägt
+    Refs: Acts 23:3
+
+=== G5429 ===
+Language: Greek, POS: Adj-NMP, Occurrences: 14, Senses: 2
+
+BDB excerpt: φρόνιμ-ος, ον, also η, ον Refs 1st c.AD+:— in one's right mind, in one's senses, Refs 5th c.BC+ __II showing presence of mind, ἐν τοῖς δεινοῖς Refs 5th c.BC+presence of mind, Refs __III sensible, prudent, opposed to ἄφρων, Refs 5th c.BC+; opposed to ἀνόητος, Refs 5th c.BC+; τὸν φρόνιμον ζητοῦντας.. ὥσπερ ἀποδεδρακότα Refs 4th c.BC+; φ. περί τινος possessing sagacity or discernment in a thing, Refs 5th c.BC+; περί τι Refs 5th c.BC+; εἴς τι Refs 5th c.BC+ __III.2 of thoughts, acts, and the like, φ. τι ἐργάσασθαι Refs 5th c.BC+ __III.3 of birds as giving omens, τοὺς ἄνωθεν φρονιμωτάτους οἰωνούς R
+Senses:
+  Sense 1: "wise, prudent" (13x)
+    Desc: Possessing practical wisdom, discernment, or prudence in making decisions. The multilingual evidence across S78741 and S78744 is uniform: spa 'prudentes/a-prudentes' (prudent/to the prudent), hin 'bud...
+    Domain: MENTAL_LIFE > Understand
+    Glosses: eng: to-wise-ones, wise | spa: a-prudentes, prudente, prudentes | fra: prudent | deu: klug
+    Refs: Matt 7:24, Matt 10:16, Matt 24:45, Matt 25:2, Matt 25:4
+  Sense 2: "shrewd, astute (comparative)" (1x)
+    Desc: Showing clever resourcefulness or cunning, especially in practical matters, often with a morally ambiguous connotation distinct from straightforward wisdom. The translation evidence diverges from the ...
+    Domain: MENTAL_LIFE > Understand
+    Glosses: eng: shrewder | spa: más-sagaces | fra: prudent | deu: klug
+    Refs: Luke 16:8
+
+=== G5449 ===
+Language: Greek, POS: N-GFS, Occurrences: 14, Senses: 2
+
+BDB excerpt: φύσις [ῠ], ἡ, genitive φύσεως, poetry φύσεος probably (for the sake of meter) in Refs 5th c.BC+ (variant{φύση}) Refs 5th c.BC+, (φύω): __I origin, φ. οὐδενός ἐστιν ἁπάντων θνητῶν οὐδὲ.. τελευτή Refs 5th c.BC+; frequently of persons, birth, φύσει νεώτερος Refs 5th c.BC+; φύσει, opposed to θέσει (by adoption), Refs 2nd c.AD+; so ὁ κατὰ φύσιν πατήρ, υἱός, ἀδελφός, Refs 2nd c.BC+; also in accusative, ἐκ πατρὸς ταὐτοῦ φύσιν Refs 5th c.BC+; ἢ φίλων τις ἢ πρὸς αἵματος φύσινRefs 5th c.BC+ __I.2 growth, τριχῶν, παιδίου, Refs 5th c.BC+ __II the natural form or constitution of a person or thing as the re
+Senses:
+  Sense 1: "nature" (10x)
+    Desc: nature (10 occurrences across 2 original clusters)
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: nature | spa: naturaleza | fra: Natur, nature | deu: Natur
+    Refs: Rom 1:26, Rom 2:27, Rom 11:21, Rom 11:24, Rom 11:24
+  Sense 2: "by nature" (4x)
+    Desc: by nature (4 occurrences across 1 original clusters)
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: by-nature | spa: por-naturaleza | fra: Natur, nature | deu: Natur
+    Refs: Rom 2:14, Gal 2:15, Gal 4:8, Eph 2:3
+
+=== H0599 ===
+Language: Hebrew, POS: V-Qal-Imperf-3ms, Occurrences: 14, Senses: 2
+
+BDB excerpt: † [אָנֵף, אָנַף] vb. denom. from אַף be angry (MI id., cf. Arabic أَنِفَ, Assyrian etc. in deriv.)— Qal Pf. אָנַפְתָּ ψ 60:3, etc.; Impf. יֶאֱנַף ψ 2:12, etc.;—be angry, of י׳; usually sq. בְּ 1 K 8:46 = 2 Ch 6:36; Is 12:1 ψ 85:6; Ezr 9:14; abs. ψ 60:3; 79:5; cf. also ψ 2:12. Hithp. id. always sq. בְּ, & alw. of י׳, Pf. הִתְאַנַּף Dt 1:37; 4:21; 9:20; Impf. וַיִּתְאַנַּף Dt 9:8; 1 K 11:9; 2 K 17:18.
+Senses:
+  Sense 1: "be angry (Qal)" (8x)
+    Desc: To be angry or displeased, expressing wrath or indignation in the basic Qal stem, used of both divine and human anger.
+    Domain: EMOTION_ATTITUDE > Attitudes and Emotions
+    Glosses: eng: You-be-angry, You-were-angry, and-you-are-angry | spa: estarás-airado, estarás-airado-, se-enoje | fra: [אנפת], [ואנפת], [תאנף] | deu: [אנפת], [ואנפת], [תאנף]
+    Refs: 1Kgs 8:46, 2Chr 6:36, Ezra 9:14, Ps 2:12, Ps 60:1
+  Sense 2: "become angry (Hitpael)" (6x)
+    Desc: To become angry or enraged in the Hitpael (reflexive-intensive) stem, emphasizing the visible onset or expression of anger, typically of God's wrath.
+    Domain: EMOTION_ATTITUDE > Attitudes and Emotions
+    Glosses: eng: and-he-was-angry, and-was-angry, was-angry | spa: Y-se-enojó, se-airó, se-enojó | fra: et-fut-irrité, et-il-fut-irrité, et-était-angry | deu: und-er-war-angry, und-war-angry, und-war-zornig
+    Refs: Deut 1:37, Deut 4:21, Deut 9:8, Deut 9:20, 1Kgs 11:9

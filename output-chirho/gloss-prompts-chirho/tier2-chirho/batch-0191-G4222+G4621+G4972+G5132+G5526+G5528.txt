@@ -1,0 +1,115 @@
+You are a biblical lexicographer composing glosses for a digital lexicon.
+For each lemma below, compose a JSON object. Separate objects with "---".
+
+Format for each:
+{
+  "lemma_id": "...",
+  "gloss_terse": "under 120 chars, concise definition covering the word's semantic range",
+  "gloss_readable": "2-5 sentences, 40-120 words. Don't start with 'This word'. Warm study-Bible footnote tone. Engaging, not dry.",
+  "senses": {
+    "1": "enriched 20-60 word description. Reference multilingual evidence when illuminating. Don't repeat the label verbatim.",
+    "2": "..."
+  }
+}
+
+Rules:
+- No markdown fences, just JSON objects separated by ---
+- Reference multilingual evidence naturally when it reveals something
+- gloss_readable should feel like a good study Bible footnote: helpful, clear, occasionally surprising
+- Each sense enrichment: how does the evidence support this sense? Mention 1-2 key passages when helpful.
+
+=== G4222 ===
+Language: Greek, POS: V-AIA-1S, Occurrences: 15, Senses: 2
+
+BDB excerpt: ποτίζω, Attic dialect future ιῶ Refs: (πότος):— give to drink, ἄκρητον ποτίσας Refs 5th c.BC+:—passive, Refs 1st c.AD+ __2 with double accusative, τοὺς ἵππους νέκταρ ἐπότισε gave them nectar to drink, NT+5th c.BC+ __3 water, [τὰ φυόμενα] LXX+5th c.BC+; irrigate, φυτά Refs 3rd c.BC+; also water cattle, ταύρως καὶ πόρτιας Refs 3rd c.BC+:—passive, of land, to be watered, to be irrigated, Refs 1st c.AD+ __4 π. οἴνῳ Refs 4th c.AD+; οἴνου Refs 3rd c.AD+; οἴνῳ codices Refs 3rd c.AD+ __5 moisten, μετά τινος Zos.Alch.p.167 Refs 5th c.BC+; τινι Refs 5th c.BC+
+Senses:
+  Sense 1: "give to drink" (12x)
+    Desc: To provide a beverage for someone to drink, whether literally offering water or figuratively in a spiritual sense.
+    Domain: BODY_HEALTH > Physiological Processes and States
+    Glosses: eng: I-gave-to-drink, give-drink, gives-drink | spa: da-de-beber, daba-de-beber, dale-de-beber | fra: donner-à-boire | deu: gibt-zu-trinken, traenken
+    Refs: Matt 10:42, Matt 25:35, Matt 25:37, Matt 25:42, Matt 27:48
+  Sense 2: "water or irrigate" (3x)
+    Desc: To water plants, fields, or gardens by supplying moisture for growth.
+    Domain: BODY_HEALTH > Physiological Processes and States
+    Glosses: eng: watered, watering | spa: regando, regó | fra: donner-à-boire | deu: traenken
+    Refs: 1Cor 3:6, 1Cor 3:7, 1Cor 3:8
+
+=== G4621 ===
+Language: Greek, POS: N-GMS, Occurrences: 15, Senses: 2
+
+BDB excerpt: σῖτος, ὁ, irregular plural σῖτα, τά, Refs 6th c.BC+:— grain, comprehending both wheat (πυρός) and barley (κριθή), ἐν [Ἰθάκῃ] σ. ἀθέσφατος ἐν δέ τε οἶνος γίγνεται Refs 8th c.BC+; περὶ σίτου ἐκβολήν about the shooting of the corn into ear, Refs 5th c.BC+; τοῦ σ. ἀκμάζοντος at its ripening, Refs 5th c.BC+; σ. ἀληλεσμένος or -εμένος ground corn, Refs 5th c.BC+; σίτου εἰσαγωγή, ἐξαγωγή, Refs 5th c.BC+; comprehending πυρός, κριθή, ὄλυρα, and φακός, Refs 2nd c.BC+; περὶ τοῦ σ. καὶ τοῦ σησάμου Refs 3rd c.BC+; ὁ σ. καὶ τὰ λάχανα as examples of πόα, Refs 4th c.BC+ __2 food made from grain, bread, oppose
+Senses:
+  Sense 1: "wheat" (13x)
+    Desc: Wheat specifically, the cultivated grain Triticum, used both literally (as a crop or commodity) and figuratively (as in the parable of the wheat and tares). Multilingual evidence consistently selects ...
+    Domain: PLANTS_AGRICULTURE > Plants
+    Glosses: eng: grain, of-wheat, wheat | spa: de-trigo, grano, trigo | fra: blé | deu: Weizen
+    Refs: Matt 3:12, Matt 13:25, Matt 13:29, Matt 13:30, Mark 4:28
+  Sense 2: "grain, food supply" (2x)
+    Desc: Grain or cereal in a broader, more generic sense — food provisions or cereal products, not restricted to wheat alone. Multilingual evidence diverges notably from the wheat-specific cluster: Hindi 'अना...
+    Domain: PLANTS_AGRICULTURE > Plants
+    Glosses: eng: grain | spa: trigo | fra: blé | deu: Weizen
+    Refs: Luke 12:18, Acts 7:12
+
+=== G4972 ===
+Language: Greek, POS: V-RPM/P-NMP, Occurrences: 15, Senses: 2
+
+BDB excerpt: σφρᾱγ-ίζω, Ionic dialect σφρηγίζω, close or enclose with a seal, σφραγίζεις λύεις τ᾽ ὀπίσω.. πεύκην (={δέλτον}) Refs 5th c.BC+; τὸ σιτάριον Refs 1st c.AD+:—middle, τὸν θησαυρόν Refs 2nd c.BC+; μόνη δὲ κλῇθρ᾽ ἐγὼ σφραγίζομαι LXX+5th c.BC+; δεῖγμα σφραγισάσθω let him seal up with his seal a sample (of the corn), Refs 3rd c.BC+:—passive, ἐν ᾧ [δώματι] κεραυνός ἐστιν ἐσφραγισμένος LXX+4th c.BC+; οὐ δύναμαι ἀναγνῶναι [τὸ βιβλίον]· ἐσφράγισται γάρLXX+3rd c.BC+; ἐσφραγίσθη γῇ λευκῇ Refs 2nd c.AD+ __2 authenticate a document with a seal, Refs 2nd c.BC+ —middle Refs; ἵνα μὴ κυριεύσας (i.e. τῆς σφραγῖδο
+Senses:
+  Sense 1: "mark with a seal, authenticate" (12x)
+    Desc: To set a seal upon someone or something as a mark of ownership, authentication, or divine approval, especially God sealing believers with the Holy Spirit or sealing the servants of God.
+    Domain: COMMUNICATION > Communication
+    Glosses: eng: has-sealed, having-been-sealed, having-sealed | spa: fuisteis-sellados, habiendo-sellado, que-selló | fra: sceller | deu: versiegeln, σφραγίσαντες
+    Refs: Matt 27:66, John 3:33, John 6:27, Rom 15:28, 2Cor 1:22
+  Sense 2: "seal shut, close up" (3x)
+    Desc: To seal something closed so as to secure or conceal its contents, as in sealing up a scroll, a prophetic vision, or the abyss.
+    Domain: COMMUNICATION > Communication
+    Glosses: eng: Seal-up, sealed, you-should-seal | spa: Sella, selles, selló | fra: sceller | deu: versiegeln
+    Refs: Rev 10:4, Rev 20:3, Rev 22:10
+
+=== G5132 ===
+Language: Greek, POS: N-NFS, Occurrences: 15, Senses: 2
+
+BDB excerpt: τράπεζ-α [τρᾰ], ης, ἡ, Doric dialect τράπεσδα Refs 7th c.BC+:— table, especially dining-table, eating-table, frequently in Refs 8th c.BC+; τ. εἰσφέρειν, ἐπάγειν, Refs 5th c.BC+; ἡ τ. εἰσῄρετο Refs 8th c.BC+; αἴρειν Refs 5th c.BC+; ξενίη τ. the hospitable board, ἴστω Ζεύς.. ξενίη τε τ. Refs 8th c.BC+; ὅρκον μέγαν, ἅλας τε καὶ τράπεζαν Refs 7th c.BC+; ἡ ξενικὴ τ. Refs 4th c.BC+; δέξασθαι τραπέζῃ καὶ κοίτῃ entertain at bed and board, Refs 5th c.BC+; τράπεζαν Περσικὴν παρετίθετο he kept a table in the Persian fashion, Refs 5th c.BC+; εἰς ἀλλοτρίαν τ. ἀποβλέπειν live at other men's table, at their 
+Senses:
+  Sense 1: "table (for eating/serving)" (14x)
+    Desc: A table used for meals, banquets, or ceremonial dining, including the Lord's table and tables of fellowship. Singular and plural forms denote the same concept of a surface for serving or eating food. ...
+    Domain: ARTIFACTS > Artifacts
+    Glosses: eng: of-table, table, tables | spa: de-mesa, mesa, mesas | fra: Tisch, table | deu: Tisch
+    Refs: Matt 15:27, Matt 21:12, Mark 7:28, Mark 11:15, Luke 16:21
+  Sense 2: "money-changer's table, bank" (1x)
+    Desc: A table used by money-changers for financial transactions, functioning as a counter or bank. This specialized commercial sense is clearly distinguished from the dining table across translations: Spani...
+    Domain: ARTIFACTS > Artifacts
+    Glosses: eng: a-table | spa: banco | fra: table | deu: Tisch
+    Refs: Luke 19:23
+
+=== G5526 ===
+Language: Greek, POS: V-ANA, Occurrences: 15, Senses: 2
+
+BDB excerpt: χορτ-άζω, feed, fatten, properly of cattle Refs 8th c.BC+; χορτάσω τὸν κάνθαρον (the beetle being comically treated as a horse), Refs 5th c.BC+; with accusative of things, Refs 5th c.BC+:—passive, eat their fill, of cattle, Refs; τινος of a thing, Refs 4th c.BC+ __II of persons, feed, βολβοῖς ἐμαυτὸν χορτάσω Refs 4th c.BC+: with genitive, fill full of.., θεράπευε καὶ χόρταζε τῶν μονῳδιῶν (metaphorically) Refs 5th c.BC+:—passive, with accusative, χορταζόμενοι γάλα λευκόν LXX+5th c.BC+: absolutely, feast, κεχόρτασμαι.. οὐ κακῶς NT+4th c.BC+
+Senses:
+  Sense 1: "be satisfied or filled" (13x)
+    Desc: To be satiated or filled with food, experiencing fullness after eating (intransitive/passive).
+    Domain: BODY_HEALTH > Physiological Processes and States
+    Glosses: eng: be-filled, be-satisfied, to-be-filled | spa: fueron-saciadas, fueron-saciados, fuisteis-saciados | fra: rassasier | deu: saettigen, χορτασθήσεσθε, χορτασθήσονται
+    Refs: Matt 5:6, Matt 14:20, Matt 15:37, Mark 6:42, Mark 7:27
+  Sense 2: "satisfy or feed someone" (2x)
+    Desc: To cause someone to be full, to feed or satisfy others with food (transitive/causative).
+    Domain: BODY_HEALTH > Physiological Processes and States
+    Glosses: eng: to-satisfy | spa: saciar | fra: rassasier | deu: saettigen, χορτάσαι
+    Refs: Matt 15:33, Mark 8:4
+
+=== G5528 ===
+Language: Greek, POS: N-GMS, Occurrences: 15, Senses: 2
+
+BDB excerpt: χόρτος, ὁ, properly enclosed place (see. entry near the end), but always with collateral notion of a feeding-place: in Refs 8th c.BC+, farmyard, in which the cattle were kept, αὐλῆς ἐν χόρτῳ Refs __2 generally, any feeding-ground, pasturage, frequently in plural, χόρτοι λέοντος, of Nemea, Refs 5th c.BC+; χόρτος οὐρανοῦ the expanse of heaven, poetical cited in Refs 5th c.AD+ __II fodder, provender, especially for horses and cattle, Refs 5th c.BC+; grass, NT+8th c.BC+hay, Refs 5th c.BC+; χ. ἐβλάστησεν, ἐξηράνθη, NT+5th c.BC+; χόρτον ἔχει ἔπὶ τοῦ κέρατος as translation of the Latin proverb, foenu
+Senses:
+  Sense 1: "grass, green vegetation" (14x)
+    Desc: The primary sense of chortos as living green vegetation growing from the ground, encompassing grass, herbage, and sprouting stalks. Used in contexts of natural growth (Matt 6:30, Luke 12:28 — God clot...
+    Domain: PLANTS_AGRICULTURE > Plants
+    Glosses: eng: grass, of-grass, stalk | spa: de-hierba, hierba | fra: herbe | deu: Gras, χόρτον, χόρτος
+    Refs: Matt 6:30, Matt 13:26, Matt 14:19, Mark 4:28, Mark 6:39
+  Sense 2: "hay, dried grass" (1x)
+    Desc: A distinct sense of chortos as dried grass or hay, used metaphorically in 1 Corinthians 3:12 as one of the perishable building materials (along with wood and straw) that will not survive the eschatolo...
+    Domain: PLANTS_AGRICULTURE > Plants
+    Glosses: eng: hay | spa: heno | fra: herbe | deu: Gras
+    Refs: 1Cor 3:12

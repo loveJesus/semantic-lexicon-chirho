@@ -1,0 +1,115 @@
+You are a biblical lexicographer composing glosses for a digital lexicon.
+For each lemma below, compose a JSON object. Separate objects with "---".
+
+Format for each:
+{
+  "lemma_id": "...",
+  "gloss_terse": "under 120 chars, concise definition covering the word's semantic range",
+  "gloss_readable": "2-5 sentences, 40-120 words. Don't start with 'This word'. Warm study-Bible footnote tone. Engaging, not dry.",
+  "senses": {
+    "1": "enriched 20-60 word description. Reference multilingual evidence when illuminating. Don't repeat the label verbatim.",
+    "2": "..."
+  }
+}
+
+Rules:
+- No markdown fences, just JSON objects separated by ---
+- Reference multilingual evidence naturally when it reveals something
+- gloss_readable should feel like a good study Bible footnote: helpful, clear, occasionally surprising
+- Each sense enrichment: how does the evidence support this sense? Mention 1-2 key passages when helpful.
+
+=== H8138b ===
+Language: Hebrew, POS: V-Qal-Imperf-2mp, Occurrences: 9, Senses: 2
+
+BDB excerpt: † III. שָׁנָה vb. repeat, do again (NH id.; Ecclus 42:1; Arabic ثَنَى bend, fold, double; Aramaic תְּנָא repeat, also teach, ܬܢܳܐ; Assyrian šanû, especially Pi. repeat, relate, cf. ScheilZA v (1890), 409 (Dl thinks denom.); on שׁ׳ as √ of שְׁנַיִם two, v. PhilippiZMG xxxii (1878), 77 Baib. xii (1887), 603);— Qal Pf. 3 ms. שׁ׳ 2 S 20:10; Impf. 1 s. אֶשְׁנֶה 1 S 26:8, etc.; Imv. mpl. שְׁנוּ 1 K 18:34; Pt. שֹׁנֶה Pr 17:9; 26:11;—do again: וַיַּכֵּהוּ … וְלֹא שׁ׳ לוֹ 2 S 20:10, cf. 1 S 26:8; abs. 1 K 18:34(×2) Ne 13:21; = speak again Jb 29:22 + 40:5 according to many moderns (אשׁנה for MT אענה); ש
+Senses:
+  Sense 1: "repeat, do again" (8x)
+    Desc: To do a second time, repeat an action; all Qal forms share the same core meaning of repetition (1 Sam 26:8; 2 Sam 20:10; 1 Kgs 18:34; Neh 13:21; Job 29:22; Prov 17:9; 26:11).
+    Domain: QUANTITY_NUMBER > Quantity
+    Glosses: eng: I-will-repeat, and-they-did-a-second-time, but-repeating | spa: Repetid, que-repite, repetiré | fra: [תשנו], et-ils-fit-un-deuxième-temps, et-ושנה | deu: [ישנו], [שונה], [תשנו]
+    Refs: 1Sam 26:8, 2Sam 20:10, 1Kgs 18:34, 1Kgs 18:34, Neh 13:21
+  Sense 2: "be repeated" (1x)
+    Desc: Nifal passive: the repeating of, being repeated; used of Pharaoh's dream being doubled (Gen 41:32).
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: the-repeating-of | spa: repetirse | fra: le-repeating-de | deu: -
+    Refs: Gen 41:32
+
+=== H8519 ===
+Language: Hebrew, POS: N-fpc, Occurrences: 9, Senses: 2
+
+BDB excerpt: † [תְּלֻנָּה] n.f. murmuring;—pl. cstr. תְּלֻנּוֹת (תְּלוּנֹּת) Ex 16:12 + 2 times; sf. תְּלֻנֹּתֵיכֶם 16:7 + 3 times; תְּלוּנֹּתָם Nu 17:25;—murmurings of Isr. against י׳ (only P); Ex 16:9, 12; Nu 17:25; sq. עַל Ex 16:7, 8, cf. v 8, Nu 14:27; 17:20 (+ מַלִּינִם על).
+Senses:
+  Sense 1: "murmuring, complaint (noun)" (8x)
+    Desc: The feminine noun denoting murmurings, grumblings, or complaints, predominantly in the wilderness narratives (Exodus 16, Numbers 14, 17). The three nominal clusters share the same sense with variation...
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: complaints-of, murmurings-of, their-murmurings | spa: las-murmuraciones-de, murmuraciones-de-, quejas-de | fra: complaints-de, leur-murmurings, murmurings-de | deu: complaints-von, dein-murmurings, ihr-murmurings
+    Refs: Exod 16:7, Exod 16:8, Exod 16:8, Exod 16:9, Exod 16:12
+  Sense 2: "murmuring (Hifil participle, verbal)" (1x)
+    Desc: The Hifil participial form functioning as a verbal adjective meaning 'murmuring, complaining,' distinct morphologically from the nominal forms as it derives from the verbal paradigm rather than the no...
+    Domain: COMMUNICATION > Communication
+    Glosses: eng: murmuring | spa: murmuráis | fra: murmuring | deu: murmuring
+    Refs: Exod 16:8
+
+=== G0316 ===
+Language: Greek, POS: Adj-AMP, Occurrences: 8, Senses: 2
+
+BDB excerpt: ἀναγκ-αῖος, α, ον, in Attic dialect also ος, ον Refs 5th c.BC+: of, with, or by force: __I active, constraining, applying force, μῦθος ἀ. a word of force, Refs 8th c.BC+; χρειὼ ἀ. urgent necessity, Refs 8th c.BC+; ἦμαρ ἀ. day of constraint, i.e. life of slavery, Refs; ἀ. τύχη a doom imposed by fate, or fateful chance, Refs 5th c.BC+ (but, fatal chance, Refs 6th c.BC+; τῆς ἀρχῆς τῷ ἀ. παροξυνομένους by the compulsory nature of our rule, Refs 5th c.BC+; ἐξ ἀναγκαίου under stress of circumstances, Refs 5th c.BC+ __I.2 forcible, cogent, πειθώRefs 5th c.BC+; τὰ-ότερα τῶν ἀντιγράφων the more authori
+Senses:
+  Sense 1: "necessary, essential, indispensable" (7x)
+    Desc: Required by circumstances, essential or indispensable for a given purpose. Used in Acts 13:46 (it was necessary to speak God's word to you first), 1 Cor 12:22 (weaker members are more necessary), 2 Co...
+    Domain: PROPERTIES_RELATIONS > Mode
+    Glosses: eng: more-necessary, necessary | spa: más-necesario, necesarias, necesario | fra: notwendig, nécessaire | deu: notwendig, ἀναγκαῖον
+    Refs: Acts 13:46, 1Cor 12:22, 2Cor 9:5, Phil 1:24, Phil 2:25
+  Sense 2: "close, intimate (of persons)" (1x)
+    Desc: Of persons who are bound by ties of kinship or affection, close friends or intimate associates. In Acts 10:24, Cornelius had called together his relatives and close (anankaious) friends. Arabic uses a...
+    Domain: GEOGRAPHY_SPACE > Spacial Positions
+    Glosses: eng: close | spa: íntimos | fra: nécessaire | deu: ἀναγκαίους
+    Refs: Acts 10:24
+
+=== G0572 ===
+Language: Greek, POS: N-AFS, Occurrences: 8, Senses: 2
+
+BDB excerpt: ἁπλότης, ητος, ἡ, singleness, τῆς φωνῆςRefs 4th c.BC+ __II simplicity, πόλεωςRefs 5th c.BC+ __II.2 of persons, simplicity, frankness, sincerity, NT+5th c.BC+ __II.3 open-heartedness: hence, liberality, Refs
+Senses:
+  Sense 1: "generosity / liberality" (4x)
+    Desc: Open-hearted giving, generosity, liberality; the sense derived from 'singleness of heart' that gives without ulterior motive or calculation. In 2 Cor 8:2 the Macedonians' deep poverty overflowed into ...
+    Domain: MORAL_QUALITY > Moral and Ethical Qualities
+    Glosses: eng: generosity, of-generosity | spa: generosidad, sencillez | fra: simplicité | deu: Einfalt
+    Refs: Rom 12:8, 2Cor 8:2, 2Cor 9:11, 2Cor 9:13
+  Sense 2: "sincerity / simplicity" (4x)
+    Desc: Singleness of purpose, sincerity, simplicity of devotion without duplicity or guile. In Eph 6:5 and Col 3:22 slaves are to obey masters 'with sincerity' (ἁπλότητι) of heart, i.e., with undivided loyal...
+    Domain: MORAL_QUALITY > Moral and Ethical Qualities
+    Glosses: eng: holiness, simplicity, sincerity | spa: santidad, sencillez | fra: simplicité | deu: Einfalt
+    Refs: 2Cor 1:12, 2Cor 11:3, Eph 6:5, Col 3:22
+
+=== G0692 ===
+Language: Greek, POS: Adj-NFP, Occurrences: 8, Senses: 2
+
+BDB excerpt: ἀργός, όν, __Blater ή, όν Refs 4th c.BC+:—properly not working the ground, Refs 5th c.BC+; idle, lazy, opposed to ἐργάτις, Refs 6th c.BC+; ἀ. τὴν διάνοιανRefs 5th c.BC+; ἂν ἀ. ᾖ if he have no trade, Refs 4th c.BC+: with genitive of things, idle at a thing, free from it, τῶν οἴκοθεν from domestic toils, Refs 5th c.BC+; ἀ. αἰσχρῶν slow to evil, Refs 5th c.BC+ __B.2 of things, δόρυRefs 5th c.BC+; of money, lying idle, yielding no return, opposed to ἐνεργός, Refs 4th c.BC+ and 20; of land, lying fallow, Refs 5th c.BC+; opposed to πεφυτευμένος, Refs 3rd c.AD+; διατριβὴ ἀ. in which nothing is done, 
+Senses:
+  Sense 1: "idle, lazy" (6x)
+    Desc: Describing persons who are not working, unemployed, or habitually lazy. Used for laborers standing idle in the marketplace whom the vineyard owner hires (Matt 20:3,6), young widows who become idle goi...
+    Domain: MORAL_QUALITY > Moral and Ethical Qualities
+    Glosses: eng: idle, lazy | spa: ociosas, ociosos | fra: paresseux | deu: ἀργαί, ἀργαὶ, ἀργοί
+    Refs: Matt 20:3, Matt 20:6, 1Tim 5:13, 1Tim 5:13, Titus 1:12
+  Sense 2: "careless, useless, worthless" (2x)
+    Desc: Describing things (words, deeds, faith) that are empty, ineffective, or without profitable result, an extended metaphorical application from personal idleness to functional worthlessness. In Matt 12:3...
+    Domain: ECONOMICS_PROPERTY > Value
+    Glosses: eng: careless, useless | spa: inútil, ociosa | fra: paresseux | deu: ἀργή, ἀργὸν
+    Refs: Matt 12:36, Jas 2:20
+
+=== G0714 ===
+Language: Greek, POS: V-PIA-3S, Occurrences: 8, Senses: 2
+
+BDB excerpt: ἀρκέω, imperfect 3rd.pers.singular ἤρκειRefs 8th c.BC+future ἀρκέσω: aorist ἤρκεσα, Doric dialect ἄρκεσαRefs 5th c.BC+ —middle, aorist ἠρκεσάμην, 2nd pers.singular ἠρκέσω uncertain in Refs 4th c.BC+:—passive, infinitive ἀρκέεσθαιRefs 5th c.BC+: perfect ἤρκεσμαιRefs 5th c.AD+: aorist ἠρκέσθηνRefs 1st c.AD+: future ἀρκεσθήσομαιRefs 1st c.BC+:—ward off, keep off, with dative person et accusative of things, σάκος τό οἱ ἤρκεσε λυγρὸν ὄλεθρονRefs 8th c.BC+; ὡς οὐκ ἀρκέσοι τὸ μὴ οὐ.. θανεῖν would not keep off death, Refs __2 with dative only, defend, πυκινὸς δέ οἱ ἤρκεσε θώρηξRefs 8th c.BC+ __3 assis
+Senses:
+  Sense 1: "be sufficient, be enough" (4x)
+    Desc: To be sufficient or adequate in quantity or quality; used impersonally of things that suffice for a need or purpose.
+    Domain: PROPERTIES_RELATIONS > Adequate, Qualified
+    Glosses: eng: are-sufficient, it-is-enough, sufficient | spa: Te-basta, alcance, basta | fra: suffire | deu: genuegen, ἀρκέσῃ
+    Refs: Matt 25:9, John 6:7, John 14:8, 2Cor 12:9
+  Sense 2: "be content, be satisfied" (4x)
+    Desc: To be content or satisfied with what one has; used in the middle/passive voice of persons who are satisfied with their circumstances, wages, or provisions.
+    Domain: PROPERTIES_RELATIONS > Adequate, Qualified
+    Glosses: eng: be-content, being-content, being-satisfied | spa: contentaos, contentándoos, contentándose | fra: suffire | deu: genuegen, ἀρκεῖσθε
+    Refs: Luke 3:14, 1Tim 6:8, Heb 13:5, 3John 1:10

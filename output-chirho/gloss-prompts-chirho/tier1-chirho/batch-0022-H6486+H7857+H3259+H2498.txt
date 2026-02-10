@@ -1,0 +1,163 @@
+You are a biblical lexicographer composing glosses for a digital lexicon.
+For each lemma below, compose a JSON object. Separate objects with "---".
+
+Format for each:
+{
+  "lemma_id": "...",
+  "gloss_terse": "under 120 chars, concise definition covering the word's semantic range",
+  "gloss_readable": "2-5 sentences, 40-120 words. Don't start with 'This word'. Warm study-Bible footnote tone. Engaging, not dry.",
+  "senses": {
+    "1": "enriched 20-60 word description. Reference multilingual evidence when illuminating. Don't repeat the label verbatim.",
+    "2": "..."
+  }
+}
+
+Rules:
+- No markdown fences, just JSON objects separated by ---
+- Reference multilingual evidence naturally when it reveals something
+- gloss_readable should feel like a good study Bible footnote: helpful, clear, occasionally surprising
+- Each sense enrichment: how does the evidence support this sense? Mention 1-2 key passages when helpful.
+
+=== H6486 ===
+Language: Hebrew, POS: Conj-w | N-fsc, Occurrences: 32, Senses: 6
+
+BDB excerpt: פְּקֻדָּה32 n.f. oversight, mustering, visitation, store;—abs. פ׳ Ho 9:7; 1 Ch 23:11; cstr. פְּקֻדַּת Nu 3:32 +; sf. פְּקֻדָּתוֹ 109:8, etc.; pl. פְּקֻדּ(וֹ)ת Je 52:11 +;— 1. visitation: a. = punishment Ho 9:7; Is 10:3; Mi 7:4; Ez 9:1; Nu 16:29 (P), especially in (שְׁנַת)עֵת פְּקֻדָּתָם Je 8:12; 10:15 + 6 times Je (cf. עֵת c. פָּקַד 6:15; 49:8; 50:31), בֵּית הַפּ׳ = prison 52:11. b. gracious visitation, providence Jb 10:12. 2. a. oversight, charge Nu 4:16 (P), also 3:36 (P; redund.), 1 Ch 26:30; = office 2 Ch 23:18. b. overseer (abstr. for concr.), 2 K 11:18; Ez 44:11 (c. אֶל rei), Nu 3:32 (P)
+Senses:
+  Sense 1: "punishment, divine visitation" (13x)
+    Desc: The act of God visiting in judgment; punishment, retribution, or reckoning for sin. Multilingual glosses converge on castigo/dण्ड/عِقَاب/벌/adhabu across all attestations.
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: and-visitation-of, punishments-of, the-punishment | spa: castigo, castigos-de, la-visitación | fra: [הפקדה], [פקדות], châtiment | deu: Heimsuchung, [הפקדה], [פקדתך]
+    Refs: Num 16:29, Isa 10:3, Jer 8:12, Jer 10:15, Jer 11:23
+  Sense 2: "oversight, office, charge" (11x)
+    Desc: An appointed position of supervision or administrative responsibility; the office, charge, or role of overseeing. Glosses include oversight, supervisión, usimamizi, وِكَالَة, 담당/직무.
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: and-oversight-of, his-office, office-of | spa: Y-supervisión-de, cargos, guardias | fra: [פקדות], [פקדת], châtiment | deu: Heimsuchung, officers, oversight-von
+    Refs: Num 3:32, Num 3:36, Num 4:16, Num 4:16, 2Kgs 11:18
+  Sense 3: "numbering, enrollment, muster" (5x)
+    Desc: The act of counting, registering, or mustering people; a census or appointed roster. Glosses include numbering, registro, गिनती, hesabu, إِحْصَاء, 목록/수효.
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: for-enrollment, for-their-appointment, their-appointments | spa: para-registro, para-sus-registros, registro-de-ellos | fra: [לפקדה], [לפקדתם], [פקדתם] | deu: Heimsuchung
+    Refs: 1Chr 23:11, 1Chr 24:3, 1Chr 24:19, 2Chr 17:14, 2Chr 26:11
+  Sense 4: "care, providence" (1x)
+    Desc: God's watchful care or providential attention; a positive sense of divine visitation contrasting with punitive visitation. Attested in Job 10:12 with glosses care/providencia/देखभाल/عِنَايَة/돌보심/utunz...
+    Domain: AUTHORITY_RULE > Control, Rule
+    Glosses: eng: and-Your-care | spa: y-tu-providencia | fra: et-ton-ופקדתך-toi | deu: [ופקדתך]
+    Refs: Job 10:12
+  Sense 5: "custody, imprisonment" (1x)
+    Desc: A place of confinement or guarding; custody or prison. Glosses include custody, cárcel, कारागार, السِّجْن, 감독, kifungo.
+    Domain: VIOLENCE_CONFLICT > Military Activities
+    Glosses: eng: the-custody | spa: la-cárcel | fra: châtiment | deu: Heimsuchung
+    Refs: Jer 52:11
+  Sense 6: "deposit, store entrusted" (1x)
+    Desc: Something deposited or stored up for safekeeping; goods or wealth entrusted to someone's charge. Glosses include stored-up, tesoro, संग्रह, وَدِيعَة, 저축, mali.
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: and-their-stored-up | spa: y-su-tesoro | fra: et-châtiment | deu: und-Heimsuchung
+    Refs: Isa 15:7
+
+=== H7857 ===
+Language: Hebrew, POS: V-Qal-Prtcpl-ms, Occurrences: 31, Senses: 6
+
+BDB excerpt: † שָׁטַף vb. overflow, rinse or wash off (NH id., so J.Aram. שְׁטַף; Assyrian šaṭâpu, overflow, Arabic سطف id., Cuche);— Qal Pf. 3 ms. שׁ׳ Is 8:8 +, etc.; Impf. 3 ms. וַיִּשְׁטֹף 1 K 22:38, etc.; Pt. שׁוֹטֵף Is 10:22 +, pl. שֹׁטְפִים Is 28:2;— 1. overflow, of river Is 8:8; Je 47:2a (v. נַחַל), Dn 11:10, 40, all fig. of invading army, cf. Is 28:15 (qy. by StaThLZ, Apr. 1894, 235, Du Marti read שׁוֹט שֹׁטֵט), v 18 (v. שׁוֹט), also (sim. of י׳ in judgment) v 2 (מַיִם), 30:28, of judicial destruction, שׁוֹטֵף צְדָקָה Is 10:22; c. acc. of land Je 47:2b, pers. (fig.) Is 43:2 (נְהָרוֹת), ψ 69:3 (שִׁב
+Senses:
+  Sense 1: "overflow, flood (Qal intransitive)" (18x)
+    Desc: Of waters rising and overflowing their banks or bounds; to flood, surge, pour forth abundantly, used both literally of rivers and metaphorically of overwhelming forces.
+    Domain: NATURAL_WORLD > Physical Events and States
+    Glosses: eng: and-overflow, and-they-shall-overflow, flooding | spa: arrastrarán, desbordante, e-inundarán | fra: [השוטף], et-inonder, inonder | deu: overflowed, ueberfluten, und-ueberfluten
+    Refs: 2Chr 32:4, Ps 78:20, Isa 8:8, Isa 10:22, Isa 28:2
+  Sense 2: "sweep away, engulf (Qal transitive)" (7x)
+    Desc: Of floodwaters or overwhelming forces sweeping over, carrying away, or engulfing persons or things; the destructive transitive effect of rushing water upon its object.
+    Domain: NATURAL_WORLD > Physical Events and States
+    Glosses: eng: has-swept-over-me, rushing, sweep-over-me | spa: arrastran, lo-inundarán, me-arrastra | fra: inonder, le-submergeraient., submerger | deu: [ישטפוה], [תשטף], hat-swept-über-mich
+    Refs: Job 14:19, Ps 69:2, Ps 69:15, Ps 124:4, Song 8:7
+  Sense 3: "rinse, wash (Qal)" (3x)
+    Desc: To rinse or wash an object with water, typically in a ritual or domestic context such as cleansing vessels, sacrificial items, or the body.
+    Domain: PHYSICAL_ACTION > Activities Involving Liquids
+    Glosses: eng: and-I-rinsed, and-they-washed, he-rinsed | spa: Y-lavaron, enjuagó, y-enjuagué | fra: et-ils-lava, et-inonder, il-rinsed | deu: er-rinsed, und-sie-wusch, und-ueberfluten
+    Refs: Lev 15:11, 1Kgs 22:38, Ezek 16:9
+  Sense 4: "be rinsed (Niphal passive of wash)" (1x)
+    Desc: Niphal passive: to be rinsed or washed with water, used of objects requiring ritual cleansing.
+    Domain: PHYSICAL_ACTION > Activities Involving Liquids
+    Glosses: eng: shall-be-rinsed | spa: será-enjuagado | fra: devra-être-rinsed | deu: soll-sein-rinsed
+    Refs: Lev 15:12
+  Sense 5: "be swept away (Niphal passive of flood)" (1x)
+    Desc: Niphal passive: to be swept away or overwhelmed by flooding waters; the passive counterpart of the transitive 'sweep away' sense.
+    Domain: NATURAL_WORLD > Physical Events and States
+    Glosses: eng: shall-be-swept-away | spa: serán-arrollados | fra: inonder | deu: ueberfluten
+    Refs: Dan 11:22
+  Sense 6: "be rinsed (Pual intensive passive)" (1x)
+    Desc: Pual intensive passive: to be thoroughly rinsed or washed, indicating a more intensive or complete washing action than the simple Niphal.
+    Domain: PHYSICAL_ACTION > Activities Involving Liquids
+    Glosses: eng: and-rinsed | spa: y-enjuagada | fra: et-rinsed | deu: und-rinsed
+    Refs: Lev 6:28
+
+=== H3259 ===
+Language: Hebrew, POS: Conj-w | V-Nifal-ConjPerf-3cp, Occurrences: 29, Senses: 6
+
+BDB excerpt: † יָעַד vb. appoint (NH id., appoint, assign, especially of acquiring or designating as wife; Aramaic id.; Arabic وَعَدَ promise, threaten, predict, iii. appoint a time or place; perhaps Assyrian ādu, decide, M-A17 DlHWB 230; Ph. n.pr. אשמניעד)— Qal Pf. sf. יְעָדוֹ 2 S 20:5; יְעָרָהּ Ex 21:8 + 2 times; Impf. 3 m. sf. יִיעָדֶנָּה Ex 21:9;—appoint, a time 2 S 20:5; place Je 47:7; a rod Mi 6:9; assign or designate as concubine Ex 21:8, 9 (JE). Niph. Pf. נוֹעַדְתִּי Ex 25:22; נֹעַדְתִּי Ex 29:43; pl. נוֹעֲדוּ ψ 48:5; Nu 10:3, 4; נוֹעָ֑דוּ Am 3:3; Impf. אִוָּעֵד Ex 29:42 + 3 times; 3 pl. וַיִּוָּעֲ
+Senses:
+  Sense 1: "assemble, gather together" (9x)
+    Desc: Nifal: to assemble or gather as a group, often of people congregating for a purpose.
+    Domain: MOVEMENT > Linear Movement
+    Glosses: eng: and-shall-assemble, and-they-assembled, assembled | spa: Y-se-reunieron, los-que-se-juntaron, los-que-se-reúnen | fra: [הנועדים], et-devra-assembler, et-ils-assembla | deu: [הנועדים], assembled, der-assembled
+    Refs: Num 10:3, Num 10:4, Num 14:35, Num 16:11, Num 27:3
+  Sense 2: "meet by appointment" (8x)
+    Desc: Nifal: to meet at an appointed place or time, especially God meeting with His people at the Tent of Meeting.
+    Domain: MOVEMENT > Linear Movement
+    Glosses: eng: I-meet, I-will-meet, and-I-will-meet | spa: Y-me-reuniré, me-reuniré, reunámonos | fra: Je---rencontrer, [ונועדה], [נועד] | deu: [ונועדה], [נועד], ich-meet
+    Refs: Exod 25:22, Exod 29:42, Exod 29:43, Exod 30:6, Exod 30:36
+  Sense 3: "appoint, designate" (5x)
+    Desc: Qal: to appoint, designate, or betroth someone or something for a specific purpose or role.
+    Domain: PHYSICAL_ACTION > Physical Impact
+    Glosses: eng: appointed-it, he-appointed-him, he-designated-her | spa: la-designa, la-designó, la-ha-citado | fra: [יעדה], elle-a-convoqué, il-designated-sa | deu: [יעדה], er-bestellte-ihn, er-designated-ihr
+    Refs: Exod 21:8, Exod 21:9, 2Sam 20:5, Jer 47:7, Mic 6:9
+  Sense 4: "summon to judgment" (3x)
+    Desc: Hifil: to summon or arraign someone before a tribunal or court, a causative legal usage.
+    Domain: JUSTICE_PUNISHMENT > Courts and Legal Procedures
+    Glosses: eng: can-summon-me, will-summon-me | spa: me-citará, me-citará? | fra: [יועדני], [יעידני], fixer-moi | deu: [יועדני], [יועידני], [יעידני]
+    Refs: Job 9:19, Jer 49:19, Jer 50:44
+  Sense 5: "be appointed, be set" (2x)
+    Desc: Hofal: to be appointed, set, or directed passively, indicating something placed or designated by another.
+    Domain: MOVEMENT > Stances
+    Glosses: eng: is-appointed, set | spa: esté-dirigido, puestas | fra: [מועדים], [מעדות] | deu: [מועדים], [מעדות]
+    Refs: Jer 24:1, Ezek 21:16
+  Sense 6: "agree, conspire together" (2x)
+    Desc: Nifal: to meet together by agreement or conspiracy, implying a mutual pact or accord.
+    Domain: GROUPS_COMMUNITY > Association
+    Glosses: eng: and-they-met-together, they-have-agreed | spa: se-hayan-citado, y-se-concertaron | fra: et-fixer, ils-se-sont-réunis | deu: [ויועדו], [נועדו]
+    Refs: Job 2:11, Amos 3:3
+
+=== H2498 ===
+Language: Hebrew, POS: V-Hifil-Imperf-2ms | 3mp, Occurrences: 28, Senses: 6
+
+BDB excerpt: † חָלַף vb. pass on or away, pass through (mostly poet.) (NH id., pass by or away, change; Ph. חלפת equivalent, ReinachRÉJ 188, 276; Hoffm G. G. Abh. xxxvi. 1890, 20; Aramaic חֲלַף pass away, change; ܚܠܰܦ change, substitute; Nab. חלף change (?) Eut p. 53; Arabic خَلَفَ come after, succeed, replace [cf. ‘Caliph’ i.e. successor (of Mohammed)] and many deriv. Lane792–799; so also ויחלפה MI 6 and his son succeeded him; Ethiopic ኀለፈ pass by, across, through)— Qal Pf. חָלַף Ct 2:11 Hb 1:11 etc.; Impf. יַחֲלֹף Jb 4:15 + 4 times; 3 fs. sf. תַּחְלְפֵ֫הוּ Jb 20:24; יַחֲלֹ֑פוּ ψ 102:27; Inf. cstr. לַחֲלו
+Senses:
+  Sense 1: "change, exchange, replace" (8x)
+    Desc: Piel/Hifil: to change, exchange, or replace one thing for another, such as garments or building materials
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: and-change, and-has-changed, and-he-changed | spa: lo-cambiará, los-cambiarás, reemplazaremos | fra: changer, et-a-changea, et-changer | deu: [נחליף], du-wird-change-ihnen, er-soll-tauschen-es
+    Refs: Gen 31:7, Gen 31:41, Gen 35:2, Gen 41:14, Lev 27:10
+  Sense 2: "pass through, sweep by" (8x)
+    Desc: Qal: to pass on, pass through, or sweep by a place in physical movement
+    Domain: MOVEMENT > Linear Movement
+    Glosses: eng: and-He-moves-on, and-it-will-pass-through, and-you-will-pass-on | spa: Pasan, Y-pasará, Y-pasarás | fra: changer, et-changer, et-passer | deu: [וחלף], [ויחלף], [חלף]
+    Refs: 1Sam 10:3, Job 4:15, Job 9:11, Job 9:26, Job 11:10
+  Sense 3: "pass away, perish" (5x)
+    Desc: Qal: to pass away, vanish, cease to exist, or undergo change in the sense of transience
+    Domain: MOVEMENT > Linear Movement
+    Glosses: eng: and-sprouts, and-they-will-pass-away, passed-over | spa: cesó, desaparecerán, pasa | fra: a-cessé,, changer, et-changer | deu: [חלף], [יחלף], der-sprouts
+    Refs: Ps 90:5, Ps 90:6, Ps 102:26, Song 2:11, Isa 2:18
+  Sense 4: "renew, sprout anew" (4x)
+    Desc: Hifil: to renew strength or youth, or of a plant sprouting new growth after being cut down
+    Domain: MOVEMENT > Linear Movement
+    Glosses: eng: it-sprouts, let-them-renew, renews | spa: renovarán, renueven, retonará | fra: changer, passer | deu: [יחליף], [יחליפו], [תחליף]
+    Refs: Job 14:7, Job 29:20, Isa 40:31, Isa 41:1
+  Sense 5: "pierce, penetrate" (2x)
+    Desc: Qal: to pierce through or penetrate, as a weapon or sharp object passing through flesh
+    Domain: PHYSICAL_ACTION > Physical Impact
+    Glosses: eng: and-she-pierced, pierces-him | spa: lo-traspasará, y-atravesó | fra: changer-lui, et-elle-pierced | deu: [תחלפהו], und-sie-pierced
+    Refs: Judg 5:26, Job 20:24
+  Sense 6: "violate, transgress" (1x)
+    Desc: Qal: to violate or transgress a covenant or law, treating it as something passed over or disregarded
+    Domain: MOVEMENT > Linear Movement
+    Glosses: eng: violated | spa: violaron | fra: passer | deu: [חלפו]
+    Refs: Isa 24:5

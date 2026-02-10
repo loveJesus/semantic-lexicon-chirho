@@ -1,0 +1,113 @@
+You are a biblical lexicographer composing glosses for a digital lexicon.
+For each lemma below, compose a JSON object. Separate objects with "---".
+
+Format for each:
+{
+  "lemma_id": "...",
+  "gloss_terse": "under 120 chars, concise definition covering the word's semantic range",
+  "gloss_readable": "2-5 sentences, 40-120 words. Don't start with 'This word'. Warm study-Bible footnote tone. Engaging, not dry.",
+  "senses": {
+    "1": "enriched 20-60 word description. Reference multilingual evidence when illuminating. Don't repeat the label verbatim.",
+    "2": "..."
+  }
+}
+
+Rules:
+- No markdown fences, just JSON objects separated by ---
+- Reference multilingual evidence naturally when it reveals something
+- gloss_readable should feel like a good study Bible footnote: helpful, clear, occasionally surprising
+- Each sense enrichment: how does the evidence support this sense? Mention 1-2 key passages when helpful.
+
+=== H7628a ===
+Language: Hebrew, POS: Prep-m, Occurrences: 47, Senses: 2
+
+BDB excerpt: † שְׁבִי n.m. Is 49:24 captivity, captives (coll.);—שׁ׳ abs. Ex 12:29 +, cstr. Ezr 2:1 +; שֶׁ֑בִי Nu 21:1 +; sf. שֶׁבְיְךָ Ju 5:12, שִׁבְיוֹ Dt 21:10, שְׁבִיכֶם Nu 31:19, etc.;— 1. = state of captivity, הָלַךְ בַּשְּׁ׳ Am 9:4; Dt 28:41; Na 3:10; Je 20:6; 22:22; 30:16 Ez 12:11 (+ בַּגּוֹלָה), 30:17, 18; Is 46:2; La 1:18, = הָלַךְ שְׁבִי v 5; בַּשְּׁבִי יָבִא Dn 11:8; נָתַן בַּשְּׁ׳ Ezr 9:7, נָתַן לַשְּׁ׳ ψ 78:61, לֻקַּח בַּשֶּׁ֑בִי Je 48:46; וַאֲשֶׁר לַשְּׁבִי לַשֶּׁ֑בִי Je 15:2; 43:11, וְנָשֵׁינוּ בַּשְּׁ׳ 2 Ch 29:9; בִּשְׁבִי instr. of judgment Dn 11:33; אֶרֶץ שׁ׳ Je 30:10; 46:27;16 2 Ch 6:37
+Senses:
+  Sense 1: "captivity, state of exile" (33x)
+    Desc: The abstract condition of being held captive or taken into exile; used of the state or experience of captivity, often with prepositions indicating movement into, location in, or release from that cond...
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: in-the-captivity, into-captivity, into-the-captivity | spa: al-cautiverio, el-cautiverio, en-cautiverio | fra: captif, captivité, dans-captivité | deu: Gefangene, die-Gefangenen, in-Gefangene
+    Refs: Num 21:29, Deut 28:41, 2Chr 29:9, Ezra 2:1, Ezra 3:8
+  Sense 2: "captives, captured persons" (14x)
+    Desc: Concrete reference to persons taken captive, either collectively (captives, those carried away) or individually (a captive, prisoner); often with possessive suffixes indicating whose captives they are...
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: and-your-captives, captive, captive-of | spa: cautivo-de, cautivos, cautivos-de | fra: captif, captifs, captivité | deu: Gefangene, Gefangenschaft, captives
+    Refs: Exod 12:29, Num 21:1, Num 31:12, Num 31:19, Num 31:26
+
+=== H7716 ===
+Language: Hebrew, POS: Prep-l | N-ms, Occurrences: 47, Senses: 2
+
+BDB excerpt: † שֶׂה n.m. Gn 30:32 and (less often) f. Je 50:17 one of a flock, a sheep (or goat) (Assyrian šuʾu, Arabic شَاةٌ, pl. شَآءٌ, شِوَاهٌ, etc. (also wild ox), cf. Egyptian sau, sheep Bondi65, cf. Id.Ba NB § 2 b δ);—abs. שֶׂה Gn 30:32 +, cstr. שֵׂה Is 43:23 +; sf. שֵׂיוֹ Dt 22:1, שְׂיֵ֫הוּ 1 S 14:34; not in pl.;— 1. a sheep, or goat, nom. unit. of צֹאן: as property Gn 30:32(×2) (E; + צֹאן coll., כְּשָׂבִים, עִזִּים), Ex 21:37(×2) (+ שׁוֹר, צֹאן coll.), 22:3 (+ שׁוֹר, חֲמוֹר), v 8 (id.), v 9 (id.; all E); Dt 22:1 (+ שׁוֹר), 1 S 17:34 (זה Kt van d. H. erron., v. Baer Dr), roaming pasture Is 7:25, str
+Senses:
+  Sense 1: "sheep, head of small cattle" (27x)
+    Desc: A single animal from the flock (צאן), referring generically to a sheep or goat without emphasis on age; the basic denotation of שֶׂה as an individual head of small livestock.
+    Domain: ANIMALS > Animals
+    Glosses: eng: a-lamb-of, a-sheep, and-sheep | spa: ni-oveja, oveja, su-oveja | fra: [שה], brebis, et-brebis | deu: Schaf, Schaf-, Schafe
+    Refs: Gen 30:32, Gen 30:32, Exod 22:1, Exod 22:1, Exod 22:4
+  Sense 2: "lamb, young of the flock" (20x)
+    Desc: A young animal of the flock — a lamb or kid — used in contexts emphasizing youth or sacrificial fitness (e.g., the Passover lamb of Exodus 12, the lamb led to slaughter of Isaiah 53:7).
+    Domain: ANIMALS > Animals
+    Glosses: eng: a-lamb, and-lamb-, and-young-of | spa: Cordero, Y-cordero, como-cordero | fra: [השה], [כשה], agneau | deu: Lamm, Schaf, [השה]
+    Refs: Gen 22:7, Gen 22:8, Exod 12:3, Exod 12:3, Exod 12:4
+
+=== G2342 ===
+Language: Greek, POS: N-GNP, Occurrences: 46, Senses: 2
+
+BDB excerpt: θηρίον, τό (in form diminutive of θήρ), wild animal, especially of such as are hunted, μάλα γὰρ μέγα θηρίον ἦεν, of a stag, Refs 8th c.BC+; in Trag. only in Satyric drama, Refs 5th c.BC+; of the spider's prey, Refs 4th c.BC+; frequently of elephants, Refs 2nd c.BC+: plural, beasts, opposed to men, birds, and fishes, Refs 5th c.BC+ __2 generally, animal, Refs; of men, ἄνθρωπος πάντων θ. θεειδέστατον Refs 5th c.BC+; of the dog, Refs 3rd c.BC+; of fishes, Refs 4th c.BC+; of eels, Refs 4th c.BC+; of leeches, Refs; of other small creatures, Refs 5th c.BC+, either above or below the nature of man, R
+Senses:
+  Sense 1: "beast (apocalyptic)" (39x)
+    Desc: The apocalyptic Beast of Revelation, a supernatural malevolent figure symbolizing opposition to God and his people. The dominant NT use of θηρίον (39 occurrences, almost entirely in Revelation). Rende...
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: a-beast, beast | spa: bestia | fra: bête | deu: Tier
+    Refs: Heb 12:20, Rev 11:7, Rev 13:1, Rev 13:2, Rev 13:3
+  Sense 2: "wild animal, creature" (7x)
+    Desc: A wild animal or beast in the natural/literal sense, as opposed to the apocalyptic Beast of Revelation. Includes: the venomous creature (θηρίον) that fastened on Paul's hand in Malta (Acts 28:4-5, ren...
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: beasts, creature, of-beasts | spa: bestias, criatura, de-fieras | fra: bête | deu: Tier, θηρία, θηρίον
+    Refs: Mark 1:13, Acts 11:6, Acts 28:4, Acts 28:5, Titus 1:12
+
+=== G4226 ===
+Language: Greek, POS: Adv, Occurrences: 46, Senses: 2
+
+BDB excerpt: ποῦ, Ionic dialect κοῦ, interrogative adverb where? Refs 8th c.BC+; rarely with Verbs of motion in early authors, see που entry near the end:—with genitive loci, π. χθονό; where in the world? Refs 5th c.BC+; τὴν σοφίαν.. π. χοροῦ τάξομε; in what part of the chorus? Refs 5th c.BC+ __2 so in a sense not strictly local, π. ποτ᾽ εἶ φρενῶ; Refs 5th c.BC+; π. σοι τύχης ἕστηκε; at what point of fortune stands he? Refs __II of manner, how? Refs 5th c.BC+; to express an inference very strongly, κοῦ γε δὴ.. οὐκ ἂν χωσθείη κόλπος..; how then would it not.. ? i.e. it certainly would.., Refs 5th c.BC+; in 
+Senses:
+  Sense 1: "?" (45x)
+    Domain: GEOGRAPHY_SPACE > Spacial Positions
+    Glosses: eng: Where, where | spa: Adónde, Dónde, a-dónde | fra: où | deu: wo
+    Refs: Matt 2:2, Matt 2:4, Matt 8:20, Matt 26:17, Mark 14:12
+  Sense 2: "?" (1x)
+    Domain: GEOGRAPHY_SPACE > Spacial Positions
+    Glosses: eng: anywhere | spa: en-algún-lugar | fra: où | deu: wo
+    Refs: Heb 2:16
+
+=== H0970 ===
+Language: Hebrew, POS: Conj-w | N-mpc | 1cs, Occurrences: 46, Senses: 2
+
+BDB excerpt: † בָּחוּר n.m. young man Is 62:5 + 7 times; pl. בַּחוּרִים (intensive with dag. f. implic.) Pr 20:29 + 13 times; cstr. בַּחוּרֵי Ez 23:6 + 4 times; sf. בַּחוּרַי etc. La 1:18 + 16 times;—young man (choice, in the prime of manhood) 1 S 9:2 Ec 11:9 Is 62:5; coll. young men Je 15:8; בָּחוּר וּבְתוּלָה young men and virgins Dt 32:25 2 Ch 36:17 Je 51:22 Ez 9:6; usually pl. Ju 14:10 Ru 3:10 1 S 8:16 2 K 8:12 2 Ch 36:17 Pr 20:29 Is 9:17; 31:8; 40:30 Je 6:11; 9:20; 11:22; 18:21; 48:15; 49:26; 50:30; 51:3 La 1:15; 5:13, 14 Ez 33:6, 12, 23; 30:17 Jo 3:1 Am 2:11; 4:10; ‖ בתולות ψ 78:63; 148:12 Is 23:4 Je
+Senses:
+  Sense 1: "young man, youth" (44x)
+    Desc: A young man of fighting or marriageable age; the substantivized passive participle used as a common noun for male youth, often in collective plural referring to a community's young men or warriors.
+    Domain: PEOPLE_KINSHIP > People
+    Glosses: eng: a-young-man, her-young-men, his-young-men | spa: Los-jóvenes-de, al-joven, el-joven | fra: [בחור], jeune-homme, jeunes-hommes | deu: Juengling, jung-Mann, junge-Maenner
+    Refs: Deut 32:25, Judg 14:10, Ruth 3:10, 1Sam 8:16, 1Sam 9:2
+  Sense 2: "chosen one, elect" (2x)
+    Desc: The passive participle retaining its verbal force from the root בחר (to choose), meaning one who has been chosen or selected, used as a title or descriptor for a person singled out by God or by others...
+    Domain: MENTAL_LIFE > Think
+    Glosses: eng: a-chosen-one, the-chosen-one | spa: escogido | fra: dans-jeune-homme, jeune-homme | deu: Juengling, ein-Erwählter-einer
+    Refs: Ps 89:19, Jer 50:44
+
+=== H4960 ===
+Language: Hebrew, POS: N-msc, Occurrences: 46, Senses: 2
+
+BDB excerpt: מִשְׁתֶּה45 n.m. Gn 21:8 1. feast; 2. drink;—abs. מ׳ Gn 19:3 +; cstr. מִשְׁתֵּה 1 S 25:36 +; sf. מִשְׁתָּיו Dn 1:5 + (Ges§ 93 ss), etc.;— 1. feast, banquet (occasion for drinking, drinking-bout), 1 S 25:36(×2); Is 5:12; Je 51:39 (fig.), Jb 1:5; Est 2:18; 5:14; 8:17; 9:19; lasting seven days Ju 14:12, 17 (wedding-feast, cf. Gn 29:22, and v. BenzArch. 143; Ency. Bib. 2949 NowArch. i. 163); עָשָׂה מ׳ give or make a feast (sometimes + ל pers.) Gn 19:3; 26:30 (both J), 21:8; 40:20 (both E), Ju 14:10; 2 S 3:20 1 K 3:15; Est 1:3 + 8 times Est, Jb 1:4 + 2 S 13:27(×2) 𝔊 Th We Dr and mod.; מִשְׁתֵּה הַי
+Senses:
+  Sense 1: "feast, banquet" (41x)
+    Desc: A drinking feast or banquet, a festive occasion involving eating and drinking, often royal or celebratory.
+    Domain: RELIGIOUS_LIFE > Festivals
+    Glosses: eng: a-feast, a-feast-of, banquet | spa: banquete, banquete-de, el-banquete | fra: [משתה], festin, fête | deu: Fest, Mahl, [משתה]
+    Refs: Gen 19:3, Gen 21:8, Gen 26:30, Gen 29:22, Gen 40:20
+  Sense 2: "drink, drinking" (5x)
+    Desc: The act of drinking or the drink itself, referring to beverages consumed rather than the festive occasion.
+    Domain: BODY_HEALTH > Physiological Processes and States
+    Glosses: eng: and-drink, his-banquet, their-drink | spa: su-bebida, vuestra-bebida, y-bebida | fra: et-festin, festin | deu: [משתיהם], [משתיו], [משתיכם]
+    Refs: Ezra 3:7, Dan 1:5, Dan 1:8, Dan 1:10, Dan 1:16

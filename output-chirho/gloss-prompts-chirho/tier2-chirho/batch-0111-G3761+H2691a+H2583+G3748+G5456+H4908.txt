@@ -1,0 +1,115 @@
+You are a biblical lexicographer composing glosses for a digital lexicon.
+For each lemma below, compose a JSON object. Separate objects with "---".
+
+Format for each:
+{
+  "lemma_id": "...",
+  "gloss_terse": "under 120 chars, concise definition covering the word's semantic range",
+  "gloss_readable": "2-5 sentences, 40-120 words. Don't start with 'This word'. Warm study-Bible footnote tone. Engaging, not dry.",
+  "senses": {
+    "1": "enriched 20-60 word description. Reference multilingual evidence when illuminating. Don't repeat the label verbatim.",
+    "2": "..."
+  }
+}
+
+Rules:
+- No markdown fences, just JSON objects separated by ---
+- Reference multilingual evidence naturally when it reveals something
+- gloss_readable should feel like a good study Bible footnote: helpful, clear, occasionally surprising
+- Each sense enrichment: how does the evidence support this sense? Mention 1-2 key passages when helpful.
+
+=== G3761 ===
+Language: Greek, POS: Conj, Occurrences: 144, Senses: 2
+
+BDB excerpt: οὐδέ, negative Particle, related to μηδέ as οὐ to μή, partly conjunction, partly adverb: __A CONJUNCTION, but not, mostly answering to μέν (sometimes written divisim), Refs 8th c.BC+, but not, is followed by οὐδέ, nor, ἄλλοις μὲν πᾶσιν ἑήνδανεν, οὐδέ ποθ᾽ Ἥρῃ, οὐδὲ Ποσειδάων᾽, οὐδὲ γλαυκώπιδι κούρῃ Refs __A.II more frequently and not, nor: sometimes without a negative preceding, Κίρκη δ᾽ ὡς ἐνόησεν ἔμ᾽ ἥμενον, οὐδ᾽ ἐπὶ σίτῳ χεῖρας ἰάλλοντα Refs 8th c.BC+; δεινὸν γάρ, οὐδὲ ῥητόν Refs 5th c.BC+: after a negative compound, ὃν ἠτίμησ᾽ Ἀγαμέμνων, οὐδ᾽ ἀπέλυσε θύγατρα Refs 8th c.BC+ __A.II.2 with a 
+Senses:
+  Sense 1: "nor, neither (conjunctive)" (98x)
+    Desc: Conjunctive negation connecting two negative clauses or items, meaning 'and not, nor, neither', continuing a prior negation to add another negated element.
+    Domain: PROPERTIES_RELATIONS > Affirmation, Negation
+    Glosses: eng: nor, nor- | spa: ni | fra: ni, ni- | deu: auch-nicht
+    Refs: Matt 5:15, Matt 6:20, Matt 6:26, Matt 6:26, Matt 6:28
+  Sense 2: "not even (emphatic adverb)" (46x)
+    Desc: Adverbial emphatic negation meaning 'not even', intensifying the negation to indicate that even the least expected item is excluded.
+    Domain: PROPERTIES_RELATIONS > Affirmation, Negation
+    Glosses: eng: Neither, neither, neither- | spa: Tampoco, ni, ni-aun | fra: ni | deu: auch-nicht
+    Refs: Matt 6:15, Matt 6:29, Matt 21:27, Matt 21:32, Matt 27:14
+
+=== H2691a ===
+Language: Hebrew, POS: N-cpc, Occurrences: 144, Senses: 2
+
+BDB excerpt: I. חָצֵר145 n.m. Ez 40:23 and (oftener) f. 1 K 6:36 enclosure, court—abs. ח׳ 1 K 7:8 +, חָצֵרָה Je 36:20; cstr. חֲצַר Ex 27:9 +; sf. חֲצֵרוֹ 2 S 17:18; חֲצֵרוֹת Ex 8:9 + 4 times; cstr. חַצְרֵי Ne 13:7, חַצְרוֹת 2 K 21:5 + 10 times; sf. חֲצֵרָ֑י Is 1:12; Zc 3:7; חֲצֵרֶיךָ ψ 65:5; 84:11; חֲצֵרוֹתָ֑י 1 Ch 28:6; חֲצֵרֹחָיו ψ 100:4, לְחַצְרוֹתָ֑יו ψ 96:8, וּבְחַצְרֹתֵיהֶם Ne 8:16;— 1. enclosures (in Egypt), perhaps court-yards, or cattle-yards, distinct from houses and from fields Ex 8:9 (J). 2. court of private house 2 S 17:18 (containing well), cf. Ne 8:16; of a palace, חָצֵר הָאַחֶרֶת 1 K 7:8 th
+Senses:
+  Sense 1: "court, courtyard, enclosure" (142x)
+    Desc: An enclosed open area attached to a building, especially the court of the tabernacle, temple, or a royal palace or house.
+    Domain: BUILDINGS > Constructions
+    Glosses: eng: the-court, the-courtyard | spa: el-atrio | fra: le-parvis | deu: der-Vorhof
+    Refs: Exod 27:12, Exod 27:13, Exod 27:16, Exod 27:17, Exod 27:18
+  Sense 2: "village, unwalled settlement" (2x)
+    Desc: An unwalled town or encampment, a settlement without defensive walls, often used of nomadic or rural habitations.
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: and-their-villages, their-villages | spa: Y-sus-aldeas, sus-aldeas | fra: et-parvis, parvis | deu: Hof, und-Hof
+    Refs: 1Chr 4:32, 1Chr 4:33
+
+=== H2583 ===
+Language: Hebrew, POS: Conj-w | V-Qal-ConjImperf-3mp, Occurrences: 143, Senses: 2
+
+BDB excerpt: חָנָה143 vb. decline, bend down, encamp (Aramaic ܚܢܳܐ to aim at, incline towards, reach; Zinj. מחנת cstr. camp, Inscr. Panammu13, 16, 17; Arabic حَنَا bend, curve, bend down; Assyrian mûnu, mênu and tênû couch, mânîtu, house, ZimBP 44, 45 Dl in Zim117)— Qal Pf. חָנָה 1 S 26:5 Is 29:1; וְחָנִ֫יתִי consec. Is 29:3 Zc 9:8; חָנוּ Nu 2:34 + 2 times; וְחָנוּ consec. Nu 1:52; Impf. וַיִּחַן Gn 26:17 + 9 times; 3 fs. תַּחֲנֶה ψ 27:3; יַחֲנוּ Nu 1:50 + 13 times Nu + Ex 14:2: וַיַּחֲנוּ Ex 13:20 + 79 times (of which 42 in Nu 33); וַיַּחֲנוּן Ju 11:18; 2 mpl. תַּחֲנוּ Ex 14:2; 1 pl. וַנַּחֲנֶה Ezr 8:15; 
+Senses:
+  Sense 1: "encamp, pitch camp" (130x)
+    Desc: To set up camp or pitch tents, typically during travel, migration, or wilderness sojourn.
+    Domain: MOVEMENT > Stances
+    Glosses: eng: and-camped, and-they-camped, and-they-camped- | spa: y-acamparon | fra: et-campa, et-ils-campa, et-ils-campèrent- | deu: und-lagerte, und-sie-lagerte, und-sie-lagerte-
+    Refs: Exod 13:20, Exod 17:1, Exod 19:2, Num 12:16, Num 21:10
+  Sense 2: "encamp against, besiege" (13x)
+    Desc: To set up a military encampment against a city or enemy position, often implying siege or hostile intent.
+    Domain: DANGER_DELIVERANCE > Trouble, Hardship, Relief
+    Glosses: eng: And-I-shall-encamp, and-I-will-encamp, and-encamp | spa: Y-acamparé, acampando, acampare | fra: [וחניתי], [חנו], campant | deu: [וחניתי], [ויחנו], [חנו]
+    Refs: 1Sam 11:1, 1Sam 26:5, 1Sam 29:1, 2Sam 12:28, 1Kgs 16:15
+
+=== G3748 ===
+Language: Greek, POS: RelPro-NMP, Occurrences: 140, Senses: 2
+
+BDB excerpt: ὅστις, ἥτις, ὅ τι (sometimes written ὅ, τι to distinct it from ὅτι, that): Refs 8th c.BC+ has also the masculine collateral form ὅτις Refs 8th c.BC+ and Ionic dialect and Refs 4th c.AD+ and the neuter ὅττι Refs 8th c.BC+—In some forms only the second part is inflected, i.e. genitive ὅτου Refs 5th c.BC+, Epic dialect ὅττεο Refs 8th c.BC+[same place], contraction ὅττευ Refs 8th c.BC+; perhaps also in Ionic dialect, Refs 5th c.BC+; Epic dialect ὅτεῳ Refs 8th c.BC+, and as disyllable, Refs 8th c.BC+; Epic dialect accusative ὅτινα Refs 8th c.BC+; Delph. dative ὅτινι Refs 3rd c.BC+; neuter ὅτινα Ref
+Senses:
+  Sense 1: "who, which (indefinite relative pronoun)" (123x)
+    Desc: The standard relative pronoun function of hostis/hētis/hoti, meaning 'who,' 'which,' or 'that,' introducing relative clauses that identify or describe a person or thing. This is the overwhelmingly dom...
+    Domain: DISCOURSE_NAMES > Discourse Referentials
+    Glosses: eng: who | spa: las-cuales, los-cuales, quienes | fra: qui | deu: die, wer-auch
+    Refs: Matt 7:15, Matt 16:28, Matt 19:12, Matt 19:12, Matt 19:12
+  Sense 2: "whoever, whatever (generalizing relative)" (17x)
+    Desc: The generalizing or indefinite relative use of hostis meaning 'whoever,' 'anyone who,' or 'whatever,' where the relative clause has a conditional or universal force rather than identifying a specific ...
+    Domain: DISCOURSE_NAMES > Discourse Referentials
+    Glosses: eng: Whoever, whatever, who | spa: cualquiera, cualquiera-que, el-que | fra: qui | deu: der, die, wer-auch
+    Refs: Matt 5:39, Matt 5:41, Matt 7:24, Matt 10:32, Matt 10:33
+
+=== G5456 ===
+Language: Greek, POS: N-NFP, Occurrences: 139, Senses: 2
+
+BDB excerpt: φων-ή, ἡ, sound, tone, properly, the sound of the voice, whether of men or animals with lungs and throat (ἡ φωνὴ ψόφος τίς ἐστιν ἐμψύχου Refs 4th c.BC+; opposed to φθόγγος (see. φθόγγος Refs __I mostly of human beings, speech, voice, utterance, φ. ἄρρηκτος Refs 8th c.BC+; φ. δέ οἱ αἰθέρ᾽ ἵκανεν, of Ajax' battle-cry, Refs; of the battle-cry of an army, Τρώων καὶ Ἀχαιῶν.. φ. δεινὸν ἀϋσάντων Refs: plural, of the cries of market-people, Refs 5th c.BC+; ὀξεῖα, βαρυτέρα, λεία, τραχεῖα φ., Refs 5th c.BC+; μιαρά, ἀναιδής, Refs 5th c.BC+with his voice, aloud, Refs 8th c.BC+; μιᾷ φ. with one voice, Refs
+Senses:
+  Sense 1: "voice, sound" (137x)
+    Desc: The primary sense of φωνή: the sound produced by a living being's vocal apparatus, or more broadly any audible sound or noise. This is the overwhelmingly dominant NT usage, covering human voices, divi...
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: a-cry, a-voice, sound | spa: la-voz, sonido, voz | fra: voix | deu: Stimme
+    Refs: Matt 3:17, Matt 12:19, Matt 17:5, Mark 1:11, Mark 9:7
+  Sense 2: "sound, noise (non-vocal)" (2x)
+    Desc: A specialized usage referring to sounds or noises that are not voices per se but rather auditory phenomena produced by instruments, natural forces, or supernatural events. The plural φωναί in this sen...
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: of-sounds, sounds | spa: de-voces, sonidos | fra: voix | deu: Stimme
+    Refs: 1Cor 14:10, Rev 8:13
+
+=== H4908 ===
+Language: Hebrew, POS: N-mpc | 2ms, Occurrences: 139, Senses: 2
+
+BDB excerpt: מִשְׁכָּן139 n.m. Ex 26:6 dwelling-place, ‘tabernacle’;—מ׳ Ex 25:9 +; cstr. מִשְׁכַּן 38:21 +, etc.; pl. cstr. מִשְׁכְּנֵי ψ 46:6 (𝔊 Bae Du מִשְׁכָּנוֹ, מִשְׁכַּן י׳); sf. מִשְׁכְּנֵיהֶם Ez 25:4 (משׁכנתיהם, ‖ טִירוֹתֵיהֶם), מִשְׁכָּנוֹת Hb 1:6 ψ 132:5; cstr. מִשְׁכְּנוֹת 87:2 +, etc.;— †1. dwelling-place: מִשְׁכַּן־קֹרַח דָּתָן וַאֲבִירָם Nu 16:24, 27 (P) [but here orig. מִשְׁכַּן י׳; v. Comm.]; poet. = tomb, Is 22:16. 2. elsewhere in sg. always of abode of י׳: †a. in gen., of temple, קְדשׁ מ׳ ψ 46:5; מִשְׁכַּן כְּבוֹדֶ֑ךָ 26:8; מ׳ שְׁמֶ֑ךָ 74:7. b. מִשְׁכַּן שִׁלוֹ 78:60. c. הַמּ׳ in P, of י׳
+Senses:
+  Sense 1: "Tabernacle, sacred sanctuary" (109x)
+    Desc: The portable sanctuary or tent of meeting where God's presence dwelt among Israel, used primarily in Exodus-Numbers cultic contexts.
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: the-tabernacle | spa: el-tabernáculo | fra: le-tabernacle | deu: die-Stiftshuette
+    Refs: Exod 25:9, Exod 26:1, Exod 26:6, Exod 26:7, Exod 26:12
+  Sense 2: "dwelling place, habitation" (30x)
+    Desc: A dwelling or habitation in general, used of human settlements, cities, or God's abode in poetic and prophetic contexts, often in plural forms.
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: and-its-dwellings, are-the-dwellings-of, dwelling-places | spa: a-moradas-de-él, a-sus-moradas, de-morada-de | fra: [ממשכן], [משכני], de-mes-voisins | deu: Stiftshuette-von-, Wohnung, Wohnung-
+    Refs: Lev 15:31, Lev 26:11, Num 16:24, Num 16:27, Num 24:5

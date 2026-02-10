@@ -1,0 +1,145 @@
+You are a biblical lexicographer composing glosses for a digital lexicon.
+For each lemma below, compose a JSON object. Separate objects with "---".
+
+Format for each:
+{
+  "lemma_id": "...",
+  "gloss_terse": "under 120 chars, concise definition covering the word's semantic range",
+  "gloss_readable": "2-5 sentences, 40-120 words. Don't start with 'This word'. Warm study-Bible footnote tone. Engaging, not dry.",
+  "senses": {
+    "1": "enriched 20-60 word description. Reference multilingual evidence when illuminating. Don't repeat the label verbatim.",
+    "2": "..."
+  }
+}
+
+Rules:
+- No markdown fences, just JSON objects separated by ---
+- Reference multilingual evidence naturally when it reveals something
+- gloss_readable should feel like a good study Bible footnote: helpful, clear, occasionally surprising
+- Each sense enrichment: how does the evidence support this sense? Mention 1-2 key passages when helpful.
+
+=== H6187 ===
+Language: Hebrew, POS: Prep-k | N-msc | 3ms, Occurrences: 33, Senses: 3
+
+BDB excerpt: עֵ֫רֶךְ33 n.m. Lv 27; 25 order, row, estimate;—cstr. ע׳ Ju 17:10; Ex 40:23; sf. עֶרְכִּי ψ 55:14, עֶרְכְּךָ Lv 5:15 +, etc.;— 1. order, row, ע׳ בְּגָדִים Ju 17:10 a (complete) suit of clothes (laid out in order), 𝔊B στολὴν ἱματίων; ע׳ לֶחֶם Ex 40:23 i.e. loaves arranged in a row, so ע׳ alone v 4 (P); עֶרְכּוֹ Jb 41:4 his symmetry (v. חִין sub חנן). 2. estimate, valuation, made by ordering, classifying: אִישׁ כְּעֶרְכּוֹ 2 K 23:35; in 12:5 read עֵרֶךְ (for MT עוֹבֵר) money of a man’s valuation 𝔊 Benz Kit, and prob. del. כֶּסֶף נַפְשׁוֹת עֶרְכּוֹ (? כ׳ עֶרֶךְ נ׳ Kit) as gloss (StaZAW v (1885), 2
+Senses:
+  Sense 1: "valuation, estimated worth" (28x)
+    Desc: The monetary or ritual valuation set by the priest according to fixed scales, used predominantly in Leviticus 27 and Numbers 18 for vows, dedications, and redemption prices.
+    Domain: QUANTITY_NUMBER > Weight
+    Glosses: eng: according-to-your-valuation, by-your-valuation, valuation | spa: conforme-a-tu-valuación, según-tu-valuación, según-valuación-tuya | fra: par-ton-estimation, par-ton-valuation, selon-ton-estimation | deu: Schaetzung, dein-Schaetzung, durch-dein-Schaetzung
+    Refs: Lev 5:15, Lev 5:18, Lev 6:6, Lev 27:2, Lev 27:3
+  Sense 2: "arrangement, order, row" (4x)
+    Desc: A physical ordering or disposition of objects in rows or sets, such as the arrangement of showbread, battle array, or bodily proportion/structure.
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: and-set-of, arrangement-of, his-proportion | spa: disposición-de, su-disposición, y-un-conjunto-de | fra: arrangement-de, et-placer-de, son-arrangement | deu: [ערכו], arrangement-von, sein-arrangement
+    Refs: Exod 40:4, Exod 40:23, Judg 17:10, Job 41:12
+  Sense 3: "equal, equivalent person" (1x)
+    Desc: One who is of comparable rank or standing, used to denote a peer or counterpart (as in Psalm 55:14, 'like my equal').
+    Domain: PROPERTIES_RELATIONS > Comparison
+    Glosses: eng: my-equal | spa: como-mi-igual | fra: comme-estimation | deu: mein-equal
+    Refs: Ps 55:13
+
+=== H6203 ===
+Language: Hebrew, POS: N-ms, Occurrences: 33, Senses: 3
+
+BDB excerpt: † עֹ֫רֶף n.m. Dt 31:27 back of neck, neck;—ע׳ abs. Jos 7:12 +; cstr. Gn 49:8 +; sf. עָרְפִּי Jb 16:12, עָרְפְּךָ Dt 31:27, etc.;— 1. back of neck of fleeing foe יָֽדְךָ בְּע׳ אֹיְבֶיךָ Gn 49:8 (poem in J), cf. וְאָחַז בְּעָרְפִּי Jb 16:12 (fig.); Ex 23:27 (E), ψ 18:41 = 2 S 22:41; turn (הָפַךְ, פָּנָה) one’s back before (לִפְנֵי) a foe Jos 7:8, 12 (JE), abs. Je 48:39; fig. of apostasy פָּנָה ע׳אֶל Je 2:27; 32:33 (opp. פָּנָה פָנִים) abs. וַיִּתְּנוּ ע׳ 2 Ch 29:6; of י׳’s disfavour ע׳ וְלֹא פָנִים אֶרְאֵם Je 18:17 with the back and not the face will I look at them. 2. fig. in קְשֵׁה־ע׳ stiff of
+Senses:
+  Sense 1: "neck (stiff-necked stubbornness)" (17x)
+    Desc: The neck as the seat of stubbornness in the idiom qesheh-orep (stiff-necked), describing obstinate refusal to submit to God's will or correction.
+    Domain: BODY_HEALTH > Body, Body Parts, and Body Products
+    Glosses: eng: and-their-neck, and-your-neck, is-your-neck | spa: cerviz, cerviz-de-ellos, cerviz-suya | fra: [וערפם], [ערפכם], [ערפם] | deu: Nacken, [וערפם], [ערפכם]
+    Refs: Exod 32:9, Exod 33:3, Exod 33:5, Exod 34:9, Deut 9:6
+  Sense 2: "back of neck (turning away)" (10x)
+    Desc: The nape or back of the neck as shown when turning away, used in contexts of fleeing from enemies or turning one's back on God in rejection.
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: back, back-of-neck, its-back | spa: espalda, nuca | fra: [ערף], cou, dos-de-cou | deu: Nacken, [ערף], back-von-neck
+    Refs: Exod 23:27, Josh 7:8, Josh 7:12, 2Sam 22:41, 2Chr 29:6
+  Sense 3: "nape of neck (physical body part)" (6x)
+    Desc: The literal back of the neck as an anatomical body part in non-idiomatic contexts such as striking, grasping, or physical description and comparison.
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: by-my-neck, his-neck, its-neck | spa: cerviz, como-cerviz-de, en-nuca-de | fra: [ערפו], comme-cou-de, dans-mon-בערפי-moi | deu: [בערפי], [ערף], [ערפו]
+    Refs: Gen 49:8, Lev 5:8, 2Kgs 17:14, 2Chr 36:13, Job 16:12
+
+=== H6779 ===
+Language: Hebrew, POS: Conj-w | V-Hifil-ConsecImperf-3ms, Occurrences: 33, Senses: 3
+
+BDB excerpt: † צָמַח vb. sprout, spring up (NH id., so 𝔗 צְמַח; Syriac ܨܡܰܚ spring or shine forth, ܨܶܡܚܳܐ shining, also sprout; Ph. צמח posterity);— Qal Pf. 3 ms. צָֽמַח־בּוֹ Lv 13:37; 3 pl. וְצָֽמְחוּ consec. Is 44:4; Impf. 3 ms. יִצְמַח Jb 5:6, 3 fpl. תִּצְמַחְנָה Is 42:9, etc.; Pt. צֹמֵחַ Ex 10:5, צוֹמֵחַ Ec 2:6; fpl. צֹמְחוֹת Gn 41:6, 23;—sprout, spring up: 1. of plants, trees, etc. Gn 2:5; Ex 10:5 (both J), Gn 41:6, 23 (E), Ez 17:6 (in fig.); once (late) יַעַר צוֹמֵחַ עֵצִים Ec 2:6 wood sprouting with trees (full of growing trees); fig. of future ruler (v. צֶמַח) Zc 6:12, posterity Is 44:4, cf. Jb 8:1
+Senses:
+  Sense 1: "sprout, spring up (Qal)" (15x)
+    Desc: Intransitive growing or sprouting of plants, vegetation, or figuratively of persons/things, in the Qal stem.
+    Domain: PLANTS_AGRICULTURE > Plants
+    Glosses: eng: And-they-will-spring-up, and-it-sprouted, growing | spa: Y-brotó, brota, brotando | fra: a-sprouted-, cela-sprouted, et-germer | deu: Quellen-hinauf, [ויצמח], [יצמח]
+    Refs: Gen 2:5, Gen 41:6, Gen 41:23, Exod 10:5, Lev 13:37
+  Sense 2: "cause to sprout, produce (Hifil)" (14x)
+    Desc: Causative sense in the Hifil stem: to cause to grow or sprout, said of God, the earth, or a garden producing vegetation or offspring.
+    Domain: PLANTS_AGRICULTURE > Plants
+    Glosses: eng: And-caused-to-grow, He-causes-to-grow, I-will-cause-to-sprout | spa: El-que-hace-crecer, Y-hizo-crecer, el-que-hace-brotar | fra: --sprout, Et-caused-à-croître, Il-causes-à-grandis | deu: He-causes-zu-grow, [אצמיח], [ולהצמיח]
+    Refs: Gen 2:9, Gen 3:18, Deut 29:23, 2Sam 23:5, Job 38:27
+  Sense 3: "grow, increase (Piel)" (4x)
+    Desc: Intensive or factitive growing in the Piel stem, emphasizing the process or fullness of growth.
+    Domain: PLANTS_AGRICULTURE > Plants
+    Glosses: eng: grew, grows, to-grow | spa: a-crecer, creció, crezca | fra: [יצמח], germer, grows | deu: [יצמח], [צמח], grows
+    Refs: Judg 16:22, 2Sam 10:5, 1Chr 19:5, Ezek 16:7
+
+=== H7065 ===
+Language: Hebrew, POS: Conj-w | V-Piel-ConjPerf-1cs, Occurrences: 33, Senses: 3
+
+BDB excerpt: † [קָנָא] vb.denom Pi. be jealous, zealous (Gerber131);—Pf. 3 ms. קִנֵּא Nu 25:13 +; 1 s. קִנֵּאתִי Zc 1:14 + etc.; Impf. יְקַנֵּא Is 11:13; Pr 23:17, etc.; Inf. abs. קַנֹּא 1 K 19:10, 14; cstr. sf. קַנְאוֹ Nu 25:11; קַנֹאתוֹ 2 S 21:2; Pt. מְקַנֵּא Nu 11:29;— 1. be jealous of, c. acc. אֶת־אִשְׁתּוֹ Nu 5:14(×2), 30 (P); in rivalry Is 11:13. 2. be envious of, c. ב pers., Gn 30:1 (E), 37:11 (J) ψ 37:1; 73:3; Pr 3:31; 23:17; 24:1, 19; c. acc. pers. Gn 26:14 (J); Ez 31:9; c. ל pers. ψ 106:16. 3. be zealous for: a. of man, c. ל pers. Nu 11:29 (J); 2 S 21:2; for God Nu 25:13 (P), 1 K 19:10, 14; ק׳ קנ
+Senses:
+  Sense 1: "be jealous / zealous for" (17x)
+    Desc: To burn with possessive jealousy or passionate zeal, whether of God for his people, a husband for his wife, or a person zealous for a cause (Piel; Arabic غار ghāra, Korean 질투/열심, Swahili -wiwa na wivu...
+    Domain: EMOTION_ATTITUDE > Attitudes and Emotions
+    Glosses: eng: I-am-jealous, I-have-been-jealous, I-was-jealous | spa: Celar, Estoy-celoso, He-sido-celoso | fra: dans-son-zeal, et-il-est-jaloux, et-était-jealous | deu: [וקנאתי], durch-seiend-eifersuechtig, eiferte
+    Refs: Gen 30:1, Num 5:14, Num 5:14, Num 5:30, Num 11:29
+  Sense 2: "be envious of" (11x)
+    Desc: To feel envy or resentment toward another person on account of their advantages, possessions, or status (Piel; Arabic حسد ḥasada, Korean 시기, Swahili -husudu/-onea wivu).
+    Domain: EMOTION_ATTITUDE > Attitudes and Emotions
+    Glosses: eng: I-was-envious-of, and-envied, and-envied-it | spa: Y-tuvieron-envidia, envidies, tendrá-celos-de | fra: [יקנא], et-envied, et-étaient-jealous | deu: [ויקנאהו], [יקנא], eiferte
+    Refs: Gen 26:14, Gen 37:11, Ps 37:1, Ps 73:3, Ps 106:16
+  Sense 3: "provoke to jealousy" (5x)
+    Desc: To cause someone to become jealous or envious, a causative action making another feel the sting of jealousy (Hifil causative stem; Arabic أغار aghāra, Korean 질투하게 하다).
+    Domain: EMOTION_ATTITUDE > Attitudes and Emotions
+    Glosses: eng: and-provoked-to-jealousy, provoked-me-to-jealousy, they-made-him-jealous | spa: lo-provocaron-a-celos, los-provocaré-a-celos, me-provocaron-a-celos | fra: et-provoqua-à-jealousy, fera-provoquer-eux-à-jalousie, ils-provoqua-lui-à-jalousie | deu: erzuernte-mich-zu-Eifersucht, sie-erzuernte-ihn-zu-Eifersucht, sie-gemacht-ihn-jealous
+    Refs: Deut 32:16, Deut 32:21, Deut 32:21, 1Kgs 14:22, Ps 78:58
+
+=== G1415 ===
+Language: Greek, POS: Adj-ANS, Occurrences: 32, Senses: 3
+
+BDB excerpt: δῠνᾰτ-ός, ή, όν, also ός, όν Refs 5th c.BC+:— strong, mighty, in body or mind, ὅ τι ἦν αὐτῶν δυνατώτατον the ablest-bodied men, Refs 5th c.BC+; sound in limb, opposed to ἀδύνατος, Refs 5th c.BC+; of ships, fit for service, Refs 5th c.BC+; of things, δυνατώτερον ἀδικία δικαιοσύνης Refs 5th c.BC+; λόγος a powerful argument, Refs 4th c.BC+ __2 with infinitive, able to do, Refs 5th c.BC+; δ. λῦσαι mighty to loose, Refs 5th c.BC+; -ώτατοι καὶ τοῖς σώμασιν καὶ τοῖς χρήμασιν λῃτουργεῖν Decrees cited in Refs 5th c.BC+; ὅσονπερ δ. εἰμι, with infinitive omitted, Refs 5th c.BC+ __3 of outward power, powe
+Senses:
+  Sense 1: "possible" (13x)
+    Desc: Impersonal neuter usage meaning 'possible,' typically in the construction dunaton (estin) 'it is possible.' This is the most frequent NT sense (13 occurrences). Used in Jesus' teaching about salvation...
+    Domain: PROPERTIES_RELATIONS > Able, Capable
+    Glosses: eng: are-possible, possible | spa: es-posible, fuera-posible, posible | fra: puissant | deu: maechtig, mächtig
+    Refs: Matt 19:26, Matt 24:24, Matt 26:39, Mark 9:23, Mark 10:27
+  Sense 2: "powerful, mighty, strong" (11x)
+    Desc: Predicate or attributive adjective describing persons or things as possessing inherent power, strength, or might. Applied to persons: a prophet 'powerful in deed and word' (Luke 24:19), Moses 'powerfu...
+    Domain: PROPERTIES_RELATIONS > Able, Capable
+    Glosses: eng: Mighty-One, power, powerful | spa: Poderoso, capaces, fuertes | fra: puissant | deu: maechtig, mächtig
+    Refs: Luke 1:49, Luke 24:19, Acts 7:22, Acts 18:24, Acts 25:5
+  Sense 3: "able, capable" (8x)
+    Desc: Predicate adjective meaning 'able' or 'capable,' describing a subject (typically God) who has the ability to accomplish something. Frequently in the construction dunatos + infinitive: 'God is able to ...
+    Domain: PROPERTIES_RELATIONS > Able, Capable
+    Glosses: eng: able | spa: capaz, poderoso | fra: puissant | deu: maechtig, mächtig
+    Refs: Luke 14:31, Acts 11:17, Rom 4:21, Rom 11:23, 2Tim 1:12
+
+=== H4578 ===
+Language: Hebrew, POS: N-mpc | 3ms, Occurrences: 32, Senses: 3
+
+BDB excerpt: † [מֵעֶה] n.m. Is 16:11 only pl. internal organs, inward parts (intestines, bowels), belly (NH id.; Aramaic מְעָא, מַעֲיָא, ܡܥܶܐ, ܡܥܰܝܴ̈ܐ; Arabic مّعَّى / مِعٍى; Ethiopic አማዑት;—on form cf. LagBN156 BaZMG xlii. 1888, 345);—pl. [מֵעִים] cstr. מְעֵי ψ 71:6 + 3 times; sf. מֵעַי 2 S 16:11 + 9 times, מֵעָ֑י ψ 22:15; 40:9; מֵעֶיךָ Gn 15:4 + 6 times; מֵעַיִךְ Gn 25:23 Nu 5:22; מֵעָיו 2 S 20:10 + 5 times; מֵעֵיהֶם Ez 7:19;— 1. lit.: a. וַיִּשְׁפֹּךְ מֵעָיו אַ֫רְצָה 2 S 20:10 and he poured out his inward parts on the ground (through a wound); cf. מַחֲלֵה מ׳ 2 Ch 21:15, 18, יָֽצְאוּ מ׳ v 15, 19. b. as di
+Senses:
+  Sense 1: "bowels, intestines, physical belly" (12x)
+    Desc: The literal internal organs or intestines of the body, referring to the physical bowels in contexts of disease, injury, digestion, or bodily cavity.
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: and-inward-parts-of-them, and-inward-parts-of-you, his-body | spa: en-entrañas-de-ti, en-sus-entrañas, en-vientre-de | fra: [במעיו], [מעיו], [מעיך] | deu: Eingeweide, [במעיו], [ומעיהם]
+    Refs: Num 5:22, 2Sam 20:10, 2Chr 21:15, 2Chr 21:15, 2Chr 21:18
+  Sense 2: "seat of emotions, compassion" (10x)
+    Desc: The inward parts as the seat of deep emotions such as anguish, yearning, and compassion, used figuratively for the inner being stirred by feeling.
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: and-my-inward-parts, my-bowels, my-inward-parts | spa: Mis-entrañas, mis-entrañas, mis-entrañas! | fra: de-entrailles, entrailles, et-mes-entrailles | deu: Eingeweide, meine-Eingeweide, meinward-parts
+    Refs: Job 30:27, Ps 22:14, Ps 40:8, Song 5:4, Isa 16:11
+  Sense 3: "womb, loins as source of offspring" (10x)
+    Desc: The belly or womb viewed as the procreative organ, the bodily source from which children come forth, often in the phrase 'from the belly/body of' meaning one's offspring or descendants.
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: Your-inward-parts, from-bowels-of, from-my-inward-parts | spa: de-entrañas-mías, de-entrañas-tuyas, de-tus-entrañas | fra: dans-mon-womb, de-entrailles, de-mon-intérieur-parts | deu: Eingeweide, aus-deinem-Leib, aus-deinem-Schoß
+    Refs: Gen 15:4, Gen 25:23, Ruth 1:11, 2Sam 7:12, 2Sam 16:11

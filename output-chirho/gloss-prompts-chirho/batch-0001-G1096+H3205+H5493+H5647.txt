@@ -1,0 +1,199 @@
+You are a biblical lexicographer composing glosses for a digital lexicon.
+For each lemma below, compose a JSON object. Separate objects with "---".
+
+Format for each:
+{
+  "lemma_id": "...",
+  "gloss_terse": "under 120 chars, concise definition covering the word's semantic range",
+  "gloss_readable": "2-5 sentences, 40-120 words. Don't start with 'This word'. Warm study-Bible footnote tone. Engaging, not dry.",
+  "senses": {
+    "1": "enriched 20-60 word description. Reference multilingual evidence when illuminating. Don't repeat the label verbatim.",
+    "2": "..."
+  }
+}
+
+Rules:
+- No markdown fences, just JSON objects separated by ---
+- Reference multilingual evidence naturally when it reveals something
+- gloss_readable should feel like a good study Bible footnote: helpful, clear, occasionally surprising
+- Each sense enrichment: how does the evidence support this sense? Mention 1-2 key passages when helpful.
+
+=== G1096 ===
+Language: Greek, POS: V-PPM/P-NNS, Occurrences: 671, Senses: 8
+
+BDB excerpt: γίγνομαι, Ionic dialect and after Refs 4th c.BC+ γίνομαι [ῑ], (Attic dialect Inscrr. have γιγν- in fifth and fourth cententury,Refs; Thess. γίνυμαι Refs; Boeotian dialect γίνιουμαι Refsfuture γενήσομαι: aorist ἐγενόμην (ἐγενάμην LXX (προ-) Decrees Byzantine cited in Refs 4th c.BC+, Ionic dialect 2nd pers. singular γένευ Refs 8th c.BC+, 3rd.pers. singular γενέσκετο Refs 8th c.BC+; Epic dialect γέντο Refs 8th c.BC+ (gṇ-το): perfect γέγονα Refs 8th c.BC+: 3rd.pers. plural γέγοναν NT: pluperfect ἐγεγόνει Refs 5th c.BC+; Ionic dialect ἐγεγόνεε Refs 5th c.BC+; Epic dialect forms (as if from perfect 
+Senses:
+  Sense 1: "become, change state" (421x)
+    Desc: To undergo a change of state or condition, transitioning from one quality or status to another; the core transformative meaning of ginomai (Arabic: صَارَ sara; Korean: 되다 doeda; Swahili: -kuwa).
+    Domain: EXISTENCE_STATE > Be, Become, Exist, Happen
+    Glosses: eng: arose, became, came | spa: fue, ha-habido, ha-sucedido | fra: devenir | deu: werden, wird
+    Refs: Matt 1:22, Matt 7:28, Matt 8:24, Matt 9:10, Matt 11:1
+  Sense 2: "happen, occur, take place" (158x)
+    Desc: To take place as an event or incident, denoting that something occurred, came to pass, or will come to pass (Arabic: حَدَثَ hadatha; Korean: 일어나다 ireonada; Swahili: -tokea).
+    Domain: EXISTENCE_STATE > Be, Become, Exist, Happen
+    Glosses: eng: Arose, Happened, It-came-to-pass | spa: Aconteció, Llegó-a-haber, Sucedieron | fra: devenir | deu: werden, wird
+    Refs: Matt 8:16, Matt 14:6, Matt 14:15, Matt 14:23, Matt 16:2
+  Sense 3: "come, arrive, appear" (28x)
+    Desc: To come into a place or situation, denoting physical or temporal arrival rather than transformation or event occurrence (Arabic: جَاءَ ja'a / وَصَلَ wasala; Korean: 오다 oda; Swahili: -kuja/-fika).
+    Domain: EXISTENCE_STATE > Be, Become, Exist, Happen
+    Glosses: eng: came, came-to-pass, coming | spa: Estuvo, aconteció, llegando | fra: devenir | deu: werden, wird
+    Refs: Mark 1:4, Mark 1:11, Mark 1:32, Mark 4:35, Mark 6:2
+  Sense 4: "let it be, may it be done" (22x)
+    Desc: Jussive or imperatival wish expressing a command or prayer for something to come into being or be accomplished (Arabic: لِيَكُنْ li-yakun / لِيَصِرْ li-yasir; Korean: 되라 doera / 이루어지소서; Swahili: na iw...
+    Domain: EXISTENCE_STATE > Be, Become, Exist, Happen
+    Glosses: eng: Let-be-done, happens, he-may-be | spa: Hágase, Sea-hecha, esté | fra: devenir | deu: werden, wird
+    Refs: Matt 6:10, Matt 8:13, Matt 9:29, Matt 15:28, Matt 26:42
+  Sense 5: "may it never be!" (16x)
+    Desc: Idiomatic strong negative optative expressing emphatic denial or abhorrence at a proposition, a Pauline formula of absolute rejection (Arabic: حَاشَا hasha; Korean: 그럴 수 없다 geureol su eopda; Swahili: ...
+    Domain: EXISTENCE_STATE > Be, Become, Exist, Happen
+    Glosses: eng: let-there-be, may-it-be | spa: haya, sea, sea! | fra: devenir | deu: werden, wird
+    Refs: Matt 21:19, Luke 20:16, Rom 3:4, Rom 3:6, Rom 3:31
+  Sense 6: "be, exist, find oneself" (13x)
+    Desc: To exist, be present, or find oneself in a state or location, denoting simple existence or being without implying transformation (Arabic: كَانَ kana / كَائِنًا ka'inan; Korean: 있다 itda; Swahili: -kuwa...
+    Domain: EXISTENCE_STATE > Be, Become, Exist, Happen
+    Glosses: eng: I-was, being, came | spa: estando, estar, estuve | fra: devenir | deu: werden, wird
+    Refs: Matt 26:6, Mark 2:21, Mark 9:33, Mark 16:10, Luke 19:17
+  Sense 7: "be made, be done" (8x)
+    Desc: To be created, manufactured, or brought about by an external agent, emphasizing the passive result of making or doing (Arabic: صُنِعَ suni'a / تَمَّ tamma / تُصْنَعُ tusna'u; Korean: 만들어지다 mandeurejid...
+    Domain: EXISTENCE_STATE > Be, Become, Exist, Happen
+    Glosses: eng: arising, being-made, happening | spa: fue-hecho, hecha, hechos | fra: devenir | deu: werden, wird
+    Refs: Mark 2:27, Mark 6:2, Luke 14:22, Acts 12:5, Acts 19:26
+  Sense 8: "be born, come into existence" (5x)
+    Desc: To come into being through birth or origination, emphasizing the beginning of personal existence rather than state change (Arabic: مَولودًا mawludan; Korean: 나다 nada; Swahili: -zaliwa).
+    Domain: EXISTENCE_STATE > Be, Become, Exist, Happen
+    Glosses: eng: Came-to-be, having-become, having-been-born | spa: Llegó-a-ser, fuera, llegado-a-ser | fra: devenir | deu: werden
+    Refs: John 1:6, John 8:58, Rom 1:3, Gal 4:4, Gal 4:4
+
+=== H3205 ===
+Language: Hebrew, POS: V-Qal-Perf-3fs, Occurrences: 500, Senses: 8
+
+BDB excerpt: יָלַד497 vb. bear, bring forth, beget (NH id.; Aramaic יְלִיד, יְלֵיד, ܝܺܠܶܕ; Arabic وَلَدَ bear, bring forth, so Ethiopic ወለደ Assyrian alâdu, COTGloss)— Qal Pf. יָלַד Gn 4:18(×3) + 16 times; יָלָ֑ד Je 17:11; וְיָלַד consec. ψ 7:15; sf. יְלָֽדְךָ Dt 32:18; 2 fs. sf. ילדתני Je 2:27 Kt; Qr יְלִדְתָּנוּ Köi. 410 Ges§ 69 s); 1 s. sf. יְלִדְתִּ֫יךָ ψ 2:7; יְלִדְתִּ֫יהוּ Nu 11:12, etc.; Impf. יֵלֶד(יֹום) Pr 27:1; 3 fs. תֵּלֵד Gn 17:17 + 6 times; וַתֵּ֫לֶד 4:1 + 61 times; 2 fs. תֵּלְדִי 3:16; אֵלֵד 18:13; וָאֵלֵד 1 K 3:17; יֵֽלְדוּ Is 65:23; 3 fpl. תֵּלַדְנָה Je 29:6; וַתֵּלַדְנָה Ez 23:4; וַתֵּלַדְן
+Senses:
+  Sense 1: "Qal active: bear/give birth (female subject)" (204x)
+    Desc: The core Qal active sense with a female subject meaning 'to bear, give birth to a child.' Arabic وَلَدَتْ (waladat) consistently marks feminine active birthing; Korean 낳다 (nahda) 'to give birth' is un...
+    Domain: BODY_HEALTH > Physiological Processes and States
+    Glosses: eng: And-bore, and-bore, and-she-bore | spa: Y-dio-a-luz, Y-parió, y-dio-a-luz | fra: Et-enfanta, et-elle-enfanta, et-enfanta | deu: und-gebar, und-sie-gebar
+    Refs: Gen 4:1, Gen 4:17, Gen 4:20, Gen 4:22, Gen 4:25
+  Sense 2: "Qal active: beget/father (male subject)" (198x)
+    Desc: The Qal active sense with a male subject meaning 'to beget, to father.' Arabic وَلَدَ (walada) with masculine conjugation; English consistently uses 'fathered, begot, begat'; Spanish engendro; Korean ...
+    Domain: BODY_HEALTH > Physiological Processes and States
+    Glosses: eng: begot, fathered | spa: engendró | fra: engendra, fathered | deu: gebar, zeugte
+    Refs: Gen 4:18, Gen 4:18, Gen 4:18, Gen 10:8, Gen 10:13
+  Sense 3: "Qal passive / Niphal: be born" (71x)
+    Desc: The passive sense 'to be born,' realized through Qal passive (QalPass) and Niphal stems. Arabic uniformly uses وُلِدَ (wulida, passive of walada) and يُولَدُ (yuuladu, imperfect passive); Korean switc...
+    Domain: BODY_HEALTH > Physiological Processes and States
+    Glosses: eng: born, is-born, was-born | spa: fue-engendrado, fueron-engendrados, le-nacieron | fra: enfanter, engendrer, furent-né | deu: gebaeren, gebar, geboren-wurden
+    Refs: Gen 4:26, Gen 6:1, Gen 10:1, Gen 10:21, Gen 10:25
+  Sense 4: "Hifil: cause to beget/father (causative)" (11x)
+    Desc: The Hifil causative sense 'to cause to beget, to make bring forth.' Arabic uses أَوْلَدَ (awlada, Form IV causative) in 102052 and أُولِدُ (uulidu) in 102102, and الْمُولِدُ (al-muulidu, causative par...
+    Domain: BODY_HEALTH > Physiological Processes and States
+    Glosses: eng: and-beget, and-caused-it-to-bring-forth, cause-to-give-birth | spa: el-que-hace-dar-a-luz, engendrará, engendrarás | fra: enfanter, et-enfanter, il---engendrer | deu: du-wird-beget, du-zeugen, gebaeren
+    Refs: Gen 17:20, Deut 4:25, Deut 28:41, 2Kgs 20:18, Isa 39:7
+  Sense 5: "Piel: act as midwife" (10x)
+    Desc: The Piel intensive/professional sense 'to act as midwife, to assist in childbirth.' Arabic uses the completely different root قَابِلَة (qaabila) 'midwife' from ق-ب-ل 'to receive/accept,' proving this ...
+    Domain: PEOPLE_KINSHIP > People
+    Glosses: eng: the-midwife, the-midwives, to-the-midwives | spa: a-las-parteras, cuando-asistáis, la-partera | fra: le-sage-femme, le-sages-femmes, quand-tu-naissance | deu: als-du-Geburt, der-Hebamme, der-Hebammen
+    Refs: Gen 35:17, Gen 38:28, Exod 1:15, Exod 1:16, Exod 1:17
+  Sense 6: "Hofal: birth/being born (causative passive)" (3x)
+    Desc: The Hofal causative-passive sense meaning 'birth, being born' as a nominalized event. Arabic مِيلَاد (miilad) 'birthday/birth' in 102111 and وِلَادَة (wilaada) 'birth' in 102006 — both nominal/event f...
+    Domain: BODY_HEALTH > Physiological Processes and States
+    Glosses: eng: being-born, birthday-of | spa: nacer, nacimiento-de | fra: anniversaire-de, enfanter | deu: der-Geburt, gebaeren
+    Refs: Gen 40:20, Ezek 16:4, Ezek 16:5
+  Sense 7: "?" (2x)
+    Domain: PEOPLE_KINSHIP > People
+    Glosses: eng: the-child | spa: el-nacido | fra: le-enfant | deu: der-Kind
+    Refs: 1Kgs 3:26, 1Kgs 3:27
+  Sense 8: "?" (1x)
+    Domain: BODY_HEALTH > Physiological Processes and States
+    Glosses: eng: and-they-registered-themselves | spa: y-se-registraron | fra: et-ils-registered-eux-mêmes | deu: und-sie-registered-sich-selbst
+    Refs: Num 1:18
+
+=== H5493 ===
+Language: Hebrew, POS: Conj-w | V-Hifil-ConsecImperf-3ms | 3ms, Occurrences: 300, Senses: 8
+
+BDB excerpt: סוּר and (Ho 9:12) [שׂוּר]300 vb. turn aside (NH Hiph. cause to turn aside, or apostatize; TelAm. sûru, n. rebel WklGloss.);— Qal161 Pf. 3 ms. סָר Ex 3:4 +; 3 fs. סָ֫רָה 1 S 16:14 +; 1 s. סָ֑רְתִּי ψ 119:102; 3 pl. סָרוּ Dt 9:12 +; 2 mpl. סַרְתֶּם v 16 +, etc.; Impf. 3 ms. יָסוּר Gn 49:10 +, וַיָּ֫סַר Ju 4:18 +; 3 fs. תָּסוּר 1 S 6:3 +; 1 s. cohort. אָסֻ֫רָה Ex 3:3; 3 mpl. יָסֻ֫רוּ Ex 25:15 +, etc.; Imv. ms. סוּר 2 S 2:22 +, etc.; Inf. abs. סוֹר Dn 9:5, סֹר v 11; cstr. סוּר Is 7:17 +; sf. שׂוּרִי Ho 9:12 (Ges§ 6 k Now); Pt. סָר Jb 1:1 +; f. cstr. סָרַת Pr 11:22; mpl. cstr. סָרֵי Je 6:28 (or fr
+Senses:
+  Sense 1: "remove, take away (Hifil)" (106x)
+    Desc: Hifil stem: to remove or take away physically — causative removal of objects, persons, or structures from their place.
+    Domain: MOVEMENT > Linear Movement
+    Glosses: eng: and-he-removed, and-removed, he-shall-remove-it | spa: Y-quitó, quitará-la, quitó | fra: et-il-ôta, et-se-détourner, et-ôta | deu: er-soll-entfernen-es, removed, und-entfernte
+    Refs: Gen 8:13, Exod 8:8, Exod 10:17, Exod 23:25, Exod 33:23
+  Sense 2: "turn aside, go aside (Qal)" (80x)
+    Desc: Qal stem: to turn aside physically from a path or road, to turn in to visit or enter a place — physical deviation or diversion.
+    Domain: MOVEMENT > Linear Movement
+    Glosses: eng: and-he-turned-aside, and-turned-aside, he-turned | spa: Y-se-apartaron, se-apartó, y-entró | fra: et-il-tourna-aside, et-tourna-aside, il-se-tourna | deu: er-wandte, er-wandte-weg, und-er-wandte-aside
+    Refs: Exod 3:4, Exod 32:8, Deut 9:12, Deut 11:16, Deut 11:28
+  Sense 3: "depart, leave (Qal)" (66x)
+    Desc: Qal stem: to depart from a place or person, to go away, to leave — movement away from a location or state.
+    Domain: MOVEMENT > Linear Movement
+    Glosses: eng: Depart, depart, he-may-turn-away | spa: Apartaos, Apártate, apartaos | fra: ils-partit, partir, s'écarter | deu: sie-departed, weichen, weicht
+    Refs: Gen 49:10, Exod 8:11, Exod 8:29, Lev 13:58, Num 12:10
+  Sense 4: "put away, purge (Hifil)" (27x)
+    Desc: Hifil stem: to put away idols, evil, or garments — causative moral or ritual purging, including removing clothing or foreign gods.
+    Domain: MOVEMENT > Linear Movement
+    Glosses: eng: I-put-away, and-he-removed, and-remove | spa: El-que-aparta, Quita, Quitad | fra: enlever, et-il-ôta, et-se-détourner | deu: entfernen, er-wird-wenden-aside, legte-weg
+    Refs: Gen 35:2, Gen 38:14, Gen 38:19, Gen 41:42, Deut 7:4
+  Sense 5: "turn aside morally (Qal)" (13x)
+    Desc: Qal stem: to turn aside from God, from commandments, or from evil — moral or spiritual deviation, often with participial forms describing character.
+    Domain: MOVEMENT > Linear Movement
+    Glosses: eng: and-turning-aside, and-turning-away, and-turns-away | spa: Apártate, fueron-quitados, se-quitarán | fra: et-tournant-de-côté, et-ôter, furent-ôta | deu: sie-soll-sein-entfernte, und-wendend-aside, und-wich
+    Refs: Exod 25:15, 1Sam 22:14, 1Kgs 15:14, 1Kgs 22:43, 2Chr 15:17
+  Sense 6: "be removed (Hophal)" (4x)
+    Desc: Hophal stem: to be removed, to be taken away — passive of the Hifil, indicating something has been removed by an external agent.
+    Domain: MOVEMENT > Linear Movement
+    Glosses: eng: is-removed, was-removed | spa: fue-quitada, quitada, se-quita | fra: correction, est-ôta, se-détourner | deu: Zucht, ist-entfernte, war-entfernte
+    Refs: Lev 4:31, Lev 4:35, Isa 17:1, Dan 12:11
+  Sense 7: "one removed, rebel (nominal)" (3x)
+    Desc: Nominal or adjectival usage: a removed or set-aside one, a rebel or deviant — substantival participle or adjective denoting a person or thing that has turned aside.
+    Domain: MOVEMENT > Linear Movement
+    Glosses: eng: and-put-aside, rebels-of, the-removed | spa: los-quitados, principales-de, y-apartada | fra: et-s’écarter, le-ôta, s’écarter | deu: der-removed, und-weichen, weichen
+    Refs: 1Sam 21:7, Isa 49:21, Jer 6:28
+  Sense 8: "?" (1x)
+    Domain: MOVEMENT > Linear Movement
+    Glosses: eng: He-led-astray | spa: ha-desviado | fra: s’écarter | deu: wich
+    Refs: Lam 3:11
+
+=== H5647 ===
+Language: Hebrew, POS: V-Qal-Imperf-3mp | 3ms, Occurrences: 289, Senses: 8
+
+BDB excerpt: עָבַד290 vb. work, serve (Old Aramaic עבד do, make, especially Nab. Palm. (often), Lzb331 f. Cook86, so 𝔗 עֲבַד, Syriac ܥܒܰܕ (very often); but also Old Aramaic Ph. עבד slave, vassal (and in many n.pr.), 𝔗 עַבְדָּא, Syriac ܥܰܒܕܳܐ id.; Assyrian abdu, id. (rare); NH עָבַד serve, perform acts of worship (c. acc. cogn.), and deriv.; Arabic عَبَدَ worship, obey (God); cf. WeSkizzen iii. 165; Heid. 141, ii. enslave; عَبْدٌ slave, worshipper; Sab. עבד id. DHMSudar. Alt. p. 18; GerberVerb. Denom.14 ff. thinks be slave, serve (Qal) and enslave (Hiph.) are denom., cf. also NöZMG xi (1886), 741);— Qal272 
+Senses:
+  Sense 1: "worship, serve (God/deity)" (203x)
+    Desc: To serve or worship a deity (God or idols) in a religious or covenantal sense; Arabic root ʿ-b-d (عبد) consistently distinguishes this from personal service (kh-d-m) and labor (ʿ-m-l).
+    Domain: GUIDANCE_CARE > Help, Care For
+    Glosses: eng: and-served, and-they-served, to-serve | spa: Y-sirvieron, a-servir, para-servir | fra: et-ils-servit, et-servit, servir | deu: dienen, und-diente, und-sie-diente
+    Refs: Gen 29:20, Gen 29:30, Exod 10:11, Exod 10:26, Num 4:24
+  Sense 2: "serve, minister to (a person)" (21x)
+    Desc: To serve or minister to a human master, lord, or king in a personal, relational capacity; Arabic root kh-d-m (خدم) distinguishes this from religious worship (ʿ-b-d) and generic labor (ʿ-m-l).
+    Domain: GUIDANCE_CARE > Help, Care For
+    Glosses: eng: I-served, I-will-serve-you, and-he-served-you | spa: de-servir, de-servirnos, servirte | fra: Je---servir-tu, Je-servit, de-serving-nous | deu: dein-Knecht, dienen, dienend
+    Refs: Gen 14:4, Gen 27:40, Gen 29:18, Gen 29:25, Gen 29:27
+  Sense 3: "work, labor" (19x)
+    Desc: To work or labor in a general productive sense, not directed at a deity or person; Arabic root ʿ-m-l (عمل) and Korean 일하다 consistently mark this sense; includes compulsory labor contexts.
+    Domain: PHYSICAL_ACTION > Perform, Do
+    Glosses: eng: and-to-work, has-been-worked, he-labored | spa: ha-sido-trabajada, lo-harás-trabajar, lo-servirán | fra: a-été-worked, et-à-serviteur, il-devra-oeuvre | deu: Knecht, Werk, dienen
+    Refs: Exod 1:14, Exod 5:18, Exod 20:9, Exod 34:21, Lev 25:39
+  Sense 4: "servant, worshiper (substantive participle)" (16x)
+    Desc: Qal active participle used as a substantive noun meaning servant, worshiper, or worker; Arabic عابد (ʿābid) for worshiper contexts, عامل (ʿāmil) for worker contexts; Korean ~하는 자 (one who does).
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: and-the-worker-of, for-workers-of, his-servants | spa: Y-el-que-sirve, a-siervos-de, el-que-sirve | fra: esclaves, et-le-serviteur, le-serving | deu: Knechte-von, Sklaven, der-Knecht
+    Refs: Gen 49:15, Num 4:37, Num 4:41, Josh 16:10, 1Kgs 9:21
+  Sense 5: "enslave, compel to serve (Hifil causative)" (13x)
+    Desc: To cause someone to serve, to enslave or subject to forced labor; Hifil binyan with Arabic استعبد (istaʿbada) or أخضع and Swahili causative -tumikisha marking the causative/coercive dimension.
+    Domain: GUIDANCE_CARE > Help, Care For
+    Glosses: eng: I-caused-you-to-serve, and-I-will-make-serve-you, and-he-made-serve | spa: Y-hicieron-servir, e-hizo-servir, esclavizando | fra: enslaving, et-ils-worked, et-servir | deu: der-Knechte, dienen, enslaving
+    Refs: Gen 15:14, Exod 1:13, Exod 6:5, 2Chr 2:18, 2Chr 34:33
+  Sense 6: "till, cultivate (land)" (12x)
+    Desc: To till, plow, or cultivate agricultural land; Arabic root f-l-ḥ (فلح) and Korean 경작하다 distinguish this from generic labor; Swahili -lima (to farm) confirms the agricultural specificity.
+    Domain: GUIDANCE_CARE > Help, Care For
+    Glosses: eng: and-it-will-work-it, and-work, and-you-shall-work | spa: El-que-trabaja, Y-trabajarás, el-que-labra | fra: et-oeuvre, et-servitude, et-tu-devra-œuvre | deu: Knecht, Knechte-von, du-bearbeitest
+    Refs: Gen 2:5, Gen 2:15, Gen 3:23, Gen 4:2, Gen 4:12
+  Sense 7: "be tilled, be cultivated (Niphal passive)" (4x)
+    Desc: Niphal passive of the agricultural sense: land being tilled or cultivated; Arabic passive تُفلح and Swahili passive -limwa confirm the passive agricultural meaning.
+    Domain: GUIDANCE_CARE > Help, Care For
+    Glosses: eng: and-you-will-be-tilled, being-cultivated, is-worked | spa: es-servido, es-trabajado, será-labrada, | fra: est-worked, et-servir, servir | deu: [נעבד], dienen, ist-worked
+    Refs: Deut 21:4, Eccl 5:9, Ezek 36:9, Ezek 36:34
+  Sense 8: "?" (1x)
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: was-served- | spa: se-trabajó- | fra: serviteur | deu: diente
+    Refs: Isa 14:3

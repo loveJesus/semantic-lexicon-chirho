@@ -1,0 +1,138 @@
+You are a biblical lexicographer composing glosses for a digital lexicon.
+For each lemma below, compose a JSON object. Separate objects with "---".
+
+Format for each:
+{
+  "lemma_id": "...",
+  "gloss_terse": "under 120 chars, concise definition covering the word's semantic range",
+  "gloss_readable": "2-5 sentences, 40-120 words. Don't start with 'This word'. Warm study-Bible footnote tone. Engaging, not dry.",
+  "senses": {
+    "1": "enriched 20-60 word description. Reference multilingual evidence when illuminating. Don't repeat the label verbatim.",
+    "2": "..."
+  }
+}
+
+Rules:
+- No markdown fences, just JSON objects separated by ---
+- Reference multilingual evidence naturally when it reveals something
+- gloss_readable should feel like a good study Bible footnote: helpful, clear, occasionally surprising
+- Each sense enrichment: how does the evidence support this sense? Mention 1-2 key passages when helpful.
+
+=== H7451c ===
+Language: Hebrew, POS: Prep-l | Adj-fs, Occurrences: 306, Senses: 5
+
+BDB excerpt: רָעָה310 n.f. evil, misery, distress, injury;—abs. ר׳ Gn 26:29 +; cstr. רָעַת 6:5 +; sf. רָֽעָתִי ψ 35:4 +; רָעָֽתְךָ 1 K 2:44 +; רָֽעָתֵכִי Je 11:15 (text dub.); רָֽעַתְכֶם 1 S 12:17, etc.; pl. רָעוֹת Dt 31:17 +; רָעֹת Je 44:9 Ex 23:2; sf. רָעוֹתֵיכֶם 1 S 10:19 +, etc.;— 1. evil, misery, distress: פַּחַד רָעָה Pr 1:33, באה (ה)רעה Ez 7:5(×2); c. עַל Is 47:11 (read באה for בא), Je 5:12 + 5 times; c. אֶל Je 2:3; 51:60; †הביא רעה Je 4:6 1 K 21:29; + אֶל 2 S 17:14 + 8 times K Je; + עַל 1 K 9:9 = 2 Ch 7:22, Je 19:3 + 6 times Je + 8 times; + אֶל et על Je 19:15; 36:31; יוֹם רעה 17:17, 18 + 5 times; י
+Senses:
+  Sense 1: "moral evil or wickedness" (234x)
+    Desc: Moral badness, sinfulness, or wickedness as a quality or abstract concept, often in construct with a possessor or used attributively.
+    Domain: MORAL_QUALITY > Moral and Ethical Qualities
+    Glosses: eng: evil | spa: el-mal, mal, mal? | fra: mal | deu: Boese, Boeses, Böses
+    Refs: Gen 26:29, Gen 44:4, Gen 50:17, Gen 50:20, Exod 10:10
+  Sense 2: "calamity or disaster" (25x)
+    Desc: An external catastrophe, disaster, or judgment brought upon people, often by God; translating as calamity, disaster, or doom rather than moral evil.
+    Domain: MORAL_QUALITY > Moral and Ethical Qualities
+    Glosses: eng: and-for-calamity, and-his-disaster, for-calamity | spa: de-mal, el-mal, en-la-calamidad | fra: dans-mal, et-mal, et-à-mal | deu: Boeses, das-Unheil, der-Boese
+    Refs: Gen 19:19, Judg 20:34, Judg 20:41, 1Kgs 9:9, 2Kgs 6:33
+  Sense 3: "harm or injury" (20x)
+    Desc: Damage, harm, or hurt intended or inflicted upon a specific person, focusing on the injurious effect rather than moral quality or divine judgment.
+    Domain: MORAL_QUALITY > Moral and Ethical Qualities
+    Glosses: eng: for-evil, for-harm, my-harm | spa: de-mi-mal, mal, mi-mal | fra: mal, pour-mal, pour-mauvaise | deu: fuer-Boese, fuer-Boeses, mein-harm
+    Refs: Gen 31:52, Deut 29:21, Judg 2:15, 2Sam 18:32, Ps 35:4
+  Sense 4: "evil deeds or evils" (14x)
+    Desc: Plural concrete acts of evil, wicked deeds, or a collection of bad things done, referring to specific sinful actions rather than abstract wickedness.
+    Domain: MORAL_QUALITY > Moral and Ethical Qualities
+    Glosses: eng: and-evils-of, evil-things, evils | spa: las-maldades, lo-malo, los-males | fra: et-mauvais, le-maux, mal | deu: Boeses, der-Streben, der-evils
+    Refs: Deut 31:17, Deut 31:17, Deut 31:21, Deut 32:23, Ps 40:12
+  Sense 5: "trouble or distress" (13x)
+    Desc: Affliction, suffering, or distress experienced by a person, emphasizing the subjective hardship rather than moral fault or external catastrophe.
+    Domain: MORAL_QUALITY > Moral and Ethical Qualities
+    Glosses: eng: are-evils-of, calamity, evil | spa: calamidad, de-males, de-su-malestar | fra: dans-mal, mal, mauvais | deu: Boeses, Trübsal, in-Boeses
+    Refs: Num 11:15, Num 35:23, 1Chr 7:23, Neh 1:3, Ps 27:5
+
+=== H6256 ===
+Language: Hebrew, POS: Prep | N-cs, Occurrences: 297, Senses: 5
+
+BDB excerpt: עֵת297 n.f. Am 5:13 and (seldom, mostly late) m. Ezr 10:14 time (NH id.; Ph. עת; Assyrian inu, ittu, time; Talm עַנְתָּא; clearly from a √ ענה, but doubtful whether I. ע׳);—abs. ע׳ Ho 10:12 +, cstr. ע׳ Gn 24:12 +, עֶת־ Lv 15:25 + 5 times; sf. עִתּוֹ Ho 2:11 +, etc.; pl., late, עִתִּים 1 Ch 12:32 +, sf. עִתֶּיךָ Is 33:6; עִתּוֹת ψ 9:10; 10:1, sf. עִתֹּתָ֑י 31:16;—ע׳ only twice P, once H;— 1. time of an event, etc.: a. usually (213 times) c. prep.: c. בְּ (142 times), especially בָּע׳ הַהִוא Gn 21:22 (E) in that time, 38:1 (J), Nu 22:4 (E), Dt 1:9 + 14 times Dt; בָּע׳ הַהִיא Jos 5:2; Am 5:13; Dn
+Senses:
+  Sense 1: "time, period" (264x)
+    Desc: A general point or stretch of time, a period or moment, with no special nuance of appointment or propriety.
+    Domain: TIME > Time
+    Glosses: eng: at-a-time-of, the-time, time | spa: a-tiempo;, el-tiempo, tiempo | fra: temps, temps-de | deu: Zeit, Zeit-von, Zeiten
+    Refs: Gen 29:7, Exod 18:22, Exod 18:26, Lev 16:2, 2Sam 24:15
+  Sense 2: "about this time, now" (17x)
+    Desc: Temporal demonstrative use, typically with preposition כְּ, meaning 'at/about this time' or 'now'.
+    Domain: TIME > Time
+    Glosses: eng: about-the-time, about-this-time, about-time | spa: Como-en-el-tiempo, Como-este-tiempo, Como-tiempo | fra: [כעת], au-sujet-de-le-temps, comme-temps | deu: Zeit, bei-der-Zeit, ueber-Zeit
+    Refs: Gen 18:10, Gen 18:14, Exod 9:18, Num 23:23, Judg 13:23
+  Sense 3: "appointed time, due season" (14x)
+    Desc: The proper, fitting, or appointed time for something to happen; often with pronominal suffix (in its time/season).
+    Domain: TIME > Time
+    Glosses: eng: in-its-season, in-its-time, in-their-season | spa: a-su-tiempo, a-tiempo-su, en-su-tiempo | fra: dans-leur-saison, dans-maintenant, dans-son-saison | deu: Zeit, in-ihr-Jahreszeit, in-nun
+    Refs: Lev 26:4, Deut 11:14, Deut 28:12, Job 5:26, Job 38:32
+  Sense 4: "?" (1x)
+    Domain: TIME > Time
+    Glosses: eng: times | spa: veces | fra: temps | deu: Zeiten
+    Refs: Neh 9:28
+  Sense 5: "?" (1x)
+    Domain: TIME > Time
+    Glosses: eng: [ketiv:and-now] | spa: [y-ahora] | fra: temps | deu: [ketiv:and-now]
+    Refs: Ps 74:6
+
+=== H2403b ===
+Language: Hebrew, POS: N-fpc | 2mp, Occurrences: 295, Senses: 5
+
+BDB excerpt: † חַטָּאת n.f. 1 S 14:38 (Gn 4:7 no exception for רֹבֵץ is noun = crouching beast) sin, sin-offering, ח׳ Gn 4:7 + 124 times; לְחַטָּ֯ת Nu 15:24 (textual error for לחטאת), לְחַטַּאת Zc 13:1 (but read לְחַטָּאת StaZAW i. 35); cstr. חַטַּאת Ex 30:10 + 19 times; sf. חַטָּאתִי Gn 31:36 + 16 times; חַטָּאתֹיו֯ 1 K 16:26, חַטַּאתְכֶם Ex 32:30 + 3 times, etc., + 52 times sf.; pl. חַטָּאוֹת 2 K 12:17 + 3 times; cstr. חַטֹּאות ψ 25:7 + 17 times; חַטֹּאת Nu 5:6 + 6 times; sf. חַטֹּאותָ֑י ψ 25:18; חַטֹּאתָו֯ Ez 18:21; 33:16, etc., + 40 times sf.;— 1. sin: a. against man Gn 31:36; 50:17 (E), Nu 12:11 (J) 1
+Senses:
+  Sense 1: "sin, transgression" (170x)
+    Desc: The act or state of sin itself — moral failure, transgression, or offense against God; the dominant sense of חַטָּאת covering the majority of occurrences across all grammatical inflections (singular/p...
+    Domain: MORAL_QUALITY > Moral and Ethical Qualities
+    Glosses: eng: his-sin, sin-his, sin-of | spa: pecado-suyo, pecados-de, su-pecado | fra: péché, péché-de, péché-son | deu: Suende, Suende-sein, Suende-von
+    Refs: Gen 4:7, Lev 4:3, Lev 4:14, Lev 4:23, Lev 4:28
+  Sense 2: "sin-offering, sacrifice for sin" (120x)
+    Desc: The sacrificial offering prescribed to atone for sin — a technical cultic term prominent in Leviticus, Numbers, and Ezekiel; distinguished by English 'sin-offering', Spanish 'ofrenda por el pecado', H...
+    Domain: MORAL_QUALITY > Moral and Ethical Qualities
+    Glosses: eng: for-a-sin-offering, for-sin-offering, for-the-sin-offering | spa: para-la-ofrenda-por-el-pecado, para-ofrenda-por-el-pecado, para-ofrenda-por-pecado | fra: pour-le-offrande-pour-le-péché, pour-offrande-pour-le-péché, pour-un-offrande-pour-le-péché | deu: fuer-Suendopfer, fuer-der-Suendopfer, fuer-ein-Suende-Opfergabe
+    Refs: Lev 4:3, Lev 4:8, Lev 4:14, Lev 4:20, Lev 4:25
+  Sense 3: "?" (3x)
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: and-punishment-of, and-the-sin-of | spa: y-castigo-de, y-el-pecado-de, y-pecado-de | fra: et-péché | deu: und-Suende, und-der-Sünde-von
+    Refs: Ps 109:14, Dan 9:20, Zech 14:19
+  Sense 4: "?" (1x)
+    Domain: MORAL_QUALITY > Moral and Ethical Qualities
+    Glosses: eng: peoples | spa: pecado | fra: péché | deu: Suende
+    Refs: Prov 14:34
+  Sense 5: "?" (1x)
+    Domain: MORAL_QUALITY > Moral and Ethical Qualities
+    Glosses: eng: sin-offering | spa: purificación | fra: offrande-pour-le-péché | deu: Suendopfer
+    Refs: Num 8:7
+
+=== H3772 ===
+Language: Hebrew, POS: V-Qal-Imp-mp, Occurrences: 290, Senses: 5
+
+BDB excerpt: † כָּרַת291 vb. cut off, cut down (NH id.; Assyrian karâtu, ii. hew off Dl HWB 357);— Qal Pf. כ׳ Gn 15:18 + 19 times; 2 ms. כָּרָ֑תָּ Dt 20:20; 1 s. כָּרַתִּי Ex 34:27 + 15 times; + 8 times Pf.; Impf. יִכְרֹת Jb 40:28 + 21 times; 2 ms. תִּכְרָת־ Is 57:8; 1 s. אֶכְרוֹת Is 61:8; 1 S 11:2; אֶכְרְתָה Is 55:3; 3 mpl. יִכְרֹ֑תוּ Ho 12:2 ψ 83:6; 1 pl. נִכְרְתָה Gn 26:28; 31:44; sf. נִכְרְתֶנּוּ Je 11:19; + 31 times Impf.; Imv. כְּרָת־ 1 S 11:1; כָּרְתָה 2 S 3:12; + 4 times Imv.; Inf. abs. כָּרֹת Ho 10:4; כָּרוֹת Ne 9:8; cstr. כְּרֹת Je 34:8 + 2 times; כְּרָת־ Is 44:14 + 2 times; כְּרוֹת 2 Ch 2:7; 29:
+Senses:
+  Sense 1: "cut a covenant / make a pact" (97x)
+    Desc: Qal idiom: to cut (karat) a covenant or agreement, where the literal cutting refers to the ancient ritual of cutting sacrificial animals to ratify a treaty; Hindi consistently renders as bandha (to bi...
+    Domain: PHYSICAL_ACTION > Physical Impact
+    Glosses: eng: He-cut, and-cut, and-cut-down | spa: Y-cortó, cortó, hizo | fra: Il-couper, coupa, couper | deu: Er-schnitt, abschneiden, er-schnitt
+    Refs: Gen 15:18, Exod 4:25, Exod 24:8, Deut 4:23, Deut 5:2
+  Sense 2: "cut off / destroy (Hifil causative)" (81x)
+    Desc: Hifil causative: to cause to be cut off, i.e., to destroy, exterminate, or eliminate someone or something by divine or royal agency; Arabic often uses abada (annihilate), afna (exterminate), yuhliku (...
+    Domain: PHYSICAL_ACTION > Physical Impact
+    Glosses: eng: and-I-cut-off, and-I-will-cut-off | spa: Y-cortaré, y-cortaré | fra: et-je-fera-coupa-au-loin, et-retrancher | deu: und-abschneiden, und-ich-wird-schnitt-ab, und-schnitt-ab
+    Refs: Lev 17:10, Lev 20:3, Lev 20:5, Lev 20:6, Lev 26:30
+  Sense 3: "be cut off / be eliminated (Niphal)" (74x)
+    Desc: Niphal passive/reflexive: to be cut off from one's people, land, or life as divine punishment or natural consequence; Arabic yuqtau (passive) or yanqatiu (Form VII reflexive), Korean kkeuneojida (be s...
+    Domain: PHYSICAL_ACTION > Physical Impact
+    Glosses: eng: and-it-shall-be-cut-off, and-shall-be-cut-off, and-will-be-cut-off | spa: será-cortado, te-faltará, y-será-cortada | fra: et---être-couper-dehors, et-cela-devra-être-couper-off, et-devra-être-couper-off | deu: abschneiden, und-ausgerottet-werden-soll, und-es-soll-sein-schnitt-weg
+    Refs: Gen 17:14, Exod 12:15, Exod 12:19, Exod 30:33, Exod 30:38
+  Sense 4: "cut / cut down physically" (35x)
+    Desc: Qal literal sense: to physically cut, fell, or chop down trees, branches, or objects; Arabic qataa (cut), Korean jallada/beoda (cut/fell), Hindi kaata (cut), Swahili -kata (cut), with no covenant or d...
+    Domain: PHYSICAL_ACTION > Physical Impact
+    Glosses: eng: To-cut-down, and-I-cut-down, and-I-will-cut-down | spa: Y-cortaron, Y-lo-cortaron, al-cortar-yo | fra: dans-mon-coupant, et-coupa-au-loin, et-coupa-en-bas | deu: abschneiden, der-schnitt-ab, du-soll-schnitt-hinab
+    Refs: Exod 34:13, Lev 22:24, Num 13:23, Num 13:24, Deut 20:19
+  Sense 5: "be cut off (Hofal / Qal passive)" (3x)
+    Desc: Hofal causative passive and Qal passive: to have been caused to be cut off, emphasizing the completed state of being severed or destroyed; Arabic inqataat (Form VII perfect), maqtuua (passive particip...
+    Domain: PHYSICAL_ACTION > Physical Impact
+    Glosses: eng: is-cut-off, was-cut, was-cut-down | spa: Fue-cortada, cortada, fue-cortado | fra: il-a-retranché, le-il-a-retranché, était-couper-en-bas | deu: abschneiden, der-schnitt-ab, war-schnitt-hinab
+    Refs: Judg 6:28, Ezek 16:4, Joel 1:9

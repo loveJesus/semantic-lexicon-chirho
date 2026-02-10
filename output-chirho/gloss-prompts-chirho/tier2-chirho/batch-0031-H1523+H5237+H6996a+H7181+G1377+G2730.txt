@@ -1,0 +1,143 @@
+You are a biblical lexicographer composing glosses for a digital lexicon.
+For each lemma below, compose a JSON object. Separate objects with "---".
+
+Format for each:
+{
+  "lemma_id": "...",
+  "gloss_terse": "under 120 chars, concise definition covering the word's semantic range",
+  "gloss_readable": "2-5 sentences, 40-120 words. Don't start with 'This word'. Warm study-Bible footnote tone. Engaging, not dry.",
+  "senses": {
+    "1": "enriched 20-60 word description. Reference multilingual evidence when illuminating. Don't repeat the label verbatim.",
+    "2": "..."
+  }
+}
+
+Rules:
+- No markdown fences, just JSON objects separated by ---
+- Reference multilingual evidence naturally when it reveals something
+- gloss_readable should feel like a good study Bible footnote: helpful, clear, occasionally surprising
+- Each sense enrichment: how does the evidence support this sense? Mention 1-2 key passages when helpful.
+
+=== H1523 ===
+Language: Hebrew, POS: Conj-w | V-Qal-ConsecImperf-3ms, Occurrences: 46, Senses: 3
+
+BDB excerpt: † [גִּיל] vb. rejoice (NöZMG 1883, 537; cf. Arabic جَالَ go round or about, be excited to levity, etc.)— Qal Pf. גַּלְתִּי Is 65:19; Impf. יָגִיל, תָּגִיל ψ 21:2 + 4 times (ψ 21:2 Kt יגיל, Qr יָ֫גֶל with retracted tone); יָגֵל, תָּגֵל ψ 13:6 + 11 times, וַיָּגֶל ψ 16:9, אָגִילָה, נָגִילָה ψ 9:15 + 5 times, יָגִילוּ ψ 13:5 + 5 times, יְגִילוּן ψ 89:17, תָּגֵלְנָה ψ 48:12 + 2 times; יָגִו֯ל Pr 23:24; Imv. גִּילוּ ψ 2:11 + 4 times, גִּילִי Is 49:13 + 2 times; 1. rejoice, a. abs. ψ 13:5; 51:10 Is 49:13 Zc 9:9; ‖ שׂמח ψ 14:7; 16:9; 32:11; 48:12; 53:7; 96:11; 97:1, 8 Pr 23:24, 25 1 Ch 16:31 Hb 1:15;
+Senses:
+  Sense 1: "rejoice, be glad" (43x)
+    Desc: To experience and express joy, gladness, or exultation, often in response to God's acts or in worship.
+    Domain: EMOTION_ATTITUDE > Attitudes and Emotions
+    Glosses: eng: And-I-shall-rejoice, and-be-glad, and-dry-land | spa: Y-me-gozaré, go­cense, nos-gozaremos | fra: [ותגל], et-exulter, exulter | deu: [גילו], [גילי], [ותגל]
+    Refs: 1Chr 16:31, Ps 2:11, Ps 9:14, Ps 13:4, Ps 13:5
+  Sense 2: "rejoicing (nominal/adverbial)" (2x)
+    Desc: The infinitive absolute used as a verbal noun or adverb to express the act or manner of rejoicing.
+    Domain: EMOTION_ATTITUDE > Attitudes and Emotions
+    Glosses: eng: [rejoicing], rejoicing | spa: (regocijando), [regocijando] | fra: se-réjouir | deu: [(גיל)], [[גול]]
+    Refs: Prov 23:24, Prov 23:24
+  Sense 3: "?" (1x)
+    Domain: EMOTION_ATTITUDE > Attitudes and Emotions
+    Glosses: eng: shall-tremble | spa: se-regocijarán | fra: réjouir | deu: [יגילו]
+    Refs: Hos 10:5
+
+=== H5237 ===
+Language: Hebrew, POS: Prep-m | Adj-fs, Occurrences: 46, Senses: 3
+
+BDB excerpt: † נָכְרִי adj. foreign, alien (NH נָכְרִי = Gentile);—נ׳ abs. m. Zp 1:8 +; f. נָכְרִיָּה Ex 2:22 +; mpl. נָכְרִים Is 2:6 + 2 times + Pr 20:16 Kt (> Qr נָכְרִיָּה), + 27:13 (so read for MT נָכְרִיָּה); fpl. נָכְרִיּוֹת Gn 31:15 +;— 1. a. foreign: עַם נָכְרִי Ex 21:8 (E) a foreign (non-Isr.) people, אִישׁ נ׳ Dt 17:15 (‖ לֹא אָחִיךָ); מַלְבּוּשׁ נ׳ Zp 1:8; אֶרֶץ נָכְרִיָּה Ex 2:22 (J) foreign land, so 18:3 (E); especially נָשִׁים נָכְרִיּוֹת foreign (non-Isr.) women 1 K 11:1, 8; Ezr 10:2, 10, 11, 14, 17, 18, 44; Ne 13:26, 27. b. as subst. נָכְרִי foreigner (non-Isr.) Ju 19:12 (+ אֲשֶׁר לֹא מִבְּנ
+Senses:
+  Sense 1: "foreign, alien (attributive adjective)" (22x)
+    Desc: Describes something or someone as belonging to another people or land, modifying a noun (e.g., foreign gods, foreign wives, foreign land).
+    Domain: GROUPS_COMMUNITY > Groups and Classes of Persons
+    Glosses: eng: [foreigners], alien, foreign | spa: [extraños], extranjera, extranjeras | fra: [נכריה], der-étrangères, foreign | deu: [נכריה], als-Fremde, der-foreign
+    Refs: Gen 31:15, Exod 2:22, Exod 18:3, Exod 21:8, Deut 17:15
+  Sense 2: "foreigner, stranger (substantive masculine)" (16x)
+    Desc: Used as a noun to denote a male person from another nation or people, often in legal and social contexts concerning rights and obligations toward non-Israelites.
+    Domain: GROUPS_COMMUNITY > Groups and Classes of Persons
+    Glosses: eng: a-foreigner, and-a-foreigner, and-the-foreigner | spa: Al-extranjero, a-extranjeros, al-foráneo | fra: [לנכרים], et-le-étranger, et-étranger | deu: Auslaender, [הנכרי], der-Auslaender
+    Refs: Deut 14:21, Deut 15:3, Deut 23:20, Deut 29:22, Judg 19:12
+  Sense 3: "foreign woman (Proverbs figure)" (8x)
+    Desc: The 'strange/foreign woman' of Proverbs wisdom literature, a substantive feminine use denoting a morally dangerous seductress or adulteress from whom the young man is warned to keep distance.
+    Domain: GROUPS_COMMUNITY > Groups and Classes of Persons
+    Glosses: eng: (foreign-woman), a-foreign-woman, a-foreigner | spa: (una-extranjera), de-extranjera, de-la-extranjera | fra: de-étrangère, un-étranger, étrangère | deu: fremd
+    Refs: Ruth 2:10, Prov 2:16, Prov 5:20, Prov 6:24, Prov 7:5
+
+=== H6996a ===
+Language: Hebrew, POS: Adj-fp, Occurrences: 46, Senses: 3
+
+BDB excerpt: † I. קָטָן adj. small, young, unimportant;—abs. ק׳ Gn 9:24 +; sf. קְטַנָּם (Köii. 1, 74) Je 6:13 +; fs. קְטַנָּה Gn 29:16 +; mpl. קְטַנִּים 2 K 18:24 +; cstr. קְטַנֵּי 1 S 9:21 (v. Dr; We conj. -נִּי, old cstr., cf. HPS), Pr 30:24; fpl. קְטַנּוֹת Ez 16:61 +;— 1. small: especially a. of children, youth = young, Gn 44:20 (J) 2 S 9:12; 1 K 11:17; 2 K 2:23; 5:2, of sister Ct 8:8; = younger, of two children (often opp. גדול), Gn 9:24; 27:15, 42 (all J), 29:16, 18 (E), 1 S 14:49 (f.; opp. הַבְּכִירָה); of younger sister Ju 15:2, so (fig.) Ez 16:46 and (+ מִן comp.) v 61; brother 1 Ch 24:31; הַקּ׳ yo
+Senses:
+  Sense 1: "small in size or degree" (27x)
+    Desc: Describes something physically small, insignificant, or of little quantity/importance — the basic adjectival sense of qatan in positive degree.
+    Domain: QUANTITY_NUMBER > Degree
+    Glosses: eng: and-small, little, small | spa: pequeña, pequeñas, pequeño | fra: et-petit, jeune, petit | deu: [קטן], ein-kleines, jung
+    Refs: Gen 44:20, Num 22:18, Deut 25:13, Deut 25:14, 2Sam 9:12
+  Sense 2: "young or younger in age" (12x)
+    Desc: Refers to youth or comparative youth, especially of a younger sibling or child within a family context, often with the article as a substantive ('the younger one').
+    Domain: QUANTITY_NUMBER > Degree
+    Glosses: eng: the-little, the-younger, the-youngest | spa: el-menor, el-pequeño, la-menor | fra: [הקטן], [הקטנה], [הקטנות] | deu: [הקטן], [הקטנה], [הקטנות]
+    Refs: Gen 9:24, Gen 27:15, Gen 27:42, Gen 29:16, Gen 29:18
+  Sense 3: "least or smallest among a group" (7x)
+    Desc: Used in superlative or elative sense to denote the least, smallest, or most insignificant member of a group, often with possessive suffix or partitive preposition min ('from the least of them').
+    Domain: QUANTITY_NUMBER > Degree
+    Glosses: eng: and-you-trust, from-smallest-of, from-smallest-of-them | spa: a-los-pequeños, de-la-más-pequeña-de, desde-el-menor-de-ellos | fra: [הקטנים], [למקטנם], [מקטנם] | deu: [הקטנים], [למקטנם], [מקטנם]
+    Refs: 1Sam 9:21, 2Kgs 18:24, Ps 115:13, Isa 36:9, Jer 6:13
+
+=== H7181 ===
+Language: Hebrew, POS: V-Hifil-Prtcpl-mp, Occurrences: 46, Senses: 3
+
+BDB excerpt: [קָשַׁב46] vb. incline, attend, of ears;— †Qal Impf. 3 fpl. תִּקְשַׁבְנָה Is 32:3 (subj. אזנים). Hiph. Pf. 3 ms. הִקְשִׁיב Je 23:18 ψ 66:19, etc.; Impf. 3 ms. יַקְשִׁב Is 42:23, etc.; Imv. ms. הַקְשֵׁב Jb 33:31, especially הַקְשִׁ֫יבָה ψ 5:3 +, etc.; Inf. cstr. הַקְשִׁיב 1 S 15:22 +; Pt. מַקְשִׁיב Pr 1:24 +, pl. מַקְשִׁיבִים Ct 8:13;—give attention (sometimes + שָׁמַע); abs. Ho 5:1; 1 S 15:22; Is 10:30; 28:23; 34:1; 49:1; Mi 1:2 + 12 times; + אֶל pers. Je 18:19; Zc 1:4; Is 51:4 (‖ הֶאֱזִינוּ), לְ pers. ψ 55:3; + אֶל rei Je 18:18; Ne 9:34 ψ 142:7, עַל rei Je 6:19; Pr 17:4; 29:12, ל rei Je 6:17;
+Senses:
+  Sense 1: "pay attention, give heed" (41x)
+    Desc: To direct one's attention or ear toward something; to listen carefully, attend, or heed (Hifil finite forms: imperatives, perfects, imperfects, cohortatives, consecutive imperfects, infinitives with p...
+    Domain: MENTAL_LIFE > Think
+    Glosses: eng: Pay-attention, and-pay-attention, attend | spa: Atiende, Escucha, Escuchad | fra: et-prêter-l'oreille, et-être-attentif, le-être-attentif | deu: [הקשיבה], [הקשיבו], [והקשיבו]
+    Refs: 1Sam 15:22, 2Chr 20:15, 2Chr 33:10, Neh 9:34, Job 13:6
+  Sense 2: "one who listens attentively" (4x)
+    Desc: Participial/substantive use describing a person who pays attention or listens carefully; the attentive one (Hifil participle forms, singular and plural)
+    Domain: MENTAL_LIFE > Think
+    Glosses: eng: listening, listens, paying-attention | spa: escuchan, presta-atención, que-presta-atención | fra: prêter-l'oreille, écoutent | deu: [מקשיב], [מקשיבים]
+    Refs: Prov 1:24, Prov 17:4, Prov 29:12, Song 8:13
+  Sense 3: "?" (1x)
+    Domain: MENTAL_LIFE > Think
+    Glosses: eng: shall-listen | spa: escucharán | fra: être-attentif | deu: aufmerken
+    Refs: Isa 32:3
+
+=== G1377 ===
+Language: Greek, POS: V-PIA-2S, Occurrences: 45, Senses: 3
+
+BDB excerpt: διώκω, Epic dialect infinitive διωκέμεναι, -έμεν (see. below): future -ξωRefs 7th c.BC+aorist ἐδίωξα: aorist 2 ἐδιώκαθον (see. διωκάθω): perfect δεδίωχα Refs 4th c.BC+ —middle (see. below):—passive, future διωχθήσομαι Refs 1st c.BC+; but διώξομαι in passive sense, LXX+1st c.BC+: aorist ἐδιώχθην Refs 5th c.BC+: perfect δεδίωγμαι NT; see at {δίω}):—cause to run, set in quick motion, opposed to φεύγω: __1 pursue, chase, in war or hunting, φεύγοντα διώκειν Refs 8th c.BC+ —middle, διώκεσθαί τινα πεδίοιο, δόμοιο, chase one over or across.., Refs 8th c.BC+ __1.b with accusative person, of a lover, Re
+Senses:
+  Sense 1: "persecute, oppress" (26x)
+    Desc: To actively pursue someone with hostile intent, harass or oppress for religious or ideological reasons.
+    Domain: VIOLENCE_CONFLICT > Hostility, Strife
+    Glosses: eng: I-was-persecuting, are-persecuting, are-you-persecuting | spa: los-perseguía, perseguirán, perseguía | fra: persécuter | deu: verfolgen, verfolgt
+    Refs: Matt 5:11, Matt 5:12, Matt 5:44, Matt 10:23, Matt 23:34
+  Sense 2: "pursue, strive after" (13x)
+    Desc: To earnestly seek, follow after, or strive toward something desirable such as peace, righteousness, or love.
+    Domain: VIOLENCE_CONFLICT > Hostility, Strife
+    Glosses: eng: I-pursue, let-him-pursue, let-us-pursue | spa: Perseguid, perseguid, persigamos | fra: persécuter | deu: verfolgen, verfolgt
+    Refs: Luke 17:23, Rom 9:30, Rom 9:31, Rom 12:13, Rom 14:19
+  Sense 3: "be persecuted, suffer persecution" (6x)
+    Desc: To be the object of hostile pursuit or oppression, enduring persecution passively.
+    Domain: VIOLENCE_CONFLICT > Hostility, Strife
+    Glosses: eng: am-I-persecuted, being-persecuted, having-been-persecuted | spa: perseguidos, sean-perseguidos, serán-perseguidos | fra: persécuter | deu: verfolgen, verfolgt
+    Refs: Matt 5:10, 1Cor 4:12, 2Cor 4:9, Gal 5:11, Gal 6:12
+
+=== G2730 ===
+Language: Greek, POS: V-PNA, Occurrences: 45, Senses: 3
+
+BDB excerpt: κατοικ-έω, settle in, colonize, πόλιν Refs 5th c.BC+; τοῖς κατοικεῖν ἐθέλουσι τὰν πόλιν Decrees Byzantine cited in Refs 4th c.BC+: generally, inhabit, τόπους Refs 5th c.BC+, etc.:— passive, to be dwelt in or inhabited, opposed to κατοικίζομαι (to be just founded), Refs 4th c.BC+ __2 absolutely, settle, dwell, ζητοῦσα.. ποῦ κατοικοίης Refs 5th c.BC+; ἐν δόμοις, ἐν ἄστεσι, NT+5th c.BC+; especially of non-citizens, Ἐφέσιοι καὶ οἱ -οῦντες Refs 4th c.BC+:—perfect and pluperfect passive, to have been planted or settled, κατὰ κώμας Refs 5th c.BC+; κ.νῆσον, τὴν μεσόγειαν, Refs 5th c.BC+ __II administe
+Senses:
+  Sense 1: "dwell, inhabit a place" (36x)
+    Desc: To reside or live in a particular location as an inhabitant, used of persons dwelling in cities, regions, or the earth generally.
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: dwelling, dwells, residing | spa: habita, habitando, que-habitaban | fra: habiter | deu: wohnen, wohnt
+    Refs: Matt 12:45, Matt 23:21, Luke 11:26, Luke 13:4, Acts 1:19
+  Sense 2: "settle, take up residence" (8x)
+    Desc: To establish oneself in a place, emphasizing the ingressive or punctiliar act of beginning to dwell somewhere.
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: having-dwelt, he-dwelt, settled | spa: habitando, habitar, habitó | fra: habiter | deu: wohnen, wohnt
+    Refs: Matt 2:23, Matt 4:13, Acts 7:2, Acts 7:4, Acts 17:26
+  Sense 3: "cause to dwell, settle someone" (1x)
+    Desc: Causative or transitive use: to make someone dwell in a place, to settle or establish someone in a location.
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: he-caused-to-dwell | spa: hizo-habitar | fra: habiter | deu: wohnen
+    Refs: Jas 4:5

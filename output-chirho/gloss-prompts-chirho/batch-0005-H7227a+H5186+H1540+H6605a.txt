@@ -1,0 +1,241 @@
+You are a biblical lexicographer composing glosses for a digital lexicon.
+For each lemma below, compose a JSON object. Separate objects with "---".
+
+Format for each:
+{
+  "lemma_id": "...",
+  "gloss_terse": "under 120 chars, concise definition covering the word's semantic range",
+  "gloss_readable": "2-5 sentences, 40-120 words. Don't start with 'This word'. Warm study-Bible footnote tone. Engaging, not dry.",
+  "senses": {
+    "1": "enriched 20-60 word description. Reference multilingual evidence when illuminating. Don't repeat the label verbatim.",
+    "2": "..."
+  }
+}
+
+Rules:
+- No markdown fences, just JSON objects separated by ---
+- Reference multilingual evidence naturally when it reveals something
+- gloss_readable should feel like a good study Bible footnote: helpful, clear, occasionally surprising
+- Each sense enrichment: how does the evidence support this sense? Mention 1-2 key passages when helpful.
+
+=== H7227a ===
+Language: Hebrew, POS: Adj-msc, Occurrences: 433, Senses: 10
+
+BDB excerpt: I. רַב429 adj. much, many, great;—ms. abs. ר׳ Gn 24:25 +, רָ֑ב Gn 33:9 +, also רָב֥ 2 Ch 20:2, רָב֖ 28:8, רָב֨ Ezr 10:13, etc.; cstr. רַב Ex 34:6 +; fs. רַבָּה Nu 11:33 +; cstr. רַבַּת Ez 22:5 +, רַבָּ֫תִי (Ges§ 90 k l) La 1:1(×2); mpl. abs. רַבִּים Ex 23:2(×2) +, cstr. v. ii. רַב⁴" dir="rtl" >רב; fpl. abs. רַבּוֹת Gn 30:43 +;—[often both as pred. and as attrib.; as attrib. preceding n. (infl. of usage for numerals? KöSynt. § 334 k Ges§ 132b): רַב Is 63:7 ψ 145:7 (but read prob. רֹב, רָב־; in Is 21:7 ר׳ is pred.), רַבִּים Je 16:16 ψ 32:10; 89:51 (on context BöNÄ Bae, also Hup), Pr 7:26 1 Ch 28
+Senses:
+  Sense 1: "many, much (quantitative)" (305x)
+    Desc: Quantitative adjective indicating a large number or amount: many people, much wealth, numerous occurrences — Arabic كَثِير, Korean 많은, Swahili -engi/-ingi, Hindi बहुत, Spanish muchos/mucho.
+    Domain: PROPERTIES_RELATIONS > Adequate, Qualified
+    Glosses: eng: many | spa: mucha, muchas, mucho | fra: beaucoup | deu: viel, viele
+    Refs: Gen 21:34, Gen 26:14, Gen 30:43, Gen 37:34, Exod 5:5
+  Sense 2: "great, mighty (qualitative)" (65x)
+    Desc: Qualitative adjective indicating greatness in size, importance, intensity, or power — Arabic عَظِيم, Korean 큰/크다, Swahili -kubwa/mkubwa, Hindi बड़ा/बड़ी/महान, Spanish grande.
+    Domain: QUANTITY_NUMBER > Degree
+    Glosses: eng: great | spa: grande, mucha | fra: grand, nombreux | deu: der-großen, es-ist-groß, gross
+    Refs: Gen 6:5, Gen 7:11, Gen 18:20, Num 11:33, 1Sam 12:17
+  Sense 3: "abounding in, rich in (construct)" (19x)
+    Desc: Adjective in construct state meaning 'abounding in, rich in, full of' when followed by a noun — Korean 풍성한, Spanish abundante-de, Arabic كَثِيرُ + genitive.
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: abounding-in, abundance-of, abundant | spa: abundante-de-, abundante-en, grande-de | fra: et-grand, et-grand-de, et-grand-de- | deu: gross-von, und-gross-von, und-gross-von-
+    Refs: Exod 34:6, Num 14:18, 2Sam 23:20, 1Chr 11:22, Neh 9:17
+  Sense 4: "enough, sufficient" (14x)
+    Desc: Adverbial/exclamatory use meaning 'enough! sufficient!' — Arabic كَفَى/كَفَاكُمْ, Korean 족하다/충분하다, Swahili -tosha, Spanish basta/suficiente.
+    Domain: PROPERTIES_RELATIONS > Adequate, Qualified
+    Glosses: eng: and-enough, contending, enough | spa: Basta, Basta-, basta | fra: assez, assez-, contending | deu: contending, genug, genug-
+    Refs: Gen 45:28, Exod 9:28, Num 16:3, Num 16:7, Deut 1:6
+  Sense 5: "more, greater (comparative)" (10x)
+    Desc: Comparative sense meaning 'more numerous, greater' — Arabic أَكْثَرُ/كَبِيرٌ, Korean 큰 것이, Spanish mayor/más.
+    Domain: PROPERTIES_RELATIONS > Adequate, Qualified
+    Glosses: eng: and-the-greater, greater, more | spa: mayor, muchos, más | fra: et-le-plus-grand, grand, nombreux | deu: greater, mehr, und-der-Ältere
+    Refs: Gen 25:23, Deut 20:1, Josh 10:11, Judg 16:30, 2Kgs 6:16
+  Sense 6: "greatly, long (adverbial extent)" (8x)
+    Desc: Adverbial use indicating degree ('greatly') or temporal/spatial extent ('long, far') — Korean 크게/오래, Swahili sana/muda mrefu, Spanish grandemente/largo, Arabic طَوِيل.
+    Domain: PROPERTIES_RELATIONS > Adequate, Qualified
+    Glosses: eng: great, greatly, long | spa: Mucho, grandemente, largo | fra: grand, nombreux | deu: gross, viele
+    Refs: 1Kgs 19:7, Ps 62:2, Ps 65:9, Ps 120:6, Ps 123:3
+  Sense 7: "abundance, multitude (nominal)" (5x)
+    Desc: Noun form meaning 'abundance, multitude, greatness' used in construct or with prepositions — Arabic كَثْرَة, Korean 많음/큰, Swahili wingi/ukubwa.
+    Domain: PROPERTIES_RELATIONS > Adequate, Qualified
+    Glosses: eng: and-great-, and-the-great, by-great- | spa: Acaso-con-grandeza-de-, Con-mucha-, mucha | fra: dans-nombreux, et-nombreux, nombreux | deu: in-viel, und-viel, viel
+    Refs: Job 23:6, Job 30:18, Job 36:18, Eccl 1:18, Isa 63:7
+  Sense 8: "increase, multiply (verbal)" (4x)
+    Desc: Verbal forms (Qal perfect/conjunctive) meaning 'to become many, to increase, to multiply' — Arabic يَكثُرُ/تَكثُرَ/اِزْدَادَ, Korean 많아지다/커졌다, Swahili kuongezeka.
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: and-becoming-many, and-great, and-increasing | spa: y-aumentando, y-creciendo, y-se-multiplique | fra: et-augmentant, et-becoming-beaucoup, et-multiplies | deu: und-becoming-viele, und-increasing, und-mehrte
+    Refs: Exod 23:29, 1Sam 14:19, 2Sam 15:12, Isa 6:12
+  Sense 9: "chief, captain, master (title)" (2x)
+    Desc: Substantival noun רַב used as a title meaning 'chief, captain, master, great one' — Arabic رَئِيس, Korean 장관, Swahili mkuu, Hindi प्रधान.
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: an-archer, the-chief-of- | spa: Grande, jefe-de | fra: nombreux | deu: viel
+    Refs: Prov 26:10, Jer 52:24
+  Sense 10: "?" (1x)
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: and-defender | spa: y-grande | fra: et-nombreux | deu: und-viel
+    Refs: Isa 19:20
+
+=== H5186 ===
+Language: Hebrew, POS: Conj-w | V-Hifil-Prtcpl-mpc, Occurrences: 216, Senses: 10
+
+BDB excerpt: נָטָה215 vb. stretch out, spread out, extend, incline, bend (NH id., incline, spread tent, etc.; Arabic نطو, نَطَا stretch out);— Qal137 Pf. 3 ms. נ׳ Gn 33:19 +; 3 fs. נָֽטְתָה Nu 22:33; 2 ms. נָטִיתָ Ex 15:12; 3 pl. נָטוּ ψ 21:12 Is 45:12, נָטָ֫יוּ ψ 73:2 Qr, etc.; Impf. יִטֶּה Jb 15:29, juss. יֵט Zp 2:13; וַיֵּט Gn 12:8 +, וַיֶּט־ Gn 26:27 +; 3 fs. תִּטֶּה Jb 31:7, וַתֵּט Nu 22:23 +; 2 ms. juss. תֵּט Pr 4:5, 27; Impf. Is אָט Jb 23:11; 3 mpl. וַיִּטּוּ 1 S 8:3; 1 pl. נִטֶּה Nu 20:17; Imv. נְטֵה Ex 8:1 +; Inf. cstr. נְטוֹת Ju 19:8 + 4 times, נְטֹת Ex 23:2; sf. נְטֹתִי Ex 7:5, נְטוֹתוֹ ψ 109:23
+Senses:
+  Sense 1: "stretch out hand/arm (Qal)" (45x)
+    Desc: Physical stretching out of the hand or arm, often in divine action or human gesture (Arabic madda/مَدَّ); includes imperative, consecutive imperfect, perfect, infinitive, and conjunctive perfect forms...
+    Domain: MOVEMENT > Linear Movement
+    Glosses: eng: and-I-shall-stretch-out, and-I-stretch-out, and-I-will-stretch-out | spa: Extiende, Y-extenderé, Y-extendió | fra: et-étendit-dehors, et-étendre, étendre-dehors | deu: ausstrecken-heraus, und-ausstrecken, und-breitete-aus
+    Refs: Exod 7:5, Exod 7:19, Exod 8:5, Exod 8:6, Exod 8:16
+  Sense 2: "incline ear/heart (Hifil causative)" (37x)
+    Desc: Hifil causative meaning to incline or direct one's ear or heart toward God or instruction (Arabic amala/أَمَالَ or amil/أَمِلْ); includes imperative, imperfect, perfect, and infinitive Hifil forms use...
+    Domain: MOVEMENT > Non-Linear Movement
+    Glosses: eng: Incline, bow-down, incline | spa: Inclina, Inclina-, inclina | fra: incline, le-étendre, étendre | deu: ausstrecken, breitete-aus, incline
+    Refs: Gen 24:14, Josh 24:23, 1Kgs 8:58, 2Kgs 19:16, Ezra 7:28
+  Sense 3: "outstretched arm (Qal passive participle)" (30x)
+    Desc: Passive participle describing the state of being stretched out, characteristically used of God's outstretched arm (Arabic mamduda/مَمْدُودَة); includes both feminine and masculine forms, with and with...
+    Domain: MOVEMENT > Non-Linear Movement
+    Glosses: eng: outstretched, stretched-out, the-outstretched | spa: extendida, extendido, la-extendida | fra: le-étendu, outstretched, étendre | deu: ausstrecken, der-outstretched, neigte
+    Refs: Exod 6:6, Deut 4:34, Deut 5:15, Deut 7:19, Deut 9:29
+  Sense 4: "turn aside intransitively (Qal)" (24x)
+    Desc: Intransitive turning aside from a path, road, or moral standard (Arabic mala/مَالَ); Qal perfect, imperfect, imperative, infinitive, and participle forms expressing self-directed deviation.
+    Domain: MOVEMENT > Non-Linear Movement
+    Glosses: eng: [ketiv:had-slipped], and-they-turned-aside, and-turned | spa: Vuélvete, [se-apartaron], desvíate | fra: avait-se-tourna, et-ils-se-tourna-de-côté, et-tourna | deu: breitete-aus, er-hatte-wandte, er-wandte
+    Refs: Gen 38:1, Gen 38:16, Exod 23:2, Num 20:17, Num 20:21
+  Sense 5: "turn aside/divert causatively (Hifil)" (21x)
+    Desc: Hifil causative meaning to turn someone or something aside, to lead astray, to divert from a path (Arabic amala with object/حَوَّلَ); includes turning aside persons, causing deviation.
+    Domain: MOVEMENT > Non-Linear Movement
+    Glosses: eng: and-he-turned, and-he-turned-it, and-she-spread-it | spa: Desvían, E-inclinó, apartaron | fra: et-elle-étendit-cela, et-il-se-tourna, et-il-se-tourna-cela | deu: ausstrecken, breitete-aus, neigte-
+    Refs: Num 22:23, 2Sam 3:27, 2Sam 6:10, 2Sam 16:22, 2Sam 19:14
+  Sense 6: "incline/bow (Qal intransitive)" (16x)
+    Desc: Intransitive inclining, bowing, or leaning physically — of shadows declining, terrain sloping, or a person bowing (Arabic mala/مَالَ or inhidara/اِنْحَدَرَ); Qal forms where the subject itself incline...
+    Domain: MOVEMENT > Non-Linear Movement
+    Glosses: eng: I-have-inclined, I-have-turned, and-He-bowed | spa: E-inclinó, Incliné, Y-se-inclinó | fra: comme-étendre, declining-de, et-Il-s'inclina | deu: declining-von, extends, neigte
+    Refs: Gen 39:21, Gen 49:15, Num 21:15, Judg 9:3, Judg 16:30
+  Sense 7: "pervert justice (Hifil)" (14x)
+    Desc: Hifil forms specifically meaning to pervert, distort, or twist justice or judgment (Arabic harrafa/حَرَّفَ); a morally charged specialization of the causative turn-aside sense.
+    Domain: MOVEMENT > Non-Linear Movement
+    Glosses: eng: To-turn-aside, and-they-perverted, and-turning-aside- | spa: Al-torcer, Para-apartar, Y-los-que-se-desvian | fra: et-ils-perverted, et-le-étendre, et-étendre | deu: ausstrecken, breitete-aus, du-soll-pervert
+    Refs: Exod 23:2, Exod 23:6, Deut 16:19, Deut 24:17, Deut 27:19
+  Sense 8: "spread out heavens/tent (Qal active participle)" (12x)
+    Desc: Active participle describing the one who stretches out or spreads (heavens, tent curtains), often of God as cosmic creator (Arabic nashara/نَشَرَ or basata/بَسَطَ); Qal participial forms.
+    Domain: MOVEMENT > Non-Linear Movement
+    Glosses: eng: Stretcher-of, am-extending, and-Stretcher-of-them | spa: El-que-extiende, Extendiendo, el-que-extiende | fra: et-étendre, étendre | deu: ausstrecken, ausstreckend, breitete-aus
+    Refs: 1Chr 21:10, Job 9:8, Job 26:7, Ps 104:2, Isa 40:22
+  Sense 9: "pitch a tent (Qal)" (10x)
+    Desc: Stretching out or setting up a tent or tabernacle (Arabic nasaba/نَصَبَ); a specialized concrete application of the root in Qal.
+    Domain: MOVEMENT > Non-Linear Movement
+    Glosses: eng: and-he-pitched, and-pitched, and-pitched- | spa: extendió, extendió-, había-extendido | fra: et-dressa, et-dressa-, et-il-dressa | deu: ausstrecken, er-aufgespannt-hatte-, pitched
+    Refs: Gen 12:8, Gen 26:25, Gen 33:19, Gen 35:21, Exod 33:7
+  Sense 10: "spread out/stretch (Qal perfect/imperfect misc)" (7x)
+    Desc: Qal finite forms meaning to spread out, extend, or stretch physically (wings, heavens); overlaps with stretch-out sense but context is cosmic or territorial spreading (Arabic nashara/بَسَطَ).
+    Domain: MOVEMENT > Non-Linear Movement
+    Glosses: eng: He-stretched-out, are-lengthening, bends | spa: extendieron, extendió, se-extienden | fra: ils-étendre-dehors, étendre | deu: ausstrecken, breitete-aus, sie-ausstrecken-heraus
+    Refs: Num 24:6, Job 15:29, Isa 45:12, Jer 6:4, Jer 10:12
+
+=== H1540 ===
+Language: Hebrew, POS: Art | V-Qal-QalPassPrtcpl-ms, Occurrences: 186, Senses: 10
+
+BDB excerpt: גָּלָה189 vb. uncover, remove (NH id., cf. Arabic جَلَا be or become clear, uncovered; display, reveal, declare; go forth, emigrate; cf. Ethiopic ገለወ obducere, velare, & 11: ገለየ in deriv. (rare) Di1141; Aramaic גְּלָא, ܓܠܴܐ reveal)— Qal51 Pf. ג׳ etc. 1 S 4:21 + (18 t.times in all); Impf. יִגְלֶה 1 S 20:2 + 5 times וַיִּ֫גֶֽל 2 K 17:23 + 3 times, also juss. יִ֫גֶל Jb 20:28; 36:15; 3 mpl. יִגְלוּ Am 6:7; Imv. ms. גְּלֵה Ez 12:3; Inf. abs. גָּלֹה Am 5:5 + 2 times, cstr. גְּלוֹת Ju 18:30 Je 1:3; Pt. גּוֹלֶה 2 K 24:14, גֹּלֶה 1 S 22:8 + 3 times, f. גּוֹלָה Is 49:21; pass. גָּלוּי Est 3:14 + 2 times
+Senses:
+  Sense 1: "Piel: uncover or strip bare" (40x)
+    Desc: Piel factitive sense of physically uncovering, stripping bare, removing a covering, or exposing nakedness (Arabic: كشف kashafa physical; Korean: 벗기다; Hindi: उघाड़ना).
+    Domain: MENTAL_LIFE > Know
+    Glosses: eng: he-uncovered, to-uncover, uncover | spa: descubrirás, descubrió, para-descubrir | fra: découvrir, il-découvrit, à-découvrir | deu: aufdecken, er-deckte-auf, zu-aufdecken
+    Refs: Lev 18:6, Lev 18:7, Lev 18:7, Lev 18:8, Lev 18:9
+  Sense 2: "Hifil: exile or deport" (38x)
+    Desc: Hifil causative sense of causing someone to go into exile, deporting, or carrying away captive (Arabic: سبى sabaa / أجلى ajlaa; Korean: 사로잡아 갔다/추방했다; Swahili: kupeleka uhamishoni).
+    Domain: MENTAL_LIFE > Know
+    Glosses: eng: I-exiled, and-he-exiled, exiled | spa: Y-deporto, Y-deportó, deportaron | fra: et-il-exila, exila, ils-exila | deu: der-offenbarte, er-fuehrte-ins-Exil, offenbaren
+    Refs: 2Kgs 15:29, 2Kgs 16:9, 2Kgs 17:6, 2Kgs 17:11, 2Kgs 17:26
+  Sense 3: "Nifal: be revealed or appear" (33x)
+    Desc: Nifal (and Pual) reflexive-passive sense of being revealed, being uncovered, appearing, or manifesting oneself, including divine self-revelation (Arabic: انكشف inkashafa / أُعلن u'lina; Korean: 드러나다/나...
+    Domain: MENTAL_LIFE > Know
+    Glosses: eng: I-revealed-Myself, Will-be-uncovered, and-shall-be-exposed | spa: Será-descubierta, Y-fue-revelado, Y-se-descubrieron | fra: comme-découvrant-de, découvrant-de, découvrir | deu: ich-offenbarte-Myself, offenbaren, offenbarte
+    Refs: Gen 35:7, Exod 20:26, Deut 29:29, 1Sam 2:27, 1Sam 2:27
+  Sense 4: "Qal: go into exile" (22x)
+    Desc: Intransitive Qal sense of departing into captivity or exile, including substantive participle uses meaning 'exile, one in exile' (Arabic cognate: جلا jalaa / سُبي subiya).
+    Domain: MENTAL_LIFE > Know
+    Glosses: eng: She-has-gone-into-exile, an-exile, and-he-exiled | spa: Ha-ido-al-exilio, ciertamente, desterrada | fra: et-fut-exila, et-il-exila, et-révéler | deu: ein-verbanne, er-offenbart, exile-von
+    Refs: Judg 18:30, 2Sam 15:19, 2Kgs 17:23, 2Kgs 25:21, Isa 5:13
+  Sense 5: "Piel: reveal or make known" (16x)
+    Desc: Piel factitive sense of revealing information, disclosing secrets, or making divine truths known, extending the uncovering metaphor to abstract domains (Arabic: كشف kashafa abstract; Korean: 드러내다; Hin...
+    Domain: MENTAL_LIFE > Know
+    Glosses: eng: He-will-uncover, I-have-revealed, I-have-uncovered | spa: El-que-descubre, Revelarán, Y-descubriré | fra: découvrir, et-révéler, révéler | deu: Rolle, offenbaren, offenbarte
+    Refs: Job 12:22, Job 20:27, Ps 98:2, Prov 11:13, Prov 25:9
+  Sense 6: "Qal: reveal or disclose" (15x)
+    Desc: Transitive Qal sense of revealing, disclosing, or making known information, secrets, or divine matters (Arabic cognate: كشف kashafa; Korean: 드러내다; Swahili: kufunua).
+    Domain: MENTAL_LIFE > Know
+    Glosses: eng: He-opens, I-will-uncover, and-I-will-reveal | spa: El-que-revela-, Y-abre, descubrirá | fra: découvrir, découvrit, et-découvrir | deu: Verbannung, eins-offenbarend, er-offenbart
+    Refs: Ruth 4:4, 1Sam 9:15, 1Sam 20:2, 1Sam 20:12, 1Sam 20:13
+  Sense 7: "Hofal: be exiled or deported" (7x)
+    Desc: Hofal passive of the Hifil, indicating being exiled, deported, or carried into captivity by an external agent (Arabic: جُلي juliya / سُبي subiya passive; Korean: 잡혀갔다/유배당한).
+    Domain: MENTAL_LIFE > Know
+    Glosses: eng: is-exiled, the-ones-being-exiled, was-exiled | spa: fue-deportada, fue-desterrado, fueron-deportados | fra: révéler | deu: der-offenbarte, offenbaren, offenbarte
+    Refs: 1Chr 9:1, Esth 2:6, Esth 2:6, Jer 13:19, Jer 13:19
+  Sense 8: "Qal passive participle: open, uncovered" (7x)
+    Desc: Stative/adjectival use of the Qal passive participle indicating a state of being open, uncovered, or exposed (Arabic: مكشوف makshuf; Korean: 열린/드러난; Swahili: wazi).
+    Domain: MENTAL_LIFE > Know
+    Glosses: eng: and-uncovered, open, the-open | spa: abierta, el-abierto, revelada | fra: découvrir, et-découvrit, révéler | deu: Rolle, offenbaren, offenbarte
+    Refs: Num 24:4, Num 24:16, Esth 3:14, Esth 8:13, Prov 27:5
+  Sense 9: "Qal: depart or vanish" (6x)
+    Desc: Intransitive Qal sense of departing, vanishing, or being carried away, distinct from exile proper (Arabic cognates: ارتحل irtahala, ذهب dhahaba, يزول yazulu; Korean: 떠나다).
+    Domain: MENTAL_LIFE > Know
+    Glosses: eng: departed, departs, is-carried-away | spa: Se-irá, Se-va, partió | fra: découvrir, partit, révéler | deu: departed, offenbarte
+    Refs: 1Sam 4:21, 1Sam 4:22, Job 20:28, Prov 27:25, Isa 24:11
+  Sense 10: "Hitpael: uncover oneself" (2x)
+    Desc: Hitpael reflexive sense of uncovering or exposing oneself, often with connotations of shameful self-exposure (Arabic: انكشف reflexive; Korean: 벗겨졌다).
+    Domain: MENTAL_LIFE > Know
+    Glosses: eng: and-uncovered-himself, in-revealing | spa: en-descubrir, y-se-descubrió | fra: dans-découvrir, et-découvrit-lui-même | deu: offenbarte, und-entblößte-sich
+    Refs: Gen 9:21, Prov 18:2
+
+=== H6605a ===
+Language: Hebrew, POS: V-Nifal-Imperf-3fs, Occurrences: 136, Senses: 10
+
+BDB excerpt: † I. פָּתַח vb. open (NH id.; Ph. פתח; Assyrian pitû, patû; Sab. פתח OsZMG xix (1865), 197; Arabic فَتَحَ; Ethiopic ፈትሐ;; Aramaic פְּתַח, ܦܬܰܚ; Nab. Palm. פתח);— Qal Pf. 3 ms. פ׳ 2 K 15:16 +, etc.; Impf. 3 ms. יִפְתַּח Ex 21:33 +; 3 mpl. sf. יִפְתָּחוּם Ne 13:19, etc.; Imv. ms. פְּתַח 2 K 13:17 +; fs. פִּתְחִי Ct 5:2; mpl. פִּתְחוּ Jos 10:22 +; Inf. abs. פָּתֹחַ Dt 15:8 +; cstr. לִפְתֹּחַ Ez 21:27 +; Pt. act. פֹּתֵחַ Ju 3:25 +; pass. פָּתוּחַ Je 5:16 +, etc.;—open sack, שַׂק, Gn 42:27 (E), אַמְתַּחַת 43:21; 44:11 (J), skin-bottle (נאוד) Ju 4:19, hamper (תֵּבָה) Ex 2:6 (E), pit (בּוֹר) 21:33 (E
+Senses:
+  Sense 1: "open (Qal transitive)" (67x)
+    Desc: To open a physical object such as a door, gate, window, sack, or container; the basic Qal active sense of physically opening something that was closed (Arabic فَتَحَ, Korean 열다, Swahili -fungua, Spani...
+    Domain: PROPERTIES_RELATIONS > Features of Objects
+    Glosses: eng: I-shall-open, I-will-open, and-he-opened | spa: Y-abrió, abriré, abrió | fra: entrée, et-il-ouvrit, et-ouvrir | deu: Eingang, er-oeffnete, oeffnen
+    Refs: Gen 8:6, Gen 29:31, Gen 30:22, Gen 41:56, Gen 42:27
+  Sense 2: "be opened (Nifal passive)" (14x)
+    Desc: Nifal passive: to be opened, of doors, gates, heavens, eyes, or ears — the straightforward passive counterpart of the Qal 'open' sense (Arabic اِنْفَتَحَ, Korean 열리다, Swahili -funguliwa).
+    Domain: PROPERTIES_RELATIONS > Features of Objects
+    Glosses: eng: and-was-opened, are-opened, it-is-opened | spa: abierta, abiertas, abierto | fra: et-ouvrir, ouvrir, étaient-ouvrit | deu: oeffnen, oeffnete, und-oeffnen
+    Refs: Gen 7:11, Neh 7:3, Job 12:14, Job 32:19, Isa 24:18
+  Sense 3: "loose / untie (Piel)" (14x)
+    Desc: Piel intensive: to loose, untie, or unbind bonds, fetters, sackcloth, or a belt — cross-linguistically distinguished from 'open' by Arabic حَلَّ / فَكَّ, Korean 풀다, Spanish soltar/desatar, Swahili -fu...
+    Domain: PROPERTIES_RELATIONS > Features of Objects
+    Glosses: eng: I-will-loose, You-have-loosened, and-loosen | spa: Soltar, abre, abrió | fra: comme-un-loosing, entrée, et-ouvrir | deu: er-oeffnet, oeffnen, oeffnete
+    Refs: Gen 24:32, 1Kgs 20:11, Job 12:18, Job 30:11, Job 38:31
+  Sense 4: "open (Qal passive participle: standing open)" (13x)
+    Desc: State of being open, as a Qal passive participle describing doors, gates, eyes, or heavens that stand open (Arabic مَفْتُوح, Korean 열린, Swahili wazi, Spanish abierto/a).
+    Domain: PROPERTIES_RELATIONS > Features of Objects
+    Glosses: eng: open, opened, wide-open | spa: abierta, abiertas, abierto | fra: ouvrir, ouvrit | deu: oeffnen, oeffnete, öffnete
+    Refs: Num 19:15, Josh 8:17, 1Kgs 8:29, 1Kgs 8:52, 2Chr 6:20
+  Sense 5: "open (Qal mouth/lips/eyes)" (13x)
+    Desc: To open the mouth, lips, or eyes — a metaphorical extension of the basic 'open' sense used for body parts, often in speech acts or perception contexts (Arabic فَتَحَ, Korean 열다, Swahili -fungua).
+    Domain: PROPERTIES_RELATIONS > Features of Objects
+    Glosses: eng: I-open, You-open, he-opens | spa: Abres, Ciertamente-abrir, abre | fra: entrée, opening, ouvrant | deu: Eingang, oeffnete, opening
+    Refs: Deut 15:8, Deut 15:11, Judg 3:25, Job 31:32, Ps 38:13
+  Sense 6: "set free / release (Piel)" (6x)
+    Desc: Piel intensive: to set free, release, or liberate a person from captivity or bonds — a further development of the 'loose' sense applied to persons (Arabic أَطْلَقَ, Korean 놓아주다/풀어주다, Spanish liberar/s...
+    Domain: PROPERTIES_RELATIONS > Features of Objects
+    Glosses: eng: I-have-released-you, and-set-him-free, and-will-be-opened | spa: Y-estarán-abiertas, para-ser-soltado, para-soltar | fra: et-ouvrir, ouvrir, à-l'entrée | deu: oeffnen, und-oeffnet, und-öffnete
+    Refs: Ps 102:20, Ps 105:20, Isa 48:8, Isa 51:14, Isa 60:11
+  Sense 7: "open wide / break forth (Qal/Nifal intransitive)" (4x)
+    Desc: To open or break forth, used intransitively of the earth opening, or of something bursting/breaking open (Korean 터지리라, 열렸으니; Swahili -funguka).
+    Domain: PROPERTIES_RELATIONS > Features of Objects
+    Glosses: eng: let-open, opened, shall-be-unstopped | spa: Se-abrió, se-abrirá, serán-destapados | fra: ouvrir | deu: oeffnen, öffnete
+    Refs: Ps 106:17, Isa 35:5, Isa 45:8, Jer 1:14
+  Sense 8: "loose oneself (Hitpael reflexive)" (2x)
+    Desc: Hitpael reflexive: to loose oneself, free oneself from bonds or chains — the reflexive counterpart of the Piel 'loose' sense (Arabic انْحَلِّي, Korean 풀라).
+    Domain: PROPERTIES_RELATIONS > Features of Objects
+    Glosses: eng: [ketiv:loose-yourselves], loose-yourself | spa: (suéltate), [Qere] | fra: ouvrir | deu: oeffnen
+    Refs: Isa 52:2, Isa 52:2
+  Sense 9: "draw (a sword)" (2x)
+    Desc: To draw or unsheathe a sword from its scabbard — a specialized Qal sense distinct from generic 'open' (Arabic سَلَّ, Spanish desenvainada/desenvainaron, Korean 빼다, Swahili -chomoa).
+    Domain: PROPERTIES_RELATIONS > Features of Objects
+    Glosses: eng: drawn, have-drawn | spa: desenvainada, desenvainaron | fra: ouvrir | deu: oeffnen, öffnete
+    Refs: Ps 37:14, Ezek 21:28
+  Sense 10: "?" (1x)
+    Domain: PROPERTIES_RELATIONS > Features of Objects
+    Glosses: eng: is-loosened | spa: se-desatará | fra: ouvrir | deu: oeffnen
+    Refs: Isa 5:27

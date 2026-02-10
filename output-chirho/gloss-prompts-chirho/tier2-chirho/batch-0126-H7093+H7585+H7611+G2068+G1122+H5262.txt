@@ -1,0 +1,115 @@
+You are a biblical lexicographer composing glosses for a digital lexicon.
+For each lemma below, compose a JSON object. Separate objects with "---".
+
+Format for each:
+{
+  "lemma_id": "...",
+  "gloss_terse": "under 120 chars, concise definition covering the word's semantic range",
+  "gloss_readable": "2-5 sentences, 40-120 words. Don't start with 'This word'. Warm study-Bible footnote tone. Engaging, not dry.",
+  "senses": {
+    "1": "enriched 20-60 word description. Reference multilingual evidence when illuminating. Don't repeat the label verbatim.",
+    "2": "..."
+  }
+}
+
+Rules:
+- No markdown fences, just JSON objects separated by ---
+- Reference multilingual evidence naturally when it reveals something
+- gloss_readable should feel like a good study Bible footnote: helpful, clear, occasionally surprising
+- Each sense enrichment: how does the evidence support this sense? Mention 1-2 key passages when helpful.
+
+=== H7093 ===
+Language: Hebrew, POS: Art | N-ms, Occurrences: 67, Senses: 2
+
+BDB excerpt: קֵץ68 n.m. Ez 7:6 end;—ק׳ abs. Am 8:2 +, cstr. Gn 4:3 +, עֶת־ Dn 8:17; sf. קִצּוֹ Is 37:24 +, קִצֹּה ‖ 2 K 19:23, etc.;— 1. end, usually of time, especially in phr. מִקֵּץ at the end of a definite time Gn 8:6 (J), 41:1 (E), 16:3 (P) + 15 times, + מִקֵּץ הֱיוֹת Est 2:12; indef. Gn 4:3 (J); 1 K 17:7; Je 13:6; so (late) לְקֵץ of indef. time 2 Ch 18:2 Ne 13:6 Dn 11:6, 13; defin. כְעֵת צֵאת הַקּ׳ לְיָמִים שְׁנַיִם 2 Ch 21:19; end of life, of a people Am 8:2; Ez 7:2(×2), 3, 6(×2); Je 51:13; La 4:18(×2), cf. (of all flesh) Gn 6:13 (P); of individ. Jb 6:11 ψ 39:5 (‖ מִדַּת יָמִי), Dn 9:26a; 11:45; in 
+Senses:
+  Sense 1: "end, termination of time" (64x)
+    Desc: The temporal conclusion or appointed limit of a period, event, or existence, including prepositional and suffixed forms (at the end of, my/our/your/his end, to the end).
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: at-end-of, at-the-end-of, from-end-of | spa: Al-fin-de, al-fin-de, al-fin-de- | fra: [לקץ], [מקץ], de-fin-de | deu: Ende, [לקץ], [מקץ]
+    Refs: Gen 4:3, Gen 6:13, Gen 8:6, Gen 16:3, Gen 41:1
+  Sense 2: "extremity, farthest point" (3x)
+    Desc: The spatial outermost boundary or farthest edge of a physical extent, evidenced by multilingual glosses using spatial terms (Hindi छोर, Arabic أقصى, Spanish extremo) rather than temporal ones.
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: from-the-end, height, its-end | spa: de-su-extremo, desde-el-fin, su-extremo | fra: fin, son-fin | deu: Ende, sein-Ende
+    Refs: 2Kgs 19:23, Isa 37:24, Jer 50:26
+
+=== H7585 ===
+Language: Hebrew, POS: Prep-k | N-cs, Occurrences: 66, Senses: 2
+
+BDB excerpt: † שְׁאוֹל, שְׁאֹל n.f. ψ 86:13 (appar. m. Jb 26:6 cf. Is 14:9, v. AlbrZAW xvi (1896), 51) Sheʾôl, underworld (√ dub.; שׁאל, i.e. place of inquiry (ref. to necromancy) JastrAm. J. Sem. Lang. xiv. 170, cf. JBL xix (1900), 88 ff. (JeremLeben n. d. Tode 109 ‘Ort der Entscheidung’); Thes BöDe Inf. § 158 Di al. cp. √ שׁעל, whence שֹׁעַל hollow hand, etc.; שׁ׳ then = hollow place, ‘Hölle’, hell; other conj. v. Hup Ps. 6:6; De Is. 5:14 BeerBibl. Hades in HoltzmannFestgabe, 1902, 15; most now refrain from positive etymology (e.g. Buhl); Old Aramaic שאול, Syriac ܫܝܽܘܠ; Assyrian šu-alu is dub.: so read a
+Senses:
+  Sense 1: "Sheol, realm of the dead" (65x)
+    Desc: The underworld or abode of the dead in Hebrew cosmology, variously rendered as Sheol, Hades, the grave, or the pit; all prepositional and construct-state forms (to-Sheol, in-Sheol, from-Sheol, like-Sh...
+    Domain: BODY_HEALTH > Physiological Processes and States
+    Glosses: eng: She'ol, Sheol, to-Sheol | spa: Seol, Sheol, al-Seol | fra: shéol, séjour-des-morts | deu: Scheol, Totenreich, fragte
+    Refs: Gen 37:35, Gen 42:38, Gen 44:29, Gen 44:31, Num 16:30
+  Sense 2: "to ask, request (verb)" (1x)
+    Desc: A verbal form (Qal imperative) meaning to ask or make a request, likely a homographic overlap with the verb sha'al; semantically unrelated to the noun Sheol.
+    Domain: COMMUNICATION > Communication
+    Glosses: eng: asking | spa: la-petición | fra: séjour-des-morts | deu: Totenreich
+    Refs: Isa 7:11
+
+=== H7611 ===
+Language: Hebrew, POS: Prep-l | N-fs, Occurrences: 66, Senses: 2
+
+BDB excerpt: † שְׁאֵרִית n.f. rest, residue, remnant, remainder (= שָׁאָר);—שׁ׳ abs. 2 S 14:7 +, cstr. Ez 36:3 +, שֵׁרִית (Ges§ 23 f) 1 Ch 12:39 (van d. H. v 38); sf. שְׁאֵרִיתֵךְ Is 14:30; Ez 5:10, -תוֹ Is 44:17, -תָם Je 15:9;— 1. rest, what is left, of wood Is 44:17, land 15:9 (‖ פְּלֵיטָה), Je 47:4, 5; Ez 25:16; שׁ׳ חֵמֹת ψ 76:11 is difficult (Gr [cf. Che] proposes חֲמָת Hamath, Du אֻמֹּת tribes); rest of princes Je 39:3, of nations (= the other nations, Toy) Ez 36:3, 4, 5; of Israel 1 Ch 12:39 (van d. H. v 38), 2 Ch 34:9; Ne 7:71 (van d. H. v 72); = last remnant of people, Philistines Am 1:8 (cf. We), 
+Senses:
+  Sense 1: "remnant of a people" (64x)
+    Desc: The surviving portion of a nation, community, or people group, often used in prophetic contexts for those who remain after judgment or exile (e.g., 'the remnant of Israel,' 'the remnant of Judah').
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: remnant-of, rest-of, the-remnant-of | spa: el-remanente-de, remanente-de, resto-de | fra: reste | deu: Rest
+    Refs: Gen 45:7, 2Kgs 19:31, 1Chr 4:43, 1Chr 12:39, 2Chr 34:9
+  Sense 2: "remainder of things" (2x)
+    Desc: The remaining portion or rest of something non-personal, referring to what is left over of objects, possessions, or abstract entities rather than surviving people.
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: And-the-rest-of-it, and-their-remnant | spa: y-resto-su, y-su-resto | fra: et-reste | deu: und-Rest
+    Refs: Isa 44:17, Jer 15:9
+
+=== G2068 ===
+Language: Greek, POS: V-PPA-GMP, Occurrences: 65, Senses: 2
+
+BDB excerpt: ἐσθίω (compare ἔσθω, ἔδω, the latter of which is the radical form, and supplies future and perfect of ἐσθίω), imperfect ἤσθιον Refs 8th c.BC+future ἔδομαι (old present subjunctive of non-thematic stem) Refs 8th c.BC+, etc.; ἐδοῦμαι late, (προκατ-) Refs 2nd c.AD+: perfect ἐδήδοκα Refs 5th c.BC+; Epic dialect participle ἐδηδώς, -υῖα, Refs 8th c.BC+: pluperfect ἐδηδόκειν Refs 2nd c.AD+ —middle, aorist 1 ἠδεσάμην (κατ-) Refs 2nd c.AD+:—passive, ἐσθίομαι Refs 8th c.BC+aorist 1 ἠδέσθην variant in Refs 5th c.BC+perfect ἐδήδεσμαι (κατ-) Refs 5th c.BC+; Epic dialect 3rd.pers. singular ἐδήδοται Refs 8th
+Senses:
+  Sense 1: "eat food" (64x)
+    Desc: To eat or partake of food in the literal, ordinary sense, including all grammatical inflections (indicative, participle, subjunctive, infinitive, imperative).
+    Domain: BODY_HEALTH > Physiological Processes and States
+    Glosses: eng: eat, eating, eats | spa: come, come?, comen | fra: manger | deu: essen, isst
+    Refs: Matt 9:11, Matt 11:18, Matt 11:19, Matt 12:1, Matt 15:2
+  Sense 2: "consume or devour" (1x)
+    Desc: To consume or devour in a destructive or figurative sense, emphasizing the aggressive or total nature of the eating.
+    Domain: BODY_HEALTH > Physiological Processes and States
+    Glosses: eng: to-consume | spa: devorar | fra: manger | deu: essen
+    Refs: Heb 10:27
+
+=== G1122 ===
+Language: Greek, POS: N-VMP, Occurrences: 64, Senses: 2
+
+BDB excerpt: γραμμᾰτ-εύς, έως, ὁ, secretary, registrar, title of officials at Athens and elsewhere, NT+5th c.BC+; γ. τοῦ θεοῦ Refs 5th c.BC+; also of subordinate officials, clerk, sometimes a term of contempt, ὄλεθρος γ. Refs 4th c.BC+; ἡ γ., in joke, Refs 5th c.BC+ __2 metaphorically, recorder, of memory, Refs 5th c.BC+ __3 scholar, γ. σαφής Refs 4th c.BC+ __4 one who traces or marks out, of Egyptian embalmers, Refs 1st c.BC+
+Senses:
+  Sense 1: "scribe / expert in the Law" (63x)
+    Desc: A Jewish scribe, an expert and teacher of the Mosaic Law and traditions, frequently appearing alongside Pharisees and chief priests as religious authorities who interact with or oppose Jesus. The sing...
+    Domain: GROUPS_COMMUNITY > Groups and Classes of Persons
+    Glosses: eng: scribes | spa: escribas | fra: scribe | deu: Schriftgelehrter
+    Refs: Matt 2:4, Matt 5:20, Matt 7:29, Matt 9:3, Matt 12:38
+  Sense 2: "town clerk / civic secretary" (1x)
+    Desc: A municipal official or town clerk, specifically the city secretary of Ephesus who addressed the crowd in the theater during the riot caused by Demetrius the silversmith (Acts 19:35). This is a distin...
+    Domain: GROUPS_COMMUNITY > Groups and Classes of Persons
+    Glosses: eng: clerk | spa: secretario | fra: scribe | deu: Schriftgelehrter
+    Refs: Acts 19:35
+
+=== H5262 ===
+Language: Hebrew, POS: Conj-w | N-mp, Occurrences: 64, Senses: 2
+
+BDB excerpt: † נֶ֫סֶךְ n.m. drink-offering;—abs. נ׳ Gn 35:14 + 6 times; נֵ֫סֶךְ Ex 29:40; 30:9; Ez 45:17; נָ֑סֶךְ Nu 4:7; Jo 1:13; cstr. נֶסֶךְ Nu 28:7; sf. נִסְכִּי Is 48:5, etc.; pl. נְסָכִים Je 7:18 + 9 times; sf. נְסָכֶיהָ Nu 29:31, נִסְכֵּיכֶם v 39, etc.;— 1. drink-offering, c. עַל (on Jacob’s מַצֵּבָה at Bethel) Gn 35:14 (E); elsewhere in worship of י׳ only P and related doc.; once of vessels of holy table קְשׂוֹת הַנָּ֑סֶךְ Nu 4:7; elsewhere in classifications Lv 23:37; Nu 29:39, usually offered with the עלה Ex 29:40; Lv 23:13, 18; Nu 15:5, 7, 10, 24; 28:7, 14, 31; 29:18, 21, 24, 27, 30, 33, 37, esp
+Senses:
+  Sense 1: "drink offering, libation" (60x)
+    Desc: A liquid offering (typically wine) poured out as part of sacrificial worship, accompanying burnt offerings and grain offerings in the Israelite cultus.
+    Domain: RELIGIOUS_LIFE > Religious Activities
+    Glosses: eng: and-its-drink-offering, and-its-drink-offerings, and-their-drink-offerings | spa: Y-libaciones-de-ellos, Y-libación-de-él, y-libaciones-de-ella | fra: et-leur-boire-offrandes, et-son-boire-offrande, et-son-boire-offrandes | deu: und-ihr-trinken-Opfergaben, und-sein-trinken-Opfergabe, und-sein-trinken-Opfergaben
+    Refs: Gen 35:14, Exod 29:40, Exod 29:41, Exod 30:9, Lev 23:18
+  Sense 2: "cast image, molten idol" (4x)
+    Desc: A metal image or idol produced by casting molten metal into a mold, used in contexts condemning idolatrous worship.
+    Domain: RELIGIOUS_LIFE > Religious Activities
+    Glosses: eng: and-my-molten-image, are-their-cast-images, his-cast-image | spa: su-imagen-fundida, sus-imágenes-fundidas, y-mi-imagen-fundida | fra: et-libation, libation | deu: Trankopfer, und-Trankopfer
+    Refs: Isa 41:29, Isa 48:5, Jer 10:14, Jer 51:17

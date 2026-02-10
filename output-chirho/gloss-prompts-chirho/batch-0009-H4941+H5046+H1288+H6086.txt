@@ -1,0 +1,178 @@
+You are a biblical lexicographer composing glosses for a digital lexicon.
+For each lemma below, compose a JSON object. Separate objects with "---".
+
+Format for each:
+{
+  "lemma_id": "...",
+  "gloss_terse": "under 120 chars, concise definition covering the word's semantic range",
+  "gloss_readable": "2-5 sentences, 40-120 words. Don't start with 'This word'. Warm study-Bible footnote tone. Engaging, not dry.",
+  "senses": {
+    "1": "enriched 20-60 word description. Reference multilingual evidence when illuminating. Don't repeat the label verbatim.",
+    "2": "..."
+  }
+}
+
+Rules:
+- No markdown fences, just JSON objects separated by ---
+- Reference multilingual evidence naturally when it reveals something
+- gloss_readable should feel like a good study Bible footnote: helpful, clear, occasionally surprising
+- Each sense enrichment: how does the evidence support this sense? Mention 1-2 key passages when helpful.
+
+=== H4941 ===
+Language: Hebrew, POS: Prep-k, Occurrences: 424, Senses: 7
+
+BDB excerpt: מִשְׁפָּט422 n.m. Gn 40:13 judgment;—abs. מִשְׁפָּט Ex 21:31 + 203 times, + לְ ִ֯שְׁפָּט Ez 44:24 (but read Kt לִשְׁפֹּט with 𝔊 𝔗 𝔖 Co al.); cstr. מִשְׁפַּט Ex 23:6 + 50 times; sf. מִשְׁפָּטִ�� Is 40:27 +; מִשְׁפָּטָם Je 49:12 +; מִשְׁפָּטָן Nu 27:5; pl. מִשְׁפָּטִים Je 4:12 + 34 times; sf. מִשְׁפָּטֶיךָ Dt 33:10 +, etc.;— 1. judgment: a. act of deciding a case: מ׳ belongeth to God Dt 1:17, is from him Pr 16:33; 29:26; אֱלֹהֵי הַמּ׳ Mal 2:17; חשֶׁן מ׳ Ex 28:15 the pouch of judgment, so v 29, 30 (P); worn on heart of Aaron v 30 (P); מ׳ צֶדֶק Dt 16:18; הֵבִין מ׳ Jb 32:9; שׁפט מ׳ 1 K 3:28; עשׂה מ
+Senses:
+  Sense 1: "justice, righteousness" (134x)
+    Desc: The abstract quality of justice, fairness, or righteous conduct (Arabic عَدْل, Korean 공의, Swahili haki), often in construct with divine or royal governance.
+    Domain: JUSTICE_PUNISHMENT > Courts and Legal Procedures
+    Glosses: eng: are-just, justice | spa: el-juicio,, juicio, justicia | fra: droit, jugement, justice | deu: Gericht, Recht
+    Refs: Gen 18:25, 1Sam 8:3, 2Sam 8:15, 1Kgs 3:11, 1Kgs 3:28
+  Sense 2: "judgment, judicial decision" (119x)
+    Desc: An act of judging or a judicial verdict rendered by God or a human authority (Arabic حُكْم/قَضَاء, Korean 재판/심판, Swahili hukumu), including divine eschatological judgment (Arabic دَيْنُونَة).
+    Domain: JUSTICE_PUNISHMENT > Courts and Legal Procedures
+    Glosses: eng: judgment, justice | spa: Juicio, el-juicio, juicio | fra: jugement, justice | deu: Gerechtigkeit, Gericht, Recht
+    Refs: Exod 28:15, Exod 28:29, Exod 28:30, Num 27:11, Num 35:12
+  Sense 3: "ordinances, statutes (plural)" (110x)
+    Desc: Prescribed divine or royal decrees and regulations, typically in the plural (Arabic أَحْكَام, Korean 법도들/규례들, Swahili hukumu plural), often with possessive suffixes referring to God or a ruler.
+    Domain: JUSTICE_PUNISHMENT > Courts and Legal Procedures
+    Glosses: eng: and-his-judgments, in-judgments-my, judgments-my | spa: juicios-de-mí, los-juicios, mis-juicios | fra: dans-mes-jugements, et-son-jugements, le-jugements | deu: Rechte-von, der-Gerichte, in-Rechte-von
+    Refs: Exod 21:1, Exod 24:3, Lev 18:4, Lev 26:46, Num 35:24
+  Sense 4: "prescribed ordinance, regulation" (34x)
+    Desc: A single prescribed rule, ordinance, or statute governing ritual or civil conduct (Arabic حُكْم/فَرِيضَة/شَرِيعَة in prescriptive sense, Korean 규례/법도 singular, Swahili sheria/utaratibu/amri).
+    Domain: JUSTICE_PUNISHMENT > Courts and Legal Procedures
+    Glosses: eng: according-to-his-duty, according-to-ordinance, according-to-the-judgment | spa: conforme-a-la-ordenanza, conforme-a-su-ordenanza, conforme-al-juicio | fra: et-jugement, et-pour-ordinance, jugement | deu: gemaess-zu-der-Gericht, gemaess-zu-der-Ordnung, gemaess-zu-ihr-Ordnung
+    Refs: Exod 15:25, Exod 21:9, Exod 21:31, Exod 26:30, Lev 5:10
+  Sense 5: "custom, manner, way" (19x)
+    Desc: An established custom, habitual practice, or characteristic manner of doing things (Arabic عَادَة, Korean 관례/관습, Swahili desturi), including the extended sense of outward form or appearance (Arabic هَ...
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: according-to-custom-of, according-to-judgment-of, according-to-the-custom | spa: Y-la-costumbre-de, como-costumbre-de, como-las-costumbres | fra: et-custom-de, et-jugement, et-selon-à-leur-judgments | deu: Gericht-von, gemaess-zu-Gericht-von, gemaess-zu-custom-von
+    Refs: Gen 40:13, Josh 6:15, Judg 18:7, 1Sam 2:13, 1Sam 8:9
+  Sense 6: "?" (4x)
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: due-of, right-of | spa: derecho-de, es-el-derecho-de | fra: droit-de, due-de, jugement | deu: Recht, due-von, rechts-von
+    Refs: Deut 18:3, Deut 21:17, Jer 32:7, Jer 32:8
+  Sense 7: "legal case, lawsuit" (4x)
+    Desc: A specific legal dispute, cause, or lawsuit brought before a judge (Arabic دَعْوَى/قَضِيَّة, Korean 사건/송사, Swahili shauri/daawa).
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: my-case, their-case, to-my-justice | spa: causa-de-ellas, mi-causa, mi-juicio? | fra: jugements-de, leur-case, à-mes-jugements | deu: Rechte-von, ihr-case, zu-mein-Gericht
+    Refs: Num 27:5, Ps 35:23, Isa 50:8, Lam 3:59
+
+=== H5046 ===
+Language: Hebrew, POS: V-Hifil-InfAbs, Occurrences: 371, Senses: 7
+
+BDB excerpt: [נָגַד] vb. be conspicuous (NH in deriv.; Ph. n.pr.m. נגד; Arabic نَجَدَ conquer, overcome, also be apparent, conspicuous; نَجْدٌ high land or country; نَجُدَ be courageous, vigorous, effective, نَجِدٌ courageous, efficient; Aramaic ܢܓܰܕ, נְגַד drag, draw, lead; ܢܳܓܽܘܕܳܐ, נָגוֹדָא leader; Ethiopic ነገደ: is travel);— Hiph.328 Pf. הִגִּיד Gn 3:11 +, 3 fs. הִגִּ֫ידָה 1 S 25:19 +, הִגַּדְתָּ Gn 12:8 +, etc.; Impf. יַגִּיד 1 S 9:6 +; וַיַּגֵּד Gn 9:22 +; sf. יַגִּידֶ֫הָ Is 44:7; יַגִּדָהּ Je 9:11; יַגֵּֽדְךָ Dt 32:7 (juss.), etc.; Imv. הַגֵּד 2 S 18:21 +; הַגִּ֫ידָה Gn 29:15 +, etc.; Inf. abs. הַגֵּ
+Senses:
+  Sense 1: "Hifil: to tell, report" (237x)
+    Desc: The core Hifil meaning of nagad: to tell, report, or inform someone of facts, events, or news in an interpersonal or narrative context, covering all inflections (perfect, imperfect, imperative, infini...
+    Domain: COMMUNICATION > Communication
+    Glosses: eng: and-he-told, and-told | spa: Y-contó, e-informó, y-contó | fra: et-dit, et-il-raconta, et-raconta | deu: und-berichtete, und-er-berichtete, und-erzählte
+    Refs: Gen 9:22, Gen 14:13, Gen 24:28, Gen 29:12, Gen 29:12
+  Sense 2: "Hifil: to declare, proclaim" (79x)
+    Desc: The Hifil sense of nagad used for public, formal, or prophetic declaration and proclamation, often in solemn or liturgical contexts where the emphasis is on making something widely known or officially...
+    Domain: COMMUNICATION > Communication
+    Glosses: eng: Declare, Denounce, I-declare | spa: Anunciad, Declara, Declarad | fra: annoncer, déclarer, et-déclarer | deu: der-Gad, ich-verkuende, ich-verkündigen
+    Refs: Deut 5:5, Deut 17:10, Deut 17:11, Deut 26:3, Deut 30:18
+  Sense 3: "Hofal: to be told, be informed" (35x)
+    Desc: The Hofal (passive of Hifil) stem of nagad, meaning to be told, be informed, or have something reported to one, used for passive reception of information.
+    Domain: COMMUNICATION > Communication
+    Glosses: eng: and-it-was-told, and-was-told | spa: Y-fue-contado, Y-fue-declarado, Y-fue-dicho | fra: et-cela-fut-raconta, et-cela-était-dit, et-fut-raconta | deu: und-angezeigt-wurde, und-berichtet-wurde, und-es-war-berichtete
+    Refs: Gen 22:20, Gen 27:42, Gen 31:22, Gen 38:13, Gen 38:24
+  Sense 4: "Hifil participle: messenger, informer" (15x)
+    Desc: The Hifil participle of nagad used substantivally as a noun meaning messenger, informer, or herald -- one whose role or identity is defined by the act of reporting or bringing news.
+    Domain: COMMUNICATION > Communication
+    Glosses: eng: Declaring, and-declaring, and-messenger | spa: a-los-que-declararon, anuncia, declarador-de | fra: annoncer, declaring, et-annoncer | deu: der-eins-berichtend, der-informer, ein-Verkünder
+    Refs: Gen 41:24, Judg 14:19, 2Sam 1:5, 2Sam 1:6, 2Sam 1:13
+  Sense 5: "Hifil: to disclose, reveal" (2x)
+    Desc: A Hifil sense of nagad meaning to disclose or reveal hidden or secret information, emphasizing the uncovering of what was previously unknown.
+    Domain: COMMUNICATION > Communication
+    Glosses: eng: he-discloses, proclaims | spa: declara | fra: de-déclarer, déclarer | deu: proclaims, verkuendete
+    Refs: Ps 19:1, Prov 29:24
+  Sense 6: "Hifil: to denounce, inform against" (2x)
+    Desc: A specialized Hifil sense of nagad meaning to denounce or inform against someone, carrying a hostile or accusatory connotation rather than neutral reporting.
+    Domain: COMMUNICATION > Communication
+    Glosses: eng: and-let-us-denounce-him, he-denounces | spa: denuncia, y-lo-denunciaremos | fra: déclarer, et-annoncer | deu: und-verkuenden, verkuendete
+    Refs: Job 17:5, Jer 20:10
+  Sense 7: "?" (1x)
+    Domain: COMMUNICATION > Communication
+    Glosses: eng: I-confess | spa: declararé | fra: déclarer | deu: ich-bekennen
+    Refs: Ps 38:18
+
+=== H1288 ===
+Language: Hebrew, POS: Conj-w | V-Piel-ConjPerf-1cs, Occurrences: 330, Senses: 7
+
+BDB excerpt: † [בָּרַךְ329] vb. kneel, bless (NH id.; Arabic بَرَكَ Ethiopic በረከ Aramaic בְּרֵךְ, ܒܪܶܟ (praise), Palm. especially in בריך שמו לעלמא VogPalm. 74 ff. cf. 94, 144)— Qal Impf. יִבְרַךְ 2 Ch 6:13; נִבְרְכָה ψ 95:6; בָּרוֹךְ (v. Pi.); Pt. pass. בָּרוּךְ Gn 9:26 + 70 times;— 1. kneel down (so Arabic Syriac Ethiopic): וַיִּבְרַךְ עַל־בִּרְכָּיו and he kneeled upon his knees 2 Ch 6:13; נִבְרְכָה לפני י׳ let us kneel before Yahweh ψ 95:6. 2. bless (only pt. pass.). a. of God: בָּרוּךְ י׳ blessed be (or is) י׳ Ex 18:10 (E) Gn 9:26; 24:27 (J) Ru 4:14; 1 S 25:32, 39; 2 S 18:28; 1 K 1:48; 5:21; 8:15, 56;
+Senses:
+  Sense 1: "Piel: bless, invoke blessing" (227x)
+    Desc: To actively bestow blessing or invoke divine favor upon someone (Piel stem); the primary and most frequent sense of barak, covering all Piel finite forms, imperatives, infinitives, participles, and co...
+    Domain: COMMUNICATION > Communication
+    Glosses: eng: And-blessed, and-blessed, and-he-blessed | spa: Y-bendijo, y-bendijo, y-los-bendijo | fra: Et-bénit, et-bénit, et-il-bénit | deu: und-er-segnete, und-es-segnete, und-gesegnet-hat
+    Refs: Gen 1:22, Gen 1:28, Gen 2:3, Gen 5:2, Gen 9:1
+  Sense 2: "Qal passive participle: blessed" (73x)
+    Desc: Adjectival state of being blessed, used predicatively or as an exclamation of praise (Qal passive participle barukh); Arabic mubarak, Korean bok-issda, conveying a state rather than an action.
+    Domain: COMMUNICATION > Communication
+    Glosses: eng: blessed, shall-be-blessed | spa: Bendita, Bendito, bendito | fra: bénit, devra-être-bénit | deu: segnete, soll-sein-segnete
+    Refs: Exod 18:10, Deut 7:14, Deut 28:3, Deut 28:3, Deut 28:4
+  Sense 3: "Pual: be blessed (passive)" (11x)
+    Desc: Passive of the Piel, indicating the subject receives blessing; Arabic yubarak (passive voice), Korean bok-bat-da, distinct from the Qal participle by expressing an event of being blessed rather than a...
+    Domain: COMMUNICATION > Communication
+    Glosses: eng: blessed, blessed-of, may-she-be-blessed | spa: Sea-bendecida, bendita-de, bendito | fra: bénir, bénit-de, de-bénir | deu: moege-sie-sein-segnete, segnete, segnete-von
+    Refs: Deut 33:13, Judg 5:24, Judg 5:24, 2Sam 7:29, Job 1:21
+  Sense 4: "Hitpael/Nifal: bless oneself, be blessed" (10x)
+    Desc: Reflexive-reciprocal sense where nations or individuals bless themselves or count themselves blessed through association; Arabic tatab_raku (reflexive Form V/VI), indicating self-invoked or mediated b...
+    Domain: COMMUNICATION > Communication
+    Glosses: eng: and-he-blesses-himself, and-may-bless-themselves, and-shall-bless-themselves | spa: Y-serán-benditas, se-bendecirá, se-bendiga | fra: bénir, et---bénir-eux-mêmes, et---être-bénit | deu: segnen, und-er-blesses-sich-selbst, und-gesegnet-werden-sollen
+    Refs: Gen 12:3, Gen 18:18, Gen 22:18, Gen 26:4, Gen 28:14
+  Sense 5: "Piel euphemism: curse, blaspheme" (6x)
+    Desc: Euphemistic use of barak in Piel meaning 'to curse' or 'to blaspheme', a well-known scribal substitution to avoid writing the direct word for cursing God; Arabic jaddafa (blaspheme), Swahili laani (cu...
+    Domain: COMMUNICATION > Communication
+    Glosses: eng: and-cursed, blessed, curse | spa: Bendijiste, Bendijo, maldice | fra: bénir, bénit, et-bénir | deu: du-segnete, segnete, und-segnete
+    Refs: 1Kgs 21:10, 1Kgs 21:13, Job 1:5, Job 1:11, Job 2:5
+  Sense 6: "Qal: kneel, bow down" (2x)
+    Desc: The original physical sense of the root: to bend the knee, kneel in worship or submission; Arabic nabruka (let us kneel), raka'a (he knelt), Korean mureup-kkulda.
+    Domain: COMMUNICATION > Communication
+    Glosses: eng: and-knelt, let-us-kneel | spa: arrodillémonos, y-se-arrodilló | fra: bénir, et-bénir | deu: lass-uns-knien, und-segnen
+    Refs: 2Chr 6:13, Ps 95:6
+  Sense 7: "?" (1x)
+    Domain: COMMUNICATION > Communication
+    Glosses: eng: and-made-kneel | spa: Y-hizo-arrodillar | fra: et-fit-kneel | deu: und-ließ-knien
+    Refs: Gen 24:11
+
+=== H6086 ===
+Language: Hebrew, POS: Prep-b | N-msc | 3ms, Occurrences: 330, Senses: 7
+
+BDB excerpt: עֵץ329 n.m. Gn 2: 9 tree, trees, wood;—ע׳ abs. Gn 3:3 +, cstr. 3:24 +, עֵץ־ 2:16 +; sf. עֵצְיךָ Dt 28:42, etc.; pl. עֵצִים Ju 9:8 +, cstr. עֲצֵי Is 7:2 +, sf. עֵצֶיךָ Dt 29:10, עֵצֵינוּ La 5:4, etc.;— 1. (c. 150 times) a. a standing tree Gn 18:4, 8 (J) +, Ex 15:25 (J; of shrub?), Je 17:18 = ψ 1:3 (sim.); to be felled Dt 19:5; 2 K 6:6; הָעֵצִים (appar. incl. vine and bramble) in allegory Ju 9:8 + 6 times Ju 9; עֵץ הַחַיִּים †Gn 2:9; 3:22, 24 (J), cf. חַיִּים" dir="rtl" >ע׳ חַיִּים, fig. of source of (life and) happiness †Pr 3:18; 11:30; 13:12; 15:4; ע׳ הַדַּעַת טוֹב וָרָע Gn 2:9, 16 (J); עֲצֵי 
+Senses:
+  Sense 1: "tree, living tree" (156x)
+    Desc: A living woody plant, used of trees in general, specific named trees (e.g. tree of life, tree of knowledge), orchards, and forests — Arabic شَجَرَة/شَجَر, Swahili mti/miti, Spanish árbol/árboles, Hind...
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: a-tree, is-a-tree-of, tree | spa: un-árbol, árbol, árbol-de | fra: arbre, bois, un-arbre | deu: Baum, Galgen, ein-Baum
+    Refs: Gen 1:29, Gen 1:29, Gen 2:9, Gen 3:3, Gen 3:6
+  Sense 2: "wood, timber, lumber" (104x)
+    Desc: Wood as a material for construction, carpentry, and crafting — cut or processed timber, beams, and boards — Arabic خَشَب/أَخْشَاب, Swahili mbao/miti, Spanish madera/maderas, Hindi लकड़ी.
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: wood-of | spa: madera-de, maderas-de | fra: bois-de | deu: Holz-von
+    Refs: Exod 25:10, Exod 25:13, Exod 25:23, Exod 25:28, Exod 26:15
+  Sense 3: "firewood, fuel wood" (42x)
+    Desc: Wood gathered or used as fuel for burning — firewood, kindling — Arabic حَطَب, Swahili kuni, Spanish leña/leños, Hindi लकड़ी/लकड़ियाँ (in fuel context).
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: the-wood, wood | spa: las-leñas, leña, leñas | fra: bois, le-bois | deu: Holz, auf-die-Hölzer, der-Holz
+    Refs: Gen 22:3, Gen 22:6, Gen 22:7, Gen 22:9, Gen 22:9
+  Sense 4: "stick, staff, rod" (10x)
+    Desc: A shaped piece of wood used as a stick, staff, or rod — including Ezekiel's symbolic sticks — Arabic عَصَا, Swahili fimbo, Spanish palo, Korean 막대기.
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: a-stick, into-stick, like-a-stick | spa: como-madera, como-palo, los-palos | fra: [העצים], [עץ], au-bois | deu: Baum, ein-stick, wie-Galgen
+    Refs: 2Kgs 6:6, Lam 4:8, Ezek 37:16, Ezek 37:16, Ezek 37:16
+  Sense 5: "?" (9x)
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: gallows, the-gallows, the-pole | spa: el-madero, madero | fra: bois | deu: Galgen, der-Galgen
+    Refs: Esth 2:23, Esth 5:14, Esth 5:14, Esth 6:4, Esth 7:9
+  Sense 6: "shaft, wooden handle" (8x)
+    Desc: The wooden shaft or handle of a weapon such as a spear — Arabic عُود, Swahili mpini, Spanish asta.
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: (and-shaft-of), and-shaft-of, and-wood-of | spa: y-asta-de, y-madera-de | fra: (and-shaft-of), et-bois, et-bois-de | deu: und-Baum, und-Holz-von, und-shaft-von
+    Refs: Exod 25:5, Exod 35:7, Lev 14:4, Lev 14:49, 1Sam 17:7
+  Sense 7: "?" (1x)
+    Domain: PHYSICAL_ACTION > Activities Involving Cloth
+    Glosses: eng: the-flax | spa: el-lino | fra: le-lin | deu: der-flax
+    Refs: Josh 2:6

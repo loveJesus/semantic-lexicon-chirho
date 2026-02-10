@@ -1,0 +1,115 @@
+You are a biblical lexicographer composing glosses for a digital lexicon.
+For each lemma below, compose a JSON object. Separate objects with "---".
+
+Format for each:
+{
+  "lemma_id": "...",
+  "gloss_terse": "under 120 chars, concise definition covering the word's semantic range",
+  "gloss_readable": "2-5 sentences, 40-120 words. Don't start with 'This word'. Warm study-Bible footnote tone. Engaging, not dry.",
+  "senses": {
+    "1": "enriched 20-60 word description. Reference multilingual evidence when illuminating. Don't repeat the label verbatim.",
+    "2": "..."
+  }
+}
+
+Rules:
+- No markdown fences, just JSON objects separated by ---
+- Reference multilingual evidence naturally when it reveals something
+- gloss_readable should feel like a good study Bible footnote: helpful, clear, occasionally surprising
+- Each sense enrichment: how does the evidence support this sense? Mention 1-2 key passages when helpful.
+
+=== H8316 ===
+Language: Hebrew, POS: Prep-k | N-fsc, Occurrences: 13, Senses: 2
+
+BDB excerpt: † שְׂרֵפָה n.f. burning;—abs. שׂ׳ Is 9:4 +, cstr. שְׂרֵפַת Nu 19:6 +;—לשׂ׳ of brick-burning Gn 11:3 (+ שָׂרַף); destructive Am 4:11; Is 9:4, of land Dt 29:22, of temple, הָיָה לִשְׂרֵפַת אֵשׁ Is 64:10, הַר שׂ׳ Je 51:25 i.e. a burnt-out volcano (fig. of Bab.); of heifer Nu 19:6, cf. v 17; of spices (prob.) as funeral rite 2 Ch 16:14 (as acc. cogn.), 21:19 (obj. of עָשָׂה), v 19; of pers. (penal) Lv 10:6 (acc. cogn., י׳ subj.), Nu 17:2.
+Senses:
+  Sense 1: "burning, conflagration" (11x)
+    Desc: The act or event of burning, especially a destructive fire or the burning of something as fuel, punishment, or cremation.
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: a-burning-of, burning, burning-of | spa: a-fuego, como-quema-de, de-incendio | fra: [כשרפת], [לשרפה], [לשרפת] | deu: [כשרפת], [לשרפה], [לשרפת]
+    Refs: Gen 11:3, Lev 10:6, Num 19:6, Num 19:17, 2Chr 16:14
+  Sense 2: "burn mark, burn scar" (2x)
+    Desc: The result of burning on skin or a surface, a burn wound or scar, as in the Levitical descriptions of skin conditions.
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: burning, the-burning | spa: la-quemadura, quemadura | fra: brûlant, le-brûlant | deu: burning, der-burning
+    Refs: Num 16:37, Deut 29:23
+
+=== H8453a ===
+Language: Hebrew, POS: Art | N-mp, Occurrences: 13, Senses: 2
+
+BDB excerpt: † תּוֹשָׁב n.m. Lv 25:45 sojourner, only P (H) and late; abs. ת׳ Gn 23:4 + 6 times; cstr. תּוֹשַׁב Lv 22:10; sf. תּוֹשָֽׁבְךָ 25:6; pl. תּוֹשָׁבִים v 6 + 2 times; cstr. תֹּשָׁבֵי 1 K 17:1, but read תִּשְׁבֶּה (q.v.) 𝔊 Ew Th Hi;—sojourner, appar. of a more temporary and dependent (Lv 22:10; 25:6) kind than the גֵּר (with which it is often joined): ‖ שָׂכִיר Ex 12:45 (P), Lv 22:10 (ת׳ כֹּהֵן a priest’s sojourner), 25:6, 40 (all H); הַתּוֹשָׁבִים הַגָּרִים עִמָּכֶם v 45 (c. pt. גָּר also v 6); c. עִם, also Lv 25:47(×2) (H); c. בְּתוֹךְ Nu 35:15 (P). Fig. of one enjoying only a temporary tenure, c
+Senses:
+  Sense 1: "resident alien, settled foreigner" (10x)
+    Desc: A non-native person dwelling among a community with some degree of permanence, a resident alien or foreign settler who lives alongside the native population.
+    Domain: GROUPS_COMMUNITY > Groups and Classes of Persons
+    Glosses: eng: a-resident, a-sojourner-of, and-a-resident | spa: como-residente, los-residentes, residente | fra: comme-un-résident, et-pour-le-résident, et-pour-ton-étranger-résident | deu: der-residents, ein-Ansaessiger, ein-Fremdling-von
+    Refs: Gen 23:4, Lev 22:10, Lev 25:6, Lev 25:23, Lev 25:35
+  Sense 2: "sojourner, temporary dweller" (3x)
+    Desc: A person passing through or dwelling temporarily in a place not their own, emphasizing the transient and alien quality of the stay rather than settled residence.
+    Domain: GROUPS_COMMUNITY > Groups and Classes of Persons
+    Glosses: eng: a-resident-alien, a-sojourner, and-settlers | spa: Residente, peregrino, y-forasteros | fra: [ותושבים], un-étranger, étranger | deu: [ותושבים], ein-resident-alien, ein-sojourner
+    Refs: Exod 12:45, 1Chr 29:15, Ps 39:12
+
+=== H8593 ===
+Language: Hebrew, POS: N-ms, Occurrences: 13, Senses: 2
+
+BDB excerpt: † תַּ֫עַר n.m. ψ 52:4 and (Is 7:20) f. razor, sheath;— 1. a. razor, abs. יְגַלַּח בְּת׳ Is 7:20 (fig.); subj. of לֹא יַעֲבֹר עַל־רֹאשׁ Nu 6:5, obj. of הֶעֱבִיר עַל־ 8:7 (P), cf. cstr. ת׳ הַגַּלָּבִים Ez 5:1; abs. כְּת׳ מְלֻטָּשׁ ψ 52:4 (sim. of tongue). b. cstr. ת׳ הַסֹּפֵר Je 36:23 = penknife. 2. sheath, always sf. of sword: בְּתַעְרָהּ 2 S 20:8; of drawing sword, שָׁלַף מִתּ׳ 1 S 17:51, הוֹצַיא מִתּ׳ Ez 21:8, 10, תֵּצֵא מִתּ׳ v 9; of sheathing, הֵאָֽסְפִי אֶל־תַּעְרֵךְ Je 47:6; הָשַׁב אֶל־תַּעְרָהּ Ez 21:35.
+Senses:
+  Sense 1: "sheath, scabbard" (7x)
+    Desc: The cover or case for a sword, used exclusively of a sword's sheath (ta'rah with 3fs suffix). Occurrences cluster in military contexts: David drew Goliath's sword from its sheath (1 Sam 17:51, mittacr...
+    Domain: ARTIFACTS > Artifacts
+    Glosses: eng: from-sheath-its, in-its-sheath, sheath-its | spa: de-su-vaina, de-vaina-suya, en-su-vaina | fra: [תערך], dans-son-sheath, de-sheath-son | deu: [מתערה], [תערה], [תערך]
+    Refs: 1Sam 17:51, 2Sam 20:8, Jer 47:6, Ezek 21:3, Ezek 21:4
+  Sense 2: "razor, knife" (6x)
+    Desc: A sharp cutting blade used for shaving or cutting, appearing as 'razor' in most contexts. Used literally of the Nazirite vow where no razor (ta'ar) shall pass over the head (Num 6:5, Num 8:7; eng 'raz...
+    Domain: PHYSICAL_ACTION > Physical Impact
+    Glosses: eng: like-a-razor, razor, razor-of | spa: como-navaja, con-cuchillo-de, con-navaja | fra: [בתער], comme-rasoir, rasoir | deu: [בתער], [תער], razor
+    Refs: Num 6:5, Num 8:7, Ps 52:2, Isa 7:20, Jer 36:23
+
+=== G0833 ===
+Language: Greek, POS: N-AFS, Occurrences: 12, Senses: 2
+
+BDB excerpt: αὐλή, ἡ, open court before the house, courtyard, Refs 8th c.BC+ __2 steading for cattle, αὐλῆς ὑπεράλμενονRefs 8th c.BC+ __II later, court or quadrangle, round which the house was built, Refs 5th c.BC+ __III generally, court, hall, Ζηνὸς αὐ.Refs 8th c.BC+; court of a temple, ἱεροῦLXX+3rd c.BC+; any dwelling, abode, chamber, Refs 5th c.BC+, etc.; of a cave, Refs; ἀγρόνομοι αὐλαί homes of dwellers in the wild, Refs; later, country-house, Refs 1st c.BC+ __IV ἡ αὐλή the Court, αὐλὰς θεραπεύεινRefs 4th c.BC+; οἱ περὶ τὴν αὐλήν the courtiers,Refs 2nd c.BC+
+Senses:
+  Sense 1: "courtyard, court" (10x)
+    Desc: An open courtyard or court of a building, especially the courtyard of the high priest's palace or of the temple. S63615 (courtyard, 9x) and S63617 (court, 1x) represent the same architectural space. S...
+    Domain: BUILDINGS > Constructions
+    Glosses: eng: court, courtyard | spa: atrio, casa, patio | fra: cour | deu: Hof, αὐλήν, αὐλὴν
+    Refs: Matt 26:3, Matt 26:58, Matt 26:69, Mark 14:54, Mark 14:66
+  Sense 2: "sheepfold, pen" (2x)
+    Desc: An enclosed area for keeping sheep — a fold or pen, as in John 10:1,16 where Jesus speaks of the sheep and the fold. This is a distinct sense from the architectural courtyard, confirmed across multipl...
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: fold | spa: redil | fra: cour | deu: Hof
+    Refs: John 10:1, John 10:16
+
+=== G0928 ===
+Language: Greek, POS: V-FIP-3P, Occurrences: 12, Senses: 2
+
+BDB excerpt: βᾰσᾰν-ίζω, Attic dialect future -ῐῶRefs 5th c.BC+aorist ἐβασάνισα, subjunctive βασανίσω variant in Refs —passive, aorist ἐβασανίσθην: perfect βεβασάνισμαι:—rub upon the touch-stone (βάσανος), χρυσόν Refs 5th c.BC+: hence, put to the test, prove, Refs 4th c.BC+; investigate scientifically, Refs 5th c.BC+ of the instances used in inductive inference, ἀπὸ τῶν πανταχόθεν βεβασανισμένων [μεταβαίνομεν] Refs 1st c.BC+ __II of persons, examine closely, cross-question, Refs 5th c.BC+; βεβασανισμένος εἰς δικαιοσύνην having his love of justice put to the test, Refs 5th c.BC+; ὑπὸ δακρύων βασανίζεσθαι, i.
+Senses:
+  Sense 1: "torment, torture, cause agony" (11x)
+    Desc: To inflict severe suffering or punishment on someone, or to experience such suffering, used of eschatological punishment, demonic torment, and physical torture.
+    Domain: JUSTICE_PUNISHMENT > Punish, Reward
+    Glosses: eng: being-tormented, he-will-be-tormented, straining | spa: atormentaba, atormentados, atormentar | fra: tourmenter | deu: quaelen, βασανίσαι, βασανίσῃς
+    Refs: Matt 8:6, Matt 8:29, Mark 5:7, Mark 6:48, Luke 8:28
+  Sense 2: "batter, toss about by waves" (1x)
+    Desc: To be harassed or distressed by natural forces, especially of a boat being battered and tossed by wind and waves.
+    Domain: JUSTICE_PUNISHMENT > Punish, Reward
+    Glosses: eng: being-tossed | spa: siendo-azotada | fra: tourmenter | deu: βασανιζόμενον
+    Refs: Matt 14:24
+
+=== G0968 ===
+Language: Greek, POS: N-ANS, Occurrences: 12, Senses: 2
+
+BDB excerpt: βῆμα· πρόβατα, Refs 5th c.AD+
+Senses:
+  Sense 1: "judgment seat" (11x)
+    Desc: judgment seat (11 occurrences across 2 original clusters)
+    Domain: JUSTICE_PUNISHMENT > Courts and Legal Procedures
+    Glosses: eng: judgment-seat | spa: tribunal | fra: tribunal | deu: Richterstuhl
+    Refs: Matt 27:19, John 19:13, Acts 12:21, Acts 18:12, Acts 18:16
+  Sense 2: "a step" (1x)
+    Desc: a step (1 occurrences across 1 original clusters)
+    Domain: JUSTICE_PUNISHMENT > Courts and Legal Procedures
+    Glosses: eng: a-step | spa: paso | fra: tribunal | deu: Richterstuhl
+    Refs: Acts 7:5

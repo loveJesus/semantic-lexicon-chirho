@@ -1,0 +1,159 @@
+You are a biblical lexicographer composing glosses for a digital lexicon.
+For each lemma below, compose a JSON object. Separate objects with "---".
+
+Format for each:
+{
+  "lemma_id": "...",
+  "gloss_terse": "under 120 chars, concise definition covering the word's semantic range",
+  "gloss_readable": "2-5 sentences, 40-120 words. Don't start with 'This word'. Warm study-Bible footnote tone. Engaging, not dry.",
+  "senses": {
+    "1": "enriched 20-60 word description. Reference multilingual evidence when illuminating. Don't repeat the label verbatim.",
+    "2": "..."
+  }
+}
+
+Rules:
+- No markdown fences, just JSON objects separated by ---
+- Reference multilingual evidence naturally when it reveals something
+- gloss_readable should feel like a good study Bible footnote: helpful, clear, occasionally surprising
+- Each sense enrichment: how does the evidence support this sense? Mention 1-2 key passages when helpful.
+
+=== H7451a ===
+Language: Hebrew, POS: Art | Adj-fp, Occurrences: 241, Senses: 6
+
+BDB excerpt: I. רַע226 I. רַע226 adj. bad, evil (distinction from n., and vb. Pf. 3 ms., is sometimes not easy, and opinions differ);—ms. רַע Gn 6:5 +; רָ֑ע 31:24 +; pl. רָעִים 13:13 +; cstr. רָעֵי Ez 7:24 (del. Co); fs. רָעָה Gn 37:2 + 37 times (this form usually noun), pl. רָעוֹת 28:8 + 14 times; רָעֹת 41:27 (18 times noun);— †1. bad, disagreeable, malignant: of a woman, רָעָה בְּעֵינֵי Ex 21:8 (E; perhaps, with changed accent, vb. 3 fs. רָ֫עָה) disagreeable, unpleasing in the eyes of, pl. Gn 28:8 (P); of poisionous herb 2 K 4:41, malignant boils Dt 28:35; Jb 2:7, diseases Dt 7:15; 28:59; 2 Ch 21:19 Ec 6
+Senses:
+  Sense 1: "morally evil, wicked" (129x)
+    Desc: Ethically evil or wicked, describing persons, conduct, or character as morally corrupt (Arabic shirrīr/sharīr, Korean akhan, Swahili mwovu/waovu).
+    Domain: MORAL_QUALITY > Moral and Ethical Qualities
+    Glosses: eng: evil | spa: mal, mala, malas | fra: mal | deu: Boese, Boeses, böse
+    Refs: Gen 6:5, Gen 8:21, Gen 28:8, Gen 37:2, Gen 38:7
+  Sense 2: "evil, harm, calamity" (80x)
+    Desc: Abstract evil as harm, misfortune, disaster, or calamity; the substantive concept of evil or trouble befalling someone (Arabic sharr, Korean ak, Swahili uovu).
+    Domain: MORAL_QUALITY > Moral and Ethical Qualities
+    Glosses: eng: the-evil | spa: el-mal, lo-malo | fra: le-mal | deu: der-Boese, der-Boeses
+    Refs: Num 32:13, Deut 4:25, Deut 9:18, Deut 17:2, Deut 24:7
+  Sense 3: "bad, poor quality" (19x)
+    Desc: Bad in quality, worthless, or inferior; describing things, land, fruit, or conditions that are deficient rather than morally evil (Arabic radī'/sayyi', Korean nappŭn, Swahili mbaya).
+    Domain: MORAL_QUALITY > Moral and Ethical Qualities
+    Glosses: eng: and-evil, and-the-bad, are-bad | spa: los-malos, mala, mala? | fra: bad, et-mal, et-mauvais | deu: Boeses, Böses, bad
+    Refs: Gen 24:50, Gen 41:21, Gen 47:9, Lev 27:10, Lev 27:10
+  Sense 4: "ugly, ill-favored" (5x)
+    Desc: Ugly or foul in appearance, as in Pharaoh's ill-favored cows in Genesis 41 (Arabic qabīḥ, Korean nappŭn, Swahili wabaya).
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: and-bad-of, and-the-bad, bad-of | spa: feas-de, y-feas-de, y-las-feas | fra: et-le-mauvais, et-mauvais-de, mauvais-de | deu: hässlich, hässlich-von, und-die-hässlichen
+    Refs: Gen 41:3, Gen 41:4, Gen 41:19, Gen 41:20, Gen 41:27
+  Sense 5: "severe, fierce, dangerous" (5x)
+    Desc: Severe, fierce, or dangerous, describing wild beasts, terrible diseases, or harsh conditions (Arabic shadīd/sharīr, Korean simhan/sanaun, Swahili mkali).
+    Domain: MORAL_QUALITY > Moral and Ethical Qualities
+    Glosses: eng: and-terrible, evil, severe | spa: mala, malas, y-terribles | fra: et-terrible, mal, mauvais | deu: Boeses, boese, böses
+    Refs: Gen 37:20, Gen 37:33, Deut 6:22, 2Chr 21:19, Prov 15:10
+  Sense 6: "sad, displeased" (3x)
+    Desc: Sad, downcast, or displeased in countenance or spirit, as in Nehemiah 2:2 (Arabic ḥazīn/sayyi', Korean nappŭn, Swahili huzuni).
+    Domain: MORAL_QUALITY > Moral and Ethical Qualities
+    Glosses: eng: sad | spa: malo, triste | fra: mal, mauvais | deu: Boeses, boese
+    Refs: Neh 2:1, Neh 2:2, Prov 25:20
+
+=== H7965 ===
+Language: Hebrew, POS: Prep-m | N-ms, Occurrences: 237, Senses: 6
+
+BDB excerpt: שָׁלוֹם237 n.m. Is 54:13 completeness, soundness, welfare, peace (LagBN 174);—שׁ׳ Gn 29:6 +; שָׁלֹם (rare) Ez 13:16 +; cstr. שְׁלוֹם Gn 37:14 +; sf. שְׁלוֹמִי ψ 41:10 +, etc.; pl. (all dub.) שְׁלוֹמִים Je 13:19 ψ 69:23; sf. שְׁלֹמָיו 55:21;— †1. completeness in no., הָגְלָת שְׁלוֹמִים Je 13:19 Judah is wholly carried captive (but read גָּלוּת שְׁלֵמָה, cf. Am 1:6; so 𝔊 We Am SS Buhl). †2. safety, soundness, in body, אֵין שָׁלוֹם בַּעֲצָמַי ψ 38:4; לְשָׁלוֹם Is 38:17; שָׁלוֹם אָהֳלֶ֑ךָ (Ges§ 141 c) Jb 5:24 is safe, secure. 3. welfare, health, prosperity: †שָׁאַל לפ׳ לשׁ׳ ask one about welfare G
+Senses:
+  Sense 1: "peace, absence of conflict" (198x)
+    Desc: A state of harmony, tranquility, or absence of war and strife, used both of interpersonal relations and of broader national or cosmic peace.
+    Domain: DANGER_DELIVERANCE > Trouble, Hardship, Relief
+    Glosses: eng: peace | spa: Paz, paz | fra: paix | deu: Friede, Frieden, es-geht-wohl
+    Refs: Gen 29:6, Gen 43:23, Gen 43:28, Lev 26:6, Num 6:26
+  Sense 2: "welfare, well-being, prosperity" (17x)
+    Desc: The state of health, wholeness, prosperity, or general well-being of a person or city, often in construct chains asking about or referring to someone's condition.
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: and-for-the-peace-of, for-peace-of, for-the-peace-of | spa: bienestar-de, en-su-paz, para-paz | fra: bien-être-de, et-pour-le-paix-de, paix | deu: Friede, das-Wohlergehen, der-Friede-
+    Refs: Gen 37:14, Gen 37:14, Gen 41:16, 1Sam 17:18, 1Sam 17:22
+  Sense 3: "greeting or inquiry of peace" (16x)
+    Desc: A formulaic salutation or inquiry, typically 'Is it peace?' or 'Shalom,' used as a greeting or to ask whether someone comes with peaceful intent.
+    Domain: DANGER_DELIVERANCE > Trouble, Hardship, Relief
+    Glosses: eng: is-it-peace, is-peace, is-shalom | spa: acaso-paz, paz, paz-a-ti | fra: est-cela-paix, est-paix, est-shalom | deu: geht-es-wohl, ist-Friede, ist-es-Friede
+    Refs: Gen 29:6, Gen 43:27, 2Sam 18:28, 2Sam 18:29, 2Sam 18:32
+  Sense 4: "friend, ally, one at peace" (3x)
+    Desc: A person who is at peace with someone, used substantively to mean a friend, ally, or confederate.
+    Domain: DANGER_DELIVERANCE > Trouble, Hardship, Relief
+    Glosses: eng: against-his-friends, and-for-those-at-peace, peace-my | spa: contra-sus-aliados, paz-mía, y-para-los-que-están-en-paz | fra: dans-paix, et-à-paix, paix | deu: Friede, gegen-sein-Friede, und-zu-Friede
+    Refs: Ps 55:20, Ps 69:22, Jer 20:10
+  Sense 5: "Salem, proper name" (2x)
+    Desc: Used as a proper noun referring to the place name Salem (as in Melchizedek king of Salem) or as a personal name Shalom.
+    Domain: DANGER_DELIVERANCE > Trouble, Hardship, Relief
+    Glosses: eng: Peace, Shalom | spa: Shalom | fra: Shalom, paix | deu: Friede, Shalom
+    Refs: Judg 6:24, Isa 9:6
+  Sense 6: "?" (1x)
+    Domain: QUANTITY_NUMBER > Degree
+    Glosses: eng: completely | spa: completamente | fra: paix | deu: Friede
+    Refs: Jer 13:19
+
+=== H4639 ===
+Language: Hebrew, POS: Prep-k | N-msc | 3ms, Occurrences: 235, Senses: 6
+
+BDB excerpt: מַעֲשֶׂה233 n.m. Gn 20:9 deed, work;—abs. מ׳ Gn 44:15 +, cstr. מַעֲשֵׂה Is 5:12 +; sf. מַעֲשֵׂהוּ Ju 13:12 +, etc.; pl. מַעֲשִׂים Gn 20:9 +; cstr. מַעֲשֵׂי Je 1:16 +; sf. מַעֲשָׂיו 1 S 19:4 (or sg., so Dr) +, etc.;—often acc. cogn. c. עשׂה;— 1. a. (1) deed, thing done by man Nu 16:28 (JE), 1 K 13:11; Is 26:12;—1 S 20:19 is obscure; (2) implic. evil Gn 44:15 (J), Ex 23:24 (E), Ne 6:14 + 8 times, + sg. coll. doing(s) Mi 6:16; Lv 18:3(×2) (H), 2 Ch 17:4, מ׳ יְדֵיהֶם La 3:64; Hg 2:14; Jb 33:17 (reading מִמַּעֲשֵׂהוּ 𝔊 Di Siegf Bu), Ez 16:30 (behaviour); explic. מַעֲשֵׂינוּ הָרָעִים Ezr 9:13 cf. Ec
+Senses:
+  Sense 1: "craftsmanship, workmanship" (93x)
+    Desc: The skill, technique, or product of artisan labor — handiwork, manufacture, the way something is made (Arabic صَنْعَة, Korean 솜씨/작품, Hindi कारीगरी/बनावट).
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: work-of | spa: Obra-de, la-obra-de, obra-de | fra: travail-de | deu: Werk, Werk-von
+    Refs: Gen 40:17, Exod 26:1, Exod 26:31, Exod 26:36, Exod 27:4
+  Sense 2: "work, labor, task" (75x)
+    Desc: The activity of working, a task or undertaking, one's occupation or business — work in the general sense of effort or employment (Arabic عَمَل as labor, Korean 일, Swahili kazi).
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: and-the-work-of, and-work-of, by-work-of | spa: con-la-obra-de, con-obra-de, la-obra | fra: dans-œuvre, et-oeuvre, et-œuvre | deu: Werk, bei-Werk-von, der-Werk
+    Refs: Exod 23:12, Exod 23:16, Exod 23:16, Deut 11:7, Deut 31:29
+  Sense 3: "deed, act, conduct" (44x)
+    Desc: A human action or behavior, especially as subject to moral evaluation — deeds, acts, doings (Arabic عَمَل/فِعْل/أَعْمَال, Korean 행위, Swahili matendo).
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: are-their-works, deed-of, deeds-his | spa: el-hecho, en-tus-obras, la-obra | fra: actes-son, de-il-a-fait, de-œuvre | deu: Tat, Taten-sein, Werk
+    Refs: Gen 20:9, Gen 44:15, Exod 18:20, Exod 23:24, Lev 18:3
+  Sense 4: "works of God" (18x)
+    Desc: The mighty acts, creation, or deeds of God — used in theological and doxological contexts addressing or describing divine activity (Korean 주의 업적들/행하신 일들, Arabic أَعْمَال in divine reference).
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: His-work, His-works, Your-works | spa: Las-obras-de, como-obras-de-ti, como-tus-obras | fra: comme-Ton-actes, comme-œuvre, de-œuvre | deu: Werk-, dein-Werk, der-Werk-
+    Refs: Deut 3:24, Ps 33:4, Ps 66:3, Ps 86:8, Ps 92:5
+  Sense 5: "product, produce, yield" (4x)
+    Desc: The concrete result or output of labor — a product, produce, or thing made, emphasizing the result rather than the process (Korean 소출, Arabic المصنوع/صَنَائِع).
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: of-its-maker, the-produce-of-, your-products | spa: el-producto-de-, la-obra, tus-obras | fra: de-il-a-fait, oeuvre, œuvre | deu: Werk, von-machte
+    Refs: Isa 29:16, Ezek 27:16, Ezek 27:18, Hab 3:17
+  Sense 6: "?" (1x)
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: the-deed | spa: el-asunto | fra: le-acte | deu: der-Tat
+    Refs: 1Sam 20:19
+
+=== G1097 ===
+Language: Greek, POS: V-PSA-3P, Occurrences: 221, Senses: 6
+
+BDB excerpt: Included with: γιγνώσκω, Doric dialect Refs 5th c.BC+, Aeolic dialect, Ionic dialect, and after Refs 4th c.BC+ γινώσκω, but γιγνώσκω in early Attic dialect Inscrr., as Refs (κατα-), etc.: future γνώσομαι Refs 8th c.BC+, Doric dialect 3rd.pers. singular γνωσεῖται Refs is falsa lectio in Refs 5th c.BC+; Cretan dialect form ἀνα-γνώοντι uncertain in Refs: perfect ἔγνωκα Refs 5th c.BC+: aorist 2 ἔγνων Refs 8th c.BC+, Epic dialect dual γνώτην Refs 8th c.BC+, Doric dialect 3rd.pers. plural ἔγνον Refs 5th c.BC+; subjunctive γνῶ, γνῷς, γνῷ Refs 8th c.BC+, Epic dialect also γνώω, γνώομεν Refs 8th c.BC+;
+Senses:
+  Sense 1: "know, be acquainted with" (196x)
+    Desc: To know through personal experience, relationship, or acquaintance; general active-voice knowing encompassing all tenses, persons, numbers, and moods (present, aorist, perfect, future, imperfect indic...
+    Domain: MENTAL_LIFE > Know
+    Glosses: eng: he-knows, knows, to-know | spa: conoce, conocer, sabe | fra: connaître | deu: erkennen, erkennt
+    Refs: Matt 12:15, Matt 13:11, Matt 16:3, Matt 16:8, Matt 22:18
+  Sense 2: "be known, be made known" (13x)
+    Desc: Passive and middle-passive voice forms: to be known, be recognized, be made known, or become known; marked by Arabic مَعْروف/عُرِفَ/يُعرَفُ, Korean 알려지다/알려진, Swahili -julikana, and passive Spanish ser...
+    Domain: MENTAL_LIFE > Know
+    Glosses: eng: being-known, has-been-known, having-been-known | spa: conocida, es-conocido, fue-conocida | fra: connaître | deu: erkennen, erkennt
+    Refs: Matt 10:26, Matt 12:33, Luke 6:44, Luke 8:17, Luke 12:2
+  Sense 3: "understand, comprehend" (8x)
+    Desc: To grasp the meaning of something, to understand or comprehend, distinguished by Arabic فَهِمَ/تَفْهَمُ, Korean 깨닫다, Swahili -elewa/-fahamu, Hindi समझना, and Spanish entender rather than conocer/saber...
+    Domain: MENTAL_LIFE > Know
+    Glosses: eng: I-know, do-you-understand, knew | spa: conocieron, conoció, conocéis | fra: connaître | deu: erkennen, erkennt
+    Refs: John 8:27, John 8:43, John 10:6, John 10:38, John 12:16
+  Sense 4: "learn, find out, discover" (2x)
+    Desc: Ingressive sense: to come to know, learn, find out, or ascertain information not previously known; English 'finding out' / 'learned', indicating the moment of acquiring new knowledge.
+    Domain: MENTAL_LIFE > Know
+    Glosses: eng: finding-out, learned | spa: sabiendo, supieron | fra: connaître | deu: erkennen, erkennt
+    Refs: Mark 6:38, Acts 17:13
+  Sense 5: "?" (1x)
+    Domain: MENTAL_LIFE > Know
+    Glosses: eng: she-knew | spa: conoció | fra: connaître | deu: erkennen
+    Refs: Mark 5:29
+  Sense 6: "?" (1x)
+    Domain: MENTAL_LIFE > Know
+    Glosses: eng: having-known | spa: habiendo-conocido | fra: connaître | deu: erkennen
+    Refs: Rom 1:21

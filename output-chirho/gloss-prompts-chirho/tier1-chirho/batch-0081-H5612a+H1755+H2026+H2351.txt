@@ -1,0 +1,120 @@
+You are a biblical lexicographer composing glosses for a digital lexicon.
+For each lemma below, compose a JSON object. Separate objects with "---".
+
+Format for each:
+{
+  "lemma_id": "...",
+  "gloss_terse": "under 120 chars, concise definition covering the word's semantic range",
+  "gloss_readable": "2-5 sentences, 40-120 words. Don't start with 'This word'. Warm study-Bible footnote tone. Engaging, not dry.",
+  "senses": {
+    "1": "enriched 20-60 word description. Reference multilingual evidence when illuminating. Don't repeat the label verbatim.",
+    "2": "..."
+  }
+}
+
+Rules:
+- No markdown fences, just JSON objects separated by ---
+- Reference multilingual evidence naturally when it reveals something
+- gloss_readable should feel like a good study Bible footnote: helpful, clear, occasionally surprising
+- Each sense enrichment: how does the evidence support this sense? Mention 1-2 key passages when helpful.
+
+=== H5612a ===
+Language: Hebrew, POS: Conj-w | N-mp, Occurrences: 187, Senses: 4
+
+BDB excerpt: סֵ֫פֶר185 n.m. Is 29:11 missive, document, writing, book (prob. ancient loan-word from Assyrian šipru, missive, message DlHWB 683, TelAm. šipru, šipirtu, id. WklTA Gloss.; √ šâpâru, send, send message or letter DlHWB 683, Wkll.c., whence also šâpiru, writer, and (perhaps ruler, šapirûtu, rule; v. HomAufsätze (1892), 34 BuhlLex 13; perhaps cf. Arabic سَفَرَ go forth to journey, ii. send on a journey Lane1370; NH סֵפֶר = BH; so Aramaic סִיפְרָא, ܣܶܦܪܳܐ; ChrPal. Aramaic ܣܝܦܪܐ SchwallyIdiot. 64; Arabic سِفْرٌ );—ס׳ abs. 2 S 11:14 +; cstr. Ex 24:7 +; sf. סִפְרִי Ex 32:33, סִפְרְךָ v 33 ψ 139:16; pl
+Senses:
+  Sense 1: "book or scroll" (142x)
+    Desc: A written document of some length, especially a literary, historical, or legal composition; a scroll or codex containing such a text.
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: book-of, scroll-of, the-book-of | spa: el-libro-de, libro-de | fra: book-de, le-book-de, livre-de | deu: Buch-von, book-von, der-book-von
+    Refs: Gen 5:1, Exod 24:7, Deut 31:26, Josh 1:8, Josh 10:13
+  Sense 2: "letter or epistle" (29x)
+    Desc: A written communication or message sent from one person to another, typically shorter and more personal than a book.
+    Domain: COMMUNICATION > Communication
+    Glosses: eng: a-letter, letters, the-letter | spa: carta, cartas, documentos | fra: le-lettre, le-livre, lettres | deu: Briefe, Buch, das-Buch
+    Refs: 2Sam 11:14, 2Sam 11:15, 1Kgs 21:8, 1Kgs 21:8, 1Kgs 21:8
+  Sense 3: "official document or certificate" (14x)
+    Desc: A formal legal or administrative document such as a deed, certificate of divorce, or royal decree.
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: certificate-of, document-of, in-document-of | spa: carta-de, documento, documento-de | fra: dans-le-livre, der-livre, document-de | deu: Buch, das-Buch, der-Schreiber
+    Refs: Deut 24:1, Deut 24:3, Esth 9:25, Isa 50:1, Jer 3:8
+  Sense 4: "?" (2x)
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: writing | spa: escritura | fra: livre | deu: Buch
+    Refs: Dan 1:4, Dan 1:17
+
+=== H1755 ===
+Language: Hebrew, POS: Prep | N-ms, Occurrences: 168, Senses: 4
+
+BDB excerpt: † I. דּוֹר, דֹּר n.m. Dt 32:5 period, generation, dwelling (cf. sub vb. supr.; also NH דּוֹר, Aramaic (incl. Biblical Aramaic) דָּר, ܕܳܪ, age, generation; Arabic دَوْرٌ gyrus, orbis, periodus; Sab. דר, one time, once, דרם דרם each once in a year DHM in MV)—abs. דּוֹר Gn 7:1 + 68 times; דֹּר Ex 3:15; + 36 textual; cstr. דּוֹר Dt 32:20 + 7 times, דֹּר Ex 3:15; sf. דּוֹרִי Is 38:12, דּוֹרוֹ Is 53:8; pl. דּוֹרִים ψ 72:5 + 2 times, דֹּרוֹת abs. Jb 42:16 Is 41:4; cstr. Ju 3:2; דּוֹרוֹת cstr. Is 51:9, דֹּרֹת Gn 9:12; sf. דֹּרֹתָיו Gn 6:9 Lv 25:30, דּוֹרוֹתֵינוּ Jos 22:27, דֹּרֹתֵינוּ v 28, דּרֹתֵיכֶם
+Senses:
+  Sense 1: "generation, contemporaries" (96x)
+    Desc: A group of people living at the same time; a specific cohort or age-class, often with the article or demonstrative ('this generation,' 'O generation'), referring to the people of a particular era.
+    Domain: PEOPLE_KINSHIP > Kinship Terms
+    Glosses: eng: after-generation, and-generation, upon-generation | spa: a-generación, en-generación, y-generación | fra: et-génération | deu: auf-Geschlecht, nach-Geschlecht, und-Generation
+    Refs: Exod 3:15, Exod 17:16, Deut 23:2, Deut 23:3, Deut 23:8
+  Sense 2: "generations, posterity" (50x)
+    Desc: Plural construct with possessive suffixes in cultic and legal formulas meaning 'throughout your/their generations' — successive descendants who will inherit an ordinance or covenant; Arabic ajyal, Kor...
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: for-their-generations, for-your-generations | spa: para-generaciones-vuestras, para-vuestras-generaciones, para-vuestras-generaciones: | fra: pour-leur-générations, pour-ton-générations | deu: fuer-dein-Geschlechter, für-ihre-Geschlechter
+    Refs: Gen 6:9, Gen 9:12, Gen 17:7, Gen 17:9, Gen 17:12
+  Sense 3: "perpetuity, age after age" (21x)
+    Desc: Used in the distributive formula 'from generation to generation' (midor ledor / ledor vador), expressing perpetuity or endless duration; Korean 대대로 (daedaero), Arabic min jilin ila jilin, Swahili kiza...
+    Domain: PEOPLE_KINSHIP > Kinship Terms
+    Glosses: eng: for-a-generation, for-generation, from-generation | spa: a-generación, de-generación, en-generación | fra: dans-génération, de-génération, et-génération | deu: Generation, Geschlecht, Geschlecht-
+    Refs: Exod 17:16, Deut 7:9, 1Chr 16:15, Ps 10:6, Ps 49:11
+  Sense 4: "?" (1x)
+    Domain: PEOPLE_KINSHIP > Kinship Terms
+    Glosses: eng: My-dwelling | spa: Mi-generación | fra: génération | deu: Geschlecht
+    Refs: Isa 38:12
+
+=== H2026 ===
+Language: Hebrew, POS: Conj-w | V-Qal-ConsecImperf-3ms | 3ms, Occurrences: 167, Senses: 4
+
+BDB excerpt: † הָרַג vb. kill, slay (NH id., ואהרג MI (1 s. Impf. consec.); Arabic هَرَجَ fall into war, conflict, disorder, slaughter; Sab. הרג fight Os4, 1, 17, kill Sab Denkm24, 25)— Qal Pf. 3 ms. ה׳ Ju 9:24 + 4 times, הָרָ֑ג 2 S 14:7 + 2 times, וְהָרַג consec. Is 27:1; sf. וַהֲרָגָ֑נִי consec. 1 S 16:2 + 2 times; הֲרָגוֹ Gn 4:25; etc.; Impf. יַהֲרֹג ψ 10:8 + 4 times; יַהֲרָג־ Jb 5:2; וַיַּהֲרֹג Ex 13:15 + 14 times; sf. יַהַרְגֵנִי Gn 4:14; 1 s. אַהֱרוֹג Am 2:3, אֶהֱרֹג Am 9:1; cohort. וְאַהַרְגָה Gn 27:41; sf. וָאֶהֶרְגֵהוּ 2 S 4:10 2 K 10:9; 3 mpl. יַהֲרֹ֑גוּ ψ 94:6 Ez 23:47; וַיַּהַרְגוּ Gn 34:25 + 4
+Senses:
+  Sense 1: "kill, slay (active)" (146x)
+    Desc: Active Qal finite forms and infinitives meaning to kill or slay violently and intentionally, encompassing all persons, numbers, tenses, moods, and pronominal suffixes.
+    Domain: VIOLENCE_CONFLICT > Violence, Harm, Destroy, Kill
+    Glosses: eng: and-killed, killed, they-killed | spa: mataron, y-mató | fra: et-tua, ils-tua, ils-tuèrent | deu: erschlugen-sie, sie-toetete, toeten
+    Refs: Gen 27:42, Gen 34:26, Gen 49:6, Exod 2:15, Exod 13:15
+  Sense 2: "slain one (passive participle)" (8x)
+    Desc: Qal passive participle used substantivally or adjectivally for one who has been killed: the slain, the victims.
+    Domain: VIOLENCE_CONFLICT > Violence, Harm, Destroy, Kill
+    Glosses: eng: has-he-been-slain, her-victims, into-the-slain | spa: en-los-muertos, los-muertos, muertos | fra: tuer, tuer-elle | deu: toeten, toetete
+    Refs: Esth 9:11, Prov 7:26, Isa 10:4, Isa 14:19, Isa 26:21
+  Sense 3: "killer, slayer (agent noun)" (8x)
+    Desc: Qal active participle used substantivally to denote a person who kills: killer, slayer, murderer.
+    Domain: VIOLENCE_CONFLICT > Violence, Harm, Destroy, Kill
+    Glosses: eng: before-killers, killing, murderer-of | spa: ante-los-asesinos!, asesino-de, el-matador | fra: killing, murderer-de, tuant | deu: der-Kain-erschlägt, killing, murderer-von
+    Refs: Gen 4:15, Num 31:19, 2Kgs 9:31, 2Kgs 17:25, Jer 4:31
+  Sense 4: "be killed, be slain (passive)" (5x)
+    Desc: Nifal and Qal passive finite forms expressing the passive voice: to be killed, to be slain.
+    Domain: VIOLENCE_CONFLICT > Violence, Harm, Destroy, Kill
+    Glosses: eng: shall-be-slain, we-are-killed, when-is-slain | spa: cuando-sea-hecha, fue-muerto, será-matado | fra: le-tuer, tuer | deu: er-toetet, toeten, tötete
+    Refs: Ps 44:22, Isa 27:7, Lam 2:20, Ezek 26:6, Ezek 26:15
+
+=== H2351 ===
+Language: Hebrew, POS: Conj-w, Occurrences: 164, Senses: 4
+
+BDB excerpt: חוּץ n.[m.] the outside, sometimes, especially in pl., spec. a street, never with sf. in sg., with ָה loc. ח֫וּצָה, חֻ֫צָה, pl. חוּצוֹת, חֻצוֹת, with sf. חוּצֹתָיו etc., Is 15:3 etc.;— 1. the outside, of a house, tent, city, camp, etc., often used, especially with preps., to express the adv. idea of outside, abroad (Aramaic syn., except in sense 2 a, is בַּר, ܒܰܪ): a. as accus. after vb. of motion Dt 23:13 יָצָא חוּץ to go forth outside (sc. a camp), v 14 (as adv. accus.) בְּשִׁבְתְּךָ חוּץ outside, הוֹצִיא הַחוּץ to bring forth outside (a house or chamber) Ju 19:25 2 S 13:18 cf. Ne 13:8, Ju 1
+Senses:
+  Sense 1: "outside, exterior space" (119x)
+    Desc: The spatial noun/adverb denoting the area outside a building, camp, or city, used with various prepositions (from outside, to outside, in the outside) to indicate location or direction relative to an ...
+    Domain: GEOGRAPHY_SPACE > Spacial Positions
+    Glosses: eng: from-outside, outside | spa: afuera-de, fuera, fuera-de | fra: de-à-l'extérieur, dehors, à-l'extérieur | deu: ausserhalb, außerhalb, von-ausserhalb
+    Refs: Gen 9:22, Gen 19:16, Gen 24:11, Gen 24:31, Exod 21:19
+  Sense 2: "street, broad place" (42x)
+    Desc: A public open area within a town or city, typically used in the plural to denote streets, lanes, or broad squares where people gather, trade, or travel.
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: and-in-the-streets-of, in-streets-of, in-the-streets | spa: En-las-calles, calles, de-las-calles | fra: dehors, et-dehors, streets | deu: Aussen, der-streets, draussen
+    Refs: 2Sam 1:20, 2Sam 22:43, 1Kgs 20:34, Ps 18:42, Ps 144:13
+  Sense 3: "open field, countryside" (2x)
+    Desc: Open rural areas outside settled habitation, such as fields or wilderness, contrasted with the enclosed city or camp.
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: and-the-fields, the-open-places | spa: campos, y-campos | fra: dehors, et-dehors | deu: Aussen, und-Aussen
+    Refs: Job 5:10, Prov 8:26
+  Sense 4: "?" (1x)
+    Domain: GEOGRAPHY_SPACE > Spacial Positions
+    Glosses: eng: apart-from | spa: fuera-de | fra: dehors | deu: Aussen
+    Refs: Eccl 2:25

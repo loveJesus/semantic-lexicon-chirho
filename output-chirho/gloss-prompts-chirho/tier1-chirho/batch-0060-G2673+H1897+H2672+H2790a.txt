@@ -1,0 +1,143 @@
+You are a biblical lexicographer composing glosses for a digital lexicon.
+For each lemma below, compose a JSON object. Separate objects with "---".
+
+Format for each:
+{
+  "lemma_id": "...",
+  "gloss_terse": "under 120 chars, concise definition covering the word's semantic range",
+  "gloss_readable": "2-5 sentences, 40-120 words. Don't start with 'This word'. Warm study-Bible footnote tone. Engaging, not dry.",
+  "senses": {
+    "1": "enriched 20-60 word description. Reference multilingual evidence when illuminating. Don't repeat the label verbatim.",
+    "2": "..."
+  }
+}
+
+Rules:
+- No markdown fences, just JSON objects separated by ---
+- Reference multilingual evidence naturally when it reveals something
+- gloss_readable should feel like a good study Bible footnote: helpful, clear, occasionally surprising
+- Each sense enrichment: how does the evidence support this sense? Mention 1-2 key passages when helpful.
+
+=== G2673 ===
+Language: Greek, POS: V-PPM/P-GMP, Occurrences: 27, Senses: 5
+
+BDB excerpt: καταργ-έω, leave unemployed or idle, Refs 5th c.BC+; κατηργηκέναι τοὺς καιρούς to have missed the opportunities, Refs 2nd c.BC+ make the ground useless, cumber it, NT __2 cause to be idle, hinder in one's work, LXX+1st c.AD+passive, LXX; to be rendered or lie idle, Refs 3rd c.AD+ __II make of no effect, NT.Rom.3.3,31, +others:—passive, to be abolished, cease, NT to be set free from.., NT; to be parted, Refs.
+Senses:
+  Sense 1: "abolish, bring to an end" (16x)
+    Desc: To cause something to cease to exist or to lose its power, rendering it obsolete or no longer operative.
+    Domain: EXISTENCE_STATE > Be, Become, Exist, Happen
+    Glosses: eng: He-abolishes, I-have-done-away-with, being-abolished | spa: aboliendo, anular, es-abolida | fra: abolir | deu: zunichtemachen
+    Refs: Rom 6:6, 1Cor 2:6, 1Cor 13:8, 1Cor 13:8, 1Cor 13:10
+  Sense 2: "nullify, invalidate" (5x)
+    Desc: To render something legally or effectively void, making it of no force or authority, as in nullifying a law or promise.
+    Domain: EXISTENCE_STATE > Be, Become, Exist, Happen
+    Glosses: eng: do-we-nullify, has-been-nullified, he-might-nullify | spa: anulamos, anulará, anule | fra: abolir | deu: zunichtemachen, καταργεῖ
+    Refs: Luke 13:7, Rom 3:3, Rom 3:31, Rom 4:14, 1Cor 1:28
+  Sense 3: "destroy, bring to nothing" (3x)
+    Desc: To utterly overthrow or annihilate an opposing power, enemy, or force, stronger than simple abolishing.
+    Domain: EXISTENCE_STATE > Be, Become, Exist, Happen
+    Glosses: eng: he-might-destroy, will-abolish, will-destroy | spa: anulará, destruirá, destruyera | fra: abolir | deu: zunichtemachen
+    Refs: 1Cor 6:13, 2Thess 2:8, Heb 2:14
+  Sense 4: "release, set free from" (2x)
+    Desc: To discharge or free someone from a binding obligation, law, or relationship so they are no longer bound.
+    Domain: EXISTENCE_STATE > Be, Become, Exist, Happen
+    Glosses: eng: she-has-been-released, we-were-released | spa: ha-sido-liberada, hemos-sido-liberados | fra: abolir | deu: zunichtemachen
+    Refs: Rom 7:2, Rom 7:6
+  Sense 5: "sever, estrange from" (1x)
+    Desc: To cut off or separate someone from a relationship or connection, resulting in alienation or estrangement.
+    Domain: EXISTENCE_STATE > Be, Become, Exist, Happen
+    Glosses: eng: you-were-severed | spa: fuisteis-abolidos | fra: abolir | deu: zunichtemachen
+    Refs: Gal 5:4
+
+=== H1897 ===
+Language: Hebrew, POS: V-Qal-Perf-1cs, Occurrences: 25, Senses: 5
+
+BDB excerpt: † I. הָגָה vb. moan, growl, utter, speak, muse (only poet.) (onomatop.; NH הָגָה muse, speak, spell a word, so Aramaic הֲגָא; ܗܓܳܐ muse, especially Ethpa.; Arabic هَجَا satirize, insult, scold, also spell (borrowed meaning))— Qal Perf. 2 ms. וְהָגִ֫יתָ consec. Jos 1:8; 1 s. הָגִ֫יתִי ψ 143:5, וְהָגִיתִי consec. ψ 77:13; Impf. יֶהְגֶּה Jb 27:4 + 8 times; 3 fs. תֶּהְגֶּה ψ 35:28 + 2 times, אֶהְגֶּה ψ 63:7 Is 38:14, יֶהְגּוּ ψ 2:1 + 2 times, תֶּהְגּוּ Is 16:7; נֶהְגֶּ֑ה Is 59:11; Inf. abs. הָגֹה Is 59:11;— 1. of inarticulate sounds: a. growl, of lion growling over prey, sq. על Is 31:4. b. groan, 
+Senses:
+  Sense 1: "meditate, muse on" (8x)
+    Desc: To reflect deeply or meditate, especially on God's word, law, or works, with connotations of quiet, sustained contemplation.
+    Domain: MENTAL_LIFE > Think
+    Glosses: eng: I-meditate, I-meditate-, and-I-will-meditate | spa: Y-meditaré, medita, meditará | fra: et-le-murmurer, et-tu-méditeras, le-murmurer | deu: [יהגה], sinnen, sinnt
+    Refs: Josh 1:8, Ps 1:2, Ps 63:6, Ps 77:12, Ps 143:5
+  Sense 2: "utter, speak, declare" (6x)
+    Desc: To speak forth, utter, or declare audibly, said of the tongue or mouth proclaiming truth or righteousness.
+    Domain: MENTAL_LIFE > Think
+    Glosses: eng: shall-utter, they-make-a-sound, utters | spa: emiten-sonido, medita, meditará | fra: murmurer, méditer | deu: [יהגה], sinnt, sinnt-
+    Refs: Job 27:4, Ps 35:28, Ps 37:30, Ps 71:24, Ps 115:7
+  Sense 3: "moan, groan like a dove" (5x)
+    Desc: To produce a low, plaintive sound expressing grief or lamentation, often compared to the cooing or moaning of a dove.
+    Domain: MENTAL_LIFE > Think
+    Glosses: eng: I-moan, he-moans, moaning | spa: arrullamos, arrullar, gemiré | fra: méditer | deu: sinnen
+    Refs: Isa 16:7, Isa 38:14, Isa 59:11, Isa 59:11, Jer 48:31
+  Sense 4: "mutter, plot, devise" (5x)
+    Desc: To murmur or mutter in a low voice, often with the connotation of scheming, plotting, or devising plans, as in the nations devising a vain thing.
+    Domain: MENTAL_LIFE > Think
+    Glosses: eng: and-the-muttering, and-uttering, do-meditate- | spa: meditan, murmura, traman- | fra: et-méditer, murmurer, méditer | deu: sinnen, sinnt, sinnt-
+    Refs: Ps 2:1, Ps 38:12, Isa 8:19, Isa 59:3, Isa 59:13
+  Sense 5: "growl, roar over prey" (1x)
+    Desc: To growl or roar, said of a lion rumbling over its prey, expressing a deep threatening sound.
+    Domain: MENTAL_LIFE > Think
+    Glosses: eng: growls | spa: ruge | fra: méditer | deu: sinnen
+    Refs: Isa 31:4
+
+=== H2672 ===
+Language: Hebrew, POS: Prep-l, Occurrences: 25, Senses: 5
+
+BDB excerpt: † [חָצַב], חָצֵב vb. hew, hew out, cleave (NH id., Aramaic חֲצַב; SI4.6 pt. pl. החצבם; cf. Ph. מחצב = Heb. id.)— Qal Pf. חָצֵב Is 5:2; חָֽצְבָה Pr 9:1; חָצַבְתִּי Ho 6:5, etc.; Impf. וַיַּחְצֹב 2 Ch 26:10; 2 ms. תַּחְצֹב Dt 8:9; Inf. cstr. לַחְצֹב Je 2:13; לַחְצוֹב 1 Ch 22:2; Pt. act. חֹצֵב Is 10:15 + 4 times; cstr. חֹצְבִי Is 22:16; חֹצְבִים 1 Ch 22:2 + 3 times; חֹצְבֵי 2 K 12:13; pass. חֲצוּבִים Dt 6:11 Ne 9:25;— 1. hew out, (dig), wine-vat יֶקֶב Is 5:2; sepulchre (קֶבֶר) Is 22:16(×2); cisterns בֹּרוֹת Dt 6:11(×2) 2 Ch 26:10; Ne 9:25, cf. Je 2:13; of mining מהרריה תַּח׳ נחשׁת Dt 8:9 out of i
+Senses:
+  Sense 1: "to hew, cut, dig into rock" (11x)
+    Desc: Qal active sense of cutting, hewing, or digging into stone or rock, including carving cisterns, tombs, or quarrying stone.
+    Domain: PHYSICAL_ACTION > Physical Impact
+    Glosses: eng: I-hewed, and-hewed, he-hewed | spa: cavaste, el-que-corta, el-que-labra | fra: et-tailler, tailler, tu-devra-dig | deu: [החצב], [ויחצב], [חצב]
+    Refs: Deut 6:11, Deut 8:9, 1Chr 22:2, 2Chr 26:10, Prov 9:1
+  Sense 2: "stonecutter, hewer of stone" (8x)
+    Desc: A person whose occupation is cutting or hewing stone, used as an agent noun in both singular and plural forms.
+    Domain: PHYSICAL_ACTION > Physical Impact
+    Glosses: eng: and-to-hewers-of, cutters, stonecutters | spa: a-los-canteros, canteros, cortadores | fra: cutters, et-à-hewers-de, tailler | deu: [חצב], [חצבים], [לחצבים]
+    Refs: 1Kgs 5:15, 2Kgs 12:12, 1Chr 22:2, 1Chr 22:15, 2Chr 2:2
+  Sense 3: "to be hewn or cut out" (4x)
+    Desc: Passive forms (Qal passive participle, Nifal, Pual) indicating something that has been hewn, carved, or cut out of rock.
+    Domain: PHYSICAL_ACTION > Physical Impact
+    Glosses: eng: be-engraved, hewn, you-were-hewn | spa: cavadas, fueran-esculpidas!, fuisteis-cortados | fra: hewn, tailler, יחצבון | deu: [חצבתם], [חצובים], [יחצבון]
+    Refs: Deut 6:11, Neh 9:25, Job 19:24, Isa 51:1
+  Sense 4: "to shatter, cut to pieces" (1x)
+    Desc: Hifil causative sense of cutting or shattering something violently, used of destructive cutting apart.
+    Domain: PHYSICAL_ACTION > Physical Impact
+    Glosses: eng: the-one-cutting | spa: la-que-despedazó | fra: tailler | deu: [המחצבת]
+    Refs: Isa 51:9
+  Sense 5: "to flash forth, cleave" (1x)
+    Desc: Figurative use of cutting applied to lightning flashing forth or cleaving the sky, as in Psalm 29:7.
+    Domain: PHYSICAL_ACTION > Physical Impact
+    Glosses: eng: flashes-forth | spa: que-corta | fra: tailler | deu: flashes-hervor
+    Refs: Ps 29:7
+
+=== H2790a ===
+Language: Hebrew, POS: V-Qal-Prtcpl-ms, Occurrences: 25, Senses: 5
+
+BDB excerpt: † I. [חָרַשׁ] vb. cut in, engrave, plough, devise (NH id., plough, so Ethiopic ሐረሰ Ph. חרש, Aramaic (rare) חֲרַת engrave, ܚܪܰܬ cleave, plough, Arabic حَرَثَ plough)— Qal Pf. חָֽרְשׁוּ ψ 129:3, חֲרַשְׁתֶּם Ju 14:18 Ho 10:13; Impf. יַחֲרֹשׁ Is 28:24 Pr 20:4; יַחֲרוֹשׁ Ho 10:11 + Am 6:12 (v. infr.); 2 ms. תַּחֲרֹשׁ Dt 22:10 Pr. 3:29; Inf. cstr. חֲרֹשׁ 1 S 8:12; Pt. חֹרֵשׁ Gn 4:22 + 5 times; חוֹרֵשׁ Am 9:13; pl. חֹרְשִׁים ψ 129:3, חֹרְשֵׁי Jb 4:8 + 3 times, fpl. abs. חֹרְשׁוֹת Jb 1:14; pass. חֲרוּשָׁה Je 17:1:— 1. cut in, engrave, of worker in metals ח׳ נְחֹשֶׁת וּבַרְזֶל Gn 4:22 (J), ח׳ נחשׁת 1 K
+Senses:
+  Sense 1: "to plow (Qal)" (15x)
+    Desc: To break up ground with a plow for agricultural purposes, including all Qal active forms referring to literal plowing of fields.
+    Domain: MENTAL_LIFE > Think
+    Glosses: eng: and-to-plow, does-one-plow, plowed | spa: ara, aradores, aradores-de | fra: [החרש], [יחרש], et-à-laboure | deu: [החרש], [חורש], [חרשות]
+    Refs: Deut 22:10, Judg 14:18, 1Sam 8:12, 1Kgs 19:19, Job 1:14
+  Sense 2: "to devise evil (Qal)" (6x)
+    Desc: To plan or contrive something, especially evil schemes, used metaphorically from the idea of plowing or working out a plan.
+    Domain: MENTAL_LIFE > Think
+    Glosses: eng: are-for-those-who-devise, devise, devising | spa: los-que-planean, los-que-traman, maquina | fra: labourer | deu: [חרש], [חרשי], [תחרש]
+    Refs: Prov 3:29, Prov 6:14, Prov 6:18, Prov 12:20, Prov 14:22
+  Sense 3: "to be plowed (Nifal)" (2x)
+    Desc: Passive form indicating that land will be or is being plowed, expressing the agricultural action in the passive voice.
+    Domain: GUIDANCE_CARE > Help, Care For
+    Glosses: eng: will-be-plowed | spa: será-arada | fra: [תחרש], se-taire | deu: [תחרש]
+    Refs: Jer 26:18, Mic 3:12
+  Sense 4: "to devise silently (Hifil)" (1x)
+    Desc: Causative stem used for secretly or silently devising or plotting, often with connotations of hidden scheming.
+    Domain: MENTAL_LIFE > Think
+    Glosses: eng: devising | spa: tramando | fra: devising | deu: devising
+    Refs: 1Sam 23:9
+  Sense 5: "engraved (Qal Passive)" (1x)
+    Desc: To be inscribed or carved into a surface, referring to the cutting or incising of marks, a distinct meaning from plowing or devising.
+    Domain: COMMUNICATION > Communication
+    Glosses: eng: engraved | spa: grabado | fra: [חרושה] | deu: [חרושה]
+    Refs: Jer 17:1

@@ -1,0 +1,144 @@
+You are a biblical lexicographer composing glosses for a digital lexicon.
+For each lemma below, compose a JSON object. Separate objects with "---".
+
+Format for each:
+{
+  "lemma_id": "...",
+  "gloss_terse": "under 120 chars, concise definition covering the word's semantic range",
+  "gloss_readable": "2-5 sentences, 40-120 words. Don't start with 'This word'. Warm study-Bible footnote tone. Engaging, not dry.",
+  "senses": {
+    "1": "enriched 20-60 word description. Reference multilingual evidence when illuminating. Don't repeat the label verbatim.",
+    "2": "..."
+  }
+}
+
+Rules:
+- No markdown fences, just JSON objects separated by ---
+- Reference multilingual evidence naturally when it reveals something
+- gloss_readable should feel like a good study Bible footnote: helpful, clear, occasionally surprising
+- Each sense enrichment: how does the evidence support this sense? Mention 1-2 key passages when helpful.
+
+=== G5293 ===
+Language: Greek, POS: V-RIM/P-3S, Occurrences: 38, Senses: 3
+
+BDB excerpt: ὑποτάσσω, Attic dialect ὑποτάττω, passive, future ὑποτᾰγήσομαι Refs 1st c.AD+aorist 2 ὑπετάγην [ᾰ] Refs 5th c.BC+, etc.:—place or arrange under, assign, τινί τι Refs 2nd c.BC+ —passive, τὸ ὑποτεταγμένον (i.e. ὀστέον) the inferior bone, i. e. the ulna, Refs 5th c.BC+ __II post in the shelter of, ὑποτάσσεσθαι τινι Refs 2nd c.AD+; draw up behind, Refs 2nd c.AD+ __II.2 subject, ἑαυτοὺς οὐδενί Refs 5th c.BC+; subdue, make subject, Θηβαΐδα Refs 1st c.BC+; ἔθνη NT+2nd c.AD+:—passive, to be obedient, τινι NT+1st c.AD+; ὑποτάξονται they will submit, Refs 1st c.AD+: absolutely, κοὐχ ὑποτᾰγεὶς ἐβάδιζεν ὥ
+Senses:
+  Sense 1: "submit oneself, be subject to" (23x)
+    Desc: To voluntarily place oneself under the authority of another or to be in a state of subordination, used in the middle voice for willing obedience or deference.
+    Domain: AUTHORITY_RULE > Control, Rule
+    Glosses: eng: Submit, are-subject, be-subject | spa: Someteos, a-sujetarse, nos-someteremos | fra: se-soumettre, soumettre | deu: unterwerfen, unterwirft-sich
+    Refs: Luke 2:51, Luke 10:17, Luke 10:20, Rom 8:7, Rom 10:3
+  Sense 2: "subject, subordinate (active causative)" (9x)
+    Desc: To place or put someone or something under the authority or control of another, used transitively with an agent who causes subjection.
+    Domain: AUTHORITY_RULE > Control, Rule
+    Glosses: eng: He-subjected, having-subjected, he-subjected | spa: que-sujetó, sometió, sujetar | fra: soumettre | deu: unterwerfen
+    Refs: Rom 8:20, 1Cor 15:27, 1Cor 15:27, 1Cor 15:28, Eph 1:22
+  Sense 3: "be subjected (divine passive)" (6x)
+    Desc: To be made subject or put into subjection by an external agent, often in the theological passive referring to God's eschatological subjection of all things under Christ.
+    Domain: AUTHORITY_RULE > Control, Rule
+    Glosses: eng: are-subjected, have-been-subjected, having-been-subjected | spa: fue-sujetada, habiéndosele-sometido, han-sido-sujetadas | fra: soumettre | deu: unterwerfen
+    Refs: Rom 8:20, 1Cor 15:27, 1Cor 15:28, 1Cor 15:28, Heb 2:8
+
+=== H0335 ===
+Language: Hebrew, POS: Conj-w | Interrog, Occurrences: 38, Senses: 3
+
+BDB excerpt: [אַי] (أَىٌّ, አይ in Syr. in cpds. as ܐܰܝܟܰܢ how? WSG 120–2; cf. As. aiu, who? what?). †1. interrog.adv. where? a. so with sf. אַיֶּ֫כָּה [a verbal form, v. Sta§ 355 b. 3] Gn 3:9; אַיּוֹ Ex 2:20, poet. where is he? = he is nowhere Jb 14:10; 20:7 (Je 37:19 rd. Qr אַיֵּה); אַיָּם Na 3:17 (in indirect qu.) and the place thereof is not known, אַיָּם where they are. Idiomatically, with the sf. anticipating the noun to which it refers (Ew§ 309 c, cf. DrSm i. 21, 14) 2 K 19:13 אַיּוֹ מֶלֶךְ־חֲמָת where is he, the king of Hamath? (‖ Is 37:13 אַיֵּה) Is 19:12 Mi 7:10. When used alone, or with other adve
+Senses:
+  Sense 1: "where? (interrogative of place)" (33x)
+    Desc: Interrogative particle asking about location, position, or source of origin — 'where?', 'from where?', 'whither?'
+    Domain: GEOGRAPHY_SPACE > Spacial Positions
+    Glosses: eng: and-where, from-where, where | spa: de-dónde, dónde, y-dónde | fra: [ואי], de-où, et-où? | deu: [אי], und-wo, von-wo
+    Refs: Gen 3:9, Gen 4:9, Gen 16:8, Deut 32:37, Judg 13:6
+  Sense 2: "which? what? (interrogative of selection)" (4x)
+    Desc: Interrogative particle asking for selection or identification among alternatives — 'which?', 'what?', 'from which?'
+    Domain: GEOGRAPHY_SPACE > Spacial Positions
+    Glosses: eng: from-where, what-, which | spa: cuál, de-qué, ¿Por-cuál | fra: de-où, lequel, où? | deu: von-wo, welcher, wo
+    Refs: 2Sam 15:2, 2Kgs 3:8, Eccl 2:3, Eccl 11:6
+  Sense 3: "how? (interrogative of manner)" (1x)
+    Desc: Interrogative particle asking about the manner or way in which something occurs — 'how?'
+    Domain: PROPERTIES_RELATIONS > Comparison
+    Glosses: eng: how | spa: ¿Cómo | fra: où | deu: [אי]
+    Refs: Jer 5:7
+
+=== H2132 ===
+Language: Hebrew, POS: N-ms, Occurrences: 38, Senses: 3
+
+BDB excerpt: † זַ֫יִת n.m. ψ 52:10 olive-tree, olive (NH id.; Aramaic ܙܰܝܬܳܐ, זֵיתָא; Ethiopic ዘይት Arabic زَيْتُونٌ olive-tree, olive, زَيْتٌ olive-oil; v. LagM iii. 215 ff. HomAufsätze. u. Abh., 1892, 94, 99 ff.; √ dub.; Thes and most der. from assumed זהה be bright, fresh, luxuriant (v. sub זִו) + ת afformat. which is then treated as radical, cf. Sta§ 187 a; but this not certain, cf. Ol§ 119 b. 142 a; according to LagArmen. Stud. § 1347; ז׳ is Armen. loan-word, v. also LagMl.c.; LagBN 219, Anm.);—abs. ז׳ Gn 8:11, cstr. זֵית Dt 8:8 2 K 18:32; sf. זֵיתְךָ Dt 24:20, זֵיתֶ֑ךָ Ex 23:11 Dt 28:40; pl. זֵיתִים D
+Senses:
+  Sense 1: "olive tree" (34x)
+    Desc: The olive tree (Olea europaea) as a cultivated plant, including singular and plural references, possessive forms, agricultural contexts, orchards/groves, and figurative comparisons to an olive tree.
+    Domain: PLANTS_AGRICULTURE > Plants
+    Glosses: eng: and-olive-trees, and-olives, like-an-olive-tree | spa: como-el-olivo, como-olivo, el-olivo | fra: [זית], comme-olivier, et-olive-arbres | deu: Oelbaeume, Oelbaum, [זית]
+    Refs: Gen 8:11, Exod 23:11, Exod 27:20, Exod 30:24, Lev 24:2
+  Sense 2: "Olives (in Mount of Olives)" (3x)
+    Desc: The word as used in the toponym 'Mount of Olives' (har ha-zetim), a well-known hill east of Jerusalem, where the plural form functions as part of a proper place name.
+    Domain: PLANTS_AGRICULTURE > Plants
+    Glosses: eng: the-Olives | spa: los-Olivos | fra: le-Olives, olivier | deu: [הזתים‪‬], der-Oelbaeume, der-Olives
+    Refs: 2Sam 15:30, Zech 14:4, Zech 14:4
+  Sense 3: "olive fruit" (1x)
+    Desc: The olive as a fruit or agricultural product, distinguished in some target languages (e.g., Spanish 'aceituna' vs 'olivo') from the tree itself.
+    Domain: PLANTS_AGRICULTURE > Plants
+    Glosses: eng: olive | spa: aceituna | fra: olivier | deu: Oelbaum
+    Refs: Mic 6:15
+
+=== H3637 ===
+Language: Hebrew, POS: V-Nifal-Perf-1cs, Occurrences: 38, Senses: 3
+
+BDB excerpt: † [כָּלַם] vb. only Niph. Hoph. be humiliated, Hiph. humiliate (NH Hiph., id.; Aramaic כְּלַם Aph. Ithpe.; Arabic كَلَمَ is wound; كَلَّمَ also speak to, converse with);— Niph. Pf. 2 fs. וְנִכְלַמְתְּ consec. Je 22:22 + 2 times; 1 s. גִכְלַמְתִּי Je 31:19; Ezr 9:6, נִכְלָ֑מְתִּי Is 50:7; 3 pl. נִכְלְמוּ Is 45:16 + 2 times; Impf. 3 fs. תִּכָּלֵם Nu 12:14; 2 fs. תִּכָּֽלְמִי Is 54:4; 3 mpl. יִכָּֽלְמוּ Is 41:11 + 5 times; 2 mpl. תִּכָּֽלְמוּ Is 45:17; Imv. mpl. הִכָּֽלְמוּ Ez 36:32; Inf. cstr. הִכָּלֵם Je 3:3; 8:12; Pt. נִכְלָם ψ 74:21; mpl. נִכְלָמִים 2 S 10:5 + 2 times; fpl. נִכְלָמוֹת Ez 16:2
+Senses:
+  Sense 1: "be ashamed, be disgraced (Nifal)" (25x)
+    Desc: In the Nifal stem, to experience shame or public disgrace, whether as an internal emotional state of being ashamed or as the condition of being publicly humiliated and disgraced.
+    Domain: EMOTION_ATTITUDE > Attitudes and Emotions
+    Glosses: eng: I-was-humiliated, and-be-disgraced, and-be-humiliated | spa: avergonzarte, fueron-humillados, fui-humillado | fra: [נכלמו], avoir-honte, elle-être-ashamed | deu: [והכלמו], [ויכלמו], [ונכלמת]
+    Refs: Num 12:14, 2Sam 10:5, 2Sam 19:3, 1Chr 19:5, 2Chr 30:15
+  Sense 2: "put to shame, humiliate (Hifil)" (10x)
+    Desc: In the Hifil stem, to cause shame or humiliation to another person, actively disgracing, insulting, or putting someone to shame.
+    Domain: EMOTION_ATTITUDE > Attitudes and Emotions
+    Glosses: eng: and-humiliated-us, feeling-shame, had-humiliated-him | spa: avergonzará, cuando-avergüence, la-avergüencen | fra: avait-humilia-lui, avoir-honte, avoir-honte-moi | deu: [יכלים], [מכלם], [תכלימוה]
+    Refs: Judg 18:7, Ruth 2:15, 1Sam 20:34, 1Sam 25:7, Job 11:3
+  Sense 3: "be humiliated by another (Hofal)" (3x)
+    Desc: In the Hofal stem (passive of Hifil), to be caused shame or humiliation by an external agent, emphasizing that the disgrace was inflicted rather than simply experienced.
+    Domain: EMOTION_ATTITUDE > Attitudes and Emotions
+    Glosses: eng: and-humiliated, we-were-shamed | spa: fuimos-avergonzados, y-se-humillaron, y-serás-humillada | fra: et-avoir-honte, nous-furent-shamed | deu: und-beschaemen, wir-waren-shamed
+    Refs: 1Sam 25:15, Jer 14:3, Jer 22:22
+
+=== H4405 ===
+Language: Hebrew, POS: N-fpc | 2ms, Occurrences: 38, Senses: 3
+
+BDB excerpt: † מִלָּה n.f. word, speech, utterance (poet., especially Jb; common in Aramaic);—מ׳ ψ 139:4 Jb 30:9; sf. מִלָּתִי Jb 13:17 + 3 times; מִלָּתוֹ 2 S 23:2; pl. מִלִּים Jb 6:26 + 9 times (all Jb); מִלִּין Jb 4:2 + 12 times (all Jb); pl. sf. מִלָּ֑י Jb 19:23 + 4 times; מִלֶּיךָ Jb 4:4 Pr 23:9; מִלֵּיהֶם ψ 19:5;—word בִּלְשׁוֹנִי in (on) my tongue ψ 139:4; word (of י׳), עַל־לְשׁוֹנִי on my tongue 2 S 23:2; שֵׂכֶל מ׳ Pr 23:9; fig. ψ 19:5 (‖ קַוָּם; but read קוֹלָם v. Che crit. n.); elsewhere only Jb (34 times); sg. speech, utterance Jb 13:17; 21:2; 24:25; 29:22; also word = by-word, וָאֱהִי לָהֶם לְמ
+Senses:
+  Sense 1: "word(s), utterance" (36x)
+    Desc: A word or collection of words spoken or written, the basic sense of millah as a unit of speech or communication.
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: my-words, words | spa: las-palabras, mi-palabra, mis-palabras | fra: mon-parole-moi, parole | deu: Wort, von-mir
+    Refs: 2Sam 23:2, Job 4:2, Job 4:4, Job 6:26, Job 8:10
+  Sense 2: "byword, proverb" (1x)
+    Desc: A proverbial saying or byword, a fixed expression used as a taunt or memorable maxim.
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: for-byword | spa: por-refrán | fra: à-parole | deu: Wort
+    Refs: Job 30:9
+  Sense 3: "speech, discourse" (1x)
+    Desc: Speech or discourse as a whole, emphasizing the act or manner of speaking rather than individual words.
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: my-speech | spa: mi-dicho | fra: mon-parole-moi | deu: Wort
+    Refs: Job 29:22
+
+=== H6467 ===
+Language: Hebrew, POS: N-msc | 3ms, Occurrences: 38, Senses: 3
+
+BDB excerpt: פֹּ֫עַל37 n.m. Pr 20:11 doing, deed, work (poet. and late, nearly = מַעֲשֶׂה);—פ׳ abs. Hb 1:1 ψ 44:2, cstr. Dt 33:11 +; sf. פָּעֳלוֹ 32:4 +, פֹּעֲלוֹ Is 1:31 (Köii. 1, 35, 493 Ges§ 93 q, v. infr.), Je 22:13; פָּעָלְכֶם Is 41:24, etc.; pl. פְּעָלִים; 2 S 23:20; 1 Ch 11:22;— 1. deed, thing done: a. of God, פָּעֳלוֹ his work in providence Dt 32:4; Is 5:12; Jb 36:24; in deliverance ψ 44:2 (as acc. cogn.), 77:13 + 5 times; in judgment 64:10; 95:9, as acc. cogn. Hb 1:5. b. of false gods Is 41:24. c. of men, daily toil Jb 24:5 ψ 104:23; specif. act Ru 2:12; פ׳ יָדָיו of sacrificing Dt 33:11; pl. of a
+Senses:
+  Sense 1: "deed, work, act" (35x)
+    Desc: An action, deed, or work performed by a person, often in the context of moral or divine evaluation of conduct.
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: His-work, Your-work, a-work | spa: es-su-obra, la-obra-de, obra | fra: actes, comme-son-œuvre-lui, et-œuvre | deu: Tat, Taten, [כפעלו]
+    Refs: Deut 32:4, Deut 33:11, Ruth 2:12, 2Sam 23:20, 1Chr 11:22
+  Sense 2: "wages, recompense" (2x)
+    Desc: Compensation or reward for labor, the payment due to a worker for services rendered.
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: and-wage-his, his-wages | spa: su-salario., y-salario-de-él | fra: et-œuvre, son-œuvre-lui | deu: [פעלו], und-Tat
+    Refs: Job 7:2, Jer 22:13
+  Sense 3: "?" (1x)
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: getting | spa: La-adquisición-de | fra: œuvre | deu: [פעל]
+    Refs: Prov 21:6

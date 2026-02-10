@@ -1,0 +1,115 @@
+You are a biblical lexicographer composing glosses for a digital lexicon.
+For each lemma below, compose a JSON object. Separate objects with "---".
+
+Format for each:
+{
+  "lemma_id": "...",
+  "gloss_terse": "under 120 chars, concise definition covering the word's semantic range",
+  "gloss_readable": "2-5 sentences, 40-120 words. Don't start with 'This word'. Warm study-Bible footnote tone. Engaging, not dry.",
+  "senses": {
+    "1": "enriched 20-60 word description. Reference multilingual evidence when illuminating. Don't repeat the label verbatim.",
+    "2": "..."
+  }
+}
+
+Rules:
+- No markdown fences, just JSON objects separated by ---
+- Reference multilingual evidence naturally when it reveals something
+- gloss_readable should feel like a good study Bible footnote: helpful, clear, occasionally surprising
+- Each sense enrichment: how does the evidence support this sense? Mention 1-2 key passages when helpful.
+
+=== G4383 ===
+Language: Greek, POS: N-DNS, Occurrences: 77, Senses: 2
+
+BDB excerpt: πρόσωπον, τό: plural πρόσωπα, Epic dialect (Aeolic dialect accusative to Refs 8th c.BC+ προσώπατα Refs 8th c.BC+:— face, countenance (compare μέτωπον), Refs 8th c.BC+ always in plural, even of a single person, Refs 8th c.BC+, and usually in later writers; π. κλιθὲν προσώπῳ Refs 5th c.BC+; ἐς π. τινὸς ἀφικέσθαι come before him,LXX+2nd c.BC+; κατὰ πρόσωπον in front, facing, Refs 5th c.BC+; κατὰ π. Αἰγύπτου facing, fronting Egypt, LXX; opposed to κατὰ νώτου, Refs 2nd c.BC+; κατὰ π. ἄγειν, opposed to κατὰ κέρας ὑπεραίρειν, Refs; κατὰ π. in person, ἡ κατὰ π. ἔντευξις Refs 1st c.AD+; κατὰ π. παραμυθ
+Senses:
+  Sense 1: "face, countenance" (75x)
+    Desc: The physical face or countenance of a person, angel, or creature, and by Semitic extension (reflecting Hebrew panim) the 'face' as presence or front surface. This is the dominant NT sense, covering li...
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: face, the-face | spa: rostro | fra: visage | deu: Angesicht
+    Refs: Matt 6:17, Matt 11:10, Matt 16:3, Matt 17:2, Matt 17:6
+  Sense 2: "person, outward appearance" (2x)
+    Desc: By metonymy, the 'face' standing for the person or their external appearance/status, used in contexts of partiality or personal regard. In 2 Cor 2:10, Paul forgives 'in the person (prosopo) of Christ,...
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: person, persons | spa: personas, presencia | fra: personnes,, visage | deu: Angesicht, Personen
+    Refs: 2Cor 2:10, Jude 1:16
+
+=== H3444 ===
+Language: Hebrew, POS: Prep-b | N-fsc | 1cs, Occurrences: 77, Senses: 2
+
+BDB excerpt: † יְשׁוּעָה n.f. salvation;—יְשׁ׳ ψ 119:155 + 18 times; יְשׁוּעָ֫תָה 3:3 Jon 2:10; יְשֻׁעָ֫תָה ψ 80:3; cstr. יְשׁוּעַת Ex 14:13 + 4 times; sf. יְשֻׁעָתִי Jb 30:15; יְשׁוּעָתִי ψ 62:2 + 12 times, + 25 times sfs.; pl. יְשׁוּעוֹת 2 S 22:51 + 6 times; יְשׁוּעֹת ψ 42:12 + 3 times; יְשֻׁעוֹת 53:7;— 1. welfare, prosperity: כעב עברה ישׁעתי Jb 30:15 as a cloud my prosperity passed away. 2. deliverance: והיתה לי לישׁועה and thou wilt be to me for deliverance 2 S 10:11 = 1 Ch 19:12. 3. salvation by God, primarily from external evils, but often with added spiritual idea: Gn 49:18 (poem), Is 33:2; 52:7, 10
+Senses:
+  Sense 1: "salvation, deliverance" (67x)
+    Desc: Divine rescue or deliverance from danger, distress, or enemies — the core meaning of yeshu'ah as God's saving act or the state of being saved.
+    Domain: DANGER_DELIVERANCE > Danger, Risk, Safe, Save
+    Glosses: eng: Salvation, in-Your-salvation, in-your-salvation | spa: Salvación, en-tu-salvación, la-salvacion | fra: dans-Ton-salut, dans-ton-salut, salut | deu: Heil, [ישועה], [ישועתה]
+    Refs: Exod 14:13, Exod 15:2, 1Sam 2:1, 2Chr 20:17, Job 13:16
+  Sense 2: "victories, acts of deliverance" (10x)
+    Desc: Concrete, repeated acts of divine deliverance or military victories, typically in the plural form (yeshu'ot), emphasizing God's mighty deeds of rescue throughout history.
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: giving, salvations, salvations-for | spa: salvaciones, salvaciones-de, salvación-de | fra: salut, salvations-de | deu: Heil, Heil-, salvations-von
+    Refs: 2Sam 22:51, Ps 18:50, Ps 28:8, Ps 42:5, Ps 42:11
+
+=== G1699 ===
+Language: Greek, POS: PPro-NN1P, Occurrences: 76, Senses: 2
+
+BDB excerpt: ἐμός, ή, όν, possessive pronoun of 1st pers.: (ἐγώ, ἐμοῦ):— mine; contraction with the Article, οὑμός, τοὐμόν, τοὐμοῦ, τὠμῷ, τἀμά, Trag. (not Comedy texts, τἀμὰ γὰρ διοίχεται is paratragoedia in Refs 5th c.BC+, rarely in Prose, οὑμός Refs 5th c.BC+; οὑμός even in Refs 8th c.BC+; and (accusative to some Grammars ) τὠμῷ Refs 8th c.BC+:—poetry ἀμός (which see): __I with a substantive: __I.1 subjectively, mine, of me, ἐμὰ δάκρυα Refs 8th c.BC+; χεῖρες ἐμαίRefs 8th c.BC+: with the Article, τὸν ἐμὸν χόλον Refs 8th c.BC+: in Poets sometimes joined with genitive, to strengthen the possessive notion, ἐ
+Senses:
+  Sense 1: "my (attributive possessive)" (63x)
+    Desc: First-person possessive pronoun used attributively to modify a noun, meaning 'my' or 'of me'.
+    Domain: DISCOURSE_NAMES > Discourse Referentials
+    Glosses: eng: My, mine, my | spa: Mi, mi, mía | fra: je | deu: ich, mein
+    Refs: Matt 20:23, Mark 10:40, Luke 22:19, John 3:29, John 4:34
+  Sense 2: "mine (substantive possessive)" (13x)
+    Desc: First-person possessive pronoun used substantively without a modified noun, meaning 'mine', 'what is mine', 'my things/people'.
+    Domain: DISCOURSE_NAMES > Discourse Referentials
+    Glosses: eng: mine, my, my-own | spa: mi, mías, mío | fra: de-moi, de-nous, moi | deu: mein, meiner, uns
+    Refs: Matt 20:15, Matt 25:27, Luke 15:31, John 10:14, John 10:14
+
+=== G3140 ===
+Language: Greek, POS: V-PPA-NFP, Occurrences: 76, Senses: 2
+
+BDB excerpt: μαρτῠρ-έω, future -ήσω Refs 5th c.BC+:—passive, future μαρτυρηθήσομαι Refs 4th c.BC+; μαρτυρήσομαι in passive sense, Refs 5th c.BC+aorist ἐμαρτυρήθην: perfect μεμαρτύρημαι Refs 5th c.BC+, used in active sense, LXX:—bear witness, give evidence:—Constr.: __1 absolutely, Refs 5th c.BC+ __2 with dative person, bear witness to or in favour of another, confirm what he says, Refs 5th c.BC+; μαρτυρέει μοι τῇ γνώμῃ, ὅτι.. bears witness to my opinion, that.., Refs 5th c.BC+; especially bear favourable witness to, give a good report of a person, Refs 3rd c.BC+; πάντες ἐμαρτύρουν αὐτῷ Refs 2nd c.AD+ __3 w
+Senses:
+  Sense 1: "testify, bear witness" (63x)
+    Desc: To give testimony or bear witness to something, actively declaring what one has seen, heard, or knows to be true.
+    Domain: COMMUNICATION > Communication
+    Glosses: eng: He-has-testified, I-testify, bore-witness | spa: Testifico, ha-testificado, testifica | fra: témoigner | deu: bezeugen, bezeugt
+    Refs: Matt 23:31, John 1:7, John 1:8, John 1:15, John 1:32
+  Sense 2: "be attested, receive testimony" (13x)
+    Desc: To be borne witness about, to be attested or spoken well of, where the subject is the one receiving or being the object of testimony rather than giving it.
+    Domain: COMMUNICATION > Communication
+    Glosses: eng: being-attested, being-testified-of, being-well-spoken-of | spa: dando-buen-testimonio, dando-testimonio, era-testificado | fra: témoigner | deu: bezeugen, bezeugt
+    Refs: Acts 6:3, Acts 10:22, Acts 16:2, Acts 22:12, Rom 3:21
+
+=== H1168a ===
+Language: Hebrew, POS: Art | N-proper-ms, Occurrences: 76, Senses: 2
+
+BDB excerpt: † I. בַּעַל166 n.m. owner, lord (Ph. בעל; Palm. id. husband Vog62 cf. BaeRel. 72 ff.; Assyrian bêlu l.c. DlGram. Gloss.; Arabic بعْلٌ husband etc., v. especially NöZMG 1886, 174, Sab. בעל CISiv. 1, 2)—Gn 20:3 + 92 times; sf. בַּעְלִי Ho 2:18; בַּעְלָהּ Dt 24:4 + 5 times; pl. בְּעָלִים Ju 2:11 + 17 times; cstr. בַּעֲלֵי Gn 14:13 + 27 times; sf. בְּעָלָיו Ex 21:29 + 14 times; בְּעָלֶיהָ Jb 31:39 + 2 times; בַּעְלֵיהֶן Est 1:17, 20;— I. 1. owner (often pl. c. sf. in sg. meaning): of ox Ex 21:28, 29(×2); 22:10, 11, 13, 14 (E); ב׳ הבור of pit Ex 21:34, 36 (E), of house Ex 22:7 (E) Ju 19:22, 23, deb
+Senses:
+  Sense 1: "Baal (the deity)" (54x)
+    Desc: The Canaanite storm deity Baal, referred to in the singular as the specific god whose worship rivaled YHWH worship in Israel and Judah.
+    Domain: RELIGIOUS_LIFE > Religious Activities
+    Glosses: eng: the-Baal | spa: el-Baal, ¡Oh-Baal | fra: le-Baal | deu: der-Baal
+    Refs: Judg 6:25, Judg 6:28, Judg 6:30, Judg 6:32, 1Kgs 16:31
+  Sense 2: "the Baals (cult manifestations)" (22x)
+    Desc: The plural 'Baalim' denoting the various local manifestations, cult images, or collective forms of Baal worship across Canaan, often cited in summary judgments of Israel's apostasy.
+    Domain: RELIGIOUS_LIFE > Religious Activities
+    Glosses: eng: by-the-Baal, for-the-Baalim, for-the-Baals | spa: los-Baales, los-baales, para-los-baales | fra: Baal, le-Baalim, le-Baals | deu: Baal, der-Baale, der-Baalim
+    Refs: Judg 2:11, Judg 3:7, Judg 8:33, Judg 10:6, Judg 10:10
+
+=== H4735 ===
+Language: Hebrew, POS: Conj-w, Occurrences: 76, Senses: 2
+
+BDB excerpt: מִקְנֶה76 n.m. Ex 10:26 cattle;—abs. מ׳ Gn 46:32 +; cstr. מִקְנֵה Gn 13:7 +; sf. מִקְנֵהוּ Gn 3:18 +, מִקְנֶיךָ Is 30:23 (Ges§ 93 ss), etc.; pl. sf. (but v. Köii. 112 f.) מִקְנַי Ex 17:3 +, מִקְנֵיכֶם Gn 47:16 +, etc.;— 1. cattle in gen., including cows, sheep, horses, asses, camels (any or all of them), as purchasable domestic animals, Gn 47:16(×2), 17(×2); Ex 9:3 + (J), 10:26 (E), Dt 3:19 (not in P), Jb 1:3 ψ 78:48 Je 9:9; 1 Ch 5:12 +; so prob. ישֵׁב אֹהֶל וּמִקְנֶה Gn 4:20 (J) of nomads, מִקְנֵה הַבְּהֵמָה Gn 47:18 (J). 2. specif. of cows, sheep, and goats in herds and flocks Gn 13:2 (J), 3
+Senses:
+  Sense 1: "livestock, cattle, herds" (70x)
+    Desc: Collective noun denoting domesticated animals — cattle, sheep, goats, donkeys — viewed as movable property; used in pastoral, sacrificial, plague, and enumeration contexts across all grammatical infle...
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: cattle, livestock, livestock-of | spa: el-ganado, ganado, ganado-de | fra: bétail, bétail-de, le-bétail | deu: Vieh, Vieh-von, Viehzucht
+    Refs: Gen 4:20, Gen 13:7, Gen 13:7, Gen 29:7, Gen 30:29
+  Sense 2: "acquisition, purchase, possession" (6x)
+    Desc: Abstract or commercial sense retaining the root meaning of q-n-h (to acquire): the act of purchasing, the price of acquisition, or property/possessions viewed as what has been acquired; distinguished ...
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: and-his-livestock, and-livestock-of-, and-possession-of | spa: Compra-de, posesión-de, su-ganado | fra: et-possession-de, et-son-troupeau-lui, et-troupeau | deu: Herden-, [ומקנה], [ומקנהו]
+    Refs: Gen 26:14, Gen 26:14, Gen 49:32, 2Chr 32:29, Job 1:3

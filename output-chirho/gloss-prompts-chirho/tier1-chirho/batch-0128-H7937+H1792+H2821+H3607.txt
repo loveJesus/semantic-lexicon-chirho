@@ -1,0 +1,123 @@
+You are a biblical lexicographer composing glosses for a digital lexicon.
+For each lemma below, compose a JSON object. Separate objects with "---".
+
+Format for each:
+{
+  "lemma_id": "...",
+  "gloss_terse": "under 120 chars, concise definition covering the word's semantic range",
+  "gloss_readable": "2-5 sentences, 40-120 words. Don't start with 'This word'. Warm study-Bible footnote tone. Engaging, not dry.",
+  "senses": {
+    "1": "enriched 20-60 word description. Reference multilingual evidence when illuminating. Don't repeat the label verbatim.",
+    "2": "..."
+  }
+}
+
+Rules:
+- No markdown fences, just JSON objects separated by ---
+- Reference multilingual evidence naturally when it reveals something
+- gloss_readable should feel like a good study Bible footnote: helpful, clear, occasionally surprising
+- Each sense enrichment: how does the evidence support this sense? Mention 1-2 key passages when helpful.
+
+=== H7937 ===
+Language: Hebrew, POS: V-Qal-Imperf-2fs, Occurrences: 19, Senses: 4
+
+BDB excerpt: † I. [שָׁכַר] vb. be, or become, drunk, drunken (NH id., der. spec. and deriv.; Ecclus 40:18, 20 שכר strong drink; Arabic سَكِرَ be drunken, also be full, سَكَرَ fill; Assyrian šikaru, = שֵׁכָר, šakkûru, drunken, perhaps also vb. šakâru; Ethiopic ሰክረ: Aramaic שִׁכְרָא, ܫܰܟܪܳܐ = שֵׁכָר, especially date-wine (Löw p. 125), cf. ܫܟܰܪ be drunken, usually (der. spec.) defile, deform, etc.; from שֵׁכָר, Egyptian ṯà-k-ï̥ra WMMAs. u. Eur. 102, Gk. σίκερα LewyFremdw. 81);— Qal Pf. 3 pl. שָֽׁכְרוּ Is 29:9; Impf. 3 ms. וַיִּשְׁכָּ֑ר Gn 9:21, 3 mpl. יִשְׁכָּר֑וּן Is 49:26, etc.; Imv. mpl. שִׁכְרוּ Je 25:27 
+Senses:
+  Sense 1: "become drunk, be intoxicated (Qal)" (9x)
+    Desc: The basic intransitive Qal sense of שָׁכַר: to become drunk, be in a state of intoxication from wine or strong drink, used across all Qal inflections including imperfect, imperative, perfect, consecut...
+    Domain: MORAL_QUALITY > Moral and Ethical Qualities
+    Glosses: eng: and-be-drunk, and-became-drunk, and-they-were-merry | spa: están-ebrios, para-embriagaros, se-embriadarán | fra: et-devint-drunk, et-enivrez-vous,, et-ils-étaient-merry | deu: [ושכרו], [לשכרה], [תשכרי]
+    Refs: Gen 9:21, Gen 43:34, Song 5:1, Isa 29:9, Isa 49:26
+  Sense 2: "make drunk, cause intoxication (Piel/Hifil)" (8x)
+    Desc: The factitive-causative sense of שָׁכַר in both Piel and Hifil stems: to make someone drunk or cause them to become intoxicated, with God or a human agent as subject acting upon others.
+    Domain: MORAL_QUALITY > Moral and Ethical Qualities
+    Glosses: eng: I-will-make-drunk, and-I-made-them-drunk, and-I-will-make-drunk | spa: emborrachando, embriagadlo, embriagando | fra: et-il-fit-lui-bu, et-s’enivrer, je-fera-faire-drunk | deu: [שכר], betrunken-sein, ich-wird-machen-drunk
+    Refs: Deut 32:42, 2Sam 11:13, Isa 63:6, Jer 48:26, Jer 51:7
+  Sense 3: "make oneself drunk (Hitpael)" (1x)
+    Desc: The reflexive Hitpael sense of שָׁכַר: to make oneself drunk or behave in a drunken manner, emphasizing the subject's own agency in becoming intoxicated.
+    Domain: MORAL_QUALITY > Moral and Ethical Qualities
+    Glosses: eng: will-you-be-drunk | spa: te-embriagarás | fra: fera-tu-être-bu | deu: wird-du-sein-getrunken
+    Refs: 1Sam 1:14
+  Sense 4: "drunk, intoxicated (adjectival)" (1x)
+    Desc: The adjectival use of שָׁכַר describing a state of being drunk, functioning as a predicate or attributive adjective rather than a finite verb.
+    Domain: MORAL_QUALITY > Moral and Ethical Qualities
+    Glosses: eng: and-drunk | spa: y-embriagada | fra: et-s’enivrer | deu: und-betrunken-sein
+    Refs: Isa 51:21
+
+=== H1792 ===
+Language: Hebrew, POS: Conj-w | V-Hitpael-ConjImperf-3mp, Occurrences: 18, Senses: 4
+
+BDB excerpt: † [דָּכָא] vb. crush, poet. (Assyrian dakû, crush, Muss-ArnoltHbr Oct. 1890, 66) not in Qal ;— Niph. Pt. נִדְכָּאִים Is 57:15;—crushed, fig. = contrite ones. Pi. Pf. דִּכָּא ψ 143:3; 2 ms. דִּבִּאתָ ψ 89:11; Impf. וִידַכֵּא ψ 72:4; 2 ms. תְּדַכֵּא Pr 22:22 (juss.); יְדַכְּאוּ ψ 94:5, תְּדַכְּאוּ Is 3:15; sf. וִידַכְּאֵנִי Jb 6:9, יְדַכְּאוּם Jb 4:19; 2 mpl. וּתְדַכּאוּנַּנִי Jb 19:2 (so Baer, v. his ed. p. 44, cf. Norzi); Inf. לְדַכֵּא La 3:34; sf. דַּכְּאוֹ Is 53:10;—crush, (fig.) c. acc. one’s life to the earth ψ 143:3, Egypt ψ 89:11 (cf. De Che; י׳ subj.), servant of Yahweh Is 53:10 (י׳ sub
+Senses:
+  Sense 1: "crush, shatter (active)" (10x)
+    Desc: To crush, break in pieces, or trample, used actively in the Piel stem of persons or things being destroyed or oppressed.
+    Domain: PHYSICAL_ACTION > Physical Impact
+    Glosses: eng: To-crush, and-crush, and-crush-me | spa: Al-aplastar, aplastaste, aplastes | fra: et-écraser, et-écraser-moi, écraser | deu: [דכאו], [וידכאני], [ותדכאונני]
+    Refs: Job 6:9, Job 19:2, Ps 72:4, Ps 89:10, Ps 94:5
+  Sense 2: "be crushed (passive)" (6x)
+    Desc: To be crushed, broken, or shattered, the passive (Pual/Hitpael) counterpart describing the state or process of being physically destroyed or oppressed.
+    Domain: PHYSICAL_ACTION > Physical Impact
+    Glosses: eng: and-are-crushed, and-they-are-crushed, are-crushed | spa: aplastados, eran-quebrantados., molido | fra: et-écraser, écraser, écraser-eux | deu: [וידכאו], [ידכא], [ידכאום]
+    Refs: Job 4:19, Job 5:4, Job 22:9, Job 34:25, Isa 19:10
+  Sense 3: "be humbled, brought low" (1x)
+    Desc: To be humbled or brought low, a figurative extension where the crushing is metaphorical abasement rather than physical destruction, reflected in distinct translation vocabulary across languages.
+    Domain: PHYSICAL_ACTION > Physical Impact
+    Glosses: eng: they-have-been-humbled | spa: fueron-humillados | fra: écraser | deu: [דכאו]
+    Refs: Jer 44:10
+  Sense 4: "contrite ones, the crushed" (1x)
+    Desc: Substantivized participle denoting those who are broken or contrite in spirit, a theologically significant sense referring to the spiritually humble or brokenhearted.
+    Domain: PHYSICAL_ACTION > Physical Impact
+    Glosses: eng: crushed-ones | spa: los-contritos | fra: écraser | deu: [נדכאים]
+    Refs: Isa 57:15
+
+=== H2821 ===
+Language: Hebrew, POS: V-Qal-Imperf-3fp, Occurrences: 18, Senses: 4
+
+BDB excerpt: † חָשַׁךְ vb. be, grow dark (NH id.; Aramaic חֲשַׁךְ, ܚܫܶܟ; Arabic حَسِكَ bear rancour, v. LagBN 30)— Qal Pf. ח׳ Is 5:30 + 4 times; וְחָֽשְׁכָה consec. Mi 3:6 (but v. infr.); חָֽשְׁכוּ La 5:17; וְחָֽשְׁכוּ consec. Ec 12:3; Impf. 3 fs. תֶּחְשַׁךְ Ec 12:2; וַתֶּחְשַׁךְ Ex 10:15; 3 mpl. יֶחְשְׁכוּ Jb 3:9; 3 fpl. תֶּחְשַׁכְנָה ψ 69:24;— 1. be, grow dark, אוֹר Is 5:30, cf. (fig.) Jb 18:6; הַשֶּׁמֶשׁ Is 13:16 (fig.); היום Ez 30:18 (where read חשׁך, for MT Baer חשׂך); Jb 3:9 (subj. כוכבים), cf. Ec 12:2 (subj. השׁמשׁ, האור, הירח, הכוכבים); impers. Mi 3:6 (si vera l.; but read prob. וַחֲשֵׁכָה, corresp
+Senses:
+  Sense 1: "become dark (light fails)" (10x)
+    Desc: Qal intransitive sense: of the sky, sun, day, or environment becoming dark or losing light, including cosmic and eschatological darkness.
+    Domain: NATURAL_WORLD > Physical Events and States
+    Glosses: eng: and-darkness, and-grow-dark, and-was-dark | spa: Oscurézcanse, Sean-oscurecidos, oscurecerá | fra: et-obscurcir, et-était-dark, obscurcir | deu: Finsternis, [וחשכה], [וחשכו]
+    Refs: Exod 10:15, Job 3:9, Job 18:6, Ps 69:23, Eccl 12:2
+  Sense 2: "cause darkness (Hifil)" (6x)
+    Desc: Hifil causative sense: to make dark, to bring about darkness, or to darken something, used of God or agents actively imposing darkness.
+    Domain: NATURAL_WORLD > Physical Events and States
+    Glosses: eng: and-I-will-darken, and-it-was-dark, darkening | spa: oscurece, oscurezca, y-oscureceré | fra: et-obscurcir, obscurcir | deu: [החשיך], [והחשכתי], [יחשך]
+    Refs: Job 38:2, Ps 105:28, Ps 139:12, Jer 13:16, Amos 5:8
+  Sense 3: "grow dim (of eyes)" (1x)
+    Desc: Qal intransitive sense: of eyes or vision growing dim, typically with age or grief, so that one can no longer see clearly.
+    Domain: NATURAL_WORLD > Physical Events and States
+    Glosses: eng: have-grown-dim | spa: se-han-oscurecido | fra: obscurcir | deu: [חשכו]
+    Refs: Lam 5:17
+  Sense 4: "become dark (of skin)" (1x)
+    Desc: Qal intransitive sense: of skin or bodily appearance turning dark or blackened, as from suffering, famine, or mourning.
+    Domain: NATURAL_WORLD > Physical Events and States
+    Glosses: eng: Darker | spa: Más-oscuro | fra: ténèbres | deu: Finsternis
+    Refs: Lam 4:8
+
+=== H3607 ===
+Language: Hebrew, POS: V-Qal-Perf-3cp, Occurrences: 18, Senses: 4
+
+BDB excerpt: † [כָּלָא] vb. shut up, restrain, withhold (NH id.; Aramaic כְּלָא, ܟܠܴܐ; Ethiopic ከልአ: restrain, hinder; Assyrian kâiû, id.; Arabic كَلَأَ protect Qor 21:43 cf. Ba ZMG 1887, 605 Anm. 4)— Qal Pf. 3 ms. sf. כְּלָאוֹ Je 32:3; 3 fs. כָּֽלְאָה Hg 1:10; 2 fs. sf. כְּלִתִ֫נִי 1 S 25:33; 1 s. כָּלִאתִי ψ 119:101; 3 pl. כָּֽלְאוּ Hg 1:10, כָּלוּ 1 S 6:10; Impf. 3 ms. יִכְלֶה Gn 23:6; 2 ms. תִּכְלָא ψ 40:12; 2 fs. תִּכְלָ֑אִי Is 43:6; 1 s. אֶכְלָא ψ 40:10; Imv. sf. כְּלָאֵם Nu 11:28; Inf. cstr. לִכְלוֹא Ec 8:8; Pt. pass. כָּלוּא Je 32:2, כָּלֻא ψ 88:9; (on the metapl. forms, as if from כלה, v. Ges § 75
+Senses:
+  Sense 1: "restrain, withhold, hold back" (10x)
+    Desc: To actively prevent, restrain, or withhold someone or something from proceeding or being given (Qal active sense).
+    Domain: AUTHORITY_RULE > Control, Rule
+    Glosses: eng: I-restrain, restrain-them, restrained-me | spa: detuve, encárcelalos:, me-impediste | fra: --withhold, [תכלאי], comme-retenir | deu: [כלאה], [כלאו], [לכלוא]
+    Refs: Gen 23:6, Num 11:28, 1Sam 25:33, Ps 40:9, Ps 40:11
+  Sense 2: "confine, shut up, imprison" (4x)
+    Desc: To physically enclose or imprison a person, shutting them in a confined space (Qal active and passive participle with focus on physical confinement).
+    Domain: AUTHORITY_RULE > Control, Rule
+    Glosses: eng: confined, confined-him, shut-in | spa: encerrado, encerraron, lo-encerró | fra: [כלאו], [כלוא], comme-ne...pas | deu: [כלאו], [כלוא], shut-in
+    Refs: 1Sam 6:10, Ps 88:8, Jer 32:2, Jer 32:3
+  Sense 3: "be restrained, cease" (3x)
+    Desc: To be held back or stopped, describing the passive cessation of rain, plague, or other forces (Nifal stem).
+    Domain: TIME > Aspect
+    Glosses: eng: and-was-restrained, and-were-held-back, and-were-restrained | spa: y-fue-detenida, y-fue-detenido, y-fueron-retenidas | fra: et-retenir, et-étaient-retint, et-était-retint | deu: [ויכלאו], und-waren-restrained, und-zurückgehalten-wurde
+    Refs: Gen 8:2, Exod 36:6, Ezek 31:15
+  Sense 4: "bring to an end, finish" (1x)
+    Desc: To bring something to completion or termination, an intensive or causative nuance of restraining to the point of ending (Piel stem).
+    Domain: PHYSICAL_ACTION > Perform, Do
+    Glosses: eng: to-restrain | spa: para-terminar | fra: pour-tout | deu: [לכלא]
+    Refs: Dan 9:24

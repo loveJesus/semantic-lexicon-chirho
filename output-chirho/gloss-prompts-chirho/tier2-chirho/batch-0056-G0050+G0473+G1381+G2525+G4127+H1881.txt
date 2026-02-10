@@ -1,0 +1,145 @@
+You are a biblical lexicographer composing glosses for a digital lexicon.
+For each lemma below, compose a JSON object. Separate objects with "---".
+
+Format for each:
+{
+  "lemma_id": "...",
+  "gloss_terse": "under 120 chars, concise definition covering the word's semantic range",
+  "gloss_readable": "2-5 sentences, 40-120 words. Don't start with 'This word'. Warm study-Bible footnote tone. Engaging, not dry.",
+  "senses": {
+    "1": "enriched 20-60 word description. Reference multilingual evidence when illuminating. Don't repeat the label verbatim.",
+    "2": "..."
+  }
+}
+
+Rules:
+- No markdown fences, just JSON objects separated by ---
+- Reference multilingual evidence naturally when it reveals something
+- gloss_readable should feel like a good study Bible footnote: helpful, clear, occasionally surprising
+- Each sense enrichment: how does the evidence support this sense? Mention 1-2 key passages when helpful.
+
+=== G0050 ===
+Language: Greek, POS: V-PPM/P-NMS, Occurrences: 22, Senses: 3
+
+BDB excerpt: ἀγνο-έω, Epic dialect ἀγνοι-, 3rd.pers.singular subjunctive ἀγνοιῇσιRefs 8th c.BC+: imperfect ἠγνόουνRefs 5th c.BC+: future ἀγνοήσωRefs 5th c.BC+: aorist ἠγνόησαRefs 5th c.BC+; Epic dialect ἠγνοίησαRefs 8th c.BC+, Epic dialect contraction 3rd.pers.singular ἀγνώσασκεRefs 8th c.BC+: perfect ἠγνόηκαRefs 5th c.BC+ —passive, future (of middle form) ἀγνοήσομαιRefs 4th c.BC+; ἀγνοηθήσομαι variant in Refs 2nd c.AD+aorist ἠγνοήθην, see below: perfect ἠγνόημαιRefs 5th c.BC+:—not to perceive or recognize; Refs 8th c.BC+ ost always in aorist, ἄνδρ᾽ ἀγνοιήσασ᾽ ὑλάειRefs 8th c.BC+; mostly with negative, οὐκ
+Senses:
+  Sense 1: "be ignorant of, not know" (19x)
+    Desc: To lack knowledge or understanding of something; to be unaware or uninformed (active voice, all inflections).
+    Domain: MENTAL_LIFE > Know
+    Glosses: eng: being-ignorant, did-not-understand, do-you-not-know | spa: desconociendo, ignora, ignoraban | fra: ignorer, ne-pas-savoir | deu: nicht-wissen, ἀγνοήσαντες, ἀγνοοῦντες
+    Refs: Mark 9:32, Luke 9:45, Acts 13:27, Acts 17:23, Rom 1:13
+  Sense 2: "be unknown, unrecognized" (2x)
+    Desc: To be not known or recognized by others; to remain unidentified or unfamiliar (middle/passive voice).
+    Domain: MENTAL_LIFE > Know
+    Glosses: eng: being-unknown, unknown | spa: desconocido, desconocidos | fra: ignorer, ne-pas-savoir | deu: nicht-wissen
+    Refs: 2Cor 6:9, Gal 1:22
+  Sense 3: "be disregarded, ignored" (1x)
+    Desc: To be willfully overlooked or treated as unimportant; to be dismissed or not acknowledged (middle/passive voice with nuance of willful neglect).
+    Domain: MENTAL_LIFE > Know
+    Glosses: eng: he-is-ignored | spa: es-ignorado | fra: ne-pas-savoir | deu: nicht-wissen
+    Refs: 1Cor 14:38
+
+=== G0473 ===
+Language: Greek, POS: Prep, Occurrences: 22, Senses: 3
+
+BDB excerpt: ἀντί, preposition governing genitive:—originally sense, over against. (Cf. Sanskrit ánti 'opposite', 'facing', Latin ante, etc.) __A USAGE: __A.I of Place, opposite, over against, formerly quoted from several places of Refs 8th c.BC+; so ἄντ᾽ Αἴαντος (i.e. ἄντα)Refs 8th c.BC+; but ἀντί is so used in Refs 5th c.BC+c-l68; αἱ ὀπαὶ αἱ γιγνόμεναι ἀ. τόρμων mortises facing tenons, Refs 2nd c.BC+; ἀντὶ μαιτύρων in the presence of witnesses, Refs 4th c.BC+ __A.II of Time, ἀντὶ νυκτός the same night, Refs; ἀντὶ ϝέτεοςRefs 1st c.BC+; ἀνθ᾽ ἡμέρας· δι᾽ ὅλης τῆς ἡμέρας, Refs 5th c.AD+; compare ἀντετοῦς. __
+Senses:
+  Sense 1: "instead of / in exchange for" (16x)
+    Desc: The primary substitutionary and exchange sense of the preposition ἀντί with genitive: 'instead of,' 'in place of,' 'in return for.' In Matt 2:22 Archelaus reigns 'instead of' (ἀντί) his father Herod. ...
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: because, for, for- | spa: en-lugar-de, por, por-lo-cual | fra: au-lieu-de, au-lieu-de- | deu: anstatt, anstatt-
+    Refs: Matt 2:22, Matt 5:38, Matt 5:38, Matt 17:27, Matt 20:28
+  Sense 2: "because / for the reason that" (5x)
+    Desc: Causal use of ἀντί, especially in the construction ἀνθ' ὧν ('because,' lit. 'in return for which'). In Luke 1:20 Zechariah is struck mute 'because' (ἀνθ' ὧν) he did not believe the angel's words. In L...
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: because, because-of-which, for-this-reason | spa: Por, en-lugar-de, en-lugar-de- | fra: au-lieu-de, au-lieu-de- | deu: anstatt, anstatt-
+    Refs: Luke 1:20, Luke 19:44, Acts 12:23, Eph 5:31, 2Thess 2:10
+  Sense 3: "upon / added to (accumulation)" (1x)
+    Desc: A rare accumulative or successive sense of ἀντί, meaning 'upon' or 'added to,' found in John 1:16: from Christ's fullness we have all received 'grace upon (ἀντί) grace' (χάριν ἀντὶ χάριτος), signifyin...
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: upon | spa: en-lugar-de | fra: au-lieu-de | deu: anstatt-
+    Refs: John 1:16
+
+=== G1381 ===
+Language: Greek, POS: V-PMM/P-3P, Occurrences: 22, Senses: 3
+
+BDB excerpt: δοκῐμάζω, (δόκιμος) assay, test, πορφύραν καὶ χρυσόν Refs 5th c.BC+:—middle, prove for oneself, choose, χώραν Refs 5th c.BC+:— passive, ἐπειδὰν τὸ ἔργον.. δοκιμασθῇ Refs __2 of persons, δ. αὐτούς put them to the test, make trial of them, Refs 5th c.BC+; also of Apis-bulls, Refs 5th c.BC+ __II approve, sanction, μετὰ δεδοκιμασμένου [λόγου] μὴ ξυνέπεσθαι Refs 5th c.BC+infinitive, ἐκπονεῖν ἐδοκίμαζε he approved of their working, Refs 5th c.BC+ __II.2 as a political term, __II.2.a approve after scrutiny as fit for an office, Refs 5th c.BC+:—passive, to be approved as fit, Refs 5th c.BC+; μου δοκιμ
+Senses:
+  Sense 1: "test, examine, prove" (12x)
+    Desc: To put to the test, examine, or prove the genuineness or quality of something or someone, including passive uses of being tested.
+    Domain: MENTAL_LIFE > Learn
+    Glosses: eng: being-tested, let-be-tested, let-examine | spa: Examínese, a-probarlas, examinad | fra: éprouver | deu: pruefen, prüft
+    Refs: Luke 14:19, 1Cor 3:13, 1Cor 11:28, 2Cor 8:8, 2Cor 8:22
+  Sense 2: "discern, interpret, distinguish" (5x)
+    Desc: To discern or interpret the true nature or significance of something, to distinguish and evaluate what is right or fitting.
+    Domain: MENTAL_LIFE > Learn
+    Glosses: eng: approve, testing, to-interpret | spa: apruebas, discernir, examinando | fra: éprouver | deu: pruefen, prüft
+    Refs: Luke 12:56, Luke 12:56, Rom 2:18, Rom 12:2, Eph 5:10
+  Sense 3: "approve, accept as worthy" (5x)
+    Desc: To approve or accept as proven and worthy after examination, to regard as meeting the standard required.
+    Domain: MENTAL_LIFE > Learn
+    Glosses: eng: he-approves, they-approved, to-approve | spa: aprobar, aprobareis, aprobaron | fra: éprouver | deu: pruefen
+    Refs: Rom 1:28, Rom 14:22, 1Cor 16:3, Phil 1:10, 1Thess 2:4
+
+=== G2525 ===
+Language: Greek, POS: V-AIA-2S, Occurrences: 22, Senses: 3
+
+BDB excerpt: καθίστημι, __A in causal sense:—active, in present, imperfect, future, and perfect καθέστᾰκα LXX+4th c.BC+: pluperfect -εστάκειRefs 2nd c.AD+:—also in middle, future Refs 2nd c.AD+, aorist 1, more rarely present (below Refs 4th c.BC+:—set down, κρητῆρα καθίστα Refs 8th c.BC+; νῆα κατάστησον bring it to land, Refs 8th c.BC+; κ. δίφρους place, station them, before starting for the race, Refs 5th c.BC+; ποῖ [δεῖ] καθιστάναι πόδ; Refs 5th c.BC+; set up, erect, of stones, Refs —middle, [λαῖφος] κατεστήσαντο βοεῦσι steadied it, Refs __A.2 bring down to a place, τούς μ᾽ ἐκέλευσα Πύλονδε καταστῆσαι Re
+Senses:
+  Sense 1: "appoint or constitute" (20x)
+    Desc: To appoint, set, or constitute someone in a role, office, or position of authority, whether actively designating or passively being designated.
+    Domain: PROPERTIES_RELATIONS > Ready, Prepared
+    Glosses: eng: I-will-appoint, appointed, appoints | spa: constituye, constituyó, es-constituido | fra: établir | deu: einsetzen, setzt-ein
+    Refs: Matt 24:45, Matt 24:47, Matt 25:21, Matt 25:23, Luke 12:14
+  Sense 2: "conduct or escort" (1x)
+    Desc: To conduct, lead, or bring someone to a destination, referring to physical accompaniment or guidance along a journey.
+    Domain: PROPERTIES_RELATIONS > Ready, Prepared
+    Glosses: eng: conducting | spa: que-conducían | fra: établir | deu: setzt-ein
+    Refs: Acts 17:15
+  Sense 3: "be set or established in place" (1x)
+    Desc: To be set, placed, or situated in a position or location, emphasizing establishment or placement rather than appointment to a role.
+    Domain: PROPERTIES_RELATIONS > Ready, Prepared
+    Glosses: eng: is-set | spa: se-constituye | fra: établir | deu: einsetzen
+    Refs: Jas 3:6
+
+=== G4127 ===
+Language: Greek, POS: N-AFP, Occurrences: 22, Senses: 3
+
+BDB excerpt: πληγ-ή, Doric dialect πλᾱγά, ἡ, (πλήσσω) blow, stroke, πεπληγὼν πληγῇσιν Refs 8th c.BC+: frequently joined with Verbs of cognate signification, πέπληγμαι καιρίαν πληγήν Refs 5th c.BC+; τύπτεσθαι τῇ δημοσίᾳ μάστιγι ν πληγάς Legal cited in Refs 5th c.BC+ is frequently omitted, τρίτην ἐπενδίδωμι NT+5th c.BC+; καιρίῃ (i.e. πληγῇ) τετύφθαι Refs 5th c.BC+; π. ἐμβαλεῖν, ἐντείνειν τινί, Refs 5th c.BC+; πληγαῖς ζημιοῦν, κολάζειν, Refs 5th c.BC+; πληγῆς ἄρχειν strike the first blow, Refs 5th c.BC+; τὰς π. στέγειν, of the shell of a tortoise, Refs 5th c.BC+ __2 stroke by lightning, Refs 8th c.BC+; πλαγαὶ
+Senses:
+  Sense 1: "plague, divine calamity" (13x)
+    Desc: A plague or divine affliction sent as judgment, especially the catastrophic plagues in the book of Revelation poured out upon the earth (Rev 9:18,20, 11:6, 15:1,6,8, 16:9,21, 18:4,8, 21:9, 22:18).
+    Domain: BODY_HEALTH > Physiological Processes and States
+    Glosses: eng: plague, plagues | spa: plaga, plagas | fra: coup | deu: Plagen
+    Refs: Rev 9:18, Rev 9:20, Rev 11:6, Rev 15:1, Rev 15:6
+  Sense 2: "blow, beating, stripe" (6x)
+    Desc: A physical blow, beating, or stripe inflicted by humans, as in flogging or assault (Luke 10:30, 12:48, Acts 16:23,33, 2 Cor 6:5, 11:23).
+    Domain: BODY_HEALTH > Physiological Processes and States
+    Glosses: eng: beatings, blows, of-blows | spa: azotes, de-azotes, golpes | fra: coup | deu: Plagen, πληγὰς, πληγῶν
+    Refs: Luke 10:30, Luke 12:48, Acts 16:23, Acts 16:33, 2Cor 6:5
+  Sense 3: "wound, mortal wound" (3x)
+    Desc: A wound or fatal injury inflicted on a person or beast, particularly the mortal wound of the beast in Revelation (Rev 13:3,12,14).
+    Domain: BODY_HEALTH > Physiological Processes and States
+    Glosses: eng: wound | spa: herida | fra: coup | deu: Plagen
+    Refs: Rev 13:3, Rev 13:12, Rev 13:14
+
+=== H1881 ===
+Language: Hebrew, POS: Prep-k | N-fs, Occurrences: 22, Senses: 3
+
+BDB excerpt: † דָּת n.f. Est 3:15; 4:11; decree, law, usage, only in Persian period (Biblical Aramaic NH id., Syriac ܕܰܬܳܐ or ܕܳܬܳܐ Pers. loan-w., Old Pers. dâta, law, SpiegAPK 225)—ד׳ abs. Est 1:8 + 9 times; cstr. דַּת Est 2:12, דָּת 9:13; sf. דָּתוֹ Est 2:8 + 4 times; pl. cstr. דָּתֵי Ezr 8:36 + 2 times; sf. דָּתֵיהֶם Est 3:8;— 1. decree, edict, commission of Pers. king Ezr 8:36 (word elsewhere only in Est) Est 2:8 (‖ דְּבַר הַמֶּלֶךְ), 4:3 (‖ id.) 8:17 (‖ id.) 9:1 (‖ id.; c. עשׂה execute) cf. also 9:13; c. vb. נָתַן 3:14, 15; 8:13, 14; 9:14; written כְּתָב־הַדָּת 4:8 (cf. 3:14; 8:13). 2. law, permanentl
+Senses:
+  Sense 1: "law, regulation, statute" (19x)
+    Desc: A binding legal rule or established regulation, often referring to the laws of a kingdom or people (Persian loanword used in late biblical texts, especially Esther and Ezra-Daniel).
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: according-to-law, according-to-law-of, and-his-law | spa: Según-ley, conforme-a-ley-de, decreto | fra: décret, et-décret, loi | deu: Gesetz, und-Gesetz, und-der-Gesetz
+    Refs: Deut 33:2, Esth 1:8, Esth 1:13, Esth 1:15, Esth 1:19
+  Sense 2: "royal decree, edict" (2x)
+    Desc: An official pronouncement or command issued by a king or governing authority, emphasizing the act of issuing rather than the ongoing legal force.
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: the-edicts-of, the-law | spa: el-decreto, los-decretos-de | fra: décret | deu: Gesetz, das-Gesetz
+    Refs: Ezra 8:36, Esth 4:8
+  Sense 3: "sentence, penalty, verdict" (1x)
+    Desc: A judicial determination or punishment decreed against a person, where the 'law' applied becomes a specific sentence or penalty.
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: his-law | spa: su-ley | fra: décret | deu: Gesetz
+    Refs: Esth 4:11

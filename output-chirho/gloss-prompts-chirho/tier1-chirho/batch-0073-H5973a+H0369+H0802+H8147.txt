@@ -1,0 +1,118 @@
+You are a biblical lexicographer composing glosses for a digital lexicon.
+For each lemma below, compose a JSON object. Separate objects with "---".
+
+Format for each:
+{
+  "lemma_id": "...",
+  "gloss_terse": "under 120 chars, concise definition covering the word's semantic range",
+  "gloss_readable": "2-5 sentences, 40-120 words. Don't start with 'This word'. Warm study-Bible footnote tone. Engaging, not dry.",
+  "senses": {
+    "1": "enriched 20-60 word description. Reference multilingual evidence when illuminating. Don't repeat the label verbatim.",
+    "2": "..."
+  }
+}
+
+Rules:
+- No markdown fences, just JSON objects separated by ---
+- Reference multilingual evidence naturally when it reveals something
+- gloss_readable should feel like a good study Bible footnote: helpful, clear, occasionally surprising
+- Each sense enrichment: how does the evidence support this sense? Mention 1-2 key passages when helpful.
+
+=== H5973a ===
+Language: Hebrew, POS: Prep | 3fs, Occurrences: 978, Senses: 4
+
+BDB excerpt: עִם prep. with (Aramaic עִם, ܥܰܡ, Sab. עם DHMEpigr. Denkm. 12 HomChrest. 51; cf. Arabic مَعَ, مَعْ (but v. PrätBAS. i. 26)), sf. עִמִּי46 and עִמָּדִי45 (prob. akin to Arabic عِنْدٌ side, عِنْدَ beside: cf. √ ענד), without difference of meaning (עמי in Pent. Gn 31:31; 39:7, 12, 14; Ex 33:12 Lv 26:21, 23, 27, 40 [H] Nu 22:19; Jos-K. 13 times; ψ 42:9; 86:17; Jb 10:17; Ru 1:11; Est 7:8; in Dn 7 times, Ezr Ne Ch 11 times: עמדי in Pent. Gn [JE] 14 times, Ex 17:2; Lv 25:23; Dt 5:28; 32:34, 39; Ju S 7 times; ψ 23:4; 50:11; 50:19; 101:6; Jb 14 times, Ru 1:8); עִמְּךָ, †עִמְּכָה 1 S 1:26, עִמָּ֑ךְ; עִמ
+Senses:
+  Sense 1: "accompaniment, together with" (956x)
+    Desc: Comitative sense expressing accompaniment, association, or being in the company of someone, the dominant meaning of the preposition עִם across all pronominal suffix forms and with or without conjuncti...
+    Domain: GROUPS_COMMUNITY > Association
+    Glosses: eng: with, with- | spa: con, con- | fra: avec, avec- | deu: bei, bei-, mit
+    Refs: Gen 18:23, Gen 18:25, Gen 21:10, Gen 21:10, Gen 22:5
+  Sense 2: "spatial proximity, beside" (15x)
+    Desc: Locative sense indicating physical nearness or proximity, rendered 'near, beside, at, by' in English and عِنْدَ / بِجانِب in Arabic, junto a / cerca de in Spanish, and karibu na in Swahili.
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: at, beside, beside- | spa: cerca-de, con, con- | fra: avec, avec-, est-près- | deu: Volk, bei, bei-
+    Refs: Gen 25:11, Gen 35:4, Josh 7:2, Judg 9:6, Judg 18:3
+  Sense 3: "adversative, against" (6x)
+    Desc: Adversative sense where עִם denotes opposition or hostility rather than accompaniment, translated 'against' (Arabic ضِدَّ / عَلَى, Swahili dhidi ya).
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: against, with | spa: con-, contra | fra: avec, peuple | deu: gegen-mit, mit
+    Refs: Deut 9:7, Deut 9:24, Deut 31:27, Ps 89:38, Ps 94:16
+  Sense 4: "possession, in custody of" (1x)
+    Desc: Possessive or existential sense indicating that something is 'with' someone in the sense of being in their possession or at their disposal, akin to French chez or Arabic عِنْدَنَا meaning 'we have'.
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: is-with-us | spa: con-nosotros | fra: est-avec-nous | deu: bei-uns
+    Refs: Gen 24:25
+
+=== H0369 ===
+Language: Hebrew, POS: Adv, Occurrences: 790, Senses: 4
+
+BDB excerpt: II. אַ֫יִן, אָ֑֫יִן cstr. אֵין subst. proposes nothing, nought (Moab. אן, As. iûnu). 1. †Is 40:23 הַנּוֹתֵן רוֹזְנִים לְאָ֑יִן who bringeth princes to nothing; †כְּאַיִן as nothing, ib. 40:17; 41:11, 12 Hg 2:3 ψ 39:6; almost (‖ כִּמְעַט) ψ 73:2; †מֵאַיִן of nothing Is 41:24. 2. cstr. אֵין, very freq. as particle of negation, is not, are not, was not, were not, etc. (corresp. to the affirm. יֵשׁ q.v. Similar in usage, though not etym. akin, are لَيْسَ, לַיִת, ܠܰܝܬ, አልቦ), proposes ‘there is nought of …’ sq. a subst. or a pron. suffix (אֵינֶנִּי [verbal form, Ges§ 100, 5; 152, 1 c], אֵינְךָ, אֵינ
+Senses:
+  Sense 1: "existential negation: there is not" (738x)
+    Desc: Core sense of non-existence: 'there is not, there is no (one/thing)' — including all person/number inflections (1cs, 2ms, 2fs, 2mp, 3ms, 3fs, 3mp) and with/without conjunctive waw; Arabic consistently...
+    Domain: PROPERTIES_RELATIONS > Affirmation, Negation
+    Glosses: eng: none, nothing, there-is-no | spa: no, no-está, no-hay | fra: aucun, là-est-aucun, là-est-ne-pas | deu: dort-ist-keiner, dort-ist-nein, dort-ist-nicht
+    Refs: Gen 19:31, Gen 20:11, Gen 31:50, Gen 40:8, Gen 41:15
+  Sense 2: "privative: without, for lack of" (37x)
+    Desc: Prepositional/adverbial sense meaning 'without, in the absence of, for lack of' — often with prefixed מִן (min-ayin) or בְּ (be-ayin) or לְ (le-ayin); Arabic uses distinctly privative prepositions بِل...
+    Domain: PROPERTIES_RELATIONS > Relations
+    Glosses: eng: without | spa: sin, sin- | fra: de-il-n’y-a-pas, il-n'y-a-pas, il-n’y-a-pas | deu: es-ist-nicht, ohne, ohne-kein
+    Refs: Exod 21:11, 2Chr 14:11, 2Chr 14:13, Neh 8:10, Ps 32:9
+  Sense 3: "?" (9x)
+    Domain: PROPERTIES_RELATIONS > Affirmation, Negation
+    Glosses: eng: not | spa: no, no-hay, no? | fra: ne-pas, pas | deu: nicht
+    Refs: Exod 17:7, Exod 32:18, Exod 32:32, Exod 33:15, Num 13:20
+  Sense 4: "?" (6x)
+    Domain: PROPERTIES_RELATIONS > Affirmation, Negation
+    Glosses: eng: almost, are-as-nothing, as-nothing | spa: como-nada | fra: comme-il-n'y-a-pas, comme-il-n’y-a-pas | deu: kein, wie-es-ist-nicht
+    Refs: Ps 39:5, Ps 73:2, Isa 40:17, Isa 41:11, Isa 41:12
+
+=== H0802 ===
+Language: Hebrew, POS: Conj-w | N-fs, Occurrences: 781, Senses: 4
+
+BDB excerpt: אִשָּׁה775 n.f. woman, wife, female (Arabic أُنْثَى, Sab. אנתֿת etc. DHMZK 1884, 360, Aramaic אִתְּתָא, אִנְתְּתָא, אִתָּא, ܐܰܢ̱ܬܬܴܐ, Palm. Nab. אנתתא, Ethiopic አንስት Ph. אשת, Assyrian aššatu COTGloss)—א׳ abs. Gn 2:23 +; cstr. אֵשֶׁת Gn 11:29 + (appar. abs. Dt 21:11; 1 S 28:7 ψ 58:9 but cf. Bö§ 728 Ges§ 130, 5); sf. אִשְׁתִּי Gn 20:11 +; אִשְׁתְּךָ Gn 12:18 + (אֶשְׁתְּךָ ψ 128:3), etc.; Pl. †אִשֹּׁת Ez 23:44 (Co לעשׂות); נָשִׁים Gn 4:19 +; cstr. נְשֵׁי Gn 4:23 +; sf. נָשַׁי Gn 30:26; 1 K 20:7; נְשֵׁיכֶם Ex 22:23 +, etc.;— 1. woman Gn 3:1, 2; 12:11 +; opp. man 2:22, 23 Ex 35:29; 36:6; Dt 17:2, 5
+Senses:
+  Sense 1: "woman, female person" (519x)
+    Desc: A female human being, without specific reference to marital status; used generically for any woman or group of women.
+    Domain: PEOPLE_KINSHIP > People
+    Glosses: eng: a-woman, woman | spa: Mujer, mujer, mujer-de | fra: femme, une-femme | deu: Frau, ein-Frau, eine-Frau
+    Refs: Gen 2:23, Gen 12:11, Exod 2:7, Exod 3:22, Exod 19:15
+  Sense 2: "wife, spouse" (255x)
+    Desc: A woman in her capacity as a married partner; used in construct with possessive suffixes or in contexts clearly denoting a marital relationship.
+    Domain: PEOPLE_KINSHIP > People
+    Glosses: eng: his-wife | spa: mujer-de-él, su-esposa, su-mujer | fra: sa-femme, son-femme | deu: sein-Ehefrau, sein-wife, seine-Frau
+    Refs: Gen 12:5, Gen 12:11, Gen 12:12, Gen 12:20, Gen 19:16
+  Sense 3: "?" (5x)
+    Domain: QUANTITY_NUMBER > Number
+    Glosses: eng: each-woman | spa: una | fra: chaque-femme | deu: jeder-Frau
+    Refs: Exod 26:3, Exod 26:3, Exod 26:5, Exod 26:6, Exod 26:17
+  Sense 4: "?" (2x)
+    Domain: PEOPLE_KINSHIP > People
+    Glosses: eng: and-his-mate | spa: y-su-hembra | fra: et-son-mate | deu: und-sein-Weibchen
+    Refs: Gen 7:2, Gen 7:2
+
+=== H8147 ===
+Language: Hebrew, POS: Prep-m | Number-fdc, Occurrences: 769, Senses: 4
+
+BDB excerpt: שְׁנַ֫יִם, שְׁתַּיִם (PhilipiZMG xlix (1895), 202 Ges§ 97b note)768 n.m. et f.du. two (NH id.; Ph. אשנם (and שני second), Pun. שנם Lzb380; Arabic اِثنَانِ; Sab. תֿני HomChr 47, Aramaic תְּרֵין, ܬܪܶܝܢ (תִּנְיָנָא, ܬܶܢܝܳܢܳܐ second); Nab. תרין, Palm. f. תרתן, תרתיא, Lzb388; Assyrian šinâ; on etym v. √, and especially PhilippiZMG xxxii (1878), 21–98);—m. (c. n.m.) שְׁנַיִם Am 3:3 +; cstr. שְׁנֵ�� Is 7:16 +, sf. שְׁנֵיהֶם Gn 2:25 +, etc.; f. (c. n.f.) שְׁתַּיִם Am 4:8 +; cstr. שְׁתֵּי Gn 4:19, וּשְׁתֵּי Is 7:21 +, etc., מִשְּׁתֵֿי Ju 16:28 (v. GFM); sfs. v. infr. (2 + 10 = 12, v. infr.); Hex chiefl
+Senses:
+  Sense 1: "cardinal number two" (666x)
+    Desc: The basic cardinal numeral 'two', used with various prepositions, conjunctions, and in construct chains to count pairs of persons, things, or units.
+    Domain: QUANTITY_NUMBER > Number
+    Glosses: eng: two | spa: dos | fra: deux | deu: und-zwei, zwei
+    Refs: Gen 4:19, Gen 5:18, Gen 5:20, Gen 5:26, Gen 5:28
+  Sense 2: "both (pronominal)" (73x)
+    Desc: Used with pronominal suffixes to mean 'both of them/us/you', emphasizing the totality of a pair rather than simply counting.
+    Domain: DISCOURSE_NAMES > Discourse Referentials
+    Glosses: eng: both-of-them | spa: ambos, dos-de-ellos, los-dos | fra: les-deux-de-eux, tous-deux-de-eux | deu: beide-von-ihnen, die-beiden
+    Refs: Gen 2:25, Gen 21:27, Gen 21:31, Gen 22:6, Gen 22:8
+  Sense 3: "twelve (compound numeral)" (27x)
+    Desc: The construct form used in the compound number twelve (שְׁנֵים עָשָׂר / שְׁתֵּים עֶשְׂרֵה), including ordinal 'twelfth' in date expressions.
+    Domain: QUANTITY_NUMBER > Number
+    Glosses: eng: and-twelve, and-two, and-two- | spa: Y-doce, con-las-doce, doce | fra: avec-le-deux, deux, deux- | deu: fuer-zwei, fuer-zwoelf, in-Jahre
+    Refs: Exod 24:4, Exod 24:4, Exod 28:21, Exod 39:14, Lev 24:5
+  Sense 4: "?" (3x)
+    Domain: QUANTITY_NUMBER > Quantity
+    Glosses: eng: double | spa: el-doble | fra: double | deu: double
+    Refs: Exod 22:4, Exod 22:7, Exod 22:9

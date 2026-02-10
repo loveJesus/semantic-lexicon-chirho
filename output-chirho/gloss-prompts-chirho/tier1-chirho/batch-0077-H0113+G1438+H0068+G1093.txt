@@ -1,0 +1,120 @@
+You are a biblical lexicographer composing glosses for a digital lexicon.
+For each lemma below, compose a JSON object. Separate objects with "---".
+
+Format for each:
+{
+  "lemma_id": "...",
+  "gloss_terse": "under 120 chars, concise definition covering the word's semantic range",
+  "gloss_readable": "2-5 sentences, 40-120 words. Don't start with 'This word'. Warm study-Bible footnote tone. Engaging, not dry.",
+  "senses": {
+    "1": "enriched 20-60 word description. Reference multilingual evidence when illuminating. Don't repeat the label verbatim.",
+    "2": "..."
+  }
+}
+
+Rules:
+- No markdown fences, just JSON objects separated by ---
+- Reference multilingual evidence naturally when it reveals something
+- gloss_readable should feel like a good study Bible footnote: helpful, clear, occasionally surprising
+- Each sense enrichment: how does the evidence support this sense? Mention 1-2 key passages when helpful.
+
+=== H0113 ===
+Language: Hebrew, POS: N-mpc | 3ms, Occurrences: 329, Senses: 4
+
+BDB excerpt: אָדוֹן n.m. Mal 3:1 lord (Ph. אדן)—א׳ ψ 12:5 + cstr. אֲדוֹן Jos 3:11 +; pl. אֲדֹנִים Is 26:13 +; cstr. אֲדֹנֵי Dt 10:17 +; sf. אֲדֹנֵינוּ 1 S 25:14 + etc.; (אֲדֹנִי, אֲדֹנַי, אֲדֹנָי are variations of Mass. pointing to distinguish divine reference fr. human. Pl., with few except an intens. pl. of rank; word takes sf. as pl. in all other pers.; so doubtless here. Orig. reading prob. in all cases אֲדֹנַי (v. DalmanDer Gottesname Adonaj; LagBN 188 makes אֲדֹנָי an Aramaic format.); אֲדֹנִי now found in J 51 textual; in E †Gn 31:35; 32:19; 42:10 Ex 21:5; in P †Gn 23:6, 11, 15 Nu 36:2(×2) often S &
+Senses:
+  Sense 1: "lord, human superior" (249x)
+    Desc: Respectful address or reference to a human authority figure such as a king, husband, military commander, or social superior, expressing deference and subordination (Arabic sayyidi, Korean ju-in-iyeo, ...
+    Domain: AUTHORITY_RULE > Status
+    Glosses: eng: my-lord | spa: mi-señor, señor-mío | fra: mon-seigneur | deu: mein-Herr, mein-herr
+    Refs: Gen 23:6, Gen 23:11, Gen 23:15, Gen 24:18, Gen 33:13
+  Sense 2: "master, owner of servants" (49x)
+    Desc: The owner or proprietor who has authority over servants, slaves, or property, emphasizing a relationship of possession and control rather than mere social deference (Arabic sayyiduhu, Korean geu-ui ju...
+    Domain: AUTHORITY_RULE > Status
+    Glosses: eng: his-lord, his-master | spa: señor-de-él, su-amo, su-señor | fra: son-maître, son-seigneur | deu: sein-Herr, seines-Herrn
+    Refs: Gen 24:9, Gen 24:10, Gen 24:10, Gen 39:2, Gen 39:3
+  Sense 3: "the Lord, divine sovereign" (18x)
+    Desc: A divine title or near-divine epithet referring to God as sovereign Lord, often with the article or in elevated theological contexts (Arabic ar-rabb/as-sayyid, Korean ju/ju-nim, Swahili Bwana capitali...
+    Domain: AUTHORITY_RULE > Status
+    Glosses: eng: Adonai, lord-of, my-Lord | spa: Adonai, Señor-de, a-mi-Señor | fra: Seigneur, le-Seigneur, le-seigneur | deu: Herr, der-Herr, der-Herr-von
+    Refs: Gen 18:3, Gen 19:2, Exod 23:17, Exod 34:23, Ezra 10:3
+  Sense 4: "lords, masters plural" (13x)
+    Desc: The plural form referring to multiple human lords, masters, or rulers, often in contexts of shared or collective authority (Arabic sadah/asyad broken plurals, Korean ju-in-deul, Swahili mabwana, Hindi...
+    Domain: AUTHORITY_RULE > Status
+    Glosses: eng: lords, lords-their, masters | spa: a-sus-señores, los-señores, señores | fra: le-adonim, le-seigneur, masters | deu: Herr, der-adonim, der-lords
+    Refs: Deut 10:17, 1Kgs 22:17, 2Chr 18:16, Neh 3:5, Ps 123:2
+
+=== G1438 ===
+Language: Greek, POS: RefPro-DM3P, Occurrences: 321, Senses: 4
+
+BDB excerpt: ἑαυτοῦ, ῆς, οῦ, ἑαυτῷ, ῇ, ῷ, ἑαυτόν, ήν, ό, plural ἑαυτῶν, ἑαυτοῖς, ἑαυτούς άς, ά: Ionic dialect ἑωυτοῦ Refs 5th c.BC+; also ωὑτῆς Refs 3rd c.BC+ in Papyrus and Inscrr., as Refs 1st c.BC+: Attic dialect contraction αὑτοῦ, etc., which is the usual form in Trag., though ἑαυτοῦ, etc., are used (though rarely) when the metre requires, Refs 4th c.BC+; Cretan dialect ϝιαυτοῦ Kohler-Ziebarth Stadtrecht von Gortyn Refs; Doric dialect αὐταυτοῦ, αὐσαυτοῦ (which see); Thess. εὑτοῦ (dative), Refs: genitive plural ηὑτῶν Refs:—reflexive pronoun of 3rd pers., of himself, herself, itself, etc.; first in Refs 
+Senses:
+  Sense 1: "reflexive pronoun (direct/indirect)" (239x)
+    Desc: The core reflexive use of the pronoun where the subject acts upon or directs action toward itself as direct or indirect object, covering all persons (himself, herself, itself, themselves, ourselves, y...
+    Domain: DISCOURSE_NAMES > Discourse Referentials
+    Glosses: eng: himself, oneself | spa: -a-sí-mismo, a-sí-mismo | fra: soi-même | deu: sich-selbst
+    Refs: Matt 16:24, Matt 18:4, Matt 23:12, Matt 23:12, Matt 27:42
+  Sense 2: "possessive reflexive (of oneself)" (68x)
+    Desc: Genitive uses indicating possession or belonging relative to the subject (his own, her own, their own, of himself, of themselves); Arabic uses possessive suffixes or الخاصَّة (own), Korean uses the po...
+    Domain: DISCOURSE_NAMES > Discourse Referentials
+    Glosses: eng: his-own, of-her, of-herself | spa: de-sí-misma, de-sí-mismo, de-él | fra: lui-même, soi-même | deu: sich-selbst
+    Refs: Matt 8:22, Matt 15:30, Matt 18:31, Matt 21:8, Matt 25:1
+  Sense 3: "reciprocal (one another)" (12x)
+    Desc: Cases where the reflexive pronoun takes on reciprocal meaning equivalent to ἀλλήλων, indicating mutual action among members of a group; confirmed by Arabic بَعضُكُم-البَعضَ (some of you...some) and بَ...
+    Domain: DISCOURSE_NAMES > Discourse Referentials
+    Glosses: eng: among-themselves, for-themselves, to-yourselves | spa: entre-sí, entre-vosotros, para-sí-mismos | fra: lui-même, soi-même | deu: sich-selbst
+    Refs: Matt 26:11, Matt 27:35, Mark 14:7, Luke 22:17, John 12:8
+  Sense 4: "?" (2x)
+    Domain: DISCOURSE_NAMES > Discourse Referentials
+    Glosses: eng: than-itself | spa: que-sí-mismo | fra: soi-même | deu: sich-selbst
+    Refs: Matt 12:45, Luke 11:26
+
+=== H0068 ===
+Language: Hebrew, POS: Conj-w | N-fp, Occurrences: 273, Senses: 4
+
+BDB excerpt: אֶ֫בֶן274 n.f. Gn 29:2 (m. 1 S 17:40?) stone (Assyrian abnu, = the sharp, projecting? v. DlW, Pr 107; Ph. אבן; Aramaic. אֶבֶן, ܐܰܒܢܳܐ; Ethiopic እብን Sab. אבנ[ם] DHMZMG 1883, 341) = א׳ abs. Gn 28:22 +; אָ֑בֶן 11:3 +; cstr. 49:24 +; sf. אַבְנוֹ 2 K 3:25; אֲבָנִים Gn 31:46 +, etc.;—a stone (large or small). 1. in natural state, used as pillow Gn 28:11, 18 (E); seat Ex 17:12 (E); cover of well Gn 29:3(×2), 8, 10 (J) causing one to stumble Is 8:14; marring good ground 2 K 3:19, 25; hand-missile Ex 21:18 (JE) Nu 35:17, 23 (P) 2 S 16:6, 13, especially in judicial stoning, with vb. רָגַם Lv 20:2, 27; 2
+Senses:
+  Sense 1: "stone, rock (material/object)" (267x)
+    Desc: A piece of rock as a physical object used for building, throwing, setting up as a memorial, paving, or as raw material; covers all inflectional forms (singular, plural, construct, with prepositions an...
+    Domain: NATURAL_WORLD > Natural Substances
+    Glosses: eng: a-stone, stone, with-stone | spa: con-piedra, piedra, una-piedra | fra: avec-pierre, pierre, une-pierre | deu: Stein, aus-Stein, ein-Stein
+    Refs: Gen 31:45, Gen 35:14, Exod 15:5, Exod 17:12, Exod 28:11
+  Sense 2: "weight, balance-stone" (4x)
+    Desc: A stone used as a standard weight on a balance or scale for measuring in trade (אַבְנֵי מִשְׁקָל); translated as 'weight' or 'weights' rather than 'stone.'
+    Domain: NATURAL_WORLD > Natural Substances
+    Glosses: eng: and-weight, weight, weights-of- | spa: Piedra, piedra, piedras-de | fra: et-poids, poids, weights-de- | deu: und-weight, weight, weights-von-
+    Refs: Lev 19:36, Deut 25:13, Deut 25:13, Deut 25:15
+  Sense 3: "?" (1x)
+    Domain: NATURAL_WORLD > Natural Substances
+    Glosses: eng: and-with-stone | spa: y-con-piedra | fra: et-pierre | deu: und-in-Stein
+    Refs: Dan 11:38
+  Sense 4: "?" (1x)
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: Stone-of | spa: Piedra-de | fra: Pierre-de | deu: der-Fels
+    Refs: Gen 49:24
+
+=== G1093 ===
+Language: Greek, POS: N-AFS, Occurrences: 252, Senses: 4
+
+BDB excerpt: γῆ, ἡ, occasionally in Refs 8th c.BC+: dual γαῖν Refs 5th c.BC+; γῶν Refs 2nd c.BC+:—earth (including land and sea, Refs 7th c.BC+ opposed to heaven, or land opposed to sea, Γῆ τε καὶ Ἠέλιος καὶ Ἐρινύες Refs 8th c.BC+; τίς γ; Refs 8th c.BC+; κατὰ γῆν on land, by land, opposed to ναυσί, Refs 5th c.BC+; opposed to ἐκ θαλάσσης, Refs 5th c.BC+; ἐπὶ γῆς on earth, opposed to νέρθε, Refs 5th c.BC+; κατὰ γῆς below the earth, Refs 5th c.BC+: genitive with local Adverbs, ἵνα γῆς Refs 5th c.BC+; ποῦ, ποῖ, ὅποι γ., Refs 5th c.BC+ __2 earth, as an element, Refs 6th c.BC+ __2.b γῆν καὶ ὕδωρ αἰτεῖν, as token
+Senses:
+  Sense 1: "earth, the world" (176x)
+    Desc: The earth as a whole, the created world or planet, often in contrast with heaven or as the totality of the inhabited world.
+    Domain: GEOGRAPHY_SPACE > Geographical Objects and Features
+    Glosses: eng: earth, ground | spa: tierra | fra: terre | deu: Erde
+    Refs: Matt 5:5, Matt 5:13, Matt 5:18, Matt 5:35, Matt 6:10
+  Sense 2: "land, territory, region" (68x)
+    Desc: A specific land, country, or territory, often referring to a defined geographical region or the promised land.
+    Domain: GEOGRAPHY_SPACE > Geographical Objects and Features
+    Glosses: eng: earth, ground, land | spa: tierra | fra: terre | deu: Erde
+    Refs: Matt 2:6, Matt 2:20, Matt 2:21, Matt 4:15, Matt 9:26
+  Sense 3: "ground, soil, dust" (6x)
+    Desc: The physical ground surface or soil as material substance, especially in agricultural or burial contexts.
+    Domain: GEOGRAPHY_SPACE > Geographical Objects and Features
+    Glosses: eng: earth, ground, of-soil | spa: de-tierra, tierra | fra: terre | deu: Erde
+    Refs: Matt 13:5, Mark 4:5, Mark 4:26, Mark 4:31, Mark 4:31
+  Sense 4: "shore, dry land" (2x)
+    Desc: Dry land as opposed to the sea or water, the shore or coast.
+    Domain: GEOGRAPHY_SPACE > Geographical Objects and Features
+    Glosses: eng: land | spa: tierra | fra: terre | deu: Erde
+    Refs: Luke 5:3, Luke 5:11

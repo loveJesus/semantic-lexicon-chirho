@@ -1,0 +1,183 @@
+You are a biblical lexicographer composing glosses for a digital lexicon.
+For each lemma below, compose a JSON object. Separate objects with "---".
+
+Format for each:
+{
+  "lemma_id": "...",
+  "gloss_terse": "under 120 chars, concise definition covering the word's semantic range",
+  "gloss_readable": "2-5 sentences, 40-120 words. Don't start with 'This word'. Warm study-Bible footnote tone. Engaging, not dry.",
+  "senses": {
+    "1": "enriched 20-60 word description. Reference multilingual evidence when illuminating. Don't repeat the label verbatim.",
+    "2": "..."
+  }
+}
+
+Rules:
+- No markdown fences, just JSON objects separated by ---
+- Reference multilingual evidence naturally when it reveals something
+- gloss_readable should feel like a good study Bible footnote: helpful, clear, occasionally surprising
+- Each sense enrichment: how does the evidence support this sense? Mention 1-2 key passages when helpful.
+
+=== H7218a ===
+Language: Hebrew, POS: N-mpc | 3fp, Occurrences: 597, Senses: 7
+
+BDB excerpt: I. רֹאשׁ599 n.m. Lv 13:45 head (common Sem. word; earliest form *ra’š, Arabic رَأْسٌ, Sab. ראס PräZMG xxix (1875), 425 MordtmHim. Inschr. 31; Ethiopic ርእስ: Amh. ራስ: hence (a heightened) Assyrian rêšu (rarely râšu), Aramaic רֵישָׁא (Egyptian Aramaic ראשׁ CookeNorth-Sem. Inscr. 404), ܪܺܝܫܳܐ, mod. raïša, HuartJAs xii (1878), 491 Duvalid. xiii (1879), 464; Palm. רשׁא, Lzb366, cf. BH רִישׁוֹן, רֵאשִׁית; from *ra’š, also BH *רָאשׁ, רֹאשׁ (LagSymm. i. 113), TelAm. rušu(nu) Wkl 189, 18 (gloss to ḳaḳḳadunu), NH = BH; SI6 ראש, Ph. רש, ראש (in n.pr.), Pun. rus (in n.pr.loc.) SchrödPh. Spr. 133, ראשת choi
+Senses:
+  Sense 1: "head (body part)" (343x)
+    Desc: The physical head of a person or animal, including all possessive and prepositional inflections (my head, his head, on the head of, from his head, etc.), as consistently indicated by Arabic ra's, Kore...
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: head-of, head-of- | spa: cabecera-de, cabeza-de, cabeza-de- | fra: tête-de, tête-de- | deu: Haupt-von, das-Haupt, dem-Haupt
+    Refs: Gen 40:20, Gen 40:20, Gen 47:31, Gen 48:14, Gen 48:14
+  Sense 2: "chief, leader, head of group" (156x)
+    Desc: A chief, leader, or head of a clan, tribe, family, or administrative unit, as indicated by Arabic ra'is/ru'asa, Korean udumeori/jokjang, Swahili kiongozi/mkuu/wakuu, Hindi mukhiya/pradhan/sardar, and ...
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: heads, heads-of | spa: cabezas, cabezas-de | fra: tête | deu: Haupt
+    Refs: 1Chr 5:7, 1Chr 5:12, 1Chr 5:24, 1Chr 5:24, 1Chr 7:2
+  Sense 3: "top, summit, peak" (70x)
+    Desc: The top, summit, or peak of a mountain, pillar, tower, tree, or other elevated object, as distinguished by Korean kkokdaegi/jeongsang, Swahili kilele, Hindi choti/shikhar, and Spanish cima/cumbre rath...
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: top-of | spa: a-la-cima-de, cabeza-de, cabeza-de- | fra: sommet-de, top-de | deu: Gipfel-von, Spitze-von
+    Refs: Exod 17:9, Exod 17:10, Exod 19:20, Exod 19:20, Exod 24:17
+  Sense 4: "company, division, band" (13x)
+    Desc: A military company, division, or raiding band (often in plural rashim), as indicated by Arabic firaq/afwaj, Korean budae, Swahili vikosi/vikundi, Hindi dal/tukdi, and Spanish companias/divisiones/escu...
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: and-company-, and-the-companies, and-the-company | spa: La-división, Y-la-división, cabezas | fra: compagnies, companies, divisions | deu: Haupt, companies, der-companies
+    Refs: Judg 7:16, Judg 7:20, Judg 9:34, Judg 9:37, Judg 9:43
+  Sense 5: "beginning, first" (11x)
+    Desc: The beginning, start, or first in a temporal or ordinal sequence, as clearly signaled by Arabic awwal/bidaya, Korean cheoeumbuteo, Swahili mwanzo/kwanza, Hindi aarambh/pehle, and Spanish principio.
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: and-at-beginnings-of, and-at-heads-of, and-the-first | spa: Y-en-cabezas-de, al-principio, cabeza-de | fra: commencement-de, de-tête, et-tête | deu: Anfang-von, Haupt, und-Haupt
+    Refs: Num 10:10, Num 28:11, Judg 7:19, 1Chr 16:7, Prov 8:23
+  Sense 6: "chief, choicest, principal amount" (2x)
+    Desc: The choicest or finest quality of a substance (chief spices), or the principal capital amount of a debt, as indicated by Hindi uttam, Swahili bora/thamani, Korean euddeum/won-geum, representing a meta...
+    Domain: QUANTITY_NUMBER > Sequence
+    Glosses: eng: in-its-principal | spa: en-cabeza-de-él, en-principal-suyo | fra: dans-son-principal | deu: in-sein-principal
+    Refs: Lev 6:5, Num 5:7
+  Sense 7: "sum, total, census count" (2x)
+    Desc: The total count or census sum obtained by counting heads, as indicated by Swahili jumla, Hindi yog, Korean hapgye, and the idiomatic Hebrew collocation naso et rosh (lift up the head = take a census).
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: the-sum-of, their-sum | spa: Suma-de, sus-sumas | fra: tête | deu: der-sum-von, ihr-sum
+    Refs: Ps 119:160, Ps 139:17
+
+=== H5975 ===
+Language: Hebrew, POS: Conj-w | V-Qal-ConjImperf-3ms, Occurrences: 526, Senses: 7
+
+BDB excerpt: עָמַד520 take one’s stand, stand (NH id.; Ph. עמד; Assyrian emêdu, stand, set up; Arabic عَمَدَ prop up, support, and deriv.; Ethiopic ዐምድ: pillar; 𝔗 עַמּוּדָא pillar, Syriac ܥܰܡܽܘܕܳܐ, Palm. עמודא, cf. also n.pr. תימעמד; Sab. עמד pillar, according to CISiv. 91 (or other deriv. from √ עמד DHMZMG xxxvii (1883), 5), pl. אעמדן pillars DHMEpigr. Denkm. aus Abess. 80);— Qal435 Pf. ע׳ Gn 19:27 +, 3 fs. עָֽמְדָה 2 K 13:6 +, etc.; Impf. יַעֲמֹד Ex 21:21, יַעֲמוֹד Na 1:6 +, יַעֲמָד־ 1 S 16:22 +; 1 s. אֶעֱמֹ֑דָה Hb 2:1, וָאֶעֱמֹד 2 S 1:10; 3 mpl. יַעַמְדוּ Je 32:14 +, יַעֲמֹ֑דוּ Ez 1:21 +; f. יַעֲמֹדְנָה
+Senses:
+  Sense 1: "to stand, stand up" (310x)
+    Desc: Qal: physical standing, taking a standing position, being in a standing posture — the basic, unmarked sense of עמד covering all Qal inflections where the meaning is simply positional standing.
+    Domain: MOVEMENT > Stances
+    Glosses: eng: and-he-stood, and-stood | spa: Y-se-paró, Y-se-puso-de-pie, y-estuvo | fra: et-il-se-tint, et-se-tint | deu: und-er-stand, und-stand
+    Refs: Gen 18:8, Gen 18:22, Gen 24:30, Gen 41:1, Gen 41:17
+  Sense 2: "to stand firm, endure" (62x)
+    Desc: Qal: metaphorical steadfastness — standing firm, enduring, persisting, remaining, withstanding opposition or the passage of time.
+    Domain: MOVEMENT > Stances
+    Glosses: eng: and-He-will-stand, and-he-shall-stand, and-shall-stand | spa: Y-estará, Y-se-levantará, permanece | fra: et-il-s'est-tenu, et-il-se-tint, il-se-tiendra | deu: er-steht, stand, stehen
+    Refs: Exod 21:21, Deut 24:11, Josh 10:8, 2Kgs 6:31, 2Kgs 10:4
+  Sense 3: "to station, appoint" (48x)
+    Desc: Hifil: placing or positioning a person — stationing, appointing, setting someone in a role or physical position.
+    Domain: MOVEMENT > Stances
+    Glosses: eng: and-I-stationed, and-appointed, and-appointed- | spa: Y-estableció, Y-puse, Y-puso | fra: et-se-tenir | deu: und-er-stand, und-stellte
+    Refs: Gen 47:7, Exod 9:16, Num 8:13, Num 11:24, Num 27:22
+  Sense 4: "to stand still, stop" (48x)
+    Desc: Qal: cessation of motion — standing still, stopping, halting, ceasing movement or activity.
+    Domain: MOVEMENT > Stances
+    Glosses: eng: and-it-stood, and-stood, and-stood-still | spa: Esperad, Y-estuvo-de-pie, estaban-de-pie | fra: et-cela-se-tint, et-il-se-tint, et-se-tint | deu: stand, stehen, steht
+    Refs: Gen 19:17, Gen 29:35, Gen 30:9, Gen 45:9, Exod 18:13
+  Sense 5: "to set up, establish" (42x)
+    Desc: Hifil: causative erection or establishment — setting up, erecting, establishing, confirming, raising up an object, institution, or decree.
+    Domain: MOVEMENT > Stances
+    Glosses: eng: You-have-set, and-He-sets-up, and-he-set-up | spa: Y-harás-estar, Y-pondrá, el-que-estaba-de-pie | fra: et-devra-se-tenir, et-il-devra-faire-se-tenir, et-il-devra-se-tenir | deu: der-stand, stand, stehen
+    Refs: Lev 14:11, Lev 16:7, Lev 27:8, Lev 27:11, Num 3:6
+  Sense 6: "to serve, attend" (14x)
+    Desc: Qal: standing before a king or God in service — attending, ministering, serving in an official or liturgical capacity.
+    Domain: MOVEMENT > Stances
+    Glosses: eng: the-ones-standing, the-standing, to-stand | spa: Los-que-están, estar-de-pie, las-que-estaban | fra: le-se-tenir, se-tenir, à-tiens-toi | deu: der-stand, stand, stehen
+    Refs: 1Sam 6:20, 1Kgs 8:11, 1Chr 6:33, 2Chr 9:7, 2Chr 10:8
+  Sense 7: "to be made to stand" (2x)
+    Desc: Hofal (passive): being caused to stand, being set up or stationed by another — the passive counterpart of the Hifil.
+    Domain: MOVEMENT > Linear Movement
+    Glosses: eng: let-be-stood-, propped-up | spa: será-hecho-estar-, sostenido | fra: laisse-être-se-tint-, propped-en-haut | deu: lass-sein-stand-, propped-hinauf
+    Refs: Lev 16:10, 1Kgs 22:35
+
+=== H0834d ===
+Language: Hebrew, POS: Prep | Pro-r, Occurrences: 512, Senses: 7
+
+BDB excerpt: † כַּאֲשֶׁר conj. according as, as, when (cf. for the combin. Aramaic כְּדִי, כַּר)— 1. according to that which, according as, as: a. Gn 34:12 I will give כאשׁר תאמרו אלי according as ye shall (or may) say unto me, 44:1 Ex 8:23 Nu 22:8 1 S 2:16; Gn 34:22 if we are circumcised כאשׁר הם נמולים; 41:21 כאשׁר בתחלה as at the beginning, so כ׳ בראשׁונה Jos 8:5, 6 2 S 7:10; Ex 5:13 כאשׁר בהיות התבן: Gn 7:9 they came in two by two כאשׁר צוה אלהים, as God commanded Noah; so, or similarly, very often, especially in P, v 16 8:21; 12:4; 17:23; 21:1(×2) Ex 16:24; 39:1, 5, 7 Nu 3:16, 42 etc.; כאשׁר דבר י׳ Dt
+Senses:
+  Sense 1: "as, just as (comparative)" (424x)
+    Desc: Introduces a comparison or manner clause: 'as', 'just as', 'like'. The most common use of כַּאֲשֶׁר, establishing a correspondence between two situations or actions.
+    Domain: PROPERTIES_RELATIONS > Comparison
+    Glosses: eng: as, as-, as-which | spa: como | fra: comme, comme-, comme-lequel | deu: so-wie, wie, wie-
+    Refs: Gen 7:9, Gen 7:16, Gen 8:21, Gen 12:4, Gen 17:23
+  Sense 2: "when (temporal)" (58x)
+    Desc: Introduces a temporal clause: 'when', 'at the time that'. Marks the time at which an event occurs or a condition holds.
+    Domain: TIME > Time
+    Glosses: eng: as, when | spa: cuando, que | fra: comme, quand | deu: als, als-, wenn
+    Refs: Gen 12:11, Gen 18:33, Gen 20:13, Gen 24:22, Gen 24:52
+  Sense 3: "and as, and just as (coordinated comparative)" (21x)
+    Desc: Comparative כַּאֲשֶׁר preceded by the conjunction waw: 'and as', 'and just as'. Functions identically to the plain comparative sense but within a coordinated clause.
+    Domain: PROPERTIES_RELATIONS > Comparison
+    Glosses: eng: [as], and-as, and-as- | spa: Como, Como-cuando, Y-como | fra: comme-comme, comme-qui, et-comme | deu: und-welcher, und-wie, und-wie-
+    Refs: Gen 26:29, Exod 1:12, Num 14:19, Deut 29:13, Josh 10:39
+  Sense 4: "and when (coordinated temporal)" (3x)
+    Desc: Temporal כַּאֲשֶׁר preceded by the conjunction waw: 'and when'. Functions identically to the plain temporal sense but within a coordinated clause.
+    Domain: TIME > Time
+    Glosses: eng: and-when | spa: Y-cuando, y-cuando, ¿y-cuando | fra: et-quand, et-qui | deu: und-als, und-wann, und-welcher
+    Refs: Exod 17:11, 2Sam 12:21, Ezek 37:18
+  Sense 5: "because, since (causal)" (3x)
+    Desc: Introduces a causal clause: 'because', 'since', 'inasmuch as'. Provides the reason or ground for the main clause.
+    Domain: DISCOURSE_NAMES > Discourse Markers
+    Glosses: eng: because, that- | spa: como, lo-que, porque | fra: ce-, parce-que | deu: jenes-, weil
+    Refs: Josh 6:22, Judg 6:27, 2Kgs 17:26
+  Sense 6: "according to what (conformity)" (2x)
+    Desc: Expresses conformity to a standard or instruction: 'according to what', 'in accordance with that which'. Often follows verbs of commanding or doing.
+    Domain: PROPERTIES_RELATIONS > Comparison
+    Glosses: eng: according-to-what | spa: como, conforme-a-lo-que | fra: selon-à-quoi | deu: gemaess-zu-was
+    Refs: Judg 11:36, 2Sam 15:26
+  Sense 7: "after (temporal sequence)" (1x)
+    Desc: Marks temporal succession: 'after', indicating that the main clause event follows the subordinate clause event.
+    Domain: TIME > Time
+    Glosses: eng: after | spa: cuando- | fra: comme-qui | deu: nach
+    Refs: Ps 51:1
+
+=== G5613 ===
+Language: Greek, POS: Adv, Occurrences: 508, Senses: 7
+
+BDB excerpt: ὡς:— Summary: __A as adverb of Manner. __A.Aa ὧς and ὥς (with accent), so, thus. __A.Ab ὡς (without accent) of the Relat. pronoun ὅς, as. __A.Ac ὡς Relat. and Interrog., how. __A.Ad ὡς temporal, when. __A.Ae ὡς Local, where, __B ὡς, as CONJUNCTION. __C,D various usages. adverb of Manner: __A.Aa ὥς, Demonstr., ={οὕτως}, so, thus, frequently in Refs 8th c.BC+; in Ionic dialect Prose, Refs 5th c.BC+; ὥς simply ={οὕτως}, Refs 5th c.BC+ __A.2 καὶ ὧς even so, nevertheless, Refs 8th c.BC+; οὐδ᾽ ὧς not even so, Refs 8th c.BC+ are used in Trag. and Attic dialect, Refs 5th c.BC+; κἂν ὧς, εἴπερ μέλει σοι
+Senses:
+  Sense 1: "comparative: as, like" (394x)
+    Desc: Introduces a comparison or manner clause, indicating similarity or likeness between two things or actions.
+    Domain: PROPERTIES_RELATIONS > Comparison
+    Glosses: eng: as, as-, like- | spa: como | fra: comme | deu: wie
+    Refs: Matt 1:24, Matt 5:48, Matt 6:5, Matt 6:10, Matt 6:12
+  Sense 2: "temporal: when, while" (70x)
+    Desc: Functions as a temporal conjunction introducing a time clause, indicating when or while an event occurs.
+    Domain: TIME > Time
+    Glosses: eng: as, when | spa: como, cuando | fra: comme | deu: wie
+    Refs: Luke 1:23, Luke 1:41, Luke 1:44, Luke 2:15, Luke 2:39
+  Sense 3: "approximative: about" (18x)
+    Desc: Used with numerals or quantities to express approximation, meaning roughly or about.
+    Domain: PROPERTIES_RELATIONS > Comparison
+    Glosses: eng: about, as, in-about | spa: como | fra: comme, comme-, ὡς | deu: wie
+    Refs: Mark 5:13, Mark 8:9, Luke 1:56, Luke 8:42, John 1:39
+  Sense 4: "exclamatory: how!" (17x)
+    Desc: Introduces an exclamatory or interrogative clause expressing degree or manner, meaning how or how greatly.
+    Domain: PROPERTIES_RELATIONS > Comparison
+    Glosses: eng: How, how, how- | spa: como, cuán, cómo | fra: comme, comme-, ὡς | deu: wie
+    Refs: Mark 4:27, Luke 6:4, Luke 8:47, Luke 23:55, Luke 24:6
+  Sense 5: "hypothetical comparison: as if" (6x)
+    Desc: Introduces an imagined or hypothetical comparison, meaning as if or as though something were the case.
+    Domain: PROPERTIES_RELATIONS > Comparison
+    Glosses: eng: as, as-if, as-though | spa: como | fra: comme-, ὡς | deu: wie
+    Refs: Acts 3:12, Acts 23:15, Acts 23:20, Acts 27:30, 2Thess 2:2
+  Sense 6: "purpose: so as to" (2x)
+    Desc: Expresses purpose or intended result, often with an infinitive, meaning so as to or in order to.
+    Domain: PROPERTIES_RELATIONS > Comparison
+    Glosses: eng: so-as | spa: para | fra: comme, ὡς | deu: wie
+    Refs: Luke 9:52, Acts 20:24
+  Sense 7: "temporal: since" (1x)
+    Desc: Marks a temporal starting point, meaning since or from the time that.
+    Domain: PROPERTIES_RELATIONS > Comparison
+    Glosses: eng: since | spa: desde-que | fra: comme | deu: wie
+    Refs: Mark 9:21

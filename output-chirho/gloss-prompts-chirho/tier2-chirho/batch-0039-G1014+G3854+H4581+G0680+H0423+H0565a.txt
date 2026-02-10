@@ -1,0 +1,145 @@
+You are a biblical lexicographer composing glosses for a digital lexicon.
+For each lemma below, compose a JSON object. Separate objects with "---".
+
+Format for each:
+{
+  "lemma_id": "...",
+  "gloss_terse": "under 120 chars, concise definition covering the word's semantic range",
+  "gloss_readable": "2-5 sentences, 40-120 words. Don't start with 'This word'. Warm study-Bible footnote tone. Engaging, not dry.",
+  "senses": {
+    "1": "enriched 20-60 word description. Reference multilingual evidence when illuminating. Don't repeat the label verbatim.",
+    "2": "..."
+  }
+}
+
+Rules:
+- No markdown fences, just JSON objects separated by ---
+- Reference multilingual evidence naturally when it reveals something
+- gloss_readable should feel like a good study Bible footnote: helpful, clear, occasionally surprising
+- Each sense enrichment: how does the evidence support this sense? Mention 1-2 key passages when helpful.
+
+=== G1014 ===
+Language: Greek, POS: V-PIM/P-1P, Occurrences: 37, Senses: 3
+
+BDB excerpt: βούλομαι (Epic dialect also βόλομαι, which see), Doric dialect βώλ- (which see), Aeolic dialect βόλλ- (see. βόλομαι), Thess. βέλλ- Refs, Boeotian dialect βείλ- Refsβήλ- Refs 3rd c.BC+, Locrian dialectand Delph. δείλ- Refs, Coan, etc. δήλ- (which see), Ionic dialect 2nd pers. singular βούλεαι Refs 8th c.BC+: imperfect ἐβουλόμην Refs 8th c.BC+; Ionic dialect 3rd.pers. plural ἐβουλέατο codices in Refs 5th c.BC+: future βουλήσομαι Refs 5th c.BC+; later future βουληθήσομαι variant in Refs 2nd c.AD+ 13.636: aorist ἐβουλήθην, also ἠβ- (see. below), βουληθείς Refs 5th c.BC+., but Epic dialect aorist s
+Senses:
+  Sense 1: "want, wish, desire" (30x)
+    Desc: To want or wish for something, expressing personal desire or preference without necessarily implying deliberate resolve or formal decision.
+    Domain: EMOTION_ATTITUDE > Attitudes and Emotions
+    Glosses: eng: He-wills, I-desire, I-want | spa: Queriendo, Quiero, queriendo | fra: vouloir | deu: will, wollen
+    Refs: Mark 15:15, Luke 22:42, John 18:39, Acts 5:33, Acts 15:37
+  Sense 2: "will, determine, decree" (4x)
+    Desc: To will or determine something by an act of deliberate volition, often used of divine will or sovereign choosing.
+    Domain: EMOTION_ATTITUDE > Attitudes and Emotions
+    Glosses: eng: having-willed, purposes, wills | spa: habiendo-querido, quiera | fra: vouloir | deu: will, wollen
+    Refs: Matt 11:27, Luke 10:22, Jas 1:18, Jas 4:4
+  Sense 3: "intend, plan, purpose" (3x)
+    Desc: To intend or purpose to do something, implying a deliberate plan or resolve toward a specific course of action.
+    Domain: EMOTION_ATTITUDE > Attitudes and Emotions
+    Glosses: eng: intending, purposed, you-intend | spa: queriendo, queréis, quiso | fra: vouloir | deu: will
+    Refs: Matt 1:19, Acts 5:28, Acts 12:4
+
+=== G3854 ===
+Language: Greek, POS: V-ASM-1S, Occurrences: 37, Senses: 3
+
+BDB excerpt: παραγίγνομαι, Ionic dialect and later Gr. παρα-γίνομαι [ῑ], aorist passive παρεγενήθην Refs 2nd c.BC+:—to be beside, by or near: with dative person et of things, καί σφιν παρεγίγνετο δαιτί attended them at the banquet, Refs 8th c.BC+ was by him when he was asked, Refs 5th c.BC+ with dative _of things_ only, π. τῇ μάχῃ to be present at.., Refs 5th c.BC+; ἐν τοιοῖσδε λόγοις, ἐν τῇ συνουσίᾳ, Refs 5th c.BC+ __2 π. τινί come to one's side, stand by, second, Refs 8th c.BC+; ἐπί τινα against one, Refs 5th c.BC+; μάχῃ.. π. τισί support them in battle, Refs 8th c.BC+ __3 of things, to be at hand, accru
+Senses:
+  Sense 1: "arrive at a place" (31x)
+    Desc: To come to or reach a destination, emphasizing the physical movement and arrival at a specific location.
+    Domain: MOVEMENT > Linear Movement
+    Glosses: eng: arrived, came, having-arrived | spa: Habiendo-llegado, habiendo-llegado, llegando | fra: arriver | deu: ankommen, kommt
+    Refs: Matt 2:1, Luke 7:4, Luke 7:20, Luke 8:19, Luke 11:6
+  Sense 2: "appear, come on the scene" (4x)
+    Desc: To make a public appearance or show up, often marking the beginning of a significant role or action in a narrative.
+    Domain: MOVEMENT > Linear Movement
+    Glosses: eng: arrives, comes, having-appeared | spa: habiendo-venido, llega | fra: arriver | deu: ankommen, kommt
+    Refs: Matt 3:1, Matt 3:13, Mark 14:43, Heb 9:11
+  Sense 3: "be present, come alongside" (2x)
+    Desc: To be present at a place or to come alongside someone, emphasizing attendance or companionship rather than the act of traveling.
+    Domain: MOVEMENT > Linear Movement
+    Glosses: eng: came, came-alongside | spa: estaban-presentes, estuvo-presente | fra: arriver | deu: ankommen, kommt
+    Refs: Acts 21:18, 2Tim 4:16
+
+=== H4581 ===
+Language: Hebrew, POS: N-mpc | 3fs, Occurrences: 37, Senses: 3
+
+BDB excerpt: † מָעוֹז n.m. Ju 6:26 place or means of safety, protection (MT sfs. as if from עזז, but prob. erron., cf. BuhlLex 13 Ges§ 85 k);—מ׳ abs. Ju 6:26 +, cstr. Is 30:2 +; sf. מָעוּזִי 2 S 22:33 (but read הַמְּאַזְּרֵנִי as ‖ ψ 18:33), מָעוּזִּי ψ 31:5 +, מָעֻזּי Is 27:5 +, מָעוּזּוֹ ψ 52:9 +, מָעֻזֹּה Dn 11:10, etc. (read proposes מְעוֹזִי, etc.); pl. מָעֻזִּים v 38, 39, sf. מָעֻזְּנֶיהָ Is 23:11, read מָעֻזֶּיהָ (Ges§ 20 o CheHeb. Hpt. al.; del. d. f. in all, v. supr.);— 1. lit. place of safety 2 S 22:33, hence (c. collat. idea of strength, as if from עזז) = fastness Ju 6:26; Is 23:11, 14 (in v 14 
+Senses:
+  Sense 1: "fortress, stronghold" (25x)
+    Desc: A physical fortified place or military stronghold, used of literal fortresses, citadels, and fortified cities.
+    Domain: BUILDINGS > Constructions
+    Glosses: eng: [ketiv:his-fortress], a-stronghold, and-stronghold | spa: [fortaleza-su], en-fortaleza-de, en-la-fortaleza-de | fra: dans-forteresse, de-forteresse, et-de-forteresse | deu: Festung, [ומעוז], der-Festung
+    Refs: Judg 6:26, Ps 27:1, Ps 28:8, Ps 108:8, Prov 10:29
+  Sense 2: "refuge, place of safety" (10x)
+    Desc: A place of refuge or safety, often used metaphorically of God as a personal refuge and shelter for the righteous.
+    Domain: BUILDINGS > Constructions
+    Glosses: eng: a-refuge, and-my-fortress, are-my-refuge | spa: a-mi-fortaleza, fortaleza, fortaleza-mía | fra: de-forteresse, et-forteresse, forteresse | deu: Festung, ihr-Zuflucht, mein-Zuflucht
+    Refs: 2Sam 22:33, Ps 31:2, Ps 31:4, Ps 37:39, Ps 43:2
+  Sense 3: "strength, protection" (2x)
+    Desc: Abstract strength or protective power, emphasizing might and defensive capability rather than a physical place.
+    Domain: BUILDINGS > Constructions
+    Glosses: eng: is-the-stronghold-of, is-your-strength | spa: fortaleza-de, fortaleza-de-vosotros | fra: [מעזכם], de-forteresse | deu: [מעזכם], ist-der-stronghold-von
+    Refs: Neh 8:10, Ps 60:7
+
+=== G0680 ===
+Language: Greek, POS: V-APM-NMS, Occurrences: 36, Senses: 3
+
+BDB excerpt: Included with: ἅπτω, future ἅψω: aorist ἧψα:—passive, perfect ἧμμαι, Ionic dialect ἅμμαιRefs 5th c.BC+: future ἅψομαιRefs 8th c.BC+ (συν-) Refs 2nd c.AD+ —middle, see.below (compare ἑάφθη):—fasten or bind to, used by Refs 8th c.BC+active, ἅψας ἀμφοτέρωθεν.. ἔντερον οἰός (of a lyre-string) Refs 8th c.BC+; once in middle, ἁψαμένη βρόχον.. ἀφ᾽ ὑψηλοῖο μελάθρου having fastened the noose to the beam (to hang herself), Refs; so later ἅψεται ἀμφὶ βρόχον.. δείρᾳRefs 5th c.BC+:—active, βρόχους ἅ. κρεμαστούςRefs 5th c.BC+ __2 join, ἅ. χορόνRefs 4th c.BC+; πάλην τινὶ ἅ. fasten a contest in wrestling on o
+Senses:
+  Sense 1: "touch physically for healing" (30x)
+    Desc: To touch a person or object physically, especially in the context of healing or seeking power through physical contact with Jesus or his garments.
+    Domain: PHYSICAL_ACTION > Attachment
+    Glosses: eng: having-touched, he-might-touch, he-touched | spa: le-tocó, que-me-tocó, tocara | fra: toucher | deu: beruehren, berührt
+    Refs: Matt 8:3, Matt 8:15, Matt 9:20, Matt 9:21, Matt 9:29
+  Sense 2: "touch as prohibited contact" (4x)
+    Desc: To touch or handle something in a context where such contact is forbidden, whether ascetic prohibitions against physical objects or the command not to cling to the risen Christ.
+    Domain: PHYSICAL_ACTION > Attachment
+    Glosses: eng: handle, to-touch, touch | spa: te-agarres, tocar, toques | fra: toucher | deu: beruehren
+    Refs: John 20:17, 1Cor 7:1, 2Cor 6:17, Col 2:21
+  Sense 3: "touch to harm or affect" (2x)
+    Desc: To touch in the sense of laying hold of or affecting someone, often with the implication of harm or spiritual contact, as in the evil one not touching the believer.
+    Domain: PHYSICAL_ACTION > Attachment
+    Glosses: eng: touches | spa: le-toca, toca | fra: toucher | deu: beruehren, berührt
+    Refs: Luke 7:39, 1John 5:18
+
+=== H0423 ===
+Language: Hebrew, POS: Prep-l | N-fs, Occurrences: 36, Senses: 3
+
+BDB excerpt: † אָלָה n.f. oath Gn 26:28 +; sf. אָלָתִי, אָלָתוֹ Gn 24:41 + (4 times); pl. אָלוֹת Dt 29:20 + (4 times) 1. oath in testimony Lv 5:1 Nu 5:21(×2) (P) Pr 29:24; בא באלה come into an oath Ne 10:30; הביא באלה bring into an oath Ez 17:13; נשׂא אלה 1 K 8:31 (= 2 Ch 6:22). 2. oath of covenant Gn 24:41(×2); 26:28 (J) Dt 29:11, 13; בזה אלה despise an oath Ez 16:59; 17:16, 18, 19. 3. curse (a) from God Nu 5:23 (P) Dt 29:18, 19, 20; 30:7 2 Ch 34:24 Is 24:6 Je 23:10 Dn 9:11 Zc 5:3; (b) from men Jb 31:30 ψ 10:7; 59:13. 4. execration in the phrase היה לאלה become an execration Nu 5:27 (P) Je 29:18; 42:18; 4
+Senses:
+  Sense 1: "curse, imprecation" (18x)
+    Desc: A curse or execration, either as a conditional self-imprecation invoked upon oath-breaking or as a direct pronouncement of divine judgment.
+    Domain: COMMUNICATION > Communication
+    Glosses: eng: a-curse, an-oath, and-for-cursing | spa: Maldición, con-maldición, en-maldición | fra: [באלה], [האלות], ceux-ci | deu: Eid, [לאלה], cursing
+    Refs: Num 5:21, Num 5:21, Num 5:23, Num 5:27, Deut 30:7
+  Sense 2: "oath, sworn covenant" (17x)
+    Desc: A solemn oath or sworn commitment, often with a self-imprecatory element binding the swearer to consequences if violated.
+    Domain: COMMUNICATION > Communication
+    Glosses: eng: an-oath, and-into-his-oath, from-my-oath | spa: de-mi-maldición, el-juramento, en-juramento | fra: ces, ceux-ci, dans-ces | deu: Eid, der-Eid, diese
+    Refs: Gen 24:41, Gen 24:41, Gen 26:28, Lev 5:1, Deut 29:12
+  Sense 3: "adjure, cause to swear (Hifil)" (1x)
+    Desc: To cause someone to take an oath or to place someone under oath, the causative (Hifil) verbal use of the root.
+    Domain: COMMUNICATION > Communication
+    Glosses: eng: to-curse-him | spa: para-hacerle-jurar | fra: [להאלתו] | deu: Eid
+    Refs: 2Chr 6:22
+
+=== H0565a ===
+Language: Hebrew, POS: N-fsc | 2fs, Occurrences: 36, Senses: 3
+
+BDB excerpt: [אִמְרָה] n.f. utterance, speech, word (poet., mostly sg. coll., cf. pl. vb. ψ 119:103; but here read prob. pl. n. cf. 𝔊 Ol Hi De Che)—cstr. אִמְרַת Is 5:24 +; אִמְרָתִי Gn 4:23 + etc.; Pl. abs. אֲמָרוֹת ψ 12:7; cstr. אִמְרֹת ib.;—utterance, speech Gn 4:23 (song of Lamech, ‖ קוֹל) so Is 28:23; 29:4; 32:9; Dt 32:2 (‖ לֶקַח), ψ 17:6; Is 29:4 (w. נָשָׂא, צִפְצֵף); especially saying(s), word(s) of י׳ (command & promise) Dt 33:9 (‖ בְּרִית); Is 5:24 (‖ תּוֹרָה) 2 S 22:31 = ψ 18:31; ψ 12:7; 105:19 (‖ דָּבָר); especially ψ 119:11, 38, 41 + 16 times; 138:2; 147:15 (‖ דָּבָר), Pr 30:5.
+Senses:
+  Sense 1: "divine word or promise" (22x)
+    Desc: God's word, utterance, or promise, especially as addressed in prayer or praise (predominantly in Psalm 119 and similar contexts where 'Your word' refers to divine speech, commands, or promises).
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: Your-word, according-to-Your-word, by-Your-word | spa: dicho-de-ti, dichos-de-ti!, en-dicho-de-ti | fra: comme-parole, dans-parole, parole | deu: auf-dein-Wort, bei-dein-Wort, dein-Wort
+    Refs: Deut 33:9, Ps 119:11, Ps 119:38, Ps 119:41, Ps 119:50
+  Sense 2: "word or utterance (general)" (7x)
+    Desc: A spoken word, utterance, or statement in general, used in construct ('word of') without specific reference to divine promise or human speech as discourse.
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: are-words, the-saying-of, the-word-of- | spa: Palabras-de, dicho-de, palabra-de | fra: [אמרת], parole, parole-de | deu: Wort-von, [אמרת], der-Wort-von-
+    Refs: 2Sam 22:31, Ps 12:6, Ps 12:6, Ps 18:30, Ps 105:19
+  Sense 3: "speech or saying (human)" (7x)
+    Desc: Human speech or saying, referring to one's own or another person's spoken words viewed as discourse or declaration.
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: my-saying, my-speech, my-words | spa: mi-dicho, mi-palabra, tu-palabra | fra: [אמרתי], [אמרתך], disant-mon | deu: [אמרתך], ich-sprach, mein-Worte
+    Refs: Gen 4:23, Deut 32:2, Ps 17:6, Isa 28:23, Isa 29:4

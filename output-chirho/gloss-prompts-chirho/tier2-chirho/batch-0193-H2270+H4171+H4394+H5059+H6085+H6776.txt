@@ -1,0 +1,115 @@
+You are a biblical lexicographer composing glosses for a digital lexicon.
+For each lemma below, compose a JSON object. Separate objects with "---".
+
+Format for each:
+{
+  "lemma_id": "...",
+  "gloss_terse": "under 120 chars, concise definition covering the word's semantic range",
+  "gloss_readable": "2-5 sentences, 40-120 words. Don't start with 'This word'. Warm study-Bible footnote tone. Engaging, not dry.",
+  "senses": {
+    "1": "enriched 20-60 word description. Reference multilingual evidence when illuminating. Don't repeat the label verbatim.",
+    "2": "..."
+  }
+}
+
+Rules:
+- No markdown fences, just JSON objects separated by ---
+- Reference multilingual evidence naturally when it reveals something
+- gloss_readable should feel like a good study Bible footnote: helpful, clear, occasionally surprising
+- Each sense enrichment: how does the evidence support this sense? Mention 1-2 key passages when helpful.
+
+=== H2270 ===
+Language: Hebrew, POS: Adj-ms, Occurrences: 15, Senses: 2
+
+BDB excerpt: † חָבֵר adj. and n.m. Ct 8:13, united, associate, companion—ח׳ abs. Pr 28:24 ψ 119:63; sf. חֲבֵרוֹ Ec 4:10 (+ 3 times Ez Kt; Qr חבריו, v. infr.); pl. חֲבֵרִים Ju 20:11 Ct 8:13; cstr. חַבְרֵי Is 1:23; sf. חֲבֵרֶ֑ךָ ψ 45:8, חֲבֵרֶ֑יךָ Ct 1:7; חֲבֵרָיו Is 44:11 + 3 times Ez Qr;— 1. adj. united כְּאִישׁ אֶחָד חֲבֵרִים Ju 20:11 knit together as one man (AV RV). 2. n. associate, fellow: a. of children (tribes) of Isr. assoc. with Judah as head Ez 37:16; id. assoc. with Joseph (Ephr.) as head v 16, 19 (in all these read Qr חֲבֵרָיו). b. of like rank ψ 45:8. c. of like calling Ct 1:7. d. worshippers (
+Senses:
+  Sense 1: "companion, associate" (14x)
+    Desc: A fellow, companion, or associate — used substantively for someone joined in relationship, partnership, or shared purpose.
+    Domain: GROUPS_COMMUNITY > Association
+    Glosses: eng: [ketiv], a-companion, above-Your-companions | spa: (sus-compañeros)., (sus-compañeros);, Compañero | fra: [וחברי], [חבריו], ami | deu: [וחברי], [חבר], [חברו]
+    Refs: Ps 45:7, Ps 119:63, Prov 28:24, Eccl 4:10, Song 1:7
+  Sense 2: "united, joined together" (1x)
+    Desc: Adjectival sense meaning united or allied, reflecting the verbal root meaning 'to join' — describing those who have banded together.
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: united | spa: unidos | fra: united | deu: united
+    Refs: Judg 20:11
+
+=== H4171 ===
+Language: Hebrew, POS: V-Hifil-InfAbs, Occurrences: 15, Senses: 2
+
+BDB excerpt: † [מוּר] vb. change (NH id., Hiph.; Arabic مَارَ (med. ו) is move to and fro (intransitive); مَارَ (med. י) procure food, Aramaic ܡܳܪ buy or import food, NöZMG xl. 1886, 154);— Niph. Pf. נָמָ֑ר (as if from מרר) be changed, Je 48:11 subj. רֵיחוֹ (of wine, fig. of Moab); Hiph. Pf. הֵמִיר Je 2:11; on הַהֵימִיר ib., v. Köi. 457; Impf. יָמִיר ψ 15:4 + 3 times; juss. יָמֵר Ez 48:14; sf. יְמִירֶנּוּ Lv 27:33(×2); אָמִיר Ho 4:7; וַיָּמִ֫ירוּ ψ 106:20; Inf. cstr. הָמִיר ψ 46:3; abs. הָמֵר Lv 27:10, 33;— 1. change, alter, Mi 2:4 (obj. חֵלֶק עַמִּי; but 𝔊 יִמַּד בַּחֶבֶל, so Sta ZAW 1886, 122 f.); ψ 15:4
+Senses:
+  Sense 1: "exchange or substitute" (14x)
+    Desc: Hifil: to exchange, substitute, or replace one thing for another, whether in sacrificial regulations (substituting an animal) or in broader contexts (exchanging gods, glory, etc.)
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: Has-exchanged, He-exchanges, I-will-exchange | spa: Y-cambiaron, cambia, cambiaré | fra: [ההימיר], [המיר], changer | deu: [אמיר], [ההימיר], [המיר]
+    Refs: Lev 27:10, Lev 27:10, Lev 27:10, Lev 27:33, Lev 27:33
+  Sense 2: "be changed" (1x)
+    Desc: Nifal: to be changed or altered, expressing the passive or reflexive sense of undergoing change rather than actively exchanging.
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: has-changed | spa: ha-cambiado | fra: [נמר] | deu: [נמר]
+    Refs: Jer 48:11
+
+=== H4394 ===
+Language: Hebrew, POS: N-mpc | 2mp, Occurrences: 15, Senses: 2
+
+BDB excerpt: † [מִלּוּא, מִלֻּא] n.m. setting, installation; (cf. vb. Pi. Pu.);—pl. מִלֻּאִים (מִלּוּ׳) Ex 25:7 + 13 times; מִלֻּאֵיכֶם Lv 8:33;— 1. setting, אַבְנֵי מ׳ stones for setting Ex 25:7; 35:9, 27 cf. 1 Ch 29:2 (אַבְנֵי שֹׁ֫הַם וּמ׳). 2. installation (of priests): Lv 7:37; 8:33; = installation-offering 8:28 (‖ אִשָּׁה) cf. סַל־הַמּ׳ v 31; אֵיל הַמּ׳ Ex 29:22, 26, 27, 3 Lv 8:22, 29; בְּשַׂר הַמ׳ Ex 29:34.
+Senses:
+  Sense 1: "ordination, priestly consecration" (11x)
+    Desc: The act or offering of priestly consecration (literally 'filling the hand'), referring to the installation ceremony and its associated ram/sacrifices (Exodus 29, Leviticus 7-8); plural מִלֻּאִים used ...
+    Domain: RELIGIOUS_LIFE > Religious Activities
+    Glosses: eng: an-ordination, and-for-the-ordination, ordination | spa: consagraciones, consagración-vuestra, las-consagraciones | fra: et-pour-le-ordination, le-ordination, ordination | deu: dein-ordination, der-ordination, ein-ordination
+    Refs: Exod 29:22, Exod 29:26, Exod 29:27, Exod 29:31, Exod 29:34
+  Sense 2: "setting (of gemstones)" (4x)
+    Desc: A setting or mount for precious stones, literally 'filling' — the socket or bezel into which a gem is set; used of the gold filigree settings on the priestly ephod and breastplate (Exodus 25:7, 35:9, ...
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: and-settings, setting, settings | spa: engaste, y-de-engaste | fra: [ומלואים], le-montures, montures | deu: Einfassung, Einfassungen, [ומלואים]
+    Refs: Exod 25:7, Exod 35:9, Exod 35:27, 1Chr 29:2
+
+=== H5059 ===
+Language: Hebrew, POS: V-Piel-Prtcpl-ms, Occurrences: 15, Senses: 2
+
+BDB excerpt: † [נָגַן] vb. touch (strings), play a stringed instrument (NH Pi.; Aramaic נְגַן Pa.);— Qal Pt. נֹגְנִים ψ 68:26 players (‖ שָׁרִים, עֲלָמוֹת תּוֹפֵפוֹת). Pi. Pf. וְנִגֵּן 1 S 16:16 (consec.), v 23; Impf. 1 pl. נְנַגֵּן Is 38:20; Inf. cstr. נַגֵּן 1 S 16:17 + 5 times; Pt. מְנַגֵּן 1 S 16:16 + 4 times;—play בַּכִּנּוֹר 1 S 16:16; בְּיָדוֹ v 16, 23 (כִּנּוֹר in context), 18:10; 19:9; c. acc. cogn. Is 38:20; in sim. מֵטִב נַגֵּן Ez 33:32 (‖ שִׁיר עֲגָבִים יְפֵה־קוֹל); אִישׁ מֵיטִיב לְנ׳ 1 S 16:17, cf. ψ 33:3 Is 23:16 (both ‖ שִׁיר), יָדַע נ׳ 1 S 16:18; also 2 K 3:15; Pt. = player, minstrel (cf. Q
+Senses:
+  Sense 1: "play a stringed instrument" (12x)
+    Desc: To play or make music on a stringed instrument, used of the verbal action of performing music (Piel finite forms, infinitives, and verbal participles).
+    Domain: COMMUNICATION > Communication
+    Glosses: eng: and-he-will-play, and-played, music | spa: cuando-tocaba, en-tocar, la-música | fra: [נגן], [ננגן], et-il-fera-joue | deu: [נגן], [ננגן], music
+    Refs: 1Sam 16:16, 1Sam 16:16, 1Sam 16:17, 1Sam 16:18, 1Sam 16:23
+  Sense 2: "musician, instrumentalist" (3x)
+    Desc: A player of stringed instruments, used substantivally as an agent noun from both Piel and Qal participles with or without the article.
+    Domain: COMMUNICATION > Communication
+    Glosses: eng: a-musician, the-musician, the-musicians | spa: el-músico, músicos, un-músico | fra: jouer, le-musician, un-musician | deu: der-musician, der-musicians, ein-musician
+    Refs: 2Kgs 3:15, 2Kgs 3:15, Ps 68:25
+
+=== H6085 ===
+Language: Hebrew, POS: N-proper-ms, Occurrences: 15, Senses: 2
+
+BDB excerpt: missing
+Senses:
+  Sense 1: "Ephron" (14x)
+    Desc: Ephron, and Ephron, [Ephron] (14 occurrences across 5 original clusters)
+    Domain: DISCOURSE_NAMES > Names of Persons and Places
+    Glosses: eng: Ephron, [Ephron], and-Ephron | spa: Efron, Efrón, Ephron | fra: Ephron, [עפרון], et-Ephron | deu: Efron, Efrons, Ephron
+    Refs: Gen 23:8, Gen 23:10, Gen 23:10, Gen 23:13, Gen 23:14
+  Sense 2: "(Ephrain)" (1x)
+    Desc: (Ephrain) (1 occurrences across 1 original clusters)
+    Domain: DISCOURSE_NAMES > Names of Persons and Places
+    Glosses: eng: (Ephrain) | spa: Efrayín | fra: [עפרין] | deu: [עפרין]
+    Refs: 2Chr 13:19
+
+=== H6776 ===
+Language: Hebrew, POS: N-mp, Occurrences: 15, Senses: 2
+
+BDB excerpt: † צֶ֫מֶד n.m. 1 K 19:19 couple, pair;—צ׳ cstr. Ju 19:3 +; sf. צִמְדּוֹ Je 51:23; pl. צְמָדִים 1 K 19:19; 2 K 9:25 (but v. infr.); cstr. צִמְדֵּי Is 5:10 (Ges§ 93 m);— 1. couple, pair, usually of animals, צ׳ חֲמֹרִים Ju 19:3, 10; 2 S 16:1; צ׳ (הַ)בָּקָר span of oxen 1 S 11:7; 1 K 19:21, pl. of more than one span v 19 (ploughing), Jb 1:3; 42:12; צֶמֶד פְּרָדִים 2 K 5:17; צ׳ פָּרָשִׁים Is 21:7, 9 a pair of horsemen; pl. also of one pair of riders 2 K 9:25 (but read prob. צֶמֶד, so Kit); צ׳ alone = span (of oxen) Je 51:23. 2. a measure of land (only square measure in OT) like acre; orig. appar. wh
+Senses:
+  Sense 1: "pair, yoke (of animals)" (14x)
+    Desc: A pair or team of draft animals yoked together, especially oxen. Saul cut a yoke of oxen (צֶמֶד בָּקָר) as a summons to war (1 Samuel 11:7), Jonathan's sign involved a yoke of oxen (1 Samuel 14:14), E...
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: and-a-pair-of, and-his-team, and-pair-of | spa: par-de, parejas, un-par-de | fra: [וצמדו], [צמד], et-paire-de | deu: [וצמדו], [צמד], pair-von
+    Refs: Judg 19:3, Judg 19:10, 1Sam 11:7, 1Sam 14:14, 2Sam 16:1
+  Sense 2: "acre (land measure)" (1x)
+    Desc: A unit of land area, originally the amount a yoke of oxen could plow in a day; a semantic extension from 'yoke (of animals)' to the land measure associated with them. Used in Isaiah 5:10 where 'ten ac...
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: yokes-of- | spa: yugadas-de | fra: [צמדי] | deu: [צמדי]
+    Refs: Isa 5:10

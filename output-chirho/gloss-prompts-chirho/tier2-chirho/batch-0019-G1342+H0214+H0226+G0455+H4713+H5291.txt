@@ -1,0 +1,145 @@
+You are a biblical lexicographer composing glosses for a digital lexicon.
+For each lemma below, compose a JSON object. Separate objects with "---".
+
+Format for each:
+{
+  "lemma_id": "...",
+  "gloss_terse": "under 120 chars, concise definition covering the word's semantic range",
+  "gloss_readable": "2-5 sentences, 40-120 words. Don't start with 'This word'. Warm study-Bible footnote tone. Engaging, not dry.",
+  "senses": {
+    "1": "enriched 20-60 word description. Reference multilingual evidence when illuminating. Don't repeat the label verbatim.",
+    "2": "..."
+  }
+}
+
+Rules:
+- No markdown fences, just JSON objects separated by ---
+- Reference multilingual evidence naturally when it reveals something
+- gloss_readable should feel like a good study Bible footnote: helpful, clear, occasionally surprising
+- Each sense enrichment: how does the evidence support this sense? Mention 1-2 key passages when helpful.
+
+=== G1342 ===
+Language: Greek, POS: Adj-VMS, Occurrences: 80, Senses: 3
+
+BDB excerpt: δίκαιος [ῐ], α, ον, also ος, ον Refs 5th c.BC+: (δίκη): __A in Refs 8th c.BC+ and all writers, of persons, observant of custom or rule, Refs 8th c.BC+; especially of social rule, well-ordered, civilized, ὑβρισταί τε καὶ ἄγριοι οὐδὲ δ. Refs 8th c.BC+; δ. πολίτης a good citizen, Refs 4th c.BC+: metaphorically of the sea, Refs 6th c.BC+; δικαίη ζόη a civilized way of living, Refs 5th c.BC+ adverb δικαίως, μνᾶσθαι woo in due form, decently, Refs 8th c.BC+loyally, Refs 5th c.BC+ __A.2 observant of duty to gods and men, righteous, Refs 8th c.BC+; opposed to δυσσεβής, Refs 5th c.BC+; also of actions,
+Senses:
+  Sense 1: "righteous, upright (of persons)" (70x)
+    Desc: Describing a person who is morally upright, just, and in right standing before God or by ethical standards.
+    Domain: MORAL_QUALITY > Moral and Ethical Qualities
+    Glosses: eng: righteous | spa: justa, justo | fra: juste | deu: gerecht
+    Refs: Matt 1:19, Matt 5:45, Matt 9:13, Matt 13:17, Matt 13:43
+  Sense 2: "right, just, fair (of actions)" (7x)
+    Desc: Describing actions, judgments, or standards as morally correct, fair, or in accordance with what is proper and just.
+    Domain: MORAL_QUALITY > Moral and Ethical Qualities
+    Glosses: eng: just, right | spa: justo | fra: juste | deu: gerecht
+    Refs: Matt 20:4, Matt 20:7, Luke 12:57, Acts 4:19, Eph 6:1
+  Sense 3: "the Righteous One (title)" (3x)
+    Desc: Messianic and christological title referring to Jesus as the uniquely Righteous One, used as a proper designation rather than a general adjective.
+    Domain: MORAL_QUALITY > Moral and Ethical Qualities
+    Glosses: eng: Righteous-One | spa: Justo | fra: juste | deu: gerecht
+    Refs: Acts 3:14, Acts 7:52, Acts 22:14
+
+=== H0214 ===
+Language: Hebrew, POS: N-mpc | 2ms, Occurrences: 79, Senses: 3
+
+BDB excerpt: † אוֹצָר n.m. Pr 15:16 treasure, store, treasury, storehouse (so Aramaic, also ܐܰܘܨܪܳܐ )—אוֹצָר Pr 15:16 +; cstr. אוֹצַר Jos 6:19 +; sf. אוֹצָרוֹ Dt 28:12 + 2 times; pl. אֹצָרוֹת Jo 1:17 +; אוֹצָרוֹת Pr 21:6 +; cstr. אוֹצְרוֹת Pr 10:2 +; אֹצְרוֹת Jb 38:22 +; pl. sf. אוֹצְרֹתָֽי׃ Dt 32:34 Is 39:4; אוֹצְרֹתָֽי׃ Dt 32:34; אוֹצְרוֹתֶיךָ Je 17:3; אוֹצְרוֹתָם Is 30:6; אֹצְרֹתֵיהֶם Pr 8:21, etc.— 1. treasure(s), gen. pl. (gold, silver, costly utensils, etc.) Jos 6:19, 24; Is 2:7; 30:6; 45:3 (א׳ חֹשֶׁךְ, i.e. concealed, hoarded) Ho 13:15; Je 15:13; 17:3; 20:5; 48:7; 49:4; 51:13; 1 K 14:26(×2) 2 K 24:1
+Senses:
+  Sense 1: "treasury, treasure-house" (47x)
+    Desc: A dedicated room or building where valuables are stored, especially a royal or temple treasury.
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: and-in-treasuries-of, and-stores-of, and-treasures-of | spa: al-tesoro, al-tesoro-de, el-tesoro | fra: et-dans-trésors-de, et-trésor, trésor | deu: Schaetze, Schatz, das-Schatzhaus
+    Refs: Deut 28:12, Josh 6:19, Josh 6:24, 1Kgs 7:51, 1Kgs 15:18
+  Sense 2: "treasure, valuable possessions" (23x)
+    Desc: Stored wealth, riches, or precious things considered as valuable possessions rather than the place where they are kept.
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: her-treasures, in-treasures, is-his-treasure | spa: Tesoro, a-sus-tesoros, que-tesoro | fra: de-trésor, trésor, trésors-de | deu: Schaetze-von, Schatz, Schatzhaus
+    Refs: 1Kgs 14:26, 1Kgs 14:26, 1Kgs 15:18, 2Kgs 24:13, 2Chr 12:9
+  Sense 3: "storehouse, granary" (9x)
+    Desc: A general storage facility for supplies, grain, weapons, or cosmic elements like wind and hail, often used of God's storehouses in nature.
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: from-His-storehouses, from-his-storehouses, his-armory | spa: de-sus-depósitos, de-tesoros-de-él, de-tesoros-sus | fra: dans-mon-treasuries, dans-mon-trésors, dans-trésor | deu: Schatz, [אצרות], in-mein-treasuries
+    Refs: Deut 32:34, 2Kgs 20:15, Ps 33:7, Ps 135:7, Isa 39:4
+
+=== H0226 ===
+Language: Hebrew, POS: Prep-m | N-cpc | 2ms, Occurrences: 79, Senses: 3
+
+BDB excerpt: אוֹת n.m.79 Ex 4:8 (f. Jos 24:17) sign (Arabic آيَة, pl. آىٌ, Aramaic אָתָא, ܐܳܬܳܐ )—א׳ Gn 4:15 +; cstr. 9:12 +; pl. אוֹתוֹת Ex 4:9 + etc.— 1. sign, pledge, token Gn 4:15 (J); אוֹת אֱמֶת true token Jos 2:12 (J); of blood of passover Ex 12:13 (P); אוֹת לְטוֹבָה token for good ψ 86:17; pledges, assurances of travellers Jb 21:29. 2. signs, omens promised by prophets as pledges of certain predicted events 1 S 10:7, 9 + v 1 where א׳ ins. 𝔊 𝔙, vid. We Dr; especially phr. זֶה הָאוֹת לְ Ex 3:12; 1 S 2:34; 14:10; 2 K 19:29; Je 44:29; Is 7:11, 14; prob. also Is 44:25 (of false proph.). 3. sign, symbol o
+Senses:
+  Sense 1: "sign, miraculous sign" (71x)
+    Desc: A visible indicator, portent, or miraculous act serving as evidence of divine power or a message from God, including the plagues of Egypt and other wonders.
+    Domain: COMMUNICATION > Communication
+    Glosses: eng: a-sign, is-the-sign, sign | spa: la-señal, señal, señal-de | fra: [אות], le-signe, signe | deu: Zeichen, der-Zeichen, ein-Zeichen
+    Refs: Gen 4:15, Exod 3:12, Exod 4:8, Exod 4:8, Exod 4:9
+  Sense 2: "token, covenant mark" (6x)
+    Desc: A distinguishing mark or token that serves as a reminder or pledge of a covenant or agreement, such as the sign of circumcision or the rainbow as a sign of the Noahic covenant.
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: for-sign, for-sign-of, sign-of- | spa: como-señal, para-señal-de, por-señal-de | fra: pour-signe-de, signe, signe-de- | deu: Zeichen, das-Zeichen-, zum-Zeichen
+    Refs: Gen 9:12, Gen 9:13, Gen 9:17, Gen 17:11, Isa 19:20
+  Sense 3: "standard, ensign, banner" (2x)
+    Desc: A military or tribal standard used to identify and rally a group, as in the ensigns of the Israelite tribes in the wilderness encampment.
+    Domain: COMMUNICATION > Communication
+    Glosses: eng: and-their-signs, their-signs | spa: Y-sus-señales, sus-señales | fra: [אותתם], et-leur-ואתתם-eux | deu: [ואתתם], ihr-Zeichen
+    Refs: Job 21:29, Ps 74:4
+
+=== G0455 ===
+Language: Greek, POS: V-RPM/P-AFS, Occurrences: 77, Senses: 3
+
+BDB excerpt: Included with: ἀνοίγ-νῡμι Refs 5th c.BC+; ἀνοίγω Refs 5th c.BC+, and Attic dialect as Refs 4th c.BC+: imperfect ἀνἔῳγονRefs 8th c.BC+; Ionic dialect and Epic dialect ἀναοίγεσκονRefs 8th c.BC+: future ἀνοίξωRefs 5th c.BC+: aorist ἀνέῳξαRefs 5th c.BC+participle ἀνεῴξας Refs; also ἤνοιξαRefs 5th c.BC+ and in late Prose; Ionic dialect ἄνοιξαRefs 5th c.BC+; poetry ἀνῷξαRefs 3rd c.BC+ M.: perfect ἀνέῳχαRefs 4th c.BC+: pluperfect ἀνεῴγειRefs 5th c.BC+:—passive, ἀνοίγνῠμαι Refs 5th c.BC+: late future ἀνοιχθήσομαιLXX+5th c.BC+: perfect ἀνέῳγμαιRefs 5th c.BC+; later ἤνοιγμαι (δι-) best reading in Refs 5
+Senses:
+  Sense 1: "to open (transitive)" (46x)
+    Desc: To open something such as a door, gate, book, seal, mouth, or eyes — the active transitive use where an agent performs the opening.
+    Domain: PROPERTIES_RELATIONS > Features of Objects
+    Glosses: eng: did-he-open, he-opened, opened | spa: abrió | fra: ouvrir | deu: oeffnen, öffnet
+    Refs: Matt 2:11, Matt 5:2, Matt 13:35, Matt 17:27, Matt 25:11
+  Sense 2: "to be opened (passive)" (20x)
+    Desc: To be opened or to become open — the passive use indicating that something undergoes opening, whether by divine action, external agency, or spontaneous change of state.
+    Domain: PROPERTIES_RELATIONS > Features of Objects
+    Glosses: eng: has-been-opened, has-opened, it-will-be-opened | spa: abrirse, fue-abierta, fue-abierto | fra: ouvrir | deu: oeffnen, öffnet
+    Refs: Matt 3:16, Matt 7:7, Matt 7:8, Matt 9:30, Matt 20:33
+  Sense 3: "opened, standing open (stative)" (11x)
+    Desc: In a state of having been opened or standing open — the perfect participle indicating the resultant condition of openness rather than the event of opening.
+    Domain: PROPERTIES_RELATIONS > Features of Objects
+    Glosses: eng: having-been-opened, opened | spa: abierta, abiertas, abierto | fra: ouvrir | deu: oeffnen, öffnet
+    Refs: John 1:51, Acts 9:8, Acts 10:11, Acts 16:27, Rom 3:13
+
+=== H4713 ===
+Language: Hebrew, POS: Prep-l | N-proper-fs, Occurrences: 76, Senses: 3
+
+BDB excerpt: † מִצְרִי adj.gent. Egyptian;—ms. מ׳ Gn 39:1 + 16 times; fs. מִצְרִית 16:1 + 3 times; mpl. מִצְרִים 12:12 + 5 times; fpl. מִצְרִיֹּת Ex 1:19;— 1. adj. אִישׁ מ׳=an Egyptian Gn 39:1 Ex 2:11, 19 Lv 24:10 1 S 30:11 2 S 23:30; הָאִישׁ הַמּ׳ 1 Ch 11:23; נַעַר מ׳ 1 S 30:13, עֶבֶד מ׳ 1 Ch 2:34; שִׁפְחָה מִצְרִית Gn 16:1, כַּנָּשִׁים הַמִּצְרִיֹּת Ex 1:19. 2. c. art.=subst. the Egyptian Gn 39:2, 5 Ex 2:12, 14 2 S 23:30(×2) 1 Ch 11:23(×2); so once without art. מִצְרִי Dt 23:8; הַמִּצְרִי once (late) coll.=the Egyptians Ezr 9:1 (where with Canaanitish peoples); pl.=the Egyptians, הָמִּצְרִים Gn 12:12, 14
+Senses:
+  Sense 1: "Egypt (country/land)" (46x)
+    Desc: The land and nation of Egypt (Mitsrayim), used as a geographic and political proper noun referring to the country itself.
+    Domain: DISCOURSE_NAMES > Names of Persons and Places
+    Glosses: eng: Egypt | spa: Mitsrayim, Mitsráyim | fra: Égypte | deu: Aegypten, die-Ägypter, Ägypten
+    Refs: Gen 41:55, Gen 41:56, Gen 43:32, Gen 45:2, Gen 46:34
+  Sense 2: "Egyptian (masculine gentilic)" (25x)
+    Desc: A male person or group of male persons from Egypt, the gentilic adjective/noun in masculine singular or plural form.
+    Domain: GROUPS_COMMUNITY > Groups and Classes of Persons
+    Glosses: eng: Egyptian, Mitsri, the-Egyptian | spa: egipcio, el-egipcio, el-mitsri | fra: Egyptian, [המצרי], [מצרי] | deu: Aegypter, Egyptian, [המצרי]
+    Refs: Gen 12:12, Gen 12:14, Gen 39:1, Gen 39:2, Gen 39:5
+  Sense 3: "Egyptian (feminine gentilic)" (5x)
+    Desc: A female person or group of female persons from Egypt, the gentilic adjective/noun in feminine singular or plural form.
+    Domain: GROUPS_COMMUNITY > Groups and Classes of Persons
+    Glosses: eng: Egyptian, the-Egyptian | spa: egipcia, la-egipcia, la-mitzrit | fra: le-Égyptien, Égyptien | deu: der-Aegypter, der-Ägypterin, die-Ägypterin
+    Refs: Gen 16:1, Gen 16:3, Gen 21:9, Gen 25:12, Exod 1:19
+
+=== H5291 ===
+Language: Hebrew, POS: N-fpc | 3fs, Occurrences: 76, Senses: 3
+
+BDB excerpt: † I. נַעֲרָה n.f. girl, damsel;—abs. נ׳ Ju 19:3 + 22 times, also Qr Gn 24:14 + 20 times Gn Dt (נַעֲרָה Kt in Pent. only Dt 22:19, v. infr.); pl. abs. נְעָרוֹת 1 S 9:11 +, cstr. נַעֲרוֹת Est 4:4; sf. נַעֲרוֹתָיו Ru 2:22; 3:2, נַעֲרֹתֶיהָ Gn 24:61; Ex 2:5, etc.;— 1. girl, damsel; נ׳ קְטַנָּה little girl only 2 K 5:2, cf. v 4, perhaps = young daughters Jb 40:29; elsewhere = young woman 1 S 9:11; especially as marriageable, Gn 24:14, 16, 28, 55, 57; 34:3, 12 (all J), Dt 22:15(×2), 16, 19, 20, 21, 24, 26(×2), 29; 1 K 1:3, 4; Est 2:4, 7, 8, 9, 12(×2), 13; specif. virgin נ׳ בְּתוּלָה Ju 21:12; Dt 22:
+Senses:
+  Sense 1: "young woman, girl" (58x)
+    Desc: A young woman or girl, typically of marriageable age, used in singular to refer to an individual female without connotation of servitude.
+    Domain: PEOPLE_KINSHIP > People
+    Glosses: eng: [for-the-young-woman], [the-young-woman], [young-woman] | spa: a-la-joven, la-joven, qere:en-la-joven | fra: [jeune-femme], [la-jeune-femme], [pour-le-jeune-femme] | deu: [der-jung-Frau], [fuer-der-jung-Frau], [jung-Frau]
+    Refs: Gen 24:14, Gen 24:16, Gen 24:28, Gen 24:55, Gen 24:57
+  Sense 2: "female attendant, maidservant" (15x)
+    Desc: A female servant or attendant in the household of a master or mistress, typically used in the plural with possessive suffixes to denote belonging.
+    Domain: AUTHORITY_RULE > Status
+    Glosses: eng: and-her-maidens, and-her-young-women, and-my-young-women | spa: a-las-siervas-de, a-sus-criadas, criadas-de-ella | fra: der-jeunes-filles, et-jeune-fille, et-sa-jeune-femmes | deu: Maedchen, der-Maedchen, ihr-jung-Frauen
+    Refs: Gen 24:61, Exod 2:5, Ruth 2:8, Ruth 2:22, Ruth 2:23
+  Sense 3: "young women (group)" (3x)
+    Desc: Young women as a collective group without the connotation of servitude or household attachment, used in the absolute plural.
+    Domain: PEOPLE_KINSHIP > People
+    Glosses: eng: young-women | spa: jóvenes, muchachas | fra: jeune-femmes, jeunes-filles | deu: Maedchen, jung-Frauen
+    Refs: 1Sam 9:11, Esth 2:2, Esth 2:8

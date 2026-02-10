@@ -1,0 +1,123 @@
+You are a biblical lexicographer composing glosses for a digital lexicon.
+For each lemma below, compose a JSON object. Separate objects with "---".
+
+Format for each:
+{
+  "lemma_id": "...",
+  "gloss_terse": "under 120 chars, concise definition covering the word's semantic range",
+  "gloss_readable": "2-5 sentences, 40-120 words. Don't start with 'This word'. Warm study-Bible footnote tone. Engaging, not dry.",
+  "senses": {
+    "1": "enriched 20-60 word description. Reference multilingual evidence when illuminating. Don't repeat the label verbatim.",
+    "2": "..."
+  }
+}
+
+Rules:
+- No markdown fences, just JSON objects separated by ---
+- Reference multilingual evidence naturally when it reveals something
+- gloss_readable should feel like a good study Bible footnote: helpful, clear, occasionally surprising
+- Each sense enrichment: how does the evidence support this sense? Mention 1-2 key passages when helpful.
+
+=== H6041 ===
+Language: Hebrew, POS: Prep-l | Adj-ms, Occurrences: 79, Senses: 4
+
+BDB excerpt: † עֱנוּת n.f. affliction;—ψ 22:25; CheJBL xv (1896), 198 proposes צַעֲקַת cry [cf. 𝔊 𝔙 𝔗], (צ dropped out after ץ).
+Senses:
+  Sense 1: "poor, needy person" (55x)
+    Desc: One who is materially destitute or in a state of economic poverty, often as a social class deserving justice and compassion.
+    Domain: AUTHORITY_RULE > Status
+    Glosses: eng: afflicted, am-afflicted, humble | spa: Al-pobre, afligido, al-pobre | fra: pauvre | deu: Armer, Elende, arm
+    Refs: Lev 19:10, Lev 23:22, Deut 24:12, Deut 24:14, Deut 24:15
+  Sense 2: "afflicted, oppressed one" (19x)
+    Desc: One who suffers distress, oppression, or misery, emphasizing the experiential condition of suffering rather than mere economic lack.
+    Domain: AUTHORITY_RULE > Status
+    Glosses: eng: Your-afflicted-ones, [ketiv], afflicted | spa: Afligido, [afligidos], afligido | fra: affligé, et-pauvre, mon-affliction | deu: Arme, Armer, Elende
+    Refs: 2Sam 22:28, Job 34:28, Job 36:6, Job 36:15, Ps 9:12
+  Sense 3: "afflicted one (feminine personification)" (3x)
+    Desc: Feminine form used as a vocative or epithet, typically addressing a personified city (e.g., Jerusalem/Zion) as a suffering, storm-tossed figure.
+    Domain: AUTHORITY_RULE > Status
+    Glosses: eng: afflicted-one, poor | spa: Afligida, afligida, pobre | fra: son-affliction | deu: Armer
+    Refs: Isa 10:30, Isa 51:21, Isa 54:11
+  Sense 4: "humble, lowly in spirit" (2x)
+    Desc: One who is meek or humble in disposition before God, denoting a spiritual or moral quality rather than an external condition.
+    Domain: AUTHORITY_RULE > Status
+    Glosses: eng: [ketiv], humble | spa: [y-a-los-afligidos], humilde | fra: et-pauvre, pauvre | deu: [[ולעניים]], elend
+    Refs: Prov 3:34, Zech 9:9
+
+=== H5061 ===
+Language: Hebrew, POS: Conj-w, Occurrences: 78, Senses: 4
+
+BDB excerpt: נֶ֫גַע78 n.m. Gn 12:17 stroke, plague, mark, plague-spot;—נ׳ abs. Ex 11:1 +, נָ֑נַע Lv 13:13 +; cstr. Dt 24:8 +; sf. נִגְעִי ψ 38:12; נִגְעֶ֑ךָ 39:11; נִגְעוֹ Lv 13:44; 2 Ch 6:29; pl. נְגָעִים Gn 12:17 ψ 89:33; cstr. נִגְעֵי 2 S 7:14;— 1. stroke, wound, inflicted by man on man Dt 17:8; 21:5 (‖ רִיב), Pr 6:33. 2. stroke, metaph., especially of a disease, regarded as sent by a divine chastisement, Gn 12:17 (J), Ex 11:1 (E), 2 S 7:14 (נ׳ בְנֵי אָדָם, ‖ שֵׁבֶט אֲנָשִׁים, i.e. customary, ordinary), 1 K 8:37 = 2 Ch 6:28 (both ‖ מַחֲלָה); 1 K 8:38 (נ׳ לְבָבוֹ) = 2 Ch 6:29 (נִגְעוֹ); ψ 91:10 (‖ רָעָה)
+Senses:
+  Sense 1: "skin disease or affliction" (63x)
+    Desc: A diseased spot or skin affliction examined by the priest, the technical Levitical term for leprous or eruptive conditions on skin, garments, or houses.
+    Domain: BODY_HEALTH > Physiological Processes and States
+    Glosses: eng: affliction, the-affliction | spa: la-plaga, plaga | fra: affliction, le-affliction | deu: Elend, der-Elend
+    Refs: Lev 13:3, Lev 13:3, Lev 13:3, Lev 13:4, Lev 13:5
+  Sense 2: "plague or divine calamity" (8x)
+    Desc: A plague or calamity sent by God as judgment or affliction upon people, often with possessive suffixes indicating personal or national disaster.
+    Domain: BODY_HEALTH > Physiological Processes and States
+    Glosses: eng: Your-plague, and-a-plague, his-plague | spa: mi-plaga, plaga, plagas | fra: [ונגע], [נגע], [נגעו] | deu: Plage, [נגע], [נגעו]
+    Refs: Gen 12:17, Exod 11:1, 1Kgs 8:37, 2Chr 6:28, 2Chr 6:29
+  Sense 3: "blow, wound, or injury" (5x)
+    Desc: A physical blow, stroke, or wound inflicted on a person, referring to bodily harm or injury.
+    Domain: BODY_HEALTH > Physiological Processes and States
+    Glosses: eng: affliction, stroke, to-affliction | spa: Herida, a-plaga, golpe | fra: [נגע], affliction, à-affliction | deu: Elend, [נגע], berueehrte
+    Refs: Deut 17:8, Deut 17:8, Deut 21:5, Prov 6:33, Isa 53:8
+  Sense 4: "stripes or beating" (2x)
+    Desc: Plural strokes or stripes as in a beating or flogging administered as punishment.
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: and-with-stripes, and-with-strokes-of | spa: y-con-azotes, y-con-golpes-de | fra: [ובנגעים], et-avec-strokes-de | deu: und-mit-stripes, und-mit-strokes-von
+    Refs: 2Sam 7:14, Ps 89:32
+
+=== H7138 ===
+Language: Hebrew, POS: Conj-w | Adj-mpc | 1cs, Occurrences: 78, Senses: 4
+
+BDB excerpt: † קָרֹב, קָרוֹב, adj. near;—abs. קָרֹב Ex 12:4 +; -וֹב 2 S 19:43 +; pl. קְרֹבִים 1 K 8:59, קְרוֹבִים Is 33:13 +; fpl. קְרֹבוֹת Ez 22:5, etc.;—near (often opp. רָחוֹק): 1. of city Gn 19:20 (+ לָנוּם שָׁ֫מָּה), Je 48:24, הַקּ׳ Dt 21:3 the nearest (+ אֶל), cf. (of elders) v 6; of land 1 K 8:46 = 2 Ch 6:36; road Ex 13:17; = contiguous, כֶּרֶם 1 K 21:2 (+ אֵצֶל בֵּיתִי). 2. of pers.: a. + אֶל pers. Gn 45:10; Dt 13:8; 22:2 Jos 9:16; 1 Ch 12:41 (van d. H. v 40); הַקּ׳ אֶל Ex 12:4 the nearest to; c. sf. קְרֹבוֹ Ex 32:27, i.e. his neighbour. b. abs. (opp. or + רחוק, often = near and far, i.e. all witho
+Senses:
+  Sense 1: "near, close (spatial)" (62x)
+    Desc: Physically near or close in space, describing proximity of location, used predicatively or attributively of places, cities, or persons in a spatial sense.
+    Domain: GEOGRAPHY_SPACE > Spacial Positions
+    Glosses: eng: Near, is-near, near | spa: cerca, cercana, cercano | fra: proche, près, près-de | deu: nahe
+    Refs: Gen 45:10, Exod 12:4, Exod 13:17, Lev 21:2, Lev 21:3
+  Sense 2: "relative, kinsman, neighbor" (8x)
+    Desc: A person who is near by kinship or social bond, used substantively to mean a blood relative, close friend, or neighbor, often with pronominal suffixes.
+    Domain: GEOGRAPHY_SPACE > Spacial Positions
+    Glosses: eng: and-my-relatives, his-close-friend, his-nearness | spa: cercano, cercano-a-él, cercanos | fra: [קרוב], et-proche, proche | deu: nahe, sein-nahe, sein-relative
+    Refs: Exod 32:27, Neh 13:4, Job 19:14, Ps 15:3, Ps 38:11
+  Sense 3: "near in time, soon" (5x)
+    Desc: Temporally imminent or recent, often with prepositions min or be to form adverbial expressions meaning 'soon', 'shortly', 'recently', or 'of short duration'.
+    Domain: GEOGRAPHY_SPACE > Spacial Positions
+    Glosses: eng: from-near, is-short, near | spa: cerca, de-cerca, es-de-poco-tiempo | fra: dans-proche, de-milieu, de-proche | deu: aus-der-Mitte, nahe, von-nahe
+    Refs: Deut 32:17, Job 20:5, Jer 23:23, Ezek 7:8, Ezek 11:3
+  Sense 4: "drawing near to God" (3x)
+    Desc: Those who approach or are admitted into God's presence, a cultic-theological sense describing priests or worshippers who draw near in sacred service.
+    Domain: GEOGRAPHY_SPACE > Spacial Positions
+    Glosses: eng: by-those-near-to-me, near, the-ones-drawing-near | spa: cercanos, los-cercanos, por-los-que-se-acercan-a-mí | fra: par-ces-près-de-à-moi, proche | deu: durch-jene-nahe-zu-mich, nahe
+    Refs: Lev 10:3, Ezek 42:13, Ezek 43:19
+
+=== H7392 ===
+Language: Hebrew, POS: Conj-w | V-Qal-ConjImperf.h-1cs, Occurrences: 78, Senses: 4
+
+BDB excerpt: † רָכַב vb. mount and ride, ride (NH = BH; Assyrian rakâbu, Arabic رَكِبَ,, Aramaic רְכֵיב, ܪܟܶܒ, all id.; cf. Zinj. רכב war-chariot, n.pr. div. רכבאל (Cook108); Sab. רכבהו = his rider MordtmHim. Inschr. 25 (of horse; but his trappings CISiv. no. 306, 5); Ethiopic ረከበ: is attain, acquire);— Qal Pf. 3 ms. ר׳ Est 6:8; 2 ms. רָכַבְתָּ Nu 22:30; 3 pl. רָֽכְבוּ 1 S 30:17; Impf. 3 ms. יִרְכַּב Lv 15:9, etc.; Imv. ms. רְכַב ψ 45:5; Inf. cstr. לִרְכֹּב 2 S 16:2 2 K 4:24; Pt. act. רֹכֵב abs. Nu 22:22 +, cstr. Am 2:15; sf. רֹכְבוֹ Gn 49:17 +; fs. abs. רֹכֶ֫בֶת 1 S 25:30; mpl. רֹכְבִים 2 K 9:25 +, etc.;—
+Senses:
+  Sense 1: "Qal participle: rider, charioteer" (37x)
+    Desc: The Qal active participle used substantivally to denote 'rider' or 'charioteer' — both singular (רֹכֵב) and plural (רֹכְבִים, רֹכְבֵי) construct and absolute forms, including 'the One who rides' as a ...
+    Domain: ARTIFACTS > Artifacts
+    Glosses: eng: and-his-rider, and-its-rider, on-them | spa: cabalgadores-de, cabalgando, jinete-de | fra: cavalier-de, cavaliers, chevauchant | deu: Reiter, Reiter-von, [ורכבו]
+    Refs: Gen 49:17, Exod 15:1, Exod 15:21, Num 22:22, Deut 33:26
+  Sense 2: "Qal: ride, mount" (21x)
+    Desc: To ride upon an animal, chariot, or (of God) upon the clouds/heavens — the basic intransitive Qal sense covering all finite forms, infinitives, and imperatives.
+    Domain: ARTIFACTS > Artifacts
+    Glosses: eng: and-He-rode, and-I-will-ride, and-he-rode | spa: Y-cabalgaba, Y-cabalgó, cabalga | fra: chevaucha, chevaucher, et-Il-chevaucha | deu: Wagen, [נרכב], [תרכב]
+    Refs: Gen 24:61, Lev 15:9, Num 22:30, 1Sam 25:42, 1Sam 30:17
+  Sense 3: "Hifil: cause to ride, set upon" (18x)
+    Desc: The Hifil causative meaning 'to cause someone to ride' or 'to mount a person on an animal/chariot' — used when placing or seating a person on a mount, as in enthronement or transport of a dignitary.
+    Domain: PHYSICAL_ACTION > Physical Impact
+    Glosses: eng: I-will-cause-to-ride, You-made-ride, You-make-me-ride | spa: Hiciste-cabalgar, Y-lo-hizo-montar, Y-lo-llevaron | fra: chevaucher, et-chevaucha-lui, et-chevaucher | deu: [ארכיב], [והרכיבהו], [וירכיבהו]
+    Refs: Gen 41:43, Exod 4:20, Deut 32:13, 1Kgs 1:33, 1Kgs 1:38
+  Sense 4: "Hifil: load, place upon (cargo)" (2x)
+    Desc: A specialized Hifil usage meaning 'to load or place goods/cargo upon an animal for transport' — distinguished from the personal causative by inanimate object, reflected in Korean 실다 (load) and Swahili...
+    Domain: PHYSICAL_ACTION > Physical Impact
+    Glosses: eng: and-mounted, and-they-mounted | spa: Y-montaron | fra: et-ils-monta, et-monter-à-cheval | deu: [וירכיבו], und-sie-mounted
+    Refs: 2Sam 6:3, 1Chr 13:7

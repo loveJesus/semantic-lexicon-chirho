@@ -68,10 +68,36 @@ export const load: PageServerLoad = async ({ platform, params }) => {
     refsChirho = refResultChirho.results;
   }
 
+  // Fetch related senses (other lemmas in the same macro32 domain)
+  const domainsChirho = sensesChirho.results
+    .map((s: Record<string, unknown>) => s.macro32_chirho)
+    .filter((d: unknown): d is string => typeof d === 'string' && d.length > 0);
+  const uniqueDomainsChirho = [...new Set(domainsChirho)];
+
+  let relatedSensesChirho: Record<string, unknown>[] = [];
+  if (uniqueDomainsChirho.length > 0) {
+    const domPlaceholdersChirho = uniqueDomainsChirho.map((_: unknown, iChirho: number) => `?${iChirho + 1}`).join(",");
+    const relatedResultChirho = await dbChirho
+      .prepare(
+        `SELECT s.sense_id_chirho, s.lemma_id_chirho, s.ordinal_chirho, s.label_chirho,
+                s.macro32_chirho, s.occurrence_count_chirho, l.pos_chirho
+         FROM sense_entry_chirho s
+         JOIN lemma_entry_chirho l ON s.lemma_id_chirho = l.lemma_id_chirho
+         WHERE s.macro32_chirho IN (${domPlaceholdersChirho})
+           AND s.lemma_id_chirho != ?${uniqueDomainsChirho.length + 1}
+         ORDER BY s.occurrence_count_chirho DESC
+         LIMIT 20`
+      )
+      .bind(...uniqueDomainsChirho, lemmaIdChirho)
+      .all();
+    relatedSensesChirho = relatedResultChirho.results;
+  }
+
   return {
     lemmaChirho,
     sensesChirho: sensesChirho.results,
     glossesChirho,
     refsChirho,
+    relatedSensesChirho,
   };
 };

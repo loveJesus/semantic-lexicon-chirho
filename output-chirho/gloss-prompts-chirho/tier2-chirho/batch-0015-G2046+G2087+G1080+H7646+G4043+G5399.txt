@@ -1,0 +1,142 @@
+You are a biblical lexicographer composing glosses for a digital lexicon.
+For each lemma below, compose a JSON object. Separate objects with "---".
+
+Format for each:
+{
+  "lemma_id": "...",
+  "gloss_terse": "under 120 chars, concise definition covering the word's semantic range",
+  "gloss_readable": "2-5 sentences, 40-120 words. Don't start with 'This word'. Warm study-Bible footnote tone. Engaging, not dry.",
+  "senses": {
+    "1": "enriched 20-60 word description. Reference multilingual evidence when illuminating. Don't repeat the label verbatim.",
+    "2": "..."
+  }
+}
+
+Rules:
+- No markdown fences, just JSON objects separated by ---
+- Reference multilingual evidence naturally when it reveals something
+- gloss_readable should feel like a good study Bible footnote: helpful, clear, occasionally surprising
+- Each sense enrichment: how does the evidence support this sense? Mention 1-2 key passages when helpful.
+
+=== G2046 ===
+Language: Greek, POS: V-FIA-1S, Occurrences: 98, Senses: 3
+
+BDB excerpt: ἐρῶ, Attic dialect future of εἴρω (B), Refs 5th c.BC+, Ionic dialect and Epic dialect ἐρέω (later as present, Refs 2nd c.BC+; optative ἐροίην Refs 5th c.BC+imperfect ἤρεον (variant{εἴρεον}) Refs 5th c.BC+: perfect active εἴρηκα Refs 5th c.BC+: pluperfect εἰρήκειν Refs 1st c.AD+:—passive, perfect εἴρημαι Refs 8th c.BC+; Ionic dialect 3rd.pers. plural εἰρέαται Refs 5th c.BC+, contraction εἰρῆται Refs 4th c.BC+; participle εἰρημένος, Cretan dialect ϝερημένος Refs: pluperfect εἴρητο Refs 8th c.BC+: aorist 1 passive ἐρρήθην Refs 5th c.BC+: future ῥηθήσομαι Refs 5th c.BC+ mostly in 3rd.pers. singula
+Senses:
+  Sense 1: "to say, speak, tell" (66x)
+    Desc: The core active sense of declaring, stating, or telling something to someone, encompassing all persons, numbers, and active tenses of the verb.
+    Domain: COMMUNICATION > Communication
+    Glosses: eng: has-told, he-has-said, he-will-say | spa: diga, dirá, ha-dicho | fra: dire | deu: sagen, spricht
+    Refs: Matt 7:22, Matt 13:30, Matt 17:20, Matt 21:3, Matt 21:25
+  Sense 2: "that which was spoken" (31x)
+    Desc: The passive sense used in prophetic fulfillment formulas ('what was spoken by the prophet') and quotation formulas ('it was said'), referring to utterances previously delivered.
+    Domain: COMMUNICATION > Communication
+    Glosses: eng: It-was-said, having-been-said, having-been-spoken | spa: Fue-dicho, dicha, dicho | fra: dire | deu: spricht
+    Refs: Matt 1:22, Matt 2:15, Matt 2:17, Matt 2:23, Matt 3:3
+  Sense 3: "?" (1x)
+    Domain: COMMUNICATION > Communication
+    Glosses: eng: I-have-called | spa: he-llamado | fra: dire | deu: sagen
+    Refs: John 15:15
+
+=== G2087 ===
+Language: Greek, POS: Adj-NFP, Occurrences: 98, Senses: 3
+
+BDB excerpt: ἕτερος, α, ον, only Attic dialect-Ionic dialect with ἕ-, Doric dialect ἅτερος [ᾰ] Refs, Aeolic dialect ἄτερος Refs 7th c.BC+:— but ἅτερος [ᾱ], Attic dialect crasis for ὁ ἅτερος, Refs 4th c.BC+, Ionic dialect οὕτερος (from ὁ ἕτ-) Refs 5th c.BC+, Doric dialect ὥτερος Refs 3rd c.BC+; neuter θάτερον Refs 5th c.BC+, Ionic dialect τοὔτερον Refs 5th c.BC+, Ionic dialect τοὐτέρου Refs 7th c.BC+, Doric dialect θατέρω Refs 5th c.BC+, Ionic dialect τἠτέρῃ Refs 3rd c.BC+ —Later _masculine_ and _feminine_ θάτερος, θατέρα, even with the Article, Refs 4th c.BC+; θάτερον accusative singular masculine, Refs 5t
+Senses:
+  Sense 1: "other, another" (91x)
+    Desc: Denotes an additional or alternative entity of the same kind, referring to one or more distinct from those already mentioned or implied.
+    Domain: DISCOURSE_NAMES > Discourse Referentials
+    Glosses: eng: another, other | spa: a-otro, otro | fra: autre | deu: anderer
+    Refs: Matt 6:24, Matt 6:24, Matt 8:21, Matt 10:23, Matt 11:3
+  Sense 2: "different, distinct" (5x)
+    Desc: Emphasizes qualitative dissimilarity or distinction in kind, character, or nature, not merely being an additional one but being unlike what precedes.
+    Domain: DISCOURSE_NAMES > Discourse Referentials
+    Glosses: eng: different | spa: diferente, otra | fra: autre | deu: anderer
+    Refs: Luke 9:29, 1Cor 15:40, 1Cor 15:40, 2Cor 11:4, 2Cor 11:4
+  Sense 3: "next (in temporal sequence)" (2x)
+    Desc: Refers to the immediately following point in time, especially the next day, indicating temporal succession rather than mere otherness.
+    Domain: DISCOURSE_NAMES > Discourse Referentials
+    Glosses: eng: next | spa: otro, siguiente-día | fra: autre | deu: anderer
+    Refs: Acts 20:15, Acts 27:3
+
+=== G1080 ===
+Language: Greek, POS: V-RIP-1P, Occurrences: 97, Senses: 3
+
+BDB excerpt: γενν-άω, future middle γεννήσομαι in passive sense, Refs 1st c.BC+ (but -ηθήσομαιRefs: (γέννα):—causal of γίγνομαι (compare γείνομαι), mostly of the father, beget, ὁ γεννήσας πατήρ Refs 5th c.BC+; οἱ γεννήσαντές σε your parents, Refs 5th c.BC+; ὅθεν γεγενναμένοι sprung, Refs 5th c.BC+; of the mother, bring forth, bear, Refs 5th c.BC+:—middle, produce from oneself, create, Refs 5th c.BC+ __2 produce, grow, get, κἂν σῶμα γεννήσῃ μέγα Refs 5th c.BC+ __3 metaphorically, engender, produce, λήθη τῶν ἰδίων κακῶν θρασύτητα γεννᾷ Refs 5th c.BC+; γεννῶσι τὸν οὐρανὸν [οἱ φιλόσοφοι] call it into existence
+Senses:
+  Sense 1: "beget, father a child" (49x)
+    Desc: To beget or sire offspring, with the father as the active agent, used both of physical lineage (genealogies) and of God's unique relationship to the Son.
+    Domain: BODY_HEALTH > Physiological Processes and States
+    Glosses: eng: fathered | spa: engendró | fra: engendrer | deu: zeugt
+    Refs: Matt 1:2, Matt 1:2, Matt 1:2, Matt 1:3, Matt 1:3
+  Sense 2: "be born, come into existence" (44x)
+    Desc: To be born or brought into existence (passive), whether physical birth, spiritual rebirth ('born of God/Spirit'), or conception, with the one born as the grammatical subject.
+    Domain: BODY_HEALTH > Physiological Processes and States
+    Glosses: eng: has-been-born, having-been-born, he-has-been-born | spa: engendrado, fue-engendrado, ha-nacido | fra: engendrer | deu: geboren-werden, zeugt
+    Refs: Matt 1:16, Matt 1:20, Matt 2:1, Matt 2:4, Matt 19:12
+  Sense 3: "give birth to, bear" (4x)
+    Desc: To give birth to a child, with the mother as the active agent who bears or brings forth offspring.
+    Domain: BODY_HEALTH > Physiological Processes and States
+    Glosses: eng: giving-birth, she-bears, she-bore | spa: dará-a-luz, dio-a-luz, engendrando | fra: engendrer | deu: geboren-werden, zeugt
+    Refs: Luke 1:13, Luke 1:57, John 16:21, Gal 4:24
+
+=== H7646 ===
+Language: Hebrew, POS: V-Qal-Imperf-2ms, Occurrences: 97, Senses: 3
+
+BDB excerpt: [שָׂבֵעַ], שָׂבַע, vb. be sated, satisfied, surfeited (NH (der. spec.) = BH; so Assyrian šebû, Arabic شَبِعَ, Aramaic סְבַע, ܣܒܰܥ, Palm. שבע; the Ethiopic vb. of same meaning is ጸግበ: );— Qal79 Pf. 3 ms. שָׂבַע 1 Ch 23:1, וְשׂ׳ consec. Dt 31:20; 3 pl. שָׂבֵ֑עוּ Is 9:19, ושׂ׳ consec. Dt 14:29; 26:12, etc.; Impf. 3 ms. יִשְׂבַּע Pr 12:11 +, 3 mpl. יִשְׂבְּעוּן ψ 104:28, etc.; Imv. שְׂבַע־ Pr 20:13; Inf. abs. שָׂבוֹעַ Jo 2:26 2 Ch 31:10; cstr. לִשְׂבֹּעַ Ex 16:8 La 5:6, לְשָׂבְעָה Hg 1:6;— 1. be sated (with food), especially human subj.: a. abs., after אָכַל, Ho 4:10; Is 9:19; Dt 8:10; Ex 16:8 (P)
+Senses:
+  Sense 1: "be satisfied, have enough" (75x)
+    Desc: Qal (and Nifal) intransitive sense of being satisfied, full, or having plenty, encompassing all person/number/gender inflections including perfect, imperfect, imperative, consecutive, cohortative, inf...
+    Domain: BODY_HEALTH > Physiological Processes and States
+    Glosses: eng: and-be-satisfied, and-you-will-be-satisfied, are-satisfied | spa: se-sacia, se-sacian, se-saciará | fra: et-tu-fera-être-satisfied, et-être-satisfied, rassasier | deu: saettigen, saettigte, sie-wird-sein-satisfied
+    Refs: Exod 16:12, Deut 6:11, Deut 8:10, Deut 8:12, Deut 11:15
+  Sense 2: "satisfy, cause to be full" (18x)
+    Desc: Hifil and Piel causative sense meaning to satisfy or fill someone, to give enough to eat, encompassing all causative inflections including perfect, imperfect, imperative, consecutive, infinitive, and ...
+    Domain: BODY_HEALTH > Physiological Processes and States
+    Glosses: eng: He-filled-me, He-fills-me, He-satisfied | spa: El-que-sacia, Me-ha-saciado, Para-saciar | fra: et-de-rassasier, et-rassasier, le-rassasier | deu: der-satisfies, er-satisfied, er-satisfied-ihnen
+    Refs: Job 9:18, Job 38:27, Ps 81:16, Ps 90:14, Ps 91:16
+  Sense 3: "be surfeited, be weary of" (4x)
+    Desc: Qal sense with negative connotation meaning to be sated to excess, to have too much of something, to be disgusted or wearied, as shown by Korean 싫증내다 ('be sick of'), Spanish 'harto' ('fed up'), Swahil...
+    Domain: BODY_HEALTH > Physiological Processes and States
+    Glosses: eng: I-am-full, and-I-am-filled, he-be-sated-with-you | spa: Estoy-harto, se-sacie-de-ti, te-sacies-de-ella | fra: et-rassasier, rassasier, rassasier-toi | deu: saettigen, saettigte, und-saettigte
+    Refs: Job 7:4, Prov 25:16, Prov 25:17, Isa 1:11
+
+=== G4043 ===
+Language: Greek, POS: V-PIA-2S, Occurrences: 96, Senses: 3
+
+BDB excerpt: περιπᾰτ-έω, walk up and down, as in a cloister, opposed to βαδίζειν (take a walk), ἐν ταῖς στοαῖς Refs 4th c.BC+; walk about, Refs 5th c.BC+; περιπατεῖται ἡ ὁδός the road is for walking on, Refs 2nd c.AD+: with accusative, traverse, ὅλην τὴν Αἴγυπτον Refs 2nd c.AD+ __2 walk about while teaching, discourse, Refs 5th c.BC+; π. ἐς τοὺς ἀκροωμένους dispute, argue with them, Refs 2nd c.AD+ __3 metaphorically, walk, i.e. live, NT+1st c.BC+
+Senses:
+  Sense 1: "conduct oneself, live" (48x)
+    Desc: To live or conduct oneself in a particular manner, describing one's ethical or spiritual way of life (figurative extension of walking as a metaphor for behavior).
+    Domain: BEHAVIOR > Behavior and Related States
+    Glosses: eng: to-walk, walk, walking | spa: Caminad, andad, andamos | fra: marcher | deu: wandeln, wandelt
+    Refs: Matt 11:5, Mark 7:5, Luke 7:22, John 12:35, Acts 21:21
+  Sense 2: "walk physically" (47x)
+    Desc: To move on foot in a literal, physical sense, whether walking along a road, through a building, or on water.
+    Domain: BEHAVIOR > Behavior and Related States
+    Glosses: eng: walk, walking | spa: camina, caminando | fra: marcher | deu: wandeln, wandelt
+    Refs: Matt 4:18, Matt 9:5, Matt 14:25, Matt 14:26, Matt 14:29
+  Sense 3: "?" (1x)
+    Domain: BEHAVIOR > Behavior and Related States
+    Glosses: eng: walks-about | spa: anda-alrededor | fra: marcher | deu: wandeln
+    Refs: 1Pet 5:8
+
+=== G5399 ===
+Language: Greek, POS: V-AMP-2P, Occurrences: 95, Senses: 3
+
+BDB excerpt: φοβέω, 3rd.pers. plural imperative φοβεόντων Refs 5th c.BC+: Ionic dialect imperfect φοβέεσκον Refs 8th c.BC+: future -ήσωRefs 5th c.BC+: aorist ἐφόβησα Refs 8th c.BC+ —passive and middle, Ionic dialect Refs 5th c.BC+; Ionic dialect imperative φοβεῦ or φοβέο, Refs: Epic dialect 3rd.pers. plural imperfect φοβέοντο Refs 8th c.BC+: future φοβήσομαι Refs 5th c.BC+: aorist passive ἐφοβήθην Refs 8th c.BC+; aorist middle ἐφοβησάμην only Refs: perfect πεφόβημαι Refs 8th c.BC+: pluperfect 3rd.pers. plural ἐπεφόβηντο Refs 5th c.BC+, Epic dialect πεφοβήατο Refs 8th c.BC+ __A active, in Refs 8th c.BC+ alw
+Senses:
+  Sense 1: "be afraid, fear" (83x)
+    Desc: To be in a state of apprehension or alarm, experiencing fear of danger, harm, or an intimidating presence.
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: fear, feared, were-afraid | spa: temed, temieron, temáis | fra: craindre | deu: fürchtet, sich-fuerchten
+    Refs: Matt 1:20, Matt 9:8, Matt 10:26, Matt 10:28, Matt 10:28
+  Sense 2: "reverence, stand in awe of God" (11x)
+    Desc: To have a profound measure of reverent awe and worship directed toward God, combining holy fear with deep respect.
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: fear, fearing | spa: que-temen, teme, temed | fra: craindre | deu: fürchtet, sich-fuerchten
+    Refs: Luke 1:50, Luke 18:2, Acts 10:2, Acts 10:22, Acts 10:35
+  Sense 3: "?" (1x)
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: she-might-fear | spa: respete | fra: craindre | deu: sich-fuerchten
+    Refs: Eph 5:33

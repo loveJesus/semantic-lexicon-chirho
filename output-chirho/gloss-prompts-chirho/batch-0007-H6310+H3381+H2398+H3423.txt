@@ -1,0 +1,216 @@
+You are a biblical lexicographer composing glosses for a digital lexicon.
+For each lemma below, compose a JSON object. Separate objects with "---".
+
+Format for each:
+{
+  "lemma_id": "...",
+  "gloss_terse": "under 120 chars, concise definition covering the word's semantic range",
+  "gloss_readable": "2-5 sentences, 40-120 words. Don't start with 'This word'. Warm study-Bible footnote tone. Engaging, not dry.",
+  "senses": {
+    "1": "enriched 20-60 word description. Reference multilingual evidence when illuminating. Don't repeat the label verbatim.",
+    "2": "..."
+  }
+}
+
+Rules:
+- No markdown fences, just JSON objects separated by ---
+- Reference multilingual evidence naturally when it reveals something
+- gloss_readable should feel like a good study Bible footnote: helpful, clear, occasionally surprising
+- Each sense enrichment: how does the evidence support this sense? Mention 1-2 key passages when helpful.
+
+=== H6310 ===
+Language: Hebrew, POS: Conj-w, Occurrences: 498, Senses: 9
+
+BDB excerpt: † [פֶּ֫דֶר] n.[m.] suet, of עֹלָה (so Vrss NH: √ unknown);—abs. פָּ֑דֶר Lv 1:8; 8:20; sf. פִּדְרוֹ 1:12.
+Senses:
+  Sense 1: "mouth (body part)" (395x)
+    Desc: The physical mouth of a person or animal, used for speaking, eating, or as the organ of speech; includes all pronominal and prepositional inflections where the referent is the literal mouth.
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: mouth-of | spa: boca-de, boca-de-, la-boca-de | fra: bouche-de | deu: Mund-von, der-Öffnung, die-Öffnung
+    Refs: Gen 29:2, Gen 29:3, Gen 29:3, Gen 29:8, Gen 29:10
+  Sense 2: "edge of sword" (47x)
+    Desc: The cutting edge or blade of a weapon, especially in the idiom 'by the mouth/edge of the sword' (lefi cherev); Arabic hadd, Korean kalnal, Swahili makali, Hindi dhaar.
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: by-edge-of-, by-mouth-of, by-mouth-of- | spa: a-filo-de, a-filo-de- | fra: avec-bord-de-, avec-le-bord-de, avec-tranchant-de- | deu: durch-Mund-von, durch-Mund-von-, durch-Rand-von-
+    Refs: Gen 4:11, Gen 34:26, Exod 17:13, Num 16:30, Num 16:32
+  Sense 3: "according to, in proportion to" (28x)
+    Desc: Idiomatic prepositional use meaning 'according to,' 'in proportion to,' or 'as befits'; Arabic hasab, Korean ttara, Swahili kulingana na, Hindi anusaar.
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: according-to, according-to-, and-according-to | spa: Según, Y-según, conforme-a | fra: et-selon, par-bouche-de, selon | deu: bei-Mund-von, durch-Mund-von, gemaess-zu
+    Refs: Gen 47:12, Exod 12:4, Exod 16:16, Exod 16:18, Exod 16:21
+  Sense 4: "opening, entrance, aperture" (12x)
+    Desc: The mouth or opening of a well, sack, cave, or other container; Arabic fathah, Korean ipgu, Swahili shimo/mlango, Hindi mukh (contextual).
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: and-its-mouth, and-opening-of, at-mouth-of | spa: Y-abertura-de, Y-boca-de-ella, a-boca-de | fra: comme-ouverture-de, et-ouverture-de, et-son-bouche | deu: Mund, bei-Mund, fuer-sein-opening
+    Refs: Exod 28:32, Exod 28:32, Exod 28:32, Exod 39:23, Exod 39:23
+  Sense 5: "command, decree, word" (6x)
+    Desc: Metonymic use where 'mouth' stands for the authoritative utterance, command, or decree that issues from it; Arabic amr, Korean myeonglyeong, Swahili amri/neno, Hindi aajnaa/vachan.
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: His-command, mouth-of, the-mouth-of- | spa: boca-de, boca-de-él, son-del | fra: bouche, bouche-de, son-bouche-lui | deu: Mund, Mund-von, dem-Befehl
+    Refs: Gen 43:7, Gen 45:21, 1Chr 12:33, Job 39:27, Prov 8:29
+  Sense 6: "end, extremity" (4x)
+    Desc: The end or far edge of a physical extent; Arabic taraf, Korean kkeut, Swahili upande, Hindi chhor.
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: end, from-end, to-mouth | spa: a-boca, a-extremo, de-extremo | fra: bouche, à-bouche | deu: Mund, von-Mund, zu-Mund
+    Refs: 2Kgs 10:21, 2Kgs 21:16, Ezra 9:11, Ezra 9:11
+  Sense 7: "portion, measured part" (3x)
+    Desc: A proportional share or measured fraction of something; Arabic di'faani/thulthaa, Korean bae, Swahili sehemu/fungu, Hindi bhaag.
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: portion-of, two | spa: dos, porción, porción-de | fra: bouche, part-de, portion-de | deu: Anteil-von, Mund-von
+    Refs: Deut 21:17, 2Kgs 2:9, Zech 13:8
+  Sense 8: "collar, neck opening of garment" (2x)
+    Desc: The opening at the neck of a robe or garment through which the head passes; Arabic fam (garment context), Korean otgit, Swahili ukingo/shingo, Hindi gale.
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: as-collar-of, collar-of | spa: borde-de, como-cuello-de | fra: comme-bouche, ma-bouche | deu: Mund, wie-Mund-von
+    Refs: Job 30:18, Ps 133:2
+  Sense 9: "?" (1x)
+    Domain: BODY_HEALTH > Body, Body Parts, and Body Products
+    Glosses: eng: pim | spa: un-pim | fra: pim | deu: pim
+    Refs: 1Sam 13:21
+
+=== H3381 ===
+Language: Hebrew, POS: V-Qal-Imperf-3mp, Occurrences: 381, Senses: 9
+
+BDB excerpt: יָרַד380 vb. come or go down, descend (NH id.; MI32 וארד and רד; Assyrian arâdu, DlHWB 240; Arabic وَرَدَ come to, arrive at, also descend; Ethiopic ወረደ descend; Sab. ורד and הורד id., DHM in MV)— Qal306 Pf. יָרַד Ex 19:18 +; יְרַד Ju 5:13(×2) (but read יָרַד or יֵרֵד); רַד 19:11 (read יָרַד), etc.; Impf. יֵרֵד Gn 42:38 +; וַיֵּ֫רֶד Gn 11:5 +; וַיֵּרַ֑ד 2 S 22:10 + 2 times; 3 fs. (אֵשׁ) תֵּ֫רֶד 2 K 1:10, 12; תּרַד Je 13:17 La 3:48; תֵּרֵ֔ד Is 34:5; 63:14; תֵּרֵ֑ד Ez 26:11 (יוֹרִיד Vrss Co); וַתֵּ֫רֶד Gn 24:16 + 7 times; 2 ms. תֵּרֵד Gn 26:2 + 5 times + 1 S 20:19, where read תִּפָּקֵד We Dr, cf
+Senses:
+  Sense 1: "Qal: to go down, descend (physical movement)" (242x)
+    Desc: The primary sense of yarad in Qal: physical downward movement of persons or groups descending from a higher to a lower elevation, including going down mountains, into valleys, to cities at lower eleva...
+    Domain: MOVEMENT > Linear Movement
+    Glosses: eng: and-came-down, and-descended, and-he-went-down | spa: Y-bajó, Y-descendió, y-bajó | fra: et-alla-en-bas, et-descended, et-descendit | deu: und-descended, und-er-ging-hinab, und-ging-hinab
+    Refs: Gen 11:5, Gen 12:10, Gen 38:1, Exod 19:14, Exod 19:20
+  Sense 2: "Hifil: to bring down, take down (persons/objects)" (53x)
+    Desc: The Hifil causative of yarad meaning to bring down, take down, or lead down persons or objects from a higher place, including bringing someone down from a wall, lowering objects, or escorting someone ...
+    Domain: MOVEMENT > Linear Movement
+    Glosses: eng: I-will-bring-them-down, and-I-will-bring-down, and-brought-down | spa: Y-bajarán, bajarán, e-hizo-descender | fra: descendre, devra-apporte-en-bas, devra-prendre-en-bas | deu: hinabgehen, so-bringt-ihr-hinab, soll-bringe-hinab
+    Refs: Gen 24:18, Gen 24:46, Gen 37:25, Gen 39:1, Gen 42:38
+  Sense 3: "Qal: to go down, descend (participial/substantive)" (44x)
+    Desc: The Qal active participle used substantively or attributively to describe persons going down, especially 'those going down to the pit/Sheol' (yorde bor), a recurring formula in poetic and prophetic li...
+    Domain: MOVEMENT > Linear Movement
+    Glosses: eng: coming-down, going-down-to, look | spa: Los-que-descienden, descendiendo, los-que-descienden | fra: descendre, venant-en-bas | deu: hinabgehen, kommend-hinab, stieg-herab
+    Refs: Gen 28:12, Deut 9:21, Josh 3:13, Josh 3:16, Josh 3:16
+  Sense 4: "Qal: to flow down, run down (of liquids)" (15x)
+    Desc: Yarad in Qal used of liquids (tears, water, oil, rain) flowing or running downward, often in poetic contexts such as oil running down the beard (Ps 133) or tears flowing down the face (Lam 3:48).
+    Domain: MOVEMENT > Linear Movement
+    Glosses: eng: and-shall-run-down, descends, flow-down | spa: derrama, descender, descenderá | fra: allant-en-bas, descendre, et-descendre | deu: hinabgehen, hinabsteigend, lass-komme-hinab
+    Refs: Gen 43:20, 2Kgs 1:10, 2Kgs 1:12, Ps 119:136, Ps 133:2
+  Sense 5: "Hifil: to bring down, send down (rain/judgment/humbling)" (13x)
+    Desc: The Hifil causative used figuratively for God or a subject sending down rain, bringing down judgment, causing to flow down, or humbling/bringing low, including 'brings down' in the sense of divine act...
+    Domain: MOVEMENT > Linear Movement
+    Glosses: eng: and-I-brought-down, and-bringing-down, and-brings-down | spa: e-hizo-descender, hace-bajar, han-bajado | fra: apporte-en-bas, apporter-en-bas, descendre | deu: bringen-hinab, brings-hinab, stieg-herab
+    Refs: Exod 33:5, 1Sam 2:6, 1Sam 21:14, 2Sam 22:48, Ps 56:7
+  Sense 6: "Hofal: to be brought down (passive)" (6x)
+    Desc: The Hofal passive of yarad meaning to be brought down, to be taken down, or to be made to descend, used of persons or entities that are passively caused to go down or be humbled.
+    Domain: MOVEMENT > Linear Movement
+    Glosses: eng: and-was-taken-down, and-will-be-brought-down, and-you-shall-be-brought-down | spa: Ha-descendido, Y-fue-bajado, Y-serás-hecho-descender | fra: descendre, et-descendre, et-était-pris-en-bas | deu: hinabgehen, und-hinabgehen, und-stieg-hinab
+    Refs: Gen 39:1, Num 10:17, Isa 14:11, Isa 14:15, Ezek 31:18
+  Sense 7: "Qal: to go down (temporal/infinitive construct)" (4x)
+    Desc: Yarad in Qal infinitive construct with prepositions (be-/mi-/le-) functioning as a temporal clause ('when he came down,' 'from going down') or verbal noun ('its going down,' 'the descending of'), prov...
+    Domain: MOVEMENT > Linear Movement
+    Glosses: eng: from-going-down-to, its-going-down, to-go-down | spa: de-descender, en-su-descender, su-descenso | fra: de-descendre, descendre, quand-il-vint-en-bas | deu: als-er-kam-hinab, hinabgehen, hinabzuziehen
+    Refs: Gen 46:3, Exod 34:29, Job 33:24, Ezek 31:15
+  Sense 8: "Qal: to fall, collapse (of structures/walls)" (3x)
+    Desc: Yarad in Qal meaning to fall down or collapse, used of walls, fortifications, or structures that come crashing down, sometimes translated 'its fall' or 'when it falls.'
+    Domain: MOVEMENT > Linear Movement
+    Glosses: eng: coming-down, its-fall, when-falls | spa: al-descender, que-caigan, su-caída | fra: descendre, son-tomber, venant-en-bas | deu: hinabgehen, kommend-hinab, sein-fallen
+    Refs: Deut 20:20, Deut 28:52, Isa 32:19
+  Sense 9: "?" (1x)
+    Domain: MOVEMENT > Linear Movement
+    Glosses: eng: went-out | spa: salieron | fra: alla-dehors | deu: ging-heraus
+    Refs: 2Sam 18:4
+
+=== H2398 ===
+Language: Hebrew, POS: V-Qal-Imperf-3mp, Occurrences: 240, Senses: 9
+
+BDB excerpt: † חָטָא238 vb. miss (a goal or way), go wrong, sin (NH id.; Aramaic חֲטָא, ܚܛܳܐ; Assyrian ḫaṭû, ZimBP 46; Sab. חֿטא, החֿטא, id., DHM in MV; Arabic خَطِىَٔ do wrong, commit a mistake or an error; ii. make to miss the mark; iv. miss the mark, miss the way; Ethiopic ኀጥአ fail to find or have; sometimes sin, especially in deriv.)— Qal Pf. ח׳ Ex 32:31 + 29 times, 3 fs. חָֽטְאָה Lv 5:15 La 1:8, חָטָ֑אָה Je 50:14 Ez 16:15, חָטָאת Ex 5:16, etc., + 82 times Pf.; Impf. יֶחֱטָא Lv 4:3 + 12 times, תֶּחֱטָ֫אוּ Ex 20:20 ψ 4:5, etc. + 20 times Impf.; Inf. חֲטֹא Ez 3:21 + 8 times, מֵחֲטוֹא ψ 39:2, מֵחֲטוֹ (tex
+Senses:
+  Sense 1: "Qal: to sin, commit sin" (165x)
+    Desc: The basic Qal active meaning of committing sin or transgression against God or moral law; all person/number/gender/tense inflections of the Qal finite verb and infinitive share this core sense, eviden...
+    Domain: MORAL_QUALITY > Moral and Ethical Qualities
+    Glosses: eng: I-have-sinned, I-sin, I-sinned | spa: He-pecado, Pequé, Si-he-pecado, | fra: Je-pécha, ai-je-pécha, avoir-Je-pécha | deu: habe-ich-gesündigt, habe-ich-suendigte, haben-suendigte
+    Refs: Gen 20:9, Exod 9:27, Exod 10:16, Lev 4:3, Lev 4:23
+  Sense 2: "Hifil: to cause to sin" (32x)
+    Desc: The Hifil causative meaning 'to cause/lead someone to sin', a distinct semantic role from the Qal; Arabic جَعَلَ يَخْطَأُ (caused to sin), Korean 범하게 하다 (caused to commit), Swahili kuwakosesha/kuwafan...
+    Domain: MORAL_QUALITY > Moral and Ethical Qualities
+    Glosses: eng: caused-to-sin, he-caused-to-sin, to-cause-to-sin | spa: hacer-pecar, hizo-pecar, para-hacer-pecar | fra: causa-à-péché, il-causa-à-péché, à-cause-à-péché | deu: caused-zu-Suende, er-caused-zu-Suende, suendigte
+    Refs: Exod 23:33, Deut 24:4, 1Kgs 14:16, 1Kgs 15:26, 1Kgs 15:30
+  Sense 3: "Piel: to purify from sin" (14x)
+    Desc: The Piel factitive/denominative meaning 'to purify, cleanse from sin, make a sin offering for', a ritual/cultic sense distinct from the Qal; Arabic طَهَّرَ (to purify/cleanse), Korean 정결하게 하다 (to make...
+    Domain: MORAL_QUALITY > Moral and Ethical Qualities
+    Glosses: eng: and-made-sin-offering, and-offered-it-as-sin-offering, and-purified | spa: Y-purificará, de-purificar, el-que-hace-expiación | fra: et-devra-purifier, et-offrit-cela-comme-péché-offrande, et-purifia | deu: Sünde, der-offers-es-wie-Suende-Opfergabe, suendigen
+    Refs: Exod 29:36, Lev 6:26, Lev 8:15, Lev 9:15, Lev 14:49
+  Sense 4: "Hitpael: to purify oneself" (9x)
+    Desc: The Hitpael reflexive meaning 'to purify oneself, undergo purification', the reflexive counterpart of the Piel purification sense; Arabic يَتَطَهَّرُ (to purify oneself), Korean 정결하게 하다/정결해지다 (to beco...
+    Domain: DISCOURSE_NAMES > Discourse Referentials
+    Glosses: eng: and-purified-themselves, he-purifies-himself, it-shall-be-purified | spa: Y-se-purificaron, os-purificaréis, purificaréis | fra: cela-devra-être-purifia, devra-purifier-lui-même-, et-purifia-eux-mêmes | deu: er-purifies-sich-selbst, es-soll-sein-reinigte, purifies-sich-selbst
+    Refs: Num 8:21, Num 19:12, Num 19:12, Num 19:13, Num 19:20
+  Sense 5: "Qal participle: sinner (substantival)" (9x)
+    Desc: The Qal participle used substantivally to denote 'the sinner' or 'one who sins' as a noun, distinguished from the verbal participle by syntactic context and consistent Arabic خَاطِئٌ/الْخَاطِئُ (the s...
+    Domain: MORAL_QUALITY > Moral and Ethical Qualities
+    Glosses: eng: and-sinner, and-the-sinner, and-to-the-sinner | spa: como-el-pecador, pecador, y-al-pecador | fra: et-pécher, et-pécher-moi, pécher | deu: suendigte, und-suendigen, und-suendigte
+    Refs: Prov 8:36, Prov 11:31, Prov 13:22, Eccl 2:26, Eccl 7:26
+  Sense 6: "Qal participle: sinning (verbal)" (8x)
+    Desc: The Qal participle used verbally to describe the ongoing act of sinning, distinguished from the substantival use by verbal syntax; Arabic خَاطِئٌ/خَاطِئَةٌ in predicate use, Korean 죄를 짓는 (sin-committi...
+    Domain: MORAL_QUALITY > Moral and Ethical Qualities
+    Glosses: eng: and-sinning-against, sinning, sins | spa: la-que-peca, peca, peca-contra | fra: et-pécher, péchant, pécher | deu: der-Suende, suendigend, suendigte
+    Refs: 1Sam 14:33, Prov 14:21, Prov 19:2, Prov 20:2, Isa 1:4
+  Sense 7: "?" (1x)
+    Domain: MORAL_QUALITY > Moral and Ethical Qualities
+    Glosses: eng: miss | spa: erraban | fra: miss | deu: miss
+    Refs: Judg 20:16
+  Sense 8: "?" (1x)
+    Domain: PHYSICAL_ACTION > Physical Impact
+    Glosses: eng: bore-loss-of-it | spa: expiaba-la | fra: enfanta-loss-de-cela | deu: musste-es-büßen
+    Refs: Gen 31:39
+  Sense 9: "?" (1x)
+    Domain: MORAL_QUALITY > Moral and Ethical Qualities
+    Glosses: eng: Those-making-a-man | spa: Los-que-hacen-pecar | fra: pécher | deu: suendigen
+    Refs: Isa 29:21
+
+=== H3423 ===
+Language: Hebrew, POS: V-Hifil-Perf-3ms | 3ms, Occurrences: 232, Senses: 9
+
+BDB excerpt: יָרַשׁ229 vb. take possession of, inherit, dispossess (MI7 וירש take possession of; Aramaic יְרֵית, ܝܺܪܶܬ take possession of, and be heir to, inherit; so Ethiopic ወረሰ Arabic وَرِثَ inherit; v. also Sab. ורתֿ, inherit, CISiv, 37, 3), especially D (62 times Qal, 1 times Pi, 7 times Hiph. in Dt + 13 times D in Jos);— Qal Pf. 3 ms. יָרַשׁ Je 49:1; וְיָרַשׁ consec. Je 49:2 Nu 27:11; 2 ms. יָרָ֑שְׁתָּ 1 K 21:19; וְיָרַשְׁתָּ֫ Dt 6:18 + 2 times; sf. וִירִשְׁתָּהּ consec. Dt 17:14 + 2 times (on this and kindred forms v. Köi. 406, 411); וִירִשְׁתָּם consec. Dt 19:1; 31:3; 3 pl. יָֽרְשׁוּ Dt 3:20 +; sf.
+Senses:
+  Sense 1: "Qal: take possession of land" (130x)
+    Desc: To take possession of or occupy territory, especially the promised land, by entering and settling it (Arabic: امتلك imtalaka / وَرِثَ waritha in territorial context; Korean: 차지하다 chajihada; Swahili: -...
+    Domain: ECONOMICS_PROPERTY > Possess, Transfer, Exchange
+    Glosses: eng: to-possess-it | spa: a-poseerla, para-poseerla | fra: à-posséder-cela | deu: zu-besitzen-es
+    Refs: Lev 20:24, Num 33:53, Deut 2:31, Deut 3:18, Deut 4:5
+  Sense 2: "Hifil: dispossess or drive out" (61x)
+    Desc: To drive out or dispossess inhabitants from their land by force (causative; Arabic: طَرَدَ tarada = expel; Korean: 쫓아내다 jjochaneda; Swahili: -fukuza; Hindi: निकालना).
+    Domain: MOVEMENT > Linear Movement
+    Glosses: eng: And-dispossessed, and-dispossessed, and-he-dispossessed | spa: Y-desposeerá, Y-desposeyó, despojó | fra: Et-déposséda, dispossessed, déposséda | deu: And-enteignete, dispossessed, enteignete
+    Refs: Num 14:24, Num 21:32, Num 32:39, Num 33:52, Num 33:53
+  Sense 3: "Qal: inherit as heir" (18x)
+    Desc: To receive as an inheritance or heritage, especially in family succession or covenant blessing (Arabic: يَرِثُ yarithu; Korean: 상속하다 sangsok-hada / 유업하다; Swahili: -rithi; Hindi: वारिस होना / विरासत मे...
+    Domain: ECONOMICS_PROPERTY > Possess, Transfer, Exchange
+    Glosses: eng: I-will-possess-it, and-they-possess, shall-inherit | spa: hereda, heredaron, heredará | fra: --hériter, --hériter-tu, Je---posséder-cela | deu: [יירשו], [יירשם], [תירש]
+    Refs: Gen 15:4, Gen 15:4, Gen 15:7, Gen 15:8, Gen 21:10
+  Sense 4: "Qal participle: heir or possessor" (9x)
+    Desc: One who inherits or possesses, an heir or rightful owner (nominalized Qal participle; Arabic: وَارِث warith; Korean: 상속자 sangsokja; Swahili: mrithi; Hindi: वारिस / उत्तराधिकारी).
+    Domain: ECONOMICS_PROPERTY > Possess, Transfer, Exchange
+    Glosses: eng: an-inheritor-of, heir, inheriting | spa: a-herederos, al-heredero, el-heredero | fra: inheriting, le-heir, possessing | deu: [הירש], der-heir, in-Besitz-nehmen
+    Refs: Gen 15:3, Num 36:8, Judg 18:7, 2Sam 14:7, Isa 65:9
+  Sense 5: "Qal: dispossess persons" (4x)
+    Desc: To dispossess or drive out people from their land, taking their place (Qal with personal object; Arabic: طَرَدُوهُمْ taraduhum = expelled them; Korean: 멸망시키다 / 빼앗다; Swahili: -rithi in displacement sen...
+    Domain: DISCOURSE_NAMES > Discourse Referentials
+    Glosses: eng: and-they-dispossessed-them, dispossessed-them, to-dispossess-us | spa: los-despojaron, y-los-despojaron, ¿acaso-para-despojarnos | fra: déposséda-eux, et-ils-déposséda-eux, à-déposséder-nous | deu: enteignete-ihnen, und-sie-enteignete-ihnen, zu-enteignen-uns
+    Refs: Deut 2:12, Deut 2:21, Deut 2:22, Judg 14:15
+  Sense 6: "Hifil: cause to inherit or bequeath" (4x)
+    Desc: To give someone an inheritance or grant possession of territory as a gift or bequest (causative of inheritance; Arabic: أَوْرَثَ awratha / يُوَرِّثُ yuwarrithu; Korean: 물려주다 / 유산으로 주다; Swahili: -rithi...
+    Domain: ECONOMICS_PROPERTY > Possess, Transfer, Exchange
+    Glosses: eng: and-cause-to-inherit, and-make-inherit-me, causes-you-to-possess | spa: nos-diste-en-posesión, te-hace-poseer, y-la-dejéis-en-herencia | fra: [הורשתנו], [והורשתם], causes-tu-à-posséder | deu: [והורשתם], [ותורישני], causes-du-zu-besitzen
+    Refs: Judg 11:24, 2Chr 20:11, Ezra 9:12, Job 13:26
+  Sense 7: "Nifal: become poor or impoverished" (4x)
+    Desc: To become poor, be reduced to poverty, or be dispossessed of one's wealth (passive/reflexive; Arabic: يَفْتَقِرُ yaftaqiru = become destitute; Korean: 가난해지다; Swahili: kuwa maskini; Hindi: गरीब होना).
+    Domain: AUTHORITY_RULE > Status
+    Glosses: eng: I-become-poor, will-become-poor, you-be-dispossessed | spa: empobrecerán, empobrezca, empobrezcas | fra: posséder, tu-être-dispossessed | deu: [אורש], [יורש], [תורש]
+    Refs: Gen 45:11, Prov 20:13, Prov 23:21, Prov 30:9
+  Sense 8: "?" (1x)
+    Domain: ECONOMICS_PROPERTY > Possess, Transfer, Exchange
+    Glosses: eng: impoverishes | spa: empobrece | fra: impoverishes | deu: impoverishes
+    Refs: 1Sam 2:7
+  Sense 9: "?" (1x)
+    Domain: ECONOMICS_PROPERTY > Possess, Transfer, Exchange
+    Glosses: eng: possesses | spa: poseerá | fra: possesses | deu: possesses
+    Refs: Deut 28:42

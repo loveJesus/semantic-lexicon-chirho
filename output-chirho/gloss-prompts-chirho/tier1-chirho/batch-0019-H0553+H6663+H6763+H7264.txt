@@ -1,0 +1,157 @@
+You are a biblical lexicographer composing glosses for a digital lexicon.
+For each lemma below, compose a JSON object. Separate objects with "---".
+
+Format for each:
+{
+  "lemma_id": "...",
+  "gloss_terse": "under 120 chars, concise definition covering the word's semantic range",
+  "gloss_readable": "2-5 sentences, 40-120 words. Don't start with 'This word'. Warm study-Bible footnote tone. Engaging, not dry.",
+  "senses": {
+    "1": "enriched 20-60 word description. Reference multilingual evidence when illuminating. Don't repeat the label verbatim.",
+    "2": "..."
+  }
+}
+
+Rules:
+- No markdown fences, just JSON objects separated by ---
+- Reference multilingual evidence naturally when it reveals something
+- gloss_readable should feel like a good study Bible footnote: helpful, clear, occasionally surprising
+- Each sense enrichment: how does the evidence support this sense? Mention 1-2 key passages when helpful.
+
+=== H0553 ===
+Language: Hebrew, POS: V-Piel-Imperf-3fs | 3mse, Occurrences: 41, Senses: 6
+
+BDB excerpt: † [אָמֵץ] vb. be stout, strong, bold, alert (according to LagBN 28 f. from earlier אָמֹץ cf. אֹמֶץ)— Qal Pf. 3 pl. אָֽמְצוּ 2 S 22:18; + 2 times; Impf. יֶאֱמָ֑ץ Gn 25:23; וַיֶּאֶמְצוּ 2 Ch 13:18; Imv. אֱמַץ Jos 1:7 1 Ch 28:20; אֱמַ֑ץ Jos 1:6; אֱמָ֑ץ Dt 31:7 + 3 times; אִמְצוּ Dt 31:6 + 2 times— 1. be strong, of a people Gn 25:23 (J); of personal enemies 2 S 22:18 = ψ 18:18; ψ 142:7 (all sq. מִן of compar.); also (without מן) prevail 2 Ch 13:18. 2. Imv. be bold (always ‖ חֲזַק, חִזְקוּ) Dt 31:7, 23 Jos 1:6, 7, 18; (‖ id. + אַל־תִּירְאוּ וְאַל־תַּעַרְצוּ) Dt 31:6; ‖ id. + אַל־תַּעֲרֹץ וְאַל תֵּח
+Senses:
+  Sense 1: "be strong, be courageous" (17x)
+    Desc: Qal: to be strong, bold, or courageous; to prevail or be stronger than another.
+    Domain: PROPERTIES_RELATIONS > Able, Capable
+    Glosses: eng: and-be-courageous, and-courageous, and-prevailed | spa: fueron-fuertes, fueron-más-fuertes, será-más-fuerte | fra: --être-stronger, et-aie-du-courage, et-être-courageous | deu: sie-sind-stronger, sie-waren-auch-mächtig, sie-waren-stronger
+    Refs: Gen 25:23, Deut 31:6, Deut 31:7, Deut 31:23, Josh 1:6
+  Sense 2: "strengthen, make firm" (16x)
+    Desc: Piel: to strengthen, make firm, or encourage someone or something; causative of the Qal sense.
+    Domain: PROPERTIES_RELATIONS > Able, Capable
+    Glosses: eng: I-strengthen-you, I-would-strengthen-you, You-made-strong | spa: Os-fortalecería, afirmabas, afirmad | fra: [אמצו], [אמצתיך], [ויאמץ] | deu: [אאמצכם], [אמץ], [אמצו]
+    Refs: Deut 3:28, 2Chr 11:17, 2Chr 24:13, Job 4:4, Job 16:5
+  Sense 3: "harden, make obstinate" (3x)
+    Desc: Piel with negative nuance: to harden the heart or spirit, making someone stubborn or obstinate.
+    Domain: PROPERTIES_RELATIONS > Power, Force
+    Glosses: eng: and-he-hardened, and-strengthened, you-shall-harden | spa: endurecerás, y-fortaleció | fra: et-fortifia, et-être-fort, tu-devra-endurcir | deu: du-soll-verhaerten, und-staerkte, und-stark-sein
+    Refs: Deut 2:30, Deut 15:7, 2Chr 36:13
+  Sense 4: "?" (2x)
+    Domain: PROPERTIES_RELATIONS > Able, Capable
+    Glosses: eng: and-let-be-courageous, and-let-take-courage | spa: y-animése, y-fortalezca | fra: et-être-fort | deu: und-lass-nehmen-courage, und-lass-sein-courageous
+    Refs: Ps 27:14, Ps 31:24
+  Sense 5: "strengthen oneself, show resolve" (2x)
+    Desc: Hitpael reflexive: to strengthen oneself, show determination, or exert oneself with resolve.
+    Domain: PROPERTIES_RELATIONS > Able, Capable
+    Glosses: eng: she-was-determined, strengthened-himself | spa: decidida, se-esforzó | fra: elle-était-determined, fortifia-lui-même | deu: [מתאמצת], strengthened-sich-selbst
+    Refs: Ruth 1:18, 1Kgs 12:18
+  Sense 6: "?" (1x)
+    Domain: PROPERTIES_RELATIONS > Able, Capable
+    Glosses: eng: made-haste | spa: se-apresuró | fra: être-fort | deu: stark-sein
+    Refs: 2Chr 10:18
+
+=== H6663 ===
+Language: Hebrew, POS: V-Piel-Inf | 2mse, Occurrences: 41, Senses: 6
+
+BDB excerpt: † [צָדֵק, צָדֹק] vb. denom. be just, righteous;— Qal Pf. 3 fs. צָֽדְקָה Gn 38:26; 2 ms. צָדַקְתָּ Jb 33:12; 35:7, etc.; Impf. 3 ms. יִצְדַּק Jb 9:2 +; יִצְדָּ֑ק Jb 4:17; 11:2; 3 fpl. תִּצְדַּקְנָה Ez 16:52 (𝔊 Co תְּצַדְּקִין, not Berthol Toy Krae), etc.;— 1. have a just cause, be in the right, Jb 9:15, 20; 13:18; 34:5; in complaint Jb 33:12; c. מִן pers. Gn 38:26 (J; of Tamar). 2. be justified, in one’s plea Jb 11:2; c. עִם (man with God) 9:2; 25:4; בי׳ Is 45:25; by witnesses 43:9; by acquittal ψ 143:2; Is 43:26; by condemnation of opponent Jb 40:8. 3. be just: of God, in his government, in ch
+Senses:
+  Sense 1: "be righteous, be in the right" (22x)
+    Desc: Qal sense: to be righteous, be just, be in the right — the basic stative meaning across all persons, numbers, and genders.
+    Domain: MORAL_QUALITY > Moral and Ethical Qualities
+    Glosses: eng: I-am-righteous, You-are-justified, am-righteous | spa: Y-si-soy-justo,, eres-justo, fuera-justo, | fra: et-justifier, justifier | deu: [אצדק], [וצדקתי], [יצדק]
+    Refs: Gen 38:26, Job 4:17, Job 9:2, Job 9:15, Job 9:20
+  Sense 2: "declare righteous, acquit (Hifil)" (11x)
+    Desc: Hifil causative sense: to declare righteous, justify, acquit, or vindicate someone — the standard forensic/legal declaration.
+    Domain: MORAL_QUALITY > Moral and Ethical Qualities
+    Glosses: eng: I-declare-righteous, I-will-justify, and-I-would-do-him-justice | spa: El-que-justifica, Los-que-justifican, declararé-justos | fra: Je---justify, [ולהצדיק], et-ils-declare-juste | deu: [אצדיק], [ולהצדיק], [יצדיק]
+    Refs: Exod 23:7, Deut 25:1, 2Sam 15:4, 1Kgs 8:32, 2Chr 6:23
+  Sense 3: "justify, declare righteous (Piel)" (5x)
+    Desc: Piel sense: to justify or declare righteous in an intensive-declarative mode, often reflexive or applied to another party.
+    Domain: MORAL_QUALITY > Moral and Ethical Qualities
+    Glosses: eng: and-you-justified, has-justified, he-justified | spa: Se-ha-justificado, al-justificar-tú, justificarse | fra: et-justifier, justice, justifier | deu: Gerechtigkeit, [בצדקתך], [ותצדקי]
+    Refs: Job 32:2, Job 33:32, Jer 3:11, Ezek 16:51, Ezek 16:52
+  Sense 4: "?" (1x)
+    Domain: MORAL_QUALITY > Moral and Ethical Qualities
+    Glosses: eng: and-those-turning-to-righteousness | spa: y-los-que-hacen-justos | fra: et-justifier | deu: [ומצדיקי]
+    Refs: Dan 12:3
+  Sense 5: "?" (1x)
+    Domain: MORAL_QUALITY > Moral and Ethical Qualities
+    Glosses: eng: shall-we-justify-ourselves | spa: nos-justificaremos? | fra: --nous-justify-nous-mêmes | deu: uns-rechtfertigen
+    Refs: Gen 44:16
+  Sense 6: "?" (1x)
+    Domain: MORAL_QUALITY > Moral and Ethical Qualities
+    Glosses: eng: and-shall-be-vindicated | spa: y-será-justificado | fra: et-justifier | deu: [ונצדק]
+    Refs: Dan 8:14
+
+=== H6763 ===
+Language: Hebrew, POS: Conj-w | N-fpc, Occurrences: 41, Senses: 6
+
+BDB excerpt: צֵלָע41 n.f.(m. 1 K 6:34, and appar. Ex 26:26) rib, side;—abs. צ׳ Gn 2:22 +, cstr. צֶ֫לַע Ex 26:26 +, also צֵ֫לַע 2 S 16:13; sf. צַלְעוֹ Ex 25:12 +; pl. צְלָעִים 1 K 6:34, צְלָעוֹת v 3 +; cstr. צַלְעֹת Ez 41:26 +; sf. צַלְעֹתָיו Gn 2:21 +;— 1. rib of man Gn 2:21, 22 (J). 2. rib of hill, i.e. ridge, or terrace 2 S 16:13. 3. side-chambers or cells (enclosing temple like ribs) 1 K 6:5, 6 (read הַצּ׳ for היצוע, v. [יָצִיעַ]), 7:3, so of Ezek.’s temple Ez 41:5 + 10 times 41 (on text v. Co Toy Krae). 4. ribs of cedar and fir, i.e. planks, boards (pl.), of temple wall 1 K 6:15, 16, floor v 15. 5. lea
+Senses:
+  Sense 1: "side, flank" (19x)
+    Desc: The side or flank of an object such as the ark, altar, or tabernacle, used as a spatial/directional term for the lateral aspect of a structure.
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: and-for-side-of, its-side, its-sides | spa: Y-para-lado-de, lado-de, lados-de | fra: côté-de, côtés-de, et-pour-côté-de | deu: Seite-von, Seiten-von, sein-Seite
+    Refs: Exod 25:12, Exod 25:12, Exod 25:14, Exod 26:20, Exod 26:26
+  Sense 2: "side-chamber, side-room" (14x)
+    Desc: An architectural side-chamber or adjoining room built along the wall of the temple, especially prominent in Ezekiel's temple vision (Ezek 41).
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: and-side-chambers-of, and-the-side-chambers, for-the-side-chamber | spa: Y-las-cámaras-laterales, cámara, cámaras-laterales | fra: côté, côté-rooms, et-côté | deu: Seite, Seite-rooms, der-Seite-chamber
+    Refs: 1Kgs 6:5, 1Kgs 6:8, 1Kgs 7:3, Ezek 41:5, Ezek 41:6
+  Sense 3: "plank, board, leaf of door" (4x)
+    Desc: A flat timber plank, board, or door-leaf used in construction, referring to structural wooden elements.
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: leaves-of, with-planks-of | spa: con-tablones-de, hojas-de | fra: avec-planks-de, leaves-de | deu: leaves-von, mit-planks-von
+    Refs: 1Kgs 6:15, 1Kgs 6:15, 1Kgs 6:16, 1Kgs 6:34
+  Sense 4: "rib (body part)" (2x)
+    Desc: A rib bone of a human body, used in the creation account where God took a rib from Adam (Gen 2:21-22).
+    Domain: BODY_HEALTH > Body, Body Parts, and Body Products
+    Glosses: eng: from-ribs-his, the-rib | spa: de-sus-costillas, la-costilla | fra: de-ribs-son, le-côte | deu: die-Rippe, von-seinen-Rippen
+    Refs: Gen 2:21, Gen 2:22
+  Sense 5: "side of the body" (1x)
+    Desc: The side or flank of a person's body, referring to the physical side in a combat or proximity context (2 Sam 2:16).
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: for-his-stumbling | spa: a-su-lado | fra: à-son-לצלעו-lui | deu: [לצלעו]
+    Refs: Job 18:12
+  Sense 6: "hillside, slope" (1x)
+    Desc: The side or slope of a hill or mountain, used as a geographical/topographical term (2 Sam 16:13).
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: on-side-of | spa: por-ladera-de | fra: sur-côté-de | deu: auf-Seite-von
+    Refs: 2Sam 16:13
+
+=== H7264 ===
+Language: Hebrew, POS: V-Qal-Imperf-3fp, Occurrences: 41, Senses: 6
+
+BDB excerpt: † רָגַז vb. be agitated, quiver, quake, be excited, perturbed (Ph. Iph. (+ Inf. abs. Qal) disquiet, disturb, Inscr. Tabn.4.6.7; NH Hiph. provoke to wrath; رجز tremble (with rage, fear, Dozy); v, viii, rumble (of thunder, Frey), رَجَزٌ a trembling disease (of camels), etc.; Aramaic רְגַז tremble, rage, ܪܓܰܙ be enraged; Zinj. רגז wrath, Lzb 367);— Qal Pf. 3 ms. consec. וְרָגַז Pr 29:9, 3 fs. רָֽגְזָה Is 14:9 +, etc.; Impf. 3 ms. יִרְגַּז 2 S 7:10; 1 Ch 17:9, 2 fs. וַתִּרְגְּזִי Ez 16:43 (but v. infr.); 3 mpl. יִרְגְּזוּן Hb 3:7, יִרְגָּז֑וּן Ex 15:14, etc.; Imv. ms. רְגָ֫זָה (Ges§ 48 i) Is 32:11
+Senses:
+  Sense 1: "tremble, quake in fear" (26x)
+    Desc: Qal sense of physical trembling or quaking, whether of people shaking in fear or awe, or of the earth quaking.
+    Domain: EMOTION_ATTITUDE > Attitudes and Emotions
+    Glosses: eng: and-it-quaked, and-they-will-tremble, and-trembled | spa: Temblad, se-conmovieron, se-estremecerá | fra: [ירגז], et-cela-quaked, et-ils-fera-tremble | deu: [ותרגז], [ירגז], [ירגזו]
+    Refs: Exod 15:14, Deut 2:25, 1Sam 14:15, 2Sam 7:10, 2Sam 18:33
+  Sense 2: "rage intensely (Hitpael)" (4x)
+    Desc: Hitpael reflexive-intensive sense of raging or being in a fury, expressing vehement agitation.
+    Domain: EMOTION_ATTITUDE > Attitudes and Emotions
+    Glosses: eng: your-raging | spa: tu-enfurecerte | fra: ton-enragé, trembler | deu: dein-raging, erzittern
+    Refs: 2Kgs 19:27, 2Kgs 19:28, Isa 37:28, Isa 37:29
+  Sense 3: "cause to tremble (Hifil)" (4x)
+    Desc: Hifil causative sense of making something or someone tremble or shake physically.
+    Domain: EMOTION_ATTITUDE > Attitudes and Emotions
+    Glosses: eng: I-will-make-tremble, causing-to-tremble, he-shook | spa: El-que-sacude, haré-estremecer, hizo-temblar | fra: le-trembler, trembler | deu: [המרגיז], erzittern
+    Refs: Job 9:6, Isa 13:13, Isa 14:16, Isa 23:11
+  Sense 4: "rage, be agitated" (3x)
+    Desc: Qal sense of emotional agitation, fury, or rage directed at someone or something.
+    Domain: EMOTION_ATTITUDE > Attitudes and Emotions
+    Glosses: eng: He-shall-rage, and-raging, and-you-raged- | spa: se-enfurecerá, y-se-enfurece, y-te-estremeciste | fra: et-trembler, trembler | deu: [ורגז], [ותרגזי], erzittern
+    Refs: Prov 29:9, Isa 28:21, Ezek 16:43
+  Sense 5: "disturb, provoke, agitate (Hifil)" (3x)
+    Desc: Hifil causative sense of disturbing, provoking to anger, or causing unrest to someone.
+    Domain: MOVEMENT > Linear Movement
+    Glosses: eng: and-give-unrest, did-you-disturb-me, to-provokers-of | spa: e-inquiete, los-que-provocan-a, me-perturbaste | fra: et-trembler, fit-tu-disturb-moi, à-trembler | deu: [למרגיזי], tat-du-disturb-mich, und-erzittern
+    Refs: 1Sam 28:15, Job 12:6, Jer 50:34
+  Sense 6: "?" (1x)
+    Domain: JUSTICE_PUNISHMENT > Courts and Legal Procedures
+    Glosses: eng: quarrel | spa: riñáis | fra: quarrel | deu: streitet
+    Refs: Gen 45:24

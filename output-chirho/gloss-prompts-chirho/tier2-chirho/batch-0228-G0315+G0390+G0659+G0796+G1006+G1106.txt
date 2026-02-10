@@ -1,0 +1,115 @@
+You are a biblical lexicographer composing glosses for a digital lexicon.
+For each lemma below, compose a JSON object. Separate objects with "---".
+
+Format for each:
+{
+  "lemma_id": "...",
+  "gloss_terse": "under 120 chars, concise definition covering the word's semantic range",
+  "gloss_readable": "2-5 sentences, 40-120 words. Don't start with 'This word'. Warm study-Bible footnote tone. Engaging, not dry.",
+  "senses": {
+    "1": "enriched 20-60 word description. Reference multilingual evidence when illuminating. Don't repeat the label verbatim.",
+    "2": "..."
+  }
+}
+
+Rules:
+- No markdown fences, just JSON objects separated by ---
+- Reference multilingual evidence naturally when it reveals something
+- gloss_readable should feel like a good study Bible footnote: helpful, clear, occasionally surprising
+- Each sense enrichment: how does the evidence support this sense? Mention 1-2 key passages when helpful.
+
+=== G0315 ===
+Language: Greek, POS: V-AIA-3S, Occurrences: 9, Senses: 2
+
+BDB excerpt: ἀναγκ-άζω, future -άσωRefs 5th c.BC+ (later 2nd pers.plural -ᾶτεRefs: perfect ἠνάγκακαRefs 5th c.BC+: pluperfect -εινRefs 4th c.BC+: (ἀνάγκη):—force, compel, mostly with accusative person et infinitive, ἀ. τινὰ κτείνειν, πόλισμα, συνθήκας ποιεῖσθαι, etc., Refs 5th c.BC+; δρᾶν, λέγειν, etc., Refs 5th c.BC+: so in passive, ἠναγκάζοντο ἀμύνεσθαιRefs 5th c.BC+infinitive, κἄμ᾽ ἀναγκάζεις τάδε (i.e. δρᾶν) Refs 5th c.BC+; ἀναγκάζεσθαί τι to be forced [to do] a thing, Refs 5th c.BC+ __2 with accusative person only, constrain a person, τὸ συνδρῶν σ᾽ ἀναγκάσει χρέοςRefs 5th c.BC+; especially by argument
+Senses:
+  Sense 1: "to compel, force (active)" (7x)
+    Desc: To compel, constrain, or urge someone strongly to do something, whether by authority, persuasion, or pressure; covers all active voice tenses and moods.
+    Domain: AUTHORITY_RULE > Control, Rule
+    Glosses: eng: I-was-trying-to-force, compel, compelled | spa: los-obligaba, obligas, obligasteis | fra: contraindre | deu: ἀνάγκασον, ἀναγκάζεις, ἀναγκάζουσιν
+    Refs: Matt 14:22, Mark 6:45, Luke 14:23, Acts 26:11, 2Cor 12:11
+  Sense 2: "to be compelled (passive)" (2x)
+    Desc: To be forced or constrained by external compulsion, emphasizing the subject as recipient of the compelling action.
+    Domain: AUTHORITY_RULE > Control, Rule
+    Glosses: eng: I-was-compelled, was-compelled | spa: fue-obligado, fui-obligado | fra: contraindre | deu: ἠναγκάσθη, ἠναγκάσθην
+    Refs: Acts 28:19, Gal 2:3
+
+=== G0390 ===
+Language: Greek, POS: V-PNM/P, Occurrences: 9, Senses: 2
+
+BDB excerpt: ἀναστρέφω, poetry ἀνστρέφω, perfect ἀνέστροφα variant in Refs, 3rd.pers.plural ἀνέστροφανRefs 3rd c.BC+:—turn upside down, μήπως.. δίφρους ἀνστρέψειαν might upset them, Refs 8th c.BC+; τὴν ζοήν Cerc.[same place]; ἀ. καρδίαν upset the stomach, i.e. cause sickness, Refs 5th c.BC+; reverse, Refs 5th c.BC+:—passive, future ἀναστραφήσεσθαι τὰ τῆς Ἑλλάδος πράγματαRefs 5th c.BC+: perfect ἀνεστράφθαι τῆς πολιτείαςRefs; ὄρος ἀνεστραμμένον ἐν τῇ ζητήσει turned up by digging, Refs 5th c.BC+ __2 invert order of words or statements, Refs 4th c.BC+ —also in passive, with reference to ἐπαναστροφήRefs __3 ={ἀ
+Senses:
+  Sense 1: "conduct oneself, live" (7x)
+    Desc: To behave or conduct oneself in a particular manner of life, describing one's habitual way of living (a characteristically Koine middle-voice usage).
+    Domain: BEHAVIOR > Behavior and Related States
+    Glosses: eng: conduct-yourselves, conducted-ourselves, living | spa: conducirnos, conducirse, conducíos | fra: marcher, se-conduire | deu: wandeln
+    Refs: 2Cor 1:12, Eph 2:3, 1Tim 3:15, Heb 10:33, Heb 13:18
+  Sense 2: "return, go back" (2x)
+    Desc: To turn back or return to a previous location, used of physical movement from one place to another.
+    Domain: MOVEMENT > Linear Movement
+    Glosses: eng: I-will-return, having-returned | spa: habiendo-regresado, volveré | fra: se-conduire | deu: lebt
+    Refs: Acts 5:22, Acts 15:16
+
+=== G0659 ===
+Language: Greek, POS: V-AIM-3P, Occurrences: 9, Senses: 2
+
+BDB excerpt: ἀποτίθημι, put away, stow away, δέπας δ᾽ ἀπέθηκ᾽ ἐνὶ χηλῷRefs 8th c.BC+: metaphorically, 'pigeon-hole', class, Refs 6th c.AD+ __2 expose a child, Refs 5th c.BC+ __II middle (aorist I participle ἀποθησαμένηRefs 5th c.AD+, put away from oneself, lay aside, τεύχεα κάλ᾽ ἀποθέσθαι ἐπὶ χθονίRefs 8th c.BC+; τὴν Σκυθικὴν στολὴν ἀ. put it off, Refs 5th c.BC+; ἀ. κόμας cut it off, in mourning, Refs 5th c.BC+; ἀ. τὸν νόμον set aside, i.e. disregard, the law, Refs 5th c.BC+; ἀ. τὰν Ἀφροδίταν quell desire, Refs 5th c.BC+ __II.2 put away from oneself, avoid, ἀποθέσθαι ἐνιπήν wipe away the reproach, Refs 8th
+Senses:
+  Sense 1: "put off, lay aside (figurative)" (7x)
+    Desc: To cast off or lay aside sinful practices, the old self, or moral encumbrances metaphorically, as one removes a garment; used in ethical exhortation (Eph 4:22-25, Col 3:8, Heb 12:1, James 1:21, 1 Pet ...
+    Domain: GEOGRAPHY_SPACE > Existence in Space
+    Glosses: eng: Putting-away, having-laid-aside, having-put-away | spa: Desechando, desechad, despojando | fra: déposer | deu: ablegen
+    Refs: Rom 13:12, Eph 4:22, Eph 4:25, Col 3:8, Heb 12:1
+  Sense 2: "lay down, deposit (physical)" (2x)
+    Desc: To physically place or deposit an object somewhere, as in laying garments at someone's feet (Acts 7:58) or putting someone in prison (Matt 14:3); Arabic wada'a (وَضَعَ), Korean noh-atda/neoheotda (놓았다...
+    Domain: GEOGRAPHY_SPACE > Existence in Space
+    Glosses: eng: laid, put | spa: lo-puso, pusieron | fra: déposer | deu: ἀπέθεντο, ἀπέθετο
+    Refs: Matt 14:3, Acts 7:58
+
+=== G0796 ===
+Language: Greek, POS: N-DFS, Occurrences: 9, Senses: 2
+
+BDB excerpt: ἀστρᾰπ-ή, ἡ, ={ἀστεροπή},{στεροπή},fiash of lightning, lightning, βροντὴ καὶ ἀ.Refs 5th c.BC+; personified, as subject of painting, Refs 1st c.AD+: frequently in plural, lightnings, τὰς ἀ. τε καὶ κεραυνίους βολάςRefs 5th c.BC+ __2 light of a lamp, NT+4th c.BC+ __3 metaphorically, ἀστραπήν τιν᾽ ὀμμάτων flashing of the eyes, Refs 5th c.BC+; ἐκτυφλοῦν τιν᾽ ἀστραπὴ [εἰμί] Refs 4th c.BC+
+Senses:
+  Sense 1: "lightning" (8x)
+    Desc: A flash of lightning — the atmospheric electrical discharge, used in Revelation's theophanic visions and in Jesus' description of Satan's fall or the Son of Man's coming. S63564 (plural 'lightnings') ...
+    Domain: NATURAL_WORLD > Physical Events and States
+    Glosses: eng: lightning, lightnings | spa: relámpago, relámpagos | fra: éclair | deu: Blitz, ἀστραπὴ, ἀστραπὴν
+    Refs: Matt 24:27, Matt 28:3, Luke 10:18, Luke 17:24, Rev 4:5
+  Sense 2: "bright shining, radiance" (1x)
+    Desc: A bright radiance or gleaming light — used metaphorically for dazzling brightness rather than an actual lightning bolt, as in Luke 11:36 where the lamp's light illuminates. Swahili distinctively uses ...
+    Domain: NATURAL_WORLD > Physical Events and States
+    Glosses: eng: brightness | spa: luz | fra: éclair | deu: ἀστραπῇ
+    Refs: Luke 11:36
+
+=== G1006 ===
+Language: Greek, POS: V-PNA, Occurrences: 9, Senses: 2
+
+BDB excerpt: βόσκω, imperfect ἔβοσκον, Epic dialect βόσκε Refs 8th c.BC+: future -ήσωRefs 8th c.BC+: aorist ἐβόσκησα Refs: perfect βεβόσκηκα Refs 3rd c.BC+ —passive and middle Refs; Ionic dialect imperfect βοσκέσκοντο Refs 8th c.BC+future βοσκήσομαι Sarap. in Refs 1st c.AD+, Doric dialect βοσκησεῦμαι Refs 3rd c.BC+: aorist ἐβοσκήθην Refs 2nd c.BC+ __I properly of herdsmen, feed, tend, αἰπόλια Refs 8th c.BC+; ὁ βόσκων the feeder, Refs 4th c.BC+ __I.2 generally, feed, nourish, βόσκει γαῖα.. ἀνθρώπους Refs 8th c.BC+; maintain, keep, ἐπικούρους Refs 5th c.BC+; οἰκέταςRefs 5th c.BC+; πράγματα β. troubles, i.e. 
+Senses:
+  Sense 1: "feed, tend (active: of the herdsman)" (6x)
+    Desc: To feed or tend livestock, and by extension to shepherd or care for people under one's charge. In the active voice, used of swineherds tending their pigs (Matt 8:33; Mark 5:14; Luke 8:34), of the prod...
+    Domain: ANIMALS > Animal Husbandry, Fishing
+    Glosses: eng: feed, feeding, ones-feeding | spa: Apacienta, a-apacentar, pastoreando | fra: paître | deu: weiden, βόσκειν, βόσκοντες
+    Refs: Matt 8:33, Mark 5:14, Luke 8:34, Luke 15:15, John 21:15
+  Sense 2: "feed, graze (middle/passive: of the animals)" (3x)
+    Desc: In the middle or passive voice, to be grazing or feeding, said of a herd of animals eating in the field. Used of the herd of pigs feeding on the hillside near the Sea of Galilee before the demoniac en...
+    Domain: ANIMALS > Animal Husbandry, Fishing
+    Glosses: eng: feeding | spa: alimentándose, paciendo | fra: paître | deu: weiden, βοσκομένη
+    Refs: Matt 8:30, Mark 5:11, Luke 8:32
+
+=== G1106 ===
+Language: Greek, POS: N-DFS, Occurrences: 9, Senses: 2
+
+BDB excerpt: γνώμ-η, ἡ, means of knowing: hence, mark, token, Refs 6th c.BC+; of the teeth Refs 4th c.BC+ __II organ by which one perceives or knows, intelligence, __II.1 thought, judgement (τῆς ψυχῆς ἡ γ. Refs 5th c.BC+ intelligent, Refs 5th c.BC+; γ. ἀγαθός, κακός, Refs 5th c.BC+; γνώμῃ φρενῶν, opposed to ὀργῇ,Refs 5th c.BC+; γνώμῃ, opposed to τύχῃ, σωφρονοῦντες Refs 5th c.BC+; γνώμης ἅπτεσθαι affect the head, of wine or fever, Refs 5th c.BC+; γνώμην ἔχειν understand, Refs 5th c.BC+; προσέχειν γνώμην give heed, attend, δεῦρο τὴν γ. προσίσχετε Refs 5th c.BC+; to be on one's guard, Refs 5th c.BC+; δηλοῦν τ
+Senses:
+  Sense 1: "opinion, judgment, advice" (6x)
+    Desc: A personal opinion, considered judgment, or piece of advice offered on a matter, especially where one expresses a view without binding authority. Paul gives his opinion on marriage and virginity (1 Co...
+    Domain: MENTAL_LIFE > Think
+    Glosses: eng: consent, decision, judgment | spa: consentimiento, decisión, opinión | fra: avis, opinion | deu: Meinung, γνώμης
+    Refs: Acts 20:3, 1Cor 1:10, 1Cor 7:25, 1Cor 7:40, 2Cor 8:10
+  Sense 2: "purpose, resolve, intent" (3x)
+    Desc: A settled purpose, resolve, or determination, especially used of a united or divinely ordained intention. In Revelation, the ten kings have one purpose in giving their power to the beast, and God has ...
+    Domain: MENTAL_LIFE > Think
+    Glosses: eng: purpose | spa: propósito | fra: opinion | deu: Meinung
+    Refs: Rev 17:13, Rev 17:17, Rev 17:17

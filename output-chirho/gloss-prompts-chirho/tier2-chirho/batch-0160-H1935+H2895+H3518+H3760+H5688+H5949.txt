@@ -1,0 +1,115 @@
+You are a biblical lexicographer composing glosses for a digital lexicon.
+For each lemma below, compose a JSON object. Separate objects with "---".
+
+Format for each:
+{
+  "lemma_id": "...",
+  "gloss_terse": "under 120 chars, concise definition covering the word's semantic range",
+  "gloss_readable": "2-5 sentences, 40-120 words. Don't start with 'This word'. Warm study-Bible footnote tone. Engaging, not dry.",
+  "senses": {
+    "1": "enriched 20-60 word description. Reference multilingual evidence when illuminating. Don't repeat the label verbatim.",
+    "2": "..."
+  }
+}
+
+Rules:
+- No markdown fences, just JSON objects separated by ---
+- Reference multilingual evidence naturally when it reveals something
+- gloss_readable should feel like a good study Bible footnote: helpful, clear, occasionally surprising
+- Each sense enrichment: how does the evidence support this sense? Mention 1-2 key passages when helpful.
+
+=== H1935 ===
+Language: Hebrew, POS: Conj-w, Occurrences: 24, Senses: 2
+
+BDB excerpt: † I. הוֹד n.m. Jb 37:22 splendour, majesty, vigour (chiefly poet.) (NH id.)—ה׳ abs. Jb 37:22 + 8 times (הַה׳ 1 Ch 29:11); cstr. Is 30:30 + 3 times; sf. הוֹדִי Dn 10:8; הוֹדְךָ Nu 27:20 + 2 times; הוֹדֶ֑ךָ Pr 5:9 ψ 145:4; הוֹדוֹ Ho 14:7 + 3 times; הֹדֹה Je 22:18;— 1. splendour, majesty, of king הוֹדְךָ וַהֲדָרֶ֑ךָ ψ 45:4; הוֹד וְהָדָר תְּשַׁוֶּה עָלָיו ψ 21:6, subj. י׳ (‖ גָּדוֹל כְּבוֹדוֹ בִּישׁוּעָתֶ֑ךָ); foretold of the צֶמַה Zc 6:13 וְהוּא־יִשָּׂא הוֹד וְיָשַׁב וּמָשַׁל עַל־כִּסְאוֹ; cf. מַלְכוּת" dir="rtl" >וַיִּתֵּן עָלָיו הוֹד מַלְכוּת 1 Ch 29:25 (י׳ confers on Sol.); וְלֹא נָֽתְנוּ עָלָ
+Senses:
+  Sense 1: "majesty, splendor" (21x)
+    Desc: Majestic splendor or glory, especially of God or royalty, denoting awe-inspiring grandeur and magnificence.
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: Your-splendor, and-my-splendor, and-the-majesty | spa: Esplendor, de-majestad-de-ti, esplendor | fra: [הדה‪‬], [הוד], [וההוד] | deu: Majestät, Pracht, [הדה‪‬]
+    Refs: Num 27:20, 1Chr 16:27, 1Chr 29:11, 1Chr 29:25, Job 37:22
+  Sense 2: "honor, dignity" (3x)
+    Desc: Personal honor, dignity, or distinction conferred upon or belonging to a person, emphasizing respect and esteem rather than cosmic grandeur.
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: honor-of, splendor, your-vigor | spa: esplendor, honor-de, tu-honor | fra: le-majesté, majesté, ton-הודך-toi | deu: Pracht, [הוד], [הודך]
+    Refs: Ps 21:5, Prov 5:9, Dan 11:21
+
+=== H2895 ===
+Language: Hebrew, POS: V-Qal-Perf-3cp, Occurrences: 24, Senses: 2
+
+BDB excerpt: † I. טוֹב vb. pleasing, good (NH id., Hiph.; also deriv.; Arabic طَابَ med. ى be pleasant, delightful, delicious, sweet or savoury in taste or odour, be pure and clean, cheerful, happy (Lane); Aramaic ܛܶܐܒ, ܛܳܒ, טְאֵב, טַב, טַיֵּב and especially deriv. glad, joyful; Assyrian ṭâbu, be good, kind, acceptable, joyful, vigorous DlHWB 299)— Qal Pf. טוֹב Nu 11:18 + 32 times; pl. טֹבוּ Nu 24:5 Ct 4:10; (Impf. יִיטַב from יָטַב); Inf. abs. טוֹב Ju 11:25; cstr. טוֹב Je 32:39 + 6 times, כְּטוֹב Ju 16:25 Qr (Kt כי טוב); Pt. טוֹב Ju 11:25 1 S 2:26; (for these forms v. Bö§ 1133, 4 SS s.v.; Ges recognises o
+Senses:
+  Sense 1: "be good, be pleasing" (16x)
+    Desc: Qal stative: to be good, pleasant, or agreeable, often in the idiom 'to be good in one's eyes/sight' indicating approval or favorable judgment. Used of things being pleasing to God or man (Num 24:1), ...
+    Domain: MORAL_QUALITY > Moral and Ethical Qualities
+    Glosses: eng: and-good, better, good | spa: bien, bueno, hermosas | fra: bon, et-bon, sont-bons | deu: [טבו], gut, und-gut
+    Refs: Num 11:18, Num 24:1, Num 24:5, Deut 5:33, Deut 15:16
+  Sense 2: "do good, act well" (8x)
+    Desc: Hifil causative: to do good, act rightly, or deal well with someone. Used of God doing good to His people (Ps 119:68; 125:4; Jer 32:41; Ezek 36:11), of humans acting well as commended by God (1 Kgs 8:...
+    Domain: MORAL_QUALITY > Moral and Ethical Qualities
+    Glosses: eng: and-I-will-do-better, and-doing-good, and-skilled-at | spa: Haz-bien, bien-hiciste, hiciste-bien | fra: [להטיב], et-de-être-bon, et-être-bon | deu: [הטיבות], [והטבתי], [ומטב]
+    Refs: 1Kgs 8:18, 2Kgs 10:30, 2Chr 6:8, Ps 119:68, Ps 125:4
+
+=== H3518 ===
+Language: Hebrew, POS: V-Qal-Imperf-3ms, Occurrences: 24, Senses: 2
+
+BDB excerpt: † [כָּבָה] vb. be quenched, extinguished, go, out, of fire or lamp (NH id.; Aramaic כְּבָא light of eyes; Arabic كَبَا id.)— Qal Pf. 3 pl. כָּבוּ Is 43:17; Impf. יִכְבֶּה 1 S 3:3; Pr 21:18; 3 fs. תִּכְבֶּה Lv 6:5 + 10 times; Inf. cstr. כְּבוֹתְךָ Ez 32:7 𝔊 𝔖 𝔙 Co (MT כַּבּ׳ Pi.)—be quenched, extinguished (c. neg. except 1 S 3:3; Pr 26:20; Is 43:17), of lamp (נֵר אֱלֹהִים) in sanctuary 1 S 3:3; of altar-fire Lv 6:5, 6; of נֵרָהּ Pr 31:18; of bodies of renegade Israelites Is 66:24 (cf. גֵּיא בֶן־הִנֹּם); subj. אֵשׁ fig. of contention Pr 26:20; fig. subj. fire kindled by י׳ Ez 21:3, 4; subj. wrat
+Senses:
+  Sense 1: "be quenched, go out" (14x)
+    Desc: Qal intransitive: of a fire, lamp, or flame ceasing to burn, being extinguished or going out, often in prophetic judgment contexts
+    Domain: NATURAL_WORLD > Physical Events and States
+    Glosses: eng: be-quenched, goes-out, it-shall-be-quenched | spa: apagarse, se-apaga, se-apaga- | fra: [תכבה], cela-fera-être-quenched, comme-en-lui | deu: [יכבה], [תכבה], ausloeschen
+    Refs: Lev 6:12, Lev 6:13, 1Sam 3:3, 2Kgs 22:17, 2Chr 34:25
+  Sense 2: "extinguish, put out" (10x)
+    Desc: Piel transitive/causative: to actively quench or extinguish a fire, lamp, or flame, with an agent performing the action
+    Domain: NATURAL_WORLD > Physical Events and States
+    Glosses: eng: and-extinguished, and-they-will-extinguish, extinguishing | spa: apagar, apagará, apagarás | fra: [ויכבו], et-ils-fera-extinguish, tu-devra-extinguish | deu: [בכבותך], [ויכבו], [לכבות]
+    Refs: 2Sam 14:7, 2Sam 21:17, 2Chr 29:7, Song 8:7, Isa 1:31
+
+=== H3760 ===
+Language: Hebrew, POS: Conj-w, Occurrences: 24, Senses: 2
+
+BDB excerpt: † II. כַּרְמֶל n.pr.mont. et urb. Carmel:— 1. mt.-promontory on Mediterranean, with fertile slopes, Tel el-Amarna (Ginti-)Kirmil, Jastrow JBL xi. 1892, 115; Jos 19:26, הַר־הַכּ׳ 1 K 18:19, 20 2 K 2:25; 4:25; רֹאשׁ הַכּ׳ Am 1:2; 9:3; 1 K 18:42; c. art. also Jos 12:22; and, + בָּשָׁן, Je 50:19, as pasturage (in fig. of Isr. as flock of י׳), cf. (כ׳ without art.) Mi 7:14 (less prob. rend. garden-land, i. כַּרְמֶל, so We GASm); הַכּ׳ Is 35:2 (+ הַלְּבָנוֹן, הַשָּׁרוֹן); כ׳ Is 33:9 (+ לְבָנוֹן, הַשָּׁרוֹן and בָּשָׁן, marking extent of land), Na 1:4 (+ לְבָנוֹן, בָּשָׁן); כְּכַרְמֶל בַּיָּם Je 46:1
+Senses:
+  Sense 1: "Carmel (place name)" (21x)
+    Desc: The proper noun Carmel, referring to Mount Carmel on the Mediterranean coast or the town of Carmel in the hill country of Judah, used as a geographical designation across all grammatical contexts (wit...
+    Domain: DISCOURSE_NAMES > Names of Persons and Places
+    Glosses: eng: Carmel, and-Carmel, and-Karmel | spa: Carmelo, al-Carmelo, como-el-Karmel | fra: Carmel, [הכרמל], [וככרמל] | deu: Karmel, [הכרמל], [וככרמל]
+    Refs: Josh 12:22, Josh 19:26, 1Sam 15:12, 1Sam 25:2, 1Sam 25:2
+  Sense 2: "garden land, fruitful field" (3x)
+    Desc: The common noun meaning a fruitful field, orchard, or garden land, sometimes used figuratively of abundance and fertility, distinct from the proper noun usage.
+    Domain: DISCOURSE_NAMES > Names of Persons and Places
+    Glosses: eng: Carmel, and-in-the-Karmel | spa: Carmel, Carmelo, y-en-el-Carmelo | fra: Carmel, [ובכרמל], [כרמל] | deu: Karmel, [ובכרמל]
+    Refs: Josh 15:55, 2Chr 26:10, Mic 7:14
+
+=== H5688 ===
+Language: Hebrew, POS: N-cs, Occurrences: 24, Senses: 2
+
+BDB excerpt: † עֲבֹת n.m. Ju 15:13 + et f. Ju 15:14; Jb 39:10 (twisted) cord, rope; cordage; interwoven foliage (?);—abs. ע׳ Ex 28:14 + 2 times; cstr. עֲבוֹת Is 5:18 ψ 129:4; sf. 3 ms. עֲבֹתוֹ Jb 39:10, 3 mpl. עֲבֹתֵ֑ימוֹ ψ 2:3; pl. עֲבֹתִים Ju 15:13 +, עֲבֹתֹת Ex 28:14 +, etc.;— 1. cord, rope: a. as fetter, Ju 15:13, 14; 16:11, 12; Ez 3:25; 4:8; Jb 39:10 (of wild ox), so also prob. ψ 118:27 bind the festal victim (חַג) with cords Ew Ol De Hup-Now Dr al.; > with branches Che, cf. Bae Du; fig. of authority ψ 2:3 (‖ מוֹסְרוֹתֵימוֹ), 129:4. b. עֲבוֹת הָעֲגָלָה Is 5:18 i.e. with which a cart is drawn (in sim.;
+Senses:
+  Sense 1: "ropes, cords, bands" (20x)
+    Desc: Twisted or braided ropes, cords, and bands used for binding, restraining, or fastening — including literal ropes (as in the Samson narrative), woven cords of the priestly ephod, and figurative bonds o...
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: and-as-ropes-of, cord, cords-of | spa: con-cuerdas, con-lazos-de, cordones-de | fra: [וכעבות], avec-cordes, corde | deu: Schnur, [בעבתות], [וכעבות]
+    Refs: Exod 28:14, Exod 28:14, Exod 28:22, Exod 28:24, Exod 28:25
+  Sense 2: "thick boughs, dense branches" (4x)
+    Desc: Thick, interwoven branches or boughs of a tree, used of dense foliage or thickets (Ezekiel 19:11, 31:3, 31:10, 31:14).
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: thick-boughs, thick-branches | spa: espesura, las-nubes, nubes | fra: corde | deu: [עבותים], [עבתים]
+    Refs: Ezek 19:11, Ezek 31:3, Ezek 31:10, Ezek 31:14
+
+=== H5949 ===
+Language: Hebrew, POS: N-fpc | 2mp, Occurrences: 24, Senses: 2
+
+BDB excerpt: † עֲלִילָה n.f. wantonness, deed;—abs. ע׳ ψ 14:1; 66:5; elsewhere pl. עֲלִלוֹת 1 S 2:3 ψ 141:4; cstr. עֲלִילֹת Dt 22:14, 17; sf. עֲלִילוֹתֶיךָ ψ 77:13, עֲלִילוֹתָם Zp 3:7 +, etc.;— 1. wantonness, ע׳ דְּבָרִים Dt 22:14, 17 wantonness of words, i.e. baseless charges (cf. Di, especially Dr). 2. deed: a. in gen., of men 1 S 2:3. b. of י׳ (only ψψ) ψ 9:12 = 105:1 = Is 12:4 = 1 Ch 16:8, ψ 77:13 (‖ פָּעֳלֶ֑ךָ), 78:11 (‖ נִפְלְאוֹתָיו), 103:7; נוֹרָא ע׳ עַל 66:5 he is terrible in deed toward, etc. c. usually practices = evil deeds (especially Ez 8 times): Ez 14:22, 23; 20:43; 24:14; 36:17, 19 (all ‖ ד
+Senses:
+  Sense 1: "deed, act, work" (22x)
+    Desc: An action or deed performed by a person, used broadly for human conduct whether good or evil, often in plural 'deeds/works' with possessive suffixes indicating the agent.
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: His-deeds, and-according-to-deeds-your, and-according-to-their-deeds | spa: ni-conforme-a-vuestras-obras, obra, obras-de-el | fra: [עלילתיו], action, et-action | deu: Taten, [עלילותם], [עלילתיו]
+    Refs: 1Sam 2:3, 1Chr 16:8, Ps 9:11, Ps 14:1, Ps 66:5
+  Sense 2: "charge, accusation, pretext" (2x)
+    Desc: A formal accusation or contrived charge brought against someone, typically in a legal or judicial context (as in Deut 22:14, 17 where a husband brings 'charges' against his bride).
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: accusations-of | spa: pretextos-de | fra: accusations-de | deu: accusations-von
+    Refs: Deut 22:14, Deut 22:17

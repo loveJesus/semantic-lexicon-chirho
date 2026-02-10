@@ -1,0 +1,115 @@
+You are a biblical lexicographer composing glosses for a digital lexicon.
+For each lemma below, compose a JSON object. Separate objects with "---".
+
+Format for each:
+{
+  "lemma_id": "...",
+  "gloss_terse": "under 120 chars, concise definition covering the word's semantic range",
+  "gloss_readable": "2-5 sentences, 40-120 words. Don't start with 'This word'. Warm study-Bible footnote tone. Engaging, not dry.",
+  "senses": {
+    "1": "enriched 20-60 word description. Reference multilingual evidence when illuminating. Don't repeat the label verbatim.",
+    "2": "..."
+  }
+}
+
+Rules:
+- No markdown fences, just JSON objects separated by ---
+- Reference multilingual evidence naturally when it reveals something
+- gloss_readable should feel like a good study Bible footnote: helpful, clear, occasionally surprising
+- Each sense enrichment: how does the evidence support this sense? Mention 1-2 key passages when helpful.
+
+=== H2186a ===
+Language: Hebrew, POS: V-Qal-Perf-1cs | 3mp, Occurrences: 19, Senses: 2
+
+BDB excerpt: † I. זָנַח vb. reject, spurn (Arabic زَنَحَ repelled; Assyrian zinû, to be angry not connected)— Qal Pf. ז׳ Ho 8:3, 5 La 2:7; זָנַחְתָּ ψ 44:10 + 2 times; sf. זְנַחְתָּ֑נִי ψ 43:2; וְנַחְתָּנוּ ψ 60:3, 12; 108:12; זְנַחְתִּים Zc 10:6; Impf. יִזְנַח ψ 77:8 La 3:31; תִּזְנַח ψ 44:24 + 2 times;—reject, Isr. rejects good Ho 8:3; Samaria’s calf rejects her Ho 8:5 (others make י׳ subj.; WeKl. Proph. reads אזנח I reject), elsewhere God rejects people ψ 43:2; 60:3; 77:8; 88:15 Zc 10:6; לָנֶצַח ψ 44:24; 74:1; לעולם La 3:31; ז׳ ולא תצא בצבאתינו ψ 44:10; 60:12; 108:12; נַפְשִׁי מִשָּׁלוֹם La 3:17; king ψ
+Senses:
+  Sense 1: "reject, spurn (Qal)" (16x)
+    Desc: To reject, refuse, or cast off someone or something, expressing divine or human disapproval and abandonment (Qal stem across all inflections).
+    Domain: FAITH_BELIEF > Hold a View, Believe, Trust
+    Glosses: eng: And-was-deprived, Has-rejected, You-have-rejected | spa: Ha-rechazado, Y-ha-rechazado, desechará | fra: [ותזנח], [זנח], [זנחתים] | deu: [ותזנח], [זנח], [זנחתים]
+    Refs: Ps 43:2, Ps 44:9, Ps 44:23, Ps 60:1, Ps 60:10
+  Sense 2: "cast away, remove (Hifil)" (3x)
+    Desc: To forcefully cast aside or remove, emphasizing the active displacement or expulsion of someone (Hifil causative stem, with Swahili evidence showing -tupa 'throw away', -acha 'abandon', -tenga 'separa...
+    Domain: BODY_HEALTH > Physiological Processes and States
+    Glosses: eng: He-will-reject-you, cast-aside, rejected-them | spa: desechó, los-desechó, te-desechará | fra: [הזניח], [הזניחם], [יזניחך] | deu: [הזניח], [הזניחם], [יזניחך]
+    Refs: 1Chr 28:9, 2Chr 11:14, 2Chr 29:19
+
+=== H2201 ===
+Language: Hebrew, POS: Prep-l | N-fsc | 1cs, Occurrences: 19, Senses: 2
+
+BDB excerpt: † זְעָקָה n.f. cry, outcry, abs. ז׳ Je 18:22 + 5 times; cstr. זַעֲקַת Gn 18:20 + 3 times; sf. זַעֲקָתִי Jb 16:18; זַעֲקָתָם Is 15:5 + 3 times;— 1. outcry, against, זַעֲקַת סְדֹם וגו׳ Gn 18:20 (J). 2. cry of distress, concerning something זַעֲקַת־שֶׁבֶר Is 15:5 (obj. of יְעֹעֵ֑רוּ; cf. בִּבְכִי in prev. cl.); abs. v 8 (subj. of הִקִּיפָה, ‖ יְלָלָה); Je 18:22 (תִּשָּׁמַע ז׳), 20:16; 48:4; 50:46 Ne 5:6; 9:9 (all c. שׁמע), Je 48:34 (joined with נתן קול), Jb 16:18 Est 9:31 (lamentation), cf. 4:1 (ז׳ גְּדוֹלָה וּמָרָה, acc. cogn. c. זעק); specif. זעקת־דָּ֑ל Pr 21:13 cry of poor; קול ז׳ Is 65:19 (‖ 
+Senses:
+  Sense 1: "cry, outcry of distress" (18x)
+    Desc: A cry or outcry expressing distress, complaint, or supplication, often directed to God or arising from oppression and suffering.
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: a-cry, an-outcry, and-an-outcry | spa: clamor, clamor-de, clamor-de-ellos | fra: [וזעקתם], [זעקה], [זעקתם] | deu: Schrei, [וזעקתם], [זעקה]
+    Refs: Gen 18:20, Neh 5:6, Neh 9:9, Esth 4:1, Esth 9:31
+  Sense 2: "shout, loud clamor" (1x)
+    Desc: A loud shout or clamor, emphasizing volume and intensity rather than emotional distress, as evidenced by distinct vocabulary across Arabic, Korean, and Swahili translations.
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: than-shout-of | spa: más-que-clamor-de | fra: de-מזעקת | deu: [מזעקת]
+    Refs: Eccl 9:17
+
+=== H2400 ===
+Language: Hebrew, POS: Conj-w | Adj-mp, Occurrences: 19, Senses: 2
+
+BDB excerpt: † [חַטָּא] adj. and n.m. 1. sinful, 2. sinners—as adj.f. חַטָּאָה Am 9:8, elsewhere only pl. חַטָּאִים Nu 32:14 + 15 times; cstr. חַטָּאֵי Am 9:10; sf. חַטָּאֶיהָ Is 13:9;— 1. adj. a. sinful men Nu 32:14 (J), kingdom Am 9:8. b. exposed to condemnation, reckoned as offenders 1 K 1:21 (cf. Hiph. Pt. Is 29:21). Elsewhere 2. n.m. sinners Nu 17:3 (P), 1 S 15:18 Am 9:10 Is 1:28; 13:9; 33:14 ψ 1:1, 5; 25:8; 26:9; 51:15; 104:35 Pr 1:10; 13:21; 23:17; ח׳ ליהוה sinners against י׳ Gn 13:13 (J).
+Senses:
+  Sense 1: "sinners (substantive noun)" (18x)
+    Desc: Persons who sin, used as a substantive noun referring to people characterized by sinfulness, across all grammatical inflections (with article, conjunction, preposition, construct, and pronominal suffi...
+    Domain: MORAL_QUALITY > Moral and Ethical Qualities
+    Glosses: eng: and-its-sinners, and-sinners, offenders | spa: Pecadores, a-pecadores, de-los-pecadores | fra: [וחטאיה], [וחטאים], [חטאים] | deu: Sünder, [בחטאים], [וחטאיה]
+    Refs: Gen 13:13, Num 16:38, Num 32:14, 1Sam 15:18, 1Kgs 1:21
+  Sense 2: "sinful (attributive adjective)" (1x)
+    Desc: Used as an attributive adjective modifying a noun, describing something or someone as characterized by sin, as in 'the sinful [generation/land]'.
+    Domain: MORAL_QUALITY > Moral and Ethical Qualities
+    Glosses: eng: the-sinful | spa: pecador | fra: pécheur | deu: [החטאה]
+    Refs: Amos 9:8
+
+=== H3238 ===
+Language: Hebrew, POS: V-Hifil-Imperf-2ms | 3mse, Occurrences: 19, Senses: 2
+
+BDB excerpt: [יָנָה] vb. suppress (?) oppress, maltreat (NH Hiph. vex with words; so Aramaic Aph. אוֹנִי, but also 𝔗 for Heb. הוֹנָה maltreat; Arabic وَنَى is laxus, debilis fuit, iv. debilitavit, defaligavit, but connex. dub.)— Qal Impf. 1 pl. sf. נִינָם ψ 74:8; Pt. יוֹנָה Je 25:38 + 3 times + ψ 123:4 (v. infr.); suppress (?), sq. acc. ψ 74:8 (dub.; Ges§ 76f); elsewhere oppress; Pt. abs. as adj. הָעִיר הַיּוֹנָה Zp 3:1; subst. f. coll. הַיּוֹנָה oppressors Je 25:38 (but read חֶרֶב for חֲרוֹן, with 𝔊 Ew Hi Gf Ke etc., as 46:16; 50:16); ψ 123:4 Qr לִגְאֵי יוֹנִים proudest oppressors (st. cstr. in superlat.,
+Senses:
+  Sense 1: "oppress, wrong, mistreat" (14x)
+    Desc: To treat unjustly, oppress, or wrong someone, typically in a social or economic context (Hifil finite forms and Qal cohortative expressing the verbal action of oppression).
+    Domain: VIOLENCE_CONFLICT > Violence, Harm, Destroy, Kill
+    Glosses: eng: does-he-oppress, he-oppresses, let-us-destroy-them | spa: lo-oprimirás, lo-oprimiréis, los-oprimiremos | fra: Jonas, mistreat, opprimer | deu: [הונה], [הונו], [יונה]
+    Refs: Exod 22:21, Lev 19:33, Lev 25:14, Lev 25:17, Deut 23:16
+  Sense 2: "oppressor (substantival participle)" (5x)
+    Desc: One who oppresses, used as a substantive participle to describe an oppressing person, city, or group (both Qal and Hifil participial forms functioning as nouns).
+    Domain: VIOLENCE_CONFLICT > Violence, Harm, Destroy, Kill
+    Glosses: eng: oppressing, the-oppressing, the-oppressor | spa: a-tus-opresores, la-espada, la-opresora | fra: le-Jonas, opprimer | deu: [היונה], [מוניך], der-Jona
+    Refs: Isa 49:26, Jer 25:38, Jer 46:16, Jer 50:16, Zeph 3:1
+
+=== H3811 ===
+Language: Hebrew, POS: Conj-w | V-Nifal-ConjPerf-3ms, Occurrences: 19, Senses: 2
+
+BDB excerpt: † [לָאָה] vb. be weary, impatient (cf. Arabic لَأَى be slow, hesitating (Frey); بَعْدَ لَأْىٍ after difficulty, لَأْيًا with difficulty (Lane3007); Aramaic לְאִי, ܠܐܴܐ, ܠܐܻܝ );— Qal Impf. 2 ms. תִּלְאֶה Jb 4:2; וַתֵּ֫לֶא Jb 4:5; 3 pl. וַיִּלְאוּ Gn 19:11;—be weary (in vain endeavour) sq. Inf. Gn 19:11; be weary, impatient at attempted consolation abs. Jb 4:2; at calamity abs. Jb 4:5 (‖ בָּהַל). Niph. Pf. נִלְאָה Pr 26:15 + 2 times; 2 fs. נִלְאֵית Is 47:13; נִלְאֵיתִי Is 1:14 + 3 times;—sq. inf. be weary (ל) of doing a thing, Ex 7:18 (JE), make oneself weary in doing something Pr 26:15 (of slug
+Senses:
+  Sense 1: "be weary, grow tired" (13x)
+    Desc: Qal/Nifal intransitive sense: to become weary, exhausted, or fatigued, whether physically or emotionally.
+    Domain: BODY_HEALTH > Physiological Processes and States
+    Glosses: eng: I-am-weary, You-are-wearied, and-I-was-weary | spa: Estoy-cansado, Te-cansaste, estoy-cansado | fra: et---être-las, et-ils-wearied, et-lasser | deu: [ותלא], [נלאה], [תלאה]
+    Refs: Gen 19:11, Exod 7:18, Job 4:2, Job 4:5, Ps 68:9
+  Sense 2: "make weary, tire out" (6x)
+    Desc: Hifil causative sense: to cause someone to become weary or exhausted, to wear someone out.
+    Domain: BODY_HEALTH > Physiological Processes and States
+    Glosses: eng: He-has-wearied-me, and-they-wearied-you, have-I-wearied-you | spa: canséis, cansó, el-cansar | fra: et-lasser, lasser, se-lasser-moi | deu: [הלאני], [הלאת], [הלאתיך]
+    Refs: Job 16:7, Isa 7:13, Isa 7:13, Jer 12:5, Ezek 24:12
+
+=== H3852 ===
+Language: Hebrew, POS: N-fs, Occurrences: 19, Senses: 2
+
+BDB excerpt: † לֶהָבָה n.f. id.;—ל׳ Nu 21:28 + 13 times, לַהֶ֫בֶת cstr. 1 S 17:7; Ez 21:3; לַבַּת Ex 3:2 (= לַהְבַּת; Sam. להבת, v. Di); pl. לֶהָבוֹת ψ 105:32; cstr. לַהֲבוֹת ψ 29:7;— 1. flame, poet. (‖ or + אֵשׁ, except ψ 29:7 Dn 11:33); of fire consuming (לָהַט) Dathan, etc. ψ 106:18 (cf. Nu 16:35); wasting (לָהַט) mts. 83:15; consuming (אָכַל, בָּעֵר) chaff (in sim.) Is 5:24; of lightning (with hail) אשׁ ל׳ ψ 105:32 (cf. Ex 9:24), ψ 29:7 ל׳ אֵשׁ (on text of v. cf. Che); sim. of judgment, אֵשׁ ל׳ La 2:3 (vb. אָכַל) Ho 7:6 (vb. בָּעֵר) Is 47:14 (מִיַּד ל׳); cf. 10:17; Ob 18; ל׳ שַׁלְה׳ Ez 21:3; fig. of dr
+Senses:
+  Sense 1: "flame, blaze" (18x)
+    Desc: Fire in its visible, luminous aspect — a flame or blaze, whether literal (burning fire) or figurative (divine theophany, judgment).
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: and-a-flame, and-as-a-flame, and-by-flame | spa: de-llamas, llama, llama-de | fra: et-flamme, flamme, flamme, | deu: Flamme, [ובלהבה], [ולהבה]
+    Refs: Num 21:28, Ps 29:7, Ps 83:14, Ps 105:32, Ps 106:18
+  Sense 2: "blade of a weapon" (1x)
+    Desc: The gleaming, flashing blade of a sword or spear, so called from its flame-like flash.
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: and-blade-of | spa: y-hoja-de | fra: et-blade-de | deu: und-blade-von
+    Refs: 1Sam 17:7

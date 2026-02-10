@@ -1,0 +1,115 @@
+You are a biblical lexicographer composing glosses for a digital lexicon.
+For each lemma below, compose a JSON object. Separate objects with "---".
+
+Format for each:
+{
+  "lemma_id": "...",
+  "gloss_terse": "under 120 chars, concise definition covering the word's semantic range",
+  "gloss_readable": "2-5 sentences, 40-120 words. Don't start with 'This word'. Warm study-Bible footnote tone. Engaging, not dry.",
+  "senses": {
+    "1": "enriched 20-60 word description. Reference multilingual evidence when illuminating. Don't repeat the label verbatim.",
+    "2": "..."
+  }
+}
+
+Rules:
+- No markdown fences, just JSON objects separated by ---
+- Reference multilingual evidence naturally when it reveals something
+- gloss_readable should feel like a good study Bible footnote: helpful, clear, occasionally surprising
+- Each sense enrichment: how does the evidence support this sense? Mention 1-2 key passages when helpful.
+
+=== H8438b ===
+Language: Hebrew, POS: N-fsc | 3mp, Occurrences: 39, Senses: 2
+
+BDB excerpt: תּוֹלֵעָה, תּוֹלַ֫עַת n.f. worm;—abs. תּוֹלֵעָה Is 14:11; Jb 25:6; תּוֹלַעַת Is 41:14 +, תּוֹלָ֑עַת Dt 28:39 Nu 19:6; cstr. תּוֹלַ֫עַת Ex 25:4 +; sf. תּוֹלַעְתָּם Is 66:24;— 1. worm, grub, vine-weevil Jon 4:7; Dt 28:39 (coll.); devouring the dead Is 14:11 (coll.: ‖ רִמָּה), 66:24 (coll.); symbol of insignificance 41:14 Jb 25:6 (‖ רִמָּה), ψ 22:7. 2. elsewhere (P) specif., + שָׁנִי (q.v.), of the coccus ilicis yielding scarlet colour: שְׁנִי (הַ)תּ׳ Lv 14:4, 6, 49, 51, 52; Nu 19:6; of crimson stuff, בֶּגֶד ת׳ שָׁנִי 4:8; usually תְּכֵלֶת וְאַרְגָּמָן וְת׳ (הַ)שָּׁנִי וגו׳ Ex 25:4; 26:1 + 24 tim
+Senses:
+  Sense 1: "crimson/scarlet dye material" (31x)
+    Desc: The scarlet or crimson dyestuff derived from the coccus ilicis insect, used almost exclusively in the construct chain תּוֹלַעַת שָׁנִי for the scarlet yarn/fabric of the tabernacle, priestly garments,...
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: and-scarlet-of, and-worm-of, yarn | spa: gusano, y-gusano-de | fra: et-ver-de, et-écarlate-de, fil | deu: und-Scharlach-von, und-scharlachrot-von, yarn
+    Refs: Exod 26:1, Exod 26:31, Exod 26:36, Exod 27:16, Exod 28:5
+  Sense 2: "worm, maggot" (8x)
+    Desc: A literal worm or maggot, used for creatures of decay and decomposition, and figuratively for human insignificance or helplessness (Ps 22:6 'I am a worm'), as a term of address to lowly Israel (Isa 41...
+    Domain: ANIMALS > Animals
+    Glosses: eng: O-worm, a-worm, the-worm | spa: el-gusano, gusano, gusanos | fra: [תולעה], [תולעת], [תולעתם] | deu: Wurm, [תולעה], [תולעת]
+    Refs: Num 19:6, Deut 28:39, Job 25:6, Ps 22:6, Isa 14:11
+
+=== G1228 ===
+Language: Greek, POS: Adj-DMS, Occurrences: 38, Senses: 2
+
+BDB excerpt: διάβολ-ος, ον, slanderous, backbiting, γραῦς Refs 4th c.BC+: superlative -ώτατοςRefs 5th c.BC+; διάβολόν τι, aliquid invidiae, Refs 5th c.BC+ __II substantive, slanderer, Refs 5th c.BC+; enemy, LXX: hence, = Sâtân,Refs; the Devil, NT __III adverb -λως injuriously, invidiously, Refs 5th c.BC+
+Senses:
+  Sense 1: "the Devil, Satan (proper name)" (35x)
+    Desc: The supreme adversary of God and humanity, used as a quasi-proper noun referring to Satan; uniformly rendered as 'devil/Devil' (eng), 'diablo' (spa), 'शैतान' (hin), 'إبليس' (arb), '마귀' (kor), 'ibilisi...
+    Domain: COMMUNICATION > Communication
+    Glosses: eng: devil | spa: diablo | fra: diable | deu: Teufel
+    Refs: Matt 4:1, Matt 4:5, Matt 4:8, Matt 4:11, Matt 13:39
+  Sense 2: "slanderous, given to malicious accusation (adjective of persons)" (3x)
+    Desc: Adjectival use applied to human beings who engage in slander or false accusation, appearing in accusative feminine plural and nominative masculine plural forms; translated 'slanderers' (eng), 'calumni...
+    Domain: COMMUNICATION > Communication
+    Glosses: eng: slanderers | spa: calumniadoras, calumniadores | fra: diable | deu: Teufel
+    Refs: 1Tim 3:11, 2Tim 3:3, Titus 2:3
+
+=== G1939 ===
+Language: Greek, POS: N-AFS, Occurrences: 38, Senses: 2
+
+BDB excerpt: ἐπιθῡμ-ία, Ionic dialect -ιη, ἡ, desire, yearning, ἐ. ἐκτελέσαι 5th c.BC: Herodotus Historicus 1.32; ἐπιθυμίᾳ by passion, opposed to προνοίᾳ, Refs: generally, appetite, Refs; αἱ κατὰ τὸ σῶμα ἐ. Refs; especially sexual desire, lust, Refs; αἱ πρὸς τοὺς παῖδας ἐ. Refs __2. with genitive, longing after a thing, desire of or for it, ὕδατος, τοῦ πιεῖν, Refs 5th c.BC+; ἐν ἐ. τινὸς εἶναι Refs; εἰς ἐ. τινὸς ἀφικέσθαι θεάσασθαι Refs 5th c.BC+; ἐ. ἐμποιεῖν ἔς τινα an inclination towards.., Refs __II. ={ἐπιθύμημα}, object of desire, ἐπιθυμίας τυχεῖν Thalesap.Refs; ἀνδρὸς ἐ., of woman, Refs
+Senses:
+  Sense 1: "sinful desire or lust" (36x)
+    Desc: Craving or passionate desire for what is forbidden or contrary to God's will, including fleshly lusts, worldly desires, and covetousness.
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: by-desires, desire, desires | spa: concupiscencia, concupiscencias, deseo | fra: désir | deu: Begierde
+    Refs: Mark 4:19, John 8:44, Rom 1:24, Rom 6:12, Rom 7:7
+  Sense 2: "earnest longing or yearning" (2x)
+    Desc: A deep, positive desire or longing, such as the desire to be with Christ or to share fellowship, without negative moral connotation.
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: With-desire, desire | spa: Con-deseo, deseo | fra: désir | deu: Begierde, begehrt
+    Refs: Luke 22:15, 1Thess 2:17
+
+=== G2168 ===
+Language: Greek, POS: V-APA-GMS, Occurrences: 38, Senses: 2
+
+BDB excerpt: εὐχᾰριστ-έω, bestow a favour on, oblige, τῷ δήμῳ τῷ Δηλίων Refs 3rd c.BC+; τινι Refs 3rd c.BC+ __2 to be thankful, return thanks, Decrees cited in Refs 4th c.BC+; τοῖς Αθηναίοις Refs 2nd c.BC+; ἐπί τινι or περί τινος for a thing, Refs 2nd c.BC+; especially to the gods, ἐπὶ τῷ ἐρρῶσθαί σε τοῖς θεοῖς εὐ. NT+2nd c.BC+:—passive, to be thanked, ηὐχαρίστηται κεραυνοῖς Refs 5th c.BC+; to be received with thanks, NT __3 pray, τῷ θεῷ περί τινος Refs 4th c.AD+
+Senses:
+  Sense 1: "give thanks actively" (37x)
+    Desc: To express gratitude or thanksgiving to God or to someone, used actively across all grammatical persons, numbers, tenses, and moods (indicative, participle, imperative, infinitive).
+    Domain: COMMUNICATION > Communication
+    Glosses: eng: I-give-thanks, I-thank, giving-thanks | spa: Doy-gracias, dando-gracias, dar-gracias | fra: rendre-grâces | deu: danken, dankt
+    Refs: Matt 15:36, Matt 26:27, Mark 8:6, Mark 14:23, Luke 17:16
+  Sense 2: "be thanked (passive)" (1x)
+    Desc: To be the object of thanksgiving or gratitude, used in the passive voice indicating that thanks is received or given on behalf of something.
+    Domain: COMMUNICATION > Communication
+    Glosses: eng: might-be-thanked | spa: sea-agradecido | fra: rendre-grâces | deu: danken
+    Refs: 2Cor 1:11
+
+=== G2744 ===
+Language: Greek, POS: V-PNM/P, Occurrences: 38, Senses: 2
+
+BDB excerpt: καυχ-άομαι, Doric dialect καυχέομαι Refs 3rd c.BC+; 2nd pers. singular καυχᾶσαι in late Gr., as NT: future -ήσομαι Refs 5th c.BC+: aorist ἐκαυχησάμην Refs 4th c.BC+; Aeolic dialect optative καυχάσαιτο Refs 7th c.BC+: perfect κεκαύχημαι NT:—active, Refs:— speak loud, be loud-tongued, κ. παρὰ καιρόν Refs 5th c.BC+, cf. Eup.[same place], etc.; boast, vaunt oneself, ἐπ᾽ αἰζηοῖσι κ. μέγα Refs 5th c.BC+ [same place]; ἔν τινι NT.Rom.[same places]: c.accusative et infinitive, aorist or present, boast that.., Refs 5th c.BC+ [same place], etc.: with participle, boast of doing or being, Refs 4th c.BC+; ὅ
+Senses:
+  Sense 1: "boast, glory, take pride" (37x)
+    Desc: To boast or glory in something, expressing pride or exultation, whether in oneself, in others, or in the Lord.
+    Domain: COMMUNICATION > Communication
+    Glosses: eng: I-will-boast, boast, let-boast | spa: Jactarse, gloríese, jactarme | fra: se-glorifier | deu: sich-ruehmen
+    Refs: Rom 2:17, Rom 2:23, Rom 5:2, Rom 5:3, Rom 5:11
+  Sense 2: "be burned (textual variant)" (1x)
+    Desc: A textual variant reading in 1 Corinthians 13:3 where some manuscripts read καυθήσομαι (be burned) instead of καυχήσωμαι (boast), resulting in the sense of being consumed by fire.
+    Domain: COMMUNICATION > Communication
+    Glosses: eng: I-may-be-burned | spa: sea-quemado | fra: se-glorifier | deu: sich-ruehmen
+    Refs: 1Cor 13:3
+
+=== H2436 ===
+Language: Hebrew, POS: N-msc, Occurrences: 38, Senses: 2
+
+BDB excerpt: † חֵיק, חֵק n.[m.] bosom (NH id.)—abs. חֵיק Ez 43:17 Pr 16:33 + Ez 43:13 (Co חיקו, cf. ZKW 1883, pp. 67 ff.; חֵיקֹה DrSm xxxi), חֵק Pr 21:14; cstr. חֵיק 1 K 22:35 + 3 times + Ez 43:14 (Co חיקו) חֵק Pr 5:20 (om. by accident in Baer, cf. Strad loc.) 17:23; sf. חֵיקִי 1 K 3:20 ψ 89:51; חֵקִי Jb 19:27 etc.; elsewhere always plene c. sf.; חוקך Kt ψ 74:11 (Qr חֵיקְךָ);—bosom, specif. 1. of fold of garment, at breast Ex 4:6(×2), 7(×3) (all J), Pr 6:27; 16:33, metaph. of י׳ ψ 74:11; שֹׁחַד בח׳ Pr 21:14 is a hidden reward (concealed in bosom; ‖ מַתָּן בַּסֵּתֶר); שֹׁחַד מֵחֵק 17:23 is a gift secretly g
+Senses:
+  Sense 1: "bosom, lap, embrace" (34x)
+    Desc: The chest or lap area of the body, used for carrying, embracing, or holding close, often expressing intimacy, comfort, or protection.
+    Domain: BODY_HEALTH > Body, Body Parts, and Body Products
+    Glosses: eng: and-in-His-bosom, bosom-of, her-bosom | spa: el-seno-de, en-mi-seno, en-seno-de-mí | fra: [ובחיקו], [חיק], [חיקם] | deu: [בחיקה], [ובחיקו], [חיק]
+    Refs: Gen 16:5, Exod 4:6, Exod 4:6, Exod 4:7, Exod 4:7
+  Sense 2: "base, bottom ledge of altar" (4x)
+    Desc: The base, bottom ledge, or gutter-like recess at the bottom of the altar structure, used in Ezekiel's temple vision for the architectural foundation.
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: and-base, and-from-base-of, and-the-base- | spa: Y-desde-base-de, fondo-de, y-base | fra: [והחיק], [וחיק], [ומחיק] | deu: Boden-von, [והחיק], [וחיק]
+    Refs: 1Kgs 22:35, Ezek 43:13, Ezek 43:14, Ezek 43:17

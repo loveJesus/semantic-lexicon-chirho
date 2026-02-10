@@ -1,0 +1,115 @@
+You are a biblical lexicographer composing glosses for a digital lexicon.
+For each lemma below, compose a JSON object. Separate objects with "---".
+
+Format for each:
+{
+  "lemma_id": "...",
+  "gloss_terse": "under 120 chars, concise definition covering the word's semantic range",
+  "gloss_readable": "2-5 sentences, 40-120 words. Don't start with 'This word'. Warm study-Bible footnote tone. Engaging, not dry.",
+  "senses": {
+    "1": "enriched 20-60 word description. Reference multilingual evidence when illuminating. Don't repeat the label verbatim.",
+    "2": "..."
+  }
+}
+
+Rules:
+- No markdown fences, just JSON objects separated by ---
+- Reference multilingual evidence naturally when it reveals something
+- gloss_readable should feel like a good study Bible footnote: helpful, clear, occasionally surprising
+- Each sense enrichment: how does the evidence support this sense? Mention 1-2 key passages when helpful.
+
+=== H7198 ===
+Language: Hebrew, POS: Prep-b, Occurrences: 76, Senses: 2
+
+BDB excerpt: † קֶ֫שֶׁת n.f. Gn 9:14 (appar. m. 2 S 1:22 but v. AlbrZAW xvi (1896) 91) bow (orig. √ perhaps קושׁ, meaning unknown; NH id.; Assyrian ḳaštu; Ethiopic ቀስት: Arabic قَوْسٌ, pl. قُسِىٌّ, قِسِىٌّ, etc.; 𝔗 קַשְׁתָּא and (ט for ת after ק) קוּשְׁטָא (rare), all bow, קַשָּׁתָא bowman; Syriac ܩܶܫܬܳܐ bow, ܩܰܫܳܬܳܐ bowman; Old Aramaic קשת bow, Mand. כשטא (Frä 206); Palm. קשטא bowman);—abs. ק׳ Ho 1:7 +, קָ֑שֶׁת Je 46:9 +; cstr. קֶ֫שֶׁת Ho 1:5 +; sf. קַשְׁתִּי Gn 48:22 +, etc.; pl. abs. קְשָׁתוֹת 2 Ch 26:14 +; sf. קַשְּׁתֹתָיו (Ges§ 20 h) Is 5:28, קַשְּׁתוֹתָם Je 51:56 ψ 37:15, קַשְּׁתֹתֵיהֶם Ne 4:7 (קַשְׁתֹ
+Senses:
+  Sense 1: "bow (weapon)" (72x)
+    Desc: A bow used as a weapon for shooting arrows, whether in warfare or hunting, including all grammatical inflections (possessive suffixes, prepositions, conjunctions, plurals).
+    Domain: ARTIFACTS > Artifacts
+    Glosses: eng: bow, the-bow | spa: Arco, arco | fra: arc, le-arc | deu: Bogen, der-Bogen
+    Refs: Gen 49:24, 1Sam 2:4, 1Sam 18:4, 1Sam 31:3, 2Sam 1:18
+  Sense 2: "rainbow (bow in sky)" (4x)
+    Desc: The rainbow, God's bow set in the clouds as a sign of covenant (Genesis 9:13-16), distinguished by multilingual translations using 'rainbow' rather than 'weapon bow'.
+    Domain: ARTIFACTS > Artifacts
+    Glosses: eng: my-bow, the-bow | spa: el-arco, mi-arco | fra: arc, le-arc, mon-arc | deu: Bogen, der-Bogen, meinen-Bogen
+    Refs: Gen 9:13, Gen 9:14, Gen 9:16, Ezek 1:28
+
+=== H6862c ===
+Language: Hebrew, POS: Adj-ms, Occurrences: 75, Senses: 2
+
+BDB excerpt: III. צַר68 n.m. Nu 10:9 adversary, foe;—abs. צַר Am 3:11 +, even c. art. הַצַּר Nu 10:9, but also הַצָּר Est 7:4; צָ֑ר Zc 8:10 +; pl. צָרִים La 1:7; cstr. צָרֵי Ezr 4:1 + Is 9:10 (but read prob. צָרוֹ or צָרָיו, cf. Di-Kit CheHpt.; al. שָׂרֵי), Je 48:5 (del. 𝔊 Hi Gie), Ez 30:16 (but 𝔊 Sm וְנָפֹצוּ, so Berthol; Co וְנִפְרְצוּ, so Toy; Krae יָעוּף); sf. צָרַי ψ 3:2, צָרֵיהֶם Ez 39:23, צָרֵימוֹ Dt 32:27, etc.;—adversary, foe, Am 3:11; Gn 14:20; Nu 10:9; (P), 24:8 (JE); Dt 32:27; 33:7; Jos 5:13 (JE); 2 S 24:13; Is 9:10 (v. supr.), Zc 8:10; Ezr 4:1; Ne 4:5; Est 7:6 (אִישׁ צַר וְאוֹיֵב), + 21 times,
+Senses:
+  Sense 1: "adversary, enemy, foe" (69x)
+    Desc: A hostile person, opponent, or national enemy; the substantival use of צַר from root צ-ר-ר denoting one who presses against or is hostile, confirmed by Arabic عَدُوّ/أَعْدَاء/مُضَايِق/خَصْم (adversary...
+    Domain: VIOLENCE_CONFLICT > Hostility, Strife
+    Glosses: eng: adversaries-of, adversary, enemy | spa: a-sus-adversarios, adversario, adversarios-de | fra: Tyr, adversaire, ennemi | deu: Bedraenger, der-Feind, der-Widersacher
+    Refs: Gen 14:20, Num 10:9, Deut 32:41, 1Chr 12:18, 1Chr 21:12
+  Sense 2: "distress, trouble, straits" (6x)
+    Desc: A state of anguish, constriction, or hardship; the abstract/stative use of צַר denoting narrowness or affliction, confirmed by the Arabic cognate ضِيق/ضَيقَات (ḍīq/ḍayqāt = narrowness/distresses) from...
+    Domain: DANGER_DELIVERANCE > Trouble, Hardship, Relief
+    Glosses: eng: adversaries-by-, distress, distress- | spa: angustia, angustia-, angustia-para | fra: Tyr, adversaire, détresse | deu: Bedraenger, Not, Tyrus
+    Refs: Judg 11:7, 1Sam 13:6, 2Sam 24:14, 1Chr 21:13, Job 36:16
+
+=== G0615 ===
+Language: Greek, POS: V-AIA-3S, Occurrences: 74, Senses: 2
+
+BDB excerpt: ἀποκτείνω (later -κτέννω (which see): -κταίνωNTfuture -κτενῶ, Ionic dialect -κτενέωRefs 5th c.BC+: aorist 1 ἀπέκτειναRefs 8th c.BC+: perfect ἀπέκτοναRefs 5th c.BC+; pluperfect 3rd.pers.plural -εκτόνεσανRefs, Ionic dialect 3rd.pers.singular -εκτόνεεLXX+5th c.BC+: aorist 2 -έκτᾰνονRefs 8th c.BC+, poetry 1st pers.plural ἀπέκταμενRefs 8th c.BC+, infinitive -κτάμεναι, -κτάμεν, Refs 8th c.BC+:—passive, late (ἀποθνήσκω being used as the passive by correct writers), present in Refs 4th c.AD+: aorist ἀπεκτάνθηνLXX+2nd c.AD+: aorist 2 infinitive ἀποκτανῆναιRefs 2nd c.AD+: perfect infinitive ἀπεκτάνθαιLX
+Senses:
+  Sense 1: "kill, put to death" (60x)
+    Desc: To cause the death of a person or animal by violent means; to slay, murder, or execute in active agency
+    Domain: VIOLENCE_CONFLICT > Violence, Harm, Destroy, Kill
+    Glosses: eng: killed, they-killed, they-will-kill | spa: matar, mataron, matarán | fra: tuer | deu: toeten, tötet
+    Refs: Matt 10:28, Matt 10:28, Matt 14:5, Matt 17:23, Matt 21:35
+  Sense 2: "be killed, be put to death" (14x)
+    Desc: To suffer death at the hands of another; to be slain, executed, or martyred (passive voice forms)
+    Domain: VIOLENCE_CONFLICT > Violence, Harm, Destroy, Kill
+    Glosses: eng: be-killed, being-killed, to-be-killed | spa: de-ser-muerto, fue-muerto, fueron-muertos | fra: tuer | deu: toeten, tötet
+    Refs: Matt 16:21, Mark 8:31, Mark 9:31, Luke 9:22, Rev 2:13
+
+=== G5463 ===
+Language: Greek, POS: V-ASP-2P, Occurrences: 74, Senses: 2
+
+BDB excerpt: χαίρω, Refs 8th c.BC+; 3rd.pers. plural imperative χαιρόντων Refs 5th c.BC+: imperfect, Epic dialect χαῖρον Refs 8th c.BC+, Ionic dialect χαίρεσκον Refs: future χαιρήσω Refs 5th c.BC+; Epic dialect reduplicate infinitive κεχᾰρησέμεν Refs 8th c.BC+; later χᾰρῶ variant in NT: aorist ἐχαίρησα Refs 1st c.AD+: perfect κεχάρηκα Refs 5th c.BC+, participle -ηκώςRefs 8th c.BC+ —middle (in same sense), χαίρομαι, noted as a barbarism in Refs 5th c.BC+future χᾰρήσομαι Ps.-Refs 2nd c.BC+; Doric dialect χαρησοῦμαι LXX+4th c.BC+; Epic dialect κεχᾰρήσομαι Refs 8th c.BC+: aorist 1 participle χαιρησάμενος Refs 
+Senses:
+  Sense 1: "rejoice, be glad" (63x)
+    Desc: To experience or express joy, gladness, or delight, used across a wide range of contexts from personal happiness to eschatological exhortation.
+    Domain: EMOTION_ATTITUDE > Attitudes and Emotions
+    Glosses: eng: I-rejoice, Rejoice, rejoice | spa: Regocijaos, alegraos, gozaos | fra: se-réjouir | deu: freut-sich, sich-freuen
+    Refs: Matt 2:10, Matt 5:12, Matt 18:13, Mark 14:11, Luke 6:23
+  Sense 2: "greet, hail" (11x)
+    Desc: A formulaic greeting or salutation, used as an address of welcome or in epistolary openings, derived from the imperative 'rejoice' but functioning as a conventional greeting equivalent to 'hail' or 'g...
+    Domain: EMOTION_ATTITUDE > Attitudes and Emotions
+    Glosses: eng: Greetings, Hail, Rejoice | spa: Alegraos, Alégrate, Salve | fra: se-réjouir | deu: freut-sich, sich-freuen
+    Refs: Matt 26:49, Matt 27:29, Matt 28:9, Mark 15:18, Luke 1:28
+
+=== H2654a ===
+Language: Hebrew, POS: V-Qal-ConjImperf-3fs, Occurrences: 74, Senses: 2
+
+BDB excerpt: † I. חָפֵץ vb. delight in (cf. Arabic حَفِظَ be mindful of, attentive to, keep, protect, Aramaic ܚܦܛ whence ܚܦܺܝܛ eager, zealous, Arabic حَفِيظَةٌ anger (excitement), أَحْفَظَ enrage (Aramaic and Arabic of excited attention, Heb. of delighted attention), Dl Pr 168 Nö ZMG 1886, 742; NH חֵפֶץ weakened to thing, v. De Ec. Gloss., Ph. in n.pr. חפצבעל);— Qal Pf. ח׳ Gn 34:19 + 28 times; f. חָפֵ֑צָה Is 66:3; 2 m. חָפַצְתָּ Dt 21:14 + 4 times; חָפָ֫צְנוּ Jb 21:14, etc., + 14 times Pf.; Impf. יַחְפֹּץ Dt 25:7 + 7 times; יֶחְפָּ֑ץ ψ 37:23; 147:10; pl. יַחְפְּצוּ Is 13:17; Je 6:10; יֶחְפָּ֑צוּ ψ 68:31; י
+Senses:
+  Sense 1: "take pleasure in, delight in" (48x)
+    Desc: To experience emotional pleasure, satisfaction, or delight in someone or something; used of both God's delight in His people/righteousness and of human pleasure in God's ways, encompassing the partici...
+    Domain: EMOTION_ATTITUDE > Attitudes and Emotions
+    Glosses: eng: delighted, delights, desires | spa: desea, que-quiera, quisiera | fra: [חפץ], delights, desires | deu: Gefallen-haben, Gefallen-hatte, delights
+    Refs: Num 14:8, 1Sam 18:22, 1Sam 19:1, 2Sam 15:26, 2Sam 20:11
+  Sense 2: "desire, want, be willing" (26x)
+    Desc: To desire or want something volitionally, including willingness or consent to act; used of both human desire/intention and divine will or purpose (Arabic رَغِبَ/يَرْغَبُ/أُريدُ/شَاءَ/أَشْتَهي, Korean ...
+    Domain: EMOTION_ATTITUDE > Attitudes and Emotions
+    Glosses: eng: He-pleases, I-desire, You-desire | spa: desea, desean, deseara | fra: desired, désire, il-delighted | deu: Gefallen-haben, Wohlgefallen, desired
+    Refs: Gen 34:19, Deut 21:14, Deut 25:7, Deut 25:8, Judg 13:23
+
+=== H4217 ===
+Language: Hebrew, POS: N-msc, Occurrences: 74, Senses: 2
+
+BDB excerpt: † מִזְרָח n.[m.] place of sunrise, east—abs. מ׳ Jos 11:3 + 21 times; cstr. מִזְרַח Nu 21:10 + 19 times, c. ה loc. מִזְרָ֫חָה Ex 27:13 + 28 times, cstr. מִזְרְחָה Dt 4:41 Jos 12:1 Ju 21:19 (not in Gn Lv Sa Ez etc.);— 1. sunrise, always of quarter of the heavens = east מ׳ (ה)שׁמשׁ Nu 21:11 (P), Dt 4:41, 47 Jos 1:15; 12:1; 13:5 (all D), 19:12, 27, 34 (all P), Ju 20:43; 21:19 2 K 10:33 Is 41:25; 45:6; 59:19, cf. מ׳ שׁמשׁ לארץ Ju 11:18; מִמִּז׳ שׁמשׁ וְעַד־מְבוֹאוֹ ψ 50:1; 113:3 Mal 1:11; more often 2. without שֶׁמֶשׁ: a. the east בִּרְחֹק מ׳ מִמַּעֲרָ֑ב ψ 103:12. b. מִמּ׳ from the east Is 41:2; 43
+Senses:
+  Sense 1: "east, cardinal direction" (56x)
+    Desc: The compass direction east, used absolutely or relationally to indicate location or orientation toward the east.
+    Domain: GEOGRAPHY_SPACE > Spacial Orientations
+    Glosses: eng: eastward | spa: al-oriente, hacia-el-este, hacia-el-oriente | fra: eastward, orient, vers-l'est | deu: Osten, eastward
+    Refs: Exod 38:13, Num 2:3, Num 3:38, Num 32:19, Num 34:15
+  Sense 2: "rising of the sun" (18x)
+    Desc: The place or act of the sun's rising, typically in the construct phrase מִזְרַח הַשֶּׁמֶשׁ (mizrach hashemesh), denoting sunrise or the east as the direction from which the sun rises.
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: and-from-the-rising-of, from-rising-of, from-rising-of- | spa: Desde-la-salida-de, al-naciente-de, al-oriente-de | fra: de-levant-du-, de-lever, de-l’orient | deu: [ממזרח], rising-von, sunrise-von
+    Refs: Num 21:11, Deut 4:41, Deut 4:47, Josh 1:15, Josh 12:1

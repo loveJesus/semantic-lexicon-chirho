@@ -1,0 +1,145 @@
+You are a biblical lexicographer composing glosses for a digital lexicon.
+For each lemma below, compose a JSON object. Separate objects with "---".
+
+Format for each:
+{
+  "lemma_id": "...",
+  "gloss_terse": "under 120 chars, concise definition covering the word's semantic range",
+  "gloss_readable": "2-5 sentences, 40-120 words. Don't start with 'This word'. Warm study-Bible footnote tone. Engaging, not dry.",
+  "senses": {
+    "1": "enriched 20-60 word description. Reference multilingual evidence when illuminating. Don't repeat the label verbatim.",
+    "2": "..."
+  }
+}
+
+Rules:
+- No markdown fences, just JSON objects separated by ---
+- Reference multilingual evidence naturally when it reveals something
+- gloss_readable should feel like a good study Bible footnote: helpful, clear, occasionally surprising
+- Each sense enrichment: how does the evidence support this sense? Mention 1-2 key passages when helpful.
+
+=== H0753 ===
+Language: Hebrew, POS: Prep-l | N-msc | 3fs, Occurrences: 95, Senses: 3
+
+BDB excerpt: אֹ֫רֶךְ94 n.[m.] length—only sg., א׳ abs. Ex 27:1 +; cstr. Gn 6:15; אָרְכּוֹ Ex 25:10 +; אָרְכָּם 2 Ch 3:11; אָרְכָּן Ez 42:11, etc.— a. length of ark Gn 6:15 (P), of land of Canaan 13:17 (J); most often of ark & other measurements in tabernacle & temple Ex 25:10, 17; 26:2, 8; 27:1, 9 + (22 times Ex, P), 1 K 6:2, 3, 20 + (13 times K & Ch), Ez 40:7, 11, 18 + (41 times Ez), etc. b. of time א׳ יָמִים Dt 30:20; Jb 12:12; ψ 21:5; 23:6; 91:16; 93:5 Pr 3:2, 16; La 5:20. c. א׳ אַפַּיִם forbearance, self-restraint, Pr 25:15.—(Ez 31:7 𝔊 𝔖 Co read רֹב for אֹרֶךְ, cf. v 5 where Co del. vb. ארך; 41:22 read
+Senses:
+  Sense 1: "spatial length, measurement" (87x)
+    Desc: Physical length or dimension of an object, used primarily for architectural and spatial measurements (e.g., length of the tabernacle, temple, courtyard).
+    Domain: GEOGRAPHY_SPACE > Spacial Dimensions
+    Glosses: eng: length, length-of | spa: Longitud-de, de-largo, largo | fra: [ארך], longueur | deu: Laenge
+    Refs: Exod 25:10, Exod 25:17, Exod 25:23, Exod 27:1, Exod 27:9
+  Sense 2: "duration, longevity" (4x)
+    Desc: Temporal extension or duration, often in the phrase 'length of days' meaning longevity or long life.
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: for-length, length-of | spa: Largura-de, largura-de, por-largos | fra: [לארך], long | deu: Laenge, Länge-von
+    Refs: Ps 21:4, Prov 3:2, Prov 3:16, Lam 5:20
+  Sense 3: "forbearance, patient endurance" (4x)
+    Desc: Figurative extension meaning forbearance, patience, or long-suffering, as in 'length of spirit' (slowness to anger).
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: by-length-of, for-length-of, with-length-of | spa: Con-largura-de, Largura-de, por-largura-de | fra: dans-long, long, à-long | deu: Laenge, für-Länge-von, mit-Länge-von
+    Refs: Ps 23:6, Ps 91:16, Ps 93:5, Prov 25:15
+
+=== H5676 ===
+Language: Hebrew, POS: Prep-b | N-msc, Occurrences: 92, Senses: 3
+
+BDB excerpt: I. עֵ֫בֶר n.m. 1 S 14:40 region across or beyond, side (on format. cf. BaNB 144; cf. especially Assyrian êbru, êbirtu, id. êbirtan, adv. beyond);—ע׳ abs. 1 S 14:4 +; cstr. Jos 24:4 +; sf. עֶבְרוֹ Is 47:15; pl. cstr. עֶבְרֵי Is 7:20 Je 48:28 (si vera l., v. infr.); sf. עֲבָרָיו 1 K 5:4 Je 49:32 (read probably עֶבְרֵיהֶם, so Vrss), עֶבְרֵיהֶם Ex 32:15;— 1. region across or beyond anything (usually wady, river, or sea), mostly c. prep.: בְּעֵבֶר אַרְנוֹן Nu 21:13 (JE) Ju 11:18, cf. Je 25:22; אֶל־ע׳ הַיָּם Dt 30:13 b, מֵעֵבֶר לַיָּם v 13 a beyond the sea; מֵע׳ לְנַהֲרֵי־כוּשׁ Is 18:1, cf. עַד־מֵע׳
+Senses:
+  Sense 1: "beyond, region across" (73x)
+    Desc: The region or area on the other side of a river, boundary, or geographic feature; used with various prepositions (be-/min-/le-) to express location or motion relative to the far side, as in 'beyond th...
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: beyond, from-beyond, in-beyond | spa: Al-otro-lado-de, al-otro-lado-de, al-otro-lado-del | fra: au-delà, au-delà-de, dans-au-delà | deu: in-jenseits, jenseits, von-jenseits
+    Refs: Gen 50:10, Gen 50:11, Num 21:13, Num 22:1, Num 32:19
+  Sense 2: "side, direction, flank" (15x)
+    Desc: A side, flank, or direction relative to an object or person; used to indicate spatial orientation or facing, as in 'on the side of,' 'from the side,' 'toward the side,' or 'in the direction of.'
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: area-of, from-side, from-side-of | spa: a-lado, a-su-lado, de-el-lado | fra: au-delà, côté-de, de-côté | deu: Seite-von, [לעברו], [עבר]
+    Refs: Exod 25:37, Exod 28:26, Exod 39:19, Josh 22:11, 1Sam 14:1
+  Sense 3: "sides, edges (plural)" (4x)
+    Desc: The sides or edges of an object, used in the plural construct with possessive suffixes to denote the multiple sides or flanks of something, as in 'his sides,' 'their sides,' or 'the edges of.'
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: at-edges-of, his-sides, side | spa: en-lados-de, lados, sus-lados | fra: au-delà, leur-côtés, son-côtés | deu: [בעברי], [עבריו], ihr-Seiten
+    Refs: Exod 32:15, 1Kgs 4:24, Jer 48:28, Jer 49:32
+
+=== H7097a ===
+Language: Hebrew, POS: Prep | N-msc, Occurrences: 92, Senses: 3
+
+BDB excerpt: קָצֶה92 n.[m.] end, extremity, only sg.: abs. ק׳ Gn 19:4 + 3 times; cstr. קְצֵה Ju 6:21 +; sf. קָצֵ֫הוּ Gn 47:21 + 4 times; (םִ)קְצֵיהֶם Ez 33:2 (sg.; Ges§ 93 ss); pl. (cstr.) supplied by קְצוֹת, v. foll.;— 1. end, of staff Ju 6:21, rod 1 S 14:27, 43, curtains Ex 26:5 = 36:12 (P; cf. קָצָה); of conduit Is 7:3, river, = mouth v 18 (prob.), Jos 15:5(×2); 18:19; of field Gn 23:9, valley Jos 15:8, tribe v 21, sea v 2 Nu 34:3 (all P); of territory (גְּבוּל) Nu 20:16 (JE; just without), 22:36 (E; just within), cf. Ez 25:9 (al. sub 3); מִק׳ גְּבוּל־מִצְרַיִם וְעַד־קָצֵהוּ Gn 47:21 (J); cf. מִן־הַקּ׳ 
+Senses:
+  Sense 1: "physical end, edge, or tip of an object" (44x)
+    Desc: The physical end, tip, edge, or border of a concrete object or bounded area -- such as the end of a staff (Judg 6:21; 1 Sam 14:27), the edge of a curtain or board (Exod 26:28; 36:33), the edge of a ca...
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: at-edge-of, end-of, in-edge-of | spa: confin-de, el-confin-de, en-extremo-de | fra: dans-edge-de, extrémité, fin-de | deu: Ende, Ende-von, bei-Rand-von
+    Refs: Gen 47:21, Exod 13:20, Exod 16:35, Exod 19:12, Exod 26:28
+  Sense 2: "farthest extent of territory or earth" (38x)
+    Desc: The uttermost part, farthest reach, or extremity of a land, territory, or the earth itself. Often in the expression miqqtseh ('from the end of') to denote the far boundary of a region (Gen 47:2, 21; N...
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: at-end, from-end-of, from-the-end-of | spa: del-extremo, del-extremo-de, desde-confines-de | fra: de-fin-de, de-l'extrémité, est-à-le-fin-de | deu: Ende, am-Ende, bei-Ende
+    Refs: Gen 19:4, Gen 23:9, Gen 47:2, Gen 47:21, Exod 26:5
+  Sense 3: "temporal end of a period" (10x)
+    Desc: The end of a span of time, meaning 'after' or 'at the end of' a specified number of days, months, or years. Always in the temporal construction miqqtseh + time expression: 'at the end of forty days' (...
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: at-end-of, at-the-end-of, from-end-of | spa: Al-fin-de, al-fin-de | fra: de-fin-de, extrémité, à-fin-de | deu: Ende, am-Ende, bei-Ende-von
+    Refs: Gen 8:3, Deut 14:28, Josh 3:2, Josh 9:16, 2Sam 24:8
+
+=== G2521 ===
+Language: Greek, POS: V-FIM-2P, Occurrences: 91, Senses: 3
+
+BDB excerpt: κάθημαι, Ionic dialect κάτ-, 2nd pers. singular κάθησαι (Ionic dialect κάτ- NT+5th c.BC+ codices; 3rd.pers. singular κάθηται Refs 5th c.BC+; Ionic dialect 3rd.pers. plural κατέαται Refs 8th c.BC+; κάθουσο Refs 3rd c.BC+; 3rd.pers. singular καθήσθω Refs 4th c.BC+; 3rd.pers. plural καθήσθωσαν Refs; subjunctive καθῶμαι, κάθῃ Refs 5th c.BC+; infinitive καθῆσθα; participle καθήμενος: imperfect ἐκαθήμην Refs 5th c.BC+; also without syllable augment καθῆστο Refs 8th c.BC+; Ionic dialect κατῆστο Refs 5th c.BC+; Epic dialect καθήατο Refs 8th c.BC+; Ionic dialect κατέατο Refs 5th c.BC+: the later future
+Senses:
+  Sense 1: "sit enthroned, reign" (55x)
+    Desc: To be seated on a throne or in a position of authority and judgment, often of God, Christ, or rulers exercising dominion.
+    Domain: MOVEMENT > Stances
+    Glosses: eng: one-sitting, sitting | spa: que-sentado, sentado, uno-sentado | fra: être-assis | deu: sitzen, sitzt
+    Refs: Matt 4:16, Matt 9:9, Matt 11:16, Matt 19:28, Matt 20:30
+  Sense 2: "sit, be seated physically" (26x)
+    Desc: To sit down or be in a seated position in a literal, physical sense, whether on the ground, a seat, or at a meal.
+    Domain: MOVEMENT > Stances
+    Glosses: eng: Sit, sit, sits | spa: Siéntate, estaba-sentado, se-sentaba | fra: être-assis | deu: sitzen, sitzt
+    Refs: Matt 13:1, Matt 13:2, Matt 15:29, Matt 22:44, Matt 26:58
+  Sense 3: "dwell, reside, inhabit" (10x)
+    Desc: To sit as a settled inhabitant of a place or condition, used figuratively of people dwelling in a region, in darkness, or in a state.
+    Domain: MOVEMENT > Stances
+    Glosses: eng: sitting | spa: que-está-sentada, que-están-sentados, sentada | fra: être-assis | deu: sitzen, sitzt
+    Refs: Matt 4:16, Luke 1:79, Luke 21:35, John 2:14, Acts 2:2
+
+=== G3367 ===
+Language: Greek, POS: Adj-AFS, Occurrences: 91, Senses: 3
+
+BDB excerpt: μηδείς, μηδεμίᾰ, μηδέν (i.e. μηδὲ εἷς, μηδὲ μία, μηδὲ ἕν): feminine μηδὲ ἴα or μηδεΐα (or -έϊα) Refs:— not one, not even one, nobody (in neuter nothing), once in Refs 8th c.BC+ __2 μηδὲ εἷς (so written) is found in Attic dialect Inscrr., as Refsnot even one, μηδὲ ἕν Refs 5th c.BC+: frequently with an intervening Particle or preposition, μηδ᾽ ἂν ἕνα Refs 5th c.BC+; μηδ᾽ ὑφ᾽ ἑνός, μηδ᾽ ὑπὸ μιᾶς, Refs __II nobody, naught, good for naught, κἄμ᾽ ἴσον τῷ μ. Refs 5th c.BC+; μηδέν or τὸ μηδέν as substantive, naught, nothing, κεἰ τὸ μ. ἐξερῶ Refs; μ. λέγειν to say what is naught, Refs 5th c.BC+; of per
+Senses:
+  Sense 1: "no one, nobody" (49x)
+    Desc: Substantive use referring to persons: no one, nobody, not anyone — used as a pronoun denying the existence or involvement of any person.
+    Domain: DISCOURSE_NAMES > Discourse Referentials
+    Glosses: eng: No-one, no-one, to-no-one | spa: Nadie, a-nadie, nadie | fra: personne, rien | deu: nichts
+    Refs: Matt 8:4, Matt 9:30, Matt 16:20, Matt 17:9, Matt 27:19
+  Sense 2: "nothing, not anything" (37x)
+    Desc: Substantive use referring to things: nothing, not anything — used as a pronoun denying the existence or relevance of any thing or matter.
+    Domain: DISCOURSE_NAMES > Discourse Referentials
+    Glosses: eng: nothing | spa: de-nada, en-nada, nada | fra: personne, rien | deu: nichts
+    Refs: Mark 1:44, Mark 5:26, Mark 6:8, Luke 4:35, Luke 6:35
+  Sense 3: "no, not any (adjective)" (5x)
+    Desc: Adjectival use modifying a noun directly: no, not any — functioning as a determiner that negates the noun it qualifies.
+    Domain: DISCOURSE_NAMES > Discourse Referentials
+    Glosses: eng: any, no, no-longer | spa: ninguna, ningún | fra: personne, rien | deu: nichts
+    Refs: 1Cor 1:7, 2Thess 2:3, 1Tim 5:14, Heb 10:2, 1Pet 3:6
+
+=== H2220 ===
+Language: Hebrew, POS: Prep-b | N-fs, Occurrences: 91, Senses: 3
+
+BDB excerpt: † זְרוֹעַ, זְרֹעַ n.f. Ex 6:6 and (rare) m. Is 51:5, cf. infr. arm, shoulder, strength (NH id.; Assyrian (Tel el Amarna102, 1. 12, etc.) zurû, cf. Jastrow JBL, xi, 1892, 123; Arabic ذِرَاعٌ; Aramaic דְּרָעָא, ܕܪܳܥܳܐ; Ethiopic መዝራዕት )—abs. זְרוֹעַ Ex 6:6 +, זְרֹעַ Dt 7:19 +; cstr. זְרוֹעַ ψ 10:15 +, זְרֹעַ ψ 89:11 +; sf. זְרוֹעִי Je 27:5 ψ 89:2, זְרֹעִי Is 51:5; 63:5; זְרוֹעֲךָ ψ 71:18 +, זְרֹעֲךָ 1 S 2:31 +, etc.; pl. זְרֹעִים Dn 11:31; cstr. זְרֹעֵי Gn 49:24; sf. זְרֹעַי Is 51:5, זְרֹעָיו 2 K 9:24; elsewhere fem. form, cstr. זְרוֹעוֹת ψ 37:17, זְרֹעוֹת Jb 22:9 + 6 times, זְרֹעֹת Dt 33:27; sf.
+Senses:
+  Sense 1: "arm, physical limb" (85x)
+    Desc: The literal arm or arms of a human being as a body part, used in both singular and plural with various possessive suffixes and prepositions; consistently glossed as 팔 (Korean), mkono/mikono (Swahili),...
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: and-His-arm, and-by-arm, and-by-the-arm-of | spa: brazo-de, el-brazo-de, y-con-brazo | fra: bras, bras-de, et-avec-arm | deu: Arm, Arm-von, der-Arm-
+    Refs: Gen 49:24, Deut 4:34, Deut 5:15, Deut 9:29, Deut 26:8
+  Sense 2: "might, power, forces" (4x)
+    Desc: Metonymic extension of arm to denote strength, might, or military forces, where the physical limb is no longer in view and the word means raw power or armed troops; distinguished by Swahili shifting t...
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: according-to-arm-his, and-forces, arm | spa: Y-brazos, brazo, brazo-suyo | fra: bras, et-bras | deu: Arm, [זרוע], und-Arm
+    Refs: Job 22:8, Jer 17:5, Ezek 22:6, Dan 11:31
+  Sense 3: "shoulder, foreleg of animal" (2x)
+    Desc: The shoulder or foreleg portion of a sacrificial animal, a specialized anatomical sense distinct from the human arm; confirmed by Korean 어깨 (shoulder) instead of 팔 (arm), Swahili bega (shoulder) inste...
+    Domain: BODY_HEALTH > Body, Body Parts, and Body Products
+    Glosses: eng: the-shoulder | spa: el-brazo | fra: le-épaule | deu: der-Schulter
+    Refs: Num 6:19, Deut 18:3

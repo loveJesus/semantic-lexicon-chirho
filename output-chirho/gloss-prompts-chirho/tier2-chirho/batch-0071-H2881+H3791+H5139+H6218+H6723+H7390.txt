@@ -1,0 +1,145 @@
+You are a biblical lexicographer composing glosses for a digital lexicon.
+For each lemma below, compose a JSON object. Separate objects with "---".
+
+Format for each:
+{
+  "lemma_id": "...",
+  "gloss_terse": "under 120 chars, concise definition covering the word's semantic range",
+  "gloss_readable": "2-5 sentences, 40-120 words. Don't start with 'This word'. Warm study-Bible footnote tone. Engaging, not dry.",
+  "senses": {
+    "1": "enriched 20-60 word description. Reference multilingual evidence when illuminating. Don't repeat the label verbatim.",
+    "2": "..."
+  }
+}
+
+Rules:
+- No markdown fences, just JSON objects separated by ---
+- Reference multilingual evidence naturally when it reveals something
+- gloss_readable should feel like a good study Bible footnote: helpful, clear, occasionally surprising
+- Each sense enrichment: how does the evidence support this sense? Mention 1-2 key passages when helpful.
+
+=== H2881 ===
+Language: Hebrew, POS: Conj-w | V-Qal-Prtcpl-ms, Occurrences: 16, Senses: 3
+
+BDB excerpt: † I. טָבַל Niph. Pf. 3 mpl. נִטְבְּלוּ Jos 3:15 be dipped, בְּ of water. vb. dip (NH id.; Aramaic טְבַל dip, bathe; cf. perhaps Arabic طَمَلَ saturavit tinctura vestem, Frey)—Qal Pf. וְטָבַל consec. Lv 4:6 + 5 times; וְטָבַלְתְּ consec. Ru 2:14; וּטְבַלְתֶּם consec. Ex 12:22; Impf. וַיִּטְבֹּל Lv 9:9 + 3 times; 2 ms. sf. תִּטְבְּלֵנִי Jb 9:31; וַיִּטְבְּלוּ Gn 37:31;—dip: 1. trans., dip a thing in, c. acc. rei + בְּ: in blood Gn 37:31 (J), so especially in connexion with sacrifices Lv 4:6; 9:9; 14:6, 51 (also in fresh water); in water, for purification Nu 19:18 (all P); of dipping rod in honey
+Senses:
+  Sense 1: "dip into liquid" (13x)
+    Desc: To dip or immerse an object into a liquid such as blood, water, or sauce (Qal active, physical dipping action).
+    Domain: PHYSICAL_ACTION > Activities Involving Liquids
+    Glosses: eng: and-dip, and-dipped, and-dipping | spa: Y-mojará, y-la-mojó, y-moja | fra: et-devra-dip, et-dip, et-dipped | deu: [וטבלת], und-dip, und-dipping
+    Refs: Gen 37:31, Exod 12:22, Lev 4:6, Lev 4:17, Lev 9:9
+  Sense 2: "plunge into (immerse fully)" (2x)
+    Desc: To plunge or immerse oneself or another fully, often with a connotation of submersion or sinking (Qal, deeper immersion than simple dipping).
+    Domain: MOVEMENT > Linear Movement
+    Glosses: eng: You-plunge-me, and-dipped | spa: me-hundirás,, y-se-sumergió | fra: et-trempa, תטבלני-moi | deu: [תטבלני], und-dipped
+    Refs: 2Kgs 5:14, Job 9:31
+  Sense 3: "be dipped or immersed" (1x)
+    Desc: To be dipped or become immersed, expressing the passive or reflexive aspect of being submerged (Nifal stem).
+    Domain: PHYSICAL_ACTION > Activities Involving Liquids
+    Glosses: eng: dipped | spa: se-mojaron | fra: trempa | deu: dipped
+    Refs: Josh 3:15
+
+=== H3791 ===
+Language: Hebrew, POS: Conj-w, Occurrences: 16, Senses: 3
+
+BDB excerpt: † כְּתָב n.m. Ezr 4:7 writing (late Aramaic; Biblical Aramaic כְּתָב, Syriac ܟܬܳܒ);—כ׳ abs. 1 Ch 28:19 + 4 times; cstr. Ez 13:9 + 4 times; sf. כְּתָבָהּ Est 1:22 + 2 times; כְּתָבָם Ezr 2:62 + 3 times;—writing: 1. register, enrolment, Ez 13:9 Ezr 2:62 = Ne 7:64. 2. = mode of writing, character, letter, וּכ׳ הַנִּשְׁתְּוָן כָּתוּב אֲרָמִית Ezr 4:7 and the writing of the document was written in Aramaic (characters; so prob., v. Be-Ry Ryle, cf. NH Hoffm ZAW i. (1881), 334 ff.); cf. Est 1:22; 3:12; 8:9(×2). 3. = letter, 2 Ch 2:10 Est 9:27. 4. of a royal enactment, edict 2 Ch 35:4 (‖ מִכְתָּב), Est
+Senses:
+  Sense 1: "written document or letter" (7x)
+    Desc: A piece of writing such as a document, decree, letter, or inscription considered as a composed text.
+    Domain: COMMUNICATION > Communication
+    Glosses: eng: a-writing, in-writing, in-writing-of | spa: el-escrito, en-escrito, en-escritura-de | fra: écrit | deu: [בכתב], der-schrieb, schrieb
+    Refs: 1Chr 28:19, 2Chr 2:11, Esth 3:14, Esth 4:8, Esth 8:8
+  Sense 2: "script or writing system" (6x)
+    Desc: A system or style of writing characters used by a particular people or language, as in 'according to its/their script.'
+    Domain: COMMUNICATION > Communication
+    Glosses: eng: according-to-its-script, according-to-its-writing, according-to-their-writing | spa: conforme-a-su-escrito, conforme-a-su-escritura, según-escrito-de | fra: et-écrit, écrit | deu: Schrift, [בכתב], und-schrieb
+    Refs: 2Chr 35:4, Ezra 4:7, Esth 1:22, Esth 3:12, Esth 8:9
+  Sense 3: "register or record" (3x)
+    Desc: A written list or official record, especially a genealogical enrollment or census register.
+    Domain: COMMUNICATION > Communication
+    Glosses: eng: and-in-register-of, their-register, their-writing | spa: su-registro, y-en-registro-de | fra: et-écrit, écrit | deu: Schrift, [ובכתב]
+    Refs: Ezra 2:62, Neh 7:64, Ezek 13:9
+
+=== H5139 ===
+Language: Hebrew, POS: Prep-l | N-mp, Occurrences: 16, Senses: 3
+
+BDB excerpt: † נָזִיר n.m. Gn 49:26 one consecrated, devoted (נזיר י׳ Ecclus 46:13 c (of Samuel); cf. Syriac ܢܙܝܺܪ RSSem i. 463, 2d ed. 483);—נ׳ abs. Nu 6:2 + 5 times; cstr. נְזִיר Gn 49:26 + 4 times; sf. נְזִירֶ֑ךְ Lv 25:5; pl. נְזִרִים Am 2:11, 12; sf. נְזִרֶיהָ Lv 25:11, נְזִירֶיהָ La 4:7;— 1. of prince, ruler, as consecrated: נְזִיר אֶחָיו Gn 49:26 (poem in J), one consecrated among his brethren, = Dt 33:16; cf. נְזִירֶיהָ La 4:7 her princes. 2. specif. of one dedicated to י׳ by vow involving abstinence from intoxicants, from touching corpse, and from cutting hair (cf. נֵזֶר 2), devotee (GFM), Nazirite
+Senses:
+  Sense 1: "Nazirite, one under vow" (11x)
+    Desc: A person consecrated to God by a special vow involving abstinence from wine, not cutting the hair, and avoiding corpse-impurity (Num 6), used in singular and plural with various inflections.
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: Nazirite, Nazirite-of, a-Nazirite-of | spa: a-los-nazareos, como-nazareos, el-nazareo | fra: Nazirite, Nazirite-de, le-Nazirite | deu: Nazirite, Nazirite-von, [הנזרים]
+    Refs: Num 6:2, Num 6:13, Num 6:18, Num 6:19, Num 6:20
+  Sense 2: "consecrated one, prince" (3x)
+    Desc: One set apart or distinguished among peers, used of Joseph as the one separated from his brothers (Gen 49:26; Deut 33:16) and of the nobles or princes of Jerusalem (Lam 4:7).
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: consecrated-one-of, her-consecrated-ones, prince-of | spa: consagrado-de, el-consagrado-de, sus-nazareos | fra: [נזיריה], consacra-un-de, prince-de | deu: [נזיריה], des-Geweihten, weihte-eins-von
+    Refs: Gen 49:26, Deut 33:16, Lam 4:7
+  Sense 3: "unpruned vine" (2x)
+    Desc: An untended grapevine that grows of itself during the sabbatical or jubilee year, left uncut and unharvested (Lev 25:5, 11).
+    Domain: PLANTS_AGRICULTURE > Plants
+    Glosses: eng: its-unpruned-grapes, your-unpruned-vine | spa: nazareo-de-ella, tu-nazareo | fra: son-unpruned-raisins, ton-unpruned-vigne | deu: dein-unpruned-Weinstock, sein-unpruned-Trauben
+    Refs: Lev 25:5, Lev 25:11
+
+=== H6218 ===
+Language: Hebrew, POS: N-ms, Occurrences: 16, Senses: 3
+
+BDB excerpt: † עָשׂוֹר and (Ex 12:3) עָשֹׂר n.[m.] a ten, decade;— 1. usually of days: a. a period of ten days Gn 24:55 (J). b. in phr., לַחֹדֶשׁ (עָשׂר) בֶּעָשׂוֹר on the tenth day of the month Lv 25:9 (H), Ez 20:1; 24:1; 40:1; Ex 12:3; Lv 16:29; 23:27; Nu 29:7; Jos 4:19 (all P), 2 K 25:1 = Je 52:4, Je 52:12 (seventh day in ‖ 2 K 25:8). 2. of strings of instr.: נֵבֶל ע׳ harp, a ten (-stringed one) ψ 33:2; 144:9; ע׳ alone ψ 92:4 upon a ten (-stringed instrument).
+Senses:
+  Sense 1: "tenth (ordinal, the tenth day)" (12x)
+    Desc: The nominal form 'asor used as an ordinal to designate 'the tenth' day, particularly in calendrical/liturgical contexts (e.g., the tenth of the month for Day of Atonement, Passover lamb selection). Sp...
+    Domain: QUANTITY_NUMBER > Number
+    Glosses: eng: and-on-the-tenth, on-tenth, on-tenth-of | spa: Y-en-diez, en-diez, en-décimo-de | fra: [בעשור], et-sur-le-dixième, sur-dixième | deu: [בעשור], auf-der-zehnter, auf-zehnter
+    Refs: Exod 12:3, Lev 16:29, Lev 23:27, Lev 25:9, Num 29:7
+  Sense 2: "ten-stringed instrument" (3x)
+    Desc: The noun 'asor used to describe a stringed musical instrument with ten strings, or the attribute 'ten-stringed' modifying another instrument (typically nevel or kinnor). Spanish 'diez cuerdas/instrume...
+    Domain: QUANTITY_NUMBER > Number
+    Glosses: eng: a-ten-stringed-instrument, of-ten-strings, ten-strings | spa: de-diez-cuerdas, diez-cuerdas, instrumento-de-diez-cuerdas | fra: dix | deu: ein-zehn-stringed-instrument, ten-strings, von-zehn-Saiten
+    Refs: Ps 33:2, Ps 92:3, Ps 144:9
+  Sense 3: "ten (cardinal number)" (1x)
+    Desc: The noun 'asor used as a simple cardinal number meaning 'ten', without ordinal or instrumental connotation. This single occurrence is confirmed across languages as a bare numeral: Spanish 'diez', Hind...
+    Domain: QUANTITY_NUMBER > Number
+    Glosses: eng: ten | spa: diez | fra: dix | deu: zehn
+    Refs: Gen 24:55
+
+=== H6723 ===
+Language: Hebrew, POS: Adj-fs, Occurrences: 16, Senses: 3
+
+BDB excerpt: † צִיָּה n.f. dryness, drought;—abs. צ׳ Ho 2:5 +; pl. צִיּוֹת ψ 105:41;—drought Jb 24:19 (‖ חֹם); elsewhere of land (often ‖ מִדְבָּר, עֲרָבָה, etc.): אֶרֶץ צ׳ land of drought, desert Ho 2:5 (sim.), Je 2:6; 50:12 (fig.), 51:43; Is 41:18; 53:2 (in sim.), ψ 107:35; + צָמָא Ez 19:13 (fig.), + שְׁמָמָה Jo 2:20, + עָיֵף ψ 63:2 (fig.); צ׳ = desert Is 35:1; Zp 2:13; Jb 30:3 ψ 78:17; pl. 105:41.
+Senses:
+  Sense 1: "dryness, aridity" (10x)
+    Desc: The abstract quality or state of being dry, parched, or arid, used adjectivally or as an abstract noun describing the condition of desiccation.
+    Domain: NATURAL_WORLD > Physical Events and States
+    Glosses: eng: drought, dry, dryness | spa: seca, sequedad, sequía | fra: aridité, sécheresse | deu: Duerre, [ציה], dryness
+    Refs: Ps 63:1, Ps 107:35, Isa 41:18, Isa 53:2, Jer 2:6
+  Sense 2: "dry land, arid place" (5x)
+    Desc: A concrete geographical referent denoting a dry land, wilderness, or arid region — the actual place characterized by lack of water.
+    Domain: NATURAL_WORLD > Physical Events and States
+    Glosses: eng: a-dry-land, dry-land, in-the-dry-land | spa: en-sequedad, en-sequedades, lo-árido | fra: aridité, dans-sécheresse, et-aridité | deu: Duerre, [ציה], in-der-trocknen-Land
+    Refs: Job 30:3, Ps 78:17, Ps 105:41, Isa 35:1, Jer 50:12
+  Sense 3: "drought" (1x)
+    Desc: A prolonged period of dryness as a climatic or meteorological event, emphasizing the temporal condition of water scarcity rather than the quality or the place.
+    Domain: NATURAL_WORLD > Physical Events and States
+    Glosses: eng: drought | spa: Sequía | fra: sécheresse | deu: [ציה]
+    Refs: Job 24:19
+
+=== H7390 ===
+Language: Hebrew, POS: Conj-w | Adj-msc, Occurrences: 16, Senses: 3
+
+BDB excerpt: † רַךְ adj. tender, delicate, soft;—ר׳ abs. Gn 18:7 +, cstr. Dt 20:8; 2 Ch 13:7; fs. רַכָּה Dt 28:56 +; mpl. רַכִּים Gn 33:13; fpl. abs. רַכּוֹת 29:17 Jb 40:27;— 1. tender of flesh Gn 18:7 (J; בֶּן־בָּקָר); tender, delicate, especially in body, of children 33:13 (J), cf. (implying weakness of undeveloped character) 2 S 3:39, נַעַר וָרָ֑ךְ 1 Ch 22:5; 29:1, (וְיָחִיד) רַךְ Pr 4:3 (‘of tender age,’ Toy, q.v.); of man (+ עָנֹג; i.e. delicately nurtured) Dt 28:54, so of woman v 56 (+ עֲנֻגָּה), so, fig. of Bab., Is 47:1 (+ id.); רַךְ as subst. = tender (twig) Ez 17:22 (in fig.); delicate, weak, of 
+Senses:
+  Sense 1: "tender, young, delicate" (12x)
+    Desc: Tender or delicate in age, constitution, or upbringing, describing persons or young animals. Abraham's tender calf (Gen 18:7, arb rakhsan, kor 'yeonhan'), Leah's tender eyes (Gen 29:17, arb raqiqatan)...
+    Domain: EMOTION_ATTITUDE > Attitudes and Emotions
+    Glosses: eng: and-tender, and-tender-, tender | spa: La-tierna, tierna, tierno | fra: [ורך], [רכה], le-tender | deu: [ורך], [רך], [רכה]
+    Refs: Gen 18:7, Gen 29:17, Gen 33:13, Deut 28:54, Deut 28:56
+  Sense 2: "soft, gentle (of speech or manner)" (3x)
+    Desc: Soft or gentle in speech, manner, or approach, describing qualities of communication. A soft answer turns away wrath (Prov 15:1, arb layyinun, kor 'budeureon', spa 'suave'), a soft tongue breaks bone ...
+    Domain: EMOTION_ATTITUDE > Attitudes and Emotions
+    Glosses: eng: gentle, soft, soft-words | spa: suave, suavemente | fra: tendre | deu: [רך], [רכה], [רכות]
+    Refs: Job 41:3, Prov 15:1, Prov 25:15
+  Sense 3: "fainthearted, timid" (1x)
+    Desc: Fearful, fainthearted, or weak in courage, used of soldiers who lack resolve for battle. In Deut 20:8 the officers dismiss the man who is 'fearful and fainthearted' (eng 'faint', deu 'schwach', arb al...
+    Domain: EMOTION_ATTITUDE > Attitudes and Emotions
+    Glosses: eng: and-faint | spa: y-blando | fra: et-faint | deu: und-schwach
+    Refs: Deut 20:8

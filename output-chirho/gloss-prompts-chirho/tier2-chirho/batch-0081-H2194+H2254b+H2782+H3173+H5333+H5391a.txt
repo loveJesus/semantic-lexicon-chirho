@@ -1,0 +1,145 @@
+You are a biblical lexicographer composing glosses for a digital lexicon.
+For each lemma below, compose a JSON object. Separate objects with "---".
+
+Format for each:
+{
+  "lemma_id": "...",
+  "gloss_terse": "under 120 chars, concise definition covering the word's semantic range",
+  "gloss_readable": "2-5 sentences, 40-120 words. Don't start with 'This word'. Warm study-Bible footnote tone. Engaging, not dry.",
+  "senses": {
+    "1": "enriched 20-60 word description. Reference multilingual evidence when illuminating. Don't repeat the label verbatim.",
+    "2": "..."
+  }
+}
+
+Rules:
+- No markdown fences, just JSON objects separated by ---
+- Reference multilingual evidence naturally when it reveals something
+- gloss_readable should feel like a good study Bible footnote: helpful, clear, occasionally surprising
+- Each sense enrichment: how does the evidence support this sense? Mention 1-2 key passages when helpful.
+
+=== H2194 ===
+Language: Hebrew, POS: V-Qal-Imperf-1cs, Occurrences: 12, Senses: 3
+
+BDB excerpt: † זָעַם vb. be indignant (cf. Aramaic (rare) ܙܥܰܡ blame, & n. ܙܽܘܥܳܡܳܐ; Arabic تَزَغَّمَ onomatop., of roar of camel, angry speech, v. Frey, De on ψ 7:12)—Pf. ז׳ Nu 23:8 + 3 times; זָעַמְתָּה Zc 1:12; Impf. אֶזְעֹם Nu 23:8; 3 pl. sf. יִזְעָמוּהוּ Pr 24:24; Imv. זֹעֲמָה Nu 23:7 (for זָֽעָמֳה Ges§ 64, (2)); Pt. act. זֹעֵם ψ 7:12; pass. cstr. זְעוּם Pr 22:14; f. זְעוּמָה Mi 6:10;— Qal 1. be indignant, have indignation, of hostile prince עַל בְּרִית קוֹדֶשׁ Dn 11:30; elsewhere of Yahweh, who is אֵל זֹעֵם ψ 7:12 (‖ שׁוֹפֵט), c. acc. of enemy Is 66:14; cities of Judah Zc 1:12; people Mal 1:4; a man 
+Senses:
+  Sense 1: "be indignant, enraged" (6x)
+    Desc: To feel or express fierce anger and indignation, typically describing God's wrath or righteous fury directed against sin or disobedience.
+    Domain: EMOTION_ATTITUDE > Attitudes and Emotions
+    Glosses: eng: and-be-enraged, and-indignation, indignant | spa: indignados, maldijo, que-se-indigna | fra: et-indignation, et-être-indigné, être-indigné | deu: [וזעם], [זעם], [זעמתה]
+    Refs: Ps 7:11, Prov 25:23, Isa 66:14, Dan 11:30, Zech 1:12
+  Sense 2: "denounce, curse openly" (4x)
+    Desc: To express strong condemnation or denunciation against someone, often in a formal or prophetic context, implying an active verbal declaration of divine displeasure.
+    Domain: EMOTION_ATTITUDE > Attitudes and Emotions
+    Glosses: eng: can-I-denounce, denounce, denounced | spa: denuncia, denunciaré, denunció | fra: denounce, denounced, peut-je-denounce | deu: [יזעמוהו], denounce, denounced
+    Refs: Num 23:7, Num 23:8, Num 23:8, Prov 24:24
+  Sense 3: "accursed, under a curse" (2x)
+    Desc: The state of being under divine denunciation or curse, used as a passive participle to describe a person or thing upon whom indignation has fallen.
+    Domain: COMMUNICATION > Communication
+    Glosses: eng: accursed, cursed-of | spa: el-maldito-por, maldita? | fra: être-indigné, זעום | deu: [זעום], [זעומה]
+    Refs: Prov 22:14, Mic 6:10
+
+=== H2254b ===
+Language: Hebrew, POS: Conj-w | V-Piel-ConjPerf-3ms, Occurrences: 12, Senses: 3
+
+BDB excerpt: II. חָבַל vb. act (ruinously) corruptly (NH id. wound, injure; Arabic خَبَلَ corrupt or render unsound (the mind, a limb, etc.), خَبِلَ be deranged (in mind); Assyrian ḫabâlu, injure, VR62, 11; Aramaic ܚܰܒܶܠ, חַבֵּל corrupt, ruin; Ethiopic ተሐበለ be arrogant, audacious; Sab. חֿבל DHMEpigr. Denkm. 48; cf. Palm. חבל mortuus VogNo. 161 and often)— Qal Pf. 1 pl. חָבַלְנוּ Ne 1:7; Impf. 1 s. אֶחְבֹּל Jb 34:31; Inf. cstr. (used as abs.) Ne 1:7;—act corruptly against, חֲבֹל חבלנו לְ Ne 1:7; abs. Jb 34:31. Niph. Impf. יֵחָ֫בֶל לוֹ Pr 13:13 shall be ruined (לֵ reflex.), Thes RobGes AV RV, but חָבַל (v. p
+Senses:
+  Sense 1: "destroy, ruin (Piel)" (6x)
+    Desc: Active causative destruction or ruination of something, used in the Piel stem across various inflections including infinitive, participle, perfect, and imperfect.
+    Domain: VIOLENCE_CONFLICT > Violence, Harm, Destroy, Kill
+    Glosses: eng: and-destroy, destroying, it-will-destroy | spa: destruirá, para-destruir, que-arruinan | fra: corrompre, envelopper, et-ravager | deu: [וחבל], [מחבלים], [תחבל]
+    Refs: Eccl 5:6, Song 2:15, Isa 13:5, Isa 32:7, Isa 54:16
+  Sense 2: "act corruptly, offend (Qal)" (3x)
+    Desc: Intransitive or stative sense of acting corruptly, ruining, or offending, used in the Qal stem including the infinitive absolute functioning adverbially.
+    Domain: ECONOMICS_PROPERTY > Possess, Transfer, Exchange
+    Glosses: eng: I-will-offend, surely, we-acted-corruptly | spa: Corrupción, arruinaré, nos-corrompimos | fra: [חבל], [חבלנו], ravager | deu: [אחבל], [חבל], [חבלנו]
+    Refs: Neh 1:7, Neh 1:7, Job 34:31
+  Sense 3: "be destroyed, be broken (Nifal/Pual)" (3x)
+    Desc: Passive sense of being destroyed, ruined, broken, or corrupted, expressed through both the Nifal and Pual stems.
+    Domain: VIOLENCE_CONFLICT > Violence, Harm, Destroy, Kill
+    Glosses: eng: and-will-be-broken, brings-destruction-on, is-broken | spa: está-corrompido, será-destruido, y-será-destruido | fra: et-corrompre, ravager | deu: [חבלה], [יחבל], und-verderben
+    Refs: Job 17:1, Prov 13:13, Isa 10:27
+
+=== H2782 ===
+Language: Hebrew, POS: V-Qal-QalPassPrtcpl-ms, Occurrences: 12, Senses: 3
+
+BDB excerpt: † I. חָרַץ vb. cut, sharpen, decide (NH id., cut in, decide, Aramaic in deriv.; Assyrian ḫarâṣu, dig, decide, ḫariṣu, trench, ZehnpfundBAS i. 502; Ph. חרץ decision, HoffmAGG xxxvi. May 1889, 11)— Qal Pf. 3 ms. ח׳ Jos 10:21; חָרָ֑צְתָּ 1 K 20:40; Impf. יֶחֱרַץ־ Ex 11:7; 2 ms. תֶּחֱרָ֑ץ 2 S 5:24; Pt. pass. חָרוּץ Is 10:22 Lv 22:22; pl. חֲרוּצִים Jb 14:5 (v. also חָרוּץ infr.)— 1. cut, mutilate Lv 22:22 (עַוֶּרֶת אוֹ שָׁבוּר אוֹ־חָרוּץ אוֹ יַבֶּלֶת). 2. sharpen, fig. the tongue, לֹא יֶח׳־כֶּלֶב לְשֹׁנוֹ לְ Ex 11:7 (J), i.e. utter no sound against Isr., Jos 10:21. 3. decide 1 K 20:40 (abs.); so pt
+Senses:
+  Sense 1: "determine, decree, decide" (8x)
+    Desc: To determine, decree, or decide something, often used of divine or authoritative decisions that are fixed and settled.
+    Domain: AUTHORITY_RULE > Control, Rule
+    Glosses: eng: and-decree, and-determined, and-what-is-decreed | spa: decidiste, decretada, decretado | fra: [ונחרצה], [חרוץ], [נחרצה] | deu: [ונחרצה], [חרוץ], [חרוצים]
+    Refs: 1Kgs 20:40, Job 14:5, Isa 10:22, Isa 10:23, Isa 28:22
+  Sense 2: "sharpen, cut" (3x)
+    Desc: To sharpen a blade or cut into something, referring to the physical action of making sharp or severing.
+    Domain: PHYSICAL_ACTION > Physical Impact
+    Glosses: eng: cut, sharpened, will-sharpen- | spa: aguzará-, movió, mutilado | fra: --sharpen-, couper, sharpened | deu: schnitt, sharpened, wird-sharpen-
+    Refs: Exod 11:7, Lev 22:22, Josh 10:21
+  Sense 3: "act decisively, be diligent" (1x)
+    Desc: To act with urgency or decisiveness, implying haste or energetic action in a situation.
+    Domain: TIME > Time
+    Glosses: eng: act-decisively | spa: te-apresuras | fra: agis-decisively | deu: handle-decisively
+    Refs: 2Sam 5:24
+
+=== H3173 ===
+Language: Hebrew, POS: Adj-fsc | 1cs, Occurrences: 12, Senses: 3
+
+BDB excerpt: † יָחִיד adj. and subst. only, only one, solitary (NH id.; Aramaic יָחִיד, יְחִידַי, ܝܺܚܺܝܕܳܐ, ܝܺܚܺܝܕܳܝܳܐ id.; Arabic وَحِيدٌ solitary)— 1. only one, especially of an only son, Gn 22:2, 12, 16 את בנך את יְחִידְךָ thy son, thine only one, אֵבֶל יָחִיד Am 8:10 Je 6:26 mourning for an only son, כמספד על היחיד Zc 12:10, Pr 4:3 רַךְ וְיָחִיד לפני אמי; so fem. יְחִידָה Ju 11:34. 2. fem. יְחִידָה as subst. ψ 22:21; 35:17 יְחִידָתִי my only one, poet. for my life, as the one unique and priceless possession which can never be replaced (in each ‖ נַפְשִׁי). 3. solitary, ψ 25:16 כי יחיד ועני אני; 68:7 מו
+Senses:
+  Sense 1: "only (child/son), unique" (8x)
+    Desc: The primary sense of yachid as an adjective meaning 'only, sole, unique,' used substantivally or attributively to describe an only child or only son; Arabic consistently uses وَحِيد (wahid) 'sole/uniq...
+    Domain: QUANTITY_NUMBER > Number
+    Glosses: eng: an-only-child, and-only, only-child | spa: el-unigénito, hijo-único, tu-único | fra: [יחיד], et-unique, seulement-enfant | deu: [היחיד], [ויחיד], [יחיד]
+    Refs: Gen 22:2, Gen 22:12, Gen 22:16, Judg 11:34, Prov 4:3
+  Sense 2: "precious life, only life (metaphorical)" (2x)
+    Desc: A metaphorical extension of yachid applied to one's own life or soul, meaning 'my only/precious one' as a poetic epithet for the psalmist's life, which is singular and irreplaceable; feminine construc...
+    Domain: EMOTION_ATTITUDE > Attitudes and Emotions
+    Glosses: eng: my-only-life, my-precious-life | spa: mi-única | fra: précieux | deu: mein-nur-Leben, mein-precious-Leben
+    Refs: Ps 22:20, Ps 35:17
+  Sense 3: "lonely, solitary" (2x)
+    Desc: The sense of yachid meaning 'lonely, solitary, alone,' describing a person who is isolated or without companions; Arabic المُنْفَرِدين (al-munfaridin) 'the isolated ones' and وَحِيدٌ (wahidun) 'alone'...
+    Domain: EMOTION_ATTITUDE > Attitudes and Emotions
+    Glosses: eng: lonely, the-lonely | spa: a-solitarios, solo | fra: précieux | deu: der-lonely, lonely
+    Refs: Ps 25:16, Ps 68:6
+
+=== H5333 ===
+Language: Hebrew, POS: Conj-w | N-msc, Occurrences: 12, Senses: 3
+
+BDB excerpt: † I. נְצִיב n.m. pillar, prefect, also appar. garrison, post (Ecclus 46:18 ויכנע נציבי צר and he subdued garrisons, posts, of the foe);—נ׳ abs. 1 K 4:19; cstr. 1 S 13:3 + 3 times; pl. נְצִיבִים 2 S 8:6 + 2 times + 2 Ch 8:10 Kt, נְצִבִים 2 S 8:14(×2); cstr. נְצִבֵי 1 S 10:5 MT, but read נְצִיב 𝔊 𝔖 𝔙 Th We Dr Klo Kit Bu HPS;— 1. pillar, נ׳ מֶלַח Gn 19:26 (J). 2. prefect, deputy 1 K 4:19 (on text cf. Klo Benz), so perhaps also 1 S 10:5 (HPS; pillar 𝔊 Th Dr Klo Kit), and appar. 13:3, 4 (> al. pillar); this meaning serves also for 2 S 8:6, 14(×2) (so Ki; Th HPS garrison) 1 Ch 11:16; 18:13; 2 Ch 8:1
+Senses:
+  Sense 1: "garrison, military outpost" (9x)
+    Desc: A military garrison or outpost stationed in a territory for control and defense, frequently used of Philistine garrisons in Israelite territory. English 'garrisons' / 'garrison of' / 'garrisons of', S...
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: and-garrison-of, garrison-of, garrisons | spa: gobernadores, guarniciones, guarniciones-de | fra: [ונציב], [נציבים], garnison-de | deu: [ונציב], [נציבים], garrison-von
+    Refs: 1Sam 10:5, 1Sam 13:3, 1Sam 13:4, 2Sam 8:6, 2Sam 8:14
+  Sense 2: "governor, overseer, appointed official" (2x)
+    Desc: An appointed official, governor, or overseer placed in charge of a region, distinct from the military garrison sense by referring to an administrative authority rather than troops. English 'one govern...
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: [the-overseers], and-one-governor | spa: [los-oficiales], y-un-gobernador | fra: [הנציבים], et-un-gouverneur | deu: [הנציבים], und-eins-Statthalter
+    Refs: 1Kgs 4:19, 2Chr 8:10
+  Sense 3: "pillar, standing stone" (1x)
+    Desc: A standing pillar or column, a distinct concrete sense referring to a physical upright structure rather than a military or administrative installation. English 'pillar of', Spanish 'columna de' (colum...
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: pillar-of | spa: columna-de | fra: colonne-de | deu: eine-Salzsäule
+    Refs: Gen 19:26
+
+=== H5391a ===
+Language: Hebrew, POS: V-Qal-Prtcpl-mpc | 2ms, Occurrences: 12, Senses: 3
+
+BDB excerpt: † נָשַׁךְ vb. bite (NH = BH, but also transp. נְכַשׁ Hiph.); Assyrian našâku DlHWB 486; 𝔗 נְכֵית (especially of snakes); Syriac ܢܟܰܬ, ܢܟܶܬ; Ethiopic ነሰከ Di 642; BaZMG xliii (1889), 188 cp. Arabic نَكَثَ, undo threads, untwist rope, disintegrate, dissolve);— Qal Pf. 3 ms. נָשַׁךְ Nu 21:9, sf. וּנְשָׁכוֹ consec. Am 5:19, וּנְשָׁכָם consec. 9:3; Impf. 3 ms. יִשֹּׁךְ Ec 10:11, יִשֹּׁ֑ךְ Pr 23:32, sf. יִשְּׁכֶנּוּ Ec 10:8; Pt. act. נֹשֵׁךְ Gn 49:17; pl. נֹשְׁכִים Mi 3:5, sf. נֹשְׁכֶיךָ Hb 2:7; pass. נָשׁוּךְ Nu 21:8;—bite, chiefly of serpent, c. acc., Am 5:19; 9:3 Gn 49:17 (poem in J), Nu 21:8 (pt.
+Senses:
+  Sense 1: "bite (literal, Qal)" (9x)
+    Desc: A creature, typically a serpent, biting a person or animal; includes active and passive Qal forms across all inflections.
+    Domain: BODY_HEALTH > Physiological Processes and States
+    Glosses: eng: and-bites-him, and-it-will-bite-them, bit | spa: el-mordido, el-que-muerde, lo-morderá | fra: bit, et-mordre, le-bitten | deu: [הנשכים], [ונשכו], [ונשכם]
+    Refs: Gen 49:17, Num 21:8, Num 21:9, Prov 23:32, Eccl 10:8
+  Sense 2: "bite severely (Piel intensive)" (2x)
+    Desc: Piel intensive stem indicating repeated or severe biting, as of venomous serpents attacking and inflicting deadly bites on people.
+    Domain: BODY_HEALTH > Physiological Processes and States
+    Glosses: eng: and-bit, and-they-shall-bite | spa: y-mordieron, y-os-morderán | fra: [ונשכו], et-bit | deu: [ונשכו], und-bit
+    Refs: Num 21:6, Jer 8:17
+  Sense 3: "exact interest, oppress financially" (1x)
+    Desc: Metaphorical extension of biting: creditors who 'bite' debtors by charging usury or exacting harsh interest payments.
+    Domain: ECONOMICS_PROPERTY > Possess, Transfer, Exchange
+    Glosses: eng: your-creditors | spa: los-que-te-muerden | fra: mordre | deu: [נשכיך]
+    Refs: Hab 2:7

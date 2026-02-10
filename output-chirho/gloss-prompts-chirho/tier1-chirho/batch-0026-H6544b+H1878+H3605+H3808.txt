@@ -1,0 +1,153 @@
+You are a biblical lexicographer composing glosses for a digital lexicon.
+For each lemma below, compose a JSON object. Separate objects with "---".
+
+Format for each:
+{
+  "lemma_id": "...",
+  "gloss_terse": "under 120 chars, concise definition covering the word's semantic range",
+  "gloss_readable": "2-5 sentences, 40-120 words. Don't start with 'This word'. Warm study-Bible footnote tone. Engaging, not dry.",
+  "senses": {
+    "1": "enriched 20-60 word description. Reference multilingual evidence when illuminating. Don't repeat the label verbatim.",
+    "2": "..."
+  }
+}
+
+Rules:
+- No markdown fences, just JSON objects separated by ---
+- Reference multilingual evidence naturally when it reveals something
+- gloss_readable should feel like a good study Bible footnote: helpful, clear, occasionally surprising
+- Each sense enrichment: how does the evidence support this sense? Mention 1-2 key passages when helpful.
+
+=== H6544b ===
+Language: Hebrew, POS: V-Hifil-Perf-3ms, Occurrences: 15, Senses: 6
+
+BDB excerpt: † III. פָּרַע vb. let go, let alone (NH id. unbind (hair), uncover; Arabic فَرَغَ be empty, vacant, unoccupied (c. من rei), Syriac ܦܪܰܥ uncover; 𝔗 פְּרַע = NH);— Qal Pf. 3 ms. consec. וּפָרַע Nu 5:18; sf. פְּרָעֹה (Ges§ 7 b, c) Ex 32:25; Impf. 3 ms. יִפְרָ֑ע Lv 21:10, etc.; Imv. ms. sf. פְּרָעֵהוּ Pr 4:15; Inf. cstr. פְּרֹעַ Ju 5:2; Pt. act. פּוֹרֵעַ Pr 13:18; 15:32; pass. פָּרוּעַ Lv 13:45, פָּרֻעַ Ex 32:25;— 1. let go, let loose, people, i.e. remove restraint from them, Ex 32:25(×2) (E); cf. Jb 15:4 CheJQ, July 1897, 577 (תִּפְרָע for תִּגְרַע); unbind head (by removing turban, sign of mourn
+Senses:
+  Sense 1: "neglect, ignore, reject" (4x)
+    Desc: To disregard, dismiss, or pay no attention to counsel, instruction, or wisdom, treating it as unimportant.
+    Domain: GEOGRAPHY_SPACE > Existence in Space
+    Glosses: eng: and-you-ignored, come-to-him-who-ignores, he-who-ignores | spa: El-que-rechaza, Y-desechasteis, el-que-rechaza | fra: abandonner, et-abandonner | deu: [ותפרעו], [פורע], [תפרעו]
+    Refs: Prov 1:25, Prov 8:33, Prov 13:18, Prov 15:32
+  Sense 2: "uncover, bare, loosen" (4x)
+    Desc: To physically uncover, bare, or loosen something (especially hair or head), leaving it exposed or open.
+    Domain: MENTAL_LIFE > Know
+    Glosses: eng: and-shall-loosen, he-shall-uncover, uncovered | spa: dejará-descubierta, descubierta, descubráis | fra: découvrit, et-devra-loosen, il-devra-découvrir | deu: deckte-auf, du-soll-aufdecken, er-soll-aufdecken
+    Refs: Lev 10:6, Lev 13:45, Lev 21:10, Num 5:18
+  Sense 3: "let loose, leave unrestrained" (3x)
+    Desc: To let people go unbridled or leave them without restraint, resulting in wild or dissolute behavior (Qal active and Nifal passive/reflexive of the same core meaning).
+    Domain: MOVEMENT > Linear Movement
+    Glosses: eng: had-let-loose-them, is-unrestrained, unrestrained | spa: desenfrenado, lo-había-desenfrenado, se-desenfrena | fra: abandonner, avait-que-délier-eux, unrestrained | deu: [יפרע], hatte-lass-loesen-ihnen, unrestrained
+    Refs: Exod 32:25, Exod 32:25, Prov 29:18
+  Sense 4: "avoid, refrain from" (2x)
+    Desc: To deliberately stay away from or hold oneself back from something harmful or undesirable.
+    Domain: FAITH_BELIEF > Hold a View, Believe, Trust
+    Glosses: eng: I-will-refrain, avoid-it | spa: Evítalo, cederé | fra: abandonner-lui, laisser-aller | deu: [אפרע], [פרעהו]
+    Refs: Prov 4:15, Ezek 24:14
+  Sense 5: "Hifil: cause to cease, hinder" (1x)
+    Desc: Causative stem meaning to cause people to desist or to hinder and distract them from a task or purpose.
+    Domain: TIME > Aspect
+    Glosses: eng: do-you-make-rest | spa: distraéis | fra: faire-tu-faire-repos | deu: tun-du-machen-ruhen
+    Refs: Exod 5:4
+  Sense 6: "Hifil: cause unruliness" (1x)
+    Desc: Causative stem meaning to cause someone to become unrestrained or to let them run wild by removing discipline or authority.
+    Domain: BEHAVIOR > Behavior and Related States
+    Glosses: eng: he-let-loose | spa: abandonó | fra: [הפריע] | deu: [הפריע]
+    Refs: 2Chr 28:19
+
+=== H1878 ===
+Language: Hebrew, POS: V-Piel-Perf-2ms, Occurrences: 11, Senses: 6
+
+BDB excerpt: † דָּשֵׁן vb. be fat, grow fat (Arabic دَسِمَ; whence also دَسَمٌ grease, fat; NH דִּשֵּׁן make fat, cf. NH דֶּשֶׁן fat)— Qal Pf. 3 ms. וְדָשֵׁן consec. Dt 31:20 (JE) fig. of Isr.’s prosperity. Pi. Pf. דִּשַּׁנְתָּ ψ 23:5; וְדִשְּׁנוּ consec. Nu 4:13; Impf.: יְדַשְּׁנֶה־סֶּֽלָה ψ 20:4 volunt. (cf. Ges§ 48, 3 De; but perhaps read sf. -נֶהָ, -נָהּ v. Ki Gesl.c.); 3 fs. תְּדַשֶּׁן־ Pr 15:30; Inf. לְדַשְּׁנוֹ Ex 27:3—causat. make fat ד׳ בשׁמן ראשׁי i.e. anoint, symbol of festivity and joy ψ 23:5; ד׳ עָ֑צֶם Pr 15:30 of bodily effect of good news; ד׳ עולה find a burnt-offering fat = acceptable ψ 20:
+Senses:
+  Sense 1: "be fat, be enriched" (5x)
+    Desc: Intransitive sense of becoming fat, prosperous, or enriched, attested in Qal and Pual stems across various inflections.
+    Domain: PROPERTIES_RELATIONS > Features of Objects
+    Glosses: eng: and-be-fat, is-richly-supplied, shall-be-enriched | spa: será-engordada, será-engrosado, será-prosperado | fra: [ידשן], et-être-graisse, gras | deu: [ידשן], [תדשן], und-sein-fett
+    Refs: Deut 31:20, Prov 11:25, Prov 13:4, Prov 28:25, Isa 34:7
+  Sense 2: "remove ashes" (2x)
+    Desc: Denominative Piel sense derived from deshen (fat-ashes), meaning to clear away the fatty ashes from the altar.
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: and-they-shall-remove-ashes-of, to-remove-its-ashes | spa: Y-quitarán-ceniza-de, para-descenicerarlo | fra: et-ils-devra-ôter-cendres-de, à-ôter-son-cendres | deu: und-sie-soll-entfernen-Asche-von, zu-entfernen-sein-Asche
+    Refs: Exod 27:3, Num 4:13
+  Sense 3: "make fat, enrich" (1x)
+    Desc: Active causative Piel sense of making someone or something fat, prosperous, or well-nourished.
+    Domain: PROPERTIES_RELATIONS > Features of Objects
+    Glosses: eng: makes-fat | spa: engorda | fra: gras | deu: [תדשן]
+    Refs: Prov 15:30
+  Sense 4: "accept favorably" (1x)
+    Desc: Metaphorical Piel sense of accepting or regarding with favor, especially a sacrifice, from the image of making a burnt offering fat and pleasing.
+    Domain: EMOTION_ATTITUDE > Attitudes and Emotions
+    Glosses: eng: may-he-regard-with-favor | spa: acepte | fra: gras | deu: möge-er-regard-mit-favor
+    Refs: Ps 20:3
+  Sense 5: "be gorged, be sated" (1x)
+    Desc: Hitpael reflexive sense of becoming gorged or glutted with fat, indicating excessive satiation.
+    Domain: BODY_HEALTH > Physiological Processes and States
+    Glosses: eng: it-is-gorged | spa: engrosada | fra: [הדשנה] | deu: [הדשנה]
+    Refs: Isa 34:6
+  Sense 6: "anoint with oil" (1x)
+    Desc: Piel sense of anointing or smearing with oil or fat, distinct from general enrichment, with multilingual evidence consistently pointing to ritual or cosmetic anointing.
+    Domain: RELIGIOUS_LIFE > Religious Activities
+    Glosses: eng: you-anoint | spa: ungiste | fra: gras | deu: du-salbst
+    Refs: Ps 23:5
+
+=== H3605 ===
+Language: Hebrew, POS: Conj-w, Occurrences: 5417, Senses: 5
+
+BDB excerpt: כֹּל once כּוֹל (Je 33:8 Kt), n.m. the whole, all (Moab., Ph., id.; Aramaic כּוֹל, ܟܽܠ; Arabic كُلٌّ; Sab. כל, cf. DHMEpigr. Denk. 36–38;. Ethiopic ኵል Assyrian kullatu)—abs. כֹּל, cstr. כֹּל Gn 2:5, 16, 20 + often, once כֹּל־ ψ 138:2 (v. Ba), but more usually כָּל־ (with makk.: without it, †ψ 35:10 Pr 19:7; Köi 84, 95); sf. 2 ms. in p. כֻּלָּךְ †Mi 2:12; 2 fs. כֻּלֵּךְ †Is 14:29, 31, כֻּלָּךְ †Is 22:1 Ct 4:7 (perhaps for assonance with accompanying לָךְ, בָּךְ); 3 ms. כֻּלֹּה 2 S 2:9 (v. Dr) + 17 times (never in Pent.), כֻּלּוֹ Gn 25:25 + 16 times; 3 fs. כֻּלָּהּ Gn 13:10 + 15 times, כֻּלָּא †
+Senses:
+  Sense 1: "all, every, whole" (5352x)
+    Desc: Attributive quantifier modifying a noun to express totality or universality: 'all the people,' 'every nation,' 'the whole land.'
+    Domain: QUANTITY_NUMBER > Quantity
+    Glosses: eng: all | spa: Todos, toda, todas | fra: tout | deu: alle, alle-, der-ganzen-
+    Refs: Gen 11:9, Gen 14:3, Gen 16:12, Gen 18:25, Gen 22:18
+  Sense 2: "everything, the totality" (22x)
+    Desc: Substantival or absolute use where kol functions as a noun meaning 'everything,' 'the whole,' or 'all things,' often with the article.
+    Domain: QUANTITY_NUMBER > Quantity
+    Glosses: eng: all, all-of-it, everything | spa: El-todo, el-todo, por-todo | fra: comme-à-elle, der-tout, le-tout | deu: Schwiegertochter, das-Alles, zu-allen
+    Refs: Ezra 8:34, Ezra 8:35, Ps 49:17, Eccl 1:2, Eccl 1:14
+  Sense 3: "all of (pronominal)" (20x)
+    Desc: Used with pronominal suffixes to express totality of a group of persons: 'all of you,' 'all of them.'
+    Domain: DISCOURSE_NAMES > Discourse Referentials
+    Glosses: eng: all-of-you, to-all-of-you | spa: Toda-tú, Todos-vosotros, a-todos-vosotros | fra: Toute-toi, comme-tout, comme-à-toi | deu: alle, alle-von-du, wie-dir
+    Refs: Deut 1:22, Deut 4:4, Deut 29:10, Josh 8:4, Judg 20:7
+  Sense 4: "any, anything" (18x)
+    Desc: Indefinite sense used especially in negative, conditional, or interrogative contexts to mean 'any,' 'anyone,' or 'anything.'
+    Domain: QUANTITY_NUMBER > Quantity
+    Glosses: eng: any, any-, for-any- | spa: cualquier, cualquier-, cualquier-cosa | fra: pour-tout-, quelque, tout | deu: fuer-irgendein-, irgendein, irgendein-
+    Refs: Deut 4:15, Deut 4:16, Deut 4:17, Deut 4:17, Deut 4:18
+  Sense 5: "each, every (distributive)" (5x)
+    Desc: Distributive sense emphasizing individual members of a class: 'for each one,' 'every single,' 'for everyone.'
+    Domain: QUANTITY_NUMBER > Quantity
+    Glosses: eng: for-every-, for-everyone, to-every- | spa: a-toda, para-todo | fra: pour-chacun, tout, à-tout | deu: fuer-jedermann, zu-allen
+    Refs: Exod 38:26, Eccl 3:1, Eccl 3:17, Eccl 8:6, Eccl 8:9
+
+=== H3808 ===
+Language: Hebrew, POS: Conj-w | Adv, Occurrences: 5194, Senses: 5
+
+BDB excerpt: לֹא or לוֹא adv. not (Arabic لَا, Aramaic לָא, ܠܴܐ, Sab. לא, Assyrian lâ; not in Ethiopic: cf. Köii. 1. 236 Walker AJSL 1896, 237 ff.)—לוֹא, according to Mass. (FrMM 248), 35 times, besides בְּלוֹא 6 times, and הֲלוֹא, the orthogr. of which varies much (ib.p. 251), e.g. in S always הֲלוֹא, in Chr always הֲלֹא, on the whole הֲלוֹא 141 times, הֲלֹא 128 times; twice, according to Mass, written לו (Qr לֹא), 1 S 2:16; 20:2, once לה Dt 3:11 Kt:—not—denying objectively, like οὐ (not μὴ = אַל):— 1. in predication: a. with a verb; so most freq., and nearly always (a) with the finite tenses, whether pf.
+Senses:
+  Sense 1: "simple negation (not)" (4839x)
+    Desc: The standard Hebrew negative particle used to negate verbs, adjectives, and clauses, including with conjunctive waw ('and not') and in relative clauses ('who/that not').
+    Domain: PROPERTIES_RELATIONS > Affirmation, Negation
+    Glosses: eng: not | spa: no | fra: pas | deu: nicht, nicht-
+    Refs: Gen 2:5, Gen 4:5, Gen 18:28, Gen 21:26, Gen 24:21
+  Sense 2: "rhetorical interrogative negation" (275x)
+    Desc: Used in rhetorical questions expecting an affirmative answer, typically with interrogative he (הֲלֹא 'is it not?', 'did not?'), functioning as a persuasive or emphatic assertion.
+    Domain: PROPERTIES_RELATIONS > Affirmation, Negation
+    Glosses: eng: Did-not, Is-not, are-they-not | spa: Acaso-no, acaso-no, no-están | fra: Est-pas, Fit-ne-pas, ai-pas | deu: Did-nicht, habe-nicht, hat-nicht
+    Refs: Gen 4:7, Gen 13:9, Gen 19:20, Gen 20:5, Gen 27:36
+  Sense 3: "privative without" (51x)
+    Desc: Used with prepositions (בְּלֹא, לְלֹא) to form the privative sense 'without, lacking, in the absence of'.
+    Domain: PROPERTIES_RELATIONS > Affirmation, Negation
+    Glosses: eng: and-without, for-lack-of, for-no | spa: Antes-de, antes-de, de-modo-que-no | fra: dans-ne...pas, et-zu-ne-pas, in-ne-pas | deu: in-nicht, nicht, ohne
+    Refs: Lev 15:25, Lev 25:30, Num 35:22, Num 35:22, Num 35:23
+  Sense 4: "standalone no (refusal/denial)" (28x)
+    Desc: Used independently as a negative answer or exclamation meaning 'no!', functioning as a complete utterance rather than modifying a verb or clause.
+    Domain: PROPERTIES_RELATIONS > Affirmation, Negation
+    Glosses: eng: no | spa: (no), No, no | fra: non | deu: nein, nein-
+    Refs: Gen 18:15, Gen 19:2, Gen 23:11, Gen 42:10, Gen 42:12
+  Sense 5: "nor (conjunctive series negation)" (1x)
+    Desc: Used with conjunctive waw in a negative series to mean 'nor, and not either', connecting additional negated items or clauses.
+    Domain: PROPERTIES_RELATIONS > Affirmation, Negation
+    Glosses: eng: nor | spa: ni | fra: et-ne...pas | deu: nicht
+    Refs: Ps 115:17

@@ -1,0 +1,115 @@
+You are a biblical lexicographer composing glosses for a digital lexicon.
+For each lemma below, compose a JSON object. Separate objects with "---".
+
+Format for each:
+{
+  "lemma_id": "...",
+  "gloss_terse": "under 120 chars, concise definition covering the word's semantic range",
+  "gloss_readable": "2-5 sentences, 40-120 words. Don't start with 'This word'. Warm study-Bible footnote tone. Engaging, not dry.",
+  "senses": {
+    "1": "enriched 20-60 word description. Reference multilingual evidence when illuminating. Don't repeat the label verbatim.",
+    "2": "..."
+  }
+}
+
+Rules:
+- No markdown fences, just JSON objects separated by ---
+- Reference multilingual evidence naturally when it reveals something
+- gloss_readable should feel like a good study Bible footnote: helpful, clear, occasionally surprising
+- Each sense enrichment: how does the evidence support this sense? Mention 1-2 key passages when helpful.
+
+=== H7229 ===
+Language: Hebrew, POS: Adj-msd, Occurrences: 15, Senses: 2
+
+BDB excerpt: רַב adj. great (𝔗 Syriac);—abs. Dn 2:31 +, cstr. v 14 +; emph. m. רַבָּא Ezr 4:10 +; f. רַבְּתָא Dn 4:27; mpl. redupl. רַבְרְבִין (K§ 59, 4) 3:33, fpl. -בָן 2:48 +, emph. תָא—ָ 7:11, 17;— 1. great, lit., of image Dn 2:31, rock v 35, city 4:27, sea 7:2, beast v 3, 17, teeth v 7, gifts 2:48; great, imposing, feast 5:1, signs 3:33, words 7:8, 11, 20; c. מִן comp. 7:20. 2. fig. of power, influence, etc.: great king 2:10 Ezr 4:10; 5:11 (cf. Zinj. מלכן רברבן Cooke 183), God 5:8 Dn 2:45. 3. as n. = captain, chief: רַב טַבָּחַיָּא Dn 2:14, ר׳ סִגְנִין v 48, ר׳ חַרְטֻמַּיָּא 4:6; 5:11.
+Senses:
+  Sense 1: "great, large (adjectival quality)" (11x)
+    Desc: The Aramaic adjective rav used as a qualitative descriptor meaning 'great, large, huge,' describing size, magnitude, or importance of things (e.g., the great image in Daniel 2, the great tree). S13427...
+    Domain: QUANTITY_NUMBER > Degree
+    Glosses: eng: great, greater, huge | spa: grande, inmensa, la-grande | fra: grand, le-grand, nombreux | deu: [רבא], gross, viel
+    Refs: Ezra 4:10, Ezra 5:8, Ezra 5:11, Dan 2:10, Dan 2:31
+  Sense 2: "chief, head official (titular)" (4x)
+    Desc: The Aramaic adjective rav used as a substantivized title meaning 'chief, head official,' appearing in construct chains like 'chief of the magicians/wise men' in the book of Daniel. Arabic ra'isa (رَئِ...
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: and-chief-of-, chief-of, chief-of- | spa: jefe-de, y-jefe-de | fra: et-grand, grand | deu: und-viel, viel
+    Refs: Dan 2:14, Dan 2:48, Dan 4:9, Dan 5:11
+
+=== H7564 ===
+Language: Hebrew, POS: N-fsc | 3ms, Occurrences: 15, Senses: 2
+
+BDB excerpt: † רִשְׁעָה n.f. wickedness;—abs. ר׳ Is 9:17 +; cstr. רִשְׁעַת Dt 9:4 +; sf. רִשְׁעָתוֹ Dt 25:2 +;— 1. wickedness in civil relations, Dt 25:2; Pr 13:6; Is 9:17; בְּרִשְׁעָתוֹ יפּל רָשָׁע Pr 11:5. 2. wickedness of enemies, גְּבוּל ר׳ Mal 1:4 (Edom); זאת הר׳ Zc 5:8 (personif.); לְרִשְׁעָה Ez 5:6 (del. Co); רִשְׁעַת הגוים Dt 9:4, 5. 3. wickedness, ethical and religious, עשׂה ר׳ Mal 3:15, 19, שׁוּב מֵרִשְׁעָתוֹ Ez 18:27; 33:19; רִשְׁעַת (הָ)רָשָׁע 18:20; 33:12.
+Senses:
+  Sense 1: "wickedness, evil" (11x)
+    Desc: Abstract moral wickedness or evil, the quality of being wicked or the condition of wickedness in general.
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: and-because-of-wickedness-of, and-wickedness-of, because-of-wickedness-of | spa: e-impiedad-de, es-la-maldad, la-maldad | fra: [ורשעת], [לרשעה], [רשעה] | deu: Gottlosigkeit, [ורשעת], [לרשעה]
+    Refs: Deut 9:4, Deut 9:5, Prov 13:6, Isa 9:18, Ezek 5:6
+  Sense 2: "guilt, culpable wickedness" (4x)
+    Desc: Guilt or culpable wickedness attributed to a specific person, emphasizing personal responsibility for wicked conduct.
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: but-by-his-wickedness, from-his-wickedness, from-wickedness-his | spa: de-su-impiedad, de-su-maldad, su-maldad | fra: [מרשעתו], et-son-וברשעתו-lui, son-culpabilité | deu: [מרשעתו], sein-Schuld, und-Gottlosigkeit
+    Refs: Deut 25:2, Prov 11:5, Ezek 18:27, Ezek 33:19
+
+=== H8574 ===
+Language: Hebrew, POS: Conj-w | N-cs, Occurrences: 15, Senses: 2
+
+BDB excerpt: † תַּנּוּר n.m. Lv 26:26 portable stove or fire-pot (loan-word form Assyrian tinûru, id., according to DHMVOJ i. 23 (otherwise DvořákZK i. 155 ff.); ת׳, a large earthen jar, still in Syria, WetzstVerhandl. d. Berl. Anthrop. Gesell., 1882, 467 WhitehouseHeb. Antiq. 7, 3 ARSKEB i. 605; Arabic تَنُّورٌ is loan-word from Aramaic תַּנּוּרָא, ܬܰܢܽܘܪܳܐ, and this from Pers. tanûra, according to Frä26);—ת׳ abs. Ho 7:4 +, cstr. Gn 15:17 ψ 21:10; pl. תַּנּוּרִים Ne 3:11; 12:38;—fire-pot, for baking (אָפָה) Ho 7:4 (read ת׳ בֹּעֵר הֵ֑ם אֹפֵהוּ וגו׳, OortTh Tijdschr. 1890, 480 ff. AlbrZAW xvi (1896), 88), c
+Senses:
+  Sense 1: "oven, furnace (literal)" (10x)
+    Desc: A physical oven or furnace used for baking bread or firing pottery, including domestic ovens (Lev 2:4, 11:35), ovens invaded by frogs (Exod 8:3), and the place name 'Tower of the Ovens' in Jerusalem (...
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: a-furnace-of, an-oven, and-in-your-ovens | spa: en-el-horno, en-horno, horno | fra: [התנורים], [ותנור], dans-le-oven | deu: [התנורים], [ותנור], [תנור]
+    Refs: Gen 15:17, Exod 8:3, Lev 2:4, Lev 7:9, Lev 11:35
+  Sense 2: "furnace (figurative/simile)" (5x)
+    Desc: Metaphorical or simile use of 'oven/furnace' to depict intense burning, divine wrath, or judgment, as in 'burning like an oven' (Hos 7:4, 7; Mal 4:1; Ps 21:10) and 'like a fiery furnace' (Lam 5:10; Ge...
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: like-a-fiery-furnace, like-an-oven, like-oven | spa: como-el-horno, como-horno, como-horno-de | fra: [כתנור], comme-fournaise, fourneau | deu: [כתנור], wie-ein-fiery-furnace
+    Refs: Ps 21:9, Lam 5:10, Hos 7:6, Hos 7:7, Mal 4:1
+
+=== G1261 ===
+Language: Greek, POS: N-NMP, Occurrences: 14, Senses: 2
+
+BDB excerpt: διαλογ-ισμός, ὁ, balancing of accounts, Refs 4th c.BC+ __II calculation, consideration, Refs 5th c.BC+; ὁ δ. οὗτος this consideration, Refs 1st c.BC+ __III debate, argument, discussion, Refs 4th c.BC+ __IV circuit court, τοῦ νομοῦ δ. ποιῆσαι Refs 2nd c.AD+ __V judicial inquiry, Refs 2nd c.BC+
+Senses:
+  Sense 1: "thought, reasoning, deliberation" (10x)
+    Desc: Inner thoughts, reasonings, or deliberations of the mind, including doubts and opinions (Matt 15:19; Luke 2:35; 5:22; 6:8; 24:38; Rom 1:21; 14:1; 1Cor 3:20; Mark 7:21; Jas 2:4)
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: doubts, of-opinions, of-thoughts | spa: de-opiniones, de-razonamientos, pensamientos | fra: pensée, raisonnement | deu: Gedanken, Überlegung
+    Refs: Matt 15:19, Mark 7:21, Luke 2:35, Luke 5:22, Luke 6:8
+  Sense 2: "dispute, argument, controversy" (4x)
+    Desc: An argument, dispute, or controversy between persons, often involving verbal contention or quarreling (Luke 9:46-47; Phil 2:14; 1Tim 2:8)
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: an-argument, argument, arguments | spa: pensamiento, razonamiento, razonamientos | fra: raisonnement | deu: Gedanken, Überlegung
+    Refs: Luke 9:46, Luke 9:47, Phil 2:14, 1Tim 2:8
+
+=== G1987 ===
+Language: Greek, POS: V-PIM/P-1S, Occurrences: 14, Senses: 2
+
+BDB excerpt: ἐπίστᾰμαι, 2 person -ασαιRefs 6th c.BC+, contraction ἐπίστω Refs 5th c.BC+; subjunctive Ionic dialect ἐπιστέωμαι Refs 5th c.BC+, Attic dialect ἐπίστωμαι Refs 5th c.BC+: imperfect ἠπιστάμην Refs 8th c.BC+; Ionic dialect 3rd.pers. plural ἠπιστέατο or ἐπιστέατο Refs: future ἐπιστήσομαι Refs 8th c.BC+: aorist 1 ἠπιστήθην Refs 5th c.BC+ __I. know how to do, be able to do, capable of doing, c.infinitive, οὐδέ οἱ ὀστέ᾽ ἐπιστήσονται Ἀχαιοὶ ἀλλέξαι Refs 8th c.BC+; and of artistic skill, ὃς χερσὶν ἐπίστατο δαίδαλα πάντα τεύχειν Refs 8th c.BC+: frequently in Trag. and Attic dialect, οὔπω σωφρονεῖν ἐπίστα
+Senses:
+  Sense 1: "know, be acquainted with" (12x)
+    Desc: To have knowledge of or be acquainted with something or someone through experience or familiarity, used of knowing facts, persons, or situations (Acts 19:15; 26:26).
+    Domain: MENTAL_LIFE > Know
+    Glosses: eng: I-know-about, know, knowing | spa: conoce, conociendo, saben | fra: savoir | deu: verstehen, versteht
+    Refs: Acts 10:28, Acts 15:7, Acts 18:25, Acts 19:15, Acts 19:25
+  Sense 2: "understand, comprehend" (2x)
+    Desc: To understand or comprehend the nature or significance of something, emphasizing intellectual grasp rather than mere acquaintance (Jude 1:10; Mark 14:68).
+    Domain: MENTAL_LIFE > Understand
+    Glosses: eng: I-understand, they-understand | spa: entienden, entiendo | fra: comprennent,, savoir | deu: verstehen, verstehen-sie
+    Refs: Mark 14:68, Jude 1:10
+
+=== G2165 ===
+Language: Greek, POS: V-PIM/P-3P, Occurrences: 14, Senses: 2
+
+BDB excerpt: εὐφραίνω, Epic dialect ἐϋφρ-, future Attic dialect εὐφρᾰνῶ Refs 4th c.BC+, Ionic dialect and Epic dialect εὐφρανέω Refs 8th c.BC+aorist 1 εὔφρᾱνα or ηὔφρ-Refs 5th c.BC+; Epic dialect εὔφρηνα Refs 8th c.BC+, subjunctive ἐϋφρήνῃς Refs:—passive, with future middle εὐφρᾰνοῦμαι Refs 5th c.BC+; Ionic dialect 2nd pers. singular εὐφρανέαι (variant -έεαι) Refs 5th c.BC+; also passive εὐφρανθήσομαι Refs 5th c.BC+aorist 1 εὐφράνθην or ηὐ- Refs 5th c.BC+: (εὔφρων):—cheer, gladden, εὐφρανέειν ἄλοχον Refs 8th c.BC+; νόον, φρένα, Refs 8th c.BC+ __II passive, make merry, enjoy oneself, εὐφραίνεσθαι ἕκηλον NT+
+Senses:
+  Sense 1: "to rejoice, be glad, celebrate" (13x)
+    Desc: Intransitive (middle/passive) sense: to experience gladness, to rejoice, to celebrate or be merry, used of persons who are themselves glad or festive.
+    Domain: EMOTION_ATTITUDE > Attitudes and Emotions
+    Glosses: eng: I-might-celebrate, Rejoice, To-celebrate | spa: Alégrate, a-regocijarse, alegraos | fra: réjouir, se-réjouir | deu: freut-sich, sich-freuen
+    Refs: Luke 12:19, Luke 15:23, Luke 15:24, Luke 15:29, Luke 15:32
+  Sense 2: "to make glad, gladden" (1x)
+    Desc: Transitive causative (active) sense: to cause gladness or joy in another person, to cheer or gladden someone.
+    Domain: EMOTION_ATTITUDE > Attitudes and Emotions
+    Glosses: eng: making-glad | spa: que-alegra | fra: réjouir | deu: sich-freuen
+    Refs: 2Cor 2:2

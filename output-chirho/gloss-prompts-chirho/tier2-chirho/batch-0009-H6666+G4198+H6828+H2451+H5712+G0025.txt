@@ -1,0 +1,143 @@
+You are a biblical lexicographer composing glosses for a digital lexicon.
+For each lemma below, compose a JSON object. Separate objects with "---".
+
+Format for each:
+{
+  "lemma_id": "...",
+  "gloss_terse": "under 120 chars, concise definition covering the word's semantic range",
+  "gloss_readable": "2-5 sentences, 40-120 words. Don't start with 'This word'. Warm study-Bible footnote tone. Engaging, not dry.",
+  "senses": {
+    "1": "enriched 20-60 word description. Reference multilingual evidence when illuminating. Don't repeat the label verbatim.",
+    "2": "..."
+  }
+}
+
+Rules:
+- No markdown fences, just JSON objects separated by ---
+- Reference multilingual evidence naturally when it reveals something
+- gloss_readable should feel like a good study Bible footnote: helpful, clear, occasionally surprising
+- Each sense enrichment: how does the evidence support this sense? Mention 1-2 key passages when helpful.
+
+=== H6666 ===
+Language: Hebrew, POS: Conj-w | N-fsc, Occurrences: 159, Senses: 3
+
+BDB excerpt: צְדָקָה157 n.f. righteousness;—abs. צ׳ Gn 15:6 + 81 times; cstr. צִדְקַת Dt 33:21 + 5 times; sf. צִדְקָתִי Gn 30:33 +, etc.; pl. צְדָקוֹת Is 33:15 + 3 times; cstr. צִדְקוֹת Ju 5:11 +; sf. צִדְקֹתֶיךָ Dn 9:16, etc.;— 1. righteousness, in government: a. of judge, ruler, king: ‖ משׁפט Is 5:7; 9:6; Am 5:7; 6:12; משׁפט וצ׳ 2 S 8:15, עשׂה D. executed justice and righteousness = 1 Ch 18:14, cf. 1 K 10:9 = 2 Ch 9:8, Je 22:3, 15; 33:15 Ez 45:9; בּצ׳ יִכּוֹן כִּסֵּא Pr 16:12, cf. Is 54:14; עֲבֹדַת הצ׳, מַעֲשֵׂה הצ׳ Is 32:17, cf. v 16; נֹגְשַׂיִךְ צ׳ Is 60:17. b. of law, ‖ משׁפטים, צִדְקַת י׳ Dt 33:21. c
+Senses:
+  Sense 1: "righteousness, moral uprightness" (145x)
+    Desc: The abstract moral quality of conformity to God's standard of right — the dominant sense of צְדָקָה covering the vast majority of occurrences, rendered Arabic بِرّ (birr, piety/righteousness) or عَدْل...
+    Domain: MORAL_QUALITY > Moral and Ethical Qualities
+    Glosses: eng: righteousness | spa: Justicia, derecho, justicia | fra: justice | deu: Gerechtigkeit, als-Gerechtigkeit
+    Refs: Gen 15:6, Gen 18:19, Deut 6:25, Deut 24:13, 2Sam 8:15
+  Sense 2: "righteous acts, deeds of righteousness" (13x)
+    Desc: The plural צִדְקוֹת (tsidqot) denoting concrete righteous acts or deeds rather than the abstract quality — consistently rendered Korean 의로운 행위들 (uiroun haengwideul, righteous acts), Swahili matendo ya...
+    Domain: MORAL_QUALITY > Moral and Ethical Qualities
+    Glosses: eng: -the-righteous-acts-of, his-righteous-deeds, in-righteousness | spa: (sus-justicias), en-justicias, justicias-de | fra: -le-juste-acts-de, justice, righteousnesses-de | deu: -der-gerecht-acts-von, Gerechtigkeit, righteousnesses-von
+    Refs: Judg 5:11, Judg 5:11, 1Sam 12:7, Isa 33:15, Isa 64:6
+  Sense 3: "?" (1x)
+    Domain: MORAL_QUALITY > Moral and Ethical Qualities
+    Glosses: eng: and-right | spa: y-derecho | fra: et-justice | deu: und-Gerechtigkeit
+    Refs: Neh 2:20
+
+=== G4198 ===
+Language: Greek, POS: V-PPM/P-AMP, Occurrences: 154, Senses: 3
+
+BDB excerpt: πορ-εύω, future -σωRefs 5th c.BC+aorist ἐπόρευσα, poetry πόρευσα Refs 5th c.BC+:—passive and middle, future πορεύσομαι LXX+5th c.BC+aorist ἐπορευσάμην (only compounds ἐν-, προ-, Refs 5th c.BC+, etc.: perfect πεπόρευμαι Refs 5th c.BC+:(πόρος): __I active, make to go, carry, convey, by land or water, τινα Refs 6th c.BC+: with doubleaccusative, carry or ferry over, [Νέσσος] ποταμὸν.. Βροτοὺς μισθοῦ 'πόρευε Refs 5th c.BC+ __I.2 of things, bring, carry, ἐπιστολὰς πατρί Refs 5th c.BC+; furnish, bestow, χρυσόν Refs 5th c.BC+; set in motion, κίνησις.. βραδυτῆτάς τε καὶ τάχη.. π. Refs 5th c.BC+ __I.3 a
+Senses:
+  Sense 1: "go, proceed (physical movement)" (139x)
+    Desc: To move from one place to another, the basic sense of physical locomotion or directed movement, including commands to go.
+    Domain: BEHAVIOR > Behavior and Related States
+    Glosses: eng: Going, Having-gone, going | spa: Habiendo-ido, Yendo, habiendo-ido | fra: aller | deu: gehen, geht
+    Refs: Matt 2:8, Matt 2:20, Matt 8:9, Matt 9:13, Matt 11:4
+  Sense 2: "walk, conduct oneself (figurative)" (8x)
+    Desc: To live or conduct oneself in a certain manner, a figurative use describing one's way of life, behavior, or moral conduct.
+    Domain: BEHAVIOR > Behavior and Related States
+    Glosses: eng: going, having-walked, they-went | spa: andando, caminando, fueron | fra: aller, ils-allèrent,, marchant, | deu: gehen, geht, gingen-sie
+    Refs: Luke 1:6, Acts 9:31, 1Pet 4:3, 2Pet 2:10, 2Pet 3:3
+  Sense 3: "journey, travel (extended trip)" (7x)
+    Desc: To undertake a journey or extended travel, emphasizing the process of traveling a route or distance rather than simple directional movement.
+    Domain: BEHAVIOR > Behavior and Related States
+    Glosses: eng: going, having-gone, traveling | spa: habiendo-ido, ir, yendo | fra: aller | deu: gehen, geht
+    Refs: Luke 10:38, Acts 9:3, Acts 21:5, Acts 22:6, Acts 26:13
+
+=== H6828 ===
+Language: Hebrew, POS: Art | N-fs, Occurrences: 153, Senses: 3
+
+BDB excerpt: I. צָפוֹן153 n.f. Is 43:6 north (as the hidden, dark; cf. Thes LewyFremdw. 188 f.; perhaps Ph. צפל north);—abs. צ׳ Je 25:26 +, צָפֹ֫נָה northward Gn 13:14 +, oftener צָפ֫וֹנָה Je 3:12 +, also צָפ֫וֹנָה = צָפוֹן Je 1:13 + (after preps. and st. cstr.; cf. Ges§ 90 e); cstr. מִצְּפוֹן לְ Jos 8:11 +, also מִצְּפוֹן 19:14 Gi (cf. Benn; van d. H. Baer מִצָּ׳), מִצְּפ֫וֹנָה לְ Ju 21:19; (צ׳ occurs oftenest in Ez [46 times], Jos [25 times], Je [25 times], Dn [9 times]);—north (opp. S., E., W.) Gn 13:14; 28:14 (both J), Ex 27:11 (P), +; פְּאַת צ׳ north side Ex 26:20 Jos 15:5 + (v. פֵּאָה); so צֶלַע צ׳ E
+Senses:
+  Sense 1: "north, cardinal direction" (120x)
+    Desc: The compass direction north, used as a geographical reference point for locations, boundaries, and orientations, including with directional he suffix meaning 'northward' and various prepositional cons...
+    Domain: GEOGRAPHY_SPACE > Spacial Orientations
+    Glosses: eng: north, north-ward, northward | spa: al-norte, hacia-el-norte, hacia-norte | fra: nord, north-garde, northward | deu: nach-Norden, nordwaerts, north-ward
+    Refs: Gen 13:14, Exod 26:20, Exod 26:35, Exod 27:11, Exod 36:25
+  Sense 2: "the north as threatening origin" (28x)
+    Desc: The north as the ominous direction from which invaders, armies, and divine judgment come, especially in prophetic literature (Jeremiah, Ezekiel), carrying connotations of danger and destruction beyond...
+    Domain: GEOGRAPHY_SPACE > Spacial Orientations
+    Glosses: eng: from-north, from-the-north | spa: De-norte, Desde-el-norte, al-norte | fra: de-nord, de-north, du-nord | deu: Norden, von-Norden, von-der-north
+    Refs: Josh 11:2, Josh 15:6, Josh 15:10, Josh 16:6, Josh 17:9
+  Sense 3: "Zaphon, sacred mountain / place name" (5x)
+    Desc: Mount Zaphon (Tsaphon), the Canaanite mythological mountain of the gods, used as a proper noun or semi-proper geographical designation, as evidenced by Arabic transliteration صَفُون rather than transl...
+    Domain: GEOGRAPHY_SPACE > Spacial Orientations
+    Glosses: eng: from-north, from-the-north, in-the-north | spa: al-norte, al-norte-de, en-el-norte | fra: de-le-nord, de-nord, nord | deu: Norden, im-Norden, von-Norden
+    Refs: Josh 24:30, Judg 2:9, Judg 7:1, Eccl 11:3, Song 4:16
+
+=== H2451 ===
+Language: Hebrew, POS: N-fsc | 3mp, Occurrences: 149, Senses: 3
+
+BDB excerpt: † חָכְמָה n.f. wisdom, ח׳ Ex 28:3 + 106 times; cstr. חָכְמַת Ex 35:35 + 15 times; sf. חָכְמָתִי Ec 2:9, etc. + 25 times sf.; pl. abst. חָכְמוֹת ψ 49:4 Pr 1:20; 9:1; 24:7 (GK§ 861); חַכְמוֹת Pr 14:1 (incorrectly pointed as adj. cstr. f.; read חָכְמוֹת De);— 1. skill in war Is 10:13; in technical work Ex 28:3; 31:3, 6; 35:26, 31, 35; 36:1, 2 (P), cf. 1 K 7:14, 1 Ch 28:21; of sailors ψ 107:27. 2. wisdom, in administration Dt 34:9 Is 29:14 Je 49:7(×2) 2 S 14:20; of prince of Tyre Ez 28:4, 5, 7, 12, 17; Sol.’s wisdom included this with other forms of cleverness and shrewdness 1 K 2:6; 3:28; 5:9, 10
+Senses:
+  Sense 1: "wisdom, discernment" (146x)
+    Desc: The intellectual and moral quality of wisdom, sound judgment, and discernment — the general abstract sense encompassing knowledge, insight, and prudent understanding, whether attributed to God or huma...
+    Domain: VIOLENCE_CONFLICT > Hostility, Strife
+    Glosses: eng: wisdom | spa: es-sabiduría, está-la-sabiduría, está-la-sabiduría, | fra: sagesse | deu: Weisheit
+    Refs: Exod 28:3, Exod 31:6, Exod 36:1, Exod 36:2, Deut 34:9
+  Sense 2: "skill, craftsmanship" (2x)
+    Desc: Technical skill, expertise, or artisanal ability — practical know-how applied to a craft or trade, as in the skilled workmanship of the tabernacle builders.
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: wisdom-of-, with-wisdom | spa: en-la-sabiduría, sabiduría-de | fra: in-sagesse, sagesse-de- | deu: Weisheit, Weisheit-von-
+    Refs: Exod 35:35, 1Chr 28:21
+  Sense 3: "?" (1x)
+    Domain: VIOLENCE_CONFLICT > Hostility, Strife
+    Glosses: eng: in-her-wisdom | spa: con-su-sabiduría | fra: dans-sa-sagesse | deu: in-ihr-Weisheit
+    Refs: 2Sam 20:22
+
+=== H5712 ===
+Language: Hebrew, POS: N-fsc | 2ms, Occurrences: 149, Senses: 3
+
+BDB excerpt: I. עֵדָה149 n.f. congregation (proposes company assembled together by appointment, or acting concertedly)—ע׳ Nu 16:2 + 85 times; cstr. עֲדַת Ex 12:3 + 52 times; sf. עֲדָתִי Jb 16:7 + 9 times sfs.;— 1. עֲדַת־אֵל ψ 82:1 congregation of Ēl, of company of angels (‖ בקרב אלהים); ע׳ לְאֻמִּים 7:8 congregation of peoples; ע׳ צַדִּיקִים 1:5 congregation of the righteous; ‖ סוֹד יְשָׁרִים 111:1; ‖ קהל Pr 5:14; כָּל־עֲדָתִי Jb 16:7 (of Job’s circle of dependents); in a bad sense, ע׳ מְרֵעִים company of evil doers ψ 22:17; ע׳ עריצים 86:14; ע׳ חנף Jb 15:34; ע׳ קֹרַח company of Korah Nu 26:9; 27:3 (P), so 
+Senses:
+  Sense 1: "congregation, assembly of Israel" (142x)
+    Desc: The formal assembled community or congregation, especially of Israel in cultic, legal, and national contexts (e.g., עֲדַת יִשְׂרָאֵל, עֲדַת בְּנֵי יִשְׂרָאֵל); the predominant sense throughout the Pen...
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: the-congregation | spa: la-congregación | fra: le-assemblée, le-congregation | deu: der-Gemeinde
+    Refs: Exod 16:22, Exod 38:25, Lev 4:15, Lev 8:3, Lev 8:4
+  Sense 2: "company, band, group" (5x)
+    Desc: A smaller company, band, or group of people, sometimes with hostile or factional overtones, distinct from the formal religious assembly (e.g., the company of Korah, a band of evildoers).
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: a-company-of, and-a-band-of, in-their-company | spa: cuadrilla-de, en-su-congregación, la-congregación-de | fra: assemblée, dans-assemblée, et-assemblée | deu: [עדתי], der-Gemeinde-, ein-Gemeinde-
+    Refs: Job 16:7, Ps 22:16, Ps 86:14, Ps 106:17, Ps 106:18
+  Sense 3: "swarm (of bees/animals)" (2x)
+    Desc: A swarm or drove of animals, specifically used of bees (Judg 14:8); a transferred sense applying the notion of a gathered group to creatures rather than people.
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: swarm-of, the-herd-of | spa: manada-de, un-enjambre-de | fra: assemblée, swarm-de | deu: Schwarm-von, der-Gemeinde-
+    Refs: Judg 14:8, Ps 68:30
+
+=== G0025 ===
+Language: Greek, POS: V-PMA-3S, Occurrences: 143, Senses: 3
+
+BDB excerpt: ἀγαπάω (Doric dialect ἀγαπ-έω Refs 4th c.BC+, Epic dialect aorist ἀγάπησαRefs 8th c.BC+: perfect ἠγάπηκαRefs 5th c.BC+ __I greet with affection (compare {ἀγαπάζω}), once in Refs 8th c.BC+, Od.[same place]:—in Trag. only show affection for the dead, ὅτ᾽ ἠγάπα νεκρούςRefs 5th c.BC+:—passive, to be regarded with affection, ξένων εὐεργεσίαις ἀγαπᾶταιRefs 5th c.BC+:— generally, love, ὥσπερ.. οἱ ποιηταὶ τὰ αὑτῶν ποιήματα καὶ οἱ πατέρες τοὺς παῖδας ἀγαπῶσιRefs 5th c.BC+; ὡς λύκοι ἄρν᾽ ἀγαπῶσ᾽ poetical cited in Refs; ἐπιστήμην, τὰ χρήματα, etc., Refs 4th c.BC+; especially of children, αὐτὸν ἐτιθηνούμη
+Senses:
+  Sense 1: "to love actively" (133x)
+    Desc: To love with deliberate affection, devotion, or goodwill toward persons or God, encompassing all active-voice finite and infinitival forms of agapao.
+    Domain: EMOTION_ATTITUDE > Attitudes and Emotions
+    Glosses: eng: he-loves, loves, loving | spa: ama, amando, que-ama | fra: aimer | deu: lieben, liebt
+    Refs: Matt 5:43, Matt 19:19, Matt 22:37, Matt 22:39, Mark 10:21
+  Sense 2: "beloved, having been loved" (8x)
+    Desc: Perfect passive participle used as a substantive adjective or form of address meaning 'beloved one' or 'dear one', indicating the enduring state of being loved.
+    Domain: EMOTION_ATTITUDE > Attitudes and Emotions
+    Glosses: eng: Beloved, beloved, having-been-loved | spa: Amado, amada, amada; | fra: aimer, aimés, | deu: Geliebten, lieben
+    Refs: Rom 9:25, Rom 9:25, Eph 1:6, Col 3:12, 1Thess 1:4
+  Sense 3: "to be loved (passive)" (2x)
+    Desc: Non-participial passive voice forms indicating the experience of being loved or receiving love from another.
+    Domain: EMOTION_ATTITUDE > Attitudes and Emotions
+    Glosses: eng: I-am-loved, will-be-loved | spa: será-amado, soy-amado | fra: aimer | deu: lieben
+    Refs: John 14:21, 2Cor 12:15

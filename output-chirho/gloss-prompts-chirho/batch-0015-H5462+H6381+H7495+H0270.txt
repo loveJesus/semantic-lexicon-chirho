@@ -1,0 +1,178 @@
+You are a biblical lexicographer composing glosses for a digital lexicon.
+For each lemma below, compose a JSON object. Separate objects with "---".
+
+Format for each:
+{
+  "lemma_id": "...",
+  "gloss_terse": "under 120 chars, concise definition covering the word's semantic range",
+  "gloss_readable": "2-5 sentences, 40-120 words. Don't start with 'This word'. Warm study-Bible footnote tone. Engaging, not dry.",
+  "senses": {
+    "1": "enriched 20-60 word description. Reference multilingual evidence when illuminating. Don't repeat the label verbatim.",
+    "2": "..."
+  }
+}
+
+Rules:
+- No markdown fences, just JSON objects separated by ---
+- Reference multilingual evidence naturally when it reveals something
+- gloss_readable should feel like a good study Bible footnote: helpful, clear, occasionally surprising
+- Each sense enrichment: how does the evidence support this sense? Mention 1-2 key passages when helpful.
+
+=== H5462 ===
+Language: Hebrew, POS: Conj-w | V-Qal-ConsecImperf-3fs, Occurrences: 91, Senses: 7
+
+BDB excerpt: I. סָגַר vb. shut, close (NH id., Aramaic סְגַר, ܣܓܰܪ id.; Zinj. מסגרת prison Lzb328; Ph. סגר Pi. or Hiph. deliver over; poss. Ethiopic ሠገራት (prison) guard PräBAS i. 371);— Qal Pf. 3 ms. ס׳ Gn 19:6 +, 3 pl. סָֽגְרוּ 2 Ch 29:7, סָֽגְר֑וּ ψ 17:10 (cf. Baer’s n., Ges§ 29 o Köii. 1, 535 Anm.), סָנָר֑וּ Gn 19:10 Jos 2:7; Impf. יִסְגֹּר Jb 12:14 Mal 1:10, 1 pl. cohort. נִסְגְּרָה Ne 6:10, etc.; Imv. ms. סְגֹר ψ 35:3 Is 26:20 (וּסֲגֹר Baer Ginsb), mpl. סִגְרוּ 2 K 6:32; Inf. cstr. לִסְגּוֹר Jos 2:5; Pt. act. סֹגֵר Is 22:22; f. סֹגֶּרֶת Jos 6:1 (but v. infr.); pass. סָגוּר 1 K 6:20 + 12 times;— 1. shu
+Senses:
+  Sense 1: "shut, close (Qal)" (36x)
+    Desc: To physically shut or close a door, gate, or opening; Arabic أَغْلَقَ (aghlaqa 'to close') and سَدَّ (sadda 'to block up'); Korean 닫다 (datda 'to shut/close'); Swahili -funga ('to close/lock'); include...
+    Domain: PROPERTIES_RELATIONS > Features of Objects
+    Glosses: eng: and-closed, and-he-closed, and-he-shall-shut | spa: cerrada, cerrado, cerró | fra: [וסגר], avait-ferma, et-ferma | deu: [ויסגר], [וסגר], [סגור]
+    Refs: Gen 2:21, Gen 7:16, Gen 19:6, Gen 19:10, Exod 14:3
+  Sense 2: "deliver up, hand over (Hifil/Piel)" (20x)
+    Desc: To deliver up, surrender, or hand over a person to an enemy or authority; Arabic أَسْلَمَ (aslama 'to hand over/surrender'), يُسَلِّمُ (yusallimu 'to deliver'), تَسْلِيمُ (taslimu 'delivering') — all ...
+    Domain: ECONOMICS_PROPERTY > Possess, Transfer, Exchange
+    Glosses: eng: He-delivered, You-have-delivered-me, and-I-will-deliver-up | spa: Me-entrega, Y-entregó, acaso-entregarán | fra: [הסגיר], donna-eux-en-haut, délivra-en-haut | deu: [הסגיר], [הסגירם], [והסגרתי]
+    Refs: Deut 23:15, Deut 32:30, Josh 20:5, 1Sam 17:46, 1Sam 23:11
+  Sense 3: "quarantine, shut up (Hifil causative confinement)" (12x)
+    Desc: Hifil causative: to cause to be shut up, to quarantine or isolate a person (especially in Levitical skin-disease inspection, Lev 13-14); Arabic يَحْجُزُ (yahjuzu 'to quarantine/isolate') from root حجز...
+    Domain: MOVEMENT > Linear Movement
+    Glosses: eng: and-imprisons, and-shall-shut-up, and-shall-shut-up-him | spa: encerrar, lo-encerrará, y-encerrará | fra: et-devra-fermer-en-haut, et-devra-fermer-en-haut-cela, et-devra-fermer-en-haut-lui | deu: [ויסגיר], er-soll-einsperren-hinauf-ihn, shutting-hinauf
+    Refs: Lev 13:4, Lev 13:5, Lev 13:11, Lev 13:21, Lev 13:26
+  Sense 4: "pure, refined (Qal passive participle)" (8x)
+    Desc: Of gold: refined, pure, shut up (i.e., smelted and purified); Arabic خَالِصٌ (khalisun 'pure, genuine') distinct from أَغْلَقَ; Korean 순수한 (sunsuhan 'pure'); Swahili safi ('clean, pure'); a specialize...
+    Domain: RELIGIOUS_LIFE > Religious Activities
+    Glosses: eng: pure, refined | spa: cerrado, puro | fra: fermer, pur | deu: rein, verschliessen
+    Refs: 1Kgs 6:20, 1Kgs 6:21, 1Kgs 7:49, 1Kgs 7:50, 1Kgs 10:21
+  Sense 5: "be shut, be closed (Nifal)" (8x)
+    Desc: Passive/reflexive: to be shut, to be closed, to be confined; Arabic تُغْلَقُ (tughlaqu 'it is closed'), أُغْلِقَتْ (ughliqat 'was closed'), حُبِسَتْ (hubisat 'was confined'), تُحْبَسُ (tuhbasu 'she is...
+    Domain: PROPERTIES_RELATIONS > Features of Objects
+    Glosses: eng: and-was-shut-up, and-were-shut, he-is-shut-in | spa: Y-fue-encerrada, enciérrate, se-cerrarán | fra: [יסגרו], et-fermer, et-était-fermer-en-haut | deu: [ויסגרו], [יסגרו], er-ist-schloss-in
+    Refs: Num 12:14, Num 12:15, 1Sam 23:7, Neh 13:19, Isa 45:1
+  Sense 6: "confine, imprison (Piel intensive)" (4x)
+    Desc: Piel intensive: to shut up, confine, or imprison a person; Arabic حَبَسَ (habasa 'to imprison/confine') and يُسْجَنُونَ (yusjanuna 'they are imprisoned') — distinct roots from both أَغْلَقَ 'shut' and...
+    Domain: PROPERTIES_RELATIONS > Features of Objects
+    Glosses: eng: and-are-shut, and-shut-up, shut-me | spa: encerró, me-encerró, y-se-cierren | fra: [וסגרו], et-fermer, ferma-en-haut | deu: [וסגרו], schloss-hinauf, schloss-mich
+    Refs: 1Sam 24:18, 1Sam 26:8, Eccl 12:4, Isa 24:22
+  Sense 7: "be firmly shut, be barred (Pual passive)" (3x)
+    Desc: Pual passive intensive: to be firmly shut, locked, or barred; Arabic أُغْلِقَ (ughliq 'was closed'), مُقفَلَةٌ (muqfala 'barred/bolted') — note مُقفَلَة from root ق-ف-ل 'to lock/bolt' indicating a str...
+    Domain: PROPERTIES_RELATIONS > Features of Objects
+    Glosses: eng: and-barred, are-shut-up, shut | spa: fue-cerrada, fueron-cerradas, y-atrancada | fra: [סגר], [סגרו], et-barred | deu: [סגר], [סגרו], und-barred
+    Refs: Josh 6:1, Isa 24:10, Jer 13:19
+
+=== H6381 ===
+Language: Hebrew, POS: V-Nifal-Imperf-3ms, Occurrences: 71, Senses: 7
+
+BDB excerpt: [פָּלָא71] vb. denom. Niph. etc., be surpassing, extraordinary (cf. Gerber 212);— Niph. Pf. 3 fs. נִפְלָאת ψ 118:23 (Ges§ 44 f); נִפְלְאַ֫תָה 2 S 1:26 (Köi. 610 f., 614 Ges§ 7500); 3 pl. נִפְלְאוּ Pr 30:18; Impf. יִפָּלֵא Dt 17:8 + 6 times; Pt. mpl. נִפְלָאִים ψ 139:14; fs. נִפְלֵאת Dt 30:11; pl. נִפְלָאוֹת Jos 3:5 +; sf. נִפְלְאֹתַי Ex 3:20, etc.;— †1. be beyond one’s power, difficult to do, לעשׂות 2 S 13:2; בְּעֵינֵי פ׳ Zc 8:6(×2); c. מן pers. too difficult for Dt 30:11, for י׳ Gn 18:14 (J) Je 32:17, 27. †2. be difficult to understand; c. מן pers. too difficult for ψ 131:1; Pr 30:18; Jb 42:3
+Senses:
+  Sense 1: "wonders, marvelous deeds" (44x)
+    Desc: Nifal feminine plural participle used substantivally for God's extraordinary acts of power and salvation — the most frequent usage of this root, referring to miraculous deeds in history, creation, and...
+    Domain: COMMUNICATION > Communication
+    Glosses: eng: and-His-wonders, and-his-wonders, wonders | spa: maravillas, tus-maravillas, y-maravillas-de-el | fra: et-être-merveilleux, merveille, prodiges | deu: Wunder, dein-Wunder, und-sein-Wunder
+    Refs: Exod 3:20, Exod 34:10, Josh 3:5, Judg 6:13, 1Chr 16:9
+  Sense 2: "do wondrously, make wonderful" (9x)
+    Desc: Hifil causative forms expressing the act of performing extraordinary deeds or making something wonderful — God or an agent actively causes marvelous things to happen (Arabic أَعْجَبَ/أَظْهَرَ aʿjaba/a...
+    Domain: PROPERTIES_RELATIONS > Power, Force
+    Glosses: eng: He-has-made-wonderful, He-makes-wonderful, and-doing-wondrously | spa: Y-hará-maravillosas, ha-hecho-maravillosa, hace-maravilloso | fra: [הפליא], [והפלא], et-doing-wondrously | deu: [הפלא], [הפליא], [והפלא]
+    Refs: Deut 28:59, Judg 13:19, 2Chr 2:9, 2Chr 26:15, Ps 31:21
+  Sense 3: "be marvelous, be wonderful" (6x)
+    Desc: Nifal stative/finite forms expressing that something is extraordinary, surpassing understanding or expectation — used of God's works, love, or knowledge that inspire awe (Arabic عَجِيبَة ʿajībah, Kore...
+    Domain: PROPERTIES_RELATIONS > Power, Force
+    Glosses: eng: are-too-wonderful, is-wonderful, it-is-marvelous | spa: es-maravilloso, maravillosa, maravillosas | fra: merveille, merveilleux, être-merveilleux | deu: ist-wunderbar, wonderful, wunderbar
+    Refs: 2Sam 1:26, Ps 118:23, Ps 139:14, Prov 30:18, Zech 8:6
+  Sense 4: "be too difficult, be beyond capacity" (6x)
+    Desc: Nifal forms where the sense of being extraordinary extends to being beyond human ability or comprehension — 'too hard' or 'impossible' for someone, a well-attested semantic shift from wonder to diffic...
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: and-it-was-difficult, is-too-difficult, too-difficult | spa: acaso-será-maravilloso, es-demasiado-difícil, es-difícil | fra: aussi-difficult, est-aussi-difficult, et-cela-fut-difficult | deu: [יפלא], auch-difficult, ist-auch-difficult
+    Refs: Gen 18:14, Deut 17:8, Deut 30:11, 2Sam 13:2, Jer 32:17
+  Sense 5: "fulfill a special vow" (3x)
+    Desc: Piel intensive infinitive construct meaning to accomplish or carry out an extraordinary vow — the completion side of the vow process, distinct from the Hifil initiation (Arabic لِإِيفَاءِ/لِإِتْمَامِ ...
+    Domain: PHYSICAL_ACTION > Perform, Do
+    Glosses: eng: to-fulfill, to-fulfill- | spa: para-cumplir, para-cumplir- | fra: à-accomplir, à-accomplir- | deu: zu-erfuellen, zu-erfuellen-
+    Refs: Lev 22:21, Num 15:3, Num 15:8
+  Sense 6: "make an extraordinary vow" (2x)
+    Desc: Hifil forms in vow-specific contexts meaning to set apart or make special a votive offering — technical cultic usage where the extraordinary quality applies to a religious commitment (Arabic يَنْذِرُ/...
+    Domain: AUTHORITY_RULE > Control, Rule
+    Glosses: eng: makes-extraordinary | spa: haga-extraordinario, hiciere-especial | fra: fait-un-extraordinaire | deu: macht-extraordinary
+    Refs: Lev 27:2, Num 6:2
+  Sense 7: "?" (1x)
+    Domain: PROPERTIES_RELATIONS > Power, Force
+    Glosses: eng: You-show-Yourself-marvelous- | spa: a-mostrarte-maravilloso | fra: être-merveilleux | deu: wunderbar
+    Refs: Job 10:16
+
+=== H7495 ===
+Language: Hebrew, POS: Conj-w | V-Qal-ConjPerf-3ms, Occurrences: 69, Senses: 7
+
+BDB excerpt: † רָפָא vb. heal (NH in deriv.; Ph. רפא, Syriac ܪܦܳܐ heal; on Aramaic n.pr. cpd. with רפא v. NöZMG xl (1886), 723 Lzb 369; Sab. n.pr. אלרפא Langer 1, 1 DHMZMG xxxvii (1883), 326; Arabic رَفَأَ (and رَفَا) darn, mend, repair, pacify; Ethiopic ረፍአ stitch together, mend; cf. Küchenmeister ZWiss. Th. xxx (1887), 257 ff.);— Qal Pf. 3 ms. consec. וְר׳ Is 6:10, sf. וּרְפָאָם 19:22, 1 s. sf. consec. וּרְפָאתִיו 57:19, etc.; Impf. 3 ms. יִרְפָּא 2 K 20:8 +, sf. יִרְפָּאֵנוּ Ho 6:1, 1 s. אֶרְפָּא Ho 14:5 +, אֶרְפָּה (Ges§ 75 pp) Je 3:22; 3 fpl. תִּרְפֶּינָה (id.ib. qq) Jb 5:18, etc.; Imv. ms. רְפָא Nu 1
+Senses:
+  Sense 1: "Qal: to heal" (30x)
+    Desc: Active healing performed by an agent (God, a person) in the Qal stem, encompassing all finite verb forms, infinitives, and the infinitive absolute with transitive meaning 'to heal, cure, restore to he...
+    Domain: BODY_HEALTH > Physiological Processes and States
+    Glosses: eng: Heal-me, I-will-heal, and-I-will-heal-him | spa: Sáname, para-sanar, sana | fra: [וארפא], [וירפא], et-guérir | deu: [ארפא], [לרפוא], [תרפינה]
+    Refs: Gen 20:17, Num 12:13, Deut 32:39, 2Kgs 20:5, 2Kgs 20:8
+  Sense 2: "Nifal: to be healed" (17x)
+    Desc: Passive healing in the Nifal stem, indicating that the subject undergoes or receives healing — 'to be healed, to be cured, to recover' — of persons, wounds, or afflictions.
+    Domain: BODY_HEALTH > Physiological Processes and States
+    Glosses: eng: [ketiv], and-I-will-be-healed, and-is-healed | spa: Y-fueron-sanadas, [kethiv], fuimos-sanados- | fra: a-guérit, et-est-guérit, et-furent-guérit | deu: der-heilte, du-soll-sein-heilte, hat-heilte
+    Refs: Lev 13:18, Lev 13:37, Lev 14:3, Lev 14:48, Deut 28:27
+  Sense 3: "Piel: to treat, heal thoroughly" (9x)
+    Desc: Intensive/factitive healing in the Piel stem, denoting thorough medical treatment or decisive curative action — 'to treat medically, to heal completely, to cure' — often used of prophets or physicians...
+    Domain: BODY_HEALTH > Physiological Processes and States
+    Glosses: eng: (we-healed), And-they-have-healed, I-have-healed | spa: He-sanado, Y-curan, Y-sanaron | fra: et-guérir, et-healing, guérir | deu: er-heilt, er-soll-heilen, heilen
+    Refs: Exod 21:19, Exod 21:19, 2Kgs 2:21, Jer 6:14, Jer 8:11
+  Sense 4: "Qal participle: physician, healer" (8x)
+    Desc: Substantive (nominalized) use of the Qal active participle as a professional or titular noun meaning 'physician, healer, doctor,' including divine epithets like 'your healer' (Exod 15:26).
+    Domain: BODY_HEALTH > Physiological Processes and States
+    Glosses: eng: a-healer, healers-of, in-the-healers | spa: El-que-sana, el-que-sana, en-los-médicos | fra: [ברפאים], guérir, le-guérir | deu: [רפאי], dein-healer, den-Ärzten
+    Refs: Gen 50:2, Gen 50:2, Exod 15:26, 2Chr 16:12, Job 13:4
+  Sense 5: "?" (3x)
+    Domain: DISCOURSE_NAMES > Discourse Referentials
+    Glosses: eng: to-heal-himself | spa: para-curarse | fra: [להתרפא], à-guéris-lui-même | deu: heilen, zu-heile-sich-selbst
+    Refs: 2Kgs 8:29, 2Kgs 9:15, 2Chr 22:6
+  Sense 6: "?" (1x)
+    Domain: PROPERTIES_RELATIONS > Power, Force
+    Glosses: eng: and-he-repaired | spa: y-reparó | fra: et-il-repaired | deu: und-er-repaired
+    Refs: 1Kgs 18:30
+  Sense 7: "?" (1x)
+    Domain: BODY_HEALTH > Physiological Processes and States
+    Glosses: eng: be-repaired | spa: ser-reparado | fra: guérir | deu: heilen
+    Refs: Jer 19:11
+
+=== H0270 ===
+Language: Hebrew, POS: V-Hofal-Prtcpl-mp, Occurrences: 68, Senses: 7
+
+BDB excerpt: † אָחַז68 vb. grasp, take hold, take possession (Arabic أَخَذَ, Sab. אחֿדֿ Sab. Denkm.39, Aramaic אְחַד, ܐܶܚܰܕ, Assyrian aḫâzu, Ethiopic አኀዘ )— Qal Pf. אָחַז Ex 15:14 +; אָֽחֲזָה Jb 23:11 Is 33:14; sf. אֲחָזַנִי 2 S 1:9; 1 s. sf. אֲחַזְתִּיו Ct 3:4, etc.; Impf. יֹאחֵז Jb 17:9 +; וַיֹּ֫אחֶז 2 S 6:6; 3 fs. תֹּאחֵז Dt 32:41; וַתֹּאחֶז Ru 3:15; וַתֹּחֶז 2 S 20:9; וָאֹחֵז Ju 20:6 יֹאחֵזוּן Is 13:8; sf. יֹאחֲזֵ֫מוֹ Ex 15:15; יֹאחֱזוּךְ Je 13:21, etc.;—†as פ׳ gutt. וַיֶּאֱחֹז Ju 16:3 1 K 6:10; 2 ms. תֶּאֱחֹז Ec 7:18; Inf. אֲחֹז 1 K 6:6; אֱחֹז 1 Ch 13:9 + 3 times; Imv. אֱחֹז Ex 4:4 2 S 2:21, אֶחֳזִי־ 
+Senses:
+  Sense 1: "seize, grasp, hold physically" (38x)
+    Desc: Core Qal active sense: to physically seize, grasp, take hold of, or hold onto a person or object with the hand, covering all active inflections (perfect, imperfect, imperative, infinitive, participle)...
+    Domain: PHYSICAL_ACTION > Attachment
+    Glosses: eng: I-seized-him, You-have-grasped, You-held | spa: Para-tomar, Sostuviste, Y-lo-agarraron | fra: Je-l'ai-saisi, [אחזת], [באחז] | deu: Ahas, [ויאחז], der-seizes
+    Refs: Gen 25:26, Exod 4:4, Deut 32:41, Judg 1:6, Judg 12:6
+  Sense 2: "seize figuratively (emotion overwhelms)" (10x)
+    Desc: Qal sense where an emotion, fear, or trembling is the subject that 'seizes' a person, i.e., overcomes or overwhelms them; Arabic consistently uses أَخَذَ (akhadha = take) or اسْتَوْلَى (istawla = over...
+    Domain: PHYSICAL_ACTION > Attachment
+    Glosses: eng: has-seized-me, seize, seize-me | spa: los-agarró, los-tomarán, los-tomó | fra: [אחזתם], [אחזתני], saisir | deu: [אחזה], [אחזוני], [יאחזוך]
+    Refs: Exod 15:14, Exod 15:15, 2Sam 1:9, Job 18:20, Ps 48:6
+  Sense 3: "fastened, attached, joined" (6x)
+    Desc: Hofal causative-passive and related forms meaning to be fastened, attached, joined, or bolted together (of structural elements, curtains, gates); Arabic مُثَبَّتَةً (muthabbata = fastened/fixed) and م...
+    Domain: PHYSICAL_ACTION > Attachment
+    Glosses: eng: and-he-fastened, and-hold-fast, attached | spa: sostenidas, sostenido, sujetos | fra: et-il-fastened, et-saisir, saisir | deu: [אחוזים], [מאחזים], ergriff
+    Refs: 1Kgs 6:10, 2Chr 9:18, Neh 7:3, Esth 1:6, Ezek 41:6
+  Sense 4: "be taken, be selected" (5x)
+    Desc: Qal passive participle sense: to be taken or selected (often for a purpose such as a lot or portion); Arabic يُؤْخَذُ / مَأْخُوذ (passive of akhadha = be taken); Korean 취해진 (chwihaejin = taken/selecte...
+    Domain: PHYSICAL_ACTION > Attachment
+    Glosses: eng: and-being-taken, being-taken, portion | spa: el-tomado, tomado, y-tomado | fra: et-saisir, le-portion, portion | deu: Ahas, Anteil, der-Anteil
+    Refs: Num 31:30, Num 31:47, 1Chr 24:6, 1Chr 24:6, 1Chr 24:6
+  Sense 5: "take possession of land" (5x)
+    Desc: Nifal sense meaning to take possession or acquire property/land, a legal-territorial meaning distinct from physical grasping; Arabic تَمَلَّكُوا / اِمْتَلِكُوا / فَاقْتَنَوْا (possess/acquire, entirel...
+    Domain: ECONOMICS_PROPERTY > Possess, Transfer, Exchange
+    Glosses: eng: and-take-possession, and-took-possession, then-they-shall-have-possession | spa: poseyeron, y-adquieran-propiedad, y-poseed | fra: alors-ils-devra-avoir-possession, et-prendre-possession, et-prit-possession | deu: dann-sie-soll-haben-Besitz, sie-waren-gegeben-Besitz, und-erwerbt-Besitz
+    Refs: Gen 34:10, Gen 47:27, Num 32:30, Josh 22:9, Josh 22:19
+  Sense 6: "be caught, be ensnared" (3x)
+    Desc: Nifal and Qal passive sense of being caught or trapped, as in a snare or thicket; Spanish 'trabado' (stuck), 'atrapados' (trapped); Korean 걸린 (geollin = caught/snagged); Swahili amenaswa/wanaonaswa (c...
+    Domain: PHYSICAL_ACTION > Attachment
+    Glosses: eng: caught, that-are-caught, the-ones-caught | spa: los-atrapados, que-son-atrapados, trabado | fra: caught, le-saisir, saisir | deu: ergriff, verfangen
+    Refs: Gen 22:13, Eccl 9:12, Eccl 9:12
+  Sense 7: "?" (1x)
+    Domain: PHYSICAL_ACTION > Attachment
+    Glosses: eng: covering | spa: Cubriendo | fra: saisir | deu: von-ergriff
+    Refs: Job 26:9

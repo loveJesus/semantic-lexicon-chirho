@@ -1,0 +1,139 @@
+You are a biblical lexicographer composing glosses for a digital lexicon.
+For each lemma below, compose a JSON object. Separate objects with "---".
+
+Format for each:
+{
+  "lemma_id": "...",
+  "gloss_terse": "under 120 chars, concise definition covering the word's semantic range",
+  "gloss_readable": "2-5 sentences, 40-120 words. Don't start with 'This word'. Warm study-Bible footnote tone. Engaging, not dry.",
+  "senses": {
+    "1": "enriched 20-60 word description. Reference multilingual evidence when illuminating. Don't repeat the label verbatim.",
+    "2": "..."
+  }
+}
+
+Rules:
+- No markdown fences, just JSON objects separated by ---
+- Reference multilingual evidence naturally when it reveals something
+- gloss_readable should feel like a good study Bible footnote: helpful, clear, occasionally surprising
+- Each sense enrichment: how does the evidence support this sense? Mention 1-2 key passages when helpful.
+
+=== H0639 ===
+Language: Hebrew, POS: Prep-b | N-ms, Occurrences: 276, Senses: 5
+
+BDB excerpt: I. אַף277 n.m. Gn 30:2 nostril, nose, face, anger (Assyrian appu, face Floodiii. 27, 29 cf. Hpt KAT2Gloss, Arabic أَنْفٌ, Ethiopic አንፍ nose; Aramaic ܐܰܦܶܐ, אַנְפִּין face)—abs. ψ 78:21 +; cstr. Gn 27:45 +; sf. אַפִּי Ex 22:23 +, etc.; du. אַפַּיִם Pr 14:17 +; אַפָּיו Gn 2:7 + etc.;—In Hex JE (Jos 7:1 P? 23:16 D?). 1. nostril, as organ of breathing Gn 2:7; 7:22; Jb 27:3 cf. Nu 11:20; 2 S 22:9 = ψ 18:9 cf. Is 65:5; Is 2:22; La 4:20; Ez 38:18 (del. Co) Am 4:10; רוּחַ אַפֶּיךָ (of י׳) i.e. wind Ex 15:8; cf. נִשְׁמַת רוּחַ אַפּוֹ 2 S 22:16 = ψ 18:16 (vid. also sub 3); nose sg. Ct 7:5, 9; Ez 8:17; 2
+Senses:
+  Sense 1: "anger, wrath" (210x)
+    Desc: Metaphorical extension of 'nose' to denote anger or wrath, often as a divine attribute (חֲרוֹן אַף 'burning anger'), covering all inflected and prepositional forms expressing rage, fury, or indignatio...
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: anger-of, anger-of-, the-anger-of | spa: ira-de, ira-de-, la-ira-de | fra: colère-de, colère-de-, le-colère-de | deu: Zorn-von, Zorn-von-, der-Zorn
+    Refs: Gen 30:2, Exod 4:14, Exod 32:19, Exod 32:22, Num 11:1
+  Sense 2: "nose, nostrils" (30x)
+    Desc: The literal anatomical sense referring to the nose, nostrils, or snout of a person or animal, including singular, dual, and construct forms with pronominal suffixes and prepositions.
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: Your-nostrils, from-your-nostrils, he | spa: de-vuestras-narices, en-mi-nariz, en-mi-nariz. | fra: Ton-narines, colère, dans-Son-nostrils | deu: Dein-nostrils, Zorn, auch
+    Refs: Gen 2:7, Gen 7:22, Gen 24:47, Exod 15:8, Num 11:20
+  Sense 3: "face, countenance" (21x)
+    Desc: The dual form אַפַּיִם used to denote the face or countenance, especially in expressions of prostration (נָפַל עַל אַפָּיו 'fell on his face') or facial appearance.
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: face, face-your, faces | spa: a-su-rostro, ante-rostro-de, rostro | fra: colère, face, face-ton | deu: Angesicht, Zorn, auf-Angesicht
+    Refs: Gen 3:19, Gen 19:1, Gen 42:6, Gen 48:12, Num 22:31
+  Sense 4: "slow to anger (idiom)" (14x)
+    Desc: The dual form אַפַּיִם in the idiomatic expression אֶרֶךְ אַפַּיִם 'slow to anger' (lit. 'long of nostrils'), a key divine attribute describing patience and forbearance.
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: anger, patience, temper | spa: de-iras, ira, iras | fra: colère, narine, nez | deu: Zorn, zu-Zorn
+    Refs: Exod 34:6, Num 14:18, Neh 9:17, Ps 86:15, Ps 103:8
+  Sense 5: "?" (1x)
+    Domain: QUANTITY_NUMBER > Quantity
+    Glosses: eng: double | spa: doble | fra: double | deu: double
+    Refs: 1Sam 1:5
+
+=== H7272 ===
+Language: Hebrew, POS: Prep-b | N-fdc | 2mp, Occurrences: 251, Senses: 5
+
+BDB excerpt: רֶ֫גֶל247 n.f.Dt 8:4 (on sf. m. Ct 5:3 v. KöSynt. § 14 AlbrZAW (xvi, 1896, 76) xv (1895), 316 f.), foot (NH id.; Arabic رِجْلٌ leg, foot; Aramaic רַגְלָא, ܪܶܓܠܴܐ foot; Palm. sf. רגלה Lzb 368; transp. Zinj. (pl. cstr.) לגרי Id.ib., Mand. ליגרא NöM 102; cf. Ethiopic ሰረገላ vehicle Di347);—abs. ר׳ Ex 21:24 +, רָ֑גֶל v 24 +; cstr. רֶגֶל Nu 22:25 +; sf. רַגְלִי Gn 30:30 +, etc.; du. רַגְלַ֫יִם Is 28:3 +, רַגְלָ֑יִם 2 S 4:4 +; cstr. רַגְלֵי Gn 24:32 +; sf. רַגְלָי Nu 20:19 +, רַגְלֶיךָ Ex 3:5 +, etc.; pl. רְגָלִים 23:14 + 3 times (v. 2 infr.);— 1. foot: a. human, Gn 18:4; 19:2 + 10 times of washing fe
+Senses:
+  Sense 1: "foot (body part)" (236x)
+    Desc: The physical foot of a human or animal, including uses with possessive suffixes and prepositions indicating location, contact, or proximity (at/on/to one's feet).
+    Domain: BODY_HEALTH > Body, Body Parts, and Body Products
+    Glosses: eng: feet-my, his-feet, my-feet | spa: mis-pies, pies-de-mí, sus-pies | fra: mes-pieds, mes-pieds,, mon-pied-moi | deu: Fuesse-von, mein-Fuesse, mein-Fuss
+    Refs: Gen 24:32, Gen 41:44, Exod 24:10, Lev 8:23, Lev 13:12
+  Sense 2: "?" (4x)
+    Domain: TIME > Time
+    Glosses: eng: times | spa: veces | fra: fois | deu: Zeiten
+    Refs: Exod 23:14, Num 22:28, Num 22:32, Num 22:33
+  Sense 3: "on foot (pedestrian)" (4x)
+    Desc: Adverbial usage meaning 'on foot' or 'walking' as a mode of travel, confirmed by Hindi पैदल (on foot as distinct adverb), Spanish a pie, and the prepositional construction בְּרֶגֶל.
+    Domain: VIOLENCE_CONFLICT > Military Activities
+    Glosses: eng: on-foot, on-foot-from | spa: a-pie, a-pies-de-él | fra: dans-pied, sur-pied, sur-pied-de | deu: auf-Fuss, auf-Fuss-von
+    Refs: 2Sam 15:16, 2Sam 15:17, 2Sam 15:18, Ps 66:6
+  Sense 4: "leg (lower limb)" (4x)
+    Desc: The leg of a person or animal, extending the reference from foot to the entire lower limb, as confirmed by Spanish pierna/pata, Korean 다리, and Hindi टाँगें distinct from pie/발/पैर.
+    Domain: BODY_HEALTH > Body, Body Parts, and Body Products
+    Glosses: eng: its-legs, legs-his, legs-your | spa: piernas-de-ti, piernas-suyas, sus-patas | fra: legs-son, pied, son-jambes | deu: Fuss, legs-sein, sein-legs
+    Refs: Exod 25:26, Exod 37:13, 1Sam 17:6, Ezek 16:25
+  Sense 5: "pace or step" (3x)
+    Desc: The pace, step, or gait of walking, a metonymic extension from foot to manner of movement, confirmed by Arabic خُطوة (step), Hindi गति (pace/speed), Korean 발에 맞춰 (matching pace), and Spanish paso (ste...
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: and-at-pace-of, at-foot-my, at-pace-of | spa: a-paso-de, a-pie-mío, y-a-paso-de | fra: et-à-pace-de, à-pace-de, à-pied-mon | deu: auf-meinem-Fuß, nach-dem-Fuß, und-nach-dem-Fuß
+    Refs: Gen 30:30, Gen 33:14, Gen 33:14
+
+=== H0410 ===
+Language: Hebrew, POS: Prep-l | N-ms, Occurrences: 245, Senses: 5
+
+BDB excerpt: II. אֵל n.m. (also, in n.pr. אֶל, אֱלִי; Sam. אל, Ph. אל, אלן (i.e. prob. אֵלֹן), Sab. אל, DHM Or. Congr. Leiden, 1883, As. ilu, DlW; perhaps also Arabic, Aramaic. cf. Nöl.c.; on goddess אלת Ph. Palm. Nab. Sab. (also אלהת) DHMl.c., Arabic إِلَاهَة) (pl. إِلَاهَات) FlKl.Schr. i. 154, Assyrian Allatu Jr 66, Syriac ܐܰܠܳܗܳܬܳܐ,, cf. also BaeRel 58, 90, 97, 271, 297) god, but with various subordinate applications to express idea of might;—hardly ever in prose except with defining word (adj. or gen.); its only suff. is ִי;— †1. applied to men of might and rank, אֵל גוים mighty one of the nations Ez 3
+Senses:
+  Sense 1: "God, the true God" (223x)
+    Desc: The one true God of Israel, used as a divine name or title (El) referring to YHWH, including in compound divine epithets (El Shaddai, El Elyon, El Olam, El Bethel) and with possessive suffixes (my God...
+    Domain: SUPERNATURAL > Supernatural Beings and Powers
+    Glosses: eng: El, God, a-God | spa: Dios, El, dios | fra: Dieu, El, un-Dieu | deu: El, Gott, Gott-
+    Refs: Gen 14:20, Gen 14:22, Gen 16:13, Gen 17:1, Gen 21:33
+  Sense 2: "mighty one, power" (10x)
+    Desc: Might, power, or mighty ones — used adjectivally or as a noun meaning 'strength, power, capacity' rather than as a divine title — Arabic قُوَّة/قُدْرَة (power), Korean 힘/능력 (strength/power), Swahili n...
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: gods, in-power-of, in-the-power-of | spa: a-El, al-poder-de, dioses | fra: Dieu, dans-puissance-de, pour-vers | deu: Gott, der-Gott, in-Macht-von
+    Refs: Gen 31:29, Deut 28:32, Neh 5:5, Job 41:25, Ps 29:1
+  Sense 3: "a god, deity (generic)" (9x)
+    Desc: A god or deity in the generic sense, referring to foreign gods, idols, or the concept of divinity in general (not specifically YHWH) — Arabic إِلٰه (indefinite), Korean 신, Swahili mungu (lowercase), H...
+    Domain: SUPERNATURAL > Supernatural Beings and Powers
+    Glosses: eng: El-of, among-the-gods, el | spa: Dios-de, a-dios, como-dios | fra: dieu, el, parmi-le-dieux | deu: el, gott, unter-der-Goetter
+    Refs: Exod 15:11, Exod 34:14, Deut 32:12, Deut 32:21, Ps 44:20
+  Sense 4: "El (in proper names)" (2x)
+    Desc: The element El as a component in Hebrew personal names (e.g., Asahel) or as a standalone proper noun designation, not functioning as a common noun or divine title — transliterated rather than translat...
+    Domain: DISCOURSE_NAMES > Names of Persons and Places
+    Glosses: eng: El, El- | spa: El, El- | fra: El-, Él | deu: El, El-
+    Refs: Judg 9:46, 2Sam 2:30
+  Sense 5: "?" (1x)
+    Domain: SUPERNATURAL > Supernatural Beings and Powers
+    Glosses: eng: among-the-oaks | spa: entre-las-encinas | fra: Dieu | deu: Gott
+    Refs: Isa 57:5
+
+=== H2416a ===
+Language: Hebrew, POS: Prep-l, Occurrences: 244, Senses: 5
+
+BDB excerpt: † I. חַי adj. alive, living;—ח׳ Gn 25:6 +; חָ֑י Gn 3:20 +, חֵי Am 8:14 + 15 times (Ew§ 329 explains as cstr., but Ges§ 93, R 7 n. al. as contracted abs.); f. חַיָּה Gn 1:20 +; pl. חַיִּים ψ 116:9 +;— 1. a. of God, as the living one, the fountain of life אֵל חַי Jos 3:10 (J), Ho 2:1 ψ 42:3; 84:3; אלהים חי 2 K 19:4, 16 = Is 37:4, 17; אלהים חיים Dt 5:23 1 S 17:26, 36 Je 10:10; 23:36; חי יהוה Yahweh is living ψ 18:47 = 2 S 22:47; גאלי חי my avenger is living Jb 19:25; the formula of the oath is חַי י׳ Ju 8:19 Ru 3:13 1 S 14:39, 45; 19:6; 20:3, 21; 25:34; 26:10, 16; 28:10; 29:6 2 S 4:9; 12:5; 14:11
+Senses:
+  Sense 1: "alive, living (state/attribute)" (146x)
+    Desc: The core adjectival meaning of being alive, having life, used predicatively ('he is alive'), attributively ('the living God,' 'living water'), and substantively ('the living ones,' 'land of the living...
+    Domain: BODY_HEALTH > Physiological Processes and States
+    Glosses: eng: alive, living | spa: vive, vive?, vivo | fra: vivant | deu: -, ?, am-Leben
+    Refs: Gen 9:3, Gen 25:6, Gen 43:7, Gen 43:27, Gen 43:28
+  Sense 2: "oath formula: as X lives" (87x)
+    Desc: The specialized construct-state form used in oath and adjuration expressions such as 'as YHWH lives' (חַי יְהוָה) or 'as I live' (חַי אָנִי); Arabic حَيٌّ consistently appears without case variation, ...
+    Domain: BODY_HEALTH > Physiological Processes and States
+    Glosses: eng: as-lives, as-lives-, lives | spa: Vive-, vive, vive- | fra: comme-vit, comme-vit-, vit | deu: lebendig, lebt, lebt-
+    Refs: Ruth 3:13, 1Sam 14:39, 1Sam 14:45, 1Sam 19:6, 1Sam 20:3
+  Sense 3: "living creature, animal" (8x)
+    Desc: Substantivized noun denoting a living being, creature, or animal; distinguished from the general adjectival sense by Arabic حَيَوَانٍ (a different lexeme meaning 'animal') and Swahili kiumbe hai ('liv...
+    Domain: BODY_HEALTH > Physiological Processes and States
+    Glosses: eng: living, living-thing, the-living | spa: el-viviente, ser-viviente,, viviente | fra: le-vivant, vivant, être-vivant | deu: Lebendige, Lebendigen, lebendig
+    Refs: Gen 1:28, Gen 3:20, Gen 6:19, Gen 8:21, Job 12:10
+  Sense 4: "raw, fresh, flowing" (2x)
+    Desc: Extended sense applied to meat (raw, uncooked), water (running, flowing), or vegetation (fresh, green); Arabic نَيِّئًا ('raw') confirms the culinary/physical sense distinct from 'alive,' Korean 날것 ('...
+    Domain: BODY_HEALTH > Physiological Processes and States
+    Glosses: eng: raw, the-living | spa: cruda, vivo | fra: raw, vivant | deu: der-living, raw
+    Refs: 1Sam 2:15, Ps 58:9
+  Sense 5: "?" (1x)
+    Domain: BODY_HEALTH > Physiological Processes and States
+    Glosses: eng: and-will-live | spa: y-vivirá | fra: et-fera-vis | deu: und-wird-lebe
+    Refs: 2Sam 12:22

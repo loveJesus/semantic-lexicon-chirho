@@ -1,0 +1,136 @@
+You are a biblical lexicographer composing glosses for a digital lexicon.
+For each lemma below, compose a JSON object. Separate objects with "---".
+
+Format for each:
+{
+  "lemma_id": "...",
+  "gloss_terse": "under 120 chars, concise definition covering the word's semantic range",
+  "gloss_readable": "2-5 sentences, 40-120 words. Don't start with 'This word'. Warm study-Bible footnote tone. Engaging, not dry.",
+  "senses": {
+    "1": "enriched 20-60 word description. Reference multilingual evidence when illuminating. Don't repeat the label verbatim.",
+    "2": "..."
+  }
+}
+
+Rules:
+- No markdown fences, just JSON objects separated by ---
+- Reference multilingual evidence naturally when it reveals something
+- gloss_readable should feel like a good study Bible footnote: helpful, clear, occasionally surprising
+- Each sense enrichment: how does the evidence support this sense? Mention 1-2 key passages when helpful.
+
+=== H7267 ===
+Language: Hebrew, POS: Conj-w | N-ms, Occurrences: 7, Senses: 3
+
+BDB excerpt: † רֹ֫גֶז n.m.Jb 3:26 agitation, excitement, raging;—ר׳ abs. Hb 3:2 +, cstr. Jb 37:2; sf. רָגְזֶ֑ךָ Is 14:3;—raging Jb 3:17; disquiet, turmoil Is 14:3 Jb 3:26; 14:1; raging, wrath Hb 3:2; ר׳ קֹלוֹ Jb 37:2 rumbling of his voice (i.e. thunder); of excitement of warhorse, בְּרַעַשׁ וְרֹגֶז 39:24.
+Senses:
+  Sense 1: "agitation, turmoil, trouble" (4x)
+    Desc: Inner agitation, emotional turmoil, or general trouble and restlessness, particularly in the context of human suffering. In Job 3:17 and 3:26 it denotes the cessation of turmoil in death versus the on...
+    Domain: NATURAL_WORLD > Physical Events and States
+    Glosses: eng: and-from-your-turmoil, raging, trouble | spa: turbación, y-de-tu-agitación | fra: [ומרגזך], agitation | deu: [ומרגזך], [רגז]
+    Refs: Job 3:17, Job 3:26, Job 14:1, Isa 14:3
+  Sense 2: "rage, wrath (divine or fierce)" (2x)
+    Desc: Fierce rage or divine wrath, a more intense and active sense than mere turmoil. In Job 39:24, the war-horse's fierce excitement (וְרֹגֶז 'and rage') alongside fury; in Hab 3:2, God is asked to remembe...
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: and-rage, in-wrath | spa: en-la-ira, y-furor | fra: agitation, et-agitation | deu: [ברגז], [ורגז]
+    Refs: Job 39:24, Hab 3:2
+  Sense 3: "thunder, rumbling (of God's voice)" (1x)
+    Desc: The thunderous roaring or rumbling of God's voice, a natural-phenomenon sense unique to Job 37:2. Here בְּרֹגֶז קֹלוֹ means 'in the thunder/rumbling of His voice,' describing the awesome sound of a th...
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: in-the-thunder-of | spa: en-rugido-de | fra: dans-agitation | deu: [ברגז]
+    Refs: Job 37:2
+
+=== H7565 ===
+Language: Hebrew, POS: Prep-l, Occurrences: 7, Senses: 3
+
+BDB excerpt: † I. רֶ֫שֶׁף n.m. Hb 3:5 flame, fire-bolt;—abs. ר׳ Dt 32:24 +; pl. רְשָׁפִים ψ 78:48, cstr. רִשְׁפֵי 76:4, רִשְׁפֵּי Ct 8:6; sf. רְשָׁפֶיהָ v 6;— 1. flame: ר׳ ר׳ אֵשׁ Ct 8:6 its flames (sc. of אַהֲבָה, קִנְאָה) are flames of fire; בְּנֵי ר׳ Jb 5:7 = sparks; ר׳ = pointed flame of lightning ψ 78:48 (‖ בָּרָד); ר׳ קָ֑שֶׁת 76:4 sharp flames of the bow, fig. for arrows. 2. fire-bolt of י׳, bringing pestilence and death, Dt 32:24 (cf. Dr; ‖ קֶטֶב מְרִירִי), Hb 3:5 (‖ דֶּבֶר).
+Senses:
+  Sense 1: "flame, burning coal, fire" (3x)
+    Desc: A flame or burning coal, referring to the visible combustion phenomenon. English 'flame/flames of/its flames,' Spanish 'chispa/brasas de/sus brasas' (spark/embers/its embers), Hindi 'चिनगारी/अंगारे/जल...
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: flame, flames-of, its-flames | spa: brasas-de, chispa, sus-brasas | fra: flamme, flammes, ses-flammes | deu: [רשף], [רשפי], [רשפיה]
+    Refs: Job 5:7, Song 8:6, Song 8:6
+  Sense 2: "plague, pestilence, fever" (2x)
+    Desc: A devastating disease or plague, personified in Canaanite mythology as a deity of pestilence. English 'plague/plague,' Spanish 'la plaga/fiebre' (the plague/fever), Hindi 'ज्वाला/बुखार से' (blaze/from...
+    Domain: BODY_HEALTH > Physiological Processes and States
+    Glosses: eng: plague | spa: fiebre, la-plaga | fra: flamme, plaie | deu: Plage, [רשף]
+    Refs: Deut 32:24, Hab 3:5
+  Sense 3: "lightning bolt, fiery arrow, thunderbolt" (2x)
+    Desc: A projectile of fire, whether divine lightning or a flaming arrow used as a weapon. English 'the fiery shafts of/to lightning bolts,' Spanish 'relámpagos de/a los rayos' (lightning of/to the rays), Hi...
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: the-fiery-shafts-of-, to-lightning-bolts | spa: a-los-rayos, relámpagos-de- | fra: flamme, à-flamme | deu: der-fiery-shafts-von-, zu-Blitz-bolts
+    Refs: Ps 76:3, Ps 78:48
+
+=== G2218 ===
+Language: Greek, POS: N-AMS, Occurrences: 6, Senses: 3
+
+BDB excerpt: ζῠγόν, τό, also ζυγός, ὁ, (in various senses), NT+5th c.BC+: rarely in plural, ζυγοί LXX+5th c.BC+: Delph. δυγός (which see). __I yoke of a plough or carriage, ζ. ἵππειον Refs 8th c.BC+; ὑπὸ ζυγόφιν (i.e. ζυγοῦ) λύον ἵππους Refs 8th c.BC+. 'to be in the same boat', Refs 3rd c.BC+ __I.2 metaphorically, ἐπὶ ζυγὸς αὐχένι κεῖται Refs 6th c.BC+; ἐπαυχένιον λαβεῖν ζ. Refs 5th c.BC+; δούλιον ζ. the yoke of slavery, Refs 5th c.BC+; δουλείας, ἀνάγκης ζ., Refs 5th c.BC+; ἐπιτιθέναι τινὶ ζυγὰ τοῦ μὴ.. so as to prevent.., Refs 5th c.BC+ __II crossbar of the φόρμιγξ, Refs 8th c.BC+ __II.2 ζυγὸς ἡ τῆς ἀμπέλ
+Senses:
+  Sense 1: "?" (4x)
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: yoke | spa: yugo | fra: joug | deu: Joch, ζυγόν, ζυγός
+    Refs: Matt 11:29, Matt 11:30, Acts 15:10, 1Tim 6:1
+  Sense 2: "?" (1x)
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: a-scale | spa: balanza | fra: joug | deu: Joch
+    Refs: Rev 6:5
+  Sense 3: "?" (1x)
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: in-yoke | spa: en-yugo | fra: joug | deu: Joch
+    Refs: Gal 5:1
+
+=== G2292 ===
+Language: Greek, POS: V-PPA-NMP, Occurrences: 6, Senses: 3
+
+BDB excerpt: θαρσ-έω, Attic dialect θαρρέω (compare proper name Θαρρίας Refsparticiple θέρσεισα (variant{θαρσ-}) Refs 3rd c.BC+: (θάρσος):—to be of good courage, τεθαρσήκασι λαοί Refs 8th c.BC+; ἄνευ νοῦ, σὺν νῷ, Refs 5th c.BC+; in bad sense, to be over-bold, ὕβρει θ. Refs 5th c.BC+ — Constr.: __1 absolutely, Il.[same place], etc.; θάρσει fear not! Refs 4th c.BC+; θάρσει, θυμέ Refs 5th c.BC+participle in an adverbial sense, θαρσήσας μάλα εἰπέ with good courage, Refs 8th c.BC+; τὸ τεθαρρηκός confidence, Refs 1st c.AD+: in aorist, pluck up courage, καὶ τότε δὴ θάρσησε Refs 8th c.BC+ __2 c.accusative, θάρσει 
+Senses:
+  Sense 1: "confident" (3x)
+    Desc: confident (3 occurrences across 3 original clusters)
+    Domain: EMOTION_ATTITUDE > Attitudes and Emotions
+    Glosses: eng: Being-confident, being-confident, we-are-confident | spa: Teniendo-confianza, confiando, tenemos-confianza | fra: avoir-confiance, mutig-sein | deu: mutig-sein
+    Refs: 2Cor 5:6, 2Cor 5:8, Heb 13:6
+  Sense 2: "am confident" (2x)
+    Desc: am confident, am bold (2 occurrences across 1 original clusters)
+    Domain: EMOTION_ATTITUDE > Attitudes and Emotions
+    Glosses: eng: I-am-bold, I-am-confident | spa: tengo-confianza | fra: avoir-confiance | deu: mutig-sein
+    Refs: 2Cor 7:16, 2Cor 10:1
+  Sense 3: "be bold" (1x)
+    Desc: be bold (1 occurrences across 1 original clusters)
+    Domain: EMOTION_ATTITUDE > Attitudes and Emotions
+    Glosses: eng: to-be-bold | spa: tener-confianza | fra: avoir-confiance | deu: mutig-sein
+    Refs: 2Cor 10:2
+
+=== G2298 ===
+Language: Greek, POS: Adj-NFS, Occurrences: 6, Senses: 3
+
+BDB excerpt: θαυμ-αστός, Ionic dialect θωμ-, ή, όν, wonderful, marvellous, first in neuter as adverb, θαυμαστὸν γανόωντα Refs; ἔργα μεγάλα καὶ θ. Refs 5th c.BC+; θ. λόχος γυναικῶν, of the Furies, Refs 5th c.BC+; θ. πλέγμα, in Medicine texts, the rete mirabile, Refs 5th c.BC+, Latin mirum quantum, Refs 5th c.BC+; οὐδὲν θ., εἰ.., Refs 5th c.BC+. adverb -τῶςRefs 5th c.BC+: neuter plural as adverb, Refs 5th c.BC+ __II admirable, excellent, πατήρ, υἱός, ὄλβος, Refs 5th c.BC+; ἁνὴρ γὰρ οὐ στενακτὸς.., ἀλλ᾽ εἴ τις βροτῶν θ. Refs 5th c.BC+; strange, absurd, θ. καὶ γελοῖα Refs 5th c.BC+; θαυμαστὰ ἐργάζεται behaves 
+Senses:
+  Sense 1: "?" (4x)
+    Domain: PROPERTIES_RELATIONS > Power, Force
+    Glosses: eng: marvelous | spa: maravillosa, maravillosas | fra: admirable | deu: wunderbar
+    Refs: Mark 12:11, 1Pet 2:9, Rev 15:1, Rev 15:3
+  Sense 2: "?" (1x)
+    Domain: PROPERTIES_RELATIONS > Power, Force
+    Glosses: eng: amazing | spa: asombroso | fra: admirable | deu: wunderbar
+    Refs: John 9:30
+  Sense 3: "?" (1x)
+    Domain: PROPERTIES_RELATIONS > Power, Force
+    Glosses: eng: wonderful | spa: maravillosa | fra: admirable | deu: θαυμαστὴ
+    Refs: Matt 21:42
+
+=== G2328 ===
+Language: Greek, POS: V-PPM-NMS, Occurrences: 6, Senses: 3
+
+BDB excerpt: θερμαίνω, aorist ἐθέρμηνα Refs 8th c.BC+: perfect τεθέρμαγκα Refs 5th c.AD+ see at {κεχλίαγκα}: perfect passive τεθέρμασμαι Refs 5th c.BC+: (θερμός): —warm, heat, εἰς ὅ κε θερμὰ λοετρὰ.. Ἑκαμήδη θερμήνῃ Refs 8th c.BC+:—middle, cause to be warmed, τῇ ἐρωμένῃ χαλκία δύο ὕδατος Refs 3rd c.BC+:—passive, to be heated, Refs 8th c.BC+; feel the sensation of heat, Refs 5th c.BC+; to be or grow feverish, Refs 5th c.BC+.ι; to be parched, of roots, Refs 5th c.BC+ __2 metaphorically, θ. φιλότατι νόον Refs 5th c.BC+; πολλὰ θερμαίνοι φρενί is probably falsa lectio for{π. θ. φρένα}, Refs 4th c.BC+ —passive, 
+Senses:
+  Sense 1: "?" (4x)
+    Domain: EMOTION_ATTITUDE > Attitudes and Emotions
+    Glosses: eng: warming-himself | spa: calentándose | fra: se-chauffer | deu: sich-waermen
+    Refs: Mark 14:54, Mark 14:67, John 18:18, John 18:25
+  Sense 2: "?" (1x)
+    Domain: EMOTION_ATTITUDE > Attitudes and Emotions
+    Glosses: eng: be-warmed | spa: calentaos | fra: se-chauffer | deu: sich-waermen
+    Refs: Jas 2:16
+  Sense 3: "?" (1x)
+    Domain: EMOTION_ATTITUDE > Attitudes and Emotions
+    Glosses: eng: were-warming-themselves | spa: se-calentaban | fra: se-chauffer | deu: sich-waermen
+    Refs: John 18:18

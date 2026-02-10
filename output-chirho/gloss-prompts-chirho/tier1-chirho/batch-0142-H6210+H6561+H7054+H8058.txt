@@ -1,0 +1,123 @@
+You are a biblical lexicographer composing glosses for a digital lexicon.
+For each lemma below, compose a JSON object. Separate objects with "---".
+
+Format for each:
+{
+  "lemma_id": "...",
+  "gloss_terse": "under 120 chars, concise definition covering the word's semantic range",
+  "gloss_readable": "2-5 sentences, 40-120 words. Don't start with 'This word'. Warm study-Bible footnote tone. Engaging, not dry.",
+  "senses": {
+    "1": "enriched 20-60 word description. Reference multilingual evidence when illuminating. Don't repeat the label verbatim.",
+    "2": "..."
+  }
+}
+
+Rules:
+- No markdown fences, just JSON objects separated by ---
+- Reference multilingual evidence naturally when it reveals something
+- gloss_readable should feel like a good study Bible footnote: helpful, clear, occasionally surprising
+- Each sense enrichment: how does the evidence support this sense? Mention 1-2 key passages when helpful.
+
+=== H6210 ===
+Language: Hebrew, POS: N-fsc, Occurrences: 10, Senses: 4
+
+BDB excerpt: † עֶ֫רֶשׂ n.f. Jb 7:13 couch, divan;—cstr. ע׳ Dt 3:11 +; abs. עָ֑רֶשׂ Am 3:12; sf. עַרְשִׂי Jb 7:13 +, etc.; pl. sf. עַרְשׂוֹתָם Am 6:4;—couch, divan, Am 3:12; 6:4 (‖ מִטּוֹת), + 2 S 17:28 (read עַרְשׂת מִשְׁכָּב Klo NeMarg. 18 HPS, cf. 𝔊); for lying at night Jb 7:13 ψ 6:7 (‖ מִטָּה), Pr 7:16, עֶרֶשׂ יְצוּעָ֑י ψ 132:3 the couch of (consisting in) my bed; couch of sickness ψ 41:4; marriage couch Ct 1:16; perhaps transf. to sarcophagus, as last couch עַרְשׂוֹ עֶרֶשׂ בַּרְזֶל Dt 3:11 (v. Dr).
+Senses:
+  Sense 1: "bed or couch for sleeping" (5x)
+    Desc: A bed or couch used for sleeping or resting, the general sense of the word referring to ordinary furniture for lying down at night.
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: his-bed, my-bed, my-couch | spa: lecho-mío, mi-lecho, mi-lecho, | fra: lit, mon-ערשי-moi, notre-lit | deu: [ערשי], [ערשנו], mein-couch
+    Refs: Deut 3:11, Job 7:13, Ps 6:6, Prov 7:16, Song 1:16
+  Sense 2: "bedstead or bier" (2x)
+    Desc: A large bedstead or bed-frame, as in the famous iron bed of Og king of Bashan, possibly functioning as a funerary bier or sarcophagus.
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: a-bed-of, couch-of | spa: cama-de | fra: lit, un-bed-de | deu: couch-of, ein-bed-von
+    Refs: Deut 3:11, Ps 132:3
+  Sense 3: "luxurious couch or divan" (2x)
+    Desc: An ornate couch or divan used for reclining in luxury, connoting wealth, ease, and indulgent comfort.
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: couch, their-couches | spa: lecho, sus-lechos | fra: lit | deu: [ערש], [ערשותם]
+    Refs: Amos 3:12, Amos 6:4
+  Sense 4: "sickbed" (1x)
+    Desc: A bed upon which one lies during illness, used in the specific context of suffering or being confined by disease.
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: bed-of | spa: lecho-de | fra: lit | deu: bed-von
+    Refs: Ps 41:3
+
+=== H6561 ===
+Language: Hebrew, POS: V-Qal-Prtcpl-ms, Occurrences: 10, Senses: 4
+
+BDB excerpt: † [פָּרַק] vb. tear apart, away (NH remove (load, etc.), Pi. separate, take to pieces; Arabic فَرَقَ split, divide; 𝔏 פְּרַק especially redeem, rescue; Syriac ܦܪܰܩ withdraw (intrans.), also remove, rescue; Ethiopic ፈረቀ set free);— Qal Pf. 2 ms. וּפָרַקְּתָּ֫ Gn 27:40; Impf. 3 ms. sf. וַיִּפְרְקֵנוּ ψ 136:24; Pt. act. פֹּרֵק La 5:8 ψ 7:3 tear away yoke from off (מֵעַל) neck Gn 27:10 (J); snatch from (מִן) foes, = rescue (Aramaic) La 5:8 ψ 136:24; so abs. ψ 7:3 (prefixing (וְ)אֵין, 𝔊 𝔖 Che Du We), > Hup Bae al. snatch away as prey. Pi. Impf. 3 ms. יְפָרֵק Zc 11:16 he shall tear off their hoofs; 
+Senses:
+  Sense 1: "tear off, remove" (4x)
+    Desc: To tear off or remove something attached, especially ornaments or jewelry; includes reflexive 'strip oneself of' (Hitpael) and causative tearing/breaking of a yoke (Gen 27:40; Exod 32:2-3,24).
+    Domain: PHYSICAL_ACTION > Activities Involving Clothing
+    Glosses: eng: and-tore-off, and-you-will-tear-off, tear-off | spa: Y-se-quitaron, quitad, quitáoslo | fra: déchirer-dehors, et-déchira-dehors, et-tu---déchirer-dehors | deu: dann-brichst-du-ab, und-zerriss-weg, zerreissen-weg
+    Refs: Gen 27:40, Exod 32:2, Exod 32:3, Exod 32:24
+  Sense 2: "tear apart, rend" (3x)
+    Desc: To tear apart or rend violently, used of a predator tearing prey into pieces (Nah 2:13 lion tearing; Ps 7:3 tearing like a lion; Zech 11:16 shepherd tearing hooves).
+    Domain: PHYSICAL_ACTION > Physical Impact
+    Glosses: eng: rending, tearing | spa: despedazando, despedazará | fra: arracher, briser, déchirant | deu: [יפרק], reissend, rending
+    Refs: 1Kgs 19:11, Ps 7:2, Zech 11:16
+  Sense 3: "rescue, deliver" (2x)
+    Desc: To rescue or deliver by breaking free from an oppressor's grip; figurative extension of tearing away from captivity (Ps 136:24 'rescued us from our foes'; Lam 5:8 'none to deliver').
+    Domain: MOVEMENT > Linear Movement
+    Glosses: eng: and-he-rescued-us, one-breaking-away | spa: Y-nos-rescató, quien-libere | fra: [פרק], et-briser | deu: [פרק], und-er-gerettet-uns
+    Refs: Ps 136:24, Lam 5:8
+  Sense 4: "be broken off" (1x)
+    Desc: Hitpael passive/reflexive: to be broken off or snapped, used of branches torn away (Ezek 19:12).
+    Domain: PHYSICAL_ACTION > Physical Impact
+    Glosses: eng: were-broken-off | spa: fueron-rotas | fra: arracher | deu: [התפרקו]
+    Refs: Ezek 19:12
+
+=== H7054 ===
+Language: Hebrew, POS: Prep-b, Occurrences: 10, Senses: 4
+
+BDB excerpt: † קָמָה n.f. standing grain;—abs. ק׳ Ex 22:5 +; cstr. קָמַת Dt 23:26(×2); pl. cstr. קָמוֹת Ju 15:5;—standing grain (mature) Ex 22:5 (E), Dt 16:9; 23:26(×2) Ju 15:5(×2) Is 17:5; לִפְנֵי ק׳ 2 K 19:26 = Is 37:27 dub., לְפָנַי קֻמְךָ … and join to v 28: before me is thy rising up and thy sitting down We Bur Du CheHpt. al.; cf. sub שְׁדֵפָה. (i.e. before maturity);* in fig. Ho 8:7.—cf. VogelstLandwirthsch.51.
+Senses:
+  Sense 1: "standing grain, crops in field" (7x)
+    Desc: Grain or crops standing upright in the field, the dominant sense referring to unharvested cereal crops (wheat, barley) as they grow in agricultural land.
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: into-standing-grain-of, on-the-standing-grain, standing-grain | spa: en-la-mies, en-la-mies-de, en-los-campos-de | fra: [קמה], dans-debout-grain-de, dans-se-tenant-debout-grain-de | deu: [קמה], auf-der-stehend-Getreide, der-stehend-grain
+    Refs: Exod 22:6, Deut 16:9, Deut 23:25, Deut 23:25, Judg 15:5
+  Sense 2: "growth, ripening of crops" (1x)
+    Desc: The state or process of crops growing and reaching maturity in the field, an abstract extension from the concrete image of grain standing tall.
+    Domain: PLANTS_AGRICULTURE > Plants
+    Glosses: eng: standing-grain | spa: crecer | fra: [קמה] | deu: [קמה]
+    Refs: Isa 37:27
+  Sense 3: "rising, standing upright" (1x)
+    Desc: The abstract act or state of standing or rising up, used in a non-agricultural context to denote uprightness or the act of rising.
+    Domain: MOVEMENT > Stances
+    Glosses: eng: standing | spa: levantarse | fra: debout | deu: stehend
+    Refs: 2Kgs 19:26
+  Sense 4: "stalk, stem of grain" (1x)
+    Desc: The upright stalk or stem of a cereal plant, a metonymic extension focusing on the standing part of the plant rather than the whole crop.
+    Domain: PLANTS_AGRICULTURE > Plants
+    Glosses: eng: standing-grain | spa: tallo | fra: grain | deu: [קמה]
+    Refs: Hos 8:7
+
+=== H8058 ===
+Language: Hebrew, POS: V-Qal-Imp-mp | 3fs, Occurrences: 10, Senses: 4
+
+BDB excerpt: † [שָׁמַט] vb. let drop (NH id., loosen, detach, draw away, Niph. slip off; Aramaic שְׁמַט loosen, pull away; ܫܡܰܛ draw sword, draw or pull away; Arabic سَمَطَ is hang, suspend, ii. release debtor (Ḳam), سِمْطٌ string of pearls);— Qal let drop, fall: Imv. mpl. sf. + Impf. 3 ms. sf. וַיִּשְׁמְטוּהָ (final ו dittogr.) שִׁמְטוּהָו 2 K 9:33 he said, Let her fall, and they let her fall; then fig., of letting land rest in seventh year, 2 ms. sf.: תִּשְׁמְטֶנָּה Ex 23:11 (E); Pf. 2 ms. וְשָׁמַטְתָּ֫ה Je 17:4 thou shalt let drop thy hand (read יָֽדְךָ for וּבְךְ JDMich and mod.) from (מִן) thine inher
+Senses:
+  Sense 1: "release, remit (debts/land)" (4x)
+    Desc: To let drop, release, or remit; used especially of the sabbatical year release of debts and letting land lie fallow (Qal and Hifil causative 'grant release').
+    Domain: RECONCILIATION > Reconciliation, Forgiveness
+    Glosses: eng: And-you-will-release, releasing, shall-release | spa: Y-soltarás, la-dejarás, remitirá | fra: [ושמטתה], devra-release, releasing | deu: [ושמטתה], du-soll-release-es, releasing
+    Refs: Exod 23:11, Deut 15:2, Deut 15:3, Jer 17:4
+  Sense 2: "throw down, hurl" (3x)
+    Desc: To throw or hurl a person or thing down forcefully, as in casting someone from a height (Qal active).
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: [ketiv], and-they-threw-her-down, throw-her-down | spa: Tiradla, [Tirádola], y-la-tiraron | fra: [ketiv], et-ils-jeta-sa-en-bas, jette-sa-en-bas | deu: [ketiv], und-sie-warf-ihr-hinab
+    Refs: 2Kgs 9:33, 2Kgs 9:33, 2Kgs 9:33
+  Sense 3: "stumble, slip" (2x)
+    Desc: To lose one's footing, stumble or slip; used intransitively of warriors or people faltering (Qal intransitive).
+    Domain: MOVEMENT > Linear Movement
+    Glosses: eng: stumbled, they-stumbled | spa: se-soltaron, tropezaron | fra: [שמטו], ils-trébucha | deu: [שמטו], sie-stumbled
+    Refs: 2Sam 6:6, 1Chr 13:9
+  Sense 4: "be thrown down (passive)" (1x)
+    Desc: To be hurled or cast down; the Niphal passive of the 'throw down' sense, describing persons thrown from a height.
+    Domain: MOVEMENT > Linear Movement
+    Glosses: eng: are-thrown-down | spa: Fueron-despeñados | fra: lâcher | deu: sind-thrown-down
+    Refs: Ps 141:6

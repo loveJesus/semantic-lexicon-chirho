@@ -1,0 +1,115 @@
+You are a biblical lexicographer composing glosses for a digital lexicon.
+For each lemma below, compose a JSON object. Separate objects with "---".
+
+Format for each:
+{
+  "lemma_id": "...",
+  "gloss_terse": "under 120 chars, concise definition covering the word's semantic range",
+  "gloss_readable": "2-5 sentences, 40-120 words. Don't start with 'This word'. Warm study-Bible footnote tone. Engaging, not dry.",
+  "senses": {
+    "1": "enriched 20-60 word description. Reference multilingual evidence when illuminating. Don't repeat the label verbatim.",
+    "2": "..."
+  }
+}
+
+Rules:
+- No markdown fences, just JSON objects separated by ---
+- Reference multilingual evidence naturally when it reveals something
+- gloss_readable should feel like a good study Bible footnote: helpful, clear, occasionally surprising
+- Each sense enrichment: how does the evidence support this sense? Mention 1-2 key passages when helpful.
+
+=== H2000 ===
+Language: Hebrew, POS: V-Qal-Perf-3ms | 3mp, Occurrences: 16, Senses: 2
+
+BDB excerpt: † הָמַם vb. make a noise, move noisily, confuse, discomfit (cf. [הום])— Qal Pf. וְהָמַם consec. Is 28:28; sf. הֲמָמַ֫נִי Je 51:34 Qr (Kt הֲמָמָ֫נוּ), הֲמָמָם 2 Ch 15:16; 1 s. וְהַמֹּתִ֫י Ex 23:27; Impf. וַיָּ֫הָם Ex 14:24 Ju 4:15; sf. וַיְּהֻמֵּם Jos 10:10 1 S 7:10 ψ 18:15 + 2 S 22:15 Kt (doubtless right; Qr וַיָּהֹ֑ם); 2 ms. sf. וּתְהֻמֵּם ψ 144:6; Inf. sf. לְהֻמָּם Dt 2:15 Est 9:24;— 1. move noisily, trans., drive a wagon in threshing ה׳ גִּלְגַּל עֶגְלָתוֹ וּפָרָשָׁיו Is 28:28 (‖ דושׁ). 2. confuse, discomfit, c. acc. Ex 14:24; 23:27 Jos 10:10 Ju 4:15 1 S 7:10 ψ 18:15 = 2 S 22:15 (‖ הפיץ), ψ
+Senses:
+  Sense 1: "confuse, rout, throw into panic" (15x)
+    Desc: To throw into confusion or panic, especially enemies in battle or under divine judgment; to confound, discomfit, or rout an opposing force.
+    Domain: DISCOURSE_NAMES > Discourse Referentials
+    Glosses: eng: (he-confused-me), [k], [ketiv:he-confused-me] | spa: (y-los-turbó), Y-derrotó, Y-los-confundió | fra: [(הממני)], [[הממנו]], [k] | deu: [(הממני)], [[הממנו]], [k]
+    Refs: Exod 14:24, Exod 23:27, Deut 2:15, Deut 7:23, Josh 10:10
+  Sense 2: "drive, push, thresh" (1x)
+    Desc: To drive or push something forcefully, as in driving a threshing wheel over grain (Isaiah 28:28), a concrete mechanical action distinct from the abstract sense of confusion.
+    Domain: NATURAL_WORLD > Physical Events and States
+    Glosses: eng: he-threshes-it | spa: y-empuja | fra: [והמם] | deu: [והמם]
+    Refs: Isa 28:28
+
+=== H2287 ===
+Language: Hebrew, POS: V-Qal-Prtcpl-ms, Occurrences: 16, Senses: 2
+
+BDB excerpt: † [חָגַג] vb. make pilgrimage, keep a pilgrim-feast (Arabic حَجَّ betake oneself to or towards an object of reverence; make a pilgrimage to Mecca; Sab. חגג make pilgrimage Sab. Denkm86, cf. 85; Syriac ܚܰܓܺܝ celebrate a feast. In Palm. חגגו is n.pr. VogNo. 61; cf. also Ph. n.pr. חגי, חגת);— Qal Pf. 2 mpl. חַגֹּתֶם Ex 12:14 + 2 times; Impf. 2 ms. תָּחֹג Ex 23:14 Dt 16:15; 3 mpl. יָח֫וֹגּוּ ψ 107:27 (Bö§ 1118 (2)); וְיָחֹ֫גּוּ Ex 5:1; 2 mpl. תָּחֹ֫גּוּ Lv 23:39, 41; sf. תְּהָגֻּ֫הוּ Ex 12:14; Imv. f. חָגִּי Na 2:1; Inf. cstr. חֹג Zc 14:18 + 2 times; Pt. חוֹגֵג ψ 42:5; pl. חֹגֲגִים 1 S 30:16;— 1. 
+Senses:
+  Sense 1: "celebrate a festival" (15x)
+    Desc: To observe or keep a religious festival or feast day, used of Israel's prescribed pilgrim feasts and celebrations.
+    Domain: RELIGIOUS_LIFE > Festivals
+    Glosses: eng: [obj], and-feasting, and-let-them-feast | spa: Y-celebraréis, a-celebrar, celebrarás | fra: Aggée, célébrer, et-célébrer | deu: Haggai, [ולחג], du-soll-celebrate
+    Refs: Exod 5:1, Exod 12:14, Exod 12:14, Exod 23:14, Lev 23:39
+  Sense 2: "reel, stagger" (1x)
+    Desc: To reel or stagger as if drunk, describing unsteady, lurching movement (Psalm 107:27).
+    Domain: MORAL_QUALITY > Moral and Ethical Qualities
+    Glosses: eng: they-reeled | spa: Temblaban | fra: célébrer | deu: sie-reeled
+    Refs: Ps 107:27
+
+=== H2585 ===
+Language: Hebrew, POS: N-proper-ms, Occurrences: 16, Senses: 2
+
+BDB excerpt: † חֲנוֹךְ n.pr.m. 1. son of Cain Gn 4:17(×2), 18 𝔊 Ενωχ, 𝔊L Ενως. 2. son of Jered (line of Seth), the pious Enoch, who walked with God and was taken by him Gn 5:18, 19, 21, 22, 23, 24; 1 Ch 1:3 𝔊 Ενωχ. 3. חֲנֹךְ a son of Midian Gn 25:4; 1 Ch 1:33, 𝔊 Ενωχ. 4. חֲנוֹךְ a son of Reuben Gn 46:9 Ex 6:14; Nu 26:5; 1 Ch 5:3, 𝔊 Ενωχ.
+Senses:
+  Sense 1: "Enoch (son of Cain / son of Jered)" (10x)
+    Desc: Enoch (Hebrew חֲנוֹךְ, transliterated Chanokh), referring to either of two figures in Genesis: (1) the son of Cain, after whom Cain named the first city (Gen 4:17-18), and (2) more prominently, the so...
+    Domain: DISCOURSE_NAMES > Names of Persons and Places
+    Glosses: eng: Chanokh, and-Chanokh, to-Chanokh | spa: Hanoj, a-Hanoj, y-Janoj | fra: Chanokh, et-Hénoc, à-Chanokh | deu: Chanoch, Chanochs, [וחנוך]
+    Refs: Gen 4:17, Gen 4:17, Gen 4:18, Gen 5:18, Gen 5:19
+  Sense 2: "Hanoch (son of Reuben / son of Midian)" (6x)
+    Desc: Hanoch (Hebrew חֲנוֹךְ, the same spelling as Enoch but conventionally transliterated differently to distinguish the referent), referring to: (1) a son of Midian and grandson of Abraham through Keturah...
+    Domain: DISCOURSE_NAMES > Names of Persons and Places
+    Glosses: eng: Chanokh, Hanoch, and-Hanoch | spa: Hanoc, Janoc, Janoj | fra: Hanoch, Hénoc, et-Hanoch | deu: Chanoch, Hanoch, [חנוך]
+    Refs: Gen 25:4, Gen 46:9, Exod 6:14, Num 26:5, 1Chr 1:3
+
+=== H3018 ===
+Language: Hebrew, POS: N-msc | 2fs, Occurrences: 16, Senses: 2
+
+BDB excerpt: † [יְגִיעַ] n.m. toil, product;—cstr. יְגִיעַ Gn 31:42 + 5 times; sf. יְגִיעֲךָ Dt 28:33; יְגִיעֶ֑ךָ Jb 39:11; יְגִיעֵךְ Ez 23:29; יְגִיעוֹ ψ 109:11 Ne 5:13; יְגִיעָהּ Jb 39:16 Je 20:5; וִיגִיעֲכֶם Is 55:2; וִיגִיעָם ψ 78:46; pl. sf. יְגִיעַי Ho 12:9 (but יְגִיעָיו 𝔊 Che);— 1. toil, יג׳ כַּפַּיִם Gn 31:42 (E; ‖ עֳנִי), Jb 39:11 (= husbandry), laying of eggs 39:16. 2. result of toil, product, produce, acquired property: יְגִיעַי Ho 12:9 (‖ אוֹן, on text v. supr.), Dt 28:33 (‖ פְּרִי אדמתך), ψ 78:46 (‖ יְבוּל); יְגִיעַ כַּפַּיִם 128:2, Hg 1:11 (‖ דָּגָן, תִּירוֹשׁ, יִצְהָר, אֲשֶׁר תּוֹצִיא הָאֲד
+Senses:
+  Sense 1: "toil, labor, exertion" (13x)
+    Desc: The act or effort of laborious work, toiling, or strenuous exertion.
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: and-from-labor-his, and-their-labor, and-your-labor | spa: Trabajo-de, el-trabajo-de, la-labor-de | fra: [ויגיעכם], [ומיגיעו], [יגיע] | deu: [ויגיעכם], [ומיגיעו], [יגיע]
+    Refs: Gen 31:42, Deut 28:33, Neh 5:13, Job 10:3, Job 39:11
+  Sense 2: "product of labor, gain" (3x)
+    Desc: The fruit, produce, earnings, or acquired property resulting from one's toil.
+    Domain: PHYSICAL_ACTION > Perform, Do
+    Glosses: eng: her-labor, his-labor, produce-her | spa: ganancia-de-ella, su-labor, su-trabajo | fra: [יגיעה], labeur, sa-יגיעה-elle | deu: [יגיעה], sein-Arbeit
+    Refs: Job 39:16, Ps 109:11, Jer 20:5
+
+=== H3759 ===
+Language: Hebrew, POS: Conj-w | N-msc | 3ms, Occurrences: 16, Senses: 2
+
+BDB excerpt: † I. כַּרְמֶל n.m. Is 29:17 1. plantation, garden-land. 2. fruit, garden-growth (ל + כֶּרֶם, cf. Ges§ 85, 52 Sta§ 299);—abs. כ׳ Is 16:10 + 12 times; sf. כַּרְמִלּוֹ Is 10:18 + 2 times;— 1. garden-land, Is 16:10 (‖ כְּרָמִים), 10:18 (‖ יַעַר), 29:17(×2) (opp. לְבָנוֹן, יַעַר), 32:15(×2) (opp. מִדְבָּר, יַעַר), v 16 Je 4:26 (opp. מִדְבָּר), 48:33 2 Ch 26:10 (opp. הֶהָרִים); אֶרֶץ הַכּ׳ Je 2:7 the country of garden-land, i.e. fertile; יַעַר כַּרְמִלּוֹ 2 K 19:23 = Is 37:24, the garden-like forest of it (viz. of Lebanon). On Mi 7:14 v. ii. כַּרְמֶל²" dir="rtl" >כַּרְמֶל. 2. by meton. (fresh) fruit
+Senses:
+  Sense 1: "fruitful field, garden-land" (13x)
+    Desc: A cultivated, fertile area such as an orchard, plantation, or garden-land, often used as a common noun describing productive agricultural terrain.
+    Domain: DISCOURSE_NAMES > Names of Persons and Places
+    Glosses: eng: a-fruitful-field, and-its-fruitful-field, and-the-fruitful-field | spa: (y-el-campo-fértil), [y-campo-fértil], al-Carmelo | fra: Carmel, dans-Carmel, de-Carmel | deu: Karmel, auf-dem-Karmel, der-Karmel
+    Refs: 2Kgs 19:23, Isa 10:18, Isa 16:10, Isa 29:17, Isa 29:17
+  Sense 2: "fresh grain, unripe ear" (3x)
+    Desc: Grain or ears of grain in their fresh, unparched state, referring to newly ripened or still-green cereal crops.
+    Domain: PLANTS_AGRICULTURE > Plants
+    Glosses: eng: and-fresh-grain, of-fresh-ear | spa: espiga-fresca, y-grano-fresco | fra: de-fresh-oreille, et-fresh-blé, et-fresh-grain | deu: und-fresh-Getreide, und-fresh-grain, von-fresh-Ohr
+    Refs: Lev 2:14, Lev 23:14, 2Kgs 4:42
+
+=== H4307 ===
+Language: Hebrew, POS: Art | N-fs, Occurrences: 16, Senses: 2
+
+BDB excerpt: † מַטָּרָה and (La 3:12) מַטָּרָא n.f. 1. guard, ward, prison. 2. target, mark (as kept in the eye, watched, cf. נָצַר Pr 23:26, and σκόπος (watcher, mark) from σκέπτομαι; perhaps Nab. מט[רתא] Lzb323);—always abs.:— 1. guard, ward, prison, usually חֲצַר הַמּ׳ court of guard (v. i. חָצֵר) Je 32:2, 8, 12; 33:1; 37:21(×2); 38:6, 13, 28; 39:14, 15; Ne 3:25; שַׁעַר הַמּ׳ 12:39. 2. target, mark Jb 16:12 (fig. of י׳’s chastisement), כַּמַּטָּרָא לַחֵץ La 3:12 (sim. id.); lit. only 1 S 20:20.
+Senses:
+  Sense 1: "guard, guardhouse, court of the guard" (13x)
+    Desc: The feminine noun מַטָּרָה (mattarah) in its primary sense of 'guard, guardhouse, court of the guard', referring to a detention facility or guarded enclosure, typically within a royal compound. All 13...
+    Domain: VIOLENCE_CONFLICT > Military Activities
+    Glosses: eng: the-Guard, the-guard | spa: la-cárcel, la-guardia | fra: [המטרה], cible | deu: [המטרה], das-Ziel
+    Refs: Neh 3:25, Neh 12:39, Jer 32:2, Jer 32:8, Jer 32:12
+  Sense 2: "target, mark (for shooting)" (3x)
+    Desc: The feminine noun מַטָּרָה (mattarah) in its secondary sense of 'target, mark', referring to an object set up for archery or javelin practice. Found in Job 16:12 ('he has set me up as his target') and...
+    Domain: DISCOURSE_NAMES > Names of Persons and Places
+    Glosses: eng: as-a-target, at-a-target | spa: al-blanco, como-blanco, por-blanco | fra: cible, à-un-target, à-למטרה | deu: [כמטרא], [למטרה], bei-ein-target
+    Refs: 1Sam 20:20, Job 16:12, Lam 3:12

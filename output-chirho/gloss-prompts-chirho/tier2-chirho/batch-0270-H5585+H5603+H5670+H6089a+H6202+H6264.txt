@@ -1,0 +1,115 @@
+You are a biblical lexicographer composing glosses for a digital lexicon.
+For each lemma below, compose a JSON object. Separate objects with "---".
+
+Format for each:
+{
+  "lemma_id": "...",
+  "gloss_terse": "under 120 chars, concise definition covering the word's semantic range",
+  "gloss_readable": "2-5 sentences, 40-120 words. Don't start with 'This word'. Warm study-Bible footnote tone. Engaging, not dry.",
+  "senses": {
+    "1": "enriched 20-60 word description. Reference multilingual evidence when illuminating. Don't repeat the label verbatim.",
+    "2": "..."
+  }
+}
+
+Rules:
+- No markdown fences, just JSON objects separated by ---
+- Reference multilingual evidence naturally when it reveals something
+- gloss_readable should feel like a good study Bible footnote: helpful, clear, occasionally surprising
+- Each sense enrichment: how does the evidence support this sense? Mention 1-2 key passages when helpful.
+
+=== H5585 ===
+Language: Hebrew, POS: Conj-w, Occurrences: 6, Senses: 2
+
+BDB excerpt: † [סָעִיף] n.[m.] 1. cleft. 2. branch;— 1. cleft of a crag, cstr. סְעִיף סֶלַע Ju 15:8, 11; pl. cstr. וּבִסְעִפֵֿי הַסְּלָעִים Is 2:21; סְעִיפֵי הַסּ׳ 57:5. 2. branches, boughs, pl. cstr. סְעִפֵֿי הַפֹּרִיָּה Is 17:6 (so divide, Hi Kn Di DrSm xxx Du al.) the boughs of the fruit-tree; sf. סְעִיפֶיהָ 27:10 (of ruined city; cf. קְצִירָהּ v 11).
+Senses:
+  Sense 1: "cleft, crevice (of rock)" (4x)
+    Desc: A fissure, cleft, or crevice in a rocky crag, used as a hiding place or place of concealment. In Judg 15:8,11 Samson dwells in the 'cleft of the rock of Etam' (סְעִיף סֶלַע עֵיטָם); in Isa 2:21 people...
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: and-into-crevices-of, cleft-of, clefts-of | spa: en-la-hendidura-de, la-hendidura-de, las-hendiduras-de | fra: [ובסעפי], [סעפי], cleft-de | deu: [ובסעפי], [סעפי], cleft-von
+    Refs: Judg 15:8, Judg 15:11, Isa 2:21, Isa 57:5
+  Sense 2: "branch, bough (of a tree)" (2x)
+    Desc: A branch or bough of a tree, used in prophetic metaphor. In Isa 17:6 the gleaning metaphor describes olives remaining 'on its boughs' (בִּסְעִפֶיהָ), referring to the uppermost branches of a harvested...
+    Domain: PLANTS_AGRICULTURE > Plants
+    Glosses: eng: its-branches, on-its-boughs | spa: en-sus-ramas, sus-ramas | fra: [בסעפיה], [סעפיה] | deu: [בסעפיה], [סעפיה]
+    Refs: Isa 17:6, Isa 27:10
+
+=== H5603 ===
+Language: Hebrew, POS: V-Qal-QalPassPrtcpl-ms, Occurrences: 6, Senses: 2
+
+BDB excerpt: † [סָפַן once, erron., שׂ׳] vb. cover, cover in, panel (NH סָפַן is respect, care for; Ph. מספנת roof, Lzb330; Aramaic סְפַן Ithpe. be covered, overlaid; Assyrian sapânu (sometimes šapânu !), cover, overwhelm Dl508; sapannu, concealment, obscurity, depth (of sea); Ethiopic ሰፈነ invalescere, percrebescere, praevalere, Di406);— Qal Impf. 3 ms. וַיִּסְפֹּן אֶת־הַבַּיִת גֵּבִים 1 K 6:9 and he covered in the house with beams (?); Inf. abs. סָפוֹן בָּאָ֑רֶז Je 22:14 (reading with JDMich Hi Gf Or Gie Co, חַלּוֹנָיו סָפוֹן, for MT חַלּוֹנַי וְסָפוּן, cf. DrSm xxx) covering (it) in, panelling (it) with 
+Senses:
+  Sense 1: "to cover, panel, ceiling (Qal passive participle)" (5x)
+    Desc: Covering or paneling a structure, especially roofing or ceiling with wood. All four clusters represent the same basic Qal passive participle sense of saphan meaning 'covered/paneled.' The multilingual...
+    Domain: PROPERTIES_RELATIONS > Features of Objects
+    Glosses: eng: and-covered, and-he-covered, and-paneled | spa: Y-cubierto, artesonadas, y-cubierto | fra: [וספון], et-couvrit, et-il-couvrit | deu: [וספון], [ספונים], und-bedeckte
+    Refs: 1Kgs 6:9, 1Kgs 7:3, 1Kgs 7:7, Jer 22:14, Hag 1:4
+  Sense 2: "to store, reserve, treasure up" (1x)
+    Desc: A distinct metaphorical sense of saphan meaning 'reserved/stored/treasured up,' describing something hidden or kept in store rather than physically covered. The multilingual glosses diverge sharply fr...
+    Domain: MOVEMENT > Linear Movement
+    Glosses: eng: reserved | spa: está-reservada | fra: reserved | deu: reserved
+    Refs: Deut 33:21
+
+=== H5670 ===
+Language: Hebrew, POS: V-Piel-Imperf-3mp | Pn, Occurrences: 6, Senses: 2
+
+BDB excerpt: † [עָבַט] vb. denom. take or give a pledge;— Qal Inf. cstr. לַעֲבֹט Dt 24:10 to take possession of a thing pledged (c. acc. cogn.); Impf. 2 ms. give a pledge תַּעֲבֹט Dt 15:6 (i.e. borrow). Hiph. Pf. 2 ms. וְהַעֲבַטְתָּ֫ גּוֹיִם רַבִּים v 6 and thou shalt cause many nations to give pledges (i.e. lend to them); Impf. 3 ms. sf. + Inf. abs. הַעֲבֵט תַּעֲבִיטֶנּוּ v 8 thou shalt surely lend to him (lit. as above). Pi. Impf. יְעַבְּטוּן Jo 2:7 hardly makes sense (lend on pledge = interchange?); most read יְעַבְּתוּן; יְעַוְּתוּן We, cf. Now Dr GASm; Gr יַטּוּן.
+Senses:
+  Sense 1: "lend on pledge, give as a loan (Hifil)" (4x)
+    Desc: Hifil causative forms meaning 'to lend (on pledge)' or 'to cause to give a pledge,' representing the lender's side of the transaction. In Deut 15:6 Israel is promised 'you will lend (w'ha'avatta) to m...
+    Domain: ECONOMICS_PROPERTY > Possess, Transfer, Exchange
+    Glosses: eng: and-lending, and-you-will-lend, they-swerve | spa: le-prestarás, tuercen, y-ciertamente-prestar | fra: engager, et-lending, et-tu-fera-prêter | deu: [יעבטון], du-soll-leihen-zu-ihn, und-du-wird-leihen
+    Refs: Deut 15:6, Deut 15:8, Deut 15:8, Joel 2:7
+  Sense 2: "take a pledge, borrow on security (Qal)" (2x)
+    Desc: Qal forms meaning 'to take a pledge' or 'to borrow (against security),' used in the context of Israelite debt law. In Deut 24:10 one must not enter a neighbor's house 'to take his pledge (la'avot)'; i...
+    Domain: ECONOMICS_PROPERTY > Possess, Transfer, Exchange
+    Glosses: eng: to-take-pledge, will-borrow | spa: para-tomar-en-prenda, tomarás-prestado | fra: fera-emprunter, à-prendre-pledge | deu: wird-borgen, zu-nehmen-Pfand
+    Refs: Deut 15:6, Deut 24:10
+
+=== H6089a ===
+Language: Hebrew, POS: Art | N-mp, Occurrences: 6, Senses: 2
+
+BDB excerpt: † I. עֶ֫צֶב n.[m.] pain, hurt, toil;— 1. ע׳ pain Gn 3:16 (of travail), Pr 10:22. 2. hurt (of mind), דְּבַר־ע׳ Pr 15:1 a word that hurts (opp. מַעֲנֶה־רַךְ). 3. toil Pr 14:23; pl. לֶחֶם הָעֲצָבִים ψ 127:2 bread of (gained by) toils; sf. עֲצָבֶיךָ Pr 5:10.
+Senses:
+  Sense 1: "toil, labor, work" (4x)
+    Desc: Burdensome work or productive labor, the toilsome activity that occupies a person. Multilingual glosses consistently point to the domain of work: eng: toil/your labors, spa: trabajo/los afanes/tus tra...
+    Domain: PHYSICAL_ACTION > Perform, Do
+    Glosses: eng: and-your-labors, toil | spa: dolor, los-afanes, trabajo | fra: et-ton-labeur-toi, labeur, le-travail | deu: Mühsal, [ועצביך], [עצב]
+    Refs: Ps 127:2, Prov 5:10, Prov 10:22, Prov 14:23
+  Sense 2: "pain, sorrow, hurt" (2x)
+    Desc: Physical or emotional suffering, grief, or harm -- the affective distress sense of the root עצב, distinct from its labor/toil meaning. S125643 carries the meaning of pain/sorrow: eng: in pain, spa: co...
+    Domain: BODY_HEALTH > Sensory Events and States
+    Glosses: eng: harsh, in-pain | spa: con-dolor, dolor | fra: dans-douleur, labeur | deu: [עצב], in-Schmerzen
+    Refs: Gen 3:16, Prov 15:1
+
+=== H6202 ===
+Language: Hebrew, POS: Conj-w | V-Qal-ConjPerf-2ms | 3ms, Occurrences: 6, Senses: 2
+
+BDB excerpt: † [עָרַף] vb. denom. break the neck of an animal;— Qal Pf. 2 ms. sf. וַעֲרַפְתּוֹ consec. Ex 13:13; 34:20 (JE), 3 pl. וְעָֽרְפוּ־שָׁם אֶת־הָעֶגְלָה consec. Dt 21:4; Pt. act. עוֹרֵף כֶּלֶב Is 66:3; pass. הָעֲרוּפָה הָעֶגְלָה Dt 21:6; Impf. 3 ms. יַעֲרֹף Ho 10:2 fig. of breaking down altars.
+Senses:
+  Sense 1: "break the neck" (5x)
+    Desc: To break the neck of an animal, a denominative verb from עֹרֶף (neck/nape). Used in the Qal stem for the ritual breaking of a donkey firstling's neck if not redeemed (Exod 13:13, 34:20), breaking the ...
+    Domain: BODY_HEALTH > Body, Body Parts, and Body Products
+    Glosses: eng: and-they-shall-break-neck-, and-you-shall-break-its-neck, breaking-neck-of | spa: como-si-desnucara, la-desnucada, y-desnucarás-lo | fra: et-ils-devra-briser-cou-, et-tu---briser-son-cou, le-cou-brisé | deu: Nacken, der-neck-gebrochen, und-du-soll-brechen-sein-neck
+    Refs: Exod 13:13, Exod 34:20, Deut 21:4, Deut 21:6, Isa 66:3
+  Sense 2: "break down, destroy" (1x)
+    Desc: To break down or demolish, used metaphorically of destroying altars. In Hos 10:2 God will 'break down' (יַעֲרֹף) their altars, extending the concrete neck-breaking image to destruction of cultic objec...
+    Domain: PHYSICAL_ACTION > Physical Impact
+    Glosses: eng: will-break-down | spa: romperá | fra: briser | deu: [יערף]
+    Refs: Hos 10:2
+
+=== H6264 ===
+Language: Hebrew, POS: Adj-ms, Occurrences: 6, Senses: 2
+
+BDB excerpt: † עָתִיד [��ָתוּד] adj. ready, prepared;— 1. abs. עָתִיד לַכִּידוֹר Jb 15:24 a king ready for the onset; pl. עֲתִדִים לַיּוֹם Est 3:14 ready for the day, so 8:13 Qr (Kt עתודים). 2. ready = skilled הָעֲתִידִים עֹרֵר Jb 3:8 those skilled in rousing Leviathan. 3. prepared = impending (cf. NH = future), fpl. וְחָשׁ עֲתִדֹת Dt 32:35 the impending things are hastening (‖ קָרוֹב יוֹם אֵידָם). 4. prepared = stored up, ועתידתיהם Is 10:13 Kt (Qr וַעֲתוּדֹתֵיהֶם, to differentiate it from above) and their stores have I plundered.
+Senses:
+  Sense 1: "ready, prepared" (5x)
+    Desc: Describing a state of readiness or preparedness, whether of persons who are poised for action or of things that have been made ready. Arabic 'مُسْتَعِدِّينَ/مُسْتَعِدٍّ' (mustaʿiddīn, ready/prepared) ...
+    Domain: PROPERTIES_RELATIONS > Ready, Prepared
+    Glosses: eng: ready, things-prepared, those-ready | spa: (preparados), lo-preparado, los-preparados | fra: [עתדים], [עתידים], choses-prépara | deu: Sachen-bereitete, [(עתידים)], [העתידים]
+    Refs: Deut 32:35, Esth 3:14, Esth 8:13, Job 3:8, Job 15:24
+  Sense 2: "treasures, stores (ketiv variant)" (1x)
+    Desc: A ketiv (written) reading that diverges from the qere, apparently denoting stored wealth or treasures rather than 'readiness.' Hindi 'खजानों' (khazānõ, treasures) and Swahili 'hazina zao' (their treas...
+    Domain: ECONOMICS_PROPERTY > Possess, Transfer, Exchange
+    Glosses: eng: [ketiv] | spa: [ketiv] | fra: [[ועתידתיהם]] | deu: [[ועתידתיהם]]
+    Refs: Isa 10:13

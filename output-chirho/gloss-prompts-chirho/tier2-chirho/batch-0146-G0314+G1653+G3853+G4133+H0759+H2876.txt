@@ -1,0 +1,115 @@
+You are a biblical lexicographer composing glosses for a digital lexicon.
+For each lemma below, compose a JSON object. Separate objects with "---".
+
+Format for each:
+{
+  "lemma_id": "...",
+  "gloss_terse": "under 120 chars, concise definition covering the word's semantic range",
+  "gloss_readable": "2-5 sentences, 40-120 words. Don't start with 'This word'. Warm study-Bible footnote tone. Engaging, not dry.",
+  "senses": {
+    "1": "enriched 20-60 word description. Reference multilingual evidence when illuminating. Don't repeat the label verbatim.",
+    "2": "..."
+  }
+}
+
+Rules:
+- No markdown fences, just JSON objects separated by ---
+- Reference multilingual evidence naturally when it reveals something
+- gloss_readable should feel like a good study Bible footnote: helpful, clear, occasionally surprising
+- Each sense enrichment: how does the evidence support this sense? Mention 1-2 key passages when helpful.
+
+=== G0314 ===
+Language: Greek, POS: V-AIA-3P, Occurrences: 32, Senses: 2
+
+BDB excerpt: Included with: ἀναγιγνώσκω, later ἀναγῑνώσκω: __I Epic dialect only in aorist 2 ἀνέγνων, __I.1 know well, know certainly, οὐ γάρ πώ τις ἑὸν γόνον αὐτὸς ἀνέγνωRefs 8th c.BC+ __I.1.b perceive, Refs 3rd c.BC+ __I.2 know again, recognize, Refs 8th c.BC+, acknowledge, own, ἀναγνῶναι τοὺς συγγενέαςRefs 5th c.BC+: aorist passive once in Refs 5th c.BC+ __II after Refs 8th c.BC+, future ἀναγνώσομαι uncertain in Refs: aorist 2 ἀνέγνων, Cretan dialect 3rd.pers.plural subjunctive -γνῶντιRefsperfect ἀνέγνωκα:—passive, future -γνωσθήσομαιRefs 5th c.BC+: aorist ἀνεγνώσθηνRefs 5th c.BC+: perfect ἀνέγνωσμαιRef
+Senses:
+  Sense 1: "to read" (25x)
+    Desc: To read a written text, whether Scripture, a letter, or other document, encompassing private study, public recitation, and the rhetorical citation of Scripture as authoritative proof.
+    Domain: COMMUNICATION > Communication
+    Glosses: eng: did-you-read, do-you-read, have-you-read | spa: habiendo-leído, habéis-leído, lees | fra: lire | deu: lesen, ἀνέγνωτε, ἀναγινώσκεις
+    Refs: Matt 12:3, Matt 12:5, Matt 19:4, Matt 21:16, Matt 21:42
+  Sense 2: "to be read aloud" (7x)
+    Desc: Passive voice: a letter, epistle, or written text being read aloud to others, especially in a congregational or public setting.
+    Domain: COMMUNICATION > Communication
+    Glosses: eng: being-read, is-read, it-is-read | spa: es-leído, leída, leídas | fra: lire | deu: lesen, ἀναγινωσκομένας, ἀναγινωσκόμενος
+    Refs: Acts 13:27, Acts 15:21, 2Cor 3:2, 2Cor 3:15, Col 4:16
+
+=== G1653 ===
+Language: Greek, POS: V-PPA-NMS, Occurrences: 32, Senses: 2
+
+BDB excerpt: ἐλε-έω, imperfect ἠλέουν Refs 4th c.BC+aorist ἠλέησα, Epic dialect ἐλέησα (see. below):—passive, perfect ἠλέημαι Refs 4th c.BC+: (ἔλεος):—to have pity on, show mercy to, ὁ δ᾽ ἐρύσατο καί μ᾽ ἐλέησεν Refs 8th c.BC+ Eph.5.4:—passive, Refs 5th c.BC+ __2 absolutely,feel pity, Refs 5th c.BC+
+Senses:
+  Sense 1: "show mercy or compassion" (23x)
+    Desc: To have mercy on someone, to show compassion or pity toward another, with the subject as the one who actively extends mercy (active voice in various tenses, moods, and persons).
+    Domain: EMOTION_ATTITUDE > Attitudes and Emotions
+    Glosses: eng: Have-mercy, Have-mercy-on, I-have-mercy | spa: Ten-misericordia-de, Tendré-misericordia-de, ten-misericordia-de | fra: avoir-pitié, ayez-pitié, ayez-pitié, | deu: erbarmen, erbarmet-euch, erbarmt-sich
+    Refs: Matt 9:27, Matt 15:22, Matt 17:15, Matt 18:33, Matt 18:33
+  Sense 2: "be shown mercy" (9x)
+    Desc: To be the recipient of mercy or compassion, to receive pity or clemency from another (passive voice across various tenses, moods, and persons).
+    Domain: EMOTION_ATTITUDE > Attitudes and Emotions
+    Glosses: eng: I-was-shown-mercy, having-been-shown-mercy, having-received-mercy | spa: fui-compadecido, fuisteis-compadecidos, habiendo-recibido-misericordia | fra: avoir-pitié | deu: erbarmen, erbarmt-sich
+    Refs: Matt 5:7, Rom 11:30, Rom 11:31, 1Cor 7:25, 2Cor 4:1
+
+=== G3853 ===
+Language: Greek, POS: V-PMA-2S, Occurrences: 32, Senses: 2
+
+BDB excerpt: παραγγ-έλλω, future -ελῶ: aorist 2 infinitive passive παραγγελῆναι Refs 3rd c.BC+:—pass on or transmit a message, σέλας παραγγείλασα Μακίστου σκοπαῖς (nisi to be read παρηγγάρευσε) Refs 5th c.BC+ __II give orders, give the word of command, especially of a general, Refs 5th c.BC+; τισὶ ὅπως with future, Refs 5th c.BC+; π. ὅπως ἂν.. give orders to the end that.., Refs: with accusative of things only, order, π. παρασκευὴν σίτου order corn to be supplied, NT+5th c.BC+passive, τὰ παραγγελλόμενα orders, Refs 5th c.BC+ __II.2 recommend, exhort (not so strong as κελεύω), π. τινὶ πράσσειν τι Refs 5th c
+Senses:
+  Sense 1: "command or order authoritatively" (24x)
+    Desc: To give a directive or order with authority, often from a position of leadership, whether military, apostolic, or divine, expecting compliance.
+    Domain: COMMUNICATION > Communication
+    Glosses: eng: commanded, commands, having-charged | spa: habiendo-mandado, habiendo-ordenado, le-ordenó | fra: ordonner | deu: befiehlt, gebieten
+    Refs: Matt 10:5, Matt 15:35, Mark 6:8, Mark 8:6, Mark 16:20
+  Sense 2: "charge or instruct earnestly" (8x)
+    Desc: To solemnly charge, urge, or instruct someone, often in a personal or pastoral context, carrying the weight of earnest exhortation rather than a bare command.
+    Domain: COMMUNICATION > Communication
+    Glosses: eng: I-charge, I-command, charge | spa: Manda, Te-ordeno, manda | fra: ordonner | deu: befiehlt, gebieten
+    Refs: Acts 16:18, 1Cor 7:10, 1Cor 11:17, 1Tim 1:3, 1Tim 4:11
+
+=== G4133 ===
+Language: Greek, POS: Prep, Occurrences: 32, Senses: 2
+
+BDB excerpt: πλήν, Doric dialectand Aeolic dialect πλάν Refs 5th c.BC+: preposition with genitive, except, save, πάντων Φαιήκων πλήν γ᾽ αὐτοῦ Λαοδάμαντος Refs 8th c.BC+; ὑπεγγύους π. θανάτου liable to any punishment short of death, Refs 5th c.BC+; ἐπιτρέψαι περὶ σφῶν αὐτῶν π. θανάτου save in respect of death, Refs 5th c.BC+; σκυλεύειν τοὺς τελευτήσαντας π. ὅπλων of anything save their arms, Refs 5th c.BC+; διαρπάσαι.. ἐπέτρεψε πλὴν ἀνδραπόδων to carry off all plunder save slaves, Refs 5th c.BC+ __2 later, besides, in addition to, LXX __B conjunction: __B.I with single words and phrases, especially when a n
+Senses:
+  Sense 1: "but, nevertheless, however" (23x)
+    Desc: Adversative conjunction marking contrast or concession, meaning 'but', 'nevertheless', 'however', or 'yet'. The dominant conjunctive use with 22+ occurrences, frequently introducing a counterpoint or ...
+    Domain: DISCOURSE_NAMES > Discourse Markers
+    Glosses: eng: But, But-, Nevertheless | spa: Sin-embargo, pero, sin-embargo | fra: sauf-que | deu: außer
+    Refs: Matt 11:22, Matt 11:24, Matt 18:7, Matt 26:39, Matt 26:64
+  Sense 2: "except, only, besides" (9x)
+    Desc: Preposition or limiting conjunction meaning 'except', 'only', or 'besides', restricting or excluding from a broader category. Used to mark exceptions: 'no one except' (John 8:10), 'except that the Hol...
+    Domain: DISCOURSE_NAMES > Discourse Markers
+    Glosses: eng: besides, except | spa: excepto, sin-embargo, sino | fra: cependant, cependant-, sauf-que | deu: ausser, außer
+    Refs: Mark 12:32, John 8:10, Acts 8:1, Acts 15:28, Acts 20:23
+
+=== H0759 ===
+Language: Hebrew, POS: N-mpc | 3fs, Occurrences: 32, Senses: 2
+
+BDB excerpt: † אַרְמוֹן n.m. Is 32:14 citadel—א׳ abs. Je 30:18 +; cstr. Is 25:2; pl. אַרְמְנוֹת abs. Am 3:9(×2); cstr. 1:4 +; אַרְמְנוֹתֵינוּ Mi 5:4 +, etc.—citadel, castle, palace, not used before royal period, mostly in prophets, especially common in Am & Je; citadel as securely barred (in sim.) Pr 18:19; א׳ בֵּית הַמֶּלֶךְ i.e. the citadel, stronghold 1 K 16:18, cf. 2 K 15:25; usually more general, of castles, palaces, prominent buildings; especially used in speaking of conquest, because the fine buildings would be especially object of attack & plunder, palaces of Isr. Am 6:8; of Jerusalem Is 32:14 (sg.
+Senses:
+  Sense 1: "palace, royal residence" (21x)
+    Desc: A grand dwelling or royal house, emphasizing the splendor and status of the building as a seat of power or nobility.
+    Domain: BUILDINGS > Constructions
+    Glosses: eng: and-palace, her-palaces, in-her-palaces | spa: en-nuestros-palacios, en-palacios-nuestros, en-palacios-tuyos | fra: dans-forteresse, et-palais, forteresse | deu: Palaeste, Palast, ihre-Palaeste
+    Refs: 2Chr 36:19, Ps 122:7, Isa 23:13, Isa 25:2, Isa 32:14
+  Sense 2: "citadel, fortified stronghold" (11x)
+    Desc: A fortified tower or defensive stronghold, emphasizing the military and protective function of the structure, often in prophetic contexts of judgment and destruction.
+    Domain: BUILDINGS > Constructions
+    Glosses: eng: and-his-palaces, citadel-of, fortress | spa: ciudadela-de, en-palacio-de, en-sus-palacios | fra: citadel-de, dans-citadel-de, dans-forteresse | deu: Palast, citadel-von, ihr-citadels
+    Refs: 1Kgs 16:18, 2Kgs 15:25, Ps 48:3, Ps 48:13, Prov 18:19
+
+=== H2876 ===
+Language: Hebrew, POS: Art | N-mp, Occurrences: 32, Senses: 2
+
+BDB excerpt: טַבָּח n.m. 1 S 9:23 1. cook, 2.guardsman;— †1. cook (who also killed the animal for food and served it) טַבָּח abs. 1 S 9:23, 24†. 2. elsewhere only pl. טַבָּחִים guardsmen, bodyguard (orig. royal slaughterers; v. RSOTJC 426 (262); Sem i. 1st ed., 396); always in the foll. combinations: שַׂר הַטּ׳ captain of Pharaoh’s bodyguard Gn 37:36; 39:1 (both J), 40:3, 4; 41:10, 12 (all E); רַב־ט׳ chief of Nebuchadr.’s bodyguard 2 K 25:8, 10, 11, 12, 15, 18, 20 Je 39:9 + 16 times Je (hence Aramaic רַב טַבָּחַיָּא Dn 2:14).
+Senses:
+  Sense 1: "executioner, bodyguard (royal slaughterer)" (30x)
+    Desc: The masculine noun טַבָּח in its primary biblical sense denotes a royal executioner or bodyguard — literally 'slaughterer' — a member of the king's armed retinue charged with executions and security. ...
+    Domain: VIOLENCE_CONFLICT > Military Activities
+    Glosses: eng: executioners, the-executioners | spa: guardias, la-guardia, los-guardias | fra: executioners, garde | deu: Schlaechter, executioners
+    Refs: Gen 37:36, Gen 39:1, Gen 40:3, Gen 40:4, Gen 41:10
+  Sense 2: "cook, one who slaughters and prepares food" (2x)
+    Desc: The masculine noun טַבָּח in its culinary sense denotes a cook — one who slaughters animals and prepares meat for a meal. This rare usage (2x, both in 1 Sam 9:23-24) describes the cook whom Samuel ins...
+    Domain: VIOLENCE_CONFLICT > Violence, Harm, Destroy, Kill
+    Glosses: eng: the-cook, to-the-cook | spa: al-cocinero, el-cocinero | fra: le-cook, à-le-cook | deu: der-cook, zu-der-cook
+    Refs: 1Sam 9:23, 1Sam 9:24

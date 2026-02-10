@@ -1,0 +1,143 @@
+You are a biblical lexicographer composing glosses for a digital lexicon.
+For each lemma below, compose a JSON object. Separate objects with "---".
+
+Format for each:
+{
+  "lemma_id": "...",
+  "gloss_terse": "under 120 chars, concise definition covering the word's semantic range",
+  "gloss_readable": "2-5 sentences, 40-120 words. Don't start with 'This word'. Warm study-Bible footnote tone. Engaging, not dry.",
+  "senses": {
+    "1": "enriched 20-60 word description. Reference multilingual evidence when illuminating. Don't repeat the label verbatim.",
+    "2": "..."
+  }
+}
+
+Rules:
+- No markdown fences, just JSON objects separated by ---
+- Reference multilingual evidence naturally when it reveals something
+- gloss_readable should feel like a good study Bible footnote: helpful, clear, occasionally surprising
+- Each sense enrichment: how does the evidence support this sense? Mention 1-2 key passages when helpful.
+
+=== G0649 ===
+Language: Greek, POS: V-APP-DNS, Occurrences: 133, Senses: 3
+
+BDB excerpt: ἀποστέλλω, future -στελῶ: aorist ἀπέστειλα (see. below):— send off or away from, μή μ᾽.. τῆσδ᾽ ἀποστείλητε γῆςRefs 5th c.BC+; send away, banish, τὰ δίκαιαRefs 5th c.BC+:—passive, go away, depart, Refs 5th c.BC+ __II dispatch, on some mission or service, Refs 5th c.BC+; frequently of messengers or forces, Refs 5th c.BC+; οἰκιστάς (as a form of banishment), Refs 5th c.BC+:—passive, with infinitive, οἱ ἀποσταλέντες στρατεύεσθαιRefs __III put off, doff, θαἰμάτιαRefs 5th c.BC+ __IV intransitive, retire, withdraw, of the sea, Refs 5th c.BC+; of persons, οἴκαδεRefs 4th c.BC+
+Senses:
+  Sense 1: "send on a mission" (112x)
+    Desc: To dispatch someone with authority or commission, especially to send a messenger, servant, or agent on a specific errand or mission (the core meaning of ἀποστέλλω, from which ἀπόστολος derives).
+    Domain: MOVEMENT > Linear Movement
+    Glosses: eng: He-has-sent, has-sent, he-sent | spa: Ha-enviado, envió, los-envió | fra: envoyer | deu: senden, sendet
+    Refs: Matt 10:5, Matt 14:35, Matt 20:2, Matt 21:1, Matt 21:34
+  Sense 2: "be sent / commissioned" (19x)
+    Desc: Passive: to be sent forth or dispatched, to be commissioned as an emissary or representative (the divine or human passive of the commissioning sense).
+    Domain: MOVEMENT > Linear Movement
+    Glosses: eng: Having-been-sent, I-was-sent, Sent | spa: Enviado, enviado, enviados | fra: envoyer | deu: senden, sendet
+    Refs: Matt 15:24, Matt 23:37, Luke 1:19, Luke 1:26, Luke 4:43
+  Sense 3: "send away / dismiss" (2x)
+    Desc: To send someone away from one's presence, to dismiss or send back, with emphasis on departure rather than the mission itself.
+    Domain: MOVEMENT > Linear Movement
+    Glosses: eng: he-send-away, sent-away | spa: enviara, enviaron | fra: envoyer | deu: senden
+    Refs: Mark 5:10, Mark 12:3
+
+=== H7604 ===
+Language: Hebrew, POS: Prep-l | V-Hifil-Inf, Occurrences: 133, Senses: 3
+
+BDB excerpt: I. שָׁאַר133 vb. remain, be left over (syn. יָתַר) (NH id.; 𝔗 שְׁאַר; Sab. סאר remaining HomChr 124; Arabic سَأَرَ, سَىِٔرَ be left over, Lane, cf. LagGGN 1889, 297; Old Aramaic שאר remainder, Nab. שארית, v. Lzb371 SAC110);— †Qal Pf. 3 ms. שׁ׳ 1 S 16:11 the youngest still remains. Niph.93 Pf. 3 ms. נִשְׁאַר Gn 47:18 +; 3 fs. נִשְׁאֲרָה Jos 13:1; Dn 10:8, etc.; Impf. 3 ms. יִשָּׁאֵר Is 11:11, 16, וַיִּשָּׁ֫אֶר Gn 7:23, etc.; Pt. נִשְׁאָר Gn 32:9 +, וְנֵאשֲׁאַר Ez 9:8 (read וְנִשְׁאָר Hi Toy Krae, וָאֶשָּׁ֫אֶר Sm; del. 𝔊 Hi Co Siegf Berthol); f. נִשְׁאָרָה 2 K 19:30 = Is 37:31, נִשְׁאֶ֫רֶת Ex 10
+Senses:
+  Sense 1: "remain, be left over (Nifal)" (53x)
+    Desc: The core Nifal meaning of שׁאר: to remain, be left (over), survive after destruction or departure — used of persons, animals, or things that continue to exist when others have perished or been removed...
+    Domain: GEOGRAPHY_SPACE > Existence in Space
+    Glosses: eng: and-she-was-left, remained, survived | spa: quedaba, quedaron, quede | fra: et-elle-était-gauche, ils-resta, remained | deu: blieb, sie-blieb, uebriggeblieben
+    Refs: Gen 7:23, Gen 42:38, Gen 47:18, Exod 8:9, Exod 8:11
+  Sense 2: "the remaining ones, remnant (Nifal participle)" (42x)
+    Desc: Substantival use of the Nifal participle of שׁאר: the remaining (ones), the remnant, survivors — often a technical/theological term for those who survive divine judgment or military defeat; Arabic الْ...
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: and-the-ones-remaining, the-ones-remaining, the-remaining | spa: el-que-quedó, la-que-queda, las-restantes | fra: et-reste, le-remaining, le-restant | deu: der-bleibend, der-remaining, uebriggebliebener
+    Refs: Gen 14:10, Gen 32:8, Exod 10:5, Lev 5:9, Lev 26:36
+  Sense 3: "leave remaining, spare (Hifil)" (38x)
+    Desc: The causative Hifil meaning of שׁאר: to leave remaining, leave over, let survive, spare — the agent deliberately causes someone or something to remain; Arabic أَبْقَى / يُبْقِ, Korean 남기다, Swahili -ac...
+    Domain: GEOGRAPHY_SPACE > Existence in Space
+    Glosses: eng: he-left, he-left-, left | spa: dejaban, dejar, dejaron | fra: gauche, il-gauche, il-gauche- | deu: er-linke, er-links, er-links-
+    Refs: Exod 10:12, Num 9:12, Num 21:35, Deut 2:34, Deut 3:3
+
+=== H0571 ===
+Language: Hebrew, POS: N-fs, Occurrences: 127, Senses: 3
+
+BDB excerpt: † אֱמֶת n.f. firmness, faithfulness, truth (contr. for אֱמֶנֶת, from אָמֵן) Gn 24:48 + 106 times; sf. אֲמִתּוֹ, אֲמִתְּךָ ψ 91:4 + 18 times 1. reliability, sureness: דֶּרֶךְ אֱמֶת sure way Gn 24:48 (J); שׂכר אמת sure reward Pr 11:18; אות אמת sure token Jos 2:12 (J); זֶרַע אמת Je 2:21. 2. stability, continuance: שָׁלוֹם וֶאֱמֶת peace and stability Is 39:8 (= 2 K 20:19) Est 9:30 Je 33:6 Zc 8:19, cf. שׁלום אמת Je 14:13. 3. faithfulness, reliableness: (a) of men אִישׁ אֱמֶת faithful man Ne 7:2; אנשׁי אמת Ex 18:21 (E); הָלַךְ בֶּאֱמֶת walk in faithfulness, faithfully 1 K 2:4; 3:6 2 K 20:3 Is 38:3 c
+Senses:
+  Sense 1: "truth, verity" (98x)
+    Desc: Factual truth or correctness, what is real and accurate, often in phrases like 'in truth' or 'the truth', referring to objective reality or reliable information.
+    Domain: PROPERTIES_RELATIONS > True, False
+    Glosses: eng: are-true, are-truth, is-truth | spa: es-verdad, la-verdad, verdad | fra: le-vérité, vérité | deu: Wahrheit, der-Wahrheit
+    Refs: Gen 24:49, Gen 47:29, Exod 34:6, Josh 2:14, Judg 9:15
+  Sense 2: "faithfulness, reliability" (27x)
+    Desc: Trustworthiness, dependability, and steadfast loyalty, especially as a divine attribute or covenant quality, often in construct or suffixed forms referring to God's or a person's faithfulness.
+    Domain: PROPERTIES_RELATIONS > True, False
+    Glosses: eng: Your-faithfulness, and-Your-truth, and-his-truth | spa: en-tu-verdad, en-verdad, en-verdad-de-ti | fra: dans-ta-vérité, de-vérité, et-son-vérité | deu: Wahrheit, dein-Wahrheit, in-dein-Wahrheit
+    Refs: Gen 24:27, Gen 32:10, Josh 2:12, Josh 24:14, 2Chr 32:1
+  Sense 3: "true, genuine" (2x)
+    Desc: Adjectival or qualifying use meaning 'true' or 'genuine', describing something as real, authentic, or in accordance with truth, often modifying another noun.
+    Domain: PROPERTIES_RELATIONS > True, False
+    Glosses: eng: and-the-faithful, and-true | spa: y-lo-verdadero, y-verdad | fra: [ואמת], et-vérité | deu: und-Wahrheit
+    Refs: 2Chr 31:20, Dan 10:1
+
+=== H3581b ===
+Language: Hebrew, POS: N-msc | 3ms, Occurrences: 126, Senses: 3
+
+BDB excerpt: † II. כֹּחַ and (†Dn 11:6) כּוֹחַ n.m. Dt 4:37 strength, power (NH id.);—כ׳ abs. Dt 8:18 +; cstr. Nu 14:17 +; sf. כֹּחִי Gn 31:6 +; כֹּחֲךָ Ju 16:6 +, כֹּחֶ֑ךָ Pr 5:10, כֹּחֶ֑כָה Pr 24:10, etc.; always sg.;— 1. human strength: a. physical, of Samson Ju 16:5, 6, 9, 15, 17, 19, 30; strength in toil Is 44:12 (זְרוֹעַ כֹּתוֹ), v 12 Lv 26:20 Ne 4:4; of manly vigour (in procreation) אַתָּה כֹּחִי וְרֵאשִׁית אוֹנִי Gn 49:3 (poem in J; said to Reuben); vigour in gen. Jos 14:11(×2) (JE), Ju 6:14 1 S 28:22 Jb 6:11, 12 ψ 31:11; 38:11; 71:9; 102:24; Pr 20:29; as sustained by food 1 K 19:8; lack of such vi
+Senses:
+  Sense 1: "strength, force, might" (115x)
+    Desc: Physical or general strength, force, or might inherent in a person, animal, or entity; the raw power exerted in action or possessed as an attribute, rendered consistently as Arabic quwwa, Korean him, ...
+    Domain: PROPERTIES_RELATIONS > Power, Force
+    Glosses: eng: power, power-, strength | spa: de-fuerza,, fuerza, fuerza-de | fra: force, puissance | deu: Kraft, Macht, Staerke
+    Refs: Gen 49:3, Deut 8:17, Deut 8:18, Judg 16:17, 1Sam 28:20
+  Sense 2: "power, ability, capability" (10x)
+    Desc: The capacity or ability to accomplish something, often referring to divine power or human capability to perform a task; distinguished from raw strength by Korean neungnyeok, Arabic al-qudra, Swahili u...
+    Domain: PROPERTIES_RELATIONS > Power, Force
+    Glosses: eng: according-to-their-ability, by-His-power, by-his-power | spa: Según-su-capacidad, con-mi-fuerza, con-poder | fra: dans-force, dans-sa-force, force | deu: Kraft, durch-dein-Macht, ist-mit-Macht
+    Refs: Exod 9:16, Deut 9:29, 1Chr 26:8, Ezra 2:69, Ps 29:4
+  Sense 3: "?" (1x)
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: and-from-your-wealth | spa: y-de-vuestra-fuerza | fra: et-votre-force-vous | deu: und-Kraft
+    Refs: Job 6:22
+
+=== H6106 ===
+Language: Hebrew, POS: Prep-b | N-fpc | 1cs, Occurrences: 126, Senses: 3
+
+BDB excerpt: I. עֶ֫צֶם125 n.f. ψ 35:10; Jb 19:20 (c. pron. masc. Ez 37:5, 6 etc., cf. Albr.ZAW xvi (1896), 73) bone, substance, self;—abs. ע׳ Gn 2:23 +; עָ֑צֶם Pr 15:30; 16:24; cstr. עֶצֶם Ex 24:10 +; sf. עַצְמִי Jb 19:20 +, etc.; pl. עֲצָמוֹת 2 K 23:16 +; cstr. עַצְמוֹת Jos 24:22 +; sf. עַצְמֹתַי Jb 4:14 +, etc.; also עֲצָמִים Ez 24:4 +, sf. עֲצָמַי Gn 2:23 +, etc.;— 1. bone: a. of living pers. Mi 3:2, 3 (hyperb.), Jb 10:11; 19:20 La 4:8 ψ 102:6; Ec 11:5 +; fig. of close relationship †עֶצֶם מֵעֲצָמַי Gn 2:23, cf. 29:14 (both J), Ju 9:2; 2 S 5:1 = 1 Ch 11:1; 2 S 19:13, 14 (all + בָּשָׂר). b. ע׳ + בָּשָׂר =
+Senses:
+  Sense 1: "bone(s), skeletal part" (105x)
+    Desc: Physical skeletal bone of a human or animal, the dominant sense of the lemma covering singular and plural, all possessive suffixes, and all prepositional prefixes; consistently glossed across language...
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: bones-of, my-bones, the-bones-of | spa: huesos-de, huesos-de-, los-huesos-de | fra: mes-os, mon-os, os | deu: Knochen, Knochen-von, mein-Gebein
+    Refs: Exod 13:19, Exod 13:19, Josh 24:32, 2Sam 21:12, 2Sam 21:12
+  Sense 2: "selfsame, that very" (17x)
+    Desc: Emphatic identity/intensifier sense used in construct phrases like בְּעֶצֶם הַיּוֹם הַזֶּה ('on that very day'), marking exactness or precise identity; cross-linguistic evidence decisively distinguish...
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: bone-of, essence-of-, in-very | spa: En-esencia-de, En-hueso-de, en-aquel-mismo | fra: dans-très, os, sur-le-même | deu: Knochen, [בעצם], an-eben-
+    Refs: Gen 7:13, Gen 17:23, Gen 17:26, Exod 12:17, Exod 12:41
+  Sense 3: "substance, strength, essence" (4x)
+    Desc: The figurative extension of 'bone' to mean substance, body, fullness, or essential nature of something, used in contexts emphasizing corporeal completeness or essential quality rather than literal ske...
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: and-like-substance-of, in-body, in-strength-of | spa: de-cuerpo, en-la-plenitud-de, substancia-de | fra: dans-os, et-comme-substance-de, le-os-de | deu: Knochen, der-Knochen-von, in-Knochen
+    Refs: Exod 24:10, Josh 10:27, Job 21:23, Lam 4:7
+
+=== H2534 ===
+Language: Hebrew, POS: Conj-w | N-fsc | 1cs, Occurrences: 124, Senses: 3
+
+BDB excerpt: חֵמָה (once חֵמָא)121 n.f. heat, rage (for יְחֵמָה; NH id.; Aramaic יַחְמָא poison, ܚܶܡܬܳܐ heat, wrath, poison, BrockLex. 116, also Nö§ 105; Arabic حُمَةٌ poison, Lane 651; Assyrian imtu, spittle, breath, poison, DlHWB 78 Muss-ArnoltCD 62)—abs. חֵמָה Na 1:2 + 39 times; חֵמָא †Dn 11:44; cstr. חֲמַת Gn 27:44 + 25 times; sf. חֲמָתִי Je 4:4 + 36 times; חֲמָֽתְךָ Je 10:25 + 8 times; חֲמָתֶ֑ךָ ψ 88:8; 89:47; חֲמָתוֹ Is 51:17 + 8 times; חֲמָתָם Jb 6:4; pl. חֵמוֹת Pr 22:24, חֵמֹת ψ 76:11;— 1. heat: a. fever, חֲמַת מִיַּיִן Ho 7:5 fever from wine, wine-fever (on st. cstr. v. Ges§ 130, 1). b. venom, poi
+Senses:
+  Sense 1: "wrath, fury, rage" (117x)
+    Desc: Intense anger or indignation, both divine and human, encompassing wrath, fury, and rage in all grammatical inflections and prepositional contexts.
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: Wrath, my-wrath, wrath | spa: Furor, furia, furia-de-mí | fra: fureur | deu: Grimm
+    Refs: 2Kgs 22:17, 2Chr 12:7, 2Chr 34:25, Job 19:29, Job 36:18
+  Sense 2: "venom, poison" (6x)
+    Desc: Poisonous substance or venom, especially of serpents, a homonymous meaning entirely distinct from the wrath sense.
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: the-venom-of-, their-venom, venom- | spa: su-veneno, veneno-, veneno-de | fra: fureur, leur-fureur-eux, venom-de | deu: Grimm, der-venom-von-, venom-
+    Refs: Deut 32:24, Deut 32:33, Job 6:4, Ps 58:4, Ps 58:4
+  Sense 3: "?" (1x)
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: with-heat-of | spa: con-ardor-de | fra: Hamath | deu: Grimm
+    Refs: Hos 7:5

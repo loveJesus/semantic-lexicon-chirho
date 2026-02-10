@@ -1,0 +1,115 @@
+You are a biblical lexicographer composing glosses for a digital lexicon.
+For each lemma below, compose a JSON object. Separate objects with "---".
+
+Format for each:
+{
+  "lemma_id": "...",
+  "gloss_terse": "under 120 chars, concise definition covering the word's semantic range",
+  "gloss_readable": "2-5 sentences, 40-120 words. Don't start with 'This word'. Warm study-Bible footnote tone. Engaging, not dry.",
+  "senses": {
+    "1": "enriched 20-60 word description. Reference multilingual evidence when illuminating. Don't repeat the label verbatim.",
+    "2": "..."
+  }
+}
+
+Rules:
+- No markdown fences, just JSON objects separated by ---
+- Reference multilingual evidence naturally when it reveals something
+- gloss_readable should feel like a good study Bible footnote: helpful, clear, occasionally surprising
+- Each sense enrichment: how does the evidence support this sense? Mention 1-2 key passages when helpful.
+
+=== H0329 ===
+Language: Hebrew, POS: Art | N-ms, Occurrences: 6, Senses: 2
+
+BDB excerpt: † אָטָד n.m. Ju 9:15 bramble, buck-thorn (cf. Che ψ 58:10) (rhamnus, Arabic أَطَد, Assyrian eṭidu v. DlW, No. 153, Aramaic אַטְדָּא, ܐܛܕܐ cf. Löw No. 15) contr. עֵצִים Ju 9:14, 15(×2) (personif., in fable); ψ 58:10 as fuel (in fig., cf. Che); בְּגֹרֶן הָא׳, n.loc., Gn 50:10, 11 (v. גֹּרֶן & אבל מצרים).
+Senses:
+  Sense 1: "thornbush, bramble (plant)" (4x)
+    Desc: A thorny bush or bramble used in Jotham's fable (Judg 9:14-15) as the worthless plant that agreed to reign over the trees when the olive, fig, and vine refused. The common noun refers to a specific th...
+    Domain: PLANTS_AGRICULTURE > Plants
+    Glosses: eng: the-thornbush | spa: espino, la-zarza | fra: buisson-d'épines, le-thornbush | deu: der-thornbush
+    Refs: Judg 9:14, Judg 9:15, Judg 9:15, Ps 58:9
+  Sense 2: "Atad (place name)" (2x)
+    Desc: A proper place name (גֹּרֶן הָאָטָד, 'threshing-floor of Atad') located beyond the Jordan where Jacob's funeral procession mourned for seven days (Gen 50:10-11). Though etymologically related to the c...
+    Domain: PLANTS_AGRICULTURE > Plants
+    Glosses: eng: the-Atad | spa: el-Atad | fra: le-Atad | deu: des-Atad
+    Refs: Gen 50:10, Gen 50:11
+
+=== H0380 ===
+Language: Hebrew, POS: Prep-b | N-msc, Occurrences: 6, Senses: 2
+
+BDB excerpt: † אִישׁוֹן n.[m.] pupil of eye (cf. DlHA 9 PrätLOPh, Feb. 1884, but also Ar. إِنْسَانٌ العَيْنِ, & NöZMG 1886, 739)—א׳ all cstr.—א׳ עַיִן Dt 32:10 Pr 7:2; א׳ בַּת־עַיִן ψ 17:8 (in all, sim. of preciousness); = middle, midst of night בְּא׳ לַיְלָה וַאֲפֵלָה Pr 7:9; בְּא׳ חֹשֶׁךְ 20:20 Kt i.e. in deep darkness (Qr בֶּאֱשׁוּן v. Now).
+Senses:
+  Sense 1: "pupil of the eye (apple of the eye)" (3x)
+    Desc: The diminutive noun 'ishon' meaning 'little man' or 'pupil of the eye,' used figuratively in the phrase 'apple of the eye' to denote something precious and carefully guarded (Deut 32:10, Ps 17:8, Prov...
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: as-the-apple-of, like-pupil-of | spa: como-la-niña-de, como-pupila-de | fra: comme-pupil-de, comme-pupille | deu: [כאישון], wie-der-apple-von, wie-pupil-von
+    Refs: Deut 32:10, Ps 17:8, Prov 7:2
+  Sense 2: "blackness, darkness (of night)" (3x)
+    Desc: The extended meaning of 'ishon' referring to the darkest part or the 'pupil' of the night — i.e., the blackest hour of deep darkness (Prov 7:9, Job 24:15). Multilingual evidence uniformly shifts from ...
+    Domain: NATURAL_WORLD > Physical Events and States
+    Glosses: eng: (in-blackest), [in-blackest], in-the-blackness-of | spa: (en-lo-oscuro-de), [en-la-pupila], en-oscuridad-de | fra: dans-pupille | deu: [(באשון)], [[באישון]], [באישון]
+    Refs: Prov 7:9, Prov 20:20, Prov 20:20
+
+=== H0422 ===
+Language: Hebrew, POS: V-Qal-Perf-2fs, Occurrences: 6, Senses: 2
+
+BDB excerpt: † II. אָלָה vb. swear, curse (cf. I. אלה? so Thes LagOr ii. 3)— Qal Pf. 1 K 8:31 (= 2 Ch 6:22 all Vrss Th Bö Bä Kp reading וְאָלָה); אָלִית Ju 17:2; Inf. abs. אָלֹה Ho 4:2; אָלוֹת Ho 10:4. 1. swear, take oath before God 1 K 8:31 (= 2 Ch 6:22); in covenants Ho 4:2; 10:4 (falsely). 2. curse Ju 17:2. Hiph. Impf. וַיֹּ֫אֶ֗ל 1 S 14:24; Inf. לְהַאֲלֹתוֹ 1 K 8:31 = 2 Ch 6:22 adjure, put under oath.
+Senses:
+  Sense 1: "swear an oath, bind by oath (Qal/Hiphil)" (5x)
+    Desc: To swear a solemn oath or to cause someone to swear an oath. In the Qal stem, the verb expresses the act of taking or pronouncing an oath: 'an oath is laid upon him' (2 Chr 6:22 alah, Qal perfect 3ms,...
+    Domain: COMMUNICATION > Communication
+    Glosses: eng: Swearing, an-oath, and-he-bound-by-oath | spa: Maldecir, juramentos, para-hacerle-jurar | fra: ces, ceux-ci, et-il-lié-par-serment | deu: [אלות], diese, und-er-bound-bei-oath
+    Refs: 1Sam 14:24, 1Kgs 8:31, 2Chr 6:22, Hos 4:2, Hos 10:4
+  Sense 2: "curse, utter an imprecation" (1x)
+    Desc: To curse, to pronounce an imprecation or malediction against someone. This sense is distinct from oath-swearing in that the speech-act is directed against a person with hostile intent rather than invo...
+    Domain: COMMUNICATION > Communication
+    Glosses: eng: cursed | spa: maldijiste | fra: maudit | deu: verfluchte
+    Refs: Judg 17:2
+
+=== H0737 ===
+Language: Hebrew, POS: N-fsc, Occurrences: 6, Senses: 2
+
+BDB excerpt: † אֲרֻחָה n.f. meal, allowance (of food) abs. Je 40:5; cstr. אֲרֻחַת יָרָק Pr 15:17 a portion of herbs, i.e. a slender meal; elsewhere of allowance given to captive king Jehoiachin, א׳ תָּמִיד a continual allowance 2 K 25:30 = Je 52:34; אֲרֻחָתוֹ ib. = id.
+Senses:
+  Sense 1: "regular food allowance" (5x)
+    Desc: A fixed, regularly supplied portion of food, typically a royal or official ration. In 2 Kings 25:30 and the parallel Jeremiah 52:34, it refers to the daily allowance granted by the king of Babylon to ...
+    Domain: FOOD_DRINK > Foods and Condiments
+    Glosses: eng: a-provision, allowance, an-allowance | spa: Y-su-ración, porción, provisiones | fra: [ארחה], [ארחת], [וארחתו] | deu: [ארחה], [ארחת], [וארחתו]
+    Refs: 2Kgs 25:30, 2Kgs 25:30, Jer 40:5, Jer 52:34, Jer 52:34
+  Sense 2: "meal, portion of food" (1x)
+    Desc: A meal or serving of food in a general domestic sense, without the connotation of an official ration. In Proverbs 15:17, 'a dinner of herbs (aruchat yaraq) where love is' contrasts a modest meal with ...
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: a-dinner-of | spa: comida-de | fra: ארחת | deu: [ארחת]
+    Refs: Prov 15:17
+
+=== H0855 ===
+Language: Hebrew, POS: N-msc | 3ms, Occurrences: 6, Senses: 2
+
+BDB excerpt: † III. [אֵת] n.[m.] a cutting instrument of iron, usually transl. ploughshare—sg. sf. אֵתוֹ 1 S 13:20; pl. אֵתִים 1 S 13:21, אִתִּים Is 2:4 = Mi 4:3; sf. אִתֵּיכֶם Jo 4:10; according to Klo al. also 2 K 6:5 אֶת־הַבַּרְזֶל, i.e. the axe of iron.
+Senses:
+  Sense 1: "plowshare, mattock" (5x)
+    Desc: A cutting instrument of iron used in agriculture, variously translated as 'plowshare' or 'mattock.' The iconic prophetic usage appears in Isa 2:4 and Mic 4:3 where swords are beaten into plowshares (ל...
+    Domain: PHYSICAL_ACTION > Physical Impact
+    Glosses: eng: and-for-the-mattocks, his-mattock, into-plowshares | spa: arados-de-vosotros, azadón-de-él, en-arados | fra: [לאתים], bêche, et-pour-le-mattocks | deu: [אתיכם], [לאתים], sein-mattock
+    Refs: 1Sam 13:20, 1Sam 13:21, Isa 2:4, Joel 3:10, Mic 4:3
+  Sense 2: "direct object marker (misattributed)" (1x)
+    Desc: This occurrence in 2 Kgs 6:5 (וְאֶת) appears to be the common Hebrew direct object marker אֵת tagged under this lemma by morphological overlap, not the agricultural noun. The glosses (and, y, und, و) ...
+    Domain: DISCOURSE_NAMES > Discourse Markers
+    Glosses: eng: and- | spa: y-el | fra: et- | deu: und-
+    Refs: 2Kgs 6:5
+
+=== H0907 ===
+Language: Hebrew, POS: N-mp, Occurrences: 6, Senses: 2
+
+BDB excerpt: † III. [בַּד] n.m. only Pl. בַּדִּים. a. empty, idle talk (Ph. CIS 3, 6 listen not to בדנם = Heb. בַּדֵּיהֶם; cf. ܒܶܕܝܳܐ vain talk), especially with collat. idea of imaginary pretensions or claims: Jb 11:3 בַּדֶּיךָ מְתִים יַחֲרִישׁוּ thy idle talk brings men to silence (‖ וַתִּלְעַג), Is 16:6 (of Moab) לֹא כֵן בַּדָּיו his boastings are not right (unfounded), hence Je 48:30. b. concr. empty talkers, praters (cf. NH בַּדָּאָה, Syriac ܒܳܕܽܘܝܳܐ liar), of false prophets, Is 44:25; Je 50:36.
+Senses:
+  Sense 1: "idle talk, boasting, lies" (5x)
+    Desc: Empty, idle, or boastful talk; by extension, liars or false diviners. Used of Moab's empty boasts in Isa 16:6 and Jer 48:30 (בַּדָּיו, 'his boasts'), of Job's interlocutor's babble in Job 11:3 (בַּדֶּ...
+    Domain: COMMUNICATION > Communication
+    Glosses: eng: boasts-your, his-boasts, liars | spa: Tus-fanfarronerías, de-adivinos, los-adivinos | fra: [בדיו], [בדים], [הבדים] | deu: [בדיו], [בדיך], [בדים]
+    Refs: Job 11:3, Isa 16:6, Isa 44:25, Jer 48:30, Jer 50:36
+  Sense 2: "limbs, members (of body)" (1x)
+    Desc: Limbs or members of the body, used only in Job 41:12 [Heb. 41:4] to describe the powerful limbs of Leviathan (בַּדָּיו, 'his limbs'). This is a distinct homonymous sense from the 'idle talk' meaning, ...
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: his-limbs | spa: sus-miembros | fra: son-בדיו-lui | deu: [בדיו]
+    Refs: Job 41:12

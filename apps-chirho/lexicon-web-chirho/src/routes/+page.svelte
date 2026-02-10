@@ -7,6 +7,12 @@
 <h1>Biblical Lexicon</h1>
 <p style="color: var(--muted-chirho);">Hebrew, Aramaic &amp; Greek lexicon with multilingual glosses and semantic domains</p>
 
+<div style="display: flex; gap: 12px; flex-wrap: wrap; margin-top: 20px; margin-bottom: 8px;">
+	<a href="/bible-chirho/gen.1" style="display: inline-block; background: var(--accent-chirho); color: #fff; padding: 14px 28px; border-radius: 8px; font-weight: bold; font-family: 'Source Sans 3', sans-serif; font-size: 16px; text-decoration: none; letter-spacing: 0.3px;">Read the Bible</a>
+	<a href="/domain-chirho" style="display: inline-block; background: var(--surface-chirho); color: var(--accent-chirho); padding: 14px 28px; border-radius: 8px; font-weight: 600; font-family: 'Source Sans 3', sans-serif; font-size: 16px; border: 1px solid var(--border-chirho); text-decoration: none;">See Semantic Domains</a>
+	<span style="display: inline-flex; align-items: center; background: var(--surface-chirho); color: var(--muted-chirho); padding: 14px 28px; border-radius: 8px; font-family: 'Source Sans 3', sans-serif; font-size: 14px; border: 1px solid var(--border-chirho); cursor: default;">Download PDF in English (more languages coming God willing) &mdash; coming soon</span>
+</div>
+
 <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-top: 24px;">
 	<div style="background: var(--surface-chirho); border: 1px solid var(--border-chirho); padding: 16px; border-radius: 8px;">
 		<div style="font-size: 24px; font-weight: bold; color: var(--accent-chirho); font-family: 'Source Sans 3', sans-serif;">{data.countsChirho.lemmasChirho.toLocaleString()}</div>

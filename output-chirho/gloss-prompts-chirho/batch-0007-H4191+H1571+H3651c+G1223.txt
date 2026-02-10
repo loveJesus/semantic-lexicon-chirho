@@ -1,0 +1,180 @@
+You are a biblical lexicographer composing glosses for a digital lexicon.
+For each lemma below, compose a JSON object. Separate objects with "---".
+
+Format for each:
+{
+  "lemma_id": "...",
+  "gloss_terse": "under 120 chars, concise definition covering the word's semantic range",
+  "gloss_readable": "2-5 sentences, 40-120 words. Don't start with 'This word'. Warm study-Bible footnote tone. Engaging, not dry.",
+  "senses": {
+    "1": "enriched 20-60 word description. Reference multilingual evidence when illuminating. Don't repeat the label verbatim.",
+    "2": "..."
+  }
+}
+
+Rules:
+- No markdown fences, just JSON objects separated by ---
+- Reference multilingual evidence naturally when it reveals something
+- gloss_readable should feel like a good study Bible footnote: helpful, clear, occasionally surprising
+- Each sense enrichment: how does the evidence support this sense? Mention 1-2 key passages when helpful.
+
+=== H4191 ===
+Language: Hebrew, POS: Prep-l | V-Qal-Prtcpl-ms, Occurrences: 840, Senses: 7
+
+BDB excerpt: מוּת vb. die (NH id. (rare); Assyrian mâtu DlHWB 395, Arabic مَاتَ, Ethiopic ሞተ, Aramaic מוּת, מִית, ܡܺܝܬ; Nab. מות EutNab 14, 6; Zinj. מת DHMSendsch.Gloss.);— Qal Pf. 3 ms. מֵת Gn 42:38 +; 3 fs. מֵ֫תָה Gn 35:18 +; 2 ms. מַתָּה Ez 28:8; 1 s. וָמַ֑תִּי Gn 19:19; 3 mpl. מֵ֫תוּ Gn 7:22 +; 1 pl. מַתְנוּ Nu 14:2 2 K 7:4; מָ֑תְנוּ Nu 14:9 +; Impf. יָמוּת Gn 38:11 +; יָמֹ֑ת Dt 33:6 +; וַיָּ֫מָת Gn 11:28 +; 1 s. אָמוּת Gn 26:9 +; אָמֻת 2 S 19:38; אָמוּ֫תָה Gn 46:30; 3 mpl. יָמ֫וּתוּ 1 S 2:23 +; יְמֻתוּן Nu 16:29; 3 fpl. תְּמוּתֶ֫נָה Ez 13:19 (Ges§ 72, 5) +; Imv. מֻת Dt 32:50 Jb 2:9; Inf. abs. מוֹת Gn 
+Senses:
+  Sense 1: "die (Qal: natural/general death)" (645x)
+    Desc: To die, cease living — the basic intransitive Qal sense covering natural death, death by plague/famine, death in battle, and general mortality; Arabic مَاتَ/يَمُوتُ, Korean 죽다, Swahili -fa.
+    Domain: BODY_HEALTH > Physiological Processes and States
+    Glosses: eng: and-died, and-he-died | spa: Y-murió, y-murió | fra: et-il-mourut, et-mourut | deu: und-er-starb, und-es-starb, und-starb
+    Refs: Gen 5:5, Gen 5:8, Gen 5:11, Gen 5:14, Gen 5:17
+  Sense 2: "be put to death (Hofal passive)" (51x)
+    Desc: To be put to death, be executed — Hofal (passive of Hifil) expressing judicial or communal execution, frequently in legal codes; Arabic يُقْتَلُ/يُمَاتُ, Korean 죽임을 당하다, Swahili -uawa.
+    Domain: BODY_HEALTH > Physiological Processes and States
+    Glosses: eng: he-shall-be-put-to-death, let-be-put-to-death, shall-be-put-to-death | spa: morirá | fra: --être-mettre-à-mort, devra-être-mettre-à-mort, il---être-mettre-à-mort | deu: er-soll-sein-setzen-zu-Tod, lass-sein-setzen-zu-Tod, soll-sein-setzen-zu-Tod
+    Refs: Gen 26:11, Exod 21:12, Exod 21:15, Exod 21:16, Exod 21:17
+  Sense 3: "surely die (מוֹת יוּמָת death formula)" (50x)
+    Desc: The emphatic death-penalty formula מוֹת יוּמָת (dying he shall die / he shall surely die) — Qal infinitive absolute used adverbially to intensify the finite verb, typically in legal pronouncements pre...
+    Domain: BODY_HEALTH > Physiological Processes and States
+    Glosses: eng: dying, surely, surely-dying | spa: ciertamente, de-cierto, morir | fra: certainement, certainement-mourant, mourant | deu: des-Todes, gewiss, gewiss-dying
+    Refs: Gen 2:17, Gen 3:4, Gen 20:7, Gen 26:11, Exod 19:12
+  Sense 4: "kill / put to death (Hifil causative)" (50x)
+    Desc: To kill, put to death, cause to die — Hifil causative covering intentional killing (murder, war, execution by an agent), with various subjects and objects; Arabic أَمَاتَ/قَتَلَ, Korean 죽이다, Swahili -...
+    Domain: PHYSICAL_ACTION > Physical Impact
+    Glosses: eng: and-he-killed-them, and-killed-them, and-put-them-to-death | spa: dando-muerte, hace-morir, mata | fra: avoir-tua, et-il-tua-eux, et-mourir | deu: haben-toetete, starb, sterben
+    Refs: Gen 18:25, Gen 37:18, Gen 42:37, Exod 1:16, Exod 4:24
+  Sense 5: "the dead (Qal participle nominal)" (33x)
+    Desc: The dead, a dead person, corpse — Qal participle used as a substantive noun referring to a deceased person or corpse, often with possessive suffixes (my dead, your dead, his dead) or in prepositional ...
+    Domain: BODY_HEALTH > Physiological Processes and States
+    Glosses: eng: The-dead, and-the-dead, and-the-dying | spa: Muertos, en-el-muerto, en-muerto | fra: dans-le-mort, dans-mort, et-le-mort | deu: Tote, deine-Tote, in-der-tot
+    Refs: Gen 23:3, Gen 23:4, Gen 23:6, Gen 23:6, Gen 23:8
+  Sense 6: "death (Qal infinitive as noun)" (8x)
+    Desc: Death as an abstract noun or event — Qal infinitive construct used nominally to denote the event or state of dying (my death, her dying, our dying, at the death of, to death); Arabic مَوْت, Korean 죽음,...
+    Domain: BODY_HEALTH > Physiological Processes and States
+    Glosses: eng: at-the-death-of, her-dying, is-my-death | spa: a-morir, cuando-morir-de, mi-muerte | fra: mon-mort, mourir, notre-mourant | deu: als-unser-sterbend, bei-der-Tod-von, ihr-sterbend
+    Refs: Exod 14:12, Exod 16:3, Judg 2:19, Judg 5:18, 1Sam 4:20
+  Sense 7: "kill (Piel/Polel intensive)" (3x)
+    Desc: To kill, slay — Piel/Polel intensive stem denoting repeated, vigorous, or emphatic killing; semantically close to Hifil but with intensive force; Arabic أَمَاتَ/يُمِيتُ, Korean 죽이다, Swahili -ua.
+    Domain: VIOLENCE_CONFLICT > Violence, Harm, Destroy, Kill
+    Glosses: eng: killed, killing | spa: matando, maté | fra: tua, tuant | deu: toetend, toetete
+    Refs: 1Sam 14:13, 2Sam 1:16, 2Kgs 17:26
+
+=== H1571 ===
+Language: Hebrew, POS: Conj-w | Adv, Occurrences: 769, Senses: 7
+
+BDB excerpt: גַּם768 adv. denoting addition, also, moreover, yea (Moab. id.: also Zinj. (Lzb250 Cooke166) prob. akin to √ جَمَّ; cf. جَمًّا (accus.) in a mass, altogether)— 1. also, moreover, emphasizing sometimes the thought of an entire sentence, but more usually the word immediately following, as Gn 3:6 וַתִּתֵּן גַּם לְאִישָׁהּ and gave also to her husband, v 27 and take also of the tree of life, 7:3; 19:21; 24:19; 26:21; 29:27; 30:15; 32:21 (גַּם הִגֵּה …: so Est 7:9) 48:11 Ex 8:28; 12:32 b Dt 1:37 1 S 28:20 2 S 11:12 2 K 9:27 Is 7:13 +. Often before pronouns, Gn 4:4 וְהֶבֶל הֵבִיא גַם הוּא and Abel, 
+Senses:
+  Sense 1: "also, too" (693x)
+    Desc: Basic additive conjunction indicating addition or inclusion; cross-linguistically uniform: eng 'also', spa 'también', hin 'भी', arb 'أيضًا', kor '또한', swa 'pia'.
+    Domain: DISCOURSE_NAMES > Discourse Markers
+    Glosses: eng: also, also-, both | spa: también, también- | fra: aussi, aussi-, même | deu: auch, auch-
+    Refs: Gen 3:6, Gen 3:22, Gen 4:4, Gen 4:22, Gen 4:26
+  Sense 2: "even, so far as" (39x)
+    Desc: Scalar/concessive particle emphasizing an unexpected or extreme case; distinguished by swa 'hata' (not 'pia'), kor '심지어' (not '또한'), arb occasionally 'حتّى', spa 'aun' (not 'también'), indicating a ge...
+    Domain: DISCOURSE_NAMES > Discourse Markers
+    Glosses: eng: Even, Even-, also | spa: Aun, Aun-, También | fra: aussi, même | deu: auch, sogar
+    Refs: Lev 26:24, Lev 26:44, Deut 12:31, Deut 23:2, Deut 23:3
+  Sense 3: "both...and (correlative)" (15x)
+    Desc: Paired correlative conjunction used in 'both X and Y' constructions; evidenced by spa 'tanto...como', eng 'both...and', swa 'wote', hin 'चाहे', distinguishing it from simple additive 'also'.
+    Domain: DISCOURSE_NAMES > Discourse Markers
+    Glosses: eng: and, and-, and-also | spa: como, como-, también | fra: aussi, both, both- | deu: auch, beide, beide-
+    Refs: Deut 32:25, Deut 32:25, Judg 8:22, Judg 8:22, 1Sam 2:26
+  Sense 4: "rhetorical-interrogative also/even" (8x)
+    Desc: Used in rhetorical or genuine questions meaning 'is it also?/has he even?'; identified by question markers across languages: hin 'क्या' (question particle), arb 'هل' (interrogative), spa '¿acaso/¿tamb...
+    Domain: DISCOURSE_NAMES > Discourse Markers
+    Glosses: eng: also, also-, have-also | spa: acaso-también, también, ¿Acaso-también- | fra: aussi, aussi-, avoir-aussi | deu: auch, auch-, der-auch
+    Refs: Gen 16:13, 1Sam 10:11, 1Sam 10:12, 1Sam 19:24, 1Kgs 17:20
+  Sense 5: "neither, nor (negative)" (7x)
+    Desc: Negative-polarity conjunction meaning 'neither/nor' in negative contexts; sharply distinguished cross-linguistically: swa 'wala' (neither), spa 'ni' (nor), hin 'न तो/हअन' (neither), while eng retains ...
+    Domain: DISCOURSE_NAMES > Discourse Markers
+    Glosses: eng: also, neither | spa: ni, ni- | fra: aussi, ni | deu: auch, neither
+    Refs: Num 23:25, Num 23:25, 1Sam 28:6, 1Sam 28:6, 1Sam 28:6
+  Sense 6: "indeed, yea (emphatic)" (6x)
+    Desc: Emphatic affirmative particle expressing strong assertion or confirmation; cross-linguistic evidence is distinctive: hin 'हाँ' (yes), swa 'Naam' (yes), kor '참으로' (truly), arb 'بل' (rather/indeed), eng...
+    Domain: DISCOURSE_NAMES > Discourse Markers
+    Glosses: eng: Indeed, also, also- | spa: También, también | fra: aussi | deu: auch, auch-
+    Refs: Ps 19:11, Ps 19:13, Ps 25:3, Eccl 9:13, Isa 43:13
+  Sense 7: "because also (causal)" (1x)
+    Desc: Causal conjunction in the compound form בְּשַׁגַּם meaning 'because also/inasmuch as'; uniquely translated as spa 'porque también', hin 'क्योनकि' (because), arb 'لأنّه' (because), swa 'kwa sababu pia'...
+    Domain: DISCOURSE_NAMES > Discourse Markers
+    Glosses: eng: in-that-also | spa: porque-también | fra: dans-ce-aussi | deu: da-auch
+    Refs: Gen 6:3
+
+=== H3651c ===
+Language: Hebrew, POS: Conj-w | Adv, Occurrences: 734, Senses: 7
+
+BDB excerpt: I. כֵּן adv. so, thus (Ph. NH 𝔗 id.; Syriac ܟܶܢ is then, Arabic لٰكِنْ, لٰكِنَّ, but: prob. from the demonstr. √ ka, found in כִּי etc., Köii 1, 254); (הִיא) כֶּן־הוּא Gn 44:10 + 4 times: so thus (i.e. usually, as has been described or commanded, with ref. to what has preceded), mostly of manner, but sometimes also of quantity, quality, or degree: 1. a. Ju 5:31 כן יאבדו so perish thy enemies, Jb 5:27 כֶּן־הִיא, 8:13 כן ארחות כל שׁכחי אל, Pr 6:29; 8:13; 2 S 16:23 Is 36:6; 47:15 כן היו לך, Nu 13:33 וכן היינו בעיניהם; Nu 9:16 כן יהיה תמיד; Ex 10:14, 14 לא היה כן ארבה כמהו וג׳ (i.e. in such number
+Senses:
+  Sense 1: "so, thus (manner)" (495x)
+    Desc: Adverb of manner indicating 'in this way, like this, likewise,' describing how something is done by comparison or analogy.
+    Domain: PROPERTIES_RELATIONS > Relations
+    Glosses: eng: so, so- | spa: así | fra: ainsi, ainsi- | deu: es-so, so
+    Refs: Gen 1:7, Gen 1:9, Gen 1:11, Gen 1:15, Gen 1:24
+  Sense 2: "therefore (causal inference)" (206x)
+    Desc: Causal-inferential conjunction meaning 'therefore, for this reason, on account of this,' drawing a logical conclusion or consequence from what precedes.
+    Domain: DISCOURSE_NAMES > Discourse Markers
+    Glosses: eng: therefore | spa: Por-tanto, por-tanto | fra: c'est-pourquoi | deu: darum
+    Refs: Gen 4:15, Exod 6:6, Num 16:11, Num 20:12, Num 25:12
+  Sense 3: "so, thus (general discourse)" (18x)
+    Desc: General discourse particle blending manner and causal nuance, used transitionally to advance the narrative or argument without a strictly manner or strictly causal force.
+    Domain: PROPERTIES_RELATIONS > Relations
+    Glosses: eng: so, thus | spa: así, eso, tanto | fra: ainsi | deu: -, dann, deshalb
+    Refs: Gen 10:9, Gen 11:9, Gen 15:14, Gen 16:14, Gen 19:22
+  Sense 4: "this, that (anaphoric reference)" (12x)
+    Desc: Anaphoric demonstrative use pointing back to a previously mentioned situation or thing, functioning like 'this thing, that matter.'
+    Domain: PROPERTIES_RELATIONS > Relations
+    Glosses: eng: so, this | spa: así, eso, esto | fra: ainsi, ce | deu: dies, so
+    Refs: Josh 7:26, Josh 8:34, Josh 10:26, Ps 42:6, Ps 45:2
+  Sense 5: "then, at that time" (1x)
+    Desc: Temporal adverb indicating 'then, at that time,' situating an event in its temporal context rather than describing manner or cause.
+    Domain: PROPERTIES_RELATIONS > Relations
+    Glosses: eng: thus | spa: entonces | fra: ainsi | deu: so
+    Refs: Neh 2:16
+  Sense 6: "indeed, yes (affirmative)" (1x)
+    Desc: Affirmative particle used to confirm or assent, meaning 'yes, indeed, truly,' functioning as an emphatic agreement.
+    Domain: PROPERTIES_RELATIONS > Relations
+    Glosses: eng: so | spa: así | fra: ainsi | deu: so
+    Refs: Ezra 10:12
+  Sense 7: "so much, to such degree" (1x)
+    Desc: Degree adverb indicating extent or intensity, meaning 'so much, to such a degree, enough,' quantifying rather than describing manner.
+    Domain: PROPERTIES_RELATIONS > Relations
+    Glosses: eng: enough | spa: así | fra: assez | deu: genug
+    Refs: Judg 21:14
+
+=== G1223 ===
+Language: Greek, POS: Prep, Occurrences: 670, Senses: 7
+
+BDB excerpt: διά, poetry διαί (Aeolic dialect ζά, which see), preposition governing genitive and accusative — Rad. sense, through; never anastrophic [Prop. δῐᾰ: but Refs 8th c.BC+ uses ῑ at the beginning of a line, Refs 8th c.BC+: also ᾱ, for the sake of meter, frequently in Refs 8th c.BC+ uses διαί in Lyric poetry, Refs __A WITH GEN. __A.I of Place or Space: __A.I.1 of motion in a line, from one end to the other, right through, in Refs 8th c.BC+ frequently of the effect of weapons, διὰ μὲν ἀσπίδος ἦλθε.. ἔγχος καὶ διὰ θώρηκος.. Refs 8th c.BC+ out through the Scaean gate, Refs 8th c.BC+; δι᾽ ἠέρος αἰθέρ᾽ ἵ
+Senses:
+  Sense 1: "through, by means of" (582x)
+    Desc: Spatial passage or instrumental agency: moving through a space, or the means/agent by which something is accomplished.
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: through | spa: Por-medio-de, por, por-medio-de | fra: par- | deu: durch
+    Refs: Acts 1:2, Acts 1:16, Acts 2:16, Acts 2:22, Acts 2:23
+  Sense 2: "because of, on account of" (54x)
+    Desc: Causal ground or reason for an action or state, indicating the cause that motivates or explains what follows.
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: because-of, because-of-, on-account-of | spa: Por, por, por- | fra: par-, à-travers- | deu: durch, durch-
+    Refs: Matt 12:27, Matt 12:31, Matt 13:13, Matt 13:52, Matt 17:20
+  Sense 3: "why, for what reason" (26x)
+    Desc: Interrogative use asking the cause or reason, typically in the phrase dia ti (διὰ τί).
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: Because-of, Because-of-, Why | spa: Por, Por-qué, por | fra: par-, à-travers- | deu: durch, durch-
+    Refs: Matt 9:11, Matt 9:14, Matt 13:10, Matt 15:2, Matt 15:3
+  Sense 4: "during, throughout" (3x)
+    Desc: Temporal extent indicating duration or continuity through a period of time.
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: during, through | spa: durante | fra: par-, à-travers- | deu: durch
+    Refs: Luke 5:5, Acts 1:3, Acts 5:19
+  Sense 5: "?" (2x)
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: for | spa: por-causa-de | fra: à-travers- | deu: durch-
+    Refs: Mark 2:27, Mark 2:27
+  Sense 6: "?" (2x)
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: through | spa: después-de, después-de- | fra: par-, à-travers- | deu: durch-
+    Refs: Mark 2:1, Gal 2:1
+  Sense 7: "?" (1x)
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: Therefore | spa: Por | fra: à-travers- | deu: durch-
+    Refs: Mark 11:24

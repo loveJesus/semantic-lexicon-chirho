@@ -1,0 +1,123 @@
+You are a biblical lexicographer composing glosses for a digital lexicon.
+For each lemma below, compose a JSON object. Separate objects with "---".
+
+Format for each:
+{
+  "lemma_id": "...",
+  "gloss_terse": "under 120 chars, concise definition covering the word's semantic range",
+  "gloss_readable": "2-5 sentences, 40-120 words. Don't start with 'This word'. Warm study-Bible footnote tone. Engaging, not dry.",
+  "senses": {
+    "1": "enriched 20-60 word description. Reference multilingual evidence when illuminating. Don't repeat the label verbatim.",
+    "2": "..."
+  }
+}
+
+Rules:
+- No markdown fences, just JSON objects separated by ---
+- Reference multilingual evidence naturally when it reveals something
+- gloss_readable should feel like a good study Bible footnote: helpful, clear, occasionally surprising
+- Each sense enrichment: how does the evidence support this sense? Mention 1-2 key passages when helpful.
+
+=== G1520 ===
+Language: Greek, POS: Adj-DNS, Occurrences: 350, Senses: 4
+
+BDB excerpt: εἷς, μίᾰ, ἕν (μίη only in late Ionic dialect Prose): genitive ἑνός, μιᾶς, ἑνός:—Epic dialect ἕεις Refs 8th c.BC+:—Doric dialect ἧς Refs 3rd c.BC+:—Epic dialect, Aeolic dialect, and Ionic dialect feminine ἴᾰ Refs 8th c.BC+: neuter dative (ἰῷ κίον ἤματι) Refs 5th c.BC+ (Orig. ἕνς, assim. ἔν (δ) probably in Refs Indo-European sem-(compare ὁμός); μία from sm-ί; ἴα is not related to μία, but probably to pronominal stem i-(Latin is), compareἰός.) __1 as a Numeral, εἷς κοίρανος ἔστω Refs 8th c.BC+; strengthened, εἷς οἶος, μία οἴη, a single __A one, one alone,Refs 8th c.BC+ __b emphatically with a sup
+Senses:
+  Sense 1: "cardinal number one" (339x)
+    Desc: The numeral 'one' used as a cardinal number, indicating a single entity or expressing unity, across all genders and cases.
+    Domain: QUANTITY_NUMBER > Number
+    Glosses: eng: one | spa: un, una, uno | fra: un | deu: ein
+    Refs: Matt 5:18, Matt 5:18, Matt 5:19, Matt 5:29, Matt 5:30
+  Sense 2: "ordinal first" (8x)
+    Desc: Used with ordinal force meaning 'first,' especially in temporal expressions such as 'the first day of the week' (μιᾷ τῶν σαββάτων).
+    Domain: QUANTITY_NUMBER > Sequence
+    Glosses: eng: first, one | spa: primer, primero, uno | fra: un | deu: ein, eins
+    Refs: Matt 28:1, Mark 16:2, Luke 24:1, John 20:1, John 20:19
+  Sense 3: "distributive each or every" (2x)
+    Desc: Distributive use meaning 'each one' or 'one by one,' expressing individual distribution across members of a group.
+    Domain: QUANTITY_NUMBER > Number
+    Glosses: eng: -, on-each | spa: a-uno, por-una | fra: un | deu: ein
+    Refs: Luke 4:40, Acts 21:19
+  Sense 4: "the other one correlative" (1x)
+    Desc: Used in correlative constructions meaning 'the other (one),' paired with another εἷς or ἄλλος to distinguish between two parties.
+    Domain: QUANTITY_NUMBER > Number
+    Glosses: eng: one | spa: otro | fra: un | deu: eins
+    Refs: 1Thess 5:11
+
+=== H2568 ===
+Language: Hebrew, POS: Conj-w | Number-msc, Occurrences: 345, Senses: 4
+
+BDB excerpt: חָמֵשׁ, חֲמִשָּׁה n.m. and f. five (NH id., id.; Aramaic חֲמֵשׁ, חַמְשָׁא, ܚܰܡܶܫ, ܚܰܡܶܫܬܳܐ; Ph. חמשת; Palm. חמשא, c. n. masc., ReckendorfZMG 1888, 408; Assyrian ḫamšu, ḫamiltu Dl§ 75; Ethiopic ኀምስ, ኀምስቱ Arabic خَمْسٌ, خَمْسَةٌ; Sab. & Liḥyân. חֿמס DHMZMG xxix, 613; Epigr. Denkm. 71, 73);—m. (c. n.f.) abs. חָמֵשׁ Gn 5:6 + 94 times + Ez 40:30 (del. 𝔊B Hi-Sm Co; Co del. also in v 25, 29, 33, 36) + Ez 45:3 Kt (where read f. with Qr); cstr. חֲמֵשׁ Gn 5:10 + 67 times + Ez 48:16 Kt; f. (c. n.m.) abs. חֲמִשָּׁה v. LagBN 80 Gn 18:28 + 139 times (incl. Ez 8:16 del. B Co al.); cstr. חֲמֵשֶׁת Nu 3:47(×2) 
+Senses:
+  Sense 1: "cardinal number five" (309x)
+    Desc: The cardinal numeral 'five' used independently or with prepositions/articles to denote the quantity five.
+    Domain: QUANTITY_NUMBER > Number
+    Glosses: eng: five | spa: Cinco, cinco | fra: cinq | deu: fuenf, fünf, von-fünf
+    Refs: Gen 5:6, Gen 5:11, Gen 5:15, Gen 5:17, Gen 5:21
+  Sense 2: "compound fifteen (five-and-ten)" (22x)
+    Desc: The numeral 'five' as part of the compound number fifteen, formed with the word for ten.
+    Domain: QUANTITY_NUMBER > Number
+    Glosses: eng: and-fifteen, fifteen, five | spa: En-el-quince, Quince, Y-quince | fra: cinq, dans-cinq, et-quinze | deu: auf-fuenf-von, fuenf, fuenfzehn
+    Refs: Gen 5:10, Gen 7:20, Exod 27:14, Exod 27:15, Exod 38:14
+  Sense 3: "ordinal fifteenth" (8x)
+    Desc: The numeral 'five' in compound-ordinal contexts meaning 'the fifteenth' (day of the month).
+    Domain: QUANTITY_NUMBER > Number
+    Glosses: eng: and-on-five, and-on-five-of, on-five | spa: Y-en-cinco, Y-en-el-quince, en-cinco | fra: dans-cinq, et-sur-cinq, et-sur-cinq-de | deu: auf-fuenf, auf-fuenf-, fuenf
+    Refs: Exod 16:1, Lev 23:6, Num 28:17, Num 29:12, Num 33:3
+  Sense 4: "ordinal fifth" (6x)
+    Desc: The numeral 'five' used in ordinal/temporal contexts meaning 'the fifth' (day, month, year).
+    Domain: QUANTITY_NUMBER > Number
+    Glosses: eng: on-fifth, on-the-five, on-the-five- | spa: en-el-cinco, en-quince, en-quince- | fra: dans-cinq, sur-le-cinq, sur-le-cinq- | deu: auf-der-fuenf, auf-der-fuenf-, fuenf
+    Refs: 1Kgs 12:32, 1Kgs 12:33, Ezek 1:1, Ezek 1:2, Ezek 8:1
+
+=== G4012 ===
+Language: Greek, POS: Prep, Occurrences: 333, Senses: 4
+
+BDB excerpt: περί, Thess., Delph. περ Refs 5th c.BC+, also Aeolic dialect, see below Refs 4th c.BC+ V; Elean παρ Refs: preposition with genitive, dative, and accusative:—round about, all round (properly different from ἀμφί, on both sides). (Cogn. with Sanskrit pári 'round about'.) __A WITH GENITIVE, __A.I of Place, sometimes in Poets, round about, around, τετάνυστο π. σπείους ἡμερίς Refs 8th c.BC+, on both sides, see at {περιβαίνω} Refs __A.I.2 about near, π. σοῦ πάντα γένοιτο ῥόδα Refs __A.II to denote the object about or for which one does something: __A.II.1 with Verbs of fighting or contending, π. τινό
+Senses:
+  Sense 1: "concerning, about (reference)" (276x)
+    Desc: Marks the topic or subject of discourse: 'concerning X,' 'about X,' 'with regard to X' — the most common NT sense of περί with genitive.
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: about, about-, concerning | spa: acerca-de, por- | fra: au-sujet-de | deu: ueber-, über
+    Refs: Matt 2:8, Matt 4:6, Matt 6:28, Matt 9:36, Matt 11:7
+  Sense 2: "for, on behalf of (purpose/cause)" (29x)
+    Desc: Indicates purpose, benefit, or cause: 'for the sake of X,' 'on behalf of X,' 'because of X' — often with genitive in sacrificial or intercessory contexts.
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: concerning, for, for- | spa: acerca, acerca-de, por | fra: au-sujet-de, au-sujet-de- | deu: ueber-, über
+    Refs: Matt 26:28, Luke 5:14, Luke 6:28, Luke 22:32, John 10:33
+  Sense 3: "around, surrounding (spatial)" (19x)
+    Desc: Spatial sense indicating encirclement or proximity: 'around X,' 'surrounding X' — used with accusative for physical location.
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: around, around- | spa: alrededor, alrededor-de, alrededor-de- | fra: au-sujet-de, au-sujet-de-, autour | deu: ueber-, um, über
+    Refs: Matt 3:4, Matt 8:18, Matt 18:6, Mark 1:6, Mark 3:8
+  Sense 4: "about, approximately (numerical)" (9x)
+    Desc: Indicates numerical or temporal approximation: 'about X (number/time),' 'approximately X' — with accusative of measure.
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: about, about-, around | spa: acerca-de, cerca-de, cerca-del | fra: au-sujet-de, au-sujet-de- | deu: ueber-, über
+    Refs: Matt 20:3, Matt 20:5, Matt 20:6, Matt 20:9, Matt 27:46
+
+=== G3056 ===
+Language: Greek, POS: N-GMS, Occurrences: 332, Senses: 4
+
+BDB excerpt: λόγος, ὁ, verbal noun of λέγω (B), with senses corresponding to λέγω (B) II and III (on the various senses of the word see Refs 2nd c.AD+ 111, compareinfr. VI. 1 a: __I computation, reckoning (compare λέγω (B) II). __I.1 account of money handled, σανίδες εἰς ἃς τὸν λ. ἀναγράφομεν Refs 5th c.BC+; συνᾶραι λόγον μετά τινος settle accounts with, NT; δεύτεροι λ. a second audit, Refs 4th c.AD+; ὁ τραπεζιτικὸς λ. banking account, Theo Sm.p.73 H.: metaphorically, οὐκ ἂν πριαίμην οὐδενὸς λ. βροτόν Refs 5th c.BC+ __I.1.b public accounts, i. e. branch of treasury, ἴδιος λ., in Egypt, Refs; also as title 
+Senses:
+  Sense 1: "word, message, speech" (309x)
+    Desc: A spoken or written communication, statement, or message, including divine proclamation ('the word of God') and general discourse or teaching.
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: a-word, report, word | spa: palabra | fra: parole | deu: Wort
+    Refs: Matt 5:37, Matt 12:32, Matt 13:19, Matt 13:20, Matt 13:21
+  Sense 2: "account, reckoning" (11x)
+    Desc: A financial or moral reckoning, as in settling accounts or giving an account of oneself before God or an authority.
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: a-word, account, an-account | spa: cuenta, cuentas, razón | fra: parole | deu: Wort
+    Refs: Matt 12:36, Matt 18:23, Matt 25:19, Luke 16:2, Acts 19:40
+  Sense 3: "the Logos, divine Word" (7x)
+    Desc: Christological title for the pre-existent, incarnate Son of God as the divine self-expression, used in Johannine literature (John 1:1, 1:14; 1 John 1:1; Rev 19:13).
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: Logos, Word | spa: Lógos, Palabra, Verbo | fra: parole | deu: Wort
+    Refs: John 1:1, John 1:1, John 1:1, John 1:14, 1John 1:1
+  Sense 4: "reason, cause, matter" (5x)
+    Desc: The ground, reason, or cause for something, or a matter under dispute or consideration, often in the phrase 'on account of' or 'for this reason.'
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: matter, reason | spa: por-causa-de, queja, razón | fra: parole | deu: Wort
+    Refs: Matt 5:32, Acts 10:29, Acts 18:14, Acts 19:38, 1Pet 3:15

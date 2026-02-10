@@ -1,0 +1,141 @@
+You are a biblical lexicographer composing glosses for a digital lexicon.
+For each lemma below, compose a JSON object. Separate objects with "---".
+
+Format for each:
+{
+  "lemma_id": "...",
+  "gloss_terse": "under 120 chars, concise definition covering the word's semantic range",
+  "gloss_readable": "2-5 sentences, 40-120 words. Don't start with 'This word'. Warm study-Bible footnote tone. Engaging, not dry.",
+  "senses": {
+    "1": "enriched 20-60 word description. Reference multilingual evidence when illuminating. Don't repeat the label verbatim.",
+    "2": "..."
+  }
+}
+
+Rules:
+- No markdown fences, just JSON objects separated by ---
+- Reference multilingual evidence naturally when it reveals something
+- gloss_readable should feel like a good study Bible footnote: helpful, clear, occasionally surprising
+- Each sense enrichment: how does the evidence support this sense? Mention 1-2 key passages when helpful.
+
+=== G2038 ===
+Language: Greek, POS: V-PNM/P, Occurrences: 41, Senses: 5
+
+BDB excerpt: ἐργάζομαι, Refs 8th c.BC+, etc., Cretan dialect ϝεργάδδομαι Refs: future -άσομαι Refs 6th c.BC+, etc., Doric dialect LXX+3rd c.BC+: aorist εἰργασάμην, Ionic dialect Refs 6th c.BC+: perfect εἴργασμαι, Ionic dialectRefs 5th c.BC+ —These tenses are used both in middle and passive significations: for other passive tenses, see belowRefs 4th c.BC+; but this rule is often broken in later Papyrus, Inscrr., and codices:—work, labour, especially of husbandry, Refs 8th c.BC+; of quarrymen, Refs 5th c.BC+; ἐ. ἐν τοῖς ἔργοις in the mines, Refs 8th c.BC+; of birds working to get food, Refs 4th c.BC+; of bee
+Senses:
+  Sense 1: "work, labor, toil" (27x)
+    Desc: To engage in work or labor, often for a livelihood or as productive activity; the basic sense of exerting effort in a task or occupation.
+    Domain: PHYSICAL_ACTION > Perform, Do
+    Glosses: eng: I-work, to-work, was-working | spa: obrando, obrar, obras | fra: travailler | deu: arbeiten, arbeitet
+    Refs: Matt 21:28, Luke 13:14, John 5:17, John 5:17, John 6:27
+  Sense 2: "do, perform, commit deeds" (10x)
+    Desc: To do or perform actions or deeds, often with moral or ethical connotation (doing good or evil); to carry out, accomplish, or commit.
+    Domain: PHYSICAL_ACTION > Perform, Do
+    Glosses: eng: let-us-work, she-did, worked | spa: hizo, obra, obrando | fra: travailler | deu: arbeiten, arbeitet
+    Refs: Matt 7:23, Matt 26:10, Mark 14:6, Acts 10:35, Rom 2:10
+  Sense 3: "produce, bring about" (2x)
+    Desc: To produce or bring about an effect or result; to cause something to come into being through action or process.
+    Domain: PHYSICAL_ACTION > Perform, Do
+    Glosses: eng: produces | spa: produce | fra: travailler | deu: arbeiten
+    Refs: 2Cor 7:10, Jas 1:20
+  Sense 4: "?" (1x)
+    Domain: PHYSICAL_ACTION > Perform, Do
+    Glosses: eng: worked | spa: trabajó | fra: travailler | deu: arbeitet
+    Refs: Matt 25:16
+  Sense 5: "?" (1x)
+    Domain: PHYSICAL_ACTION > Perform, Do
+    Glosses: eng: having-been-worked | spa: obradas | fra: travailler | deu: arbeiten
+    Refs: John 3:21
+
+=== H0268 ===
+Language: Hebrew, POS: Conj-w | N-ms, Occurrences: 41, Senses: 5
+
+BDB excerpt: אָחוֹר41 subst. (Arabic أُخُرٌ) the hinder side, back part, in the sg., mostly in adverbial phrases:— a. as accus., in poetry backwards 23 times (= prose אֲחֹרַנִּית) with vbs. such as נָפַל fall Gn 49:17, נָשׂוֹג be turned 2 S 1:22 (‖ תָּשׁוּב רֵיקָם), שׁוּן ψ 9:4; 56:10 +, נָסוֹג 35:4; 40:15 + (of enemies repulsed), 44:19 Is 50:5 (from obedience to God), נָזוֹר Is 1:4, הֵשִׁיב 44:25 ψ 44:11, הִכָּה 78:66; behind (opp. קֶדֶם) ψ 139:5 Jb 23:8; in the phrase פָּנִים וְאָחוֹר in front and behind †1 Ch 19:10 (altered from מִפָּ׳ וּמֵאָ׳ in 2 S v. infr.) 2 Ch 13:14 Ez 2:10. b. בְּאָחוֹר †Pr 29:11,
+Senses:
+  Sense 1: "backward, behind (direction)" (31x)
+    Desc: Spatial adverbial sense indicating motion or position toward the rear, translated as backward, back, or behind.
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: back, backward, backwards | spa: atrás, hacia-atrás | fra: backward, backwards, en-arrière | deu: backward, backwards, rueckwaerts
+    Refs: Gen 49:17, 2Sam 1:22, 2Sam 10:9, 1Chr 19:10, 2Chr 13:14
+  Sense 2: "afterward, hereafter (temporal)" (3x)
+    Desc: Temporal extension of the spatial sense, referring to what comes after in time: the future or the end.
+    Domain: QUANTITY_NUMBER > Sequence
+    Glosses: eng: for-afterward, hereafter, in-the-end | spa: al-final, para-después, para-el-futuro | fra: dans-באחור, en-arrière | deu: rueckwaerts, zurueck
+    Refs: Prov 29:11, Isa 41:23, Isa 42:23
+  Sense 3: "back (body part / rear portion)" (3x)
+    Desc: The back or rear part of a person or object, used as a concrete noun often with possessive suffixes.
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: back-of, backs-of-them, my-back | spa: espaldas-de-ellos, mis-espaldas, parte-trasera-de | fra: derrière, dos-de, mon-dos | deu: [אחריהם], back-von, mein-back
+    Refs: Exod 26:12, Exod 33:23, Ezek 8:16
+  Sense 4: "hindquarters (of animals)" (2x)
+    Desc: The rear part or hindquarters of animals, used as a concrete anatomical noun with pronominal suffixes.
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: their-hindquarters | spa: partes-traseras-de-ellos, sus-traseros | fra: [אחריהם], leur-hindquarters | deu: [אחריהם], ihr-hindquarters
+    Refs: 1Kgs 7:25, 2Chr 4:4
+  Sense 5: "west (geographic direction)" (2x)
+    Desc: Geographic sense where behind (facing east) denotes the west, used for cardinal direction.
+    Domain: GEOGRAPHY_SPACE > Spacial Orientations
+    Glosses: eng: and-west, from-west | spa: del-occidente, y-al-occidente | fra: en-arrière, et-ואחור | deu: rueckwaerts, und-zurueck
+    Refs: Job 23:8, Isa 9:12
+
+=== G2425 ===
+Language: Greek, POS: Adj-NMS, Occurrences: 40, Senses: 5
+
+BDB excerpt: ἱκᾰν-ός [ῐ], ή, όν, (ἱκνέομαι) sufficing, becoming, befitting; prose adjective, used two or three times by Trag. (see. below): __I of persons, sufficient, competent to do a thing, with infinitive, Refs 5th c.BC+; ἱ. τεκμηριῶσαι sufficient to prove a point, Refs 5th c.BC+; τίς σοῦ -ώτερος πεῖσα; Refs 5th c.BC+; ἱ. ζημιοῦν with sufficient power to punish, Refs 5th c.BC+ with accusative _of things_, ἀνὴρ γνώμην ἱ. a man of sufficient prudence, Refs 5th c.BC+; ἱ. τὴν ἰατρικήν sufficiently versed in medicine, Refs 5th c.BC+: with dative person, a match for, equivalent to, εἷς ἔχων ἰατρικὴν πολλοῖς 
+Senses:
+  Sense 1: "considerable, great in degree" (15x)
+    Desc: Indicating large extent, degree, size, or duration of time (e.g., considerable distance, great commotion, long time).
+    Domain: PROPERTIES_RELATIONS > Adequate, Qualified
+    Glosses: eng: Considerable, considerable, for-a-long | spa: Bastante, Grande, a-mucha | fra: capable, suffisant | deu: genug
+    Refs: Matt 28:12, Mark 10:46, Luke 7:12, Luke 8:27, Luke 20:9
+  Sense 2: "many, numerous" (12x)
+    Desc: Quantitative sense indicating a large number of persons or things.
+    Domain: PROPERTIES_RELATIONS > Adequate, Qualified
+    Glosses: eng: many | spa: Muchos, a-muchos, bastantes | fra: capable, suffisant | deu: genug
+    Refs: Luke 8:32, Luke 23:9, Acts 9:23, Acts 9:43, Acts 12:12
+  Sense 3: "worthy, fit, competent" (9x)
+    Desc: Of persons who are qualified, deserving, or capable enough for a role or task.
+    Domain: PROPERTIES_RELATIONS > Adequate, Qualified
+    Glosses: eng: competent, fit, sufficient | spa: capaces, digno, suficiente | fra: capable, suffisant | deu: genug
+    Refs: Matt 3:11, Matt 8:8, Mark 1:7, Luke 3:16, Luke 7:6
+  Sense 4: "sufficient, enough" (3x)
+    Desc: Adequate or satisfactory in quantity or degree to meet a need.
+    Domain: PROPERTIES_RELATIONS > Adequate, Qualified
+    Glosses: eng: Enough, satisfaction, sufficient | spa: Suficiente, suficiente | fra: capable, suffisant | deu: genug
+    Refs: Mark 15:15, Luke 22:38, 2Cor 2:6
+  Sense 5: "bond, security deposit" (1x)
+    Desc: Substantivized legal term (τὸ ἱκανόν) referring to a financial guarantee or bail posted before authorities.
+    Domain: PROPERTIES_RELATIONS > Adequate, Qualified
+    Glosses: eng: bond | spa: fianza | fra: capable | deu: genug
+    Refs: Acts 17:9
+
+=== H1589 ===
+Language: Hebrew, POS: Conj-w | V-Qal-ConsecImperf-3fs, Occurrences: 40, Senses: 5
+
+BDB excerpt: † [גָּנַב] vb. steal (NH id., Aramaic גְּנַב, ܓܢܰܒ; Arabic جَنَب is hurt the side, or put aside, den. from جَنْبٌ side)— Qal Pf. 3 fs. sf. גְּנָבַתּוּ Jb 21:18; 27:20, גְּנָבָ֫תַם Gn 31:32; 2 ms. גָּנַבְתָּ Gn 31:30; 1 s. וְגָנַ֑בְתִּי consec. Pr 30:9; גָּֽנְבוּ Jos 7:11 2 S 21:12; sf. גְּנַבוּךָ 2 S 19:42; Impf. יִגְּנֹֽב־ Ex 21:37, יִגְנוֹב Pr 6:30, וַיִּגְנֹב Gn 31:20; 3 fs. וַתִּגְנֹב Gn 31:19 + 2 times; 2 ms. תִּגְנֹב Ex 20:15; Dt 5:17, וַתִּגְנֹב Gn 31:26, 27; יִגְנְבוּ Ob 5, תִּגְנֹ֑בוּ Lv 19:11, נִגְנֹב Gn 44:8; Inf. abs. גָּנֹב Ex 22:11 + 2 times; Pt. גֹּנֵב Ex 21:16 + 2 times, גָּנוּ
+Senses:
+  Sense 1: "to steal, commit theft" (19x)
+    Desc: Qal active sense of taking another's property unlawfully, including all inflected forms of the basic stealing action.
+    Domain: ECONOMICS_PROPERTY > Possess, Transfer, Exchange
+    Glosses: eng: Will-you-steal, and-steal, and-stealing | spa: Y-robó, hurta, robar | fra: [הגנב], aurait-nous-voler, et-tu-vola | deu: [הגנב], [וגנבתי], [יגנוב]
+    Refs: Gen 31:19, Gen 31:20, Gen 31:26, Gen 31:27, Gen 31:30
+  Sense 2: "to be stolen, taken by theft" (8x)
+    Desc: Qal passive participle, Nifal, and Pual forms expressing the passive state or event of being stolen.
+    Domain: ECONOMICS_PROPERTY > Possess, Transfer, Exchange
+    Glosses: eng: I-was-stolen, and-is-stolen, and-stolen-by | spa: es-robado, fui-robado, robada | fra: Je-était-volé, cela-est-volé, et-est-volé | deu: Gestohlenes-, [גנובים], es-ist-gestohlen
+    Refs: Gen 30:33, Gen 31:39, Gen 31:39, Gen 40:15, Gen 40:15
+  Sense 3: "to kidnap, steal a person" (7x)
+    Desc: Qal and Piel sense of stealing a human being, i.e., kidnapping or abducting a person, often with a personal object suffix.
+    Domain: ECONOMICS_PROPERTY > Possess, Transfer, Exchange
+    Glosses: eng: and-he-stole, and-she-stole, and-stealer-of | spa: Y-el-que-secuestra, lo-arrebata, que-roba | fra: [ותגנב], et-elle-stole, et-il-stole | deu: [גנבתו], [ותגנב], stole-du
+    Refs: Exod 21:16, 2Sam 15:6, 2Sam 19:41, 2Kgs 11:2, 2Chr 22:11
+  Sense 4: "thief, one who steals" (3x)
+    Desc: Substantive use of the Qal and Piel participle denoting a person who steals, a thief or robber.
+    Domain: ECONOMICS_PROPERTY > Possess, Transfer, Exchange
+    Glosses: eng: stealing, the-one-stealing | spa: el-que-roba, que-hurtan, robando | fra: [מגנבי], le-voleur, stealing | deu: [מגנבי], der-Dieb, stealing
+    Refs: Deut 24:7, Jer 23:30, Zech 5:3
+  Sense 5: "to steal away, sneak" (3x)
+    Desc: Hitpael reflexive sense of stealing oneself away, sneaking or slipping away furtively, and Pual form used with the meaning of being brought in secretly.
+    Domain: ECONOMICS_PROPERTY > Possess, Transfer, Exchange
+    Glosses: eng: and-stole-away, steals-away, was-stolen | spa: Y-se-escabulló, fue-traída-furtivamente, se-escabulle | fra: et-stole-au-loin, steals-au-loin, voler | deu: [יגנב], steals-weg, und-stole-weg
+    Refs: 2Sam 19:3, 2Sam 19:3, Job 4:12

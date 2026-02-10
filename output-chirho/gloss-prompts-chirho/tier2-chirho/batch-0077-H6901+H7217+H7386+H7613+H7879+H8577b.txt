@@ -1,0 +1,145 @@
+You are a biblical lexicographer composing glosses for a digital lexicon.
+For each lemma below, compose a JSON object. Separate objects with "---".
+
+Format for each:
+{
+  "lemma_id": "...",
+  "gloss_terse": "under 120 chars, concise definition covering the word's semantic range",
+  "gloss_readable": "2-5 sentences, 40-120 words. Don't start with 'This word'. Warm study-Bible footnote tone. Engaging, not dry.",
+  "senses": {
+    "1": "enriched 20-60 word description. Reference multilingual evidence when illuminating. Don't repeat the label verbatim.",
+    "2": "..."
+  }
+}
+
+Rules:
+- No markdown fences, just JSON objects separated by ---
+- Reference multilingual evidence naturally when it reveals something
+- gloss_readable should feel like a good study Bible footnote: helpful, clear, occasionally surprising
+- Each sense enrichment: how does the evidence support this sense? Mention 1-2 key passages when helpful.
+
+=== H6901 ===
+Language: Hebrew, POS: V-Hifil-Prtcpl-fp, Occurrences: 14, Senses: 3
+
+BDB excerpt: † [קָבַל] vb. Pi. receive, take (late) (Aramaic loan-word (and in Aramaic denom.) Gerber 32, cf. Aramaic (לִ)קְבֵיל in front, ܡܶܢ ܩܒܘܿܠ opposite, Biblical Aramaic לֳקֳבֵל before, Old Aramaic Palm. לקבל over against, Nab. id., in view of; also Sab. לקבל in view of CISiv, No. 79, 11. 2. 4. 5. 8, Assyrian ḳablu, encounter; verbs are: Sab. קבל accept, DHMZMG xxix (1875), 615; xxx (1876), 672; Arabic قِبَلَ be in front, opposite, قَبَلَ accept, admit; Ethiopic ቀበለ:; especially iii. 2, go to meet, accept; NH קָבַל accuse, Pi. = BH; Aramaic קַבֵּל, ܩܰܒܶܠ receive);—Pf. 3 ms. קִבֵּל Est 4:4 + (9:27 Qr 
+Senses:
+  Sense 1: "to receive, take" (7x)
+    Desc: Piel: to receive or take something given, whether physical objects (blood, vessels, silver/gold) or persons; also to receive abstractly (good and evil from God, Job 2:10)
+    Domain: ECONOMICS_PROPERTY > Possess, Transfer, Exchange
+    Glosses: eng: and-receive, and-received, and-received-them | spa: recibimos, recibiremos, y-la-recibieron | fra: et-recevoir, et-וקבל, נקבל | deu: [ויקבלו], [ויקבלם], [וקבל]
+    Refs: 1Chr 12:19, 2Chr 29:16, 2Chr 29:22, Ezra 8:30, Job 2:10
+  Sense 2: "to accept, undertake" (5x)
+    Desc: Piel: to accept willingly, agree to or undertake an obligation; includes accepting instruction (Pr 19:20), choosing for oneself (1Chr 21:11), and assuming obligations (Est 9:23,27)
+    Domain: ECONOMICS_PROPERTY > Possess, Transfer, Exchange
+    Glosses: eng: [kethiv], accept-, and-accepted | spa: (y-aceptaron), Y-aceptaron, [y-aceptaron] | fra: et-recevoir, recevoir | deu: [(וקבלו‪‬)], [[וקבל]], [וקבל]
+    Refs: 1Chr 21:11, Esth 4:4, Esth 9:23, Esth 9:27, Esth 9:27
+  Sense 3: "to correspond, be opposite" (2x)
+    Desc: Hiphil: to show oppositeness, correspond one to another; used of the tabernacle loops facing each other (Ex 26:5, 36:12)
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: corresponding | spa: correspondientes | fra: corresponding | deu: corresponding
+    Refs: Exod 26:5, Exod 36:12
+
+=== H7217 ===
+Language: Hebrew, POS: Prep-b | N-msc | 3fs, Occurrences: 14, Senses: 3
+
+BDB excerpt: † [רֵאשׁ] n.m. Dn 7:6 head (Egyptian Aramaic, S-CPap.; Palm. רש; 𝔗 רֵישׁ, Syriac ܪܺܝܫ; BH רֹאשׁ);—cstr. ר׳ Dn 7:1; emph. ה—ָ 2:38; sf. רֵאשִׁי 4:2 +, ךְ—ָ 2:28, הּ—ֵ v 32 +, הּ—ַ 7:20, הוֹן—ֵ 3:27; pl. abs. רֵאשִׁין 7:6, sf. רָאשֵׁיהֹם (K§§ 53, Anm. b); 63 Gu Hpt ad loc.) Ezr 5:10;— 1. head of man Dn 3:27, cf. 7:9; in vision: of image 2:32, 38, beast 7:6, 20. 2. head as seat of visions, הֶזְוֵי רֵאשָׁךְ, etc., 2:28; 4:2, 7, 10; 7:1, 15. 3. = chief, בְּר׳ Ezr 5:10 in the capacity of their chiefs. 4. sum, essential content, of matters Dn 7:1 (NesMM 40 beginning).
+Senses:
+  Sense 1: "head (body part)" (12x)
+    Desc: The physical head of a person, animal, or statue image, used literally across all pronominal suffixes and with prepositional prefix
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: His-head, heads, his-head | spa: cabeza-de-mí, cabeza-de-él, cabezas | fra: [בראשה], [ראשהון], [ראשין] | deu: Haupt
+    Refs: Dan 2:28, Dan 2:32, Dan 2:38, Dan 3:27, Dan 4:5
+  Sense 2: "chief, leader" (1x)
+    Desc: Metaphorical extension of 'head' to denote a chief or leader among a group, as evidenced by Hindi 'मुखिया' (chief) and Swahili 'viongozi' (leaders)
+    Domain: AUTHORITY_RULE > Control, Rule
+    Glosses: eng: at-their-heads | spa: en-sus-cabezas. | fra: [בראשיהם] | deu: [בראשיהם]
+    Refs: Ezra 5:10
+  Sense 3: "sum, chief point" (1x)
+    Desc: Abstract sense meaning the sum, summary, or main point of a matter, as in Daniel 7:1 'the sum of the matters', supported by multilingual glosses 'resumen' (Spa), 'muhtasari' (Swa), 'मुख्य' (Hin)
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: sum-of | spa: resumen-de | fra: [ראש] | deu: Haupt
+    Refs: Dan 7:1
+
+=== H7386 ===
+Language: Hebrew, POS: Art | Adj-fp, Occurrences: 14, Senses: 3
+
+BDB excerpt: † [רֵיק], רֵק adj. empty, vain;—m. abs. רֵק Gn 37:24 + 2 times; f. רֵקָה Ez 24:11 Is 29:8; mpl. רֵ(י)קִים Ju 7:16 +; fpl. רֵקוֹת Gn 41:27;— 1. empty, of vessels 2 K 4:3 Ju 7:16 Ez 24:11 + (prob.) Je 14:3 (רֵ��קִים for רֵיקָם), 51:34 (רֵיק for רִיק); of pit Gn 37:24 (J), lap Ne 5:13, ears of grain Gn 41:27 (E; דַּקּוֹת v 6, 7, 23, 24); רֵקָה נַפְשׁוֹ Is 29:8 (cf. 32:6 √ 1). 2. empty, idle, worthless, ethically; אנשׁים ריקים worthless fellows Ju 9:4; 11:3 2 Ch 13:7, so הָרֵקִים alone (as subst.) 2 S 6:20; מְרַדֵּף רֵיקִים Pr 12:11 AV RV of persons; vain, unprofitable things, 28:19 (v. Toy); דָּב
+Senses:
+  Sense 1: "empty (physically vacant)" (9x)
+    Desc: Literally empty or vacant, describing vessels, hands, or a physical state of containing nothing — glossed consistently as 'empty/vacío/खाली/فارغ/빈/tupu' across languages.
+    Domain: ECONOMICS_PROPERTY > Value
+    Glosses: eng: and-empty, empty, the-empty | spa: las-vacías, vacía, vacías | fra: [וריקה], et-seulement, le-vider | deu: [וריקה], [רקה], die-leeren
+    Refs: Gen 37:24, Gen 41:27, Deut 32:47, Judg 7:16, Judg 11:3
+  Sense 2: "worthless persons (idle, reckless fellows)" (3x)
+    Desc: Applied to people: idle, good-for-nothing, reckless men — multilingual evidence shows Arabic السُّفَهَاء (fools), Swahili wapumbavu (fools), Hindi निकम्मे/मूर्ख (idle/foolish), distinguishing this fro...
+    Domain: ECONOMICS_PROPERTY > Value
+    Glosses: eng: the-worthless-ones, worthless | spa: los-vacíos, vacíos | fra: [רקים], le-sans-valeur-ceux, worthless | deu: [רקים], der-worthless-die, worthless
+    Refs: Judg 9:4, 2Sam 6:20, 2Chr 13:7
+  Sense 3: "vain things (vanities, futile pursuits)" (2x)
+    Desc: Abstract sense of emptiness applied to things or concepts: vanities, futile pursuits — glossed as Spanish 'vanidades', Hindi व्यर्थ (futile), Arabic أَباطِيل (vanities), Swahili ubatili (futility), in...
+    Domain: ECONOMICS_PROPERTY > Value
+    Glosses: eng: vain-things, worthless-pursuits | spa: vanidades | fra: ריקים, רקים | deu: [ריקים], [רקים]
+    Refs: Prov 12:11, Prov 28:19
+
+=== H7613 ===
+Language: Hebrew, POS: Conj-w | N-fsc | 3ms, Occurrences: 14, Senses: 3
+
+BDB excerpt: † שְׂאֵת n.f. 1. exaltation, dignity. 2. swelling. 3. uprising;—שׂ׳ abs. Gn 4:7 +, cstr. Lv 13:28 +; sf. שְׂאֵתוֹ Jb 13:11 +; (מִ)שֵּׂתוֹ 41:17;— 1. dignity Gn 49:3 (dignity of first-born), ψ 62:5, of Chaldeans Hb 1:7; of God, his exaltation, loftiness Jb 13:11; 31:23. 2. swelling, eruption, בְּעוֹר בָּשָׂר Lv 13:2 (+ סַפַּחַת, בַּהֶרֶת), cf. 14:56 (+ id.); also 13:10(×2), 19, 28, שׂ׳ הַנֶּגַע v 43 (all P). 3. uprising, Jb 41:17 at his uprising the mighty are in dread. 4. Gn 4:7 is dub.;—is there not acceptance? 𝔖 𝔙 al.; forgiveness 𝔗 Holz al.; uplifting of countenance, cheerfulness, Ew De Ke 
+Senses:
+  Sense 1: "swelling, skin lesion" (7x)
+    Desc: A raised area or swelling on the skin, used in Levitical priestly diagnosis of skin diseases (Lev 13-14); the physical, medical sense of elevation on the body's surface.
+    Domain: BODY_HEALTH > Physiological Processes and States
+    Glosses: eng: and-for-the-swelling, in-the-swelling, swelling | spa: Y-para-la-hinchazón, en-la-hinchazón, hinchazón | fra: dans-le-enflure, enflure, enflure- | deu: Schwellung, Schwellung-, Schwellung-von
+    Refs: Lev 13:2, Lev 13:10, Lev 13:10, Lev 13:19, Lev 13:28
+  Sense 2: "dignity, majesty, exaltation" (5x)
+    Desc: Elevated status, grandeur, or honor; the abstract sense of being 'lifted up' in rank, authority, or splendor, used of kings, rulers, and God.
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: and-from-His-majesty, and-his-dignity, dignity | spa: Su-majestad, de-su-dignidad, dignidad | fra: de-élévation, dignity, et-grandeur | deu: [ומשאתו], [ושאתו], [שאתו]
+    Refs: Gen 49:3, Job 13:11, Job 31:23, Ps 62:4, Hab 1:7
+  Sense 3: "lifting up, rising" (2x)
+    Desc: The action or event of rising or being lifted up, preserving the verbal force of the root nasa' (to lift/carry); used of physical rising or upward movement.
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: At-his-rising, lifting-up | spa: De-su-levantarse, levantar | fra: de-son-exaltation-lui, élevant-en-haut | deu: Erhebung, [משתו]
+    Refs: Gen 4:7, Job 41:25
+
+=== H7879 ===
+Language: Hebrew, POS: Prep-b | N-msc | 1cs, Occurrences: 14, Senses: 3
+
+BDB excerpt: † I. שִׂיחַ n.m. ψ 104:34 complaint, musing;—abs. שׂ׳ 1 K 18:27; Pr 23:29; sf. שִׂיחִי 1 S 1:16 +, שִׂחִי Jb 23:2, שִׂיחוֹ 2 K 9:11 ψ 102:1;— 1. plaint, complaint: Jb 7:13; 9:27; 10:1 (‖ מר נפשׁ), 21:4; 23:2 Pr 23:29 ψ 55:3 (‖ אָהִימָה); קוֹלִי בְּשִׂיחִי 64:2; שָׁפַךְ שׂ׳ לפני י׳ 102:1; 142:3. Foll. are dub.: 2. musing, 1 K 18:27 (E) of a god, ‖ שִׂיג לוֹ, (so RV; SS ‘nachdenken’; Buhl ‘beschäftigt sein’; AV talk); ψ 104:34 of man (Buhl SS. Bae ‘Rede, oder Gesang’).—Vid. also [שֵׂחַ²" dir="rtl" >שֵׂחַ] infr. 3. anxiety, trouble: מֵרֹב שִׂיחִי 1 S 1:16; (defined in MT by כַּעַס, cf. HPS; so Bu
+Senses:
+  Sense 1: "complaint, lament" (11x)
+    Desc: A grievance or lament brought before God or others, expressing distress, trouble, or dissatisfaction; the most frequent sense of שִׂיחַ in the Psalms and Job.
+    Domain: RELIGIOUS_LIFE > Funerals and Burial
+    Glosses: eng: complaining, his-complaint, in-my-complaint | spa: a-mi-queja,, con-mi-queja, en-mi-queja | fra: dans-mon-plainte-moi, dans-plainte, mon-complaint | deu: [בשיחי], [שחי], [שיח]
+    Refs: 1Sam 1:16, Job 7:13, Job 9:27, Job 10:1, Job 21:4
+  Sense 2: "meditation, musing" (2x)
+    Desc: Deep reflective thought or contemplation, often directed toward God's works or word; distinct from complaint in that it connotes quiet, absorbed reflection rather than vocal grievance.
+    Domain: MENTAL_LIFE > Think
+    Glosses: eng: musing, my-meditation | spa: meditación, mi-meditación | fra: musing, plainte | deu: mein-meditation, musing
+    Refs: 1Kgs 18:27, Ps 104:34
+  Sense 3: "talk, speech" (1x)
+    Desc: Spoken discourse or conversation; attested in Proverbs and 2 Kings where the context is ordinary human speech rather than complaint or meditation.
+    Domain: COMMUNICATION > Communication
+    Glosses: eng: his-talk | spa: habla-de-él | fra: son-parle | deu: sein-talk
+    Refs: 2Kgs 9:11
+
+=== H8577b ===
+Language: Hebrew, POS: Prep-l | N-mp, Occurrences: 14, Senses: 3
+
+BDB excerpt: † תַּנִּין (erron. תַּנִּים) n.m. Ez 29:3 serpent, dragon, sea-monster (NH id. (rare); Arabic تَنِّينٌ, loan-word from Aramaic תַּנִּינָא, ܬܰܢܺܝܢܳܐ Frä123; Ethiopic ተመን );—abs. ת׳ Ex 7:9 +, ים— Ez 29:3; 32:2 (by confusion with pl. of [תַּן]); pl. תַּנִּינִם Gn 1:21, etc.;— 1. serpent, Dt 32:33 (venomous), ψ 91:13 (‖ פֶּתֶן), Ex 7:9, 10, 12 (P). 2. dragon, as devourer (sim.) Je 51:34; עֵין הַתּ׳ Ne 2:13, near Jerus. 3. sea- (or river-) monster, Gn 1:21 (P); fig. Jb 7:12 ψ 74:13 (i.e. Egyptians), Is 27:1; 51:9 (‖ רַהַב mythol. personif. of chaos) Ez 29:3; 32:2; called to praise י׳ ψ 148:7 (‖ תְּ
+Senses:
+  Sense 1: "dragon, chaos monster" (6x)
+    Desc: A mythological dragon or cosmic chaos monster used in prophetic and apocalyptic imagery, often representing hostile nations or primordial adversaries (Isaiah, Jeremiah, Ezekiel, Psalms).
+    Domain: ANIMALS > Animals
+    Glosses: eng: dragon, like-a-serpent, serpents | spa: al-dragón?, como-dragón, el-dragón | fra: [התנין], [כתנין], [תנין] | deu: Schlangen, [התנים], [התנין]
+    Refs: Deut 32:33, Neh 2:13, Isa 27:1, Isa 51:9, Jer 51:34
+  Sense 2: "serpent, large snake" (4x)
+    Desc: A large serpent or snake, especially the serpent into which Moses' rod was transformed (Exodus 7) and similar threatening serpent imagery.
+    Domain: ANIMALS > Animals
+    Glosses: eng: and-the-serpent, serpent, serpents | spa: por-serpiente, por-serpientes, y-dragón | fra: et-dragon, serpent, serpents | deu: Schlange, Schlangen, und-der-Schlange
+    Refs: Exod 7:9, Exod 7:10, Exod 7:12, Ps 91:13
+  Sense 3: "sea monster, great sea creature" (4x)
+    Desc: A great sea creature or marine monster, including the sea creatures God created (Genesis 1:21) and the sea monsters of Job and Psalms.
+    Domain: ANIMALS > Animals
+    Glosses: eng: sea-creatures, sea-monster, the-sea-creatures | spa: el-monstruo-marino,, los-grandes-monstruos-marinos, monstruos-marinos | fra: dragon, le-mer-creatures, תנין | deu: Drache, der-Meer-monsters, die-großen-Seetiere
+    Refs: Gen 1:21, Job 7:12, Ps 74:13, Ps 148:7

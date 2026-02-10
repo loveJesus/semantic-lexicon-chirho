@@ -15,6 +15,18 @@
 		}
 		return daChirho.name_chirho.replace(/_/g, ' ');
 	}
+
+	function formatGlossChirho(textChirho: string): string {
+		if (!textChirho) return '';
+		const trimmedChirho = textChirho.trim();
+		if (trimmedChirho.startsWith('[') && trimmedChirho.endsWith(']')) {
+			try {
+				const parsedChirho = JSON.parse(trimmedChirho);
+				if (Array.isArray(parsedChirho)) return parsedChirho.join(', ');
+			} catch { /* not JSON, fall through */ }
+		}
+		return trimmedChirho.replace(/,(?!\s)/g, ', ');
+	}
 </script>
 
 <a href="/lemma-chirho" style="color: var(--muted-chirho);">Back to Lemmas</a>
@@ -40,7 +52,7 @@
 		</div>
 
 		{#if senseChirho.description_chirho}
-			<p style="color: var(--muted-chirho); margin: 4px 0;">{senseChirho.description_chirho}</p>
+			<p style="color: var(--muted-chirho); margin: 4px 0; word-break: break-word;">{senseChirho.description_chirho}</p>
 		{/if}
 
 		{#if senseChirho.domainAssignmentsChirho?.length > 0}
@@ -58,13 +70,13 @@
 			<summary style="cursor: pointer; color: var(--accent-chirho);">
 				Show occurrences ({senseChirho.occurrencesChirho.length} shown)
 			</summary>
-			<table style="width: 100%; border-collapse: collapse; margin-top: 8px; font-size: 13px;">
+			<table style="width: 100%; border-collapse: collapse; margin-top: 8px; font-size: 13px; table-layout: fixed;">
 				<thead>
 					<tr style="border-bottom: 1px solid var(--border-chirho);">
-						<th style="text-align: left; padding: 4px;">ID</th>
-						<th style="text-align: left; padding: 4px;">Surface</th>
-						<th style="text-align: left; padding: 4px;">Ref</th>
-						<th style="text-align: left; padding: 4px;">Glosses</th>
+						<th style="text-align: left; padding: 4px; width: 15%;">ID</th>
+						<th style="text-align: left; padding: 4px; width: 10%;">Surface</th>
+						<th style="text-align: left; padding: 4px; width: 10%;">Ref</th>
+						<th style="text-align: left; padding: 4px; width: 65%;">Glosses</th>
 					</tr>
 				</thead>
 				<tbody>
@@ -73,10 +85,10 @@
 							<td style="padding: 4px; font-family: monospace;">{occChirho.occurrence_id_chirho}</td>
 							<td style="padding: 4px;">{occChirho.surface_chirho}</td>
 							<td style="padding: 4px; color: var(--muted-chirho);">{occChirho.book_chirho}:{occChirho.chapter_chirho}:{occChirho.verse_chirho}</td>
-							<td style="padding: 4px;">
+							<td style="padding: 4px; word-break: break-word; max-width: 400px;">
 								{#each occChirho.glossesChirho as gChirho}
-									<span style="margin-right: 8px;">
-										<strong style="color: var(--muted-chirho);">{gChirho.language_code_chirho}:</strong> {gChirho.gloss_text_chirho}
+									<span style="display: inline-block; margin-right: 8px; margin-bottom: 2px;">
+										<strong style="color: var(--muted-chirho);">{gChirho.language_code_chirho}:</strong> {formatGlossChirho(gChirho.gloss_text_chirho)}
 									</span>
 								{/each}
 							</td>

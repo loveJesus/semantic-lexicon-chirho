@@ -1,0 +1,123 @@
+You are a biblical lexicographer composing glosses for a digital lexicon.
+For each lemma below, compose a JSON object. Separate objects with "---".
+
+Format for each:
+{
+  "lemma_id": "...",
+  "gloss_terse": "under 120 chars, concise definition covering the word's semantic range",
+  "gloss_readable": "2-5 sentences, 40-120 words. Don't start with 'This word'. Warm study-Bible footnote tone. Engaging, not dry.",
+  "senses": {
+    "1": "enriched 20-60 word description. Reference multilingual evidence when illuminating. Don't repeat the label verbatim.",
+    "2": "..."
+  }
+}
+
+Rules:
+- No markdown fences, just JSON objects separated by ---
+- Reference multilingual evidence naturally when it reveals something
+- gloss_readable should feel like a good study Bible footnote: helpful, clear, occasionally surprising
+- Each sense enrichment: how does the evidence support this sense? Mention 1-2 key passages when helpful.
+
+=== H6087a ===
+Language: Hebrew, POS: Conj-w | V-Piel-ConjPerf-3cp, Occurrences: 15, Senses: 4
+
+BDB excerpt: † I. [עָצַב] vb. hurt, pain, grieve (NH Nithp. and in deriv.; 𝔗 עֲצַב be in pain (rare); Ethiopic ዐጸበ: be hard, difficult; LagBN 50, cf. 201 cp. Arabic غَضِبَ be angry, but dub.);— Qal Pf. 3 ms. sf. עֲצָבוֹ 1 K 1:6 his father had not pained him (𝔊 Klo Gr עֲצָרוֹ, but v. Benz); ins. עָצַב (with other words) 2 S 13:21 𝔊 Ew Th We Kit Bu HPS; Inf. cstr. sf. לְבִלְתִּי עָצְבִּי 1 Ch 4:10 that it (רָעָה) may not pain me; Pt. pass. cstr. עֲצוּבַת רוּחַ Is 54:6 hurt in spirit (of Zion under fig. of deserted wife). Niph. Pf. 3 ms. נֶעְצַב 1 S 20:34 be pained for (אֶל pers.; del. 𝔊 HPS); נֶעֱצַב 2 S 19:
+Senses:
+  Sense 1: "be grieved, feel sorrow" (9x)
+    Desc: Intransitive emotional grief or sorrow, experienced by the subject (Nifal, Hitpael, and Qal passive participle forms expressing the state of being grieved or sorrowful).
+    Domain: EMOTION_ATTITUDE > Attitudes and Emotions
+    Glosses: eng: and-grieved-of, and-he-was-grieved, and-were-grieved | spa: os-entristezcáis, os-entristeécáis, se-entristece | fra: [ועצובת], [תעצבו], affligea | deu: [ועצובת], [תעצבו], er-sein-grieved
+    Refs: Gen 6:6, Gen 34:7, Gen 45:5, 1Sam 20:3, 1Sam 20:34
+  Sense 2: "grieve, vex, cause pain" (4x)
+    Desc: Causative grief or vexation directed at another person, making someone sorrowful or pained (Qal transitive, Piel causative, and Hifil causative forms with a direct object).
+    Domain: PHYSICAL_ACTION > Physical Impact
+    Glosses: eng: and-grieved, grieve-me, rebuked-him | spa: afligirme, lo-contristó, lo-entristecieron | fra: [ועצבו], [עצבי], attrister | deu: [ועצבו], [עצבי], rebuked-ihn
+    Refs: 1Kgs 1:6, 1Chr 4:10, Ps 78:40, Isa 63:10
+  Sense 3: "twist, distort, wrest" (1x)
+    Desc: To twist or distort something, often words or meaning, a semantically distinct Piel usage unrelated to grief or pain.
+    Domain: BODY_HEALTH > Sensory Events and States
+    Glosses: eng: they-twist | spa: tuercen | fra: attrister | deu: sie-twist
+    Refs: Ps 56:5
+  Sense 4: "be hurt, be injured" (1x)
+    Desc: To suffer physical hurt or injury, distinct from emotional grief (Nifal form with glosses pointing to bodily harm rather than emotional pain).
+    Domain: BODY_HEALTH > Sensory Events and States
+    Glosses: eng: will-be-hurt | spa: se-lastimará | fra: יעצב | deu: [יעצב]
+    Refs: Eccl 10:9
+
+=== H6168 ===
+Language: Hebrew, POS: Conj-w | V-Hitpael-ConjImperf-2fs, Occurrences: 15, Senses: 4
+
+BDB excerpt: † [עָרָה] vb. be naked, bare (Arabic عَرِىَ be naked; Ph. ערה [Pi.] lay bare (cf. Bloch Lzb); Assyrian ûru, nakedness, also desert waste (cf. [עָרָה] infr.) JägerBAS ii. 282 and reff.; NH עֶרְוָה = BH, 𝔗 עִירְיְתָא; Syriac ܥܪܳܝܽܘܬܳܐ in Lexx);— Pi. Pf. 3 ms. עֵרָה Is 22:6 Zp 2:14; Impf. 3 ms. יְעָרֶה Is 3:17; 3 fs. וַתְּעַר Gn 24:20; 2 ms. juss. תְּעַר ψ 141:8; 3 mpl. וִיעָרוּ 2 Ch 24:11; Imv. mpl. עָ֫רוּ ψ 137:7(×2); Inf. abs. עָרוֹת Hb 3:13 (Ges§ 75 n);— 1. lay bare Is 3:17; 22:6; Zp 2:14 (indef. subj.); of laying foundations bare, i.e. tearing down walls, etc. Hb 3:13 (yet on text v. Now), a
+Senses:
+  Sense 1: "lay bare, uncover, strip (Piel)" (7x)
+    Desc: To remove a covering, expose what is hidden, or strip naked; the core Piel sense of physical or figurative uncovering.
+    Domain: PHYSICAL_ACTION > Activities Involving Clothing
+    Glosses: eng: He-will-lay-bare, he-has-stripped, lay-bare | spa: Arrasad, arrasad, desampares | fra: [יערה], [ערה], dénuder | deu: [יערה], [ערה], [ערות]
+    Refs: Ps 137:7, Ps 137:7, Ps 141:8, Isa 3:17, Isa 22:6
+  Sense 2: "pour out, empty" (4x)
+    Desc: To pour out liquid or empty a vessel; used in Hifil, Piel, and Niphal for the transfer or draining of contents.
+    Domain: PHYSICAL_ACTION > Activities Involving Liquids
+    Glosses: eng: and-emptied, he-poured-out, is-poured | spa: derramó, sea-derramado, y-vaciaban | fra: [הערה], [ויערו], [יערה] | deu: [הערה], [ויערו], [יערה]
+    Refs: Gen 24:20, 2Chr 24:11, Isa 32:15, Isa 53:12
+  Sense 3: "expose, reveal (Hifil)" (2x)
+    Desc: Causative uncovering: to cause something to be disclosed, laid open, or made visible.
+    Domain: MENTAL_LIFE > Know
+    Glosses: eng: he-exposed | spa: descubrió, desnudó | fra: il-exposed | deu: er-exposed
+    Refs: Lev 20:18, Lev 20:19
+  Sense 4: "strip oneself, spread out (Hitpael)" (2x)
+    Desc: Reflexive action of making oneself bare or spreading oneself out, whether stripping naked or extending like a flourishing tree.
+    Domain: PHYSICAL_ACTION > Activities Involving Clothing
+    Glosses: eng: and-spreading-himself, and-strip-yourself-naked | spa: y-extendiéndose, y-te-desnudarás | fra: [ותתערי], et-de-dénuder | deu: [ותתערי], und-spreading-sich-selbst
+    Refs: Ps 37:35, Lam 4:21
+
+=== H6206 ===
+Language: Hebrew, POS: V-Qal-Imperf-1cs, Occurrences: 15, Senses: 4
+
+BDB excerpt: † [עָרַץ] vb. cause to tremble, tremble (in terror, or awe) (cf. Arabic عَرِصَ quiver, flicker; Syriac ܥܪܰܨ come upon suddenly or violently, PS s.v. passim; cf. Egyptian ʿu-ra-d̲au(t̥), they terrified (= ערצו) WMMAs. u. Eur. 76);— Qal Impf. 2 ms. תַּעֲרֹץ Dt 7:21 +; 2 fs. תַּעֲר֑וֹצִי Is 47:12; 1 s. אֶעֱרוֹץ Jb 31:34, etc.; Inf. cstr. עֲרֹץ Is 2:19 +; 1. cause to tremble (i.e. strike with awe) c. acc. הָאָרֶץ Is 2:19, 21 (subj. י׳; ins. prob. also v 10); הֶעָלֶה נִדָּף תַּע׳ Jb 13:25 wilt thou strike with awe the driven leaf? abs. cause trembling = inspire awe Is 47:12 (of Bab.), ψ 10:18. 2. i
+Senses:
+  Sense 1: "to dread, be terrified" (7x)
+    Desc: Qal and Hifil intransitive sense: to tremble or be in dread before a threatening force or person, expressing the subject's own fear or terror.
+    Domain: EMOTION_ATTITUDE > Attitudes and Emotions
+    Glosses: eng: I-feared, be-terrified, you-shall-be-terrified | spa: os-aterroricéis, os-aterréis, te-espantes | fra: effrayer, sois-effrayé, tu-devra-dread | deu: [אערוץ], [תעריצו], du-soll-Schrecken
+    Refs: Deut 1:29, Deut 7:21, Deut 20:3, Deut 31:6, Josh 1:9
+  Sense 2: "to terrify, cause terror" (5x)
+    Desc: Qal transitive and infinitive sense: to cause dread or terror in another, to frighten or make someone tremble.
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: to-terrify, you-frighten, you-will-cause-terror | spa: aterrorizarás, para-aterrorizar | fra: effrayer, à-effrayer, תערוץ | deu: [לערץ], [תערוץ], [תערוצי]
+    Refs: Job 13:25, Ps 10:18, Isa 2:19, Isa 2:21, Isa 47:12
+  Sense 3: "to inspire dread or awe" (2x)
+    Desc: Hifil causative sense: to cause others to tremble in awe or reverence, or the dread one inspires in others, used of God's terror upon creatures.
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: your-dread | spa: sea-vuestro-terror, temerán | fra: effrayer | deu: [יעריצו], [מערצכם]
+    Refs: Isa 8:13, Isa 29:23
+  Sense 4: "to be feared, awesome" (1x)
+    Desc: Nifal participial sense: to be regarded with dread or awe, describing one who is feared or held as terrifying, often used as an epithet of God.
+    Domain: EMOTION_ATTITUDE > Attitudes and Emotions
+    Glosses: eng: greatly-feared | spa: temido | fra: effrayer | deu: greatly-gefürchtet
+    Refs: Ps 89:7
+
+=== H6789 ===
+Language: Hebrew, POS: V-Hifil-Imperf-1cs | 3mp, Occurrences: 15, Senses: 4
+
+BDB excerpt: † [צָמַת] vb. put an end to, exterminate, poet. and (in Qal, Pi.) hyperb. (proposes compress, NH id., press together; Arabic صَمَتَ is be silent, ii, iv. make speechless, silence; Syriac ܨܡܰܬ be silent (in Lexx));— Qal Pf. 3 pl. צָֽמְתוּ … חַיָּ֑י La 3:53 they have put an end to my life (Bu conj. Pi.). Niph. be ended, annihilated; Pf. 1 s. נִצְמַתִּי מִפְּנֵי־חשֶׁךְ Jb 23:17 I am [not] annihilated because of (the) darkness; 3 pl. נִצְמָ֑תוּ Jb 6:17 (of dried-up brooks). Pi. Pf. 3 fs. sf. צִמְּחַתְנִי ψ 119:139 קִנְאָתִי hath put an end to me (it is so intense). Piʿlēl Pf. 3 pl. sf. צִמְּתֻתוּנ
+Senses:
+  Sense 1: "destroy, annihilate (Hifil)" (10x)
+    Desc: Causative active: to cause to be cut off, to destroy or annihilate people or nations, used across all Hifil inflections (imperfect, perfect, imperative, participle) with objects ranging from enemies t...
+    Domain: VIOLENCE_CONFLICT > Violence, Harm, Destroy, Kill
+    Glosses: eng: I-destroyed, I-will-destroy, You-put-an-end-to | spa: destruirás, destruiré, destrúyelos | fra: anéantir, de-anéantir, et-je-détruis-eux | deu: cut-off, du-setzen-ein-enden-zu, ich-vernichtet
+    Refs: 2Sam 22:41, Ps 18:40, Ps 54:5, Ps 69:4, Ps 73:27
+  Sense 2: "be cut off, perish, vanish (Nifal)" (2x)
+    Desc: Passive or reflexive: to be destroyed, to perish or vanish, describing the state of being cut off — ranging from physical disappearance to being silenced or undone.
+    Domain: VIOLENCE_CONFLICT > Violence, Harm, Destroy, Kill
+    Glosses: eng: I-was-silenced, they-vanish | spa: desaparecen, fui-destruido | fra: נצמתו, נצמתי | deu: [נצמתו], [נצמתי]
+    Refs: Job 6:17, Job 23:17
+  Sense 3: "destroy utterly, consume (Piel)" (2x)
+    Desc: Intensive active: to destroy completely or consume, with the Piel intensifying the destruction beyond the basic stem, often with a personal object suffix indicating the victim.
+    Domain: MOVEMENT > Linear Movement
+    Glosses: eng: has-consumed-me, have-destroyed-me | spa: Me-consumió, me-destruyeron | fra: anéantir | deu: haben-vernichtet-mich, hat-verzehrt-mich
+    Refs: Ps 88:16, Ps 119:139
+  Sense 4: "put an end to, silence (Qal)" (1x)
+    Desc: Basic active stem: to cut off or silence, the fundamental meaning of the root without causative or intensive force, describing a direct act of ending or cutting short.
+    Domain: TIME > Aspect
+    Glosses: eng: They-silenced | spa: Cortaron | fra: [צמתו] | deu: [צמתו]
+    Refs: Lam 3:53

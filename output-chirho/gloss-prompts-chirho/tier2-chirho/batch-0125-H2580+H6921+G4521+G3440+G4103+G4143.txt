@@ -1,0 +1,113 @@
+You are a biblical lexicographer composing glosses for a digital lexicon.
+For each lemma below, compose a JSON object. Separate objects with "---".
+
+Format for each:
+{
+  "lemma_id": "...",
+  "gloss_terse": "under 120 chars, concise definition covering the word's semantic range",
+  "gloss_readable": "2-5 sentences, 40-120 words. Don't start with 'This word'. Warm study-Bible footnote tone. Engaging, not dry.",
+  "senses": {
+    "1": "enriched 20-60 word description. Reference multilingual evidence when illuminating. Don't repeat the label verbatim.",
+    "2": "..."
+  }
+}
+
+Rules:
+- No markdown fences, just JSON objects separated by ---
+- Reference multilingual evidence naturally when it reveals something
+- gloss_readable should feel like a good study Bible footnote: helpful, clear, occasionally surprising
+- Each sense enrichment: how does the evidence support this sense? Mention 1-2 key passages when helpful.
+
+=== H2580 ===
+Language: Hebrew, POS: Art | N-ms, Occurrences: 69, Senses: 2
+
+BDB excerpt: † I. חֵן n.m. ψ 45:3 favour, grace;—ח׳ Gn 6:8 + 67 times; sf. חִנּוֹ Gn 39:21;— 1. favour, grace, elegance: a. of form and appearance, of a woman ‖ יֹ֑פִי Pr 31:30; אֵשֶׁת חֵן Pr 11:16; זונה טובת חן Na 3:4; of a doe Pr 5:19; precious stone אבן חן Pr 17:8; of ornaments Pr 1:9 = 4:9, 3:22. b. of speech, lips ψ 45:3 Pr 22:11; words Ec 10:12. 2. favour, acceptance: a. with men Pr 13:15; 22:1; Ec 9:11. b. with God Zc 4:7(×2); 12:10; chiefly in phrases: מצא חן בעיני find favour in the eyes of: (1) men Gn 30:27; 32:6; 33:8, 10, 15; 34:11; 39:4; 47:25, 29; 50:4 Nu 32:5 (all J); Dt 24:1; Ru 2:2, 10, 13
+Senses:
+  Sense 1: "favor, goodwill" (61x)
+    Desc: Favor or goodwill shown by a superior to an inferior, typically in the phrase 'find favor in the eyes of' (matsa chen be-ene), denoting acceptance, kindly regard, or gracious disposition toward someon...
+    Domain: MORAL_QUALITY > Moral and Ethical Qualities
+    Glosses: eng: favor | spa: gracia, gracia-de- | fra: grâce | deu: Gnade, Gunst
+    Refs: Gen 6:8, Gen 18:3, Gen 19:19, Gen 30:27, Gen 32:5
+  Sense 2: "grace, charm, elegance" (8x)
+    Desc: Grace, charm, or elegance as an attractive quality or adornment belonging to a person, especially in wisdom literature where chen is a personal attribute rather than interpersonal acceptance; includes...
+    Domain: MORAL_QUALITY > Moral and Ethical Qualities
+    Glosses: eng: deer, favor, grace | spa: de-gracia, gracia, la-gracia | fra: grâce, le-grâce | deu: Gnade
+    Refs: Prov 1:9, Prov 4:9, Prov 5:19, Prov 11:16, Prov 17:8
+
+=== H6921 ===
+Language: Hebrew, POS: Art | N-ms | 3fs, Occurrences: 69, Senses: 2
+
+BDB excerpt: קָדִים69 n.m. Ho 13:15 East, east wind;—abs. ק׳ Gn 41:6 +; c. ה loc. קָדִ֫ימָה Ez 11:1 +, קָדִ֫מָה 48:4 +;— †1. (apart from Ez) East, especially רוּחַ (הַ)קּ׳ wind of the East, east wind, often as violent and scorching, from desert on SE., = Arabic sirocco (شرقية eastern), cf. Dr Am 4:9: Ex 10:13(×2) (JE), 14:21 (J), Je 18:17 (sim.), Jon 4:8 ψ 48:8; also ק׳ (רוּחַ om.) = east wind Gn 41:6, 23, 27 (E), Ho 12:2; 13:15; Is 27:8; Jb 15:2; 27:21; 38:24 ψ 78:26.—קָדִימָה Hb 1:9 is dub., usually eastward, i.e. forward, but text prob. corrupt, cf. We Now Da, GASm proposes מַקְדִּים (v. also [מְגַמָּה]
+Senses:
+  Sense 1: "east, eastward (direction)" (59x)
+    Desc: The cardinal direction east, used for geographical orientation, boundaries, and directional movement, including with various prepositions (to, from, toward) and the locative suffix.
+    Domain: GEOGRAPHY_SPACE > Spacial Orientations
+    Glosses: eng: east, eastward | spa: este, hacia-adelante, hacia-el-este | fra: est, vers-l'est | deu: Osten, [קדימה], ostwarts
+    Refs: Exod 10:13, Exod 10:13, Exod 14:21, Ezek 11:1, Ezek 17:10
+  Sense 2: "east wind (scorching desert wind)" (10x)
+    Desc: The hot, dry wind blowing from the eastern desert, often depicted as an instrument of divine judgment that scorches vegetation, wrecks ships, and brings destruction (cf. Exodus 14:21; Genesis 41:6; Ps...
+    Domain: GEOGRAPHY_SPACE > Spacial Orientations
+    Glosses: eng: east-wind, in-the-day, the-east-wind | spa: de-viento-del-este, el-viento-del-este, viento-del-este | fra: [קדים], est, est-vent | deu: -, [קדים], der-east-Wind
+    Refs: Gen 41:6, Gen 41:23, Gen 41:27, Job 15:2, Job 27:21
+
+=== G4521 ===
+Language: Greek, POS: N-GNS, Occurrences: 68, Senses: 2
+
+BDB excerpt: Σάββᾰτ-ον, τό, the Hebrew Refs (δηλοῖ δὲ ἀνάπαυσιν.. τὸ ὄνομα NT+1st c.AD+: frequently in plural of the single day, NT+3rd c.BC+; ἡ ἡμέρα τῶν σ. LXX+NT+1st c.AD+, frequently with variant{σαββάτοις}; but σάββασι is certain in Refs 1st c.BC+ __2 period of seven days, week, εἰς μίαν σαββάτων toward the first day of the week, NT; τῇ μιᾷ τῶν σNT; δὶς τοῦ σ. NT __3 Σαβάτ, the LXX
+Senses:
+  Sense 1: "Sabbath day of rest" (60x)
+    Desc: The seventh day of the week observed as a day of rest and worship, including singular and plural forms referring to the same institution.
+    Domain: TIME > Time
+    Glosses: eng: Sabbath, a-Sabbath, on-Sabbath | spa: en-sábado, sábado | fra: sabbat | deu: Sabbat, σάββατον, σαββάτου
+    Refs: Matt 12:1, Matt 12:2, Matt 12:5, Matt 12:10, Matt 12:11
+  Sense 2: "week period of seven days" (8x)
+    Desc: A period of seven days from one Sabbath to the next, used in expressions like 'first day of the week' or 'twice a week'.
+    Domain: TIME > Time
+    Glosses: eng: of-sabbath, of-week, sabbaths | spa: de-semana, de-sábados, del-sábado | fra: sabbat | deu: Sabbat, σαββάτου, σαββάτων
+    Refs: Mark 16:2, Mark 16:9, Luke 18:12, Luke 24:1, John 20:1
+
+=== G3440 ===
+Language: Greek, POS: Adv, Occurrences: 67, Senses: 2
+
+BDB excerpt: Related to: μονόω, Epic dialect and Ionic dialect μουνόω, Refs 8th c.BC+; but μον- in Refs 8th c.BC+: (μόνος):— make single or solitary, ἡμετέρην γενεὴν μούνωσε Κρονίων made our race single, i. e. allowed but one son in each generation, Refs 8th c.BC+; μ. τὸν Φίλιππον leave him isolated, Refs 2nd c.BC+; get alone, τινὰ ἐν σπήλυγγι Refs; strip of predicates, make unique, [θεόν] Refs 3rd c.AD+ __II more frequently in passive, to be left alone, forsaken, ἐνὶ Τρώεσσι μονωθείς Refs 8th c.BC+; ἐμουνοῦντο they were left each man by himself, Refs 5th c.BC+; μουνωθέντα taken apart, without witnesses (v
+Senses:
+  Sense 1: "?" (65x)
+    Domain: DISCOURSE_NAMES > Discourse Markers
+    Glosses: eng: only | spa: sola, solamente, solo | fra: seulement | deu: nur
+    Refs: Matt 5:47, Matt 8:8, Matt 9:21, Matt 10:42, Matt 14:36
+  Sense 2: "?" (2x)
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: alone | spa: solo | fra: seulement | deu: nur
+    Refs: Matt 17:8, Mark 9:8
+
+=== G4103 ===
+Language: Greek, POS: Adj-ANS, Occurrences: 67, Senses: 2
+
+BDB excerpt: πιστός, ή, όν, (πείθω): __B passive, to be trusted or believed: __B.I of persons, faithful, trusty, ἑταῖρος Refs 8th c.BC+: comparative -ότερος Refs 5th c.BC+: superlative πιστότατος Refs 8th c.BC+ a trusted friend of P., Ergias cited in Refs 4th c.BC+; οἱ πιστοί, in Persia, trusty councillors, Refs 5th c.BC+; τάδε Περσῶν πιστὰ καλεῖται Refs 4th c.BC+ __B.I.2 trustworthy, worthy of credit, Refs 5th c.BC+. adverb, - τῶς καὶ ἀδόλως Refs __B.I.3 genuine, π. Ἀταλάντης γόνος Refs 5th c.BC+; Θηρικλέους π. τέκνον, of a cup, Refs 5th c.BC+; unmistakable, νόσοι πονηραὶ καὶ π. LXX __B.II of things, trus
+Senses:
+  Sense 1: "faithful, trustworthy, reliable" (54x)
+    Desc: Passive sense: worthy of trust or belief; dependable, steadfast, loyal — used of God, persons, or sayings that can be relied upon.
+    Domain: FAITH_BELIEF > Hold a View, Believe, Trust
+    Glosses: eng: faithful | spa: fiel, fieles | fra: fidèle | deu: treu
+    Refs: Matt 24:45, Matt 25:21, Matt 25:21, Matt 25:23, Matt 25:23
+  Sense 2: "believing, a believer" (13x)
+    Desc: Active sense: one who believes or has faith; a person exercising trust in God or Christ, a member of the believing community.
+    Domain: FAITH_BELIEF > Hold a View, Believe, Trust
+    Glosses: eng: believers, believing, believing-woman | spa: a-fiel, creyente, creyentes | fra: fidèle | deu: treu
+    Refs: John 20:27, Acts 10:45, Acts 16:1, 2Cor 6:15, Gal 3:9
+
+=== G4143 ===
+Language: Greek, POS: N-GNS, Occurrences: 67, Senses: 2
+
+BDB excerpt: πλοῖον, τό, (πλέω) properly floating vessel: hence, generally, ship, Refs 5th c.BC+ small craft, Refs 5th c.BC+; π. ἁλιευτικόν a fishing-boat, Refs 5th c.BC+; ἱππαγωγὰ π. transports for horses, Refs 5th c.BC+; π. μακρά ships of war, Refs 5th c.BC+; π. στρογγύλα or φορτηγικά ships of burden, merchantmen, Refs 5th c.BC+ without adjective, mostly merchant-ship or transport, as opposed to ship of war, τοῖς π. καὶ ταῖς ναυσί Refs 5th c.BC+; πλεῖν μὴ μακρᾷ νηΐ, ἄλλῳ δὲ κωπήρει πλοίῳ Foed.Refs 5th c.BC+; πλοῖα alone, ={τριήρεις}, Refs 5th c.BC+
+Senses:
+  Sense 1: "boat, small fishing vessel" (45x)
+    Desc: A small watercraft or fishing boat, used primarily in the Synoptic Gospels and John for the boats on the Sea of Galilee. This covers the vessels used by the disciples for fishing (Luke 5:2-11; Mark 1:...
+    Domain: ARTIFACTS > Artifacts
+    Glosses: eng: a-boat, boat | spa: barca | fra: bateau | deu: Boot, Schiff
+    Refs: Matt 4:21, Matt 4:22, Matt 8:23, Matt 8:24, Matt 9:1
+  Sense 2: "ship, sea-going vessel" (22x)
+    Desc: A larger sea-going ship used for maritime voyages, found predominantly in Acts and Revelation. Distinguished from the Galilean fishing boats by context (Mediterranean voyages) and by multilingual glos...
+    Domain: ARTIFACTS > Artifacts
+    Glosses: eng: a-ship, on-a-ship, ship | spa: barco, barcos, en-un-barco | fra: bateau, navire | deu: Boot, Schiff
+    Refs: Acts 20:13, Acts 20:38, Acts 21:2, Acts 21:3, Acts 21:6

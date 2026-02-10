@@ -1,0 +1,123 @@
+You are a biblical lexicographer composing glosses for a digital lexicon.
+For each lemma below, compose a JSON object. Separate objects with "---".
+
+Format for each:
+{
+  "lemma_id": "...",
+  "gloss_terse": "under 120 chars, concise definition covering the word's semantic range",
+  "gloss_readable": "2-5 sentences, 40-120 words. Don't start with 'This word'. Warm study-Bible footnote tone. Engaging, not dry.",
+  "senses": {
+    "1": "enriched 20-60 word description. Reference multilingual evidence when illuminating. Don't repeat the label verbatim.",
+    "2": "..."
+  }
+}
+
+Rules:
+- No markdown fences, just JSON objects separated by ---
+- Reference multilingual evidence naturally when it reveals something
+- gloss_readable should feel like a good study Bible footnote: helpful, clear, occasionally surprising
+- Each sense enrichment: how does the evidence support this sense? Mention 1-2 key passages when helpful.
+
+=== H7136a ===
+Language: Hebrew, POS: V-Qal-Perf-3ms | 3ms, Occurrences: 22, Senses: 4
+
+BDB excerpt: † [קָרָה] vb. encounter, meet, befall (‖ II. קָרָא; NH קָרָה meet (rare), קְרִי misfortune, specif. (nocturnal) pollution, and so Aramaic קִרְיוּתָא, ܩܶܪܝܳܐ; Arabic قَرَا (و) is go, seek earnestly, قَرَى receive hospitably as guest; Ethiopic ii. 3, አቃረየ: present, offer as sacrifice);— Qal Pf. 3 ms. sf. קָֽרְךָ Dt 25:18, (ו)קָרָהוּ Gn 44:29 +; Impf. 3 ms. יִקְרֶה Ec 9:11 + Dn 10:14 Kt (Qr יִקְרָא), וַיִּ֫קֶר Ru 2:3, sf. יִקְרְךָ Nu 11:23, יִקְרֵךְ 1 S 28:10 (d. f. dirim.); Pt. fpl. קֹרֹת Gn 42:29;— 1. encounter, meet, acc. pers. Dt 25:18, cf. (acc. rei) וַיִּ֫קֶר מִקְרֶהָ חֶלְקַת וגו׳ Ru 2:3 he
+Senses:
+  Sense 1: "happen, occur, befall" (12x)
+    Desc: Qal: an event comes to pass or befalls someone, used of circumstances, fate, or incidents that take place — often with pronominal suffix indicating the affected person
+    Domain: EXISTENCE_STATE > Be, Become, Exist, Happen
+    Glosses: eng: and-befalls-him, and-happened, had-happened-to-him | spa: acontece, acontecerá, las-cosas-que-sucedieron | fra: [קרהו], [תקרינה], arriver | deu: [יקרה], [תקרינה], geschah
+    Refs: Gen 42:29, Gen 44:29, Num 11:23, Ruth 2:3, 1Sam 28:10
+  Sense 2: "meet, encounter (Nifal)" (6x)
+    Desc: Nifal (reflexive/reciprocal): to meet one another, come upon someone, or be encountered — the standard Hebrew stem for expressing mutual or deliberate meeting
+    Domain: MOVEMENT > Linear Movement
+    Glosses: eng: I-happened, and-met, has-met | spa: Y-se-encontró, acontecí, me-encontraré | fra: a-rencontra, et-met, fera-meet | deu: hat-met, ich-happened, und-met
+    Refs: Exod 3:18, Num 23:3, Num 23:4, Num 23:15, Num 23:16
+  Sense 3: "cause to happen, select, appoint" (3x)
+    Desc: Hifil (causative): to cause something to happen or to designate/select — includes appointing cities of refuge (causing the fugitive to 'encounter' sanctuary) and causing events to come about
+    Domain: AUTHORITY_RULE > Control, Rule
+    Glosses: eng: and-you-shall-select, caused-to-happen, make-happen | spa: Y-designaréis, haz-acontecer, hizo-acontecer | fra: caused-à-happen, et-tu-devra-select, faire-happen | deu: es-ließ-begegnen, lass-begegnen-, und-du-soll-select
+    Refs: Gen 24:12, Gen 27:20, Num 35:11
+  Sense 4: "meet, encounter (Qal)" (1x)
+    Desc: Qal with personal object: to meet or encounter someone directly, focusing on the experiential contact between persons rather than an impersonal event befalling
+    Domain: BODY_HEALTH > Physiological Processes and States
+    Glosses: eng: met-you | spa: te-encontró | fra: met-tu | deu: met-du
+    Refs: Deut 25:18
+
+=== H8133 ===
+Language: Hebrew, POS: V-Qal-Imperf-3fs, Occurrences: 22, Senses: 4
+
+BDB excerpt: [שְׁנָא] vb. change (v. BH I. שׁנה);— Pe. Pf. 3 mpl. שְׁנוֹ Dn 3:27, sf. שְׁנוֹ֫הִי 5:6 (read prob. שְׁנוֹ עֲלוֹהִי); Impf. 3 ms. יִשְׁנֵא 7:24, 3 fs. תִּשְׁנֵא 6:18; 7:23; Pt. act. fs. שַׁנְיָא 7:19; mpl. שָׁנַ֫יִן 5:9, fpl. שָֽׁנְיָן 7:3;—intrans. change, be changed: of garment, by fire Dn 3:27, brightness (זִיו) of face 5:6, 9, purpose 6:18; be different from (מִן) 7:3, 19, 23, 24. Pa. Pf. 3 mpl. שַׁנִּיו (K§ 47 e), and Beisp. 3) Dn 3:28; Impf. 3 mpl. יְשַׁנּוֹן 4:13; Pt. pass. fs. מְשַׁנְיָא (Baer) 7:7;—trans. change Dn 4:13 (לִבְבֵהּ מִן־אֲנָשָׁא); = frustrate word of king 3:28; pt. pass.
+Senses:
+  Sense 1: "be changed, undergo change" (9x)
+    Desc: Qal/Hitpael intransitive-dynamic sense: to change, become altered — of a countenance changing color, of circumstances being transformed; includes qere/ketiv variants.
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: (qere:changed), [ketiv:changed], change | spa: (se-alteró), [se-alteró], cambiaba | fra: changer | deu: veraendern
+    Refs: Dan 2:9, Dan 3:19, Dan 3:19, Dan 3:27, Dan 5:6
+  Sense 2: "be different, diverse" (5x)
+    Desc: Qal stative sense: to be different from something else, to be diverse or distinct in character — used of beasts, kingdoms, or laws that differ from others (Daniel 7).
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: different, will-be-different | spa: diferente, diferentes, era-diferente | fra: changer | deu: veraendern
+    Refs: Dan 7:3, Dan 7:7, Dan 7:19, Dan 7:23, Dan 7:24
+  Sense 3: "change, alter (causative)" (5x)
+    Desc: Hifil/Piel active-transitive sense: to change or alter something deliberately — used of changing times, laws, decrees, or the word of a king.
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: alters, changed, changes | spa: cambia, cambiar, cambie | fra: changer | deu: [יהשנא], [להשניה], veraendern
+    Refs: Ezra 6:11, Ezra 6:12, Dan 2:21, Dan 3:28, Dan 7:25
+  Sense 4: "be changed (passive of decree/edict)" (3x)
+    Desc: Hifil infinitive and Piel passive sense: for something (especially a royal decree or law) to be changed or revoked — the passive counterpart of the causative sense, emphasizing the decree as subject.
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: let-be-changed, to-be-changed | spa: puede-ser-cambiada, sea-cambiado | fra: changer | deu: veraendern
+    Refs: Dan 4:16, Dan 6:8, Dan 6:15
+
+=== H8581 ===
+Language: Hebrew, POS: V-Nifal-Perf-3ms, Occurrences: 22, Senses: 4
+
+BDB excerpt: † [תָּעַב] vb. denom. Niph. Pi.: Niph. Pf. 3 ms. נִתְעַב 1 Ch 21:6; Pt. נִתְעָב Is 14:19; Jb 15:16;—be abhorred: 1. ritual sense: נֵצֶר נִתְעָב Is 14:19 an abhorred (rejected) branch (נֵץ vulture, the unclean scavenger bird); נִתְעָב וְנֶאֱלָ֑ח Jb 15:16 abhorred and corrupt, from disease (נאלח elsewhere †ψ 14:3 = 53:4 ‖ התעיב). 2. ethically: David’s census, according to 1 Ch 21:6. Pi. Pf. 3 pl. sf. תִּעֲבוּנִי Jb 9:31 + 2 times; Impf. יְתָעֵב ψ 106:40; 5:7 (read 2 ms. תְּתַעֵב); 3 fs. תְּתַעֵב ψ 107:18; 2 ms. תְּתַעֵב Dt 23:8(×2), etc.; Inf. abs. תַּעֵב Dt 7:26; Pt. מְתָעֵב Is 49:7 (but v. inf
+Senses:
+  Sense 1: "Piel: to abhor, detest" (14x)
+    Desc: Active emotional revulsion or loathing directed at a person or thing, encompassing all Piel inflections expressing the subject's feeling of disgust or abhorrence.
+    Domain: EMOTION_ATTITUDE > Attitudes and Emotions
+    Glosses: eng: abhor-me, abhorred, abhors | spa: Me-abominan, Me-aborrecen, abomina | fra: [למתעב], abominer, avoir-en-abomination | deu: [המתעבים], [ותעבוני], [יתעבו]
+    Refs: Deut 7:26, Deut 7:26, Deut 23:7, Deut 23:7, Job 9:31
+  Sense 2: "Hifil: to act abominably" (4x)
+    Desc: Causative behavioral sense meaning to commit abominations or to act in a detestable, abominable manner, emphasizing the doing of abhorrent deeds rather than the feeling of disgust.
+    Domain: EMOTION_ATTITUDE > Attitudes and Emotions
+    Glosses: eng: and-have-done-abominable, and-he-acted-abominably, they-do-abominable | spa: E-hizo-abominación, e-hicieron-abominable, hicieron-abominable | fra: avoir-en-abomination, et-il-agit-abominably, et-le-abominer | deu: [התעבת], sie-tun-abominable, und-er-handelte-abominably
+    Refs: 1Kgs 21:26, Ps 14:1, Ps 53:1, Ezek 16:52
+  Sense 3: "Nifal: to be abhorred" (3x)
+    Desc: Passive or stative sense indicating the state of being abhorred, detested, or abominable in the eyes of others.
+    Domain: EMOTION_ATTITUDE > Attitudes and Emotions
+    Glosses: eng: abhorred, abominable, was-abhorrent | spa: abominable, fue-abominable | fra: [נתעב], avoir-en-horreur | deu: [נתעב]
+    Refs: 1Chr 21:6, Job 15:16, Isa 14:19
+  Sense 4: "Piel: to make abhorrent" (1x)
+    Desc: Causative nuance of the Piel stem meaning to render something detestable or abhorrent to others, as in making one's beauty or reputation repulsive.
+    Domain: EMOTION_ATTITUDE > Attitudes and Emotions
+    Glosses: eng: and-you-made-abominable | spa: y-abominaste | fra: et-avoir-en-abomination | deu: [ותתעבי]
+    Refs: Ezek 16:25
+
+=== G4762 ===
+Language: Greek, POS: V-APP-NFS, Occurrences: 21, Senses: 4
+
+BDB excerpt: στρέφω, Refs 8th c.BC+; Doric dialect στράφω [ᾰ] Refs; Aeolic dialect στροφῶ (to be read στρόφω) Refs: Epic dialect imperfect __A στρέψασκον Refs 8th c.BC+: future στρέψω Refs 5th c.BC+: aorist 1 ἔστρεψα Refs, Epic dialect στρέψα Refs 8th c.BC+perfect ἔστροφα (ἀν-) Refs 3rd c.BC+; also ἔστρᾰφα (κατ-) Refs 2nd c.BC+ codices:—middle, Refs 8th c.BC+: future στρέψομαι Refs: aorist ἐστρεψάμην Refs 5th c.BC+perfect passive (in middle sense) ἔστραμμαι (κατ-) Refs 5th c.BC+:—passive, future στρᾰφήσομαι LXX+5th c.BC+; future middle (in passive sense) στρέψομαι (ἀπο-) Refs 5th c.BC+aorist 1 ἐστρέφθην fr
+Senses:
+  Sense 1: "turn physically around" (15x)
+    Desc: To turn one's body around or toward someone, a physical reorientation of direction or gaze.
+    Domain: MOVEMENT > Linear Movement
+    Glosses: eng: having-turned, she-turned, turned | spa: Habiéndose-vuelto, habiéndose-vuelto, habiéndose‒vuelto | fra: se-tourner, tourner | deu: umkehren, wendet-sich
+    Refs: Matt 7:6, Matt 9:22, Matt 16:23, Luke 7:9, Luke 7:44
+  Sense 2: "turn back spiritually or metaphorically" (3x)
+    Desc: To turn back or return in a moral, spiritual, or metaphorical sense, often implying repentance or reversion to a former state.
+    Domain: MOVEMENT > Linear Movement
+    Glosses: eng: may-turn, we-turn, you-turn | spa: nos-volvemos, os-volvéis, se-vuelvan | fra: se-tourner, tourner | deu: umkehren, wendet-sich
+    Refs: Matt 18:3, John 12:40, Acts 13:46
+  Sense 3: "turn or direct something" (2x)
+    Desc: To turn or redirect something transitive, including commanding someone to turn or the act of converting/changing the direction of an object or person.
+    Domain: MOVEMENT > Linear Movement
+    Glosses: eng: to-turn, turn | spa: de-convertir, vuelve | fra: se-tourner | deu: umkehren, wendet-sich
+    Refs: Matt 5:39, Rev 11:6
+  Sense 4: "return or give back" (1x)
+    Desc: To return something to its owner, to give back what was received.
+    Domain: MOVEMENT > Linear Movement
+    Glosses: eng: returned | spa: devolvió | fra: se-tourner | deu: wendet-sich
+    Refs: Matt 27:3

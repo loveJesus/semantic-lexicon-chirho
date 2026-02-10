@@ -1,0 +1,145 @@
+You are a biblical lexicographer composing glosses for a digital lexicon.
+For each lemma below, compose a JSON object. Separate objects with "---".
+
+Format for each:
+{
+  "lemma_id": "...",
+  "gloss_terse": "under 120 chars, concise definition covering the word's semantic range",
+  "gloss_readable": "2-5 sentences, 40-120 words. Don't start with 'This word'. Warm study-Bible footnote tone. Engaging, not dry.",
+  "senses": {
+    "1": "enriched 20-60 word description. Reference multilingual evidence when illuminating. Don't repeat the label verbatim.",
+    "2": "..."
+  }
+}
+
+Rules:
+- No markdown fences, just JSON objects separated by ---
+- Reference multilingual evidence naturally when it reveals something
+- gloss_readable should feel like a good study Bible footnote: helpful, clear, occasionally surprising
+- Each sense enrichment: how does the evidence support this sense? Mention 1-2 key passages when helpful.
+
+=== H8643 ===
+Language: Hebrew, POS: Conj-w | N-fs, Occurrences: 36, Senses: 3
+
+BDB excerpt: † תְּרוּעָה n.f. shout or blast of war, alarm, or joy;—ת׳ Lv 23:24 +; cstr. תְּרוּעַת Je 4:19 +;— 1. alarm of war, war-cry, Jos 6:5, 20; Je 20:16; Ez 21:27; Am 1:14; 2:2; Zp 1:16; Jb 39:25; ת׳ מִלְחָמָה Je 4:19; 49:2; ת׳ מֶלֶךְ battle-cry of kingNu 23:21 (poem in JE). 2. blast for march: תקע ת׳ Nu 10:5, 6(×2) (P; with חֲצֹצְרוֹת; hence) חֲצֹצְרוֹת הַתּ׳ Nu 31:6 (P) 2 Ch 13:12; on day of atonement שׁוֹפַר ת׳ Lv 25:9 (H); 1st of mo. זִכְרוֹן ת׳ 23:24 (P; בַּחֹדֶשׁ הַשְּׁבִיעִי בְּאֶחָד לַחֹדֶשׁ), יוֹם תֹ Nu 29:1 (P); gen. ��ִלְצְלֵי ת׳ ψ 150:5. 3. shout of joy with religious impulse, 1 S 4:5, 6(
+Senses:
+  Sense 1: "war cry or alarm signal" (14x)
+    Desc: A shout or blast sounded as a battle cry, military alarm, or warning signal, often associated with trumpet blasts in warfare contexts.
+    Domain: EMOTION_ATTITUDE > Attitudes and Emotions
+    Glosses: eng: alarm, alarm-of, and-alarm | spa: aclamación, alarma, con-grito-de-guerra | fra: [ותרועה], [תרועת], alarme | deu: [בתרועה], [התרועה], [ותרועה]
+    Refs: Lev 23:24, Lev 25:9, Num 10:5, Num 10:6, Num 10:6
+  Sense 2: "shout or loud cry" (13x)
+    Desc: A general loud shout, outcry, or clamor, without specific connotation of joy or warfare.
+    Domain: EMOTION_ATTITUDE > Attitudes and Emotions
+    Glosses: eng: a-shout, and-with-shouting, in-shouting | spa: con-aclamación, con-grito, con-grito-de-guerra | fra: cri, cri-de-guerre, et-cri-de-guerre | deu: Laerm, [בתרועה], [ובתרועה]
+    Refs: Josh 6:5, Josh 6:20, 1Sam 4:5, 1Sam 4:6, 1Sam 4:6
+  Sense 3: "joyful shout or acclamation" (9x)
+    Desc: A shout of joy, jubilation, triumph, or praise, often in the context of worship or celebration before God.
+    Domain: EMOTION_ATTITUDE > Attitudes and Emotions
+    Glosses: eng: and-shout-of, shouting, the-joyful-shout | spa: aclamación, con-aclamación, con-júbilo | fra: acclamation, avec-shouting, cri-de-joie | deu: Jauchzen, Laerm, der-joyful-jauchzen
+    Refs: Num 23:21, 2Sam 6:15, Job 8:21, Job 33:26, Ps 27:6
+
+=== G0987 ===
+Language: Greek, POS: V-PIM/P-1S, Occurrences: 35, Senses: 3
+
+BDB excerpt: βλασφημ-έω, perfect βεβλασφήμηκα Refs 4th c.BC+:—speak profanely of sacred things, εἰς θεούς Refs 5th c.BC+; offer rash prayers, Refs; β. κατά τινος utter imprecations against, Refs 4th c.BC+ __2 speak ill or to the prejudice of one, slander, περὶ τῆς ἐμῆς διατριβῆς NT+5th c.BC+ O.:—passive, to have evil spoken of one, βεβλασφημημένους NT+1st c.AD+ __3 speak impiously or irreverently of God, blaspheme, εἰς τὸν Κύριον LXX+NT; εἰς τὰ θεῖα Vett.LXX+NT
+Senses:
+  Sense 1: "blaspheme, speak irreverently" (26x)
+    Desc: To speak against God or sacred things with contempt or irreverence; active voice uses across all tenses and persons.
+    Domain: COMMUNICATION > Communication
+    Glosses: eng: You-blaspheme, blaspheme, blasphemed | spa: Blasfema, Blasfemas, blasfema | fra: blasphèment., blasphèment;, blasphémer | deu: laestern, lästern, lästern-sie
+    Refs: Matt 9:3, Matt 26:65, Matt 27:39, Mark 2:7, Mark 3:28
+  Sense 2: "be blasphemed, be spoken against" (8x)
+    Desc: To be the object of blasphemous or slanderous speech; passive and middle-passive voice forms indicating the subject receives the blasphemy.
+    Domain: COMMUNICATION > Communication
+    Glosses: eng: am-I-spoken-evil-of, be-blasphemed, is-blasphemed | spa: es-blasfemado, sea-blasfemada, sea-blasfemado | fra: blasphémer | deu: laestern
+    Refs: Rom 2:24, Rom 3:8, Rom 14:16, 1Cor 10:30, 1Tim 6:1
+  Sense 3: "revile, slander a person" (1x)
+    Desc: To speak abusively or slanderously against a person rather than against God; active voice with human object of reproach.
+    Domain: COMMUNICATION > Communication
+    Glosses: eng: blaspheme | spa: blasfeman | fra: blasphémer | deu: laestern
+    Refs: Jas 2:7
+
+=== H2399 ===
+Language: Hebrew, POS: Prep-m | N-mpc | 1cs, Occurrences: 35, Senses: 3
+
+BDB excerpt: † חֵטְא n.m. Dt 15:9 sin (on format. v. LagBN 142)—ח׳ Lv 19:17 + 15 times; sf. חֶטְאוֹ Lv 24:15 + 5 times, חֲטָאָו֯ La 3:39, חֶטְאָם Lv 20:20; pl. חֲטָאִים Ec 10:4; cstr. חֲטָאֵי 2 K 10:29 Ez 23:49; sf. חֲטָאַי Gn 41:9, חֲטָאָ֑י Is 38:17 ψ 51:11, חֲטָאֵינוּ Dn 9:16 ψ 103:10, חֲטָאֵיכֶם Is 1:18;— 1. sin: a. against man Gn 41:9 (E) Ec 10:4. b. elsewhere ag. God, abs. Is 31:7 Ho 12:9; ח׳ חָטָא La 1:8 cf. Dt 19:15 2 K 10:29; ח׳ משׁפט מות sin worthy of death Dt 21:22 = ח׳ מות 22:26; with בְּ, because of, Dn 9:16; God is entreated: hide thy face from my sins ψ 51:11; and it is said in faith, thou wi
+Senses:
+  Sense 1: "sin, transgression" (33x)
+    Desc: Moral or religious transgression against God's law; the primary sense covering singular and plural forms with various pronominal suffixes and prepositional prefixes.
+    Domain: MORAL_QUALITY > Moral and Ethical Qualities
+    Glosses: eng: a-sin, and-sins-of-, for-his-sin | spa: en-pecado-de-él, pecado, pecado-de | fra: [בחטאו], [וחטאי], [חטא] | deu: Suende, Suende-von, [בחטאו]
+    Refs: Gen 41:9, Lev 19:17, Lev 20:20, Lev 22:9, Lev 24:15
+  Sense 2: "sin offering" (1x)
+    Desc: A sacrificial offering prescribed for atonement of sin, a technical cultic term referring to the offering itself rather than the transgression.
+    Domain: MORAL_QUALITY > Moral and Ethical Qualities
+    Glosses: eng: sin-offerings | spa: pecados | fra: péché-offerings | deu: Suende-offerings
+    Refs: 2Kgs 12:16
+  Sense 3: "offense, fault, error" (1x)
+    Desc: A lighter sense denoting a mistake, fault, or offense rather than a grave moral or theological transgression.
+    Domain: MORAL_QUALITY > Moral and Ethical Qualities
+    Glosses: eng: offense | spa: falta | fra: offense | deu: offense
+    Refs: Deut 19:15
+
+=== H6189 ===
+Language: Hebrew, POS: Adj-msc, Occurrences: 35, Senses: 3
+
+BDB excerpt: † עָרֵל35 adj. having foreskin, i.e. uncircumcised;—ע׳ Ex 12:48 + 5 times; cstr. עֶ֫רֶל Ez 44:9(×2); עֲרַל Ex 6:12, 30; f. עֲרֵלָה Je 6:10; pl. עֲרֵלִים Lv 19:23 + 20 times; cstr. עַרְלֵי Je 9:25 + 2 times;—uncircumcised person Ex 12:48; Jos 5:7 (P), Philistines Ju 14:3; 15:18; 1 S 14:6; 17:26, 36; 31:4; 2 S 1:20; 1 Ch 10:4; of other nations Is 52:1; Je 9:25, especially as slain Ez 28:10; 31:18; 32:19 + 9 times 32; in v 27 read מֵעוֹלָם so Hi and most (v. on meaning Toy 31:18); עָרֵל זָכֶר uncircumcised male Gn 17:14 (P); ע׳ בָּשָׂר Ez 44:7, 9 uncircumcised of flesh; fig. of fruit trees Lv 19:
+Senses:
+  Sense 1: "literally uncircumcised (of persons)" (27x)
+    Desc: Describes a male or group of males who have not undergone physical circumcision, typically used of the Philistines and other non-Israelite peoples as a term of reproach.
+    Domain: RELIGIOUS_LIFE > Religious Activities
+    Glosses: eng: the-uncircumcised, uncircumcised | spa: el-incircunciso, incircunciso, incircuncisos | fra: [הערלים], [ערלים], le-incirconcis | deu: der-uncircumcised, unbeschnitten
+    Refs: Gen 17:14, Exod 12:48, Lev 19:23, Lev 26:41, Josh 5:7
+  Sense 2: "figuratively closed or insensitive" (7x)
+    Desc: Used in construct state ('uncircumcised of heart/lips/ears') to describe spiritual dullness, moral obstinacy, or inability to function properly, extending the circumcision metaphor to inner organs.
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: and-uncircumcised-of, are-uncircumcised-of, uncircumcised-of | spa: e-incircunciso-de, e-incircuncisos-de, incircunciso-de | fra: [וערל], [וערלי], [ערל] | deu: Unbeschnittene, [ערלי], unbeschnitten
+    Refs: Exod 6:12, Exod 6:30, Jer 9:26, Ezek 44:7, Ezek 44:7
+  Sense 3: "forbidden fruit of young trees" (1x)
+    Desc: Applied to fruit trees in their first three years (Lev 19:23), treating their produce as impure or off-limits, analogous to an uncircumcised foreskin that must be removed before consecration.
+    Domain: RELIGIOUS_LIFE > Religious Activities
+    Glosses: eng: uncircumcised | spa: incircunciso | fra: [ערלה] | deu: [ערלה]
+    Refs: Jer 6:10
+
+=== H1530 ===
+Language: Hebrew, POS: Prep-l | N-mpc | 3ms, Occurrences: 34, Senses: 3
+
+BDB excerpt: † גַּל n.m. Gn 31:48 heap, wave, billow (as rolled together, rolling, rolling up), also spring, MT Ct 4:12 cf. 3 infr.—abs. גַּל Jb 8:17 + 5 times (incl. הַגַּל Gn 31:48 +); גָּ֑ל Gn 31:46; הַגָּ֑ל Gn 31:46; לַגָּ֑ל Is. 25:2; cstr. גַּל־ Jos 7:26 + 2 times + Gn 31:47, 48 q.v. infr.; pl. גַּלִּים 2 K 19:25 + 6 times; cstr. גַּלֵּי־ Is 48:18; sf. גַּלָּיו ψ 89:10 + 6 times; גַּלֵּיהֶם ψ 65:8 + 2 times;— 1. heap of stones, a. ג׳ אבנים raised (הקים) over dead body Jos 7:26; 8:29; cf. 2 S 18:17 (c. הִצִּיב). b. גַּל alone Jb 8:17 (roots wrapped about it). c. heap or pile made (עשׂה) for use in rati
+Senses:
+  Sense 1: "heap, mound of stones" (18x)
+    Desc: A heap or mound, often of stones or ruins; used for cairns, memorial piles, and ruined cities reduced to rubble. Consistently rendered as 'heap/montón/ढेर/كَوْمَة-أَكْوَام/더미-무더기/lundo-marundo' across...
+    Domain: GEOGRAPHY_SPACE > Geographical Objects and Features
+    Glosses: eng: a-heap, a-heap-of, for-heaps | spa: como-montones, el-montón, el-montón-de-piedras | fra: [כגלים], heap, heap-de | deu: Welle, [גל], [כגלים]
+    Refs: Gen 31:46, Gen 31:46, Gen 31:48, Gen 31:51, Gen 31:52
+  Sense 2: "wave, billow" (15x)
+    Desc: A wave or billow of the sea, used both literally for ocean waves and figuratively for overwhelming floods of trouble. Uniformly rendered as 'waves/olas-ondas/लहरें-तरंगें/أَمْوَاج/파도/mawimbi' across a...
+    Domain: NATURAL_WORLD > Physical Events and States
+    Glosses: eng: and-Your-waves, and-your-waves, her-waves | spa: como-olas-de, olas, olas-de-el | fra: [גלים], [לגליו], et-tes-vagues | deu: Welle, [גליך], [גלים]
+    Refs: Job 38:11, Ps 42:7, Ps 65:7, Ps 89:9, Ps 107:25
+  Sense 3: "spring, fountain" (1x)
+    Desc: A spring or source of water, attested once (Song of Songs 4:12). Entirely distinct vocabulary across all languages: 'spring/fuente/सोता/جَل/샘/chemchemi', confirming a separate lexical sense from both ...
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: spring | spa: fuente | fra: source | deu: [גל]
+    Refs: Song 4:12
+
+=== H2623 ===
+Language: Hebrew, POS: Conj-w | N-mpc | 2ms, Occurrences: 34, Senses: 3
+
+BDB excerpt: † חָסִיד adj.m. kind, pious (so, as denoting active practice of חֶסֶד, kindness, Thes MV De and most, cf. קָצִיר, פָּקִיד etc.; > Hup on ψ 4:4 RVm who expl. as passive reception of י׳’s חֶסֶד, cf. שָׂכִיר, אָסִיר etc.; its use as attribute of God Je 3:12 ψ 145:17, and the context ψ 12:1 Mi 7:2 etc., favour active sense)—ח׳ ψ 4:4 + 9 times; חֲסִידֶ֑ךָ Dt 33:8 ψ 89:20; חֲסִידְיךָ֯ ψ 16:10; pl. חֲסִידִים ψ 149:1, 5; sf. חֲסִידָ֑י ψ 50:5; חֲסִידָו֯ 1 S 2:9 + 15 times sfs.;— 1. kind: a. of man עם ח׳ תתחסד with the kind thou shewest thyself kind 2 S 22:26 = ψ 18:26. b. of wing of ostrich אִם אֶבְרָה
+Senses:
+  Sense 1: "faithful ones / saints (community)" (21x)
+    Desc: The collective body of God's faithful people, His covenant community of saints, always plural and typically with possessive suffixes referring to God or an addressee.
+    Domain: FAITH_BELIEF > Hold a View, Believe, Trust
+    Glosses: eng: His-faithful-ones, My-faithful-ones, Your-faithful-ones | spa: (sus-piadosos), [sus-piadosos], a-fieles-de-ti | fra: Son-fidèle-ceux, [וחסידיך], et-fidèle | deu: [(חסידיו)], [[חסידו]], [וחסידיך]
+    Refs: 1Sam 2:9, 2Chr 6:41, Ps 30:4, Ps 31:23, Ps 37:28
+  Sense 2: "faithful/godly one (individual)" (11x)
+    Desc: A single person characterized by covenant faithfulness and piety toward God, used as a substantive adjective for an individual devotee or saint.
+    Domain: FAITH_BELIEF > Hold a View, Believe, Trust
+    Glosses: eng: [ketiv-His-faithful-one], a-faithful-one, faithful | spa: [su-piadoso], a-tu-santo, al-piadoso | fra: [ketiv-Son-fidèle-one], fidèle, pieux | deu: [ketiv-His-faithful-one], [חסיד], dein-heilig-einer
+    Refs: Deut 33:8, 1Sam 2:9, 2Sam 22:26, Ps 4:3, Ps 12:1
+  Sense 3: "gracious / merciful (divine attribute)" (2x)
+    Desc: Used as a predicate adjective describing God Himself as gracious, merciful, and kind — the source of chesed rather than its human practitioner.
+    Domain: MORAL_QUALITY > Moral and Ethical Qualities
+    Glosses: eng: and-faithful, gracious | spa: misericordioso, y-fiel | fra: [חסיד], et-fidèle | deu: [חסיד], und-treu
+    Refs: Ps 145:17, Jer 3:12

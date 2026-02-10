@@ -1,0 +1,261 @@
+You are a biblical lexicographer composing glosses for a digital lexicon.
+For each lemma below, compose a JSON object. Separate objects with "---".
+
+Format for each:
+{
+  "lemma_id": "...",
+  "gloss_terse": "under 120 chars, concise definition covering the word's semantic range",
+  "gloss_readable": "2-5 sentences, 40-120 words. Don't start with 'This word'. Warm study-Bible footnote tone. Engaging, not dry.",
+  "senses": {
+    "1": "enriched 20-60 word description. Reference multilingual evidence when illuminating. Don't repeat the label verbatim.",
+    "2": "..."
+  }
+}
+
+Rules:
+- No markdown fences, just JSON objects separated by ---
+- Reference multilingual evidence naturally when it reveals something
+- gloss_readable should feel like a good study Bible footnote: helpful, clear, occasionally surprising
+- Each sense enrichment: how does the evidence support this sense? Mention 1-2 key passages when helpful.
+
+=== H7043 ===
+Language: Hebrew, POS: V-Qal-Perf-3cp, Occurrences: 82, Senses: 12
+
+BDB excerpt: [קָלַל82] vb. be slight, swift, trifling (prob. orig. be light; NH [קָלַל], קַל, קִלֵּל = BH; Assyrian ḳalálu ii. despise, dishonour; so Tel Am (appar. Canaanism); Arabic قَلَ�� be small, scanty; Sab. קללם scanty Hal 143, 8 f. (cf. FellZMG liv (1900), 246); Ethiopic ቀለለ: be light, small, easy; ii. despise; 𝔗 קְלַל, Syriac ܩܰܠ, = BH; also (v. Pilp., etc.) Arabic قَلْقَلَ shake, ቈልቈለ: vibrate, whirl (of sword), ቀልቀለ: v. be shaken;—SchwallyZAW xi (1891), 170 ff. thinks shake original, v. מַקֵּל);— †Qal Pf. 2 ms. קַלּוֹתָ Na 1:14; 1 s. קַלֹּתִי Jb 40:4; 3 pl. קַלּוּ Gn 8:11 +; Impf. 3 fs. וַתֵּקַל
+Senses:
+  Sense 1: "Piel: curse" (41x)
+    Desc: In the Piel intensive stem, the primary meaning of pronouncing a curse upon someone, confirmed uniformly by Arabic لَعَنَ (curse), Korean 저주하다 (curse), and Swahili -laani (curse).
+    Domain: COMMUNICATION > Communication
+    Glosses: eng: and-cursed, and-cursed-them, and-curser-of | spa: Y-el-que-maldice, maldecirás, maldice | fra: alléger, devrait-maudis, et-curser-de | deu: curses, der-eins-der-verfluchte, du-soll-verfluchen
+    Refs: Gen 8:21, Gen 12:3, Exod 21:17, Exod 22:28, Lev 19:14
+  Sense 2: "Hifil: lighten a burden" (9x)
+    Desc: In the Hifil causative stem, to make lighter or reduce a burden or load, confirmed by Arabic خَفِّفْ/يُخَفِّفُ (lighten) and Swahili punguza (reduce).
+    Domain: QUANTITY_NUMBER > Degree
+    Glosses: eng: and-lighten, he-will-lighten, lighten | spa: aligera, alivia, aliviará | fra: alléger, et-lighten, il-fera-lighten | deu: [הקל], er-wird-lighten, erleichtern
+    Refs: Exod 18:22, 1Sam 6:5, 1Kgs 12:4, 1Kgs 12:9, 1Kgs 12:10
+  Sense 3: "Nifal: be light, trifling" (7x)
+    Desc: In the Nifal stem, means to be a light or easy matter, a trifling thing, confirmed by Arabic هَيِّنٌ/سَهْلٌ (easy) and Korean 쉽다 (easy) or 하찮은 (trifling).
+    Domain: QUANTITY_NUMBER > Quantity
+    Glosses: eng: and-easy, easy, is-easy | spa: Y-es-poca-cosa, acaso-es-ligero, acaso-fue-ligero | fra: alléger, easy, est-cela-lumière | deu: [הנקל], easy, erleichtern
+    Refs: 1Sam 18:23, 1Kgs 16:31, 2Kgs 3:18, 2Kgs 20:10, Prov 14:6
+  Sense 4: "Qal: be swift" (5x)
+    Desc: In the Qal stem, describes swiftness or speed of movement, confirmed by Arabic أَسْرَعُ (faster) and Korean 빠르다 (be fast).
+    Domain: TIME > Time
+    Glosses: eng: and-swifter, are-swifter, swifter | spa: Y-más-veloces, fueron-rápidos, más-veloces | fra: alléger, et-alléger, maudire | deu: erleichtern, leicht-machen, swifter
+    Refs: 2Sam 1:23, Job 7:6, Job 9:25, Jer 4:13, Hab 1:8
+  Sense 5: "Qal: be insignificant, despised" (5x)
+    Desc: In the Qal stem, denotes being of little account, lightly esteemed, or treated with contempt, confirmed by Arabic حَقِيرٌ (contemptible) and Swahili kudharauliwa (despised).
+    Domain: MORAL_QUALITY > Moral and Ethical Qualities
+    Glosses: eng: I-am-insignificant, and-I-was-despised, and-was-despised | spa: eres-vil, serán-tenidos-en-poco, soy-insignificante | fra: alléger, et-Je-était-despised, et-était-despised | deu: erleichtern, und-es-wurde-gering, und-ich-wurde-gering
+    Refs: Gen 16:4, Gen 16:5, 1Sam 2:30, Job 40:4, Nah 1:14
+  Sense 6: "Hifil: treat lightly, dishonor" (4x)
+    Desc: In the Hifil causative stem, to treat as light or worthless, to dishonor or despise a person, confirmed by Arabic أَهَانَ/لِيُهِينَ (dishonor) and Swahili kudhalilisha/kudharau (despise).
+    Domain: QUANTITY_NUMBER > Degree
+    Glosses: eng: did-you-despise-me, he-treated-lightly, they-treated-lightly | spa: despreciaron, humilló, me-despreciaste | fra: alléger, fit-tu-méprise-moi | deu: [הקלו], er-machte-leicht, tat-du-despise-mich
+    Refs: 2Sam 19:43, Isa 9:1, Isa 23:9, Ezek 22:7
+  Sense 7: "Nifal: be swift, light (in movement)" (3x)
+    Desc: In the Nifal stem, describes swiftness or lightness of movement, confirmed by Arabic خِفَّةٍ/عَجَلَةٍ (haste/lightness) and Swahili wepesi (swift).
+    Domain: QUANTITY_NUMBER > Degree
+    Glosses: eng: lightly | spa: ligereza, serán-veloces | fra: alléger | deu: leicht-machen
+    Refs: Isa 30:16, Jer 6:14, Jer 8:11
+  Sense 8: "Pual: be cursed" (2x)
+    Desc: In the Pual passive stem, to be cursed or placed under a curse, confirmed by Arabic يُلْعَنُ/مَلْعُونَةٌ (be cursed) and Swahili -laaniwa (be cursed).
+    Domain: COMMUNICATION > Communication
+    Glosses: eng: is-cursed, shall-be-cursed | spa: es-maldita, será-maldito | fra: alléger, maudire | deu: erleichtern, leicht-machen
+    Refs: Job 24:18, Isa 65:20
+  Sense 9: "Qal: subside, diminish" (2x)
+    Desc: In the Qal stem, describes the abating or subsiding of something (e.g., floodwaters), confirmed by Arabic خَفَّتْ (lightened/abated) and Swahili yamepungua (have decreased).
+    Domain: QUANTITY_NUMBER > Quantity
+    Glosses: eng: had-subsided | spa: habían-disminuido, si-habían-disminuido | fra: avait-diminua | deu: ob-sich-vermindert-hatten, sich-vermindert-hatten
+    Refs: Gen 8:8, Gen 8:11
+  Sense 10: "Piel: shake, agitate" (2x)
+    Desc: A distinct Piel sense meaning to shake, brandish, or whet, confirmed by Arabic رَجَّ/قِلْقَل (shake/agitate) and Korean 흔들었다/갈았다 (shook/sharpened), semantically distant from cursing.
+    Domain: COMMUNICATION > Communication
+    Glosses: eng: has-sharpened, he-shook | spa: ha-afilado, sacudió | fra: alléger, maudire | deu: [קלקל], erleichtern
+    Refs: Eccl 10:10, Ezek 21:21
+  Sense 11: "?" (1x)
+    Domain: QUANTITY_NUMBER > Degree
+    Glosses: eng: trembling | spa: se-estremecían | fra: alléger | deu: leicht-machen
+    Refs: Jer 4:24
+  Sense 12: "?" (1x)
+    Domain: COMMUNICATION > Communication
+    Glosses: eng: and-I-will-be-more-lightly-esteemed | spa: Y-me-humillaré | fra: et-je-fera-être-plus-lightly-esteemed | deu: und-ich-wird-sein-mehr-lightly-esteemed
+    Refs: 2Sam 6:22
+
+=== G4160 ===
+Language: Greek, POS: V-PIA-1P, Occurrences: 573, Senses: 11
+
+BDB excerpt: ποιέω, Doric dialect ποιϝέω Refs, etc.: Epic dialect imperfect ποίεον Refs 8th c.BC+; contraction ποίει Refs; Ionic dialect ποιέεσκον Refs 5th c.BC+future ποιήσω: aorist ἐποίησα, Epic dialect ποίησα Refs 8th c.BC+perfect πεποίηκα:—middle, Ionic dialect imperfect ποιεέσκετο Refs 5th c.BC+: future ποιήσομαι Refs 8th c.BC+aorist ἐποιησάμην, Epic dialect ποι- Refs 8th c.BC+perfect πεποίημαι in middle sense, Refs 5th c.BC+ —passive, future ποιηθήσομαι (μετα-) Refs 4th c.BC+, see above; πεποιήσομαι Refs 5th c.BC+: aorist ἐποιήθην Refs 5th c.BC+: perfect πεποίημαι Refs 8th c.BC+:—Attic dialect ποῶ Re
+Senses:
+  Sense 1: "do, act, perform" (473x)
+    Desc: General sense of performing an action, doing a deed, or carrying out an activity, corresponding to Arabic فَعَلَ/يَفْعَلُ and Korean 하다/행하다.
+    Domain: PHYSICAL_ACTION > Perform, Do
+    Glosses: eng: to-do | spa: de-hacer, hacer | fra: faire | deu: tun, tut
+    Refs: Matt 6:1, Matt 9:28, Matt 12:2, Matt 12:12, Matt 20:15
+  Sense 2: "make, construct, create" (62x)
+    Desc: To fashion, fabricate, or bring something into existence, corresponding to Arabic صَنَعَ/يَصْنَعُ and Korean 만들다.
+    Domain: PHYSICAL_ACTION > Perform, Do
+    Glosses: eng: doing, having-made, holding | spa: a-hacer, habiendo-hecho, haced | fra: faire | deu: tun, tut
+    Refs: Matt 3:3, Matt 5:36, Matt 12:16, Matt 12:33, Matt 12:33
+  Sense 3: "produce, bear fruit" (15x)
+    Desc: To produce fruit or yield results, used of trees, vines, and metaphorical productivity, corresponding to Arabic أَثْمَرَ and Korean 맺다, Swahili kuzaa.
+    Domain: PHYSICAL_ACTION > Perform, Do
+    Glosses: eng: Produce, it-produces, produce | spa: haced, haciendo, hiciere | fra: faire | deu: tun, tut
+    Refs: Matt 3:8, Matt 3:10, Matt 7:17, Matt 7:17, Matt 7:19
+  Sense 4: "cause, render, make into" (8x)
+    Desc: Causative sense of making someone or something become a certain state, or causing an effect or condition, corresponding to Arabic جَعَلَ and Korean 하게 하다.
+    Domain: PHYSICAL_ACTION > Perform, Do
+    Glosses: eng: Make, he-made, produces | spa: Haced, causaban, hace | fra: faire | deu: tun, tut
+    Refs: Mark 3:14, Mark 3:16, Mark 4:32, Luke 14:12, Luke 14:13
+  Sense 5: "spend time" (4x)
+    Desc: To spend or pass a period of time in a place or activity, corresponding to Arabic قَضَى and Korean 보내다.
+    Domain: PHYSICAL_ACTION > Perform, Do
+    Glosses: eng: I-have-spent, having-spent | spa: Pasando, he-pasado, pasando | fra: faire | deu: tun, tut
+    Refs: Acts 15:33, Acts 18:23, Acts 20:3, 2Cor 11:25
+  Sense 6: "keep, observe, celebrate" (3x)
+    Desc: To observe or celebrate a feast, festival, or religious practice, corresponding to Korean 지키다 and Swahili kusherehekea.
+    Domain: PHYSICAL_ACTION > Perform, Do
+    Glosses: eng: I-keep, he-made, to-keep | spa: celebrar, celebro, ha-celebrado | fra: faire | deu: tun, tut
+    Refs: Matt 26:18, Acts 18:21, Heb 11:28
+  Sense 7: "commit, perpetrate" (2x)
+    Desc: To commit a sin, crime, or wrongdoing, corresponding to Arabic عَمِلَ (negative) and Korean 저지르다.
+    Domain: PHYSICAL_ACTION > Perform, Do
+    Glosses: eng: I-committed, had-committed | spa: cometí, habían-cometido | fra: faire | deu: tun
+    Refs: Mark 15:7, 2Cor 11:7
+  Sense 8: "consider, reckon" (2x)
+    Desc: To count, consider, or regard something in a certain way, corresponding to Arabic أَجْعَلُ (evaluative) and Korean 여기다.
+    Domain: PHYSICAL_ACTION > Perform, Do
+    Glosses: eng: I-make | spa: hago | fra: faire | deu: tun, tut
+    Refs: Acts 20:24, Rom 1:9
+  Sense 9: "work, labor" (2x)
+    Desc: To work or toil at a task, corresponding to Arabic عَمِلَ and Korean 일하다.
+    Domain: PHYSICAL_ACTION > Perform, Do
+    Glosses: eng: preparing, worked | spa: haciendo, trabajaron | fra: faire | deu: tut
+    Refs: Matt 20:12, Acts 25:3
+  Sense 10: "?" (1x)
+    Domain: PHYSICAL_ACTION > Perform, Do
+    Glosses: eng: I-made | spa: hice | fra: faire | deu: tut
+    Refs: Acts 1:1
+  Sense 11: "?" (1x)
+    Domain: PHYSICAL_ACTION > Perform, Do
+    Glosses: eng: having-appointed | spa: que-hizo | fra: faire | deu: tun
+    Refs: Heb 3:2
+
+=== G2596 ===
+Language: Greek, POS: Prep, Occurrences: 480, Senses: 11
+
+BDB excerpt: κατά [κᾰτᾰ], poetry καταί accusative to Refs 2nd c.AD+: preposition with genitive or accusative:— downwards. __A WITH GEN., __A.I denoting motion from above, down from, βῆ δὲ κατ᾽ Οὐλύμποιο καρήνων, κατ᾽ Ἰδαίων ὀρέων, βαλέειν κ. πέτρης, Refs 8th c.BC+; καθ᾽ ἵππων ἀΐξαντεRefs 5th c.BC+ — for κατ᾽ ἄκρης see.{ἄκρα}: Μοῖσα κ. στόματος Χέε νέκταρ Refs 3rd c.BC+ __A.II denoting downward motion, __A.II.1 down upon or over, κ. Χθονὸς ὄμματα πήξας Refs 8th c.BC+; of the dying, κατὰ.. ὀφθαλμῶν κέχυτ᾽ ἀχλύς a cloud settled upon the eyes, Refs; φᾶρος κὰκ κεφαλῆς εἴρυσσε down over.. , Refs 8th c.BC+; [κόπρ
+Senses:
+  Sense 1: "according to, in conformity with" (332x)
+    Desc: Marks a standard, norm, or basis for action or judgment; the most frequent NT sense of kata with the accusative, expressing conformity or correspondence (e.g., kata ton nomon = according to the law).
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: According-to, according-to, according-to- | spa: según | fra: selon- | deu: gemaess-, gemäß
+    Refs: Matt 2:16, Matt 16:27, Matt 23:3, Matt 25:15, Mark 7:5
+  Sense 2: "each, every (distributive)" (42x)
+    Desc: Used with the accusative in distributive expressions to indicate individual distribution or repetition, often in phrases like kat' hemeran (daily/every day), kath' hena (one by one), or kat' oikon (fr...
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: -, according-to, daily | spa: cada, cada-, por- | fra: selon- | deu: gemaess-, gemäß
+    Refs: Matt 26:55, Mark 14:19, Mark 14:49, Luke 2:41, Luke 9:23
+  Sense 3: "throughout, along, through" (24x)
+    Desc: Expresses spatial extension or distribution through a region or territory with the accusative, indicating movement or presence spread across an area (e.g., kata ten Ioudaian = throughout Judea).
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: along, in-various, off | spa: a-lo-largo-de, en, frente-a | fra: selon- | deu: gemäß
+    Refs: Matt 24:7, Mark 13:8, Luke 4:14, Luke 13:22, Luke 15:14
+  Sense 4: "at, in, among (locative)" (23x)
+    Desc: With the accusative, indicates a specific location or position, expressing where something is situated or takes place without implying motion through space (e.g., kata ton topon = at the place).
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: At-, among, at | spa: Por-, Según, de | fra: selon- | deu: gemaess-, gemäß
+    Refs: Matt 1:20, Matt 2:12, Matt 2:13, Matt 2:19, Matt 2:22
+  Sense 5: "by (instrumental means or manner)" (19x)
+    Desc: Expresses the means, manner, or attendant circumstance of an action with the accusative, often translatable as by, through, or with (e.g., kata sarka = according to/by the flesh).
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: at, by, by- | spa: Por, a, cerca | fra: selon- | deu: gemaess-, gemäß
+    Refs: Mark 1:27, Mark 6:31, Mark 6:32, Mark 7:33, Mark 9:2
+  Sense 6: "toward, before, facing" (13x)
+    Desc: With the accusative, indicates direction toward a place or person, including senses of facing, in front of, or in the presence of (e.g., kata prosopon = before/facing, kata Kyrenen = toward Cyrene).
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: about, against, at | spa: Hacia-, a-, ante | fra: selon- | deu: gemaess-, gemäß
+    Refs: Luke 2:31, Luke 10:33, Acts 2:10, Acts 3:13, Acts 8:26
+  Sense 7: "alone, by oneself, privately" (10x)
+    Desc: In the fixed expression kat' idian and similar phrases, denotes privacy, solitude, or separation from a group (privately, alone, apart).
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: according-to, by, by- | spa: a-solas, en, en- | fra: selon- | deu: gemaess-, gemäß
+    Refs: Matt 14:13, Matt 14:23, Matt 17:1, Matt 17:19, Matt 20:17
+  Sense 8: "concerning, about, with respect to" (6x)
+    Desc: Marks the topic or subject matter of discourse or thought, expressing reference or relation (e.g., ta kata tina = the things concerning someone).
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: according-to, against, concerning | spa: respecto-a, según | fra: selon- | deu: gemaess-, gemäß
+    Refs: Acts 24:22, Acts 25:14, Eph 1:15, Eph 6:21, Phil 1:12
+  Sense 9: "down, down from" (4x)
+    Desc: The original spatial sense with the genitive, expressing downward motion or direction from a higher to a lower point (e.g., kata tou kremnou = down the cliff).
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: down, down-from | spa: por, por-, sobre | fra: selon- | deu: gemaess-, gemäß
+    Refs: Matt 8:32, Mark 5:13, Luke 8:33, 1Cor 11:4
+  Sense 10: "beyond, exceedingly, surpassing" (4x)
+    Desc: Used in expressions of exceeding measure or surpassing degree, often in compound phrases like kath' hyperbolen (beyond measure/exceedingly).
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: according-to, beyond, beyond- | spa: según, según-, sobremanera | fra: selon- | deu: gemaess-
+    Refs: Rom 7:13, 2Cor 1:8, 2Cor 4:17, Gal 1:13
+  Sense 11: "against, in opposition to" (3x)
+    Desc: With the genitive, denotes hostile opposition or action directed against someone or something (e.g., kata tinos = against someone).
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: against-, from | spa: contra | fra: contre, selon- | deu: gegen, gemäß
+    Refs: Acts 27:14, Jude 1:15, Jude 1:15
+
+=== H4390 ===
+Language: Hebrew, POS: V-Piel-Perf-1cs | 3ms, Occurrences: 250, Senses: 11
+
+BDB excerpt: מָלֵא249 vb. be full, fill (NH id. (Pi. trans.); Zinj. מלא (Pi. trans.) DHMSendsch. 60; Assyrian malû (trans. and intrans.) DlHWB 409; Arabic مَلَأَ (trans.) مَلُؤَ, مَلِىَٔ (intrans.); Ethiopic መልአ: (trans. and intrans.); Aramaic ܡܠܴܐ (trans.), מְלָא (intrans. and trans.), Palm. n.pr. מלא = plenitude, VogPalm. 7, 2 al.; Sab. מלא Os 14 Levy-OsZMG xix. 1865, 211 f. DHMZMG xxix, 1875, 595);— Qal99 Pf. מ׳ Ex 40:34 +; sf. מְלָאוֹ Est 7:5; מָלֵאתָ Jb 36:17; מָלֵאתִי Mi 3:8 Je 6:11; מָלֵ֫תִי Jb 32:18; מָֽלְאוּ Gn 29:21 +; מָלוּ Ez 28:16 (מָלֵאתָ 𝔊 𝔖 Co); מָלֵ֑אוּ Is 1:15, etc.; Impf. 3 fs. sf. תִּמְ
+Senses:
+  Sense 1: "fill (causative)" (90x)
+    Desc: Piel causative: to fill something or someone, to make full, actively causing fullness (Arabic: مَلَأَ/يَمْلَأُ, Korean: 채우다, Swahili: -jaza).
+    Domain: QUANTITY_NUMBER > Quantity
+    Glosses: eng: He-fills, and-fill, and-filled | spa: ha-llenado, llenaron, llenó | fra: et-il-remplit, et-remplir, et-remplit | deu: er-fuellte, fuellte, und-er-fuellte
+    Refs: Gen 1:22, Gen 1:28, Gen 9:1, Gen 21:19, Gen 24:16
+  Sense 2: "be full (stative)" (49x)
+    Desc: Qal stative: to be full, to be filled with something, describing a state of fullness (Arabic: امتلأ/مَلِيء, Korean: 가득하다/차다, Swahili: -jaa).
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: are-full, are-full-of, blood | spa: está-llena, están-llenas, están-llenas-de | fra: de-ne...pas, de-remplir, pleine | deu: fuellen, füllte, sie-fuellten
+    Refs: Gen 6:13, Josh 3:15, Judg 16:27, 2Kgs 6:17, 2Chr 5:13
+  Sense 3: "fulfill, complete (purpose/time)" (43x)
+    Desc: To fulfill a promise, complete a period, or bring to completion; a semantic extension from physical filling to abstract completion (Arabic: أَتَمَّ/اكتمال/تَمَّ, Korean: 성취하다/이루다, Swahili: -timiza/-ka...
+    Domain: QUANTITY_NUMBER > Quantity
+    Glosses: eng: are-completed, are-fulfilled, being-complete | spa: cumpla, cumplirse, cumpliste | fra: accompli, completing, il-remplit | deu: completing, du-fulfilled, er-fuellte
+    Refs: Gen 25:24, Gen 29:21, Gen 29:27, Gen 29:28, Gen 50:3
+  Sense 4: "become filled (passive/middle)" (42x)
+    Desc: Niphal: to be filled, become full, receive filling as a passive or middle event (Arabic: امتلأ/يمتلئ Form VIII, Korean: 차다/채워지다, Swahili: -jazwa/-jaa).
+    Domain: QUANTITY_NUMBER > Quantity
+    Glosses: eng: and-is-filled, and-they-will-be-filled, and-was-filled | spa: Y-se-llenarán, Y-se-llenó, se-llenará | fra: et---être-remplit, et-fut-remplit, et-remplir | deu: fuellen, füllte, und-er-fuellt
+    Refs: Gen 6:11, Exod 1:7, Exod 8:21, Exod 10:6, Exod 15:9
+  Sense 5: "fill (Qal transitive)" (13x)
+    Desc: Qal used transitively: to fill something, where Qal carries active transitive force rather than stative meaning (Arabic: مَلَأَ/مَلَأُوا, Korean: 채우다, Swahili: -jaza).
+    Domain: QUANTITY_NUMBER > Quantity
+    Glosses: eng: and-shall-fill, and-they-fill, and-they-filled | spa: Llenad, cuando-se-llenaron, llenaos | fra: de-ne...pas, et-remplir, pleine | deu: fuelle, fuellen, fuellte
+    Refs: Exod 32:29, 1Kgs 18:34, 2Kgs 4:6, Ps 110:6, Isa 14:21
+  Sense 6: "fully follow (devotion)" (5x)
+    Desc: Piel idiom 'mille acharei': to follow fully, to be wholly devoted to, used of loyal allegiance to God (Arabic: اتَّبَعَ, Korean: 충실히 따르다, Swahili: -fuata).
+    Domain: MOVEMENT > Linear Movement
+    Glosses: eng: and-he-followed-fully, he-fully-followed, they-followed-fully | spa: cumplieron, cumplió, y-siguió-plenamente | fra: et-il-followed-fully, il-fully-followed, ils-followed-fully | deu: er-fully-folgte, er-fully-followed, sie-folgte-fully
+    Refs: Num 14:24, Num 32:11, Num 32:12, Deut 1:36, 1Kgs 11:6
+  Sense 7: "set, inlay (gems)" (3x)
+    Desc: Piel/Pual specialized sense: to set or inlay precious stones into a mounting (Arabic: رَصَّعَ/ترصيع, Korean: 박히다, Swahili: -jazwa with gems context).
+    Domain: COMMUNICATION > Communication
+    Glosses: eng: for-setting, set-with | spa: engastados, para-engastar | fra: enchâssés, pour-setting | deu: fuellte, fuer-Einfassung
+    Refs: Exod 31:5, Exod 35:33, Song 5:14
+  Sense 8: "satisfy (appetite/desire)" (2x)
+    Desc: Piel extended sense: to satisfy hunger, thirst, or desire, filling as satiation (Arabic: يُشْبِعُ, Korean: 채우다 appetite, Swahili: -tosheleza).
+    Domain: QUANTITY_NUMBER > Quantity
+    Glosses: eng: can-you-satisfy, to-satisfy | spa: para-saciar, puedes-satisfacer | fra: remplir, à-remplir | deu: fuellte, zu-fuellte
+    Refs: Job 38:39, Prov 6:30
+  Sense 9: "?" (1x)
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: in-the-fullness-of | spa: En-la-plenitud-de | fra: dans-remplir | deu: fuellte
+    Refs: Job 20:22
+  Sense 10: "?" (1x)
+    Domain: QUANTITY_NUMBER > Quantity
+    Glosses: eng: fully | spa: a-plena-voz | fra: remplir | deu: fuellen
+    Refs: Jer 4:5
+  Sense 11: "?" (1x)
+    Domain: QUANTITY_NUMBER > Quantity
+    Glosses: eng: they-gather-themselves | spa: se-llenan | fra: remplir | deu: fuellte
+    Refs: Job 16:10

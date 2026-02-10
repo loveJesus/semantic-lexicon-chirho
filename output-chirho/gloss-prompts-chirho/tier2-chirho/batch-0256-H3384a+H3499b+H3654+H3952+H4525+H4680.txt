@@ -1,0 +1,115 @@
+You are a biblical lexicographer composing glosses for a digital lexicon.
+For each lemma below, compose a JSON object. Separate objects with "---".
+
+Format for each:
+{
+  "lemma_id": "...",
+  "gloss_terse": "under 120 chars, concise definition covering the word's semantic range",
+  "gloss_readable": "2-5 sentences, 40-120 words. Don't start with 'This word'. Warm study-Bible footnote tone. Engaging, not dry.",
+  "senses": {
+    "1": "enriched 20-60 word description. Reference multilingual evidence when illuminating. Don't repeat the label verbatim.",
+    "2": "..."
+  }
+}
+
+Rules:
+- No markdown fences, just JSON objects separated by ---
+- Reference multilingual evidence naturally when it reveals something
+- gloss_readable should feel like a good study Bible footnote: helpful, clear, occasionally surprising
+- Each sense enrichment: how does the evidence support this sense? Mention 1-2 key passages when helpful.
+
+=== H3384a ===
+Language: Hebrew, POS: V-Hofal-Imperf-3ms, Occurrences: 7, Senses: 2
+
+BDB excerpt: † [יָרָא] vb. shoot, pour (Aramaic orthogr. of יָרָה q.v.)— Qal Inf. cstr. לִירוֹא בַּחִצִּים 2 Ch 26:15 shoot with arrows. Hiph. Impf. וַיֹּרא֯וּ 2 S 11:24 and they shot at (אֶל־); Pt. pl. הַמּוֹרִא֯ים v 24 the shooters, archers; Kt to be read וַיֹּרִאוּ, הַמּוֹרִאִים; but Mas, noting א as superfluous, would read וַיֹּרוּ, הַמּוֹרִים from יָרָה (Bö§ 1083 (8), (9)). Hoph. Impf. only in וּמַרְוֶה גַּם הוּא יוֹרֶ֑א Pr 11:25 he that watereth shall himself also be watered (Fl De MV al. derive—‘non bene,’ Thes—from √ רוה, q.v., יוֹרֶא for יָרְוֶה; but v. Thes Ew§ 131 f. Bö§ 161 (4) SS Buhl Köi. 585
+Senses:
+  Sense 1: "shoot (arrows)" (6x)
+    Desc: To shoot arrows or projectiles, used in both Hifil and Qal stems. Includes the archers/shooters (1 Sam 31:3 = 1 Chr 10:3, participial form hammorim, 'the shooters'), the act of shooting (2 Chr 26:15 t...
+    Domain: DISCOURSE_NAMES > Names of Persons and Places
+    Glosses: eng: [and-they-saw], [the-shooters], and-they-shot | spa: (los-flecheros), (y-dispararon), [los-flecheros] | fra: [and-ils-saw], [the-shooters], [לירוא] | deu: [and-sie-saw], [the-shooters], [לירוא]
+    Refs: 2Sam 11:20, 2Sam 11:24, 2Sam 11:24, 2Sam 11:24, 2Sam 11:24
+  Sense 2: "be watered, be saturated" (1x)
+    Desc: Hofal passive: to be watered or saturated, describing the outcome of pouring or drenching. Found in Prov 11:25 (he who waters will himself be watered, yoreh). A genuinely different meaning from 'shoot...
+    Domain: MOVEMENT > Linear Movement
+    Glosses: eng: will-be-watered | spa: será-regado | fra: jeter | deu: [יורא]
+    Refs: Prov 11:25
+
+=== H3499b ===
+Language: Hebrew, POS: N-ms, Occurrences: 7, Senses: 2
+
+BDB excerpt: † II. יֶ֫תֶר n.m. Ju 16:7 cord (proposes as hanging over or down; Aramaic יַתְרָא part of the intestines, 𝔗 יְתָרַיָּא ropes, ܝܰܬܪܳܐ cord, rope, chord of arc; Arabic وَتَرٌ bow-string, lute-string; Ethiopic ወትር sinew, cord; ወተረ stretch bowstring, strain (eyes), be intent, eager, etc.)—יֶתֶ֑ר ψ 11:2 + 5times; sf. יִתְרוֹ Kt Jb 30:11 (יִתְרִי Qr); יִתְרָם Jb 4:21;—cord, for binding a man Ju 16:7, 8, 9; bowstring ψ 11:2 Jb 30:11 (according to Qr, opp. 29:20 b; Kt = his cord, with which he reins in my assailants; cf. Di Da). Jb 4:21 tent-cord Ew De Di RV; yet read perhaps יְתֵדָם their tent-peg, s
+Senses:
+  Sense 1: "bowstring" (4x)
+    Desc: The noun יֶתֶר II (yeter) denoting a cord or string specifically associated with a bow, used in the story of Samson where fresh (undried) bowstrings are used to bind him (Judg 16:7-9 'if they bind me ...
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: bowstrings, the-bowstrings, the-string | spa: cuerdas-de-arco, la-cuerda, las-cuerdas | fra: corde, cordes-d'arc, le-cordes-d'arc | deu: bowstrings, der-bowstrings, der-string
+    Refs: Judg 16:7, Judg 16:8, Judg 16:9, Ps 11:2
+  Sense 2: "tent cord, rope" (3x)
+    Desc: The noun יֶתֶר II (yeter) denoting a cord or rope used for a tent or in a general domestic context, distinct from the specialized bowstring usage. Found in Job 4:21 ('is not their tent cord pulled up ...
+    Domain: ARTIFACTS > Artifacts
+    Glosses: eng: [K], my-cord, their-tent-cord | spa: (mi-cuerda), [mi-cuerda], su-cuerda-de-tienda | fra: leur-reste-eux, mon-reste-moi, son-reste-lui | deu: [(יתרי)], [[יתרו]], [יתרם]
+    Refs: Job 4:21, Job 30:11, Job 30:11
+
+=== H3654 ===
+Language: Hebrew, POS: Adv, Occurrences: 7, Senses: 2
+
+BDB excerpt: † IV. כֵּן (?), כִּנִּם, כִּנָּם n.[m.], meaning dub.; either gnat, gnats, gnat-swarm (so 𝔊 𝔙 PhiloVita Mos. i, p. 97, OrigenHom 4, 6 in Ex., and most moderns), or [louse,] lice (so 𝔖 𝔗 JosAnt. ii, 14, 13 BochHieroz. II, ii, 572 f., as NH כִּנָּה, pl. כִּנִּים = maggots, and especially lice)—abs. perh. כֵּן Is 51:6 (v. infr.); pl. כִּנִּים Ex 8:13, 14 ψ 105:31, כִּנִּם Ex 8:12; Ex 8:13, 14 has, also, כִּנָּם prob. a mere Mas. device for כִּנִּם (cf. Di), on account of preceding וַתְּהִי (on which see Ges§ 145. 4 DaSynt. § 116); Sam. has כנים throughout:—of Egyptian plague Ex 8:12, 13(×2), 14(×
+Senses:
+  Sense 1: "the gnats" (6x)
+    Desc: the gnats, gnats (6 occurrences across 2 original clusters)
+    Domain: MORAL_QUALITY > Moral and Ethical Qualities
+    Glosses: eng: gnats, the-gnats | spa: el-piojo, los-piojos, piojos | fra: comme-moustique, le-moustiques, moustiques | deu: Muecken, der-Muecken, gnats
+    Refs: Exod 8:16, Exod 8:17, Exod 8:17, Exod 8:18, Exod 8:18
+  Sense 2: "so" (1x)
+    Desc: so (1 occurrences across 1 original clusters)
+    Domain: PROPERTIES_RELATIONS > Relations
+    Glosses: eng: so | spa: así | fra: ainsi | deu: so
+    Refs: Isa 51:6
+
+=== H3952 ===
+Language: Hebrew, POS: V-Qal-Imperf-3mp, Occurrences: 7, Senses: 2
+
+BDB excerpt: † [לָקַק] vb. lap, lick (NH id., Pi.; Arabic لَقَّ lick, lap of dog (Wahrm));— Qal Pf. 3 ms. לָֽקְקוּ 1 K 21:19; Impf. 3 ms. יָלֹק Ju 7:5(×2); 3 mpl. יָלֹ֫קּוּ 1 K 21:19, וַיָּלֹ֫קּוּ 1 K 22:38;—lap, יָלֹק בִּלְשׁוֹנוֹ מִן־הַמַּיִם Ju 7:5, like a dog v 5 (abs.); of dogs lapping up blood (acc.), 1 K 21:19(×2); 22:38. Pi. Pt. pl. c. art. הַמְֿלַקְקִים Ju 7:6 (בְּיָדָם אֶל־פִּיהֶם is erron. gloss, v. GFM), v 7; in both = lap, lap up (= Qal v 5).
+Senses:
+  Sense 1: "to lap (water, with the tongue)" (4x)
+    Desc: To lap water with the tongue, as in the Gideon narrative (Judges 7) where soldiers are tested by how they drink water. Includes both Qal imperfect (S109251, 'laps') and Piel participle (S109252, 'the ...
+    Domain: BODY_HEALTH > Physiological Processes and States
+    Glosses: eng: laps, the-ones-lapping | spa: lama, lame, los-que-lamieron | fra: laps, le-les-lapant | deu: der-die-lapping, laps
+    Refs: Judg 7:5, Judg 7:5, Judg 7:6, Judg 7:7
+  Sense 2: "to lick (a surface)" (3x)
+    Desc: To lick a surface, as in dogs licking blood (1 Kings 21:19, 22:38) or licking dust (Micah 7:17, Numbers 22:4). Distinct from 'lapping water' in that the action is directed at a solid surface. Arabic u...
+    Domain: MOVEMENT > Linear Movement
+    Glosses: eng: and-licked, licked, will-lick | spa: lamerán, lamieron, y-lamieron | fra: et-licked, fera-lick, licked | deu: licked, und-licked, wird-lick
+    Refs: 1Kgs 21:19, 1Kgs 21:19, 1Kgs 22:38
+
+=== H4525 ===
+Language: Hebrew, POS: Art | N-ms, Occurrences: 7, Senses: 2
+
+BDB excerpt: † מַסְגֵּר n.[m.] 1. locksmith, smith. 2. dungeon:—always abs.: 1. coll. smiths, וְכָל־הֶחָרָשׁ וְהַמּ׳ 2 K 24:14 cf. v 16, Je 24:1; 29:2. 2. dungeon Is 24:22 (cf. סגר Pu.); fig. of exile 42:7 (הוֹצִיא מִמּ׳); הוֹצִיאָה מִמּ׳ נַפְשִׁי ψ 142:8.
+Senses:
+  Sense 1: "smith, locksmith" (4x)
+    Desc: A craftsman who works metal; smith, locksmith. Used collectively of the skilled artisans deported from Jerusalem by Nebuchadnezzar along with the charash (craftsmen): 'all the craftsmen and the smiths...
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: and-the-smith, and-the-smiths, the-smiths | spa: los-herreros, y-el-herrero, y-los-herreros | fra: [המסגר], [והמסגר], et-le-smith | deu: [המסגר], [והמסגר], und-der-smith
+    Refs: 2Kgs 24:14, 2Kgs 24:16, Jer 24:1, Jer 29:2
+  Sense 2: "dungeon, prison" (3x)
+    Desc: A place of confinement; dungeon, prison (from the root meaning 'to shut, close'). Used in Ps 142:7 'bring my soul out of prison' (mimmasger) and Isa 42:7 'to bring out prisoners from the dungeon' (mim...
+    Domain: BUILDINGS > Constructions
+    Glosses: eng: a-prison, from-prison, from-the-prison | spa: de-la-cárcel, de-prisión, prisión | fra: [ממסגר], [מסגר], de-serrure | deu: [ממסגר], [מסגר], von-prison
+    Refs: Ps 142:7, Isa 24:22, Isa 42:7
+
+=== H4680 ===
+Language: Hebrew, POS: V-Nifal-Imperf-3mp, Occurrences: 7, Senses: 2
+
+BDB excerpt: † [מָצָה] vb. drain, drain out (NH id., press or drain out; Aramaic ܡܨܳܐ, מְצָא id.; Arabic مصو ii. drain to the last drop (Dozy); cf. מָצַץ);— Qal Pf. 2 fs. מָצִית Is 51:17, וּמָצִית consec. Ez 23:34; Impf. 3 ms. apoc. וַיִּמֶץ Ju 6:38, 3 mpl. יִמְצוּ ψ 75:9;—drain, drain out, וַיִּמֶץ טַל מִן־הַגִּזָּה Ju 6:38 and drained dew out of the fleece; so fig., obj. קֻבַּעַת bowl, goblet, of bewilderment from י׳, Is 51:17 (+ שׁתה; of personif. Jerusalem), cf., obj. כּוֹס, Ez 23:34 (+ שׁתה); obj. שְׁמָרֶיהָ the dregs of it (viz. בּוֹס) ψ 75:9 (subj. the wicked). Niph. Pf. וְנִמְצָה consec. Lv 1:15 an
+Senses:
+  Sense 1: "to drain, wring out (Qal active)" (4x)
+    Desc: Qal active stem meaning to drain, wring out, or squeeze dry, with the subject performing the wringing action on a liquid. Arabic أَفْرَغْتِ 'you emptied out' and امْتَصَّ 'he absorbed/sucked' and يَعْ...
+    Domain: PHYSICAL_ACTION > Activities Involving Liquids
+    Glosses: eng: and-he-wrung-out, and-you-shall-drain-it, they-drain | spa: exprimirán, exprimiste, y-escurrió | fra: [מצית], et-il-wrung-dehors, et-presser | deu: [ומצית], [מצית], sie-drain
+    Refs: Judg 6:38, Ps 75:8, Isa 51:17, Ezek 23:34
+  Sense 2: "to be drained, wrung out (Nifal passive)" (3x)
+    Desc: Nifal passive stem meaning to be drained, wrung out, or squeezed, describing the liquid or object undergoing the draining process. Arabic يُعْصَرُ 'it is squeezed' and تُمْتَصُّ 'they are absorbed/suc...
+    Domain: PHYSICAL_ACTION > Activities Involving Liquids
+    Glosses: eng: and-it-shall-be-drained-out, are-drained, it-shall-be-drained | spa: será-exprimido, son-exprimidas, y-exprimirá | fra: cela-devra-être-drained, et-cela-devra-être-drained-dehors, presser | deu: es-soll-sein-ausgegossen, sind-drained, und-es-soll-sein-ausgegossen-heraus
+    Refs: Lev 1:15, Lev 5:9, Ps 73:10

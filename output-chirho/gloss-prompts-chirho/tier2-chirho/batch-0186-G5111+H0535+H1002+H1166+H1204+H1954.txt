@@ -1,0 +1,113 @@
+You are a biblical lexicographer composing glosses for a digital lexicon.
+For each lemma below, compose a JSON object. Separate objects with "---".
+
+Format for each:
+{
+  "lemma_id": "...",
+  "gloss_terse": "under 120 chars, concise definition covering the word's semantic range",
+  "gloss_readable": "2-5 sentences, 40-120 words. Don't start with 'This word'. Warm study-Bible footnote tone. Engaging, not dry.",
+  "senses": {
+    "1": "enriched 20-60 word description. Reference multilingual evidence when illuminating. Don't repeat the label verbatim.",
+    "2": "..."
+  }
+}
+
+Rules:
+- No markdown fences, just JSON objects separated by ---
+- Reference multilingual evidence naturally when it reveals something
+- gloss_readable should feel like a good study Bible footnote: helpful, clear, occasionally surprising
+- Each sense enrichment: how does the evidence support this sense? Mention 1-2 key passages when helpful.
+
+=== G5111 ===
+Language: Greek, POS: V-PSA-3S, Occurrences: 16, Senses: 2
+
+BDB excerpt: τολμ-άω, Ionic dialect τολμέω Refs 5th c.BC+; Doric dialect 2nd pers. singular τολμῇς Refs 3rd c.BC+: future τολμήσω Refs 5th c.BC+, Doric dialect -ᾱσῶRefs 3rd c.BC+: perfect τετόλμηκα Refs 4th c.BC+, Doric dialect -ᾱκαRefs 5th c.BC+:—middle, Refs 5th c.BC+:—undertake, take heart either to do or bear anything terrible or difficult: __1 mostly absolutely, dare, endure, submit (see. Τλάω), ἐνὶ φρεσὶ θυμὸς ἐτόλμα Refs 8th c.BC+; σὺ δ᾽ (i.e. κραδίη) ἐτόλμας Refs 8th c.BC+; τολμῶντες ἄνδρεςRefs 6th c.BC+participle, τολμήσας.. παρέστη he took courage and.., NT+1st c.AD+ __2 with accusative of things
+Senses:
+  Sense 1: "dare to do something" (13x)
+    Desc: To venture or presume to do something, implying boldness in undertaking a specific action that others might hesitate to perform.
+    Domain: EMOTION_ATTITUDE > Attitudes and Emotions
+    Glosses: eng: I-will-dare, dared, dares | spa: atreverme, atreverse, me-atreveré | fra: oser, pas | deu: wagen, wagte-er, ἐτόλμα
+    Refs: Matt 22:46, Mark 12:34, Luke 20:40, John 21:12, Acts 5:13
+  Sense 2: "be bold or courageous" (3x)
+    Desc: To exhibit boldness or courage as a disposition or state, emphasizing the inner quality of daring rather than a specific action undertaken.
+    Domain: EMOTION_ATTITUDE > Attitudes and Emotions
+    Glosses: eng: I-am-bold, having-courage, is-bold | spa: habiendo-osado, me-atrevo, se-atreva | fra: oser | deu: wagen
+    Refs: Mark 15:43, 2Cor 11:21, 2Cor 11:21
+
+=== H0535 ===
+Language: Hebrew, POS: V-Pual-Perf-3ms, Occurrences: 16, Senses: 2
+
+BDB excerpt: † [אָמַל] vb. be weak, languish (cf. Arabic أَمَلَ hope, expect). Qal Pt. pass. f. מָה אֲמֻלָה לִבָּתֵךְ how weak is thy heart! Ez 16:30 (but מַה־לִּי וְלִבְרִיתֵךְ); Puʿl. Pf. אֻמְלַל Jo 1:10 +; אֻמְלְלָה Is 33:9 +; אֻמְלְלוּ Je 14:2 etc.;—be or grow feeble, languish; of loss of fertility (woman) 1 S 2:5 Je 15:9; of fisherman whose trade fails Is 19:8 (‖ אנה, אבל); in genl. in inhab. of smitten land Ho 4:3 (‖ תֶּאֱבַל הָאָרֶץ); Is 24:4 cf. infr. usually subj. inanim., personif.; שַׁדְמוֹת חֶשְׁבּוֹן Is 16:8; cf. Na 1:4(×2); תֵּבֵל Is 24:4 (‖ נבל, אבל); אֶרֶץ 33:9 (‖ אבל); subj. גֶּפֶן Is 24:7
+Senses:
+  Sense 1: "languish, wither, fade" (15x)
+    Desc: To languish, wither, or fade away, describing the process of losing vitality or strength (Pual stem).
+    Domain: BODY_HEALTH > Physiological Processes and States
+    Glosses: eng: She-languished, and-languishes, languish | spa: Desfalleció, Marchitado, desfallecieron | fra: et-languir, languir, languishes | deu: languishes, schwach-sein, und-welkt
+    Refs: 1Sam 2:5, Isa 16:8, Isa 19:8, Isa 24:4, Isa 24:4
+  Sense 2: "be weak, feeble" (1x)
+    Desc: To be in a state of weakness or feebleness, describing a condition rather than a process (Qal passive participle).
+    Domain: PROPERTIES_RELATIONS > Able, Capable
+    Glosses: eng: weak | spa: debilitada | fra: languir | deu: [אמלה]
+    Refs: Ezek 16:30
+
+=== H1002 ===
+Language: Hebrew, POS: Art | N-fs, Occurrences: 16, Senses: 2
+
+BDB excerpt: † בִּירָה n.f. castle, palace (late & prob. loan-word; cf. Assyrian bîrtu, fortress DlHA 22; Pers. bâru = Skr. bura, bari, v. Ry Ne 2:8)— 1. of temple at Jerusalem 1 Ch 29:1, 19 הַבִּירָה; of fortress near temple Ne 2:8; 7:2 (cf. βᾶρις 𝔊L Ne 1:1; 2:8; 7:2—B ἁβιρά, βειρά—and later βᾶρις JosAnt. xv, 11, 4). 2. בְּשׁוּשַׁן הַבִּירָה Ne 1:1 Est 1:2, 5; 2:3, 5, 8; 3:15; 8:14; 9:6, 11, 12 Dn 8:2; in these passages it appar. means a fortress in the city bearing the same name (cf. especially Est 3:15; 8:14, 15; 9:6, 12, 15, 18).
+Senses:
+  Sense 1: "?" (14x)
+    Domain: BUILDINGS > Constructions
+    Glosses: eng: the-citadel | spa: la-ciudadela | fra: forteresse, la-citadelle | deu: [הבירה], die-Burg
+    Refs: Neh 1:1, Neh 2:8, Neh 7:2, Esth 1:2, Esth 1:5
+  Sense 2: "?" (2x)
+    Domain: BUILDINGS > Constructions
+    Glosses: eng: the-palace | spa: la-fortaleza | fra: la-citadelle | deu: [הבירה]
+    Refs: 1Chr 29:1, 1Chr 29:19
+
+=== H1166 ===
+Language: Hebrew, POS: V-Qal-QalPassPrtcpl-fs, Occurrences: 16, Senses: 2
+
+BDB excerpt: † בָּעַל vb. marry, rule over (cf. Arabic بَعَلَ = own, possess, especially a wife or concubine; Ethiopic ብዕለ to be rich, Assyrian bâlu, rule COTGloss., Aramaic בְּעַל take possession of wife or concubine)— Qal Pf. Mal 2:11 + 6 times Impf. יִבְעַל Is 62:5(×2); Pt. sf. בֹּעֲלַיִךְ Is 54:5; pass. f. בְּעוּלָה Is 54:1 + 3 times;— 1. marry Gn 20:3 (E) Dt 21:13; 22:22; 24:1 Is 54:1, 5; 62:4, 5(×2) Mal 2:11; sq. בְּ Je 3:14; 31:32 be lord (husband) over. Je 3:14; 31:32 AW JosKi Thes, comparing Arabic بَعَلَ be disgusted, derive from II. בָּעַל loathe (sq. בְּ); so Buhl: Gie Du Co in 31:32 read גָּעַ
+Senses:
+  Sense 1: "marry, be husband to" (11x)
+    Desc: To enter into or be in a marital relationship as husband; used in Qal active for the act of marrying, Qal passive participle for the state of being married, and Nifal for the passive 'be married'.
+    Domain: GROUPS_COMMUNITY > Association
+    Glosses: eng: Married, and-has-married, and-marries-her | spa: Desposada, casada-con-, la-casada | fra: et-dans-sur, et-marries-sa, et-tu-devra-marry-sa | deu: [תבעל], heiraten, ist-verheiratet
+    Refs: Gen 20:3, Deut 21:13, Deut 22:22, Deut 24:1, Prov 30:23
+  Sense 2: "be master of, rule over" (5x)
+    Desc: To exercise authority, ownership, or dominion over someone or something; encompasses both the relational sense of being lord/master/owner and the political sense of ruling or dominating, as these shar...
+    Domain: GROUPS_COMMUNITY > Association
+    Glosses: eng: am-your-master, have-ruled-over-us, ruled | spa: fui-señor, gobernaron, me-desposé | fra: [בעלו], dans-sur-toi, épouser | deu: [בעלו], heiraten, in-ueber-dich
+    Refs: 1Chr 4:22, Isa 26:13, Isa 54:5, Jer 3:14, Jer 31:32
+
+=== H1204 ===
+Language: Hebrew, POS: V-Piel-Imperf-3mp | 3ms, Occurrences: 16, Senses: 2
+
+BDB excerpt: † [בָּעַת] vb. fall upon, startle, terrify (Arabic بَغَتَ come or happen suddenly, NH בָּעַת Hiph. startle; so Aramaic בְּעֵת Pa. ܒܥܶܬ Aph.)— Niph. (late prose) Pf. נִבְעַת 1 Ch 21:30, נִבְעָ֑ת Est 7:6; נִבְעַתִּי Dn 8:17;—be terrified, abs. Dn 8:17; c. מפני 1 Ch 21:30 Est 7:6. Pi. (mostly poet.) Pf. 3 fs. sf. בִּעֲתָ֑תְנִי Is 21:4, וּבִעֲתַ֫תּוּ 1 S 16:14; 3 pl. sf. בִּעֲתֻהוּ Jb 18:11; Impf. 3 fs. תְּבַעֵת Jb 13:11; sf. תְּבַעֲתַ֑נִּי Jb 9:34; 13:21, תְּבַעֲתֶ֑ךָּ Jb 33:7; 2 ms. sf. תְּבַעֲתַ֑נּי Jb 7:14; 3 mpl. sf. יְבַעֲתוּנִי ψ 18:5 = יְבַעֲתֻנִי 2 S 22:5, יְבַעֲתֻהוּ Jb 3:5; 15:24;— 1. f
+Senses:
+  Sense 1: "terrify" (13x)
+    Desc: Piel causative: to terrify, frighten, or startle someone
+    Domain: MOVEMENT > Linear Movement
+    Glosses: eng: You-frighten-me, and-terrified-him, let-terrify-it | spa: Lo-aterran, aterrorizará, aterróricenlo | fra: [בעתתני], effrayer, effrayer-lui | deu: [בעתהו], [בעתתני], [יבעתהו]
+    Refs: 1Sam 16:14, 1Sam 16:15, 2Sam 22:5, Job 3:5, Job 7:14
+  Sense 2: "be terrified" (3x)
+    Desc: Nifal passive: to be terrified, dismayed, or frightened
+    Domain: EMOTION_ATTITUDE > Attitudes and Emotions
+    Glosses: eng: I-was-terrified, he-was-terrified, was-terrified | spa: fue-aterrorizado, me-espanté, se-aterró | fra: [נבעת], terrifier | deu: [נבעת], [נבעתי]
+    Refs: 1Chr 21:30, Esth 7:6, Dan 8:17
+
+=== H1954 ===
+Language: Hebrew, POS: Prep-b | N-proper-ms, Occurrences: 16, Senses: 2
+
+BDB excerpt: † הוֹשֵׁעַ n.pr.m. (salvation; on form, cf. הַשְׁמֵד, הַמְשֵׁל; on pronunciation v. HptZA ii, 261 Anm. 2 JägerBAS i, 468)— 1. orig. name of Joshua according to Nu 13:8, 16 (P), 𝔊 Αυση, cf. Dt 32:44 (J; prob. error, v. Dr), 𝔊 Ιησους, v. יְהוֹשׁוּעַ" dir="rtl" >יְהוֹשׁוּעַ p. 221 supr. 2. last king of Israel 2 K 15:30; 17:1, 3, 4, 6; 18:1, 9, 10, 𝔊 Ωσηε. 3. the prophet Hosea Ho 1:1, 2(×2), 𝔊 Ωσηε. 4. an Ephraimite chief under David 1 Ch 27:20, 𝔊 Ωση(ε). 5. a chief under Nehemiah Ne 10:24, 𝔊 Ωσηθα, Ωσηε.
+Senses:
+  Sense 1: "Hoshea (son of Nun / king of Israel)" (13x)
+    Desc: The proper name Hoshea (meaning 'salvation'), used for multiple individuals: (1) the original name of Joshua son of Nun before Moses renamed him (Num 13:8, 16; Deut 32:44), (2) Hoshea son of Elah, the...
+    Domain: DISCOURSE_NAMES > Names of Persons and Places
+    Glosses: eng: Hoshea, and-Hoshea, in-Hoshea | spa: Oseas, a-Oseas, de-Oseas | fra: Hoshea, [הושע], dans-Hoshea | deu: Hosea, Hoshea, [הושע]
+    Refs: Num 13:8, Num 13:16, Deut 32:44, 2Kgs 15:30, 2Kgs 17:1
+  Sense 2: "Hosea (the prophet)" (3x)
+    Desc: The proper name Hosea, referring specifically to the 8th-century BC prophet, son of Beeri, who prophesied during the reigns of Uzziah, Jotham, Ahaz, and Hezekiah of Judah and Jeroboam II of Israel (Ho...
+    Domain: DISCOURSE_NAMES > Names of Persons and Places
+    Glosses: eng: Hosea, through-Hosea | spa: Oseas, por-Oseas | fra: Osée, dans-Osée | deu: Hosea, in-Hosea
+    Refs: Hos 1:1, Hos 1:2, Hos 1:2

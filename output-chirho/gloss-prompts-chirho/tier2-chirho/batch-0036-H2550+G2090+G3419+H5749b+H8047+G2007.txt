@@ -1,0 +1,142 @@
+You are a biblical lexicographer composing glosses for a digital lexicon.
+For each lemma below, compose a JSON object. Separate objects with "---".
+
+Format for each:
+{
+  "lemma_id": "...",
+  "gloss_terse": "under 120 chars, concise definition covering the word's semantic range",
+  "gloss_readable": "2-5 sentences, 40-120 words. Don't start with 'This word'. Warm study-Bible footnote tone. Engaging, not dry.",
+  "senses": {
+    "1": "enriched 20-60 word description. Reference multilingual evidence when illuminating. Don't repeat the label verbatim.",
+    "2": "..."
+  }
+}
+
+Rules:
+- No markdown fences, just JSON objects separated by ---
+- Reference multilingual evidence naturally when it reveals something
+- gloss_readable should feel like a good study Bible footnote: helpful, clear, occasionally surprising
+- Each sense enrichment: how does the evidence support this sense? Mention 1-2 key passages when helpful.
+
+=== H2550 ===
+Language: Hebrew, POS: V-Qal-Perf-2ms, Occurrences: 41, Senses: 3
+
+BDB excerpt: † חָמַל vb. spare (Arabic حَمَلَ is bear, become responsible; Aramaic ܚܡܰܠ comportavit, congessit);— Qal Pf. ח׳ 1 S 15:15 + 3 times; חָמָ֑ל 2 S 12:6; La 2:17; חָמָ֑לְתָּ La 2:21; 3:43; וְחָמַלְתִּ֫י Mal 3:17; Impf. יַחְמֹל Jb 16:13 + 6 times; יַחְמוֹל Jb 6:10 + 3 times; וַיַּחְמֹל 1 S 15:9 + 3 times; 3 fs. וַתַּחְמֹל Ex 2:6; 2 ms. תַּחְמֹל Dt 13:9 1 S 15:3; אֶחְמֹל Ez 8:18; 9:10; אֶחְמוֹל Je 13:14 + 4 times; וָאֶחְמֹל Ez 36:21; יַחְמֹ֑לוּ Is 9:18; תַּחְמְלוּ Je 50:14; 51:3; תַּחְמֹ֑לוּ Ez 9:5; Inf. cstr. חֻמְלָה Ez 16:5 (Ges§ 45. 1. b);—spare, have compassion, c. על Ex 2:6 (E), 1 S 15:3, 9, 15
+Senses:
+  Sense 1: "spare, refrain from destroying" (23x)
+    Desc: To spare someone or something by refraining from punishment, destruction, or harsh treatment.
+    Domain: EMOTION_ATTITUDE > Attitudes and Emotions
+    Glosses: eng: He-spares, You-spared, and-he-spared | spa: Lo-perdona, Y-perdonó, escatimen | fra: avoir-pitié, et-il-spared, spared | deu: [יחמל], [תחמלו], du-wird-spare
+    Refs: Deut 13:8, 1Sam 15:3, 1Sam 15:9, 1Sam 15:15, 2Sam 12:4
+  Sense 2: "have compassion, pity" (16x)
+    Desc: To feel emotional compassion or pity toward someone, often in response to suffering or vulnerability.
+    Domain: EMOTION_ATTITUDE > Attitudes and Emotions
+    Glosses: eng: He-had-compassion, I-shall-pity, I-will-pity | spa: perdonará, se-compadecerá, tendré-compasión | fra: [חמל], avoir-pitié, et-elle-avait-compassion | deu: [אחמול], [יחמל], du-habe-hatte-compassion
+    Refs: Exod 2:6, 1Sam 23:21, 2Sam 12:6, 2Chr 36:15, 2Chr 36:17
+  Sense 3: "be concerned for, care about" (2x)
+    Desc: To feel concern or emotional attachment toward something, expressing care or regard for its welfare.
+    Domain: EMOTION_ATTITUDE > Attitudes and Emotions
+    Glosses: eng: and-I-had-concern, and-their-shepherds | spa: Y-tuve-compasión, tienen-compasión | fra: et-épargner, épargner | deu: schont, und-schonen
+    Refs: Ezek 36:21, Zech 11:5
+
+=== G2090 ===
+Language: Greek, POS: V-RPM/P-DMP, Occurrences: 40, Senses: 3
+
+BDB excerpt: ἑτοιμ-άζω, perfect ἡτοίμακα Refs 2nd c.BC+perfect passive ἡτοίμασμαι both in middle and passive sense see below): (ἑτοῖμος):—get ready, prepare, ἐμοὶ γέρας αὐτίχ᾽ ἑτοιμάσατ᾽ Refs 8th c.BC+; [νέας] NT+5th c.BC+; δάκρυα δ᾽ ἑτοιμάζουσι to those furnishing them, Refs 5th c.BC+; ἑαυτὸν ἵνα.. NT __II middle, cause to be prepared, ὄφρ᾽ ἱρὸν ἑτοιμασσαίατ᾽ Ἀθήνῃ Refs 8th c.BC+ __II.2 with perfect passive ἡτοίμασμαι, prepare for oneself, τἄλλα ἡτοιμάζετο made his other arrangements, Refs 5th c.BC+ __II.3 prepare oneself, make oneself ready, with infinitive, Refs 5th c.BC+ __III passive, to be prepared, 
+Senses:
+  Sense 1: "prepare something, make ready" (29x)
+    Desc: Active transitive sense: to prepare, make ready, or furnish something (a meal, a place, materials) for a specific purpose or person.
+    Domain: PROPERTIES_RELATIONS > Ready, Prepared
+    Glosses: eng: Prepare, he-prepared, prepare | spa: Preparad, a-preparar, preparad | fra: préparer | deu: bereiten, bereitet
+    Refs: Matt 3:3, Matt 22:4, Matt 26:17, Matt 26:19, Mark 1:3
+  Sense 2: "be prepared, having been made ready" (10x)
+    Desc: Passive and stative sense: to have been prepared or made ready, describing a state of readiness resulting from prior preparation.
+    Domain: PROPERTIES_RELATIONS > Ready, Prepared
+    Glosses: eng: having-been-prepared, it-has-been-prepared, might-be-prepared | spa: fuera-preparado, ha-sido-preparado, preparada | fra: préparer | deu: bereiten, bereitet
+    Refs: Matt 20:23, Matt 25:34, Matt 25:41, Mark 10:40, 2Tim 2:21
+  Sense 3: "prepare oneself, get ready" (1x)
+    Desc: Middle/reflexive sense: to prepare oneself or get oneself ready, used intransitively of people making themselves ready for action or an event.
+    Domain: PROPERTIES_RELATIONS > Ready, Prepared
+    Glosses: eng: prepared | spa: se-prepararon | fra: préparer | deu: bereiten
+    Refs: Rev 8:6
+
+=== G3419 ===
+Language: Greek, POS: N-DNP, Occurrences: 40, Senses: 3
+
+BDB excerpt: μνημ-εῖον, Doric dialect μνᾱμεῖον, Ionic dialect μνημήϊον, τό, memorial, remembrance, record of a person or thing, μνημήϊα καταλιπέσθαι Refs 5th c.BC+; μνημεῖα ὅρκων a record of the oaths, Refs 5th c.BC+; μνημεῖα τῆς δαπάνης visible memorials, Refs 5th c.BC+; τὰ παίδων μαθήματα θαυμαστὸν ἔχει τι μ. the lessons of childhood cling strangely to the memory, Refs 5th c.BC+; μνημεῖα καταλειφθῆναι τῶν μελλόντων ἔσεσθαι to be left behind as reminders of things to come, Refs __2 of one dead, Refs 5th c.BC+; of an urn containing the ashes of the dead,Refs 5th c.BC+; tomb, LXX+NT: generally, monument, Re
+Senses:
+  Sense 1: "?" (32x)
+    Domain: RELIGIOUS_LIFE > Funerals and Burial
+    Glosses: eng: a-tomb, tomb | spa: sepulcro, tumba | fra: tombeau | deu: Grab, Grabmal
+    Refs: Matt 27:60, Matt 27:60, Matt 28:8, Mark 6:29, Mark 15:46
+  Sense 2: "?" (7x)
+    Domain: RELIGIOUS_LIFE > Funerals and Burial
+    Glosses: eng: tombs | spa: sepulcros, tumbas | fra: tombeau | deu: Grab, Grabmal
+    Refs: Matt 8:28, Matt 27:52, Matt 27:53, Mark 5:2, Luke 11:44
+  Sense 3: "?" (1x)
+    Domain: RELIGIOUS_LIFE > Funerals and Burial
+    Glosses: eng: monuments | spa: monumentos | fra: tombeau | deu: Grab
+    Refs: Matt 23:29
+
+=== H5749b ===
+Language: Hebrew, POS: Conj-w | V-Hifil-ConsecImperf-3mp, Occurrences: 40, Senses: 3
+
+BDB excerpt: † [עוּד] vb. denom. (Gerber 42 f.) bear witness;— Qal Impf. 1 s. sf. אֲעוּדֵךְ La 2:13 Kt; Hiph. Qr Bu. Hiph. Pf. 3 ms. הֵעִיד 2 K 17:15; Mal 2:14; הֵעִד Gn 43:3; 2 ms. הַֽעִידֹ֫תָ Ne 9:34; הַֽעֵדֹ֫תָה Ex 19:23; 1 s. הַֽעִידֹ֫תִי Dt 4:26; Je 42:19; 3 mpl. הֵעִ֫ידוּ Ne 9:26, etc.; Impf. וַיָּ֫עַד 2 K 17:13; Zc 3:6; 3 fs. sf. וַתְּעִידֵ֫נִי Jb 29:11 + 15 times Impf.; Inf. abs. הָעֵד Gn 43:3 + 4 times; Imv. הָעֵד Ex 19:21 + 2 times Imv. Pt. מֵעִיד Dt 32:46.— 1. testify, bear witness, c. sf. against one 1 K 21:10, 13; in favour of Jb 29:11; La 2:13 (Qr); c. בֵּין Mal 2:14; c. בְּ + כִּי Dt 8:19. 2
+Senses:
+  Sense 1: "warn, admonish, charge" (21x)
+    Desc: To solemnly warn, admonish, or charge someone, often with urgency or correction, including the passive sense of being warned (Hofal).
+    Domain: COMMUNICATION > Communication
+    Glosses: eng: I-have-warned, I-warned, and-I-warned | spa: Y-advertí, Y-advirtió, Y-amonestó | fra: avertir, avertissant, avertit | deu: [העידו], [ואעיד], [ואעידה]
+    Refs: Gen 43:3, Gen 43:3, Exod 19:21, Exod 19:23, Exod 21:29
+  Sense 2: "testify, bear witness" (12x)
+    Desc: To give testimony or bear witness, whether for or against someone, in a formal or declarative sense.
+    Domain: COMMUNICATION > Communication
+    Glosses: eng: I-testify, and-I-will-testify, and-let-them-testify-against-him | spa: testificaré-de-ti?, testificaste, testifico | fra: avertir, et-avertir, et-avertissez! | deu: [אעידך], [העיד], [העידת]
+    Refs: Deut 8:19, Deut 32:46, 1Kgs 21:10, 1Kgs 21:13, 2Kgs 17:15
+  Sense 3: "call or summon as witness" (7x)
+    Desc: To call upon, summon, or set up someone or something as a witness, emphasizing the causative act of establishing witnesses.
+    Domain: COMMUNICATION > Communication
+    Glosses: eng: I-call-to-witness, and-I-called-as-witnesses, and-I-will-call-as-witness | spa: Y-tomaré-como-testigos, e-hice-testificar, llamo-por-testigos | fra: et-je-fera-appeler-comme-témoin, et-le-jusqu’à, et-témoigner | deu: ich-rufen-zu-Zeuge, und-bezeugen, und-der-bis
+    Refs: Deut 4:26, Deut 30:19, Deut 31:28, Isa 8:2, Jer 32:10
+
+=== H8047 ===
+Language: Hebrew, POS: Conj-w, Occurrences: 40, Senses: 3
+
+BDB excerpt: † I. שַׁמָּה n.f. waste, appalment (24 times Je);—abs. שׁ׳ Je 5:30 +; pl. abs. שַׁמּוֹת ψ 46:9;— 1. a waste, of land, etc., ψ 46:9 Ho 5:9; Is 5:9; 13:9; 24:12; Zc 7:14; Je 2:15; 4:7; 18:16; 19:8; 46:19; 48:9; 50:3; 51:29, 43, vine Jo 1:7; pers. ψ 73:19; כּוֹס שׁ׳ וּשְׁמָמָה Ez 23:33. 2. appalment, horror, i.e. occasion of it; of people, land, etc., Dt 28:37; 2 K 22:19; Mi 6:16; Zp 2:15; Je 5:30; 25:9, 11, 18, 38; 29:18; 42:18; 44:12, 22; 49:13, 17; 50:23; 51:37, 41; 2 Ch 29:8; 30:7; שׁ׳ הֶחֱזִקָ֑תְנִי Je 8:21.
+Senses:
+  Sense 1: "desolation, waste (state of ruin)" (27x)
+    Desc: Physical desolation or waste; a place or land that has been laid waste and lies in ruins, often used with lamed of result in prophetic judgment oracles (e.g., 'I will make X a desolation').
+    Domain: VIOLENCE_CONFLICT > Violence, Harm, Destroy, Kill
+    Glosses: eng: a-desolation, desolation, for-a-desolation | spa: desolación, en-desolación, para-desolación | fra: [לשמה], désolation, un-désolation | deu: Entsetzen, [לשמה], ein-desolation
+    Refs: 2Kgs 22:19, 2Chr 29:8, 2Chr 30:7, Ps 46:8, Ps 73:19
+  Sense 2: "horror, object of appalment" (12x)
+    Desc: Horror or appalment; something that causes shock and dread in onlookers, often in the formulaic prophetic curse 'for a horror and a hissing' where the emphasis is on the emotional reaction of witnesse...
+    Domain: VIOLENCE_CONFLICT > Violence, Harm, Destroy, Kill
+    Glosses: eng: a-desolation, a-horror, and-a-desolation | spa: Cosa-espantosa, como-desolación, desolación | fra: désolation, et-désolation, pour-horror | deu: Entsetzen, fuer-horror, und-zu-Entsetzen
+    Refs: Deut 28:37, Jer 5:30, Jer 8:21, Jer 18:16, Jer 19:8
+  Sense 3: "become desolate (Niphal)" (1x)
+    Desc: Niphal verbal use: to be made desolate, to become a waste; indicates the process or event of becoming ruined rather than the resulting state.
+    Domain: VIOLENCE_CONFLICT > Violence, Harm, Destroy, Kill
+    Glosses: eng: was-desolate | spa: quedó-desolada | fra: désolation | deu: [נשמה]
+    Refs: Zech 7:14
+
+=== G2007 ===
+Language: Greek, POS: V-AIA-3P, Occurrences: 39, Senses: 3
+
+BDB excerpt: ἐπιτίθημι, passive mostly furnished by ἐπίκειμαι: active, lay, put or place upon, of offerings laid on the altar, ἐπὶ μηρία θέντες Ἀπόλλωνι Refs 8th c.BC+; set meats on the table, εἴδατα πόλλ᾽ ἐπιθεῖσα Refs 8th c.BC+; πάντ᾽ ἐπιθεῖτε on the car, Refs 8th c.BC+; τινὶ κύρτον καὶ κώπαν, as a grave-monument, Refs 7th c.BC+: but also c.genitive, ἐ. λεχέων τινά Refs 8th c.BC+; κεφαλὴν ἐπὶ στέρνα τινός Refs 5th c.BC+: with accusative only, put upon, set up, ἐ. φάρμακα apply salves, Refs 8th c.BC+; ἐ. μνημεῖά τινι to him, Refs __2 set upon, turn towards, Ἑκτορέοις ἐπὶ φρένα θῆχ᾽ ἱεροῖσιν Refs 8th c.BC+
+Senses:
+  Sense 1: "lay/place upon" (35x)
+    Desc: To place or lay something (especially hands) upon a person or object, in contexts of blessing, healing, ordination, or general physical placement.
+    Domain: GEOGRAPHY_SPACE > Existence in Space
+    Glosses: eng: having-laid, having-laid-on, he-laid | spa: habiendo-puesto, imponían, ponga | fra: imposer | deu: auflegen, legt-auf
+    Refs: Matt 9:18, Matt 19:13, Matt 19:15, Matt 21:7, Matt 23:4
+  Sense 2: "add to, impose further" (2x)
+    Desc: To add something additional (such as plagues or burdens) on top of what already exists.
+    Domain: QUANTITY_NUMBER > Quantity
+    Glosses: eng: adds, will-add | spa: añada, añadirá | fra: imposer | deu: auflegen
+    Refs: Rev 22:18, Rev 22:18
+  Sense 3: "inflict upon, attack" (2x)
+    Desc: To lay hands on someone aggressively, to strike, assault, or attack.
+    Domain: GEOGRAPHY_SPACE > Existence in Space
+    Glosses: eng: having-laid-on, will-attack | spa: atacará, poniéndole | fra: imposer | deu: legt-auf
+    Refs: Luke 10:30, Acts 18:10

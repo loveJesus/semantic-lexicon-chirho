@@ -1,0 +1,123 @@
+You are a biblical lexicographer composing glosses for a digital lexicon.
+For each lemma below, compose a JSON object. Separate objects with "---".
+
+Format for each:
+{
+  "lemma_id": "...",
+  "gloss_terse": "under 120 chars, concise definition covering the word's semantic range",
+  "gloss_readable": "2-5 sentences, 40-120 words. Don't start with 'This word'. Warm study-Bible footnote tone. Engaging, not dry.",
+  "senses": {
+    "1": "enriched 20-60 word description. Reference multilingual evidence when illuminating. Don't repeat the label verbatim.",
+    "2": "..."
+  }
+}
+
+Rules:
+- No markdown fences, just JSON objects separated by ---
+- Reference multilingual evidence naturally when it reveals something
+- gloss_readable should feel like a good study Bible footnote: helpful, clear, occasionally surprising
+- Each sense enrichment: how does the evidence support this sense? Mention 1-2 key passages when helpful.
+
+=== H4609b ===
+Language: Hebrew, POS: Prep-b | N-fpc, Occurrences: 49, Senses: 4
+
+BDB excerpt: II. מַעֲלָה46 n.f. step, stair;—מ׳ Ezr 7:9; 1 Ch 17:17; pl. מַעֲלוֹת Is 38:8 +, sf. מַעֲלֹתָו֯ Am 9:6, etc.;— 1. step, stair of temple Ez 40:6 + 5 times 40, and temple porch 40:49; of altar Ex 20:26 (E) (forbidden, cf. RSOTJC xii, n. 1; 2nd ed. 358) Ez 43:17 (prescribed); of house 2 K 9:13, of throne 1 K 10:19, 20; 2 Ch 9:18, 19; to the city of David Ne 3:15; 12:37. 2. steps (forming sun-dial, cf. Di Is) 2 K 20:9(×2), 10(×2), 11(×3) = Is 38:8(×5). 3. stories of heaven Am 9:6. 4. ascent מִבָּבֶל Ezr 7:9. 5. שִׁיר (ל)הַמַּעֲלוֹת song of ascents, to the three great pilgrim feasts, i.e. to be sung
+Senses:
+  Sense 1: "steps, stairs, stairway" (31x)
+    Desc: Physical steps or stairs of a building, temple, or city, including the steps/degrees on the sundial of Ahaz and the stairs of the temple and city of David.
+    Domain: BUILDINGS > Constructions
+    Glosses: eng: and-by-steps, and-by-the-steps, and-returned | spa: Y-gradas-de, en-grados-de, en-los-grados | fra: degré, et-degré, marches | deu: Stufen, [במעלות], [המעלות]
+    Refs: Exod 20:26, 1Kgs 10:19, 1Kgs 10:20, 2Kgs 9:13, 2Kgs 20:9
+  Sense 2: "song of ascents (psalm title)" (15x)
+    Desc: Technical liturgical designation used in the superscriptions of Psalms 120-134 (שִׁיר הַמַּעֲלוֹת), referring to the pilgrimage ascent to Jerusalem or the temple steps.
+    Domain: BUILDINGS > Constructions
+    Glosses: eng: of-the-ascents, the-ascents | spa: de-las-subidas | fra: le-degré, à-degré | deu: der-ascents, von-der-ascents
+    Refs: Ps 120:1, Ps 121:1, Ps 122:1, Ps 123:1, Ps 124:1
+  Sense 3: "ascent, going up" (2x)
+    Desc: The act or path of ascending, whether an abstract upward movement or a geographical slope or road leading upward.
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: the-ascent-of, the-going-up | spa: la-subida, subida-de | fra: degré, le-ascent-de | deu: [המעלה], der-ascent-von
+    Refs: Josh 10:10, Ezra 7:9
+  Sense 4: "upper story, elevated place" (1x)
+    Desc: An elevated or exalted upper chamber or high place, referring to something situated above or on high.
+    Domain: MOVEMENT > Linear Movement
+    Glosses: eng: the-exalted | spa: la-altura | fra: degré | deu: Stufe
+    Refs: 1Chr 17:17
+
+=== H4347 ===
+Language: Hebrew, POS: N-fs, Occurrences: 48, Senses: 4
+
+BDB excerpt: † מַכָּה n.f. blow, wound, slaughter;—abs. מ׳ 1 S 4:8 +; cstr. מַכַּת Is 10:26 +; sf. מַכָּתִי Je 10:19; 15:18 etc.; pl. מַכִּים 2 K 8:29 = 9:15 = 2 Ch 22:6; מַכּוֹת abs. Zc 13:6 +, cstr., etc. pl. מַכּוֹת abs. 2 K 8:29 +; cstr. Dt 29:21 +; sf. מַכֹּתְךָ Dt 28:59, מַכּוֹתַיִךְ Je 30:17, etc.;— 1. a. blow, stripe, lit. of scourging, chastising Dt 25:3; Pr 20:30 (‖ חַבֻּרוֹת פֶּצַע); מַכַּת חֶרֶב Est 9:5 (as acc. cogn.). b. beating, scourging, fig. of defeat of Midian Is 10:26 (‖ עוֹרֵר שׁוֹט). c. often wound 1 K 22:35; 2 K 8:29; 9:15 = 2 Ch 22:6 (read מִן־הַמּ׳), Zc 13:6 (בֵּין יָדֶיךָ); symbol
+Senses:
+  Sense 1: "blow, strike" (18x)
+    Desc: The act of striking or hitting; a physical blow delivered against a person or object.
+    Domain: BODY_HEALTH > Physiological Processes and States
+    Glosses: eng: Like-the-striking, a-striking, a-striking- | spa: como-matanza-de, golpe, golpe-de | fra: [מכה], [מכות], [מכת] | deu: Plage, [ומכות], [מכת]
+    Refs: Deut 25:3, Josh 10:10, Josh 10:20, Judg 11:33, Judg 15:8
+  Sense 2: "wound, injury" (18x)
+    Desc: A physical wound or injury resulting from being struck; bodily harm visible on the person.
+    Domain: BODY_HEALTH > Physiological Processes and States
+    Glosses: eng: He-heals, and-blow, and-from-your-wounds | spa: herida, herida-mi, herida-tuya | fra: [המכות], [המכים], de-ainsi | deu: Plage, [המכות], [מכותיה]
+    Refs: 1Kgs 22:35, 2Kgs 8:29, 2Kgs 9:15, 2Chr 22:6, Ps 64:7
+  Sense 3: "plague, calamity" (9x)
+    Desc: A divine affliction, plague, or calamity sent as judgment; an act of God striking a nation or people.
+    Domain: BODY_HEALTH > Physiological Processes and States
+    Glosses: eng: plague, plagues, plagues-of | spa: plaga, plagas, plagas-de | fra: plague, plaie, plaies | deu: Plage, Plagen, Plagen-von
+    Refs: Lev 26:21, Num 11:33, Deut 28:59, Deut 28:59, Deut 28:59
+  Sense 4: "slaughter, defeat" (3x)
+    Desc: A great slaughter or defeat in battle; large-scale killing of enemies in warfare.
+    Domain: BODY_HEALTH > Physiological Processes and States
+    Glosses: eng: slaughter, the-slaughter | spa: la-matanza, matanza | fra: immole, le-immole | deu: der-slaughter, slaughter
+    Refs: 1Sam 4:10, 1Sam 14:14, 1Sam 14:30
+
+=== H1644 ===
+Language: Hebrew, POS: V-Piel-Imperf-3ms, Occurrences: 47, Senses: 4
+
+BDB excerpt: † [גָּרַשׁ] vb. drive out, cast out (NH id., Aramaic גְּרַשׁ Pa. Ithp. of divorce, MI19 ויגרשה)— Qal Impf. וַיִּגְרְשׁוּ Is 57:20; Inf. sf. מִגְרָשָׁהּ Ez 36:5 infr.; Pt. act. גֹּרֵשׁ Ex 34:11; pass. f. גְּרוּשָׁה Lv 21:7 + 4 times;—cast out, thrust out, י׳, the Amorites Ex 34:11 (JE; c. מִפְּנֵי); waters, mire and dirt רֶפֶשׁ וָטִיט Is 57:20; pass. only of divorced woman Lv 21:7 (sq. מֵאִישָׁהּ; elsewhere with אַלְמָנָה widow), v 14 22:13 (all H), Nu 30:10 (P) Ez 44:22. On מִגְרָשָׁהּ Ez 36:5 as Aramaic Inf. cf. Ges§ 45 e Köf. 166; Co del., on intern. grounds, cf. 𝔊. Niph. Pf. נִגְרָ֑שׁ Is 57
+Senses:
+  Sense 1: "drive out, expel" (36x)
+    Desc: To forcefully remove or banish a person or group from a place, used in the Piel stem and Qal active participle for the active expulsion of inhabitants, enemies, or individuals.
+    Domain: MOVEMENT > Linear Movement
+    Glosses: eng: And-drove-out, I-will-drive-him-out, I-will-drive-them-out | spa: Expulsa, Y-expulsó, Y-los-expulsó | fra: Et-chassa, Et-chassa-dehors, Je---chasser-lui-dehors | deu: And-vertrieb-heraus, [אגרשם], [גרש]
+    Refs: Gen 3:24, Gen 4:14, Gen 21:10, Exod 2:17, Exod 6:1
+  Sense 2: "divorced woman" (5x)
+    Desc: A woman who has been sent away or put away by her husband, used as a Qal passive participle in legal contexts referring to the status of a divorced woman.
+    Domain: GROUPS_COMMUNITY > Association
+    Glosses: eng: and-a-divorced-woman, and-divorced, and-divorced-woman | spa: divorciada, y-divorciada, y-repudiada | fra: divorced, et-chasser, et-divorced | deu: [וגרושה], divorced, und-divorced
+    Refs: Lev 21:7, Lev 21:14, Lev 22:13, Num 30:9, Ezek 44:22
+  Sense 3: "be driven out, be expelled" (3x)
+    Desc: To be forcefully removed or cast away, used in the Pual and Nifal stems as the passive counterpart of expulsion, said of persons who are banished.
+    Domain: MOVEMENT > Linear Movement
+    Glosses: eng: I-am-driven-out, they-are-driven-out, they-were-driven-out | spa: fueron-expulsados, fui-arrojado, son-expulsados | fra: chasser, ils-étaient-driven-dehors | deu: [יגרשו], [נגרשתי], sie-waren-driven-heraus
+    Refs: Exod 12:39, Job 30:5, Jonah 2:4
+  Sense 4: "toss, surge, cast up" (3x)
+    Desc: Of water or sea surging, heaving, and casting up mire and debris, used in the Nifal and Qal stems to describe the turbulent motion of agitated waters.
+    Domain: MOVEMENT > Linear Movement
+    Glosses: eng: and-cast-up, and-it-will-be-tossed, tossed | spa: agitado, y-arrojan, y-será-agitada | fra: [ויגרשו], [נגרש], et-chasser | deu: [ויגרשו], [ונגרשה], [נגרש]
+    Refs: Isa 57:20, Isa 57:20, Amos 8:8
+
+=== H1800 ===
+Language: Hebrew, POS: Adj-mp, Occurrences: 47, Senses: 4
+
+BDB excerpt: † דַּל adj. low, weak, poor, thin (especially common in Wisd. lit. and poet.)—דַּל Lv 14:21 + 8 times, דָּל֑ Ex 23:3 + 17 times + דָּל֥ ψ 82:3; דַּלִּים Am 2:7 + 17 times; דַּלּוֹת Gn 41:19;—weak, thin, of kine Gn 41:19 (E); of Amnon 2 S 13:4; weak, of family of Saul 2 S 3:1 (opp. חָזֵק) cf. Ju 6:15; reduced, poor (opp. rich) Lv 14:21 (P) Ru 3:10 (opp. עָשִׁיר) Je 5:4 (opp. to הגדולים, v 5) Pr 28:15 Zp 3:12 (עַם עָנִי וָדָל֑); mostly subst., a poor (man), the poor Ex 23:3 (JE); opp. to עָשִׁיר Ex 30:15 (P) Pr 10:15; 22:16; 28:11; opp. הוֹן Pr 19:4; ‖ אביון 1 S 2:8 Jb 5:16 ψ 72:13; 82:4; 113:7 
+Senses:
+  Sense 1: "poor, needy (socioeconomic)" (38x)
+    Desc: Describes a person of low socioeconomic status, lacking material resources; the most common sense of dal, used substantively or attributively for the poor as a social class.
+    Domain: AUTHORITY_RULE > Status
+    Glosses: eng: poor, the-poor, to-the-poor | spa: a-débiles, a-los-pobres, a-los-pobres; | fra: faibles, pauvre | deu: Geringe, arm
+    Refs: Exod 23:3, Exod 30:15, Lev 14:21, Lev 19:15, Ruth 3:10
+  Sense 2: "weak, feeble, powerless" (7x)
+    Desc: Describes physical frailty, lack of strength, or powerlessness in standing or influence; translated with vocabulary of weakness rather than poverty across languages.
+    Domain: AUTHORITY_RULE > Status
+    Glosses: eng: and-weaker, the-poor, the-weak | spa: al-pobre, débil, el-más-débil | fra: et-weaker, faible, le-weakest | deu: der-arm, der-schwach, der-weakest
+    Refs: Judg 6:15, 2Sam 3:1, Ps 41:1, Ps 72:13, Ps 82:3
+  Sense 3: "humble, lowly" (1x)
+    Desc: Denotes spiritual humility or meek lowliness, as in the messianic prophecy of Zechariah 9:9; distinguished by Arabic mutawadi' (humble) and Korean najun (lowly) rather than poverty vocabulary.
+    Domain: AUTHORITY_RULE > Status
+    Glosses: eng: and-poor | spa: y-pobre | fra: et-pauvre | deu: und-Geringe
+    Refs: Zeph 3:12
+  Sense 4: "thin, gaunt, wasting away" (1x)
+    Desc: Describes physical emaciation or leanness, as of Pharaoh's thin cows in Genesis 41; translated with vocabulary of thinness and physical wasting rather than poverty or weakness.
+    Domain: PROPERTIES_RELATIONS > Able, Capable
+    Glosses: eng: wasting-away | spa: débil | fra: wasting-au-loin | deu: wasting-weg
+    Refs: 2Sam 13:4

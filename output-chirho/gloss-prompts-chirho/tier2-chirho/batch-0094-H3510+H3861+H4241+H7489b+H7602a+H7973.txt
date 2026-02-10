@@ -1,0 +1,145 @@
+You are a biblical lexicographer composing glosses for a digital lexicon.
+For each lemma below, compose a JSON object. Separate objects with "---".
+
+Format for each:
+{
+  "lemma_id": "...",
+  "gloss_terse": "under 120 chars, concise definition covering the word's semantic range",
+  "gloss_readable": "2-5 sentences, 40-120 words. Don't start with 'This word'. Warm study-Bible footnote tone. Engaging, not dry.",
+  "senses": {
+    "1": "enriched 20-60 word description. Reference multilingual evidence when illuminating. Don't repeat the label verbatim.",
+    "2": "..."
+  }
+}
+
+Rules:
+- No markdown fences, just JSON objects separated by ---
+- Reference multilingual evidence naturally when it reveals something
+- gloss_readable should feel like a good study Bible footnote: helpful, clear, occasionally surprising
+- Each sense enrichment: how does the evidence support this sense? Mention 1-2 key passages when helpful.
+
+=== H3510 ===
+Language: Hebrew, POS: V-Hifil-Perf-1cs | 3ms, Occurrences: 8, Senses: 3
+
+BDB excerpt: † כָּאַב vb. be in pain (Aramaic כְּאֵב, ܟܶܐܒ id.; Arabic كَىِٔبَ be sorrowful, sad; Assyrian in deriv., ikkibu, pain ZimBP 67, kêbtu, ruin Hpt in KAT2 Gloss. i.)— Qal Impf. יִכְאָב־ Pr 14:13; יִכְאָ֑ב Jb 14:22; Pt. כּוֹאֵב ψ 69:30; כֹּאֲבִים Gn 34:25;— 1. be in pain, physical Gn 34:25 (J, as result of circumcision); Jb 14;22 (subj. בָּשָׂר; poet. of body in grave ‖ נַפְשׁוֹ תֶּאֱבָ֑ל). 2. of mental pain Pr 14:13 (subj. לֵב); prob. also ψ 69:30 (‖ עָנִי). Hiph. Pf. 1 s. sf. הִכְאַבְתִּיו Ez 13:22; 2 fpl. הִכְאַבְתֶּן v 22 𝔊 𝔗 Co (MT הַכְאוֹת v. כָּאָה); Impf. יַכְאִיב Jb 5:18; תַּכְאִ֫בוּ 2 K 
+Senses:
+  Sense 1: "be in pain, ache" (4x)
+    Desc: Qal intransitive: to be in pain, to suffer physical or emotional anguish. Includes participles (in pain) and imperfects (aches, is in pain).
+    Domain: BODY_HEALTH > Sensory Events and States
+    Glosses: eng: aches, and-in-pain, in-pain | spa: adoloridos, duele, sufre | fra: dans-douleur, et-souffrir, יכאב | deu: [יכאב], in-Schmerzen, und-in-pain
+    Refs: Gen 34:25, Job 14:22, Ps 69:29, Prov 14:13
+  Sense 2: "cause pain, inflict suffering" (3x)
+    Desc: Hifil causative: to cause pain to someone, to wound or grieve. Includes causative imperfect (wounds), causative perfect with suffix (I pained him), and causative participle (painful/pain-causing).
+    Domain: BODY_HEALTH > Sensory Events and States
+    Glosses: eng: I-pained-him, painful, wounds | spa: hace-dolor, lo-entristecí, que-causa-dolor | fra: souffrir, יכאיב | deu: [הכאבתיו], [יכאיב], [מכאב]
+    Refs: Job 5:18, Ezek 13:22, Ezek 28:24
+  Sense 3: "ruin, mar" (1x)
+    Desc: Hifil causative with extended meaning: to ruin or spoil something, moving from causing physical pain to causing damage or destruction. Distinct from simple pain-infliction by its object (things rather...
+    Domain: VIOLENCE_CONFLICT > Violence, Harm, Destroy, Kill
+    Glosses: eng: you-shall-ruin | spa: arruinaréis | fra: tu-devra-ruin | deu: du-soll-ruin
+    Refs: 2Kgs 3:19
+
+=== H3861 ===
+Language: Hebrew, POS: Conj, Occurrences: 8, Senses: 3
+
+BDB excerpt: † II. לָהֵן conj. except, but (from לָא and הֵן ‘not if’ (cf. Heb. אם לא Gn 24:38); so Nab. and Egyptian Aramaic להן Cooke217, 219, 241 S-CPap. C 6, 7 +; lâinnî, however SocinArabic Dial. v. Marokko 44, Anm. 103; 𝔗 אִילָּהֵין Gn 32:28; 43:3 al.);— 1. after a neg. (= BH כִּי אִם, q.v.): a. except Dn 2:11; 3:28; 6:6, 8, 13. b. but (Germ. sondern) Dn 2:30. 2. without a neg.: however, but Ezr 5:12.
+Senses:
+  Sense 1: "except, unless (restrictive particle)" (5x)
+    Desc: An Aramaic conjunction functioning as a restrictive particle meaning 'except' or 'unless,' introducing an exception clause. Arabic uses إِلَّا (illā, 'except'), Hindi uses सिवाय/सिवा ('except/apart fr...
+    Domain: DISCOURSE_NAMES > Discourse Markers
+    Glosses: eng: except, unless | spa: a-menos-que, excepto | fra: à-elles | deu: deshalb
+    Refs: Dan 2:11, Dan 3:28, Dan 6:5, Dan 6:7, Dan 6:12
+  Sense 2: "but, however (adversative particle)" (2x)
+    Desc: An adversative use of the Aramaic conjunction לָהֵן (lāhēn) meaning 'but' or 'however,' introducing a contrasting statement. Arabic renders لٰكِنْ/لكِنْ (lākin, 'but/however'), Hindi uses परन्तु/परंतु...
+    Domain: DISCOURSE_NAMES > Discourse Markers
+    Glosses: eng: but | spa: Pero, sino | fra: [להן], à-elles | deu: deshalb, zu-wenn
+    Refs: Ezra 5:12, Dan 2:30
+  Sense 3: "therefore (inferential particle)" (1x)
+    Desc: An inferential use of the Aramaic conjunction לָהֵן (lāhēn) meaning 'therefore' or 'for this reason,' drawing a logical conclusion. Arabic uses لِذَلِكَ (li-dhālika, 'for that reason'), Hindi uses इसल...
+    Domain: DISCOURSE_NAMES > Discourse Markers
+    Glosses: eng: therefore | spa: por-tanto | fra: à-elles | deu: deshalb
+    Refs: Dan 4:27
+
+=== H4241 ===
+Language: Hebrew, POS: Conj-w | N-fsc, Occurrences: 8, Senses: 3
+
+BDB excerpt: † מִחְיָה n.f. preservation of life, sustenance, מ׳ Gn 45:5 + 4 times; cstr. מִחְיַת Lv 13:10, 24; sf. מִחְיָתֶ֑ךָ Ju 17:10;— 1. preservation of life Gn 45:5 (E), 2 Ch 14:12. 2. sustenance Ju 6:4; 17:10. 3. reviving, Ezr 9:8, 9. 4. the quick (בָּשָׂר) מִחְיַת the quick (or raw spot) of the flesh Lv 13:10, 24 (P).
+Senses:
+  Sense 1: "preservation of life, reviving" (4x)
+    Desc: The act or means of preserving life, revival, or restoration to vitality. Joseph interprets his being sent to Egypt 'for preservation of life' (Gen 45:5, לְמִחְיָה). Ezra uses it twice for the 'little...
+    Domain: BODY_HEALTH > Physiological Processes and States
+    Glosses: eng: a-little-reviving, for-preservation-of-life, reviving | spa: para-preservación-de-vida, sobreviviente, un-poco-de-vida | fra: [מחיה], pour-preservation-de-vie | deu: [מחיה], von-lebte, zur-Lebenserhaltung
+    Refs: Gen 45:5, 2Chr 14:13, Ezra 9:8, Ezra 9:9
+  Sense 2: "raw/quick flesh (Levitical term)" (2x)
+    Desc: Living or raw flesh visible in a skin disease, used as a technical diagnostic term in the priestly purity laws. In Lev 13:10 and 13:24 (מִחְיַת בָּשָׂר חַי), the construct form מִחְיַת describes the a...
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: and-raw-flesh-of, raw-flesh-of | spa: vitalidad-de, y-vitalidad-de | fra: et-raw-chair-de, raw-chair-de | deu: roh-Fleisch-von, und-roh-Fleisch-von
+    Refs: Lev 13:10, Lev 13:24
+  Sense 3: "sustenance, livelihood" (2x)
+    Desc: Material provision for living, food supply, or livelihood. In Judg 6:4 the Midianites left no sustenance (מִחְיָה) in Israel, and in Judg 17:10 Micah offers the Levite 'your living/sustenance.' The gl...
+    Domain: FOOD_DRINK > Foods and Condiments
+    Glosses: eng: and-your-living, sustenance | spa: sustento, y-tu-sustento | fra: et-ton-vivant, sustenance | deu: sustenance, und-dein-lebend
+    Refs: Judg 6:4, Judg 17:10
+
+=== H7489b ===
+Language: Hebrew, POS: V-Qal-Imp-mp, Occurrences: 8, Senses: 3
+
+BDB excerpt: † II. [רָעַע] vb. break (Aramaic loan-word = Heb. רָצַץ q.v.);— Qal Pf. 3 pl. רָעוּ Je 11:16; Impf. 3 ms. יָרֹעַ Je 15:12; Jb 34:24, 2 ms. sf. תְּרֹעֵם ψ 2:9 (but v. infr.); inf. abs. רֹ֫עָה Is 24:19 (del. ה as dittogr. and read רֹעַ, v. Hithpōʿ.); Pt. f. רֹעָה (? for רֹעֲעָה) Pr 25:19:— 1. trans. הֲיָרֹעַ כַּרְזֶל בַּרְזֶל וגו׳ Je 15:12 can one break iron, iron out of the north? cf. יָרֹעַ כַּבִּירִים Jb 34:24; תְּרֹעֵם בְּשֵׁבֶט בַּרְזֶל ψ 2:9 (but read תִּרְעֵם, v. I. רעה, 𝔊 𝔖 𝔙 Hup-Now al.). 2. intrans. break = be broken, of branches Je 11:16 (in fig.; Gf Or al.; > Hi Gie are in a sad stat
+Senses:
+  Sense 1: "be broken, shatter apart (Qal intransitive / Hitpael)" (4x)
+    Desc: Intransitive Qal and reflexive Hitpael forms describing the subject itself breaking, shattering, or being shattered, as in Isa 24:19 'The earth is utterly broken' and Isa 8:9 'Be shattered, O peoples....
+    Domain: PHYSICAL_ACTION > Physical Impact
+    Glosses: eng: Breaking, and-are-broken, be-broken | spa: Amotinaos, Quebrarse, se-quebró | fra: [התרעעה], [ורעו], [רעו] | deu: [התרעעה], und-weidet, weidet
+    Refs: Isa 8:9, Isa 24:19, Isa 24:19, Jer 11:16
+  Sense 2: "break, shatter (Qal transitive)" (3x)
+    Desc: Active Qal forms expressing an agent breaking or shattering something or someone, as in Ps 2:9 'You shall break them with a rod of iron' and Job 34:24 'He shatters the mighty.'
+    Domain: PHYSICAL_ACTION > Physical Impact
+    Glosses: eng: Can-break, He-shatters, you-shall-break-them | spa: Los-quebrantarás, Quebranta, Se-romperá | fra: [הירע], casser, faire-du-mal | deu: [הירע], [ירע], du-soll-zerbrechen-ihnen
+    Refs: Job 34:24, Ps 2:9, Jer 15:12
+  Sense 3: "come to ruin (Hitpael, metaphorical)" (1x)
+    Desc: Metaphorical Hitpael usage in Prov 18:24, where having many companions leads to self-destruction or ruin — the 'breaking' is figurative rather than physical.
+    Domain: MORAL_QUALITY > Moral and Ethical Qualities
+    Glosses: eng: to-be-broken | spa: para-ser-quebrantado | fra: à-faire-du-mal | deu: [להתרעע]
+    Refs: Prov 18:24
+
+=== H7602a ===
+Language: Hebrew, POS: V-Qal-Imperf-3ms, Occurrences: 8, Senses: 3
+
+BDB excerpt: † I. שָׁאַף vb. gasp, pant, pant after, long for (so 𝔗 Jb 7:2);— Qal Pf. 3 ms. וְשָׁאַף consec. Jb 5:5, 3 fs. שָֽׁאֲפָה Je 2:24, 3 pl. שָֽׁאֲפוּ 14:6; Impf. 3 ms. יִשְׁאַף Jb 7:2, etc.; Pt. act. שׁוֹאֵף Ec 1:5;— 1. gasp, as a woman in travail, fig. of י׳, Is 42:14 (‖ נָשַׁם); pant after, snuff up the wind (acc.), of wild ass Je 2:24; 14:6; constr. praegn. וְאֶל־מְקוֹמוֹ שׁ׳ Ec 1:5 unto his place he panteth (comes panting), of sun under fig. of racer. 2. gasp or pant with desire ψ 119:131 (‖ יָאַב); pant after, be eager for, c. acc. Jb 5:5 (cf. צַמִּים p. 855b), 7:2 (‖ יְקַזֶּה), 36:20 (but obs
+Senses:
+  Sense 1: "pant, gasp (literal breathing)" (5x)
+    Desc: Physical panting or gasping for breath, as in Isa 42:14 'I will pant and gasp,' Jer 14:6 where wild donkeys 'pant for air,' and Ps 119:131 'I open my mouth and pant.'
+    Domain: NATURAL_WORLD > Physical Events and States
+    Glosses: eng: and-I-panted, and-I-will-pant, and-pants | spa: aspira, jadearon, y-jadeé | fra: [ואשאף], [שאפה], [שאפו] | deu: [ואשאף], [ושאף], [שאפה]
+    Refs: Job 5:5, Ps 119:131, Isa 42:14, Jer 2:24, Jer 14:6
+  Sense 2: "long for, yearn (metaphorical desire)" (2x)
+    Desc: Figurative panting expressing intense desire or longing, as in Job 7:2 'as a servant longs for the shade' and Job 36:20 'do not long for the night.'
+    Domain: EMOTION_ATTITUDE > Attitudes and Emotions
+    Glosses: eng: he-longs-for-, long-for | spa: anhela, anheles | fra: aspirer | deu: [ישאף], [תשאף]
+    Refs: Job 7:2, Job 36:20
+  Sense 3: "hasten, rush" (1x)
+    Desc: Extended sense of panting as hurrying or rushing eagerly, as in Eccl 1:5 where the sun 'hastens to the place where it rises.'
+    Domain: TIME > Time
+    Glosses: eng: hastening | spa: anhelando | fra: aspirer | deu: [שואף]
+    Refs: Eccl 1:5
+
+=== H7973 ===
+Language: Hebrew, POS: N-ms, Occurrences: 8, Senses: 3
+
+BDB excerpt: I. שֶׁ֫לַח n.[m.] missile, weapon, sprout (late);—abs. שׁ׳ Jo 2:8 +, שָׁ֑לַח Ne 4:11 Jb 33:18, sf. שִׁלְחוֹ Ne 4:17; pl. שְׁלָחִים 2 Ch 23:10, etc.;— 1. missile, weapon, Ne 4:11 and v 17 (where הַמַּיִם corrupt; read probably בִּימִינוֹ or בְּיָדוֹ; v. Ryle Be-Ry Berthol), 2 Ch 23:10 (disting. from חֲנִית, מָגֵן); coll. 32:5 and עָבַר בַּשׁ׳ Jb 33:18; 36:12 (perish by or rush upon [and perish]), Jo 2:8 (v. בְּעַד). 2. sprout, shoot (cf. [שְׁלוּחָה], and √ ψ 80:12 Je 17:8), שְׁלָחַיִךְ פַּרְדֵּס Ct 4:13 (fig.; meaning? PerlesAnal. 63 proposes שְׁנֵי לְחָיַיִךְ thy two cheeks); + prob. Ez 31:5 (
+Senses:
+  Sense 1: "weapon, missile" (5x)
+    Desc: A weapon or missile used in warfare, particularly a thrown or projected weapon such as a javelin or spear. Used of personal armament: 'his weapon' (shilkho) that each man held in Nehemiah's rebuilding...
+    Domain: ARTIFACTS > Artifacts
+    Glosses: eng: his-weapon, the-weapon, the-weapons | spa: armas, el-arma, las-armas | fra: Schélach, [השלח], [שלחו] | deu: [שלחו], der-sandte, sandte
+    Refs: 2Chr 23:10, 2Chr 32:5, Neh 4:17, Neh 4:23, Joel 2:8
+  Sense 2: "dart, javelin (lethal weapon)" (2x)
+    Desc: A specific deadly projectile weapon -- dart, javelin, or sword -- used in the context of violent death. In Job 33:18 'He keeps back his soul from the pit, and his life from perishing by the shelach (d...
+    Domain: ARTIFACTS > Artifacts
+    Glosses: eng: by-the-sword | spa: por-espada, por-la-espada | fra: dans-jet, jet | deu: in-sandte
+    Refs: Job 33:18, Job 36:12
+  Sense 3: "shoots, sprouts" (1x)
+    Desc: Botanical sense: shoots, branches, or sprouts of a plant, from the verbal root shalach 'to send forth.' Used uniquely in Song of Solomon 4:13 where the beloved's 'shoots' (shelakhayikh, 2fs plural con...
+    Domain: PLANTS_AGRICULTURE > Plants
+    Glosses: eng: your-shoots | spa: Tus-renuevos | fra: Tes-jets | deu: [שלחיך]
+    Refs: Song 4:13

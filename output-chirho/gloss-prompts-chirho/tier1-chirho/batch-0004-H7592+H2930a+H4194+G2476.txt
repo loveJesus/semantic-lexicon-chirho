@@ -1,0 +1,158 @@
+You are a biblical lexicographer composing glosses for a digital lexicon.
+For each lemma below, compose a JSON object. Separate objects with "---".
+
+Format for each:
+{
+  "lemma_id": "...",
+  "gloss_terse": "under 120 chars, concise definition covering the word's semantic range",
+  "gloss_readable": "2-5 sentences, 40-120 words. Don't start with 'This word'. Warm study-Bible footnote tone. Engaging, not dry.",
+  "senses": {
+    "1": "enriched 20-60 word description. Reference multilingual evidence when illuminating. Don't repeat the label verbatim.",
+    "2": "..."
+  }
+}
+
+Rules:
+- No markdown fences, just JSON objects separated by ---
+- Reference multilingual evidence naturally when it reveals something
+- gloss_readable should feel like a good study Bible footnote: helpful, clear, occasionally surprising
+- Each sense enrichment: how does the evidence support this sense? Mention 1-2 key passages when helpful.
+
+=== H7592 ===
+Language: Hebrew, POS: V-Qal-Perf-3fs, Occurrences: 176, Senses: 6
+
+BDB excerpt: שָׁאַל170 vb. ask, inquire (NH id.; Assyrian šaʾâlu, Arabic سَأَلَ, Ethiopic ሰአለ: Sab. מסאל request, petition, HomChrest. 124 Levy-Os ZMG xix (1865), 165; Aramaic ܫܶܐܠ, שְׁאֵיל; O Aramaic Zinj. שאל Ldzb371, Nab. Hiph. lend id.ib.;—on שׁ׳ cf. Jastr JBL xix (1900), 82 ff.);— Qal Pf. 3 ms. שׁ׳ Ju 5:25 +, שָׁאָ֑ל Ju 8:26 + 2 times; consec. וְשָׁ֫אַל לוֹ Nu 27:21; sf. וּשְׁאֵלְךָ consec. Gn 32:18 (Ges§ 64 f), וּשְׁאֵלֵךְ consec. Ju 4:20; 1 s. sf. שְׁאִלְתִּיו 1 S 1:20, שְׁאִלְתִּיהוּ Ju 13:16; 3 pl. sf. שְׁאֵלוּנוּ ψ 137:3; 2 mpl. שְׁאֶלְתֶּם 1 S 12:13 (del. 𝔊 Th We Dr and most), Jb 21:29, וּשְׁאֶל
+Senses:
+  Sense 1: "ask, inquire, question" (96x)
+    Desc: Qal sense of asking a question or making an inquiry of someone, corresponding to Arabic sa'ala and Korean mul-eotda (물었다), used when seeking information rather than material goods.
+    Domain: COMMUNICATION > Communication
+    Glosses: eng: and-asked, and-he-asked, and-inquired | spa: Y-consultaron, Y-consultó, Y-preguntó | fra: et-consulta, et-demanda, et-demander | deu: und-befragten, und-er-fragte, und-fragen
+    Refs: Gen 26:7, Gen 32:29, Gen 32:29, Gen 37:15, Gen 38:21
+  Sense 2: "request, petition, demand" (73x)
+    Desc: Qal sense of requesting or demanding something from someone, corresponding to Arabic Talaba (طَلَبَ) and Korean guhaetda (구했다), used when seeking to obtain goods, favors, or outcomes rather than infor...
+    Domain: COMMUNICATION > Communication
+    Glosses: eng: ask, asked, he-asked | spa: Pide, de-pedir, para-pedir | fra: demanda, demande, demander | deu: ask, du-fragte, er-fragte
+    Refs: Deut 10:12, Deut 14:26, Deut 18:16, Josh 15:18, Josh 19:50
+  Sense 3: "borrow" (3x)
+    Desc: Qal passive participle sense of borrowing, i.e., having something on loan, corresponding to Arabic musta'aar (مُسْتَعَار) and Korean billin (빌린).
+    Domain: COMMUNICATION > Communication
+    Glosses: eng: borrows, is-lent, was-borrowed | spa: era-prestado!, pida-prestado, prestado | fra: borrows, est-prêta, fut-borrowed | deu: borrows, ist-lieh, war-borrowed
+    Refs: Exod 22:14, 1Sam 1:28, 2Kgs 6:5
+  Sense 4: "lend, grant on loan" (2x)
+    Desc: Hifil causative sense of lending or granting something on loan to another, corresponding to Arabic a'aara (أَعَارَ) and Korean billyeojuetda (빌려주었다).
+    Domain: PHYSICAL_ACTION > Physical Impact
+    Glosses: eng: I-have-lent-him, and-they-lent-them | spa: lo-presté, y-les-dieron | fra: et-ils-prêta-eux, je-ai-prêta-lui | deu: ich-habe-lieh-ihn, und-sie-lieh-ihnen
+    Refs: Exod 12:36, 1Sam 1:28
+  Sense 5: "?" (1x)
+    Domain: COMMUNICATION > Communication
+    Glosses: eng: I-asked-leave | spa: pedí-permiso | fra: demander | deu: fragte
+    Refs: Neh 13:6
+  Sense 6: "?" (1x)
+    Domain: COMMUNICATION > Communication
+    Glosses: eng: and-let-them-beg | spa: y-mendiguen | fra: et-demander | deu: und-lass-ihnen-beg
+    Refs: Ps 109:10
+
+=== H2930a ===
+Language: Hebrew, POS: Conj-w | V-Piel-ConsecImperf-2mp, Occurrences: 161, Senses: 6
+
+BDB excerpt: † I. טָמֵא vb. be or become unclean (NH Pi. pollute (ceremonially); Aramaic טְמָא and especially deriv., ܛܰܡܰܐ Pa. pollute; v. RSK 307 ff.)— Qal Pf. 3 ms. ט׳ Lv 11:25 + 22 times; 3 fs. טָֽמְאָה 12:2 + 2 times; 2 fs. טָמֵאת Ez 22:4; pl. טָֽמְאוּ Lv 15:18; Impf. יִטְמָא Lv 5:3 + 34 times; 3 fs. תִּטְמָא 12:2 + 4 times; pl. יִטְמְאוּ ψ 106:39; Inf. טָמְאָה Lv 15:32 + 6 times;—be or become unclean: 1. sexually, c. בְּ Lv 18:20, 23 (H), Ez 23:17; the land Lv 18:25, 27 (H). 2. religiously, with idols Ez 22:3; c. בְ v 4; with necromancers Lv 19:31 (H); by sacrificing children to idols ψ 106:39. 3. ce
+Senses:
+  Sense 1: "Qal: be/become unclean" (75x)
+    Desc: Stative/inchoative Qal stem expressing the state of being ritually or physically unclean, or the process of becoming unclean (Arabic يَتَنَجَّسُ, Korean 부정하다, Swahili -wa mchafu/najisi).
+    Domain: RELIGIOUS_LIFE > Religious Activities
+    Glosses: eng: becomes-unclean, he-shall-be-unclean, shall-be-unclean | spa: se-hará-impuro, será-impura, será-impuro | fra: becomes-impur, devra-être-impur, il-devra-être-impur | deu: er-soll-sein-unrein, soll-sein-unrein, wird-unrein
+    Refs: Lev 11:24, Lev 11:25, Lev 11:26, Lev 11:27, Lev 11:28
+  Sense 2: "Piel factitive: defile, make unclean" (37x)
+    Desc: Causative-factitive Piel stem expressing the active causation of defilement — making someone or something unclean, whether by ritual contamination, sexual sin, idolatry, or bloodshed (Arabic يُنَجِّسُ...
+    Domain: RELIGIOUS_LIFE > Religious Activities
+    Glosses: eng: and-he-defiled, and-they-defiled, defile | spa: Contaminad, Y-profanó, contaminaron | fra: [לטמאו], devenir-impur, et-devenir-impur | deu: [לטמאו], er-hat-verunreinigte, er-verunreinigt-hatte
+    Refs: Gen 34:5, Gen 34:13, Gen 34:27, Lev 11:44, Lev 15:31
+  Sense 3: "Nifal: become defiled" (19x)
+    Desc: Reflexive/medio-passive Nifal stem expressing the resultant state of having been defiled or having defiled oneself, often in contexts of sexual or idolatrous defilement (Arabic تَنَجَّسَ, Korean 더럽혀지다...
+    Domain: RELIGIOUS_LIFE > Religious Activities
+    Glosses: eng: I-am-defiled, and-be-defiled, and-she-is-defiled | spa: fue-contaminada, fuiste-contaminada, me-he-contaminado | fra: [נטמאתי], devenir-impur, elle-était-souilla | deu: [נטמאתי], du-waren-verunreinigte, sie-war-verunreinigte
+    Refs: Lev 11:43, Lev 18:24, Num 5:13, Num 5:14, Num 5:14
+  Sense 4: "Hitpael: defile oneself" (16x)
+    Desc: Reflexive Hitpael stem expressing deliberate self-defilement, especially through contact with the dead, forbidden foods, or idolatrous practices — often in prohibitive contexts (Arabic يَتَنَجَّسُ ref...
+    Domain: RELIGIOUS_LIFE > Religious Activities
+    Glosses: eng: be-defiled, defile-yourselves, he-may-defile-himself | spa: fue-contaminada, os-contaminaréis, os-contaminéis | fra: devenir-impur, elle-a-été-souilla, il-devra-souiller-lui-même | deu: du-soll-become-unrein, du-soll-machen-euch-selbst-unrein, er-moege-verunreinigen-sich-selbst
+    Refs: Lev 11:24, Lev 11:43, Lev 18:24, Lev 18:30, Lev 21:1
+  Sense 5: "Piel declarative: pronounce unclean" (13x)
+    Desc: Declarative-estimative Piel usage restricted to priestly pronouncement of ritual impurity, where the priest officially declares a person or object unclean (Spanish declarar impuro, Swahili -tangaza mc...
+    Domain: RELIGIOUS_LIFE > Religious Activities
+    Glosses: eng: and-shall-pronounce-unclean, and-shall-pronounce-unclean-him, as-unclean | spa: como-impuro, declarar-impuro, lo-declarará-impuro | fra: comme-impur, devra-pronounce-impur-lui, et-devra-pronounce-impur | deu: soll-erklaeren-unrein-ihn, und-soll-erklaeren-unrein, und-soll-erklaeren-unrein-ihn
+    Refs: Lev 13:3, Lev 13:8, Lev 13:11, Lev 13:15, Lev 13:20
+  Sense 6: "?" (1x)
+    Domain: RELIGIOUS_LIFE > Religious Activities
+    Glosses: eng: defiled | spa: contaminada | fra: de-impure | deu: unrein-werden
+    Refs: Ezek 4:14
+
+=== H4194 ===
+Language: Hebrew, POS: Art | N-ms, Occurrences: 158, Senses: 6
+
+BDB excerpt: מָ֫וֶת161 n.m. Ex 10:17 death;—abs. מ׳ Dt 19:6 +; מָֽ֫וְתָה ψ 116:15; cstr. מוֹת Gn 25:11 +; sf. מוֹתִי Gn 27:2 +; pl. cstr. מוֹתֵי Ez 28:10; sf. בְּמֹתָיו Is 53:9;— 1. death, opp. life, Dt 30:15, 19 2 S 15:21; †מ׳ כל האדם the death of all men (that all go to) Nu 16:29 (J), as distinguished from violent death; יוֹם מ׳ day of death Gn 27:2 (J) Ju 13:7 1 S 15:35 +; שְׁנַת מ׳ Is 6:1; 14:28; עד מ׳ Nu 35:25, 28, 32 Jos 20:6 (P), 1 K 11:40; לפני מ׳ Gn 27:7, 10; 50:16 (JE); אחרי מ׳ Gn 26:18 (J), 25:11; Lv 16:1; Nu 35:28 (P), Dt 31:27, 29 (D) +; בכור מ׳ Jb 18:13 firstborn of death (deadly disease); of
+Senses:
+  Sense 1: "death (event of dying)" (107x)
+    Desc: The physical event or process of dying, ceasing to live, including references to specific persons' deaths.
+    Domain: BODY_HEALTH > Physiological Processes and States
+    Glosses: eng: death | spa: la-muerte, muerte, ¡Muerte | fra: mort, mourir | deu: Tod, starb
+    Refs: Deut 19:6, Deut 21:22, Deut 22:26, 1Sam 5:11, 1Sam 20:31
+  Sense 2: "death (state or realm of the dead)" (15x)
+    Desc: Death as an ongoing condition or domain from which one is delivered, in which one exists, or which characterizes a place — the realm or shadow of death.
+    Domain: BODY_HEALTH > Physiological Processes and States
+    Glosses: eng: from-death, in-death, in-the-death | spa: de-la-muerte, de-muerte, en-la-muerte | fra: dans-leur-mort, dans-mourir, de-mort | deu: in-Tod, in-ihr-Tod, in-starb
+    Refs: Lev 11:31, Lev 11:32, Num 6:7, Josh 2:13, Job 5:20
+  Sense 3: "death (personified or as power)" (14x)
+    Desc: Death as a personified force or cosmic power, often in poetic and prophetic contexts (e.g., 'Death' in Song 8:6, covenant with Death in Isa 28:15).
+    Domain: BODY_HEALTH > Physiological Processes and States
+    Glosses: eng: and-Death, and-death, and-the-death | spa: la-muerte, y-Muerte, y-la-muerte | fra: et-le-mort, et-mort, le-mort | deu: Tod, der-Tod, der-starb
+    Refs: Exod 10:17, Deut 30:15, Deut 30:19, Ruth 1:17, 1Sam 15:32
+  Sense 4: "death (as penalty or fate)" (14x)
+    Desc: Death viewed as a judicial sentence, destined outcome, or consequence — being put to death or consigned to death.
+    Domain: BODY_HEALTH > Physiological Processes and States
+    Glosses: eng: at-their-death, belong-from-death, but-to-death | spa: a-la-muerte, la-muerte, para-la-muerte | fra: et-à-mourir, mort, pour-mort | deu: Tod, bei-ihr-Tod, fuer-Tod
+    Refs: 2Sam 15:21, Job 3:21, Ps 68:20, Ps 73:4, Ps 118:18
+  Sense 5: "death (comparative, like death)" (7x)
+    Desc: Death used as the standard of comparison in similes — something being 'like death' or 'as death.'
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: as-death-of, is-like-death, like-death | spa: como-la-muerte, como-muerte-de, cuando-murió | fra: comme-la-mort, comme-mort, comme-mort-de | deu: wann-starb, wie-Tod-von, wie-starb
+    Refs: Num 16:29, 2Sam 3:33, 2Kgs 3:5, Eccl 3:19, Song 8:6
+  Sense 6: "?" (1x)
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: deaths-of- | spa: Muertes-de | fra: mort | deu: Tod
+    Refs: Ezek 28:10
+
+=== G2476 ===
+Language: Greek, POS: V-RPA-GMS, Occurrences: 153, Senses: 6
+
+BDB excerpt: ἵστημι (compare ἱστάω, ἱστάνω), __I causal, make to stand, imperative ἵστη Refs 8th c.BC+imperfect ἵστην, Epic dialect ἵστασκε Refs 8th c.BC+; 3rd.pers. plural ἵσταν Refs 5th c.BC+future στήσω, Doric dialect στᾱσῶ Refs 3rd c.BC+: aorist 1 ἔστησα, Epic dialect 3rd.pers. plural ἔστᾰσαν for ἔστησαν uncertain in Refs 8th c.BC+: aorist 1 middle ἐστησάμην (never intransitive)Refs 4th c.BC+: perfect ἕστᾰκα LXX+5th c.BC+; also ἕστηκα (see. below) in transitive sense, (δι-) LXX+4th c.BC+ [same place]; ἑστακεῖα transitive in Refs __II intransitive, stand, __II.1 active, aorist 2 ἔστην, Epic dialect στάσ
+Senses:
+  Sense 1: "stand, be standing" (107x)
+    Desc: Intransitive sense: to stand in a place, be in a standing position, or rise to one's feet — the core physical-positional meaning of the intransitive 2nd aorist (ἔστην), perfect (ἕστηκα), and pluperfec...
+    Domain: MOVEMENT > Stances
+    Glosses: eng: having-stood, standing | spa: de-pie, estando-de-pie, que-está-de-pie | fra: se-tenir, se-tenir-debout | deu: stehen, steht
+    Refs: Matt 13:2, Matt 16:28, Matt 20:3, Matt 20:6, Matt 24:15
+  Sense 2: "set, place, cause to stand" (17x)
+    Desc: Transitive causative sense: to set, place, or cause someone/something to stand — the core meaning of the active 1st aorist (ἔστησα) and present active in transitive use. Distinguished by Arabic أَقَام...
+    Domain: MOVEMENT > Stances
+    Glosses: eng: having-placed, having-set, he-placed | spa: habiendo-puesto, habiéndola-puesto-de-pie, lo-presentó | fra: faire-tenir, se-tenir, se-tenir-debout | deu: hinzustellen, stehen, steht
+    Refs: Matt 4:5, Matt 18:2, Matt 25:33, Mark 9:36, Mark 13:9
+  Sense 3: "stand firm, endure" (15x)
+    Desc: Figurative-metaphorical intransitive sense: to stand firm, remain steadfast, endure, or persist — used of moral, spiritual, or institutional endurance rather than physical position. Distinguished by A...
+    Domain: MOVEMENT > Stances
+    Glosses: eng: stand, stands, to-stand | spa: estar-firmes, estáis-firmes, estás-firme | fra: se-tenir, se-tenir-debout | deu: stehen, steht
+    Refs: Matt 12:25, Matt 12:26, Mark 3:24, Mark 3:25, Mark 3:26
+  Sense 4: "stop, stand still" (7x)
+    Desc: Intransitive cessative sense: to stop, halt, stand still, or cease moving — an ingressive-to-resultative shift from motion to stasis. Distinguished by Korean 멈추다 / 멈춰 서다 (to stop, halt) rather than pl...
+    Domain: MOVEMENT > Stances
+    Glosses: eng: having-stopped, it-stood, standing | spa: cesó, detenerse, deteniéndose | fra: se-tenir, se-tenir-debout | deu: stehen, steht
+    Refs: Matt 2:9, Matt 20:32, Mark 10:49, Luke 7:14, Luke 8:44
+  Sense 5: "establish, confirm" (6x)
+    Desc: Abstract causative sense: to establish, confirm, uphold, or appoint — used of laws, covenants, institutions, or divine purposes. Distinguished by Arabic يُثَبِّتُ / عَيَّنَ (to confirm, establish, app...
+    Domain: MOVEMENT > Stances
+    Glosses: eng: he-might-establish, he-set, he-will-be-made-to-stand | spa: establecemos, establecer, estableció | fra: se-tenir, se-tenir-debout | deu: stehen, steht
+    Refs: Matt 18:16, Acts 17:31, Rom 3:31, Rom 10:3, Rom 14:4
+  Sense 6: "?" (1x)
+    Domain: MOVEMENT > Stances
+    Glosses: eng: set | spa: pesaron | fra: se-tenir | deu: steht
+    Refs: Matt 26:15

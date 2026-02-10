@@ -1,0 +1,120 @@
+You are a biblical lexicographer composing glosses for a digital lexicon.
+For each lemma below, compose a JSON object. Separate objects with "---".
+
+Format for each:
+{
+  "lemma_id": "...",
+  "gloss_terse": "under 120 chars, concise definition covering the word's semantic range",
+  "gloss_readable": "2-5 sentences, 40-120 words. Don't start with 'This word'. Warm study-Bible footnote tone. Engaging, not dry.",
+  "senses": {
+    "1": "enriched 20-60 word description. Reference multilingual evidence when illuminating. Don't repeat the label verbatim.",
+    "2": "..."
+  }
+}
+
+Rules:
+- No markdown fences, just JSON objects separated by ---
+- Reference multilingual evidence naturally when it reveals something
+- gloss_readable should feel like a good study Bible footnote: helpful, clear, occasionally surprising
+- Each sense enrichment: how does the evidence support this sense? Mention 1-2 key passages when helpful.
+
+=== H2461 ===
+Language: Hebrew, POS: Conj-w | N-ms, Occurrences: 45, Senses: 4
+
+BDB excerpt: † חָלָב n.m. milk (NH id. (and vb. denom.); Aramaic חַלְבָּא, ܚܰܠܒܳܐ, Ph. חלב; Arabic حَليبٌ n. fresh milk, حَلَبَ vb. milk; Assyrian alibu, milk, v. DlPr 174; Ethiopic ሐሊብ )—ח׳ abs. Gn 18:18 + 35 times + Ez 34:3 (v. infr.); cstr. חֲלֵב Ex 23:19 + 5 times; sf. חֲלָבִי Ct 5:1, חֲלָבֵךְ Ez 25:4;—milk: a. as common food Gn 18:8 (J; distinct from חֶמְאָה curd, q.v.), חֲלֵב צֹאן Dt 32:14 (poet.; distinct from חֶמְאַת בָּקָר); in Ju 5:25 חָלָב is used parallel with חֶמְאָה; elsewhere חֶמְאָה seems to be produced from חָלָב:—מִיץ חָלָב יוֹצִיא חֶמְאָה Pr 30:33 a pressing (squeezing) of milk produces 
+Senses:
+  Sense 1: "milk" (42x)
+    Desc: Milk as a food product or symbol of abundance and nourishment, often in the phrase 'land flowing with milk and honey'.
+    Domain: FOOD_DRINK > Foods and Condiments
+    Glosses: eng: milk | spa: leche | fra: graisse, lait, חלב | deu: Milch, [חלב]
+    Refs: Gen 18:8, Gen 49:12, Exod 3:8, Exod 3:17, Exod 13:5
+  Sense 2: "cheese, curds" (1x)
+    Desc: A curdled milk product or cheese, referring to processed dairy rather than fresh milk.
+    Domain: FOOD_DRINK > Foods and Condiments
+    Glosses: eng: the-cheese | spa: la-leche | fra: le-cheese | deu: der-cheese
+    Refs: 1Sam 17:18
+  Sense 3: "suckling, nursing child" (1x)
+    Desc: Metonymic use referring to a nursing infant or one still being breastfed.
+    Domain: FOOD_DRINK > Foods and Condiments
+    Glosses: eng: suckling | spa: de-leche | fra: allaitant | deu: suckling
+    Refs: 1Sam 7:9
+  Sense 4: "Huram (proper name)" (1x)
+    Desc: A personal name, distinct from the common noun meaning milk.
+    Domain: DISCOURSE_NAMES > Names of Persons and Places
+    Glosses: eng: (Churam) | spa: Juram | fra: Huram | deu: Huram
+    Refs: 2Chr 4:11
+
+=== H4186 ===
+Language: Hebrew, POS: N-msc, Occurrences: 44, Senses: 4
+
+BDB excerpt: † מוֹשָׁב n.m. 2 K 2:19 seat, assembly, dwelling-place, dwelling, dwellers;—abs. מ׳ ψ 107:4 + 4 times; cstr. מוֹשַׁב Ex 12:40 + 9 times; sf. מוֹשָׁבִי Jb 29:7 etc.; pl. cstr. מוֹשְׁבֵי Ez 34:13; sf. 2 mpl. מוֹשְׁבֹתֵיכֶם etc. Ex 12:20 + 11 times; sf. 3 mpl. מוֹשְׁבֹתָם etc. 10:23 + 5 times; מוֹשְׁבֹתֵיהֶם Ez 37:23, but read מְשׁוּב׳ their apostasies 𝔊 Comm., see VB; מוֹשְׁבוֹתֵיהֶם Ez 6:14;— 1. a. seat 1 S 20:18, 25(×2) Jb 29:7; fig. מ׳ אלהים יָשַׁבְתִּי Ez 28:2. b. sitting = those sitting, sitting company or assembly, מוֹשַׁב עֲבָדָיו 1 K 10:5 (‖ מַעֲמַד מְשָֽׁרְתָיו) = 2 Ch 9:4; so ψ 1:1; 10
+Senses:
+  Sense 1: "dwelling place, settlement" (32x)
+    Desc: A place where people live or settle; a habitation, residence, or dwelling-place, whether of individuals or communities.
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: and-their-dwellings, dwelling, dwelling-places-of-them | spa: lugares-de-morada-de-ellos, morada, moradas-vuestras | fra: demeure, demeure-ton, et-demeure | deu: Wohnsitz, Wohnung, dein-Wohnsitz
+    Refs: Gen 10:30, Gen 27:39, Gen 36:43, Exod 10:23, Exod 12:20
+  Sense 2: "seat, assembly seat" (10x)
+    Desc: A place where one sits, especially an official or judicial seat in a council or assembly; a session or sitting place of authority.
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: and-in-the-seat-of, and-sitting-of, and-the-seating-of | spa: asiento-de, asiento-suyo, asiento-tuyo | fra: demeure, et-assis-de, et-dans-siège | deu: Wohnsitz, [מושבי], seat-dein
+    Refs: 1Sam 20:18, 1Sam 20:25, 1Sam 20:25, 1Kgs 10:5, 2Chr 9:4
+  Sense 3: "?" (1x)
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: location-of | spa: la-ubicación-de | fra: location-de | deu: location-von
+    Refs: 2Kgs 2:19
+  Sense 4: "?" (1x)
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: dwelling-of | spa: moradores-de | fra: demeure-de | deu: wohnend-von
+    Refs: 2Sam 9:12
+
+=== G1330 ===
+Language: Greek, POS: V-RPA-AMS, Occurrences: 43, Senses: 4
+
+BDB excerpt: διέρχομαι, future διελεύσομαι (but δίειμι is used in Attic dialect as future, and διῄειν as imperfect): aorist διῆλθον:— go through, pass through, absolutely, ἀντικρὺ δὲ διῆλθε βέλος Refs 8th c.BC+; διέρχεται ἅπαντα διὰ τούτου NT+8th c.BC+; θύρας (plural) Refs 5th c.BC+ __2 pass through, complete, τὸ πέμπτον μέρος τῆς ὁδοῦ Refs 5th c.BC+ __3 of reports, βάξις διῆλθ᾽ Ἀχαιούς Refs 5th c.BC+went abroad, spread, Refs 5th c.BC+ __4 of pain, shoot through one, Refs; of passion, ἵμερος δ. Ἡρακλῆ Refs; ἐμὲ διῆλθέ τι a thought shot through me, Refs 5th c.BC+ __5 pass through and reach, arrive at, βίου 
+Senses:
+  Sense 1: "pass through a region" (35x)
+    Desc: To travel through or across a place, going from one side to the other, used of journeying through cities, territories, or areas.
+    Domain: MOVEMENT > Linear Movement
+    Glosses: eng: having-gone-through, having-passed-through, he-was-passing-through | spa: Atravesando, atravesaba, atravesando | fra: traverser | deu: hindurchgehen, zieht-hindurch
+    Refs: Matt 12:43, Mark 10:25, Luke 4:30, Luke 9:6, Luke 11:24
+  Sense 2: "cross over to other side" (5x)
+    Desc: To cross over a body of water or similar barrier to reach the opposite side, often used as an exhortation to embark on a crossing.
+    Domain: MOVEMENT > Linear Movement
+    Glosses: eng: Let-us-cross-over, Let-us-go, Let-us-go-across | spa: Pasemos, pasar, pasemos | fra: traverser | deu: hindurchgehen, zieht-hindurch
+    Refs: Mark 4:35, Luke 2:15, Luke 8:22, Acts 11:22, Acts 18:27
+  Sense 3: "spread throughout" (2x)
+    Desc: To spread or extend through a region, used of news, a report, or influence permeating an area.
+    Domain: MOVEMENT > Linear Movement
+    Glosses: eng: passed-through, was-spreading | spa: pasó, se-extendía | fra: traverser | deu: hindurchgehen, zieht-hindurch
+    Refs: Luke 5:15, Rom 5:12
+  Sense 4: "pierce through" (1x)
+    Desc: To penetrate or pass through something physically, as a sword piercing through a person, used metaphorically of grief or anguish.
+    Domain: MOVEMENT > Linear Movement
+    Glosses: eng: will-pierce | spa: atravesará | fra: traverser | deu: zieht-hindurch
+    Refs: Luke 2:35
+
+=== H0962 ===
+Language: Hebrew, POS: V-Qal-Imp-mp, Occurrences: 43, Senses: 4
+
+BDB excerpt: † בָּזַז vb. spoil, plunder (Arabic بَزّ, Aramaic ܒܰܙ; Amhar. በዘበዘ: also Ethiopic ቤዘወ: rescue PräBAS i. 33)— Qal Pf. 3 ms. וּבָזַז (consec.) Ez 29:19; 3 pl. בָּֽזֲזוּ Nu 31:53 + 7 times; בָּזָ֑זוּ Nu 31:9; sf. וּבְזָזוּם consec. Je 20:5; 1 pl. בָּזַזְנוּ Dt 2:35; בַּזּוֹנוּ 3:7; Impf. 2 ms. תָּבֹז Dt 20:14, pl. יָבֹ֫זּוּ Is 10:2 + 2 times; וַיָּבֹ֫זּוּ Gn 34:27 + 4 times; sf. יְבָזּוּם Zp 2:9; 2 mpl. תָּבֹ֫זּוּ Jos 8:2; 1 pl. cohort. נָבֹ֫זָה 1 S 14:36 (cf. Ges§ 67 R. 11); Imv. בֹּ֫זּוּ Na 2:10(×2); Inf. cstr. בֹּז Is 10:6 + 3 times; בּוֹז Est 3:13; 8:11; Pt. act. pl. בֹּֽזֲזִים Is 42:24 2 Ch 
+Senses:
+  Sense 1: "plunder, take as spoil" (33x)
+    Desc: Qal active: to plunder, loot, carry off goods or possessions as spoil of war or raiding, including all finite forms (perfect, imperfect, imperative, cohortative, jussive) and infinitives expressing pu...
+    Domain: ECONOMICS_PROPERTY > Possess, Transfer, Exchange
+    Glosses: eng: and-plundered, and-they-plundered, and-they-shall-spoil | spa: despojaron, para-saquear, saqueamos | fra: [ויבזו], [לבוז], butin | deu: pluendern, pluendert, pluenderte
+    Refs: Gen 34:27, Gen 34:29, Num 31:9, Num 31:32, Num 31:53
+  Sense 2: "plunderer, one who despoils" (5x)
+    Desc: Qal active participle used as an agent noun: a plunderer, spoiler, or despoiler — one who habitually or characteristically takes plunder.
+    Domain: ECONOMICS_PROPERTY > Possess, Transfer, Exchange
+    Glosses: eng: our-despoilers, pillaging-you, plundering | spa: a-los-saqueadores, los-que-te-saquean, nuestros-saqueadores | fra: [בזזים], butin, piller | deu: pluendern
+    Refs: 2Chr 20:25, Isa 17:14, Isa 42:24, Jer 30:16, Ezek 39:10
+  Sense 3: "be plundered, be despoiled" (4x)
+    Desc: Nifal and Piel passive: to be plundered, looted, or despoiled — the passive counterpart indicating the victim or object suffers the action of plundering.
+    Domain: ECONOMICS_PROPERTY > Possess, Transfer, Exchange
+    Glosses: eng: and-plundered, and-shall-be-plundered, and-they-will-be-plundered | spa: será-saqueada, y-saqueando, y-serán-saqueados | fra: et-butin, et-piller, piller | deu: pluendern, und-pluendern, und-pluendert
+    Refs: Isa 24:3, Isa 24:3, Jer 50:37, Amos 3:11
+  Sense 4: "?" (1x)
+    Domain: ECONOMICS_PROPERTY > Possess, Transfer, Exchange
+    Glosses: eng: plundered | spa: despojado | fra: piller | deu: pluendern
+    Refs: Isa 42:22

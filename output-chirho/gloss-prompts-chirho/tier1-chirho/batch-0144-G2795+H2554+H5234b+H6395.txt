@@ -1,0 +1,123 @@
+You are a biblical lexicographer composing glosses for a digital lexicon.
+For each lemma below, compose a JSON object. Separate objects with "---".
+
+Format for each:
+{
+  "lemma_id": "...",
+  "gloss_terse": "under 120 chars, concise definition covering the word's semantic range",
+  "gloss_readable": "2-5 sentences, 40-120 words. Don't start with 'This word'. Warm study-Bible footnote tone. Engaging, not dry.",
+  "senses": {
+    "1": "enriched 20-60 word description. Reference multilingual evidence when illuminating. Don't repeat the label verbatim.",
+    "2": "..."
+  }
+}
+
+Rules:
+- No markdown fences, just JSON objects separated by ---
+- Reference multilingual evidence naturally when it reveals something
+- gloss_readable should feel like a good study Bible footnote: helpful, clear, occasionally surprising
+- Each sense enrichment: how does the evidence support this sense? Mention 1-2 key passages when helpful.
+
+=== G2795 ===
+Language: Greek, POS: V-ANA, Occurrences: 8, Senses: 4
+
+BDB excerpt: κῑνέω, aorist ἐκίνησα, Epic dialect κίνησα Refs 8th c.BC+ —middle and passive, future κινήσομαι (in passive sense) Refs 5th c.BC+, etc.: aorist middle (Epic dialect) κινήσαντο Refs 3rd c.AD+: aorist passive ἐκινήθην, Epic dialect 3rd.pers. plural ἐκίνηθεν Refs 8th c.BC+:—set in motion, ἄγε κινήσας, of Hermes leading the souls, Refs 8th c.BC+; simply, move, οὐδέ τι κινῆσαι μελέων ἦν Refs 8th c.BC+, etc.; σκληρὰ ἡ γῆ ἔσται κινεῖν, i.e. plough, Refs 5th c.BC+; κ. δόρυ, of a warrior about to attack, Refs 5th c.BC+; κ. σκάφην rock a cradle, Refs 3rd c.BC+ __b in later Gr., set in motion a process o
+Senses:
+  Sense 1: "to shake, wag (physical gesture)" (2x)
+    Desc: To move part of the body back and forth as a physical gesture, specifically shaking or wagging the head in derision or mockery (Matt 27:39; Mark 15:29).
+    Domain: MOVEMENT > Non-Linear Movement
+    Glosses: eng: shaking | spa: meneando, moviendo | fra: remuer | deu: bewegen, κινοῦντες
+    Refs: Matt 27:39, Mark 15:29
+  Sense 2: "to stir up, agitate (figurative)" (2x)
+    Desc: To cause social or emotional agitation, to incite or create a disturbance; used figuratively of stirring up trouble among people (Acts 24:5) or a city being thrown into commotion (Acts 21:30).
+    Domain: EMOTION_ATTITUDE > Attitudes and Emotions
+    Glosses: eng: stirring-up, was-stirred | spa: Se-conmovió, incitando | fra: mouvoir | deu: κινοῦντα, ἐκινήθη
+    Refs: Acts 21:30, Acts 24:5
+  Sense 3: "to move, be in motion" (2x)
+    Desc: To cause physical movement or to be in motion; used of general movement including living and existing (Acts 17:28 'in him we live and move') and moving objects (Matt 23:4).
+    Domain: MOVEMENT > Linear Movement
+    Glosses: eng: to-move, we-move | spa: mover, nos-movemos | fra: mouvoir, remuer | deu: κινούμεθα, κινῆσαι
+    Refs: Matt 23:4, Acts 17:28
+  Sense 4: "to remove, displace" (2x)
+    Desc: To move something from its established position, to remove or displace; used of removing a lampstand from its place (Rev 2:5) and mountains being moved from their positions (Rev 6:14).
+    Domain: MOVEMENT > Linear Movement
+    Glosses: eng: I-will-remove, were-moved | spa: fueron-movidos, moveré | fra: remuer | deu: bewegen
+    Refs: Rev 2:5, Rev 6:14
+
+=== H2554 ===
+Language: Hebrew, POS: V-Qal-Imperf-2mp, Occurrences: 8, Senses: 4
+
+BDB excerpt: † [חָמַס] vb. treat violenty, wrong (NH id., act violently, treat violently; Aramaic חֲמַס (rare) violently seize; Arabic حَمِسَ is be hard, strict, rigorous)— Qal Pf. 3 pl. חָֽמְסוּ Ez 22:26; Zp 3:4; Impf. יַחְמֹס Jb 15:33, וַיַּחְמֹם La 2:6; תַּחְמֹ֑סוּ Jb 21:27; Je 22:3; Pt. חֹמֵס Pr 8:36;—treat violently, wrong;— 1. of physical wrong: תַּחְ׳ Je 22:3 (‖ תֹּנוּ) of wrong to widows and orphans; וַיַּח׳ כַּגַּן שֻׂכּוֹ La 2:6 and hath done violence to his pavilion as to a garden (‖ שִׁחֵת מֹעֲדוֹ); so, fig., of vine, wrong, i.e. fail to nourish, kill יַח׳ כַּגֶּפֶן בִּסְרוֹ Jb 15:33. 2. of eth
+Senses:
+  Sense 1: "do violence / treat violently" (5x)
+    Desc: Qal active: to commit violence, to wrong or oppress someone unjustly. The core meaning of hamas in active voice. Arabic ظَلَمُوا/تَظْلِمُون (to wrong/oppress), Spanish 'violentaron/roben/tramáis' (the...
+    Domain: VIOLENCE_CONFLICT > Violence, Harm, Destroy, Kill
+    Glosses: eng: do-violence-to, does-violence-to, they-have-done-violence-to | spa: roben, tramáis., violenta | fra: [תחמסו], violer, חמס | deu: [חמס], [חמסו], [תחמסו]
+    Refs: Job 21:27, Prov 8:36, Jer 22:3, Ezek 22:26, Zeph 3:4
+  Sense 2: "shake off / shed (of a vine)" (1x)
+    Desc: A specialized metaphorical use: a vine 'shaking off' or shedding its unripe fruit, describing violent natural expulsion. The glosses diverge sharply from the violence sense: Arabic يَنْتُرُ (to shake ...
+    Domain: VIOLENCE_CONFLICT > Violence, Harm, Destroy, Kill
+    Glosses: eng: he-sheds | spa: Dejará-caer | fra: יחמס | deu: [יחמס]
+    Refs: Job 15:33
+  Sense 3: "strip / tear down" (1x)
+    Desc: Qal consecutive imperfect with waw: to strip, tear apart, or demolish -- describing God's forcible dismantling (of a booth/tabernacle in Lam 2:6). Arabic وَاقْتَلَعَ (and uprooted/tore out), Spanish '...
+    Domain: PHYSICAL_ACTION > Activities Involving Clothing
+    Glosses: eng: And-He-stripped | spa: Y-ha-arrancado | fra: [ויחמס] | deu: [ויחמס]
+    Refs: Lam 2:6
+  Sense 4: "be violated (Nifal passive)" (1x)
+    Desc: Nifal passive: to be violated, to suffer violence -- the passive counterpart of the active Qal. Arabic اغْتُصِبَتْ (were violated/seized), Spanish 'fueron violados' (they were violated), Korean 폭행당했다 ...
+    Domain: VIOLENCE_CONFLICT > Violence, Harm, Destroy, Kill
+    Glosses: eng: are-violated | spa: fueron-violados | fra: [נחמסו] | deu: [נחמסו]
+    Refs: Jer 13:22
+
+=== H5234b ===
+Language: Hebrew, POS: Conj-w | V-Hitpael-ConsecImperf-3ms, Occurrences: 7, Senses: 4
+
+BDB excerpt: † [נכר] vb.denom. act or treat as foreign, or strange; disguise, misconstrue;— Niph. Impf. יִנָּכֵר Pr 26:24 with his lips a hater disguiseth himself (dissembles, speaks what is foreign to his thought). Pi. Pf. נִכַּר 1 S 23:7, but v. infr.; Impf. וַיְנַכְּרוּ Je 19:4 and they have treated this place as foreign (profane); יְנַכְּרוּ צָרֵימוֹ Dt 32:27 lest their adversaries should misconstrue (it).—נִכַּר אֹתוֹ א׳ בְּיָדִי 1 S 23:7 God hath alienated him into my hand, but improbable; 𝔊 מָכַר (cf. Ju 4:9) hath sold him, so Th Klo HPS (cf. We); סִכַּר (as Is 19:4) Krochm Dr; Kit either of these; 
+Senses:
+  Sense 1: "disguise oneself, feign to be a stranger" (4x)
+    Desc: To deliberately adopt a false identity or pretend not to be who one really is. Used in Hitpael reflexive: Joseph making himself unrecognizable to his brothers (Gen 42:7), Jeroboam's wife disguising he...
+    Domain: MENTAL_LIFE > Know
+    Glosses: eng: and-he-made-himself-strange, disguises-himself, pretending-to-be-a-stranger | spa: disfrazándose, finge, te-disfrazas | fra: et-il-fit-lui-même-strange, feignant-à-être-un-stranger, reconnaître | deu: [ינכר], pretending-zu-sein-ein-stranger, und-stellte-sich-fremd
+    Refs: Gen 42:7, 1Kgs 14:5, 1Kgs 14:6, Prov 26:24
+  Sense 2: "misconstrue, misattribute" (1x)
+    Desc: To misunderstand, misinterpret, or wrongly attribute something, treating familiar things as if they were foreign or strange. Used in Piel in Moses' Song (Deut 32:27) where enemies might misconstrue Is...
+    Domain: GROUPS_COMMUNITY > Groups and Classes of Persons
+    Glosses: eng: misunderstand | spa: entiendan-mal | fra: misunderstand | deu: misunderstand
+    Refs: Deut 32:27
+  Sense 3: "deliver over, hand over to a stranger" (1x)
+    Desc: To treat someone as foreign by delivering or handing them over, estranging them from their proper place. In 1 Sam 23:7 Saul says God has delivered (nikkar) David into his hand. The sense extends the '...
+    Domain: ECONOMICS_PROPERTY > Possess, Transfer, Exchange
+    Glosses: eng: has-delivered | spa: lo-rechazó | fra: a-délivra | deu: hat-befreite
+    Refs: 1Sam 23:7
+  Sense 4: "make foreign, profane" (1x)
+    Desc: To render something foreign, alien, or profaned, treating what is sacred or familiar as strange and other. Used in Piel in Jeremiah 19:4 of those who made the temple precincts foreign by introducing a...
+    Domain: RELIGIOUS_LIFE > Religious Activities
+    Glosses: eng: and-they-made-foreign | spa: y-profanaron | fra: [וינכרו] | deu: [וינכרו]
+    Refs: Jer 19:4
+
+=== H6395 ===
+Language: Hebrew, POS: V-Nifal-Perf-1cs, Occurrences: 7, Senses: 4
+
+BDB excerpt: † [פָּלָה] vb. Niph. be separated, distinct (‖ form of פלא q.v.; cf. Arabic فلو, فَلَا separate from sucking, wean; Ethiopic ፈለየ; separate, distinguish);— 1. Pf. 1 pl. consec. וְנִפְלִינוּ Ex 33:16 and we shall be distinct, c. מִן pers. 2. 1 s. נִפְלֵיתִי ψ 139:14 I am wonderful (viz. in bodily stature etc.); תָ thou [י׳] art wonderful (פלא 3). Hiph. Pf. 3 ms. הִפְלָה ψ 4:4, וְה׳ consec. Ex 9:4; 1 s. וְהִפְלֵיתִי consec. 8:18; Impf. 3 ms. יַפְלֶה 11:7; Imv. ms. הַפְלֵה ψ 17:7;—of י׳, make separate, c. acc. Ex 8:18 (by treating differently); set apart ψ 4:4, but perhaps read חֶסֶד לִי (for MT ח
+Senses:
+  Sense 1: "distinguish, set apart (Hifil)" (4x)
+    Desc: The Hifil causative sense of distinguishing, setting apart, or making a distinction. Arabic يُمَيِّزُ ('distinguishes') and أُمَيِّزُ ('I distinguish') consistently render the separative action; Spani...
+    Domain: MENTAL_LIFE > Understand
+    Glosses: eng: and-I-will-set-apart, and-will-distinguish, distinguishes | spa: Y-distinguirá, Y-distinguiré, apartó | fra: distinguishes, et---distinguer, et-Je---placer-à-part | deu: distinguishes, hat-setzen-getrennt, und-ich-wird-setzen-apart
+    Refs: Exod 8:22, Exod 9:4, Exod 11:7, Ps 4:3
+  Sense 2: "be wonderfully made (Nifal, wonderful)" (1x)
+    Desc: A specialized Nifal sense conveying being made wonderful or marvellous, not merely 'set apart' but evoking wonder. Arabic عَجِيبًا صُنِعْتُ ('wonderfully I was made') and Korean 기이하도다 ('how marvellous...
+    Domain: PROPERTIES_RELATIONS > Power, Force
+    Glosses: eng: I-am-wonderfully-made | spa: fui-hecho-maravillosamente | fra: distinguer | deu: ich-bin-wunderbar-gemacht
+    Refs: Ps 139:14
+  Sense 3: "be distinguished, be set apart (Nifal)" (1x)
+    Desc: The Nifal passive/reflexive sense of being distinguished or set apart. Spanish 'seremos distinguidos' and Hindi अलग होंगे ('we will be separated') show the passive voice clearly in S127525. Arabic نَت...
+    Domain: QUANTITY_NUMBER > Whole, Unite, Part, Divide
+    Glosses: eng: and-we-will-be-distinguished | spa: y-seremos-distinguidos | fra: et-nous---être-distinguished | deu: und-wir-wird-sein-distinguished
+    Refs: Exod 33:16
+  Sense 4: "show wondrously (Hifil, display marvels)" (1x)
+    Desc: A Hifil imperative sense of displaying or showing something in a wonderful/marvellous way. Spanish 'muestra maravillosamente' ('show wondrously') and Hindi अद्भुत दिखा ('show wonderfully') confirm thi...
+    Domain: PROPERTIES_RELATIONS > Power, Force
+    Glosses: eng: wondrously-show | spa: muestra-maravillosamente | fra: le-distinguer | deu: wondrously-show
+    Refs: Ps 17:7

@@ -1,0 +1,115 @@
+You are a biblical lexicographer composing glosses for a digital lexicon.
+For each lemma below, compose a JSON object. Separate objects with "---".
+
+Format for each:
+{
+  "lemma_id": "...",
+  "gloss_terse": "under 120 chars, concise definition covering the word's semantic range",
+  "gloss_readable": "2-5 sentences, 40-120 words. Don't start with 'This word'. Warm study-Bible footnote tone. Engaging, not dry.",
+  "senses": {
+    "1": "enriched 20-60 word description. Reference multilingual evidence when illuminating. Don't repeat the label verbatim.",
+    "2": "..."
+  }
+}
+
+Rules:
+- No markdown fences, just JSON objects separated by ---
+- Reference multilingual evidence naturally when it reveals something
+- gloss_readable should feel like a good study Bible footnote: helpful, clear, occasionally surprising
+- Each sense enrichment: how does the evidence support this sense? Mention 1-2 key passages when helpful.
+
+=== G2041 ===
+Language: Greek, POS: N-ANP, Occurrences: 174, Senses: 2
+
+BDB excerpt: ἔργον, Doric dialect ϝέργον Refs 6th c.BC+, Elean ϝάργον Refs 6th c.BC+ weorc (neuter) 'work', Avest. var[schwa]za-):— work, Refs 8th c.BC+; especially in plural, Refs 8th c.BC+; τὰ σ᾽ αὐτῆς ἔργα κόμιζε see to thine own tasks, Refs 8th c.BC+ __1 in Refs 8th c.BC+works or deeds of war, Refs 8th c.BC+; ἐν τῷ ἔ. during the action, Refs 6th c.BC+; ἔργου ἔχεσθαι to engage in battle, Refs __2 of peaceful contests, Refs 5th c.BC+; also ἔργα θῆκε κάλλιστ᾽ ἀμφὶ κόμαις placed [the reward of] noble deeds about his hair, Refs __3 of works of industry, __3.a of tillage, tilled lands, Refs 8th c.BC+; οὔτε β
+Senses:
+  Sense 1: "deed or action" (170x)
+    Desc: A deed, act, or action, especially in the moral or religious sense (e.g., 'works of the law', 'good works', 'evil deeds'), referring to what someone has done or does as conduct.
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: works | spa: obras | fra: œuvre | deu: Werke
+    Refs: John 3:19, John 3:20, John 3:21, John 5:36, John 5:36
+  Sense 2: "work or task" (4x)
+    Desc: A work, task, undertaking, or enterprise, referring to labor, occupation, or a specific thing being accomplished rather than moral conduct.
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: of-work, works | spa: de-obra, obras | fra: œuvre | deu: Werke
+    Refs: John 5:20, Rom 2:7, Phil 1:22, Jas 1:25
+
+=== H3898a ===
+Language: Hebrew, POS: V-Nifal-Imperf-2mp, Occurrences: 171, Senses: 2
+
+BDB excerpt: I. [לָחַם171] vb. fight, do battle (NH Hithp.; ואלתחם MI11.15.19; perhaps = order the battle, cf. NöZMG xl. 1886, 721; Arabic لَحَمَ fit close together, so NH לחם Pi., Syriac ܠܚܡ Pa. unite, ܠܳܚܶܡ fit; also threaten; GerberVerb. Denom. 59 thinks vb. in Heb. denom. from מִלְחָמָה battle-line, but dub.);— †Qal (poet.) only Imv. ms. and Pt. act.—fight, do battle with, rare, only ψψ, appar. later usage:—לְחַם אֶת־לֹחֲמָ֑י ψ 35:1 do battle with those battling with me (dub. whether את is acc. sign or prep. with, cf. Ol; ‖ רִיבָה אֶת־יְרִיבַי); לֹחֲמִים לִי 56:3 doing battle against me; לֹחֵם v 2 as s
+Senses:
+  Sense 1: "Nifal: to fight, wage war" (167x)
+    Desc: The standard Nifal (reciprocal-reflexive) sense of לחם meaning to fight, engage in battle, or wage war against an enemy; this covers the vast majority of occurrences across all inflections (perfect, i...
+    Domain: VIOLENCE_CONFLICT > Hostility, Strife
+    Glosses: eng: to-fight | spa: para-luchar, para-pelear, pelear | fra: à-combats, à-combattre | deu: zu-kaempfe, zu-kaempfen
+    Refs: Exod 17:8, Exod 17:10, Num 21:1, Num 21:23, Num 22:11
+  Sense 2: "Qal: to fight; (ptc.) fighter, combatant" (4x)
+    Desc: The rare Qal stem of לחם, occurring only in imperative and participial forms, meaning to fight or (as a substantivized participle) a fighter or combatant; the Qal participle construct in Psalm 35:1 (ל...
+    Domain: VIOLENCE_CONFLICT > Hostility, Strife
+    Glosses: eng: fight, fighting, my-fighters | spa: combatiendo, los-que-pelean-contra-mí, pelea | fra: à-Ham, à-combattre | deu: fighting, kämpfen, mein-fighters
+    Refs: Ps 35:1, Ps 35:1, Ps 56:1, Ps 56:2
+
+=== H0312 ===
+Language: Hebrew, POS: Conj-w, Occurrences: 166, Senses: 2
+
+BDB excerpt: I. אַחֵר adj. another (proposes one coming behind), f. אַחֶ֑רֶת Ez 41:24 (dag. f. implic.); pl. אֲחֵרִים (as if from sg. אָחֵר), once Jb 31:10 אֲחֵרִין, אֲחֵרוֹת ( = Arabic آخَرُ, Sab. אאחֿר, Assyrian aḫrû future, fpl. as subst. aḫrât ûmê future of days) Gn 4:25 זֶרַע אַחֵר another seed 8:10 שִׁבְעַת יָמִים אֲחֵרִים seven other days Ex 22:4 בִּשְׂדֵה אַחֵר in the field of another + often; אִישׁ אַחֵר another man (husband) Gn 29:19 Dt 24:2 Je 3:1; חָצֵר הָאַחֶרֶת 1 K 7:8 the other court, v. חָצֵר; הַחוֹמָה א׳ 2 Ch 32:5 the other wall, v. חוֹמָה. Appended to a n.pr. for distinction Ezr 2:31 = Ne
+Senses:
+  Sense 1: "another, other, different" (161x)
+    Desc: A different or additional person, thing, or group; the primary adjectival sense of אַחֵר covering both 'another' (an additional one) and 'other' (a different one), across all grammatical inflections, ...
+    Domain: DISCOURSE_NAMES > Discourse Referentials
+    Glosses: eng: other | spa: otra, otras, otros | fra: autre | deu: andere, anderer, anderes
+    Refs: Gen 8:10, Gen 8:12, Gen 29:27, Gen 29:30, Gen 41:3
+  Sense 2: "next, following" (5x)
+    Desc: The one coming after in temporal or sequential order; used to indicate the subsequent item in a series, translated as 'next' or 'following' rather than simply 'another.'
+    Domain: DISCOURSE_NAMES > Discourse Referentials
+    Glosses: eng: another, the-next | spa: el-otro, otra, otro | fra: après, autre, le-next | deu: another, dem-anderen, der-next
+    Refs: Gen 17:21, 2Kgs 6:29, Ps 109:8, Ps 109:13, Joel 1:3
+
+=== G1484 ===
+Language: Greek, POS: N-DNP, Occurrences: 164, Senses: 2
+
+BDB excerpt: ἔθνος, εος, τό: (ϝέθνος,Refs 8th c.BC+: - number of people living together, company, body of men, ἑτάρων ἔ., ἔ. ἑταίρων, band of comrades, Refs 8th c.BC+; ἔθνος λαῶν host of men, Refs; of particular tribes, Αυκίων μέγα ἔ. Refs 8th c.BC+; of animals, ἔ. μελισσάων, ὀρνίθων, μυιάων, swarms, flocks, etc., Refs 8th c.BC+; ἔ. ἀνέρων, γυναικῶν, Refs 5th c.BC+; ἔ. βρότεον, θνατόν, Refs; ἔ. τόδε, of the Erinyes, Refs 4th c.BC+ __2 after Refs 8th c.BC+, nation, people, τὸ Μηδικὸν ἔ. (γένος being a subdivision of ἔθνος) Refs 5th c.BC+; ἔ. ἠπειρογενές, μαχαιροφόρον, Refs 5th c.BC+ __2.b later, τὰ ἔ. forei
+Senses:
+  Sense 1: "Gentiles, non-Jewish nations" (128x)
+    Desc: The non-Jewish peoples collectively, often contrasted with Israel, used as a quasi-technical term in NT discourse for those outside the covenant community.
+    Domain: GROUPS_COMMUNITY > Groups and Classes of Persons
+    Glosses: eng: nations, of-nations | spa: de-naciones, gentiles, naciones | fra: nation | deu: Voelker
+    Refs: Rom 1:5, Rom 1:13, Rom 2:14, Rom 2:24, Rom 9:24
+  Sense 2: "nation, people, ethnic group" (36x)
+    Desc: A nation, people, or ethnic group as a political or cultural entity, used of any people including Israel (e.g., 'every nation,' 'a great nation').
+    Domain: GROUPS_COMMUNITY > Groups and Classes of Persons
+    Glosses: eng: nation | spa: nación | fra: nation | deu: Voelker, Volk
+    Refs: Matt 4:15, Matt 21:43, Matt 24:7, Matt 24:7, Mark 13:8
+
+=== H6607 ===
+Language: Hebrew, POS: Conj-w, Occurrences: 164, Senses: 2
+
+BDB excerpt: † פֶּ֫תַח164 n.m. Ez 8:8 (f. 2 S 17:9 but We reads אַחַד for אַחַת, and so AlbrZAW xvi (1896), 86) opening, doorway, entrance;—abs. פ׳ Gn 4:7 +, פָּ֑תַח 19:11 +, הַפֶּ֫תְחָה v 6; cstr. פֶּתַח 18:1 +; sf. פִּתְחוֹ Pr 17:19, פִּתְחָהּ Ez 40:38; pl. פְּתָחִים 1 K 7:5; Pr 8:3; cstr. פִּתְחֵי ψ 24:7 +; sf. פְּתָחָ֑י Pr 8:34, etc.;—doorway of nomad’s tent, פ׳ הָאֹהֶל Gn 18:1, 2, 10 (J); Ex 33:8, 10(E); Nu 11:10; 16:27 (JE); Ju 4:20, cf. (without הָאֹהֶל) Gn 4:7 (in fig.), Jb 31:9, 34; of sacred tent, פ׳ הָאֹהֶל Ex 33:9, 10; 26:36; 36:37; 39:38 (P); Nu 12:5 (E); Dt 31:15, usually (P) פ׳ אֹהֶל מוֹעֵד 
+Senses:
+  Sense 1: "entrance or opening" (148x)
+    Desc: The opening, entryway, or doorway of a tent, tabernacle, temple, house, cave, or city — the space one passes through to enter, often in construct 'entrance of'.
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: entrance-of | spa: entrada-de | fra: entrance-de, entrée-de | deu: Eingang-von, am-Eingang, am-Eingang-
+    Refs: Gen 18:1, Gen 18:10, Gen 19:11, Gen 43:19, Exod 29:4
+  Sense 2: "door or gate" (16x)
+    Desc: The door or gate itself as a physical structure that can be opened, shut, or guarded, used by metonymy for the closure rather than the passageway.
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: and-door-of, at-the-door, doors-of | spa: a-la-puerta, como-puerta-de, de-puerta-de- | fra: de-porte-de-, entrée, et-porte-de | deu: [פתחו], [פתחי], [פתחיה]
+    Refs: Gen 4:7, Gen 6:16, Exod 12:22, Exod 12:23, Job 31:9
+
+=== H2572 ===
+Language: Hebrew, POS: Art | Number-cp, Occurrences: 163, Senses: 2
+
+BDB excerpt: חֲמִשִּׁים164 n.pl. (a) fifty (Arabic خَمْسُونَ Aramaic ܚܰܡܫܝܺܢ, Ph. חמשם; MI28 חמשן; Assyrian ḫamšâti Dl in LotzTP 80)—חֲמִשִּׁים Gn 6:15 + 154 times (incl. Ez 40:25, 29, 33, del. Co) + Ez 45:12 (so read A Hi Co for חמשׁה); sf. חֲמִשֶּׁיךָ 2 K 1:10, 12, חֲמִשָּׁיו 2 K 1:9 + 4 times, חֲמִשֵּׁיהֶם 2 K 1:14;— 1. abs. a. a fifty, a company of fifty Ex 18:21, 25 Dt 1:15; 1 S 8:12; 2 K 1:9(×2) + 13 times 2 K 1 (in v 14 = fifties) Is 3:3. b. elsewhere, without noun expr., (1) without other numeral Nu 31:30, 47; Ez 27:18(×2) Hg 2:16; (2) with other num. ח׳ preceding Ex 30:23(×2) + 11 times; + 1 Ch 12
+Senses:
+  Sense 1: "fifty (cardinal number)" (151x)
+    Desc: The cardinal number fifty, used for counting quantities such as measurements, ages, prices, and enumerations.
+    Domain: QUANTITY_NUMBER > Number
+    Glosses: eng: fifty | spa: Cincuenta, cincuenta | fra: cinquante | deu: der-fünfzig, fuenfzig, fünfzig
+    Refs: Gen 6:15, Gen 7:24, Gen 8:3, Gen 18:24, Gen 18:24
+  Sense 2: "group of fifty (unit)" (12x)
+    Desc: A military or organizational unit of fifty men, often in the construct 'captain of fifty' or 'his/your/their fifty', referring to the group under a commander.
+    Domain: QUANTITY_NUMBER > Number
+    Glosses: eng: and-his-fifty, fifties, his-fifty | spa: cincuenta, cincuentas, sus-cincuenta | fra: et-son-cinquante, fifties, leur-fifties | deu: dein-fuenfzig, fifties, ihr-fifties
+    Refs: Exod 18:21, Exod 18:25, Deut 1:15, 1Sam 8:12, 2Kgs 1:9

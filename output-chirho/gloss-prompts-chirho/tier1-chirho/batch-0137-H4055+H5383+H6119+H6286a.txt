@@ -1,0 +1,123 @@
+You are a biblical lexicographer composing glosses for a digital lexicon.
+For each lemma below, compose a JSON object. Separate objects with "---".
+
+Format for each:
+{
+  "lemma_id": "...",
+  "gloss_terse": "under 120 chars, concise definition covering the word's semantic range",
+  "gloss_readable": "2-5 sentences, 40-120 words. Don't start with 'This word'. Warm study-Bible footnote tone. Engaging, not dry.",
+  "senses": {
+    "1": "enriched 20-60 word description. Reference multilingual evidence when illuminating. Don't repeat the label verbatim.",
+    "2": "..."
+  }
+}
+
+Rules:
+- No markdown fences, just JSON objects separated by ---
+- Reference multilingual evidence naturally when it reveals something
+- gloss_readable should feel like a good study Bible footnote: helpful, clear, occasionally surprising
+- Each sense enrichment: how does the evidence support this sense? Mention 1-2 key passages when helpful.
+
+=== H4055 ===
+Language: Hebrew, POS: N-ms, Occurrences: 13, Senses: 4
+
+BDB excerpt: [מַד] n.m. 1 S 4:12 measure, also cloth garment (as extended, wide);—sf. מַדּוֹ ψ 109:18; מִדּוֹ Lv 6:3 2 S 20:8 (מִדָּהּ Jb 11:9, v. sub מִדָּה); pl. מִדִּין Ju 5:10 (v. infr.), 2 S 21:20 Kt (Qr מָדוֹן; read perhaps מִדָּה, v. 1 Ch 20:6, cf. Dr); sf. מִדַּיִךְ Je 13:25; מַדָּיו 1 S 4:12 + 4 times;— 1. measure (only pl.) = apportionment Je 13:25, מְנָֽת־מִדַּיִךְ (of lot of Judah, ‖ גּוֹרָל); cf. lit. 2 S 21:20 Kt (but v. מִדָּה). 2. perhaps cloth, carpet (for sitting on), Ju 5:10 (so most, conj. from context; on pl. in ן, v. Ges§ 87 e). 3. garment, outer garment Ju 3:16; 1 S 4:12, cf. (sim.) 
+Senses:
+  Sense 1: "garment, robe, clothing" (8x)
+    Desc: An article of clothing or outer garment worn on the body, often a priestly or military tunic.
+    Domain: PHYSICAL_ACTION > Activities Involving Clothing
+    Glosses: eng: and-garments-his, and-his-clothes, garments-his | spa: como-su-vestido, su-ropa, su-túnica | fra: comme-vêtement, et-son-vêtements, et-vêtements-son | deu: Kleider-sein, sein-Gewand, sein-Mantel
+    Refs: Lev 6:10, Judg 3:16, 1Sam 4:12, 1Sam 17:38, 1Sam 17:39
+  Sense 2: "stature, tallness" (2x)
+    Desc: Bodily stature or tall size, referring to great physical height (Kethib/Qere variant).
+    Domain: QUANTITY_NUMBER > Number
+    Glosses: eng: [k], strife | spa: (de-contención), [de-contención] | fra: [k], strife | deu: [k]
+    Refs: 2Sam 21:20, 2Sam 21:20
+  Sense 3: "measure, dimension" (2x)
+    Desc: A measurement or dimension of size, extent, or proportion.
+    Domain: GEOGRAPHY_SPACE > Spacial Dimensions
+    Glosses: eng: measure-its, your-measure | spa: es-su-medida,, medidas-tuyas | fra: [מדיך], sa-מדה-elle | deu: [מדה], [מדיך]
+    Refs: Job 11:9, Jer 13:25
+  Sense 4: "carpet, spread, saddle-blanket" (1x)
+    Desc: A cloth spread or covering used as a carpet, tapestry, or saddle-blanket.
+    Domain: PHYSICAL_ACTION > Activities Involving Cloth
+    Glosses: eng: -saddle-blankets | spa: tapices | fra: -saddle-blankets | deu: -saddle-blankets
+    Refs: Judg 5:10
+
+=== H5383 ===
+Language: Hebrew, POS: V-Qal-Perf-3cp, Occurrences: 13, Senses: 4
+
+BDB excerpt: † I. נָשָׁה vb. lend, become a creditor (cf. I. נשׁא);— Qal Pf. 1 s. נָשִׁ֫יתִי Je 15:10; 3 pl. נָשׁוּ v 10; Pt. נֹשֶׁה Ex 22:24 + 4 times; pl. נֹשִׁים Ne 5:10, 11 + v 7 Qr (Kt נֹשְׁאִים, v. I. נשׁא), sf. נוֹשַׁי Is 50:1;—lend, usually c. ב pers.: לֹא־נָשִׁיתִי וְלֹא־נָשׁוּ־בִי Je 15:10 I have not lent, and they have not lent to me, Dt 24:11 Ne 5:7 (Qr; + acc. cogn.), v 10, 11 (both + acc. rei); pt. as subst. creditor, usurer Ex 22:24 (E), 2 K 4:1 Is 24:2; 50:1 ψ 109:11. Hiph. Impf. 3 ms. יַשֶּׁה בְּ Dt 15:2 who lendeth to his neighbour; 2 ms. תַּשֶּׁה בְּ 24:10 when thou lendest to thy neighb
+Senses:
+  Sense 1: "to lend (Qal)" (5x)
+    Desc: To lend money or goods to someone, used in the Qal stem for the basic act of making a loan.
+    Domain: ECONOMICS_PROPERTY > Possess, Transfer, Exchange
+    Glosses: eng: I-lent, are-lending, lending | spa: me-prestaron, prestamos, prestas | fra: [נשו], [נשים], [נשיתי] | deu: Frauen, [נשו], [נשיתי]
+    Refs: Deut 24:11, Neh 5:10, Neh 5:11, Jer 15:10, Jer 15:10
+  Sense 2: "creditor, one who holds debt" (5x)
+    Desc: Substantivized participle denoting a creditor — one who has lent and holds a claim on the debtor, often with legal or social authority.
+    Domain: ECONOMICS_PROPERTY > Possess, Transfer, Exchange
+    Glosses: eng: a-creditor, and-the-creditor, as-a-creditor | spa: Y-el-acreedor, como-acreedor, como-el-acreedor | fra: [כנשה], [מנושי], comme-un-creditor | deu: [כנשה], [מנושי], ein-creditor
+    Refs: Exod 22:25, 2Kgs 4:1, Ps 109:11, Isa 24:2, Isa 50:1
+  Sense 3: "to lend (Hifil causative)" (2x)
+    Desc: To cause to lend or to extend a loan, the Hifil causative form emphasizing the granting of credit.
+    Domain: ECONOMICS_PROPERTY > Possess, Transfer, Exchange
+    Glosses: eng: he-lends, you-lend | spa: prestes, prestó | fra: il-lends, tu-prêter | deu: du-leihen, er-lends
+    Refs: Deut 15:2, Deut 24:10
+  Sense 4: "to exact, press for debt" (1x)
+    Desc: To exact payment or press demands upon debtors, emphasizing the oppressive or burdensome aspect of debt collection.
+    Domain: ECONOMICS_PROPERTY > Possess, Transfer, Exchange
+    Glosses: eng: exacting | spa: cargáis | fra: [נשים‪‬‪‬‪‬נשאיםנשים‪‬‪‬‪‬] | deu: [[[נשים‪‬‪‬‪‬נשאים]]נשים‪‬‪‬‪‬]
+    Refs: Neh 5:7
+
+=== H6119 ===
+Language: Hebrew, POS: Prep-b | N-ms, Occurrences: 13, Senses: 4
+
+BDB excerpt: † I. עָקֵב n.m. heel, footprint, hinderpart (Arabic عَقِبٌ heel, fig. end (of a month), عِقْبَةٌ mark, sign, trace; Aramaic עִקְבָּא, ܥܩܶܒ heel, footprint, fig. trace, mark (cf. Wsd 2:4 𝔖, Ecclus 13:26 ℌ 𝔖), also end, extremity);—ע׳ abs. Gn 3:15 +, cstr. עֲקֵב 25:26, pl. cstr. עִקְבֵי Ct 1:8, עִקְּבֵי Gn 49:17; Ju 5:22, עִקְּבוֹת ψ 77:20; 89:52, etc.;— a. heel, of man, Gn 25:26 וְיָדוֹ אֹחֶזֶת בַּעֲקֵב אָחִיו, as obj. of attack from behind, 3:15 וְאַתָּה תְּשׁוּפֶנּוּ עָקֵב, Jb 18:9 יֹאחֵז בְּע׳ פַּח, Je 13:22 נֶחְמְסוּ עֲקֵבָ֑יִךְ are treated violently, i.e. are rudely exposed (‖ נִגְלוּ שׁוּ
+Senses:
+  Sense 1: "heel (body part)" (8x)
+    Desc: The literal heel of a human foot, including grasping someone's heel (Gen 25:26) and references to one's own or another's heels.
+    Domain: BODY_HEALTH > Body, Body Parts, and Body Products
+    Glosses: eng: by-the-heel, heel, heels-of- | spa: calcáñar, en-talón-de, mis-talones | fra: [עקביך], dans-trace, heels-de- | deu: [בעקב], [עקביך], an-der-Ferse
+    Refs: Gen 3:15, Gen 25:26, Gen 49:17, Gen 49:19, Job 18:9
+  Sense 2: "footprint, track, footstep" (3x)
+    Desc: Metaphorical extension from heel to the mark it leaves on the ground: footprints, tracks, or footsteps as traces of passage.
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: and-Your-footprints, in-tracks-of, the-footsteps-of | spa: en-las-huellas-de, pisadas-de, y-huellas-de-ti | fra: et-talon, sur-les-traces, talon | deu: [בעקבי], der-footsteps-von, und-dein-footprints
+    Refs: Ps 77:19, Ps 89:51, Song 1:8
+  Sense 3: "hoof (of animal)" (1x)
+    Desc: Extension to the hoofs of horses or other animals, as in the drumming hoofbeats of galloping steeds (Judg 5:22).
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: -the-hoofs-of- | spa: cascos-de | fra: -le-hoofs-de- | deu: -der-hoofs-von-
+    Refs: Judg 5:22
+  Sense 4: "rear guard, rear portion" (1x)
+    Desc: Figurative military sense denoting the rear guard or hindmost part of a marching company or army.
+    Domain: QUANTITY_NUMBER > Sequence
+    Glosses: eng: its-rear-guard | spa: su-retaguardia | fra: son-rear-garder | deu: sein-rear-bewachen
+    Refs: Josh 8:13
+
+=== H6286a ===
+Language: Hebrew, POS: V-Hitpael-Imperf-3ms, Occurrences: 13, Senses: 4
+
+BDB excerpt: † I. [פָּאַר] vb. Pi. beautify, glorify;—Pf. 3 ms. sf. פֵּאֲרָ֥ךְ (obj. Isr.) Is 55:5; 60:9; c. acc. of temple; Impf. 1 s. אֲפָאֵר 60:7; so יְפָאֵר עֲנָוִים בִּישׁוּעָה ψ 149:4; Inf. cstr. פָּאֵר Is 60:13 Ezr 7:27. Hithp. 1. glorify oneself, c. עַל pers.: = boast, Impf. 3 ms. יִתְפָּאֵר Ju 7:2 Is 10:15; as polite address to king, Imv. ms. הִתְפָּאֵר Ex 8:5 (J), assume the honour over me (to decide) when, etc. 2. get glory to oneself, be glorified, by means of (ב), of י׳, בְּיִשְׂרָאֵל יִתְפָּאָ֑ר Is 44:23, so 1 s. אֶתְפָּאָ֑ר 49:3; of people [by י׳], Inf. cstr. הִתְפָּאֵר 60:21; 61:3.
+Senses:
+  Sense 1: "glorify oneself, be glorified (Hitpael)" (4x)
+    Desc: Hitpael reflexive sense of showing or gaining glory, used especially of God manifesting His own glory.
+    Domain: COMMUNICATION > Communication
+    Glosses: eng: He-glorifies-Himself, I-will-glorify-myself, to-glorify-himself | spa: me-glorificaré, para-glorificarme, para-glorificarse | fra: glorifier | deu: verherrlichen
+    Refs: Isa 44:23, Isa 49:3, Isa 60:21, Isa 61:3
+  Sense 2: "glorify, honor (Piel)" (3x)
+    Desc: Piel transitive sense of bestowing glory or honor upon someone, treating them as distinguished or exalted.
+    Domain: COMMUNICATION > Communication
+    Glosses: eng: I-will-beautify, he-has-glorified-you | spa: glorificaré, te-glorificó | fra: glorifier | deu: verherrlichen
+    Refs: Isa 55:5, Isa 60:7, Isa 60:9
+  Sense 3: "beautify, adorn (Piel)" (3x)
+    Desc: Piel transitive sense of making something physically beautiful, decorating or embellishing it.
+    Domain: COMMUNICATION > Communication
+    Glosses: eng: he-adorns, to-beautify | spa: hermosea, para-glorificar, para-hermosear | fra: [לפאר], glorifier | deu: [לפאר], er-adorns, verherrlichen
+    Refs: Ezra 7:27, Ps 149:4, Isa 60:13
+  Sense 4: "boast, vaunt oneself (Hitpael)" (3x)
+    Desc: Hitpael reflexive sense of boasting, glorying in something, or vaunting oneself with pride.
+    Domain: COMMUNICATION > Communication
+    Glosses: eng: boast, does-glorify-itself, glory | spa: Acaso-se-gloriará, Gloríate, se-glorifique | fra: gloire, glorifier, se-vanter | deu: Herrlichkeit, prahlen, verherrlichen
+    Refs: Exod 8:9, Judg 7:2, Isa 10:15

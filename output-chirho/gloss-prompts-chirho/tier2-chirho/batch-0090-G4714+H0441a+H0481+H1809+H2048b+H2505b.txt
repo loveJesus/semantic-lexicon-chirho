@@ -1,0 +1,145 @@
+You are a biblical lexicographer composing glosses for a digital lexicon.
+For each lemma below, compose a JSON object. Separate objects with "---".
+
+Format for each:
+{
+  "lemma_id": "...",
+  "gloss_terse": "under 120 chars, concise definition covering the word's semantic range",
+  "gloss_readable": "2-5 sentences, 40-120 words. Don't start with 'This word'. Warm study-Bible footnote tone. Engaging, not dry.",
+  "senses": {
+    "1": "enriched 20-60 word description. Reference multilingual evidence when illuminating. Don't repeat the label verbatim.",
+    "2": "..."
+  }
+}
+
+Rules:
+- No markdown fences, just JSON objects separated by ---
+- Reference multilingual evidence naturally when it reveals something
+- gloss_readable should feel like a good study Bible footnote: helpful, clear, occasionally surprising
+- Each sense enrichment: how does the evidence support this sense? Mention 1-2 key passages when helpful.
+
+=== G4714 ===
+Language: Greek, POS: N-GFS, Occurrences: 9, Senses: 3
+
+BDB excerpt: στάσις [ᾰ], εως, ἡ, (ἵστημι) placing, setting, (i.e. δικτύων) Refs 5th c.BC+; erection of a statue, εἰκόνος Refs 3rd c.BC+ __2 standing stone, pillar, LXX __3 erection, building, Refs 3rd c.BC+; ={ἐργαστήριον}, Refs 1st c.BC+ __II (ἵστημι Refs 4th c.BC+ weighing, αὕτη 'στὶ λοιπὴ σφῷν στάσις Refs 5th c.BC+; στάσις μισθοῦ the paying of the doctor's fee, Refs 5th c.BC+ __B (ἵσταμαι) standing, stature, Refs 4th c.BC+; standing still, stationariness, defined as ἀπόφασις τοῦ ἰέναι, Refs 5th c.BC+; rest, as a category of the intelligible, Refs 3rd c.AD+; opposed to ἠρεμία, Refs; ὀμμάτων στάσιες fixed
+Senses:
+  Sense 1: "dissension, dispute" (4x)
+    Desc: A heated disagreement, dispute, or dissension within a group, particularly in contexts of religious or doctrinal controversy. Used in Acts 15:2 of the 'dissension and debate' (stasis kai zetesis) that...
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: dissension, dissensions | spa: disensión, división, sediciones | fra: sédition | deu: στάσεις, στάσεως, στάσις
+    Refs: Acts 15:2, Acts 23:7, Acts 23:10, Acts 24:5
+  Sense 2: "insurrection, riot, uprising" (4x)
+    Desc: A violent uprising, insurrection, or riot against civil authority. Used in Luke 23:19 and 23:25 of the 'insurrection' (stasis) in Jerusalem for which Barabbas was imprisoned; in Mark 15:7 of the same ...
+    Domain: VIOLENCE_CONFLICT > Hostility, Strife
+    Glosses: eng: an-insurrection, insurrection, of-riot | spa: de-sedición, insurrección | fra: sédition | deu: Aufruhr, στάσεως, στάσιν
+    Refs: Mark 15:7, Luke 23:19, Luke 23:25, Acts 19:40
+  Sense 3: "standing, status" (1x)
+    Desc: The state of standing or having a recognized position/status, deriving from the root meaning of histemi (to stand). In Heb 9:8, the author explains that 'while the first tabernacle still has standing'...
+    Domain: VIOLENCE_CONFLICT > Hostility, Strife
+    Glosses: eng: standing | spa: posición | fra: sédition | deu: Aufruhr
+    Refs: Heb 9:8
+
+=== H0441a ===
+Language: Hebrew, POS: N-msc, Occurrences: 9, Senses: 3
+
+BDB excerpt: † I. אַלּוּף adj. tame—א׳ abs. Mi 7:5 +; cstr. Pr 2:17 +; sf. אַלּוּפִי ψ 55:14; pl. אַלֻּפִים Je 13:21, sf. אַלּוּפֵינוּ ψ 144:14, etc.;— 1. tame, docile, כֶּבֶשׂ אַלּוּף a docile (gentle) lamb Je 11:19. 2. n.m. friend, intimate ψ 55:14 (‖ מְיֻדָּע) Mi 7:5 (‖ רֵעַ) Pr 16:28; 17:9 Je 13:21; of a woman’s husband א׳ נְעוּרֶיהָ Pr 2:17; fig. of י׳ as husband of Judah, id., Je 3:4. 3. i.q. 1. אֶלֶף; אַלּוּפֵינוּ מְסֻבָּלִים ψ 144:14 (i.e. cows).
+Senses:
+  Sense 1: "friend, intimate companion" (7x)
+    Desc: Noun meaning close friend, intimate companion, or confidant; used of a trusted friend (Ps 55:14, Mic 7:5, Prov 16:28, 17:9), a woman's husband (Prov 2:17), YHWH as husband of Judah (Jer 3:4), and lead...
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: friend, in-friend, leaders | spa: al-compañero-de, en-íntimo, guía-de | fra: [אלוף], [אלפים], chef | deu: [אלוף], [אלפים], [באלוף]
+    Refs: Ps 55:13, Prov 2:17, Prov 16:28, Prov 17:9, Jer 3:4
+  Sense 2: "tame, docile" (1x)
+    Desc: Adjective meaning tame or docile, used of a lamb led to slaughter (Jer 11:19 'a docile lamb').
+    Domain: PROPERTIES_RELATIONS > Features of Objects
+    Glosses: eng: gentle | spa: manso | fra: [אלוף] | deu: [אלוף]
+    Refs: Jer 11:19
+  Sense 3: "cattle, oxen" (1x)
+    Desc: Noun equivalent to eleph, meaning cattle or oxen (Ps 144:14 'our cattle are heavy-laden').
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: our-cattle | spa: Nuestros-bueyes | fra: chef | deu: unser-Vieh
+    Refs: Ps 144:14
+
+=== H0481 ===
+Language: Hebrew, POS: Conj-w | V-Nifal-ConjPerf-2ms, Occurrences: 9, Senses: 3
+
+BDB excerpt: † [אָלַם] vb. bind (perhaps cf. Assyrian [alāmu], alamattu, fortress Dl in ZimBP 114 & in BD Ezek.xi; Arabic أَلِمَ be in pain, Aramaic ܐܶܠܰܡ retain anger). Niph. (be bound =) be dumb, Pf. 3 fs. נֶאֱלָמָ֑ה Is 53:7; וְנֶאֱלַמְתָּ֫ Ez 3:26, etc.; Impf. 2 ms. תֵּאָלֵם Ez 24:27; 3 fpl. תֵּאָלַמְנָה ψ 31:19.— 1. be dumb, i.e. silent ψ 39:3 נ׳ דוּמִיָּה (‖ הֶחֱשֵׁיתִי); cf. v 10 (‖ לֹא אֶפְתַּח־פִּי); sim. of sheep Is 53:7 (‖ id.); be dumb, i.e. unable to speak Ez 3:26 (result of וּלְשׁוֹנְךָ אַדְבִּיק אֶל־חִכֶּ֑ךָ) cf. 24:27 יִפָּתַח פִּיךָ … וּתְדַבֵּר וְלֹא תֵאָלֵם עוֹד; 33:22 וַיִּפָּתַח פִּי וְ
+Senses:
+  Sense 1: "be dumb, be silent (Niphal)" (7x)
+    Desc: Niphal: to be bound (of the tongue), hence to be dumb, mute, or silent; used of voluntary silence (Ps 39:3, 10), of a sheep silent before shearers (Isa 53:7), of divinely imposed speechlessness (Ezek ...
+    Domain: BODY_HEALTH > Sensory Events and States
+    Glosses: eng: I-am-mute, I-was-mute, and-I-was-speechless | spa: Enmudecí, enmudeció, estarás-mudo | fra: [ונאלמת], [ונאלמתי], [נאלמה] | deu: [ונאלמת], [ונאלמתי], [נאלמה]
+    Refs: Ps 39:2, Ps 39:9, Isa 53:7, Ezek 3:26, Ezek 24:27
+  Sense 2: "be made dumb, be silenced (Niphal jussive)" (1x)
+    Desc: Niphal passive/jussive: to be made dumb or silenced, used of lying lips being silenced as a prayer for divine judgment (Ps 31:19).
+    Domain: BODY_HEALTH > Sensory Events and States
+    Glosses: eng: let-be-silenced | spa: Enmudezcan | fra: muet | deu: lass-sein-silenced
+    Refs: Ps 31:18
+  Sense 3: "bind (Piel)" (1x)
+    Desc: Piel: to bind, tie together; used literally of binding sheaves of grain (Gen 37:7).
+    Domain: PHYSICAL_ACTION > Attachment
+    Glosses: eng: binding | spa: atando | fra: liant | deu: banden
+    Refs: Gen 37:7
+
+=== H1809 ===
+Language: Hebrew, POS: V-Qal-Perf-1cp, Occurrences: 9, Senses: 3
+
+BDB excerpt: † [דָּלַל] vb. hang, be low, languish (NH Hiph. thin, thin out vines, etc.; Assyrian dalâlu, be weak, humble ZimBP 74.97; Arabic دَلَّ idirect, guide, دُلَّ be directed, guided; دَلْدَلَ put in motion, commotion; تَدَلْدَلَ be in motion, hang, dangle; also دَلٌّ amorous, coquettish, gesture or behaviour of women)— Qal Pf. דַּלֹּתִי ψ 116:6, דַּלּוֹתִי 142:7; 1 pl. דַּלּוֹנוּ ψ 79:8, דָּֽלֲלוּ, Is 19:6, דַּלּוּ Is 38:14 Jb 28:4 (on דַּלְיוּ Pr 26:7 cf. דָּלָה);—hang, ‘depend,’ Jb 28:4 (of one descending a miner’s shaft ‖ נָעוּ); be low, of streams Is 19:6 (‖ דָֽרְבוּ); be low, brought low, meta
+Senses:
+  Sense 1: "be brought low, be humbled" (4x)
+    Desc: Qal stative/perfective sense of being brought low, weakened, or humbled -- describing a state of abasement or diminished condition, typically of persons in distress before God. Arabic ḍa'ufa (ضَعُفَ) ...
+    Domain: BODY_HEALTH > Physiological Processes and States
+    Glosses: eng: I-am-brought-low, I-was-brought-low, and-was-impoverished | spa: Y-se-empobreció, estaba-abatido, estamos-muy-debilitados | fra: et-était-impoverished, languir | deu: ich-Krieg-gebracht-niedrig, ich-bin-erniedrigt, und-war-impoverished
+    Refs: Judg 6:6, Ps 79:8, Ps 116:6, Ps 142:6
+  Sense 2: "diminish, become poor, languish" (3x)
+    Desc: Qal/Niphal sense of diminishing, becoming thin or impoverished, declining in strength or resources -- said of nations, waters, or physical vitality fading. Arabic yankhafidu (يَنْخَفِضُ) / yaḍ'ufu (يَ...
+    Domain: AUTHORITY_RULE > Status
+    Glosses: eng: my-eyes, will-become-poor, will-diminish | spa: Desfallecieron, disminuirán, será-empobrecida | fra: [דלו], [דללו], [ידל] | deu: [דלו], [דללו], [ידל]
+    Refs: Isa 17:4, Isa 19:6, Isa 38:14
+  Sense 3: "hang down, dangle" (2x)
+    Desc: Qal sense of physical hanging down or dangling limply -- said of things that droop or hang loosely (e.g., legs of the lame in Prov 26:7, or miners suspended in Job 28:4). Arabic tadallā (تَدَلَّى), Ko...
+    Domain: AUTHORITY_RULE > Status
+    Glosses: eng: hang-limp, they-hang-down | spa: Cuelgan, cuelgan | fra: דלו, דליו | deu: [דלו], [דליו]
+    Refs: Job 28:4, Prov 26:7
+
+=== H2048b ===
+Language: Hebrew, POS: V-Hifil-Imperf-2mp, Occurrences: 9, Senses: 3
+
+BDB excerpt: † II. [תָּלַל] vb. Hiph. mock, deceive, trifle with (perhaps akin to Arabic دَلَّ act coquettishly; cf. secondary √ [הָתַל] p. 251);—mock, trifle with, c. ב pers.: Pf. 3 ms. (בִּי) הֵ֫תֶל Gn 31:7 (E), 2 ms. הֵתַ֫לְתָּ Je 16:10, 13, 15; Impf. 3 mpl. יְהָתֵ֫לּוּ Je 9:4, 2 mpl. תְּהָתֵ֫לּוּ Jb 13:9 (on both v. Ges§ 53 q Baerad loc.); Inf. cstr. Jb 13:9 and (abs.) Ex 8:25 (J). Hoph. Pf. 3 ms. הוּתַל Is 44:20 a heart (which is deceived.—Vid. [הָחַל], הֲתֻלִֿים" dir="rtl" >הֲתֻלִים p. 251.
+Senses:
+  Sense 1: "to mock, deride" (4x)
+    Desc: To mock, make sport of, deride someone — treating them with contemptuous ridicule (Hifil active: Judg 16:10,13,15; Hifil imperfect: Jer 9:5)
+    Domain: COMMUNICATION > Communication
+    Glosses: eng: will-mock, you-mocked | spa: se-burlan, te-burlaste | fra: [יהתלו], tu-mocked | deu: [יהתלו], du-spottete
+    Refs: Judg 16:10, Judg 16:13, Judg 16:15, Jer 9:5
+  Sense 2: "to deceive, mislead" (4x)
+    Desc: To deceive, mislead, or delude someone — causing them to believe what is false (Hifil active: Gen 31:7; Job 13:9; Exod 8:29)
+    Domain: FAITH_BELIEF > Hold a View, Believe, Trust
+    Glosses: eng: deceiving, has-deceived, like-deceiving | spa: como-engañar, engañando, engañaréis | fra: a-trompa, comme-tromper, deceiving | deu: [כהתל], [תהתלו], betrogen-hat
+    Refs: Gen 31:7, Exod 8:29, Job 13:9, Job 13:9
+  Sense 3: "to be deceived (passive)" (1x)
+    Desc: To be deceived or deluded — the passive (Hofal) of the deceive sense, describing the state of having been misled (Isa 44:20)
+    Domain: FAITH_BELIEF > Hold a View, Believe, Trust
+    Glosses: eng: deceived | spa: engañado | fra: [הותל] | deu: [הותל]
+    Refs: Isa 44:20
+
+=== H2505b ===
+Language: Hebrew, POS: V-Qal-Perf-3ms, Occurrences: 9, Senses: 3
+
+BDB excerpt: II. חָלַק vb. be smooth, slippery (NH adj. חָלָק smooth, empty, Arabic خَلَقَ make smooth, lie, forge, fabricate)— Qal Pf. ח׳ Ho 10:2; 3 mpl. חָֽלְקוּ ψ 55:22;—smooth, slippery, only fig.: Ho 10:2 of heart of faithless Isr. (so Ew Ke Wü Now RVm), We false; > Vrss (not 𝔊) Hi St who read חֻלַּק, divided is their heart; 𝔊 ἐμέρισαν; of words, smooth ψ 55:22 i.e. deceptive (‖ רַכּוּ דְבָרָיו מִשֶּׁמֶן). Hiph. Pf. הֶחֱלִיק ψ 36:3, הֶחֱלִיקָה Pr 2:16; 7:5; Impf. יַחֲלִיקוּן ψ 5:10; Pt. מַחֲלִיק Pr 28:23 + 2 times; make smooth: 1. lit. of idol-maker Is 41:7 c. acc. instr. פַּטִּישׁ hammer. 2. fig. the
+Senses:
+  Sense 1: "to flatter, make smooth (speech)" (6x)
+    Desc: Hifil: to make smooth with words, to flatter or use smooth/deceptive speech; includes active participle 'flatterer' and reflexive 'flatter oneself'
+    Domain: PROPERTIES_RELATIONS > True, False
+    Glosses: eng: he-flatters-himself, more-than-one-who-flatters, she-makes-smooth | spa: alisan, ha-alisado, halaga | fra: de-partager, le-être-doux, partager | deu: [החליקה], [מחליק], [ממחליק]
+    Refs: Ps 5:9, Ps 36:2, Prov 2:16, Prov 7:5, Prov 28:23
+  Sense 2: "to be smooth (physical)" (2x)
+    Desc: Qal: to be physically smooth or slippery; also Hifil participle used of a metalworker who smooths surfaces with a hammer
+    Domain: PROPERTIES_RELATIONS > Features of Objects
+    Glosses: eng: are-smooth, with-the-hammer | spa: alisador, suaves-fueron | fra: [מחליק], être-doux | deu: [מחליק], sind-smooth
+    Refs: Ps 55:21, Isa 41:7
+  Sense 3: "to be divided, slippery" (1x)
+    Desc: Qal perfect 3ms: to be divided or split; Hosea 10:2 'their heart is divided' — possibly a distinct root sense overlapping with חלק I
+    Domain: QUANTITY_NUMBER > Whole, Unite, Part, Divide
+    Glosses: eng: is-divided | spa: dividido | fra: partager | deu: Teil
+    Refs: Hos 10:2

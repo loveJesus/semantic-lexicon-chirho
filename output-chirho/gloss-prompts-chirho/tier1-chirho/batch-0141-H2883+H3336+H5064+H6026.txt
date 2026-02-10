@@ -1,0 +1,123 @@
+You are a biblical lexicographer composing glosses for a digital lexicon.
+For each lemma below, compose a JSON object. Separate objects with "---".
+
+Format for each:
+{
+  "lemma_id": "...",
+  "gloss_terse": "under 120 chars, concise definition covering the word's semantic range",
+  "gloss_readable": "2-5 sentences, 40-120 words. Don't start with 'This word'. Warm study-Bible footnote tone. Engaging, not dry.",
+  "senses": {
+    "1": "enriched 20-60 word description. Reference multilingual evidence when illuminating. Don't repeat the label verbatim.",
+    "2": "..."
+  }
+}
+
+Rules:
+- No markdown fences, just JSON objects separated by ---
+- Reference multilingual evidence naturally when it reveals something
+- gloss_readable should feel like a good study Bible footnote: helpful, clear, occasionally surprising
+- Each sense enrichment: how does the evidence support this sense? Mention 1-2 key passages when helpful.
+
+=== H2883 ===
+Language: Hebrew, POS: V-Pual-Perf-3cp, Occurrences: 10, Senses: 4
+
+BDB excerpt: † טָבַע vb. sink, sink down (NH id.; Aramaic ܛܒܰܥ, טְבַע; Ph. טבע coin; Assyrian ṭebû, sink in, ṭabbîʾu, diver (water-fowl) etc., v. Muss-ArnoltJBL xi, 1892, 170 DlHWB; Arabic طَبَعَ seal, stamp, imprint; Ethiopic ጠምዐ dip)— Qal Pf. טָבַעְתִּי ψ 69:3; טָֽבְעוּ ψ 9:16 La 2:9; Impf. וַיִּטְבַּע Je 38:6; וַתִּטְבַּע 1 S 17:49; אֶטְבָּ֑עָה ψ 69:15;—sink, sink down, intrans., c. בְּ; 1 S 17:49 (stone into Goliath’s forehead); Je 38:6 (Jerem. in mire of dungeon); La 2:9 (gates of Jerus. into ground); metaph. of distress; ψ 69:3 ט׳בִיוֵן מְצוּלָה; 69:15 (‖ הצילני מִטִּיט); nations into the pit (בַּשַּ
+Senses:
+  Sense 1: "sink into water or mire" (5x)
+    Desc: Qal sense of sinking down into water, mud, or deep mire, whether literal drowning or figurative distress.
+    Domain: MOVEMENT > Linear Movement
+    Glosses: eng: Have-sunk, I-have-sunk, and-sank | spa: Me-hundo, Se-han-hundido, Se-hundieron | fra: [ויטבע], [טבעו], enfoncer | deu: [ויטבע], [טבעו], haben-sunk
+    Refs: Ps 9:15, Ps 69:2, Ps 69:14, Jer 38:6, Lam 2:9
+  Sense 2: "be sunk, be settled down" (3x)
+    Desc: Hofal (causative passive) sense of being caused to sink, be settled, or be fixed in place, whether into water or into the ground.
+    Domain: MOVEMENT > Linear Movement
+    Glosses: eng: sank, were-settled, were-sunk | spa: fueran-hundidos, fueron-hundidas, hundieron | fra: [הטבעו], הטבעו | deu: [הטבעו]
+    Refs: Job 38:6, Prov 8:25, Jer 38:22
+  Sense 3: "be drowned, be submerged" (1x)
+    Desc: Pual (intensive passive) sense of being drowned or fully submerged, emphasizing the completeness of the sinking.
+    Domain: PHYSICAL_ACTION > Activities Involving Liquids
+    Glosses: eng: were-drowned | spa: fueron-hundidos | fra: étaient-drowned | deu: waren-drowned
+    Refs: Exod 15:4
+  Sense 4: "sink into, become embedded" (1x)
+    Desc: Qal sense of sinking or being thrust into a solid substance so as to become fixed or embedded (e.g., feet sinking into ground, gates sinking into earth).
+    Domain: MOVEMENT > Linear Movement
+    Glosses: eng: and-sank | spa: y-se-hundió | fra: et-sank | deu: und-sank
+    Refs: 1Sam 17:49
+
+=== H3336 ===
+Language: Hebrew, POS: V-Qal-Prtcpl-msc | 3ms, Occurrences: 10, Senses: 4
+
+BDB excerpt: † I. יֵ֫צֶר n.m. Is 26:3 form, framing, purpose;—י׳ Gn 6:5 + 5 times; יִצְרוֹ Dt 31:21 Hb 2:18; יִצְרֵנוּ ψ 103:14;— 1. pottery, formed by the potter Is 29:16. 2. form of a graven image Hb 2:18. 3. form of man as made of the dust ψ 103:14. 4. of what is framed in the mind (cf. יָצַר 1 c, 2 b), imagination, device, purpose: יצר מחשׁב(ו)ת לב(ב) Gn 6:5 (J), 1 Ch 29:18; י׳ מחשׁבות 28:9; י׳ לב Gn 8:21 (J); יֵצֶר alone Dt 31:21 (J); יֵצֶר סָמוּךְ Is 26:3 a stedfast purpose (or frame of mind). (In NH יֵצֶר is common in sense of impulse: יצר הטוב and יצר הרע of good and bad tendency in man.)
+Senses:
+  Sense 1: "inclination, disposition, intent" (6x)
+    Desc: The primary nominal sense of yetser meaning 'inclination, disposition, intent' — the inner bent or tendency of the heart/mind; Arabic uses تَصَوُّر (tasawwur) 'imagination,' مَيْل (mayl) 'inclination,...
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: A-mind, as-the-intent-of, his-inclination | spa: Inclinación, intención-de, para-intención-de | fra: [יצר], [ליצר], inclination-de | deu: Gebilde, [יצר], [ליצר]
+    Refs: Gen 6:5, Gen 8:21, Deut 31:21, 1Chr 28:9, 1Chr 29:18
+  Sense 2: "thing formed, product (of craftsmanship)" (2x)
+    Desc: The concrete sense of yetser meaning 'that which is formed/shaped' — the product of a craftsman or maker, used in potter/clay and idol imagery; Arabic صُنع (sun') 'making/workmanship' and مَصُوغ (masw...
+    Domain: PHYSICAL_ACTION > Perform, Do
+    Glosses: eng: of-his-making, says | spa: en-su-obra, y-lo-formado | fra: [ויצר], création | deu: Gebilde, und-bildete
+    Refs: Isa 29:16, Hab 2:18
+  Sense 3: "frame, constitution (physical formation)" (1x)
+    Desc: The sense of yetser meaning 'frame, constitution' — how a person is physically formed or made, emphasizing creaturely frailty; Arabic جِبلَّة (jibilla) 'natural constitution/clay'; Korean 지으신 바 (jieus...
+    Domain: PHYSICAL_ACTION > Perform, Do
+    Glosses: eng: our-frame | spa: nuestra-formación | fra: forme | deu: unser-frame
+    Refs: Ps 103:14
+  Sense 4: "maker, former (Qal participle of yatsar)" (1x)
+    Desc: The Qal active participle yotser meaning 'its maker, its former' — the one who forms or shapes; Arabic صانِع (saani') 'maker/craftsman'; Korean 만든 자 (mandeun ja) 'the one who made'; Spanish hacedor 'm...
+    Domain: PHYSICAL_ACTION > Perform, Do
+    Glosses: eng: its-maker | spa: su-hacedor | fra: création | deu: Gebilde
+    Refs: Hab 2:18
+
+=== H5064 ===
+Language: Hebrew, POS: V-Nifal-Perf-3fs, Occurrences: 10, Senses: 4
+
+BDB excerpt: † [נָגַר] vb. pour, flow, run (Aramaic ܢܓܰܪ be long (of time), Aph. prolong, protract; נְגַר endure, flow, stream);— Niph. Pf. 3 fs. נִגְּרָה ψ 77:3; La 3:49; Pt. pl. נִגָּרִים 2 S 14:14; נִגָּרוֹת Jb 20:28;— 1. be poured, spilt, 2 S 14:14 (כַּמַּיִם הַנִּגָּרים אַרְצָה in sim. of mortality). 2. pour oneself, flow, trickle, of eye (in tears) La 3:49. 3. fig. vanish, Jb 20:28 (‖ גָּלָה). 4. be stretched out (?) יָדִי לַיְלָה נִגְּרָה ψ 77:3 (or read עֵינִי?). Hiph. Pf. וְהִגַּרְתִּ֫י Mi 1:6; Impf. וַיַּגֵּר ψ 75:9; וַתַּגֵּר Ez 35:5; יַגִּירֻ֫הוּ ψ 63:11; Imv. sf. הַגִּרֵם Je 18:21;—pour down, 
+Senses:
+  Sense 1: "to be poured out, to flow" (4x)
+    Desc: Nifal/Hofal passive: liquid or tears flowing or being poured out, used of water, blood, or weeping.
+    Domain: MOVEMENT > Linear Movement
+    Glosses: eng: poured-down, poured-out, pours-out | spa: derramadas, derramamientos, se-derrama | fra: [נגרה], couler, le-versa-dehors | deu: [מגרים], [נגרה], [נגרות]
+    Refs: 2Sam 14:14, Job 20:28, Lam 3:49, Mic 1:4
+  Sense 2: "to pour out, cause to flow" (3x)
+    Desc: Hifil causative: actively pouring out or causing liquid to flow down, used of God or a person pouring out substances.
+    Domain: PHYSICAL_ACTION > Activities Involving Liquids
+    Glosses: eng: and-He-pours-out, and-I-will-pour-down, and-pour-them-out | spa: y-derrama, y-derramaré, y-entrégalos | fra: [והגרם], et-couler, et-verser | deu: [והגרם], [והגרתי], und-er-giesst-aus-heraus
+    Refs: Ps 75:8, Jer 18:21, Mic 1:6
+  Sense 3: "to deliver over, hand over" (2x)
+    Desc: Hifil causative with figurative extension: to thrust down, give over, or deliver persons into the power of another, as in toppling enemies.
+    Domain: PHYSICAL_ACTION > Activities Involving Liquids
+    Glosses: eng: and-you-gave-over, they-will-pour-him-out | spa: Lo-derramarán, y-derramaste | fra: et-couler, verser | deu: [ותגר], sie-wird-ausgiessen-ihn-heraus
+    Refs: Ps 63:10, Ezek 35:5
+  Sense 4: "to be stretched out, spread" (1x)
+    Desc: Nifal passive with extended sense of being spread or stretched out, distinct from the flowing of liquids.
+    Domain: PHYSICAL_ACTION > Activities Involving Liquids
+    Glosses: eng: was-stretched-out | spa: extendí | fra: verser | deu: Krieg-ausgestreckt-heraus
+    Refs: Ps 77:2
+
+=== H6026 ===
+Language: Hebrew, POS: V-Hitpael-Imperf-2ms, Occurrences: 10, Senses: 4
+
+BDB excerpt: † [עָנֹג, LagBN31] vb. be soft, delicate, dainty (NH id. Pi. make soft, pliable, live or spend in enjoyment; Arabic غَنِجَ use amorous behaviour, after languor);— Pu. Pt. f. הַמְּעֻנָּגָה Je 6:2 daintily bred, fig. of Jerusalem. Hithp. 1. be of dainty habit, Inf. cstr. הִתְעַנֵּג Dt 28:56 (woman, ‖ רֹךְ). 2. take exquisite delight, Pf. 3 pl. וְהִתְעַנְּגוּ consec. ψ 37:11 (עַל rei); 2 mpl. וְהִתְעַנַּגְתֶּם consec. Is 66:11 (מִן rei); Impf. 3 ms. יִתְעַנָּ֑ג Jb 27:10; 2 ms. תִּתְעַנַּג Is 58:14, תִּתְעַנָּ֑ג Jb 22:26 (all c. [שַׁדַּי
+Senses:
+  Sense 1: "delight oneself, take pleasure" (7x)
+    Desc: Hitpael reflexive sense: to delight oneself in, take exquisite pleasure or joy in something, used of both human enjoyment and spiritual delight in God.
+    Domain: EMOTION_ATTITUDE > Attitudes and Emotions
+    Glosses: eng: and-delight-yourself, and-delight-yourselves, and-let-delight-itself | spa: Y-deléitate, se-deleitará, te-deleitarás | fra: délicat, et-délicat, et-le-se-délecter | deu: [והתענגתם], [ותתענג], [יתענג]
+    Refs: Job 22:26, Job 27:10, Ps 37:4, Ps 37:11, Isa 55:2
+  Sense 2: "delicateness, pampered luxury" (1x)
+    Desc: Hitpael infinitive used as an abstract noun denoting the state of soft or luxurious living, daintiness, pampered delicacy.
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: from-delicateness | spa: por-delicadeza | fra: de-delicateness | deu: von-delicateness
+    Refs: Deut 28:56
+  Sense 3: "make sport of, mock" (1x)
+    Desc: Hitpael sense of taking delight in a derisive or mocking manner, to sport oneself at another's expense, make merry over someone.
+    Domain: COMMUNICATION > Communication
+    Glosses: eng: do-you-mock | spa: os-burláis | fra: délicat | deu: [תתענגו]
+    Refs: Isa 57:4
+  Sense 4: "delicate, pampered person" (1x)
+    Desc: Pual participle describing a person (here feminine) who is delicate, tender, or accustomed to luxury and soft living.
+    Domain: EMOTION_ATTITUDE > Attitudes and Emotions
+    Glosses: eng: and-the-delicate | spa: y-la-delicada | fra: et-délicat | deu: [והמענגה]
+    Refs: Jer 6:2

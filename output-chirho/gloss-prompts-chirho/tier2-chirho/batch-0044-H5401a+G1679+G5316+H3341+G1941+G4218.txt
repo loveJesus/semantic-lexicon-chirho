@@ -1,0 +1,145 @@
+You are a biblical lexicographer composing glosses for a digital lexicon.
+For each lemma below, compose a JSON object. Separate objects with "---".
+
+Format for each:
+{
+  "lemma_id": "...",
+  "gloss_terse": "under 120 chars, concise definition covering the word's semantic range",
+  "gloss_readable": "2-5 sentences, 40-120 words. Don't start with 'This word'. Warm study-Bible footnote tone. Engaging, not dry.",
+  "senses": {
+    "1": "enriched 20-60 word description. Reference multilingual evidence when illuminating. Don't repeat the label verbatim.",
+    "2": "..."
+  }
+}
+
+Rules:
+- No markdown fences, just JSON objects separated by ---
+- Reference multilingual evidence naturally when it reveals something
+- gloss_readable should feel like a good study Bible footnote: helpful, clear, occasionally surprising
+- Each sense enrichment: how does the evidence support this sense? Mention 1-2 key passages when helpful.
+
+=== H5401a ===
+Language: Hebrew, POS: V-Hifil-Prtcpl-fp, Occurrences: 32, Senses: 3
+
+BDB excerpt: † I. נָשַׁק vb. kiss (NH id., Assyrian našâku, 𝔗 נְשֵׁיק, נְשַׁק, Syriac ܢܫܰܩ, kiss (orig. smell [نَشِقَ] according to LagNov. Psalt. Spec. 24 f.): Arabic نَسَقَ is fasten together, arrange in order, Ethiopic ንሱቅ pt. ordine dispositus, apte sertus Di 641, poss. akin to II. נשׁק);— Qal Pf. 3 ms. נ׳ 1 K 19:18 2 S 15:5; 3 fs. נָֽשְׁקָה Pr 7:13; 3 pl. נָשָׁ֑קוּ ψ 85:11; Impf. יִשַּׁק Gn 41:40, וַיִּשַּׁק 27:27 +; sf. יִשָּׁקֵ֫נִי Ct 1:2; 1 s. cohort. אֶשֳּׁקָה־ 1 K 19:20; 3 mpl. יִשָּׁק֑וּן Ho 13:2, etc.; Imv. וּשֲׁקָה Gn 27:26; Inf. cstr. נְשָׁק־ 2 S 20:9;—kiss, usually c. לְ pers.: Gn 27:26, 27;
+Senses:
+  Sense 1: "to kiss (Qal)" (27x)
+    Desc: Physical act of kissing as greeting, farewell, affection, or homage, covering all Qal inflections of נָשַׁק.
+    Domain: GROUPS_COMMUNITY > Association
+    Glosses: eng: and-he-kissed, and-he-kissed-, and-he-kissed-him | spa: Besaré, Y-besó, besad | fra: --baiser, baiser, et-baisa | deu: kuesste, lass-mich-kiss-, und-er-kissed
+    Refs: Gen 27:26, Gen 27:27, Gen 29:11, Gen 29:13, Gen 33:4
+  Sense 2: "to kiss fervently / do homage (Piel)" (4x)
+    Desc: Intensive kissing or repeated kissing, including the act of paying homage by kissing (as in Psalm 2:12), covering all Piel inflections of נָשַׁק.
+    Domain: GROUPS_COMMUNITY > Association
+    Glosses: eng: and-he-kissed, kiss-, to-kiss | spa: Honrad-, Y-besó, para-besar | fra: baiser, et-il-baisa, à-baiser | deu: kiss-, und-er-küsste, und-küsste
+    Refs: Gen 31:28, Gen 31:55, Gen 45:15, Ps 2:12
+  Sense 3: "to touch, make contact (Hifil)" (1x)
+    Desc: Of objects touching or being joined together, a causative sense distinct from the literal act of kissing.
+    Domain: PHYSICAL_ACTION > Attachment
+    Glosses: eng: touching | spa: tocándose | fra: baiser | deu: [משיקות]
+    Refs: Ezek 3:13
+
+=== G1679 ===
+Language: Greek, POS: V-PIA-1S, Occurrences: 31, Senses: 3
+
+BDB excerpt: ἐλπίζω, Attic dialect future -ῐῶLXX+NT+4th c.BC+: aorist ἤλπισα Refs 5th c.BC+: perfect ἤλπικα NT+3rd c.BC+: pluperfect ἠλπίκειν Refs 1st c.AD+:—middle, Refs 1st c.BC+:—passive, aorist ἠλπίσθην Refs 5th c.BC+: perfect ἤλπισμαι Refs 5th c.BC+, hope for, or rather (in earlier writers) look for, expect:—Constr.: with accusative, Refs 5th c.BC+: frequently with a dependent clause in infinitive, hope to do, or hope or expect that..; with future infinitive, ἐ. μιν ἀποθανέεσθαι Refs 5th c.BC+; ἐ. τὴν Εὐρώπην δουλώσεσθαι (variant{-ασθαι}) Refs: with aorist infinitive, ἐ. ποτὲ δεῖξαι Refs 5th c.BC+; th
+Senses:
+  Sense 1: "to hope or expect" (28x)
+    Desc: To look forward to something with desire and expectation; general hoping for a future outcome or fulfillment.
+    Domain: EMOTION_ATTITUDE > Attitudes and Emotions
+    Glosses: eng: I-hope, hope, hopes | spa: Espero, espera, esperad | fra: espérer | deu: hoffen, ἐλπίζων, ἐλπιοῦσιν
+    Refs: Matt 12:21, Luke 6:34, Luke 23:8, Luke 24:21, John 5:45
+  Sense 2: "to set hope on, trust in" (2x)
+    Desc: To place one's confident reliance or trust in someone or something, emphasizing settled confidence rather than mere expectation.
+    Domain: EMOTION_ATTITUDE > Attitudes and Emotions
+    Glosses: eng: has-hoped, to-have-hoped | spa: esperar, ha-esperado | fra: espérer | deu: hoffen
+    Refs: 1Tim 5:5, 1Tim 6:17
+  Sense 3: "that which is hoped for" (1x)
+    Desc: Used substantivally in the passive to denote the object or content of hope, as in Hebrews 11:1 'the substance of things hoped for.'
+    Domain: EMOTION_ATTITUDE > Attitudes and Emotions
+    Glosses: eng: of-things-hoped-for | spa: de-cosas-esperadas | fra: espérer | deu: hoffen
+    Refs: Heb 11:1
+
+=== G5316 ===
+Language: Greek, POS: V-AIP-3S, Occurrences: 31, Senses: 3
+
+BDB excerpt: φαίνω, Refs 8th c.BC+, Epic dialect also φαείνω (which see):—future φᾰνῶ, Refs 5th c.BC+; Ionic dialect φᾰνέω (ἀπο-) Refs 5th c.BC+, optative φᾰνοίην Refs 5th c.BC+: aorist 1 ἔφηνα Refs 8th c.BC+; Doric dialect ἔφᾱνα Refs 5th c.BC+subjunctive, ἀπο-φάνῃ uncertain reading in Refs; φάνῃς Refs 4th c.BC+; so in late Prose, (ἐξ-) NT+2nd c.AD+; Epic dialect iterative φάνεσκε (intransitive) Refs 8th c.BC+: perfect πέφαγκα Refs 4th c.BC+perfect πέφηνα (see. belowRefs, Doric dialect3rd.pers. plural ἐκ-πεφάναντι Refs 5th c.BC+; pluperfect ἐπεφήνειν Refs 2nd c.AD+:—middle, future infinitive φᾰνεῖσθαι Refs
+Senses:
+  Sense 1: "appear, become visible" (13x)
+    Desc: To become visible or manifest, to come into sight or be revealed (of persons, things, or phenomena that were previously unseen).
+    Domain: BODY_HEALTH > Sensory Events and States
+    Glosses: eng: appeared, appearing, he-appeared | spa: aparecerá, apareciendo, apareció | fra: apparaître, briller, scheinen | deu: erscheint, scheinen
+    Refs: Matt 1:20, Matt 2:7, Matt 9:33, Matt 13:26, Matt 24:30
+  Sense 2: "seem, have appearance of" (9x)
+    Desc: To seem or appear to be something, to give an outward impression or have the appearance of a certain quality without necessarily being so.
+    Domain: BODY_HEALTH > Sensory Events and States
+    Glosses: eng: appear, appears, does-it-seem | spa: aparece, parece, parecen | fra: apparaître | deu: erscheint, scheinen
+    Refs: Matt 2:13, Matt 2:19, Matt 6:5, Matt 6:16, Matt 6:18
+  Sense 3: "shine, give light" (9x)
+    Desc: To shine or emit light, to illuminate or radiate brightness (of celestial bodies, lamps, or metaphorically of persons who reflect divine light).
+    Domain: BODY_HEALTH > Sensory Events and States
+    Glosses: eng: might-shine, shines, shining | spa: alumbrando, alumbren, brilla | fra: apparaître, scheinen | deu: scheinen
+    Refs: John 1:5, John 5:35, Phil 2:15, 2Pet 1:19, 1John 2:8
+
+=== H3341 ===
+Language: Hebrew, POS: Conj-w | V-Hifil-ConjPerf-1cs, Occurrences: 31, Senses: 3
+
+BDB excerpt: † [יָצַת] vb. kindle, burn (intr.) (NH id. (rare))— Qal Impf. 3 fs. וַתִּצַּת Is 9:17; יִצַּ֑תּוּ 33:12 Je 51:58 (Köi 431); 3 fpl. תִּצַּתְנָה Je 49:2;—kindle, intr., fig. of wickedness, Is 9:17; sq. בָּאֵשׁ be kindled with fire (= set on fire), of thorns (in sim.) 33:12, Je 49:2 (of dependent towns and villages of Rabbah, under fig. of daughters), 51:58 (of gates of Babylon). Niph. Pf. נִצְּתָה 2 K 22:13 Je 9:11 + 2:15 Kt (Qr נִצְּתוּ); וְנִצְּתָה consec. 2 K 22:17 Je 46:19; נִצְּתוּ Ne 1:3 + 2 times + Je 2:15 Qr (cf. supr.);—be kindled, fig. of wrath of י׳, 2 K 22:13, 17; be burned, of gates
+Senses:
+  Sense 1: "kindle, set on fire (Hifil)" (18x)
+    Desc: Causative active: to kindle a fire, to set something on fire, to ignite — the subject deliberately causes burning.
+    Domain: NATURAL_WORLD > Physical Events and States
+    Glosses: eng: He-has-kindled, [and-set-it-on-fire], and-He-kindled | spa: (y-prended-fuego-a-ella), Y-encenderé, [y-prended-fuego-a-ella] | fra: [and-plaça-cela-sur-fire], allumer, et-allumer | deu: [and-setzte-es-auf-fire], [והצתי], [ויצת]
+    Refs: Josh 8:8, Josh 8:19, Judg 9:49, 2Sam 14:30, 2Sam 14:30
+  Sense 2: "be burned, be kindled (Nifal)" (9x)
+    Desc: Passive or reflexive: to be set on fire, to be burned, to be scorched — the subject undergoes or suffers burning.
+    Domain: NATURAL_WORLD > Physical Events and States
+    Glosses: eng: (are-burned), [are-burned], and-kindled | spa: [fueron-quemadas], fue-quemada, fueron-quemadas | fra: [נצתו], allumer, et-allumer | deu: [נצתו], anzuenden, kindled
+    Refs: 2Kgs 22:13, 2Kgs 22:17, Neh 1:3, Neh 2:17, Jer 2:15
+  Sense 3: "burn, catch fire (Qal)" (4x)
+    Desc: Basic intransitive: to burn, to catch fire, to be kindled — describing the process of burning without specifying an external agent.
+    Domain: NATURAL_WORLD > Physical Events and States
+    Glosses: eng: and-it-kindles, they-are-burned, will-be-burned | spa: serán-encendidas, serán-encendidos, serán-quemadas | fra: allumer, et-allumer | deu: anzuenden, und-anzuenden
+    Refs: Isa 9:18, Isa 33:12, Jer 49:2, Jer 51:58
+
+=== G1941 ===
+Language: Greek, POS: V-AIA-3P, Occurrences: 30, Senses: 3
+
+BDB excerpt: ἐπικᾰλέω, summon a god to a sacrifice or as witness to an oath, etc., invoke, θεόν NT+5th c.BC+; ἐ. θεόν τινι invoke a god over one, to be gracious to him, Refs 5th c.BC+; or, watch over his good faith, Refs:— middle,Refs 1st c.BC+ __b. pray for, πρὸ καιροῦ τὸν θάνατον “PLond.” 5.1676.24 Refs 6th c.AD+ __2. invite, γέροντας ἐπὶ πλέονας καλέσαντες 8th c.BC: Odyssea Homerus Epicus “Odyssey” 7.189:—middle, Refs 5th c.BC+ __II. middle, call in as a helper or ally, ἐπικαλεῖσθαί τινα σύμμαχον Refs: c.infinitive, Refs 5th c.BC+ __II.2. call in as witness, μάρτυρας ἐ. τινάς Refs 5th c.BC+: c.infinitiv
+Senses:
+  Sense 1: "call upon or invoke" (13x)
+    Desc: To call upon a deity or the name of the Lord in prayer, worship, or supplication; to invoke for help or witness.
+    Domain: COMMUNICATION > Communication
+    Glosses: eng: I-call-upon, calling-on, calling-out | spa: invocando, invocare, invocarán | fra: invoquer | deu: anrufen, ruft-an
+    Refs: Matt 10:25, Acts 2:21, Acts 7:59, Acts 9:14, Acts 9:21
+  Sense 2: "be called or surnamed" (11x)
+    Desc: Passive sense: to be given a name, title, or surname; to be known as or called by a particular designation.
+    Domain: COMMUNICATION > Communication
+    Glosses: eng: being-called, called-upon, has-been-called | spa: es-llamado, fue-llamado, ha-sido-invocado | fra: invoquer | deu: anrufen, ruft-an
+    Refs: Acts 1:23, Acts 4:36, Acts 10:5, Acts 10:18, Acts 10:32
+  Sense 3: "appeal to legally" (6x)
+    Desc: To make a formal legal appeal to a higher authority, especially appealing to Caesar for judicial review.
+    Domain: COMMUNICATION > Communication
+    Glosses: eng: I-appeal-to, having-appealed, having-appealed-to | spa: a-apelar, apelo, habiendo-apelado | fra: invoquer | deu: ruft-an
+    Refs: Acts 25:11, Acts 25:12, Acts 25:21, Acts 25:25, Acts 26:32
+
+=== G4218 ===
+Language: Greek, POS: Adv, Occurrences: 30, Senses: 3
+
+BDB excerpt: Included with: πότε, Ionic dialect κότε, Doric dialect πόκα Refs 3rd c.BC+:—interrogative Particle used in direct and indirect questions, when? at what time? Refs 8th c.BC+; πότ᾽ ἆρ; ={πότε} with ἆρα Refs 5th c.BC+ __II indefinite ποτε (Attic dialect, also Refs 4th c.BC+, Ionic dialect κοτε, Doric dialect ποκα, Aeolic dialect ποτα Refs 7th c.BC+ __II.1 at some time or other, at some time, τάχ᾽ ἄν ποτε θυμὸν ὀλέσσῃ Refs 8th c.BC+; π. καὶ ἄλλοτε at certain other times, Refs 5th c.BC+ __II.2 in hypothetical clauses, questions, etc., at any time, ever, Refs 5th c.BC+; compare εἴ ποτε: also with re
+Senses:
+  Sense 1: "once/formerly" (19x)
+    Desc: Enclitic temporal particle meaning 'once, formerly, at one time, in the past,' marking a contrast between a former state and the present. Frequent in Pauline letters to describe the readers' pre-conve...
+    Domain: TIME > Time
+    Glosses: eng: formerly, once, once- | spa: antes, en-otro-tiempo, en-un-tiempo | fra: autrefois | deu: einst
+    Refs: John 9:13, Rom 7:9, Rom 11:30, Gal 1:13, Gal 1:23
+  Sense 2: "ever/at any time" (8x)
+    Desc: Enclitic particle used with negatives or in rhetorical questions to mean 'ever, at any time,' emphasizing absolute negation or strong interrogation. Found in Heb 1:5, 1:13 ('to which of the angels did...
+    Domain: TIME > Time
+    Glosses: eng: at-any-time, ever | spa: alguna-vez, alguna-vez?, jamás | fra: autrefois | deu: einst
+    Refs: 1Cor 9:7, Eph 5:29, 1Thess 2:5, Heb 1:5, Heb 1:13
+  Sense 3: "at last/now at length" (3x)
+    Desc: Enclitic temporal particle meaning 'at last, finally, now at length,' expressing the eventual arrival of something long awaited. In Phil 4:10 Paul rejoices that the Philippians' care for him has 'at l...
+    Domain: TIME > Time
+    Glosses: eng: at-last, when | spa: alguna-vez, por-fin, una-vez | fra: autrefois | deu: einst
+    Refs: Luke 22:32, Rom 1:10, Phil 4:10

@@ -1,0 +1,143 @@
+You are a biblical lexicographer composing glosses for a digital lexicon.
+For each lemma below, compose a JSON object. Separate objects with "---".
+
+Format for each:
+{
+  "lemma_id": "...",
+  "gloss_terse": "under 120 chars, concise definition covering the word's semantic range",
+  "gloss_readable": "2-5 sentences, 40-120 words. Don't start with 'This word'. Warm study-Bible footnote tone. Engaging, not dry.",
+  "senses": {
+    "1": "enriched 20-60 word description. Reference multilingual evidence when illuminating. Don't repeat the label verbatim.",
+    "2": "..."
+  }
+}
+
+Rules:
+- No markdown fences, just JSON objects separated by ---
+- Reference multilingual evidence naturally when it reveals something
+- gloss_readable should feel like a good study Bible footnote: helpful, clear, occasionally surprising
+- Each sense enrichment: how does the evidence support this sense? Mention 1-2 key passages when helpful.
+
+=== H8641 ===
+Language: Hebrew, POS: N-fpc | 1cs, Occurrences: 76, Senses: 3
+
+BDB excerpt: † תְּרוּמָה n.f. contribution, offering, for sacred uses (not certain before Dt.; chiefly Ez P and late) (proposes something lifted off, separated);—abs. ת׳ Ez 45:13 +; cstr. תְּרוּמַת Ex 30:14 +; sf. תְּרוּמָתִי 25:2, מַתְכֶם- Nu 18:27, מָתָם- Ex 29:28; pl. תְּרוּמוֹת Na 12:44 Pr 29:4, מֹת- 2 S 1:21 Nu 18:19; sf. תְּרוּמֹתָ֑י v 8, etc.;— 1. earliest use: contrib. of products of soil for י׳, תְּרוּמַת יֶדְכֶם Dt 12:6, 11, cf. v 17; also Ez 20:40 Nu 15:19, 20(×2), 21. 2. contrib. for prince, in Ezekiel’s scheme: Ez 45:13, 16 3. tract of land to be set apart for temple, and for use of priests an
+Senses:
+  Sense 1: "contribution, sacred offering" (68x)
+    Desc: A voluntary contribution or offering set apart for God, the sanctuary, or sacred purposes — the general cultic sense of terumah as a dedicated gift or donation.
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: contribution, contribution-of, contribution-of- | spa: La-ofrenda-alzada, la-ofrenda, la-ofrenda-alzada | fra: offrande-élevée | deu: Hebopfer, Hebopfer-von, [תרומת]
+    Refs: Exod 25:2, Exod 25:3, Exod 35:5, Exod 35:5, Exod 35:21
+  Sense 2: "heave-offering, priestly portion" (7x)
+    Desc: The specific priestly portion lifted or separated from sacrifices and produce, designated for the priests as their due — the technical ritual term for the elevated/separated offering.
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: and-heave-offering, heave-offering, heave-offering-of | spa: la-ofrenda-elevada, ofrenda-elevada, ofrenda-elevada-de | fra: et-élévation-offrande, le-élévation-offrande, leur-élévation-offrande | deu: Hebeopfer, der-Hebeopfer, heave-Opfergabe-von
+    Refs: Exod 29:27, Exod 29:28, Exod 29:28, Exod 29:28, Exod 30:13
+  Sense 3: "?" (1x)
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: bribes | spa: tributos | fra: תרומות | deu: [תרומות]
+    Refs: Prov 29:4
+
+=== H4720 ===
+Language: Hebrew, POS: Conj-w | N-msc, Occurrences: 74, Senses: 3
+
+BDB excerpt: מִקְדָּשׁ74 n.m. Am 7:9 sacred place, sanctuary;—מ׳ Ex 25:8 +; מִקְדָשׁ 15:17 (Ges§ 20 h Köii. 1, 471); cstr. מִקְּדַּשׁ Lv 16:23 +; sf. מִקְדָּשִׁי Lv 20:3 +, etc., מִקְדְּשׁוֹ Nu 18:29 (Köii 1, 97); pl. מִקְדָּשִׁים Ez 21:7, cstr. מִקְדְּשֵׁי Je 51:51 + 2 times; sf. מִקְדָּשַׁי Lv 21:23; מְקַדְשֵׁיהֶם Ez 7:24 (on anomalous pointing v. Ew§ 215 a Hi-Sm; but prob. Pi. Pt. was in mind, Ges§ 9300 Anm.; מִקְדְּשֵׁיהֶם); etc.;— 1. old Isr. sanctuaries: of י׳ at Schechem Jos 24:26 (E); prob. also Ex 15:17 (i.e. Shiloh); pl. of sanct. to be destroyed by י׳ Lv 26:31 (H); מִקְדְּשֵׁי יִשׂ׳ in N. Isr. A
+Senses:
+  Sense 1: "sanctuary, holy place" (65x)
+    Desc: A place set apart as sacred, especially the tabernacle or temple dedicated to the worship of God; used in both singular absolute and construct forms with various possessive suffixes and prepositions.
+    Domain: RELIGIOUS_LIFE > Religious Activities
+    Glosses: eng: my-sanctuary, of-the-sanctuary, the-sanctuary | spa: el-santuario, santuario-mío | fra: le-sanctuaire, pour-sanctuaire, sanctuaire | deu: Heiligtum, [המקדש], das-Heiligtum
+    Refs: Exod 15:17, Exod 25:8, Lev 12:4, Lev 16:33, Lev 19:30
+  Sense 2: "sanctuaries, holy places" (8x)
+    Desc: Plural form referring to multiple sacred sites, sanctuary precincts, or holy places, sometimes the various parts of the temple complex or multiple places of worship including illegitimate ones.
+    Domain: RELIGIOUS_LIFE > Religious Activities
+    Glosses: eng: and-the-sanctuaries-of-, from-Your-sanctuary, my-sanctuaries | spa: desde-tus-santuarios, santuarios, santuarios-de | fra: de-sanctuaire, et-sanctuaire, mon-sanctuaire | deu: Heiligtum, [ומקדשי], [מקדשי]
+    Refs: Lev 21:23, Lev 26:31, Ps 68:35, Ps 73:17, Jer 51:51
+  Sense 3: "?" (1x)
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: its-consecrated-portion | spa: su-porción-consagrada | fra: son-consacra-portion | deu: sein-weihte-Anteil
+    Refs: Num 18:29
+
+=== H1892 ===
+Language: Hebrew, POS: Prep-b | N-mpc, Occurrences: 73, Senses: 3
+
+BDB excerpt: I. הֶ֫בֶל73 n.m. vapour, breath (NH id., Syriac ܗܰܒܳܠܴܐ id.) fig. vanity (so NH, Syriac ܗܶܒܠܴܐ )—הָ֑בֶל Ec 1:2 +; cstr. הֲבֵל †Ec 1:2(×2); 12:8, sf. הֶבְלִי etc. Ec 6:12; 7:15; 9:9(×2); pl. הֲבָלִים Je 10:8 +; cstr. הַבְלֵי Je 8:19 +, sf. הַבְלֵיהֶם Dt 32:21 +;— 1. lit. Is 57:13 all of them (the idols) יִשָּׂא־רוּחַ יִקַּח הָ֑בֶל a breath (𝔙 aura) will carry away, Pr 21:6, the getting of treasures by a lying tongue is הֶבֶל נִדָּף, a vapour driven away. Elsewhere always 2. fig. of what is evanescent, unsubstantial, worthless, vanity, as of idols Je 10:15 = 51:18; 16:19 הֶבֶל וְאֵין בָּם מוֹעִי
+Senses:
+  Sense 1: "vanity, futility, absurdity" (58x)
+    Desc: The abstract, philosophical sense dominant in Ecclesiastes: the fundamental futility, meaninglessness, or absurdity of human endeavor and earthly existence under the sun.
+    Domain: ECONOMICS_PROPERTY > Value
+    Glosses: eng: vapor | spa: Vanidad, vanidad | fra: vanité | deu: Nichtigkeit
+    Refs: 2Kgs 17:15, Job 7:16, Job 9:29, Job 21:34, Job 27:12
+  Sense 2: "idols, false gods, worthless deities" (11x)
+    Desc: Plural form denoting idol worship or false gods — the worthless, empty objects of pagan devotion that provoke the Lord to jealousy, characteristic of Deuteronomistic and prophetic usage.
+    Domain: ECONOMICS_PROPERTY > Value
+    Glosses: eng: among-vanities-of, by-their-vanities, idols | spa: con-sus-vanidades, con-vanidades-de, de-vanidades | fra: avec-leur-vanities, le-vanité, par-des-vanités | deu: Nichtigkeit, Nichtigkeiten, bei-ihr-vanities
+    Refs: Deut 32:21, 1Kgs 16:13, 1Kgs 16:26, Ps 31:6, Eccl 1:2
+  Sense 3: "vapor, breath, fleeting puff" (4x)
+    Desc: The concrete, literal sense of a puff of breath, mist, or vapor — something insubstantial that quickly dissipates, used as an image of transience and weightlessness.
+    Domain: ECONOMICS_PROPERTY > Value
+    Glosses: eng: and-vanity, emptiness, than-a-breath | spa: a-vanidad, de-vanidad, vanidad | fra: de-vanité, et-le-ne...pas, vanité | deu: Nichtigkeit, als-ein-breath, und-der-nicht
+    Refs: Ps 62:9, Ps 144:4, Isa 49:4, Zech 10:2
+
+=== H2781 ===
+Language: Hebrew, POS: Prep-b | N-fs, Occurrences: 73, Senses: 3
+
+BDB excerpt: † חֶרְפָּה n.f. reproach—ח׳ Gn 34:14 + 35 times; cstr. חֶרְפַּת Jos 5:9 + 15 times; sf. חֶרְפָּֽתְךָ ψ 74:22 etc. + 17 times sfs.; pl. חֲרָפוֹת ψ 69:11 Dn 12:2; cstr. חֶרְפּוֹת ψ 69:10.— 1. taunt of enemy 1 S 17:26; so also 1 S 25:39; reproach cast upon another, scorn, contumely Ne 3:36; 5:9 ψ 69:20, 21; 71:13; 89:51; 119:22 Pr 18:3 Is 51:7 Ez 21:33; שׁמע ח׳ Je 51:51 Zp 2:8 La 3:61; נתן ח׳ על Je 23:40; נשׂא ח׳ על ψ 15:3 (slander); נשׂא ח׳ Je 31:19 Ez 36:15 Mi 6:16 (reproach); נשׂא ח׳ על bear reproach for ψ 69:8 Je 15:15 Zp 3:18; השׁיב ח׳ Ho 12:15 Ne 3:36; חרף ח׳ ψ 69:10; 79:12; 89:51; הסיר ח׳ 
+Senses:
+  Sense 1: "disgrace, shame, dishonor" (68x)
+    Desc: The state or condition of social shame, dishonor, or reproach borne by a person, group, or nation, encompassing all grammatical inflections, possessive suffixes, and prepositional constructions; confi...
+    Domain: EMOTION_ATTITUDE > Attitudes and Emotions
+    Glosses: eng: a-reproach, and-a-reproach, for-a-reproach | spa: Afrenta, afrenta, afrenta-de | fra: [חרפת], en-opprobre, et-à-opprobre | deu: Schmach, ein-schmähen, schmähen
+    Refs: Gen 34:14, 1Sam 11:2, 1Sam 17:26, 1Sam 25:39, 2Sam 13:13
+  Sense 2: "shameful defect, blemish" (3x)
+    Desc: An inherent fault, moral defect, or condition that itself constitutes a cause of disgrace, rather than externally imposed shame; distinguished by Arabic عَيْب (ʿayb, fault/defect/blemish) instead of ع...
+    Domain: EMOTION_ATTITUDE > Attitudes and Emotions
+    Glosses: eng: and-his-reproach, reproach, their-reproach | spa: afrenta, su-afrenta, y-su-afrenta | fra: et-son-opprobre-lui, opprobre | deu: [וחרפתו], [חרפה], [חרפתם]
+    Refs: Prov 6:33, Prov 18:3, Lam 3:61
+  Sense 3: "taunts, verbal reproach" (2x)
+    Desc: Active words of scorn, censure, or insult spoken against someone, emphasizing the speech-act of reviling rather than the resulting state of shame; distinguished by Arabic تَعْيِير (taʿyīr, taunting/re...
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: and-the-reproaches-of, the-taunts-of | spa: afrenta-de, y-afrentas-de | fra: [חרפת], et-opprobre | deu: [חרפת], und-der-reproaches-von
+    Refs: Ps 69:9, Zeph 2:8
+
+=== H3001 ===
+Language: Hebrew, POS: V-Hifil-Perf-3ms, Occurrences: 73, Senses: 3
+
+BDB excerpt: † I. יָבֵשׁ vb. be dry, dried up, withered (NH id. (rare), 𝔗 יְבֵישׁ, chiefly Pa. Ithp., Syriac ܢܺܒܶܫ; Sab. Palm. deriv.; Arabic يَبِسَ; Ethiopic የብሰ )— Qal Pf. 2 ms. יָבֵשׁ Jos 9:5 + 8 times; וְיָבֵשׁ consec. Is 19:5 + 4 times; 3 fs. יָֽבְשָׁה Gn 8:14; 3 pl. יָֽבְשׁוּ Je 23:10 + 2 times; יָבֵ֑שׁוּ 50:38 + 2 times; Impf. 3 ms. יִבַשׁ Is 19:7; יִיבָ֑שׁ Je 12:4 Jb 8:12; וַיִּיבַשׁ 1 K 17:7; וַיִּיבָ֑שׁ Jon 4:7; 3 fs. תִּיבַשׁ Ez 17:10; תִּיבָ֑שׁ v 10 + 3 times, etc.; Inf. cstr. (בִּ)יבשׁ Is 27:11; יְבשֶׁת Gn 8:7; abs. יָבוֹשׁ Zc 11:17; יָבשׁ Ez 17:10;— 1. be dry, dried up without moisture: a. of
+Senses:
+  Sense 1: "be dry, wither (intransitive)" (45x)
+    Desc: To become dry, to dry up, or to wither, said of water, plants, land, or bones (Qal and Nifal stems).
+    Domain: NATURAL_WORLD > Physical Events and States
+    Glosses: eng: Withers, and-they-wither, and-withered | spa: Se-seca, Se-secaron, se-secaron | fra: dessécher, desséché, et-dessécher | deu: und-verdorren, und-vertrocknete, verdorren
+    Refs: Gen 8:7, Gen 8:14, Josh 9:5, Josh 9:12, 1Kgs 13:4
+  Sense 2: "cause to dry up (causative)" (15x)
+    Desc: To make something dry, to dry up or parch something, used of God or agents drying rivers, seas, or vegetation (Hifil and Piel stems).
+    Domain: NATURAL_WORLD > Physical Events and States
+    Glosses: eng: He-dried-up, I-will-dry-up, and-I-will-make-dry | spa: seca, secará, secaré | fra: Il-sécha-en-haut, dessécher, et-dessécher | deu: Er-trocknete-hinauf, trocknete-hinauf, und-verdorren
+    Refs: Josh 2:10, Josh 4:23, Josh 4:23, Josh 5:1, Job 15:30
+  Sense 3: "be put to shame" (13x)
+    Desc: To be ashamed or put to shame, to suffer disgrace or humiliation (Hifil stem with shame meaning, distinct from the drying sense).
+    Domain: NATURAL_WORLD > Physical Events and States
+    Glosses: eng: Are-they-ashamed, Is-put-to-shame, and-they-will-put-to-shame | spa: Fueron-avergonzados, avergonzada, avergonzado | fra: dessécher, et-dessécher, tu-ai-shamed | deu: du-habe-shamed, und-vertrocknete, verdorren
+    Refs: 2Sam 19:5, Jer 6:15, Jer 8:12, Jer 10:14, Jer 46:24
+
+=== H0560 ===
+Language: Hebrew, POS: V-Qal-Imp-mp, Occurrences: 71, Senses: 3
+
+BDB excerpt: אֲמַר71 vb. say, tell, command (BH אָמַר);— Pe. Pf. 3 ms. א׳ Dn 2:12 +, אֲמַ֑ר 7:1; 3 fs. אֲמֶ֫רֶת 5:10 (K§ 38, 1 a)); i s. אַמְרֵת 4:5; 1 pl. אֲמַ֫רְנָא Ezr 5:4, 9; Impf. 3 ms. יֵאמַר (K§ 41) Dn 2:7 +; 2 mpl. תֵּאמִרוּן Je 10:11, etc.; Imv. ms. אֱמַר Dn 2:4 +; mpl. אֱמַ֫רוּ 2:9; Inf. לְמֵאמַר v 9, לְמֵמַ֑ר Ezr 5:11 (K§ 41 a); Pt. אָמַר Dn 2:5 + often, pl. אָֽמְרִין 3:4; Ezr 5:3 +;— 1. say (often in phr. answer and say): sq. orat. rect. (only), Dn 2:7, 10 + 13 times Dn, Ezr 5:11; + ל pers. Dn 2:5; 3:14 + 14 times Dn [pl. c. indef. subj. for pass. 4:28], Ezr 5:15; + קֳדָם pers. Dn 2:9; 5:17; 6:
+Senses:
+  Sense 1: "to say, speak, tell" (60x)
+    Desc: The basic sense of verbal communication: to utter words, declare, or relay information to someone.
+    Domain: COMMUNICATION > Communication
+    Glosses: eng: and-he-said, and-said, and-saying | spa: y-decía, y-dijo, y-les-dijo | fra: et-il-dit, et-tu-as-dit | deu: und-sprach, und-sprechen
+    Refs: Ezra 5:3, Ezra 5:4, Ezra 5:9, Dan 2:4, Dan 2:5
+  Sense 2: "to command, order" (9x)
+    Desc: To give an authoritative directive or instruction, stronger than mere speech, often rendered as 'commanded' or 'ordered' in translations.
+    Domain: COMMUNICATION > Communication
+    Glosses: eng: and-commanded, he-commanded, he-said | spa: dijeron, dijo, ordenó | fra: a-dit, et-il-dit, ils-ont-dit | deu: sprach, sprechen, und-sprach
+    Refs: Dan 2:46, Dan 3:13, Dan 3:20, Dan 4:26, Dan 5:2
+  Sense 3: "to be said, be called" (2x)
+    Desc: Passive or impersonal usage indicating what is commonly said or how something is named or referred to.
+    Domain: COMMUNICATION > Communication
+    Glosses: eng: it-is-said | spa: se-dice, se-os-dice | fra: dire | deu: sprechen
+    Refs: Dan 3:4, Dan 4:31

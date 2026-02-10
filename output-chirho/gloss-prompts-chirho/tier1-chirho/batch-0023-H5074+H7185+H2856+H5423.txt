@@ -1,0 +1,163 @@
+You are a biblical lexicographer composing glosses for a digital lexicon.
+For each lemma below, compose a JSON object. Separate objects with "---".
+
+Format for each:
+{
+  "lemma_id": "...",
+  "gloss_terse": "under 120 chars, concise definition covering the word's semantic range",
+  "gloss_readable": "2-5 sentences, 40-120 words. Don't start with 'This word'. Warm study-Bible footnote tone. Engaging, not dry.",
+  "senses": {
+    "1": "enriched 20-60 word description. Reference multilingual evidence when illuminating. Don't repeat the label verbatim.",
+    "2": "..."
+  }
+}
+
+Rules:
+- No markdown fences, just JSON objects separated by ---
+- Reference multilingual evidence naturally when it reveals something
+- gloss_readable should feel like a good study Bible footnote: helpful, clear, occasionally surprising
+- Each sense enrichment: how does the evidence support this sense? Mention 1-2 key passages when helpful.
+
+=== H5074 ===
+Language: Hebrew, POS: Conj-w | V-Hofal-ConjImperf-3ms, Occurrences: 28, Senses: 6
+
+BDB excerpt: † I. [נָדַד] vb. retreat, flee, depart, stray, wander, flutter (NH id.; Arabic نَدَّ flee, run away; Aramaic ܢܰܕ hate, abominate, shrink from, Aph. put to flight, etc.; נְדַד flee);— Qal Pf. 3 fs. נָֽדְדָה Is 10:31 Est 6:1; 3 pl. נָֽדְדוּ Ho 7:13 + 4 times, נָדָ֑דוּ Is 21:15 Je 4:25; Impf. יִדּוֹד Na 3:7; 3 fs. וַתִּדַּד Gn 31:40; 3 mpl. יִדֹּדוּן ψ 68:13(×2); Inf. cstr. נְדֹד ψ 55:8; Pt. נֹדֵד Je 49:5 +; f. נוֹדֶ֫דֶת Pr 27:8; pl. נֹדְדִים Ho 9:17;— 1. retreat, flee Is 21:15 from before (מִפְּנֵי) swords; 33:3 at the sound (מִקּוֹל) of tumult; abs. 10:31; 22:3 ψ 68:13(×2), of birds and beasts 
+Senses:
+  Sense 1: "flee, take flight" (14x)
+    Desc: To flee or escape from danger or threat, moving away quickly in a definite direction (Qal and Pual stems).
+    Domain: DANGER_DELIVERANCE > Danger, Risk, Safe, Save
+    Glosses: eng: and-fled, and-they-flee, fled | spa: Huyó, habían-huido, huirá | fra: [נדדה], errer, et-errer | deu: [ונודד], [ידוד], [נדדה]
+    Refs: Gen 31:40, Esth 6:1, Ps 31:11, Ps 68:12, Ps 68:12
+  Sense 2: "wander, roam aimlessly" (9x)
+    Desc: To wander about without fixed direction or home, often as a fugitive or homeless person; used substantively as 'wanderer, fugitive' (Qal participle and infinitive).
+    Domain: DANGER_DELIVERANCE > Danger, Risk, Safe, Save
+    Glosses: eng: far-off, fugitive, the-wanderer | spa: Vaga, al-errante, al-fugitivo | fra: errer, fuir, נדד | deu: [נדד], [נדדים], [נודד]
+    Refs: Job 15:23, Ps 55:7, Prov 27:8, Prov 27:8, Isa 16:2
+  Sense 3: "be driven away, cast out" (2x)
+    Desc: To be chased away, driven out, or cast off as a passive recipient of expulsion (Hofal stem).
+    Domain: MOVEMENT > Linear Movement
+    Glosses: eng: and-he-is-chased-away, thrown-away | spa: apartado, y-será-ahuyentado | fra: et-וידד, jeté-au-loin | deu: [וידד], thrown-weg
+    Refs: 2Sam 23:6, Job 20:8
+  Sense 4: "flutter, flap wings" (1x)
+    Desc: To flutter or flap, describing the movement of wings or wing-like motion (Qal participle).
+    Domain: DANGER_DELIVERANCE > Danger, Risk, Safe, Save
+    Glosses: eng: fluttering | spa: quien-moviera | fra: fuir | deu: fliehen
+    Refs: Isa 10:14
+  Sense 5: "shake, wag the head" (1x)
+    Desc: To shake or wag the head, typically as a gesture of scorn or pity (Hitpael reflexive stem).
+    Domain: DANGER_DELIVERANCE > Danger, Risk, Safe, Save
+    Glosses: eng: will-shake-their-head | spa: menarán-la-cabeza | fra: fuir | deu: wird-erschüttern-ihr-Haupt
+    Refs: Ps 64:8
+  Sense 6: "chase away, drive out" (1x)
+    Desc: To chase away or drive out someone, the causative sense of fleeing (Hifil stem).
+    Domain: PHYSICAL_ACTION > Physical Impact
+    Glosses: eng: they-chase-him | spa: lo-ahuyentan | fra: ינדהו-lui | deu: [ינדהו]
+    Refs: Job 18:18
+
+=== H7185 ===
+Language: Hebrew, POS: Conj-w | V-Hifil-ConsecImperf-3ms, Occurrences: 28, Senses: 6
+
+BDB excerpt: I. [קָשָׁה] vb. be hard, severe, fierce (NH קָשָׁח be severe; Arabic قَسَا (ى) be hard, dry, iii. endure, struggle against, severity; Aramaic קְשָׁא, ܩܫܳܐ be hard, difficult; J.Aram קְשִׁי, קַשְׁיָה adj. hard);— Qal Pf. 3 fs. קָֽשְׁתָה 1 S 5:7, קָשָׁ֑תָה Gn 49:7; Impf. 3 ms. יִקְשֶׁה Dt 1:17; 15:18, וַיִּ֫קֶשׁ 2 S 19:44;— 1. be hard, difficult Dt 1:17 (of a legal case; מִן compar.). 2. be hard, severe, ק׳ יָדוֹ עָלֵינוּ 1 S 5:7 (of י׳, in judgment); יִק׳ בְעֵינֶ֑ךָ Dt 15:18 it shall not be hard in thine eyes (seem a severe trial, an injustice); of wrath Gn 49:7 (poem in J; ‖ עָ֑ז); of fierce w
+Senses:
+  Sense 1: "make obstinate, harden" (19x)
+    Desc: Hifil causative: to stiffen (the neck) or harden (the heart), expressing deliberate obstinacy, stubbornness, or spiritual rebellion against God or authority.
+    Domain: AUTHORITY_RULE > Status
+    Glosses: eng: and-he-stiffened, and-they-stiffened, but-one-who-hardens | spa: endureceré, endureceréis, endurecieron | fra: --endurcir, [הקשה], [הקשו] | deu: [הקשה], [הקשו], [ויקש]
+    Refs: Exod 7:3, Exod 13:15, Deut 2:30, Deut 10:16, 1Kgs 12:4
+  Sense 2: "be hard, severe, fierce" (3x)
+    Desc: Qal: to be hard, harsh, severe, or cruel in character or action, describing the quality of a person, situation, or treatment (e.g., harsh labor, fierce battle, cruel behavior).
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: and-was-harsh, cruel, is-hard | spa: cruel, es-dura, y-fue-dura | fra: cruel, est-dur, et-fut-harsh | deu: hart-ist-er, ist-hard, und-war-harsh
+    Refs: Gen 49:7, 1Sam 5:7, 2Sam 19:43
+  Sense 3: "have difficulty in labor" (2x)
+    Desc: Piel/Hifil infinitive: to have hard labor, referring specifically to difficulty in childbirth (dystocia), used of Rachel and other women experiencing dangerous delivery.
+    Domain: PHYSICAL_ACTION > Perform, Do
+    Glosses: eng: and-she-had-difficulty, when-she-had-difficulty | spa: en-dificultad-de-ella, y-tuvo-dificultad | fra: et-elle-avait-difficulty, quand-elle-avait-difficulty | deu: als-es-schwer-war, und-es-war-schwer
+    Refs: Gen 35:16, Gen 35:17
+  Sense 4: "be difficult" (2x)
+    Desc: Qal: to be difficult, hard to accomplish or understand, describing a task, situation, or matter that is beyond easy reach.
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: is-hard, shall-be-hard | spa: sea-difícil, sea-duro | fra: devra-être-hard, est-hard | deu: ist-hart, soll-sein-hart
+    Refs: Deut 1:17, Deut 15:18
+  Sense 5: "be hard-pressed, in distress" (1x)
+    Desc: Nifal: to be hard-pressed, oppressed, or in severe distress, describing a person suffering under difficult circumstances.
+    Domain: DANGER_DELIVERANCE > Trouble, Hardship, Relief
+    Glosses: eng: hard-pressed | spa: duramente-oprimido | fra: [נקשה] | deu: [נקשה]
+    Refs: Isa 8:21
+  Sense 6: "make difficult, ask a hard thing" (1x)
+    Desc: Hifil causative: to make something difficult or to pose a hard request, as in asking for something extraordinarily challenging.
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: you-have-asked-hard | spa: Has-pedido-cosa-difícil | fra: tu-ai-demanda-dur | deu: du-habe-fragte-hard
+    Refs: 2Kgs 2:10
+
+=== H2856 ===
+Language: Hebrew, POS: Art | V-Qal-QalPassPrtcpl-mp, Occurrences: 27, Senses: 6
+
+BDB excerpt: † [חָתַם] vb. seal, affix seal, seal up (NH id.; Aramaic חֲתַם, ܚܬܰܡ; Ethiopic ኀተመ Arabic خَتَمَ (whence خَاتَمٌ) is loan-word according to Frä252)— Qal Impf. 3 ms. יַחְתֹּם Jb 9:7; 33:6, יַחְתּוֹם Jb 37:7, וַיַּחְתֹּם Est 8:10, etc.; Imv. חֲתֹם Dn 12:4, חֲתוֹם Is 8:16, חִתְמוּ Est 8:8; Inf. abs. חָתוֹם Je 32:44; cstr. לַחְתֹּם Dn 9:24, + v 24 Kt (Qr לְהָתֵם); Pt. act. חוֹתֵם Ez 28:12; pass. חָתוּם Dt 32:34 + 2 times, etc.;— 1. seal, affix one’s seal, in attestation; seal with king’s seal (בְּחֹתָמוֹ) 1 K 21:8, בְּטַבַּעַת המלך Est 8:8, 10; of covenant with י׳, attested by seal (pass.) Ne 10:1
+Senses:
+  Sense 1: "to seal, affix a seal" (12x)
+    Desc: The basic Qal active sense of applying a seal or signet to a document, letter, or object to authenticate, authorize, or close it.
+    Domain: COMMUNICATION > Communication
+    Glosses: eng: He-seals, [ketiv:and-to-seal-up], and-I-sealed | spa: [y-para-sellar], pone-sello., sella | fra: [וחתמו], [ויחתם], et-scella | deu: [ואחתם], [וחתום], [וחתם]
+    Refs: 1Kgs 21:8, Esth 8:8, Esth 8:10, Job 9:7, Job 33:16
+  Sense 2: "sealed (state)" (10x)
+    Desc: The Qal passive participle indicating the state of having been sealed, often used adjectivally to describe documents or objects that are closed with a seal.
+    Domain: COMMUNICATION > Communication
+    Glosses: eng: and-sealed, book, sealed | spa: Sellada, el-sellado, los-sellados | fra: [החתום], [החתומים], et-sceller | deu: [החתום], [החתומים], [וחתמים]
+    Refs: Deut 32:34, Neh 9:38, Neh 10:1, Job 14:17, Song 4:12
+  Sense 3: "be sealed (passive)" (2x)
+    Desc: The Nifal passive form expressing the action of being sealed from the perspective of the object receiving the seal.
+    Domain: COMMUNICATION > Communication
+    Glosses: eng: and-sealed, and-was-sealed | spa: y-fue-sellado, y-sellado | fra: [ונחתום], [ונחתם] | deu: [ונחתום], [ונחתם]
+    Refs: Esth 3:12, Esth 8:8
+  Sense 4: "stop up, block" (1x)
+    Desc: The Hifil causative sense of stopping up or blocking a flow or opening, distinct from the literal sealing with a signet.
+    Domain: MOVEMENT > Linear Movement
+    Glosses: eng: stopped-up | spa: retuviere | fra: stopped-en-haut | deu: stopped-hinauf
+    Refs: Lev 15:3
+  Sense 5: "shut up, seal tightly" (1x)
+    Desc: The Piel intensive sense of sealing or shutting something up completely, emphasizing thoroughness or finality of the closure.
+    Domain: COMMUNICATION > Communication
+    Glosses: eng: they-shut-up | spa: se-sellan- | fra: sceller | deu: [חתמו]
+    Refs: Job 24:16
+  Sense 6: "one who seals, sealer" (1x)
+    Desc: The Qal active participle used as an agent noun to denote a person who seals or whose role involves sealing.
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: sealer-of- | spa: sello-de | fra: sceller | deu: [חותם]
+    Refs: Ezek 28:12
+
+=== H5423 ===
+Language: Hebrew, POS: V-Nifal-Perf-3cp, Occurrences: 27, Senses: 6
+
+BDB excerpt: † [נָתַק] vb. pull, draw, tear away, apart, off (NH id.; 𝔗 נְתַק in der. species (rare), pull off, tear off; Chr Pal. Aramaic ܢܬܩ shake off, SchwallyIdiot. 58; Arabic نَتَقَ pull off, draw out, shake; Di 660 cp. Ethiopic ነተገ, ነትገ detrahere, etc.);— Qal Pf. 1 pl. sf. וּנְתַקְּנוּהוּ consec. Ju 20:32 (on d. f. dirim. v. Ges§ 20 h); Impf. 1 s. sf. אֶתְּקֶנְךָּ Je 22:24 (cf. Ges§ 58, i); Pt. pass. נָתוּק Lv 22:24;— 1. draw away warriors from (כִון) city, unto (אֶל־) high road Ju 20:32. 2. draw or pull off ring from (מִן) finger Je 22:24 (fig. of rejection of king of Judah by י׳). 3. pull, tear awa
+Senses:
+  Sense 1: "snap, break off (Piel)" (9x)
+    Desc: To tear apart or snap off bonds, cords, or fetters by force (Piel intensive active).
+    Domain: PHYSICAL_ACTION > Physical Impact
+    Glosses: eng: He-broke, I-tore-off, I-will-tear-apart | spa: Rompamos, Y-rompió, romper | fra: arracher, et-snapped, et-snapped-eux | deu: [אנתק], er-broke, lass-uns-zerbrechen
+    Refs: Judg 16:9, Judg 16:12, Ps 2:3, Ps 107:14, Isa 58:6
+  Sense 2: "be broken, be snapped (Nifal)" (6x)
+    Desc: To be broken or snapped, said of cords, ropes, or bonds that give way (Nifal passive of breaking).
+    Domain: PHYSICAL_ACTION > Physical Impact
+    Glosses: eng: are-broken, is-broken, shall-be-broken | spa: fueron-cortadas, fueron-rotos, se-rompe | fra: arracher, snaps, ינתק | deu: [ינתק], [נתקו], snaps
+    Refs: Judg 16:9, Job 17:11, Eccl 4:12, Isa 5:27, Isa 33:20
+  Sense 3: "draw away, lure out (Qal/Hifil)" (5x)
+    Desc: To draw or pull people away from a position, to lure troops or persons out (Hifil causative and Qal active).
+    Domain: PHYSICAL_ACTION > Physical Impact
+    Glosses: eng: I-would-tear-you-off, Pull-them-out, and-draw-them-away | spa: arráncalos, que-los-alejemos, te-arrancaré | fra: arracher, et-déchiré, et-tirer-eux-au-loin | deu: und-draw-ihnen-weg, und-zerrissen, wir-haben-drawn-ihnen-weg
+    Refs: Lev 22:24, Josh 8:6, Judg 20:32, Jer 12:3, Jer 22:24
+  Sense 4: "be uprooted, be torn out (Nifal)" (3x)
+    Desc: To be uprooted, torn out, or pulled away from a fixed place (Nifal passive of uprooting).
+    Domain: PHYSICAL_ACTION > Physical Impact
+    Glosses: eng: are-separated, is-torn, were-lifted | spa: Será-arrancado, arrancaron, fueron-arrancados | fra: arracher, étaient-leva, ינתק | deu: [ינתק], waren-erhob, zerreissen
+    Refs: Josh 4:18, Job 18:14, Jer 6:29
+  Sense 5: "uproot, pull up (Piel)" (2x)
+    Desc: To pull up or uproot something from its place, such as tent pegs or plants (Piel with arrancará/pull-up nuance).
+    Domain: PHYSICAL_ACTION > Physical Impact
+    Glosses: eng: he-pull-up, you-shall-tear | spa: arrancará, arrancarás | fra: arracher | deu: [ינתק], [תנתקי]
+    Refs: Ezek 17:9, Ezek 23:34
+  Sense 6: "be drawn away (Hofal/Nifal)" (2x)
+    Desc: To be drawn away or lured out, the passive of drawing persons from their position (Hofal and Nifal passive of luring).
+    Domain: MOVEMENT > Linear Movement
+    Glosses: eng: and-were-drawn-away, were-drawn-away | spa: fueron-atraídos, y-fueron-alejados | fra: et-étaient-drawn-au-loin, étaient-drawn-au-loin | deu: und-waren-drawn-weg, waren-drawn-weg
+    Refs: Josh 8:16, Judg 20:31

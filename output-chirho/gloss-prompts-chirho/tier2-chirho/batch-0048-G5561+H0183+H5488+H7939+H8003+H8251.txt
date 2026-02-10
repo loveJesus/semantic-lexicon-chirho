@@ -1,0 +1,145 @@
+You are a biblical lexicographer composing glosses for a digital lexicon.
+For each lemma below, compose a JSON object. Separate objects with "---".
+
+Format for each:
+{
+  "lemma_id": "...",
+  "gloss_terse": "under 120 chars, concise definition covering the word's semantic range",
+  "gloss_readable": "2-5 sentences, 40-120 words. Don't start with 'This word'. Warm study-Bible footnote tone. Engaging, not dry.",
+  "senses": {
+    "1": "enriched 20-60 word description. Reference multilingual evidence when illuminating. Don't repeat the label verbatim.",
+    "2": "..."
+  }
+}
+
+Rules:
+- No markdown fences, just JSON objects separated by ---
+- Reference multilingual evidence naturally when it reveals something
+- gloss_readable should feel like a good study Bible footnote: helpful, clear, occasionally surprising
+- Each sense enrichment: how does the evidence support this sense? Mention 1-2 key passages when helpful.
+
+=== G5561 ===
+Language: Greek, POS: N-AFS, Occurrences: 28, Senses: 3
+
+BDB excerpt: χώρα, Ionic dialect χώρη, ἡ, ={χῶρος}, space or room in which a thing is, defined as partly occupied space, distinguished from κενόν and τόπος, Refs 5th c.BC+ = countryRefs 8th c.BC+; χώραν τινὶ καταλιπεῖν leave room for it, Refs 1st c.AD+ __2 generally, place, spot, στρέψεσθ᾽ ἐκ χώρης ὅθι.. Refs 8th c.BC+; χώραν ἐκ χώρας μεταβάλλειν move from place to place, Refs 5th c.BC+; field in a ceiling, Refs 4th c.BC+; ἡ πρώτη χ. the first field (on the chest of Cypselus), Refs 2nd c.AD+; socket or cavity of a joint, Refs 5th c.BC+; of the eye, Refs 4th c.BC+; as euphemism for the genital organs, Refs 
+Senses:
+  Sense 1: "region, country, district" (24x)
+    Desc: A geographical or administrative area, district, or country, often referring to a specific named region or territory.
+    Domain: GEOGRAPHY_SPACE > Geographical Objects and Features
+    Glosses: eng: a-country, country, region | spa: país, región | fra: contrée, région | deu: Gegend, Land
+    Refs: Matt 2:12, Matt 4:16, Matt 8:28, Mark 1:5, Mark 5:1
+  Sense 2: "field, countryside" (2x)
+    Desc: Open agricultural land or countryside, referring to cultivated fields or rural areas outside a city.
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: fields | spa: campos | fra: Land, contrée | deu: Land
+    Refs: John 4:35, Jas 5:4
+  Sense 3: "land, ground, territory" (2x)
+    Desc: Physical land or ground as a territory or piece of earth, emphasizing the material or possessive aspect rather than the administrative designation.
+    Domain: GEOGRAPHY_SPACE > Geographical Objects and Features
+    Glosses: eng: land | spa: tierra | fra: contrée, région | deu: Gegend
+    Refs: Luke 12:16, Acts 27:27
+
+=== H0183 ===
+Language: Hebrew, POS: V-Hitpael-Perf-3ms, Occurrences: 28, Senses: 3
+
+BDB excerpt: † I. [אָוָה] vb. incline, desire (cf. Stem 2). Pi. Pf. אִוָּה ψ 132:13; אִוְּתָה Mi 7:1 +, etc.; Impf. 3 fs. תְּאַוֶּה Dt 12:20 + 4 times—desire subj. usually נֶפֶשׁ, obj. fruit Mi 7:1 (in metaph.); flesh (to eat) 1 S 2:16, cf. Dt 12:20 (sq. inf. לֶאֱכֹל בָּשָׂר); food & drink Dt 14:26; of king desiring rule, וּמָלַכְתָּ בְּכֹל אֲשֶׁר־תְּאַוֶּה נַפְשֶׁ֑ךָ 2 S 3:21; 1 K 11:37; obj. evil (רַע) Pr 21:10; once obj. י׳ Is 26:9 נַפְשִׁי אִוִּיתִךָ בַּלַּיְלָה; of God וְנַפְשׁוֹ אִוְּתָה וַיַּעַשׂ Jb 23:13; as desiring Zion for dwelling-place (late, only cases without נפשׁ) ψ 132:13, 14; Hithp. Pf. ה
+Senses:
+  Sense 1: "desire, wish for" (13x)
+    Desc: To desire or wish for something, expressing a general or positive wanting without strong negative or emotional connotation (predominantly Piel stem and neutral Hitpael forms).
+    Domain: EMOTION_ATTITUDE > Attitudes and Emotions
+    Glosses: eng: I-desire-You, I-desired, I-have-desired-it | spa: Desea, desea, desea- | fra: [אוה], [אויתיך], [אותיה] | deu: [אויתיך], [אותה], [התאויתי]
+    Refs: Deut 12:20, Deut 14:26, 2Sam 3:21, 1Kgs 11:37, Job 23:13
+  Sense 2: "crave, covet, lust after" (10x)
+    Desc: To crave, covet, or lust after something with intense and often morally negative desire, frequently used in prohibitions and descriptions of sinful craving (Hitpael stem with negative connotation).
+    Domain: EMOTION_ATTITUDE > Attitudes and Emotions
+    Glosses: eng: [desire], and-they-craved, craved | spa: (codicies), Y-desearon, [codicies] | fra: [ויתאוו], craved, désirer | deu: [(תתאיו)], [[תתאו]], [תתאו‪‬‪‬]
+    Refs: Num 11:4, Num 11:34, Deut 5:21, Ps 106:14, Prov 21:26
+  Sense 3: "long for, yearn" (5x)
+    Desc: To long for or yearn with deep emotional desire, expressing heartfelt longing or ardent aspiration toward something or someone (Hitpael stem with emotional/yearning connotation).
+    Domain: EMOTION_ATTITUDE > Attitudes and Emotions
+    Glosses: eng: (and-longed), [and-longed], and-he-longed | spa: (y-deseó), Y-deseará, Y-deseó | fra: [ויתאו], [ויתאיו], désirer | deu: [המתאוים], [ויתאו], [ויתאיו]
+    Refs: 2Sam 23:15, 1Chr 11:17, 1Chr 11:17, Ps 45:11, Amos 5:18
+
+=== H5488 ===
+Language: Hebrew, POS: Art | N-ms, Occurrences: 28, Senses: 3
+
+BDB excerpt: † I. סוּף n.m. Jon 2:6 reeds, rushes (coll.) (prob. loan-word from Egyptian ṭwfi, reeds, SteindorffBASi. 603 ErmanZMG xivi (1892), 122; Semitic according to WMMAs. u. Eur. 101);— 1. rushes, in Nile Ex 2:3, 5 (E); קָנֶהוָסוּף Is 19:6 (of Egypt); Jon 2:6. 2. usually in combin. יַם־סוּף prob. = sea of rushes or reeds (> sea of (city) Suph), which Gk. incl. in wider name θάλασσα ἐρυθρά, Red Sea (cf. Di Ex 13:18 and especially WMMAs. u. Eur. 42 f., who expl. as name orig. given to upper end of Gulf of Suez, extending into Bitter Lakes, shallow and marshy, whence reeds (prob. also reddish colour));—
+Senses:
+  Sense 1: "reeds, rushes (in 'Sea of Reeds')" (24x)
+    Desc: Reeds or rushes as a collective noun, most frequently appearing in the compound יַם־סוּף ('Sea of Reeds'), the body of water God parted during the Exodus. This is the predominant usage across the Pent...
+    Domain: PLANTS_AGRICULTURE > Plants
+    Glosses: eng: Reeds, Suph | spa: Juncos, Rojo, Suf | fra: Reeds, Roseaux, Suph | deu: Ende, Reeds, Suph
+    Refs: Exod 10:19, Exod 13:18, Exod 15:4, Exod 15:22, Exod 23:31
+  Sense 2: "reeds, rushes (as vegetation)" (3x)
+    Desc: Reeds or rushes as actual aquatic vegetation rather than a geographical name. In Exod 2:3,5 Moses' basket is placed 'in the reeds' (בַּסּוּף) along the Nile bank, and Miriam watches from among 'the re...
+    Domain: PLANTS_AGRICULTURE > Plants
+    Glosses: eng: and-rush, in-the-reeds, the-reeds | spa: el-junco, en-el-junco, y-junco | fra: [וסוף], dans-le-reeds, le-reeds | deu: [וסוף], der-Schilf, in-der-Schilf
+    Refs: Exod 2:3, Exod 2:5, Isa 19:6
+  Sense 3: "seaweed" (1x)
+    Desc: Seaweed or aquatic plant matter wrapped around someone submerged in the sea. Used uniquely in Jonah 2:5 where Jonah describes his near-drowning: 'seaweed (סוּף) was wrapped around my head.' Arabic tra...
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: seaweed | spa: alga | fra: roseau | deu: Ende
+    Refs: Jonah 2:5
+
+=== H7939 ===
+Language: Hebrew, POS: N-msc | 3ms, Occurrences: 28, Senses: 3
+
+BDB excerpt: † I. שָׂכָר n.m. Ez 29:18 hire, wages, only sg., not c. art.;—abs. שׂ׳ Nu 18:31 +, cstr. שְׂכַר Dt 15:18 +, sf. שְׂכָרִי Gn 30:18 +, etc.;— 1. wages, of servant, Gn 30:28, 32, 33 (J), 31:8(×2); Ex 2:9 (all E), Dt 15:18 (שְׂ׳ שָׂכִיר), 24:15; 1 K 5:20; Zc 8:10; Mal 3:5 (שְׂ׳ שָׂכִיר); soldiers Ez 29:18, 19; shepherd (symb.) Zc 11:12(×2); beast Ex 22:14 (E), Zc 8:10. 2. = reward, for work done, faithfulness, etc., Gn 15:1 (JE), 30:18 (E) in expl. of name יששכר, Nu 18:31 (P), כִּי יֵשׁ שׂ׳ לִפְעֻלָּתֵךְ Je 31:16 (cf. 2 Ch 15:7), Is 40:10 = 62:11 (fig. of reward of י׳’s labours), ψ 127:3; Ec 4:9; 
+Senses:
+  Sense 1: "wages, salary for labor" (18x)
+    Desc: Payment owed or given for work performed; the hire or salary of a laborer, often in the context of employer-employee relationships (Gen 29:15, 30:28, 31:7-8, 41; Lev 19:13; Deut 24:15; Mal 3:5).
+    Domain: ECONOMICS_PROPERTY > Possess, Transfer, Exchange
+    Glosses: eng: and-the-wages-of, and-wages, and-wages-of | spa: mi-salario, paga, salario | fra: et-le-wages-de, et-salaire, salaire | deu: Lohn, [ושכר], [שכר]
+    Refs: Gen 30:18, Gen 30:28, Gen 30:32, Gen 30:33, Gen 31:8
+  Sense 2: "reward, recompense" (8x)
+    Desc: A reward or recompense, often from God, for righteous conduct or faithfulness; extends beyond mere labor-payment to denote earned or granted blessing (Gen 15:1; Ps 127:3; Eccl 4:9; Isa 40:10, 62:11).
+    Domain: ECONOMICS_PROPERTY > Possess, Transfer, Exchange
+    Glosses: eng: His-reward, a-reward, reward | spa: galárdon, recompensa, recompensa-tuya | fra: [שכר], [שכרו], récompense | deu: Lohn, Rauschtrank, [שכר]
+    Refs: Gen 15:1, 2Chr 15:7, Ps 127:3, Eccl 4:9, Eccl 9:5
+  Sense 3: "fare, hire-price" (2x)
+    Desc: The price paid for hiring a service, especially passage or transport fare; also the fee for hired use of something (Jonah 1:3; cf. Deut 23:19 for hire of a prostitute; Isa 23:18 for Tyre's merchant in...
+    Domain: ECONOMICS_PROPERTY > Possess, Transfer, Exchange
+    Glosses: eng: her-fare, in-his-wage | spa: en-su-alquiler, pago-de-el | fra: dans-son-wage, salaire | deu: Lohn, in-sein-wage
+    Refs: Exod 22:15, Jonah 1:3
+
+=== H8003 ===
+Language: Hebrew, POS: Adj-fp, Occurrences: 28, Senses: 3
+
+BDB excerpt: † I. שָׁלֵם adj. complete, safe, at peace;—שׁ׳ Gn 15:16 +; pl. שְׁלֵמִים Gn 34:21; Na 1:12; f. שְׁלֵמָה Dt 25:15 +; pl. שְׁלֵמוֹת 27:6 Jos 8:31;— 1. complete: a. full, perfect: אֶבֶן שְׁלֵמָה full weight Dt 25:15; Pr 11:1, אֵיפָה שׁ׳ Dt 25:15; of עָוֹן Gn 15:16 (JE); number of captives Am 1:6, 9; of army Na 1:12 (text corrupt; 𝔊 משֵׁל מַיִם, but?; v. Comm.); of reward Ru 2:12; of stones, whole (in natural condition, unhewn) Dt 27:6; Jos 8:31 (cf. law Ex 20:25). b. finished: i.e. hewn stones 1 K 6:7; temple 2 Ch 8:16. 2. safe, unharmed, of pers. Gn 33:18 (P; Sam. שׁלוֹם, cf. בשׁלום 28:21; not n
+Senses:
+  Sense 1: "complete, whole, perfect" (26x)
+    Desc: Describing something as whole, complete, entire, or perfect — whether morally (a whole/undivided heart), physically (whole/uncut stones), or qualitatively (a full/complete weight or measure).
+    Domain: MORAL_QUALITY > Moral and Ethical Qualities
+    Glosses: eng: and-the-good, complete, full | spa: completa, completo, íntegra | fra: [שלם], achever, achève | deu: Salomo, complete, ganz
+    Refs: Gen 15:16, Deut 25:15, Deut 25:15, Deut 27:6, Josh 8:31
+  Sense 2: "safe, unharmed" (1x)
+    Desc: Describing a person who has returned or arrived safely, without harm — in a state of personal well-being and security.
+    Domain: DANGER_DELIVERANCE > Danger, Risk, Safe, Save
+    Glosses: eng: safely | spa: en-paz | fra: safely | deu: wohlbehalten
+    Refs: Gen 33:18
+  Sense 3: "peaceable, friendly" (1x)
+    Desc: Describing persons who are peaceably disposed, friendly, or well-intentioned toward others — not hostile.
+    Domain: EMOTION_ATTITUDE > Attitudes and Emotions
+    Glosses: eng: peaceful | spa: pacíficos | fra: peaceful | deu: friedlich
+    Refs: Gen 34:21
+
+=== H8251 ===
+Language: Hebrew, POS: N-ms, Occurrences: 28, Senses: 3
+
+BDB excerpt: † שִׁקּוּץ, שִׁקֻּץ n.m. Dn 11:31 detested thing;—abs. שִׁקּוּץ Dn 11:31; 12:11, cstr. שִׁקֻּץ 1 K 11:5 +; pl. שִׁקּוּצִים 2 Ch 15:8, שִׁקֻּצִים 2 K 23:24; cstr. שִׁקּוּצֵי Ez 20:7, 8; sf. שִׁקּוּצֵיהֶם Je 16:18 +, etc.—detested thing, epith. of Isr. Ho 9:10 (si vera l.; not elsewhere bef. Dt); of filth Na 3:6; appar. of unclean food Zc 9:7 (as שֶׁקֶץ); of idols (often ‖ תּוֹעֵבָה, גִּלּוּל, etc.), Dt 29:16; 2 K 23:13, 24; Is 66:3; Je 4:1; 7:30 = 32:34; 13:27; 16:18; Ez 5:11; 7:20; 11:18, 21; 20:7, 8, 30; 37:23; of idolatrous practices Dn 9:27, but read prob. as 11:31 (so 𝔊 Θ), and כַּנּוֹ for
+Senses:
+  Sense 1: "detestable things, idolatrous abominations" (20x)
+    Desc: Idolatrous objects, images, and practices collectively regarded as loathsome before God, typically used in the plural to condemn the totality of a people's idol worship.
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: abominations, and-his-abominations, and-in-their-abominations | spa: abominaciones, abominaciones-de, abominaciones-de-ti | fra: [השקוצים], abomination, et-abomination | deu: Abscheuliches, Scheusal, [ושקציו]
+    Refs: Deut 29:17, 2Kgs 23:24, 2Chr 15:8, Isa 66:3, Jer 4:1
+  Sense 2: "detestable idol, abomination" (7x)
+    Desc: A specific idolatrous object or deity regarded as utterly abhorrent, often in construct with a nation or place (e.g., 'the abomination of the Moabites,' 'the abomination of desolation').
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: abomination, abomination-of, the-abomination | spa: abominación, abominación-de, la-abominación | fra: abomination, abomination-de | deu: Abscheuliches, abomination-von
+    Refs: 1Kgs 11:5, 1Kgs 11:7, 1Kgs 11:7, 2Kgs 23:13, 2Kgs 23:13
+  Sense 3: "filth, unclean thing" (1x)
+    Desc: Something ritually or morally disgusting and defiling, emphasizing the polluting quality of the abomination rather than its specifically idolatrous character.
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: filth | spa: inmundicias | fra: abomination | deu: [שקצים]
+    Refs: Nah 3:6

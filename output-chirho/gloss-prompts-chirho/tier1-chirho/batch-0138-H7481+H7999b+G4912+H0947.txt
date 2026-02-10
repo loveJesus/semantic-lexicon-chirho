@@ -1,0 +1,123 @@
+You are a biblical lexicographer composing glosses for a digital lexicon.
+For each lemma below, compose a JSON object. Separate objects with "---".
+
+Format for each:
+{
+  "lemma_id": "...",
+  "gloss_terse": "under 120 chars, concise definition covering the word's semantic range",
+  "gloss_readable": "2-5 sentences, 40-120 words. Don't start with 'This word'. Warm study-Bible footnote tone. Engaging, not dry.",
+  "senses": {
+    "1": "enriched 20-60 word description. Reference multilingual evidence when illuminating. Don't repeat the label verbatim.",
+    "2": "..."
+  }
+}
+
+Rules:
+- No markdown fences, just JSON objects separated by ---
+- Reference multilingual evidence naturally when it reveals something
+- gloss_readable should feel like a good study Bible footnote: helpful, clear, occasionally surprising
+- Each sense enrichment: how does the evidence support this sense? Mention 1-2 key passages when helpful.
+
+=== H7481 ===
+Language: Hebrew, POS: V-Qal-Perf-3cp, Occurrences: 13, Senses: 4
+
+BDB excerpt: † [רָעַם] vb.denom. thunder;— Qal make the sound of thunder, thunder: Impf. 3 ms. יִרְעַם let the sea thunder (in praise, ‖ שׂמח, גיל, עלז, הריע, מחא כף, רנן) ψ 96:11 = 1 Ch 16:32, ψ 98:7.—Pf. 3 pl. רָֽעֲמוּ פָּנִים Ez 27:35 is dub.: faces tremble (Toy are convulsed), or they tremble (cf. Hi-Sm Krae; AV RV are troubled) in face, lacks etym. support (otherwise Gerber47, but v. √ supr.); 𝔊 𝔖 Co דָּֽמְעוּ פְּנֵיהֶם. Hiph. (Gerber47) thunder, cause thunder;—Pf. 3 ms. הִרְעִים ψ 29:3; Impf. 3 ms. יַרְעֵם (on—ֵ v. Köi, 210) ψ 18:14 +; וַיַּרְעֵם 1 S 7:10; 2 ms. תַּרְעֵם Jb 40:9; 1 S 1:6 v. infr.;—th
+Senses:
+  Sense 1: "Hifil: to thunder" (8x)
+    Desc: To cause thunder, used of God producing thunder as a theophanic or meteorological act (Hifil causative stem).
+    Domain: NATURAL_WORLD > Physical Events and States
+    Glosses: eng: He-thunders, and-he-thundered, and-thundered | spa: Tronó, Truena, tronará | fra: Il-thunders, et-il-tonna, et-tonner | deu: He-thunders, [ירעם], [תרעם]
+    Refs: 1Sam 2:10, 1Sam 7:10, 2Sam 22:14, Job 37:4, Job 37:5
+  Sense 2: "Qal: to roar, thunder" (3x)
+    Desc: To roar or thunder, used of the sea or natural phenomena making a loud, rumbling sound (Qal stem).
+    Domain: NATURAL_WORLD > Physical Events and States
+    Glosses: eng: let-roar, let-thunder | spa: Brame, brame | fra: [ירעם], tonner | deu: [ירעם], lass-brüllen
+    Refs: 1Chr 16:32, Ps 96:11, Ps 98:7
+  Sense 3: "Qal: to be troubled, agitated" (1x)
+    Desc: To be troubled, disturbed, or agitated, describing an emotional or physical state of trembling or distress (Qal stem).
+    Domain: EMOTION_ATTITUDE > Attitudes and Emotions
+    Glosses: eng: are-troubled | spa: se-perturbaron | fra: tonner | deu: [רעמו]
+    Refs: Ezek 27:35
+  Sense 4: "Hifil: to cause to tremble, provoke" (1x)
+    Desc: To cause someone to tremble or to provoke agitation, the causative counterpart of the Qal 'be troubled' sense (Hifil stem).
+    Domain: EMOTION_ATTITUDE > Attitudes and Emotions
+    Glosses: eng: making-her-tremble | spa: hacerla-irritar | fra: faisant-sa-tremble | deu: machend-ihr-tremble
+    Refs: 1Sam 1:6
+
+=== H7999b ===
+Language: Hebrew, POS: Conj-w | V-Qal-Imp-ms, Occurrences: 13, Senses: 4
+
+BDB excerpt: † [שָׁלַם] vb. denom. be in covenant of peace;— Qal Imv. שְׁלָ֑ם Jb 22:21 be at peace (in covt.); Pt. sf. שׁוֹלְמִי ψ 7:5 i.e. my ally, friend (cf. 41:10); Pt. pass. cstr. שְׁלֻמֵי 2 S 20:19, read שָׂמוּ EwG iii.264 Ges 130 f.N.4 Dr (cf. We). Pu. Pt. מְשֻׁלָּם Is 42:19 one in covt. of peace (with י׳; but 𝔊 משְׁלָם their ruler, so CheHpt; Ges Hi Ew al. one resigned (to God), read then מָשְׁלָם, cf. √, Arabic iv.; Kroch Grä Marti מְשֻׁלָּחִי). Hiph. Pf. 3 fs. הִשְׁלִ֫ימָה Jos 10:4; 11:19; 3 mpl. הִשְׁלִ֫ימוּ 10:1; Impf. יַשְׁלִים Is 44:26 +, יַשְׁלִם Pr 16:7; וַיַּשְׁלֵם 1 K 22:45, etc.;— 1. mak
+Senses:
+  Sense 1: "Hifil/Hofal: make peace" (8x)
+    Desc: Hifil causative meaning to make peace (with someone), to establish a peace agreement, and its Hofal passive 'be made peace with'; the dominant sense of this lemma across all inflections of the causati...
+    Domain: DANGER_DELIVERANCE > Trouble, Hardship, Relief
+    Glosses: eng: and-made-peace, are-at-peace, had-made-peace | spa: E-hizo-paz, e-hicieron-paz, hace-estar-en-paz | fra: [וישלימו], avait-fit-paix, cela-makes-paix | deu: [וישלימו], der-Salomo, er-vergilt
+    Refs: Deut 20:12, Josh 10:1, Josh 10:4, Josh 11:19, 1Kgs 22:44
+  Sense 2: "Qal: be at peace" (3x)
+    Desc: Qal stative and participial forms meaning to be at peace, to be in a state of peaceful relationship; includes active participle 'one at peace with' and passive participle 'peaceable ones.'
+    Domain: DANGER_DELIVERANCE > Trouble, Hardship, Relief
+    Glosses: eng: and-be-at-peace, peaceable-of, the-one-at-peace-with-me | spa: al-que-estaba-en-paz-conmigo, de-las-pacíficas, y-ten-paz; | fra: et-récompenser, payer, peaceable-de | deu: [ושלם‪‬], der-einer-bei-Friede-mit-mich, peaceable-von
+    Refs: 2Sam 20:19, Job 22:21, Ps 7:4
+  Sense 3: "Hifil: fulfill, complete" (1x)
+    Desc: Hifil causative sense meaning to fulfill, accomplish, or bring to completion, distinct from the peace-making sense and reflecting the root meaning of wholeness/completeness.
+    Domain: PHYSICAL_ACTION > Perform, Do
+    Glosses: eng: He-fulfills | spa: cumple | fra: [ישלים] | deu: [ישלים]
+    Refs: Isa 44:26
+  Sense 4: "Pual: devoted, wholehearted" (1x)
+    Desc: Pual passive participle denoting one who is complete, perfect, devoted, or wholly committed; reflects the 'wholeness/completeness' semantic domain of the root rather than the 'peace' domain.
+    Domain: MORAL_QUALITY > Moral and Ethical Qualities
+    Glosses: eng: like-the-one-at-peace | spa: como-el-perfecto | fra: [כמשלם] | deu: [כמשלם]
+    Refs: Isa 42:19
+
+=== G4912 ===
+Language: Greek, POS: V-PPM/P-AMS, Occurrences: 12, Senses: 4
+
+BDB excerpt: συνέχω, aorist συνέσχον:—middle, future συνέξομαι in passive sense, Refs 5th c.BC+:—passive, aorist συνεσχέθην Refs 4th c.BC+: future infinitive συσχεθήσεσθαι Refs 1st c.BC+ W.:—hold or keep together, confine, secure, ὅθι ζωστῆρος ὀχῆες χρύσειοι σύνεχον [θώρηκα] Refs 8th c.BC+; ἵνα τε ξυνέχουσι τένοντες ἀγκῶνος where the sinews of the elbow hold [it] together, Refsmeet, see below Refs; Ὠκεανός.. συνεῖχε σάκος enclosed, compassed it, Refs 8th c.BC+; Αἴτνα σ. [Τυφῶνα] Refs 5th c.BC+; τὼ μηρὼ σ. hold them together, Refs 5th c.BC+; συνέσχον τὰ ὦτα αὐτῶν closed or stopped their ears, NT; μηδὲ συσχέ
+Senses:
+  Sense 1: "constrain, compel inwardly" (4x)
+    Desc: To be internally constrained or compelled by an urgent force such as love, duty, or the pressure of competing choices.
+    Domain: AUTHORITY_RULE > Control, Rule
+    Glosses: eng: I-am-distressed, I-am-pressed, compels | spa: constríñe, estaba-constreñido, estoy-angustiado | fra: presser, retenir | deu: bedraengen, hält-fest
+    Refs: Luke 12:50, Acts 18:5, 2Cor 5:14, Phil 1:23
+  Sense 2: "afflict, grip by illness or distress" (4x)
+    Desc: To be seized or gripped by disease, fever, fear, or other affliction in a passive suffering sense.
+    Domain: AUTHORITY_RULE > Control, Rule
+    Glosses: eng: being-afflicted, being-held, they-were-gripped | spa: afligidos, eran-apresados, siendo-afligida | fra: presser, retenir | deu: hält-fest
+    Refs: Matt 4:24, Luke 4:38, Luke 8:37, Acts 28:8
+  Sense 3: "press upon physically, crowd" (2x)
+    Desc: To press against or crowd around someone physically, as a throng pressing upon a person.
+    Domain: AUTHORITY_RULE > Control, Rule
+    Glosses: eng: press-upon, will-press-upon | spa: te-apretarán, te-aprietan | fra: presser | deu: hält-fest
+    Refs: Luke 8:45, Luke 19:43
+  Sense 4: "hold, seize, stop up" (2x)
+    Desc: To physically hold, seize, or close shut something such as ears or a person under restraint.
+    Domain: AUTHORITY_RULE > Control, Rule
+    Glosses: eng: holding, they-held | spa: sosteniendo, taparon | fra: presser, retenir | deu: hält-fest
+    Refs: Luke 22:63, Acts 7:57
+
+=== H0947 ===
+Language: Hebrew, POS: V-Hitpael-Prtcpl-fs, Occurrences: 12, Senses: 4
+
+BDB excerpt: † [בּוּס] vb. tread down, trample— Qal Impf. יָבוּס ψ 60:14 = 108:14; 3 fs. תָּבוּס Pr 27:7, אָבוּס Is 63:6; sf. 3 s. אֲבוּסֶנּוּ Is 14:25; 1 pl. נָבוּס ψ 44:6;—tread down, trample (of warriors), no obj. expr. Zc 10:5; id., fig. c. acc. (subj. י׳, as warrior) Is 14:25 cf. ψ 60:14 = 108:14 Is 63:6; (subj. men, with God’s help) ψ 44:6; fig. = reject, loathe Pr 27:7. Poʿl. Pf. בּוֹסְסוּ Is 63:18; בֹּסְסוּ Je 12:10—tread down, in bad sense, subj. enemies of י׳, obj. acc. Je 12:10 (in metaph.): = desecrate (obj. מקדשׁ) Is 63:18. Hithpoʿl. Pt. f. מִתְבּוֹסֶסֶת Ez 16:6, 22—of the blind movements of i
+Senses:
+  Sense 1: "trample, tread down" (7x)
+    Desc: Qal active sense: to trample or tread upon something, typically enemies or peoples, expressing decisive victory or domination (Isa 14:25; 63:6; Ps 44:6; 60:14; 108:14; Ezek 16:6)
+    Domain: PHYSICAL_ACTION > Physical Impact
+    Glosses: eng: And-I-trod-down, I-will-trample-him, tramples | spa: Y-pisoteé, lo-pisotearé, pisotea | fra: [אבוסנו], [בוסים], [ואבוס] | deu: [אבוסנו], [בוסים], [ואבוס]
+    Refs: Ps 44:5, Ps 60:12, Ps 108:13, Prov 27:7, Isa 14:25
+  Sense 2: "wallow" (2x)
+    Desc: Hitpael reflexive sense: to roll oneself, wallow (in blood), describing a reflexive bodily action rather than an act against another (Ezek 16:6; 16:22)
+    Domain: PHYSICAL_ACTION > Physical Impact
+    Glosses: eng: wallowing | spa: revolcándote | fra: [מתבוססת] | deu: [מתבוססת]
+    Refs: Ezek 16:6, Ezek 16:22
+  Sense 3: "trample down (intensive)" (2x)
+    Desc: Piel intensive sense: to trample down thoroughly, emphasizing completeness or severity of the destruction (Jer 12:10; Isa 63:18)
+    Domain: PHYSICAL_ACTION > Physical Impact
+    Glosses: eng: have-trampled-down, they-have-trampled-down | spa: han-pisoteado, pisotearon | fra: [בוססו], [בססו] | deu: [בוססו], [בססו]
+    Refs: Isa 63:18, Jer 12:10
+  Sense 4: "be trampled" (1x)
+    Desc: Hofal passive sense: to be trampled upon, the passive counterpart of the Qal, describing the state of being trodden down (Isa 14:19)
+    Domain: PHYSICAL_ACTION > Physical Impact
+    Glosses: eng: trampled | spa: pisoteado | fra: [מובס] | deu: [מובס]
+    Refs: Isa 14:19

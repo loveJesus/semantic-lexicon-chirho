@@ -1,0 +1,123 @@
+You are a biblical lexicographer composing glosses for a digital lexicon.
+For each lemma below, compose a JSON object. Separate objects with "---".
+
+Format for each:
+{
+  "lemma_id": "...",
+  "gloss_terse": "under 120 chars, concise definition covering the word's semantic range",
+  "gloss_readable": "2-5 sentences, 40-120 words. Don't start with 'This word'. Warm study-Bible footnote tone. Engaging, not dry.",
+  "senses": {
+    "1": "enriched 20-60 word description. Reference multilingual evidence when illuminating. Don't repeat the label verbatim.",
+    "2": "..."
+  }
+}
+
+Rules:
+- No markdown fences, just JSON objects separated by ---
+- Reference multilingual evidence naturally when it reveals something
+- gloss_readable should feel like a good study Bible footnote: helpful, clear, occasionally surprising
+- Each sense enrichment: how does the evidence support this sense? Mention 1-2 key passages when helpful.
+
+=== H5130b ===
+Language: Hebrew, POS: Prep-l | V-Hifil-Inf | 3fs, Occurrences: 35, Senses: 4
+
+BDB excerpt: I. [נוּף] vb. move to and fro, wave, besprinkle (NH Hiph., Pilp. wave, blow, fan, cf. נָפָה sift, נָפָה n. sieve (as BH); 𝔗 Aph. as BH; Syriac ܢܳܦ bend, wave, shake; Di cp. Ethiopic quadril. ነፍነፈ distil, drop like dew; ነፈየ sift);— Qal Pf. 1 s. נַ֫פְתִּי מִשְׁכָּבִי מֹר וגו׳ Pr 7:17 I have be-sprinkled my couch with myrrh, etc. Poʿlel Impf. 3 ms. יְנֹפֵף יָדוֹ הַר וגו׳ Is 10:32 he brandisheth his hand toward the mt. (on acc. הַר cf. Ges§ 118 f. DaSynt. § 69, R 2). Hiph. Pf. 3 ms. הֵנִיף Jos 8:31 +, 2 ms. הֵנַ֫פְתָּ Ex 20:25 (Ges§ 72 k), וְהֵנַפְתָּ֫ Ex 29:24 + 3 times; 1 s. הֲנִיפֹ֫תִי Jb 31:21
+Senses:
+  Sense 1: "wave as ritual offering" (25x)
+    Desc: To wave something (typically a sacrifice or offering) back and forth before the LORD in a ceremonial wave-offering (tenuphah) gesture, predominantly in Levitical ritual contexts.
+    Domain: MOVEMENT > Non-Linear Movement
+    Glosses: eng: and-he-shall-wave, and-shall-wave, and-wave | spa: Y-mecerá, fue-mecido, lo-mecerá | fra: agita, devra-agiter-cela, et-agita | deu: soll-Webe-es, und-du-soll-Webe, und-du-soll-wave
+    Refs: Exod 29:24, Exod 29:26, Exod 29:27, Exod 35:22, Lev 7:30
+  Sense 2: "wield or brandish" (6x)
+    Desc: To swing, wield, or brandish a tool or weapon (such as an axe, sword, or the hand of God) in a forceful, purposeful motion, often implying power or threat.
+    Domain: MOVEMENT > Non-Linear Movement
+    Glosses: eng: as-wielding, its-wielder, was-wielded | spa: Como-si-moviera, alzarás, alzó | fra: agiter, tu-devra-wield, tu-waved | deu: [כהניף], [מניפו], du-soll-wield
+    Refs: Exod 20:25, Deut 23:25, Deut 27:5, Josh 8:31, Isa 10:15
+  Sense 3: "shake or wave threateningly" (3x)
+    Desc: To shake or wave the hand (or something held) in a threatening or commanding gesture, often used of God shaking His hand over nations or waters, distinct from ritual waving.
+    Domain: MOVEMENT > Non-Linear Movement
+    Glosses: eng: he-waves, waves, waving | spa: Agitará, agita, agito | fra: agiter | deu: [ינפף], [מניף]
+    Refs: Isa 10:32, Isa 19:16, Zech 2:9
+  Sense 4: "sift or winnow" (1x)
+    Desc: To move something back and forth in a sifting or winnowing motion, used metaphorically of sifting nations as grain is sifted in a sieve.
+    Domain: MOVEMENT > Non-Linear Movement
+    Glosses: eng: to-sift | spa: para-cribar | fra: agiter | deu: [להנפה]
+    Refs: Isa 30:28
+
+=== H1993 ===
+Language: Hebrew, POS: Conj-w | V-Qal-ConjImperf.Cohort-1cs, Occurrences: 34, Senses: 4
+
+BDB excerpt: † [הָמָה] vb. murmur, growl, roar, be boisterous (𝔗 הֲמָא, but rare, and perhaps not genuine Aramaic; cf. Arabic هَمْهَمَ murmur);— Qal Pf. 3 mpl. הָמוּ ψ 46:7 + 2 times; וְהָמוּ consec. Je 5:22 + 2 times; Impf. יֶהֱמֶה Jr 6:23 + 3 times; 2 fs. תֶּהֱמִי ψ 42:12; 43:5; וַתֶּהֱמִי 42:6; אֶהֱמֶה 55:18; אֶהֱמָ֑יָה 77:4; יֶהֱמוּ 46:4 + 3 times; וַיֶּהֱמוּ Is 51:15; Je 31:35; יֶהֱמָיוּ֑ן ψ 39:7 + 2 times; 1 pl. נֶהֱמֶה Is 59:11; Inf. הֲמוֹת Is 17:12; Pt. הֹמֶה Pr 20:1 Je 4:19; f. הוֹמָה 1 K 1:41, הֹמִיָּה Pr 7:11; 9:13, הוֹמִיָּה Is 22:2; fpl. הֹמִיּוֹת Pr 1:21, הֹמוֹת Ez 7:16 (Co הַמָּוֶת cf. 𝔊 𝔖);
+Senses:
+  Sense 1: "roar, rage (of seas/nations)" (13x)
+    Desc: To make a loud, turbulent roaring sound, said of the sea, waters, or the tumult of nations and peoples.
+    Domain: NATURAL_WORLD > Physical Events and States
+    Glosses: eng: and-roar, and-will-roar, it-roars | spa: brama, como-estruendo-de, ruge | fra: et-mugir, gronder, le-gronder | deu: [המו], brüllen, laermen
+    Refs: Ps 39:6, Ps 46:3, Ps 46:6, Ps 83:2, Isa 17:12
+  Sense 2: "moan, groan, howl in grief" (10x)
+    Desc: To utter sounds of grief, distress, or lamentation, ranging from quiet moaning to howling and the growling of bears as a figure of mourning.
+    Domain: NATURAL_WORLD > Physical Events and States
+    Glosses: eng: We-growl, and-I-moan, and-moan | spa: Rugimos, Se-agita, aullán | fra: et-gronder, gronder, ils | deu: der-Tod, laermen, sie
+    Refs: Ps 55:17, Ps 59:6, Ps 59:14, Ps 77:3, Isa 16:11
+  Sense 3: "be loud, clamorous, noisy" (6x)
+    Desc: To be boisterous, loud, or clamorous, used of persons (especially the 'loud woman' of Proverbs) and noisy streets or places.
+    Domain: NATURAL_WORLD > Physical Events and States
+    Glosses: eng: brawler, is-in-uproar, is-loud | spa: alborotada, alborotador, alborotadora | fra: est-dans-uproar, faire-du-bruit, mugir | deu: [המיה], [המיות], ist-in-uproar
+    Refs: 1Kgs 1:41, Prov 1:21, Prov 7:11, Prov 9:13, Prov 20:1
+  Sense 4: "be in turmoil, be disquieted" (5x)
+    Desc: To be inwardly agitated, disturbed, or restless, especially of the soul or heart in distress (as in Psalms 42-43).
+    Domain: NATURAL_WORLD > Physical Events and States
+    Glosses: eng: and-why-are-you-in-turmoil, are-stirred, are-you-in-turmoil | spa: se-conmovieron, se-conmueven, te-turbas | fra: et-gronder, gronder, mugir | deu: [המו], laermen, sind-du-in-turmoil
+    Refs: Ps 42:5, Ps 42:11, Ps 43:5, Song 5:4, Jer 31:20
+
+=== H4135a ===
+Language: Hebrew, POS: Conj-w | V-Qal-ConjPerf-2ms, Occurrences: 34, Senses: 4
+
+BDB excerpt: † II. [מוּל] vb. circumcise (NH id.; 𝔗 מוּל cut off but only seemingly in the dub. passages (v. III. [מָלַל] and Comm.) Jb 14:2; 18:16; 24:24 [ms. Levy], ψ 37:2; 90:6. (grass, etc.: only for iii. מָלַל, q.v.); cf. NH מָהַל, Aramaic מְהַל, according to Thes NöZMG xl. 1886, 741 Baib. xli. 1887, 626 v. also מהל supr.);— Qal Pf. 3 ms. מָל Jos 5:4 + 2 times; 2 ms. מַלְתָּה Ex 12:44; 3 mpl. מָ֫לוּ Jos 5:5, 7; 2 mpl. מַלְתֶּם Dt 10:16; Impf. וַיָּ֫מָל Gn 17:23 + 2 times; Imv. מֹל Jos 5:2; Pt. pass. מוּל Je 9:24; pl. מֻלִים Jos 5:5;—circumcise, c. acc. בשׂר ערלה (flesh of foreskin) Gn 17:23 (P), acc. 
+Senses:
+  Sense 1: "be circumcised (Nifal/passive)" (20x)
+    Desc: To undergo or be in the state of circumcision, whether as passive recipient, reflexive act, or resulting state.
+    Domain: RELIGIOUS_LIFE > Religious Activities
+    Glosses: eng: and-they-were-circumcised, circumcise-yourselves, circumcised | spa: Circuncidaos, al-circuncidarse, circuncidado | fra: --être-circoncit, [המלו], [מול] | deu: [המלו], [מול], als-er-beschnitten-wurde
+    Refs: Gen 17:10, Gen 17:12, Gen 17:13, Gen 17:13, Gen 17:14
+  Sense 2: "circumcise (Qal active)" (10x)
+    Desc: To perform the act of circumcision on someone, cutting the foreskin as a covenantal sign.
+    Domain: RELIGIOUS_LIFE > Religious Activities
+    Glosses: eng: and-circumcised, and-circumcises, and-he-circumcised | spa: Y-circuncidaréis, Y-circuncidó, circuncidó | fra: circoncit, et-circoncit, et-circumcises | deu: beschnitt, sie-beschnitt, und-beschnitt
+    Refs: Gen 17:23, Gen 21:4, Exod 12:44, Deut 10:16, Deut 30:6
+  Sense 3: "cut off, destroy (Hifil)" (3x)
+    Desc: To cut off or destroy enemies, a causative sense of cutting distinct from the covenantal circumcision meaning.
+    Domain: RELIGIOUS_LIFE > Religious Activities
+    Glosses: eng: I-cut-them-off | spa: las-destruiré | fra: circoncire | deu: ich-abgeschnitten-ihnen-weg
+    Refs: Ps 118:10, Ps 118:11, Ps 118:12
+  Sense 4: "wither, fade (Piel)" (1x)
+    Desc: To wither or fade, describing the wilting of vegetation or vitality.
+    Domain: BODY_HEALTH > Physiological Processes and States
+    Glosses: eng: it-withers | spa: se-marchita | fra: circoncire | deu: es-welkt
+    Refs: Ps 90:6
+
+=== H3051 ===
+Language: Hebrew, POS: V-Qal-Imp-ms | 3fs, Occurrences: 33, Senses: 4
+
+BDB excerpt: † [יָהַב] vb. give (Aramaic יְהַב, ܝܰܗܒ; Arabic وَهَبَ; Ethiopic ወሀበ Sab. והב DHM:ZMG xxix. 1875, 614 f. ול יהב Id.ib. 603)—only Qal Imv. הַב Pr 30:15(×15); emph. הָ֫בָה Gn 11:3 + 10 times (6 times sq. monosyll.); הָבָ֫ה Gn 29:21 before gutt. (Di on Gn 28:2 Köi. 418), fs. הָבִ֫י Ru 3:15; mpl. הָב֫וּ Gn 47:16 + 16 times; הָ֫בוּ לִ֑י Jb 6:22 (on these forms v. also Sta§ 606 a Böi. 225 Ges§ 69. 2, R. 2);— 1. give, sq. acc. Gn 29:21 (E) give (me) my wife, 47:16 (J), Ru 3:15 Zc 11:12 (price); of giving (i.e. causing to come forth, in deciding by lot) urim and Thummim 1 S 14:41(×41) (𝔊 We Dr, v. אוּ
+Senses:
+  Sense 1: "give, hand over" (17x)
+    Desc: The basic sense of giving, handing over, or providing something to someone, covering both singular and plural imperative forms.
+    Domain: ECONOMICS_PROPERTY > Possess, Transfer, Exchange
+    Glosses: eng: give, give- | spa: Da, Dad, Danos | fra: donne, donner, donner- | deu: [הב], der-in-ihm, der-in-mir
+    Refs: Gen 29:21, Gen 30:1, Gen 47:15, Gen 47:16, Deut 1:13
+  Sense 2: "ascribe, attribute glory" (10x)
+    Desc: To ascribe or attribute honor, glory, or greatness to God, used in cultic and worship contexts.
+    Domain: ECONOMICS_PROPERTY > Possess, Transfer, Exchange
+    Glosses: eng: ascribe | spa: Dad, dad | fra: [הבו], ascribe, le-donner | deu: [הבו], ascribe
+    Refs: Deut 32:3, 1Chr 16:28, 1Chr 16:28, 1Chr 16:29, Ps 29:1
+  Sense 3: "come! (exhortation)" (5x)
+    Desc: Used as an interjection or exhortation meaning 'come!' or 'come now!', urging action or participation.
+    Domain: MOVEMENT > Linear Movement
+    Glosses: eng: come | spa: Vamos, dame-, venid | fra: venir | deu: kommen, wohlan
+    Refs: Gen 11:3, Gen 11:4, Gen 11:7, Gen 38:16, Exod 1:10
+  Sense 4: "set, place" (1x)
+    Desc: To set or place something in a particular location or position.
+    Domain: GEOGRAPHY_SPACE > Existence in Space
+    Glosses: eng: set | spa: poned | fra: plaça | deu: setzte
+    Refs: 2Sam 11:15

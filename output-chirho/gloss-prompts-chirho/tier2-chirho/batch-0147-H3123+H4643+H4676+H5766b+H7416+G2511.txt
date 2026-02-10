@@ -1,0 +1,115 @@
+You are a biblical lexicographer composing glosses for a digital lexicon.
+For each lemma below, compose a JSON object. Separate objects with "---".
+
+Format for each:
+{
+  "lemma_id": "...",
+  "gloss_terse": "under 120 chars, concise definition covering the word's semantic range",
+  "gloss_readable": "2-5 sentences, 40-120 words. Don't start with 'This word'. Warm study-Bible footnote tone. Engaging, not dry.",
+  "senses": {
+    "1": "enriched 20-60 word description. Reference multilingual evidence when illuminating. Don't repeat the label verbatim.",
+    "2": "..."
+  }
+}
+
+Rules:
+- No markdown fences, just JSON objects separated by ---
+- Reference multilingual evidence naturally when it reveals something
+- gloss_readable should feel like a good study Bible footnote: helpful, clear, occasionally surprising
+- Each sense enrichment: how does the evidence support this sense? Mention 1-2 key passages when helpful.
+
+=== H3123 ===
+Language: Hebrew, POS: N-fsc | 1cs, Occurrences: 32, Senses: 2
+
+BDB excerpt: † I. יוֹנָה n.f. dove (NH id.; Aramaic id., ܝܰܘܢܳܐ )—abs. יוֹנָה Gn 8:8 + 20 times; cstr. יוֹנַת ψ 56:1; sf. יוֹנָתִי Ct 2:14 + 2 times; pl. יוֹנִים Na 2:8 + 6 times; cstr. יוֹנֵי Ez 7:16 (v. infr.);—dove Gn 8:9, 10, 11, 12 (all J); often of offerings, בֶּן־יוֹנָה Lv 12:6 (P; an individual of the species; ‖ תֹּר); בְּנֵי (ה)יונה (‖ תֹּרִים) 1:14; 5:7, 11; 12:3; 14:22, 30; 15:14, 29 Nu 6:10 (all P); חֲרֵי יוֹנִים dove’s dung 2 K 6:25 (Kt, yet v. GeiUrschrift 409); in various similes: Ephr. is כְּיוֹנָה פּוֹתָה like a silly dove Ho 7:11 (allowing itself to be snared); sim. of retun of exiles, li
+Senses:
+  Sense 1: "dove, pigeon (literal bird)" (29x)
+    Desc: The literal bird (Columba livia or related species), referenced as a sacrificial offering, as Noah's messenger bird, or in similes describing moaning, flight, or eyes.
+    Domain: BODY_HEALTH > Physiological Processes and States
+    Glosses: eng: a-dove, and-like-doves, dove | spa: como-paloma, la-paloma, paloma | fra: [וכיונים], [כיונה], colombe | deu: [וכיונים], [כיונה], der-dove
+    Refs: Gen 8:8, Gen 8:9, Gen 8:10, Gen 8:11, Gen 8:12
+  Sense 2: "dove (term of endearment)" (3x)
+    Desc: Figurative use as a tender address for a beloved, occurring with the first-person possessive suffix ('my dove') in Song of Solomon.
+    Domain: EMOTION_ATTITUDE > Attitudes and Emotions
+    Glosses: eng: my-dove | spa: Paloma-mía, mi-paloma, paloma-mía | fra: Ma-colombe,, ma-colombe, | deu: meine-Taube
+    Refs: Song 2:14, Song 5:2, Song 6:9
+
+=== H4643 ===
+Language: Hebrew, POS: N-mpc | 2mp, Occurrences: 32, Senses: 2
+
+BDB excerpt: † מַעֲשֵׂר n.m. Nu 18:28 tenth part, tithe;—abs. מ׳ Nu 18:26 +; cstr. מַעְשַׂר Lv 27:30 +, מַעֲשַׂר Ne 10:39 (bef. הַמַּעֲשֵׂר); sf. מַעַשְׂרוֹ Lv 27:31; pl. abs. מַעַשְׂרוֹת Ne 12:44; sf. מַעְשְׂרֹתֵיכֶם Am 4:4 + 3 times;— 1. tenth part of ḥomer Ez 45:11, of bath v 14. 2. tithe, payment of tenth part: c. מִן rei Gn 14:20 Nu 18:26; usually cstr. bef. n. rei Dt 12:17; 14:23, 28; 26:12; Lv 27:30, 32; 2 Ch 31:5, 6(×2;) Ne 10:38, 39; 13:5, 12; abs. Nu 18:21, 26(×2;) Mal 3:8, 10; 2 Ch 31:12; Ne 10:39; 12:44; שְׁנַת הַמּ׳ Dt 26:12 the year of the tithe (i.e. of tithing); c. genit. pers. paying tithe
+Senses:
+  Sense 1: "tithe, religious tenth offering" (30x)
+    Desc: A tenth part of produce, livestock, or income set apart as a sacred offering to God or for the Levites, used in both singular and plural forms across various grammatical constructions.
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: and-the-tithe-of, and-tithe-of, the-tithe | spa: El-diezmo, diezmo-de, el-diezmo | fra: dîme, dîme-de, et-dîme | deu: Zehnt, Zehnte-von, [ומעשר]
+    Refs: Gen 14:20, Lev 27:30, Lev 27:31, Lev 27:32, Num 18:21
+  Sense 2: "tenth part, fraction" (2x)
+    Desc: A numerical fraction meaning one-tenth of a quantity, used in a non-cultic or purely quantitative sense without specific reference to religious tithing.
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: tenth-of | spa: décima-de | fra: de-dix | deu: [מעשר]
+    Refs: Ezek 45:11, Ezek 45:14
+
+=== H4676 ===
+Language: Hebrew, POS: Art | N-fs, Occurrences: 32, Senses: 2
+
+BDB excerpt: † מַצֵּבָה, מַצֶּ֫בֶת n.f. pillar, maṣṣēbā, stump; on this v. also Lagrange Études Bibl. 197 ff. and review by BauZMG lvii (1903), 830; also GFMEB massebah Sta Bib. Theol. i. § 55 OC WhitehouseHastDB pillar—abs. מַצֵּבָה Ho 3:4 +, מַצֶּ֫בֶת 2 S 18:18a (read הַמּ׳ 𝔊 Dr Bu Kit), v 18b Is 6:13, cstr. מַצְּבַת 2 K 3:2; 10:27, מַצֶּ֫בֶת Gn 35:14, 20; sf. מַצַּבְתָּהּ Is 6:13; pl. abs. מַצֵּבוֹת 1 K 14:23, cstr. מַצְּבוֹת 2 K 10:26, etc.;— 1. a. pillar, as monument, personal memorial 2 S 18:18(×2). b. a stone, set up (שׂים, הציב), and anointed as memorial of divine appearance Gn 28:18, 22; 31:13 (al
+Senses:
+  Sense 1: "memorial pillar or monument" (20x)
+    Desc: An upright stone erected as a memorial, boundary marker, witness, or commemorative monument, such as Jacob's pillar at Bethel, the pillar at Rachel's grave, or Absalom's monument.
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: and-pillar, and-pillars-of-, pillar | spa: columna, columna-de, columnas | fra: [ומצבה], [ומצבות], [מצבה] | deu: Saeule, Saeule-von, Saeulen
+    Refs: Gen 28:18, Gen 28:22, Gen 31:13, Gen 31:45, Gen 31:51
+  Sense 2: "sacred cultic standing stone" (12x)
+    Desc: A stone pillar set up as an object of pagan worship or idolatrous cult practice, frequently condemned in the Law and prophets as something to be smashed or torn down.
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: and-pillars, and-their-pillars, and-your-pillars | spa: (marca-de-objeto)-las-estelas, columnas-de, las-columnas | fra: [המצבות], [מצבות], colonnes-de | deu: Saeulen-von, [המצבות], [ומצבותיך]
+    Refs: Exod 23:24, Exod 34:13, Deut 7:5, Deut 12:3, 1Kgs 14:23
+
+=== H5766b ===
+Language: Hebrew, POS: N-fs, Occurrences: 32, Senses: 2
+
+BDB excerpt: † עַוְלָה n.f. Jb 11:14 (? m. Mal 2:6 Köii. 2, 453, § 345 d Ez 28:15 [עולתה; but ע׳ only here Ez, error for עול] questioned by SS, v. AlbrechtZAW xvi (1896), 117) injustice, unrighteousness, wrong;—ע׳ ψ 37:1 + 24 times, + i. עוֹלָה Is 61:8 (read prob. עַוְלָה); עַוְלָ֫תָה ψ 125:3; 92:16 (Qr) + 2 times; עֹלָ֫תָה v 16 (Kt) Jb 5:16; pl. עוֹלוֹת ψ 58:3; 64:7;— 1. violent deeds of injustice, בְּנֵי עַוְלָה 2 S 3:34; 7:10 = 1 Ch 17:9; בֶּן־ע׳ ψ 89:23, cf. עַלְוָה" dir="rtl" >בְּנֵי עַלְוָה Ho 10:9 (read עַוְלָה Now); אישׁ מרמה וע׳ ψ 43:1; בע׳ Is 61:8; ‖ דַּם Mi 3:10; Hb 2:12; עשׂה ע׳ ψ 37:1 Zp 3:5, 
+Senses:
+  Sense 1: "injustice, unrighteousness" (28x)
+    Desc: Wrongdoing viewed as a violation of what is right or just, whether in legal, social, or covenantal contexts — the dominant sense covering the great majority of occurrences.
+    Domain: MORAL_QUALITY > Moral and Ethical Qualities
+    Glosses: eng: injustice, injustices, wickedness | spa: con-iniquidad, con-iniquidad!, iniquidad | fra: [עולה], iniquité, injustice | deu: Bosheit, Brandopfer, [עולה]
+    Refs: 2Chr 19:7, Job 5:16, Job 6:29, Job 6:30, Job 11:14
+  Sense 2: "wickedness, moral perversity" (4x)
+    Desc: Broader moral evil or depravity, emphasizing the crooked or perverted character of the wrongdoing rather than its relational injustice — reflected in translations like 'maldad', 'perversidad', 'दुष्टत...
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: wickedness | spa: iniquidad, maldad, perversidad | fra: [עולה], injustice, méchanceté | deu: Bosheit, [עולה]
+    Refs: 2Sam 3:34, 2Sam 7:10, 1Chr 17:9, Ps 89:22
+
+=== H7416 ===
+Language: Hebrew, POS: N-ms, Occurrences: 32, Senses: 2
+
+BDB excerpt: † I. רִמּוֹן n.m. Je 52:23 pomegranate (foreign word of doubtful origin, cf. LöwNo. 310 HomA. u. A. 97 ff.; Aramaic רִימּוֹנָא, רוּמָּנָא, ܪܽܘܡܳܢܳܐ, Mand. רומאנא NöM. 123; Arabic رُمَّانٌ (Aramaic loan-word, Frä 142), Ethiopic ሮማን: );—abs. ר׳ 1 S 14:2 +, רִמֹּן Ex 39:26, 26; sf. רִמֹּנִי Ct 8:2; pl. רִמּוֹנִים 1 K 7:20 +, etc.;—pomegranate: 1. tree 1 S 14:2, often + גֶּפֶן, תְּאֵנָה, etc., Nu 20:5 (JE), Dt 8:8; Hg 2:19; Jo 1:12; Ct 4:13; 6:11; 7:13. 2. fruit Nu 13:23 (JE; + עֲנָבִים, תְּאֵנִים); עֲסִיס ר׳ Ct 8:2, פֶּלַח הָר׳ (in sim.) 4:3; 6:7. 3. ornaments in temple, shaped like pomegranates 
+Senses:
+  Sense 1: "pomegranate (fruit/ornament)" (28x)
+    Desc: The pomegranate fruit, whether literal (eaten, yielding juice/wine) or as a decorative motif on priestly garments and temple pillars; all singular, plural, construct, and suffixed inflections referrin...
+    Domain: FOOD_DRINK > Foods and Condiments
+    Glosses: eng: and-pomegranate, and-pomegranates, pomegranates | spa: granadas, las-granadas, ni-granada | fra: [הרמונים], [הרמנים], [ורמונים] | deu: [הרמונים], [הרמנים], [ורמונים]
+    Refs: Exod 28:33, Exod 28:34, Exod 28:34, Exod 39:24, Exod 39:25
+  Sense 2: "pomegranate tree" (4x)
+    Desc: The pomegranate tree as a plant or crop; distinguished in Spanish (granado vs granada), Korean (석류나무 vs 석류), and Hindi (अनार-के-पेड़), referring to the tree rather than its fruit.
+    Domain: PLANTS_AGRICULTURE > Plants
+    Glosses: eng: and-the-pomegranate, pomegranate, pomegranates | spa: el-granado, granado, granados | fra: de-grenades,, et-grenade, grenade | deu: Granataefel, Granatapfel, [והרמון]
+    Refs: 1Sam 14:2, Song 4:13, Joel 1:12, Hag 2:19
+
+=== G2511 ===
+Language: Greek, POS: V-FIA-3S, Occurrences: 31, Senses: 2
+
+BDB excerpt: κᾰθαρ-ίζω, future -ιῶNT:—cleanse, θυσιαστήριον LXX+NT; sift grain, Refs 3rd c.AD+; prune away, περισσὰ βλαστήματα Refs 1st c.AD+; clear ground of weeds, etc., Refs 4th c.AD+; keep a precinct clear, ἀπό τινων Refs 1st c.BC+ —in middle, future -ιοῦμαι, of the menses, Refs 5th c.BC+ __II of persons, purify, ἀπὸ ἁμαρτίας LXX+NT; cleanse from leprosy, NTpassive, -ιζέστω ἀπὸ γυναικός κτλ. Refs
+Senses:
+  Sense 1: "cleanse physically or ritually" (22x)
+    Desc: To make physically or ritually clean by removing impurity, especially of healing lepers, cleaning vessels, or pronouncing foods clean.
+    Domain: RELIGIOUS_LIFE > Religious Activities
+    Glosses: eng: Cleanse, are-cleansed, be-cleansed | spa: fue-limpiada, fue-limpiado, fueron-limpiados | fra: purifier | deu: reinigen, reinigt
+    Refs: Matt 8:2, Matt 8:3, Matt 8:3, Matt 10:8, Matt 11:5
+  Sense 2: "purify morally or spiritually" (9x)
+    Desc: To cleanse from sin, moral defilement, or spiritual impurity, used of God, Christ, or the blood of Christ purifying believers' hearts, consciences, or lives.
+    Domain: RELIGIOUS_LIFE > Religious Activities
+    Glosses: eng: cleanses, having-been-cleansed, having-cleansed | spa: habiendo-purificado, habiendo-sido-purificados, limpia | fra: purifier | deu: reinigen, reinigt
+    Refs: Mark 7:19, Acts 15:9, 2Cor 7:1, Eph 5:26, Titus 2:14

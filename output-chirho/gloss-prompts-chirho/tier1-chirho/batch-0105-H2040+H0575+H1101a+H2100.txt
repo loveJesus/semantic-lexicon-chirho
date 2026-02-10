@@ -1,0 +1,123 @@
+You are a biblical lexicographer composing glosses for a digital lexicon.
+For each lemma below, compose a JSON object. Separate objects with "---".
+
+Format for each:
+{
+  "lemma_id": "...",
+  "gloss_terse": "under 120 chars, concise definition covering the word's semantic range",
+  "gloss_readable": "2-5 sentences, 40-120 words. Don't start with 'This word'. Warm study-Bible footnote tone. Engaging, not dry.",
+  "senses": {
+    "1": "enriched 20-60 word description. Reference multilingual evidence when illuminating. Don't repeat the label verbatim.",
+    "2": "..."
+  }
+}
+
+Rules:
+- No markdown fences, just JSON objects separated by ---
+- Reference multilingual evidence naturally when it reveals something
+- gloss_readable should feel like a good study Bible footnote: helpful, clear, occasionally surprising
+- Each sense enrichment: how does the evidence support this sense? Mention 1-2 key passages when helpful.
+
+=== H2040 ===
+Language: Hebrew, POS: V-Qal-Imperf-1cs, Occurrences: 43, Senses: 4
+
+BDB excerpt: † הָרַס vb. throw down, break or tear down (MI הרס;? Arabic هَرَسَ, bruise, bray, pound, crush (grain))— Qal Pf. הָ׳ La 2:2, 17; הָרָ֑ס Is 14:17; וְהָרַסְתָּ֫ Ju 6:25 וְהָרַסְתִּ֫י Ez 13:14 Mi 5:10; וְהָֽרְסוּ Ez 16:39; 26:4, 12 הָרָ֑סוּ 1 K 19:10, 14; Impf. יַהֲרוֹס Jb 12:14; sf. יֶהֶרְסֶ֑ךָ Is 22:19; וַיֶּהֶרְסֶ֑הָ 1 Ch 20:1; יֶהֶרְסֶנָּה Pr 29:4 יֶהֶרְסֵם ψ 28:5; 3 fs. sf. 3 ms. תֶּהֶרְסֶנּוּ Pr 14:1; 2 ms. תַּהֲרֹס Ex 15:7; אֶהֱרֹם Je 24:6; 42:10 אֶהֱרוֹס Mal 1:4; 3 mpl. יֶהֶרְסוּ Ex 19:21, 24; יַהֲרֹ֑סוּ 2 K 3:25; Imv. הֲרָס־ ψ 58:7; sf. הָרְסָהּ 2 S 11:25; Inf. הֲרֹס Je 31:28, הֲרוֹס Je 
+Senses:
+  Sense 1: "tear down, demolish (Qal active)" (27x)
+    Desc: Active tearing down or demolishing of structures, walls, or altars in the Qal stem, including all person/number/tense inflections and the Qal passive participle.
+    Domain: MOVEMENT > Linear Movement
+    Glosses: eng: He-tore-down, I-will-tear-down, am-tearing-down | spa: Y-derribaré, derribaron, derribaré | fra: [ויהרסה], [יהרסם], déchira-en-bas | deu: der-zerrissen-hinab, niederreissen, riss-hinab
+    Refs: Exod 15:7, Judg 6:25, 2Sam 11:25, 1Kgs 18:30, 1Kgs 19:10
+  Sense 2: "be torn down, be demolished (Nifal)" (10x)
+    Desc: Passive or reflexive sense in the Nifal stem, describing structures or walls being torn down, demolished, or falling into ruin.
+    Domain: MOVEMENT > Linear Movement
+    Glosses: eng: and-are-torn-down, and-the-torn-down, and-will-be-thrown-down | spa: derribados, es-derribada, estaba-derribada | fra: [יהרסון], démolir, et-démolir | deu: niederreissen, riss-nieder, und-niederreissen
+    Refs: Ps 11:3, Prov 11:11, Prov 24:31, Jer 31:40, Jer 50:15
+  Sense 3: "break through, burst in" (3x)
+    Desc: Breaking through a barrier or boundary to force entry, distinct from demolishing a structure.
+    Domain: MOVEMENT > Linear Movement
+    Glosses: eng: break-, let-them-break-through, they-break-through | spa: irrumpan, rompe- | fra: [הרס], ils-briser-à-travers, que-eux-briser-à-travers | deu: lass-ihnen-brechen-durch, riss-nieder-, sie-brechen-durch
+    Refs: Exod 19:21, Exod 19:24, Ps 58:6
+  Sense 4: "destroy thoroughly (Piel intensive)" (3x)
+    Desc: Intensive demolition or destruction in the Piel stem, emphasizing thoroughness or the role of active destroyers.
+    Domain: MOVEMENT > Linear Movement
+    Glosses: eng: tearing-down, you-shall-tear-them-down, your-destroyers | spa: derribar, derribarás-los, tus-destructores | fra: renverser, tearing-en-bas, tu---déchirer-eux-en-bas | deu: du-soll-zerreissen-ihnen-hinab, niederreissen, tearing-hinab
+    Refs: Exod 23:24, Exod 23:24, Isa 49:17
+
+=== H0575 ===
+Language: Hebrew, POS: Conj-w | Adv, Occurrences: 42, Senses: 4
+
+BDB excerpt: אָן adv. (contracted from I. אַיִן) where? or whither? 1 S 10:14 (cf. 27:10 𝔖 𝔗, v. sub אַל ad fin.); only besides in †מֵאָן whence? 2 K 5:25 Kt (Qr מֵאַיִן); †עַד־אָן of time to what point? how long? Jb 8:2. With ה locale: אָ֫נָה (a) whither? Gn 16:8; 32:18 2 S 2:1; 13:13 2 K 6:6 ψ 139:7(×2) + 9 textual; in indirect sentence Jos 2:5 Ne 2:16; (b) pregnantly †Ru 2:19 Is 10:3; (c) in the phrase אָ֫נֶה וָאָ֫נָה any whither †1 K 2:36, 42 2 K 5:25; (d) of time, עַד־אָ֫נָה how long? †Ex 16:28 Nu 14:11(×2) (c. לֹא) Jos 18:3 Je 47:6 (sq. לֹא) Hb 1:2 ψ 13:2(×2), 3(×2); 62:4 Jb 18:2; 19:2 (less common t
+Senses:
+  Sense 1: "where, whither (interrogative)" (21x)
+    Desc: Interrogative adverb of place meaning 'where?' or 'whither?' (to what place?), used in direct questions about location or direction. Contracted from אַיִן. Attested in Gen 16:8 (angel to Hagar: 'where...
+    Domain: GEOGRAPHY_SPACE > Spacial Positions
+    Glosses: eng: Where, and-where, where | spa: A-dónde, a-dónde, adónde | fra: Où, [אנה], [ואנה] | deu: [אנה], [ואנה], und-wo
+    Refs: Gen 16:8, Gen 32:17, Gen 37:30, Deut 1:28, Josh 2:5
+  Sense 2: "how long (temporal interrogative)" (14x)
+    Desc: Temporal-interrogative adverb meaning 'how long?' or 'until when?', expressing exasperation or lament over duration. Used in Exod 16:28, Num 14:11 (repeated אָנָה אָנָה), Josh 18:3, Job 8:2, 18:2, 19:...
+    Domain: TIME > Time
+    Glosses: eng: when | spa: cuándo, ¿cuándo? | fra: [אנה], je, où | deu: [אנה], als, wann
+    Refs: Exod 16:28, Num 14:11, Num 14:11, Josh 18:3, Job 8:2
+  Sense 3: "anywhere, hither and thither (indefinite)" (6x)
+    Desc: Indefinite locative adverb meaning 'anywhere' or 'hither and thither', used in the repeated pair אָנֶה וָאָנָה 'to one place or another'. Found in 1 Kgs 2:36, 2:42, 2 Kgs 5:25. Glosses confirm indefin...
+    Domain: GEOGRAPHY_SPACE > Spacial Positions
+    Glosses: eng: anywhere, or-anywhere | spa: a-ningún-lado, adonde, ni-a-ningún-lado | fra: anywhere, ou-anywhere | deu: anywhere, oder-anywhere
+    Refs: 1Kgs 2:36, 1Kgs 2:36, 1Kgs 2:42, 1Kgs 2:42, 2Kgs 5:25
+  Sense 4: "[ketiv variant]" (1x)
+    Desc: Ketiv reading [מאן] at 2 Kgs 5:25, a textual variant with prepositional מ prefixed to the interrogative אן, meaning 'from where?'. The qere reads differently. Glosses show arb مِنْ–أَيْنَ 'from where?...
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: [ketiv] | spa: (kethiv) | fra: [ketiv] | deu: [ketiv]
+    Refs: 2Kgs 5:25
+
+=== H1101a ===
+Language: Hebrew, POS: V-Qal-Perf-3ms, Occurrences: 42, Senses: 4
+
+BDB excerpt: † I. בָּלַל vb. mingle, mix, confuse, confound (Arabic بَلَّ moisten (with water), cf. بَلَلٌ moisture, Assyrian balâlu, DlPr 70; cf. Ph. בלל name of a sacrifice, & NH בִּלְבֵּל; Aramaic בַּלְבֵּל ܒܰܠܒܶܠ )— Qal Pf. בָּלַל Gn 11:9, בַּ֜לֹּתִ֗י ψ 92:11 (but cf. infr.); Impf. 1 pl. נָֽבְלָה = נָבֹ֫לָּה Gn 11:7, cf. Köi. 325; Pt. pass. בָּלוּל Ex 29:40 + 3 times, בְּלוּלָה Lv 2:5 + 28 times, בְּלוּלֹת Ex 29:2 + 4 times;— 1. mingle, confuse (obj. שָׂפָה = speech, language, q.v.) Gn 11:7, 9 (J). 2. mix (cakes or flour, etc. always with oil) sacrificial techn. term, only P, cf. Di on Lv 2:4; usually 
+Senses:
+  Sense 1: "to mix, mingle (with oil)" (38x)
+    Desc: Qal passive participle used as a cultic technical term for grain offerings mixed or mingled with oil. This is by far the most frequent use (38+ occurrences), appearing in the sacrificial prescriptions...
+    Domain: PHYSICAL_ACTION > Household Activities
+    Glosses: eng: mixed | spa: mezclada, mezcladas | fra: mélangé | deu: gemischt, mischte
+    Refs: Exod 29:2, Exod 29:40, Lev 2:4, Lev 2:5, Lev 7:10
+  Sense 2: "to confuse, confound (language/speech)" (2x)
+    Desc: Qal active meaning to confuse or confound, used specifically of God's confounding of human language at the Tower of Babel in Gen 11:7 (cohortative וְנָבְלָה, 'let us confuse') and Gen 11:9 (perfect בָ...
+    Domain: PHYSICAL_ACTION > Household Activities
+    Glosses: eng: and-let-us-confuse, confused | spa: confundió, y-confundamos | fra: confondit, et-que-nous-confondre | deu: und-verwirren, verwirrte
+    Refs: Gen 11:7, Gen 11:9
+  Sense 3: "to be anointed, moistened (with oil)" (1x)
+    Desc: Qal perfect 1cs (בַּלֹּתִי) in Ps 92:10 [Heb. 92:11], 'I am anointed with fresh oil,' describing the psalmist's exaltation. This usage connects to the Arabic cognate بَلَّ 'to moisten' and may represe...
+    Domain: RELIGIOUS_LIFE > Religious Activities
+    Glosses: eng: I-am-anointed | spa: he-sido-ungido | fra: de-peur-que | deu: ich-bin-gesalbt
+    Refs: Ps 92:10
+  Sense 4: "to mix oneself (among nations)" (1x)
+    Desc: Hitpael reflexive/reciprocal meaning 'to mix oneself,' used metaphorically of Ephraim mingling among the nations in Hos 7:8 (יִתְבּוֹלָל, 'he mixes himself'). The Hitpael stem gives this a reflexive s...
+    Domain: QUANTITY_NUMBER > Whole, Unite, Part, Divide
+    Glosses: eng: mixes-himself | spa: se-mezcla | fra: mélanger | deu: [יתבולל]
+    Refs: Hos 7:8
+
+=== H2100 ===
+Language: Hebrew, POS: V-Qal-Prtcpl-ms, Occurrences: 42, Senses: 4
+
+BDB excerpt: † [זוּב] vb. flow, gush (NH id., Aramaic דּוּב, דִּיב, ܕܳܒ, all used often in sense 4 infr.; Arabic ذَابَ (med. و) melt, dissolve, flow)—only Qal Impf. יָזוּב Lv 15:25 etc.; Pt. זָב Je 49:9 f. זָבָ֫ה Lv 15:19 etc.;— 1. flow, gush (poet.), of water from the smitten rock ψ 78:20 (‖ שָׁטַף), 105:41 (‖ הָלַךְ), Is 48:21 (‖ נָזַל). 2. Pt. freq. in זָבַת חָלָב וּדְבַשׁ (אֶרֶץ), mostly of promised land, Ex 3:8, 17; 13:5 (all J) 33:3 Nu 13:27; 14:8; 16:14 (all JE) Dt 6:3; 11:9; 26:9, 15; 27:3; 31:20 Jos 5:6 (D) Lv 20:24 (H) Je 11:5; 32:22 Ez 20:6, 15, of Egypt Nu 16:13; זָב עִמְקֵךְ Je 49:4 (fertile v
+Senses:
+  Sense 1: "to flow, gush out" (26x)
+    Desc: Of liquids flowing or gushing, especially in the formula 'a land flowing with milk and honey'; also of water gushing from a rock.
+    Domain: PHYSICAL_ACTION > Activities Involving Liquids
+    Glosses: eng: flowing, flowing-of, flowing-with | spa: fluye, que-fluye, que-mana | fra: [זבת], coulant, coulant-avec | deu: [זבת], flowing, flowing-mit
+    Refs: Exod 3:8, Exod 3:17, Exod 13:5, Exod 33:3, Lev 15:25
+  Sense 2: "one having a bodily discharge" (14x)
+    Desc: Substantivized participle (the zav) denoting a person suffering from an abnormal bodily emission, primarily in Levitical purity laws.
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: and-the-one-having-discharge, has-a-discharge, having-discharge | spa: con-flujo, el-que-fluye, flujo | fra: a-un-écoulement, et-le-un-having-écoulement, having-écoulement | deu: der-eins-having-Ausfluss, eins-mit-Ausfluss, eins-mit-discharge
+    Refs: Lev 15:2, Lev 15:4, Lev 15:6, Lev 15:7, Lev 15:8
+  Sense 3: "discharge, flow (nominal)" (1x)
+    Desc: Nominal use of the root with possessive suffix referring to a bodily discharge itself, especially menstrual or other genital flow.
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: her-discharge | spa: su-flujo | fra: sa-écoulement | deu: ihr-Ausfluss
+    Refs: Lev 15:19
+  Sense 4: "to waste away, pine" (1x)
+    Desc: Figurative extension meaning to melt away, waste, or pine, as of the wounded or dying whose life ebbs away.
+    Domain: PHYSICAL_ACTION > Activities Involving Liquids
+    Glosses: eng: waste-away | spa: ellos-se-desvanecen | fra: [יזובו] | deu: [יזובו]
+    Refs: Lam 4:9

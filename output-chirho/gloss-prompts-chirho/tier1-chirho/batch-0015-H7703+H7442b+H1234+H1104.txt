@@ -1,0 +1,159 @@
+You are a biblical lexicographer composing glosses for a digital lexicon.
+For each lemma below, compose a JSON object. Separate objects with "---".
+
+Format for each:
+{
+  "lemma_id": "...",
+  "gloss_terse": "under 120 chars, concise definition covering the word's semantic range",
+  "gloss_readable": "2-5 sentences, 40-120 words. Don't start with 'This word'. Warm study-Bible footnote tone. Engaging, not dry.",
+  "senses": {
+    "1": "enriched 20-60 word description. Reference multilingual evidence when illuminating. Don't repeat the label verbatim.",
+    "2": "..."
+  }
+}
+
+Rules:
+- No markdown fences, just JSON objects separated by ---
+- Reference multilingual evidence naturally when it reveals something
+- gloss_readable should feel like a good study Bible footnote: helpful, clear, occasionally surprising
+- Each sense enrichment: how does the evidence support this sense? Mention 1-2 key passages when helpful.
+
+=== H7703 ===
+Language: Hebrew, POS: Art | V-Qal-QalPassPrtcpl-fs, Occurrences: 57, Senses: 6
+
+BDB excerpt: [שָׁדַד56] vb. deal violently with, despoil, devastate, ruin (NH id., Niph.; Arabic سَدَّ stop up, obstruct, arrest, make firm; Ethiopic ሰደደ: expel; Assyrian šadâdu is draw, drag);— Qal Pf. 3 pl. consec. וְשָֽׁדְדוּ Ez 32:12; sf. שַׁדּוּנִי ψ 17:9; Impf. 3 ms. יָשׁוּד (metapl., cf. Ges§ 67 q Bae) ψ 91:6, sf. יְשָׁדֵּם (Ges§ 67 n) Pr 11:3 Qr (Kt Pf. ושׁדם), יְשָׁדְדֵם Je 5:6; Imv. mpl. שָׁדְדוּ (Ges§ 67 cc) 49:28; Inf. abs. שָׁדוֹד Mi 2:4; cstr. לִשְׁדוֹד Je 47:4 (Ges§ 45 g), cf. also שֹׁד" dir="rtl" >שֹׁד Ho 10:14; Pt. act. שֹׁדֵד Je 6:26 +, etc.; pass. שָׁדוּד Ju 5:27 +, f. שְׁדוּדָה ψ 137:8;
+Senses:
+  Sense 1: "to be laid waste (Pual passive)" (20x)
+    Desc: Pual passive perfects indicating the state of having been devastated, destroyed, or ruined, used of cities, lands, and peoples.
+    Domain: VIOLENCE_CONFLICT > Violence, Harm, Destroy, Kill
+    Glosses: eng: are-devastated, destroyed, is-destroyed | spa: Asolada, Fue-devastado, destruida | fra: dévaster | deu: verwuesten, verwuestet, verwuestete
+    Refs: Isa 15:1, Isa 15:1, Isa 23:1, Isa 23:14, Jer 4:13
+  Sense 2: "destroyer, plunderer (agent noun)" (15x)
+    Desc: Qal participle used substantively to denote the agent who destroys, despoils, or plunders, whether singular or plural, with or without the article.
+    Domain: VIOLENCE_CONFLICT > Violence, Harm, Destroy, Kill
+    Glosses: eng: a-destroyer, and-the-destroyer, destroyer | spa: destructor, destructor-de, destructores | fra: dévaster, et-dévaster, pillards | deu: Plünderer, der-verwuestete, und-verwuesten
+    Refs: Job 12:6, Job 15:21, Isa 16:4, Isa 21:2, Isa 33:1
+  Sense 3: "to destroy, despoil (Qal active)" (11x)
+    Desc: Active Qal forms expressing the verbal action of destroying, plundering, or laying waste, including finite verbs, verbal participles, imperatives, and infinitives.
+    Domain: VIOLENCE_CONFLICT > Violence, Harm, Destroy, Kill
+    Glosses: eng: and-destroy, and-they-will-destroy, destroying | spa: (los-destruirá), de-destruir, destruye | fra: (ישדם)-eux, dévaster, et-dévaster | deu: devastate-mich, und-verwuesten, verwuesten
+    Refs: Ps 17:9, Prov 11:3, Isa 21:2, Isa 33:1, Jer 5:6
+  Sense 4: "to be destroyed (Qal Passive / Nifal)" (7x)
+    Desc: Qal passive participles, Qal passive imperfects, and Nifal forms expressing the state or process of being destroyed or devastated.
+    Domain: VIOLENCE_CONFLICT > Violence, Harm, Destroy, Kill
+    Glosses: eng: being-devastated, destroyed, destroying | spa: asolada, destruido, hemos-sido-devastados | fra: détruisit, dévaster, le-dévaster | deu: der-devastated, verwuesten, verwuestet
+    Refs: Judg 5:27, Ps 137:8, Isa 33:1, Isa 33:1, Jer 4:30
+  Sense 5: "to devastate, ruin (Piel intensive)" (3x)
+    Desc: Piel stem forms expressing intensive or deliberate destruction, assault, or ruination beyond the basic Qal sense.
+    Domain: VIOLENCE_CONFLICT > Violence, Harm, Destroy, Kill
+    Glosses: eng: assaulting, devastate, he-will-destroy | spa: El-que-arruina-a-, destruirá, destruyas | fra: dévaster, משדד, תשדד | deu: verwuestet
+    Refs: Prov 19:26, Prov 24:15, Hos 10:2
+  Sense 6: "?" (1x)
+    Domain: VIOLENCE_CONFLICT > Violence, Harm, Destroy, Kill
+    Glosses: eng: utterly | spa: Del-todo | fra: dévaster | deu: welcher-Geliebter
+    Refs: Mic 2:4
+
+=== H7442b ===
+Language: Hebrew, POS: Conj-w | V-Piel-ConjPerf-3cp, Occurrences: 53, Senses: 6
+
+BDB excerpt: † [רָנַן] vb. give a ringing cry (onomatop.? cf. Arabic رَنَّ cry aloud, also twang (of bowstring); NH Pi. murmur, complain, cf. J.Aram (not 𝔗));— Qal Impf. 3 ms. יָרוּן (Ges§ 67 q) Pr 29:6 (but read perhaps יָרוּץ, Pinsk Toy, v. רוּץ 2); 3 fs. תָּרֹן Is 35:6; 3 mpl. יָרֹ֫נּוּ 24:14 +, וַיָּר׳ Lv 9:24; 3 fpl. תָּדֹ֫נָּה Pr 1:20; 8:3; Imv. fs. רָנִּי Is 54:1 +, רֹ֫נִּי 12:6; mpl. רָנּוּ Je 31:7 +; Inf. cstr. בְּרָן־ Jb 38:7;—give a ringing cry: 1. in joy, exultation, ‖ צָהַל Je 31:7 (ר׳ שׂמְחָה), Is 12:6; 24:14 (‖ נָשָׂא קוֹל), 54:1 (+ פָּצַח רִנָּה); ‖ הֵרִיעַ Zp 3:14 (+ שׂמח, עלז), Is 44:23; 
+Senses:
+  Sense 1: "sing for joy, exult (Piel)" (27x)
+    Desc: Intensive (Piel) sense of joyful singing or exultant shouting, expressing intensified gladness and jubilation.
+    Domain: EMOTION_ATTITUDE > Attitudes and Emotions
+    Glosses: eng: I-will-shout-for-joy, and-I-will-sing-aloud, and-sing-for-joy | spa: cantad, cantan-con-gozo, cantará-con-gozo | fra: [ירננו], et-pousser-des-cris, pousser-des-cris | deu: ich-wird-jauchzen-für-Freude, jauchzen, jauchzen-für-Freude
+    Refs: 1Chr 16:33, Ps 5:11, Ps 20:5, Ps 33:1, Ps 51:14
+  Sense 2: "sing, shout for joy (Qal)" (16x)
+    Desc: Basic (Qal) sense of joyful vocalization — singing, shouting for joy, or exulting aloud in praise or celebration.
+    Domain: EMOTION_ATTITUDE > Attitudes and Emotions
+    Glosses: eng: Sing-for-joy, and-shall-sing, and-shout-for-joy | spa: Canta, Cantad, Canten | fra: crier-de-joie, dans-crier-de-joie, et-pousser-des-cris | deu: [ברן], [ירון], [רני]
+    Refs: Lev 9:24, Job 38:7, Ps 35:27, Prov 29:6, Isa 12:6
+  Sense 3: "cause to sing for joy (Hifil)" (5x)
+    Desc: Causative (Hifil) sense of causing or prompting others to sing, shout aloud, or exult with joy.
+    Domain: EMOTION_ATTITUDE > Attitudes and Emotions
+    Glosses: eng: I-caused-to-sing-for-joy, You-cause-to-shout-for-joy, and-shout-for-joy | spa: Cantad-con-gozo, alabad, haces-cantar-de-gozo | fra: crier-de-joie, et-le-pousser-des-cris, le-pousser-des-cris | deu: [ארנן], du-Sache-zu-jauchzen-für-Freude, rufen-fuer-Freude
+    Refs: Deut 32:43, Job 29:13, Ps 32:11, Ps 65:8, Ps 81:1
+  Sense 4: "cry out, call aloud (Qal)" (3x)
+    Desc: Qal sense of loud crying out or calling aloud, emphasizing urgent or distressed vocalization rather than joyful singing.
+    Domain: EMOTION_ATTITUDE > Attitudes and Emotions
+    Glosses: eng: cries-out, cry-out, she-cries-aloud | spa: canta, clama | fra: crier-de-joie, pousser-des-cris | deu: [רני], [תרנה]
+    Refs: Prov 1:20, Prov 8:3, Lam 2:19
+  Sense 5: "?" (1x)
+    Domain: EMOTION_ATTITUDE > Attitudes and Emotions
+    Glosses: eng: shouting | spa: que-grita | fra: de-pousser-des-cris | deu: Jauchzen
+    Refs: Ps 78:65
+  Sense 6: "?" (1x)
+    Domain: EMOTION_ATTITUDE > Attitudes and Emotions
+    Glosses: eng: is-sung | spa: se-canta | fra: pousser-des-cris | deu: jauchzen
+    Refs: Isa 16:10
+
+=== H1234 ===
+Language: Hebrew, POS: V-Qal-Perf-2ms, Occurrences: 51, Senses: 6
+
+BDB excerpt: † בָּקַע vb. cleave, break open or through (NH id., MI15 מבקע השחרת from break of dawn; Aramaic בְּקַע; cf. Ethiopic በቍዐ profit, be useful, orig. findere, aperire, Di)— Qal Pf. בָּקַע ψ 78:13, בָּֽקְעָה Is 34:15, בָּקַעְתָּ Ne 9;11 ψ 74:15, וּבָֽקַעְתָּ֫ Ez 29:7; Impf. וַיִּבְקַע Ju 15:19 Is 48:21, וַיִּבְקְעוּ 2 S 23:16 = 1 Ch 11:18, וַיִּבְקָעוּהָ 2 Ch 21:17; Imv. וּבְקָעֵהוּ Ex 14:16; Inf. cstr. sf. בִּקְעָם Am 1:13 2 Ch 32:1; Pt. act. בּוֹקֵעַ Is 63:12 Ec 10:9, בֹּקֵעַ ψ 141:7;— 1. cleave, cleave open, sq. acc. Ju 15:19 God cleft open the hollow (הַמַּכְתֵּשׁ), and water came out, cf. Is 4
+Senses:
+  Sense 1: "split, cleave actively" (16x)
+    Desc: To physically split, cleave, or divide an object by active force (Qal/Piel active), corresponding to Arabic shaqqa and Korean jjogaeda/gallanohda.
+    Domain: PHYSICAL_ACTION > Physical Impact
+    Glosses: eng: and-He-split, and-cleaving, and-divide-it | spa: Dividió, Hendió, Y-abrió | fra: [בוקע], [בקעת], [ויבקע] | deu: [בוקע], [בקע], [בקעם]
+    Refs: Gen 22:3, Exod 14:16, Judg 15:19, 1Sam 6:14, 2Kgs 15:16
+  Sense 2: "breach, break through" (10x)
+    Desc: To breach walls or break through fortifications in a military context, corresponding to Arabic iqtahama and Korean ttulda/dolpahada.
+    Domain: PHYSICAL_ACTION > Physical Impact
+    Glosses: eng: and-broke-into-it, and-broke-through, and-let-us-break-into-it | spa: Y-abrieron-brecha, Y-fue-abierta-brecha, Y-irrumpieron | fra: [הבקעה], [ויבקעו], [ויבקעוה] | deu: [ויבקעו], [ויבקעוה], [לבקעם]
+    Refs: 2Sam 23:16, 2Kgs 3:26, 2Kgs 25:4, 1Chr 11:18, 2Chr 21:17
+  Sense 3: "be split, be cleft" (9x)
+    Desc: To be split or become cleft in a passive or reflexive sense (Nifal/Pual/Hitpael), corresponding to Arabic inshaqqat and Korean gallaejida.
+    Domain: PHYSICAL_ACTION > Physical Impact
+    Glosses: eng: and-split, and-torn, and-was-split | spa: fueron-divididos, se-han-roto, se-hendirán | fra: et-déchiré, et-fendre, et-fendu | deu: [ונבקע], [יתבקעו], [נבקע]
+    Refs: Exod 14:21, Num 16:31, Josh 9:4, Josh 9:13, 1Kgs 1:40
+  Sense 4: "burst forth, gush out" (7x)
+    Desc: To burst forth or gush out, said of water from rocks, springs breaking open, or dawn breaking (Nifal/Pual intransitive), corresponding to Arabic infajarat and Korean teojida.
+    Domain: PHYSICAL_ACTION > Physical Impact
+    Glosses: eng: break-forth, broken-into, burst-open | spa: brotarán, para-ser-abierta, reventará | fra: [יבקע], [נבקעו], burst-ouvrir | deu: [יבקע], [יבקעו], [להבקע]
+    Refs: Gen 7:11, 2Chr 25:12, Job 32:19, Isa 35:6, Isa 58:8
+  Sense 5: "tear apart, rip open" (6x)
+    Desc: To tear apart or rip open violently, especially bodies or living things (intensive Piel), corresponding to Arabic mazzaqa and Korean jjitda.
+    Domain: PHYSICAL_ACTION > Physical Impact
+    Glosses: eng: and-I-shall-burst, and-tore-apart, and-you-tore | spa: Y-haré-romper, los-despedazará, rajarás | fra: et-déchira-à-part, et-fendre, fendre | deu: [ובקעת], [ובקעתי], [תבקע]
+    Refs: 2Kgs 2:24, 2Kgs 8:12, Ezek 13:11, Ezek 13:13, Ezek 29:7
+  Sense 6: "hatch eggs" (3x)
+    Desc: To hatch or break open eggs, a specialized biological sense distinct from general splitting, corresponding to Arabic faqasa (a different root) and Korean kkada.
+    Domain: PHYSICAL_ACTION > Physical Impact
+    Glosses: eng: and-hatch, hatches, they-hatch | spa: empollaron, saldrá, y-los-empollará | fra: [בקעו], [ובקעה], [תבקע] | deu: spalten, und-spalten
+    Refs: Isa 34:15, Isa 59:5, Isa 59:5
+
+=== H1104 ===
+Language: Hebrew, POS: Conj-w | V-Qal-ConsecImperf-3ms, Occurrences: 50, Senses: 6
+
+BDB excerpt: † בָּלַע vb. swallow down, swallow up, engulf (idea of quickness, suddenness) (NH id., Arabic بَلِعَ swallow, Ethiopic በልዐ eat, Aramaic בְּלַע ܒܠܰܥ; Assyrian belû, Pi. destroy ZimBP 27)— Qal Pf. בָּלַע Jb 20:15, sf. בְּלָעַנִי Je 51:34 (Qr, cf. 𝔊 Kt -נוּ); 3 fs. בָּֽלְעָה Nu 16:30; 3 pl. sf. בְּלָעוּנוּ ψ 124:3; Impf. יִבְלָ֑ע Jb 20:18, וַיִּבְלַע Ex 7:12, sf. יִבְלָעֶנָּה Is 28:4; 3 fs. וַתִּבְלַע Nu 16:32 + 2 times; sf. תִּבְלָעֵנִי ψ 69:16, תִּבְלָעֵנוּ Nu 16:34, וַתִּבְלָעֵם Dt 11:6, תִּבְלָעֵמוֹ Ex 15:12; 3 mpl. sf. יִבְלָעֻהוּ Ho 8:7; 3 fpl. וַתִּבְלַעְנָה Gn 41:7, וַתִּבְלַעְןָ Gn 41:24
+Senses:
+  Sense 1: "swallow (Qal physical)" (21x)
+    Desc: To swallow physically or gulp down, whether of a creature consuming prey (Jonah's fish), the earth opening to engulf people (Korah), or enemies overwhelming victims; the basic Qal active sense corresp...
+    Domain: BODY_HEALTH > Physiological Processes and States
+    Glosses: eng: (he-swallowed-me), I-swallow, [ketiv:he-swallowed-me] | spa: Y-tragaron, [kethiv], lo-tragará; | fra: dans-engloutir, engloutir, engloutir-moi | deu: sie-würde-haben-verschlungen-uns, und-swallows, und-verschlangen
+    Refs: Gen 41:7, Gen 41:24, Exod 7:12, Exod 15:12, Num 16:30
+  Sense 2: "devour/swallow up (Piel intensive)" (15x)
+    Desc: To devour or swallow up intensively in the Piel stem, expressing forceful consumption or engulfing, whether literal or figuratively of enemies consuming a people or wealth being devoured; retains the ...
+    Domain: BODY_HEALTH > Physiological Processes and States
+    Glosses: eng: Has-swallowed, He-has-swallowed, I-swallow-up | spa: Ha-devorado, como-envolver, cuando-traga | fra: comme-étant-engloutit, dans-engloutir, engloutir | deu: ich-swallow-hinauf, verschlang, verschlingen
+    Refs: Num 4:20, 2Sam 20:19, 2Sam 20:20, Job 8:18, Ps 21:9
+  Sense 3: "destroy/annihilate (Piel metaphorical)" (5x)
+    Desc: To destroy or annihilate in the Piel stem, a fully metaphorical extension where the swallowing imagery is lost and the sense is pure destruction; confirmed by Arabic يُزِيلُ (yuzīlu, to remove) and لِ...
+    Domain: BODY_HEALTH > Physiological Processes and States
+    Glosses: eng: And-He-shall-destroy, He-shall-swallow-up, and-You-swallow-me | spa: Destruirá, Y-destruirá, de-destruir | fra: engloutir, et-engloutir, et-engloutir-moi | deu: und-verschlang, und-verschlingen, verschlang
+    Refs: Job 2:3, Job 10:8, Isa 25:7, Isa 25:8, Lam 2:8
+  Sense 4: "be swallowed up (Nifal/Pual passive)" (5x)
+    Desc: To be swallowed up, consumed, or overwhelmed in the passive stems (Nifal perfect and Pual imperfect/participle), expressing the state of having been devoured or destroyed; Arabic uses passive forms اب...
+    Domain: BODY_HEALTH > Physiological Processes and States
+    Glosses: eng: Is-swallowed-up, are-swallowed-up, be-swallowed-up | spa: confundidos, devorado, fueron-confundidos | fra: engloutir, être-swallowed-en-haut | deu: sein-swallowed-hinauf, verschlang, verschlingen
+    Refs: 2Sam 17:16, Job 37:20, Isa 9:16, Isa 28:7, Hos 8:8
+  Sense 5: "confuse/confound (Piel)" (3x)
+    Desc: To confuse, confound, or lead astray in the Piel stem, a distinct semantic development from swallowing up speech or counsel so that clarity is lost; confirmed by Spanish confundir/confundiré, and Swah...
+    Domain: BODY_HEALTH > Physiological Processes and States
+    Glosses: eng: I-will-confuse, confuse, your-paths | spa: confunden, confundiré, devora | fra: dans-engloutir, engloutir | deu: confuse, verschlingen
+    Refs: Ps 55:9, Isa 3:12, Isa 19:3
+  Sense 6: "?" (1x)
+    Domain: BODY_HEALTH > Physiological Processes and States
+    Glosses: eng: was-swallowed-up | spa: se-confundía | fra: engloutir | deu: Krieg-verschlungen-hinauf
+    Refs: Ps 107:27

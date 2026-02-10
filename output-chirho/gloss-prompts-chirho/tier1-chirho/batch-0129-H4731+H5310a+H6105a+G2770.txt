@@ -1,0 +1,123 @@
+You are a biblical lexicographer composing glosses for a digital lexicon.
+For each lemma below, compose a JSON object. Separate objects with "---".
+
+Format for each:
+{
+  "lemma_id": "...",
+  "gloss_terse": "under 120 chars, concise definition covering the word's semantic range",
+  "gloss_readable": "2-5 sentences, 40-120 words. Don't start with 'This word'. Warm study-Bible footnote tone. Engaging, not dry.",
+  "senses": {
+    "1": "enriched 20-60 word description. Reference multilingual evidence when illuminating. Don't repeat the label verbatim.",
+    "2": "..."
+  }
+}
+
+Rules:
+- No markdown fences, just JSON objects separated by ---
+- Reference multilingual evidence naturally when it reveals something
+- gloss_readable should feel like a good study Bible footnote: helpful, clear, occasionally surprising
+- Each sense enrichment: how does the evidence support this sense? Mention 1-2 key passages when helpful.
+
+=== H4731 ===
+Language: Hebrew, POS: N-msc, Occurrences: 18, Senses: 4
+
+BDB excerpt: † מקֵּל n.m. Zc 11:7 (appar. f. Gn 30:37, where בָּהֶן, but Sam. בָּהֶם) rod, staff (√ dub.; Thes assumes √ מקל sprout; Schwally ZAW xi. 1891, 170 f. from קלל=shake, with ref. to oracle of the lot (cf. קִלְקַל בַּחִצִּים Ez 21:26); Ba ZMG xii. 1887, 616 gives √ קל, and comp. قُلَةٌ stick driven by another, in sport; Frä ZA iii. 52, comp. Ethiopic በቀልት growth, stem, palm-tree (interchange of ב and מ));—מ׳ abs. Nu 22:27; cstr. Je 1:11 + 2 times; מַקַּל Gn 30:37; sf. מַקְלִי 32:11 + 2 times; מַקְלוֹ 1 S 17:40 Ho 4:12; מַקֶּלְכֶם Ex 12:11; pl. abs. מַקְלוֹת Gn 30:37 + 6 times;— 1. branch of tree a
+Senses:
+  Sense 1: "rods or sticks" (8x)
+    Desc: Rods or sticks as objects, especially wooden rods stripped or placed for a purpose (e.g., Jacob's breeding rods, tribal rods in Numbers 17).
+    Domain: ARTIFACTS > Artifacts
+    Glosses: eng: among-the-rods, rod-of, staffs | spa: cayados, con-los-palos, las-varas | fra: [מקלות], avec-sticks, le-rods | deu: [מקלות], bei-den-Stäben, den-Stäben
+    Refs: Gen 30:37, Gen 30:37, Gen 30:38, Gen 30:39, Gen 30:41
+  Sense 2: "staff or rod" (8x)
+    Desc: A stick carried by a person as a walking aid, shepherd's implement, or symbol of authority; includes possessive and prepositional inflections of the same meaning.
+    Domain: ARTIFACTS > Artifacts
+    Glosses: eng: and-their-staff, and-your-staff, my-staff | spa: báculo-de, cayado-suyo, con-cayado-mío | fra: [מקל], avec-le-bâton, avec-mon-bâton | deu: [ומקלו], [מקל], [מקלי]
+    Refs: Gen 32:10, Exod 12:11, Num 22:27, 1Sam 17:40, Jer 48:17
+  Sense 3: "branch of a tree" (1x)
+    Desc: A branch or shoot cut from a tree, emphasizing its botanical origin rather than its use as a tool.
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: a-branch | spa: rama-de | fra: [מקל] | deu: [מקל]
+    Refs: Jer 1:11
+  Sense 4: "club or weapon" (1x)
+    Desc: A stick or staff wielded as a weapon for striking in battle or conflict.
+    Domain: ARTIFACTS > Artifacts
+    Glosses: eng: and-with-war-club | spa: y-con-bastón-de | fra: [ובמקל] | deu: [ובמקל]
+    Refs: Ezek 39:9
+
+=== H5310a ===
+Language: Hebrew, POS: Conj-w | V-Piel-ConjPerf-3ms, Occurrences: 18, Senses: 4
+
+BDB excerpt: † I. [נָפַץ] vb. shatter (NH id., dash, beat; Assyrian napâṣu, shatter, destroy DlHWB 475; 𝔗 נְפַע Pa. shatter, but also נְפַץ Pa., id., Syriac ܢܦܰܨ shake, break, so Mand., NöM 240, and ZMG xxxii (1878), 406);— Qal Inf. abs. וְנָפוֹץ c. acc. Ju 7:19 and a shattering (= and shattered) the jars; Pt. pass. עֶצֶב נִבְזֶה נָפוּץ Je 22:28 (fig.) a vessel to be despised (and) shattered (cf. Ew Gie Rothstein Kau); also Pt. act. נֹפֵץ shatterer of the holy people Dn 12:7 (Bev MartiKau, reading כִּכְלוֹת יַד נֹפֵץ). Pi. dash to pieces: Pf. 3 ms. וְנִפֵּץ consec. ψ 137:9 c. acc. infants ag. (אֶל) rock; 1
+Senses:
+  Sense 1: "Piel: shatter to pieces" (13x)
+    Desc: To violently break or smash something into pieces (Piel intensive), used of God or humans destroying enemies, idols, or objects by dashing them to pieces.
+    Domain: PHYSICAL_ACTION > Physical Impact
+    Glosses: eng: and-I-will-shatter, and-I-will-shatter-them, and-dashes | spa: Y-los-destrozaré, los-despedazarás, romperán | fra: briser, et-briser | deu: du-soll-shatter-ihnen, und-dashes, und-zerschmettern
+    Refs: Ps 2:9, Ps 137:9, Jer 13:14, Jer 48:12, Jer 51:20
+  Sense 2: "Passive: be shattered, broken" (2x)
+    Desc: The passive state of being broken or shattered into pieces (Pual participle and Qal passive participle), describing objects or people already in a broken condition.
+    Domain: PHYSICAL_ACTION > Physical Impact
+    Glosses: eng: broken, not | spa: desmenuzadas, quebrado | fra: briser | deu: zerschmettern
+    Refs: Isa 27:9, Jer 22:28
+  Sense 3: "Piel: scatter, disperse" (2x)
+    Desc: To scatter or disperse people or things, emphasizing separation and spreading rather than physical breaking, used of God dispersing nations or groups.
+    Domain: PHYSICAL_ACTION > Physical Impact
+    Glosses: eng: and-I-shall-break-them-up, shattering-of | spa: dispersar, y-los-desataré | fra: briser, et-je-devra-brise-eux-en-haut | deu: und-ich-soll-brich-ihnen-hinauf, zerschmettern
+    Refs: 1Kgs 5:9, Dan 12:7
+  Sense 4: "Qal: shatter, break" (1x)
+    Desc: To break or shatter in the basic Qal stem, denoting the act of breaking without the intensive nuance of the Piel.
+    Domain: PHYSICAL_ACTION > Physical Impact
+    Glosses: eng: and-shattered | spa: y-romper | fra: et-shattered | deu: und-shattered
+    Refs: Judg 7:19
+
+=== H6105a ===
+Language: Hebrew, POS: Conj-w | V-Qal-ConjPerf-3ms, Occurrences: 18, Senses: 4
+
+BDB excerpt: † I. [עָצֹם cf. LagBN 31] , עָצַם vb. be vast, mighty, numerous (NH Nithp. contend strenuously, and in deriv.; Ph. in עצמת mighty deeds, עצמם bones; Arabic عَظُمَ be great in bone, or anything, عَظُمٌ bones; Ethiopic ዐፅም id.; Aramaic עִטְמָא, ܥܰܛܡܳܐ thigh);—Qal Pf. 3 ms. וְעָצַם consec. Dn 8:24; 11:23; 2 ms. עָצַמְתָּ Gn 26:16; 3 pl. עָֽצְמוּ Is 31:1 +, עָצֵ֑מוּ ψ 38:20; Impf. 3 mpl. וַיַּעַצְמוּ Ex 1:7, 20; Inf. cstr. עָצְמַת Is 47:9; sf. עָצְמוֹ Dn 8:8;— 1. be mighty, Gn 26:16 (J; c. מִן comp.), Dn 8:8, 24; 11:23. 2. be numerous, ‖ רַבּוּ etc., Is 31:1, בְּעָצְמַת חֲבָרַיִךְ מְאֹד 47:9; Je 5
+Senses:
+  Sense 1: "be strong, mighty (Qal)" (9x)
+    Desc: To be or become strong, mighty, powerful — Qal stem expressing inherent strength or growing in power.
+    Domain: PROPERTIES_RELATIONS > Able, Capable
+    Glosses: eng: and-become-strong, and-grew-mighty, and-shall-be-mighty | spa: Y-se-fortalecerá, son-fuertes, son-poderosos | fra: [וכעצמו], [ועצם], et-crût-puissant | deu: [וכעצמו], du-bist-zu-mächtig-geworden-, sie-sind-maechtig
+    Refs: Gen 26:16, Exod 1:7, Exod 1:20, Ps 38:19, Ps 69:4
+  Sense 2: "be numerous, vast (Qal)" (7x)
+    Desc: To be or become numerous, many, great in number or extent — Qal stem expressing abundance or multiplicity.
+    Domain: PROPERTIES_RELATIONS > Able, Capable
+    Glosses: eng: More-numerous-became-, have-been-numerous, numerous | spa: Se-multiplicaron, aumentaron, fueron-numerosos | fra: être-fort, être-puissant | deu: sie-sind-maechtig, sie-sind-mehr, vast
+    Refs: Ps 40:5, Ps 40:12, Ps 139:17, Jer 5:6, Jer 15:8
+  Sense 3: "break bones (Piel)" (1x)
+    Desc: To break or gnaw bones — Piel intensive stem with a distinct denominative meaning derived from עֶצֶם (bone).
+    Domain: PROPERTIES_RELATIONS > Able, Capable
+    Glosses: eng: gnawed-his-bones | spa: sus-huesos | fra: être-fort | deu: sie-sind-maechtig
+    Refs: Jer 50:17
+  Sense 4: "make strong (Hifil)" (1x)
+    Desc: To make strong, to cause to be mighty — Hifil causative stem indicating causing another to become powerful.
+    Domain: PROPERTIES_RELATIONS > Able, Capable
+    Glosses: eng: and-He-made-them-stronger | spa: y-lo-hizo-más-fuerte | fra: et-être-puissant | deu: und-er-gemacht-ihnen-stronger
+    Refs: Ps 105:24
+
+=== G2770 ===
+Language: Greek, POS: V-AIA-2S, Occurrences: 17, Senses: 4
+
+BDB excerpt: κερδ-αίνω, future - ᾰνῶ Refs 5th c.BC+; Ionic dialect -ανέω Refs 5th c.BC+; κερδήσω NT+5th c.BC+: aorist 1 ἐκέρδᾱνα Refs 5th c.BC+ codices, etc.; Ionic dialect -ηνα Refs 8th c.BC+: perfect κεκέρδαγκα Refs 4th c.BC+:— passive, aorist participle κερδανθείς Refs 1st c.BC+: perfect κεκερδημένος Refs 1st c.AD+: (κέρδος):—gain, derive profit or advantage, κακὰ κ. make unfair gains, Refs 8th c.BC+; τί κερδαν; what shall I gain? Refs 5th c.BC+; κ. τινί gain by a thing, Refs 5th c.BC+; κ. λόγον win fame, Refs 5th c.BC+; χρηστὰ κ. ἔπη receive fair words, Refs 5th c.BC+: with participle, gain by doing..,
+Senses:
+  Sense 1: "win over persons" (7x)
+    Desc: To win or gain people, whether by evangelistic persuasion, fraternal correction, or godly conduct, used both actively and passively.
+    Domain: ECONOMICS_PROPERTY > Possess, Transfer, Exchange
+    Glosses: eng: I-might-gain, having-gained, they-may-be-won | spa: ganando, gane, serán-ganados | fra: gagner | deu: gewinnen, gewinnt
+    Refs: Luke 9:25, 1Cor 9:19, 1Cor 9:20, 1Cor 9:20, 1Cor 9:21
+  Sense 2: "gain or earn profit" (6x)
+    Desc: To gain financially or materially, especially earning a return on investment or making a profit through trade or business.
+    Domain: ECONOMICS_PROPERTY > Possess, Transfer, Exchange
+    Glosses: eng: I-gained, gained, we-will-make-profit | spa: ganaremos, ganaste, gané | fra: gagner | deu: gewinnen, gewinnt
+    Refs: Matt 18:15, Matt 25:16, Matt 25:17, Matt 25:20, Matt 25:22
+  Sense 3: "obtain or attain something" (3x)
+    Desc: To gain or obtain something of value in a broader, often spiritual or abstract sense, such as gaining Christ or gaining the whole world.
+    Domain: ECONOMICS_PROPERTY > Possess, Transfer, Exchange
+    Glosses: eng: I-may-gain, he-should-gain, to-gain | spa: ganar, ganare, gane | fra: gagner | deu: gewinnen, gewinnt
+    Refs: Matt 16:26, Mark 8:36, Phil 3:8
+  Sense 4: "avoid or spare loss" (1x)
+    Desc: To gain in the sense of avoiding or being spared from harm or loss, as in gaining (averting) damage at sea.
+    Domain: ECONOMICS_PROPERTY > Possess, Transfer, Exchange
+    Glosses: eng: to-have-gained | spa: y-ganar | fra: gagner | deu: gewinnt
+    Refs: Acts 27:21

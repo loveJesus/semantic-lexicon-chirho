@@ -1,0 +1,145 @@
+You are a biblical lexicographer composing glosses for a digital lexicon.
+For each lemma below, compose a JSON object. Separate objects with "---".
+
+Format for each:
+{
+  "lemma_id": "...",
+  "gloss_terse": "under 120 chars, concise definition covering the word's semantic range",
+  "gloss_readable": "2-5 sentences, 40-120 words. Don't start with 'This word'. Warm study-Bible footnote tone. Engaging, not dry.",
+  "senses": {
+    "1": "enriched 20-60 word description. Reference multilingual evidence when illuminating. Don't repeat the label verbatim.",
+    "2": "..."
+  }
+}
+
+Rules:
+- No markdown fences, just JSON objects separated by ---
+- Reference multilingual evidence naturally when it reveals something
+- gloss_readable should feel like a good study Bible footnote: helpful, clear, occasionally surprising
+- Each sense enrichment: how does the evidence support this sense? Mention 1-2 key passages when helpful.
+
+=== H3632 ===
+Language: Hebrew, POS: N-msc, Occurrences: 15, Senses: 3
+
+BDB excerpt: † כָּלִיל adj. and subst. entire, whole, holocaust, cstr. כְּלִיל, fem. constr. כְּלִילַת:— 1. adj. Ez 16:14 (of Jerus.) the report בְּיָפְיֵךְ כִּי כָּלִיל הוּא, 28:12 כְּלִיל יֹֽפִי׃ (of the king of Tyre) entire, perfect in beauty; 27:3 אֲנִי כְּלִילַת יֹֽפִי׃ (of Tyre), La 2:15 (of Jerus.) הֲזֹאת הָעִיר שֶׁיֹּאמְרוּ כְּלִילַת יֹפִי. 2. subst. a. entirety, whole, Ex 28:31 thou shalt make the robe of the ephod כְּלִיל תְּכֵלֶת a whole of purple (i.e. wholly purple); so 39:22; Nu 4:6 בֶּגֶד כְּלִיל תְּכֵלֶת; Ju 20:40 והנה עלה כְּלִיל־הָעִיר השׁמימה the whole of the city (perhaps with allusion 
+Senses:
+  Sense 1: "entire, wholly" (8x)
+    Desc: Quantitative completeness: the whole or entirety of something, used adverbially or adjectivally to indicate totality.
+    Domain: QUANTITY_NUMBER > Degree
+    Glosses: eng: all-of, completely, whole-of | spa: completamente, toda, toda-entera | fra: [כליל], entier-de, entièrement | deu: [כליל], alle-von, ganz-von
+    Refs: Exod 28:31, Exod 39:22, Lev 6:22, Lev 6:23, Num 4:6
+  Sense 2: "perfect, complete" (4x)
+    Desc: Qualitative completeness or perfection: moral, aesthetic, or intrinsic flawlessness or wholeness.
+    Domain: MORAL_QUALITY > Moral and Ethical Qualities
+    Glosses: eng: and-perfect-in-, perfect, perfect-in- | spa: la-perfección-de, perfecta, perfecta-de | fra: [וכליל], [כליל], [כלילת] | deu: [וכליל], [כליל], [כלילת]
+    Refs: Lam 2:15, Ezek 16:14, Ezek 27:3, Ezek 28:12
+  Sense 3: "whole burnt offering" (3x)
+    Desc: A sacrifice entirely consumed by fire on the altar, a technical sacrificial term for an offering burned in its entirety.
+    Domain: QUANTITY_NUMBER > Quantity
+    Glosses: eng: and-whole-burnt-offering, and-whole-offering, whole | spa: entero, y-holocausto, y-ofrenda-completa | fra: et-tout-entier, et-tout-entier-brûlé-offrande, tout-entier | deu: ganz, und-ganz-Brand-Opfergabe, und-ganz-Opfer
+    Refs: Deut 33:10, 1Sam 7:9, Ps 51:19
+
+=== H4009 ===
+Language: Hebrew, POS: Prep-b | N-mpc | 2fs, Occurrences: 15, Senses: 3
+
+BDB excerpt: † מִבְטָח n.[m.] confidence Ez 29:16—cstr. מִבְטַח Pr 14:26, מִבְטָח ψ 65:6; sf. מִבְטַחִי Jb 31:24 + 6 times (dag. implicit); מִבְטֶחָם Je 48:13; מִבְטֶחָהֿ Pr 21:22; pl. מִבְטַחִים Is 32:18; מִבְטָחַיִךְ Je 2:37;— 1. the act of confiding Pr 21:22; 22:19; 25:19. 2. the object of confidence Jb 8:14; 18:14; 31:24 ψ 40:5; 65:6; 71:5 Je 2:37; 17:7; 48:13 Ez 29:16. 3. the state of confidence, security Pr 14:26 Is 32:18.
+Senses:
+  Sense 1: "trust, confidence" (11x)
+    Desc: The abstract state or act of trusting, relying on, or having confidence in someone or something.
+    Domain: EMOTION_ATTITUDE > Attitudes and Emotions
+    Glosses: eng: as-confidence, confidence, his-trust | spa: confianza, confianza-de, confianza-suya | fra: [מבטחו], [מבטחם], confiance | deu: [למבטח], [מבטחה], [מבטחו]
+    Refs: Job 31:24, Ps 40:4, Ps 65:5, Ps 71:5, Prov 14:26
+  Sense 2: "security, safety" (2x)
+    Desc: The objective condition of being safe, secure, or free from danger.
+    Domain: EMOTION_ATTITUDE > Attitudes and Emotions
+    Glosses: eng: his-security, secure | spa: seguridad, su-confianza | fra: [מבטחים], son-sécurité-lui | deu: [מבטחו], [מבטחים]
+    Refs: Job 18:14, Isa 32:18
+  Sense 3: "object of trust, refuge" (2x)
+    Desc: The person, thing, or place in which one places trust; a source of refuge or reliance.
+    Domain: EMOTION_ATTITUDE > Attitudes and Emotions
+    Glosses: eng: his-trust, your-trusted-ones | spa: es-su-refugio., tus-confianzas | fra: [במבטחיך], son-sécurité-lui | deu: [במבטחיך], [מבטחו]
+    Refs: Job 8:14, Jer 2:37
+
+=== H5844a ===
+Language: Hebrew, POS: Conj-w | V-Qal-ConjPerf-3cp, Occurrences: 15, Senses: 3
+
+BDB excerpt: † I. עָטָה vb. wrap oneself, enwrap, envelop oneself (Arabic غَطَا cover, conceal; Aramaic ܥܛܳܐ extinguish, destroy; Assyrian eṭû, be dark, eṭûtu, darkness);— Qal Pf. 3 ms. וְע׳ (consec.) Je 43:12; 3 pl. וְעָטוּ (consec.) Mi 3:7; Impf. 3 ms. יַעְטֶה Lv 13:45 + 2 times, וַיַּ֫עַט Is 59:17; 2 ms. תַּעְטֶה Ez 24:17; 3 mpl. יַעֲטוּ (Baer יַעְ׳ ψ 71:13; 109:29; 2 mpl. תַּעְטוּ Ez 24:22; Pt. act. עֹטֶה 1 S 28:14 ψ 104:2; fs. עֹטְיָה Ct 1:7;—wrap, envelop oneself with sthg. (acc., like לבשׁ): וְהוּא עֹטֶה מְעִיל 1 S 28:14 an old man ascending, and he is enwrapped in a robe; so יַע׳ הָרֹעֶה בִּגְדוֹ J
+Senses:
+  Sense 1: "Qal: wrap/envelop oneself" (9x)
+    Desc: To wrap, enwrap, or envelop oneself, as in putting on a garment or covering oneself with a cloak, including veiling oneself for concealment or disguise.
+    Domain: PROPERTIES_RELATIONS > Features of Objects
+    Glosses: eng: and-He-wrapped-Himself, and-he-will-wrap-himself, and-let-them-wrap-themselves | spa: El-que-se-cubre, como-errante, envuelto | fra: [ויעט], [ועטה], [יעטה] | deu: [ויעט], [ועטה], [יעטה]
+    Refs: 1Sam 28:14, Ps 71:13, Ps 104:2, Ps 109:19, Ps 109:29
+  Sense 2: "Qal: cover, enwrap (transitive)" (4x)
+    Desc: To cover or enwrap something or someone else, used transitively of covering objects, people, or surfaces.
+    Domain: PROPERTIES_RELATIONS > Features of Objects
+    Glosses: eng: and-will-cover, he-shall-cover, you-shall-cover | spa: cubrirás, cubriréis, se-cubrirá | fra: couvrir, et-couvrir, il-devra-couvrir | deu: [ועטו], [תעטה], [תעטו]
+    Refs: Lev 13:45, Ezek 24:17, Ezek 24:22, Mic 3:7
+  Sense 3: "Hifil: cover, clothe (causative)" (2x)
+    Desc: Causative stem indicating causing someone or something to be covered or clothed, often with God or a person as the agent covering another.
+    Domain: PROPERTIES_RELATIONS > Features of Objects
+    Glosses: eng: covers, you-have-covered | spa: cubrirá, lo-cubriste | fra: envelopper, le-envelopper | deu: bedeckt, du-haben-bedeckt
+    Refs: Ps 84:6, Ps 89:45
+
+=== H6118 ===
+Language: Hebrew, POS: N-ms, Occurrences: 15, Senses: 3
+
+BDB excerpt: † עֵ֫קֶב n.[m.] consequence, usually as adv.acc. as a consequence of, because (that), also reward, end (v. sub עָקַב; and cf. عَقِبٌ heel, fig. consequence, result);— 1. Is 5:23 מַצְדִּיקֵי רָשָׁע עֵקֶב שֹׁחַד (adv. acc.) in consequence of a bribe, ψ 40:16 (= 70:4) עַל עֵקֶב בָּשְׁתָּם (pleon.) according to the consequence of their shame, i.e. in consequence of the disgrace falling upon them. Hence as conj. עֵקֶב אֲשֶׁר as a consequence of (the fact) that, because, Gn 22:18 ע׳ אֲשֶׁר שָׁמַעְתָּ בְּקֹלִי, 26:5 2 S 12:6; so עֵקֶב כִּי 2 S 12:10; Am 4:12 ע׳ כִּי זאת אעשׂה לך; עֵקֶב alone, Nu 14:2
+Senses:
+  Sense 1: "because, on account of (conjunction)" (11x)
+    Desc: Conjunctive use of eqev meaning 'because,' 'on account of,' or 'for the sake of,' functioning as a causal conjunction introducing the reason or basis for a statement. Spanish 'por cuanto/porque/por ca...
+    Domain: DISCOURSE_NAMES > Discourse Markers
+    Glosses: eng: because, consequence-of, for-sake-of | spa: consecuencia-de, por-causa-de, por-cuanto | fra: [עקב], parce-que, talon | deu: [עקב], consequence-von, dafür-dass
+    Refs: Gen 22:18, Gen 26:5, Num 14:24, Deut 7:12, Deut 8:20
+  Sense 2: "end, outcome (noun temporal)" (2x)
+    Desc: Nominal use denoting the end or conclusion of a matter, the final outcome. Spanish 'hasta el fin,' Arabic 'hatta an-nihayati,' Korean 'kkeut kkaji,' Swahili 'hadi mwisho.' This temporal-terminal sense...
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: to-the-end | spa: hasta-el-fin | fra: talon | deu: zu-der-enden
+    Refs: Ps 119:33, Ps 119:112
+  Sense 3: "reward, recompense (noun)" (2x)
+    Desc: Nominal use designating the reward, recompense, or fruit that results from an action, particularly in wisdom literature contexts. Spanish 'el resultado de/recompensa,' Hindi 'phal/phal,' Arabic 'natij...
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: reward, the-reward-of | spa: El-resultado-de, recompensa | fra: talon, עקב | deu: Lohn, [עקב]
+    Refs: Ps 19:11, Prov 22:4
+
+=== H6475 ===
+Language: Hebrew, POS: V-Qal-Imperf-3ms, Occurrences: 15, Senses: 3
+
+BDB excerpt: † [פָּצָה] vb. part, open (Arabic فَصَى i, ii. separate, remove; Aramaic פְּצָא especially set free, ܦܰܨܺܐ Pa. set free);— Qal Pf. 3 fs. פָּֽצְתָה Gn 4:11 +, 2 ms. פָּצִיתָ Ju 11:36, etc.; Impf. 3 ms. יִפְצֶה Jb 35:16; Imv. ms. פְּצֵה Ez 2:8, sf. פְּצֵנִי ψ 144:7, 11; Pt. פֹּצֶה Is 10:14, פּוֹ׳ ψ 144:10;— 1. open mouth: a. to swallow, fig. of ground, הָאֲדָמָה Gn 4:11 (J), Nu 16:30 (JE), הָאָרֶץ Dt 11:6; of enemies, + עַל pers. La 2:16; 3:46 ψ 22:14; lit. Ez 2:8. b. to speak Ju 11:35, 36 (utter a vow, + אֶל־י׳); Jb 35:16; hence = utter, אֲשֶׁר פָּצוּ שְׁפָתַי ψ 66:14; of bird chirping פֹּצֶה פ
+Senses:
+  Sense 1: "open wide the mouth" (11x)
+    Desc: To open wide, especially the mouth or jaws, either literally or as a gesture of hostility or astonishment; the basic physical meaning of patsah referring to gaping or spreading open.
+    Domain: PROPERTIES_RELATIONS > Features of Objects
+    Glosses: eng: Open, Opened, and-opening | spa: Han-abierto, abre, abre- | fra: avoir-ouvrit-, et-opens, et-ouvrir | deu: [ופצה], [פצה], aufgetan-hat
+    Refs: Gen 4:11, Num 16:30, Deut 11:6, Judg 11:35, Judg 11:36
+  Sense 2: "rescue or deliver" (3x)
+    Desc: To rescue, deliver, or snatch away from danger or oppression; an extended or metaphorical sense of patsah meaning to open or break free, used in contexts of divine or human deliverance.
+    Domain: MOVEMENT > Linear Movement
+    Glosses: eng: rescue-me, the-one-rescuing | spa: Rescátame, el-que-rescata, rescátame | fra: le-ouvrir, ouvrir | deu: der-einer-rescuing, erretten-mich
+    Refs: Ps 144:7, Ps 144:10, Ps 144:11
+  Sense 3: "open mouth to speak" (1x)
+    Desc: To open the mouth for the purpose of speaking or uttering words, emphasizing verbal expression rather than mere physical opening; attested by Arabic nataqat (uttered) and Swahili zilisema (they spoke)...
+    Domain: PROPERTIES_RELATIONS > Features of Objects
+    Glosses: eng: opened | spa: abrieron | fra: ouvrir | deu: geöffnet
+    Refs: Ps 66:14
+
+=== H7814 ===
+Language: Hebrew, POS: Prep-l | N-ms, Occurrences: 15, Senses: 3
+
+BDB excerpt: † שְׂחֹק, שְׂחוֹק n.[m.] laughter, derision, sport (proposes inf. cstr.);—abs. שְׂחֹק Je 48:26 + 5 times; cstr. Ec 7:6; abs. שְׂחוֹק Je 20:7 + 7 times;— 1. laughter (joyous) Jb 8:21 (‖ תְּרוּעָה), ψ 126:2 (‖ רִנָּה), Ec 2:2 (‖ שִׂמְחָה), 10:19 (‖ שִׂמֵּחַ); as hollow Pr 14:13 (opp. כָּאַב), Ec 7:3 (opp. כַּעַס), cf. שׂ׳ הַכְּסִיל v 6. 2. (object of) derision, הָיָה לִשׂ׳, Je 20:7; 48:26, 27 (read לִשׂ׳ for MT הַשּׂ׳ 𝔊 𝔖 𝔙 Gie Du; Co del. vv), v 39 La 3:14; elsewhere Jb 12:4(×2). 3. sport Pr 10:23.
+Senses:
+  Sense 1: "laughingstock, object of derision" (7x)
+    Desc: A person or thing that is laughed at in mockery or contempt; an object of scorn or ridicule.
+    Domain: EMOTION_ATTITUDE > Attitudes and Emotions
+    Glosses: eng: a-laughingstock, laughingstock | spa: Irrisón, burla, irrisón | fra: [השחק], [לשחוק], [לשחק] | deu: Lachen, [השחק], [לשחוק]
+    Refs: Job 12:4, Job 12:4, Jer 20:7, Jer 48:26, Jer 48:27
+  Sense 2: "laughter" (7x)
+    Desc: The act or sound of laughing, whether from joy, incredulity, or scorn; the general sense of laughter as an emotional or vocal response.
+    Domain: EMOTION_ATTITUDE > Attitudes and Emotions
+    Glosses: eng: for-laughter, in-laughter, laughter | spa: A-la-risa, de-risa, en-la-risa | fra: dans-rire, de-rire, rire | deu: Lachen, laughter
+    Refs: Job 8:21, Ps 126:2, Prov 14:13, Eccl 2:2, Eccl 7:3
+  Sense 3: "sport, amusement" (1x)
+    Desc: Diversion, entertainment, or playful activity; something done for fun or as a pastime rather than as an emotional response.
+    Domain: EMOTION_ATTITUDE > Attitudes and Emotions
+    Glosses: eng: like-sport | spa: como-risa | fra: comme-rire | deu: Lachen
+    Refs: Prov 10:23

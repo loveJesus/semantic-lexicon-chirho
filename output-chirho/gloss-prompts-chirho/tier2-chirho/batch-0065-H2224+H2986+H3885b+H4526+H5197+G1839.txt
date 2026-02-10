@@ -1,0 +1,145 @@
+You are a biblical lexicographer composing glosses for a digital lexicon.
+For each lemma below, compose a JSON object. Separate objects with "---".
+
+Format for each:
+{
+  "lemma_id": "...",
+  "gloss_terse": "under 120 chars, concise definition covering the word's semantic range",
+  "gloss_readable": "2-5 sentences, 40-120 words. Don't start with 'This word'. Warm study-Bible footnote tone. Engaging, not dry.",
+  "senses": {
+    "1": "enriched 20-60 word description. Reference multilingual evidence when illuminating. Don't repeat the label verbatim.",
+    "2": "..."
+  }
+}
+
+Rules:
+- No markdown fences, just JSON objects separated by ---
+- Reference multilingual evidence naturally when it reveals something
+- gloss_readable should feel like a good study Bible footnote: helpful, clear, occasionally surprising
+- Each sense enrichment: how does the evidence support this sense? Mention 1-2 key passages when helpful.
+
+=== H2224 ===
+Language: Hebrew, POS: Prep-k | V-Qal-Inf, Occurrences: 18, Senses: 3
+
+BDB excerpt: † זָרַח vb. rise, come forth (NH id., Assyrian zarâḫu DlPr180; Sab. דֿרח lofty, majestic (of king) and in cpd. n.pr. DHMZMG 1875, 605; 1883, 327 MordtZMG 1876, 37)— Qal Pf. ז׳ Dt 33:2 ψ 112:4; זָרָ֑ח Is 60:1; וְזָרַח consec. Is 58:10 Ec 1:5; 3 fs. זָרְֽחָה Ex 22:2 + 3 times; וְזָֽרְחָה consec. Mal 3:20; Impf. יִזְרַח 2 S 23:4 Is 60:2; יִזְרָ֑ח Jb 9:7; וַיִּזְרַח Gn 32:32; 3 fs. תִּזְרַח ψ 104:22; Inf. cstr. זְרֹחַ Ju 9:33 Jo 4:8; Pt. זוֹרֵחַ Ec 1:5;— 1. rise: a. (of sun) Ju 9:33 Na 3:17 2 S 23:4 Jon 4:8 Jb 9:7 ψ 104:22 Ec 1:5(×2); sq. על Ex 22:2 (JE), 2 K 3:22; sq. לְ Gn 32:32 (J). b. fig., sq
+Senses:
+  Sense 1: "rise, come forth (sun/light)" (13x)
+    Desc: The sun, daylight, or a luminary rises or comes up over the horizon, describing the physical phenomenon of dawn or sunrise.
+    Domain: NATURAL_WORLD > Physical Events and States
+    Glosses: eng: and-rises, and-rose-, and-will-rise | spa: Sale, Y-brilló, Y-nacerá | fra: [יזרח], a-levé, briller | deu: [וזרח], [וזרחה], [זורח]
+    Refs: Gen 32:31, Exod 22:3, Judg 9:33, 2Sam 23:4, 2Kgs 3:22
+  Sense 2: "shine forth, beam (divine radiance)" (4x)
+    Desc: God's glory or splendor shines forth in theophany or eschatological promise, emphasizing radiant brilliance rather than mere physical rising.
+    Domain: NATURAL_WORLD > Physical Events and States
+    Glosses: eng: and-dawned, and-shall-rise, has-risen | spa: Resplandece, resplandeció, y-resplandecerá | fra: [וזרח], [זרח], et-dawned | deu: [וזרח], [זרח], steht-auf
+    Refs: Deut 33:2, Ps 112:4, Isa 58:10, Isa 60:1
+  Sense 3: "break out (skin condition)" (1x)
+    Desc: A skin ailment or discoloration breaks out or appears on the surface of the body, used in priestly diagnostic contexts.
+    Domain: MOVEMENT > Linear Movement
+    Glosses: eng: broke-out | spa: brotó | fra: [זרחה] | deu: [זרחה]
+    Refs: 2Chr 26:19
+
+=== H2986 ===
+Language: Hebrew, POS: V-Hifil-Imperf-3mp | 3fs, Occurrences: 18, Senses: 3
+
+BDB excerpt: † [יָבַל] vb. Hiph. conduct, bear along, especially in procession (Aramaic יַבֵּל, אוֹבִיל id., ܝܰܒܶܠ Pa. lead along, also Ethpa.; Aph. lead, conduct; Zinj. יבל id., DHMSendsch.Gloss..; Assyrian abâlu (ובל), bring, conduct, COT Gloss.. DlPr 122 ff.; Arabic وَبَلَ is run vehemently (of horse), pursue sharply, pour down rain, وَبْلٌ violent rain)— Hiph. Impf. 3 ms. sf. יוֹבִילֵנִי ψ 60:11; 108:11; 1 s. sf. אוֹבִילֵם Je 31:9; 3 mpl. יוֹבִילוּ ψ 68:30; יֹבִילוּ 76:12 (juss.); יוֹבִלוּן Zp 3:10; sf. יֹבִלוּהָ Is 23:7;— 1. bear along offerings, c. acc. rei, Zp 3:10; c. ל pers. ψ 68:30; 76:12. 2. car
+Senses:
+  Sense 1: "bring, carry (Hifil active)" (7x)
+    Desc: To bring, lead, or carry someone or something to a place, as the active causative (Hifil) of yabal.
+    Domain: MOVEMENT > Linear Movement
+    Glosses: eng: I-will-lead-them, carried-her, let-them-bring | spa: la-llevaban, los-guiaré, me-llevará | fra: conduire | deu: [אובילם], [יבלוה], [יובלון]
+    Refs: Ps 60:9, Ps 68:29, Ps 76:11, Ps 108:10, Isa 23:7
+  Sense 2: "be led, be guided (Hofal passive)" (6x)
+    Desc: To be led or guided along a path, emphasizing direction and guidance in the passive (Hofal) of yabal.
+    Domain: MOVEMENT > Linear Movement
+    Glosses: eng: being-led, is-led, she-is-led | spa: Serán-traídas, fue-llevado, llevado | fra: conduire, יובלו | deu: [יובל], [יובלו], [תובלון]
+    Refs: Job 21:30, Ps 45:14, Ps 45:15, Isa 53:7, Isa 55:12
+  Sense 3: "be carried, be brought (Hofal passive)" (5x)
+    Desc: To be carried or brought as cargo or a passive object, emphasizing transport in the passive (Hofal) of yabal.
+    Domain: MOVEMENT > Linear Movement
+    Glosses: eng: I-would-be-carried, is-brought, is-carried | spa: es-llevado, habría-sido-llevado., será-llevado | fra: conduire, אובל, יובל | deu: [אובל], [יובל]
+    Refs: Job 10:19, Job 21:32, Isa 18:7, Hos 10:6, Hos 12:1
+
+=== H3885b ===
+Language: Hebrew, POS: V-Hifil-Imperf-2mp, Occurrences: 18, Senses: 3
+
+BDB excerpt: † II. [לוּן] vb. murmur, only Ex 15, 16, 17, Nu 14, 16, 17, and Jos 9:18 (Sam. always defect., hence NöZMG xxxvii, 1883, 535 n. thinks poss. לנן [cf. רנן?]; from limited occurrence, he supposes it disappeared early; but found chiefly in P);— Niph. Impf. 3 mpl. וַיִּלּוֹ֫נוּ Ex 15:24 + 3 times + Ex 16:2 Qr (Kt וילינו) + Nu 14:36 Kt (Qr וַיַּלִּי֫נוּ, Hiph.); 2 mpl. תִּלּוֹ֫נוּ Ex 16:7; Nu 16:11, both Kt (Qr תַּלִּי֫נוּ); on forms v. Ges§ 72 ee Köi. 509;—murmur against, sq. עַל Ex 15:24 (JE), 16:2, 7; Nu 14:2; 16:11; 17:6 Jos 9:18 (all P; all of people Isr.); abs. ψ 59:16 (v. ׃לון 1 a). Hiph. Pf
+Senses:
+  Sense 1: "murmur, grumble, complain" (15x)
+    Desc: To express discontent or displeasure by grumbling or complaining, typically against God or leaders (Nifal/Hifil intransitive).
+    Domain: COMMUNICATION > Communication
+    Glosses: eng: (and-murmured), (you-murmur), [and-they-murmured] | spa: Y-murmuraron, Y-murmuró, [K] | fra: [et-ils-murmura], [et-murmura], [tu-murmurer] | deu: [du-murren], [und-murmured], [und-sie-murmured]
+    Refs: Exod 15:24, Exod 16:2, Exod 16:2, Exod 16:7, Exod 16:7
+  Sense 2: "cause to murmur" (2x)
+    Desc: To incite or cause others to grumble and complain (Hifil causative sense).
+    Domain: COMMUNICATION > Communication
+    Glosses: eng: and-caused-to-murmur | spa: [K], e-hicieron-murmurar | fra: et-caused-à-murmurer | deu: und-caused-zu-murren
+    Refs: Num 14:36, Num 14:36
+  Sense 3: "lodge, spend the night" (1x)
+    Desc: To pass the night or stay overnight at a place (Qal stem, distinct root meaning from the murmuring senses).
+    Domain: TIME > Time
+    Glosses: eng: then-they-will-stay-all-night | spa: y-pasan-la-noche | fra: et-murmurer | deu: dann-sie-wird-stay-alle-Nacht
+    Refs: Ps 59:15
+
+=== H4526 ===
+Language: Hebrew, POS: N-fpc | 3fs, Occurrences: 18, Senses: 3
+
+BDB excerpt: † מִסְגֶּ֫רֶת n.f. 1. border, rim. 2. fastness;—abs. מ׳ Ex 25:27; 37:14; cstr. מ׳ 25:25; 37:12; sf. מִסְגַּרְתּוֹ 25:25; 37:12; pl. abs. מִסְגְּרוֹת 1 K 7:28 +; sf. מִסְגְּרֹתֶיהָ v 35, 36, etc.;— 1. border, rim (enclosure), of sacred table in tabern. Ex 25:25(×2), 27 = 37:12(×2), 14; of bases of the sea, in temple 1 K 7:28, 31, 32, 35, 36 (cf. Benz), also 2 K 16:17. 2. fastness, וְיַחְרְגוּ מִמּ׳ ψ 18:46 = 2 S 22:46 (v. חרג) and they shall come quaking out of their fastnesses, so Mi 7:17 (יִרְגְּזוּ, like reptiles), all of nations, in awe of י׳.
+Senses:
+  Sense 1: "panels or border-frames" (9x)
+    Desc: Panels or decorative border-frames (plural) set into the sides of the temple stands, often described with engravings of lions, oxen, and cherubim.
+    Domain: BUILDINGS > Building, Constructing
+    Glosses: eng: [and-its-panels], and-its-panels, and-panels | spa: (paneles-de-ella), [y-paneles-de-ella], los-paneles | fra: [and-son-panels], et-leur-panels, et-panels | deu: [and-sein-panels], der-panels, der-panels-von
+    Refs: 1Kgs 7:28, 1Kgs 7:28, 1Kgs 7:29, 1Kgs 7:31, 1Kgs 7:32
+  Sense 2: "frame or rim" (6x)
+    Desc: A border, rim, or frame surrounding an object, especially the decorative borders on the bronze stands in Solomon's temple (1 Kings 7).
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: a-frame-of, for-its-frame, for-its-rim | spa: a-su-marco, el-marco, marco | fra: le-cadre, le-rebord, pour-son-cadre | deu: der-Rahmen, der-rim, einen-Rahmen-von
+    Refs: Exod 25:25, Exod 25:25, Exod 25:27, Exod 37:12, Exod 37:12
+  Sense 3: "stronghold or fortress" (3x)
+    Desc: A fortified place, stronghold, or place of confinement from which people emerge, used in military or defensive contexts (e.g., 1 Sam 23:14, Mic 7:17).
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: from-their-fortresses, from-their-strongholds | spa: de-sus-escondites, de-sus-fortalezas, de-sus-prisiones | fra: côté, de-cadre, de-leur-strongholds | deu: [ממסגרתיהם], von-ihr-fortresses, von-ihr-strongholds
+    Refs: 2Sam 22:46, Ps 18:45, Mic 7:17
+
+=== H5197 ===
+Language: Hebrew, POS: V-Hifil-Imperf-2mp, Occurrences: 18, Senses: 3
+
+BDB excerpt: † [נָטַף] vb. drop, drip, fig. (especially of prophet) discourse (NH id.; 𝔗 נְטַף drop, drip; Syriac ܢܛܰܦ drip, ܛܘܽܦܬܳܐ drop (NöSyriac Gr. § 105) etc.; Arabic نَطَفَ id.; Ethiopic ነጥበ id., ነጠፈ colare (stillando), expercolare);— Qal Pf. 3 mpl. נָֽטְפוּ Ju 5:4 + 2 times; נָטָ֑פוּ Ju 5:4; Impf. 3 fs. תִּטֹּף Jb 29:22; 3 mpl. יִטְּפוּ Jo 4:18; 3 fpl. תִּטֹּפְנָה Pr 5:3 Ct 4:11; Pt. נֹטְפוֹת Ct 5:13;—drop, drip, usually trans., c. acc., of clouds dropping water (מַיִם), in storm Ju 5:4, ‖ heavens v 4 (obj. om.), ψ 68:9 (id.; all theoph); of hands dripping myrrh (מוֹר) Ct 5:5; in predict. יִטְּפוּ ע
+Senses:
+  Sense 1: "to drip, drop (Qal)" (9x)
+    Desc: Intransitive physical dripping or dropping of liquid, used of rain, myrrh, honeycomb, or other substances falling in drops.
+    Domain: NATURAL_WORLD > Physical Events and States
+    Glosses: eng: drip, dripped, dripped- | spa: destilan, destilarán, goteaba | fra: distillant, distillent, distiller | deu: [יטפו], [נטפו], [נטפות]
+    Refs: Judg 5:4, Judg 5:4, Job 29:22, Ps 68:8, Prov 5:3
+  Sense 2: "to prophesy, preach (Hifil)" (8x)
+    Desc: Metaphorical use in the Hifil stem meaning to let words drop or flow forth, i.e., to prophesy or preach, often with negative connotations of unauthorized or unwanted prophetic speech.
+    Domain: COMMUNICATION > Communication
+    Glosses: eng: I-will-preach, and-drip, preach | spa: prediques, profeta-de, profeticéis | fra: et-prophétiser, prophétiser | deu: [אטף], [והטף], [יטיפון]
+    Refs: Ezek 20:46, Ezek 21:2, Amos 7:16, Mic 2:6, Mic 2:6
+  Sense 3: "to cause to flow (Hifil causative)" (1x)
+    Desc: Causative Hifil use retaining the literal physical sense of causing liquid to drip or flow, as in mountains dripping sweet wine in eschatological abundance.
+    Domain: COMMUNICATION > Communication
+    Glosses: eng: and-will-drip | spa: y-destilarán | fra: et-prophétiser | deu: [והטיפו]
+    Refs: Amos 9:13
+
+=== G1839 ===
+Language: Greek, POS: V-RNA, Occurrences: 17, Senses: 3
+
+BDB excerpt: ἐξίστημι, causal in present, imperfect, future, aorist 1:—displace: hence, change, alter utterly, τὰν φύσιν Refs 5th c.BC+ __2 metaphorically, ἐξιστάναι τινὰ φρενῶν drive one out of his senses, Refs 5th c.BC+; simply ἐ. τινά drive one out of his senses, confound, amaze, Refs 5th c.BC+diverts the attention, Refs 4th c.BC+; excite,NT; τὸν λογισμόν, τὴν διάνοιαν, Refs 1st c.AD+ __3 get rid of, dispose of the claims of a person, Refs 1st c.BC+ __4 ἐξεστᾰκότα (ἐξεστηκότα codex): εἰς δίκην κεκληκότα, Refs 5th c.AD+ __B intransitive in passive and middle, with aorist 2, perfect, and pluperfect active
+Senses:
+  Sense 1: "be amazed or astonished" (12x)
+    Desc: To be filled with amazement or astonishment at something witnessed or heard (intransitive middle/passive).
+    Domain: EMOTION_ATTITUDE > Attitudes and Emotions
+    Glosses: eng: he-was-amazed, they-were-amazed, to-be-amazed | spa: asombrarse, estaban-asombrados, quedaron-atónitos | fra: étonner, être-stupéfait | deu: staunt, ἐξέστησαν, ἐξίσταντο
+    Refs: Matt 12:23, Mark 2:12, Mark 5:42, Mark 6:51, Luke 2:47
+  Sense 2: "amaze or astound someone" (3x)
+    Desc: To cause amazement or astonishment in others, to astound (transitive/causative active).
+    Domain: EMOTION_ATTITUDE > Attitudes and Emotions
+    Glosses: eng: amazed, amazing, to-have-amazed | spa: asombrando, asombraron, haber-asombrado | fra: étonner, être-stupéfait | deu: staunt
+    Refs: Luke 24:22, Acts 8:9, Acts 8:11
+  Sense 3: "be out of one's mind" (2x)
+    Desc: To be beside oneself, to lose one's senses or appear insane (from the literal sense of being displaced from one's normal state).
+    Domain: EMOTION_ATTITUDE > Attitudes and Emotions
+    Glosses: eng: he-is-out-of-his-mind, we-were-out-of-our-mind | spa: Está-fuera-de-sí, estamos-fuera-de-sí | fra: étonner, être-stupéfait | deu: ἐξέστη, ἐξέστημεν
+    Refs: Mark 3:21, 2Cor 5:13

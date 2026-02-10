@@ -1,0 +1,145 @@
+You are a biblical lexicographer composing glosses for a digital lexicon.
+For each lemma below, compose a JSON object. Separate objects with "---".
+
+Format for each:
+{
+  "lemma_id": "...",
+  "gloss_terse": "under 120 chars, concise definition covering the word's semantic range",
+  "gloss_readable": "2-5 sentences, 40-120 words. Don't start with 'This word'. Warm study-Bible footnote tone. Engaging, not dry.",
+  "senses": {
+    "1": "enriched 20-60 word description. Reference multilingual evidence when illuminating. Don't repeat the label verbatim.",
+    "2": "..."
+  }
+}
+
+Rules:
+- No markdown fences, just JSON objects separated by ---
+- Reference multilingual evidence naturally when it reveals something
+- gloss_readable should feel like a good study Bible footnote: helpful, clear, occasionally surprising
+- Each sense enrichment: how does the evidence support this sense? Mention 1-2 key passages when helpful.
+
+=== H7127 ===
+Language: Hebrew, POS: V-Qal-Perf-1cs, Occurrences: 9, Senses: 3
+
+BDB excerpt: † קְרֵב vb. approach (v. BH I. קרב);— Pe. Pf. 3 ms. ק׳ Dn 3:26 (ל loc.); 1 s. קִרְבֵת 7:16 (עַל pers.); abs., 3 mpl. קְּרִ֫בוּ Dn 3:8; 6:13; Inf. sf. כְּמִקְרְבֵהּ 6:21 when he approached, ל loc. Pa. offer sacrifice: Impf. 2 ms. תְּקָרֵב Ezr 7:17, c. acc. + עַל of altar. Haph. 1. = Pa.: c. acc. Pf. 3 mpl. הַקְרִ֫בוּ Ezr 6:17, Pt. act. מְהַקְרְבִין v 10 (ל dei). 2. bring near: Pf. sf. הַקְרְבוּהִי Dn 7:13 (קֳדָם dei).
+Senses:
+  Sense 1: "to approach, come near (Qal)" (5x)
+    Desc: The Qal sense of approaching or drawing near to someone or something, describing physical proximity. English 'came near/I approached/as he came near,' Spanish 'se acercaron/se acercó/Me acerqué/al ace...
+    Domain: GEOGRAPHY_SPACE > Spacial Positions
+    Glosses: eng: I-approached, and-as-he-came-near, came-near | spa: Me-acerqué, se-acercaron, se-acercó | fra: et-offrir, offrir | deu: Mitte, [וכמקרבה], [קרבו]
+    Refs: Dan 3:8, Dan 3:26, Dan 6:12, Dan 6:20, Dan 7:16
+  Sense 2: "to offer, present sacrifice (Hifil/Piel)" (3x)
+    Desc: The causative Hifil and intensive Piel senses of offering or presenting a sacrifice, a cultic/ritual extension of 'bringing near' to the altar. English 'they offered/offering/you shall offer,' Spanish...
+    Domain: GEOGRAPHY_SPACE > Spacial Positions
+    Glosses: eng: and-they-offered, and-you-shall-offer, offering | spa: ofreciendo, y-ofrecerás, y-ofrecieron | fra: [והקרבו], [ותקרב], [מהקרבין] | deu: [והקרבו], [ותקרב], [מהקרבין]
+    Refs: Ezra 6:10, Ezra 6:17, Ezra 7:17
+  Sense 3: "to bring near, present (a person) (Hifil)" (1x)
+    Desc: The causative Hifil sense of bringing a person near or presenting someone before another, distinct from sacrificial offering. English 'they brought Him near,' Spanish 'fue llevado' (he was brought), H...
+    Domain: MOVEMENT > Linear Movement
+    Glosses: eng: they-brought-Him-near | spa: fue-llevado | fra: offrir | deu: [הקרבוהי]
+    Refs: Dan 7:13
+
+=== H7540 ===
+Language: Hebrew, POS: V-Piel-Imperf-3mp | Pn, Occurrences: 9, Senses: 3
+
+BDB excerpt: † רָקַד vb. skip about (NH Pi. Hiph. = BH; so Aramaic רְקַד Pa., ܪܩܰܕ Pa.; Assyrian raḳâdu, skip, dance; Arabic رَقَدَ ix. run with leaps and bounds, رَقَدَانٌ leaping up briskly);— Qal skip about, Pf. 3 mpl. רָֽקְדוּ ψ 114:4 (of mts., כְּאֵילִים); Impf. 2 mpl. תִּרְקְדוּ v 6 (id.; both of Sinai quaking at law-giving); Inf. cstr. עֵת רְקוֹד Ec 3:4 a time to mourn (סְפֹד), and a time to skip about (gaily). Pi. dance, leap: Impf. 3 mpl. יְרַקְּדוּ Is 13:21 (of שְׂעִירִים); יְרַקֵּד֑וּן Jb 21:11 (of children; merrily), Jo 2:5 (of locusts); Pt. מְרַקֵּד 1 Ch 15:29 (of David; = מְכַרְכֵּר, מְפַזֵּז
+Senses:
+  Sense 1: "dance, leap about (Piel intensive)" (5x)
+    Desc: Intensive Piel forms expressing vigorous dancing, leaping, or bounding, as in 1 Chr 15:29 David 'leaping and dancing' and Joel 2:5 locusts leaping on mountaintops.
+    Domain: MOVEMENT > Non-Linear Movement
+    Glosses: eng: bounding, dance, leaping | spa: danzan., danzarán-, saltan | fra: [ירקדו], [מרקד], danser | deu: [ירקדו], [ירקדון], [מרקד]
+    Refs: 1Chr 15:29, Job 21:11, Isa 13:21, Joel 2:5, Nah 3:2
+  Sense 2: "skip, leap (Qal)" (3x)
+    Desc: Basic Qal stem expressing skipping or leaping motion, as in Ps 114:4 where the mountains 'skipped like rams' and Eccl 3:4 'a time to dance.'
+    Domain: MOVEMENT > Non-Linear Movement
+    Glosses: eng: skipped, to-dance, you-skip | spa: para-danzar, que-saltáis, saltaron | fra: bondir, רקוד | deu: [רקוד], du-skip, skipped
+    Refs: Ps 114:4, Ps 114:6, Eccl 3:4
+  Sense 3: "cause to skip (Hifil causative)" (1x)
+    Desc: Causative Hifil stem meaning to make something skip or leap, as in Ps 29:6 where God makes Lebanon and Sirion 'skip like a young wild ox.'
+    Domain: MOVEMENT > Non-Linear Movement
+    Glosses: eng: and-he-makes-them-skip | spa: y-los-hace-saltar | fra: et-bondir | deu: und-er-macht-ihnen-skip
+    Refs: Ps 29:6
+
+=== H8150 ===
+Language: Hebrew, POS: V-Qal-Perf-3cp, Occurrences: 9, Senses: 3
+
+BDB excerpt: † [שָׁנַן] vb. whet, sharpen (cf. Arabic سَنَّ id.; Aramaic שְׁנִינָא, ܫܢܺܝܢܳܐ sharp, etc.; Ethiopic [ሰነነ:] iii, 2, ተሰነነ: contend, litigate; hence שֵׁן tooth, NH id., Assyrian šinnu, Arabic سِنٌّ, Ethiopic ስን: Aramaic שִׁנָּא, ܫܶܢܳܐ );— Qal whet, sharpen: Pf. 1 s. אִם שַׁנּוֹתִ֫י בְּרַק חַרְבִּי (Ges§ 67 ee) Dt 32:41, of י׳’s preparation for judgment; 3 pl. (כַחֶרֶב) שָֽׁנְנוּ לְשׁוֹנָם ψ 64:4; 140:4 of uttering sharp words; Pt. pass. שְׁנוּנִים sharpened, of arrows, Is 5:28 ψ 45:6, fig. of tongue 120:4, of false witness Pr 25:18. Pi. Pf. consec. וְשִׁנַּנְתָּם לְבָנֶיךָ Dt 6:7 i.e. teach the 
+Senses:
+  Sense 1: "to sharpen (Qal: blade/weapon)" (7x)
+    Desc: The Qal stem sense of sharpening a blade, arrow, or weapon -- both active verbal forms and passive participles meaning 'sharp/sharpened.' Eng 'sharpened,' 'are sharp,' 'sharp,' 'I sharpen,' 'sharpen,'...
+    Domain: PHYSICAL_ACTION > Physical Impact
+    Glosses: eng: I-sharpen, are-sharp, sharp | spa: Afilaron, afilada, afiladas | fra: [שנונים], aiguiser, je-sharpen | deu: [שנון], [שנונים], ich-sharpen
+    Refs: Deut 32:41, Ps 45:5, Ps 64:3, Ps 120:4, Ps 140:3
+  Sense 2: "to teach diligently (Piel: impress/repeat)" (1x)
+    Desc: The Piel intensive stem sense of teaching or impressing words upon someone with diligence and repetition (Deut 6:7). This is a metaphorical extension from 'sharpening' to 'engraving/impressing' knowle...
+    Domain: COMMUNICATION > Communication
+    Glosses: eng: and-you-shall-teach-them-diligently | spa: y-las-repetirás | fra: et-tu-devra-enseigner-eux-diligently | deu: und-du-soll-lehren-ihnen-diligently
+    Refs: Deut 6:7
+  Sense 3: "to be pierced (Hitpael: reflexive/passive)" (1x)
+    Desc: The Hitpael reflexive-passive stem sense of being pierced or stabbed, a distinct verbal stem conveying the experience of sharp pain as the sufferer. Eng 'were pierced'; spa 'eran punzados'; hin 'मैं छ...
+    Domain: PHYSICAL_ACTION > Physical Impact
+    Glosses: eng: were-pierced | spa: eran-punzados | fra: aiguiser | deu: waren-durchbohrt
+    Refs: Ps 73:21
+
+=== H8156 ===
+Language: Hebrew, POS: Prep-k | V-Piel-Inf, Occurrences: 9, Senses: 3
+
+BDB excerpt: † [שָׁסַע] vb. divide, cleave (NH Pi. tear apart; 𝔗 Jer Pa. La 3:11 tear in pieces (for ℌ פִּשֵּׁחַ));— Qal Pt. (c. acc. cogn. שֶׁ֫סַע): ms. וְשֹׁסַע שֶׁסַע פַּרְסָה Lv 11:7 (P; on שֹׁ׳ cf. LagBN 84) cleaving the cleft of the hoof, i.e. having cloven hoof, so fs. שֹׁסַ֫עַת v 3, cf. Dt 14:6; שֶׁסַע אֵינֶנָּה שֹׁסַ֫עַת Lv 11:26 (P); pass. הַפַּרְסָה הַשְּׁסוּעָה Dt 14:7. Pi. tear in two, a lion, kid, Impf., Inf. cstr. וַיְשַׁסְּעֵהוּ כְּשַׁסַּע הַגְּדִי Ju 14:6; a bird (by, or at, its wings), Pf. 3 ms. consec. וְשִׁסַּע אֹתוֹ Lv 1:17 (P); Impf. 3 ms. (אֶת־אֲנָשָׁיו בַּדְּבָרִים) וַיְשַׁסַּע 1 S 
+Senses:
+  Sense 1: "to split, have cloven (hooves)" (5x)
+    Desc: The sense of splitting or being split in the context of cloven hooves -- an identifying characteristic of clean animals in the Levitical dietary laws. Eng 'and splitting,' 'the cloven,' 'and split'; s...
+    Domain: PHYSICAL_ACTION > Physical Impact
+    Glosses: eng: and-split, and-splitting, the-cloven | spa: la-hendida, y-hendidura, y-hiende | fra: et-fendu, et-splitting, le-cloven | deu: der-cloven, und-split, und-splitting
+    Refs: Lev 11:3, Lev 11:7, Lev 11:26, Deut 14:6, Deut 14:7
+  Sense 2: "to tear apart, rip asunder (Piel)" (3x)
+    Desc: The Piel intensive sense of violently tearing or ripping something apart, used for tearing animals or objects with force. Eng 'like tearing,' 'and he shall tear,' 'and tore it'; spa 'como despedazar,'...
+    Domain: PHYSICAL_ACTION > Physical Impact
+    Glosses: eng: and-he-shall-tear, and-tore-it, like-tearing | spa: Y-desgarrará, como-despedazar, y-lo-despedazó | fra: comme-tearing, et-déchira-il, et-il-devra-déchirer | deu: und-er-soll-zerreissen, und-zerriss-es, wie-tearing
+    Refs: Lev 1:17, Judg 14:6, Judg 14:6
+  Sense 3: "to restrain, hold back (Piel extended)" (1x)
+    Desc: An extended or contextual sense of the Piel where the action of splitting/dividing is applied metaphorically to mean restraining or holding back. Eng 'and he restrained'; spa 'y contuvo'; hin 'और रोका...
+    Domain: AUTHORITY_RULE > Control, Rule
+    Glosses: eng: and-he-restrained | spa: y-contuvo | fra: et-il-retint | deu: und-er-restrained
+    Refs: 1Sam 24:7
+
+=== G0075 ===
+Language: Greek, POS: V-PMM/P-2S, Occurrences: 8, Senses: 3
+
+BDB excerpt: ἀγων-ίζομαι, future -ῐοῦμαιRefs 5th c.BC+, etc. (in passive sense, see infr. B); -ίσομαι only in late writers, as Refs 3rd c.AD+ -ισθήσομαι Refs 2nd c.AD+: aorist ἠγωνισάμηνRefs 5th c.BC+, etc.: perfect ἠγώνισμαι (in active sense) Id Refs 5th c.BC+ (passive, see infr. B): aorist ἠγωνίσθην in passive sense, infr. B: active form ἀγωνίσαςRefs — __A contend for a prize, especially in the public games, Refs 5th c.BC+; περί τινος about a thing, Refs 5th c.BC+; ἀγῶνα.. τόνδ᾽ ἠγωνίσω thou didst provoke this contest, Refs 5th c.BC+ __2 fight, Refs 5th c.BC+ __3 contend for the prize on the stage, of th
+Senses:
+  Sense 1: "to strive, contend earnestly (spiritual effort)" (6x)
+    Desc: To exert great effort in spiritual labor, prayer, or the pursuit of faith; metaphorical extension of combat/athletic language to describe intense spiritual striving (Col 1:29; 4:12; 1 Tim 6:12; 2 Tim ...
+    Domain: VIOLENCE_CONFLICT > Hostility, Strife
+    Glosses: eng: I-have-fought, Strive, fight | spa: Esforzaos, he-luchado, luchamos | fra: combattre | deu: kaempfen, Ἀγωνίζεσθε
+    Refs: Luke 13:24, Col 1:29, Col 4:12, 1Tim 4:10, 1Tim 6:12
+  Sense 2: "to compete (athletic metaphor)" (1x)
+    Desc: To compete in an athletic contest, used metaphorically of the disciplined effort required in the Christian life, drawn from the imagery of Greek games (1 Cor 9:25).
+    Domain: VIOLENCE_CONFLICT > Hostility, Strife
+    Glosses: eng: competing | spa: luchando | fra: combattre | deu: kaempfen
+    Refs: 1Cor 9:25
+  Sense 3: "to fight, do battle (literal)" (1x)
+    Desc: To engage in literal physical combat or warfare; used of servants who would physically fight to defend (John 18:36).
+    Domain: VIOLENCE_CONFLICT > Hostility, Strife
+    Glosses: eng: would-have-fought | spa: pelearían | fra: combattre | deu: kaempfen
+    Refs: John 18:36
+
+=== G1295 ===
+Language: Greek, POS: V-AIP-3P, Occurrences: 8, Senses: 3
+
+BDB excerpt: διασῴζω, preserve through a danger, of persons, Ἀπόλλωνα δ. κατακρύψασα Refs 5th c.BC+:—middle, save for oneself, τὰ πλείστου ἄξια Refs 5th c.BC+:—passive, Refs 5th c.BC+; come safe through, τοὺς διασωθέντας NT; διασῴζεσθαι ἐς.. or πρός.. to come safe to a place, Refs 5th c.BC+; recover from illness, Refs __II of things, preserve, maintain, ἀνδρὶ τἀμὰ δ. λέχη.. Refs 5th c.BC+; keep in memory, Refs 5th c.BC+:—middle, preserve for oneself, retain, εὐδαιμονίαν, εὐτυχίαν, Refs 5th c.BC+
+Senses:
+  Sense 1: "bring safely through, rescue (physical)" (4x)
+    Desc: To bring safely through physical danger, especially rescue from shipwreck, escort to safety, or deliver from peril (Acts 23:24; 27:43-44; 28:1,4)
+    Domain: DANGER_DELIVERANCE > Danger, Risk, Safe, Save
+    Glosses: eng: having-been-brought-safely-through, having-been-saved, they-might-bring-safely | spa: habiendo-sido-salvado, habiendo-sido-salvados, lo-lleven-a-salvo | fra: sauver | deu: rettet
+    Refs: Acts 23:24, Acts 27:44, Acts 28:1, Acts 28:4
+  Sense 2: "save, rescue (spiritual)" (3x)
+    Desc: To save or rescue in a spiritual sense, preserving through danger or judgment by divine intervention (Luke 7:3; 1Pet 3:20)
+    Domain: DANGER_DELIVERANCE > Danger, Risk, Safe, Save
+    Glosses: eng: he-might-save, to-save, were-saved | spa: fueron-salvadas, salvar, salvara | fra: sauver | deu: retten, rettet
+    Refs: Luke 7:3, Acts 27:43, 1Pet 3:20
+  Sense 3: "heal, cure" (1x)
+    Desc: To heal or cure from illness or disease, restoring to physical wholeness (Matt 14:36)
+    Domain: DANGER_DELIVERANCE > Danger, Risk, Safe, Save
+    Glosses: eng: were-saved | spa: fueron-sanados | fra: sauver | deu: rettet
+    Refs: Matt 14:36

@@ -1,0 +1,115 @@
+You are a biblical lexicographer composing glosses for a digital lexicon.
+For each lemma below, compose a JSON object. Separate objects with "---".
+
+Format for each:
+{
+  "lemma_id": "...",
+  "gloss_terse": "under 120 chars, concise definition covering the word's semantic range",
+  "gloss_readable": "2-5 sentences, 40-120 words. Don't start with 'This word'. Warm study-Bible footnote tone. Engaging, not dry.",
+  "senses": {
+    "1": "enriched 20-60 word description. Reference multilingual evidence when illuminating. Don't repeat the label verbatim.",
+    "2": "..."
+  }
+}
+
+Rules:
+- No markdown fences, just JSON objects separated by ---
+- Reference multilingual evidence naturally when it reveals something
+- gloss_readable should feel like a good study Bible footnote: helpful, clear, occasionally surprising
+- Each sense enrichment: how does the evidence support this sense? Mention 1-2 key passages when helpful.
+
+=== H5236 ===
+Language: Hebrew, POS: Art | N-ms, Occurrences: 36, Senses: 2
+
+BDB excerpt: † נֵכָר n.[m.] that which is foreign, foreignness (on format. cf. LagBN 51, 154);—abs. נ׳ Ju 10:16 +, cstr. נֵכַר־ Dt 31:16;—foreignness (of another family, tribe, or nation), especially 1. אֱלֹהֵי (הַ)נֵּכָר = foreign gods Gn 35:2, 4; Jos 24:20, 23 (all E, = א׳ אֲחֵרִים of D, cf. אַחֵר), Ju 10:16; 1 S 7:3; Je 5:19; 2 Ch 33:15; א׳ נֵכַר־הָאָרֶץ Dt 31:16 = foreign gods of the land; sg. אֵל נֵכָר Dt 32:12; Mal 2:11 ψ 81:10; אֱלוֹהַּ נ׳ Dn 11:39. 2. בֶּן־(הַ)נֵּכָר = foreigner Gn 17:12 (‖ לֹא מִזַּרְעֲךָ), v 27 Ex 12:43 (all P), Lv 22:25 (H), Ez 44:9(×2) Ne 9:2; Is 56:3; בְּנֵי (ה)נ׳ 2 S 22:45, 4
+Senses:
+  Sense 1: "foreigner, foreign person" (18x)
+    Desc: Substantive use referring to a person who is foreign or alien, an outsider or stranger from another nation.
+    Domain: GROUPS_COMMUNITY > Groups and Classes of Persons
+    Glosses: eng: a-foreigner, foreigner, foreigners | spa: el-extranjero, extranjero | fra: [נכר], foreigner, l'étranger | deu: Auslaender, [הנכר], [נכר]
+    Refs: Gen 17:12, Gen 17:27, Exod 12:43, Lev 22:25, 2Sam 22:45
+  Sense 2: "foreign, foreignness (attribute)" (18x)
+    Desc: Adjectival or abstract noun use denoting the quality of being foreign or strange, often modifying another noun (e.g., foreign gods, foreign land).
+    Domain: GROUPS_COMMUNITY > Groups and Classes of Persons
+    Glosses: eng: foreign, foreignness, the-foreign | spa: ajeno, el-extranjero, el-extraño | fra: [הנכר], foreignness, le-foreign | deu: [הנכר], [נכר], der-Fremde
+    Refs: Gen 35:2, Gen 35:4, Deut 31:16, Deut 32:12, Josh 24:20
+
+=== G3784 ===
+Language: Greek, POS: V-PIA-3P, Occurrences: 35, Senses: 2
+
+BDB excerpt: ὀφείλ-ω, imperfect ὤφειλον; Epic dialect ὀφέλλω (also Aeolic dialect, Refs 4th c.BC+imperfect ὤφελλον or ὄφελλον, see infr. II. Refs 8th c.BC+: future ὀφειλήσω Refs 5th c.BC+: aorist 1 ὠφείλησα Refs 5th c.BC+ (ἐπ-): perfect ὠφείληκα: pluperfect -ήκεινRefs 4th c.BC+aorist 2 ὤφελον (see. below Refs:—passive, aorist participle ὀφειληθείς Refs 5th c.BC+. (Cretan dialect ὀφήλω Refs, written ὀπέλο Refs 4th c.AD+ ὀφέλλω (see. above) and ὀφήλω Refs 4th c.BC+: in early Attic dialect Inscrr. written both ὀφελ -IG 12.91.8Refs:—owe, have to pay or account for, τὸ καὶ μοιχάγρι᾽ ὀφέλλει Refs 8th c.BC+; ὅτι 
+Senses:
+  Sense 1: "ought, to be morally obligated" (25x)
+    Desc: To be under moral or ethical obligation to do something, expressing duty, necessity, or what is fitting and proper in conduct.
+    Domain: PROPERTIES_RELATIONS > Mode
+    Glosses: eng: We-ought, he-is-obligated, he-ought | spa: debe, debemos, deben | fra: devoir | deu: schulden, schuldet
+    Refs: Matt 23:16, Matt 23:18, Luke 17:10, John 13:14, John 19:7
+  Sense 2: "to owe a debt" (10x)
+    Desc: To be indebted to someone financially, to owe money or goods as a concrete obligation that can be quantified and repaid.
+    Domain: PROPERTIES_RELATIONS > Mode
+    Glosses: eng: being-owed, do-you-owe, owe | spa: debe, debes, debido | fra: devoir | deu: schulden, schuldet
+    Refs: Matt 18:28, Matt 18:28, Matt 18:30, Matt 18:34, Luke 7:41
+
+=== G5290 ===
+Language: Greek, POS: V-APA-NMP, Occurrences: 35, Senses: 2
+
+BDB excerpt: ὑποστρέφω, turn round about or back, ἵππους Refs 8th c.BC+; ὁ κισσὸς.. Βακχίαν ὑποστρέφων ἅμιλλαν bringing back the Bacchic struggle, i. e. the swift and eager dance, Refs 5th c.BC+ __2 roll up, Refs 4th c.BC+ __3 passive, revolve beneath, τινι Refs 4th c.BC+ __II intransitive, turn about, especially of persons flying or retreating, Refs 8th c.BC+:—passive, αὖτις ὑποστρεφθείς Refs 8th c.BC+; -στρᾰφείς Refs 5th c.BC+ __II.2 generally, return, αὖτις ὑ. Refs 8th c.BC+; ἐπὶ ζήτησινRefs 3rd c.AD+; in future middle, οὐ μὲν γάρ τί σ᾽ ὑποστρέψεσθαι ὀΐω Refs 8th c.BC+; of a disease, return, recur, Refs
+Senses:
+  Sense 1: "return to a place" (34x)
+    Desc: To go back or come back to a previous location or starting point, used of physical travel back to a city, home, or region.
+    Domain: MOVEMENT > Linear Movement
+    Glosses: eng: having-returned, returned, they-returned | spa: habiendo-regresado, habiendo-vuelto, regresaban | fra: retourner | deu: kehrt-zurück
+    Refs: Luke 1:56, Luke 2:20, Luke 2:43, Luke 2:45, Luke 4:1
+  Sense 2: "turn back from a course" (1x)
+    Desc: To reverse direction or withdraw from a path or undertaking, emphasizing the act of turning around rather than arriving at a destination.
+    Domain: MOVEMENT > Linear Movement
+    Glosses: eng: to-turn-back | spa: volverse-atrás | fra: retourner | deu: zurueckkehren
+    Refs: 2Pet 2:21
+
+=== H1653 ===
+Language: Hebrew, POS: Conj-w, Occurrences: 35, Senses: 2
+
+BDB excerpt: † II. גֶּ֫שֶׁם n.m. Gn 7:12 rain, shower (NH id., conn. wi. above √ dub.)—abs. ג׳ Gn 7:12 +; גָּ֑שֶׁם 1 K 18:41 +; cstr. גֶּשֶׁם Jb 37:6(×2) +; pl. גְּשָׁמִים Ezr 10:9, 13; cstr. גִּשְׁמֵי Ez 34:26; sf. גִּשְׁמֵיכֶם Lv 26:4; גִּשְׁמֵיהֶם ψ 105:32;—rain, shower Gn 7:12; 8:2 (both J) Lv 26:4 (H) Ho 6:3 Am 4:7; Je 5:24; 14:4; Is 44:14; 55:10; Ez 1:28 Jo 2:23 (‖ מוֹרֶה, מַלְקוֹשׁ); 1 K 17:7, 14; 18:45 (ג׳ גדול) 2 K 3:17; Pr 25:14, 23; Ec 11:3; Ct 2:11 ψ 105:32 וּמֵהַגּ׳ Ezr 10:9 and because of the rains, cf. v 13; קוֹל הֲמוֹן הַגּ׳ 1 K 18:41 cf. v 44 Zc 14:17; Ec 12:2; גֶּשֶׁם מָטָ֑ר וְג׳ מִטְרוֹת
+Senses:
+  Sense 1: "rain, precipitation" (34x)
+    Desc: General term for rain in all grammatical forms (singular, plural, construct, with article, conjunctions, prepositions, pronominal suffixes); consistently translated with the same base vocabulary acros...
+    Domain: NATURAL_WORLD > Natural Substances
+    Glosses: eng: of-rain, rain, the-rain | spa: la-lluvia, lluvia | fra: [גשם], [הגשם], la-pluie | deu: Geschem, Regen, [גשם]
+    Refs: Gen 7:12, Gen 8:2, Lev 26:4, 1Kgs 17:7, 1Kgs 17:14
+  Sense 2: "downpour, heavy rain" (1x)
+    Desc: An intense or heavy rainfall event, distinguished from ordinary rain by different vocabulary across all six languages: eng 'downpour' (not 'rain'), spa 'aguacero' (not 'lluvia'), hin 'menh' (not 'vars...
+    Domain: NATURAL_WORLD > Natural Substances
+    Glosses: eng: downpour | spa: aguacero | fra: pluie | deu: Geschem
+    Refs: Zech 10:1
+
+=== H2236 ===
+Language: Hebrew, POS: V-QalPass-Perf-3ms, Occurrences: 35, Senses: 2
+
+BDB excerpt: † זָרַק vb. to toss or throw (in a volume), scatter abundantly (NH id.; Aramaic זְרַק id., ܙܪܰܩ disperse; Assyrian zarâḳu Lotz TP 138 Jäger BAS ii. 292 Anm.; cf. also Arabic زَرَقَ cast at, pierce, زَرَّاقَةٌ and مِزْرَاقٌ javelin = Ethiopic ምዝራቅ )— Qal Pf. ז׳ Ex 24:6 Lv 17:6, sf. זְרָקוֹ Ex 9:8, זָֽרְקָה Ho 7:9 (12 times Pf.); Impf. יִזְרֹק Lv 7:2 + 16 times; Inf. לִזְרֹק Ez 43:18; Imv. זְרֹק Ez 10:2; Pt. זֹרֵק Lv 7:14, pl. זֹרְקִים 2 Ch 30:16; 1. toss (in handfuls, v. Ex 9:8; or from a bowl, מִזְרָק; opp. הִזָּה to sprinkle with the finger): a. cummin Is 28:25, dust, sq. עַל 2 Ch 34:4 Jb 2:1
+Senses:
+  Sense 1: "sprinkle, dash (ritual)" (29x)
+    Desc: To sprinkle or dash a liquid (especially blood or water) in a ritual or cultic context, as in priestly acts of atonement or consecration.
+    Domain: RELIGIOUS_LIFE > Religious Activities
+    Glosses: eng: and-he-sprinkled, and-he-sprinkled-it, and-sprinkled | spa: fueron-rociadas, se-esparcieron, y-la-rociaron | fra: [ויזרקו], asperger, et-aspergea | deu: [זרקה], und-du-soll-sprengen, und-er-sprengte-es
+    Refs: Exod 24:6, Exod 24:8, Exod 29:16, Exod 29:20, Lev 1:5
+  Sense 2: "scatter, throw, strew" (6x)
+    Desc: To scatter, throw, or strew dry material such as dust, ashes, or ground powder, including winnowing or dispersing grain.
+    Domain: RELIGIOUS_LIFE > Religious Activities
+    Glosses: eng: and-he-scattered, and-let-throw-it, and-scatter | spa: siembra, y-esparce, y-esparcieron | fra: [ויזרק], [יזרק], et-asperger | deu: [ויזרקו], [יזרק], und-lass-werfen-es
+    Refs: Exod 9:8, Exod 9:10, 2Chr 34:4, Job 2:12, Isa 28:25
+
+=== H5643a ===
+Language: Hebrew, POS: N-ms, Occurrences: 35, Senses: 2
+
+BDB excerpt: † סֵ֫תֶר n.[m.] covering, hiding-place, secrecy;—abs. ס׳ Ju 3:19 +, סָ֑תֶר 2 S 12:12; Pr 25:23, סֶ֑תֶר ψ 139:15; cstr. סֵ֫תֶר 1 S 25:20 +; sf. סִתְרוֹ ψ 18:12 (ins. also ‖ 2 S 22:12 𝔊 𝔖 Th Bu HPS), סִתְרִי ψ 119:114; pl. סְתָרִים Pr 9:17;— 1. covering, cover, בְּס׳ הָהָר 1 S 25:20 under cover of the mt., concealed by it; of clouds as covering for י׳ (shutting out his view) Jb 22:14, of darkness (i.e. dark clouds) as י׳’s shiding-place (in theoph.) ψ 18:12 (= 2 S 22:12 v. supr.), so ס׳ רַ֑עַם 81:8 hiding-place of thundur; of adulterer ס׳ פָּנִים יָשִׂים Jb 24:15 i.e. disguiseth himself. 2. a. h
+Senses:
+  Sense 1: "secrecy, in secret" (19x)
+    Desc: The abstract notion of secrecy or covertness, typically used adverbially with preposition beth (בַּסֵּתֶר 'in secret, secretly') to describe clandestine or hidden action.
+    Domain: MENTAL_LIFE > Know
+    Glosses: eng: backbiting, eaten-in-secret, in-secret | spa: en-lo-oculto, en-lo-secreto, en-oculto | fra: dans-abri, dans-le-secret-lieu, dans-secret | deu: [בסתר], [סתר], [סתרים]
+    Refs: Deut 13:6, Deut 27:15, Deut 27:24, Deut 28:57, Judg 3:19
+  Sense 2: "hiding place, shelter, cover" (16x)
+    Desc: A concrete or semi-concrete place of concealment, refuge, or protective covering, often in construct with a following genitive (סֵתֶר פָּנֶיךָ 'the shelter of your presence') or with possessive suffix...
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: and-covering-of, and-the-hiding-place, are-a-hiding-place | spa: Escondite-de-mí, en-escondite-de, en-lo-escondido-de | fra: abri, dans-abri, dans-couvre-de | deu: [בסתר], [וסתר], [סתר]
+    Refs: 1Sam 25:20, Job 22:14, Job 24:15, Job 40:21, Ps 18:11

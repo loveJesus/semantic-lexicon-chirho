@@ -1,0 +1,113 @@
+You are a biblical lexicographer composing glosses for a digital lexicon.
+For each lemma below, compose a JSON object. Separate objects with "---".
+
+Format for each:
+{
+  "lemma_id": "...",
+  "gloss_terse": "under 120 chars, concise definition covering the word's semantic range",
+  "gloss_readable": "2-5 sentences, 40-120 words. Don't start with 'This word'. Warm study-Bible footnote tone. Engaging, not dry.",
+  "senses": {
+    "1": "enriched 20-60 word description. Reference multilingual evidence when illuminating. Don't repeat the label verbatim.",
+    "2": "..."
+  }
+}
+
+Rules:
+- No markdown fences, just JSON objects separated by ---
+- Reference multilingual evidence naturally when it reveals something
+- gloss_readable should feel like a good study Bible footnote: helpful, clear, occasionally surprising
+- Each sense enrichment: how does the evidence support this sense? Mention 1-2 key passages when helpful.
+
+=== H0178 ===
+Language: Hebrew, POS: Prep-k | N-ms, Occurrences: 17, Senses: 2
+
+BDB excerpt: אוֹב n.m. Jb 32:19 skin-bottle, necromancer, etc.—abs. א׳ Lv 20:27 + 8 times; pl. אֹבוֹת Lv 19:31 + 7 times— 1. skin-bottle, only pl. אֹבוֹת חֲדָשִׁים new (wine-) skins Jb 32:19. 2. necromancer, in phr. אוֹב אוֹיִדְּעֹנִי necrom. or wizard Lv 20:27 (H; usually tr. ‘a man also or woman that hath a familiar spirit or that is a wizard’ RV; but better a man or a woman, if there should be among them, a necromancer or wizard; no suff. reason for exceptional use of phrase here); א׳ וְיִדְּעֹנִי Dt 18:11 2 Ch 33:6 = 2 K 21:6 (where א׳ וידענים); הָאֹבוֹת וְהַיִּדְּעֹנִים Lv 19:31; 20:6 (H) 1 S 28:3, 9 
+Senses:
+  Sense 1: "medium or necromantic spirit" (16x)
+    Desc: A person who conjures the dead or the spirit associated with divination and necromancy, consistently forbidden in Mosaic law (Lev 19:31, 20:6, 20:27; Deut 18:11; 1 Sam 28:3,7,8,9; 2 Kgs 21:6, 23:24; I...
+    Domain: RELIGIOUS_LIFE > Religious Activities
+    Glosses: eng: by-medium, like-a-ghost, medium | spa: como-de-médium, espíritu, espíritu-de-muertos | fra: [אוב], [באוב], [האבות] | deu: [אוב], [באוב], [האבות]
+    Refs: Lev 19:31, Lev 20:6, Lev 20:27, Deut 18:11, 1Sam 28:3
+  Sense 2: "wineskin or leather bottle" (1x)
+    Desc: A container made of animal skin used to hold wine or other liquids, used as a simile for pressure building up inside (Job 32:19).
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: like-wineskins | spa: como-odres | fra: comme-כאבות | deu: [כאבות]
+    Refs: Job 32:19
+
+=== H0249 ===
+Language: Hebrew, POS: Conj-w, Occurrences: 17, Senses: 2
+
+BDB excerpt: † אֶזְרָח n.m. ψ 37, 35 a native (one arising from the soil; = ‘free tribesman’ RSSemi. 75)—abs. א׳ Lv 19:34 + 13 times; cstr. אֶזְרַח Ex 12:19 + 2 times;— 1. a native Israelite, usually coll., c. art., כל־הָא׳ בישׂראל Lv 23:42 (H), cf. Nu 15:13 (P); elsewhere opp. גֵּר (q.v.):—הָא׳ בִּבְנֵי ישׂר׳ Nu 15:29 (P), cf. Ez 47:22; אֶזְרַח הָאָרֶץ Ex 12:19, 48 Nu 9:14 (all P); א׳ מִכֶּם Lv 19:34 v. also 17:15; 18:26; 24:16, 22 (all H); Ex 12:49 Lv 16:29 Nu 15:30 (all P), Jos 8:33 (D). 2. a native tree, growing in its natural soil א׳ רַעֲנָן ψ 37:35 (fig. of prosperous wicked).
+Senses:
+  Sense 1: "native-born person" (16x)
+    Desc: A person born in the land, a native citizen as opposed to a sojourner (ger), bearing the same rights and obligations under the covenant.
+    Domain: GROUPS_COMMUNITY > Association
+    Glosses: eng: among-the-native, and-among-native-of, and-for-native-of | spa: Como-nativo, El-nativo, como-el-nativo | fra: comme-le-native, comme-native, comme-native-de | deu: [כאזרח], der-Einheimischer, fuer-der-native
+    Refs: Exod 12:19, Exod 12:48, Exod 12:49, Lev 16:29, Lev 17:15
+  Sense 2: "native indigenous plant" (1x)
+    Desc: A tree or plant flourishing in its native soil, used figuratively of the wicked prospering like a deep-rooted indigenous tree (Psalm 37:35).
+    Domain: PLANTS_AGRICULTURE > Plants
+    Glosses: eng: like-a-native | spa: como-árbol-frondoso | fra: comme-indigène | deu: wie-ein-native
+    Refs: Ps 37:35
+
+=== H0349b ===
+Language: Hebrew, POS: Interjection, Occurrences: 17, Senses: 2
+
+BDB excerpt: † אֵיכָה (from אַי and כָּה = כֹּה; cf. As. ekiam) adv. 1. interrog. In what manner? τίνι τρόπῳ; (rather more definite than אֵיךְ = πῶς;) Dt 1:12; 7:17; 12:30; 18:21; 32:30 Ju 20:3 (indirect sentence) 2 K 6:15 Je 8:8 ψ 73:11. 2. exclam. How! (slightly more emph. than אֵיךְ) Is 1:21 Je 48:17 La 1:1; 2:1; 4:1, 2. 3. Where? (prob. north-Isr.; cf. Aramaic אֵיכָא, ܐܰܝܟܳܐ where? Cf. DrIntr. 178, 421) only 2 K 6:13 (K3 אֵיכֹה) Kt Ct 1:7(×2),—each time in an indirect sentence.
+Senses:
+  Sense 1: "?" (15x)
+    Domain: PROPERTIES_RELATIONS > Comparison
+    Glosses: eng: How, how | spa: Cómo, cómo, ¡Cómo! | fra: comment | deu: Wie, [איכה], wie
+    Refs: Deut 1:12, Deut 7:17, Deut 12:30, Deut 18:21, Deut 32:30
+  Sense 2: "?" (2x)
+    Domain: GEOGRAPHY_SPACE > Spacial Positions
+    Glosses: eng: where | spa: dónde | fra: où | deu: Wie
+    Refs: Song 1:7, Song 1:7
+
+=== H0367 ===
+Language: Hebrew, POS: N-fpc | 2ms, Occurrences: 17, Senses: 2
+
+BDB excerpt: † אֵימָה17 n.f. terror, dread (Talm. id., cf. As. imtu, DlW)—א׳ Gn 15:12 +; אֵימָ֫תָה Ex 15:16 (cf. Ges§ 90, 2 R. b); cstr. אֵימַת Pr 20:2; sf. אֵימָתִי Ex 23:27; אֵמָתִי Jb 33:7, etc.; pl. אֵימִים Je 50:38; אֵמִים Jb 20:25; אֵימוֹת ψ 55:5; sf. אֵמֶיךָ ψ 88:16;—terror, dread (mostly poet.), inspired by י׳ Ex 15:16 (song in E ‖ פַּחַד) 23:27 (E) Dt 32:25 Jb 9:34; 13:21 cf. 33:7; 20:25 ψ 88:16 (‖ חֲרוֹנִים, בִּעוּתִים v 17); cf. Gn 15:12 אֵימָה חֲשֵׁכָה גְדֹלָה; occasioned by enemies Jos 2:9 Is 33:18 Ezr 3:3; by king Pr 20:2; cf. ψ 55:5 אֵימוֹת מָוֶת (‖ יִרְאָה, רַעַד, פַּלָּצוּת v 6); pred. of 
+Senses:
+  Sense 1: "terror, dread, fear" (16x)
+    Desc: The emotion of terror, dread, or fear, whether attributed to God, a person, or experienced generally, across all grammatical inflections (singular, plural, construct, with pronominal suffixes and prep...
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: and-His-terror, and-dread-your, and-terrors-of | spa: el-terror, en-temor, hay-terrores. | fra: [אימה], [באימה], dread | deu: Amittai, Schrecken, [אימה]
+    Refs: Gen 15:12, Exod 15:16, Exod 23:27, Deut 32:25, Josh 2:9
+  Sense 2: "terrifying things or idols" (1x)
+    Desc: Concrete objects of terror such as frightful images or idols, as indicated by multilingual translations diverging toward 'horrible images' (Spanish), 'idols' (Arabic, Swahili) rather than the abstract...
+    Domain: EMOTION_ATTITUDE > Attitudes and Emotions
+    Glosses: eng: and-by-terrors | spa: y-con-imágenes-horribles | fra: [ובאימים] | deu: [ובאימים]
+    Refs: Jer 50:38
+
+=== H1363 ===
+Language: Hebrew, POS: N-ms, Occurrences: 17, Senses: 2
+
+BDB excerpt: † גֹּ֫בַהּ n.m. height—Jb 22:12 + 9 times; sf. גָּבְהוֹ 1 S 17:4 + 5 times; pl. cstr. גָּבְהֵי Jb 11:8;— 1. height, of buildings and trees Ez 1:18; 19:11; 31:10, 14; 40:42; 41:8 2 Ch 3:4 Am 2:9; prob. also Ez 43:13 (of altar), so 𝔊 Ew Co for MT גַּב (q.v.); of man 1 S 17:4; heaven Jb 11:8; 22:12 (גבה cstr. SI6 of rock). 2. exaltation, grandeur Jb 40:10. 3. haughtiness, Je 48:29; גּ׳ אַף ψ 10:4; גּ׳־לִבּוֹ 2 Ch 32:26; גּ׳ רוּחַ Pr 16:18.
+Senses:
+  Sense 1: "height" (12x)
+    Desc: Physical dimension of height, referring to the literal stature or elevation of trees, buildings, persons, or other objects.
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: and-height, and-the-height, height | spa: Es-más-alta-que-los, altura, altura-suya | fra: [והגבה], comme-hauteur, dans-sa-hauteur | deu: Hoehe, Hoehe-sein, [בגבהו]
+    Refs: 1Sam 17:4, 2Chr 3:4, Job 11:8, Job 22:12, Ezek 1:18
+  Sense 2: "haughtiness" (5x)
+    Desc: Moral or figurative loftiness, denoting pride, arrogance, or exalted dignity of spirit.
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: and-dignity, haughtiness-of, his-loftiness | spa: altivez-de, conforme-a-altivez-de, en-altivez-de | fra: [בגבה], [גבהו], comme-hauteur | deu: [בגבה], [גבה], [גבהו]
+    Refs: 2Chr 32:26, Job 40:10, Ps 10:4, Prov 16:18, Jer 48:29
+
+=== H2659 ===
+Language: Hebrew, POS: V-Qal-Perf-3fs, Occurrences: 17, Senses: 2
+
+BDB excerpt: † II. [חָפֵר] vb. be abashed, ashamed (𝔗 חֲפַר Pr 13:5, מַחְפְּרָנָא one causing shame Pr 19:26; Syriac ܚܦܰܪ, especially Aph. be ashamed, put to shame; Arabic خَفَرَ / خَفِرَ be bashful, خَفِرٌ shy, bashful; Ethiopic ኀፈረ: be ashamed, blush)— Qal Pf. 3 fs. חָֽפְרָה Je 50:12; וְחָֽפְרָה consec. Is 24:23; וְחָפֵ֑רָה Je 15:9; חָֽפְרוּ ψ 71:24; וְחָֽפְרוּ consec. Mi 3:7; Impf. יַחְפְּרוּ ψ 35:4 + 4 times; יֶחְפָּ֑רוּ ψ 34:6; וַיֶּחְפָּ֑רוּ Jb 6:20; תַּחְפְּרוּ Is 1:29;—be abashed, ashamed, said of face ψ 34:6 (avoided by looking to י׳); elsewhere always ‖ בּוֹשׁ, of enemies of righteousness ψ 71:24
+Senses:
+  Sense 1: "be ashamed or confounded" (13x)
+    Desc: Qal sense: to feel shame, be put to shame, be confounded or disappointed — the intransitive experience of disgrace or humiliation.
+    Domain: EMOTION_ATTITUDE > Attitudes and Emotions
+    Glosses: eng: And-shall-be-ashamed, and-be-confounded, and-be-put-to-shame | spa: Y-se-avergonzará, afrentada, fueron-avergonzados | fra: avoir-honte, et-avoir-honte, et-être-confus | deu: [וחפרה], [וחפרו], [ויחפרו]
+    Refs: Job 6:20, Ps 34:5, Ps 35:4, Ps 35:26, Ps 40:14
+  Sense 2: "cause shame or reproach" (4x)
+    Desc: Hifil sense: to put someone to shame, bring disgrace or reproach upon — the causative action of shaming another.
+    Domain: EMOTION_ATTITUDE > Attitudes and Emotions
+    Glosses: eng: and-bringing-reproach, and-disgracefully, is-put-to-shame | spa: se-avergonzó, serás-afrentada, y-avergüenza | fra: avoir-honte, et-ויחפיר, et-ומחפיר | deu: [החפיר], [ויחפיר], [ומחפיר]
+    Refs: Prov 13:5, Prov 19:26, Isa 33:9, Isa 54:4

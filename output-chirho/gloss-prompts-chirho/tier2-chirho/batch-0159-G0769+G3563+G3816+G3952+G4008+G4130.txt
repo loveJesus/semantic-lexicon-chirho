@@ -1,0 +1,115 @@
+You are a biblical lexicographer composing glosses for a digital lexicon.
+For each lemma below, compose a JSON object. Separate objects with "---".
+
+Format for each:
+{
+  "lemma_id": "...",
+  "gloss_terse": "under 120 chars, concise definition covering the word's semantic range",
+  "gloss_readable": "2-5 sentences, 40-120 words. Don't start with 'This word'. Warm study-Bible footnote tone. Engaging, not dry.",
+  "senses": {
+    "1": "enriched 20-60 word description. Reference multilingual evidence when illuminating. Don't repeat the label verbatim.",
+    "2": "..."
+  }
+}
+
+Rules:
+- No markdown fences, just JSON objects separated by ---
+- Reference multilingual evidence naturally when it reveals something
+- gloss_readable should feel like a good study Bible footnote: helpful, clear, occasionally surprising
+- Each sense enrichment: how does the evidence support this sense? Mention 1-2 key passages when helpful.
+
+=== G0769 ===
+Language: Greek, POS: N-AFP, Occurrences: 24, Senses: 2
+
+BDB excerpt: ἀσθέν-εια, ἡ, want of strength, weakness, Refs 5th c.BC+; especially feebleness, sickliness, Refs 5th c.BC+ __2 disease, sickness, Refs 2nd c.BC+; δι᾽ ἀσθένειανNT __3 ἀ. βίου poverty, Refs 5th c.BC+ __4 in moral sense, feebleness, weakness, τῆς ἀνθρωπίνης φύσεωςRefs 5th c.BC+ to be weak, feeble, sickly, ἀ. μέλη to be weak in limb, Refs 5th c.BC+; ἀ. ἀσθένειαν NT+5th c.BC+; ἠσθένησε he fell sick, Refs 4th c.BC+sick man, Refs 5th c.BC+; ἠσθενηκόταRefs 2nd c.BC+ __2 to be needy, Refs 5th c.BC+; ἠσθενηκότες, of those unable to pay taxes, Refs 1st c.BC+ __3 with infinitive, to be too weak to do a t
+Senses:
+  Sense 1: "weakness, frailty" (17x)
+    Desc: Abstract weakness, frailty, or lack of strength — whether physical, moral, spiritual, or circumstantial — without specific reference to a named disease or medical condition; consistently rendered as A...
+    Domain: BODY_HEALTH > Physiological Processes and States
+    Glosses: eng: of-weakness, weakness, weaknesses | spa: de-debilidad, de-enfermedad, debilidad | fra: faiblesse | deu: Schwachheit
+    Refs: Luke 13:11, Luke 13:12, Rom 6:19, Rom 8:26, 1Cor 2:3
+  Sense 2: "sickness, disease" (7x)
+    Desc: Physical illness, disease, or bodily ailment — a concrete medical condition rather than abstract frailty; consistently rendered as Arabic مَرَض/أَمراض (marad/amrad), Swahili ugonjwa/magonjwa, Hindi बी...
+    Domain: BODY_HEALTH > Physiological Processes and States
+    Glosses: eng: ailments, diseases, infirmities | spa: enfermedad, enfermedades | fra: faiblesse | deu: Schwachheit
+    Refs: Matt 8:17, Luke 5:15, Luke 8:2, John 5:5, John 11:4
+
+=== G3563 ===
+Language: Greek, POS: N-GMS, Occurrences: 24, Senses: 2
+
+BDB excerpt: νόος, νόου, ὁ, Attic dialect contraction νοῦς, genitive νοῦ: Refs 8th c.BC+ uses the contraction form once, in nominative, Refs 8th c.BC+: Trag. use contraction form, except in Refs 5th c.BC+: Aeolic dialect genitive νῶ Refs 7th c.BC+: irregular forms are found in “NT” and later writers, genitive νοός LXX+NT+1st c.AD+, is rare in early writers, as Refs 5th c.BC+ __1 mind, as employed in perceiving and thinking, sense, wit, οὐ λῆθε Διὸς πυκινὸν ν. Refs 8th c.BC+; νόῳ prudently, Refs 8th c.BC+; παρὲκ νόον senselessly, Refs 8th c.BC+; σὺν νόῳ wisely, Refs 5th c.BC+; ξὺν νῷ with play on ξυνῷ, Refs
+Senses:
+  Sense 1: "mind" (17x)
+    Desc: mind (17 occurrences across 2 original clusters)
+    Domain: MENTAL_LIFE > Psychological Faculties
+    Glosses: eng: mind | spa: mente | fra: intelligence | deu: Sinn
+    Refs: Rom 1:28, Rom 7:23, Rom 7:25, Rom 11:34, Rom 12:2
+  Sense 2: "mind" (7x)
+    Desc: mind, understanding (7 occurrences across 3 original clusters)
+    Domain: MENTAL_LIFE > Psychological Faculties
+    Glosses: eng: mind, understanding | spa: entendimiento | fra: intelligence | deu: Sinn, Verstand
+    Refs: Luke 24:45, 1Cor 14:14, 1Cor 14:15, 1Cor 14:15, 1Cor 14:19
+
+=== G3816 ===
+Language: Greek, POS: N-AMP, Occurrences: 24, Senses: 2
+
+BDB excerpt: παῖς, also παῦς (which see), παιδός, ὁ, ἡ, genitive plural παίδων, Doric dialect παιδῶνRefs 5th c.BC+; dative plural παισί, Epic dialect παίδεσσι Refs 8th c.BC+; in early Epic dialect frequently disyllable in nominative πάϊς, e. g. when forming part of two different feet, Refs 8th c.BC+; probably also in the fifth foot, Refs; and before bucolic diaeresis, Refs; also in Lyric poetry, Refs 7th c.BC+; and in Boeotian dialect, Refs, compare πῆ; πάϊ [ᾰῑ] Refs 8th c.BC+ (παιδ- is never disyllable in oblique cases in Refs 8th c.BC+; genitive παϊδός epigram cited in Refs 2nd c.AD+; dative παϊδί probab
+Senses:
+  Sense 1: "servant (of God or a master)" (15x)
+    Desc: The sense of pais as 'servant' or 'slave,' denoting one who serves a master or, in theological usage, a servant of God. Includes the centurion's servant (Matt 8:6, 8, 13 'my servant is lying paralyzed...
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: Servant, male-servants, servant | spa: Siervo, criados, siervo | fra: serviteur | deu: Knecht
+    Refs: Matt 8:6, Matt 8:8, Matt 8:13, Matt 12:18, Matt 14:2
+  Sense 2: "child, boy/girl" (9x)
+    Desc: The sense of pais as 'child,' 'boy,' or 'girl,' denoting a young person irrespective of servile status. Includes the children slaughtered by Herod (Matt 2:16), children crying in the temple (Matt 21:1...
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: boy, child, children | spa: muchacho, niña, niño | fra: serviteur | deu: Knecht
+    Refs: Matt 2:16, Matt 17:18, Matt 21:15, Luke 2:43, Luke 8:51
+
+=== G3952 ===
+Language: Greek, POS: N-NFS, Occurrences: 24, Senses: 2
+
+BDB excerpt: παρουσ-ία, ἡ, (πάρειμι) presence, of persons, δεσπότου, etc., Refs 4th c.BC+; ἀνδρῶν π., ={ἄνδρες οἱ παρόντες}, Refs 5th c.BC+; πόλις μείζων τῆς ἡμετέρας π., ={ἡμῶν τῶν παρόντων}, Refs 5th c.BC+; παρουσίαν μὲν οἶσθα.. φίλων, ὡς οὔτις ἡμῖν ἐστιν, i.e. that we have no friends present to assist us, Refs 5th c.BC+; of things, κακῶν Refs 5th c.BC+ __2 arrival, ἡμῶν κοινόπουν π. Refs 5th c.BC+; especially visit of a royal or official personage, βασιλέως, etc., Refs 3rd c.BC+, etc.; of a god, Refs __3 occasion, variant in Refs 5th c.BC+ __4 π. τισὶ ποιεῖσθαι entertain them on their official visits, R
+Senses:
+  Sense 1: "coming, arrival (eschatological or personal)" (21x)
+    Desc: The act of arriving or coming to a place, especially the eschatological coming (advent) of Christ at the end of the age, but also used of the arrival of persons such as Paul, Stephanas, or Titus. Mult...
+    Domain: MOVEMENT > Linear Movement
+    Glosses: eng: coming, presence | spa: venida | fra: avènement, venue | deu: Ankunft, παρουσία, παρουσίας
+    Refs: Matt 24:3, Matt 24:27, Matt 24:37, Matt 24:39, 1Cor 15:23
+  Sense 2: "presence (being physically present)" (3x)
+    Desc: The state of being present in a location, one's personal presence or appearance as opposed to absence; used contrastively with absence (as in 2 Cor 10:10, Phil 2:12 'not only in my presence but also i...
+    Domain: MOVEMENT > Linear Movement
+    Glosses: eng: presence | spa: presencia | fra: avènement, venue | deu: Ankunft
+    Refs: 2Cor 10:10, Phil 1:26, Phil 2:12
+
+=== G4008 ===
+Language: Greek, POS: Prep, Occurrences: 24, Senses: 2
+
+BDB excerpt: πέρᾱν, Ionic dialect and Epic dialect πέρην, adverb on the other side, across, in early Poets always with genitive, especially of water, νήσων αἳ ναίουσι π. ἁλός Refs 8th c.BC+; π. Χάεος ζοφεροῖοRefs 5th c.BC+; π. τοῦ Ἑλλησπόντου, τοῦ ποταμοῦ, Refs 5th c.BC+; π. Ἕβρον is corrupt in Refs 5th c.BC+ __2 absolutely, on the other side, especially of water, προσορμίζεσθαι.. π. ἐν τῇ Ῥηναίῃ Refs 5th c.BC+ __3 with Verbs of motion, followed by εἰς, over or across to.., π. ἐς τὴν Ἀχαιίην διέπεμψαν Refs 5th c.BC+; also without εἰς, ἐκ Θάσου διαβαλόντες π. having crossed over (i.e. ἐς τὴν ἤπειρον), Refs 
+Senses:
+  Sense 1: "beyond, across, the other side" (23x)
+    Desc: A spatial term indicating the far side of a body of water or geographical boundary, used both as a preposition ('beyond the Jordan') and as an adverbial substantive ('the other side'). Nearly all NT o...
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: across, beyond, other-side | spa: al-otro-lado, al-otro-lado-de, del-otro-lado | fra: au-delà | deu: jenseits
+    Refs: Matt 4:15, Matt 4:25, Matt 8:18, Matt 8:28, Matt 14:22
+  Sense 2: "further, farther beyond" (1x)
+    Desc: An adverbial use indicating greater extent or distance, going beyond what has already been mentioned; a comparative/intensifying usage distinct from the simple directional 'across/beyond.' Multilingua...
+    Domain: QUANTITY_NUMBER > Degree
+    Glosses: eng: further | spa: más-allá | fra: au-delà | deu: jenseits
+    Refs: Acts 19:39
+
+=== G4130 ===
+Language: Greek, POS: V-AIP-3P, Occurrences: 24, Senses: 2
+
+BDB excerpt: πλήθ-ω, poetry perfect (in present sense) πέπληθα Refs 5th c.BC+: pluperfect ἐπεπλήθει Refs 3rd c.BC+ — _intransitive_ form of πίμπλημι, mostly in present participle, to be full, πλήθει.. νεκύων ἐρατεινὰ ῥέεθρα Refs 8th c.BC+; χεῖρας κρεῶν πλήθοντες having them full of.., Refs 3rd c.BC+; but Ἄναυρος ὄμβρῳ χειμερίῳ πλήθων swollen with winter's rain, ὄμβρῳ being dative of cause, Refs 8th c.BC+; of the full moon, σελήνη πλήθουσα Refs 7th c.BC+ rarely = in a full assembly, Refs 4th c.BC+ __II transitive only in later Poets, Refs 3rd c.AD+:—passive, Refs 3rd c.BC+ πίμπλημι, in present and imperfect
+Senses:
+  Sense 1: "fill with substance or spirit" (18x)
+    Desc: To fill or be filled with a physical substance, emotion, or the Holy Spirit, resulting in a state of fullness.
+    Domain: QUANTITY_NUMBER > Quantity
+    Glosses: eng: be-filled, having-been-filled, having-filled | spa: fue-llena, fue-lleno, fueron-llenados | fra: remplir | deu: erfüllt
+    Refs: Matt 22:10, Matt 27:48, Luke 1:15, Luke 1:41, Luke 1:67
+  Sense 2: "fulfill or complete time" (6x)
+    Desc: To bring a period of time, prophecy, or appointed event to completion or fulfillment.
+    Domain: QUANTITY_NUMBER > Quantity
+    Glosses: eng: to-be-fulfilled, was-fulfilled, were-completed | spa: cumplirse, fueron-cumplidos, se-cumplieron | fra: remplir | deu: erfüllt
+    Refs: Luke 1:23, Luke 1:57, Luke 2:6, Luke 2:21, Luke 2:22

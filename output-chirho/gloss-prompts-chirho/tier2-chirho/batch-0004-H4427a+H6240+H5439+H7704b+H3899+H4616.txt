@@ -1,0 +1,141 @@
+You are a biblical lexicographer composing glosses for a digital lexicon.
+For each lemma below, compose a JSON object. Separate objects with "---".
+
+Format for each:
+{
+  "lemma_id": "...",
+  "gloss_terse": "under 120 chars, concise definition covering the word's semantic range",
+  "gloss_readable": "2-5 sentences, 40-120 words. Don't start with 'This word'. Warm study-Bible footnote tone. Engaging, not dry.",
+  "senses": {
+    "1": "enriched 20-60 word description. Reference multilingual evidence when illuminating. Don't repeat the label verbatim.",
+    "2": "..."
+  }
+}
+
+Rules:
+- No markdown fences, just JSON objects separated by ---
+- Reference multilingual evidence naturally when it reveals something
+- gloss_readable should feel like a good study Bible footnote: helpful, clear, occasionally surprising
+- Each sense enrichment: how does the evidence support this sense? Mention 1-2 key passages when helpful.
+
+=== H4427a ===
+Language: Hebrew, POS: V-Qal-Imperf-3mp, Occurrences: 350, Senses: 3
+
+BDB excerpt: II. מָלַךְ346 vb. denom. be, or become king, or queen, reign;— Qal296 Pf. מ׳ Jos 13:10 +, etc.; Impf. יִמְלֹךְ (-לוֹךְ) Ex 15:18 +; וַיִּמְלֹךְ Gn 36:32 +; 2 ms. תִּמְלֹךְ Gn 37:8 +, (הֲתִֽמֲלֹךְ Je 22:15 Bear); Imv. מְלָךְ־, Ju 9:14; מָלְכָה Ju 9:8; מָלְכִי Ju 9:10, 12; Inf. abs. מָלֹךְ Gn 37:8 1 S 24:21; cstr. מְלֹךְ 1 K 2:15 +; sf. מָלְכוֹ 1 S 13:1 +; Pt. מֹלֵךְ Je 22:11 + 2 times; מֹלֶכֶת 2 K 11:3 = 2 Ch 22:12;—be (become) king, reign, mostly of Hebrew kings, 2 S 2:10 1 K 16:22 2 K 3:1; 9:13, but also gen. Pr 8:15; 30:22; of Can., Edom., Aramaic, Assyrian, Pers. kings, etc.: Ju 4:2 Gn 36:3
+Senses:
+  Sense 1: "reign, be king (Qal)" (300x)
+    Desc: The basic Qal sense of מלך: to reign, rule as king, exercise royal authority. Arabic cognate مَلَكَ (malaka, Form I) confirms a single undifferentiated sense across all inflections — perfective مَلَكَ...
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: has-become-king, has-reigned, he-reigned | spa: reinaba, reinó | fra: a-deviens-roi, a-régna, il-régna | deu: er-regierte, hat-become-Koenig, hat-regierte
+    Refs: Josh 13:10, Josh 13:12, Josh 13:21, Judg 4:2, 1Sam 13:1
+  Sense 2: "make king, cause to reign (Hifil)" (49x)
+    Desc: The causative Hifil sense of מלך: to make someone king, to install as ruler, to cause to reign. Arabic uses the Form II intensive/causative مَلَّكَ (mallaka) with shadda on the lam, clearly distinct f...
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: and-made-king, and-they-made-king, to-make-king | spa: E-hicieron-rey, E-hizo-rey, e-hicieron-reinar | fra: et-fit-roi, et-ils-fit-roi, et-régner | deu: herrschen, und-herrschen, und-machte-Koenig
+    Refs: Judg 9:6, Judg 9:16, Judg 9:18, 1Sam 8:22, 1Sam 11:15
+  Sense 3: "?" (1x)
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: was-made-king | spa: reinó | fra: le-roi | deu: der-Koenig
+    Refs: Dan 9:1
+
+=== H6240 ===
+Language: Hebrew, POS: Number-ms, Occurrences: 338, Senses: 3
+
+BDB excerpt: עָשָׂר203, עֶשְׂרֵה, n. ten, only after units to make num. 11–19, both cardinal and ordinal; עֶשְׂרֵה c. n.f., עָשָׂר c. n.m., thus: 1. eleven: a. אַחַד עָשָׂר (c. n.m.) Gn 32:23 + 2 times. b. אַחַת עֶשְׂרֵה (c. n.f.) 2 K 23:36 + 7 times; also = eleventh 1 K 6:38 2 K 9:29. c. עַשְׁתֵּי עָשָׂר (c. n.m.) Nu 29:20; ord. Dt 1:3 + 7 times. d. עַשְׁתֵּי עֶשְׂרֵה (c. n.f.) Ex 26:7 + 4 times; ord. Je 1:3 + 4 times. 2. twelve: a. שְׁנֵי(ם) עָשָׂר (c. n.m.) Gn 35:22 + 80 times; ord. 1 K 19:19 + 12 times b. שְׁתֵּי(ם) עֶשְׂרֵה (c. n.f.) Ex 24:4 + 31 times; ord. 2 K 8:25 + 6 times. 3. thirteen: a. שְׁלשָׁ
+Senses:
+  Sense 1: "ten (cardinal number)" (334x)
+    Desc: The cardinal number ten, used independently or in compound numbers (twelve, thirteen, etc.), with or without the definite article.
+    Domain: QUANTITY_NUMBER > Number
+    Glosses: eng: ten | spa: [son], diez, doce | fra: dix | deu: -, zehn, zehnten
+    Refs: Gen 5:8, Gen 5:10, Gen 11:25, Gen 14:4, Gen 14:4
+  Sense 2: "tenth (ordinal use)" (3x)
+    Desc: The number ten used in ordinal contexts, especially for dates and sequential ordering (the tenth day, the tenth month).
+    Domain: QUANTITY_NUMBER > Number
+    Glosses: eng: tenth | spa: décimo, día | fra: dixième | deu: zehnter
+    Refs: 1Kgs 6:38, 1Kgs 12:32, 1Kgs 12:33
+  Sense 3: "ketiv for H6213 (to make)" (1x)
+    Desc: A text-critical anomaly where the consonantal ketiv form coincides with H6240 but the qere reading is H6213 (asah, to make/do).
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: [ketiv] | spa: (ketiv) | fra: [ketiv] | deu: [ketiv]
+    Refs: 1Kgs 22:48
+
+=== H5439 ===
+Language: Hebrew, POS: Adv | 2mp, Occurrences: 337, Senses: 3
+
+BDB excerpt: סָבִיב336 subst., used mostly as adv. and prep., circuit, round about:—cstr. סְבִיב †Am 3:11; pl. cstr. סְבִיבֵי †Je 32:44; 33:13, sf. סְבִיבֶיךָ etc. (10 times), much oftener סְבִיבוֹת Ex 7:24 + 22 times, סְבִיבוֹתַי, תֶיךָ-, etc., Dt 17:14, etc. (48 times):— 1. in sg.:— a. as subst. 1 Ch 11:8 מן־המלוא וְעַד־הַסָּבִיב and to the parts round about. b. as adv.acc. סָבִיב (in) a circuit, i.e. round about, Gn 23:17 בְּכָל־גְּבֻלוֹ סָבִיב Ex 19:12; 25:11, 24, 25, Lv 1:5, 11 עַל הַמִּזְבֵּחַ סָבִיב, Ju 20:29 1 K 3:1; 5:11 ψ 3:7 אֲשֶׁר ס׳ שָׁתוּ עָלָ֑י, 12:9 34:8 + often; sometimes doubled, for the 
+Senses:
+  Sense 1: "around, all around (spatial)" (319x)
+    Desc: Adverbial or prepositional use indicating spatial surrounding or encirclement, including all pronominal suffixes and conjunctive/prepositional prefixes (מִן 'from around,' waw-conjunctive 'and around,...
+    Domain: GEOGRAPHY_SPACE > Spacial Positions
+    Glosses: eng: all-around, around | spa: alrededor, alrededor-de- | fra: autour, tout-autour | deu: alle-um, ringsum-waren, um
+    Refs: Gen 23:17, Exod 16:13, Exod 19:12, Exod 25:11, Exod 25:24
+  Sense 2: "surroundings, those around (substantive)" (17x)
+    Desc: Substantival use denoting the surrounding area, neighboring places, or the people who are around someone, often with the article or in construct chains, corresponding to Arabic مَنْ/مَا حَوْلَ (who/wh...
+    Domain: GEOGRAPHY_SPACE > Spacial Positions
+    Glosses: eng: and-in-surroundings-of, around-him, around-them | spa: a-alrededores-de-nosotros, a-su-alrededor, alrededor-de-ella | fra: alentour, autour, der-autour | deu: der-ringsum, der-sind-um-ihn, rings-um-sie
+    Refs: Num 22:4, 1Chr 11:8, Ezra 1:6, Ps 44:13, Ps 76:11
+  Sense 3: "?" (1x)
+    Domain: GEOGRAPHY_SPACE > Spacial Positions
+    Glosses: eng: its-circuits | spa: sus-giros | fra: autour-lui | deu: ringsum
+    Refs: Eccl 1:6
+
+=== H7704b ===
+Language: Hebrew, POS: N-mp, Occurrences: 321, Senses: 3
+
+BDB excerpt: שָׂדֶה318 n.m. Lv 27:24 id. (ordinary contr. form Ges§ 84 a f);—abs. שׂ׳ Gn 2:5(×2) +; cstr. שְׂדֵה 14:7 +; sf. שָׂדִי Je 32:7, 8, שָֽׂדְךָ Dt 11:15 +, שָׂדֶ֑ךָ 24:19 Lv 25:3, etc.; pl. שָׂדוֹת 1 S 22:7 +, cstr. שְׂדוֹת Ne 12:29; also שְׂדֵי 2 S 1:21; Is 32:12; Ru 1:1 + 8 times (some might be sg. = שְׂדֵה cf. BaZMG xiii (1888), 351 SS Buhl; note, e.g. שְׂדֵי Ru 1:6a, = שְׂדֵה v b; 4:3; but v. Köii. 1, 77); sf. שְׂדֹתֶיהָ Ne 11:30, etc.; also שָׂדֶיךָ 1 K 2:26, שָׂדֵינוּ Mi 2:4;— 1. open field, country: a. pasture-land Gn 29:2; 30:16; Ex 9:3 (all J), Dt 11:15; 1 S 11:5 + 10 times J, JE. b. unfr
+Senses:
+  Sense 1: "cultivated field, plot of land" (316x)
+    Desc: The primary sense of שָׂדֶה denoting a cultivated or owned field, a parcel of agricultural land, including all grammatical inflections (singular, plural, construct, with prepositions and pronominal su...
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: the-field | spa: el-campo | fra: le-champ | deu: das-Feld, dem-Feld, des-Feldes
+    Refs: Gen 2:5, Gen 2:5, Gen 2:19, Gen 2:20, Gen 3:1
+  Sense 2: "open country, plain" (3x)
+    Desc: A distinct sense of שָׂדֶה referring to an open, uncultivated plain or expanse of flat land, as opposed to a bounded agricultural field. Arabic uses سَهْل (sahl, 'plain, flat terrain') rather than حَق...
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: field-of, in-the-field-of, the-field-of | spa: al-campo-de, campo-de-, en-campo-de- | fra: champ, dans-champ | deu: Feld, der-Feld-von, in-der-Feld-von
+    Refs: Ps 78:12, Ps 78:43, Hos 12:12
+  Sense 3: "?" (2x)
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: the-field | spa: silvestre, silvestres | fra: le-champ | deu: der-Feld
+    Refs: 2Kgs 4:39, 2Kgs 4:39
+
+=== H3899 ===
+Language: Hebrew, POS: Prep-b | N-ms, Occurrences: 299, Senses: 3
+
+BDB excerpt: לֶ֫חֶם296 n.m. 1 S 9:7 and (rarely) f. Gn 49:20 (vid. infr., and Dr 1 S 10:4) bread, food (Ph. לחם bread; NH לֶחֶם; Aramaic לַחְמָא, ܠܰܚܡܳܐ, as Heb.; Arabic لَحْمٌ flesh, meat (cf. Frä30));—abs. ל׳ Gn 3:19 +; לָ֑חֶם Gn 31:54 +; לֶ֑חֶם ψ 14:4 + 2 times; cstr. לֶחֶם Ho 9:4 +; sf. לַחְמִי Jb 3:24 +, לַחְמְךָ Ob 7 +, לַחְמָם Ho 9:4b, + v 4a (for MT לָהֶם), We GASm Now, + etc.;— 1. a. bread, the ordinary food of early Hebrews (BenzArch. 84 ff. NowArch. i. 109 ff.) Ex 21:14 (E), Nu 21:5 Jos 9:5, 12 (JE), Dt 8:3; 23:5 Ex 16:3 (P) +; כִּכַּר־ל׳ loaf of bread 1 S 2:36 + (vid. כִּכָּר sub כרר), and with
+Senses:
+  Sense 1: "bread, loaf of bread" (279x)
+    Desc: Literal bread as a baked food staple made from grain, including loaves given, eaten, or offered, and the bread of the Presence (showbread).
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: bread | spa: pan | fra: pain | deu: Brot, mit-Brot
+    Refs: Gen 3:19, Gen 14:18, Gen 18:5, Gen 21:14, Gen 25:34
+  Sense 2: "food, sustenance" (19x)
+    Desc: Food or nourishment in general, not restricted to bread but referring broadly to provision, sustenance, or livelihood.
+    Domain: FOOD_DRINK > Foods and Condiments
+    Glosses: eng: bread-of, food, food-of | spa: Su-pan, el-pan, mi-pan | fra: le-nourriture, le-provision-de, leur-pain-eux | deu: Brot, Brot-von, Speise
+    Refs: Lev 3:11, Lev 3:16, Num 28:24, 1Sam 20:24, 1Sam 20:27
+  Sense 3: "?" (1x)
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: with-its-fruit | spa: con-pan-su | fra: pain | deu: Brot
+    Refs: Jer 11:19
+
+=== H4616 ===
+Language: Hebrew, POS: Prep, Occurrences: 272, Senses: 3
+
+BDB excerpt: † מַעֲנֶה n.m. Pr 15:1 answer, response;—abs. מ׳־רַךְ Pr 15:1 a gentle answer; cstr. מַעֲנֵה פִּיו v 23, cf. מ׳ לָשׁוֹן 16:1 (i.e. ability to answer); מ׳ אֱלֹהִים Mi 3:7 i.e. response for guidance; abs. also Pr 29:19 response = obedience; Jb 32:3, 5 reply, refutation; sf. לַמַּעֲנֵהוּ Pr 16:4 = for its purpose, that for which it answers (v. Toy).
+Senses:
+  Sense 1: "purpose: so that, in order that" (196x)
+    Desc: Conjunctional use introducing a purpose or result clause, expressing the intended goal or outcome of an action.
+    Domain: PROPERTIES_RELATIONS > Relations
+    Glosses: eng: for-sake-of, in-order-that, so-that | spa: Para-que, para, para-que | fra: ainsi-ce, dans-order-ce, pour-cause-de | deu: damit, damit-, fuer-sake-von
+    Refs: Gen 12:13, Gen 18:19, Gen 18:19, Gen 27:25, Gen 37:22
+  Sense 2: "for the sake of, because of" (65x)
+    Desc: Prepositional use indicating the cause, reason, or beneficiary of an action, often with pronominal suffixes specifying whose sake or what cause.
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: For-the-sake-of, for-sake-of, for-the-sake-of | spa: Por-causa-de, para-que, por-causa-de | fra: afin-que, pour-cause-de, à-cause-de | deu: fuer-sake-von, um-, um-willen
+    Refs: Gen 18:24, 1Kgs 8:41, 1Kgs 11:12, 1Kgs 11:13, 1Kgs 11:13
+  Sense 3: "for sake of / in order that (ambiguous)" (11x)
+    Desc: Mixed prepositional-conjunctional use where the boundary between purpose and cause is fluid, serving both as causal motivation and purposive goal.
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: for-sake-of, for-sake-of-, in-order-that | spa: Para, para, para-que | fra: afin-que | deu: um-willen
+    Refs: Ezek 21:10, Ezek 21:10, Ezek 21:15, Ezek 21:28, Ezek 22:6

@@ -1,0 +1,122 @@
+You are a biblical lexicographer composing glosses for a digital lexicon.
+For each lemma below, compose a JSON object. Separate objects with "---".
+
+Format for each:
+{
+  "lemma_id": "...",
+  "gloss_terse": "under 120 chars, concise definition covering the word's semantic range",
+  "gloss_readable": "2-5 sentences, 40-120 words. Don't start with 'This word'. Warm study-Bible footnote tone. Engaging, not dry.",
+  "senses": {
+    "1": "enriched 20-60 word description. Reference multilingual evidence when illuminating. Don't repeat the label verbatim.",
+    "2": "..."
+  }
+}
+
+Rules:
+- No markdown fences, just JSON objects separated by ---
+- Reference multilingual evidence naturally when it reveals something
+- gloss_readable should feel like a good study Bible footnote: helpful, clear, occasionally surprising
+- Each sense enrichment: how does the evidence support this sense? Mention 1-2 key passages when helpful.
+
+=== G0040 ===
+Language: Greek, POS: Adj-GFS, Occurrences: 235, Senses: 4
+
+BDB excerpt: ἅγιος [ᾰ], α, ον, devoted to the gods: __I in good sense, sacred, holy: __I.1 of things, especially temples, ἈΦροδίτης ἱρὸν ἅ.Refs 5th c.BC+; ἱρο᾽ν Ἡρακλέος ἅ.Refs 5th c.BC+; μητρός.. ἐστι πατρὶς ἁγιώτερονRefs 4th c.BC+; ἅ., τό, temple, LXX+NTHoly of Holies, NT __I.2 of persons, holy, pure, LXX+5th c.BC+ οἱ ἅ. the Saints, NT πνεῦμα ἅ. the Holy Spirit, NT adverb ἁγίως καὶ σεμνῶς ἔχεινRefs 5th c.BC+ __II in bad sense, accursed, execrable, Refs 8th c.BC+; rare in Attic dialect (see. above). (Possibly cognate with Sanskrit yajati 'sacrifice'.)
+Senses:
+  Sense 1: "the Holy One, Holy Spirit" (98x)
+    Desc: Substantive singular use referring to the Holy Spirit (πνεῦμα ἅγιον), the Holy One of God, or divine holiness as a personal attribute.
+    Domain: RELIGIOUS_LIFE > Religious Activities
+    Glosses: eng: Holy, Holy-One | spa: Santo | fra: saint | deu: heilig
+    Refs: Matt 1:18, Matt 1:20, Matt 3:11, Matt 12:32, Matt 28:19
+  Sense 2: "holy, sacred, consecrated" (65x)
+    Desc: Attributive or predicative adjective describing something or someone as set apart, sacred, or consecrated to God, including superlative intensification.
+    Domain: RELIGIOUS_LIFE > Religious Activities
+    Glosses: eng: holy | spa: santa, santo, santos | fra: saint | deu: heilig
+    Refs: Matt 4:5, Matt 7:6, Matt 24:15, Matt 27:53, Mark 6:20
+  Sense 3: "saints, holy ones (persons)" (61x)
+    Desc: Substantive plural use referring to God's people, believers, or the consecrated community (οἱ ἅγιοι).
+    Domain: RELIGIOUS_LIFE > Religious Activities
+    Glosses: eng: holy-ones, saints | spa: santos | fra: saint | deu: heilig
+    Refs: Matt 27:52, Acts 9:13, Acts 9:32, Acts 9:41, Acts 26:10
+  Sense 4: "holy place, sanctuary" (11x)
+    Desc: Substantive neuter use referring to sacred spaces such as the temple, sanctuary, or the holy of holies (τὰ ἅγια, ἅγια ἁγίων).
+    Domain: RELIGIOUS_LIFE > Religious Activities
+    Glosses: eng: Holy, holy-place, holy-places | spa: Lugar-Santo, Santo, de-santos | fra: saint | deu: heilig
+    Refs: Heb 8:2, Heb 9:1, Heb 9:2, Heb 9:3, Heb 9:3
+
+=== G1831 ===
+Language: Greek, POS: V-AMA-2P, Occurrences: 219, Senses: 4
+
+BDB excerpt: ἐξέρχομαι, future -ελεύσομαι (but in Attic dialect ἔξειμι (A) supplies the future, also imperfect ἐξῄειν): aorist 2 ἐξῆλθον, the only tense used in Refs 8th c.BC+:— go or come out of, with genitive loci, τείχεος, πυλάων, πόληος, Refs 8th c.BC+; ἐ. δωμάτων, χθονός, etc., Refs 5th c.BC+; of an actor, come out on the stage, Refs 5th c.BC+: absolutely, come forth, ἐ. καὶ ἀμῦναι Refs 8th c.BC+ __b rarely with accusative, ἐξῆλθον τὴν Περσίδα χώραν LXX+5th c.BC+ __c absolutely, march out, go forth, Refs 5th c.BC+ __d of an accused person, withdraw from the country to avoid trial, opposed to φεύγω, Re
+Senses:
+  Sense 1: "go/come out physically" (193x)
+    Desc: To move from inside a place to outside, physically exiting or leaving a location such as a house, city, or gathering.
+    Domain: MOVEMENT > Linear Movement
+    Glosses: eng: came-out, has-gone-out, he-went-out | spa: ha-salido, salió | fra: sortir | deu: geht-hinaus, hinausgehen
+    Refs: Matt 8:34, Matt 9:26, Matt 13:3, Matt 17:18, Matt 20:1
+  Sense 2: "come out as command" (13x)
+    Desc: Imperative use commanding someone or something (often an unclean spirit) to come out or go out, as in exorcism or authoritative dismissal.
+    Domain: MOVEMENT > Linear Movement
+    Glosses: eng: Come-out, Go-out, come-out | spa: Sal, Salid, sal | fra: sortir | deu: geht-hinaus, hinausgehen
+    Refs: Matt 25:6, Mark 1:25, Mark 5:8, Mark 9:25, Luke 4:35
+  Sense 3: "go forth or spread" (10x)
+    Desc: To go out in the sense of proceeding forth, issuing, or spreading abroad, as of news, reports, or proclamations emanating from a source.
+    Domain: MOVEMENT > Linear Movement
+    Glosses: eng: come-out, comes-forth, comes-out | spa: saldrá, sale, salen | fra: sortir | deu: geht-hinaus, hinausgehen
+    Refs: Matt 2:6, Matt 12:43, Matt 15:18, Matt 15:19, Matt 24:27
+  Sense 4: "depart or withdraw" (3x)
+    Desc: To leave a place or person with emphasis on departure or withdrawal rather than the act of passing through an exit.
+    Domain: MOVEMENT > Linear Movement
+    Glosses: eng: Depart, having-departed | spa: Apártate, saliendo | fra: sortir | deu: geht-hinaus
+    Refs: Luke 5:8, Acts 21:5, Acts 21:8
+
+=== H4503 ===
+Language: Hebrew, POS: Prep-k | N-fsc, Occurrences: 211, Senses: 4
+
+BDB excerpt: מִנְחָה153 n.f. gift, tribute, offering (NH id.; Ph. מנחת; 𝔗 מִנְחָתָא on Arabic v. supr.);—abs. מ׳ Gn 4:3 + 81 times; cstr. מִנְחַת Lv 2:7 + 22 times; sf. מִנְחָתִי Gn 33:10 + 3 times; + 41 times sfs. sg.; pl. sf. מִנְחֹתֶיךָ ψ 20:4; מִנְחֹתֵיכֶם Nu 29:39 Am 5:22;— †1. gift, present Gn 32:14, 19, 21, 22 (E), 33:10; 43:11, 15, 25, 26 (J), Ju 6:18 1 S 10:27 1 K 10:25=2 Ch 9:24 2 K 8:8, 9; 20:12=Is 39:1, ψ 45:13 2 Ch 32:23. †2. tribute Ju 3:15, 17, 18(×2) 2 S 8:2, 6=Ch 18:2, 6, 1 K 5:1 2 K 17:3, 4 2 Ch 17:5, 11; 26:8 Ho 10:6 ψ 72:10. †3. offering made to God, of any kind, whether grain or animal
+Senses:
+  Sense 1: "grain/cereal offering (cultic)" (139x)
+    Desc: The technical Priestly term for the cereal/meal offering described in Leviticus 2, consisting of fine flour, oil, and frankincense; Arabic consistently renders تَقْدِمَة (taqdīma, 'formal presentation...
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: and-their-grain-offering, for-grain-offering | spa: Y-ofrenda-de-ellos, para-ofrenda, para-ofrenda-de-grano | fra: et-leur-grain-offrande, offrande, pour-offrande-de-grain | deu: fuer-Speiseopfer, und-ihr-Getreide-Opfergabe, zu-Speisopfer
+    Refs: Exod 30:9, Lev 2:3, Lev 2:8, Lev 2:9, Lev 2:10
+  Sense 2: "offering/oblation (general cultic)" (39x)
+    Desc: The broader cultic sense of מִנְחָה as any offering presented to God, including both animal and vegetable offerings (as in Genesis 4:3-5 where both Cain's produce and Abel's animal are called מִנְחָה)...
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: a-grain-offering, an-offering, and-a-grain-offering | spa: ofrenda, y-ofrenda | fra: de-offrande, et-de-offrande, et-offrande | deu: Opfer, Opfergabe, Speisopfer
+    Refs: Gen 4:3, Gen 4:4, Gen 4:5, Num 16:15, Judg 6:18
+  Sense 3: "gift/present (secular)" (18x)
+    Desc: A gift or present given between humans in non-cultic contexts, such as Jacob's gift to Esau (Genesis 32:14) or diplomatic presents; Arabic decisively shifts to هَدِيَّة (hadiyya, 'gift/present') — a c...
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: a-gift, a-tribute, and-a-gift | spa: con-el-presente, con-presente, el-presente | fra: avec-le-don, dans-offrande, don | deu: Opfergabe, Speisopfer, das-Geschenk
+    Refs: Gen 32:13, Gen 32:18, Gen 32:20, Gen 32:21, Gen 33:10
+  Sense 4: "tribute (political/vassal)" (15x)
+    Desc: A compulsory payment or tribute from a vassal or subject nation to a dominant power, as in Judges 3:15-18 (Ehud's tribute to Eglon) and 2 Samuel 8:2,6 (conquered peoples bearing tribute); Arabic uses ...
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: a-tribute, the-tribute, tribute | spa: el-tributo, tributo | fra: de-offrande, le-tribut, offrande | deu: Speisopfer, Tribut, der-tribute
+    Refs: Judg 3:15, Judg 3:17, Judg 3:18, Judg 3:18, 2Sam 8:2
+
+=== H3467 ===
+Language: Hebrew, POS: V-Hifil-Prtcpl-msc | 3ms, Occurrences: 206, Senses: 4
+
+BDB excerpt: † [יָשַׁע] vb. Hiph. deliver; Niph. intrans. and pass. (Arabic وَسِعَ be capacious, ii. make wide, spacious, iv. make sufficient, v. viii. be or live in abundance (v. Dr 1 S 14:45) Ph. n.pr. ישע; Sab. יתֿע (royal epith.), n.pr. אליתֿע, יתֿעאל, עמיתֿע, e.g. MordtZMG 1876, 37; 1893, 409, 416, 417, etc. (yet note strange equiv., תֿ = س); not in Aramaic; MI4 השעני he delivered me, l3 (ב)משע deliverance, Sm and So, (but במת ClGann Dr); n.pr.m. משע l1, also l3 [4] Sm and So, but ישע deliverance, ClGann Dr)— Niph. Pf. 3 m. נוֹשַׁע Dt 33:29; Is 45:17; 2 pl. נוֹשַׁעְתֶּם Nu 10:9; 1 pl. נוֹשָׁ֑עְנוּ Je 
+Senses:
+  Sense 1: "save, deliver, rescue (Hifil active)" (156x)
+    Desc: Active causative meaning in the Hifil stem: to save, deliver, or rescue someone from danger, enemies, or distress, with God or a human agent as subject (Arabic khallasa/anqadha, Korean guwonhada, Swah...
+    Domain: DANGER_DELIVERANCE > Danger, Risk, Safe, Save
+    Glosses: eng: save, save-me | spa: Salva, Sálvame, salva | fra: le-sauver, sauve, sauve-moi | deu: rette, rette-mich, rettete
+    Refs: Exod 14:30, Deut 20:4, Judg 3:31, Judg 7:7, Judg 10:1
+  Sense 2: "savior, deliverer (Hifil participle substantive)" (28x)
+    Desc: Hifil participle used substantively as an agent noun or title: savior, deliverer, rescuer, often with possessive suffixes or the article, designating God or a human champion (Arabic mukhallis, Korean ...
+    Domain: DANGER_DELIVERANCE > Danger, Risk, Safe, Save
+    Glosses: eng: Savior, a-Savior, a-deliverer | spa: Salvador, el-que-salva, por-Salvador | fra: de-sauver, deliverer, et-sauver | deu: deliverer, der-eins-rettend, ein-deliverer
+    Refs: Deut 22:27, Deut 28:29, Deut 28:31, Judg 3:9, Judg 3:15
+  Sense 3: "be saved, receive salvation (Nifal passive)" (21x)
+    Desc: Passive or reflexive meaning in the Nifal stem: to be saved, to be delivered, to receive or experience salvation, with the rescued party as subject (Arabic khullisa/yakhlus, Korean guwon-batda, Swahil...
+    Domain: DANGER_DELIVERANCE > Danger, Risk, Safe, Save
+    Glosses: eng: I-am-saved, and-I-will-be-saved, and-be-saved | spa: es-salvado, hemos-sido-salvados, salvado | fra: [ונושע], et-sauver, et-tu-devra-être-sauva | deu: ich-am-rettete, retten, rettete
+    Refs: Num 10:9, Deut 33:29, 2Sam 22:4, Ps 18:3, Ps 33:16
+  Sense 4: "?" (1x)
+    Domain: DANGER_DELIVERANCE > Danger, Risk, Safe, Save
+    Glosses: eng: for-salvation | spa: para-salvación | fra: pour-salut | deu: fuer-salvation
+    Refs: 2Sam 10:11

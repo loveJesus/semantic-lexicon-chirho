@@ -1,0 +1,160 @@
+You are a biblical lexicographer composing glosses for a digital lexicon.
+For each lemma below, compose a JSON object. Separate objects with "---".
+
+Format for each:
+{
+  "lemma_id": "...",
+  "gloss_terse": "under 120 chars, concise definition covering the word's semantic range",
+  "gloss_readable": "2-5 sentences, 40-120 words. Don't start with 'This word'. Warm study-Bible footnote tone. Engaging, not dry.",
+  "senses": {
+    "1": "enriched 20-60 word description. Reference multilingual evidence when illuminating. Don't repeat the label verbatim.",
+    "2": "..."
+  }
+}
+
+Rules:
+- No markdown fences, just JSON objects separated by ---
+- Reference multilingual evidence naturally when it reveals something
+- gloss_readable should feel like a good study Bible footnote: helpful, clear, occasionally surprising
+- Each sense enrichment: how does the evidence support this sense? Mention 1-2 key passages when helpful.
+
+=== H5352 ===
+Language: Hebrew, POS: Conj-w | V-Nifal-ConjPerf-1cs, Occurrences: 44, Senses: 6
+
+BDB excerpt: † [נָקָה] vb. be empty (?), clean (Ecclus 16:11b Niph. Impf. ינקה be unpunished, so 40:15; 31:5 = Pr 28:20; NH Pi. = BH; Aramaic נְקָא Pa. = BH, adj. נְקֵא clean; Ph. נקי adj. pure; Palm. נקא be clean (perhaps) in n.pr. SachauZMG xxxv (1881), 735 Lzb325; Assyrian nâḳû, pour out, pour libation, make offering, nikû, libation, offering; Old Aramaic נקיה perhaps = נוּקָיָה libation (Lzb326), cf. Syriac ܢܽܘܩܳܝܳܐ Cook83; Syriac ܢܰܩܺܝ Pa. pour out, make a libation; 𝔗 נְקָא Pa. = cleanse (with lye) Is 1:25; adj. נְקֵא clean of bread or fruit Gn 40:16 𝔗J i, Dt 6:3 𝔗J ii, = exempt (BH נָקִי) 1 K 15:22. 
+Senses:
+  Sense 1: "Nifal: go unpunished, be acquitted" (15x)
+    Desc: In the Nifal stem, to escape punishment or be declared not guilty in a juridical context, often in the formula 'shall not go unpunished.'
+    Domain: MORAL_QUALITY > Moral and Ethical Qualities
+    Glosses: eng: I-am-innocent, being-acquitted, going-unpunished | spa: Estaré-libre-de-culpa, quedando-impune, quedará-impune | fra: je-suis-innocent, être-innocent | deu: ich-bin-innocent, ungestraft, unschuldig-sein
+    Refs: Judg 15:3, Prov 6:29, Prov 11:21, Prov 16:5, Prov 17:5
+  Sense 2: "Piel: acquit, leave unpunished" (15x)
+    Desc: In the Piel stem, to declare someone innocent, acquit, or leave unpunished, used of God or a judge pronouncing a person guiltless.
+    Domain: MORAL_QUALITY > Moral and Ethical Qualities
+    Glosses: eng: I-will-acquit-you, I-will-leave-you, You-acquit-me | spa: absolverá, absuelve, dejará-impune | fra: --quitter-unpunished, et-acquittant, et-acquitting | deu: er-spricht-frei, er-wird-acquit, hold-ihn-guiltless
+    Refs: Exod 20:7, Exod 34:7, Exod 34:7, Num 14:18, Num 14:18
+  Sense 3: "Nifal: be free, be released from obligation" (7x)
+    Desc: In the Nifal stem, to be free or released from an oath, vow, or binding obligation, as in the sotah ritual or oaths between parties.
+    Domain: AUTHORITY_RULE > Status
+    Glosses: eng: and-is-cleared, and-shall-be-free, and-she-shall-be-free | spa: quedarás-libre, sé-libre, y-quedará-libre | fra: alors-tu---être-libérer, et-devra-être-libérer, et-elle-devra-être-libérer | deu: sein-befreien, so-bist-du-frei, und-ist-cleared
+    Refs: Gen 24:8, Gen 24:41, Exod 21:19, Num 5:19, Num 5:28
+  Sense 4: "Nifal: be cleansed, be purged" (3x)
+    Desc: In the Nifal stem, to be cleansed or purged of guilt or moral impurity, emphasizing purification rather than juridical acquittal.
+    Domain: MORAL_QUALITY > Moral and Ethical Qualities
+    Glosses: eng: and-I-shall-be-innocent, will-be-purged | spa: será-borrado, y-seré-limpio | fra: et-innocenter, innocenter | deu: und-ich-soll-seinnocent, ungestraft
+    Refs: Ps 19:13, Zech 5:3, Zech 5:3
+  Sense 5: "Piel: cleanse, purify from guilt" (3x)
+    Desc: In the Piel stem, to cleanse or purify from blood-guilt or moral defilement, often in the context of avenging innocent blood or requesting divine purification.
+    Domain: RELIGIOUS_LIFE > Religious Activities
+    Glosses: eng: I-have-avenged, acquit-me, and-I-will-avenge | spa: Y-limpiaré, limpié, límpiame | fra: et-innocenter, innocenter | deu: acquit-mich, und-ungestraft, ungestraft
+    Refs: Ps 19:12, Joel 3:21, Joel 3:21
+  Sense 6: "?" (1x)
+    Domain: MORAL_QUALITY > Moral and Ethical Qualities
+    Glosses: eng: and-emptied | spa: y-desolada | fra: et-être-innocent | deu: und-unschuldig-sein
+    Refs: Isa 3:26
+
+=== H7194 ===
+Language: Hebrew, POS: Art | V-Pual-Prtcpl-fp, Occurrences: 44, Senses: 6
+
+BDB excerpt: † קָשַׁר vb. bind, league together, conspire (NH id., bind, join, קֶשֶׁר knot; 𝔗 קְטַר, Syriac ܩܛܰܪ bind (ט for ת after ק) NöZMG xl.735, who cp. also (‘perhaps’) Arabic قَسَرَ force to do a thing, Ethiopic ቈጸረ: bind);— Qal Pf. 3 ms. קָשַׁר Am 7:10; 1 K 16:16; 2 ms. sf. וּקְשַׁרְתָּם consec. Dt 6:8, etc.; Impf. 3 ms. וַיִּקְשֹׁר 1 K 15:27 +, וַיִּקְשָׁר־ 2 K 15:30, etc.; Imv. ms. sf. קָשְׁרֵם Pr 3:3 +; Pt. act. pl. קשְׁרִים 2 S 15:31 +; pass. fs. קְשׁוּרָה Gn 44:30; Pr 22:15; pl. קְשֻׁרִים Gn 30:42;— 1. bind: a. lit., c. acc. rei + עַל Gn 38:28 (J), Je 51:63, + ב, Jos 2:18, 21 (JE); bind, confi
+Senses:
+  Sense 1: "conspire, plot against" (21x)
+    Desc: To form a conspiracy or plot against someone, typically a king or leader, used across Qal, Hitpael, and related conjugations.
+    Domain: VIOLENCE_CONFLICT > Hostility, Strife
+    Glosses: eng: and-conspired, and-he-conspired, and-he-conspired- | spa: Ha-conspirado, Y-conspiraron, Y-conspiró | fra: a-conspira, ai-tu-conspira, conspira | deu: [התקשרו], [ויקשרו], [קשר]
+    Refs: 1Sam 22:8, 1Sam 22:13, 1Kgs 15:27, 1Kgs 16:9, 1Kgs 16:16
+  Sense 2: "bind, tie physically" (13x)
+    Desc: To physically bind, tie, or fasten something with a cord or band, used of tying objects, animals, or ornaments.
+    Domain: DISCOURSE_NAMES > Discourse Referentials
+    Glosses: eng: and-she-tied, and-tied, and-will-you-bind-him | spa: atarás, y-ató, y-las-atarás | fra: [ותקשרים], [תקשר], et-elle-tied | deu: [התקשר], [ותקשרים], [ותקשרנו]
+    Refs: Gen 38:28, Deut 6:8, Deut 11:18, Josh 2:18, Josh 2:21
+  Sense 3: "conspirator" (4x)
+    Desc: Participial use denoting a person who conspires, functioning as a substantive noun meaning 'conspirator' or 'plotter'.
+    Domain: VIOLENCE_CONFLICT > Hostility, Strife
+    Glosses: eng: is-among-the-conspirators, the-conspirators | spa: entre-los-conspiradores, los-conspiradores, los-que-conspiraron | fra: conspirer, est-parmi-le-conspirators, le-conspirators | deu: [המתקשרים], [הקשרים], der-conspirators
+    Refs: 2Sam 15:31, 2Kgs 21:24, 2Chr 24:26, 2Chr 33:25
+  Sense 4: "bound, tied (stative)" (3x)
+    Desc: Passive or stative condition of being physically bound or tied, expressed through Qal passive participle and Nifal perfect.
+    Domain: PHYSICAL_ACTION > Attachment
+    Glosses: eng: bound, was-bound | spa: atada, ligada, se-ligó | fra: fut-lié, lia, lier | deu: [קשורה], gebunden, war-bound
+    Refs: Gen 44:30, 1Sam 18:1, Prov 22:15
+  Sense 5: "strong, robust" (2x)
+    Desc: Pual participle and related forms describing animals as strong or robust, as in the breeding context of Genesis 30:41-42.
+    Domain: PROPERTIES_RELATIONS > Able, Capable
+    Glosses: eng: and-the-strong, the-stronger | spa: las-robustas, y-las-robustas | fra: et-le-fort, le-stronger | deu: der-kräftigen, und-die-kräftigen
+    Refs: Gen 30:41, Gen 30:42
+  Sense 6: "?" (1x)
+    Domain: PHYSICAL_ACTION > Attachment
+    Glosses: eng: and-was-joined | spa: y-se-unió | fra: et-conspirer | deu: [ותקשר]
+    Refs: Neh 4:6
+
+=== H7667 ===
+Language: Hebrew, POS: Prep-m | N-mp, Occurrences: 44, Senses: 6
+
+BDB excerpt: † I. שֶׁ֫בֶר, שֵׁ֫בֶר n.m. Je 4:5 breaking, fracture, crushing, breach, crash;—abs. שֶׁבֶר Is 51:19 +, שָׁ֑בֶר La 3:47; Pr 17;19, cstr. שֶׁבֶר Is 1:28 +, שֵׁבֶר Am 6:6 +; sf. שִׁבְרִי Je 10:19, etc.; pl. שְׁבָרִים Jos 7:5 Jb 41:17 (dub., v. infr.), sf. שְׁכָרֶיהָ ψ 60:4;— 1. breaking of pottery Is 30:14, fracture of member, limb Lv 21:19; 24:20 (H), especially fig. of people personif. שׁ׳ יוֹסֵף Am 6:6, cf. Is 30:26 (‖ מַחַץ מַכָּתוֹ), Je 8:21; 10:19; 14:17; 30:12 (‖ מַכָּה), v 15 (‖ מַכְאֹב), La 2:11; 3:48; 4:10, also (c. רפא, רפה heal) Je 6:14; 8:11 La 2:13 ψ 60:4, cf. Na 3:19; of sinners Is
+Senses:
+  Sense 1: "destruction, ruin (catastrophic)" (26x)
+    Desc: Large-scale destruction, ruin, or catastrophic collapse of a city, nation, or people, frequently in prophetic judgment oracles. The dominant sense in the prophets (Jeremiah, Isaiah, Ezekiel), where it...
+    Domain: VIOLENCE_CONFLICT > Violence, Harm, Destroy, Kill
+    Glosses: eng: and-destruction, and-destruction-of, and-ruin | spa: Quebranto, Y-quebrantamiento-de, es-tu-quebranto | fra: brisement, brisure, et-brisement | deu: Bruch, und-zerbrach, welcher-segnete
+    Refs: Prov 16:18, Prov 17:19, Prov 18:12, Isa 1:28, Isa 15:5
+  Sense 2: "breaking, fracture (physical)" (8x)
+    Desc: The physical act of breaking or a literal fracture/break of an object (a potter's vessel, a bone, a wall). The concrete, non-metaphorical sense of the root שׁבר. Translates as English 'break/breaking/...
+    Domain: VIOLENCE_CONFLICT > Violence, Harm, Destroy, Kill
+    Glosses: eng: a-broken, break, breaking | spa: Fractura, como-quebradura-de, fractura | fra: brisement, briser, comme-brisement | deu: Bruch, Umbruch, ein-gebrochen
+    Refs: Lev 21:19, Lev 21:19, Lev 24:20, Lev 24:20, Prov 15:4
+  Sense 3: "wound, affliction (personal hurt)" (7x)
+    Desc: A wound, injury, or personal affliction -- often the 'wound' of a people or individual that requires healing (frequently paired with רפא 'to heal'). Distinguished from 'destruction' by the medical/hea...
+    Domain: BODY_HEALTH > Physiological Processes and States
+    Glosses: eng: my-wound, of-His-people, the-wound-of | spa: el-quebranto-de, quebradura-de, quebranto-de | fra: brisement | deu: Bruch, zerbrach
+    Refs: Isa 30:26, Jer 6:14, Jer 8:11, Jer 8:21, Jer 10:19
+  Sense 4: "interpretation (of a dream)" (1x)
+    Desc: The interpretation or meaning of a dream, a distinct homonymic sense possibly from a different root (cf. Akkadian shabaru 'to interpret'). Occurs in Judges 7:15 where Gideon hears a dream and 'its int...
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: its-interpretation | spa: su-interpretación | fra: son-interpretation | deu: sein-interpretation
+    Refs: Judg 7:15
+  Sense 5: "breaches, cracks (structural plural)" (1x)
+    Desc: Fractures, cracks, or breaches in a structure (land, wall, etc.), used in the plural to denote multiple points of structural failure requiring repair. Psalm 60:4 [60:2]: 'heal its breaches/cracks' (of...
+    Domain: PHYSICAL_ACTION > Physical Impact
+    Glosses: eng: its-fractures | spa: sus-grietas | fra: brisure | deu: sein-fractures
+    Refs: Ps 60:2
+  Sense 6: "breakers (crashing waves)" (1x)
+    Desc: Breaking waves, breakers, or surf -- the crashing of waves upon a shore, used in the plural (שְׁבָרִים). Psalm 93:4 context of the mighty breakers of the sea. Distinguished by the plural form, maritim...
+    Domain: VIOLENCE_CONFLICT > Violence, Harm, Destroy, Kill
+    Glosses: eng: at-the-crashing | spa: de-quebrantos | fra: de-brisement | deu: Bruch
+    Refs: Job 41:25
+
+=== H3245 ===
+Language: Hebrew, POS: Prep-l | V-Piel-Inf, Occurrences: 43, Senses: 6
+
+BDB excerpt: יָסַד vb. establish, found, fix (NH id. especially Pi; Aramaic יְסַד perhaps orig. fix firm or close; Arabic وِسَادٌ pillow; vb. denom. ii. fix as a pillow against one; v. lean against, recline, Lane 2940 Saad Gn 28:11; in Heb. usually fix firm so as to found)— Qal Pf. יָסַד ψ 104:5; Pr 3:19; sf. יְסָדָהּ ψ 24:2 + 3 times; 3 fs. יָסְֽדָה Is 48:13; יָסַדְתָּ ψ 104:8; יָסַ֑֫דְתָּ 102:26; sf. יְסַדְתּוֹ Hab 1:12; יְסַדְתָּם ψ 89:12; 119:152; וִיסַדְתִּיךְ consec. Is 54:11; Inf. וִיסוֹד 2 Ch 24:27; לִיסּוֹד 31:7 (v. Ges§ 69, 2, R. 1; Baer לְיִסּוֹד); לִיסֹד Is 51:16; יָסְדִי Jb 38:4; יָסְדוֹ Ezr 3
+Senses:
+  Sense 1: "found, establish (Qal active)" (17x)
+    Desc: To found or establish something, especially to lay a physical foundation for a building, city, or the earth; active Qal stem covering all persons and tenses.
+    Domain: BUILDINGS > Building, Constructing
+    Glosses: eng: He-founded, You-founded, You-have-founded-them | spa: Fundó, a-fundar, al-ser-fundada | fra: dans-ביסדי-moi, et-fonder, fonder | deu: [ביסדו], [ביסדי], [יסד]
+    Refs: 2Chr 31:7, Ezra 3:12, Job 38:4, Ps 24:2, Ps 78:69
+  Sense 2: "establish, lay foundation (Piel intensive)" (10x)
+    Desc: Intensive action of deliberately establishing, founding, or laying a foundation; Piel stem conveying thoroughness or intentionality.
+    Domain: BUILDINGS > Building, Constructing
+    Glosses: eng: and-founded, established, founded | spa: Y-fundaron, estableció, fundaron | fra: et-fonder, fonder, il-devra-se-coucha-son-foundation | deu: [ויסדו], [יסד], [יסדו]
+    Refs: Josh 6:26, 1Kgs 5:17, 1Kgs 16:34, 1Chr 9:22, Ezra 3:10
+  Sense 3: "be founded, be established (Pual/Hofal passive)" (10x)
+    Desc: Passive forms indicating that something was founded, established, or had its foundation laid; includes Pual perfects, participles, and Hofal forms.
+    Domain: BUILDINGS > Building, Constructing
+    Glosses: eng: [ketiv], and-founded, are-the-foundations | spa: [kethiv], asentadas, fue-fundada | fra: et-founded, fonder, fondées | deu: [הוסד], [יסד], [מיסדות]
+    Refs: 1Kgs 6:37, 1Kgs 7:10, 2Chr 3:3, Ezra 3:6, Ezra 3:11
+  Sense 4: "?" (2x)
+    Domain: BUILDINGS > Building, Constructing
+    Glosses: eng: and-founding | spa: y-el-que-funda, y-que-funda | fra: et-fonder | deu: [ויסד], und-gruenden
+    Refs: Isa 51:13, Zech 12:1
+  Sense 5: "conspire, take counsel together (Nifal reflexive)" (2x)
+    Desc: Nifal reciprocal sense meaning to consult together, confer, or conspire; a semantic extension from 'establishing together' to 'deliberating together.'
+    Domain: BUILDINGS > Building, Constructing
+    Glosses: eng: take-counsel-, when-they-conspired | spa: al-consultarse-ellos, se-consultan- | fra: dans-fonder, fonder | deu: gründete, gründete-
+    Refs: Ps 2:2, Ps 31:13
+  Sense 6: "be founded, be established (Nifal passive)" (2x)
+    Desc: Nifal passive or tolerative indicating that something was founded or will be founded.
+    Domain: BUILDINGS > Building, Constructing
+    Glosses: eng: it-was-founded, will-be-founded | spa: que-fue-fundada, será-fundado | fra: cela-était-founded, fonder | deu: es-war-founded, gruenden
+    Refs: Exod 9:18, Isa 44:28

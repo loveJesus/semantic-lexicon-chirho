@@ -1,0 +1,121 @@
+You are a biblical lexicographer composing glosses for a digital lexicon.
+For each lemma below, compose a JSON object. Separate objects with "---".
+
+Format for each:
+{
+  "lemma_id": "...",
+  "gloss_terse": "under 120 chars, concise definition covering the word's semantic range",
+  "gloss_readable": "2-5 sentences, 40-120 words. Don't start with 'This word'. Warm study-Bible footnote tone. Engaging, not dry.",
+  "senses": {
+    "1": "enriched 20-60 word description. Reference multilingual evidence when illuminating. Don't repeat the label verbatim.",
+    "2": "..."
+  }
+}
+
+Rules:
+- No markdown fences, just JSON objects separated by ---
+- Reference multilingual evidence naturally when it reveals something
+- gloss_readable should feel like a good study Bible footnote: helpful, clear, occasionally surprising
+- Each sense enrichment: how does the evidence support this sense? Mention 1-2 key passages when helpful.
+
+=== H0834a ===
+Language: Hebrew, POS: Conj-w, Occurrences: 4953, Senses: 4
+
+BDB excerpt: אֲשֶׁר part. of relation (Moab. id.; origin dub.: 1. according to TsepreghiDiss. Lugd. p. 171 MühlauBö Lb. ii. 79 n. StaMorg. Forsch. 1875, 188; Lb. § 167 HomZMG 1878, 708 ff. Müll§ 153 SayceHbr. ii. 51 LagM. i. 255 & especially KraetzschmarHbr. vi. 298 ff, orig. a subst. ‘place’ = أَثَرٌ footstep, mark አሠr (do.), אֲתַר, ܐܰܬܰܪ place, Assyrian ašar, used (v. Kraetz.) both as a subst. ‘there, where,’ and as a relative of place ‘where’: in Heb. this development has advanced further, and it has become a relative sign generally. The chief objection to this explanation is that it would isolate Heb. 
+Senses:
+  Sense 1: "relative pronoun (who/which/that)" (4839x)
+    Desc: The core relative pronoun function of אֲשֶׁר introducing a relative clause that modifies a definite antecedent, translatable as 'who, whom, whose, which, that', including occurrences with prepositiona...
+    Domain: DISCOURSE_NAMES > Discourse Referentials
+    Glosses: eng: which, who | spa: el-que, que | fra: lequel, qui | deu: das, das-, dass
+    Refs: Gen 1:7, Gen 2:2, Gen 3:11, Gen 6:4, Gen 8:1
+  Sense 2: "substantive relative (what/that which)" (112x)
+    Desc: אֲשֶׁר used without an explicit antecedent as an indefinite or substantive relative meaning 'what, that which, whatever', often in phrases like 'that which he did' or 'what was spoken'.
+    Domain: DISCOURSE_NAMES > Discourse Referentials
+    Glosses: eng: that, that-, that-is | spa: Que-, lo-que, para-que | fra: qui | deu: welcher
+    Refs: Gen 14:24, Gen 27:8, Gen 38:10, Gen 39:22, Gen 41:25
+  Sense 3: "causal conjunction (because/therefore)" (1x)
+    Desc: אֲשֶׁר functioning as a causal or resultative conjunction meaning 'because, on account of, therefore', introducing a clause of reason or result.
+    Domain: DISCOURSE_NAMES > Discourse Referentials
+    Glosses: eng: therefore | spa: Por-lo-cual | fra: qui | deu: welcher
+    Refs: Ps 95:11
+  Sense 4: "temporal conjunction (when)" (1x)
+    Desc: אֲשֶׁר functioning as a temporal conjunction meaning 'when', introducing a temporal clause.
+    Domain: DISCOURSE_NAMES > Discourse Referentials
+    Glosses: eng: when | spa: cuando- | fra: qui | deu: welcher
+    Refs: Ps 139:15
+
+=== H0430 ===
+Language: Hebrew, POS: Prep-m | N-mpc | 1cp, Occurrences: 2599, Senses: 4
+
+BDB excerpt: אֱלֹהִים2570 n.m.pl. (f. 1 K 11:33; on number of occurrences of אֵל, אֱלוֹהַּ, אֱלֹהִים cf. also Nesl.c.) 1. pl. in number. †a. rulers, judges, either as divine representatives at sacred places or as reflecting divine majesty and power: האלהים Ex 21:6 (Onk 𝔖, but τὸ κριτήριον τοῦ Θεοῦ 𝔊) 22:7, 8; אלהים 22:8, 27 (𝔗 Ra AE Ew RVm; but gods, 𝔊 Josephus Philo AV; God, Di RV; all Covt. code of E) cf. 1 S 2:25 v. Dr.; Ju 5:8 (Ew, but gods 𝔊; God 𝔖 BarHeb.; יהוה 𝔙 Be) ψ 82:1, 6 (De Ew Pe; but angels Bl Hup) 138:1 (𝔖 𝔗 Rab Ki De; but angels 𝔊 Calv; God, Ew; gods, Hup Pe Che). †b. divine ones, superhuma
+Senses:
+  Sense 1: "God (of Israel)" (2502x)
+    Desc: The one true God, YHWH, the God of Israel — the dominant sense of Elohim throughout the Hebrew Bible, used with the article, in construct chains, with pronominal suffixes and prepositions, always refe...
+    Domain: SUPERNATURAL > Supernatural Beings and Powers
+    Glosses: eng: Elohim | spa: Dios, Elohim | fra: Dieu | deu: Gott
+    Refs: Gen 1:1, Gen 1:5, Gen 1:10, Gen 1:16, Gen 1:21
+  Sense 2: "gods (pagan deities)" (81x)
+    Desc: Foreign or pagan gods in the plural — the deities of the surrounding nations, as in 'the gods of Egypt' or 'you shall have no other gods'; identified by Arabic آلِهَة, Korean 신들, Swahili miungu, Hindi...
+    Domain: SUPERNATURAL > Supernatural Beings and Powers
+    Glosses: eng: elohim | spa: a-dioses, dios, dioses | fra: dieu, elohim, élohim | deu: elohim
+    Refs: Gen 35:2, Gen 35:4, Exod 12:12, Exod 20:23, Exod 22:20
+  Sense 3: "god or goddess (foreign deity)" (14x)
+    Desc: A single foreign deity — 'the god of Ekron' (2 Ki 1:2), 'Ashtoreth the goddess of the Sidonians' (1 Ki 11:5, 33), or 'their god' referring to a specific pagan deity; identified by Arabic إِلٰه/إِلَهَة...
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: god, god-of, goddess-of | spa: Elohim, dios-de, diosa-de | fra: Dieu, god-de, goddess-de | deu: Gott, god-von, goddess-von
+    Refs: Judg 9:27, Judg 16:23, Judg 16:24, 1Kgs 11:5, 1Kgs 11:33
+  Sense 4: "?" (2x)
+    Domain: SUPERNATURAL > Supernatural Beings and Powers
+    Glosses: eng: as-Elohim, as-elohim | spa: para-Elohim, por-dios | fra: comme-Dieu, comme-elohim | deu: wie-Gott, wie-elohim
+    Refs: Exod 29:45, Judg 8:33
+
+=== H0935 ===
+Language: Hebrew, POS: Conj-w | V-Hifil-Imp-mp, Occurrences: 2592, Senses: 4
+
+BDB excerpt: בּוֹא2569 vb. come in, come, go in, go (Assyrian bâʾu HptKAT 499, Ethiopic ቦአ Arabic بَآءَ return)— Qal Pf. בָּא Gn 6:13 +; 3 fs. בָּ֫אָה Gn 15:17 +; sf. בָּאַתְנוּ ψ 44:18; 2 ms. בָּ֫אתָ Jos 13:1 +, בָּ֫אתָה 2 S 3:7; 2 fs. בָּאתְ Gn 16:8 Ru 2:12, וּבָאתְ consec. Ru 3:4 2 S 14:3 Mi 4:10; 3 pl. בָּאוּ Gn 7:9 +; 1 pl. בָּאנוּ Gn 32:7 + (בָּנוּ 1 S 25:8), etc.; Impf. יָבוֹא Gn 32:9 +, יָבֹא Gn 49:10 +; 3 fs. תָּבוֹא Gn 41:50 +; sf. תְּבוֹאָֽתְךָ Jb 22:21 (but text dub. v. Köi. 644); 2 ms. תָּבוֹא Gn 15:15 +; 2 fs. תָּבוֹאִי Ru 3:17 +; 1 s. אָבוֹא Gn 33:14 +; cohort. אָבֹ֫אָה Ju 15:1, אָב֫וֹאָה Gn
+Senses:
+  Sense 1: "come, arrive (Qal)" (2413x)
+    Desc: General motion toward a reference point: to come, arrive, reach a destination; Arabic jaʾa/ataa, Korean 왔다/오다, Swahili -kuja/-fika.
+    Domain: MOVEMENT > Linear Movement
+    Glosses: eng: and-came, and-he-came | spa: Y-vino, y-llegó, y-vino | fra: et-il-vint, et-vint | deu: und-er-kam, und-es-kam, und-kam
+    Refs: Gen 13:18, Gen 14:13, Gen 20:3, Gen 23:2, Gen 24:30
+  Sense 2: "enter, go in (Qal)" (112x)
+    Desc: Motion into an enclosed or bounded space: to enter, go into a house, city, tent, or territory; Arabic dakhala, Korean 들어갔다/들어왔다, Swahili -ingia.
+    Domain: MOVEMENT > Linear Movement
+    Glosses: eng: and-he-went, and-he-went-in, and-went | spa: Y-entró, entraréis, entréis | fra: devra-entrer, et-alla, et-alla-dans | deu: du-dort-ankommst, du-kommen, soll-eintreten
+    Refs: Gen 7:7, Gen 16:4, Gen 19:22, Gen 19:33, Gen 24:32
+  Sense 3: "bring, carry to (Hifil)" (62x)
+    Desc: Causative: to bring someone or something to a location, to fetch, carry, or deliver; Arabic ahdara, Korean 가져왔다/데려왔다, Swahili -leta.
+    Domain: MOVEMENT > Linear Movement
+    Glosses: eng: and-He-brought, and-brought, and-they-brought | spa: Y-me-trajo, trajeron, traían | fra: apporta, et-apporta, et-il-vint | deu: brachte, sie-brachte, und-brachte
+    Refs: Gen 27:4, Gen 27:7, Gen 27:12, Gen 42:19, Gen 42:20
+  Sense 4: "be brought (Hofal)" (5x)
+    Desc: Passive of the causative: to be brought, be carried in, be led into; Arabic majluub/mudkhal, Korean 들여보냈졌다, Swahili -letwa.
+    Domain: MOVEMENT > Linear Movement
+    Glosses: eng: are-brought, the-brought, they-were-brought | spa: el-traído, fueron-llevados, la-traída | fra: ils-étaient-apporta, le-apporta, sont-apporta | deu: der-brachte, sie-gebracht-worden-waren, werden-gebracht
+    Refs: Gen 43:18, Gen 43:18, 2Kgs 12:9, 2Kgs 12:13, 2Kgs 22:4
+
+=== H0376 ===
+Language: Hebrew, POS: Art | N-mp, Occurrences: 2187, Senses: 4
+
+BDB excerpt: אִישׁ2166 n.m. man (= vir) (MI, SI, Ph. אש, perh. also Sab. אסם cf. Prät l.c., but DHMZMG 1883, 330)—א׳ abs. Gn 2:23 +; cstr. Gn 25:27 +; sf. אִישִׁי Gn 29:32 +, etc.; pl. אִישִׁים ψ 141:4 + 2 textual (Ph. אשם); usually אֲנָשִׁים Gn 12:20 +, fr. √ אנשׁ q.v.; cstr. אַנְשֵׁי Ju 6:27 +; sf. אֲנָשַׁי 1 S 23:12 etc.;—man, opp. woman Gn 2:23, 24 Lv 20:27 Nu 5:6 Dt 17:2f Jos 6:21; 8:25 Je 40:7, emph. on sexual distinction & relation Gn 19:8; 24:16; 38:25 Ex 22:15 Lv 15:16 (שִׁכְבַת זָ֑רַע) v 18 (וְאִשָּׁה אֲשֶׁר יִשְׁכַּב אִישׁ אֹתָהּ שׁ׳־ז׳) 20:10f Nu 5:13f Dt 22:22f Is 4:1 +; thence = husband, espe
+Senses:
+  Sense 1: "man, person, human male" (2130x)
+    Desc: A human male or person in general; the primary sense of אִישׁ covering individual men, groups of men, 'men of X' construct chains, and generic references to a person or someone, across all grammatical...
+    Domain: PEOPLE_KINSHIP > People
+    Glosses: eng: a-man, each-man, man | spa: hombre, varón | fra: chaque-homme, homme, un-homme | deu: Mann, ein-Mann, einem-Mann
+    Refs: Gen 26:31, Gen 31:50, Gen 33:1, Gen 38:1, Gen 41:38
+  Sense 2: "husband" (42x)
+    Desc: A woman's husband or spouse, typically occurring with feminine possessive suffixes (her husband, your husband) or in contexts explicitly referring to the marital relationship.
+    Domain: GROUPS_COMMUNITY > Association
+    Glosses: eng: her-husband, to-her-husband | spa: a-su-marido, esposo-suyo, marido-de-ella | fra: sa-mari, son-mari, à-sa-mari | deu: Mann, ihr-husband, ihrem-Mann
+    Refs: Gen 3:16, Gen 16:3, Num 5:19, Num 5:20, Num 5:20
+  Sense 3: "each one, everyone (distributive)" (13x)
+    Desc: Distributive or indefinite pronominal use meaning 'each, each one, everyone, anyone, no one,' functioning as a pronoun rather than a noun designating a specific man.
+    Domain: PEOPLE_KINSHIP > People
+    Glosses: eng: Each-, Each-man, and-each | spa: Cada-uno-, Y-nadie, hombre | fra: chaque-un, et-chaque, et-non-un | deu: Mann, anyone, jeder-eins
+    Refs: Exod 32:27, Exod 32:27, Exod 33:4, Exod 34:3, Exod 34:3
+  Sense 4: "?" (2x)
+    Domain: PEOPLE_KINSHIP > People
+    Glosses: eng: male | spa: varón | fra: mâle | deu: das-Männchen
+    Refs: Gen 7:2, Gen 7:2

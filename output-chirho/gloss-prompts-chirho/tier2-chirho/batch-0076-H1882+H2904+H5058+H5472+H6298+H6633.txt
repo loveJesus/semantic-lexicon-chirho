@@ -1,0 +1,145 @@
+You are a biblical lexicographer composing glosses for a digital lexicon.
+For each lemma below, compose a JSON object. Separate objects with "---".
+
+Format for each:
+{
+  "lemma_id": "...",
+  "gloss_terse": "under 120 chars, concise definition covering the word's semantic range",
+  "gloss_readable": "2-5 sentences, 40-120 words. Don't start with 'This word'. Warm study-Bible footnote tone. Engaging, not dry.",
+  "senses": {
+    "1": "enriched 20-60 word description. Reference multilingual evidence when illuminating. Don't repeat the label verbatim.",
+    "2": "..."
+  }
+}
+
+Rules:
+- No markdown fences, just JSON objects separated by ---
+- Reference multilingual evidence naturally when it reveals something
+- gloss_readable should feel like a good study Bible footnote: helpful, clear, occasionally surprising
+- Each sense enrichment: how does the evidence support this sense? Mention 1-2 key passages when helpful.
+
+=== H1882 ===
+Language: Hebrew, POS: Conj-w | N-fsd, Occurrences: 14, Senses: 3
+
+BDB excerpt: † דָּת n.f. Dn 6:9 decree, law (Syriac; Pers. loan-word, v. BH);—ד׳ abs. Dn 6:16; 7:25, cstr. Ezr 7:14 +; emph. דָּתָא Ezr 7:12 +; sf. דָּֽתְכוֹן Dn 2:9;— 1. decree of king Dn 2:13, 15; Ezr 7:26; c. sf. Dn 2:9 decree against you. 2. unchangeable law of Medes and Pers. Dn 6:9, 13, 16. 3. law of God (in mouth of non-Jews): Dn 6:6 Ezr 7:12, 14, 21, 26, so (abs.) Dn 7:25; laws of God Ezr 7:25.
+Senses:
+  Sense 1: "law, regulation, statute" (11x)
+    Desc: A body of legal rules or regulations, often referring to the laws of a kingdom or of God, consistently translated across languages as law/ley/व्यवस्था/شريعة/법/sheria.
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: according-to-law-of-, according-to-the-law-of, and-law | spa: conforme-a-la-ley-de, en-la-ley-de, la-ley-de | fra: et-loi, loi | deu: [בדת], [דת], [דתא]
+    Refs: Ezra 7:12, Ezra 7:14, Ezra 7:21, Ezra 7:25, Ezra 7:26
+  Sense 2: "royal decree, edict" (2x)
+    Desc: A specific authoritative command or proclamation issued by a ruler, translated as decree/decreto/आज्ञा/أمر/명령/amri rather than the general term for law.
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: and-the-decree, the-decree | spa: Y-el-decreto, el-decreto | fra: et-loi, loi | deu: [דתא], [ודתא]
+    Refs: Dan 2:13, Dan 2:15
+  Sense 3: "sentence, judicial verdict" (1x)
+    Desc: A legal judgment or penalty imposed upon someone, translated with penalty/judgment vocabulary (sentencia/दंड/hukumu) distinct from both general law and royal decree.
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: your-law | spa: vuestra-sentencia | fra: loi | deu: [דתכון]
+    Refs: Dan 2:9
+
+=== H2904 ===
+Language: Hebrew, POS: Conj-w | V-Hifil-Imp-mp | 1cs, Occurrences: 14, Senses: 3
+
+BDB excerpt: [טוּל] vb. Pilp. etc., hurl, cast (Arabic طَالَ be extended, elongated; v. HomNS 87 who comp. Assyrian tâlu, Aramaic ܛܰܝܶܠ, טַיֵּל all walk about (cf. spatiari, from spatium); Ethiopic አንጦለለ hang loosely, አንጦልዐ expand)— Pilp. Pt. מְטַלְטֶלְךָ טַלְטֵלָה גָ֑בֶר Is 22:17 hurleth thee violently. Hiph. Pf. הֵטִיל Jon 1:4; וְהֵטַלְתִּ֫י Je 16:13; 22:26; Impf. וַיָּ֫טֶל 1 S 18:11 (but v. infr.), 20:33; אֲטִילֶ֑ךָ Ez 32:4 (𝔊 Co om.) וַיָּטִ֫לוּ Jon 1:5; וַיְטִלֻהוּ Jon 1:15; cast, cast out, of casting a javelin (חֲנִית) 1 S 18:11 (but read here וַיִּטֹּל, √נטל, and took up, so 𝔊 𝔗 Th We Kp Kit, v. als
+Senses:
+  Sense 1: "hurl, cast, throw" (10x)
+    Desc: To throw or cast something or someone forcefully, used in active constructions across Hifil, Piel, and imperative forms.
+    Domain: MOVEMENT > Linear Movement
+    Glosses: eng: And-I-will-hurl, I-will-hurl-you, and-hurl-me | spa: Y-arrojó, Y-os-arrojaré, Y-te-arrojaré | fra: [והטלתי], [מטלטלך], et-hurled | deu: [אטילך], [והטלתי], [מטלטלך]
+    Refs: 1Sam 18:11, 1Sam 20:33, Isa 22:17, Jer 16:13, Jer 22:26
+  Sense 2: "be hurled, be cast" (2x)
+    Desc: To be thrown or cast, used in passive Hofal constructions referring to literal physical casting.
+    Domain: MOVEMENT > Linear Movement
+    Glosses: eng: is-cast, were-hurled | spa: es-echada, fueron-arrojados | fra: [הוטלו], יוטל | deu: [הוטלו], warf
+    Refs: Prov 16:33, Jer 22:28
+  Sense 3: "be cast down, be overthrown" (2x)
+    Desc: To be hurled down or brought low, used in passive Hofal constructions with a figurative or intensified sense of being toppled or overthrown.
+    Domain: MOVEMENT > Linear Movement
+    Glosses: eng: is-he-hurled-down, one-is-cast-down | spa: será-derribado | fra: jeter, יטל | deu: ist-er-hurled-hinab, warf
+    Refs: Job 41:9, Ps 37:24
+
+=== H5058 ===
+Language: Hebrew, POS: Conj-w | N-fpc, Occurrences: 14, Senses: 3
+
+BDB excerpt: † [נְגִינָה] n.f. music;—abs. נְגִינַת ψ 61:1 (v. infr.); sf. נְגִינָתִי ψ 77:7; נְגִינָתָם Jb 30:9 + 2 times; pl. נְגִינוֹת ψ 4:1 + 6 times; נְגִינוֹתַי Is 38:20; -תָ֑י Hb 3:19;— 1. music (of stringed instr.) acc. cogn. Is 38:20; as occupation La 5:14; especially בִּנְגִינוֹת in ψ-titles; ψ 4:1; 6:1; 54:1; 55:1; 67:1; 76:1; so Hb 3:19; cf. עַל־נְגִינַת ψ 61:1 (read perhaps pl. Ges§ 80 f.). 2. song (with string accomp.?) ψ 77:7; subject of mocking song Jb 30:9 (‖ מִלָּה, ψ 69:13 (נ׳ שׁוֹתֵי שֵׁכָר), La 3:14 (‖ שְׂחֹק).
+Senses:
+  Sense 1: "stringed instrument, music played on strings" (8x)
+    Desc: Musical instruments with strings, used especially in Psalm superscriptions and in Isaiah's song. English 'stringed instruments' / 'on my stringed instruments', Spanish 'instrumentos de cuerda' / 'mis ...
+    Domain: COMMUNICATION > Communication
+    Glosses: eng: on-my-stringed-instruments, stringed-instruments, with-stringed-instruments | spa: con-instrumentos-de-cuerda, con-mis-instrumentos-de-cuerda, cuerda | fra: dans-mélodie, mélodie | deu: [בנגינותי], mit-stringed-instruments, stringed-instruments
+    Refs: Ps 4:1, Ps 6:1, Ps 54:1, Ps 55:1, Ps 61:1
+  Sense 2: "song, mocking song, melody" (5x)
+    Desc: A song or melody, often with pejorative connotation as a mocking song or taunt (as in Job 30:9 and Lamentations 3:14). English 'my song' / 'their mocking song' / 'their song' / 'and my songs' / 'and t...
+    Domain: COMMUNICATION > Communication
+    Glosses: eng: and-my-songs, and-the-songs-of, my-song | spa: canción-de-mí, su-canción, su-canción-de-burla | fra: [ונגנותי], [נגינתם], et-mélodie | deu: [ונגנותי], [נגינתם], mein-Lied
+    Refs: Job 30:9, Ps 69:12, Ps 77:6, Isa 38:20, Lam 3:14
+  Sense 3: "music, instrumental performance" (1x)
+    Desc: Music in the general or abstract sense, referring to the overall musical performance or sound rather than specific instruments or songs. English 'from their music', Spanish 'de su musica', Hindi 'apne...
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: from-their-music | spa: de-su-música | fra: [מנגינתם] | deu: [מנגינתם]
+    Refs: Lam 5:14
+
+=== H5472 ===
+Language: Hebrew, POS: V-Nifal-Perf-1cs, Occurrences: 14, Senses: 3
+
+BDB excerpt: I. [סוּג, seldom שׂוּג] vb. move away, backslide (שׂ׳ erron.; Arabic ((سوج), سَاجَ), go and come Lane 1459, سَوْجَانٌ abitus et adventus Frey (Kam.));— Qal Pf. 3 ms. סָג ψ 53:4; Impf. 1 pl. נָסוֹג ψ 80:19; Pt. act. cstr. סוּג Pr 14:14 (BaNB § 124 c Ges§ § 50 f, 72 p);—backslide, prove recreant to י׳, c. מִן ψ 80:19; so abs. 53:4; סוּג לֵב Pr 14:14 a backslider in heart. Niph. Pf. 3 ms. נָסוֹג ψ 44:19, נָשׂוֹג 2 S 1:22 (שׂ for ס); 1 s. נְסוּגֹתִי Is 50:5; 3 pl. נָסֹ֫גוּ Is 42:17 Je 38:22; Impf. 3 ms. יִסַּג Mi 2:6 (Ges§ 72 dd, but v. infr.); 3 mpl. יִסֹּ֫גוּ ψ 35:4 + 3 times, וַיִּסֹּ֫גוּ ψ 78:
+Senses:
+  Sense 1: "turn back, retreat" (10x)
+    Desc: Nifal: to be turned back, retreat, or withdraw, often in a military or physical sense of being driven back or falling back.
+    Domain: FAITH_BELIEF > Hold a View, Believe, Trust
+    Glosses: eng: I-turned, They-turn-back, and-let-them-turn | spa: Y-se-apartaron, me-volví, retrocedan | fra: [נסגו], [נסגים], [נסוגתי] | deu: [נסגו], [נסגים], [נסוגתי]
+    Refs: Ps 35:4, Ps 40:14, Ps 44:18, Ps 70:2, Ps 78:57
+  Sense 2: "backslide, turn away in apostasy" (3x)
+    Desc: To turn back from loyalty or faithfulness, especially from God; to backslide or apostatize, used both as a participle (the backslider) and in vows of fidelity.
+    Domain: FAITH_BELIEF > Hold a View, Believe, Trust
+    Glosses: eng: the-backslider-of, those-who-turn-back, will-we-turn-back | spa: apartado-de, los-que-retroceden, nos-apartaremos | fra: reculer, se-retirer, סוג | deu: abgewichen, wird-wir-wenden-zurück
+    Refs: Ps 80:18, Prov 14:14, Zeph 1:6
+  Sense 3: "turn aside, go astray" (1x)
+    Desc: Qal: to turn aside or deviate from the right path, emphasizing moral or directional straying rather than retreat.
+    Domain: FAITH_BELIEF > Hold a View, Believe, Trust
+    Glosses: eng: have-turned-aside | spa: se-desviaron | fra: reculer | deu: haben-wandte-aside
+    Refs: Ps 53:3
+
+=== H6298 ===
+Language: Hebrew, POS: Conj-w | V-Qal-ConjPerf-3cp, Occurrences: 14, Senses: 3
+
+BDB excerpt: † [פָּגַשׁ] vb. meet, encounter (syn. פָּגַע);— Qal Pf. 1 s. פָּגָ֑שְׁתִּי Gn 33:8; 3 pl. consec. וּפָֽגְשׁוּ Is 34:14; Impf. 3 ms. sf. יִפְֿגָֽשְׁךָ֫ Gn 32:18 (Gi; Baer יִפְגָֽשְׁךָ֫; van d. H. יִֽפְגָּֽשְׁךָ֫), וַיִּפְגְּשֵׁהוּ Ex 4:24, 27; 3 fs. וַתִּפְגֹשׁ 1 S 25:20 (read prob. וַתִּפְגֹּשׁ Ges§ 47 k, cf. van d. H.), etc.; Inf. abs. פָּגוֹש Pr 17:12; cstr. פְּגשׁ Je 41:6;—meet, c. acc. Gn 33:8 1 S 25:20 Is 34:14 Je 41:6, so c. sf. Gn 32:18 Ex 4:24, 27 2 S 2:13; meet, encounter, of bear, c. ב pers. Pr 17:12, of י׳ (like a bear) Ho 13:8 (c. sf. pers.). Niph. meet together, each other, Pf. 3 
+Senses:
+  Sense 1: "meet, encounter (Qal)" (10x)
+    Desc: To meet or encounter someone, used transitively in the Qal stem across various inflections (perfect, imperfect, infinitive, consecutive).
+    Domain: PHYSICAL_ACTION > Physical Impact
+    Glosses: eng: And-shall-meet, I-met, I-will-meet-them | spa: Encuentre, Y-se-encontrarán, cuando-encontró | fra: Je-rencontra, [ופגשו], [כפגש] | deu: [אפגשם], [ופגשו], [כפגש]
+    Refs: Gen 32:17, Gen 33:8, Exod 4:24, Exod 4:27, 1Sam 25:20
+  Sense 2: "meet together (Nifal reciprocal)" (3x)
+    Desc: Reciprocal sense in the Nifal stem: two parties meet each other or come together.
+    Domain: MOVEMENT > Linear Movement
+    Glosses: eng: meet, meet-together | spa: se-encontraron, se-encuentran | fra: rencontrer, נפגשו | deu: [נפגשו], meet
+    Refs: Ps 85:10, Prov 22:2, Prov 29:13
+  Sense 3: "encounter, come upon (Piel)" (1x)
+    Desc: Intensive or iterative encountering in the Piel stem, suggesting repeated or chance meetings.
+    Domain: MOVEMENT > Linear Movement
+    Glosses: eng: they-meet | spa: encuentran | fra: יפגשו | deu: [יפגשו]
+    Refs: Job 5:14
+
+=== H6633 ===
+Language: Hebrew, POS: Conj-w | V-Qal-ConsecImperf-3mp, Occurrences: 14, Senses: 3
+
+BDB excerpt: † [צָבָא] vb. wage war, serve (Sab. צֿבא wage war with, also n. army, campaign HomChrest. 125 CIS iv. 299, 1. 2 DHM VOJ i. 28; Ethiopic ጸብአ: (> ፀብአ:) wage war; Assyrian ṣâbu, man, soldier; NöZMG xl (1886), 726 al. cp. (on account of Sab. Ethiopic ץֿ) Arabic ضَبَأَ conceal oneself, hence lie in wait; this is phonetically suitable, but better in meaning would be صَبَأَ go or come forth (against one), etc., so Thes LagBN 21; Frä232 cp. صَبِىٌّ young man);— Qal Pf. 3 mpl. צָֽבְאוּ Ex 38:8 Zc 14:12; Impf. 3 mpl. יִצְבְּאוּ Nu 31:7; Inf. cstr. לִצְבֹּא Is 31:4; לִצְבֹא Nu 4:23; 8:24; Pt. pl. צֹבְאִי
+Senses:
+  Sense 1: "to wage war, fight" (7x)
+    Desc: Qal sense of engaging in military combat or warfare, used of soldiers, armies, and attackers in battle contexts (guerrear, लड़ना/युद्ध करना, حارب, 싸우다, kupigana).
+    Domain: VIOLENCE_CONFLICT > Hostility, Strife
+    Glosses: eng: and-they-waged-war, the-ones-warring, to-fight | spa: Y-guerrearon, las-que-guerrean, los-guerreros | fra: combattre, et-ils-waged-guerre, le-ones-warring | deu: [הצבאים], [לצבא], [צבאו]
+    Refs: Num 31:7, Num 31:42, Isa 29:7, Isa 29:7, Isa 29:8
+  Sense 2: "to serve, minister" (5x)
+    Desc: Qal sense of performing religious or cultic service, especially of women serving at the entrance to the Tent of Meeting (servir, सेवा करना, يخدم, 섬기다, kutumikia/kuhudumu).
+    Domain: GUIDANCE_CARE > Help, Care For
+    Glosses: eng: served, the-serving, the-serving-women | spa: las-que-servían, para-hacer-ejército, para-servir | fra: le-servant, le-serving-femmes, servit | deu: der-dienend, der-dienend-Frauen, diente
+    Refs: Exod 38:8, Exod 38:8, Num 4:23, Num 8:24, 1Sam 2:22
+  Sense 3: "to muster, enlist troops" (2x)
+    Desc: Hifil causative sense of assembling or conscripting people for military service, used of an officer who enrolls or marshals soldiers (alistar, भरती करना, يجنّد, 징집하다, kuandikisha).
+    Domain: MOVEMENT > Linear Movement
+    Glosses: eng: the-one-mustering, who-mustered | spa: el-que-alistaba | fra: combattre, le-un-mustering | deu: [המצבא], der-eins-mustering
+    Refs: 2Kgs 25:19, Jer 52:25

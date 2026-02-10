@@ -1,0 +1,163 @@
+You are a biblical lexicographer composing glosses for a digital lexicon.
+For each lemma below, compose a JSON object. Separate objects with "---".
+
+Format for each:
+{
+  "lemma_id": "...",
+  "gloss_terse": "under 120 chars, concise definition covering the word's semantic range",
+  "gloss_readable": "2-5 sentences, 40-120 words. Don't start with 'This word'. Warm study-Bible footnote tone. Engaging, not dry.",
+  "senses": {
+    "1": "enriched 20-60 word description. Reference multilingual evidence when illuminating. Don't repeat the label verbatim.",
+    "2": "..."
+  }
+}
+
+Rules:
+- No markdown fences, just JSON objects separated by ---
+- Reference multilingual evidence naturally when it reveals something
+- gloss_readable should feel like a good study Bible footnote: helpful, clear, occasionally surprising
+- Each sense enrichment: how does the evidence support this sense? Mention 1-2 key passages when helpful.
+
+=== H0539 ===
+Language: Hebrew, POS: V-Qal-Prtcpl-ms, Occurrences: 108, Senses: 6
+
+BDB excerpt: † I. [אָמַן] vb. confirm, support (cf. Arabic أَمِنَ, etc., v. infr.; Sab. אמן in deriv. & n.pr. cf. CIS iv. 1, 10 DHMZMG 1885, 598; Aramaic אֲמַן, ܐܡܢ in Haph. Ethiopic አምነ Assyrian in deriv.)—only Qal Pt. אֹמֵן;— 1. as vb. support, nourish 2 K 10:1, 5 Est 2:7. 2. as subst. foster-father Nu 11:12 (J) Is 49:23. 3. אֹמֶנֶת foster-mother, nurse Ru 4:16 2 S 4:4. 4. אֹמְנוֹת pillars, supporters of the door 2 K 18:16. Pt. pass. a. הָאֱמֻנִים those brought up (in scarlet) La 4:5. b. אֱמוּנִים intrans. faithful (as firm, stable) as subst. m. faithful ones ψ 12:2 (> 𝔊 𝔖 al. faithfulness) 2 S 20:19 (cf
+Senses:
+  Sense 1: "believe, accept as true" (42x)
+    Desc: Hifil: to believe, give credence to, accept as true — cognitive assent to a message, person, or divine promise; Arabic آمَنَ / يُؤْمِنُ (root ء-م-ن 'believe') and يُصَدِّقُ (root ص-د-ق 'credit as true...
+    Domain: FAITH_BELIEF > Hold a View, Believe, Trust
+    Glosses: eng: I-believe, I-had-believed, and-he-believed | spa: Creed, Y-creyó, crean | fra: croire, crut, et-il-crut | deu: believed, glauben, glaubte
+    Refs: Gen 15:6, Gen 45:26, Exod 4:1, Exod 4:5, Exod 4:8
+  Sense 2: "faithful, trustworthy, sure" (39x)
+    Desc: Niphal participle (adjectival) and adjective forms: faithful, trustworthy, reliable, sure, enduring — describing a person or thing as dependable; Arabic أَمِينٌ / أُمَنَاء 'faithful/trustworthy', Kore...
+    Domain: FAITH_BELIEF > Hold a View, Believe, Trust
+    Glosses: eng: and-lasting, faithful, is-faithful | spa: Fiel, es-fiel, fiel | fra: croire, et-lasting, fidèle | deu: faithful, glauben, glaubte
+    Refs: Num 12:7, Deut 7:9, Deut 28:59, Deut 28:59, 1Sam 2:35
+  Sense 3: "be confirmed, be established" (9x)
+    Desc: Niphal finite verb (imperfect, perfect with conjunction): to be confirmed, established, verified, made firm — an eventive sense distinct from the stative participle; Arabic يَثْبُتْ / تَثبُتُوا (root ...
+    Domain: FAITH_BELIEF > Hold a View, Believe, Trust
+    Glosses: eng: and-be-established, and-faithful, and-let-be-confirmed | spa: Y-sea-confirmado, Y-será-fiel, permaneceréis | fra: croire, et---être-verified, et-croire | deu: glauben, lass-sein-confirmed, und-bewährt-werden
+    Refs: Gen 42:20, 2Sam 7:16, 1Kgs 8:26, 1Chr 17:23, 1Chr 17:24
+  Sense 4: "trust, rely on, have confidence" (9x)
+    Desc: Hifil with 'trust/rely' semantics: to place confidence in, depend on — distinct from mere belief by implying reliance and personal confidence; Arabic يَثِقُ / تَثِقْ (root و-ث-ق 'trust/rely') and تَأْ...
+    Domain: FAITH_BELIEF > Hold a View, Believe, Trust
+    Glosses: eng: and-trusted, believe, he-trusts | spa: Y-confió, confiarás, confió | fra: croire, et-fit-confiance, se-confia | deu: du-believe, glauben, glaubte
+    Refs: Deut 28:66, Judg 11:20, 1Sam 27:12, Job 4:18, Job 15:15
+  Sense 5: "nurse, guardian, foster-parent" (7x)
+    Desc: Qal active participle: one who nurtures, carries, or rears a child — a nurse, guardian, or foster-parent; confirmed by Arabic مُرَبِّي / مُرَبِّيَة 'rearer/nurturer', Korean 양육자 / 유모 'caregiver/nurse'...
+    Domain: FAITH_BELIEF > Hold a View, Believe, Trust
+    Glosses: eng: and-the-guardians, for-a-nurse, guardian | spa: criador-de, el-ama, los-tutores-de | fra: croire, et-le-guardians, le-guardians-de | deu: der-guardians-von, der-nursing-Vater, glauben
+    Refs: Num 11:12, Ruth 4:16, 2Sam 4:4, 2Kgs 10:1, 2Kgs 10:5
+  Sense 6: "be brought up, be nursed" (2x)
+    Desc: Qal passive participle and Niphal passive: those who have been reared, nursed, or carried — the passive counterpart of the nurturing sense; Arabic الْمُرَبَّوْنَ 'those reared', تُحْمَلْنَ 'be carried...
+    Domain: FAITH_BELIEF > Hold a View, Believe, Trust
+    Glosses: eng: those-brought-up, will-be-nursed | spa: los-criados, serán-llevadas | fra: croire | deu: glauben, glaubte
+    Refs: Isa 60:4, Lam 4:5
+
+=== H5162 ===
+Language: Hebrew, POS: V-Piel-Imperf-3ms, Occurrences: 108, Senses: 6
+
+BDB excerpt: † [נחם] vb. Niph. be sorry, console oneself, etc. (only in der. species) (NH Pi. comfort; Ph.in n.pr.Lzb322; 𝔗 Pa. = NH, and deriv.; Chr. Pal. Aramaic Pa. id., SchwallyIdiot. 54; Arabic نَحَمَ breathe pantingly (of horse));— Niph. Pf. נִחַם Am 7:3 + 4 times; נִחָ֑ם Je 20:16 + 2 times; 1 s. נִחַמְתִּי Gn 6:7 + 8 times; נִחָ֑מְתִּי Zc 8:14; 2 mpl. נִחַמְתֶּם Ez 14:22; Impf. יִנָּחֵם Ex 13:17 + 6 times; וַיִּנָּ֫חֶם Gn 6:6 + 6 times; + 5 times Impf.; Imv. הִנָּחֵם Ex 32:12 ψ 90:13; Inf. הִנָּחֵם Je 31:15 1 S 15:29; Pt. נִחָם Ju 21:15 + 3 times; — 1. be sorry, moved to pity, have compassion, for o
+Senses:
+  Sense 1: "comfort, console (Piel)" (51x)
+    Desc: Piel stem: to comfort, console, or encourage someone in distress — the active transitive sense of providing emotional solace, used of both human and divine agents comforting the bereaved, afflicted, o...
+    Domain: BEHAVIOR > Behavior and Related States
+    Glosses: eng: Comfort, a-comforter, comforter | spa: Consolad, a-consolarlo, consolador | fra: [לנחמו], [מנחמים], comforters | deu: Troester, comforters, troesten
+    Refs: Gen 5:29, Gen 37:35, Gen 50:21, Ruth 2:13, 2Sam 10:2
+  Sense 2: "relent, repent, change mind (Nifal)" (35x)
+    Desc: Nifal stem: to relent, repent, or change one's mind regarding a planned action — most often used of God relenting from judgment or a person regretting a decision; distinguished by Arabic نَدِمَ and Ko...
+    Domain: BEHAVIOR > Behavior and Related States
+    Glosses: eng: I-have-relented, I-regretted, I-repented | spa: Se-arrepintió, Y-se-arrepintió, arrepentido | fra: Je-regretta, [וינחם], changer-mind | deu: aendern-mind, der-troestete, es-reut-mich
+    Refs: Gen 6:6, Gen 6:7, Exod 13:17, Exod 32:12, Exod 32:14
+  Sense 3: "be comforted, receive comfort (Nifal)" (10x)
+    Desc: Nifal stem: to be comforted, to receive comfort or consolation — the medio-passive counterpart of the Piel, where the subject is the recipient of comfort rather than the agent; distinguished by Arabic...
+    Domain: BEHAVIOR > Behavior and Related States
+    Glosses: eng: I-will-be-relieved, and-was-comforted, and-were-comforted | spa: me-consolaré, se-consoló, ser-consolada | fra: consoler, et-consoler, et-était-consola | deu: er-war-comforted, ich-troeste, troesten
+    Refs: Gen 24:67, Gen 38:12, 2Sam 13:39, Ps 77:2, Isa 1:24
+  Sense 4: "have compassion, be moved to pity" (6x)
+    Desc: To have compassion or be moved to pity — an extended emotional sense appearing in both Nifal and Hitpael forms, expressing deep sympathetic sorrow or mercy toward the suffering; distinguished by Arabi...
+    Domain: EMOTION_ATTITUDE > Attitudes and Emotions
+    Glosses: eng: and-had-compassion, and-have-compassion, had-compassion | spa: Y-se-arrepintieron, se-arrepintió, se-compadecerá | fra: avait-compassion, consoler, et-avait-compassion | deu: er-war-bewegte-zu-pity, hatte-Erbarmen, tröstete
+    Refs: Deut 32:36, Judg 2:18, Judg 21:6, Judg 21:15, Ps 90:13
+  Sense 5: "comfort oneself, find comfort (Hitpael)" (4x)
+    Desc: Hitpael stem: to comfort oneself, to find comfort or consolation — the reflexive of the Piel, where the subject actively seeks or obtains comfort for themselves.
+    Domain: BEHAVIOR > Behavior and Related States
+    Glosses: eng: and-I-am-comforted, and-I-shall-be-satisfied, comforting-himself | spa: consolándose, ser-consolado, y-me-consolaré | fra: comforting-lui-même, et-consoler, à-être-consola | deu: sich-trösten-zu-lassen, tröstet-sich, und-troesten
+    Refs: Gen 27:42, Gen 37:35, Ps 119:52, Ezek 5:13
+  Sense 6: "be comforted (Pual)" (2x)
+    Desc: Pual stem: to be comforted — the passive of the Piel, indicating that the subject receives comfort from an external agent.
+    Domain: BEHAVIOR > Behavior and Related States
+    Glosses: eng: comforted, you-shall-be-comforted | spa: consolada, seréis-consolados | fra: consoler | deu: troesten
+    Refs: Isa 54:11, Isa 66:13
+
+=== H7992 ===
+Language: Hebrew, POS: Number-oms, Occurrences: 108, Senses: 6
+
+BDB excerpt: שְׁלִישִׁי m. שְׁלִישִׁית f. adj.num. ord.108 third;—יוֹם שְׁלִישִׁי Gn 1:13 + 31 times, etc. (64 times, rarely שְׁלִשִׁי); pl. שְׁלִשִׁים (third 50, set of messengers, etc.) 1 S 19:21; 2 K 1:13 + 4 times; בַּשָּׁנָה הַשְּׁלִישִׁית 1 K 18:1 + 4 times, etc. (33 times; sometimes שְׁלִשִׁית, שְׁלִשִׁת, etc.); = third part, a third 2 S 18:2(×3) + 13 times, + (cstr.) Nu 15:6 + 4 times, + שְׁלִשִׁתֵיךְ (Ges§ 911) Ez 5:12 third part of thee; = third time 1 S 3:8; also שְׁלִישִׁיָּה Is 19:24 third (on par with other two); בַּשְּׁלֵישִׁים Ez 42:3 in the thirds, i.e. third story;—שְׁלִשִׁיָּה עֶגְלַת Is
+Senses:
+  Sense 1: "third (ordinal)" (80x)
+    Desc: The ordinal number 'third' indicating position in a sequence, used attributively or predicatively of days, years, rivers, sons, kings, and other items in an ordered series.
+    Domain: QUANTITY_NUMBER > Number
+    Glosses: eng: the-third | spa: el-tercero, la-tercera, tercero | fra: le-troisième | deu: dem-dritten, der-dritter, des-dritten
+    Refs: Gen 2:14, Gen 22:4, Gen 31:22, Gen 32:19, Gen 34:25
+  Sense 2: "a third part, one-third" (22x)
+    Desc: The fractional noun meaning 'a third' or 'one-third,' denoting a portion equal to one of three equal divisions, often in construct with a following genitive specifying what is being divided.
+    Domain: QUANTITY_NUMBER > Number
+    Glosses: eng: a-third-of, and-the-third, and-third-of | spa: El-tercio, Y-el-tercio, Y-la-tercera-parte | fra: et-le-troisième, et-tiers-de, et-troisième | deu: der-dritter, dritte, dritter
+    Refs: Num 15:6, Num 15:7, Num 28:14, 2Sam 18:2, 2Sam 18:2
+  Sense 3: "three-year-old" (2x)
+    Desc: Attributive use designating an animal as three years old, as in the sacrifice specifications of Genesis 15:9 (a three-year-old heifer, goat, and ram).
+    Domain: QUANTITY_NUMBER > Number
+    Glosses: eng: the-third, third-year | spa: tres-años | fra: [שלשיה] | deu: [שלשיה]
+    Refs: Isa 15:5, Jer 48:34
+  Sense 4: "the third time, thrice" (2x)
+    Desc: Adverbial or temporal use meaning 'the third time' or 'a third time,' indicating the repetition count of an action or event.
+    Domain: QUANTITY_NUMBER > Number
+    Glosses: eng: the-third-time, third-time | spa: por-tercera-vez, tres-veces | fra: le-troisième-temps, troisième | deu: der-dritter-Zeit, dritter
+    Refs: 1Sam 3:8, Ezek 21:14
+  Sense 5: "the three, threefold group" (1x)
+    Desc: Collective or grouping sense referring to a set of three or a triad, appearing in a ketiv/qere variant reading.
+    Domain: QUANTITY_NUMBER > Number
+    Glosses: eng: [k] | spa: [los-tres] | fra: [k] | deu: [k]
+    Refs: 2Sam 23:18
+  Sense 6: "third story, three-storied" (1x)
+    Desc: Architectural term referring to the third level or tier of a building, or describing a structure as being three-storied, as in Ezekiel's temple vision.
+    Domain: QUANTITY_NUMBER > Number
+    Glosses: eng: in-the-third-stories | spa: en-los-tres-pisos | fra: dans-trente | deu: in-dreissig
+    Refs: Ezek 42:3
+
+=== H1350a ===
+Language: Hebrew, POS: V-Qal-Prtcpl-msc | 1cp, Occurrences: 104, Senses: 6
+
+BDB excerpt: † I. גָּאַל vb. redeem, act as kinsman (NH, Niph. be redeemed; also גּוֹאֵל, גְּאוּלָּה)— Qal Pf. ג׳, etc. Is 44:23 + 14 times; Impf. יִגְאַל, etc. Lv 25:33 + 18 times; Imv. גְּאַל, etc. Ru 4:6 + 3 times; Inf. abs. גָּאֹל Lv 27:13 + 2 times cstr. לִגְאוֹל Ru 4:4 + 2 times; sf. לְגָאֳלֵךְ Ru 3:13; Pt. גֹּאֵל Lv 25:26 + 24 times, גּוֹאֵל Is 59 ψ 103:4; sf. גֹּאַלְךָ Is 48:17, גֹּאֲלֵךְ Is 54:8 (sf. 19 times); pass. pl. גְּאוּלִים, etc. Is 35:9 + 4 times;— 1. act as kinsman, do the part of next of kin (chiefly in D H P Ru.), גֹּאֵל kinsman Lv 25:25 (H) Nu 5:8; 35:12 (P) Ru 2:20; 3:9, 12; 4:1, 3, 
+Senses:
+  Sense 1: "Redeem, buy back" (46x)
+    Desc: Qal active finite forms: to redeem, ransom, or buy back property, persons from slavery, or pledged items; the core transactional sense of ga'al covering all Qal perfects, imperfects, imperatives, infi...
+    Domain: ECONOMICS_PROPERTY > Possess, Transfer, Exchange
+    Glosses: eng: I-have-redeemed-you, You-redeemed, has-redeemed | spa: de-cierto, lo-redimirá, para-redimir | fra: il-rachète, pourra-racheter-lui, rachetant | deu: Erloeser, du-erlöst, er-redeems
+    Refs: Exod 6:6, Exod 15:13, Lev 25:25, Lev 25:33, Lev 25:48
+  Sense 2: "Divine Redeemer (title)" (20x)
+    Desc: Qal substantivized participle used as a divine epithet: God (especially YHWH) as Israel's Redeemer, predominantly in Isaiah 41-63, Psalms, and Job 19:25; marked by possessive suffixes (your/our/my/the...
+    Domain: ECONOMICS_PROPERTY > Possess, Transfer, Exchange
+    Glosses: eng: Our-Redeemer, Redeemer-of, a-Redeemer | spa: El-que-rescata, Nuestro-redentor, Redentor | fra: et-racheter, et-rédempteur, le-racheter | deu: Erloeser, der-erlöst, der-mich-erlöst-hat
+    Refs: Gen 48:16, Job 19:25, Ps 19:14, Ps 78:35, Ps 103:4
+  Sense 3: "Avenger of blood" (13x)
+    Desc: Qal substantivized participle in the collocation go'el haddam (גֹּאֵל הַדָּם): the kinsman-avenger who pursues and kills the manslayer, primarily in Numbers 35 and Joshua 20; clearly distinguished acr...
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: avenger-of, from-avenger-of, from-the-avenger | spa: Vengador-de, del-vengador, del-vengador-de | fra: avenger-de, de-avenger-de, de-le-avenger | deu: Raecher-von, avenger-von, von-Raecher-von
+    Refs: Num 35:12, Num 35:19, Num 35:21, Num 35:24, Num 35:25
+  Sense 4: "Kinsman-redeemer" (13x)
+    Desc: Qal substantivized participle: the go'el, a near kinsman who has the legal right and duty to redeem property, marry a widow (levirate), or act as family protector — as in Ruth 2-4 where Boaz is the go...
+    Domain: ECONOMICS_PROPERTY > Possess, Transfer, Exchange
+    Glosses: eng: a-redeemer, and-his-kinsmen, from-our-redeemers | spa: al-redentor, de-nuestros-redentores, el-redentor | fra: de-notre-redeemers, et-son-kinsmen, le-rédempteur | deu: Loeser, der-Loeser, ein-redeemer
+    Refs: Lev 25:25, Lev 25:26, Num 5:8, Ruth 2:20, Ruth 3:9
+  Sense 5: "Be redeemed (Nifal passive)" (8x)
+    Desc: Nifal stem passive: to be redeemed or bought back, said of property (houses, fields) or persons who are the object of redemption; marked by Arabic passive يُفْدَى/يُفْتَكَى, Spanish ser redimido, Kore...
+    Domain: ECONOMICS_PROPERTY > Possess, Transfer, Exchange
+    Glosses: eng: and-he-is-redeemed, he-is-redeemed, it-is-redeemed | spa: es-redimida, es-redimido, fuere-redimido | fra: cela-devra-être-racheta, cela-est-racheta, et-il-est-racheta | deu: Erloeser, er-ist-erloeste, es-ist-erloeste
+    Refs: Lev 25:30, Lev 25:49, Lev 25:54, Lev 27:20, Lev 27:27
+  Sense 6: "The redeemed (passive participle)" (4x)
+    Desc: Qal passive participle substantivized: 'the redeemed ones,' those whom God has redeemed, used in Isaiah 35:9, 51:10, 62:12 and Psalm 107:2; marked by Arabic مَفْدِيُّونَ (passive participle plural), K...
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: and-shall-walk, the-redeemed, the-redeemed-of | spa: Redimidos-de, los-redimidos, los-redimidos-de | fra: racheter, rédempteur | deu: Erloeser, der-erlöst-von
+    Refs: Ps 107:2, Isa 35:9, Isa 51:10, Isa 62:12

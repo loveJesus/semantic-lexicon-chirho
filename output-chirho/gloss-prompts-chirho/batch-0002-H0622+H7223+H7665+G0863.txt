@@ -1,0 +1,196 @@
+You are a biblical lexicographer composing glosses for a digital lexicon.
+For each lemma below, compose a JSON object. Separate objects with "---".
+
+Format for each:
+{
+  "lemma_id": "...",
+  "gloss_terse": "under 120 chars, concise definition covering the word's semantic range",
+  "gloss_readable": "2-5 sentences, 40-120 words. Don't start with 'This word'. Warm study-Bible footnote tone. Engaging, not dry.",
+  "senses": {
+    "1": "enriched 20-60 word description. Reference multilingual evidence when illuminating. Don't repeat the label verbatim.",
+    "2": "..."
+  }
+}
+
+Rules:
+- No markdown fences, just JSON objects separated by ---
+- Reference multilingual evidence naturally when it reveals something
+- gloss_readable should feel like a good study Bible footnote: helpful, clear, occasionally surprising
+- Each sense enrichment: how does the evidence support this sense? Mention 1-2 key passages when helpful.
+
+=== H0622 ===
+Language: Hebrew, POS: Prep-b | V-Hitpael-Inf, Occurrences: 202, Senses: 8
+
+BDB excerpt: אָסַף200 vb. gather, remove (Assyrian esêpu, DlPr 45)— Qal Pf. אָסַף Gn 30:23 +; אָסַפְתָּ ψ 85:4, etc.; Impf. יֶאֱסֹף 2 K 5:3; יַאַסְפֵנִי ψ 27:10, etc.; also וַיֹּסֶף 2 S 6:1; 2 ms. תֹּסֵף ψ 104:29; 1 s. אֹסְפָה Mi 4:6; so prob. (sf.) אֹסִֽפְךָ 1 S 15:6 (read אֹסִפְךָ) v. Köi 382 DrSm; Imv. אֱסֹף Nu 21:16 + אֶסְפָה Nu 11:16; 2 fs. אִסְפִּי Je 10:17; אִסְפוּ ψ 50:5 +; Inf. abs. אָסֹף Je 8:13 + (Hiph., from סוף according to BaNB 73); cstr. אֱסֹף 2 K 5:7 +; אָסְפְּךָ Ex 23:16; אָסְפְּכֶם Lv 23:39; Pt. act. אֹסֵף Nu 19:10; אֹסִפְךָ 2 K 22:20; 2 Ch 34:28 (pointed אֹסִֽפְךָ i.e. Hiph.; cf. Köl.c.)
+Senses:
+  Sense 1: "gather, collect (Qal active)" (89x)
+    Desc: To actively gather or collect people, crops, or things together, the core Qal transitive sense of asap confirmed by Arabic jamaʿa and Korean 모았다/모으다.
+    Domain: MOVEMENT > Linear Movement
+    Glosses: eng: And-gathered, and-gathered, and-he-gathered | spa: Y-recogió, Y-reunió, y-reunieron | fra: Et-rassembla, et-il-rassembla, et-ils-rassembla | deu: And-sammelte, und-er-sammelte, und-er-versammelte
+    Refs: Gen 6:21, Gen 29:22, Gen 42:17, Exod 3:16, Exod 4:29
+  Sense 2: "assemble, gather together (Nifal)" (63x)
+    Desc: To gather oneself or assemble as a group in reflexive/middle voice, confirmed by Arabic ijtamaʿa (Form VIII reflexive) and Swahili kukusanyika (reflexive -ika form).
+    Domain: MOVEMENT > Linear Movement
+    Glosses: eng: and-gathered, and-they-gathered, and-were-gathered | spa: Y-se-reunieron, se-reunieron, y-se-reunieron | fra: et-ils-rassembla, et-rassembla, et-rassembler | deu: sammeln, sammelte, sie-versammelte
+    Refs: Gen 29:3, Gen 34:30, Gen 49:29, Exod 32:26, Num 11:22
+  Sense 3: "be gathered to one's people" (16x)
+    Desc: Passive Nifal euphemism for death meaning to be gathered or joined to one's ancestors, confirmed by Arabic inḍamma (to join/be annexed) and Korean 모이리라 in funerary contexts.
+    Domain: MOVEMENT > Linear Movement
+    Glosses: eng: and-he-was-gathered, and-was-gathered, and-you-shall-be-gathered | spa: fue-reunido, fueron-reunidos, serán-recogidos | fra: et-il-était-rassembla, et-rassembler, et-tu-devra-être-rassembla | deu: du-soll-sein-sammelte, sammeln, sammelte
+    Refs: Gen 25:8, Gen 25:17, Gen 35:29, Gen 49:33, Num 27:13
+  Sense 4: "remove, take away, withdraw" (14x)
+    Desc: Extended Qal/Nifal sense of removing, taking away, or withdrawing something such as divine protection or wrath, confirmed by Arabic nazaʿa/azala/rafaʿa (remove) and Swahili ameondoa/imeondolewa.
+    Domain: MOVEMENT > Linear Movement
+    Glosses: eng: I-have-withdrawn, You-take-away, and-he-gathered | spa: Recogiste, Retira, Y-añadió | fra: et-il-rassembla, et-rassembler, et-tu-sera-lose | deu: er-sammelt, sammeln, sammelte
+    Refs: Gen 30:23, Judg 18:25, 1Sam 14:19, 2Sam 6:1, Ps 85:3
+  Sense 5: "rear guard (Piel participle)" (8x)
+    Desc: Piel participial military sense meaning the one who gathers the rear, i.e. the rear guard of a marching column, confirmed by Arabic sāqa and Swahili walinzi wa nyuma.
+    Domain: MOVEMENT > Linear Movement
+    Glosses: eng: and-the-rear-guard, and-your-rear-guard, gathering | spa: los-que-lo-cosechan, que-los-recogiera, que-recoja | fra: et-le-rear-garder, et-rassembler, gathering | deu: gathering, rear-bewachen, sammeln
+    Refs: Num 10:25, Josh 6:9, Josh 6:13, Judg 19:15, Judg 19:18
+  Sense 6: "sweep away (Hifil causative)" (4x)
+    Desc: Hifil causative sense of sweeping away or utterly consuming, an intensified removal often in prophetic judgment contexts, confirmed by Zephaniah context and Korean 끝내리라 (to bring to an end).
+    Domain: MOVEMENT > Linear Movement
+    Glosses: eng: Gathering, I-will-sweep-away, I-will-utterly-sweep-away | spa: Consumiendo, Quitando, Quitaré | fra: rassembler | deu: sammelte
+    Refs: Jer 8:13, Zeph 1:2, Zeph 1:3, Zeph 1:3
+  Sense 7: "be gathered intensively (Pual passive)" (4x)
+    Desc: Passive intensive sense of being gathered or assembled, the Pual forms, confirmed by Arabic yujmaʿu (passive) and Korean 거두어진다.
+    Domain: MOVEMENT > Linear Movement
+    Glosses: eng: And-is-gathered, And-they-shall-be-gathered, and-will-be-gathered | spa: Y-serán-reunidos, reunido, y-será-recogido | fra: et-rassembler, rassembler | deu: und-sammeln, und-sammelte, von-Asaf
+    Refs: Isa 24:22, Isa 33:4, Ezek 38:12, Zech 14:14
+  Sense 8: "heal, restore" (4x)
+    Desc: Disputed sense where asap appears to mean heal or restore, confirmed by Arabic yashfi (to heal) and Swahili kumponya/ataponya (to heal), likely a homographic root distinct from the gathering root.
+    Domain: BODY_HEALTH > Physiological Processes and States
+    Glosses: eng: and-gather, and-gather-him, he-would-gather | spa: lo-sanará, para-sanar, y-sanará | fra: et-rassemble, et-rassemble-lui, il-ferait-rassemble | deu: er-wuerde-versammle, und-versammle, und-versammle-ihn
+    Refs: 2Kgs 5:3, 2Kgs 5:6, 2Kgs 5:7, 2Kgs 5:11
+
+=== H7223 ===
+Language: Hebrew, POS: Prep-b, Occurrences: 182, Senses: 8
+
+BDB excerpt: רִאשׁוֹן182 adj. former, first, chief (i heightened from orig. a, v. √);—abs. ר׳ Ho 2:19 +, שֹׁן- Ex 12:15 +, רִישׁוֹן Jb 8:8, cstr. רִאשׁוֹן Jb 15:7 Qr (Kt ראישון, and so always Cod. Sam. Pent., v. Köii. 1. 225 n); f. רִאשֹׁנָה Ju 20:37 + (Jos 21:10 Kt ראישנה, v. supr.); mpl. רִאשֹׁנִים Ex 34:1 +, fpl. רִאשֹׁנוֹת Is 41:22 +, etc.;— 1. former: a. in time, former of two Gn 25:25 (J), 41:20 (E), Dt 10:1, 2, 3, 4, 10; 24:4, cf. Ho 2:9; Lv 4:21; 9:15 (both P), Ju 20:39; 2 K 1:14; Hg 2:3, 9; Ezr 3:12 +; more gen. former, previous, Nu 21:26 (JE), Mi 4:8; 2 K 17:34, 40; Zc 1:4; 7:7, 12; 8:11; Ne 5:15
+Senses:
+  Sense 1: "first (ordinal sequence)" (107x)
+    Desc: Ordinal 'first' indicating position in a sequence such as first month, first day, first year, or first in a list.
+    Domain: QUANTITY_NUMBER > Sequence
+    Glosses: eng: the-first | spa: el-primero, la-primera, primero | fra: le-premier | deu: dem-ersten, der-Erste, der-erste
+    Refs: Gen 25:25, Gen 26:1, Gen 32:17, Exod 4:8, Exod 12:15
+  Sense 2: "former (previous in time)" (33x)
+    Desc: Adjective meaning 'former' or 'previous,' referring to an earlier state, condition, or entity as contrasted with a later one.
+    Domain: QUANTITY_NUMBER > Sequence
+    Glosses: eng: the-chief, the-first, the-former | spa: la-primera, los-primeros, primera | fra: le-premier, premier | deu: der-erste, der-erster, erster
+    Refs: Gen 40:13, Num 6:12, Num 21:26, Deut 10:4, Deut 24:4
+  Sense 3: "at first / in the beginning" (15x)
+    Desc: Temporal adverbial use with prepositions meaning 'at first,' 'at the beginning,' or 'in the former time.'
+    Domain: QUANTITY_NUMBER > Sequence
+    Glosses: eng: at-first, at-the-first, in-the-former-time | spa: al-principio, antes, en-la-primera-vez | fra: dans-le-former-temps, premier, à-le-premier | deu: bei-der-erster, bei-erster, erster
+    Refs: Gen 13:4, Gen 28:19, Josh 8:5, Josh 8:6, Josh 8:33
+  Sense 4: "as at the first (comparative)" (12x)
+    Desc: Comparative construction with preposition kaph meaning 'as at the first,' 'like the first,' restoring or comparing to an original state.
+    Domain: QUANTITY_NUMBER > Sequence
+    Glosses: eng: as-at-first, as-at-the-first, as-the-first | spa: como-al-principio, como-el-primero, como-la-primera | fra: comme-le-premier, comme-à-le-premier, comme-à-premier | deu: erster, wie-bei-der-erster, wie-bei-erster
+    Refs: Exod 34:1, Exod 34:4, Lev 9:15, Deut 9:18, Deut 10:1
+  Sense 5: "former ones / ancestors" (7x)
+    Desc: Substantive masculine plural referring to 'former people,' predecessors, or ancestors — those who lived in earlier times.
+    Domain: QUANTITY_NUMBER > Sequence
+    Glosses: eng: former, former-ones, of-the-former-ones | spa: antepasados, de-los-primeros, los-primeros | fra: anciens, former, premier | deu: erster, former, former-die
+    Refs: Lev 26:45, Deut 4:32, Deut 19:14, 2Chr 22:1, Ps 79:8
+  Sense 6: "former things (prophetic)" (6x)
+    Desc: Substantive feminine plural referring to 'former things' — previous events, prophecies, or deeds, especially in prophetic discourse (Isaiah).
+    Domain: QUANTITY_NUMBER > Sequence
+    Glosses: eng: The-former-things, and-former-things, former-things | spa: Las-primeras-cosas, cosas-primeras, las-cosas-primeras | fra: et-premier, premier | deu: erster, und-erster
+    Refs: Isa 41:22, Isa 42:9, Isa 43:9, Isa 43:18, Isa 46:9
+  Sense 7: "?" (1x)
+    Domain: QUANTITY_NUMBER > Sequence
+    Glosses: eng: the-chief | spa: los-primeros | fra: premier | deu: erster
+    Refs: 1Chr 18:17
+  Sense 8: "?" (1x)
+    Domain: QUANTITY_NUMBER > Sequence
+    Glosses: eng: from-beginning | spa: desde-el-principio | fra: premier | deu: erster
+    Refs: Jer 17:12
+
+=== H7665 ===
+Language: Hebrew, POS: Conj-w | V-Nifal-ConsecImperf-3ms, Occurrences: 149, Senses: 8
+
+BDB excerpt: שָׁבַר148 vb. break, break in pieces (NH id.; Sab. תֿבר break, destroy DHMHof.Mus., no. 1(×2). 26 MordtmHI 74; Arabic ثَبَرَ restrain, destroy; Aramaic תְּבַר, ܬܒܰܪ: Assyrian šabâru, break, break in pieces; Ethiopic ሰበረ: break);— Qal53 Pf. 3 ms. שׁ׳ 1 K 13:28; Is 14:5, etc.; Impf. 3 ms. יִשְׁבֹּר Je 19:11, -בּוֹר Is 42:3; 3 fs. תִּשְׁבָּר־ Pr 25:15, etc.; Imv. ms. שְׁבֹר ψ 10:15, sf. שָׁבְרֵם Je 17:18; Inf. cstr. לִשְׁבֹּר Gn 19:9 + 2 times, שְׁבוֹר Je 28:12; Pt. act. שֹׁבֵר Ez 4:16 + 2 times; pass. שָׁבוּר Lv 22:22, pl. cstr. שְׁבוּרֵי ψ 147:3;—break, lit., obj. earthen vessel Ju 7:20 Lv 11:3
+Senses:
+  Sense 1: "Qal: break, shatter" (50x)
+    Desc: Active transitive breaking or shattering of a physical object (bone, yoke, vessel, gate, idol), the basic Qal sense corresponding to Arabic kasara and Korean 부수다/꺾다.
+    Domain: PHYSICAL_ACTION > Physical Impact
+    Glosses: eng: He-broke, He-shattered, I-broke | spa: He-quebrado, Y-quebraré, he-quebrado | fra: brisement, briser, et-briser | deu: ich-zerbrach, und-zerbrach, und-zerbrechen
+    Refs: Gen 19:9, Exod 12:46, Lev 11:33, Lev 26:13, Lev 26:19
+  Sense 2: "Niphal: be broken" (46x)
+    Desc: Passive or middle-voice sense of being broken, becoming shattered, or suffering destruction, corresponding to Arabic inkasara/tahattama and Swahili passive -vunjwa/-vunjika.
+    Domain: PHYSICAL_ACTION > Physical Impact
+    Glosses: eng: Broken, and-be-broken, and-shall-be-broken | spa: Fue-quebrada, está-quebrantada, fueron-quebrantados | fra: briser, devra-être-brisé, et-briser | deu: soll-sein-gebrochen, und-zerbrechen, zerbrach
+    Refs: Exod 22:10, Exod 22:14, Lev 6:28, Lev 15:12, 1Sam 4:18
+  Sense 3: "Piel: shatter, smash thoroughly" (35x)
+    Desc: Intensive or iterative breaking, smashing into pieces or thoroughly destroying, corresponding to Arabic kassara (Form II intensive) and Korean 부수다 with intensifying particles.
+    Domain: PHYSICAL_ACTION > Physical Impact
+    Glosses: eng: He-breaks, I-will-shatter, You-shattered | spa: Y-quebró, quebranta, quebrantaste | fra: brisa-en-haut, brisement, briser | deu: brach-hinauf, du-soll-Umbruch, du-soll-shatter
+    Refs: Exod 9:25, Exod 23:24, Exod 23:24, Exod 32:19, Exod 34:1
+  Sense 4: "Niphal participle: broken state" (14x)
+    Desc: Adjectival use of the Niphal participle describing a state of brokenness, often applied to the heart or spirit (lev nishbar), corresponding to Arabic munkasir and Korean 상한.
+    Domain: PHYSICAL_ACTION > Physical Impact
+    Glosses: eng: and-the-broken, and-the-one-being-broken, broken | spa: Y-la-quebrada, a-los-quebrantados-de, a-los-quebrantados-de- | fra: briser, brisé, et-briser | deu: der-zerbrach, gebrochen, und-zerbrach
+    Refs: Lev 22:22, Ps 34:18, Ps 51:17, Ps 51:17, Ps 124:7
+  Sense 5: "?" (1x)
+    Domain: PHYSICAL_ACTION > Physical Impact
+    Glosses: eng: bring-to-the-point-of-birth | spa: haré-nacer | fra: briser | deu: zerbrechen
+    Refs: Isa 66:9
+  Sense 6: "?" (1x)
+    Domain: BODY_HEALTH > Physiological Processes and States
+    Glosses: eng: to-crush | spa: para-quebrantar | fra: à-brisement | deu: zerbrach
+    Refs: Lam 1:15
+  Sense 7: "?" (1x)
+    Domain: PHYSICAL_ACTION > Physical Impact
+    Glosses: eng: I-am-wounded | spa: estoy-quebrantado | fra: briser | deu: der-ich-zerbrach
+    Refs: Jer 8:21
+  Sense 8: "?" (1x)
+    Domain: PHYSICAL_ACTION > Physical Impact
+    Glosses: eng: they-break | spa: quiebran | fra: briser | deu: zerbrach
+    Refs: Ps 104:11
+
+=== G0863 ===
+Language: Greek, POS: V-APA-NMP, Occurrences: 146, Senses: 8
+
+BDB excerpt: ἀφίημι, 2nd pers.singular ἀφίηςRefs 5th c.BC+ Ionic dialect ἀπίειRefs 5th c.BC+, 1st pers.plural ἀφίεμενRefs 5th c.BC+imperfect ἀφίειν, with double augment ἠφίεινRefs 5th c.BC+; 3rd.pers.singular ἀφίειRefs 8th c.BC+, Ionic dialect ἀπίειNT+5th c.BC+; 2nd pers.plural ἀφίετεRefs 4th c.BC+; 3rd.pers.plural ἀφίεσαν Refs 5th c.BC+: future ἀφήσωRefs 8th c.BC+, Ionic dialect ἀπ-Refs 5th c.BC+: perfect ἀφεῖκαRefs 5th c.BC+aorist I ἀφῆκα, Ionic dialectἀπ-, Epic dialect ἀφέηκα, used in indicative only, Refs 8th c.BC+aorist 2 indicative only in dual and plural, ἀφέτην, ἀφεῖμεν, ἀφεῖτε or ἄφετε, ἀφεῖσαν or
+Senses:
+  Sense 1: "leave, abandon, depart from" (46x)
+    Desc: To physically leave a place or person behind, abandon, or forsake; Arabic consistently uses taraka (تَرَكَ), Korean uses beorida/tteonada (버리다/떠나다), Swahili uses -acha, Hindi uses chhodna (छोड़ना). Co...
+    Domain: GEOGRAPHY_SPACE > Existence in Space
+    Glosses: eng: having-left, leaving, left | spa: dejando, dejare, dejándolo | fra: laisser, pardonner | deu: lassen, lässt
+    Refs: Matt 4:11, Matt 4:20, Matt 4:22, Matt 8:15, Matt 13:36
+  Sense 2: "permit, allow, let" (33x)
+    Desc: To permit, allow, or let someone do something; Arabic uses samaha (سَمَحَ) or da'a (دَعَ/يَدَعُ), Korean uses heorak-hada (허락하다), Swahili uses -ruhusu, Hindi uses aagya dena (आज्ञा देना) or rahne dena...
+    Domain: GEOGRAPHY_SPACE > Existence in Space
+    Glosses: eng: Allow, Leave, Leave-alone | spa: Deja, Dejad, deja | fra: laisser | deu: lassen, lässt
+    Refs: Matt 3:15, Matt 3:15, Matt 5:24, Matt 5:40, Matt 7:4
+  Sense 3: "forgive, cancel (active)" (27x)
+    Desc: To forgive sins or cancel debts; Arabic consistently uses ghafara (غَفَرَ/يَغفِرُ) or a'faa (أَعْفَى for debt remission), Korean uses yongseo-hada (용서하다) or tanggam-hada (탕감하다 for debt), Swahili uses ...
+    Domain: GEOGRAPHY_SPACE > Existence in Space
+    Glosses: eng: He-may-forgive, forgave, forgive | spa: perdona, perdonamos, perdonar | fra: laisser | deu: lassen, lässt
+    Refs: Matt 6:12, Matt 6:12, Matt 6:14, Matt 6:14, Matt 6:15
+  Sense 4: "be forgiven (passive)" (22x)
+    Desc: Passive of the 'forgive' sense: sins or debts are forgiven or cancelled; Arabic uses passive ghufират/yughfaru (غُفِرَت/يُغفَرُ), Korean uses yongseo-batda (용서받다) or saham-batda (사함받다), Swahili uses -...
+    Domain: GEOGRAPHY_SPACE > Existence in Space
+    Glosses: eng: Are-forgiven, Have-been-forgiven, are-forgiven | spa: Han-sido-perdonados, Son-perdonados, fueron-perdonadas | fra: laisser, pardonner | deu: lassen, lässt
+    Refs: Matt 9:2, Matt 9:5, Matt 12:31, Matt 12:31, Matt 12:32
+  Sense 5: "be left, be abandoned (passive)" (10x)
+    Desc: Passive of the 'leave' sense: to be left behind, be abandoned, remain; Arabic uses the passive yutraku (يُترَكُ), Korean uses beoryeojida (버려지다) or namgyeojida (남겨지다), Swahili uses -achwa. Distinct fr...
+    Domain: GEOGRAPHY_SPACE > Existence in Space
+    Glosses: eng: is-left, will-be-left | spa: es-dejada, es-dejado, sea-dejada | fra: laisser | deu: lassen, lässt
+    Refs: Matt 23:38, Matt 24:2, Matt 24:40, Matt 24:41, Mark 13:2
+  Sense 6: "?" (3x)
+    Domain: GEOGRAPHY_SPACE > Existence in Space
+    Glosses: eng: let-her-send-away, let-him-send-away, to-send-away | spa: despida, la-despida, lo-despida | fra: pardonner | deu: lassen
+    Refs: 1Cor 7:11, 1Cor 7:12, 1Cor 7:13
+  Sense 7: "neglect, disregard" (3x)
+    Desc: To neglect or leave undone important duties; English 'neglect', Spanish 'descuidar/descuidasteis', Hindi chhodna (छोड़ना) in the sense of abandoning responsibilities, Arabic taraka (تَرَكتُم). Disting...
+    Domain: GEOGRAPHY_SPACE > Existence in Space
+    Glosses: eng: leaves, to-neglect, you-have-neglected | spa: dejara, descuidar, descuidasteis | fra: laisser | deu: lassen, lässt
+    Refs: Matt 23:23, Matt 23:23, Mark 12:19
+  Sense 8: "release, yield up" (2x)
+    Desc: To release or yield up, as in yielding up one's spirit at death (Matt 27:50); Arabic uses aslama (أَسْلَمَ, to hand over/surrender), Korean uses noh-atda (놓았다), Swahili uses -toa (give out/emit), Span...
+    Domain: GEOGRAPHY_SPACE > Existence in Space
+    Glosses: eng: letting-out, released | spa: entregó, habiendo-dado | fra: laisser | deu: lassen, lässt
+    Refs: Matt 27:50, Mark 15:37

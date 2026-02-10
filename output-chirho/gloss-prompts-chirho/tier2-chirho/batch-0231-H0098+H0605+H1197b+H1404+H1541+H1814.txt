@@ -1,0 +1,115 @@
+You are a biblical lexicographer composing glosses for a digital lexicon.
+For each lemma below, compose a JSON object. Separate objects with "---".
+
+Format for each:
+{
+  "lemma_id": "...",
+  "gloss_terse": "under 120 chars, concise definition covering the word's semantic range",
+  "gloss_readable": "2-5 sentences, 40-120 words. Don't start with 'This word'. Warm study-Bible footnote tone. Engaging, not dry.",
+  "senses": {
+    "1": "enriched 20-60 word description. Reference multilingual evidence when illuminating. Don't repeat the label verbatim.",
+    "2": "..."
+  }
+}
+
+Rules:
+- No markdown fences, just JSON objects separated by ---
+- Reference multilingual evidence naturally when it reveals something
+- gloss_readable should feel like a good study Bible footnote: helpful, clear, occasionally surprising
+- Each sense enrichment: how does the evidence support this sense? Mention 1-2 key passages when helpful.
+
+=== H0098 ===
+Language: Hebrew, POS: Art | N-mp, Occurrences: 9, Senses: 2
+
+BDB excerpt: † א��גַם n.[m.] troubled pool (Aramaic id., ܐܶܓܡܳܐ, As. agammu DlW)—א׳ abs. Is 35:7; cstr. 41:18 + 2t.; אֲגַמִּים Ex 8:1 + 2t.; אַגְמֵי Is 14:23; אַגְמֵיהֶם Ex 7:19— 1. troubled or muddy (gloomy) pools or marshes, pl. א׳ מַיִם Is 14:23. 2. any pool, pond, sg. א׳ מַיִם Is 41:18 ψ 107:35; 114:8; pl. without מַיִם Ex 7:19; 8:1 (P) Is 42:15. 3. swamp-reed, rush (= אַגְמוֹן) Je 51:32.
+Senses:
+  Sense 1: "pool, pond" (8x)
+    Desc: A body of still or collected water, a pool or pond. Used of literal pools that serve as water sources or reservoirs (Exod 7:19; 8:5 — the pools of Egypt during the plagues). Figuratively describes God...
+    Domain: GEOGRAPHY_SPACE > Geographical Objects and Features
+    Glosses: eng: a-pool, and-pools, and-pools-of- | spa: en-estanque, en-estanque-de, los-estanques | fra: [ואגמי], [ואגמים], [לאגם] | deu: [ואגמי], [ואגמים], [לאגם]
+    Refs: Exod 7:19, Exod 8:5, Ps 107:35, Ps 114:8, Isa 14:23
+  Sense 2: "marsh, swamp" (1x)
+    Desc: A marshy or swampy area, distinct from a clear pool. Used in Ezekiel 47:11 describing the marshes and swamps near the Dead Sea that will not be healed by the life-giving river from the temple: 'But th...
+    Domain: GEOGRAPHY_SPACE > Geographical Objects and Features
+    Glosses: eng: the-marshes | spa: los-pantanos | fra: [האגמים] | deu: [האגמים]
+    Refs: Jer 51:32
+
+=== H0605 ===
+Language: Hebrew, POS: V-Qal-QalPassPrtcpl-ms, Occurrences: 9, Senses: 2
+
+BDB excerpt: † I. [אָנַשׁ] vb. be weak, sick (Assyrian anâšu ZimBP 56, 70; Wetzst in DePsalmen, ed. 4, 882 der. from II. אנשׁ per antiphrasin; DlPr 160 identified with III. אנשׁ; v. also DePsalmen, ed. 4, 904; so LagBN 60, who comp. سَيْف أَنِيث, weichliches d.h. stumpfes Schwert. It seems safer at present to keep the three distinct). Qal Pt. pass. אָנוּשׁ Jb 34:6 +; אֲנוּשָׁה Je 15:18; Mi 1:9 & so read ψ 69:21 (Bi Che) etc.; as adj. incurable, of wound, but metaph. (מַכָּה) Mi 1:9; Je 15:18; cf. Jb 34:6 (חֵץ), Je 30:12 (שֵׁבֶר; ‖ נַחְלָה מַכָּה); so כְּאֵב אָנוּשׁ Is 17:11; cf. Je 30:15 (מַכְאֹב); cf. יוֹ
+Senses:
+  Sense 1: "incurable, grievous" (8x)
+    Desc: A Qal passive participle (and derived adjective) from the root אנשׁ 'to be weak, sick', used to describe wounds, diseases, or conditions that are beyond healing or remedy. This is the primary adjectiv...
+    Domain: PEOPLE_KINSHIP > People
+    Glosses: eng: Incurable, and-incurable, disaster | spa: Incurable, calamidad, e-incurable | fra: et-incurable, homme, incurable | deu: Mensch, [אנושה], [ואנש]
+    Refs: Job 34:6, Isa 17:11, Jer 15:18, Jer 17:9, Jer 17:16
+  Sense 2: "became mortally ill" (1x)
+    Desc: A Niphal consecutive imperfect form (וַיֵּאָנַשׁ) denoting the onset of a severe, life-threatening illness. This occurrence in 2 Samuel 12:15, describing the child born to David and Bathsheba who 'bec...
+    Domain: BODY_HEALTH > Physiological Processes and States
+    Glosses: eng: and-he-became-ill | spa: y-enfermó | fra: et-il-devint-ill | deu: und-er-became-ill
+    Refs: 2Sam 12:15
+
+=== H1197b ===
+Language: Hebrew, POS: V-Nifal-Prtcpl-fs, Occurrences: 9, Senses: 2
+
+BDB excerpt: † II. [בָּעַר] vb.denom. be brutish— Qal Impf. יִבְעֲרוּ Je 10:8 (‖ יכסלו) be stupid, dull-hearted, unreceptive; cf. Pt. pl. בֹּעֲרִים ψ 94:8 (‖ כסילים); of inhuman, cruel, barbarous men Ez 21:36. Niph. Pf. נִבְעַר Je 10:14 = 51:17, נִבְעֲרוּ Je 10:21; Pt. נִבְעָרָ֑ה Is 19:11;—brutish, stupid Is 19:11 (עצה, ‖ אויל); dull-hearted, ignorant of God Je 10:14, 21; 51:17. Niph. Je 10:14 = 51:17 rather stupefied (by spectacle 10:13 = 51:16). Pi. Pf. וּבִעֵר consec. Ex 22:4 feed, graze (בשׂדה אחר). Hiph. Impf. יַבְעֶר־ Ex 22:4 cause to be grazed over, sq. שׂדה.
+Senses:
+  Sense 1: "be brutish, be stupid, be dull-hearted" (7x)
+    Desc: Qal and Niphal denominative from בְּעִיר 'beast, cattle': to be brutish, stupid, dull-hearted, or unreceptive, i.e., to behave like an irrational animal rather than a thinking human. Used in prophetic...
+    Domain: MENTAL_LIFE > Understand
+    Glosses: eng: Is-stupid, are-stupid, brutish | spa: Embrutecido-está, brutales, embrutecido | fra: [יבערו], [נבער], [נבערה] | deu: [בערים], [יבערו], [נבער]
+    Refs: Ps 94:8, Isa 19:11, Jer 10:8, Jer 10:14, Jer 10:21
+  Sense 2: "graze, let graze, consume by grazing" (2x)
+    Desc: Hiphil and Piel causative sense: to let graze, to send livestock to feed in another's field, or to consume vegetation by grazing. Attested in the Covenant Code (Exod 22:5), where יַבְעֶר 'lets graze' ...
+    Domain: ANIMALS > Animal Husbandry, Fishing
+    Glosses: eng: and-it-grazes, lets-graze | spa: haga-pastar, y-pace | fra: et-cela-grazes, lets-graze | deu: lets-graze, und-es-grazes
+    Refs: Exod 22:5, Exod 22:5
+
+=== H1404 ===
+Language: Hebrew, POS: N-fsc | 2fs, Occurrences: 9, Senses: 2
+
+BDB excerpt: † גְּבֶ֫רֶת n.f. 1. lady, queen, Is 47:5, 7. 2. mistress of servants, sf. גְּבִרְתִּי Gn 16:8; גְּבִרְתֵּךְ Gn 16:9; גְּבִרְתָּהּ Gn 16:4 2 K 5:3 ψ 123:2 Pr 30:23; (pl. גברת women MI16); גְּבִרְתָּהּ Is 24:2.
+Senses:
+  Sense 1: "mistress (of a servant)" (7x)
+    Desc: The female head of a household in relation to her servants or maidservants, denoting the domestic authority relationship. Used of Sarah as Hagar's mistress (Genesis 16:4,8,9), the Israelite girl's mis...
+    Domain: AUTHORITY_RULE > Status
+    Glosses: eng: her-mistress, my-mistress, so-her-mistress | spa: a-su-señora, como-su-señora, mi-señora | fra: [כגברתה], dame, mon-mistress | deu: [גברתה], [כגברתה], deiner-Herrin
+    Refs: Gen 16:4, Gen 16:8, Gen 16:9, 2Kgs 5:3, Ps 123:2
+  Sense 2: "lady, queen" (2x)
+    Desc: A title of sovereignty or supreme authority, designating a woman of royal or ruling status. Used in Isaiah 47:5,7 where Babylon is addressed as 'mistress of kingdoms' (geveret mamālākhōt), a personifi...
+    Domain: PEOPLE_KINSHIP > People
+    Glosses: eng: a-mistress, mistress-of | spa: señora, señora-de | fra: [גברת] | deu: [גברת]
+    Refs: Isa 47:5, Isa 47:7
+
+=== H1541 ===
+Language: Hebrew, POS: V-Nifal-Perf-3ms, Occurrences: 9, Senses: 2
+
+BDB excerpt: † [גְּלָא, גְּלָה] vb. reveal (BH גָּלָה uncover, reveal);— Pe. reveal secrets, human agent: Inf. לְמִגְלֵא Dn 2:47; of God, Pt. act. גָּלֵא v 22, 28, 29, 47. Peʿîl Pf. גֲּלִי v 19, גֱּלִי v 30, revealed (WCG 225 Nö LCB, 1896, 703);—of secret, c. ל pers. Haph. take into exile (BH Hiph.), Pf. 3 ms. הַגְלִי, c. acc. pers. Ezr 4:10; 5:12 (ל loc.).
+Senses:
+  Sense 1: "to reveal, disclose (Aramaic)" (7x)
+    Desc: Aramaic verb gela'/gelah meaning to reveal or disclose hidden things, used exclusively in Daniel 2:19-47. Appears in Pe'al participle gale' (Dan 2:22 'He reveals deep and hidden things,' Dan 2:28 'the...
+    Domain: MENTAL_LIFE > Know
+    Glosses: eng: and-Revealer-of, and-the-Revealer-of, revealing | spa: fue-revelado, me-fue-revelado, que-revela | fra: et-révéler, révéler | deu: [גלא], [גלי], [וגלא]
+    Refs: Dan 2:19, Dan 2:22, Dan 2:28, Dan 2:29, Dan 2:30
+  Sense 2: "to exile, carry into captivity (Hifil)" (2x)
+    Desc: Hifil perfect form of the Hebrew root galah used in the sense of forcible deportation, occurring in Ezra 4:10 and 5:12 (referring to Nebuchadnezzar who 'exiled' the people to Babylon). Arabic sabahum ...
+    Domain: MENTAL_LIFE > Know
+    Glosses: eng: exiled | spa: desterró | fra: [הגלי] | deu: [הגלי]
+    Refs: Ezra 4:10, Ezra 5:12
+
+=== H1814 ===
+Language: Hebrew, POS: Prep-m | V-Qal-Inf, Occurrences: 9, Senses: 2
+
+BDB excerpt: † [דָּלַק] vb. burn (intrans.), hotly pursue (NH id. Aramaic דְּלַק, ܕܠܰܩ all intrans. burn, kindle; Hiph., Aph. transitive)— Qal Pf. 2 ms. דָּלַקְתָּ Gn 31:36; 3 mpl. וְדָֽלְקוּ consec. Ob 18; sf. דְּלָקֻנוּ La 4:19; Impf. יִדְלַק ψ 10:2; Inf. cstr. דְּלֹק 1 S 17:53; Pt. act. pl. דֹּלְקִים Pr 26:23;— 1. burn, וְדָֽלְקוּ בָהֶם Ob 18 (fig. of Isr. ravaging among Edomites, ‖ וַאֲכָלוּם; on construction c. בְּ cf. 2 K 17:25); also in חִצָּיו לְדֹלְקִים יִפְעָ֑ל ψ 7:14 his arrows he maketh burning ones (subj. God) RV De Che al.; & שְׂפָתַיִם דֹּלְקִים Pr 26:23 burning (fervent) lips (opp. לֵב רָ֑ע
+Senses:
+  Sense 1: "pursue hotly, chase" (5x)
+    Desc: Sense of hotly pursuing, chasing, or persecuting someone with intensity -- from the homonymous root דָּלַק II meaning 'to pursue with burning eagerness' (Gen 31:36, 1 Sam 17:53, Lam 4:19, Ps 7:13, Ps ...
+    Domain: MOVEMENT > Linear Movement
+    Glosses: eng: for-the-burning-ones, from-chasing, is-hotly-pursued | spa: arde, de-perseguir, nos-persiguieron | fra: [דלקנו], de-chasing, poursuivre | deu: [דלקנו], du-gejagt-hast, für-der-burning-Leute
+    Refs: Gen 31:36, 1Sam 17:53, Ps 7:13, Ps 10:2, Lam 4:19
+  Sense 2: "burn, kindle, be inflamed" (4x)
+    Desc: Sense of burning, kindling fire, or being aflame -- both literal fire (Ezek 24:10, Obad 1:18) and metaphorical burning such as inflaming with wine or passion (Isa 5:11, Prov 26:23). Includes Hifil cau...
+    Domain: NATURAL_WORLD > Physical Events and States
+    Glosses: eng: and-they-will-burn, burning, inflames-them | spa: ardientes, enciende, los-inflama | fra: [ידליקם], enflammer, et-ils-embraseront | deu: [דלקים], [הדלק], [ידליקם]
+    Refs: Prov 26:23, Isa 5:11, Ezek 24:10, Obad 1:18

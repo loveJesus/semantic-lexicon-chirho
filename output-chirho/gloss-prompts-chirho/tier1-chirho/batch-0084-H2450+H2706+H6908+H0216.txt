@@ -1,0 +1,120 @@
+You are a biblical lexicographer composing glosses for a digital lexicon.
+For each lemma below, compose a JSON object. Separate objects with "---".
+
+Format for each:
+{
+  "lemma_id": "...",
+  "gloss_terse": "under 120 chars, concise definition covering the word's semantic range",
+  "gloss_readable": "2-5 sentences, 40-120 words. Don't start with 'This word'. Warm study-Bible footnote tone. Engaging, not dry.",
+  "senses": {
+    "1": "enriched 20-60 word description. Reference multilingual evidence when illuminating. Don't repeat the label verbatim.",
+    "2": "..."
+  }
+}
+
+Rules:
+- No markdown fences, just JSON objects separated by ---
+- Reference multilingual evidence naturally when it reveals something
+- gloss_readable should feel like a good study Bible footnote: helpful, clear, occasionally surprising
+- Each sense enrichment: how does the evidence support this sense? Mention 1-2 key passages when helpful.
+
+=== H2450 ===
+Language: Hebrew, POS: Adj-msc, Occurrences: 137, Senses: 4
+
+BDB excerpt: † חָכָם adj. wise, ח׳ Dt 4:6 + 67 times; cstr. חֲכַם Is 3:3 + 9 times; pl. חֲכָמִים Dt 1:13 + 39 times; cstr. חַכְמֵי Ex 28:3 + 4 times; sf. חֲכָמֶיךָ Is 19:12 etc. + 8 times; f. חֲכָמָה 2 S 14:2; 20:16; cstr. חַכְמַת Ex 35:25; pl. חֲכָמוֹת Je 9:16; cstr. חַכְמוֹת Ju 5:29 Pr 14:1 (but read חָכְמוֹת De);— 1. skilful in technical work; artificers Is 3:3; sailors Ez 27:8, so (prob.) v 9; mourning women Je 9:16; artisans of tabern. and temple and their furniture Ex 28:3; 31:6; 35:10; 36:1, 2, 4, 8 (P), 1 Ch 22:15 2 Ch 2:6, 12, 13(×2); women in spinning Ex 35:25 (P); goldsmiths and other artisans J
+Senses:
+  Sense 1: "wise, prudent" (84x)
+    Desc: Describes a person possessing wisdom, discernment, or prudence as a moral-intellectual quality; the basic adjectival sense of the word used attributively or predicatively.
+    Domain: MENTAL_LIFE > Understand
+    Glosses: eng: a-wise-one, is-wise, skilled | spa: Sabio, es-sabio, sabia | fra: [חכם], est-sage, sage | deu: ist-weise, weise, wurde-weise
+    Refs: Deut 1:13, Deut 1:15, Deut 4:6, Deut 32:6, 2Sam 13:3
+  Sense 2: "wise men, sages" (48x)
+    Desc: Used substantively to denote a recognized social class of wise men, sages, or counselors — often royal advisors, elders, or a professional class in ancient Near Eastern courts.
+    Domain: MENTAL_LIFE > Understand
+    Glosses: eng: the-wise, wise, wise-men | spa: a-sabios, sabios | fra: sage, sage-ones | deu: Weise, weise, weise-die
+    Refs: Gen 41:8, Exod 7:11, Exod 28:3, Exod 36:4, Deut 16:19
+  Sense 3: "skilled, expert craftsman" (3x)
+    Desc: Denotes technical skill or artisanal expertise rather than moral wisdom; used of craftsmen, artisans, and those possessing professional know-how (e.g., Exodus tabernacle workers, skilled tradespeople)...
+    Domain: MENTAL_LIFE > Understand
+    Glosses: eng: and-skilled-ones-of, the-skilled-ones, your-skilled-ones | spa: los-sabios, tus-sabios, y-los-sabios-de | fra: [החכמים], [וחכמי], [חכמיך] | deu: und-weise, weise
+    Refs: 2Chr 2:7, 2Chr 2:14, 2Chr 2:14
+  Sense 4: "wise women" (2x)
+    Desc: Feminine substantive use referring to wise or skillful women as a recognized class, including professional mourning women (Jeremiah 9:16) and women known for counsel (Judges 5:29).
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: -the-wisest-of, the-skillful-women | spa: Las-sabias-de, las-sabias | fra: -le-wisest-de, sage | deu: -der-wisest-von, weise
+    Refs: Judg 5:29, Jer 9:17
+
+=== H2706 ===
+Language: Hebrew, POS: Prep-l | N-ms, Occurrences: 128, Senses: 4
+
+BDB excerpt: חֹק127 n.m. Mi 7:11 something prescribed, a statute or due;—ח׳ Gn 47:22 + 22 times; חָק־ Ex 30:21 + 14 times; sf. חֻקִּי Pr 30:8 + 3 times; חָקְךָ Lv 10:13, 14 etc. + 4 times sfs.; pl. חֻקִּים Dt 4:5 + 31 times; cstr. חֻקֵּי Ex 18:16; חוּקֵּ֯י Ez 20:18; also חִקֲקֵי Ju 5:15; Is 10:1 (Ges§ 93, 1 R 7); חֻקָּו֯ Jb 14:5 etc. + 44 times sfs.— 1. prescribed task, assigned to Isr. in Egypt Ex 5:14 (E). 2. prescribed portion, or allowance of food Gn 47:22(×2) (J); Pr 30:8; 31:15; Ez 16:27; מחקי Jb 23:12 (RV; בְּחֵקִי in my bosom). 3. action prescribed for oneself, resolve: חִקֲקֵי לֵב Ju 5:15 resolves
+Senses:
+  Sense 1: "statute, ordinance, decree" (109x)
+    Desc: A prescribed law, ordinance, or decree established by divine or human authority. Arabic consistently translates with فَرِيضَة (farīḍa, sg.) / فَرَائِض (farā'iḍ, pl.) from the root ف-ر-ض (faraḍa, 'to i...
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: Your-statutes, the-statutes | spa: estatutos-de-ti, los-estatutos, son-los-estatutos | fra: le-statuts, les-statuts, tes-statuts | deu: dein-Satzungen, der-Satzungen
+    Refs: Exod 15:25, Exod 15:26, Exod 18:20, Lev 10:11, Lev 26:46
+  Sense 2: "allotted portion, due, ration" (11x)
+    Desc: An allotted share, prescribed portion, or regular allowance—especially of food, priestly dues, or an inheritance. Arabic uses نَصِيب (naṣīb, 'allotted share') from the root ن-ص-ب and حِصَّة (ḥiṣṣa, 'p...
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: and-a-portion, and-the-due-of-, more-than-my-portion | spa: mi-porción, más-que-mi-porción, porción | fra: de-mon-décret-moi, décret, et-décret | deu: Satzung, dein-due, dein-quota
+    Refs: Gen 47:22, Gen 47:22, Exod 5:14, Lev 10:13, Lev 10:13
+  Sense 3: "boundary, limit, prescribed border" (7x)
+    Desc: A fixed boundary, limit, or prescribed border—typically of the sea, land, or cosmic order. Arabic uses حَدّ (ḥadd, sg.) / حُدُود (ḥudūd, pl.) from the root ح-د-د (ḥadada, 'to delimit, set a boundary')...
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: (his-limits), [his-limits], boundary- | spa: Límite-, decreto, límite | fra: [חק], décret, son-décret-lui | deu: Satzung, [חק]
+    Refs: Job 14:5, Job 14:5, Job 14:13, Job 26:10, Prov 8:29
+  Sense 4: "?" (1x)
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: [ketiv:Your-bosom] | spa: [tu-seno] | fra: statut | deu: [ketiv:Your-bosom]
+    Refs: Ps 74:11
+
+=== H6908 ===
+Language: Hebrew, POS: Conj-w | V-Qal-ConsecImperf-1cs | 3mp, Occurrences: 127, Senses: 4
+
+BDB excerpt: קָבַץ127 vb. gather, collect (syn. אָסַף) (Arabic قَبَضَ grasp, seize; Sab. קבץֿ harvest, in דֿק׳, attrib. of ʿAttar, according to FellZMG liv (1900), 237 f.; Ethiopic ቀብጸ: is fail, despair; NH קִבֵּץ = BH);— †Qal Pf. 3 ms. ק׳ 1 K 20:1; Impf. 3 ms. יִקְבָּץ־ ψ 41:7, וַיִּקְבֹּץ Gn 41:48 +, etc.; Imv. ms. קְבֹץ 1 K 18:19, mpl. קִבְצוּ 1 S 7:5 +; Inf. cstr. sf. לְקָבְצִי Zp 3:8; Pt. act. קֹבֵץ Ez 22:19; Pr 13:11; pass. pl. קְבוּצִים Ne 5:16;—gather, collect: 1. c. acc. rei, grain Gn 41:35, 48 (E), booty Dt 13:17 (+ אֶל loc.), money 2 Ch 24:5 (+ מִן pers.), so Ez 16:31 (Gr Toy Krae, reading לִקְב
+Senses:
+  Sense 1: "Piel: gather together, reassemble" (50x)
+    Desc: Intensive active gathering, often used of God or a leader regathering dispersed people back together (Piel stem), carrying a connotation of deliberate, thorough collection or restoration from scatteri...
+    Domain: MOVEMENT > Linear Movement
+    Glosses: eng: I-will-gather, I-will-gather-them, and-I-gather | spa: Y-os-reuniré, Y-reuniré, el-que-reúne | fra: de-il-a-rassemblé, et-je-rassemblerai, et-rassembler | deu: ich-versammle, und-ich-versammle, und-versammeln
+    Refs: Deut 30:3, Deut 30:4, 1Chr 16:35, Neh 1:9, Ps 106:47
+  Sense 2: "Nifal/Hitpael: assemble, be gathered" (39x)
+    Desc: Middle, reflexive, or passive gathering where people assemble themselves or are gathered together (Nifal and Hitpael stems), confirmed by Arabic ijtama'a (Form VIII reflexive) and Swahili intransitive...
+    Domain: MOVEMENT > Linear Movement
+    Glosses: eng: and-gathered, and-they-gathered, are-gathered | spa: Congreguense, Y-se-reunieron, os-reuniréis | fra: assembler, et-ils-rassembla, et-rassembla | deu: sammelte, schart-euch-zusammen, und-sie-versammelte
+    Refs: Gen 49:2, Josh 9:2, Josh 10:6, Judg 9:47, 1Sam 7:6
+  Sense 3: "Qal: gather, collect" (36x)
+    Desc: Active simple gathering or collecting of people, animals, or things by an agent (Qal stem), including transitive uses with direct objects and purposive infinitives.
+    Domain: MOVEMENT > Linear Movement
+    Glosses: eng: and-I-gathered, and-I-gathered-them, and-gathered | spa: Y-reunieron, Y-reunió, y-los-reuní | fra: et-il-rassembla, et-rassembla, et-rassembler | deu: und-er-versammelte, und-sammelte, und-versammeln
+    Refs: Gen 41:35, Gen 41:48, Deut 13:16, Judg 12:4, 1Sam 7:5
+  Sense 4: "Pual/QalPass: in a gathered state" (2x)
+    Desc: Passive resultative state of having been gathered or collected (Pual participle and Qal passive participle), describing a group already assembled rather than the act of assembling.
+    Domain: MOVEMENT > Linear Movement
+    Glosses: eng: gathered | spa: reunida, reunidos | fra: rassembler | deu: versammeln, versammelte
+    Refs: Neh 5:16, Ezek 38:8
+
+=== H0216 ===
+Language: Hebrew, POS: Prep-l | N-csc | 3ms, Occurrences: 121, Senses: 4
+
+BDB excerpt: אוֹר121 אוֹר121 f. Jb 36:32; Je 13:16; cf. Gn 1:3 light (Assyrian urru = ûru DlW)—abs. Gn 1:3 +; cstr. Ju 16:2 +; sf. אוֹרִי ψ 27:1, etc.; pl. אוֹרִים ψ 136:7;— 1. light as diffused in nature, light of day Gn 1:3, 4, 5 (P) Jb 3:9; 38:19 +. 2. morning light, dawn, אוֹר הַבֹּקֶר light of the morn. Ju 16:2 1 S 14:36; 25:34, 36 2 S 17:22 2 K 7:9 Mi 2:1; א׳ בֹּקֶר 2 S 23:4 (poem of David); עַד־הָא׳ Ju 19:26 (cf. עַד־הַבֹּקֶר v 25); לָאוֹר Jb 24:14; מִן־הָאוֹר עַד מַחֲצִית הַיּוֹם from dawn till mid-day, Ne 8:3 cf. Pr 4:18. 3. light of the heavenly luminaries; א׳ הַלְּבָנָה, ‖ א׳ הַחַמָּה moonlight 
+Senses:
+  Sense 1: "light (general / metaphorical)" (116x)
+    Desc: Physical light, daylight, or metaphorical light representing life, divine favor, guidance, or well-being
+    Domain: NATURAL_WORLD > Physical Events and States
+    Glosses: eng: light, light-of, the-light | spa: Luz, la-luz., la-luz; | fra: lumière | deu: Licht
+    Refs: Gen 1:3, Gen 1:3, Exod 10:23, Job 3:16, Job 3:20
+  Sense 2: "lightning / flashing light" (3x)
+    Desc: A sudden, brilliant flash of light, specifically lightning or the radiant gleam accompanying a theophany
+    Domain: NATURAL_WORLD > Physical Events and States
+    Glosses: eng: and-his-lightning, his-light, lightning | spa: su-luz, y-su-luz | fra: et-son-lumière-lui, son-lumière-lui | deu: [אורו], [ואורו]
+    Refs: Job 36:30, Job 37:3, Job 37:11
+  Sense 3: "?" (1x)
+    Domain: NATURAL_WORLD > Physical Events and States
+    Glosses: eng: lights | spa: lumbreras | fra: lumière | deu: Licht
+    Refs: Ps 136:7
+  Sense 4: "?" (1x)
+    Domain: NATURAL_WORLD > Physical Events and States
+    Glosses: eng: the-light | spa: la-luz | fra: lumière | deu: das-Licht
+    Refs: Neh 8:3

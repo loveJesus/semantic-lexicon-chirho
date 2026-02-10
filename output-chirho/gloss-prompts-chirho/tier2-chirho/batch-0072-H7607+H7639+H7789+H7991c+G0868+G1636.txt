@@ -1,0 +1,145 @@
+You are a biblical lexicographer composing glosses for a digital lexicon.
+For each lemma below, compose a JSON object. Separate objects with "---".
+
+Format for each:
+{
+  "lemma_id": "...",
+  "gloss_terse": "under 120 chars, concise definition covering the word's semantic range",
+  "gloss_readable": "2-5 sentences, 40-120 words. Don't start with 'This word'. Warm study-Bible footnote tone. Engaging, not dry.",
+  "senses": {
+    "1": "enriched 20-60 word description. Reference multilingual evidence when illuminating. Don't repeat the label verbatim.",
+    "2": "..."
+  }
+}
+
+Rules:
+- No markdown fences, just JSON objects separated by ---
+- Reference multilingual evidence naturally when it reveals something
+- gloss_readable should feel like a good study Bible footnote: helpful, clear, occasionally surprising
+- Each sense enrichment: how does the evidence support this sense? Mention 1-2 key passages when helpful.
+
+=== H7607 ===
+Language: Hebrew, POS: N-msc, Occurrences: 16, Senses: 3
+
+BDB excerpt: † שְׁאֵר n.m. ψ 73:26 flesh (perhaps orig. the inner flesh, full of blood, next the bones, cf. HoffmZAW iii (1883), 107, and בָּשָׂר = (orig.) flesh next the skin);—שׁ׳ abs. ψ 78:20, 27, cstr. Mi 3:3 +, sf. שְׁאֵרִי Je 51:35 ψ 73:26, etc.;— 1. flesh: a. as food, Ex 21:10 (HPS also 1 S 9:24, for הַנִּשְׁאָר), ψ 78:20 (‖ לֶחֶם), v 27 (‖ עוֹף בָּנָף); fig. Mi 3:2 (‖ עוֹר), v 3 (‖ id.), Je 51:35 (‖ דָּם). b. fig. for physical power ψ 73:26 (+ לֵבָב), Pr 5:11 (+ בָּשָׂר). 2. in HP = flesh- (= blood-) relation (i.e. one near of kin): שְׁאֵר אָבִיךָ Lv 18:12, cf. v 13; 20:19, also 18:17 (read שְׁאֵרְ
+Senses:
+  Sense 1: "flesh, body" (8x)
+    Desc: The physical flesh or body of a person, referring to the corporeal substance as distinct from spirit or bone.
+    Domain: BODY_HEALTH > Body, Body Parts, and Body Products
+    Glosses: eng: and-my-flesh, and-their-flesh, and-your-body | spa: carne, carne-de, carne-de-él | fra: [ושארי], chair, et-chair | deu: Rest, [ושארי], [ושארך]
+    Refs: Ps 73:26, Ps 78:20, Ps 78:27, Prov 5:11, Prov 11:17
+  Sense 2: "blood relative, near kin" (7x)
+    Desc: A close blood relative or kinsman, one who is 'of the same flesh,' used especially in laws governing marriage and redemption of kin.
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: his-relative, relative-his, relative-of | spa: a-pariente-de-él, carne-de, pariente-cercano | fra: relative-de, relative-son, son-relative | deu: relative-sein, relative-von, sein-relative
+    Refs: Lev 18:6, Lev 18:12, Lev 18:13, Lev 20:19, Lev 21:2
+  Sense 3: "food, sustenance" (1x)
+    Desc: Food or sustenance owed to a dependent, specifically the food-portion a husband must provide a wife (Exodus 21:10).
+    Domain: FOOD_DRINK > Foods and Condiments
+    Glosses: eng: her-food | spa: su-alimento | fra: sa-nourriture | deu: ihr-Nahrung
+    Refs: Exod 21:10
+
+=== H7639 ===
+Language: Hebrew, POS: Prep-l, Occurrences: 16, Senses: 3
+
+BDB excerpt: † שְׂבָכָה n.f. lattice-work, network;—abs. ר׳ 1 K 7:18 +, pl. שְׂבָכוֹת v 41 +, שְׂבָכִים v 17;— 1. prob. window-lattice 2 K 1:2. 2. net-ornament on pillars, 1 K 7:17(×2) (om. 𝔊 Kit Benz), v 18, 20 (crpt., (cf. Kit Benz), v 41, 42(×2) 2 Ch 4:12, 13(×2) 2 K 25:17(×2) ‖ Je 52:22, 23. 3. network, toils, for catching animals (fig.) Jb 18:8 (+ רֶשֶׁת, פַּח, צַמִּים).
+Senses:
+  Sense 1: "network on pillars" (14x)
+    Desc: Lattice-work or checker-work netting used as architectural ornamentation on the capitals of the Temple pillars (1 Kings 7, 2 Kings 25, 2 Chronicles 4, Jeremiah 52).
+    Domain: ARTIFACTS > Artifacts
+    Glosses: eng: [lattice], and-a-latticework, and-network | spa: (el-enrejado), [el-enrejado], el-enrejado | fra: [lattice], [השבכה], [השבכות] | deu: [lattice], [השבכה], [השבכות]
+    Refs: 1Kgs 7:17, 1Kgs 7:18, 1Kgs 7:20, 1Kgs 7:20, 1Kgs 7:41
+  Sense 2: "window lattice" (1x)
+    Desc: A latticed window screen or grating through which one looks out, as in the scene of Sisera's mother peering through the window (Judges 5:28).
+    Domain: BUILDINGS > Constructions
+    Glosses: eng: the-lattice | spa: la-celosía | fra: le-lattice | deu: der-lattice
+    Refs: 2Kgs 1:2
+  Sense 3: "snare or net" (1x)
+    Desc: A net or mesh used metaphorically as a trap or snare into which the wicked stumble (Job 18:8).
+    Domain: ARTIFACTS > Artifacts
+    Glosses: eng: a-snare | spa: malla | fra: שבכה | deu: [שבכה]
+    Refs: Job 18:8
+
+=== H7789 ===
+Language: Hebrew, POS: V-Qal-Imperf-3ms, Occurrences: 16, Senses: 3
+
+BDB excerpt: † II. [שׁוּר] vb. behold, regard (especially Jb);— Qal Impf. 3 ms. יָשׁוּר Je 5:26, sf. יְשׁוּרֶנּוּ Jb 34:29, etc.; Imv. ms. שׁוּר Jb 35:5;— 1. behold, c. acc. pers. Nu 23:9; 24:17 (poems in JE, ‖ רָאָה), לֹא תְּשׁוּרֵנִי, subj. eye, Jb 24:15, and (= I shall not exist) 7:8, cf. 20:9 (subj. מְקוֹמוֹ), 17:15; God object 34:29; 35:14; look, gaze, abs., מִן loc. Ct 4:8. 2. regard with watchful care (subj. י׳) Ho 14:9; so, = notice, Jb 35:13; regard, observe, acc. rei, God’s word Jb 33:14 (Hi De Da al.), so, (reading 2 ms.), Siegf Bu; Du יְשִׁיבֶנָּה he (God) retracts it not. 3. watch stealthily, 
+Senses:
+  Sense 1: "to behold, see, look at" (13x)
+    Desc: To perceive visually, to gaze upon or observe someone or something, often with sustained attention or contemplation (the primary meaning of שׁוּר in Qal).
+    Domain: PHYSICAL_ACTION > Physical Impact
+    Glosses: eng: I-behold-him, and-I-will-look-upon-him, and-behold | spa: la-ve, la-verá?, lo-contemplo | fra: Tu-regarderas, et-observer, je-voici-lui | deu: [ואשורנו], [ושור], [ישורנה]
+    Refs: Num 23:9, Num 24:17, Job 7:8, Job 17:15, Job 20:9
+  Sense 2: "to lie in wait, lurk" (2x)
+    Desc: To watch with hostile or stealthy intent, to spy on or lie in ambush against someone, implying malicious surveillance rather than neutral observation.
+    Domain: DISCOURSE_NAMES > Names of Persons and Places
+    Glosses: eng: I-will-lurk, they-lie-in-wait | spa: acechan, acecharé | fra: Assyrie, [ישור] | deu: Assyrien, [ישור]
+    Refs: Jer 5:26, Hos 13:7
+  Sense 3: "to sing" (1x)
+    Desc: To produce a song or chant, likely a variant or overlapping form related to שִׁיר (shir); attested in poetic contexts where the verb denotes musical vocalization rather than visual perception.
+    Domain: BODY_HEALTH > Sensory Events and States
+    Glosses: eng: he-sings | spa: Canta | fra: observer | deu: aufrichtig
+    Refs: Job 33:27
+
+=== H7991c ===
+Language: Hebrew, POS: Art | N-ms, Occurrences: 16, Senses: 3
+
+BDB excerpt: † III. שָׁלִישׁ n.m. adjutant or officer (best explained as third man (in chariot), v. especially HptBAS iv. 586 f. BenderZAW xxiii (1903), 19 WMMAs. u. Eur. 329; v. also KauM N., DPV, 1904, 10; doubted by Di Ex 14:7 Baenib. Buhl14);—abs. שׁ׳ of king’s personal attendant at court 2 K 7:2, 17, 19, sf., military officer of king, שָֽׁלִשֹׁה 2 K 9:25, שָֽׁלִישׁוֹ 15:25 (on abnormal—ָ v. Ges§ 93 xx Köii. 1. 133, 449, 495); pl. שָֽׁלִישִׁים Ez 23:15 + (sometimes שָֽׁלִשִׁם, etc.) v 23 Ex 14:7; 2 K 10:25(×2), + (Qr) 2 S 23:8 (> Kt שׁלשׁי) = 1 Ch 11:11; 12:19 (v 18 van d. H.; Kt in both, שׁלושׁים), re
+Senses:
+  Sense 1: "military officer, captain" (14x)
+    Desc: A high-ranking military officer or adjutant, originally the 'third man' on a war chariot (warrior alongside driver and shield-bearer), later generalized to denote a captain or commander in the royal m...
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: [ketiv], and-his-captains, and-officers | spa: [capitán-de-él], capitanes, capitán-de-él | fra: [ketiv], [שלישיו], et-le-officers | deu: [ketiv], [שלישיו], der-officer
+    Refs: Exod 14:7, Exod 15:4, 1Kgs 9:22, 2Kgs 7:2, 2Kgs 7:17
+  Sense 2: "the three, triad" (1x)
+    Desc: A group of three, or 'the three' as a numeral designation, reflecting the underlying root שׁלשׁ ('three') in a context where the numeral rather than the military rank is foregrounded.
+    Domain: QUANTITY_NUMBER > Number
+    Glosses: eng: the-three | spa: los-tres | fra: le-trois | deu: der-drei
+    Refs: 2Sam 23:8
+  Sense 3: "thirty (homographic reading)" (1x)
+    Desc: The numeral 'thirty,' a homographic form where the plural שְׁלִשִׁים is read as the cardinal number rather than as the plural of the officer title.
+    Domain: QUANTITY_NUMBER > Number
+    Glosses: eng: thirty | spa: (treinta) | fra: (שלישים) | deu: [(שלישים)]
+    Refs: Prov 22:20
+
+=== G0868 ===
+Language: Greek, POS: V-PMM-2S, Occurrences: 15, Senses: 3
+
+BDB excerpt: ἀφίστημι: causal in present and imperfect, in future ἀποστήσω, and aorist I ἀπέστησα, as also in aorist I middle (see. below):—put away, remove, keep out of the way, τὸ ἀσθενέστατον τοῦ στρατεύματοςRefs 5th c.BC+; of diseases, Refs 5th c.BC+hinder from.., Refs 5th c.BC+; ἀ. τὰς τῶν πολεμίων ἐπιβουλάς frustrate them, Refs 5th c.BC+; ἀ. τὸν ἄρχοντα depose him, Refs 5th c.BC+ —aorist middle, Ἀργείων δόρυ πυλῶν ἀπεστήσασθε remoued it from your own gates, Refs 5th c.BC+, having retired. __2 cause to revolt, of allies, Refs 5th c.BC+ __3 in geometrical constructions, cut off, Refs 5th c.AD+ __II wei
+Senses:
+  Sense 1: "depart or withdraw physically" (11x)
+    Desc: To leave, depart from, or withdraw from a place, person, or situation in a literal, spatial sense.
+    Domain: MOVEMENT > Linear Movement
+    Glosses: eng: Depart, departed, having-departed | spa: Apártate, Apártese, apartaos | fra: s'éloigner | deu: abfallen, entfernt-sich
+    Refs: Luke 2:37, Luke 4:13, Luke 13:27, Acts 5:38, Acts 12:10
+  Sense 2: "fall away in apostasy" (3x)
+    Desc: To depart from the faith, apostatize, or abandon one's religious commitment — a metaphorical and theological extension of departure.
+    Domain: MOVEMENT > Linear Movement
+    Glosses: eng: fall-away, falling-away, will-depart | spa: apartarse, apostatarán, se-apartan | fra: s'éloigner | deu: abfallen, entfernt-sich
+    Refs: Luke 8:13, 1Tim 4:1, Heb 3:12
+  Sense 3: "draw away or mislead others" (1x)
+    Desc: To cause others to depart or revolt, functioning as a transitive causative where the subject leads people away from their allegiance.
+    Domain: MOVEMENT > Linear Movement
+    Glosses: eng: drew-away | spa: hizo-apartarse | fra: s'éloigner | deu: entfernt-sich
+    Refs: Acts 5:37
+
+=== G1636 ===
+Language: Greek, POS: N-AFP, Occurrences: 15, Senses: 3
+
+BDB excerpt: ἐλαία, Attic dialect ἐλάα, ἡ, olive-tree, Refs 8th c.BC+; ἱερὴ ἐRefs 5th c.BC+ to run beyond the olives, which stood at the end of the Athenian racecourse, i.e. to go too far, Refs 5th c.BC+, ubi see Scholia; of the Indian Olea cuspidata, Refs 4th c.BC+ __2 variety of δάφνη Refs 1st c.BC+ __II olive, Refs 5th c.BC+ —Acc. to Grammars ἐλάα was the proper form in this sense, ἐλαία in the first; but ἐλάα is simply the Attic dialect form,Refs 3rd c.BC+ __III naevus on the skin, Melamp.Refs __IV ={δίφρου Κυρηναϊκοῦ μέρος}, Refs 5th c.AD+, the penultimate is long, Refs 5th c.BC+; but ἐλᾰῶν in Refs 1s
+Senses:
+  Sense 1: "olive tree (toponym: Mount of Olives)" (11x)
+    Desc: The olive tree as part of the fixed place name 'Mount of Olives' (to Oros ton Elaion), always in the genitive plural Elaion. This is the dominant NT usage (11x): Matt 21:1, 24:3, 26:30; Mark 11:1, 13:...
+    Domain: PLANTS_AGRICULTURE > Plants
+    Glosses: eng: Olives, of-Olives, olives | spa: Olivos, de-los-Olivos | fra: olivier | deu: Oelbaum, Ölberg
+    Refs: Matt 21:1, Matt 24:3, Matt 26:30, Mark 11:1, Mark 13:3
+  Sense 2: "olive tree (the plant itself)" (3x)
+    Desc: The olive tree as a living plant, used metaphorically or literally. In Rom 11:17,24 Paul uses the olive tree (elaia) as an extended metaphor for Israel, with wild and cultivated branches representing ...
+    Domain: PLANTS_AGRICULTURE > Plants
+    Glosses: eng: olive-tree, olive-trees | spa: olivo, olivos | fra: olivier | deu: Oelbaum
+    Refs: Rom 11:17, Rom 11:24, Rev 11:4
+  Sense 3: "olive (the fruit)" (1x)
+    Desc: The olive fruit produced by the olive tree. In James 3:12 the rhetorical question asks whether a fig tree can produce olives (elaias), using the fruit as an illustration of natural kinds and the impos...
+    Domain: PLANTS_AGRICULTURE > Plants
+    Glosses: eng: olives | spa: aceitunas | fra: olivier | deu: Oelbaum
+    Refs: Jas 3:12

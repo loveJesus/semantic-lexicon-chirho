@@ -5,9 +5,9 @@
 
 	let { data } = $props();
 
-	// Read ?sense= query param for sense-anchoring from Bible view
+	// Read ?sense_chirho= query param for sense-anchoring from Bible view
 	let targetSenseChirho = $derived(
-		$page.url.searchParams.get('sense') ? parseInt($page.url.searchParams.get('sense')!) : null
+		$page.url.searchParams.get('sense_chirho') ? parseInt($page.url.searchParams.get('sense_chirho')!) : null
 	);
 	let hasSenseAnchorChirho = $derived(targetSenseChirho !== null && !isNaN(targetSenseChirho!));
 	let totalSensesChirho = $derived((data.sensesChirho as Record<string, any>[]).length);
@@ -109,6 +109,13 @@
 			hrefChirho: `/bible-chirho/${keyChirho}.${rChirho.chapter_chirho}`
 		};
 	}
+
+	// First Bible reference for "Read in Bible" link (must be after formatRefLinkChirho)
+	let firstRefChirho = $derived(
+		(data.refsChirho as Record<string, any>[]).length > 0
+			? formatRefLinkChirho((data.refsChirho as Record<string, any>[])[0])
+			: null
+	);
 
 	let lChirho = $derived(data.lemmaChirho as Record<string, any>);
 	let isHebrewChirho = $derived(lChirho.language_chirho === 'heb' || lChirho.language_chirho === 'arc');
@@ -402,6 +409,9 @@
 		{/if}
 
 		<div class="ext-links-chirho">
+			{#if firstRefChirho}
+				<a class="ext-link-chirho" href={firstRefChirho.hrefChirho} style="background: var(--accent-chirho); color: #fff; border-color: var(--accent-chirho);">Read in Bible &rarr;</a>
+			{/if}
 			<a class="ext-link-chirho" href={strongsUrlChirho(lChirho.lemma_id_chirho)} target="_blank" rel="noopener">Strong's / BibleHub</a>
 			<a class="ext-link-chirho" href={blueletterUrlChirho(lChirho.lemma_id_chirho)} target="_blank" rel="noopener">Blue Letter Bible</a>
 		</div>
@@ -513,6 +523,22 @@
 			{/if}
 		</div>
 	{/each}
+
+	<!-- Related senses (other lemmas in the same semantic domain) -->
+	{#if (data.relatedSensesChirho as Record<string, any>[]).length > 0}
+		<hr class="divider-chirho" />
+		<div class="senses-header-chirho">Related Senses</div>
+		<div style="display: flex; flex-wrap: wrap; gap: 6px;">
+			{#each (data.relatedSensesChirho as Record<string, any>[]) as rsChirho}
+				<a href="/lemma-chirho/{rsChirho.lemma_id_chirho}?sense_chirho={rsChirho.ordinal_chirho}" style="display: inline-block; padding: 4px 10px; background: var(--surface-chirho); border: 1px solid var(--border-chirho); border-radius: 4px; font-size: 13px; font-family: 'Source Sans 3', sans-serif; text-decoration: none; color: var(--fg-chirho);">
+					<strong style="color: var(--accent-chirho);">{rsChirho.lemma_id_chirho}</strong>
+					<span style="color: var(--muted-chirho);">{rsChirho.ordinal_chirho}.</span>
+					{rsChirho.label_chirho || ''}
+					<span style="font-size: 11px; color: var(--muted-chirho);">({rsChirho.occurrence_count_chirho}&times;)</span>
+				</a>
+			{/each}
+		</div>
+	{/if}
 
 	<!-- BDB / Lexicon Reference (collapsible preview) -->
 	{#if hasBdbChirho}

@@ -1,0 +1,115 @@
+You are a biblical lexicographer composing glosses for a digital lexicon.
+For each lemma below, compose a JSON object. Separate objects with "---".
+
+Format for each:
+{
+  "lemma_id": "...",
+  "gloss_terse": "under 120 chars, concise definition covering the word's semantic range",
+  "gloss_readable": "2-5 sentences, 40-120 words. Don't start with 'This word'. Warm study-Bible footnote tone. Engaging, not dry.",
+  "senses": {
+    "1": "enriched 20-60 word description. Reference multilingual evidence when illuminating. Don't repeat the label verbatim.",
+    "2": "..."
+  }
+}
+
+Rules:
+- No markdown fences, just JSON objects separated by ---
+- Reference multilingual evidence naturally when it reveals something
+- gloss_readable should feel like a good study Bible footnote: helpful, clear, occasionally surprising
+- Each sense enrichment: how does the evidence support this sense? Mention 1-2 key passages when helpful.
+
+=== H4889 ===
+Language: Hebrew, POS: Art | N-ms, Occurrences: 11, Senses: 2
+
+BDB excerpt: † מַשְׁחִית n.[m.] ruin, destruction;—מ׳ abs. Je 5:26 + 10 times;—physical destruction Ez 5:16; 9:6; 21:36; 25:15; Ex 12:13 (P), 2 Ch 20:23; 22:4; בַּעַל מ׳ Pr 18:9 = destroyers; Dn 10:8 (disfigurement); הַר־מ׳ Je 51:25 (fig. of Bab. as destroyer), in 2 K 23:13 = mt. of corruption (where bamoth were, S. end of Mt. of Olives, poss. adapted from הַר־מִשְׁחָה so HoffmZAW ii (1882), 175 Benz Kit Bur; 𝔙 mons offensionis).—v. [שָׁחַת] Hiph. 1. Pt.
+Senses:
+  Sense 1: "destruction, ruin" (9x)
+    Desc: Destruction, ruin, devastation -- the abstract noun denoting physical or national annihilation. Used with preposition le- 'for destruction' in contexts of divine judgment (Ex 12:13; 2 Chr 20:23; 22:4;...
+    Domain: VIOLENCE_CONFLICT > Violence, Harm, Destroy, Kill
+    Glosses: eng: destruction, for-destruction, to-corruption | spa: a-destrucción, destrucción, para-destrucción | fra: [למשחית], [משחית], pour-destruction | deu: [למשחית], [משחית], fuer-destruction
+    Refs: Exod 12:13, 2Chr 20:23, 2Chr 22:4, Jer 5:26, Ezek 5:16
+  Sense 2: "the Destroyer (personified agent)" (2x)
+    Desc: The Destroyer -- used with the article as a personified or semi-personified agent of divine wrath. In Ex 12:23 (also 2 Sam 24:16 LXX variant) 'the LORD will not allow the Destroyer (ha-mashchit) to en...
+    Domain: VIOLENCE_CONFLICT > Violence, Harm, Destroy, Kill
+    Glosses: eng: the-Destroyer, the-destroyer | spa: destructor, la-destrucción | fra: [המשחית], le-Destroyer | deu: [המשחית], der-Destroyer
+    Refs: 2Kgs 23:13, Jer 51:25
+
+=== H5035a ===
+Language: Hebrew, POS: Art | N-mp, Occurrences: 11, Senses: 2
+
+BDB excerpt: I. נֵ֫בֶל n.m. Je 13:12 1. skin-bottle, skin; 2. jar, pitcher;—נֵ֫בֶל abs. 1 S 10:5 +; cstr. v 3 + (on נֶבֶל v. Baer 1 S 1, 24);— 1. skin of wine, נֵ֫בֶל יַיִן 1 S 1:24; 10:3 2 S 16:1, cf. also Je 13:12(×2); pl. נִבְלֵי יַיִן 1 S 25:18: fig. נִבְלֵי שָׁמַיִם Jb 38:37 i.e. clouds (‖ שְׁחָקִים). 2. earthen jar, pitcher: fig. of connexions of Eliakim כְּלֵי נְבָלִים Is 22:24; נִבְלֵיהֶם יְנַפֵּ֑צוּ Je 48:12 (‖ כֵּלִים יָרִוקוּ) in fig. of Moab (cf. ψ 2:9); נִבְלֵי־חֶרֶשׂ La 4:2 sim. of men of Judah (‖ מַעֲשֵׂה יְדֵי יוֹצֵר); sim. of destruction of Judah, שֵׁבֶר נֵ֫בֶל יוֹצְרִים Is 30:14.
+Senses:
+  Sense 1: "skin, wineskin, waterskin" (6x)
+    Desc: A container made from animal skin used for storing liquids such as wine or water. The multilingual glosses consistently use skin/leather container terms (mshk in Hindi, ziqq in Arabic, kiriba in Swahi...
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: and-a-skin-of, and-his-jars, and-skin-of | spa: odre-de, odres-de, y-odre-de | fra: et-outre, et-skin-de, et-un-skin-de | deu: [ונבלי], [ונבליהם], skin-von-
+    Refs: 1Sam 1:24, 1Sam 10:3, 1Sam 25:18, 2Sam 16:1, Job 38:37
+  Sense 2: "jar, vessel, jug" (5x)
+    Desc: An earthenware or clay container used for storage. The glosses point to ceramic vessels (jar, tinaja/vasija in Spanish, jarrah in Arabic, chungu/mtungi in Swahili), including a potter's vessel and gen...
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: as-vessels, jar, of-a-potters | spa: como-vasijas-de, los-odres, tinaja | fra: outre | deu: [הנבלים], [לנבלי], [נבל]
+    Refs: Isa 22:24, Isa 30:14, Jer 13:12, Jer 13:12, Lam 4:2
+
+=== H6175 ===
+Language: Hebrew, POS: Adj-mp, Occurrences: 11, Senses: 2
+
+BDB excerpt: † עָרוּם adj. crafty, shrewd, sensible;— 1. crafty, ע׳ as pred., of serpent Gn 3:1; pl. as subst. מַחְשְׁבוֹת עֲרוּמִים Jb 5:12, לְשׁוֹן ע׳ 15:5. 2. in Pr, in good sense (opp. אֱוִיל, כְּסִיל, פֶּתִי); as attrib. אָדָם עָרוּם Pr 12:23 a shrewd or sensible man; ע׳ as subst. = id., v 16; 13:16, so חָכְמַת ע׳ 14:8; = prudent man 14:15; 22:3; 27:12; pl. עֲרוּמִים 14:18.
+Senses:
+  Sense 1: "prudent, shrewd (positive)" (8x)
+    Desc: Describing a person who exercises wise caution, forethought, and practical intelligence — a positive quality commended in Proverbs. Arabic 'ذَكِيٌّ' (dhakiyy, intelligent), Korean '슬기롭다/슬기로운' (seulgir...
+    Domain: MENTAL_LIFE > Understand
+    Glosses: eng: a-prudent-one, but-the-prudent, is-prudent | spa: Astuto, Prudente, prudente | fra: et-prudent, prudent | deu: klug, und-klug
+    Refs: Prov 12:16, Prov 12:23, Prov 13:16, Prov 14:8, Prov 14:15
+  Sense 2: "crafty, cunning (negative)" (3x)
+    Desc: Describing a person who uses cleverness deceptively or manipulatively — a negative quality associated with the serpent (Gen 3:1) and the wicked in Job. Arabic 'الْمُحْتَالِينَ/الماكِرينَ' (al-muḥtālīn...
+    Domain: MENTAL_LIFE > Understand
+    Glosses: eng: crafty, the-crafty | spa: astuta, astutos | fra: prudent, rusé | deu: klug, listig
+    Refs: Gen 3:1, Job 5:12, Job 15:5
+
+=== H6363a ===
+Language: Hebrew, POS: Conj-w | N-msc, Occurrences: 11, Senses: 2
+
+BDB excerpt: † פֶּ֫טֶר n.[m.] that which separates, first opens;—cstr., פּ׳ רֶחֶם i.e. firstborn, of man and beast, Ez 20:26; Ex 13:12, 15; 34:19; Nu 18:15; appos. בְּכוֹר Ex 13:2 Nu 3:12; רֶחֶם om. Ex 13:12, 13; 34:19, 20.
+Senses:
+  Sense 1: "opener of" (7x)
+    Desc: opener of (7 occurrences across 2 original clusters)
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: opener-of, opener-of- | spa: abridor-de, primogénito-de, que-abre | fra: opener-de, opener-de-, ouverture | deu: [פטר], opener-von, opener-von-
+    Refs: Exod 13:2, Exod 13:12, Exod 13:12, Exod 13:13, Exod 13:15
+  Sense 2: "firstborn of" (4x)
+    Desc: firstborn of, and firstborn of (4 occurrences across 2 original clusters)
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: and-firstborn-of, firstborn-of | spa: Y-primogénito-de, primogénito-de | fra: et-premier-né-de, premier-né-de | deu: Erstgeborener-von, und-Erstgeborener-von
+    Refs: Exod 34:19, Exod 34:19, Exod 34:20, Num 18:15
+
+=== H6616 ===
+Language: Hebrew, POS: Conj-w | N-msc | 2ms, Occurrences: 11, Senses: 2
+
+BDB excerpt: † פָּתִיל n.m.Ju 16:9 cord, thread (twisted);—abs. פ׳ Nu 19:15; cstr. פְּתִיל Ju 16:9 +; sf. פְּתִילֶךָ֑ Gn 38:18; pl. פְּתִילִים v 25, פְּתִילִם Ex 39:3;—cord (from which seal was hung) Gn 38:18, 25 (J), פ׳ נְעֹרֶת Ju 16:9 (sim.), פ׳ פִּשְׁתִּים Ez 40:3 (as measuring line); פ׳ תְּכֵלֶת, for fastening, Ex 28:28, 37; 39:21, 31; Nu 15:38, cf. פָּתִיל alone 19:15 (perhaps gloss, v. Di); threads (of gold) in ephold Ex 39:3 (all P).
+Senses:
+  Sense 1: "cord, string" (9x)
+    Desc: A twisted cord or string used for binding, fastening, or tying objects together. Used of the blue cord (פְּתִיל תְּכֵלֶת) attached to the priestly breastpiece (Exodus 28:28, 28:37, 39:21, 39:31), the ...
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: and-cord-of-, and-cord-your, and-the-cords | spa: con-cordón-de, cordel, cordón-de | fra: avec-cordon-de, cord, cordon-de | deu: Faeden, Schnur-von, [ופתיל]
+    Refs: Gen 38:18, Gen 38:25, Exod 28:28, Exod 28:37, Exod 39:3
+  Sense 2: "thread (fine strand)" (2x)
+    Desc: A thin strand or filament, distinguished from the thicker 'cord' sense by its use in contexts emphasizing thinness, fragility, or fine textile work. In Numbers 15:38 the thread of blue (פְּתִיל תְּכֵל...
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: a-thread-of, thread-of | spa: cordón-de, hilo-de | fra: thread-de, un-fil-de | deu: ein-thread-von, thread-von
+    Refs: Num 15:38, Judg 16:9
+
+=== H6631 ===
+Language: Hebrew, POS: N-mpc | 3fs, Occurrences: 11, Senses: 2
+
+BDB excerpt: † [צֶאֱצָא] n.m. Jb 27:14 only pl., issue, offspring, produce (Nö ZMG 1886, 725 comps. ضِئْضِئٌ origin, root, stock)— 1. offspring of men, abs. הַצֶּאֱצָאִים וְהַצְּפִעוֹת Is 22:24; elsewhere only Is 2, 3 and Job: cstr. צֶאֱצָאֵי מֵעֶיךָ Is 48:19 (‖ זַרְעֲךָ); sf. צֶאֱצָאַי Jb 31:8, צֶאֱצָאֶיךָ 5:25 (‖ זַרְעֲךָ), Is 44:3 (‖ id.); צֶאֱצָאָיו Jb 27:14 (‖ בָּנָיו); צֶאֱצָאֵיהֶם 21:8 (‖ זַרְעָם), Is 61:9 (‖ id.), 65:23. 2. produce of earth, sf. תֵּבֵל וְכָל־צֶאֱצָאֶ֑יהָ Is 34:1; הָאָרֶץ וְצ׳ 42:5.
+Senses:
+  Sense 1: "offspring, descendants (of persons)" (9x)
+    Desc: The primary sense of human offspring, descendants, or progeny. Arabic ذُرِّيَّة ('progeny/descendants') appears consistently across S129341, S129342, S129344, S129345, S129346. Korean 자손 ('descendants...
+    Domain: PEOPLE_KINSHIP > Kinship Terms
+    Glosses: eng: and-his-offspring, and-my-offspring, and-the-offspring-of | spa: los-vástagos, tus-vástagos, y-mis-descendientes | fra: et-leur-descendant-eux, et-mon-descendant-moi, et-rejeton | deu: [הצאצאים], [וצאצאי], [וצאצאיהם]
+    Refs: Job 5:25, Job 21:8, Job 27:14, Job 31:8, Isa 22:24
+  Sense 2: "produce, growth (of the earth)" (2x)
+    Desc: A distinct sense referring to the produce or growth of the land/earth rather than human descendants. Arabic نَبَاتَاتِهَا ('its plants/vegetation') in both S129343 and S129347 clearly distinguishes th...
+    Domain: PLANTS_AGRICULTURE > Plants
+    Glosses: eng: and-its-offspring, its-offspring | spa: lo-que-brota-de-ella, y-sus-productos | fra: et-rejeton, rejeton | deu: [וצאצאיה], [צאצאיה]
+    Refs: Isa 34:1, Isa 42:5

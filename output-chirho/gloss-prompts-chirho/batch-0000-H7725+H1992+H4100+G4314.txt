@@ -1,0 +1,200 @@
+You are a biblical lexicographer composing glosses for a digital lexicon.
+For each lemma below, compose a JSON object. Separate objects with "---".
+
+Format for each:
+{
+  "lemma_id": "...",
+  "gloss_terse": "under 120 chars, concise definition covering the word's semantic range",
+  "gloss_readable": "2-5 sentences, 40-120 words. Don't start with 'This word'. Warm study-Bible footnote tone. Engaging, not dry.",
+  "senses": {
+    "1": "enriched 20-60 word description. Reference multilingual evidence when illuminating. Don't repeat the label verbatim.",
+    "2": "..."
+  }
+}
+
+Rules:
+- No markdown fences, just JSON objects separated by ---
+- Reference multilingual evidence naturally when it reveals something
+- gloss_readable should feel like a good study Bible footnote: helpful, clear, occasionally surprising
+- Each sense enrichment: how does the evidence support this sense? Mention 1-2 key passages when helpful.
+
+=== H7725 ===
+Language: Hebrew, POS: Conj-w | V-Hifil-ConjPerf-3ms, Occurrences: 1074, Senses: 8
+
+BDB excerpt: שׁוּב1056 vb. turn back, return (NH id.; Hiph. in MI 8 f. 12; Sab. תֿוב, התֿב, especially requite Os ZMG xix (1865), 198 SabDenkm No. 20, l. 1 HomChrest. 122 CIS iv. 81, 1. 9, etc.; Arabic ثَابَ return, so Aramaic תּוּב, ܬܒ );— Qal685 Pf. 3 ms. שָׁב Gn 18:33 +, 3 fs. שָׁ֫בָה Ru 1:15 +, וְשָׁבַת consec. †Ez 46:17 (Ges§ 72 o, but Co Toy Krae וְשָׁבָה), 2 ms. שַׁבְתָּ ψ 85:2, etc.; Impf. 3 ms. יָשׁוּב Ho 11:5 + often, יָשֻׁב ψ 146:4; La 3:3, juss. יָשֹׁב Ju 7:3 +, וַיָּ֫שָׁב Gn 26:18 +; 3 fpl. תָּשֹׁבְןָ Ez 16:55(×2), תְּשֻׁבֶינָה v 55, etc.; Imv. ms. שׁוּב Gn 31:3 +, שֻׁב Ex 4:19; 1 K 18:43, שׁו
+Senses:
+  Sense 1: "to return, come/go back (Qal)" (874x)
+    Desc: Physical or spatial return; coming or going back to a place, person, or prior state — the basic Qal meaning of שׁוּב covering all inflections (perfect, imperfect, imperative, infinitive, participle).
+    Domain: MOVEMENT > Linear Movement
+    Glosses: eng: and-he-returned, and-returned, and-she-returned | spa: Y-volvió, y-volvió | fra: et-elle-retourna, et-il-retourna, et-retourna | deu: und-er-kehrte-zurueck, und-kehrte-zurueck, und-kehrte-zurück
+    Refs: Gen 8:9, Gen 22:19, Gen 26:18, Gen 31:55, Gen 33:16
+  Sense 2: "to bring back, restore (Hifil)" (151x)
+    Desc: Causative return — causing someone or something to return, bringing back, restoring to a former state or place; the primary Hifil meaning of שׁוּב.
+    Domain: MOVEMENT > Linear Movement
+    Glosses: eng: (I-will-restore), I-will-bring-back, I-will-restore | spa: (haré-volver), Haznos-volver, Para-hacer-volver | fra: je-ramènerai, le-retourner, retourner | deu: du-soll-kehre-zurueck, du-soll-zurueckkehren, ich-bringe-zurueck
+    Refs: Gen 48:21, Num 22:8, Num 25:11, Deut 22:1, Deut 24:13
+  Sense 3: "to answer, reply (Hifil)" (15x)
+    Desc: Returning a word — the Hifil of שׁוּב used idiomatically to mean 'answer' or 'reply', i.e., bringing back a response or message to someone.
+    Domain: MOVEMENT > Linear Movement
+    Glosses: eng: I-will-answer-him, and-answer-me, answer-me | spa: le-responderé, los-que-responden, me-devolvió | fra: apporta-back-moi, et-retourner-moi, retourner | deu: kehrte-zurueck, returns, und-kehrte-zurueck
+    Refs: Judg 5:29, Ruth 1:21, 2Sam 3:11, 1Kgs 12:6, Esth 4:13
+  Sense 4: "to turn back, repel, repay (Hifil)" (14x)
+    Desc: Turning back or repelling — the Hifil of שׁוּב used for repulsing enemies, averting wrath, or repaying/requiting someone; causing something to go back upon someone.
+    Domain: MOVEMENT > Linear Movement
+    Glosses: eng: I-will-return, I-will-turn-away, Repay | spa: Dales-retribución, Y-pagaba, Y-retribuyó | fra: et-Il-retourna, et-habiter, et-il-rendered | deu: ich-wird-wende-weg, ich-wird-zurueckkehren, kehrte-zurueck
+    Refs: Deut 32:41, 2Sam 22:25, 1Kgs 2:16, 1Kgs 2:20, 1Kgs 2:20
+  Sense 5: "to turn away, apostatize (Qal)" (7x)
+    Desc: Turning away from God or from a right path — apostasy or defection, often with מן (from) or מאחרי (from after), denoting spiritual or relational departure.
+    Domain: MOVEMENT > Linear Movement
+    Glosses: eng: (you-will-turn), he-turned-back, turn | spa: os-volviereis, os-volvéis, se-apartó | fra: il-se-tourna-en-arrière, retourner, tourner | deu: du-wende-weg, du-wenden-zurueck, er-wandte-zurueck
+    Refs: Josh 22:18, Josh 23:12, 1Sam 15:11, 1Kgs 9:6, 2Chr 7:19
+  Sense 6: "?" (6x)
+    Domain: MOVEMENT > Linear Movement
+    Glosses: eng: return-, turn | spa: Volved, Volved,, Volveos | fra: retourner | deu: kehrte-zurueck, sie-kehrten-zurueck, umkehren
+    Refs: Job 6:29, Prov 1:23, Ezek 14:6, Ezek 18:30, Ezek 33:11
+  Sense 7: "to restore, refresh (Polel/Piel)" (6x)
+    Desc: Intensive restoration — the Polel or Piel stem of שׁוּב expressing intensive or thorough restoration, as in 'he restores my soul' (Psalm 23:3).
+    Domain: MOVEMENT > Linear Movement
+    Glosses: eng: and-I-will-bring-back, and-I-will-turn-you-about, restorer | spa: Y-te-haré-volver,, Y-te-volveré, para-hacer-volver | fra: et-retourner, retourner | deu: kehrte-zurueck, umkehren, und-umkehren
+    Refs: Isa 49:5, Isa 58:12, Jer 50:19, Lam 1:16, Ezek 38:4
+  Sense 8: "?" (1x)
+    Domain: MOVEMENT > Linear Movement
+    Glosses: eng: the-returned | spa: la-devuelta | fra: le-retourna | deu: der-kehrte-zurueck
+    Refs: Num 5:8
+
+=== H1992 ===
+Language: Hebrew, POS: Prep | Pro-3mp, Occurrences: 827, Senses: 8
+
+BDB excerpt: הֵ֫מָּה and הֵם (without appreciable distinction in usage, except prob. in so far as the longer or shorter form was better adapted to the rhythm of particular sentences: on the whole הֵמָּה (alone) is somewhat more freq. than הֵם, הָהֵם on the contrary is said regularly, הָהֵמָּה occurring only 12 times, viz. Nu 9:7 (P), Je 14:15 Zc 14:15, and in the phr. בַּ(הַ)יָּמִים הָהֵמָּה 2 K 18:4 Je 3:16, 18; 5:18; 50:4; Jo 3:2; 4:1; Zc 8:23; Ne 13:15, though בַּיָּמִים הָהֵם is much more common) pron. 3 pl. masc. (הֵמָּה used incorrectly for the fem. Zc 5:10; Ru 1:22; Ct 6:8), fem. הֵ֫נָּה [NH also הֵ
+Senses:
+  Sense 1: "they (independent pronoun)" (497x)
+    Desc: Third-person plural independent pronoun used as subject or predicate ('they', 'they are'), including conjunctive forms ('and they', 'but they') and parenthetical/ketiv-qere variants.
+    Domain: DISCOURSE_NAMES > Discourse Referentials
+    Glosses: eng: are-they, they | spa: ellos | fra: ils, sont-ils | deu: gehören, gehören-sie, sie
+    Refs: Gen 3:7, Gen 6:4, Gen 7:14, Gen 14:24, Gen 25:16
+  Sense 2: "to/for them (dative)" (146x)
+    Desc: With preposition lamed expressing dative, benefactive, or directional sense ('to them', 'for them', 'belonging to them', 'on them', 'among them', 'against them'), including conjunctive forms.
+    Domain: DISCOURSE_NAMES > Discourse Referentials
+    Glosses: eng: for-them, to-them | spa: a-ellos, con-ellos, para-ellos | fra: zu-ils, à-eux | deu: zu-ihnen, zu-sie
+    Refs: Lev 4:20, Num 18:24, Num 26:62, Deut 3:20, Deut 7:5
+  Sense 3: "from/of them (separative)" (99x)
+    Desc: With preposition min expressing source, separation, or partitive sense ('from them', 'of them', 'more than them'), including conjunctive forms ('and from them').
+    Domain: DISCOURSE_NAMES > Discourse Referentials
+    Glosses: eng: by-them, from-them, of-them | spa: de-ellos | fra: d'eux, de-eux, par-eux | deu: durch-ihnen, für-sie, von-ihnen
+    Refs: Gen 11:6, Lev 11:22, Lev 11:32, Lev 11:33, Lev 13:58
+  Sense 4: "those (demonstrative)" (58x)
+    Desc: Used with the article as a demonstrative pronoun or adjective meaning 'those', 'the-those', including both plural and singular feminine demonstrative forms.
+    Domain: DISCOURSE_NAMES > Discourse Referentials
+    Glosses: eng: the-those | spa: aquellas, aquellos, esos | fra: le-ces | deu: der-jene, jenen
+    Refs: Gen 6:4, Exod 2:11, Exod 2:23, Num 9:7, Num 14:38
+  Sense 5: "for themselves (reflexive)" (16x)
+    Desc: With preposition lamed in reflexive or self-benefactive sense ('for themselves', 'to themselves'), including conjunctive forms ('and for themselves').
+    Domain: DISCOURSE_NAMES > Discourse Referentials
+    Glosses: eng: and-for-themselves, for-themselves, to-themselves | spa: para-ellos, para-sí, sobre-ellos | fra: et-zu-ils, pour-eux-mêmes, zu-ils | deu: fuer-sich-selbst, ihnen, und-zu-sie
+    Refs: Josh 8:27, Josh 11:14, 1Sam 3:13, 1Kgs 14:23, 2Chr 35:14
+  Sense 6: "like/as them (comparative)" (6x)
+    Desc: With preposition kaph expressing comparison or similarity ('like them', 'as them'), including conjunctive form ('and as them').
+    Domain: DISCOURSE_NAMES > Discourse Referentials
+    Glosses: eng: and-as-them, as-them, like-them | spa: como-ellas, como-ellos, y-como-ellos | fra: comme-eux, comme-eux-eux, comme-ils | deu: und-wie-ihnen, wie-ihnen, wie-sie
+    Refs: 2Sam 24:3, 2Sam 24:3, 1Chr 21:3, 2Chr 9:11, Eccl 9:12
+  Sense 7: "in/with them (locative-instrumental)" (3x)
+    Desc: With preposition beth expressing location, instrument, or means ('in them', 'with them', 'by them').
+    Domain: DISCOURSE_NAMES > Discourse Referentials
+    Glosses: eng: by-them, in-them, with-them | spa: con-ellas, en-ellos, por-ellas | fra: avec-eux, en-eux, ils | deu: Vieh, in-ihnen, mit-ihnen
+    Refs: Exod 30:4, Exod 36:1, Hab 1:16
+  Sense 8: "it/she (3fs variant)" (2x)
+    Desc: Third-person feminine singular form used as a ketiv/qere variant or archaic spelling, functioning as 'she' or 'it was'.
+    Domain: DISCOURSE_NAMES > Discourse Referentials
+    Glosses: eng: (she), [ketiv:it-was] | spa: (ella), [es] | fra: eux-elle, ils | deu: sie
+    Refs: Job 31:11, Ps 73:16
+
+=== H4100 ===
+Language: Hebrew, POS: Interrog, Occurrences: 749, Senses: 8
+
+BDB excerpt: מָה rarely מָה־ (e.g. Gn 31:43; Jos 22:16; Ju 8:1), מַה־, מַה·, מֶה, מַ· (†Ex 4:2; Is 3:15; Mal 1:13; 1 Ch 15:13; 2 Ch 30:3), מָ (only in מָהֵם †Ez 8:6 Kt., Qr. מָה הֵם)—on the distinction in the use of these forms, see Ges§ 37—pron. interrog. and indef. what? how? aught; used of things, as מִי of persons (Aramaic ܡܳܐ, מָא, Arabic مَا; prob. apoc. from a longer form with n or nt, Assyrian minû (DlHWB 417 f.), Ethiopic ምንት: ment; cf. WCG 123 ff. Köii. 368):— 1. interrog. what? a. in a direct question, before either verbs or nouns Gn 4:10 מֶה עשׂית what hast thou done? 15:2 מה־תתן־לי what wilt t
+Senses:
+  Sense 1: "what (interrogative pronoun)" (654x)
+    Desc: Interrogative pronoun asking about the identity or nature of something: 'what?', 'what is it?'
+    Domain: DISCOURSE_NAMES > Discourse Referentials
+    Glosses: eng: what, what- | spa: Qué, qué, qué- | fra: quoi, quoi- | deu: was, was-
+    Refs: Gen 2:19, Gen 3:13, Gen 4:10, Gen 12:18, Gen 15:2
+  Sense 2: "in/by/with what (instrumental)" (27x)
+    Desc: Interrogative pronoun combined with preposition ב asking about the instrument, means, or location: 'by what?', 'with what?', 'in what?'
+    Domain: DISCOURSE_NAMES > Discourse Referentials
+    Glosses: eng: With-what, and-in-what, at-what | spa: con-qué, en-lo-que, en-qué | fra: dans-quoi, dans-quoi?, et-dans-quoi | deu: Hoehe, durch-Krieg, in-was
+    Refs: Gen 15:8, Exod 22:27, Exod 33:16, Judg 6:15, Judg 16:5
+  Sense 3: "how (manner)" (25x)
+    Desc: Interrogative adverb asking about the manner or way in which something is done: 'how?', 'in what way?'
+    Domain: PROPERTIES_RELATIONS > Comparison
+    Glosses: eng: How, and-how, and-how- | spa: Por-qué-, Qué, cuán- | fra: comment, et-quoi, quoi | deu: Krieg, Krieg-, und-was
+    Refs: Gen 28:17, Num 23:8, Num 23:8, Num 24:5, 1Sam 10:27
+  Sense 4: "how! (exclamatory degree)" (18x)
+    Desc: Exclamatory use expressing surprise or emphasis about the degree or extent of a quality: 'how great!', 'how wonderful!'
+    Domain: PROPERTIES_RELATIONS > Comparison
+    Glosses: eng: how, how- | spa: Cuán, Cuán-, Qué | fra: Que, quoi, quoi? | deu: Krieg, was
+    Refs: Job 6:25, Ps 31:19, Ps 36:7, Ps 39:4, Ps 84:1
+  Sense 5: "how many/much (quantity)" (12x)
+    Desc: Interrogative asking about quantity, number, duration, or frequency: 'how many?', 'how long?', 'how often?'
+    Domain: QUANTITY_NUMBER > Quantity
+    Glosses: eng: how-long, how-many, how-many-times | spa: Cuántas-veces, cuánta, cuántas | fra: comme-quoi, comme-quoi?, comment-beaucoup | deu: Krieg, wie-viel, wie-viele
+    Refs: Gen 47:8, 2Sam 19:34, 1Kgs 22:16, 2Chr 18:15, Job 7:19
+  Sense 6: "?" (6x)
+    Domain: DISCOURSE_NAMES > Discourse Referentials
+    Glosses: eng: [ketiv:who], anything, what | spa: [Qere], [ketiv], lo-que | fra: quoi | deu: was
+    Refs: 2Sam 18:22, 2Sam 18:23, Job 13:13, Prov 9:13, Isa 3:15
+  Sense 7: "when (temporal)" (5x)
+    Desc: Interrogative adverb asking about the time of an event: 'when?', 'until when?'
+    Domain: TIME > Time
+    Glosses: eng: long, when | spa: cuándo, ¿qué? | fra: quand, quoi | deu: Krieg, als
+    Refs: Num 24:22, Ps 4:2, Ps 74:9, Ps 79:5, Ps 89:46
+  Sense 8: "why (reason/cause)" (2x)
+    Desc: Interrogative adverb asking about the reason or cause of something: 'why?', 'for what reason?', 'on what account?'
+    Domain: DISCOURSE_NAMES > Discourse Referentials
+    Glosses: eng: and-for-what, what-account | spa: por-qué, y-para-qué | fra: et-pour-quoi, quoi | deu: Krieg, und-wozu-
+    Refs: Gen 25:32, Ps 10:13
+
+=== G4314 ===
+Language: Greek, POS: Prep, Occurrences: 705, Senses: 8
+
+BDB excerpt: πρός, preposition, expressing direction, __A on the side of, in the direction of, hence with genitive, dative, and accusative, from, at, to: Epic dialect also προτί and ποτί, in Refs 8th c.BC+ usually with accusative, more rarely with dative, and each only once with genitive, Refs 8th c.BC+:—dialectal forms: Doric dialectποτί (which see) and ποί, but Cretan dialect πορτί Refs, Argive προτ(ί) Refs 7th c.BC+ πός Refs 4th c.BC+., also sometimes in Asia Minor in compounds, see at {ποσάγω},{ποσφέρω}; Aeolic dialect πρός Refs 7th c.BC+; πρές Refs 6th c.AD+; Pamphylian περτ (ί) Refs (With προτί, πρός
+Senses:
+  Sense 1: "direction: to, toward" (520x)
+    Desc: Indicates movement, direction, or orientation toward a person, place, or goal, the core spatial sense of πρός with accusative.
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: to, to- | spa: a, hacia | fra: vers- | deu: zu
+    Refs: Matt 2:12, Matt 3:5, Matt 3:13, Matt 3:14, Matt 3:15
+  Sense 2: "purpose: for, in order to" (113x)
+    Desc: Marks the purpose, aim, or intended beneficiary of an action, often translatable as 'for' or 'in order to'.
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: for, for-, to | spa: Para, hacia, para | fra: vers- | deu: zu, zu-
+    Refs: Matt 5:28, Matt 6:1, Matt 13:30, Matt 23:5, Matt 26:12
+  Sense 3: "association: with, in company of" (39x)
+    Desc: Expresses accompaniment, association, or being in the presence of someone, akin to French 'chez' or 'auprès de'.
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: toward, toward-, with | spa: con, con-, junto-a | fra: vers- | deu: zu, zu-
+    Refs: Matt 13:56, Matt 26:18, Mark 1:27, Mark 6:3, Mark 8:16
+  Sense 4: "proximity: at, near, beside" (18x)
+    Desc: Denotes static location at or near someone or something, indicating proximity without movement.
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: at, at-, toward | spa: a, alrededor, ante | fra: vers- | deu: zu, zu-
+    Refs: Matt 3:10, Luke 3:9, Luke 10:39, Luke 16:20, John 11:32
+  Sense 5: "distributive: among" (8x)
+    Desc: Indicates distribution or relationship within a group, translatable as 'among' or 'between'.
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: against, among, to | spa: entre, hacia | fra: vers- | deu: zu
+    Refs: Luke 20:5, Luke 20:14, Luke 20:19, Luke 22:23, Luke 23:12
+  Sense 6: "opposition: against" (3x)
+    Desc: Indicates hostility, opposition, or adverse orientation toward someone or something.
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: against, against- | spa: contra, hacia | fra: vers- | deu: zu, zu-
+    Refs: Matt 4:6, Mark 12:12, Luke 4:11
+  Sense 7: "conformity: according to" (2x)
+    Desc: Expresses conformity or correspondence to a standard, translatable as 'according to' or 'in accordance with'.
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: according-to | spa: conforme-a | fra: vers- | deu: zu, zu-
+    Refs: Luke 12:47, 2Cor 5:10
+  Sense 8: "causal: because of" (2x)
+    Desc: Marks the cause or reason for an action or state, translatable as 'because of' or 'on account of'.
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: For, because-of | spa: Por, por | fra: vers- | deu: zu, zu-
+    Refs: Matt 19:8, Mark 10:5

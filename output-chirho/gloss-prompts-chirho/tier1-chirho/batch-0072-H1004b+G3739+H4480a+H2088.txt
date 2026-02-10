@@ -1,0 +1,121 @@
+You are a biblical lexicographer composing glosses for a digital lexicon.
+For each lemma below, compose a JSON object. Separate objects with "---".
+
+Format for each:
+{
+  "lemma_id": "...",
+  "gloss_terse": "under 120 chars, concise definition covering the word's semantic range",
+  "gloss_readable": "2-5 sentences, 40-120 words. Don't start with 'This word'. Warm study-Bible footnote tone. Engaging, not dry.",
+  "senses": {
+    "1": "enriched 20-60 word description. Reference multilingual evidence when illuminating. Don't repeat the label verbatim.",
+    "2": "..."
+  }
+}
+
+Rules:
+- No markdown fences, just JSON objects separated by ---
+- Reference multilingual evidence naturally when it reveals something
+- gloss_readable should feel like a good study Bible footnote: helpful, clear, occasionally surprising
+- Each sense enrichment: how does the evidence support this sense? Mention 1-2 key passages when helpful.
+
+=== H1004b ===
+Language: Hebrew, POS: Prep-b | N-msc | 3fs, Occurrences: 2052, Senses: 4
+
+BDB excerpt: בַּ֫יִת2034 n.m. Dt 8:12 house (Ph. בת, MI. בת, sf. ביתה, Arabic بَيْتٌ, Aramaic בַּיְתָא, ܒܰܝܬܳܐ, Assyrian bîtu, COTGloss., Sab. בית, בת, fortress DHMZMG 1883, 387; temple Hal257 DHMZMG 1876, 697, Ethiopic ቤት: Palm. in בת עלמא, בת מקברתא sepulchre Vog32, 64 al.; etym. dub.; Thes √ בות, Aramaic בּוּת, ܒܳܬ spend the night, Arabic بَاتَ, Ethiopic ቤተ: but this perhaps denom., & בית from √ ל״י c. ת afform. cf. Sta§ 187 a)—abs. בַּיִת Ex 12:30 +; בָּ֑יִת Gn 33:17 +; בַּ֫יְתָה (ָה loc.) ψ 68:7 +; cstr. בֵּית Gn 12:15 +; sf. בֵּיתִי Gn 15:2 +; בֵּיתְךָ Gn 7:1 +, etc.; הַבַּ֫יְתָה, בַּיְתָה (in) to th
+Senses:
+  Sense 1: "house, dwelling, building" (2015x)
+    Desc: A physical structure used as a residence, shelter, or meeting place — including singular and plural forms, all pronominal suffixes and prepositional combinations; Arabic بَيْت (bayt), Korean 집 (jip), ...
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: a-house-of, house-of, the-house-of | spa: casa-de, casa-de-, la-casa-de | fra: maison | deu: Haus
+    Refs: 1Chr 6:48, 1Chr 7:9, 1Chr 9:11, 1Chr 12:30, 1Chr 13:14
+  Sense 2: "inside, interior, inward" (21x)
+    Desc: Spatial or directional sense meaning 'inside, from within, inward' — a semantic extension from the enclosed space of a house to interiority itself; Arabic shifts to دَاخِل (dakhil — interior) rather t...
+    Domain: GEOGRAPHY_SPACE > Spacial Positions
+    Glosses: eng: from-inside, from-inside-of, from-the-house | spa: adentro, de-adentro, desde-dentro | fra: de-dedans, de-la-maison, de-à-l'intérieur | deu: aus-dem-Haus, innerhalb, inward
+    Refs: Gen 6:14, Exod 25:11, Exod 26:33, Exod 28:26, Exod 37:2
+  Sense 3: "household, family, dynasty" (15x)
+    Desc: The people belonging to or descended from a house, a family lineage or royal dynasty (e.g. 'house of David' = Davidic dynasty); Hindi distinctively renders this sense as घराना/घराने (gharana — clan, l...
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: House-of, The-house-of, and-house-of | spa: Casa-de, La-casa-de, casa-de- | fra: et-maison, maison, maison-de- | deu: Haus, Haus-von, das-Haus
+    Refs: Ps 114:1, Ps 115:10, Ps 115:12, Ps 115:12, Ps 135:19
+  Sense 4: "?" (1x)
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: to-the-temple | spa: del-templo | fra: à-la-maison | deu: zum-Haus
+    Refs: Neh 2:8
+
+=== G3739 ===
+Language: Greek, POS: Adv, Occurrences: 1415, Senses: 4
+
+BDB excerpt: ὅς, ἥ, ὅ, genitive οὗ, ἧς, οὗ, etc.; dative plural οἷς, αἷς, οἷς, etc.: Epic dialect forms, genitive ὅου (probably replacing Οο) in the phrases ὅου κλέος οὔ ποτ᾽ ὀλεῖται Refs 8th c.BC+; feminine ἕης Refs 8th c.BC+; elsewhere only ἧς Refs; dative plural οἷς, οἷσι, ᾗς, ᾗσι (never αἷς or αἷσι in Refs 8th c.BC+ — _pronoun_ used, __A as demonstrative by the side of οὗτος, ὅδε, and the Article ὁ, ἡ, τό: in post-Homeric Gr. this use survived only in a few special phrases. __B as a Relat. by the side of the Article ὅ, ἥ, τό (see. ὁ, ἡ, τό, c):—this demonstrative and Relat. pronoun must not be confound
+Senses:
+  Sense 1: "relative pronoun who/which/that" (1149x)
+    Desc: Standard definite relative pronoun introducing a relative clause with a specific antecedent, across all case, gender, and number inflections: who, which, whom, whose, that, to whom, of which, etc.
+    Domain: DISCOURSE_NAMES > Discourse Referentials
+    Glosses: eng: which | spa: con-que, la-cual, lo-que | fra: que, qui | deu: das, den, die
+    Refs: Matt 2:16, Matt 10:26, Matt 12:4, Matt 12:36, Matt 13:31
+  Sense 2: "whoever/whatever (indefinite relative)" (232x)
+    Desc: Indefinite or generalizing relative pronoun meaning 'whoever, whatever, whichever, whomever,' often used with ἄν or ἐάν to express a universal or conditional referent.
+    Domain: DISCOURSE_NAMES > Discourse Referentials
+    Glosses: eng: what, whatever | spa: lo-que | fra: que, qui | deu: das, die
+    Refs: Matt 10:27, Matt 11:4, Matt 13:17, Matt 14:7, Matt 16:19
+  Sense 3: "one/another, some/others (correlative-distributive)" (30x)
+    Desc: Correlative or distributive use in the pattern ὃς μέν...ὃς δέ meaning 'one...another' or 'some...others,' functioning as an indefinite pronoun rather than a relative.
+    Domain: DISCOURSE_NAMES > Discourse Referentials
+    Glosses: eng: one, some, which | spa: a-uno, otro, otros | fra: que, qui | deu: das, den, der
+    Refs: Matt 13:4, Matt 13:8, Matt 13:8, Matt 13:8, Matt 13:23
+  Sense 4: "?" (4x)
+    Domain: GEOGRAPHY_SPACE > Spacial Positions
+    Glosses: eng: where | spa: donde | fra: duquel, lequel, qui | deu: den, der, dessen
+    Refs: Luke 4:17, Luke 10:1, Luke 23:53, Rom 9:26
+
+=== H4480a ===
+Language: Hebrew, POS: Prep | 1cs, Occurrences: 1226, Senses: 4
+
+BDB excerpt: מִן־ and מִ·, before יְ (except Dn 12:2 2 Ch 20:11) contr. to מִי (as מִידֵי from מִיְּדֵי), before gutt. and ר, mostly מֵ, occasionally מִ (Ges§ 102, 1 R.; more fully Köii. 291 ff.), מִן before art. in all books much commoner than מֵ-; מִן before other words most freq. in Ch [51 times: elsewhere 47 times (Kö 292)]; poet. also מִנִּי, with the old י of the gen. (Ges§ 90. 3 a) †Ju 5:14(×2) Is 46:3(×2) ψ 44:11, 19; 68:32; 74:22; 78:2, 42; 88:10 + 19 times Jb, and in לְמִנִּי †Mi 7:12(×2), and מִנֵּי־ (on anal. of עֲדֵי, עֲלֵי) †Is 30:11(×2), prep. expressing the idea of separation, hence out of,
+Senses:
+  Sense 1: "source or separation" (1198x)
+    Desc: Indicates origin, source, or separation: 'from' a place, person, or thing, including movement away from or out of.
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: from, from- | spa: de, de-, desde | fra: de, de- | deu: aus-, vom-, von
+    Refs: Gen 2:6, Gen 2:9, Gen 2:22, Gen 3:17, Gen 4:10
+  Sense 2: "comparative (more than)" (22x)
+    Desc: Used in comparisons to express 'more than' or 'greater than,' the so-called min of comparison.
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: her, more-than, more-than- | spa: de, de-, de-nosotros | fra: de, plus-que, plus-que- | deu: als-, als-uns, für-uns
+    Refs: Gen 26:16, Exod 1:9, Num 13:31, Deut 1:28, Deut 11:23
+  Sense 3: "partitive (some of)" (3x)
+    Desc: Indicates a part taken from a whole: 'some of,' 'one of,' 'part of.'
+    Domain: DISCOURSE_NAMES > Discourse Referentials
+    Glosses: eng: of-it, of-them, than-them | spa: de-ella, de-ellos, que-ellos | fra: de-lui, que-eux, von-ils | deu: als-ihnen, von, von-sie
+    Refs: Deut 9:14, 2Chr 25:13, Job 4:12
+  Sense 4: "causal or concerning" (3x)
+    Desc: Expresses cause, reason, or concern: 'because of,' 'on account of,' 'for,' sometimes shading into 'upon' or 'over.'
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: for-me, for-us, over | spa: para-nosotros, sobre-, sobre-mí | fra: au-dessus, de-de, pour-nous | deu: fuer-uns, ueber, zu-von
+    Refs: 1Sam 17:50, 2Kgs 6:1, Ps 65:3
+
+=== H2088 ===
+Language: Hebrew, POS: Prep-k | Pro-ms, Occurrences: 1178, Senses: 4
+
+BDB excerpt: זֶה demonstr. pron. and adv. fem. זֹאת, once זֹאתה, Jer 26:6 Kt (also זֹה and זוֹ, q.v.); comm. זוּ (q.v.): this, here (the element ז = ذ = ܕ is widely diffused in the Semitic languages, as a demonstr. particle, often acquiring, like Engl. that, Germ. der, die, das, the force of a relative. Thus a. Ph. זֶ this (e.g. קבר ז this grave), also sometimes זן, f. זא, comm. אז (v. CIS I. i. 1:4, 5, 6, 12; 44:1; 88:2 etc.); Aramaic of Nineveh, Babylon, Têma, Egypt, זי as mark of the genit. [lit. that of] (CIS II. i. 1, 2, 3, 4, etc., 65, 67–71, 113, 114, 141, 142, etc.), זנה this (ib. 113:22; 145 C2), 
+Senses:
+  Sense 1: "this, this one (demonstrative)" (1059x)
+    Desc: Near demonstrative pronoun pointing to a person, thing, or situation in immediate context: 'this,' 'this one,' 'these.'
+    Domain: DISCOURSE_NAMES > Discourse Referentials
+    Glosses: eng: the-this, this | spa: el-este, esta, este | fra: ce, le-ce | deu: das-dies, diese, diesem
+    Refs: Gen 7:11, Gen 17:23, Gen 19:13, Gen 19:21, Gen 20:11
+  Sense 2: "from this, from here (source)" (90x)
+    Desc: With prepositional prefix מִן indicating spatial or figurative origin: 'from here,' 'from this side,' 'from this one,' often in directional pairs מִזֶּה...וּמִזֶּה 'on this side and on that side.'
+    Domain: DISCOURSE_NAMES > Discourse Referentials
+    Glosses: eng: from-here, from-this | spa: de-allí, de-aquí, treinta | fra: de-ce, de-ici | deu: von-diesem, von-dieser, von-hier
+    Refs: Gen 5:29, Gen 15:4, Gen 37:17, Gen 38:28, Gen 42:15
+  Sense 3: "in this, here (locative)" (19x)
+    Desc: With prepositional prefix בְּ or לְ indicating location or reference: 'in this,' 'here,' 'in this place,' 'for this,' 'to this one.'
+    Domain: GEOGRAPHY_SPACE > Spacial Positions
+    Glosses: eng: for-this, here, in-this | spa: aquí, de-esto, en-este | fra: dans-ce, dans-ce-lieu, dans-ceci | deu: an-diesem-Ort, hier, in-dies
+    Refs: Gen 38:21, Gen 38:22, Gen 48:9, Exod 24:14, Num 22:19
+  Sense 4: "like this, thus (comparative/manner)" (10x)
+    Desc: With prepositional prefix כְּ indicating comparison or manner: 'like this,' 'thus,' 'in this way,' often in the idiom כָּזֶה וְכָזֶה 'such and such.'
+    Domain: DISCOURSE_NAMES > Discourse Referentials
+    Glosses: eng: Is-like-this, and-like-that, and-thus | spa: como-esta, como-este, y-así | fra: ce, comme-ce, et-ainsi | deu: dieser, und-so, und-wie-dass
+    Refs: Gen 41:38, Judg 18:4, 2Sam 11:25, 1Kgs 14:5, Isa 56:12

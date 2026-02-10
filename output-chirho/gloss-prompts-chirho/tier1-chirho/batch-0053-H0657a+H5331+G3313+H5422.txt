@@ -1,0 +1,142 @@
+You are a biblical lexicographer composing glosses for a digital lexicon.
+For each lemma below, compose a JSON object. Separate objects with "---".
+
+Format for each:
+{
+  "lemma_id": "...",
+  "gloss_terse": "under 120 chars, concise definition covering the word's semantic range",
+  "gloss_readable": "2-5 sentences, 40-120 words. Don't start with 'This word'. Warm study-Bible footnote tone. Engaging, not dry.",
+  "senses": {
+    "1": "enriched 20-60 word description. Reference multilingual evidence when illuminating. Don't repeat the label verbatim.",
+    "2": "..."
+  }
+}
+
+Rules:
+- No markdown fences, just JSON objects separated by ---
+- Reference multilingual evidence naturally when it reveals something
+- gloss_readable should feel like a good study Bible footnote: helpful, clear, occasionally surprising
+- Each sense enrichment: how does the evidence support this sense? Mention 1-2 key passages when helpful.
+
+=== H0657a ===
+Language: Hebrew, POS: Prep-m | Adv, Occurrences: 43, Senses: 5
+
+BDB excerpt: † אֶ֫פֶס, אָ֑פֶס n.m. proposes ceasing, hence 1. end, extremity, only in the poet. phrase אַפְסֵי אֶרֶץ (ψ 59:14 א׳ הארץ) ends, extreme limits, of the earth, used especially hyperbolically: Dt 33:17 1 S 2:10 Mi 5:3 Je 16:19 ψ 2:8; 59:14; 72:8 (= Zc 9:10); + כָּל־ Is 45:22; 52:10b (= ψ 98:3b) ψ 22:28; 67:8 Pr 30:4. 2. Expressing non-existence: a. as subst. (mostly a rare poet. syn. of אַיִן): Is 34:12 and all his princes יִהְיוּ אָ֑פֶס shall become nought, 41:29; 41:12 יִהְיוּ כְאַיִן וּכְאֶפֶס; 40:17 מֵאֶפֶס וָתֹהוּ (‖ כְּאַיִן) as made of nought and worthlessness are they accounted by him, 41
+Senses:
+  Sense 1: "ends of (the earth)" (14x)
+    Desc: The extremities or farthest reaches of a geographical area, especially 'the ends of the earth' (אַפְסֵי־אָרֶץ), denoting the remotest boundaries of the world.
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: ends-of, ends-of-, from-ends-of- | spa: confines-de, confines-de-, desde-extremos-de | fra: ends-de, ends-de-, extrémité | deu: Ende, [אפסי], der-ends-von
+    Refs: Deut 33:17, 1Sam 2:10, Ps 2:8, Ps 22:27, Ps 59:13
+  Sense 2: "there is none, no one" (12x)
+    Desc: Predicative negation of existence, meaning 'there is not,' 'there is no one,' or 'none remains,' used to deny the presence or survival of persons or things.
+    Domain: PROPERTIES_RELATIONS > Affirmation, Negation
+    Glosses: eng: None, and-none, and-there-is-no | spa: Nadie, nadie, ningún | fra: est-là-pas, et-aucun, et-extrémité | deu: Ende, [אפס], [ואפסי]
+    Refs: Deut 32:36, 2Sam 9:3, 2Kgs 14:26, 2Kgs 14:26, Isa 5:8
+  Sense 3: "however, but, only" (7x)
+    Desc: Adversative or restrictive particle meaning 'however,' 'but,' 'except,' or 'only,' introducing a qualification or limitation to a preceding statement.
+    Domain: DISCOURSE_NAMES > Discourse Markers
+    Glosses: eng: and-but, except, however | spa: Sin-embargo, excepto, pero-solo | fra: cependant, et-mais, extrémité | deu: [אפס], jedoch, nur
+    Refs: Num 13:28, Num 22:35, Num 23:13, Deut 15:4, Judg 4:9
+  Sense 4: "without, for lack of" (6x)
+    Desc: Privative use (often with preposition בְּ) meaning 'without,' 'in the absence of,' or 'for lack of,' indicating deprivation or the absence of something expected.
+    Domain: PROPERTIES_RELATIONS > Relations
+    Glosses: eng: and-without, but-without, for-lack-of | spa: Cuando-faltan, nadie, sin | fra: dans-extrémité, dans-באפס, et-extrémité | deu: Ende, [באפס], [ובאפס]
+    Refs: Job 7:6, Prov 14:28, Prov 26:20, Isa 52:4, Isa 54:15
+  Sense 5: "nothing, nothingness" (4x)
+    Desc: Substantive use denoting non-existence, zero, or utter worthlessness, often in comparisons ('as nothing,' 'less than nothing') emphasizing total insignificance.
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: and-as-less-than-nothing, as-less-than-nothing, nothing | spa: menos-que-nada, nada, y-como-inexistencia | fra: de-extrémité, et-fin, extrémité | deu: Ende, und-Ende, von-Ende
+    Refs: Isa 34:12, Isa 40:17, Isa 41:12, Isa 41:29
+
+=== H5331 ===
+Language: Hebrew, POS: Art, Occurrences: 43, Senses: 5
+
+BDB excerpt: † I. נֵ֫צַח n.m. La 3:18 eminence, enduring, everlastingness, perpetuity (לנצח Ecclus 40:14 as 4 infr.);—נֵ֫צַח 1 S 15:29 + 3 times; נֶ֫צַח Am 1:11 + 36 times; sf. נִצְחִי La 3:18; pl. נְצָחִים Is 34:10;— 1. eminence: נצח ישׂראל the Eminence of Israel (י׳) 1 S 15:29 (DrSam 98 glory of Israel); attribute of God 1 Ch 29:11 (‖ הוד, תפארת et al.). 2. enduring of life, and so life itself as enduring: אָבַד נִצְחִי La 3:18 my endurance doth vanish (De sap of life, v. ii. נ׳). 3. endurance in time: משׁאות נ׳ ψ 74:3 perpetual desolations; לנ׳ יְדַבֵּר Pr 21:28 speaketh continually (?; v. Toy); עד־נ׳ ψ
+Senses:
+  Sense 1: "perpetuity, forever" (39x)
+    Desc: Duration without end; everlastingness, used adverbially (often with preposition lamed) to mean 'forever, perpetually, in perpetuity'.
+    Domain: TIME > Time
+    Glosses: eng: forever | spa: para-perpetuidad, para-siempre, para-siempre? | fra: pour-toujours, à-perpétuité | deu: ewiglich, fuer-immer
+    Refs: 2Sam 2:26, Job 4:20, Job 14:20, Job 20:7, Job 23:7
+  Sense 2: "endurance, lasting strength" (1x)
+    Desc: The quality of enduring or persisting; strength, confidence, or hope that lasts, often with pronominal suffixes indicating personal reliance.
+    Domain: PROPERTIES_RELATIONS > Power, Force
+    Glosses: eng: my-endurance | spa: mi-fortaleza | fra: pour-toujours | deu: [נצחי]
+    Refs: Lam 3:18
+  Sense 3: "glory, eminence" (1x)
+    Desc: Splendor or preeminence, used as a divine epithet ('the Glory of Israel') denoting God's unchanging majesty.
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: Glory-of | spa: Eternidad-de | fra: Glory-de | deu: Glory-von
+    Refs: 1Sam 15:29
+  Sense 4: "end, completeness" (1x)
+    Desc: The final point or conclusion of something; the end or finishing of a matter.
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: the-end | spa: fin | fra: perpétuité | deu: Ewigkeit
+    Refs: Job 34:36
+  Sense 5: "victory, triumph" (1x)
+    Desc: Successful outcome in battle or contest; victory or triumph, often in doxological contexts ascribing victory to God.
+    Domain: VIOLENCE_CONFLICT > Hostility, Strife
+    Glosses: eng: and-the-victory | spa: y-la-victoria | fra: [והנצח] | deu: [והנצח]
+    Refs: 1Chr 29:11
+
+=== G3313 ===
+Language: Greek, POS: N-NNS, Occurrences: 42, Senses: 5
+
+BDB excerpt: μέρος, εος, τό, (μείρομαι) first in Refs:— share, portion, Refs 5th c.BC+; of work put out to contract, allotment, Refs __2 heritage, lot, destiny, μεθέξειν τάφου μ. Refs 5th c.BC+; τοῦτο γὰρ.. σπάνιον μ. is a rare portion, Refs 5th c.BC+; ἀπὸ μέρους προτιμᾶσθαι from considerations of rank or family, Refs 5th c.BC+ __II one's turn, ἐπείτε αὐτῆς μ. ἐγίνετο τῆς ἀπίξιος Refs 5th c.BC+; ὅταν ἥκῃ μ. ἔργων the turn or time for.., Refs 5th c.BC+; ἀγγέλου μ. his turn of duty as messenger, Refs 4th c.BC+ __II.2 with Preps., ἀνὰ μέρος in turn, successively, Refs 5th c.BC+; κατὰ μ. λέγειν severally, Refs
+Senses:
+  Sense 1: "part, portion, share" (29x)
+    Desc: A part or portion of a whole, including abstract uses such as 'in part' or 'in this respect/matter', and one's allotted share or lot.
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: a-part, part, portion | spa: en-parte, parte, partido | fra: partie | deu: Teil
+    Refs: Matt 24:51, Luke 11:36, Luke 12:46, Luke 15:12, John 13:8
+  Sense 2: "region, district" (7x)
+    Desc: A geographical area, district, or region of a land or territory.
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: parts, region, regions | spa: partes, regiones | fra: partie | deu: Teil
+    Refs: Matt 2:22, Matt 15:21, Matt 16:13, Mark 8:10, Acts 19:1
+  Sense 3: "section, division, side" (4x)
+    Desc: A component section or division of something, including a side or constituent part of a larger structure.
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: parts | spa: partes | fra: partie | deu: Teil
+    Refs: John 19:23, John 21:6, Acts 2:10, Rev 16:19
+  Sense 4: "turn, succession" (1x)
+    Desc: One's turn or position in a sequence or rotation of duties.
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: turn | spa: turno | fra: partie | deu: Teil
+    Refs: 1Cor 14:27
+  Sense 5: "piece, fragment" (1x)
+    Desc: A physical piece or fragment broken or cut from a larger object.
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: a-piece | spa: parte | fra: partie | deu: Teil
+    Refs: Luke 24:42
+
+=== H5422 ===
+Language: Hebrew, POS: Conj-w | V-Piel-ConjPerf-2mp, Occurrences: 42, Senses: 5
+
+BDB excerpt: † נָתַץ vb. pull down, break down (NH Hoph., and deriv.; cf. perhaps Ethiopic ነሠተ (with transp. and weakening of sibilant), destruere, demoliri, excidere Di 634);— Qal Pf. 3 ms. נ׳ Ju 6:30 +, 3 pl. נָֽתְצוּ 2 K 25:10; Je 52:14, etc.; Impf. 3 ms. יִתֹּץ Ez 26:9 + v 12 (Co, for MT יִתְּצוּ); וַיִּתֹּץ Ju 9:45; 2 K 23:7; sf. יִתְּצֵנִי Jb 19:10, יִתָּצְךָ ψ 52:7; 1 s. אֶתֹּץ Ju 8:9; 3 mpl. וַיִּתְּצוּ 2 K 10:27(×2); 2 mpl. תִּתֹּ֑צוּ Dt 7:5 תִּתֹּצ֑וּן Ex 34:13 Ju 2:2; וַתִּתְֿצוּ Is 22:2, etc.; Imv. נְתֹץ ψ 58:7; Inf. cstr. לִנְתֿוֹץ Je 1:10; 18:7, לִנְתֹֿץ 31:28 (on תֿ v. Ges§ 45 g); Pt. pass. 
+Senses:
+  Sense 1: "tear down, demolish (Qal active)" (28x)
+    Desc: To pull down or demolish a structure such as an altar, wall, house, or high place, used in the Qal stem for straightforward active demolition.
+    Domain: MOVEMENT > Linear Movement
+    Glosses: eng: and-he-broke-down, and-he-tore-down, and-they-tore-down | spa: Y-derribaron, Y-derribó, derribaron | fra: déchira-en-bas, démolir, et-déchira-en-bas | deu: [ויתצהו], [יתצו], du-soll-zerreissen-hinab
+    Refs: Exod 34:13, Lev 14:45, Deut 7:5, Judg 2:2, Judg 6:30
+  Sense 2: "demolish thoroughly (Piel intensive)" (7x)
+    Desc: To demolish or tear down with thoroughness or intensity, used in the Piel stem to emphasize the completeness or force of the destruction.
+    Domain: MOVEMENT > Linear Movement
+    Glosses: eng: and-he-tore-down, and-they-broke-down, and-they-shall-demolish | spa: Y-derribaréis, derribó, y-derribaron | fra: démolir, et-démolir, et-ils-démolirent | deu: [וינתץ], [וינתצו], [ונתצו]
+    Refs: Deut 12:3, 2Chr 31:1, 2Chr 33:3, 2Chr 34:4, 2Chr 34:7
+  Sense 3: "be torn down (Nifal/Qal passive/Pual)" (4x)
+    Desc: To be demolished or torn down, the passive counterpart describing structures that have been or will be pulled down.
+    Domain: MOVEMENT > Linear Movement
+    Glosses: eng: shall-be-broken-down, the-broken-down, was-torn-down | spa: derribado, fueron-derribadas, las-derribadas | fra: devra-être-brisé-en-bas, démolir, était-déchiré-en-bas | deu: niederreissen, soll-sein-gebrochen-hinab, war-zerrissen-hinab
+    Refs: Lev 11:35, Judg 6:28, Jer 4:26, Jer 33:4
+  Sense 4: "break, shatter (teeth/bones)" (2x)
+    Desc: To break out or shatter, used metaphorically of breaking teeth or shattering bones rather than demolishing built structures.
+    Domain: MOVEMENT > Linear Movement
+    Glosses: eng: are-shattered, tear-out | spa: arranca, despedazadas | fra: démolir, renverser | deu: [נתצו], zerstörte
+    Refs: Ps 58:6, Nah 1:6
+  Sense 5: "?" (1x)
+    Domain: MOVEMENT > Linear Movement
+    Glosses: eng: He-breaks-me-down | spa: Me-derriba | fra: יתצני-moi | deu: [יתצני]
+    Refs: Job 19:10

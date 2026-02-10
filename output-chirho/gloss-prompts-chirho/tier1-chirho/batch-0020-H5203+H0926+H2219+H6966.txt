@@ -1,0 +1,159 @@
+You are a biblical lexicographer composing glosses for a digital lexicon.
+For each lemma below, compose a JSON object. Separate objects with "---".
+
+Format for each:
+{
+  "lemma_id": "...",
+  "gloss_terse": "under 120 chars, concise definition covering the word's semantic range",
+  "gloss_readable": "2-5 sentences, 40-120 words. Don't start with 'This word'. Warm study-Bible footnote tone. Engaging, not dry.",
+  "senses": {
+    "1": "enriched 20-60 word description. Reference multilingual evidence when illuminating. Don't repeat the label verbatim.",
+    "2": "..."
+  }
+}
+
+Rules:
+- No markdown fences, just JSON objects separated by ---
+- Reference multilingual evidence naturally when it reveals something
+- gloss_readable should feel like a good study Bible footnote: helpful, clear, occasionally surprising
+- Each sense enrichment: how does the evidence support this sense? Mention 1-2 key passages when helpful.
+
+=== H5203 ===
+Language: Hebrew, POS: V-Qal-Perf-3ms, Occurrences: 40, Senses: 6
+
+BDB excerpt: † נָטַשׁ vb. leave, forsake, permit (𝔗 forsake; draw off skin of dead animal; Arabic نَطِسٌ = abstinens ab impuro according to Ḳam (Frey));— Qal Pf. 3 ms. נ׳ 1 S 10:2, sf. 1 pl. נְטָשָׁ֫נוּ Ju 6:13; 2 ms. נָמַשְׁתָּ 1 S 17:28, נָמַשְׁתָּה Is 2:6, sf. נְטַשְׁתַּ֫נִי Gn 31:28, וּנְטַשְׁתָּהּ consec. Ex 23:11, etc.; Impf. יִטּשׁ 1 S 12:22 ψ 94:14, יִטּוֹשׁ Ho 12:15, sf. 1 pl. יִטְּשֵׁנוּ 1 K 8:57; 1 pl. נִטּשׁ Ne 10:32, etc.; Imv. נְטוֹשׁ Pr 17:14; Pt. pass. f. נְטוּשָׁה Is 21:15; mpl. נְטֻשִׁים 1 S 30:16;— 1. leave, let alone Ex 23:11 (E; = let field lie fallow, ‖ שָׁמַט), cf. וְנִטּשׁ אֶת־הַשָּ
+Senses:
+  Sense 1: "abandon, forsake" (23x)
+    Desc: To deliberately leave behind or abandon a person, people, or covenant relationship, often with connotations of rejection or disloyalty.
+    Domain: GEOGRAPHY_SPACE > Existence in Space
+    Glosses: eng: I-have-abandoned, I-will-forsake, You-have-abandoned | spa: Y-abandonaré, Y-abandonó, Y-dejó | fra: [ונטש], abandoned, abandonner | deu: [ונטש], [נטשה], [תטש]
+    Refs: Gen 31:28, Exod 23:11, Deut 32:15, Judg 6:13, 1Sam 10:2
+  Sense 2: "spread out, scatter" (6x)
+    Desc: To spread out, disperse, or be scattered abroad over an area, used in both Qal passive and Nifal stems for people or things becoming widely distributed.
+    Domain: MOVEMENT > Linear Movement
+    Glosses: eng: and-spread, and-spread-out, and-they-spread-out | spa: esparcidos, se-extendieron, y-se-esparcieron | fra: abandonner, et-ils-étendit-dehors, et-répandre-dehors | deu: spread-heraus, und-ausbreiten-heraus, und-sie-spread-heraus
+    Refs: Judg 15:9, 1Sam 4:2, 1Sam 30:16, 2Sam 5:18, 2Sam 5:22
+  Sense 3: "cast down, hurl away" (6x)
+    Desc: To forcefully throw down or cast away a person or object as an act of decisive rejection or punishment.
+    Domain: GEOGRAPHY_SPACE > Existence in Space
+    Glosses: eng: and-I-will-cast-you, and-let-fall, and-they-abandoned-it | spa: Y-te-abandonaré, Y-te-arrojaré, me-dejes | fra: abandonner, et-abandonner, et-laisse-tomber | deu: [ויטשהו], [ונטשתיך], cast-mich-weg
+    Refs: Num 11:31, Ps 27:9, Ezek 29:5, Ezek 31:12, Ezek 31:12
+  Sense 4: "leave, let alone" (3x)
+    Desc: To leave something or someone in place without further action, a lighter sense of ceasing involvement rather than outright abandonment.
+    Domain: GEOGRAPHY_SPACE > Existence in Space
+    Glosses: eng: have-you-left, he-will-leave, leave | spa: abandona, dejará, dejaste | fra: abandonner, ai-tu-gauche | deu: [יטוש], [נטוש], habe-du-linke
+    Refs: 1Sam 17:28, Prov 17:14, Hos 12:14
+  Sense 5: "?" (1x)
+    Domain: GEOGRAPHY_SPACE > Existence in Space
+    Glosses: eng: Are-loosened | spa: fueron-soltadas | fra: abandonner | deu: verlassen
+    Refs: Isa 33:23
+  Sense 6: "?" (1x)
+    Domain: GEOGRAPHY_SPACE > Existence in Space
+    Glosses: eng: drawn | spa: desenvainada | fra: abandonner | deu: verlassen
+    Refs: Isa 21:15
+
+=== H0926 ===
+Language: Hebrew, POS: Conj-w | V-Nifal-ConjPerf-3cp, Occurrences: 39, Senses: 6
+
+BDB excerpt: † [בָּהַל] vb. (NH id. Pt. pass. בהול disquieted; Pi. disquiet; 𝔗 Pa. בַּהֵיל hasten, be precipitate, also dismay: but ܒܗܶܠ is be quiet)— Niph. Pf. נִבְהַל 1 S 28:21; נִבְהֲלָה ψ 6:4; נִבְהַלְתִּי Is 21:3; וְנִבְהָ֑לְתִּי consec. Jb 21:6; נִבְהֲלוּ Gn 45:3 +, etc.; Impf. וַיִּבָּהֵל Ju 20:41; 2 ms. תִּבָּהֵל Ec 8:3; יִבָּהֵלוּ֑ן ψ 104:29, etc.; Pt. נִבְהָל ψ 30:8; נִֽבֳהָל Pr 28:22; f. נִבְהָלָה Zp 1:18;— 1. be disturbed, dismayed, terrified, Gn 45:3 (E) Ju 20:41 1 S 28:21 2 S 4:1 (‖ וַיִּרְפּוּ יָדָיו, cf. Ez 7:27 supr.); of bones of sufferer ψ 6:3 (‖ cf. infr. v 4); of hands of dismayed peop
+Senses:
+  Sense 1: "be terrified, dismayed (Nifal)" (22x)
+    Desc: In the Nifal stem, to be terrified, alarmed, dismayed, or deeply troubled, expressing emotional distress or fear.
+    Domain: EMOTION_ATTITUDE > Attitudes and Emotions
+    Glosses: eng: I-am-dismayed, I-am-terrified, a-terrifying-one | spa: Y-se-aterrorizarán, apresurada, estaba-aterrado | fra: [ונבהלו], [נבהלו], [נבהלתי] | deu: [ונבהלו], [נבהלו], [נבהלתי]
+    Refs: Gen 45:3, Exod 15:15, Judg 20:41, 1Sam 28:21, 2Sam 4:1
+  Sense 2: "terrify, alarm someone (Piel)" (7x)
+    Desc: In the Piel stem, to terrify, frighten, or alarm another person, serving as the causative counterpart of the Nifal terror sense.
+    Domain: DISCOURSE_NAMES > Discourse Referentials
+    Glosses: eng: and-frightening, and-terrifies-you, and-to-terrify-them | spa: (y-aterrorizándolos), aterrorízalos, lo-turbarán | fra: et-se-hâter-toi, et-être-troublé, se-hâter-moi | deu: [ולבהלם], [יבהלהו], eilt
+    Refs: 2Chr 32:18, Ezra 4:4, Job 22:10, Job 23:16, Ps 2:5
+  Sense 3: "be hasty, act in haste (Nifal)" (4x)
+    Desc: In the Nifal stem, to be hasty or to hurry, describing impetuous or rushed action rather than fear.
+    Domain: TIME > Time
+    Glosses: eng: be-alarmed, be-hasty, be-quick | spa: Se-apresura, te-apresures | fra: se-hâter | deu: eilt
+    Refs: Prov 28:22, Eccl 5:2, Eccl 7:9, Eccl 8:3
+  Sense 4: "be hastened (Pual)" (2x)
+    Desc: In the Pual (passive) stem, describing something or someone that has been hastened or gotten in haste.
+    Domain: TIME > Time
+    Glosses: eng: (gotten-hastily), hastened | spa: (adquirida-apresuradamente), apresurados | fra: se-hâter, être-troublé | deu: eilt
+    Refs: Esth 8:14, Prov 20:21
+  Sense 5: "hasten, hurry someone (Piel)" (2x)
+    Desc: In the Piel stem, to hasten or hurry someone along, serving as the causative counterpart of the Nifal haste sense.
+    Domain: TIME > Time
+    Glosses: eng: and-he-hastened, to-hurry-me | spa: que-me-apresure, y-se-apresuró | fra: et-être-troublé, être-troublé | deu: [לבהלני], und-eilt
+    Refs: 2Chr 35:21, Esth 2:9
+  Sense 6: "cause to hasten (Hifil)" (2x)
+    Desc: In the Hifil stem, to cause someone to hurry or to rush someone out, an intensive causative of the haste meaning.
+    Domain: TIME > Time
+    Glosses: eng: and-they-hastened, and-they-hurried-him | spa: y-apresuraron, y-lo-sacaron-apresuradamente | fra: et-être-troublé | deu: [ויבהלוהו], und-eilt
+    Refs: 2Chr 26:20, Esth 6:14
+
+=== H2219 ===
+Language: Hebrew, POS: Prep-l | V-Qal-Inf, Occurrences: 39, Senses: 6
+
+BDB excerpt: † [זָרָה] vb. scatter, fan, winnow (Arabic ذَرَا cause to fly, scatter (of wind), winnow; Aramaic דְּרָא, ܕܪܳܐ; Ethiopic ዘረወ: )— Qal Impf. וַיִּ֫זֶר Ex 32:20; 2 ms. תִּזְרֶה Ez 5:2; sf. תִּזְרֵם Is 30:22; 41:16; וָאֶזְרֵם Je 15:7; Imv. זְרֵה Nu 17:2; Inf. לִזְרוֹת Je 4:11; Pt. זֹרֶה Ru 3:2 Is 30:24;— 1. scatter, the powder into which golden calf was ground Ex 32:20 (E, obj. not expr.); c. acc. (strange) fire from censers Nu 17:2 (P); hair (symbol. act) Ez 5:2; Is 30:22. 2. fan, winnow, obj. גֹּרֶן הַשְּׂעוֹרִים Ru 3:2 Is 30:24 (where pt. has indef. subj.), 41:16 metaph., obj. mountains and hil
+Senses:
+  Sense 1: "scatter, disperse (people)" (23x)
+    Desc: Piel: to scatter or disperse people among the nations as an act of divine judgment or military conquest
+    Domain: DISCOURSE_NAMES > Discourse Referentials
+    Glosses: eng: I-shall-scatter, I-will-scatter, You-have-scattered-us | spa: aventaré, dispersaron, esparcirás | fra: et-disperse-eux, et-vanner, et-à-vanner | deu: du-haben-zerstreut-uns, ich-wird-zerstreuen, und-scatter-ihnen
+    Refs: Lev 26:33, Num 16:37, 1Kgs 14:15, Ps 44:11, Ps 106:27
+  Sense 2: "winnow (grain)" (7x)
+    Desc: Qal: to winnow grain by tossing it into the wind to separate the chaff, an agricultural activity often used as a metaphor for judgment
+    Domain: DISCOURSE_NAMES > Discourse Referentials
+    Glosses: eng: And-I-winnowed-them, You-shall-winnow-them, and-he-scattered | spa: Y-los-aventaré, aventado, aventando | fra: et-il-dispersé, et-vanner, vannant | deu: und-er-zerstreute, und-worfeln, worfeln
+    Refs: Exod 32:20, Ruth 3:2, Isa 30:24, Isa 41:16, Jer 4:11
+  Sense 3: "spread, scatter abroad" (4x)
+    Desc: To spread out or scatter things (not people), such as spreading a net or scattering substances; includes participial and general spreading uses
+    Domain: MOVEMENT > Linear Movement
+    Glosses: eng: is-spread, scatters, spread | spa: Dispersa, dispersa, esparcen | fra: vanner | deu: zerstreut
+    Refs: Prov 1:17, Prov 15:7, Prov 20:8, Prov 20:26
+  Sense 4: "be scattered, be dispersed" (3x)
+    Desc: Nifal/Pual passive: to be scattered or dispersed, describing the state of being spread among the nations or cast about
+    Domain: DISCOURSE_NAMES > Discourse Referentials
+    Glosses: eng: and-they-were-dispersed, in-scattering-of-you, is-scattered | spa: al-ser-esparcidos-ustedes, será-esparcido, y-fueron-dispersados | fra: et-vanner, vanner | deu: und-worfeln, worfeln, zerstreut
+    Refs: Job 18:15, Ezek 6:8, Ezek 36:19
+  Sense 5: "?" (1x)
+    Domain: DISCOURSE_NAMES > Discourse Referentials
+    Glosses: eng: like-a-menstruous-thing | spa: los-esparcirás | fra: vanner | deu: worfeln
+    Refs: Isa 30:22
+  Sense 6: "?" (1x)
+    Domain: MOVEMENT > Linear Movement
+    Glosses: eng: you-winnow | spa: escudriñas | fra: vanner | deu: du-winnow
+    Refs: Ps 139:3
+
+=== H6966 ===
+Language: Hebrew, POS: V-Qal-Imp-fs, Occurrences: 36, Senses: 6
+
+BDB excerpt: [קוּם] vb. arise, stand (v. BH);—Pe Pf. 3 ms. קָם Dn 3:24, 3 mpl. קָ֫מוּ Ezr 5:2; Impf. 3 ms. יְקוּם Dn 6:20; 7:24, 3 fs. תְּקוּם 2:39, 44; 3 mpl. יְקוּמוּן 7:10, 17, 24 (יְקֻ׳); Imv. 2 fs. קוּמִי Dn 7:5; Pt. קָאֵם 2:31, pl. קאמין Kt, קָֽיְמִין Qr, 3:3, emph. קָֽאֲמַוָּא 7:16;— 1. arise Dn 3:24 (from throne), 6:20 (from bed). 2. come on scene of history: kingdom 2:39, king 7:17, 24 (both מִן of source), v 24. 3. arise (out of inaction), and build Ezr 5:2, devour Dn 7:5b. 4. stand, lit., לָקֳבֵל pers. 2:31, cf. 3:3, קֱדָם pers. 7:10; pt. as n., those standing (there) v 16. 5. endure, of kingdom
+Senses:
+  Sense 1: "set up, erect" (13x)
+    Desc: Hifil causative with physical objects: to raise up, erect, or set in place a pillar, structure, or monument (erigir, खड़ा/खड़ी करना, أَقَامَ, 세우다, kusimamisha)
+    Domain: NATURAL_WORLD > Physical Events and States
+    Glosses: eng: He-sets-up, I-set-up, and-sets-up | spa: erigiste, erigió, erigí | fra: et-se-lever, se-lever | deu: aufstellen, und-aufstellen
+    Refs: Dan 2:21, Dan 2:44, Dan 3:1, Dan 3:2, Dan 3:3
+  Sense 2: "arise, rise up" (8x)
+    Desc: Qal intransitive: to get up, rise from a seated or lying position, or rise up in action (levantarse, उठना, قَامَ, 일어나다, kusimama/kuamka)
+    Domain: NATURAL_WORLD > Physical Events and States
+    Glosses: eng: and-rose-up, arise, arose | spa: Levántate, se-levantaron, se-levantará | fra: et-se-lever, se-lever, établir | deu: [קמו], aufstellen, und-aufstellen
+    Refs: Ezra 5:2, Dan 2:39, Dan 3:24, Dan 6:19, Dan 7:5
+  Sense 3: "stand, be standing" (6x)
+    Desc: Qal stative: to stand in a place, remain standing, be upright or present (estar de pie, खड़ा होना/रहना, وَاقِف, 서 있다, kusimama)
+    Domain: NATURAL_WORLD > Physical Events and States
+    Glosses: eng: (qere:and-standing), [ketiv:and-standing], standing | spa: (y-estaban-de-pie), [y-estaban-de-pie], de-pie | fra: et-se-lever, se-lever | deu: aufstellen, und-aufstellen
+    Refs: Dan 2:31, Dan 2:44, Dan 3:3, Dan 3:3, Dan 7:10
+  Sense 4: "appoint, establish" (6x)
+    Desc: Hifil causative with persons or institutions: to appoint someone, constitute, or establish an office or arrangement (constituir/establecer, ठहराना/नियुक्त करना, أَقَامَ/أَقامُوا, 세우다, kuweka/kuteua)
+    Domain: NATURAL_WORLD > Physical Events and States
+    Glosses: eng: and-he-set, and-they-set, appointed-him | spa: establece, establezca, lo-constituyó | fra: et-se-lever, et-établir, se-lever | deu: [והקימו], aufstellen, und-aufstellen
+    Refs: Ezra 6:18, Dan 5:11, Dan 6:1, Dan 6:3, Dan 6:8
+  Sense 5: "be raised, be set up" (2x)
+    Desc: Hofal passive: to be raised up, be made to stand, be erected by another agent (ser levantada/puesta de pie, उठाया जाना/खड़ा किया जाना, أُقِيمَتْ, 세워지다, kusimamishwa)
+    Domain: NATURAL_WORLD > Physical Events and States
+    Glosses: eng: it-was-made-to-stand, it-was-raised | spa: fue-levantada, fue-puesta-de-pie | fra: se-lever | deu: aufstellen
+    Refs: Dan 7:4, Dan 7:5
+  Sense 6: "establish firmly, confirm" (1x)
+    Desc: Piel intensive: to establish or confirm something firmly and enduringly (establecer firmemente, स्थापित करना, يُثَبِّتُ/لِيُثَبِّتَ, 세우다, kuweka)
+    Domain: NATURAL_WORLD > Physical Events and States
+    Glosses: eng: to-establish | spa: para-establecer | fra: se-lever | deu: aufstellen
+    Refs: Dan 6:7

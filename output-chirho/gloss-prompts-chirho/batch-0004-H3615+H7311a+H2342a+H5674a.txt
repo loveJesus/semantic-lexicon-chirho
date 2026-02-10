@@ -1,0 +1,253 @@
+You are a biblical lexicographer composing glosses for a digital lexicon.
+For each lemma below, compose a JSON object. Separate objects with "---".
+
+Format for each:
+{
+  "lemma_id": "...",
+  "gloss_terse": "under 120 chars, concise definition covering the word's semantic range",
+  "gloss_readable": "2-5 sentences, 40-120 words. Don't start with 'This word'. Warm study-Bible footnote tone. Engaging, not dry.",
+  "senses": {
+    "1": "enriched 20-60 word description. Reference multilingual evidence when illuminating. Don't repeat the label verbatim.",
+    "2": "..."
+  }
+}
+
+Rules:
+- No markdown fences, just JSON objects separated by ---
+- Reference multilingual evidence naturally when it reveals something
+- gloss_readable should feel like a good study Bible footnote: helpful, clear, occasionally surprising
+- Each sense enrichment: how does the evidence support this sense? Mention 1-2 key passages when helpful.
+
+=== H3615 ===
+Language: Hebrew, POS: V-Qal-Inf | 3mp, Occurrences: 205, Senses: 11
+
+BDB excerpt: I. כָּלָה206 vb. be complete, at an end, finished, accomplished, spent (NH id., Pi.; Ph. כלה; Assyrian kalû, put an end to, and cease, vanish Dl HWB 329; late Aramaic כְּלָא cease, perish (not 𝔗); on root-meaning enclose cf. כלא and Ba ZMG 1887, 605)— †Qal Pf. כ׳ 1 K 6:38 +; 3 fs. כָּֽלְתָה 1 S 20:7 +; 1 s. כָּלִיתִי ψ 39:11; 3 pl. כָּלוּ Jb 19:27 +; 2 mpl. כְּלִיתֶם Mal 3:6; וּכְלִיתֶם consec. Ez 13:14; 1 pl. כָּלִינוּ ψ 90:7, etc.; Impf. יִכְלֶה Pr 22:8; juss. יִ֫כֶל Jb 33:21 (v. Dr§ 171–173 Ges§ 109. 2 b Anm. Da Synt. § 51 R. 5; 64 R. 6); 3 fs. תִּכְלָה 1 K 17:14; וַתֵּ֫כֶל Ex 39:32 + 2 S 1
+Senses:
+  Sense 1: "complete a task (Piel)" (85x)
+    Desc: To bring a work, speech, or activity to its intended conclusion; transitive completion of a defined task (Arabic akmala/faraġa, Korean 마쳤다/끝냈다, Swahili -maliza/-kamilisha).
+    Domain: PHYSICAL_ACTION > Perform, Do
+    Glosses: eng: He-finished, and-He-finished, and-finished | spa: Y-terminó, cuando-acabaron, cuando-acabó | fra: Il-acheva, acheva, et-Il-acheva | deu: als-beendete, als-er-beendete, beendet-hatte
+    Refs: Gen 6:16, Gen 17:22, Gen 18:33, Gen 24:22, Gen 27:30
+  Sense 2: "consume, destroy (Piel)" (47x)
+    Desc: To bring people or things to utter destruction; annihilative consumption, often of God's wrath against enemies (Arabic afnā/yufnī, Korean 멸하다/멸망시키다, Swahili -angamiza/-teketeza).
+    Domain: PHYSICAL_ACTION > Perform, Do
+    Glosses: eng: I-consumed, I-have-consumed, am-consuming | spa: Y-consumiré, acaba, acabarlos | fra: achevant, achevant-eux, achever | deu: Schwiegertochter, consuming-es, finishing
+    Refs: Gen 41:30, Gen 43:2, Exod 32:10, Exod 32:12, Exod 33:3
+  Sense 3: "come to an end (Qal)" (40x)
+    Desc: To reach a natural end, be finished, or run out; intransitive cessation or completion of a process, supply, or period (Arabic faniya/intahā/nafida, Korean 끝났다/없어지다, Swahili -isha/-kwisha/-malizika).
+    Domain: PHYSICAL_ACTION > Perform, Do
+    Glosses: eng: and-are-spent, and-shall-be-spent, and-they-end | spa: Y-se-consumirá, acabará, cuando-acabe | fra: achever, comme-achever, destruction | deu: Braut, lass-ihnen-sein-verzehrt, und-vollenden
+    Refs: Gen 21:15, Gen 41:53, Exod 39:32, Ruth 2:23, 1Kgs 17:14
+  Sense 4: "fail, languish (Qal)" (15x)
+    Desc: To become exhausted or faint, especially of eyes, strength, or soul failing from grief, longing, or weariness (Arabic kallat/iḍmaḥallat, Korean 쇠하다/마르다, Swahili -choka/-shindwa/-zimia).
+    Domain: PHYSICAL_ACTION > Perform, Do
+    Glosses: eng: Are-spent, am-finished, fail | spa: Desfallece, Desfallecen, Se-acaba | fra: achever, comme-achever, comme-à-lui | deu: sie-vollendeten, vollendete, wie-ihm
+    Refs: Job 11:20, Job 17:5, Job 19:27, Ps 31:10, Ps 39:10
+  Sense 5: "spend, expend (Piel)" (5x)
+    Desc: To use up resources such as arrows, days, or provisions; the consuming is depletion of a supply rather than destruction of persons (Arabic atimmu, Korean 다하다/소모하다, Swahili -tumia).
+    Domain: PHYSICAL_ACTION > Perform, Do
+    Glosses: eng: I-spent, finishing, to-spend | spa: acabamos, consumí, para-consumar | fra: achever, comme-achever | deu: vollenden, vollendete
+    Refs: 1Chr 28:20, Ps 90:9, Isa 49:4, Ezek 20:8, Ezek 20:21
+  Sense 6: "be determined, decreed (Qal)" (4x)
+    Desc: To be settled or decided as a judicial or divine decree, a specialized usage where completion takes on the sense of finality of a decision (Arabic quḍiyat, Korean 결정되었다, Swahili -amuliwa).
+    Domain: JUSTICE_PUNISHMENT > Courts and Legal Procedures
+    Glosses: eng: is-determined, was-determined | spa: decidida, estaba-determinada, se-completó | fra: achever, est-determined | deu: ihre-Schwiegertochter, ist-determined
+    Refs: 1Sam 20:7, 1Sam 20:9, 1Sam 25:17, Esth 7:7
+  Sense 7: "fulfill, accomplish (Qal)" (4x)
+    Desc: To bring a purpose, prophecy, or divine plan to fruition; intransitive fulfillment with teleological completion (Arabic itmām, Korean 완성하다/성취하다, Swahili -timiza/-timia).
+    Domain: PHYSICAL_ACTION > Perform, Do
+    Glosses: eng: its-completion, to-complete, to-fulfill | spa: fue-terminada, para-cumplir, para-cumplirse | fra: achever, fut-acheva | deu: vollenden, vollendete, war-finished
+    Refs: 1Kgs 6:38, 2Chr 8:16, 2Chr 36:22, Ezra 1:1
+  Sense 8: "be completed (Pual)" (2x)
+    Desc: Passive of the Piel: to be brought to completion by an external agent; the work is finished upon the subject (Arabic uktumilat/intahat, Korean 완성되었다/끝났다, Swahili -kamilika/-malizika).
+    Domain: PHYSICAL_ACTION > Perform, Do
+    Glosses: eng: And-were-finished, are-ended | spa: Han-terminado, Y-fueron-completados | fra: Et-étaient-acheva, comme-achever | deu: und-vollendet-wurden, vollendete
+    Refs: Gen 2:1, Ps 72:20
+  Sense 9: "?" (1x)
+    Domain: PHYSICAL_ACTION > Perform, Do
+    Glosses: eng: and-she-longed | spa: y-cesó | fra: et-elle-longed | deu: und-sie-longed
+    Refs: 2Sam 13:39
+  Sense 10: "?" (1x)
+    Domain: PHYSICAL_ACTION > Perform, Do
+    Glosses: eng: and-consume | spa: y-consumirá | fra: et-destruction | deu: und-Vernichtung
+    Refs: Isa 27:10
+  Sense 11: "?" (1x)
+    Domain: VIOLENCE_CONFLICT > Violence, Harm, Destroy, Kill
+    Glosses: eng: and-destruction | spa: y-destrucción | fra: et-achever | deu: und-vollenden
+    Refs: Dan 11:16
+
+=== H7311a ===
+Language: Hebrew, POS: Conj-w | V-Hifil-Inf, Occurrences: 190, Senses: 11
+
+BDB excerpt: † רוּם vb. be high, exalted, rise (OHeb, Ph., Old Aramaic, Palm., all in n.pr.; Sab. in רים epith. dei et regis Fell ZMG liv (1900), 25f. also in n.pr. Mordtm ib. xxx (1876), 36 SabDenkm No. 14, 1. 1; Arabic رام be high, dial. of Oman (JayakarJA xxi. 813, 875) and Zanzibar (PräZMG xxxiv (1880), 218); Ethiopic in deriv.; Aramaic רָם ܪܘܡ (very often in der. spec. and deriv.));— Qal Pf. 3 ms. consec. וְרָם Dt 8:14 +; 3 fs. רָ֫מָה 1 S 2:1 +; וְרָאֲמָה Zc 14:10 v. רָאַם" dir="rtl" >רָאַם; 3 pl. רָמוּ Pr 30:13 ψ 131:1, רָ֑מּוּ Jb 22:12 (Baer Gi; Ges§ 20 l); Impf. יָרוּם Is 30:18 +, juss. יָרֹם Nu 24
+Senses:
+  Sense 1: "lift up, raise (physical)" (55x)
+    Desc: Hifil causative sense of physically lifting, raising, or picking up an object, person, or standard — Arabic رَفَعَ (rafa'a), Korean 들어올리다 (deureo-ollida), Swahili -inua.
+    Domain: MOVEMENT > Linear Movement
+    Glosses: eng: and-he-lifted, and-he-raised, and-lifted | spa: Levanta, Levántala, Y-alzó | fra: --élever-en-haut, et-il-leva, et-leva | deu: du-soll-erheben, du-soll-erheben-hinauf, er-soll-erheben
+    Refs: Gen 14:22, Gen 31:45, Gen 39:15, Gen 39:18, Gen 41:44
+  Sense 2: "be exalted, rise up (intransitive)" (35x)
+    Desc: Qal imperfect/perfect/infinitive intransitive sense: to rise, become exalted, be lifted in status or glory — Arabic يَرْتَفِعُ (yartafi'u), Korean 높아지다 (nopajida), Swahili -inuliwa/-inuka.
+    Domain: MOVEMENT > Linear Movement
+    Glosses: eng: He-rises, and-exalted, and-it-rose | spa: Exaltado, cuando-son-exaltados, exaltada | fra: comme-élever, est-exalta, et-cela-se-leva | deu: erhob, erhoehen, erhöhen-sich-selbst
+    Refs: Gen 7:17, Num 24:7, Deut 8:14, Deut 17:20, Deut 32:27
+  Sense 3: "exalt, extol (Piel intensive)" (25x)
+    Desc: Piel intensive sense of actively praising, extolling, or exalting God or a person; making someone's name great — Arabic عَظَّمَ ('aẓẓama), رَفَّعَ (raffa'a), Korean 높이다 (intensive), Swahili -tukuza.
+    Domain: MOVEMENT > Linear Movement
+    Glosses: eng: I-exalt-You, I-have-raised, I-will-exalt-You | spa: Exaltad, Te-exaltaré, Y-lo-exalten | fra: Tu-lève-moi-en-haut, de-élever, et-Je---exalt-Lui | deu: You-erhebe-mich-hinauf, der-einer-lifting-mich-hinauf, er-wird-erheben-mich-hoch
+    Refs: Exod 15:2, 1Sam 2:7, 2Sam 22:49, Ezra 9:9, Job 17:4
+  Sense 4: "be high, tall (stative)" (20x)
+    Desc: Qal stative/participial sense describing physical height, tallness of persons or objects, or loudness of voice — Arabic مُرْتَفِع (murtafi'), عَالٍ ('ālin), Korean 높은 (nopeun), Swahili -refu/-kirefu.
+    Domain: MOVEMENT > Linear Movement
+    Glosses: eng: and-tall, and-tall-of, high | spa: Altas, a-los-altos, alta | fra: et-grand, et-élever, haut | deu: Wurm, der-Höhen, der-hoch
+    Refs: Exod 14:8, Num 33:3, Deut 1:28, Deut 2:10, Deut 2:21
+  Sense 5: "exalt, make high (status/honor)" (18x)
+    Desc: Hifil causative sense of exalting a person in rank, honor, or power; making someone great — Arabic رَفَعَ (rafa'a figurative), Korean 높이다 (nopida), Swahili -inua (figurative).
+    Domain: MOVEMENT > Linear Movement
+    Glosses: eng: He-exalted, He-lifts, He-lifts-up | spa: Exaltaste, Y-has-exaltado, Y-levantará | fra: et-Il-exalts, et-il-devra-lever, et-il-devra-prendre-en-haut | deu: Berge, [ketiv], aber-du-haben-erhöht
+    Refs: Lev 2:9, Lev 6:10, Lev 6:15, 1Sam 2:10, 1Kgs 14:7
+  Sense 6: "contribute, present (offering)" (17x)
+    Desc: Hifil sense of lifting up as a ritual heave offering (terumah) or voluntary contribution — Arabic قَدَّمَ (qaddama), Korean 바치다 (bachida), Swahili -toa.
+    Domain: MOVEMENT > Linear Movement
+    Glosses: eng: [ketiv:exalt-themselves], [ketiv:harim], and-he-contributed | spa: Y-levantarás, [fue-quitado], [se-exalten] | fra: contributing, et-levy, et-élever | deu: Berge, [ketiv:exalt-themselves], contributing
+    Refs: Exod 35:24, Num 31:28, Num 31:52, 2Chr 30:24, 2Chr 30:24
+  Sense 7: "be exalted (divine majesty)" (6x)
+    Desc: Qal participial/stative sense applied to God as the Exalted One, expressing divine transcendence — Arabic مُتَعَالٍ (muta'ālin), الْعَلِيُّ (al-'aliyyu), Korean 높으시도다, Swahili -inuliwa.
+    Domain: MOVEMENT > Linear Movement
+    Glosses: eng: I-will-be-exalted, and-exalted, exalted | spa: Exaltado, alto, el-Alto | fra: et-élever, élever | deu: erhoehen, erhöht, ich-wird-sein-erhöht
+    Refs: Ps 46:10, Ps 46:10, Ps 99:2, Ps 113:4, Ps 138:6
+  Sense 8: "remove, take away" (5x)
+    Desc: Hifil sense of lifting something off or away, removing or carrying away — Arabic أَزالَ (azāla), Korean 제거하다 (jegeo-hada), Swahili -ondoa.
+    Domain: MOVEMENT > Linear Movement
+    Glosses: eng: and-take-off, carry-away, lift-up | spa: alzad, quitad, se-llevan | fra: et-élever, élever | deu: erhob, erhoehen, und-Berge
+    Refs: Prov 3:35, Isa 57:14, Isa 62:10, Ezek 21:26, Ezek 45:9
+  Sense 9: "haughty, proud" (5x)
+    Desc: Qal participial sense with negative moral connotation: arrogant, lifted up in pride — Arabic الْمُتَكَبِّرِينَ (al-mutakabbirīn), Korean 교만한 (gyomanhan), Swahili -enye kiburi.
+    Domain: MOVEMENT > Linear Movement
+    Glosses: eng: [ketiv:he-shall-be-exalted], and-lofty, haughty | spa: [se-elevará], altivos, y-altivo | fra: et-élever, haughty, élever | deu: erhob, erhoehen, haughty
+    Refs: 2Sam 22:28, Ps 18:27, Prov 6:17, Isa 2:12, Dan 11:12
+  Sense 10: "exalt oneself (reflexive)" (2x)
+    Desc: Hitpael reflexive sense of exalting oneself, magnifying oneself — Arabic يَرْتَفِعُ (reflexive), Korean 높이리라 (self-exaltation), Swahili -jikuza.
+    Domain: MOVEMENT > Linear Movement
+    Glosses: eng: I-will-be-exalted, and-exalt-himself | spa: seré-exaltado, y-se-enaltecerá | fra: et-élever, élever | deu: erhoehen, und-erhoehen
+    Refs: Isa 33:10, Dan 11:36
+  Sense 11: "be raised, be lifted (passive)" (2x)
+    Desc: Pual/Hofal passive sense of being raised or exalted by another agent — Arabic رُفِعَ (rufi'a), Korean 높여진 (nopyeojin), Swahili -inuliwa.
+    Domain: MOVEMENT > Linear Movement
+    Glosses: eng: and-exalted, will-be-lifted-up | spa: serán-exaltados, y-exaltado | fra: et-élever, élever | deu: und-erhob, wird-sein-erhoben-hinauf
+    Refs: Neh 9:5, Ps 75:10
+
+=== H2342a ===
+Language: Hebrew, POS: Art | V-Piel-Prtcpl-fp, Occurrences: 58, Senses: 11
+
+BDB excerpt: † I. חוּל [חִיל] vb. whirl, dance, writhe (NH, Aramaic id., dance; Arabic حَاَل change, turn; Assyrian ḫîlu, writhe in fear DlPr 191 (on ḫ = ح v. DHMZK i. 357); on form of Heb. vb. v. NöZMG, 1883, 536)— Qal Pf. 3 fs. חָ֫לָה Mi 1:12 + 2 times; וְחָלָה֫ consec. Ho 11:6; חַלְתִּי Is 23:4; חָ֫לוּ Je 5:3 (but v. infr.), La 4:6; וְחָלוּ֫ Dt 2:25; חַ֫לְנוּ Is 26:18; Impf. יָחוּל Je 23:19; 30:23; 3 fs. תָּחוּל Ez 30:16 Qr (Kt Co תחיל); וַתָּחֹ֑ל Je 51:29; אחולה Je 4:19 Kt (Qr אוֹחִילָה, Hiph. יחל); יָחֻ֫לוּ 2 S 3:29; but also יָחִיל ψ 55:5 (Jb 20:21 v. ii. חול); וַיָּ֫חֶל 1 S 31:3 = 1 Ch 10:3 + Gn 8:1
+Senses:
+  Sense 1: "Qal: writhe in pain/anguish" (16x)
+    Desc: To writhe or be in anguish, conveying intense physical or emotional pain — Arabic consistently uses تَوَجَّعَ/يَتَوَجَّعُ (tawajjaʿa, Form V of و-ج-ع 'pain'), a distinct root from trembling or labor; ...
+    Domain: EMOTION_ATTITUDE > Attitudes and Emotions
+    Glosses: eng: Writhe, [shall-writhe], and-they-will-writhe | spa: Retuercete, [estará-de-parto], con-dolor | fra: enfanter, et-ils-fera-writhe, et-trembler | deu: [ותחיל], [חולי], [חלה]
+    Refs: Deut 2:25, Job 15:20, Ps 55:4, Isa 13:8, Isa 23:5
+  Sense 2: "Qal: tremble/quake in fear" (10x)
+    Desc: To tremble, shake, or quake, typically from fear or awe before God — Arabic uses ارْتَعَدَ/يَرْتَعِدُ (irtaʿada, Form VIII of ر-ع-د 'thunder/tremble'), a completely different root from the pain sense;...
+    Domain: EMOTION_ATTITUDE > Attitudes and Emotions
+    Glosses: eng: and-she-writhed, and-trembles, shakes | spa: Temblad, hace-temblar, que-hace-temblar | fra: [ותתחלחל], [חילו], enfanter | deu: [ותתחלחל], [יחוללו], beben
+    Refs: 1Chr 16:30, Esth 4:4, Job 26:5, Ps 29:8, Ps 29:8
+  Sense 3: "Piel: bring forth/cause to bear" (6x)
+    Desc: Causative-intensive sense: to bring forth, cause to be born, to beget — Arabic uses وَلَدَ (walada, 'give birth') and أَنْجَبَ (anjaba, Form IV causative 'beget'), both from birthing roots distinct fr...
+    Domain: EMOTION_ATTITUDE > Attitudes and Emotions
+    Glosses: eng: and-you-brought-forth, brings-forth, makes-to-calve | spa: el-que-forma-, hace-nacer, que-hace-parir | fra: enfanter, et-trembler, qui-apporta-tu-forth | deu: [מחולל], [תחולל], beben
+    Refs: Deut 32:18, Ps 29:9, Ps 90:2, Prov 25:23, Prov 26:10
+  Sense 4: "Qal: travail/be in labor" (6x)
+    Desc: To be in labor, to travail in childbirth — Arabic uses the specific root تَمَخَّضَ (tamakhaḍa, Form V of م-خ-ض, exclusively 'labor/parturition'), clearly distinguishing this from general pain (تَوَجَّ...
+    Domain: EMOTION_ATTITUDE > Attitudes and Emotions
+    Glosses: eng: I-have-labored, are-you-in-labor-with, she-travailed | spa: das-a-luz?, parto-de, que-estuviera-de-parto | fra: enfanter, trembler | deu: [חלל], beben
+    Refs: Job 39:1, Isa 23:4, Isa 45:10, Isa 54:1, Isa 66:7
+  Sense 5: "Pual/Hofal: be brought forth/born" (5x)
+    Desc: Passive of the birthing sense: to be brought forth, to be born, to be formed — Arabic uses وُلِدَ (wulida, passive of walada 'bear'), تَكَوَّنَ (takawwana, 'be formed'), and صُوِّرَ (ṣuwwira, passive ...
+    Domain: EMOTION_ATTITUDE > Attitudes and Emotions
+    Glosses: eng: I-was-brought-forth, can-be-brought-forth, were-you-brought-forth | spa: fui-engendrada, fui-formado, fuiste-formado | fra: enfanter, trembler | deu: [חוללת], [חוללתי], beben
+    Refs: Job 15:7, Ps 51:5, Prov 8:24, Prov 8:25, Isa 66:8
+  Sense 6: "Qal: whirl/swirl" (5x)
+    Desc: To whirl, swirl, or spin — Arabic uses حَلَّ/يَحُلُّ (ḥalla/yaḥullu, 'descend/alight') and دَارَ/تَدورُ (dāra/tadūru, 'go round/rotate'), roots entirely unrelated to pain, trembling, or birthing; Kore...
+    Domain: EMOTION_ATTITUDE > Attitudes and Emotions
+    Glosses: eng: and-shall-whirl, it-will-whirl, let-it-whirl | spa: Caigan, caerá, que-se-arremolina | fra: et-trembler, que-cela-whirl, trembler | deu: [וחלה], beben, lass-es-whirl
+    Refs: 2Sam 3:29, Jer 23:19, Jer 23:19, Jer 30:23, Hos 11:6
+  Sense 7: "Qal/Hitpael: wait/wait patiently" (4x)
+    Desc: To wait, to wait patiently, to tarry — Arabic consistently uses انْتَظَرَ (intaẓara, Form VIII of ن-ظ-ر 'look/wait'), a root with zero overlap with pain, trembling, birthing, whirling, or dancing; Kor...
+    Domain: EMOTION_ATTITUDE > Attitudes and Emotions
+    Glosses: eng: and-they-waited, and-wait, and-wait-patiently | spa: Y-esperaron, Y-esperó, y-espera | fra: et-attendit, et-enfanter, et-ils-attendit | deu: [ותחולל], und-er-wartete, und-sie-wartete
+    Refs: Gen 8:10, Judg 3:25, Job 35:14, Ps 37:7
+  Sense 8: "Qal: dance" (2x)
+    Desc: To dance, specifically in a joyful or celebratory context — Arabic uses رَقَصَ (raqaṣa, 'to dance'), a completely distinct root from all other senses; Korean uses 춤추다 (chum-chuda, 'to dance'), a dedic...
+    Domain: MOVEMENT > Non-Linear Movement
+    Glosses: eng: the-dancers, to-dance | spa: a-danzar, las-danzantes | fra: le-dancers, à-dance | deu: der-dancers, zu-dance
+    Refs: Judg 21:21, Judg 21:23
+  Sense 9: "Qal: be wounded/pierced" (2x)
+    Desc: To be wounded, pierced, or struck — Arabic uses جُرِحَ (juriḥa, passive of جَرَحَ jaraḥa 'wound'), from the root ج-ر-ح exclusively meaning physical wounding, not pain in general; Korean uses 두려워하다 (du...
+    Domain: EMOTION_ATTITUDE > Attitudes and Emotions
+    Glosses: eng: and-he-was-wounded, and-was-wounded | spa: y-fue-herido, y-tembló | fra: [ויחל], et-fut-wounded | deu: und-beben, und-war-wounded
+    Refs: 1Sam 31:3, 1Chr 10:3
+  Sense 10: "?" (1x)
+    Domain: EMOTION_ATTITUDE > Attitudes and Emotions
+    Glosses: eng: rested | spa: se-pusieron | fra: trembler | deu: [חלו]
+    Refs: Lam 4:6
+  Sense 11: "?" (1x)
+    Domain: EMOTION_ATTITUDE > Attitudes and Emotions
+    Glosses: eng: [ketiv] | spa: [me-duelo] | fra: trembler | deu: beben
+    Refs: Jer 4:19
+
+=== H5674a ===
+Language: Hebrew, POS: Prep-l | V-Qal-Inf | 2ms, Occurrences: 552, Senses: 10
+
+BDB excerpt: עָבַר548 vb. pass over, through, by, pass on (NH = BH; Zinj. עבר Haph. Lzb336 Cook88, perhaps also Nab. עבר id.ib.; 𝔗 עֲבַר, Syriac ܥܒܰܪ id.; Assyrian ebêru, id. DlHWB 10, and deriv.; Arabic عَبَرَ id., and deriv.; Sab. עבר = Heb. עִבַּר 1. MordtSab Denkm 49; עברת passage, march through DHMZMG xxix (1875), 614 also bank or neighbourhood of a stream Sab Denkm49);— Qal465 Pf. 3 ms. ע׳ Gn 15:17 +, sf. עֲבָרוֹ Je 23:9; 1 s. עָבַ֫רְתִּי 1 S 15:24 +; 2 mpl. עֲבַרְתֶּם Gn 18:5 +; 1 pl. עָבַ֫רְנוּ Jos 24:17 +, etc.; Impf. 3 ms. יַעֲבֹר Am 8:5 +, יַעֲבָר־ Gn 33:14 +, sf. 3 ms. יַעַבְרֶ֫נּוּ Is 33:21; 3
+Senses:
+  Sense 1: "Qal: pass by, pass through" (256x)
+    Desc: To pass by, pass through, or pass along a location in transit without emphasis on crossing a specific boundary; includes a traveler passing by on a road, going through a land, passing on ahead, and th...
+    Domain: MOVEMENT > Linear Movement
+    Glosses: eng: and-he-passed-through, and-passed, and-passed-over | spa: Y-pasó, y-pasó | fra: et-il-passa-à-travers, et-passa, et-passa-sur | deu: und-durchzog, und-er-ging-vorbei-durch, und-ging-hindurch
+    Refs: Gen 12:6, Gen 15:17, Josh 15:3, Josh 15:3, Josh 15:4
+  Sense 2: "Qal: cross over" (134x)
+    Desc: To cross over a physical boundary such as a river, sea, or border (Qal stem); used of Israel crossing the Jordan, Abraham crossing the Euphrates, armies fording rivers, and entering or leaving a terri...
+    Domain: MOVEMENT > Linear Movement
+    Glosses: eng: and-they-crossed-over, are-crossing, crossed | spa: cruzando, cruzaréis, cruzáis | fra: et-ils-traversa-sur, il-traversa, sont-traversant | deu: Uebergang, Uebergang-ueber, er-vorüberging
+    Refs: Gen 31:21, Gen 32:22, Gen 32:31, Gen 33:3, Num 33:51
+  Sense 3: "Qal: pass away, cease" (55x)
+    Desc: To pass away, vanish, or cease to exist; used of temporal passing (time, harvest, seasons), death, wrath subsiding, and things coming to an end or being no more.
+    Domain: MOVEMENT > Linear Movement
+    Glosses: eng: (to-pass-through-), I-have-caused-to-pass, [pass-through-] | spa: (a-pasar), Y-pasará, [a-pasar] | fra: et-au-delà, et-passer, passa | deu: ging-hinueber, ging-vorbei, hinuebergehen
+    Refs: Gen 50:4, 1Sam 14:23, 2Sam 11:27, 2Sam 20:14, 1Kgs 18:29
+  Sense 4: "Hifil: bring across, cause to cross" (40x)
+    Desc: To cause to pass over or bring across a physical boundary (Hifil causative); used of leading people across a river, ferrying goods or persons, making armies cross, dedicating firstborn by causing them...
+    Domain: MOVEMENT > Linear Movement
+    Glosses: eng: And-I-will-make-pass, I-cause-to-pass, [and-crossed] | spa: Y-haré-pasar, Y-me-hizo-pasar, Y-os-haré-pasar | fra: [and-crossed], et-passa, et-passer | deu: [and-crossed], du-soll-durchgehen-durch, er-caused-zu-gehe-vorbei
+    Refs: Gen 8:1, Gen 32:23, Gen 32:23, Exod 13:12, Lev 18:21
+  Sense 5: "Qal: transgress, violate" (30x)
+    Desc: To transgress, violate, or go beyond a covenant, commandment, or established boundary in a moral or legal sense; used of breaking God's covenant, overstepping divine decrees, exceeding proper limits, ...
+    Domain: MOVEMENT > Linear Movement
+    Glosses: eng: I-transgressed, When-you-transgress, and-let-pass | spa: Cuando-transgredíais, he-transgredido, lo-traspasará | fra: When-tu-transgresser, et-ils-transgressa, et-passer | deu: When-du-uebertreten, er-uebertrat, ging-hinueber
+    Refs: Num 14:41, Num 22:18, Num 24:13, Deut 17:2, Deut 26:13
+  Sense 6: "Hifil: remove, take away" (18x)
+    Desc: To remove, take away, or put aside (Hifil causative); used of removing garments, putting away foreign gods, taking away a person from office or position, transferring dominion, and eliminating somethi...
+    Domain: MOVEMENT > Linear Movement
+    Glosses: eng: I-will-cause-to-pass, and-he-removed, and-put-away | spa: Aparta, Y-quitó, dejó-pasar | fra: --cause-à-passer, a-passa-au-dessus, cause-à-passe-au-loin | deu: cause-zu-gehe-vorbei-weg, ging-hinueber, hat-ging-vorbei-ueber
+    Refs: Gen 47:21, Exod 33:19, 2Sam 3:10, 2Sam 12:13, 2Sam 24:10
+  Sense 7: "Hifil: proclaim, send word" (9x)
+    Desc: To cause a voice, decree, or proclamation to pass through a camp or land (Hifil causative of sound or word); used of issuing royal proclamations, blowing a trumpet announcement, sending decrees, and m...
+    Domain: MOVEMENT > Linear Movement
+    Glosses: eng: and-he-caused-to-pass, and-he-sent-proclamation-, and-they-caused-to-pass | spa: Y-harás-pasar, e-hicieron-pasar, e-hizo-pasar- | fra: causant-à-transgress, et-ils-caused-à-passer, et-passer | deu: causing-zu-uebertrete, du-soll-cause-zu-durchgehen, hinuebergehen
+    Refs: Exod 36:6, Lev 25:9, Lev 25:9, 1Sam 2:24, 2Chr 30:5
+  Sense 8: "Hifil: transfer, convey" (5x)
+    Desc: To transfer or convey ownership, possession, or inheritance from one party to another (Hifil causative); used of transferring property rights, conveying goods to another jurisdiction, and shifting dom...
+    Domain: MOVEMENT > Linear Movement
+    Glosses: eng: and-they-carried-them-over, and-you-shall-carry-over, and-you-shall-transfer | spa: transfirió, y-las-pasaron, y-las-pasaréis | fra: et-ils-porta-eux-sur, et-tu-devra-porter-sur, et-tu-devra-transfer | deu: ging-hinueber, und-du-soll-tragen-ueber, und-du-soll-transfer
+    Refs: Num 27:7, Num 27:8, Josh 4:3, Josh 4:8, Esth 8:2
+  Sense 9: "Qal: overflow, surge" (3x)
+    Desc: To overflow or surge, said of water rising beyond its banks or a torrent sweeping through; a metaphorical extension of physical crossing applied to liquids and overwhelming natural forces.
+    Domain: MOVEMENT > Linear Movement
+    Glosses: eng: flowing, overflow | spa: Pasa, que-fluye | fra: coulante,, coulante., passer | deu: hinuebergehen, jenseits
+    Refs: Song 5:5, Song 5:13, Isa 23:10
+  Sense 10: "Piel: impregnate, breed" (2x)
+    Desc: To impregnate or cause to conceive (Piel intensive); a specialized term for causing animals to breed or for drawing/pulling something through, attested rarely in poetic and narrative contexts.
+    Domain: MOVEMENT > Linear Movement
+    Glosses: eng: and-he-drew, breeds | spa: fecunda, y-pasó | fra: et-il-tira, passer | deu: jenseits, und-er-zog
+    Refs: 1Kgs 6:21, Job 21:10

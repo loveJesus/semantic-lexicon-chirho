@@ -1,0 +1,115 @@
+You are a biblical lexicographer composing glosses for a digital lexicon.
+For each lemma below, compose a JSON object. Separate objects with "---".
+
+Format for each:
+{
+  "lemma_id": "...",
+  "gloss_terse": "under 120 chars, concise definition covering the word's semantic range",
+  "gloss_readable": "2-5 sentences, 40-120 words. Don't start with 'This word'. Warm study-Bible footnote tone. Engaging, not dry.",
+  "senses": {
+    "1": "enriched 20-60 word description. Reference multilingual evidence when illuminating. Don't repeat the label verbatim.",
+    "2": "..."
+  }
+}
+
+Rules:
+- No markdown fences, just JSON objects separated by ---
+- Reference multilingual evidence naturally when it reveals something
+- gloss_readable should feel like a good study Bible footnote: helpful, clear, occasionally surprising
+- Each sense enrichment: how does the evidence support this sense? Mention 1-2 key passages when helpful.
+
+=== H8476 ===
+Language: Hebrew, POS: N-mp, Occurrences: 14, Senses: 2
+
+BDB excerpt: † I. תַּ֫חַשׁ n.m. taḫaš, a kind of leather or skin, and perhaps the animal yielding it (prob. the dugong, cf. Arabic تُخَسٌ dolphin, Thes 1500 Di-Ry Ex 25:5 PostHastDB badger; Assyrian taḫšu (Dl Baer Ezech. xvi), for which DlProl. 77 ff.; HWB 705 conj. meaning sheep(skin); Bondi Egyptiaca 1 ff. cp. Egypt. ṯḥś, leather; v. summary of views M’Lean-ShipleyEncy. Bib. badgers’ skins);—abs. ת׳ Nu 4:6 +, תָּחַשׁ v 8 +; pl. תְּחָשִׁים Ex 25:5 +;—leather used for (woman’s) sandals Ez 16:10; elsewhere for cover of tabernacle Nu 4:25, עוֹר ת׳ v 6, 8, 10, 11, 12, 14, עֹרֹת (הַ)תְּחָשִׁים Ex 25:5; 26:14; 
+Senses:
+  Sense 1: "tachash-hide animal (porpoise/dugong/seal)" (13x)
+    Desc: The noun תַּחַשׁ referring to an animal whose hide was used for the tabernacle coverings, variously identified as porpoise, dugong, seal, or badger. S144988 (7x, singular 'porpoise/tachash') and S1449...
+    Domain: BODY_HEALTH > Body, Body Parts, and Body Products
+    Glosses: eng: porpoise, porpoises, sea-cows | spa: el-tejón, los-tejones, tajash | fra: le-marsouin, le-mer-vaches, marsouin | deu: Meer-Kuehe, der-Meer-Kuehe, der-porpoise
+    Refs: Exod 25:5, Exod 26:14, Exod 35:7, Exod 35:23, Exod 36:19
+  Sense 2: "tachash-leather / tachash-skin (material)" (1x)
+    Desc: A metonymic extension of the tachash animal to denote the processed hide or leather material itself, used for the outer covering of the tabernacle. S144992 (1x) is rendered English 'leather', Spanish ...
+    Domain: BODY_HEALTH > Body, Body Parts, and Body Products
+    Glosses: eng: leather | spa: piel-de-tejones | fra: tahash | deu: [תחש]
+    Refs: Ezek 16:10
+
+=== H8535 ===
+Language: Hebrew, POS: Adj-mp, Occurrences: 14, Senses: 2
+
+BDB excerpt: † תָּם adj. complete;—ת׳ Gn 25:27 + 10 times; sf. תַּמָּתִי Ct 5:2; 6:9 (late, except Gn 25:27);— 1. complete, perfect: in beauty Ct 5:2; 6:9; of physical strength ψ 73:4 (read לָ֑מוֹ תָּם Ew De DrSam xxxi Che Bae al.). 2. sound, wholesome: אִישׁ תָּם, of Jacob as tent-dweller, opp. Esau, hunter, Gn 25:27 (J; De leutseliger Mann, Di ruhig, still, AV RV plain man; ת׳ here poss. redactional, = 3). 3. complete, morally innocent, having integrity: אִישׁ תָּם Jb 1:8; 2:3; ת׳ alone 1:1; 8:20; 9:20, 21, 22 Pr 29:10 ψ 37:37; 64:5.—תַּמִּים Ex 26:24; 36:29 v. [תאם" dir="rtl" >תָּאם].
+Senses:
+  Sense 1: "blameless, upright, perfect" (13x)
+    Desc: The adjective describing moral integrity, blamelessness, or perfection, applied to persons of exemplary character (Job, Noah) and as a term of endearment in Song of Songs ('my perfect one'). Clusters ...
+    Domain: MORAL_QUALITY > Moral and Ethical Qualities
+    Glosses: eng: blameless, blameless-, blameless-one | spa: Al-íntegro, al-íntegro, mi-perfecta | fra: achever, intègre, ma-parfaite! | deu: [תמתי], der-blameless, untadelig
+    Refs: Exod 26:24, Job 1:1, Job 1:8, Job 2:3, Job 8:20
+  Sense 2: "quiet, mild, simple" (1x)
+    Desc: The adjective describing a quiet, mild, or domestically inclined disposition, famously used of Jacob in contrast to Esau the hunter (Gen 25:27). This sense is distinct from moral perfection, denoting ...
+    Domain: MORAL_QUALITY > Moral and Ethical Qualities
+    Glosses: eng: quiet | spa: sencillo | fra: tranquille | deu: untadelig
+    Refs: Gen 25:27
+
+=== G0848 ===
+Language: Greek, POS: PPro-AF3S, Occurrences: 13, Senses: 2
+
+BDB excerpt: ἑαυτοῦ, ῆς, οῦ, ἑαυτῷ, ῇ, ῷ, ἑαυτόν, ήν, ό, plural ἑαυτῶν, ἑαυτοῖς, ἑαυτούς άς, ά: Ionic dialect ἑωυτοῦ Refs 5th c.BC+; also ωὑτῆς Refs 3rd c.BC+ in Papyrus and Inscrr., as Refs 1st c.BC+: Attic dialect contraction αὑτοῦ, etc., which is the usual form in Trag., though ἑαυτοῦ, etc., are used (though rarely) when the metre requires, Refs 4th c.BC+; Cretan dialect ϝιαυτοῦ Kohler-Ziebarth Stadtrecht von Gortyn Refs; Doric dialect αὐταυτοῦ, αὐσαυτοῦ (which see); Thess. εὑτοῦ (dative), Refs: genitive plural ηὑτῶν Refs:—reflexive pronoun of 3rd pers., of himself, herself, itself, etc.; first in Refs 
+Senses:
+  Sense 1: "reflexive self-reference" (11x)
+    Desc: The reflexive pronoun ἑαυτοῦ in its core usage referring the action back to the subject: himself, herself, themselves, oneself, whether in accusative or dative case and regardless of gender or number.
+    Domain: DISCOURSE_NAMES > Discourse Referentials
+    Glosses: eng: herself, himself, themselves | spa: *, -a-sí-mismo, a-sí-misma | fra: elle, eux, lui | deu: ihm, ihn, sie
+    Refs: Luke 23:12, Luke 24:12, John 2:24, John 13:32, John 20:10
+  Sense 2: "simple third-person pronoun" (2x)
+    Desc: The reflexive pronoun ἑαυτοῦ used loosely as a simple third-person pronoun (him, them) without true reflexive force, a common Koine Greek development where ἑαυτοῦ substitutes for αὐτός.
+    Domain: DISCOURSE_NAMES > Discourse Referentials
+    Glosses: eng: him, them | spa: ellos, él | fra: eux, lui | deu: sie, αὑτόν}
+    Refs: Mark 9:16, Acts 10:21
+
+=== G1256 ===
+Language: Greek, POS: V-PPM/P-GMS, Occurrences: 13, Senses: 2
+
+BDB excerpt: διαλέγω, pick out, Refs 5th c.BC+; πτῶμα glean fallen olives, Refs; compare διαλέγειν· ἀνακαθαίρειν, Refs 5th c.AD+; select, separate, Refs 5th c.BC+; examine, check documents, Refs 2nd c.BC+ __II διαλέγων τὴν ὀπήν picking open the hole, to escape, Refs 5th c.BC+; compare διαλέξαι· διορύξαι, Refs 5th c.AD+ __B as deponent verb, διαλέγομαι: future διαλέξομαι Refs 5th c.BC+ also -λεχθήσομαι Refs 4th c.BC+; -λεγήσομαι Refs 3rd c.BC+: aorist διελεξάμην Refs 8th c.BC+; Aeolic dialect imperative ζάλεξαι Refs 7th c.BC+, and always in Attic dialect Inscrr., Refs: less frequently aorist 2 διελέγην Refs
+Senses:
+  Sense 1: "reason, discuss, argue" (12x)
+    Desc: To engage in speech interchange involving persuasion or argumentation; used of Paul reasoning in synagogues, debating with opponents, or formal disputation; the standard NT deponent middle sense of di...
+    Domain: COMMUNICATION > Communication
+    Glosses: eng: arguing, discoursing, reasoned | spa: Discutía, discutiendo, discutieron | fra: discutait, discuter | deu: reden, redet-mit, redete
+    Refs: Mark 9:34, Acts 17:2, Acts 17:17, Acts 18:4, Acts 18:19
+  Sense 2: "speak, address, exhort" (1x)
+    Desc: To speak or address someone with authoritative communication; used of Scripture 'speaking' or 'addressing' a hearer, with less emphasis on back-and-forth interchange and more on direct communication o...
+    Domain: COMMUNICATION > Communication
+    Glosses: eng: speaks | spa: habla | fra: discuter | deu: reden
+    Refs: Heb 12:5
+
+=== G1702 ===
+Language: Greek, POS: V-PNA, Occurrences: 13, Senses: 2
+
+BDB excerpt: ἐμπαίζω, future -ξομαιLXXperfect ἐμπέπαιχαLXX:— mock at, mock, τινί Refs 5th c.BC+:—passive, ψυχὴ ὑπό.. σωμάτων καὶ πραγμάτων ἐμπαιζομένη Refs 1st c.AD+ __2 euphemistic in mal. participle, LXX __3 passive, to be deluded, NT+2nd c.AD+; to be defrauded, of the revenues, Refs __II sport in or on, ὡς νεβρὸς χλοεραῖς ἐ. λείμακος ἡδοναῖς Refs 5th c.BC+; τοῖς χοροῖσιν ἐ. to sport in the dance, Refs 5th c.BC+
+Senses:
+  Sense 1: "mock, ridicule, scorn" (12x)
+    Desc: To treat with contempt and derision, making fun of someone through mocking words or actions, as when soldiers or crowds mock Jesus or the prophets.
+    Domain: COMMUNICATION > Communication
+    Glosses: eng: having-mocked, he-will-be-mocked, mocked | spa: a-burlarse, burlarse, burlándose | fra: se-moquer | deu: verspottet, ἐμπαίζοντες, ἐμπαίξουσιν
+    Refs: Matt 20:19, Matt 27:29, Matt 27:31, Matt 27:41, Mark 10:34
+  Sense 2: "deceive, trick, fool" (1x)
+    Desc: To outwit or deceive someone, making a fool of them by trickery rather than mere verbal ridicule, as in the sense that God cannot be fooled or mocked.
+    Domain: COMMUNICATION > Communication
+    Glosses: eng: he-was-mocked | spa: fue-burlado | fra: se-moquer | deu: verspottet
+    Refs: Matt 2:16
+
+=== G1934 ===
+Language: Greek, POS: V-PIA-2P, Occurrences: 13, Senses: 2
+
+BDB excerpt: ἐπιζητ-έω, seek after, wish for, miss, τινά Refs 5th c.BC+; μηδὲν ἐπιζητείτω let her lack nothing, Refs 3rd c.AD+; ἐ. τὸν ἄν θρωπονmake further search for.. , Refs 4th c.BC+; τῆς αἰτίας αἰτίαν ἐπι ζητούσηςrequiring, Refs 2nd c.BC+ the beaters (for game), Refs 5th c.BC+ —passive, τὰ ἐπιζητούμενα περὶ τὴν εὐδαιμονίαν Refs 4th c.BC+; οἱ -ούμενοι criminals `wanted', Refs 3rd c.AD+ __b. request, πρός τινας ὁμολογίαν Refs 6th c.AD+ __2. seek for besides, μηδ᾽ ἕτερ᾽ ἐπιζήτει καλά Refs 4th c.BC+; inquire further, περὶ.. Refs 2nd c.AD+ __3. passive, ἐπιζητεῖται is matter of question, ἐ. πότερον.. Refs 
+Senses:
+  Sense 1: "seek after, desire earnestly" (12x)
+    Desc: To seek with intensity or persistence, to desire earnestly or search for diligently; used of seeking signs, spiritual realities, a homeland, or material things (Matt 6:32, 12:39, 16:4; Luke 12:30; Rom...
+    Domain: MENTAL_LIFE > Learn
+    Glosses: eng: I-seek, seek-after, seeks | spa: busca, buscaban, buscamos | fra: chercher, rechercher | deu: suchen, sucht
+    Refs: Matt 6:32, Matt 12:39, Matt 16:4, Luke 4:42, Luke 12:30
+  Sense 2: "search for (a person)" (1x)
+    Desc: To search for a specific person, seeking to locate them physically (Acts 12:19, of Herod searching for Peter).
+    Domain: MENTAL_LIFE > Learn
+    Glosses: eng: having-searched | spa: buscando | fra: chercher | deu: sucht
+    Refs: Acts 12:19

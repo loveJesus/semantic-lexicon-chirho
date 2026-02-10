@@ -1,0 +1,192 @@
+You are a biblical lexicographer composing glosses for a digital lexicon.
+For each lemma below, compose a JSON object. Separate objects with "---".
+
+Format for each:
+{
+  "lemma_id": "...",
+  "gloss_terse": "under 120 chars, concise definition covering the word's semantic range",
+  "gloss_readable": "2-5 sentences, 40-120 words. Don't start with 'This word'. Warm study-Bible footnote tone. Engaging, not dry.",
+  "senses": {
+    "1": "enriched 20-60 word description. Reference multilingual evidence when illuminating. Don't repeat the label verbatim.",
+    "2": "..."
+  }
+}
+
+Rules:
+- No markdown fences, just JSON objects separated by ---
+- Reference multilingual evidence naturally when it reveals something
+- gloss_readable should feel like a good study Bible footnote: helpful, clear, occasionally surprising
+- Each sense enrichment: how does the evidence support this sense? Mention 1-2 key passages when helpful.
+
+=== H7503 ===
+Language: Hebrew, POS: V-Qal-Perf-3ms, Occurrences: 46, Senses: 8
+
+BDB excerpt: † רָפָה vb. sink, relax (NH id., so Aramaic רפא (der. spec.), Zinj. רפה Aph., ܪܦܳܐ; Arabic رَفَاهَة an easy life is perhaps akin);— Qal Pf. 3 ms. Ju 19:9 (yet v. infr.); 3 fs. רָֽפְתָה Ju 8:3 Je 49:24, etc.; Impf. 3 ms. יִרְפֶּה Is 5:24, וַיִּ֫רֶף Ex 4:26 (v. infr.), etc.;— 1. sink down, of hay in flame Is 5:24; sink, decline, of day Ju 19:9 (si vera l.; 𝔊L κέκλικεν, GFM נָטָה [but how expl. the difficult רפה?]). Usually 2. sink, drop (of wings, v. Pi.), of hands, c. מִן Ne 6:9 their hands will drop from the work (in fear); elsewhere abs. fig. = lose heart, energy, 2 S 4:1; Is 13:7; Je 6:24; 5
+Senses:
+  Sense 1: "let go, release, leave alone (Hifil/Qal)" (11x)
+    Desc: To release, let go of, or leave someone or something alone; includes desisting from holding. Primarily Hifil causative but also Qal with same meaning (Exod 4:26).
+    Domain: GEOGRAPHY_SPACE > Existence in Space
+    Glosses: eng: I-leave-it, I-will-let-go-him, I-will-let-it-go | spa: Déjala, Déjame, Déjanos | fra: [ארפה], donne-reste, et-il-que-aller | deu: [ארפה], [ארפנו], [תרף]
+    Refs: Exod 4:26, Deut 9:14, Josh 10:6, Judg 11:37, 1Sam 11:3
+  Sense 2: "be slack, grow weak (Qal)" (10x)
+    Desc: Intransitive Qal sense: to become slack, feeble, or weak, describing hands, bodies, or resolve losing strength.
+    Domain: PROPERTIES_RELATIONS > Able, Capable
+    Glosses: eng: and-became-weak, and-dropped, and-shall-be-feeble | spa: caerán, desfallcerán, desfallezcan | fra: [ירפו], et-dropped, et-faiblir | deu: [ורפו], [ירפו], [רפו]
+    Refs: 2Sam 4:1, 2Chr 15:7, Neh 6:9, Isa 13:7, Jer 6:24
+  Sense 3: "be lazy, be slack (Nifal/Hitpael)" (6x)
+    Desc: Reflexive sense of showing oneself slack or lazy, used of people who are idle or negligent in their duties.
+    Domain: MORAL_QUALITY > Moral and Ethical Qualities
+    Glosses: eng: being-slack, if-you-show-yourself-slack, lazy | spa: Si-te-muestras-débil, el-que-se-afloja, flojos | fra: lazy, relâcher, étant-slack | deu: [התרפית], [מתרפה], lazy
+    Refs: Exod 5:8, Exod 5:17, Exod 5:17, Josh 18:3, Prov 18:9
+  Sense 4: "abandon, forsake (Hifil)" (6x)
+    Desc: Hifil sense of failing or abandoning someone, used especially in divine promises of not forsaking (Deut 4:31; 31:6,8; Josh 1:5; 1 Chr 28:20).
+    Domain: BODY_HEALTH > Physiological Processes and States
+    Glosses: eng: He-will-abandon-you, I-will-fail-you, abandon | spa: abandones, te-abandonaré, te-dejará | fra: Il-fera-abandon-tu, [ירפך], fera-il-fail-tu | deu: Er-wird-verlassen-du, [ירפך], abandon
+    Refs: Deut 4:31, Deut 31:6, Deut 31:8, Josh 1:5, 1Chr 28:20
+  Sense 5: "cease, stop, be still (Hifil)" (5x)
+    Desc: Hifil sense of ceasing an action, stopping, or being still; 'desist' and 'be still' (Ps 37:8; 46:10).
+    Domain: TIME > Aspect
+    Glosses: eng: be-still, cease, let-drop | spa: Basta, Deja, detén | fra: [הרף], arrête, le-relâcher | deu: [הרף], aufhören, lass-drop
+    Refs: 1Sam 15:16, 2Sam 24:16, 1Chr 21:15, Ps 37:8, Ps 46:10
+  Sense 6: "let drop, let down (Piel)" (3x)
+    Desc: Piel sense of physically letting something drop or lower, as with ropes or cords.
+    Domain: PROPERTIES_RELATIONS > Able, Capable
+    Glosses: eng: he-loosens, they-let-drop | spa: afloja., bajaban | fra: relâcher | deu: [רפה], [תרפינה]
+    Refs: Job 12:21, Ezek 1:24, Ezek 1:25
+  Sense 7: "sink, decline, subside (Qal)" (3x)
+    Desc: Qal sense of sinking or declining, used of the day waning (Judg 19:9) or physical subsiding (Judg 8:3; Isa 5:24).
+    Domain: QUANTITY_NUMBER > Quantity
+    Glosses: eng: sinking, sinks, subsided | spa: consume, declina, se-calmó | fra: faiblir, sinking, subsided | deu: [ירפה], sinking, subsided
+    Refs: Judg 8:3, Judg 19:9, Isa 5:24
+  Sense 8: "weaken, discourage (Piel)" (2x)
+    Desc: Intensive-causative Piel sense: to actively weaken or discourage someone, undermining their hands or morale.
+    Domain: PROPERTIES_RELATIONS > Able, Capable
+    Glosses: eng: weakening | spa: debilita, debilitando | fra: [מרפים], faiblir | deu: [מרפא], [מרפים]
+    Refs: Ezra 4:4, Jer 38:4
+
+=== H7533 ===
+Language: Hebrew, POS: V-Qal-Imperf-3ms, Occurrences: 19, Senses: 8
+
+BDB excerpt: † [רָצַץ] vb. crush (NH = BH; Arabic رَضَّ bruise, bray, crush; Aramaic רְעַע, ܪܰܥ crush, shatter);— Qal Pf. 2 ms. sf. רַצּוֹתָנוּ 1 S 12:4; 1 s. רַצּוֹתִי v 3; Impf. 3 ms. יָרוּץ (Ges§ 67 q) Is 42:4 (Cod. Bab. יֵרוֹץ, Niph., so SS here and Ec 12:6 a), 3 fs. תָּרוּץ Ec 12: 6 a, 1 s. אָרֻץ ψ 18:30 = אָרוּץ 2 S 22:30 (v. רוּץ); Pt. act. fpl. רֹצְצוֹת Am 4:1; pass. רָצוּץ Is 42:3 +, cstr. רְצוּץ Ho 5:11; pl. רְצוּצִים Is 58:6;—crush: 1. lit., a. pt. pass. in (הַ)קָּנֶה (הַ)רָצוּץ 2 K 18:21; = Is 36:6, Is 42:3 (all metaph. of weak pers.). b. impf. intrans.get crushed (read תֵּרוֹץ?), of bowl Ec 12
+Senses:
+  Sense 1: "bruised or crushed state" (5x)
+    Desc: Passive participle describing the condition of being crushed, bruised, or broken — used adjectivally of objects or persons.
+    Domain: PHYSICAL_ACTION > Physical Impact
+    Glosses: eng: and-crushed, broken, bruised | spa: la-quebrada, quebrada, quebrantado-de | fra: [הרצוץ], [רצוץ], et-écrasa | deu: [הרצוץ], [רצוץ], der-zerbrochen
+    Refs: Deut 28:33, 2Kgs 18:21, Isa 36:6, Isa 42:3, Hos 5:11
+  Sense 2: "crush or oppress intensively (Piel)" (4x)
+    Desc: Intensive stem conveying deliberate, thorough, or repeated crushing and oppression of persons or things.
+    Domain: PHYSICAL_ACTION > Physical Impact
+    Glosses: eng: and-crushed, and-oppressed, crushed | spa: aplastaste, quebrantó,, y-aplastaron | fra: [וירצץ], et-écrasa, écraser | deu: [וירצץ], [רצץ], und-zermalmte
+    Refs: Judg 10:8, 2Chr 16:10, Job 20:19, Ps 74:14
+  Sense 3: "crush or break physically (Qal)" (3x)
+    Desc: To physically crush, break, or bruise something or someone, in the basic Qal active stem.
+    Domain: PHYSICAL_ACTION > Physical Impact
+    Glosses: eng: I-crushed, he-will-be-crushed, you-crushed-us | spa: aplasté, nos-aplastaste, se-quebrará | fra: [ירוץ], je-écrasa, tu-écrasa-nous | deu: [ירוץ], du-crushed-uns, ich-crushed
+    Refs: 1Sam 12:3, 1Sam 12:4, Isa 42:4
+  Sense 4: "be broken or shattered (Nifal/Qal passive)" (3x)
+    Desc: Passive or middle voice expressing that the subject is broken, crushed, or shattered, in Nifal and Qal intransitive imperfect forms.
+    Domain: PHYSICAL_ACTION > Physical Impact
+    Glosses: eng: and-is-broken, and-is-crushed, you-splintered | spa: te-quebraste, y-se-quiebre | fra: [תרוץ], et-écraser | deu: [ונרץ], [ותרץ], [תרוץ]
+    Refs: Eccl 12:6, Eccl 12:6, Ezek 29:7
+  Sense 5: "cause to be crushed (Hifil)" (1x)
+    Desc: Causative stem indicating bringing about the crushing or shattering of something.
+    Domain: PHYSICAL_ACTION > Physical Impact
+    Glosses: eng: and-crushed | spa: y-quebró | fra: et-écrasa | deu: und-zermalmte
+    Refs: Judg 9:53
+  Sense 6: "those who crush (participial)" (1x)
+    Desc: Active participle used substantivally to denote those who crush or oppress others.
+    Domain: VIOLENCE_CONFLICT > Violence, Harm, Destroy, Kill
+    Glosses: eng: the-ones-crushing | spa: las-que-aplastan | fra: celles-qui-écrasent | deu: [הרצצות]
+    Refs: Amos 4:1
+  Sense 7: "struggle together (Hitpael)" (1x)
+    Desc: Reciprocal stem describing mutual jostling, struggling, or pushing against one another.
+    Domain: PHYSICAL_ACTION > Contests and Play
+    Glosses: eng: and-struggled-together | spa: Y-se-golpeaban | fra: et-struggled-ensemble | deu: und-es-stießen-sich
+    Refs: Gen 25:22
+  Sense 8: "the oppressed (substantival)" (1x)
+    Desc: Passive participle used substantivally to denote oppressed or downtrodden people as a social class.
+    Domain: VIOLENCE_CONFLICT > Violence, Harm, Destroy, Kill
+    Glosses: eng: the-oppressed | spa: a-los-oprimidos | fra: [רצוצים] | deu: [רצוצים]
+    Refs: Isa 58:6
+
+=== H0413 ===
+Language: Hebrew, POS:  Prep, Occurrences: 5516, Senses: 7
+
+BDB excerpt: אֵל (nearly always followed by Makkeph), poet. אֱלֵי (cf. עֲלֵי, עֲדֵי), but only in Job (†3:22; 5:26; 15:22; 29:19), with suff. אֵלַי, אֵלֶיךָ, אֵלַיִךְ, etc. אֵלֵינוּ, אֲלֵיכֶם & (5 textual) אֲלֵכֶם, אֲלֵיהֶם & אֲלֵהֶם (both very often), once אֵלֵימוֹ ψ 2:5, אֲלֵיהֶן, once אֲלֵהֶן Ex 1:19 (Ar. إِلَى ), prep. denoting motion to or direction towards (whether physical or mental). 1. of motion to or unto a person or place Gn 2:19, 22; 3,19; 8:9; 14:22; 16;9 etc., after every kind of verb expressing motion (בּוֹא, הָלַךְ, יָצָא, etc.) So with נָתַן to give (though ל is here more common) Gn 21:14;
+Senses:
+  Sense 1: "directional: to, toward" (5366x)
+    Desc: Movement or orientation toward a person, place, or thing — the primary spatial/directional sense of the preposition.
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: to, to- | spa: a, a- | fra: à, à- | deu: an-, auf, dem-
+    Refs: Gen 1:9, Gen 4:13, Gen 12:15, Gen 19:5, Gen 19:31
+  Sense 2: "into, entering within" (92x)
+    Desc: Movement into an enclosed space or interior, indicating penetration or entry rather than mere direction.
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: at, in-, into | spa: a, a-, al | fra: vers, à, à- | deu: in-zu-, zu, zu-
+    Refs: Deut 11:29, Deut 31:7, Deut 31:20, Deut 31:21, Deut 31:23
+  Sense 3: "upon, on, over" (24x)
+    Desc: Contact with a surface or authority/responsibility placed upon someone, often overlapping with 'against' in prophetic judgment contexts.
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: and-against-, and-to-, and-upon | spa: y-a, y-contra, y-contra- | fra: et-sur, et-sur-, et-vers | deu: und-auf, und-auf-, und-zu
+    Refs: Num 4:19, 2Sam 2:9, 2Sam 2:9, 2Sam 3:29, 2Kgs 9:33
+  Sense 4: "against, in opposition" (17x)
+    Desc: Hostile or adversarial orientation toward someone, indicating opposition, confrontation, or action directed against.
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: against-, against-them, against-you | spa: a-ti, contra-, contra-ellos | fra: contre-, contre-toi, vers | deu: gegen-, gegen-du, zu
+    Refs: Gen 4:8, Deut 28:7, 1Kgs 21:21, 2Kgs 3:14, 1Chr 19:17
+  Sense 5: "for, concerning, about" (10x)
+    Desc: Purpose, benefaction, or reference — indicating 'for the sake of,' 'on behalf of,' or 'with respect to.'
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: against-him, against-it, for- | spa: Por, a-mí, con-él | fra: au-dessus, mon-Dieu, pour- | deu: fuer-, ueber, zu
+    Refs: 1Sam 1:27, 1Sam 15:35, 1Sam 20:34, 1Kgs 19:3, 2Kgs 7:7
+  Sense 6: "with, among, alongside" (6x)
+    Desc: Accompaniment, association, or proximity — indicating being together with or in the company of someone.
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: -, among-, with- | spa: con, con-, entre | fra: -, avec-, parmi- | deu: -, mit-, unter-
+    Refs: Num 23:4, Num 23:16, Josh 11:19, Josh 13:22, 2Kgs 6:8
+  Sense 7: "?" (1x)
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: before | spa: ante- | fra: vers | deu: vor-zu
+    Refs: Ps 84:7
+
+=== H3588a ===
+Language: Hebrew, POS: Conj-w | Conj, Occurrences: 4329, Senses: 7
+
+BDB excerpt: I. כִּי conj. that, for, when (Moab. id.: Ph. כ. Prob. from the same demonstr. basis found in ܟܳܐ here, and in certain pronouns, as Aramaic דֵּךְ this (WSG 110 f.); perhaps also ultim. akin with كَىْ that, in order that, and ܟܰܝ then, enclit., like Lat. nam in quisnam?)— 1. that (ὅτι, Germ. dass): a. prefixed to sentences depending on an active verb, and occupying to it the place of an accus.: so constantly, after vbs. of seeing, as Gn 1:10 וַיַּרְא אֱלֹהִים כִּי טוֹב and God saw that it was good, 3:6; 6:2, 5; 12:14 + often, hearing 14:14; 29:33, knowing 22:12; 24:14, telling 3:11; 12:18, repe
+Senses:
+  Sense 1: "causal: because, for" (3498x)
+    Desc: Introduces a causal clause giving the reason or ground for the preceding statement.
+    Domain: DISCOURSE_NAMES > Discourse Markers
+    Glosses: eng: for, for- | spa: porque, porque-, que | fra: pour, pour- | deu: denn, denn-, fuer
+    Refs: Gen 2:17, Gen 3:10, Gen 4:23, Gen 17:5, Gen 21:16
+  Sense 2: "declarative: that" (723x)
+    Desc: Introduces a content clause (noun clause) after verbs of perception, speech, or knowledge, functioning as a complementizer.
+    Domain: DISCOURSE_NAMES > Discourse Markers
+    Glosses: eng: that, that- | spa: que, que- | fra: ce, ce- | deu: dass, dass-, jenes
+    Refs: Gen 1:4, Gen 6:6, Gen 8:11, Gen 12:14, Gen 20:9
+  Sense 3: "temporal: when" (58x)
+    Desc: Introduces a temporal clause indicating the time at which an event occurs or a situation obtains.
+    Domain: TIME > Time
+    Glosses: eng: when, when- | spa: Cuando, cuando, cuando- | fra: quand, quand- | deu: als, als-, wenn
+    Refs: Gen 6:1, Gen 12:12, Gen 43:21, Gen 46:33, Exod 1:10
+  Sense 4: "adversative: but, rather" (26x)
+    Desc: Marks a contrast or correction to the preceding clause, functioning as an adversative conjunction meaning 'but' or 'rather'.
+    Domain: DISCOURSE_NAMES > Discourse Markers
+    Glosses: eng: and-also, but, but- | spa: porque, sino, sino- | fra: car, mais- | deu: aber-, denn, sondern
+    Refs: Gen 42:12, Deut 5:3, Deut 29:15, Judg 15:13, 1Sam 8:7
+  Sense 5: "conditional: if, when" (10x)
+    Desc: Introduces a conditional or contingent clause, often overlapping with temporal meaning in legal and casuistic contexts.
+    Domain: TIME > Time
+    Glosses: eng: when | spa: Cuando, cuando | fra: quand | deu: als
+    Refs: Exod 21:2, Exod 21:33, Exod 22:1, Exod 22:5, Exod 22:6
+  Sense 6: "asseverative: surely, indeed" (10x)
+    Desc: Functions as an emphatic or asseverative particle affirming the truth of the following statement, often rendered 'surely' or 'indeed'.
+    Domain: DISCOURSE_NAMES > Discourse Markers
+    Glosses: eng: for-, surely, surely- | spa: Porque-, ciertamente, que | fra: certainement, certainement-, pour- | deu: dass-, fuer-, gewiss
+    Refs: Deut 15:8, Deut 30:14, Josh 2:24, 1Sam 6:3, 1Sam 8:9
+  Sense 7: "concessive: though, yet" (4x)
+    Desc: Introduces a concessive clause acknowledging a circumstance despite which the main clause holds, meaning 'though' or 'even though'.
+    Domain: DISCOURSE_NAMES > Discourse Markers
+    Glosses: eng: though, yet | spa: Aunque, Ciertamente, Cuando | fra: car | deu: denn
+    Refs: Ps 37:24, Ps 44:19, Ps 44:22, Ps 49:18

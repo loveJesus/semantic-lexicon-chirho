@@ -1,0 +1,145 @@
+You are a biblical lexicographer composing glosses for a digital lexicon.
+For each lemma below, compose a JSON object. Separate objects with "---".
+
+Format for each:
+{
+  "lemma_id": "...",
+  "gloss_terse": "under 120 chars, concise definition covering the word's semantic range",
+  "gloss_readable": "2-5 sentences, 40-120 words. Don't start with 'This word'. Warm study-Bible footnote tone. Engaging, not dry.",
+  "senses": {
+    "1": "enriched 20-60 word description. Reference multilingual evidence when illuminating. Don't repeat the label verbatim.",
+    "2": "..."
+  }
+}
+
+Rules:
+- No markdown fences, just JSON objects separated by ---
+- Reference multilingual evidence naturally when it reveals something
+- gloss_readable should feel like a good study Bible footnote: helpful, clear, occasionally surprising
+- Each sense enrichment: how does the evidence support this sense? Mention 1-2 key passages when helpful.
+
+=== G5562 ===
+Language: Greek, POS: V-FNA, Occurrences: 10, Senses: 3
+
+BDB excerpt: χωρ-έω, Refs 6th c.BC+; future χωρήσω Refs 8th c.BC+, and in later Prose, as Refs 1st c.BC+; Attic dialect only in Refs 5th c.BC+; elsewhere in Trag. and Attic dialect always in middle form, χωρήσομαι, Refs 5th c.BC+aorist ἐχώρησα, Epic dialect χώρησα, Refs 8th c.BC+: perfect κεχώρηκα Refs 5th c.BC+ —passive, future χωρηθήσομαι (συγ-) Refs 2nd c.BC+aorist ἐχωρήθην (συν-) Refs 5th c.BC+perfect κεχώρηται (παρα-) Refs 5th c.BC+: (χῶρος):—make room for another, give way, withdraw, ἐχώρησαν πάλιν αὖτις Refs 8th c.BC+; γαῖα ἔνερθε χώρησεν the earth gave way from beneath, i. e. opened, Refs; χ. πρύμν
+Senses:
+  Sense 1: "have room for, contain" (5x)
+    Desc: To have spatial capacity or be large enough to hold or contain something physically.
+    Domain: ECONOMICS_PROPERTY > Possess, Transfer, Exchange
+    Glosses: eng: has-place, have-room-for, holding | spa: caber, cabiendo, contendría | fra: contenir | deu: fassen, weicht
+    Refs: Matt 19:11, Mark 2:2, John 2:6, John 8:37, John 21:25
+  Sense 2: "accept, receive, make room for" (3x)
+    Desc: To accept or receive something mentally or spiritually, such as a teaching, truth, or person, often implying willingness to welcome.
+    Domain: ECONOMICS_PROPERTY > Possess, Transfer, Exchange
+    Glosses: eng: Make-room-for, let-him-receive, to-receive | spa: Haced-lugar, reciba, recibir | fra: contenir | deu: fassen, weicht
+    Refs: Matt 19:12, Matt 19:12, 2Cor 7:2
+  Sense 3: "go, move, proceed" (2x)
+    Desc: To move from one place to another, to go forward or advance in a direction.
+    Domain: ECONOMICS_PROPERTY > Possess, Transfer, Exchange
+    Glosses: eng: goes, to-come | spa: llegar, va | fra: contenir, fassen | deu: fassen, weicht
+    Refs: Matt 15:17, 2Pet 3:9
+
+=== H1443 ===
+Language: Hebrew, POS: Conj-w | V-Qal-ConsecImperf-2mp, Occurrences: 10, Senses: 3
+
+BDB excerpt: † גָּדַר vb. wall up or off, build a wall (denom.? NH id. Arabic جَدَرَ and v. גָּדֵר infr.)— Qal Pf. גָּדַר Jb 19:8 + 2 times, וְגָדַרְתִּ֫י Ho 2:8 Am 9:11; Impf. 2 mpl. וַתִּגְדְּרוּ Ez 13:5; Pt. גֹּדֵר Is 58:12 Ez 22:30; pl. גֹּדְרִים 2 K 12:13; 22:6;—wall up, shut off, lit. only Pt., abs. = masons (wall-builders) 2 K 12:13; 22:6; also Is 58:12 (obj. פֶּרֶץ); fig. of Yahweh’s dealings with men, obj. אֹרַח Jb 19:8, דֶּרֶך La 3:9; cf. Ho 2:8 (acc. cogn. גָּדֵר), in all = obstructing path of life, cf. also La 3:7 (c. בַּעֲדִי); of restoring fallen booth of David Am 9:11 (obj. פרצים); of repair
+Senses:
+  Sense 1: "build a wall" (5x)
+    Desc: Qal: to construct or erect a wall; includes the substantival participle 'wall-builder, mason' as a trade designation (2 Kgs 12:13, 22:6; Mic 7:11). Arabic bana, Swahili -jenga.
+    Domain: BUILDINGS > Building, Constructing
+    Glosses: eng: and-I-will-build, and-to-the-masons, and-to-the-wall-builders | spa: Y-a-los-albañiles, que-levante, y-a-los-albañiles | fra: [גדר], [ותגדרו], et-je-fermerai | deu: [גדר], [ותגדרו], und-umzaeunte
+    Refs: 2Kgs 12:12, 2Kgs 22:6, Ezek 13:5, Ezek 22:30, Hos 2:6
+  Sense 2: "wall in, block, fence in" (3x)
+    Desc: Qal: to wall someone in or block their way as an act of restriction or confinement; used of God hedging a person in (Job 19:8, Lam 3:7, 3:9). Arabic sayyaja, Swahili -zuia/-jengea ukuta.
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: He-blocked, He-has-walled-up, He-walled-me-in | spa: Ha-cercado, ha-cercado | fra: clôture, גדר | deu: umzaeunte
+    Refs: Job 19:8, Lam 3:7, Lam 3:9
+  Sense 3: "repair a breach" (2x)
+    Desc: Qal: to close up or repair a gap/breach in a wall; used of restoring broken-down walls and standing in the gap (Isa 58:12, Ezek 13:5, 22:30). Arabic sadda, Swahili -karabati/-ziba.
+    Domain: PHYSICAL_ACTION > Perform, Do
+    Glosses: eng: and-I-will-repair, repairer-of | spa: reparador-de, y-repararé | fra: clôture, et-je-fermerai | deu: [גדר], und-umzaeunte
+    Refs: Isa 58:12, Amos 9:11
+
+=== H1602 ===
+Language: Hebrew, POS: V-Hifil-Imperf-3ms, Occurrences: 10, Senses: 3
+
+BDB excerpt: † [גָּעַל] vb. abhor, loathe (NH געל Nithpa. be fouled, Hiph. rinse out with hot water; גְּעִילָה rejection; Aramaic געל Ithpe. be fouled, soiled)— Qal Pf. 3 fs. גָּֽעֲלָה Lv 26:43 Je 14:19, וְגָֽעֲלָה cons. Lv 26:30; גְּעַלְתִּים Lv 26:44; גָּֽעֲלוּ Ez 16:45; Impf. 3 fs. תִּגְעַל Lv 26:11, 15; Pt. f. גֹּעֶ֫לֶת Ez 16:45;—abhor, loathe, (usually c. acc.), Yahweh, his people Lv 26:11, 30, 44 (H) Je 14:19 (c. בְּ); the people, Yahweh’s statutes, Lv 26:15, 43 (H); Ez 16:45(×2) women their husbands (fig., in proph. ag. Jerusalem). Niph. נִגְעַל מָגֵן גִּבּוֹרִים 2 S 1:21 the shield of heroes was de
+Senses:
+  Sense 1: "abhor, loathe" (8x)
+    Desc: Qal active sense: to feel intense disgust or revulsion toward someone or something. All six languages converge on abhorrence/loathing vocabulary: eng abhor/loathe, spa aborrecer, hin घृणा करना, arb كر...
+    Domain: EMOTION_ATTITUDE > Attitudes and Emotions
+    Glosses: eng: I-abhorred-them, abhorred, abhors | spa: aborrecerá, aborreciere, aborrecieron | fra: [געלה], abhorred, abhorrer | deu: [געלה], [געלו], [געלת]
+    Refs: Lev 26:11, Lev 26:15, Lev 26:30, Lev 26:43, Lev 26:44
+  Sense 2: "be defiled, be rejected" (1x)
+    Desc: Nifal passive sense: to be cast off as ritually impure or morally repulsive. Cross-linguistic evidence shifts to defilement/rejection vocabulary distinct from the Qal: eng was-defiled, spa fue-rechaza...
+    Domain: RELIGIOUS_LIFE > Religious Activities
+    Glosses: eng: was-defiled | spa: fue-rechazado | fra: fut-defiled | deu: war-defiled
+    Refs: 2Sam 1:21
+  Sense 3: "fail, break down" (1x)
+    Desc: Hifil causative sense: to fail or cease functioning. Entirely distinct vocabulary across all languages with no overlap with the abhor/loathe field: eng fails, spa falla, hin असफल होता, arb يخفق, kor 실...
+    Domain: FAITH_BELIEF > Hold a View, Believe, Trust
+    Glosses: eng: fails | spa: falla; | fra: rejeter | deu: [יגעל]
+    Refs: Job 21:10
+
+=== H1760a ===
+Language: Hebrew, POS: V-Qal-Prtcpl-ms, Occurrences: 10, Senses: 3
+
+BDB excerpt: דָּחָה vb. push, thrust (NH id. Aramaic דְּחִי, דְּחָא, ܕܚܳܐ; cf. also Arabic دَحَا spread, extend, also throw, propel)— Qal Pf. 2 ms. sf. דְּחִיתַנִי ψ 118:13; Inf. cstr. לִדְחוֹת ψ 140:5; abs. דָּחֹה ψ 118:13; Pt. act. דֹּחֶה ψ 35:5 (read דֹּחָם 𝔊 De Che); pass. f. הַדְּחוּיָה ψ 62:4;—push, דָּחֹה דָחָה push violently fig. c. acc. ψ 118:13 sq. cl. of purpose לִנְפֹּל, cf. לִדְחוֹת פעמי ψ 140:5 (Che trip up my feet), & ψ 35:5 (transp. דחה with רדפם v 6 and read דֹּחָם 𝔊; cf. יְהִי־דרכם חשׁך וַחֲלַקְלַקֹּת v a, and Je 23:12); pushed in (Che), in sim., pt. pass., said of גָּדֵר wall ψ 62:4 (‖ ק
+Senses:
+  Sense 1: "Qal: push, thrust, drive away" (4x)
+    Desc: Active pushing, thrusting, or driving away a person by force; includes infinitive, infinitive absolute, participle, and finite forms in Qal active voice (Ps 118:13, 140:5, Prov 10:3, Jer 23:12). Arabi...
+    Domain: MOVEMENT > Linear Movement
+    Glosses: eng: driving-away, pushing, to-push-aside | spa: Empujando, empujándoles, me-empujaste | fra: [דוחה], [דחה], [דחיתני] | deu: driving-weg, du-pushed-mich, pushing
+    Refs: Ps 35:5, Ps 118:13, Ps 118:13, Ps 140:4
+  Sense 2: "Nifal: outcast, banished one" (3x)
+    Desc: Nifal participle used substantivally for those driven into exile or banished; the settled state of having been expelled (Isa 11:12, 56:8, Jer 49:36). Arabic manfiyy, Korean 쫓겨난 자, Swahili waliotawanyi...
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: outcasts-of | spa: a-los-desterrados-de, a-los-dispersos-de, dispersos-de | fra: [נדחי] | deu: [נדחי], outcasts-of
+    Refs: Ps 147:2, Isa 11:12, Isa 56:8
+  Sense 3: "Nifal/Pual: be thrust down, be toppled" (3x)
+    Desc: Passive forms indicating being forcefully knocked down, overthrown, or made to totter; includes Nifal imperfect, Pual perfect, and Qal passive participle (Ps 36:13, 62:4, Jer 23:12). Arabic yutrahu, K...
+    Domain: PHYSICAL_ACTION > Physical Impact
+    Glosses: eng: is-thrust-down, they-are-thrust-down, tottering | spa: es-derribado, fueron-derribados, la-empujada | fra: [דחו], [הדחויה], ידחה | deu: [ידחה], sie-sind-thrust-hinab, tottering
+    Refs: Ps 36:12, Ps 62:3, Prov 14:32
+
+=== H1984c ===
+Language: Hebrew, POS: V-Qal-Imperf-2mp, Occurrences: 10, Senses: 3
+
+BDB excerpt: † II. [הָלַל] vb. be boastful, Pi. praise (Arabic هَلَّ shout, both in joy & (if conject. of Nö RS be right, v. cit. infr.) in terror; especially ii. in formula of worship; Syriac Pa. ܗܰܥܶܠ cecinit, laudavit; cf. NH הִלּוּל praise, הַלֵּל id., Hallel (ψ 113–118); Aramaic הִילּוּלָא marriage-song, &c.; on Assyrian alâlu, shout for joy, rejoice v. Lyon Sargontexte 66 (Cylinder, l. 36) also WincklerSargontexte 134, l. 194; 156, l. 149 KB44, l. 36; 80, l. 194; all variations of cry aloud, cf. NöZMG 1887, 723 RSSem 411; perhaps orig. break through, or out (in a cry), cf. WeSkizzen iii. 107 ff., esp
+Senses:
+  Sense 1: "act madly, feign madness (Hitpael/Qal)" (4x)
+    Desc: To act insanely, behave as a madman, or feign madness (Hitpael reflexive and Qal); used of nations going mad (Jeremiah) and of David feigning madness before Achish (1 Sam 21:14).
+    Domain: BODY_HEALTH > Physiological Processes and States
+    Glosses: eng: and-act-mad, and-he-acted-madly, they-act-madly | spa: enloquecen, y-enloquecerán, y-se-hizo-el-loco | fra: [והתהללו], [יתהללו], et-il-agit-madly | deu: [והתהללו], [יתהללו], und-er-handelte-madly
+    Refs: 1Sam 21:14, Jer 25:16, Jer 50:38, Jer 51:7
+  Sense 2: "boast, be arrogant (Qal)" (4x)
+    Desc: To boast or act arrogantly; used of the proud and boastful who exalt themselves (Qal active, including participle 'the boastful/arrogant'); primarily in Psalms.
+    Domain: MORAL_QUALITY > Moral and Ethical Qualities
+    Glosses: eng: boast, the-arrogant, the-boastful | spa: a-los-arrogantes, de-los-arrogantes, los-insensatos | fra: dans-louer, le-louer, louer | deu: boast, der-arrogant, der-boastful
+    Refs: Ps 5:5, Ps 73:3, Ps 75:4, Ps 75:4
+  Sense 3: "make foolish, drive mad (Piel)" (2x)
+    Desc: To make foolish or drive someone to madness (Piel causative); said of God making diviners and counselors into fools (Job 12:17, Isa 44:25).
+    Domain: COMMUNICATION > Communication
+    Glosses: eng: He-makes-fools, he-makes-foolish | spa: enloquece, enloquece. | fra: [יהולל], louer | deu: [יהולל]
+    Refs: Job 12:17, Isa 44:25
+
+=== H3179 ===
+Language: Hebrew, POS: V-Piel-Perf-3fs | 1cs, Occurrences: 10, Senses: 3
+
+BDB excerpt: † [יָחַם] vb. be hot, Pi. conceive (Arabic وَحَمَ v. incaluerunt pecora, Frey; Aramaic יְחַם be hot, usually of sexual impulse of animals)— Qal v. חָמַם" dir="rtl" >חמם. Pi. Pf. 3 fs. sf. יֶחֱמַתְנִי ψ 51:7 in sin my mother conceived me (‖ חוֹלָ֑לְתִּי); Inf. cstr. of heat of cattle in breeding, conception; בְּכָל־יַחֵם Gn 30:41 at every breeding-heat of the flock (J); בְּעֵת יַחֵם 31:10 at the time of the flock’s being hot in breeding (E); sf. 3 fpl. לְיַחֲמֶנָּה (v. GK. 91f) 30:41 in order that they might have breeding-heat (J).
+Senses:
+  Sense 1: "be in heat, breed" (5x)
+    Desc: Qal/Piel: to be in heat or to go into heat, said of animals experiencing sexual arousal for mating and breeding
+    Domain: PROPERTIES_RELATIONS > Features of Objects
+    Glosses: eng: and-conceived, and-they-were-in-heat, breeding | spa: Y-se-encendían-en-celo, encenderse-en-celo, para-encenderse-en-celo | fra: breeding, et-conçut, et-ils-étaient-dans-heat | deu: Brünstigwerden, damit-sie-brünstig-würden, des-Brünstigwerdens
+    Refs: Gen 30:38, Gen 30:39, Gen 30:41, Gen 30:41, Gen 31:10
+  Sense 2: "be warm, get hot" (4x)
+    Desc: Qal: to become warm or hot physically, said of a person's body gaining warmth or of something becoming heated
+    Domain: PROPERTIES_RELATIONS > Features of Objects
+    Glosses: eng: he-was-warm, is-hot, may-be-hot | spa: se-calentaba, se-calentará?, se-caliente | fra: est-hot, il-fut-warm, être-brûlant | deu: [יחם], [תחם], er-war-warm
+    Refs: Deut 19:6, 1Kgs 1:1, Eccl 4:11, Ezek 24:11
+  Sense 3: "conceive (a child)" (1x)
+    Desc: Piel: to conceive a human child, used of a mother becoming pregnant with offspring
+    Domain: MOVEMENT > Linear Movement
+    Glosses: eng: conceived-me | spa: me-concibió | fra: avoir-chaud | deu: conceived-mich
+    Refs: Ps 51:5

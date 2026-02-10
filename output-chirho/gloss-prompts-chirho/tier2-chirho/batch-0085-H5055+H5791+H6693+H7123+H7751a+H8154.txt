@@ -1,0 +1,145 @@
+You are a biblical lexicographer composing glosses for a digital lexicon.
+For each lemma below, compose a JSON object. Separate objects with "---".
+
+Format for each:
+{
+  "lemma_id": "...",
+  "gloss_terse": "under 120 chars, concise definition covering the word's semantic range",
+  "gloss_readable": "2-5 sentences, 40-120 words. Don't start with 'This word'. Warm study-Bible footnote tone. Engaging, not dry.",
+  "senses": {
+    "1": "enriched 20-60 word description. Reference multilingual evidence when illuminating. Don't repeat the label verbatim.",
+    "2": "..."
+  }
+}
+
+Rules:
+- No markdown fences, just JSON objects separated by ---
+- Reference multilingual evidence naturally when it reveals something
+- gloss_readable should feel like a good study Bible footnote: helpful, clear, occasionally surprising
+- Each sense enrichment: how does the evidence support this sense? Mention 1-2 key passages when helpful.
+
+=== H5055 ===
+Language: Hebrew, POS: V-Piel-Imperf-2mp, Occurrences: 11, Senses: 3
+
+BDB excerpt: † נָגַח vb. push, thrust, gore (NH id.; Arabic نَجَحَ succeed, attain, make progress; 𝔗 as BH);— Qal Impf. יִגַּח Ex 21:28, 31, 32 (E), יִגָּ֑ח v 31;—gore, subj. שׁוֹר, sq. acc. pers. Pi. Impf. יְנַגַּח Dt 33:17; 2 ms. תְּנַגַּח 1 K 22:11 2 Ch 18:10; תְּנַגְּחוּ Ez 34:21; נְנַגֵּחַ ψ 44:6; Pt. מְנַגֵּחַ Dn 8:4;—push or thrush at, sq. acc.: of Joseph under fig. of wild ox Dt 33:17, cf. 1 K 22:11 = 2 Ch 18:10 ψ 44:6 (‖ בּוּס); v. also Ez 34:21 (of Isr. under fig. of sheep), cf. Dn 8:4 (of ram in vision; obj. not expr.). Hithp. Impf. יִתְנַגַּח עִמּוֹ מֶלֶךְ הַנֶּגֶב Dn 11:40 engage in thrusting 
+Senses:
+  Sense 1: "gore, push aggressively (Piel intensive)" (6x)
+    Desc: The Piel intensive stem denoting vigorous or repeated goring and pushing, used both literally of animals and figuratively of military conquest (Deut 33:17). English 'you will gore' / 'butting' / 'we p...
+    Domain: PHYSICAL_ACTION > Physical Impact
+    Glosses: eng: butting, he-gores, we-push-down | spa: acorneando, acornearemos, acorneará | fra: [מנגח], [תנגח], [תנגחו] | deu: [מנגח], [תנגח], [תנגחו]
+    Refs: Deut 33:17, 1Kgs 22:11, 2Chr 18:10, Ps 44:5, Ezek 34:21
+  Sense 2: "gore, push with horns (Qal)" (4x)
+    Desc: The basic Qal meaning of goring with horns, describing an ox or bull attacking by thrusting its horns. English 'gores' / 'it-gores', Spanish 'acornea' (to gore), Arabic 'nataha' (to butt), Korean 'bad...
+    Domain: PHYSICAL_ACTION > Physical Impact
+    Glosses: eng: gores, it-gores | spa: acornea, acornee | fra: cela-gores, gores | deu: es-gores, gores
+    Refs: Exod 21:28, Exod 21:31, Exod 21:31, Exod 21:32
+  Sense 3: "engage in battle, butt against (Hitpael reflexive)" (1x)
+    Desc: The Hitpael reflexive/reciprocal stem meaning to engage mutually in battle or charge against one another, found in Daniel 11:40. English 'shall engage in battle', Spanish 'se embestira' (will charge),...
+    Domain: VIOLENCE_CONFLICT > Hostility, Strife
+    Glosses: eng: shall-engage-in-battle | spa: se-embestirá | fra: [יתנגח] | deu: [יתנגח]
+    Refs: Dan 11:40
+
+=== H5791 ===
+Language: Hebrew, POS: Conj-w | V-Hitpael-ConjPerf-3cp, Occurrences: 11, Senses: 3
+
+BDB excerpt: † [עָוַת] vb. be bent, crooked (NH id., Pi. Nithp.; Aramaic עַוֵּית Pa.; cf. ܥܰܬ, ܥܬܳܐ deceive PS 3008);— Pi. Pf. 3 ms. sf. עִוְּתָ֑נִי Jb 19:6, עִוְּתוֹ Ec 7:13; 3 pl. sf. עִוְּתוּנִי ψ 119:78; Impf. 3 ms. יְעַוֵּת ψ 146:9 Jb 8:3, יְעַוֶּת־ v 3; Inf. לְעַוֵּת Am 8:5 La 3:36;— 1. a. make crooked = falsify, scales Am 8:5; pervert justice (מִשְׁפָּט, צֶדֶק) Jb 8:3(×2); 34:12 (all God subj.); c. acc. pers. subvert (i.e. deprive of justice), לְע׳ אָדָם בְּרִיבוֹ La 3:36, cf. ψ 119:78 (v.l. 119:61); so עִוְּתָנִי Jb 19:6 (י׳ subj.). 2. bend, make crooked, דֶּרֶךְ רְשָׁעִים ψ 146:9 (י׳ subj.); in ge
+Senses:
+  Sense 1: "make crooked, pervert, subvert" (9x)
+    Desc: Piel active sense: to twist, make crooked, pervert, or subvert justice, right, or a person; includes infinitive, imperfect, and perfect forms with various pronominal suffixes. All share the causative ...
+    Domain: PROPERTIES_RELATIONS > Features of Objects
+    Glosses: eng: He-made-crooked, To-pervert, and-to-pervert | spa: Al-pervertir, me-ha-pervertido, me-pervirtieron | fra: [לעות], et-pervertir, pervertir | deu: [ולעות], [יעות], [לעות]
+    Refs: Job 8:3, Job 8:3, Job 19:6, Job 34:12, Ps 119:78
+  Sense 2: "crooked, perverted (passive)" (1x)
+    Desc: Pual participle: that which has been made crooked or is in a state of being twisted; a passive/resultative adjective describing the condition produced by the Piel action.
+    Domain: PROPERTIES_RELATIONS > Features of Objects
+    Glosses: eng: crooked | spa: Lo-torcido | fra: tordre | deu: [מעות]
+    Refs: Eccl 1:15
+  Sense 3: "become bent, bow down (reflexive)" (1x)
+    Desc: Hitpael reflexive: to become bent or crooked oneself, describing the physical deterioration of aging (Ecclesiastes 12:3); distinct from the active Piel in that the subject undergoes the bending rather...
+    Domain: AUTHORITY_RULE > Status
+    Glosses: eng: and-are-bent | spa: y-se-encorven | fra: et-tordre | deu: [והתעותו]
+    Refs: Eccl 12:3
+
+=== H6693 ===
+Language: Hebrew, POS: V-Hifil-Perf-3fs | 1cs, Occurrences: 11, Senses: 3
+
+BDB excerpt: † I. [צוּק] vb. Hiph. constrain, bring into straits, press upon (NH צוּק be distressed (rare), Hiph. = BH; Arabic ضَاقَ (ى) be narrow, tight, so Ethiopic ጦቀ:; Aramaic עִיק, ܥܳܩ; Chr. Pal. ܨܘܩ );—Pf. 3 fs. הֵצִיקָה Ju 16:16, sf. הֱצִיקַתְהוּ 14:17, -נִי Jb 32:18 (Gi v 19); 1 s. וַהֲצִיקוֹתִ֫י consec. Is 29:2; Impf. 3 ms. יָצִיק Dt 28:53 + 2 times; 3 mpl. יָצִיקוּ Je 19:9, Pt. מֵצִיק Is 51:13(×2) pl. מְצִיקִים 29:7;—bring into straits, by importunity c. ל pers. Ju 16:16, c. sf. pers. 14:17; constrain (to speak) Jb 32:18 (sf. pers.); elsewhere of bringing into straits a city or people, c. ל, Is 2
+Senses:
+  Sense 1: "distress, press, oppress (Hifil)" (5x)
+    Desc: The Hifil causative sense of causing distress, pressing upon, or oppressing someone. Arabic يُضَيِّقُ ('he constrains/distresses') is the consistent rendering across S129854, S129856, S129858. Spanish...
+    Domain: AUTHORITY_RULE > Control, Rule
+    Glosses: eng: And-I-shall-distress, distresses, will-distress | spa: Y-angustiaré, angustiarán, te-angustiará | fra: [והציקותי], [יציקו], détresses | deu: [והציקותי], [יציקו], distresses
+    Refs: Deut 28:53, Deut 28:55, Deut 28:57, Isa 29:2, Jer 19:9
+  Sense 2: "oppressor (Hifil participle, substantival)" (3x)
+    Desc: The substantivized Hifil participle functioning as a noun meaning 'the oppressor' or 'those who oppress.' Arabic الْمُضَيِّقِ/الْمُضَيِّقِينَ ('the one who constrains/those who constrain') uses the ac...
+    Domain: VIOLENCE_CONFLICT > Violence, Harm, Destroy, Kill
+    Glosses: eng: and-who-distress-her, the-oppressor | spa: el-opresor, el-opresor?, y-los-que-la-angustian | fra: [המציק], [והמציקים] | deu: [המציק], [והמציקים]
+    Refs: Isa 29:7, Isa 51:13, Isa 51:13
+  Sense 3: "press, urge persistently (Hifil, interpersonal pressure)" (3x)
+    Desc: A specific sense of pressing or urging someone persistently, as in Delilah pressing Samson. Arabic ضَايَقَتْهُ ('she pressed/constrained him') and Korean 조르다 ('to nag/press persistently') show the int...
+    Domain: MOVEMENT > Linear Movement
+    Glosses: eng: constrains-me, pressed, she-pressed-him | spa: lo-presionó, me-apremia | fra: elle-pressed-lui, pressed, הציקתני-moi | deu: [הציקתני], pressed, sie-pressed-ihn
+    Refs: Judg 14:17, Judg 16:16, Job 32:18
+
+=== H7123 ===
+Language: Hebrew, POS: V-Qal-Imperf-3ms, Occurrences: 11, Senses: 3
+
+BDB excerpt: † [קְרָא] vb. call, read out, aloud (v. BH I. קרא);— Pe. Impf. 3 ms. יִקְרֵה Dn 5:7, 1 s. אֶקְרֵא v 17; 3 mpl. יִקְרוֹן v 15; Inf. לְמִקְרֵא v 8, 16; Pt. act. קָרֵא 3:4 +;— 1. call, proclaim, בְּהַיִל: Dn 3:4; 4:11; 5:7. 2. read out, aloud, acc. כְּתָבָא 5:7, 8, 15, 16, v 17 (ל pers.). Peʿîl (WCG 225) Pf. 3 ms. קֱרִי Ezr 4:18, 23 it was read, קֳדָם pers. Hithpe. be summoned, Impf. 3 ms. יִתְקְרֵי Dn 5:12.
+Senses:
+  Sense 1: "read aloud" (7x)
+    Desc: To read out or read aloud, especially a written document (Aramaic Pe'al and Pe'il); used of reading the handwriting on the wall (Dan 5) and official letters (Ezr 4:18,23).
+    Domain: COMMUNICATION > Communication
+    Glosses: eng: I-will-read, read, reads | spa: fue-leída, lea, leer | fra: [קרי], appeler | deu: [קרי], rufen
+    Refs: Ezra 4:18, Ezra 4:23, Dan 5:7, Dan 5:8, Dan 5:15
+  Sense 2: "call, proclaim" (3x)
+    Desc: To call out or proclaim loudly (Aramaic Pe'al participle); used of heralds making public announcements (Dan 3:4, 4:11, 5:7).
+    Domain: COMMUNICATION > Communication
+    Glosses: eng: called, calling, proclaimed | spa: clamaba, gritó, proclamaba | fra: il-a-appelé | deu: rief
+    Refs: Dan 3:4, Dan 4:14, Dan 5:7
+  Sense 3: "be summoned" (1x)
+    Desc: To be summoned or called (Aramaic Hithpe'el); passive reflexive sense of being called forth (Dan 5:12).
+    Domain: COMMUNICATION > Communication
+    Glosses: eng: let-be-called | spa: sea-llamado | fra: appeler | deu: rufen
+    Refs: Dan 5:12
+
+=== H7751a ===
+Language: Hebrew, POS: V-Qal-Perf-3cp, Occurrences: 11, Senses: 3
+
+BDB excerpt: † I. שׁוּט vb. go or rove about (NH Aramaic שׁוּט rove, row (Jon 1:13), swim (Is 25:11), stroke, besmear; v. also שׁוֹט);— Qal go or rove about: Pf. 3 pl., abs. שָׁטוּ הָעָם Nu 11:8 (J; gathering manna), so, c. ב loc., Impf. 3 mpl. וַיָּשֻׁטוּ 2 S 24:8, Imv. ms. שׁוּט־נָא v 2, Inf. cstr. שׁוּט Jb 1:7, שֻׁט 2:2 (both ‖ הִתְהַלֵּךְ), perhaps also Gn 24:63 (לָשׁוּט for לָש��וּחַ, so 𝔖 Thes 1322 cf. Di Gunk Dr); Je 8:6 Du reads שָׁט for שָׁב.—Pt. שָׁטִים v. שׁוּט²" dir="rtl" >שׁוּט denom. infr. Pōʿl. go eagerly, quickly, to and fro: Impf. 3 ms. יְשׁוֹטְטוּ לְבַקֵּשׁ Am 8:12 (‖ וְנָעוּ); abs. יְשֹׁ
+Senses:
+  Sense 1: "go about, rove (Qal)" (5x)
+    Desc: To move about, traverse, or go through an area in a general manner; the basic Qal sense of traveling or roaming through a space without particular urgency.
+    Domain: MOVEMENT > Linear Movement
+    Glosses: eng: and-they-went-about, from-roaming, go-about | spa: Se-dispersó, Y-recorrieron, de-vagar | fra: alla-au-sujet-de, de-משוט, de-משט | deu: [משוט], [משט], gehe-ueber
+    Refs: Num 11:8, 2Sam 24:2, 2Sam 24:8, Job 1:7, Job 2:2
+  Sense 2: "run to and fro, range eagerly (Piel)" (5x)
+    Desc: To range or run to and fro with intensity or purpose, often describing eyes searching the earth or people actively scouring an area; the Piel intensification conveys vigorous, purposeful traversal.
+    Domain: MOVEMENT > Linear Movement
+    Glosses: eng: ranging, roving, run-to-and-fro | spa: Recorred, andarán-errantes, correrán | fra: [משטטות], [שוטטו], parcourir | deu: [ישוטטו], [ישטטו], [משוטטים]
+    Refs: 2Chr 16:9, Jer 5:1, Dan 12:4, Amos 8:12, Zech 4:10
+  Sense 3: "wander restlessly (Hitpael)" (1x)
+    Desc: To rove about in a restless or aimless manner, emphasizing the reflexive-iterative aspect of wandering without clear direction or destination.
+    Domain: EMOTION_ATTITUDE > Attitudes and Emotions
+    Glosses: eng: and-run-to-and-fro | spa: y-vaguen | fra: [והתשוטטנה] | deu: [והתשוטטנה]
+    Refs: Jer 49:3
+
+=== H8154 ===
+Language: Hebrew, POS: Conj-w | V-Qal-QalPassPrtcpl-ms, Occurrences: 11, Senses: 3
+
+BDB excerpt: † [שָׁסָה] vb. spoil, plunder (rarer syn. of שׁלל, ב��ז; with this √ WMMAs. u. Eur. 131 connects Egypt. name of Beduin plunderers Šôs [ša-su, ša-sa]; connex. doubted by JenZA x (1895), 331);— Qal Pf. 3 pl. שָׁ֫סוּ לָ֫מוֹ ψ 44:11 they plunder for themselves; Impf. 3 ms. יִשְׁסֶה אוֹצַר וגו׳ Ho 13:15; elsewhere Pt. שֹׁסִים plunderers Ju 2:14; 2 K 17:20; c. acc. loc. 1 S 23:1; c. sf. (as obj.) שֹׁסֵ֫הוּ 1 S 14:48 (prob. pl. = שֹׁסֵ֫יהוּ, so Sta p. 355 Dr Bu, cf. Ges§ 91 k), שׁוֹסֵ֫ינוּ Is 17:14 (‖ בֹּזְזֵינוּ), שֹׁסֵיהֶם Ju 2:16; שֹׁסַ֫יִךְ Je 30:16 Qr (Kt v. שסס; ‖ בֹּזְזַיִךְ); cstr. שֹׁסֵי נַח
+Senses:
+  Sense 1: "to plunder, plunderer (Qal active)" (9x)
+    Desc: Active plundering or despoiling in the Qal stem, including participial agent nouns ('plunderers', 'one who plunders') and finite verb forms ('plundered', 'shall plunder'), all denoting the act of seiz...
+    Domain: ECONOMICS_PROPERTY > Possess, Transfer, Exchange
+    Glosses: eng: our-plunderers, plunder, plunderer-him | spa: nuestros-despojadores, saqueador-de-él, saqueadores | fra: [שוסינו], [שסי], leur-plunderers | deu: [ישסה], [שוסינו], [שסי]
+    Refs: Judg 2:14, Judg 2:16, 1Sam 14:48, 1Sam 23:1, 2Kgs 17:20
+  Sense 2: "to be despoiled (Qal passive)" (1x)
+    Desc: Passive participial form indicating the state of having been plundered or despoiled, describing the victim or object of plundering rather than the agent.
+    Domain: ECONOMICS_PROPERTY > Possess, Transfer, Exchange
+    Glosses: eng: and-despoiled | spa: y-saqueado | fra: [ושסוי] | deu: [ושסוי]
+    Refs: Isa 42:22
+  Sense 3: "to plunder thoroughly (Piel intensive)" (1x)
+    Desc: Intensive Piel stem form denoting thorough, complete, or emphatic plundering, conveying a more forceful or exhaustive act of despoiling than the basic Qal.
+    Domain: ECONOMICS_PROPERTY > Possess, Transfer, Exchange
+    Glosses: eng: I-plundered | spa: saqueé | fra: [שושתי] | deu: [שושתי]
+    Refs: Isa 10:13

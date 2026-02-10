@@ -1,0 +1,115 @@
+You are a biblical lexicographer composing glosses for a digital lexicon.
+For each lemma below, compose a JSON object. Separate objects with "---".
+
+Format for each:
+{
+  "lemma_id": "...",
+  "gloss_terse": "under 120 chars, concise definition covering the word's semantic range",
+  "gloss_readable": "2-5 sentences, 40-120 words. Don't start with 'This word'. Warm study-Bible footnote tone. Engaging, not dry.",
+  "senses": {
+    "1": "enriched 20-60 word description. Reference multilingual evidence when illuminating. Don't repeat the label verbatim.",
+    "2": "..."
+  }
+}
+
+Rules:
+- No markdown fences, just JSON objects separated by ---
+- Reference multilingual evidence naturally when it reveals something
+- gloss_readable should feel like a good study Bible footnote: helpful, clear, occasionally surprising
+- Each sense enrichment: how does the evidence support this sense? Mention 1-2 key passages when helpful.
+
+=== G0772 ===
+Language: Greek, POS: Adj-AMS, Occurrences: 26, Senses: 2
+
+BDB excerpt: ἀσθεν-ής, ές, without strength, weak, __1 in body, feeble, sickly, τοὺς ἀσθενέας τῆς στρατιῆςRefs 5th c.BC+; τοὺς ἀσθενεστάτους ἐς τὰς ταλαιπωρίας least able to bear hardship, Refs 5th c.BC+; ἀσθενέστερος πόνον ἐνεγκεῖν too weak to.., Refs 4th c.BC+. adverb ἀσθενῶς, ἴσχεινRefs 5th c.BC+ __2 in mind, and the like, τὸ ἀ. τῆς γνώμης the weakness, Refs 5th c.BC+ __3 in power, weak, feeble, ἀ. δύναμιςRefs 5th c.BC+ __4 in property, weak, poor, οἱ χρήμασιν ἀσθενέστεροιRefs 5th c.BC+; οἱ ἀσθενέστεροι the weaker sort, i.e. the poor, Refs 5th c.BC+ __5 insignificant, οὐκ ἀσθενέστατος σοφιστὴς ἙλλήνωνRe
+Senses:
+  Sense 1: "weak, feeble (general/moral/spiritual)" (19x)
+    Desc: The primary sense of asthenes denoting weakness in a general, moral, or spiritual sense rather than physical illness. This covers the majority of NT uses (15+ occurrences). In Matt 26:41/Mark 14:38 it...
+    Domain: PROPERTIES_RELATIONS > Able, Capable
+    Glosses: eng: is-weak, weak, weaker | spa: a-más-débil, debilidad, débil | fra: faible | deu: schwach
+    Refs: Matt 26:41, Mark 14:38, Rom 5:6, 1Cor 1:25, 1Cor 1:27
+  Sense 2: "sick, ill (physical ailment)" (7x)
+    Desc: A specialized medical sense of asthenes meaning physically sick or ill, used in contexts of healing and care for the diseased. In Luke 9:2 and 10:9 Jesus sends disciples to heal the sick (tous asthene...
+    Domain: BODY_HEALTH > Physiological Processes and States
+    Glosses: eng: sick | spa: enfermo, enfermos | fra: faible | deu: schwach
+    Refs: Matt 25:43, Matt 25:44, Luke 9:2, Luke 10:9, Acts 4:9
+
+=== G3076 ===
+Language: Greek, POS: V-AIP-3P, Occurrences: 26, Senses: 2
+
+BDB excerpt: λῡπ-έω, (λύπη) grieve, vex, whether in body or mind, τινα Refs 8th c.BC+; opposed to εὐφραίνειν, Refs 5th c.BC+; [ὁ θώραξ] λυπεῖ distresses by its weight, Refs 5th c.BC+: c.neuter adjective, λυπεῖν μηδὲν αὑτόν Refs 5th c.BC+: with participle, ἐλύπει αὐτὸν ἡ χώρα πορθουμένη Refs 5th c.BC+; οὐδὲν ἐλύπησεν [αὐτό], ὥστε μή.. does no harm.., Refs 5th c.BC+; οὐδένα λυπήσας or -ασα, as formula in epitaphs, Refs __2 absolutely, cause pain or grief, ἄγαν γε λυπεῖς Refs 5th c.BC+ __3 in historical writers, of cavalry and light troops, harass, annoy an army by constant attacks, Refs 5th c.BC+ __II passiv
+Senses:
+  Sense 1: "to be grieved, feel sorrow" (20x)
+    Desc: Intransitive or passive sense: to experience grief, sadness, or sorrow oneself, whether as an emotional state or response to circumstances.
+    Domain: EMOTION_ATTITUDE > Attitudes and Emotions
+    Glosses: eng: being-grieved, grieving, having-been-grieved | spa: Se-entristeció, a-entristecerse, apenado | fra: attrister, s'attrister | deu: betruebt-werden, λυπεῖσθαι, λυπηθεὶς
+    Refs: Matt 14:9, Matt 17:23, Matt 18:31, Matt 19:22, Matt 26:22
+  Sense 2: "to grieve someone, cause sorrow" (6x)
+    Desc: Transitive or causative sense: to cause grief or sorrow to another person, to make someone sad or sorrowful.
+    Domain: EMOTION_ATTITUDE > Attitudes and Emotions
+    Glosses: eng: I-grieved, grieve, grieved | spa: contristéis, entristeció, entristecí | fra: attrister, s'attrister | deu: betruebt-werden
+    Refs: 2Cor 2:2, 2Cor 2:5, 2Cor 2:5, 2Cor 7:8, 2Cor 7:8
+
+=== G4152 ===
+Language: Greek, POS: Adj-NMS, Occurrences: 26, Senses: 2
+
+BDB excerpt: πνευμᾰτ-ικός, ή, όν, of wind or air, κινήσεις Refs 4th c.BC+; π. [ὄργανον] a machine moved by wind, Refs 1st c.BC+ __2 of the nature of wind or air, τὰ π. Refs 4th c.BC+; π. ξηρότης, i. e. a dry vapour, Refs 1st c.AD+ __2.b of subtle substance, τὸ π. Refs 1st c.BC+; οὐσία, opposed to ὑγρά, Refs 1st c.AD+ __3 inflated, distended with air, ὑστέραι Refs 4th c.BC+ __4 active (= πνευματώδης Refs, causing flatulence, οἶνος Refs 3rd c.BC+. adverb -κῶς by flatulence, Refs 2nd c.AD+ __5 breathing, exhaling, εὐοσμία Refs 4th c.BC+ __II of the breath or breathing, τὸ π. μόριον, ὁ π. τόπος, Refs 4th c.BC+
+Senses:
+  Sense 1: "spiritual" (21x)
+    Desc: spiritual, a spiritual (21 occurrences across 4 original clusters)
+    Domain: SUPERNATURAL > Supernatural Beings and Powers
+    Glosses: eng: a-spiritual, spiritual, to-spiritual | spa: a-espirituales, espiritual, espirituales | fra: spirituel | deu: geistlich
+    Refs: Rom 1:11, Rom 7:14, 1Cor 2:13, 1Cor 2:15, 1Cor 3:1
+  Sense 2: "spiritual things" (5x)
+    Desc: spiritual things, spiritual gifts (5 occurrences across 2 original clusters)
+    Domain: SUPERNATURAL > Supernatural Beings and Powers
+    Glosses: eng: spiritual-gifts, spiritual-things | spa: espirituales, espirituales-cosas | fra: spirituel | deu: geistlich
+    Refs: Rom 15:27, 1Cor 2:13, 1Cor 9:11, 1Cor 12:1, 1Cor 14:1
+
+=== H0138 ===
+Language: Hebrew, POS: Prep-l | N-proper-ms, Occurrences: 26, Senses: 2
+
+BDB excerpt: אֲדֹנִיָּ֫הוּ (אֲדֹנִיָּה) n.pr.m. (my Lord is Yahweh, cf. Ph. אדנאשמן, אדנבעל, אדנשמש etc., in Assyrian Adunibaʾal SchrKB II, 172) 1. fourth son of David 1 K 1:8 + 11 times, 2:13 + 5 times (= אֲדֹנִיָּה 2 S 3:4 1 K 1:5, 7, 18; 2:28 1 Ch 3:2). 2. a Levite †2 Ch 17:8. 3. a chief of the people †Ne 10:17 (= אֲדֹנִיקָם 7:18 Ezr 2:13 cf. 8:13).
+Senses:
+  Sense 1: "Adonijah son of David" (24x)
+    Desc: The personal name Adonijah (meaning 'my Lord is Yahweh'), referring primarily to the fourth son of King David who attempted to seize the throne before Solomon's accession. The vast majority of occurre...
+    Domain: DISCOURSE_NAMES > Names of Persons and Places
+    Glosses: eng: Adonijah, for-Adonijah, to-Adonijah | spa: Adoniyah, Adoniyahu, a-Adoniyahu | fra: Adonija, furent-pour-Adonija, pour-Adonija | deu: Adonijah, fuer-Adonijah, waren-fuer-Adonijah
+    Refs: 1Kgs 1:5, 1Kgs 1:7, 1Kgs 1:8, 1Kgs 1:9, 1Kgs 1:11
+  Sense 2: "Adonijah (other persons)" (2x)
+    Desc: The personal name Adonijah referring to individuals other than David's son: (1) a Levite sent by King Jehoshaphat to teach the law in the cities of Judah (2 Chronicles 17:8); (2) the son of David list...
+    Domain: DISCOURSE_NAMES > Names of Persons and Places
+    Glosses: eng: Adoniyah | spa: Adoniya, Adoniyah | fra: Adoniyah, [אדניה] | deu: Adoniyah, [אדניה]
+    Refs: 2Sam 3:4, 1Chr 3:2
+
+=== H1952 ===
+Language: Hebrew, POS: N-msc | 2fs, Occurrences: 26, Senses: 2
+
+BDB excerpt: † הוֹן n.m. Pr 8:18, wealth, sufficiency (poet., almost wholly WisdLt, especially Pr; cf. 1. אוֹן p. 20 supr.)—abs. הוֹן Pr 1:13 + 15 times + Ez 27:12, 18 (where 𝔊 𝔖 Co הוֹנֵךְ); cstr. Pr 6:31 + 3 times; sf. הוֶֹנ֑ךָ Pr 3:9; הוֹנֵךְ Ez 27:27 + v 12, 18 Co; הוֹנוֹ Pr 28:8; pl. sf. הוֹנַיִךְ Ez 27:33— 1. wealth ψ 112:3 (‖ עֹשֶׁר) Pr 8:18 (‖ id.) 1:13 (‖ שָׁלָל) cf. עָשִׁיר" dir="rtl" >הוֹן עָשִׁיר Pr 10:15 (opp. דַּלִּים), 18:11; Pr 3:9 (‖ רֵאשִׁית כָּל־תְּבוּאָתֶ֑ךָ) הוֹן בֵּיתוֹ Pr 6:31 Ct 8:7, בַּיִת וָהוֹן Pr 19:14; see 19:4 (opp. דָּל) 28:8 (opp. דַּלִּים); also ψ 119:14 Pr 11:4; 12:27; 13:
+Senses:
+  Sense 1: "wealth, riches" (24x)
+    Desc: Material wealth, riches, or valuable possessions, often used in Proverbs and Ezekiel for accumulated property or treasure.
+    Domain: QUANTITY_NUMBER > Whole, Unite, Part, Divide
+    Glosses: eng: and-wealth, from-your-wealth, his-wealth | spa: Riqueza, Riqueza-de, bien | fra: de-ton-richesse-toi, et-richesse, la-richesse | deu: Reichtum, [הון], [הוניך]
+    Refs: Ps 44:12, Ps 112:3, Ps 119:14, Prov 1:13, Prov 3:9
+  Sense 2: "enough, sufficiency" (2x)
+    Desc: An adequate or sufficient amount, used adverbially to express that something is enough or satisfactory.
+    Domain: PROPERTIES_RELATIONS > Adequate, Qualified
+    Glosses: eng: enough | spa: basta | fra: richesse | deu: Reichtum
+    Refs: Prov 30:15, Prov 30:16
+
+=== H4046 ===
+Language: Hebrew, POS: Conj-w, Occurrences: 26, Senses: 2
+
+BDB excerpt: † מַגֵּפָה n.f. blow, slaughter, plague, pestilence;—מ׳ abs. Nu 14:37 + 23 times; cstr. מַגֵּפַת Zc 14:15; pl. sf. מַגֵּפֹתַי Ex 9:14;— 1. blow, = fatal stroke Ez 24:16; in divine judgment (plague) Ex 9:14 (J). 2. slaughter in battle, 1 S 4:17; 2 S 17:9; 18:7. 3. plague, pestilence (divine judgment), of tumours on Philistines 1 S 6:4; against Isr Nu 14:37; 17:13, 14, 15; 25:8, 9, 18, 19; 31:16 2 S 24:21, 25 (ins. also v 15 𝔊 Th We Klo Dr Kit Bu), 1 Ch 21:22 ψ 106:29, 30; specif. disease of bowels 2 Ch 21:14; מ׳ = infected people 1 Ch 21:17; wasting of flesh, eyes and tongue, of hostile peoples
+Senses:
+  Sense 1: "plague, pestilence" (23x)
+    Desc: A divinely sent epidemic or affliction striking a population as judgment or punishment, often associated with divine wrath against Israel or its enemies.
+    Domain: BODY_HEALTH > Physiological Processes and States
+    Glosses: eng: a-plague, and-the-plague, by-the-plague | spa: como-la-plaga, en-la-plaga, la-plaga | fra: [המגפה], [כמגפה], [מגפה] | deu: [המגפה], [כמגפה], [מגפה]
+    Refs: Exod 9:14, Num 14:37, Num 16:48, Num 16:49, Num 16:50
+  Sense 2: "slaughter, great defeat" (3x)
+    Desc: A massive military killing or devastating defeat in battle, emphasizing the scale of casualties inflicted.
+    Domain: BODY_HEALTH > Physiological Processes and States
+    Glosses: eng: a-slaughter, slaughter, the-slaughter | spa: derrota, la-derrota, mortandad | fra: immole, le-immole, un-immole | deu: der-slaughter, ein-slaughter, slaughter
+    Refs: 1Sam 4:17, 2Sam 17:9, 2Sam 18:7

@@ -1,0 +1,115 @@
+You are a biblical lexicographer composing glosses for a digital lexicon.
+For each lemma below, compose a JSON object. Separate objects with "---".
+
+Format for each:
+{
+  "lemma_id": "...",
+  "gloss_terse": "under 120 chars, concise definition covering the word's semantic range",
+  "gloss_readable": "2-5 sentences, 40-120 words. Don't start with 'This word'. Warm study-Bible footnote tone. Engaging, not dry.",
+  "senses": {
+    "1": "enriched 20-60 word description. Reference multilingual evidence when illuminating. Don't repeat the label verbatim.",
+    "2": "..."
+  }
+}
+
+Rules:
+- No markdown fences, just JSON objects separated by ---
+- Reference multilingual evidence naturally when it reveals something
+- gloss_readable should feel like a good study Bible footnote: helpful, clear, occasionally surprising
+- Each sense enrichment: how does the evidence support this sense? Mention 1-2 key passages when helpful.
+
+=== H5674b ===
+Language: Hebrew, POS: Conj-w | V-Hitpael-ConsecImperf-3ms, Occurrences: 9, Senses: 2
+
+BDB excerpt: † [עָבַר] vb. denom. Hithp. be arrogant, infuriate oneself;—Pf. 3 ms. הִתְעַבָּ֑ר ψ 78:62; 2 ms. הִתְעַבַּ֫רְתָּ 89:39; Impf. 3 ms. וַיִּתְעַבֵּר Dt 3:26, וַיִּתְעַבָּ֑ר ψ 78:21, 59; Pt. מִתְעַבֵּר Pr 14:16; 26:17; sf. מִתְעַבְּרוֹ 20:2;— 1. be arrogant, Pr 14:16 (opp. יָרֵא). 2. a. put oneself in a fury, become furious. c. בְּ pers. Dt 3:26 ψ 78:62; c. עִם pers. 89:39; abs. 78:21, 59 (all of God); of man, c. עַל rei. Pr 26:17. b. incite one to fury for oneself Pr 20:2 (si vera l.; cf. De Ges§ 54 f.).
+Senses:
+  Sense 1: "be furious, be enraged (Hitpael reflexive)" (8x)
+    Desc: Hitpael reflexive forms meaning 'to become furious, enraged, or wrathful,' typically said of God or a king expressing intense anger. In Ps 78:21 and 78:59 the LORD 'was furious (wayyit'abbar)' at Isra...
+    Domain: EMOTION_ATTITUDE > Attitudes and Emotions
+    Glosses: eng: and-was-angry, and-was-furious, becoming-enraged | spa: el-que-lo-provoca, que-se-enfurece, se-encolerizó | fra: et-passer, et-était-angry, le-passer | deu: [מתעבר], [מתעברו], du-haben-gewesen-furious
+    Refs: Deut 3:26, Ps 78:21, Ps 78:59, Ps 78:62, Ps 89:38
+  Sense 2: "pass by, one passing (Qal of 'abar I)" (1x)
+    Desc: Qal active participle of the root 'abar I meaning 'to pass by' or 'one passing by,' assigned to this lemma entry but semantically belonging to the primary verb 'abar (to cross over, pass). In Prov 26:...
+    Domain: MOVEMENT > Linear Movement
+    Glosses: eng: one-passing-by | spa: el-que-pasa | fra: passer | deu: jenseits
+    Refs: Prov 26:17
+
+=== H5709 ===
+Language: Hebrew, POS: V-Hifil-Perf-3mp, Occurrences: 9, Senses: 2
+
+BDB excerpt: † [עֲדָא, עֲדָה] vb. pass on, away (𝔗 for Heb. עָבַר, Syriac; v. BH I. עָדָה (rare, late));— Pe. Pf. 3 fs. עֲדָת Dn 3:27; 4:28; Impf. 3 ms. יֶעְדֵּה 7:14, 3 fs. תֶּעְדֵּא 6:9;— 1. pass on, over, c. ב pers. Dn 3:27. 2. pass away, of kingdom 4:28 (מִן pers.), 7:14; of law 6:9, 13. Haph. take away (so Egyptian Aramaic S-CG 35): Pf. 3 mpl. הֶעְדִּיו, acc. rei, Dn 5:20 (מִן pers.), 7:12; Impf. 3 mpl. יְהַעְדּוֹן v 26; Pt. מְהַעְדֵּה 2:21 remove, depose kings, of God.
+Senses:
+  Sense 1: "pass away (Qal intransitive)" (5x)
+    Desc: Qal stem denoting intransitive passing or passing away, used of time, decrees, or states ceasing to exist. Multilingual evidence converges: Spanish 'paso/pasara/puede ser revocada,' Hindi 'tulti/hateg...
+    Domain: MOVEMENT > Linear Movement
+    Glosses: eng: has-passed, passed, passes-away | spa: ha-pasado, pasará, pasó | fra: elle-a-convoqué, passer | deu: vergehen
+    Refs: Dan 3:27, Dan 4:31, Dan 6:8, Dan 6:12, Dan 7:14
+  Sense 2: "take away, remove (Hifil causative)" (4x)
+    Desc: Hifil causative stem indicating active removal or taking away of authority, dominion, or status by an external agent. Spanish 'le quitaron/quitaran/quita,' Hindi 'hata di gayi/hataenge/hatata hai,' Ar...
+    Domain: MOVEMENT > Linear Movement
+    Glosses: eng: removes, their-dominion-was-taken-away, they-took | spa: fue-quitado, le-quitaron, quita | fra: passer | deu: vergehen
+    Refs: Dan 2:21, Dan 5:20, Dan 7:12, Dan 7:26
+
+=== H5736 ===
+Language: Hebrew, POS: Art | V-Qal-Prtcpl-fs, Occurrences: 9, Senses: 2
+
+BDB excerpt: † [עָדַף] vb. remain over, be in excess, syn. of סרח q.v., only PH (NH id., Aramaic עָדִיף superior (to); Arabic غَدَفَ be profuse, iv. let down veil, or curtain, etc.; غَدَفٌ plentifulness);— Qal Pt. סֶרַח הָעֹדֵף Ex 26:12 the surplus (of curtains) that remains over, so f. הָעֹדֶפֶת v 12, and הָעֹדֵף as subst. v 13 the excess in (ב) length; הָעֹדֵף = the surplus of food Ex 16:23, of price of field Lv 25:27 (P); הָעֹדְפִים עַל־ those over and above, Nu 3:46, 49, cf. v 48 (no עַל־). Hiph. Pf. 3 ms. הֶעְדִּיף Ex 16:18 have a surplus (of manna; opp. הֶחְסִיר).
+Senses:
+  Sense 1: "remain over, be in excess (Qal ptcp.)" (8x)
+    Desc: Qal participle used substantively to denote what remains over, the surplus or excess portion. Appears in the tabernacle construction instructions for excess curtain material (Exod 26:12-13), the censu...
+    Domain: QUANTITY_NUMBER > Quantity
+    Glosses: eng: in-the-excess, the-excess, the-remainder | spa: el-sobrante, en-lo-que-sobra, la-sobrante | fra: dans-le-excess, le-excess, le-remainder | deu: der-Rest, der-excess, der-surplus
+    Refs: Exod 16:23, Exod 26:12, Exod 26:12, Exod 26:13, Lev 25:27
+  Sense 2: "have excess (Hiphil)" (1x)
+    Desc: Hiphil perfect 3ms of adaph, meaning 'to have an excess, to have left over.' Occurs in Exod 16:18 describing the manna collection where those who gathered much had no excess (he'edif). This is a disti...
+    Domain: QUANTITY_NUMBER > Quantity
+    Glosses: eng: had-excess | spa: sobró | fra: avait-excess | deu: hatte-excess
+    Refs: Exod 16:18
+
+=== H5835 ===
+Language: Hebrew, POS: Conj-w, Occurrences: 9, Senses: 2
+
+BDB excerpt: † עֲזָרָה n.f. appar. enclosure;—abs. ע׳: 1. ledge surrounding Ezekiel’s altar; הָע׳ הַתַּחְתּוֹנָה = הָע׳ הַקְּטַנָּה Ez 43:14, below הָע׳ הַגְּדוֹלָה v 14; הָע׳ alone v 17, 20; 45:19 (v. Comm.). 2. outer court of temple, הָע׳ הַגְּדֹלָה 2 Ch 4:9; with doors v 9; 6:13 (v. i. חָצֵר 3 b, and on ע׳ in Herod’s temple NowArch. ii. 78 ff.).
+Senses:
+  Sense 1: "ledge, settle (of altar)" (6x)
+    Desc: A technical architectural term for the ledge or settle surrounding the base of Ezekiel's visionary altar. S123488 describes 'the ledge' in the context of altar measurements. Spanish 'cornisa' (cornice...
+    Domain: BUILDINGS > Constructions
+    Glosses: eng: and-from-the-ledge, and-the-ledge, the-ledge | spa: Y-la-cornisa, la-cornisa, y-desde-la-cornisa | fra: [ומהעזרה], et-le-parvis, le-parvis | deu: Vorhof, und-Vorhof
+    Refs: Ezek 43:14, Ezek 43:14, Ezek 43:14, Ezek 43:17, Ezek 43:20
+  Sense 2: "enclosure, court (of temple)" (3x)
+    Desc: The broader architectural sense of azarah referring to an enclosed courtyard or precinct of the temple complex, distinct from the narrow altar-ledge meaning. S123489 'and the enclosure,' S123491 'the ...
+    Domain: BUILDINGS > Constructions
+    Glosses: eng: and-the-enclosure, for-the-enclosure, the-court | spa: atrio, para-el-atrio, y-el-atrio | fra: [העזרה], [והעזרה], [לעזרה] | deu: Vorhof, und-Vorhof
+    Refs: 2Chr 4:9, 2Chr 4:9, 2Chr 6:13
+
+=== H6006 ===
+Language: Hebrew, POS: Conj-w | V-Qal-Prtcpl-mp, Occurrences: 9, Senses: 2
+
+BDB excerpt: † [עָמַס, ? עָמַשׂ] vb. 1. load. 2. carry a load (NH id.; Ph. עמס carry; cf. poss. Arabic عَمِسَ gravis et obscurus fuit dies (Frey));— Qal Impf. 3 ms. וַיַּעֲמֹס Gn 44:13, יַעֲמָס־ ψ 68:20; Pt. act. עֹמְסִים Ne 13:15; עֹמְשִׂים 4:11 (but v. infr.); sf. עֹמְסֶיהָ Zc 12:3; pass. עֲמֻסִים Is 46:3, עֲמוּסוֹת v 1;— 1. load (obj. om.) upon (עַל) ass Gn 44:13 (E), Ne 13:15; so abs. 4:11, lit., si vera l. (v. Be-Ry Ryle); but read prob. חֲמֻשִׁים RyKau. 2. carry a load ψ 68:20 (י׳, for (ל) his people), carry as a load Zc 12:3 (fig.), pass. Is 46:1 (lit.), v 3 (fig.).*
+Senses:
+  Sense 1: "load, carry actively (Qal/Hifil active)" (7x)
+    Desc: Active voice forms (Qal active participle, Qal imperfect, Hifil perfect) denoting the action of loading burdens onto animals or people, or carrying/bearing loads. Spanish 'cargo/y cargando/nos carga/c...
+    Domain: MOVEMENT > Linear Movement
+    Glosses: eng: He-bears-, and-loaded, and-loading | spa: cargaban, cargó, los-que-la-carguen | fra: [העמיס], [ועמסים], [עמשים] | deu: [העמיס], [ועמסים], [עמסיה]
+    Refs: Gen 44:13, 1Kgs 12:11, 2Chr 10:11, Neh 4:17, Neh 13:15
+  Sense 2: "be loaded, carried (Qal passive)" (2x)
+    Desc: Passive participle forms indicating the state of being loaded or having been carried as a burden. Spanish 'cargadas/los cargados,' Hindi 'ladi hui/jo uthaye gaye,' Arabic 'muthqalatun/al-mahmulina,' K...
+    Domain: MOVEMENT > Linear Movement
+    Glosses: eng: are-loaded, those-carried | spa: cargadas, los-cargados | fra: [העמסים], [עמוסות] | deu: [העמסים], [עמוסות]
+    Refs: Isa 46:1, Isa 46:3
+
+=== H6009 ===
+Language: Hebrew, POS: V-Hifil-Perf-3ms, Occurrences: 9, Senses: 2
+
+BDB excerpt: † [עָמֹק, LagBN 28] vb. be deep (NH in deriv.; Arabic عَمُقَ; Ethiopic ዐመቀ: prob. Assyrian [emêḳu
+Senses:
+  Sense 1: "make deep, go deep (Hifil causative)" (8x)
+    Desc: Hifil causative stem forms denoting either making something deep (intensifying an action to its depths, often moral corruption) or going deep deliberately (hiding, plotting). Spanish 'se corrompieron ...
+    Domain: GEOGRAPHY_SPACE > Spacial Dimensions
+    Glosses: eng: He-has-made-wide, Him-against-whom, go-deep | spa: de-los-que-profundizan, esconderse-en-lo-profundo, hazla-profunda | fra: approfondir, ils-ont-approfondi, la-vallée | deu: [המעמיקים], [העמיק], [העמיקו]
+    Refs: Isa 7:11, Isa 29:15, Isa 30:33, Isa 31:6, Jer 49:8
+  Sense 2: "be deep (Qal stative)" (1x)
+    Desc: Qal stative form describing the state of being deep, used as a simple predication of depth. Spanish 'profundos,' Hindi 'gahre,' Arabic 'amuqat,' Korean 'gipdoda,' Swahili 'ni mazito.' This single Qal ...
+    Domain: GEOGRAPHY_SPACE > Spacial Dimensions
+    Glosses: eng: deep-are | spa: profundos | fra: profond | deu: Tiefe-sind
+    Refs: Ps 92:5

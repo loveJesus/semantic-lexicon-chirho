@@ -1,0 +1,115 @@
+You are a biblical lexicographer composing glosses for a digital lexicon.
+For each lemma below, compose a JSON object. Separate objects with "---".
+
+Format for each:
+{
+  "lemma_id": "...",
+  "gloss_terse": "under 120 chars, concise definition covering the word's semantic range",
+  "gloss_readable": "2-5 sentences, 40-120 words. Don't start with 'This word'. Warm study-Bible footnote tone. Engaging, not dry.",
+  "senses": {
+    "1": "enriched 20-60 word description. Reference multilingual evidence when illuminating. Don't repeat the label verbatim.",
+    "2": "..."
+  }
+}
+
+Rules:
+- No markdown fences, just JSON objects separated by ---
+- Reference multilingual evidence naturally when it reveals something
+- gloss_readable should feel like a good study Bible footnote: helpful, clear, occasionally surprising
+- Each sense enrichment: how does the evidence support this sense? Mention 1-2 key passages when helpful.
+
+=== G4993 ===
+Language: Greek, POS: V-PIA-1P, Occurrences: 6, Senses: 2
+
+BDB excerpt: σωφρον-έω, poetry σᾰοφ- Refs 2nd c.AD+:— to be sound of mind, NT+5th c.BC+ __2 to be temperate, moderate, show self-control, Refs 5th c.BC+; τὸ σωφρονεῖν, ={σωφροσύνη}, Refs 5th c.BC+; ἐς Ἀφροδίτην σ. Refs 5th c.BC+; of soldiers, σ. καὶ εὐτακτεῖνRefs 5th c.BC+; opposed to ὑπερφρονέω, NT: with a participle, πέμποντες σωφρονοῖμεν ἄν Refs 5th c.BC+ __3 come to one's senses, learn moderation, Refs 5th c.BC+; οὐ σωφρονήσει; Refs 5th c.BC+; σεσωφρονηκώς when he had recovered his senses, Refs 5th c.BC+ __4 passive, τὰ σεσωφρονημένα ἐν τῷ βίῳ μοι things I had done with discretion, Refs 4th c.BC+
+Senses:
+  Sense 1: "be of sound mind, be sane" (3x)
+    Desc: To be in one's right mind, to have a sound and rational mental state; used descriptively of someone restored to sanity or contrasted with ecstatic behavior. In Mk 5:15 the formerly demon-possessed Ger...
+    Domain: MENTAL_LIFE > Psychological Faculties
+    Glosses: eng: being-of-sound-mind, in-right-mind, we-are-of-sound-mind | spa: en-su-juicio, en-su-sano-juicio, estamos-en-sano-juicio | fra: dans-son-bon-sens, être-sobre | deu: nuechtern-sein, σωφρονοῦντα
+    Refs: Mark 5:15, Luke 8:35, 2Cor 5:13
+  Sense 2: "be self-controlled, think soberly" (3x)
+    Desc: To exercise self-control, moderation, and sober judgment; used prescriptively as a moral exhortation to disciplined living and humble self-assessment. In Rom 12:3 Paul urges not to think more highly o...
+    Domain: MENTAL_LIFE > Psychological Faculties
+    Glosses: eng: be-sound-minded, to-be-self-controlled, to-think-soberly | spa: a-ser-prudentes, pensar-con-cordura, sed-prudentes | fra: dans-son-bon-sens, être-sobre | deu: nuechtern-sein
+    Refs: Rom 12:3, Titus 2:6, 1Pet 4:7
+
+=== G5262 ===
+Language: Greek, POS: N-ANS, Occurrences: 6, Senses: 2
+
+BDB excerpt: ὑπόδειγ-μα, ατος, τό, sign, token, indication, see reading in Refs 5th c.BC+ __2 illustration, picture showing how something is to be done, Refs 1st c.BC+ __II pattern, NT+2nd c.BC+; καλὸν ὑ. τῆς ἰδίας προαιρέσεως καταβαλλόμενος Refs 1st c.BC+: but also ὑ. ἀπειθίας Refs 2nd c.AD+; ὑ. μελλόντων ἀσεβεῖν NT __III example, instance, Refs 5th c.BC+; specimen, Refs 1st c.BC+, etc.: plural, Refs 5th c.BC+ —rejected as less correct than παράδειγμα by the Atticists, Refs 2nd c.AD+
+Senses:
+  Sense 1: "example, pattern, model" (4x)
+    Desc: A model, pattern, or example set before someone for imitation or warning, emphasizing the exemplary or didactic quality of what is presented. Used of Christ's example of humble service (John 13:15), a...
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: an-example, example | spa: Ejemplo, ejemplo | fra: Vorbild, exemple | deu: Vorbild
+    Refs: John 13:15, Heb 4:11, Jas 5:10, 2Pet 2:6
+  Sense 2: "copy, representation, figure" (2x)
+    Desc: A copy, sketch, or imperfect representation of a heavenly or ideal reality, emphasizing the derivative or imitative nature of the earthly counterpart. Used in Hebrews of the tabernacle as a copy of he...
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: copies, copy | spa: copias, en-modelo | fra: Vorbild | deu: Vorbild
+    Refs: Heb 8:5, Heb 9:23
+
+=== G5263 ===
+Language: Greek, POS: V-AIA-1S, Occurrences: 6, Senses: 2
+
+BDB excerpt: ὑποδείκ-νῡμι and ὑποδεικ-νύω (see. below), show, indicate, οὔτοι.. πάντα θεοὶ θνητοῖσ᾽ ὑπέδειξαν Refs 6th c.BC+; πολλοῖσι ὑποδέξας (Ionic dialect aorist) ὄλβον ὁ θεός having given a glimpse of happiness, Refs 5th c.BC+; ἄλλο τι τῶν χρησίμων ὑ. show any other good symptom, Refs 5th c.BC+; τὰς χώρας ὑποδείκνυμεν we indicate, cite the passages, Refs 5th c.BC+introduce, Refs 1st c.AD+ __2 absolutely, indicate one's will, intimate, οἱ θεοὶ οὕτως ὑποδεικνύουσι Refs 5th c.BC+; warn, τίς ὑπέδειξεν ὑμῖν φυγεῖ; NT __3 lay an information, τῷ βασιλεῖ περί τινος LXX; ὑποδέδειχέν σε τὰ σύμβολα ἀπεστράφθαι h
+Senses:
+  Sense 1: "to show, demonstrate, point out" (4x)
+    Desc: To show, demonstrate, or point out something to someone, making visible or evident what was previously unknown. Covers both future ('I will show') and aorist ('I showed') tense forms of the same demon...
+    Domain: MENTAL_LIFE > Know
+    Glosses: eng: I-showed, I-will-show, will-show | spa: mostraré, os-mostraré, os-mostré | fra: montrer | deu: zeigt
+    Refs: Luke 6:47, Luke 12:5, Acts 9:16, Acts 20:35
+  Sense 2: "to warn, admonish" (2x)
+    Desc: To warn or forewarn someone, pointing out danger or consequence as a cautionary admonition rather than a neutral demonstration. Distinguished from the 'show' sense by Swahili 'aliwaonya' (he warned th...
+    Domain: MENTAL_LIFE > Know
+    Glosses: eng: warned | spa: mostró, os-mostró | fra: montrer | deu: zeigt
+    Refs: Matt 3:7, Luke 3:7
+
+=== G5311 ===
+Language: Greek, POS: N-NNS, Occurrences: 6, Senses: 2
+
+BDB excerpt: ὕψος, εος, τό, (ὕψι) height, ὕψος κρεῖσσον ἐκπηδήματος Refs 5th c.BC+; ὕ. ἔχειν, λαμβάνειν, rise some height, Refs 5th c.BC+ in height, opposed to μῆκος, εὖρος, πλάτος, Refs 5th c.BC+; so ἐς ὕψος Refs 5th c.BC+ __II metaphorically, summit, crown, ὕ. ἀμαθίας Refs 5th c.BC+ __II.2 sublimity, grandeur, τῶν λόγων Refs 3rd c.AD+
+Senses:
+  Sense 1: "height, high place" (5x)
+    Desc: The literal spatial dimension of height or an elevated place. Multilingual evidence converges: spa 'altura/lo-alto', hin 'unchai' (height), arb 'al-uluww/al-a'ali' (the heights/the high places), kor '...
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: from-height, height | spa: altura, lo-alto | fra: hauteur | deu: Hoehe, ὕψους
+    Refs: Luke 1:78, Luke 24:49, Eph 3:18, Eph 4:8, Rev 21:16
+  Sense 2: "exaltation, lofty status" (1x)
+    Desc: Metaphorical elevation denoting honor, dignity, or exalted status rather than physical height. The translation signatures shift noticeably: spa 'exaltacion' (exaltation, not mere 'altura'), hin 'uncha...
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: exaltation | spa: exaltación | fra: hauteur | deu: Hoehe
+    Refs: Jas 1:9
+
+=== G5413 ===
+Language: Greek, POS: N-DNP, Occurrences: 6, Senses: 2
+
+BDB excerpt: φορτ-ίον, τό, load, burden, freight, LXX+7th c.BC+; φέρων ἀνθράκων φ. Refs 5th c.BC+ __2 plural, wares, merchandise, Refs 8th c.BC+ __2.b especially of agricultural produce, crops, Refs 3rd c.BC+ __3 of a child in the womb, Refs 5th c.BC+; ἔρωτος falsa lectio in Refs 6th c.BC+ __4 metaphorically, μεῖζον φ. ἢ καθ᾽ αὑτὸν αἰρόμενον taking too heavy a burden upon him, NT+4th c.BC+; χρυσοῦν φ., of wealth, Refs 2nd c.AD+
+Senses:
+  Sense 1: "burden, load (personal)" (5x)
+    Desc: A burden or load that a person carries, whether literally (a physical weight) or figuratively (obligations, responsibilities, hardships). The multilingual evidence for S78707 and S78708 converges: spa...
+    Domain: MOVEMENT > Linear Movement
+    Glosses: eng: burden, burdens, load | spa: carga, cargas, con-cargas | fra: charge, φορτίον | deu: Last, φορτία, φορτίοις
+    Refs: Matt 11:30, Matt 23:4, Luke 11:46, Luke 11:46, Gal 6:5
+  Sense 2: "cargo (ship's freight)" (1x)
+    Desc: The freight or merchandise carried by a ship, distinct from personal burdens. The translation signatures reveal a semantic shift: eng 'cargo' (not 'burden'), hin 'maalke' (goods/property, not 'bojh'),...
+    Domain: MOVEMENT > Linear Movement
+    Glosses: eng: cargo | spa: carga | fra: fardeau | deu: φορτίου
+    Refs: Acts 27:10
+
+=== G5494 ===
+Language: Greek, POS: N-NMS, Occurrences: 6, Senses: 2
+
+BDB excerpt: χειμών, ῶνος, ὁ, (χεῖμα) winter, χειμῶνος δυσθαλπέος ὅς ῥά τε ἔργων ἀνθρώπους ἀνέπαυσεν Refs 8th c.BC+; χειμῶνι in winter, Refs 5th c.BC+; also χειμῶνος in winter-time, Refs 5th c.BC+; χ. μέσου in mid-winter, Refs 5th c.BC+in the course of the winter, Refs 5th c.BC+; διὰ χειμῶνος, διὰ τοῦ χ., Refs 5th c.BC+during winter, Refs 5th c.BC+; τὸν χ. during the winter, Refs 5th c.BC+; ὄρος ἄβατον ὑπὸ χειμῶνος in consequence of the cold weather, Refs 5th c.BC+; opposed to καύματα, Refs 5th c.BC+ __2 the wintry quarter of the heavens, the north, Βορέης καὶ χ. Refs 5th c.BC+ __II wintry, stormy weather:
+Senses:
+  Sense 1: "winter (season)" (4x)
+    Desc: The cold season of the year, winter. The multilingual evidence for S78962 and S78964 converges on the seasonal meaning: spa 'invierno/en-invierno' (winter/in winter), hin 'jade-mein/sardi/jada' (in co...
+    Domain: NATURAL_WORLD > Physical Events and States
+    Glosses: eng: in-winter, winter | spa: en-invierno, invierno | fra: Winter, hiver | deu: Winter, χειμῶνος
+    Refs: Matt 24:20, Mark 13:18, John 10:22, 2Tim 4:21
+  Sense 2: "storm, tempest" (2x)
+    Desc: A violent weather disturbance, a storm or tempest at sea. The translation signatures diverge markedly from the seasonal 'winter' sense: eng 'storm/a-storm' (not 'winter'), spa 'tempestad' (tempest, no...
+    Domain: NATURAL_WORLD > Physical Events and States
+    Glosses: eng: a-storm, storm | spa: tempestad | fra: hiver | deu: χειμών, χειμῶνός
+    Refs: Matt 16:3, Acts 27:20

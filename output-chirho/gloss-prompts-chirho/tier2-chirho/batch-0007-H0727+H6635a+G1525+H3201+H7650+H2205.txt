@@ -1,0 +1,142 @@
+You are a biblical lexicographer composing glosses for a digital lexicon.
+For each lemma below, compose a JSON object. Separate objects with "---".
+
+Format for each:
+{
+  "lemma_id": "...",
+  "gloss_terse": "under 120 chars, concise definition covering the word's semantic range",
+  "gloss_readable": "2-5 sentences, 40-120 words. Don't start with 'This word'. Warm study-Bible footnote tone. Engaging, not dry.",
+  "senses": {
+    "1": "enriched 20-60 word description. Reference multilingual evidence when illuminating. Don't repeat the label verbatim.",
+    "2": "..."
+  }
+}
+
+Rules:
+- No markdown fences, just JSON objects separated by ---
+- Reference multilingual evidence naturally when it reveals something
+- gloss_readable should feel like a good study Bible footnote: helpful, clear, occasionally surprising
+- Each sense enrichment: how does the evidence support this sense? Mention 1-2 key passages when helpful.
+
+=== H0727 ===
+Language: Hebrew, POS: Art | N-cs, Occurrences: 202, Senses: 3
+
+BDB excerpt: אֲרוֹן c. art. הָאָרוֹן, הָאָרֹן203 n.m. Ex 35, 12 (f. 1 S 4, 17; 2 Ch 8, 11) chest, ark (Ph. ארן, sarcophagus, Assyrian êrênu (& êrû) chest ZimBP 6, 22, Arabic إِرَانٌ chest, so Aramaic ܐܰܪܘܽܢܳܐ also Nab. ארנא, Vog p. 102, Ph. Mish. also pl. ארונות)—only sg.; abs. †אֲרוֹן 2 K 12:10 = 2 Ch 24:8; c. art. הָאָרוֹן Dt 10:2 + always except Ex Lv Nu where הָאָרֹן (Ex 25:14(×2) + 13 times Ex, Lv 16:2 Nu 3:31; 10:35); cstr. אֲרוֹן Ex 25:10 +, †אֲרֹן Ex 30:6 Nu 4:5; 7:89;— †1. chest, for money-offerings 2 K 12:10, 11 2 Ch 24:8, 10, 11(×2). †2. sarcophagus, mummy-case, of Joseph Gn 50:26 (E). 3. chest,
+Senses:
+  Sense 1: "ark (covenant vessel)" (197x)
+    Desc: The sacred chest or ark, especially the Ark of the Covenant containing the tablets of the law, carried by the Levites and housed in the tabernacle/temple.
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: ark-of | spa: arca-de, el-arca-de | fra: arche-de | deu: Lade-von
+    Refs: Exod 25:22, Exod 26:33, Exod 26:34, Exod 30:6, Exod 30:26
+  Sense 2: "chest (money box)" (4x)
+    Desc: A collection box or chest used for gathering money, as in the temple chest set up by Jehoiada the priest for temple repair funds (2 Kings 12).
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: in-the-chest, into-the-chest, the-chest | spa: el-arca, en-el-arca | fra: [לארון], dans-le-chest, l'arche | deu: die-Lade, fuer-die-Lade, in-der-chest
+    Refs: 2Kgs 12:10, 2Chr 24:10, 2Chr 24:11, 2Chr 24:11
+  Sense 3: "coffin (burial container)" (1x)
+    Desc: A coffin or burial chest, as in the embalming and burial of Joseph in Egypt (Genesis 50:26).
+    Domain: RELIGIOUS_LIFE > Funerals and Burial
+    Glosses: eng: in-the-coffin | spa: en-el-ataúd | fra: dans-le-coffin | deu: in-einen-Sarg
+    Refs: Gen 50:26
+
+=== H6635a ===
+Language: Hebrew, POS: N-cpc | 2mp, Occurrences: 200, Senses: 3
+
+BDB excerpt: צָבָא485 n.m. 2 Ch 28:9 (poss. f. Is 40:2; Dn 8:12, but v. Albr ZAW xv (1895), 319; Bev Dn) army, war, warfare;—abs. צ׳ Nu 1:3 + (מִצָּבָה Zc 9:8 v. p. 663 a); cstr. צְבָא Nu 10:15 +; sf. צְבָאִי Jb 14:14; צְבָאֲךָ Ju 8:9; 9:29; צְבָאָיו ψ 103:21; 148:2 (Kt צבאו; so read prob. in both), etc.; pl. צְבָאוֹת Nu 20:9 + 278 times; cstr. צִבְאוֹת Ex 12:41 + 2 times; sf. צִבְאֹתַי 7:4; צִבְאֹתָם 6:26 +, etc.;— 1. army, host: a. organized for war Ju 8:6; 9:29 (J) Is 34:2; Je 51:3; 2 Ch 28:9; צְבָאוֹ his host Nu 2:4, 6 + 10 times 2 (P), לְצִבְאֹתָם 1:3, 52; 2:3, 9 + 11 times 2, 10, 33:1 (P); אַלְפֵי הצ
+Senses:
+  Sense 1: "army, host (military force)" (192x)
+    Desc: An organized military body or assembled force, whether of a nation, king, or God; the most common sense of the word, used for armies in battle, numbered troops, and hosts of heaven.
+    Domain: PROPERTIES_RELATIONS > Power, Force
+    Glosses: eng: the-army | spa: el-ejército | fra: armée, le-armée | deu: das-Heer, der-Heer
+    Refs: Num 1:3, Num 1:20, Num 1:22, Num 1:24, Num 1:26
+  Sense 2: "hard service, compulsory duty" (5x)
+    Desc: Appointed period of hard or compulsory service, whether military conscription or burdensome toil, as in Job 7:1 and Isaiah 40:2 where life itself is compared to forced labor.
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: from-service-of, her-warfare, service | spa: de-servicio-de, ejército, mi-servicio | fra: armée, de-service-de, mon-armée-moi | deu: Dienst, Heer, von-Dienst-von
+    Refs: Num 4:23, Num 8:24, Num 8:25, Job 14:14, Isa 40:2
+  Sense 3: "warfare, war, military campaign" (3x)
+    Desc: The activity or state of waging war; a military campaign or battle as an event rather than the force itself.
+    Domain: VIOLENCE_CONFLICT > Hostility, Strife
+    Glosses: eng: to-the-war, warfare | spa: a-la-guerra, servicio-militar | fra: armée, à-le-guerre | deu: Heer, zu-der-Krieg
+    Refs: Josh 22:12, Josh 22:33, Job 7:1
+
+=== G1525 ===
+Language: Greek, POS: V-AIA-3P, Occurrences: 195, Senses: 3
+
+BDB excerpt: εἰσέρχομαι, future -ειεύσομαι: aorist -ήλῠθον, -ῆλθον: in Attic dialect, future is supplied by εἴσειμι, and imperfect by εἰσῄειν:— go in or into, enter, in Refs 8th c.BC+; ἄλσος, δόμους, Refs 5th c.BC+; εἰσῆλθ᾽ ἑκατόμβας invaded the hecatombs, Refs 8th c.BC+: but in Prose mostly with Preps., ἐς οἴκημα Refs 5th c.BC+; ἐς. ἐς τὰς σπονδάς come into the treaty, Refs; εἰς τὸν πόλεμον variant in Refs 5th c.BC+; εἰ. εἰς τοὺς ἐφήβους enter the ranks of the Ephebi, Refs; also εἰ. πρός τινα enter his house, visit him, Refs; of a doctor, pay a visit, Refs 5th c.BC+: absolutely, of money, etc., come in, π
+Senses:
+  Sense 1: "enter a place physically" (179x)
+    Desc: To go into or enter a physical location such as a house, city, temple, boat, or other bounded space.
+    Domain: MOVEMENT > Linear Movement
+    Glosses: eng: entered, he-entered, he-went-in | spa: entró | fra: entrer | deu: eingehen, geht-hinein
+    Refs: Matt 2:21, Matt 12:4, Matt 12:29, Matt 18:8, Matt 18:9
+  Sense 2: "enter into a state" (14x)
+    Desc: To enter figuratively into a condition, experience, or spiritual reality such as rest, joy, the kingdom, or life.
+    Domain: MOVEMENT > Linear Movement
+    Glosses: eng: have-entered, shall-enter, they-will-enter | spa: entrará, entrarán, entrarían | fra: entrer | deu: eingehen, geht-hinein
+    Refs: Matt 7:21, Matt 19:23, Mark 5:12, Mark 10:15, Mark 10:23
+  Sense 3: "?" (2x)
+    Domain: MOVEMENT > Linear Movement
+    Glosses: eng: to-enter, to-pass | spa: entrar, pasar | fra: entrer | deu: geht-hinein
+    Refs: Matt 19:24, Matt 19:24
+
+=== H3201 ===
+Language: Hebrew, POS: V-Qal-Imperf-2fs, Occurrences: 194, Senses: 3
+
+BDB excerpt: יָכֹל, יָכוֹל vb. be able, have power, prevail, endure (NH id.; Aramaic יְכִיל; Assyrian akâlu, Hpt in KAT2Gloss i,)— Qal Pf. יָכֹל Gn 32:26 + 8 times; יָכוֹל 1 S 4:15 + 2 times; 3 fs. יָֽכְלָה Gn 36:7 Ex 2:3; 2 ms. וְיָכָלְתָּ֫ Ex 18:23; 1 s. יָכֹלְתִּי Gn 30:8 + 2 times; sf. יְכָלְתִּיו ψ 13:5; 3 pl. יָֽכְלוּ Gn 13:6 + 27 times + Jos 15:63 Qr; יָכֹ֑לוּ Ex 8:14 + 2 times; Impf. 3 ms. יוּכַל Gn 13:16 + 34 times; יוּכָ֑ל Jb 4:2 + 4 times; וַיֻּכָ֑ל Ho 12:5; 3 fs. תּוּכַל Am 7:10 + 2 times; 2 ms. תּוּכַל Gn 15:5 + 16 times; 1 s. אוּכַל Gn 19:19 + 30 times, etc. (on these Impf. forms as irreg. Qa
+Senses:
+  Sense 1: "be able, can" (168x)
+    Desc: General ability or capability to do something; the basic modal sense of having the power, capacity, or permission to perform an action.
+    Domain: PROPERTIES_RELATIONS > Able, Capable
+    Glosses: eng: I-am-able, am-I-able, am-able | spa: podían, pudieron, puedo | fra: Je-suis-capable, am-je-able, je-am-able | deu: bin-ich-faehig, ich-bin-faehig, ich-bin-fähig
+    Refs: Gen 19:19, Gen 19:22, Gen 31:35, Gen 44:22, Gen 45:3
+  Sense 2: "prevail, overcome" (20x)
+    Desc: To prevail or overcome against an opponent or adversary; to gain the upper hand in contest or struggle (Arabic غَلَبَ, Korean 이기다, Swahili -shinda, Hindi जीतना/प्रबल होना).
+    Domain: PROPERTIES_RELATIONS > Able, Capable
+    Glosses: eng: I-have-prevailed-over-him, I-prevailed, and-You-prevailed | spa: lo-vencí, poder, podrán | fra: Je-prévalut, et-pouvoir, et-tu-avoir-prévalut | deu: er-konnte, habe-ich-obsiegt, ich-haben-prevailed-über-ihn
+    Refs: Gen 30:8, Gen 32:25, Gen 32:28, 1Sam 26:25, 2Chr 18:21
+  Sense 3: "endure, bear" (6x)
+    Desc: To endure, bear, or tolerate suffering, burden, or hardship (Arabic احْتَمَلَ, Korean 참다, Swahili -vumilia, Spanish soportar, Hindi सहना).
+    Domain: PROPERTIES_RELATIONS > Able, Capable
+    Glosses: eng: I-can-bear, I-will-endure, can-I-bear | spa: podré, puede, puedo-soportar | fra: pouvoir | deu: ich-wird-bestehen, koennen, vermochte
+    Refs: Esth 8:6, Esth 8:6, Ps 101:5, Prov 30:21, Isa 1:13
+
+=== H7650 ===
+Language: Hebrew, POS: V-Hifil-Perf-1cs | 2ms, Occurrences: 186, Senses: 3
+
+BDB excerpt: [שָׁבַע186] vb. swear (prob., so to say, seven oneself, or bind oneself by seven things, cf. Thes (as altern.), Gerb 108 ff.; NH Niph. = BH; 𝔗 שְׁבַע Ithpe. Aph.; v. also Dr Gn 21:28 KöHast.DB number, 565 RSSem. i. 166, 2nd ed., 182 We Reste ArabicHeid. 2, 186);— Qal (according to Thes Rob Ges) Pt. pass. שְׁבֻעֵי שְׁבֻעוֹת Ez 21:28 those sworn with (= who have sworn) oaths; both from שְׁבוּעָה, according to Krae, oaths of oaths (the most sacred); 𝔊 𝔖 Co om.; both from שָׁבוּעַ, Ew Sm שׁ׳ שָׁ׳ weeks on weeks (plenty of time). Niph. Pf. 3 ms. נִשְׁבַּע Gn 24:7 +, etc.; Impf. 3 ms. יִשָּׁבַע Lv 5
+Senses:
+  Sense 1: "swear, take an oath (Niphal)" (154x)
+    Desc: Niphal stem: the subject swears or takes an oath, whether promissory (covenant commitment), assertory (affirming truth), or imprecatory (invoking divine witness). All Niphal finite forms (perfect, imp...
+    Domain: COMMUNICATION > Communication
+    Glosses: eng: He-swore, he-swore, swore | spa: juró | fra: Il-jura, il-jura, jura | deu: Er-schwor, er-geschworen-hat, er-schwor
+    Refs: Gen 24:7, Gen 24:9, Gen 25:33, Gen 31:53, Gen 47:31
+  Sense 2: "cause to swear, adjure (Hiphil)" (31x)
+    Desc: Hiphil (causative) stem: the subject causes another party to swear an oath, administers an oath, or adjures/charges someone solemnly. Includes both juridical oath-administration (e.g., Joshua making I...
+    Domain: COMMUNICATION > Communication
+    Glosses: eng: I-adjure, I-make-you-swear, adjure-you | spa: E-hizo-jurar, Os-conjuro, cuando-juramentar | fra: Je-vous-adjure,, adjure-tu, et-Je---faire-tu-jurer | deu: adjure-du, bound-bei-oath, du-machte-uns-schwoeren
+    Refs: Gen 24:3, Gen 24:37, Gen 50:5, Gen 50:6, Gen 50:25
+  Sense 3: "?" (1x)
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: sworn-of | spa: juramentos-de | fra: jurer | deu: schwoeren
+    Refs: Ezek 21:23
+
+=== H2205 ===
+Language: Hebrew, POS: Prep-m | Adj-mpc, Occurrences: 179, Senses: 3
+
+BDB excerpt: זָקֵן adj. old, abs. ז׳ Gn 19:4 + 30 times (on distinct. from vb. v. supr.); cstr. זְקַן Gn 24:2; pl. זְקֵנִים Gn 18:11 + 44 times; זְקֵנוֹת Zc 8:4; cstr. זִקְנֵי Gn 50:7 + 85 times; sf. זְקֵנַי La 1:19, זְקֵנֶיךָ Dt 21:2; 32:7, זְקֵנָיו Jos 8:33 + 3 times, זְקֵנֶיהָ Ju 8:14, זְקֵנֵינוּ Ex 10:9 Jos 9:11, זִקְנֵיכֶם Dt 5:20 + 2 times;— 1. old, of human beings, as adj. pred. Gn 18:11 (J), Jb 32:4 (ז׳ מִמֶּנּוּ לְיָמִים, in compar.), or attrib. אָב זָקֵן Gn 44:20 (J), אִישׁ ז׳ Ju 19:16, 17, 20, 22, נָבִיא ז׳ 1 K 13:11, 25, 29, מֶלֶךְ ז׳ Ec 4:13; prob. also ז׳ וּשְׂבַע ימים Gn 35:29 (P), Jb 42:17 
+Senses:
+  Sense 1: "elder, community leader" (139x)
+    Desc: Substantive use of זָקֵן denoting a civic or tribal leader, member of a ruling council, or community authority figure, typically in construct chains ('elders of Israel/the city') or with possessive su...
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: elders-of | spa: ancianos-de, ancianos-de-, los-ancianos-de | fra: anciens-de | deu: Aelteste-von, die-Ältesten, elders-von
+    Refs: Gen 50:7, Gen 50:7, Exod 3:16, Exod 4:29, Exod 12:21
+  Sense 2: "old, aged person" (39x)
+    Desc: Adjectival or substantive use describing physical old age or an elderly person without institutional connotation, including 'old man,' 'the aged,' and comparative uses; Arabic شَيْخ (shaykh) in its ag...
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: elder, old, old-man | spa: anciano, el-anciano, viejo | fra: ancien, le-ancien, le-vieux | deu: Aeltester, Alten, alt
+    Refs: Gen 18:11, Gen 19:4, Gen 25:8, Gen 35:29, Gen 43:27
+  Sense 3: "?" (1x)
+    Domain: TIME > Time
+    Glosses: eng: and-old-women | spa: y-ancianas | fra: et-ancien | deu: und-Aeltester
+    Refs: Zech 8:4

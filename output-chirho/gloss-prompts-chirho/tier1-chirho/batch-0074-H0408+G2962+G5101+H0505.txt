@@ -1,0 +1,123 @@
+You are a biblical lexicographer composing glosses for a digital lexicon.
+For each lemma below, compose a JSON object. Separate objects with "---".
+
+Format for each:
+{
+  "lemma_id": "...",
+  "gloss_terse": "under 120 chars, concise definition covering the word's semantic range",
+  "gloss_readable": "2-5 sentences, 40-120 words. Don't start with 'This word'. Warm study-Bible footnote tone. Engaging, not dry.",
+  "senses": {
+    "1": "enriched 20-60 word description. Reference multilingual evidence when illuminating. Don't repeat the label verbatim.",
+    "2": "..."
+  }
+}
+
+Rules:
+- No markdown fences, just JSON objects separated by ---
+- Reference multilingual evidence naturally when it reveals something
+- gloss_readable should feel like a good study Bible footnote: helpful, clear, occasionally surprising
+- Each sense enrichment: how does the evidence support this sense? Mention 1-2 key passages when helpful.
+
+=== H0408 ===
+Language: Hebrew, POS: Adv, Occurrences: 725, Senses: 4
+
+BDB excerpt: II. אַל adv. of negation (so Ph. e.g. CIS i.3,4.5.8, Bi Aramaic, Sab. (DHMZMG 1875, 596), and in the Eth. አልቦ albo, is not), denying however, not objectively as a fact (like לֹא, οὐ), but subjectively as a wish (like μή), expressing therefore a deprecation or prohibition: a. (a) with a verb, which is then always an impf. (never an imperative), by preference in the cohort. or jussive mood, where this is in use, and may be of any person or number; Gn 15:1 and often אַל־תִּירָא fear not! 22:12 אַל־תִּשְׁלַח יָֽדְךָ put not forth thy hand, 37:27 וְיָדֵנוּ אַל־תְּהִי־בוֹ and let not our hand be upo
+Senses:
+  Sense 1: "prohibitive negation do-not" (712x)
+    Desc: The primary use of אַל as a prohibitive or vetitive particle meaning 'do not' or 'let not', used with jussive and cohortative verb forms to express commands, prohibitions, wishes, and entreaties.
+    Domain: PROPERTIES_RELATIONS > Affirmation, Negation
+    Glosses: eng: do-not, do-not-, not | spa: No-, no, no- | fra: vers | deu: zu
+    Refs: 1Chr 16:22, 1Chr 16:22, 1Chr 21:13, 1Chr 22:13, 1Chr 28:20
+  Sense 2: "negative response no" (11x)
+    Desc: Used as a standalone negative response or existential negation meaning 'no' or 'there is no', functioning declaratively rather than as a prohibition.
+    Domain: PROPERTIES_RELATIONS > Affirmation, Negation
+    Glosses: eng: is-no, no, no- | spa: No, no | fra: ne...pas, non, non- | deu: nein, nicht-, zu
+    Refs: Gen 33:10, Judg 19:23, Ruth 1:13, 1Sam 2:24, 2Sam 1:21
+  Sense 3: "rhetorical interrogative negation" (1x)
+    Desc: Used in rhetorical questions expecting an affirmative answer, functioning as 'is it not?' or 'did not?', introducing questions that challenge or rebuke.
+    Domain: GEOGRAPHY_SPACE > Spacial Positions
+    Glosses: eng: where | spa: no- | fra: où | deu: wo
+    Refs: 1Sam 27:10
+  Sense 4: "substantival nothingness" (1x)
+    Desc: Used substantivally with a preposition to denote 'nothing' or 'nothingness', as in 'to nothing' or 'for naught', indicating futility or absence.
+    Domain: ECONOMICS_PROPERTY > Value
+    Glosses: eng: to-nothing | spa: en-nada | fra: à-ne...pas | deu: zu-zu
+    Refs: Job 24:25
+
+=== G2962 ===
+Language: Greek, POS: N-VMS, Occurrences: 724, Senses: 4
+
+BDB excerpt: κύριος [ῡ], α, ον, also ος, ον Refs 5th c.BC+:—Thess. κῦρρος Refs 8th c.BC+: __I of persons, having power or authority over, with genitive, Ζεὺς ὁ πάντων κ. Refs 5th c.BC+; πρὶν ἄν σε κ. στήσω τέκνων put thee in possession of.., Refs 5th c.BC+, of the god to whom a temple is dedicated, Refs 2nd c.BC+; τῶν αὑτοὺ κ. Refs 5th c.BC+; θανάτου κ. τινός with power of life and death over, Refs 5th c.BC+ __I.2 κύριός εἰμι with infinitive, I have authority to do, am entitled to do, Refs 4th c.BC+; οὗτος κ. ὁρκωμοτεῖν (probably to be read instead of -ῶν) Refs 5th c.BC+; -ώτεροι δοῦναι better able to give
+Senses:
+  Sense 1: "Lord (divine title)" (661x)
+    Desc: God or Christ addressed or referred to as Lord, the supreme divine authority and sovereign ruler over all creation.
+    Domain: AUTHORITY_RULE > Status
+    Glosses: eng: Kyrios, Lord | spa: A-Señor, Señor, a-Señor | fra: Seigneur | deu: Herr
+    Refs: Matt 1:22, Matt 2:15, Matt 4:7, Matt 4:10, Matt 5:33
+  Sense 2: "master, lord (human authority)" (61x)
+    Desc: A human lord, master, or authority figure who exercises dominion over servants, slaves, or subordinates.
+    Domain: AUTHORITY_RULE > Status
+    Glosses: eng: lord, master | spa: señor | fra: Seigneur | deu: Herr
+    Refs: Matt 6:24, Matt 10:24, Matt 10:25, Matt 15:27, Matt 18:25
+  Sense 3: "owner, proprietor" (1x)
+    Desc: The owner or possessor of property, goods, or assets, emphasizing legal possession rather than authority over persons.
+    Domain: AUTHORITY_RULE > Status
+    Glosses: eng: owners | spa: dueños | fra: Seigneur | deu: Herr
+    Refs: Luke 19:33
+  Sense 4: "sir (polite address)" (1x)
+    Desc: A respectful or courteous form of address to men of standing, without implying actual lordship or ownership.
+    Domain: AUTHORITY_RULE > Status
+    Glosses: eng: Sirs | spa: Señores | fra: Seigneur | deu: Herr
+    Refs: Acts 16:30
+
+=== G5101 ===
+Language: Greek, POS: IPro-GNS, Occurrences: 570, Senses: 4
+
+BDB excerpt: τίς __B Interrog. pronoun τίς, Elean and Laconian dialect τίρ (which see), τί:—genitive Epic dialect and Ionic dialect τέο Refs 8th c.BC+; Trag. and Attic dialect τοῦ Refs 5th c.BC+; Ionic dialect, Trag., and Attic dialect τίνος Refs 5th c.BC+; dative Ionic dialect τέῳ Refs 5th c.BC+; no dative in Refs 8th c.BC+; Trag. and Attic dialect τῷ Refs 5th c.BC+; Aeolic dialect τίῳ Refs 7th c.BC+; τίνι first in NT+8th c.BC+; genitive Epic dialect τέων Refs 8th c.BC+, and as monosyllable Refs; Trag. and Attic dialect τίνων Refs 5th c.BC+; dative τίσι first in Refs 8th c.BC+; Ionic dialect τέοισι Refs 5
+Senses:
+  Sense 1: "what / which (interrogative, things)" (327x)
+    Desc: Interrogative pronoun asking about the identity, nature, or selection of a thing, event, or concept: 'what?', 'which?', 'to what?', 'by what?', 'what kind?'.
+    Domain: DISCOURSE_NAMES > Discourse Referentials
+    Glosses: eng: -, what | spa: qué | fra: qui | deu: was
+    Refs: Matt 5:13, Matt 5:47, Matt 6:3, Matt 6:25, Matt 6:25
+  Sense 2: "who (interrogative, persons)" (170x)
+    Desc: Interrogative pronoun asking about the identity of a person in any grammatical case: 'who?', 'whom?', 'whose?', 'to whom?', 'of whom?'.
+    Domain: DISCOURSE_NAMES > Discourse Referentials
+    Glosses: eng: What, Who, Whom | spa: Quién, cuál, quién | fra: qui | deu: was, wer
+    Refs: Matt 3:7, Matt 6:27, Matt 7:9, Matt 10:11, Matt 12:11
+  Sense 3: "why (interrogative, causal)" (69x)
+    Desc: Interrogative used to ask about cause, reason, or purpose, often in prepositional phrases: 'why?', 'for what reason?', 'for what purpose?'.
+    Domain: DISCOURSE_NAMES > Discourse Referentials
+    Glosses: eng: Why, why | spa: Por-qué, para-qué, por-qué | fra: qui | deu: was
+    Refs: Matt 6:28, Matt 7:3, Matt 8:26, Matt 16:8, Matt 17:10
+  Sense 4: "someone or something (indefinite)" (4x)
+    Desc: Indefinite pronoun meaning 'someone', 'a certain one', 'something', 'anything', referring to an unspecified person or thing.
+    Domain: DISCOURSE_NAMES > Discourse Referentials
+    Glosses: eng: anything, certain, one | spa: (algo), alguno, algunos | fra: qui, quoi | deu: was
+    Refs: Mark 4:22, Mark 6:36, Acts 24:18, Rom 8:24
+
+=== H0505 ===
+Language: Hebrew, POS: Prep-k | Number-msc, Occurrences: 507, Senses: 4
+
+BDB excerpt: II. אֶ֫לֶף n.m. Ju 6:15 thousand (אלף MI, SI, Sab. DHMZMG 1875, 615; Arabic أَلْفٌ, Aramaic ܐܳܠܶܦ, אֲלַף, אלפיא; cf. Ethiopic እልፍ mille, myrias)*.—(אָ֑׳)א׳ Gn 20:16 +; sf. אַלְפִּי †Ju 6:15; du. אַלְפַּיִם Nu 4:36 +; pl. אֲלָפִים Ex 18:21 +; cstr. אַלְפֵי Ex 32:28 +; אֲלָפֶיךָ Dt 7:13 + 2 times; אֲלָפָיו Qr 1 S 18:7 + 2 times (Kt ־פו)—a thousand. 1. numeral: a. used with noun alone; mostly before noun Nu 35:4 Jos 7:3 Ne 3:13 1 Ch 18:4 +; after noun (late) 1 Ch 12:35 + 6 times Ch Ezr Ne; א׳ בָּאַמָּה Nu 35:5(×4) Ez 47:3 (del. Co); the noun always pl. when preceding, sometimes when following, 1 
+Senses:
+  Sense 1: "cardinal number thousand" (427x)
+    Desc: The numeral one thousand (1,000) used in counting, measurements, quantities, and temporal expressions, with all grammatical inflections (singular, construct, with prepositions and articles).
+    Domain: QUANTITY_NUMBER > Number
+    Glosses: eng: a-thousand, thousand, thousands | spa: mil, miles | fra: mille, milliers, un-mille | deu: tausend, thousands
+    Refs: Gen 20:16, Exod 12:37, Exod 38:26, Exod 38:26, Num 1:21
+  Sense 2: "dual two thousand" (31x)
+    Desc: The dual form meaning two thousand (2,000), used as a specific numeric quantity.
+    Domain: QUANTITY_NUMBER > Number
+    Glosses: eng: two-thousand, two-thousands | spa: dos-mil, dos-miles | fra: deux-mille, deux-milliers, mille | deu: tausend, tausende, zwei-Tausend
+    Refs: Exod 38:29, Num 4:36, Num 4:40, Num 7:85, Num 35:5
+  Sense 3: "thousands as large number" (31x)
+    Desc: The plural 'thousands' used as a large round number or multiplied quantity, often in enumerations, census totals, and expressions of abundance.
+    Domain: QUANTITY_NUMBER > Number
+    Glosses: eng: the-thousands, thousands | spa: los-miles, los-millares, miles | fra: le-milliers, mille, milliers | deu: der-tausende, der-thousands, tausende
+    Refs: Gen 24:60, Exod 18:21, Exod 18:25, Exod 20:6, Exod 34:7
+  Sense 4: "clan or tribal subdivision" (18x)
+    Desc: A social and military unit within an Israelite tribe, a clan or division (as in 'clans of Judah'), often appearing in construct or with possessive suffixes.
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: (in-thousands-his), [by-his-thousands], [in-thousand-his] | spa: (Qeré), de-miles-de, en-miles-suyos | fra: (in-milliers-his), [by-son-thousands], [in-mille-his] | deu: [by-sein-thousands], [in-Tausend-his], mit-sein-thousands
+    Refs: Exod 32:28, Num 1:16, Num 10:4, Num 10:36, Num 31:5

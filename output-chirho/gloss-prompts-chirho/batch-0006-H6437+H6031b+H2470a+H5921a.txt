@@ -1,0 +1,233 @@
+You are a biblical lexicographer composing glosses for a digital lexicon.
+For each lemma below, compose a JSON object. Separate objects with "---".
+
+Format for each:
+{
+  "lemma_id": "...",
+  "gloss_terse": "under 120 chars, concise definition covering the word's semantic range",
+  "gloss_readable": "2-5 sentences, 40-120 words. Don't start with 'This word'. Warm study-Bible footnote tone. Engaging, not dry.",
+  "senses": {
+    "1": "enriched 20-60 word description. Reference multilingual evidence when illuminating. Don't repeat the label verbatim.",
+    "2": "..."
+  }
+}
+
+Rules:
+- No markdown fences, just JSON objects separated by ---
+- Reference multilingual evidence naturally when it reveals something
+- gloss_readable should feel like a good study Bible footnote: helpful, clear, occasionally surprising
+- Each sense enrichment: how does the evidence support this sense? Mention 1-2 key passages when helpful.
+
+=== H6437 ===
+Language: Hebrew, POS: V-Qal-Perf-3ms, Occurrences: 135, Senses: 10
+
+BDB excerpt: פָּנָה135 vb. turn (NH id.; Syriac ܦܢܳܐ, 𝔗 פְּנָא; Ethiopic ፈነወ: Arabic فَنِى pass away, banish; cf.Sab. פנה (variously) e.g. CIS iv. Nos. 1, 37, 40; Assyrian pânu, face, Ph. פנם, MI 13, 18 לפני, sf. מפני l 19);— Qal117 Pf. 3 ms. פ׳ Je 6:4 +, 2 ms. פָּנִיתָ 2 S 9:8, etc.; Impf. 3 ms. יִפְנֶה 1 S 13:17 +, וַיִּ֫פֶן Ex 2:12 +, 3 fs. וַתֵּ֫פֶן 1 K 10:13, 1 s. וָאֵ֫פֶן Dt 9:15; 10:5, 1 pl. וַנֵּ֫פֶן 2:1 +, etc.; Imv. ms. פְּנֵה ψ 25:16 +, etc.; Inf. abs. פָּנֹה Hg 1:9; cstr. לִפְנוֹת Gn 24:63 +, etc.; Pt. פֹּנֶה Dt 29:17 +, etc.;— 1. †a. turn toward, אֶל pers., lit., Ju 6:14; Is 13:14 = Je 50:16; 
+Senses:
+  Sense 1: "Qal: turn, turn around" (85x)
+    Desc: Physical turning of the body or changing direction; Arabic الْتَفَتَ (iltafata, turn around) consistently across all persons/numbers; Korean 돌아보았다/돌이켰다/돌았다 (turned/turned back); Swahili -geuka (turn);...
+    Domain: MOVEMENT > Linear Movement
+    Glosses: eng: and-he-turned, and-turned, turn | spa: Y-se-volvieron, Y-se-volvió, Y-volvieron | fra: et-il-se-tourna, et-il-tourna, et-tourna | deu: und-er-wandte, und-wandte, wenden
+    Refs: Exod 7:23, Exod 10:6, Exod 16:10, Exod 32:15, Lev 19:4
+  Sense 2: "Qal: face toward, be oriented" (22x)
+    Desc: Static orientation or direction that something faces, not active turning; Arabic مُتَّجِهَة/مُتَوَجِّهَة (muttajiha, directed/facing) and يَتَّجِهُ (yattajihu, is directed); Korean 향하는 (hyanghanun, fa...
+    Domain: MOVEMENT > Linear Movement
+    Glosses: eng: facing, the-facing, turning | spa: la-que-mira, las-que-miran, mira | fra: [פנים], face, faisant-face | deu: Angesicht, der-facing, facing
+    Refs: Josh 15:2, Josh 15:7, 1Kgs 7:25, 1Kgs 7:25, 1Kgs 7:25
+  Sense 3: "Hifil: cause to turn" (8x)
+    Desc: Causative Hifil stem meaning to cause someone or something to turn, or to turn something oneself; Arabic أَدَارُوا (adaruu, they turned/rotated something); Korean 돌렸다 (dollyo-da, caused to turn); Swah...
+    Domain: MOVEMENT > Linear Movement
+    Glosses: eng: and-turned, as-he-turned, has-turned- | spa: cuando-volvió, ha-vuelto, quien-vuelva | fra: comme-il-se-tourna, et-tourna, se-tourner | deu: und-wandte, wandte-sich, wenden
+    Refs: Judg 15:4, 1Sam 10:9, Jer 46:5, Jer 46:21, Jer 47:3
+  Sense 4: "Piel: prepare, clear a way" (6x)
+    Desc: Intensive/causative Piel stem meaning to clear, prepare, or make ready (especially a road or space); Arabic هَيِّئُوا (prepare!) and افْسَحُوا (make room!); Korean 예비하라 (prepare!); Swahili -tayarisha ...
+    Domain: MOVEMENT > Linear Movement
+    Glosses: eng: You-cleared, and-he-will-clear-, clear | spa: Limpiaste, Preparad, preparad | fra: avoir-prépara, et-se-tourner, se-tourner | deu: du-cleared, habe-bereitet, und-wandte-sich
+    Refs: Gen 24:31, Ps 80:9, Isa 40:3, Isa 57:14, Isa 62:10
+  Sense 5: "Qal infinitive: turning of time" (6x)
+    Desc: Temporal use of the infinitive construct with preposition, meaning 'at the turn of' (evening, morning); Arabic عِنْدَ إِقْبَالِ (at the approach of) and عِنْدَ الْتِفَاتِ (at the turning of); Spanish ...
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: at-the-turning-of, at-turn-of, at-turning-of | spa: al-acercarse-, al-amanecer, al-amanecer-de | fra: se-tourner, vers-tournant-de, vers-turning-de- | deu: bei-turning-von, bei-wenden-von, gegen-
+    Refs: Gen 24:63, Exod 14:27, Deut 23:11, Judg 19:26, Ps 46:5
+  Sense 6: "Qal: look, regard, give attention" (3x)
+    Desc: Turning one's attention or gaze toward someone, often implying regard or consideration; Hindi देखा (dekha, saw) and ध्यान दिया (gave attention); Swahili -angalia (look at); Arabic الْتَفَتَ in context...
+    Domain: MOVEMENT > Linear Movement
+    Glosses: eng: Looking, and-he-turned, he-has-regarded | spa: Esperabais, Se-volvió, Y-miró | fra: et-il-tourna, se-tourner, tourner | deu: er-hat-regarded, und-er-wandte, wandte-sich
+    Refs: Exod 2:12, Ps 102:17, Hag 1:9
+  Sense 7: "Qal: decline, pass away" (2x)
+    Desc: Temporal or figurative turning away, declining, or passing; Arabic فَنَتْ (fanat, perished/vanished) and مَالَ (mala, inclined/declined) — different roots from core الْتَفَتَ indicating genuine polyse...
+    Domain: MOVEMENT > Linear Movement
+    Glosses: eng: has-turned, pass-away | spa: declina, declinaron | fra: se-tourner, tourner | deu: pass-weg, wenden
+    Refs: Ps 90:9, Jer 6:4
+  Sense 8: "?" (1x)
+    Domain: MOVEMENT > Linear Movement
+    Glosses: eng: he-has-turned-away | spa: ha-apartado | fra: se-tourner | deu: wandte-sich
+    Refs: Zeph 3:15
+  Sense 9: "?" (1x)
+    Domain: VIOLENCE_CONFLICT > Violence, Harm, Destroy, Kill
+    Glosses: eng: and-they-shall-empty | spa: y-vaciarán | fra: et-ils-devra-vide | deu: und-sie-soll-leer
+    Refs: Lev 14:36
+  Sense 10: "?" (1x)
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: the-corner | spa: la-Esquina | fra: [הפונה] | deu: wenden
+    Refs: 2Chr 25:23
+
+=== H6031b ===
+Language: Hebrew, POS: Conj-w | V-Piel-ConsecImperf-3fs | 3fs, Occurrences: 80, Senses: 10
+
+BDB excerpt: מַעֲנִית ψ 129:3 Qr v. foregoing.
+Senses:
+  Sense 1: "Piel: afflict, oppress" (42x)
+    Desc: To cause suffering, distress, or oppression to someone; the primary active transitive sense of the Piel stem, used of taskmasters oppressing Israel, God disciplining his people, and general mistreatme...
+    Domain: DANGER_DELIVERANCE > Trouble, Hardship, Relief
+    Glosses: eng: afflicting, afflicting-him, and-afflict | spa: a-afligirlo, afligieres, afligir | fra: afflicting, afflicting-lui, et-afflict | deu: [ויענני], [ותעננו], afflicting
+    Refs: Gen 15:13, Gen 16:6, Gen 31:50, Exod 1:11, Exod 1:12
+  Sense 2: "Piel: humble, bring low" (10x)
+    Desc: To humble or bring low someone, emphasizing reduction of status or pride rather than physical suffering; often used of God humbling a person or nation to teach dependence (e.g., Deut 8:2-3 'he humbled...
+    Domain: BODY_HEALTH > Physiological Processes and States
+    Glosses: eng: and-he-humbled-you, he-humbled, he-humbled-her | spa: Y-te-humilló, humillaron, humillarte | fra: et-il-humilia-tu, humilier, il-a-répondu | deu: [ענה], [ענו], du-haben-demuetigte-ihr
+    Refs: Deut 8:2, Deut 8:3, Deut 8:16, Deut 21:14, Deut 22:24
+  Sense 3: "Hitpael: humble oneself, fast" (6x)
+    Desc: The reflexive Hitpael stem meaning to afflict oneself or humble oneself, frequently associated with fasting and penitential self-denial (e.g., Lev 16:29-31 'you shall afflict your souls,' Ezra 8:21, D...
+    Domain: DANGER_DELIVERANCE > Trouble, Hardship, Relief
+    Glosses: eng: and-humble-yourself, and-to-humble-yourself, they-afflicted-themselves | spa: fueron-afligidos, para-humillarnos, se-afligio | fra: [להתענות], et-humble-toi-même, et-humilier | deu: [ולהתענות], [להתענות], du-waren-afflicted
+    Refs: Gen 16:9, 1Kgs 2:26, 1Kgs 2:26, Ezra 8:21, Ps 107:17
+  Sense 4: "Qal: be bowed down, suffer" (5x)
+    Desc: The intransitive Qal sense expressing a state of being afflicted, bowed down, or in a condition of suffering, without specifying an external agent (e.g., Ps 116:10, Ps 119:67).
+    Domain: DANGER_DELIVERANCE > Trouble, Hardship, Relief
+    Glosses: eng: I-was-afflicted, he-is-daunted, no | spa: fuera-afligido, fui-afligido, fui-muy-afligido | fra: affligé, humilier | deu: Krieg-geplagt, Strauss, [יענו]
+    Refs: Ps 116:10, Ps 119:67, Ps 119:71, Isa 31:4, Zech 10:2
+  Sense 5: "Nifal: be humbled, submit" (4x)
+    Desc: The Nifal reflexive-passive sense of being humbled or brought into a state of submission, often describing a person who accepts or endures affliction with a posture of meekness (e.g., Isa 53:7 'he was...
+    Domain: DANGER_DELIVERANCE > Trouble, Hardship, Relief
+    Glosses: eng: I-am-afflicted, afflicted, to-humble-yourself | spa: Fui-afligido, afligida, fue-afligido | fra: affligé, humilier, à-humble-toi-même | deu: [נענה], ich-bin-geplagt, zu-humble-dich-selbst
+    Refs: Exod 10:3, Ps 119:107, Isa 53:7, Isa 58:10
+  Sense 6: "Piel: violate, ravish" (4x)
+    Desc: To sexually violate or humiliate a woman; a specialized Piel usage denoting rape or forced sexual intercourse, as in the laws of Deuteronomy 22 and narratives like Gen 34:2, 2 Sam 13:14, Ezek 22:10-11...
+    Domain: PHYSICAL_ACTION > Physical Impact
+    Glosses: eng: and-he-humbled-her, and-he-humiliated-her, they-humbled | spa: violaron, y-la-humilló | fra: affligé, et-il-humbled-sa, et-il-humiliated-sa | deu: [ענו], sie-demuetigte, und-demütigte-sie
+    Refs: Gen 34:2, Judg 20:5, 2Sam 13:14, Lam 5:11
+  Sense 7: "Pual: be afflicted, be oppressed" (3x)
+    Desc: The passive of the Piel, denoting being subjected to affliction or oppression by an external agent; the person is the recipient of suffering (e.g., Isa 53:4, Ps 119:107).
+    Domain: DANGER_DELIVERANCE > Trouble, Hardship, Relief
+    Glosses: eng: and-afflicted, his-afflictions, it-is-afflicted | spa: aflicción-de-él, se-aflija, y-afligido | fra: cela-est-afflicted, et-affligé, humilier | deu: [ומענה], es-ist-betruebte, sein-afflictions
+    Refs: Lev 23:29, Ps 132:1, Isa 53:4
+  Sense 8: "Qal: answer, respond" (3x)
+    Desc: To answer or respond to someone; this sense likely belongs to the homonymous root ענה I (H6030) rather than ענה II, but is included here as tagged in the source data (e.g., Joel 2:19, 2 Sam 22:36).
+    Domain: COMMUNICATION > Communication
+    Glosses: eng: and-Your-humility, and-answer-them, and-humble | spa: y-humilladlas, y-les-responderá, y-tu-humildad | fra: et-Ton-humility, et-humble, et-humilier | deu: und-Your-humility, und-antworten-ihnen, und-demuetigen
+    Refs: Judg 19:24, 2Sam 22:36, Ps 55:19
+  Sense 9: "Hifil: afflict, oppress (causative)" (2x)
+    Desc: The Hifil causative stem meaning to cause affliction or bring someone into a state of oppression; a rarer stem variant that overlaps semantically with the Piel but emphasizes the causative agency.
+    Domain: DISCOURSE_NAMES > Discourse Referentials
+    Glosses: eng: you-afflict-them, you-answer-them | spa: los-afligieres, los-afligirás | fra: [תענם], tu-afflict-eux | deu: [תענם], du-afflict-ihnen
+    Refs: 1Kgs 8:35, 2Chr 6:26
+  Sense 10: "?" (1x)
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: Le'annoth | spa: para-afligir | fra: à-humilier | deu: Le'annoth
+    Refs: Ps 88:1
+
+=== H2470a ===
+Language: Hebrew, POS: V-Hifil-Prtcpl-fs, Occurrences: 59, Senses: 10
+
+BDB excerpt: † I. חָלָה vb. be weak, sick (NH id.; Aramaic חֲלָא suffer (rare); Assyrian ḫalû, sickness, grief, DlPr 181)— Qal Pf. ח׳ 1 K 14:1 + 8 times; 2 fs. חָלִית Is 57:10; 1 s. חָלִיתִי 1 S 30:13 + 2 times; וְחָלִי֫תִי consec. Ju 16:7, 11, 17, חָלוּ֫ Je 5:3 (so read, v. infr.); Impf. וַיָּ֑חַל 2 K 1:2; Inf. sf. חֲלֹתוֹ Is 38:9; חֲלוֹתִי ψ 77:11 cf. sub Pi.; חֲלוֹתָם ψ 35:13; Pt. חֹלֶה Gn 48:1 + 6 times + 1 S 22:8 (v. infr.); חוֹלֶה Ne 2:2 Mal 1:13; f. חוֹלָה Ec 5:12 + 3 times (for Je 4:31 v. I. חוּל), cstr. חוֹלַת Ct 2:5; 5:8;— 1. be or become weak, Samson Ju 16:7, 11, 17; feel weak Is 57:10 (Che) Ez 
+Senses:
+  Sense 1: "be sick, be ill" (27x)
+    Desc: The basic Qal sense of being in a state of physical sickness or illness, including becoming sick and having been sick.
+    Domain: BODY_HEALTH > Physiological Processes and States
+    Glosses: eng: became-sick, he-was-sick, sick | spa: cuando-estuvo-enfermo, el-enfermo, enferma-de | fra: [חולה], [חלה], devint-malade | deu: [החולה], [חולה], [חולת]
+    Refs: Gen 48:1, 1Sam 19:14, 1Sam 30:13, 1Kgs 14:1, 1Kgs 14:5
+  Sense 2: "become weak, grow feeble" (5x)
+    Desc: To lose strength or become feeble, referring to physical weakness or debilitation rather than specific illness.
+    Domain: PROPERTIES_RELATIONS > Able, Capable
+    Glosses: eng: and-I-will-become-weak, you-became-sick, you-have-become-weak | spa: desfalleciste, has-sido-debilitado, y-me-debilitaré | fra: et-je-sera-become-faible, être-malade | deu: krank-sein, und-ich-wird-become-schwach
+    Refs: Judg 16:7, Judg 16:11, Judg 16:17, Isa 14:10, Isa 57:10
+  Sense 3: "be grievous, be severe" (5x)
+    Desc: Nifal participle describing a wound, plague, or affliction as grievous, incurable, or painfully severe.
+    Domain: ECONOMICS_PROPERTY > Possess, Transfer, Exchange
+    Glosses: eng: Grievous, grievous, sickness | spa: dolorosa, enfermedad, grave | fra: héritage, être-malade | deu: Erbe, [נחלה]
+    Refs: Isa 17:11, Jer 10:19, Jer 14:17, Jer 30:12, Nah 3:19
+  Sense 4: "make sick, cause illness" (5x)
+    Desc: Hifil and Piel causative sense of causing someone to become sick, afflicting with illness.
+    Domain: BODY_HEALTH > Physiological Processes and States
+    Glosses: eng: became-sick, have-made-sick, he-made-sick | spa: enferma, enfermaron, la-enfermó | fra: fit-sick, être-malade | deu: [החלו], [החליתי], [מחלה]
+    Refs: Deut 29:22, Prov 13:12, Isa 53:10, Hos 7:5, Mic 6:13
+  Sense 5: "be harmful, be distressing" (3x)
+    Desc: Qal participle feminine describing something (evil, situation) as grievous or distressing, used attributively.
+    Domain: BODY_HEALTH > Physiological Processes and States
+    Glosses: eng: as-one-in-labor, grievous | spa: como-de-mujer-que-da-a-luz, enfermo | fra: être-malade | deu: [חולה], krank-sein
+    Refs: Eccl 5:13, Eccl 5:16, Jer 4:31
+  Sense 6: "be wounded (passive)" (3x)
+    Desc: Hofal passive sense of being severely wounded or struck down in battle.
+    Domain: BODY_HEALTH > Physiological Processes and States
+    Glosses: eng: I-am-badly-wounded, I-am-wounded | spa: estoy-herido, estoy-muy-herido | fra: [החליתי], je-am-wounded | deu: [החליתי], ich-am-wounded
+    Refs: 1Kgs 22:34, 2Chr 18:33, 2Chr 35:23
+  Sense 7: "be weak (Nifal)" (3x)
+    Desc: Nifal sense of being in a state of weakness or infirmity, used substantively for weak or feeble ones.
+    Domain: BODY_HEALTH > Physiological Processes and States
+    Glosses: eng: and-was-sick, the-weak | spa: Las-débiles, las-débiles, y-estuve-enfermo | fra: et-être-malade, être-malade | deu: [הנחלות], [ונחליתי]
+    Refs: Ezek 34:4, Ezek 34:21, Dan 8:27
+  Sense 8: "feign illness, pretend sickness" (3x)
+    Desc: Hitpael reflexive sense of making oneself appear sick, pretending to be ill as a ruse.
+    Domain: BODY_HEALTH > Physiological Processes and States
+    Glosses: eng: and-he-made-himself-ill, and-make-yourself-ill, to-make-himself-ill | spa: para-enfermarse, y-hazte-enfermo, y-se-hizo-enfermo | fra: et-fais-toi-même-ill, et-il-fit-lui-même-ill, à-fais-lui-même-ill | deu: und-er-machte-sich-selbst-ill, und-mache-dich-selbst-ill, zu-mache-sich-selbst-ill
+    Refs: 2Sam 13:2, 2Sam 13:5, 2Sam 13:6
+  Sense 9: "grieve, suffer pain" (3x)
+    Desc: To experience emotional or psychological suffering, grief, or hurt.
+    Domain: BODY_HEALTH > Physiological Processes and States
+    Glosses: eng: I-was-hurt, my-grief, one-grieving | spa: enferme, enfermedad-de-mí, quien-sufra | fra: un-grieving, être-malade | deu: [חליתי], eins-grieving, mein-grief
+    Refs: 1Sam 22:8, Ps 77:10, Prov 23:35
+  Sense 10: "be exhausted, wear oneself out" (2x)
+    Desc: Nifal sense of becoming exhausted, wearied, or worn out through great effort or affliction.
+    Domain: BODY_HEALTH > Physiological Processes and States
+    Glosses: eng: They-have-exhausted-themselves, they-grieve | spa: se-afligen, se-esforzaron | fra: être-malade | deu: [נחלו], krank-sein
+    Refs: Jer 12:13, Amos 6:6
+
+=== H5921a ===
+Language: Hebrew, POS:  Prep, Occurrences: 5769, Senses: 9
+
+BDB excerpt: עַל, עָ֑ל (cf. Köii. 261 f.) I. subst. height (poet.) †Ho 7:16 יָשׁוּבוּ לֹא עָ֗ל they return (but) not upwards (i.e. not God-wards), 11:7 וְאֶל־עַל יִקְרָאֻהוּ they (the prophets) call it (the people) upwards, (but) none striveth to rise; as adv. accus., 2 S 23:1 the man הֻ֣קַּם עָ֔ל (that) is raised up on high. With מִן, מֵעָ֑ל, †(ה)שׁמים מֵעָ֑ל (the) heavens above Gn 27:39; 49:25 ψ 50:4 (opp. מִתַּחַת Ex 20:4. In prose מִמַּעַל). II. As prep. upon, and hence on the ground of, according to, on account of, on behalf of, concerning, beside, in addition to, together with, beyond, above, over, b
+Senses:
+  Sense 1: "upon, on, over (spatial)" (5443x)
+    Desc: Core spatial sense of surface contact or vertical superiority: Arabic consistently عَلَى, Korean 위에 (upon/on top), Swahili juu ya (on top of); includes all pronominal suffix forms (him, her, it, me, u...
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: on, upon | spa: sobre, sobre- | fra: sur | deu: auf, auf-
+    Refs: Gen 17:17, Gen 22:9, Gen 30:3, Gen 40:16, Exod 25:22
+  Sense 2: "against (adversative)" (120x)
+    Desc: Hostile or adversative sense: Arabic عَلَى in adversative contexts, Korean 대항하여/대적하여 (opposing/resisting) and 향하여 (directed toward), Swahili dhidi ya (against); English consistently renders 'against' ...
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: against-you | spa: contra-ti | fra: contre-toi, contre-tu, sur | deu: gegen-du, gegen-über, ueber
+    Refs: Gen 50:20, Deut 7:22, Deut 15:9, Deut 23:4, Deut 24:15
+  Sense 3: "beside, by, at (proximity)" (55x)
+    Desc: Proximity or locative-adjacency sense: Arabic عِنْدَ (at/beside) distinctly replaces عَلَى, Korean 에서 (at) and 옆에 (beside), Swahili karibu na (near/beside), kando ya (alongside), kwenye (at); English ...
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: and-at-, at, at- | spa: Y-a-, a, en | fra: et-sur, sur, à | deu: bei, bei-über, ueber
+    Refs: Gen 24:13, Gen 24:30, Gen 24:30, Gen 24:43, Exod 2:15
+  Sense 4: "because of, therefore (causal)" (51x)
+    Desc: Causal and inferential sense: Arabic مِنْ أَجْلِ (because of), بِسَبَبِ (on account of), لِذلِكَ (therefore); Korean 그러므로 (therefore), 때문에 (because of); Swahili kwa sababu ya (because of), kwa hiyo/kw...
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: and-for-, for, for- | spa: Por-, por, por- | fra: et-sur, sur | deu: ueber, und-ueber
+    Refs: Gen 19:22, Gen 20:6, Num 18:24, Num 21:14, Num 21:27
+  Sense 5: "concerning, about (topical)" (39x)
+    Desc: Topical or referential sense indicating the subject matter: Arabic عَنْ (about) alongside عَلَى, Korean 에 대하여 (regarding/concerning), Swahili kuhusu (about/concerning); Hindi विषय में / बारे में (abou...
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: concerning, concerning-, concerning-you | spa: Sobre, a-ti, por | fra: concernant, concernant-, pour-tu | deu: betreffend, concerning-, fuer-du
+    Refs: Gen 21:12, Gen 21:25, Gen 41:15, Exod 22:9, Exod 22:9
+  Sense 6: "for, on behalf of (benefactive)" (22x)
+    Desc: Benefactive or purpose sense: Arabic مِنْ أَجْلِكَ / لِأَجْلِ (for the sake of), Korean 를 위하여 (for/on behalf of), Swahili kwa ajili ya (for the sake of); Hindi के लिए / कारण (for/because of in benefac...
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: against-you, at-you, for-You | spa: Sobre-ti, por-ti, por-vosotros | fra: pour-toi, pour-tu, sur | deu: auf, fuer-du, ueber
+    Refs: Lev 8:34, Lev 16:30, Lev 23:28, Num 28:22, Num 28:30
+  Sense 7: "to, unto (directional)" (19x)
+    Desc: Directional or allative sense indicating motion or orientation toward: Arabic إِلَى (to/toward) replaces عَلَى, Korean 에게 (to someone), Swahili hadi (up to/unto) and kwake (to him); English 'to/unto';...
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: and-to-, and-unto-, to | spa: a-nosotros, a-ti, hacia-él | fra: et-sur, ses-feuilles, sur | deu: auf-uns, ueber-dich, ueber-ihn
+    Refs: Exod 3:18, Exod 5:3, Num 18:2, Num 18:4, 2Sam 17:11
+  Sense 8: "according to, in addition to (normative)" (13x)
+    Desc: Standard/norm sense and additive extension: Arabic بِحَسَبِ (according to), Korean 에 따라 (in accordance with), Swahili kulingana na (according to) and pamoja na (together with/in addition to); marks a ...
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: according-to-, besides-, by- | spa: Según-, según-, sobre | fra: en-plus-de-, par-, selon-à- | deu: auf-, besides-, durch-
+    Refs: Exod 6:26, Exod 12:51, Exod 17:1, Num 1:18, Num 26:56
+  Sense 9: "?" (7x)
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: from-upon-us | spa: de-sobre-nosotros | fra: de-sur-nous, sur | deu: ueber, von-auf-uns, von-ueber-uns
+    Refs: Num 21:7, 1Sam 6:20, 1Kgs 12:10, 2Chr 10:10, Jer 21:2

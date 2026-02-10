@@ -1,0 +1,123 @@
+You are a biblical lexicographer composing glosses for a digital lexicon.
+For each lemma below, compose a JSON object. Separate objects with "---".
+
+Format for each:
+{
+  "lemma_id": "...",
+  "gloss_terse": "under 120 chars, concise definition covering the word's semantic range",
+  "gloss_readable": "2-5 sentences, 40-120 words. Don't start with 'This word'. Warm study-Bible footnote tone. Engaging, not dry.",
+  "senses": {
+    "1": "enriched 20-60 word description. Reference multilingual evidence when illuminating. Don't repeat the label verbatim.",
+    "2": "..."
+  }
+}
+
+Rules:
+- No markdown fences, just JSON objects separated by ---
+- Reference multilingual evidence naturally when it reveals something
+- gloss_readable should feel like a good study Bible footnote: helpful, clear, occasionally surprising
+- Each sense enrichment: how does the evidence support this sense? Mention 1-2 key passages when helpful.
+
+=== H3588b ===
+Language: Hebrew, POS: Conj, Occurrences: 148, Senses: 4
+
+BDB excerpt: כִּי אִם־ (the אִם foll. by makkeph, except Gn 15:4 Nu 35:33 Ne 2:2, where כִּי־אִם is read by the Mass., Pr 2:3: FrMM 241)— 1. each part. retaining its independent force, and relating to a different clause: a. that if Je 26:15; after an oath (כִּי not translated: v. כִּי 1 c) if 1 S 14:39 Je 22:24, surely not (אִם 1 b 2) 2 S 3:35 1 S 25:34 (כִּי being resumptive of the כִּי before לוּלֵי: v. כִּי 1 c); Ex 22:22 (in apod.) indeed if … (v. כִּי 1 d). b. for if Ex 8:17; 9:2; 10:4 Dt 11:20 +, for though Is 10:22 Je 37:20 Am 5:22, but if Je 7:5. 2. (About 140 times) the two particles being closely
+Senses:
+  Sense 1: "but, rather (adversative)" (57x)
+    Desc: Introduces an adversative or contrastive clause, correcting or opposing a preceding negative statement (often 'not X but Y').
+    Domain: DISCOURSE_NAMES > Discourse Markers
+    Glosses: eng: but, but- | spa: Porque, Sino, sino | fra: mais, mais- | deu: aber, aber-, sondern
+    Refs: Gen 32:28, Gen 35:10, Exod 12:9, Num 24:22, Deut 7:5
+  Sense 2: "except, unless (exceptive)" (48x)
+    Desc: Marks an exception or conditional restriction, limiting a preceding general statement ('except that', 'unless').
+    Domain: DISCOURSE_NAMES > Discourse Markers
+    Glosses: eng: but, except, except- | spa: a-menos-que, sino | fra: car, mais, sauf | deu: aber, ausser, ausser-
+    Refs: Gen 28:17, Gen 32:26, Gen 39:6, Gen 39:9, Gen 42:15
+  Sense 3: "for, because (causal)" (37x)
+    Desc: Introduces a causal or explanatory clause, giving the reason or ground for a preceding statement.
+    Domain: DISCOURSE_NAMES > Discourse Markers
+    Glosses: eng: But, For, For- | spa: Pero, Porque, porque | fra: Car, car, pour- | deu: For, denn, fuer-
+    Refs: Exod 8:21, Exod 9:2, Exod 10:4, Exod 22:23, Exod 23:22
+  Sense 4: "that, surely (asseverative/content)" (6x)
+    Desc: Introduces a content clause or serves as an emphatic asseverative particle meaning 'surely, indeed, that'.
+    Domain: DISCOURSE_NAMES > Discourse Markers
+    Glosses: eng: for, surely, that | spa: ciertamente, que | fra: car, ce, que | deu: dass, denn
+    Refs: Gen 47:18, 1Sam 14:39, 1Sam 26:10, Jer 22:24, Jer 26:15
+
+=== H5656 ===
+Language: Hebrew, POS: Prep-b | N-fsc | 3mp, Occurrences: 145, Senses: 4
+
+BDB excerpt: † עֲבֹדָה and (Chr) עֲבוֹדָה 145 n.f. labour, service (on format. v. LagBN 179 BaNB 61);—ע׳ Ex 1:14 + 41 times; cstr. עֲבֹדַת 3016 + 43 times; sf. עֲבֹדָתִי Gn 30:26 + 33 times sfs.; in Chr עֲבוֹדָה 1 Ch 28:14 + 7 times; cstr. עֲבוֹדַת 633 + 13 times; sf. עֲבוֹדָתִי 2 Ch 12:8; עֲבוֹדָתָם 1 Ch 6:17; 2 Ch 31:16;— 1. †labour, work, ψ 10423; in the field Ex 1:14; 1 Ch 27:26, prob. Ne 10:38 (עָרֵי ע׳), ψ 10414 (עֵשֶׂב לע׳); in fine linen 1 Ch 4:21; in erection of tabernacle Ex 35:24; 36:1, 3, 5; 39:42 (P); in repairing temple 2 Ch 34:13(×2); כל מלאכת עבדה לא תעשׂוּ ye shall do no laborious work Lv 
+Senses:
+  Sense 1: "cultic service of tabernacle" (93x)
+    Desc: Service performed in connection with the tabernacle, temple, or sanctuary worship, often in construct with a following genitive specifying the sacred object or place (Arabic خِدْمَة, Swahili utumishi/...
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: service-of | spa: servicio-de | fra: service-de | deu: Dienst-von
+    Refs: Exod 30:16, Exod 36:1, Exod 36:3, Exod 38:21, Exod 39:40
+  Sense 2: "general service or ministry" (29x)
+    Desc: Non-cultic service rendered to a person, king, or community, including assigned duties and ministerial roles (Arabic خِدْمَة in non-sacred contexts, Swahili huduma/utumishi, Korean 봉사/섬김).
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: and-service, labor, service | spa: servicio, y-servicio | fra: et-service, service, travail | deu: Arbeit, Dienst, und-Dienst
+    Refs: Exod 12:25, Exod 12:26, Exod 13:5, Lev 23:7, Lev 23:8
+  Sense 3: "work or labor" (18x)
+    Desc: Physical work, manual toil, or agricultural labor as productive human activity (Arabic عَمَل, Swahili kazi, Korean 일/노동/수고).
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: His-work, from-the-service-of, from-your-labor | spa: con-trabajo, de-servicio-de, de-vuestro-trabajo | fra: [העבדה], [עבדה], avec-labeur | deu: Arbeit, Dienst, Werk-von
+    Refs: Exod 1:14, Exod 1:14, Exod 1:14, Exod 2:23, Exod 2:23
+  Sense 4: "bondage or servitude" (5x)
+    Desc: Forced labor, slavery, or oppressive servitude imposed upon a subjugated people (Arabic عُبُودِيَّة/اسْتِعْبَاد, Swahili utumwa, Korean 노역/종살이).
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: and-from-bondage, from-service-of, from-their-bondage | spa: de-servicio-de, de-su-servidumbre, la-servidumbre | fra: de-leur-servitude, de-service-de, et-de-servitude | deu: [העבדה], [עבדה], und-von-Knechtschaft
+    Refs: Exod 6:6, Exod 6:9, 1Kgs 12:4, Isa 14:3, Lam 1:3
+
+=== H4605 ===
+Language: Hebrew, POS: Prep-l | Adv | 3fs, Occurrences: 140, Senses: 4
+
+BDB excerpt: II. מַ֫עַל140 subst., higher part, only in adv. and prep. phrases; above, upwards (Ph. מעל, v. sub מַ֫טָּה p. 641: abbrev. from מַעֲלֶה; cf. מַ֫עַן in לְמַ֫עַן from עָנָה: Köii 116):— †1. מִמַּ֫עַל = above (v. מִן 1 c): a. as adv. Am 2:9 וָאָשְׁמִיד פִּרְיוֹ מִמַּעַל his fruit above (opp. שָׁרָשָׁיו מִתָּ֑חַת), Jb 18:16; 1 K 7:3, 20, 29; often in the phr. הַשָּׁמַיִם מִמַּעַל Dt 4:39; 5:8 (= Ex 20:4), Jos 2:11; 1 K 8:23; Is 45:8; Je 4:28; cf. שְׁחַקִים מ׳ ψ 78:23; Pr 8:28, אֱלוֹהַּ מ׳ Jb 3:4; 31:2, אֵל מ׳ 31:28. b. מִמַּעַל לְ, as prep. (מן 1 c), on the top of, above, Gn 22:9 ממעל לָעֵצִים abo
+Senses:
+  Sense 1: "and upward, onward (additive extent)" (57x)
+    Desc: Adverbial use marking the lower bound of a range extending upward; 'and upward, and beyond, and onward.' The characteristic formula is X wa-ma'lah 'from X and upward/onward,' especially in census and ...
+    Domain: GEOGRAPHY_SPACE > Spacial Positions
+    Glosses: eng: and-upward | spa: y-arriba, y-más | fra: et-upward | deu: und-aufwaerts
+    Refs: Exod 30:14, Exod 38:26, Lev 27:7, Num 1:3, Num 1:18
+  Sense 2: "from above (source/origin)" (43x)
+    Desc: Prepositional use indicating origin or source from a position above; from above, from on high. Most often in the compound preposition mil-ma'lah / mim-ma'al 'from above' (Gen 6:16; 7:20; Exod 25:21; 2...
+    Domain: GEOGRAPHY_SPACE > Spacial Positions
+    Glosses: eng: from-above | spa: de-arriba, desde-arriba, encima | fra: [מלמעלה], de-au-dessus, de-au-dessus-de | deu: darüber, oben, von-oben
+    Refs: Gen 6:16, Gen 7:20, Exod 25:21, Exod 26:14, Exod 28:27
+  Sense 3: "upward, higher (directional)" (27x)
+    Desc: Adverbial use indicating upward direction or motion toward a higher position; upward, on high. Typically in the prepositional phrase le-ma'lah 'upward' (Exod 25:20; 37:9; Deut 28:43; 1 Chr 14:2; Ezek ...
+    Domain: GEOGRAPHY_SPACE > Spacial Positions
+    Glosses: eng: above, exceedingly, leads-upward | spa: arriba, hacia-arriba | fra: [למעלה], en-haut, en-haut-garde | deu: aufwaerts, hinauf-ward, nach-oben
+    Refs: Exod 25:20, Exod 37:9, Deut 28:43, Deut 28:43, Judg 7:13
+  Sense 4: "above, on top of (locative)" (13x)
+    Desc: Prepositional use indicating a static position above or on top of something; above, over, on the upper side. In the phrase mim-ma'al (le-) 'above, on top of' (Gen 22:9; Exod 20:4; Deut 4:39; 5:8; 1 Kg...
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: above, on-top-of | spa: arriba, arriba-de, de-arriba | fra: [למעלה], au-dessus, d’en-haut | deu: oben, oberhalb, von-oben
+    Refs: Gen 22:9, Exod 20:4, Deut 4:39, Deut 5:8, Deut 28:13
+
+=== H5158a ===
+Language: Hebrew, POS: Prep-b, Occurrences: 140, Senses: 4
+
+BDB excerpt: † I. נַ֫חַל n.m. 2 K 3:16 torrent, torrent-valley, wady (Ecclus 40:13, 16; NH id.; stream (rare); 𝔗 נַחְלָא, Syriac ܢܰܚܠܴܐ = BH; Assyrian naḫlu = BH; LagBN 140 Anm. thinks Νεῖλος may be from Νεέλ = נַחַל pronounced נִחִל; on נ׳ in Sab. n.pr.loc., v. HalRev. Sémit. iv. (1896), 80, 1. 14);—abs. נ׳ Gn 32:24 +, נַ֫חְלָה ψ 124;4; cstr. נ��הַל Gn 26:17 +; c. ה loc. Nu 34:5; so read also Ez 47:19; 48:28 (where MT נַחֲלָ֫ה; v. Thes); du. נַחֲלַיִם Ez 47:9, but read הַנַּחַל 𝔊 𝔗 𝔖 𝔙 Co Berthol; pl. נְחָלִים Nu 21:4 +; נַחֲלֵי Dt 8:7 +; sf. נְחָלֶיהָ Is 34:9;— 1. torrent, of rushing water in narrow chan
+Senses:
+  Sense 1: "wadi, seasonal brook" (82x)
+    Desc: A seasonal watercourse or brook, typically dry in summer and flowing in the rainy season; the default sense of nachal used for named wadis (Kidron, Arnon, Besor, Eshcol, etc.) and for generic brooks i...
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: -the-wadi-of, brook-of, wadi-of | spa: Arroyo-de, arroyo, arroyo-de | fra: -le-wadi-de, brook-de, torrent-de | deu: -der-Wadi-von, Bach-von, Wadi-von
+    Refs: Deut 2:13, Deut 2:13, Deut 2:14, Deut 2:24, Deut 2:36
+  Sense 2: "valley, ravine" (28x)
+    Desc: A geographic depression or narrow valley carved by seasonal water flow, emphasizing the landform rather than the watercourse; target languages consistently shift to valley-specific terms — Arabic وَاد...
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: in-Valley-of, in-the-valley, in-the-wadis | spa: arroyo, arroyo-de, el-valle | fra: dans-Valley-de, dans-le-vallée, dans-vallée-de | deu: Bach, Tal-von, der-wadis
+    Refs: Gen 26:17, Gen 26:19, Num 13:23, Num 13:24, Num 21:12
+  Sense 3: "river, perennial stream" (19x)
+    Desc: A permanent flowing watercourse, larger and more sustained than a seasonal brook; used for rivers of Egypt, Mesopotamia, and in poetic/wisdom contexts for streams of abundance — Arabic نَهْر (river), ...
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: and-from-river-of, and-in-the-streams, her-streams | spa: arroyos, arroyos-de, de-arroyos-de | fra: de-ruisseaux-de, et-dans-le-ruisseaux, et-torrent | deu: Bach, Baeche, der-Baeche
+    Refs: Lev 11:9, Lev 11:10, Deut 8:7, Deut 10:7, 1Kgs 18:5
+  Sense 4: "torrent, rushing floodwater" (11x)
+    Desc: The rushing, often destructive surge of water through a wadi during flash floods; used in similes and poetic descriptions of overwhelming force — Arabic سَيْل (torrent/flood), Korean 급류 (torrent), Swa...
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: a-torrent, and-like-a-torrent, and-streams | spa: como-arroyo, como-torrente, como-torrente-de | fra: et-torrent, torrent, torrents-de | deu: Bach, ein-Tal, torrents-von
+    Refs: 2Sam 22:5, Ps 18:4, Ps 78:20, Ps 124:4, Isa 30:28

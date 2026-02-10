@@ -1,0 +1,181 @@
+You are a biblical lexicographer composing glosses for a digital lexicon.
+For each lemma below, compose a JSON object. Separate objects with "---".
+
+Format for each:
+{
+  "lemma_id": "...",
+  "gloss_terse": "under 120 chars, concise definition covering the word's semantic range",
+  "gloss_readable": "2-5 sentences, 40-120 words. Don't start with 'This word'. Warm study-Bible footnote tone. Engaging, not dry.",
+  "senses": {
+    "1": "enriched 20-60 word description. Reference multilingual evidence when illuminating. Don't repeat the label verbatim.",
+    "2": "..."
+  }
+}
+
+Rules:
+- No markdown fences, just JSON objects separated by ---
+- Reference multilingual evidence naturally when it reveals something
+- gloss_readable should feel like a good study Bible footnote: helpful, clear, occasionally surprising
+- Each sense enrichment: how does the evidence support this sense? Mention 1-2 key passages when helpful.
+
+=== H6113 ===
+Language: Hebrew, POS: Conj-w | V-Nifal-ConjImperf-3fs, Occurrences: 46, Senses: 7
+
+BDB excerpt: עָצַר46 vb. restrain, retain (NH id.; cf. prob. Assyrian eṣêru, retain, restrain, DlHWB 122 JägerBAS i.483 Zehnpfundib.500* cf. Assyrian uṣurtu, taboo SACJA, 1904, 754.; Ethiopic ዐጸረ: press, Arabic عَصَرَ; 𝔗 עֲצַר, Syriac ܥܨܰܪ id.);— Qal Pf. 3 ms. ע׳ Gn 20:18 +, sf. עֲצָרַנִי 16:2; 1 s. עָצַרְתִּי Dn 10:8, 16, etc.; Impf. 3 ms. יַעְצֹר 1 S 9:17 +, יַעְצָר־ 2 Ch 2:5; sf. יַעֲצָרְכָה 1 K 18:44, etc.; Inf. abs. עָצֹר Gn 20:18, cstr. לַעְצֹר 2 Ch 22:9, וַעְצֹר Jb 4:2 (Ges§ 28 b); Pt. pass. עָצוּר Je 33:1 +, etc.;— 1. restrain, c. acc. pers. Gn 16:2 (J; + מִן, i.e. prevent), עָצֹר עָצַר בְּעַד כָּל
+Senses:
+  Sense 1: "confined, imprisoned" (12x)
+    Desc: To be shut up or confined as a prisoner or captive, often as a passive participle describing someone held in bondage.
+    Domain: AUTHORITY_RULE > Control, Rule
+    Glosses: eng: and-restrained, and-shut-up, bond | spa: cautivo, detenido, encerrado | fra: bond, detained, et-ferma-en-haut | deu: [עצור], [עצר], bond
+    Refs: Deut 32:36, 1Sam 21:8, 1Kgs 14:10, 1Kgs 21:21, 2Kgs 9:8
+  Sense 2: "restrain, hold back" (8x)
+    Desc: To restrain, hold back, or check a person or force from acting, including stopping plagues and curbing behavior.
+    Domain: AUTHORITY_RULE > Control, Rule
+    Glosses: eng: and-to-restrain, can-retain-, has-restrained-me | spa: detengas, gobernará, me-ha-cerrado | fra: a-retint-moi, et-retenir, fera-arrête-tu | deu: [ועצר], [יעצר], hold-zurueck
+    Refs: Gen 16:2, 1Sam 9:17, 1Kgs 18:44, 2Kgs 4:24, 2Chr 2:6
+  Sense 3: "be stopped (Nifal)" (7x)
+    Desc: Nifal passive: to be stopped, restrained, or brought to a halt, said especially of plagues, rain, or hostile forces.
+    Domain: TIME > Aspect
+    Glosses: eng: and-was-restrained, and-was-stopped, and-will-be-restrained | spa: fue-detenida, y-fue-detenida, y-se-detuvo | fra: et-fera-être-retint, et-fut-retint, et-retenir | deu: und-Krieg-stopped, und-war-restrained, und-war-stopped
+    Refs: Num 16:48, Num 16:50, Num 25:8, 2Sam 24:21, 2Sam 24:25
+  Sense 4: "shut up, close" (7x)
+    Desc: To close or shut up physically, especially of God closing the heavens or the womb, preventing rain or fertility.
+    Domain: AUTHORITY_RULE > Control, Rule
+    Glosses: eng: I-shut-up, and-I-close-up, and-he-will-shut-up | spa: Al-ser-cerrados, Cuando-se-cerraren, cerrar | fra: avait-ferma, closing, et-il-fera-fermer-en-haut | deu: [ועצרתי], hatte-verschlossen, und-er-wird-einsperren-hinauf
+    Refs: Gen 20:18, Gen 20:18, Deut 11:17, 1Kgs 8:35, 2Chr 6:26
+  Sense 5: "retain, keep possession" (6x)
+    Desc: To retain, keep hold of, or preserve something in one's possession or control.
+    Domain: AUTHORITY_RULE > Control, Rule
+    Glosses: eng: I-retained, retained, she-shall-retain | spa: para-retener, retendrá, retengamos | fra: retenir | deu: zurueckhalten
+    Refs: 1Chr 29:14, 2Chr 13:20, 2Chr 22:9, Dan 10:8, Dan 10:16
+  Sense 6: "detain, keep from leaving" (3x)
+    Desc: To detain someone, preventing them from departing; to urge someone to stay or hold them in place.
+    Domain: MOVEMENT > Linear Movement
+    Glosses: eng: and-he-restrained-him, let-us-detain-, you-detain-me | spa: detengámoste-, me-detienes, y-lo-arrestó | fra: et-il-retint-lui, que-nous-detain-, tu-detain-moi | deu: du-detain-mich, lass-uns-detain-, und-er-restrained-ihn
+    Refs: Judg 13:15, Judg 13:16, 2Kgs 17:4
+  Sense 7: "be able, have power" (3x)
+    Desc: Idiomatic usage meaning to have power or ability to do something, to prevail or be able.
+    Domain: AUTHORITY_RULE > Control, Rule
+    Glosses: eng: has-been-kept-from-, restrained, they-were-able | spa: detuvieron, pudieron, retenida | fra: a-été-garda-de-, retenir | deu: [עצרו], hat-gewesen-bewahrte-von-, zurueckhalten
+    Refs: 1Sam 21:6, 2Chr 20:37, Job 29:9
+
+=== H5234a ===
+Language: Hebrew, POS: Prep-l | V-Hifil-Inf | 1cs, Occurrences: 42, Senses: 7
+
+BDB excerpt: † I. [נָכַר] vb. (not Qal) regard, recognize (NH Hiph. know, be acquainted with; 𝔗 Aph. id.; Syriac Aph. ܐܰܟܰܪ id.; cf. also Arabic نَكِرَ in sense be shrewd, appar. rare, cf. نُكْرٌ cunning Lane 2850 a. v. p. 1125);— Niph. Pf. 3 mpl. לֹא נִכְּרוּ La 4:8 they are not recognized. Pi. Pf. לֹא נִכַּר שׁוֹעַ לִפְנֵי־דָ֑ל Jb 34:19 he regardeth not the opulent above the poor (‖ לֹא־נָשָׂא פְּנֵי שָׂרִים); Impf. לֹא תְנַכֵּ֑רוּ Jb 21:29 do ye not recognize their tokens. Hiph. Pf. הִכִּיר Dt 33:9; Dn 11:39 Kt; sf. הִכִּירוֹ Gn 27:23; 3 pl. הִכִּירוּ Ju 18:3 + 2 times, sf. הִכִּירֻהוּ Jb 2:12, הִכִּרֻה
+Senses:
+  Sense 1: "recognize or identify" (30x)
+    Desc: To recognize, identify, or discern a person, thing, or situation by sight or perception (Hifil active).
+    Domain: PHYSICAL_ACTION > Physical Impact
+    Glosses: eng: He-knows, I-recognized, and-I-perceived | spa: Y-reconoció, Y-reconocí, lo-reconocieron | fra: [ואכירה], [מכירים], de-reconnaître | deu: [אכיר], [הכירהו], [ואכירה]
+    Refs: Gen 27:23, Gen 31:32, Gen 37:32, Gen 37:33, Gen 38:25
+  Sense 2: "show partiality" (4x)
+    Desc: To show partiality or favoritism, especially in judgment, by distinguishing faces or persons (Hifil with פנים or similar idiom).
+    Domain: MENTAL_LIFE > Know
+    Glosses: eng: partiality-of, you-shall-recognize, you-shall-show-partiality | spa: Hacer-acepción-de-, Hacer-distinción-de-, reconocerás | fra: reconnaître, tu-devra-montrer-partiality, tu-devra-recognize | deu: [הכר], du-soll-recognize, du-soll-zeigen-partiality
+    Refs: Deut 1:17, Deut 16:19, Prov 24:23, Prov 28:21
+  Sense 3: "acknowledge or regard" (4x)
+    Desc: To acknowledge, accept, or regard someone with recognition of their status or relationship (Hifil with nuance of formal acknowledgment).
+    Domain: BODY_HEALTH > Sensory Events and States
+    Glosses: eng: I-will-regard, [ketiv:he-acknowledged], acknowledges-us | spa: [reconocer], nos-reconoce, reconocerá | fra: [אכיר], [יכירנו], il-devra-acknowledge | deu: [אכיר], [הכיר], [יכירנו]
+    Refs: Deut 21:17, Isa 63:16, Jer 24:5, Dan 11:39
+  Sense 4: "make oneself known" (1x)
+    Desc: To make oneself known or reveal one's identity to others (Hitpael reflexive stem).
+    Domain: MENTAL_LIFE > Know
+    Glosses: eng: makes-himself-known | spa: se-da-a-conocer- | fra: reconnaître | deu: [יתנכר]
+    Refs: Prov 20:11
+  Sense 5: "deny or disown" (1x)
+    Desc: To refuse to recognize, to deny or disown someone, acting as though one does not know them (Piel with negative/privative force).
+    Domain: MENTAL_LIFE > Know
+    Glosses: eng: you-recognize | spa: desconocéis. | fra: reconnaître | deu: [תנכרו]
+    Refs: Job 21:29
+  Sense 6: "be regarded or favored" (1x)
+    Desc: To be regarded, esteemed, or shown preference by another person (Piel with passive or stative nuance).
+    Domain: MENTAL_LIFE > Know
+    Glosses: eng: is-regarded | spa: es-reconocido- | fra: reconnaître | deu: [נכר]
+    Refs: Job 34:19
+  Sense 7: "be recognized" (1x)
+    Desc: To be recognized or identified by others in a passive sense (Nifal passive stem).
+    Domain: BODY_HEALTH > Sensory Events and States
+    Glosses: eng: they-are-recognized | spa: son-reconocidos | fra: [נכרו] | deu: [נכרו]
+    Refs: Lam 4:8
+
+=== G3936 ===
+Language: Greek, POS: V-LIA-3P, Occurrences: 41, Senses: 7
+
+BDB excerpt: παρίστημι, __A causal in present, imperfect, future, and aorist 1; later perfect παρέστᾰκα in same sense, Refs 2nd c.BC+ __A.I cause to stand, place beside, π. τοὺς ἱππεῖς ἐφ᾽ ἑκάτερον τὸ κέρας Refs 2nd c.BC+; παραστήσας τὰ ὅπλα having brought his arms into view, Refs 4th c.BC+; π. τινὰ φυλάττειν set one near a thing to guard it, variant in Refs __A.II set before the mind, present, ὑπόθεσιν.. οὐ χὶ τὴν οὖσαν παριστάντες ὑμῖν Refs 4th c.BC+; τοῦτο π. τοὺς θεοὺς ὑμῖν that they may put this into your minds, Refs; π. ἐλπίδας, ὁτιοῦν τῶν δεινοτάτων, Refs; arouse, inspire, οὐ γὰρ ἡ πληγὴ παρέστησε τ
+Senses:
+  Sense 1: "present, offer, yield" (17x)
+    Desc: To present or offer someone or something formally, whether in a religious, legal, or moral context, including yielding oneself or one's members.
+    Domain: GUIDANCE_CARE > Help, Care For
+    Glosses: eng: he-might-present, he-presented, present | spa: la-presentó, os-presentáis, para-presentar | fra: présenter, se-tenir-devant | deu: darstellen, stellt-dar
+    Refs: Luke 2:22, Acts 1:3, Acts 9:41, Acts 23:33, Rom 6:13
+  Sense 2: "stand by, be present" (16x)
+    Desc: To stand near or beside someone or something, indicating physical presence or proximity, often as a bystander.
+    Domain: GUIDANCE_CARE > Help, Care For
+    Glosses: eng: standing, standing-by, stands | spa: estaban-de-pie-junto-a, estaban-junto-a, estando-presente | fra: présenter, se-tenir-devant | deu: darstellen, stellt-dar
+    Refs: Mark 14:47, Mark 14:69, Mark 14:70, Mark 15:35, Mark 15:39
+  Sense 3: "assist, stand with in support" (2x)
+    Desc: To stand by someone in a supportive capacity, providing help, assistance, or loyal companionship.
+    Domain: GUIDANCE_CARE > Help, Care For
+    Glosses: eng: stood-by, you-may-stand-by | spa: asistáis, estuvo-al-lado | fra: présenter, se-tenir-devant | deu: darstellen
+    Refs: Rom 16:2, 2Tim 4:17
+  Sense 4: "provide, furnish, prepare" (2x)
+    Desc: To provide, furnish, or prepare something for use or readiness.
+    Domain: GUIDANCE_CARE > Help, Care For
+    Glosses: eng: he-will-provide, to-provide | spa: pondrá, proveer | fra: présenter, se-tenir-devant | deu: stellt-dar
+    Refs: Matt 26:53, Acts 23:24
+  Sense 5: "stand before, appear before" (2x)
+    Desc: To stand before a judge, tribunal, or divine authority, implying a judicial or eschatological appearance.
+    Domain: GUIDANCE_CARE > Help, Care For
+    Glosses: eng: stand, we-will-stand-before | spa: comparecer, compareceremos | fra: se-tenir-devant | deu: darstellen, stellt-dar
+    Refs: Acts 27:24, Rom 14:10
+  Sense 6: "?" (1x)
+    Domain: GUIDANCE_CARE > Help, Care For
+    Glosses: eng: to-prove | spa: probar | fra: se-tenir-devant | deu: stellt-dar
+    Refs: Acts 24:13
+  Sense 7: "?" (1x)
+    Domain: GUIDANCE_CARE > Help, Care For
+    Glosses: eng: has-come | spa: ha-llegado | fra: présenter | deu: darstellen
+    Refs: Mark 4:29
+
+=== H7122 ===
+Language: Hebrew, POS: V-Qal-Imperf-3fp, Occurrences: 37, Senses: 7
+
+BDB excerpt: II. [קָרָא137] vb. encounter, befall (‖ form of קָרָה, q.v.; SI 4 לקרת to meet, opposite; Arabic قَرَأَ, put part to part; Min. קרא set opposite, HomChrest. 127);— Qal131 Pf.5 3 ms. sf. קְרָאַנִי Je 13:22 Jb 4:2; 3 fs. קָרָאת Dt 31:29; Je 44:23, etc.; Impf.4 3 ms. יִקְרָא Gn 49:1, sf. יִקְרָאֶנּוּ Gn 42:4; 3 fpl. וַתִּקְרֶאנָה Lv 10:19; Ex 1:10 read 3 fs. sf. תִּקְרָאֵנוּ (Sam Vrss Di Ges§ 47 k SoKau Baen); Inf. cstr.121 לִקְרַאת (Ges§ 19 k Ol§ 137), Gn 15:10 +, etc.; Pt. fpl. sf. קֹרְאֹתַיִךְ Is 51:19;— 1. meet, encounter, only inf. cstr. לִקְרַאת often = prep. toward, against (Köii. 1, 317),
+Senses:
+  Sense 1: "to meet, go to meet" (21x)
+    Desc: Qal: to go out to meet someone, to encounter purposefully, used with preposition lamed + infinitive construct indicating deliberate movement toward a person
+    Domain: MOVEMENT > Linear Movement
+    Glosses: eng: and-to-meet, to-meet, to-meet-her | spa: a-encontrarla, a-encontrarlo, a-encontrarme | fra: et-à-rencontre, à-rencontre, à-rencontre-lui | deu: und-zu-meet, zu-meet, zu-meet-ihn
+    Refs: 1Sam 4:1, 1Sam 4:2, 1Sam 9:14, 1Sam 10:10, 1Sam 13:10
+  Sense 2: "to befall, happen to" (10x)
+    Desc: Qal: of events, calamities, or circumstances befalling or happening to a person, often with negative connotation of misfortune or divine judgment overtaking someone
+    Domain: EXISTENCE_STATE > Be, Become, Exist, Happen
+    Glosses: eng: and-befalls-him, and-befell, and-will-befall | spa: acontezca, le-acontezca, me-encontró | fra: --arriver, [קראני], [קראת] | deu: [קראני], [קראת], dort-befall
+    Refs: Gen 42:4, Gen 42:38, Gen 49:1, Exod 1:10, Lev 10:19
+  Sense 3: "to meet, encounter (reciprocal)" (2x)
+    Desc: Nifal: reciprocal or middle-voice meeting, where two parties encounter each other, often implying mutual or unexpected encounter
+    Domain: MOVEMENT > Linear Movement
+    Glosses: eng: and-met, has-met | spa: nos-encontró, y-encontró | fra: a-rencontra, et-rencontra | deu: hat-met, und-met
+    Refs: Exod 5:3, 2Sam 18:9
+  Sense 4: "to cause to befall" (1x)
+    Desc: Hifil: causative sense, to bring something upon someone, to cause calamity or circumstance to meet/overtake a person
+    Domain: EXISTENCE_STATE > Be, Become, Exist, Happen
+    Glosses: eng: and-you-caused-to-meet | spa: y-llamaste-sobre | fra: [ותקרא] | deu: und-du-rufst
+    Refs: Jer 32:23
+  Sense 5: "to happen by chance" (1x)
+    Desc: Nifal infinitive absolute used adverbially to express chance or accident, indicating something occurring without deliberate cause or design
+    Domain: EXISTENCE_STATE > Be, Become, Exist, Happen
+    Glosses: eng: by-chance | spa: acontecer | fra: par-chance | deu: bei-chance
+    Refs: 2Sam 1:6
+  Sense 6: "to be encountered, be found" (1x)
+    Desc: Nifal imperfect passive sense: to be met with, to be found or encountered in a location or situation
+    Domain: MENTAL_LIFE > Learn
+    Glosses: eng: is-encountered | spa: se-encuentre | fra: est-encountered | deu: ist-encountered
+    Refs: Deut 22:6
+  Sense 7: "to be called, be named" (1x)
+    Desc: Nifal of the homographic root qara (to call): to be called or named, likely a different lexical root (H7121) tagged under this lemma
+    Domain: COMMUNICATION > Communication
+    Glosses: eng: was-called | spa: fue-llamado | fra: fut-appela | deu: war-rief
+    Refs: 2Sam 20:1

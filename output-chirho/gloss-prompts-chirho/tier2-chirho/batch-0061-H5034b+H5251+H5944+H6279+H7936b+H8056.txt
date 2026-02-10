@@ -1,0 +1,145 @@
+You are a biblical lexicographer composing glosses for a digital lexicon.
+For each lemma below, compose a JSON object. Separate objects with "---".
+
+Format for each:
+{
+  "lemma_id": "...",
+  "gloss_terse": "under 120 chars, concise definition covering the word's semantic range",
+  "gloss_readable": "2-5 sentences, 40-120 words. Don't start with 'This word'. Warm study-Bible footnote tone. Engaging, not dry.",
+  "senses": {
+    "1": "enriched 20-60 word description. Reference multilingual evidence when illuminating. Don't repeat the label verbatim.",
+    "2": "..."
+  }
+}
+
+Rules:
+- No markdown fences, just JSON objects separated by ---
+- Reference multilingual evidence naturally when it reveals something
+- gloss_readable should feel like a good study Bible footnote: helpful, clear, occasionally surprising
+- Each sense enrichment: how does the evidence support this sense? Mention 1-2 key passages when helpful.
+
+=== H5034b ===
+Language: Hebrew, POS: V-Qal-Imperf-2ms, Occurrences: 20, Senses: 3
+
+BDB excerpt: † נָבֵל vb. sink or drop down, languish, wither and fall, fade (NH id.; Assyrian nabâlu, destroy, DlHWB 443 f. Arabic نَبَلَ v, viii. die; Aramaic נְבֵילָא corpse);— Qal Pf. 3 ms. נ׳ Is 40:7, 8 Je 8:13; 3 fs. נָֽבְלָה Is 24:4(×2); Impf. 3 ms. יִבּוֹל ψ 1:3 + 4 times (on form cf. Ges§ 47 h Ol§ § 911 e, 912.2), 2 ms. תִּכֹּל Ex 18:18; 3 mpl. יִבֹּלוּ 2 S 22:46 = ψ 18:46, יִבּוֹל֑וּן ψ 37:2; 1 pl. וַנָּ֫בֶל Is 64:5 (on form cf. Di and Ol§ 236 e); Inf. abs. נָבֹל Ex 18:18; cstr. נְבֹל Is 34:4; Pt. נֹבֵל Is 28:1, 4; f. נֹבֶ֫לֶת abs. Is 34:4; cstr. Is 1:30;— 1. sink or drop down, from exhaustion נָב
+Senses:
+  Sense 1: "wither, fade (of vegetation)" (16x)
+    Desc: Of plants, flowers, leaves, or grass withering, wilting, and dropping — the core botanical sense of losing vitality and drying up.
+    Domain: BODY_HEALTH > Physiological Processes and States
+    Glosses: eng: and-like-a-withered-fig, faded-away, fades | spa: caerá, como-cae, marchita | fra: cadavre, et-flétrir, flétrir | deu: Leichnam, [יבול], und-welken
+    Refs: 2Sam 22:46, Ps 1:3, Ps 18:45, Ps 37:2, Isa 1:30
+  Sense 2: "wear out, become exhausted" (3x)
+    Desc: Of persons becoming worn out, exhausted, or spent through overexertion — applied to human endurance rather than plant life.
+    Domain: MOVEMENT > Linear Movement
+    Glosses: eng: and-we-have-faded, wearing-out, you-will-wear-out | spa: marchitar, te-marchitarás, y-nos-marchitamos | fra: et-flétrir, portant-dehors, tu---wear-dehors | deu: du-wird-wear-heraus, und-welken, wearing-heraus
+    Refs: Exod 18:18, Exod 18:18, Isa 64:6
+  Sense 3: "crumble, disintegrate" (1x)
+    Desc: Of something physically falling apart or collapsing, extending beyond botanical wilting to structural decay or disintegration.
+    Domain: BODY_HEALTH > Physiological Processes and States
+    Glosses: eng: crumbles | spa: se-desmorona | fra: flétrir | deu: [יבול]
+    Refs: Job 14:18
+
+=== H5251 ===
+Language: Hebrew, POS: N-ms, Occurrences: 20, Senses: 3
+
+BDB excerpt: † נֵס n.[m.] standard, ensign, signal, sign (NH id., flag, usually sign, i.e. miracle; 𝔗 נֵס, נִסָּא sign, miracle);—נ׳ abs. Nu 21:8 +; cstr. Is 31:9; sf. נִסִּי Ex 17:15; Is 49:22;— 1. a. standard, as rallying-point, י׳ נִסִּי Ex 17:15 (E), י׳ my standard (name of altar); conspicuously set on hill Is 30:17 (sim. of solitariness; ‖ תֹּרֶן עַל־רֹאשׁ הָהָר); signal of war [v. SchumacherZPV ix. 232, Across the Jordan, 104 f.] (especially to the nations, for destruction or deliverance of Judah, Is Je), נָשָׂא נ׳ לַגּוֹיִם Is 5:26; 11:12 cf. 18:3 (on mts., ‖ תָּקַע שׁוֹפָר); אֶל־עַמִּים אָרִים נ׳ 4
+Senses:
+  Sense 1: "banner, standard, ensign" (17x)
+    Desc: A banner, standard, or ensign raised on a hill or pole as a rallying point for troops or peoples, or as a signal visible from afar (Isa 5:26, 11:10,12, 13:2, 18:3, 49:22, 62:10, Jer 4:6,21, 50:2, 51:1...
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: a-banner, a-sail, as-banner | spa: bandera, como-estandarte, de-estandarte | fra: bannière, et-étendard, étendard | deu: Banner, ein-Banner, und-Banner
+    Refs: Ps 60:4, Isa 5:26, Isa 11:10, Isa 11:12, Isa 13:2
+  Sense 2: "pole, mast" (2x)
+    Desc: A pole or staff set upright, on which something is displayed; used of the pole on which Moses set the bronze serpent (Num 21:8-9), and possibly a ship's mast (Isa 33:23).
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: a-pole, the-pole | spa: asta, el-asta | fra: le-pole, un-pole | deu: der-pole, ein-pole
+    Refs: Num 21:8, Num 21:9
+  Sense 3: "sign, warning signal" (1x)
+    Desc: A sign or warning signal raised as a visible reminder or admonition; used of an exemplary punishment that serves as a warning to others (Num 26:10, Isa 30:17).
+    Domain: COMMUNICATION > Communication
+    Glosses: eng: for-sign | spa: por-señal | fra: pour-signe | deu: fuer-Zeichen
+    Refs: Num 26:10
+
+=== H5944 ===
+Language: Hebrew, POS: Conj-w | N-fsc | 3ms, Occurrences: 20, Senses: 3
+
+BDB excerpt: † עֲלִיָּה n.f. (c. adj. masc. Je 22:14, cf. AlbrechtZAW xvi (1896), 83 KöSynt. § 251 K) roof-chamber (NH id., 𝔗 עֲלִיתָא, Syriac ܥܶܠܻܝܬܳܐ (whence Arabic عُلِّيَّة dining-room as loan-wd. Frä 20 f.); Sab. עלית DHMEpigr. Denkm. 27);—chamber on roof, cool and secluded: abs. ע׳ Ju 3:23, 24, 25 (cf. NesMarg. 13), 1 K 17:19, 23 2 K 4:11; cstr. עֲלִיַת הַמְּקֵרָה Ju 3:20, ע׳־קִיר 2 K 4:10 roof-chamber with walls (permanent); ע׳ הַשַּׁעַר 2 S 19:1, i.e. over the gateway; ע׳ הַפִּנָּה Ne 3:31, 32 i.e. at a corner of the wall; ע׳ אָחָז 2 K 23:12 (prob. built by A.); sf. עֲלִיָּתוֹ 1:2 (belonging to Aha
+Senses:
+  Sense 1: "upper room or chamber" (17x)
+    Desc: An elevated room on the upper story of a building, used for private devotion, lodging, or assembly (e.g., Elijah's loft, Daniel's prayer room, the Shunammite's guest chamber).
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: and-its-upper-rooms, and-the-upper-rooms, and-upper-rooms | spa: aposento, aposento-alto-de, cámara-alta-de | fra: [והעליות], [ועליות], [ועליותיו] | deu: [והעליות], [ועליות], [ועליותיו]
+    Refs: Judg 3:20, Judg 3:23, Judg 3:24, Judg 3:25, 2Sam 18:33
+  Sense 2: "God's upper chambers (cosmological)" (2x)
+    Desc: The celestial upper chambers of God, built above the waters of heaven, from which He waters the mountains (Psalm 104:3, 13; Amos 9:6).
+    Domain: GEOGRAPHY_SPACE > Geographical Objects and Features
+    Glosses: eng: His-upper-chambers, from-His-upper-chambers | spa: de-sus-altos-aposentos, desde-sus-altos-aposentos | fra: chambre-haute, de-chambre-haute | deu: sein-upper-chambers, von-sein-upper-chambers
+    Refs: Ps 104:3, Ps 104:13
+  Sense 3: "ascent or stairway" (1x)
+    Desc: The way of ascent or stairway by which one goes up to a higher place, as Solomon's ascent to the house of the LORD (1 Kings 10:5 / 2 Chronicles 9:4).
+    Domain: BUILDINGS > Constructions
+    Glosses: eng: and-his-upper-chamber | spa: y-su-escalera | fra: [ועליתו] | deu: [ועליתו]
+    Refs: 2Chr 9:4
+
+=== H6279 ===
+Language: Hebrew, POS: Conj-w | V-Nifal-Inf, Occurrences: 20, Senses: 3
+
+BDB excerpt: † I. [עָתַר] vb. pray, supplicate (always to God) (cf. Arabic عَتَرَ slaughter for sacrifice De Gn (4) 381 WeSkizzen iii. 115, 166; Heid.(2), 118, 142; RSSem i. 210 f.; 2nd ed., 227 f.);— Qal Impf. 3 ms. וַיֶּעְתַּר לי׳ Gn 25:21, אֶל־י׳ Ex 8:26; 10:18 Ju 13:8; יֶעְתַּר אֶל־אֱלוֹהַּ Jb 33:26. Niph. be supplicated, entreated (and grant entreaty; always of God), usually c. ל of worshipper (v. ל 5 d): Pf. 3 ms. consec. וְנֶעְתַּר לָהֶם Is 19:22; Impf. 3 ms. וַיֵּעָ֫תֶר לוֹ Gn 25:21 2 Ch 33:13, וַיֵּעָתֵר לָנוּ Ezr 8:23; c. לָאָרֶץ for the land 2 S 21:14; 24:25; Inf. abs. וְנִעְתּוֹר לָהֶם 1 Ch 5:2
+Senses:
+  Sense 1: "Nifal: be entreated, grant prayer" (8x)
+    Desc: To be moved by entreaty, to allow oneself to be supplicated, to respond favorably to prayer (Nifal passive/tolerative, used exclusively of God granting or responding to prayer).
+    Domain: COMMUNICATION > Communication
+    Glosses: eng: and-He-was-entreated, and-He-was-moved-by-entreaty, and-being-moved-by-entreaty- | spa: y-el-ser-suplicado-, y-fue-satisfecho, y-fue-suplicado | fra: [והעתר], [ויעתר], [ונעתור] | deu: [והעתר], [ויעתר], [ונעתור]
+    Refs: Gen 25:21, 2Sam 21:14, 2Sam 24:25, 1Chr 5:20, 2Chr 33:13
+  Sense 2: "Hifil: entreat, supplicate" (7x)
+    Desc: To make earnest entreaty or supplication, urging prayer to God (Hifil causative stem, often as a command or volitional act).
+    Domain: COMMUNICATION > Communication
+    Glosses: eng: and-I-will-entreat, and-entreat, entreat | spa: Orad, Orarás, oraré | fra: --Je-implorer, et-Je---implorer, et-implorer | deu: [תעתיר], entreat, soll-ich-entreat
+    Refs: Exod 8:8, Exod 8:9, Exod 8:28, Exod 8:29, Exod 9:28
+  Sense 3: "Qal: pray, entreat" (5x)
+    Desc: To pray or make supplication to God (Qal stem, basic active voice of entreating/praying).
+    Domain: RELIGIOUS_LIFE > Religious Activities
+    Glosses: eng: and-entreated, and-prayed, he-prays | spa: Suplica, Y-oró, y-oró | fra: et-entreated, et-pria, יעתר | deu: [יעתר], und-betete, und-entreated
+    Refs: Gen 25:21, Exod 8:30, Exod 10:18, Judg 13:8, Job 33:26
+
+=== H7936b ===
+Language: Hebrew, POS: V-Qal-Perf-1cs | 2ms, Occurrences: 20, Senses: 3
+
+BDB excerpt: † שָׂכַר vb. hire (NH id.; Sab. תשכר hire oneself out(?), recompense(?) DHMHofmus. 11; Ethiopic ሥኩር: hired; Arabic شَكَرَ reward, thank, mod. Pal. شكارة hired, of land ploughed by hire, BergheimPEQ 1894, 196; Palm. שכרא perhaps rewarding Lzb375);— Qal Pf. 3 ms. שׂ׳ Dt 23:5, ס׳ Ezr 4:5 sf. שְׂכָרוֹ Ne 6:12; 1 s. sf. שְׂכַרְתִּיךָ Gn 30:16; Impf. 3 ms. וַיִּשְׂכֹּר Ju 9:4 +, etc.; Inf. abs. שָׂכֹר Gn 30:16; cstr. לִשְׂכֹּר 1 Ch 19:6; Pt. act. שׂבֵר Pr 26:10(×2), pl. שׂכְרִים 2 Ch 24:12 (Ezr 4:5 v. ii. סבר); pass. שָׂכוּר Ne 6:13;—hire, retainers Ju 9:4 (ב pret.), soldiers, etc. 2 S 10:6 = 1 Ch 1
+Senses:
+  Sense 1: "hire, engage for pay" (17x)
+    Desc: Qal: to hire or engage someone for wages or service; includes contexts where hiring shades into bribing, as the underlying transactional semantics are the same.
+    Domain: COMMUNICATION > Communication
+    Glosses: eng: I-hired-you, and-he-hired, and-hired | spa: Y-alquilaron, Y-contrató, alquilar | fra: Je-loua-tu, [ישכרו], a-hired- | deu: [וישכר], [וישכרו], [ושכר]
+    Refs: Gen 30:16, Gen 30:16, Deut 23:4, Judg 9:4, Judg 18:4
+  Sense 2: "earn wages" (2x)
+    Desc: Hitpael: to earn wages, to gain a livelihood by labor; the focus shifts from the employer's act of hiring to the worker's act of earning.
+    Domain: ECONOMICS_PROPERTY > Possess, Transfer, Exchange
+    Glosses: eng: and-the-one-earning-wages, earns-wages | spa: gana-salario, y-el-que-gana-salario | fra: engager, et-engager | deu: [והמשתכר], [משתכר]
+    Refs: Hag 1:6, Hag 1:6
+  Sense 3: "hire oneself out" (1x)
+    Desc: Niphal: to hire oneself out, to sell one's labor; reflexive-passive sense indicating the subject enters into hired service rather than employing another.
+    Domain: MOVEMENT > Linear Movement
+    Glosses: eng: hire-themselves-out | spa: se-alquilaron | fra: hire-eux-mêmes-dehors | deu: hire-sich-selbst-heraus
+    Refs: 1Sam 2:5
+
+=== H8056 ===
+Language: Hebrew, POS: Adj-ms, Occurrences: 20, Senses: 3
+
+BDB excerpt: † שָׂמֵחַ adj.verb. glad, joyful, merry;—abs. שׂ׳ Dt 16:15 +, f. שְׂמֵחָה ψ 119:9; pl. שְׂמֵחִים 1 K 1:45 +, cstr. שִׂמְחֵי Is 24:17, שְׂמֵחֵי ψ 35:26;— 1. a. as adj. joyful, shewing joy, 1 K 1:45; Est 5:9 (+ טוֹב לֵב), v 14; אֵם שְׂמֵחָה ψ 113:9; לֵב שׂ׳ Pr 15:13; 17:22; at feast of tab. Dt 16:15, in thankfulness to י׳ ψ 126:3 (both pred. c. הָיָה), 1 K 8:66 (+ טוֹבֵי לֵב) = 2 Ch 7:10. b. = pt. 1 K 1:40 (‖ מְחַלְּלִים piping), 4:20; 2 K 11:14 (+ תֹּקֵעַ ב) = 2 Ch 23:13, מִן rei Ec 2:10. 2. as subst. הַשׂ׳ Am 6:13 (+ ל rei), Pr 2:14 (ל inf.), Jb 3:22 (+ אֱלֵי־גִיל; ‖ יָשִׂישׂוּ); שִׂמְחֵי־לֵב 
+Senses:
+  Sense 1: "glad, joyful, merry" (15x)
+    Desc: Adjectival use of שָׂמֵחַ describing a person, group, or entity as being in a state of gladness or joy, whether attributive ('a joyful heart') or predicative ('the people were glad'), across all infle...
+    Domain: EMOTION_ATTITUDE > Attitudes and Emotions
+    Glosses: eng: and-rejoicing, glad, joyful | spa: alegre, alegres, alegrándose | fra: [שמח], [שמחים], et-se-réjouissant | deu: [שמח], [שמחים], freute-sich
+    Refs: Deut 16:15, 1Kgs 1:40, 1Kgs 1:45, 1Kgs 4:20, 1Kgs 8:66
+  Sense 2: "one who rejoices (substantival)" (4x)
+    Desc: Substantival use of the adjective שָׂמֵחַ to denote a person or group characterized by rejoicing, often with the article ('the joyful ones') or in construct ('those rejoicing at/over'), functioning as...
+    Domain: EMOTION_ATTITUDE > Attitudes and Emotions
+    Glosses: eng: merry, rejoicing, those-rejoicing-at | spa: Los-que-se-alegran, el-que-se-alegra, los-alegres-de | fra: [שמחי], joyeux, le-joyeux | deu: [השמחים], [שמחי], freute-sich
+    Refs: Ps 35:26, Prov 2:14, Prov 17:5, Isa 24:7
+  Sense 3: "to rejoice (verbal)" (1x)
+    Desc: Verbal use (Qal Imperfect jussive) meaning 'let them rejoice' or 'they shall rejoice,' representing the active verbal sense of experiencing or expressing joy, likely a form of the cognate verb שָׂמַח ...
+    Domain: EMOTION_ATTITUDE > Attitudes and Emotions
+    Glosses: eng: let-rejoice | spa: Alégrense | fra: [ישמחו] | deu: [ישמחו]
+    Refs: 1Chr 16:31

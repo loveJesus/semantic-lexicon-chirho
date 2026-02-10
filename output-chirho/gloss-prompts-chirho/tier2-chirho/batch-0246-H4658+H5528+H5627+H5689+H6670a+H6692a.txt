@@ -1,0 +1,115 @@
+You are a biblical lexicographer composing glosses for a digital lexicon.
+For each lemma below, compose a JSON object. Separate objects with "---".
+
+Format for each:
+{
+  "lemma_id": "...",
+  "gloss_terse": "under 120 chars, concise definition covering the word's semantic range",
+  "gloss_readable": "2-5 sentences, 40-120 words. Don't start with 'This word'. Warm study-Bible footnote tone. Engaging, not dry.",
+  "senses": {
+    "1": "enriched 20-60 word description. Reference multilingual evidence when illuminating. Don't repeat the label verbatim.",
+    "2": "..."
+  }
+}
+
+Rules:
+- No markdown fences, just JSON objects separated by ---
+- Reference multilingual evidence naturally when it reveals something
+- gloss_readable should feel like a good study Bible footnote: helpful, clear, occasionally surprising
+- Each sense enrichment: how does the evidence support this sense? Mention 1-2 key passages when helpful.
+
+=== H4658 ===
+Language: Hebrew, POS: N-fsc | 3ms, Occurrences: 8, Senses: 2
+
+BDB excerpt: † מַפֶּ֫לֶת n.f. carcass, ruin, overthrow;— 1. carcass, of lion, מ׳ cstr. Ju 14:8. 2. elsewhere sf. a. a ruin, מַפַּלְתּוֹ Ez 31:13 (kg. under fig. of tree). b. overthrow, id. v 16 (same fig.); מַפַּלְתֶּ֑ךָ (kg.) 32:10; מַפַּלְתֵּךְ (of Tyre) 26:15, 18; 27:27; מַפַּלְתָּם (of wicked) Pr 29:16.
+Senses:
+  Sense 1: "fall, downfall, ruin" (7x)
+    Desc: Three clusters (S112678, S113357, S113359) share the meaning 'fall/downfall/ruin,' differing only in pronominal suffixes (your-fall, its-fall, their-fall). Arabic consistently uses suqut (سُقُوطِ) acr...
+    Domain: VIOLENCE_CONFLICT > Violence, Harm, Destroy, Kill
+    Glosses: eng: at-their-fall, its-fall, your-downfall | spa: en-su-caída, su-caída, su-ruina | fra: chute, dans-leur-במפלתם-eux | deu: [במפלתם], [מפלתו], [מפלתך]
+    Refs: Prov 29:16, Ezek 26:15, Ezek 26:18, Ezek 27:27, Ezek 31:13
+  Sense 2: "carcass, fallen body" (1x)
+    Desc: This single cluster (S113358) represents a distinct concrete sense: a dead body or carcass, not an abstract 'downfall.' The multilingual evidence diverges sharply from the other clusters: English 'car...
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: carcass-of | spa: el-cadáver-de | fra: carcass-de | deu: Kadaver-von
+    Refs: Judg 14:8
+
+=== H5528 ===
+Language: Hebrew, POS: V-Hifil-Perf-2ms, Occurrences: 8, Senses: 2
+
+BDB excerpt: † [סָכַל] vb. be foolish, or a fool, usually in moral or spiritual sense (Syriac ܣܟܰܠ,, Aph. act foolishly; ܣܰܟܠܴܐ foolish, etc., 𝔗 סְכַל der. species, act foolishly; סַכְלָא fool; Chr Pal Aramaic ܣܟܠ, Aph. = ἁμαρτάνω, also deriv. SchwallyIdiot. 62; Assyrian saklu, perhaps foolish, DlHWB 498; Aramaic ܣܟܰܠ, סְכַל know, be intelligent, cause to understand, etc. (der. species), cf. שׂכל; MeChrest. Targ. derives both these opp. meanings from Arabic شَكْلٌ form, likeness Gerber178 thinks Heb. vb. denom.);— Piel Impf. יְסַכֵּל Is 44:25, Imv. סַכֶּל־נָא 2 S 15:31, make foolish, turn into foolishness.
+Senses:
+  Sense 1: "act foolishly (Hifil/Nifal)" (6x)
+    Desc: To act foolishly, behave stupidly, or do something senseless (intransitive). Encompasses both the Hifil ('you have acted foolishly') and Nifal ('I acted foolishly') stems which share the same intransi...
+    Domain: MENTAL_LIFE > Understand
+    Glosses: eng: I-acted-foolishly, I-have-acted-foolishly, you-acted-foolishly | spa: Has-obrado-neciamente, actuaste-neciamente, hice-neciamente | fra: [נסכלת], [נסכלתי], je-agit-foolishly | deu: [נסכלת], [נסכלתי], du-handelte-toericht
+    Refs: Gen 31:28, 1Sam 13:13, 1Sam 26:21, 2Sam 24:10, 1Chr 21:8
+  Sense 2: "make foolish, turn to folly (Piel)" (2x)
+    Desc: To make foolish, render senseless, or turn something into folly (transitive/causative). The Piel stem conveys active causation -- making someone or something foolish, in contrast to the intransitive H...
+    Domain: MENTAL_LIFE > Understand
+    Glosses: eng: He-makes-foolish, make-foolish | spa: enloquece | fra: [ישכל], fais-insensé | deu: [ישכל], mache-toericht
+    Refs: 2Sam 15:31, Isa 44:25
+
+=== H5627 ===
+Language: Hebrew, POS: N-fs, Occurrences: 8, Senses: 2
+
+BDB excerpt: † סָרָה n.f. a turning aside, defection, apostasy, withdrawal;—always abs. ס׳;— 1. defection, used appar. of any moral or legal offence Dt 19:16, so prob. Is 59:13 (+ עֹשֶׁק, דִּבְרֵי שָׁ֑קֶר). 2. apostasy, Dt 13:6 Is 1:5; 31:6 Je 28:16; 29:32. 3. בִּלְתִּי סָרָה non-withdrawal Is 14:6 (cf. vb., v 25 Am 6:7).
+Senses:
+  Sense 1: "rebellion, revolt, apostasy" (7x)
+    Desc: The primary sense of sarah denoting rebellion, revolt, or apostasy against God or authority. Three clusters (S121361, S121362, S121363) share this core meaning despite surface gloss differences. S1213...
+    Domain: VIOLENCE_CONFLICT > Hostility, Strife
+    Glosses: eng: and-revolt, falsehood, have-deeply | spa: falsedad, rebeldía, rebelión | fra: et-rébellion, mensonge, rébellion | deu: Abfall, falsehood, rebellion
+    Refs: Deut 13:5, Deut 19:16, Isa 1:5, Isa 31:6, Isa 59:13
+  Sense 2: "ceasing, withdrawal, turning aside" (1x)
+    Desc: A distinct sense of sarah meaning 'ceasing' or 'turning aside/withdrawing,' distinct from active rebellion. The multilingual evidence clearly separates this: English 'ceasing,' Spanish 'cesar' (to cea...
+    Domain: TIME > Aspect
+    Glosses: eng: ceasing | spa: cesar | fra: rébellion | deu: Abfall
+    Refs: Isa 14:6
+
+=== H5689 ===
+Language: Hebrew, POS: Conj-w | V-Qal-ConsecImperf-3fs, Occurrences: 8, Senses: 2
+
+BDB excerpt: † [עָגַב] vb. have inordinate affection, lust (cf. Arabic عَجِبَ wonder, admire, عَجِيبٌ beloved; and (on sens. obsc. in NH) LevyNHWB iii. 616);— Qal Pf. 3 fs. עָֽגְבָה Ez 23:7, 9, 12; Impf. 3 fs. וַתַּעְגַּב v 5, + v 16 Kt (Qr וַתַּעְגְּבָה), וַתַּעְגְּבַה v 20 (Ew§ 191 c Ol§ 228 b); Pt. pl. עֹגְבִים Je 4:30;—lust after (עַל־), only in fig. of relations of Samaria and Jerus. (personif.) with foreigners Ez 23:5, 9, 12, 16, 20, so c. acc. v 7; pt. as subst. paramours Je 4:30.
+Senses:
+  Sense 1: "and lusted" (7x)
+    Desc: and lusted, lusted, [and lusted] (7 occurrences across 3 original clusters)
+    Domain: EMOTION_ATTITUDE > Attitudes and Emotions
+    Glosses: eng: [and-she-lusted], and-she-lusted, she-lusted | spa: Y-se-apasionó, se-apasionó, y-se-apasionó | fra: et-se-précipiter, se-précipiter | deu: [ותעגב], [ותעגבה], [עגבה]
+    Refs: Ezek 23:5, Ezek 23:7, Ezek 23:9, Ezek 23:12, Ezek 23:16
+  Sense 2: "lovers" (1x)
+    Desc: lovers (1 occurrences across 1 original clusters)
+    Domain: EMOTION_ATTITUDE > Attitudes and Emotions
+    Glosses: eng: lovers | spa: los-amantes | fra: [עגבים] | deu: [עגבים]
+    Refs: Jer 4:30
+
+=== H6670a ===
+Language: Hebrew, POS: V-Qal-Imp-fs, Occurrences: 8, Senses: 2
+
+BDB excerpt: † I. [צָהַל] vb. neigh, cry shrilly (Arabic صَهَلَ neigh, Syriac ܨܗܰܠ id.; 𝔗 Est 8:15 = BH);— Qal Pf. 3 fs. צָֽהֲלָה Est 8:15; 3 pl. צָֽהֲלוּ Is 24:14; Impf. 3 mpl. יִצְהָ֑לוּ Je 5:8; 2 fs. תצהלי 50:11 Kt, Qr 2 mpl. תִּצְהֲלוּ and so Vrss; Imv. fs. צַהֲלִי Is 10:30 +; mpl. צַהֲלוּ Je 31:7;— 1. neigh, of men under fig. of stallions; c. אֶל unto (in desire) Je 5:8, of profligate Judaeans; abs. 50:11 of arrogant Chaldeans. 2. cry shrilly, in distress Is 10:30 (c. adv. acc. קוֹלֵךְ); usually joy, praise (‖ רָנַן) 12:6; 54:1, c. ב at, over, Je 31:7; Is 24:14; + שָׂמֵ֑חָה Est 8:15.
+Senses:
+  Sense 1: "cry aloud, shout for joy" (6x)
+    Desc: The primary sense of crying out or shouting, especially in joy or exultation. Arabic اصْرُخِي/يَصْرُخُونَ ('cry out') and اهْتِفِي/اهْتِفُوا ('shout/cheer') and هَتَفَتْ ('she cheered') show the joyfu...
+    Domain: EMOTION_ATTITUDE > Attitudes and Emotions
+    Glosses: eng: and-cry-aloud, and-shout, cry-aloud | spa: Clama, Grita-de-júbilo, clamarán | fra: [צהלה], et-pousser-des-cris, pousser-des-cris | deu: [וצהלו], [וצהלי], [צהלה]
+    Refs: Esth 8:15, Isa 10:30, Isa 12:6, Isa 24:14, Isa 54:1
+  Sense 2: "neigh (of horses)" (2x)
+    Desc: A distinct sense of neighing, specifically the sound horses make, used both literally and as a metaphor for lustful cries. Spanish 'relinchaban' ('they were neighing') is unmistakably equine. Hindi हि...
+    Domain: EMOTION_ATTITUDE > Attitudes and Emotions
+    Glosses: eng: [ketiv:and-you-neigh], they-neigh | spa: [kethiv], relinchaban | fra: pousser-des-cris | deu: [[ותצהלי]], [יצהלו]
+    Refs: Jer 5:8, Jer 50:11
+
+=== H6692a ===
+Language: Hebrew, POS: Conj-w | V-Qal-ConsecImperf-3mp, Occurrences: 8, Senses: 2
+
+BDB excerpt: † I. [צוּץ, צִיץ] vb. 1. blossom. 2. shine, sparkle (perhaps orig. meaning of √, but connex. of 1, 2. dub.) (NH id. Hiph., fig. senses, צִיץ n. = BH);— Qal Pf. 1. 3 ms. צָץ הַמַּטֶּה Ez 7:10 (fig.; ‖ פָּרַח הַזָּדוֹן); Impf. 3 ms. יָצִיץ ψ 90:6 (of grass, חָצִיר), 103:15 (man under fig. of flower), fig. יָצִיץ וּפָרַח יִשׂ׳ Is 27:6; 3 mpl. יָצִיצוּ ψ 72:16, וַיָּצִיצוּ 92:8 (‖ פָּרַח; both fig. of men =) flourish. 2. shine, gleam: of crown (נֵזֶר) ψ 132:18. Hiph. Impf. 3 ms. וַיָּצֵץ צִיץ Nu 17:23 it put forth blossoms (of rod;—ֵ perhaps from ‖ וַיֹּצֵא פֶרַח).
+Senses:
+  Sense 1: "flourish, blossom (Qal)" (6x)
+    Desc: The Qal stem sense of flourishing, blooming, or budding — the intransitive natural process of a plant coming into flower. Arabic يُزْهِرُ ('it blooms') and أَزْهَرَتْ ('it bloomed') are consistent. Sp...
+    Domain: PLANTS_AGRICULTURE > Plants
+    Glosses: eng: and-flourish, and-may-they-flourish, has-budded | spa: florece, florecerá, floreció | fra: et-fleurir, fleurir | deu: [צץ], er-blüht, es-blüht
+    Refs: Ps 72:16, Ps 90:6, Ps 92:7, Ps 103:15, Ps 132:18
+  Sense 2: "cause to blossom (Hifil)" (2x)
+    Desc: The Hifil causative sense of causing something to blossom or bringing forth blossoms. Arabic أَبْرَعَتْ ('it caused to sprout') in S129849 uses a causative form distinct from the Qal. Spanish 'había f...
+    Domain: PLANTS_AGRICULTURE > Plants
+    Glosses: eng: and-blossomed, shall-blossom | spa: florecerá, y-había-florecido | fra: [יציץ], et-blossomed | deu: [יציץ], und-blossomed
+    Refs: Num 17:8, Isa 27:6

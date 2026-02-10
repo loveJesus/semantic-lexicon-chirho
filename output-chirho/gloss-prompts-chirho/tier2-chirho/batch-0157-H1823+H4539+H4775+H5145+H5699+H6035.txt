@@ -1,0 +1,115 @@
+You are a biblical lexicographer composing glosses for a digital lexicon.
+For each lemma below, compose a JSON object. Separate objects with "---".
+
+Format for each:
+{
+  "lemma_id": "...",
+  "gloss_terse": "under 120 chars, concise definition covering the word's semantic range",
+  "gloss_readable": "2-5 sentences, 40-120 words. Don't start with 'This word'. Warm study-Bible footnote tone. Engaging, not dry.",
+  "senses": {
+    "1": "enriched 20-60 word description. Reference multilingual evidence when illuminating. Don't repeat the label verbatim.",
+    "2": "..."
+  }
+}
+
+Rules:
+- No markdown fences, just JSON objects separated by ---
+- Reference multilingual evidence naturally when it reveals something
+- gloss_readable should feel like a good study Bible footnote: helpful, clear, occasionally surprising
+- Each sense enrichment: how does the evidence support this sense? Mention 1-2 key passages when helpful.
+
+=== H1823 ===
+Language: Hebrew, POS: Conj-w | N-fsc, Occurrences: 25, Senses: 2
+
+BDB excerpt: † דְּמוּת n.f. likeness, similitude (mostly late) (according to LagBN 12, 147 ff. mispunct. for דִּמְוַת from דִּמְוָה; according to WeProl. 413, Eng. Tr 389 an Aramaic loan-word, but v. Di Gn 5:1, DrJPh. xi. 216 CheOP. 474)—abs. ד׳ Is 40:18 + 3 times; cstr. ד׳ Gn 5:1 + 16 times; sf. דְּמוּתוֹ Gn 5:3; דְּמוּתֵנוּ 1:26;— 1. likeness, similitude, of external appearance, chiefly in Ezek.: Ez 1:5 (likeness, i.e. something that appeared like) so v 26; 8:2 דְּמוּת כְּמַרְאֵה (אֵשׁ) (cf. Co), 10:1 כְּמַרְאֵה ד׳ כִּסֵּא; cf. also Dn 10:16 כִּדְמוּת בְּנֵי אָדָם i.e. one like the sons of man; similitud
+Senses:
+  Sense 1: "likeness, resemblance, similitude" (24x)
+    Desc: Abstract quality of being similar or comparable to something; used of the resemblance between God and humanity, between living creatures, and in prophetic visions to describe what something looked lik...
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: according-to-likeness-our, and-likeness-of, like-the-likeness-of | spa: Y-figura-de, Y-semejanza, Y-semejanza-de | fra: [דמות], [ודמות], comme-ressemblance | deu: Gleichnis, [דמות], nach-unserer-Gleichheit
+    Refs: Gen 1:26, Gen 5:1, Gen 5:3, 2Chr 4:3, Ps 58:4
+  Sense 2: "pattern, form, design" (1x)
+    Desc: A concrete model, shape, or design of something to be replicated, as in a blueprint or physical form; distinguished from abstract resemblance by multilingual evidence showing 'design/shape' rather tha...
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: likeness-of | spa: diseño-de | fra: likeness-de | deu: likeness-von
+    Refs: 2Kgs 16:10
+
+=== H4539 ===
+Language: Hebrew, POS: Conj-w, Occurrences: 25, Senses: 2
+
+BDB excerpt: † מָסָךְ n.[m.] covering, screen;—abs. מ׳ 2 S 17:19 + 11 times; cstr. מָסַךְ Is 22:8 + 12 times;— 1. covering, large cloth spread (פרש) over well to hide persons within 2 S 17:19; fig. of protection, or of eye-screen, וַיְגַל אֶת־מ׳ יְהוּדָה Is 22:8; screen, of cloud ψ 105:39 (פרשׂ). 2. name given (in P) to each of three screens, of tabern.: a. at gate (שַׁעַר) of court Ex 27:16; 35:17; 38:18; 39:40; 40:8, 33; Nu 3:26 (פֶּתַח), 4:26. b. at entrance (פֶּתַח) of tent Ex 26:36, 37; 35:15; 36:37; 39:38; 40:5, 28; Nu 3:25, 31; 4:25. c. פָּרֹכֶת הַמּ׳ (v. פ׳), dividing off the Most Holy Place within
+Senses:
+  Sense 1: "screen, curtain (Tabernacle hanging)" (22x)
+    Desc: A screen or curtain hung at the entrance of the Tabernacle court, the tent of meeting doorway, or the gate, serving as a barrier or partition.
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: a-screen, and-screen-of, screen | spa: Y-cortina-de, cortina, cortina-de | fra: et-screen-de, et-voile-de, le-screen | deu: Decke, Decke-von, der-Decke
+    Refs: Exod 26:36, Exod 26:37, Exod 27:16, Exod 35:12, Exod 35:15
+  Sense 2: "covering, protective screen" (3x)
+    Desc: A covering or protective drape used to conceal or shield something, emphasizing the function of covering rather than partitioning an entrance.
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: covering-of, for-a-covering, the-covering | spa: cubierta-de, la-cubierta, por-cubierta | fra: [מסך], le-couvrant, à-couverture | deu: [מסך], der-bedeckend, für-ein-covering
+    Refs: 2Sam 17:19, Ps 105:39, Isa 22:8
+
+=== H4775 ===
+Language: Hebrew, POS: Conj-w | V-Qal-ConjPerf-1cp, Occurrences: 25, Senses: 2
+
+BDB excerpt: † [מָרַד] vb. rebel (NH id.; Arabic مَرَدَ be bold and audacious in acts of rebellion or disobedience; Ethiopic መረደ run strenuously, attack; መራድ rebellion, PräBeiträge iii. 44; Sab. מרד rebellion Hal 535, 16 Sab.Denkm.38 HomChrestom. 127; Aramaic ܡܪܰܕ, מְרַד; rebel);— Qal Pf. 3 ms. מָרָ֑ד 2 Ch 36:13, 2 ms. מָרַדְתָּ 2 K 18:20=Is 36:5, etc.; Impf. וַיִּמְרֹד 2 K 18:7 + 3 times, וַיִּמְרָד־ 2 K 24:1 Ez 17:15, etc.; Inf. cstr. לִמְרֹד Jos 22:29, לִמְרוֹד Ne 6:6; Pt. pl. מֹרְדִים Ne 2:19 Ez 20:38, מוֹ׳ Ez 2:3; cstr. מֹרְדֵי Jb 24:13;—rebel, revolt: 1. against human king, c. בְּ pers. 2 K 18:7, 20=
+Senses:
+  Sense 1: "rebel against authority" (22x)
+    Desc: To revolt or rise in defiance against a sovereign, ruler, or God, used of political and spiritual rebellion alike.
+    Domain: VIOLENCE_CONFLICT > Hostility, Strife
+    Glosses: eng: against-me, and-he-rebelled, and-he-rebelled- | spa: Y-se-rebeló, nos-rebelamos, os-rebeláis | fra: [וימרד], [וימרדו], [למרוד] | deu: [וימרד], [וימרדו], [ומרדנו]
+    Refs: Gen 14:4, Num 14:9, Josh 22:16, Josh 22:18, Josh 22:19
+  Sense 2: "rebel (substantive)" (3x)
+    Desc: One who rebels; a person characterized by defiance or revolt, used as a substantival participle to denote a class of people.
+    Domain: VIOLENCE_CONFLICT > Hostility, Strife
+    Glosses: eng: among-rebels-of, the-rebelling, the-rebels | spa: de-los-que-se-rebelan-contra-, las-rebeldes, los-rebeldes | fra: dans-במרדי, se-révolter | deu: [במרדי], [המורדים], [המרדים]
+    Refs: Job 24:13, Ezek 2:3, Ezek 20:38
+
+=== H5145 ===
+Language: Hebrew, POS: N-msc | 2fs, Occurrences: 25, Senses: 2
+
+BDB excerpt: † נֵ֫זֶר n.m. ψ 132:18 consecration, crown, Naziriteship;—נ׳ abs. 2 S 1:10 +; cstr. Ex 29:6 +; sf. נִזְרוֹ ψ 89:40 +, נִזְרֵךְ Je 7:29;— 1. crown (sign of consecration; WeSkizzen iii. 118 cp. Syriac קדשא [ܩܕܳܫܳܐ], earring; v. also GeiJüd. Zeitschr. x. 45. ff. on נֶוֶם): a. of kg. 2 S 1:10 2 K 11:12 = 2 Ch 23:11; symbol of royal power ψ 89:40; 132:18; cf. Pr 27:24; אַבְנֵי נ׳ Zc 9:16 stones of a crown, diadem (prob.; > We Now—who del., cf. GASm—stones of charming, from use of precious stones as charms. b. of high priest, נ׳ הַקֹּדֶשׁ Ex 29:6, made of gold 39:30 Lv 8:9 (all P). 2. woman’s hair (
+Senses:
+  Sense 1: "Nazirite consecration, separation" (14x)
+    Desc: The state of consecration or separation associated with the Nazirite vow, denoting the period and status of being set apart for YHWH. Concentrated entirely in Numbers 6 (vv. 4, 5, 8, 9, 12, 13, 18, 19...
+    Domain: RELIGIOUS_LIFE > Religious Activities
+    Glosses: eng: consecration-of, his-separation, your-consecrated-hair | spa: nazareato-de, nazareato-de-él, tu-cabellera | fra: [נזרך], consecration-de, son-separation | deu: Weihung-von, [נזרך], sein-separation
+    Refs: Num 6:4, Num 6:5, Num 6:7, Num 6:8, Num 6:9
+  Sense 2: "crown, diadem" (11x)
+    Desc: A physical crown or diadem worn as a sign of royal or priestly authority. Used of the priestly diadem (Exod 29:6, 39:30; Lev 8:9, 21:12 -- the golden plate on the turban), the royal crown (2 Sam 1:10 ...
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: a-crown, crown-of, his-crown | spa: corona, corona-de-el, corona-de-él | fra: [הנזר], consécration, couronne | deu: [הנזר], [נזר], crown-von
+    Refs: Exod 29:6, Exod 39:30, Lev 8:9, Lev 21:12, 2Sam 1:10
+
+=== H5699 ===
+Language: Hebrew, POS: N-fs, Occurrences: 25, Senses: 2
+
+BDB excerpt: † עֲגָלָה n.f. cart (from rolling of wheels; NH id.; Ph. (Pu.) עגלת (?) Lzb336; Aramaic עֲגַלְתָּא, ܥܳܓܶܠܬܳܐ; Sem. loan-word in Egyptian āgartȧ Bondi38, ʿagolt ErmanEgyptian 491; cf. also WilkinsonAnc. Egypt. (1878), i. 223–241, especially 235, also 249 (illustr. vehicles drawn by cattle, cf. 1 S 6:7 Nu 7:3));—abs. ע׳ 1 S 6:7 +, sf. עֶגְלָתוֹ Is 28:28; pl. עֲגָלוֹת Gn 45:19 +; cstr. עֶגְלֹת Nu 7:3;—cart, used for transporting persons and things Gn 45:19, 21, 27; 46:5 (E), 1 S 6:7(×2), 8, 10, 11, 14(×2), 2 S 6:3(×2) = 1 Ch 13:7(×2); Nu 7:3 (ע׳ צָב covered carts), v 3, 6, 7, 8 (P); in sim. Am 2:
+Senses:
+  Sense 1: "cart or wagon" (23x)
+    Desc: A wheeled vehicle used for transporting goods, people, or offerings, including the carts sent by Pharaoh (Gen 45-46), the new cart for the ark (1 Sam 6, 2 Sam 6), and military supply wagons.
+    Domain: ARTIFACTS > Artifacts
+    Glosses: eng: cart, carts, carts-of | spa: a-la-carreta, carreta, carretas | fra: [בעגלה], [עגלה], cart | deu: Karren, Wagen, [בעגלה]
+    Refs: Gen 45:19, Gen 45:21, Gen 45:27, Gen 46:5, Num 7:3
+  Sense 2: "threshing cart wheel" (2x)
+    Desc: The cart or its wheel used as an agricultural threshing implement, rolled over grain to separate kernels from husks (Isa 28:27-28).
+    Domain: ARTIFACTS > Artifacts
+    Glosses: eng: the-wheel, wheel | spa: carreta, su-carreta | fra: [עגלה], [עגלתו] | deu: [עגלה], [עגלתו]
+    Refs: Isa 28:27, Isa 28:28
+
+=== H6035 ===
+Language: Hebrew, POS: Adj-mpc, Occurrences: 25, Senses: 2
+
+BDB excerpt: † III. [עָנָה] vb. be bowed down, afflicted (NH id.; MI Pi. ויענו l5, אענו l6; Assyrian enû, thwart, frustrate, do violence to; Arabic عنو, عَنَا be lowly, submissive, v. Rahlfsעָנִי und עָנָו in d. Psalmen (1892), 67 ff.; 𝔗 עַנִּי Pa. oppress; Syriac Ethpe. humble oneself, and deriv.);— Qal Pf. 1 s. עָנִיתִי ψ 116:10; Impf. 3 ms. יַעֲנֶה Is 25:5; 31:4, etc.;— 1. be put down or become low, of song of triumph Is 25:5 (others as Hiph. he putteth down, ‖ תַּכְנִיעַ). 2. be depressed, downcast Is 31:4 (of lion; ‖ יֵחָ֑ת). 3. be afflicted ψ 116:10; 119:67; Zc 10:2. Niph. Pf. 1 s. נַעֲנֵיתִי ψ 119:1
+Senses:
+  Sense 1: "humble, meek, gentle" (19x)
+    Desc: Describing a person of humble, lowly, or gentle disposition — meek in spirit before God and others, often used of the righteous who trust in the LORD rather than assert themselves.
+    Domain: AUTHORITY_RULE > Status
+    Glosses: eng: but-the-humble, but-to-the-humble, for-meek-of- | spa: Y-los-mansos, [manso], a-los-humildes | fra: [לענוי], [ענוים], et-humble | deu: Demuetiger, [(ולענוים)], [לענוי]
+    Refs: Num 12:3, Ps 9:12, Ps 10:12, Ps 10:17, Ps 22:26
+  Sense 2: "poor, afflicted, lowly" (6x)
+    Desc: Describing a person who is socioeconomically poor, oppressed, or afflicted — emphasizing material deprivation or external suffering rather than inner disposition.
+    Domain: AUTHORITY_RULE > Status
+    Glosses: eng: (humble), [K], [ketiv] | spa: (humildes), [a-los-afligidos-de], [afligidos] | fra: [[ענוים]], humble, les-humbles-de | deu: [(ענוים)], [[ענוי]], [[ענוים]]
+    Refs: Job 24:4, Ps 9:18, Prov 14:21, Prov 16:19, Isa 32:7

@@ -1,0 +1,114 @@
+You are a biblical lexicographer composing glosses for a digital lexicon.
+For each lemma below, compose a JSON object. Separate objects with "---".
+
+Format for each:
+{
+  "lemma_id": "...",
+  "gloss_terse": "under 120 chars, concise definition covering the word's semantic range",
+  "gloss_readable": "2-5 sentences, 40-120 words. Don't start with 'This word'. Warm study-Bible footnote tone. Engaging, not dry.",
+  "senses": {
+    "1": "enriched 20-60 word description. Reference multilingual evidence when illuminating. Don't repeat the label verbatim.",
+    "2": "..."
+  }
+}
+
+Rules:
+- No markdown fences, just JSON objects separated by ---
+- Reference multilingual evidence naturally when it reveals something
+- gloss_readable should feel like a good study Bible footnote: helpful, clear, occasionally surprising
+- Each sense enrichment: how does the evidence support this sense? Mention 1-2 key passages when helpful.
+
+=== H4310 ===
+Language: Hebrew, POS: Conj-w | Interrog, Occurrences: 423, Senses: 2
+
+BDB excerpt: מִי423 pron. interrog. who? of persons, as מָה (q.v.) of things (Ethiopic ሚ but only = What? and How? Assyrian mî, me (rare) JägerBAS. ii. 277, the usually Sem. form for Who? has n, viz. Assyrian mannu, manu (DlHWB 419), Ethiopic መኑ man(n)ū, Aramaic ܡܰܢ, Arabic مَنْ, vulg.-Arabic min, mīn, from a form resembling which, by rejection of n, prob. Heb. מִי: WSG 123 f.):—who? (τίς; quis?) Gn 3:11 מִי הִגִּיד לְךָ who told thee? 24:65 מִי הָאִישׁ הַלָּזֶה who is this man? 27:18 מי אתה בני who art thou, my son? Nu 22:9 Ju 1:1; 6:29; 15:6; 18:3; 20:18; 2 S 1:8 + often; Ru 3:9 מִי אָ֑תְּ who art thou (
+Senses:
+  Sense 1: "interrogative who/whom" (413x)
+    Desc: Direct interrogative pronoun asking about the identity of a person, functioning as subject ('who?') or object ('whom?'), including with prepositional prefixes (to whom, from whom, by whom) and conjunc...
+    Domain: DISCOURSE_NAMES > Discourse Referentials
+    Glosses: eng: who, who- | spa: Quién, quién, ¿quién | fra: qui, qui- | deu: der, wen-, wer
+    Refs: Gen 3:11, Gen 19:12, Gen 21:7, Gen 21:26, Gen 27:18
+  Sense 2: "indefinite whoever/anyone who" (10x)
+    Desc: Indefinite or generalizing pronoun meaning 'whoever' or 'anyone who,' used in conditional or relative contexts to refer to an unspecified person, including with conjunctive waw.
+    Domain: DISCOURSE_NAMES > Discourse Referentials
+    Glosses: eng: and-whoever, and-whoever-, whoever | spa: al-que, quien, quien- | fra: et-qui?, et-quiconque, qui | deu: und-wer, und-whoever, wer
+    Refs: Exod 24:14, Exod 32:33, Judg 7:3, 2Sam 18:12, 2Sam 20:11
+
+=== H3701 ===
+Language: Hebrew, POS: N-msc | 3ms, Occurrences: 403, Senses: 2
+
+BDB excerpt: כֶּ֫סֶף402 n.m. Gn 23:9 silver, money (NH id.; Ph. Zinj. כסף; Aramaic כַּסְפָּא, ܟܶܣܦܳܐ; Palm. כספא VogNo. 23; Assyrian kaspu; prob. the pale metal Thes al., cf. RSJPh. xiv, 125)—כ׳ abs. Gn 20:16 +, כָּ֑סֶף Ex 21:11 +; cstr. 43:21 +; sf. כַּסְפִּי Gn 42:28 + 3 times, כַּסְפְּךָ 1 K 20:3 + 2 times, כַּסְפֶּ֑ךָ Gn 17:13 Is 30:22, כַּסְפֵּךְ Is 1:22, כַּסְפֵּנוּ Gn 31:15 + 2 times, כַּסְפָּם Ho 8:4 + 6 times; pl. sf. כַּסְפֵּיהֶם Gn 42:25, 35;—silver, †1. = silver ore, raw silver (rare and mostly late) Jb 28:1, also (in fig.) Ez 22:20, 22 Zc 13:9 Pr 2:4; 17:3; 27:21 Mal 3:3(×2) ψ 12:7; 66:10 Is 4
+Senses:
+  Sense 1: "silver (the metal)" (391x)
+    Desc: The precious metal silver, used as material for crafting objects, ornamentation, temple vessels, or in descriptions of composition, appearance, and refining.
+    Domain: NATURAL_WORLD > Natural Substances
+    Glosses: eng: silver | spa: de-plata, plata | fra: argent | deu: Geld, Silber, Silberlinge
+    Refs: Gen 17:12, Gen 17:27, Gen 20:16, Gen 23:15, Gen 23:16
+  Sense 2: "money, purchase price" (12x)
+    Desc: Silver weighed out as currency or medium of exchange in commercial transactions, purchases, wages, fines, or redemption payments.
+    Domain: NATURAL_WORLD > Natural Substances
+    Glosses: eng: his-money, his-silver, its-silver | spa: Su-plata, plata-mía, plata-nuestra | fra: comme-argent, leur-argent, mon-argent | deu: euer-Geld, ihr-Geld, ihres-Geldes
+    Refs: Gen 31:15, Gen 42:25, Gen 42:27, Gen 42:28, Gen 42:35
+
+=== H4725 ===
+Language: Hebrew, POS: Prep-m | N-ms, Occurrences: 401, Senses: 2
+
+BDB excerpt: מָקוֹם, מָקֹם (Ex 29:31, etc.)399 n.m. Gn 19:13 (but v. infr.), standing-place, place;—abs. מ׳ Ex 21:13 +; cstr. מְקוֹם Gn 12:6 + (often before אֲשֶׁר 39:20 +); sf. מְקוֹמוֹ 1 S 3:2 +, מְקֹמוֹ Gn 18:33 +, etc.; pl. usually מְקֹמוֹת Ju 19:13 +, מְקוֹמוֹת 1 S 7:16; Je 29:14; -מֹת 2 S 17:9 + 2 times; sf. מְקוֹמֹתֵיכֶם Am 4:6, etc. [appar. f. (not Gn 18:24, where עִיר is in mind, not) Jb 20:9 (מְקוֹמוֹ = ‘in his place’), but Codd. (either Kt or Qr) Ju 19:13 2 S 17:9, 12; mostly expl. away by AlbrZAW xvi (1896), 53];— 1. a. standing-place Ex 3:5 (E), Jos 5:15; Ex 33:21; Nu 23:13, 27; (all JE), Gn 1
+Senses:
+  Sense 1: "place, location, site" (400x)
+    Desc: A physical location, site, or named place; the general spatial sense of maqom covering a specific spot, a locality, a region, or an appointed position. This encompasses all grammatical inflections inc...
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: the-place | spa: al-lugar, el-lugar | fra: le-lieu | deu: Ort, dem-Ort, den-Ort
+    Refs: Gen 13:3, Gen 13:14, Gen 18:24, Gen 18:26, Gen 19:12
+  Sense 2: "?" (1x)
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: the-distance | spa: el-espacio | fra: le-distance | deu: der-distance
+    Refs: 1Sam 26:13
+
+=== H7651 ===
+Language: Hebrew, POS: Number-fsc, Occurrences: 394, Senses: 2
+
+BDB excerpt: I. שֶׁ֫בַע, שִׁבְעָה, n.m. et f. seven (NH id., MI16 שבעת; Assyrian sibi, sibittu (DlGr. § 65, 6; s = שׁ), Arabic سَبْعٌ, سَبْعَةٌ Sab. סבע HomChr 47, 124, Ethiopic ሰብዑ: ሰብዐቱ: Ph. (Pun.) שבע, Nab. שבע, שבעה, Palm. שבעא, שבעה; Aramaic שִׁבְעָא,שְׁבַע, ܫܒܰܥ, ܫܰܒܥܳܐ; on etym. cf. LagBN 37 f.);—m. (c. n.f.) abs. שֶׁבַע Gn 41:2 + 115 times; cstr. שְׁבַע 5:26 + 47 times, especially P (15 times) and Chr (20 times), וּשֲׁבַע 1 K 14:21. f. (c. n.m.) abs. שִׁבְעָה Gn 4:24 + 100 times; cstr. שִׁבְעַת 7:10 + 120 times; sf. שְׁבַעְתָּם 2 S 21:9 Qr (so Vrss and mod.; v. Dr; > Kt שִׁבְע��תַיִם);—seven: 1. wi
+Senses:
+  Sense 1: "seven (cardinal number)" (393x)
+    Desc: The cardinal number seven, used independently or in compound numbers (seventeen, twenty-seven, etc.), across all grammatical forms (masculine/feminine, construct/absolute, with prefixed prepositions, ...
+    Domain: QUANTITY_NUMBER > Number
+    Glosses: eng: seven, seven-of | spa: siete, siete-de | fra: sept, sept-de | deu: die-sieben, sieben, sieben-
+    Refs: Gen 5:7, Gen 5:25, Gen 5:31, Gen 7:2, Gen 7:2
+  Sense 2: "seven times (multiplicative)" (1x)
+    Desc: The number seven used adverbially to indicate repetition or multiplicity, typically with פְּעָמִים (times), sometimes carrying the connotation of completeness or fullness.
+    Domain: QUANTITY_NUMBER > Number
+    Glosses: eng: seven-times | spa: Siete | fra: rassasier | deu: sieben
+    Refs: Ps 119:164
+
+=== G2250 ===
+Language: Greek, POS: N-NFS, Occurrences: 391, Senses: 2
+
+BDB excerpt: ἡμέρα, Epic dialect and Ionic dialect ἡμέρη Refs, Doric dialect ἀμέρα Refs 8th c.BC+, Locrian dialect ἀμάρα Refs (aspirated perhaps only in Attic dialect and West Ionic dialect, compare ἐπάμερος Refs 5th c.BC+, etc.; usually unaspirated in early Attic dialect Inscrr., Refs; aspirated in codices even in dialects: original ἀμέρα probably took aspirate from ἑσπέρα): ἡ:—day, less frequently than ἦμαρ in Refs 8th c.BC+; τίς νύ μοι ἡ. ἥδ; Refs 8th c.BC+; μῆνές τε καὶ ἡRefs 8th c.BC+; ἡ σήμερον ἡ., see at {σήμερον· ἅμα ἡμέρᾳ} or ἅμα τῇ ἡμέρᾳ at daybreak, Refs 5th c.BC+; ἡ. διέλαμψεν, ἐξέλαμψεν, ὑπέφα
+Senses:
+  Sense 1: "day" (388x)
+    Desc: A day as a unit of time, whether a specific calendar day, a period of days, or a significant appointed day. This is the core and overwhelmingly dominant meaning of ἡμέρα across its NT occurrences (380...
+    Domain: TIME > Time
+    Glosses: eng: day | spa: día | fra: jour | deu: Tag
+    Refs: Matt 6:34, Matt 7:22, Matt 10:15, Matt 11:22, Matt 11:24
+  Sense 2: "daylight, daytime" (3x)
+    Desc: The period of light between sunrise and sunset, as opposed to night. Distinguished from the calendar-day sense by explicit contrast with darkness/night. In John 11:9 Jesus asks 'Are there not twelve h...
+    Domain: TIME > Time
+    Glosses: eng: day, of-day | spa: de-día, día | fra: jour | deu: Tag
+    Refs: John 11:9, 1Thess 5:5, 1Thess 5:8
+
+=== H8179 ===
+Language: Hebrew, POS: Prep-m | N-ms, Occurrences: 375, Senses: 2
+
+BDB excerpt: I. שַׁ֫עַר373 n.m. 2 S 18:24 (f. Is 14:31 in personif., AlbrZAW xvi (1896), 86) gate;—שׁ׳ abs. Ju 9:40 +, cstr. Gn 22:17 +; c. ה loc., שָׁ֑עְרָה Is 28:6 +; pl. שְׁעָרִים 2 S 18:24 +, cstr. שַׁעֲרֵי 1 S 17:52 +; sf. שְׁעָרֶיךָ Dt 12:15 +, שַׁעֲרֵיהֶם Ez 21:20; 48:34, etc.;— 1. a. gate, entrance to city, shut (סָגַר) by night Jos 2:5, 7 (JE), cf. Is 45:1, opened (פָּתַח) by day Ne 7:3, cf. Is 60:11; for entrance (בּוֹא), and exit (יָצָא) Je 17:19, 20, 21, 24, 25, 27; La 4:12; Ez 26:10 +; עָבַר שׁ׳ Mi 2:13 pass out through (disreg.accents), ע׳ בַּשׁ׳ Is 62:10; with bars ψ 147:13; attacked Ez 21:2
+Senses:
+  Sense 1: "gate, entrance, doorway" (337x)
+    Desc: A physical gate or entrance in a city wall, temple, palace, or camp — the concrete architectural opening through which one passes; includes singular and plural forms referring to actual gate structure...
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: gate, gate-of, gate-of- | spa: Puerta-de, puerta, puerta-de | fra: porte | deu: Tor
+    Refs: 2Kgs 25:4, 1Chr 26:16, 2Chr 18:9, 2Chr 23:15, 2Chr 23:20
+  Sense 2: "gates as territory or community" (38x)
+    Desc: Metonymic use of 'gates' (especially with possessive suffixes) to denote a city, town, or community jurisdiction — as in Deuteronomic law where 'within your gates' means 'within your settlements or te...
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: in-your-gates, is-in-your-gates, your-gates | spa: En-tus-puertas, en-puertas-tuyas, en-tus-puertas | fra: dans-ton-portes, est-dans-ton-portes, ton-portes | deu: dein-Tore, in-dein-Tore, ist-in-dein-Tore
+    Refs: Exod 20:10, Deut 5:14, Deut 6:9, Deut 11:20, Deut 12:12

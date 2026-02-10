@@ -1,0 +1,115 @@
+You are a biblical lexicographer composing glosses for a digital lexicon.
+For each lemma below, compose a JSON object. Separate objects with "---".
+
+Format for each:
+{
+  "lemma_id": "...",
+  "gloss_terse": "under 120 chars, concise definition covering the word's semantic range",
+  "gloss_readable": "2-5 sentences, 40-120 words. Don't start with 'This word'. Warm study-Bible footnote tone. Engaging, not dry.",
+  "senses": {
+    "1": "enriched 20-60 word description. Reference multilingual evidence when illuminating. Don't repeat the label verbatim.",
+    "2": "..."
+  }
+}
+
+Rules:
+- No markdown fences, just JSON objects separated by ---
+- Reference multilingual evidence naturally when it reveals something
+- gloss_readable should feel like a good study Bible footnote: helpful, clear, occasionally surprising
+- Each sense enrichment: how does the evidence support this sense? Mention 1-2 key passages when helpful.
+
+=== G1622 ===
+Language: Greek, POS: Adv, Occurrences: 8, Senses: 2
+
+BDB excerpt: ἐκτός (ἐχθός, Refs 5th c.BC+, adverb, (ἐκ) without, outside, opposed to ἐντός: __1 as preposition with genitive, which may either precede or follow, ἐ. κλισίης Refs 8th c.BC+; out of, far from, καπνοῦ καὶ κύματος ἐ. Refs 8th c.BC+; ἐ. ἔχειν πόδα (i.e. τῶν καλῶν) Refs 5th c.BC+; ἐ. τῶν ἐλαῶν beyond the olives, i. e. out of the course. Refs 5th c.BC+; Geometry texts, beyond, τοῦ Α σημείου Refs 3rd c.BC+; also ἐ. ἀτασθαλίης outside of, free from.., Refs 6th c.BC+; ἐ. στρατειῶν exempt from.., Refs; ἐ. ἑωυτῆς beside herself, out of her wits, Refs 5th c.BC+; ἐ. ἐλπίδος beyond hope, Refs; δοκημάτων ἐ
+Senses:
+  Sense 1: "except, unless, apart from (exclusionary)" (5x)
+    Desc: A prepositional or adverbial marker of exclusion meaning 'except for, unless, apart from, beyond,' introducing an exception to a general statement; rendered 'unless/except/beyond' (eng), 'excepto/fuer...
+    Domain: DISCOURSE_NAMES > Discourse Markers
+    Glosses: eng: beyond, except, unless | spa: excepto, fuera-de | fra: en-dehors, excepté | deu: ἐκτὸς
+    Refs: Acts 26:22, 1Cor 14:5, 1Cor 15:2, 1Cor 15:27, 1Tim 5:19
+  Sense 2: "outside, external to (spatial/locative)" (3x)
+    Desc: A spatial preposition or adverb indicating physical location external to or outside of a boundary, place, or domain; rendered 'outside' (eng), 'fuera de/fuera' (spa), 'बाहर' (hin), 'خارج' (arb), '밖에/바...
+    Domain: GEOGRAPHY_SPACE > Spacial Positions
+    Glosses: eng: outside | spa: de-fuera, fuera, fuera-de | fra: en-dehors, excepté | deu: ἐκτὸς
+    Refs: Matt 23:26, 1Cor 6:18, 2Cor 12:2
+
+=== G1627 ===
+Language: Greek, POS: V-PPA-NFS, Occurrences: 8, Senses: 2
+
+BDB excerpt: ἐκφέρω, future ἐξοίσω Refs 5th c.BC+aorist ἐξήνεικα:—passive, ἐξοισθήσομαι Refs 5th c.BC+future middle ἐξοίσομαι in passive sense, Refs 5th c.BC+:— carry out of, τινὰ πολέμοιο Refs 8th c.BC+ __2 carry out a corpse for burial, ἐξέφερον θρασὺν Ἕκτορα δάκρυ χέοντες Refs 8th c.BC+; also, cause death, εἰ ὑπερβάλλουσιν ἀλγηδόνες, ἐξοίσουσι Refs 3rd c.AD+ __3 carry away, τρί᾽ ἄλεισα Refs 8th c.BC+; carry off as prize or reward, ἄεθλον Refs 8th c.BC+ —more frequently in middle, τὠυτὸ (of a victory) ἐξενείκασθαι Refs 5th c.BC+; κλέος, δόξαν, Refs 5th c.BC+; accomplish, Refs 4th c.BC+ __4 carry ashore, 
+Senses:
+  Sense 1: "carry out, bring out (physically)" (7x)
+    Desc: To physically carry or bring something or someone out of a place, including carrying out the dead for burial (Acts 5) and bringing out persons. Spanish uses 'sacar' (take out) and 'llevar' (carry), Ar...
+    Domain: MOVEMENT > Linear Movement
+    Glosses: eng: bring-out, having-carried-out, he-brought-out | spa: habiendo-sacado, llevó, sacad | fra: emporter | deu: hervorbringen, ἐκφέρειν, ἐξενέγκαντες
+    Refs: Mark 8:23, Luke 15:22, Acts 5:6, Acts 5:9, Acts 5:10
+  Sense 2: "produce, bring forth (vegetation/fruit)" (1x)
+    Desc: To produce or yield fruit or vegetation, used metaphorically of land or plants bringing forth growth. Spanish uses 'que produce' (that produces), Arabic uses 'mukhrijatan' (مُخْرِجَةً, producing/bring...
+    Domain: BODY_HEALTH > Physiological Processes and States
+    Glosses: eng: producing | spa: que-produce | fra: emporter | deu: hervorbringen
+    Refs: Heb 6:8
+
+=== G1628 ===
+Language: Greek, POS: V-ASA-3P, Occurrences: 8, Senses: 2
+
+BDB excerpt: ἐκ-φεύγω, future -ξομαιRefs 5th c.BC+, and -ξοῦμαι Refs:—flee out or away, escape: absolutely, ἐκφυγέειν μεμαώς Refs 8th c.BC+ __b of persons accused, to be acquitted, Refs 5th c.BC+ __2 with genitive, escape out of, ἐξέφυγον πολιῆς ἁλὸς ἤπειρόνδε Refs 8th c.BC+; of things, βέλος ἔκφυγε χειρός Refs 8th c.BC+ __3 with accusative, escape, ἐξ αὖ νῦν ἔφυγες θάνατον Refs 8th c.BC+ __3.b simply, to have escaped, to be beyond, οὐ πολλὰ ἐκφεύγεις παιδιὰς ἔτη Refs 5th c.BC+ __3.c of things, ἐκπεφεύγασιν γάμοι με Refs 5th c.BC+; ἐ. τὰς αἰσθήσεις escape one's sense, Refs 4th c.BC+; also, escape one's lip
+Senses:
+  Sense 1: "escape, avoid (judgment or danger)" (5x)
+    Desc: To escape or avoid divine judgment, punishment, or danger, used of escaping God's wrath, the coming tribulation, or moral accountability (1 Thess 5:3; Luke 21:36; Heb 2:3; Heb 12:25; Rom 2:3).
+    Domain: DANGER_DELIVERANCE > Danger, Risk, Safe, Save
+    Glosses: eng: escaped, they-will-escape, to-escape | spa: escaparemos, escaparon, escaparán | fra: fuir | deu: entfliehen, ἐκφυγεῖν
+    Refs: Luke 21:36, Rom 2:3, 1Thess 5:3, Heb 2:3, Heb 12:25
+  Sense 2: "flee, escape physically" (3x)
+    Desc: To flee or escape from a physical location or captor, denoting bodily flight rather than avoidance of abstract judgment (Acts 19:16; Acts 16:27; 2 Cor 11:33).
+    Domain: DANGER_DELIVERANCE > Danger, Risk, Safe, Save
+    Glosses: eng: I-escaped, to-flee, to-have-escaped | spa: escapé, haber-huido, huyeran | fra: fuir | deu: entfliehen, ἐκπεφευγέναι, ἐκφυγεῖν
+    Refs: Acts 16:27, Acts 19:16, 2Cor 11:33
+
+=== G1670 ===
+Language: Greek, POS: V-ASA-3S, Occurrences: 8, Senses: 2
+
+BDB excerpt: ἕλκω (ἑλκύω late, Refs 8th c.BC+, imperfect __A εἷλκον Refs 4th c.BC+, Epic dialect ἕλκον Refs 8th c.BC+: future ἕλξω Refs 5th c.BC+: aorist εἵλκῠσα Refs 5th c.BC+, Trag. and Attic dialect, Refs 5th c.BC+; later εἷλξα, poetry ἕλξα Refs 2nd c.AD+: perfect εἵλκῠκα Refs 4th c.BC+; perfect participle ἑολκώς probably in Refs 5th c.BC+ —middle, future -ύσομαι (ἐφ-) Refs 2nd c.AD+aorist εἱλκυσάμην (ἀφ-) variant in Refs 5th c.BC+, subjunctive ἀφελκύσωμαι Refs 5th c.BC+:—passive, future ἑλκυσθήσομαι Refs 4th c.BC+: aorist εἱλκύσθην Refs 5th c.BC+; later εἵλχθην Refs 1st c.AD+: perfect εἵλκυσμαι Refs 5t
+Senses:
+  Sense 1: "draw, drag (physically)" (6x)
+    Desc: To physically drag, haul, or pull a person or object by force, often with connotations of compulsion or violence. Spanish uses 'arrastrar/arrastraron' (drag), Arabic uses 'jarr' (جرّ, drag/pull) and '...
+    Domain: MOVEMENT > Linear Movement
+    Glosses: eng: drag, dragged, drew | spa: arrastrar, arrastraron, arrastró | fra: attirer, tirer | deu: ziehen, εἵλκυσαν, εἷλκον
+    Refs: John 18:10, John 21:6, John 21:11, Acts 16:19, Acts 21:30
+  Sense 2: "draw, attract (spiritually/metaphorically)" (2x)
+    Desc: To draw or attract someone spiritually, used of divine action in drawing people to God or Christ (John 6:44, 12:32). Spanish uses 'atraer' (attract), Arabic uses 'ajdhibu' (أجذب, I attract/draw), Kore...
+    Domain: MOVEMENT > Linear Movement
+    Glosses: eng: I-will-draw, draws | spa: atraeré, atrajere | fra: tirer | deu: ziehen
+    Refs: John 6:44, John 12:32
+
+=== G1727 ===
+Language: Greek, POS: Adj-ANP, Occurrences: 8, Senses: 2
+
+BDB excerpt: ἐναντίος, α, ον, opposite, ={ἀντίος} (which is rare in Prose): __1 of Place, on the opposite side, opposite, c.dative, ἀκταὶ ἐναντίαι ἀλλήλῃσιν Refs 8th c.BC+: hence, fronting, face to face, αὐτῳ οὔ πω φαίνετ᾽ ἐναντίη Refs 7th c.BC+; δεῖξον.. τὸ σὸν πρόσωπον δεῦρ᾽ ἐ. πατρί before him, Refs 5th c.BC+; τὰναντία τινί things open to one's sight, Refs 5th c.BC+ look opposite ways, Refs 5th c.BC+ __1.b with Verbs of motion, in the opposite direction, ἔνθα οἱ.. ἐναντίη ἤλυθε μήτηρ came to meet him, Refs 8th c.BC+ __1.c Astrology texts, in diametrical aspect, Refs 2nd c.AD+ __2 in hostile sense, oppos
+Senses:
+  Sense 1: "contrary, opposed" (7x)
+    Desc: Opposing in direction, purpose, or attitude; acting against someone or something. Used of wind blowing against a boat (Matt 14:24, Mark 6:48: Arabic muaakisatan, Hebrew mitnagged/negdit, Korean yeonkp...
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: contrary, opposite | spa: contrarias, contrario, contrarios | fra: contraire, opposé | deu: ἐναντία, ἐναντίας, ἐναντίον
+    Refs: Matt 14:24, Mark 6:48, Acts 26:9, Acts 27:4, Acts 28:17
+  Sense 2: "opposite (spatial position)" (1x)
+    Desc: Physically positioned across from or facing something, denoting spatial relationship rather than abstract opposition. In Mark 15:39 the centurion stands 'opposite' (ex enantias) Jesus on the cross. Ar...
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: opposite | spa: enfrente | fra: contraire | deu: ἐναντίας
+    Refs: Mark 15:39
+
+=== G1807 ===
+Language: Greek, POS: V-AIM-1S, Occurrences: 8, Senses: 2
+
+BDB excerpt: ἐξαιρ-έω, future -ησω, later ἐξελῶ Refs 1st c.BC+aorist 2 ἐξεῖλον, Epic dialect and Lyric poetry ἔξελον Refs 8th c.BC+; infinitive ἐξελεῖν:—middle, future ἐξαιρήσομαι Refs 4th c.BC+aorist 2 ἐξειλόμην,Refs 5th c.BC+ —passive, perfect -ῄρημαι, Ionic dialect -αραίρημαιRefs 5th c.BC+:—take out, ἔνθεν.. ἔξελε πέπλους Refs 8th c.BC+; ἐπείνιν καθαροῦ λέβητος ἔξελε Κλωθώ Pi.[same place]; τὸ δέλτα τοῦ ὀνόματος Refs 5th c.BC+; simply, take out, τὴν κοιλίην, τὴν νηδύν, Refs 6th c.BC+:—passive, εἰ τὸ ἔαρ ἐκ τοῦ ἐνιαυτοῦ ἐξαραιρημένον εἴη Refs 5th c.BC+ __2 middle, take out for oneself, φαρέτρης ἐξείλετο π
+Senses:
+  Sense 1: "rescue, deliver (from danger or oppression)" (6x)
+    Desc: The soteriological and protective sense of ἐξαιρέω in the middle voice, meaning to rescue, deliver, or set free from danger, oppression, or enemies. Predominant in Acts and the Epistles: God rescued J...
+    Domain: MOVEMENT > Linear Movement
+    Glosses: eng: I-rescued, he-might-rescue, rescued | spa: librar, librándote, libró | fra: arracher, délivrer | deu: befreit, ἐξέληται
+    Refs: Acts 7:10, Acts 7:34, Acts 12:11, Acts 23:27, Acts 26:17
+  Sense 2: "tear out, pluck out (physical removal)" (2x)
+    Desc: The literal, physical sense of ἐξαιρέω meaning to tear out, pluck out, or remove a body part by force. Used exclusively in Jesus' hyperbolic teaching about removing an offending eye rather than allowi...
+    Domain: MOVEMENT > Linear Movement
+    Glosses: eng: pluck-out, tear-out | spa: sácalo | fra: arracher | deu: befreit
+    Refs: Matt 5:29, Matt 18:9

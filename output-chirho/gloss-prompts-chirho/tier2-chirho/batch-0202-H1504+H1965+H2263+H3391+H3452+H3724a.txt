@@ -1,0 +1,115 @@
+You are a biblical lexicographer composing glosses for a digital lexicon.
+For each lemma below, compose a JSON object. Separate objects with "---".
+
+Format for each:
+{
+  "lemma_id": "...",
+  "gloss_terse": "under 120 chars, concise definition covering the word's semantic range",
+  "gloss_readable": "2-5 sentences, 40-120 words. Don't start with 'This word'. Warm study-Bible footnote tone. Engaging, not dry.",
+  "senses": {
+    "1": "enriched 20-60 word description. Reference multilingual evidence when illuminating. Don't repeat the label verbatim.",
+    "2": "..."
+  }
+}
+
+Rules:
+- No markdown fences, just JSON objects separated by ---
+- Reference multilingual evidence naturally when it reveals something
+- gloss_readable should feel like a good study Bible footnote: helpful, clear, occasionally surprising
+- Each sense enrichment: how does the evidence support this sense? Mention 1-2 key passages when helpful.
+
+=== H1504 ===
+Language: Hebrew, POS: V-Nifal-Perf-1cs, Occurrences: 13, Senses: 2
+
+BDB excerpt: † גָּזַר vb. cut, divide (Arabic جَزَرَ, NH גָּזַר cut, determine, circumcise; Ethiopic ገዘረ Aramaic גְּזַר, ܓܙܰܪ )— Qal Pf. גָּזַר Hb 3:17; Impf. וַיִּגְזֹר Is 9:19; 2 ms. תִּגְזַר Jb 22:28; וַיִּגְזְרוּ 2 K 6:4; Pt. act. גֹּזֵר ψ 136:13;— 1. divide, cut in two, sq. acc. 1 K 3:25 (ג׳ לִשְׁנָ֑יִם) cf. v 26 (obj. not expressed). 2. divide the Red Sea (acc.) ψ 136:13 sq. לִגְזָרִים. 3. cut down הָעֵצִים 2 K 6:4. 4. cut off (piece of meat to eat, but obj. not expr. ‖ אכל) Is 9:19. 5. cut off, i.e. destroy, exterminate Hb 3:17 (c. acc.; indef. subj.), sq. מִן loc. 6. decree (Aramaism, cf. Biblical 
+Senses:
+  Sense 1: "cut, divide, cut off" (11x)
+    Desc: Qal: to cut, divide, or cut off physically; Nifal: to be cut off, be separated or excluded; used of cutting objects, dividing the Red Sea, and being cut off from community.
+    Domain: PHYSICAL_ACTION > Physical Impact
+    Glosses: eng: I-am-cut-off, and-he-snatches, and-they-cut | spa: Al-que-dividió, Y-cortará, dividid | fra: [ויגזר], [נגזר], [נגזרתי] | deu: [גזר], [ויגזר], [נגזר]
+    Refs: 1Kgs 3:25, 1Kgs 3:26, 2Kgs 6:4, 2Chr 26:21, Ps 88:5
+  Sense 2: "decree, determine" (2x)
+    Desc: To decree or determine something (derived from the metaphor of 'cutting' a decision); Nifal: a decree is cut/issued.
+    Domain: JUSTICE_PUNISHMENT > Courts and Legal Procedures
+    Glosses: eng: and-you-will-decree, was-decreed | spa: Y-decretarás-, fue-decretado | fra: [נגזר], et-ותגזר | deu: [ותגזר], [נגזר]
+    Refs: Esth 2:1, Job 22:28
+
+=== H1965 ===
+Language: Hebrew, POS: Prep-l | N-msc | 3ms, Occurrences: 13, Senses: 2
+
+BDB excerpt: † [הֵיכַל] n.m. palace, temple (Assyrian loan-word; BH; also Palm. היכלא and הכלא Lzb 259 SAC 43);—emph. הֵיכְלָא Ezr 4:14 +; cstr. הֵיכַל Dn 4:26; sf. הֵיכְלִי 4:1, -לֵהּ 6:19;— 1. palace of king Dn 4:1, 26; 5:5; 6:19 Ezr 4:14 (v. מְלַח). 2. temple: a. in Jerusalem Dn 5:2, 3 Ezr 5:14a, 15; 6:5(×2). b. in Babylon 5:14b, c. הַיְתִי v. אֲתָה" dir="rtl" >אֲתָא.
+Senses:
+  Sense 1: "temple, sanctuary" (8x)
+    Desc: The sacred temple building, whether Solomon's temple in Jerusalem or a pagan temple, denoting the main hall or nave of a religious edifice where worship and sacrifice occur. The multilingual evidence ...
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: in-temple, temple, the-temple | spa: al-templo, el-templo | fra: [בהיכלא], [להיכלא], le-temple | deu: Tempel, [היכלא]
+    Refs: Ezra 5:14, Ezra 5:14, Ezra 5:14, Ezra 5:15, Ezra 6:5
+  Sense 2: "palace, royal residence" (5x)
+    Desc: A grand secular building, specifically a king's palace or royal residence, representing the well-attested polysemy of heykal which denotes both sacred temple and royal palace (cf. Akkadian ekallu 'gre...
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: in-my-palace, palace, palace-of | spa: a-su-palacio, del-palacio, el-palacio | fra: le-temple, palais | deu: Tempel, [בהיכלי], [היכל]
+    Refs: Ezra 4:14, Dan 4:4, Dan 4:29, Dan 5:5, Dan 6:18
+
+=== H2263 ===
+Language: Hebrew, POS: Prep-l | V-Qal-Inf, Occurrences: 13, Senses: 2
+
+BDB excerpt: † [חָבַק] vb. clasp, embrace (NH id.; 𝔗 חַבֵּקֹ; Mand.. ܚܒܰܩ, NSyr. ܚܦܩ; Arabic حَبَقَ ii. collect one’s possessions, etc., Frey)— Qal Inf. לַחֲבוֹק Ec 3:5; Pt. חֹבֵק Ec 4:5; חֹבֶקֶת 2 K 4:16;—embrace, c. acc. בֵּן 2 K 4:16; יָדָיו Ec 4:5 (said of הַכְּסִיל = fold his arms, i.e. be idle; cf. חִבֻּק); no obj. expr. Ec 3:5 (‖ Pi). Pi. Pf. חִבְּקוּ Jb 24:8 La 4:5; Impf. וַיְחַבֵּק Gn 48:10; וַיְחַבֶּק־ Gn 29:13; וַיְחַבְּקֵהוּ Gn 33:4; 3 fs. sf. תְּחַבְּקֵ֫נִי Ct 2:6; 8:3; 2 ms. וּתְחַבֵּק Pr 5:20, sf. תְּחַבְּקֶ֫נָּה Pr 4:8; Inf. חַבֵּק Ec 3:5;—embrace of pers., no obj. עת לִרְחֹק מֵחַבֵּק Ec 3:
+Senses:
+  Sense 1: "embrace a person" (12x)
+    Desc: To clasp someone in one's arms as a greeting, expression of affection, or reunion, used in both Piel intensive and Qal stems with consistent multilingual translation evidence (abrazar, गले लगाना, عانق...
+    Domain: PHYSICAL_ACTION > Attachment
+    Glosses: eng: and-embrace, and-embraced, and-he-embraced-him | spa: abrazan, abrazan-, abrazando | fra: [חבקו], de-embrasser, embracing | deu: embracing, umarmte, und-er-umarmte
+    Refs: Gen 29:13, Gen 33:4, Gen 48:10, 2Kgs 4:16, Job 24:8
+  Sense 2: "fold or clasp hands" (1x)
+    Desc: To fold or cross one's hands idly, as in the proverbial image of laziness ('a little folding of the hands to sleep'), with distinctly different translation vocabulary across languages (folding, cruza,...
+    Domain: PHYSICAL_ACTION > Attachment
+    Glosses: eng: folding | spa: cruza | fra: embrasser | deu: umarmte
+    Refs: Eccl 4:5
+
+=== H3391 ===
+Language: Hebrew, POS: N-msc, Occurrences: 13, Senses: 2
+
+BDB excerpt: † I. יֶ֫רַח n.m. Zc 11:8 month (Aramaic יַרְחָא, ܝܰܪܚܳܐ new moon, month; Palm. ירח VogNo. 1; Assyrian arḫu COTGloss. Muss-ArnoltJBL xi. 1892, 73, 163; cf. Ph. Ethiopic sub יָרֵחַ; Sab. ורחֿ month, DHMZMG 1876, 603; 1883, 369 HalJAS vii, 1 516)—abs. יֶ֫רַח 1 K 6:37 + 3 times; cstr. id. Dt 21:13 2 K 15:13; pl. יְרָחִים Ex 2:2 + 3 times; cstr. יַרְחֵי Jb 7:3; 29:2;— 1. month, as measure of time, during, or in which Ex 2:2 (E), Zc 11:8 Jb 39:2; יַרְחֵי שָׁ֑וְא Jb 7:3; יַרְחֵי קֶדֶם 29:2; pleon. יֶרַח יָמִים a month (of) days = a month of time Dt 21:13 2 K 15:13. 2. calendar month, with name יֶרַח 
+Senses:
+  Sense 1: "month" (11x)
+    Desc: Masculine noun יֶרַח meaning 'month' as a unit of time reckoned by the lunar cycle. Used in both singular construct ('month of Ziv,' 'month of Bul,' 'month of Ethanim' in 1 Kgs 6:37-38, 8:2) and plura...
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: as-months-of-, in-month, in-month-of | spa: como-meses-de-, en-el-mes-de, en-mes | fra: comme-mois, dans-lune, dans-mois-de | deu: Monat-von, Monat-von-, Monate
+    Refs: Exod 2:2, Deut 21:13, 1Kgs 6:37, 1Kgs 6:38, 1Kgs 8:2
+  Sense 2: "moon" (2x)
+    Desc: Masculine noun יֶרַח meaning 'moon' as a celestial body, distinct from the temporal sense 'month.' In Deut 33:14 יְרָחִים 'moons' refers to the produce/yield brought forth by the moons (i.e., lunar se...
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: and-your-moon, moons | spa: las-lunas, y-tu-luna | fra: [וירחך], moons | deu: [וירחך], moons
+    Refs: Deut 33:14, Isa 60:20
+
+=== H3452 ===
+Language: Hebrew, POS: Prep-b | N-msc, Occurrences: 13, Senses: 2
+
+BDB excerpt: † יְשִׁימוֹן n.m. waste, wilderness;—abs. יְשִׁימוֹן 1 S 23:19 + 5 times; יְשִׁימֹן Nu 21:20 + 3 times; יְשִׁמוֹן Is 43:19; יְשִׁמֹן Dt 32:10; cstr. יְשִׁימוֹן ψ 107:4;—waste, wilderness: a. c. art., alm. n.pr. Nu 21:20 (commanded by Pisgah), 23:28 (by Peʿor; both JE), frequented by David as an outlaw 1 S 23:19, 24; 26:1, 3. Probably some part of the wilderness of Judah, bordering on Dead Sea (ConderTent Work, ch. 15; BuhlGeogr. § 61); according to others, at least in Nu. (v. Di), part of the ʿArábah NE. of the Dead Sea (in which was בֵּית הַיְשִׁימֹת Nu 33:49 al.) b. without art., a waste or 
+Senses:
+  Sense 1: "wilderness, wasteland (specific locale)" (12x)
+    Desc: The noun יְשִׁימוֹן used with the article (הַיְשִׁימוֹן) or in prepositional phrases to designate specific desert regions, particularly the Jeshimon overlooking the Dead Sea in the Judean wilderness (...
+    Domain: GEOGRAPHY_SPACE > Geographical Objects and Features
+    Glosses: eng: in-a-wasteland, in-the-desert, in-the-wasteland | spa: el-desierto, en-el-yermo, en-la-soledad | fra: [בישימן], [בישמון], dans-désolation | deu: [בישימן], [בישמון], der-Jeshimon
+    Refs: Num 21:20, Num 23:28, 1Sam 23:19, 1Sam 23:24, 1Sam 26:1
+  Sense 2: "desolation, waste (abstract)" (1x)
+    Desc: The noun יְשִׁימוֹן used in its abstract or generic sense to denote desolation and barrenness of a landscape, without reference to a specific locale. Found in prophetic and poetic contexts (Isa 43:19-...
+    Domain: VIOLENCE_CONFLICT > Violence, Harm, Destroy, Kill
+    Glosses: eng: desolation | spa: soledad | fra: desolation | deu: Verwuestung
+    Refs: Deut 32:10
+
+=== H3724a ===
+Language: Hebrew, POS: N-msc | 3ms, Occurrences: 13, Senses: 2
+
+BDB excerpt: † I. כֹּפֶר n.m. the price of a life, a ransom (ποινή, wergeld);—כ׳ Ex 21:30 + 10 times; sf. כָּפְרְךָ Is 43:3; כָּפְרוֹ ψ 49:8;— 1. a price for ransom of a life Jb 33:24; 36:18; כ׳ עַל Ex 21:30 (Covt. code; ‖ פִּדְיֹן נַפְשׁוֹ); כ׳ נפשׁ Pr 13:8; כ׳ לְ ransom for Pr 6:35; 21:18; Nu 35:31, 32 (P); כָּפְרוֹ his ransom ψ 49:8 (‖ פדה); כָּפְרְךָ thy ransom Is 43:3 (‖ תַּחְתֶּיךָ); כֹּ֫פֶר alone 1 S 12:3 Am 5:12. 2. in the ritual of P כ׳ נַפְשׁוֹ Ex 30:12 is a half shekel of the sanctuary paid by each male above twenty years at the census in order that there might be no plague upon them. It was off
+Senses:
+  Sense 1: "ransom, price of a life" (11x)
+    Desc: The price paid to redeem a life or avert punishment; a ransom or redemption payment. Used in legal contexts (Exodus 21:30, Numbers 35:31-32 for the ransom of a murderer), cultic contexts (Exodus 30:12...
+    Domain: ECONOMICS_PROPERTY > Possess, Transfer, Exchange
+    Glosses: eng: a-ransom, his-ransom, ransom | spa: Rescate, Rescate-de, rescate | fra: [כפרך], comme-rançon, rançon | deu: Loesegeld, Loesegeld-von, [כפרך]
+    Refs: Exod 21:30, Exod 30:12, Num 35:31, Num 35:32, Job 33:24
+  Sense 2: "bribe" (2x)
+    Desc: A payment intended to corrupt or influence judgment, distinct from a legitimate ransom. Found in 1 Samuel 12:3 (Samuel's integrity speech) and Amos 5:12 (prophetic accusation of injustice). The multil...
+    Domain: ECONOMICS_PROPERTY > Possess, Transfer, Exchange
+    Glosses: eng: bribe | spa: soborno | fra: bribe, rançon | deu: Loesegeld, bribe
+    Refs: 1Sam 12:3, Amos 5:12

@@ -1,0 +1,162 @@
+You are a biblical lexicographer composing glosses for a digital lexicon.
+For each lemma below, compose a JSON object. Separate objects with "---".
+
+Format for each:
+{
+  "lemma_id": "...",
+  "gloss_terse": "under 120 chars, concise definition covering the word's semantic range",
+  "gloss_readable": "2-5 sentences, 40-120 words. Don't start with 'This word'. Warm study-Bible footnote tone. Engaging, not dry.",
+  "senses": {
+    "1": "enriched 20-60 word description. Reference multilingual evidence when illuminating. Don't repeat the label verbatim.",
+    "2": "..."
+  }
+}
+
+Rules:
+- No markdown fences, just JSON objects separated by ---
+- Reference multilingual evidence naturally when it reveals something
+- gloss_readable should feel like a good study Bible footnote: helpful, clear, occasionally surprising
+- Each sense enrichment: how does the evidence support this sense? Mention 1-2 key passages when helpful.
+
+=== H8130 ===
+Language: Hebrew, POS: V-Qal-Inf, Occurrences: 148, Senses: 6
+
+BDB excerpt: שָׂנֵא145 vb. hate (NH id.; MI4 שנאי my foes; Sab. שנאם foe Sab.DenkmNo. 12, l, 9 cf. Ib.No. 7, l. 9 CISiv, No. 173, l. 6; Arabic شنأ, شَنَىَٔ, hate; Aramaic סְנָא, ܣܢܳܐ, id., סָנְאָה, ܣܳܢܳܐܐ hater, etc.; Ethiopic hate is ጸልአ: );— Qal128 Pf. 3 ms. שׂ׳ Dt 12:31 +, sf. שְׂנֵאָהּ 2 S 13:15 +; 2 ms. שָׂנֵאתָ ψ 5:6 +, sf. שְׂנֵאתַ֫נִי Ju 14:16, etc.; Impf. 3 ms. יִשְׂנָא Pr 13:5; 26:28, sf. יִשְׂנָאֶ֑ךָּ 9:8, etc.; Imv. mpl. שִׂנְאוּ Am 5:15 ψ 97:10; Inf. abs. שָׂנֹא Ju 15:2; cstr. שְׂנֹא Gn 37:5 +, שְׂנֹאת Pr 8:13; Pt. act. שֹׂנֵא Dt 4:42 +, שֹׂנַאֲךָ Ex 23:5 Pr 25:21; pl. cstr. שֹׂנְאֵי Ex 18:21 
+Senses:
+  Sense 1: "Qal: to hate, detest" (60x)
+    Desc: To feel hatred, animosity, or aversion toward a person, thing, or action; the basic Qal active sense covering all finite verb forms (perfect, imperfect, imperative, consecutive) expressing the emotion...
+    Domain: EMOTION_ATTITUDE > Attitudes and Emotions
+    Glosses: eng: He-hates, I-hate, I-have-hated | spa: Aborrezco, aborrece, aborrezco | fra: haïr | deu: [שנאה], [שנאתי], er-hasst
+    Refs: Gen 26:27, Gen 37:4, Deut 12:31, Deut 16:22, Deut 22:13
+  Sense 2: "Qal ptcp: hater, enemy" (53x)
+    Desc: The Qal active participle used substantively to denote a person who hates, i.e. an adversary or enemy; frequently occurs with pronominal suffixes ('those who hate me/you/him/us/them') and functions as...
+    Domain: EMOTION_ATTITUDE > Attitudes and Emotions
+    Glosses: eng: against-their-haters, among-their-haters, but-he-who-hates | spa: de-los-que-me-odian, el-que-odia, en-los-que-los-odiaban | fra: ceux-qui-me-haïssent, de-ceux-là-haïssant-moi, et-haïr | deu: hasste, hating, und-hasste
+    Refs: Gen 24:60, Exod 1:10, Exod 18:21, Exod 20:5, Exod 23:5
+  Sense 3: "Piel ptcp: one who hates intensely" (15x)
+    Desc: The Piel (intensive) stem participle used substantively to denote those who hate with intensity or persistence; functions like the Qal participle but with intensified or iterative force, frequently ap...
+    Domain: EMOTION_ATTITUDE > Attitudes and Emotions
+    Glosses: eng: and-from-those-hating-me, and-those-hating-him, and-those-hating-me | spa: Los-que-odian-a, el-que-me-odia, los-que-lo-odian | fra: ceux-là-haïssant-moi, de-ceux-qui-me-haïssent, de-haïr | deu: dein-haters, hasste, jene-hassend-mich
+    Refs: Num 10:35, Deut 32:41, Deut 33:11, 2Sam 22:41, Job 31:29
+  Sense 4: "Qal pass. ptcp: hated, unloved" (10x)
+    Desc: The Qal passive participle describing the state of being hated or unloved; used adjectivally, especially of a disfavored wife ('the hated/unloved one') in legal and proverbial contexts.
+    Domain: EMOTION_ATTITUDE > Attitudes and Emotions
+    Glosses: eng: [hated-of], an-unloved-woman, and-hated | spa: (odiados-de), [odiados], aborrecida | fra: [hated-of], et-haïr, et-le-hated | deu: [hated-of], [ושנואה], der-hasste
+    Refs: Gen 29:31, Gen 29:33, Deut 21:15, Deut 21:15, Deut 21:16
+  Sense 5: "Qal inf: to hate, hatred" (8x)
+    Desc: The Qal infinitive construct and absolute forms, used either as a verbal complement ('to hate') or nominally as an abstract noun ('hatred'); includes prepositional phrases (le + infinitive 'in order t...
+    Domain: EMOTION_ATTITUDE > Attitudes and Emotions
+    Glosses: eng: and-to-hate, hating, is-hatred-of | spa: a-odiar, odiar, para-odiar | fra: et-à-haïs, hating, haïr | deu: hasste, hating, und-zu-hasse
+    Refs: Gen 37:5, Gen 37:8, Judg 15:2, 2Sam 19:6, Ps 36:2
+  Sense 6: "?" (2x)
+    Domain: EMOTION_ATTITUDE > Attitudes and Emotions
+    Glosses: eng: is-hated | spa: es-odiado | fra: haïr | deu: er-hasst
+    Refs: Prov 14:17, Prov 14:20
+
+=== G1453 ===
+Language: Greek, POS: V-ASP-3S, Occurrences: 144, Senses: 6
+
+BDB excerpt: ἐγείρω, Aeolic dialect infinitive ἐγέρρην Refs 7th c.BC+: Epic dialect imperfect ἔγειρον Refs 8th c.BC+: future ἐγερῶ Refs 5th c.BC+aorist ἤγειρα, Epic dialect ἔγ- Refs 8th c.BC+: perfect ἐγήγερκα Refs 2nd c.AD+: pluperfect -κειν Refs 1st c.AD+:—passive, Refs 5th c.BC+: future ἐγερθήσομαι Refs 2nd c.AD+: aorist ἠγέρθην Refs 5th c.BC+; Epic dialect 3rd.pers. plural ἔγερθεν variant for{ἄγ}. in Refs 8th c.BC+perfect ἐγήγερμαι variant in Refs 5th c.BC+: pluperfect ἐγήγερτο Refs 2nd c.AD+ also, in passive sense, poetry aorist ἠγρόμην (ἐξ-) Refs 5th c.BC+; 3rd.pers. singular ἔγρετο, imperative ἔγρεο
+Senses:
+  Sense 1: "be raised / rise from the dead" (51x)
+    Desc: Passive or middle intransitive use referring to resurrection: the subject is raised from the dead or rises to life. English 'has been raised / was raised / is raised,' Spanish 'ha resucitado / fue res...
+    Domain: BODY_HEALTH > Physiological Processes and States
+    Glosses: eng: He-has-been-raised, are-raised, has-been-raised | spa: ha-resucitado, resucita, resucitan | fra: ressusciter | deu: auferwecken, steht-auf
+    Refs: Matt 11:5, Matt 14:2, Matt 16:21, Matt 17:9, Matt 17:23
+  Sense 2: "rise / get up (physical)" (38x)
+    Desc: Intransitive or middle use meaning to stand up, get up from sitting or lying, or to arise and go; used as a command ('Rise!') or narrative ('he arose'). English 'rise / arise / arose,' Spanish 'levánt...
+    Domain: BODY_HEALTH > Physiological Processes and States
+    Glosses: eng: Rise, arise, having-arisen | spa: Levántate, habiéndose-levantado, levantándose | fra: ressusciter | deu: auferwecken, steht-auf
+    Refs: Matt 1:24, Matt 2:13, Matt 2:14, Matt 2:20, Matt 2:21
+  Sense 3: "raise from the dead (active)" (34x)
+    Desc: Active transitive use: a divine agent raises someone from the dead, i.e., causes resurrection. English 'raised (him),' Spanish 'resucitó / levantó,' Arabic أَقَامَ, Korean 일으켰다/살렸다, Swahili alimfufua.
+    Domain: BODY_HEALTH > Physiological Processes and States
+    Glosses: eng: He-raised, having-raised, he-raised | spa: habiendo-resucitado, levantó, que-levantó | fra: ressusciter | deu: auferwecken, steht-auf
+    Refs: Matt 3:9, Matt 10:8, Luke 3:8, John 2:19, John 2:20
+  Sense 4: "appear / arise (figurative)" (9x)
+    Desc: Intransitive figurative use: a person, prophet, or entity 'arises' or 'appears' on the scene, or a nation/group rises up. English 'will arise / will rise / arises,' Spanish 'se levantarán / surge,' Ar...
+    Domain: BODY_HEALTH > Physiological Processes and States
+    Glosses: eng: Will-be-raised, arises, will-arise | spa: Se-levantará, se-levantará, se-levantarán | fra: ressusciter | deu: auferwecken, steht-auf
+    Refs: Matt 12:42, Matt 24:7, Matt 24:11, Matt 24:24, Mark 13:8
+  Sense 5: "raise up / lift up (physical)" (8x)
+    Desc: Active transitive use meaning to physically raise, lift up, or help someone stand; not specifically resurrection but bodily assistance. English 'raised up / lift up / to raise,' Spanish 'levantó / lo ...
+    Domain: BODY_HEALTH > Physiological Processes and States
+    Glosses: eng: he-awakened, he-raised, he-raised-up | spa: levantar, levantará?, levantó | fra: ressusciter | deu: auferwecken, steht-auf
+    Refs: Matt 12:11, Mark 1:31, Mark 9:27, Luke 1:69, Acts 3:7
+  Sense 6: "wake from sleep" (4x)
+    Desc: Transitive or intransitive use meaning to awaken or rouse from sleep, either waking someone else or being awakened oneself. English 'they woke / awake / wake,' Spanish 'despertaron / Despiértate / des...
+    Domain: BODY_HEALTH > Physiological Processes and States
+    Glosses: eng: awake, they-wake, they-woke | spa: Despiértate, despertar, despertaron | fra: ressusciter | deu: auferwecken, steht-auf
+    Refs: Matt 8:25, Mark 4:38, Rom 13:11, Eph 5:14
+
+=== H7931 ===
+Language: Hebrew, POS: V-Qal-Perf-3fs, Occurrences: 129, Senses: 6
+
+BDB excerpt: שָׁכַן, שָׁכֵ֑ן, vb. settle down, abide, dwell (NH id.; Ecclus 43:17d +; Ph. שכן Lzb375; Aramaic שְׁכֵין; Syriac ܫܟܶܢ, all dwell; Arabic سَكَنَ rest, dwell, cf. Assyrian šakânu, set, lay, deposit, set up (a dwelling), intrans. be situated (of city), maškanu, place, dwelling-place);— Qal Pf. 3 ms. שׁ׳ Ex 40:35 + 5 times; שָׁכֵ֑ן Dt 33:12 + 2 times, etc.; Impf. 3 ms. יִשְׁכֹּן Gn 16:12 +; יִשְׁכָּן־ Nu 9:17 + 2 times; 3 mpl. יִשְׁכֹּ֑נוּ Je 49:31; 3 fpl. תִּשְׁכֹּ֑נָּה Ez 17:23, etc.; Imv. ms. שְׁכֹן Gn 26:2 ψ 37:27; שְׁכָן־ v 3; mpl. שִׁכְנוּ Je 48:28; Inf. cstr. בִּשְׁכֹּן (Ges§ 45 g) Gn 35:22
+Senses:
+  Sense 1: "Qal: dwell, inhabit" (75x)
+    Desc: Basic intransitive sense of residing, dwelling, or inhabiting a place, encompassing all Qal finite forms and infinitives where the meaning is ongoing or permanent habitation (Arabic يَسْكُنُ / سَكَنَ,...
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: and-I-will-dwell, and-shall-dwell, and-they-will-dwell | spa: Y-habitaré, habitará, habitarán | fra: --demeurer, demeurer, et-Je---demeurer | deu: dwells, er-wird-wohnen-in, er-wohnt
+    Refs: Gen 9:27, Gen 35:22, Gen 49:13, Exod 24:16, Exod 25:8
+  Sense 2: "Qal participle: inhabitant, dweller" (24x)
+    Desc: Substantival use of the Qal participle functioning as a noun meaning inhabitant or dweller of a place, consistently rendered with Arabic سَاكِن / سَاكِنِين and Korean 거하는 자 (one who dwells).
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: He-dwells, [ketiv:you-dwelling], and-dwellers-of | spa: [kethiv], el-que-habita, el-que-habitó-en | fra: demeure, demeurer, dweller-de | deu: Wohnung, der-Wohnung, der-Zelt-dwellers
+    Refs: Gen 14:13, Lev 16:16, Num 5:3, Num 24:2, Num 35:34
+  Sense 3: "Piel: cause to dwell" (12x)
+    Desc: Causative Piel stem meaning to cause or allow someone to dwell, to settle people in a place, with Arabic أُسْكِنُ (causative Form IV of سكن) and Swahili -kalisha (causative of -kaa).
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: I-caused-to-dwell, and-I-will-let-dwell, he-placed | spa: Y-os-haré-habitar, hice-habitar, hizo-habitar | fra: [לשכן], demeurer, et-demeurer | deu: er-placed, und-wohnen, wohnen
+    Refs: Num 14:30, Deut 12:11, Deut 14:23, Deut 16:2, Deut 16:6
+  Sense 4: "Qal: settle, rest upon" (9x)
+    Desc: Nuance of settling down, coming to rest, or temporarily alighting upon a place or person, distinguished by Arabic لِيَحُلَّ / وَأَستَريحُ and Spanish reposar/permanecer rather than the standard habita...
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: and-be-at-rest, and-settled, dwelt | spa: Reposan, moraba, para-reposar | fra: demeura, demeurer, et-demeurer | deu: und-sein-bei-Ruhe, und-settled, wohnte
+    Refs: Exod 40:35, Num 9:17, Num 9:18, Num 9:22, Num 10:12
+  Sense 5: "Hifil: place, settle someone" (6x)
+    Desc: Causative Hifil stem meaning to place or settle someone in a location, with Arabic وَأَسْكَنَ (causative Form IV) and Swahili -weka / -kalisha confirming the causative action by an agent upon others.
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: and-I-will-cause-to-dwell, and-he-settled, and-placed | spa: e-hicieron-habitar, e-hizo-habitar, haga-habitar | fra: demeurer, et-demeurer, et-placer-en-haut | deu: lass-ihn-lay, und-er-settled, und-setzen-hinauf
+    Refs: Gen 3:24, Josh 18:1, Job 11:14, Ps 7:5, Ps 78:55
+  Sense 6: "Qal passive: be inhabited" (3x)
+    Desc: Stative or passive sense indicating that a place is or will be inhabited, with Arabic passive تُسْكَنُ / تُعْمَرُ and Spanish será habitada/morada confirming the passive reading.
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: it-shall-be-inhabited, she-will-be-dwelt-in | spa: se-morará, será-habitada, será-morada | fra: demeurer | deu: wohnen
+    Refs: Isa 13:20, Jer 46:26, Jer 50:39
+
+=== G0906 ===
+Language: Greek, POS: V-APP-DFS, Occurrences: 124, Senses: 6
+
+BDB excerpt: βάλλω, future βᾰλῶ (in Attic dialect Prose only in compounds), Ionic dialect βαλέω Refs 8th c.BC+aorist 2 ἔβᾰλον, Ionic dialect προ-βάλεσκε Refs 8th c.BC+; later aorist 1 ἔβαλα LXX; Epic dialect and Ionic dialect infinitive βαλέειν Refs 8th c.BC+; optative βλείης in Refs 5th c.BC+, participle βλείς Refsperfect βέβληκα: pluperfect ἐβεβλήκειν, Epic dialect βεβλήκειν Refs 8th c.BC+:—middle, Ionic dialect imperfect βαλλέσκετο Refs 5th c.BC+future βᾰλοῦμαι (προ-) Refs 8th c.BC+aorist 2 ἐβᾰλόμην, Ionic dialect imperative βαλεῦ Refs 5th c.BC+ used mostly in compounds:—passive, future βληθήσομαι Refs 
+Senses:
+  Sense 1: "throw, cast, hurl" (57x)
+    Desc: To propel something through the air with force; physical throwing or casting of objects (stones, nets, people) into locations (sea, fire, prison), including figurative casting out (fear, figs from a t...
+    Domain: MOVEMENT > Linear Movement
+    Glosses: eng: cast, it-has-thrown, put | spa: arrojó, echaron, echó | fra: jeter | deu: werfen, wirft
+    Refs: Matt 4:6, Matt 5:29, Matt 5:30, Matt 7:6, Matt 10:34
+  Sense 2: "be thrown, be cast" (32x)
+    Desc: Passive voice: to be thrown, cast, or hurled into a place (sea, fire, Gehenna, prison), often expressing divine judgment or violent removal.
+    Domain: MOVEMENT > Linear Movement
+    Glosses: eng: be-thrown, he-was-cast, he-was-thrown | spa: es-echado, es‒echado, fue-arrojado | fra: jeter | deu: werfen, wirft
+    Refs: Matt 3:10, Matt 5:13, Matt 5:25, Matt 5:29, Matt 6:30
+  Sense 3: "put, place, deposit" (27x)
+    Desc: To place or deposit something into a container or location without forceful propulsion; putting money into the treasury, wine into wineskins, a bit in a horse's mouth.
+    Domain: MOVEMENT > Linear Movement
+    Glosses: eng: casting, do-they-put, he-put | spa: Mete, depositar, echa | fra: jeter | deu: werfen, wirft
+    Refs: Matt 4:18, Matt 9:17, Matt 9:17, Matt 25:27, Matt 27:6
+  Sense 4: "lie sick, be laid down" (5x)
+    Desc: To be lying down prostrate, typically of a sick person bedridden or an object lying in a place; perfect/pluperfect passive forms indicating a resultant state.
+    Domain: MOVEMENT > Linear Movement
+    Glosses: eng: has-been-laid, having-been-laid, laid | spa: echada, echado, estaba-echado | fra: jeter | deu: werfen, wirft
+    Refs: Matt 8:6, Matt 8:14, Matt 9:2, Mark 7:30, Luke 16:20
+  Sense 5: "pour, pour out" (2x)
+    Desc: To pour a liquid substance onto or into something, as ointment on the head or new wine into wineskins.
+    Domain: MOVEMENT > Linear Movement
+    Glosses: eng: having-put, he-puts | spa: echa, habiendo-echado | fra: jeter | deu: werfen, wirft
+    Refs: Matt 26:12, John 13:5
+  Sense 6: "strike, beat upon" (1x)
+    Desc: Of wind or natural forces striking or beating against something; a violent wind beat upon the ship.
+    Domain: MOVEMENT > Linear Movement
+    Glosses: eng: struck-down | spa: se-lanzó | fra: jeter | deu: wirft
+    Refs: Acts 27:14

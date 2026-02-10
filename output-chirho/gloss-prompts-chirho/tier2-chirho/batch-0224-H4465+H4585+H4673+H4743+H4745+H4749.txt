@@ -1,0 +1,115 @@
+You are a biblical lexicographer composing glosses for a digital lexicon.
+For each lemma below, compose a JSON object. Separate objects with "---".
+
+Format for each:
+{
+  "lemma_id": "...",
+  "gloss_terse": "under 120 chars, concise definition covering the word's semantic range",
+  "gloss_readable": "2-5 sentences, 40-120 words. Don't start with 'This word'. Warm study-Bible footnote tone. Engaging, not dry.",
+  "senses": {
+    "1": "enriched 20-60 word description. Reference multilingual evidence when illuminating. Don't repeat the label verbatim.",
+    "2": "..."
+  }
+}
+
+Rules:
+- No markdown fences, just JSON objects separated by ---
+- Reference multilingual evidence naturally when it reveals something
+- gloss_readable should feel like a good study Bible footnote: helpful, clear, occasionally surprising
+- Each sense enrichment: how does the evidence support this sense? Mention 1-2 key passages when helpful.
+
+=== H4465 ===
+Language: Hebrew, POS: N-ms, Occurrences: 10, Senses: 2
+
+BDB excerpt: † מִמְכָּר n.m. Lv 25:28 sale, ware;—abs. מ׳ Lv 25:14 + 2 times; cstr. מִמְכַּר Lv 25:25, 33; מִמְכָּרוֹ Lv 25:27 + 3 times; pl. sf. מִמְכָּרָיו Dt 18:8 (but v. sub מֶכֶר);—sale Lv 25:27, 29, 50; thing sold Lv 25:14 (acc. cogn.), v 25, 28 Ez 7:13 Ne 13:20; מִמְכַּר בַּיִת Lv 25:33 (Hex. only PH). On Dt 18:8 v. מֶכֶר.
+Senses:
+  Sense 1: "sale, selling" (9x)
+    Desc: The act or transaction of selling; a sale. Used of the sale of land and property in the Jubilee legislation (Lev 25:14, 25, 27, 28, 29, 33), where the noun refers to the transaction itself or the proc...
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: a-sale, his-sale, his-sales | spa: la-venta-de, lo-vendido, su-venta | fra: sale-de, sale-de-, son-sale | deu: [הממכר], ein-sale, sale-von
+    Refs: Lev 25:14, Lev 25:25, Lev 25:27, Lev 25:28, Lev 25:29
+  Sense 2: "merchandise, ware" (1x)
+    Desc: That which is sold; merchandise, wares, goods for sale. Distinguished from the transaction sense by referring to the concrete objects being traded rather than the act of selling. Attested in Neh 13:20...
+    Domain: ECONOMICS_PROPERTY > Possess, Transfer, Exchange
+    Glosses: eng: merchandise | spa: mercancía | fra: [ממכר] | deu: [ממכר]
+    Refs: Neh 13:20
+
+=== H4585 ===
+Language: Hebrew, POS: N-fpc | 3mp, Occurrences: 10, Senses: 2
+
+BDB excerpt: † מְעֹנָה n.f. habitation; 1. den, lair of wild beasts: of כְּפִיר, מְעֹנָתוֹ Am 3:4, so pl. abs. מְעוֹנוֹת Jb 38:40 (‖ סֻכָּה), sf. מְעוֹנֹתָם ψ 104:22; cstr. מְעֹנוֹת אֲרָיוֹת Ct 4:8; מְעֹנֹתָיו Na 2:13 (‖ חֹרָיו; of אַרְיֵה, fig. of Nineveh); of חַיָּה in gen., בִּמְעוֹנֹתֶיהָ תִשְׁכֹּן Jb 37:8 (‖ אָ֑רֶב); so appar. fig. of men, hunted by י׳, מְעוֹנוֹתֵינוּ Je 21:13, fig. also of י׳ dwelling in temple, sg. sf., מְעוֹנָתוֹ בְּצִיּוֹן ψ 76:3 (‖ סוּכּוֹ). 2. fig. מְעֹנָה אֱלֹהֵי קֶדֶם Dt 33:27 the ancient God is a refuge (for his people; cf. i. מָעוֹן 3).
+Senses:
+  Sense 1: "animal den or lair" (6x)
+    Desc: A den, lair, or hiding place of wild animals such as lions or other beasts.
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: and-his-dens, and-in-its-dens, from-dens-of | spa: desde-las-guaridas-de, desde-su-guarida, en-guaridas | fra: de-repaire, de-sa-tanière, des-tanières | deu: [במעונות], [ובמעונתיה], [ומענתיו]
+    Refs: Job 37:8, Job 38:40, Ps 104:22, Song 4:8, Amos 3:4
+  Sense 2: "dwelling place or refuge" (4x)
+    Desc: A habitation, dwelling place, or refuge, used of human or divine abodes.
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: and-His-dwelling-place, her-dwelling, into-dwellings-our | spa: en-moradas-nuestras, refugio, su-morada | fra: [במעונותינו], et-de-repaire, refuge | deu: Zuflucht, [במעונותינו], [מעונה]
+    Refs: Deut 33:27, Ps 76:2, Jer 21:13, Zeph 3:7
+
+=== H4673 ===
+Language: Hebrew, POS: N-msc, Occurrences: 10, Senses: 2
+
+BDB excerpt: † מַצָּב n.m. 1 S 13:23 standing-place, station, garrison;—מ׳ abs. 1 S 14:15, cstr. מַצַּב Jos 4:3, 9 + (Baer in Sm מַצָּב, cf. on 1 S 13:23, but v. Ginsb); sf. מַצָּבֶ֑ךָ Is 22:19;— 1. standing-place of feet Jos 4:3, 9 (JE). 2. station, office Is 22:19 (‖ מַעֲמָד). 3. garrison, post, or outpost (of Philistines) 1 S 13:23; 14:1, 4, 6, 11, 15; 2 S 23:14; so read also 1 S 14:12 (for MT מַצָּבָה) 𝔊 Th We Bu HPS.
+Senses:
+  Sense 1: "garrison, military outpost" (7x)
+    Desc: A military garrison or outpost, a station of soldiers posted in enemy or strategic territory. Used exclusively in reference to Philistine garrisons threatening Israel (1 Sam 13:23; 14:1, 4, 6, 11, 15;...
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: and-garrison-of, garrison-of, the-garrison | spa: destacamento-de, el-destacamento, y-guarnición-de | fra: et-garnison-de, garnison-de, le-garnison | deu: der-garrison, garrison-von, und-garrison-von
+    Refs: 1Sam 13:23, 1Sam 14:1, 1Sam 14:4, 1Sam 14:6, 1Sam 14:11
+  Sense 2: "standing-place, appointed position" (3x)
+    Desc: A standing-place or fixed position, either literal (the place where the priests' feet stood in the Jordan, Jos 4:3, 9) or figurative (one's appointed station or office, Isa 22:19). From the root נצב '...
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: from-standing-place-of, from-your-position, standing-place-of | spa: de-lugar-de, de-tu-puesto, lugar-de | fra: [ממצבך], de-debout-lieu-de, debout-lieu-de | deu: [ממצבך], stehend-Ort-von, von-stehend-Ort-von
+    Refs: Josh 4:3, Josh 4:9, Isa 22:19
+
+=== H4743 ===
+Language: Hebrew, POS: V-Nifal-Perf-3cp, Occurrences: 10, Senses: 2
+
+BDB excerpt: † [מָקַק] vb. decay, rot, fester, fig. pine away (NH id.; Aramaic (𝔗) מְקַק);— Niph. Pf. 3 pl. נָמַ֫קּוּ ψ 38:6, וְנ׳ consec. Is 34:4 Ez 4:17; 2 mpl. וּנְמַקֹּתֶם consec. Ez 24:23; Impf. 3 fs. תִּמַּק Zc 14:12; 3 mpl. יִמַּ֫קּוּ Lv 26:39, יִמָּ֑קּוּ v 39; 3 fpl. תִּמַּקְנָה Zc 14:12; Pt. pl. נְמַקִּים Ez 33:10;— 1. fester, of wounds ψ 38:6 (+ הבאישׁ v. באשׁ). 2. rot, rot away, עֵינָיו תִּמַּקְנָה בְחֹרֵיהֶן וּלְשׁוֹנוֹ תִּמַּק בְּפִיהֶֽם׃ Zc 14:12 (plague upon foes of Jerusalem). 3. moulder away, of צְבָא הַשָּׁמַיִם Is 34:4 (‖ וְנָגֹלּוּ כַּסֵּפֶר הַשָּׁמַיִם). 4. of pining away by reason of 
+Senses:
+  Sense 1: "to rot away, waste away, decay (Nifal)" (9x)
+    Desc: Nifal stem meaning to rot away, decay, waste away, or pine away, describing the process of physical decomposition or wasting of flesh, wounds, or persons under divine judgment. Arabic يَذُوبُونَ 'they...
+    Domain: BODY_HEALTH > Physiological Processes and States
+    Glosses: eng: And-shall-waste-away, and-fester, and-they-shall-waste-away | spa: Y-se-disolverá, nos-consumimos;, se-consumirá | fra: [ונמקו], et-fondre, fera-rot-away | deu: [ונמקו], [ונמקתם], [נמקים]
+    Refs: Lev 26:39, Lev 26:39, Ps 38:5, Isa 34:4, Ezek 4:17
+  Sense 2: "rotting, causing to rot (Hifil infinitive absolute)" (1x)
+    Desc: Hifil infinitive absolute used adverbially to intensify or describe the manner of rotting, functioning as a causative or emphatic form of decay. Arabic يَذُوبُ 'it dissolves' and Spanish 'consumirse' ...
+    Domain: BODY_HEALTH > Physiological Processes and States
+    Glosses: eng: rotting | spa: consumirse | fra: fondre | deu: [המק]
+    Refs: Zech 14:12
+
+=== H4745 ===
+Language: Hebrew, POS: Prep-k | N-msc, Occurrences: 10, Senses: 2
+
+BDB excerpt: † מִקְרֶה n.m. 1 S 6:9 accident, chance, fortune;—abs. מ׳ 1 S 6:9 +; cstr. מִקְרֵה Ec 2:15 (so read also 3:19(×2) with 𝔊 RuëtKau Wild, for MT מִקְרֶה);— 1. accident, chance, 1 S 6:9; 20:26; c. קָרָה Ru 2:3 (v. ק׳ 1). 2. in Ec, fortune, fate, מ׳ אֶחָד יִקְרֶה אֶת־כֻּלָּם Ec 2:14 cf. v 15, 3:19(×3); 9:2, 3.
+Senses:
+  Sense 1: "happening, fate, lot" (7x)
+    Desc: Clusters S114062 and S114065 both denote a 'happening' or 'fate/destiny' in the sense of what befalls someone -- the events that occur to a person as determined by providence or circumstance. English ...
+    Domain: EXISTENCE_STATE > Be, Become, Exist, Happen
+    Glosses: eng: and-happening, and-happening-of, happening | spa: como-el-suceso-de, que-un-suceso, suceso | fra: comme-événement, et-événement, événement | deu: Geschick, [כמקרה], [שמקרה]
+    Refs: Eccl 2:14, Eccl 2:15, Eccl 3:19, Eccl 3:19, Eccl 3:19
+  Sense 2: "chance, accident, coincidence" (3x)
+    Desc: Clusters S114063 and S114067 share the sense of 'chance' or 'accident' -- an event happening randomly without divine or purposeful causation. English uses 'chance' and 'her-chance'; Spanish uses 'casu...
+    Domain: EXISTENCE_STATE > Be, Become, Exist, Happen
+    Glosses: eng: chance, her-chance | spa: casualidad, su-suerte | fra: chance, sa-chance | deu: Geschick, chance
+    Refs: Ruth 2:3, 1Sam 6:9, 1Sam 20:26
+
+=== H4749 ===
+Language: Hebrew, POS: N-fs, Occurrences: 10, Senses: 2
+
+BDB excerpt: † II. מִקְשָׁה n.f. perhaps hammered work, only of metals (orig. turner’s work?);—abs. מ׳, of cherubim in tabern. Ex 25:18; 37:7, lamp-stand 25:31, 36; 37:17, 22 Nu 8:4(×2), clarions 10:2.—i. מ׳ v. קשׁא.
+Senses:
+  Sense 1: "hammered work, wrought metalwork" (9x)
+    Desc: Metalwork produced by hammering, specifically the beaten/wrought gold craftsmanship used in fabricating the menorah (lampstand) and other tabernacle furnishings (Exod 25:18, 31, 36; 37:7, 17, 22; Num ...
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: hammered-work, hammered-work-of | spa: de-obra-batida, labrada-a-martillo, labradas | fra: hammered-oeuvre, hammered-oeuvre-de, martelé-travail | deu: getrieben-Werk, hammered-Werk, hammered-Werk-von
+    Refs: Exod 25:18, Exod 25:31, Exod 25:36, Exod 37:7, Exod 37:17
+  Sense 2: "turned/polished work (or cucumber field)" (1x)
+    Desc: A distinct usage of miqshah in Jer 10:5, where the context differs from the Exodus tabernacle passages. The English renders 'in-a-cucumber-field' (following LXX/Baruch parallel), while other versions ...
+    Domain: BUILDINGS > Building, Constructing
+    Glosses: eng: in-a-cucumber-field | spa: de-obra-torneada | fra: [מקשה] | deu: [מקשה]
+    Refs: Jer 10:5

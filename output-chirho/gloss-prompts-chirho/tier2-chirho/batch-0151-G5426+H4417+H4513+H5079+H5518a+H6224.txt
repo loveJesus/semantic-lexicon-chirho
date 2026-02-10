@@ -1,0 +1,115 @@
+You are a biblical lexicographer composing glosses for a digital lexicon.
+For each lemma below, compose a JSON object. Separate objects with "---".
+
+Format for each:
+{
+  "lemma_id": "...",
+  "gloss_terse": "under 120 chars, concise definition covering the word's semantic range",
+  "gloss_readable": "2-5 sentences, 40-120 words. Don't start with 'This word'. Warm study-Bible footnote tone. Engaging, not dry.",
+  "senses": {
+    "1": "enriched 20-60 word description. Reference multilingual evidence when illuminating. Don't repeat the label verbatim.",
+    "2": "..."
+  }
+}
+
+Rules:
+- No markdown fences, just JSON objects separated by ---
+- Reference multilingual evidence naturally when it reveals something
+- gloss_readable should feel like a good study Bible footnote: helpful, clear, occasionally surprising
+- Each sense enrichment: how does the evidence support this sense? Mention 1-2 key passages when helpful.
+
+=== G5426 ===
+Language: Greek, POS: V-PIA-2S, Occurrences: 29, Senses: 2
+
+BDB excerpt: φρον-έω, Epic dialect subjunctive φρονέῃσι Refs 8th c.BC+: Epic dialect imperfect φρόνεον Refs 8th c.BC+: future -ήσωRefs 5th c.BC+, etc.: aorist ἐφρόνησα Refs 5th c.BC+: perfect πεφρόνηκα Refs 5th c.BC+:—passive, Refs 4th c.BC+; imperative φρονείσθω variant for{φρονεῖτε} in NT:—to be minded, either of reflection or of purpose: hence, __I have understanding, be wise, prudent, rare in Refs 8th c.BC+ best both in battle and counsel, Refs 8th c.BC+: but frequently in Trag. and Attic dialect, [Ζῆνα] τὸν φρονεῖν βροτοὺς ὁδώσαντα Refs 5th c.BC+; λίαν φ. to be over-wise, Refs 5th c.BC+understanding, 
+Senses:
+  Sense 1: "think, consider mentally" (24x)
+    Desc: To engage in cognitive activity, to think about or reflect on something, including forming opinions or deliberating.
+    Domain: MENTAL_LIFE > Think
+    Glosses: eng: minding, think, thinking | spa: pensabais, pensad, pensando | fra: gesinnt-sein, penser | deu: gesinnt-sein, φρονεῖς
+    Refs: Matt 16:23, Mark 8:33, Acts 28:22, Rom 11:20, Rom 12:3
+  Sense 2: "set one's mind on, regard" (5x)
+    Desc: To direct one's attention or concern toward something, to mind or care about, implying a sustained disposition or orientation of thought rather than a momentary cognitive act.
+    Domain: MENTAL_LIFE > Think
+    Glosses: eng: minding, minds, think-on | spa: considera, piensan, que-considera | fra: penser | deu: gesinnt-sein
+    Refs: Rom 8:5, Rom 14:6, Rom 14:6, Rom 14:6, Rom 14:6
+
+=== H4417 ===
+Language: Hebrew, POS: N-proper-fs, Occurrences: 29, Senses: 2
+
+BDB excerpt: † II. מֶ֫לַח n.m. salt (NH id.; Arabic مِلْحٌ Aramaic ܡܶܠܚܳܐ, מִלְחָא);—מ׳ abs. Gn 19:26 +; cstr. Lv 2:13;—salt for seasoning food Jb 6:6; offering Lv 2:13(×3) cf. Ez 43:24; בְּרִית מֶ֫לַח Nu 18:19 2 Ch 13:5 (cf. Lv 2:13 v. Di); used in purifying waters 2 K 2:20, 21; strewn on site of devoted city Ju 9:45 cf. Zp 2:9 (מִכְרֵה־מ׳) Dt 29:22 (‖ גָּפְרִית); produced in marshes reserved for purpose Ez 47:11; pillar of salt נְצִיב מ׳ Gn 19:26; usually in combin. יָם(־) הַמֶּלַח Gn 14:3 (עֵ֫מֶק הַשִּׂדִּים), Nu 34:3, 12 Dt 3:17 (‖ יָם הָעֲרָבָה), Jos 3:16; 12:3; 15:2, 5; 18:19; also גֵיא־מ׳ 2 S 8:13 2
+Senses:
+  Sense 1: "Salt (in geographic names)" (15x)
+    Desc: Salt as a component of geographic place names such as the Sea of Salt (Dead Sea), Valley of Salt, and City of Salt.
+    Domain: NATURAL_WORLD > Natural Substances
+    Glosses: eng: (Salt), Salt, [the-Salt] | spa: Sal, [K], el-Salado | fra: (Salt), Salt, [the-Salt] | deu: Salt, [the-Salt], [המלח]
+    Refs: Gen 14:3, Num 34:3, Num 34:12, Deut 3:17, Josh 3:16
+  Sense 2: "salt (substance)" (14x)
+    Desc: The mineral substance salt, used for seasoning food, preserving offerings, and as a symbol of covenant permanence.
+    Domain: NATURAL_WORLD > Natural Substances
+    Glosses: eng: and-salt, for-salt, salt | spa: con-la-sal, para-sal, sal | fra: [למלח], [מלח], avec-le-sel | deu: Salz, Salz-von, Seemann
+    Refs: Gen 19:26, Lev 2:13, Lev 2:13, Lev 2:13, Num 18:19
+
+=== H4513 ===
+Language: Hebrew, POS: Conj-w | V-Nifal-ConjImperf-3ms, Occurrences: 29, Senses: 2
+
+BDB excerpt: † מָנַע vb. withhold, hold back (NH id.; Zinj. מנע DHMSendsch. 60; Arabic مَنَعَ; Sab. מנע Levy-OsZMG xix. 1865, 268; Aramaic מְנַע);— Qal Pf. מ׳ Gn 30:2; sf. מְנָעַ֫נִי 1 S 25:34; מָנַ֫עְתָּ ψ 21:3 Ne 9:20, etc.; Impf. יִמְנַע־ ψ 84:12; sf. יִמְנָעֵ֫נִי 2 S 13:13 etc.; Imv. מְנַע Pr 1:15; מִנְעִי Je 2:25; 31:16; Pt. מֹנֵעַ Pr 11:26 Je 48:10;—withhold, sq. מִן Gn 30:2 (obj. פְּרִי־בֶטֶן), Am 4:7 (rain), Ne 9:20 (manna; all subj. י׳); Jb 22:7 (bread), 1 K 20:7 (obj. om.; both hum. subj.), so Je 48:10 (sword), Ec 2:10 (heart), Je 5:25 (good), Pr 3:27 (id.), 1:15 (foot); Je 2:25 (id.) 31:16 (voic
+Senses:
+  Sense 1: "withhold, restrain, hold back" (25x)
+    Desc: Qal active sense: to withhold, restrain, or hold back something or someone, whether refusing a request, keeping back goods, or preventing an action.
+    Domain: AUTHORITY_RULE > Control, Rule
+    Glosses: eng: I-have-withheld, I-kept-back, I-withheld | spa: Detén, detuvieron, detén | fra: [מנעת], de-refuser, et-empêcher | deu: [אמנע], [ואמנע], [מנע]
+    Refs: Gen 30:2, Num 24:11, 1Sam 25:26, 1Sam 25:34, 2Sam 13:13
+  Sense 2: "be withheld, be restrained" (4x)
+    Desc: Niphal passive sense: to be withheld, be held back, or be restrained, describing something that is prevented or kept from occurring.
+    Domain: AUTHORITY_RULE > Control, Rule
+    Glosses: eng: And-were-withheld, and-is-withheld, is-withheld | spa: Y-es-quitada, Y-fueron-retenidas, fue-retenida | fra: empêcher, et-retenir, laisse-être-withheld | deu: [וימנע], [וימנעו], [נמנע]
+    Refs: Num 22:16, Job 38:15, Jer 3:3, Joel 1:13
+
+=== H5079 ===
+Language: Hebrew, POS: Art | N-fs, Occurrences: 29, Senses: 2
+
+BDB excerpt: † נִדָּה n.f. impurity (as abhorrent, shunned);—abs. נ׳ Ez 18:6 +; cstr. נִדַּת Lv 12:2 +; sf. נִדָּתָהּ v 5 +;—impurity (especially P and Ezek.): 1. of ceremonial impurity, as union with brother’s wife, Lv 20:21; especially of menstruation Ez 18:6 (read אִשָּׁה בְּנִדָּתָהּ for MT א׳ נִדָּה 𝔖 Co), טְמֵאַת הַנּ׳ 22:10, cf. 36:17, נִדַּת דְּוֹתָהּ Lv 12:2, cf. v 5; 15:19, 20, 24, 25 (עֶת־נִדּ׳), v 25(×2), v 26 (מִשְׁכַּב נִדּ׳), v 26 (טֻמְאַת נִדּ׳), v 33; 18:19; of defilement contracted by contact with a corpse, מֵי (הַ)נִּדָּה water of impurity (i.e. to remove it, cf. Di) Nu 19:9, 13, 20, 21(
+Senses:
+  Sense 1: "menstrual impurity" (15x)
+    Desc: The state of ritual uncleanness associated with menstruation, referring to a woman's menstrual period and the impurity it entails under Levitical law.
+    Domain: RELIGIOUS_LIFE > Religious Activities
+    Glosses: eng: as-her-impurity, her-impurity, impurity-of | spa: como-su-impureza, en-menstruación-de, en-su-menstruación | fra: comme-sa-impureté, dans-impureté-de, dans-sa-impureté | deu: [הנדה], [נדה], ihr-impurity
+    Refs: Lev 12:2, Lev 12:5, Lev 15:19, Lev 15:20, Lev 15:24
+  Sense 2: "ritual or moral impurity" (14x)
+    Desc: General ceremonial uncleanness, filthiness, or abomination, extending beyond menstruation to broader ritual defilement and metaphorical moral pollution.
+    Domain: RELIGIOUS_LIFE > Religious Activities
+    Glosses: eng: and-for-impurity, for-impurity, impurity | spa: impureza, la-impureza, la-inmundicia | fra: [בנדת], [הנדה], [לנדה] | deu: [בנדת], [הנדה], [ולנדה]
+    Refs: Lev 20:21, Num 19:9, Num 19:13, Num 19:20, Num 19:21
+
+=== H5518a ===
+Language: Hebrew, POS: Prep-l | N-cs, Occurrences: 29, Senses: 2
+
+BDB excerpt: † I. סִיר n.m. Je 1:13 et f. 2 K 4:38 pot (probably foreign wd. (Egyptian?), Arabic زِيرٌ a large water-jar Lane1276 is perhaps loan-wd.; on Gk. deriv. σιρός, σίρινος, v. LewyFremdw. 107);—ס׳ abs. 2 K 4:38 +, cstr. Ex 16:3 +; pl. סִירֹת 38:3, סִירוֹת 1 K 7:45 +; sf. סִירֹתָיו Ex 27:3, סִירֹתֵיכֶם ψ 58:10;—pot: 1. a. household utensil for boiling 2 K 4:38, 39, 40, 41(×2), ס׳ הַבָּשָׂר Ex 16:3 (P), Zc 14:21; ס׳ נָפוּחָ Je 1:13 (cf. נפח; in vision), symbol. of Jerus. Ez 11:3, 7, 11; 24:3, 6; fig. also ψ 58:10 (cf. Che); in sim. Mi 3:3 Jb 41:23 Ec 7:6. b. ס׳ רַחְצִי ψ 60:10 my washing-pot, 108:10.
+Senses:
+  Sense 1: "cooking pot or cauldron" (27x)
+    Desc: A vessel used for cooking or boiling, whether a household pot or a larger cauldron; the primary and most frequent sense of סִיר across all biblical contexts.
+    Domain: ARTIFACTS > Artifacts
+    Glosses: eng: a-pot, in-the-pot, pot | spa: en-la-olla, la-olla, la-olla-de | fra: [בסיר], [הסירות], [הסרות] | deu: Topf-von, [בסיר], [הסיר]
+    Refs: Exod 16:3, Exod 27:3, Exod 38:3, 1Kgs 7:45, 2Kgs 4:38
+  Sense 2: "basin or washbasin" (2x)
+    Desc: A wide, shallow vessel used for washing or holding liquids, distinct from a cooking pot; reflected in glosses such as 'basin', 'vasija', 'कटोरा/पात्र', 'مِرجَل/طَست', '대야', and 'sinia/bakuli'.
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: is-the-pot-of, the-basin-of | spa: vasija-de | fra: épine | deu: der-basin-von, ist-der-pot-von
+    Refs: Ps 60:8, Ps 108:9
+
+=== H6224 ===
+Language: Hebrew, POS: Number-ofsc, Occurrences: 29, Senses: 2
+
+BDB excerpt: עֲשִׂירִי20 m., עֲשִׂירִיָּה, and עֲשִׂירִית8 f. adj. num. ord. tenth;— 1. דּוֹר עֲשִׂירִי Dt 23:3, 4; בַּיּוֹם הָע׳ Nu 7:66 (P); הַחֹדֶשׁ הָע׳ Gn 8:5 (P) Ez 24:1 + 5 times; בַּחֹדֶשׁ הָעֲשִׂרִי Je 39:1; ח׳ om. הָעֲשִׂירִי Gn 8:5 (P), בָּעֲשִׂרִי Ez 29:1; 33:21; other nouns om. הָעֲשִׂירִי 1 Ch 12:13; 25:17; 27:13, הָעֲשִׂרִי 24:11; בַּשָּׁנָה הָעֲשִׂרִית Ez 29:1, בַּשּׁ׳ הָעֲשִׂרִית Je 32:1. 2. as subst. a tenth part: f. abs. עֲשִׂרִיָּה Is 6:13; f. cstr. עֲשִׂירִית הָאֵיפָה Nu 28:5, עֲשִׂרִית Ex 16:36, עֲשִׂירִת Lv 5:11; 6:13; Nu 5:15; עֲשִׂירִת הַחֹמֶר Ez 45:11; m. abs. הָעֲשִׂירִי Lv 27:32
+Senses:
+  Sense 1: "tenth (ordinal)" (22x)
+    Desc: The ordinal number 'tenth' used to designate position in a sequence — the tenth day, month, or year in calendrical and genealogical contexts. Arabic 'الْعَاشِرِ' (al-ʿāshiri, the tenth), Korean '열째/열 ...
+    Domain: QUANTITY_NUMBER > Number
+    Glosses: eng: The-tenth, in-the-tenth, on-the-tenth | spa: El-décimo, décima, el-décimo | fra: [העשירי], [העשרי], [העשרית] | deu: [העשירי], [העשרי], [העשרית]
+    Refs: Gen 8:5, Gen 8:5, Lev 27:32, Num 7:66, Deut 23:2
+  Sense 2: "a tenth part, tithe portion" (7x)
+    Desc: A fractional quantity meaning one-tenth, used as a unit of dry measure (a tenth of an ephah) in sacrificial prescriptions. Arabic 'عُشْرَ' (ʿushr, a tenth), Korean '십분의 일' (sipbunui il, one-tenth), Sp...
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: a-tenth-of, and-tenth-of, tenth | spa: Y-décima-de, décima-de, décima-de- | fra: [עשריה], dixième-de, et-dixième | deu: [עשריה], ein-zehnter-von, und-zehnter
+    Refs: Exod 16:36, Lev 5:11, Lev 6:20, Num 5:15, Num 28:5

@@ -1,0 +1,145 @@
+You are a biblical lexicographer composing glosses for a digital lexicon.
+For each lemma below, compose a JSON object. Separate objects with "---".
+
+Format for each:
+{
+  "lemma_id": "...",
+  "gloss_terse": "under 120 chars, concise definition covering the word's semantic range",
+  "gloss_readable": "2-5 sentences, 40-120 words. Don't start with 'This word'. Warm study-Bible footnote tone. Engaging, not dry.",
+  "senses": {
+    "1": "enriched 20-60 word description. Reference multilingual evidence when illuminating. Don't repeat the label verbatim.",
+    "2": "..."
+  }
+}
+
+Rules:
+- No markdown fences, just JSON objects separated by ---
+- Reference multilingual evidence naturally when it reveals something
+- gloss_readable should feel like a good study Bible footnote: helpful, clear, occasionally surprising
+- Each sense enrichment: how does the evidence support this sense? Mention 1-2 key passages when helpful.
+
+=== H1854 ===
+Language: Hebrew, POS: Conj-w | V-Hifil-ConsecImperf-3ms, Occurrences: 13, Senses: 3
+
+BDB excerpt: † [דָּקַק] vb. crush, pulverise, thresh; be fine (Arabic دَقَّ be or become thin, minute; Ethiopic ደቀቀ Assyrian daḳâḳu Pa. break in pieces COTGloss; Ph. דק id., Aramaic דַּקֵּק Pa. id., ܕܰܩ )— Qal Pf. 3 ms. דַּק Dt 9:21, דָּ֑ק Ex 32:20; Impf. 3 ms. sf. יְדֻקֶּ֑נּוּ Is 28:28; 2 ms. תָּדֹק Is 41:15;— 1. crush (trans.) sq. acc. לֶחֶם bread-stuff, corn Is 28:28; of threshing ‖ דּוּשׁ Is 41:15 (fig. of pulverizing mts.) 2. only Pf.; be fine, of state to wh. Moses reduced the golden calf by grinding וַיִּטְחַן עַד אֲשֶׁר־דָּ֑ק Ex 32:20; וָאֶכֹּת אֹתוֹ טָחוֹן הֵיטֵב עַד אֲשֶׁר־דַּק לְעָפָר Dt 9:21. H
+Senses:
+  Sense 1: "crush, pulverize, beat fine" (9x)
+    Desc: Transitive causative sense (primarily Hifil, also Qal active): to crush, grind, pulverize, beat to fine powder or dust, including stamping or pounding into pieces.
+    Domain: PHYSICAL_ACTION > Physical Impact
+    Glosses: eng: I-stamp-them, and-crushed, and-he-beat-fine | spa: desmenuzo, lo-muele, los-pisoteé | fra: [והדק], [וידק], [ותדק] | deu: [והדק], [והדקות], [וידק]
+    Refs: 2Sam 22:43, 2Kgs 23:6, 2Kgs 23:15, 2Chr 15:16, 2Chr 34:4
+  Sense 2: "be/become fine or thin" (3x)
+    Desc: Intransitive stative sense (Qal): to be fine, become small or thin, describing the resultant state of something reduced to fine particles or dust.
+    Domain: PROPERTIES_RELATIONS > Features of Objects
+    Glosses: eng: fine, it-was-fine | spa: fino, quedó-fino | fra: cela-était-fin, fin | deu: es-war-fein, fein
+    Refs: Exod 30:36, Exod 32:20, Deut 9:21
+  Sense 3: "be crushed or ground" (1x)
+    Desc: Passive sense (Hofal): to be crushed, ground, or pulverized by an external agent, as grain is ground into flour.
+    Domain: PHYSICAL_ACTION > Physical Impact
+    Glosses: eng: grain | spa: se-muele | fra: [יודק] | deu: [יודק]
+    Refs: Isa 28:28
+
+=== H2161 ===
+Language: Hebrew, POS: V-Qal-Perf-1cs, Occurrences: 13, Senses: 3
+
+BDB excerpt: † זָמַם vb. consider, purpose, devise (Aramaic זְמַם in der. conjj.; cf. Arabic زَمَّ speak, talk (rare); Aramaic ܙܰܡ is sonuit, resonavit, the n. ܙܡܳܡܳܐ is tinnitus, strepitus)—only Qal Pf. זָמַם Dt 19:19 + 2 times; זָמָ֑ם La 2:17; זָֽמְמָה Pr 31:16; זַמּ֫וֹתָ Pr 30:32; זַמֹּ֫תִי Je 4:28 but also זָמַ֫מְתִּי Zc 8:14, 15; זַמֹּתִי ψ 17:3 either belongs here with irreg. accent (v. De), or is Inf. after anal. of ל״ה e.g. חַנּוֹת cf. 77:10 (Hi Ri); Checrit. n. reads זִמָּתִי; זָמָ֑מוּ ψ 31:14; Impf. יָֽזְמוּ Gn 11:6 (Ges§ 67, R. 11); on poss. Inf. זמֹּתִ֫י ψ 17:3 v. supr.; Pt. זֹמֵם ψ 37:12;— 1. 
+Senses:
+  Sense 1: "to purpose or plan" (8x)
+    Desc: To form an intention or resolve, to determine or purpose a course of action, used of both divine and human deliberate planning without inherent negative connotation.
+    Domain: MENTAL_LIFE > Think
+    Glosses: eng: He-purposed, I-have-purposed, I-purposed | spa: ha-determinado, he-pensado, lo-determiné | fra: [זמם], [זממתי], [זממתי‪‬] | deu: [זמם], [זממתי], [זממתי‪‬]
+    Refs: Gen 11:6, Ps 17:3, Jer 4:28, Jer 51:12, Lam 2:17
+  Sense 2: "to scheme or plot evil" (4x)
+    Desc: To devise a malicious plan or conspiracy against someone, carrying a distinctly negative connotation of scheming, plotting, or contriving harm.
+    Domain: MENTAL_LIFE > Think
+    Glosses: eng: he-schemed, plots, they-plotted | spa: Maquina, maquinaste, tramaron | fra: il-schemed, méditer, זמות | deu: [זמות], er-schemed, plant-Böses
+    Refs: Deut 19:19, Ps 31:13, Ps 37:12, Prov 30:32
+  Sense 3: "to consider or contemplate" (1x)
+    Desc: To think carefully about something, to evaluate or deliberate before acting, as in weighing a decision or examining a matter thoughtfully.
+    Domain: MENTAL_LIFE > Think
+    Glosses: eng: she-considers | spa: Considera | fra: זממה | deu: [זממה]
+    Refs: Prov 31:16
+
+=== H3689 ===
+Language: Hebrew, POS: N-ms, Occurrences: 13, Senses: 3
+
+BDB excerpt: † כֶּ֫סֶל n.m. 1.loins, 2. stupidity, 3. confidence (NH id. loin; Aramaic כִּסְלָא id.);— 1. loins כָּ֑סֶל Jb 15:27; pl. כְּסָלִים Lv 3:4, 10, 15; 4:9; 7:4; sf. כְּסָלַי ψ 38:8. 2. stupidity, folly כ׳ Ec 7:25 (‖ סִכְלוּת), כֵּסֶל ψ 49:14. 3. confidence, sf. כִּסְלִי Jb 31:24; כִּסְלֶ֑ךָ Pr 3:26; כִּסְלוֹ Jb 8:14; כִּסְלָם ψ 78:7.
+Senses:
+  Sense 1: "loins, flank (body part)" (7x)
+    Desc: Noun referring to the loins, flanks, or sides of the body, particularly the area around the kidneys and lower back. Arabic الخَاصِرَتَيْنِ 'the two flanks' and خاصِرَتَيَّ 'my two flanks' use the dual...
+    Domain: BODY_HEALTH > Body, Body Parts, and Body Products
+    Glosses: eng: loins, my-loins, the-loins | spa: lomos, los-lomos, mis-lomos | fra: comme-insensé, le-loins, כסל | deu: [כסל], der-loins, mein-loins
+    Refs: Lev 3:4, Lev 3:10, Lev 3:15, Lev 4:9, Lev 7:4
+  Sense 2: "confidence, trust, security" (4x)
+    Desc: Noun meaning confidence, trust, or security, often in a theological context of reliance on God or false reliance on riches. Arabic اعْتِمادُهُ 'his reliance,' ثِقَتِي 'my confidence,' and رَجَاءَهُمْ ...
+    Domain: EMOTION_ATTITUDE > Attitudes and Emotions
+    Glosses: eng: his-confidence, my-confidence, their-confidence | spa: confianza-de-ellos, mi-confianza, su-seguridad, | fra: comme-insensé, dans-ton-בכסלך-toi, mon-כסלי-moi | deu: [בכסלך], [כסלו], [כסלי]
+    Refs: Job 8:14, Job 31:24, Ps 78:7, Prov 3:26
+  Sense 3: "folly, stupidity" (2x)
+    Desc: Noun meaning folly, foolishness, or stupidity, a distinct semantic domain from both the anatomical and confidence senses. Arabic حَماقَة/الحَمَاقَةِ 'foolishness/stupidity' is unambiguous. Spanish 'ne...
+    Domain: MENTAL_LIFE > Understand
+    Glosses: eng: folly | spa: necedad | fra: comme-insensé, כסל | deu: Torheit, [כסל]
+    Refs: Ps 49:13, Eccl 7:25
+
+=== H4101 ===
+Language: Hebrew, POS: Interrog, Occurrences: 13, Senses: 3
+
+BDB excerpt: † מָה (מָא †Ezr 6:8) pron. interr. and indef. what? (BH מָה; Nab. מה; Zinj. מ; 𝔗 מא; Syriac ܡܳܐ; Arabic مَا: cf. WCG 124 f.);— 1. what? Dn 4:32 מה עבדת. 2. whatever, what (cf. BH 1 b end) Dn 2:22 ידע מה בחשׁוכא knoweth what is in darkness, Ezr 6:9: so מָה דִּי (cf. דִּי 1 b: so Nab.; Palm. מא די, מדי, Lzb306 Cooke320, 332) Dn 2:28, 29(×2), 45; Ezr 6:8 למא די תעבדון with regard to what ye shall do, 7:18 (= whatsoever). 3. with prefixes: a. כְּמָה how! Dn 3:33(×2). b. לְמָה why? (cf. BH לָמָּה) Ezr 4:22 be not slack herein: why should damage grow, etc., virtually = lest damage grow (𝔊 μή ποτε), 
+Senses:
+  Sense 1: "what? (interrogative pronoun)" (9x)
+    Desc: The interrogative pronoun 'what' used to ask about identity, nature, or content of something. Includes both standalone and conjunctive forms (S109921 'what' and S109922 'and what/whatever'). Arabic us...
+    Domain: DISCOURSE_NAMES > Discourse Referentials
+    Glosses: eng: and-what, and-whatever, what | spa: lo-que, qué, y-lo-que | fra: et-quoi, quoi? | deu: und-was, was
+    Refs: Ezra 6:9, Ezra 7:18, Dan 2:15, Dan 2:22, Dan 2:28
+  Sense 2: "how? (interrogative adverb of manner)" (2x)
+    Desc: The interrogative particle used adverbially to ask about manner or degree, meaning 'how' or 'how much.' Distinguished from the pronominal 'what' by its adverbial function. Arabic uses kam (كَمْ, 'how ...
+    Domain: PROPERTIES_RELATIONS > Comparison
+    Glosses: eng: how | spa: cuán | fra: comme-quoi? | deu: wie-viel
+    Refs: Dan 4:3, Dan 4:3
+  Sense 3: "why? (interrogative adverb of reason)" (2x)
+    Desc: The interrogative particle used to ask about cause or reason, meaning 'why' or 'for what reason.' Distinguished from both 'what' (pronominal) and 'how' (manner) by its causal function. Arabic uses lim...
+    Domain: DISCOURSE_NAMES > Discourse Referentials
+    Glosses: eng: why | spa: por-qué, ¿por-qué | fra: [למה] | deu: zu-was
+    Refs: Ezra 4:22, Ezra 7:23
+
+=== H6711 ===
+Language: Hebrew, POS: Conj-w | V-Qal-ConsecImperf-3fs, Occurrences: 13, Senses: 3
+
+BDB excerpt: † [צָחַק] vb. laugh (Arabic ضَحِكَ, laugh, Syriac ܓܚܶܟ, cf. BaES 34; v. also שׂחק);— Qal Pf. 3 fs. צָֽחֲקָה Gn 18:13, etc.; Impf. 3 ms. יִצֲחַק־ Gn 21:6, וַיִּצְחָ֑ק 17:17; 3 fs. וַתִּצְחַק 18:12;—laugh, Gn 18:12, 13, 15(×2) (J), 17:17 (P); c. ל at, concerning, 21:6. Pi. Impf. וַיְצַחֵק Ju 16:25; Inf. cstr. לְצַחֵק Ex 32:6, (בִּי) לְצַ֫חֶק בָּנוּ Gn 39:14, 17; Pt. מְצַחֵק Gn 19:14; 26:8, מְצַחֶ֑ק 21:9;— 1. jest Gn 19:14 (J). 2. sport, play Gn 21:9 (E); Ex 32:6 (J); make sport for Ju 16:25 (לִפְנֵי; ‖ וִישַׂחֶק־לָ֑נוּ); toy with (אֶת), of conjugal caresses Gn 26:8 (cf. DoughtyArab. Des. i. 231)
+Senses:
+  Sense 1: "laugh (Qal)" (6x)
+    Desc: To laugh, whether in joy, disbelief, or derision — the basic Qal sense covering Sarah's laughter at the promise, Abraham's laughter, and general expressions of laughter across all Qal inflections.
+    Domain: EMOTION_ATTITUDE > Attitudes and Emotions
+    Glosses: eng: I-laughed, and-laughed, laughed | spa: Y-rió, reirá, reí | fra: --rire, Je-rit, et-rit | deu: du-hast-gelacht, habe-ich-gelacht, hat-gelacht
+    Refs: Gen 17:17, Gen 18:12, Gen 18:13, Gen 18:15, Gen 18:15
+  Sense 2: "mock, scoff, jest (Piel)" (4x)
+    Desc: To mock, scoff, deride, or jest — the Piel sense carrying derisive or contemptuous humor, as in Ishmael mocking Isaac or Lot appearing as one who jests, attested across languages as 'mock/burlarse/मज़...
+    Domain: EMOTION_ATTITUDE > Attitudes and Emotions
+    Glosses: eng: as-jesting, mocking, to-mock | spa: burlándose, como-bromeando, para-burlarse | fra: comme-jesting, moquant, à-mock | deu: scherzend, um-Spott-zu-treiben, wie-ein-Scherzender
+    Refs: Gen 19:14, Gen 21:9, Gen 39:14, Gen 39:17
+  Sense 3: "play, sport, amuse (Piel)" (3x)
+    Desc: To play, sport, entertain, or amuse — the Piel intensive sense denoting playful activity, as in Isaac sporting with Rebekah or general festive play, attested across languages as 'play/jugar/खेलना/يَلع...
+    Domain: EMOTION_ATTITUDE > Attitudes and Emotions
+    Glosses: eng: and-amused, laughing, to-play | spa: a-jugar, riendo, y-los-divirtió | fra: et-amused, riant, à-play | deu: scherzte, und-amused, zu-play
+    Refs: Gen 26:8, Exod 32:6, Judg 16:25
+
+=== H7690 ===
+Language: Hebrew, POS: Adj-fp, Occurrences: 13, Senses: 3
+
+BDB excerpt: שַׂגִּיא adj. great, much;—abs. שׂ׳ Dn 2:6 +, fpl. שַׂגִּיאָן 2:48 Ezr 5:11;— 1. great, of image Dn 2:31 (in vision), height of tree 4:7 (id.); of honour 2:6. 2. much, fruit 4:9, 18, flesh 7:5; pl. many, years Ezr 5:11, gifts Dn 2:48. 3. as adv. exceedingly, 2:12; 5:9; 6:15, 24; 7:28.
+Senses:
+  Sense 1: "exceedingly, greatly (adverbial intensifier)" (5x)
+    Desc: Aramaic adjective used adverbially as an intensifier meaning 'exceedingly, greatly, very much.' Distinguished from the adjectival uses by its function as a sentence-level modifier of degree rather tha...
+    Domain: PROPERTIES_RELATIONS > Adequate, Qualified
+    Glosses: eng: exceedingly, greatly | spa: mucho, muy | fra: beaucoup | deu: viel
+    Refs: Dan 2:12, Dan 5:9, Dan 6:14, Dan 6:23, Dan 7:28
+  Sense 2: "abundant, much, many (quantity)" (5x)
+    Desc: Aramaic adjective expressing large quantity or number: 'abundant, much, many.' This quantitative sense appears in both singular and plural contexts. Arabic كَثِير/كَثِيرَة (much/many), Spanish abundan...
+    Domain: PROPERTIES_RELATIONS > Adequate, Qualified
+    Glosses: eng: abundant, many, much | spa: abundante, mucha, muchos | fra: [שגיאן], beaucoup | deu: [שגיאן], viel
+    Refs: Ezra 5:11, Dan 2:48, Dan 4:12, Dan 4:21, Dan 7:5
+  Sense 3: "great (in size, importance, or magnitude)" (3x)
+    Desc: Aramaic adjective denoting greatness in size, stature, or importance: 'great, large, mighty.' Distinguished from the quantitative 'much/many' sense by its qualitative focus on magnitude or significanc...
+    Domain: QUANTITY_NUMBER > Degree
+    Glosses: eng: great | spa: grande | fra: beaucoup | deu: viel
+    Refs: Dan 2:6, Dan 2:31, Dan 4:10

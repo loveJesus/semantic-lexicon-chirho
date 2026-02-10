@@ -1,0 +1,115 @@
+You are a biblical lexicographer composing glosses for a digital lexicon.
+For each lemma below, compose a JSON object. Separate objects with "---".
+
+Format for each:
+{
+  "lemma_id": "...",
+  "gloss_terse": "under 120 chars, concise definition covering the word's semantic range",
+  "gloss_readable": "2-5 sentences, 40-120 words. Don't start with 'This word'. Warm study-Bible footnote tone. Engaging, not dry.",
+  "senses": {
+    "1": "enriched 20-60 word description. Reference multilingual evidence when illuminating. Don't repeat the label verbatim.",
+    "2": "..."
+  }
+}
+
+Rules:
+- No markdown fences, just JSON objects separated by ---
+- Reference multilingual evidence naturally when it reveals something
+- gloss_readable should feel like a good study Bible footnote: helpful, clear, occasionally surprising
+- Each sense enrichment: how does the evidence support this sense? Mention 1-2 key passages when helpful.
+
+=== G3704 ===
+Language: Greek, POS: Adv, Occurrences: 53, Senses: 2
+
+BDB excerpt: ὅπως, Epic dialect also and Aeolic dialect ὅππως, Ionic dialect ὅκως, Doric dialect ὁπῶς accusative to Refs 2nd c.AD+ adverb of Manner, Relat. as, in such manner as, and with interrogative force how, in what manner, rarely indefinite, see below Refs 4th c.BC+ __B FINAL CONJUNCTION, in such a manner that, in order that. adverb of Manner, how, as: __B.I Relat. to ὥς or οὕτως (like ὡς), in such manner as, as: __B.I.1 with the ordinary Constr. of the Relat.: __B.I.1.a with indicative, ἦ τοι νόστον, ὅπως φρεσὶ σῇσι μενοινᾷς, ὥς τοι Ζεὺς τελέσειεν Refs 8th c.BC+ adverb, με τοῖον ἔθηκεν, ὅπως (for οἷ
+Senses:
+  Sense 1: "so that" (50x)
+    Desc: so that (50 occurrences across 2 original clusters)
+    Domain: PROPERTIES_RELATIONS > Relations
+    Glosses: eng: so-that, so-that-, that | spa: de-modo-que, para-que, que | fra: afin-que | deu: damit
+    Refs: Matt 2:8, Matt 2:23, Matt 5:16, Matt 5:45, Matt 6:2
+  Sense 2: "how" (3x)
+    Desc: how (3 occurrences across 2 original clusters)
+    Domain: PROPERTIES_RELATIONS > Comparison
+    Glosses: eng: how | spa: cómo, para-que | fra: afin-que | deu: damit, damit-
+    Refs: Matt 22:15, Mark 3:6, Luke 24:20
+
+=== H8163b ===
+Language: Hebrew, POS: Conj-w, Occurrences: 53, Senses: 2
+
+BDB excerpt: II. שָׂעִיר53 n.m.Nu 15:24 he-goat, buck (hairy one; NH id.);—abs. שׂ׳ Lv 4:24 +, cstr. שְׂעִיר Nu 7:16 +; pl. שְׂעִירִם Lv 16:7, 8; cstr. שְׂעִירֵי v 5 Nu 7:87;—he-goat, usually שְׂעִיר(־)עִזִּים buck of goats (v. עֵז p. 777): Gn 37:31 (J), Ez 43:22; 45:23 Lv 4:23; 9:3; 23:19 + 20 times Nu (all P); שְׂעִירֵי ע׳ Lv 16:5 Nu 7:87 (P); שׂ׳ alone = he-goat Lv 4:24 + 11 times Lv 16 (P); שְׂעִיר (הַ)חַטָּאת he-goat for sin-offering Ez 43:25 Lv 9:15 + 9 times Lv Nu; שְׂעִירֵי הַח׳ 2 Ch 29:23; in Dn 8:21 הַשּׂ׳ is prob. gloss to הַצָּפִיר (cf. Dr).
+Senses:
+  Sense 1: "male goat, he-goat" (52x)
+    Desc: A male goat used in sacrificial, ritual, or agricultural contexts, the primary and most frequent meaning of שָׂעִיר as a noun.
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: and-male-goat-of, and-male-goat-of-, male-goat- | spa: Macho-cabrío-, Y-macho-cabrío, Y-macho-cabrío-de | fra: et-bouc-de, et-bouc-de-, mâle-bouc- | deu: maennlich-Ziege-, und-maennlich-Ziege-von, und-maennlich-Ziege-von-
+    Refs: Gen 37:31, Lev 4:23, Lev 4:24, Lev 9:3, Lev 9:15
+  Sense 2: "shaggy creature, satyr" (1x)
+    Desc: A hairy or shaggy being, often understood as a wild goat-demon or satyr, an object of illicit worship or an inhabitant of desolate ruins.
+    Domain: ANIMALS > Animals
+    Glosses: eng: the-shaggy | spa: el-peludo | fra: [השעיר] | deu: [השעיר]
+    Refs: Dan 8:21
+
+=== H1945 ===
+Language: Hebrew, POS: Conj-w | Interjection, Occurrences: 51, Senses: 2
+
+BDB excerpt: הוֹי51 interj. (onomatop.; cf. ܗܳܘܳܝ = הוֹ הוֹ Am 5:16 𝔖, = הֵידָד Je 51:14 𝔖; also Mod. Aramaic ú hú, ú hú (in a lament), SoUrmia-Dial. 102.4)—expressing usually dissatisfaction and pain, Ah, Alas, Ha (not distinctly Woe! which is אוֹי): used in lamentations, 1 K 13:30 and they mourned over him (saying) הוֹי אָחִי Ah, my brother! Je 22:18 הוֹי אָחִי וְהוֹי אָחוֹת … הוֹי אָדוֹן וְהוֹי הֹדֹה, 34:5 וְהוֹי אָדוֹן יִסְפְּדוּ לָ֑ךְ (cf. הוֹ־הוֹ Am 5:16): hence Is 1:4 הוֹי גּוֹי חֹטֵא Ah! sinful nation, v 24 Ah! I will ease me of my adversaries; especially preparatory to a declaration of judgment, I
+Senses:
+  Sense 1: "woe" (50x)
+    Desc: woe, Woe, Alas (50 occurrences across 3 original clusters)
+    Domain: EMOTION_ATTITUDE > Attitudes and Emotions
+    Glosses: eng: Woe, Woe-to, woe | spa: Ay, Ay-de, ¡Ay! | fra: malheur | deu: wehe
+    Refs: 1Kgs 13:30, Isa 1:4, Isa 1:24, Isa 5:8, Isa 5:11
+  Sense 2: "ho" (1x)
+    Desc: ho (1 occurrences across 1 original clusters)
+    Domain: EMOTION_ATTITUDE > Attitudes and Emotions
+    Glosses: eng: ho | spa: Oh | fra: malheur | deu: wehe
+    Refs: Isa 55:1
+
+=== H7175 ===
+Language: Hebrew, POS: N-mp, Occurrences: 51, Senses: 2
+
+BDB excerpt: קֶ֫רֶשׁ51 n.m. Ex 26:16 board, boards;—abs. ק׳ Ex 26:18 +, קָ֑רֶשׁ v 20 +; sf. קַרְשֵׁךְ Ez 27:6; pl. קְרָשִׁים v 15 +; cstr. קַרְשֵׁי v 26 +; sf. קְרָשָׁיו 35:11 +;— †1. coll. boards, of deck Ez 27:6 (of Tyre under fig. of ship). 2. board of tabern. Ex 26:15, 16(×2) + 45 times 26–40; Nu 3:36; 4:31 (all P).
+Senses:
+  Sense 1: "frame or board of Tabernacle" (50x)
+    Desc: An upright structural frame or board used in the construction of the Tabernacle, made of acacia wood and overlaid with gold (Exodus 26, 36; Numbers 3-4).
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: frames, the-board, the-frame | spa: el-tablón, tablones, tablón | fra: cadres, le-cadre, le-cadres | deu: Rahmen, der-Brett, der-Rahmen
+    Refs: Exod 26:15, Exod 26:16, Exod 26:16, Exod 26:17, Exod 26:17
+  Sense 2: "deck of a ship" (1x)
+    Desc: The planked deck or surface of a vessel, used metaphorically of Tyre's ship in Ezekiel 27:6.
+    Domain: ARTIFACTS > Artifacts
+    Glosses: eng: your-deck | spa: tu-cubierta | fra: planche | deu: [קרשך]
+    Refs: Ezek 27:6
+
+=== G1100 ===
+Language: Greek, POS: N-AFP, Occurrences: 50, Senses: 2
+
+BDB excerpt: γλῶσσα, Ionic dialect γλάσσα, Refs 3rd c.BC+, Attic dialect γλῶττα, ης, ἡ, tongue, Refs 8th c.BC+ __b γ. λάρυγγος, ={γλωττίς}, larynx, Refs 2nd c.AD+ __2 tongue, as the organ of speech, γλώσσης χάριν through love of talking, Refs 8th c.BC+; γλώσσῃ δεινός, θρασύς, Refs 5th c.BC+ by frankness of speech, Refs 6th c.BC+, of fraud opposed to violence, Refs 8th c.BC+; also, by word of mouth, Refs 5th c.BC+; τὰ γλώσσης ἄπο, i.e. our words, Refs 5th c.BC+; ἀπὸ γ. φράσω by heart, opposed to γράμμασιν, Refs 5th c.BC+; οὐκ ἀπὸ γλώσσης not from mere word of mouth, but after full argument, Refs 4th c.BC+; 
+Senses:
+  Sense 1: "tongue (body part)" (32x)
+    Desc: The physical organ of the tongue in the mouth. Occurrences include Mk 7:33, 35 (healing of the man whose tongue was loosed), Lk 1:64 (Zechariah's tongue loosed), Lk 16:24 (rich man begging to cool his...
+    Domain: BODY_HEALTH > Body, Body Parts, and Body Products
+    Glosses: eng: a-tongue, tongue | spa: lengua | fra: langue | deu: Zunge
+    Refs: Mark 7:33, Mark 7:35, Luke 1:64, Luke 16:24, Acts 2:3
+  Sense 2: "tongue, ecstatic utterance" (18x)
+    Desc: Speaking in tongues as a spiritual gift (glossolalia), the charismatic phenomenon of Spirit-empowered utterance in unlearned languages or ecstatic speech. Found primarily in Acts (2:4, 10:46, 19:6) an...
+    Domain: BODY_HEALTH > Body, Body Parts, and Body Products
+    Glosses: eng: in-a-tongue, in-tongues, of-tongues | spa: de-lenguas, en-lengua, en-lenguas | fra: langue | deu: Zunge
+    Refs: Mark 16:17, Acts 10:46, Acts 19:6, 1Cor 12:10, 1Cor 12:10
+
+=== G3880 ===
+Language: Greek, POS: V-APA-NMP, Occurrences: 50, Senses: 2
+
+BDB excerpt: παραλαμβάνω (Cretan dialect παλλαμβάνω Refs 3rd c.BC+future -λήψομαι, Ionic dialect -λάμψομαιRefs 5th c.BC+:—receive from another, especially of persons succeeding to an office, etc., [τὴν βασιληΐην] Hdt.[same place],Refs 5th c.BC+; τοῖς παραλαμβάνουσι (i.e. τὴν βασιλείαν) the successors, Refs 5th c.BC+; νόμον ὄντα παραλαβόντες, opposed to θέντες, Refs 5th c.BC+; of inherited rites or customs, Refs 5th c.BC+; of persons succeeding by inheritance, Refs 5th c.BC+; παρὰ τοῦ πατρὸς πολλὴν οὐσίαν π. Refs 4th c.BC+; opposed to ἐπικτᾶσθαι, Refs 5th c.BC+; π. ἀράς inherit curses, Refs 5th c.BC+; of of
+Senses:
+  Sense 1: "take along, bring with" (36x)
+    Desc: To take someone or something along with oneself, escort, or bring to a place, including passive uses where one is taken away.
+    Domain: ECONOMICS_PROPERTY > Possess, Transfer, Exchange
+    Glosses: eng: having-taken, he-takes-along, takes-along | spa: habiendo-tomado-aparte, habiéndolo-tomado, recibió | fra: prendre-avec, recevoir | deu: empfangen, nimmt-zu-sich
+    Refs: Matt 1:20, Matt 1:24, Matt 2:13, Matt 2:14, Matt 2:20
+  Sense 2: "receive, accept what is transmitted" (14x)
+    Desc: To receive or accept something passed on by another, such as a tradition, teaching, authority, or message, including welcoming a person in the sense of acceptance.
+    Domain: ECONOMICS_PROPERTY > Possess, Transfer, Exchange
+    Glosses: eng: I-received, having-received, received | spa: habiendo-recibido, lo-recibí, recibiendo | fra: prendre-avec, recevoir | deu: empfangen
+    Refs: Mark 7:4, John 1:11, 1Cor 11:23, 1Cor 15:1, 1Cor 15:3

@@ -1,0 +1,143 @@
+You are a biblical lexicographer composing glosses for a digital lexicon.
+For each lemma below, compose a JSON object. Separate objects with "---".
+
+Format for each:
+{
+  "lemma_id": "...",
+  "gloss_terse": "under 120 chars, concise definition covering the word's semantic range",
+  "gloss_readable": "2-5 sentences, 40-120 words. Don't start with 'This word'. Warm study-Bible footnote tone. Engaging, not dry.",
+  "senses": {
+    "1": "enriched 20-60 word description. Reference multilingual evidence when illuminating. Don't repeat the label verbatim.",
+    "2": "..."
+  }
+}
+
+Rules:
+- No markdown fences, just JSON objects separated by ---
+- Reference multilingual evidence naturally when it reveals something
+- gloss_readable should feel like a good study Bible footnote: helpful, clear, occasionally surprising
+- Each sense enrichment: how does the evidence support this sense? Mention 1-2 key passages when helpful.
+
+=== H5006 ===
+Language: Hebrew, POS: Prep-m | V-Hitpael-Prtcpl-ms, Occurrences: 25, Senses: 5
+
+BDB excerpt: † נָאַץ vb. contemn, spurn (NH id., Pi.; 𝔗 נִיאוּצָא reviling);— Qal Pf. נ׳ Pr 5:12; 3 pl. נָֽאֲצוּ Pr 1:30; נָאָ֑צוּ ψ 107:11; Impf. יִנְאַץ Pr 15:5; יִנְאָצ֑וּן Je 33:24, etc.;—contemn, subj. wicked and foolish, obj. תּוֹכַחַת Pr 1:30; 5:12; obj. מוּסָר Pr 15:5; עֵצָה ψ 107:11; Je 33:24 (obj. עַם י׳; cf. Gie); subj. י׳ Dt 32:19 Je 14:21 La 2:6. Pi. Pf. נִאֵץ ψ 10:3, 13; נִאַ֫צְתָּ 2 S 12:14, etc.; Impf. יְנָאֵץ ψ 74:10, sf. יְנַאֲצֻנִי Nu 14:11; Inf. abs. נִאֵץ (Sta§ 221) 2 S 12:14; Pt. sf. מְנָֽאֲצַי Nu 14:23; מְנַאֲצַי Je 23:17; מְנַאֲצָ֑יִךְ Is 60:14;—contemn, spurn, subj.men, obj. י׳, et
+Senses:
+  Sense 1: "Piel: to despise, show contempt" (11x)
+    Desc: Intensive stem expressing strong scorn or contempt directed at persons, treating them with disdain or dishonor.
+    Domain: MORAL_QUALITY > Moral and Ethical Qualities
+    Glosses: eng: and-despise-me, despised, does-despise | spa: a-los-que-me-desprecian, desprecia, despreciaron | fra: et-despise-moi, fera-despise-moi, mon-despisers | deu: despised, er-despises, mein-despisers
+    Refs: Num 14:11, Num 14:23, Num 16:30, Deut 31:20, 1Sam 2:17
+  Sense 2: "Qal: to despise, spurn" (8x)
+    Desc: Basic stem expressing contempt, rejection, or disdain toward someone or something, treating them as worthless.
+    Domain: MORAL_QUALITY > Moral and Ethical Qualities
+    Glosses: eng: and-rejected, and-spurned, despises | spa: desprecia, desprecian, despreciaron | fra: et-mépriser, et-spurned, mépriser | deu: [וינאץ], [ינאץ], [נאץ]
+    Refs: Deut 32:19, Ps 107:11, Prov 1:30, Prov 5:12, Prov 15:5
+  Sense 3: "Piel: to blaspheme, revile God" (4x)
+    Desc: Intensive stem expressing contemptuous speech or attitude directed specifically against God or the Holy One, amounting to blasphemy.
+    Domain: MORAL_QUALITY > Moral and Ethical Qualities
+    Glosses: eng: has-spurned, indeed-scorning, will-spurn | spa: blasfemará, ciertamente, ha-blasfemado | fra: en-effet-scorning, mépriser, tu-ai-scorned | deu: du-habe-scorned, hat-spurned, wahrlich-scorning
+    Refs: 2Sam 12:14, 2Sam 12:14, Ps 74:10, Ps 74:18
+  Sense 4: "Hifil: to blossom, flourish" (1x)
+    Desc: Causative stem with an entirely distinct meaning of blooming or blossoming, likely from a homographic root distinct from the primary sense of contempt.
+    Domain: PLANTS_AGRICULTURE > Plants
+    Glosses: eng: and-blossoms | spa: y-florezca | fra: et-mépriser | deu: [וינאץ]
+    Refs: Eccl 12:5
+  Sense 5: "Hitpael: to be blasphemed" (1x)
+    Desc: Reflexive-passive stem indicating that God's name or honor is being blasphemed or treated with contempt by others.
+    Domain: MORAL_QUALITY > Moral and Ethical Qualities
+    Glosses: eng: is-blasphemed | spa: es-blasfemado | fra: mépriser | deu: schmaehen
+    Refs: Isa 52:5
+
+=== H6342 ===
+Language: Hebrew, POS: V-Qal-Perf-1cs, Occurrences: 25, Senses: 5
+
+BDB excerpt: † פָּחַד vb. dread, be in dread, in awe (NH Hithp. (rare), Ecclus 41:12 Imv. פחד על fear for; 𝔗 פַּחְדָּא n.);— Qal Pf. 3 ms. פָּחַד ψ 119:161, וּפ׳ consec. Is 19:16; 60:5; 1 s. פָּחַדְתִּי Jb 3:25, etc.; Impf. 3 ms. יִפְחָ֑ד Is 19:17; 2 ms. תִּפְחָ֑ד Dt 28:67 +, etc.;— 1. be in dread, abs. Dt 28:66; Is 12:2; 33:14; 44:8, 11 ψ 78:53; Pr 3:24; לֹא פ׳ Je 36:24 sign of callousness; c. acc. cogn. פַּחַד Dt 28:67; Jb 3:25 ψ 14:5 = 53:6; c. מִן pers. Is 19:37 Jb 23:15 ψ 27:1 (‖ יָרֵא), cf. 119:161, and (c. מִפְּנֵי) Is 19:16; c. עַל rei Je 33:9 (+ רָֽגְזוּ); c. אֶל, pregn., turn in dread to each oth
+Senses:
+  Sense 1: "Qal: to dread, be afraid" (16x)
+    Desc: General fear or dread directed at a threat, danger, or powerful entity, covering the basic Qal meaning of pachad across all grammatical persons and numbers.
+    Domain: EMOTION_ATTITUDE > Attitudes and Emotions
+    Glosses: eng: Are-terrified, I-dreaded, I-will-fear | spa: temerás, temeré, temieron | fra: et-terreur, et-trembler, et-tu-dread | deu: [ואפחד], [ופחדו], [פחדתי]
+    Refs: Deut 28:66, Deut 28:67, Job 3:25, Job 23:15, Ps 14:5
+  Sense 2: "Qal: to tremble, be terrified" (5x)
+    Desc: Intense physical trembling, shaking, or heart-pounding terror, emphasizing the somatic response of dread rather than the cognitive state of fear.
+    Domain: EMOTION_ATTITUDE > Attitudes and Emotions
+    Glosses: eng: and-will-tremble, dread, shall-I-be-afraid | spa: teman, temblaré, temerán | fra: et-terreur, trembler | deu: [יפחדו], erschrecken, soll-ich-sein-afraid
+    Refs: Ps 27:1, Isa 44:8, Isa 44:11, Isa 60:5, Mic 7:17
+  Sense 3: "Piel: to be in great fear" (2x)
+    Desc: Intensive or habitual fear, expressing a sustained or heightened state of dread beyond the basic Qal sense, characteristic of the Piel stem's intensifying function.
+    Domain: EMOTION_ATTITUDE > Attitudes and Emotions
+    Glosses: eng: and-you-fear, who-fears | spa: que-siempre-teme, y-temiste | fra: et-trembler, trembler | deu: und-erschrecken, von-Schrecken
+    Refs: Prov 28:14, Isa 51:13
+  Sense 4: "Qal: to stand in awe" (1x)
+    Desc: Reverential fear or awe before the divine or something majestic, where the dread carries a sense of holy reverence rather than simple terror.
+    Domain: EMOTION_ATTITUDE > Attitudes and Emotions
+    Glosses: eng: is-in-awe | spa: tembló | fra: trembler | deu: ist-in-Ehrfurcht
+    Refs: Ps 119:161
+  Sense 5: "Hifil: to cause to tremble" (1x)
+    Desc: Causative sense meaning to make someone tremble or to terrify, expressing the agent's role in producing fear or trembling in another.
+    Domain: EMOTION_ATTITUDE > Attitudes and Emotions
+    Glosses: eng: it-made-to-tremble | spa: hizo-temblar | fra: trembler | deu: [הפחיד]
+    Refs: Job 4:14
+
+=== H6403 ===
+Language: Hebrew, POS: V-Piel-Imperf-3fs, Occurrences: 25, Senses: 5
+
+BDB excerpt: † [פָּלַט] vb. escape (NH id.; Ph. in n.pr.; Arabic فلت iv. escape, Vulg. Ar. فلط; Old Aramaic פלט Pa. rescue, 𝔗 פְּלַט, Syriac ܦܠܰܛ );— Qal Pf. 3 pl. consec. וּפָֽלְטוּ Ez 7:16 and (if) escapers of them escape. Pi. causat.: Impf. 3 ms. sf. יְפַלְּטֵם; 2 ms. תְּפַלֵּט Mi 6:14, etc.; Imv. ms. פַּלְּטָה ψ 17:13, etc.; Pt. sf. מְפַלְּטִי 18:3 +;— 1. bring into security Mi 6:14; especially of י׳, deliver, c. acc. pers., ψ 22:5, 9; 31:2; 37:40; 71:2 (+ הִצִּיל), 82:4; 91:14; + מִן from 2 S 22:44 = ψ 18:44, ψ 18:49 (מוֹצִיא ‖ 2 S 22:49), 17:13; 37:40; 43:1; 71:4; pt. c. sf., my deliverer 2 S 22:2 = 
+Senses:
+  Sense 1: "deliver, rescue (Piel)" (14x)
+    Desc: To deliver or rescue someone from danger, enemies, or distress, used in the Piel stem as a causative action of setting free.
+    Domain: MOVEMENT > Linear Movement
+    Glosses: eng: He-delivers-them, and-I-will-deliver-him, and-You-deliver-me | spa: Librad-, Y-me-libraste, escapes | fra: délivrer, et-Tu-délivre-moi, et-délivrer | deu: [תפלט], du-errettet-mich, er-errettet-ihnen
+    Refs: 2Sam 22:44, Ps 17:13, Ps 18:43, Ps 22:4, Ps 22:8
+  Sense 2: "deliverer (substantive participle)" (6x)
+    Desc: The Piel participle used as a substantive noun meaning 'deliverer, rescuer,' typically as a divine epithet for God.
+    Domain: MOVEMENT > Linear Movement
+    Glosses: eng: and-my-deliverer, my-deliverer | spa: mi-libertador, y-libertador-mío-, y-mi-libertador | fra: de-délivrer, et-de-délivrer, et-mon-libérateur | deu: mein-deliverer, und-mein-deliverer
+    Refs: 2Sam 22:2, Ps 18:2, Ps 18:48, Ps 40:17, Ps 70:5
+  Sense 3: "escape, flee (Qal/reflexive)" (2x)
+    Desc: To escape or get away from danger, used intransitively in the Qal stem or reflexively in the Piel cohortative.
+    Domain: DANGER_DELIVERANCE > Danger, Risk, Safe, Save
+    Glosses: eng: and-I-would-be-delivered, and-shall-escape | spa: Y-escaparán, y-escaparía | fra: et-délivrer, et-ואפלטה | deu: [ואפלטה], [ופלטו]
+    Refs: Job 23:7, Ezek 7:16
+  Sense 4: "carry off, snatch away (Hifil)" (2x)
+    Desc: To carry off or snatch away, used in the Hifil stem with the sense of removing or taking away forcibly.
+    Domain: MOVEMENT > Linear Movement
+    Glosses: eng: and-he-carries-off, preserve | spa: escaparás, y-se-la-llevará | fra: [ויפליט], délivrer | deu: [ויפליט], [תפליט]
+    Refs: Isa 5:29, Mic 6:14
+  Sense 5: "bring forth, deliver (birth)" (1x)
+    Desc: To bring forth or deliver a child, a specialized physical sense of causing to come out, distinct from rescue.
+    Domain: BODY_HEALTH > Physiological Processes and States
+    Glosses: eng: delivers | spa: da-a-luz | fra: תפלט | deu: [תפלט]
+    Refs: Job 21:10
+
+=== H6601b ===
+Language: Hebrew, POS: V-Qal-Imperf-3ms, Occurrences: 25, Senses: 5
+
+BDB excerpt: † [פָּתָה] vb. denom. be simple (NH Pi. entice);— Qal Impf. 3 ms. יִפְתֶּה Dt 11:16; וַיִּפְתְּ Jb 31:27; Pt. פֹּתֶה Jb 5:2 Pr 20:19; f. פּוֹתֶה Ho 7:11;— 1. be open-minded(?), simple Jb 5:2; יוֹנָה פוֹתָה Ho 7:11 silly dove; פֹּתֶה שְׂפָתָיו Pr 20:19 one foolish as to his lips (most, openeth wide his lips). 2. be enticed deceived Dt 11:16 Jb 31:27. Niph. Pf. 3 ms. נִפְתָּה Jb 31:9; Impf. 1 s. וָאֶפָּת Je 20:7;—be deceived Je 20:7; c. עַל enticed unto Jb 31:9. Piel Pf. 2 ms. פִּתִּיתָ Pr 24:28; sf. פִּתִּיתַנִי Je 20:7; 1 s. פִּתֵּיתִי Ez 14:9; Impf. 3 ms. יְפַתֶּה Ex 22:15 +, etc.; Imv. פַּתִ
+Senses:
+  Sense 1: "entice, persuade, allure (Piel)" (12x)
+    Desc: Piel active: to entice, persuade, or allure someone, often with seductive or flattering intent, used of human agents attempting to influence another's will (1 Kgs 22:20-22, Judg 14:15, 16:5, Hos 2:16,...
+    Domain: PHYSICAL_ACTION > Physical Impact
+    Glosses: eng: alluring-her, entice, entice-you | spa: Persuadirás, Sedúcelo, la-seduciré | fra: [אפתנו], [יפתה], [תפתה] | deu: [אפתנו], [יפתה], [יפתוך]
+    Refs: Exod 22:16, Judg 14:15, Judg 16:5, 1Kgs 22:20, 1Kgs 22:21
+  Sense 2: "deceive, mislead (Piel)" (4x)
+    Desc: Piel active with clearly negative connotation: to deceive, mislead, or delude someone, where the persuasion involves falsehood or treachery (Jer 20:7 'You deceived me', 2 Chr 18:19-21, Ps 78:36 'they ...
+    Domain: BODY_HEALTH > Physiological Processes and States
+    Glosses: eng: You-deceived-me, and-they-flattered-him, have-deceived | spa: Me-sedujiste, Y-lo-lisonjeaban, engañé | fra: [פתיתני], et-séduire, séduire | deu: [פתיתי], [פתיתני], und-sie-flattered-ihn
+    Refs: 2Sam 3:25, Ps 78:36, Jer 20:7, Ezek 14:9
+  Sense 3: "be enticed, be deceived (Nifal/Qal passive)" (4x)
+    Desc: Nifal and Qal passive/reflexive: to be enticed or let oneself be deceived, often with the nuance of culpable gullibility (Jer 20:7 'and I was deceived', Job 31:27, Deut 11:16).
+    Domain: FAITH_BELIEF > Hold a View, Believe, Trust
+    Glosses: eng: and-I-was-deceived, and-was-enticed, be-deceived | spa: Y-se-sedujo, se-sedujo, sea-seducido | fra: [ואפת], et-séduire, séduire | deu: [ואפת], [ויפת], [נפתה]
+    Refs: Deut 11:16, Job 31:9, Job 31:27, Jer 20:7
+  Sense 4: "be persuaded, be deceived (Pual)" (3x)
+    Desc: Pual passive: to be persuaded, enticed, or deceived by another, indicating the subject as the recipient of deceptive or persuasive action (Ezek 14:9, Prov 25:15).
+    Domain: FAITH_BELIEF > Hold a View, Believe, Trust
+    Glosses: eng: he-is-deceived, he-will-be-deceived, is-persuaded | spa: es-engañado, será-persuadido, será-seducido | fra: [יפתה], séduire | deu: [יפתה]
+    Refs: Prov 25:15, Jer 20:10, Ezek 14:9
+  Sense 5: "simple, naive (Qal participle)" (2x)
+    Desc: Qal participle used as substantive adjective: simple, naive, gullible, easily led astray — describing a person lacking discernment who is susceptible to enticement (Prov 7:7, Hos 7:11).
+    Domain: MENTAL_LIFE > Understand
+    Glosses: eng: and-the-simple, silly | spa: seducida, y-al-simple | fra: et-séduire, séduire | deu: [ופתה], [פותה]
+    Refs: Job 5:2, Hos 7:11

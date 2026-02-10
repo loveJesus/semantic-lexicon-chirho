@@ -1,0 +1,141 @@
+You are a biblical lexicographer composing glosses for a digital lexicon.
+For each lemma below, compose a JSON object. Separate objects with "---".
+
+Format for each:
+{
+  "lemma_id": "...",
+  "gloss_terse": "under 120 chars, concise definition covering the word's semantic range",
+  "gloss_readable": "2-5 sentences, 40-120 words. Don't start with 'This word'. Warm study-Bible footnote tone. Engaging, not dry.",
+  "senses": {
+    "1": "enriched 20-60 word description. Reference multilingual evidence when illuminating. Don't repeat the label verbatim.",
+    "2": "..."
+  }
+}
+
+Rules:
+- No markdown fences, just JSON objects separated by ---
+- Reference multilingual evidence naturally when it reveals something
+- gloss_readable should feel like a good study Bible footnote: helpful, clear, occasionally surprising
+- Each sense enrichment: how does the evidence support this sense? Mention 1-2 key passages when helpful.
+
+=== H5703 ===
+Language: Hebrew, POS: Prep, Occurrences: 51, Senses: 5
+
+BDB excerpt: † I. עַד and וָעֶ֑ד (so always) n.m. perpetuity ( = advancing time, cf. Assyrian adû, time, at the present time);— 1. of past time: מִנִּי עַד Jb 20:4; הררי עד Hb 3:6 ancient mountains (cf. עולם 1) so Gn 49:26 (read הַרְרֵי עַד for הוֹרַ֔י עַד). 2. of future time, לָעַד (usually לָעַ֑ד) for ever: a. during lifetime, of king ψ 21:7 Pr 29:14; of others ψ 9:19; 22:27; 61:9 Pr 12:19. b. of things, לָעַד בַּצּוּר יֵחָֽצֵב֑וּן Jb 19:24. c. of continuous existence, of nations, גְּבֶרֶת עַד (of Babylon, cf. עולם 2 c) Is 47:7 (yet v. iii. עַד II 3); anger, לעד Am 1:11; elsewhere עֲדֵי עַד ψ 83:18; 92:8
+Senses:
+  Sense 1: "perpetuity, forever (future)" (40x)
+    Desc: Temporal perpetuity directed toward the future, meaning 'forever, evermore,' often in the idiom לְעוֹלָם וָעֶד 'forever and ever' or standing alone as לָעַד 'for ever.'
+    Domain: TIME > Time
+    Glosses: eng: forever | spa: para-siempre | fra: [לעד], jusqu'à, pour-jusqu'à | deu: [לעד], ewiglich, zu-bis
+    Refs: Exod 15:18, 1Chr 28:9, Job 19:24, Ps 9:5, Ps 9:18
+  Sense 2: "unto, until, as far as" (7x)
+    Desc: Prepositional use indicating a spatial or temporal endpoint or limit, meaning 'to, unto, until, as far as, up to.'
+    Domain: TIME > Time
+    Glosses: eng: for, to, until | spa: hasta, para-, para-siempre | fra: à, à-jamais | deu: bis, für, zu
+    Refs: Num 24:20, Num 24:24, 2Sam 3:28, Ps 83:17, Ps 92:7
+  Sense 3: "antiquity, remote past" (2x)
+    Desc: Past-directed temporal reference meaning 'of old, from antiquity,' denoting a time in the remote past.
+    Domain: TIME > Time
+    Glosses: eng: antiquity, eternity | spa: la-eternidad, siempre, | fra: jusqu'à, עד | deu: bis
+    Refs: Job 20:4, Hab 3:6
+  Sense 4: "Eternity (in divine title)" (1x)
+    Desc: Used as the nomen rectum in the messianic title אֲבִי־עַד 'Father of Eternity' (Isa 9:5), designating everlasting dominion.
+    Domain: TIME > Time
+    Glosses: eng: Father-of-Eternity | spa: Avi-Ad | fra: éternité | deu: [אביעד]
+    Refs: Isa 9:6
+  Sense 5: "eternity (abstract concept)" (1x)
+    Desc: The abstract noun sense of boundless or unending time, 'eternity,' without specific past or future orientation.
+    Domain: TIME > Time
+    Glosses: eng: eternity | spa: la-eternidad | fra: jusqu’à | deu: bis
+    Refs: Isa 57:15
+
+=== H8582 ===
+Language: Hebrew, POS: V-Hifil-Perf-3cp, Occurrences: 51, Senses: 5
+
+BDB excerpt: † תָּעָה vb. err (‖ form of טָעָה, q.v.; Aramaic (sometimes) תְּעָא, תְּעִי id.; NH = BH (rare));— Qal Pf. 3 ms. ת׳ Is 21:4; 1 s. תָּעִ֫יתִי ψ 119:110, 176, etc.; Impf. 3 fs. תֵּתַע Gn 21:14 Pr 7:25; 3 mpl. יִתְעוּ Is 35:8 +; Inf. cstr. תְּעוֹת Ez 44:10 +; Pt. תֹּעֶה Gn 37:15 +, etc.;— 1. physically, wander about, abs. Ex 23:4 (E) Is 35:8; 53:6; Jb 38:41 ψ 119:176;;c.; ב loc. Gn 21:14; 37:15 (JE), Pr 7:25 ψ 107:4;;c.; ל loc. Is 47:15; acc. loc. 16:8. 2. of intoxication,;c.; בְּ of wine Is 28:7; מן of wine v 7; fig. of perplexity, subj. לבב 21:4. 3. ethically, abs. Ez 44:10; 48:11(×3) ψ 58:4 pr
+Senses:
+  Sense 1: "lead astray, cause to err" (22x)
+    Desc: To cause someone to wander from the right way, whether by deception, false teaching, or divine judgment; the causative counterpart of going astray (Hifil).
+    Domain: FAITH_BELIEF > Hold a View, Believe, Trust
+    Glosses: eng: (you-have-gone-astray), [ketiv:you-have-deceived], and-He-makes-them-wander | spa: e-hizo-errar, han-hecho-errar, hicieron-errar | fra: [ויתע], caused-à-errer-moi, errer | deu: [המתעים], [ויתעום], [ויתעם]
+    Refs: Gen 20:13, 2Kgs 21:9, 2Chr 33:9, Job 12:24, Job 12:25
+  Sense 2: "go astray, err morally" (19x)
+    Desc: To stray from the right path in a moral or spiritual sense, erring from God's ways or truth (Qal).
+    Domain: FAITH_BELIEF > Hold a View, Believe, Trust
+    Glosses: eng: I-have-strayed, I-strayed, go-astray | spa: Anduve-errante, en-errar-de, en-extravío-de | fra: errant, errer, s'égarer | deu: [יתעו], [תתע], going-astray
+    Refs: Exod 23:4, Ps 58:3, Ps 95:10, Ps 119:110, Ps 119:176
+  Sense 3: "wander, roam physically" (6x)
+    Desc: To move about aimlessly without a fixed course, describing physical wandering of persons or animals (Qal).
+    Domain: FAITH_BELIEF > Hold a View, Believe, Trust
+    Glosses: eng: and-wandered, they-strayed, they-wander | spa: Erró, Vagaron, vagan | fra: errant, et-erra, s'égarer | deu: [יתעו], irren, irrte
+    Refs: Gen 21:14, Gen 37:15, Job 38:41, Ps 107:4, Isa 16:8
+  Sense 4: "stagger, reel" (3x)
+    Desc: To totter or reel as if intoxicated, describing unsteady physical movement often caused by drunkenness or divine judgment (Qal/Nifal).
+    Domain: FAITH_BELIEF > Hold a View, Believe, Trust
+    Glosses: eng: as-staggering-of, reel | spa: como-tambalearse-de, se-extraviaron | fra: s’égarer | deu: irren
+    Refs: Isa 19:14, Isa 28:7, Isa 28:7
+  Sense 5: "?" (1x)
+    Domain: FAITH_BELIEF > Hold a View, Believe, Trust
+    Glosses: eng: deceived | spa: engañado | fra: égarer | deu: [נתעה]
+    Refs: Job 15:31
+
+=== H4148 ===
+Language: Hebrew, POS: N-ms, Occurrences: 50, Senses: 5
+
+BDB excerpt: † מוּסָר n.m. Pr 15:10 discipline (of the moral nature), chastening, correction;—מ׳ Je 2:30 + 31 times (Ez 5:15 del. Co); cstr. מוּסַר Dt 11:2 + 14 times (for Jb 12:18 see אסר); sf. מוּסָרִי Pr 8:10; מוּסָֽרְךָ Is 26:16; מֹסָרָם Jb 33:16 (for מֻסָרָם Di);— 1. a. discipline, correction, of God, Dt 11:2 מוּסַר י׳ the discipline of י׳ (of Y.’s wonders, as exercising a disciplinary, educating influence upon Israel, cf. Dr); לקח מ׳ Je 17:23; 32:33; 35:13 Zp 3:2, 7; ψ 50:17 Jb 33:16; 36:10; מ׳ כְּלִמָּתִי the correction of (i.e. which leadeth to) my shame Jb 20:3. b. מ׳ הבלים עֵץ הוּא the discipline
+Senses:
+  Sense 1: "moral discipline and instruction" (37x)
+    Desc: The formative training of character through teaching, guidance, and habituation in wisdom and righteousness — the primary sense in Proverbs and wisdom literature.
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: discipline, discipline-of, heeds-discipline-of | spa: Disciplina, Disciplina-de, corrección-de | fra: discipline | deu: Zucht
+    Refs: Job 5:17, Job 36:10, Ps 50:17, Prov 1:2, Prov 1:3
+  Sense 2: "correction and chastisement" (9x)
+    Desc: Corrective punishment or reproof administered to reform behavior, emphasizing the punitive or rebuking aspect of discipline rather than its didactic content.
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: chastisement-of, chastiser, discipline | spa: La-reprensión-de, castigo, castigo-de | fra: châtiment, correction, discipline | deu: Zucht
+    Refs: Job 20:3, Isa 53:5, Jer 2:30, Jer 5:3, Jer 7:28
+  Sense 3: "warning and admonition" (2x)
+    Desc: A cautionary message or admonition intended to avert wrongdoing, distinct from corrective punishment after the fact.
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: discipline-of, warning | spa: advertencia, disciplina-de | fra: châtiment, discipline-de | deu: [מוסר], discipline-von
+    Refs: Deut 11:2, Ezek 5:15
+  Sense 4: "didactic instruction" (1x)
+    Desc: The content of what is taught or learned, pure teaching or doctrine apart from the corrective aspect, as indicated by Arabic تعليم rather than تأديب.
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: the-instruction-of | spa: instrucción-de | fra: correction | deu: Zucht
+    Refs: Jer 10:8
+  Sense 5: "bond or restraint" (1x)
+    Desc: A physical or metaphorical fetter, bond, or yoke of restraint, derived from the binding sense of the root יסר (as in Jeremiah 5:5).
+    Domain: PROPERTIES_RELATIONS > Nature, Class, Example
+    Glosses: eng: bond-of | spa: El-lazo-de | fra: discipline | deu: Zucht
+    Refs: Job 12:18
+
+=== H5381 ===
+Language: Hebrew, POS: V-Hifil-Perf-3cp | 1cs, Occurrences: 50, Senses: 5
+
+BDB excerpt: † [נָשַׂג] vb. only Hiph. reach, overtake (Ecclus 14:13 והשיגת ידך, 35:10 ובהשגת יד (cf. Schechter on 14:13), cf. 3 infr.; ישיג מענה 32:14 shall obtain an answer);— Hiph. Pf. 3 ms. וְהִשִּׂיג consec. Lv 26:5, sf. וְהִשִּׂיגוֹ consec. Dt 19:6; 2 ms. sf. וְהִשֵּׂגְתָּם consec. Gn 44:4, etc.; Impf. יַשִּׂיג Lv 26:5, וַיַּשֵּׂג Gn 31:25, sf. וַיַּשִּׂגֵם Gn 44:6, etc.; Inf. abs. הַשֵּׂג 1 S 30:8; Pt. מַשִּׂין 1 S 14:26, sf. מַשִּׂיגֵ֫הוּ Jb 41:18; f. מַשֶּׂגֶת Lv 14:21 1 Ch 21:12 (but read וְאִם הֱיוֹת as ‖ 2 S 24:13 We Sm Kit);— 1. overtake, c. acc., often after רָדַף: a. lit. Gn 31:25 (E), 44:4,
+Senses:
+  Sense 1: "overtake in pursuit" (28x)
+    Desc: To catch up with and seize someone who is fleeing or being pursued, often in military or judicial contexts.
+    Domain: DISCOURSE_NAMES > Discourse Referentials
+    Glosses: eng: I-will-overtake, and-he-overtake-us, and-let-him-overtake | spa: Lo-alcanzan, Y-alcanzó, alcanzando | fra: Je---rattraper, [למשגת], atteindre | deu: [השיגו], [השיגוה], [וישגו]
+    Refs: Gen 31:25, Gen 44:4, Gen 44:6, Exod 14:9, Exod 15:9
+  Sense 2: "afford or suffice" (10x)
+    Desc: To have one's hand reach far enough, indicating economic ability or sufficiency to afford something, especially in Levitical laws of offerings.
+    Domain: ECONOMICS_PROPERTY > Possess, Transfer, Exchange
+    Glosses: eng: attaining, attains, can-afford | spa: alcance, alcanza, si-alcanza | fra: attaining, atteindre, atteint | deu: [תשיג], attaining, attains
+    Refs: Lev 14:21, Lev 14:22, Lev 14:30, Lev 14:31, Lev 14:32
+  Sense 3: "reach or arrive at" (9x)
+    Desc: To extend to or arrive at a certain point, level, or destination, often of time periods, boundaries, or abstract goals.
+    Domain: ECONOMICS_PROPERTY > Possess, Transfer, Exchange
+    Glosses: eng: One-reaching-him, and-reaches, and-will-reach | spa: El-que-lo-alcanza, Y-alcanzará, alcanzando | fra: atteignant, atteignit, atteindre | deu: [ישיגו], [משיגהו], [תשיגנו]
+    Refs: Gen 47:9, Lev 5:11, Lev 25:26, Lev 26:5, Lev 26:5
+  Sense 4: "obtain gladness or blessing" (2x)
+    Desc: To acquire or gain possession of something desirable, especially joy and gladness overtaking the redeemed in prophetic promises.
+    Domain: ECONOMICS_PROPERTY > Possess, Transfer, Exchange
+    Glosses: eng: they-shall-obtain, they-will-obtain | spa: alcanzarán | fra: atteindre | deu: [ישיגו], [ישיגון]
+    Refs: Isa 35:10, Isa 51:11
+  Sense 5: "?" (1x)
+    Domain: ECONOMICS_PROPERTY > Possess, Transfer, Exchange
+    Glosses: eng: they-move | spa: mueven; | fra: ישיגו | deu: [ישיגו]
+    Refs: Job 24:2
