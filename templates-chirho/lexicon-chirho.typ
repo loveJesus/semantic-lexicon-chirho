@@ -31,7 +31,7 @@
 )
 
 #set text(
-  font: ("New Computer Modern", "Noto Sans Syriac", "Apple SD Gothic Neo"),
+  font: ("New Computer Modern", "Ezra SIL", "Gentium Plus", "Noto Sans Syriac"),
   size: 8.5pt,
   lang: "en",
   fallback: true,
@@ -137,9 +137,9 @@
   {
     if l-chirho.headwordChirho != "" {
       if l-chirho.languageChirho == "heb" {
-        text(weight: "bold", size: 12pt, dir: rtl)[#l-chirho.headwordChirho]
+        text(font: "Ezra SIL", weight: "bold", size: 12pt, dir: rtl)[#l-chirho.headwordChirho]
       } else {
-        text(weight: "bold", size: 11pt)[#l-chirho.headwordChirho]
+        text(font: "Gentium Plus", weight: "bold", size: 11pt)[#l-chirho.headwordChirho]
       }
       [ ]
     }

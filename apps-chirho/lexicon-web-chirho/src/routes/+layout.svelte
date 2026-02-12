@@ -10,6 +10,13 @@
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous" />
 	<link href="https://fonts.googleapis.com/css2?family=Gentium+Plus:ital,wght@0,400;0,700;1,400&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet" />
 	<style>
+		@font-face {
+			font-family: 'Ezra SIL';
+			src: url('/fonts-chirho/EzraSIL-chirho.woff') format('woff');
+			font-weight: normal;
+			font-style: normal;
+			font-display: swap;
+		}
 		:root {
 			--bg-chirho: #f8f5ef;
 			--fg-chirho: #2d2a24;

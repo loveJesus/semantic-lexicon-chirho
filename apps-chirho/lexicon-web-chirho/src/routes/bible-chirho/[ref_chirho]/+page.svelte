@@ -395,7 +395,7 @@
 	</div>
 </details>
 
-<div style="font-family: 'SBL Hebrew', 'SBL Greek', 'Gentium Plus', 'Cardo', serif;">
+<div style="font-family: 'Ezra SIL', 'Gentium Plus', 'Cardo', serif;">
 	{#each versesChirho as vGroupChirho}
 		<div class="verse-row-chirho">
 			<div class="verse-ref-chirho">{vGroupChirho.verseChirho}</div>

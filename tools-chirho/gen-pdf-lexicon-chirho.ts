@@ -234,7 +234,7 @@ async function mainChirho(): Promise<void> {
 
   console.log("[gen-pdf-lexicon-chirho] Compiling PDF with Typst...");
   const procChirho = Bun.spawn(
-    ["typst", "compile", "--root", process.cwd(), TYPST_TEMPLATE_CHIRHO, PDF_PATH_CHIRHO],
+    ["typst", "compile", "--root", process.cwd(), "--font-path", "assets-chirho/fonts-chirho", TYPST_TEMPLATE_CHIRHO, PDF_PATH_CHIRHO],
     {
       stdout: "inherit",
       stderr: "inherit",

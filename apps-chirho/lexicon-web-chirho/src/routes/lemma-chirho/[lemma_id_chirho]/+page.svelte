@@ -170,6 +170,7 @@
 		text-align: left;
 	}
 	.headword-chirho {
+		font-family: 'Ezra SIL', 'Gentium Plus', serif;
 		font-size: 36px;
 		font-weight: bold;
 		color: var(--fg-chirho);
