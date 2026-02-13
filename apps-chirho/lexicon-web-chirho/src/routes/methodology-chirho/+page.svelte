@@ -112,12 +112,12 @@ correctly identified 6). Opus 4.6 was used exclusively for all merge decisions b
 a real lexicon requires distinguishing subtle semantic differences.
 </div>
 
-<h2>5. Automated Cross-Lingual Merge (2&ndash;9 Senses)</h2>
+<h2>5. Cross-Lingual Merge + Opus Review (2&ndash;9 Senses)</h2>
 
-<p>For lemmas with 2&ndash;9 candidate senses (too many for manual review, too few for the LLM
-batch pass), we ran an <strong>automated agglomerative merge</strong> using cross-lingual
+<p>For lemmas with 2&ndash;9 candidate senses, we first ran an <strong>automated agglomerative
+merge</strong> using cross-lingual
 <a href="https://en.wikipedia.org/wiki/Jaccard_index">Jaccard similarity</a> between sense
-clusters:</p>
+clusters as a preliminary pass:</p>
 
 <ol>
 <li>For each pair of senses within a lemma, compute the overlap of their multilingual gloss
@@ -127,7 +127,10 @@ multiple languages, merge them.</li>
 <li>Repeat until no more merges are possible.</li>
 </ol>
 
-<p>This brought the count down to <strong>26,523 senses</strong>.</p>
+<p>This automated step brought the count down to <strong>26,523 senses</strong>. However, the
+Jaccard-based merge alone was not sufficient&mdash;these lemmas were also sent through Opus 4.6
+review (described in the next section) to ensure that nuanced semantic distinctions were
+properly handled.</p>
 
 <h2>6. Opus Re-Merge (Full Re-Review)</h2>
 
@@ -300,10 +303,10 @@ copyrighted classification, though it follows a similar structural philosophy.</
 <td>Opus 4.6 review</td>
 </tr>
 <tr>
-<td>Auto-merge (2&ndash;9)</td>
+<td>Merge (2&ndash;9)</td>
 <td>Remaining polysemous</td>
 <td>26,523 senses</td>
-<td>Cross-lingual Jaccard</td>
+<td>Jaccard + Opus 4.6 review</td>
 </tr>
 <tr>
 <td>Opus re-merge</td>
