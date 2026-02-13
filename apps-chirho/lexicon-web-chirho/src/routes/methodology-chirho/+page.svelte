@@ -27,10 +27,10 @@ For the purposes of this lexicon, this 1:1 alignment is unusual and extremely va
 removes the alignment noise that plagues most multilingual NLP pipelines.</p>
 
 <p>The key linguistic insight: <strong>translation divergence across language families is one of the
-strongest signals of polysemy</strong>. When the same Hebrew lemma maps to different glosses across
-unrelated languages (say Hindi, Mandarin, and Swahili), that almost certainly indicates distinct
-senses. A word that is always translated the same way across all 43 languages is very likely
-monosemous.</p>
+strongest signals of <a href="https://en.wikipedia.org/wiki/Polysemy">polysemy</a></strong>. When
+the same Hebrew lemma maps to different glosses across unrelated languages (say Hindi, Mandarin,
+and Swahili), that almost certainly indicates distinct senses. A word that is always translated the
+same way across all 43 languages is very likely monosemous.</p>
 
 <div class="info-box-chirho">
 <strong>Languages used:</strong> South Asian (Hindi, Bengali, Urdu, Marathi, Telugu, Tamil, Gujarati,
@@ -45,7 +45,8 @@ as primary clustering features.
 <h2>2. Feature Materialization</h2>
 
 <p>The raw glosses were decomposed into structured features for computational use. Each
-gloss string was normalized (Unicode NFKC, dash normalization) and then split three ways:</p>
+gloss string was normalized (<a href="https://en.wikipedia.org/wiki/Unicode_equivalence#Normal_forms">Unicode NFKC</a>,
+dash normalization) and then split three ways:</p>
 
 <ul>
 <li><strong>Phrase features</strong> &mdash; the complete gloss string, e.g. <code>make-known</code>
@@ -71,11 +72,13 @@ translation signatures. The algorithm:</p>
 <ol>
 <li>For each lemma, collect all token occurrences and their feature vectors across all
 available languages.</li>
-<li>Compute <strong>pairwise weighted Jaccard similarity</strong> between occurrences. Occurrences
-that are translated similarly across many languages land close together; occurrences that diverge
-in translation are pushed apart.</li>
-<li>Run <strong>agglomerative (hierarchical) clustering</strong> with a similarity threshold,
-cutting the dendrogram where translation signatures diverge.</li>
+<li>Compute <strong>pairwise weighted <a href="https://en.wikipedia.org/wiki/Jaccard_index">Jaccard
+similarity</a></strong> between occurrences. Occurrences that are translated similarly across many
+languages land close together; occurrences that diverge in translation are pushed apart.</li>
+<li>Run <strong><a href="https://en.wikipedia.org/wiki/Hierarchical_clustering">agglomerative
+(hierarchical) clustering</a></strong> with a similarity threshold, cutting the
+<a href="https://en.wikipedia.org/wiki/Dendrogram">dendrogram</a> where translation signatures
+diverge.</li>
 <li>Each resulting cluster becomes a candidate <strong>sense</strong>.</li>
 </ol>
 
@@ -93,7 +96,7 @@ Anthropic's most capable model at the time of this writing, which was given:</p>
 <ul>
 <li>All candidate sense clusters for the lemma</li>
 <li>Representative occurrences in each cluster with glosses in 5&ndash;6 diverse languages</li>
-<li>The BDB/LSJ lexicon entry for reference</li>
+<li>The <a href="https://en.wikipedia.org/wiki/Brown%E2%80%93Driver%E2%80%93Briggs">BDB</a>/<a href="https://en.wikipedia.org/wiki/A_Greek%E2%80%93English_Lexicon">LSJ</a> lexicon entry for reference</li>
 <li>Instructions to merge clusters that represent the same lexical sense while preserving
 genuinely distinct meanings</li>
 </ul>
@@ -112,8 +115,9 @@ a real lexicon requires distinguishing subtle semantic differences.
 <h2>5. Automated Cross-Lingual Merge (2&ndash;9 Senses)</h2>
 
 <p>For lemmas with 2&ndash;9 candidate senses (too many for manual review, too few for the LLM
-batch pass), we ran an <strong>automated agglomerative merge</strong> using cross-lingual Jaccard
-similarity between sense clusters:</p>
+batch pass), we ran an <strong>automated agglomerative merge</strong> using cross-lingual
+<a href="https://en.wikipedia.org/wiki/Jaccard_index">Jaccard similarity</a> between sense
+clusters:</p>
 
 <ol>
 <li>For each pair of senses within a lemma, compute the overlap of their multilingual gloss
@@ -146,8 +150,9 @@ files</strong>, each containing structured decisions with reasoning.</p>
 more distinct meanings (e.g., a literal and metaphorical use). The refinement pipeline:</p>
 
 <ol>
-<li><strong>Detection:</strong> Scan all senses for high internal translation entropy or bimodal
-gloss distributions, which suggest that distinct sub-senses were merged together.</li>
+<li><strong>Detection:</strong> Scan all senses for high internal
+<a href="https://en.wikipedia.org/wiki/Entropy_(information_theory)">translation entropy</a> or
+bimodal gloss distributions, which suggest that distinct sub-senses were merged together.</li>
 <li><strong>Proposal generation:</strong> For each flagged sense, generate a split proposal with
 the evidence for separation.</li>
 <li><strong>LLM reassignment:</strong> Opus 4.6 reviews each proposal and, where warranted,
@@ -164,23 +169,25 @@ occurrences that were reassigned to more precise sense distinctions.</p>
 <h3>8a. Macro Domains (32)</h3>
 <p>Broad conceptual categories like <em>Communication</em>, <em>Emotion</em>,
 <em>Movement</em>, <em>Kinship</em>, <em>Worship</em>, etc. These were seeded from a combination
-of Louw &amp; Nida&ndash;style categories and SIL's open semantic domain hierarchy (CC BY-SA 4.0),
+of <a href="https://en.wikipedia.org/wiki/Louw%E2%80%93Nida_Lexicon">Louw &amp; Nida</a>&ndash;style
+categories and <a href="https://semdom.org/">SIL's open semantic domain hierarchy</a> (CC BY-SA 4.0),
 then refined based on the actual distribution of senses in the data.</p>
 
 <h3>8b. Supersense Categories (93)</h3>
-<p>Mid-level groupings under each macro domain, following the structure of Louw &amp; Nida's
+<p>Mid-level groupings under each macro domain, following the structure of <a href="https://en.wikipedia.org/wiki/Louw%E2%80%93Nida_Lexicon">Louw &amp; Nida's</a>
 semantic classification but derived independently from our data.</p>
 
 <h3>8c. Fine Clusters (1,236)</h3>
-<p>These were produced by <strong>community detection</strong> (Louvain algorithm) on a
-sense-to-sense similarity graph. Each community of semantically related senses becomes a
+<p>These were produced by <strong><a href="https://en.wikipedia.org/wiki/Community_structure">community
+detection</a></strong> (<a href="https://en.wikipedia.org/wiki/Louvain_method">Louvain algorithm</a>)
+on a sense-to-sense similarity graph. Each community of semantically related senses becomes a
 fine-grained domain cluster.</p>
 
 <h3>Assignment Method</h3>
-<p>Each sense was assigned to its nearest domain via <strong>centroid proximity</strong>: the
-translation signature of each sense was compared against the centroid (average signature) of each
-domain, and the best-fitting domain was selected. Multi-label assignment was allowed where a
-sense genuinely spans domain boundaries.</p>
+<p>Each sense was assigned to its nearest domain via <strong><a href="https://en.wikipedia.org/wiki/Centroid">centroid</a>
+proximity</strong>: the translation signature of each sense was compared against the centroid
+(average signature) of each domain, and the best-fitting domain was selected. Multi-label
+assignment was allowed where a sense genuinely spans domain boundaries.</p>
 
 <p>The result: <strong>39,658 domain assignments</strong> connecting senses to the 2,135-node
 domain hierarchy.</p>
@@ -191,7 +198,7 @@ domain hierarchy.</p>
 
 <h3>Tier 1: Terse Glosses</h3>
 <p>A concise English gloss for each lemma, summarizing its range of meaning in a sentence or
-two. These were generated by Opus 4.6 from the full evidence set (BDB/LSJ entries,
+two. These were generated by Opus 4.6 from the full evidence set (<a href="https://en.wikipedia.org/wiki/Brown%E2%80%93Driver%E2%80%93Briggs">BDB</a>/<a href="https://en.wikipedia.org/wiki/A_Greek%E2%80%93English_Lexicon">LSJ</a> entries,
 multilingual gloss distributions, sense inventory). Coverage: <strong>14,883 of 14,884
 lemmas</strong> (99.99%).</p>
 
@@ -253,8 +260,8 @@ work. The sense boundaries, while grounded in cross-lingual translation evidence
 been exhaustively verified by human experts.</p>
 
 <p>The domain hierarchy was seeded from open-licensed resources (SIL's CC BY-SA 4.0 semantic
-domains) and refined computationally. It does not depend on Louw &amp; Nida's copyrighted
-classification, though it follows a similar structural philosophy.</p>
+domains) and refined computationally. It does not depend on <a href="https://en.wikipedia.org/wiki/Louw%E2%80%93Nida_Lexicon">Louw &amp; Nida's</a>
+copyrighted classification, though it follows a similar structural philosophy.</p>
 
 <h2>14. Pipeline Summary</h2>
 
