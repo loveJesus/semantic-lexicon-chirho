@@ -59,6 +59,7 @@
 	<a href="/bible-chirho/gen.1">Bible</a>
 	<a href="/search-chirho">Search</a>
 	<a href="/domain-chirho">Domains</a>
+	<a href="/methodology-chirho">Methodology</a>
 	<a href="/about-chirho">About</a>
 	<a href="https://github.com/andrewbethchirho/semantic-chirho" style="margin-left: auto; color: var(--muted-chirho); font-size: 12px;">GitHub</a>
 </nav>
