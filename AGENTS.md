@@ -85,6 +85,9 @@ ALL identifiers that we create (including but not limited to variable names, fun
 - For web frameworks, prefer sveltekit2/svelte5, and use Cloudflare workers with either TS or Rust
 - Choose Bun/TS, Rust, Python (depending upon task) but if better suited you may use Phoenix/Elixir, C#, OCaml, C, Ruby, ASM and other languages keeping proper Chirho naming suffix etc...
 
+## API Usage Rules
+- **NEVER use Anthropic API credits directly** (no `@anthropic-ai/sdk`, no `ANTHROPIC_API_KEY`). Always use Claude Code Task subagents for any LLM work. Tools must be designed around subagent orchestration (generate prompts → process via subagents → apply results), never direct API calls.
+
 ## Project: Semantic Domain Mapping for Bible Translations
 
 ### Mission

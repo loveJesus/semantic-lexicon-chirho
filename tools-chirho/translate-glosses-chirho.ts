@@ -5,26 +5,37 @@
  * translate-glosses-chirho.ts
  *
  * Translates English lexicon glosses into target languages.
+ * Does NOT use the Anthropic API — translations are done via Claude Code
+ * Task subagents. This tool handles data gathering and DB writes only.
  *
- * Two modes:
- *   --dry     : Print prompts without calling API (for Claude Code subagent orchestration)
- *   --apply   : Read response JSON files from output dir and write to DB
- *   (default) : Use Anthropic SDK (requires ANTHROPIC_API_KEY in env)
+ * Modes:
+ *   --generate : Export prompt JSON files for Claude Code subagent processing
+ *   --apply    : Read response JSON files from responses dir and write to DB
  *
  * Reads from lemma_entry_chirho + sense_entry_chirho (English glosses),
  * writes to lemma_entry_translation_chirho + sense_entry_translation_chirho.
  *
  * Usage:
- *   bun run tools-chirho/translate-glosses-chirho.ts --lang=spa [--batch=20] [--offset=0] [--lemma=H2076] [--dry]
+ *   bun run tools-chirho/translate-glosses-chirho.ts --lang=spa --generate [--batch=20] [--offset=0]
  *   bun run tools-chirho/translate-glosses-chirho.ts --lang=spa --apply
+ *   bun run tools-chirho/translate-glosses-chirho.ts --lang=spa --lemma=H2076 --generate
  *
- * NOTE: Per project rules, prefer Claude Code Task subagents over direct API calls.
- *       Use --dry to generate prompts, process via subagents, save responses as JSON
- *       files in output-chirho/translated-glosses-chirho/responses-{lang}/, then --apply.
+ * Workflow:
+ *   1. Run --generate to create prompt files in output-chirho/translated-glosses-chirho/prompts-{lang}/
+ *   2. Process prompts via Claude Code Task subagents, save JSON responses to
+ *      output-chirho/translated-glosses-chirho/responses-{lang}/{lemma_id}.json
+ *   3. Run --apply to read responses and write to DB
  */
 
 import { Database } from "bun:sqlite";
-import { existsSync, appendFileSync, readFileSync, mkdirSync } from "fs";
+import {
+  existsSync,
+  appendFileSync,
+  readFileSync,
+  readdirSync,
+  mkdirSync,
+  writeFileSync,
+} from "fs";
 
 const LEXICON_PATH_CHIRHO = "./data-chirho/lexicon-chirho.db";
 const OUTPUT_DIR_CHIRHO = "./output-chirho/translated-glosses-chirho";
@@ -75,19 +86,21 @@ if (!TARGET_LANG_CHIRHO) {
 const BATCH_SIZE_CHIRHO = parseInt(argsChirho["batch"] || "20");
 const OFFSET_CHIRHO = parseInt(argsChirho["offset"] || "0");
 const SINGLE_LEMMA_CHIRHO = argsChirho["lemma"] || null;
-const DRY_RUN_CHIRHO = argsChirho["dry"] === "true";
-const PARALLEL_CHIRHO = parseInt(argsChirho["parallel"] || "4");
+const GENERATE_MODE_CHIRHO = argsChirho["generate"] === "true";
+const APPLY_MODE_CHIRHO = argsChirho["apply"] === "true";
 
 const LANG_NAME_CHIRHO =
   LANGUAGE_NAMES_CHIRHO[TARGET_LANG_CHIRHO] || TARGET_LANG_CHIRHO;
 const PROGRESS_PATH_CHIRHO = `${OUTPUT_DIR_CHIRHO}/progress-${TARGET_LANG_CHIRHO}-chirho.jsonl`;
+const PROMPTS_DIR_CHIRHO = `${OUTPUT_DIR_CHIRHO}/prompts-${TARGET_LANG_CHIRHO}-chirho`;
+const RESPONSES_DIR_CHIRHO = `${OUTPUT_DIR_CHIRHO}/responses-${TARGET_LANG_CHIRHO}-chirho`;
 
 interface SenseForTranslationChirho {
   senseIdChirho: number;
   ordinalChirho: number;
   labelChirho: string;
   enrichedChirho: string;
-  inputGlossesChirho: string[]; // existing target-lang glosses from sense_gloss_chirho
+  inputGlossesChirho: string[];
 }
 
 interface LemmaForTranslationChirho {
@@ -145,7 +158,6 @@ function gatherLemmaChirho(
   for (const sChirho of sensesChirho) {
     const senseIdChirho = sChirho.sense_id_chirho as number;
 
-    // Get existing target-language glosses for context
     const glossRowChirho = dbChirho
       .query(
         `SELECT glosses_chirho FROM sense_gloss_chirho
@@ -230,11 +242,10 @@ RULES:
 
 function parseResponseChirho(
   responseChirho: string,
-  lemmaChirho: LemmaForTranslationChirho
+  lemmaIdChirho: string
 ): TranslationResultChirho | null {
   try {
     let cleanChirho = responseChirho.trim();
-    // Strip markdown fences if present
     if (cleanChirho.startsWith("```")) {
       cleanChirho = cleanChirho
         .replace(/^```(?:json)?\n?/, "")
@@ -248,7 +259,9 @@ function parseResponseChirho(
     > = {};
 
     if (parsedChirho.senses) {
-      for (const [keyChirho, valChirho] of Object.entries(parsedChirho.senses)) {
+      for (const [keyChirho, valChirho] of Object.entries(
+        parsedChirho.senses
+      )) {
         const vChirho = valChirho as any;
         sensesChirho[parseInt(keyChirho)] = {
           labelChirho: vChirho.label || "",
@@ -258,69 +271,36 @@ function parseResponseChirho(
     }
 
     return {
-      lemmaIdChirho: lemmaChirho.lemmaIdChirho,
+      lemmaIdChirho,
       glossTerseChirho: parsedChirho.gloss_terse || "",
       glossReadableChirho: parsedChirho.gloss_readable || "",
       sensesChirho,
     };
   } catch (errChirho) {
     console.error(
-      `[translate-glosses] Failed to parse response for ${lemmaChirho.lemmaIdChirho}: ${errChirho}`
+      `[translate-glosses] Failed to parse response for ${lemmaIdChirho}: ${errChirho}`
     );
-    // Try to extract JSON from the response
     try {
       const jsonMatchChirho = responseChirho.match(/\{[\s\S]*\}/);
       if (jsonMatchChirho) {
-        return parseResponseChirho(jsonMatchChirho[0], lemmaChirho);
+        return parseResponseChirho(jsonMatchChirho[0], lemmaIdChirho);
       }
     } catch {}
     return null;
   }
 }
 
-async function translateOneChirho(
-  lemmaChirho: LemmaForTranslationChirho
-): Promise<TranslationResultChirho | null> {
-  const promptChirho = buildPromptChirho(lemmaChirho);
+function generatePromptsChirho(): void {
+  mkdirSync(PROMPTS_DIR_CHIRHO, { recursive: true });
+  mkdirSync(RESPONSES_DIR_CHIRHO, { recursive: true });
 
-  try {
-    // Use Anthropic SDK directly (Sonnet for translation — fast + good quality)
-    const { default: AnthropicChirho } = await import("@anthropic-ai/sdk");
-    const clientChirho = new AnthropicChirho();
+  const dbChirho = new Database(LEXICON_PATH_CHIRHO, { readonly: true });
 
-    const responseChirho = await clientChirho.messages.create({
-      model: "claude-sonnet-4-5-20250929",
-      max_tokens: 1500,
-      messages: [{ role: "user", content: promptChirho }],
-    });
-
-    const textChirho =
-      responseChirho.content[0].type === "text"
-        ? responseChirho.content[0].text
-        : "";
-
-    return parseResponseChirho(textChirho, lemmaChirho);
-  } catch (errChirho) {
-    console.error(
-      `[translate-glosses] Error for ${lemmaChirho.lemmaIdChirho}: ${errChirho}`
-    );
-    return null;
-  }
-}
-
-async function mainChirho(): Promise<void> {
-  mkdirSync(OUTPUT_DIR_CHIRHO, { recursive: true });
-
-  const dbChirho = new Database(LEXICON_PATH_CHIRHO);
-  dbChirho.run("PRAGMA journal_mode=WAL");
-
-  // Get lemmas to translate
   let lemmaIdsChirho: string[];
 
   if (SINGLE_LEMMA_CHIRHO) {
     lemmaIdsChirho = [SINGLE_LEMMA_CHIRHO];
   } else {
-    // Get lemmas that have English glosses but no translation yet
     const rowsChirho = dbChirho
       .query(
         `SELECT le.lemma_id_chirho
@@ -344,23 +324,68 @@ async function mainChirho(): Promise<void> {
     );
   }
 
-  // Filter already-done from progress log
+  // Filter already-done
   const doneChirho = getProgressChirho();
   lemmaIdsChirho = lemmaIdsChirho.filter(
     (idChirho) => !doneChirho.has(idChirho)
   );
 
   console.log(
-    `[translate-glosses] ${lemmaIdsChirho.length} lemmas to translate to ${LANG_NAME_CHIRHO} (batch=${BATCH_SIZE_CHIRHO}, offset=${OFFSET_CHIRHO})`
+    `[translate-glosses] Generating ${lemmaIdsChirho.length} prompts for ${LANG_NAME_CHIRHO}`
   );
 
-  if (lemmaIdsChirho.length === 0) {
-    console.log("[translate-glosses] Nothing to do!");
-    dbChirho.close();
+  let countChirho = 0;
+  for (const lemmaIdChirho of lemmaIdsChirho) {
+    const ctxChirho = gatherLemmaChirho(dbChirho, lemmaIdChirho);
+    if (!ctxChirho) continue;
+
+    const promptChirho = buildPromptChirho(ctxChirho);
+    const promptDataChirho = {
+      lemma_id_chirho: lemmaIdChirho,
+      language_chirho: TARGET_LANG_CHIRHO,
+      sense_ids_chirho: ctxChirho.sensesChirho.map((sChirho) => ({
+        sense_id_chirho: sChirho.senseIdChirho,
+        ordinal_chirho: sChirho.ordinalChirho,
+      })),
+      prompt_chirho: promptChirho,
+    };
+
+    writeFileSync(
+      `${PROMPTS_DIR_CHIRHO}/${lemmaIdChirho}.json`,
+      JSON.stringify(promptDataChirho, null, 2)
+    );
+    countChirho++;
+  }
+
+  dbChirho.close();
+  console.log(
+    `[translate-glosses] Generated ${countChirho} prompt files in ${PROMPTS_DIR_CHIRHO}/`
+  );
+  console.log(
+    `[translate-glosses] Process via Claude Code Task subagents, save responses to ${RESPONSES_DIR_CHIRHO}/`
+  );
+}
+
+function applyResponsesChirho(): void {
+  if (!existsSync(RESPONSES_DIR_CHIRHO)) {
+    console.error(
+      `[translate-glosses] No responses directory: ${RESPONSES_DIR_CHIRHO}`
+    );
+    process.exit(1);
+  }
+
+  const responseFilesChirho = readdirSync(RESPONSES_DIR_CHIRHO).filter(
+    (fChirho) => fChirho.endsWith(".json")
+  );
+
+  if (responseFilesChirho.length === 0) {
+    console.log("[translate-glosses] No response files to apply.");
     return;
   }
 
-  // Prepare insert statements
+  const dbChirho = new Database(LEXICON_PATH_CHIRHO);
+  dbChirho.run("PRAGMA journal_mode=WAL");
+
   const insertLemmaTransChirho = dbChirho.prepare(`
     INSERT OR REPLACE INTO lemma_entry_translation_chirho
     (lemma_id_chirho, language_code_chirho, gloss_terse_chirho, gloss_readable_chirho)
@@ -373,67 +398,70 @@ async function mainChirho(): Promise<void> {
     VALUES (?1, ?2, ?3, ?4)
   `);
 
+  const doneChirho = getProgressChirho();
   let successCountChirho = 0;
   let failCountChirho = 0;
 
-  // Process in parallel batches
-  for (
-    let iChirho = 0;
-    iChirho < lemmaIdsChirho.length;
-    iChirho += PARALLEL_CHIRHO
-  ) {
-    const batchChirho = lemmaIdsChirho.slice(
-      iChirho,
-      iChirho + PARALLEL_CHIRHO
-    );
+  dbChirho.run("BEGIN");
 
-    const contextsChirho = batchChirho
-      .map((idChirho) => gatherLemmaChirho(dbChirho, idChirho))
-      .filter(
-        (cChirho): cChirho is LemmaForTranslationChirho => cChirho !== null
+  for (const fileChirho of responseFilesChirho) {
+    const lemmaIdChirho = fileChirho.replace(".json", "");
+    if (doneChirho.has(lemmaIdChirho)) continue;
+
+    try {
+      const rawChirho = readFileSync(
+        `${RESPONSES_DIR_CHIRHO}/${fileChirho}`,
+        "utf-8"
       );
-
-    if (DRY_RUN_CHIRHO) {
-      for (const ctxChirho of contextsChirho) {
-        console.log(
-          `\n--- ${ctxChirho.lemmaIdChirho} (${ctxChirho.sensesChirho.length} senses) ---`
-        );
-        console.log(buildPromptChirho(ctxChirho).substring(0, 500) + "...");
-      }
-      continue;
-    }
-
-    const resultsChirho = await Promise.all(
-      contextsChirho.map((ctxChirho) => translateOneChirho(ctxChirho))
-    );
-
-    for (let jChirho = 0; jChirho < resultsChirho.length; jChirho++) {
-      const resultChirho = resultsChirho[jChirho];
+      const resultChirho = parseResponseChirho(rawChirho, lemmaIdChirho);
       if (!resultChirho) {
         failCountChirho++;
         continue;
       }
 
-      const ctxChirho = contextsChirho[jChirho];
+      // Read the prompt file to get sense_id mappings
+      const promptPathChirho = `${PROMPTS_DIR_CHIRHO}/${fileChirho}`;
+      let senseMapChirho: Record<number, number> = {}; // ordinal -> sense_id
+      if (existsSync(promptPathChirho)) {
+        const promptDataChirho = JSON.parse(
+          readFileSync(promptPathChirho, "utf-8")
+        );
+        for (const sChirho of promptDataChirho.sense_ids_chirho || []) {
+          senseMapChirho[sChirho.ordinal_chirho] = sChirho.sense_id_chirho;
+        }
+      } else {
+        // Fallback: look up sense IDs from DB
+        const sensesChirho = dbChirho
+          .query(
+            `SELECT sense_id_chirho, ordinal_chirho FROM sense_entry_chirho
+             WHERE lemma_id_chirho = ?1 ORDER BY ordinal_chirho`
+          )
+          .all(lemmaIdChirho) as Record<string, any>[];
+        for (const sChirho of sensesChirho) {
+          senseMapChirho[sChirho.ordinal_chirho as number] =
+            sChirho.sense_id_chirho as number;
+        }
+      }
 
       // Write lemma translation
       insertLemmaTransChirho.run(
-        resultChirho.lemmaIdChirho,
+        lemmaIdChirho,
         TARGET_LANG_CHIRHO,
         resultChirho.glossTerseChirho,
         resultChirho.glossReadableChirho
       );
 
       // Write sense translations
-      for (const senseChirho of ctxChirho.sensesChirho) {
-        const translatedSenseChirho =
-          resultChirho.sensesChirho[senseChirho.ordinalChirho];
-        if (translatedSenseChirho) {
+      for (const [ordChirho, transChirho] of Object.entries(
+        resultChirho.sensesChirho
+      )) {
+        const senseIdChirho = senseMapChirho[parseInt(ordChirho)];
+        if (senseIdChirho) {
           insertSenseTransChirho.run(
-            senseChirho.senseIdChirho,
+            senseIdChirho,
             TARGET_LANG_CHIRHO,
-            translatedSenseChirho.labelChirho,
-            translatedSenseChirho.enrichedChirho
+            transChirho.labelChirho,
+            transChirho.enrichedChirho
           );
         }
       }
@@ -442,7 +470,7 @@ async function mainChirho(): Promise<void> {
       appendFileSync(
         PROGRESS_PATH_CHIRHO,
         JSON.stringify({
-          lemma_id_chirho: resultChirho.lemmaIdChirho,
+          lemma_id_chirho: lemmaIdChirho,
           lang_chirho: TARGET_LANG_CHIRHO,
           terse_chirho: resultChirho.glossTerseChirho,
           senses_translated_chirho: Object.keys(resultChirho.sensesChirho)
@@ -453,15 +481,38 @@ async function mainChirho(): Promise<void> {
 
       successCountChirho++;
       console.log(
-        `[translate-glosses] ${successCountChirho + failCountChirho}/${lemmaIdsChirho.length} | ${resultChirho.lemmaIdChirho}: "${resultChirho.glossTerseChirho.substring(0, 60)}..."`
+        `[translate-glosses] Applied ${lemmaIdChirho}: "${resultChirho.glossTerseChirho.substring(0, 60)}..."`
       );
+    } catch (errChirho) {
+      console.error(
+        `[translate-glosses] Error applying ${fileChirho}: ${errChirho}`
+      );
+      failCountChirho++;
     }
   }
 
-  console.log(
-    `\n[translate-glosses] Done: ${successCountChirho} translated to ${LANG_NAME_CHIRHO}, ${failCountChirho} failed`
-  );
+  dbChirho.run("COMMIT");
   dbChirho.close();
+
+  console.log(
+    `\n[translate-glosses] Applied: ${successCountChirho} to ${LANG_NAME_CHIRHO}, ${failCountChirho} failed`
+  );
 }
 
-mainChirho().catch(console.error);
+// Main
+if (!GENERATE_MODE_CHIRHO && !APPLY_MODE_CHIRHO) {
+  console.error(
+    "[translate-glosses] ERROR: Must specify --generate or --apply mode"
+  );
+  console.error(
+    "  --generate : Export prompts for Claude Code subagent processing"
+  );
+  console.error("  --apply    : Read response JSON files and write to DB");
+  process.exit(1);
+}
+
+if (GENERATE_MODE_CHIRHO) {
+  generatePromptsChirho();
+} else {
+  applyResponsesChirho();
+}
