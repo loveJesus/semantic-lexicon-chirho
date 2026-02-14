@@ -1,0 +1,238 @@
+Translate ALL of the following biblical lexicon entries into Spanish. Output a single JSON object with lemma IDs as top-level keys. Output ONLY valid JSON, no markdown fences.
+
+You are a professional biblical lexicographer fluent in Spanish. Translate the following English lexicon entry into Spanish.
+
+Lemma: H0413
+
+ENGLISH GLOSSES TO TRANSLATE:
+  Terse gloss: "to, toward; into; upon, on; against; for, concerning; with, among"
+  Readable gloss: "The most common Hebrew preposition of directed motion, appearing over 5,500 times. Its core meaning — motion toward a person, place, or goal — underlies virtually every narrative scene where someone goes, sends, speaks, gives, or turns. Unlike the broader ב (in) or על (upon), אֵל specifically encodes directionality: the trajectory from speaker to destination. Yet context pushes it into hostile territory ('against'), purposive uses ('for, concerning'), and even companionship ('with, among'). The cognate Arabic ʾilā confirms the directional core. This single syllable is the connective tissue of Hebrew narrative, joining actors to their targets across thousands of clauses."
+
+SENSES:
+  Sense 1: "to (dative recipient, addressee)"
+    Enriched: Primary directional sense: 'to' or 'toward' a person, place, or thing. With over 5,300 occurrences, this dominates Hebrew prose. Spanish 'a,' French 'à,' and German 'zu' converge on the same particle. Genesis 1:9 gathers waters 'to one place.' It follows every verb of motion and speech, marking destination or addressee.
+    Existing Spanish translations: a, a-
+  Sense 2: "to, toward (spatial motion)"
+    Enriched: Movement into an enclosed space or interior — 'into' rather than merely 'toward.' The distinction is subtle but real: Deuteronomy 31:7 sends Joshua 'into' the land God promised, not merely toward it. French 'vers' and German 'in-zu' sometimes distinguish this penetrative sense from mere directionality. The spatial endpoint is not a surface but an interior.
+    Existing Spanish translations: a, a-, ante
+  Sense 3: "into, entering within"
+    Enriched: Movement into an enclosed space or interior — 'into' rather than merely 'toward.' The distinction is subtle but real: Deuteronomy 31:7 sends Joshua 'into' the land God promised, not merely toward it. French 'vers' and German 'in-zu' sometimes distinguish this penetrative sense from mere directionality. The spatial endpoint is not a surface but an interior.
+    Existing Spanish translations: a, a-, al, en, en-, sobre
+  Sense 4: "upon, on, over"
+    Enriched: Contact or position upon a surface, or authority placed over someone — 'upon, on, over.' Numbers 4:19 assigns Levites 'to' their service. 2 Samuel 2:9 places Ish-bosheth 'over' Gilead. In prophetic oracles the preposition slides from 'toward' into 'upon/against.' Spanish 'y-contra' and French 'et-sur' capture this.
+    Existing Spanish translations: y-a, y-contra, y-contra-, y-sobre, y-sobre-
+  Sense 5: "against, in opposition"
+    Enriched: Hostile or adversarial orientation: 'against.' Genesis 4:8 has Cain rising 'against' his brother Abel. Deuteronomy 28:7 promises that enemies who rise 'against' Israel will be defeated. 1 Kings 21:21 brings divine judgment 'against' Ahab. The glosses (Spanish 'contra,' French 'contre,' German 'gegen') consistently mark hostility. The directional core acquires an adversarial edge from context.
+    Existing Spanish translations: a-ti, contra-, contra-ellos, contra-ti, contra-ti,, en-ella, sobre-ti
+  Sense 6: "for, concerning, about"
+    Enriched: Purpose, benefaction, or reference: 'for, concerning, about.' 1 Samuel 1:27 speaks of praying 'for' this child. 1 Samuel 15:35 records Samuel's grieving 'for/concerning' Saul. Spanish 'Por' and French 'pour' confirm the purposive reading. The directional metaphor extends: the speaker's attention is directed 'toward' a topic or cause.
+    Existing Spanish translations: Por, a-mí, con-él, contra-él, por, por-
+  Sense 7: "with, among, alongside"
+    Enriched: Accompaniment or proximity: 'with, among, alongside.' Numbers 23:4,16 describe God meeting 'with' Balaam. Joshua 11:19 notes no city that made peace 'with' Israel. The sense is less common but attested clearly — the preposition marks not just motion toward but arrival and remaining alongside. Spanish 'con' and French 'avec' confirm the associative reading.
+    Existing Spanish translations: con, con-, entre
+  Sense 8: "[split] directional: to, toward"
+    Enriched: Primary directional sense: 'to' or 'toward' a person, place, or thing. With over 5,300 occurrences, this dominates Hebrew prose. Spanish 'a,' French 'à,' and German 'zu' converge on the same particle. Genesis 1:9 gathers waters 'to one place.' It follows every verb of motion and speech, marking destination or addressee.
+    Existing Spanish translations: a-, al, contra
+  Sense 9: ""
+    Enriched: A rare sense attested once in Psalm 84:7, where the Masoretic text places the preposition unusually. Multilingual evidence diverges — English 'before,' Spanish 'ante,' German 'vor-zu' — suggesting appearing in God's presence. Possibly a liturgical usage: moving 'toward' God until one stands 'before' him in Zion.
+    Existing Spanish translations: ante-
+
+OUTPUT (JSON only, no markdown fences):
+{
+  "gloss_terse": "Translated terse gloss in Spanish — concise 1-line definition covering the word's semantic range",
+  "gloss_readable": "Translated readable gloss in Spanish — 2-5 sentence conversational explanation, same warm-but-accurate tone as the English",
+  "senses": {
+    "1": { "label": "Short Spanish label for sense 1", "enriched": "Translated enriched description for sense 1 in Spanish" },
+    "2": { "label": "...", "enriched": "..." }
+  }
+}
+
+RULES:
+- Translate naturally into Spanish, not word-for-word. Adapt idioms and tone.
+- The "existing Spanish translations" shown above are machine-generated glosses from our translation platform — use them as helpful context for terminology, but your translation should be independent and higher quality.
+- Keep gloss_terse under 150 characters.
+- Keep gloss_readable at 40-120 words.
+- Each sense label should be 1-4 words.
+- Each sense enriched should be 20-60 words.
+- Do NOT transliterate Hebrew/Greek terms — keep them in their original script where appropriate.
+- Output valid JSON only.
+
+---
+
+You are a professional biblical lexicographer fluent in Spanish. Translate the following English lexicon entry into Spanish.
+
+Lemma: H0428
+
+ENGLISH GLOSSES TO TRANSLATE:
+  Terse gloss: "these — near demonstrative pronoun pointing to a previously mentioned or forthcoming group of persons or things"
+  Readable gloss: "Elleh is the workhorse plural demonstrative of Biblical Hebrew, appearing 746 times to point at groups of people, nations, laws, events, or objects. It serves as the plural counterpart of zeh ('this') and frequently anchors genealogical summaries ('these are the generations of') and legal catalogs ('these are the statutes'). Its prepositional combinations — ka-elleh ('like these'), be-elleh ('among these'), me-elleh ('from these') — are purely syntactic extensions of the same deictic function. The cross-linguistic evidence is uniform: English 'these,' Spanish 'estos/estas,' French 'ces,' German 'diese.'"
+
+SENSES:
+  Sense 1: "these (demonstrative pronoun)"
+    Enriched: The near plural demonstrative pronoun, used to indicate a set of referents already introduced or about to be specified in the discourse. Frequently opens formulaic lists (Gen 10:20 'these are the sons of Ham') and legal enumerations (Deut 18:12 'these things'). All 746 occurrences, including prepositional compounds, express a single deictic function without semantic variation.
+    Existing Spanish translations: Estas, Estos, estas, estos
+
+OUTPUT (JSON only, no markdown fences):
+{
+  "gloss_terse": "Translated terse gloss in Spanish — concise 1-line definition covering the word's semantic range",
+  "gloss_readable": "Translated readable gloss in Spanish — 2-5 sentence conversational explanation, same warm-but-accurate tone as the English",
+  "senses": {
+    "1": { "label": "Short Spanish label for sense 1", "enriched": "Translated enriched description for sense 1 in Spanish" },
+    "2": { "label": "...", "enriched": "..." }
+  }
+}
+
+RULES:
+- Translate naturally into Spanish, not word-for-word. Adapt idioms and tone.
+- The "existing Spanish translations" shown above are machine-generated glosses from our translation platform — use them as helpful context for terminology, but your translation should be independent and higher quality.
+- Keep gloss_terse under 150 characters.
+- Keep gloss_readable at 40-120 words.
+- Each sense label should be 1-4 words.
+- Each sense enriched should be 20-60 words.
+- Do NOT transliterate Hebrew/Greek terms — keep them in their original script where appropriate.
+- Output valid JSON only.
+
+---
+
+You are a professional biblical lexicographer fluent in Spanish. Translate the following English lexicon entry into Spanish.
+
+Lemma: H0430
+
+ENGLISH GLOSSES TO TRANSLATE:
+  Terse gloss: "God (the God of Israel); gods (pagan deities); a god or goddess (individual foreign deity). The majestic plural form of eloah."
+  Readable gloss: "Elohim is one of the most remarkable words in any language — a morphologically plural noun that, in the vast majority of its occurrences, refers to the one God of Israel and takes singular verbs and adjectives. This grammatical paradox has generated millennia of theological reflection, from ancient rabbinic discussion to modern trinitarian readings. In its dominant sense, Elohim is simply the standard way to say 'God' in Hebrew narrative, law, and poetry: 'In the beginning God created' (Gen 1:1). But the same form also does genuine plural work when referring to the gods of the nations — 'you shall have no other gods before me' (Exod 20:3) — and can even designate a single foreign deity like Dagon or Ashtoreth. The multilingual evidence is revealing: Arabic splits cleanly between Allah (singular, the God) and alihah (plural, gods), Korean between hananim and sindeul, while Hebrew uses the same form for both, relying on syntax and context to disambiguate."
+
+SENSES:
+  Sense 1: "God (the God of Israel, YHWH)"
+    Existing Spanish translations: Dios, Elohim
+  Sense 2: "gods (pagan deities, foreign gods)"
+    Existing Spanish translations: dios-de-ti, dioses, dioses-de-ellos, dioses-tuyos, los-dioses, nuestro-dios, su-dios, su-dios., sus-dioses, tu-dios, tus-dioses, vuestro-dios, vuestros-dioses
+  Sense 3: "gods (pagan deities)"
+    Enriched: Pagan gods collectively — 81 occurrences where elohim functions as a genuine plural referring to the deities of surrounding nations. 'Put away the foreign gods' (Gen 35:2), 'against all the gods of Egypt I will execute judgments' (Exod 12:12), 'you shall have no other gods before me' (Exod 20:3). Arabic alihah, Korean sindeul, Swahili miungu, and Hindi devataon all deploy their standard plural-dei...
+    Existing Spanish translations: a-dioses, dios, dioses
+  Sense 4: "god or goddess (foreign deity)"
+    Enriched: A single foreign god or goddess — 14 occurrences where elohim designates an individual pagan deity by name or in a construct chain: 'Dagon their god' (Judg 16:23-24), 'Ashtoreth the goddess of the Sidonians' (1 Kgs 11:5, 33), 'the god of Ekron' (2 Kgs 1:2-3). Arabic ilah/ilahah (singular 'god/goddess'), Spanish dios de/diosa de, and Korean sin ('deity,' singular) all select singular forms here, di...
+    Existing Spanish translations: Elohim, dios-de, diosa-de, su-dios
+  Sense 5: ""
+    Enriched: Contextually ambiguous or comparative uses — 2 occurrences (Exod 29:45, Judg 8:33) where elohim appears in a construction that could be parsed as either 'God' or 'a god' depending on interpretive framework. The multilingual glosses split: some render 'as God' (comme Dieu, wie Gott) while others treat it as 'as a god/elohim,' reflecting genuine interpretive uncertainty. These marginal cases sit at ...
+    Existing Spanish translations: para-Elohim, por-dios
+  Sense 6: "[split] God (of Israel)"
+    Enriched: The God of Israel — the overwhelming dominant sense at 2,502 occurrences, covering God as creator, covenant-maker, lawgiver, judge, and redeemer. Used with the article (ha-elohim), in construct chains (elohei Yisrael), with pronominal suffixes (eloheinu, 'our God'), and after prepositions. Takes singular verb agreement despite its plural morphology. Every major target language has a dedicated supr...
+    Existing Spanish translations: Elohei
+
+OUTPUT (JSON only, no markdown fences):
+{
+  "gloss_terse": "Translated terse gloss in Spanish — concise 1-line definition covering the word's semantic range",
+  "gloss_readable": "Translated readable gloss in Spanish — 2-5 sentence conversational explanation, same warm-but-accurate tone as the English",
+  "senses": {
+    "1": { "label": "Short Spanish label for sense 1", "enriched": "Translated enriched description for sense 1 in Spanish" },
+    "2": { "label": "...", "enriched": "..." }
+  }
+}
+
+RULES:
+- Translate naturally into Spanish, not word-for-word. Adapt idioms and tone.
+- The "existing Spanish translations" shown above are machine-generated glosses from our translation platform — use them as helpful context for terminology, but your translation should be independent and higher quality.
+- Keep gloss_terse under 150 characters.
+- Keep gloss_readable at 40-120 words.
+- Each sense label should be 1-4 words.
+- Each sense enriched should be 20-60 words.
+- Do NOT transliterate Hebrew/Greek terms — keep them in their original script where appropriate.
+- Output valid JSON only.
+
+---
+
+You are a professional biblical lexicographer fluent in Spanish. Translate the following English lexicon entry into Spanish.
+
+Lemma: H0518a
+
+ENGLISH GLOSSES TO TRANSLATE:
+  Terse gloss: "Conditional particle: if, or, whether; also concessive (though) and asseverative (surely) in oaths"
+  Readable gloss: "One of the most versatile logical connectors in Biblical Hebrew, 'im functions primarily as the conditional 'if' that introduces nearly every protasis in the Old Testament. Beyond conditionality, it branches into disjunction ('or,' especially in paired 'im...'im constructions), indirect questions ('whether'), and even rhetorical force. In oath formulas it carries an implicit negation — 'if I do this' meaning 'I surely will not' — a usage preserved in Arabic 'in and Aramaic 'en. Its 922 occurrences touch virtually every genre of biblical prose and poetry."
+
+SENSES:
+  Sense 1: "conditional particle: if"
+    Enriched: The dominant conditional use (827x), introducing protases with imperfect or perfect verbs. Spanish si, French si, and German wenn/ob all converge on the conditional reading. Key passages like Gen 4:7 ('if you do well') and Gen 13:16 ('if one could count the dust') show both real and hypothetical conditions. The cross-linguistic uniformity here confirms a single stable sense.
+    Existing Spanish translations: Si, que, si, si-
+  Sense 2: "disjunctive particle: or"
+    Enriched: Disjunctive 'or' (82x), presenting alternatives or choices. German oder and Spanish o clearly mark this as distinct from the conditional. Paired constructions 'im...'im ('whether...or') appear in Gen 24:21 and Gen 37:32, where the speaker poses two possibilities. The Arabic cognate 'am similarly serves as a disjunctive particle, confirming the Semitic pedigree of this usage.
+    Existing Spanish translations: acaso-, o, o-
+  Sense 3: "indirect question: whether"
+    Enriched: Indirect-question 'whether' (8x), introducing uncertainty after verbs of knowing or testing. German ob and Spanish si capture this epistemic nuance well. Exod 19:13 and Lev 27:26 show contexts where the outcome is genuinely unknown to the speaker. This overlaps with the conditional but is syntactically distinct in embedding under cognitive verbs.
+    Existing Spanish translations: sea, si, si-
+  Sense 4: "rhetorical interrogative marker"
+    Enriched: Rhetorical interrogative marker (3x), expecting a strong affirmative or negative answer. The glosses 'indeed' and 'is it not?' reflect this force. Num 17:13 and Job 6:13 show the particle pressing the hearer toward an obvious conclusion, a pragmatic extension of the conditional into discourse-level persuasion.
+    Existing Spanish translations: ¿Acaso
+  Sense 5: "concessive: though, even if"
+    Enriched: Concessive 'though' or 'even if' (1x at 1Sam 15:17), where the condition is granted rather than questioned. Samuel's rebuke 'though you are small in your own eyes' acknowledges the premise while overriding it. This rare use parallels Arabic 'in with concessive force in classical rhetoric.
+    Existing Spanish translations: si-
+  Sense 6: "asseverative: surely, rather"
+    Enriched: Asseverative 'surely' in oath formulas (1x at Gen 15:4), where 'im carries implicit self-imprecation: 'if I do X [may God punish me],' meaning 'I surely will not.' German nur ('only') and Spanish que hint at the restrictive-emphatic flavor. This idiomatic oath usage is well attested across Semitic languages.
+    Existing Spanish translations: que
+
+OUTPUT (JSON only, no markdown fences):
+{
+  "gloss_terse": "Translated terse gloss in Spanish — concise 1-line definition covering the word's semantic range",
+  "gloss_readable": "Translated readable gloss in Spanish — 2-5 sentence conversational explanation, same warm-but-accurate tone as the English",
+  "senses": {
+    "1": { "label": "Short Spanish label for sense 1", "enriched": "Translated enriched description for sense 1 in Spanish" },
+    "2": { "label": "...", "enriched": "..." }
+  }
+}
+
+RULES:
+- Translate naturally into Spanish, not word-for-word. Adapt idioms and tone.
+- The "existing Spanish translations" shown above are machine-generated glosses from our translation platform — use them as helpful context for terminology, but your translation should be independent and higher quality.
+- Keep gloss_terse under 150 characters.
+- Keep gloss_readable at 40-120 words.
+- Each sense label should be 1-4 words.
+- Each sense enriched should be 20-60 words.
+- Do NOT transliterate Hebrew/Greek terms — keep them in their original script where appropriate.
+- Output valid JSON only.
+
+---
+
+You are a professional biblical lexicographer fluent in Spanish. Translate the following English lexicon entry into Spanish.
+
+Lemma: H0559
+
+ENGLISH GLOSSES TO TRANSLATE:
+  Terse gloss: "To say, speak, tell; to think inwardly; to declare or proclaim formally"
+  Readable gloss: "The verb אָמַר is the primary word for speech in the Hebrew Bible, introducing direct discourse thousands of times with the formulaic וַיֹּאמֶר ('and he said'). Beyond ordinary speech, it can turn inward to describe thought or private deliberation — 'I said in my heart' — a usage attested from Genesis through the Psalms. In its rarest Hifil and emphatic forms, it rises to formal declaration or public proclamation, as when Israel 'declared' the LORD to be their God (Deut 26:17)."
+
+SENSES:
+  Sense 1: "say, speak, tell"
+    Enriched: The Qal basic sense covering verbal communication in all its forms: saying, speaking, telling, commanding, answering, and introducing both direct and indirect speech. With over 5,290 occurrences, it is the default narrative speech verb from Gen 1:3 ('and God said') onward. Every target language maps it to its most common speech verb — 'dijo,' 'dit,' 'sprach' — with no semantic specialization requi...
+    Existing Spanish translations: Y-dijo, y-dijo
+  Sense 2: "say to oneself, think"
+    Enriched: An internalized use of אמר where the 'saying' is directed to oneself rather than another person — thinking, resolving, or deliberating silently. Often marked by the phrase בְּלִבִּי ('in my heart') or by context making external speech implausible. Examples include Gen 24:14 where Abraham's servant devises a test internally, and 1 Sam 28:8 where Saul reasons within himself. The multilingual glosses...
+    Existing Spanish translations: Dije, digo:, dije, dijere, diré, os-dije, te-diga, te-dije
+  Sense 3: "declare, proclaim"
+    Enriched: The Hifil stem and emphatic Qal usage where אמר means to declare publicly, proclaim, or formally announce — a speech act carrying authority or solemnity beyond ordinary conversation. Deut 26:17 uses the Hifil: Israel 'declared' (הֶאֱמַרְתָּ) the LORD to be their God. Ps 40:10 and 45:1 similarly feature public proclamation of God's righteousness and the psalmist's composition. Multilingual evidence...
+    Existing Spanish translations: digo, dije, has-declarado
+
+OUTPUT (JSON only, no markdown fences):
+{
+  "gloss_terse": "Translated terse gloss in Spanish — concise 1-line definition covering the word's semantic range",
+  "gloss_readable": "Translated readable gloss in Spanish — 2-5 sentence conversational explanation, same warm-but-accurate tone as the English",
+  "senses": {
+    "1": { "label": "Short Spanish label for sense 1", "enriched": "Translated enriched description for sense 1 in Spanish" },
+    "2": { "label": "...", "enriched": "..." }
+  }
+}
+
+RULES:
+- Translate naturally into Spanish, not word-for-word. Adapt idioms and tone.
+- The "existing Spanish translations" shown above are machine-generated glosses from our translation platform — use them as helpful context for terminology, but your translation should be independent and higher quality.
+- Keep gloss_terse under 150 characters.
+- Keep gloss_readable at 40-120 words.
+- Each sense label should be 1-4 words.
+- Each sense enriched should be 20-60 words.
+- Do NOT transliterate Hebrew/Greek terms — keep them in their original script where appropriate.
+- Output valid JSON only.
+
+Output format (JSON only, no fences):
+{
+  "LEMMA_ID": { "gloss_terse": "...", "gloss_readable": "...", "senses": { "1": { "label": "...", "enriched": "..." }, ... } },
+  ...
+}
