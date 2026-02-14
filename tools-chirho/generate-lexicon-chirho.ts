@@ -79,6 +79,26 @@ function createLexiconDbChirho(): Database {
     FOREIGN KEY (sense_id_chirho) REFERENCES sense_entry_chirho(sense_id_chirho)
   )`);
 
+  dbChirho.run(`CREATE TABLE IF NOT EXISTS lemma_entry_translation_chirho (
+    lemma_id_chirho       TEXT NOT NULL,
+    language_code_chirho   TEXT NOT NULL,
+    gloss_terse_chirho     TEXT,
+    gloss_readable_chirho  TEXT,
+    created_at_chirho      TEXT DEFAULT (datetime('now')),
+    PRIMARY KEY (lemma_id_chirho, language_code_chirho),
+    FOREIGN KEY (lemma_id_chirho) REFERENCES lemma_entry_chirho(lemma_id_chirho)
+  )`);
+
+  dbChirho.run(`CREATE TABLE IF NOT EXISTS sense_entry_translation_chirho (
+    sense_id_chirho        INTEGER NOT NULL,
+    language_code_chirho   TEXT NOT NULL,
+    label_chirho           TEXT,
+    enriched_chirho        TEXT,
+    created_at_chirho      TEXT DEFAULT (datetime('now')),
+    PRIMARY KEY (sense_id_chirho, language_code_chirho),
+    FOREIGN KEY (sense_id_chirho) REFERENCES sense_entry_chirho(sense_id_chirho)
+  )`);
+
   dbChirho.run(
     "CREATE INDEX IF NOT EXISTS idx_sense_lemma_chirho ON sense_entry_chirho(lemma_id_chirho)"
   );
