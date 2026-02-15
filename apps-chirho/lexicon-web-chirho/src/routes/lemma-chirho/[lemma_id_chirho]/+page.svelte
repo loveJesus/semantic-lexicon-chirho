@@ -448,7 +448,7 @@
 			{#if glossListChirho.length > 0}
 				<div class="glosses-chirho">
 					{#each glossListChirho as gChirho, iChirho}
-						<span class="gloss-lang-chirho">{LANG_LABELS_CHIRHO[gChirho.language_code_chirho] || gChirho.language_code_chirho}</span>{gChirho.glosses_chirho}{#if iChirho < glossListChirho.length - 1}<span style="color: var(--border-chirho);"> &middot; </span>{/if}
+						<span class="gloss-lang-chirho">{LANG_LABELS_CHIRHO[gChirho.language_code_chirho] || gChirho.language_code_chirho}</span>{gChirho.glosses_chirho.replaceAll('","', '", "')}{#if iChirho < glossListChirho.length - 1}<span style="color: var(--border-chirho);"> &middot; </span>{/if}
 					{/each}
 				</div>
 			{/if}
@@ -506,7 +506,7 @@
 			{#if glossListChirho.length > 0}
 				<div class="glosses-chirho">
 					{#each glossListChirho as gChirho, iChirho}
-						<span class="gloss-lang-chirho">{LANG_LABELS_CHIRHO[gChirho.language_code_chirho] || gChirho.language_code_chirho}</span>{gChirho.glosses_chirho}{#if iChirho < glossListChirho.length - 1}<span style="color: var(--border-chirho);"> &middot; </span>{/if}
+						<span class="gloss-lang-chirho">{LANG_LABELS_CHIRHO[gChirho.language_code_chirho] || gChirho.language_code_chirho}</span>{gChirho.glosses_chirho.replaceAll('","', '", "')}{#if iChirho < glossListChirho.length - 1}<span style="color: var(--border-chirho);"> &middot; </span>{/if}
 					{/each}
 				</div>
 			{/if}

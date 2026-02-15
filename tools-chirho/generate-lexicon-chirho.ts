@@ -280,7 +280,7 @@ function generateLexiconChirho(): void {
         insertGlossChirho.run(
           senseIdChirho,
           langCodeChirho,
-          JSON.stringify(phrasesChirho)
+          JSON.stringify(phrasesChirho).replaceAll('","', '", "')
         );
       }
 

@@ -459,7 +459,7 @@
 						{#if panelDataChirho.glossesChirho && panelDataChirho.glossesChirho.length > 0}
 							<div class="panel-glosses-chirho">
 								{#each panelDataChirho.glossesChirho as gChirho, iChirho}
-									<span class="panel-gloss-lang-chirho">{gChirho.language_code_chirho}</span>{gChirho.glosses_chirho}{#if iChirho < panelDataChirho.glossesChirho.length - 1}<span style="color: var(--border-chirho);"> &middot; </span>{/if}
+									<span class="panel-gloss-lang-chirho">{gChirho.language_code_chirho}</span>{gChirho.glosses_chirho.replaceAll('","', '", "')}{#if iChirho < panelDataChirho.glossesChirho.length - 1}<span style="color: var(--border-chirho);"> &middot; </span>{/if}
 								{/each}
 							</div>
 						{/if}
