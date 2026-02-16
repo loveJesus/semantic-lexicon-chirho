@@ -258,22 +258,66 @@ function parseResponseChirho(
       { labelChirho: string; enrichedChirho: string }
     > = {};
 
-    if (parsedChirho.senses) {
-      for (const [keyChirho, valChirho] of Object.entries(
-        parsedChirho.senses
-      )) {
-        const vChirho = valChirho as any;
+    // Handle multiple sense key formats: senses, senses_chirho
+    const sensesObjChirho =
+      parsedChirho.senses || parsedChirho.senses_chirho || {};
+    for (const [keyChirho, valChirho] of Object.entries(sensesObjChirho)) {
+      const vChirho = valChirho as any;
+      if (typeof vChirho === "string") {
+        // Old format: senses_chirho: { "1": "description string" }
+        // Use first sentence as label, full text as enriched
+        const firstSentenceChirho =
+          vChirho.split(/[:.]/)[0]?.trim().substring(0, 80) || "";
         sensesChirho[parseInt(keyChirho)] = {
-          labelChirho: vChirho.label || "",
-          enrichedChirho: vChirho.enriched || "",
+          labelChirho: firstSentenceChirho,
+          enrichedChirho: vChirho,
+        };
+      } else {
+        // Object format: { label/label_chirho, enriched/enriched_chirho }
+        sensesChirho[parseInt(keyChirho)] = {
+          labelChirho: vChirho.label || vChirho.label_chirho || "",
+          enrichedChirho: vChirho.enriched || vChirho.enriched_chirho || "",
         };
       }
     }
 
+    // Handle multiple gloss key formats:
+    // Format 1: gloss_terse_chirho / gloss_readable_chirho
+    // Format 2: lemma_gloss_chirho (single field, sometimes string, sometimes object)
+    // Format 3-4: gloss_terse / gloss_readable
+    let terseChirho =
+      parsedChirho.gloss_terse ||
+      parsedChirho.gloss_terse_chirho ||
+      "";
+    let readableChirho =
+      parsedChirho.gloss_readable ||
+      parsedChirho.gloss_readable_chirho ||
+      "";
+
+    // Handle lemma_gloss_chirho which can be string or object
+    if (!terseChirho && !readableChirho && parsedChirho.lemma_gloss_chirho) {
+      const lgChirho = parsedChirho.lemma_gloss_chirho;
+      if (typeof lgChirho === "string") {
+        readableChirho = lgChirho;
+      } else if (typeof lgChirho === "object") {
+        terseChirho = lgChirho.terse_chirho || lgChirho.terse || "";
+        readableChirho =
+          lgChirho.readable_chirho || lgChirho.readable || "";
+      }
+    }
+
+    // Ensure strings
+    terseChirho = typeof terseChirho === "string" ? terseChirho : String(terseChirho || "");
+    readableChirho = typeof readableChirho === "string" ? readableChirho : String(readableChirho || "");
+
+    // For old format with only readable, derive terse from it
+    const finalTerseChirho =
+      terseChirho || (readableChirho ? readableChirho.substring(0, 150) : "");
+
     return {
       lemmaIdChirho,
-      glossTerseChirho: parsedChirho.gloss_terse || "",
-      glossReadableChirho: parsedChirho.gloss_readable || "",
+      glossTerseChirho: finalTerseChirho,
+      glossReadableChirho: readableChirho,
       sensesChirho,
     };
   } catch (errChirho) {
