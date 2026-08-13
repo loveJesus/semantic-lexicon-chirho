@@ -4,11 +4,14 @@
 import type { PageServerLoad } from "./$types";
 import { error } from "@sveltejs/kit";
 
-export const load: PageServerLoad = async ({ platform, params }) => {
+export const load: PageServerLoad = async ({ platform, params, url }) => {
   const dbChirho = platform!.env.DB_CHIRHO;
   const lemmaIdChirho = params.lemma_id_chirho;
+  const langParamChirho = url.searchParams.get("lang");
+  const langChirho = langParamChirho === "spa" ? "spa" : "eng";
+  const isSpaChirho = langChirho === "spa";
 
-  const lemmaChirho = await dbChirho
+  const lemmaRowChirho = await dbChirho
     .prepare(
       `SELECT lemma_id_chirho, language_chirho, gloss_raw_chirho, gloss_clean_chirho,
               pos_chirho, sense_count_chirho, occurrence_count_chirho,
@@ -19,11 +22,34 @@ export const load: PageServerLoad = async ({ platform, params }) => {
     .bind(lemmaIdChirho)
     .first();
 
-  if (!lemmaChirho) {
+  if (!lemmaRowChirho) {
     error(404, `Lemma ${lemmaIdChirho} not found`);
   }
 
-  const sensesChirho = await dbChirho
+  // Mutable copy so we can overlay Spanish
+  const lemmaChirho = { ...lemmaRowChirho } as Record<string, any>;
+
+  // Overlay Spanish lemma translations directly
+  if (isSpaChirho) {
+    const spaLemmaChirho = await dbChirho
+      .prepare(
+        `SELECT gloss_terse_chirho, gloss_readable_chirho
+         FROM lemma_entry_translation_chirho
+         WHERE lemma_id_chirho = ?1 AND language_code_chirho = 'spa'`
+      )
+      .bind(lemmaIdChirho)
+      .first<{ gloss_terse_chirho: string; gloss_readable_chirho: string }>();
+    if (spaLemmaChirho) {
+      if (spaLemmaChirho.gloss_terse_chirho) {
+        lemmaChirho.gloss_terse_chirho = spaLemmaChirho.gloss_terse_chirho;
+      }
+      if (spaLemmaChirho.gloss_readable_chirho) {
+        lemmaChirho.gloss_readable_chirho = spaLemmaChirho.gloss_readable_chirho;
+      }
+    }
+  }
+
+  const sensesResultChirho = await dbChirho
     .prepare(
       `SELECT sense_id_chirho, ordinal_chirho, label_chirho, description_chirho,
               occurrence_count_chirho, community_chirho, ln_domain_chirho, macro32_chirho,
@@ -35,7 +61,10 @@ export const load: PageServerLoad = async ({ platform, params }) => {
     .bind(lemmaIdChirho)
     .all();
 
-  const senseIdsChirho = sensesChirho.results.map(
+  // Mutable copies for Spanish overlay
+  const sensesChirho = (sensesResultChirho.results as Record<string, any>[]).map((sChirho) => ({ ...sChirho }));
+
+  const senseIdsChirho = sensesChirho.map(
     (s: Record<string, unknown>) => s.sense_id_chirho
   );
 
@@ -66,10 +95,44 @@ export const load: PageServerLoad = async ({ platform, params }) => {
       .bind(...senseIdsChirho)
       .all();
     refsChirho = refResultChirho.results;
+
+    // Overlay Spanish sense translations directly onto sense objects
+    if (isSpaChirho) {
+      const spaTransResultChirho = await dbChirho
+        .prepare(
+          `SELECT sense_id_chirho, label_chirho, enriched_chirho
+           FROM sense_entry_translation_chirho
+           WHERE sense_id_chirho IN (${placeholdersChirho})
+             AND language_code_chirho = 'spa'`
+        )
+        .bind(...senseIdsChirho)
+        .all();
+
+      const spaMapChirho = new Map<number, { labelChirho: string; enrichedChirho: string }>();
+      for (const rowChirho of spaTransResultChirho.results as Record<string, any>[]) {
+        spaMapChirho.set(rowChirho.sense_id_chirho as number, {
+          labelChirho: (rowChirho.label_chirho as string) || "",
+          enrichedChirho: (rowChirho.enriched_chirho as string) || "",
+        });
+      }
+
+      // Overlay Spanish directly onto the sense objects
+      for (const senseChirho of sensesChirho) {
+        const spaChirho = spaMapChirho.get(senseChirho.sense_id_chirho as number);
+        if (spaChirho) {
+          if (spaChirho.labelChirho) {
+            senseChirho.label_chirho = spaChirho.labelChirho;
+          }
+          if (spaChirho.enrichedChirho) {
+            senseChirho.enriched_chirho = spaChirho.enrichedChirho;
+          }
+        }
+      }
+    }
   }
 
   // Fetch related senses (other lemmas in the same macro32 domain)
-  const domainsChirho = sensesChirho.results
+  const domainsChirho = sensesChirho
     .map((s: Record<string, unknown>) => s.macro32_chirho)
     .filter((d: unknown): d is string => typeof d === 'string' && d.length > 0);
   const uniqueDomainsChirho = [...new Set(domainsChirho)];
@@ -95,9 +158,10 @@ export const load: PageServerLoad = async ({ platform, params }) => {
 
   return {
     lemmaChirho,
-    sensesChirho: sensesChirho.results,
+    sensesChirho,
     glossesChirho,
     refsChirho,
     relatedSensesChirho,
+    langChirho,
   };
 };

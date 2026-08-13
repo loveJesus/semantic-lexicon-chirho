@@ -364,7 +364,7 @@ for s_chirho in output_chirho:
 # ============================================================
 # WRITE OUTPUT
 # ============================================================
-output_path_chirho = "/Volumes/ENC_4TB_WDB_CHIRHO/dev-aleluya/friends-aleluya/andrewbeth-chirho/semantic-chirho/output-chirho/merge-responses-chirho/H5493-chirho.json"
+output_path_chirho = "/Users/hallelujah/dev-chirho/friends-chirho/andrewbeth-chirho/semantic-chirho/output-chirho/merge-responses-chirho/H5493-chirho.json"
 
 with open(output_path_chirho, "w", encoding="utf-8") as f_chirho:
     json.dump(output_chirho, f_chirho, indent=2, ensure_ascii=False)

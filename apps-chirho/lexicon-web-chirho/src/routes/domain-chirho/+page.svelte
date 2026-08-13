@@ -1,7 +1,10 @@
 <!-- For God so loved the world that he gave his only begotten Son,
      that whoever believes in him should not perish but have eternal life. -->
 <script lang="ts">
+	import { tChirho, appendLangChirho } from '$lib/i18n-chirho';
+
 	let { data } = $props();
+	let langChirho = $derived(data.langChirho as string);
 
 	let expandedMacroChirho = $state<string | null>(null);
 	let expandedLnChirho = $state<string | null>(null);
@@ -62,8 +65,8 @@
 	}
 </style>
 
-<h1>Semantic Domains</h1>
-<p style="color: var(--muted-chirho);">Three-level hierarchy: Macro-32 &rarr; Louw-Nida &rarr; Community clusters</p>
+<h1>{langChirho === 'spa' ? 'Dominios Semánticos' : 'Semantic Domains'}</h1>
+<p style="color: var(--muted-chirho);">{langChirho === 'spa' ? 'Jerarquía de tres niveles: Macro-32 → Louw-Nida → Grupos comunitarios' : 'Three-level hierarchy: Macro-32 → Louw-Nida → Community clusters'}</p>
 
 <div style="display: grid; gap: 8px; margin-top: 24px;">
 	{#each data.macro32Chirho as mChirho}
@@ -74,10 +77,10 @@
 				class="macro-btn-chirho"
 			>
 				<span>
-					<a href="/domain-chirho/{encodeURIComponent(mChirho.name_chirho)}" style="color: var(--green-chirho); font-weight: bold;" onclick={(e) => e.stopPropagation()}>{mChirho.name_chirho}</a>
-					<span style="color: var(--muted-chirho); margin-left: 8px; font-size: 13px;">{childrenLnChirho.length} L-N domains</span>
+					<a href={appendLangChirho(`/domain-chirho/${encodeURIComponent(mChirho.name_chirho)}`, langChirho)} style="color: var(--green-chirho); font-weight: bold;" onclick={(e) => e.stopPropagation()}>{mChirho.name_chirho}</a>
+					<span style="color: var(--muted-chirho); margin-left: 8px; font-size: 13px;">{childrenLnChirho.length} {langChirho === 'spa' ? 'dominios L-N' : 'L-N domains'}</span>
 				</span>
-				<span style="color: var(--muted-chirho); font-size: 13px;">{mChirho.sense_count_chirho} senses {expandedMacroChirho === mChirho.name_chirho ? '&#9662;' : '&#9656;'}</span>
+				<span style="color: var(--muted-chirho); font-size: 13px;">{mChirho.sense_count_chirho} {tChirho(langChirho, 'senses').toLowerCase()} {expandedMacroChirho === mChirho.name_chirho ? '&#9662;' : '&#9656;'}</span>
 			</button>
 
 			{#if expandedMacroChirho === mChirho.name_chirho}
@@ -89,11 +92,11 @@
 								onclick={() => expandedLnChirho = expandedLnChirho === lnChirho.name_chirho ? null : lnChirho.name_chirho}
 								class="ln-btn-chirho"
 							>
-								<a href="/domain-chirho/{encodeURIComponent(lnChirho.name_chirho)}" style="color: var(--blue-chirho);" onclick={(e) => e.stopPropagation()}>{lnChirho.name_chirho}</a>
+								<a href={appendLangChirho(`/domain-chirho/${encodeURIComponent(lnChirho.name_chirho)}`, langChirho)} style="color: var(--blue-chirho);" onclick={(e) => e.stopPropagation()}>{lnChirho.name_chirho}</a>
 								<span style="color: var(--muted-chirho); font-size: 13px;">
-									{lnChirho.sense_count_chirho} senses
+									{lnChirho.sense_count_chirho} {tChirho(langChirho, 'senses').toLowerCase()}
 									{#if childrenCommChirho.length > 0}
-										&middot; {childrenCommChirho.length} clusters
+										&middot; {childrenCommChirho.length} {langChirho === 'spa' ? 'grupos' : 'clusters'}
 									{/if}
 									{expandedLnChirho === lnChirho.name_chirho ? '&#9662;' : '&#9656;'}
 								</span>
@@ -103,7 +106,7 @@
 								<div style="padding: 4px 0 4px 24px;">
 									{#each childrenCommChirho as cChirho}
 										<div style="display: flex; justify-content: space-between; padding: 3px 8px; font-size: 13px;">
-											<a href="/domain-chirho/{encodeURIComponent(cChirho.name_chirho)}" style="color: var(--purple-chirho);">{cChirho.name_chirho}</a>
+											<a href={appendLangChirho(`/domain-chirho/${encodeURIComponent(cChirho.name_chirho)}`, langChirho)} style="color: var(--purple-chirho);">{cChirho.name_chirho}</a>
 											<span style="color: var(--muted-chirho); font-size: 12px;">{cChirho.sense_count_chirho}</span>
 										</div>
 									{/each}

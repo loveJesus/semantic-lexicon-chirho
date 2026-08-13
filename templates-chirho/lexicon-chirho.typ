@@ -31,7 +31,7 @@
 )
 
 #set text(
-  font: ("New Computer Modern", "Ezra SIL", "Gentium Plus", "Noto Sans Syriac"),
+  font: ("New Computer Modern", "Ezra SIL", "Gentium Plus", "Noto Sans KR", "Noto Sans Syriac"),
   size: 8.5pt,
   lang: "en",
   fallback: true,

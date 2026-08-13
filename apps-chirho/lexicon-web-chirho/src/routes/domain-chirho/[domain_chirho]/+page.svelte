@@ -1,12 +1,15 @@
 <!-- For God so loved the world that he gave his only begotten Son,
      that whoever believes in him should not perish but have eternal life. -->
 <script lang="ts">
-	let { data } = $props();
+	import { tChirho, appendLangChirho } from '$lib/i18n-chirho';
 
-	const HIERARCHY_LABELS_CHIRHO: Record<string, string> = {
-		macro32: 'Macro-32 Domain',
-		louw_nida: 'Louw-Nida Category',
-		community: 'Community Cluster'
+	let { data } = $props();
+	let langChirho = $derived(data.langChirho as string);
+
+	const HIERARCHY_LABELS_CHIRHO: Record<string, Record<string, string>> = {
+		macro32: { eng: 'Macro-32 Domain', spa: 'Dominio Macro-32' },
+		louw_nida: { eng: 'Louw-Nida Category', spa: 'Categoría Louw-Nida' },
+		community: { eng: 'Community Cluster', spa: 'Grupo Comunitario' }
 	};
 
 	const HIERARCHY_COLORS_CHIRHO: Record<string, string> = {
@@ -51,23 +54,23 @@
 </style>
 
 <div style="margin-bottom: 12px; font-family: 'Source Sans 3', sans-serif; font-size: 13px;">
-	<a href="/domain-chirho" style="color: var(--muted-chirho);">Domains</a>
+	<a href={appendLangChirho('/domain-chirho', langChirho)} style="color: var(--muted-chirho);">{tChirho(langChirho, 'domains')}</a>
 	<span style="color: var(--border-chirho);"> / </span>
 	<span style="color: {colorChirho}; font-weight: 600;">{data.domainNameChirho}</span>
 </div>
 
 <h1 style="color: {colorChirho}; margin-bottom: 4px; font-size: 26px;">{data.domainNameChirho}</h1>
 <p style="color: var(--muted-chirho); margin-top: 0; font-family: 'Source Sans 3', sans-serif; font-size: 14px;">
-	{HIERARCHY_LABELS_CHIRHO[data.hierarchyChirho]}
-	&middot; {data.totalSensesChirho} senses
+	{HIERARCHY_LABELS_CHIRHO[data.hierarchyChirho]?.[langChirho] || HIERARCHY_LABELS_CHIRHO[data.hierarchyChirho]?.eng}
+	&middot; {data.totalSensesChirho} {tChirho(langChirho, 'senses').toLowerCase()}
 	&middot; {data.lemmasChirho.length} lemmas
 </p>
 
 {#if data.childrenChirho.length > 0}
-	<h2 style="margin-top: 24px; font-size: 14px; color: var(--muted-chirho);">Sub-domains</h2>
+	<h2 style="margin-top: 24px; font-size: 14px; color: var(--muted-chirho);">{langChirho === 'spa' ? 'Subdominios' : 'Sub-domains'}</h2>
 	<div style="display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 24px;">
 		{#each data.childrenChirho as cChirho}
-			<a href="/domain-chirho/{encodeURIComponent(String(cChirho.name_chirho))}"
+			<a href={appendLangChirho(`/domain-chirho/${encodeURIComponent(String(cChirho.name_chirho))}`, langChirho)}
 				style="background: var(--surface-chirho); border: 1px solid var(--border-chirho); padding: 4px 12px; border-radius: 4px; font-size: 13px; font-family: 'Source Sans 3', sans-serif;">
 				{cChirho.name_chirho}
 				<span style="color: var(--muted-chirho);">({cChirho.sense_count_chirho})</span>
@@ -76,7 +79,7 @@
 	</div>
 {/if}
 
-<h2 style="margin-top: 16px; font-size: 15px; color: var(--muted-chirho);">Lemmas in this domain</h2>
+<h2 style="margin-top: 16px; font-size: 15px; color: var(--muted-chirho);">{langChirho === 'spa' ? 'Lemas en este dominio' : 'Lemmas in this domain'}</h2>
 
 {#each data.lemmasChirho as lChirho}
 	<div class="entry-card-chirho">
@@ -84,7 +87,7 @@
 			{lChirho.gloss_clean_chirho || '—'}
 		</div>
 		<div class="entry-meta-chirho">
-			<a href="/lemma-chirho/{lChirho.lemma_id_chirho}">{lChirho.lemma_id_chirho}</a>
+			<a href={appendLangChirho(`/lemma-chirho/${lChirho.lemma_id_chirho}`, langChirho)}>{lChirho.lemma_id_chirho}</a>
 			{#if lChirho.pos_chirho}
 				<span><span class="meta-label-chirho">pos</span> <em>{lChirho.pos_chirho}</em></span>
 			{/if}

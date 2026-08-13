@@ -4,9 +4,11 @@
 import type { PageServerLoad } from "./$types";
 import { error } from "@sveltejs/kit";
 
-export const load: PageServerLoad = async ({ platform, params }) => {
+export const load: PageServerLoad = async ({ platform, params, url }) => {
   const dbChirho = platform!.env.DB_CHIRHO;
   const domainChirho = decodeURIComponent(params.domain_chirho);
+  const langChirho = url.searchParams.get("lang") === "spa" ? "spa" : "eng";
+  const isSpaChirho = langChirho === "spa";
 
   // Determine which hierarchy level this domain belongs to
   // Try macro32 first, then louw_nida, then community
@@ -95,11 +97,49 @@ export const load: PageServerLoad = async ({ platform, params }) => {
     .bind(domainChirho)
     .first<{ c: number }>();
 
+  // Overlay Spanish glosses when in Spanish mode
+  const lemmasListChirho = (lemmasChirho.results as Record<string, any>[]).map((rChirho) => ({ ...rChirho }));
+
+  if (isSpaChirho && lemmasListChirho.length > 0) {
+    const idsChirho = lemmasListChirho.map((rChirho) => rChirho.lemma_id_chirho as string);
+    const spaMapChirho = new Map<string, string>();
+    const chunkSizeChirho = 90; // D1 limit is 100 bind vars
+
+    for (let iChirho = 0; iChirho < idsChirho.length; iChirho += chunkSizeChirho) {
+      const chunkChirho = idsChirho.slice(iChirho, iChirho + chunkSizeChirho);
+      const placeholdersChirho = chunkChirho.map((_: string, jChirho: number) => `?${jChirho + 1}`).join(",");
+
+      const spaTransChirho = await dbChirho
+        .prepare(
+          `SELECT lemma_id_chirho, gloss_terse_chirho
+           FROM lemma_entry_translation_chirho
+           WHERE lemma_id_chirho IN (${placeholdersChirho})
+             AND language_code_chirho = 'spa'`
+        )
+        .bind(...chunkChirho)
+        .all();
+
+      for (const rowChirho of spaTransChirho.results as Record<string, any>[]) {
+        if (rowChirho.gloss_terse_chirho) {
+          spaMapChirho.set(rowChirho.lemma_id_chirho as string, rowChirho.gloss_terse_chirho as string);
+        }
+      }
+    }
+
+    for (const rowChirho of lemmasListChirho) {
+      const spaGlossChirho = spaMapChirho.get(rowChirho.lemma_id_chirho as string);
+      if (spaGlossChirho) {
+        rowChirho.gloss_clean_chirho = spaGlossChirho;
+      }
+    }
+  }
+
   return {
     domainNameChirho: domainChirho,
     hierarchyChirho,
     totalSensesChirho: totalChirho?.c || 0,
-    lemmasChirho: lemmasChirho.results,
+    lemmasChirho: lemmasListChirho,
     childrenChirho,
+    langChirho,
   };
 };

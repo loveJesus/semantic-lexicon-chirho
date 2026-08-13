@@ -20,8 +20,8 @@ so that is the default for any Qal form.
 import re
 import json
 
-INPUT_PATH_CHIRHO = "/Volumes/ENC_4TB_WDB_CHIRHO/dev-aleluya/friends-aleluya/andrewbeth-chirho/semantic-chirho/output-chirho/merge-batches-chirho/prompt-H3427-chirho.txt"
-OUTPUT_PATH_CHIRHO = "/Volumes/ENC_4TB_WDB_CHIRHO/dev-aleluya/friends-aleluya/andrewbeth-chirho/semantic-chirho/output-chirho/merge-responses-chirho/H3427-chirho.json"
+INPUT_PATH_CHIRHO = "/Users/hallelujah/dev-chirho/friends-chirho/andrewbeth-chirho/semantic-chirho/output-chirho/merge-batches-chirho/prompt-H3427-chirho.txt"
+OUTPUT_PATH_CHIRHO = "/Users/hallelujah/dev-chirho/friends-chirho/andrewbeth-chirho/semantic-chirho/output-chirho/merge-responses-chirho/H3427-chirho.json"
 
 # ── Parse ──────────────────────────────────────────────────────────
 with open(INPUT_PATH_CHIRHO, "r", encoding="utf-8") as f_chirho:

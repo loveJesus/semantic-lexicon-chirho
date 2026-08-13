@@ -3,8 +3,9 @@
 
 import type { PageServerLoad } from "./$types";
 
-export const load: PageServerLoad = async ({ platform }) => {
+export const load: PageServerLoad = async ({ platform, url }) => {
   const dbChirho = platform!.env.DB_CHIRHO;
+  const langChirho = url.searchParams.get("lang") === "spa" ? "spa" : "eng";
 
   // Macro-32 domains with sense counts
   const macro32Chirho = await dbChirho
@@ -48,5 +49,6 @@ export const load: PageServerLoad = async ({ platform }) => {
     macro32Chirho: macro32Chirho.results,
     lnChirho: lnChirho.results,
     communityChirho: communityChirho.results,
+    langChirho,
   };
 };

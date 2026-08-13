@@ -3,12 +3,29 @@
 
 import { Database } from "bun:sqlite";
 import { mkdirSync, writeFileSync } from "fs";
+import { parseArgs } from "util";
+
+const { values: argsChirho } = parseArgs({
+  args: Bun.argv.slice(2),
+  options: {
+    lang: { type: "string", default: "eng" },
+  },
+});
+
+const LANG_CHIRHO = argsChirho.lang === "spa" ? "spa" : "eng";
+const IS_SPA_CHIRHO = LANG_CHIRHO === "spa";
 
 const LEXICON_DB_PATH_CHIRHO = "./data-chirho/lexicon-chirho.db";
 const OUTPUT_DIR_CHIRHO = "./output-chirho/exports-chirho";
-const JSON_PATH_CHIRHO = `${OUTPUT_DIR_CHIRHO}/lexicon-data-chirho.json`;
-const PDF_PATH_CHIRHO = `${OUTPUT_DIR_CHIRHO}/lexicon-chirho.pdf`;
-const TYPST_TEMPLATE_CHIRHO = "./templates-chirho/lexicon-chirho.typ";
+const JSON_PATH_CHIRHO = IS_SPA_CHIRHO
+  ? `${OUTPUT_DIR_CHIRHO}/lexicon-data-chirho-spa.json`
+  : `${OUTPUT_DIR_CHIRHO}/lexicon-data-chirho.json`;
+const PDF_PATH_CHIRHO = IS_SPA_CHIRHO
+  ? `${OUTPUT_DIR_CHIRHO}/lexicon-chirho-spa.pdf`
+  : `${OUTPUT_DIR_CHIRHO}/lexicon-chirho.pdf`;
+const TYPST_TEMPLATE_CHIRHO = IS_SPA_CHIRHO
+  ? "./templates-chirho/lexicon-chirho-spa.typ"
+  : "./templates-chirho/lexicon-chirho.typ";
 
 const BOOK_NAMES_CHIRHO: Record<number, string> = {
   1: "Gen", 2: "Exod", 3: "Lev", 4: "Num", 5: "Deut",
@@ -87,8 +104,25 @@ function extractDataChirho(): LemmaJsonChirho[] {
     .all() as Record<string, any>[];
 
   console.log(
-    `[gen-pdf-lexicon-chirho] Found ${lemmasChirho.length} lemmas`,
+    `[gen-pdf-lexicon-chirho] Found ${lemmasChirho.length} lemmas (lang=${LANG_CHIRHO})`,
   );
+
+  // Prepare Spanish translation lookups if needed
+  const lemmaTransStmtChirho = IS_SPA_CHIRHO
+    ? dbChirho.prepare(
+        `SELECT gloss_terse_chirho, gloss_readable_chirho
+         FROM lemma_entry_translation_chirho
+         WHERE lemma_id_chirho = ?1 AND language_code_chirho = 'spa'`,
+      )
+    : null;
+
+  const senseTransStmtChirho = IS_SPA_CHIRHO
+    ? dbChirho.prepare(
+        `SELECT label_chirho, enriched_chirho
+         FROM sense_entry_translation_chirho
+         WHERE sense_id_chirho = ?1 AND language_code_chirho = 'spa'`,
+      )
+    : null;
 
   const sensesStmtChirho = dbChirho.prepare(
     `SELECT sense_id_chirho, ordinal_chirho, label_chirho, description_chirho,
@@ -121,6 +155,22 @@ function extractDataChirho(): LemmaJsonChirho[] {
   for (const lemmaChirho of lemmasChirho) {
     const lemmaIdChirho = lemmaChirho.lemma_id_chirho as string;
 
+    // Get Spanish lemma-level translations if applicable
+    let glossTerseChirho = (lemmaChirho.gloss_terse_chirho as string) || "";
+    let glossReadableChirho = (lemmaChirho.gloss_readable_chirho as string) || "";
+
+    if (IS_SPA_CHIRHO && lemmaTransStmtChirho) {
+      const spaLemmaChirho = lemmaTransStmtChirho.get(lemmaIdChirho) as Record<string, any> | null;
+      if (spaLemmaChirho) {
+        if (spaLemmaChirho.gloss_terse_chirho) {
+          glossTerseChirho = spaLemmaChirho.gloss_terse_chirho as string;
+        }
+        if (spaLemmaChirho.gloss_readable_chirho) {
+          glossReadableChirho = spaLemmaChirho.gloss_readable_chirho as string;
+        }
+      }
+    }
+
     const sensesChirho = sensesStmtChirho.all(lemmaIdChirho) as Record<
       string,
       any
@@ -129,6 +179,22 @@ function extractDataChirho(): LemmaJsonChirho[] {
     const senseListChirho: SenseJsonChirho[] = [];
     for (const sChirho of sensesChirho) {
       const senseIdChirho = sChirho.sense_id_chirho as number;
+
+      // Get sense-level label and enriched, with Spanish overlay
+      let labelChirho = (sChirho.label_chirho as string) || "";
+      let enrichedChirho = (sChirho.enriched_chirho as string) || "";
+
+      if (IS_SPA_CHIRHO && senseTransStmtChirho) {
+        const spaTransChirho = senseTransStmtChirho.get(senseIdChirho) as Record<string, any> | null;
+        if (spaTransChirho) {
+          if (spaTransChirho.label_chirho) {
+            labelChirho = spaTransChirho.label_chirho as string;
+          }
+          if (spaTransChirho.enriched_chirho) {
+            enrichedChirho = spaTransChirho.enriched_chirho as string;
+          }
+        }
+      }
 
       // Domain: prefer community, then ln_domain, then macro32
       let domainChirho =
@@ -176,9 +242,9 @@ function extractDataChirho(): LemmaJsonChirho[] {
 
       senseListChirho.push({
         ordinalChirho: sChirho.ordinal_chirho as number,
-        labelChirho: (sChirho.label_chirho as string) || "",
+        labelChirho,
         descriptionChirho: (sChirho.description_chirho as string) || "",
-        enrichedChirho: (sChirho.enriched_chirho as string) || "",
+        enrichedChirho,
         occurrenceCountChirho: sChirho.occurrence_count_chirho as number,
         domainChirho,
         glossesChirho,
@@ -195,9 +261,8 @@ function extractDataChirho(): LemmaJsonChirho[] {
       headwordChirho,
       languageChirho: langChirho,
       posChirho: (lemmaChirho.pos_chirho as string) || "",
-      glossTerseChirho: (lemmaChirho.gloss_terse_chirho as string) || "",
-      glossReadableChirho:
-        (lemmaChirho.gloss_readable_chirho as string) || "",
+      glossTerseChirho,
+      glossReadableChirho,
       glossCleanChirho: (lemmaChirho.gloss_clean_chirho as string) || "",
       senseCountChirho: lemmaChirho.sense_count_chirho as number,
       occurrenceCountChirho: lemmaChirho.occurrence_count_chirho as number,
@@ -219,11 +284,11 @@ function extractDataChirho(): LemmaJsonChirho[] {
 async function mainChirho(): Promise<void> {
   mkdirSync(OUTPUT_DIR_CHIRHO, { recursive: true });
 
-  console.log("[gen-pdf-lexicon-chirho] Extracting data from lexicon DB...");
+  console.log(`[gen-pdf-lexicon-chirho] Extracting data from lexicon DB (lang=${LANG_CHIRHO})...`);
   const dataChirho = extractDataChirho();
 
   console.log(
-    `[gen-pdf-lexicon-chirho] Writing JSON (${dataChirho.length} lemmas)...`,
+    `[gen-pdf-lexicon-chirho] Writing JSON (${dataChirho.length} lemmas) -> ${JSON_PATH_CHIRHO}`,
   );
   writeFileSync(JSON_PATH_CHIRHO, JSON.stringify(dataChirho));
 
@@ -232,7 +297,7 @@ async function mainChirho(): Promise<void> {
     `[gen-pdf-lexicon-chirho] JSON written: ${(fileSizeChirho / 1024 / 1024).toFixed(1)} MB`,
   );
 
-  console.log("[gen-pdf-lexicon-chirho] Compiling PDF with Typst...");
+  console.log(`[gen-pdf-lexicon-chirho] Compiling PDF with Typst (${TYPST_TEMPLATE_CHIRHO})...`);
   const procChirho = Bun.spawn(
     ["typst", "compile", "--root", process.cwd(), "--font-path", "assets-chirho/fonts-chirho", TYPST_TEMPLATE_CHIRHO, PDF_PATH_CHIRHO],
     {

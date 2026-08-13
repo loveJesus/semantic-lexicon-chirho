@@ -2,8 +2,10 @@
      that whoever believes in him should not perish but have eternal life. -->
 <script lang="ts">
 	import { page } from '$app/stores';
+	import { tChirho, appendLangChirho } from '$lib/i18n-chirho';
 
 	let { data } = $props();
+	let langChirho = $derived(data.langChirho as string);
 
 	// Read ?sense_chirho= query param for sense-anchoring from Bible view
 	let targetSenseChirho = $derived(
@@ -27,28 +29,23 @@
 	// Extract headword from gloss_clean_chirho (first Hebrew/Greek word)
 	function extractHeadwordChirho(glossChirho: string | null, lemmaIdChirho: string): string {
 		if (!glossChirho) return lemmaIdChirho;
-		// Hebrew: often starts with [word] or word followed by numbers/grammar
 		const hebrewMatchChirho = glossChirho.match(/^\[?([^\]]+?)\]?\s/);
 		if (hebrewMatchChirho) {
-			// Return the first word/phrase before the grammar info
 			const rawChirho = hebrewMatchChirho[1].trim();
-			// If it contains Hebrew chars, return it
 			if (/[\u0590-\u05FF]/.test(rawChirho)) return rawChirho;
 		}
-		// Greek: first word before comma or space
 		const greekMatchChirho = glossChirho.match(/^([^\s,]+)/);
 		if (greekMatchChirho && /[\u0370-\u03FF\u1F00-\u1FFF]/.test(greekMatchChirho[1])) {
 			return greekMatchChirho[1];
 		}
-		// Fallback: first 40 chars or lemma ID
 		return glossChirho.length > 40 ? lemmaIdChirho : glossChirho;
 	}
 
 	// External links
 	function strongsUrlChirho(lemmaIdChirho: string): string {
 		const numChirho = lemmaIdChirho.replace(/[^0-9]/g, '');
-		const langChirho = lemmaIdChirho.startsWith('H') ? 'hebrew' : 'greek';
-		return `https://biblehub.com/${langChirho}/${numChirho}.htm`;
+		const origLangChirho = lemmaIdChirho.startsWith('H') ? 'hebrew' : 'greek';
+		return `https://biblehub.com/${origLangChirho}/${numChirho}.htm`;
 	}
 	function blueletterUrlChirho(lemmaIdChirho: string): string {
 		return `https://www.blueletterbible.org/lexicon/${lemmaIdChirho.toLowerCase()}/kjv/wlc/0-1/`;
@@ -106,11 +103,11 @@
 		const keyChirho = BOOK_KEYS_CHIRHO[rChirho.book_chirho] || rChirho.book_chirho;
 		return {
 			textChirho: `${bookChirho} ${rChirho.chapter_chirho}:${rChirho.verse_chirho}`,
-			hrefChirho: `/bible-chirho/${keyChirho}.${rChirho.chapter_chirho}`
+			hrefChirho: appendLangChirho(`/bible-chirho/${keyChirho}.${rChirho.chapter_chirho}`, langChirho)
 		};
 	}
 
-	// First Bible reference for "Read in Bible" link (must be after formatRefLinkChirho)
+	// First Bible reference for "Read in Bible" link
 	let firstRefChirho = $derived(
 		(data.refsChirho as Record<string, any>[]).length > 0
 			? formatRefLinkChirho((data.refsChirho as Record<string, any>[])[0])
@@ -121,7 +118,7 @@
 	let isHebrewChirho = $derived(lChirho.language_chirho === 'heb' || lChirho.language_chirho === 'arc');
 	let headwordTextChirho = $derived(extractHeadwordChirho(lChirho.gloss_clean_chirho, lChirho.lemma_id_chirho));
 
-	// Composed glosses (must be after lChirho)
+	// Glosses already overlaid with Spanish by server when lang=spa
 	let summaryGlossChirho = $derived(
 		lChirho.gloss_terse_chirho ||
 		allSensesChirho
@@ -131,7 +128,7 @@
 	);
 	let readableGlossChirho = $derived(lChirho.gloss_readable_chirho || '');
 
-	// BDB text (must be after lChirho)
+	// BDB text (always English - raw lexicon)
 	let bdbFullChirho = $derived(lChirho.gloss_clean_chirho || lChirho.article_chirho || '');
 	let hasBdbChirho = $derived(bdbFullChirho.length > 0);
 	let bdbIsLongChirho = $derived(bdbFullChirho.length > 500);
@@ -144,13 +141,11 @@
 
 	// Bold Hebrew/Greek characters in BDB text for readability
 	function boldOriginalChirho(textChirho: string): string {
-		// HTML-escape non-original-script text to prevent XSS
 		const escapedChirho = textChirho
 			.replace(/&/g, '&amp;')
 			.replace(/</g, '&lt;')
 			.replace(/>/g, '&gt;')
 			.replace(/"/g, '&quot;');
-		// Wrap runs of Hebrew (U+0590-U+05FF, U+FB1D-U+FB4F) and Greek (U+0370-U+03FF, U+1F00-U+1FFF) in <strong>
 		return escapedChirho.replace(
 			/([\u0590-\u05FF\uFB1D-\uFB4F]+|[\u0370-\u03FF\u1F00-\u1FFF\u0300-\u036F]+)/g,
 			'<strong style="font-weight:700;color:var(--fg-chirho)">$1</strong>'
@@ -375,7 +370,7 @@
 </style>
 
 <div style="margin-bottom: 12px; font-family: 'Source Sans 3', sans-serif; font-size: 13px;">
-	<a href="/search-chirho" style="color: var(--muted-chirho);">Search</a>
+	<a href={appendLangChirho('/search-chirho', langChirho)} style="color: var(--muted-chirho);">{tChirho(langChirho, 'search')}</a>
 	<span style="color: var(--border-chirho);"> / </span>
 	<span>{lChirho.lemma_id_chirho}</span>
 </div>
@@ -397,7 +392,7 @@
 				<span style="color: var(--border-chirho);">&nbsp;|&nbsp;</span>
 			{/if}
 			<span class="freq-chirho">
-				{lChirho.occurrence_count_chirho}&times; in {lChirho.sense_count_chirho} sense{lChirho.sense_count_chirho !== 1 ? 's' : ''}
+				{lChirho.occurrence_count_chirho}&times; {langChirho === 'spa' ? 'en' : 'in'} {lChirho.sense_count_chirho} {lChirho.sense_count_chirho !== 1 ? tChirho(langChirho, 'senses').toLowerCase() : tChirho(langChirho, 'senses').toLowerCase().replace(/s$/, '')}
 			</span>
 		</div>
 
@@ -411,7 +406,7 @@
 
 		<div class="ext-links-chirho">
 			{#if firstRefChirho}
-				<a class="ext-link-chirho" href={firstRefChirho.hrefChirho} style="background: var(--accent-chirho); color: #fff; border-color: var(--accent-chirho);">Read in Bible &rarr;</a>
+				<a class="ext-link-chirho" href={firstRefChirho.hrefChirho} style="background: var(--accent-chirho); color: #fff; border-color: var(--accent-chirho);">{tChirho(langChirho, 'readInBible')} &rarr;</a>
 			{/if}
 			<a class="ext-link-chirho" href={strongsUrlChirho(lChirho.lemma_id_chirho)} target="_blank" rel="noopener">Strong's / BibleHub</a>
 			<a class="ext-link-chirho" href={blueletterUrlChirho(lChirho.lemma_id_chirho)} target="_blank" rel="noopener">Blue Letter Bible</a>
@@ -434,15 +429,15 @@
 			</div>
 			<div style="margin-top: 4px;">
 				{#if sChirho.macro32_chirho}
-					<a href="/domain-chirho/{encodeURIComponent(sChirho.macro32_chirho)}" class="domain-tag-chirho macro-tag-chirho">{sChirho.macro32_chirho}</a>
+					<a href={appendLangChirho(`/domain-chirho/${encodeURIComponent(sChirho.macro32_chirho)}`, langChirho)} class="domain-tag-chirho macro-tag-chirho">{sChirho.macro32_chirho}</a>
 				{/if}
 				{#if sChirho.ln_domain_chirho}
 					<span style="color: var(--muted-chirho); font-size: 10px;">&rsaquo;</span>
-					<a href="/domain-chirho/{encodeURIComponent(sChirho.ln_domain_chirho)}" class="domain-tag-chirho ln-tag-chirho">{sChirho.ln_domain_chirho}</a>
+					<a href={appendLangChirho(`/domain-chirho/${encodeURIComponent(sChirho.ln_domain_chirho)}`, langChirho)} class="domain-tag-chirho ln-tag-chirho">{sChirho.ln_domain_chirho}</a>
 				{/if}
 				{#if sChirho.community_chirho}
 					<span style="color: var(--muted-chirho); font-size: 10px;">&rsaquo;</span>
-					<a href="/domain-chirho/{encodeURIComponent(sChirho.community_chirho)}" class="domain-tag-chirho comm-tag-chirho">{sChirho.community_chirho}</a>
+					<a href={appendLangChirho(`/domain-chirho/${encodeURIComponent(sChirho.community_chirho)}`, langChirho)} class="domain-tag-chirho comm-tag-chirho">{sChirho.community_chirho}</a>
 				{/if}
 			</div>
 			{#if glossListChirho.length > 0}
@@ -459,13 +454,13 @@
 						<a href={linkChirho.hrefChirho}>{linkChirho.textChirho}</a>{#if iChirho < Math.min(refListChirho.length, 12) - 1},&nbsp;{/if}
 					{/each}
 					{#if refListChirho.length > 12}
-						<span>&nbsp;(+{refListChirho.length - 12} more)</span>
+						<span>&nbsp;(+{refListChirho.length - 12} {tChirho(langChirho, 'more')})</span>
 					{/if}
 				</div>
 			{/if}
 			{#if otherSensesCountChirho > 0}
 				<div class="more-senses-chirho">
-					&#9660; {otherSensesCountChirho} more sense{otherSensesCountChirho !== 1 ? 's' : ''} below
+					&#9660; {otherSensesCountChirho} {tChirho(langChirho, 'moreSensesBelow')}
 				</div>
 			{/if}
 		</div>
@@ -474,7 +469,7 @@
 	<hr class="divider-chirho" />
 
 	<!-- Senses section -->
-	<div class="senses-header-chirho">Senses</div>
+	<div class="senses-header-chirho">{tChirho(langChirho, 'sensesHeader')}</div>
 
 	{#each restSensesChirho as sChirho}
 		{@const glossListChirho = glossesBySenseChirho(sChirho.sense_id_chirho)}
@@ -491,15 +486,15 @@
 
 			<div style="margin-top: 4px;">
 				{#if sChirho.macro32_chirho}
-					<a href="/domain-chirho/{encodeURIComponent(sChirho.macro32_chirho)}" class="domain-tag-chirho macro-tag-chirho">{sChirho.macro32_chirho}</a>
+					<a href={appendLangChirho(`/domain-chirho/${encodeURIComponent(sChirho.macro32_chirho)}`, langChirho)} class="domain-tag-chirho macro-tag-chirho">{sChirho.macro32_chirho}</a>
 				{/if}
 				{#if sChirho.ln_domain_chirho}
 					<span style="color: var(--muted-chirho); font-size: 10px;">&rsaquo;</span>
-					<a href="/domain-chirho/{encodeURIComponent(sChirho.ln_domain_chirho)}" class="domain-tag-chirho ln-tag-chirho">{sChirho.ln_domain_chirho}</a>
+					<a href={appendLangChirho(`/domain-chirho/${encodeURIComponent(sChirho.ln_domain_chirho)}`, langChirho)} class="domain-tag-chirho ln-tag-chirho">{sChirho.ln_domain_chirho}</a>
 				{/if}
 				{#if sChirho.community_chirho}
 					<span style="color: var(--muted-chirho); font-size: 10px;">&rsaquo;</span>
-					<a href="/domain-chirho/{encodeURIComponent(sChirho.community_chirho)}" class="domain-tag-chirho comm-tag-chirho">{sChirho.community_chirho}</a>
+					<a href={appendLangChirho(`/domain-chirho/${encodeURIComponent(sChirho.community_chirho)}`, langChirho)} class="domain-tag-chirho comm-tag-chirho">{sChirho.community_chirho}</a>
 				{/if}
 			</div>
 
@@ -518,7 +513,7 @@
 						<a href={linkChirho.hrefChirho}>{linkChirho.textChirho}</a>{#if iChirho < Math.min(refListChirho.length, 12) - 1},&nbsp;{/if}
 					{/each}
 					{#if refListChirho.length > 12}
-						<span>&nbsp;(+{refListChirho.length - 12} more)</span>
+						<span>&nbsp;(+{refListChirho.length - 12} {tChirho(langChirho, 'more')})</span>
 					{/if}
 				</div>
 			{/if}
@@ -528,10 +523,10 @@
 	<!-- Related senses (other lemmas in the same semantic domain) -->
 	{#if (data.relatedSensesChirho as Record<string, any>[]).length > 0}
 		<hr class="divider-chirho" />
-		<div class="senses-header-chirho">Related Senses</div>
+		<div class="senses-header-chirho">{tChirho(langChirho, 'relatedSenses')}</div>
 		<div style="display: flex; flex-wrap: wrap; gap: 6px;">
 			{#each (data.relatedSensesChirho as Record<string, any>[]) as rsChirho}
-				<a href="/lemma-chirho/{rsChirho.lemma_id_chirho}?sense_chirho={rsChirho.ordinal_chirho}" style="display: inline-block; padding: 4px 10px; background: var(--surface-chirho); border: 1px solid var(--border-chirho); border-radius: 4px; font-size: 13px; font-family: 'Source Sans 3', sans-serif; text-decoration: none; color: var(--fg-chirho);">
+				<a href={appendLangChirho(`/lemma-chirho/${rsChirho.lemma_id_chirho}?sense_chirho=${rsChirho.ordinal_chirho}`, langChirho)} style="display: inline-block; padding: 4px 10px; background: var(--surface-chirho); border: 1px solid var(--border-chirho); border-radius: 4px; font-size: 13px; font-family: 'Source Sans 3', sans-serif; text-decoration: none; color: var(--fg-chirho);">
 					<strong style="color: var(--accent-chirho);">{rsChirho.lemma_id_chirho}</strong>
 					<span style="color: var(--muted-chirho);">{rsChirho.ordinal_chirho}.</span>
 					{rsChirho.label_chirho || ''}
@@ -545,7 +540,7 @@
 	{#if hasBdbChirho}
 		<hr class="divider-chirho" />
 		<div class="bdb-section-chirho">
-			<div class="bdb-label-chirho">BDB / Lexicon Reference</div>
+			<div class="bdb-label-chirho">{tChirho(langChirho, 'bdbReference')}</div>
 			<div class="bdb-text-chirho">
 				{#if showFullBdbChirho || !bdbIsLongChirho}
 					{@html boldOriginalChirho(bdbFullChirho)}
@@ -555,7 +550,7 @@
 			</div>
 			{#if bdbIsLongChirho}
 				<button class="bdb-toggle-chirho" onclick={() => showFullBdbChirho = !showFullBdbChirho}>
-					{showFullBdbChirho ? 'Show less' : 'View full BDB entry...'}
+					{showFullBdbChirho ? tChirho(langChirho, 'showLessBdb') : tChirho(langChirho, 'viewFullBdb')}
 				</button>
 			{/if}
 		</div>

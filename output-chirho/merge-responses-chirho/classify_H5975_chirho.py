@@ -12,8 +12,8 @@ import re
 import json
 import sys
 
-PROMPT_PATH_CHIRHO = "/Volumes/ENC_4TB_WDB_CHIRHO/dev-aleluya/friends-aleluya/andrewbeth-chirho/semantic-chirho/output-chirho/merge-batches-chirho/prompt-H5975-chirho.txt"
-OUTPUT_PATH_CHIRHO = "/Volumes/ENC_4TB_WDB_CHIRHO/dev-aleluya/friends-aleluya/andrewbeth-chirho/semantic-chirho/output-chirho/merge-responses-chirho/H5975-chirho.json"
+PROMPT_PATH_CHIRHO = "/Users/hallelujah/dev-chirho/friends-chirho/andrewbeth-chirho/semantic-chirho/output-chirho/merge-batches-chirho/prompt-H5975-chirho.txt"
+OUTPUT_PATH_CHIRHO = "/Users/hallelujah/dev-chirho/friends-chirho/andrewbeth-chirho/semantic-chirho/output-chirho/merge-responses-chirho/H5975-chirho.json"
 
 
 def parse_senses_chirho(path_chirho: str) -> list:

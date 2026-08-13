@@ -1,11 +1,16 @@
 <!-- For God so loved the world that he gave his only begotten Son,
      that whoever believes in him should not perish but have eternal life. -->
 <script lang="ts">
-	let { children } = $props();
+	import { tChirho, appendLangChirho } from '$lib/i18n-chirho';
+
+	let { children, data } = $props();
+	let langChirho = $derived(data.langChirho as string);
+	let otherLangChirho = $derived(langChirho === 'spa' ? 'eng' : 'spa');
+	let otherLangLabelChirho = $derived(langChirho === 'spa' ? 'EN' : 'ES');
 </script>
 
 <svelte:head>
-	<title>Biblical Lexicon</title>
+	<title>{tChirho(langChirho, 'siteTitle')}</title>
 	<link rel="preconnect" href="https://fonts.googleapis.com" />
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous" />
 	<link href="https://fonts.googleapis.com/css2?family=Gentium+Plus:ital,wght@0,400;0,700;1,400&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet" />
@@ -55,13 +60,19 @@
 
 <nav style="border-bottom: 1px solid var(--border-chirho); padding: 10px 24px; display: flex; gap: 20px; align-items: center; flex-wrap: wrap; background: #f2efe7; font-family: 'Source Sans 3', sans-serif; font-size: 14px;">
 	<strong style="color: var(--accent-chirho); font-size: 15px; letter-spacing: 0.3px;">lexicon-chirho</strong>
-	<a href="/">Home</a>
-	<a href="/bible-chirho/gen.1">Bible</a>
-	<a href="/search-chirho">Search</a>
-	<a href="/domain-chirho">Domains</a>
-	<a href="/methodology-chirho">Methodology</a>
-	<a href="/about-chirho">About</a>
-	<a href="https://github.com/andrewbethchirho/semantic-chirho" style="margin-left: auto; color: var(--muted-chirho); font-size: 12px;">GitHub</a>
+	<a href={appendLangChirho('/', langChirho)}>{tChirho(langChirho, 'home')}</a>
+	<a href={appendLangChirho('/bible-chirho/gen.1', langChirho)}>{tChirho(langChirho, 'bible')}</a>
+	<a href={appendLangChirho('/search-chirho', langChirho)}>{tChirho(langChirho, 'search')}</a>
+	<a href={appendLangChirho('/domain-chirho', langChirho)}>{tChirho(langChirho, 'domains')}</a>
+	<a href={appendLangChirho('/methodology-chirho', langChirho)}>{tChirho(langChirho, 'methodology')}</a>
+	<a href={appendLangChirho('/about-chirho', langChirho)}>{tChirho(langChirho, 'about')}</a>
+	<div style="margin-left: auto; display: flex; align-items: center; gap: 8px;">
+		<a
+			href="?lang={otherLangChirho}"
+			style="font-weight: 600; font-size: 13px; padding: 3px 10px; border: 1px solid var(--border-chirho); border-radius: 4px; color: var(--accent-chirho); text-decoration: none;"
+		>{otherLangLabelChirho}</a>
+		<a href="https://github.com/andrewbethchirho/semantic-chirho" style="color: var(--muted-chirho); font-size: 12px;">GitHub</a>
+	</div>
 </nav>
 
 <main style="max-width: 1100px; margin: 0 auto; padding: 24px 32px;">
@@ -69,6 +80,6 @@
 </main>
 
 <footer style="border-top: 1px solid var(--border-chirho); padding: 14px 24px; color: var(--muted-chirho); font-size: 12px; text-align: center; margin-top: 48px; font-family: 'Source Sans 3', sans-serif;">
-	Biblical Lexicon &mdash; 14,884 lemmas &middot; 20,143 senses &middot; 448,269 words &middot; 43 languages
+	{@html tChirho(langChirho, 'footerStats')}
 	&middot; <a href="https://bible.systems" style="color: var(--muted-chirho);">bible.systems</a>
 </footer>

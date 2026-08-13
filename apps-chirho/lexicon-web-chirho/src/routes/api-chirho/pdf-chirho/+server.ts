@@ -3,15 +3,22 @@
 
 import type { RequestHandler } from "./$types";
 
-const OBJECT_KEY_CHIRHO = "lexicon-chirho.pdf";
+const PDF_KEYS_CHIRHO: Record<string, string> = {
+  eng: "lexicon-chirho.pdf",
+  spa: "lexicon-chirho-spa.pdf",
+};
 
-export const GET: RequestHandler = async ({ platform }) => {
+export const GET: RequestHandler = async ({ platform, url }) => {
   const bucketChirho = platform?.env?.ASSETS_R2_CHIRHO;
   if (!bucketChirho) {
     return new Response("Storage not configured", { status: 503 });
   }
 
-  const objectChirho = await bucketChirho.get(OBJECT_KEY_CHIRHO);
+  const langParamChirho = url.searchParams.get("lang");
+  const langChirho = langParamChirho === "spa" ? "spa" : "eng";
+  const objectKeyChirho = PDF_KEYS_CHIRHO[langChirho];
+
+  const objectChirho = await bucketChirho.get(objectKeyChirho);
   if (!objectChirho) {
     return new Response("PDF not found", { status: 404 });
   }
@@ -19,7 +26,7 @@ export const GET: RequestHandler = async ({ platform }) => {
   return new Response(objectChirho.body, {
     headers: {
       "Content-Type": "application/pdf",
-      "Content-Disposition": `attachment; filename="${OBJECT_KEY_CHIRHO}"`,
+      "Content-Disposition": `attachment; filename="${objectKeyChirho}"`,
       "Cache-Control": "public, max-age=86400",
       "Content-Length": String(objectChirho.size),
     },

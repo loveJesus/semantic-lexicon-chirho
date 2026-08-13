@@ -21,7 +21,7 @@ import re
 # Parse all senses from the prompt file
 senses_chirho = {}
 
-with open("/Volumes/ENC_4TB_WDB_CHIRHO/dev-aleluya/friends-aleluya/andrewbeth-chirho/semantic-chirho/output-chirho/merge-batches-chirho/prompt-H7725-chirho.txt", "r") as f_chirho:
+with open("/Users/hallelujah/dev-chirho/friends-chirho/andrewbeth-chirho/semantic-chirho/output-chirho/merge-batches-chirho/prompt-H7725-chirho.txt", "r") as f_chirho:
     content_chirho = f_chirho.read()
 
 # Extract each sense block
@@ -492,7 +492,7 @@ if group_hofal_chirho:
     })
 
 # Write JSON output
-output_path_chirho = "/Volumes/ENC_4TB_WDB_CHIRHO/dev-aleluya/friends-aleluya/andrewbeth-chirho/semantic-chirho/output-chirho/merge-responses-chirho/H7725-chirho.json"
+output_path_chirho = "/Users/hallelujah/dev-chirho/friends-chirho/andrewbeth-chirho/semantic-chirho/output-chirho/merge-responses-chirho/H7725-chirho.json"
 
 with open(output_path_chirho, "w", encoding="utf-8") as f_chirho:
     json.dump(output_chirho, f_chirho, indent=2, ensure_ascii=False)
