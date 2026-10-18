@@ -10,13 +10,15 @@ flowchart TD
   cache_hit_chirho -->|no| svelte_chirho[SvelteKit route load]
   svelte_chirho --> indexed_query_chirho[Use indexed D1 filters and joins]
   svelte_chirho --> summary_query_chirho[Read one immutable summary row]
+  svelte_chirho --> domain_read_model_chirho[Read bounded domain summaries and ranked lemma memberships]
   indexed_query_chirho --> rendered_chirho[Render the same page data]
   summary_query_chirho --> rendered_chirho
+  domain_read_model_chirho --> rendered_chirho
   rendered_chirho --> cacheable_chirho{Successful public GET?}
   cacheable_chirho -->|yes| store_chirho[Store bounded edge response]
   cacheable_chirho -->|no| response_chirho
   store_chirho --> response_chirho
 ```
 
-The additive import/deploy migration refreshes the summary row from source tables and creates indexes before the Worker version that depends on the summary is activated. Failed migration or deployment leaves the previously recorded Worker version available for rollback.
+The additive import/deploy migrations refresh the stats, random pools, domain hierarchy summaries, and ranked domain-to-lemma memberships from the authoritative source tables before the Worker version that depends on them is activated. Domain display glosses remain joined from `lemma_entry_chirho`, so a gloss-only sync does not duplicate or stale them. Failed migration or deployment leaves the previously recorded Worker version available for rollback.
 

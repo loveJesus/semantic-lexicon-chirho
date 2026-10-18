@@ -7,8 +7,10 @@ import { mkdirSync, readFileSync, writeFileSync } from "fs";
 const SQLITE_PATH_CHIRHO =
   process.env.SQLITE_PATH_CHIRHO || "./data-chirho/semantic-chirho.db";
 const LEXICON_PATH_CHIRHO = "./data-chirho/lexicon-chirho.db";
-const LEXICON_READ_MODEL_MIGRATION_PATH_CHIRHO =
-  "./apps-chirho/lexicon-web-chirho/migrations-chirho/0001_reduce_d1_reads_chirho.sql";
+const LEXICON_READ_MODEL_MIGRATION_PATHS_CHIRHO = [
+  "./apps-chirho/lexicon-web-chirho/migrations-chirho/0001_reduce_d1_reads_chirho.sql",
+  "./apps-chirho/lexicon-web-chirho/migrations-chirho/0002_materialize_domain_reads_chirho.sql",
+] as const;
 const BATCH_SIZE_CHIRHO = 500;
 
 interface SenseEntryChirho {
@@ -112,11 +114,10 @@ function createLexiconDbChirho(): Database {
 
 // Workflow: spec-chirho/workflows-chirho/lexicon-read-request-chirho.md
 function refreshLexiconReadModelChirho(dbChirho: Database): void {
-  const migrationSqlChirho = readFileSync(
-    LEXICON_READ_MODEL_MIGRATION_PATH_CHIRHO,
-    "utf8",
-  );
-  dbChirho.exec(migrationSqlChirho);
+  for (const migrationPathChirho of LEXICON_READ_MODEL_MIGRATION_PATHS_CHIRHO) {
+    const migrationSqlChirho = readFileSync(migrationPathChirho, "utf8");
+    dbChirho.exec(migrationSqlChirho);
+  }
 }
 
 function stripHtmlChirho(htmlChirho: string): string {
