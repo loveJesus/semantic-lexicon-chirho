@@ -69,4 +69,22 @@ Spanish means were 649 for Macro-32, 378 for Louw-Nida, and 45 for community det
 
 ## After
 
-Pending migration, deployment, and live measurement.
+Implementation commit `3b96fe541d49941d7dc278882e49856d36760fb6` was scanned over the exact `9cd9a4ad..3b96fe54` range with no leaks and pushed to `origin/main_chirho`.
+
+The remote migration was applied before deployment. Wrangler executed the 15 statements in migration 0002 successfully, then reported no pending migrations. A remote read verified 1,359 summary rows, 47,938 domain-lemma memberships, and all four expected read-model indexes. The previously deployed Worker continued serving during this compatibility checkpoint.
+
+Worker version `ea191842-e710-49d7-b2ac-98923f3ba0bc` was deployed at 2026-10-18 14:59:52 UTC and reached 100%. The recorded rollback target `a736aaf6-9fcc-42a1-83a7-839839415a94` remains retained.
+
+Fresh post-deploy requests returned 200 for the English domain index, representative Macro-32, Louw-Nida, and community pages, a Spanish Macro-32 page, and the workers.dev route. A nonexistent domain returned the expected 404. On a new custom-domain URL, the first request returned 200 with `max-age=300, s-maxage=86400`; the immediate repeat was a cache HIT with age 0. No purge was issued because the route output is unchanged.
+
+The independently settled 2026-10-18 15:00–15:10 UTC window recorded 26,952 D1 rows across 66 Worker requests, or 408 rows per request. All 66 Worker invocations succeeded. Visitor status was 113 × 200 and 2 × 404, with no 5xx.
+
+For traffic-mix context, the previous Worker averaged 937 rows per request over 14:40–14:50 UTC and 1,261 over 14:31–14:56 UTC. The new 408-row rate is 56.46% below the clean 937-row immediately preceding comparison and 67.64% below the wider preceding comparison. Against the original code over the same clock window one day earlier, 66,498 rows per request, the live rate is 99.39% lower, or about 163 times cheaper. The separate 24-hour pre-first-deploy baseline remains 53,201.3 rows per request; the new ten-minute window is 99.23% below it. Traffic mix makes the route-level measurements the stronger evidence for this second landing.
+
+Every domain query shape in the settled window was bounded. The ranked domain lemma list read 400 rows per run for its 200-row cap plus 200 live lemma lookups; the Spanish overlay averaged 179; child domains averaged 73; and the domain-index community query read 200. The former 20,344-row Macro-32 aggregation and other domain full scans did not run. The most expensive remaining shape was the Bible chapter page at about 1,656 rows per run; among known scan routes, search remains the next optimization target at about 30,000 rows per cache miss.
+
+The independent post-deploy reviewer returned PASS. A committed-code harness again found zero differences across 1,762 route calls against the original site. A separate production comparison found 11/11 identical results between the previous Worker route code reading production D1 and the uncached new workers.dev data, covering English and Spanish indexes plus representative Macro-32, Louw-Nida, community, child-heavy, Spanish-overlay, and 200-item tie-cut pages. Some custom-domain pages remained valid cache entries from the previous version, but the content is identical, confirming that no purge was appropriate.
+
+The reviewer independently confirmed migration 0002 at 14:59:24 UTC, 28 seconds before deployment; the live 33 Macro-32, 89 Louw-Nida, and 1,237 community summaries; 47,938 memberships; all four indexes; both retained rollback versions; and the exact-range Gitleaks result. The reviewer’s one-time read-only production comparison consumed 318,634 plus 49,337 rows at 15:13:02–15:13:20 UTC, which must be excluded from later organic-traffic windows.
+
+The pre-existing `H????` href encoding fix remains held pending L.J. The 24-hour post-deploy remeasurement cannot complete until 2026-10-19 after 15:00 UTC and should include search query shapes.
