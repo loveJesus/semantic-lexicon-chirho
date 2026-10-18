@@ -2,11 +2,13 @@
 // that whoever believes in him should not perish but have eternal life.
 
 import { Database } from "bun:sqlite";
-import { mkdirSync, writeFileSync } from "fs";
+import { mkdirSync, readFileSync, writeFileSync } from "fs";
 
 const SQLITE_PATH_CHIRHO =
   process.env.SQLITE_PATH_CHIRHO || "./data-chirho/semantic-chirho.db";
 const LEXICON_PATH_CHIRHO = "./data-chirho/lexicon-chirho.db";
+const LEXICON_READ_MODEL_MIGRATION_PATH_CHIRHO =
+  "./apps-chirho/lexicon-web-chirho/migrations-chirho/0001_reduce_d1_reads_chirho.sql";
 const BATCH_SIZE_CHIRHO = 500;
 
 interface SenseEntryChirho {
@@ -105,8 +107,16 @@ function createLexiconDbChirho(): Database {
   dbChirho.run(
     "CREATE INDEX IF NOT EXISTS idx_sense_ref_chirho ON sense_reference_chirho(sense_id_chirho)"
   );
-
   return dbChirho;
+}
+
+// Workflow: spec-chirho/workflows-chirho/lexicon-read-request-chirho.md
+function refreshLexiconReadModelChirho(dbChirho: Database): void {
+  const migrationSqlChirho = readFileSync(
+    LEXICON_READ_MODEL_MIGRATION_PATH_CHIRHO,
+    "utf8",
+  );
+  dbChirho.exec(migrationSqlChirho);
 }
 
 function stripHtmlChirho(htmlChirho: string): string {
@@ -328,6 +338,7 @@ function generateLexiconChirho(): void {
   }
 
   lexDbChirho.run("COMMIT");
+  refreshLexiconReadModelChirho(lexDbChirho);
 
   // Stats
   const lemmaCountChirho = (

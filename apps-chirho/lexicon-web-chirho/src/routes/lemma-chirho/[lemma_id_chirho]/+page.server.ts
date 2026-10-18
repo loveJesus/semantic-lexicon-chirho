@@ -139,21 +139,37 @@ export const load: PageServerLoad = async ({ platform, params, url }) => {
 
   let relatedSensesChirho: Record<string, unknown>[] = [];
   if (uniqueDomainsChirho.length > 0) {
-    const domPlaceholdersChirho = uniqueDomainsChirho.map((_: unknown, iChirho: number) => `?${iChirho + 1}`).join(",");
-    const relatedResultChirho = await dbChirho
-      .prepare(
-        `SELECT s.sense_id_chirho, s.lemma_id_chirho, s.ordinal_chirho, s.label_chirho,
-                s.macro32_chirho, s.occurrence_count_chirho, l.pos_chirho
-         FROM sense_entry_chirho s
-         JOIN lemma_entry_chirho l ON s.lemma_id_chirho = l.lemma_id_chirho
-         WHERE s.macro32_chirho IN (${domPlaceholdersChirho})
-           AND s.lemma_id_chirho != ?${uniqueDomainsChirho.length + 1}
-         ORDER BY s.occurrence_count_chirho DESC
-         LIMIT 20`
+    // Workflow: spec-chirho/workflows-chirho/lexicon-read-request-chirho.md
+    const relatedStatementsChirho = uniqueDomainsChirho.map((domainChirho) =>
+      dbChirho
+        .prepare(
+          `SELECT sense_chirho.sense_id_chirho, sense_chirho.lemma_id_chirho,
+                  sense_chirho.ordinal_chirho, sense_chirho.label_chirho,
+                  sense_chirho.macro32_chirho, sense_chirho.occurrence_count_chirho,
+                  lemma_chirho.pos_chirho
+           FROM sense_entry_chirho sense_chirho
+           JOIN lemma_entry_chirho lemma_chirho
+             ON sense_chirho.lemma_id_chirho = lemma_chirho.lemma_id_chirho
+           WHERE sense_chirho.macro32_chirho = ?1
+             AND sense_chirho.lemma_id_chirho != ?2
+           ORDER BY sense_chirho.occurrence_count_chirho DESC,
+                    sense_chirho.sense_id_chirho
+           LIMIT 20`,
+        )
+        .bind(domainChirho, lemmaIdChirho),
+    );
+    const relatedResultsChirho = await dbChirho.batch(relatedStatementsChirho);
+    relatedSensesChirho = relatedResultsChirho
+      .flatMap(
+        (resultChirho: { results: unknown[] }) =>
+          resultChirho.results as Record<string, unknown>[],
       )
-      .bind(...uniqueDomainsChirho, lemmaIdChirho)
-      .all();
-    relatedSensesChirho = relatedResultChirho.results;
+      .sort(
+        (leftChirho: Record<string, unknown>, rightChirho: Record<string, unknown>) =>
+          Number(rightChirho.occurrence_count_chirho) - Number(leftChirho.occurrence_count_chirho) ||
+          Number(leftChirho.sense_id_chirho) - Number(rightChirho.sense_id_chirho),
+      )
+      .slice(0, 20);
   }
 
   return {

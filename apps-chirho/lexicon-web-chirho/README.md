@@ -49,9 +49,12 @@ This is the web frontend for the [semantic-chirho](https://github.com/loveJesus/
 
 ```bash
 bun install
-npx wrangler dev    # local dev with D1 binding
-npx vite build && npx wrangler deploy  # production deploy
+bunx wrangler d1 migrations apply lexicon-chirho --local
+bunx wrangler dev
+bun run build && bunx wrangler deploy
 ```
+
+Production read-model migrations are additive and live in `migrations-chirho/`. Apply them before deploying a Worker version that reads the new summary tables. Deterministic successful read-only routes on the custom domain emit bounded cache headers; the Cloudflare adapter stores those responses in the default edge cache. The random homepage remains uncached. After any data sync, refresh the materialized counts and random pools with `bunx wrangler d1 execute lexicon-chirho --remote --file migrations-chirho/0001_reduce_d1_reads_chirho.sql`. Request a URL- or hostname-scoped cache purge for `lexicon-chirho.bible.systems` through the zone owner; never use Purge Everything on the shared zone.
 
 ## License
 

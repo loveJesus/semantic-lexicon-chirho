@@ -57,7 +57,7 @@ export const load: PageServerLoad = async ({ platform, params, url }) => {
        JOIN lemma_entry_chirho l ON s.lemma_id_chirho = l.lemma_id_chirho
        WHERE s.${columnChirho} = ?1
        GROUP BY s.lemma_id_chirho
-       ORDER BY l.occurrence_count_chirho DESC
+       ORDER BY l.occurrence_count_chirho DESC, s.lemma_id_chirho
        LIMIT 200`
     )
     .bind(domainChirho)
@@ -84,7 +84,7 @@ export const load: PageServerLoad = async ({ platform, params, url }) => {
          FROM sense_entry_chirho
          WHERE ln_domain_chirho = ?1 AND community_chirho IS NOT NULL
          GROUP BY community_chirho
-         ORDER BY sense_count_chirho DESC`
+         ORDER BY sense_count_chirho DESC, name_chirho DESC`
       )
       .bind(domainChirho)
       .all();

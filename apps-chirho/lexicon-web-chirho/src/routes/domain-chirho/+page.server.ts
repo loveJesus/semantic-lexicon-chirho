@@ -14,7 +14,7 @@ export const load: PageServerLoad = async ({ platform, url }) => {
        FROM sense_entry_chirho
        WHERE macro32_chirho IS NOT NULL
        GROUP BY macro32_chirho
-       ORDER BY sense_count_chirho DESC`
+       ORDER BY sense_count_chirho DESC, name_chirho DESC`
     )
     .all();
 

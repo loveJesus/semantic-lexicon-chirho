@@ -2,6 +2,11 @@
 // that whoever believes in him should not perish but have eternal life.
 
 import type { PageServerLoad } from "./$types";
+import { error } from "@sveltejs/kit";
+import {
+  sampleUniqueOrdinalsChirho,
+  type LexiconStatRowChirho,
+} from "$lib/server/lexicon-random-chirho";
 
 export const load: PageServerLoad = async ({ platform, url }) => {
   const dbChirho = platform!.env.DB_CHIRHO;
@@ -9,42 +14,86 @@ export const load: PageServerLoad = async ({ platform, url }) => {
   const langChirho = langParamChirho === "spa" ? "spa" : "eng";
   const isSpaChirho = langChirho === "spa";
 
-  const statsChirho = await dbChirho.batch([
-    dbChirho.prepare("SELECT COUNT(*) as c FROM lemma_entry_chirho"),
-    dbChirho.prepare("SELECT COUNT(*) as c FROM sense_entry_chirho"),
-    dbChirho.prepare("SELECT COUNT(*) as c FROM sense_gloss_chirho"),
-    dbChirho.prepare("SELECT COUNT(*) as c FROM sense_reference_chirho"),
-  ]);
+  const statsChirho = await dbChirho
+    .prepare(
+      `SELECT lemma_count_chirho, sense_count_chirho, gloss_count_chirho,
+              reference_count_chirho, english_random_pool_count_chirho,
+              spanish_random_pool_count_chirho
+       FROM lexicon_stat_chirho
+       WHERE singleton_id_chirho = 1`,
+    )
+    .first<LexiconStatRowChirho>();
 
-  // When Spanish mode, pick only lemmas that have Spanish translations
-  const randomChirho = isSpaChirho
-    ? await dbChirho
-        .prepare(
-          `SELECT e.lemma_id_chirho, e.gloss_clean_chirho, t.gloss_terse_chirho, e.pos_chirho, e.sense_count_chirho, e.occurrence_count_chirho
-           FROM lemma_entry_chirho e
-           JOIN lemma_entry_translation_chirho t ON e.lemma_id_chirho = t.lemma_id_chirho AND t.language_code_chirho = 'spa'
-           WHERE t.gloss_terse_chirho IS NOT NULL AND length(t.gloss_terse_chirho) > 0
-           ORDER BY RANDOM()
-           LIMIT 9`
-        )
-        .all()
-    : await dbChirho
-        .prepare(
-          `SELECT lemma_id_chirho, gloss_clean_chirho, gloss_terse_chirho, pos_chirho, sense_count_chirho, occurrence_count_chirho
-           FROM lemma_entry_chirho
-           WHERE gloss_terse_chirho IS NOT NULL AND length(gloss_terse_chirho) > 0
-           ORDER BY RANDOM()
-           LIMIT 9`
-        )
-        .all();
+  if (statsChirho === null) {
+    error(503, "Lexicon statistics are unavailable");
+  }
+
+  // Workflow: spec-chirho/workflows-chirho/lexicon-read-request-chirho.md
+  const randomPoolCountChirho = isSpaChirho
+    ? statsChirho.spanish_random_pool_count_chirho
+    : statsChirho.english_random_pool_count_chirho;
+  const randomOrdinalsChirho = sampleUniqueOrdinalsChirho(randomPoolCountChirho, 9);
+  const randomPlaceholdersChirho = randomOrdinalsChirho
+    .map((_ordinalChirho, indexChirho) => `?${indexChirho + 2}`)
+    .join(",");
+
+  let randomResultsChirho: Record<string, any>[] = [];
+  if (randomOrdinalsChirho.length > 0) {
+    const randomChirho = isSpaChirho
+      ? await dbChirho
+          .prepare(
+            `SELECT pool_chirho.ordinal_chirho, lemma_chirho.lemma_id_chirho,
+                    lemma_chirho.gloss_clean_chirho, translation_chirho.gloss_terse_chirho,
+                    lemma_chirho.pos_chirho, lemma_chirho.sense_count_chirho,
+                    lemma_chirho.occurrence_count_chirho
+             FROM lemma_random_pool_chirho pool_chirho
+             JOIN lemma_entry_chirho lemma_chirho
+               ON lemma_chirho.lemma_id_chirho = pool_chirho.lemma_id_chirho
+             JOIN lemma_entry_translation_chirho translation_chirho
+               ON translation_chirho.lemma_id_chirho = lemma_chirho.lemma_id_chirho
+              AND translation_chirho.language_code_chirho = 'spa'
+             WHERE pool_chirho.language_code_chirho = ?1
+               AND pool_chirho.ordinal_chirho IN (${randomPlaceholdersChirho})`,
+          )
+          .bind("spa", ...randomOrdinalsChirho)
+          .all()
+      : await dbChirho
+          .prepare(
+            `SELECT pool_chirho.ordinal_chirho, lemma_chirho.lemma_id_chirho,
+                    lemma_chirho.gloss_clean_chirho, lemma_chirho.gloss_terse_chirho,
+                    lemma_chirho.pos_chirho, lemma_chirho.sense_count_chirho,
+                    lemma_chirho.occurrence_count_chirho
+             FROM lemma_random_pool_chirho pool_chirho
+             JOIN lemma_entry_chirho lemma_chirho
+               ON lemma_chirho.lemma_id_chirho = pool_chirho.lemma_id_chirho
+             WHERE pool_chirho.language_code_chirho = ?1
+               AND pool_chirho.ordinal_chirho IN (${randomPlaceholdersChirho})`,
+          )
+          .bind("eng", ...randomOrdinalsChirho)
+          .all();
+    const randomByOrdinalChirho = new Map(
+      (randomChirho.results as Record<string, any>[]).map((rowChirho) => [
+        rowChirho.ordinal_chirho as number,
+        rowChirho,
+      ]),
+    );
+    randomResultsChirho = randomOrdinalsChirho.flatMap((ordinalChirho) => {
+      const rowChirho = randomByOrdinalChirho.get(ordinalChirho);
+      return rowChirho === undefined ? [] : [{ ...rowChirho }];
+    });
+  }
 
   const topChirho = isSpaChirho
     ? await dbChirho
         .prepare(
-          `SELECT e.lemma_id_chirho, e.gloss_clean_chirho, t.gloss_terse_chirho, e.pos_chirho, e.sense_count_chirho, e.occurrence_count_chirho
-           FROM lemma_entry_chirho e
-           JOIN lemma_entry_translation_chirho t ON e.lemma_id_chirho = t.lemma_id_chirho AND t.language_code_chirho = 'spa'
-           ORDER BY e.occurrence_count_chirho DESC
+          `SELECT lemma_chirho.lemma_id_chirho, lemma_chirho.gloss_clean_chirho,
+                  translation_chirho.gloss_terse_chirho, lemma_chirho.pos_chirho,
+                  lemma_chirho.sense_count_chirho, lemma_chirho.occurrence_count_chirho
+           FROM lemma_entry_chirho lemma_chirho
+           CROSS JOIN lemma_entry_translation_chirho translation_chirho
+             ON lemma_chirho.lemma_id_chirho = translation_chirho.lemma_id_chirho
+            AND translation_chirho.language_code_chirho = 'spa'
+           ORDER BY lemma_chirho.occurrence_count_chirho DESC
            LIMIT 8`
         )
         .all()
@@ -58,7 +107,6 @@ export const load: PageServerLoad = async ({ platform, url }) => {
         .all();
 
   // Mutable copies so we can overlay Spanish
-  const randomResultsChirho = (randomChirho.results as Record<string, any>[]).map((rChirho) => ({ ...rChirho }));
   const topResultsChirho = (topChirho.results as Record<string, any>[]).map((rChirho) => ({ ...rChirho }));
 
   // Get first enriched sense for each lemma (random + top combined)
@@ -107,10 +155,10 @@ export const load: PageServerLoad = async ({ platform, url }) => {
 
   return {
     countsChirho: {
-      lemmasChirho: statsChirho[0].results[0].c as number,
-      sensesChirho: statsChirho[1].results[0].c as number,
-      glossesChirho: statsChirho[2].results[0].c as number,
-      refsChirho: statsChirho[3].results[0].c as number,
+      lemmasChirho: statsChirho.lemma_count_chirho,
+      sensesChirho: statsChirho.sense_count_chirho,
+      glossesChirho: statsChirho.gloss_count_chirho,
+      refsChirho: statsChirho.reference_count_chirho,
     },
     randomLemmasChirho: randomResultsChirho,
     topLemmasChirho: topResultsChirho,
